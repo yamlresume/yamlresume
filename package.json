@@ -1,0 +1,26 @@
+{
+  "name": "common",
+  "version": "0.7.0",
+  "description": "common code shared by ppresume project",
+  "author": "Xiao Hanyu",
+  "private": true,
+  "devDependencies": {
+    "@types/jest": "^29.5.14",
+    "@types/lodash": "^4.17.16",
+    "@types/node": "^20.17.25",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.2.6",
+    "typescript": "~5.4.5"
+  },
+  "main": "dist/index",
+  "types": "dist/index",
+  "scripts": {
+    "build": "tsc --build --force",
+    "coverage": "jest --coverage",
+    "test": "jest"
+  },
+  "dependencies": {
+    "escape-latex": "^1.2.0",
+    "tslib": "^2.6.2"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
+    "types": ["node", "jest"],
+
+    "importHelpers": true,
+    "composite": true,
+    "target": "es5",
+
+    "rootDir": "src",
+    "outDir": "dist",
+
+    "baseUrl": "."
+  },
+
+  "include": ["**/*.ts", "**/*.json"]
+}
