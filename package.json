@@ -5,6 +5,7 @@
   "author": "Xiao Hanyu",
   "private": true,
   "devDependencies": {
+    "@glen/jest-raw-loader": "^2.0.0",
     "@types/jest": "^29.5.14",
     "@types/lodash": "^4.17.16",
     "@types/node": "^20.17.25",
@@ -21,6 +22,7 @@
   },
   "dependencies": {
     "escape-latex": "^1.2.0",
+    "lodash": "^4.17.21",
     "tslib": "^2.6.2"
   }
 }
