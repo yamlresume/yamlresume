@@ -13,7 +13,7 @@ import tipTapContentJSON from './tiptap-content.json'
 // `Cannot find module './tiptap-content.tex' or its corresponding type declarations.`
 // thus we have to use @ts-expect-error
 // @ts-expect-error
-import tipTapContentTeX from './tiptap-content.tex'
+import tipTapContentTeX from './tiptap-content.tex?raw'
 
 describe(nodeToTeX, () => {
   describe('bulletListNodeToTeX', () => {

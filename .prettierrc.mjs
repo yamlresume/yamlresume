@@ -1,10 +1,8 @@
-module.exports = {
+export default {
   semi: false,
   singleQuote: true,
   trailingComma: 'es5',
-  importOrder: ['^[./]', '^@/(.*)$'],
+  importOrder: ['^@/(.*)$', '^[./]'],
   importOrderSeparation: true,
-  importOrderSortSpecifiers: true,
-
   plugins: ['@trivago/prettier-plugin-sort-imports'],
 }

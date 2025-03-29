@@ -3,17 +3,17 @@
     "esModuleInterop": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "resolveJsonModule": true,
 
     "declaration": true,
     "declarationMap": true,
     "sourceMap": true,
-    "types": ["node", "jest"],
+    "types": ["node", "vitest/globals"],
 
     "importHelpers": true,
     "composite": true,
-    "target": "es5",
+    "target": "ES2015",
 
     "rootDir": "src",
     "outDir": "dist",
@@ -21,5 +21,5 @@
     "baseUrl": "."
   },
 
-  "include": ["**/*.ts", "**/*.json"]
+  "include": ["src/**/*.ts", "src/**/*.json"]
 }

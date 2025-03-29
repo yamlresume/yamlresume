@@ -80,88 +80,90 @@ describe(localizeDate, () => {
 })
 
 describe(getDateRange, () => {
-  const tests = [
-    {
-      startDate: 'Oct 1, 2016',
-      endDate: 'Jan 1, 2018',
-      language: LocaleLanguage.English,
-      expected: 'Oct 2016 -- Jan 2018',
-    },
-    {
-      startDate: 'Oct 1, 2016',
-      endDate: '',
-      language: LocaleLanguage.English,
-      expected: 'Oct 2016 -- Present',
-    },
-    {
-      startDate: 'Oct 1, 2016',
-      endDate: '',
-      language: '',
-      expected: 'Oct 2016 -- Present',
-    },
-    {
-      startDate: 'Oct 1, 2016',
-      endDate: 'Jan 1, 2018',
-      language: LocaleLanguage.Spanish,
-      expected: 'oct 2016 -- ene 2018',
-    },
-    {
-      startDate: 'Oct 1, 2016',
-      endDate: '',
-      language: LocaleLanguage.Spanish,
-      expected: 'oct 2016 hasta la fecha',
-    },
-    {
-      startDate: 'Oct 1, 2016',
-      endDate: 'Jan 1, 2018',
-      language: LocaleLanguage.SimplifiedChinese,
-      expected: '2016年10月 -- 2018年1月',
-    },
-    {
-      startDate: 'Oct 1, 2016',
-      endDate: '',
-      language: LocaleLanguage.SimplifiedChinese,
-      expected: '2016年10月至今',
-    },
-    {
-      startDate: 'Oct 1, 2016',
-      endDate: 'Jan 1, 2018',
-      language: LocaleLanguage.TraditionalChineseHK,
-      expected: '2016年10月 -- 2018年1月',
-    },
-    {
-      startDate: 'Oct 1, 2016',
-      endDate: '',
-      language: LocaleLanguage.TraditionalChineseHK,
-      expected: '2016年10月至今',
-    },
-    {
-      startDate: 'Oct 1, 2016',
-      endDate: 'Jan 1, 2018',
-      language: LocaleLanguage.TraditionalChineseTW,
-      expected: '2016年10月 -- 2018年1月',
-    },
-    {
-      startDate: 'Oct 1, 2016',
-      endDate: '',
-      language: LocaleLanguage.TraditionalChineseTW,
-      expected: '2016年10月至今',
-    },
-    {
-      startDate: '',
-      endDate: '',
-      language: LocaleLanguage.English,
-      expected: '',
-    },
-    {
-      startDate: '',
-      endDate: 'Jan 1, 2018',
-      language: LocaleLanguage.English,
-      expected: '',
-    },
-  ]
+  it('should return correct date range', () => {
+    const tests = [
+      {
+        startDate: 'Oct 1, 2016',
+        endDate: 'Jan 1, 2018',
+        language: LocaleLanguage.English,
+        expected: 'Oct 2016 -- Jan 2018',
+      },
+      {
+        startDate: 'Oct 1, 2016',
+        endDate: '',
+        language: LocaleLanguage.English,
+        expected: 'Oct 2016 -- Present',
+      },
+      {
+        startDate: 'Oct 1, 2016',
+        endDate: '',
+        language: '',
+        expected: 'Oct 2016 -- Present',
+      },
+      {
+        startDate: 'Oct 1, 2016',
+        endDate: 'Jan 1, 2018',
+        language: LocaleLanguage.Spanish,
+        expected: 'oct 2016 -- ene 2018',
+      },
+      {
+        startDate: 'Oct 1, 2016',
+        endDate: '',
+        language: LocaleLanguage.Spanish,
+        expected: 'oct 2016 hasta la fecha',
+      },
+      {
+        startDate: 'Oct 1, 2016',
+        endDate: 'Jan 1, 2018',
+        language: LocaleLanguage.SimplifiedChinese,
+        expected: '2016年10月 -- 2018年1月',
+      },
+      {
+        startDate: 'Oct 1, 2016',
+        endDate: '',
+        language: LocaleLanguage.SimplifiedChinese,
+        expected: '2016年10月至今',
+      },
+      {
+        startDate: 'Oct 1, 2016',
+        endDate: 'Jan 1, 2018',
+        language: LocaleLanguage.TraditionalChineseHK,
+        expected: '2016年10月 -- 2018年1月',
+      },
+      {
+        startDate: 'Oct 1, 2016',
+        endDate: '',
+        language: LocaleLanguage.TraditionalChineseHK,
+        expected: '2016年10月至今',
+      },
+      {
+        startDate: 'Oct 1, 2016',
+        endDate: 'Jan 1, 2018',
+        language: LocaleLanguage.TraditionalChineseTW,
+        expected: '2016年10月 -- 2018年1月',
+      },
+      {
+        startDate: 'Oct 1, 2016',
+        endDate: '',
+        language: LocaleLanguage.TraditionalChineseTW,
+        expected: '2016年10月至今',
+      },
+      {
+        startDate: '',
+        endDate: '',
+        language: LocaleLanguage.English,
+        expected: '',
+      },
+      {
+        startDate: '',
+        endDate: 'Jan 1, 2018',
+        language: LocaleLanguage.English,
+        expected: '',
+      },
+    ]
 
-  for (const { startDate, endDate, language, expected } of tests) {
-    expect(getDateRange(startDate, endDate, language)).toEqual(expected)
-  }
+    for (const { startDate, endDate, language, expected } of tests) {
+      expect(getDateRange(startDate, endDate, language)).toEqual(expected)
+    }
+  })
 })

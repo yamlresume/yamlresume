@@ -4,7 +4,7 @@ describe(isTestEnvironment, () => {
   const OLD_ENV = process.env
 
   beforeEach(() => {
-    jest.resetModules()
+    vi.resetModules()
     process.env = { ...OLD_ENV }
     delete process.env.NODE_ENV
     delete process.env.JEST_WORKER_ID
@@ -32,7 +32,7 @@ describe(isLocalEnvironment, () => {
   const OLD_ENV = process.env
 
   beforeEach(() => {
-    jest.resetModules()
+    vi.resetModules()
     process.env = { ...OLD_ENV }
     delete process.env.LOGTO_ENDPOINT
   })
