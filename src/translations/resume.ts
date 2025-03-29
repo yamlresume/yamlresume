@@ -1,15 +1,15 @@
 import {
-  englishCountryNames,
-  simplifiedChineseCountryNames,
-  traditionalChineseCountryHKNames,
-  traditionalChineseCountryTWNames,
-  spanishCountryNames,
   Country,
   Degree,
   Language,
   LanguageFluency,
   LocaleLanguage,
   SkillLevel,
+  englishCountryNames,
+  simplifiedChineseCountryNames,
+  spanishCountryNames,
+  traditionalChineseCountryHKNames,
+  traditionalChineseCountryTWNames,
 } from '../data'
 import { type SectionID } from '../types'
 import { isEmptyValue } from '../utils'

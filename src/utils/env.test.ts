@@ -1,4 +1,4 @@
-import { isTestEnvironment, isLocalEnvironment } from './env'
+import { isLocalEnvironment, isTestEnvironment } from './env'
 
 describe(isTestEnvironment, () => {
   const OLD_ENV = process.env

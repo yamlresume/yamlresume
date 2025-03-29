@@ -1,12 +1,11 @@
+import { Country } from '../data'
 import {
+  FontSpecNumbersStyle,
   Resume,
   ResumeContent,
   ResumeItem,
   ResumeLayout,
-  FontSpecNumbersStyle,
 } from '../types/'
-
-import { Country } from '../data'
 
 export * from './country'
 

@@ -1,8 +1,8 @@
 import {
   isEmptyString,
   isEmptyValue,
-  showIf,
   joinNonEmptyString,
+  showIf,
 } from './object'
 
 describe(isEmptyValue, () => {

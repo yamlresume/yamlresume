@@ -1,10 +1,10 @@
 import {
   Country,
   Degree,
-  SkillLevel,
-  LocaleLanguage,
   Language,
   LanguageFluency,
+  LocaleLanguage,
+  SkillLevel,
 } from '../data'
 
 // TODO: migrate SectionID to enum

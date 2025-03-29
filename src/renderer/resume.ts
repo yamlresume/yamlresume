@@ -1,14 +1,12 @@
 import _ from 'lodash'
 
+import { Templates } from '../data'
+import { Resume } from '../types'
 import {
   ModerncvBankingRenderer,
   ModerncvCasualRenderer,
   ModerncvClassicRenderer,
 } from './moderncv'
-
-import { Templates } from '../data'
-import { Resume } from '../types'
-
 import { Renderer } from './types'
 
 const RESUME_RENDERER_MAP = {

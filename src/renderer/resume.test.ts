@@ -1,11 +1,11 @@
-import { getResumeRenderer } from './resume'
+import { Templates, defaultResume } from '../data'
 import { Resume } from '../types'
-import { defaultResume, Templates } from '../data'
 import {
   ModerncvBankingRenderer,
   ModerncvCasualRenderer,
   ModerncvClassicRenderer,
 } from './moderncv'
+import { getResumeRenderer } from './resume'
 
 describe(getResumeRenderer, () => {
   const mockResume: Resume = defaultResume

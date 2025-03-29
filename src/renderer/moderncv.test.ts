@@ -1,23 +1,22 @@
 import { cloneDeep } from 'lodash'
+
 import {
   Country,
   Degree,
-  emptyParagraph,
-  filledResume,
   Language,
   LanguageFluency,
   SkillLevel,
+  emptyParagraph,
+  filledResume,
 } from '../data'
-
-import { ModerncvStyle } from './preamble'
+import { Resume } from '../types'
 import {
-  ModerncvBase,
   ModerncvBankingRenderer,
+  ModerncvBase,
   ModerncvCasualRenderer,
   ModerncvClassicRenderer,
 } from './moderncv'
-
-import { Resume } from '../types'
+import { ModerncvStyle } from './preamble'
 
 describe('ModerncvBase', () => {
   let resume: Resume

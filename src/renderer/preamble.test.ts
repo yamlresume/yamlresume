@@ -1,17 +1,16 @@
+import { LocaleLanguage, defaultResume } from '../data'
+import { FontSpecNumbersStyle, MainFont, Resume } from '../types'
 import {
   DocumentClass,
   ModerncvStyle,
   normalizeUnit,
-  renderDocumentClassConfig,
-  renderModerncvConfig,
-  renderLayoutConfig,
   renderCTeXConfig,
-  renderSpanishConfig,
+  renderDocumentClassConfig,
   renderFontspecConfig,
+  renderLayoutConfig,
+  renderModerncvConfig,
+  renderSpanishConfig,
 } from './preamble'
-
-import { defaultResume, LocaleLanguage } from '../data'
-import { FontSpecNumbersStyle, MainFont, Resume } from '../types'
 
 const mockResume = defaultResume
 

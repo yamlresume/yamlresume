@@ -1,5 +1,5 @@
 import { LocaleLanguage } from '../data'
-import { parseDate, localizeDate, getDateRange } from './date'
+import { getDateRange, localizeDate, parseDate } from './date'
 
 describe(parseDate, () => {
   it('should return null for invalid date string', () => {

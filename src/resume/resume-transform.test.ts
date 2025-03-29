@@ -1,37 +1,32 @@
 import { cloneDeep } from 'lodash'
 
 import {
+  Country,
+  Degree,
+  Language,
+  LanguageFluency,
+  LocaleLanguage,
+  SkillLevel,
+  Templates,
   defaultResume,
   filledResume,
   localeLanguageOptions,
-  Country,
-  Degree,
-  LocaleLanguage,
-  LanguageFluency,
-  Language,
-  SkillLevel,
-  Templates,
 } from '../data'
-
 import { type DocNode, nodeToTeX } from '../tiptap'
-
 import {
-  getTemplateTranslations,
-  getResumeTranslations,
   Punctuation,
   ResumeTerms,
+  getResumeTranslations,
+  getTemplateTranslations,
 } from '../translations'
-
 import {
   FontSpecNumbersStyle,
   MainFont,
   ProfileItem,
-  SocialNetwork,
   ResumeLayout,
+  SocialNetwork,
 } from '../types'
-
 import { isEmptyValue, isLocalEnvironment, isTestEnvironment } from '../utils'
-
 import {
   replaceBlankLinesWithPercent,
   transformBasicsUrl,
@@ -48,8 +43,8 @@ import {
   transformResumeLayout,
   transformResumeLayoutTypography,
   transformResumeValues,
-  transformSkills,
   transformSectionNames,
+  transformSkills,
   transformSocialLinks,
   transformSummary,
 } from './resume-transform'

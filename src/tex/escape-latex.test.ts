@@ -1,5 +1,6 @@
-import { escapeLatex } from './escape-latex'
 import rawEscapeLatex from 'escape-latex'
+
+import { escapeLatex } from './escape-latex'
 
 describe('escapeLatex', () => {
   it('returns empty values as original', () => {

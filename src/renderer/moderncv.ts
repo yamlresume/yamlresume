@@ -1,26 +1,23 @@
-import { Renderer } from './types'
-
-import {
-  DocumentClass,
-  ModerncvStyle,
-  renderDocumentClassConfig,
-  renderCTeXConfig,
-  renderModerncvConfig,
-  renderLayoutConfig,
-  renderSpanishConfig,
-  renderFontspecConfig,
-} from './preamble'
-
 import { transformResume } from '../resume'
 import { getTemplateTranslations } from '../translations'
 import { Resume } from '../types'
-
 import {
   isEmptyString,
   isEmptyValue,
-  showIf,
   joinNonEmptyString,
+  showIf,
 } from '../utils'
+import {
+  DocumentClass,
+  ModerncvStyle,
+  renderCTeXConfig,
+  renderDocumentClassConfig,
+  renderFontspecConfig,
+  renderLayoutConfig,
+  renderModerncvConfig,
+  renderSpanishConfig,
+} from './preamble'
+import { Renderer } from './types'
 
 class ModerncvBase extends Renderer {
   style: ModerncvStyle

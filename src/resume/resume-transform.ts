@@ -1,19 +1,14 @@
 import { capitalize, cloneDeep, isArray, merge } from 'lodash'
 
-import { defaultResumeLayout, LocaleLanguage } from '../data'
-
+import { LocaleLanguage, defaultResumeLayout } from '../data'
 import { escapeLatex } from '../tex'
-
 import { type DocNode, nodeToTeX } from '../tiptap'
-
 import {
-  getTemplateTranslations,
-  getResumeTranslations,
   ResumeTerms,
+  getResumeTranslations,
+  getTemplateTranslations,
 } from '../translations'
-
 import { FontSpecNumbersStyle, MainFont, ProfileItem, Resume } from '../types'
-
 import {
   getDateRange,
   isEmptyValue,
