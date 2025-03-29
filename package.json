@@ -1,9 +1,49 @@
 {
-  "name": "common",
-  "version": "0.7.0",
-  "description": "common code shared by ppresume project",
-  "author": "Xiao Hanyu",
-  "private": true,
+  "name": "@ppresume/engine",
+  "version": "0.1.0",
+  "description": "The LaTeX based typesetting and layout engine for PPResume",
+  "license": "MIT",
+  "author": {
+    "name": "PPResume",
+    "email": "support@ppresume.com",
+    "url": "https://ppresume.com"
+  },
+  "keywords": [
+    "PPResume",
+    "CV",
+    "Resume",
+    "LaTeX",
+    "Typesetting",
+    "PDF"
+  ],
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc --build --force",
+    "coverage": "jest --coverage",
+    "test": "jest",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm test"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "escape-latex": "^1.2.0",
+    "lodash": "^4.17.21",
+    "tslib": "^2.6.2"
+  },
   "devDependencies": {
     "@glen/jest-raw-loader": "^2.0.0",
     "@types/jest": "^29.5.14",
@@ -13,16 +53,15 @@
     "ts-jest": "^29.2.6",
     "typescript": "~5.4.5"
   },
-  "main": "dist/index",
-  "types": "dist/index",
-  "scripts": {
-    "build": "tsc --build --force",
-    "coverage": "jest --coverage",
-    "test": "jest"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ppresume/engine.git"
   },
-  "dependencies": {
-    "escape-latex": "^1.2.0",
-    "lodash": "^4.17.21",
-    "tslib": "^2.6.2"
+  "bugs": {
+    "url": "https://github.com/ppresume/engine/issues"
+  },
+  "homepage": "https://github.com/ppresume/engine#readme",
+  "engines": {
+    "node": ">=20.0.0"
   }
 }

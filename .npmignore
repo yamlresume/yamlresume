@@ -1,0 +1,46 @@
+# Source files (not needed in published package)
+src/
+
+# Development configuration
+.git/
+.gitignore
+.gitattributes
+.tokeignore
+tsconfig.json
+tsconfig.tsbuildinfo
+jest.config.js
+
+# Development dependencies
+node_modules/
+
+# Package manager files
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+
+# IDE and editor files
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Test files
+__tests__/
+*.test.ts
+*.spec.ts
+coverage/
+
+# Build artifacts (except dist)
+*.tsbuildinfo
+
+# Documentation (except README and LICENSE)
+docs/
+*.md
+!README.md
+!LICENSE
+
+# Misc
+.DS_Store
+.env
+.env.*
+*.log 
