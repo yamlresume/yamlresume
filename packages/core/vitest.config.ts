@@ -15,7 +15,6 @@ export default defineConfig({
         '**/*.d.ts',
         '**/*/index.ts',
         'vitest.config.ts',
-        '.prettierrc.mjs',
       ],
     },
   },

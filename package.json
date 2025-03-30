@@ -1,77 +1,28 @@
 {
   "name": "@ppresume/engine",
-  "version": "0.1.0",
-  "description": "The LaTeX based typesetting and layout engine for PPResume",
-  "license": "MIT",
-  "author": {
-    "name": "PPResume",
-    "email": "support@ppresume.com",
-    "url": "https://ppresume.com"
-  },
-  "keywords": [
-    "PPResume",
-    "CV",
-    "Resume",
-    "LaTeX",
-    "Typesetting",
-    "PDF"
-  ],
-  "main": "./dist/index.js",
-  "types": "./dist/index.d.ts",
-  "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "default": "./dist/index.js"
-    }
-  },
-  "files": [
-    "dist",
-    "README.md",
-    "LICENSE"
-  ],
-  "type": "module",
+  "private": true,
   "scripts": {
-    "build": "tsc --build --force",
-    "coverage": "vitest --coverage",
-    "test": "vitest",
+    "build": "pnpm -r build",
+    "coverage": "pnpm -r coverage",
+    "test": "pnpm -r test",
+    "test:watch": "pnpm -r test:watch",
+    "lint": "pnpm -r lint",
     "prepare": "husky",
     "prepublishOnly": "pnpm test",
-    "commitlint": "commitlint --edit"
+    "commitlint": "commitlint --edit",
+    "cli": "pnpm --filter @ppresume/cli",
+    "core": "pnpm --filter @ppresume/core"
   },
   "lint-staged": {
     "**/*": "prettier --write --ignore-unknown"
-  },
-  "publishConfig": {
-    "access": "public"
-  },
-  "dependencies": {
-    "@vitest/coverage-v8": "^3.0.9",
-    "escape-latex": "^1.2.0",
-    "lodash": "^4.17.21",
-    "tslib": "^2.6.2"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.8.0",
     "@commitlint/config-conventional": "^19.8.0",
     "@trivago/prettier-plugin-sort-imports": "^5.2.2",
-    "@types/lodash": "^4.17.16",
-    "@types/node": "^20.17.25",
-    "commitlint": "^19.8.0",
     "husky": "^9.1.7",
     "lint-staged": "^15.5.0",
-    "prettier": "^3.5.3",
-    "typescript": "~5.4.5",
-    "vitest": "^3.0.9"
+    "prettier": "^3.5.3"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/ppresume/engine.git"
-  },
-  "bugs": {
-    "url": "https://github.com/ppresume/engine/issues"
-  },
-  "homepage": "https://github.com/ppresume/engine#readme",
-  "engines": {
-    "node": ">=20.0.0"
-  }
+  "packageManager": "pnpm@10.7.0"
 }

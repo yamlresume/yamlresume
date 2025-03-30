@@ -1,8 +1,6 @@
 {
   "compilerOptions": {
     "esModuleInterop": true,
-    "experimentalDecorators": true,
-    "emitDecoratorMetadata": true,
     "moduleResolution": "bundler",
     "resolveJsonModule": true,
 
@@ -13,13 +11,6 @@
 
     "importHelpers": true,
     "composite": true,
-    "target": "ES2015",
-
-    "rootDir": "src",
-    "outDir": "dist",
-
-    "baseUrl": "."
-  },
-
-  "include": ["src/**/*.ts", "src/**/*.json"]
+    "target": "ES2015"
+  }
 }

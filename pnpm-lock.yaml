@@ -6,19 +6,6 @@ settings:
 
 importers:
   .:
-    dependencies:
-      '@vitest/coverage-v8':
-        specifier: ^3.0.9
-        version: 3.0.9(vitest@3.0.9(@types/node@20.17.28)(jiti@2.4.2)(yaml@2.7.0))
-      escape-latex:
-        specifier: ^1.2.0
-        version: 1.2.0
-      lodash:
-        specifier: ^4.17.21
-        version: 4.17.21
-      tslib:
-        specifier: ^2.6.2
-        version: 2.8.1
     devDependencies:
       '@commitlint/cli':
         specifier: ^19.8.0
@@ -29,15 +16,6 @@ importers:
       '@trivago/prettier-plugin-sort-imports':
         specifier: ^5.2.2
         version: 5.2.2(prettier@3.5.3)
-      '@types/lodash':
-        specifier: ^4.17.16
-        version: 4.17.16
-      '@types/node':
-        specifier: ^20.17.25
-        version: 20.17.28
-      commitlint:
-        specifier: ^19.8.0
-        version: 19.8.0(@types/node@20.17.28)(typescript@5.4.5)
       husky:
         specifier: ^9.1.7
         version: 9.1.7
@@ -47,6 +25,44 @@ importers:
       prettier:
         specifier: ^3.5.3
         version: 3.5.3
+
+  packages/cli:
+    dependencies:
+      '@ppresume/core':
+        specifier: workspace:*
+        version: link:../core
+      commander:
+        specifier: ^11.0.0
+        version: 11.1.0
+    devDependencies:
+      '@types/node':
+        specifier: ^20.17.25
+        version: 20.17.28
+      '@vitest/coverage-v8':
+        specifier: ^3.1.1
+        version: 3.1.1(vitest@3.0.9(@types/node@20.17.28)(jiti@2.4.2)(yaml@2.7.0))
+      vitest:
+        specifier: ^3.0.9
+        version: 3.0.9(@types/node@20.17.28)(jiti@2.4.2)(yaml@2.7.0)
+
+  packages/core:
+    dependencies:
+      escape-latex:
+        specifier: ^1.2.0
+        version: 1.2.0
+      lodash:
+        specifier: ^4.17.21
+        version: 4.17.21
+    devDependencies:
+      '@types/lodash':
+        specifier: ^4.17.16
+        version: 4.17.16
+      '@types/node':
+        specifier: ^20.17.25
+        version: 20.17.28
+      '@vitest/coverage-v8':
+        specifier: ^3.1.1
+        version: 3.1.1(vitest@3.0.9(@types/node@20.17.28)(jiti@2.4.2)(yaml@2.7.0))
       typescript:
         specifier: ~5.4.5
         version: 5.4.5
@@ -728,14 +744,14 @@ packages:
         integrity: sha512-DHlH/fNL6Mho38jTy7/JT7sn2wnXI+wULR6PV4gy4VHLVvnrV/d3pHAMQHhc4gjdLmK2ZiPoMxzp6B3yRajLSQ==,
       }
 
-  '@vitest/coverage-v8@3.0.9':
+  '@vitest/coverage-v8@3.1.1':
     resolution:
       {
-        integrity: sha512-15OACZcBtQ34keIEn19JYTVuMFTlFrClclwWjHo/IRPg/8ELpkgNTl0o7WLP9WO9XGH6+tip9CPYtEOrIDJvBA==,
+        integrity: sha512-MgV6D2dhpD6Hp/uroUoAIvFqA8AuvXEFBC2eepG3WFc1pxTfdk1LEqqkWoWhjz+rytoqrnUUCdf6Lzco3iHkLQ==,
       }
     peerDependencies:
-      '@vitest/browser': 3.0.9
-      vitest: 3.0.9
+      '@vitest/browser': 3.1.1
+      vitest: 3.1.1
     peerDependenciesMeta:
       '@vitest/browser':
         optional: true
@@ -951,20 +967,19 @@ packages:
         integrity: sha512-IfEDxwoWIjkeXL1eXcDiow4UbKjhLdq6/EuSVR9GMN7KVH3r9gQ83e73hsz1Nd1T3ijd5xv1wcWRYO+D6kCI2w==,
       }
 
+  commander@11.1.0:
+    resolution:
+      {
+        integrity: sha512-yPVavfyCcRhmorC7rWlkHn15b4wDVgVmBA7kV4QVBsF7kv/9TKJAbAXVTxvTnwP8HHKjRCJDClKbciiYS7p0DQ==,
+      }
+    engines: { node: '>=16' }
+
   commander@13.1.0:
     resolution:
       {
         integrity: sha512-/rFeCpNJQbhSZjGVwO9RFV3xPqbnERS8MmIQzCtD/zl6gpJuV/bMLuN92oG3F7d8oDEHHRrujSXNUr8fpjntKw==,
       }
     engines: { node: '>=18' }
-
-  commitlint@19.8.0:
-    resolution:
-      {
-        integrity: sha512-O5waRm0RsjH1g2sT4ifTV58sBYW3wPjfclsdicj1NWUyF91aF0fSqFgKC8EEOUi9RRLKBOhlJarS6V1jWIUx1Q==,
-      }
-    engines: { node: '>=v18' }
-    hasBin: true
 
   compare-func@2.0.0:
     resolution:
@@ -2014,12 +2029,6 @@ packages:
       }
     engines: { node: '>=8.0' }
 
-  tslib@2.8.1:
-    resolution:
-      {
-        integrity: sha512-oJFu94HQb+KVduSUQL7wnpmqnfmLsOA/nAh6b6EH0wCEoK0/mPeXU6c3wKDV83MkOuHPRHtSXKKU99IBazS/2w==,
-      }
-
   typescript@5.4.5:
     resolution:
       {
@@ -2549,7 +2558,7 @@ snapshots:
     dependencies:
       undici-types: 6.19.8
 
-  '@vitest/coverage-v8@3.0.9(vitest@3.0.9(@types/node@20.17.28)(jiti@2.4.2)(yaml@2.7.0))':
+  '@vitest/coverage-v8@3.1.1(vitest@3.0.9(@types/node@20.17.28)(jiti@2.4.2)(yaml@2.7.0))':
     dependencies:
       '@ampproject/remapping': 2.3.0
       '@bcoe/v8-coverage': 1.0.2
@@ -2688,15 +2697,9 @@ snapshots:
 
   colorette@2.0.20: {}
 
-  commander@13.1.0: {}
+  commander@11.1.0: {}
 
-  commitlint@19.8.0(@types/node@20.17.28)(typescript@5.4.5):
-    dependencies:
-      '@commitlint/cli': 19.8.0(@types/node@20.17.28)(typescript@5.4.5)
-      '@commitlint/types': 19.8.0
-    transitivePeerDependencies:
-      - '@types/node'
-      - typescript
+  commander@13.1.0: {}
 
   compare-func@2.0.0:
     dependencies:
@@ -3248,8 +3251,6 @@ snapshots:
   to-regex-range@5.0.1:
     dependencies:
       is-number: 7.0.0
-
-  tslib@2.8.1: {}
 
   typescript@5.4.5: {}
 
