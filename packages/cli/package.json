@@ -23,6 +23,7 @@
   "scripts": {
     "build": "tsc --build --force",
     "coverage": "vitest --coverage --run",
+    "dev": "tsx src/cli.ts",
     "test": "vitest --run",
     "test:watch": "vitest"
   },
@@ -31,8 +32,10 @@
     "commander": "^11.0.0"
   },
   "devDependencies": {
+    "@types/commander": "^2.12.5",
     "@types/node": "^20.17.25",
     "@vitest/coverage-v8": "^3.1.1",
+    "tsx": "^4.19.3",
     "vitest": "^3.0.9"
   },
   "publishConfig": {
