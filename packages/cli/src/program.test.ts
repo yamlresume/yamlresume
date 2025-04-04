@@ -1,28 +1,30 @@
-import { beforeEach, afterEach, describe, expect, it, vi } from 'vitest'
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 
 import packageJson from '../package.json' with { type: 'json' }
 import { program } from './program'
 
-describe('CLI', () => {
+program.exitOverride()
+
+describe('program', () => {
+  let writeSpy: ReturnType<typeof vi.spyOn>
+
+  beforeEach(() => {
+    writeSpy = vi
+      .spyOn(process.stdout, 'write' as any)
+      // suppress output
+      .mockImplementation(() => true)
+  })
+
+  afterEach(() => {
+    writeSpy.mockClear()
+  })
+
   describe('help flag', () => {
-    let writeSpy: ReturnType<typeof vi.spyOn>
-    beforeEach(() => {
-      writeSpy = vi
-        .spyOn(process.stdout, 'write' as any)
-        .mockImplementation(() => true)
-    })
-
-    afterEach(() => {
-      writeSpy.mockClear()
-    })
-
     it('should support help message', () => {
-      program.exitOverride()
       expect(() => program.help()).toThrow('(outputHelp)')
     })
 
     it('should support -h/--help flag', () => {
-      program.exitOverride()
       expect(() => program.parse(['node', 'cli.js', '-h'])).toThrow(
         '(outputHelp)'
       )
@@ -37,18 +39,28 @@ describe('CLI', () => {
       const outputStr: string[] = []
       const writeSpy = vi
         .spyOn(process.stdout, 'write')
+        // instead of suppressing output, we'll collect the output to a string
         .mockImplementation((chunk) => {
           outputStr.push(chunk.toString().trim())
           return true
         })
+
       const { version } = packageJson
-      program.exitOverride()
       expect(() => program.parse(['node', 'cli.js', '-V'])).toThrow(version)
       expect(() => program.parse(['node', 'cli.js', '--version'])).toThrow(
         version
       )
       expect(outputStr).toEqual([version, version])
+
       writeSpy.mockClear()
+    })
+  })
+
+  describe('languages command', () => {
+    it('should support languages list', () => {
+      expect(() =>
+        program.parse(['node', 'cli.js', 'languages', 'help'])
+      ).toThrow('process.exit')
     })
   })
 })

@@ -31,9 +31,21 @@ importers:
       '@ppresume/core':
         specifier: workspace:*
         version: link:../core
+      '@types/lodash-es':
+        specifier: ^4.17.12
+        version: 4.17.12
       commander:
         specifier: ^11.0.0
         version: 11.1.0
+      extensionless:
+        specifier: ^1.9.9
+        version: 1.9.9
+      lodash-es:
+        specifier: ^4.17.21
+        version: 4.17.21
+      markdown-table:
+        specifier: ^3.0.4
+        version: 3.0.4
     devDependencies:
       '@types/commander':
         specifier: ^2.12.5
@@ -53,16 +65,16 @@ importers:
 
   packages/core:
     dependencies:
+      '@types/lodash-es':
+        specifier: ^4.17.12
+        version: 4.17.12
       escape-latex:
         specifier: ^1.2.0
         version: 1.2.0
-      lodash:
+      lodash-es:
         specifier: ^4.17.21
         version: 4.17.21
     devDependencies:
-      '@types/lodash':
-        specifier: ^4.17.16
-        version: 4.17.16
       '@types/node':
         specifier: ^20.17.25
         version: 20.17.28
@@ -745,6 +757,12 @@ packages:
         integrity: sha512-w28IoSUCJpidD/TGviZwwMJckNESJZXFu7NBZ5YJ4mEUnNraUn9Pm8HSZm/jDF1pDWYKspWE7oVphigUPRakIQ==,
       }
 
+  '@types/lodash-es@4.17.12':
+    resolution:
+      {
+        integrity: sha512-0NgftHUcV4v34VhXm8QBSftKVXtbkBG3ViCjs6+eJ5a6y6Mi/jiFGPc1sC7QK+9BFhWrURE3EOggmWaSxL9OzQ==,
+      }
+
   '@types/lodash@4.17.16':
     resolution:
       {
@@ -1182,6 +1200,12 @@ packages:
       }
     engines: { node: '>=12.0.0' }
 
+  extensionless@1.9.9:
+    resolution:
+      {
+        integrity: sha512-fz0cWfLA4pgc2nwmg6lc2UH+g+NlFuD63VWqp8n1wGAZSSbPNoARkA54BxXRjYCYW9LvhBnA3NyJaGS2KudkWw==,
+      }
+
   fast-deep-equal@3.1.3:
     resolution:
       {
@@ -1510,6 +1534,12 @@ packages:
       }
     engines: { node: ^12.20.0 || ^14.13.1 || >=16.0.0 }
 
+  lodash-es@4.17.21:
+    resolution:
+      {
+        integrity: sha512-mKnC+QJ9pWVzv+C4/U3rRsHapFfHvQFoFB92e52xeyGMcX6/OlIl78je1u8vePzYZSkkogMPJ2yjxxsb89cxyw==,
+      }
+
   lodash.camelcase@4.3.0:
     resolution:
       {
@@ -1607,6 +1637,12 @@ packages:
         integrity: sha512-hXdUTZYIVOt1Ex//jAQi+wTZZpUpwBj/0QsOzqegb3rGMMeJiSEu5xLHnYfBrRV4RH2+OCSOO95Is/7x1WJ4bw==,
       }
     engines: { node: '>=10' }
+
+  markdown-table@3.0.4:
+    resolution:
+      {
+        integrity: sha512-wiYz4+JrLyb/DqW2hkFJxP7Vd7JuTDm77fvbM8VfEQdmSMqcImWeeRbHwZjBjIFki/VaMK2BhFi7oUUZeM5bqw==,
+      }
 
   meow@12.1.1:
     resolution:
@@ -2589,6 +2625,10 @@ snapshots:
 
   '@types/estree@1.0.7': {}
 
+  '@types/lodash-es@4.17.12':
+    dependencies:
+      '@types/lodash': 4.17.16
+
   '@types/lodash@4.17.16': {}
 
   '@types/node@20.17.28':
@@ -2862,6 +2902,8 @@ snapshots:
 
   expect-type@1.2.0: {}
 
+  extensionless@1.9.9: {}
+
   fast-deep-equal@3.1.3: {}
 
   fast-uri@3.0.6: {}
@@ -3031,6 +3073,8 @@ snapshots:
     dependencies:
       p-locate: 6.0.0
 
+  lodash-es@4.17.21: {}
+
   lodash.camelcase@4.3.0: {}
 
   lodash.isplainobject@4.0.6: {}
@@ -3076,6 +3120,8 @@ snapshots:
   make-dir@4.0.0:
     dependencies:
       semver: 7.7.1
+
+  markdown-table@3.0.4: {}
 
   meow@12.1.1: {}
 

@@ -1,6 +1,7 @@
 import { Command } from 'commander'
 
 import packageJson from '../package.json' with { type: 'json' }
+import { languagesCommand } from './commands/languages'
 
 export const program = new Command()
 
@@ -21,3 +22,5 @@ program
     ].join('\n')
   )
   .version(packageJson.version)
+
+program.addCommand(languagesCommand)

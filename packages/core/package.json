@@ -37,11 +37,11 @@
     "test:watch": "vitest"
   },
   "dependencies": {
+    "@types/lodash-es": "^4.17.12",
     "escape-latex": "^1.2.0",
-    "lodash": "^4.17.21"
+    "lodash-es": "^4.17.21"
   },
   "devDependencies": {
-    "@types/lodash": "^4.17.16",
     "@types/node": "^20.17.25",
     "@vitest/coverage-v8": "^3.1.1",
     "typescript": "~5.4.5",

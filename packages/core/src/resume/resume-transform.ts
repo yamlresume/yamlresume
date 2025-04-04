@@ -1,4 +1,4 @@
-import { capitalize, cloneDeep, isArray, merge } from 'lodash'
+import { capitalize, cloneDeep, isArray, merge } from 'lodash-es'
 
 import { LocaleLanguage, defaultResumeLayout } from '../data'
 import { escapeLatex } from '../tex'
