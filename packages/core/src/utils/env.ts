@@ -9,3 +9,7 @@ export function isTestEnvironment() {
 export function isLocalEnvironment() {
   return Boolean(process.env.LOGTO_ENDPOINT?.includes('localhost'))
 }
+
+export function isMacOS() {
+  return process.platform === 'darwin'
+}

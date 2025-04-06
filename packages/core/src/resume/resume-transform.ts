@@ -13,6 +13,7 @@ import {
   getDateRange,
   isEmptyValue,
   isLocalEnvironment,
+  isMacOS,
   isTestEnvironment,
   localizeDate,
   showIf,
@@ -680,7 +681,9 @@ export function transformResumeLayout(resume: Resume): Resume {
 export function transformResumeEnvironment(resume: Resume): Resume {
   // Use Mac font for test/local development, Ubuntu font for production
   const mainFont =
-    isTestEnvironment() || isLocalEnvironment() ? MainFont.Mac : MainFont.Ubuntu
+    isTestEnvironment() || isLocalEnvironment() || isMacOS
+      ? MainFont.Mac
+      : MainFont.Ubuntu
 
   resume.layout.computed = {
     ...resume.layout.computed,

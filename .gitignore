@@ -142,3 +142,10 @@ dist
 
 # ignore generated service worker file
 packages/client/public/sw.js
+
+# latex
+*.aux
+*.out
+*.tex
+packages/cli/*.pdf
+packages/cli/resources/*.pdf

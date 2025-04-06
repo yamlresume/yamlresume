@@ -26,7 +26,12 @@ import {
   ResumeLayout,
   SocialNetwork,
 } from '../types'
-import { isEmptyValue, isLocalEnvironment, isTestEnvironment } from '../utils'
+import {
+  isEmptyValue,
+  isLocalEnvironment,
+  isMacOS,
+  isTestEnvironment,
+} from '../utils'
 import {
   replaceBlankLinesWithPercent,
   transformBasicsUrl,
@@ -881,7 +886,7 @@ describe(transformResumeEnvironment, () => {
 
       transformResumeEnvironment(resume)
 
-      if (isTestEnvironment() || isLocalEnvironment()) {
+      if (isTestEnvironment() || isLocalEnvironment() || isMacOS()) {
         expect(resume.layout.computed.environment).toEqual({
           mainFont: MainFont.Mac,
         })
