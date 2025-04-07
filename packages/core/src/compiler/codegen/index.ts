@@ -1,0 +1,1 @@
+export { LatexCodeGenerator } from './latex'

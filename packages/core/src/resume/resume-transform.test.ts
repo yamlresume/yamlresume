@@ -1,5 +1,7 @@
 import { cloneDeep } from 'lodash-es'
+import { expect, describe, it } from 'vitest'
 
+import { type DocNode, LatexCodeGenerator } from '../compiler'
 import {
   Country,
   Degree,
@@ -12,7 +14,6 @@ import {
   filledResume,
   localeLanguageOptions,
 } from '../data'
-import { type DocNode, nodeToTeX } from '../tiptap'
 import {
   Punctuation,
   ResumeTerms,
@@ -511,7 +512,7 @@ describe(transformSummary, () => {
 
     expect(resume.content.basics.computed?.summary).toEqual(
       replaceBlankLinesWithPercent(
-        nodeToTeX(JSON.parse(summary) as DocNode).trim()
+        new LatexCodeGenerator().generate(JSON.parse(summary) as DocNode).trim()
       )
     )
 
@@ -527,7 +528,9 @@ describe(transformSummary, () => {
       resume.content[section].forEach((_: any, index: number) => {
         expect(resume.content[section][index].computed?.summary).toEqual(
           replaceBlankLinesWithPercent(
-            nodeToTeX(JSON.parse(summary) as DocNode).trim()
+            new LatexCodeGenerator()
+              .generate(JSON.parse(summary) as DocNode)
+              .trim()
           )
         )
       })
@@ -887,11 +890,11 @@ describe(transformResumeEnvironment, () => {
       transformResumeEnvironment(resume)
 
       if (isTestEnvironment() || isLocalEnvironment() || isMacOS()) {
-        expect(resume.layout.computed.environment).toEqual({
+        expect(resume.layout.computed?.environment).toEqual({
           mainFont: MainFont.Mac,
         })
       } else {
-        expect(resume.layout.computed.environment).toEqual({
+        expect(resume.layout.computed?.environment).toEqual({
           mainFont: MainFont.Ubuntu,
         })
       }
@@ -910,11 +913,11 @@ describe(transformResumeEnvironment, () => {
       transformResumeEnvironment(resume)
 
       if (isTestEnvironment() || isLocalEnvironment()) {
-        expect(resume.layout.computed.environment).toEqual({
+        expect(resume.layout.computed?.environment).toEqual({
           mainFont: MainFont.Mac,
         })
       } else {
-        expect(resume.layout.computed.environment).toEqual({
+        expect(resume.layout.computed?.environment).toEqual({
           mainFont: MainFont.Ubuntu,
         })
       }

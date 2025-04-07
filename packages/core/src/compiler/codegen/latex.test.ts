@@ -1,19 +1,23 @@
-import { MarkType, NodeType, nodeToTeX } from './tiptap'
-import type {
+import { describe, expect, it } from 'vitest'
+
+import {
   BulletListNode,
   DocNode,
   ListItemNode,
   Mark,
+  MarkType,
+  NodeType,
   OrderedListNode,
   ParagraphNode,
   TextNode,
-} from './tiptap'
-import tipTapContentJSON from './tiptap-content.json'
+} from '../ast'
+import tipTapContentJSON from './fixtures/tiptap-content.json'
 // I didn't manage to find a way to get rid of the loading error here:
-// `Cannot find module './tiptap-content.tex' or its corresponding type declarations.`
-// thus we have to use @ts-expect-error
-// @ts-expect-error
-import tipTapContentTeX from './tiptap-content.tex?raw'
+// `Cannot find module './tiptap-content.tex' or its corresponding type
+// declarations.`, let's just ignore here
+// @ts-ignore
+import tipTapContentTeX from './fixtures/tiptap-content.tex?raw'
+import { nodeToTeX } from './latex'
 
 describe(nodeToTeX, () => {
   describe('bulletListNodeToTeX', () => {

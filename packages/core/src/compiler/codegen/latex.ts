@@ -1,94 +1,27 @@
-import { escapeLatex } from '../tex'
+import { escapeLatex } from '../../tex'
+import {
+  Node,
+  NodeType,
+  BulletListNode,
+  DocNode,
+  Fragment,
+  ListItemNode,
+  Mark,
+  MarkType,
+  OrderedListNode,
+  ParagraphNode,
+  TextNode,
+} from '../ast'
+import { CodeGenerator } from './interface'
 
-export enum MarkType {
-  bold = 'bold',
-  italic = 'italic',
-  underline = 'underline',
-  link = 'link',
-}
-
-export type MarkTypeOptions = keyof typeof MarkType
-
-export type BoldMark = {
-  type: Extract<MarkTypeOptions, 'bold'>
-}
-
-export type LinkMark = {
-  attrs?: {
-    href: string
-    class: string | null
-    target: string
-  }
-  type: Extract<MarkTypeOptions, 'link'>
-}
-
-export type ItalicMark = {
-  type: Extract<MarkTypeOptions, 'italic'>
-}
-
-export type UnderlineMark = {
-  type: Extract<MarkTypeOptions, 'underline'>
-}
-
-export type Mark = BoldMark | ItalicMark | LinkMark | UnderlineMark
-
-export type Fragment = Node[] | undefined
-
-export enum NodeType {
-  bulletList = 'bulletList',
-  doc = 'doc',
-  listItem = 'listItem',
-  orderedList = 'orderedList',
-  paragraph = 'paragraph',
-  text = 'text',
-}
-
-export type NodeTypeOptions = keyof typeof NodeType
-
-export type BulletListNode = {
-  content?: Fragment
-  type: Extract<NodeTypeOptions, 'bulletList'>
-  attrs?: {
-    start: 1
+/**
+ * Generate LaTeX code from a Node.
+ */
+export class LatexCodeGenerator implements CodeGenerator {
+  generate(node: Node): string {
+    return nodeToTeX(node)
   }
 }
-
-export type DocNode = {
-  content?: Fragment
-  type: Extract<NodeTypeOptions, 'doc'>
-}
-
-export type ListItemNode = {
-  content?: Fragment
-  type: Extract<NodeTypeOptions, 'listItem'>
-}
-
-export type OrderedListNode = {
-  content?: Fragment
-  type: Extract<NodeTypeOptions, 'orderedList'>
-  attrs?: {
-    start: 1
-  }
-}
-
-export type ParagraphNode = {
-  content?: Fragment
-  type: Extract<NodeTypeOptions, 'paragraph'>
-}
-
-export type TextNode = {
-  marks?: Mark[]
-  text: string
-  type: Extract<NodeTypeOptions, 'text'>
-}
-
-export type Node =
-  | BulletListNode
-  | DocNode
-  | ListItemNode
-  | OrderedListNode
-  | ParagraphNode
-  | TextNode
 
 export function nodeToTeX(node: Node): string {
   switch (node.type) {

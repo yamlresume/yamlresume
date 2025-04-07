@@ -1,0 +1,1 @@
+export { TiptapParser } from './tiptap'

@@ -1,8 +1,8 @@
 import { capitalize, cloneDeep, isArray, merge } from 'lodash-es'
 
+import { type DocNode, LatexCodeGenerator } from '../compiler'
 import { LocaleLanguage, defaultResumeLayout } from '../data'
 import { escapeLatex } from '../tex'
-import { type DocNode, nodeToTeX } from '../tiptap'
 import {
   ResumeTerms,
   getResumeTranslations,
@@ -562,13 +562,15 @@ export function transformSectionNames(resume: Resume): Resume {
  *
  * The summary field in various resume sections is a rich text field, whose
  * content is stored in tiptap's JSON format. To render it in LaTeX, we need to
- * convert the JSON to LaTeX using the `nodeToTeX` function.
+ * convert the JSON to LaTeX using the `LatexCodeGenerator`.
  */
 export function transformSummary(resume: Resume): Resume {
   resume.content.basics.computed = {
     ...resume.content.basics.computed,
     summary: replaceBlankLinesWithPercent(
-      nodeToTeX(JSON.parse(resume.content.basics.summary) as DocNode).trim()
+      new LatexCodeGenerator()
+        .generate(JSON.parse(resume.content.basics.summary) as DocNode)
+        .trim()
     ),
   }
 
@@ -583,7 +585,9 @@ export function transformSummary(resume: Resume): Resume {
   ]) {
     resume.content[section].forEach(
       (item: { summary: string }, index: number) => {
-        const summary = nodeToTeX(JSON.parse(item.summary) as DocNode)
+        const summary = new LatexCodeGenerator().generate(
+          JSON.parse(item.summary) as DocNode
+        )
         if (summary) {
           // The reason we need to replace blank lines with percent is that, the
           // argument of `\cventry` command in LaTeX's moderncv package do not
