@@ -1,4 +1,5 @@
 import rawEscapeLatex from 'escape-latex'
+import { describe, expect, it } from 'vitest'
 
 import { escapeLatex } from './escape-latex'
 

@@ -7,6 +7,7 @@ import {
   Degree,
   Language,
   LanguageFluency,
+  LocaleLanguage,
   SkillLevel,
   emptyParagraph,
   filledResume,
@@ -40,7 +41,7 @@ describe('ModerncvBase', () => {
   })
 
   describe('ModerncvStyle', () => {
-    it('should render moderncv style correctly', () => {
+    it('should render moderncv style', () => {
       const tests = [
         { style: ModerncvStyle.Banking, renderer: ModerncvBankingRenderer },
         { style: ModerncvStyle.Classic, renderer: ModerncvClassicRenderer },
@@ -59,10 +60,30 @@ describe('ModerncvBase', () => {
         expect(renderer.render()).toContain('\\end{document}')
       }
     })
+
+    it('should render moderncv override for CJK', () => {
+      const cjkResume = cloneDeep(resume)
+      cjkResume.layout.locale.language = LocaleLanguage.SimplifiedChinese
+
+      let renderer = new ModerncvBankingRenderer(cjkResume, summaryParser)
+
+      expect(renderer.render()).toContain(
+        '\\renewcommand*{\\cvitem}[3][.25em]{%'
+      )
+
+      renderer = new ModerncvClassicRenderer(cjkResume, summaryParser)
+      expect(renderer.render()).not.toContain(
+        '\\\\renewcommand*{\\\\cvitem}[3][.25em]{%'
+      )
+      renderer = new ModerncvCasualRenderer(cjkResume, summaryParser)
+      expect(renderer.render()).not.toContain(
+        '\\\\renewcommand*{\\\\cvitem}[3][.25em]{%'
+      )
+    })
   })
 
   describe('renderBasics', () => {
-    it('should render basic information correctly', () => {
+    it('should render basic information', () => {
       const name = 'John Doe'
       const headline = 'Software Engineer'
       const email = 'john@example.com'
@@ -148,7 +169,7 @@ describe('ModerncvBase', () => {
       expect(result).toBe('')
     })
 
-    it('should render one social profile correctly', () => {
+    it('should render one social profile', () => {
       const url = 'https://github.com/username'
       const username = 'username'
 
@@ -168,7 +189,7 @@ describe('ModerncvBase', () => {
       )
     })
 
-    it('should render multiple social profiles correctly', () => {
+    it('should render multiple social profiles', () => {
       const githubUrl = 'https://github.com/username'
       const twitterUrl = 'https://twitter.com/username'
       const lineUrl = 'https://line.me/username'
@@ -226,7 +247,7 @@ describe('ModerncvBase', () => {
       expect(result).toBe('')
     })
 
-    it('should render education section correctly', () => {
+    it('should render education section', () => {
       const institution = 'University'
       const area = 'Computer Science'
       const studyType = Degree.Bachelor
@@ -268,7 +289,7 @@ describe('ModerncvBase', () => {
       expect(result).toBe('')
     })
 
-    it('should render work section correctly', () => {
+    it('should render work section', () => {
       const name = 'Company'
       const position = 'Software Engineer'
       const startDate = 'Jan 1, 2020'
@@ -401,7 +422,7 @@ describe('ModerncvBase', () => {
       expect(result).toBe('')
     })
 
-    it('should render awards section correctly', () => {
+    it('should render awards section', () => {
       const title = 'Best Developer Award'
       const awarder = 'Tech Company'
       const date = 'Jan 1, 2023'
@@ -436,7 +457,7 @@ describe('ModerncvBase', () => {
       expect(result).toBe('')
     })
 
-    it('should render certificates section correctly', () => {
+    it('should render certificates section', () => {
       const name = 'AWS Certified Solutions Architect'
       const issuer = 'Amazon Web Services'
       const date = 'Jan 1, 2023'
@@ -472,7 +493,7 @@ describe('ModerncvBase', () => {
       expect(result).toBe('')
     })
 
-    it('should render publications section correctly', () => {
+    it('should render publications section', () => {
       const name = 'Research Paper Title'
       const publisher = 'Academic Journal'
       const releaseDate = 'Jan 1, 2023'
@@ -510,7 +531,7 @@ describe('ModerncvBase', () => {
       expect(result).toBe('')
     })
 
-    it('should render references section correctly', () => {
+    it('should render references section', () => {
       const name = 'John Smith'
       const email = 'john@example.com'
       const phone = '+1234567890'
@@ -551,7 +572,7 @@ describe('ModerncvBase', () => {
       expect(result).toBe('')
     })
 
-    it('should render projects section correctly', () => {
+    it('should render projects section', () => {
       const name = 'Project Name'
       const description = 'Project Description'
       const startDate = 'Jan 1, 2023'
@@ -594,7 +615,7 @@ describe('ModerncvBase', () => {
       expect(result).toBe('')
     })
 
-    it('should render interests section correctly', () => {
+    it('should render interests section', () => {
       const name = 'Programming'
       const keywords = ['Open Source', 'Web Development']
 
@@ -623,7 +644,7 @@ describe('ModerncvBase', () => {
       expect(result).toBe('')
     })
 
-    it('should render volunteer section correctly', () => {
+    it('should render volunteer section', () => {
       const organization = 'Code for Good'
       const position = 'Technical Lead'
       const startDate = '2023-01'

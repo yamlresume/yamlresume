@@ -1,5 +1,5 @@
 import { cloneDeep } from 'lodash-es'
-import { expect, describe, it } from 'vitest'
+import { expect, describe, it, vi } from 'vitest'
 
 import { type DocNode, LatexCodeGenerator, TiptapParser } from '../compiler'
 import {
@@ -27,12 +27,7 @@ import {
   ResumeLayout,
   SocialNetwork,
 } from '../types'
-import {
-  isEmptyValue,
-  isLocalEnvironment,
-  isMacOS,
-  isTestEnvironment,
-} from '../utils'
+import { isEmptyValue, isMacOS, isTestEnvironment } from '../utils'
 import {
   replaceBlankLinesWithPercent,
   transformBasicsUrl,
@@ -338,10 +333,26 @@ describe(transformLanguage, () => {
           return
         }
 
-        expect(item.computed.language).toBe(languages[item.language])
-        expect(item.computed.fluency).toBe(languageFluencies[item.fluency])
+        expect(item.computed?.language).toBe(languages[item.language!])
+        expect(item.computed?.fluency).toBe(languageFluencies[item.fluency!])
       })
     })
+  })
+
+  it('should do nothing when either language or fluency is empty', () => {
+    const resume = cloneDeep(defaultResume)
+
+    resume.content.languages = [
+      {
+        language: undefined,
+        fluency: undefined,
+      },
+    ]
+
+    transformLanguage(resume)
+
+    expect(resume.content.languages[0].computed?.language).toBeUndefined()
+    expect(resume.content.languages[0].computed?.fluency).toBeUndefined()
   })
 })
 
@@ -756,6 +767,21 @@ describe(transformResumeValues, () => {
     )
     expect(resume.content.certificates[0].issuer).toEqual('AWS\\%Amazon')
   })
+
+  it('should ignore computed values', () => {
+    const resume = cloneDeep(filledResume)
+    const urls = 'url1 {} url2 {}'
+
+    resume.content.computed = {
+      urls,
+    }
+
+    transformResumeValues(resume)
+
+    expect(resume.content.computed).toEqual({
+      urls,
+    })
+  })
 })
 
 describe(transformResumeContent, () => {
@@ -849,6 +875,17 @@ describe(transformResumeLayoutTypography, () => {
       )
     }
   })
+
+  it('should do nothing when typography.fontSpec.numbers is defined', () => {
+    const resume = cloneDeep(defaultResume)
+    resume.layout.typography.fontSpec.numbers = FontSpecNumbersStyle.OldStyle
+
+    transformResumeLayoutTypography(resume)
+
+    expect(resume.layout.typography.fontSpec.numbers).toEqual(
+      FontSpecNumbersStyle.OldStyle
+    )
+  })
 })
 
 describe(transformResumeLayout, () => {
@@ -892,7 +929,7 @@ describe(transformResumeEnvironment, () => {
 
       transformResumeEnvironment(resume)
 
-      if (isTestEnvironment() || isLocalEnvironment() || isMacOS()) {
+      if (isTestEnvironment() || isMacOS()) {
         expect(resume.layout.computed?.environment).toEqual({
           mainFont: MainFont.Mac,
         })
@@ -915,7 +952,7 @@ describe(transformResumeEnvironment, () => {
       resume.layout.locale.language = language
       transformResumeEnvironment(resume)
 
-      if (isTestEnvironment() || isLocalEnvironment()) {
+      if (isTestEnvironment() || isMacOS()) {
         expect(resume.layout.computed?.environment).toEqual({
           mainFont: MainFont.Mac,
         })
@@ -925,5 +962,41 @@ describe(transformResumeEnvironment, () => {
         })
       }
     }
+  })
+
+  it('should set mainFont to Mac when running on Mac', () => {
+    vi.spyOn(process, 'env', 'get').mockImplementation(() => ({
+      NODE_ENV: 'test',
+      JEST_WORKER_ID: undefined,
+      VITEST: undefined,
+    }))
+    vi.spyOn(process, 'platform', 'get').mockImplementation(() => 'darwin')
+
+    const resume = cloneDeep(defaultResume)
+    resume.layout.computed = {
+      environment: {},
+    }
+
+    transformResumeEnvironment(resume)
+
+    expect(resume.layout.computed?.environment?.mainFont).toBe(MainFont.Mac)
+
+    vi.resetAllMocks()
+  })
+
+  it('should set mainFont to Ubuntu when running on Linux', () => {
+    vi.spyOn(process, 'env', 'get').mockImplementation(() => ({}))
+    vi.spyOn(process, 'platform', 'get').mockImplementation(() => 'linux')
+
+    const resume = cloneDeep(defaultResume)
+    resume.layout.computed = {
+      environment: {},
+    }
+
+    transformResumeEnvironment(resume)
+
+    expect(resume.layout.computed?.environment?.mainFont).toBe(MainFont.Ubuntu)
+
+    vi.resetAllMocks()
   })
 })

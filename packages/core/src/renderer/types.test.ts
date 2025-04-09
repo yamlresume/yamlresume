@@ -1,3 +1,5 @@
+import { describe, expect, it, beforeEach } from 'vitest'
+
 import { Resume } from '../types'
 import { Renderer } from './types'
 

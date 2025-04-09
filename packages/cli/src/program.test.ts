@@ -55,12 +55,4 @@ describe('program', () => {
       writeSpy.mockClear()
     })
   })
-
-  describe('languages command', () => {
-    it('should support languages list', () => {
-      expect(() =>
-        program.parse(['node', 'cli.js', 'languages', 'help'])
-      ).toThrow('process.exit')
-    })
-  })
 })

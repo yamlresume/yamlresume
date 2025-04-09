@@ -1,3 +1,5 @@
+import { describe, expect, it } from 'vitest'
+
 import { base64toBlob } from './blob'
 
 describe(base64toBlob, () => {

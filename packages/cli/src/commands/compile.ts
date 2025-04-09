@@ -132,7 +132,7 @@ export function compileResume(source: string) {
 
 export const compileCommand = new Command()
   .name('compile')
-  .description('compile a resume to LaTeX or PDF')
+  .description('compile a resume to LaTeX and PDF')
   .argument('<source>', 'the source resume file')
   .action((source: string) => {
     compileResume(source)

@@ -1,4 +1,6 @@
-import { isLocalEnvironment, isTestEnvironment } from './env'
+import { afterAll, beforeEach, describe, expect, it, vi } from 'vitest'
+
+import { isTestEnvironment, isMacOS } from './env'
 
 describe(isTestEnvironment, () => {
   const OLD_ENV = process.env
@@ -28,26 +30,24 @@ describe(isTestEnvironment, () => {
   })
 })
 
-describe(isLocalEnvironment, () => {
-  const OLD_ENV = process.env
-
-  beforeEach(() => {
-    vi.resetModules()
-    process.env = { ...OLD_ENV }
-    delete process.env.LOGTO_ENDPOINT
-  })
-
+describe(isMacOS, () => {
   afterAll(() => {
-    process.env = OLD_ENV
+    vi.resetAllMocks()
   })
 
-  it.each([
-    { env: { LOGTO_ENDPOINT: 'http://localhost:3000' }, expected: true },
-    { env: { LOGTO_ENDPOINT: 'https://localhost:3001/api' }, expected: true },
-    { env: { LOGTO_ENDPOINT: 'https://api.ppresume.com' }, expected: false },
-    { env: {}, expected: false },
-  ])('should return $expected when env is $env', ({ env, expected }) => {
-    process.env = { ...process.env, ...env }
-    expect(isLocalEnvironment()).toBe(expected)
+  it('should return true if the platform is macOS', () => {
+    const platformSpy = vi
+      .spyOn(process, 'platform' as any, 'get')
+      .mockReturnValue('darwin')
+    expect(isMacOS()).toBe(true)
+    platformSpy.mockRestore()
+  })
+
+  it('should return false if the platform is not macOS', () => {
+    const platformSpy = vi
+      .spyOn(process, 'platform' as any, 'get')
+      .mockReturnValue('linux')
+    expect(isMacOS()).toBe(false)
+    platformSpy.mockRestore()
   })
 })

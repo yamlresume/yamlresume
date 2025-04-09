@@ -1,6 +1,6 @@
 import { capitalize, cloneDeep, isArray, merge } from 'lodash-es'
 
-import { type DocNode, LatexCodeGenerator } from '../compiler'
+import { LatexCodeGenerator } from '../compiler'
 import { Parser } from '../compiler/parser/interface'
 import { LocaleLanguage, defaultResumeLayout } from '../data'
 import { escapeLatex } from '../tex'
@@ -13,7 +13,6 @@ import { FontSpecNumbersStyle, MainFont, ProfileItem, Resume } from '../types'
 import {
   getDateRange,
   isEmptyValue,
-  isLocalEnvironment,
   isMacOS,
   isTestEnvironment,
   localizeDate,
@@ -706,9 +705,12 @@ export function transformResumeLayoutTypography(resume: Resume): Resume {
  */
 export function transformResumeLayout(resume: Resume): Resume {
   transformResumeLayoutTypography(resume)
+
   return {
     ...resume,
-    layout: merge(defaultResumeLayout, resume.layout),
+    // note that we have to cloneDeep the defaultResumeLayout, otherwise the
+    // defaultResumeLayout will be mutated
+    layout: merge(cloneDeep(defaultResumeLayout), resume.layout),
   }
 }
 
@@ -723,9 +725,7 @@ export function transformResumeLayout(resume: Resume): Resume {
 export function transformResumeEnvironment(resume: Resume): Resume {
   // Use Mac font for test/local development, Ubuntu font for production
   const mainFont =
-    isTestEnvironment() || isLocalEnvironment() || isMacOS
-      ? MainFont.Mac
-      : MainFont.Ubuntu
+    isTestEnvironment() || isMacOS() ? MainFont.Mac : MainFont.Ubuntu
 
   resume.layout.computed = {
     ...resume.layout.computed,

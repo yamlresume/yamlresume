@@ -1,7 +1,16 @@
 import child_process from 'child_process'
+import { Command, Argument } from 'commander'
 import fs from 'fs'
 import path from 'path'
-import { afterAll, afterEach, describe, expect, it, vi } from 'vitest'
+import {
+  afterAll,
+  afterEach,
+  beforeEach,
+  describe,
+  expect,
+  it,
+  vi,
+} from 'vitest'
 import which from 'which'
 import yaml from 'yaml'
 
@@ -12,6 +21,8 @@ import {
   inferLaTeXCommand,
   generatePDF,
   generateTeX,
+  compileResume,
+  compileCommand,
 } from './compile'
 
 function getFixture(source: string) {
@@ -99,6 +110,18 @@ describe(inferLaTeXEnvironment, () => {
 
     expect(inferLaTeXEnvironment()).toBe('tectonic')
     expect(whichSpy).toHaveBeenCalledWith('tectonic')
+  })
+
+  it('should throw an error if neither xelatex nor tectonic is installed', () => {
+    const whichSpy = vi.spyOn(which, 'sync' as any).mockImplementation(() => {
+      throw new Error('command not found')
+    })
+
+    expect(() => inferLaTeXEnvironment()).toThrow(
+      'neither xelatex nor tectonic is installed'
+    )
+
+    expect(whichSpy).toHaveBeenCalledTimes(2)
   })
 })
 
@@ -210,5 +233,78 @@ describe(generatePDF, () => {
 
     expect(execSync).toBeCalledTimes(1)
     expect(execSync).toHaveBeenCalledWith(command)
+  })
+})
+
+describe(compileResume, () => {
+  afterEach(() => {
+    vi.resetAllMocks()
+  })
+
+  it('should generate a pdf file', () => {
+    const source = getFixture('software-engineer.yml')
+
+    const execSync = vi
+      .spyOn(child_process, 'execSync' as any)
+      .mockImplementation(() => {})
+
+    compileResume(source)
+
+    expect(execSync).toBeCalledTimes(1)
+    expect(execSync).toHaveBeenCalledWith(inferLaTeXCommand(source))
+  })
+})
+
+describe('compileCommand', () => {
+  let program: Command
+  let execSpy: ReturnType<typeof vi.spyOn>
+  let whichSpy: ReturnType<typeof vi.spyOn>
+
+  beforeEach(() => {
+    program = new Command()
+    execSpy = vi
+      .spyOn(child_process, 'execSync' as any)
+      .mockImplementation(() => true)
+    whichSpy = vi
+      .spyOn(which, 'sync' as any)
+      .mockReturnValue('/usr/bin/xelatex')
+  })
+
+  afterEach(() => {
+    vi.restoreAllMocks()
+  })
+
+  it('should have correct name and description', () => {
+    expect(compileCommand.name()).toBe('compile')
+    expect(compileCommand.description()).toBe(
+      'compile a resume to LaTeX and PDF'
+    )
+  })
+
+  it('should require a source argument', () => {
+    const args = compileCommand.registeredArguments
+    expect(args).toHaveLength(1)
+    expect(args[0].required).toBe(true)
+    expect(args[0].description).toBe('the source resume file')
+  })
+
+  it('should compile resume to PDF', () => {
+    const source = getFixture('software-engineer.yml')
+
+    program.addCommand(compileCommand)
+    program.parse(['node', 'cli.js', 'compile', source])
+
+    expect(whichSpy).toHaveBeenCalledWith('xelatex')
+    expect(execSpy).toHaveBeenCalledWith(inferLaTeXCommand(source))
+  })
+
+  it('should handle help flag', () => {
+    vi.spyOn(process.stdout, 'write').mockImplementation(() => true)
+
+    program.addCommand(compileCommand)
+
+    expect(() =>
+      program.parse(['node', 'cli.js', 'compile', '--help'])
+    ).toThrow('process.exit')
   })
 })

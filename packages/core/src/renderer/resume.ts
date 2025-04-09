@@ -1,4 +1,4 @@
-import _ from 'lodash-es'
+import { get } from 'lodash-es'
 
 import { Parser } from '../compiler/parser/interface'
 import { Templates } from '../data'
@@ -35,7 +35,7 @@ export function getResumeRenderer(
     return new ModerncvBankingRenderer(resume as Resume, summaryParser)
   }
 
-  return new (_.get(RESUME_RENDERER_MAP, template.id, ModerncvBankingRenderer))(
+  return new (get(RESUME_RENDERER_MAP, template.id, ModerncvBankingRenderer))(
     resume as Resume,
     summaryParser
   )

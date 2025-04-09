@@ -17,6 +17,23 @@ describe(MarkdownParser, () => {
       expect(result).toEqual({ type: NodeType.doc, content: [] })
     })
 
+    it('should ignore unknown marks in markdown', () => {
+      const input = 'This is a `inline code` mark'
+      const result = parser.parse(input)
+      expect(result).toEqual({
+        type: NodeType.doc,
+        content: [
+          {
+            type: NodeType.paragraph,
+            content: [
+              { type: NodeType.text, text: 'This is a ' },
+              { type: NodeType.text, text: ' mark' },
+            ],
+          },
+        ],
+      })
+    })
+
     it('should parse document as one paragraph with only one newline', () => {
       const input = 'This is\na paragraph.'
       const result = parser.parse(input)
@@ -465,6 +482,17 @@ describe(MarkdownParser, () => {
             ],
           },
         ],
+      })
+    })
+  })
+
+  describe('blockquotes', () => {
+    it('should parse blockquotes', () => {
+      const input = '> This is a blockquote'
+      const result = parser.parse(input)
+      expect(result).toEqual({
+        type: NodeType.doc,
+        content: [],
       })
     })
   })

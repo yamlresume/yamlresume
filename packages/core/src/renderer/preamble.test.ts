@@ -1,3 +1,5 @@
+import { describe, expect, it } from 'vitest'
+
 import { LocaleLanguage, defaultResume } from '../data'
 import { FontSpecNumbersStyle, MainFont, Resume } from '../types'
 import {

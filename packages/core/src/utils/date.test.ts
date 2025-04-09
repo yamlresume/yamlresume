@@ -1,5 +1,14 @@
+import { describe, expect, it, vi } from 'vitest'
+
 import { LocaleLanguage } from '../data'
-import { getDateRange, localizeDate, parseDate } from './date'
+import {
+  getDateRange,
+  localizeDate,
+  parseDate,
+  nowInUTCSeconds,
+  epochSecondsToLocaleDateString,
+  milliSecondsToSeconds,
+} from './date'
 
 describe(parseDate, () => {
   it('should return null for invalid date string', () => {
@@ -13,8 +22,18 @@ describe(parseDate, () => {
       const parsedDate = parseDate(dateStr)
 
       expect(parsedDate).toBeInstanceOf(Date)
-      expect(parsedDate.getFullYear()).toBe(2020)
+      expect(parsedDate?.getFullYear()).toBe(2020)
     }
+  })
+
+  it('should handle exception if Date constructor throws an error', () => {
+    vi.spyOn(global, 'Date').mockImplementation((dateStr) => {
+      throw new Error('Invalid date format')
+    })
+
+    expect(parseDate('2020-01-01')).toBeNull()
+
+    vi.restoreAllMocks()
   })
 })
 
@@ -165,5 +184,23 @@ describe(getDateRange, () => {
     for (const { startDate, endDate, language, expected } of tests) {
       expect(getDateRange(startDate, endDate, language)).toEqual(expected)
     }
+  })
+})
+
+describe(nowInUTCSeconds, () => {
+  it('should return the current time in UTC seconds', () => {
+    expect(nowInUTCSeconds()).toBe(Math.floor(Date.now() / 1000))
+  })
+})
+
+describe(epochSecondsToLocaleDateString, () => {
+  it('should return the date in the locale format', () => {
+    expect(epochSecondsToLocaleDateString(1617235200)).toBe('Apr 1, 2021')
+  })
+})
+
+describe(milliSecondsToSeconds, () => {
+  it('should return the milliseconds in seconds', () => {
+    expect(milliSecondsToSeconds(1000)).toBe(1)
   })
 })

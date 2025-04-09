@@ -104,10 +104,9 @@ function transform(ast: Root | RootContent, marks: Mark[] = []) {
           .flatMap((child) => child)
           .filter(Boolean),
       }
-
-    default:
-      return null
   }
+
+  return null
 }
 
 /**
