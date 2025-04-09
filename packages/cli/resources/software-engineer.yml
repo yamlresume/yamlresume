@@ -4,18 +4,12 @@ content:
     - url: https://ppresume.com
       name: PPResume
       endDate: ''
-      summary:
-        '{"type":"doc","content":[{"type":"bulletList","content":[{"type":"listItem","content":[{"type":"paragraph","content":[{"type":"text","text":"Developed
-        and implemented efficient and scalable code, ensuring high-quality and maintainable
-        web applications"}]}]},{"type":"listItem","content":[{"type":"paragraph","content":[{"type":"text","text":"Collaborated
-        with cross-functional teams to gather project requirements and translate them
-        into technical solutions"}]}]},{"type":"listItem","content":[{"type":"paragraph","content":[{"type":"text","text":"Conducted
-        thorough testing and debugging to identify and resolve any issues or bugs in
-        the software"}]}]},{"type":"listItem","content":[{"type":"paragraph","content":[{"type":"text","text":"Actively
-        participated in code reviews, providing valuable feedback to improve code quality
-        and adherence to best practices"}]}]},{"type":"listItem","content":[{"type":"paragraph","content":[{"type":"text","text":"Mentored
-        and guided junior developers, fostering a collaborative and growth-oriented
-        team environment"}]}]}]}]}'
+      summary: |
+        - Developed and implemented efficient and scalable code, ensuring high-quality and maintainable web applications
+        - Collaborated with cross-functional teams to gather project requirements and translate them into technical solutions
+        - Conducted thorough testing and debugging to identify and resolve any issues or bugs in the software
+        - Actively participated in code reviews, providing valuable feedback to improve code quality and adherence to best practices
+        - Mentored and guided junior developers, fostering a collaborative and growth-oriented team environment
       keywords:
         - Scalibility
         - Growth
@@ -26,13 +20,11 @@ content:
     - url: https://ppresume.com
       name: PPResume
       endDate: Dec 1, 2022
-      summary:
-        '{"type":"doc","content":[{"type":"bulletList","content":[{"type":"listItem","content":[{"type":"paragraph","content":[{"type":"text","text":"Created
-        reusable React components to ensure code efficiency and maintainability"}]}]},{"type":"listItem","content":[{"type":"paragraph","content":[{"type":"text","text":"Integrated
-        with RESTful APIs to fetch and display dynamic data on the frontend"}]}]},{"type":"listItem","content":[{"type":"paragraph","content":[{"type":"text","text":"Implemented
-        client-side routing using React Router for smooth navigation between pages"}]}]},{"type":"listItem","content":[{"type":"paragraph","content":[{"type":"text","text":"Actively
-        participated in Agile development methodologies, attending daily stand-up meetings
-        and sprint planning sessions"}]}]}]}]}'
+      summary: |
+        - Created reusable React components to ensure code efficiency and maintainability
+        - Integrated with RESTful APIs to fetch and display dynamic data on the frontend
+        - Implemented client-side routing using React Router for smooth navigation between pages
+        - Actively participated in Agile development methodologies, attending daily stand-up meetings and sprint planning sessions
       keywords:
         - RESTful
         - React
@@ -43,10 +35,8 @@ content:
     - date: Oct 2016
       title: Dean's List
       awarder: University of Southern California
-      summary:
-        '{"type":"doc","content":[{"type":"paragraph","content":[{"type":"text","text":"Awarded
-        to students who achieve a high academic standing by maintaining a specified
-        grade point average (GPA) during a semester."}]}]}'
+      summary: |
+        Awarded to students who achieve a high academic standing by maintaining a specified grade point average (GPA) during a semester.
   basics:
     url: https://ppresume.com/andy.dufresne
     name: Andy Dufresne
@@ -54,15 +44,11 @@ content:
     image: ''
     label: Programmer
     phone: '(213) 555-9876'
-    summary:
-      '{"type":"doc","content":[{"type":"bulletList","content":[{"type":"listItem","content":[{"type":"paragraph","content":[{"type":"text","text":"Computer
-      Science major with strong foundation in data structures, algorithms, and software
-      development"}]}]},{"type":"listItem","content":[{"type":"paragraph","content":[{"type":"text","text":"Pixel
-      perfect full stack web developer, specialised in creating high-quality, visually
-      appealing websites"}]}]},{"type":"listItem","content":[{"type":"paragraph","content":[{"type":"text","text":"Experiened
-      in databases (SQL, NoSQL), familiar with server-side technologies (Node.js,
-      Express, etc.)"}]}]},{"type":"listItem","content":[{"type":"paragraph","content":[{"type":"text","text":"Team
-      player, with detail-oriented mindset and a keen eye for design and user experiences"}]}]}]}]}'
+    summary: |
+      - Computer Science major with strong foundation in data structures, algorithms, and software development
+      - Pixel perfect full stack web developer, specialised in creating high-quality, visually appealing websites
+      - Experiened in databases (SQL, NoSQL), familiar with server-side technologies (Node.js, Express, etc.)
+      - Team player, with detail-oriented mindset and a keen eye for design and user experiences
     headline: Headed for the Pacific
   skills:
     - name: Web Development
@@ -108,14 +94,11 @@ content:
         - Team Lead
       entity: Entity
       endDate: Dec 2016
-      summary:
-        '{"type":"doc","content":[{"type":"paragraph","content":[{"type":"text","text":"EduWeb
-        is an innovative educational platform:"}]},{"type":"bulletList","content":[{"type":"listItem","content":[{"type":"paragraph","content":[{"type":"text","text":"Designed
-        to enhance online learning experiences"}]}]},{"type":"listItem","content":[{"type":"paragraph","content":[{"type":"text","text":"Facilitates
-        students'' engagement and collaboration through interactive features and user-friendly
-        interface"}]}]},{"type":"listItem","content":[{"type":"paragraph","content":[{"type":"text","text":"Offers
-        a wide range of courses across various subjects"}]}]},{"type":"listItem","content":[{"type":"paragraph","content":[{"type":"text","text":"Aims
-        to improve the way students learn through the power of the web"}]}]}]}]}'
+      summary: |
+        - Designed to enhance online learning experiences
+        - Facilitates students' engagement and collaboration through interactive features and user-friendly interface
+        - Offers a wide range of courses across various subjects
+        - Aims to improve the way students learn through the power of the web
       keywords:
         - Education
         - Online Learning
@@ -136,11 +119,11 @@ content:
         - Computer Networking
         - Introduction to the Theory of Computing
       endDate: Jul 1, 2020
-      summary:
-        '{"type":"doc","content":[{"type":"bulletList","content":[{"type":"listItem","content":[{"type":"paragraph","content":[{"type":"text","text":"Developed
-        proficiency in programming languages such as Java, C++, and Python"}]}]},{"type":"listItem","content":[{"type":"paragraph","content":[{"type":"text","text":"Gained
-        hands-on experience in software development through various projects and assignments"}]}]},{"type":"listItem","content":[{"type":"paragraph","content":[{"type":"text","text":"Strong
-        communication and teamwork skills acquired through group projects and presentations"}]}]}]}]}'
+      summary: |
+        - Developed proficiency in programming languages such as Java, C++, and Python
+        - Gained hands-on experience in software development through various projects and assignments
+        - Strong communication and teamwork skills acquired through group projects and presentations
+        **Courses**: Discrete Methods in Computer Science, Programming Language Concepts, Data Structures and Object-Oriented Design, Operating Systems, Computer Architecture, Database Systems, Computer Networking, Introduction to the Theory of Computing
       startDate: Sep 1, 2016
       studyType: Bachelor
       institution: University of Southern California
@@ -163,13 +146,11 @@ content:
   volunteer:
     - url: https://www.usccsesociety.org/
       endDate: Jul 2023
-      summary:
-        '{"type":"doc","content":[{"type":"bulletList","content":[{"type":"listItem","content":[{"type":"paragraph","content":[{"type":"text","text":"Volunteered
-        as a Tech Mentor at USC Computer Science and Engineering Society"}]}]},{"type":"listItem","content":[{"type":"paragraph","content":[{"type":"text","text":"Provided
-        guidance and assistance to fellow students in their technical projects and coursework"}]}]},{"type":"listItem","content":[{"type":"paragraph","content":[{"type":"text","text":"Assisted
-        in organizing workshops, coding competitions, and networking events for the
-        society members"}]}]},{"type":"listItem","content":[{"type":"paragraph","content":[{"type":"text","text":"Contributed
-        to fostering a collaborative and supportive environment within the student community"}]}]}]}]}'
+      summary: |
+        - Volunteered as a Tech Mentor at USC Computer Science and Engineering Society
+        - Provided guidance and assistance to fellow students in their technical projects and coursework
+        - Assisted in organizing workshops, coding competitions, and networking events for the society members
+        - Contributed to fostering a collaborative and supportive environment within the student community
       position: Tech Mentor
       startDate: Sep 2015
       organization: USC Computer Science and Engineering Society
@@ -177,11 +158,8 @@ content:
     - name: Dr. Amanda Reynolds
       email: amanda.reynolds@usc.edu
       phone: '(555) 123-4567'
-      summary:
-        '{"type":"doc","content":[{"type":"paragraph","content":[{"type":"text","text":"Andy
-        Dufresne shows exceptional problem-solving skills and a solid understanding
-        of programming concepts, he would bring immense value to any team or organization
-        he becomes a part of."}]}]}'
+      summary: |
+        Andy Dufresne shows exceptional problem-solving skills and a solid understanding of programming concepts, he would bring immense value to any team or organization he becomes a part of.
       relationship: Computer Science Professor
   certificates:
     - url: https://aws.amazon.com/certification/
@@ -191,12 +169,10 @@ content:
   publications:
     - url: https://dl.acm.org/journal/tiis
       name: Enhancing Human-Computer Interaction through Augmented Reality
-      summary:
-        '{"type":"doc","content":[{"type":"bulletList","content":[{"type":"listItem","content":[{"type":"paragraph","content":[{"type":"text","text":"Explores
-        the potential of augmented reality (AR) in improving interaction between humans
-        and computers"}]}]},{"type":"listItem","content":[{"type":"paragraph","content":[{"type":"text","text":"Highlights
-        benefits of AR in various areas such as gaming, education, healthcare, and design"}]}]},{"type":"listItem","content":[{"type":"paragraph","content":[{"type":"text","text":"Discusses
-        challenges and future directions of AR technology in enhancing user experience"}]}]}]}]}'
+      summary: |
+        - Explores the potential of augmented reality (AR) in improving interaction between humans and computers
+        - Highlights benefits of AR in various areas such as gaming, education, healthcare, and design
+        - Discusses challenges and future directions of AR technology in enhancing user experience
       publisher: ACM Transactions on Interactive Intelligent Systems
       releaseDate: Dec 2017
 layout:

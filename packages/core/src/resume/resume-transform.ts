@@ -1,6 +1,7 @@
 import { capitalize, cloneDeep, isArray, merge } from 'lodash-es'
 
 import { type DocNode, LatexCodeGenerator } from '../compiler'
+import { Parser } from '../compiler/parser/interface'
 import { LocaleLanguage, defaultResumeLayout } from '../data'
 import { escapeLatex } from '../tex'
 import {
@@ -561,15 +562,27 @@ export function transformSectionNames(resume: Resume): Resume {
  * Convert `summary` field from tiptap's JSON format to LaTeX.
  *
  * The summary field in various resume sections is a rich text field, whose
- * content is stored in tiptap's JSON format. To render it in LaTeX, we need to
- * convert the JSON to LaTeX using the `LatexCodeGenerator`.
+ * content is stored in two formats:
+ *
+ * 1. tiptap's JSON format
+ * 2. a limited markdown format
+ *
+ * In order to generate LaTeX code, we need to specify a parser explicitly that
+ * can parse either formats to an AST and then convert the AST to LaTeX code.
+ *
+ * @param resume - the resume object
+ * @param summaryParser - the parser used to parse the summary field
+ * @returns a transformed resume object
  */
-export function transformSummary(resume: Resume): Resume {
+export function transformSummary(
+  resume: Resume,
+  summaryParser: Parser
+): Resume {
   resume.content.basics.computed = {
     ...resume.content.basics.computed,
     summary: replaceBlankLinesWithPercent(
       new LatexCodeGenerator()
-        .generate(JSON.parse(resume.content.basics.summary) as DocNode)
+        .generate(summaryParser.parse(resume.content.basics.summary))
         .trim()
     ),
   }
@@ -586,7 +599,7 @@ export function transformSummary(resume: Resume): Resume {
     resume.content[section].forEach(
       (item: { summary: string }, index: number) => {
         const summary = new LatexCodeGenerator().generate(
-          JSON.parse(item.summary) as DocNode
+          summaryParser.parse(item.summary)
         )
         if (summary) {
           // The reason we need to replace blank lines with percent is that, the
@@ -617,7 +630,10 @@ export function transformSummary(resume: Resume): Resume {
  * The transformations are applied in a specific order to ensure the data is
  * correctly processed for rendering.
  */
-export function transformResumeContent(resume: Resume): Resume {
+export function transformResumeContent(
+  resume: Resume,
+  summaryParser: Parser
+): Resume {
   return [
     // The order of the following functions matters, `transformResumeValues`
     // should be called first to process all leaf values properly with LaTeX
@@ -634,9 +650,23 @@ export function transformResumeContent(resume: Resume): Resume {
     transformSocialLinks,
     transformSummary,
     transformSectionNames,
-  ].reduce((resume, tranformFunc) => tranformFunc(resume), resume)
+  ].reduce(
+    (resume, tranformFunc) => tranformFunc(resume, summaryParser),
+    resume
+  )
 }
 
+/**
+ * Transform the resume layout typography.
+ *
+ * Under the hood, it set different fontspec styles based on the language of
+ * the resume. For example, old style numbers is considered as a bad practice
+ * for CJK resumes, therefore we need to disable old style numbers for CJK
+ * resumes.
+ *
+ * @param resume - the original resume object
+ * @returns a transformed resume object
+ */
 export function transformResumeLayoutTypography(resume: Resume): Resume {
   if (
     resume.layout.typography.fontSpec?.numbers !== undefined &&
@@ -682,6 +712,14 @@ export function transformResumeLayout(resume: Resume): Resume {
   }
 }
 
+/**
+ * Transform the resume layout based on the host environment
+ *
+ * Under the hood, it set different main font based on the host environment.
+ *
+ * @param resume - the original resume object
+ * @returns a transformed resume object
+ */
 export function transformResumeEnvironment(resume: Resume): Resume {
   // Use Mac font for test/local development, Ubuntu font for production
   const mainFont =
@@ -700,10 +738,20 @@ export function transformResumeEnvironment(resume: Resume): Resume {
   return resume
 }
 
-export function transformResume(resume: Resume): Resume {
+/**
+ * Transform the resume object by applying a series of transformations.
+ *
+ * @param resume - the original resume object
+ * @param summaryParser - the summary parser used to parse the summary field
+ * @returns a transformed resume object
+ */
+export function transformResume(resume: Resume, summaryParser: Parser): Resume {
   return [
     transformResumeContent,
     transformResumeLayout,
     transformResumeEnvironment,
-  ].reduce((resume, tranformFunc) => tranformFunc(resume), cloneDeep(resume))
+  ].reduce(
+    (resume, tranformFunc) => tranformFunc(resume, summaryParser),
+    cloneDeep(resume)
+  )
 }

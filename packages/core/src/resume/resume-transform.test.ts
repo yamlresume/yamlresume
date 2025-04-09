@@ -1,7 +1,7 @@
 import { cloneDeep } from 'lodash-es'
 import { expect, describe, it } from 'vitest'
 
-import { type DocNode, LatexCodeGenerator } from '../compiler'
+import { type DocNode, LatexCodeGenerator, TiptapParser } from '../compiler'
 import {
   Country,
   Degree,
@@ -508,11 +508,13 @@ describe(transformSummary, () => {
       })
     }
 
-    transformSummary(resume)
+    const summaryParser = new TiptapParser()
+
+    transformSummary(resume, summaryParser)
 
     expect(resume.content.basics.computed?.summary).toEqual(
       replaceBlankLinesWithPercent(
-        new LatexCodeGenerator().generate(JSON.parse(summary) as DocNode).trim()
+        new LatexCodeGenerator().generate(summaryParser.parse(summary)).trim()
       )
     )
 
@@ -760,7 +762,8 @@ describe(transformResumeContent, () => {
   it('should transform resume.content by calling transform functions', () => {
     const resume = cloneDeep(filledResume)
 
-    const transformedResume = transformResumeContent(resume)
+    const summaryParser = new TiptapParser()
+    const transformedResume = transformResumeContent(resume, summaryParser)
 
     expect(transformedResume.content).toHaveProperty('computed')
 

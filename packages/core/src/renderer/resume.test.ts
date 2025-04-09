@@ -1,3 +1,6 @@
+import { expect, describe, it } from 'vitest'
+
+import { TiptapParser } from '../compiler'
 import { Templates, defaultResume } from '../data'
 import { Resume } from '../types'
 import {
@@ -37,7 +40,8 @@ describe(getResumeRenderer, () => {
         },
       }
 
-      const renderer = getResumeRenderer(resume)
+      const summaryParser = new TiptapParser()
+      const renderer = getResumeRenderer(resume, summaryParser)
       expect(renderer).toBeInstanceOf(expected)
     }
   })
@@ -61,8 +65,10 @@ describe(getResumeRenderer, () => {
       },
     }
 
+    const summaryParser = new TiptapParser()
+
     for (const resume of [resumeWithNoTemplate, resumeWithNoTemplateId]) {
-      const renderer = getResumeRenderer(resume)
+      const renderer = getResumeRenderer(resume, summaryParser)
       expect(renderer).toBeInstanceOf(ModerncvBankingRenderer)
     }
   })
@@ -78,7 +84,8 @@ describe(getResumeRenderer, () => {
       },
     }
 
-    const renderer = getResumeRenderer(resume)
+    const summaryParser = new TiptapParser()
+    const renderer = getResumeRenderer(resume, summaryParser)
     expect(renderer).toBeInstanceOf(ModerncvBankingRenderer)
   })
 })

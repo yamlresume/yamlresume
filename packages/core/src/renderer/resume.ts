@@ -1,5 +1,6 @@
 import _ from 'lodash-es'
 
+import { Parser } from '../compiler/parser/interface'
 import { Templates } from '../data'
 import { Resume } from '../types'
 import {
@@ -22,16 +23,20 @@ const RESUME_RENDERER_MAP = {
  * information.
  * @returns {Renderer} The renderer instance for the specified template.
  */
-export function getResumeRenderer(resume: Resume): Renderer {
+export function getResumeRenderer(
+  resume: Resume,
+  summaryParser: Parser
+): Renderer {
   const {
     layout: { template },
   } = resume
 
   if (!template || !template.id) {
-    return new ModerncvBankingRenderer(resume as Resume)
+    return new ModerncvBankingRenderer(resume as Resume, summaryParser)
   }
 
   return new (_.get(RESUME_RENDERER_MAP, template.id, ModerncvBankingRenderer))(
-    resume as Resume
+    resume as Resume,
+    summaryParser
   )
 }

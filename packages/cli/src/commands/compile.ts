@@ -1,4 +1,4 @@
-import { getResumeRenderer, Resume } from '@ppresume/core'
+import { getResumeRenderer, Resume, MarkdownParser } from '@ppresume/core'
 import child_process from 'child_process'
 import { Command } from 'commander'
 import fs from 'fs'
@@ -85,8 +85,12 @@ export function generateTeX(source: string) {
   const texFile = inferOutput(source)
 
   const resume = fs.readFileSync(source, 'utf8')
+  const summaryParser = new MarkdownParser()
 
-  const renderer = getResumeRenderer(yaml.parse(resume) as Resume)
+  const renderer = getResumeRenderer(
+    yaml.parse(resume) as Resume,
+    summaryParser
+  )
   const tex = renderer.render()
 
   fs.writeFileSync(texFile, tex)

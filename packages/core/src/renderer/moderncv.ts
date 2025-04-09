@@ -1,3 +1,4 @@
+import { Parser } from '../compiler/parser/interface'
 import { transformResume } from '../resume'
 import { getTemplateTranslations } from '../translations'
 import { Resume } from '../types'
@@ -22,8 +23,8 @@ import { Renderer } from './types'
 class ModerncvBase extends Renderer {
   style: ModerncvStyle
 
-  constructor(resume: Resume, style: ModerncvStyle) {
-    super(transformResume(resume))
+  constructor(resume: Resume, style: ModerncvStyle, summaryParser: Parser) {
+    super(transformResume(resume, summaryParser))
     this.style = style
   }
 
@@ -528,20 +529,20 @@ ${joinNonEmptyString([
 }
 
 class ModerncvBankingRenderer extends ModerncvBase {
-  constructor(resume: Resume) {
-    super(resume, ModerncvStyle.Banking)
+  constructor(resume: Resume, summaryParser: Parser) {
+    super(resume, ModerncvStyle.Banking, summaryParser)
   }
 }
 
 class ModerncvClassicRenderer extends ModerncvBase {
-  constructor(resume: Resume) {
-    super(resume, ModerncvStyle.Classic)
+  constructor(resume: Resume, summaryParser: Parser) {
+    super(resume, ModerncvStyle.Classic, summaryParser)
   }
 }
 
 class ModerncvCasualRenderer extends ModerncvBase {
-  constructor(resume: Resume) {
-    super(resume, ModerncvStyle.Casual)
+  constructor(resume: Resume, summaryParser: Parser) {
+    super(resume, ModerncvStyle.Casual, summaryParser)
   }
 }
 
