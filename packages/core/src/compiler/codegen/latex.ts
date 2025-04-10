@@ -1,4 +1,4 @@
-import { escapeLatex } from '../../tex'
+import { escapeLatex } from '../../utils'
 import {
   Node,
   NodeType,

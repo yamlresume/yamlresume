@@ -1,6 +1,6 @@
 import rawEscapeLatex from 'escape-latex'
 
-import { isEmptyValue } from '../utils'
+import { isEmptyValue } from './object'
 
 /**
  * A wrapper around the escape-latex that handles null and undefined values.

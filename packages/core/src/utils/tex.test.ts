@@ -1,7 +1,7 @@
 import rawEscapeLatex from 'escape-latex'
 import { describe, expect, it } from 'vitest'
 
-import { escapeLatex } from './escape-latex'
+import { escapeLatex } from './tex'
 
 describe('escapeLatex', () => {
   it('returns empty values as original', () => {
