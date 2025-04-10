@@ -17,7 +17,7 @@ import {
 import {
   Punctuation,
   ResumeTerms,
-  getResumeTranslations,
+  getTermsTranslations,
   getTemplateTranslations,
 } from '../translations'
 import {
@@ -129,7 +129,7 @@ describe(transformEducationDegreeAreaAndScore, () => {
       const area = 'Computer Science'
       const score = '3.5'
 
-      const { education, terms } = getResumeTranslations(language)
+      const { education, terms } = getTermsTranslations(language)
       const { punctuations } = getTemplateTranslations(language)
 
       const tests = [
@@ -324,7 +324,7 @@ describe(transformLanguage, () => {
 
       transformLanguage(resume)
 
-      const { languages, languageFluencies } = getResumeTranslations(
+      const { languages, languageFluencies } = getTermsTranslations(
         resume.layout.locale.language
       )
 
@@ -364,20 +364,20 @@ describe(transformLocation, () => {
       LocaleLanguage.SimplifiedChinese
     ).punctuations[Punctuation.Comma]
 
-    const englishLocation = getResumeTranslations(
+    const englishLocation = getTermsTranslations(
       LocaleLanguage.English
     ).location
-    const spanishLocation = getResumeTranslations(
+    const spanishLocation = getTermsTranslations(
       LocaleLanguage.Spanish
     ).location
 
-    const simplifiedChineseLocation = getResumeTranslations(
+    const simplifiedChineseLocation = getTermsTranslations(
       LocaleLanguage.SimplifiedChinese
     ).location
-    const traditionalChineseHKLocation = getResumeTranslations(
+    const traditionalChineseHKLocation = getTermsTranslations(
       LocaleLanguage.TraditionalChineseHK
     ).location
-    const traditionalChineseTWLocation = getResumeTranslations(
+    const traditionalChineseTWLocation = getTermsTranslations(
       LocaleLanguage.TraditionalChineseTW
     ).location
 
@@ -563,7 +563,7 @@ describe(transformSkills, () => {
 
         transformSkills(resume)
 
-        const { skills } = getResumeTranslations(resume.layout.locale.language)
+        const { skills } = getTermsTranslations(resume.layout.locale.language)
 
         expect(resume.content.skills[0].computed.level).toBe('')
       }
@@ -587,7 +587,7 @@ describe(transformSkills, () => {
 
         transformSkills(resume)
 
-        const { skills } = getResumeTranslations(resume.layout.locale.language)
+        const { skills } = getTermsTranslations(resume.layout.locale.language)
 
         expect(resume.content.skills[0].computed.level).toBe(skills[level])
       }
@@ -601,7 +601,7 @@ describe(transformSectionNames, () => {
       const resume = cloneDeep(defaultResume)
       resume.layout.locale.language = language
 
-      const { sections } = getResumeTranslations(resume.layout.locale.language)
+      const { sections } = getTermsTranslations(resume.layout.locale.language)
 
       resume.layout.locale.language = language
       transformSectionNames(resume)

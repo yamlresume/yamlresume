@@ -5,7 +5,7 @@ import { Parser } from '../compiler/parser/interface'
 import { LocaleLanguage, defaultResumeLayout } from '../data'
 import {
   ResumeTerms,
-  getResumeTranslations,
+  getTermsTranslations,
   getTemplateTranslations,
 } from '../translations'
 import { FontSpecNumbersStyle, MainFont, ProfileItem, Resume } from '../types'
@@ -154,7 +154,7 @@ export function transformEducationDegreeAreaAndScore(resume: Resume): Resume {
     punctuations: { Colon, Comma },
   } = getTemplateTranslations(resume.layout.locale?.language)
 
-  const { education, terms } = getResumeTranslations(
+  const { education, terms } = getTermsTranslations(
     resume.layout.locale?.language
   )
 
@@ -315,7 +315,7 @@ export function transformEndDate(resume: Resume): Resume {
  * Translate language option and fluency
  */
 export function transformLanguage(resume: Resume): Resume {
-  const { languages, languageFluencies } = getResumeTranslations(
+  const { languages, languageFluencies } = getTermsTranslations(
     resume.layout.locale?.language
   )
 
@@ -357,7 +357,7 @@ export function transformLocation(resume: Resume): Resume {
     punctuations: { Comma },
   } = getTemplateTranslations(resume.layout.locale?.language)
 
-  const { location } = getResumeTranslations(resume.layout.locale?.language)
+  const { location } = getTermsTranslations(resume.layout.locale?.language)
 
   switch (resume.layout.locale?.language) {
     case LocaleLanguage.SimplifiedChinese:
@@ -498,7 +498,7 @@ export function transformProfileUrls(resume: Resume): Resume {
  * Transform skill levels.
  */
 export function transformSkills(resume: Resume): Resume {
-  const { skills } = getResumeTranslations(resume.layout.locale?.language)
+  const { skills } = getTermsTranslations(resume.layout.locale?.language)
   resume.content.skills.forEach((item) => {
     item.computed = {
       ...item.computed,
@@ -536,7 +536,7 @@ export function transformSocialLinks(resume: Resume): Resume {
  * Translate section names according to user chosen language
  */
 export function transformSectionNames(resume: Resume): Resume {
-  const { sections } = getResumeTranslations(resume.layout.locale?.language)
+  const { sections } = getTermsTranslations(resume.layout.locale?.language)
 
   resume.content.computed = {
     ...resume.content.computed,

@@ -1,2 +1,2 @@
-export * from './resume'
+export * from './terms'
 export * from './template'

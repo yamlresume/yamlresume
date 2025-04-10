@@ -18,7 +18,7 @@ export enum ResumeTerms {
   Score = 'Score',
 }
 
-type ResumeTranslationValue = {
+type TermsTranslationValue = {
   education: Record<Degree, string>
   languages: Record<Language, string>
   languageFluencies: Record<LanguageFluency, string>
@@ -28,12 +28,12 @@ type ResumeTranslationValue = {
   terms: Record<ResumeTerms, string>
 }
 
-type ResumeTranslation = Record<LocaleLanguage, ResumeTranslationValue>
+type TermsTranslation = Record<LocaleLanguage, TermsTranslationValue>
 
-export function getResumeTranslations(
+export function getTermsTranslations(
   language?: LocaleLanguage
-): ResumeTranslationValue {
-  const resumeTranslations: ResumeTranslation = {
+): TermsTranslationValue {
+  const termsTranslations: TermsTranslation = {
     [LocaleLanguage.English]: {
       education: {
         [Degree.MiddleSchool]: 'Middle School',
@@ -419,5 +419,5 @@ export function getResumeTranslations(
     language = LocaleLanguage.English
   }
 
-  return resumeTranslations[language]
+  return termsTranslations[language]
 }
