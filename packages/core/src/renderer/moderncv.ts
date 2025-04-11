@@ -20,14 +20,30 @@ import {
 } from './preamble'
 import { Renderer } from './types'
 
+/**
+ * Base class for moderncv renderers.
+ */
 class ModerncvBase extends Renderer {
   style: ModerncvStyle
 
+  /**
+   * Constructor for the ModerncvBase class.
+   *
+   * @param resume - The resume object
+   * @param style - The moderncv style
+   * @param summaryParser - The summary parser used to parse summary field in
+   * various sections.
+   */
   constructor(resume: Resume, style: ModerncvStyle, summaryParser: Parser) {
     super(transformResume(resume, summaryParser))
     this.style = style
   }
 
+  /**
+   * Render the preamble for the resume.
+   *
+   * @returns The LaTeX code for the preamble
+   */
   renderPreamble(): string {
     return joinNonEmptyString([
       // document class
@@ -50,6 +66,11 @@ class ModerncvBase extends Renderer {
     ])
   }
 
+  /**
+   * Render the basics section of the resume.
+   *
+   * @returns The LaTeX code for the basics section
+   */
   renderBasics(): string {
     const {
       content: {
@@ -71,6 +92,11 @@ class ModerncvBase extends Renderer {
     )
   }
 
+  /**
+   * Render the location section of the resume.
+   *
+   * @returns The LaTeX code for the location section
+   */
   renderLocation(): string {
     const {
       content: {
@@ -83,6 +109,11 @@ class ModerncvBase extends Renderer {
     return showIf(!isEmptyString(fullAddress), `\\address{${fullAddress}}{}{}`)
   }
 
+  /**
+   * Render the profiles section of the resume.
+   *
+   * @returns The LaTeX code for the profiles section
+   */
   renderProfiles(): string {
     const {
       content: {
@@ -93,6 +124,11 @@ class ModerncvBase extends Renderer {
     return showIf(!isEmptyString(urls), `\\extrainfo{${urls}}`)
   }
 
+  /**
+   * Render the summary section of the resume.
+   *
+   * @returns The LaTeX code for the summary section
+   */
   renderSummary(): string {
     const {
       content: {
@@ -111,6 +147,11 @@ class ModerncvBase extends Renderer {
     )}`
   }
 
+  /**
+   * Render the education section of the resume.
+   *
+   * @returns The LaTeX code for the education section
+   */
   renderEducation(): string {
     const {
       content: {
@@ -159,6 +200,11 @@ ${education
   .join('\n\n')}`
   }
 
+  /**
+   * Render the work section of the resume.
+   *
+   * @returns The LaTeX code for the work section
+   */
   renderWork(): string {
     const { content, layout } = this.resume
 
@@ -204,6 +250,11 @@ ${content.work
   .join('\n\n')}`
   }
 
+  /**
+   * Render the languages section of the resume.
+   *
+   * @returns The LaTeX code for the languages section
+   */
   renderLanguages(): string {
     const {
       content: {
@@ -235,6 +286,11 @@ ${languages
   .join('\n')}`
   }
 
+  /**
+   * Render the skills section of the resume.
+   *
+   * @returns The LaTeX code for the skills section
+   */
   renderSkills(): string {
     const {
       content: {
@@ -266,6 +322,11 @@ ${skills
   .join('\n')}`
   }
 
+  /**
+   * Render the awards section of the resume.
+   *
+   * @returns The LaTeX code for the awards section
+   */
   renderAwards(): string {
     const {
       content: {
@@ -292,6 +353,11 @@ ${awards
   .join('\n\n')}`
   }
 
+  /**
+   * Render the certificates section of the resume.
+   *
+   * @returns The LaTeX code for the certificates section
+   */
   renderCertificates(): string {
     const {
       content: {
@@ -318,6 +384,11 @@ ${certificates
   .join('\n\n')}`
   }
 
+  /**
+   * Render the publications section of the resume.
+   *
+   * @returns The LaTeX code for the publications section
+   */
   renderPublications(): string {
     const {
       content: {
@@ -349,6 +420,11 @@ ${publications
   .join('\n\n')}`
   }
 
+  /**
+   * Render the references section of the resume.
+   *
+   * @returns The LaTeX code for the references section
+   */
   renderReferences(): string {
     const {
       content: {
@@ -411,6 +487,11 @@ ${references
     }
   }
 
+  /**
+   * Render the projects section of the resume.
+   *
+   * @returns The LaTeX code for the projects section
+   */
   renderProjects(): string {
     const { content } = this.resume
     const {
@@ -453,6 +534,11 @@ ${content.projects
   .join('\n\n')}`
   }
 
+  /**
+   * Render the interests section of the resume.
+   *
+   * @returns The LaTeX code for the interests section
+   */
   renderInterests(): string {
     const { content } = this.resume
 
@@ -467,6 +553,11 @@ ${content.interests
   .join('\n')}`
   }
 
+  /**
+   * Render the volunteer section of the resume.
+   *
+   * @returns The LaTeX code for the volunteer section
+   */
   renderVolunteer(): string {
     const { content } = this.resume
 
@@ -494,10 +585,20 @@ ${content.volunteer
   .join('\n\n')}`
   }
 
+  /**
+   * Render the resume.
+   *
+   * @returns The LaTeX code for the resume
+   */
   render(): string {
     return this.generateTeX()
   }
 
+  /**
+   * Generate the LaTeX code for the resume.
+   *
+   * @returns The LaTeX code for the resume
+   */
   private generateTeX(): string {
     return `${joinNonEmptyString([
       this.renderPreamble(),
@@ -528,18 +629,27 @@ ${joinNonEmptyString([
   }
 }
 
+/**
+ * Renderer for the banking style of moderncv.
+ */
 class ModerncvBankingRenderer extends ModerncvBase {
   constructor(resume: Resume, summaryParser: Parser) {
     super(resume, ModerncvStyle.Banking, summaryParser)
   }
 }
 
+/**
+ * Renderer for the classic style of moderncv.
+ */
 class ModerncvClassicRenderer extends ModerncvBase {
   constructor(resume: Resume, summaryParser: Parser) {
     super(resume, ModerncvStyle.Classic, summaryParser)
   }
 }
 
+/**
+ * Renderer for the casual style of moderncv.
+ */
 class ModerncvCasualRenderer extends ModerncvBase {
   constructor(resume: Resume, summaryParser: Parser) {
     super(resume, ModerncvStyle.Casual, summaryParser)

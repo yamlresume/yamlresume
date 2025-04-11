@@ -17,6 +17,11 @@ import { Resume } from '../types'
 abstract class Renderer {
   resume: Resume
 
+  /**
+   * Constructor for the Renderer class.
+   *
+   * @param resume - The resume to render.
+   */
   constructor(resume: Resume) {
     this.resume = resume
   }
@@ -28,7 +33,11 @@ abstract class Renderer {
    */
   abstract renderPreamble(): string
 
-  // core information
+  /**
+   * Render the basics section of the resume.
+   *
+   * @returns {string} The rendered basics section
+   */
   abstract renderBasics(): string
 
   /**
@@ -43,30 +52,107 @@ abstract class Renderer {
    */
   abstract renderSummary(): string
 
+  /**
+   * Render the location section of the resume.
+   *
+   * @returns {string} The rendered location section
+   */
   abstract renderLocation(): string
+
+  /**
+   * Render the profiles section of the resume.
+   *
+   * @returns {string} The rendered profiles section
+   */
   abstract renderProfiles(): string
 
   // education and career
+  /**
+   * Render the education section of the resume.
+   *
+   * @returns {string} The rendered education section
+   */
   abstract renderEducation(): string
+
+  /**
+   * Render the work section of the resume.
+   *
+   * @returns {string} The rendered work section
+   */
   abstract renderWork(): string
 
   // languages and skills
+  /**
+   * Render the languages section of the resume.
+   *
+   * @returns {string} The rendered languages section
+   */
   abstract renderLanguages(): string
+
+  /**
+   * Render the skills section of the resume.
+   *
+   * @returns {string} The rendered skills section
+   */
   abstract renderSkills(): string
 
   // paper works
+  /**
+   * Render the awards section of the resume.
+   *
+   * @returns {string} The rendered awards section
+   */
   abstract renderAwards(): string
+
+  /**
+   * Render the certificates section of the resume.
+   *
+   * @returns {string} The rendered certificates section
+   */
   abstract renderCertificates(): string
+
+  /**
+   * Render the publications section of the resume.
+   *
+   * @returns {string} The rendered publications section
+   */
   abstract renderPublications(): string
 
   // persons and projects
+  /**
+   * Render the references section of the resume.
+   *
+   * @returns {string} The rendered references section
+   */
   abstract renderReferences(): string
+
+  /**
+   * Render the projects section of the resume.
+   *
+   * @returns {string} The rendered projects section
+   */
   abstract renderProjects(): string
 
   // non-essential information
+  /**
+   * Render the interests section of the resume.
+   *
+   * @returns {string} The rendered interests section
+   */
   abstract renderInterests(): string
+
+  /**
+   * Render the volunteer section of the resume.
+   *
+   * @returns {string} The rendered volunteer section
+   */
   abstract renderVolunteer(): string
 
+  /**
+   * Render the resume.
+   *
+   * @returns {string} The rendered resume
+   */
   abstract render(): string
 }
 

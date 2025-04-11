@@ -4,7 +4,7 @@
  * Empty values include `undefined`, `null`, empty object and empty string
  *
  * @param value - value to check
- * @returns true if value is empty, false otherwise
+ * @returns True if value is empty, false otherwise
  *
  * @see {@link https://stackoverflow.com/a/43233163}
  */

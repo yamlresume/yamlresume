@@ -4,6 +4,7 @@ import { LatexCodeGenerator } from '../compiler'
 import { Parser } from '../compiler/parser/interface'
 import { LocaleLanguage, defaultResumeLayout } from '../data'
 import {
+  Punctuation,
   ResumeTerms,
   getTermsTranslations,
   getTemplateTranslations,
@@ -20,11 +21,12 @@ import {
 } from '../utils'
 
 /**
- * Replace every blank line with a percent sign in `content`.
+ * Replaces consecutive blank lines with a single LaTeX comment character (`%`).
  *
- * @param content - the content to be processed
- * @returns post processed content with all blank lines replaced with a percent
- * sign
+ * Useful for preventing LaTeX errors in environments sensitive to blank lines.
+ *
+ * @param content - The input string content.
+ * @returns The processed string with blank lines replaced.
  */
 export function replaceBlankLinesWithPercent(content: string): string {
   // if content only contains a newline character, we return an empty string
@@ -33,6 +35,33 @@ export function replaceBlankLinesWithPercent(content: string): string {
   }
 
   return content.replace(/(^[ \t]*\n)/gm, '%\n')
+}
+
+/**
+ * Iterates through all resume content sections and applies `escapeLatex` to
+ * relevant string fields and array elements using helper functions.
+ *
+ * @param resume - The resume object to process.
+ * @returns The processed resume object.
+ * @remarks Modifies the `resume.content` object and its children directly.
+ */
+export function transformResumeValues(resume: Resume): Resume {
+  Object.entries(resume.content).forEach(([key, value]) => {
+    // only resume.basics and resume.location are objects, others are all arrays
+    if (key === 'basics' || key === 'location') {
+      transformResumeSectionValues(value)
+    } else if (key === 'computed') {
+      // `computed` object will be handled separately
+      // for now, `transformSocialLinks` will handle it
+      return
+    } else {
+      resume.content[key].forEach((_: Object, index: number) => {
+        transformResumeSectionValues(value[index])
+      })
+    }
+  })
+
+  return resume
 }
 
 /**
@@ -81,47 +110,14 @@ function transformResumeSectionValues(sectionResumeItem: Object): void {
 }
 
 /**
- * Iterate all resume sections and transform all leaf values with `escapeLatex`.
+ * Transforms the `courses` array in the education section into a single,
+ * formatted string stored in `computed.courses`.
  *
- * @param resumeContent - the resume object to be processed
- * @returns - the processed resume object
- */
-export function transformResumeValues(resume: Resume): Resume {
-  Object.entries(resume.content).forEach(([key, value]) => {
-    // only resume.basics and resume.location are objects, others are all arrays
-    if (key === 'basics' || key === 'location') {
-      transformResumeSectionValues(value)
-    } else if (key === 'computed') {
-      // `computed` object will be handled separately
-      // for now, `transformSocialLinks` will handle it
-      return
-    } else {
-      resume.content[key].forEach((_: Object, index: number) => {
-        transformResumeSectionValues(value[index])
-      })
-    }
-  })
-
-  return resume
-}
-
-/**
- * Convert the `courses` field from `string[]` to `string`.
+ * Uses locale-specific separators and newlines for readability.
  *
- * By default, `string[]` will show as a list of strings with only comma
- * separated, however there are no spaces between items in the list, hence the
- * output would be something like:
- *
- * ```
- * Introduction to Programming,Computer Networking,Operating Systems
- * ```
- *
- * We have convert it to a single string manually with comma and space separated
- * items for better readability, the ideal output would be something like:
- *
- * ```
- * Introduction to Programming, Computer Networking, Operating Systems
- * ```
+ * @param resume - The resume object.
+ * @returns The transformed resume object.
+ * @remarks Modifies `resume.content.education` items in place.
  */
 export function transformEducationCourses(resume: Resume): Resume {
   const {
@@ -143,11 +139,14 @@ export function transformEducationCourses(resume: Resume): Resume {
 }
 
 /**
- * Convert `studyType` `area` and `score` to an aggregated `degreeAreaAndScore`.
+ * Combines `studyType`, `area`, and `score` from education items into
+ * a formatted string stored in `computed.degreeAreaAndScore`.
  *
- * This function will synthesize the `studyType`, `area` and `score` fields into
- * a new `degreeAreaAndScore` field. The new `degreeAreaAndScore` field will be
- * used by latex template to render the education section.
+ * Uses locale-specific terms and punctuation.
+ *
+ * @param resume - The resume object.
+ * @returns The transformed resume object.
+ * @remarks Modifies `resume.content.education` items in place.
  */
 export function transformEducationDegreeAreaAndScore(resume: Resume): Resume {
   const {
@@ -181,10 +180,15 @@ export function transformEducationDegreeAreaAndScore(resume: Resume): Resume {
 }
 
 /**
- * Convert the `keywords` field from `string[]` to `string`.
+ * Transforms `keywords` arrays in various sections (interests, languages, etc.)
+ * into a single, formatted string stored in `computed.keywords`.
  *
- * This function follows the same logic as `transformEducationCourses` but for
- * the `keywords` fields in various sections.
+ * Uses locale-specific separators.
+ *
+ * @param resume - The resume object.
+ * @returns The transformed resume object.
+ * @remarks Modifies items within relevant sections (`interests`, `languages`,
+ * etc.) in place.
  */
 export function transformKeywords(resume: Resume): Resume {
   const {
@@ -221,18 +225,15 @@ export function transformKeywords(resume: Resume): Resume {
 }
 
 /**
- * Remove the day part from the `date` field in various sections.
+ * Transforms various date fields (`date`, `releaseDate`, `startDate`,
+ * `endDate`) across multiple sections into a localized format (e.g., "Month
+ * Year") and calculates date ranges.
  *
- * Initially we try to store the date string in a format like 'Oct 2016',
- * however, firefox and safari failed to parse this format via `new Date('Oct
- * 2016')`, hence we have to store the date string in DB in a format like 'Oct
- * 1, 2016'.
+ * Stores results in the respective `computed` objects.
  *
- * However, this format is not UI friendly to use in resumes, when I indicate a
- * job with a start date of 'Oct 2016', I mean that it starts approximately from
- * Octobor 2016---I do not really care about the exact day. So we need to remove
- * the day part from the date string before the date string is rendered with
- * LaTeX.
+ * @param resume - The resume object.
+ * @returns The transformed resume object.
+ * @remarks Modifies items within relevant sections in place.
  */
 export function transformDate(resume: Resume): Resume {
   for (const section of ['awards', 'certificates']) {
@@ -288,11 +289,15 @@ export function transformDate(resume: Resume): Resume {
 }
 
 /**
- * Set the value of `endDate` to `Present` if it is empty.
+ * Replaces empty `endDate` values in relevant sections with the string
+ * "Present".
  *
- * For some resume sections like `education`, `projects`, `volunteer` etc, some
- * experiences are still ongoing and the `endDate` is not actually the real end
- * date. In this case, we will replace the `endDate` with `Present`.
+ * Updates the `computed.endDate` field.
+ *
+ * @param resume - The resume object.
+ * @returns The transformed resume object.
+ * @remarks Modifies items within relevant sections (`education`, `projects`,
+ * etc.) in place. Should run after `transformDate`.
  */
 export function transformEndDate(resume: Resume): Resume {
   for (const section of ['education', 'projects', 'volunteer', 'work']) {
@@ -312,7 +317,13 @@ export function transformEndDate(resume: Resume): Resume {
 }
 
 /**
- * Translate language option and fluency
+ * Translates `language` and `fluency` values in the languages section
+ * based on the selected locale.
+ * Stores results in `computed.language` and `computed.fluency`.
+ *
+ * @param resume - The resume object.
+ * @returns The transformed resume object.
+ * @remarks Modifies `resume.content.languages` items in place.
  */
 export function transformLanguage(resume: Resume): Resume {
   const { languages, languageFluencies } = getTermsTranslations(
@@ -335,22 +346,16 @@ export function transformLanguage(resume: Resume): Resume {
 }
 
 /**
- * Convert location fields to an aggregated `fullAddress` field.
+ * Combines address components (`address`, `city`, `region`, `country`,
+ * `postalCode`) into a locale-aware formatted address string stored in
+ * `computed.fullAddress`.
  *
- * In `locationSchema`, `address`, `city` and `country` are required fields,
- * `postalCode` and `region` are optional.
+ * Also computes intermediate components like `postalCodeAndAddress` and
+ * `regionAndCountry`.
  *
- * The format of moderncv's `\address` is: `\address{street}{city}{country}`,
- * thus we also group `locationSchema`'s fields into 3 parts:
- * - the patched `address` with optional `postalCode`
- * - city
- * - the patched `country` with optional `region`
- *
- * Besides, we also synthesized a new field `fullAddress` which contains all
- * address info, this is used to determine whether or not to render address in
- * latex template. Moderncv's `\address` command will report compilation error
- * if address info is all empty thus we only render location info if the
- * aggregated `fullAddress` is not empty.
+ * @param resume - The resume object.
+ * @returns The transformed resume object.
+ * @remarks Modifies `resume.content.location` in place.
  */
 export function transformLocation(resume: Resume): Resume {
   const {
@@ -438,7 +443,12 @@ export function transformLocation(resume: Resume): Resume {
 }
 
 /**
- * Convert basics.url to LaTeX href with fontawesome5 icon attached.
+ * Transforms the `basics.url` field into a LaTeX `\href` command with a link
+ * icon, stored in `computed.url`.
+ *
+ * @param resume - The resume object.
+ * @returns The transformed resume object.
+ * @remarks Modifies `resume.content.basics.computed` in place.
  */
 export function transformBasicsUrl(resume: Resume): Resume {
   // `basics.url` is not a mandatory field, so we have to check if it is empty
@@ -455,14 +465,14 @@ export function transformBasicsUrl(resume: Resume): Resume {
 }
 
 /**
- * Convert profile item's url to LaTeX href with fontawesome5 icon attached.
+ * Transforms profile URLs into LaTeX `\href` commands with appropriate
+ * FontAwesome icons based on the network name.
  *
- * The reason this feature is necessary is because the package moderncv `social`
- * command supports only limited network options, see:
- * https://github.com/xdanaux/moderncv/blob/master/moderncv.cls#L258-L272.
+ * Stores the result in `computed.url` for each profile item.
  *
- * Maybe later we could improve the `\social` command in the latex template and
- * then we can get rid of this function.
+ * @param resume - The resume object.
+ * @returns The transformed resume object.
+ * @remarks Modifies `resume.content.profiles` items in place.
  */
 export function transformProfileUrls(resume: Resume): Resume {
   // In general, to get the fontawesome5 symbol for a given network, we can
@@ -495,7 +505,13 @@ export function transformProfileUrls(resume: Resume): Resume {
 }
 
 /**
- * Transform skill levels.
+ * Translates skill proficiency levels based on the selected locale.
+ *
+ * Stores the translated string in `computed.level`.
+ *
+ * @param resume - The resume object.
+ * @returns The transformed resume object.
+ * @remarks Modifies `resume.content.skills` items in place.
  */
 export function transformSkills(resume: Resume): Resume {
   const { skills } = getTermsTranslations(resume.layout.locale?.language)
@@ -510,7 +526,15 @@ export function transformSkills(resume: Resume): Resume {
 }
 
 /**
- * Collect all `url`s in `basics` and `profiles` sections to LaTeX hrefs.
+ * Collects URLs from `basics` and `profiles` sections, formats them as LaTeX
+ * links (requires `transformBasicsUrl` and `transformProfileUrls` to be run
+ * first),
+ *
+ * Join them into a single string stored in `resume.content.computed.urls`.
+ *
+ * @param resume - The resume object.
+ * @returns The transformed resume object.
+ * @remarks Modifies `resume.content.computed`.
  */
 export function transformSocialLinks(resume: Resume): Resume {
   transformBasicsUrl(resume)
@@ -533,7 +557,14 @@ export function transformSocialLinks(resume: Resume): Resume {
 }
 
 /**
- * Translate section names according to user chosen language
+ * Translates standard section titles (like "Education", "Work") based on the
+ * selected locale.
+ *
+ * Stores the translations in `resume.content.computed.sectionNames`.
+ *
+ * @param resume - The resume object.
+ * @returns The transformed resume object.
+ * @remarks Modifies `resume.content.computed`.
  */
 export function transformSectionNames(resume: Resume): Resume {
   const { sections } = getTermsTranslations(resume.layout.locale?.language)
@@ -558,20 +589,18 @@ export function transformSectionNames(resume: Resume): Resume {
 }
 
 /**
- * Convert `summary` field from tiptap's JSON format to LaTeX.
+ * Parses the `summary` field (assumed to be Tiptap JSON or Markdown, based on
+ * the parser) in various sections and converts it into LaTeX code using the
+ * provided parser and generator.
  *
- * The summary field in various resume sections is a rich text field, whose
- * content is stored in two formats:
+ * Stores the result in the corresponding `computed.summary` field, replacing blank lines.
  *
- * 1. tiptap's JSON format
- * 2. a limited markdown format
- *
- * In order to generate LaTeX code, we need to specify a parser explicitly that
- * can parse either formats to an AST and then convert the AST to LaTeX code.
- *
- * @param resume - the resume object
- * @param summaryParser - the parser used to parse the summary field
- * @returns a transformed resume object
+ * @param resume - The resume object.
+ * @param summaryParser - The parser instance (e.g., `MarkdownParser` or
+ * `TiptapParser`).
+ * @returns The transformed resume object.
+ * @remarks Modifies `computed.summary` within `basics` and items in sections
+ * like `education`, `work`, etc.
  */
 export function transformSummary(
   resume: Resume,
@@ -624,10 +653,17 @@ export function transformSummary(
 }
 
 /**
- * Transform resumeContent so that it can be rendered with LaTeX.
+ * Applies a series of transformations to the main content of the resume.
  *
- * The transformations are applied in a specific order to ensure the data is
- * correctly processed for rendering.
+ * This includes escaping values, formatting lists (courses, keywords),
+ * processing dates, translating terms, handling URLs, and parsing summaries.
+ *
+ * The order of internal transformations is important.
+ *
+ * @param resume - The resume object to transform.
+ * @param summaryParser - The parser for handling summary fields.
+ * @returns The transformed resume object.
+ * @remarks Modifies the `resume.content` object and its children in place.
  */
 export function transformResumeContent(
   resume: Resume,
@@ -656,15 +692,14 @@ export function transformResumeContent(
 }
 
 /**
- * Transform the resume layout typography.
+ * Adjusts the resume's typography settings, specifically the number style
+ * (`Lining` or `OldStyle`), based on the selected locale language.
  *
- * Under the hood, it set different fontspec styles based on the language of
- * the resume. For example, old style numbers is considered as a bad practice
- * for CJK resumes, therefore we need to disable old style numbers for CJK
- * resumes.
+ * Sets Lining for CJK languages, OldStyle otherwise, if not explicitly defined.
  *
- * @param resume - the original resume object
- * @returns a transformed resume object
+ * @param resume - The resume object.
+ * @returns The transformed resume object.
+ * @remarks Modifies `resume.layout.typography.fontSpec` in place.
  */
 export function transformResumeLayoutTypography(resume: Resume): Resume {
   if (
@@ -698,10 +733,16 @@ export function transformResumeLayoutTypography(resume: Resume): Resume {
 }
 
 /**
- * Transforms the resume layout object by merge it with sensible default values.
+ * Merges the provided resume layout configuration with default layout values,
+ * ensuring all necessary layout properties are set.
  *
- * @param resumeLayout - the original resume layout object from resume
- * @returns a transformed resume layout object with all sensible default values
+ * Also applies locale-based typography adjustments via
+ * `transformResumeLayoutTypography`.
+ *
+ * @param resume - The resume object containing the layout to transform.
+ * @returns The resume object with its layout transformed.
+ * @remarks The `layout` property of the returned resume object is a new object
+ *   resulting from the merge. Modifies `resume.layout.typography` via helper.
  */
 export function transformResumeLayout(resume: Resume): Resume {
   transformResumeLayoutTypography(resume)
@@ -715,12 +756,14 @@ export function transformResumeLayout(resume: Resume): Resume {
 }
 
 /**
- * Transform the resume layout based on the host environment
+ * Determines and sets the appropriate main font (`MainFont.Mac` or
+ * `MainFont.Ubuntu`) based on the host environment (macOS/test vs. other).
  *
- * Under the hood, it set different main font based on the host environment.
+ * Stores the result in `resume.layout.computed.environment.mainFont`.
  *
- * @param resume - the original resume object
- * @returns a transformed resume object
+ * @param resume - The original resume object.
+ * @returns The transformed resume object.
+ * @remarks Modifies `resume.layout.computed` in place.
  */
 export function transformResumeEnvironment(resume: Resume): Resume {
   // Use Mac font for test/local development, Ubuntu font for production
@@ -739,11 +782,19 @@ export function transformResumeEnvironment(resume: Resume): Resume {
 }
 
 /**
- * Transform the resume object by applying a series of transformations.
+ * Applies all necessary transformations to a resume object in preparation for
+ * rendering.
  *
- * @param resume - the original resume object
- * @param summaryParser - the summary parser used to parse the summary field
- * @returns a transformed resume object
+ * This includes content processing, layout merging/adjustments, and environment
+ * setup.
+ *
+ * The order of transformations is: content, layout, environment.
+ *
+ * @param resume - The original resume object.
+ * @param summaryParser - The parser instance for handling summary fields.
+ * @returns A new, transformed resume object ready for rendering.
+ * @remarks This function operates on and returns a deep clone of the original
+ * resume.
  */
 export function transformResume(resume: Resume, summaryParser: Parser): Resume {
   return [

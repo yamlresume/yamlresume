@@ -14,22 +14,44 @@ import {
 import { type SectionID } from '../types'
 import { isEmptyValue } from '../utils'
 
+/** Specific terms used within resume sections that require translation. */
 export enum ResumeTerms {
+  /** The term for academic score or GPA. */
   Score = 'Score',
 }
 
+/** Defines the structure for translated terms for a single language. */
 type TermsTranslationValue = {
+  /** Translations for degree types. */
   education: Record<Degree, string>
+  /** Translations for language names. */
   languages: Record<Language, string>
+  /** Translations for language fluency levels. */
   languageFluencies: Record<LanguageFluency, string>
+  /** Translations for country names. */
   location: Record<Country, string>
+  /** Translations for resume section titles. */
   sections: Record<SectionID, string>
+  /** Translations for skill proficiency levels. */
   skills: Record<SkillLevel, string>
+  /** Translations for specific resume terms defined in `ResumeTerms`. */
   terms: Record<ResumeTerms, string>
 }
 
+/** The structure containing translations for all supported languages. */
 type TermsTranslation = Record<LocaleLanguage, TermsTranslationValue>
 
+/**
+ * Retrieves the translated terms for a specific locale language.
+ *
+ * Includes translations for degrees, languages, fluencies, countries, section
+ * titles, skill levels, and other specific terms.
+ *
+ * @param language - The desired locale language. If undefined, defaults to
+ * English.
+ * @returns An object containing the translated terms for the specified
+ * language.
+ */
 export function getTermsTranslations(
   language?: LocaleLanguage
 ): TermsTranslationValue {

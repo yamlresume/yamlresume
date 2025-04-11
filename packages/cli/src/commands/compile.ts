@@ -13,6 +13,7 @@ import yaml from 'yaml'
  *
  * @param source - The source resume file
  * @returns The output file name
+ * @throws {Error} If the source file has an unsupported extension.
  */
 export function inferOutput(source: string): string {
   if (
@@ -48,7 +49,8 @@ export function isCommandAvailable(command: string): boolean {
  * We support xelatex and tectonic, if both are installed we will prioritize
  * xelatex.
  *
- * @returns The LaTeX environment
+ * @returns The LaTeX environment PATH.
+ * @throws {Error} If neither 'xelatex' nor 'tectonic' is found in system PATH.
  */
 export function inferLaTeXEnvironment(): LaTeXEnvironment {
   if (isCommandAvailable('xelatex')) {
@@ -67,6 +69,8 @@ export function inferLaTeXEnvironment(): LaTeXEnvironment {
  *
  * @param source - The source resume file
  * @returns The LaTeX command
+ * @throws {Error} If the LaTeX environment cannot be inferred or the source
+ * file extension is unsupported.
  */
 export function inferLaTeXCommand(source: string): string {
   const environment = inferLaTeXEnvironment()
@@ -76,9 +80,13 @@ export function inferLaTeXCommand(source: string): string {
 }
 
 /**
- * Write the resume to a LaTeX file
+ * Compiles the resume source file to a PDF file.
  *
- * @param source - The source resume file
+ * @param source - The source resume file path (YAML, YML, or JSON).
+ * @remarks This function performs file I/O: reads the source file and writes a
+ * .tex file.
+ * @throws {Error} Can throw if file reading, parsing, rendering, or writing
+ * fails, or if the source file extension is unsupported.
  */
 export function generateTeX(source: string) {
   // make sure the file has an valid extension, i.e, '.json', '.yml' or '.yaml'
@@ -97,9 +105,16 @@ export function generateTeX(source: string) {
 }
 
 /**
- * Compile the resume to a PDF file
+ * Compiles the resume source file to a PDF file.
  *
- * @param source - The source resume file
+ * It first generates the .tex file (using `generateTeX`) and then runs the
+ * inferred LaTeX command (e.g., xelatex or tectonic) to produce the PDF.
+ *
+ * @param source - The source resume file path (YAML, YML, or JSON).
+ * @remarks This function performs file I/O (via `generateTeX`) and executes an
+ * external process (LaTeX compiler).
+ * @throws {Error} Can throw if .tex generation, LaTeX command inference, or the
+ * LaTeX compilation process fails.
  */
 export function generatePDF(source: string) {
   generateTeX(source)
@@ -119,17 +134,27 @@ export function generatePDF(source: string) {
  * 2. infer the LaTeX command to use
  *    2.1. infer the LaTeX environment to use
  *    2.2. infer the output destination
- * 3. [TODO] check the resume format and make sure it aligns with PPResume schema
+ * 3. [TODO] check the resume format and make sure it aligns with PPResume
+ * schema
  * 4. compile the resume to LaTeX and PDF at the same time
  *
  * This function will throw an exception if any error
  *
  * @param source - The source resume file
+ * @throws {Error} If any part of the PDF generation process fails (forwarded
+ * from `generatePDF`).
+ * @todo Check the resume format against PPResume schema before compilation.
  */
 export function compileResume(source: string) {
   generatePDF(source)
 }
 
+/**
+ * Commander command instance to compile a resume to LaTeX and PDF
+ *
+ * Provides a command to compile a resume source file (YAML/JSON) into LaTeX
+ * and PDF.
+ */
 export const compileCommand = new Command()
   .name('compile')
   .description('compile a resume to LaTeX and PDF')

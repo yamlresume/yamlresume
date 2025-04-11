@@ -19,8 +19,7 @@ const RESUME_RENDERER_MAP = {
 /**
  * Get the appropriate resume renderer based on the provided resume.
  *
- * @param {Resume} resume - The resume object containing layout and template
- * information.
+ * @param {Resume} resume - The resume object
  * @returns {Renderer} The renderer instance for the specified template.
  */
 export function getResumeRenderer(
@@ -31,6 +30,7 @@ export function getResumeRenderer(
     layout: { template },
   } = resume
 
+  // default to use moderncv banking style if template is not specified
   if (!template || !template.id) {
     return new ModerncvBankingRenderer(resume as Resume, summaryParser)
   }

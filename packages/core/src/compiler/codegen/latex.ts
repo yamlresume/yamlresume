@@ -16,13 +16,30 @@ import { CodeGenerator } from './interface'
 
 /**
  * Generate LaTeX code from a Node.
+ *
+ * This class implements the `CodeGenerator` interface and provides a method
+ * to convert an AST node into its corresponding LaTeX code.
+ *
+ * @see {@link CodeGenerator}
  */
 export class LatexCodeGenerator implements CodeGenerator {
+  /**
+   * Generate LaTeX code from an AST node.
+   *
+   * @param node - The AST node to generate LaTeX code from.
+   * @returns The generated LaTeX code.
+   */
   generate(node: Node): string {
     return nodeToTeX(node)
   }
 }
 
+/**
+ * Convert an AST node to its corresponding LaTeX code.
+ *
+ * @param node - The AST node to convert.
+ * @returns The generated LaTeX code.
+ */
 export function nodeToTeX(node: Node): string {
   switch (node.type) {
     case NodeType.bulletList:
@@ -40,14 +57,32 @@ export function nodeToTeX(node: Node): string {
   }
 }
 
+/**
+ * Convert a bullet list node to its corresponding LaTeX code.
+ *
+ * @param node - The bullet list node to convert.
+ * @returns The generated LaTeX code.
+ */
 function bulletListNodeToTeX(node: BulletListNode): string {
   return `\\begin{itemize}\n${fragmentToTeX(node.content)}\\end{itemize}\n`
 }
 
+/**
+ * Convert a document node to its corresponding LaTeX code.
+ *
+ * @param node - The document node to convert.
+ * @returns The generated LaTeX code.
+ */
 function docNodeToTeX(node: DocNode): string {
   return fragmentToTeX(node.content)
 }
 
+/**
+ * Convert a list item node to its corresponding LaTeX code.
+ *
+ * @param node - The list item node to convert.
+ * @returns The generated LaTeX code.
+ */
 function listItemNodeToTeX(node: ListItemNode): string {
   const itemContent = fragmentToTeX(node.content)
   // Here we made some special handling to make the output with more prettier
@@ -57,10 +92,22 @@ function listItemNodeToTeX(node: ListItemNode): string {
   return `\\item ${itemContent}`
 }
 
+/**
+ * Convert an ordered list node to its corresponding LaTeX code.
+ *
+ * @param node - The ordered list node to convert.
+ * @returns The generated LaTeX code.
+ */
 function orderedListNodeToTeX(node: OrderedListNode): string {
   return `\\begin{enumerate}\n${fragmentToTeX(node.content)}\\end{enumerate}\n`
 }
 
+/**
+ * Convert a paragraph node to its corresponding LaTeX code.
+ *
+ * @param node - The paragraph node to convert.
+ * @returns The generated LaTeX code.
+ */
 function paragraphNodeToTeX(node: ParagraphNode): string {
   if (node.content === undefined || node.content.length === 0) {
     return '\n'
@@ -72,6 +119,12 @@ function paragraphNodeToTeX(node: ParagraphNode): string {
   return `${fragmentToTeX(node.content)}\n\n`
 }
 
+/**
+ * Convert a text node to its corresponding LaTeX code.
+ *
+ * @param node - The text node to convert.
+ * @returns The generated LaTeX code.
+ */
 function textNodeToTeX(node: TextNode): string {
   const escapedText = escapeLatex(node.text)
 
@@ -85,6 +138,12 @@ function textNodeToTeX(node: TextNode): string {
   )
 }
 
+/**
+ * Apply a mark to a text.
+ *
+ * @param text - The text to apply the mark to.
+ * @param mark - The mark to apply.
+ */
 function applyMarkToText(text: string, mark: Mark) {
   switch (mark.type) {
     case MarkType.bold:
@@ -98,6 +157,12 @@ function applyMarkToText(text: string, mark: Mark) {
   }
 }
 
+/**
+ * Convert a fragment to its corresponding LaTeX code.
+ *
+ * @param fragment - The fragment to convert.
+ * @returns The generated LaTeX code.
+ */
 function fragmentToTeX(fragment: Fragment): string {
   if (fragment === undefined) {
     return ''

@@ -21,6 +21,13 @@ export function parseDate(dateStr: string | undefined | null): Date | null {
   }
 }
 
+/**
+ * Localize a date string to a specific language.
+ *
+ * @param date - The date string to localize.
+ * @param language - The language to localize the date string to.
+ * @returns The localized date string.
+ */
 export function localizeDate(
   date: string,
   language: LocaleLanguage | string
@@ -29,6 +36,7 @@ export function localizeDate(
     return ''
   }
 
+  // For resumes, we only care about the year and month
   const options: Intl.DateTimeFormatOptions = {
     year: 'numeric',
     month: 'short',
@@ -41,6 +49,14 @@ export function localizeDate(
   return new Date(date).toLocaleDateString(languageToLocale[language], options)
 }
 
+/**
+ * Get the date range for a given start and end date.
+ *
+ * @param startDate - The start date.
+ * @param endDate - The end date.
+ * @param language - The language to localize the date string to.
+ * @returns The date range.
+ */
 export function getDateRange(
   startDate: string,
   endDate: string,
@@ -71,8 +87,16 @@ export function getDateRange(
   )}`
 }
 
+/**
+ * The number of seconds in one day
+ */
 export const oneDay = 24 * 60 * 60
 
+/**
+ * Get the current time in UTC seconds
+ *
+ * @returns The current time in UTC seconds
+ */
 export function nowInUTCSeconds(): number {
   return Math.floor(Date.now() / 1000)
 }

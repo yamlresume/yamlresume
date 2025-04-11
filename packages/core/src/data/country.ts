@@ -1,5 +1,8 @@
 import countries from './countries.json' with { type: 'json' }
 
+/**
+ * Represents all possible countries & regions.
+ */
 export enum Country {
   Afghanistan = 'Afghanistan',
   AlandIslands = 'Aland Islands',
@@ -253,10 +256,17 @@ export enum Country {
   Zimbabwe = 'Zimbabwe',
 }
 
-export const countriesWithLabels = countries.map((country) => {
+/**
+ * Represents all possible countries & regions with their corresponding emoji.
+ */
+export const countriesWithEmojis = countries.map((country) => {
   return { label: `${country.emoji} ${country.name}`, value: country.name }
 })
 
+/**
+ * Represents all possible countries & regions with their corresponding English
+ * names.
+ */
 export const englishCountryNames: Record<Country, string> = {
   [Country.Afghanistan]: 'Afghanistan',
   [Country.AlandIslands]: 'Aland Islands',
@@ -511,6 +521,10 @@ export const englishCountryNames: Record<Country, string> = {
   [Country.Zimbabwe]: 'Zimbabwe',
 }
 
+/**
+ * Represents all possible countries & regions with their corresponding
+ * Simplified Chinese names.
+ */
 export const simplifiedChineseCountryNames: Record<Country, string> = {
   [Country.Afghanistan]: '阿富汗',
   [Country.AlandIslands]: '奥兰群岛',
@@ -764,6 +778,10 @@ export const simplifiedChineseCountryNames: Record<Country, string> = {
   [Country.Zimbabwe]: '津巴布韦',
 }
 
+/**
+ * Represents all possible countries & regions with their corresponding
+ * Traditional Chinese HK names.
+ */
 export const traditionalChineseCountryHKNames: Record<Country, string> = {
   [Country.Afghanistan]: '阿富汗',
   [Country.AlandIslands]: '奧蘭羣島',
@@ -1017,6 +1035,10 @@ export const traditionalChineseCountryHKNames: Record<Country, string> = {
   [Country.Zimbabwe]: '津巴布韋',
 }
 
+/**
+ * Represents all possible countries & regions with their corresponding
+ * Traditional Chinese TW names.
+ */
 export const traditionalChineseCountryTWNames: Record<Country, string> = {
   [Country.Afghanistan]: '阿富汗',
   [Country.AlandIslands]: '奧蘭群島',
@@ -1270,6 +1292,10 @@ export const traditionalChineseCountryTWNames: Record<Country, string> = {
   [Country.Zimbabwe]: '辛巴威',
 }
 
+/**
+ * Represents all possible countries & regions with their corresponding
+ * Spanish names.
+ */
 export const spanishCountryNames: Record<Country, string> = {
   [Country.Afghanistan]: 'Afganistán',
   [Country.AlandIslands]: 'Islas Åland',

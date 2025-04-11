@@ -1,4 +1,3 @@
-import { Country } from '../data'
 import {
   FontSpecNumbersStyle,
   Resume,
@@ -7,10 +6,10 @@ import {
   ResumeLayout,
 } from '../types/'
 
-export * from './country'
-
+/** Represents a Tiptap editor JSON string for a single empty paragraph. */
 export const emptyParagraph = '{"type":"doc","content":[{"type":"paragraph"}]}'
 
+/** Defines standard academic degree types. */
 export enum Degree {
   MiddleSchool = 'Middle School',
   HighSchool = 'High School',
@@ -21,8 +20,15 @@ export enum Degree {
   Doctor = 'Doctor',
 }
 
+/** An array containing all possible values from the `Degree` enum. */
 export const degreeOptions = Object.values(Degree)
 
+/** Defines common world languages.
+ *
+ * This list contains the most used languages in the world.
+ *
+ * TODO: allow users to add their own languages
+ */
 export enum Language {
   Arabic = 'Arabic',
   Bengali = 'Bengali',
@@ -52,8 +58,13 @@ export enum Language {
   Vietnamese = 'Vietnamese',
 }
 
+/** An array containing all possible values from the `Language` enum. */
 export const languagesOptions = Object.values(Language)
 
+/** Defines levels of language proficiency.
+ *
+ * This list of options is coming from LinkedIn.
+ */
 export enum LanguageFluency {
   ElementaryProficiency = 'Elementary Proficiency',
   LimitedWorkingProficiency = 'Limited Working Proficiency',
@@ -62,8 +73,10 @@ export enum LanguageFluency {
   NativeOrBilingualProficiency = 'Native or Bilingual Proficiency',
 }
 
+/** An array containing all possible values from the `LanguageFluency` enum. */
 export const languageFluenciesOptions = Object.values(LanguageFluency)
 
+/** Defines levels of skill proficiency. */
 export enum SkillLevel {
   Novice = 'Novice',
   Beginner = 'Beginner',
@@ -73,12 +86,17 @@ export enum SkillLevel {
   Master = 'Master',
 }
 
+/** An array containing all possible values from the `SkillLevel` enum. */
+export const skillLevelOptions = Object.values(SkillLevel)
+
+/** Defines identifiers for the available resume templates. */
 export enum Templates {
   ModerncvBanking = 'moderncv-banking',
   ModerncvCasual = 'moderncv-casual',
   ModerncvClassic = 'moderncv-classic',
 }
 
+/** Provides default, empty item structures for each resume section type. */
 export const resumeItems: ResumeItem = {
   award: {
     awarder: '',
@@ -179,6 +197,8 @@ export const resumeItems: ResumeItem = {
   },
 }
 
+/** Default content structure for a new resume, containing empty or minimal
+ * sections. */
 export const defaultResumeContent: ResumeContent = {
   awards: [],
   basics: resumeItems.basics,
@@ -196,6 +216,11 @@ export const defaultResumeContent: ResumeContent = {
   work: [resumeItems.work],
 }
 
+/**
+ * Resume content structure containing one example item for each section.
+ *
+ * Useful for testing transformations and rendering.
+ */
 export const filledResumeContent: ResumeContent = {
   awards: [resumeItems.award],
   basics: resumeItems.basics,
@@ -213,11 +238,18 @@ export const filledResumeContent: ResumeContent = {
   work: [resumeItems.work],
 }
 
+/** Available font size options for resume layout.
+ *
+ * LaTeX only supports these values.
+ */
 export const fontSizeOptions = ['10 pt', '11 pt', '12 pt']
 
+/** Default top/bottom margin value. */
 const defaultTopBottomMargin = '2.5 cm'
+/** Default left/right margin value. */
 const defaultLeftRightMargin = '1.5 cm'
 
+/** Available margin size options for resume layout. */
 export const marginOptions = [
   defaultLeftRightMargin,
   '1.75 cm',
@@ -226,6 +258,7 @@ export const marginOptions = [
   defaultTopBottomMargin,
 ]
 
+/** Defines supported languages for UI display and template translation. */
 export enum LocaleLanguage {
   English = 'English',
   SimplifiedChinese = 'Chinese (Simplified)',
@@ -234,8 +267,13 @@ export enum LocaleLanguage {
   Spanish = 'Spanish',
 }
 
+/** An array containing all possible values from the `LocaleLanguage` enum. */
 export const localeLanguageOptions = Object.values(LocaleLanguage)
 
+/** Maps `LocaleLanguage` enum values to standard IETF language tags.
+ *
+ * @see {@link https://en.wikipedia.org/wiki/IETF_language_tag}
+ */
 export const languageToLocale: Record<LocaleLanguage, string> = {
   [LocaleLanguage.English]: 'en',
   [LocaleLanguage.Spanish]: 'es',
@@ -245,8 +283,10 @@ export const languageToLocale: Record<LocaleLanguage, string> = {
   [LocaleLanguage.TraditionalChineseTW]: 'zh-TW',
 }
 
+/** The default language used when creating a new resume layout. */
 const defaultLanguage = LocaleLanguage.English
 
+/** Default layout configuration for a new resume. */
 export const defaultResumeLayout: ResumeLayout = {
   template: {
     id: Templates.ModerncvBanking,
@@ -271,6 +311,7 @@ export const defaultResumeLayout: ResumeLayout = {
   },
 }
 
+/** Default value when user creates a new `Resume` object. */
 export const defaultResume: Resume = {
   id: '',
   slug: '',
@@ -283,6 +324,11 @@ export const defaultResume: Resume = {
   publishedAt: '',
 }
 
+/**
+ * Default value when user wants to use a filled resume.
+ *
+ * This is useful for testing transformations and rendering.
+ */
 export const filledResume: Resume = {
   id: '',
   slug: '',
@@ -294,12 +340,3 @@ export const filledResume: Resume = {
   updatedAt: '',
   publishedAt: '',
 }
-
-export const skillLevelOptions = [
-  SkillLevel.Novice,
-  SkillLevel.Beginner,
-  SkillLevel.Intermediate,
-  SkillLevel.Advanced,
-  SkillLevel.Expert,
-  SkillLevel.Master,
-]

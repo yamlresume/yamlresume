@@ -12,6 +12,12 @@ import { Parser } from './interface'
  * @see https://tiptap.dev/docs/editor/core-concepts/schema#parse
  */
 export class TiptapParser implements Parser {
+  /**
+   * Parse a tiptap JSON string into an AST node.
+   *
+   * @param input - The tiptap JSON string to parse.
+   * @returns The parsed AST node.
+   */
   parse(input: string): DocNode {
     return JSON.parse(input) as DocNode
   }

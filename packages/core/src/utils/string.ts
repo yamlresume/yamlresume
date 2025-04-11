@@ -2,7 +2,7 @@
  * Check if a string is empty or only contains whitespace
  *
  * @param value - string to check
- * @returns true if string is empty or only contains whitespace, false otherwise
+ * @returns True if string is empty or only contains whitespace, false otherwise
  */
 export function isEmptyString(value: string) {
   return value.trim().length === 0

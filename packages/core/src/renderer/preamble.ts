@@ -29,6 +29,12 @@ export enum ModerncvStyle {
   Casual = 'casual',
 }
 
+/**
+ * Check if the resume is a CJK resume.
+ *
+ * @param resume - The resume to check.
+ * @returns {boolean} True if the resume is a CJK resume, false otherwise.
+ */
 function isCJKResume(resume: Resume): boolean {
   return [
     LocaleLanguage.SimplifiedChinese,
@@ -37,6 +43,12 @@ function isCJKResume(resume: Resume): boolean {
   ].includes(resume.layout.locale?.language)
 }
 
+/**
+ * Check if the resume is a Spanish resume.
+ *
+ * @param resume - The resume to check.
+ * @returns {boolean} True if the resume is a Spanish resume, false otherwise.
+ */
 function isSpanishResume(resume: Resume): boolean {
   return resume.layout.locale?.language === LocaleLanguage.Spanish
 }
@@ -54,6 +66,13 @@ export function normalizeUnit(value: string): string {
   return value.replace(/\s+/g, '')
 }
 
+/**
+ * Render the document class configuration for the resume.
+ *
+ * @param resume - The resume object
+ * @param documentClass - The document class
+ * @returns The LaTeX code for the document class
+ */
 export function renderDocumentClassConfig(
   resume: Resume,
   documentClass: DocumentClass
@@ -71,6 +90,9 @@ export function renderDocumentClassConfig(
 
 /**
  * Override the moderncv commands for CJK resumes
+ *
+ * This override is only needed when user adopts moderncv banking template and
+ * CJK languages at the same time.
  *
  * @param resume - The resume object
  * @param style - The moderncv style
@@ -111,6 +133,13 @@ function renderModerncvOverride(resume: Resume, style: ModerncvStyle): string {
   }
 }
 
+/**
+ * Render the moderncv configuration for the resume.
+ *
+ * @param resume - The resume object
+ * @param style - The moderncv style
+ * @returns The LaTeX code for the moderncv configuration
+ */
 export function renderModerncvConfig(
   resume: Resume,
   style: ModerncvStyle
@@ -127,6 +156,12 @@ export function renderModerncvConfig(
   ])
 }
 
+/**
+ * Render the layout configuration for the resume.
+ *
+ * @param resume - The resume object
+ * @returns The LaTeX code for the layout configuration
+ */
 export function renderLayoutConfig(resume: Resume): string {
   const {
     layout: {
@@ -174,6 +209,12 @@ export function renderCTeXConfig(resume: Resume): string {
 \\setCJKsansfont{Noto Sans CJK SC}`
 }
 
+/**
+ * Render the LaTeX packages for Spanish support
+ *
+ * @param resume - The resume object
+ * @returns The LaTeX code for the Spanish support
+ */
 export function renderSpanishConfig(resume: Resume): string {
   if (!isSpanishResume(resume)) {
     return ''
@@ -189,6 +230,12 @@ export function renderSpanishConfig(resume: Resume): string {
 \\usepackage[spanish,es-lcroman]{babel}`
 }
 
+/**
+ * Render the LaTeX packages for fontspec support
+ *
+ * @param resume - The resume object
+ * @returns The LaTeX code for the fontspec support
+ */
 export function renderFontspecConfig(resume: Resume): string {
   const {
     layout: {

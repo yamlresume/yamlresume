@@ -18,8 +18,16 @@ import { Parser } from './interface'
  *
  * Under the hood this class first parse the markdown to mdast and then
  * transform the mdast to tiptap nodes.
+ *
+ * @see {@link Parser}
  */
 export class MarkdownParser implements Parser {
+  /**
+   * Parse markdown to tiptap nodes
+   *
+   * @param input - The markdown input to parse
+   * @returns The tiptap node
+   */
   parse(input: string): TiptapNode {
     const ast = unified().use(remarkParse).parse(input)
     return transform(ast)
@@ -27,14 +35,18 @@ export class MarkdownParser implements Parser {
 }
 
 /**
- * Transform mdast to tiptap nodes
+ * Transforms an mdast node (or content) into Tiptap node(s).
  *
  * This is a recursive descent tree walker that traverses the mdast node and
- * transforms it into a tiptap node.
+ * transforms it into a Tiptap node representation. It accumulates formatting marks
+ * (like bold, italic) as it descends.
  *
- * @param ast - The mdast node to transform
- * @param marks - The accumulated marks to apply to the node
- * @returns The tiptap node
+ * @param ast - The mdast node (Root or RootContent) to transform.
+ * @param marks - The formatting marks accumulated from parent nodes to apply.
+ * Defaults to an empty array.
+ * @returns The corresponding Tiptap node, an array of Tiptap nodes (for nodes
+ * that expand like emphasis/strong), or `null` if the mdast node type isn't
+ * handled.
  */
 function transform(ast: Root | RootContent, marks: Mark[] = []) {
   switch (ast.type) {
@@ -110,10 +122,15 @@ function transform(ast: Root | RootContent, marks: Mark[] = []) {
 }
 
 /**
- * Processes children with accumulated marks
+ * Process children with accumulated marks
  *
- * This handles the nested mark structure of mdast and converts to TipTap's flat
- * mark array
+ * This function processes the children of a node with accumulated marks and
+ * returns a flat array of transformed nodes.
+ *
+ * @param children - The children of the node to process.
+ * @param marks - The accumulated marks to apply to the node.
+ * @returns The transformed Tiptap node if only one results from the children,
+ * otherwise an array of the transformed Tiptap nodes.
  */
 function processChildrenWithMarks(children: RootContent[], marks: Mark[]) {
   // Transform each child with the accumulated marks
