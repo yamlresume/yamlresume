@@ -31,7 +31,10 @@
     "LICENSE"
   ],
   "scripts": {
-    "build": "tsc --build --force",
+    "build": "tsup",
+    "build:watch": "tsup --watch",
+    "build:clean": "rm -rf dist",
+    "build:prod": "tsup --dts --minify --sourcemap",
     "coverage": "vitest --coverage --run",
     "test": "vitest --run",
     "test:watch": "vitest"

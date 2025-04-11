@@ -1,5 +1,3 @@
-import countries from './countries.json' with { type: 'json' }
-
 /**
  * Represents all possible countries & regions.
  */
@@ -255,13 +253,6 @@ export enum Country {
   Zambia = 'Zambia',
   Zimbabwe = 'Zimbabwe',
 }
-
-/**
- * Represents all possible countries & regions with their corresponding emoji.
- */
-export const countriesWithEmojis = countries.map((country) => {
-  return { label: `${country.emoji} ${country.name}`, value: country.name }
-})
 
 /**
  * Represents all possible countries & regions with their corresponding English

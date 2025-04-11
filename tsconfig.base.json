@@ -1,15 +1,13 @@
 {
   "compilerOptions": {
-    "esModuleInterop": true,
-    "resolveJsonModule": true,
-
     "declaration": true,
     "declarationMap": true,
     "sourceMap": true,
-    "types": ["node", "vitest/globals"],
 
     "importHelpers": true,
-    "composite": true,
-    "target": "ES2015"
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "esModuleInterop": true,
+    "resolveJsonModule": true
   }
 }
