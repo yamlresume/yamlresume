@@ -29,7 +29,6 @@
   },
   "dependencies": {
     "@ppresume/core": "workspace:*",
-    "@types/lodash-es": "^4.17.12",
     "commander": "^11.0.0",
     "extensionless": "^1.9.9",
     "lodash-es": "^4.17.21",
@@ -39,11 +38,9 @@
   },
   "devDependencies": {
     "@types/commander": "^2.12.5",
-    "@types/node": "^20.17.25",
+    "@types/lodash-es": "^4.17.12",
     "@types/which": "^3.0.4",
-    "@vitest/coverage-v8": "^3.1.1",
-    "tsx": "^4.19.3",
-    "vitest": "^3.1.1"
+    "tsx": "^4.19.3"
   },
   "publishConfig": {
     "access": "public"

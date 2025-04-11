@@ -20,9 +20,13 @@
     "@commitlint/cli": "^19.8.0",
     "@commitlint/config-conventional": "^19.8.0",
     "@trivago/prettier-plugin-sort-imports": "^5.2.2",
+    "@types/node": "^20.17.25",
+    "@vitest/coverage-v8": "^3.1.1",
     "husky": "^9.1.7",
     "lint-staged": "^15.5.0",
-    "prettier": "^3.5.3"
+    "prettier": "^3.5.3",
+    "typescript": "~5.4.5",
+    "vitest": "^3.1.1"
   },
   "packageManager": "pnpm@10.7.0"
 }
