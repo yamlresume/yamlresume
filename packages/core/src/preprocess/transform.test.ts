@@ -48,7 +48,7 @@ import {
   transformSkills,
   transformSocialLinks,
   transformSummary,
-} from './resume-transform'
+} from './transform'
 
 function testOverAllLocaleLanguages(
   testFn: (language: LocaleLanguage) => void

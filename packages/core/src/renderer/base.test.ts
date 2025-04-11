@@ -1,7 +1,7 @@
 import { describe, expect, it, beforeEach } from 'vitest'
 
 import { Resume } from '../types'
-import { Renderer } from './types'
+import { Renderer } from './base'
 
 // Create a concrete implementation for testing
 class TestRenderer extends Renderer {

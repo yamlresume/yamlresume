@@ -3,12 +3,12 @@ import { get } from 'lodash-es'
 import { Parser } from '../compiler/parser/interface'
 import { Templates } from '../data'
 import { Resume } from '../types'
+import { Renderer } from './base'
 import {
   ModerncvBankingRenderer,
   ModerncvCasualRenderer,
   ModerncvClassicRenderer,
 } from './moderncv'
-import { Renderer } from './types'
 
 const RESUME_RENDERER_MAP = {
   [Templates.ModerncvBanking]: ModerncvBankingRenderer,

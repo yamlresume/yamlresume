@@ -1,5 +1,5 @@
 import { Parser } from '../compiler/parser/interface'
-import { transformResume } from '../resume'
+import { transformResume } from '../preprocess'
 import { getTemplateTranslations } from '../translations'
 import { Resume } from '../types'
 import {
@@ -8,6 +8,7 @@ import {
   joinNonEmptyString,
   showIf,
 } from '../utils'
+import { Renderer } from './base'
 import {
   DocumentClass,
   ModerncvStyle,
@@ -18,7 +19,6 @@ import {
   renderModerncvConfig,
   renderSpanishConfig,
 } from './preamble'
-import { Renderer } from './types'
 
 /**
  * Base class for moderncv renderers.
