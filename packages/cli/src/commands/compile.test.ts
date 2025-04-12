@@ -240,6 +240,10 @@ describe(generatePDF, () => {
       // biome-ignore lint/suspicious/noExplicitAny: ignore
       .spyOn(child_process, 'execSync' as any)
       .mockImplementation(() => {})
+    const whichSpy = vi
+      // biome-ignore lint/suspicious/noExplicitAny: ignore
+      .spyOn(which, 'sync' as any)
+      .mockImplementation(() => 'xelatex')
 
     const command = inferLaTeXCommand(source)
 
@@ -247,6 +251,7 @@ describe(generatePDF, () => {
 
     expect(execSync).toBeCalledTimes(1)
     expect(execSync).toHaveBeenCalledWith(command)
+    expect(whichSpy).toHaveBeenCalledWith('xelatex')
   })
 })
 
@@ -262,11 +267,16 @@ describe(compileResume, () => {
       // biome-ignore lint/suspicious/noExplicitAny: ignore
       .spyOn(child_process, 'execSync' as any)
       .mockImplementation(() => {})
+    const whichSpy = vi
+      // biome-ignore lint/suspicious/noExplicitAny: ignore
+      .spyOn(which, 'sync' as any)
+      .mockImplementation(() => 'xelatex')
 
     compileResume(source)
 
     expect(execSync).toBeCalledTimes(1)
     expect(execSync).toHaveBeenCalledWith(inferLaTeXCommand(source))
+    expect(whichSpy).toHaveBeenCalledWith('xelatex')
   })
 })
 

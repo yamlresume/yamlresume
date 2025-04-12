@@ -11,6 +11,7 @@
     "test:watch": "pnpm -r test:watch",
     "test:coverage": "pnpm -r test:coverage",
     "check": "pnpm biome check --write --unsafe packages/*/src",
+    "check:ci": "pnpm biome check packages/*/src",
     "prepare": "husky",
     "prepublishOnly": "pnpm test",
     "commitlint": "commitlint --edit",
