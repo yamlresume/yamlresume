@@ -10,6 +10,7 @@ describe('program', () => {
 
   beforeEach(() => {
     writeSpy = vi
+      // biome-ignore lint/suspicious/noExplicitAny: ignore
       .spyOn(process.stdout, 'write' as any)
       // suppress output
       .mockImplementation(() => true)

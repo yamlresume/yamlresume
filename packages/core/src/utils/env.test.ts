@@ -1,6 +1,6 @@
 import { afterAll, beforeEach, describe, expect, it, vi } from 'vitest'
 
-import { isTestEnvironment, isMacOS } from './env'
+import { isMacOS, isTestEnvironment } from './env'
 
 describe(isTestEnvironment, () => {
   const OLD_ENV = process.env
@@ -8,9 +8,9 @@ describe(isTestEnvironment, () => {
   beforeEach(() => {
     vi.resetModules()
     process.env = { ...OLD_ENV }
-    delete process.env.NODE_ENV
-    delete process.env.JEST_WORKER_ID
-    delete process.env.VITEST
+    process.env.NODE_ENV = undefined
+    process.env.JEST_WORKER_ID = undefined
+    process.env.VITEST = undefined
   })
 
   afterAll(() => {
@@ -37,6 +37,7 @@ describe(isMacOS, () => {
 
   it('should return true if the platform is macOS', () => {
     const platformSpy = vi
+      // biome-ignore lint/suspicious/noExplicitAny: ignore
       .spyOn(process, 'platform' as any, 'get')
       .mockReturnValue('darwin')
     expect(isMacOS()).toBe(true)
@@ -45,6 +46,7 @@ describe(isMacOS, () => {
 
   it('should return false if the platform is not macOS', () => {
     const platformSpy = vi
+      // biome-ignore lint/suspicious/noExplicitAny: ignore
       .spyOn(process, 'platform' as any, 'get')
       .mockReturnValue('linux')
     expect(isMacOS()).toBe(false)

@@ -1,7 +1,7 @@
-import { getResumeRenderer, type Resume, MarkdownParser } from '@ppresume/core'
-import child_process from 'child_process'
+import child_process from 'node:child_process'
+import fs from 'node:fs'
+import { MarkdownParser, type Resume, getResumeRenderer } from '@ppresume/core'
 import { Command } from 'commander'
-import fs from 'fs'
 import which from 'which'
 import yaml from 'yaml'
 
@@ -21,7 +21,7 @@ export function inferOutput(source: string): string {
     source.endsWith('.yml') ||
     source.endsWith('.json')
   ) {
-    return source.replace(/\.yaml|\.yml|\.json$/, `.tex`)
+    return source.replace(/\.yaml|\.yml|\.json$/, '.tex')
   }
 
   throw new Error(`Unsupported file extension: ${source}`)

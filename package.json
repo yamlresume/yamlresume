@@ -10,8 +10,7 @@
     "test": "pnpm -r test",
     "test:watch": "pnpm -r test:watch",
     "test:coverage": "pnpm -r test:coverage",
-    "format": "pnpm biome format --write packages/*/src",
-    "lint": "pnpm biome lint --write packages/*/src",
+    "check": "pnpm biome check --write --unsafe packages/*/src",
     "prepare": "husky",
     "prepublishOnly": "pnpm test",
     "commitlint": "commitlint --edit",
@@ -19,7 +18,7 @@
     "core": "pnpm --filter @ppresume/core"
   },
   "lint-staged": {
-    "**/*": "pnpm format"
+    "**/*": "pnpm check"
   },
   "devDependencies": {
     "@biomejs/biome": "1.9.4",

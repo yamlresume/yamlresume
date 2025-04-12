@@ -2,12 +2,12 @@ import { describe, expect, it, vi } from 'vitest'
 
 import { LocaleLanguage } from '../data'
 import {
+  epochSecondsToLocaleDateString,
   getDateRange,
   localizeDate,
-  parseDate,
-  nowInUTCSeconds,
-  epochSecondsToLocaleDateString,
   milliSecondsToSeconds,
+  nowInUTCSeconds,
+  parseDate,
 } from './date'
 
 describe(parseDate, () => {

@@ -8,14 +8,7 @@
     "email": "support@ppresume.com",
     "url": "https://ppresume.com"
   },
-  "keywords": [
-    "PPResume",
-    "CV",
-    "Resume",
-    "LaTeX",
-    "Typesetting",
-    "PDF"
-  ],
+  "keywords": ["PPResume", "CV", "Resume", "LaTeX", "Typesetting", "PDF"],
   "type": "module",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -25,11 +18,7 @@
       "default": "./dist/index.js"
     }
   },
-  "files": [
-    "dist",
-    "README.md",
-    "LICENSE"
-  ],
+  "files": ["dist", "README.md", "LICENSE"],
   "scripts": {
     "build": "tsup",
     "build:watch": "tsup --watch",
@@ -44,6 +33,7 @@
     "lodash-es": "^4.17.21",
     "mdast": "^3.0.0",
     "remark-parse": "^11.0.0",
+    "tslib": "^2.8.1",
     "unified": "^11.0.5"
   },
   "devDependencies": {

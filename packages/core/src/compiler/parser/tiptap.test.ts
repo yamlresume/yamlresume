@@ -1,4 +1,4 @@
-import { describe, it, expect } from 'vitest'
+import { describe, expect, it } from 'vitest'
 
 import { NodeType, type ParagraphNode, type TextNode } from '../ast'
 import { TiptapParser } from './tiptap'

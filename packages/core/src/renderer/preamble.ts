@@ -179,7 +179,7 @@ export function renderLayoutConfig(resume: Resume): string {
     [
       `%% page layout/margins
 \\usepackage[top=${t}, bottom=${b}, left=${l}, right=${r}]{geometry}`,
-      showIf(!showPageNumbers, `\\nopagenumbers{}`),
+      showIf(!showPageNumbers, '\\nopagenumbers{}'),
     ],
     '\n'
   )

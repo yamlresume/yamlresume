@@ -1,7 +1,7 @@
-import child_process from 'child_process'
-import { Command, Argument } from 'commander'
-import fs from 'fs'
-import path from 'path'
+import child_process from 'node:child_process'
+import fs from 'node:fs'
+import path from 'node:path'
+import { Argument, Command } from 'commander'
 import {
   afterAll,
   afterEach,
@@ -15,14 +15,14 @@ import which from 'which'
 import yaml from 'yaml'
 
 import {
-  isCommandAvailable,
-  inferOutput,
-  inferLaTeXEnvironment,
-  inferLaTeXCommand,
+  compileCommand,
+  compileResume,
   generatePDF,
   generateTeX,
-  compileResume,
-  compileCommand,
+  inferLaTeXCommand,
+  inferLaTeXEnvironment,
+  inferOutput,
+  isCommandAvailable,
 } from './compile'
 
 function getFixture(source: string) {
@@ -71,6 +71,7 @@ describe(isCommandAvailable, () => {
 
   it('should return true if the command is available', () => {
     const whichSpy = vi
+      // biome-ignore lint/suspicious/noExplicitAny: ignore
       .spyOn(which, 'sync' as any)
       .mockImplementation((cmd) => {
         if (cmd === 'xelatex') {
@@ -90,6 +91,7 @@ describe(inferLaTeXEnvironment, () => {
 
   it('should infer the LaTeX environment with xelatex', () => {
     const whichSpy = vi
+      // biome-ignore lint/suspicious/noExplicitAny: ignore
       .spyOn(which, 'sync' as any)
       .mockImplementation(() => 'xelatex')
 
@@ -99,6 +101,7 @@ describe(inferLaTeXEnvironment, () => {
 
   it('should infer the LaTeX environment with tectonic', () => {
     const whichSpy = vi
+      // biome-ignore lint/suspicious/noExplicitAny: ignore
       .spyOn(which, 'sync' as any)
       .mockImplementation((cmd) => {
         if (cmd !== 'tectonic') {
@@ -113,9 +116,12 @@ describe(inferLaTeXEnvironment, () => {
   })
 
   it('should throw an error if neither xelatex nor tectonic is installed', () => {
-    const whichSpy = vi.spyOn(which, 'sync' as any).mockImplementation(() => {
-      throw new Error('command not found')
-    })
+    const whichSpy = vi
+      // biome-ignore lint/suspicious/noExplicitAny: ignore
+      .spyOn(which, 'sync' as any)
+      .mockImplementation(() => {
+        throw new Error('command not found')
+      })
 
     expect(() => inferLaTeXEnvironment()).toThrow(
       'neither xelatex nor tectonic is installed'
@@ -130,6 +136,7 @@ describe(inferLaTeXCommand, () => {
 
   it('should infer the LaTeX command', () => {
     const whichSpy = vi
+      // biome-ignore lint/suspicious/noExplicitAny: ignore
       .spyOn(which, 'sync' as any)
       .mockImplementation((cmd) => {
         return 'tectonic'
@@ -160,6 +167,7 @@ describe(generateTeX, () => {
 
   it('should read the resume file and generate a tex file', () => {
     const writeFileSync = vi
+      // biome-ignore lint/suspicious/noExplicitAny: ignore
       .spyOn(fs, 'writeFileSync' as any)
       .mockImplementation(() => {})
 
@@ -171,6 +179,7 @@ describe(generateTeX, () => {
 
   it('should handle the exception when resume file is not exist', () => {
     const writeFileSync = vi
+      // biome-ignore lint/suspicious/noExplicitAny: ignore
       .spyOn(fs, 'writeFileSync' as any)
       .mockImplementation(() => {})
 
@@ -184,22 +193,26 @@ describe(generateTeX, () => {
 
   it('should throw an error if the file extension is not supported', () => {
     const readFileSync = vi
+      // biome-ignore lint/suspicious/noExplicitAny: ignore
       .spyOn(fs, 'readFileSync' as any)
       .mockImplementation(() => {})
 
     const source = 'resume.txt'
 
-    expect(() => generateTeX(source)).toThrow(`Unsupported file extension`)
+    expect(() => generateTeX(source)).toThrow('Unsupported file extension')
     expect(readFileSync).toBeCalledTimes(0)
   })
 
   it('should throw an error if the resume cannot be parsed', () => {
     const readFileSync = vi
+      // biome-ignore lint/suspicious/noExplicitAny: ignore
       .spyOn(fs, 'readFileSync' as any)
       .mockImplementation(() => {})
     const writeFileSync = vi
+      // biome-ignore lint/suspicious/noExplicitAny: ignore
       .spyOn(fs, 'writeFileSync' as any)
       .mockImplementation(() => {})
+    // biome-ignore lint/suspicious/noExplicitAny: ignore
     const yamlParse = vi.spyOn(yaml, 'parse' as any).mockImplementation(() => {
       throw new Error('Invalid YAML')
     })
@@ -224,6 +237,7 @@ describe(generatePDF, () => {
     const source = getFixture('software-engineer.yml')
 
     const execSync = vi
+      // biome-ignore lint/suspicious/noExplicitAny: ignore
       .spyOn(child_process, 'execSync' as any)
       .mockImplementation(() => {})
 
@@ -245,6 +259,7 @@ describe(compileResume, () => {
     const source = getFixture('software-engineer.yml')
 
     const execSync = vi
+      // biome-ignore lint/suspicious/noExplicitAny: ignore
       .spyOn(child_process, 'execSync' as any)
       .mockImplementation(() => {})
 
@@ -263,9 +278,11 @@ describe('compileCommand', () => {
   beforeEach(() => {
     program = new Command()
     execSpy = vi
+      // biome-ignore lint/suspicious/noExplicitAny: ignore
       .spyOn(child_process, 'execSync' as any)
       .mockImplementation(() => true)
     whichSpy = vi
+      // biome-ignore lint/suspicious/noExplicitAny: ignore
       .spyOn(which, 'sync' as any)
       .mockReturnValue('/usr/bin/xelatex')
   })

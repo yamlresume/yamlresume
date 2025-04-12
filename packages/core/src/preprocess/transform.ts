@@ -5,14 +5,15 @@ import type { Parser } from '../compiler/parser/interface'
 import { LocaleLanguage, defaultResumeLayout } from '../data'
 import {
   ResumeTerms,
-  getTermsTranslations,
   getTemplateTranslations,
+  getTermsTranslations,
 } from '../translations'
 import {
   FontSpecNumbersStyle,
   MainFont,
   type ProfileItem,
   type Resume,
+  ResumeItem,
 } from '../types'
 import { escapeLatex } from '../utils'
 import {
@@ -59,7 +60,7 @@ export function transformResumeValues(resume: Resume): Resume {
       // for now, `transformSocialLinks` will handle it
       return
     } else {
-      resume.content[key].forEach((_: Object, index: number) => {
+      resume.content[key].forEach((_, index: number) => {
         transformResumeSectionValues(value[index])
       })
     }
@@ -87,6 +88,7 @@ function transformResumeSectionComputedValues(sectionResumeComputed: {
  * respectively, for other sections, it would be `resume.education[0]`,
  * `resume.projects[0]` etc.
  */
+// biome-ignore lint/complexity/noBannedTypes: ignore
 function transformResumeSectionValues(sectionResumeItem: Object): void {
   Object.entries(sectionResumeItem).forEach(([key, value]) => {
     if (key === 'summary') {
@@ -406,9 +408,6 @@ export function transformLocation(resume: Resume): Resume {
 
       break
     }
-
-    case LocaleLanguage.English:
-    case LocaleLanguage.Spanish:
     default: {
       // For English, the address format is Country > Region > City > Address
       const postalCodeAndAddress = [resume.content.location.address]
@@ -723,8 +722,6 @@ export function transformResumeLayoutTypography(resume: Resume): Resume {
         numbers: FontSpecNumbersStyle.Lining,
       }
       break
-    case LocaleLanguage.English:
-    case LocaleLanguage.Spanish:
     default:
       resume.layout.typography.fontSpec = {
         ...resume.layout.typography.fontSpec,

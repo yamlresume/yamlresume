@@ -1,5 +1,5 @@
 import { cloneDeep } from 'lodash-es'
-import { expect, describe, it, vi } from 'vitest'
+import { describe, expect, it, vi } from 'vitest'
 
 import { type DocNode, LatexCodeGenerator, TiptapParser } from '../compiler'
 import {
@@ -17,8 +17,8 @@ import {
 import {
   Punctuation,
   ResumeTerms,
-  getTermsTranslations,
   getTemplateTranslations,
+  getTermsTranslations,
 } from '../translations'
 import {
   FontSpecNumbersStyle,
@@ -212,7 +212,7 @@ describe(transformKeywords, () => {
         },
         {
           keywords: ['JavaScript'],
-          expected: `JavaScript`,
+          expected: 'JavaScript',
         },
         {
           keywords: keywordList,
@@ -239,19 +239,19 @@ describe(transformDate, () => {
     const endDate = 'Jan 1, 2018'
 
     for (const section of ['awards', 'certificates']) {
-      resume.content[section].forEach((_: any, index: number) => {
+      resume.content[section].forEach((_, index: number) => {
         resume.content[section][index].date = date
       })
     }
 
     for (const section of ['publications']) {
-      resume.content[section].forEach((_: any, index: number) => {
+      resume.content[section].forEach((_, index: number) => {
         resume.content[section][index].releaseDate = date
       })
     }
 
     for (const section of ['education', 'projects', 'volunteer', 'work']) {
-      resume.content[section].forEach((_: any, index: number) => {
+      resume.content[section].forEach((_, index: number) => {
         resume.content[section][index].startDate = startDate
         resume.content[section][index].endDate = endDate
       })
@@ -260,7 +260,7 @@ describe(transformDate, () => {
     transformDate(resume)
 
     for (const section of ['awards', 'certificates']) {
-      resume.content[section].forEach((_: any, index: number) => {
+      resume.content[section].forEach((_, index: number) => {
         expect(resume.content[section][index].computed?.date).toEqual(
           'Oct 2016'
         )
@@ -268,7 +268,7 @@ describe(transformDate, () => {
     }
 
     for (const section of ['publications']) {
-      resume.content[section].forEach((_: any, index: number) => {
+      resume.content[section].forEach((_, index: number) => {
         expect(resume.content[section][index].computed?.releaseDate).toEqual(
           'Oct 2016'
         )
@@ -276,7 +276,7 @@ describe(transformDate, () => {
     }
 
     for (const section of ['education', 'projects', 'volunteer', 'work']) {
-      resume.content[section].forEach((_: any, index: number) => {
+      resume.content[section].forEach((_, index: number) => {
         expect(resume.content[section][index].computed?.startDate).toEqual(
           'Oct 2016'
         )
@@ -295,7 +295,7 @@ describe(transformEndDate, () => {
     const endDate = ''
 
     for (const section of ['education', 'projects', 'volunteer', 'work']) {
-      resume.content[section].forEach((_: any, index: number) => {
+      resume.content[section].forEach((_, index: number) => {
         resume.content[section][index].endDate = endDate
       })
     }
@@ -303,7 +303,7 @@ describe(transformEndDate, () => {
     transformEndDate(resume)
 
     for (const section of ['education', 'projects', 'volunteer', 'work']) {
-      resume.content[section].forEach((_: any, index: number) => {
+      resume.content[section].forEach((_, index: number) => {
         expect(resume.content[section][index].computed?.endDate).toEqual(
           'Present'
         )
@@ -333,8 +333,10 @@ describe(transformLanguage, () => {
           return
         }
 
-        expect(item.computed?.language).toBe(languages[item.language!])
-        expect(item.computed?.fluency).toBe(languageFluencies[item.fluency!])
+        item.language &&
+          expect(item.computed?.language).toBe(languages[item.language])
+        item.fluency &&
+          expect(item.computed?.fluency).toBe(languageFluencies[item.fluency])
       })
     })
   })
@@ -514,7 +516,7 @@ describe(transformSummary, () => {
       'volunteer',
       'work',
     ]) {
-      resume.content[section].forEach((_: any, index: number) => {
+      resume.content[section].forEach((_, index: number) => {
         resume.content[section][index].summary = summary
       })
     }
@@ -538,7 +540,7 @@ describe(transformSummary, () => {
       'volunteer',
       'work',
     ]) {
-      resume.content[section].forEach((_: any, index: number) => {
+      resume.content[section].forEach((_, index: number) => {
         expect(resume.content[section][index].computed?.summary).toEqual(
           replaceBlankLinesWithPercent(
             new LatexCodeGenerator()
@@ -676,19 +678,21 @@ describe(transformProfileUrls, () => {
         network: 'GitHub',
         url: 'https://github.com/ppresume',
         username: 'ppresume',
-        expected: `{\\small \\faGithub}\\ \\href{https://github.com/ppresume}{@ppresume}`,
+        expected:
+          '{\\small \\faGithub}\\ \\href{https://github.com/ppresume}{@ppresume}',
       },
       {
         network: 'Stack Overflow',
         url: 'https://stackoverflow.com/ppresume',
         username: 'ppresume',
-        expected: `{\\small \\faStackOverflow}\\ \\href{https://stackoverflow.com/ppresume}{@ppresume}`,
+        expected:
+          '{\\small \\faStackOverflow}\\ \\href{https://stackoverflow.com/ppresume}{@ppresume}',
       },
       {
         network: 'WeChat',
         url: '',
         username: 'ppresume',
-        expected: `{\\small \\faWeixin}\\ \\href{}{@ppresume}`,
+        expected: '{\\small \\faWeixin}\\ \\href{}{@ppresume}',
       },
     ]
 
@@ -851,7 +855,7 @@ describe(transformResumeLayoutTypography, () => {
   it('should set correct numbers when typography.fontSpec.numbers is undefined', () => {
     for (const language of [LocaleLanguage.English, LocaleLanguage.Spanish]) {
       const resume = cloneDeep(defaultResume)
-      delete resume.layout.typography.fontSpec
+      resume.layout.typography.fontSpec = undefined
 
       resume.layout.locale.language = language
       transformResumeLayoutTypography(resume)

@@ -2,7 +2,7 @@ import { LocaleLanguage } from '@ppresume/core'
 import { Command } from 'commander'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 
-import { listLanguages, languagesCommand } from './languages'
+import { languagesCommand, listLanguages } from './languages'
 
 describe(listLanguages, () => {
   it('should generate a markdown table with all supported languages', () => {

@@ -1,14 +1,14 @@
-import { describe, it, expect } from 'vitest'
+import { describe, expect, it } from 'vitest'
 
 import {
-  type Node,
-  NodeType,
+  type ListItemNode,
   type Mark,
   MarkType,
-  type TextNode,
-  type ParagraphNode,
+  type Node,
+  NodeType,
   type OrderedListNode,
-  type ListItemNode,
+  type ParagraphNode,
+  type TextNode,
 } from './ast'
 
 describe('AST Types', () => {

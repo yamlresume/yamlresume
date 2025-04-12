@@ -3,13 +3,13 @@ import remarkParse from 'remark-parse'
 import { unified } from 'unified'
 
 import {
-  type Node as TiptapNode,
   type BoldMark,
   type ItalicMark,
   type LinkMark,
   type Mark,
-  NodeType,
   MarkType,
+  NodeType,
+  type Node as TiptapNode,
 } from '../ast'
 import type { Parser } from './interface'
 
@@ -78,15 +78,17 @@ function transform(ast: Root | RootContent, marks: Mark[] = []) {
 
     // For text nodes with marks, we accumulate the mark and pass it down to
     // children
-    case 'strong':
+    case 'strong': {
       const boldMark: BoldMark = { type: MarkType.bold }
       return processChildrenWithMarks(ast.children, [...marks, boldMark])
+    }
 
-    case 'emphasis':
+    case 'emphasis': {
       const italicMark: ItalicMark = { type: MarkType.italic }
       return processChildrenWithMarks(ast.children, [...marks, italicMark])
+    }
 
-    case 'link':
+    case 'link': {
       const linkMark: LinkMark = {
         type: MarkType.link,
         attrs: {
@@ -96,6 +98,7 @@ function transform(ast: Root | RootContent, marks: Mark[] = []) {
         },
       }
       return processChildrenWithMarks(ast.children, [...marks, linkMark])
+    }
 
     case 'listItem':
       return {

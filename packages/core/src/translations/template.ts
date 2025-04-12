@@ -102,10 +102,7 @@ export function getTemplateTranslations(
     },
   }
 
-  if (isEmptyValue(language)) {
-    // by default we return English translations
-    language = LocaleLanguage.English
-  }
-
-  return templateTranslation[language]
+  return templateTranslation[
+    isEmptyValue(language) ? LocaleLanguage.English : language
+  ]
 }

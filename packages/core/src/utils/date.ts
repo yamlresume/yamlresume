@@ -14,8 +14,7 @@ export function parseDate(dateStr: string | undefined | null): Date | null {
     const date = new Date(dateStr)
     // MDN says that date parsing may return NaN or raise exceptions, ref:
     // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Errors/Invalid_date
-    // @ts-expect-error
-    return isNaN(date) ? null : date
+    return Number.isNaN(date.getTime()) ? null : date
   } catch (e) {
     return null
   }
@@ -42,11 +41,12 @@ export function localizeDate(
     month: 'short',
   }
 
-  if (isEmptyValue(language)) {
-    language = LocaleLanguage.English
-  }
-
-  return new Date(date).toLocaleDateString(languageToLocale[language], options)
+  return new Date(date).toLocaleDateString(
+    languageToLocale[
+      isEmptyValue(language) ? LocaleLanguage.English : language
+    ],
+    options
+  )
 }
 
 /**
@@ -74,7 +74,6 @@ export function getDateRange(
         return `${localizeDate(startDate, language)}至今`
       case LocaleLanguage.Spanish:
         return `${localizeDate(startDate, language)} hasta la fecha`
-      case LocaleLanguage.English:
       default:
         // by default we return English's "Present" if language is not supported
         return `${localizeDate(startDate, language)} -- Present`

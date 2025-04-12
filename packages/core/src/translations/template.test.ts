@@ -1,7 +1,7 @@
-import { describe, it, expect } from 'vitest'
+import { describe, expect, it } from 'vitest'
 
 import { LocaleLanguage } from '../data'
-import { getTemplateTranslations, Punctuation, TemplateTerms } from './template'
+import { Punctuation, TemplateTerms, getTemplateTranslations } from './template'
 
 describe(getTemplateTranslations, () => {
   it('should return the correct translations', () => {

@@ -1,4 +1,4 @@
-import { Options } from 'tsup'
+import type { Options } from 'tsup'
 
 export const baseConfig: Options = {
   clean: true,

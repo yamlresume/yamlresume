@@ -1,13 +1,13 @@
 import { escapeLatex } from '../../utils'
 import {
-  type Node,
-  NodeType,
   type BulletListNode,
   type DocNode,
   type Fragment,
   type ListItemNode,
   type Mark,
   MarkType,
+  type Node,
+  NodeType,
   type OrderedListNode,
   type ParagraphNode,
   type TextNode,

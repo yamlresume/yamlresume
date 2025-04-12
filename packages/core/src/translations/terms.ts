@@ -436,10 +436,7 @@ export function getTermsTranslations(
     },
   }
 
-  if (isEmptyValue(language)) {
-    // by default we return English translations
-    language = LocaleLanguage.English
-  }
-
-  return termsTranslations[language]
+  return termsTranslations[
+    isEmptyValue(language) ? LocaleLanguage.English : language
+  ]
 }

@@ -1,5 +1,5 @@
 import { cloneDeep } from 'lodash-es'
-import { expect, describe, it, beforeEach } from 'vitest'
+import { beforeEach, describe, expect, it } from 'vitest'
 
 import { TiptapParser } from '../compiler'
 import {
@@ -557,7 +557,7 @@ describe('ModerncvBase', () => {
       expect(result).toMatch(/^\\section{References}/)
       expect(result).toContain(`{${name}}`)
       expect(result).toContain(`{${relationship}}`)
-      expect(result).toContain(``)
+      expect(result).toContain('')
       expect(result).toContain(`\\emaillink[${email}]{${email}}`)
     })
   })
