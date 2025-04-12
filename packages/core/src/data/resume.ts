@@ -1,9 +1,9 @@
 import {
   FontSpecNumbersStyle,
-  Resume,
-  ResumeContent,
-  ResumeItem,
-  ResumeLayout,
+  type Resume,
+  type ResumeContent,
+  type ResumeItem,
+  type ResumeLayout,
 } from '../types/'
 
 /** Represents a Tiptap editor JSON string for a single empty paragraph. */

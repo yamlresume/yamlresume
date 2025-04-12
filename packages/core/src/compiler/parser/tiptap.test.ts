@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest'
 
-import { NodeType, ParagraphNode, TextNode } from '../ast'
+import { NodeType, type ParagraphNode, type TextNode } from '../ast'
 import { TiptapParser } from './tiptap'
 
 describe('TiptapParser', () => {

@@ -12,7 +12,7 @@ import {
   emptyParagraph,
   filledResume,
 } from '../data'
-import { Resume } from '../types'
+import type { Resume } from '../types'
 import {
   ModerncvBankingRenderer,
   ModerncvBase,
@@ -111,7 +111,7 @@ describe('ModerncvBase', () => {
       renderer = new ModerncvBankingRenderer(resume, summaryParser)
       const result = renderer.renderBasics()
 
-      expect(result).toMatch(new RegExp(`^\\\\name{}{}`))
+      expect(result).toMatch(/^\\name{}{}/)
     })
 
     it('should skip empty fields', () => {
@@ -271,7 +271,7 @@ describe('ModerncvBase', () => {
       renderer = new ModerncvBankingRenderer(resume, summaryParser)
       const result = renderer.renderEducation()
 
-      expect(result).toMatch(new RegExp(`^\\\\section{Education}`))
+      expect(result).toMatch(/^\\section{Education}/)
       expect(result).toContain('\\cventry{Jan 2020 -- Jan 2024}')
       expect(result).toContain(`{${studyType}, ${area}}`)
       expect(result).toContain(institution)
@@ -313,7 +313,7 @@ describe('ModerncvBase', () => {
       renderer = new ModerncvBankingRenderer(resume, summaryParser)
       const result = renderer.renderWork()
 
-      expect(result).toMatch(new RegExp(`^\\\\section{Work}`))
+      expect(result).toMatch(/^\\section{Work}/)
       expect(result).toContain('\\cventry{Jan 2020 -- Jan 2024}')
       expect(result).toContain(`{${position}}`)
       expect(result).toContain(`{${name}}`)
@@ -344,7 +344,7 @@ describe('ModerncvBase', () => {
       renderer = new ModerncvBankingRenderer(resume, summaryParser)
       const result = renderer.renderLanguages()
 
-      expect(result).toMatch(new RegExp(`^\\\\section{Languages}`))
+      expect(result).toMatch(/^\\section{Languages}/)
       expect(result).toContain(
         '\\cvline{English}{Native or Bilingual Proficiency \\hfill \\textbf{Keywords}: TOEFL 100, IELTS 7.5}'
       )
@@ -361,7 +361,7 @@ describe('ModerncvBase', () => {
       renderer = new ModerncvBankingRenderer(resume, summaryParser)
       const result = renderer.renderLanguages()
 
-      expect(result).toMatch(new RegExp(`^\\\\section{Languages}`))
+      expect(result).toMatch(/^\\section{Languages}/)
       expect(result).toContain(
         '\\cvline{English}{Native or Bilingual Proficiency}'
       )
@@ -390,7 +390,7 @@ describe('ModerncvBase', () => {
       renderer = new ModerncvBankingRenderer(resume, summaryParser)
       const result = renderer.renderSkills()
 
-      expect(result).toMatch(new RegExp(`^\\\\section{Skills}`))
+      expect(result).toMatch(/^\\section{Skills}/)
       expect(result).toContain(
         '\\cvline{Programming}{Expert \\hfill \\textbf{Keywords}: JavaScript, TypeScript}'
       )
@@ -407,7 +407,7 @@ describe('ModerncvBase', () => {
       renderer = new ModerncvBankingRenderer(resume, summaryParser)
       const result = renderer.renderSkills()
 
-      expect(result).toMatch(new RegExp(`^\\\\section{Skills}`))
+      expect(result).toMatch(/^\\section{Skills}/)
       expect(result).toContain('\\cvline{Programming}{Expert}')
     })
   })
@@ -440,7 +440,7 @@ describe('ModerncvBase', () => {
       renderer = new ModerncvBankingRenderer(resume, summaryParser)
       const result = renderer.renderAwards()
 
-      expect(result).toMatch(new RegExp(`^\\\\section{Awards}`))
+      expect(result).toMatch(/^\\section{Awards}/)
       expect(result).toContain('\\cventry{Jan 2023}')
       expect(result).toContain(`{${title}}`)
       expect(result).toContain(`{${awarder}}`)
@@ -475,7 +475,7 @@ describe('ModerncvBase', () => {
       renderer = new ModerncvBankingRenderer(resume, summaryParser)
       const result = renderer.renderCertificates()
 
-      expect(result).toMatch(new RegExp(`^\\\\section{Certificates}`))
+      expect(result).toMatch(/^\\section{Certificates}/)
       expect(result).toContain('\\cventry{Jan 2023}')
       expect(result).toContain(`{${name}}`)
       expect(result).toContain(`{${issuer}}`)
@@ -513,7 +513,7 @@ describe('ModerncvBase', () => {
       renderer = new ModerncvBankingRenderer(resume, summaryParser)
       const result = renderer.renderPublications()
 
-      expect(result).toMatch(new RegExp(`^\\\\section{Publications}`))
+      expect(result).toMatch(/^\\section{Publications}/)
       expect(result).toContain('\\cventry{Jan 2023}')
       expect(result).toContain(`{${name}}`)
       expect(result).toContain(`{${publisher}}`)
@@ -554,7 +554,7 @@ describe('ModerncvBase', () => {
       renderer = new ModerncvBankingRenderer(resume, summaryParser)
       const result = renderer.renderReferences()
 
-      expect(result).toMatch(new RegExp(`^\\\\section{References}`))
+      expect(result).toMatch(/^\\section{References}/)
       expect(result).toContain(`{${name}}`)
       expect(result).toContain(`{${relationship}}`)
       expect(result).toContain(``)
@@ -596,7 +596,7 @@ describe('ModerncvBase', () => {
       renderer = new ModerncvBankingRenderer(resume, summaryParser)
       const result = renderer.renderProjects()
 
-      expect(result).toMatch(new RegExp(`^\\\\section{Projects}`))
+      expect(result).toMatch(/^\\section{Projects}/)
       expect(result).toContain('\\cventry{Jan 2023 -- Dec 2023}')
       expect(result).toContain(`{${description}}`)
       expect(result).toContain(`{${name}}`)
@@ -629,7 +629,7 @@ describe('ModerncvBase', () => {
       renderer = new ModerncvBankingRenderer(resume, summaryParser)
       const result = renderer.renderInterests()
 
-      expect(result).toMatch(new RegExp(`^\\\\section{Interests}`))
+      expect(result).toMatch(/^\\section{Interests}/)
       expect(result).toContain(`\\cvline{${name}}{${keywords.join(', ')}}`)
     })
   })
@@ -666,7 +666,7 @@ describe('ModerncvBase', () => {
       renderer = new ModerncvBankingRenderer(resume, summaryParser)
       const result = renderer.renderVolunteer()
 
-      expect(result).toMatch(new RegExp(`^\\\\section{Volunteer}`))
+      expect(result).toMatch(/^\\section{Volunteer}/)
       expect(result).toContain('\\cventry{Jan 2023 -- Dec 2023}')
       expect(result).toContain(`{${position}}`)
       expect(result).toContain(`{${organization}}`)

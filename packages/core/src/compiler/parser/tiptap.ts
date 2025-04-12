@@ -1,5 +1,5 @@
-import { DocNode } from '../ast'
-import { Parser } from './interface'
+import type { DocNode } from '../ast'
+import type { Parser } from './interface'
 
 /**
  * This parser is used to parse the tiptap JSON format to the AST.

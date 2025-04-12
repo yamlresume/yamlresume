@@ -23,9 +23,9 @@ import {
 import {
   FontSpecNumbersStyle,
   MainFont,
-  ProfileItem,
-  ResumeLayout,
-  SocialNetwork,
+  type ProfileItem,
+  type ResumeLayout,
+  type SocialNetwork,
 } from '../types'
 import { isEmptyValue, isMacOS, isTestEnvironment } from '../utils'
 import {

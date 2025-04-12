@@ -1,15 +1,19 @@
 import { capitalize, cloneDeep, isArray, merge } from 'lodash-es'
 
 import { LatexCodeGenerator } from '../compiler'
-import { Parser } from '../compiler/parser/interface'
+import type { Parser } from '../compiler/parser/interface'
 import { LocaleLanguage, defaultResumeLayout } from '../data'
 import {
-  Punctuation,
   ResumeTerms,
   getTermsTranslations,
   getTemplateTranslations,
 } from '../translations'
-import { FontSpecNumbersStyle, MainFont, ProfileItem, Resume } from '../types'
+import {
+  FontSpecNumbersStyle,
+  MainFont,
+  type ProfileItem,
+  type Resume,
+} from '../types'
 import { escapeLatex } from '../utils'
 import {
   getDateRange,

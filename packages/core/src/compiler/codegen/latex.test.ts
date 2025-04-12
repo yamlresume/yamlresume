@@ -1,15 +1,15 @@
 import { describe, expect, it } from 'vitest'
 
 import {
-  BulletListNode,
-  DocNode,
-  ListItemNode,
-  Mark,
+  type BulletListNode,
+  type DocNode,
+  type ListItemNode,
+  type Mark,
   MarkType,
   NodeType,
-  OrderedListNode,
-  ParagraphNode,
-  TextNode,
+  type OrderedListNode,
+  type ParagraphNode,
+  type TextNode,
 } from '../ast'
 import tipTapContentJSON from './fixtures/tiptap-content.json'
 // I didn't manage to find a way to get rid of the loading error here:

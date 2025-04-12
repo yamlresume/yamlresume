@@ -28,7 +28,7 @@ export function showIf(predicate: boolean, content: string) {
  */
 export function joinNonEmptyString(
   codes: string[],
-  separator: string = '\n\n'
+  separator = '\n\n'
 ): string {
   return codes.filter((code) => !isEmptyString(code)).join(separator)
 }

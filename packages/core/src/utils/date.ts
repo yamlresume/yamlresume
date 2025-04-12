@@ -110,7 +110,7 @@ export function nowInUTCSeconds(): number {
  */
 export function epochSecondsToLocaleDateString(
   epochTime: number,
-  locale: string = 'en-US'
+  locale = 'en-US'
 ) {
   return new Date(epochTime * 1000).toLocaleDateString(locale, {
     day: 'numeric',

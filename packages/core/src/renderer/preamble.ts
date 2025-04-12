@@ -1,6 +1,6 @@
 import { LocaleLanguage } from '../data'
 import { getTemplateTranslations } from '../translations'
-import { Resume } from '../types'
+import type { Resume } from '../types'
 import { joinNonEmptyString, showIf } from '../utils'
 
 export enum DocumentClass {

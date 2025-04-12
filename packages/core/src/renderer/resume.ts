@@ -1,9 +1,9 @@
 import { get } from 'lodash-es'
 
-import { Parser } from '../compiler/parser/interface'
+import type { Parser } from '../compiler/parser/interface'
 import { Templates } from '../data'
-import { Resume } from '../types'
-import { Renderer } from './base'
+import type { Resume } from '../types'
+import type { Renderer } from './base'
 import {
   ModerncvBankingRenderer,
   ModerncvCasualRenderer,

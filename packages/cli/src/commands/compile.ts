@@ -1,4 +1,4 @@
-import { getResumeRenderer, Resume, MarkdownParser } from '@ppresume/core'
+import { getResumeRenderer, type Resume, MarkdownParser } from '@ppresume/core'
 import child_process from 'child_process'
 import { Command } from 'commander'
 import fs from 'fs'

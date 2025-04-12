@@ -9,7 +9,9 @@
     "coverage": "pnpm -r coverage",
     "test": "pnpm -r test",
     "test:watch": "pnpm -r test:watch",
-    "lint": "pnpm -r lint",
+    "test:coverage": "pnpm -r test:coverage",
+    "format": "pnpm biome format --write packages/*/src",
+    "lint": "pnpm biome lint --write packages/*/src",
     "prepare": "husky",
     "prepublishOnly": "pnpm test",
     "commitlint": "commitlint --edit",
@@ -17,17 +19,16 @@
     "core": "pnpm --filter @ppresume/core"
   },
   "lint-staged": {
-    "**/*": "prettier --write --ignore-unknown"
+    "**/*": "pnpm format"
   },
   "devDependencies": {
+    "@biomejs/biome": "1.9.4",
     "@commitlint/cli": "^19.8.0",
     "@commitlint/config-conventional": "^19.8.0",
-    "@trivago/prettier-plugin-sort-imports": "^5.2.2",
     "@types/node": "^20.17.25",
     "@vitest/coverage-v8": "^3.1.1",
     "husky": "^9.1.7",
     "lint-staged": "^15.5.0",
-    "prettier": "^3.5.3",
     "tsup": "^8.4.0",
     "typescript": "~5.4.5",
     "vitest": "^3.1.1"

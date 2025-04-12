@@ -1,4 +1,4 @@
-import { Node } from '../ast'
+import type { Node } from '../ast'
 
 /**
  * Interface to generate code from an AST.

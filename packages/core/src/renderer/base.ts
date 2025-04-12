@@ -1,4 +1,4 @@
-import { Resume } from '../types'
+import type { Resume } from '../types'
 
 /**
  * Abstract class for rendering resumes in TeX format.

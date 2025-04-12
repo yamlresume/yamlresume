@@ -2,7 +2,7 @@ import { expect, describe, it } from 'vitest'
 
 import { TiptapParser } from '../compiler'
 import { Templates, defaultResume } from '../data'
-import { Resume } from '../types'
+import type { Resume } from '../types'
 import {
   ModerncvBankingRenderer,
   ModerncvCasualRenderer,

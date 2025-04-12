@@ -1,7 +1,7 @@
-import { Parser } from '../compiler/parser/interface'
+import type { Parser } from '../compiler/parser/interface'
 import { transformResume } from '../preprocess'
 import { getTemplateTranslations } from '../translations'
-import { Resume } from '../types'
+import type { Resume } from '../types'
 import {
   isEmptyString,
   isEmptyValue,

@@ -1,17 +1,17 @@
-import { Root, RootContent } from 'mdast'
+import type { Root, RootContent } from 'mdast'
 import remarkParse from 'remark-parse'
 import { unified } from 'unified'
 
 import {
-  Node as TiptapNode,
-  BoldMark,
-  ItalicMark,
-  LinkMark,
-  Mark,
+  type Node as TiptapNode,
+  type BoldMark,
+  type ItalicMark,
+  type LinkMark,
+  type Mark,
   NodeType,
   MarkType,
 } from '../ast'
-import { Parser } from './interface'
+import type { Parser } from './interface'
 
 /**
  * Parse markdown to tiptap nodes
@@ -54,8 +54,7 @@ function transform(ast: Root | RootContent, marks: Mark[] = []) {
       return {
         type: NodeType.doc,
         content: ast.children
-          .map((child) => transform(child, marks))
-          .flatMap((child) => child)
+          .flatMap((child) => transform(child, marks))
           .filter(Boolean),
       }
 
@@ -63,8 +62,7 @@ function transform(ast: Root | RootContent, marks: Mark[] = []) {
       return {
         type: NodeType.paragraph,
         content: ast.children
-          .map((child) => transform(child, marks))
-          .flatMap((child) => child)
+          .flatMap((child) => transform(child, marks))
           .filter(Boolean),
       }
 
@@ -103,8 +101,7 @@ function transform(ast: Root | RootContent, marks: Mark[] = []) {
       return {
         type: NodeType.listItem,
         content: ast.children
-          .map((child) => transform(child, marks))
-          .flatMap((child) => child)
+          .flatMap((child) => transform(child, marks))
           .filter(Boolean),
       }
 
@@ -112,8 +109,7 @@ function transform(ast: Root | RootContent, marks: Mark[] = []) {
       return {
         type: ast.ordered ? NodeType.orderedList : NodeType.bulletList,
         content: ast.children
-          .map((child) => transform(child, marks))
-          .flatMap((child) => child)
+          .flatMap((child) => transform(child, marks))
           .filter(Boolean),
       }
   }

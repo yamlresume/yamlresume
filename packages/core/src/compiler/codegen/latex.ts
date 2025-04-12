@@ -1,18 +1,18 @@
 import { escapeLatex } from '../../utils'
 import {
-  Node,
+  type Node,
   NodeType,
-  BulletListNode,
-  DocNode,
-  Fragment,
-  ListItemNode,
-  Mark,
+  type BulletListNode,
+  type DocNode,
+  type Fragment,
+  type ListItemNode,
+  type Mark,
   MarkType,
-  OrderedListNode,
-  ParagraphNode,
-  TextNode,
+  type OrderedListNode,
+  type ParagraphNode,
+  type TextNode,
 } from '../ast'
-import { CodeGenerator } from './interface'
+import type { CodeGenerator } from './interface'
 
 /**
  * Generate LaTeX code from a Node.

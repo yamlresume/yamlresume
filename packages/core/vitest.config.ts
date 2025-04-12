@@ -15,6 +15,7 @@ export default defineConfig({
         '**/*.d.ts',
         '**/*/index.ts',
         'vitest.config.ts',
+        'tsup.config.ts',
       ],
     },
   },
