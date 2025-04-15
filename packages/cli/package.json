@@ -1,5 +1,5 @@
 {
-  "name": "@yamlresume/cli",
+  "name": "yamlresume",
   "version": "0.1.0",
   "description": "The CLI interface for YAMLResume's engine",
   "license": "MIT",
@@ -13,6 +13,7 @@
   "bin": {
     "yamlresume": "./dist/cli.js"
   },
+  "files": ["dist", "README.md", "LICENSE"],
   "scripts": {
     "build": "tsup",
     "build:watch": "tsup --watch",
