@@ -45,7 +45,7 @@ export enum DocumentClass {
  * @property {string} Casual - A more relaxed style while maintaining
  * professionalism
  *
- * @see {@link https://github.com/ppresume/community/issues/117}
+ * @see {@link https://github.com/yamlresume/community/issues/117}
  */
 export enum ModerncvStyle {
   Banking = 'banking',

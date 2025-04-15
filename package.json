@@ -1,5 +1,5 @@
 {
-  "name": "@ppresume/engine",
+  "name": "@yamlresume/yamlresume",
   "private": true,
   "scripts": {
     "build": "pnpm -r build",
@@ -17,8 +17,8 @@
     "prepare": "husky",
     "prepublishOnly": "pnpm test",
     "commitlint": "commitlint --edit",
-    "cli": "pnpm --filter @ppresume/cli",
-    "core": "pnpm --filter @ppresume/core"
+    "cli": "pnpm --filter @yamlresume/cli",
+    "core": "pnpm --filter @yamlresume/core"
   },
   "lint-staged": {
     "**/*": "pnpm check"

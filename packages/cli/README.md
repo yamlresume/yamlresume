@@ -1,24 +1,24 @@
-## PPResume CLI
+## YAMLResume CLI
 
-The PPResume CLI is a command-line interface for
-[PPResume](https://ppresume.com) Engine.
+The YAMLResume CLI is a command-line interface for
+[YAMLResume](https://yamlresume.dev) Engine.
 
 ### Installation
 
 - npm
 
 ```bash
-npm install @ppresume/cli
+npm install @yamlresume/cli
 ```
 
 - pnpm
 
 ```bash
-pnpm add @ppresume/cli
+pnpm add @yamlresume/cli
 ```
 
 - yarn
 
 ```bash
-yarn add @ppresume/cli
+yarn add @yamlresume/cli
 ```

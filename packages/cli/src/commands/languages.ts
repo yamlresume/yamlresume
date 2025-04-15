@@ -22,7 +22,7 @@
  * IN THE SOFTWARE.
  */
 
-import { LocaleLanguage } from '@ppresume/core'
+import { LocaleLanguage } from '@yamlresume/core'
 import { Command } from 'commander'
 import { markdownTable } from 'markdown-table'
 
