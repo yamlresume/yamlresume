@@ -8,17 +8,17 @@ The YAMLResume CLI is a command-line interface for
 - npm
 
 ```bash
-npm install @yamlresume/cli
+npm install yamlresume
 ```
 
 - pnpm
 
 ```bash
-pnpm add @yamlresume/cli
+pnpm add yamlresume
 ```
 
 - yarn
 
 ```bash
-yarn add @yamlresume/cli
+yarn add yamlresume
 ```

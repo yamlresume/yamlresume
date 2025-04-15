@@ -15,9 +15,9 @@
     "license:add": "addlicense -c 'PPResume (https://ppresume.com)' -y 2023–Present -f LICENSE 'packages/cli/src' 'packages/core/src'",
     "license:check": "addlicense -check -c 'PPResume (https://ppresume.com)' -y 2023–Present -f LICENSE 'packages/cli/src' 'packages/core/src'",
     "prepare": "husky",
-    "prepublishOnly": "pnpm test",
+    "prepublishOnly": "pnpm build:prod && pnpm test",
     "commitlint": "commitlint --edit",
-    "cli": "pnpm --filter @yamlresume/cli",
+    "cli": "pnpm --filter yamlresume",
     "core": "pnpm --filter @yamlresume/core"
   },
   "lint-staged": {
