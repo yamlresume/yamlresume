@@ -1,24 +1,24 @@
-## PPResume Core
+## YAMLResume Core
 
-The PPResume Core is the core engine of [PPResume](https://ppresume.com). It is
-in charge of the typesetting and layout of the resume.
+The YAMLResume Core is the core engine of [YAMLResume](https://yamlresume.dev).
+It is in charge of the typesetting and layout of the resume.
 
 ### Installation
 
 - npm
 
 ```bash
-npm install @ppresume/core
+npm install @yamlresume/core
 ```
 
 - pnpm
 
 ```bash
-pnpm add @ppresume/core
+pnpm add @yamlresume/core
 ```
 
 - yarn
 
 ```bash
-yarn add @ppresume/core
+yarn add @yamlresume/core
 ```

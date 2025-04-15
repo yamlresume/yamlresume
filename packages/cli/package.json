@@ -1,17 +1,17 @@
 {
-  "name": "@ppresume/cli",
+  "name": "@yamlresume/cli",
   "version": "0.1.0",
-  "description": "The CLI interface for PPResume's engine",
+  "description": "The CLI interface for YAMLResume's engine",
   "license": "MIT",
   "author": {
-    "name": "PPResume",
-    "email": "support@ppresume.com",
-    "url": "https://ppresume.com"
+    "name": "YAMLResume",
+    "email": "support@yamlresume.com",
+    "url": "https://yamlresume.dev"
   },
-  "keywords": ["PPResume", "CV", "Resume", "LaTeX", "Typesetting", "PDF"],
+  "keywords": ["YAMLResume", "CV", "Resume", "LaTeX", "Typesetting", "PDF"],
   "type": "module",
   "bin": {
-    "ppresume": "./dist/cli.js"
+    "yamlresume": "./dist/cli.js"
   },
   "scripts": {
     "build": "tsup",
@@ -24,7 +24,7 @@
     "test:watch": "vitest"
   },
   "dependencies": {
-    "@ppresume/core": "workspace:*",
+    "@yamlresume/core": "workspace:*",
     "commander": "^11.0.0",
     "extensionless": "^1.9.9",
     "lodash-es": "^4.17.21",
@@ -44,13 +44,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/ppresume/engine.git",
+    "url": "https://github.com/yamlresume/yamlresume.git",
     "directory": "packages/cli"
   },
   "bugs": {
-    "url": "https://github.com/ppresume/engine/issues"
+    "url": "https://github.com/yamlresume/yamlresume/issues"
   },
-  "homepage": "https://github.com/ppresume/engine/tree/main/packages/cli#readme",
+  "homepage": "https://github.com/yamlresume/yamlresume/tree/main/packages/cli#readme",
   "engines": {
     "node": ">=20.0.0"
   }

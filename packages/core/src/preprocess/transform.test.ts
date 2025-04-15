@@ -645,7 +645,7 @@ describe(transformBasicsUrl, () => {
   it('should transform basics.url to latex href with fontawesome5 icon', () => {
     const resume = cloneDeep(defaultResume)
 
-    const url = 'https://ppresume.com'
+    const url = 'https://yamlresume.dev'
     const tests = [
       { url: '', expected: '' },
       {
@@ -689,34 +689,34 @@ describe(transformProfileUrls, () => {
       {
         network: '',
         url: '',
-        username: 'ppresume',
+        username: 'yamlresume',
         expected: '',
       },
       {
         network: 'GitHub',
-        url: 'https://github.com/ppresume',
+        url: 'https://github.com/yamlresume',
         username: '',
         expected: '',
       },
       {
         network: 'GitHub',
-        url: 'https://github.com/ppresume',
-        username: 'ppresume',
+        url: 'https://github.com/yamlresume',
+        username: 'yamlresume',
         expected:
-          '{\\small \\faGithub}\\ \\href{https://github.com/ppresume}{@ppresume}',
+          '{\\small \\faGithub}\\ \\href{https://github.com/yamlresume}{@yamlresume}',
       },
       {
         network: 'Stack Overflow',
-        url: 'https://stackoverflow.com/ppresume',
-        username: 'ppresume',
+        url: 'https://stackoverflow.com/yamlresume',
+        username: 'yamlresume',
         expected:
-          '{\\small \\faStackOverflow}\\ \\href{https://stackoverflow.com/ppresume}{@ppresume}',
+          '{\\small \\faStackOverflow}\\ \\href{https://stackoverflow.com/yamlresume}{@yamlresume}',
       },
       {
         network: 'WeChat',
         url: '',
-        username: 'ppresume',
-        expected: '{\\small \\faWeixin}\\ \\href{}{@ppresume}',
+        username: 'yamlresume',
+        expected: '{\\small \\faWeixin}\\ \\href{}{@yamlresume}',
       },
     ]
 
@@ -736,17 +736,17 @@ describe(transformSocialLinks, () => {
   it('should transform social links to latex with icons', () => {
     const resume = cloneDeep(defaultResume)
 
-    const url = 'https://ppresume.com'
+    const url = 'https://yamlresume.dev'
     const profiles: ProfileItem[] = [
       {
         network: 'GitHub',
-        url: 'https://github.com/ppresume',
-        username: 'ppresume',
+        url: 'https://github.com/yamlresume',
+        username: 'yamlresume',
       },
       {
         network: 'Stack Overflow',
-        url: 'https://stackoverflow.com/ppresume',
-        username: 'ppresume',
+        url: 'https://stackoverflow.com/yamlresume',
+        username: 'yamlresume',
       },
     ]
 
@@ -757,9 +757,9 @@ describe(transformSocialLinks, () => {
 
     expect(resume.content.computed?.urls).toEqual(
       [
-        '{\\small \\faLink}\\ \\href{https://ppresume.com}{https://ppresume.com}',
-        '{\\small \\faGithub}\\ \\href{https://github.com/ppresume}{@ppresume}',
-        '{\\small \\faStackOverflow}\\ \\href{https://stackoverflow.com/ppresume}{@ppresume}',
+        '{\\small \\faLink}\\ \\href{https://yamlresume.dev}{https://yamlresume.dev}',
+        '{\\small \\faGithub}\\ \\href{https://github.com/yamlresume}{@yamlresume}',
+        '{\\small \\faStackOverflow}\\ \\href{https://stackoverflow.com/yamlresume}{@yamlresume}',
       ].join(' {} {} {} • {} {} {} \n')
     )
   })
@@ -770,7 +770,7 @@ describe(transformResumeValues, () => {
     const resume = cloneDeep(filledResume)
 
     resume.content.basics.headline = 'Again & Again'
-    resume.content.basics.email = 'again_again@ppresume.com'
+    resume.content.basics.email = 'again_again@yamlresume.com'
     resume.content.location.address = '123 ~Main Street'
     resume.content.education[0].area = 'Computer Science {Engineering}'
     resume.content.awards[0].awarder = 'AWS^Amazon'
@@ -780,7 +780,7 @@ describe(transformResumeValues, () => {
     transformResumeValues(resume)
 
     expect(resume.content.basics.headline).toEqual('Again \\& Again')
-    expect(resume.content.basics.email).toEqual('again\\_again@ppresume.com')
+    expect(resume.content.basics.email).toEqual('again\\_again@yamlresume.com')
     expect(resume.content.location.address).toEqual(
       '123 \\textasciitilde{}Main Street'
     )

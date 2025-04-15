@@ -39,13 +39,8 @@ const banner = `
 `
 
 program
-  .name('ppresume')
-  .description(
-    [
-      'Welcome to PPResume — A Pixel Perfect Resume Builder That Just Works',
-      banner,
-    ].join('\n')
-  )
+  .name('yamlresume')
+  .description(['YAMLResume — Resume as Code in YAML', banner].join('\n'))
   .version(packageJson.version)
 
 program.addCommand(compileCommand)

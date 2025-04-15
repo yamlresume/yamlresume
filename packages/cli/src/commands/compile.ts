@@ -24,7 +24,11 @@
 
 import child_process from 'node:child_process'
 import fs from 'node:fs'
-import { MarkdownParser, type Resume, getResumeRenderer } from '@ppresume/core'
+import {
+  MarkdownParser,
+  type Resume,
+  getResumeRenderer,
+} from '@yamlresume/core'
 import { Command } from 'commander'
 import which from 'which'
 import yaml from 'yaml'
@@ -158,7 +162,7 @@ export function generatePDF(source: string) {
  * 2. infer the LaTeX command to use
  *    2.1. infer the LaTeX environment to use
  *    2.2. infer the output destination
- * 3. [TODO] check the resume format and make sure it aligns with PPResume
+ * 3. [TODO] check the resume format and make sure it aligns with YAMLResume
  * schema
  * 4. compile the resume to LaTeX and PDF at the same time
  *
@@ -167,7 +171,7 @@ export function generatePDF(source: string) {
  * @param source - The source resume file
  * @throws {Error} If any part of the PDF generation process fails (forwarded
  * from `generatePDF`).
- * @todo Check the resume format against PPResume schema before compilation.
+ * @todo Check the resume format against YAMLResume schema before compilation.
  */
 export function compileResume(source: string) {
   generatePDF(source)

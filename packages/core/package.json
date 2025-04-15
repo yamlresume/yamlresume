@@ -1,14 +1,14 @@
 {
-  "name": "@ppresume/core",
+  "name": "@yamlresume/core",
   "version": "0.1.0",
-  "description": "The LaTeX based typesetting and layout engine for PPResume",
+  "description": "The typesetting and layout core for YAMLResume",
   "license": "MIT",
   "author": {
-    "name": "PPResume",
-    "email": "support@ppresume.com",
-    "url": "https://ppresume.com"
+    "name": "YAMLResume",
+    "email": "support@yamlresume.com",
+    "url": "https://yamlresume.dev"
   },
-  "keywords": ["PPResume", "CV", "Resume", "LaTeX", "Typesetting", "PDF"],
+  "keywords": ["YAMLResume", "CV", "Resume", "LaTeX", "Typesetting", "PDF"],
   "type": "module",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -45,13 +45,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/ppresume/engine.git",
+    "url": "https://github.com/yamlresume/yamlresume.git",
     "directory": "packages/core"
   },
   "bugs": {
-    "url": "https://github.com/ppresume/engine/issues"
+    "url": "https://github.com/yamlresume/yamlresume/issues"
   },
-  "homepage": "https://github.com/ppresume/engine/tree/main/packages/core#readme",
+  "homepage": "https://github.com/yamlresume/yamlresume/tree/main/packages/core#readme",
   "engines": {
     "node": ">=20.0.0"
   }
