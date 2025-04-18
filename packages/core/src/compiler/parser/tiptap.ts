@@ -22,7 +22,7 @@
  * IN THE SOFTWARE.
  */
 
-import type { DocNode } from '../ast'
+import type { DocNode } from '@/compiler'
 import type { Parser } from './interface'
 
 /**

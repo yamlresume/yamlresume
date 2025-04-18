@@ -24,7 +24,7 @@
 
 import { describe, expect, it } from 'vitest'
 
-import { NodeType, type ParagraphNode, type TextNode } from '../ast'
+import { NodeType, type ParagraphNode, type TextNode } from '@/compiler/ast'
 import { TiptapParser } from './tiptap'
 
 describe('TiptapParser', () => {

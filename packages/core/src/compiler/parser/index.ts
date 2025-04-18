@@ -22,5 +22,6 @@
  * IN THE SOFTWARE.
  */
 
+export { Parser } from './interface'
 export { TiptapParser } from './tiptap'
 export { MarkdownParser } from './markdown'

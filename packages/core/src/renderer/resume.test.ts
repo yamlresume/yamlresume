@@ -24,9 +24,9 @@
 
 import { describe, expect, it } from 'vitest'
 
-import { TiptapParser } from '../compiler'
-import { Templates, defaultResume } from '../data'
-import type { Resume } from '../types'
+import { TiptapParser } from '@/compiler'
+import { Templates, defaultResume } from '@/data'
+import type { Resume } from '@/types'
 import {
   ModerncvBankingRenderer,
   ModerncvCasualRenderer,

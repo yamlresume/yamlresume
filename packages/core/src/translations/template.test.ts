@@ -24,7 +24,7 @@
 
 import { describe, expect, it } from 'vitest'
 
-import { LocaleLanguageOption } from '../data'
+import { LocaleLanguageOption } from '@/data'
 import { Punctuation, TemplateTerms, getTemplateTranslations } from './template'
 
 describe(getTemplateTranslations, () => {

@@ -34,7 +34,7 @@ import {
   type OrderedListNode,
   type ParagraphNode,
   type TextNode,
-} from '../ast'
+} from '@/compiler/ast'
 import tipTapContentJSON from './fixtures/tiptap-content.json'
 // I didn't manage to find a way to get rid of the loading error here:
 // `Cannot find module './tiptap-content.tex' or its corresponding type

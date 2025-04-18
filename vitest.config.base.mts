@@ -1,6 +1,6 @@
-import { defineConfig } from 'vitest/config'
+import type { UserConfig } from 'vitest/config'
 
-export default defineConfig({
+export const baseConfig: UserConfig = {
   test: {
     include: ['src/**/*.{test,spec}.ts'],
     environment: 'node',
@@ -14,9 +14,9 @@ export default defineConfig({
         'dist/**',
         '**/*.d.ts',
         '**/*/index.ts',
-        'vitest.config.ts',
+        'vitest.config.mts',
         'tsup.config.ts',
       ],
     },
   },
-})
+}

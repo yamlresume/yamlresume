@@ -28,7 +28,7 @@ import {
   type ResumeContent,
   type ResumeItem,
   type ResumeLayout,
-} from '../types/'
+} from '@/types'
 
 /** Represents a Tiptap editor JSON string for a single empty paragraph. */
 export const emptyParagraph = '{"type":"doc","content":[{"type":"paragraph"}]}'

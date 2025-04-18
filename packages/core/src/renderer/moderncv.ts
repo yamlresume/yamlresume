@@ -22,16 +22,16 @@
  * IN THE SOFTWARE.
  */
 
-import type { Parser } from '../compiler/parser/interface'
-import { transformResume } from '../preprocess'
-import { getTemplateTranslations } from '../translations'
-import type { Resume } from '../types'
+import type { Parser } from '@/compiler'
+import { transformResume } from '@/preprocess'
+import { getTemplateTranslations } from '@/translations'
+import type { Resume } from '@/types'
 import {
   isEmptyString,
   isEmptyValue,
   joinNonEmptyString,
   showIf,
-} from '../utils'
+} from '@/utils'
 import { Renderer } from './base'
 import {
   DocumentClass,

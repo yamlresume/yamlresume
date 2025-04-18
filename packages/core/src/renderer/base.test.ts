@@ -24,7 +24,7 @@
 
 import { beforeEach, describe, expect, it } from 'vitest'
 
-import type { Resume } from '../types'
+import type { Resume } from '@/types'
 import { Renderer } from './base'
 
 // Create a concrete implementation for testing

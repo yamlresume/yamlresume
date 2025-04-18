@@ -34,7 +34,7 @@ import {
   MarkType,
   NodeType,
   type Node as TiptapNode,
-} from '../ast'
+} from '@/compiler/ast'
 import type { Parser } from './interface'
 
 /**

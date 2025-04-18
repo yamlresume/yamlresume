@@ -29,7 +29,7 @@ import type {
   LanguageFluency,
   LocaleLanguageOption,
   SkillLevel,
-} from '../data'
+} from '@/data'
 
 /** Represents the valid identifiers for top-level sections within the resume
  * content.

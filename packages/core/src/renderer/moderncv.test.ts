@@ -25,7 +25,7 @@
 import { cloneDeep } from 'lodash-es'
 import { beforeEach, describe, expect, it } from 'vitest'
 
-import { TiptapParser } from '../compiler'
+import { TiptapParser } from '@/compiler'
 import {
   Country,
   Degree,
@@ -35,8 +35,8 @@ import {
   SkillLevel,
   emptyParagraph,
   filledResume,
-} from '../data'
-import type { Resume } from '../types'
+} from '@/data'
+import type { Resume } from '@/types'
 import {
   ModerncvBankingRenderer,
   ModerncvBase,

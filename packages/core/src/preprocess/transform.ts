@@ -24,30 +24,28 @@
 
 import { capitalize, cloneDeep, isArray, merge } from 'lodash-es'
 
-import { LatexCodeGenerator } from '../compiler'
-import type { Parser } from '../compiler/parser/interface'
-import { LocaleLanguageOption, defaultResumeLayout } from '../data'
+import { LatexCodeGenerator, type Parser } from '@/compiler'
+import { LocaleLanguageOption, defaultResumeLayout } from '@/data'
 import {
   ResumeTerms,
   getTemplateTranslations,
   getTermsTranslations,
-} from '../translations'
+} from '@/translations'
 import {
   FontSpecNumbersStyle,
   MainFont,
   type ProfileItem,
   type Resume,
-  ResumeItem,
-} from '../types'
-import { escapeLatex } from '../utils'
+} from '@/types'
 import {
+  escapeLatex,
   getDateRange,
   isEmptyValue,
   isMacOS,
   isTestEnvironment,
   localizeDate,
   showIf,
-} from '../utils'
+} from '@/utils'
 
 /**
  * Replaces consecutive blank lines with a single LaTeX comment character (`%`).
