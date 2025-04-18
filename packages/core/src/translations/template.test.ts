@@ -24,7 +24,7 @@
 
 import { describe, expect, it } from 'vitest'
 
-import { LocaleLanguage } from '../data'
+import { LocaleLanguageOption } from '../data'
 import { Punctuation, TemplateTerms, getTemplateTranslations } from './template'
 
 describe(getTemplateTranslations, () => {
@@ -42,7 +42,7 @@ describe(getTemplateTranslations, () => {
         },
       },
       {
-        language: LocaleLanguage.English,
+        language: LocaleLanguageOption.English,
         expected: {
           punctuations: {
             [Punctuation.Colon]: ': ',
@@ -53,7 +53,7 @@ describe(getTemplateTranslations, () => {
         },
       },
       {
-        language: LocaleLanguage.SimplifiedChinese,
+        language: LocaleLanguageOption.SimplifiedChinese,
         expected: {
           punctuations: {
             [Punctuation.Colon]: '：',
@@ -64,7 +64,7 @@ describe(getTemplateTranslations, () => {
         },
       },
       {
-        language: LocaleLanguage.TraditionalChineseHK,
+        language: LocaleLanguageOption.TraditionalChineseHK,
         expected: {
           punctuations: {
             [Punctuation.Colon]: '：',
@@ -75,7 +75,7 @@ describe(getTemplateTranslations, () => {
         },
       },
       {
-        language: LocaleLanguage.TraditionalChineseTW,
+        language: LocaleLanguageOption.TraditionalChineseTW,
         expected: {
           punctuations: {
             [Punctuation.Colon]: '：',
@@ -86,7 +86,7 @@ describe(getTemplateTranslations, () => {
         },
       },
       {
-        language: LocaleLanguage.Spanish,
+        language: LocaleLanguageOption.Spanish,
         expected: {
           punctuations: {
             [Punctuation.Colon]: ': ',

@@ -24,7 +24,7 @@
 
 import { describe, expect, it } from 'vitest'
 
-import { Degree, LocaleLanguage } from '../data'
+import { Degree, LocaleLanguageOption } from '../data'
 import { getTermsTranslations } from './terms'
 
 describe(getTermsTranslations, () => {
@@ -39,7 +39,7 @@ describe(getTermsTranslations, () => {
         },
       },
       {
-        language: LocaleLanguage.English,
+        language: LocaleLanguageOption.English,
         expected: {
           education: {
             [Degree.Bachelor]: 'Bachelor',
@@ -47,7 +47,7 @@ describe(getTermsTranslations, () => {
         },
       },
       {
-        language: LocaleLanguage.SimplifiedChinese,
+        language: LocaleLanguageOption.SimplifiedChinese,
         expected: {
           education: {
             [Degree.Bachelor]: '学士',
@@ -55,7 +55,7 @@ describe(getTermsTranslations, () => {
         },
       },
       {
-        language: LocaleLanguage.TraditionalChineseHK,
+        language: LocaleLanguageOption.TraditionalChineseHK,
         expected: {
           education: {
             [Degree.Bachelor]: '學士',
@@ -63,7 +63,7 @@ describe(getTermsTranslations, () => {
         },
       },
       {
-        language: LocaleLanguage.TraditionalChineseTW,
+        language: LocaleLanguageOption.TraditionalChineseTW,
         expected: {
           education: {
             [Degree.Bachelor]: '學士',
@@ -71,7 +71,7 @@ describe(getTermsTranslations, () => {
         },
       },
       {
-        language: LocaleLanguage.Spanish,
+        language: LocaleLanguageOption.Spanish,
         expected: {
           education: {
             [Degree.Bachelor]: 'Licenciatura',

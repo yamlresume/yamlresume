@@ -22,7 +22,7 @@
  * IN THE SOFTWARE.
  */
 
-import { LocaleLanguage } from '../data'
+import { LocaleLanguageOption } from '../data'
 import { getTemplateTranslations } from '../translations'
 import type { Resume } from '../types'
 import { joinNonEmptyString, showIf } from '../utils'
@@ -61,9 +61,9 @@ export enum ModerncvStyle {
  */
 function isCJKResume(resume: Resume): boolean {
   return [
-    LocaleLanguage.SimplifiedChinese,
-    LocaleLanguage.TraditionalChineseHK,
-    LocaleLanguage.TraditionalChineseTW,
+    LocaleLanguageOption.SimplifiedChinese,
+    LocaleLanguageOption.TraditionalChineseHK,
+    LocaleLanguageOption.TraditionalChineseTW,
   ].includes(resume.layout.locale?.language)
 }
 
@@ -74,7 +74,7 @@ function isCJKResume(resume: Resume): boolean {
  * @returns {boolean} True if the resume is a Spanish resume, false otherwise.
  */
 function isSpanishResume(resume: Resume): boolean {
-  return resume.layout.locale?.language === LocaleLanguage.Spanish
+  return resume.layout.locale?.language === LocaleLanguageOption.Spanish
 }
 
 /**

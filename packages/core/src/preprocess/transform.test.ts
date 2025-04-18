@@ -31,12 +31,11 @@ import {
   Degree,
   Language,
   LanguageFluency,
-  LocaleLanguage,
+  LocaleLanguageOption,
   SkillLevel,
   Templates,
   defaultResume,
   filledResume,
-  localeLanguageOptions,
 } from '../data'
 import {
   Punctuation,
@@ -75,9 +74,9 @@ import {
 } from './transform'
 
 function testOverAllLocaleLanguages(
-  testFn: (language: LocaleLanguage) => void
+  testFn: (language: LocaleLanguageOption) => void
 ): void {
-  for (const language of localeLanguageOptions) {
+  for (const language of Object.values(LocaleLanguageOption)) {
     testFn(language)
   }
 }
@@ -385,27 +384,27 @@ describe(transformLanguage, () => {
 
 describe(transformLocation, () => {
   it('should transform location for English resume', () => {
-    const latinComma = getTemplateTranslations(LocaleLanguage.English)
+    const latinComma = getTemplateTranslations(LocaleLanguageOption.English)
       .punctuations[Punctuation.Comma]
     const chineseComma = getTemplateTranslations(
-      LocaleLanguage.SimplifiedChinese
+      LocaleLanguageOption.SimplifiedChinese
     ).punctuations[Punctuation.Comma]
 
     const englishLocation = getTermsTranslations(
-      LocaleLanguage.English
+      LocaleLanguageOption.English
     ).location
     const spanishLocation = getTermsTranslations(
-      LocaleLanguage.Spanish
+      LocaleLanguageOption.Spanish
     ).location
 
     const simplifiedChineseLocation = getTermsTranslations(
-      LocaleLanguage.SimplifiedChinese
+      LocaleLanguageOption.SimplifiedChinese
     ).location
     const traditionalChineseHKLocation = getTermsTranslations(
-      LocaleLanguage.TraditionalChineseHK
+      LocaleLanguageOption.TraditionalChineseHK
     ).location
     const traditionalChineseTWLocation = getTermsTranslations(
-      LocaleLanguage.TraditionalChineseTW
+      LocaleLanguageOption.TraditionalChineseTW
     ).location
 
     const tests = [
@@ -416,12 +415,12 @@ describe(transformLocation, () => {
         region: '',
         country: null,
         expected: {
-          [LocaleLanguage.English]: '',
-          [LocaleLanguage.Spanish]: '',
+          [LocaleLanguageOption.English]: '',
+          [LocaleLanguageOption.Spanish]: '',
 
-          [LocaleLanguage.SimplifiedChinese]: '',
-          [LocaleLanguage.TraditionalChineseHK]: '',
-          [LocaleLanguage.TraditionalChineseTW]: '',
+          [LocaleLanguageOption.SimplifiedChinese]: '',
+          [LocaleLanguageOption.TraditionalChineseHK]: '',
+          [LocaleLanguageOption.TraditionalChineseTW]: '',
         },
       },
       {
@@ -431,19 +430,19 @@ describe(transformLocation, () => {
         region: '',
         country: Country.UnitedStates,
         expected: {
-          [LocaleLanguage.English]: `Sacramento -- ${
+          [LocaleLanguageOption.English]: `Sacramento -- ${
             englishLocation[Country.UnitedStates]
           }${latinComma}95814`,
-          [LocaleLanguage.Spanish]: `Sacramento -- ${
+          [LocaleLanguageOption.Spanish]: `Sacramento -- ${
             spanishLocation[Country.UnitedStates]
           }${latinComma}95814`,
-          [LocaleLanguage.SimplifiedChinese]: `${
+          [LocaleLanguageOption.SimplifiedChinese]: `${
             simplifiedChineseLocation[Country.UnitedStates]
           } -- Sacramento -- 95814`,
-          [LocaleLanguage.TraditionalChineseHK]: `${
+          [LocaleLanguageOption.TraditionalChineseHK]: `${
             traditionalChineseHKLocation[Country.UnitedStates]
           } -- Sacramento -- 95814`,
-          [LocaleLanguage.TraditionalChineseTW]: `${
+          [LocaleLanguageOption.TraditionalChineseTW]: `${
             traditionalChineseTWLocation[Country.UnitedStates]
           } -- Sacramento -- 95814`,
         },
@@ -455,16 +454,16 @@ describe(transformLocation, () => {
         region: 'California',
         country: null,
         expected: {
-          [LocaleLanguage.English]:
+          [LocaleLanguageOption.English]:
             '123 Main Street -- Sacramento -- California',
-          [LocaleLanguage.Spanish]:
+          [LocaleLanguageOption.Spanish]:
             '123 Main Street -- Sacramento -- California',
 
-          [LocaleLanguage.SimplifiedChinese]:
+          [LocaleLanguageOption.SimplifiedChinese]:
             'California -- Sacramento -- 123 Main Street',
-          [LocaleLanguage.TraditionalChineseHK]:
+          [LocaleLanguageOption.TraditionalChineseHK]:
             'California -- Sacramento -- 123 Main Street',
-          [LocaleLanguage.TraditionalChineseTW]:
+          [LocaleLanguageOption.TraditionalChineseTW]:
             'California -- Sacramento -- 123 Main Street',
         },
       },
@@ -475,20 +474,20 @@ describe(transformLocation, () => {
         region: 'California',
         country: Country.UnitedStates,
         expected: {
-          [LocaleLanguage.English]: `123 Main Street -- Sacramento -- California${latinComma}${
+          [LocaleLanguageOption.English]: `123 Main Street -- Sacramento -- California${latinComma}${
             englishLocation[Country.UnitedStates]
           }${latinComma}95814`,
-          [LocaleLanguage.Spanish]: `123 Main Street -- Sacramento -- California${latinComma}${
+          [LocaleLanguageOption.Spanish]: `123 Main Street -- Sacramento -- California${latinComma}${
             spanishLocation[Country.UnitedStates]
           }${latinComma}95814`,
 
-          [LocaleLanguage.SimplifiedChinese]: `${
+          [LocaleLanguageOption.SimplifiedChinese]: `${
             simplifiedChineseLocation[Country.UnitedStates]
           }${chineseComma}California -- Sacramento -- 123 Main Street${chineseComma}95814`,
-          [LocaleLanguage.TraditionalChineseHK]: `${
+          [LocaleLanguageOption.TraditionalChineseHK]: `${
             traditionalChineseHKLocation[Country.UnitedStates]
           }${chineseComma}California -- Sacramento -- 123 Main Street${chineseComma}95814`,
-          [LocaleLanguage.TraditionalChineseTW]: `${
+          [LocaleLanguageOption.TraditionalChineseTW]: `${
             traditionalChineseTWLocation[Country.UnitedStates]
           }${chineseComma}California -- Sacramento -- 123 Main Street${chineseComma}95814`,
         },
@@ -847,7 +846,10 @@ describe(transformResumeContent, () => {
 
 describe(transformResumeLayoutTypography, () => {
   it('should set numbers to OldStyle for English, and Spanish resume', () => {
-    for (const language of [LocaleLanguage.English, LocaleLanguage.Spanish]) {
+    for (const language of [
+      LocaleLanguageOption.English,
+      LocaleLanguageOption.Spanish,
+    ]) {
       const resume = cloneDeep(defaultResume)
 
       resume.layout.locale.language = language
@@ -861,9 +863,9 @@ describe(transformResumeLayoutTypography, () => {
 
   it('should set numbers to Lining for CJK resume', () => {
     for (const language of [
-      LocaleLanguage.SimplifiedChinese,
-      LocaleLanguage.TraditionalChineseHK,
-      LocaleLanguage.TraditionalChineseTW,
+      LocaleLanguageOption.SimplifiedChinese,
+      LocaleLanguageOption.TraditionalChineseHK,
+      LocaleLanguageOption.TraditionalChineseTW,
     ]) {
       const resume = cloneDeep(defaultResume)
 
@@ -877,7 +879,10 @@ describe(transformResumeLayoutTypography, () => {
   })
 
   it('should set correct numbers when typography.fontSpec.numbers is undefined', () => {
-    for (const language of [LocaleLanguage.English, LocaleLanguage.Spanish]) {
+    for (const language of [
+      LocaleLanguageOption.English,
+      LocaleLanguageOption.Spanish,
+    ]) {
       const resume = cloneDeep(defaultResume)
       // @ts-ignore
       resume.layout.typography.fontSpec = undefined
@@ -892,7 +897,10 @@ describe(transformResumeLayoutTypography, () => {
   })
 
   it('should set correct numbers when typography.fontSpec.numbers is FontSpectNumberStyle.Undefined', () => {
-    for (const language of [LocaleLanguage.English, LocaleLanguage.Spanish]) {
+    for (const language of [
+      LocaleLanguageOption.English,
+      LocaleLanguageOption.Spanish,
+    ]) {
       const resume = cloneDeep(defaultResume)
       resume.layout.typography.fontSpec.numbers = FontSpecNumbersStyle.Undefined
 
@@ -937,7 +945,7 @@ describe(transformResumeLayout, () => {
         },
       },
       locale: {
-        language: LocaleLanguage.SimplifiedChinese,
+        language: LocaleLanguageOption.SimplifiedChinese,
       },
       page: {
         showPageNumbers: true,
@@ -952,7 +960,10 @@ describe(transformResumeLayout, () => {
 
 describe(transformResumeEnvironment, () => {
   it('should transform english resume environment with proper values', () => {
-    for (const language of [LocaleLanguage.English, LocaleLanguage.Spanish]) {
+    for (const language of [
+      LocaleLanguageOption.English,
+      LocaleLanguageOption.Spanish,
+    ]) {
       const resume = cloneDeep(defaultResume)
       resume.layout.locale.language = language
 
@@ -972,9 +983,9 @@ describe(transformResumeEnvironment, () => {
 
   it('should transform CJK resume environment with proper values', () => {
     for (const language of [
-      LocaleLanguage.SimplifiedChinese,
-      LocaleLanguage.TraditionalChineseHK,
-      LocaleLanguage.TraditionalChineseTW,
+      LocaleLanguageOption.SimplifiedChinese,
+      LocaleLanguageOption.TraditionalChineseHK,
+      LocaleLanguageOption.TraditionalChineseTW,
     ]) {
       const resume = cloneDeep(defaultResume)
 

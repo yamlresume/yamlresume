@@ -24,7 +24,7 @@
 
 import { describe, expect, it } from 'vitest'
 
-import { LocaleLanguage, defaultResume } from '../data'
+import { LocaleLanguageOption, defaultResume } from '../data'
 import { FontSpecNumbersStyle, MainFont, type Resume } from '../types'
 import {
   DocumentClass,
@@ -73,7 +73,7 @@ describe(renderModerncvConfig, () => {
       layout: {
         ...mockResume.layout,
         locale: {
-          language: LocaleLanguage.SimplifiedChinese,
+          language: LocaleLanguageOption.SimplifiedChinese,
         },
       },
     }
@@ -128,7 +128,7 @@ describe(renderSpanishConfig, () => {
       layout: {
         ...mockResume.layout,
         locale: {
-          language: LocaleLanguage.English,
+          language: LocaleLanguageOption.English,
         },
       },
     }
@@ -144,7 +144,7 @@ describe(renderSpanishConfig, () => {
       layout: {
         ...mockResume.layout,
         locale: {
-          language: LocaleLanguage.Spanish,
+          language: LocaleLanguageOption.Spanish,
         },
       },
     }
@@ -165,7 +165,7 @@ describe(renderFontspecConfig, () => {
       layout: {
         ...mockResume.layout,
         locale: {
-          language: LocaleLanguage.English,
+          language: LocaleLanguageOption.English,
         },
         typography: {
           ...mockResume.layout.typography,
@@ -195,7 +195,7 @@ describe(renderFontspecConfig, () => {
       layout: {
         ...mockResume.layout,
         locale: {
-          language: LocaleLanguage.SimplifiedChinese,
+          language: LocaleLanguageOption.SimplifiedChinese,
         },
         typography: {
           ...mockResume.layout.typography,
