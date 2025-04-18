@@ -22,10 +22,10 @@
  * IN THE SOFTWARE.
  */
 
-import { LocaleLanguageOption } from '../data'
-import { getTemplateTranslations } from '../translations'
-import type { Resume } from '../types'
-import { joinNonEmptyString, showIf } from '../utils'
+import { LocaleLanguageOption } from '@/data'
+import { getTemplateTranslations } from '@/translations'
+import type { Resume } from '@/types'
+import { joinNonEmptyString, showIf } from '@/utils'
 
 export enum DocumentClass {
   Moderncv = 'moderncv',

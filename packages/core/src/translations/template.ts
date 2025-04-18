@@ -22,8 +22,8 @@
  * IN THE SOFTWARE.
  */
 
-import { LocaleLanguageOption } from '../data'
-import { isEmptyValue } from '../utils'
+import { LocaleLanguageOption } from '@/data'
+import { isEmptyValue } from '@/utils'
 
 /** Specific punctuation types used for formatting within templates. */
 export enum Punctuation {

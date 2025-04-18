@@ -24,7 +24,7 @@
 
 import { describe, expect, it } from 'vitest'
 
-import { Degree, LocaleLanguageOption } from '../data'
+import { Degree, LocaleLanguageOption } from '@/data'
 import { getTermsTranslations } from './terms'
 
 describe(getTermsTranslations, () => {

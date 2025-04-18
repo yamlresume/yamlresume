@@ -22,7 +22,7 @@
  * IN THE SOFTWARE.
  */
 
-import { LocaleLanguageOption } from '../data'
+import { LocaleLanguageOption } from '@/data'
 import { isEmptyValue } from './object'
 
 /**

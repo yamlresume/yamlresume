@@ -24,8 +24,8 @@
 
 import { describe, expect, it } from 'vitest'
 
-import { LocaleLanguageOption, defaultResume } from '../data'
-import { FontSpecNumbersStyle, MainFont, type Resume } from '../types'
+import { LocaleLanguageOption, defaultResume } from '@/data'
+import { FontSpecNumbersStyle, MainFont, type Resume } from '@/types'
 import {
   DocumentClass,
   ModerncvStyle,

@@ -22,7 +22,7 @@
  * IN THE SOFTWARE.
  */
 
-import type { Node } from '../ast'
+import type { Node } from '@/compiler'
 
 /**
  * Interface for parsing input strings into AST nodes.

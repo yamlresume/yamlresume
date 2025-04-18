@@ -34,9 +34,9 @@ import {
   spanishCountryNames,
   traditionalChineseCountryHKNames,
   traditionalChineseCountryTWNames,
-} from '../data'
-import type { SectionID } from '../types'
-import { isEmptyValue } from '../utils'
+} from '@/data'
+import type { SectionID } from '@/types'
+import { isEmptyValue } from '@/utils'
 
 /** Specific terms used within resume sections that require translation. */
 export enum ResumeTerms {

@@ -22,7 +22,6 @@
  * IN THE SOFTWARE.
  */
 
-import { escapeLatex } from '../../utils'
 import {
   type BulletListNode,
   type DocNode,
@@ -35,7 +34,8 @@ import {
   type OrderedListNode,
   type ParagraphNode,
   type TextNode,
-} from '../ast'
+} from '@/compiler/ast'
+import { escapeLatex } from '@/utils'
 import type { CodeGenerator } from './interface'
 
 /**

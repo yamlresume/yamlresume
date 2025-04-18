@@ -24,7 +24,7 @@
 
 import { beforeEach, describe, expect, it } from 'vitest'
 
-import { MarkType, NodeType } from '../ast'
+import { MarkType, NodeType } from '@/compiler/ast'
 import { MarkdownParser } from './markdown'
 
 describe(MarkdownParser, () => {

@@ -25,7 +25,7 @@
 import { cloneDeep } from 'lodash-es'
 import { describe, expect, it, vi } from 'vitest'
 
-import { type DocNode, LatexCodeGenerator, TiptapParser } from '../compiler'
+import { type DocNode, LatexCodeGenerator, TiptapParser } from '@/compiler'
 import {
   Country,
   Degree,
@@ -36,21 +36,21 @@ import {
   Templates,
   defaultResume,
   filledResume,
-} from '../data'
+} from '@/data'
 import {
   Punctuation,
   ResumeTerms,
   getTemplateTranslations,
   getTermsTranslations,
-} from '../translations'
+} from '@/translations'
 import {
   FontSpecNumbersStyle,
   MainFont,
   type ProfileItem,
   type ResumeLayout,
   type SocialNetwork,
-} from '../types'
-import { isEmptyValue, isMacOS, isTestEnvironment } from '../utils'
+} from '@/types'
+import { isEmptyValue, isMacOS, isTestEnvironment } from '@/utils'
 import {
   replaceBlankLinesWithPercent,
   transformBasicsUrl,
