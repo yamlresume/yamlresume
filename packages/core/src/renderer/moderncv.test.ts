@@ -274,7 +274,7 @@ describe('ModerncvBase', () => {
     it('should render education section', () => {
       const institution = 'University'
       const area = 'Computer Science'
-      const studyType = Degree.Bachelor
+      const degree = Degree.Bachelor
       const startDate = 'Jan 1, 2020'
       const endDate = 'Jan 1, 2024'
       const url = 'https://university.edu'
@@ -284,7 +284,7 @@ describe('ModerncvBase', () => {
         {
           institution,
           area,
-          studyType,
+          degree,
           startDate,
           endDate,
           url,
@@ -297,7 +297,7 @@ describe('ModerncvBase', () => {
 
       expect(result).toMatch(/^\\section{Education}/)
       expect(result).toContain('\\cventry{Jan 2020 -- Jan 2024}')
-      expect(result).toContain(`{${studyType}, ${area}}`)
+      expect(result).toContain(`{${degree}, ${area}}`)
       expect(result).toContain(institution)
       expect(result).toContain(`{\\\href{${url}}{${url}}}`)
     })

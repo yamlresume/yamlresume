@@ -150,7 +150,7 @@ export const resumeItems: ResumeItem = {
     institution: '',
     score: '',
     startDate: '',
-    studyType: null,
+    degree: null,
     url: '',
   },
   interest: {

@@ -158,19 +158,19 @@ describe(transformEducationDegreeAreaAndScore, () => {
 
       const tests = [
         {
-          studyType: null,
+          degree: null,
           area: '',
           score: '',
           expected: '',
         },
         {
-          studyType: Degree.Bachelor,
+          degree: Degree.Bachelor,
           area: '',
           score: '',
           expected: education[Degree.Bachelor],
         },
         {
-          studyType: Degree.Bachelor,
+          degree: Degree.Bachelor,
           area,
           score: '',
           expected: `${education[Degree.Bachelor]}${
@@ -178,7 +178,7 @@ describe(transformEducationDegreeAreaAndScore, () => {
           }${area}`,
         },
         {
-          studyType: Degree.Bachelor,
+          degree: Degree.Bachelor,
           area: '',
           score,
           expected: `${education[Degree.Bachelor]}${
@@ -188,7 +188,7 @@ describe(transformEducationDegreeAreaAndScore, () => {
           }${score}`,
         },
         {
-          studyType: Degree.Bachelor,
+          degree: Degree.Bachelor,
           area,
           score,
           expected: `${education[Degree.Bachelor]}${
@@ -199,12 +199,12 @@ describe(transformEducationDegreeAreaAndScore, () => {
         },
       ]
 
-      for (const { studyType, area, score, expected } of tests) {
+      for (const { degree, area, score, expected } of tests) {
         const resume = cloneDeep(defaultResume)
 
         resume.layout.locale.language = language
 
-        resume.content.education[0].studyType = studyType
+        resume.content.education[0].degree = degree
         resume.content.education[0].area = area
         resume.content.education[0].score = score
 

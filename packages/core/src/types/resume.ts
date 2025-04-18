@@ -187,8 +187,8 @@ type EducationItem = {
   /** Start date of study (e.g., "2016", "Sep 2016"). */
   startDate?: string
   /** The type of degree obtained. */
-  // TODO: rename studyType to degree
-  studyType?: Degree
+  // TODO: rename degree to degree
+  degree?: Degree
   /** URL related to the institution or degree. */
   url?: string
   /** Computed values derived during transformation. */
