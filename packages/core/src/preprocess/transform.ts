@@ -26,7 +26,7 @@ import { capitalize, cloneDeep, isArray, merge } from 'lodash-es'
 
 import { LatexCodeGenerator } from '../compiler'
 import type { Parser } from '../compiler/parser/interface'
-import { LocaleLanguage, defaultResumeLayout } from '../data'
+import { LocaleLanguageOption, defaultResumeLayout } from '../data'
 import {
   ResumeTerms,
   getTemplateTranslations,
@@ -392,9 +392,9 @@ export function transformLocation(resume: Resume): Resume {
   const { location } = getTermsTranslations(resume.layout.locale?.language)
 
   switch (resume.layout.locale?.language) {
-    case LocaleLanguage.SimplifiedChinese:
-    case LocaleLanguage.TraditionalChineseHK:
-    case LocaleLanguage.TraditionalChineseTW: {
+    case LocaleLanguageOption.SimplifiedChinese:
+    case LocaleLanguageOption.TraditionalChineseHK:
+    case LocaleLanguageOption.TraditionalChineseTW: {
       // For Chinese and Spanish, the address format is:
       // Country > Region > City  > Address
       const postalCodeAndAddress = [
@@ -735,9 +735,9 @@ export function transformResumeLayoutTypography(resume: Resume): Resume {
   }
 
   switch (resume.layout.locale?.language) {
-    case LocaleLanguage.SimplifiedChinese:
-    case LocaleLanguage.TraditionalChineseHK:
-    case LocaleLanguage.TraditionalChineseTW:
+    case LocaleLanguageOption.SimplifiedChinese:
+    case LocaleLanguageOption.TraditionalChineseHK:
+    case LocaleLanguageOption.TraditionalChineseTW:
       resume.layout.typography.fontSpec = {
         ...resume.layout.typography.fontSpec,
         numbers: FontSpecNumbersStyle.Lining,

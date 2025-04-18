@@ -201,7 +201,7 @@ layout:
   page:
     showPageNumbers: true
   locale:
-    language: English
+    language: en
   margins:
     top: 2.5 cm
     left: 1.5 cm

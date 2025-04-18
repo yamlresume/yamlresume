@@ -25,7 +25,7 @@
 import child_process from 'node:child_process'
 import fs from 'node:fs'
 import path from 'node:path'
-import { Argument, Command } from 'commander'
+import { Command } from 'commander'
 import {
   afterAll,
   afterEach,

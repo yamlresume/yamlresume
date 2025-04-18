@@ -31,7 +31,7 @@ import {
   Degree,
   Language,
   LanguageFluency,
-  LocaleLanguage,
+  LocaleLanguageOption,
   SkillLevel,
   emptyParagraph,
   filledResume,
@@ -87,7 +87,7 @@ describe('ModerncvBase', () => {
 
     it('should render moderncv override for CJK', () => {
       const cjkResume = cloneDeep(resume)
-      cjkResume.layout.locale.language = LocaleLanguage.SimplifiedChinese
+      cjkResume.layout.locale.language = LocaleLanguageOption.SimplifiedChinese
 
       let renderer = new ModerncvBankingRenderer(cjkResume, summaryParser)
 

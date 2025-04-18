@@ -22,44 +22,23 @@
  * IN THE SOFTWARE.
  */
 
-import {
-  LocaleLanguageOption,
-  getLocaleLanguageOptionDetail,
-} from '@yamlresume/core'
-import { Command } from 'commander'
-import { markdownTable } from 'markdown-table'
+import { describe, expect, it } from 'vitest'
+import { LocaleLanguageOption, getLocaleLanguageOptionDetail } from './resume'
 
-/**
- * Generates a markdown table listing all supported locale languages.
- *
- * The table includes columns for the language code (enum key) and the language
- * name (enum value).
- *
- * @returns A string containing the formatted markdown table.
- */
-export function listLanguages() {
-  return markdownTable([
-    ['Language Code', 'Language Name'],
-    ...Object.values(LocaleLanguageOption).map((value) => [
-      value,
-      getLocaleLanguageOptionDetail(value).name,
-    ]),
-  ])
-}
-
-/**
- * Commander command instance to list supported languages
- *
- * Provides subcommands like 'list' to interact with language settings or
- * information.
- */
-export const languagesCommand = new Command()
-  .name('languages')
-  .description('i18n and l10n support')
-
-languagesCommand
-  .command('list')
-  .description('List all supported languages')
-  .action(() => {
-    console.log(listLanguages())
+describe(getLocaleLanguageOptionDetail, () => {
+  it('should return the language code and name', () => {
+    for (const localeLanguage of Object.values(LocaleLanguageOption)) {
+      const result = getLocaleLanguageOptionDetail(localeLanguage)
+      expect(result).toEqual({
+        localeLanguage,
+        name: getLocaleLanguageOptionDetail(localeLanguage).name,
+      })
+    }
   })
+
+  it('should throw an error for invalid locale language ', () => {
+    expect(() =>
+      getLocaleLanguageOptionDetail('invalid' as LocaleLanguageOption)
+    ).toThrow('Invalid locale language: invalid')
+  })
+})

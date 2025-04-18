@@ -282,33 +282,48 @@ export const marginOptions = [
   defaultTopBottomMargin,
 ]
 
-/** Defines supported languages for UI display and template translation. */
-export enum LocaleLanguage {
-  English = 'English',
-  SimplifiedChinese = 'Chinese (Simplified)',
-  TraditionalChineseHK = 'Chinese (Traditional, Hong Kong)',
-  TraditionalChineseTW = 'Chinese (Traditional, Taiwan)',
-  Spanish = 'Spanish',
-}
-
-/** An array containing all possible values from the `LocaleLanguage` enum. */
-export const localeLanguageOptions = Object.values(LocaleLanguage)
-
-/** Maps `LocaleLanguage` enum values to standard IETF language tags.
+/** Defines supported languages for UI display and template translation.
  *
  * @see {@link https://en.wikipedia.org/wiki/IETF_language_tag}
  */
-export const languageToLocale: Record<LocaleLanguage, string> = {
-  [LocaleLanguage.English]: 'en',
-  [LocaleLanguage.Spanish]: 'es',
+export enum LocaleLanguageOption {
+  English = 'en',
+  SimplifiedChinese = 'zh-Hans',
+  TraditionalChineseHK = 'zh-Hans-HK',
+  TraditionalChineseTW = 'zh-Hans-TW',
+  Spanish = 'es',
+}
 
-  [LocaleLanguage.SimplifiedChinese]: 'zh-CN',
-  [LocaleLanguage.TraditionalChineseHK]: 'zh-HK',
-  [LocaleLanguage.TraditionalChineseTW]: 'zh-TW',
+/**
+ * Get the language code and name of the given locale language.
+ *
+ * @param localeLanguage The locale language to get the name for.
+ * @returns The language code and name of the given locale language.
+ */
+export function getLocaleLanguageOptionDetail(
+  localeLanguage: LocaleLanguageOption
+) {
+  const localeLanguageOptionName: Record<LocaleLanguageOption, string> = {
+    [LocaleLanguageOption.English]: 'English',
+    [LocaleLanguageOption.SimplifiedChinese]: 'Simplified Chinese',
+    [LocaleLanguageOption.TraditionalChineseHK]:
+      'Traditional Chinese (Hong Kong)',
+    [LocaleLanguageOption.TraditionalChineseTW]: 'Traditional Chinese (Taiwan)',
+    [LocaleLanguageOption.Spanish]: 'Spanish',
+  }
+
+  if (localeLanguage in localeLanguageOptionName) {
+    return {
+      localeLanguage,
+      name: localeLanguageOptionName[localeLanguage],
+    }
+  }
+
+  throw new Error(`Invalid locale language: ${localeLanguage}`)
 }
 
 /** The default language used when creating a new resume layout. */
-const defaultLanguage = LocaleLanguage.English
+const defaultLanguage = LocaleLanguageOption.English
 
 /** Default layout configuration for a new resume. */
 export const defaultResumeLayout: ResumeLayout = {

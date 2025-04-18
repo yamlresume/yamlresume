@@ -22,7 +22,7 @@
  * IN THE SOFTWARE.
  */
 
-import { LocaleLanguage } from '../data'
+import { LocaleLanguageOption } from '../data'
 import { isEmptyValue } from '../utils'
 
 /** Specific punctuation types used for formatting within templates. */
@@ -54,7 +54,10 @@ type TemplateTranslationValue = {
 
 /** The overall structure containing template-specific translations for all
  * supported languages. */
-type TemplateTranslation = Record<LocaleLanguage, TemplateTranslationValue>
+type TemplateTranslation = Record<
+  LocaleLanguageOption,
+  TemplateTranslationValue
+>
 
 /**
  * Retrieves template-specific translations (punctuations and terms) for a given
@@ -66,10 +69,10 @@ type TemplateTranslation = Record<LocaleLanguage, TemplateTranslationValue>
  * specified language.
  */
 export function getTemplateTranslations(
-  language?: LocaleLanguage
+  language?: LocaleLanguageOption
 ): TemplateTranslationValue {
   const templateTranslation: TemplateTranslation = {
-    [LocaleLanguage.English]: {
+    [LocaleLanguageOption.English]: {
       punctuations: {
         [Punctuation.Comma]: ', ',
         [Punctuation.Colon]: ': ',
@@ -80,7 +83,7 @@ export function getTemplateTranslations(
         [TemplateTerms.Keywords]: 'Keywords',
       },
     },
-    [LocaleLanguage.SimplifiedChinese]: {
+    [LocaleLanguageOption.SimplifiedChinese]: {
       punctuations: {
         [Punctuation.Comma]: '，',
         [Punctuation.Colon]: '：',
@@ -91,7 +94,7 @@ export function getTemplateTranslations(
         [TemplateTerms.Keywords]: '关键字',
       },
     },
-    [LocaleLanguage.TraditionalChineseHK]: {
+    [LocaleLanguageOption.TraditionalChineseHK]: {
       punctuations: {
         [Punctuation.Comma]: '，',
         [Punctuation.Colon]: '：',
@@ -102,7 +105,7 @@ export function getTemplateTranslations(
         [TemplateTerms.Keywords]: '關鍵字',
       },
     },
-    [LocaleLanguage.TraditionalChineseTW]: {
+    [LocaleLanguageOption.TraditionalChineseTW]: {
       punctuations: {
         [Punctuation.Comma]: '，',
         [Punctuation.Colon]: '：',
@@ -113,7 +116,7 @@ export function getTemplateTranslations(
         [TemplateTerms.Keywords]: '關鍵字',
       },
     },
-    [LocaleLanguage.Spanish]: {
+    [LocaleLanguageOption.Spanish]: {
       punctuations: {
         [Punctuation.Comma]: ', ',
         [Punctuation.Colon]: ': ',
@@ -127,6 +130,6 @@ export function getTemplateTranslations(
   }
 
   return templateTranslation[
-    isEmptyValue(language) ? LocaleLanguage.English : language
+    isEmptyValue(language) ? LocaleLanguageOption.English : language
   ]
 }

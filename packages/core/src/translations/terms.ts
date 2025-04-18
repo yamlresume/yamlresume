@@ -27,7 +27,7 @@ import {
   Degree,
   Language,
   LanguageFluency,
-  LocaleLanguage,
+  LocaleLanguageOption,
   SkillLevel,
   englishCountryNames,
   simplifiedChineseCountryNames,
@@ -63,7 +63,7 @@ type TermsTranslationValue = {
 }
 
 /** The structure containing translations for all supported languages. */
-type TermsTranslation = Record<LocaleLanguage, TermsTranslationValue>
+type TermsTranslation = Record<LocaleLanguageOption, TermsTranslationValue>
 
 /**
  * Retrieves the translated terms for a specific locale language.
@@ -77,10 +77,10 @@ type TermsTranslation = Record<LocaleLanguage, TermsTranslationValue>
  * language.
  */
 export function getTermsTranslations(
-  language?: LocaleLanguage
+  language?: LocaleLanguageOption
 ): TermsTranslationValue {
   const termsTranslations: TermsTranslation = {
-    [LocaleLanguage.English]: {
+    [LocaleLanguageOption.English]: {
       education: {
         [Degree.MiddleSchool]: 'Middle School',
         [Degree.HighSchool]: 'High School',
@@ -158,7 +158,7 @@ export function getTermsTranslations(
         [ResumeTerms.Score]: 'Score',
       },
     },
-    [LocaleLanguage.SimplifiedChinese]: {
+    [LocaleLanguageOption.SimplifiedChinese]: {
       education: {
         [Degree.MiddleSchool]: '初中',
         [Degree.HighSchool]: '高中',
@@ -232,7 +232,7 @@ export function getTermsTranslations(
         [ResumeTerms.Score]: '成绩',
       },
     },
-    [LocaleLanguage.TraditionalChineseHK]: {
+    [LocaleLanguageOption.TraditionalChineseHK]: {
       education: {
         [Degree.MiddleSchool]: '初中',
         [Degree.HighSchool]: '高中',
@@ -306,7 +306,7 @@ export function getTermsTranslations(
         [ResumeTerms.Score]: '成績',
       },
     },
-    [LocaleLanguage.TraditionalChineseTW]: {
+    [LocaleLanguageOption.TraditionalChineseTW]: {
       education: {
         [Degree.MiddleSchool]: '初中',
         [Degree.HighSchool]: '高中',
@@ -380,7 +380,7 @@ export function getTermsTranslations(
         [ResumeTerms.Score]: '成績',
       },
     },
-    [LocaleLanguage.Spanish]: {
+    [LocaleLanguageOption.Spanish]: {
       education: {
         [Degree.MiddleSchool]: 'Escuela secundaria',
         [Degree.HighSchool]: 'Título de secundaria',
@@ -461,6 +461,6 @@ export function getTermsTranslations(
   }
 
   return termsTranslations[
-    isEmptyValue(language) ? LocaleLanguage.English : language
+    isEmptyValue(language) ? LocaleLanguageOption.English : language
   ]
 }

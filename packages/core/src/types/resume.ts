@@ -27,7 +27,7 @@ import type {
   Degree,
   Language,
   LanguageFluency,
-  LocaleLanguage,
+  LocaleLanguageOption,
   SkillLevel,
 } from '../data'
 
@@ -635,7 +635,7 @@ type ResumeLayoutTypography = {
 /** Defines locale settings, primarily the language for translations. */
 type ResumeLayoutLocale = {
   /** The selected language for the resume content and template terms. */
-  language: LocaleLanguage
+  language: LocaleLanguageOption
 }
 
 /** Defines page-level settings like page numbering. */

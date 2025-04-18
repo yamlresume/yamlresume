@@ -22,7 +22,10 @@
  * IN THE SOFTWARE.
  */
 
-import { LocaleLanguage } from '@yamlresume/core'
+import {
+  LocaleLanguageOption,
+  getLocaleLanguageOptionDetail,
+} from '@yamlresume/core'
 import { Command } from 'commander'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 
@@ -36,16 +39,16 @@ describe(listLanguages, () => {
     expect(result).toContain('Language Name')
 
     // Check if all languages are included
-    Object.entries(LocaleLanguage).forEach(([key, value]) => {
-      expect(result).toContain(key)
+    Object.values(LocaleLanguageOption).forEach((value) => {
       expect(result).toContain(value)
+      expect(result).toContain(getLocaleLanguageOptionDetail(value).name)
     })
 
     // Check if the table has the correct number of rows
     const rows = result.split('\n')
 
     // +2 for header and separator
-    expect(rows.length).toBe(Object.keys(LocaleLanguage).length + 2)
+    expect(rows.length).toBe(Object.keys(LocaleLanguageOption).length + 2)
   })
 })
 
