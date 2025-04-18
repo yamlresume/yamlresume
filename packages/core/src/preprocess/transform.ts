@@ -169,7 +169,7 @@ export function transformEducationCourses(resume: Resume): Resume {
 }
 
 /**
- * Combines `studyType`, `area`, and `score` from education items into
+ * Combines `degree`, `area`, and `score` from education items into
  * a formatted string stored in `computed.degreeAreaAndScore`.
  *
  * Uses locale-specific terms and punctuation.
@@ -188,10 +188,7 @@ export function transformEducationDegreeAreaAndScore(resume: Resume): Resume {
   )
 
   resume.content.education.forEach((item) => {
-    const degree = showIf(
-      !isEmptyValue(item.studyType),
-      education[item.studyType]
-    )
+    const degree = showIf(!isEmptyValue(item.degree), education[item.degree])
     const score = terms[ResumeTerms.Score]
 
     item.computed = {
