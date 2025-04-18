@@ -204,6 +204,7 @@ describe(transformEducationDegreeAreaAndScore, () => {
 
         resume.layout.locale.language = language
 
+        // @ts-ignore
         resume.content.education[0].degree = degree
         resume.content.education[0].area = area
         resume.content.education[0].score = score
@@ -512,11 +513,12 @@ describe(transformLocation, () => {
           address,
           city,
           region,
+          // @ts-ignore
           country,
         }
 
         transformLocation(resume)
-        expect(resume.content.location.computed?.fullAddress).toEqual(
+        expect(resume.content.location?.computed?.fullAddress).toEqual(
           expected[language]
         )
       })
@@ -589,9 +591,7 @@ describe(transformSkills, () => {
 
         transformSkills(resume)
 
-        const { skills } = getTermsTranslations(resume.layout.locale.language)
-
-        expect(resume.content.skills[0].computed.level).toBe('')
+        expect(resume.content.skills[0].computed?.level).toBe('')
       }
     })
   })
@@ -615,7 +615,7 @@ describe(transformSkills, () => {
 
         const { skills } = getTermsTranslations(resume.layout.locale.language)
 
-        expect(resume.content.skills[0].computed.level).toBe(skills[level])
+        expect(resume.content.skills[0].computed?.level).toBe(skills[level])
       }
     })
   })
@@ -633,7 +633,7 @@ describe(transformSectionNames, () => {
       transformSectionNames(resume)
 
       Object.entries(sections).forEach(([section, translations]) => {
-        expect(resume.content.computed.sectionNames[section]).toEqual(
+        expect(resume.content.computed?.sectionNames?.[section]).toEqual(
           translations
         )
       })
@@ -879,6 +879,7 @@ describe(transformResumeLayoutTypography, () => {
   it('should set correct numbers when typography.fontSpec.numbers is undefined', () => {
     for (const language of [LocaleLanguage.English, LocaleLanguage.Spanish]) {
       const resume = cloneDeep(defaultResume)
+      // @ts-ignore
       resume.layout.typography.fontSpec = undefined
 
       resume.layout.locale.language = language
