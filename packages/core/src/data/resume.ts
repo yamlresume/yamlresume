@@ -114,10 +114,39 @@ export enum SkillLevel {
 export const skillLevelOptions = Object.values(SkillLevel)
 
 /** Defines identifiers for the available resume templates. */
-export enum Templates {
+export enum TemplateOption {
   ModerncvBanking = 'moderncv-banking',
   ModerncvCasual = 'moderncv-casual',
   ModerncvClassic = 'moderncv-classic',
+}
+
+export function getTemplateOptionDetail(templateOption: TemplateOption) {
+  const templateOptionName: Record<
+    TemplateOption,
+    { name: string; description: string }
+  > = {
+    [TemplateOption.ModerncvBanking]: {
+      name: 'ModernCV Banking',
+      description: 'ModernCV template with banking style',
+    },
+    [TemplateOption.ModerncvCasual]: {
+      name: 'ModernCV Casual',
+      description: 'ModernCV template with casual style',
+    },
+    [TemplateOption.ModerncvClassic]: {
+      name: 'ModernCV Classic',
+      description: 'ModernCV template with classic style',
+    },
+  }
+
+  if (templateOption in templateOptionName) {
+    return {
+      id: templateOption,
+      ...templateOptionName[templateOption],
+    }
+  }
+
+  throw new Error(`Invalid template option: ${templateOption}`)
 }
 
 /** Provides default, empty item structures for each resume section type. */
@@ -328,7 +357,7 @@ const defaultLanguage = LocaleLanguageOption.English
 /** Default layout configuration for a new resume. */
 export const defaultResumeLayout: ResumeLayout = {
   template: {
-    id: Templates.ModerncvBanking,
+    id: TemplateOption.ModerncvBanking,
   },
   typography: {
     fontSize: fontSizeOptions[0],

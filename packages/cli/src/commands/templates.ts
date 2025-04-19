@@ -22,28 +22,39 @@
  * IN THE SOFTWARE.
  */
 
+import { TemplateOption, getTemplateOptionDetail } from '@yamlresume/core'
 import { Command } from 'commander'
+import { markdownTable } from 'markdown-table'
 
-import packageJson from '../package.json' with { type: 'json' }
-import { compileCommand } from './commands/compile'
-import { languagesCommand } from './commands/languages'
-import { templatesCommand } from './commands/templates'
+/**
+ * Generates a markdown table listing all supported templates.
+ *
+ * The table includes columns for the template id,  name and description.
+ *
+ * @returns A string containing the formatted markdown table.
+ */
+export function listTemplates() {
+  return markdownTable([
+    ['Template ID', 'Template Name', 'Description'],
+    ...Object.values(TemplateOption).map((value) => {
+      const details = getTemplateOptionDetail(value)
+      return [value, details.name, details.description]
+    }),
+  ])
+}
 
-export const program = new Command()
+/**
+ * Commander command instance to list supported templates
+ *
+ * Provides subcommands like 'list' to interact with template information.
+ */
+export const templatesCommand = new Command()
+  .name('templates')
+  .description('manage resume templates')
 
-const banner = `
- ____  ____  ____
-|  _ \\|  _ \\|  _ \\ ___  ___ _   _ _ __ ___   ___
-| |_) | |_) | |_) / _ \\/ __| | | | '_ \` _ \\ / _ \\
-|  __/|  __/|  _ <  __/\\__ \\ |_| | | | | | |  __/
-|_|   |_|   |_| \\_\\___||___/\\__,_|_| |_| |_|\\___|
-`
-
-program
-  .name('yamlresume')
-  .description(['YAMLResume — Resume as Code in YAML', banner].join('\n'))
-  .version(packageJson.version)
-
-program.addCommand(compileCommand)
-program.addCommand(languagesCommand)
-program.addCommand(templatesCommand)
+templatesCommand
+  .command('list')
+  .description('list all supported templates')
+  .action(() => {
+    console.log(listTemplates())
+  })

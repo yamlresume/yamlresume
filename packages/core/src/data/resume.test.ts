@@ -23,7 +23,12 @@
  */
 
 import { describe, expect, it } from 'vitest'
-import { LocaleLanguageOption, getLocaleLanguageOptionDetail } from './resume'
+import {
+  LocaleLanguageOption,
+  TemplateOption,
+  getLocaleLanguageOptionDetail,
+  getTemplateOptionDetail,
+} from './resume'
 
 describe(getLocaleLanguageOptionDetail, () => {
   it('should return the language code and name', () => {
@@ -40,5 +45,24 @@ describe(getLocaleLanguageOptionDetail, () => {
     expect(() =>
       getLocaleLanguageOptionDetail('invalid' as LocaleLanguageOption)
     ).toThrow('Invalid locale language: invalid')
+  })
+})
+
+describe(getTemplateOptionDetail, () => {
+  it('should return the template option code and name', () => {
+    for (const templateOption of Object.values(TemplateOption)) {
+      const result = getTemplateOptionDetail(templateOption)
+
+      expect(result).toEqual({
+        id: templateOption,
+        ...getTemplateOptionDetail(templateOption),
+      })
+    }
+  })
+
+  it('should throw an error for invalid template option', () => {
+    expect(() => getTemplateOptionDetail('invalid' as TemplateOption)).toThrow(
+      'Invalid template option: invalid'
+    )
   })
 })
