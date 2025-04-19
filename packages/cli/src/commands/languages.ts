@@ -59,7 +59,7 @@ export const languagesCommand = new Command()
 
 languagesCommand
   .command('list')
-  .description('List all supported languages')
+  .description('list all supported languages')
   .action(() => {
     console.log(listLanguages())
   })

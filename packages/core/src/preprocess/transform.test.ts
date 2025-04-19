@@ -33,7 +33,7 @@ import {
   LanguageFluency,
   LocaleLanguageOption,
   SkillLevel,
-  Templates,
+  TemplateOption,
   defaultResume,
   filledResume,
 } from '@/data'
@@ -930,7 +930,7 @@ describe(transformResumeLayout, () => {
     const resume = cloneDeep(defaultResume)
     const providedLayout: ResumeLayout = {
       template: {
-        id: Templates.ModerncvBanking,
+        id: TemplateOption.ModerncvBanking,
       },
       margins: {
         top: '0cm',

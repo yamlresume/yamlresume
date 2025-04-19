@@ -25,7 +25,7 @@
 import { describe, expect, it } from 'vitest'
 
 import { TiptapParser } from '@/compiler'
-import { Templates, defaultResume } from '@/data'
+import { TemplateOption, defaultResume } from '@/data'
 import type { Resume } from '@/types'
 import {
   ModerncvBankingRenderer,
@@ -40,15 +40,15 @@ describe(getResumeRenderer, () => {
   it('should return correct renderer when template is specified', () => {
     const tests = [
       {
-        template: Templates.ModerncvBanking,
+        template: TemplateOption.ModerncvBanking,
         expected: ModerncvBankingRenderer,
       },
       {
-        template: Templates.ModerncvCasual,
+        template: TemplateOption.ModerncvCasual,
         expected: ModerncvCasualRenderer,
       },
       {
-        template: Templates.ModerncvClassic,
+        template: TemplateOption.ModerncvClassic,
         expected: ModerncvClassicRenderer,
       },
     ]
@@ -103,7 +103,7 @@ describe(getResumeRenderer, () => {
       layout: {
         ...mockResume.layout,
         template: {
-          id: 'invalid-template' as Templates,
+          id: 'invalid-template' as TemplateOption,
         },
       },
     }

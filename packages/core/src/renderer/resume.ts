@@ -25,7 +25,7 @@
 import { get } from 'lodash-es'
 
 import type { Parser } from '@/compiler'
-import { Templates } from '@/data'
+import { TemplateOption } from '@/data'
 import type { Resume } from '@/types'
 import type { Renderer } from './base'
 import {
@@ -35,9 +35,9 @@ import {
 } from './moderncv'
 
 const RESUME_RENDERER_MAP = {
-  [Templates.ModerncvBanking]: ModerncvBankingRenderer,
-  [Templates.ModerncvClassic]: ModerncvClassicRenderer,
-  [Templates.ModerncvCasual]: ModerncvCasualRenderer,
+  [TemplateOption.ModerncvBanking]: ModerncvBankingRenderer,
+  [TemplateOption.ModerncvClassic]: ModerncvClassicRenderer,
+  [TemplateOption.ModerncvCasual]: ModerncvCasualRenderer,
 }
 
 /**

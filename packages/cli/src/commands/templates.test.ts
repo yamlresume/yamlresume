@@ -22,37 +22,37 @@
  * IN THE SOFTWARE.
  */
 
-import {
-  LocaleLanguageOption,
-  getLocaleLanguageOptionDetail,
-} from '@yamlresume/core'
+import { TemplateOption, getTemplateOptionDetail } from '@yamlresume/core'
 import { Command } from 'commander'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 
-import { languagesCommand, listLanguages } from './languages'
+import { listTemplates, templatesCommand } from './templates'
 
-describe(listLanguages, () => {
-  it('should generate a markdown table with all supported languages', () => {
-    const result = listLanguages()
+describe(listTemplates, () => {
+  it('should generate a markdown table with all supported templates', () => {
+    const result = listTemplates()
 
-    expect(result).toContain('Language Code')
-    expect(result).toContain('Language Name')
+    // Check for headers
+    expect(result).toContain('Template ID')
+    expect(result).toContain('Template Name')
+    expect(result).toContain('Description')
 
-    // Check if all languages are included
-    Object.values(LocaleLanguageOption).forEach((value) => {
-      expect(result).toContain(value)
-      expect(result).toContain(getLocaleLanguageOptionDetail(value).name)
+    // Check if all templates are included
+    Object.values(TemplateOption).forEach((value) => {
+      const details = getTemplateOptionDetail(value)
+      expect(result).toContain(value) // Template ID
+      expect(result).toContain(details.name) // Template Name
+      expect(result).toContain(details.description) // Description
     })
 
     // Check if the table has the correct number of rows
-    const rows = result.split('\n')
-
+    const rows = result.trim().split('\n')
     // +2 for header and separator
-    expect(rows.length).toBe(Object.keys(LocaleLanguageOption).length + 2)
+    expect(rows.length).toBe(Object.keys(TemplateOption).length + 2)
   })
 })
 
-describe('languagesCommand', () => {
+describe('templatesCommand', () => {
   let program: Command
 
   beforeEach(() => {
@@ -64,36 +64,33 @@ describe('languagesCommand', () => {
   })
 
   it('should have correct name and description', () => {
-    expect(languagesCommand.name()).toBe('languages')
-    expect(languagesCommand.description()).toBe('i18n and l10n support')
+    expect(templatesCommand.name()).toBe('templates')
+    expect(templatesCommand.description()).toBe('manage resume templates')
   })
 
   it('should have a list subcommand', () => {
-    const subcommands = languagesCommand.commands
+    const subcommands = templatesCommand.commands
     expect(subcommands).toHaveLength(1)
     expect(subcommands[0].name()).toBe('list')
-    expect(subcommands[0].description()).toBe('list all supported languages')
+    expect(subcommands[0].description()).toBe('list all supported templates')
   })
 
-  it('should call listLanguages when list subcommand is executed', () => {
+  it('should call listTemplates when list subcommand is executed', () => {
     const consoleSpy = vi.spyOn(console, 'log').mockImplementation(() => {})
 
-    program.addCommand(languagesCommand)
-    program.parse(['node', 'cli.js', 'languages', 'list'])
+    program.addCommand(templatesCommand)
+    program.parse(['node', 'cli.js', 'templates', 'list'])
 
-    expect(consoleSpy).toHaveBeenCalledWith(listLanguages())
-    consoleSpy.mockRestore()
+    expect(consoleSpy).toHaveBeenCalledWith(listTemplates())
   })
 
-  describe('languages command', () => {
-    it('should support languages list', () => {
-      vi.spyOn(process.stdout, 'write').mockImplementation(() => true)
+  it('should show help for templates list command', () => {
+    vi.spyOn(process.stdout, 'write').mockImplementation(() => true)
 
-      program.addCommand(languagesCommand)
+    program.addCommand(templatesCommand)
 
-      expect(() =>
-        program.parse(['node', 'cli.js', 'languages', 'help'])
-      ).toThrow('process.exit')
-    })
+    expect(() =>
+      program.parse(['node', 'cli.js', 'templates', 'list', '--help'])
+    ).toThrow() // commander throws an error with exitOverride
   })
 })
