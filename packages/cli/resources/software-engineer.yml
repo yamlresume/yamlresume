@@ -198,14 +198,16 @@ content:
       publisher: ACM Transactions on Interactive Intelligent Systems
       releaseDate: Dec 2017
 layout:
-  page:
-    showPageNumbers: true
   locale:
     language: en
   margins:
-    top: 2.5 cm
-    left: 1.5 cm
-    right: 1.5 cm
-    bottom: 2.5 cm
+    top: 2.5cm
+    left: 1.5cm
+    right: 1.5cm
+    bottom: 2.5cm
+  page:
+    showPageNumbers: true
+  template:
+    id: moderncv-banking
   typography:
-    fontSize: 11 pt
+    fontSize: 11pt
