@@ -21,7 +21,7 @@
     "core": "pnpm --filter @yamlresume/core"
   },
   "lint-staged": {
-    "**/*": "pnpm check"
+    "packages/*/src/**/*.ts": "pnpm check"
   },
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
