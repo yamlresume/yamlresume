@@ -251,6 +251,29 @@ describe(generateTeX, () => {
 })
 
 describe(generatePDF, () => {
+  const outputStr: string[] = []
+  let execSpy: ReturnType<typeof vi.spyOn>
+  let whichSpy: ReturnType<typeof vi.spyOn>
+  let consoleSpy: ReturnType<typeof vi.spyOn>
+
+  beforeEach(() => {
+    execSpy = vi
+      // biome-ignore lint/suspicious/noExplicitAny: ignore
+      .spyOn(child_process, 'execSync' as any)
+      .mockImplementation(() => {})
+    whichSpy = vi
+      // biome-ignore lint/suspicious/noExplicitAny: ignore
+      .spyOn(which, 'sync' as any)
+      .mockImplementation(() => 'xelatex')
+    consoleSpy = vi
+      .spyOn(console, 'log')
+      // instead of suppressing output, we'll collect the output to a string
+      .mockImplementation((chunk) => {
+        outputStr.push(chunk.toString().trim())
+        return true
+      })
+  })
+
   afterEach(() => {
     vi.resetAllMocks()
   })
@@ -260,26 +283,39 @@ describe(generatePDF, () => {
   it('should generate a pdf file', () => {
     const source = getFixture('software-engineer.yml')
 
-    const execSync = vi
-      // biome-ignore lint/suspicious/noExplicitAny: ignore
-      .spyOn(child_process, 'execSync' as any)
-      .mockImplementation(() => {})
-    const whichSpy = vi
-      // biome-ignore lint/suspicious/noExplicitAny: ignore
-      .spyOn(which, 'sync' as any)
-      .mockImplementation(() => 'xelatex')
-
     const command = inferLaTeXCommand(source)
 
     generatePDF(source)
 
-    expect(execSync).toBeCalledTimes(1)
-    expect(execSync).toHaveBeenCalledWith(command)
+    expect(execSpy).toBeCalledTimes(1)
+    expect(execSpy).toHaveBeenCalledWith(command)
     expect(whichSpy).toHaveBeenCalledWith('xelatex')
+    expect(outputStr).toEqual([
+      `-> generating resume PDF with command: \`${command}\`...`,
+      '-> resume PDF generated successfully.',
+    ])
+    expect(consoleSpy).toHaveBeenCalledTimes(2)
   })
 })
 
 describe(compileResume, () => {
+  let execSpy: ReturnType<typeof vi.spyOn>
+  let whichSpy: ReturnType<typeof vi.spyOn>
+  let consoleSpy: ReturnType<typeof vi.spyOn>
+
+  beforeEach(() => {
+    execSpy = vi
+      // biome-ignore lint/suspicious/noExplicitAny: ignore
+      .spyOn(child_process, 'execSync' as any)
+      .mockImplementation(() => {})
+    whichSpy = vi
+      // biome-ignore lint/suspicious/noExplicitAny: ignore
+      .spyOn(which, 'sync' as any)
+      .mockImplementation(() => 'xelatex')
+    // just suppress output
+    consoleSpy = vi.spyOn(console, 'log').mockImplementation(() => true)
+  })
+
   afterEach(() => {
     vi.resetAllMocks()
   })
@@ -287,20 +323,12 @@ describe(compileResume, () => {
   it('should generate a pdf file', () => {
     const source = getFixture('software-engineer.yml')
 
-    const execSync = vi
-      // biome-ignore lint/suspicious/noExplicitAny: ignore
-      .spyOn(child_process, 'execSync' as any)
-      .mockImplementation(() => {})
-    const whichSpy = vi
-      // biome-ignore lint/suspicious/noExplicitAny: ignore
-      .spyOn(which, 'sync' as any)
-      .mockImplementation(() => 'xelatex')
-
     compileResume(source)
 
-    expect(execSync).toBeCalledTimes(1)
-    expect(execSync).toHaveBeenCalledWith(inferLaTeXCommand(source))
+    expect(execSpy).toBeCalledTimes(1)
+    expect(execSpy).toHaveBeenCalledWith(inferLaTeXCommand(source))
     expect(whichSpy).toHaveBeenCalledWith('xelatex')
+    expect(consoleSpy).toHaveBeenCalledTimes(2)
   })
 })
 
@@ -308,6 +336,7 @@ describe('compileCommand', () => {
   let program: Command
   let execSpy: ReturnType<typeof vi.spyOn>
   let whichSpy: ReturnType<typeof vi.spyOn>
+  let consoleSpy: ReturnType<typeof vi.spyOn>
 
   beforeEach(() => {
     program = new Command()
@@ -319,6 +348,8 @@ describe('compileCommand', () => {
       // biome-ignore lint/suspicious/noExplicitAny: ignore
       .spyOn(which, 'sync' as any)
       .mockReturnValue('/usr/bin/xelatex')
+    // just suppress output
+    consoleSpy = vi.spyOn(console, 'log').mockImplementation(() => true)
   })
 
   afterEach(() => {
@@ -347,6 +378,7 @@ describe('compileCommand', () => {
 
     expect(whichSpy).toHaveBeenCalledWith('xelatex')
     expect(execSpy).toHaveBeenCalledWith(inferLaTeXCommand(source))
+    expect(consoleSpy).toHaveBeenCalledTimes(2)
   })
 
   it('should handle help flag', () => {

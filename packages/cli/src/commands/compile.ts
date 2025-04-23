@@ -148,7 +148,10 @@ export function generatePDF(source: string) {
   generateTeX(source)
 
   const command = inferLaTeXCommand(source)
+  console.log(`-> generating resume PDF with command: \`${command}\`...`)
+
   child_process.execSync(command)
+  console.log('-> resume PDF generated successfully.')
 }
 
 /**
