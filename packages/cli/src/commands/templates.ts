@@ -35,7 +35,7 @@ import { markdownTable } from 'markdown-table'
  */
 export function listTemplates() {
   return markdownTable([
-    ['Template ID', 'Template Name', 'Description'],
+    ['`layout.template`', 'Template Name', 'Description'],
     ...Object.values(TemplateOption).map((value) => {
       const details = getTemplateOptionDetail(value)
       return [value, details.name, details.description]

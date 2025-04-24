@@ -39,7 +39,7 @@ import { markdownTable } from 'markdown-table'
  */
 export function listLanguages() {
   return markdownTable([
-    ['Language Code', 'Language Name'],
+    ['`layout.locale.language`', 'Language Name'],
     ...Object.values(LocaleLanguageOption).map((value) => [
       value,
       getLocaleLanguageOptionDetail(value).name,

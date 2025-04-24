@@ -29,6 +29,7 @@ import type {
   LanguageFluency,
   LocaleLanguageOption,
   SkillLevel,
+  TemplateOption,
 } from '@/data'
 
 /** Represents the valid identifiers for top-level sections within the resume
@@ -645,10 +646,7 @@ type ResumeLayoutPage = {
 }
 
 /** Defines the selected template identifier. */
-type ResumeTemplate = {
-  /** The unique ID of the LaTeX template to use (e.g., "moderncv-banking"). */
-  id: string
-}
+type ResumeTemplate = TemplateOption
 
 /** Defines the overall layout configuration, including template, margins,
  * typography, locale, and computed environment settings. */

@@ -203,6 +203,7 @@ content:
         - Guitar
 layout:
   locale:
+    # `yamlresume languages list` to get the list of supported languages
     language: en
   margins:
     top: 2.5cm
@@ -211,7 +212,8 @@ layout:
     bottom: 2.5cm
   page:
     showPageNumbers: true
-  template:
-    id: moderncv-banking
+  # `yamlresume templates list` to get the list of available templates
+  template: moderncv-banking
   typography:
+    # the LaTeX engine only supports 10pt, 11pt, and 12pt
     fontSize: 11pt

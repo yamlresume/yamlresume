@@ -58,9 +58,7 @@ describe(getResumeRenderer, () => {
         ...mockResume,
         layout: {
           ...mockResume.layout,
-          template: {
-            id: template,
-          },
+          template,
         },
       }
 

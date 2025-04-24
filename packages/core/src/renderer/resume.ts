@@ -55,11 +55,11 @@ export function getResumeRenderer(
   } = resume
 
   // default to use moderncv banking style if template is not specified
-  if (!template || !template.id) {
+  if (!template) {
     return new ModerncvBankingRenderer(resume as Resume, summaryParser)
   }
 
-  return new (get(RESUME_RENDERER_MAP, template.id, ModerncvBankingRenderer))(
+  return new (get(RESUME_RENDERER_MAP, template, ModerncvBankingRenderer))(
     resume as Resume,
     summaryParser
   )

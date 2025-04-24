@@ -356,9 +356,7 @@ const defaultLanguage = LocaleLanguageOption.English
 
 /** Default layout configuration for a new resume. */
 export const defaultResumeLayout: ResumeLayout = {
-  template: {
-    id: TemplateOption.ModerncvBanking,
-  },
+  template: TemplateOption.ModerncvBanking,
   typography: {
     fontSize: fontSizeOptions[0],
     fontSpec: {

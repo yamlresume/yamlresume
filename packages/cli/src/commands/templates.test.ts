@@ -33,7 +33,7 @@ describe(listTemplates, () => {
     const result = listTemplates()
 
     // Check for headers
-    expect(result).toContain('Template ID')
+    expect(result).toContain('`layout.template`')
     expect(result).toContain('Template Name')
     expect(result).toContain('Description')
 
