@@ -31,18 +31,11 @@ import {
   getTemplateTranslations,
   getTermsTranslations,
 } from '@/translations'
-import {
-  FontSpecNumbersStyle,
-  MainFont,
-  type ProfileItem,
-  type Resume,
-} from '@/types'
+import { FontSpecNumbersStyle, type ProfileItem, type Resume } from '@/types'
 import {
   escapeLatex,
   getDateRange,
   isEmptyValue,
-  isMacOS,
-  isTestEnvironment,
   localizeDate,
   showIf,
 } from '@/utils'
@@ -776,32 +769,6 @@ export function transformResumeLayout(resume: Resume): Resume {
 }
 
 /**
- * Determines and sets the appropriate main font (`MainFont.Mac` or
- * `MainFont.Ubuntu`) based on the host environment (macOS/test vs. other).
- *
- * Stores the result in `resume.layout.computed.environment.mainFont`.
- *
- * @param resume - The original resume object.
- * @returns The transformed resume object.
- * @remarks Modifies `resume.layout.computed` in place.
- */
-export function transformResumeEnvironment(resume: Resume): Resume {
-  // Use Mac font for test/local development, Ubuntu font for production
-  const mainFont =
-    isTestEnvironment() || isMacOS() ? MainFont.Mac : MainFont.Ubuntu
-
-  resume.layout.computed = {
-    ...resume.layout.computed,
-    environment: {
-      ...resume.layout.computed?.environment,
-      mainFont,
-    },
-  }
-
-  return resume
-}
-
-/**
  * Applies all necessary transformations to a resume object in preparation for
  * rendering.
  *
@@ -817,11 +784,7 @@ export function transformResumeEnvironment(resume: Resume): Resume {
  * resume.
  */
 export function transformResume(resume: Resume, summaryParser: Parser): Resume {
-  return [
-    transformResumeContent,
-    transformResumeLayout,
-    transformResumeEnvironment,
-  ].reduce(
+  return [transformResumeContent, transformResumeLayout].reduce(
     (resume, tranformFunc) => tranformFunc(resume, summaryParser),
     cloneDeep(resume)
   )

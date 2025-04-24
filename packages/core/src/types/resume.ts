@@ -527,20 +527,6 @@ export type ResumeItem = {
   work: WorkItem
 }
 
-/** Defines the primary font family choices based on the environment. */
-export enum MainFont {
-  /** Font typically available on Linux/Ubuntu systems (Linux Libertine O). */
-  Ubuntu = 'Linux Libertine O',
-  /** Font typically available on macOS systems (Linux Libertine). */
-  Mac = 'Linux Libertine',
-}
-
-/** Represents computed environment-specific settings, like the main font. */
-export type LatexEnvironment = {
-  /** The resolved main font to be used by LaTeX. */
-  mainFont?: MainFont
-}
-
 /** Defines the structure for the entire resume content, including all sections
  * and computed values. */
 export type ResumeContent = {
@@ -661,11 +647,6 @@ export type ResumeLayout = {
   locale: ResumeLayoutLocale
   /** Page-level settings. */
   page: ResumeLayoutPage
-  /** Computed layout values derived during transformation. */
-  computed?: {
-    /** Environment-specific settings like the resolved main font. */
-    environment?: LatexEnvironment
-  }
 }
 
 /**

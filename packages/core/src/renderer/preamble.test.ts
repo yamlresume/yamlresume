@@ -25,7 +25,7 @@
 import { describe, expect, it } from 'vitest'
 
 import { LocaleLanguageOption, defaultResume } from '@/data'
-import { FontSpecNumbersStyle, MainFont, type Resume } from '@/types'
+import { FontSpecNumbersStyle, type Resume } from '@/types'
 import {
   DocumentClass,
   ModerncvStyle,
@@ -157,8 +157,8 @@ describe(renderSpanishConfig, () => {
 })
 
 describe(renderFontspecConfig, () => {
-  const mainFont = MainFont.Ubuntu
-
+  const linuxLibertineFont = 'Linux Libertine'
+  const linuxLibertineOFont = 'Linux Libertine O'
   it('should render basic fontspec configuration', () => {
     const cjkResume: Resume = {
       ...mockResume,
@@ -173,19 +173,23 @@ describe(renderFontspecConfig, () => {
             numbers: FontSpecNumbersStyle.OldStyle,
           },
         },
-        computed: {
-          environment: {
-            mainFont,
-          },
-        },
       },
     }
 
     const result = renderFontspecConfig(cjkResume)
 
     expect(result).toContain('\\usepackage{fontspec}')
+    expect(result).toContain(`\\IfFontExistsTF{${linuxLibertineFont}}`)
     expect(result).toContain(
-      `\\setmainfont[Ligatures={TeX, Common}, Numbers=OldStyle]{${mainFont}}`
+      `\\setmainfont[Ligatures={TeX, Common}, Numbers=OldStyle]{${
+        linuxLibertineFont
+      }}`
+    )
+    expect(result).toContain(`\\IfFontExistsTF{${linuxLibertineOFont}}`)
+    expect(result).toContain(
+      `\\setmainfont[Ligatures={TeX, Common}, Numbers=OldStyle]{${
+        linuxLibertineOFont
+      }}`
     )
   })
 
@@ -203,19 +207,23 @@ describe(renderFontspecConfig, () => {
             numbers: FontSpecNumbersStyle.Lining,
           },
         },
-        computed: {
-          environment: {
-            mainFont,
-          },
-        },
       },
     }
 
     const result = renderFontspecConfig(cjkResume)
 
     expect(result).toContain('\\usepackage{fontspec}')
+    expect(result).toContain(`\\IfFontExistsTF{${linuxLibertineFont}}`)
     expect(result).toContain(
-      `\\setmainfont[Ligatures={TeX, Common}, Numbers=Lining, ItalicFont=${mainFont}]{${mainFont}}`
+      `\\setmainfont[Ligatures={TeX, Common}, Numbers=Lining, ItalicFont=${
+        linuxLibertineFont
+      }]{${linuxLibertineFont}}`
+    )
+    expect(result).toContain(`\\IfFontExistsTF{${linuxLibertineOFont}}`)
+    expect(result).toContain(
+      `\\setmainfont[Ligatures={TeX, Common}, Numbers=Lining, ItalicFont=${
+        linuxLibertineOFont
+      }]{${linuxLibertineOFont}}`
     )
   })
 })

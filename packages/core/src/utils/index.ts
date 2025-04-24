@@ -23,7 +23,6 @@
  */
 
 export * from './date'
-export * from './env'
 export * from './tex'
 export * from './object'
 export * from './string'

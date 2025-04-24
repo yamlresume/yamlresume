@@ -78,7 +78,6 @@ class ModerncvBase extends Renderer {
       renderLayoutConfig(this.resume),
 
       // language specific
-      renderCTeXConfig(this.resume),
       renderSpanishConfig(this.resume),
 
       // fontspec
@@ -87,6 +86,11 @@ class ModerncvBase extends Renderer {
       // Spanish resumes cannot render correct font styles in my testing,
       // reason still unknown though
       renderFontspecConfig(this.resume),
+
+      // CTeX for CJK
+      // CTeX needs to load after fontspec because we use `\IfFontExistsTF` to
+      // set the CJK font manually if the required Google Noto font exists
+      renderCTeXConfig(this.resume),
     ])
   }
 

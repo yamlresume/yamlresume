@@ -45,12 +45,11 @@ import {
 } from '@/translations'
 import {
   FontSpecNumbersStyle,
-  MainFont,
   type ProfileItem,
   type ResumeLayout,
   type SocialNetwork,
 } from '@/types'
-import { isEmptyValue, isMacOS, isTestEnvironment } from '@/utils'
+import { isEmptyValue } from '@/utils'
 import {
   replaceBlankLinesWithPercent,
   transformBasicsUrl,
@@ -63,7 +62,6 @@ import {
   transformLocation,
   transformProfileUrls,
   transformResumeContent,
-  transformResumeEnvironment,
   transformResumeLayout,
   transformResumeLayoutTypography,
   transformResumeValues,
@@ -955,88 +953,5 @@ describe(transformResumeLayout, () => {
     resume.layout = providedLayout
 
     expect(transformResumeLayout(resume).layout).toEqual(providedLayout)
-  })
-})
-
-describe(transformResumeEnvironment, () => {
-  it('should transform english resume environment with proper values', () => {
-    for (const language of [
-      LocaleLanguageOption.English,
-      LocaleLanguageOption.Spanish,
-    ]) {
-      const resume = cloneDeep(defaultResume)
-      resume.layout.locale.language = language
-
-      transformResumeEnvironment(resume)
-
-      if (isTestEnvironment() || isMacOS()) {
-        expect(resume.layout.computed?.environment).toEqual({
-          mainFont: MainFont.Mac,
-        })
-      } else {
-        expect(resume.layout.computed?.environment).toEqual({
-          mainFont: MainFont.Ubuntu,
-        })
-      }
-    }
-  })
-
-  it('should transform CJK resume environment with proper values', () => {
-    for (const language of [
-      LocaleLanguageOption.SimplifiedChinese,
-      LocaleLanguageOption.TraditionalChineseHK,
-      LocaleLanguageOption.TraditionalChineseTW,
-    ]) {
-      const resume = cloneDeep(defaultResume)
-
-      resume.layout.locale.language = language
-      transformResumeEnvironment(resume)
-
-      if (isTestEnvironment() || isMacOS()) {
-        expect(resume.layout.computed?.environment).toEqual({
-          mainFont: MainFont.Mac,
-        })
-      } else {
-        expect(resume.layout.computed?.environment).toEqual({
-          mainFont: MainFont.Ubuntu,
-        })
-      }
-    }
-  })
-
-  it('should set mainFont to Mac when running on Mac', () => {
-    vi.spyOn(process, 'env', 'get').mockImplementation(() => ({
-      NODE_ENV: 'test',
-      JEST_WORKER_ID: undefined,
-      VITEST: undefined,
-    }))
-    vi.spyOn(process, 'platform', 'get').mockImplementation(() => 'darwin')
-
-    const resume = cloneDeep(defaultResume)
-    resume.layout.computed = {
-      environment: {},
-    }
-
-    transformResumeEnvironment(resume)
-
-    expect(resume.layout.computed?.environment?.mainFont).toBe(MainFont.Mac)
-
-    vi.resetAllMocks()
-  })
-
-  it('should set mainFont to Ubuntu when running on Linux', () => {
-    vi.spyOn(process, 'env', 'get').mockImplementation(() => ({}))
-    vi.spyOn(process, 'platform', 'get').mockImplementation(() => 'linux')
-
-    const resume = cloneDeep(defaultResume)
-    resume.layout.computed = {
-      environment: {},
-    }
-
-    transformResumeEnvironment(resume)
-
-    expect(resume.layout.computed?.environment?.mainFont).toBe(MainFont.Ubuntu)
-
-    vi.resetAllMocks()
   })
 })

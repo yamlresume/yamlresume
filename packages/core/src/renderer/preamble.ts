@@ -229,8 +229,13 @@ export function renderCTeXConfig(resume: Resume): string {
 % ref:
 % - http://ctan.mirrorcatalogs.com/language/chinese/ctex/ctex.pdf
 \\usepackage[UTF8, fontset=none, heading=false, punct=kaiming, scheme=plain, space=auto]{ctex}
-\\setCJKmainfont{Noto Serif CJK SC}
-\\setCJKsansfont{Noto Sans CJK SC}`
+
+\\IfFontExistsTF{Noto Serif CJK SC}{
+  \\setCJKmainfont{Noto Serif CJK SC}
+}{}
+\\IfFontExistsTF{Noto Sans CJK SC}{
+  \\setCJKsansfont{Noto Sans CJK SC}
+}{}`
 }
 
 /**
@@ -266,20 +271,33 @@ export function renderFontspecConfig(resume: Resume): string {
       typography: {
         fontSpec: { numbers },
       },
-      computed: {
-        environment: { mainFont },
-      },
     },
   } = resume
 
+  const linuxLibertineFont = 'Linux Libertine'
+  const linuxLibertineOFont = 'Linux Libertine O'
+
   return `%% fontspec
 \\usepackage{fontspec}
-\\setmainfont[${joinNonEmptyString(
+
+\\IfFontExistsTF{${linuxLibertineFont}}{
+  \\setmainfont[${joinNonEmptyString(
     [
       'Ligatures={TeX, Common}',
       `Numbers=${numbers}`,
-      showIf(isCJKResume(resume), `ItalicFont=${mainFont}`),
+      showIf(isCJKResume(resume), `ItalicFont=${linuxLibertineFont}`),
     ],
     ', '
-  )}]{${mainFont}}`
+  )}]{${linuxLibertineFont}}
+}{}
+\\IfFontExistsTF{${linuxLibertineOFont}}{
+  \\setmainfont[${joinNonEmptyString(
+    [
+      'Ligatures={TeX, Common}',
+      `Numbers=${numbers}`,
+      showIf(isCJKResume(resume), `ItalicFont=${linuxLibertineOFont}`),
+    ],
+    ', '
+  )}]{${linuxLibertineOFont}}
+}{}`
 }
