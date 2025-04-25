@@ -1,51 +1,9 @@
 ## YAMLResume CLI
 
-The YAMLResume CLI is a command-line interface for
+The YAMLResume CLI is the command-line interface for
 [YAMLResume](https://yamlresume.dev).
 
-### Installation
+![YAMLResume YAML and PDF](https://yamlresume.dev/static/assets/images/yamlresume-yaml-and-pdf.webp)
 
-- npm
-
-```bash
-npm install -g yamlresume
-```
-
-- pnpm
-
-```bash
-pnpm add -g yamlresume
-```
-
-- yarn
-
-```bash
-yarn global add yamlresume
-```
-
-### Commands
-
-```
-> yamlresume help
-
-Usage: yamlresume [options] [command]
-
-YAMLResume — Resume as Code in YAML
-
- ____  ____  ____
-|  _ \|  _ \|  _ \ ___  ___ _   _ _ __ ___   ___
-| |_) | |_) | |_) / _ \/ __| | | | '_ ` _ \ / _ \
-|  __/|  __/|  _ <  __/\__ \ |_| | | | | | |  __/
-|_|   |_|   |_| \_\___||___/\__,_|_| |_| |_|\___|
-
-
-Options:
-  -V, --version     output the version number
-  -h, --help        display help for command
-
-Commands:
-  build <source>    build a resume to LaTeX and PDF
-  languages         i18n and l10n support
-  templates         manage resume templates
-  help [command]    display help for command
-```
+- [installation](http://yamlresume.dev/docs/getting-started#installation)
+- [manual docs](http://yamlresume.dev/docs/cli)
