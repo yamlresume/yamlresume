@@ -39,7 +39,6 @@ export const initCommand = new Command()
   .argument('[filename]', 'output filename', 'resume.yml')
   .action((filename) => {
     try {
-      // Check if the file already exists
       if (fs.existsSync(filename)) {
         throw new Error(
           [
@@ -51,10 +50,16 @@ export const initCommand = new Command()
 
       const templatePath = path.join(
         path.dirname(fileURLToPath(import.meta.url)),
-        '../../resources/software-engineer.yml'
+        /* v8 ignore start */
+        // I din't find a way to mock `import.meta.url` in tests so we have to
+        // ignore the following lines for coverage calculation
+        import.meta.url.includes('dist')
+          ? '../resources/software-engineer.yml'
+          : '../../resources/software-engineer.yml'
+        /* v8 ignore stop */
       )
-      const templateContent = fs.readFileSync(templatePath, 'utf8')
-      fs.writeFileSync(filename, templateContent)
+
+      fs.writeFileSync(filename, fs.readFileSync(templatePath, 'utf8'))
       console.log(`Successfully created ${filename}.`)
     } catch (error) {
       console.error('Error creating resume template:', error)
