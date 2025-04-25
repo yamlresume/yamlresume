@@ -56,16 +56,16 @@ Usage: yamlresume [options] [command]
 
 YAMLResume — Resume as Code in YAML
 
- ____  ____  ____
-|  _ \|  _ \|  _ \ ___  ___ _   _ _ __ ___   ___
-| |_) | |_) | |_) / _ \/ __| | | | '_ ` _ \ / _ \
-|  __/|  __/|  _ <  __/\__ \ |_| | | | | | |  __/
-|_|   |_|   |_| \_\___||___/\__,_|_| |_| |_|\___|
+ __   __ _    __  __ _     ____
+ \ \ / // \  |  \/  | |   |  _ \ ___  ___ _   _ ___  ___   ___
+  \ V // _ \ | |\/| | |   | |_) / _ \/ __| | | / _ \/ _ \ / _ \
+   | |/ ___ \| |  | | |___|  _ <  __/\__ \ |_| | | | | | |  __/
+   |_/_/   \_\_|  |_|_____|_| \_\___||___/\____|_| |_| |_|\___|
 
 
 Options:
-  -V, --version     output the version number
-  -h, --help        display help for command
+  -V, --version    output the version number
+  -h, --help       display help for command
 
 Commands:
   init [filename]  initialize a new resume
