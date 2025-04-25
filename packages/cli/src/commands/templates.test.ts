@@ -53,12 +53,6 @@ describe(listTemplates, () => {
 })
 
 describe('templatesCommand', () => {
-  let program: Command
-
-  beforeEach(() => {
-    program = new Command()
-  })
-
   afterEach(() => {
     vi.restoreAllMocks()
   })
@@ -78,8 +72,7 @@ describe('templatesCommand', () => {
   it('should call listTemplates when list subcommand is executed', () => {
     const consoleSpy = vi.spyOn(console, 'log').mockImplementation(() => {})
 
-    program.addCommand(templatesCommand)
-    program.parse(['node', 'cli.js', 'templates', 'list'])
+    templatesCommand.parse(['yamlresume', 'templates', 'list'])
 
     expect(consoleSpy).toHaveBeenCalledWith(listTemplates())
   })
@@ -87,10 +80,8 @@ describe('templatesCommand', () => {
   it('should show help for templates list command', () => {
     vi.spyOn(process.stdout, 'write').mockImplementation(() => true)
 
-    program.addCommand(templatesCommand)
-
     expect(() =>
-      program.parse(['node', 'cli.js', 'templates', 'list', '--help'])
+      templatesCommand.parse(['yamlresume', 'templates', 'list', '--help'])
     ).toThrow() // commander throws an error with exitOverride
   })
 })

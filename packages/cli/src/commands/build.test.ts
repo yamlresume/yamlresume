@@ -330,13 +330,11 @@ describe(buildResume, () => {
 })
 
 describe('buildCommand', () => {
-  let program: Command
   let execSpy: ReturnType<typeof vi.spyOn>
   let whichSpy: ReturnType<typeof vi.spyOn>
   let consoleSpy: ReturnType<typeof vi.spyOn>
 
   beforeEach(() => {
-    program = new Command()
     execSpy = vi
       // biome-ignore lint/suspicious/noExplicitAny: ignore
       .spyOn(child_process, 'execSync' as any)
@@ -368,8 +366,7 @@ describe('buildCommand', () => {
   it('should build resume to PDF', () => {
     const source = getFixture('software-engineer.yml')
 
-    program.addCommand(buildCommand)
-    program.parse(['node', 'cli.js', 'build', source])
+    buildCommand.parse(['yamlresume', 'build', source])
 
     expect(whichSpy).toHaveBeenCalledWith('xelatex')
     expect(execSpy).toHaveBeenCalledWith(inferLaTeXCommand(source))
@@ -379,9 +376,7 @@ describe('buildCommand', () => {
   it('should handle help flag', () => {
     vi.spyOn(process.stdout, 'write').mockImplementation(() => true)
 
-    program.addCommand(buildCommand)
-
-    expect(() => program.parse(['node', 'cli.js', 'build', '--help'])).toThrow(
+    expect(() => buildCommand.parse(['yamlresume', 'build', '--help'])).toThrow(
       'process.exit'
     )
   })

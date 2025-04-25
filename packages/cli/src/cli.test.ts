@@ -35,8 +35,7 @@ vi.mock('./program', () => ({
 
 describe('CLI', () => {
   beforeEach(() => {
-    // Clear all mocks before each test
-    vi.clearAllMocks()
+    vi.resetAllMocks()
   })
 
   it('should call program.parse when cli is executed', async () => {

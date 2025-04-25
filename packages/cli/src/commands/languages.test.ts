@@ -53,12 +53,6 @@ describe(listLanguages, () => {
 })
 
 describe('languagesCommand', () => {
-  let program: Command
-
-  beforeEach(() => {
-    program = new Command()
-  })
-
   afterEach(() => {
     vi.restoreAllMocks()
   })
@@ -78,8 +72,7 @@ describe('languagesCommand', () => {
   it('should call listLanguages when list subcommand is executed', () => {
     const consoleSpy = vi.spyOn(console, 'log').mockImplementation(() => {})
 
-    program.addCommand(languagesCommand)
-    program.parse(['node', 'cli.js', 'languages', 'list'])
+    languagesCommand.parse(['yamlresume', 'languages', 'list'])
 
     expect(consoleSpy).toHaveBeenCalledWith(listLanguages())
     consoleSpy.mockRestore()
@@ -89,10 +82,8 @@ describe('languagesCommand', () => {
     it('should support languages list', () => {
       vi.spyOn(process.stdout, 'write').mockImplementation(() => true)
 
-      program.addCommand(languagesCommand)
-
       expect(() =>
-        program.parse(['node', 'cli.js', 'languages', 'help'])
+        languagesCommand.parse(['yamlresume', 'languages', 'help'])
       ).toThrow('process.exit')
     })
   })
