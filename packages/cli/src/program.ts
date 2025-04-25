@@ -25,7 +25,7 @@
 import { Command } from 'commander'
 
 import packageJson from '../package.json' with { type: 'json' }
-import { compileCommand } from './commands/compile'
+import { buildCommand } from './commands/build'
 import { languagesCommand } from './commands/languages'
 import { templatesCommand } from './commands/templates'
 
@@ -44,6 +44,6 @@ program
   .description(['YAMLResume — Resume as Code in YAML', banner].join('\n'))
   .version(packageJson.version)
 
-program.addCommand(compileCommand)
+program.addCommand(buildCommand)
 program.addCommand(languagesCommand)
 program.addCommand(templatesCommand)

@@ -39,15 +39,15 @@ import which from 'which'
 import yaml from 'yaml'
 
 import {
-  compileCommand,
-  compileResume,
+  buildCommand,
+  buildResume,
   generatePDF,
   generateTeX,
   inferLaTeXCommand,
   inferLaTeXEnvironment,
   inferOutput,
   isCommandAvailable,
-} from './compile'
+} from './build'
 
 function getFixture(source: string) {
   return path.join(__dirname, 'fixtures', source)
@@ -298,7 +298,7 @@ describe(generatePDF, () => {
   })
 })
 
-describe(compileResume, () => {
+describe(buildResume, () => {
   let execSpy: ReturnType<typeof vi.spyOn>
   let whichSpy: ReturnType<typeof vi.spyOn>
   let consoleSpy: ReturnType<typeof vi.spyOn>
@@ -323,7 +323,7 @@ describe(compileResume, () => {
   it('should generate a pdf file', () => {
     const source = getFixture('software-engineer.yml')
 
-    compileResume(source)
+    buildResume(source)
 
     expect(execSpy).toBeCalledTimes(1)
     expect(execSpy).toHaveBeenCalledWith(inferLaTeXCommand(source))
@@ -332,7 +332,7 @@ describe(compileResume, () => {
   })
 })
 
-describe('compileCommand', () => {
+describe('buildCommand', () => {
   let program: Command
   let execSpy: ReturnType<typeof vi.spyOn>
   let whichSpy: ReturnType<typeof vi.spyOn>
@@ -357,24 +357,22 @@ describe('compileCommand', () => {
   })
 
   it('should have correct name and description', () => {
-    expect(compileCommand.name()).toBe('compile')
-    expect(compileCommand.description()).toBe(
-      'compile a resume to LaTeX and PDF'
-    )
+    expect(buildCommand.name()).toBe('build')
+    expect(buildCommand.description()).toBe('build a resume to LaTeX and PDF')
   })
 
   it('should require a source argument', () => {
-    const args = compileCommand.registeredArguments
+    const args = buildCommand.registeredArguments
     expect(args).toHaveLength(1)
     expect(args[0].required).toBe(true)
     expect(args[0].description).toBe('the source resume file')
   })
 
-  it('should compile resume to PDF', () => {
+  it('should build resume to PDF', () => {
     const source = getFixture('software-engineer.yml')
 
-    program.addCommand(compileCommand)
-    program.parse(['node', 'cli.js', 'compile', source])
+    program.addCommand(buildCommand)
+    program.parse(['node', 'cli.js', 'build', source])
 
     expect(whichSpy).toHaveBeenCalledWith('xelatex')
     expect(execSpy).toHaveBeenCalledWith(inferLaTeXCommand(source))
@@ -384,10 +382,10 @@ describe('compileCommand', () => {
   it('should handle help flag', () => {
     vi.spyOn(process.stdout, 'write').mockImplementation(() => true)
 
-    program.addCommand(compileCommand)
+    program.addCommand(buildCommand)
 
-    expect(() =>
-      program.parse(['node', 'cli.js', 'compile', '--help'])
-    ).toThrow('process.exit')
+    expect(() => program.parse(['node', 'cli.js', 'build', '--help'])).toThrow(
+      'process.exit'
+    )
   })
 })

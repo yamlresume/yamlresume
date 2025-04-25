@@ -146,7 +146,7 @@ Options:
   -h, --help        display help for command
 
 Commands:
-  compile <source>  compile a resume to LaTeX and PDF
+  build <source>    build a resume to LaTeX and PDF
   languages         i18n and l10n support
   templates         manage resume templates
   help [command]    display help for command
@@ -159,7 +159,7 @@ You can create your own resume by cloning one of our sample resumes
 sample resume on your local, you can get a pdf with:
 
 ```bash
-yamlresume compile software-engineer.yml
+yamlresume build software-engineer.yml
 ```
 
 Check the generated PDF [here](./packages/cli/resources/software-engineer.pdf)

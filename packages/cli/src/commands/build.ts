@@ -108,7 +108,7 @@ export function inferLaTeXCommand(source: string): string {
 }
 
 /**
- * Compiles the resume source file to a PDF file.
+ * Compiles the resume source file to a LaTeX file.
  *
  * @param source - The source resume file path (YAML, YML, or JSON).
  * @remarks This function performs file I/O: reads the source file and writes a
@@ -155,11 +155,9 @@ export function generatePDF(source: string) {
 }
 
 /**
- * Compile a resume to LaTeX or PDF
+ * Build a resume to LaTeX & PDF
  *
  * This function will read a resume from a file in yaml or json format, and then
- * compile it to LaTeX or PDF.
- *
  * Steps:
  * 1. read the resume from the source file
  * 2. infer the LaTeX command to use
@@ -167,7 +165,7 @@ export function generatePDF(source: string) {
  *    2.2. infer the output destination
  * 3. [TODO] check the resume format and make sure it aligns with YAMLResume
  * schema
- * 4. compile the resume to LaTeX and PDF at the same time
+ * 4. build the resume to LaTeX and PDF at the same time
  *
  * This function will throw an exception if any error
  *
@@ -176,20 +174,20 @@ export function generatePDF(source: string) {
  * from `generatePDF`).
  * @todo Check the resume format against YAMLResume schema before compilation.
  */
-export function compileResume(source: string) {
+export function buildResume(source: string) {
   generatePDF(source)
 }
 
 /**
- * Commander command instance to compile a resume to LaTeX and PDF
+ * Commander command instance to build a resume to LaTeX and PDF
  *
- * Provides a command to compile a resume source file (YAML/JSON) into LaTeX
+ * Provides a command to build a resume source file (YAML/JSON) into LaTeX
  * and PDF.
  */
-export const compileCommand = new Command()
-  .name('compile')
-  .description('compile a resume to LaTeX and PDF')
+export const buildCommand = new Command()
+  .name('build')
+  .description('build a resume to LaTeX and PDF')
   .argument('<source>', 'the source resume file')
   .action((source: string) => {
-    compileResume(source)
+    buildResume(source)
   })

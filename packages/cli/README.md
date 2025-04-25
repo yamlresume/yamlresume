@@ -44,7 +44,7 @@ Options:
   -h, --help        display help for command
 
 Commands:
-  compile <source>  compile a resume to LaTeX and PDF
+  build <source>    build a resume to LaTeX and PDF
   languages         i18n and l10n support
   templates         manage resume templates
   help [command]    display help for command
