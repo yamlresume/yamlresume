@@ -37,6 +37,7 @@ import {
 } from 'vitest'
 import which from 'which'
 import yaml from 'yaml'
+import { getFixture } from './utils'
 
 import {
   buildCommand,
@@ -48,10 +49,6 @@ import {
   inferOutput,
   isCommandAvailable,
 } from './build'
-
-function getFixture(source: string) {
-  return path.join(__dirname, 'fixtures', source)
-}
 
 function cleanupFiles() {
   const fixturesDir = path.join(__dirname, 'fixtures')

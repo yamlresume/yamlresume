@@ -22,32 +22,42 @@
  * IN THE SOFTWARE.
  */
 
+import fs from 'node:fs'
+import path from 'node:path'
+import { fileURLToPath } from 'node:url'
 import { Command } from 'commander'
 
-import packageJson from '../package.json' with { type: 'json' }
-import {
-  buildCommand,
-  initCommand,
-  languagesCommand,
-  templatesCommand,
-} from './commands'
+/**
+ * Commander command instance to initialize a new YAML resume
+ *
+ * @param filename - The output filename for the new resume
+ * @throws {Error} If file creation fails
+ */
+export const initCommand = new Command()
+  .name('init')
+  .description('initialize a new resume')
+  .argument('[filename]', 'output filename', 'resume.yml')
+  .action((filename) => {
+    try {
+      // Check if the file already exists
+      if (fs.existsSync(filename)) {
+        throw new Error(
+          [
+            `File "${filename}" already exists.`,
+            'Please choose a different name or remove the existing file.',
+          ].join(' ')
+        )
+      }
 
-export const program = new Command()
-
-const banner = `
- ____  ____  ____
-|  _ \\|  _ \\|  _ \\ ___  ___ _   _ _ __ ___   ___
-| |_) | |_) | |_) / _ \\/ __| | | | '_ \` _ \\ / _ \\
-|  __/|  __/|  _ <  __/\\__ \\ |_| | | | | | |  __/
-|_|   |_|   |_| \\_\\___||___/\\__,_|_| |_| |_|\\___|
-`
-
-program
-  .name('yamlresume')
-  .description(['YAMLResume — Resume as Code in YAML', banner].join('\n'))
-  .version(packageJson.version)
-
-program.addCommand(initCommand)
-program.addCommand(buildCommand)
-program.addCommand(languagesCommand)
-program.addCommand(templatesCommand)
+      const templatePath = path.join(
+        path.dirname(fileURLToPath(import.meta.url)),
+        '../../resources/software-engineer.yml'
+      )
+      const templateContent = fs.readFileSync(templatePath, 'utf8')
+      fs.writeFileSync(filename, templateContent)
+      console.log(`Successfully created ${filename}.`)
+    } catch (error) {
+      console.error('Error creating resume template:', error)
+      process.exit(1)
+    }
+  })

@@ -22,32 +22,8 @@
  * IN THE SOFTWARE.
  */
 
-import { Command } from 'commander'
+import path from 'node:path'
 
-import packageJson from '../package.json' with { type: 'json' }
-import {
-  buildCommand,
-  initCommand,
-  languagesCommand,
-  templatesCommand,
-} from './commands'
-
-export const program = new Command()
-
-const banner = `
- ____  ____  ____
-|  _ \\|  _ \\|  _ \\ ___  ___ _   _ _ __ ___   ___
-| |_) | |_) | |_) / _ \\/ __| | | | '_ \` _ \\ / _ \\
-|  __/|  __/|  _ <  __/\\__ \\ |_| | | | | | |  __/
-|_|   |_|   |_| \\_\\___||___/\\__,_|_| |_| |_|\\___|
-`
-
-program
-  .name('yamlresume')
-  .description(['YAMLResume — Resume as Code in YAML', banner].join('\n'))
-  .version(packageJson.version)
-
-program.addCommand(initCommand)
-program.addCommand(buildCommand)
-program.addCommand(languagesCommand)
-program.addCommand(templatesCommand)
+export function getFixture(source: string) {
+  return path.join(__dirname, 'fixtures', source)
+}

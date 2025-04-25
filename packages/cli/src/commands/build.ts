@@ -179,10 +179,11 @@ export function buildResume(source: string) {
 }
 
 /**
- * Commander command instance to build a resume to LaTeX and PDF
+ * Commander command instance to build a YAML resume to LaTeX and PDF
  *
- * Provides a command to build a resume source file (YAML/JSON) into LaTeX
- * and PDF.
+ * @param source - The source resume file
+ * @throws {Error} If any part of the PDF generation process fails (forwarded
+ * from `generatePDF`).
  */
 export const buildCommand = new Command()
   .name('build')
