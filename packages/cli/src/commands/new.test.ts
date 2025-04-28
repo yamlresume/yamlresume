@@ -24,10 +24,10 @@
 
 import fs from 'node:fs'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
-import { initCommand } from './init'
+import { newCommand } from './new'
 import { getFixture } from './utils'
 
-describe('initCommand', () => {
+describe('newCommand', () => {
   let consoleLogSpy: ReturnType<typeof vi.spyOn>
   let consoleErrorSpy: ReturnType<typeof vi.spyOn>
   let processExitSpy: ReturnType<typeof vi.spyOn>
@@ -70,7 +70,7 @@ describe('initCommand', () => {
 
   it('should create a resume template with default filename', () => {
     const resumeFilename = 'resume.yml'
-    initCommand.parse(['yamlresume', 'init'])
+    newCommand.parse(['yamlresume', 'new'])
 
     expect(existsSync).toHaveBeenCalledWith(resumeFilename)
 
@@ -88,7 +88,7 @@ describe('initCommand', () => {
     // Verify success message was logged
     expect(consoleLogSpy).toHaveBeenCalledOnce()
     expect(consoleLogSpy).toHaveBeenCalledWith(
-      `Successfully created ${resumeFilename}.`
+      `-> Successfully created ${resumeFilename}.`
     )
 
     // Verify error was not logged and process did not exit
@@ -98,7 +98,7 @@ describe('initCommand', () => {
 
   it('should create a resume template with custom filename', () => {
     const resumeFilename = 'my-resume.yml'
-    initCommand.parse(['yamlresume', 'init', resumeFilename])
+    newCommand.parse(['yamlresume', 'new', resumeFilename])
 
     expect(existsSync).toHaveBeenCalledWith(resumeFilename)
 
@@ -116,7 +116,7 @@ describe('initCommand', () => {
     // Verify success message was logged
     expect(consoleLogSpy).toHaveBeenCalledOnce()
     expect(consoleLogSpy).toHaveBeenCalledWith(
-      `Successfully created ${resumeFilename}.`
+      `-> Successfully created ${resumeFilename}.`
     )
 
     // Verify error was not logged and process did not exit
@@ -131,7 +131,7 @@ describe('initCommand', () => {
       throw readError
     })
 
-    initCommand.parse(['yamlresume', 'init'])
+    newCommand.parse(['yamlresume', 'new'])
 
     expect(existsSync).toHaveBeenCalledWith(resumeFilename)
 
@@ -160,7 +160,7 @@ describe('initCommand', () => {
       throw writeError
     })
 
-    initCommand.parse(['yamlresume', 'init'])
+    newCommand.parse(['yamlresume', 'new'])
 
     // Verify readFileSync was called
     expect(readFileSync).toHaveBeenCalledOnce()
@@ -195,7 +195,7 @@ describe('initCommand', () => {
     // Make existsSync return true for this test
     existsSync.mockReturnValue(true)
 
-    initCommand.parse(['yamlresume', 'init', resumeFilename])
+    newCommand.parse(['yamlresume', 'new', resumeFilename])
 
     expect(existsSync).toHaveBeenCalledWith(resumeFilename)
 

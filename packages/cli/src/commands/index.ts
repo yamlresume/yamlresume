@@ -23,6 +23,6 @@
  */
 
 export { buildCommand } from './build'
-export { initCommand } from './init'
+export { newCommand } from './new'
 export { languagesCommand } from './languages'
 export { templatesCommand } from './templates'

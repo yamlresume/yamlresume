@@ -68,7 +68,7 @@ Options:
   -h, --help       display help for command
 
 Commands:
-  init [filename]  initialize a new resume
+  new [filename]   create a new resume
   build <source>   build a resume to LaTeX and PDF
   languages        i18n and l10n support
   templates        manage resume templates
@@ -91,7 +91,7 @@ You can create your own resume by cloning one of our sample resumes
 sample resume on your local, you can get a pdf with:
 
 ```
-$ yamlresume init my-resume.yml
+$ yamlresume new my-resume.yml
 $ yamlresume build my-resume.yml
 ```
 

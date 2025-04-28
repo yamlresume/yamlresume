@@ -1,57 +1,61 @@
-# MIT License
-#
-# Copyright (c) 2023–Present PPResume (https://ppresume.com)
-#
-# Permission is hereby granted, free of charge, to any person obtaining a copy
-# of this software and associated documentation files (the "Software"), to
-# deal in the Software without restriction, including without limitation the
-# rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
-# sell copies of the Software, and to permit persons to whom the Software is
-# furnished to do so, subject to the following conditions:
-#
-# The above copyright notice and this permission notice shall be included in
-# all copies or substantial portions of the Software.
-#
-# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-# FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
-# IN THE SOFTWARE.
-
 ---
 content:
   basics:
-    url: https://ppresume.com/andy.dufresne
     name: Andy Dufresne
-    email: andy.dufresne@ppresume.com
-    image: ""
-    label: Programmer
+    headline: Headed for the Pacific
     phone: "(213) 555-9876"
+    email: hi@ppresume.com
+    url: https://ppresume.com/gallery
+    # All summary fields supports a limited rich text capabilities in markdown
+    # syntax:
+    #
+    # - bold, (e.g, `**bold**`)
+    # - italic, (e.g, `*italic*`)
+    # - ordered list, unordored list and nested sub list
+    # - links (e.g. `[link](https://ppresume.com)`)
     summary: |
       - Computer Science major with strong foundation in data structures, algorithms, and software development
       - Pixel perfect full stack web developer, specialised in creating high-quality, visually appealing websites
       - Experiened in databases (SQL, NoSQL), familiar with server-side technologies (Node.js, Express, etc.)
       - Team player, with detail-oriented mindset and a keen eye for design and user experiences
-    headline: Headed for the Pacific
   location:
+    address: 123 Main Street
     city: Sacramento
     region: California
-    address: 123 Main Street
     country: United States
     postalCode: "95814"
   profiles:
-    - url: https://line.com/andy.dufresne
-      network: Line
-      username: andy.dufresne
-    - url: https://twitter.com/andy.dufresne
-      network: Twitter
-      username: andy.dufresne
+    - network: Line
+      url: https://line.com/PPResumeX
+      username: PPResumeX
+    - network: Twitter
+      url: https://twitter.com/PPResumeX
+      username: PPResumeX
   education:
-    - url: https://www.cs.usc.edu/
+    - institution: University of Southern California
+      url: https://www.cs.usc.edu/
+      # Valid degree options:
+      #
+      # - 'Middle School'
+      # - 'High School'
+      # - 'Diploma'
+      # - 'Associate'
+      # - 'Bachelor'
+      # - 'Master'
+      # - 'Doctor'
+      degree: Bachelor
       area: Computer Engineering and Computer Science
       score: "3.8"
+      # Should be a valid date string that can be parsed by `new Date(dateStr)`
+      # in JavaScript, eg. '2020-01', '2020-02-03', 'Jul 1, 2023' etc.
+      #
+      # The date part would be removed in the final output as most of the time
+      # people won't really care about the exact date for your working
+      # experience or education background, etc.
+      # ref: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/Date
+      startDate: Sep 1, 2016
+      # Leave endDate blank to indicate "Present"
+      endDate: Jul 1, 2020
       courses:
         - Discrete Methods in Computer Science
         - Programming Language Concepts
@@ -61,19 +65,16 @@ content:
         - Database Systems
         - Computer Networking
         - Introduction to the Theory of Computing
-      endDate: Jul 1, 2020
       summary: |
         - Developed proficiency in programming languages such as Java, C++, and Python
         - Gained hands-on experience in software development through various projects and assignments
         - Strong communication and teamwork skills acquired through group projects and presentations
-        **Courses**: Discrete Methods in Computer Science, Programming Language Concepts, Data Structures and Object-Oriented Design, Operating Systems, Computer Architecture, Database Systems, Computer Networking, Introduction to the Theory of Computing
-      startDate: Sep 1, 2016
-      degree: Bachelor
-      institution: University of Southern California
   work:
-    - url: https://ppresume.com
-      name: PPResume
+    - name: PPResume
+      url: https://ppresume.com
+      startDate: Dec 1, 2022
       endDate: ""
+      position: Senior Software Engineer
       summary: |
         - Developed and implemented efficient and scalable code, ensuring high-quality and maintainable web applications
         - Collaborated with cross-functional teams to gather project requirements and translate them into technical solutions
@@ -85,11 +86,11 @@ content:
         - Growth
         - Quality
         - Mentorship
-      position: Senior Software Engineer
-      startDate: Dec 1, 2022
-    - url: https://ppresume.com
-      name: PPResume
+    - name: PPResume
+      url: https://ppresume.com
+      startDate: Sep 1, 2020
       endDate: Dec 1, 2022
+      position: Software Engineer
       summary: |
         - Created reusable React components to ensure code efficiency and maintainability
         - Integrated with RESTful APIs to fetch and display dynamic data on the frontend
@@ -99,18 +100,31 @@ content:
         - RESTful
         - React
         - Agile
-      position: Software Engineer
-      startDate: Sep 1, 2020
   languages:
-    - fluency: Native or Bilingual Proficiency
-      language: English
+    # Valid language fluency options:
+    #
+    # - 'Elementary Proficiency'
+    # - 'Limited Working Proficiency'
+    # - 'Minimum Professional Proficiency'
+    # - 'Full Professional Proficiency'
+    # - 'Native or Bilingual Proficiency'
+    - language: English
+      fluency: Native or Bilingual Proficiency
       keywords:
         - TOEFL 110
         - IELTS 7.5
-    - fluency: Elementary Proficiency
-      language: Chinese
+    - language: Chinese
+      fluency: Elementary Proficiency
       keywords: []
   skills:
+    # Valid skill level options:
+    #
+    # - 'Novice'
+    # - 'Beginner'
+    # - 'Intermediate'
+    # - 'Advanced'
+    # - 'Expert'
+    # - 'Master'
     - name: Web Development
       level: Expert
       keywords:
@@ -134,50 +148,37 @@ content:
         - Figma
         - Photoshop
   awards:
-    - date: Oct 2016
-      title: Dean's List
+    - title: Dean's List
       awarder: University of Southern California
+      date: Oct 2016
       summary: |
         Awarded to students who achieve a high academic standing by maintaining a specified grade point average (GPA) during a semester.
-  volunteer:
-    - url: https://www.usccsesociety.org/
-      endDate: Jul 2023
-      summary: |
-        - Volunteered as a Tech Mentor at USC Computer Science and Engineering Society
-        - Provided guidance and assistance to fellow students in their technical projects and coursework
-        - Assisted in organizing workshops, coding competitions, and networking events for the society members
-        - Contributed to fostering a collaborative and supportive environment within the student community
-      position: Tech Mentor
-      startDate: Sep 2015
-      organization: USC Computer Science and Engineering Society
   certificates:
-    - url: https://aws.amazon.com/certification/
-      date: Mar 2021
-      name: AWS Certified Developer - Associate
+    - name: AWS Certified Developer - Associate
+      url: https://aws.amazon.com/certification/
       issuer: AWS
+      date: Mar 2021
   publications:
-    - url: https://dl.acm.org/journal/tiis
+    - publisher: ACM Transactions on Interactive Intelligent Systems
+      url: https://dl.acm.org/journal/tiis
       name: Enhancing Human-Computer Interaction through Augmented Reality
+      releaseDate: Dec 2017
       summary: |
         - Explores the potential of augmented reality (AR) in improving interaction between humans and computers
         - Highlights benefits of AR in various areas such as gaming, education, healthcare, and design
         - Discusses challenges and future directions of AR technology in enhancing user experience
-      publisher: ACM Transactions on Interactive Intelligent Systems
-      releaseDate: Dec 2017
   references:
     - name: Dr. Amanda Reynolds
-      email: amanda.reynolds@usc.edu
       phone: "(555) 123-4567"
+      relationship: Computer Science Professor
+      email: amanda.reynolds@usc.edu
       summary: |
         Andy Dufresne shows exceptional problem-solving skills and a solid understanding of programming concepts, he would bring immense value to any team or organization he becomes a part of.
-      relationship: Computer Science Professor
   projects:
-    - url: https://www.eduweb.xyz/
-      name: EduWeb
-      type: application
-      roles:
-        - Team Lead
-      entity: Entity
+    - name: EduWeb
+      url: https://www.eduweb.xyz/
+      description: A web-based educational platform for interactive learning
+      startDate: Sep 2016
       endDate: Dec 2016
       summary: |
         - Designed to enhance online learning experiences
@@ -188,8 +189,6 @@ content:
         - Education
         - Online Learning
         - HCI
-      startDate: Sep 2016
-      description: A web-based educational platform for interactive learning
   interests:
     - name: Sports
       keywords:
@@ -201,9 +200,21 @@ content:
       keywords:
         - Piano
         - Guitar
+  volunteer:
+    - organization: USC Computer Science and Engineering Society
+      url: https://www.usccsesociety.org/
+      position: Tech Mentor
+      startDate: Sep 2015
+      endDate: Jul 2023
+      summary: |
+        - Volunteered as a Tech Mentor at USC Computer Science and Engineering Society
+        - Provided guidance and assistance to fellow students in their technical projects and coursework
+        - Assisted in organizing workshops, coding competitions, and networking events for the society members
+        - Contributed to fostering a collaborative and supportive environment within the student community
+
 layout:
   locale:
-    # `yamlresume languages list` to get the list of supported languages
+    # Use `yamlresume languages list` to get the list of supported languages
     language: en
   margins:
     top: 2.5cm
@@ -212,8 +223,8 @@ layout:
     bottom: 2.5cm
   page:
     showPageNumbers: true
-  # `yamlresume templates list` to get the list of available templates
+  # Use `yamlresume templates list` to get the list of available templates
   template: moderncv-banking
   typography:
-    # the LaTeX engine only supports 10pt, 11pt, and 12pt
+    # LaTeX engine only supports 10pt, 11pt, and 12pt
     fontSize: 11pt

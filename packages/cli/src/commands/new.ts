@@ -28,14 +28,14 @@ import { fileURLToPath } from 'node:url'
 import { Command } from 'commander'
 
 /**
- * Commander command instance to initialize a new YAML resume
+ * Commander command instance to create a new YAML resume
  *
  * @param filename - The output filename for the new resume
  * @throws {Error} If file creation fails
  */
-export const initCommand = new Command()
-  .name('init')
-  .description('initialize a new resume')
+export const newCommand = new Command()
+  .name('new')
+  .description('create a new resume')
   .argument('[filename]', 'output filename', 'resume.yml')
   .action((filename) => {
     try {
@@ -60,7 +60,7 @@ export const initCommand = new Command()
       )
 
       fs.writeFileSync(filename, fs.readFileSync(templatePath, 'utf8'))
-      console.log(`Successfully created ${filename}.`)
+      console.log(`-> Successfully created ${filename}.`)
     } catch (error) {
       console.error('Error creating resume template:', error)
       process.exit(1)
