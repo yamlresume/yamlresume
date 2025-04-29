@@ -95,10 +95,10 @@ $ yamlresume new my-resume.yml
 $ yamlresume build my-resume.yml
 ```
 
-Check the generated PDF [here](./packages/cli/resources/software-engineer.pdf).
+Check the generated PDF [here](./packages/cli/resources/resume.pdf).
 
-![Software Engineer Page 1](./docs/static/images/software-engineer-1.webp)
-![Software Engineer Page 2](./docs/static/images/software-engineer-2.webp)
+![Software Engineer Page 1](./docs/static/images/resume-1.webp)
+![Software Engineer Page 2](./docs/static/images/resume-2.webp)
 
 [PPResume Gallery](https://ppresume.com/gallery/?ref=yamlresume) provides a
 showcase for all possible kind of resumes categoried by languages and templates.
