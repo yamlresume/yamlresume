@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.2.1](https://github.com/yamlresume/yamlresume/compare/v0.2.0...v0.2.1) (2025-04-29)
+
+
+### Bug Fixes
+
+* remove the deprecated mdast package ([63191de](https://github.com/yamlresume/yamlresume/commit/63191deb0021dde1660d4e53474552e7dea4076f))
+* revise publish CI ([9a2302f](https://github.com/yamlresume/yamlresume/commit/9a2302fc18ac9d8b0976733677da5a48f9ea1754))
+
 ## [0.2.0](https://github.com/yamlresume/yamlresume/compare/v0.1.0...v0.2.0) (2025-04-29)
 
 
