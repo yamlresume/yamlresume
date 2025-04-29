@@ -54,8 +54,8 @@ export const newCommand = new Command()
         // I din't find a way to mock `import.meta.url` in tests so we have to
         // ignore the following lines for coverage calculation
         import.meta.url.includes('dist')
-          ? '../resources/software-engineer.yml'
-          : '../../resources/software-engineer.yml'
+          ? '../resources/resume.yml'
+          : '../../resources/resume.yml'
         /* v8 ignore stop */
       )
 
