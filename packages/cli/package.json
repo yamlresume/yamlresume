@@ -1,6 +1,6 @@
 {
   "name": "yamlresume",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "The CLI interface for YAMLResume's engine",
   "license": "MIT",
   "author": {
@@ -8,12 +8,24 @@
     "email": "support@yamlresume.com",
     "url": "https://yamlresume.dev"
   },
-  "keywords": ["YAMLResume", "CV", "Resume", "LaTeX", "Typesetting", "PDF"],
+  "keywords": [
+    "YAMLResume",
+    "CV",
+    "Resume",
+    "LaTeX",
+    "Typesetting",
+    "PDF"
+  ],
   "type": "module",
   "bin": {
     "yamlresume": "./dist/cli.js"
   },
-  "files": ["dist", "README.md", "LICENSE", "resources/resume.yml"],
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "resources/resume.yml"
+  ],
   "scripts": {
     "build": "tsup",
     "build:watch": "tsup --watch",
