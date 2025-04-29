@@ -76,9 +76,7 @@ describe('newCommand', () => {
 
     expect(readFileSync).toHaveBeenCalledOnce()
     // check readFileSync's first argument
-    expect(readFileSync.mock.calls[0][0]).toContain(
-      'resources/software-engineer.yml'
-    )
+    expect(readFileSync.mock.calls[0][0]).toContain('resources/resume.yml')
     expect(readFileSync.mock.calls[0][1]).toBe('utf8')
 
     // Verify writeFileSync was called correctly
@@ -104,9 +102,7 @@ describe('newCommand', () => {
 
     expect(readFileSync).toHaveBeenCalledOnce()
     // check readFileSync's first argument
-    expect(readFileSync.mock.calls[0][0]).toContain(
-      'resources/software-engineer.yml'
-    )
+    expect(readFileSync.mock.calls[0][0]).toContain('resources/resume.yml')
     expect(readFileSync.mock.calls[0][1]).toBe('utf8')
 
     // Verify writeFileSync was called correctly
