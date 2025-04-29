@@ -1,6 +1,6 @@
 {
   "name": "@yamlresume/core",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "The typesetting and layout core for YAMLResume",
   "license": "MIT",
   "author": {
@@ -41,7 +41,6 @@
   "dependencies": {
     "escape-latex": "^1.2.0",
     "lodash-es": "^4.17.21",
-    "mdast": "^3.0.0",
     "remark-parse": "^11.0.0",
     "tslib": "^2.8.1",
     "unified": "^11.0.5"
