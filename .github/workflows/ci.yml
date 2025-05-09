@@ -66,7 +66,10 @@ jobs:
 
       - name: Build resume
         run: |
-          node packages/cli/dist/cli.js
+          node packages/cli/dist/cli.js -V
           node packages/cli/dist/cli.js build packages/cli/resources/resume.yml
+      - name: Check files
+        if: always()
+        run: |
           ls -lah packages/cli/resources
 
