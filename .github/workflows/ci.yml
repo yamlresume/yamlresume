@@ -48,8 +48,38 @@ jobs:
       - name: Build cli package
         run: pnpm cli build:prod
 
+      - name: Install texlive-latex
+        run: |
+          sudo apt update
+          sudo apt install -y texlive-xetex texlive-fonts-extra texlive-lang-all
+          xetex -v
+
       - name: Run check
         run: pnpm check:ci
 
       - name: Run tests
         run: pnpm test:cov
+
+      - name: Install Noto CJK fonts
+        run: |
+          sudo apt install fonts-noto-cjk fonts-noto-cjk-extra
+
+      - name: Build resume
+        run: |
+          node packages/cli/dist/cli.js -V
+          node packages/cli/dist/cli.js new
+          node packages/cli/dist/cli.js build resume.yml
+
+      - name: Check files
+        if: always()
+        run: |
+          ls -lah
+
+      - name: Upload PDF file
+        uses: actions/upload-artifact@v4
+        with:
+          name: yamlresume-sample
+          path: |
+            resume.yml
+            resume.tex
+            resume.pdf
