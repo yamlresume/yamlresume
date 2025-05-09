@@ -54,19 +54,18 @@ jobs:
       - name: Run tests
         run: pnpm coverage
 
-      # - name: Install texlive-latex
-      #   run: |
-      #     sudo apt-get update
-      #     sudo apt-get install -y texlive-latex-base texlive-xetex texlive-latex-extra texlive-fonts-recommended
+      # - name: Setup TeX Live
+      #   uses: teatimeguest/setup-texlive-action@v3
+      #   with:
+      #     packages: scheme-basic
 
-      - name: Setup TeX Live
-        uses: teatimeguest/setup-texlive-action@v3
-        with:
-          packages: scheme-basic
+      - name: Install texlive-latex
+        run: |
+          sudo apt-get install -y texlive-latex-base texlive-xetex texlive-latex-extra texlive-fonts-recommended
+          xetex -v
 
       - name: Build resume
         run: |
-          xetex -v
           node packages/cli/dist/cli.js
           node packages/cli/dist/cli.js build packages/cli/resources/resume.yml
           ls -lah packages/cli/resources
