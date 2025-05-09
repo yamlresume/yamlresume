@@ -57,7 +57,7 @@ jobs:
       - name: Install texlive-latex
         run: |
           sudo apt-get update
-          sudo apt-get install -y texlive-latex
+          sudo apt-get install -y texlive-latex-base texlive-xetex texlive-latex-extra texlive-fonts-recommended
           xetex -v
       - name: Build resume
         run: |
