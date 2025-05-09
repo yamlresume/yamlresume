@@ -69,7 +69,7 @@ jobs:
         run: |
           sudo apt install fonts-linuxlibertine
           sudo apt install fonts-noto-cjk fonts-noto-cjk-extra
-
+          sudo apt install latex-cjk-all
       - name: Build resume
         run: |
           node packages/cli/dist/cli.js -V
