@@ -65,6 +65,11 @@ jobs:
           sudo apt-get install -y texlive-latex-base texlive-xetex texlive-latex-extra texlive-fonts-recommended
           xetex -v
 
+      - name: Install fonts
+        run: |
+          sudo apt install fonts-linuxlibertine
+          sudo apt install fonts-noto-cjk fonts-noto-cjk-extra
+
       - name: Build resume
         run: |
           node packages/cli/dist/cli.js -V
@@ -73,4 +78,5 @@ jobs:
         if: always()
         run: |
           ls -lah packages/cli/resources
+          xelatex -halt-on-error packages/cli/resources/resume.tex
 
