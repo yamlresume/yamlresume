@@ -53,3 +53,13 @@ jobs:
 
       - name: Run tests
         run: pnpm coverage
+
+      - name: Install texlive-latex
+        run: |
+          sudo apt-get install -y texlive-latex
+          xetex -v
+      - name: Build resume
+        run: |
+          node packages/cli/dist/cli.js build packages/cli/resources/resume.yml
+          ls -lah packages/cli/resources
+
