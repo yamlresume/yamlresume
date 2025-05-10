@@ -80,6 +80,7 @@ jobs:
           ls -lah packages/cli/resources
           xelatex -halt-on-error packages/cli/resources/resume.tex
           ls -lah packages/cli/resources
+          ls -lah
 
       - name: Upload PDF file
         uses: actions/upload-artifact@v4
