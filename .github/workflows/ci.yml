@@ -79,4 +79,10 @@ jobs:
         run: |
           ls -lah packages/cli/resources
           xelatex -halt-on-error packages/cli/resources/resume.tex
+          ls -lah packages/cli/resources
 
+      - name: Upload PDF file
+        uses: actions/upload-artifact@v4
+        with:
+          name: PDF
+          path: packages/cli/resources/resume.pdf
