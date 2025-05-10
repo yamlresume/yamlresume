@@ -53,3 +53,38 @@ jobs:
 
       - name: Run tests
         run: pnpm coverage
+
+      # - name: Setup TeX Live
+      #   uses: teatimeguest/setup-texlive-action@v3
+      #   with:
+      #     packages: scheme-basic
+
+      - name: Install texlive-latex
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y texlive-latex-base texlive-xetex texlive-latex-extra texlive-fonts-recommended texlive-fonts-extra
+          xetex -v
+
+      - name: Install fonts
+        run: |
+          sudo apt install fonts-linuxlibertine
+          sudo apt install fonts-noto-cjk fonts-noto-cjk-extra
+          sudo apt install latex-cjk-all
+      - name: Build resume
+        run: |
+          node packages/cli/dist/cli.js -V
+          node packages/cli/dist/cli.js build packages/cli/resources/resume.yml
+          ls -lah
+      - name: Check files
+        if: always()
+        run: |
+          ls -lah packages/cli/resources
+          xelatex -halt-on-error packages/cli/resources/resume.tex
+          ls -lah packages/cli/resources
+          ls -lah
+
+      - name: Upload PDF file
+        uses: actions/upload-artifact@v4
+        with:
+          name: PDF
+          path: resume.pdf
