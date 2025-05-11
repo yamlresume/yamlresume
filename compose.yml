@@ -1,0 +1,5 @@
+
+services:
+  yamlresume:
+    build: .
+    # command: tail -f /dev/null
