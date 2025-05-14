@@ -24,6 +24,7 @@
 
 export * from './compiler'
 export * from './data'
+export * from './errors'
 export * from './preprocess'
 export * from './renderer'
 export * from './translations'

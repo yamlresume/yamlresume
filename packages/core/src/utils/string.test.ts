@@ -24,7 +24,12 @@
 
 import { describe, expect, it } from 'vitest'
 
-import { isEmptyString, joinNonEmptyString, showIf } from './string'
+import {
+  isEmptyString,
+  joinNonEmptyString,
+  showIf,
+  toCodeBlock,
+} from './string'
 
 describe(isEmptyString, () => {
   it('should return true for empty string', () => {
@@ -81,6 +86,24 @@ describe(joinNonEmptyString, () => {
 
     for (const [input, separator, expected] of tests) {
       expect(joinNonEmptyString(input, separator)).toBe(expected)
+    }
+  })
+})
+
+describe(toCodeBlock, () => {
+  it('should convert a string to a code block', () => {
+    const tests: [string | undefined | null, string, string][] = [
+      [undefined, '', ''],
+      [null, '', ''],
+      ['', '', ''],
+      ['', 'python', ''],
+      ['code', 'python', '```python\ncode\n```'],
+      ['function() {}', 'js', '```js\nfunction() {}\n```'],
+      ['function() {}', undefined, '```\nfunction() {}\n```'],
+    ]
+
+    for (const [code, lang, expected] of tests) {
+      expect(toCodeBlock(code, lang)).toBe(expected)
     }
   })
 })

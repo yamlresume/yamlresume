@@ -36,13 +36,16 @@ import {
   vi,
 } from 'vitest'
 import which from 'which'
-import yaml from 'yaml'
 import { getFixture } from './utils'
 
 import {
+  ErrorType,
+  YAMLResumeError,
+  joinNonEmptyString,
+} from '@yamlresume/core'
+import {
   buildCommand,
   buildResume,
-  generatePDF,
   generateTeX,
   inferLaTeXCommand,
   inferLaTeXEnvironment,
@@ -80,9 +83,23 @@ describe(inferOutput, () => {
     const tests = ['resume.txt', 'resume.md', 'resume.docx']
 
     tests.forEach((input) => {
-      expect(() => inferOutput(input)).toThrow(
-        `Unsupported file extension: ${input}`
-      )
+      const extname = path.extname(input)
+
+      try {
+        inferOutput(input)
+      } catch (error) {
+        expect(error).toBeInstanceOf(YAMLResumeError)
+        expect(error.code).toBe('INVALID_EXTNAME')
+        expect(error.message).toBe(
+          joinNonEmptyString(
+            [
+              `Invalid file extension: ${extname}.`,
+              'Supported formats are: yaml, yml, json.',
+            ],
+            ' '
+          )
+        )
+      }
     })
   })
 })
@@ -91,16 +108,13 @@ describe(isCommandAvailable, () => {
   afterEach(vi.resetAllMocks)
 
   it('should return true if the command is available', () => {
-    const whichSpy = vi
-      // biome-ignore lint/suspicious/noExplicitAny: ignore
-      .spyOn(which, 'sync' as any)
-      .mockImplementation((cmd) => {
-        if (cmd === 'xelatex') {
-          return 'xelatex'
-        }
+    vi.spyOn(which, 'sync').mockImplementation((cmd) => {
+      if (cmd === 'xelatex') {
+        return 'xelatex'
+      }
 
-        throw new Error('command not found')
-      })
+      throw new Error()
+    })
 
     expect(isCommandAvailable('xelatex')).toBe(true)
     expect(isCommandAvailable('tectonic')).toBe(false)
@@ -117,45 +131,45 @@ describe(inferLaTeXEnvironment, () => {
       .mockImplementation(() => 'xelatex')
 
     expect(inferLaTeXEnvironment()).toBe('xelatex')
-    expect(whichSpy).toHaveBeenCalledWith('xelatex')
+    expect(whichSpy).toBeCalledWith('xelatex')
   })
 
   it('should infer the LaTeX environment with tectonic', () => {
-    const whichSpy = vi
-      // biome-ignore lint/suspicious/noExplicitAny: ignore
-      .spyOn(which, 'sync' as any)
-      .mockImplementation((cmd) => {
-        if (cmd !== 'tectonic') {
-          throw new Error('command not found')
-        }
+    const whichSpy = vi.spyOn(which, 'sync').mockImplementation((cmd) => {
+      if (cmd !== 'tectonic') {
+        throw new Error()
+      }
 
-        return 'tectonic'
-      })
+      return 'tectonic'
+    })
 
     expect(inferLaTeXEnvironment()).toBe('tectonic')
-    expect(whichSpy).toHaveBeenCalledWith('tectonic')
+    expect(whichSpy).toBeCalledWith('tectonic')
   })
 
   it('should throw an error if neither xelatex nor tectonic is installed', () => {
-    const whichSpy = vi
-      // biome-ignore lint/suspicious/noExplicitAny: ignore
-      .spyOn(which, 'sync' as any)
-      .mockImplementation(() => {
-        throw new Error('command not found')
-      })
+    const whichSpy = vi.spyOn(which, 'sync').mockImplementation(() => {
+      throw new Error()
+    })
 
-    expect(() => inferLaTeXEnvironment()).toThrow(
-      'neither xelatex nor tectonic is installed'
-    )
+    try {
+      inferLaTeXEnvironment()
+    } catch (error) {
+      expect(error).toBeInstanceOf(YAMLResumeError)
+      expect(error.code).toBe('LATEX_NOT_FOUND')
+      expect(error.message).toBe(
+        'LaTeX compiler not found. Please install either xelatex or tectonic'
+      )
+    }
 
-    expect(whichSpy).toHaveBeenCalledTimes(2)
+    expect(whichSpy).toBeCalledTimes(2)
   })
 })
 
 describe(inferLaTeXCommand, () => {
   afterEach(vi.resetAllMocks)
 
-  it('should infer the LaTeX command', () => {
+  it('should infer the LaTeX command with xelatex', () => {
     const tests = [
       { source: 'resume.json', expected: 'xelatex -halt-on-error resume.tex' },
       {
@@ -172,6 +186,32 @@ describe(inferLaTeXCommand, () => {
       expect(inferLaTeXCommand(source)).toBe(expected)
     })
   })
+
+  it('should infer the LaTeX command with tectonic', () => {
+    vi.spyOn(which, 'sync').mockImplementation((cmd) => {
+      if (cmd !== 'tectonic') {
+        throw new Error()
+      }
+
+      return 'tectonic'
+    })
+
+    const tests = [
+      { source: 'resume.json', expected: 'tectonic -halt-on-error resume.tex' },
+      {
+        source: '../resume.yml',
+        expected: 'tectonic -halt-on-error ../resume.tex',
+      },
+      {
+        source: './resume.yaml',
+        expected: 'tectonic -halt-on-error ./resume.tex',
+      },
+    ]
+
+    tests.forEach(({ source, expected }) => {
+      expect(inferLaTeXCommand(source)).toBe(expected)
+    })
+  })
 })
 
 describe(generateTeX, () => {
@@ -181,9 +221,8 @@ describe(generateTeX, () => {
 
   it('should read the resume file and generate a tex file', () => {
     const writeFileSync = vi
-      // biome-ignore lint/suspicious/noExplicitAny: ignore
-      .spyOn(fs, 'writeFileSync' as any)
-      .mockImplementation(() => {})
+      .spyOn(fs, 'writeFileSync')
+      .mockImplementation(vi.fn())
 
     const source = getFixture('software-engineer.yml')
 
@@ -191,79 +230,102 @@ describe(generateTeX, () => {
     expect(writeFileSync).toBeCalledTimes(1)
   })
 
-  it('should handle the exception when resume file is not exist', () => {
+  it('should throw an error when resume file is not exist', () => {
     const writeFileSync = vi
-      // biome-ignore lint/suspicious/noExplicitAny: ignore
-      .spyOn(fs, 'writeFileSync' as any)
-      .mockImplementation(() => {})
+      .spyOn(fs, 'writeFileSync')
+      .mockImplementation(vi.fn())
 
     const source = getFixture('non-exist.yml')
 
-    expect(() => generateTeX(source)).toThrow('no such file or directory')
+    try {
+      generateTeX(source)
+    } catch (error) {
+      expect(error).toBeInstanceOf(YAMLResumeError)
+      expect(error.code).toBe('FILE_READ_ERROR')
+      expect(error.message).toContain('Failed to read resume file')
+    }
 
-    // writeFileSync is not called here
-    expect(writeFileSync).toBeCalledTimes(0)
+    expect(writeFileSync).not.toBeCalled()
   })
 
   it('should throw an error if the file extension is not supported', () => {
     const readFileSync = vi
-      // biome-ignore lint/suspicious/noExplicitAny: ignore
-      .spyOn(fs, 'readFileSync' as any)
-      .mockImplementation(() => {})
+      .spyOn(fs, 'readFileSync')
+      .mockImplementation(vi.fn())
 
     const source = 'resume.txt'
 
-    expect(() => generateTeX(source)).toThrow('Unsupported file extension')
-    expect(readFileSync).toBeCalledTimes(0)
+    try {
+      generateTeX(source)
+    } catch (error) {
+      expect(error).toBeInstanceOf(YAMLResumeError)
+      expect(error.code).toBe('INVALID_EXTNAME')
+      expect(error.message).toBe(
+        'Invalid file extension: .txt. Supported formats are: yaml, yml, json.'
+      )
+    }
+    expect(readFileSync).not.toBeCalled()
   })
 
   it('should throw an error if the resume cannot be parsed', () => {
-    const readFileSync = vi
-      // biome-ignore lint/suspicious/noExplicitAny: ignore
-      .spyOn(fs, 'readFileSync' as any)
-      .mockImplementation(() => {})
     const writeFileSync = vi
-      // biome-ignore lint/suspicious/noExplicitAny: ignore
-      .spyOn(fs, 'writeFileSync' as any)
-      .mockImplementation(() => {})
-    // biome-ignore lint/suspicious/noExplicitAny: ignore
-    const yamlParse = vi.spyOn(yaml, 'parse' as any).mockImplementation(() => {
-      throw new Error('Invalid YAML')
-    })
+      .spyOn(fs, 'writeFileSync')
+      .mockImplementation(vi.fn())
 
-    const source = getFixture('invalid-yaml.yml')
-    expect(() => generateTeX(source)).toThrow('Invalid YAML')
+    const source = getFixture('invalid-resume.yml')
 
-    expect(readFileSync).toBeCalledTimes(1)
-    expect(yamlParse).toBeCalledTimes(1)
-    expect(writeFileSync).toBeCalledTimes(0)
+    try {
+      generateTeX(source)
+    } catch (error) {
+      expect(error).toBeInstanceOf(YAMLResumeError)
+      expect(error.code).toBe('INVALID_YAML')
+      expect(error.message).toContain('Invalid YAML format: ')
+    }
+
+    expect(writeFileSync).not.toBeCalled()
+  })
+
+  it('should throw an error if the generated tex cannot be saved', () => {
+    const writeFileSync = vi
+      .spyOn(fs, 'writeFileSync')
+      .mockImplementation(() => {
+        throw new Error()
+      })
+
+    const source = getFixture('software-engineer.yml')
+
+    try {
+      generateTeX(source)
+    } catch (error) {
+      expect(error).toBeInstanceOf(YAMLResumeError)
+      expect(error.code).toBe('FILE_WRITE_ERROR')
+      expect(error.message).toContain('Failed to write file')
+    }
+
+    expect(writeFileSync).toBeCalledTimes(1)
   })
 })
 
-describe(generatePDF, () => {
+describe(buildResume, () => {
   const outputStr: string[] = []
   let execSpy: ReturnType<typeof vi.spyOn>
   let whichSpy: ReturnType<typeof vi.spyOn>
   let consolaStartSpy: ReturnType<typeof vi.spyOn>
   let consolaSuccessSpy: ReturnType<typeof vi.spyOn>
+  let consolaDebugSpy: ReturnType<typeof vi.spyOn>
 
   beforeEach(() => {
-    execSpy = vi
-      // biome-ignore lint/suspicious/noExplicitAny: ignore
-      .spyOn(child_process, 'execSync' as any)
-      .mockImplementation(() => {})
-    whichSpy = vi
-      // biome-ignore lint/suspicious/noExplicitAny: ignore
-      .spyOn(which, 'sync' as any)
-      .mockImplementation(() => 'xelatex')
-
-    // just suppress output
+    // @ts-ignore
+    execSpy = vi.spyOn(child_process, 'execSync').mockImplementation(vi.fn())
+    // @ts-ignore
+    whichSpy = vi.spyOn(which, 'sync').mockImplementation(() => 'xelatex')
     consolaStartSpy = vi
       .spyOn(consola, 'start')
       .mockImplementation((chunk) => outputStr.push(chunk.toString().trim()))
     consolaSuccessSpy = vi
       .spyOn(consola, 'success')
       .mockImplementation((chunk) => outputStr.push(chunk.toString().trim()))
+    consolaDebugSpy = vi.spyOn(consola, 'debug').mockImplementation(vi.fn())
   })
 
   afterEach(() => {
@@ -278,57 +340,55 @@ describe(generatePDF, () => {
 
     const command = inferLaTeXCommand(source)
 
-    generatePDF(source)
+    buildResume(source)
 
     expect(execSpy).toBeCalledTimes(1)
-    expect(execSpy).toHaveBeenCalledWith(command)
-    expect(whichSpy).toHaveBeenCalledWith('xelatex')
+    expect(execSpy).toBeCalledWith(command, {
+      encoding: 'utf8',
+    })
+
+    expect(whichSpy).toBeCalledWith('xelatex')
+
     expect(outputStr).toEqual([
       `generating resume PDF with command: \`${command}\`...`,
       'resume PDF generated successfully.',
     ])
-    expect(consolaStartSpy).toHaveBeenCalledTimes(1)
-    expect(consolaSuccessSpy).toHaveBeenCalledTimes(1)
-  })
-})
-
-describe(buildResume, () => {
-  let execSpy: ReturnType<typeof vi.spyOn>
-  let whichSpy: ReturnType<typeof vi.spyOn>
-  let consolaStartSpy: ReturnType<typeof vi.spyOn>
-  let consolaSuccessSpy: ReturnType<typeof vi.spyOn>
-
-  beforeEach(() => {
-    execSpy = vi
-      // biome-ignore lint/suspicious/noExplicitAny: ignore
-      .spyOn(child_process, 'execSync' as any)
-      .mockImplementation(() => {})
-    whichSpy = vi
-      // biome-ignore lint/suspicious/noExplicitAny: ignore
-      .spyOn(which, 'sync' as any)
-      .mockImplementation(() => 'xelatex')
-
-    // just suppress output
-    consolaStartSpy = vi.spyOn(consola, 'start').mockImplementation(() => true)
-    consolaSuccessSpy = vi
-      .spyOn(consola, 'success')
-      .mockImplementation(() => true)
+    expect(consolaStartSpy).toBeCalledTimes(1)
+    expect(consolaSuccessSpy).toBeCalledTimes(1)
+    expect(consolaDebugSpy).toBeCalledTimes(1)
   })
 
-  afterEach(() => {
-    vi.resetAllMocks()
-  })
+  it('should handle error when generating pdf', () => {
+    // @ts-ignore
+    execSpy = vi.spyOn(child_process, 'execSync').mockImplementation(() => {
+      throw new Error()
+    })
 
-  it('should generate a pdf file', () => {
     const source = getFixture('software-engineer.yml')
 
-    buildResume(source)
+    const command = inferLaTeXCommand(source)
+
+    try {
+      buildResume(source)
+    } catch (error) {
+      expect(error).toBeInstanceOf(YAMLResumeError)
+      expect(error.code).toBe('LATEX_COMPILE_ERROR')
+      expect(error.message).toContain('aTeX compilation failed: ')
+    }
 
     expect(execSpy).toBeCalledTimes(1)
-    expect(execSpy).toHaveBeenCalledWith(inferLaTeXCommand(source))
-    expect(whichSpy).toHaveBeenCalledWith('xelatex')
-    expect(consolaStartSpy).toHaveBeenCalledTimes(1)
-    expect(consolaSuccessSpy).toHaveBeenCalledTimes(1)
+    expect(execSpy).toBeCalledWith(command, {
+      encoding: 'utf8',
+    })
+
+    expect(whichSpy).toBeCalledWith('xelatex')
+
+    expect(outputStr).toEqual([
+      `generating resume PDF with command: \`${command}\`...`,
+    ])
+    expect(consolaStartSpy).toBeCalledTimes(1)
+    expect(consolaSuccessSpy).not.toBeCalled()
+    expect(consolaDebugSpy).toBeCalledTimes(2)
   })
 })
 
@@ -337,20 +397,20 @@ describe('buildCommand', () => {
   let whichSpy: ReturnType<typeof vi.spyOn>
   let consolaStartSpy: ReturnType<typeof vi.spyOn>
   let consolaSuccessSpy: ReturnType<typeof vi.spyOn>
+  let consolaErrorSpy: ReturnType<typeof vi.spyOn>
 
   beforeEach(() => {
     execSpy = vi
       // biome-ignore lint/suspicious/noExplicitAny: ignore
       .spyOn(child_process, 'execSync' as any)
-      .mockImplementation(() => true)
+      .mockImplementation(vi.fn())
     whichSpy = vi
       // biome-ignore lint/suspicious/noExplicitAny: ignore
       .spyOn(which, 'sync' as any)
       .mockReturnValue('/usr/bin/xelatex')
-    consolaStartSpy = vi.spyOn(consola, 'start').mockImplementation(() => true)
-    consolaSuccessSpy = vi
-      .spyOn(consola, 'success')
-      .mockImplementation(() => true)
+    consolaStartSpy = vi.spyOn(consola, 'start').mockImplementation(vi.fn())
+    consolaSuccessSpy = vi.spyOn(consola, 'success').mockImplementation(vi.fn())
+    consolaErrorSpy = vi.spyOn(consola, 'error').mockImplementation(vi.fn())
   })
 
   afterEach(() => {
@@ -369,22 +429,41 @@ describe('buildCommand', () => {
     expect(args[0].description).toBe('the source resume file')
   })
 
+  it('should handle help flag', () => {
+    vi.spyOn(process.stdout, 'write').mockImplementation(vi.fn())
+
+    expect(() => buildCommand.parse(['yamlresume', 'build', '--help'])).toThrow(
+      'process.exit'
+    )
+  })
+
   it('should build resume to PDF', () => {
     const source = getFixture('software-engineer.yml')
 
     buildCommand.parse(['yamlresume', 'build', source])
 
-    expect(whichSpy).toHaveBeenCalledWith('xelatex')
-    expect(execSpy).toHaveBeenCalledWith(inferLaTeXCommand(source))
-    expect(consolaStartSpy).toHaveBeenCalledTimes(1)
-    expect(consolaSuccessSpy).toHaveBeenCalledTimes(1)
+    expect(whichSpy).toBeCalledWith('xelatex')
+    expect(execSpy).toBeCalledWith(inferLaTeXCommand(source), {
+      encoding: 'utf8',
+    })
+    expect(consolaStartSpy).toBeCalledTimes(1)
+    expect(consolaSuccessSpy).toBeCalledTimes(1)
   })
 
-  it('should handle help flag', () => {
-    vi.spyOn(process.stdout, 'write').mockImplementation(() => true)
+  it('should handle error when building resume to PDF', () => {
+    // @ts-ignore
+    execSpy = vi.spyOn(child_process, 'execSync').mockImplementation(() => {
+      throw new Error()
+    })
 
-    expect(() => buildCommand.parse(['yamlresume', 'build', '--help'])).toThrow(
-      'process.exit'
-    )
+    // @ts-ignore
+    const processExitSpy = vi.spyOn(process, 'exit').mockImplementation(vi.fn())
+
+    const source = getFixture('software-engineer.yml')
+
+    buildCommand.parse(['yamlresume', 'build', source])
+
+    expect(processExitSpy).toBeCalledTimes(1)
+    expect(processExitSpy).toBeCalledWith(ErrorType.LATEX_COMPILE_ERROR.errno)
   })
 })

@@ -22,6 +22,8 @@
  * IN THE SOFTWARE.
  */
 
+import { isEmptyValue } from './object'
+
 /**
  * Check if a string is empty or only contains whitespace
  *
@@ -55,4 +57,19 @@ export function joinNonEmptyString(
   separator = '\n\n'
 ): string {
   return codes.filter((code) => !isEmptyString(code)).join(separator)
+}
+
+/**
+ * Convert a string to a code block in markdown format
+ *
+ * @param code - The string to convert
+ * @param lang - The language of the code block
+ * @returns The code block
+ */
+export function toCodeBlock(code?: string, lang?: string): string {
+  if (isEmptyValue(code)) {
+    return ''
+  }
+
+  return `\`\`\`${lang || ''}\n${code}\n\`\`\``
 }

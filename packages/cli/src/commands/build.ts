@@ -24,15 +24,20 @@
 
 import child_process from 'node:child_process'
 import fs from 'node:fs'
-import {
-  MarkdownParser,
-  type Resume,
-  getResumeRenderer,
-} from '@yamlresume/core'
+import path from 'node:path'
 import { Command } from 'commander'
 import { consola } from 'consola'
 import which from 'which'
 import yaml from 'yaml'
+
+import {
+  MarkdownParser,
+  type Resume,
+  YAMLResumeError,
+  getResumeRenderer,
+  joinNonEmptyString,
+  toCodeBlock,
+} from '@yamlresume/core'
 
 /**
  * Infer the output file name from the source file name
@@ -45,6 +50,8 @@ import yaml from 'yaml'
  * @throws {Error} If the source file has an unsupported extension.
  */
 export function inferOutput(source: string): string {
+  const extname = path.extname(source)
+
   if (
     source.endsWith('.yaml') ||
     source.endsWith('.yml') ||
@@ -53,7 +60,7 @@ export function inferOutput(source: string): string {
     return source.replace(/\.yaml|\.yml|\.json$/, '.tex')
   }
 
-  throw new Error(`Unsupported file extension: ${source}`)
+  throw new YAMLResumeError('INVALID_EXTNAME', { extname })
 }
 
 type LaTeXEnvironment = 'xelatex' | 'tectonic'
@@ -90,7 +97,7 @@ export function inferLaTeXEnvironment(): LaTeXEnvironment {
     return 'tectonic'
   }
 
-  throw new Error('neither xelatex nor tectonic is installed')
+  throw new YAMLResumeError('LATEX_NOT_FOUND', {})
 }
 
 /**
@@ -121,44 +128,39 @@ export function generateTeX(source: string) {
   // make sure the file has an valid extension, i.e, '.json', '.yml' or '.yaml'
   const texFile = inferOutput(source)
 
-  const resume = fs.readFileSync(source, 'utf8')
-  const summaryParser = new MarkdownParser()
+  let resumeContent: string
 
-  const renderer = getResumeRenderer(
-    yaml.parse(resume) as Resume,
-    summaryParser
-  )
+  try {
+    resumeContent = fs.readFileSync(source, 'utf8')
+  } catch (error) {
+    throw new YAMLResumeError('FILE_READ_ERROR', { path: source })
+  }
+
+  let resume: Resume
+
+  try {
+    resume = yaml.parse(resumeContent) as Resume
+  } catch (error) {
+    throw new YAMLResumeError('INVALID_YAML', { error: error.message })
+  }
+
+  const summaryParser = new MarkdownParser()
+  const renderer = getResumeRenderer(resume, summaryParser)
   const tex = renderer.render()
 
-  fs.writeFileSync(texFile, tex)
+  try {
+    fs.writeFileSync(texFile, tex)
+  } catch (error) {
+    throw new YAMLResumeError('FILE_WRITE_ERROR', { path: texFile })
+  }
 }
 
 /**
- * Compiles the resume source file to a PDF file.
+ * Build a YAML resume to LaTeX & PDF
  *
  * It first generates the .tex file (using `generateTeX`) and then runs the
  * inferred LaTeX command (e.g., xelatex or tectonic) to produce the PDF.
  *
- * @param source - The source resume file path (YAML, YML, or JSON).
- * @remarks This function performs file I/O (via `generateTeX`) and executes an
- * external process (LaTeX compiler).
- * @throws {Error} Can throw if .tex generation, LaTeX command inference, or the
- * LaTeX compilation process fails.
- */
-export function generatePDF(source: string) {
-  generateTeX(source)
-
-  const command = inferLaTeXCommand(source)
-  consola.start(`generating resume PDF with command: \`${command}\`...`)
-
-  child_process.execSync(command)
-  consola.success('resume PDF generated successfully.')
-}
-
-/**
- * Build a resume to LaTeX & PDF
- *
- * This function will read a resume from a file in yaml or json format, and then
  * Steps:
  * 1. read the resume from the source file
  * 2. infer the LaTeX command to use
@@ -168,28 +170,44 @@ export function generatePDF(source: string) {
  * schema
  * 4. build the resume to LaTeX and PDF at the same time
  *
- * This function will throw an exception if any error
- *
- * @param source - The source resume file
- * @throws {Error} If any part of the PDF generation process fails (forwarded
- * from `generatePDF`).
+ * @param source - The source resume file path (YAML, YML, or JSON).
+ * @remarks This function performs file I/O (via `generateTeX`) and executes an
+ * external process (LaTeX compiler).
+ * @throws {Error} Can throw if .tex generation, LaTeX command inference, or the
+ * LaTeX compilation process fails.
  * @todo Check the resume format against YAMLResume schema before compilation.
  */
 export function buildResume(source: string) {
-  generatePDF(source)
+  generateTeX(source)
+
+  const command = inferLaTeXCommand(source)
+  consola.start(`generating resume PDF with command: \`${command}\`...`)
+
+  try {
+    const stdout = child_process.execSync(command, { encoding: 'utf8' })
+    consola.success('resume PDF generated successfully.')
+    consola.debug(joinNonEmptyString(['stdout: ', toCodeBlock(stdout)]))
+  } catch (error) {
+    consola.debug(joinNonEmptyString(['stdout: ', toCodeBlock(error.stdout)]))
+    consola.debug(joinNonEmptyString(['stderr: ', toCodeBlock(error.stderr)]))
+    throw new YAMLResumeError('LATEX_COMPILE_ERROR', { error: error.message })
+  }
 }
 
 /**
  * Commander command instance to build a YAML resume to LaTeX and PDF
  *
  * @param source - The source resume file
- * @throws {Error} If any part of the PDF generation process fails (forwarded
- * from `generatePDF`).
  */
 export const buildCommand = new Command()
   .name('build')
   .description('build a resume to LaTeX and PDF')
   .argument('<source>', 'the source resume file')
   .action((source: string) => {
-    buildResume(source)
+    try {
+      buildResume(source)
+    } catch (error) {
+      consola.error(error.message)
+      process.exit(error.errno)
+    }
   })

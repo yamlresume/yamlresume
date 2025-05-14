@@ -28,11 +28,63 @@ import { fileURLToPath } from 'node:url'
 import { Command } from 'commander'
 import consola from 'consola'
 
+import {
+  YAMLResumeError,
+  joinNonEmptyString,
+  toCodeBlock,
+} from '@yamlresume/core'
+
+/**
+ * Creates a new resume file with the given filename
+ *
+ * @param filename - The name of the resume file to create
+ * @throws {YAMLResumeError} When there are file-related errors:
+ * - FILE_CONFLICT: When the file already exists
+ * - FILE_READ_ERROR: When there's an error reading the template
+ * - FILE_WRITE_ERROR: When there's an error writing the file
+ */
+export function newResume(filename: string) {
+  if (fs.existsSync(filename)) {
+    throw new YAMLResumeError('FILE_CONFLICT', { path: filename })
+  }
+
+  const templatePath = path.join(
+    path.dirname(fileURLToPath(import.meta.url)),
+    /* v8 ignore start */
+    // I din't find a way to mock `import.meta.url` in tests so we have to
+    // ignore the following lines for coverage calculation
+    import.meta.url.includes('dist')
+      ? '../resources/resume.yml'
+      : '../../resources/resume.yml'
+    /* v8 ignore stop */
+  )
+
+  let templateContent: string
+
+  try {
+    templateContent = fs.readFileSync(templatePath, 'utf8')
+  } catch (error) {
+    consola.debug(
+      joinNonEmptyString(['Error reading template: ', toCodeBlock(error.stack)])
+    )
+    throw new YAMLResumeError('FILE_READ_ERROR', { path: templatePath })
+  }
+
+  try {
+    fs.writeFileSync(filename, templateContent)
+    consola.success(`Successfully created ${filename}.`)
+  } catch (error) {
+    consola.debug(
+      joinNonEmptyString(['Error creating resume: ', toCodeBlock(error.stack)])
+    )
+    throw new YAMLResumeError('FILE_WRITE_ERROR', { path: filename })
+  }
+}
+
 /**
  * Commander command instance to create a new YAML resume
  *
  * @param filename - The output filename for the new resume
- * @throws {Error} If file creation fails
  */
 export const newCommand = new Command()
   .name('new')
@@ -40,30 +92,9 @@ export const newCommand = new Command()
   .argument('[filename]', 'output filename', 'resume.yml')
   .action((filename) => {
     try {
-      if (fs.existsSync(filename)) {
-        throw new Error(
-          [
-            `File "${filename}" already exists.`,
-            'Please choose a different name or remove the existing file.',
-          ].join(' ')
-        )
-      }
-
-      const templatePath = path.join(
-        path.dirname(fileURLToPath(import.meta.url)),
-        /* v8 ignore start */
-        // I din't find a way to mock `import.meta.url` in tests so we have to
-        // ignore the following lines for coverage calculation
-        import.meta.url.includes('dist')
-          ? '../resources/resume.yml'
-          : '../../resources/resume.yml'
-        /* v8 ignore stop */
-      )
-
-      fs.writeFileSync(filename, fs.readFileSync(templatePath, 'utf8'))
-      consola.success(`Successfully created ${filename}.`)
+      newResume(filename)
     } catch (error) {
-      consola.error('Error creating resume template:', error)
-      process.exit(1)
+      consola.error(error.message)
+      process.exit(error.errno)
     }
   })
