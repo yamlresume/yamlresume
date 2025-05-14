@@ -53,6 +53,9 @@ importers:
       commander:
         specifier: ^11.0.0
         version: 11.1.0
+      consola:
+        specifier: ^3.4.2
+        version: 3.4.2
       extensionless:
         specifier: ^1.9.9
         version: 1.9.9

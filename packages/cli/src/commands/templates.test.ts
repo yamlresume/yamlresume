@@ -23,8 +23,8 @@
  */
 
 import { TemplateOption, getTemplateOptionDetail } from '@yamlresume/core'
-import { Command } from 'commander'
-import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
+import { consola } from 'consola'
+import { afterEach, describe, expect, it, vi } from 'vitest'
 
 import { listTemplates, templatesCommand } from './templates'
 
@@ -33,7 +33,7 @@ describe(listTemplates, () => {
     const result = listTemplates()
 
     // Check for headers
-    expect(result).toContain('`layout.template`')
+    expect(result).toContain('layout.template')
     expect(result).toContain('Template Name')
     expect(result).toContain('Description')
 
@@ -70,11 +70,11 @@ describe('templatesCommand', () => {
   })
 
   it('should call listTemplates when list subcommand is executed', () => {
-    const consoleSpy = vi.spyOn(console, 'log').mockImplementation(() => {})
+    const consolaSpy = vi.spyOn(consola, 'log').mockImplementation(() => {})
 
     templatesCommand.parse(['yamlresume', 'templates', 'list'])
 
-    expect(consoleSpy).toHaveBeenCalledWith(listTemplates())
+    expect(consolaSpy).toHaveBeenCalledWith(listTemplates())
   })
 
   it('should show help for templates list command', () => {

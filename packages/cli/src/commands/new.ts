@@ -26,6 +26,7 @@ import fs from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { Command } from 'commander'
+import consola from 'consola'
 
 /**
  * Commander command instance to create a new YAML resume
@@ -60,9 +61,9 @@ export const newCommand = new Command()
       )
 
       fs.writeFileSync(filename, fs.readFileSync(templatePath, 'utf8'))
-      console.log(`-> Successfully created ${filename}.`)
+      consola.success(`Successfully created ${filename}.`)
     } catch (error) {
-      console.error('Error creating resume template:', error)
+      consola.error('Error creating resume template:', error)
       process.exit(1)
     }
   })

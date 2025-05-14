@@ -26,8 +26,8 @@ import {
   LocaleLanguageOption,
   getLocaleLanguageOptionDetail,
 } from '@yamlresume/core'
-import { Command } from 'commander'
-import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
+import { consola } from 'consola'
+import { afterEach, describe, expect, it, vi } from 'vitest'
 
 import { languagesCommand, listLanguages } from './languages'
 
@@ -35,7 +35,7 @@ describe(listLanguages, () => {
   it('should generate a markdown table with all supported languages', () => {
     const result = listLanguages()
 
-    expect(result).toContain('`layout.locale.language`')
+    expect(result).toContain('layout.locale.language')
     expect(result).toContain('Language Name')
 
     // Check if all languages are included
@@ -70,12 +70,11 @@ describe('languagesCommand', () => {
   })
 
   it('should call listLanguages when list subcommand is executed', () => {
-    const consoleSpy = vi.spyOn(console, 'log').mockImplementation(() => {})
+    const consolaSpy = vi.spyOn(consola, 'log').mockImplementation(() => {})
 
     languagesCommand.parse(['yamlresume', 'languages', 'list'])
 
-    expect(consoleSpy).toHaveBeenCalledWith(listLanguages())
-    consoleSpy.mockRestore()
+    expect(consolaSpy).toHaveBeenCalledWith(listLanguages())
   })
 
   describe('languages command', () => {

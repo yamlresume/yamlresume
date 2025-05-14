@@ -23,13 +23,14 @@
  */
 
 import fs from 'node:fs'
+import { consola } from 'consola'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import { newCommand } from './new'
 import { getFixture } from './utils'
 
 describe('newCommand', () => {
-  let consoleLogSpy: ReturnType<typeof vi.spyOn>
-  let consoleErrorSpy: ReturnType<typeof vi.spyOn>
+  let consolaSuccessSpy: ReturnType<typeof vi.spyOn>
+  let consolaErrorSpy: ReturnType<typeof vi.spyOn>
   let processExitSpy: ReturnType<typeof vi.spyOn>
   let readFileSync: ReturnType<typeof vi.spyOn>
   let writeFileSync: ReturnType<typeof vi.spyOn>
@@ -40,9 +41,11 @@ describe('newCommand', () => {
   )
 
   beforeEach(() => {
-    // Mock console methods
-    consoleLogSpy = vi.spyOn(console, 'log').mockImplementation(() => {})
-    consoleErrorSpy = vi.spyOn(console, 'error').mockImplementation(() => {})
+    // Mock consola methods
+    consolaSuccessSpy = vi
+      .spyOn(consola, 'success')
+      .mockImplementation(() => {})
+    consolaErrorSpy = vi.spyOn(consola, 'error').mockImplementation(() => {})
 
     // Mock process.exit and suppress the persistent type error
     // @ts-expect-error - Type mismatch with process.exit mock signature
@@ -84,13 +87,13 @@ describe('newCommand', () => {
     expect(writeFileSync).toHaveBeenCalledWith(resumeFilename, resumeContent)
 
     // Verify success message was logged
-    expect(consoleLogSpy).toHaveBeenCalledOnce()
-    expect(consoleLogSpy).toHaveBeenCalledWith(
-      `-> Successfully created ${resumeFilename}.`
+    expect(consolaSuccessSpy).toHaveBeenCalledOnce()
+    expect(consolaSuccessSpy).toHaveBeenCalledWith(
+      `Successfully created ${resumeFilename}.`
     )
 
     // Verify error was not logged and process did not exit
-    expect(consoleErrorSpy).not.toHaveBeenCalled()
+    expect(consolaErrorSpy).not.toHaveBeenCalled()
     expect(processExitSpy).not.toHaveBeenCalled()
   })
 
@@ -110,13 +113,13 @@ describe('newCommand', () => {
     expect(writeFileSync).toHaveBeenCalledWith(resumeFilename, resumeContent)
 
     // Verify success message was logged
-    expect(consoleLogSpy).toHaveBeenCalledOnce()
-    expect(consoleLogSpy).toHaveBeenCalledWith(
-      `-> Successfully created ${resumeFilename}.`
+    expect(consolaSuccessSpy).toHaveBeenCalledOnce()
+    expect(consolaSuccessSpy).toHaveBeenCalledWith(
+      `Successfully created ${resumeFilename}.`
     )
 
     // Verify error was not logged and process did not exit
-    expect(consoleErrorSpy).not.toHaveBeenCalled()
+    expect(consolaErrorSpy).not.toHaveBeenCalled()
     expect(processExitSpy).not.toHaveBeenCalled()
   })
 
@@ -136,14 +139,14 @@ describe('newCommand', () => {
     expect(writeFileSync).not.toHaveBeenCalled()
 
     // Verify error message was logged
-    expect(consoleErrorSpy).toHaveBeenCalledOnce()
-    expect(consoleErrorSpy).toHaveBeenCalledWith(
+    expect(consolaErrorSpy).toHaveBeenCalledOnce()
+    expect(consolaErrorSpy).toHaveBeenCalledWith(
       'Error creating resume template:',
       readError
     )
 
     // Verify success message was not logged
-    expect(consoleLogSpy).not.toHaveBeenCalled()
+    expect(consolaSuccessSpy).not.toHaveBeenCalled()
 
     // Verify process exited with code 1
     expect(processExitSpy).toHaveBeenCalledOnce()
@@ -165,14 +168,14 @@ describe('newCommand', () => {
     expect(writeFileSync).toHaveBeenCalledOnce()
 
     // Verify error message was logged
-    expect(consoleErrorSpy).toHaveBeenCalledOnce()
-    expect(consoleErrorSpy).toHaveBeenCalledWith(
+    expect(consolaErrorSpy).toHaveBeenCalledOnce()
+    expect(consolaErrorSpy).toHaveBeenCalledWith(
       'Error creating resume template:',
       writeError
     )
 
     // Verify success message was not logged
-    expect(consoleLogSpy).not.toHaveBeenCalled()
+    expect(consolaSuccessSpy).not.toHaveBeenCalled()
 
     // Verify process exited with code 1
     expect(processExitSpy).toHaveBeenCalledOnce()
@@ -200,14 +203,14 @@ describe('newCommand', () => {
     expect(writeFileSync).not.toHaveBeenCalled()
 
     // Verify error message was logged
-    expect(consoleErrorSpy).toHaveBeenCalledOnce()
-    expect(consoleErrorSpy).toHaveBeenCalledWith(
+    expect(consolaErrorSpy).toHaveBeenCalledOnce()
+    expect(consolaErrorSpy).toHaveBeenCalledWith(
       'Error creating resume template:',
       expectedError
     )
 
     // Verify success message was not logged
-    expect(consoleLogSpy).not.toHaveBeenCalled()
+    expect(consolaSuccessSpy).not.toHaveBeenCalled()
 
     // Verify process exited with code 1
     expect(processExitSpy).toHaveBeenCalledOnce()

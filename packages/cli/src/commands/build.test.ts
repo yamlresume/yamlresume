@@ -25,7 +25,7 @@
 import child_process from 'node:child_process'
 import fs from 'node:fs'
 import path from 'node:path'
-import { Command } from 'commander'
+import { consola } from 'consola'
 import {
   afterAll,
   afterEach,
@@ -156,13 +156,6 @@ describe(inferLaTeXCommand, () => {
   afterEach(vi.resetAllMocks)
 
   it('should infer the LaTeX command', () => {
-    const whichSpy = vi
-      // biome-ignore lint/suspicious/noExplicitAny: ignore
-      .spyOn(which, 'sync' as any)
-      .mockImplementation((cmd) => {
-        return 'tectonic'
-      })
-
     const tests = [
       { source: 'resume.json', expected: 'xelatex -halt-on-error resume.tex' },
       {
@@ -251,7 +244,8 @@ describe(generatePDF, () => {
   const outputStr: string[] = []
   let execSpy: ReturnType<typeof vi.spyOn>
   let whichSpy: ReturnType<typeof vi.spyOn>
-  let consoleSpy: ReturnType<typeof vi.spyOn>
+  let consolaStartSpy: ReturnType<typeof vi.spyOn>
+  let consolaSuccessSpy: ReturnType<typeof vi.spyOn>
 
   beforeEach(() => {
     execSpy = vi
@@ -262,17 +256,19 @@ describe(generatePDF, () => {
       // biome-ignore lint/suspicious/noExplicitAny: ignore
       .spyOn(which, 'sync' as any)
       .mockImplementation(() => 'xelatex')
-    consoleSpy = vi
-      .spyOn(console, 'log')
-      // instead of suppressing output, we'll collect the output to a string
-      .mockImplementation((chunk) => {
-        outputStr.push(chunk.toString().trim())
-        return true
-      })
+
+    // just suppress output
+    consolaStartSpy = vi
+      .spyOn(consola, 'start')
+      .mockImplementation((chunk) => outputStr.push(chunk.toString().trim()))
+    consolaSuccessSpy = vi
+      .spyOn(consola, 'success')
+      .mockImplementation((chunk) => outputStr.push(chunk.toString().trim()))
   })
 
   afterEach(() => {
     vi.resetAllMocks()
+    outputStr.length = 0
   })
 
   afterAll(cleanupFiles)
@@ -288,17 +284,19 @@ describe(generatePDF, () => {
     expect(execSpy).toHaveBeenCalledWith(command)
     expect(whichSpy).toHaveBeenCalledWith('xelatex')
     expect(outputStr).toEqual([
-      `-> generating resume PDF with command: \`${command}\`...`,
-      '-> resume PDF generated successfully.',
+      `generating resume PDF with command: \`${command}\`...`,
+      'resume PDF generated successfully.',
     ])
-    expect(consoleSpy).toHaveBeenCalledTimes(2)
+    expect(consolaStartSpy).toHaveBeenCalledTimes(1)
+    expect(consolaSuccessSpy).toHaveBeenCalledTimes(1)
   })
 })
 
 describe(buildResume, () => {
   let execSpy: ReturnType<typeof vi.spyOn>
   let whichSpy: ReturnType<typeof vi.spyOn>
-  let consoleSpy: ReturnType<typeof vi.spyOn>
+  let consolaStartSpy: ReturnType<typeof vi.spyOn>
+  let consolaSuccessSpy: ReturnType<typeof vi.spyOn>
 
   beforeEach(() => {
     execSpy = vi
@@ -309,8 +307,12 @@ describe(buildResume, () => {
       // biome-ignore lint/suspicious/noExplicitAny: ignore
       .spyOn(which, 'sync' as any)
       .mockImplementation(() => 'xelatex')
+
     // just suppress output
-    consoleSpy = vi.spyOn(console, 'log').mockImplementation(() => true)
+    consolaStartSpy = vi.spyOn(consola, 'start').mockImplementation(() => true)
+    consolaSuccessSpy = vi
+      .spyOn(consola, 'success')
+      .mockImplementation(() => true)
   })
 
   afterEach(() => {
@@ -325,14 +327,16 @@ describe(buildResume, () => {
     expect(execSpy).toBeCalledTimes(1)
     expect(execSpy).toHaveBeenCalledWith(inferLaTeXCommand(source))
     expect(whichSpy).toHaveBeenCalledWith('xelatex')
-    expect(consoleSpy).toHaveBeenCalledTimes(2)
+    expect(consolaStartSpy).toHaveBeenCalledTimes(1)
+    expect(consolaSuccessSpy).toHaveBeenCalledTimes(1)
   })
 })
 
 describe('buildCommand', () => {
   let execSpy: ReturnType<typeof vi.spyOn>
   let whichSpy: ReturnType<typeof vi.spyOn>
-  let consoleSpy: ReturnType<typeof vi.spyOn>
+  let consolaStartSpy: ReturnType<typeof vi.spyOn>
+  let consolaSuccessSpy: ReturnType<typeof vi.spyOn>
 
   beforeEach(() => {
     execSpy = vi
@@ -343,8 +347,10 @@ describe('buildCommand', () => {
       // biome-ignore lint/suspicious/noExplicitAny: ignore
       .spyOn(which, 'sync' as any)
       .mockReturnValue('/usr/bin/xelatex')
-    // just suppress output
-    consoleSpy = vi.spyOn(console, 'log').mockImplementation(() => true)
+    consolaStartSpy = vi.spyOn(consola, 'start').mockImplementation(() => true)
+    consolaSuccessSpy = vi
+      .spyOn(consola, 'success')
+      .mockImplementation(() => true)
   })
 
   afterEach(() => {
@@ -370,7 +376,8 @@ describe('buildCommand', () => {
 
     expect(whichSpy).toHaveBeenCalledWith('xelatex')
     expect(execSpy).toHaveBeenCalledWith(inferLaTeXCommand(source))
-    expect(consoleSpy).toHaveBeenCalledTimes(2)
+    expect(consolaStartSpy).toHaveBeenCalledTimes(1)
+    expect(consolaSuccessSpy).toHaveBeenCalledTimes(1)
   })
 
   it('should handle help flag', () => {

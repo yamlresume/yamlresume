@@ -30,6 +30,7 @@ import {
   getResumeRenderer,
 } from '@yamlresume/core'
 import { Command } from 'commander'
+import { consola } from 'consola'
 import which from 'which'
 import yaml from 'yaml'
 
@@ -148,10 +149,10 @@ export function generatePDF(source: string) {
   generateTeX(source)
 
   const command = inferLaTeXCommand(source)
-  console.log(`-> generating resume PDF with command: \`${command}\`...`)
+  consola.start(`generating resume PDF with command: \`${command}\`...`)
 
   child_process.execSync(command)
-  console.log('-> resume PDF generated successfully.')
+  consola.success('resume PDF generated successfully.')
 }
 
 /**

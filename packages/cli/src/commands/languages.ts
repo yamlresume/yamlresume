@@ -27,6 +27,7 @@ import {
   getLocaleLanguageOptionDetail,
 } from '@yamlresume/core'
 import { Command } from 'commander'
+import consola from 'consola'
 import { markdownTable } from 'markdown-table'
 
 /**
@@ -39,7 +40,7 @@ import { markdownTable } from 'markdown-table'
  */
 export function listLanguages() {
   return markdownTable([
-    ['`layout.locale.language`', 'Language Name'],
+    ['layout.locale.language', 'Language Name'],
     ...Object.values(LocaleLanguageOption).map((value) => [
       value,
       getLocaleLanguageOptionDetail(value).name,
@@ -61,5 +62,5 @@ languagesCommand
   .command('list')
   .description('list all supported languages')
   .action(() => {
-    console.log(listLanguages())
+    consola.log(listLanguages())
   })

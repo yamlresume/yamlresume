@@ -42,6 +42,7 @@
   "dependencies": {
     "@yamlresume/core": "workspace:*",
     "commander": "^11.0.0",
+    "consola": "^3.4.2",
     "extensionless": "^1.9.9",
     "lodash-es": "^4.17.21",
     "markdown-table": "^3.0.4",

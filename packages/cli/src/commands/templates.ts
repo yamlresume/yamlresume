@@ -24,6 +24,7 @@
 
 import { TemplateOption, getTemplateOptionDetail } from '@yamlresume/core'
 import { Command } from 'commander'
+import consola from 'consola'
 import { markdownTable } from 'markdown-table'
 
 /**
@@ -35,7 +36,7 @@ import { markdownTable } from 'markdown-table'
  */
 export function listTemplates() {
   return markdownTable([
-    ['`layout.template`', 'Template Name', 'Description'],
+    ['layout.template', 'Template Name', 'Description'],
     ...Object.values(TemplateOption).map((value) => {
       const details = getTemplateOptionDetail(value)
       return [value, details.name, details.description]
@@ -56,5 +57,5 @@ templatesCommand
   .command('list')
   .description('list all supported templates')
   .action(() => {
-    console.log(listTemplates())
+    consola.log(listTemplates())
   })
