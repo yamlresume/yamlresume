@@ -22,37 +22,14 @@
  * IN THE SOFTWARE.
  */
 
-import { Command } from 'commander'
+import consola from 'consola'
 
-import packageJson from '../package.json' with { type: 'json' }
-import {
-  buildCommand,
-  languagesCommand,
-  newCommand,
-  templatesCommand,
-} from './commands'
-import { setVerboseLog } from './utils'
-
-export const program = new Command()
-
-const banner = `
- __   __ _    __  __ _     ____
- \\ \\ / // \\  |  \\/  | |   |  _ \\ ___  ___ _   _ ___  ___   ___
-  \\ V // _ \\ | |\\/| | |   | |_) / _ \\/ __| | | / _ \\/ _ \\ / _ \\
-   | |/ ___ \\| |  | | |___|  _ <  __/\\__ \\ |_| | | | | | |  __/
-   |_/_/   \\_\\_|  |_|_____|_| \\_\\___||___/\\____|_| |_| |_|\\___|
-`
-
-program
-  .name('yamlresume')
-  .description(['YAMLResume — Resume as Code in YAML', banner].join('\n'))
-  .version(packageJson.version)
-  .option('-v, --verbose', 'verbose output')
-  .hook('preAction', (thisCommand) => {
-    setVerboseLog(thisCommand.opts().verbose)
-  })
-
-program.addCommand(newCommand)
-program.addCommand(buildCommand)
-program.addCommand(languagesCommand)
-program.addCommand(templatesCommand)
+/**
+ * Set the verbose mode for consola
+ *
+ * @param verbose - Whether to enable verbose mode
+ * @see https://github.com/unjs/consola?tab=readme-ov-file#log-level
+ */
+export function setVerboseLog(verbose: boolean) {
+  consola.level = verbose ? 4 : 3
+}

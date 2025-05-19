@@ -22,8 +22,11 @@
  * IN THE SOFTWARE.
  */
 
+import child_process from 'node:child_process'
+import fs from 'node:fs'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 
+import consola from 'consola'
 import packageJson from '../package.json' with { type: 'json' }
 import { program } from './program'
 
@@ -78,6 +81,22 @@ describe('program', () => {
       expect(outputStr).toEqual([version, version])
 
       writeSpy.mockClear()
+    })
+  })
+
+  describe('verbose flag', () => {
+    it('should support -v/--verbose flag', () => {
+      // mock fs functions to run a fake `new` command in order to test the
+      // verbose flag
+      vi.spyOn(fs, 'existsSync').mockReturnValue(false)
+      vi.spyOn(fs, 'readFileSync').mockImplementation(vi.fn())
+      vi.spyOn(fs, 'writeFileSync').mockImplementation(vi.fn())
+
+      // run the command
+      program.parse(['node', 'cli.js', '-v', 'new'])
+
+      // check the level after command execution
+      expect(consola.level).toBe(4)
     })
   })
 })

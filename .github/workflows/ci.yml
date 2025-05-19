@@ -68,7 +68,7 @@ jobs:
         run: |
           node packages/cli/dist/cli.js -V
           node packages/cli/dist/cli.js new
-          node packages/cli/dist/cli.js build resume.yml
+          node packages/cli/dist/cli.js build --verbose resume.yml
 
       - name: Check files
         if: always()
