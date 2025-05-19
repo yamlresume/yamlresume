@@ -350,8 +350,8 @@ describe(buildResume, () => {
     expect(whichSpy).toBeCalledWith('xelatex')
 
     expect(outputStr).toEqual([
-      `generating resume PDF with command: \`${command}\`...`,
-      'resume PDF generated successfully.',
+      `Generating resume PDF with command: \`${command}\`...`,
+      'Generated resume PDF successfully.',
     ])
     expect(consolaStartSpy).toBeCalledTimes(1)
     expect(consolaSuccessSpy).toBeCalledTimes(1)
@@ -384,7 +384,7 @@ describe(buildResume, () => {
     expect(whichSpy).toBeCalledWith('xelatex')
 
     expect(outputStr).toEqual([
-      `generating resume PDF with command: \`${command}\`...`,
+      `Generating resume PDF with command: \`${command}\`...`,
     ])
     expect(consolaStartSpy).toBeCalledTimes(1)
     expect(consolaSuccessSpy).not.toBeCalled()

@@ -181,11 +181,11 @@ export function buildResume(source: string) {
   generateTeX(source)
 
   const command = inferLaTeXCommand(source)
-  consola.start(`generating resume PDF with command: \`${command}\`...`)
+  consola.start(`Generating resume PDF with command: \`${command}\`...`)
 
   try {
     const stdout = child_process.execSync(command, { encoding: 'utf8' })
-    consola.success('resume PDF generated successfully.')
+    consola.success('Generated resume PDF successfully.')
     consola.debug(joinNonEmptyString(['stdout: ', toCodeBlock(stdout)]))
   } catch (error) {
     consola.debug(joinNonEmptyString(['stdout: ', toCodeBlock(error.stdout)]))
