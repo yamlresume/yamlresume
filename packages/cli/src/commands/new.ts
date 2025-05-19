@@ -72,7 +72,7 @@ export function newResume(filename: string) {
 
   try {
     fs.writeFileSync(filename, templateContent)
-    consola.success(`Successfully created ${filename}.`)
+    consola.success(`Created ${filename} successfully.`)
   } catch (error) {
     consola.debug(
       joinNonEmptyString(['Error creating resume: ', toCodeBlock(error.stack)])

@@ -205,7 +205,7 @@ describe('newCommand', () => {
     newCommand.parse(['yamlresume', 'new'])
 
     expect(consolaSuccessSpy).toBeCalledTimes(1)
-    expect(consolaSuccessSpy).toBeCalledWith('Successfully created resume.yml.')
+    expect(consolaSuccessSpy).toBeCalledWith('Created resume.yml successfully.')
   })
 
   it('should create a new resume with custom filename', () => {
@@ -213,7 +213,7 @@ describe('newCommand', () => {
 
     expect(consolaSuccessSpy).toBeCalledTimes(1)
     expect(consolaSuccessSpy).toBeCalledWith(
-      'Successfully created my-resume.yml.'
+      'Created my-resume.yml successfully.'
     )
   })
 
