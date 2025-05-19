@@ -52,4 +52,4 @@ jobs:
         run: pnpm check:ci
 
       - name: Run tests
-        run: pnpm coverage
+        run: pnpm test:cov

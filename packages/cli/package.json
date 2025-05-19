@@ -22,21 +22,16 @@
   "bin": {
     "yamlresume": "./dist/cli.js"
   },
-  "files": [
-    "dist",
-    "README.md",
-    "LICENSE",
-    "resources/resume.yml"
-  ],
+  "files": ["dist", "README.md", "LICENSE", "resources/resume.yml"],
   "scripts": {
     "build": "tsup",
     "build:watch": "tsup --watch",
     "build:clean": "rm -rf dist",
     "build:prod": "tsup --dts --minify --sourcemap",
     "prepublishOnly": "pnpm test",
-    "coverage": "vitest --coverage --run",
     "dev": "tsx src/cli.ts",
     "test": "vitest --run",
+    "test:cov": "vitest --coverage --run",
     "test:watch": "vitest"
   },
   "dependencies": {
