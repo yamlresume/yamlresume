@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.3.0](https://github.com/yamlresume/yamlresume/compare/v0.2.4...v0.3.0) (2025-05-19)
+
+
+### Features
+
+* add option to toggle verbose logging ([6e37a12](https://github.com/yamlresume/yamlresume/commit/6e37a12d2e930811b7991a9e734df529178de706))
+* migrate raw console.log to consola ([bc167a6](https://github.com/yamlresume/yamlresume/commit/bc167a6c0f093b975a24c4a51f5ff61fba42d2e7))
+* revise build command output message ([e32c935](https://github.com/yamlresume/yamlresume/commit/e32c9356b49d1585abeb16ab3d82c377490efec1))
+* revise error handling ([6e4e3d0](https://github.com/yamlresume/yamlresume/commit/6e4e3d091370f3e2f6825b3fc6646fd3ec224195))
+* revise new command output message ([5e2a7b8](https://github.com/yamlresume/yamlresume/commit/5e2a7b875a4df30c4cfd59c1e87191b1bb3d3d59))
+
+
+### Bug Fixes
+
+* revise tectonic CLI flag ([ec3f663](https://github.com/yamlresume/yamlresume/commit/ec3f6633d2bf15a86de5ce91e649ed108c472c53))
+
 ## [0.2.4](https://github.com/yamlresume/yamlresume/compare/v0.2.3...v0.2.4) (2025-04-29)
 
 ## [0.2.3](https://github.com/yamlresume/yamlresume/compare/v0.2.2...v0.2.3) (2025-04-29)

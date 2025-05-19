@@ -1,6 +1,6 @@
 {
   "name": "@yamlresume/core",
-  "version": "0.2.4",
+  "version": "0.3.0",
   "description": "The typesetting and layout core for YAMLResume",
   "license": "MIT",
   "author": {
@@ -27,7 +27,11 @@
       "default": "./dist/index.js"
     }
   },
-  "files": ["dist", "README.md", "LICENSE"],
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
   "scripts": {
     "build": "tsup",
     "build:watch": "tsup --watch",
