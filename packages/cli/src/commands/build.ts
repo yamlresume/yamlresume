@@ -112,7 +112,12 @@ export function inferLaTeXCommand(source: string): string {
   const environment = inferLaTeXEnvironment()
   const destination = inferOutput(source)
 
-  return `${environment} -halt-on-error ${destination}`
+  switch (environment) {
+    case 'xelatex':
+      return `xelatex -halt-on-error ${destination}`
+    case 'tectonic':
+      return `tectonic ${destination}`
+  }
 }
 
 /**

@@ -125,10 +125,13 @@ describe(inferLaTeXEnvironment, () => {
   afterEach(vi.resetAllMocks)
 
   it('should infer the LaTeX environment with xelatex', () => {
-    const whichSpy = vi
-      // biome-ignore lint/suspicious/noExplicitAny: ignore
-      .spyOn(which, 'sync' as any)
-      .mockImplementation(() => 'xelatex')
+    const whichSpy = vi.spyOn(which, 'sync').mockImplementation((cmd) => {
+      if (cmd !== 'xelatex') {
+        throw new Error()
+      }
+
+      return 'xelatex'
+    })
 
     expect(inferLaTeXEnvironment()).toBe('xelatex')
     expect(whichSpy).toBeCalledWith('xelatex')
@@ -170,6 +173,14 @@ describe(inferLaTeXCommand, () => {
   afterEach(vi.resetAllMocks)
 
   it('should infer the LaTeX command with xelatex', () => {
+    vi.spyOn(which, 'sync').mockImplementation((cmd) => {
+      if (cmd !== 'xelatex') {
+        throw new Error()
+      }
+
+      return 'xelatex'
+    })
+
     const tests = [
       { source: 'resume.json', expected: 'xelatex -halt-on-error resume.tex' },
       {
@@ -197,14 +208,14 @@ describe(inferLaTeXCommand, () => {
     })
 
     const tests = [
-      { source: 'resume.json', expected: 'tectonic -halt-on-error resume.tex' },
+      { source: 'resume.json', expected: 'tectonic resume.tex' },
       {
         source: '../resume.yml',
-        expected: 'tectonic -halt-on-error ../resume.tex',
+        expected: 'tectonic ../resume.tex',
       },
       {
         source: './resume.yaml',
-        expected: 'tectonic -halt-on-error ./resume.tex',
+        expected: 'tectonic ./resume.tex',
       },
     ]
 
