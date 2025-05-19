@@ -12,7 +12,7 @@ PDFs with beautiful typesetting in a breeze.
 
 This project was started as the core typesetting engine for
 [PPResume](https://ppresume.com/?ref=yamlresume), a LaTeX based, pixel perfect
-resume builder.  After careful consideration, we decided to open source it so
+resume builder. After careful consideration, we decided to open source it so
 people can always have the right to say [no to vendor
 lock-in](https://blog.ppresume.com/posts/no-vendor-lock-in).
 
@@ -45,13 +45,15 @@ $ yarn global add yamlresume
 
 # using pnpm
 $ pnpm add -g yamlresume
+
+# using bun
+$ bun add -g yamlresume
 ```
 
 Verify `yamlresume` is installed successfully:
 
 ```
 $ yamlresume help
-
 Usage: yamlresume [options] [command]
 
 YAMLResume — Resume as Code in YAML
@@ -64,15 +66,16 @@ YAMLResume — Resume as Code in YAML
 
 
 Options:
-  -V, --version    output the version number
-  -h, --help       display help for command
+  -V, --version   output the version number
+  -v, --verbose   verbose output
+  -h, --help      display help for command
 
 Commands:
-  new [filename]   create a new resume
-  build <source>   build a resume to LaTeX and PDF
-  languages        i18n and l10n support
-  templates        manage resume templates
-  help [command]   display help for command
+  new [filename]  create a new resume
+  build <source>  build a resume to LaTeX and PDF
+  languages       i18n and l10n support
+  templates       manage resume templates
+  help [command]  display help for command
 ```
 
 You need to install a typesetting engine,
@@ -104,6 +107,28 @@ Check the generated PDF [here](./packages/cli/resources/resume.pdf).
 showcase for all possible kind of resumes categoried by languages and templates.
 
 More samples would come soon!
+
+## Typesetting
+
+YAMLResume adopts [LaTeX](https://www.latex-project.org/) as the default
+typesetting engine, which is the state of the art typesetting system in the
+academic and technical publishing industry.
+
+Meanwhile, by following the [resume typesetting best
+practices](https://docs.ppresume.com/guide?ref=yamlresume), YAMLResume always
+guarantees you **Pixel Perfect** resumes.
+
+In the future we may support other typesetting engines like
+[Typst](https://github.com/typst/typst), HTML/CSS, etc.
+
+## Contributing
+
+Any kind of contributions will be deeply appreciated! Please read the
+[contributing guidelines](./CONTRIBUTING.md) before submitting a pull request.
+
+### Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=yamlresume/yamlresume&type=Date)](https://www.star-history.com/#yamlresume/yamlresume&Date)
 
 ## Roadmap
 

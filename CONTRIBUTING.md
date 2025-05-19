@@ -67,7 +67,7 @@ only code. You can help with:
   ```
 - Run tests with coverage report:
   ```bash
-  pnpm test:coverage
+  pnpm test:cov
   ```
 
 ### Code Formatting and Linting
