@@ -22,6 +22,8 @@
  * IN THE SOFTWARE.
  */
 
+import { isArray, isObject, transform } from 'lodash-es'
+
 /**
  * Check if a value is empty
  *
@@ -38,5 +40,28 @@ export function isEmptyValue(value: undefined | null | object | string) {
     value === null ||
     (typeof value === 'object' && Object.keys(value).length === 0) ||
     (typeof value === 'string' && value.trim().length === 0)
+  )
+}
+
+/**
+ * Remove keys from an object by their names
+ *
+ * @param obj - The object to remove keys from
+ * @param keysToRemove - The keys to remove
+ * @returns The object with the specified keys removed
+ */
+export function removeKeysFromObject<T extends object>(
+  obj: T,
+  keysToRemove: (string | number | symbol)[]
+): T {
+  return transform(
+    obj,
+    (result, value: unknown, key: number | string | symbol) => {
+      if (keysToRemove.includes(key)) return
+
+      result[key] = isObject(value)
+        ? removeKeysFromObject(value, keysToRemove)
+        : value
+    }
   )
 }

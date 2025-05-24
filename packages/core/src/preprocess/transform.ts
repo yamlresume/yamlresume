@@ -31,7 +31,12 @@ import {
   getTemplateTranslations,
   getTermsTranslations,
 } from '@/translations'
-import { FontSpecNumbersStyle, type ProfileItem, type Resume } from '@/types'
+import {
+  FontSpecNumbersStyle,
+  type ProfileItem,
+  type Resume,
+  type ResumeContent,
+} from '@/types'
 import {
   escapeLatex,
   getDateRange,
@@ -55,6 +60,30 @@ export function replaceBlankLinesWithPercent(content: string): string {
   }
 
   return content.replace(/(^[ \t]*\n)/gm, '%\n')
+}
+
+export function transformSectionsWithDefaultValues(resume: Resume): Resume {
+  const emptyResumeContent: ResumeContent = {
+    awards: [],
+    basics: {},
+    certificates: [],
+    education: [],
+    interests: [],
+    languages: [],
+    location: {},
+    profiles: [],
+    projects: [],
+    publications: [],
+    references: [],
+    skills: [],
+    volunteer: [],
+    work: [],
+  }
+
+  return {
+    ...resume,
+    content: merge(emptyResumeContent, resume.content),
+  }
 }
 
 /**
@@ -688,6 +717,7 @@ export function transformResumeContent(
     // The order of the following functions matters, `transformResumeValues`
     // should be called first to process all leaf values properly with LaTeX
     // special characters escaped,
+    transformSectionsWithDefaultValues,
     transformResumeValues,
     transformEducationCourses,
     transformEducationDegreeAreaAndScore,

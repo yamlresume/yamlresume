@@ -24,7 +24,7 @@
 
 import { describe, expect, it } from 'vitest'
 
-import { isEmptyValue } from './object'
+import { isEmptyValue, removeKeysFromObject } from './object'
 
 describe(isEmptyValue, () => {
   it('should return true for empty values', () => {
@@ -37,5 +37,95 @@ describe(isEmptyValue, () => {
     for (const value of [{ a: 1 }, [1, 2, 3], 'hello']) {
       expect(isEmptyValue(value)).toBe(false)
     }
+  })
+})
+
+describe(removeKeysFromObject, () => {
+  it('should handle empty object', () => {
+    const obj = {}
+    const result = removeKeysFromObject(obj, ['a', 'b'])
+    expect(result).toEqual({})
+  })
+
+  it('should remove keys from an object', () => {
+    const obj = { a: 1, b: 2, c: 3 }
+    const result = removeKeysFromObject(obj, ['b'])
+    expect(result).toEqual({ a: 1, c: 3 })
+  })
+
+  it('should remove multiple keys from an object', () => {
+    const obj = { a: 1, b: 2, c: 3, d: 4 }
+    const result = removeKeysFromObject(obj, ['b', 'd'])
+    expect(result).toEqual({ a: 1, c: 3 })
+  })
+
+  it('should handle non-existent keys', () => {
+    const obj = { a: 1, b: 2 }
+    const result = removeKeysFromObject(obj, ['c', 'd'])
+    expect(result).toEqual({ a: 1, b: 2 })
+  })
+
+  it('should handle empty keys array', () => {
+    const obj = { a: 1, b: 2, c: 3 }
+    const result = removeKeysFromObject(obj, [])
+    expect(result).toEqual({ a: 1, b: 2, c: 3 })
+  })
+
+  it('should handle nested objects', () => {
+    const obj = { a: 1, b: { x: 1, y: 2 }, c: 3 }
+    const result = removeKeysFromObject(obj, ['b'])
+    expect(result).toEqual({ a: 1, c: 3 })
+  })
+
+  it('should handle arrays', () => {
+    const obj = { a: 1, b: [1, 2, 3] }
+    const result = removeKeysFromObject(obj, ['b'])
+    expect(result).toEqual({ a: 1 })
+  })
+
+  it('should handle arrays of objects', () => {
+    const obj = {
+      a: 1,
+      b: [
+        { x: 1, y: 2 },
+        { x: 3, y: 4 },
+      ],
+    }
+    const result = removeKeysFromObject(obj, ['x'])
+    expect(result).toEqual({ a: 1, b: [{ y: 2 }, { y: 4 }] })
+  })
+
+  it('should handle deep nested objects with arrays', () => {
+    const obj = {
+      a: 1,
+      b: [
+        [{ x: 1, y: 2, z: { a: 1, b: 2 } }],
+        { x: 3, y: 4, z: { a: 3, b: 4 } },
+      ],
+      c: { y: 1, z: 2 },
+    }
+
+    const result = removeKeysFromObject(obj, ['x', 'z'])
+    expect(result).toEqual({
+      a: 1,
+      b: [[{ y: 2 }], { y: 4 }],
+      c: { y: 1 },
+    })
+  })
+
+  it('should handle top level array', () => {
+    const obj = [
+      { a: 1, b: 2 },
+      { a: 3, b: 4 },
+    ]
+    const result = removeKeysFromObject(obj, ['b'])
+    expect(result).toEqual([{ a: 1 }, { a: 3 }])
+  })
+
+  it('should not modify the original object', () => {
+    const obj = { a: 1, b: 2 }
+    const result = removeKeysFromObject(obj, ['b'])
+    expect(result).toEqual({ a: 1 })
+    expect(obj).toEqual({ a: 1, b: 2 })
   })
 })

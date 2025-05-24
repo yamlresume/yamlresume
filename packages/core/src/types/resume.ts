@@ -32,26 +32,27 @@ import type {
   TemplateOption,
 } from '@/data'
 
-/** Represents the valid identifiers for top-level sections within the resume
- * content.
- *
- * TODO: should we move this to TypeScript enum?
+/**
+ * All valid top-level sections in the resume.
  * */
-export type SectionID =
-  | 'basics'
-  | 'location'
-  | 'profiles'
-  | 'work'
-  | 'education'
-  | 'volunteer'
-  | 'awards'
-  | 'certificates'
-  | 'publications'
-  | 'skills'
-  | 'languages'
-  | 'interests'
-  | 'references'
-  | 'projects'
+export const SECTION_IDS = [
+  'basics',
+  'location',
+  'profiles',
+  'work',
+  'education',
+  'volunteer',
+  'awards',
+  'certificates',
+  'publications',
+  'skills',
+  'languages',
+  'interests',
+  'references',
+  'projects',
+] as const
+
+export type SectionID = (typeof SECTION_IDS)[number]
 
 /** Categorizes social networks for potential grouping or display purposes. */
 export type SocialNetworkGroup =
@@ -124,7 +125,7 @@ type BasicsItem = {
   /** Email address. */
   email?: string
   /** A brief professional headline or title (e.g., "Software Engineer"). */
-  headline: string
+  headline?: string
   /** Full name. */
   name?: string
   /** Phone number. */
