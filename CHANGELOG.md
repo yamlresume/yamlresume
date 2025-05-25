@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.3.1](https://github.com/yamlresume/yamlresume/compare/v0.3.0...v0.3.1) (2025-05-25)
+
+
+### Bug Fixes
+
+* render resumes with absent sections ([d171fc2](https://github.com/yamlresume/yamlresume/commit/d171fc26d79e0c1fbfc618aadcba95fb53030408))
+
 ## [0.3.0](https://github.com/yamlresume/yamlresume/compare/v0.2.4...v0.3.0) (2025-05-19)
 
 
