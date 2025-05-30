@@ -688,6 +688,11 @@ export function transformSummary(
             ...resume.content[section][index].computed,
             summary: replaceBlankLinesWithPercent(summary.trim()),
           }
+        } else {
+          resume.content[section][index].computed = {
+            ...resume.content[section][index].computed,
+            summary: '',
+          }
         }
       }
     )
