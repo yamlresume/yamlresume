@@ -23,9 +23,14 @@
  */
 
 import { cloneDeep } from 'lodash-es'
-import { describe, expect, it, vi } from 'vitest'
+import { describe, expect, it } from 'vitest'
 
-import { type DocNode, LatexCodeGenerator, TiptapParser } from '@/compiler'
+import {
+  type DocNode,
+  LatexCodeGenerator,
+  MarkdownParser,
+  TiptapParser,
+} from '@/compiler'
 import {
   Country,
   Degree,
@@ -572,6 +577,47 @@ describe(transformSummary, () => {
           )
         )
       })
+    }
+  })
+
+  it('should transform summary to empty string if it is empty', () => {
+    for (const summary of ['', undefined, null]) {
+      const resume = cloneDeep(filledResume)
+      resume.content.basics.summary = summary
+
+      for (const section of [
+        'awards',
+        'education',
+        'projects',
+        'publications',
+        'references',
+        'volunteer',
+        'work',
+      ]) {
+        resume.content[section].forEach((_, index: number) => {
+          resume.content[section][index].summary = summary
+        })
+      }
+
+      const summaryParser = new MarkdownParser()
+
+      transformSummary(resume, summaryParser)
+
+      expect(resume.content.basics.computed?.summary).toEqual('')
+
+      for (const section of [
+        'awards',
+        'education',
+        'projects',
+        'publications',
+        'references',
+        'volunteer',
+        'work',
+      ]) {
+        resume.content[section].forEach((_, index: number) => {
+          expect(resume.content[section][index].computed?.summary).toEqual('')
+        })
+      }
     }
   })
 })
