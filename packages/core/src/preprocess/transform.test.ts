@@ -973,9 +973,7 @@ describe(transformResumeLayout, () => {
   it('should transform provided resumeLayout with default values', () => {
     const resume = cloneDeep(defaultResume)
     const providedLayout: ResumeLayout = {
-      template: {
-        id: TemplateOption.ModerncvBanking,
-      },
+      template: TemplateOption.ModerncvBanking,
       margins: {
         top: '0cm',
         bottom: '0cm',

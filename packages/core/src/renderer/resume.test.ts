@@ -81,9 +81,7 @@ describe(getResumeRenderer, () => {
       ...mockResume,
       layout: {
         ...mockResume.layout,
-        template: {
-          id: undefined,
-        },
+        template: undefined,
       },
     }
 
@@ -100,9 +98,7 @@ describe(getResumeRenderer, () => {
       ...mockResume,
       layout: {
         ...mockResume.layout,
-        template: {
-          id: 'invalid-template' as TemplateOption,
-        },
+        template: 'invalid-template' as TemplateOption,
       },
     }
 
