@@ -1,0 +1,26 @@
+FROM node:24-slim
+
+RUN apt update && \
+    apt install -y \
+    texlive-xetex \
+    texlive-fonts-extra \
+    texlive-lang-all \
+    fonts-noto-cjk \
+    fonts-noto-cjk-extra \
+    && rm -rf /var/lib/apt/lists/* \
+    && rm -rf /usr/share/texlive/texmf-dist/doc \
+    && rm -rf /usr/share/texlive/texmf-dist/source \
+    && rm -rf /usr/share/texlive/texmf-dist/fonts/type1
+
+LABEL maintainer="YAMLResume <https://yamlresume.dev>"
+
+RUN npm install -g yamlresume@latest
+
+RUN useradd -m -u 2048 yamlresume
+USER yamlresume
+
+WORKDIR /home/yamlresume
+
+ENTRYPOINT ["yamlresume"]
+
+CMD ["--help"]
