@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.3.2](https://github.com/yamlresume/yamlresume/compare/v0.3.1...v0.3.2) (2025-06-02)
+
+
+### Bug Fixes
+
+* throw error when non-basics summary is blank ([433cbe5](https://github.com/yamlresume/yamlresume/commit/433cbe5d353058257d0e5e49c80d5317776fe0aa))
+
 ## [0.3.1](https://github.com/yamlresume/yamlresume/compare/v0.3.0...v0.3.1) (2025-05-25)
 
 
