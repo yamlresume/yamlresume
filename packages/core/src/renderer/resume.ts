@@ -50,9 +50,7 @@ export function getResumeRenderer(
   resume: Resume,
   summaryParser: Parser
 ): Renderer {
-  const {
-    layout: { template },
-  } = resume
+  const template = resume.layout?.template
 
   // default to use moderncv banking style if template is not specified
   if (!template) {

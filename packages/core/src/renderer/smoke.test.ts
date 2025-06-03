@@ -101,5 +101,14 @@ describe('smoke test for all renderers', () => {
         expect(result).toContain('\\documentclass')
       }
     })
+
+    it('should render resume with no layout', () => {
+      for (const renderer of renderers) {
+        resume.layout = undefined
+
+        const result = new renderer(resume, summaryParser).render()
+        expect(result).toContain('\\documentclass')
+      }
+    })
   })
 })

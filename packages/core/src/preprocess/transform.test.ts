@@ -54,7 +54,7 @@ import {
   type ResumeLayout,
   type SocialNetwork,
 } from '@/types'
-import { isEmptyValue } from '@/utils'
+import { isEmptyValue, removeKeysFromObject } from '@/utils'
 import {
   replaceBlankLinesWithPercent,
   transformBasicsUrl,
@@ -69,6 +69,7 @@ import {
   transformResumeContent,
   transformResumeLayout,
   transformResumeLayoutTypography,
+  transformResumeLayoutWithDefaultValues,
   transformResumeValues,
   transformSectionNames,
   transformSkills,
@@ -946,7 +947,7 @@ describe(transformResumeLayoutTypography, () => {
       LocaleLanguageOption.Spanish,
     ]) {
       const resume = cloneDeep(defaultResume)
-      resume.layout.typography.fontSpec.numbers = FontSpecNumbersStyle.Undefined
+      resume.layout.typography.fontSpec.numbers = FontSpecNumbersStyle.Auto
 
       resume.layout.locale.language = language
       transformResumeLayoutTypography(resume)
@@ -969,6 +970,19 @@ describe(transformResumeLayoutTypography, () => {
   })
 })
 
+describe(transformResumeLayoutWithDefaultValues, () => {
+  it('should transform resume with no layout', () => {
+    const resume = cloneDeep(defaultResume)
+    resume.layout = undefined
+
+    expect(resume.layout).toBeUndefined()
+
+    expect(transformResumeLayoutWithDefaultValues(resume).layout).toEqual(
+      defaultResume.layout
+    )
+  })
+})
+
 describe(transformResumeLayout, () => {
   it('should transform provided resumeLayout with default values', () => {
     const resume = cloneDeep(defaultResume)
@@ -983,7 +997,7 @@ describe(transformResumeLayout, () => {
       typography: {
         fontSize: '11pt',
         fontSpec: {
-          numbers: FontSpecNumbersStyle.Undefined,
+          numbers: FontSpecNumbersStyle.Auto,
         },
       },
       locale: {
@@ -996,6 +1010,16 @@ describe(transformResumeLayout, () => {
 
     resume.layout = providedLayout
 
-    expect(transformResumeLayout(resume).layout).toEqual(providedLayout)
+    expect(transformResumeLayout(resume).layout).toEqual({
+      ...providedLayout,
+      typography: {
+        ...providedLayout.typography,
+        fontSpec: {
+          ...providedLayout.typography.fontSpec,
+          // only set numbers to Lining for CJK resume
+          numbers: FontSpecNumbersStyle.Lining,
+        },
+      },
+    })
   })
 })

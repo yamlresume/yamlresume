@@ -606,7 +606,7 @@ export enum FontSpecNumbersStyle {
    * Represents an undefined state, allowing the style to be automatically
    * determined based on the selected `LocaleLanguage`.
    */
-  Undefined = 'Undefined',
+  Auto = 'Auto',
 }
 
 /** Defines typography settings like font size and number style. */

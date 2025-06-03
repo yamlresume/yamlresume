@@ -62,6 +62,14 @@ export function replaceBlankLinesWithPercent(content: string): string {
   return content.replace(/(^[ \t]*\n)/gm, '%\n')
 }
 
+/**
+ * Merges the provided resume content with default content values, ensuring
+ * all necessary content properties are set.
+ *
+ * @param resume - The resume object.
+ * @returns The transformed resume object.
+ * @remarks Modifies `resume.content` in place.
+ */
 export function transformSectionsWithDefaultValues(resume: Resume): Resume {
   const emptyResumeContent: ResumeContent = {
     awards: [],
@@ -742,6 +750,21 @@ export function transformResumeContent(
 }
 
 /**
+ * Merges the provided resume layout configuration with default layout values,
+ * ensuring all necessary layout properties are set.
+ *
+ * @param resume - The resume object.
+ * @returns The transformed resume object.
+ * @remarks Modifies `resume.layout` in place.
+ */
+export function transformResumeLayoutWithDefaultValues(resume: Resume): Resume {
+  return {
+    ...resume,
+    layout: merge(cloneDeep(defaultResumeLayout), resume.layout),
+  }
+}
+
+/**
  * Adjusts the resume's typography settings, specifically the number style
  * (`Lining` or `OldStyle`), based on the selected locale language.
  *
@@ -754,8 +777,7 @@ export function transformResumeContent(
 export function transformResumeLayoutTypography(resume: Resume): Resume {
   if (
     resume.layout.typography.fontSpec?.numbers !== undefined &&
-    resume.layout.typography.fontSpec?.numbers !==
-      FontSpecNumbersStyle.Undefined
+    resume.layout.typography.fontSpec?.numbers !== FontSpecNumbersStyle.Auto
   ) {
     return resume
   }
@@ -793,14 +815,10 @@ export function transformResumeLayoutTypography(resume: Resume): Resume {
  *   resulting from the merge. Modifies `resume.layout.typography` via helper.
  */
 export function transformResumeLayout(resume: Resume): Resume {
-  transformResumeLayoutTypography(resume)
-
-  return {
-    ...resume,
-    // note that we have to cloneDeep the defaultResumeLayout, otherwise the
-    // defaultResumeLayout will be mutated
-    layout: merge(cloneDeep(defaultResumeLayout), resume.layout),
-  }
+  return [
+    transformResumeLayoutWithDefaultValues,
+    transformResumeLayoutTypography,
+  ].reduce((resume, transformFunc) => transformFunc(resume), resume)
 }
 
 /**
@@ -819,7 +837,7 @@ export function transformResumeLayout(resume: Resume): Resume {
  * resume.
  */
 export function transformResume(resume: Resume, summaryParser: Parser): Resume {
-  return [transformResumeContent, transformResumeLayout].reduce(
+  return [transformResumeLayout, transformResumeContent].reduce(
     (resume, tranformFunc) => tranformFunc(resume, summaryParser),
     cloneDeep(resume)
   )

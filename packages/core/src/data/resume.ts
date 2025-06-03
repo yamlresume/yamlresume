@@ -360,7 +360,7 @@ export const defaultResumeLayout: ResumeLayout = {
   typography: {
     fontSize: fontSizeOptions[0],
     fontSpec: {
-      numbers: FontSpecNumbersStyle.Undefined,
+      numbers: FontSpecNumbersStyle.Auto,
     },
   },
   margins: {
