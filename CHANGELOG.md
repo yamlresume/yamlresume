@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.3.3](https://github.com/yamlresume/yamlresume/compare/v0.3.2...v0.3.3) (2025-06-03)
+
+
+### Features
+
+* dockerize yamlresume ([60a096c](https://github.com/yamlresume/yamlresume/commit/60a096c6259f58082892ce6a5cbed35901e3a851))
+* make layout optional ([817059b](https://github.com/yamlresume/yamlresume/commit/817059b39310b4d65fd0bfd433df969b7aeee623))
+
 ## [0.3.2](https://github.com/yamlresume/yamlresume/compare/v0.3.1...v0.3.2) (2025-06-02)
 
 
