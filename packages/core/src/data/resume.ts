@@ -317,9 +317,9 @@ export const marginOptions = [
  */
 export enum LocaleLanguageOption {
   English = 'en',
-  SimplifiedChinese = 'zh-Hans',
-  TraditionalChineseHK = 'zh-Hans-HK',
-  TraditionalChineseTW = 'zh-Hans-TW',
+  SimplifiedChinese = 'zh-hans',
+  TraditionalChineseHK = 'zh-hant-hk',
+  TraditionalChineseTW = 'zh-hant-tw',
   Spanish = 'es',
 }
 
