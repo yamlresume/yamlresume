@@ -27,9 +27,10 @@ import {
   getLocaleLanguageOptionDetail,
 } from '@yamlresume/core'
 import { consola } from 'consola'
-import { afterEach, describe, expect, it, vi } from 'vitest'
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 
-import { languagesCommand, listLanguages } from './languages'
+import type { Command } from 'commander'
+import { createLanguagesCommand, listLanguages } from './languages'
 
 describe(listLanguages, () => {
   it('should generate a markdown table with all supported languages', () => {
@@ -52,7 +53,13 @@ describe(listLanguages, () => {
   })
 })
 
-describe('languagesCommand', () => {
+describe(createLanguagesCommand, () => {
+  let languagesCommand: Command
+
+  beforeEach(() => {
+    languagesCommand = createLanguagesCommand()
+  })
+
   afterEach(() => {
     vi.restoreAllMocks()
   })

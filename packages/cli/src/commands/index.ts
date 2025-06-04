@@ -23,6 +23,6 @@
  */
 
 export { createBuildCommand } from './build'
-export { newCommand } from './new'
-export { languagesCommand } from './languages'
-export { templatesCommand } from './templates'
+export { createNewCommand } from './new'
+export { createLanguagesCommand } from './languages'
+export { createTemplatesCommand } from './templates'

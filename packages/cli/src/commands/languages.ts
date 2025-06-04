@@ -49,18 +49,20 @@ export function listLanguages() {
 }
 
 /**
- * Commander command instance to list supported languages
- *
- * Provides subcommands like 'list' to interact with language settings or
- * information.
+ * Create a command instance to list supported languages
  */
-export const languagesCommand = new Command()
-  .name('languages')
-  .description('i18n and l10n support')
 
-languagesCommand
-  .command('list')
-  .description('list all supported languages')
-  .action(() => {
-    consola.log(listLanguages())
-  })
+export function createLanguagesCommand() {
+  const cmd = new Command()
+    .name('languages')
+    .description('i18n and l10n support')
+
+  cmd
+    .command('list')
+    .description('list all supported languages')
+    .action(() => {
+      consola.log(listLanguages())
+    })
+
+  return cmd
+}

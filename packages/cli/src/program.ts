@@ -27,9 +27,9 @@ import { Command } from 'commander'
 import packageJson from '../package.json' with { type: 'json' }
 import {
   createBuildCommand,
-  languagesCommand,
-  newCommand,
-  templatesCommand,
+  createLanguagesCommand,
+  createNewCommand,
+  createTemplatesCommand,
 } from './commands'
 import { setVerboseLog } from './utils'
 
@@ -52,7 +52,7 @@ program
     setVerboseLog(thisCommand.opts().verbose)
   })
 
-program.addCommand(newCommand)
+program.addCommand(createNewCommand())
 program.addCommand(createBuildCommand())
-program.addCommand(languagesCommand)
-program.addCommand(templatesCommand)
+program.addCommand(createLanguagesCommand())
+program.addCommand(createTemplatesCommand())

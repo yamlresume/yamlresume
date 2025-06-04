@@ -82,19 +82,19 @@ export function newResume(filename: string) {
 }
 
 /**
- * Commander command instance to create a new YAML resume
- *
- * @param filename - The output filename for the new resume
+ * Create a command instance to create a new YAML resume
  */
-export const newCommand = new Command()
-  .name('new')
-  .description('create a new resume')
-  .argument('[filename]', 'output filename', 'resume.yml')
-  .action((filename) => {
-    try {
-      newResume(filename)
-    } catch (error) {
-      consola.error(error.message)
-      process.exit(error.errno)
-    }
-  })
+export function createNewCommand() {
+  return new Command()
+    .name('new')
+    .description('create a new resume')
+    .argument('[filename]', 'output filename', 'resume.yml')
+    .action((filename) => {
+      try {
+        newResume(filename)
+      } catch (error) {
+        consola.error(error.message)
+        process.exit(error.errno)
+      }
+    })
+}

@@ -23,10 +23,11 @@
  */
 
 import { TemplateOption, getTemplateOptionDetail } from '@yamlresume/core'
+import type { Command } from 'commander'
 import { consola } from 'consola'
-import { afterEach, describe, expect, it, vi } from 'vitest'
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 
-import { listTemplates, templatesCommand } from './templates'
+import { createTemplatesCommand, listTemplates } from './templates'
 
 describe(listTemplates, () => {
   it('should generate a markdown table with all supported templates', () => {
@@ -52,7 +53,13 @@ describe(listTemplates, () => {
   })
 })
 
-describe('templatesCommand', () => {
+describe(createTemplatesCommand, () => {
+  let templatesCommand: Command
+
+  beforeEach(() => {
+    templatesCommand = createTemplatesCommand()
+  })
+
   afterEach(() => {
     vi.restoreAllMocks()
   })

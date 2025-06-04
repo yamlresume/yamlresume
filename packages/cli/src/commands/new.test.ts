@@ -24,9 +24,10 @@
 
 import fs from 'node:fs'
 import { ErrorType, YAMLResumeError } from '@yamlresume/core'
+import type { Command } from 'commander'
 import { consola } from 'consola'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
-import { newCommand, newResume } from './new'
+import { createNewCommand, newResume } from './new'
 import { getFixture } from './utils'
 
 describe(newResume, () => {
@@ -137,7 +138,8 @@ describe(newResume, () => {
   })
 })
 
-describe('newCommand', () => {
+describe(createNewCommand, () => {
+  let newCommand: Command
   let consolaSuccessSpy: ReturnType<typeof vi.spyOn>
   let consolaErrorSpy: ReturnType<typeof vi.spyOn>
   let processExitSpy: ReturnType<typeof vi.spyOn>
@@ -150,6 +152,8 @@ describe('newCommand', () => {
   )
 
   beforeEach(() => {
+    newCommand = createNewCommand()
+
     // Mock consola methods
     consolaSuccessSpy = vi
       .spyOn(consola, 'success')

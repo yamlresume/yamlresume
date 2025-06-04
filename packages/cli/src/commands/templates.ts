@@ -45,17 +45,19 @@ export function listTemplates() {
 }
 
 /**
- * Commander command instance to list supported templates
- *
- * Provides subcommands like 'list' to interact with template information.
+ * Create a command instance to list supported templates
  */
-export const templatesCommand = new Command()
-  .name('templates')
-  .description('manage resume templates')
+export function createTemplatesCommand() {
+  const cmd = new Command()
+    .name('templates')
+    .description('manage resume templates')
 
-templatesCommand
-  .command('list')
-  .description('list all supported templates')
-  .action(() => {
-    consola.log(listTemplates())
-  })
+  cmd
+    .command('list')
+    .description('list all supported templates')
+    .action(() => {
+      consola.log(listTemplates())
+    })
+
+  return cmd
+}
