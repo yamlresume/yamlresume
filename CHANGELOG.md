@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.4.0](https://github.com/yamlresume/yamlresume/compare/v0.3.3...v0.4.0) (2025-06-04)
+
+
+### Features
+
+* slugify locale language code ([68e1dbc](https://github.com/yamlresume/yamlresume/commit/68e1dbc41281ed0ba2444f3e8e1a02d73b054b30))
+* support --no-pdf option for build command ([cdee633](https://github.com/yamlresume/yamlresume/commit/cdee633f66f787ca6d6694f33fe2602a78569756))
+
 ## [0.3.3](https://github.com/yamlresume/yamlresume/compare/v0.3.2...v0.3.3) (2025-06-03)
 
 
