@@ -53,27 +53,21 @@ jobs:
       - name: Build cli package
         run: pnpm cli build:prod
 
-      - name: Install texlive-latex
-        run: |
-          sudo apt update
-          sudo apt install -y texlive-xetex texlive-fonts-extra texlive-lang-all
-          xetex -v
-
       - name: Run check
         run: pnpm check:ci
 
       - name: Run tests
         run: pnpm test:cov
 
-      - name: Install Noto CJK fonts
-        run: |
-          sudo apt install fonts-noto-cjk fonts-noto-cjk-extra
-
       - name: Build resume
         run: |
           node packages/cli/dist/cli.js -V
           node packages/cli/dist/cli.js new
-          node packages/cli/dist/cli.js build --verbose resume.yml
+          node packages/cli/dist/cli.js build --no-pdf resume.yml
+
+      - name: Smoke test LaTeX build
+        run: |
+          docker run --rm -v $(pwd):/tmp -w /tmp yamlresume/yamlresume-base:v1.0.0 xelatex resume.tex
 
       - name: Check files
         if: always()
