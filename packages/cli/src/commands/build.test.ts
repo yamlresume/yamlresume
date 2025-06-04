@@ -43,9 +43,10 @@ import {
   YAMLResumeError,
   joinNonEmptyString,
 } from '@yamlresume/core'
+import type { Command } from 'commander'
 import {
-  buildCommand,
   buildResume,
+  createBuildCommand,
   generateTeX,
   inferLaTeXCommand,
   inferLaTeXEnvironment,
@@ -346,6 +347,19 @@ describe(buildResume, () => {
 
   afterAll(cleanupFiles)
 
+  it('should generate a tex file if pdf option is false', () => {
+    const source = getFixture('software-engineer.yml')
+
+    buildResume(source, { pdf: false })
+
+    expect(execSpy).toBeCalledTimes(0)
+
+    expect(whichSpy).not.toBeCalled()
+
+    expect(outputStr).toEqual(['Generated resume TeX file successfully.'])
+    expect(consolaSuccessSpy).toBeCalledTimes(1)
+  })
+
   it('should generate a pdf file', () => {
     const source = getFixture('software-engineer.yml')
 
@@ -362,7 +376,7 @@ describe(buildResume, () => {
 
     expect(outputStr).toEqual([
       `Generating resume PDF with command: \`${command}\`...`,
-      'Generated resume PDF successfully.',
+      'Generated resume PDF file successfully.',
     ])
     expect(consolaStartSpy).toBeCalledTimes(1)
     expect(consolaSuccessSpy).toBeCalledTimes(1)
@@ -403,7 +417,8 @@ describe(buildResume, () => {
   })
 })
 
-describe('buildCommand', () => {
+describe(createBuildCommand, () => {
+  let buildCommand: Command
   let execSpy: ReturnType<typeof vi.spyOn>
   let whichSpy: ReturnType<typeof vi.spyOn>
   let consolaStartSpy: ReturnType<typeof vi.spyOn>
@@ -411,6 +426,8 @@ describe('buildCommand', () => {
   let consolaErrorSpy: ReturnType<typeof vi.spyOn>
 
   beforeEach(() => {
+    buildCommand = createBuildCommand()
+
     execSpy = vi
       // biome-ignore lint/suspicious/noExplicitAny: ignore
       .spyOn(child_process, 'execSync' as any)
@@ -458,6 +475,15 @@ describe('buildCommand', () => {
       encoding: 'utf8',
     })
     expect(consolaStartSpy).toBeCalledTimes(1)
+    expect(consolaSuccessSpy).toBeCalledTimes(1)
+  })
+
+  it('should build resume to TeX if no-pdf option is provided', () => {
+    const source = getFixture('software-engineer.yml')
+
+    buildCommand.parse(['yamlresume', 'build', '--no-pdf', source])
+
+    expect(whichSpy).not.toBeCalled()
     expect(consolaSuccessSpy).toBeCalledTimes(1)
   })
 

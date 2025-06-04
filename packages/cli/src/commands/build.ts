@@ -182,15 +182,23 @@ export function generateTeX(source: string) {
  * LaTeX compilation process fails.
  * @todo Check the resume format against YAMLResume schema before compilation.
  */
-export function buildResume(source: string) {
+export function buildResume(
+  source: string,
+  options: { pdf?: boolean } = { pdf: true }
+) {
   generateTeX(source)
+
+  if (!options.pdf) {
+    consola.success('Generated resume TeX file successfully.')
+    return
+  }
 
   const command = inferLaTeXCommand(source)
   consola.start(`Generating resume PDF with command: \`${command}\`...`)
 
   try {
     const stdout = child_process.execSync(command, { encoding: 'utf8' })
-    consola.success('Generated resume PDF successfully.')
+    consola.success('Generated resume PDF file successfully.')
     consola.debug(joinNonEmptyString(['stdout: ', toCodeBlock(stdout)]))
   } catch (error) {
     consola.debug(joinNonEmptyString(['stdout: ', toCodeBlock(error.stdout)]))
@@ -200,19 +208,20 @@ export function buildResume(source: string) {
 }
 
 /**
- * Commander command instance to build a YAML resume to LaTeX and PDF
- *
- * @param source - The source resume file
+ * Create a command instance to build a YAML resume to LaTeX and PDF
  */
-export const buildCommand = new Command()
-  .name('build')
-  .description('build a resume to LaTeX and PDF')
-  .argument('<source>', 'the source resume file')
-  .action((source: string) => {
-    try {
-      buildResume(source)
-    } catch (error) {
-      consola.error(error.message)
-      process.exit(error.errno)
-    }
-  })
+export function createBuildCommand() {
+  return new Command()
+    .name('build')
+    .description('build a resume to LaTeX and PDF')
+    .argument('<source>', 'the source resume file')
+    .option('--no-pdf', 'only generate TeX file without PDF')
+    .action(async (source: string, options: { pdf: boolean }) => {
+      try {
+        buildResume(source, options)
+      } catch (error) {
+        consola.error(error.message)
+        process.exit(error.errno)
+      }
+    })
+}

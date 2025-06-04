@@ -26,7 +26,7 @@ import { Command } from 'commander'
 
 import packageJson from '../package.json' with { type: 'json' }
 import {
-  buildCommand,
+  createBuildCommand,
   languagesCommand,
   newCommand,
   templatesCommand,
@@ -53,6 +53,6 @@ program
   })
 
 program.addCommand(newCommand)
-program.addCommand(buildCommand)
+program.addCommand(createBuildCommand())
 program.addCommand(languagesCommand)
 program.addCommand(templatesCommand)
