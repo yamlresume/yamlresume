@@ -34,7 +34,13 @@ following requirements:
 
 ## Quick Start
 
-Install `yamlresume`:
+If you have docker installed, you can get started with `yamlresume` in one
+second, this has packaged `yamlresume` and all its dependencies:
+
+[![YAMLResume Docker Demo](https://asciinema.org/a/722057.svg)](https://asciinema.org/a/722057)
+
+Otherwise you can install `yamlresume` with your favorite JavaScript package
+manager:
 
 ```
 # using npm
@@ -66,26 +72,29 @@ YAMLResume — Resume as Code in YAML
 
 
 Options:
-  -V, --version   output the version number
-  -v, --verbose   verbose output
-  -h, --help      display help for command
+  -V, --version             output the version number
+  -v, --verbose             verbose output
+  -h, --help                display help for command
 
 Commands:
-  new [filename]  create a new resume
-  build <source>  build a resume to LaTeX and PDF
-  languages       i18n and l10n support
-  templates       manage resume templates
-  help [command]  display help for command
+  new [filename]            create a new resume
+  build [options] <source>  build a resume to LaTeX and PDF
+  languages                 i18n and l10n support
+  templates                 manage resume templates
+  help [command]            display help for command
 ```
 
-You need to install a typesetting engine,
+You then need to install a typesetting engine,
 [XeTeX](http://yamlresume.dev/docs/getting-started#xetex) or
 [Tectonic](http://yamlresume.dev/docs/getting-started#xetex) in order to
 generate PDFs.
 
-Besides, we recommend you to install [Linux
+Last but not least, we recommend you to install [Linux
 Libertine](http://yamlresume.dev/docs/getting-started#linux-libertine) font in
 order to get the best looking PDFs.
+
+Check our [installation guide](http://yamlresume.dev/docs/installation) for more
+details.
 
 ## Create a new resume
 
@@ -95,7 +104,11 @@ sample resume on your local, you can get a pdf with:
 
 ```
 $ yamlresume new my-resume.yml
+✔ Created my-resume.yml successfully.
+
 $ yamlresume build my-resume.yml
+◐ Generating resume PDF with command: xelatex -halt-on-error my-resume.tex...
+✔ Generated resume PDF file successfully.
 ```
 
 Check the generated PDF [here](./packages/cli/resources/resume.pdf).
@@ -123,12 +136,16 @@ In the future we may support other typesetting engines like
 
 ## Contributing
 
+This project is still under active development, we are constantly working on
+new features and bug fixes. The public API is not stable yet, so please be
+patient and spare us some time.
+
 Any kind of contributions will be deeply appreciated! Please read the
 [contributing guidelines](./CONTRIBUTING.md) before submitting a pull request.
 
 ### Star History
 
-[![Star History Chart](https://api.star-history.com/svg?repos=yamlresume/yamlresume&type=Date)](https://www.star-history.com/#yamlresume/yamlresume&Date)
+[![YAMLResume Star History Chart](https://api.star-history.com/svg?repos=yamlresume/yamlresume&type=Date)](https://www.star-history.com/#yamlresume/yamlresume&Date)
 
 ## Roadmap
 
