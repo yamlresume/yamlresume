@@ -194,7 +194,7 @@ export function buildResume(
   }
 
   const command = inferLaTeXCommand(source)
-  consola.start(`Generating resume PDF with command: \`${command}\`...`)
+  consola.start(`Generating resume PDF file with command: \`${command}\`...`)
 
   try {
     const stdout = child_process.execSync(command, { encoding: 'utf8' })
