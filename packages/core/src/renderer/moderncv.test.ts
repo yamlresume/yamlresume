@@ -157,6 +157,26 @@ describe('ModerncvBase', () => {
       expect(result).not.toContain('\\email')
       expect(result).not.toContain('\\phone')
     })
+
+    it('should handle undefined values', () => {
+      const name = 'John Doe'
+      const headline = undefined
+      const email = undefined
+      const phone = undefined
+
+      resume.content.basics.name = name
+      resume.content.basics.headline = headline
+      resume.content.basics.email = email
+      resume.content.basics.phone = phone
+
+      renderer = new ModerncvBankingRenderer(resume, summaryParser)
+      const result = renderer.renderBasics()
+
+      expect(result).toMatch(new RegExp(`^\\\\name{${name}}{}`))
+      expect(result).not.toContain('\\title')
+      expect(result).not.toContain('\\email')
+      expect(result).not.toContain('\\phone')
+    })
   })
 
   describe('renderLocation', () => {

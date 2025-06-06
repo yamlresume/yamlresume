@@ -47,6 +47,15 @@ describe(isEmptyString, () => {
       expect(isEmptyString(test)).toBe(false)
     }
   })
+
+  it('should return false for non-string values', () => {
+    const tests = [null, undefined, 0, 1, true, false, {}, []]
+
+    for (const test of tests) {
+      // @ts-ignore
+      expect(isEmptyString(test)).toBe(false)
+    }
+  })
 })
 
 describe(showIf, () => {

@@ -26,12 +26,7 @@ import type { Parser } from '@/compiler'
 import { transformResume } from '@/preprocess'
 import { getTemplateTranslations } from '@/translations'
 import type { Resume } from '@/types'
-import {
-  isEmptyString,
-  isEmptyValue,
-  joinNonEmptyString,
-  showIf,
-} from '@/utils'
+import { isEmptyValue, joinNonEmptyString, showIf } from '@/utils'
 import { Renderer } from './base'
 import {
   DocumentClass,
@@ -111,10 +106,10 @@ class ModerncvBase extends Renderer {
         // note that we have to show `\\name{}{}` here no matter whether name is
         // empty or not, moderncv requires this otherwise if there is no
         // `\\name{}{}``, moderncv will throw an error.
-        `\\name{${showIf(!isEmptyString(name), name)}}{}`,
-        showIf(!isEmptyString(headline), `\\title{${headline}}`),
-        showIf(!isEmptyString(phone), `\\phone[mobile]{${phone}}`),
-        showIf(!isEmptyString(email), `\\email{${email}}`),
+        `\\name{${showIf(!isEmptyValue(name), name)}}{}`,
+        showIf(!isEmptyValue(headline), `\\title{${headline}}`),
+        showIf(!isEmptyValue(phone), `\\phone[mobile]{${phone}}`),
+        showIf(!isEmptyValue(email), `\\email{${email}}`),
       ],
       '\n'
     )
@@ -134,7 +129,7 @@ class ModerncvBase extends Renderer {
       },
     } = this.resume
 
-    return showIf(!isEmptyString(fullAddress), `\\address{${fullAddress}}{}{}`)
+    return showIf(!isEmptyValue(fullAddress), `\\address{${fullAddress}}{}{}`)
   }
 
   /**
@@ -149,7 +144,7 @@ class ModerncvBase extends Renderer {
       },
     } = this.resume
 
-    return showIf(!isEmptyString(urls), `\\extrainfo{${urls}}`)
+    return showIf(!isEmptyValue(urls), `\\extrainfo{${urls}}`)
   }
 
   /**
@@ -206,13 +201,13 @@ ${education
       computed: { startDate, dateRange, degreeAreaAndScore, summary, courses },
       institution,
       url,
-    }) => `\\cventry{${showIf(!isEmptyString(startDate), dateRange)}}
+    }) => `\\cventry{${showIf(!isEmptyValue(startDate), dateRange)}}
         {${degreeAreaAndScore}}
         {${institution}}
-        {${showIf(!isEmptyString(url), `\\href{${url}}{${url}}`)}}
+        {${showIf(!isEmptyValue(url), `\\href{${url}}{${url}}`)}}
         {}
         {${showIf(
-          !isEmptyString(summary) || !isEmptyValue(courses),
+          !isEmptyValue(summary) || !isEmptyValue(courses),
           `${joinNonEmptyString(
             [
               summary,
@@ -256,18 +251,18 @@ ${content.work
       url,
     } = work
 
-    return `\\cventry{${showIf(!isEmptyString(startDate), dateRange)}}
+    return `\\cventry{${showIf(!isEmptyValue(startDate), dateRange)}}
         {${position}}
         {${name}}
-        {${showIf(!isEmptyString(url), `\\href{${url}}{${url}}`)}}
+        {${showIf(!isEmptyValue(url), `\\href{${url}}{${url}}`)}}
         {}
         {${showIf(
-          !isEmptyString(summary) || !isEmptyString(keywords),
+          !isEmptyValue(summary) || !isEmptyValue(keywords),
           `${joinNonEmptyString(
             [
               summary,
               showIf(
-                !isEmptyString(keywords),
+                !isEmptyValue(keywords),
                 `\\textbf{${Keywords}}${Colon}${keywords}`
               ),
             ],
@@ -307,7 +302,7 @@ ${languages
   .map(
     ({ computed: { language, fluency, keywords } }) =>
       `\\cvline{${language}}{${fluency}${showIf(
-        !isEmptyString(keywords),
+        !isEmptyValue(keywords),
         ` \\hfill \\textbf{${Keywords}}${Colon}${keywords}`
       )}}`
   )
@@ -343,7 +338,7 @@ ${skills
   .map(
     ({ name, computed: { level, keywords } }) =>
       `\\cvline{${name}}{${level}${showIf(
-        !isEmptyString(keywords),
+        !isEmptyValue(keywords),
         ` \\hfill \\textbf{${Keywords}}${Colon}${keywords}`
       )}}`
   )
@@ -405,7 +400,7 @@ ${certificates
     ({ computed: { date }, issuer, name, url }) => `\\cventry{${date}}
         {${issuer}}
         {${name}}
-        {${showIf(!isEmptyString(url), `\\href{${url}}{${url}}`)}}
+        {${showIf(!isEmptyValue(url), `\\href{${url}}{${url}}`)}}
         {}
         {}`
   )
@@ -441,7 +436,7 @@ ${publications
     }) => `\\cventry{${releaseDate}}
         {${name}}
         {${publisher}}
-        {${showIf(!isEmptyString(url), `\\href{${url}}{${url}}`)}}
+        {${showIf(!isEmptyValue(url), `\\href{${url}}{${url}}`)}}
         {}
         {${summary}}`
   )
@@ -509,7 +504,7 @@ ${references
         {\\emaillink[${email}]{${email}}}
         {${phone}}
         {}
-        {${showIf(!isEmptyString(summary), summary)}}`
+        {${showIf(!isEmptyValue(summary), summary)}}`
   )
   .join('\n\n')}`
     }
@@ -543,15 +538,15 @@ ${content.projects
     }) => `\\cventry{${showIf(!isEmptyValue(startDate), dateRange)}}
         {${description}}
         {${name}}
-        {${showIf(!isEmptyString(url), `\\href{${url}}{${url}}`)}}
+        {${showIf(!isEmptyValue(url), `\\href{${url}}{${url}}`)}}
         {}
         {${showIf(
-          !isEmptyString(summary) || !isEmptyString(keywords),
+          !isEmptyValue(summary) || !isEmptyValue(keywords),
           `${joinNonEmptyString(
             [
               summary,
               showIf(
-                !isEmptyString(keywords),
+                !isEmptyValue(keywords),
                 `\\textbf{${Keywords}}${Colon}${keywords}`
               ),
             ],
@@ -605,9 +600,9 @@ ${content.volunteer
     }) => `\\cventry{${showIf(!isEmptyValue(startDate), dateRange)}}
         {${position}}
         {${organization}}
-        {${showIf(!isEmptyString(url), `\\href{${url}}{${url}}`)}}
+        {${showIf(!isEmptyValue(url), `\\href{${url}}{${url}}`)}}
         {}
-        {${showIf(!isEmptyString(summary), summary)}}
+        {${showIf(!isEmptyValue(summary), summary)}}
     `
   )
   .join('\n\n')}`

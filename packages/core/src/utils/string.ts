@@ -31,7 +31,7 @@ import { isEmptyValue } from './object'
  * @returns True if string is empty or only contains whitespace, false otherwise
  */
 export function isEmptyString(value: string) {
-  return value.trim().length === 0
+  return typeof value === 'string' && value.trim().length === 0
 }
 
 /**
