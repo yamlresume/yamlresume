@@ -24,3 +24,4 @@
 
 export * from './country'
 export * from './resume'
+export * from './types'

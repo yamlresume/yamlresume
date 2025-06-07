@@ -25,7 +25,7 @@
 import { get } from 'lodash-es'
 
 import { MarkdownParser, type Parser } from '@/compiler'
-import type { Resume } from '@/types'
+import type { Resume } from '@/models'
 import type { Renderer } from './base'
 import {
   ModerncvBankingRenderer,

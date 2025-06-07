@@ -23,10 +23,9 @@
  */
 
 export * from './compiler'
-export * from './data'
 export * from './errors'
+export * from './models'
 export * from './preprocess'
 export * from './renderer'
 export * from './translations'
-export * from './types'
 export * from './utils'

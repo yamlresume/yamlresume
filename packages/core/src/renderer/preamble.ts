@@ -22,8 +22,8 @@
  * IN THE SOFTWARE.
  */
 
+import type { Resume } from '@/models'
 import { getTemplateTranslations } from '@/translations'
-import type { Resume } from '@/types'
 import { joinNonEmptyString, showIf } from '@/utils'
 
 /**

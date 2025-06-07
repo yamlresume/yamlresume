@@ -22,7 +22,14 @@
  * IN THE SOFTWARE.
  */
 
-import type { Resume, ResumeContent, ResumeItem, ResumeLayout } from '@/types'
+import type {
+  LocaleLanguageOption,
+  Resume,
+  ResumeContent,
+  ResumeItem,
+  ResumeLayout,
+  TemplateOption,
+} from '@/models'
 
 /**
  * Defines all possible degrees.
@@ -36,11 +43,6 @@ export const DEGREE_OPTIONS = [
   'Master',
   'Doctor',
 ] as const
-
-/**
- * Type for all possible degrees.
- */
-export type Degree = (typeof DEGREE_OPTIONS)[number]
 
 /**
  * Defines common world languages.
@@ -127,8 +129,6 @@ export const LANGUAGE_OPTIONS = [
   'Zulu',
 ] as const
 
-export type Language = (typeof LANGUAGE_OPTIONS)[number]
-
 /**
  * Defines language fluency levels.
  *
@@ -142,7 +142,25 @@ export const LANGUAGE_FLUENCIE_OPTIONS = [
   'Native or Bilingual Proficiency',
 ] as const
 
-export type LanguageFluency = (typeof LANGUAGE_FLUENCIE_OPTIONS)[number]
+/**
+ * All valid top-level sections in the resume.
+ * */
+export const SECTION_IDS = [
+  'basics',
+  'location',
+  'profiles',
+  'work',
+  'education',
+  'volunteer',
+  'awards',
+  'certificates',
+  'publications',
+  'skills',
+  'languages',
+  'interests',
+  'references',
+  'projects',
+] as const
 
 /**
  * Defines skill proficiency levels.
@@ -158,7 +176,40 @@ export const SKILL_LEVEL_OPTIONS = [
   'Master',
 ] as const
 
-export type SkillLevel = (typeof SKILL_LEVEL_OPTIONS)[number]
+export const SOCIAL_NETWORK_OPTIONS = [
+  'Behance',
+  'Dribbble',
+  'Facebook',
+  'GitHub',
+  'Gitlab',
+  'Instagram',
+  'Line',
+  'LinkedIn',
+  'Medium',
+  'Pinterest',
+  'Reddit',
+  'Snapchat',
+  'Stack Overflow',
+  'Telegram',
+  'TikTok',
+  'Twitch',
+  'Twitter',
+  'Vimeo',
+  'Weibo',
+  'WeChat',
+  'WhatsApp',
+  'YouTube',
+  'Zhihu',
+] as const
+
+export const SOCIAL_NETWORK_GROUP_OPTIONS = [
+  'Chat',
+  'Design',
+  'Media',
+  'Social',
+  'Technical',
+  'WWW',
+] as const
 
 /** Defines identifiers for the available resume templates. */
 export const TEMPLATE_OPTIONS = [
@@ -166,8 +217,6 @@ export const TEMPLATE_OPTIONS = [
   'moderncv-casual',
   'moderncv-classic',
 ] as const
-
-export type TemplateOption = (typeof TEMPLATE_OPTIONS)[number]
 
 export function getTemplateOptionDetail(templateOption: TemplateOption) {
   const templateOptionName: Record<
@@ -248,7 +297,7 @@ export const resumeItems: ResumeItem = {
     region: '',
   },
   profile: {
-    network: '',
+    network: 'GitHub',
     url: '',
     username: '',
   },
@@ -299,8 +348,10 @@ export const resumeItems: ResumeItem = {
   },
 }
 
-/** Default content structure for a new resume, containing empty or minimal
- * sections. */
+/**
+ * Default content structure for a new resume, containing empty or minimal
+ * sections.
+ */
 export const defaultResumeContent: ResumeContent = {
   awards: [],
   basics: resumeItems.basics,
@@ -340,7 +391,8 @@ export const filledResumeContent: ResumeContent = {
   work: [resumeItems.work],
 }
 
-/** Available font size options for resume layout.
+/**
+ * Available font size options for resume layout.
  *
  * LaTeX only supports these values.
  */
@@ -360,7 +412,8 @@ export const marginOptions = [
   defaultTopBottomMargin,
 ]
 
-/** Defines supported languages for UI display and template translation.
+/**
+ * Defines supported languages for UI display and template translation.
  *
  * @see {@link https://en.wikipedia.org/wiki/IETF_language_tag}
  */
@@ -371,9 +424,6 @@ export const LOCALE_LANGUAGE_OPTIONS = [
   'zh-hant-tw',
   'es',
 ] as const
-
-/** Type for all possible locale languages. */
-export type LocaleLanguageOption = (typeof LOCALE_LANGUAGE_OPTIONS)[number]
 
 /**
  * Get the language code and name of the given locale language.

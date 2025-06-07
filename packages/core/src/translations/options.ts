@@ -29,17 +29,18 @@ import type {
   Degree,
   Language,
   LanguageFluency,
+  LocaleLanguageOption,
+  SectionID,
   SkillLevel,
-} from '@/data'
+} from '@/models'
+
 import {
   EnglishCountryNames,
-  type LocaleLanguageOption,
   SimplifiedChineseCountryNames,
   SpanishCountryNames,
   TraditionalChineseCountryHKNames,
   TraditionalChineseCountryTWNames,
-} from '@/data'
-import type { SectionID } from '@/types'
+} from '@/models'
 
 /** Defines the structure for translated terms for a single language. */
 type OptionTranslation = {

@@ -23,9 +23,9 @@
  */
 
 import type { Parser } from '@/compiler'
+import type { Resume } from '@/models'
 import { transformResume } from '@/preprocess'
 import { getTemplateTranslations } from '@/translations'
-import type { Resume } from '@/types'
 import { isEmptyValue, joinNonEmptyString, showIf } from '@/utils'
 import { Renderer } from './base'
 import {

@@ -29,16 +29,14 @@ import { LatexCodeGenerator, MarkdownParser } from '@/compiler'
 import {
   LOCALE_LANGUAGE_OPTIONS,
   type LocaleLanguageOption,
-  defaultResume,
-  filledResume,
-} from '@/data'
-import { getOptionTranslation, getTemplateTranslations } from '@/translations'
-import {
   type ProfileItem,
   type ResumeLayout,
   SECTION_IDS,
   type SocialNetwork,
-} from '@/types'
+  defaultResume,
+  filledResume,
+} from '@/models'
+import { getOptionTranslation, getTemplateTranslations } from '@/translations'
 import { isEmptyValue } from '@/utils'
 import {
   replaceBlankLinesWithPercent,
@@ -701,21 +699,9 @@ describe(transformProfileUrls, () => {
       expected: string
     }[] = [
       {
-        network: '',
-        url: '',
-        username: '',
-        expected: '',
-      },
-      {
         network: 'GitHub',
         url: '',
         username: '',
-        expected: '',
-      },
-      {
-        network: '',
-        url: '',
-        username: 'yamlresume',
         expected: '',
       },
       {

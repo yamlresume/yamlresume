@@ -24,7 +24,7 @@
 
 import { describe, expect, it } from 'vitest'
 
-import type { LocaleLanguageOption } from '@/data'
+import type { LocaleLanguageOption } from '@/models'
 import { getTemplateTranslations } from './template'
 
 describe(getTemplateTranslations, () => {

@@ -25,9 +25,14 @@
 import { capitalize, cloneDeep, isArray, merge } from 'lodash-es'
 
 import { LatexCodeGenerator, type Parser } from '@/compiler'
-import { defaultResumeLayout } from '@/data'
+import {
+  type ProfileItem,
+  type Resume,
+  type ResumeContent,
+  type SectionID,
+  defaultResumeLayout,
+} from '@/models'
 import { getOptionTranslation, getTemplateTranslations } from '@/translations'
-import type { ProfileItem, Resume, ResumeContent, SectionID } from '@/types'
 import {
   escapeLatex,
   getDateRange,
@@ -64,12 +69,16 @@ export function replaceBlankLinesWithPercent(content: string): string {
 export function transformSectionsWithDefaultValues(resume: Resume): Resume {
   const emptyResumeContent: ResumeContent = {
     awards: [],
-    basics: {},
+    basics: {
+      name: '',
+    },
     certificates: [],
     education: [],
     interests: [],
     languages: [],
-    location: {},
+    location: {
+      city: '',
+    },
     profiles: [],
     projects: [],
     publications: [],

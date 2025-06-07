@@ -24,8 +24,8 @@
 
 import { describe, expect, it } from 'vitest'
 
-import { type TemplateOption, defaultResume } from '@/data'
-import type { Resume } from '@/types'
+import { defaultResume } from '@/models'
+import type { Resume, TemplateOption } from '@/models'
 import {
   ModerncvBankingRenderer,
   ModerncvCasualRenderer,

@@ -29,7 +29,7 @@ import { cloneDeep } from 'lodash-es'
 import { beforeEach, describe, expect, it } from 'vitest'
 
 import { MarkdownParser } from '@/compiler'
-import { type Resume, SECTION_IDS } from '@/types'
+import { type Resume, SECTION_IDS } from '@/models'
 import { collectAllKeys, removeKeysFromObject } from '@/utils'
 import {
   ModerncvBankingRenderer,

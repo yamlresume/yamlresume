@@ -23,94 +23,90 @@
  */
 
 import type {
-  Country,
-  Degree,
-  Language,
-  LanguageFluency,
-  LocaleLanguageOption,
-  SkillLevel,
-  TemplateOption,
-} from '@/data'
+  COUNTRY_OPTIONS,
+  DEGREE_OPTIONS,
+  LANGUAGE_FLUENCIE_OPTIONS,
+  LANGUAGE_OPTIONS,
+  LOCALE_LANGUAGE_OPTIONS,
+  SECTION_IDS,
+  SKILL_LEVEL_OPTIONS,
+  SOCIAL_NETWORK_GROUP_OPTIONS,
+  SOCIAL_NETWORK_OPTIONS,
+  TEMPLATE_OPTIONS,
+} from '@/models'
 
 /**
- * All valid top-level sections in the resume.
- * */
-export const SECTION_IDS = [
-  'basics',
-  'location',
-  'profiles',
-  'work',
-  'education',
-  'volunteer',
-  'awards',
-  'certificates',
-  'publications',
-  'skills',
-  'languages',
-  'interests',
-  'references',
-  'projects',
-] as const
+ * Type for all possible countries and regions in the world.
+ */
+export type Country = (typeof COUNTRY_OPTIONS)[number]
 
+/**
+ * Type for all possible degrees.
+ */
+export type Degree = (typeof DEGREE_OPTIONS)[number]
+
+/**
+ * Type for keywords.
+ */
+type Keywords = string[]
+
+/**
+ * Type for all supported languages.
+ */
+export type Language = (typeof LANGUAGE_OPTIONS)[number]
+
+/**
+ * Type for language fluency levels.
+ */
+export type LanguageFluency = (typeof LANGUAGE_FLUENCIE_OPTIONS)[number]
+
+/**
+ * Type for all possible section IDs.
+ */
 export type SectionID = (typeof SECTION_IDS)[number]
 
-/** Categorizes social networks for potential grouping or display purposes. */
-export type SocialNetworkGroup =
-  | 'Chat'
-  | 'Design'
-  | 'Media'
-  | 'Social'
-  | 'Technical'
-  | 'WWW'
-
-/** Defines supported social media and professional network identifiers.
- *
- * TODO: should we move this to TypeScript enum?
+/**
+ * Type for skill proficiency levels.
  */
-export type SocialNetwork =
-  | 'Behance'
-  | 'Dribbble'
-  | 'Facebook'
-  | 'GitHub'
-  | 'Gitlab'
-  | 'Instagram'
-  | 'Line'
-  | 'LinkedIn'
-  | 'Medium'
-  | 'Pinterest'
-  | 'Reddit'
-  | 'Snapchat'
-  | 'Stack Overflow'
-  | 'Telegram'
-  | 'TikTok'
-  | 'Twitch'
-  | 'Twitter'
-  | 'Vimeo'
-  | 'Weibo'
-  | 'WeChat'
-  | 'WhatsApp'
-  | 'YouTube'
-  | 'Zhihu'
-  | ''
+export type SkillLevel = (typeof SKILL_LEVEL_OPTIONS)[number]
 
-type KeywordsType = string[]
+/**
+ * Type for template options.
+ */
+export type TemplateOption = (typeof TEMPLATE_OPTIONS)[number]
+
+/**
+ * Type for all possible locale languages.
+ */
+export type LocaleLanguageOption = (typeof LOCALE_LANGUAGE_OPTIONS)[number]
+
+/**
+ * Categorizes social networks for potential grouping or display purposes. */
+export type SocialNetworkGroup = (typeof SOCIAL_NETWORK_GROUP_OPTIONS)[number]
+
+/**
+ * Defines supported social media and professional network identifiers.
+ */
+export type SocialNetwork = (typeof SOCIAL_NETWORK_OPTIONS)[number]
 
 /** Represents a single award item. */
 type AwardItem = {
   /** The organization or entity that gave the award. */
-  awarder?: string
+  awarder: string
+  /** The name or title of the award. */
+  title: string
+
   /** The date the award was received (e.g., "2020", "Oct 2020"). */
   date?: string
   /** A short description or details about the award (supports rich text). */
   summary?: string
-  /** The name or title of the award. */
-  title?: string
+
   /** Computed values derived during transformation. */
   computed?: {
     /** Transformed date string. */
-    date?: string
+    date: string
     /** Transformed summary string (e.g., LaTeX code). */
-    summary?: string
+    summary: string
   }
 }
 
@@ -122,47 +118,51 @@ export type Awards = {
 
 /** Represents the basic personal information. */
 type BasicsItem = {
+  /** Full name. */
+  name: string
+
   /** Email address. */
   email?: string
   /** A brief professional headline or title (e.g., "Software Engineer"). */
   headline?: string
-  /** Full name. */
-  name?: string
   /** Phone number. */
   phone?: string
   /** A professional summary or objective statement (supports rich text). */
   summary?: string
   /** Personal website or portfolio URL. */
   url?: string
+
   /** Computed values derived during transformation. */
   computed?: {
     /** Transformed summary string (e.g., LaTeX code). */
-    summary?: string
+    summary: string
     /** Transformed URL string (e.g., LaTeX href command). */
-    url?: string
+    url: string
   }
 }
 
 /** Represents the 'basics' section of the resume content. */
 export type Basics = {
   /** The basic personal information item. */
-  basics?: BasicsItem
+  basics: BasicsItem
 }
 
 /** Represents a single certification item. */
 type CertificateItem = {
+  /** The organization that issued the certificate. */
+  issuer: string
+  /** The name of the certificate. */
+  name: string
+
   /** The date the certificate was obtained (e.g., "2021", "Nov 2021"). */
   date?: string
-  /** The organization that issued the certificate. */
-  issuer?: string
-  /** The name of the certificate. */
-  name?: string
   /** URL related to the certificate (e.g., verification link). */
   url?: string
+
   /** Computed values derived during transformation. */
   computed?: {
     /** Transformed date string. */
-    date?: string
+    date: string
   }
 }
 
@@ -175,57 +175,60 @@ export type Certificates = {
 /** Represents a single education history item. */
 type EducationItem = {
   /** Field of study (e.g., "Computer Science"). */
-  area?: string
+  area: string
+  /** Name of the institution. */
+  institution: string
+  /** Start date of study (e.g., "2016", "Sep 2016"). */
+  startDate: string
+  /** The type of degree obtained. */
+  degree: Degree
+
   /** List of courses taken (can be string array or pre-joined string). */
-  courses?: string[] | string
+  courses?: string[]
   /** End date of study (e.g., "2020", "May 2020"). Empty implies "Present". */
   endDate?: string
   /** Description of accomplishments or details (supports rich text). */
   summary?: string
-  /** Name of the institution. */
-  institution?: string
   /** GPA or academic score. */
   score?: string
-  /** Start date of study (e.g., "2016", "Sep 2016"). */
-  startDate?: string
-  /** The type of degree obtained. */
-  // TODO: rename degree to degree
-  degree?: Degree
   /** URL related to the institution or degree. */
   url?: string
+
   /** Computed values derived during transformation. */
   computed?: {
     /** Transformed courses string (e.g., comma-separated). */
-    courses?: string
+    courses: string
     /** Combined string of degree, area, and score. */
-    degreeAreaAndScore?: string
+    degreeAreaAndScore: string
     /** Combined string representing the date range. */
-    dateRange?: string
+    dateRange: string
     /** Transformed start date string. */
-    startDate?: string
+    startDate: string
     /** Transformed end date string (or "Present"). */
-    endDate?: string
+    endDate: string
     /** Transformed summary string (e.g., LaTeX code). */
-    summary?: string
+    summary: string
   }
 }
 
 /** Represents the 'education' section of the resume content. */
 export type Education = {
   /** An array of education history items. */
-  education?: EducationItem[]
+  education: EducationItem[]
 }
 
 /** Represents a single interest item. */
 type InterestItem = {
-  /** Keywords related to the interest. */
-  keywords?: KeywordsType
   /** Name of the interest category (e.g., "Reading", "Photography"). */
-  name?: string
+  name: string
+
+  /** Keywords related to the interest. */
+  keywords?: Keywords
+
   /** Computed values derived during transformation. */
   computed?: {
     /** Transformed keywords string (e.g., comma-separated). */
-    keywords?: string
+    keywords: string
   }
 }
 
@@ -237,20 +240,22 @@ export type Interests = {
 
 /** Represents a single language proficiency item. */
 export type LanguageItem = {
-  /** The language spoken. */
-  language?: Language
-  /** The level of proficiency in the language. */
-  fluency?: LanguageFluency
+  /** The level of proficiency of the language. */
+  fluency: LanguageFluency
+  /** The language. */
+  language: Language
+
   /** Specific keywords related to language skills (e.g., "Translation"). */
-  keywords?: KeywordsType
+  keywords?: Keywords
+
   /** Computed values derived during transformation. */
   computed?: {
     /** Translated fluency level string. */
-    fluency?: string
+    fluency: string
     /** Translated language name string. */
-    language?: string
+    language: string
     /** Transformed keywords string. */
-    keywords?: string
+    keywords: string
   }
 }
 
@@ -262,24 +267,26 @@ export type Languages = {
 
 /** Represents the location information. */
 type LocationItem = {
+  /** City name. */
+  city: string
+
   /** Street address. */
   address?: string
-  /** City name. */
-  city?: string
   /** Country code or name. */
   country?: Country
   /** Postal or ZIP code. */
   postalCode?: string
   /** State, province, or region. */
   region?: string
+
   /** Computed values derived during transformation. */
   computed?: {
     /** Combined string of postal code and address. */
-    postalCodeAndAddress?: string
+    postalCodeAndAddress: string
     /** Combined string of region and country. */
-    regionAndCountry?: string
+    regionAndCountry: string
     /** Fully formatted address string based on locale. */
-    fullAddress?: string
+    fullAddress: string
   }
 }
 
@@ -292,15 +299,17 @@ export type Location = {
 /** Represents a single online profile item (e.g., GitHub, LinkedIn). */
 export type ProfileItem = {
   /** The name of the social network or platform. */
-  network?: SocialNetwork
+  network: SocialNetwork
+  /** The username on the platform. */
+  username: string
+
   /** The URL of the profile. */
   url?: string
-  /** The username on the platform. */
-  username?: string
+
   /** Computed values derived during transformation. */
   computed?: {
     /** Transformed URL string (e.g., LaTeX href with icon). */
-    url?: string
+    url: string
   }
 }
 
@@ -312,32 +321,34 @@ export type Profiles = {
 
 /** Represents a single project item. */
 type ProjectItem = {
+  /** Name of the project. */
+  name: string
+  /** Start date of the project (e.g., "2021", "Jan 2021"). */
+  startDate: string
+
   /** Description of the project. */
   description?: string
   /** End date of the project (e.g., "2022", "Jul 2022"). */
   endDate?: string
   /** Keywords or technologies used in the project. */
-  keywords?: KeywordsType
-  /** Name of the project. */
-  name?: string
-  /** Start date of the project (e.g., "2021", "Jan 2021"). */
-  startDate?: string
+  keywords?: Keywords
   /** Detailed accomplishments for the project (supports rich text). */
   summary?: string
   /** URL related to the project (e.g., repository, live demo). */
   url?: string
   /** Computed values derived during transformation. */
+
   computed?: {
     /** Transformed keywords string. */
-    keywords?: string
+    keywords: string
     /** Combined string representing the date range. */
-    dateRange?: string
+    dateRange: string
     /** Transformed start date string. */
-    startDate?: string
+    startDate: string
     /** Transformed end date string (or "Present"). */
-    endDate?: string
+    endDate: string
     /** Transformed summary string (e.g., LaTeX code). */
-    summary?: string
+    summary: string
   }
 }
 
@@ -350,21 +361,23 @@ export type Projects = {
 /** Represents a single publication item. */
 type PublicationItem = {
   /** Name or title of the publication. */
-  name?: string
+  name: string
   /** Publisher of the work. */
-  publisher?: string
+  publisher: string
+
   /** Date of publication (e.g., "2023", "Mar 2023"). */
   releaseDate?: string
-  /** URL related to the publication (e.g., DOI, link). */
-  url?: string
   /** Summary or abstract of the publication (supports rich text). */
   summary?: string
+  /** URL related to the publication (e.g., DOI, link). */
+  url?: string
+
   /** Computed values derived during transformation. */
   computed?: {
     /** Transformed release date string. */
-    releaseDate?: string
+    releaseDate: string
     /** Transformed summary string (e.g., LaTeX code). */
-    summary?: string
+    summary: string
   }
 }
 
@@ -376,20 +389,22 @@ export type Publications = {
 
 /** Represents a single reference item. */
 type ReferenceItem = {
+  /** Name of the reference. */
+  name: string
+  /** A brief note about the reference (supports rich text). */
+  summary: string
+
   /** Email address of the reference. */
   email?: string
-  /** Name of the reference. */
-  name?: string
   /** Phone number of the reference. */
   phone?: string
   /** Relationship to the reference (e.g., "Former Manager"). */
   relationship?: string
-  /** A brief note about the reference (supports rich text). */
-  summary?: string
+
   /** Computed values derived during transformation. */
   computed?: {
     /** Transformed summary string (e.g., LaTeX code). */
-    summary?: string
+    summary: string
   }
 }
 
@@ -401,18 +416,20 @@ export type References = {
 
 /** Represents a single skill item. */
 type SkillItem = {
-  /** Specific keywords or technologies related to the skill. */
-  keywords?: KeywordsType
   /** Proficiency level in the skill. */
-  level?: SkillLevel
+  level: SkillLevel
   /** Name of the skill. */
-  name?: string
+  name: string
+  /** Specific keywords or technologies related to the skill. */
+
+  keywords?: Keywords
+
   /** Computed values derived during transformation. */
   computed?: {
     /** Translated skill level string. */
-    level?: string
+    level: string
     /** Transformed keywords string. */
-    keywords?: string
+    keywords: string
   }
 }
 
@@ -424,28 +441,30 @@ export type Skills = {
 
 /** Represents a single volunteer experience item. */
 type VolunteerItem = {
+  /** Name of the organization. */
+  organization: string
+  /** Role or position held. */
+  position: string
+  /** Start date of the volunteer work (e.g., "2019", "Jun 2019"). */
+  startDate: string
+  /** Summary of responsibilities or achievements (supports rich text). */
+  summary: string
+
   /** End date of the volunteer work (e.g., "2020", "Dec 2020"). */
   endDate?: string
-  /** Name of the organization. */
-  organization?: string
-  /** Role or position held. */
-  position?: string
-  /** Start date of the volunteer work (e.g., "2019", "Jun 2019"). */
-  startDate?: string
-  /** Summary of responsibilities or achievements (supports rich text). */
-  summary?: string
   /** URL related to the organization or work. */
   url?: string
+
   /** Computed values derived during transformation. */
   computed?: {
     /** Combined string representing the date range. */
-    dateRange?: string
+    dateRange: string
     /** Transformed start date string. */
-    startDate?: string
+    startDate: string
     /** Transformed end date string (or "Present"). */
-    endDate?: string
+    endDate: string
     /** Transformed summary string (e.g., LaTeX code). */
-    summary?: string
+    summary: string
   }
 }
 
@@ -458,31 +477,33 @@ export type Volunteer = {
 /** Represents a single work experience item. */
 type WorkItem = {
   /** Name of the company or employer. */
-  name?: string
+  name: string
+  /** Job title or position held. */
+  position: string
+  /** Start date of employment (e.g., "2021", "Apr 2021"). */
+  startDate: string
+  /** Summary of responsibilities and accomplishments (supports rich text). */
+  summary: string
+
   /** End date of employment (e.g., "2023", "Aug 2023"). */
   endDate?: string
-  /** Job title or position held. */
-  position?: string
-  /** Start date of employment (e.g., "2021", "Apr 2021"). */
-  startDate?: string
   /** Keywords related to the role or technologies used. */
-  keywords?: KeywordsType
-  /** Summary of responsibilities and accomplishments (supports rich text). */
-  summary?: string
+  keywords?: Keywords
   /** URL related to the company or work. */
   url?: string
+
   /** Computed values derived during transformation. */
   computed?: {
     /** Transformed keywords string. */
-    keywords?: string
+    keywords: string
     /** Combined string representing the date range. */
-    dateRange?: string
+    dateRange: string
     /** Transformed start date string. */
-    startDate?: string
+    startDate: string
     /** Transformed end date string (or "Present"). */
-    endDate?: string
+    endDate: string
     /** Transformed summary string (e.g., LaTeX code). */
-    summary?: string
+    summary: string
   }
 }
 
@@ -509,8 +530,10 @@ export type SectionDefaultValues =
   | Volunteer
   | Work
 
-/** Type defining the structure for a single default item within each resume
- * section. */
+/**
+ * Type defining the structure for a single default item within each resume
+ * section.
+ */
 export type ResumeItem = {
   award: AwardItem
   basics: BasicsItem
@@ -528,37 +551,40 @@ export type ResumeItem = {
   work: WorkItem
 }
 
-/** Defines the structure for the entire resume content, including all sections
- * and computed values. */
+/**
+ * Defines the structure for the entire resume content.
+ *
+ * @remarks - only `basics` and `education` sections are strictly required.
+ */
 export type ResumeContent = {
   /** Array of award items. */
-  awards: AwardItem[]
+  awards?: AwardItem[]
   /** Basic personal information. */
   basics: BasicsItem
-  /** Array of certificate items. */
-  certificates: CertificateItem[]
-  /** Array of education history items. */
+  /** List of certificate items. */
+  certificates?: CertificateItem[]
+  /** List of education history items. */
   education: EducationItem[]
-  /** Array of interest items. */
-  interests: InterestItem[]
-  /** Array of language proficiency items. */
-  languages: LanguageItem[]
+  /** List of interest items. */
+  interests?: InterestItem[]
+  /** List of language proficiency items. */
+  languages?: LanguageItem[]
   /** Location information. */
-  location: LocationItem
-  /** Array of project items. */
-  projects: ProjectItem[]
-  /** Array of online profile items. */
-  profiles: ProfileItem[]
-  /** Array of publication items. */
-  publications: PublicationItem[]
-  /** Array of reference items. */
-  references: ReferenceItem[]
-  /** Array of skill items. */
-  skills: SkillItem[]
-  /** Array of volunteer experience items. */
-  volunteer: VolunteerItem[]
-  /** Array of work experience items. */
-  work: WorkItem[]
+  location?: LocationItem
+  /** List of project items. */
+  projects?: ProjectItem[]
+  /** List of online profile items. */
+  profiles?: ProfileItem[]
+  /** List of publication items. */
+  publications?: PublicationItem[]
+  /** List of reference items. */
+  references?: ReferenceItem[]
+  /** List of skill items. */
+  skills?: SkillItem[]
+  /** List of volunteer experience items. */
+  volunteer?: VolunteerItem[]
+  /** List of work experience items. */
+  work?: WorkItem[]
   /* Computed values derived during transformation, applicable to the entire
    * content. */
   computed?: {

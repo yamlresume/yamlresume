@@ -24,8 +24,8 @@
 
 import { describe, expect, it } from 'vitest'
 
-import { defaultResume } from '@/data'
-import type { Resume } from '@/types'
+import { defaultResume } from '@/models'
+import type { Resume } from '@/models'
 import {
   MODERNCV_STYLE_OPTIONS,
   normalizeUnit,

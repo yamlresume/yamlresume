@@ -22,4 +22,4 @@
  * IN THE SOFTWARE.
  */
 
-export * from './resume'
+export * from './content'

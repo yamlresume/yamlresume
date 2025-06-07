@@ -25,12 +25,12 @@
 import { describe, expect, it } from 'vitest'
 import {
   LOCALE_LANGUAGE_OPTIONS,
-  type LocaleLanguageOption,
   TEMPLATE_OPTIONS,
-  type TemplateOption,
   getLocaleLanguageOptionDetail,
   getTemplateOptionDetail,
 } from './resume'
+
+import type { LocaleLanguageOption, TemplateOption } from '@/models'
 
 describe(getLocaleLanguageOptionDetail, () => {
   it('should return the language code and name', () => {

@@ -22,10 +22,12 @@
  * IN THE SOFTWARE.
  */
 
+import type { Country } from '@/models'
+
 /**
  * All possible countries and regions in the world.
  */
-const COUNTRY_OPTIONS = [
+export const COUNTRY_OPTIONS = [
   'Afghanistan',
   'Aland Islands',
   'Albania',
@@ -277,11 +279,6 @@ const COUNTRY_OPTIONS = [
   'Zambia',
   'Zimbabwe',
 ] as const
-
-/**
- * Type for all possible countries and regions in the world.
- */
-export type Country = (typeof COUNTRY_OPTIONS)[number]
 
 /**
  * Represents all possible countries & regions with their corresponding English

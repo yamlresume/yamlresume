@@ -24,7 +24,7 @@
 
 import { describe, expect, it, vi } from 'vitest'
 
-import type { LocaleLanguageOption } from '@/data'
+import type { LocaleLanguageOption } from '@/models'
 import {
   epochSecondsToLocaleDateString,
   getDateRange,

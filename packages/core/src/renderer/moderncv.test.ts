@@ -26,8 +26,7 @@ import { cloneDeep } from 'lodash-es'
 import { beforeEach, describe, expect, it } from 'vitest'
 
 import { MarkdownParser } from '@/compiler'
-import { filledResume } from '@/data'
-import type { Resume } from '@/types'
+import { type Resume, filledResume } from '@/models'
 import {
   ModerncvBankingRenderer,
   ModerncvBase,
