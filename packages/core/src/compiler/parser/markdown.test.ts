@@ -24,7 +24,6 @@
 
 import { beforeEach, describe, expect, it } from 'vitest'
 
-import { MarkType, NodeType } from '@/compiler/ast'
 import { MarkdownParser } from './markdown'
 
 describe(MarkdownParser, () => {
@@ -38,20 +37,20 @@ describe(MarkdownParser, () => {
     it('should parse empty document', () => {
       const input = ''
       const result = parser.parse(input)
-      expect(result).toEqual({ type: NodeType.doc, content: [] })
+      expect(result).toEqual({ type: 'doc', content: [] })
     })
 
     it('should ignore unknown marks in markdown', () => {
       const input = 'This is a `inline code` mark'
       const result = parser.parse(input)
       expect(result).toEqual({
-        type: NodeType.doc,
+        type: 'doc',
         content: [
           {
-            type: NodeType.paragraph,
+            type: 'paragraph',
             content: [
-              { type: NodeType.text, text: 'This is a ' },
-              { type: NodeType.text, text: ' mark' },
+              { type: 'text', text: 'This is a ' },
+              { type: 'text', text: ' mark' },
             ],
           },
         ],
@@ -62,11 +61,11 @@ describe(MarkdownParser, () => {
       const input = 'This is\na paragraph.'
       const result = parser.parse(input)
       expect(result).toEqual({
-        type: NodeType.doc,
+        type: 'doc',
         content: [
           {
-            type: NodeType.paragraph,
-            content: [{ type: NodeType.text, text: 'This is\na paragraph.' }],
+            type: 'paragraph',
+            content: [{ type: 'text', text: 'This is\na paragraph.' }],
           },
         ],
       })
@@ -76,17 +75,15 @@ describe(MarkdownParser, () => {
       const input = 'This is a paragraph.\n\nThis is another paragraph.'
       const result = parser.parse(input)
       expect(result).toEqual({
-        type: NodeType.doc,
+        type: 'doc',
         content: [
           {
-            type: NodeType.paragraph,
-            content: [{ type: NodeType.text, text: 'This is a paragraph.' }],
+            type: 'paragraph',
+            content: [{ type: 'text', text: 'This is a paragraph.' }],
           },
           {
-            type: NodeType.paragraph,
-            content: [
-              { type: NodeType.text, text: 'This is another paragraph.' },
-            ],
+            type: 'paragraph',
+            content: [{ type: 'text', text: 'This is another paragraph.' }],
           },
         ],
       })
@@ -98,11 +95,11 @@ describe(MarkdownParser, () => {
       const input = 'This is raw text'
       const result = parser.parse(input)
       expect(result).toEqual({
-        type: NodeType.doc,
+        type: 'doc',
         content: [
           {
-            type: NodeType.paragraph,
-            content: [{ type: NodeType.text, text: 'This is raw text' }],
+            type: 'paragraph',
+            content: [{ type: 'text', text: 'This is raw text' }],
           },
         ],
       })
@@ -116,18 +113,18 @@ describe(MarkdownParser, () => {
       tests.forEach((test) => {
         const result = parser.parse(test)
         expect(result).toEqual({
-          type: NodeType.doc,
+          type: 'doc',
           content: [
             {
-              type: NodeType.paragraph,
+              type: 'paragraph',
               content: [
-                { type: NodeType.text, text: 'This is ' },
+                { type: 'text', text: 'This is ' },
                 {
-                  type: NodeType.text,
+                  type: 'text',
                   text: 'bold',
-                  marks: [{ type: MarkType.bold }],
+                  marks: [{ type: 'bold' }],
                 },
-                { type: NodeType.text, text: ' text' },
+                { type: 'text', text: ' text' },
               ],
             },
           ],
@@ -141,18 +138,18 @@ describe(MarkdownParser, () => {
       tests.forEach((test) => {
         const result = parser.parse(test)
         expect(result).toEqual({
-          type: NodeType.doc,
+          type: 'doc',
           content: [
             {
-              type: NodeType.paragraph,
+              type: 'paragraph',
               content: [
-                { type: NodeType.text, text: 'This is ' },
+                { type: 'text', text: 'This is ' },
                 {
-                  type: NodeType.text,
+                  type: 'text',
                   text: 'italic',
-                  marks: [{ type: MarkType.italic }],
+                  marks: [{ type: 'italic' }],
                 },
-                { type: NodeType.text, text: ' text' },
+                { type: 'text', text: ' text' },
               ],
             },
           ],
@@ -164,24 +161,24 @@ describe(MarkdownParser, () => {
       const input = 'This is **bold** and _italic_ text'
       const result = parser.parse(input)
       expect(result).toEqual({
-        type: NodeType.doc,
+        type: 'doc',
         content: [
           {
-            type: NodeType.paragraph,
+            type: 'paragraph',
             content: [
-              { type: NodeType.text, text: 'This is ' },
+              { type: 'text', text: 'This is ' },
               {
-                type: NodeType.text,
+                type: 'text',
                 text: 'bold',
-                marks: [{ type: MarkType.bold }],
+                marks: [{ type: 'bold' }],
               },
-              { type: NodeType.text, text: ' and ' },
+              { type: 'text', text: ' and ' },
               {
-                type: NodeType.text,
+                type: 'text',
                 text: 'italic',
-                marks: [{ type: MarkType.italic }],
+                marks: [{ type: 'italic' }],
               },
-              { type: NodeType.text, text: ' text' },
+              { type: 'text', text: ' text' },
             ],
           },
         ],
@@ -192,32 +189,32 @@ describe(MarkdownParser, () => {
       const input = 'That **is** **bold _italic_** text'
       const result = parser.parse(input)
       expect(result).toEqual({
-        type: NodeType.doc,
+        type: 'doc',
         content: [
           {
-            type: NodeType.paragraph,
+            type: 'paragraph',
             content: [
-              { type: NodeType.text, text: 'That ' },
+              { type: 'text', text: 'That ' },
               {
-                type: NodeType.text,
+                type: 'text',
                 text: 'is',
-                marks: [{ type: MarkType.bold }],
+                marks: [{ type: 'bold' }],
               },
               {
-                type: NodeType.text,
+                type: 'text',
                 text: ' ',
               },
               {
-                type: NodeType.text,
+                type: 'text',
                 text: 'bold ',
-                marks: [{ type: MarkType.bold }],
+                marks: [{ type: 'bold' }],
               },
               {
-                type: NodeType.text,
+                type: 'text',
                 text: 'italic',
-                marks: [{ type: MarkType.bold }, { type: MarkType.italic }],
+                marks: [{ type: 'bold' }, { type: 'italic' }],
               },
-              { type: NodeType.text, text: ' text' },
+              { type: 'text', text: ' text' },
             ],
           },
         ],
@@ -230,17 +227,17 @@ describe(MarkdownParser, () => {
       const input = '[This is a link](https://example.com)'
       const result = parser.parse(input)
       expect(result).toEqual({
-        type: NodeType.doc,
+        type: 'doc',
         content: [
           {
-            type: NodeType.paragraph,
+            type: 'paragraph',
             content: [
               {
-                type: NodeType.text,
+                type: 'text',
                 text: 'This is a link',
                 marks: [
                   {
-                    type: MarkType.link,
+                    type: 'link',
                     attrs: {
                       href: 'https://example.com',
                       class: null,
@@ -259,18 +256,18 @@ describe(MarkdownParser, () => {
       const input = 'This is a [link](https://example.com)'
       const result = parser.parse(input)
       expect(result).toEqual({
-        type: NodeType.doc,
+        type: 'doc',
         content: [
           {
-            type: NodeType.paragraph,
+            type: 'paragraph',
             content: [
-              { type: NodeType.text, text: 'This is a ' },
+              { type: 'text', text: 'This is a ' },
               {
-                type: NodeType.text,
+                type: 'text',
                 text: 'link',
                 marks: [
                   {
-                    type: MarkType.link,
+                    type: 'link',
                     attrs: {
                       href: 'https://example.com',
                       class: null,
@@ -289,18 +286,18 @@ describe(MarkdownParser, () => {
       const input = 'This is a [**bold** link](https://example.com)'
       const result = parser.parse(input)
       expect(result).toEqual({
-        type: NodeType.doc,
+        type: 'doc',
         content: [
           {
-            type: NodeType.paragraph,
+            type: 'paragraph',
             content: [
-              { type: NodeType.text, text: 'This is a ' },
+              { type: 'text', text: 'This is a ' },
               {
-                type: NodeType.text,
+                type: 'text',
                 text: 'bold',
                 marks: [
                   {
-                    type: MarkType.link,
+                    type: 'link',
                     attrs: {
                       href: 'https://example.com',
                       class: null,
@@ -308,16 +305,16 @@ describe(MarkdownParser, () => {
                     },
                   },
                   {
-                    type: MarkType.bold,
+                    type: 'bold',
                   },
                 ],
               },
               {
-                type: NodeType.text,
+                type: 'text',
                 text: ' link',
                 marks: [
                   {
-                    type: MarkType.link,
+                    type: 'link',
                     attrs: {
                       href: 'https://example.com',
                       class: null,
@@ -338,35 +335,35 @@ describe(MarkdownParser, () => {
       const input = '- Item 1\n- Item 2\n- Item 3'
       const result = parser.parse(input)
       expect(result).toEqual({
-        type: NodeType.doc,
+        type: 'doc',
         content: [
           {
-            type: NodeType.bulletList,
+            type: 'bulletList',
             content: [
               {
-                type: NodeType.listItem,
+                type: 'listItem',
                 content: [
                   {
-                    type: NodeType.paragraph,
-                    content: [{ type: NodeType.text, text: 'Item 1' }],
+                    type: 'paragraph',
+                    content: [{ type: 'text', text: 'Item 1' }],
                   },
                 ],
               },
               {
-                type: NodeType.listItem,
+                type: 'listItem',
                 content: [
                   {
-                    type: NodeType.paragraph,
-                    content: [{ type: NodeType.text, text: 'Item 2' }],
+                    type: 'paragraph',
+                    content: [{ type: 'text', text: 'Item 2' }],
                   },
                 ],
               },
               {
-                type: NodeType.listItem,
+                type: 'listItem',
                 content: [
                   {
-                    type: NodeType.paragraph,
-                    content: [{ type: NodeType.text, text: 'Item 3' }],
+                    type: 'paragraph',
+                    content: [{ type: 'text', text: 'Item 3' }],
                   },
                 ],
               },
@@ -380,35 +377,35 @@ describe(MarkdownParser, () => {
       const input = '1. Item 1\n2. Item 2\n3. Item 3'
       const result = parser.parse(input)
       expect(result).toEqual({
-        type: NodeType.doc,
+        type: 'doc',
         content: [
           {
-            type: NodeType.orderedList,
+            type: 'orderedList',
             content: [
               {
-                type: NodeType.listItem,
+                type: 'listItem',
                 content: [
                   {
-                    type: NodeType.paragraph,
-                    content: [{ type: NodeType.text, text: 'Item 1' }],
+                    type: 'paragraph',
+                    content: [{ type: 'text', text: 'Item 1' }],
                   },
                 ],
               },
               {
-                type: NodeType.listItem,
+                type: 'listItem',
                 content: [
                   {
-                    type: NodeType.paragraph,
-                    content: [{ type: NodeType.text, text: 'Item 2' }],
+                    type: 'paragraph',
+                    content: [{ type: 'text', text: 'Item 2' }],
                   },
                 ],
               },
               {
-                type: NodeType.listItem,
+                type: 'listItem',
                 content: [
                   {
-                    type: NodeType.paragraph,
-                    content: [{ type: NodeType.text, text: 'Item 3' }],
+                    type: 'paragraph',
+                    content: [{ type: 'text', text: 'Item 3' }],
                   },
                 ],
               },
@@ -423,34 +420,34 @@ describe(MarkdownParser, () => {
         '1. Item 1\n    - Item 1.1\n    - Item 1.2\n2. Item 2\n3. Item 3'
       const result = parser.parse(input)
       expect(result).toEqual({
-        type: NodeType.doc,
+        type: 'doc',
         content: [
           {
-            type: NodeType.orderedList,
+            type: 'orderedList',
             content: [
               {
-                type: NodeType.listItem,
+                type: 'listItem',
                 content: [
                   {
-                    type: NodeType.paragraph,
+                    type: 'paragraph',
                     content: [
                       {
-                        type: NodeType.text,
+                        type: 'text',
                         text: 'Item 1',
                       },
                     ],
                   },
                   {
-                    type: NodeType.bulletList,
+                    type: 'bulletList',
                     content: [
                       {
-                        type: NodeType.listItem,
+                        type: 'listItem',
                         content: [
                           {
-                            type: NodeType.paragraph,
+                            type: 'paragraph',
                             content: [
                               {
-                                type: NodeType.text,
+                                type: 'text',
                                 text: 'Item 1.1',
                               },
                             ],
@@ -458,13 +455,13 @@ describe(MarkdownParser, () => {
                         ],
                       },
                       {
-                        type: NodeType.listItem,
+                        type: 'listItem',
                         content: [
                           {
-                            type: NodeType.paragraph,
+                            type: 'paragraph',
                             content: [
                               {
-                                type: NodeType.text,
+                                type: 'text',
                                 text: 'Item 1.2',
                               },
                             ],
@@ -476,13 +473,13 @@ describe(MarkdownParser, () => {
                 ],
               },
               {
-                type: NodeType.listItem,
+                type: 'listItem',
                 content: [
                   {
-                    type: NodeType.paragraph,
+                    type: 'paragraph',
                     content: [
                       {
-                        type: NodeType.text,
+                        type: 'text',
                         text: 'Item 2',
                       },
                     ],
@@ -490,13 +487,13 @@ describe(MarkdownParser, () => {
                 ],
               },
               {
-                type: NodeType.listItem,
+                type: 'listItem',
                 content: [
                   {
-                    type: NodeType.paragraph,
+                    type: 'paragraph',
                     content: [
                       {
-                        type: NodeType.text,
+                        type: 'text',
                         text: 'Item 3',
                       },
                     ],
@@ -515,7 +512,7 @@ describe(MarkdownParser, () => {
       const input = '> This is a blockquote'
       const result = parser.parse(input)
       expect(result).toEqual({
-        type: NodeType.doc,
+        type: 'doc',
         content: [],
       })
     })

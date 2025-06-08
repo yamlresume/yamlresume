@@ -24,15 +24,17 @@
 
 import { describe, expect, it } from 'vitest'
 import {
-  LocaleLanguageOption,
-  TemplateOption,
+  LOCALE_LANGUAGE_OPTIONS,
+  type LocaleLanguageOption,
+  TEMPLATE_OPTIONS,
+  type TemplateOption,
   getLocaleLanguageOptionDetail,
   getTemplateOptionDetail,
 } from './resume'
 
 describe(getLocaleLanguageOptionDetail, () => {
   it('should return the language code and name', () => {
-    for (const localeLanguage of Object.values(LocaleLanguageOption)) {
+    for (const localeLanguage of LOCALE_LANGUAGE_OPTIONS) {
       const result = getLocaleLanguageOptionDetail(localeLanguage)
       expect(result).toEqual({
         localeLanguage,
@@ -50,7 +52,7 @@ describe(getLocaleLanguageOptionDetail, () => {
 
 describe(getTemplateOptionDetail, () => {
   it('should return the template option code and name', () => {
-    for (const templateOption of Object.values(TemplateOption)) {
+    for (const templateOption of TEMPLATE_OPTIONS) {
       const result = getTemplateOptionDetail(templateOption)
 
       expect(result).toEqual({

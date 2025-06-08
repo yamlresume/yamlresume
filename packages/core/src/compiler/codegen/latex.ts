@@ -22,18 +22,16 @@
  * IN THE SOFTWARE.
  */
 
-import {
-  type BulletListNode,
-  type DocNode,
-  type Fragment,
-  type ListItemNode,
-  type Mark,
-  MarkType,
-  type Node,
-  NodeType,
-  type OrderedListNode,
-  type ParagraphNode,
-  type TextNode,
+import type {
+  BulletListNode,
+  DocNode,
+  Fragment,
+  ListItemNode,
+  Mark,
+  Node,
+  OrderedListNode,
+  ParagraphNode,
+  TextNode,
 } from '@/compiler/ast'
 import { escapeLatex } from '@/utils'
 import type { CodeGenerator } from './interface'
@@ -66,17 +64,17 @@ export class LatexCodeGenerator implements CodeGenerator {
  */
 export function nodeToTeX(node: Node): string {
   switch (node.type) {
-    case NodeType.bulletList:
+    case 'bulletList':
       return bulletListNodeToTeX(node)
-    case NodeType.doc:
+    case 'doc':
       return docNodeToTeX(node)
-    case NodeType.listItem:
+    case 'listItem':
       return listItemNodeToTeX(node)
-    case NodeType.orderedList:
+    case 'orderedList':
       return orderedListNodeToTeX(node)
-    case NodeType.paragraph:
+    case 'paragraph':
       return paragraphNodeToTeX(node)
-    case NodeType.text:
+    case 'text':
       return textNodeToTeX(node)
   }
 }
@@ -170,13 +168,13 @@ function textNodeToTeX(node: TextNode): string {
  */
 function applyMarkToText(text: string, mark: Mark) {
   switch (mark.type) {
-    case MarkType.bold:
+    case 'bold':
       return `\\textbf{${text}}`
-    case MarkType.italic:
+    case 'italic':
       return `\\textit{${text}}`
-    case MarkType.underline:
+    case 'underline':
       return `\\underline{${text}}`
-    case MarkType.link:
+    case 'link':
       return `\\href{${mark.attrs.href}}{${text}}`
   }
 }

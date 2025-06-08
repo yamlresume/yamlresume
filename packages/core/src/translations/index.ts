@@ -22,5 +22,5 @@
  * IN THE SOFTWARE.
  */
 
-export * from './terms'
+export * from './options'
 export * from './template'

@@ -29,8 +29,7 @@ import type { Resume } from '@/types'
 import { isEmptyValue, joinNonEmptyString, showIf } from '@/utils'
 import { Renderer } from './base'
 import {
-  DocumentClass,
-  ModerncvStyle,
+  type ModerncvStyle,
   renderCTeXConfig,
   renderDocumentClassConfig,
   renderFontspecConfig,
@@ -66,7 +65,7 @@ class ModerncvBase extends Renderer {
   renderPreamble(): string {
     return joinNonEmptyString([
       // document class
-      renderDocumentClassConfig(this.resume, DocumentClass.Moderncv),
+      renderDocumentClassConfig(this.resume, 'moderncv'),
       renderModerncvConfig(this.resume, this.style),
 
       // layout
@@ -185,8 +184,8 @@ class ModerncvBase extends Renderer {
     } = this.resume
 
     const {
-      punctuations: { Colon },
-      terms: { Courses },
+      punctuations: { colon },
+      terms,
     } = getTemplateTranslations(layout.locale?.language)
 
     if (!education.length) {
@@ -213,7 +212,7 @@ ${education
               summary,
               showIf(
                 !isEmptyValue(courses),
-                `\\textbf{${Courses}}${Colon}${courses}`
+                `\\textbf{${terms.courses}}${colon}${courses}`
               ),
             ],
             '\n'
@@ -232,8 +231,8 @@ ${education
     const { content, layout } = this.resume
 
     const {
-      punctuations: { Colon },
-      terms: { Keywords },
+      punctuations: { colon },
+      terms,
     } = getTemplateTranslations(layout.locale?.language)
 
     if (!content.work.length) {
@@ -263,7 +262,7 @@ ${content.work
               summary,
               showIf(
                 !isEmptyValue(keywords),
-                `\\textbf{${Keywords}}${Colon}${keywords}`
+                `\\textbf{${terms.keywords}}${colon}${keywords}`
               ),
             ],
             '\n'
@@ -292,8 +291,8 @@ ${content.work
     }
 
     const {
-      terms: { Keywords },
-      punctuations: { Colon },
+      punctuations: { colon },
+      terms,
     } = getTemplateTranslations(layout.locale?.language)
 
     return `\\section{${sectionNames.languages}}
@@ -303,7 +302,7 @@ ${languages
     ({ computed: { language, fluency, keywords } }) =>
       `\\cvline{${language}}{${fluency}${showIf(
         !isEmptyValue(keywords),
-        ` \\hfill \\textbf{${Keywords}}${Colon}${keywords}`
+        ` \\hfill \\textbf{${terms.keywords}}${colon}${keywords}`
       )}}`
   )
   .join('\n')}`
@@ -324,8 +323,8 @@ ${languages
     } = this.resume
 
     const {
-      terms: { Keywords },
-      punctuations: { Colon },
+      punctuations: { colon },
+      terms,
     } = getTemplateTranslations(layout.locale?.language)
 
     if (!skills.length) {
@@ -339,7 +338,7 @@ ${skills
     ({ name, computed: { level, keywords } }) =>
       `\\cvline{${name}}{${level}${showIf(
         !isEmptyValue(keywords),
-        ` \\hfill \\textbf{${Keywords}}${Colon}${keywords}`
+        ` \\hfill \\textbf{${terms.keywords}}${colon}${keywords}`
       )}}`
   )
   .join('\n')}`
@@ -461,7 +460,7 @@ ${publications
     }
 
     switch (this.style) {
-      case ModerncvStyle.Banking:
+      case 'banking':
         return `\\section{${sectionNames.references}}
 
 ${references
@@ -481,8 +480,8 @@ ${references
   )
   .join('\n\n')}`
 
-      case ModerncvStyle.Casual:
-      case ModerncvStyle.Classic:
+      case 'casual':
+      case 'classic':
         // Note that for casual and classic styles, the position of `email` and
         // `name` is reversed with banking style. The first parameter of
         // `\cventry` will be put on the left side, and generally the `name` can
@@ -518,8 +517,8 @@ ${references
   renderProjects(): string {
     const { content } = this.resume
     const {
-      terms: { Keywords },
-      punctuations: { Colon },
+      punctuations: { colon },
+      terms,
     } = getTemplateTranslations(this.resume.layout.locale?.language)
 
     if (!content.projects.length) {
@@ -547,7 +546,7 @@ ${content.projects
               summary,
               showIf(
                 !isEmptyValue(keywords),
-                `\\textbf{${Keywords}}${Colon}${keywords}`
+                `\\textbf{${terms.keywords}}${colon}${keywords}`
               ),
             ],
             '\n'
@@ -657,16 +656,7 @@ ${joinNonEmptyString([
  */
 class ModerncvBankingRenderer extends ModerncvBase {
   constructor(resume: Resume, summaryParser: Parser) {
-    super(resume, ModerncvStyle.Banking, summaryParser)
-  }
-}
-
-/**
- * Renderer for the classic style of moderncv.
- */
-class ModerncvClassicRenderer extends ModerncvBase {
-  constructor(resume: Resume, summaryParser: Parser) {
-    super(resume, ModerncvStyle.Classic, summaryParser)
+    super(resume, 'banking', summaryParser)
   }
 }
 
@@ -675,13 +665,22 @@ class ModerncvClassicRenderer extends ModerncvBase {
  */
 class ModerncvCasualRenderer extends ModerncvBase {
   constructor(resume: Resume, summaryParser: Parser) {
-    super(resume, ModerncvStyle.Casual, summaryParser)
+    super(resume, 'casual', summaryParser)
+  }
+}
+
+/**
+ * Renderer for the classic style of moderncv.
+ */
+class ModerncvClassicRenderer extends ModerncvBase {
+  constructor(resume: Resume, summaryParser: Parser) {
+    super(resume, 'classic', summaryParser)
   }
 }
 
 export {
   ModerncvBase,
   ModerncvBankingRenderer,
-  ModerncvClassicRenderer,
   ModerncvCasualRenderer,
+  ModerncvClassicRenderer,
 }

@@ -596,18 +596,24 @@ type ResumeLayoutMargins = {
   right: string
 }
 
-/** Defines the available styles for rendering numbers in the font spec. */
-export enum FontSpecNumbersStyle {
-  /** Standard lining figures (default for CJK languages). */
-  Lining = 'Lining',
-  /** Old-style figures with varying heights (default for Latin languages). */
-  OldStyle = 'OldStyle',
-  /**
-   * Represents an undefined state, allowing the style to be automatically
-   * determined based on the selected `LocaleLanguage`.
-   */
-  Auto = 'Auto',
-}
+/** The options for the font spec numbers style. */
+export const FONT_SPEC_NUMBERS_STYLE_OPTIONS = [
+  'Lining',
+  'OldStyle',
+  'Auto',
+] as const
+
+/**
+ * The type of font spec numbers style.
+ *
+ * - `Lining` - standard lining figures (default for CJK languages)
+ * - `OldStyle` - old style figures with varying heights (default for Latin
+ *   languages)
+ * - `Auto` - an undefined state, allowing the style to be automatically
+ *   determined based on the selected `LocaleLanguage`
+ */
+export type FontSpecNumbersStyle =
+  (typeof FONT_SPEC_NUMBERS_STYLE_OPTIONS)[number]
 
 /** Defines typography settings like font size and number style. */
 type ResumeLayoutTypography = {

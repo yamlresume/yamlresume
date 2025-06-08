@@ -24,8 +24,8 @@
 
 import { describe, expect, it } from 'vitest'
 
-import { LocaleLanguageOption } from '@/data'
-import { Punctuation, TemplateTerms, getTemplateTranslations } from './template'
+import type { LocaleLanguageOption } from '@/data'
+import { getTemplateTranslations } from './template'
 
 describe(getTemplateTranslations, () => {
   it('should return the correct translations', () => {
@@ -34,80 +34,80 @@ describe(getTemplateTranslations, () => {
         language: undefined, // Test default (English)
         expected: {
           punctuations: {
-            [Punctuation.Colon]: ': ',
+            colon: ': ',
           },
           terms: {
-            [TemplateTerms.Keywords]: 'Keywords',
+            keywords: 'Keywords',
           },
         },
       },
       {
-        language: LocaleLanguageOption.English,
+        language: 'en',
         expected: {
           punctuations: {
-            [Punctuation.Colon]: ': ',
+            colon: ': ',
           },
           terms: {
-            [TemplateTerms.Keywords]: 'Keywords',
+            keywords: 'Keywords',
           },
         },
       },
       {
-        language: LocaleLanguageOption.SimplifiedChinese,
+        language: 'zh-hans',
         expected: {
           punctuations: {
-            [Punctuation.Colon]: '：',
+            colon: '：',
           },
           terms: {
-            [TemplateTerms.Keywords]: '关键字',
+            keywords: '关键字',
           },
         },
       },
       {
-        language: LocaleLanguageOption.TraditionalChineseHK,
+        language: 'zh-hant-hk',
         expected: {
           punctuations: {
-            [Punctuation.Colon]: '：',
+            colon: '：',
           },
           terms: {
-            [TemplateTerms.Keywords]: '關鍵字',
+            keywords: '關鍵字',
           },
         },
       },
       {
-        language: LocaleLanguageOption.TraditionalChineseTW,
+        language: 'zh-hant-tw',
         expected: {
           punctuations: {
-            [Punctuation.Colon]: '：',
+            colon: '：',
           },
           terms: {
-            [TemplateTerms.Keywords]: '關鍵字',
+            keywords: '關鍵字',
           },
         },
       },
       {
-        language: LocaleLanguageOption.Spanish,
+        language: 'es',
         expected: {
           punctuations: {
-            [Punctuation.Colon]: ': ',
+            colon: ': ',
           },
           terms: {
-            [TemplateTerms.Keywords]: 'Palabras clave',
+            keywords: 'Palabras clave',
           },
         },
       },
     ]
 
     tests.forEach((test) => {
-      const translations = getTemplateTranslations(test.language)
-
-      expect(translations.punctuations[Punctuation.Colon]).toEqual(
-        test.expected.punctuations[Punctuation.Colon]
+      const translations = getTemplateTranslations(
+        test.language as LocaleLanguageOption
       )
 
-      expect(translations.terms[TemplateTerms.Keywords]).toEqual(
-        test.expected.terms[TemplateTerms.Keywords]
+      expect(translations.punctuations.colon).toEqual(
+        test.expected.punctuations.colon
       )
+
+      expect(translations.terms.keywords).toEqual(test.expected.terms.keywords)
     })
   })
 })

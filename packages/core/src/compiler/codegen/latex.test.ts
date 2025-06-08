@@ -24,16 +24,14 @@
 
 import { describe, expect, it } from 'vitest'
 
-import {
-  type BulletListNode,
-  type DocNode,
-  type ListItemNode,
-  type Mark,
-  MarkType,
-  NodeType,
-  type OrderedListNode,
-  type ParagraphNode,
-  type TextNode,
+import type {
+  BulletListNode,
+  DocNode,
+  ListItemNode,
+  Mark,
+  OrderedListNode,
+  ParagraphNode,
+  TextNode,
 } from '@/compiler/ast'
 import tipTapContentJSON from './fixtures/tiptap-content.json'
 // I didn't manage to find a way to get rid of the loading error here:
@@ -48,7 +46,7 @@ describe(nodeToTeX, () => {
     it('should return an empty bullet list with no items', () => {
       const node: BulletListNode = {
         content: [],
-        type: NodeType.bulletList,
+        type: 'bulletList',
       }
 
       expect(nodeToTeX(node)).toBe('\\begin{itemize}\n\\end{itemize}\n')
@@ -57,17 +55,17 @@ describe(nodeToTeX, () => {
     it('should return an non-empty bullet list with one item', () => {
       const emptyParagraphNode: ParagraphNode = {
         content: [],
-        type: NodeType.paragraph,
+        type: 'paragraph',
       }
 
       const listItemNode: ListItemNode = {
         content: [emptyParagraphNode],
-        type: NodeType.listItem,
+        type: 'listItem',
       }
 
       const node: BulletListNode = {
         content: [listItemNode],
-        type: NodeType.bulletList,
+        type: 'bulletList',
       }
 
       expect(nodeToTeX(node)).toBe(
@@ -83,35 +81,35 @@ describe(nodeToTeX, () => {
         content: [
           {
             text: hello,
-            type: NodeType.text,
+            type: 'text',
           },
         ],
-        type: NodeType.paragraph,
+        type: 'paragraph',
       }
 
       const worldParagraphNode: ParagraphNode = {
         content: [
           {
             text: world,
-            type: NodeType.text,
+            type: 'text',
           },
         ],
-        type: NodeType.paragraph,
+        type: 'paragraph',
       }
 
       const helloListItemNode: ListItemNode = {
         content: [helloParagraphNode],
-        type: NodeType.listItem,
+        type: 'listItem',
       }
 
       const worldListItemNode: ListItemNode = {
         content: [worldParagraphNode],
-        type: NodeType.listItem,
+        type: 'listItem',
       }
 
       const node: BulletListNode = {
         content: [helloListItemNode, worldListItemNode],
-        type: NodeType.bulletList,
+        type: 'bulletList',
       }
 
       expect(nodeToTeX(node)).toBe(
@@ -124,11 +122,11 @@ describe(nodeToTeX, () => {
     it('should return empty string with no content', () => {
       const tests: DocNode[] = [
         {
-          type: NodeType.doc,
+          type: 'doc',
         },
         {
           content: [],
-          type: NodeType.doc,
+          type: 'doc',
         },
       ]
 
@@ -145,25 +143,25 @@ describe(nodeToTeX, () => {
         content: [
           {
             text: hello,
-            type: NodeType.text,
+            type: 'text',
           },
         ],
-        type: NodeType.paragraph,
+        type: 'paragraph',
       }
 
       const worldParagraphNode: ParagraphNode = {
         content: [
           {
             text: world,
-            type: NodeType.text,
+            type: 'text',
           },
         ],
-        type: NodeType.paragraph,
+        type: 'paragraph',
       }
 
       const node: DocNode = {
         content: [helloParagraphNode, worldParagraphNode],
-        type: NodeType.doc,
+        type: 'doc',
       }
 
       expect(nodeToTeX(node)).toBe(`${hello}\n\n${world}\n\n`)
@@ -178,12 +176,12 @@ describe(nodeToTeX, () => {
     it('should return empty item with empty string', () => {
       const emptyParagraphNode: ParagraphNode = {
         content: [],
-        type: NodeType.paragraph,
+        type: 'paragraph',
       }
 
       const node: ListItemNode = {
         content: [emptyParagraphNode],
-        type: NodeType.listItem,
+        type: 'listItem',
       }
 
       expect(nodeToTeX(node)).toBe('\\item \n')
@@ -191,22 +189,22 @@ describe(nodeToTeX, () => {
 
     it('should return an item with non-empty paragraph', () => {
       const emptyParagraphNode: ParagraphNode = {
-        type: NodeType.paragraph,
+        type: 'paragraph',
         content: [
           {
             text: 'Hello, ',
-            type: NodeType.text,
+            type: 'text',
           },
           {
             text: 'world!',
-            type: NodeType.text,
+            type: 'text',
           },
         ],
       }
 
       const node: ListItemNode = {
         content: [emptyParagraphNode],
-        type: NodeType.listItem,
+        type: 'listItem',
       }
 
       expect(nodeToTeX(node)).toBe('\\item Hello, world!\n')
@@ -217,7 +215,7 @@ describe(nodeToTeX, () => {
     it('should return an empty ordered list with no items', () => {
       const node: OrderedListNode = {
         content: [],
-        type: NodeType.orderedList,
+        type: 'orderedList',
       }
 
       expect(nodeToTeX(node)).toBe('\\begin{enumerate}\n\\end{enumerate}\n')
@@ -226,17 +224,17 @@ describe(nodeToTeX, () => {
     it('should return an non-empty ordered list with one item', () => {
       const emptyParagraphNode: ParagraphNode = {
         content: [],
-        type: NodeType.paragraph,
+        type: 'paragraph',
       }
 
       const listItemNode: ListItemNode = {
         content: [emptyParagraphNode],
-        type: NodeType.listItem,
+        type: 'listItem',
       }
 
       const node: OrderedListNode = {
         content: [listItemNode],
-        type: NodeType.orderedList,
+        type: 'orderedList',
       }
 
       expect(nodeToTeX(node)).toBe(
@@ -252,35 +250,35 @@ describe(nodeToTeX, () => {
         content: [
           {
             text: hello,
-            type: NodeType.text,
+            type: 'text',
           },
         ],
-        type: NodeType.paragraph,
+        type: 'paragraph',
       }
 
       const worldParagraphNode: ParagraphNode = {
         content: [
           {
             text: world,
-            type: NodeType.text,
+            type: 'text',
           },
         ],
-        type: NodeType.paragraph,
+        type: 'paragraph',
       }
 
       const helloListItemNode: ListItemNode = {
         content: [helloParagraphNode],
-        type: NodeType.listItem,
+        type: 'listItem',
       }
 
       const worldListItemNode: ListItemNode = {
         content: [worldParagraphNode],
-        type: NodeType.listItem,
+        type: 'listItem',
       }
 
       const node: OrderedListNode = {
         content: [helloListItemNode, worldListItemNode],
-        type: NodeType.orderedList,
+        type: 'orderedList',
       }
 
       expect(nodeToTeX(node)).toBe(
@@ -293,11 +291,11 @@ describe(nodeToTeX, () => {
     it('should return string with only one newline with no content', () => {
       const tests: ParagraphNode[] = [
         {
-          type: NodeType.paragraph,
+          type: 'paragraph',
         },
         {
           content: [],
-          type: NodeType.paragraph,
+          type: 'paragraph',
         },
       ]
 
@@ -308,15 +306,15 @@ describe(nodeToTeX, () => {
 
     it('should return plain text with no marks', () => {
       const node: ParagraphNode = {
-        type: NodeType.paragraph,
+        type: 'paragraph',
         content: [
           {
             text: 'Hello, ',
-            type: NodeType.text,
+            type: 'text',
           },
           {
             text: 'world!',
-            type: NodeType.text,
+            type: 'text',
           },
         ],
       }
@@ -326,21 +324,21 @@ describe(nodeToTeX, () => {
 
     it('should return marked text with some marks', () => {
       const node: ParagraphNode = {
-        type: NodeType.paragraph,
+        type: 'paragraph',
         content: [
           {
-            marks: [{ type: MarkType.bold }, { type: MarkType.italic }],
+            marks: [{ type: 'bold' }, { type: 'italic' }],
             text: 'Hello',
-            type: NodeType.text,
+            type: 'text',
           },
           {
             text: ', ',
-            type: NodeType.text,
+            type: 'text',
           },
           {
-            marks: [{ type: MarkType.underline }],
+            marks: [{ type: 'underline' }],
             text: 'world!',
-            type: NodeType.text,
+            type: 'text',
           },
         ],
       }
@@ -358,7 +356,7 @@ describe(nodeToTeX, () => {
     it('should return plain text with no marks', () => {
       const node: TextNode = {
         text: text,
-        type: NodeType.text,
+        type: 'text',
       }
 
       expect(nodeToTeX(node)).toBe('Hello, world!')
@@ -367,21 +365,21 @@ describe(nodeToTeX, () => {
     it('should return plain text with one mark', () => {
       const tests: { marks: Mark[]; expected: string }[] = [
         {
-          marks: [{ type: MarkType.bold }],
+          marks: [{ type: 'bold' }],
           expected: `\\textbf{${text}}`,
         },
         {
-          marks: [{ type: MarkType.italic }],
+          marks: [{ type: 'italic' }],
           expected: `\\textit{${text}}`,
         },
         {
-          marks: [{ type: MarkType.underline }],
+          marks: [{ type: 'underline' }],
           expected: `\\underline{${text}}`,
         },
         {
           marks: [
             {
-              type: MarkType.link,
+              type: 'link',
               attrs: { href: url, class: '', target: '' },
             },
           ],
@@ -393,7 +391,7 @@ describe(nodeToTeX, () => {
         const node: TextNode = {
           marks,
           text,
-          type: NodeType.text,
+          type: 'text',
         }
 
         expect(nodeToTeX(node)).toBe(expected)
@@ -403,24 +401,20 @@ describe(nodeToTeX, () => {
     it('should return plain text with multiple marks', () => {
       const tests: { marks: Mark[]; expected: string }[] = [
         {
-          marks: [{ type: MarkType.bold }, { type: MarkType.italic }],
+          marks: [{ type: 'bold' }, { type: 'italic' }],
           expected: `\\textit{\\textbf{${text}}}`,
         },
         {
-          marks: [
-            { type: MarkType.italic },
-            { type: MarkType.bold },
-            { type: MarkType.underline },
-          ],
+          marks: [{ type: 'italic' }, { type: 'bold' }, { type: 'underline' }],
           expected: `\\underline{\\textbf{\\textit{${text}}}}`,
         },
         {
           marks: [
             {
-              type: MarkType.link,
+              type: 'link',
               attrs: { href: url, class: '', target: '' },
             },
-            { type: MarkType.bold },
+            { type: 'bold' },
           ],
           expected: `\\textbf{\\href{${url}}{${text}}}`,
         },
@@ -430,7 +424,7 @@ describe(nodeToTeX, () => {
         const node: TextNode = {
           marks,
           text,
-          type: NodeType.text,
+          type: 'text',
         }
 
         expect(nodeToTeX(node)).toBe(expected)

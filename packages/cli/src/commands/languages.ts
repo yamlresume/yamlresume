@@ -23,7 +23,7 @@
  */
 
 import {
-  LocaleLanguageOption,
+  LOCALE_LANGUAGE_OPTIONS,
   getLocaleLanguageOptionDetail,
 } from '@yamlresume/core'
 import { Command } from 'commander'
@@ -33,15 +33,14 @@ import { markdownTable } from 'markdown-table'
 /**
  * Generates a markdown table listing all supported locale languages.
  *
- * The table includes columns for the language code (enum key) and the language
- * name (enum value).
+ * The table includes columns for the language code and the language name.
  *
  * @returns A string containing the formatted markdown table.
  */
 export function listLanguages() {
   return markdownTable([
     ['layout.locale.language', 'Language Name'],
-    ...Object.values(LocaleLanguageOption).map((value) => [
+    ...LOCALE_LANGUAGE_OPTIONS.map((value) => [
       value,
       getLocaleLanguageOptionDetail(value).name,
     ]),

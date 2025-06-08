@@ -22,7 +22,7 @@
  * IN THE SOFTWARE.
  */
 
-import { TemplateOption, getTemplateOptionDetail } from '@yamlresume/core'
+import { TEMPLATE_OPTIONS, getTemplateOptionDetail } from '@yamlresume/core'
 import type { Command } from 'commander'
 import { consola } from 'consola'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
@@ -39,7 +39,7 @@ describe(listTemplates, () => {
     expect(result).toContain('Description')
 
     // Check if all templates are included
-    Object.values(TemplateOption).forEach((value) => {
+    TEMPLATE_OPTIONS.forEach((value) => {
       const details = getTemplateOptionDetail(value)
       expect(result).toContain(value) // Template ID
       expect(result).toContain(details.name) // Template Name
@@ -49,7 +49,7 @@ describe(listTemplates, () => {
     // Check if the table has the correct number of rows
     const rows = result.trim().split('\n')
     // +2 for header and separator
-    expect(rows.length).toBe(Object.keys(TemplateOption).length + 2)
+    expect(rows.length).toBe(TEMPLATE_OPTIONS.length + 2)
   })
 })
 

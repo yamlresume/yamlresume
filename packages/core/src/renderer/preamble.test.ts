@@ -24,11 +24,10 @@
 
 import { describe, expect, it } from 'vitest'
 
-import { LocaleLanguageOption, defaultResume } from '@/data'
-import { FontSpecNumbersStyle, type Resume } from '@/types'
+import { defaultResume } from '@/data'
+import type { Resume } from '@/types'
 import {
-  DocumentClass,
-  ModerncvStyle,
+  MODERNCV_STYLE_OPTIONS,
   normalizeUnit,
   renderCTeXConfig,
   renderDocumentClassConfig,
@@ -50,7 +49,7 @@ describe(normalizeUnit, () => {
 
 describe(renderDocumentClassConfig, () => {
   it('should render correct document class configuration', () => {
-    const result = renderDocumentClassConfig(mockResume, DocumentClass.Moderncv)
+    const result = renderDocumentClassConfig(mockResume, 'moderncv')
 
     expect(result).toBe('\\documentclass[a4paper, serif, 10pt]{moderncv}')
   })
@@ -58,7 +57,7 @@ describe(renderDocumentClassConfig, () => {
 
 describe(renderModerncvConfig, () => {
   it('should render basic moderncv configuration', () => {
-    for (const style of Object.values(ModerncvStyle)) {
+    for (const style of MODERNCV_STYLE_OPTIONS) {
       const result = renderModerncvConfig(mockResume, style)
 
       expect(result).toContain(`\\moderncvstyle{${style}}`)
@@ -73,12 +72,12 @@ describe(renderModerncvConfig, () => {
       layout: {
         ...mockResume.layout,
         locale: {
-          language: LocaleLanguageOption.SimplifiedChinese,
+          language: 'zh-hans',
         },
       },
     }
 
-    const result = renderModerncvConfig(cjkResume, ModerncvStyle.Banking)
+    const result = renderModerncvConfig(cjkResume, 'banking')
 
     expect(result).toContain('\\renewcommand*{\\cvitem}')
     expect(result).toContain('\\renewcommand*{\\cvitemwithcomment}')
@@ -128,7 +127,7 @@ describe(renderSpanishConfig, () => {
       layout: {
         ...mockResume.layout,
         locale: {
-          language: LocaleLanguageOption.English,
+          language: 'en',
         },
       },
     }
@@ -144,7 +143,7 @@ describe(renderSpanishConfig, () => {
       layout: {
         ...mockResume.layout,
         locale: {
-          language: LocaleLanguageOption.Spanish,
+          language: 'es',
         },
       },
     }
@@ -165,12 +164,12 @@ describe(renderFontspecConfig, () => {
       layout: {
         ...mockResume.layout,
         locale: {
-          language: LocaleLanguageOption.English,
+          language: 'en',
         },
         typography: {
           ...mockResume.layout.typography,
           fontSpec: {
-            numbers: FontSpecNumbersStyle.OldStyle,
+            numbers: 'OldStyle',
           },
         },
       },
@@ -199,12 +198,12 @@ describe(renderFontspecConfig, () => {
       layout: {
         ...mockResume.layout,
         locale: {
-          language: LocaleLanguageOption.SimplifiedChinese,
+          language: 'zh-hans',
         },
         typography: {
           ...mockResume.layout.typography,
           fontSpec: {
-            numbers: FontSpecNumbersStyle.Lining,
+            numbers: 'Lining',
           },
         },
       },

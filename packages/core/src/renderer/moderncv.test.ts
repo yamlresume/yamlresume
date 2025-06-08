@@ -26,16 +26,7 @@ import { cloneDeep } from 'lodash-es'
 import { beforeEach, describe, expect, it } from 'vitest'
 
 import { TiptapParser } from '@/compiler'
-import {
-  Country,
-  Degree,
-  Language,
-  LanguageFluency,
-  LocaleLanguageOption,
-  SkillLevel,
-  emptyParagraph,
-  filledResume,
-} from '@/data'
+import { emptyParagraph, filledResume } from '@/data'
 import type { Resume } from '@/types'
 import {
   ModerncvBankingRenderer,
@@ -43,7 +34,6 @@ import {
   ModerncvCasualRenderer,
   ModerncvClassicRenderer,
 } from './moderncv'
-import { ModerncvStyle } from './preamble'
 
 describe('ModerncvBase', () => {
   let resume: Resume
@@ -67,9 +57,9 @@ describe('ModerncvBase', () => {
   describe('ModerncvStyle', () => {
     it('should render moderncv style', () => {
       const tests = [
-        { style: ModerncvStyle.Banking, renderer: ModerncvBankingRenderer },
-        { style: ModerncvStyle.Classic, renderer: ModerncvClassicRenderer },
-        { style: ModerncvStyle.Casual, renderer: ModerncvCasualRenderer },
+        { style: 'banking', renderer: ModerncvBankingRenderer },
+        { style: 'classic', renderer: ModerncvClassicRenderer },
+        { style: 'casual', renderer: ModerncvCasualRenderer },
       ]
 
       for (const test of tests) {
@@ -87,7 +77,7 @@ describe('ModerncvBase', () => {
 
     it('should render moderncv override for CJK', () => {
       const cjkResume = cloneDeep(resume)
-      cjkResume.layout.locale.language = LocaleLanguageOption.SimplifiedChinese
+      cjkResume.layout.locale.language = 'zh-hans'
 
       let renderer = new ModerncvBankingRenderer(cjkResume, summaryParser)
 
@@ -190,7 +180,7 @@ describe('ModerncvBase', () => {
     it('should render location if has address information', () => {
       const address = '123 Main St'
       const city = 'City'
-      const country = Country.Japan
+      const country = 'Japan'
 
       resume.content.location = {
         address,
@@ -294,7 +284,7 @@ describe('ModerncvBase', () => {
     it('should render education section', () => {
       const institution = 'University'
       const area = 'Computer Science'
-      const degree = Degree.Bachelor
+      const degree = 'Bachelor'
       const startDate = 'Jan 1, 2020'
       const endDate = 'Jan 1, 2024'
       const url = 'https://university.edu'
@@ -379,8 +369,8 @@ describe('ModerncvBase', () => {
     it('should render languages section with keywords', () => {
       resume.content.languages = [
         {
-          language: Language.English,
-          fluency: LanguageFluency.NativeOrBilingualProficiency,
+          language: 'English',
+          fluency: 'Native or Bilingual Proficiency',
           keywords: ['TOEFL 100', 'IELTS 7.5'],
         },
       ]
@@ -397,8 +387,8 @@ describe('ModerncvBase', () => {
     it('should render languages section without keywords', () => {
       resume.content.languages = [
         {
-          language: Language.English,
-          fluency: LanguageFluency.NativeOrBilingualProficiency,
+          language: 'English',
+          fluency: 'Native or Bilingual Proficiency',
         },
       ]
 
@@ -426,7 +416,7 @@ describe('ModerncvBase', () => {
       resume.content.skills = [
         {
           name: 'Programming',
-          level: SkillLevel.Expert,
+          level: 'Expert',
           keywords: ['JavaScript', 'TypeScript'],
         },
       ]
@@ -444,7 +434,7 @@ describe('ModerncvBase', () => {
       resume.content.skills = [
         {
           name: 'Programming',
-          level: SkillLevel.Expert,
+          level: 'Expert',
         },
       ]
 

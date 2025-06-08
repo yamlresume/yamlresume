@@ -24,7 +24,7 @@
 
 import { describe, expect, it, vi } from 'vitest'
 
-import { LocaleLanguageOption } from '@/data'
+import type { LocaleLanguageOption } from '@/data'
 import {
   epochSecondsToLocaleDateString,
   getDateRange,
@@ -66,52 +66,52 @@ describe(localizeDate, () => {
     const tests = [
       {
         date: 'Oct 1, 2016',
-        language: LocaleLanguageOption.English,
+        language: 'en',
         expected: 'Oct 2016',
       },
       {
         date: 'Oct 1, 2016',
-        language: LocaleLanguageOption.Spanish,
+        language: 'es',
         expected: 'oct 2016',
       },
       {
         date: 'Oct 1, 2016',
-        language: LocaleLanguageOption.SimplifiedChinese,
+        language: 'zh-hans',
         expected: '2016年10月',
       },
       {
         date: 'Oct 1, 2016',
-        language: LocaleLanguageOption.TraditionalChineseHK,
+        language: 'zh-hant-hk',
         expected: '2016年10月',
       },
       {
         date: 'Oct 1, 2016',
-        language: LocaleLanguageOption.TraditionalChineseTW,
+        language: 'zh-hant-tw',
         expected: '2016年10月',
       },
       {
         date: '',
-        language: LocaleLanguageOption.English,
+        language: 'en',
         expected: '',
       },
       {
         date: '',
-        language: LocaleLanguageOption.Spanish,
+        language: 'es',
         expected: '',
       },
       {
         date: '',
-        language: LocaleLanguageOption.SimplifiedChinese,
+        language: 'zh-hans',
         expected: '',
       },
       {
         date: '',
-        language: LocaleLanguageOption.TraditionalChineseHK,
+        language: 'zh-hant-hk',
         expected: '',
       },
       {
         date: '',
-        language: LocaleLanguageOption.TraditionalChineseTW,
+        language: 'zh-hant-tw',
         expected: '',
       },
     ]
@@ -124,83 +124,89 @@ describe(localizeDate, () => {
 
 describe(getDateRange, () => {
   it('should return correct date range', () => {
-    const tests = [
+    const tests: {
+      startDate: string
+      endDate: string
+      language: LocaleLanguageOption
+      expected: string
+    }[] = [
       {
         startDate: 'Oct 1, 2016',
         endDate: 'Jan 1, 2018',
-        language: LocaleLanguageOption.English,
+        language: 'en',
         expected: 'Oct 2016 -- Jan 2018',
       },
       {
         startDate: 'Oct 1, 2016',
         endDate: '',
-        language: LocaleLanguageOption.English,
+        language: 'en',
         expected: 'Oct 2016 -- Present',
       },
       {
         startDate: 'Oct 1, 2016',
         endDate: '',
+        // @ts-ignore fallback to English if language is not supported
         language: '',
         expected: 'Oct 2016 -- Present',
       },
       {
         startDate: 'Oct 1, 2016',
         endDate: 'Jan 1, 2018',
-        language: LocaleLanguageOption.Spanish,
+        language: 'es',
         expected: 'oct 2016 -- ene 2018',
       },
       {
         startDate: 'Oct 1, 2016',
         endDate: '',
-        language: LocaleLanguageOption.Spanish,
+        language: 'es',
         expected: 'oct 2016 hasta la fecha',
       },
       {
         startDate: 'Oct 1, 2016',
         endDate: 'Jan 1, 2018',
-        language: LocaleLanguageOption.SimplifiedChinese,
+        language: 'zh-hans',
         expected: '2016年10月 -- 2018年1月',
       },
       {
         startDate: 'Oct 1, 2016',
         endDate: '',
-        language: LocaleLanguageOption.SimplifiedChinese,
+        language: 'zh-hans',
         expected: '2016年10月至今',
       },
       {
         startDate: 'Oct 1, 2016',
         endDate: 'Jan 1, 2018',
-        language: LocaleLanguageOption.TraditionalChineseHK,
+        language: 'zh-hant-hk',
         expected: '2016年10月 -- 2018年1月',
       },
       {
         startDate: 'Oct 1, 2016',
         endDate: '',
-        language: LocaleLanguageOption.TraditionalChineseHK,
+        language: 'zh-hant-hk',
         expected: '2016年10月至今',
       },
       {
         startDate: 'Oct 1, 2016',
         endDate: 'Jan 1, 2018',
-        language: LocaleLanguageOption.TraditionalChineseTW,
+        language: 'zh-hant-tw',
         expected: '2016年10月 -- 2018年1月',
       },
       {
         startDate: 'Oct 1, 2016',
         endDate: '',
-        language: LocaleLanguageOption.TraditionalChineseTW,
+        language: 'zh-hant-tw',
         expected: '2016年10月至今',
       },
       {
         startDate: '',
         endDate: '',
-        language: LocaleLanguageOption.English,
+        language: 'en',
         expected: '',
       },
       {
         startDate: '',
         endDate: 'Jan 1, 2018',
-        language: LocaleLanguageOption.English,
+        language: 'en',
         expected: '',
       },
     ]

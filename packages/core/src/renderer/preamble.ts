@@ -22,36 +22,37 @@
  * IN THE SOFTWARE.
  */
 
-import { LocaleLanguageOption } from '@/data'
 import { getTemplateTranslations } from '@/translations'
 import type { Resume } from '@/types'
 import { joinNonEmptyString, showIf } from '@/utils'
 
-export enum DocumentClass {
-  Moderncv = 'moderncv',
-}
+/**
+ * The options for the document class.
+ *
+ * For now we only support `moderncv` document class.
+ */
+export const DOCUMENT_CLASS_OPTIONS = ['moderncv'] as const
+
+/** The type of document class. */
+export type DocumentClass = (typeof DOCUMENT_CLASS_OPTIONS)[number]
 
 /**
- * Enum representing the style options for the moderncv document class.
+ * The style options for the moderncv document class.
  *
  * These styles control the visual appearance and layout of the CV. There're
  * actually 5 styles in moderncv package, but only 3 are supported in this
  * project, `fancy` and `oldstyle` is pretty buggy and not working well.
  *
- * @property {string} Banking - A modern, professional style with a
- * banking/financial aesthetic
- * @property {string} Classic - A traditional CV style with a clean, formal
- * layout
- * @property {string} Casual - A more relaxed style while maintaining
- * professionalism
+ * - `banking` - a modern, professional style with a banking/financial aesthetic
+ * - `classic` - a traditional CV style with a clean, formal layout
+ * - `casual` - a more relaxed style while maintaining professionalism
  *
  * @see {@link https://github.com/yamlresume/community/issues/117}
  */
-export enum ModerncvStyle {
-  Banking = 'banking',
-  Classic = 'classic',
-  Casual = 'casual',
-}
+export const MODERNCV_STYLE_OPTIONS = ['banking', 'classic', 'casual'] as const
+
+/** The type of moderncv style. */
+export type ModerncvStyle = (typeof MODERNCV_STYLE_OPTIONS)[number]
 
 /**
  * Check if the resume is a CJK resume.
@@ -60,11 +61,9 @@ export enum ModerncvStyle {
  * @returns {boolean} True if the resume is a CJK resume, false otherwise.
  */
 function isCJKResume(resume: Resume): boolean {
-  return [
-    LocaleLanguageOption.SimplifiedChinese,
-    LocaleLanguageOption.TraditionalChineseHK,
-    LocaleLanguageOption.TraditionalChineseTW,
-  ].includes(resume.layout.locale?.language)
+  return ['zh-hans', 'zh-hant-hk', 'zh-hant-tw'].includes(
+    resume.layout.locale?.language
+  )
 }
 
 /**
@@ -74,7 +73,7 @@ function isCJKResume(resume: Resume): boolean {
  * @returns {boolean} True if the resume is a Spanish resume, false otherwise.
  */
 function isSpanishResume(resume: Resume): boolean {
-  return resume.layout.locale?.language === LocaleLanguageOption.Spanish
+  return resume.layout.locale?.language === 'es'
 }
 
 /**
@@ -126,7 +125,7 @@ export function renderDocumentClassConfig(
  */
 function renderModerncvOverride(resume: Resume, style: ModerncvStyle): string {
   const {
-    punctuations: { Colon },
+    punctuations: { colon },
   } = getTemplateTranslations(resume.layout.locale?.language)
 
   if (!isCJKResume(resume)) {
@@ -134,16 +133,16 @@ function renderModerncvOverride(resume: Resume, style: ModerncvStyle): string {
   }
 
   switch (style) {
-    case ModerncvStyle.Banking:
+    case 'banking':
       // only banking style needs to renew these blackbox, magic moderncv
       // command to adapt for CJK colons
       return `% renew moderncv command to adapt for CJK colon
 \\renewcommand*{\\cvitem}[3][.25em]{%
-  \\ifstrempty{#2}{}{\\hintstyle{#2}${Colon}}{#3}%
+  \\ifstrempty{#2}{}{\\hintstyle{#2}${colon}}{#3}%
   \\par\\addvspace{#1}}
 
 \\renewcommand*{\\cvitemwithcomment}[4][.25em]{%
-  \\savebox{\\cvitemwithcommentmainbox}{\\ifstrempty{#2}{}{\\hintstyle{#2}${Colon}}#3}%
+  \\savebox{\\cvitemwithcommentmainbox}{\\ifstrempty{#2}{}{\\hintstyle{#2}${colon}}#3}%
   \\setlength{\\cvitemwithcommentmainlength}{\\widthof{\\usebox{\\cvitemwithcommentmainbox}}}%
   \\setlength{\\cvitemwithcommentcommentlength}{\\maincolumnwidth-\\separatorcolumnwidth-\\cvitemwithcommentmainlength}%
   \\begin{minipage}[t]{\\cvitemwithcommentmainlength}\\usebox{\\cvitemwithcommentmainbox}\\end{minipage}%
@@ -151,8 +150,8 @@ function renderModerncvOverride(resume: Resume, style: ModerncvStyle): string {
   \\begin{minipage}[t]{\\cvitemwithcommentcommentlength}\\raggedleft\\small\\itshape#4\\end{minipage}%
   \\par\\addvspace{#1}}`
 
-    case ModerncvStyle.Classic:
-    case ModerncvStyle.Casual:
+    case 'casual':
+    case 'classic':
       return ''
   }
 }
@@ -216,7 +215,7 @@ export function renderLayoutConfig(resume: Resume): string {
  * in the resume, e.g. names. This is why we need to include the CJK support in
  * the preamble by default.
  */
-export function renderCTeXConfig(resume: Resume): string {
+export function renderCTeXConfig(_resume: Resume): string {
   return `%% CTeX
 % CJK support, used to show CJK characters in the resume
 %

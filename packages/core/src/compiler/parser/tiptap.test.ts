@@ -24,7 +24,7 @@
 
 import { describe, expect, it } from 'vitest'
 
-import { NodeType, type ParagraphNode, type TextNode } from '@/compiler/ast'
+import type { ParagraphNode, TextNode } from '@/compiler/ast'
 import { TiptapParser } from './tiptap'
 
 describe('TiptapParser', () => {
@@ -32,13 +32,13 @@ describe('TiptapParser', () => {
 
   it('should parse valid tiptap JSON to DocNode', () => {
     const validInput = JSON.stringify({
-      type: NodeType.doc,
+      type: 'doc',
       content: [
         {
-          type: NodeType.paragraph,
+          type: 'paragraph',
           content: [
             {
-              type: NodeType.text,
+              type: 'text',
               text: 'Hello world',
             },
           ],
@@ -47,13 +47,13 @@ describe('TiptapParser', () => {
     })
 
     const result = parser.parse(validInput)
-    expect(result.type).toBe(NodeType.doc)
+    expect(result.type).toBe('doc')
 
     const paragraph = result.content?.[0] as ParagraphNode
-    expect(paragraph.type).toBe(NodeType.paragraph)
+    expect(paragraph.type).toBe('paragraph')
 
     const text = paragraph.content?.[0] as TextNode
-    expect(text.type).toBe(NodeType.text)
+    expect(text.type).toBe('text')
     expect(text.text).toBe('Hello world')
   })
 
@@ -64,33 +64,33 @@ describe('TiptapParser', () => {
 
   it('should handle empty document', () => {
     const emptyInput = JSON.stringify({
-      type: NodeType.doc,
+      type: 'doc',
       content: [],
     })
 
     const result = parser.parse(emptyInput)
-    expect(result.type).toBe(NodeType.doc)
+    expect(result.type).toBe('doc')
     expect(result.content).toEqual([])
   })
 
   it('should handle document with multiple paragraphs', () => {
     const input = JSON.stringify({
-      type: NodeType.doc,
+      type: 'doc',
       content: [
         {
-          type: NodeType.paragraph,
+          type: 'paragraph',
           content: [
             {
-              type: NodeType.text,
+              type: 'text',
               text: 'First paragraph',
             },
           ],
         },
         {
-          type: NodeType.paragraph,
+          type: 'paragraph',
           content: [
             {
-              type: NodeType.text,
+              type: 'text',
               text: 'Second paragraph',
             },
           ],
@@ -99,14 +99,14 @@ describe('TiptapParser', () => {
     })
 
     const result = parser.parse(input)
-    expect(result.type).toBe(NodeType.doc)
+    expect(result.type).toBe('doc')
     expect(result.content?.length).toBe(2)
 
     const firstParagraph = result.content?.[0] as ParagraphNode
     const secondParagraph = result.content?.[1] as ParagraphNode
 
-    expect(firstParagraph.type).toBe(NodeType.paragraph)
-    expect(secondParagraph.type).toBe(NodeType.paragraph)
+    expect(firstParagraph.type).toBe('paragraph')
+    expect(secondParagraph.type).toBe('paragraph')
 
     const firstText = firstParagraph.content?.[0] as TextNode
     const secondText = secondParagraph.content?.[0] as TextNode

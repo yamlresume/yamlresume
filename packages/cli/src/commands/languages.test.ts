@@ -23,7 +23,7 @@
  */
 
 import {
-  LocaleLanguageOption,
+  LOCALE_LANGUAGE_OPTIONS,
   getLocaleLanguageOptionDetail,
 } from '@yamlresume/core'
 import { consola } from 'consola'
@@ -40,7 +40,7 @@ describe(listLanguages, () => {
     expect(result).toContain('Language Name')
 
     // Check if all languages are included
-    Object.values(LocaleLanguageOption).forEach((value) => {
+    LOCALE_LANGUAGE_OPTIONS.forEach((value) => {
       expect(result).toContain(value)
       expect(result).toContain(getLocaleLanguageOptionDetail(value).name)
     })
@@ -49,7 +49,7 @@ describe(listLanguages, () => {
     const rows = result.split('\n')
 
     // +2 for header and separator
-    expect(rows.length).toBe(Object.keys(LocaleLanguageOption).length + 2)
+    expect(rows.length).toBe(LOCALE_LANGUAGE_OPTIONS.length + 2)
   })
 })
 

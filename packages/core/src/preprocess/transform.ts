@@ -25,18 +25,9 @@
 import { capitalize, cloneDeep, isArray, merge } from 'lodash-es'
 
 import { LatexCodeGenerator, type Parser } from '@/compiler'
-import { LocaleLanguageOption, defaultResumeLayout } from '@/data'
-import {
-  ResumeTerms,
-  getTemplateTranslations,
-  getTermsTranslations,
-} from '@/translations'
-import {
-  FontSpecNumbersStyle,
-  type ProfileItem,
-  type Resume,
-  type ResumeContent,
-} from '@/types'
+import { defaultResumeLayout } from '@/data'
+import { getOptionsTranslations, getTemplateTranslations } from '@/translations'
+import type { ProfileItem, Resume, ResumeContent } from '@/types'
 import {
   escapeLatex,
   getDateRange,
@@ -179,7 +170,7 @@ function transformResumeSectionValues(sectionResumeItem: Object): void {
  */
 export function transformEducationCourses(resume: Resume): Resume {
   const {
-    punctuations: { Separator },
+    punctuations: { separator },
   } = getTemplateTranslations(resume.layout.locale?.language)
 
   resume.content.education.forEach((item, index: number) => {
@@ -188,7 +179,7 @@ export function transformEducationCourses(resume: Resume): Resume {
         ...resume.content.education[index].computed,
         // courses are generally longer than keywords, so we use both separator
         // and newline to separate them to improve readability
-        courses: (item.courses as string[]).join(`${Separator}\n`),
+        courses: (item.courses as string[]).join(`${separator}\n`),
       }
     }
   })
@@ -208,26 +199,27 @@ export function transformEducationCourses(resume: Resume): Resume {
  */
 export function transformEducationDegreeAreaAndScore(resume: Resume): Resume {
   const {
-    punctuations: { Colon, Comma },
+    punctuations: { colon, comma },
   } = getTemplateTranslations(resume.layout.locale?.language)
 
-  const { education, terms } = getTermsTranslations(
-    resume.layout.locale?.language
-  )
+  const { degrees } = getOptionsTranslations(resume.layout.locale?.language)
+
+  const {
+    terms: { score },
+  } = getTemplateTranslations(resume.layout.locale?.language)
 
   resume.content.education.forEach((item) => {
-    const degree = showIf(!isEmptyValue(item.degree), education[item.degree])
-    const score = terms[ResumeTerms.Score]
+    const degree = showIf(!isEmptyValue(item.degree), degrees[item.degree])
 
     item.computed = {
       ...item.computed,
       degreeAreaAndScore: [
         degree,
         item.area,
-        showIf(!isEmptyValue(item.score), `${score}${Colon}${item.score}`),
+        showIf(!isEmptyValue(item.score), `${score}${colon}${item.score}`),
       ]
         .filter((value) => !isEmptyValue(value))
-        .join(Comma),
+        .join(comma),
     }
   })
 
@@ -247,7 +239,7 @@ export function transformEducationDegreeAreaAndScore(resume: Resume): Resume {
  */
 export function transformKeywords(resume: Resume): Resume {
   const {
-    punctuations: { Separator },
+    punctuations: { separator },
   } = getTemplateTranslations(resume.layout.locale?.language)
 
   for (const section of [
@@ -264,7 +256,7 @@ export function transformKeywords(resume: Resume): Resume {
             ...resume.content[section][index].computed,
             // keywords are generally shorter than courses, so we only use
             // separator without newlines to separate them
-            keywords: item.keywords.join(`${Separator}`),
+            keywords: item.keywords.join(`${separator}`),
           }
         } else {
           resume.content[section][index].computed = {
@@ -381,7 +373,7 @@ export function transformEndDate(resume: Resume): Resume {
  * @remarks Modifies `resume.content.languages` items in place.
  */
 export function transformLanguage(resume: Resume): Resume {
-  const { languages, languageFluencies } = getTermsTranslations(
+  const { languages, languageFluencies } = getOptionsTranslations(
     resume.layout.locale?.language
   )
 
@@ -414,15 +406,17 @@ export function transformLanguage(resume: Resume): Resume {
  */
 export function transformLocation(resume: Resume): Resume {
   const {
-    punctuations: { Comma },
+    punctuations: { comma },
   } = getTemplateTranslations(resume.layout.locale?.language)
 
-  const { location } = getTermsTranslations(resume.layout.locale?.language)
+  const { countries: location } = getOptionsTranslations(
+    resume.layout.locale?.language
+  )
 
   switch (resume.layout.locale?.language) {
-    case LocaleLanguageOption.SimplifiedChinese:
-    case LocaleLanguageOption.TraditionalChineseHK:
-    case LocaleLanguageOption.TraditionalChineseTW: {
+    case 'zh-hans':
+    case 'zh-hant-hk':
+    case 'zh-hant-tw': {
       // For Chinese and Spanish, the address format is:
       // Country > Region > City  > Address
       const postalCodeAndAddress = [
@@ -430,14 +424,14 @@ export function transformLocation(resume: Resume): Resume {
         resume.content.location.postalCode,
       ]
         .filter((value) => !isEmptyValue(value))
-        .join(Comma)
+        .join(comma)
 
       const regionAndCountry = [
         location[resume.content.location.country],
         resume.content.location.region,
       ]
         .filter((value) => !isEmptyValue(value))
-        .join(Comma)
+        .join(comma)
 
       const fullAddress = [
         regionAndCountry,
@@ -461,7 +455,7 @@ export function transformLocation(resume: Resume): Resume {
       // For English, the address format is Country > Region > City > Address
       const postalCodeAndAddress = [resume.content.location.address]
         .filter((value) => !isEmptyValue(value))
-        .join(Comma)
+        .join(comma)
 
       const regionCountryAndPostalCode = [
         resume.content.location.region,
@@ -469,7 +463,7 @@ export function transformLocation(resume: Resume): Resume {
         resume.content.location.postalCode,
       ]
         .filter((value) => !isEmptyValue(value))
-        .join(Comma)
+        .join(comma)
 
       const fullAddress = [
         resume.content.location.address,
@@ -566,7 +560,7 @@ export function transformProfileUrls(resume: Resume): Resume {
  * @remarks Modifies `resume.content.skills` items in place.
  */
 export function transformSkills(resume: Resume): Resume {
-  const { skills } = getTermsTranslations(resume.layout.locale?.language)
+  const { skills } = getOptionsTranslations(resume.layout.locale?.language)
   resume.content.skills.forEach((item) => {
     item.computed = {
       ...item.computed,
@@ -619,7 +613,7 @@ export function transformSocialLinks(resume: Resume): Resume {
  * @remarks Modifies `resume.content.computed`.
  */
 export function transformSectionNames(resume: Resume): Resume {
-  const { sections } = getTermsTranslations(resume.layout.locale?.language)
+  const { sections } = getOptionsTranslations(resume.layout.locale?.language)
 
   resume.content.computed = {
     ...resume.content.computed,
@@ -777,24 +771,24 @@ export function transformResumeLayoutWithDefaultValues(resume: Resume): Resume {
 export function transformResumeLayoutTypography(resume: Resume): Resume {
   if (
     resume.layout.typography.fontSpec?.numbers !== undefined &&
-    resume.layout.typography.fontSpec?.numbers !== FontSpecNumbersStyle.Auto
+    resume.layout.typography.fontSpec?.numbers !== 'Auto'
   ) {
     return resume
   }
 
   switch (resume.layout.locale?.language) {
-    case LocaleLanguageOption.SimplifiedChinese:
-    case LocaleLanguageOption.TraditionalChineseHK:
-    case LocaleLanguageOption.TraditionalChineseTW:
+    case 'zh-hans':
+    case 'zh-hant-hk':
+    case 'zh-hant-tw':
       resume.layout.typography.fontSpec = {
         ...resume.layout.typography.fontSpec,
-        numbers: FontSpecNumbersStyle.Lining,
+        numbers: 'Lining',
       }
       break
     default:
       resume.layout.typography.fontSpec = {
         ...resume.layout.typography.fontSpec,
-        numbers: FontSpecNumbersStyle.OldStyle,
+        numbers: 'OldStyle',
       }
       break
   }

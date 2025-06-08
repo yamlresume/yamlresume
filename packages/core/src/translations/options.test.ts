@@ -24,67 +24,66 @@
 
 import { describe, expect, it } from 'vitest'
 
-import { Degree, LocaleLanguageOption } from '@/data'
-import { getTermsTranslations } from './terms'
+import { getOptionsTranslations } from './options'
 
-describe(getTermsTranslations, () => {
+describe(getOptionsTranslations, () => {
   it('should return the correct translations', () => {
     const tests = [
       {
         language: undefined,
         expected: {
           education: {
-            [Degree.Bachelor]: 'Bachelor',
+            Bachelor: 'Bachelor',
           },
         },
       },
       {
-        language: LocaleLanguageOption.English,
+        language: 'en',
         expected: {
           education: {
-            [Degree.Bachelor]: 'Bachelor',
+            Bachelor: 'Bachelor',
           },
         },
       },
       {
-        language: LocaleLanguageOption.SimplifiedChinese,
+        language: 'zh-hans',
         expected: {
           education: {
-            [Degree.Bachelor]: '学士',
+            Bachelor: '学士',
           },
         },
       },
       {
-        language: LocaleLanguageOption.TraditionalChineseHK,
+        language: 'zh-hant-hk',
         expected: {
           education: {
-            [Degree.Bachelor]: '學士',
+            Bachelor: '學士',
           },
         },
       },
       {
-        language: LocaleLanguageOption.TraditionalChineseTW,
+        language: 'zh-hant-tw',
         expected: {
           education: {
-            [Degree.Bachelor]: '學士',
+            Bachelor: '學士',
           },
         },
       },
       {
-        language: LocaleLanguageOption.Spanish,
+        language: 'es',
         expected: {
           education: {
-            [Degree.Bachelor]: 'Licenciatura',
+            Bachelor: 'Licenciatura',
           },
         },
       },
-    ]
+    ] as const
 
     tests.forEach((test) => {
-      const translations = getTermsTranslations(test.language)
+      const translations = getOptionsTranslations(test.language)
 
-      expect(translations.education[Degree.Bachelor]).toEqual(
-        test.expected.education[Degree.Bachelor]
+      expect(translations.degrees.Bachelor).toEqual(
+        test.expected.education.Bachelor
       )
     })
   })

@@ -22,34 +22,27 @@
  * IN THE SOFTWARE.
  */
 
-import { LocaleLanguageOption } from '@/data'
+import type { LocaleLanguageOption } from '@/data'
 import { isEmptyValue } from '@/utils'
 
 /** Specific punctuation types used for formatting within templates. */
-export enum Punctuation {
-  /** Standard comma, often used between items in a sentence. */
-  Comma = 'Comma',
-  /** Standard colon, often used before lists or details. */
-  Colon = 'Colon',
-  /** Separator used specifically for lists of items (e.g., keywords, courses),
-   * which might differ from a standard comma in some languages. */
-  Separator = 'Separator',
-}
+export const PUNCTUATIONS = ['comma', 'colon', 'separator'] as const
+
+/** The type of punctuation. */
+export type Punctuation = (typeof PUNCTUATIONS)[number]
 
 /** Specific terms used within the template structure that need translation. */
-export enum TemplateTerms {
-  /** The heading or label for a list of courses. */
-  Courses = 'Courses',
-  /** The heading or label for a list of keywords. */
-  Keywords = 'Keywords',
-}
+export const TERMS = ['courses', 'keywords', 'score'] as const
+
+/** The type of term. */
+export type Term = (typeof TERMS)[number]
 
 /** The structure for template-specific translations (punctuations and terms) */
 type TemplateTranslationValue = {
   /** Translations for punctuation types defined in `Punctuation`. */
   punctuations: Record<Punctuation, string>
-  /** Translations for template terms defined in `TemplateTerms`. */
-  terms: Record<TemplateTerms, string>
+  /** Translations for template terms defined in `Term`. */
+  terms: Record<Term, string>
 }
 
 /** The overall structure containing template-specific translations for all
@@ -72,64 +65,67 @@ export function getTemplateTranslations(
   language?: LocaleLanguageOption
 ): TemplateTranslationValue {
   const templateTranslation: TemplateTranslation = {
-    [LocaleLanguageOption.English]: {
+    en: {
       punctuations: {
-        [Punctuation.Comma]: ', ',
-        [Punctuation.Colon]: ': ',
-        [Punctuation.Separator]: ', ',
+        comma: ', ',
+        colon: ': ',
+        separator: ', ',
       },
       terms: {
-        [TemplateTerms.Courses]: 'Courses',
-        [TemplateTerms.Keywords]: 'Keywords',
+        courses: 'Courses',
+        keywords: 'Keywords',
+        score: 'Score',
       },
     },
-    [LocaleLanguageOption.SimplifiedChinese]: {
+    'zh-hans': {
       punctuations: {
-        [Punctuation.Comma]: '，',
-        [Punctuation.Colon]: '：',
-        [Punctuation.Separator]: '、',
+        comma: '，',
+        colon: '：',
+        separator: '、',
       },
       terms: {
-        [TemplateTerms.Courses]: '课程',
-        [TemplateTerms.Keywords]: '关键字',
+        courses: '课程',
+        keywords: '关键字',
+        score: '成绩',
       },
     },
-    [LocaleLanguageOption.TraditionalChineseHK]: {
+    'zh-hant-hk': {
       punctuations: {
-        [Punctuation.Comma]: '，',
-        [Punctuation.Colon]: '：',
-        [Punctuation.Separator]: '、',
+        comma: '，',
+        colon: '：',
+        separator: '、',
       },
       terms: {
-        [TemplateTerms.Courses]: '課程',
-        [TemplateTerms.Keywords]: '關鍵字',
+        courses: '課程',
+        keywords: '關鍵字',
+        score: '成績',
       },
     },
-    [LocaleLanguageOption.TraditionalChineseTW]: {
+    'zh-hant-tw': {
       punctuations: {
-        [Punctuation.Comma]: '，',
-        [Punctuation.Colon]: '：',
-        [Punctuation.Separator]: '、',
+        comma: '，',
+        colon: '：',
+        separator: '、',
       },
       terms: {
-        [TemplateTerms.Courses]: '課程',
-        [TemplateTerms.Keywords]: '關鍵字',
+        courses: '課程',
+        keywords: '關鍵字',
+        score: '成績',
       },
     },
-    [LocaleLanguageOption.Spanish]: {
+    es: {
       punctuations: {
-        [Punctuation.Comma]: ', ',
-        [Punctuation.Colon]: ': ',
-        [Punctuation.Separator]: ', ',
+        comma: ', ',
+        colon: ': ',
+        separator: ', ',
       },
       terms: {
-        [TemplateTerms.Courses]: 'Cursos',
-        [TemplateTerms.Keywords]: 'Palabras clave',
+        courses: 'Cursos',
+        keywords: 'Palabras clave',
+        score: 'Puntuación',
       },
     },
   }
 
-  return templateTranslation[
-    isEmptyValue(language) ? LocaleLanguageOption.English : language
-  ]
+  return templateTranslation[isEmptyValue(language) ? 'en' : language]
 }

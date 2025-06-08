@@ -24,43 +24,41 @@
 
 import { describe, expect, it } from 'vitest'
 
-import {
-  type ListItemNode,
-  type Mark,
-  MarkType,
-  type Node,
-  NodeType,
-  type OrderedListNode,
-  type ParagraphNode,
-  type TextNode,
+import type {
+  ListItemNode,
+  Mark,
+  Node,
+  OrderedListNode,
+  ParagraphNode,
+  TextNode,
 } from './ast'
 
 describe('AST Types', () => {
   describe('Marks', () => {
     it('should allow valid bold mark', () => {
       const boldMark: Mark = {
-        type: MarkType.bold,
+        type: 'bold',
       }
       expect(boldMark.type).toBe('bold')
     })
 
     it('should allow valid italic mark', () => {
       const italicMark: Mark = {
-        type: MarkType.italic,
+        type: 'italic',
       }
       expect(italicMark.type).toBe('italic')
     })
 
     it('should allow valid underline mark', () => {
       const underlineMark: Mark = {
-        type: MarkType.underline,
+        type: 'underline',
       }
       expect(underlineMark.type).toBe('underline')
     })
 
     it('should allow valid link mark with attributes', () => {
       const linkMark: Mark = {
-        type: MarkType.link,
+        type: 'link',
         attrs: {
           href: 'https://example.com',
           class: null,
@@ -93,9 +91,9 @@ describe('AST Types', () => {
   describe('Nodes', () => {
     it('should allow valid text node', () => {
       const textNode: Node = {
-        type: NodeType.text,
+        type: 'text',
         text: 'Hello world',
-        marks: [{ type: MarkType.bold }],
+        marks: [{ type: 'bold' }],
       }
       expect(textNode.type).toBe('text')
       expect(textNode.text).toBe('Hello world')
@@ -104,10 +102,10 @@ describe('AST Types', () => {
 
     it('should allow valid paragraph node', () => {
       const paragraphNode: Node = {
-        type: NodeType.paragraph,
+        type: 'paragraph',
         content: [
           {
-            type: NodeType.text,
+            type: 'text',
             text: 'Hello world',
           },
         ],
@@ -119,13 +117,13 @@ describe('AST Types', () => {
 
     it('should allow valid ordered list node', () => {
       const orderedListNode: Node = {
-        type: NodeType.orderedList,
+        type: 'orderedList',
         content: [
           {
-            type: NodeType.listItem,
+            type: 'listItem',
             content: [
               {
-                type: NodeType.text,
+                type: 'text',
                 text: 'List item',
               },
             ],
@@ -140,13 +138,13 @@ describe('AST Types', () => {
 
     it('should allow valid bullet list node', () => {
       const bulletListNode: Node = {
-        type: NodeType.bulletList,
+        type: 'bulletList',
         content: [
           {
-            type: NodeType.listItem,
+            type: 'listItem',
             content: [
               {
-                type: NodeType.text,
+                type: 'text',
                 text: 'Bullet item',
               },
             ],
@@ -159,13 +157,13 @@ describe('AST Types', () => {
 
     it('should allow valid doc node', () => {
       const docNode: Node = {
-        type: NodeType.doc,
+        type: 'doc',
         content: [
           {
-            type: NodeType.paragraph,
+            type: 'paragraph',
             content: [
               {
-                type: NodeType.text,
+                type: 'text',
                 text: 'Document content',
               },
             ],
@@ -178,24 +176,24 @@ describe('AST Types', () => {
 
     it('should allow complex nested structure', () => {
       const complexNode: Node = {
-        type: NodeType.doc,
+        type: 'doc',
         content: [
           {
-            type: NodeType.orderedList,
+            type: 'orderedList',
             content: [
               {
-                type: NodeType.listItem,
+                type: 'listItem',
                 content: [
                   {
-                    type: NodeType.paragraph,
+                    type: 'paragraph',
                     content: [
                       {
-                        type: NodeType.text,
+                        type: 'text',
                         text: 'Nested content',
                         marks: [
-                          { type: MarkType.bold },
+                          { type: 'bold' },
                           {
-                            type: MarkType.link,
+                            type: 'link',
                             attrs: {
                               href: 'https://example.com',
                               class: null,

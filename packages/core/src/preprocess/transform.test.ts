@@ -32,29 +32,14 @@ import {
   TiptapParser,
 } from '@/compiler'
 import {
-  Country,
-  Degree,
-  Language,
-  LanguageFluency,
-  LocaleLanguageOption,
-  SkillLevel,
-  TemplateOption,
+  LOCALE_LANGUAGE_OPTIONS,
+  type LocaleLanguageOption,
   defaultResume,
   filledResume,
 } from '@/data'
-import {
-  Punctuation,
-  ResumeTerms,
-  getTemplateTranslations,
-  getTermsTranslations,
-} from '@/translations'
-import {
-  FontSpecNumbersStyle,
-  type ProfileItem,
-  type ResumeLayout,
-  type SocialNetwork,
-} from '@/types'
-import { isEmptyValue, removeKeysFromObject } from '@/utils'
+import { getOptionsTranslations, getTemplateTranslations } from '@/translations'
+import type { ProfileItem, ResumeLayout, SocialNetwork } from '@/types'
+import { isEmptyValue } from '@/utils'
 import {
   replaceBlankLinesWithPercent,
   transformBasicsUrl,
@@ -80,7 +65,7 @@ import {
 function testOverAllLocaleLanguages(
   testFn: (language: LocaleLanguageOption) => void
 ): void {
-  for (const language of Object.values(LocaleLanguageOption)) {
+  for (const language of LOCALE_LANGUAGE_OPTIONS) {
     testFn(language)
   }
 }
@@ -140,11 +125,11 @@ describe(transformEducationCourses, () => {
       transformEducationCourses(resume)
 
       const {
-        punctuations: { Separator },
+        punctuations: { separator },
       } = getTemplateTranslations(resume.layout.locale.language)
 
       expect(resume.content.education[0].computed?.courses).toEqual(
-        coursesList.join(`${Separator}\n`)
+        coursesList.join(`${separator}\n`)
       )
     })
   })
@@ -156,8 +141,8 @@ describe(transformEducationDegreeAreaAndScore, () => {
       const area = 'Computer Science'
       const score = '3.5'
 
-      const { education, terms } = getTermsTranslations(language)
-      const { punctuations } = getTemplateTranslations(language)
+      const { degrees } = getOptionsTranslations(language)
+      const { punctuations, terms } = getTemplateTranslations(language)
 
       const tests = [
         {
@@ -167,38 +152,34 @@ describe(transformEducationDegreeAreaAndScore, () => {
           expected: '',
         },
         {
-          degree: Degree.Bachelor,
+          degree: 'Bachelor',
           area: '',
           score: '',
-          expected: education[Degree.Bachelor],
+          expected: degrees.Bachelor,
         },
         {
-          degree: Degree.Bachelor,
+          degree: 'Bachelor',
           area,
           score: '',
-          expected: `${education[Degree.Bachelor]}${
-            punctuations[Punctuation.Comma]
-          }${area}`,
+          expected: `${degrees.Bachelor}${punctuations.comma}${area}`,
         },
         {
-          degree: Degree.Bachelor,
+          degree: 'Bachelor',
           area: '',
           score,
-          expected: `${education[Degree.Bachelor]}${
-            punctuations[Punctuation.Comma]
-          }${terms[ResumeTerms.Score]}${
-            punctuations[Punctuation.Colon]
-          }${score}`,
+          expected: `${degrees.Bachelor}${
+            punctuations.comma
+          }${terms.score}${punctuations.colon}${score}`,
         },
         {
-          degree: Degree.Bachelor,
+          degree: 'Bachelor',
           area,
           score,
-          expected: `${education[Degree.Bachelor]}${
-            punctuations[Punctuation.Comma]
-          }${area}${punctuations[Punctuation.Comma]}${
-            terms[ResumeTerms.Score]
-          }${punctuations[Punctuation.Colon]}${score}`,
+          expected: `${degrees.Bachelor}${
+            punctuations.comma
+          }${area}${punctuations.comma}${
+            terms.score
+          }${punctuations.colon}${score}`,
         },
       ]
 
@@ -244,7 +225,7 @@ describe(transformKeywords, () => {
         },
         {
           keywords: keywordList,
-          expected: keywordList.join(punctuations[Punctuation.Separator]),
+          expected: keywordList.join(punctuations.separator),
         },
       ]
 
@@ -346,13 +327,12 @@ describe(transformLanguage, () => {
       const resume = cloneDeep(defaultResume)
 
       resume.layout.locale.language = language
-      resume.content.languages[0].language = Language.Arabic
-      resume.content.languages[0].fluency =
-        LanguageFluency.NativeOrBilingualProficiency
+      resume.content.languages[0].language = 'Arabic'
+      resume.content.languages[0].fluency = 'Native or Bilingual Proficiency'
 
       transformLanguage(resume)
 
-      const { languages, languageFluencies } = getTermsTranslations(
+      const { languages, languageFluencies } = getOptionsTranslations(
         resume.layout.locale.language
       )
 
@@ -388,28 +368,18 @@ describe(transformLanguage, () => {
 
 describe(transformLocation, () => {
   it('should transform location for English resume', () => {
-    const latinComma = getTemplateTranslations(LocaleLanguageOption.English)
-      .punctuations[Punctuation.Comma]
-    const chineseComma = getTemplateTranslations(
-      LocaleLanguageOption.SimplifiedChinese
-    ).punctuations[Punctuation.Comma]
+    const latinComma = getTemplateTranslations('en').punctuations.comma
+    const chineseComma = getTemplateTranslations('zh-hans').punctuations.comma
 
-    const englishLocation = getTermsTranslations(
-      LocaleLanguageOption.English
-    ).location
-    const spanishLocation = getTermsTranslations(
-      LocaleLanguageOption.Spanish
-    ).location
+    const englishLocation = getOptionsTranslations('en').countries
+    const spanishLocation = getOptionsTranslations('es').countries
 
-    const simplifiedChineseLocation = getTermsTranslations(
-      LocaleLanguageOption.SimplifiedChinese
-    ).location
-    const traditionalChineseHKLocation = getTermsTranslations(
-      LocaleLanguageOption.TraditionalChineseHK
-    ).location
-    const traditionalChineseTWLocation = getTermsTranslations(
-      LocaleLanguageOption.TraditionalChineseTW
-    ).location
+    const simplifiedChineseLocation =
+      getOptionsTranslations('zh-hans').countries
+    const traditionalChineseHKLocation =
+      getOptionsTranslations('zh-hant-hk').countries
+    const traditionalChineseTWLocation =
+      getOptionsTranslations('zh-hant-tw').countries
 
     const tests = [
       {
@@ -419,12 +389,12 @@ describe(transformLocation, () => {
         region: '',
         country: null,
         expected: {
-          [LocaleLanguageOption.English]: '',
-          [LocaleLanguageOption.Spanish]: '',
+          en: '',
+          es: '',
 
-          [LocaleLanguageOption.SimplifiedChinese]: '',
-          [LocaleLanguageOption.TraditionalChineseHK]: '',
-          [LocaleLanguageOption.TraditionalChineseTW]: '',
+          'zh-hans': '',
+          'zh-hant-hk': '',
+          'zh-hant-tw': '',
         },
       },
       {
@@ -432,22 +402,22 @@ describe(transformLocation, () => {
         address: '',
         city: 'Sacramento',
         region: '',
-        country: Country.UnitedStates,
+        country: 'United States',
         expected: {
-          [LocaleLanguageOption.English]: `Sacramento -- ${
-            englishLocation[Country.UnitedStates]
+          en: `Sacramento -- ${
+            englishLocation['United States']
           }${latinComma}95814`,
-          [LocaleLanguageOption.Spanish]: `Sacramento -- ${
-            spanishLocation[Country.UnitedStates]
+          es: `Sacramento -- ${
+            spanishLocation['United States']
           }${latinComma}95814`,
-          [LocaleLanguageOption.SimplifiedChinese]: `${
-            simplifiedChineseLocation[Country.UnitedStates]
+          'zh-hans': `${
+            simplifiedChineseLocation['United States']
           } -- Sacramento -- 95814`,
-          [LocaleLanguageOption.TraditionalChineseHK]: `${
-            traditionalChineseHKLocation[Country.UnitedStates]
+          'zh-hant-hk': `${
+            traditionalChineseHKLocation['United States']
           } -- Sacramento -- 95814`,
-          [LocaleLanguageOption.TraditionalChineseTW]: `${
-            traditionalChineseTWLocation[Country.UnitedStates]
+          'zh-hant-tw': `${
+            traditionalChineseTWLocation['United States']
           } -- Sacramento -- 95814`,
         },
       },
@@ -458,17 +428,12 @@ describe(transformLocation, () => {
         region: 'California',
         country: null,
         expected: {
-          [LocaleLanguageOption.English]:
-            '123 Main Street -- Sacramento -- California',
-          [LocaleLanguageOption.Spanish]:
-            '123 Main Street -- Sacramento -- California',
+          en: '123 Main Street -- Sacramento -- California',
+          es: '123 Main Street -- Sacramento -- California',
 
-          [LocaleLanguageOption.SimplifiedChinese]:
-            'California -- Sacramento -- 123 Main Street',
-          [LocaleLanguageOption.TraditionalChineseHK]:
-            'California -- Sacramento -- 123 Main Street',
-          [LocaleLanguageOption.TraditionalChineseTW]:
-            'California -- Sacramento -- 123 Main Street',
+          'zh-hans': 'California -- Sacramento -- 123 Main Street',
+          'zh-hant-hk': 'California -- Sacramento -- 123 Main Street',
+          'zh-hant-tw': 'California -- Sacramento -- 123 Main Street',
         },
       },
       {
@@ -476,23 +441,23 @@ describe(transformLocation, () => {
         address: '123 Main Street',
         city: 'Sacramento',
         region: 'California',
-        country: Country.UnitedStates,
+        country: 'United States',
         expected: {
-          [LocaleLanguageOption.English]: `123 Main Street -- Sacramento -- California${latinComma}${
-            englishLocation[Country.UnitedStates]
+          en: `123 Main Street -- Sacramento -- California${latinComma}${
+            englishLocation['United States']
           }${latinComma}95814`,
-          [LocaleLanguageOption.Spanish]: `123 Main Street -- Sacramento -- California${latinComma}${
-            spanishLocation[Country.UnitedStates]
+          es: `123 Main Street -- Sacramento -- California${latinComma}${
+            spanishLocation['United States']
           }${latinComma}95814`,
 
-          [LocaleLanguageOption.SimplifiedChinese]: `${
-            simplifiedChineseLocation[Country.UnitedStates]
+          'zh-hans': `${
+            simplifiedChineseLocation['United States']
           }${chineseComma}California -- Sacramento -- 123 Main Street${chineseComma}95814`,
-          [LocaleLanguageOption.TraditionalChineseHK]: `${
-            traditionalChineseHKLocation[Country.UnitedStates]
+          'zh-hant-hk': `${
+            traditionalChineseHKLocation['United States']
           }${chineseComma}California -- Sacramento -- 123 Main Street${chineseComma}95814`,
-          [LocaleLanguageOption.TraditionalChineseTW]: `${
-            traditionalChineseTWLocation[Country.UnitedStates]
+          'zh-hant-tw': `${
+            traditionalChineseTWLocation['United States']
           }${chineseComma}California -- Sacramento -- 123 Main Street${chineseComma}95814`,
         },
       },
@@ -643,13 +608,13 @@ describe(transformSkills, () => {
   it('should translate skill levels', () => {
     testOverAllLocaleLanguages((language) => {
       for (const level of [
-        SkillLevel.Novice,
-        SkillLevel.Beginner,
-        SkillLevel.Intermediate,
-        SkillLevel.Advanced,
-        SkillLevel.Expert,
-        SkillLevel.Master,
-      ]) {
+        'Novice',
+        'Beginner',
+        'Intermediate',
+        'Advanced',
+        'Expert',
+        'Master',
+      ] as const) {
         const resume = cloneDeep(filledResume)
 
         resume.layout.locale.language = language
@@ -657,7 +622,7 @@ describe(transformSkills, () => {
 
         transformSkills(resume)
 
-        const { skills } = getTermsTranslations(resume.layout.locale.language)
+        const { skills } = getOptionsTranslations(resume.layout.locale.language)
 
         expect(resume.content.skills[0].computed?.level).toBe(skills[level])
       }
@@ -671,7 +636,7 @@ describe(transformSectionNames, () => {
       const resume = cloneDeep(defaultResume)
       resume.layout.locale.language = language
 
-      const { sections } = getTermsTranslations(resume.layout.locale.language)
+      const { sections } = getOptionsTranslations(resume.layout.locale.language)
 
       resume.layout.locale.language = language
       transformSectionNames(resume)
@@ -891,43 +856,29 @@ describe(transformResumeContent, () => {
 
 describe(transformResumeLayoutTypography, () => {
   it('should set numbers to OldStyle for English, and Spanish resume', () => {
-    for (const language of [
-      LocaleLanguageOption.English,
-      LocaleLanguageOption.Spanish,
-    ]) {
+    for (const language of ['en', 'es'] as const) {
       const resume = cloneDeep(defaultResume)
 
       resume.layout.locale.language = language
       transformResumeLayoutTypography(resume)
 
-      expect(resume.layout.typography.fontSpec.numbers).toEqual(
-        FontSpecNumbersStyle.OldStyle
-      )
+      expect(resume.layout.typography.fontSpec.numbers).toEqual('OldStyle')
     }
   })
 
   it('should set numbers to Lining for CJK resume', () => {
-    for (const language of [
-      LocaleLanguageOption.SimplifiedChinese,
-      LocaleLanguageOption.TraditionalChineseHK,
-      LocaleLanguageOption.TraditionalChineseTW,
-    ]) {
+    for (const language of ['zh-hans', 'zh-hant-hk', 'zh-hant-tw'] as const) {
       const resume = cloneDeep(defaultResume)
 
       resume.layout.locale.language = language
       transformResumeLayoutTypography(resume)
 
-      expect(resume.layout.typography.fontSpec.numbers).toEqual(
-        FontSpecNumbersStyle.Lining
-      )
+      expect(resume.layout.typography.fontSpec.numbers).toEqual('Lining')
     }
   })
 
   it('should set correct numbers when typography.fontSpec.numbers is undefined', () => {
-    for (const language of [
-      LocaleLanguageOption.English,
-      LocaleLanguageOption.Spanish,
-    ]) {
+    for (const language of ['en', 'es'] as const) {
       const resume = cloneDeep(defaultResume)
       // @ts-ignore
       resume.layout.typography.fontSpec = undefined
@@ -935,38 +886,29 @@ describe(transformResumeLayoutTypography, () => {
       resume.layout.locale.language = language
       transformResumeLayoutTypography(resume)
 
-      expect(resume.layout.typography.fontSpec.numbers).toEqual(
-        FontSpecNumbersStyle.OldStyle
-      )
+      expect(resume.layout.typography.fontSpec.numbers).toEqual('OldStyle')
     }
   })
 
   it('should set correct numbers when typography.fontSpec.numbers is FontSpectNumberStyle.Undefined', () => {
-    for (const language of [
-      LocaleLanguageOption.English,
-      LocaleLanguageOption.Spanish,
-    ]) {
+    for (const language of ['en', 'es'] as const) {
       const resume = cloneDeep(defaultResume)
-      resume.layout.typography.fontSpec.numbers = FontSpecNumbersStyle.Auto
+      resume.layout.typography.fontSpec.numbers = 'Auto'
 
       resume.layout.locale.language = language
       transformResumeLayoutTypography(resume)
 
-      expect(resume.layout.typography.fontSpec.numbers).toEqual(
-        FontSpecNumbersStyle.OldStyle
-      )
+      expect(resume.layout.typography.fontSpec.numbers).toEqual('OldStyle')
     }
   })
 
   it('should do nothing when typography.fontSpec.numbers is defined', () => {
     const resume = cloneDeep(defaultResume)
-    resume.layout.typography.fontSpec.numbers = FontSpecNumbersStyle.OldStyle
+    resume.layout.typography.fontSpec.numbers = 'OldStyle'
 
     transformResumeLayoutTypography(resume)
 
-    expect(resume.layout.typography.fontSpec.numbers).toEqual(
-      FontSpecNumbersStyle.OldStyle
-    )
+    expect(resume.layout.typography.fontSpec.numbers).toEqual('OldStyle')
   })
 })
 
@@ -987,7 +929,7 @@ describe(transformResumeLayout, () => {
   it('should transform provided resumeLayout with default values', () => {
     const resume = cloneDeep(defaultResume)
     const providedLayout: ResumeLayout = {
-      template: TemplateOption.ModerncvBanking,
+      template: 'moderncv-banking',
       margins: {
         top: '0cm',
         bottom: '0cm',
@@ -997,11 +939,11 @@ describe(transformResumeLayout, () => {
       typography: {
         fontSize: '11pt',
         fontSpec: {
-          numbers: FontSpecNumbersStyle.Auto,
+          numbers: 'Auto',
         },
       },
       locale: {
-        language: LocaleLanguageOption.SimplifiedChinese,
+        language: 'zh-hans',
       },
       page: {
         showPageNumbers: true,
@@ -1017,7 +959,7 @@ describe(transformResumeLayout, () => {
         fontSpec: {
           ...providedLayout.typography.fontSpec,
           // only set numbers to Lining for CJK resume
-          numbers: FontSpecNumbersStyle.Lining,
+          numbers: 'Lining',
         },
       },
     })

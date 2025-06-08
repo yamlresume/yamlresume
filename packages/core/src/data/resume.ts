@@ -22,118 +22,121 @@
  * IN THE SOFTWARE.
  */
 
-import {
-  FontSpecNumbersStyle,
-  type Resume,
-  type ResumeContent,
-  type ResumeItem,
-  type ResumeLayout,
-} from '@/types'
+import type { Resume, ResumeContent, ResumeItem, ResumeLayout } from '@/types'
 
 /** Represents a Tiptap editor JSON string for a single empty paragraph. */
 export const emptyParagraph = '{"type":"doc","content":[{"type":"paragraph"}]}'
 
-/** Defines standard academic degree types. */
-export enum Degree {
-  MiddleSchool = 'Middle School',
-  HighSchool = 'High School',
-  Diploma = 'Diploma',
-  Associate = 'Associate',
-  Bachelor = 'Bachelor',
-  Master = 'Master',
-  Doctor = 'Doctor',
-}
+/**
+ * Defines all possible degrees.
+ */
+export const DEGREE_OPTIONS = [
+  'Middle School',
+  'High School',
+  'Diploma',
+  'Associate',
+  'Bachelor',
+  'Master',
+  'Doctor',
+] as const
 
-/** An array containing all possible values from the `Degree` enum. */
-export const degreeOptions = Object.values(Degree)
+/**
+ * Type for all possible degrees.
+ */
+export type Degree = (typeof DEGREE_OPTIONS)[number]
 
-/** Defines common world languages.
+/**
+ * Defines common world languages.
  *
  * This list contains the most used languages in the world.
  *
  * TODO: allow users to add their own languages
  */
-export enum Language {
-  Arabic = 'Arabic',
-  Bengali = 'Bengali',
-  Bhojpuri = 'Bhojpuri',
-  Cantonese = 'Cantonese',
-  Chinese = 'Chinese',
-  Dutch = 'Dutch',
-  English = 'English',
-  French = 'French',
-  German = 'German',
-  Gujarati = 'Gujarati',
-  Hausa = 'Hausa',
-  Hindi = 'Hindi',
-  Indonesian = 'Indonesian',
-  Italian = 'Italian',
-  Japanese = 'Japanese',
-  Javanese = 'Javanese',
-  Korean = 'Korean',
-  Marathi = 'Marathi',
-  Mandarin = 'Mandarin',
-  Portuguese = 'Portuguese',
-  Russian = 'Russian',
-  Spanish = 'Spanish',
-  Tamil = 'Tamil',
-  Turkish = 'Turkish',
-  Urdu = 'Urdu',
-  Vietnamese = 'Vietnamese',
-}
+export const LANGUAGE_OPTIONS = [
+  'Arabic',
+  'Bengali',
+  'Bhojpuri',
+  'Cantonese',
+  'Chinese',
+  'Dutch',
+  'English',
+  'French',
+  'German',
+  'Gujarati',
+  'Hausa',
+  'Hindi',
+  'Indonesian',
+  'Italian',
+  'Japanese',
+  'Javanese',
+  'Korean',
+  'Marathi',
+  'Mandarin',
+  'Portuguese',
+  'Russian',
+  'Spanish',
+  'Tamil',
+  'Turkish',
+  'Urdu',
+  'Vietnamese',
+] as const
 
-/** An array containing all possible values from the `Language` enum. */
-export const languagesOptions = Object.values(Language)
+export type Language = (typeof LANGUAGE_OPTIONS)[number]
 
-/** Defines levels of language proficiency.
+/**
+ * Defines language fluency levels.
  *
- * This list of options is coming from LinkedIn.
+ * Based on the Interagency Language Roundtable (ILR) scale.
  */
-export enum LanguageFluency {
-  ElementaryProficiency = 'Elementary Proficiency',
-  LimitedWorkingProficiency = 'Limited Working Proficiency',
-  MinimumProfessionalProficiency = 'Minimum Professional Proficiency',
-  FullProfessionalProficiency = 'Full Professional Proficiency',
-  NativeOrBilingualProficiency = 'Native or Bilingual Proficiency',
-}
+export const LANGUAGE_FLUENCIE_OPTIONS = [
+  'Elementary Proficiency',
+  'Limited Working Proficiency',
+  'Minimum Professional Proficiency',
+  'Full Professional Proficiency',
+  'Native or Bilingual Proficiency',
+] as const
 
-/** An array containing all possible values from the `LanguageFluency` enum. */
-export const languageFluenciesOptions = Object.values(LanguageFluency)
+export type LanguageFluency = (typeof LANGUAGE_FLUENCIE_OPTIONS)[number]
 
-/** Defines levels of skill proficiency. */
-export enum SkillLevel {
-  Novice = 'Novice',
-  Beginner = 'Beginner',
-  Intermediate = 'Intermediate',
-  Advanced = 'Advanced',
-  Expert = 'Expert',
-  Master = 'Master',
-}
+/**
+ * Defines skill proficiency levels.
+ *
+ * Based on common industry standards for skill assessment.
+ */
+export const SKILL_LEVEL_OPTIONS = [
+  'Novice',
+  'Beginner',
+  'Intermediate',
+  'Advanced',
+  'Expert',
+  'Master',
+] as const
 
-/** An array containing all possible values from the `SkillLevel` enum. */
-export const skillLevelOptions = Object.values(SkillLevel)
+export type SkillLevel = (typeof SKILL_LEVEL_OPTIONS)[number]
 
 /** Defines identifiers for the available resume templates. */
-export enum TemplateOption {
-  ModerncvBanking = 'moderncv-banking',
-  ModerncvCasual = 'moderncv-casual',
-  ModerncvClassic = 'moderncv-classic',
-}
+export const TEMPLATE_OPTIONS = [
+  'moderncv-banking',
+  'moderncv-casual',
+  'moderncv-classic',
+] as const
+
+export type TemplateOption = (typeof TEMPLATE_OPTIONS)[number]
 
 export function getTemplateOptionDetail(templateOption: TemplateOption) {
   const templateOptionName: Record<
     TemplateOption,
     { name: string; description: string }
   > = {
-    [TemplateOption.ModerncvBanking]: {
+    'moderncv-banking': {
       name: 'ModernCV Banking',
       description: 'ModernCV template with banking style',
     },
-    [TemplateOption.ModerncvCasual]: {
+    'moderncv-casual': {
       name: 'ModernCV Casual',
       description: 'ModernCV template with casual style',
     },
-    [TemplateOption.ModerncvClassic]: {
+    'moderncv-classic': {
       name: 'ModernCV Classic',
       description: 'ModernCV template with classic style',
     },
@@ -187,8 +190,8 @@ export const resumeItems: ResumeItem = {
     name: '',
   },
   language: {
-    fluency: LanguageFluency.ElementaryProficiency,
-    language: Language.English,
+    fluency: 'Elementary Proficiency',
+    language: 'English',
     keywords: [],
   },
   location: {
@@ -315,13 +318,16 @@ export const marginOptions = [
  *
  * @see {@link https://en.wikipedia.org/wiki/IETF_language_tag}
  */
-export enum LocaleLanguageOption {
-  English = 'en',
-  SimplifiedChinese = 'zh-hans',
-  TraditionalChineseHK = 'zh-hant-hk',
-  TraditionalChineseTW = 'zh-hant-tw',
-  Spanish = 'es',
-}
+export const LOCALE_LANGUAGE_OPTIONS = [
+  'en',
+  'zh-hans',
+  'zh-hant-hk',
+  'zh-hant-tw',
+  'es',
+] as const
+
+/** Type for all possible locale languages. */
+export type LocaleLanguageOption = (typeof LOCALE_LANGUAGE_OPTIONS)[number]
 
 /**
  * Get the language code and name of the given locale language.
@@ -333,12 +339,11 @@ export function getLocaleLanguageOptionDetail(
   localeLanguage: LocaleLanguageOption
 ) {
   const localeLanguageOptionName: Record<LocaleLanguageOption, string> = {
-    [LocaleLanguageOption.English]: 'English',
-    [LocaleLanguageOption.SimplifiedChinese]: 'Simplified Chinese',
-    [LocaleLanguageOption.TraditionalChineseHK]:
-      'Traditional Chinese (Hong Kong)',
-    [LocaleLanguageOption.TraditionalChineseTW]: 'Traditional Chinese (Taiwan)',
-    [LocaleLanguageOption.Spanish]: 'Spanish',
+    en: 'English',
+    'zh-hans': 'Simplified Chinese',
+    'zh-hant-hk': 'Traditional Chinese (Hong Kong)',
+    'zh-hant-tw': 'Traditional Chinese (Taiwan)',
+    es: 'Spanish',
   }
 
   if (localeLanguage in localeLanguageOptionName) {
@@ -352,15 +357,15 @@ export function getLocaleLanguageOptionDetail(
 }
 
 /** The default language used when creating a new resume layout. */
-const defaultLanguage = LocaleLanguageOption.English
+const defaultLanguage: LocaleLanguageOption = 'en'
 
 /** Default layout configuration for a new resume. */
 export const defaultResumeLayout: ResumeLayout = {
-  template: TemplateOption.ModerncvBanking,
+  template: 'moderncv-banking',
   typography: {
     fontSize: fontSizeOptions[0],
     fontSpec: {
-      numbers: FontSpecNumbersStyle.Auto,
+      numbers: 'Auto',
     },
   },
   margins: {

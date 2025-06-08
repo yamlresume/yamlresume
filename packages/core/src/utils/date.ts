@@ -22,7 +22,7 @@
  * IN THE SOFTWARE.
  */
 
-import { LocaleLanguageOption } from '@/data'
+import type { LocaleLanguageOption } from '@/data'
 import { isEmptyValue } from './object'
 
 /**
@@ -66,7 +66,7 @@ export function localizeDate(
   }
 
   return new Date(date).toLocaleDateString(
-    isEmptyValue(language) ? LocaleLanguageOption.English : language,
+    isEmptyValue(language) ? 'en' : language,
     options
   )
 }
@@ -82,7 +82,7 @@ export function localizeDate(
 export function getDateRange(
   startDate: string,
   endDate: string,
-  language: LocaleLanguageOption | string
+  language: LocaleLanguageOption
 ): string {
   if (!startDate) {
     return ''
@@ -90,11 +90,11 @@ export function getDateRange(
 
   if (!endDate) {
     switch (language) {
-      case LocaleLanguageOption.SimplifiedChinese:
-      case LocaleLanguageOption.TraditionalChineseHK:
-      case LocaleLanguageOption.TraditionalChineseTW:
+      case 'zh-hans':
+      case 'zh-hant-hk':
+      case 'zh-hant-tw':
         return `${localizeDate(startDate, language)}至今`
-      case LocaleLanguageOption.Spanish:
+      case 'es':
         return `${localizeDate(startDate, language)} hasta la fecha`
       default:
         // by default we return English's "Present" if language is not supported

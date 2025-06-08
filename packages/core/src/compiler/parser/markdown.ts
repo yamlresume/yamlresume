@@ -26,14 +26,12 @@ import type { Root, RootContent } from 'mdast'
 import remarkParse from 'remark-parse'
 import { unified } from 'unified'
 
-import {
-  type BoldMark,
-  type ItalicMark,
-  type LinkMark,
-  type Mark,
-  MarkType,
-  NodeType,
-  type Node as TiptapNode,
+import type {
+  BoldMark,
+  ItalicMark,
+  LinkMark,
+  Mark,
+  Node as TiptapNode,
 } from '@/compiler/ast'
 import type { Parser } from './interface'
 
@@ -76,7 +74,7 @@ function transform(ast: Root | RootContent, marks: Mark[] = []) {
   switch (ast.type) {
     case 'root':
       return {
-        type: NodeType.doc,
+        type: 'doc',
         content: ast.children
           .flatMap((child) => transform(child, marks))
           .filter(Boolean),
@@ -84,7 +82,7 @@ function transform(ast: Root | RootContent, marks: Mark[] = []) {
 
     case 'paragraph':
       return {
-        type: NodeType.paragraph,
+        type: 'paragraph',
         content: ast.children
           .flatMap((child) => transform(child, marks))
           .filter(Boolean),
@@ -93,7 +91,7 @@ function transform(ast: Root | RootContent, marks: Mark[] = []) {
     // Text nodes get all accumulated marks applied
     case 'text':
       return {
-        type: NodeType.text,
+        type: 'text',
         text: ast.value,
         ...(marks.length > 0 && {
           marks: marks,
@@ -103,18 +101,18 @@ function transform(ast: Root | RootContent, marks: Mark[] = []) {
     // For text nodes with marks, we accumulate the mark and pass it down to
     // children
     case 'strong': {
-      const boldMark: BoldMark = { type: MarkType.bold }
+      const boldMark: BoldMark = { type: 'bold' }
       return processChildrenWithMarks(ast.children, [...marks, boldMark])
     }
 
     case 'emphasis': {
-      const italicMark: ItalicMark = { type: MarkType.italic }
+      const italicMark: ItalicMark = { type: 'italic' }
       return processChildrenWithMarks(ast.children, [...marks, italicMark])
     }
 
     case 'link': {
       const linkMark: LinkMark = {
-        type: MarkType.link,
+        type: 'link',
         attrs: {
           href: ast.url,
           target: null,
@@ -126,7 +124,7 @@ function transform(ast: Root | RootContent, marks: Mark[] = []) {
 
     case 'listItem':
       return {
-        type: NodeType.listItem,
+        type: 'listItem',
         content: ast.children
           .flatMap((child) => transform(child, marks))
           .filter(Boolean),
@@ -134,7 +132,7 @@ function transform(ast: Root | RootContent, marks: Mark[] = []) {
 
     case 'list':
       return {
-        type: ast.ordered ? NodeType.orderedList : NodeType.bulletList,
+        type: ast.ordered ? 'orderedList' : 'bulletList',
         content: ast.children
           .flatMap((child) => transform(child, marks))
           .filter(Boolean),
