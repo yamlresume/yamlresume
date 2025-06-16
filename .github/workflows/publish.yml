@@ -113,3 +113,41 @@ jobs:
           subject-name: ghcr.io/${{ github.repository }}
           subject-digest: ${{ steps.push.outputs.digest }}
           push-to-registry: true
+
+  github-release:
+    needs: [npm, docker]
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      discussions: write
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Extract changelog for release
+        id: changelog
+        if: github.ref_type == 'tag'
+        run: |
+          # Get version from tag (remove 'v' prefix)
+          VERSION="${GITHUB_REF_NAME#v}"
+
+          # Extract changelog content using our script
+          bash ./scripts/extract-changelog.sh "$VERSION" release_notes.md
+
+          # Output for debugging
+          echo "📝 Release notes content:"
+          cat release_notes.md
+
+      - name: Create a github release
+        uses: softprops/action-gh-release@v2
+        if: github.ref_type == 'tag'
+        with:
+          append_body: true
+          discussion_category_name: Announcements
+          draft: false
+          body_path: release_notes.md
+          generate_release_notes: true
+
+      - name: Clean up
+        if: github.ref_type == 'tag'
+        run: rm -f release_notes.md
