@@ -24,7 +24,7 @@
 
 import { describe, expect, it } from 'vitest'
 
-import { isEmptyValue, removeKeysFromObject } from './object'
+import { collectAllKeys, isEmptyValue, removeKeysFromObject } from './object'
 
 describe(isEmptyValue, () => {
   it('should return true for empty values', () => {
@@ -127,5 +127,112 @@ describe(removeKeysFromObject, () => {
     const result = removeKeysFromObject(obj, ['b'])
     expect(result).toEqual({ a: 1 })
     expect(obj).toEqual({ a: 1, b: 2 })
+  })
+})
+
+describe(collectAllKeys, () => {
+  it('should collect keys from a simple object', () => {
+    const obj = { a: 1, b: 2, c: 3 }
+    const keys = collectAllKeys(obj)
+    expect(Array.from(keys).sort()).toEqual(['a', 'b', 'c'])
+  })
+
+  it('should collect keys from nested objects', () => {
+    const obj = {
+      a: 1,
+      b: {
+        c: 2,
+        d: {
+          e: 3,
+        },
+      },
+    }
+    const keys = collectAllKeys(obj)
+    expect(Array.from(keys).sort()).toEqual(['a', 'b', 'c', 'd', 'e'])
+  })
+
+  it('should collect keys from arrays of objects', () => {
+    const obj = {
+      a: 1,
+      b: [
+        { c: 2, d: 3 },
+        { e: 4, f: 5 },
+      ],
+    }
+    const keys = collectAllKeys(obj)
+    expect(Array.from(keys).sort()).toEqual(['a', 'b', 'c', 'd', 'e', 'f'])
+  })
+
+  it('should handle empty objects and arrays', () => {
+    const obj = {
+      a: {},
+      b: [],
+      c: 1,
+    }
+    const keys = collectAllKeys(obj)
+    expect(Array.from(keys).sort()).toEqual(['a', 'b', 'c'])
+  })
+
+  it('should handle null and undefined values', () => {
+    const obj = {
+      a: null,
+      b: undefined,
+      c: 1,
+    }
+    const keys = collectAllKeys(obj)
+    expect(Array.from(keys).sort()).toEqual(['a', 'b', 'c'])
+  })
+
+  it('should handle circular references', () => {
+    const obj: { a: number; self?: unknown } = { a: 1 }
+    obj.self = obj
+    const keys = collectAllKeys(obj)
+    expect(Array.from(keys).sort()).toEqual(['a', 'self'])
+  })
+
+  it('should handle complex nested structures', () => {
+    const obj = {
+      basics: {
+        name: 'John',
+        email: 'john@example.com',
+      },
+      work: [
+        {
+          company: 'Company A',
+          position: 'Developer',
+          keywords: ['JavaScript', 'React'],
+        },
+      ],
+      skills: {
+        technical: {
+          languages: ['JavaScript', 'TypeScript'],
+        },
+      },
+    }
+    const keys = collectAllKeys(obj)
+    const expectedKeys = [
+      'basics',
+      'name',
+      'email',
+      'work',
+      'company',
+      'position',
+      'keywords',
+      'skills',
+      'technical',
+      'languages',
+    ]
+    expect(Array.from(keys).sort()).toEqual(expectedKeys.sort())
+  })
+
+  it('should return empty set for null or undefined input', () => {
+    expect(collectAllKeys(null).size).toBe(0)
+    expect(collectAllKeys(undefined).size).toBe(0)
+  })
+
+  it('should return empty set for primitive values', () => {
+    expect(collectAllKeys(42).size).toBe(0)
+    expect(collectAllKeys('string').size).toBe(0)
+    expect(collectAllKeys(true).size).toBe(0)
   })
 })

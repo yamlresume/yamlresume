@@ -25,11 +25,12 @@ import fs from 'node:fs'
 import path from 'node:path'
 import yaml from 'yaml'
 
+import { cloneDeep } from 'lodash-es'
 import { beforeEach, describe, expect, it } from 'vitest'
 
 import { MarkdownParser } from '@/compiler'
 import { type Resume, SECTION_IDS } from '@/types'
-import { removeKeysFromObject } from '@/utils'
+import { collectAllKeys, removeKeysFromObject } from '@/utils'
 import {
   ModerncvBankingRenderer,
   ModerncvCasualRenderer,
@@ -42,15 +43,11 @@ function getFixture(resume: string): Resume {
   return yaml.parse(resumeContent) as Resume
 }
 
-const sections = SECTION_IDS.filter(
-  // 'basics' section is mandatory and should always be present
-  (section) => section !== 'basics'
-)
+const sections = SECTION_IDS.filter((section) => section !== 'basics')
 
-// Helper function to randomly select n sections
-function getRandomSections(n: number): string[] {
-  const shuffled = [...sections].sort(() => Math.random() - 0.5)
-  return shuffled.slice(0, n)
+function getRandomSections(count: number): string[] {
+  const shuffled = [...sections].sort(() => 0.5 - Math.random())
+  return shuffled.slice(0, count)
 }
 
 describe('smoke test for all renderers', () => {
@@ -89,7 +86,7 @@ describe('smoke test for all renderers', () => {
 
     it('should render resume with some absent sections', () => {
       for (const renderer of renderers) {
-        // Randomly select 1-10 sections to remove
+        // randomly select 1-10 sections to remove
         const sectionsToRemove = getRandomSections(
           Math.ceil(10 * Math.random())
         )
@@ -101,13 +98,99 @@ describe('smoke test for all renderers', () => {
         expect(result).toContain('\\documentclass')
       }
     })
+  })
 
+  describe('should handle optional layout', () => {
     it('should render resume with no layout', () => {
       for (const renderer of renderers) {
         resume.layout = undefined
 
         const result = new renderer(resume, summaryParser).render()
         expect(result).toContain('\\documentclass')
+      }
+    })
+  })
+
+  describe('should handle absent fields', () => {
+    it('should handle any single missing field gracefully', () => {
+      const allKeys = collectAllKeys(resume)
+
+      let testCount = 0
+      const maxTests = 100 // Limit to prevent extremely long test runs
+
+      for (const key of Array.from(allKeys)) {
+        if (testCount >= maxTests) {
+          console.log(`Reached maximum test limit of ${maxTests} tests`)
+          break
+        }
+
+        // skip certain keys that might be critical for basic functionality
+        if (key === 'content' || key === 'layout') {
+          continue
+        }
+
+        testCount++
+
+        for (const renderer of renderers) {
+          try {
+            const modifiedResume = removeKeysFromObject(cloneDeep(resume), [
+              key,
+            ])
+
+            const result = new renderer(modifiedResume, summaryParser).render()
+
+            expect(result).toContain('\\documentclass')
+            expect(result).toContain('\\begin{document}')
+            expect(result).toContain('\\end{document}')
+          } catch (error) {
+            // provide detailed information about for failed test
+            throw new Error(
+              [
+                `Renderer ${renderer.name} failed when key was removed:`,
+                `Key: "${String(key)}"`,
+                `Error: ${error.message}`,
+              ].join(' ')
+            )
+          }
+        }
+      }
+    })
+
+    it('should handle multiple missing fields gracefully', () => {
+      const allKeys = Array.from(collectAllKeys(resume))
+
+      const testCases = 10
+
+      for (let i = 0; i < testCases; i++) {
+        // randomly select 5-15 keys to remove (but not critical ones)
+        const keysToRemove = allKeys
+          .filter((key) => key !== 'content' && key !== 'layout')
+          .sort(() => 0.5 - Math.random())
+          .slice(0, Math.floor(Math.random() * 10) + 5)
+
+        for (const renderer of renderers) {
+          try {
+            const modifiedResume = removeKeysFromObject(
+              cloneDeep(resume),
+              keysToRemove
+            )
+
+            const result = new renderer(modifiedResume, summaryParser).render()
+
+            expect(result).toContain('\\documentclass')
+            expect(result).toContain('\\begin{document}')
+            expect(result).toContain('\\end{document}')
+          } catch (error) {
+            // provide detailed information about for failed test
+            throw new Error(
+              [
+                `Renderer ${renderer.name} failed when keys were removed:`,
+                `Keys: [${keysToRemove.map((k) => String(k)).join(', ')}]`,
+                `Error: ${error.message}`,
+              ].join(' ')
+            )
+          }
+        }
       }
     })
   })

@@ -65,3 +65,62 @@ export function removeKeysFromObject<T extends object>(
     }
   )
 }
+
+/**
+ * Tree walker function to collect all possible keys from an object recursively
+ *
+ * This function traverses an object tree and collects all property keys at any
+ * depth.  It handles arrays, nested objects, and prevents infinite loops from
+ * circular references.
+ *
+ * @param obj - The object to walk through
+ * @param keys - Set to collect all keys (optional, used for recursion)
+ * @param visited - Set to track visited objects to prevent circular references
+ * (optional, used for recursion)
+ * @returns Set containing all keys found in the object tree
+ *
+ * @example
+ * ```typescript
+ * const obj = {
+ *   a: 1,
+ *   b: {
+ *     c: 2,
+ *     d: [{ e: 3 }]
+ *   }
+ * }
+ * const keys = collectAllKeys(obj)
+ * // keys will contain: Set(['a', 'b', 'c', 'd', 'e'])
+ * ```
+ */
+export function collectAllKeys(
+  obj: unknown,
+  keys: Set<string | number | symbol> = new Set(),
+  visited: WeakSet<object> = new WeakSet()
+): Set<string | number | symbol> {
+  if (obj === null || obj === undefined) {
+    return keys
+  }
+
+  if (typeof obj === 'object') {
+    // Prevent circular references
+    if (visited.has(obj as object)) {
+      return keys
+    }
+    visited.add(obj as object)
+
+    if (Array.isArray(obj)) {
+      // For arrays, collect keys from each element
+      obj.forEach((item) => {
+        collectAllKeys(item, keys, visited)
+      })
+    } else {
+      // For objects, collect all property keys and recurse into values
+      Object.keys(obj).forEach((key) => {
+        keys.add(key)
+        collectAllKeys((obj as Record<string, unknown>)[key], keys, visited)
+      })
+    }
+  }
+
+  return keys
+}
