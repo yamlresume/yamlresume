@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.4.1](https://github.com/yamlresume/yamlresume/compare/v0.4.0...v0.4.1) (2025-06-16)
+
+
+### Bug Fixes
+
+* align log output for build command ([ff771e6](https://github.com/yamlresume/yamlresume/commit/ff771e6d18204a8ed15b851b5ce7d2ae7594e465))
+* tolerate undefined/null properties for resumes ([920da87](https://github.com/yamlresume/yamlresume/commit/920da87077d9cb703d7182980d94faab9eabe144))
+
 ## [0.4.0](https://github.com/yamlresume/yamlresume/compare/v0.3.3...v0.4.0) (2025-06-04)
 
 
