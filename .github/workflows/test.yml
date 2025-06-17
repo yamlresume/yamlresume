@@ -59,6 +59,11 @@ jobs:
       - name: Run tests
         run: pnpm test:cov
 
+      - name: Upload results to Codecov
+        uses: codecov/codecov-action@v5
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+
       - name: Build resume
         run: |
           node packages/cli/dist/cli.js -V
