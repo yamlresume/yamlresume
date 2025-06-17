@@ -91,7 +91,7 @@ Initial public release.
 - support both XeTeX and Tectonic as typesetting engines
 - support multiple resume templates: `"moderncv-banking" | "moderncv-casual" |
   "moderncv-classic"`
-- support multiple languages: `"en" | "es" | "zh-Hans" | "zh-Hans-HK" |
-  "zh-Hans-TW"`
+- support multiple languages: `"en" | "es" | "zh-Hans" | "zh-Hant-HK" |
+  "zh-Hant-TW"`
 - support optional Linux Libertine font for latin alphabet and Google Noto font
   for CJK characters
