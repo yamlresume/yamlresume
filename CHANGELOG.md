@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.4.2](https://github.com/yamlresume/yamlresume/compare/v0.4.1...v0.4.2) (2025-06-18)
+
+
+### Features
+
+* add 50+ languages ([790fe20](https://github.com/yamlresume/yamlresume/commit/790fe20772f284cb5be21a396d087a81e2028346))
+* add some fancy badges ([c49a5e2](https://github.com/yamlresume/yamlresume/commit/c49a5e2514a4118e85fa5686442b298d9065c4db))
+* default to MarkdownParser for renderer's summary parser ([6e7f219](https://github.com/yamlresume/yamlresume/commit/6e7f219488921b8eb902b5bb5242a76263e20df2))
+* sunset TiptapParser and related tiptap code ([36b86b1](https://github.com/yamlresume/yamlresume/commit/36b86b192eeb0163850661af26a6ec32a9556434))
+
+
+### Bug Fixes
+
+* fallback to default value for unknown option ([f3edc01](https://github.com/yamlresume/yamlresume/commit/f3edc01cb69d39ea0e6393238a7207742f588a70))
+
 ## [0.4.1](https://github.com/yamlresume/yamlresume/compare/v0.4.0...v0.4.1) (2025-06-16)
 
 
