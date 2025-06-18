@@ -31,7 +31,6 @@ import which from 'which'
 import yaml from 'yaml'
 
 import {
-  MarkdownParser,
   type Resume,
   YAMLResumeError,
   getResumeRenderer,

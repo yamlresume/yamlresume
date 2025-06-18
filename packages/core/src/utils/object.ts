@@ -22,7 +22,7 @@
  * IN THE SOFTWARE.
  */
 
-import { isArray, isObject, transform } from 'lodash-es'
+import { isObject, transform } from 'lodash-es'
 
 /**
  * Check if a value is empty

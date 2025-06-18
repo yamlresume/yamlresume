@@ -4,6 +4,18 @@
     "declarationMap": true,
     "sourceMap": true,
 
+    // TODO: enable this after we have a way to handle the null/undefined
+    // "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUncheckedIndexedAccess": true,
+    "forceConsistentCasingInFileNames": true,
+    "noImplicitOverride": true,
+
+    "skipLibCheck": true,
+
     "importHelpers": true,
     "module": "ESNext",
     "moduleResolution": "bundler",

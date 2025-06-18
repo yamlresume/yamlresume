@@ -51,7 +51,7 @@ describe(parseDate, () => {
   })
 
   it('should handle exception if Date constructor throws an error', () => {
-    vi.spyOn(global, 'Date').mockImplementation((dateStr) => {
+    vi.spyOn(global, 'Date').mockImplementation(() => {
       throw new Error('Invalid date format')
     })
 
