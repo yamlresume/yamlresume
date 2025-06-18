@@ -24,7 +24,6 @@
 
 import { describe, expect, it } from 'vitest'
 
-import { MarkdownParser } from '@/compiler'
 import { type TemplateOption, defaultResume } from '@/data'
 import type { Resume } from '@/types'
 import {
@@ -62,8 +61,7 @@ describe(getResumeRenderer, () => {
         },
       }
 
-      const summaryParser = new MarkdownParser()
-      const renderer = getResumeRenderer(resume, summaryParser)
+      const renderer = getResumeRenderer(resume)
       expect(renderer).toBeInstanceOf(expected)
     }
   })
@@ -85,10 +83,8 @@ describe(getResumeRenderer, () => {
       },
     }
 
-    const summaryParser = new MarkdownParser()
-
     for (const resume of [resumeWithNoTemplate, resumeWithNoTemplateId]) {
-      const renderer = getResumeRenderer(resume, summaryParser)
+      const renderer = getResumeRenderer(resume)
       expect(renderer).toBeInstanceOf(ModerncvBankingRenderer)
     }
   })
@@ -102,8 +98,7 @@ describe(getResumeRenderer, () => {
       },
     }
 
-    const summaryParser = new MarkdownParser()
-    const renderer = getResumeRenderer(resume, summaryParser)
+    const renderer = getResumeRenderer(resume)
     expect(renderer).toBeInstanceOf(ModerncvBankingRenderer)
   })
 })

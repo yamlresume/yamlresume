@@ -24,7 +24,7 @@
 
 import { get } from 'lodash-es'
 
-import type { Parser } from '@/compiler'
+import { MarkdownParser, type Parser } from '@/compiler'
 import type { Resume } from '@/types'
 import type { Renderer } from './base'
 import {
@@ -43,11 +43,13 @@ const RESUME_RENDERER_MAP = {
  * Get the appropriate resume renderer based on the provided resume.
  *
  * @param {Resume} resume - The resume object
+ * @param {Parser} summaryParser - The parser instance for the summary field.
+ * Default to `MarkdownParser` if not provided.
  * @returns {Renderer} The renderer instance for the specified template.
  */
 export function getResumeRenderer(
   resume: Resume,
-  summaryParser: Parser
+  summaryParser: Parser = new MarkdownParser()
 ): Renderer {
   const template = resume.layout?.template
 

@@ -149,8 +149,7 @@ export function generateTeX(source: string) {
     throw new YAMLResumeError('INVALID_YAML', { error: error.message })
   }
 
-  const summaryParser = new MarkdownParser()
-  const renderer = getResumeRenderer(resume, summaryParser)
+  const renderer = getResumeRenderer(resume)
   const tex = renderer.render()
 
   try {
