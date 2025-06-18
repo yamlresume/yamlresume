@@ -32,8 +32,13 @@ import {
   defaultResume,
   filledResume,
 } from '@/data'
-import { getOptionsTranslations, getTemplateTranslations } from '@/translations'
-import type { ProfileItem, ResumeLayout, SocialNetwork } from '@/types'
+import { getOptionTranslation, getTemplateTranslations } from '@/translations'
+import {
+  type ProfileItem,
+  type ResumeLayout,
+  SECTION_IDS,
+  type SocialNetwork,
+} from '@/types'
 import { isEmptyValue } from '@/utils'
 import {
   replaceBlankLinesWithPercent,
@@ -136,7 +141,6 @@ describe(transformEducationDegreeAreaAndScore, () => {
       const area = 'Computer Science'
       const score = '3.5'
 
-      const { degrees } = getOptionsTranslations(language)
       const { punctuations, terms } = getTemplateTranslations(language)
 
       const tests = [
@@ -150,19 +154,19 @@ describe(transformEducationDegreeAreaAndScore, () => {
           degree: 'Bachelor',
           area: '',
           score: '',
-          expected: degrees.Bachelor,
+          expected: getOptionTranslation(language, 'degrees', 'Bachelor'),
         },
         {
           degree: 'Bachelor',
           area,
           score: '',
-          expected: `${degrees.Bachelor}${punctuations.comma}${area}`,
+          expected: `${getOptionTranslation(language, 'degrees', 'Bachelor')}${punctuations.comma}${area}`,
         },
         {
           degree: 'Bachelor',
           area: '',
           score,
-          expected: `${degrees.Bachelor}${
+          expected: `${getOptionTranslation(language, 'degrees', 'Bachelor')}${
             punctuations.comma
           }${terms.score}${punctuations.colon}${score}`,
         },
@@ -170,7 +174,7 @@ describe(transformEducationDegreeAreaAndScore, () => {
           degree: 'Bachelor',
           area,
           score,
-          expected: `${degrees.Bachelor}${
+          expected: `${getOptionTranslation(language, 'degrees', 'Bachelor')}${
             punctuations.comma
           }${area}${punctuations.comma}${
             terms.score
@@ -327,19 +331,27 @@ describe(transformLanguage, () => {
 
       transformLanguage(resume)
 
-      const { languages, languageFluencies } = getOptionsTranslations(
-        resume.layout.locale.language
-      )
-
       resume.content.languages.forEach((item) => {
         if (isEmptyValue(item.language) || isEmptyValue(item.fluency)) {
           return
         }
 
         item.language &&
-          expect(item.computed?.language).toBe(languages[item.language])
+          expect(item.computed?.language).toBe(
+            getOptionTranslation(
+              resume.layout.locale.language,
+              'languages',
+              item.language
+            )
+          )
         item.fluency &&
-          expect(item.computed?.fluency).toBe(languageFluencies[item.fluency])
+          expect(item.computed?.fluency).toBe(
+            getOptionTranslation(
+              resume.layout.locale.language,
+              'languageFluencies',
+              item.fluency
+            )
+          )
       })
     })
   })
@@ -366,15 +378,32 @@ describe(transformLocation, () => {
     const latinComma = getTemplateTranslations('en').punctuations.comma
     const chineseComma = getTemplateTranslations('zh-hans').punctuations.comma
 
-    const englishLocation = getOptionsTranslations('en').countries
-    const spanishLocation = getOptionsTranslations('es').countries
+    const englishLocation = getOptionTranslation(
+      'en',
+      'countries',
+      'United States'
+    )
+    const spanishLocation = getOptionTranslation(
+      'es',
+      'countries',
+      'United States'
+    )
 
-    const simplifiedChineseLocation =
-      getOptionsTranslations('zh-hans').countries
-    const traditionalChineseHKLocation =
-      getOptionsTranslations('zh-hant-hk').countries
-    const traditionalChineseTWLocation =
-      getOptionsTranslations('zh-hant-tw').countries
+    const simplifiedChineseLocation = getOptionTranslation(
+      'zh-hans',
+      'countries',
+      'United States'
+    )
+    const traditionalChineseHKLocation = getOptionTranslation(
+      'zh-hant-hk',
+      'countries',
+      'United States'
+    )
+    const traditionalChineseTWLocation = getOptionTranslation(
+      'zh-hant-tw',
+      'countries',
+      'United States'
+    )
 
     const tests = [
       {
@@ -399,20 +428,14 @@ describe(transformLocation, () => {
         region: '',
         country: 'United States',
         expected: {
-          en: `Sacramento -- ${
-            englishLocation['United States']
-          }${latinComma}95814`,
-          es: `Sacramento -- ${
-            spanishLocation['United States']
-          }${latinComma}95814`,
-          'zh-hans': `${
-            simplifiedChineseLocation['United States']
-          } -- Sacramento -- 95814`,
+          en: `Sacramento -- ${englishLocation}${latinComma}95814`,
+          es: `Sacramento -- ${spanishLocation}${latinComma}95814`,
+          'zh-hans': `${simplifiedChineseLocation} -- Sacramento -- 95814`,
           'zh-hant-hk': `${
-            traditionalChineseHKLocation['United States']
+            traditionalChineseHKLocation
           } -- Sacramento -- 95814`,
           'zh-hant-tw': `${
-            traditionalChineseTWLocation['United States']
+            traditionalChineseTWLocation
           } -- Sacramento -- 95814`,
         },
       },
@@ -439,20 +462,20 @@ describe(transformLocation, () => {
         country: 'United States',
         expected: {
           en: `123 Main Street -- Sacramento -- California${latinComma}${
-            englishLocation['United States']
+            englishLocation
           }${latinComma}95814`,
           es: `123 Main Street -- Sacramento -- California${latinComma}${
-            spanishLocation['United States']
+            spanishLocation
           }${latinComma}95814`,
 
           'zh-hans': `${
-            simplifiedChineseLocation['United States']
+            simplifiedChineseLocation
           }${chineseComma}California -- Sacramento -- 123 Main Street${chineseComma}95814`,
           'zh-hant-hk': `${
-            traditionalChineseHKLocation['United States']
+            traditionalChineseHKLocation
           }${chineseComma}California -- Sacramento -- 123 Main Street${chineseComma}95814`,
           'zh-hant-tw': `${
-            traditionalChineseTWLocation['United States']
+            traditionalChineseTWLocation
           }${chineseComma}California -- Sacramento -- 123 Main Street${chineseComma}95814`,
         },
       },
@@ -615,9 +638,9 @@ describe(transformSkills, () => {
 
         transformSkills(resume)
 
-        const { skills } = getOptionsTranslations(resume.layout.locale.language)
-
-        expect(resume.content.skills[0].computed?.level).toBe(skills[level])
+        expect(resume.content.skills[0].computed?.level).toBe(
+          getOptionTranslation(resume.layout.locale.language, 'skills', level)
+        )
       }
     })
   })
@@ -629,14 +652,15 @@ describe(transformSectionNames, () => {
       const resume = cloneDeep(defaultResume)
       resume.layout.locale.language = language
 
-      const { sections } = getOptionsTranslations(resume.layout.locale.language)
-
-      resume.layout.locale.language = language
       transformSectionNames(resume)
 
-      Object.entries(sections).forEach(([section, translations]) => {
+      SECTION_IDS.forEach((section) => {
         expect(resume.content.computed?.sectionNames?.[section]).toEqual(
-          translations
+          getOptionTranslation(
+            resume.layout.locale.language,
+            'sections',
+            section
+          )
         )
       })
     })

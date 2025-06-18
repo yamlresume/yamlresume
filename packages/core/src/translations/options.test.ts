@@ -24,9 +24,9 @@
 
 import { describe, expect, it } from 'vitest'
 
-import { getOptionsTranslations } from './options'
+import { getOptionTranslation } from './options'
 
-describe(getOptionsTranslations, () => {
+describe(getOptionTranslation, () => {
   it('should return the correct translations', () => {
     const tests = [
       {
@@ -80,11 +80,13 @@ describe(getOptionsTranslations, () => {
     ] as const
 
     tests.forEach((test) => {
-      const translations = getOptionsTranslations(test.language)
-
-      expect(translations.degrees.Bachelor).toEqual(
-        test.expected.education.Bachelor
+      const translations = getOptionTranslation(
+        test.language,
+        'degrees',
+        'Bachelor'
       )
+
+      expect(translations).toEqual(test.expected.education.Bachelor)
     })
   })
 })

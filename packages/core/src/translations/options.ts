@@ -22,6 +22,8 @@
  * IN THE SOFTWARE.
  */
 
+import { get } from 'lodash-es'
+
 import type {
   Country,
   Degree,
@@ -38,10 +40,9 @@ import {
   TraditionalChineseCountryTWNames,
 } from '@/data'
 import type { SectionID } from '@/types'
-import { isEmptyValue } from '@/utils'
 
 /** Defines the structure for translated terms for a single language. */
-type OptionsTranslationValue = {
+type OptionTranslation = {
   /** Translations for degree types. */
   degrees: Record<Degree, string>
   /** Translations for language names. */
@@ -56,8 +57,10 @@ type OptionsTranslationValue = {
   skills: Record<SkillLevel, string>
 }
 
+type OptionCategory = keyof OptionTranslation
+
 /** The structure containing translations for all supported languages. */
-type OptionsTranslation = Record<LocaleLanguageOption, OptionsTranslationValue>
+type OptionsTranslations = Record<LocaleLanguageOption, OptionTranslation>
 
 /**
  * Retrieves the translated terms for a specific locale language.
@@ -70,10 +73,12 @@ type OptionsTranslation = Record<LocaleLanguageOption, OptionsTranslationValue>
  * @returns An object containing the translated terms for the specified
  * language.
  */
-export function getOptionsTranslations(
-  language?: LocaleLanguageOption
-): OptionsTranslationValue {
-  const optionsTranslations: OptionsTranslation = {
+export function getOptionTranslation<K extends OptionCategory>(
+  language: LocaleLanguageOption,
+  category: K,
+  option: keyof OptionTranslation[K]
+): string {
+  const optionsTranslations: OptionsTranslations = {
     en: {
       countries: EnglishCountryNames,
       degrees: {
@@ -432,5 +437,9 @@ export function getOptionsTranslations(
     },
   }
 
-  return optionsTranslations[isEmptyValue(language) ? 'en' : language]
+  return get(
+    optionsTranslations,
+    [language, category, option],
+    option
+  ) as string
 }

@@ -26,8 +26,8 @@ import { capitalize, cloneDeep, isArray, merge } from 'lodash-es'
 
 import { LatexCodeGenerator, type Parser } from '@/compiler'
 import { defaultResumeLayout } from '@/data'
-import { getOptionsTranslations, getTemplateTranslations } from '@/translations'
-import type { ProfileItem, Resume, ResumeContent } from '@/types'
+import { getOptionTranslation, getTemplateTranslations } from '@/translations'
+import type { ProfileItem, Resume, ResumeContent, SectionID } from '@/types'
 import {
   escapeLatex,
   getDateRange,
@@ -202,14 +202,16 @@ export function transformEducationDegreeAreaAndScore(resume: Resume): Resume {
     punctuations: { colon, comma },
   } = getTemplateTranslations(resume.layout.locale?.language)
 
-  const { degrees } = getOptionsTranslations(resume.layout.locale?.language)
-
   const {
     terms: { score },
   } = getTemplateTranslations(resume.layout.locale?.language)
 
   resume.content.education.forEach((item) => {
-    const degree = showIf(!isEmptyValue(item.degree), degrees[item.degree])
+    const degree = getOptionTranslation(
+      resume.layout.locale?.language,
+      'degrees',
+      item.degree
+    )
 
     item.computed = {
       ...item.computed,
@@ -373,10 +375,6 @@ export function transformEndDate(resume: Resume): Resume {
  * @remarks Modifies `resume.content.languages` items in place.
  */
 export function transformLanguage(resume: Resume): Resume {
-  const { languages, languageFluencies } = getOptionsTranslations(
-    resume.layout.locale?.language
-  )
-
   resume.content.languages.forEach((item) => {
     if (isEmptyValue(item.language) || isEmptyValue(item.fluency)) {
       return
@@ -384,8 +382,16 @@ export function transformLanguage(resume: Resume): Resume {
 
     item.computed = {
       ...item.computed,
-      language: languages[item.language],
-      fluency: languageFluencies[item.fluency],
+      language: getOptionTranslation(
+        resume.layout.locale?.language,
+        'languages',
+        item.language
+      ),
+      fluency: getOptionTranslation(
+        resume.layout.locale?.language,
+        'languageFluencies',
+        item.fluency
+      ),
     }
   })
 
@@ -409,8 +415,10 @@ export function transformLocation(resume: Resume): Resume {
     punctuations: { comma },
   } = getTemplateTranslations(resume.layout.locale?.language)
 
-  const { countries: location } = getOptionsTranslations(
-    resume.layout.locale?.language
+  const country = getOptionTranslation(
+    resume.layout.locale?.language,
+    'countries',
+    resume.content.location.country
   )
 
   switch (resume.layout.locale?.language) {
@@ -426,10 +434,7 @@ export function transformLocation(resume: Resume): Resume {
         .filter((value) => !isEmptyValue(value))
         .join(comma)
 
-      const regionAndCountry = [
-        location[resume.content.location.country],
-        resume.content.location.region,
-      ]
+      const regionAndCountry = [country, resume.content.location.region]
         .filter((value) => !isEmptyValue(value))
         .join(comma)
 
@@ -459,7 +464,7 @@ export function transformLocation(resume: Resume): Resume {
 
       const regionCountryAndPostalCode = [
         resume.content.location.region,
-        location[resume.content.location.country],
+        country,
         resume.content.location.postalCode,
       ]
         .filter((value) => !isEmptyValue(value))
@@ -560,11 +565,16 @@ export function transformProfileUrls(resume: Resume): Resume {
  * @remarks Modifies `resume.content.skills` items in place.
  */
 export function transformSkills(resume: Resume): Resume {
-  const { skills } = getOptionsTranslations(resume.layout.locale?.language)
   resume.content.skills.forEach((item) => {
+    const level = getOptionTranslation(
+      resume.layout.locale?.language,
+      'skills',
+      item.level
+    )
+
     item.computed = {
       ...item.computed,
-      level: showIf(!isEmptyValue(item.level), skills[item.level]),
+      level: showIf(!isEmptyValue(item.level), level),
     }
   })
 
@@ -613,8 +623,6 @@ export function transformSocialLinks(resume: Resume): Resume {
  * @remarks Modifies `resume.content.computed`.
  */
 export function transformSectionNames(resume: Resume): Resume {
-  const { sections } = getOptionsTranslations(resume.layout.locale?.language)
-
   resume.content.computed = {
     ...resume.content.computed,
     sectionNames: Object.keys(resume.content).reduce(
@@ -623,7 +631,11 @@ export function transformSectionNames(resume: Resume): Resume {
           return translations
         }
 
-        translations[sectionName] = sections[sectionName]
+        translations[sectionName] = getOptionTranslation(
+          resume.layout.locale?.language,
+          'sections',
+          sectionName as SectionID
+        )
 
         return translations
       },
