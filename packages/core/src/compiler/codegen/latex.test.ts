@@ -33,12 +33,13 @@ import type {
   ParagraphNode,
   TextNode,
 } from '@/compiler/ast'
-import tipTapContentJSON from './fixtures/tiptap-content.json'
+import astJson from './fixtures/ast.json'
+
 // I didn't manage to find a way to get rid of the loading error here:
-// `Cannot find module './tiptap-content.tex' or its corresponding type
+// `Cannot find module './output.tex' or its corresponding type
 // declarations.`, let's just ignore here
 // @ts-ignore
-import tipTapContentTeX from './fixtures/tiptap-content.tex?raw'
+import outputTex from './fixtures/output.tex?raw'
 import { nodeToTeX } from './latex'
 
 describe(nodeToTeX, () => {
@@ -168,7 +169,7 @@ describe(nodeToTeX, () => {
     })
 
     it('should return proper string with a json object', () => {
-      expect(nodeToTeX(tipTapContentJSON as DocNode)).toBe(tipTapContentTeX)
+      expect(nodeToTeX(astJson as DocNode)).toBe(outputTex)
     })
   })
 

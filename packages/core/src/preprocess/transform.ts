@@ -135,8 +135,8 @@ function transformResumeSectionComputedValues(sectionResumeComputed: {
 function transformResumeSectionValues(sectionResumeItem: Object): void {
   Object.entries(sectionResumeItem).forEach(([key, value]) => {
     if (key === 'summary') {
-      // we will handle the `summary` field in a `textNodeToTeX` function from
-      // `tiptap.ts` separately
+      // we will handle the `summary` field in a `textNodeToTeX` function
+      // separately
       return
     }
 
@@ -635,15 +635,13 @@ export function transformSectionNames(resume: Resume): Resume {
 }
 
 /**
- * Parses the `summary` field (assumed to be Tiptap JSON or Markdown, based on
- * the parser) in various sections and converts it into LaTeX code using the
- * provided parser and generator.
+ * Parses the `summary` field in various sections and converts it into LaTeX
+ * code using the provided parser and generator.
  *
  * Stores the result in the corresponding `computed.summary` field, replacing blank lines.
  *
  * @param resume - The resume object.
- * @param summaryParser - The parser instance (e.g., `MarkdownParser` or
- * `TiptapParser`).
+ * @param summaryParser - The parser instance (e.g., `MarkdownParser`)
  * @returns The transformed resume object.
  * @remarks Modifies `computed.summary` within `basics` and items in sections
  * like `education`, `work`, etc.

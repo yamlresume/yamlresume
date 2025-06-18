@@ -24,7 +24,7 @@
 
 import { describe, expect, it } from 'vitest'
 
-import { TiptapParser } from '@/compiler'
+import { MarkdownParser } from '@/compiler'
 import { type TemplateOption, defaultResume } from '@/data'
 import type { Resume } from '@/types'
 import {
@@ -62,7 +62,7 @@ describe(getResumeRenderer, () => {
         },
       }
 
-      const summaryParser = new TiptapParser()
+      const summaryParser = new MarkdownParser()
       const renderer = getResumeRenderer(resume, summaryParser)
       expect(renderer).toBeInstanceOf(expected)
     }
@@ -85,7 +85,7 @@ describe(getResumeRenderer, () => {
       },
     }
 
-    const summaryParser = new TiptapParser()
+    const summaryParser = new MarkdownParser()
 
     for (const resume of [resumeWithNoTemplate, resumeWithNoTemplateId]) {
       const renderer = getResumeRenderer(resume, summaryParser)
@@ -102,7 +102,7 @@ describe(getResumeRenderer, () => {
       },
     }
 
-    const summaryParser = new TiptapParser()
+    const summaryParser = new MarkdownParser()
     const renderer = getResumeRenderer(resume, summaryParser)
     expect(renderer).toBeInstanceOf(ModerncvBankingRenderer)
   })

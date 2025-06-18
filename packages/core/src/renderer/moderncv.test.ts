@@ -25,8 +25,8 @@
 import { cloneDeep } from 'lodash-es'
 import { beforeEach, describe, expect, it } from 'vitest'
 
-import { TiptapParser } from '@/compiler'
-import { emptyParagraph, filledResume } from '@/data'
+import { MarkdownParser } from '@/compiler'
+import { filledResume } from '@/data'
 import type { Resume } from '@/types'
 import {
   ModerncvBankingRenderer,
@@ -38,7 +38,7 @@ import {
 describe('ModerncvBase', () => {
   let resume: Resume
   let renderer: ModerncvBase
-  const summaryParser = new TiptapParser()
+  const summaryParser = new MarkdownParser()
 
   beforeEach(() => {
     resume = cloneDeep(filledResume)
@@ -288,7 +288,7 @@ describe('ModerncvBase', () => {
       const startDate = 'Jan 1, 2020'
       const endDate = 'Jan 1, 2024'
       const url = 'https://university.edu'
-      const summary = emptyParagraph
+      const summary = ''
 
       resume.content.education = [
         {
@@ -329,7 +329,7 @@ describe('ModerncvBase', () => {
       const startDate = 'Jan 1, 2020'
       const endDate = 'Jan 1, 2024'
       const url = 'https://company.com'
-      const summary = emptyParagraph
+      const summary = ''
       const keywords = ['JavaScript', 'TypeScript']
 
       resume.content.work = [
@@ -460,7 +460,7 @@ describe('ModerncvBase', () => {
       const title = 'Best Developer Award'
       const awarder = 'Tech Company'
       const date = 'Jan 1, 2023'
-      const summary = emptyParagraph
+      const summary = ''
 
       resume.content.awards = [
         {
@@ -532,7 +532,7 @@ describe('ModerncvBase', () => {
       const publisher = 'Academic Journal'
       const releaseDate = 'Jan 1, 2023'
       const url = 'https://journal.com/paper'
-      const summary = emptyParagraph
+      const summary = ''
 
       resume.content.publications = [
         {
@@ -570,7 +570,7 @@ describe('ModerncvBase', () => {
       const email = 'john@example.com'
       const phone = '+1234567890'
       const relationship = 'Manager'
-      const summary = emptyParagraph
+      const summary = ''
 
       resume.content.references = [
         {
@@ -612,7 +612,7 @@ describe('ModerncvBase', () => {
       const startDate = 'Jan 1, 2023'
       const endDate = 'Dec 31, 2023'
       const url = 'https://project.com'
-      const summary = emptyParagraph
+      const summary = ''
       const keywords = ['React', 'TypeScript']
 
       resume.content.projects = [
@@ -683,7 +683,7 @@ describe('ModerncvBase', () => {
       const position = 'Technical Lead'
       const startDate = '2023-01'
       const endDate = '2023-12'
-      const summary = emptyParagraph
+      const summary = ''
       const url = 'https://codeforgood.org'
 
       resume.content.volunteer = [

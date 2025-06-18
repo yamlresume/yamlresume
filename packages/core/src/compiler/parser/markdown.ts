@@ -26,47 +26,41 @@ import type { Root, RootContent } from 'mdast'
 import remarkParse from 'remark-parse'
 import { unified } from 'unified'
 
-import type {
-  BoldMark,
-  ItalicMark,
-  LinkMark,
-  Mark,
-  Node as TiptapNode,
-} from '@/compiler/ast'
+import type { BoldMark, ItalicMark, LinkMark, Mark, Node } from '@/compiler/ast'
 import type { Parser } from './interface'
 
 /**
- * Parse markdown to tiptap nodes
+ * Parse markdown to ast node
  *
  * Under the hood this class first parse the markdown to mdast and then
- * transform the mdast to tiptap nodes.
+ * transform the mdast to ast node.
  *
  * @see {@link Parser}
  */
 export class MarkdownParser implements Parser {
   /**
-   * Parse markdown to tiptap nodes
+   * Parse markdown to ast node
    *
    * @param input - The markdown input to parse
-   * @returns The tiptap node
+   * @returns The ast node
    */
-  parse(input: string): TiptapNode {
+  parse(input: string): Node {
     const ast = unified().use(remarkParse).parse(input)
     return transform(ast)
   }
 }
 
 /**
- * Transforms an mdast node (or content) into Tiptap node(s).
+ * Transforms an mdast node (or content) into ast node(s).
  *
  * This is a recursive descent tree walker that traverses the mdast node and
- * transforms it into a Tiptap node representation. It accumulates formatting marks
+ * transforms it into a ast node representation. It accumulates formatting marks
  * (like bold, italic) as it descends.
  *
  * @param ast - The mdast node (Root or RootContent) to transform.
  * @param marks - The formatting marks accumulated from parent nodes to apply.
  * Defaults to an empty array.
- * @returns The corresponding Tiptap node, an array of Tiptap nodes (for nodes
+ * @returns The corresponding ast node, an array of ast nodes (for nodes
  * that expand like emphasis/strong), or `null` if the mdast node type isn't
  * handled.
  */
@@ -150,8 +144,8 @@ function transform(ast: Root | RootContent, marks: Mark[] = []) {
  *
  * @param children - The children of the node to process.
  * @param marks - The accumulated marks to apply to the node.
- * @returns The transformed Tiptap node if only one results from the children,
- * otherwise an array of the transformed Tiptap nodes.
+ * @returns The transformed ast node if only one results from the children,
+ * otherwise an array of the transformed ast nodes.
  */
 function processChildrenWithMarks(children: RootContent[], marks: Mark[]) {
   // Transform each child with the accumulated marks

@@ -24,9 +24,6 @@
 
 import type { Resume, ResumeContent, ResumeItem, ResumeLayout } from '@/types'
 
-/** Represents a Tiptap editor JSON string for a single empty paragraph. */
-export const emptyParagraph = '{"type":"doc","content":[{"type":"paragraph"}]}'
-
 /**
  * Defines all possible degrees.
  */
@@ -157,7 +154,7 @@ export const resumeItems: ResumeItem = {
   award: {
     awarder: '',
     date: '',
-    summary: emptyParagraph,
+    summary: '',
     title: '',
   },
   basics: {
@@ -165,7 +162,7 @@ export const resumeItems: ResumeItem = {
     headline: '',
     name: '',
     phone: '',
-    summary: emptyParagraph,
+    summary: '',
     url: '',
   },
   certificate: {
@@ -178,7 +175,7 @@ export const resumeItems: ResumeItem = {
     area: '',
     courses: [],
     endDate: '',
-    summary: emptyParagraph,
+    summary: '',
     institution: '',
     score: '',
     startDate: '',
@@ -209,7 +206,7 @@ export const resumeItems: ResumeItem = {
   project: {
     description: '',
     endDate: '',
-    summary: emptyParagraph,
+    summary: '',
     keywords: [],
     name: '',
     startDate: '',
@@ -219,7 +216,7 @@ export const resumeItems: ResumeItem = {
     name: '',
     publisher: '',
     releaseDate: '',
-    summary: emptyParagraph,
+    summary: '',
     url: '',
   },
   reference: {
@@ -227,7 +224,7 @@ export const resumeItems: ResumeItem = {
     name: '',
     phone: '',
     relationship: '',
-    summary: emptyParagraph,
+    summary: '',
   },
   skill: {
     keywords: [],
@@ -239,7 +236,7 @@ export const resumeItems: ResumeItem = {
     organization: '',
     position: '',
     startDate: '',
-    summary: emptyParagraph,
+    summary: '',
     url: '',
   },
   work: {
@@ -248,7 +245,7 @@ export const resumeItems: ResumeItem = {
     position: '',
     startDate: '',
     keywords: [],
-    summary: emptyParagraph,
+    summary: '',
     url: '',
   },
 }

@@ -31,4 +31,4 @@ export type {
   OrderedListNode,
 } from './ast'
 export { LatexCodeGenerator } from './codegen'
-export { MarkdownParser, Parser, TiptapParser } from './parser'
+export { MarkdownParser, type Parser } from './parser'

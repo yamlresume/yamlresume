@@ -25,12 +25,7 @@
 import { cloneDeep } from 'lodash-es'
 import { describe, expect, it } from 'vitest'
 
-import {
-  type DocNode,
-  LatexCodeGenerator,
-  MarkdownParser,
-  TiptapParser,
-} from '@/compiler'
+import { LatexCodeGenerator, MarkdownParser } from '@/compiler'
 import {
   LOCALE_LANGUAGE_OPTIONS,
   type LocaleLanguageOption,
@@ -495,9 +490,9 @@ describe(transformLocation, () => {
 })
 
 describe(transformSummary, () => {
-  it('should transform summary by converting from tiptap JSON to LaTeX', () => {
+  it('should parse summary from markdown to tex', () => {
     const resume = cloneDeep(filledResume)
-    const summary = `{"type":"doc","content":[{"type":"paragraph","content":[{"type":"text","text":"Test summary"}]}]}`
+    const summary = 'Test summary'
 
     resume.content.basics.summary = summary
 
@@ -515,14 +510,16 @@ describe(transformSummary, () => {
       })
     }
 
-    const summaryParser = new TiptapParser()
+    const summaryParser = new MarkdownParser()
 
     transformSummary(resume, summaryParser)
 
+    const expected = new LatexCodeGenerator()
+      .generate(summaryParser.parse(summary))
+      .trim()
+
     expect(resume.content.basics.computed?.summary).toEqual(
-      replaceBlankLinesWithPercent(
-        new LatexCodeGenerator().generate(summaryParser.parse(summary)).trim()
-      )
+      replaceBlankLinesWithPercent(expected)
     )
 
     for (const section of [
@@ -536,11 +533,7 @@ describe(transformSummary, () => {
     ]) {
       resume.content[section].forEach((_, index: number) => {
         expect(resume.content[section][index].computed?.summary).toEqual(
-          replaceBlankLinesWithPercent(
-            new LatexCodeGenerator()
-              .generate(JSON.parse(summary) as DocNode)
-              .trim()
-          )
+          replaceBlankLinesWithPercent(expected)
         )
       })
     }
@@ -825,7 +818,7 @@ describe(transformResumeContent, () => {
   it('should transform resume.content by calling transform functions', () => {
     const resume = cloneDeep(filledResume)
 
-    const summaryParser = new TiptapParser()
+    const summaryParser = new MarkdownParser()
     const transformedResume = transformResumeContent(resume, summaryParser)
 
     expect(transformedResume.content).toHaveProperty('computed')

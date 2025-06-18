@@ -113,7 +113,13 @@ export type TextNode = {
   type: 'text'
 }
 
-/** Represents a union of all possible node types in the document tree. */
+/**
+ * Represents a union of all possible node types in the document tree.
+ *
+ * These node types are inspired by the Tiptap editor.
+ *
+ * @see {@link https://tiptap.dev/docs/editor/core-concepts/schema}
+ **/
 export type Node =
   | BulletListNode
   | DocNode
