@@ -27,10 +27,14 @@ import { describe, expect, it } from 'vitest'
 import {
   COUNTRY_OPTIONS,
   DEGREE_OPTIONS,
+  FONT_SIZE_OPTIONS,
+  FONT_SPEC_NUMBERS_STYLE_OPTIONS,
   LANGUAGE_FLUENCIE_OPTIONS,
   LANGUAGE_OPTIONS,
+  LOCALE_LANGUAGE_OPTIONS,
   SKILL_LEVEL_OPTIONS,
   SOCIAL_NETWORK_OPTIONS,
+  TEMPLATE_OPTIONS,
 } from '@/models'
 
 import {
@@ -38,9 +42,13 @@ import {
   dateSchema,
   degreeOptionSchema,
   emailSchema,
+  fontSizeOptionSchema,
+  fontSpecNumbersStyleOptionSchema,
   keywordsSchema,
   languageFluencyOptionSchema,
   languageOptionSchema,
+  localeLanguageOptionSchema,
+  marginSizeSchema,
   nameSchema,
   optionSchemaMessage,
   organizationSchema,
@@ -49,6 +57,7 @@ import {
   skillLevelOptionSchema,
   socialNetworkOptionSchema,
   summarySchema,
+  templateOptionSchema,
   urlSchema,
 } from './primitives'
 
@@ -190,6 +199,68 @@ describe('degreeOptionSchema', () => {
   })
 })
 
+describe('fontSpecNumbersStyleOptionSchema', () => {
+  it('should return a font spec numbers style if it is valid', () => {
+    for (const numbers of FONT_SPEC_NUMBERS_STYLE_OPTIONS) {
+      expect(fontSpecNumbersStyleOptionSchema.parse(numbers)).toBe(numbers)
+    }
+  })
+
+  it('should throw an error if the font spec numbers style is invalid', () => {
+    const tests = [
+      {
+        numbers: 'bold',
+        message: optionSchemaMessage(
+          FONT_SPEC_NUMBERS_STYLE_OPTIONS,
+          'font spec numbers'
+        ),
+      },
+      {
+        numbers: '',
+        message: optionSchemaMessage(
+          FONT_SPEC_NUMBERS_STYLE_OPTIONS,
+          'font spec numbers'
+        ),
+      },
+      {
+        numbers: undefined,
+        message: 'font spec numbers option is required.',
+      },
+    ]
+
+    for (const { numbers, message } of tests) {
+      expect(() => fontSpecNumbersStyleOptionSchema.parse(numbers)).toThrow(
+        message
+      )
+    }
+  })
+})
+
+describe('fontSizeOptionSchema', () => {
+  it('should return a font size if it is valid', () => {
+    for (const fontSize of FONT_SIZE_OPTIONS) {
+      expect(fontSizeOptionSchema.parse(fontSize)).toBe(fontSize)
+    }
+  })
+
+  it('should throw an error if the font size is invalid', () => {
+    const tests = [
+      {
+        fontSize: '13pt',
+        message: optionSchemaMessage(FONT_SIZE_OPTIONS, 'font size'),
+      },
+      {
+        fontSize: undefined,
+        message: 'font size option is required.',
+      },
+    ]
+
+    for (const { fontSize, message } of tests) {
+      expect(() => fontSizeOptionSchema.parse(fontSize)).toThrow(message)
+    }
+  })
+})
+
 describe('emailSchema', () => {
   it('should return an email if it is valid', () => {
     expect(emailSchema.parse('test@test.com')).toBe('test@test.com')
@@ -299,6 +370,89 @@ describe('languageFluencyOptionSchema', () => {
 
     for (const { fluency, message } of tests) {
       expect(() => languageFluencyOptionSchema.parse(fluency)).toThrow(message)
+    }
+  })
+})
+
+describe('localeLanguageOptionSchema', () => {
+  it('should return a locale language if it is valid', () => {
+    for (const language of LOCALE_LANGUAGE_OPTIONS) {
+      expect(localeLanguageOptionSchema.parse(language)).toBe(language)
+    }
+  })
+
+  it('should throw an error if the locale language is invalid', () => {
+    const tests = [
+      {
+        language: 'en-US',
+        message: optionSchemaMessage(
+          LOCALE_LANGUAGE_OPTIONS,
+          'locale language'
+        ),
+      },
+      {
+        language: 'fr-FR',
+        message: optionSchemaMessage(
+          LOCALE_LANGUAGE_OPTIONS,
+          'locale language'
+        ),
+      },
+      {
+        language: 'es-ES',
+        message: optionSchemaMessage(
+          LOCALE_LANGUAGE_OPTIONS,
+          'locale language'
+        ),
+      },
+      {
+        language: undefined,
+        message: 'locale language option is required.',
+      },
+    ]
+
+    for (const { language, message } of tests) {
+      expect(() => localeLanguageOptionSchema.parse(language)).toThrow(message)
+    }
+  })
+})
+
+describe('marginSizeSchema', () => {
+  it('should return a margin size if it is valid', () => {
+    const tests = ['2.5cm', '1in', '72pt', '0.5cm', '12pt']
+
+    for (const test of tests) {
+      expect(marginSizeSchema.parse(test)).toBe(test)
+    }
+  })
+
+  it('should throw an error if the margin size is invalid', () => {
+    const invalidMarginMessage = 'invalid margin size'
+
+    const tests = [
+      {
+        margin: '2.5',
+        message: invalidMarginMessage,
+      },
+      {
+        margin: '2.5px',
+        message: invalidMarginMessage,
+      },
+      {
+        margin: 'abc',
+        message: invalidMarginMessage,
+      },
+      {
+        margin: '-2.5cm',
+        message: invalidMarginMessage,
+      },
+      {
+        margin: undefined,
+        message: 'margin size is required.',
+      },
+    ]
+
+    for (const { margin, message } of tests) {
+      expect(() => marginSizeSchema.parse(margin)).toThrow(message)
     }
   })
 })
@@ -505,6 +659,31 @@ describe('summarySchema', () => {
 
     for (const { summary, message } of tests) {
       expect(() => summarySchema.parse(summary)).toThrow(message)
+    }
+  })
+})
+
+describe('templateOptionSchema', () => {
+  it('should return a template option if it is valid', () => {
+    for (const template of TEMPLATE_OPTIONS) {
+      expect(templateOptionSchema.parse(template)).toBe(template)
+    }
+  })
+
+  it('should throw an error if the template option is invalid', () => {
+    const tests = [
+      {
+        template: 'invalid-template',
+        message: optionSchemaMessage(TEMPLATE_OPTIONS, 'template'),
+      },
+      {
+        template: undefined,
+        message: 'template option is required.',
+      },
+    ]
+
+    for (const { template, message } of tests) {
+      expect(() => templateOptionSchema.parse(template)).toThrow(message)
     }
   })
 })

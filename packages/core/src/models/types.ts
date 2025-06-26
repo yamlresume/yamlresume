@@ -641,6 +641,14 @@ export const FONT_SPEC_NUMBERS_STYLE_OPTIONS = [
 export type FontSpecNumbersStyle =
   (typeof FONT_SPEC_NUMBERS_STYLE_OPTIONS)[number]
 
+/** The options for the font size. */
+export const FONT_SIZE_OPTIONS = ['10pt', '11pt', '12pt'] as const
+
+/**
+ * The type of font size.
+ */
+export type FontSize = (typeof FONT_SIZE_OPTIONS)[number]
+
 /** Defines typography settings like font size and number style. */
 type ResumeLayoutTypography = {
   /** Base font size for the document (e.g., "10pt", "11pt"). */

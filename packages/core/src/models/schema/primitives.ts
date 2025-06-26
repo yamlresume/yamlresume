@@ -26,10 +26,14 @@ import { z } from 'zod/v4'
 import {
   COUNTRY_OPTIONS,
   DEGREE_OPTIONS,
+  FONT_SIZE_OPTIONS,
+  FONT_SPEC_NUMBERS_STYLE_OPTIONS,
   LANGUAGE_FLUENCIE_OPTIONS,
   LANGUAGE_OPTIONS,
+  LOCALE_LANGUAGE_OPTIONS,
   SKILL_LEVEL_OPTIONS,
   SOCIAL_NETWORK_OPTIONS,
+  TEMPLATE_OPTIONS,
 } from '@/models'
 
 /**
@@ -38,10 +42,14 @@ import {
 type Options =
   | typeof COUNTRY_OPTIONS
   | typeof DEGREE_OPTIONS
+  | typeof FONT_SPEC_NUMBERS_STYLE_OPTIONS
+  | typeof FONT_SIZE_OPTIONS
   | typeof LANGUAGE_FLUENCIE_OPTIONS
   | typeof LANGUAGE_OPTIONS
+  | typeof LOCALE_LANGUAGE_OPTIONS
   | typeof SKILL_LEVEL_OPTIONS
   | typeof SOCIAL_NETWORK_OPTIONS
+  | typeof TEMPLATE_OPTIONS
 
 /**
  * Creates a message for an option schema.
@@ -118,6 +126,19 @@ export const degreeOptionSchema = optionSchema(DEGREE_OPTIONS, 'degree')
 export const emailSchema = z.email({ message: 'email is invalid.' })
 
 /**
+ * A zod schema for a font spec numbers style.
+ */
+export const fontSpecNumbersStyleOptionSchema = optionSchema(
+  FONT_SPEC_NUMBERS_STYLE_OPTIONS,
+  'font spec numbers'
+)
+
+/**
+ * A zod schema for fontSize option in layout.
+ */
+export const fontSizeOptionSchema = optionSchema(FONT_SIZE_OPTIONS, 'font size')
+
+/**
  * A zod schema for a keywords array.
  */
 export const keywordsSchema = z.array(sizedStringSchema('keyword', 1, 32))
@@ -134,6 +155,31 @@ export const languageFluencyOptionSchema = optionSchema(
  * A zod schema for a language.
  */
 export const languageOptionSchema = optionSchema(LANGUAGE_OPTIONS, 'language')
+
+/**
+ * A zod schema for a locale language option.
+ */
+export const localeLanguageOptionSchema = optionSchema(
+  LOCALE_LANGUAGE_OPTIONS,
+  'locale language'
+)
+
+/**
+ * A zod schema for a margin.
+ *
+ * Accepts positive numbers followed by valid units: cm, pt, or in
+ * Examples: "2.5cm", "1in", "72pt"
+ */
+export const marginSizeSchema = sizedStringSchema('margin size', 2, 32).regex(
+  /^\d+(\.\d+)?(cm|pt|in)$/,
+  {
+    message: [
+      'invalid margin size,',
+      'margin size must be a positive number followed by "cm", "pt" or "in",',
+      'eg: "2.5cm", "1in", "72pt"',
+    ].join(' '),
+  }
+)
 
 /**
  * A zod schema for a skill level option.
@@ -184,6 +230,11 @@ export const socialNetworkOptionSchema = optionSchema(
   SOCIAL_NETWORK_OPTIONS,
   'social network'
 )
+
+/**
+ * A zod schema for a template option.
+ */
+export const templateOptionSchema = optionSchema(TEMPLATE_OPTIONS, 'template')
 
 /**
  * A zod schema for a url.
