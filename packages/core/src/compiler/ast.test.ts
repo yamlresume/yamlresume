@@ -49,13 +49,6 @@ describe('AST Types', () => {
       expect(italicMark.type).toBe('italic')
     })
 
-    it('should allow valid underline mark', () => {
-      const underlineMark: Mark = {
-        type: 'underline',
-      }
-      expect(underlineMark.type).toBe('underline')
-    })
-
     it('should allow valid link mark with attributes', () => {
       const linkMark: Mark = {
         type: 'link',

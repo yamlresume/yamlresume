@@ -172,8 +172,6 @@ function applyMarkToText(text: string, mark: Mark) {
       return `\\textbf{${text}}`
     case 'italic':
       return `\\textit{${text}}`
-    case 'underline':
-      return `\\underline{${text}}`
     case 'link':
       return `\\href{${mark.attrs.href}}{${text}}`
   }

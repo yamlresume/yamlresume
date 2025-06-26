@@ -337,7 +337,7 @@ describe(nodeToTeX, () => {
             type: 'text',
           },
           {
-            marks: [{ type: 'underline' }],
+            marks: [{ type: 'bold' }],
             text: 'world!',
             type: 'text',
           },
@@ -345,7 +345,7 @@ describe(nodeToTeX, () => {
       }
 
       expect(nodeToTeX(node)).toBe(
-        '\\textit{\\textbf{Hello}}, \\underline{world!}\n\n'
+        '\\textit{\\textbf{Hello}}, \\textbf{world!}\n\n'
       )
     })
   })
@@ -373,10 +373,7 @@ describe(nodeToTeX, () => {
           marks: [{ type: 'italic' }],
           expected: `\\textit{${text}}`,
         },
-        {
-          marks: [{ type: 'underline' }],
-          expected: `\\underline{${text}}`,
-        },
+
         {
           marks: [
             {
@@ -406,8 +403,8 @@ describe(nodeToTeX, () => {
           expected: `\\textit{\\textbf{${text}}}`,
         },
         {
-          marks: [{ type: 'italic' }, { type: 'bold' }, { type: 'underline' }],
-          expected: `\\underline{\\textbf{\\textit{${text}}}}`,
+          marks: [{ type: 'italic' }, { type: 'bold' }],
+          expected: `\\textbf{\\textit{${text}}}`,
         },
         {
           marks: [

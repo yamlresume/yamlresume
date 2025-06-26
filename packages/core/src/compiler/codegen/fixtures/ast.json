@@ -35,11 +35,14 @@
           "type": "text"
         },
         {
-          "text": "underline",
+          "text": "bold italic",
           "type": "text",
           "marks": [
             {
-              "type": "underline"
+              "type": "bold"
+            },
+            {
+              "type": "italic"
             }
           ]
         },

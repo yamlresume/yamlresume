@@ -46,13 +46,8 @@ export type ItalicMark = {
   type: 'italic'
 }
 
-/** Represents an underline formatting mark. */
-export type UnderlineMark = {
-  type: 'underline'
-}
-
 /** Represents a union of all possible inline formatting marks. */
-export type Mark = BoldMark | ItalicMark | LinkMark | UnderlineMark
+export type Mark = BoldMark | ItalicMark | LinkMark
 
 /** Represents a sequence of child nodes, often used for block node content. */
 export type Fragment = Node[] | undefined
