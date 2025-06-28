@@ -26,9 +26,9 @@ import { z } from 'zod/v4'
 import {
   COUNTRY_OPTIONS,
   DEGREE_OPTIONS,
+  FLUENCY_OPTIONS,
   FONTSPEC_NUMBERS_OPTIONS,
   FONT_SIZE_OPTIONS,
-  LANGUAGE_FLUENCIE_OPTIONS,
   LANGUAGE_OPTIONS,
   LOCALE_LANGUAGE_OPTIONS,
   SKILL_LEVEL_OPTIONS,
@@ -44,7 +44,7 @@ type Options =
   | typeof DEGREE_OPTIONS
   | typeof FONTSPEC_NUMBERS_OPTIONS
   | typeof FONT_SIZE_OPTIONS
-  | typeof LANGUAGE_FLUENCIE_OPTIONS
+  | typeof FLUENCY_OPTIONS
   | typeof LANGUAGE_OPTIONS
   | typeof LOCALE_LANGUAGE_OPTIONS
   | typeof SKILL_LEVEL_OPTIONS
@@ -128,13 +128,10 @@ export const emailSchema = z.email({ message: 'email is invalid.' })
 /**
  * A zod schema for a language fluency option.
  */
-export const fluencyOptionSchema = optionSchema(
-  LANGUAGE_FLUENCIE_OPTIONS,
-  'fluency'
-)
+export const fluencyOptionSchema = optionSchema(FLUENCY_OPTIONS, 'fluency')
 
 /**
- * A zod schema for a fontspec numbers style.
+ * A zod schema for a font spec numbers style.
  */
 export const fontspecNumbersOptionSchema = optionSchema(
   FONTSPEC_NUMBERS_OPTIONS,
@@ -150,14 +147,6 @@ export const fontSizeOptionSchema = optionSchema(FONT_SIZE_OPTIONS, 'font size')
  * A zod schema for a keywords array.
  */
 export const keywordsSchema = z.array(sizedStringSchema('keyword', 1, 32))
-
-/**
- * A zod schema for a language fluency option.
- */
-export const languageFluencyOptionSchema = optionSchema(
-  LANGUAGE_FLUENCIE_OPTIONS,
-  'language fluency'
-)
 
 /**
  * A zod schema for a language.

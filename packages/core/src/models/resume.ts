@@ -45,6 +45,19 @@ export const DEGREE_OPTIONS = [
 ] as const
 
 /**
+ * Defines language fluency levels.
+ *
+ * Based on the Interagency Language Roundtable (ILR) scale.
+ */
+export const FLUENCY_OPTIONS = [
+  'Elementary Proficiency',
+  'Limited Working Proficiency',
+  'Minimum Professional Proficiency',
+  'Full Professional Proficiency',
+  'Native or Bilingual Proficiency',
+] as const
+
+/**
  * Defines common world languages.
  *
  * This list contains the most used languages in the world.
@@ -127,19 +140,6 @@ export const LANGUAGE_OPTIONS = [
   'Vietnamese',
   'Yoruba',
   'Zulu',
-] as const
-
-/**
- * Defines language fluency levels.
- *
- * Based on the Interagency Language Roundtable (ILR) scale.
- */
-export const LANGUAGE_FLUENCIE_OPTIONS = [
-  'Elementary Proficiency',
-  'Limited Working Proficiency',
-  'Minimum Professional Proficiency',
-  'Full Professional Proficiency',
-  'Native or Bilingual Proficiency',
 ] as const
 
 /**

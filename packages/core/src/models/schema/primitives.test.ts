@@ -27,9 +27,9 @@ import { describe, expect, it } from 'vitest'
 import {
   COUNTRY_OPTIONS,
   DEGREE_OPTIONS,
+  FLUENCY_OPTIONS,
   FONTSPEC_NUMBERS_OPTIONS,
   FONT_SIZE_OPTIONS,
-  LANGUAGE_FLUENCIE_OPTIONS,
   LANGUAGE_OPTIONS,
   LOCALE_LANGUAGE_OPTIONS,
   SKILL_LEVEL_OPTIONS,
@@ -42,10 +42,10 @@ import {
   dateSchema,
   degreeOptionSchema,
   emailSchema,
+  fluencyOptionSchema,
   fontSizeOptionSchema,
   fontspecNumbersOptionSchema,
   keywordsSchema,
-  languageFluencyOptionSchema,
   languageOptionSchema,
   localeLanguageOptionSchema,
   marginSizeSchema,
@@ -334,40 +334,40 @@ describe('languageOptionSchema', () => {
   })
 })
 
-describe('languageFluencyOptionSchema', () => {
+describe('fluencyOptionSchema', () => {
   it('should return a language fluency if it is valid', () => {
-    for (const fluency of LANGUAGE_FLUENCIE_OPTIONS) {
-      expect(languageFluencyOptionSchema.parse(fluency)).toBe(fluency)
+    for (const fluency of FLUENCY_OPTIONS) {
+      expect(fluencyOptionSchema.parse(fluency)).toBe(fluency)
     }
   })
 
   it('should throw an error if the language fluency is invalid', () => {
-    const invalidLanguageFluencyMessage = optionSchemaMessage(
-      LANGUAGE_FLUENCIE_OPTIONS,
-      'language fluency'
+    const invalidFluencyMessage = optionSchemaMessage(
+      FLUENCY_OPTIONS,
+      'fluency'
     )
 
     const tests = [
       {
         fluency: 'Basic',
-        message: invalidLanguageFluencyMessage,
+        message: invalidFluencyMessage,
       },
       {
         fluency: 'Fluent',
-        message: invalidLanguageFluencyMessage,
+        message: invalidFluencyMessage,
       },
       {
         fluency: 'Advanced',
-        message: invalidLanguageFluencyMessage,
+        message: invalidFluencyMessage,
       },
       {
         fluency: undefined,
-        message: 'language fluency option is required.',
+        message: 'fluency option is required.',
       },
     ]
 
     for (const { fluency, message } of tests) {
-      expect(() => languageFluencyOptionSchema.parse(fluency)).toThrow(message)
+      expect(() => fluencyOptionSchema.parse(fluency)).toThrow(message)
     }
   })
 })

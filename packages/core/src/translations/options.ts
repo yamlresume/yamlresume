@@ -27,8 +27,8 @@ import { get } from 'lodash-es'
 import type {
   Country,
   Degree,
+  Fluency,
   Language,
-  LanguageFluency,
   LocaleLanguageOption,
   SectionID,
   SkillLevel,
@@ -44,14 +44,14 @@ import {
 
 /** Defines the structure for translated terms for a single language. */
 type OptionTranslation = {
-  /** Translations for degree types. */
-  degrees: Record<Degree, string>
-  /** Translations for language names. */
-  languages: Record<Language, string>
-  /** Translations for language fluency levels. */
-  languageFluencies: Record<LanguageFluency, string>
   /** Translations for country names. */
   countries: Record<Country, string>
+  /** Translations for degree types. */
+  degrees: Record<Degree, string>
+  /** Translations for language fluency levels. */
+  fluency: Record<Fluency, string>
+  /** Translations for language names. */
+  languages: Record<Language, string>
   /** Translations for resume section titles. */
   sections: Record<SectionID, string>
   /** Translations for skill proficiency levels. */
@@ -168,7 +168,7 @@ export function getOptionTranslation<K extends OptionCategory>(
         Yoruba: 'Yoruba',
         Zulu: 'Zulu',
       },
-      languageFluencies: {
+      fluency: {
         'Elementary Proficiency': 'Elementary Proficiency',
         'Limited Working Proficiency': 'Limited Working Proficiency',
         'Minimum Professional Proficiency': 'Minimum Professional Proficiency',
@@ -288,7 +288,7 @@ export function getOptionTranslation<K extends OptionCategory>(
         Yoruba: '约鲁巴语',
         Zulu: '祖鲁语',
       },
-      languageFluencies: {
+      fluency: {
         'Elementary Proficiency': '初级水平',
         'Limited Working Proficiency': '有限工作水平',
         'Minimum Professional Proficiency': '最低专业水平',
@@ -408,7 +408,7 @@ export function getOptionTranslation<K extends OptionCategory>(
         Yoruba: '約魯巴語',
         Zulu: '祖魯語',
       },
-      languageFluencies: {
+      fluency: {
         'Elementary Proficiency': '初級水平',
         'Limited Working Proficiency': '有限工作水平',
         'Minimum Professional Proficiency': '最低專業水平',
@@ -528,7 +528,7 @@ export function getOptionTranslation<K extends OptionCategory>(
         Yoruba: '約魯巴語',
         Zulu: '祖魯語',
       },
-      languageFluencies: {
+      fluency: {
         'Elementary Proficiency': '初級水平',
         'Limited Working Proficiency': '有限工作水平',
         'Minimum Professional Proficiency': '最低專業水平',
@@ -648,7 +648,7 @@ export function getOptionTranslation<K extends OptionCategory>(
         Yoruba: 'Yoruba',
         Zulu: 'Zulú',
       },
-      languageFluencies: {
+      fluency: {
         'Elementary Proficiency': 'Competencia elemental',
         'Limited Working Proficiency': 'Competencia limitada de trabajo',
         'Minimum Professional Proficiency':

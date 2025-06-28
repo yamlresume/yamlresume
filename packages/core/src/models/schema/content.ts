@@ -28,8 +28,8 @@ import {
   dateSchema,
   degreeOptionSchema,
   emailSchema,
+  fluencyOptionSchema,
   keywordsSchema,
-  languageFluencyOptionSchema,
   languageOptionSchema,
   nameSchema,
   organizationSchema,
@@ -157,7 +157,7 @@ export const languagesSchema = z.object({
     .array(
       z.object({
         // required fields
-        fluency: languageFluencyOptionSchema,
+        fluency: fluencyOptionSchema,
         language: languageOptionSchema,
 
         // optional fields

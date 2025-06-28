@@ -398,7 +398,7 @@ export function transformLanguage(resume: Resume): Resume {
       ),
       fluency: getOptionTranslation(
         resume.layout.locale?.language,
-        'languageFluencies',
+        'fluency',
         item.fluency
       ),
     }

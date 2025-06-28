@@ -25,7 +25,7 @@
 import type {
   COUNTRY_OPTIONS,
   DEGREE_OPTIONS,
-  LANGUAGE_FLUENCIE_OPTIONS,
+  FLUENCY_OPTIONS,
   LANGUAGE_OPTIONS,
   LOCALE_LANGUAGE_OPTIONS,
   SECTION_IDS,
@@ -46,6 +46,11 @@ export type Country = (typeof COUNTRY_OPTIONS)[number]
 export type Degree = (typeof DEGREE_OPTIONS)[number]
 
 /**
+ * Type for language fluency levels.
+ */
+export type Fluency = (typeof FLUENCY_OPTIONS)[number]
+
+/**
  * Type for keywords.
  */
 type Keywords = string[]
@@ -54,11 +59,6 @@ type Keywords = string[]
  * Type for all supported languages.
  */
 export type Language = (typeof LANGUAGE_OPTIONS)[number]
-
-/**
- * Type for language fluency levels.
- */
-export type LanguageFluency = (typeof LANGUAGE_FLUENCIE_OPTIONS)[number]
 
 /**
  * Type for all possible section IDs.
@@ -241,7 +241,7 @@ export type Interests = {
 /** Represents a single language proficiency item. */
 export type LanguageItem = {
   /** The level of proficiency of the language. */
-  fluency: LanguageFluency
+  fluency: Fluency
   /** The language. */
   language: Language
 

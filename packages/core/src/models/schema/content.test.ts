@@ -46,7 +46,7 @@ import { optionSchemaMessage } from './primitives'
 import {
   COUNTRY_OPTIONS,
   DEGREE_OPTIONS,
-  LANGUAGE_FLUENCIE_OPTIONS,
+  FLUENCY_OPTIONS,
   LANGUAGE_OPTIONS,
 } from '@/models'
 
@@ -625,7 +625,7 @@ describe('interestsSchema', () => {
 
 describe('languagesSchema', () => {
   const language = LANGUAGE_OPTIONS[0]
-  const fluency = LANGUAGE_FLUENCIE_OPTIONS[0]
+  const fluency = FLUENCY_OPTIONS[0]
   const keywords = ['Keyword 1', 'Keyword 2']
 
   it('should validate a languages object if it is valid', () => {
@@ -670,7 +670,7 @@ describe('languagesSchema', () => {
             language,
           },
         ],
-        message: 'language fluency option is required.',
+        message: 'fluency option is required.',
       },
       {
         languages: [
@@ -689,10 +689,7 @@ describe('languagesSchema', () => {
             language,
           },
         ],
-        message: optionSchemaMessage(
-          LANGUAGE_FLUENCIE_OPTIONS,
-          'language fluency'
-        ),
+        message: optionSchemaMessage(FLUENCY_OPTIONS, 'fluency'),
       },
       {
         languages: [
@@ -1695,7 +1692,7 @@ describe('contentSchema', () => {
         content: {
           basics,
           education,
-          languages: [{ fluency: LANGUAGE_FLUENCIE_OPTIONS[0] }],
+          languages: [{ fluency: FLUENCY_OPTIONS[0] }],
         },
         message: 'language option is required.',
       },
