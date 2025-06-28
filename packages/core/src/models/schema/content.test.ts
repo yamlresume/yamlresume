@@ -877,7 +877,7 @@ describe('profilesSchema', () => {
             url,
           },
         ],
-        message: 'social network option is required.',
+        message: 'network option is required.',
       },
       {
         profiles: [

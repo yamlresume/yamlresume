@@ -29,10 +29,10 @@ import { LatexCodeGenerator, MarkdownParser } from '@/compiler'
 import {
   LOCALE_LANGUAGE_OPTIONS,
   type LocaleLanguageOption,
+  type Network,
   type ProfileItem,
   type ResumeLayout,
   SECTION_IDS,
-  type SocialNetwork,
   defaultResume,
   filledResume,
 } from '@/models'
@@ -48,6 +48,7 @@ import {
   transformKeywords,
   transformLanguage,
   transformLocation,
+  transformProfileLinks,
   transformProfileUrls,
   transformResumeContent,
   transformResumeLayout,
@@ -56,7 +57,6 @@ import {
   transformResumeValues,
   transformSectionNames,
   transformSkills,
-  transformSocialLinks,
   transformSummary,
 } from './transform'
 
@@ -693,7 +693,7 @@ describe(transformProfileUrls, () => {
     const resume = cloneDeep(defaultResume)
 
     const tests: {
-      network: SocialNetwork
+      network: Network
       url: string
       username: string
       expected: string
@@ -744,8 +744,8 @@ describe(transformProfileUrls, () => {
   })
 })
 
-describe(transformSocialLinks, () => {
-  it('should transform social links to latex with icons', () => {
+describe(transformProfileLinks, () => {
+  it('should transform profile links to latex with icons', () => {
     const resume = cloneDeep(defaultResume)
 
     const url = 'https://yamlresume.dev'
@@ -765,7 +765,7 @@ describe(transformSocialLinks, () => {
     resume.content.basics.url = url
     resume.content.profiles = profiles
 
-    transformSocialLinks(resume)
+    transformProfileLinks(resume)
 
     expect(resume.content.computed?.urls).toEqual(
       [

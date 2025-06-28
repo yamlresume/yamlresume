@@ -31,9 +31,9 @@ import type {
   LANGUAGE_OPTIONS,
   LEVEL_OPTIONS,
   LOCALE_LANGUAGE_OPTIONS,
+  NETWORK_GROUP_OPTIONS,
+  NETWORK_OPTIONS,
   SECTION_IDS,
-  SOCIAL_NETWORK_GROUP_OPTIONS,
-  SOCIAL_NETWORK_OPTIONS,
   TEMPLATE_OPTIONS,
 } from '@/models'
 
@@ -83,13 +83,13 @@ export type TemplateOption = (typeof TEMPLATE_OPTIONS)[number]
 export type LocaleLanguageOption = (typeof LOCALE_LANGUAGE_OPTIONS)[number]
 
 /**
- * Categorizes social networks for potential grouping or display purposes. */
-export type SocialNetworkGroup = (typeof SOCIAL_NETWORK_GROUP_OPTIONS)[number]
-
-/**
  * Defines supported social media and professional network identifiers.
  */
-export type SocialNetwork = (typeof SOCIAL_NETWORK_OPTIONS)[number]
+export type Network = (typeof NETWORK_OPTIONS)[number]
+
+/**
+ * Categorizes networks for potential grouping or display purposes. */
+export type NetworkGroup = (typeof NETWORK_GROUP_OPTIONS)[number]
 
 /** Represents a single award item. */
 type AwardItem = {
@@ -300,8 +300,8 @@ export type Location = {
 
 /** Represents a single online profile item (e.g., GitHub, LinkedIn). */
 export type ProfileItem = {
-  /** The name of the social network or platform. */
-  network: SocialNetwork
+  /** The name of the network or platform. */
+  network: Network
   /** The username on the platform. */
   username: string
 

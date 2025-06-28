@@ -32,7 +32,7 @@ import {
   LANGUAGE_OPTIONS,
   LEVEL_OPTIONS,
   LOCALE_LANGUAGE_OPTIONS,
-  SOCIAL_NETWORK_OPTIONS,
+  NETWORK_OPTIONS,
   TEMPLATE_OPTIONS,
 } from '@/models'
 
@@ -48,7 +48,7 @@ type Options =
   | typeof LANGUAGE_OPTIONS
   | typeof LOCALE_LANGUAGE_OPTIONS
   | typeof LEVEL_OPTIONS
-  | typeof SOCIAL_NETWORK_OPTIONS
+  | typeof NETWORK_OPTIONS
   | typeof TEMPLATE_OPTIONS
 
 /**
@@ -192,6 +192,11 @@ export const levelOptionSchema = optionSchema(LEVEL_OPTIONS, 'level')
 export const nameSchema = (name: string) => sizedStringSchema(name, 2, 128)
 
 /**
+ * A zod schema for a network.
+ */
+export const networkOptionSchema = optionSchema(NETWORK_OPTIONS, 'network')
+
+/**
  * A regex for a phone number.
  */
 const phoneNumberRegex = /^[+]?[(]?[0-9\s-]{1,15}[)]?[0-9\s-]{1,15}$/im
@@ -216,14 +221,6 @@ export const summarySchema = sizedStringSchema('summary', 16, 1024)
  */
 export const organizationSchema = (name: string) =>
   sizedStringSchema(name, 2, 128)
-
-/**
- * A zod schema for a social network.
- */
-export const socialNetworkOptionSchema = optionSchema(
-  SOCIAL_NETWORK_OPTIONS,
-  'social network'
-)
 
 /**
  * A zod schema for a template option.

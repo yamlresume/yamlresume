@@ -33,10 +33,10 @@ import {
   languageOptionSchema,
   levelOptionSchema,
   nameSchema,
+  networkOptionSchema,
   organizationSchema,
   phoneSchema,
   sizedStringSchema,
-  socialNetworkOptionSchema,
   summarySchema,
   urlSchema,
 } from './primitives'
@@ -193,7 +193,7 @@ export const profilesSchema = z.object({
     .array(
       z.object({
         // required fields
-        network: socialNetworkOptionSchema,
+        network: networkOptionSchema,
         username: sizedStringSchema('username', 2, 64),
 
         // optional fields

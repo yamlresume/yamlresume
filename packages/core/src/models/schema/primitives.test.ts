@@ -33,7 +33,7 @@ import {
   LANGUAGE_OPTIONS,
   LEVEL_OPTIONS,
   LOCALE_LANGUAGE_OPTIONS,
-  SOCIAL_NETWORK_OPTIONS,
+  NETWORK_OPTIONS,
   TEMPLATE_OPTIONS,
 } from '@/models'
 
@@ -51,11 +51,11 @@ import {
   localeLanguageOptionSchema,
   marginSizeSchema,
   nameSchema,
+  networkOptionSchema,
   optionSchemaMessage,
   organizationSchema,
   phoneSchema,
   sizedStringSchema,
-  socialNetworkOptionSchema,
   summarySchema,
   templateOptionSchema,
   urlSchema,
@@ -490,6 +490,44 @@ describe('marginSizeSchema', () => {
   })
 })
 
+describe('networkOptionSchema', () => {
+  it('should return a network if it is valid', () => {
+    for (const network of NETWORK_OPTIONS) {
+      expect(networkOptionSchema.parse(network)).toBe(network)
+    }
+  })
+
+  it('should throw an error if the network is invalid', () => {
+    const invalidNetworkMessage = optionSchemaMessage(
+      NETWORK_OPTIONS,
+      'network'
+    )
+
+    const tests = [
+      {
+        network: 'invalid-network',
+        message: invalidNetworkMessage,
+      },
+      {
+        network: 'github',
+        message: invalidNetworkMessage,
+      },
+      {
+        network: 'GITHUB',
+        message: invalidNetworkMessage,
+      },
+      {
+        network: undefined,
+        message: 'network option is required.',
+      },
+    ]
+
+    for (const { network, message } of tests) {
+      expect(() => networkOptionSchema.parse(network)).toThrow(message)
+    }
+  })
+})
+
 describe('nameSchema', () => {
   const schema = nameSchema('name')
 
@@ -585,44 +623,6 @@ describe('phoneSchema', () => {
       expect(() => phoneSchema.parse(phoneNumber)).toThrow(
         'phone number may be invalid.'
       )
-    }
-  })
-})
-
-describe('socialNetworkOptionSchema', () => {
-  it('should return a social network if it is valid', () => {
-    for (const network of SOCIAL_NETWORK_OPTIONS) {
-      expect(socialNetworkOptionSchema.parse(network)).toBe(network)
-    }
-  })
-
-  it('should throw an error if the social network is invalid', () => {
-    const invalidSocialNetworkMessage = optionSchemaMessage(
-      SOCIAL_NETWORK_OPTIONS,
-      'social network'
-    )
-
-    const tests = [
-      {
-        network: 'invalid-network',
-        message: invalidSocialNetworkMessage,
-      },
-      {
-        network: 'github',
-        message: invalidSocialNetworkMessage,
-      },
-      {
-        network: 'GITHUB',
-        message: invalidSocialNetworkMessage,
-      },
-      {
-        network: undefined,
-        message: 'social network option is required.',
-      },
-    ]
-
-    for (const { network, message } of tests) {
-      expect(() => socialNetworkOptionSchema.parse(network)).toThrow(message)
     }
   })
 })

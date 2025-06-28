@@ -601,7 +601,7 @@ export function transformSkills(resume: Resume): Resume {
  * @returns The transformed resume object.
  * @remarks Modifies `resume.content.computed`.
  */
-export function transformSocialLinks(resume: Resume): Resume {
+export function transformProfileLinks(resume: Resume): Resume {
   transformBasicsUrl(resume)
   transformProfileUrls(resume)
 
@@ -753,7 +753,7 @@ export function transformResumeContent(
     transformLanguage,
     transformLocation,
     transformSkills,
-    transformSocialLinks,
+    transformProfileLinks,
     transformSummary,
     transformSectionNames,
   ].reduce(

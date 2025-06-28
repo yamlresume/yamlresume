@@ -176,29 +176,9 @@ export const LOCALE_LANGUAGE_OPTIONS = [
 ] as const
 
 /**
- * All valid top-level sections in the resume.
- * */
-export const SECTION_IDS = [
-  'basics',
-  'location',
-  'profiles',
-  'work',
-  'education',
-  'volunteer',
-  'awards',
-  'certificates',
-  'publications',
-  'skills',
-  'languages',
-  'interests',
-  'references',
-  'projects',
-] as const
-
-/**
- * Defines social network options.
+ * Defines network options.
  */
-export const SOCIAL_NETWORK_OPTIONS = [
+export const NETWORK_OPTIONS = [
   'Behance',
   'Dribbble',
   'Facebook',
@@ -224,13 +204,36 @@ export const SOCIAL_NETWORK_OPTIONS = [
   'Zhihu',
 ] as const
 
-export const SOCIAL_NETWORK_GROUP_OPTIONS = [
+/**
+ * Defines network groups.
+ */
+export const NETWORK_GROUP_OPTIONS = [
   'Chat',
   'Design',
   'Media',
   'Social',
   'Technical',
   'WWW',
+] as const
+
+/**
+ * All valid top-level sections in the resume.
+ * */
+export const SECTION_IDS = [
+  'basics',
+  'location',
+  'profiles',
+  'work',
+  'education',
+  'volunteer',
+  'awards',
+  'certificates',
+  'publications',
+  'skills',
+  'languages',
+  'interests',
+  'references',
+  'projects',
 ] as const
 
 /** Defines identifiers for the available resume templates. */
