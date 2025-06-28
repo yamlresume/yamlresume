@@ -30,8 +30,8 @@ import {
   FONTSPEC_NUMBERS_OPTIONS,
   FONT_SIZE_OPTIONS,
   LANGUAGE_OPTIONS,
+  LEVEL_OPTIONS,
   LOCALE_LANGUAGE_OPTIONS,
-  SKILL_LEVEL_OPTIONS,
   SOCIAL_NETWORK_OPTIONS,
   TEMPLATE_OPTIONS,
 } from '@/models'
@@ -47,7 +47,7 @@ type Options =
   | typeof FLUENCY_OPTIONS
   | typeof LANGUAGE_OPTIONS
   | typeof LOCALE_LANGUAGE_OPTIONS
-  | typeof SKILL_LEVEL_OPTIONS
+  | typeof LEVEL_OPTIONS
   | typeof SOCIAL_NETWORK_OPTIONS
   | typeof TEMPLATE_OPTIONS
 
@@ -179,12 +179,9 @@ export const marginSizeSchema = sizedStringSchema('margin size', 2, 32).regex(
 )
 
 /**
- * A zod schema for a skill level option.
+ * A zod schema for a evel option.
  */
-export const skillLevelOptionSchema = optionSchema(
-  SKILL_LEVEL_OPTIONS,
-  'skill level'
-)
+export const levelOptionSchema = optionSchema(LEVEL_OPTIONS, 'level')
 
 /**
  * Creates a zod schema for a name.

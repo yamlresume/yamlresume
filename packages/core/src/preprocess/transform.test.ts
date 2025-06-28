@@ -603,7 +603,7 @@ describe(transformSummary, () => {
 })
 
 describe(transformSkills, () => {
-  it('should translate null/undefined skill levels', () => {
+  it('should translate null/undefined levels', () => {
     testOverAllLocaleLanguages((language) => {
       for (const level of [null, undefined, '']) {
         const resume = cloneDeep(filledResume)
@@ -619,7 +619,7 @@ describe(transformSkills, () => {
     })
   })
 
-  it('should translate skill levels', () => {
+  it('should translate levels', () => {
     testOverAllLocaleLanguages((language) => {
       for (const level of [
         'Novice',

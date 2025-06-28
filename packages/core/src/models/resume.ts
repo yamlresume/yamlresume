@@ -149,6 +149,20 @@ export const LANGUAGE_OPTIONS = [
 ] as const
 
 /**
+ * Defines skill proficiency levels.
+ *
+ * Based on common industry standards for skill assessment.
+ */
+export const LEVEL_OPTIONS = [
+  'Novice',
+  'Beginner',
+  'Intermediate',
+  'Advanced',
+  'Expert',
+  'Master',
+] as const
+
+/**
  * Defines supported languages for UI display and template translation.
  *
  * @see {@link https://en.wikipedia.org/wiki/IETF_language_tag}
@@ -182,19 +196,8 @@ export const SECTION_IDS = [
 ] as const
 
 /**
- * Defines skill proficiency levels.
- *
- * Based on common industry standards for skill assessment.
+ * Defines social network options.
  */
-export const SKILL_LEVEL_OPTIONS = [
-  'Novice',
-  'Beginner',
-  'Intermediate',
-  'Advanced',
-  'Expert',
-  'Master',
-] as const
-
 export const SOCIAL_NETWORK_OPTIONS = [
   'Behance',
   'Dribbble',

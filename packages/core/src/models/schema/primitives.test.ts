@@ -31,8 +31,8 @@ import {
   FONTSPEC_NUMBERS_OPTIONS,
   FONT_SIZE_OPTIONS,
   LANGUAGE_OPTIONS,
+  LEVEL_OPTIONS,
   LOCALE_LANGUAGE_OPTIONS,
-  SKILL_LEVEL_OPTIONS,
   SOCIAL_NETWORK_OPTIONS,
   TEMPLATE_OPTIONS,
 } from '@/models'
@@ -47,6 +47,7 @@ import {
   fontspecNumbersOptionSchema,
   keywordsSchema,
   languageOptionSchema,
+  levelOptionSchema,
   localeLanguageOptionSchema,
   marginSizeSchema,
   nameSchema,
@@ -54,7 +55,6 @@ import {
   organizationSchema,
   phoneSchema,
   sizedStringSchema,
-  skillLevelOptionSchema,
   socialNetworkOptionSchema,
   summarySchema,
   templateOptionSchema,
@@ -372,6 +372,41 @@ describe('fluencyOptionSchema', () => {
   })
 })
 
+describe('levelOptionSchema', () => {
+  it('should return a level if it is valid', () => {
+    for (const level of LEVEL_OPTIONS) {
+      expect(levelOptionSchema.parse(level)).toBe(level)
+    }
+  })
+
+  it('should throw an error if the level is invalid', () => {
+    const invalidLevelMessage = optionSchemaMessage(LEVEL_OPTIONS, 'level')
+
+    const tests = [
+      {
+        level: 'Beginnerrr',
+        message: invalidLevelMessage,
+      },
+      {
+        level: 'Intermediateee',
+        message: invalidLevelMessage,
+      },
+      {
+        level: 'Advanceddd',
+        message: invalidLevelMessage,
+      },
+      {
+        level: undefined,
+        message: 'level option is required.',
+      },
+    ]
+
+    for (const { level, message } of tests) {
+      expect(() => levelOptionSchema.parse(level)).toThrow(message)
+    }
+  })
+})
+
 describe('localeLanguageOptionSchema', () => {
   it('should return a locale language if it is valid', () => {
     for (const language of LOCALE_LANGUAGE_OPTIONS) {
@@ -550,44 +585,6 @@ describe('phoneSchema', () => {
       expect(() => phoneSchema.parse(phoneNumber)).toThrow(
         'phone number may be invalid.'
       )
-    }
-  })
-})
-
-describe('skillLevelOptionSchema', () => {
-  it('should return a skill level if it is valid', () => {
-    for (const level of SKILL_LEVEL_OPTIONS) {
-      expect(skillLevelOptionSchema.parse(level)).toBe(level)
-    }
-  })
-
-  it('should throw an error if the skill level is invalid', () => {
-    const invalidSkillMessage = optionSchemaMessage(
-      SKILL_LEVEL_OPTIONS,
-      'skill level'
-    )
-
-    const tests = [
-      {
-        level: 'Beginnerrr',
-        message: invalidSkillMessage,
-      },
-      {
-        level: 'Intermediateee',
-        message: invalidSkillMessage,
-      },
-      {
-        level: 'Advanceddd',
-        message: invalidSkillMessage,
-      },
-      {
-        level: undefined,
-        message: 'skill level option is required.',
-      },
-    ]
-
-    for (const { level, message } of tests) {
-      expect(() => skillLevelOptionSchema.parse(level)).toThrow(message)
     }
   })
 })

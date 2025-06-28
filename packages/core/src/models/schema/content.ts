@@ -31,11 +31,11 @@ import {
   fluencyOptionSchema,
   keywordsSchema,
   languageOptionSchema,
+  levelOptionSchema,
   nameSchema,
   organizationSchema,
   phoneSchema,
   sizedStringSchema,
-  skillLevelOptionSchema,
   socialNetworkOptionSchema,
   summarySchema,
   urlSchema,
@@ -273,7 +273,7 @@ export const skillsSchema = z.object({
     .array(
       z.object({
         // required fields
-        level: skillLevelOptionSchema,
+        level: levelOptionSchema,
         name: nameSchema('Skill name'),
 
         // optional fields

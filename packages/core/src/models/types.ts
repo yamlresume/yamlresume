@@ -29,9 +29,9 @@ import type {
   FONTSPEC_NUMBERS_OPTIONS,
   FONT_SIZE_OPTIONS,
   LANGUAGE_OPTIONS,
+  LEVEL_OPTIONS,
   LOCALE_LANGUAGE_OPTIONS,
   SECTION_IDS,
-  SKILL_LEVEL_OPTIONS,
   SOCIAL_NETWORK_GROUP_OPTIONS,
   SOCIAL_NETWORK_OPTIONS,
   TEMPLATE_OPTIONS,
@@ -63,14 +63,14 @@ type Keywords = string[]
 export type Language = (typeof LANGUAGE_OPTIONS)[number]
 
 /**
+ * Type for skill proficiency levels.
+ */
+export type Level = (typeof LEVEL_OPTIONS)[number]
+
+/**
  * Type for all possible section IDs.
  */
 export type SectionID = (typeof SECTION_IDS)[number]
-
-/**
- * Type for skill proficiency levels.
- */
-export type SkillLevel = (typeof SKILL_LEVEL_OPTIONS)[number]
 
 /**
  * Type for template options.
@@ -419,7 +419,7 @@ export type References = {
 /** Represents a single skill item. */
 type SkillItem = {
   /** Proficiency level in the skill. */
-  level: SkillLevel
+  level: Level
   /** Name of the skill. */
   name: string
   /** Specific keywords or technologies related to the skill. */
@@ -428,7 +428,7 @@ type SkillItem = {
 
   /** Computed values derived during transformation. */
   computed?: {
-    /** Translated skill level string. */
+    /** Translated level string. */
     level: string
     /** Transformed keywords string. */
     keywords: string

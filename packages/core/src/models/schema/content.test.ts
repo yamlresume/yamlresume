@@ -1329,7 +1329,7 @@ describe('skillsSchema', () => {
             keywords,
           },
         ],
-        message: 'skill level option is required.',
+        message: 'level option is required.',
       },
     ]
 
@@ -1744,7 +1744,7 @@ describe('contentSchema', () => {
           education,
           skills: [{ name: 'Skill' }],
         },
-        message: 'skill level option is required.',
+        message: 'level option is required.',
       },
       {
         content: {

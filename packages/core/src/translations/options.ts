@@ -29,9 +29,9 @@ import type {
   Degree,
   Fluency,
   Language,
+  Level,
   LocaleLanguageOption,
   SectionID,
-  SkillLevel,
 } from '@/models'
 
 import {
@@ -55,7 +55,7 @@ type OptionTranslation = {
   /** Translations for resume section titles. */
   sections: Record<SectionID, string>
   /** Translations for skill proficiency levels. */
-  skills: Record<SkillLevel, string>
+  skills: Record<Level, string>
 }
 
 type OptionCategory = keyof OptionTranslation
@@ -67,7 +67,7 @@ type OptionsTranslations = Record<LocaleLanguageOption, OptionTranslation>
  * Retrieves the translated terms for a specific locale language.
  *
  * Includes translations for degrees, languages, fluencies, countries, section
- * titles, skill levels, and other specific terms.
+ * titles, levels, and other specific terms.
  *
  * @param language - The desired locale language. If undefined, defaults to
  * English.
