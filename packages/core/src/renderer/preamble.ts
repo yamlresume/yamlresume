@@ -264,11 +264,11 @@ export function renderSpanishConfig(resume: Resume): string {
  * @param resume - The resume object
  * @returns The LaTeX code for the fontspec support
  */
-export function renderFontspecConfig(resume: Resume): string {
+export function renderfontspecConfig(resume: Resume): string {
   const {
     layout: {
       typography: {
-        fontSpec: { numbers },
+        fontspec: { numbers },
       },
     },
   } = resume

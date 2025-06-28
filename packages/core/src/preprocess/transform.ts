@@ -785,12 +785,12 @@ export function transformResumeLayoutWithDefaultValues(resume: Resume): Resume {
  *
  * @param resume - The resume object.
  * @returns The transformed resume object.
- * @remarks Modifies `resume.layout.typography.fontSpec` in place.
+ * @remarks Modifies `resume.layout.typography.fontspec` in place.
  */
 export function transformResumeLayoutTypography(resume: Resume): Resume {
   if (
-    resume.layout.typography.fontSpec?.numbers !== undefined &&
-    resume.layout.typography.fontSpec?.numbers !== 'Auto'
+    resume.layout.typography.fontspec?.numbers !== undefined &&
+    resume.layout.typography.fontspec?.numbers !== 'Auto'
   ) {
     return resume
   }
@@ -799,14 +799,14 @@ export function transformResumeLayoutTypography(resume: Resume): Resume {
     case 'zh-hans':
     case 'zh-hant-hk':
     case 'zh-hant-tw':
-      resume.layout.typography.fontSpec = {
-        ...resume.layout.typography.fontSpec,
+      resume.layout.typography.fontspec = {
+        ...resume.layout.typography.fontspec,
         numbers: 'Lining',
       }
       break
     default:
-      resume.layout.typography.fontSpec = {
-        ...resume.layout.typography.fontSpec,
+      resume.layout.typography.fontspec = {
+        ...resume.layout.typography.fontspec,
         numbers: 'OldStyle',
       }
       break

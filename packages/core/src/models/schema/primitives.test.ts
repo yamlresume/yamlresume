@@ -27,8 +27,8 @@ import { describe, expect, it } from 'vitest'
 import {
   COUNTRY_OPTIONS,
   DEGREE_OPTIONS,
+  FONTSPEC_NUMBERS_OPTIONS,
   FONT_SIZE_OPTIONS,
-  FONT_SPEC_NUMBERS_STYLE_OPTIONS,
   LANGUAGE_FLUENCIE_OPTIONS,
   LANGUAGE_OPTIONS,
   LOCALE_LANGUAGE_OPTIONS,
@@ -43,7 +43,7 @@ import {
   degreeOptionSchema,
   emailSchema,
   fontSizeOptionSchema,
-  fontSpecNumbersStyleOptionSchema,
+  fontspecNumbersOptionSchema,
   keywordsSchema,
   languageFluencyOptionSchema,
   languageOptionSchema,
@@ -199,39 +199,37 @@ describe('degreeOptionSchema', () => {
   })
 })
 
-describe('fontSpecNumbersStyleOptionSchema', () => {
-  it('should return a font spec numbers style if it is valid', () => {
-    for (const numbers of FONT_SPEC_NUMBERS_STYLE_OPTIONS) {
-      expect(fontSpecNumbersStyleOptionSchema.parse(numbers)).toBe(numbers)
+describe('fontspecNumbersOptionSchema', () => {
+  it('should return a fontspec numbers style if it is valid', () => {
+    for (const numbers of FONTSPEC_NUMBERS_OPTIONS) {
+      expect(fontspecNumbersOptionSchema.parse(numbers)).toBe(numbers)
     }
   })
 
-  it('should throw an error if the font spec numbers style is invalid', () => {
+  it('should throw an error if the fontspec numbers style is invalid', () => {
     const tests = [
       {
         numbers: 'bold',
         message: optionSchemaMessage(
-          FONT_SPEC_NUMBERS_STYLE_OPTIONS,
-          'font spec numbers'
+          FONTSPEC_NUMBERS_OPTIONS,
+          'fontspec numbers'
         ),
       },
       {
         numbers: '',
         message: optionSchemaMessage(
-          FONT_SPEC_NUMBERS_STYLE_OPTIONS,
-          'font spec numbers'
+          FONTSPEC_NUMBERS_OPTIONS,
+          'fontspec numbers'
         ),
       },
       {
         numbers: undefined,
-        message: 'font spec numbers option is required.',
+        message: 'fontspec numbers option is required.',
       },
     ]
 
     for (const { numbers, message } of tests) {
-      expect(() => fontSpecNumbersStyleOptionSchema.parse(numbers)).toThrow(
-        message
-      )
+      expect(() => fontspecNumbersOptionSchema.parse(numbers)).toThrow(message)
     }
   })
 })

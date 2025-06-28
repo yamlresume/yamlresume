@@ -31,10 +31,10 @@ import {
   normalizeUnit,
   renderCTeXConfig,
   renderDocumentClassConfig,
-  renderFontspecConfig,
   renderLayoutConfig,
   renderModerncvConfig,
   renderSpanishConfig,
+  renderfontspecConfig,
 } from './preamble'
 
 const mockResume = defaultResume
@@ -155,7 +155,7 @@ describe(renderSpanishConfig, () => {
   })
 })
 
-describe(renderFontspecConfig, () => {
+describe(renderfontspecConfig, () => {
   const linuxLibertineFont = 'Linux Libertine'
   const linuxLibertineOFont = 'Linux Libertine O'
   it('should render basic fontspec configuration', () => {
@@ -168,14 +168,14 @@ describe(renderFontspecConfig, () => {
         },
         typography: {
           ...mockResume.layout.typography,
-          fontSpec: {
+          fontspec: {
             numbers: 'OldStyle',
           },
         },
       },
     }
 
-    const result = renderFontspecConfig(cjkResume)
+    const result = renderfontspecConfig(cjkResume)
 
     expect(result).toContain('\\usepackage{fontspec}')
     expect(result).toContain(`\\IfFontExistsTF{${linuxLibertineFont}}`)
@@ -202,14 +202,14 @@ describe(renderFontspecConfig, () => {
         },
         typography: {
           ...mockResume.layout.typography,
-          fontSpec: {
+          fontspec: {
             numbers: 'Lining',
           },
         },
       },
     }
 
-    const result = renderFontspecConfig(cjkResume)
+    const result = renderfontspecConfig(cjkResume)
 
     expect(result).toContain('\\usepackage{fontspec}')
     expect(result).toContain(`\\IfFontExistsTF{${linuxLibertineFont}}`)

@@ -26,8 +26,8 @@ import { z } from 'zod/v4'
 import {
   COUNTRY_OPTIONS,
   DEGREE_OPTIONS,
+  FONTSPEC_NUMBERS_OPTIONS,
   FONT_SIZE_OPTIONS,
-  FONT_SPEC_NUMBERS_STYLE_OPTIONS,
   LANGUAGE_FLUENCIE_OPTIONS,
   LANGUAGE_OPTIONS,
   LOCALE_LANGUAGE_OPTIONS,
@@ -42,7 +42,7 @@ import {
 type Options =
   | typeof COUNTRY_OPTIONS
   | typeof DEGREE_OPTIONS
-  | typeof FONT_SPEC_NUMBERS_STYLE_OPTIONS
+  | typeof FONTSPEC_NUMBERS_OPTIONS
   | typeof FONT_SIZE_OPTIONS
   | typeof LANGUAGE_FLUENCIE_OPTIONS
   | typeof LANGUAGE_OPTIONS
@@ -126,11 +126,19 @@ export const degreeOptionSchema = optionSchema(DEGREE_OPTIONS, 'degree')
 export const emailSchema = z.email({ message: 'email is invalid.' })
 
 /**
- * A zod schema for a font spec numbers style.
+ * A zod schema for a language fluency option.
  */
-export const fontSpecNumbersStyleOptionSchema = optionSchema(
-  FONT_SPEC_NUMBERS_STYLE_OPTIONS,
-  'font spec numbers'
+export const fluencyOptionSchema = optionSchema(
+  LANGUAGE_FLUENCIE_OPTIONS,
+  'fluency'
+)
+
+/**
+ * A zod schema for a fontspec numbers style.
+ */
+export const fontspecNumbersOptionSchema = optionSchema(
+  FONTSPEC_NUMBERS_OPTIONS,
+  'fontspec numbers'
 )
 
 /**

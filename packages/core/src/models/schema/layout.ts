@@ -26,7 +26,7 @@ import { z } from 'zod/v4'
 
 import {
   fontSizeOptionSchema,
-  fontSpecNumbersStyleOptionSchema,
+  fontspecNumbersOptionSchema,
   localeLanguageOptionSchema,
   marginSizeSchema,
   templateOptionSchema,
@@ -95,9 +95,9 @@ export const typographySchema = z.object({
   typography: z
     .object({
       fontSize: fontSizeOptionSchema.optional(),
-      fontSpec: z
+      fontspec: z
         .object({
-          numbers: fontSpecNumbersStyleOptionSchema.optional(),
+          numbers: fontspecNumbersOptionSchema.optional(),
         })
         .optional(),
     })

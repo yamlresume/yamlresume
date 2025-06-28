@@ -623,14 +623,10 @@ type ResumeLayoutMargins = {
 }
 
 /** The options for the font spec numbers style. */
-export const FONT_SPEC_NUMBERS_STYLE_OPTIONS = [
-  'Lining',
-  'OldStyle',
-  'Auto',
-] as const
+export const FONTSPEC_NUMBERS_OPTIONS = ['Lining', 'OldStyle', 'Auto'] as const
 
 /**
- * The type of font spec numbers style.
+ * The type of fontspec numbers style.
  *
  * - `Lining` - standard lining figures (default for CJK languages)
  * - `OldStyle` - old style figures with varying heights (default for Latin
@@ -638,8 +634,7 @@ export const FONT_SPEC_NUMBERS_STYLE_OPTIONS = [
  * - `Auto` - an undefined state, allowing the style to be automatically
  *   determined based on the selected `LocaleLanguage`
  */
-export type FontSpecNumbersStyle =
-  (typeof FONT_SPEC_NUMBERS_STYLE_OPTIONS)[number]
+export type FontspecNumbers = (typeof FONTSPEC_NUMBERS_OPTIONS)[number]
 
 /** The options for the font size. */
 export const FONT_SIZE_OPTIONS = ['10pt', '11pt', '12pt'] as const
@@ -654,9 +649,9 @@ type ResumeLayoutTypography = {
   /** Base font size for the document (e.g., "10pt", "11pt"). */
   fontSize: string
   /** Font specification details. */
-  fontSpec: {
+  fontspec: {
     /** Style for rendering numbers (Lining or OldStyle). */
-    numbers: FontSpecNumbersStyle
+    numbers: FontspecNumbers
   }
 }
 

@@ -25,8 +25,8 @@
 import { describe, expect, it } from 'vitest'
 
 import {
+  FONTSPEC_NUMBERS_OPTIONS,
   FONT_SIZE_OPTIONS,
-  FONT_SPEC_NUMBERS_STYLE_OPTIONS,
   LOCALE_LANGUAGE_OPTIONS,
   TEMPLATE_OPTIONS,
 } from '@/models'
@@ -184,21 +184,21 @@ describe('typographySchema', () => {
       },
       {
         typography: {
-          fontSpec: { numbers: FONT_SPEC_NUMBERS_STYLE_OPTIONS[0] },
+          fontspec: { numbers: FONTSPEC_NUMBERS_OPTIONS[0] },
         },
       },
       {
         typography: {
           fontSize: '12pt',
-          fontSpec: {
-            numbers: FONT_SPEC_NUMBERS_STYLE_OPTIONS[0],
+          fontspec: {
+            numbers: FONTSPEC_NUMBERS_OPTIONS[0],
           },
         },
       },
       {
         typography: {
           fontSize: '12pt',
-          fontSpec: {},
+          fontspec: {},
         },
       },
     ]
@@ -219,10 +219,10 @@ describe('typographySchema', () => {
       {
         typography: {
           fontSize: '12pt',
-          fontSpec: { numbers: 'invalid' },
+          fontspec: { numbers: 'invalid' },
         },
         message: optionSchemaMessage(
-          FONT_SPEC_NUMBERS_STYLE_OPTIONS,
+          FONTSPEC_NUMBERS_OPTIONS,
           'font spec numbers'
         ),
       },
