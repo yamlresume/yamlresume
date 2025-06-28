@@ -57,6 +57,12 @@ export const FLUENCY_OPTIONS = [
   'Native or Bilingual Proficiency',
 ] as const
 
+/** The options for the font size. */
+export const FONT_SIZE_OPTIONS = ['10pt', '11pt', '12pt'] as const
+
+/** The options for the font spec numbers style. */
+export const FONTSPEC_NUMBERS_OPTIONS = ['Lining', 'OldStyle', 'Auto'] as const
+
 /**
  * Defines common world languages.
  *
@@ -140,6 +146,19 @@ export const LANGUAGE_OPTIONS = [
   'Vietnamese',
   'Yoruba',
   'Zulu',
+] as const
+
+/**
+ * Defines supported languages for UI display and template translation.
+ *
+ * @see {@link https://en.wikipedia.org/wiki/IETF_language_tag}
+ */
+export const LOCALE_LANGUAGE_OPTIONS = [
+  'en',
+  'zh-hans',
+  'zh-hant-hk',
+  'zh-hant-tw',
+  'es',
 ] as const
 
 /**
@@ -391,13 +410,6 @@ export const filledResumeContent: ResumeContent = {
   work: [resumeItems.work],
 }
 
-/**
- * Available font size options for resume layout.
- *
- * LaTeX only supports these values.
- */
-export const fontSizeOptions = ['10 pt', '11 pt', '12 pt']
-
 /** Default top/bottom margin value. */
 const defaultTopBottomMargin = '2.5 cm'
 /** Default left/right margin value. */
@@ -411,19 +423,6 @@ export const marginOptions = [
   '2.25 cm',
   defaultTopBottomMargin,
 ]
-
-/**
- * Defines supported languages for UI display and template translation.
- *
- * @see {@link https://en.wikipedia.org/wiki/IETF_language_tag}
- */
-export const LOCALE_LANGUAGE_OPTIONS = [
-  'en',
-  'zh-hans',
-  'zh-hant-hk',
-  'zh-hant-tw',
-  'es',
-] as const
 
 /**
  * Get the language code and name of the given locale language.
@@ -459,7 +458,7 @@ const defaultLanguage: LocaleLanguageOption = 'en'
 export const defaultResumeLayout: ResumeLayout = {
   template: 'moderncv-banking',
   typography: {
-    fontSize: fontSizeOptions[0],
+    fontSize: FONT_SIZE_OPTIONS[0],
     fontspec: {
       numbers: 'Auto',
     },

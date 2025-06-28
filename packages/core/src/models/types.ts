@@ -26,6 +26,8 @@ import type {
   COUNTRY_OPTIONS,
   DEGREE_OPTIONS,
   FLUENCY_OPTIONS,
+  FONTSPEC_NUMBERS_OPTIONS,
+  FONT_SIZE_OPTIONS,
   LANGUAGE_OPTIONS,
   LOCALE_LANGUAGE_OPTIONS,
   SECTION_IDS,
@@ -622,9 +624,6 @@ type ResumeLayoutMargins = {
   right: string
 }
 
-/** The options for the font spec numbers style. */
-export const FONTSPEC_NUMBERS_OPTIONS = ['Lining', 'OldStyle', 'Auto'] as const
-
 /**
  * The type of fontspec numbers style.
  *
@@ -635,9 +634,6 @@ export const FONTSPEC_NUMBERS_OPTIONS = ['Lining', 'OldStyle', 'Auto'] as const
  *   determined based on the selected `LocaleLanguage`
  */
 export type FontspecNumbers = (typeof FONTSPEC_NUMBERS_OPTIONS)[number]
-
-/** The options for the font size. */
-export const FONT_SIZE_OPTIONS = ['10pt', '11pt', '12pt'] as const
 
 /**
  * The type of font size.
