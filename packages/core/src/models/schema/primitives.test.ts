@@ -50,6 +50,7 @@ import {
   levelOptionSchema,
   localeLanguageOptionSchema,
   marginSizeSchema,
+  marginSizeSchemaMessage,
   nameSchema,
   networkOptionSchema,
   optionSchemaMessage,
@@ -558,54 +559,58 @@ describe('marginSizeSchema', () => {
     const tests = ['2.5cm', '1in', '72pt', '0.5cm', '12pt']
 
     for (const test of tests) {
-      expect(marginSizeSchema.parse(test)).toBe(test)
+      expect(marginSizeSchema('top').parse(test)).toBe(test)
     }
   })
 
   it('should throw an error if the margin size is invalid', () => {
     const tests = [
       {
-        margin: '2.5',
+        top: '2',
         error: {
-          errors: [
-            'invalid margin size, margin size must be a positive number followed by "cm", "pt" or "in", eg: "2.5cm", "1in", "72pt"',
-          ],
+          errors: ['top margin should be 2 characters or more.'],
         },
       },
       {
-        margin: '2.5px',
+        top: '2'.repeat(33),
         error: {
-          errors: [
-            'invalid margin size, margin size must be a positive number followed by "cm", "pt" or "in", eg: "2.5cm", "1in", "72pt"',
-          ],
+          errors: ['top margin should be 32 characters or less.'],
         },
       },
       {
-        margin: 'abc',
+        top: '2.5',
         error: {
-          errors: [
-            'invalid margin size, margin size must be a positive number followed by "cm", "pt" or "in", eg: "2.5cm", "1in", "72pt"',
-          ],
+          errors: [marginSizeSchemaMessage('top')],
         },
       },
       {
-        margin: '-2.5cm',
+        top: '2.5px',
         error: {
-          errors: [
-            'invalid margin size, margin size must be a positive number followed by "cm", "pt" or "in", eg: "2.5cm", "1in", "72pt"',
-          ],
+          errors: [marginSizeSchemaMessage('top')],
         },
       },
       {
-        margin: undefined,
+        top: 'abc',
         error: {
-          errors: ['margin size is required.'],
+          errors: [marginSizeSchemaMessage('top')],
+        },
+      },
+      {
+        top: '-2.5cm',
+        error: {
+          errors: [marginSizeSchemaMessage('top')],
+        },
+      },
+      {
+        top: undefined,
+        error: {
+          errors: ['top margin is required.'],
         },
       },
     ]
 
-    for (const { margin, error } of tests) {
-      validateZodErrors(marginSizeSchema, margin, error)
+    for (const { top, error } of tests) {
+      validateZodErrors(marginSizeSchema('top'), top, error)
     }
   })
 })

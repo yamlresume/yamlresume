@@ -55,10 +55,10 @@ export const localeSchema = z.object({
 export const marginsSchema = z.object({
   margins: z
     .object({
-      top: marginSizeSchema.optional(),
-      bottom: marginSizeSchema.optional(),
-      left: marginSizeSchema.optional(),
-      right: marginSizeSchema.optional(),
+      top: marginSizeSchema('top').optional(),
+      bottom: marginSizeSchema('bottom').optional(),
+      left: marginSizeSchema('left').optional(),
+      right: marginSizeSchema('right').optional(),
     })
     .optional(),
 })

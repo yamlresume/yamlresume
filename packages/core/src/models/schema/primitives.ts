@@ -36,6 +36,78 @@ import {
   TEMPLATE_OPTIONS,
 } from '@/models'
 
+type Position = 'top' | 'bottom' | 'left' | 'right'
+
+/**
+ * Creates an error message for a marginSizeSchema
+ *
+ * @param options - The options to create a message for.
+ * @param messagePrefix - The message prefix to use for the message.
+ * @returns A message for an option schema.
+ */
+export function marginSizeSchemaMessage(position: Position) {
+  return [
+    `invalid ${position} margin size,`,
+    `${position} margin must be a positive number followed by`,
+    `"cm", "pt" or "in", eg: "2.5cm", "1in", "72pt"`,
+  ].join(' ')
+}
+
+/**
+ * A zod schema for a margin size.
+ *
+ * Accepts positive numbers followed by valid units: cm, pt, or in
+ * Examples: "2.5cm", "1in", "72pt"
+ */
+export const marginSizeSchema = (position: Position) =>
+  // We could simply use `z.string()` here with a custom check, but we use
+  // `sizedStringSchema` in order to get best JSON Schema capabilities.
+  sizedStringSchema(`${position} margin`, 2, 32)
+    // Please note that here we added a custom check, inside which we will
+    // override `ctx.issues`, therefore marginSizeSchema will always return one
+    // and only one precise issue if the value is not valid.
+    .check((ctx) => {
+      if (ctx.value.length < 2) {
+        ctx.issues = [
+          {
+            code: 'too_small',
+            input: ctx.value,
+            minimum: 2,
+            message: `${position} margin should be 2 characters or more.`,
+            origin: 'string',
+          },
+        ]
+
+        return
+      }
+
+      if (ctx.value.length > 32) {
+        ctx.issues = [
+          {
+            code: 'too_big',
+            input: ctx.value,
+            maximum: 32,
+            message: `${position} margin should be 32 characters or less.`,
+            origin: 'string',
+          },
+        ]
+
+        return
+      }
+
+      if (!ctx.value.match(/^\d+(\.\d+)?(cm|pt|in)$/)) {
+        ctx.issues = [
+          {
+            code: 'invalid_value',
+            input: ctx.value,
+            message: marginSizeSchemaMessage(position),
+            origin: 'string',
+            values: [ctx.value],
+          },
+        ]
+      }
+    })
+
 /**
  * A type for all options.
  */
@@ -52,7 +124,7 @@ type Options =
   | typeof TEMPLATE_OPTIONS
 
 /**
- * Creates a message for an option schema.
+ * Creates an error message for an optionSchema
  *
  * @param options - The options to create a message for.
  * @param messagePrefix - The message prefix to use for the message.
@@ -110,53 +182,47 @@ export const countryOptionSchema = optionSchema(COUNTRY_OPTIONS, 'country')
  * @returns A Zod schema for a date string.
  */
 export const dateSchema = (date: string) =>
-  // We could simply use `z.string()` here with a custom check, but we use
-  // `sizedStringSchema` in order to get best JSON Schema capabilities.
-  sizedStringSchema(date, 4, 32)
-    // Please note that here we added a custom check, inside which we will
-    // override `ctx.issues`, therefore dateSchema will always return one and
-    // only one precise issue if the value is not valid.
-    .check((ctx) => {
-      if (ctx.value.length < 4) {
-        ctx.issues = [
-          {
-            code: 'too_small',
-            input: ctx.value,
-            minimum: 4,
-            message: `${date} should be 4 characters or more.`,
-            origin: 'string',
-          },
-        ]
+  sizedStringSchema(date, 4, 32).check((ctx) => {
+    if (ctx.value.length < 4) {
+      ctx.issues = [
+        {
+          code: 'too_small',
+          input: ctx.value,
+          minimum: 4,
+          message: `${date} should be 4 characters or more.`,
+          origin: 'string',
+        },
+      ]
 
-        return
-      }
+      return
+    }
 
-      if (ctx.value.length > 32) {
-        ctx.issues = [
-          {
-            code: 'too_big',
-            input: ctx.value,
-            maximum: 32,
-            message: `${date} should be 32 characters or less.`,
-            origin: 'string',
-          },
-        ]
+    if (ctx.value.length > 32) {
+      ctx.issues = [
+        {
+          code: 'too_big',
+          input: ctx.value,
+          maximum: 32,
+          message: `${date} should be 32 characters or less.`,
+          origin: 'string',
+        },
+      ]
 
-        return
-      }
+      return
+    }
 
-      if (!Date.parse(ctx.value)) {
-        ctx.issues = [
-          {
-            code: 'invalid_value',
-            input: ctx.value,
-            message: 'date is invalid.',
-            origin: 'string',
-            values: [ctx.value],
-          },
-        ]
-      }
-    })
+    if (!Date.parse(ctx.value)) {
+      ctx.issues = [
+        {
+          code: 'invalid_value',
+          input: ctx.value,
+          message: `${date} is invalid.`,
+          origin: 'string',
+          values: [ctx.value],
+        },
+      ]
+    }
+  })
 
 /**
  * A zod schema for a degree option.
@@ -202,23 +268,6 @@ export const languageOptionSchema = optionSchema(LANGUAGE_OPTIONS, 'language')
 export const localeLanguageOptionSchema = optionSchema(
   LOCALE_LANGUAGE_OPTIONS,
   'locale language'
-)
-
-/**
- * A zod schema for a margin.
- *
- * Accepts positive numbers followed by valid units: cm, pt, or in
- * Examples: "2.5cm", "1in", "72pt"
- */
-export const marginSizeSchema = sizedStringSchema('margin size', 2, 32).regex(
-  /^\d+(\.\d+)?(cm|pt|in)$/,
-  {
-    message: [
-      'invalid margin size,',
-      'margin size must be a positive number followed by "cm", "pt" or "in",',
-      'eg: "2.5cm", "1in", "72pt"',
-    ].join(' '),
-  }
 )
 
 /**

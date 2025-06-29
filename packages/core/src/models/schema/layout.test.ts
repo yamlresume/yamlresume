@@ -28,9 +28,9 @@ import {
   FONTSPEC_NUMBERS_OPTIONS,
   FONT_SIZE_OPTIONS,
   LOCALE_LANGUAGE_OPTIONS,
+  type ResumeLayout,
   TEMPLATE_OPTIONS,
 } from '@/models'
-
 import {
   layoutSchema,
   localeSchema,
@@ -39,7 +39,8 @@ import {
   templateSchema,
   typographySchema,
 } from './layout'
-import { optionSchemaMessage } from './primitives'
+import { marginSizeSchemaMessage, optionSchemaMessage } from './primitives'
+import { validateZodErrors } from './utils'
 
 describe('localeSchema', () => {
   it('should validate a locale if it is valid', () => {
@@ -58,15 +59,30 @@ describe('localeSchema', () => {
     const tests = [
       {
         locale: { language: 'invalid-language' },
-        message: optionSchemaMessage(
-          LOCALE_LANGUAGE_OPTIONS,
-          'locale language'
-        ),
+        error: {
+          errors: [],
+          properties: {
+            locale: {
+              errors: [],
+              properties: {
+                language: {
+                  errors: [
+                    optionSchemaMessage(
+                      LOCALE_LANGUAGE_OPTIONS,
+                      'locale language'
+                    ),
+                  ],
+                },
+              },
+            },
+          },
+        },
       },
     ]
 
-    for (const { locale, message } of tests) {
-      expect(() => localeSchema.parse({ locale })).toThrow(message)
+    for (const { locale, error } of tests) {
+      // @ts-ignore
+      validateZodErrors(localeSchema, { locale }, error)
     }
   })
 })
@@ -114,12 +130,24 @@ describe('marginsSchema', () => {
     const tests = [
       {
         margins: { top: '1cm', bottom: '1cm', left: '1cm', right: '1' },
-        message: 'invalid margin size',
+        error: {
+          errors: [],
+          properties: {
+            margins: {
+              errors: [],
+              properties: {
+                right: {
+                  errors: ['right margin should be 2 characters or more.'],
+                },
+              },
+            },
+          },
+        },
       },
     ]
 
-    for (const { margins, message } of tests) {
-      expect(() => marginsSchema.parse({ margins })).toThrow(message)
+    for (const { margins, error } of tests) {
+      validateZodErrors(marginsSchema, { margins }, error)
     }
   })
 })
@@ -142,12 +170,25 @@ describe('pageSchema', () => {
     const tests = [
       {
         page: { showPageNumbers: 'true' },
-        message: 'Invalid input: expected boolean, received string',
+        error: {
+          errors: [],
+          properties: {
+            page: {
+              errors: [],
+              properties: {
+                showPageNumbers: {
+                  errors: ['Invalid input: expected boolean, received string'],
+                },
+              },
+            },
+          },
+        },
       },
     ]
 
-    for (const { page, message } of tests) {
-      expect(() => pageSchema.parse({ page })).toThrow(message)
+    for (const { page, error } of tests) {
+      // @ts-ignore
+      validateZodErrors(pageSchema, { page }, error)
     }
   })
 })
@@ -164,13 +205,21 @@ describe('templateSchema', () => {
   it('should throw an error if the template is invalid', () => {
     const tests = [
       {
-        template: 'invalid',
-        message: optionSchemaMessage(TEMPLATE_OPTIONS, 'template'),
+        template: 'invalid-template',
+        error: {
+          errors: [],
+          properties: {
+            template: {
+              errors: [optionSchemaMessage(TEMPLATE_OPTIONS, 'template')],
+            },
+          },
+        },
       },
     ]
 
-    for (const { template, message } of tests) {
-      expect(() => templateSchema.parse({ template })).toThrow(message)
+    for (const { template, error } of tests) {
+      // @ts-ignore
+      validateZodErrors(templateSchema, { template }, error)
     }
   })
 })
@@ -214,22 +263,54 @@ describe('typographySchema', () => {
         typography: {
           fontSize: '13pt',
         },
-        message: optionSchemaMessage(FONT_SIZE_OPTIONS, 'font size'),
+        error: {
+          errors: [],
+          properties: {
+            typography: {
+              errors: [],
+              properties: {
+                fontSize: {
+                  errors: [optionSchemaMessage(FONT_SIZE_OPTIONS, 'font size')],
+                },
+              },
+            },
+          },
+        },
       },
       {
         typography: {
           fontSize: '12pt',
           fontspec: { numbers: 'invalid' },
         },
-        message: optionSchemaMessage(
-          FONTSPEC_NUMBERS_OPTIONS,
-          'font spec numbers'
-        ),
+        error: {
+          errors: [],
+          properties: {
+            typography: {
+              errors: [],
+              properties: {
+                fontspec: {
+                  errors: [],
+                  properties: {
+                    numbers: {
+                      errors: [
+                        optionSchemaMessage(
+                          FONTSPEC_NUMBERS_OPTIONS,
+                          'fontspec numbers'
+                        ),
+                      ],
+                    },
+                  },
+                },
+              },
+            },
+          },
+        },
       },
     ]
 
-    for (const { typography, message } of tests) {
-      expect(() => typographySchema.parse({ typography })).toThrow(message)
+    for (const { typography, error } of tests) {
+      // @ts-ignore
+      validateZodErrors(typographySchema, { typography }, error)
     }
   })
 })
@@ -300,55 +381,155 @@ describe('layoutSchema', () => {
   })
 
   it('should throw an error if the layout object is invalid', () => {
-    const tests = [
+    const tests: Array<{ layout: ResumeLayout; error: object }> = [
       {
         layout: {
           locale: {
+            // @ts-ignore
             language: 'invalid',
           },
         },
-        message: optionSchemaMessage(
-          LOCALE_LANGUAGE_OPTIONS,
-          'locale language'
-        ),
+        error: {
+          errors: [],
+          properties: {
+            layout: {
+              errors: [],
+              properties: {
+                locale: {
+                  errors: [],
+                  properties: {
+                    language: {
+                      errors: [
+                        optionSchemaMessage(
+                          LOCALE_LANGUAGE_OPTIONS,
+                          'locale language'
+                        ),
+                      ],
+                    },
+                  },
+                },
+              },
+            },
+          },
+        },
       },
       {
+        // @ts-ignore
         layout: {
           margins: {
             top: '1',
-            bottom: '1cm',
+            bottom: '-1cm',
             left: '1cm',
             right: '1cm',
           },
         },
-        message: 'invalid margin size',
+        error: {
+          errors: [],
+          properties: {
+            layout: {
+              errors: [],
+              properties: {
+                margins: {
+                  errors: [],
+                  properties: {
+                    top: {
+                      errors: ['top margin should be 2 characters or more.'],
+                    },
+                    bottom: {
+                      errors: [marginSizeSchemaMessage('bottom')],
+                    },
+                  },
+                },
+              },
+            },
+          },
+        },
       },
       {
         layout: {
           page: {
+            // @ts-ignore
             showPageNumbers: 'true',
           },
         },
-        message: 'Invalid input: expected boolean, received string',
-      },
-      {
-        layout: {
-          template: 'invalid',
+        error: {
+          errors: [],
+          properties: {
+            layout: {
+              errors: [],
+              properties: {
+                page: {
+                  errors: [],
+                  properties: {
+                    showPageNumbers: {
+                      errors: [
+                        'Invalid input: expected boolean, received string',
+                      ],
+                    },
+                  },
+                },
+              },
+            },
+          },
         },
-        message: optionSchemaMessage(TEMPLATE_OPTIONS, 'template'),
       },
       {
         layout: {
+          // @ts-ignore
+          template: 'invalid-template',
+        },
+        error: {
+          errors: [],
+          properties: {
+            layout: {
+              errors: [],
+              properties: {
+                template: {
+                  errors: [optionSchemaMessage(TEMPLATE_OPTIONS, 'template')],
+                },
+              },
+            },
+          },
+        },
+      },
+      {
+        layout: {
+          // @ts-ignore
+          template: 'invalid-template',
+          // @ts-ignore
           typography: {
             fontSize: '13pt',
           },
         },
-        message: optionSchemaMessage(FONT_SIZE_OPTIONS, 'font size'),
+        error: {
+          errors: [],
+          properties: {
+            layout: {
+              errors: [],
+              properties: {
+                template: {
+                  errors: [optionSchemaMessage(TEMPLATE_OPTIONS, 'template')],
+                },
+                typography: {
+                  errors: [],
+                  properties: {
+                    fontSize: {
+                      errors: [
+                        optionSchemaMessage(FONT_SIZE_OPTIONS, 'font size'),
+                      ],
+                    },
+                  },
+                },
+              },
+            },
+          },
+        },
       },
     ]
 
-    for (const { layout, message } of tests) {
-      expect(() => layoutSchema.parse({ layout })).toThrow(message)
+    for (const { layout, error } of tests) {
+      // @ts-ignore
+      validateZodErrors(layoutSchema, { layout }, error)
     }
   })
 })
