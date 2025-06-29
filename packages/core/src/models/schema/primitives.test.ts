@@ -61,6 +61,8 @@ import {
   urlSchema,
 } from './primitives'
 
+import { validateZodErrors } from './utils'
+
 describe(sizedStringSchema, () => {
   const schema = sizedStringSchema('string', 1, 10)
 
@@ -76,20 +78,26 @@ describe(sizedStringSchema, () => {
     const tests = [
       {
         string: '',
-        message: 'string should be 1 characters or more.',
+        error: {
+          errors: ['string should be 1 characters or more.'],
+        },
       },
       {
         string: 'a'.repeat(11),
-        message: 'string should be 10 characters or less.',
+        error: {
+          errors: ['string should be 10 characters or less.'],
+        },
       },
       {
         string: undefined,
-        message: 'string is required.',
+        error: {
+          errors: ['string is required.'],
+        },
       },
     ]
 
-    for (const { string, message } of tests) {
-      expect(() => schema.parse(string)).toThrow(message)
+    for (const { string, error } of tests) {
+      validateZodErrors(schema, string, error)
     }
   })
 })
@@ -105,16 +113,20 @@ describe('countryOptionSchema', () => {
     const tests = [
       {
         country: 'Invalid Country',
-        message: optionSchemaMessage(COUNTRY_OPTIONS, 'country'),
+        error: {
+          errors: [optionSchemaMessage(COUNTRY_OPTIONS, 'country')],
+        },
       },
       {
         country: undefined,
-        message: 'country option is required.',
+        error: {
+          errors: ['country option is required.'],
+        },
       },
     ]
 
-    for (const { country, message } of tests) {
-      expect(() => countryOptionSchema.parse(country)).toThrow(message)
+    for (const { country, error } of tests) {
+      validateZodErrors(countryOptionSchema, country, error)
     }
   })
 })
@@ -146,24 +158,32 @@ describe('dateSchema', () => {
     const tests = [
       {
         date: '202',
-        message: 'date should be 4 characters or more.',
+        error: {
+          errors: ['date should be 4 characters or more.'],
+        },
       },
       {
         date: '2025-01-01-01-0101010101101011-0101010101',
-        message: 'date should be 32 characters or less.',
+        error: {
+          errors: ['date should be 32 characters or less.'],
+        },
       },
       {
         date: undefined,
-        message: 'date is required.',
+        error: {
+          errors: ['date is required.'],
+        },
       },
       {
         date: '203e',
-        message: 'date is invalid.',
+        error: {
+          errors: ['date is invalid.'],
+        },
       },
     ]
 
-    for (const { date, message } of tests) {
-      expect(() => schema.parse(date)).toThrow(message)
+    for (const { date, error } of tests) {
+      validateZodErrors(schema, date, error)
     }
   })
 })
@@ -181,20 +201,26 @@ describe('degreeOptionSchema', () => {
     const tests = [
       {
         degree: 'PhD',
-        message: invalidDegreeMessage,
+        error: {
+          errors: [invalidDegreeMessage],
+        },
       },
       {
         degree: '',
-        message: invalidDegreeMessage,
+        error: {
+          errors: [invalidDegreeMessage],
+        },
       },
       {
         degree: undefined,
-        message: 'degree option is required.',
+        error: {
+          errors: ['degree option is required.'],
+        },
       },
     ]
 
-    for (const { degree, message } of tests) {
-      expect(() => degreeOptionSchema.parse(degree)).toThrow(message)
+    for (const { degree, error } of tests) {
+      validateZodErrors(degreeOptionSchema, degree, error)
     }
   })
 })
@@ -210,26 +236,30 @@ describe('fontspecNumbersOptionSchema', () => {
     const tests = [
       {
         numbers: 'bold',
-        message: optionSchemaMessage(
-          FONTSPEC_NUMBERS_OPTIONS,
-          'fontspec numbers'
-        ),
+        error: {
+          errors: [
+            optionSchemaMessage(FONTSPEC_NUMBERS_OPTIONS, 'fontspec numbers'),
+          ],
+        },
       },
       {
         numbers: '',
-        message: optionSchemaMessage(
-          FONTSPEC_NUMBERS_OPTIONS,
-          'fontspec numbers'
-        ),
+        error: {
+          errors: [
+            optionSchemaMessage(FONTSPEC_NUMBERS_OPTIONS, 'fontspec numbers'),
+          ],
+        },
       },
       {
         numbers: undefined,
-        message: 'fontspec numbers option is required.',
+        error: {
+          errors: ['fontspec numbers option is required.'],
+        },
       },
     ]
 
-    for (const { numbers, message } of tests) {
-      expect(() => fontspecNumbersOptionSchema.parse(numbers)).toThrow(message)
+    for (const { numbers, error } of tests) {
+      validateZodErrors(fontspecNumbersOptionSchema, numbers, error)
     }
   })
 })
@@ -245,16 +275,20 @@ describe('fontSizeOptionSchema', () => {
     const tests = [
       {
         fontSize: '13pt',
-        message: optionSchemaMessage(FONT_SIZE_OPTIONS, 'font size'),
+        error: {
+          errors: [optionSchemaMessage(FONT_SIZE_OPTIONS, 'font size')],
+        },
       },
       {
         fontSize: undefined,
-        message: 'font size option is required.',
+        error: {
+          errors: ['font size option is required.'],
+        },
       },
     ]
 
-    for (const { fontSize, message } of tests) {
-      expect(() => fontSizeOptionSchema.parse(fontSize)).toThrow(message)
+    for (const { fontSize, error } of tests) {
+      validateZodErrors(fontSizeOptionSchema, fontSize, error)
     }
   })
 })
@@ -265,10 +299,29 @@ describe('emailSchema', () => {
   })
 
   it('should throw an error if the email is invalid', () => {
-    const tests = ['test@test', '', undefined]
+    const tests = [
+      {
+        email: 'test@test',
+        error: {
+          errors: ['email is invalid.'],
+        },
+      },
+      {
+        email: '',
+        error: {
+          errors: ['email is invalid.'],
+        },
+      },
+      {
+        email: undefined,
+        error: {
+          errors: ['email is invalid.'],
+        },
+      },
+    ]
 
-    for (const email of tests) {
-      expect(() => emailSchema.parse(email)).toThrow('email is invalid.')
+    for (const { email, error } of tests) {
+      validateZodErrors(emailSchema, email, error)
     }
   })
 })
@@ -283,16 +336,38 @@ describe('keywordsSchema', () => {
   })
 
   it('should throw an error if the keywords are invalid', () => {
-    expect(() => keywordsSchema.parse(['', 'keyword'])).toThrow(
-      'keyword should be 1 characters or more.'
-    )
+    const tests = [
+      {
+        keywords: ['', 'keyword'],
+        error: {
+          errors: [],
+          items: [
+            {
+              errors: ['keyword should be 1 characters or more.'],
+            },
+          ],
+        },
+      },
+      {
+        keywords: [
+          'keyword 1',
+          'A really loooooooooooooooooooooooooooooooooooong keyword',
+        ],
+        error: {
+          errors: [],
+          items: [
+            undefined,
+            {
+              errors: ['keyword should be 32 characters or less.'],
+            },
+          ],
+        },
+      },
+    ]
 
-    expect(() =>
-      keywordsSchema.parse([
-        'keyword 1',
-        'A really loooooooooooooooooooooooooooooooooooong keyword',
-      ])
-    ).toThrow('keyword should be 32 characters or less.')
+    for (const { keywords, error } of tests) {
+      validateZodErrors(keywordsSchema, keywords, error)
+    }
   })
 })
 
@@ -312,24 +387,32 @@ describe('languageOptionSchema', () => {
     const tests = [
       {
         language: 'Frenchhh',
-        message: invalidLanguageMessage,
+        error: {
+          errors: [invalidLanguageMessage],
+        },
       },
       {
         language: 'Spanishhh',
-        message: invalidLanguageMessage,
+        error: {
+          errors: [invalidLanguageMessage],
+        },
       },
       {
         language: 'Germanhh',
-        message: invalidLanguageMessage,
+        error: {
+          errors: [invalidLanguageMessage],
+        },
       },
       {
         language: undefined,
-        message: 'language option is required.',
+        error: {
+          errors: ['language option is required.'],
+        },
       },
     ]
 
-    for (const { language, message } of tests) {
-      expect(() => languageOptionSchema.parse(language)).toThrow(message)
+    for (const { language, error } of tests) {
+      validateZodErrors(languageOptionSchema, language, error)
     }
   })
 })
@@ -350,24 +433,32 @@ describe('fluencyOptionSchema', () => {
     const tests = [
       {
         fluency: 'Basic',
-        message: invalidFluencyMessage,
+        error: {
+          errors: [invalidFluencyMessage],
+        },
       },
       {
         fluency: 'Fluent',
-        message: invalidFluencyMessage,
+        error: {
+          errors: [invalidFluencyMessage],
+        },
       },
       {
         fluency: 'Advanced',
-        message: invalidFluencyMessage,
+        error: {
+          errors: [invalidFluencyMessage],
+        },
       },
       {
         fluency: undefined,
-        message: 'fluency option is required.',
+        error: {
+          errors: ['fluency option is required.'],
+        },
       },
     ]
 
-    for (const { fluency, message } of tests) {
-      expect(() => fluencyOptionSchema.parse(fluency)).toThrow(message)
+    for (const { fluency, error } of tests) {
+      validateZodErrors(fluencyOptionSchema, fluency, error)
     }
   })
 })
@@ -385,24 +476,32 @@ describe('levelOptionSchema', () => {
     const tests = [
       {
         level: 'Beginnerrr',
-        message: invalidLevelMessage,
+        error: {
+          errors: [invalidLevelMessage],
+        },
       },
       {
         level: 'Intermediateee',
-        message: invalidLevelMessage,
+        error: {
+          errors: [invalidLevelMessage],
+        },
       },
       {
         level: 'Advanceddd',
-        message: invalidLevelMessage,
+        error: {
+          errors: [invalidLevelMessage],
+        },
       },
       {
         level: undefined,
-        message: 'level option is required.',
+        error: {
+          errors: ['level option is required.'],
+        },
       },
     ]
 
-    for (const { level, message } of tests) {
-      expect(() => levelOptionSchema.parse(level)).toThrow(message)
+    for (const { level, error } of tests) {
+      validateZodErrors(levelOptionSchema, level, error)
     }
   })
 })
@@ -418,33 +517,38 @@ describe('localeLanguageOptionSchema', () => {
     const tests = [
       {
         language: 'en-US',
-        message: optionSchemaMessage(
-          LOCALE_LANGUAGE_OPTIONS,
-          'locale language'
-        ),
+        error: {
+          errors: [
+            optionSchemaMessage(LOCALE_LANGUAGE_OPTIONS, 'locale language'),
+          ],
+        },
       },
       {
         language: 'fr-FR',
-        message: optionSchemaMessage(
-          LOCALE_LANGUAGE_OPTIONS,
-          'locale language'
-        ),
+        error: {
+          errors: [
+            optionSchemaMessage(LOCALE_LANGUAGE_OPTIONS, 'locale language'),
+          ],
+        },
       },
       {
         language: 'es-ES',
-        message: optionSchemaMessage(
-          LOCALE_LANGUAGE_OPTIONS,
-          'locale language'
-        ),
+        error: {
+          errors: [
+            optionSchemaMessage(LOCALE_LANGUAGE_OPTIONS, 'locale language'),
+          ],
+        },
       },
       {
         language: undefined,
-        message: 'locale language option is required.',
+        error: {
+          errors: ['locale language option is required.'],
+        },
       },
     ]
 
-    for (const { language, message } of tests) {
-      expect(() => localeLanguageOptionSchema.parse(language)).toThrow(message)
+    for (const { language, error } of tests) {
+      validateZodErrors(localeLanguageOptionSchema, language, error)
     }
   })
 })
@@ -459,33 +563,49 @@ describe('marginSizeSchema', () => {
   })
 
   it('should throw an error if the margin size is invalid', () => {
-    const invalidMarginMessage = 'invalid margin size'
-
     const tests = [
       {
         margin: '2.5',
-        message: invalidMarginMessage,
+        error: {
+          errors: [
+            'invalid margin size, margin size must be a positive number followed by "cm", "pt" or "in", eg: "2.5cm", "1in", "72pt"',
+          ],
+        },
       },
       {
         margin: '2.5px',
-        message: invalidMarginMessage,
+        error: {
+          errors: [
+            'invalid margin size, margin size must be a positive number followed by "cm", "pt" or "in", eg: "2.5cm", "1in", "72pt"',
+          ],
+        },
       },
       {
         margin: 'abc',
-        message: invalidMarginMessage,
+        error: {
+          errors: [
+            'invalid margin size, margin size must be a positive number followed by "cm", "pt" or "in", eg: "2.5cm", "1in", "72pt"',
+          ],
+        },
       },
       {
         margin: '-2.5cm',
-        message: invalidMarginMessage,
+        error: {
+          errors: [
+            'invalid margin size, margin size must be a positive number followed by "cm", "pt" or "in", eg: "2.5cm", "1in", "72pt"',
+          ],
+        },
       },
       {
         margin: undefined,
-        message: 'margin size is required.',
+        error: {
+          errors: ['margin size is required.'],
+        },
       },
     ]
 
-    for (const { margin, message } of tests) {
-      expect(() => marginSizeSchema.parse(margin)).toThrow(message)
+    for (const { margin, error } of tests) {
+      validateZodErrors(marginSizeSchema, margin, error)
     }
   })
 })
@@ -506,24 +626,32 @@ describe('networkOptionSchema', () => {
     const tests = [
       {
         network: 'invalid-network',
-        message: invalidNetworkMessage,
+        error: {
+          errors: [invalidNetworkMessage],
+        },
       },
       {
         network: 'github',
-        message: invalidNetworkMessage,
+        error: {
+          errors: [invalidNetworkMessage],
+        },
       },
       {
         network: 'GITHUB',
-        message: invalidNetworkMessage,
+        error: {
+          errors: [invalidNetworkMessage],
+        },
       },
       {
         network: undefined,
-        message: 'network option is required.',
+        error: {
+          errors: ['network option is required.'],
+        },
       },
     ]
 
-    for (const { network, message } of tests) {
-      expect(() => networkOptionSchema.parse(network)).toThrow(message)
+    for (const { network, error } of tests) {
+      validateZodErrors(networkOptionSchema, network, error)
     }
   })
 })
@@ -543,20 +671,26 @@ describe('nameSchema', () => {
     const tests = [
       {
         name: 'J',
-        message: 'name should be 2 characters or more.',
+        error: {
+          errors: ['name should be 2 characters or more.'],
+        },
       },
       {
         name: 'a'.repeat(129),
-        message: 'name should be 128 characters or less.',
+        error: {
+          errors: ['name should be 128 characters or less.'],
+        },
       },
       {
         name: undefined,
-        message: 'name is required.',
+        error: {
+          errors: ['name is required.'],
+        },
       },
     ]
 
-    for (const { name, message } of tests) {
-      expect(() => schema.parse(name)).toThrow(message)
+    for (const { name, error } of tests) {
+      validateZodErrors(schema, name, error)
     }
   })
 })
@@ -566,7 +700,7 @@ describe('organizationSchema', () => {
     const tests = ['Organization', 'Company', 'School', 'Institution']
 
     for (const organization of tests) {
-      expect(organizationSchema(organization).parse(organization)).toBe(
+      expect(organizationSchema('Organization').parse(organization)).toBe(
         organization
       )
     }
@@ -576,22 +710,26 @@ describe('organizationSchema', () => {
     const tests = [
       {
         organization: 'a',
-        message: 'Organization should be 2 characters or more.',
+        error: {
+          errors: ['Organization should be 2 characters or more.'],
+        },
       },
       {
         organization: 'a'.repeat(129),
-        message: 'Organization should be 128 characters or less.',
+        error: {
+          errors: ['Organization should be 128 characters or less.'],
+        },
       },
       {
         organization: undefined,
-        message: 'Organization is required.',
+        error: {
+          errors: ['Organization is required.'],
+        },
       },
     ]
 
-    for (const { organization, message } of tests) {
-      expect(() =>
-        organizationSchema('Organization').parse(organization)
-      ).toThrow(message)
+    for (const { organization, error } of tests) {
+      validateZodErrors(organizationSchema('Organization'), organization, error)
     }
   })
 })
@@ -617,12 +755,35 @@ describe('phoneSchema', () => {
   })
 
   it('should throw an error if the phone number is invalid', () => {
-    const tests = ['ae', '1'.repeat(32), '++81634', '+1 (86) 123461324']
+    const tests = [
+      {
+        phoneNumber: 'ae',
+        error: {
+          errors: ['phone number may be invalid.'],
+        },
+      },
+      {
+        phoneNumber: '1'.repeat(32),
+        error: {
+          errors: ['phone number may be invalid.'],
+        },
+      },
+      {
+        phoneNumber: '++81634',
+        error: {
+          errors: ['phone number may be invalid.'],
+        },
+      },
+      {
+        phoneNumber: '+1 (86) 123461324',
+        error: {
+          errors: ['phone number may be invalid.'],
+        },
+      },
+    ]
 
-    for (const phoneNumber of tests) {
-      expect(() => phoneSchema.parse(phoneNumber)).toThrow(
-        'phone number may be invalid.'
-      )
+    for (const { phoneNumber, error } of tests) {
+      validateZodErrors(phoneSchema, phoneNumber, error)
     }
   })
 })
@@ -640,20 +801,26 @@ describe('summarySchema', () => {
     const tests = [
       {
         summary: 's',
-        message: 'summary should be 16 characters or more.',
+        error: {
+          errors: ['summary should be 16 characters or more.'],
+        },
       },
       {
         summary: 'a'.repeat(1025),
-        message: 'summary should be 1024 characters or less.',
+        error: {
+          errors: ['summary should be 1024 characters or less.'],
+        },
       },
       {
         summary: undefined,
-        message: 'summary is required.',
+        error: {
+          errors: ['summary is required.'],
+        },
       },
     ]
 
-    for (const { summary, message } of tests) {
-      expect(() => summarySchema.parse(summary)).toThrow(message)
+    for (const { summary, error } of tests) {
+      validateZodErrors(summarySchema, summary, error)
     }
   })
 })
@@ -669,16 +836,20 @@ describe('templateOptionSchema', () => {
     const tests = [
       {
         template: 'invalid-template',
-        message: optionSchemaMessage(TEMPLATE_OPTIONS, 'template'),
+        error: {
+          errors: [optionSchemaMessage(TEMPLATE_OPTIONS, 'template')],
+        },
       },
       {
         template: undefined,
-        message: 'template option is required.',
+        error: {
+          errors: ['template option is required.'],
+        },
       },
     ]
 
-    for (const { template, message } of tests) {
-      expect(() => templateOptionSchema.parse(template)).toThrow(message)
+    for (const { template, error } of tests) {
+      validateZodErrors(templateOptionSchema, template, error)
     }
   })
 })
@@ -700,15 +871,22 @@ describe('urlSchema', () => {
 
   it('should throw an error if the url is invalid', () => {
     const tests = [
-      { url: 'invalid url', message: 'URL is invalid.' },
+      {
+        url: 'invalid url',
+        error: {
+          errors: ['URL is invalid.'],
+        },
+      },
       {
         url: `https://t.tt/${'a'.repeat(256)}`,
-        message: 'URL should be 256 characters or less.',
+        error: {
+          errors: ['URL should be 256 characters or less.'],
+        },
       },
     ]
 
-    for (const { url, message } of tests) {
-      expect(() => urlSchema.parse(url)).toThrow(message)
+    for (const { url, error } of tests) {
+      validateZodErrors(urlSchema, url, error)
     }
   })
 })

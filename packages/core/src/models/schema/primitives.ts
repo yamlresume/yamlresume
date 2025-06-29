@@ -74,12 +74,11 @@ export function optionSchemaMessage(options: Options, messagePrefix: string) {
  * @returns A Zod schema for an option.
  */
 function optionSchema(options: Options, messagePrefix: string) {
-  return z.intersection(
-    z.enum(options, {
+  return z
+    .string({ message: `${messagePrefix} option is required.` })
+    .refine((value) => (options as readonly string[]).includes(value), {
       message: optionSchemaMessage(options, messagePrefix),
-    }),
-    z.string({ message: `${messagePrefix} option is required.` })
-  )
+    })
 }
 
 /**
@@ -111,9 +110,53 @@ export const countryOptionSchema = optionSchema(COUNTRY_OPTIONS, 'country')
  * @returns A Zod schema for a date string.
  */
 export const dateSchema = (date: string) =>
-  sizedStringSchema(date, 4, 32).refine((date) => Date.parse(date), {
-    error: 'date is invalid.',
-  })
+  // We could simply use `z.string()` here with a custom check, but we use
+  // `sizedStringSchema` in order to get best JSON Schema capabilities.
+  sizedStringSchema(date, 4, 32)
+    // Please note that here we added a custom check, inside which we will
+    // override `ctx.issues`, therefore dateSchema will always return one and
+    // only one precise issue if the value is not valid.
+    .check((ctx) => {
+      if (ctx.value.length < 4) {
+        ctx.issues = [
+          {
+            code: 'too_small',
+            input: ctx.value,
+            minimum: 4,
+            message: `${date} should be 4 characters or more.`,
+            origin: 'string',
+          },
+        ]
+
+        return
+      }
+
+      if (ctx.value.length > 32) {
+        ctx.issues = [
+          {
+            code: 'too_big',
+            input: ctx.value,
+            maximum: 32,
+            message: `${date} should be 32 characters or less.`,
+            origin: 'string',
+          },
+        ]
+
+        return
+      }
+
+      if (!Date.parse(ctx.value)) {
+        ctx.issues = [
+          {
+            code: 'invalid_value',
+            input: ctx.value,
+            message: 'date is invalid.',
+            origin: 'string',
+            values: [ctx.value],
+          },
+        ]
+      }
+    })
 
 /**
  * A zod schema for a degree option.

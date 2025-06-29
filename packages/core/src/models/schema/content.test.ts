@@ -43,12 +43,7 @@ import {
 } from './content'
 import { optionSchemaMessage } from './primitives'
 
-import {
-  COUNTRY_OPTIONS,
-  DEGREE_OPTIONS,
-  FLUENCY_OPTIONS,
-  LANGUAGE_OPTIONS,
-} from '@/models'
+import { COUNTRY_OPTIONS, FLUENCY_OPTIONS, LANGUAGE_OPTIONS } from '@/models'
 
 const summary = 'This is a summary with some text.'
 
@@ -531,7 +526,7 @@ describe('educationSchema', () => {
             url,
           },
         ],
-        message: optionSchemaMessage(DEGREE_OPTIONS, 'degree'),
+        message: 'degree option is required.',
       },
       {
         education: [
