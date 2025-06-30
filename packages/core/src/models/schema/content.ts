@@ -274,7 +274,7 @@ export const skillsSchema = z.object({
       z.object({
         // required fields
         level: levelOptionSchema,
-        name: nameSchema('Skill name'),
+        name: nameSchema('name'),
 
         // optional fields
         keywords: keywordsSchema.optional(),
@@ -312,7 +312,7 @@ export const workSchema = z.object({
     .array(
       z.object({
         // required fields
-        name: organizationSchema('company'),
+        name: organizationSchema('name'),
         position: sizedStringSchema('position', 2, 64),
         startDate: dateSchema('startDate'),
         summary: summarySchema,

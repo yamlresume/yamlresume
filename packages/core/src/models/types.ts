@@ -327,6 +327,8 @@ type ProjectItem = {
   name: string
   /** Start date of the project (e.g., "2021", "Jan 2021"). */
   startDate: string
+  /** Detailed accomplishments for the project (supports rich text). */
+  summary: string
 
   /** Description of the project. */
   description?: string
@@ -334,8 +336,6 @@ type ProjectItem = {
   endDate?: string
   /** Keywords or technologies used in the project. */
   keywords?: Keywords
-  /** Detailed accomplishments for the project (supports rich text). */
-  summary?: string
   /** URL related to the project (e.g., repository, live demo). */
   url?: string
   /** Computed values derived during transformation. */

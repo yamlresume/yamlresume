@@ -42,8 +42,26 @@ import {
   workSchema,
 } from './content'
 import { optionSchemaMessage } from './primitives'
+import { validateZodErrors } from './utils'
 
 import { COUNTRY_OPTIONS, FLUENCY_OPTIONS, LANGUAGE_OPTIONS } from '@/models'
+import type {
+  Awards,
+  Basics,
+  Certificates,
+  Education,
+  Interests,
+  Languages,
+  Location,
+  Profiles,
+  Projects,
+  Publications,
+  References,
+  ResumeContent,
+  Skills,
+  Volunteer,
+  Work,
+} from '@/models'
 
 const summary = 'This is a summary with some text.'
 
@@ -53,8 +71,11 @@ describe('awardsSchema', () => {
   const title = 'Award title'
 
   it('should validate an awards object if it is valid', () => {
-    const tests = [
+    const tests: Array<Awards> = [
       {},
+      {
+        awards: undefined,
+      },
       {
         awards: [],
       },
@@ -101,9 +122,10 @@ describe('awardsSchema', () => {
   })
 
   it('should throw an error if the awards are invalid', () => {
-    const tests = [
+    const tests: Array<Awards & { error: object }> = [
       {
         awards: [
+          // @ts-ignore
           {
             // missing awarder
             title,
@@ -112,10 +134,28 @@ describe('awardsSchema', () => {
             summary,
           },
         ],
-        message: 'awarder is required.',
+        error: {
+          errors: [],
+          properties: {
+            awards: {
+              errors: [],
+              items: [
+                {
+                  errors: [],
+                  properties: {
+                    awarder: {
+                      errors: ['awarder is required.'],
+                    },
+                  },
+                },
+              ],
+            },
+          },
+        },
       },
       {
         awards: [
+          // @ts-ignore
           {
             // missing title
             awarder,
@@ -124,7 +164,24 @@ describe('awardsSchema', () => {
             summary,
           },
         ],
-        message: 'title is required.',
+        error: {
+          errors: [],
+          properties: {
+            awards: {
+              errors: [],
+              items: [
+                {
+                  errors: [],
+                  properties: {
+                    title: {
+                      errors: ['title is required.'],
+                    },
+                  },
+                },
+              ],
+            },
+          },
+        },
       },
       {
         awards: [
@@ -137,7 +194,24 @@ describe('awardsSchema', () => {
             summary,
           },
         ],
-        message: 'awarder should be 128 characters or less.',
+        error: {
+          errors: [],
+          properties: {
+            awards: {
+              errors: [],
+              items: [
+                {
+                  errors: [],
+                  properties: {
+                    awarder: {
+                      errors: ['awarder should be 128 characters or less.'],
+                    },
+                  },
+                },
+              ],
+            },
+          },
+        },
       },
       {
         awards: [
@@ -150,12 +224,61 @@ describe('awardsSchema', () => {
             summary,
           },
         ],
-        message: 'title should be 128 characters or less.',
+        error: {
+          errors: [],
+          properties: {
+            awards: {
+              errors: [],
+              items: [
+                {
+                  errors: [],
+                  properties: {
+                    title: {
+                      errors: ['title should be 128 characters or less.'],
+                    },
+                  },
+                },
+              ],
+            },
+          },
+        },
+      },
+      {
+        awards: [
+          // @ts-ignore
+          {
+            // missing awarder and title
+
+            date,
+            summary,
+          },
+        ],
+        error: {
+          errors: [],
+          properties: {
+            awards: {
+              errors: [],
+              items: [
+                {
+                  errors: [],
+                  properties: {
+                    awarder: {
+                      errors: ['awarder is required.'],
+                    },
+                    title: {
+                      errors: ['title is required.'],
+                    },
+                  },
+                },
+              ],
+            },
+          },
+        },
       },
     ]
 
-    for (const { awards, message } of tests) {
-      expect(() => awardsSchema.parse({ awards })).toThrow(message)
+    for (const { awards, error } of tests) {
+      validateZodErrors(awardsSchema, { awards }, error)
     }
   })
 })
@@ -168,7 +291,7 @@ describe('basicsSchema', () => {
   const url = 'https://www.google.com'
 
   it('should validate a basics object if it is valid', () => {
-    const tests = [
+    const tests: Array<Basics> = [
       {
         basics: {
           name,
@@ -243,27 +366,59 @@ describe('basicsSchema', () => {
   })
 
   it('should throw an error if the basics are invalid', () => {
-    const tests = [
+    const tests: Array<Basics & { error: object }> = [
       {
         basics: undefined,
-        message: 'basics is required.',
+        error: {
+          errors: [],
+          properties: {
+            basics: {
+              errors: ['basics is required.'],
+            },
+          },
+        },
       },
       {
+        // @ts-ignore
         basics: {
           // missing name
           phone,
           url,
         },
-        message: 'name is required.',
+        error: {
+          errors: [],
+          properties: {
+            basics: {
+              errors: [],
+              properties: {
+                name: {
+                  errors: ['name is required.'],
+                },
+              },
+            },
+          },
+        },
       },
     ]
 
-    for (const { basics, message } of tests) {
-      expect(() => basicsSchema.parse({ basics })).toThrow(message)
+    for (const { basics, error } of tests) {
+      validateZodErrors(basicsSchema, { basics }, error)
     }
 
     // test empty object as well
-    expect(() => basicsSchema.parse({})).toThrow('basics is required.')
+    validateZodErrors(
+      basicsSchema,
+      // @ts-ignore
+      {},
+      {
+        errors: [],
+        properties: {
+          basics: {
+            errors: ['basics is required.'],
+          },
+        },
+      }
+    )
   })
 })
 
@@ -274,8 +429,11 @@ describe('certificatesSchema', () => {
   const url = 'https://www.google.com'
 
   it('should return a certificate if it is valid', () => {
-    const tests = [
+    const tests: Array<Certificates> = [
       {},
+      {
+        certificates: undefined,
+      },
       {
         certificates: [],
       },
@@ -322,33 +480,163 @@ describe('certificatesSchema', () => {
   })
 
   it('should throw an error if the certificates are invalid', () => {
-    const tests = [
+    const tests: Array<Certificates & { error: object }> = [
       {
         certificates: [
+          // @ts-ignore
           {
             // missing issuer
-            date,
             name,
+
+            date,
             url,
           },
         ],
-        message: 'issuer is required.',
+        error: {
+          errors: [],
+          properties: {
+            certificates: {
+              errors: [],
+              items: [
+                {
+                  errors: [],
+                  properties: {
+                    issuer: {
+                      errors: ['issuer is required.'],
+                    },
+                  },
+                },
+              ],
+            },
+          },
+        },
+      },
+      {
+        certificates: [
+          // @ts-ignore
+          {
+            // missing name
+            issuer,
+
+            date,
+            url,
+          },
+        ],
+        error: {
+          errors: [],
+          properties: {
+            certificates: {
+              errors: [],
+              items: [
+                {
+                  errors: [],
+                  properties: {
+                    name: {
+                      errors: ['name is required.'],
+                    },
+                  },
+                },
+              ],
+            },
+          },
+        },
       },
       {
         certificates: [
           {
-            // missing name
+            // issuer too long
+            issuer: 'I'.repeat(129),
+            name,
+
             date,
-            issuer,
             url,
           },
         ],
-        message: 'name is required.',
+        error: {
+          errors: [],
+          properties: {
+            certificates: {
+              errors: [],
+              items: [
+                {
+                  errors: [],
+                  properties: {
+                    issuer: {
+                      errors: ['issuer should be 128 characters or less.'],
+                    },
+                  },
+                },
+              ],
+            },
+          },
+        },
+      },
+      {
+        certificates: [
+          {
+            // name too long
+            issuer,
+            name: 'N'.repeat(129),
+
+            date,
+            url,
+          },
+        ],
+        error: {
+          errors: [],
+          properties: {
+            certificates: {
+              errors: [],
+              items: [
+                {
+                  errors: [],
+                  properties: {
+                    name: {
+                      errors: ['name should be 128 characters or less.'],
+                    },
+                  },
+                },
+              ],
+            },
+          },
+        },
+      },
+      {
+        certificates: [
+          // @ts-ignore
+          {
+            // missing name and issuer
+
+            date,
+            url,
+          },
+        ],
+        error: {
+          errors: [],
+          properties: {
+            certificates: {
+              errors: [],
+              items: [
+                {
+                  errors: [],
+                  properties: {
+                    issuer: {
+                      errors: ['issuer is required.'],
+                    },
+                    name: {
+                      errors: ['name is required.'],
+                    },
+                  },
+                },
+              ],
+            },
+          },
+        },
       },
     ]
 
-    for (const { certificates, message } of tests) {
-      expect(() => certificatesSchema.parse({ certificates })).toThrow(message)
+    for (const { certificates, error } of tests) {
+      validateZodErrors(certificatesSchema, { certificates } as unknown, error)
     }
   })
 })
@@ -364,7 +652,7 @@ describe('educationSchema', () => {
   const url = 'https://www.google.com'
 
   it('should validate an education object if it is valid', () => {
-    const tests = [
+    const tests: Array<Education> = [
       {
         education: [],
       },
@@ -472,17 +760,25 @@ describe('educationSchema', () => {
   })
 
   it('should throw an error if the education is invalid', () => {
-    const tests = [
+    const tests: Array<Education & { error: object }> = [
       {
         education: undefined,
-        message: 'education is required.',
+        error: {
+          errors: [],
+          properties: {
+            education: {
+              errors: ['education is required.'],
+            },
+          },
+        },
       },
       {
         education: [
+          // @ts-ignore
           {
             // missing area
+            degree,
             institution,
-            degree,
             startDate,
 
             courses,
@@ -492,27 +788,28 @@ describe('educationSchema', () => {
             url,
           },
         ],
-        message: 'area is required.',
-      },
-      {
-        education: [
-          {
-            // missing institution
-            area,
-            degree,
-            startDate,
-
-            courses,
-            endDate,
-            score,
-            summary,
-            url,
+        error: {
+          errors: [],
+          properties: {
+            education: {
+              errors: [],
+              items: [
+                {
+                  errors: [],
+                  properties: {
+                    area: {
+                      errors: ['area is required.'],
+                    },
+                  },
+                },
+              ],
+            },
           },
-        ],
-        message: 'institution is required.',
+        },
       },
       {
         education: [
+          // @ts-ignore
           {
             // missing degree
             area,
@@ -526,10 +823,63 @@ describe('educationSchema', () => {
             url,
           },
         ],
-        message: 'degree option is required.',
+        error: {
+          errors: [],
+          properties: {
+            education: {
+              errors: [],
+              items: [
+                {
+                  errors: [],
+                  properties: {
+                    degree: {
+                      errors: ['degree option is required.'],
+                    },
+                  },
+                },
+              ],
+            },
+          },
+        },
       },
       {
         education: [
+          // @ts-ignore
+          {
+            // missing institution
+            area,
+            degree,
+            startDate,
+
+            courses,
+            endDate,
+            score,
+            summary,
+            url,
+          },
+        ],
+        error: {
+          errors: [],
+          properties: {
+            education: {
+              errors: [],
+              items: [
+                {
+                  errors: [],
+                  properties: {
+                    institution: {
+                      errors: ['institution is required.'],
+                    },
+                  },
+                },
+              ],
+            },
+          },
+        },
+      },
+      {
+        education: [
+          // @ts-ignore
           {
             // missing startDate
             area,
@@ -543,16 +893,84 @@ describe('educationSchema', () => {
             url,
           },
         ],
-        message: 'startDate is required.',
+        error: {
+          errors: [],
+          properties: {
+            education: {
+              errors: [],
+              items: [
+                {
+                  errors: [],
+                  properties: {
+                    startDate: {
+                      errors: ['startDate is required.'],
+                    },
+                  },
+                },
+              ],
+            },
+          },
+        },
+      },
+      {
+        education: [
+          // @ts-ignore
+          {
+            // missing area, degree, institution
+            startDate,
+
+            courses,
+            endDate,
+            score,
+            summary,
+            url,
+          },
+        ],
+        error: {
+          errors: [],
+          properties: {
+            education: {
+              errors: [],
+              items: [
+                {
+                  errors: [],
+                  properties: {
+                    area: {
+                      errors: ['area is required.'],
+                    },
+                    degree: {
+                      errors: ['degree option is required.'],
+                    },
+                    institution: {
+                      errors: ['institution is required.'],
+                    },
+                  },
+                },
+              ],
+            },
+          },
+        },
       },
     ]
 
-    for (const { education, message } of tests) {
-      expect(() => educationSchema.parse({ education })).toThrow(message)
+    for (const { education, error } of tests) {
+      validateZodErrors(educationSchema, { education }, error)
     }
 
     // test empty object as well
-    expect(() => educationSchema.parse({})).toThrow('education is required.')
+    validateZodErrors(
+      educationSchema,
+      // @ts-ignore
+      {},
+      {
+        errors: [],
+        properties: {
+          education: {
+            errors: ['education is required.'],
+          },
+        },
+      }
+    )
   })
 })
 
@@ -561,8 +979,11 @@ describe('interestsSchema', () => {
   const name = 'Interest name'
 
   it('should validate an interests object if it is valid', () => {
-    const tests = [
+    const tests: Array<Interests> = [
       {},
+      {
+        interests: undefined,
+      },
       {
         interests: [],
       },
@@ -590,15 +1011,33 @@ describe('interestsSchema', () => {
   })
 
   it('should throw an error if the interests object is invalid', () => {
-    const tests = [
+    const tests: Array<Interests & { error: object }> = [
       {
         interests: [
+          // @ts-ignore
           {
             // missing name
             keywords,
           },
         ],
-        message: 'name is required.',
+        error: {
+          errors: [],
+          properties: {
+            interests: {
+              errors: [],
+              items: [
+                {
+                  errors: [],
+                  properties: {
+                    name: {
+                      errors: ['name is required.'],
+                    },
+                  },
+                },
+              ],
+            },
+          },
+        },
       },
       {
         interests: [
@@ -608,12 +1047,29 @@ describe('interestsSchema', () => {
             keywords,
           },
         ],
-        message: 'name should be 128 characters or less.',
+        error: {
+          errors: [],
+          properties: {
+            interests: {
+              errors: [],
+              items: [
+                {
+                  errors: [],
+                  properties: {
+                    name: {
+                      errors: ['name should be 128 characters or less.'],
+                    },
+                  },
+                },
+              ],
+            },
+          },
+        },
       },
     ]
 
-    for (const { interests, message } of tests) {
-      expect(() => interestsSchema.parse({ interests })).toThrow(message)
+    for (const { interests, error } of tests) {
+      validateZodErrors(interestsSchema, { interests }, error)
     }
   })
 })
@@ -624,8 +1080,11 @@ describe('languagesSchema', () => {
   const keywords = ['Keyword 1', 'Keyword 2']
 
   it('should validate a languages object if it is valid', () => {
-    const tests = [
+    const tests: Array<Languages> = [
       {},
+      {
+        languages: undefined,
+      },
       {
         languages: [],
       },
@@ -657,49 +1116,152 @@ describe('languagesSchema', () => {
   })
 
   it('should throw an error if the languages object is invalid', () => {
-    const tests = [
+    const tests: Array<Languages & { error: object }> = [
       {
         languages: [
+          // @ts-ignore
           {
             // missing fluency
             language,
           },
         ],
-        message: 'fluency option is required.',
+        error: {
+          errors: [],
+          properties: {
+            languages: {
+              errors: [],
+              items: [
+                {
+                  errors: [],
+                  properties: {
+                    fluency: {
+                      errors: ['fluency option is required.'],
+                    },
+                  },
+                },
+              ],
+            },
+          },
+        },
       },
       {
         languages: [
+          // @ts-ignore
           {
             // missing language
             fluency,
           },
         ],
-        message: 'language option is required.',
+        error: {
+          errors: [],
+          properties: {
+            languages: {
+              errors: [],
+              items: [
+                {
+                  errors: [],
+                  properties: {
+                    language: {
+                      errors: ['language option is required.'],
+                    },
+                  },
+                },
+              ],
+            },
+          },
+        },
       },
       {
         languages: [
           {
             // invalid fluency
+            // @ts-ignore
             fluency: 'Invalid',
             language,
           },
         ],
-        message: optionSchemaMessage(FLUENCY_OPTIONS, 'fluency'),
+        error: {
+          errors: [],
+          properties: {
+            languages: {
+              errors: [],
+              items: [
+                {
+                  errors: [],
+                  properties: {
+                    fluency: {
+                      errors: [optionSchemaMessage(FLUENCY_OPTIONS, 'fluency')],
+                    },
+                  },
+                },
+              ],
+            },
+          },
+        },
       },
       {
         languages: [
           {
             // invalid language
             fluency,
+            // @ts-ignore
             language: 'Invalid',
           },
         ],
-        message: optionSchemaMessage(LANGUAGE_OPTIONS, 'language'),
+        error: {
+          errors: [],
+          properties: {
+            languages: {
+              errors: [],
+              items: [
+                {
+                  errors: [],
+                  properties: {
+                    language: {
+                      errors: [
+                        optionSchemaMessage(LANGUAGE_OPTIONS, 'language'),
+                      ],
+                    },
+                  },
+                },
+              ],
+            },
+          },
+        },
+      },
+      {
+        languages: [
+          // @ts-ignore
+          {
+            // missing fluency and language
+          },
+        ],
+        error: {
+          errors: [],
+          properties: {
+            languages: {
+              errors: [],
+              items: [
+                {
+                  errors: [],
+                  properties: {
+                    fluency: {
+                      errors: ['fluency option is required.'],
+                    },
+                    language: {
+                      errors: ['language option is required.'],
+                    },
+                  },
+                },
+              ],
+            },
+          },
+        },
       },
     ]
 
-    for (const { languages, message } of tests) {
-      expect(() => languagesSchema.parse({ languages })).toThrow(message)
+    for (const { languages, error } of tests) {
+      validateZodErrors(languagesSchema, { languages }, error)
     }
   })
 })
@@ -713,8 +1275,11 @@ describe('locationSchema', () => {
   const region = 'California'
 
   it('should validate valid location data', () => {
-    const tests = [
+    const tests: Array<Location> = [
       {},
+      {
+        location: undefined,
+      },
       {
         location: {
           city,
@@ -772,53 +1337,87 @@ describe('locationSchema', () => {
     }
   })
 
-  it('should throw an error if location object is invalid', () => {
-    const tests = [
-      { location: {}, message: 'city is required.' },
+  it('should throw an error if the location is invalid', () => {
+    const tests: Array<Location & { error: object }> = [
       {
+        // @ts-ignore
         location: {
-          city: 'A',
-
+          // missing city
           country,
+          address,
+          postalCode,
+          region,
         },
-        message: 'city should be 2 characters or more.',
+        error: {
+          errors: [],
+          properties: {
+            location: {
+              errors: [],
+              properties: {
+                city: {
+                  errors: ['city is required.'],
+                },
+              },
+            },
+          },
+        },
       },
       {
         location: {
-          city: 'London',
+          // city too long
+          // @ts-ignore
+          city: 'C'.repeat(129),
+          country,
 
-          country: 'A',
+          address,
+          postalCode,
+          region,
         },
-        message: optionSchemaMessage(COUNTRY_OPTIONS, 'country'),
+        error: {
+          errors: [],
+          properties: {
+            location: {
+              errors: [],
+              properties: {
+                city: {
+                  errors: ['city should be 64 characters or less.'],
+                },
+              },
+            },
+          },
+        },
       },
       {
         location: {
-          city: 'London',
-
-          address: 'A',
+          // city too long
+          // @ts-ignore
+          city: 'C'.repeat(129),
+          // @ts-ignore
+          country: 'non-exist-country',
         },
-        message: 'address should be 4 characters or more.',
-      },
-      {
-        location: {
-          city: 'London',
-
-          postalCode: 'A',
+        error: {
+          errors: [],
+          properties: {
+            location: {
+              errors: [],
+              properties: {
+                city: {
+                  errors: ['city should be 64 characters or less.'],
+                },
+                country: {
+                  errors: [optionSchemaMessage(COUNTRY_OPTIONS, 'country')],
+                },
+              },
+            },
+          },
         },
-        message: 'postalCode should be 2 characters or more.',
-      },
-      {
-        location: {
-          city: 'London',
-
-          region: 'R'.repeat(65),
-        },
-        message: 'region should be 64 characters or less.',
       },
     ]
 
-    for (const { location, message } of tests) {
-      expect(() => locationSchema.parse({ location })).toThrow(message)
+    for (const { location, error } of tests) {
+      if (location && Object.keys(location).length > 0) {
+        validateZodErrors(locationSchema, { location }, error)
+      }
     }
   })
 })
@@ -829,7 +1428,7 @@ describe('profilesSchema', () => {
   const username = 'yamlresume'
 
   it('should validate a profiles object if it is valid', () => {
-    const tests = [
+    const tests: Array<Profiles> = [
       {},
       {
         profiles: [],
@@ -862,9 +1461,10 @@ describe('profilesSchema', () => {
   })
 
   it('should throw an error if profile data is invalid', () => {
-    const tests = [
+    const tests: Array<Profiles & { error: object }> = [
       {
         profiles: [
+          // @ts-ignore
           {
             // missing network
             username,
@@ -872,10 +1472,28 @@ describe('profilesSchema', () => {
             url,
           },
         ],
-        message: 'network option is required.',
+        error: {
+          errors: [],
+          properties: {
+            profiles: {
+              errors: [],
+              items: [
+                {
+                  errors: [],
+                  properties: {
+                    network: {
+                      errors: ['network option is required.'],
+                    },
+                  },
+                },
+              ],
+            },
+          },
+        },
       },
       {
         profiles: [
+          // @ts-ignore
           {
             // missing username
             network,
@@ -883,12 +1501,60 @@ describe('profilesSchema', () => {
             url,
           },
         ],
-        message: 'username is required.',
+        error: {
+          errors: [],
+          properties: {
+            profiles: {
+              errors: [],
+              items: [
+                {
+                  errors: [],
+                  properties: {
+                    username: {
+                      errors: ['username is required.'],
+                    },
+                  },
+                },
+              ],
+            },
+          },
+        },
+      },
+      {
+        profiles: [
+          // @ts-ignore
+          {
+            // missing username and network
+
+            url,
+          },
+        ],
+        error: {
+          errors: [],
+          properties: {
+            profiles: {
+              errors: [],
+              items: [
+                {
+                  errors: [],
+                  properties: {
+                    network: {
+                      errors: ['network option is required.'],
+                    },
+                    username: {
+                      errors: ['username is required.'],
+                    },
+                  },
+                },
+              ],
+            },
+          },
+        },
       },
     ]
 
-    for (const { profiles, message } of tests) {
-      expect(() => profilesSchema.parse({ profiles })).toThrow(message)
+    for (const { profiles, error } of tests) {
+      validateZodErrors(profilesSchema, { profiles }, error)
     }
   })
 })
@@ -903,8 +1569,11 @@ describe('projectsSchema', () => {
   const summary = 'Built a scalable web application'
 
   it('should validate a projects object if it is valid', () => {
-    const tests = [
+    const tests: Array<Projects> = [
       {},
+      {
+        projects: undefined,
+      },
       {
         projects: [],
       },
@@ -986,9 +1655,11 @@ describe('projectsSchema', () => {
   })
 
   it('should throw an error if a projects object is invalid', () => {
-    const tests = [
+    // @ts-ignore
+    const tests: Array<Projects & { error: object }> = [
       {
         projects: [
+          // @ts-ignore
           {
             // missing name
             startDate,
@@ -1000,12 +1671,30 @@ describe('projectsSchema', () => {
             url,
           },
         ],
-        message: 'name is required.',
+        error: {
+          errors: [],
+          properties: {
+            projects: {
+              errors: [],
+              items: [
+                {
+                  errors: [],
+                  properties: {
+                    name: {
+                      errors: ['name is required.'],
+                    },
+                  },
+                },
+              ],
+            },
+          },
+        },
       },
       {
         projects: [
+          // @ts-ignore
           {
-            // missing name
+            // missing startDate
             name,
             summary,
 
@@ -1015,10 +1704,28 @@ describe('projectsSchema', () => {
             url,
           },
         ],
-        message: 'startDate is required.',
+        error: {
+          errors: [],
+          properties: {
+            projects: {
+              errors: [],
+              items: [
+                {
+                  errors: [],
+                  properties: {
+                    startDate: {
+                      errors: ['startDate is required.'],
+                    },
+                  },
+                },
+              ],
+            },
+          },
+        },
       },
       {
         projects: [
+          // @ts-ignore
           {
             // missing summary
             name,
@@ -1030,12 +1737,64 @@ describe('projectsSchema', () => {
             url,
           },
         ],
-        message: 'summary is required.',
+        error: {
+          errors: [],
+          properties: {
+            projects: {
+              errors: [],
+              items: [
+                {
+                  errors: [],
+                  properties: {
+                    summary: {
+                      errors: ['summary is required.'],
+                    },
+                  },
+                },
+              ],
+            },
+          },
+        },
+      },
+      {
+        projects: [
+          // @ts-ignore
+          {
+            // missing name and startDate
+            summary,
+
+            description,
+            endDate,
+            keywords,
+            url,
+          },
+        ],
+        error: {
+          errors: [],
+          properties: {
+            projects: {
+              errors: [],
+              items: [
+                {
+                  errors: [],
+                  properties: {
+                    name: {
+                      errors: ['name is required.'],
+                    },
+                    startDate: {
+                      errors: ['startDate is required.'],
+                    },
+                  },
+                },
+              ],
+            },
+          },
+        },
       },
     ]
 
-    for (const { projects, message } of tests) {
-      expect(() => projectsSchema.parse({ projects })).toThrow(message)
+    for (const { projects, error } of tests) {
+      validateZodErrors(projectsSchema, { projects }, error)
     }
   })
 })
@@ -1047,8 +1806,11 @@ describe('publicationsSchema', () => {
   const url = 'https://example.com'
 
   it('should validate a publications object if it is valid', () => {
-    const tests = [
+    const tests: Array<Publications> = [
       {},
+      {
+        publications: undefined,
+      },
       {
         publications: [],
       },
@@ -1108,9 +1870,10 @@ describe('publicationsSchema', () => {
   })
 
   it('should throw an error if the publications object is invalid', () => {
-    const tests = [
+    const tests: Array<Publications & { error: object }> = [
       {
         publications: [
+          // @ts-ignore
           {
             // missing name
             publisher,
@@ -1120,10 +1883,28 @@ describe('publicationsSchema', () => {
             url,
           },
         ],
-        message: 'name is required.',
+        error: {
+          errors: [],
+          properties: {
+            publications: {
+              errors: [],
+              items: [
+                {
+                  errors: [],
+                  properties: {
+                    name: {
+                      errors: ['name is required.'],
+                    },
+                  },
+                },
+              ],
+            },
+          },
+        },
       },
       {
         publications: [
+          // @ts-ignore
           {
             // missing publisher
             name,
@@ -1133,12 +1914,62 @@ describe('publicationsSchema', () => {
             url,
           },
         ],
-        message: 'publisher is required.',
+        error: {
+          errors: [],
+          properties: {
+            publications: {
+              errors: [],
+              items: [
+                {
+                  errors: [],
+                  properties: {
+                    publisher: {
+                      errors: ['publisher is required.'],
+                    },
+                  },
+                },
+              ],
+            },
+          },
+        },
+      },
+      {
+        publications: [
+          // @ts-ignore
+          {
+            // missing name and publisher
+
+            releaseDate,
+            summary,
+            url,
+          },
+        ],
+        error: {
+          errors: [],
+          properties: {
+            publications: {
+              errors: [],
+              items: [
+                {
+                  errors: [],
+                  properties: {
+                    name: {
+                      errors: ['name is required.'],
+                    },
+                    publisher: {
+                      errors: ['publisher is required.'],
+                    },
+                  },
+                },
+              ],
+            },
+          },
+        },
       },
     ]
 
-    for (const { publications, message } of tests) {
-      expect(() => publicationsSchema.parse({ publications })).toThrow(message)
+    for (const { publications, error } of tests) {
+      validateZodErrors(publicationsSchema, { publications }, error)
     }
   })
 })
@@ -1150,8 +1981,11 @@ describe('referencesSchema', () => {
   const relationship = 'Former Manager'
 
   it('should validate a references object if it is valid', () => {
-    const tests = [
+    const tests: Array<References> = [
       {},
+      {
+        references: undefined,
+      },
       {
         references: [],
       },
@@ -1211,56 +2045,202 @@ describe('referencesSchema', () => {
   })
 
   it('should throw an error if the references object is invalid', () => {
-    const tests = [
+    const tests: Array<References & { error: object }> = [
       {
         references: [
+          // @ts-ignore
           {
             // missing name
             summary,
+
             email,
             phone,
             relationship,
           },
         ],
-        message: 'name is required.',
+        error: {
+          errors: [],
+          properties: {
+            references: {
+              errors: [],
+              items: [
+                {
+                  errors: [],
+                  properties: {
+                    name: {
+                      errors: ['name is required.'],
+                    },
+                  },
+                },
+              ],
+            },
+          },
+        },
       },
       {
         references: [
+          // @ts-ignore
+          {
+            // missing summary
+            name,
+
+            email,
+            phone,
+            relationship,
+          },
+        ],
+        error: {
+          errors: [],
+          properties: {
+            references: {
+              errors: [],
+              items: [
+                {
+                  errors: [],
+                  properties: {
+                    summary: {
+                      errors: ['summary is required.'],
+                    },
+                  },
+                },
+              ],
+            },
+          },
+        },
+      },
+      {
+        references: [
+          // @ts-ignore
           {
             name,
+            summary,
+
             email: 'invalid-email',
             phone,
             relationship,
           },
         ],
-        message: 'email is invalid.',
+        error: {
+          errors: [],
+          properties: {
+            references: {
+              errors: [],
+              items: [
+                {
+                  errors: [],
+                  properties: {
+                    email: {
+                      errors: ['email is invalid.'],
+                    },
+                  },
+                },
+              ],
+            },
+          },
+        },
       },
       {
         references: [
+          // @ts-ignore
           {
             name,
+            summary,
+
             email,
             phone: 'invalid-phone',
             relationship,
           },
         ],
-        message: 'phone number may be invalid.',
+        error: {
+          errors: [],
+          properties: {
+            references: {
+              errors: [],
+              items: [
+                {
+                  errors: [],
+                  properties: {
+                    phone: {
+                      errors: ['phone number may be invalid.'],
+                    },
+                  },
+                },
+              ],
+            },
+          },
+        },
       },
       {
         references: [
+          // @ts-ignore
           {
             name,
+            summary,
+
             email,
             phone,
             relationship: 'a', // too short
           },
         ],
-        message: 'relationship should be 2 characters or more.',
+        error: {
+          errors: [],
+          properties: {
+            references: {
+              errors: [],
+              items: [
+                {
+                  errors: [],
+                  properties: {
+                    relationship: {
+                      errors: ['relationship should be 2 characters or more.'],
+                    },
+                  },
+                },
+              ],
+            },
+          },
+        },
+      },
+      {
+        references: [
+          // @ts-ignore
+          {
+            // missing name and summary
+
+            email,
+            phone,
+            relationship: 'a', // too short
+          },
+        ],
+        error: {
+          errors: [],
+          properties: {
+            references: {
+              errors: [],
+              items: [
+                {
+                  errors: [],
+                  properties: {
+                    name: {
+                      errors: ['name is required.'],
+                    },
+                    summary: {
+                      errors: ['summary is required.'],
+                    },
+                    relationship: {
+                      errors: ['relationship should be 2 characters or more.'],
+                    },
+                  },
+                },
+              ],
+            },
+          },
+        },
       },
     ]
 
-    for (const { references, message } of tests) {
-      expect(() => referencesSchema.parse({ references })).toThrow(message)
+    for (const { references, error } of tests) {
+      validateZodErrors(referencesSchema, { references }, error)
     }
   })
 })
@@ -1271,8 +2251,11 @@ describe('skillsSchema', () => {
   const keywords = ['React', 'Node.js']
 
   it('should validate a skills object if it is valid', () => {
-    const tests = [
+    const tests: Array<Skills> = [
       {},
+      {
+        skills: undefined,
+      },
       {
         skills: [],
       },
@@ -1303,9 +2286,10 @@ describe('skillsSchema', () => {
   })
 
   it('should throw an error if the skills object is invalid', () => {
-    const tests = [
+    const tests: Array<Skills & { error: object }> = [
       {
         skills: [
+          // @ts-ignore
           {
             // missing name
             level,
@@ -1313,10 +2297,28 @@ describe('skillsSchema', () => {
             keywords,
           },
         ],
-        message: 'name is required.',
+        error: {
+          errors: [],
+          properties: {
+            skills: {
+              errors: [],
+              items: [
+                {
+                  errors: [],
+                  properties: {
+                    name: {
+                      errors: ['name is required.'],
+                    },
+                  },
+                },
+              ],
+            },
+          },
+        },
       },
       {
         skills: [
+          // @ts-ignore
           {
             // missing level
             name,
@@ -1324,12 +2326,60 @@ describe('skillsSchema', () => {
             keywords,
           },
         ],
-        message: 'level option is required.',
+        error: {
+          errors: [],
+          properties: {
+            skills: {
+              errors: [],
+              items: [
+                {
+                  errors: [],
+                  properties: {
+                    level: {
+                      errors: ['level option is required.'],
+                    },
+                  },
+                },
+              ],
+            },
+          },
+        },
+      },
+      {
+        skills: [
+          // @ts-ignore
+          {
+            // missing level and name
+
+            keywords,
+          },
+        ],
+        error: {
+          errors: [],
+          properties: {
+            skills: {
+              errors: [],
+              items: [
+                {
+                  errors: [],
+                  properties: {
+                    level: {
+                      errors: ['level option is required.'],
+                    },
+                    name: {
+                      errors: ['name is required.'],
+                    },
+                  },
+                },
+              ],
+            },
+          },
+        },
       },
     ]
 
-    for (const { skills, message } of tests) {
-      expect(() => skillsSchema.parse({ skills })).toThrow(message)
+    for (const { skills, error } of tests) {
+      validateZodErrors(skillsSchema, { skills }, error)
     }
   })
 })
@@ -1342,8 +2392,11 @@ describe('volunteerSchema', () => {
   const url = 'https://example.com'
 
   it('should validate a volunteer object if it is valid', () => {
-    const tests = [
+    const tests: Array<Volunteer> = [
       {},
+      {
+        volunteer: undefined,
+      },
       {
         volunteer: [],
       },
@@ -1394,9 +2447,10 @@ describe('volunteerSchema', () => {
   })
 
   it('should throw an error if the volunteer object is invalid', () => {
-    const tests = [
+    const tests: Array<Volunteer & { error: object }> = [
       {
         volunteer: [
+          // @ts-ignore
           {
             // missing organization
             position,
@@ -1407,10 +2461,28 @@ describe('volunteerSchema', () => {
             url,
           },
         ],
-        message: 'organization is required.',
+        error: {
+          errors: [],
+          properties: {
+            volunteer: {
+              errors: [],
+              items: [
+                {
+                  errors: [],
+                  properties: {
+                    organization: {
+                      errors: ['organization is required.'],
+                    },
+                  },
+                },
+              ],
+            },
+          },
+        },
       },
       {
         volunteer: [
+          // @ts-ignore
           {
             // missing position
             organization,
@@ -1421,10 +2493,28 @@ describe('volunteerSchema', () => {
             url,
           },
         ],
-        message: 'position is required.',
+        error: {
+          errors: [],
+          properties: {
+            volunteer: {
+              errors: [],
+              items: [
+                {
+                  errors: [],
+                  properties: {
+                    position: {
+                      errors: ['position is required.'],
+                    },
+                  },
+                },
+              ],
+            },
+          },
+        },
       },
       {
         volunteer: [
+          // @ts-ignore
           {
             // missing startDate
             organization,
@@ -1435,10 +2525,28 @@ describe('volunteerSchema', () => {
             url,
           },
         ],
-        message: 'startDate is required.',
+        error: {
+          errors: [],
+          properties: {
+            volunteer: {
+              errors: [],
+              items: [
+                {
+                  errors: [],
+                  properties: {
+                    startDate: {
+                      errors: ['startDate is required.'],
+                    },
+                  },
+                },
+              ],
+            },
+          },
+        },
       },
       {
         volunteer: [
+          // @ts-ignore
           {
             // missing summary
             organization,
@@ -1449,12 +2557,65 @@ describe('volunteerSchema', () => {
             url,
           },
         ],
-        message: 'summary is required.',
+        error: {
+          errors: [],
+          properties: {
+            volunteer: {
+              errors: [],
+              items: [
+                {
+                  errors: [],
+                  properties: {
+                    summary: {
+                      errors: ['summary is required.'],
+                    },
+                  },
+                },
+              ],
+            },
+          },
+        },
+      },
+      {
+        volunteer: [
+          // @ts-ignore
+          {
+            // missing organization, position, startDate and summary
+            summary,
+
+            endDate,
+            url,
+          },
+        ],
+        error: {
+          errors: [],
+          properties: {
+            volunteer: {
+              errors: [],
+              items: [
+                {
+                  errors: [],
+                  properties: {
+                    organization: {
+                      errors: ['organization is required.'],
+                    },
+                    position: {
+                      errors: ['position is required.'],
+                    },
+                    startDate: {
+                      errors: ['startDate is required.'],
+                    },
+                  },
+                },
+              ],
+            },
+          },
+        },
       },
     ]
 
-    for (const { volunteer, message } of tests) {
-      expect(() => volunteerSchema.parse({ volunteer })).toThrow(message)
+    for (const { volunteer, error } of tests) {
+      validateZodErrors(volunteerSchema, { volunteer }, error)
     }
   })
 })
@@ -1469,8 +2630,11 @@ describe('workSchema', () => {
   const keywords = ['typescript', 'react']
 
   it('should validate a work object if it is valid', () => {
-    const tests = [
+    const tests: Array<Work> = [
       {},
+      {
+        work: undefined,
+      },
       {
         work: [],
       },
@@ -1538,9 +2702,10 @@ describe('workSchema', () => {
   })
 
   it('should throw an error if the work object is invalid', () => {
-    const tests = [
+    const tests: Array<Work & { error: object }> = [
       {
         work: [
+          // @ts-ignore
           {
             // missing name
             position,
@@ -1552,10 +2717,28 @@ describe('workSchema', () => {
             url,
           },
         ],
-        message: 'company is required.',
+        error: {
+          errors: [],
+          properties: {
+            work: {
+              errors: [],
+              items: [
+                {
+                  errors: [],
+                  properties: {
+                    name: {
+                      errors: ['name is required.'],
+                    },
+                  },
+                },
+              ],
+            },
+          },
+        },
       },
       {
         work: [
+          // @ts-ignore
           {
             // missing position
             name,
@@ -1567,10 +2750,28 @@ describe('workSchema', () => {
             url,
           },
         ],
-        message: 'position is required.',
+        error: {
+          errors: [],
+          properties: {
+            work: {
+              errors: [],
+              items: [
+                {
+                  errors: [],
+                  properties: {
+                    position: {
+                      errors: ['position is required.'],
+                    },
+                  },
+                },
+              ],
+            },
+          },
+        },
       },
       {
         work: [
+          // @ts-ignore
           {
             // missing startDate
             name,
@@ -1582,10 +2783,28 @@ describe('workSchema', () => {
             url,
           },
         ],
-        message: 'startDate is required.',
+        error: {
+          errors: [],
+          properties: {
+            work: {
+              errors: [],
+              items: [
+                {
+                  errors: [],
+                  properties: {
+                    startDate: {
+                      errors: ['startDate is required.'],
+                    },
+                  },
+                },
+              ],
+            },
+          },
+        },
       },
       {
         work: [
+          // @ts-ignore
           {
             // missing summary
             name,
@@ -1597,12 +2816,66 @@ describe('workSchema', () => {
             url,
           },
         ],
-        message: 'summary is required.',
+        error: {
+          errors: [],
+          properties: {
+            work: {
+              errors: [],
+              items: [
+                {
+                  errors: [],
+                  properties: {
+                    summary: {
+                      errors: ['summary is required.'],
+                    },
+                  },
+                },
+              ],
+            },
+          },
+        },
+      },
+      {
+        work: [
+          // @ts-ignore
+          {
+            // missing name, position, startDate
+            summary,
+
+            endDate,
+            keywords,
+            url,
+          },
+        ],
+        error: {
+          errors: [],
+          properties: {
+            work: {
+              errors: [],
+              items: [
+                {
+                  errors: [],
+                  properties: {
+                    name: {
+                      errors: ['name is required.'],
+                    },
+                    position: {
+                      errors: ['position is required.'],
+                    },
+                    startDate: {
+                      errors: ['startDate is required.'],
+                    },
+                  },
+                },
+              ],
+            },
+          },
+        },
       },
     ]
 
-    for (const { work, message } of tests) {
-      expect(() => workSchema.parse({ work })).toThrow(message)
+    for (const { work, error } of tests) {
+      validateZodErrors(workSchema, { work }, error)
     }
   })
 })
@@ -1616,13 +2889,13 @@ describe('contentSchema', () => {
     {
       area: 'Computer Science',
       institution: 'University of Example',
-      degree: 'Bachelor',
+      degree: 'Bachelor' as const,
       startDate: '2020-01-01',
     },
   ]
 
   it('should validate a resume content object if it is valid', () => {
-    const tests = [
+    const tests: Array<{ content: ResumeContent }> = [
       {
         content: {
           basics,
@@ -1637,115 +2910,378 @@ describe('contentSchema', () => {
   })
 
   it('should throw an error if the resume content object is invalid', () => {
-    const tests = [
+    const tests: Array<{ content: ResumeContent; error: object }> = [
       {
+        // @ts-ignore
         content: {
           education,
         },
-        message: 'basics is required.',
+        error: {
+          errors: [],
+          properties: {
+            content: {
+              errors: [],
+              properties: {
+                basics: {
+                  errors: ['basics is required.'],
+                },
+              },
+            },
+          },
+        },
+      },
+      {
+        // @ts-ignore
+        content: {
+          basics,
+        },
+        error: {
+          errors: [],
+          properties: {
+            content: {
+              errors: [],
+              properties: {
+                education: {
+                  errors: ['education is required.'],
+                },
+              },
+            },
+          },
+        },
       },
       {
         content: {
           basics,
-        },
-        message: 'education is required.',
-      },
-      {
-        content: {
-          basics,
           education,
+
           awards: [
+            // @ts-ignore
             {
               title: 'Award',
               date: '2020-01-01',
             },
           ],
         },
-        message: 'awarder is required.',
+        error: {
+          errors: [],
+          properties: {
+            content: {
+              errors: [],
+              properties: {
+                awards: {
+                  errors: [],
+                  items: [
+                    {
+                      errors: [],
+                      properties: {
+                        awarder: {
+                          errors: ['awarder is required.'],
+                        },
+                      },
+                    },
+                  ],
+                },
+              },
+            },
+          },
+        },
       },
       {
         content: {
           basics,
           education,
+
           certificates: [
+            // @ts-ignore
             {
               name: 'Certificate',
             },
           ],
         },
-        message: 'issuer is required.',
+        error: {
+          errors: [],
+          properties: {
+            content: {
+              errors: [],
+              properties: {
+                certificates: {
+                  errors: [],
+                  items: [
+                    {
+                      errors: [],
+                      properties: {
+                        issuer: {
+                          errors: ['issuer is required.'],
+                        },
+                      },
+                    },
+                  ],
+                },
+              },
+            },
+          },
+        },
       },
       {
         content: {
           basics,
           education,
+
+          // @ts-ignore
           interests: [{ keywords: ['Interest'] }],
         },
-        message: 'name is required.',
+        error: {
+          errors: [],
+          properties: {
+            content: {
+              errors: [],
+              properties: {
+                interests: {
+                  errors: [],
+                  items: [
+                    {
+                      errors: [],
+                      properties: {
+                        name: {
+                          errors: ['name is required.'],
+                        },
+                      },
+                    },
+                  ],
+                },
+              },
+            },
+          },
+        },
       },
       {
         content: {
           basics,
           education,
+
+          // @ts-ignore
           languages: [{ fluency: FLUENCY_OPTIONS[0] }],
         },
-        message: 'language option is required.',
+        error: {
+          errors: [],
+          properties: {
+            content: {
+              errors: [],
+              properties: {
+                languages: {
+                  errors: [],
+                  items: [
+                    {
+                      errors: [],
+                      properties: {
+                        language: {
+                          errors: ['language option is required.'],
+                        },
+                      },
+                    },
+                  ],
+                },
+              },
+            },
+          },
+        },
       },
       {
         content: {
           basics,
           education,
+
+          // @ts-ignore
           location: {
             address: '123 Main St',
           },
         },
-        message: 'city is required.',
+        error: {
+          errors: [],
+          properties: {
+            content: {
+              errors: [],
+              properties: {
+                location: {
+                  errors: [],
+                  properties: {
+                    city: {
+                      errors: ['city is required.'],
+                    },
+                  },
+                },
+              },
+            },
+          },
+        },
       },
       {
         content: {
           basics,
           education,
+
+          // @ts-ignore
           profiles: [{ network: 'GitHub' }],
         },
-        message: 'username is required.',
+        error: {
+          errors: [],
+          properties: {
+            content: {
+              errors: [],
+              properties: {
+                profiles: {
+                  errors: [],
+                  items: [
+                    {
+                      errors: [],
+                      properties: {
+                        username: {
+                          errors: ['username is required.'],
+                        },
+                      },
+                    },
+                  ],
+                },
+              },
+            },
+          },
+        },
       },
       {
         content: {
           basics,
           education,
+
+          // @ts-ignore
           projects: [{ name: 'Project', startDate: '2020-01-01' }],
         },
-        message: 'summary is required.',
+        error: {
+          errors: [],
+          properties: {
+            content: {
+              errors: [],
+              properties: {
+                projects: {
+                  errors: [],
+                  items: [
+                    {
+                      errors: [],
+                      properties: {
+                        summary: {
+                          errors: ['summary is required.'],
+                        },
+                      },
+                    },
+                  ],
+                },
+              },
+            },
+          },
+        },
       },
       {
         content: {
           basics,
           education,
+
+          // @ts-ignore
           publications: [{ publisher: 'Publisher' }],
         },
-        message: 'name is required.',
+        error: {
+          errors: [],
+          properties: {
+            content: {
+              errors: [],
+              properties: {
+                publications: {
+                  errors: [],
+                  items: [
+                    {
+                      errors: [],
+                      properties: {
+                        name: {
+                          errors: ['name is required.'],
+                        },
+                      },
+                    },
+                  ],
+                },
+              },
+            },
+          },
+        },
       },
       {
         content: {
           basics,
           education,
+
+          // @ts-ignore
           references: [{ name: 'Reference' }],
         },
-        message: 'summary is required.',
+        error: {
+          errors: [],
+          properties: {
+            content: {
+              errors: [],
+              properties: {
+                references: {
+                  errors: [],
+                  items: [
+                    {
+                      errors: [],
+                      properties: {
+                        summary: {
+                          errors: ['summary is required.'],
+                        },
+                      },
+                    },
+                  ],
+                },
+              },
+            },
+          },
+        },
       },
       {
         content: {
           basics,
           education,
+
+          // @ts-ignore
           skills: [{ name: 'Skill' }],
         },
-        message: 'level option is required.',
+        error: {
+          errors: [],
+          properties: {
+            content: {
+              errors: [],
+              properties: {
+                skills: {
+                  errors: [],
+                  items: [
+                    {
+                      errors: [],
+                      properties: {
+                        level: {
+                          errors: ['level option is required.'],
+                        },
+                      },
+                    },
+                  ],
+                },
+              },
+            },
+          },
+        },
       },
       {
         content: {
           basics,
           education,
+
           volunteer: [
+            // @ts-ignore
             {
               position: 'Volunteer',
               startDate: '2020-01-01',
@@ -1753,7 +3289,32 @@ describe('contentSchema', () => {
             },
           ],
         },
-        message: 'organization is required.',
+        error: {
+          errors: [],
+          properties: {
+            content: {
+              errors: [],
+              properties: {
+                volunteer: {
+                  errors: [],
+                  items: [
+                    {
+                      errors: [],
+                      properties: {
+                        organization: {
+                          errors: ['organization is required.'],
+                        },
+                        summary: {
+                          errors: ['summary should be 16 characters or more.'],
+                        },
+                      },
+                    },
+                  ],
+                },
+              },
+            },
+          },
+        },
       },
       {
         content: {
@@ -1761,6 +3322,7 @@ describe('contentSchema', () => {
           education,
 
           work: [
+            // @ts-ignore
             {
               position: 'Engineer',
               startDate: '2020-01-01',
@@ -1768,12 +3330,37 @@ describe('contentSchema', () => {
             },
           ],
         },
-        message: 'company is required.',
+        error: {
+          errors: [],
+          properties: {
+            content: {
+              errors: [],
+              properties: {
+                work: {
+                  errors: [],
+                  items: [
+                    {
+                      errors: [],
+                      properties: {
+                        name: {
+                          errors: ['name is required.'],
+                        },
+                        summary: {
+                          errors: ['summary should be 16 characters or more.'],
+                        },
+                      },
+                    },
+                  ],
+                },
+              },
+            },
+          },
+        },
       },
     ]
 
-    for (const { content, message } of tests) {
-      expect(() => contentSchema.parse({ content })).toThrow(message)
+    for (const { content, error } of tests) {
+      validateZodErrors(contentSchema, { content }, error)
     }
   })
 })
