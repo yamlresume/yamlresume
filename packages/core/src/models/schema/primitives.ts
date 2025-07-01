@@ -146,11 +146,19 @@ export function optionSchemaMessage(options: Options, messagePrefix: string) {
  * @returns A Zod schema for an option.
  */
 function optionSchema(options: Options, messagePrefix: string) {
-  return z
-    .string({ message: `${messagePrefix} option is required.` })
-    .refine((value) => (options as readonly string[]).includes(value), {
-      message: optionSchemaMessage(options, messagePrefix),
-    })
+  return z.enum(options, {
+    error: (issue) => {
+      if (issue.input === undefined) {
+        return {
+          message: `${messagePrefix} option is required.`,
+        }
+      }
+
+      return {
+        message: optionSchemaMessage(options, messagePrefix),
+      }
+    },
+  })
 }
 
 /**
