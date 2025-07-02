@@ -42,25 +42,38 @@ import { workSchema } from './work'
  * A zod schema for a resume, merging all section schemas.
  */
 export const contentSchema = z.object({
-  content: (
-    [
+  content: z.object(
+    {
       // required sections
-      basicsSchema,
-      educationSchema,
+      ...basicsSchema.shape,
+      ...educationSchema.shape,
 
       // optional sections
-      awardsSchema,
-      certificatesSchema,
-      interestsSchema,
-      languagesSchema,
-      locationSchema,
-      profilesSchema,
-      projectsSchema,
-      publicationsSchema,
-      referencesSchema,
-      skillsSchema,
-      volunteerSchema,
-      workSchema,
-    ] as z.ZodTypeAny[]
-  ).reduce((acc, schema) => z.intersection(acc, schema)),
+      ...awardsSchema.shape,
+      ...certificatesSchema.shape,
+      ...interestsSchema.shape,
+      ...languagesSchema.shape,
+      ...locationSchema.shape,
+      ...profilesSchema.shape,
+      ...projectsSchema.shape,
+      ...publicationsSchema.shape,
+      ...referencesSchema.shape,
+      ...skillsSchema.shape,
+      ...volunteerSchema.shape,
+      ...workSchema.shape,
+    },
+    {
+      error: (issue) => {
+        if (issue.input === undefined) {
+          return {
+            message: 'content is required.',
+          }
+        }
+
+        return {
+          message: issue.message,
+        }
+      },
+    }
+  ),
 })

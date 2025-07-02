@@ -163,6 +163,18 @@ describe('educationSchema', () => {
         },
       },
       {
+        // @ts-ignore
+        education: 123,
+        error: {
+          errors: [],
+          properties: {
+            education: {
+              errors: ['Invalid input: expected array, received number'],
+            },
+          },
+        },
+      },
+      {
         education: [
           // @ts-ignore
           {

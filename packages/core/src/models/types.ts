@@ -615,13 +615,13 @@ export type ResumeContent = {
 /** Defines the structure for page margin settings. */
 type ResumeLayoutMargins = {
   /** Top margin value (e.g., "2.5cm"). */
-  top: string
+  top?: string
   /** Bottom margin value (e.g., "2.5cm"). */
-  bottom: string
+  bottom?: string
   /** Left margin value (e.g., "1.5cm"). */
-  left: string
+  left?: string
   /** Right margin value (e.g., "1.5cm"). */
-  right: string
+  right?: string
 }
 
 /**
@@ -643,24 +643,24 @@ export type FontSize = (typeof FONT_SIZE_OPTIONS)[number]
 /** Defines typography settings like font size and number style. */
 type ResumeLayoutTypography = {
   /** Base font size for the document (e.g., "10pt", "11pt"). */
-  fontSize: string
+  fontSize?: string
   /** Font specification details. */
-  fontspec: {
+  fontspec?: {
     /** Style for rendering numbers (Lining or OldStyle). */
-    numbers: FontspecNumbers
+    numbers?: FontspecNumbers
   }
 }
 
 /** Defines locale settings, primarily the language for translations. */
 type ResumeLayoutLocale = {
   /** The selected language for the resume content and template terms. */
-  language: LocaleLanguageOption
+  language?: LocaleLanguageOption
 }
 
 /** Defines page-level settings like page numbering. */
 type ResumeLayoutPage = {
   /** Whether to display page numbers. */
-  showPageNumbers: boolean
+  showPageNumbers?: boolean
 }
 
 /** Defines the selected template identifier. */
@@ -670,15 +670,15 @@ type ResumeTemplate = TemplateOption
  * typography, locale, and computed environment settings. */
 export type ResumeLayout = {
   /** The selected template configuration. */
-  template: ResumeTemplate
+  template?: ResumeTemplate
   /** Page margin settings. */
-  margins: ResumeLayoutMargins
+  margins?: ResumeLayoutMargins
   /** Typography settings. */
-  typography: ResumeLayoutTypography
+  typography?: ResumeLayoutTypography
   /** Localization settings. */
-  locale: ResumeLayoutLocale
+  locale?: ResumeLayoutLocale
   /** Page-level settings. */
-  page: ResumeLayoutPage
+  page?: ResumeLayoutPage
 }
 
 /**
@@ -686,24 +686,8 @@ export type ResumeLayout = {
  * layout configuration, and build information.
  */
 export type Resume = {
-  /** Unique identifier for the resume. */
-  id: string
-  /** User-defined title for the resume. */
-  title: string
-  /** URL-friendly identifier for the resume. */
-  slug: string
-
   /** Contains all the textual and structured content of the resume sections. */
   content: ResumeContent
   /** Defines the visual appearance, template, and localization settings. */
-  layout: ResumeLayout
-  /** URL or path to the generated PDF file, if available. */
-  pdf: string
-
-  /** Timestamp indicating when the resume was created. */
-  createdAt: string
-  /** Timestamp indicating the last time the resume was updated. */
-  updatedAt: string
-  /** Timestamp indicating when the resume was published (if applicable). */
-  publishedAt: string
+  layout?: ResumeLayout
 }

@@ -12,7 +12,7 @@
     "lineWidth": 80,
     "attributePosition": "auto",
     "bracketSpacing": true,
-    "ignore": ["**/LICENSE", "dist", "coverage", "node_modules"]
+    "ignore": ["**/LICENSE", "dist", "coverage", "node_modules", "schema.json"]
   },
   "organizeImports": { "enabled": true },
   "linter": {

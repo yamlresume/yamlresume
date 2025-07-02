@@ -507,6 +507,45 @@ describe('contentSchema', () => {
           },
         },
       },
+      {
+        content: {
+          basics: {
+            // name too short
+            name: 'A',
+          },
+          education,
+        },
+        error: {
+          errors: [],
+          properties: {
+            content: {
+              errors: [],
+              properties: {
+                basics: {
+                  errors: [],
+                  properties: {
+                    name: {
+                      errors: ['name should be 2 characters or more.'],
+                    },
+                  },
+                },
+              },
+            },
+          },
+        },
+      },
+      {
+        // @ts-ignore
+        content: 123,
+        error: {
+          errors: [],
+          properties: {
+            content: {
+              errors: ['Invalid input: expected object, received number'],
+            },
+          },
+        },
+      },
     ]
 
     for (const { content, error } of tests) {

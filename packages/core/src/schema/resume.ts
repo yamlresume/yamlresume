@@ -21,45 +21,23 @@
  * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
  * IN THE SOFTWARE.
  */
+
 import { z } from 'zod/v4'
 
-import {
-  emailSchema,
-  nameSchema,
-  phoneSchema,
-  sizedStringSchema,
-  summarySchema,
-  urlSchema,
-} from '../primitives'
+import { contentSchema } from './content'
+import { layoutSchema } from './layout/layout'
 
 /**
- * A zod schema for basics.
+ * A zod schema for a yaml resume.
  */
-export const basicsSchema = z.object({
-  basics: z.object(
-    {
-      // required fields
-      name: nameSchema('name'),
-
-      // optional fields
-      email: emailSchema.optional(),
-      headline: sizedStringSchema('headline', 8, 128).optional(),
-      phone: phoneSchema.optional(),
-      summary: summarySchema.optional(),
-      url: urlSchema.optional(),
-    },
-    {
-      error: (issue) => {
-        if (issue.input === undefined) {
-          return {
-            message: 'basics is required.',
-          }
-        }
-
-        return {
-          message: issue.message,
-        }
-      },
-    }
-  ),
-})
+export const resumeSchema = z
+  .object({
+    ...contentSchema.shape,
+    ...layoutSchema.shape,
+  })
+  .meta({
+    $id: 'https://yamlresume.dev/schema.json',
+    title: 'YAMLResume Schema',
+    description: 'JSON Schema for YAMLResume resume format',
+    version: '0.5.0',
+  })

@@ -35,28 +35,34 @@ import {
 /**
  * A zod schema for education.
  */
-export const educationSchema = z
-  .object({
-    education: z
-      .array(
-        z.object({
-          // required fields
-          area: sizedStringSchema('area', 2, 64),
-          institution: organizationSchema('institution'),
-          degree: degreeOptionSchema,
-          startDate: dateSchema('startDate'),
+export const educationSchema = z.object({
+  education: z.array(
+    z.object({
+      // required fields
+      area: sizedStringSchema('area', 2, 64),
+      institution: organizationSchema('institution'),
+      degree: degreeOptionSchema,
+      startDate: dateSchema('startDate'),
 
-          // optional fields
-          courses: z.array(sizedStringSchema('courses', 2, 128)).optional(),
-          endDate: dateSchema('endDate').optional(),
-          summary: summarySchema.optional(),
-          score: sizedStringSchema('score', 2, 32).optional(),
-          url: urlSchema.optional(),
-        })
-      )
-      .optional(),
-  })
-  .refine((data) => data.education, {
-    message: 'education is required.',
-    path: ['education'],
-  })
+      // optional fields
+      courses: z.array(sizedStringSchema('courses', 2, 128)).optional(),
+      endDate: dateSchema('endDate').optional(),
+      summary: summarySchema.optional(),
+      score: sizedStringSchema('score', 2, 32).optional(),
+      url: urlSchema.optional(),
+    }),
+    {
+      error: (issue) => {
+        if (issue.input === undefined) {
+          return {
+            message: 'education is required.',
+          }
+        }
+
+        return {
+          message: issue.message,
+        }
+      },
+    }
+  ),
+})

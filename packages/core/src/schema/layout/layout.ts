@@ -38,13 +38,13 @@ import { typographySchema } from './typography'
  * complete and valid layout configuration.
  */
 export const layoutSchema = z.object({
-  layout: (
-    [
-      localeSchema,
-      marginsSchema,
-      pageSchema,
-      templateSchema,
-      typographySchema,
-    ] as z.ZodTypeAny[]
-  ).reduce((acc, schema) => z.intersection(acc, schema)),
+  layout: z
+    .object({
+      ...localeSchema.shape,
+      ...marginsSchema.shape,
+      ...pageSchema.shape,
+      ...templateSchema.shape,
+      ...typographySchema.shape,
+    })
+    .optional(),
 })

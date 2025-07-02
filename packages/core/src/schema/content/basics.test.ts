@@ -128,6 +128,18 @@ describe('basicsSchema', () => {
       },
       {
         // @ts-ignore
+        basics: 123,
+        error: {
+          errors: [],
+          properties: {
+            basics: {
+              errors: ['Invalid input: expected object, received number'],
+            },
+          },
+        },
+      },
+      {
+        // @ts-ignore
         basics: {
           // missing name
           phone,

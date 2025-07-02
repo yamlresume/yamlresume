@@ -1,0 +1,1024 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://yamlresume.dev/schema.json",
+  "title": "YAMLResume Schema",
+  "description": "JSON Schema for YAMLResume resume format",
+  "version": "0.5.0",
+  "type": "object",
+  "properties": {
+    "content": {
+      "type": "object",
+      "properties": {
+        "basics": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string",
+              "minLength": 2,
+              "maxLength": 128
+            },
+            "email": {
+              "type": "string",
+              "format": "email",
+              "pattern": "^(?!\\.)(?!.*\\.\\.)([A-Za-z0-9_'+\\-\\.]*)[A-Za-z0-9_+-]@([A-Za-z0-9][A-Za-z0-9\\-]*\\.)+[A-Za-z]{2,}$"
+            },
+            "headline": {
+              "type": "string",
+              "minLength": 8,
+              "maxLength": 128
+            },
+            "phone": {
+              "type": "string",
+              "pattern": "^[+]?[(]?[0-9\\s-]{1,15}[)]?[0-9\\s-]{1,15}$"
+            },
+            "summary": {
+              "type": "string",
+              "minLength": 16,
+              "maxLength": 1024
+            },
+            "url": {
+              "type": "string",
+              "maxLength": 256,
+              "format": "uri"
+            }
+          },
+          "required": [
+            "name"
+          ],
+          "additionalProperties": false
+        },
+        "education": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "area": {
+                "type": "string",
+                "minLength": 2,
+                "maxLength": 64
+              },
+              "institution": {
+                "type": "string",
+                "minLength": 2,
+                "maxLength": 128
+              },
+              "degree": {
+                "type": "string",
+                "enum": [
+                  "Middle School",
+                  "High School",
+                  "Diploma",
+                  "Associate",
+                  "Bachelor",
+                  "Master",
+                  "Doctor"
+                ]
+              },
+              "startDate": {
+                "type": "string",
+                "minLength": 4,
+                "maxLength": 32
+              },
+              "courses": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 2,
+                  "maxLength": 128
+                }
+              },
+              "endDate": {
+                "type": "string",
+                "minLength": 4,
+                "maxLength": 32
+              },
+              "summary": {
+                "type": "string",
+                "minLength": 16,
+                "maxLength": 1024
+              },
+              "score": {
+                "type": "string",
+                "minLength": 2,
+                "maxLength": 32
+              },
+              "url": {
+                "type": "string",
+                "maxLength": 256,
+                "format": "uri"
+              }
+            },
+            "required": [
+              "area",
+              "institution",
+              "degree",
+              "startDate"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "awards": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "awarder": {
+                "type": "string",
+                "minLength": 2,
+                "maxLength": 128
+              },
+              "title": {
+                "type": "string",
+                "minLength": 2,
+                "maxLength": 128
+              },
+              "date": {
+                "type": "string",
+                "minLength": 4,
+                "maxLength": 32
+              },
+              "summary": {
+                "type": "string",
+                "minLength": 16,
+                "maxLength": 1024
+              }
+            },
+            "required": [
+              "awarder",
+              "title"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "certificates": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "issuer": {
+                "type": "string",
+                "minLength": 2,
+                "maxLength": 128
+              },
+              "name": {
+                "type": "string",
+                "minLength": 2,
+                "maxLength": 128
+              },
+              "date": {
+                "type": "string",
+                "minLength": 4,
+                "maxLength": 32
+              },
+              "url": {
+                "type": "string",
+                "maxLength": 256,
+                "format": "uri"
+              }
+            },
+            "required": [
+              "issuer",
+              "name"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "interests": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string",
+                "minLength": 2,
+                "maxLength": 128
+              },
+              "keywords": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 32
+                }
+              }
+            },
+            "required": [
+              "name"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "languages": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "fluency": {
+                "type": "string",
+                "enum": [
+                  "Elementary Proficiency",
+                  "Limited Working Proficiency",
+                  "Minimum Professional Proficiency",
+                  "Full Professional Proficiency",
+                  "Native or Bilingual Proficiency"
+                ]
+              },
+              "language": {
+                "type": "string",
+                "enum": [
+                  "Afrikaans",
+                  "Albanian",
+                  "Amharic",
+                  "Arabic",
+                  "Azerbaijani",
+                  "Belarusian",
+                  "Bengali",
+                  "Bhojpuri",
+                  "Bulgarian",
+                  "Burmese",
+                  "Cantonese",
+                  "Catalan",
+                  "Chinese",
+                  "Croatian",
+                  "Czech",
+                  "Danish",
+                  "Dutch",
+                  "English",
+                  "Estonian",
+                  "Farsi",
+                  "Filipino",
+                  "Finnish",
+                  "French",
+                  "German",
+                  "Greek",
+                  "Gujarati",
+                  "Hausa",
+                  "Hebrew",
+                  "Hindi",
+                  "Hungarian",
+                  "Icelandic",
+                  "Igbo",
+                  "Indonesian",
+                  "Irish",
+                  "Italian",
+                  "Japanese",
+                  "Javanese",
+                  "Kazakh",
+                  "Khmer",
+                  "Korean",
+                  "Lahnda",
+                  "Latvian",
+                  "Lithuanian",
+                  "Malay",
+                  "Mandarin",
+                  "Marathi",
+                  "Nepali",
+                  "Norwegian",
+                  "Oromo",
+                  "Pashto",
+                  "Polish",
+                  "Portuguese",
+                  "Romanian",
+                  "Russian",
+                  "Serbian",
+                  "Shona",
+                  "Sinhala",
+                  "Slovak",
+                  "Slovene",
+                  "Somali",
+                  "Spanish",
+                  "Sundanese",
+                  "Swahili",
+                  "Swedish",
+                  "Tagalog",
+                  "Tamil",
+                  "Telugu",
+                  "Thai",
+                  "Turkish",
+                  "Ukrainian",
+                  "Urdu",
+                  "Uzbek",
+                  "Vietnamese",
+                  "Yoruba",
+                  "Zulu"
+                ]
+              },
+              "keywords": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 32
+                }
+              }
+            },
+            "required": [
+              "fluency",
+              "language"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "location": {
+          "type": "object",
+          "properties": {
+            "city": {
+              "type": "string",
+              "minLength": 2,
+              "maxLength": 64
+            },
+            "address": {
+              "type": "string",
+              "minLength": 4,
+              "maxLength": 256
+            },
+            "country": {
+              "type": "string",
+              "enum": [
+                "Afghanistan",
+                "Aland Islands",
+                "Albania",
+                "Algeria",
+                "American Samoa",
+                "Andorra",
+                "Angola",
+                "Anguilla",
+                "Antarctica",
+                "Antigua And Barbuda",
+                "Argentina",
+                "Armenia",
+                "Aruba",
+                "Australia",
+                "Austria",
+                "Azerbaijan",
+                "Bahrain",
+                "Bangladesh",
+                "Barbados",
+                "Belarus",
+                "Belgium",
+                "Belize",
+                "Benin",
+                "Bermuda",
+                "Bhutan",
+                "Bolivia",
+                "Bonaire, Sint Eustatius and Saba",
+                "Bosnia and Herzegovina",
+                "Botswana",
+                "Bouvet Island",
+                "Brazil",
+                "British Indian Ocean Territory",
+                "Brunei",
+                "Bulgaria",
+                "Burkina Faso",
+                "Burundi",
+                "Cambodia",
+                "Cameroon",
+                "Canada",
+                "Cape Verde",
+                "Cayman Islands",
+                "Central African Republic",
+                "Chad",
+                "Chile",
+                "China",
+                "Christmas Island",
+                "Cocos (Keeling) Islands",
+                "Colombia",
+                "Comoros",
+                "Congo",
+                "Cook Islands",
+                "Costa Rica",
+                "Cote D'Ivoire (Ivory Coast)",
+                "Croatia",
+                "Cuba",
+                "Curaçao",
+                "Cyprus",
+                "Czech Republic",
+                "Democratic Republic of the Congo",
+                "Denmark",
+                "Djibouti",
+                "Dominica",
+                "Dominican Republic",
+                "East Timor",
+                "Ecuador",
+                "Egypt",
+                "El Salvador",
+                "Equatorial Guinea",
+                "Eritrea",
+                "Estonia",
+                "Ethiopia",
+                "Falkland Islands",
+                "Faroe Islands",
+                "Fiji Islands",
+                "Finland",
+                "France",
+                "French Guiana",
+                "French Polynesia",
+                "French Southern Territories",
+                "Gabon",
+                "Gambia The",
+                "Georgia",
+                "Germany",
+                "Ghana",
+                "Gibraltar",
+                "Greece",
+                "Greenland",
+                "Grenada",
+                "Guadeloupe",
+                "Guam",
+                "Guatemala",
+                "Guernsey and Alderney",
+                "Guinea",
+                "Guinea-Bissau",
+                "Guyana",
+                "Haiti",
+                "Heard Island and McDonald Islands",
+                "Honduras",
+                "Hong Kong S.A.R.",
+                "Hungary",
+                "Iceland",
+                "India",
+                "Indonesia",
+                "Iran",
+                "Iraq",
+                "Ireland",
+                "Israel",
+                "Italy",
+                "Jamaica",
+                "Japan",
+                "Jersey",
+                "Jordan",
+                "Kazakhstan",
+                "Kenya",
+                "Kiribati",
+                "Kosovo",
+                "Kuwait",
+                "Kyrgyzstan",
+                "Laos",
+                "Latvia",
+                "Lebanon",
+                "Lesotho",
+                "Liberia",
+                "Libya",
+                "Liechtenstein",
+                "Lithuania",
+                "Luxembourg",
+                "Macau S.A.R.",
+                "Madagascar",
+                "Malawi",
+                "Malaysia",
+                "Maldives",
+                "Mali",
+                "Malta",
+                "Man (Isle of)",
+                "Marshall Islands",
+                "Martinique",
+                "Mauritania",
+                "Mauritius",
+                "Mayotte",
+                "Mexico",
+                "Micronesia",
+                "Moldova",
+                "Monaco",
+                "Mongolia",
+                "Montenegro",
+                "Montserrat",
+                "Morocco",
+                "Mozambique",
+                "Myanmar",
+                "Namibia",
+                "Nauru",
+                "Nepal",
+                "Netherlands",
+                "New Caledonia",
+                "New Zealand",
+                "Nicaragua",
+                "Niger",
+                "Nigeria",
+                "Niue",
+                "Norfolk Island",
+                "North Korea",
+                "North Macedonia",
+                "Northern Mariana Islands",
+                "Norway",
+                "Oman",
+                "Pakistan",
+                "Palau",
+                "Palestinian Territory Occupied",
+                "Panama",
+                "Papua new Guinea",
+                "Paraguay",
+                "Peru",
+                "Philippines",
+                "Pitcairn Island",
+                "Poland",
+                "Portugal",
+                "Puerto Rico",
+                "Qatar",
+                "Reunion",
+                "Romania",
+                "Russia",
+                "Rwanda",
+                "Saint Helena",
+                "Saint Kitts And Nevis",
+                "Saint Lucia",
+                "Saint Pierre and Miquelon",
+                "Saint Vincent And The Grenadines",
+                "Saint-Barthelemy",
+                "Saint-Martin (French part)",
+                "Samoa",
+                "San Marino",
+                "Sao Tome and Principe",
+                "Saudi Arabia",
+                "Senegal",
+                "Serbia",
+                "Seychelles",
+                "Sierra Leone",
+                "Singapore",
+                "Sint Maarten (Dutch part)",
+                "Slovakia",
+                "Slovenia",
+                "Solomon Islands",
+                "Somalia",
+                "South Africa",
+                "South Georgia",
+                "South Korea",
+                "South Sudan",
+                "Spain",
+                "Sri Lanka",
+                "Sudan",
+                "Suriname",
+                "Svalbard And Jan Mayen Islands",
+                "Swaziland",
+                "Sweden",
+                "Switzerland",
+                "Syria",
+                "Taiwan",
+                "Tajikistan",
+                "Tanzania",
+                "Thailand",
+                "The Bahamas",
+                "Togo",
+                "Tokelau",
+                "Tonga",
+                "Trinidad And Tobago",
+                "Tunisia",
+                "Turkey",
+                "Turkmenistan",
+                "Turks And Caicos Islands",
+                "Tuvalu",
+                "Uganda",
+                "Ukraine",
+                "United Arab Emirates",
+                "United Kingdom",
+                "United States",
+                "United States Minor Outlying Islands",
+                "Uruguay",
+                "Uzbekistan",
+                "Vanuatu",
+                "Vatican City State (Holy See)",
+                "Venezuela",
+                "Vietnam",
+                "Virgin Islands (British)",
+                "Virgin Islands (US)",
+                "Wallis And Futuna Islands",
+                "Western Sahara",
+                "Yemen",
+                "Zambia",
+                "Zimbabwe"
+              ]
+            },
+            "postalCode": {
+              "type": "string",
+              "minLength": 2,
+              "maxLength": 16
+            },
+            "region": {
+              "type": "string",
+              "minLength": 2,
+              "maxLength": 64
+            }
+          },
+          "required": [
+            "city"
+          ],
+          "additionalProperties": false
+        },
+        "profiles": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "network": {
+                "type": "string",
+                "enum": [
+                  "Behance",
+                  "Dribbble",
+                  "Facebook",
+                  "GitHub",
+                  "Gitlab",
+                  "Instagram",
+                  "Line",
+                  "LinkedIn",
+                  "Medium",
+                  "Pinterest",
+                  "Reddit",
+                  "Snapchat",
+                  "Stack Overflow",
+                  "Telegram",
+                  "TikTok",
+                  "Twitch",
+                  "Twitter",
+                  "Vimeo",
+                  "Weibo",
+                  "WeChat",
+                  "WhatsApp",
+                  "YouTube",
+                  "Zhihu"
+                ]
+              },
+              "username": {
+                "type": "string",
+                "minLength": 2,
+                "maxLength": 64
+              },
+              "url": {
+                "type": "string",
+                "maxLength": 256,
+                "format": "uri"
+              }
+            },
+            "required": [
+              "network",
+              "username"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "projects": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string",
+                "minLength": 2,
+                "maxLength": 128
+              },
+              "startDate": {
+                "type": "string",
+                "minLength": 4,
+                "maxLength": 32
+              },
+              "summary": {
+                "type": "string",
+                "minLength": 16,
+                "maxLength": 1024
+              },
+              "description": {
+                "type": "string",
+                "minLength": 4,
+                "maxLength": 128
+              },
+              "endDate": {
+                "type": "string",
+                "minLength": 4,
+                "maxLength": 32
+              },
+              "keywords": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 32
+                }
+              },
+              "url": {
+                "type": "string",
+                "maxLength": 256,
+                "format": "uri"
+              }
+            },
+            "required": [
+              "name",
+              "startDate",
+              "summary"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "publications": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string",
+                "minLength": 2,
+                "maxLength": 128
+              },
+              "publisher": {
+                "type": "string",
+                "minLength": 2,
+                "maxLength": 128
+              },
+              "releaseDate": {
+                "type": "string",
+                "minLength": 4,
+                "maxLength": 32
+              },
+              "summary": {
+                "type": "string",
+                "minLength": 16,
+                "maxLength": 1024
+              },
+              "url": {
+                "type": "string",
+                "maxLength": 256,
+                "format": "uri"
+              }
+            },
+            "required": [
+              "name",
+              "publisher"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "references": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string",
+                "minLength": 2,
+                "maxLength": 128
+              },
+              "summary": {
+                "type": "string",
+                "minLength": 16,
+                "maxLength": 1024
+              },
+              "email": {
+                "type": "string",
+                "format": "email",
+                "pattern": "^(?!\\.)(?!.*\\.\\.)([A-Za-z0-9_'+\\-\\.]*)[A-Za-z0-9_+-]@([A-Za-z0-9][A-Za-z0-9\\-]*\\.)+[A-Za-z]{2,}$"
+              },
+              "phone": {
+                "type": "string",
+                "pattern": "^[+]?[(]?[0-9\\s-]{1,15}[)]?[0-9\\s-]{1,15}$"
+              },
+              "relationship": {
+                "type": "string",
+                "minLength": 2,
+                "maxLength": 128
+              }
+            },
+            "required": [
+              "name",
+              "summary"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "skills": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "level": {
+                "type": "string",
+                "enum": [
+                  "Novice",
+                  "Beginner",
+                  "Intermediate",
+                  "Advanced",
+                  "Expert",
+                  "Master"
+                ]
+              },
+              "name": {
+                "type": "string",
+                "minLength": 2,
+                "maxLength": 128
+              },
+              "keywords": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 32
+                }
+              }
+            },
+            "required": [
+              "level",
+              "name"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "volunteer": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "organization": {
+                "type": "string",
+                "minLength": 2,
+                "maxLength": 128
+              },
+              "position": {
+                "type": "string",
+                "minLength": 2,
+                "maxLength": 64
+              },
+              "startDate": {
+                "type": "string",
+                "minLength": 4,
+                "maxLength": 32
+              },
+              "summary": {
+                "type": "string",
+                "minLength": 16,
+                "maxLength": 1024
+              },
+              "endDate": {
+                "type": "string",
+                "minLength": 4,
+                "maxLength": 32
+              },
+              "url": {
+                "type": "string",
+                "maxLength": 256,
+                "format": "uri"
+              }
+            },
+            "required": [
+              "organization",
+              "position",
+              "startDate",
+              "summary"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "work": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string",
+                "minLength": 2,
+                "maxLength": 128
+              },
+              "position": {
+                "type": "string",
+                "minLength": 2,
+                "maxLength": 64
+              },
+              "startDate": {
+                "type": "string",
+                "minLength": 4,
+                "maxLength": 32
+              },
+              "summary": {
+                "type": "string",
+                "minLength": 16,
+                "maxLength": 1024
+              },
+              "endDate": {
+                "type": "string",
+                "minLength": 4,
+                "maxLength": 32
+              },
+              "keywords": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 32
+                }
+              },
+              "url": {
+                "type": "string",
+                "maxLength": 256,
+                "format": "uri"
+              }
+            },
+            "required": [
+              "name",
+              "position",
+              "startDate",
+              "summary"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      "required": [
+        "basics",
+        "education"
+      ],
+      "additionalProperties": false
+    },
+    "layout": {
+      "type": "object",
+      "properties": {
+        "locale": {
+          "type": "object",
+          "properties": {
+            "language": {
+              "type": "string",
+              "enum": [
+                "en",
+                "zh-hans",
+                "zh-hant-hk",
+                "zh-hant-tw",
+                "es"
+              ]
+            }
+          },
+          "additionalProperties": false
+        },
+        "margins": {
+          "type": "object",
+          "properties": {
+            "top": {
+              "type": "string",
+              "minLength": 2,
+              "maxLength": 32
+            },
+            "bottom": {
+              "type": "string",
+              "minLength": 2,
+              "maxLength": 32
+            },
+            "left": {
+              "type": "string",
+              "minLength": 2,
+              "maxLength": 32
+            },
+            "right": {
+              "type": "string",
+              "minLength": 2,
+              "maxLength": 32
+            }
+          },
+          "additionalProperties": false
+        },
+        "page": {
+          "type": "object",
+          "properties": {
+            "showPageNumbers": {
+              "type": "boolean"
+            }
+          },
+          "additionalProperties": false
+        },
+        "template": {
+          "type": "string",
+          "enum": [
+            "moderncv-banking",
+            "moderncv-casual",
+            "moderncv-classic"
+          ]
+        },
+        "typography": {
+          "type": "object",
+          "properties": {
+            "fontSize": {
+              "type": "string",
+              "enum": [
+                "10pt",
+                "11pt",
+                "12pt"
+              ]
+            },
+            "fontspec": {
+              "type": "object",
+              "properties": {
+                "numbers": {
+                  "type": "string",
+                  "enum": [
+                    "Lining",
+                    "OldStyle",
+                    "Auto"
+                  ]
+                }
+              },
+              "additionalProperties": false
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "content"
+  ],
+  "additionalProperties": false
+}

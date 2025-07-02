@@ -485,15 +485,8 @@ export const defaultResumeLayout: ResumeLayout = {
 
 /** Default value when user creates a new `Resume` object. */
 export const defaultResume: Resume = {
-  id: '',
-  slug: '',
-  title: '',
   content: defaultResumeContent,
   layout: defaultResumeLayout,
-  pdf: '',
-  createdAt: '',
-  updatedAt: '',
-  publishedAt: '',
 }
 
 /**
@@ -502,13 +495,6 @@ export const defaultResume: Resume = {
  * This is useful for testing transformations and rendering.
  */
 export const filledResume: Resume = {
-  id: '',
-  slug: '',
-  title: '',
   content: filledResumeContent,
   layout: defaultResumeLayout,
-  pdf: '',
-  createdAt: '',
-  updatedAt: '',
-  publishedAt: '',
 }
