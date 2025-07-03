@@ -13,14 +13,20 @@
           "type": "object",
           "properties": {
             "name": {
+              "title": "Name",
+              "description": "A name between 2 and 128 characters.",
+              "examples": [
+                "Andy Dufrane",
+                "Xiao Hanyu",
+                "Jane Smith",
+                "Dr. Robert John"
+              ],
               "type": "string",
               "minLength": 2,
               "maxLength": 128
             },
             "email": {
-              "type": "string",
-              "format": "email",
-              "pattern": "^(?!\\.)(?!.*\\.\\.)([A-Za-z0-9_'+\\-\\.]*)[A-Za-z0-9_+-]@([A-Za-z0-9][A-Za-z0-9\\-]*\\.)+[A-Za-z]{2,}$"
+              "$ref": "#/$defs/email"
             },
             "headline": {
               "type": "string",
@@ -28,18 +34,13 @@
               "maxLength": 128
             },
             "phone": {
-              "type": "string",
-              "pattern": "^[+]?[(]?[0-9\\s-]{1,15}[)]?[0-9\\s-]{1,15}$"
+              "$ref": "#/$defs/phone"
             },
             "summary": {
-              "type": "string",
-              "minLength": 16,
-              "maxLength": 1024
+              "$ref": "#/$defs/summary"
             },
             "url": {
-              "type": "string",
-              "maxLength": 256,
-              "format": "uri"
+              "$ref": "#/$defs/url"
             }
           },
           "required": [
@@ -58,11 +59,21 @@
                 "maxLength": 64
               },
               "institution": {
+                "title": "Institution",
+                "description": "An organization name between 2 and 128 characters.",
+                "examples": [
+                  "Google Inc.",
+                  "Microsoft Corporation",
+                  "Startup XYZ",
+                  "Non-Profit Organization"
+                ],
                 "type": "string",
                 "minLength": 2,
                 "maxLength": 128
               },
               "degree": {
+                "title": "Degree option",
+                "description": "A predefined option from the available degree choices.",
                 "type": "string",
                 "enum": [
                   "Middle School",
@@ -75,6 +86,14 @@
                 ]
               },
               "startDate": {
+                "title": "startDate",
+                "description": "A valid date string that can be parsed by `Date.parse`.",
+                "examples": [
+                  "2025-01-01",
+                  "Jul 2025",
+                  "July 3, 2025",
+                  "2025-02-02T00:00:03.123Z"
+                ],
                 "type": "string",
                 "minLength": 4,
                 "maxLength": 32
@@ -88,14 +107,20 @@
                 }
               },
               "endDate": {
+                "title": "endDate",
+                "description": "A valid date string that can be parsed by `Date.parse`.",
+                "examples": [
+                  "2025-01-01",
+                  "Jul 2025",
+                  "July 3, 2025",
+                  "2025-02-02T00:00:03.123Z"
+                ],
                 "type": "string",
                 "minLength": 4,
                 "maxLength": 32
               },
               "summary": {
-                "type": "string",
-                "minLength": 16,
-                "maxLength": 1024
+                "$ref": "#/$defs/summary"
               },
               "score": {
                 "type": "string",
@@ -103,9 +128,7 @@
                 "maxLength": 32
               },
               "url": {
-                "type": "string",
-                "maxLength": 256,
-                "format": "uri"
+                "$ref": "#/$defs/url"
               }
             },
             "required": [
@@ -123,24 +146,46 @@
             "type": "object",
             "properties": {
               "awarder": {
+                "title": "Awarder",
+                "description": "An organization name between 2 and 128 characters.",
+                "examples": [
+                  "Google Inc.",
+                  "Microsoft Corporation",
+                  "Startup XYZ",
+                  "Non-Profit Organization"
+                ],
                 "type": "string",
                 "minLength": 2,
                 "maxLength": 128
               },
               "title": {
+                "title": "Title",
+                "description": "A title between 2 and 128 characters.",
+                "examples": [
+                  "Andy Dufrane",
+                  "Xiao Hanyu",
+                  "Jane Smith",
+                  "Dr. Robert John"
+                ],
                 "type": "string",
                 "minLength": 2,
                 "maxLength": 128
               },
               "date": {
+                "title": "date",
+                "description": "A valid date string that can be parsed by `Date.parse`.",
+                "examples": [
+                  "2025-01-01",
+                  "Jul 2025",
+                  "July 3, 2025",
+                  "2025-02-02T00:00:03.123Z"
+                ],
                 "type": "string",
                 "minLength": 4,
                 "maxLength": 32
               },
               "summary": {
-                "type": "string",
-                "minLength": 16,
-                "maxLength": 1024
+                "$ref": "#/$defs/summary"
               }
             },
             "required": [
@@ -156,24 +201,46 @@
             "type": "object",
             "properties": {
               "issuer": {
+                "title": "Issuer",
+                "description": "An organization name between 2 and 128 characters.",
+                "examples": [
+                  "Google Inc.",
+                  "Microsoft Corporation",
+                  "Startup XYZ",
+                  "Non-Profit Organization"
+                ],
                 "type": "string",
                 "minLength": 2,
                 "maxLength": 128
               },
               "name": {
+                "title": "Name",
+                "description": "A name between 2 and 128 characters.",
+                "examples": [
+                  "Andy Dufrane",
+                  "Xiao Hanyu",
+                  "Jane Smith",
+                  "Dr. Robert John"
+                ],
                 "type": "string",
                 "minLength": 2,
                 "maxLength": 128
               },
               "date": {
+                "title": "date",
+                "description": "A valid date string that can be parsed by `Date.parse`.",
+                "examples": [
+                  "2025-01-01",
+                  "Jul 2025",
+                  "July 3, 2025",
+                  "2025-02-02T00:00:03.123Z"
+                ],
                 "type": "string",
                 "minLength": 4,
                 "maxLength": 32
               },
               "url": {
-                "type": "string",
-                "maxLength": 256,
-                "format": "uri"
+                "$ref": "#/$defs/url"
               }
             },
             "required": [
@@ -189,17 +256,20 @@
             "type": "object",
             "properties": {
               "name": {
+                "title": "Name",
+                "description": "A name between 2 and 128 characters.",
+                "examples": [
+                  "Andy Dufrane",
+                  "Xiao Hanyu",
+                  "Jane Smith",
+                  "Dr. Robert John"
+                ],
                 "type": "string",
                 "minLength": 2,
                 "maxLength": 128
               },
               "keywords": {
-                "type": "array",
-                "items": {
-                  "type": "string",
-                  "minLength": 1,
-                  "maxLength": 32
-                }
+                "$ref": "#/$defs/keywords"
               }
             },
             "required": [
@@ -214,6 +284,8 @@
             "type": "object",
             "properties": {
               "fluency": {
+                "title": "Fluency option",
+                "description": "A predefined option from the available fluency choices.",
                 "type": "string",
                 "enum": [
                   "Elementary Proficiency",
@@ -224,6 +296,8 @@
                 ]
               },
               "language": {
+                "title": "Language option",
+                "description": "A predefined option from the available language choices.",
                 "type": "string",
                 "enum": [
                   "Afrikaans",
@@ -304,12 +378,7 @@
                 ]
               },
               "keywords": {
-                "type": "array",
-                "items": {
-                  "type": "string",
-                  "minLength": 1,
-                  "maxLength": 32
-                }
+                "$ref": "#/$defs/keywords"
               }
             },
             "required": [
@@ -333,6 +402,8 @@
               "maxLength": 256
             },
             "country": {
+              "title": "Country option",
+              "description": "A predefined option from the available country choices.",
               "type": "string",
               "enum": [
                 "Afghanistan",
@@ -609,6 +680,8 @@
             "type": "object",
             "properties": {
               "network": {
+                "title": "Network option",
+                "description": "A predefined option from the available network choices.",
                 "type": "string",
                 "enum": [
                   "Behance",
@@ -642,9 +715,7 @@
                 "maxLength": 64
               },
               "url": {
-                "type": "string",
-                "maxLength": 256,
-                "format": "uri"
+                "$ref": "#/$defs/url"
               }
             },
             "required": [
@@ -660,19 +731,33 @@
             "type": "object",
             "properties": {
               "name": {
+                "title": "Name",
+                "description": "A name between 2 and 128 characters.",
+                "examples": [
+                  "Andy Dufrane",
+                  "Xiao Hanyu",
+                  "Jane Smith",
+                  "Dr. Robert John"
+                ],
                 "type": "string",
                 "minLength": 2,
                 "maxLength": 128
               },
               "startDate": {
+                "title": "startDate",
+                "description": "A valid date string that can be parsed by `Date.parse`.",
+                "examples": [
+                  "2025-01-01",
+                  "Jul 2025",
+                  "July 3, 2025",
+                  "2025-02-02T00:00:03.123Z"
+                ],
                 "type": "string",
                 "minLength": 4,
                 "maxLength": 32
               },
               "summary": {
-                "type": "string",
-                "minLength": 16,
-                "maxLength": 1024
+                "$ref": "#/$defs/summary"
               },
               "description": {
                 "type": "string",
@@ -680,22 +765,23 @@
                 "maxLength": 128
               },
               "endDate": {
+                "title": "endDate",
+                "description": "A valid date string that can be parsed by `Date.parse`.",
+                "examples": [
+                  "2025-01-01",
+                  "Jul 2025",
+                  "July 3, 2025",
+                  "2025-02-02T00:00:03.123Z"
+                ],
                 "type": "string",
                 "minLength": 4,
                 "maxLength": 32
               },
               "keywords": {
-                "type": "array",
-                "items": {
-                  "type": "string",
-                  "minLength": 1,
-                  "maxLength": 32
-                }
+                "$ref": "#/$defs/keywords"
               },
               "url": {
-                "type": "string",
-                "maxLength": 256,
-                "format": "uri"
+                "$ref": "#/$defs/url"
               }
             },
             "required": [
@@ -712,29 +798,49 @@
             "type": "object",
             "properties": {
               "name": {
+                "title": "Name",
+                "description": "A name between 2 and 128 characters.",
+                "examples": [
+                  "Andy Dufrane",
+                  "Xiao Hanyu",
+                  "Jane Smith",
+                  "Dr. Robert John"
+                ],
                 "type": "string",
                 "minLength": 2,
                 "maxLength": 128
               },
               "publisher": {
+                "title": "Publisher",
+                "description": "An organization name between 2 and 128 characters.",
+                "examples": [
+                  "Google Inc.",
+                  "Microsoft Corporation",
+                  "Startup XYZ",
+                  "Non-Profit Organization"
+                ],
                 "type": "string",
                 "minLength": 2,
                 "maxLength": 128
               },
               "releaseDate": {
+                "title": "Release date",
+                "description": "A valid date string that can be parsed by `Date.parse`.",
+                "examples": [
+                  "2025-01-01",
+                  "Jul 2025",
+                  "July 3, 2025",
+                  "2025-02-02T00:00:03.123Z"
+                ],
                 "type": "string",
                 "minLength": 4,
                 "maxLength": 32
               },
               "summary": {
-                "type": "string",
-                "minLength": 16,
-                "maxLength": 1024
+                "$ref": "#/$defs/summary"
               },
               "url": {
-                "type": "string",
-                "maxLength": 256,
-                "format": "uri"
+                "$ref": "#/$defs/url"
               }
             },
             "required": [
@@ -750,23 +856,26 @@
             "type": "object",
             "properties": {
               "name": {
+                "title": "Name",
+                "description": "A name between 2 and 128 characters.",
+                "examples": [
+                  "Andy Dufrane",
+                  "Xiao Hanyu",
+                  "Jane Smith",
+                  "Dr. Robert John"
+                ],
                 "type": "string",
                 "minLength": 2,
                 "maxLength": 128
               },
               "summary": {
-                "type": "string",
-                "minLength": 16,
-                "maxLength": 1024
+                "$ref": "#/$defs/summary"
               },
               "email": {
-                "type": "string",
-                "format": "email",
-                "pattern": "^(?!\\.)(?!.*\\.\\.)([A-Za-z0-9_'+\\-\\.]*)[A-Za-z0-9_+-]@([A-Za-z0-9][A-Za-z0-9\\-]*\\.)+[A-Za-z]{2,}$"
+                "$ref": "#/$defs/email"
               },
               "phone": {
-                "type": "string",
-                "pattern": "^[+]?[(]?[0-9\\s-]{1,15}[)]?[0-9\\s-]{1,15}$"
+                "$ref": "#/$defs/phone"
               },
               "relationship": {
                 "type": "string",
@@ -787,6 +896,8 @@
             "type": "object",
             "properties": {
               "level": {
+                "title": "Level option",
+                "description": "A predefined option from the available level choices.",
                 "type": "string",
                 "enum": [
                   "Novice",
@@ -798,17 +909,20 @@
                 ]
               },
               "name": {
+                "title": "Name",
+                "description": "A name between 2 and 128 characters.",
+                "examples": [
+                  "Andy Dufrane",
+                  "Xiao Hanyu",
+                  "Jane Smith",
+                  "Dr. Robert John"
+                ],
                 "type": "string",
                 "minLength": 2,
                 "maxLength": 128
               },
               "keywords": {
-                "type": "array",
-                "items": {
-                  "type": "string",
-                  "minLength": 1,
-                  "maxLength": 32
-                }
+                "$ref": "#/$defs/keywords"
               }
             },
             "required": [
@@ -824,6 +938,14 @@
             "type": "object",
             "properties": {
               "organization": {
+                "title": "Organization",
+                "description": "An organization name between 2 and 128 characters.",
+                "examples": [
+                  "Google Inc.",
+                  "Microsoft Corporation",
+                  "Startup XYZ",
+                  "Non-Profit Organization"
+                ],
                 "type": "string",
                 "minLength": 2,
                 "maxLength": 128
@@ -834,24 +956,36 @@
                 "maxLength": 64
               },
               "startDate": {
+                "title": "startDate",
+                "description": "A valid date string that can be parsed by `Date.parse`.",
+                "examples": [
+                  "2025-01-01",
+                  "Jul 2025",
+                  "July 3, 2025",
+                  "2025-02-02T00:00:03.123Z"
+                ],
                 "type": "string",
                 "minLength": 4,
                 "maxLength": 32
               },
               "summary": {
-                "type": "string",
-                "minLength": 16,
-                "maxLength": 1024
+                "$ref": "#/$defs/summary"
               },
               "endDate": {
+                "title": "endDate",
+                "description": "A valid date string that can be parsed by `Date.parse`.",
+                "examples": [
+                  "2025-01-01",
+                  "Jul 2025",
+                  "July 3, 2025",
+                  "2025-02-02T00:00:03.123Z"
+                ],
                 "type": "string",
                 "minLength": 4,
                 "maxLength": 32
               },
               "url": {
-                "type": "string",
-                "maxLength": 256,
-                "format": "uri"
+                "$ref": "#/$defs/url"
               }
             },
             "required": [
@@ -869,6 +1003,14 @@
             "type": "object",
             "properties": {
               "name": {
+                "title": "Name",
+                "description": "An organization name between 2 and 128 characters.",
+                "examples": [
+                  "Google Inc.",
+                  "Microsoft Corporation",
+                  "Startup XYZ",
+                  "Non-Profit Organization"
+                ],
                 "type": "string",
                 "minLength": 2,
                 "maxLength": 128
@@ -879,32 +1021,39 @@
                 "maxLength": 64
               },
               "startDate": {
+                "title": "startDate",
+                "description": "A valid date string that can be parsed by `Date.parse`.",
+                "examples": [
+                  "2025-01-01",
+                  "Jul 2025",
+                  "July 3, 2025",
+                  "2025-02-02T00:00:03.123Z"
+                ],
                 "type": "string",
                 "minLength": 4,
                 "maxLength": 32
               },
               "summary": {
-                "type": "string",
-                "minLength": 16,
-                "maxLength": 1024
+                "$ref": "#/$defs/summary"
               },
               "endDate": {
+                "title": "endDate",
+                "description": "A valid date string that can be parsed by `Date.parse`.",
+                "examples": [
+                  "2025-01-01",
+                  "Jul 2025",
+                  "July 3, 2025",
+                  "2025-02-02T00:00:03.123Z"
+                ],
                 "type": "string",
                 "minLength": 4,
                 "maxLength": 32
               },
               "keywords": {
-                "type": "array",
-                "items": {
-                  "type": "string",
-                  "minLength": 1,
-                  "maxLength": 32
-                }
+                "$ref": "#/$defs/keywords"
               },
               "url": {
-                "type": "string",
-                "maxLength": 256,
-                "format": "uri"
+                "$ref": "#/$defs/url"
               }
             },
             "required": [
@@ -930,6 +1079,8 @@
           "type": "object",
           "properties": {
             "language": {
+              "title": "Locale language option",
+              "description": "A predefined option from the available locale language choices.",
               "type": "string",
               "enum": [
                 "en",
@@ -946,21 +1097,57 @@
           "type": "object",
           "properties": {
             "top": {
+              "title": "Top margin size",
+              "description": "A positive number followed by valid units: cm, pt, or in. Examples: \"2.5cm\", \"1in\", \"72pt\".",
+              "examples": [
+                "2.5cm",
+                "1in",
+                "72pt",
+                "0.5cm",
+                "12pt"
+              ],
               "type": "string",
               "minLength": 2,
               "maxLength": 32
             },
             "bottom": {
+              "title": "Bottom margin size",
+              "description": "A positive number followed by valid units: cm, pt, or in. Examples: \"2.5cm\", \"1in\", \"72pt\".",
+              "examples": [
+                "2.5cm",
+                "1in",
+                "72pt",
+                "0.5cm",
+                "12pt"
+              ],
               "type": "string",
               "minLength": 2,
               "maxLength": 32
             },
             "left": {
+              "title": "Left margin size",
+              "description": "A positive number followed by valid units: cm, pt, or in. Examples: \"2.5cm\", \"1in\", \"72pt\".",
+              "examples": [
+                "2.5cm",
+                "1in",
+                "72pt",
+                "0.5cm",
+                "12pt"
+              ],
               "type": "string",
               "minLength": 2,
               "maxLength": 32
             },
             "right": {
+              "title": "Right margin size",
+              "description": "A positive number followed by valid units: cm, pt, or in. Examples: \"2.5cm\", \"1in\", \"72pt\".",
+              "examples": [
+                "2.5cm",
+                "1in",
+                "72pt",
+                "0.5cm",
+                "12pt"
+              ],
               "type": "string",
               "minLength": 2,
               "maxLength": 32
@@ -978,6 +1165,8 @@
           "additionalProperties": false
         },
         "template": {
+          "title": "Template option",
+          "description": "A predefined option from the available template choices.",
           "type": "string",
           "enum": [
             "moderncv-banking",
@@ -989,6 +1178,8 @@
           "type": "object",
           "properties": {
             "fontSize": {
+              "title": "Font size option",
+              "description": "A predefined option from the available font size choices.",
               "type": "string",
               "enum": [
                 "10pt",
@@ -1000,6 +1191,8 @@
               "type": "object",
               "properties": {
                 "numbers": {
+                  "title": "Fontspec numbers option",
+                  "description": "A predefined option from the available fontspec numbers choices.",
                   "type": "string",
                   "enum": [
                     "Lining",
@@ -1020,5 +1213,87 @@
   "required": [
     "content"
   ],
-  "additionalProperties": false
+  "additionalProperties": false,
+  "$defs": {
+    "email": {
+      "id": "email",
+      "title": "Email",
+      "description": "A valid email address.",
+      "examples": [
+        "hi@ppresume.com",
+        "first.last@company.org",
+        "test+tag@domain.co.uk"
+      ],
+      "type": "string",
+      "format": "email",
+      "pattern": "^(?!\\.)(?!.*\\.\\.)([A-Za-z0-9_'+\\-\\.]*)[A-Za-z0-9_+-]@([A-Za-z0-9][A-Za-z0-9\\-]*\\.)+[A-Za-z]{2,}$"
+    },
+    "phone": {
+      "id": "phone",
+      "title": "Phone number",
+      "description": "A valid phone number that may include country code, parentheses, spaces, and hyphens.",
+      "examples": [
+        "555-123-4567",
+        "+44 20 7946 0958",
+        "(555) 123-4567"
+      ],
+      "type": "string",
+      "pattern": "^[+]?[(]?[0-9\\s-]{1,15}[)]?[0-9\\s-]{1,15}$"
+    },
+    "summary": {
+      "id": "summary",
+      "title": "Summary",
+      "description": "A summary text between 16 and 1024 characters.",
+      "examples": [
+        "Experienced software engineer with 5+ years in full-stack development.",
+        "Creative designer passionate about user experience and modern design principles.",
+        "Dedicated project manager with proven track record of delivering complex projects on time and budget."
+      ],
+      "type": "string",
+      "minLength": 16,
+      "maxLength": 1024
+    },
+    "url": {
+      "id": "url",
+      "title": "URL",
+      "description": "A valid URL with maximum length of 256 characters.",
+      "examples": [
+        "https://yamlresume.dev",
+        "https://ppresume.com",
+        "https://github.com/yamlresume/yamlresume",
+        "https://linkedin.com/in/xiaohanyu1988",
+        "https://www.example.com"
+      ],
+      "type": "string",
+      "maxLength": 256,
+      "format": "uri"
+    },
+    "keywords": {
+      "id": "keywords",
+      "title": "Keywords",
+      "description": "An array of keyword, each between 1 and 32 characters",
+      "examples": [
+        [
+          "Javascript",
+          "React",
+          "Typescript"
+        ],
+        [
+          "Design",
+          "UI",
+          "UX"
+        ],
+        [
+          "Python",
+          "Data Science"
+        ]
+      ],
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 32
+      }
+    }
+  }
 }

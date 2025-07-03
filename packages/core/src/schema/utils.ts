@@ -43,3 +43,20 @@ export function validateZodErrors<T>(
   expect(result.success).toBe(false)
   expect(z.treeifyError(result.error)).toEqual(error)
 }
+
+/**
+ * Expects that a zod schema has metadata.
+ *
+ * @param schema - The zod schema to validate.
+ */
+export function expectSchemaMetadata<T>(schema: z.ZodType<T>) {
+  const metadata = schema.meta()
+  expect(metadata.title).toBeTypeOf('string')
+  expect(metadata.description).toBeTypeOf('string')
+
+  // Check if examples exist (some schemas like enums don't have examples)
+  if (metadata.examples !== undefined) {
+    expect(metadata.examples).toBeTypeOf('object')
+    expect(metadata.examples.length).toBeGreaterThan(0)
+  }
+}

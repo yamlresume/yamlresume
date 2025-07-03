@@ -62,7 +62,7 @@ import {
   urlSchema,
 } from './primitives'
 
-import { validateZodErrors } from './utils'
+import { expectSchemaMetadata, validateZodErrors } from './utils'
 
 describe(sizedStringSchema, () => {
   const schema = sizedStringSchema('string', 1, 10)
@@ -130,6 +130,10 @@ describe('countryOptionSchema', () => {
       validateZodErrors(countryOptionSchema, country, error)
     }
   })
+
+  it('should have correct metadata', () => {
+    expectSchemaMetadata(countryOptionSchema)
+  })
 })
 
 describe('dateSchema', () => {
@@ -187,6 +191,11 @@ describe('dateSchema', () => {
       validateZodErrors(schema, date, error)
     }
   })
+
+  it('should have correct metadata', () => {
+    const schema = dateSchema('startDate')
+    expectSchemaMetadata(schema)
+  })
 })
 
 describe('degreeOptionSchema', () => {
@@ -223,6 +232,47 @@ describe('degreeOptionSchema', () => {
     for (const { degree, error } of tests) {
       validateZodErrors(degreeOptionSchema, degree, error)
     }
+  })
+
+  it('should have correct metadata', () => {
+    expectSchemaMetadata(degreeOptionSchema)
+  })
+})
+
+describe('emailSchema', () => {
+  it('should return an email if it is valid', () => {
+    expect(emailSchema.parse('test@test.com')).toBe('test@test.com')
+  })
+
+  it('should throw an error if the email is invalid', () => {
+    const tests = [
+      {
+        email: 'test@test',
+        error: {
+          errors: ['email is invalid.'],
+        },
+      },
+      {
+        email: '',
+        error: {
+          errors: ['email is invalid.'],
+        },
+      },
+      {
+        email: undefined,
+        error: {
+          errors: ['email is invalid.'],
+        },
+      },
+    ]
+
+    for (const { email, error } of tests) {
+      validateZodErrors(emailSchema, email, error)
+    }
+  })
+
+  it('should have correct metadata', () => {
+    expectSchemaMetadata(emailSchema)
   })
 })
 
@@ -263,6 +313,10 @@ describe('fontspecNumbersOptionSchema', () => {
       validateZodErrors(fontspecNumbersOptionSchema, numbers, error)
     }
   })
+
+  it('should have correct metadata', () => {
+    expectSchemaMetadata(fontspecNumbersOptionSchema)
+  })
 })
 
 describe('fontSizeOptionSchema', () => {
@@ -292,38 +346,9 @@ describe('fontSizeOptionSchema', () => {
       validateZodErrors(fontSizeOptionSchema, fontSize, error)
     }
   })
-})
 
-describe('emailSchema', () => {
-  it('should return an email if it is valid', () => {
-    expect(emailSchema.parse('test@test.com')).toBe('test@test.com')
-  })
-
-  it('should throw an error if the email is invalid', () => {
-    const tests = [
-      {
-        email: 'test@test',
-        error: {
-          errors: ['email is invalid.'],
-        },
-      },
-      {
-        email: '',
-        error: {
-          errors: ['email is invalid.'],
-        },
-      },
-      {
-        email: undefined,
-        error: {
-          errors: ['email is invalid.'],
-        },
-      },
-    ]
-
-    for (const { email, error } of tests) {
-      validateZodErrors(emailSchema, email, error)
-    }
+  it('should have correct metadata', () => {
+    expectSchemaMetadata(fontSizeOptionSchema)
   })
 })
 
@@ -369,6 +394,10 @@ describe('keywordsSchema', () => {
     for (const { keywords, error } of tests) {
       validateZodErrors(keywordsSchema, keywords, error)
     }
+  })
+
+  it('should have correct metadata', () => {
+    expectSchemaMetadata(keywordsSchema)
   })
 })
 
@@ -416,6 +445,10 @@ describe('languageOptionSchema', () => {
       validateZodErrors(languageOptionSchema, language, error)
     }
   })
+
+  it('should have correct metadata', () => {
+    expectSchemaMetadata(languageOptionSchema)
+  })
 })
 
 describe('fluencyOptionSchema', () => {
@@ -462,6 +495,10 @@ describe('fluencyOptionSchema', () => {
       validateZodErrors(fluencyOptionSchema, fluency, error)
     }
   })
+
+  it('should have correct metadata', () => {
+    expectSchemaMetadata(fluencyOptionSchema)
+  })
 })
 
 describe('levelOptionSchema', () => {
@@ -504,6 +541,10 @@ describe('levelOptionSchema', () => {
     for (const { level, error } of tests) {
       validateZodErrors(levelOptionSchema, level, error)
     }
+  })
+
+  it('should have correct metadata', () => {
+    expectSchemaMetadata(levelOptionSchema)
   })
 })
 
@@ -551,6 +592,10 @@ describe('localeLanguageOptionSchema', () => {
     for (const { language, error } of tests) {
       validateZodErrors(localeLanguageOptionSchema, language, error)
     }
+  })
+
+  it('should have correct metadata', () => {
+    expectSchemaMetadata(localeLanguageOptionSchema)
   })
 })
 
@@ -613,6 +658,16 @@ describe('marginSizeSchema', () => {
       validateZodErrors(marginSizeSchema('top'), top, error)
     }
   })
+
+  it('should have correct metadata for top margin', () => {
+    const schema = marginSizeSchema('top')
+    expectSchemaMetadata(schema)
+  })
+
+  it('should have correct metadata for bottom margin', () => {
+    const schema = marginSizeSchema('bottom')
+    expectSchemaMetadata(schema)
+  })
 })
 
 describe('networkOptionSchema', () => {
@@ -659,6 +714,10 @@ describe('networkOptionSchema', () => {
       validateZodErrors(networkOptionSchema, network, error)
     }
   })
+
+  it('should have correct metadata', () => {
+    expectSchemaMetadata(networkOptionSchema)
+  })
 })
 
 describe('nameSchema', () => {
@@ -698,6 +757,11 @@ describe('nameSchema', () => {
       validateZodErrors(schema, name, error)
     }
   })
+
+  it('should have correct metadata', () => {
+    const schema = nameSchema('full')
+    expectSchemaMetadata(schema)
+  })
 })
 
 describe('organizationSchema', () => {
@@ -736,6 +800,11 @@ describe('organizationSchema', () => {
     for (const { organization, error } of tests) {
       validateZodErrors(organizationSchema('Organization'), organization, error)
     }
+  })
+
+  it('should have correct metadata', () => {
+    const schema = organizationSchema('company')
+    expectSchemaMetadata(schema)
   })
 })
 
@@ -791,6 +860,10 @@ describe('phoneSchema', () => {
       validateZodErrors(phoneSchema, phoneNumber, error)
     }
   })
+
+  it('should have correct metadata', () => {
+    expectSchemaMetadata(phoneSchema)
+  })
 })
 
 describe('summarySchema', () => {
@@ -828,6 +901,10 @@ describe('summarySchema', () => {
       validateZodErrors(summarySchema, summary, error)
     }
   })
+
+  it('should have correct metadata', () => {
+    expectSchemaMetadata(summarySchema)
+  })
 })
 
 describe('templateOptionSchema', () => {
@@ -857,16 +934,21 @@ describe('templateOptionSchema', () => {
       validateZodErrors(templateOptionSchema, template, error)
     }
   })
+
+  it('should have correct metadata', () => {
+    expectSchemaMetadata(templateOptionSchema)
+  })
 })
 
 describe('urlSchema', () => {
   it('should return a url if it is valid', () => {
     const tests = [
       'https://www.google.com',
-      'http://localhost:3000',
-      'https://t.tt',
-      'https://t.tt/1234567890',
-      'https://t.tt/1234567890/1234567890',
+      'https://yamlresume.dev',
+      'https://ppresume.com',
+      'https://github.com/yamlresume/yamlresume',
+      'https://linkedin.com/in/xiaohanyu1988',
+      'https://www.example.com',
     ]
 
     for (const url of tests) {
@@ -893,5 +975,9 @@ describe('urlSchema', () => {
     for (const { url, error } of tests) {
       validateZodErrors(urlSchema, url, error)
     }
+  })
+
+  it('should have correct metadata', () => {
+    expectSchemaMetadata(urlSchema)
   })
 })
