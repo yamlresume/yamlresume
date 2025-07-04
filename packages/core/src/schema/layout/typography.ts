@@ -24,6 +24,7 @@
 
 import { z } from 'zod/v4'
 
+import { joinNonEmptyString } from '@/utils'
 import {
   fontSizeOptionSchema,
   fontspecNumbersOptionSchema,
@@ -45,5 +46,15 @@ export const typographySchema = z.object({
         })
         .optional(),
     })
-    .optional(),
+    .optional()
+    .meta({
+      title: 'Typography',
+      description: joinNonEmptyString(
+        [
+          'The typography section contains font settings,',
+          'including font size and number styling options.',
+        ],
+        ' '
+      ),
+    }),
 })

@@ -26,10 +26,14 @@ import { describe, expect, it } from 'vitest'
 
 import { LOCALE_LANGUAGE_OPTIONS } from '@/models'
 import { optionSchemaMessage } from '../primitives'
-import { validateZodErrors } from '../utils'
+import { expectSchemaMetadata, validateZodErrors } from '../utils'
 import { localeSchema } from './locale'
 
 describe('localeSchema', () => {
+  it('should have correct metadata', () => {
+    expectSchemaMetadata(localeSchema.shape.locale)
+  })
+
   it('should validate a locale if it is valid', () => {
     const tests = [
       {},

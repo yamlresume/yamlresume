@@ -24,6 +24,7 @@
 
 import { z } from 'zod/v4'
 
+import { joinNonEmptyString } from '@/utils'
 import { localeLanguageOptionSchema } from '../primitives'
 
 /**
@@ -37,5 +38,15 @@ export const localeSchema = z.object({
     .object({
       language: localeLanguageOptionSchema.optional(),
     })
-    .optional(),
+    .optional()
+    .meta({
+      title: 'Locale',
+      description: joinNonEmptyString(
+        [
+          'The locale section contains locale language settings,',
+          'determining the language used for the resume.',
+        ],
+        ' '
+      ),
+    }),
 })

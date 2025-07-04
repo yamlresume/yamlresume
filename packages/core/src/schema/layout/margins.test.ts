@@ -24,10 +24,14 @@
 
 import { describe, expect, it } from 'vitest'
 
-import { validateZodErrors } from '../utils'
+import { expectSchemaMetadata, validateZodErrors } from '../utils'
 import { marginsSchema } from './margins'
 
 describe('marginsSchema', () => {
+  it('should have correct metadata', () => {
+    expectSchemaMetadata(marginsSchema.shape.margins)
+  })
+
   const top = '1cm'
   const bottom = '1cm'
   const left = '1cm'

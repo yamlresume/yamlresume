@@ -24,6 +24,16 @@
 
 import { z } from 'zod/v4'
 
+import { joinNonEmptyString } from '@/utils'
+
+/**
+ * A zod schema for the show page numbers setting.
+ */
+export const showPageNumbersSchema = z.boolean().optional().meta({
+  title: 'Show Page Numbers',
+  description: 'Whether to show page numbers on the page.',
+})
+
 /**
  * A zod schema for validating page configuration.
  *
@@ -32,7 +42,17 @@ import { z } from 'zod/v4'
 export const pageSchema = z.object({
   page: z
     .object({
-      showPageNumbers: z.boolean().optional(),
+      showPageNumbers: showPageNumbersSchema,
     })
-    .optional(),
+    .optional()
+    .meta({
+      title: 'Page',
+      description: joinNonEmptyString(
+        [
+          'The page section contains page display settings,',
+          'including whether to show page numbers.',
+        ],
+        ' '
+      ),
+    }),
 })

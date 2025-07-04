@@ -24,10 +24,20 @@
 
 import { describe, expect, it } from 'vitest'
 
-import { validateZodErrors } from '../utils'
-import { pageSchema } from './page'
+import { expectSchemaMetadata, validateZodErrors } from '../utils'
+import { pageSchema, showPageNumbersSchema } from './page'
+
+describe('showPageNumbersSchema', () => {
+  it('should have correct metadata', () => {
+    expectSchemaMetadata(showPageNumbersSchema)
+  })
+})
 
 describe('pageSchema', () => {
+  it('should have correct metadata', () => {
+    expectSchemaMetadata(pageSchema.shape.page)
+  })
+
   it('should validate a page object if it is valid', () => {
     const tests = [
       {},

@@ -24,6 +24,7 @@
 
 import { z } from 'zod/v4'
 
+import { joinNonEmptyString } from '@/utils'
 import { localeSchema } from './locale'
 import { marginsSchema } from './margins'
 import { pageSchema } from './page'
@@ -46,5 +47,15 @@ export const layoutSchema = z.object({
       ...templateSchema.shape,
       ...typographySchema.shape,
     })
-    .optional(),
+    .optional()
+    .meta({
+      title: 'Layout',
+      description: joinNonEmptyString(
+        [
+          'The layout section contains all layout-related configurations,',
+          'including locale, margins, template, typography, etc.',
+        ],
+        ' '
+      ),
+    }),
 })

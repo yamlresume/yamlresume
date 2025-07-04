@@ -26,10 +26,14 @@ import { describe, expect, it } from 'vitest'
 
 import { TEMPLATE_OPTIONS } from '@/models'
 import { optionSchemaMessage } from '../primitives'
-import { validateZodErrors } from '../utils'
+import { expectSchemaMetadata, validateZodErrors } from '../utils'
 import { templateSchema } from './template'
 
 describe('templateSchema', () => {
+  it('should have correct metadata', () => {
+    expectSchemaMetadata(templateSchema.shape.template)
+  })
+
   it('should validate a template if it is valid', () => {
     const tests = [{}, { template: TEMPLATE_OPTIONS[0] }]
 

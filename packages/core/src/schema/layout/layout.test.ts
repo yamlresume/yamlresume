@@ -32,9 +32,13 @@ import {
 } from '@/models'
 import { layoutSchema } from '.'
 import { marginSizeSchemaMessage, optionSchemaMessage } from '../primitives'
-import { validateZodErrors } from '../utils'
+import { expectSchemaMetadata, validateZodErrors } from '../utils'
 
 describe('layoutSchema', () => {
+  it('should have correct metadata', () => {
+    expectSchemaMetadata(layoutSchema.shape.layout)
+  })
+
   it('should validate a layout object if it is valid', () => {
     const locale = {
       language: LOCALE_LANGUAGE_OPTIONS[0],

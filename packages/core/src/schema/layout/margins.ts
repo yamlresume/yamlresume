@@ -24,6 +24,7 @@
 
 import { z } from 'zod/v4'
 
+import { joinNonEmptyString } from '@/utils'
 import { marginSizeSchema } from '../primitives'
 
 /**
@@ -40,5 +41,15 @@ export const marginsSchema = z.object({
       left: marginSizeSchema('left').optional(),
       right: marginSizeSchema('right').optional(),
     })
-    .optional(),
+    .optional()
+    .meta({
+      title: 'Margins',
+      description: joinNonEmptyString(
+        [
+          'The margins section contains page margin settings,',
+          'including top, bottom, left, and right margins.',
+        ],
+        ' '
+      ),
+    }),
 })

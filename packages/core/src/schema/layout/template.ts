@@ -24,6 +24,7 @@
 
 import { z } from 'zod/v4'
 
+import { joinNonEmptyString } from '@/utils'
 import { templateOptionSchema } from '../primitives'
 
 /**
@@ -32,5 +33,14 @@ import { templateOptionSchema } from '../primitives'
  * Validates that the template field contains a valid template option.
  */
 export const templateSchema = z.object({
-  template: templateOptionSchema.optional(),
+  template: templateOptionSchema.optional().meta({
+    title: 'Template',
+    description: joinNonEmptyString(
+      [
+        'The template section contains the resume template selection,',
+        'determining the overall visual style and layout.',
+      ],
+      ' '
+    ),
+  }),
 })

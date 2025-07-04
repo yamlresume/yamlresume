@@ -21,7 +21,7 @@
  * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
  * IN THE SOFTWARE.
  */
-import { capitalize, startCase } from 'lodash-es'
+import { startCase } from 'lodash-es'
 import { z } from 'zod/v4'
 
 import {
@@ -113,7 +113,7 @@ export const marginSizeSchema = (position: Position) =>
       }
     })
     .meta({
-      title: capitalize(`${position} margin size`),
+      title: startCase(`${position} margin size`),
       description: joinNonEmptyString(
         [
           'A positive number followed by valid units: cm, pt, or in.',
@@ -379,7 +379,7 @@ export const levelOptionSchema = optionSchema(LEVEL_OPTIONS, 'level').meta({
  */
 export const nameSchema = (name: string) =>
   sizedStringSchema(name, 2, 128).meta({
-    title: capitalize(name),
+    title: startCase(name),
     description: `A ${name} between 2 and 128 characters.`,
     examples: ['Andy Dufrane', 'Xiao Hanyu', 'Jane Smith', 'Dr. Robert John'],
   })
@@ -455,7 +455,7 @@ export const summarySchema = sizedStringSchema('summary', 16, 1024).meta({
  */
 export const organizationSchema = (name: string) =>
   sizedStringSchema(name, 2, 128).meta({
-    title: capitalize(name),
+    title: startCase(name),
     description: 'An organization name between 2 and 128 characters.',
     examples: [
       'Google Inc.',

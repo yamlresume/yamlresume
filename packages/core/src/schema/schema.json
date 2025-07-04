@@ -1211,9 +1211,13 @@
       "additionalProperties": false
     },
     "layout": {
+      "title": "Layout",
+      "description": "The layout section contains all layout-related configurations, including locale, margins, template, typography, etc.",
       "type": "object",
       "properties": {
         "locale": {
+          "title": "Locale",
+          "description": "The locale section contains locale language settings, determining the language used for the resume.",
           "type": "object",
           "properties": {
             "language": {
@@ -1232,10 +1236,12 @@
           "additionalProperties": false
         },
         "margins": {
+          "title": "Margins",
+          "description": "The margins section contains page margin settings, including top, bottom, left, and right margins.",
           "type": "object",
           "properties": {
             "top": {
-              "title": "Top margin size",
+              "title": "Top Margin Size",
               "description": "A positive number followed by valid units: cm, pt, or in. Examples: \"2.5cm\", \"1in\", \"72pt\".",
               "examples": [
                 "2.5cm",
@@ -1249,7 +1255,7 @@
               "maxLength": 32
             },
             "bottom": {
-              "title": "Bottom margin size",
+              "title": "Bottom Margin Size",
               "description": "A positive number followed by valid units: cm, pt, or in. Examples: \"2.5cm\", \"1in\", \"72pt\".",
               "examples": [
                 "2.5cm",
@@ -1263,7 +1269,7 @@
               "maxLength": 32
             },
             "left": {
-              "title": "Left margin size",
+              "title": "Left Margin Size",
               "description": "A positive number followed by valid units: cm, pt, or in. Examples: \"2.5cm\", \"1in\", \"72pt\".",
               "examples": [
                 "2.5cm",
@@ -1277,7 +1283,7 @@
               "maxLength": 32
             },
             "right": {
-              "title": "Right margin size",
+              "title": "Right Margin Size",
               "description": "A positive number followed by valid units: cm, pt, or in. Examples: \"2.5cm\", \"1in\", \"72pt\".",
               "examples": [
                 "2.5cm",
@@ -1294,17 +1300,21 @@
           "additionalProperties": false
         },
         "page": {
+          "title": "Page",
+          "description": "The page section contains page display settings, including whether to show page numbers.",
           "type": "object",
           "properties": {
             "showPageNumbers": {
+              "title": "Show Page Numbers",
+              "description": "Whether to show page numbers on the page.",
               "type": "boolean"
             }
           },
           "additionalProperties": false
         },
         "template": {
-          "title": "Template option",
-          "description": "A predefined option from the available template choices.",
+          "title": "Template",
+          "description": "The template section contains the resume template selection, determining the overall visual style and layout.",
           "type": "string",
           "enum": [
             "moderncv-banking",
@@ -1313,6 +1323,8 @@
           ]
         },
         "typography": {
+          "title": "Typography",
+          "description": "The typography section contains font settings, including font size and number styling options.",
           "type": "object",
           "properties": {
             "fontSize": {
