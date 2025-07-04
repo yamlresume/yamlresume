@@ -267,7 +267,7 @@ export function renderSpanishConfig(resume: Resume): string {
 export function renderfontspecConfig(resume: Resume): string {
   const {
     layout: {
-      typography: {
+      latex: {
         fontspec: { numbers },
       },
     },

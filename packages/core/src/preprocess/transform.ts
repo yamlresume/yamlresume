@@ -778,19 +778,19 @@ export function transformResumeLayoutWithDefaultValues(resume: Resume): Resume {
 }
 
 /**
- * Adjusts the resume's typography settings, specifically the number style
+ * Adjusts the resume's LaTeX settings, specifically the number style
  * (`Lining` or `OldStyle`), based on the selected locale language.
  *
  * Sets Lining for CJK languages, OldStyle otherwise, if not explicitly defined.
  *
  * @param resume - The resume object.
  * @returns The transformed resume object.
- * @remarks Modifies `resume.layout.typography.fontspec` in place.
+ * @remarks Modifies `resume.layout.latex.fontspec` in place.
  */
-export function transformResumeLayoutTypography(resume: Resume): Resume {
+export function transformResumeLayoutLaTeX(resume: Resume): Resume {
   if (
-    resume.layout.typography.fontspec?.numbers !== undefined &&
-    resume.layout.typography.fontspec?.numbers !== 'Auto'
+    resume.layout.latex?.fontspec?.numbers !== undefined &&
+    resume.layout.latex?.fontspec?.numbers !== 'Auto'
   ) {
     return resume
   }
@@ -799,15 +799,21 @@ export function transformResumeLayoutTypography(resume: Resume): Resume {
     case 'zh-hans':
     case 'zh-hant-hk':
     case 'zh-hant-tw':
-      resume.layout.typography.fontspec = {
-        ...resume.layout.typography.fontspec,
-        numbers: 'Lining',
+      resume.layout.latex = {
+        ...resume.layout.latex,
+        fontspec: {
+          ...resume.layout.latex?.fontspec,
+          numbers: 'Lining',
+        },
       }
       break
     default:
-      resume.layout.typography.fontspec = {
-        ...resume.layout.typography.fontspec,
-        numbers: 'OldStyle',
+      resume.layout.latex = {
+        ...resume.layout.latex,
+        fontspec: {
+          ...resume.layout.latex?.fontspec,
+          numbers: 'OldStyle',
+        },
       }
       break
   }
@@ -820,7 +826,7 @@ export function transformResumeLayoutTypography(resume: Resume): Resume {
  * ensuring all necessary layout properties are set.
  *
  * Also applies locale-based typography adjustments via
- * `transformResumeLayoutTypography`.
+ * `transformResumeLayoutLaTeX`.
  *
  * @param resume - The resume object containing the layout to transform.
  * @returns The resume object with its layout transformed.
@@ -830,7 +836,7 @@ export function transformResumeLayoutTypography(resume: Resume): Resume {
 export function transformResumeLayout(resume: Resume): Resume {
   return [
     transformResumeLayoutWithDefaultValues,
-    transformResumeLayoutTypography,
+    transformResumeLayoutLaTeX,
   ].reduce((resume, transformFunc) => transformFunc(resume), resume)
 }
 

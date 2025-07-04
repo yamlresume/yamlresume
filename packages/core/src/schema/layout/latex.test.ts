@@ -24,48 +24,63 @@
 
 import { describe, expect, it } from 'vitest'
 
-import { FONT_SIZE_OPTIONS } from '@/models'
+import { FONTSPEC_NUMBERS_OPTIONS } from '@/models'
 import { optionSchemaMessage } from '../primitives'
 import { expectSchemaMetadata, validateZodErrors } from '../utils'
-import { typographySchema } from './typography'
+import { latexSchema } from './latex'
 
-describe('typographySchema', () => {
+describe('latexSchema', () => {
   it('should have correct metadata', () => {
-    expectSchemaMetadata(typographySchema.shape.typography)
+    expectSchemaMetadata(latexSchema.shape.latex)
   })
 
-  it('should validate typography if it is valid', () => {
+  it('should validate LaTeX if it is valid', () => {
     const tests = [
       {},
       {
-        typography: {},
+        latex: {},
       },
       {
-        typography: {
-          fontSize: '12pt',
+        latex: {
+          fontspec: { numbers: FONTSPEC_NUMBERS_OPTIONS[0] },
+        },
+      },
+      {
+        latex: {
+          fontspec: {},
         },
       },
     ]
 
-    for (const typography of tests) {
-      expect(typographySchema.parse(typography)).toStrictEqual(typography)
+    for (const latex of tests) {
+      expect(latexSchema.parse(latex)).toStrictEqual(latex)
     }
   })
 
-  it('should throw an error if typography is invalid', () => {
+  it('should throw an error if LaTeX is invalid', () => {
     const tests = [
       {
-        typography: {
-          fontSize: '13pt',
+        latex: {
+          fontspec: { numbers: 'invalid' },
         },
         error: {
           errors: [],
           properties: {
-            typography: {
+            latex: {
               errors: [],
               properties: {
-                fontSize: {
-                  errors: [optionSchemaMessage(FONT_SIZE_OPTIONS, 'font size')],
+                fontspec: {
+                  errors: [],
+                  properties: {
+                    numbers: {
+                      errors: [
+                        optionSchemaMessage(
+                          FONTSPEC_NUMBERS_OPTIONS,
+                          'fontspec numbers'
+                        ),
+                      ],
+                    },
+                  },
                 },
               },
             },
@@ -74,9 +89,9 @@ describe('typographySchema', () => {
       },
     ]
 
-    for (const { typography, error } of tests) {
+    for (const { latex, error } of tests) {
       // @ts-ignore
-      validateZodErrors(typographySchema, { typography }, error)
+      validateZodErrors(latexSchema, { latex }, error)
     }
   })
 })

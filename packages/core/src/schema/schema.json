@@ -1212,9 +1212,33 @@
     },
     "layout": {
       "title": "Layout",
-      "description": "The layout section contains all layout-related configurations, including locale, margins, template, typography, etc.",
+      "description": "The layout section contains all layout-related configurations, including LaTeX, locale, margins, template, typography, etc.",
       "type": "object",
       "properties": {
+        "latex": {
+          "title": "LaTeX",
+          "description": "The LaTeX section contains LaTeX-specific settings, including fontspec package configurations.",
+          "type": "object",
+          "properties": {
+            "fontspec": {
+              "type": "object",
+              "properties": {
+                "numbers": {
+                  "title": "Fontspec numbers option",
+                  "description": "A predefined option from the available fontspec numbers choices.",
+                  "type": "string",
+                  "enum": [
+                    "Lining",
+                    "OldStyle",
+                    "Auto"
+                  ]
+                }
+              },
+              "additionalProperties": false
+            }
+          },
+          "additionalProperties": false
+        },
         "locale": {
           "title": "Locale",
           "description": "The locale section contains locale language settings, determining the language used for the resume.",
@@ -1324,7 +1348,7 @@
         },
         "typography": {
           "title": "Typography",
-          "description": "The typography section contains font settings, including font size and number styling options.",
+          "description": "The typography section contains font settings, including font size options.",
           "type": "object",
           "properties": {
             "fontSize": {
@@ -1336,22 +1360,6 @@
                 "11pt",
                 "12pt"
               ]
-            },
-            "fontspec": {
-              "type": "object",
-              "properties": {
-                "numbers": {
-                  "title": "Fontspec numbers option",
-                  "description": "A predefined option from the available fontspec numbers choices.",
-                  "type": "string",
-                  "enum": [
-                    "Lining",
-                    "OldStyle",
-                    "Auto"
-                  ]
-                }
-              },
-              "additionalProperties": false
             }
           },
           "additionalProperties": false

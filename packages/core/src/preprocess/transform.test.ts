@@ -52,7 +52,7 @@ import {
   transformProfileUrls,
   transformResumeContent,
   transformResumeLayout,
-  transformResumeLayoutTypography,
+  transformResumeLayoutLaTeX,
   transformResumeLayoutWithDefaultValues,
   transformResumeValues,
   transformSectionNames,
@@ -857,15 +857,15 @@ describe(transformResumeContent, () => {
   })
 })
 
-describe(transformResumeLayoutTypography, () => {
+describe(transformResumeLayoutLaTeX, () => {
   it('should set numbers to OldStyle for English, and Spanish resume', () => {
     for (const language of ['en', 'es'] as const) {
       const resume = cloneDeep(defaultResume)
 
       resume.layout.locale.language = language
-      transformResumeLayoutTypography(resume)
+      transformResumeLayoutLaTeX(resume)
 
-      expect(resume.layout.typography.fontspec.numbers).toEqual('OldStyle')
+      expect(resume.layout.latex.fontspec.numbers).toEqual('OldStyle')
     }
   })
 
@@ -874,44 +874,44 @@ describe(transformResumeLayoutTypography, () => {
       const resume = cloneDeep(defaultResume)
 
       resume.layout.locale.language = language
-      transformResumeLayoutTypography(resume)
+      transformResumeLayoutLaTeX(resume)
 
-      expect(resume.layout.typography.fontspec.numbers).toEqual('Lining')
+      expect(resume.layout.latex.fontspec.numbers).toEqual('Lining')
     }
   })
 
-  it('should set correct numbers when typography.fontspec.numbers is undefined', () => {
+  it('should set correct numbers when latex.fontspec.numbers is undefined', () => {
     for (const language of ['en', 'es'] as const) {
       const resume = cloneDeep(defaultResume)
       // @ts-ignore
-      resume.layout.typography.fontspec = undefined
+      resume.layout.latex = undefined
 
       resume.layout.locale.language = language
-      transformResumeLayoutTypography(resume)
+      transformResumeLayoutLaTeX(resume)
 
-      expect(resume.layout.typography.fontspec.numbers).toEqual('OldStyle')
+      expect(resume.layout.latex.fontspec.numbers).toEqual('OldStyle')
     }
   })
 
-  it('should set correct numbers when typography.fontspec.numbers is fontspectNumberStyle.Undefined', () => {
+  it('should set correct numbers when latex.fontspec.numbers is "Auto"', () => {
     for (const language of ['en', 'es'] as const) {
       const resume = cloneDeep(defaultResume)
-      resume.layout.typography.fontspec.numbers = 'Auto'
+      resume.layout.latex.fontspec.numbers = 'Auto'
 
       resume.layout.locale.language = language
-      transformResumeLayoutTypography(resume)
+      transformResumeLayoutLaTeX(resume)
 
-      expect(resume.layout.typography.fontspec.numbers).toEqual('OldStyle')
+      expect(resume.layout.latex.fontspec.numbers).toEqual('OldStyle')
     }
   })
 
-  it('should do nothing when typography.fontspec.numbers is defined', () => {
+  it('should do nothing when latex.fontspec.numbers is defined', () => {
     const resume = cloneDeep(defaultResume)
-    resume.layout.typography.fontspec.numbers = 'OldStyle'
+    resume.layout.latex.fontspec.numbers = 'OldStyle'
 
-    transformResumeLayoutTypography(resume)
+    transformResumeLayoutLaTeX(resume)
 
-    expect(resume.layout.typography.fontspec.numbers).toEqual('OldStyle')
+    expect(resume.layout.latex.fontspec.numbers).toEqual('OldStyle')
   })
 })
 
@@ -941,6 +941,8 @@ describe(transformResumeLayout, () => {
       },
       typography: {
         fontSize: '11pt',
+      },
+      latex: {
         fontspec: {
           numbers: 'Auto',
         },
@@ -957,10 +959,10 @@ describe(transformResumeLayout, () => {
 
     expect(transformResumeLayout(resume).layout).toEqual({
       ...providedLayout,
-      typography: {
-        ...providedLayout.typography,
+      latex: {
+        ...providedLayout.latex,
         fontspec: {
-          ...providedLayout.typography.fontspec,
+          ...providedLayout.latex.fontspec,
           // only set numbers to Lining for CJK resume
           numbers: 'Lining',
         },

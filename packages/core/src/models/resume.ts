@@ -465,6 +465,8 @@ export const defaultResumeLayout: ResumeLayout = {
   template: 'moderncv-banking',
   typography: {
     fontSize: FONT_SIZE_OPTIONS[0],
+  },
+  latex: {
     fontspec: {
       numbers: 'Auto',
     },

@@ -25,26 +25,30 @@
 import { z } from 'zod/v4'
 
 import { joinNonEmptyString } from '@/utils'
-import { fontSizeOptionSchema } from '../primitives'
+import { fontspecNumbersOptionSchema } from '../primitives'
 
 /**
- * A zod schema for validating typography configuration.
+ * A zod schema for validating LaTeX configuration.
  *
- * Validates font size and font specification settings including
- * number styling options.
+ * Validates LaTeX-specific settings including font specification
+ * options like number styling.
  */
-export const typographySchema = z.object({
-  typography: z
+export const latexSchema = z.object({
+  latex: z
     .object({
-      fontSize: fontSizeOptionSchema.optional(),
+      fontspec: z
+        .object({
+          numbers: fontspecNumbersOptionSchema.optional(),
+        })
+        .optional(),
     })
     .optional()
     .meta({
-      title: 'Typography',
+      title: 'LaTeX',
       description: joinNonEmptyString(
         [
-          'The typography section contains font settings,',
-          'including font size options.',
+          'The LaTeX section contains LaTeX-specific settings,',
+          'including fontspec package configurations.',
         ],
         ' '
       ),

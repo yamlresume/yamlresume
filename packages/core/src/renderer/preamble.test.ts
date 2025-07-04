@@ -166,8 +166,7 @@ describe(renderfontspecConfig, () => {
         locale: {
           language: 'en',
         },
-        typography: {
-          ...mockResume.layout.typography,
+        latex: {
           fontspec: {
             numbers: 'OldStyle',
           },
@@ -200,8 +199,7 @@ describe(renderfontspecConfig, () => {
         locale: {
           language: 'zh-hans',
         },
-        typography: {
-          ...mockResume.layout.typography,
+        latex: {
           fontspec: {
             numbers: 'Lining',
           },

@@ -640,11 +640,17 @@ export type FontspecNumbers = (typeof FONTSPEC_NUMBERS_OPTIONS)[number]
  */
 export type FontSize = (typeof FONT_SIZE_OPTIONS)[number]
 
-/** Defines typography settings like font size and number style. */
+/** Defines typography settings like font size. */
 type ResumeLayoutTypography = {
   /** Base font size for the document (e.g., "10pt", "11pt"). */
   fontSize?: string
-  /** Font specification details. */
+}
+
+/**
+ * LaTeX specific settings.
+ */
+type ResumeLayoutLaTeX = {
+  /** LaTeX fontspec package configurations. */
   fontspec?: {
     /** Style for rendering numbers (Lining or OldStyle). */
     numbers?: FontspecNumbers
@@ -671,6 +677,8 @@ type ResumeTemplate = TemplateOption
 export type ResumeLayout = {
   /** The selected template configuration. */
   template?: ResumeTemplate
+  /** LaTeX specific settings. */
+  latex?: ResumeLayoutLaTeX
   /** Page margin settings. */
   margins?: ResumeLayoutMargins
   /** Typography settings. */
