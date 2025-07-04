@@ -25,13 +25,17 @@
 import { describe, expect, it } from 'vitest'
 
 import { optionSchemaMessage } from '../primitives'
-import { validateZodErrors } from '../utils'
+import { expectSchemaMetadata, validateZodErrors } from '../utils'
 import { languagesSchema } from './languages'
 
 import { FLUENCY_OPTIONS, LANGUAGE_OPTIONS } from '@/models'
 import type { Languages } from '@/models'
 
 describe('languagesSchema', () => {
+  it('should have correct metadata', () => {
+    expectSchemaMetadata(languagesSchema.shape.languages)
+  })
+
   const language = LANGUAGE_OPTIONS[0]
   const fluency = FLUENCY_OPTIONS[0]
   const keywords = ['Keyword 1', 'Keyword 2']

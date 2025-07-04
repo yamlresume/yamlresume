@@ -23,6 +23,7 @@
  */
 import { z } from 'zod/v4'
 
+import { joinNonEmptyString } from '@/utils'
 import {
   emailSchema,
   nameSchema,
@@ -32,6 +33,26 @@ import {
 } from '../primitives'
 
 /**
+ * A zod schema for the name of a reference.
+ */
+export const referenceNameSchema = nameSchema('name').describe(
+  'The name of the reference.'
+)
+
+/**
+ * A zod schema for a relationship.
+ */
+export const relationshipSchema = sizedStringSchema(
+  'relationship',
+  2,
+  128
+).meta({
+  title: 'Relationship',
+  description: 'Your professional relationship with the reference.',
+  examples: ['Former Manager', 'Colleague', 'Professor', 'Client'],
+})
+
+/**
  * A zod schema for references.
  */
 export const referencesSchema = z.object({
@@ -39,14 +60,24 @@ export const referencesSchema = z.object({
     .array(
       z.object({
         // required fields
-        name: nameSchema('name'),
+        name: referenceNameSchema,
         summary: summarySchema,
 
         // optional fields
         email: emailSchema.optional(),
         phone: phoneSchema.optional(),
-        relationship: sizedStringSchema('relationship', 2, 128).optional(),
+        relationship: relationshipSchema.optional(),
       })
     )
-    .optional(),
+    .optional()
+    .meta({
+      title: 'References',
+      description: joinNonEmptyString(
+        [
+          'The references section contains professional contacts who can vouch for your work,',
+          'including their contact information and relationship to you.',
+        ],
+        ' '
+      ),
+    }),
 })

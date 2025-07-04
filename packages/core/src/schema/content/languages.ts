@@ -23,6 +23,7 @@
  */
 import { z } from 'zod/v4'
 
+import { joinNonEmptyString } from '@/utils'
 import {
   fluencyOptionSchema,
   keywordsSchema,
@@ -44,5 +45,15 @@ export const languagesSchema = z.object({
         keywords: keywordsSchema.optional(),
       })
     )
-    .optional(),
+    .optional()
+    .meta({
+      title: 'Languages',
+      description: joinNonEmptyString(
+        [
+          'The languages section contains your language skills and proficiency levels,',
+          'including native, fluent, and conversational abilities.',
+        ],
+        ' '
+      ),
+    }),
 })

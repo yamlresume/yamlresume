@@ -24,14 +24,34 @@
 
 import { describe, expect, it } from 'vitest'
 
-import { validateZodErrors } from '../utils'
-import { volunteerSchema } from './volunteer'
+import { expectSchemaMetadata, validateZodErrors } from '../utils'
+import {
+  volunteerOrganizationSchema,
+  volunteerPositionSchema,
+  volunteerSchema,
+} from './volunteer'
 
 import type { Volunteer } from '@/models'
 
 const summary = 'This is a summary with some text.'
 
+describe('volunteerOrganizationSchema', () => {
+  it('should have correct metadata', () => {
+    expectSchemaMetadata(volunteerOrganizationSchema)
+  })
+})
+
+describe('volunteerPositionSchema', () => {
+  it('should have correct metadata', () => {
+    expectSchemaMetadata(volunteerPositionSchema)
+  })
+})
+
 describe('volunteerSchema', () => {
+  it('should have correct metadata', () => {
+    expectSchemaMetadata(volunteerSchema.shape.volunteer)
+  })
+
   const organization = 'Volunteer Organization'
   const position = 'Volunteer Position'
   const startDate = '2020-01'

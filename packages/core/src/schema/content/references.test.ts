@@ -24,14 +24,34 @@
 
 import { describe, expect, it } from 'vitest'
 
-import { validateZodErrors } from '../utils'
-import { referencesSchema } from './references'
+import { expectSchemaMetadata, validateZodErrors } from '../utils'
+import {
+  referenceNameSchema,
+  referencesSchema,
+  relationshipSchema,
+} from './references'
 
 import type { References } from '@/models'
 
 const summary = 'This is a summary with some text.'
 
+describe('referenceNameSchema', () => {
+  it('should have correct metadata', () => {
+    expectSchemaMetadata(referenceNameSchema)
+  })
+})
+
+describe('relationshipSchema', () => {
+  it('should have correct metadata', () => {
+    expectSchemaMetadata(relationshipSchema)
+  })
+})
+
 describe('referencesSchema', () => {
+  it('should have correct metadata', () => {
+    expectSchemaMetadata(referencesSchema.shape.references)
+  })
+
   const name = 'John Doe'
   const email = 'john@example.com'
   const phone = '+1234567890'

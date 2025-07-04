@@ -24,14 +24,34 @@
 
 import { describe, expect, it } from 'vitest'
 
-import { validateZodErrors } from '../utils'
-import { publicationsSchema } from './publications'
+import { expectSchemaMetadata, validateZodErrors } from '../utils'
+import {
+  publicationNameSchema,
+  publicationsSchema,
+  publisherSchema,
+} from './publications'
 
 import type { Publications } from '@/models'
 
 const summary = 'This is a summary with some text.'
 
+describe('publicationNameSchema', () => {
+  it('should have correct metadata', () => {
+    expectSchemaMetadata(publicationNameSchema)
+  })
+})
+
+describe('publisherSchema', () => {
+  it('should have correct metadata', () => {
+    expectSchemaMetadata(publisherSchema)
+  })
+})
+
 describe('publicationsSchema', () => {
+  it('should have correct metadata', () => {
+    expectSchemaMetadata(publicationsSchema.shape.publications)
+  })
+
   const name = 'Publication Name'
   const publisher = 'Publisher Name'
   const releaseDate = '2025'

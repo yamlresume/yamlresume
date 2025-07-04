@@ -10,11 +10,13 @@
       "type": "object",
       "properties": {
         "basics": {
+          "title": "Basics",
+          "description": "The basics section contains your personal information, such as your name, email, phone number, and a brief summary.",
           "type": "object",
           "properties": {
             "name": {
               "title": "Name",
-              "description": "A name between 2 and 128 characters.",
+              "description": "Your personal name.",
               "examples": [
                 "Andy Dufrane",
                 "Xiao Hanyu",
@@ -29,6 +31,13 @@
               "$ref": "#/$defs/email"
             },
             "headline": {
+              "title": "Headline",
+              "description": "A short and catchy headline for your resume.",
+              "examples": [
+                "Full-stack software engineer",
+                "Data Scientist with a passion for Machine Learning",
+                "Product Manager driving innovation"
+              ],
               "type": "string",
               "minLength": 8,
               "maxLength": 128
@@ -49,23 +58,32 @@
           "additionalProperties": false
         },
         "education": {
+          "title": "Education",
+          "description": "The education section contains your academic background, including degrees, institutions, and relevant coursework.",
           "type": "array",
           "items": {
             "type": "object",
             "properties": {
               "area": {
+                "title": "Area",
+                "description": "Your field of study or major.",
+                "examples": [
+                  "Computer Science",
+                  "Business Administration",
+                  "Engineering",
+                  "Arts"
+                ],
                 "type": "string",
                 "minLength": 2,
                 "maxLength": 64
               },
               "institution": {
                 "title": "Institution",
-                "description": "An organization name between 2 and 128 characters.",
+                "description": "The institution that awarded the degree.",
                 "examples": [
-                  "Google Inc.",
-                  "Microsoft Corporation",
-                  "Startup XYZ",
-                  "Non-Profit Organization"
+                  "University of California, Los Angeles",
+                  "Harvard University",
+                  "Zhejiang University"
                 ],
                 "type": "string",
                 "minLength": 2,
@@ -86,7 +104,7 @@
                 ]
               },
               "startDate": {
-                "title": "startDate",
+                "title": "Start Date",
                 "description": "A valid date string that can be parsed by `Date.parse`.",
                 "examples": [
                   "2025-01-01",
@@ -99,6 +117,25 @@
                 "maxLength": 32
               },
               "courses": {
+                "title": "Courses",
+                "description": "A list of relevant courses you have taken.",
+                "examples": [
+                  [
+                    "Data Structures",
+                    "Algorithms",
+                    "Database Systems"
+                  ],
+                  [
+                    "Marketing",
+                    "Finance",
+                    "Operations Management"
+                  ],
+                  [
+                    "Calculus",
+                    "Physics",
+                    "Chemistry"
+                  ]
+                ],
                 "type": "array",
                 "items": {
                   "type": "string",
@@ -107,7 +144,7 @@
                 }
               },
               "endDate": {
-                "title": "endDate",
+                "title": "End Date",
                 "description": "A valid date string that can be parsed by `Date.parse`.",
                 "examples": [
                   "2025-01-01",
@@ -123,6 +160,15 @@
                 "$ref": "#/$defs/summary"
               },
               "score": {
+                "title": "Score",
+                "description": "Your GPA, grade, or other academic score.",
+                "examples": [
+                  "3.8",
+                  "3.8/4.0",
+                  "A+",
+                  "95%",
+                  "First Class Honours"
+                ],
                 "type": "string",
                 "minLength": 2,
                 "maxLength": 32
@@ -141,18 +187,19 @@
           }
         },
         "awards": {
+          "title": "Awards",
+          "description": "The awards section contains your achievements and recognitions, including awards, honors, and special acknowledgments.",
           "type": "array",
           "items": {
             "type": "object",
             "properties": {
               "awarder": {
                 "title": "Awarder",
-                "description": "An organization name between 2 and 128 characters.",
+                "description": "The organization or institution that presented the award.",
                 "examples": [
-                  "Google Inc.",
-                  "Microsoft Corporation",
-                  "Startup XYZ",
-                  "Non-Profit Organization"
+                  "Academy Awards",
+                  "Tech Conference",
+                  "Microsoft Scholarship"
                 ],
                 "type": "string",
                 "minLength": 2,
@@ -160,19 +207,18 @@
               },
               "title": {
                 "title": "Title",
-                "description": "A title between 2 and 128 characters.",
+                "description": "The title of the award.",
                 "examples": [
-                  "Andy Dufrane",
-                  "Xiao Hanyu",
-                  "Jane Smith",
-                  "Dr. Robert John"
+                  "Dean's List",
+                  "Outstanding Student",
+                  "Best Supporting Engineer"
                 ],
                 "type": "string",
                 "minLength": 2,
                 "maxLength": 128
               },
               "date": {
-                "title": "date",
+                "title": "Date",
                 "description": "A valid date string that can be parsed by `Date.parse`.",
                 "examples": [
                   "2025-01-01",
@@ -196,18 +242,20 @@
           }
         },
         "certificates": {
+          "title": "Certificates",
+          "description": "The certificates section contains your professional certifications, including training programs and industry-recognized credentials.",
           "type": "array",
           "items": {
             "type": "object",
             "properties": {
               "issuer": {
                 "title": "Issuer",
-                "description": "An organization name between 2 and 128 characters.",
+                "description": "The organization that issued the certificate.",
                 "examples": [
-                  "Google Inc.",
-                  "Microsoft Corporation",
-                  "Startup XYZ",
-                  "Non-Profit Organization"
+                  "AWS",
+                  "Microsoft",
+                  "Coursera",
+                  "Google Cloud"
                 ],
                 "type": "string",
                 "minLength": 2,
@@ -215,7 +263,7 @@
               },
               "name": {
                 "title": "Name",
-                "description": "A name between 2 and 128 characters.",
+                "description": "The name of the certificate.",
                 "examples": [
                   "Andy Dufrane",
                   "Xiao Hanyu",
@@ -227,7 +275,7 @@
                 "maxLength": 128
               },
               "date": {
-                "title": "date",
+                "title": "Date",
                 "description": "A valid date string that can be parsed by `Date.parse`.",
                 "examples": [
                   "2025-01-01",
@@ -251,13 +299,15 @@
           }
         },
         "interests": {
+          "title": "Interests",
+          "description": "The interests section contains your personal and professional interests, including hobbies, activities, and areas of passion.",
           "type": "array",
           "items": {
             "type": "object",
             "properties": {
               "name": {
                 "title": "Name",
-                "description": "A name between 2 and 128 characters.",
+                "description": "The name of the interest.",
                 "examples": [
                   "Andy Dufrane",
                   "Xiao Hanyu",
@@ -279,6 +329,8 @@
           }
         },
         "languages": {
+          "title": "Languages",
+          "description": "The languages section contains your language skills and proficiency levels, including native, fluent, and conversational abilities.",
           "type": "array",
           "items": {
             "type": "object",
@@ -389,14 +441,31 @@
           }
         },
         "location": {
+          "title": "Location",
+          "description": "The location section contains your geographical information, such as city, address, country, and postal code.",
           "type": "object",
           "properties": {
             "city": {
+              "title": "City",
+              "description": "The name of the city where you are located.",
+              "examples": [
+                "San Francisco",
+                "New York",
+                "London",
+                "Tokyo"
+              ],
               "type": "string",
               "minLength": 2,
               "maxLength": 64
             },
             "address": {
+              "title": "Address",
+              "description": "Your full address including street, apartment, etc.",
+              "examples": [
+                "123 Main Street, Apt 4B",
+                "456 Oak Avenue",
+                "789 Pine Road, Suite 100"
+              ],
               "type": "string",
               "minLength": 4,
               "maxLength": 256
@@ -659,11 +728,27 @@
               ]
             },
             "postalCode": {
+              "title": "Postal Code",
+              "description": "Your postal or ZIP code.",
+              "examples": [
+                "94102",
+                "10001",
+                "SW1A 1AA",
+                "100-0001"
+              ],
               "type": "string",
               "minLength": 2,
               "maxLength": 16
             },
             "region": {
+              "title": "Region",
+              "description": "Your state, province, or region.",
+              "examples": [
+                "California",
+                "New York",
+                "England",
+                "Tokyo"
+              ],
               "type": "string",
               "minLength": 2,
               "maxLength": 64
@@ -675,6 +760,8 @@
           "additionalProperties": false
         },
         "profiles": {
+          "title": "Profiles",
+          "description": "The profiles section contains your social media and professional network profiles, such as LinkedIn, GitHub, Twitter, etc.",
           "type": "array",
           "items": {
             "type": "object",
@@ -710,6 +797,14 @@
                 ]
               },
               "username": {
+                "title": "Username",
+                "description": "Your username or handle on the social network.",
+                "examples": [
+                  "john_doe",
+                  "jane.smith",
+                  "dev_engineer",
+                  "designer_123"
+                ],
                 "type": "string",
                 "minLength": 2,
                 "maxLength": 64
@@ -726,13 +821,15 @@
           }
         },
         "projects": {
+          "title": "Projects",
+          "description": "The projects section contains your personal and professional projects, including technical details, timelines, and outcomes.",
           "type": "array",
           "items": {
             "type": "object",
             "properties": {
               "name": {
                 "title": "Name",
-                "description": "A name between 2 and 128 characters.",
+                "description": "The name of the project.",
                 "examples": [
                   "Andy Dufrane",
                   "Xiao Hanyu",
@@ -744,7 +841,7 @@
                 "maxLength": 128
               },
               "startDate": {
-                "title": "startDate",
+                "title": "Start Date",
                 "description": "A valid date string that can be parsed by `Date.parse`.",
                 "examples": [
                   "2025-01-01",
@@ -760,12 +857,19 @@
                 "$ref": "#/$defs/summary"
               },
               "description": {
+                "title": "Project Description",
+                "description": "A detailed description of the project and your role.",
+                "examples": [
+                  "Led development of a full-stack web application",
+                  "Designed and implemented REST API endpoints",
+                  "Managed team of 5 developers for mobile app development"
+                ],
                 "type": "string",
                 "minLength": 4,
                 "maxLength": 128
               },
               "endDate": {
-                "title": "endDate",
+                "title": "End Date",
                 "description": "A valid date string that can be parsed by `Date.parse`.",
                 "examples": [
                   "2025-01-01",
@@ -793,13 +897,15 @@
           }
         },
         "publications": {
+          "title": "Publications",
+          "description": "The publications section contains your academic and professional publications, including papers, articles, and research works.",
           "type": "array",
           "items": {
             "type": "object",
             "properties": {
               "name": {
                 "title": "Name",
-                "description": "A name between 2 and 128 characters.",
+                "description": "The name of the publication.",
                 "examples": [
                   "Andy Dufrane",
                   "Xiao Hanyu",
@@ -812,19 +918,19 @@
               },
               "publisher": {
                 "title": "Publisher",
-                "description": "An organization name between 2 and 128 characters.",
+                "description": "The organization that published the work.",
                 "examples": [
-                  "Google Inc.",
-                  "Microsoft Corporation",
-                  "Startup XYZ",
-                  "Non-Profit Organization"
+                  "ACM",
+                  "IEEE",
+                  "Springer",
+                  "Nature Publishing Group"
                 ],
                 "type": "string",
                 "minLength": 2,
                 "maxLength": 128
               },
               "releaseDate": {
-                "title": "Release date",
+                "title": "Release Date",
                 "description": "A valid date string that can be parsed by `Date.parse`.",
                 "examples": [
                   "2025-01-01",
@@ -851,13 +957,15 @@
           }
         },
         "references": {
+          "title": "References",
+          "description": "The references section contains professional contacts who can vouch for your work, including their contact information and relationship to you.",
           "type": "array",
           "items": {
             "type": "object",
             "properties": {
               "name": {
                 "title": "Name",
-                "description": "A name between 2 and 128 characters.",
+                "description": "The name of the reference.",
                 "examples": [
                   "Andy Dufrane",
                   "Xiao Hanyu",
@@ -878,6 +986,14 @@
                 "$ref": "#/$defs/phone"
               },
               "relationship": {
+                "title": "Relationship",
+                "description": "Your professional relationship with the reference.",
+                "examples": [
+                  "Former Manager",
+                  "Colleague",
+                  "Professor",
+                  "Client"
+                ],
                 "type": "string",
                 "minLength": 2,
                 "maxLength": 128
@@ -891,6 +1007,8 @@
           }
         },
         "skills": {
+          "title": "Skills",
+          "description": "The skills section contains your technical and professional skills, including proficiency levels and related keywords.",
           "type": "array",
           "items": {
             "type": "object",
@@ -910,7 +1028,7 @@
               },
               "name": {
                 "title": "Name",
-                "description": "A name between 2 and 128 characters.",
+                "description": "The name of the skill.",
                 "examples": [
                   "Andy Dufrane",
                   "Xiao Hanyu",
@@ -933,30 +1051,40 @@
           }
         },
         "volunteer": {
+          "title": "Volunteer",
+          "description": "The volunteer section contains your community service and volunteer work, including organizations, roles, and contributions.",
           "type": "array",
           "items": {
             "type": "object",
             "properties": {
               "organization": {
-                "title": "Organization",
-                "description": "An organization name between 2 and 128 characters.",
+                "title": "Volunteer Organization",
+                "description": "The organization where you volunteered.",
                 "examples": [
-                  "Google Inc.",
-                  "Microsoft Corporation",
-                  "Startup XYZ",
-                  "Non-Profit Organization"
+                  "Red Cross",
+                  "Local Food Bank",
+                  "Animal Shelter",
+                  "Community Center"
                 ],
                 "type": "string",
                 "minLength": 2,
                 "maxLength": 128
               },
               "position": {
+                "title": "Volunteer Position",
+                "description": "Your role or position in the volunteer organization.",
+                "examples": [
+                  "Event Coordinator",
+                  "Tutor",
+                  "Fundraiser",
+                  "Board Member"
+                ],
                 "type": "string",
                 "minLength": 2,
                 "maxLength": 64
               },
               "startDate": {
-                "title": "startDate",
+                "title": "Start Date",
                 "description": "A valid date string that can be parsed by `Date.parse`.",
                 "examples": [
                   "2025-01-01",
@@ -972,7 +1100,7 @@
                 "$ref": "#/$defs/summary"
               },
               "endDate": {
-                "title": "endDate",
+                "title": "End Date",
                 "description": "A valid date string that can be parsed by `Date.parse`.",
                 "examples": [
                   "2025-01-01",
@@ -998,30 +1126,40 @@
           }
         },
         "work": {
+          "title": "Work",
+          "description": "The work section contains your professional experience, including job titles, companies, and responsibilities.",
           "type": "array",
           "items": {
             "type": "object",
             "properties": {
               "name": {
-                "title": "Name",
-                "description": "An organization name between 2 and 128 characters.",
+                "title": "Company Name",
+                "description": "The name of the company or organization you worked for.",
                 "examples": [
-                  "Google Inc.",
-                  "Microsoft Corporation",
-                  "Startup XYZ",
-                  "Non-Profit Organization"
+                  "Google",
+                  "Microsoft",
+                  "Apple",
+                  "Amazon"
                 ],
                 "type": "string",
                 "minLength": 2,
                 "maxLength": 128
               },
               "position": {
+                "title": "Position",
+                "description": "Your job title or position at the company.",
+                "examples": [
+                  "Software Engineer",
+                  "Product Manager",
+                  "Senior Developer",
+                  "UX Designer"
+                ],
                 "type": "string",
                 "minLength": 2,
                 "maxLength": 64
               },
               "startDate": {
-                "title": "startDate",
+                "title": "Start Date",
                 "description": "A valid date string that can be parsed by `Date.parse`.",
                 "examples": [
                   "2025-01-01",
@@ -1037,7 +1175,7 @@
                 "$ref": "#/$defs/summary"
               },
               "endDate": {
-                "title": "endDate",
+                "title": "End Date",
                 "description": "A valid date string that can be parsed by `Date.parse`.",
                 "examples": [
                   "2025-01-01",

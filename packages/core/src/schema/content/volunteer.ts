@@ -23,6 +23,7 @@
  */
 import { z } from 'zod/v4'
 
+import { joinNonEmptyString } from '@/utils'
 import {
   dateSchema,
   organizationSchema,
@@ -32,6 +33,35 @@ import {
 } from '../primitives'
 
 /**
+ * A zod schema for a volunteer organization.
+ */
+export const volunteerOrganizationSchema = organizationSchema(
+  'organization'
+).meta({
+  title: 'Volunteer Organization',
+  description: 'The organization where you volunteered.',
+  examples: [
+    'Red Cross',
+    'Local Food Bank',
+    'Animal Shelter',
+    'Community Center',
+  ],
+})
+
+/**
+ * A zod schema for a volunteer position.
+ */
+export const volunteerPositionSchema = sizedStringSchema(
+  'position',
+  2,
+  64
+).meta({
+  title: 'Volunteer Position',
+  description: 'Your role or position in the volunteer organization.',
+  examples: ['Event Coordinator', 'Tutor', 'Fundraiser', 'Board Member'],
+})
+
+/**
  * A zod schema for volunteer.
  */
 export const volunteerSchema = z.object({
@@ -39,8 +69,8 @@ export const volunteerSchema = z.object({
     .array(
       z.object({
         // required fields
-        organization: organizationSchema('organization'),
-        position: sizedStringSchema('position', 2, 64),
+        organization: volunteerOrganizationSchema,
+        position: volunteerPositionSchema,
         startDate: dateSchema('startDate'),
         summary: summarySchema,
 
@@ -49,5 +79,15 @@ export const volunteerSchema = z.object({
         url: urlSchema.optional(),
       })
     )
-    .optional(),
+    .optional()
+    .meta({
+      title: 'Volunteer',
+      description: joinNonEmptyString(
+        [
+          'The volunteer section contains your community service and volunteer work,',
+          'including organizations, roles, and contributions.',
+        ],
+        ' '
+      ),
+    }),
 })

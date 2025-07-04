@@ -23,6 +23,7 @@
  */
 import { z } from 'zod/v4'
 
+import { joinNonEmptyString } from '@/utils'
 import {
   dateSchema,
   keywordsSchema,
@@ -33,6 +34,30 @@ import {
 } from '../primitives'
 
 /**
+ * A zod schema for the name of a project.
+ */
+export const projectNameSchema = nameSchema('name').describe(
+  'The name of the project.'
+)
+
+/**
+ * A zod schema for a project description.
+ */
+export const projectDescriptionSchema = sizedStringSchema(
+  'description',
+  4,
+  128
+).meta({
+  title: 'Project Description',
+  description: 'A detailed description of the project and your role.',
+  examples: [
+    'Led development of a full-stack web application',
+    'Designed and implemented REST API endpoints',
+    'Managed team of 5 developers for mobile app development',
+  ],
+})
+
+/**
  * A zod schema for projects
  */
 export const projectsSchema = z.object({
@@ -40,16 +65,26 @@ export const projectsSchema = z.object({
     .array(
       z.object({
         // required fields
-        name: nameSchema('name'),
+        name: projectNameSchema,
         startDate: dateSchema('startDate'),
         summary: summarySchema,
 
         // optional fields
-        description: sizedStringSchema('description', 4, 128).optional(),
+        description: projectDescriptionSchema.optional(),
         endDate: dateSchema('endDate').optional(),
         keywords: keywordsSchema.optional(),
         url: urlSchema.optional(),
       })
     )
-    .optional(),
+    .optional()
+    .meta({
+      title: 'Projects',
+      description: joinNonEmptyString(
+        [
+          'The projects section contains your personal and professional projects,',
+          'including technical details, timelines, and outcomes.',
+        ],
+        ' '
+      ),
+    }),
 })

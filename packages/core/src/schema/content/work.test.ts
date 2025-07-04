@@ -24,12 +24,28 @@
 
 import { describe, expect, it } from 'vitest'
 
-import { validateZodErrors } from '../utils'
-import { workSchema } from './work'
+import { expectSchemaMetadata, validateZodErrors } from '../utils'
+import { companyNameSchema, positionSchema, workSchema } from './work'
 
 import type { Work } from '@/models'
 
+describe('companyNameSchema', () => {
+  it('should have correct metadata', () => {
+    expectSchemaMetadata(companyNameSchema)
+  })
+})
+
+describe('positionSchema', () => {
+  it('should have correct metadata', () => {
+    expectSchemaMetadata(positionSchema)
+  })
+})
+
 describe('workSchema', () => {
+  it('should have correct metadata', () => {
+    expectSchemaMetadata(workSchema.shape.work)
+  })
+
   const name = 'Test Company'
   const position = 'Software Engineer'
   const startDate = '2020-01-01'

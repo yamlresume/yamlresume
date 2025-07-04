@@ -23,7 +23,15 @@
  */
 import { z } from 'zod/v4'
 
+import { joinNonEmptyString } from '@/utils'
 import { keywordsSchema, levelOptionSchema, nameSchema } from '../primitives'
+
+/**
+ * A zod schema for the name of a skill.
+ */
+export const skillNameSchema = nameSchema('name').describe(
+  'The name of the skill.'
+)
 
 /**
  * A zod schema for skills
@@ -34,11 +42,21 @@ export const skillsSchema = z.object({
       z.object({
         // required fields
         level: levelOptionSchema,
-        name: nameSchema('name'),
+        name: skillNameSchema,
 
         // optional fields
         keywords: keywordsSchema.optional(),
       })
     )
-    .optional(),
+    .optional()
+    .meta({
+      title: 'Skills',
+      description: joinNonEmptyString(
+        [
+          'The skills section contains your technical and professional skills,',
+          'including proficiency levels and related keywords.',
+        ],
+        ' '
+      ),
+    }),
 })

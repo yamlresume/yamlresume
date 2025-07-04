@@ -23,6 +23,7 @@
  */
 import { z } from 'zod/v4'
 
+import { joinNonEmptyString } from '@/utils'
 import {
   dateSchema,
   nameSchema,
@@ -32,6 +33,22 @@ import {
 } from '../primitives'
 
 /**
+ * A zod schema for the name of a publication.
+ */
+export const publicationNameSchema = nameSchema('name').describe(
+  'The name of the publication.'
+)
+
+/**
+ * A zod schema for a publisher.
+ */
+export const publisherSchema = organizationSchema('publisher').meta({
+  title: 'Publisher',
+  description: 'The organization that published the work.',
+  examples: ['ACM', 'IEEE', 'Springer', 'Nature Publishing Group'],
+})
+
+/**
  * A zod schema for publications.
  */
 export const publicationsSchema = z.object({
@@ -39,8 +56,8 @@ export const publicationsSchema = z.object({
     .array(
       z.object({
         // required fields
-        name: nameSchema('name'),
-        publisher: organizationSchema('publisher'),
+        name: publicationNameSchema,
+        publisher: publisherSchema,
 
         // optional fields
         releaseDate: dateSchema('Release date').optional(),
@@ -48,5 +65,15 @@ export const publicationsSchema = z.object({
         url: urlSchema.optional(),
       })
     )
-    .optional(),
+    .optional()
+    .meta({
+      title: 'Publications',
+      description: joinNonEmptyString(
+        [
+          'The publications section contains your academic and professional publications,',
+          'including papers, articles, and research works.',
+        ],
+        ' '
+      ),
+    }),
 })

@@ -24,12 +24,22 @@
 
 import { describe, expect, it } from 'vitest'
 
-import { validateZodErrors } from '../utils'
-import { skillsSchema } from './skills'
+import { expectSchemaMetadata, validateZodErrors } from '../utils'
+import { skillNameSchema, skillsSchema } from './skills'
 
 import type { Skills } from '@/models'
 
+describe('skillNameSchema', () => {
+  it('should have correct metadata', () => {
+    expectSchemaMetadata(skillNameSchema)
+  })
+})
+
 describe('skillsSchema', () => {
+  it('should have correct metadata', () => {
+    expectSchemaMetadata(skillsSchema.shape.skills)
+  })
+
   const name = 'JavaScript'
   const level = 'Beginner'
   const keywords = ['React', 'Node.js']

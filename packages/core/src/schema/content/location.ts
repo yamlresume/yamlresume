@@ -23,7 +23,48 @@
  */
 import { z } from 'zod/v4'
 
+import { joinNonEmptyString } from '@/utils'
 import { countryOptionSchema, sizedStringSchema } from '../primitives'
+
+/**
+ * A zod schema for a city.
+ */
+export const citySchema = sizedStringSchema('city', 2, 64).meta({
+  title: 'City',
+  description: 'The name of the city where you are located.',
+  examples: ['San Francisco', 'New York', 'London', 'Tokyo'],
+})
+
+/**
+ * A zod schema for an address.
+ */
+export const addressSchema = sizedStringSchema('address', 4, 256).meta({
+  title: 'Address',
+  description: 'Your full address including street, apartment, etc.',
+  examples: [
+    '123 Main Street, Apt 4B',
+    '456 Oak Avenue',
+    '789 Pine Road, Suite 100',
+  ],
+})
+
+/**
+ * A zod schema for a postal code.
+ */
+export const postalCodeSchema = sizedStringSchema('postalCode', 2, 16).meta({
+  title: 'Postal Code',
+  description: 'Your postal or ZIP code.',
+  examples: ['94102', '10001', 'SW1A 1AA', '100-0001'],
+})
+
+/**
+ * A zod schema for a region.
+ */
+export const regionSchema = sizedStringSchema('region', 2, 64).meta({
+  title: 'Region',
+  description: 'Your state, province, or region.',
+  examples: ['California', 'New York', 'England', 'Tokyo'],
+})
 
 /**
  * A zod schema for location.
@@ -32,13 +73,23 @@ export const locationSchema = z.object({
   location: z
     .object({
       // required fields
-      city: sizedStringSchema('city', 2, 64),
+      city: citySchema,
 
       // optional fields
-      address: sizedStringSchema('address', 4, 256).optional(),
+      address: addressSchema.optional(),
       country: countryOptionSchema.optional(),
-      postalCode: sizedStringSchema('postalCode', 2, 16).optional(),
-      region: sizedStringSchema('region', 2, 64).optional(),
+      postalCode: postalCodeSchema.optional(),
+      region: regionSchema.optional(),
     })
-    .optional(),
+    .optional()
+    .meta({
+      title: 'Location',
+      description: joinNonEmptyString(
+        [
+          'The location section contains your geographical information,',
+          'such as city, address, country, and postal code.',
+        ],
+        ' '
+      ),
+    }),
 })

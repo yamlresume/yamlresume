@@ -23,6 +23,7 @@
  */
 import { z } from 'zod/v4'
 
+import { joinNonEmptyString } from '@/utils'
 import {
   emailSchema,
   nameSchema,
@@ -33,33 +34,57 @@ import {
 } from '../primitives'
 
 /**
+ * A zod schema for a headline.
+ */
+export const headlineSchema = sizedStringSchema('headline', 8, 128).meta({
+  title: 'Headline',
+  description: 'A short and catchy headline for your resume.',
+  examples: [
+    'Full-stack software engineer',
+    'Data Scientist with a passion for Machine Learning',
+    'Product Manager driving innovation',
+  ],
+})
+
+/**
  * A zod schema for basics.
  */
 export const basicsSchema = z.object({
-  basics: z.object(
-    {
-      // required fields
-      name: nameSchema('name'),
+  basics: z
+    .object(
+      {
+        // required fields
+        name: nameSchema('name').describe('Your personal name.'),
 
-      // optional fields
-      email: emailSchema.optional(),
-      headline: sizedStringSchema('headline', 8, 128).optional(),
-      phone: phoneSchema.optional(),
-      summary: summarySchema.optional(),
-      url: urlSchema.optional(),
-    },
-    {
-      error: (issue) => {
-        if (issue.input === undefined) {
-          return {
-            message: 'basics is required.',
-          }
-        }
-
-        return {
-          message: issue.message,
-        }
+        // optional fields
+        email: emailSchema.optional(),
+        headline: headlineSchema.optional(),
+        phone: phoneSchema.optional(),
+        summary: summarySchema.optional(),
+        url: urlSchema.optional(),
       },
-    }
-  ),
+      {
+        error: (issue) => {
+          if (issue.input === undefined) {
+            return {
+              message: 'basics is required.',
+            }
+          }
+
+          return {
+            message: issue.message,
+          }
+        },
+      }
+    )
+    .meta({
+      title: 'Basics',
+      description: joinNonEmptyString(
+        [
+          'The basics section contains your personal information,',
+          'such as your name, email, phone number, and a brief summary.',
+        ],
+        ' '
+      ),
+    }),
 })

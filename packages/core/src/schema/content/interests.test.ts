@@ -24,12 +24,22 @@
 
 import { describe, expect, it } from 'vitest'
 
-import { validateZodErrors } from '../utils'
-import { interestsSchema } from './interests'
+import { expectSchemaMetadata, validateZodErrors } from '../utils'
+import { interestNameSchema, interestsSchema } from './interests'
 
 import type { Interests } from '@/models'
 
+describe('interestNameSchema', () => {
+  it('should have correct metadata', () => {
+    expectSchemaMetadata(interestNameSchema)
+  })
+})
+
 describe('interestsSchema', () => {
+  it('should have correct metadata', () => {
+    expectSchemaMetadata(interestsSchema.shape.interests)
+  })
+
   const keywords = ['Keyword 1', 'Keyword 2']
   const name = 'Interest name'
 

@@ -23,11 +23,21 @@
  */
 import { z } from 'zod/v4'
 
+import { joinNonEmptyString } from '@/utils'
 import {
   networkOptionSchema,
   sizedStringSchema,
   urlSchema,
 } from '../primitives'
+
+/**
+ * A zod schema for a username.
+ */
+export const usernameSchema = sizedStringSchema('username', 2, 64).meta({
+  title: 'Username',
+  description: 'Your username or handle on the social network.',
+  examples: ['john_doe', 'jane.smith', 'dev_engineer', 'designer_123'],
+})
 
 /**
  * A zod schema for profiles.
@@ -38,11 +48,21 @@ export const profilesSchema = z.object({
       z.object({
         // required fields
         network: networkOptionSchema,
-        username: sizedStringSchema('username', 2, 64),
+        username: usernameSchema,
 
         // optional fields
         url: urlSchema.optional(),
       })
     )
-    .optional(),
+    .optional()
+    .meta({
+      title: 'Profiles',
+      description: joinNonEmptyString(
+        [
+          'The profiles section contains your social media and professional network profiles,',
+          'such as LinkedIn, GitHub, Twitter, etc.',
+        ],
+        ' '
+      ),
+    }),
 })

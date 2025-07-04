@@ -23,6 +23,7 @@
  */
 import { z } from 'zod/v4'
 
+import { joinNonEmptyString } from '@/utils'
 import {
   dateSchema,
   degreeOptionSchema,
@@ -33,36 +34,98 @@ import {
 } from '../primitives'
 
 /**
+ * A zod schema for an area of study.
+ */
+export const areaSchema = sizedStringSchema('area', 2, 64).meta({
+  title: 'Area',
+  description: 'Your field of study or major.',
+  examples: [
+    'Computer Science',
+    'Business Administration',
+    'Engineering',
+    'Arts',
+  ],
+})
+
+/**
+ * A zod schema for courses.
+ */
+export const coursesSchema = z
+  .array(sizedStringSchema('courses', 2, 128))
+  .meta({
+    title: 'Courses',
+    description: 'A list of relevant courses you have taken.',
+    examples: [
+      ['Data Structures', 'Algorithms', 'Database Systems'],
+      ['Marketing', 'Finance', 'Operations Management'],
+      ['Calculus', 'Physics', 'Chemistry'],
+    ],
+  })
+
+/**
+ * A zod schema for an institution.
+ */
+export const institutionSchema = organizationSchema('institution').meta({
+  title: 'Institution',
+  description: 'The institution that awarded the degree.',
+  examples: [
+    'University of California, Los Angeles',
+    'Harvard University',
+    'Zhejiang University',
+  ],
+})
+
+/**
+ * A zod schema for a score.
+ */
+export const scoreSchema = sizedStringSchema('score', 2, 32).meta({
+  title: 'Score',
+  description: 'Your GPA, grade, or other academic score.',
+  examples: ['3.8', '3.8/4.0', 'A+', '95%', 'First Class Honours'],
+})
+
+/**
  * A zod schema for education.
  */
 export const educationSchema = z.object({
-  education: z.array(
-    z.object({
-      // required fields
-      area: sizedStringSchema('area', 2, 64),
-      institution: organizationSchema('institution'),
-      degree: degreeOptionSchema,
-      startDate: dateSchema('startDate'),
+  education: z
+    .array(
+      z.object({
+        // required fields
+        area: areaSchema,
+        institution: institutionSchema,
+        degree: degreeOptionSchema,
+        startDate: dateSchema('startDate'),
 
-      // optional fields
-      courses: z.array(sizedStringSchema('courses', 2, 128)).optional(),
-      endDate: dateSchema('endDate').optional(),
-      summary: summarySchema.optional(),
-      score: sizedStringSchema('score', 2, 32).optional(),
-      url: urlSchema.optional(),
-    }),
-    {
-      error: (issue) => {
-        if (issue.input === undefined) {
-          return {
-            message: 'education is required.',
+        // optional fields
+        courses: coursesSchema.optional(),
+        endDate: dateSchema('endDate').optional(),
+        summary: summarySchema.optional(),
+        score: scoreSchema.optional(),
+        url: urlSchema.optional(),
+      }),
+      {
+        error: (issue) => {
+          if (issue.input === undefined) {
+            return {
+              message: 'education is required.',
+            }
           }
-        }
 
-        return {
-          message: issue.message,
-        }
-      },
-    }
-  ),
+          return {
+            message: issue.message,
+          }
+        },
+      }
+    )
+    .meta({
+      title: 'Education',
+      description: joinNonEmptyString(
+        [
+          'The education section contains your academic background,',
+          'including degrees, institutions, and relevant coursework.',
+        ],
+        ' '
+      ),
+    }),
 })

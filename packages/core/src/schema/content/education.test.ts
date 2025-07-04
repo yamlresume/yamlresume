@@ -24,14 +24,48 @@
 
 import { describe, expect, it } from 'vitest'
 
-import { validateZodErrors } from '../utils'
-import { educationSchema } from './education'
+import { expectSchemaMetadata, validateZodErrors } from '../utils'
+import {
+  areaSchema,
+  coursesSchema,
+  educationSchema,
+  institutionSchema,
+  scoreSchema,
+} from './education'
 
 import type { Education } from '@/models'
 
 const summary = 'This is a summary with some text.'
 
+describe('areaSchema', () => {
+  it('should have correct metadata', () => {
+    expectSchemaMetadata(areaSchema)
+  })
+})
+
+describe('coursesSchema', () => {
+  it('should have correct metadata', () => {
+    expectSchemaMetadata(coursesSchema)
+  })
+})
+
+describe('institutionSchema', () => {
+  it('should have correct metadata', () => {
+    expectSchemaMetadata(institutionSchema)
+  })
+})
+
+describe('scoreSchema', () => {
+  it('should have correct metadata', () => {
+    expectSchemaMetadata(scoreSchema)
+  })
+})
+
 describe('educationSchema', () => {
+  it('should have correct metadata', () => {
+    expectSchemaMetadata(educationSchema.shape.education)
+  })
+
   const area = 'Study area'
   const courses = ['Course 1', 'Course 2']
   const endDate = '2025'

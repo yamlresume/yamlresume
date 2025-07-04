@@ -23,12 +23,31 @@
  */
 import { z } from 'zod/v4'
 
+import { joinNonEmptyString } from '@/utils'
 import {
   dateSchema,
   nameSchema,
   organizationSchema,
   summarySchema,
 } from '../primitives'
+
+/**
+ * A zod schema for an awarder.
+ */
+export const awarderSchema = organizationSchema('awarder').meta({
+  title: 'Awarder',
+  description: 'The organization or institution that presented the award.',
+  examples: ['Academy Awards', 'Tech Conference', 'Microsoft Scholarship'],
+})
+
+/**
+ * A zod schema for the title of an award.
+ */
+export const titleSchema = nameSchema('title').meta({
+  title: 'Title',
+  description: 'The title of the award.',
+  examples: ["Dean's List", 'Outstanding Student', 'Best Supporting Engineer'],
+})
 
 /**
  * A zod schema for awards.
@@ -38,13 +57,23 @@ export const awardsSchema = z.object({
     .array(
       z.object({
         // required fields
-        awarder: organizationSchema('awarder'),
-        title: nameSchema('title'),
+        awarder: awarderSchema,
+        title: titleSchema,
 
         // optional fields
         date: dateSchema('date').optional(),
         summary: summarySchema.optional(),
       })
     )
-    .optional(),
+    .optional()
+    .meta({
+      title: 'Awards',
+      description: joinNonEmptyString(
+        [
+          'The awards section contains your achievements and recognitions,',
+          'including awards, honors, and special acknowledgments.',
+        ],
+        ' '
+      ),
+    }),
 })

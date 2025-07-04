@@ -24,14 +24,34 @@
 
 import { describe, expect, it } from 'vitest'
 
-import { validateZodErrors } from '../utils'
-import { projectsSchema } from './projects'
+import { expectSchemaMetadata, validateZodErrors } from '../utils'
+import {
+  projectDescriptionSchema,
+  projectNameSchema,
+  projectsSchema,
+} from './projects'
 
 import type { Projects } from '@/models'
 
 const summary = 'This is a summary with some text.'
 
+describe('projectNameSchema', () => {
+  it('should have correct metadata', () => {
+    expectSchemaMetadata(projectNameSchema)
+  })
+})
+
+describe('projectDescriptionSchema', () => {
+  it('should have correct metadata', () => {
+    expectSchemaMetadata(projectDescriptionSchema)
+  })
+})
+
 describe('projectsSchema', () => {
+  it('should have correct metadata', () => {
+    expectSchemaMetadata(projectsSchema.shape.projects)
+  })
+
   const description = 'Built a scalable web application'
   const endDate = '2023-06'
   const keywords = ['react', 'typescript', 'node']

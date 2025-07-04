@@ -21,7 +21,7 @@
  * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
  * IN THE SOFTWARE.
  */
-import { capitalize } from 'lodash-es'
+import { capitalize, startCase } from 'lodash-es'
 import { z } from 'zod/v4'
 
 import {
@@ -258,7 +258,7 @@ export const dateSchema = (date: string) =>
       }
     })
     .meta({
-      title: `${date}`,
+      title: startCase(date),
       description: 'A valid date string that can be parsed by `Date.parse`.',
       examples: [
         '2025-01-01',

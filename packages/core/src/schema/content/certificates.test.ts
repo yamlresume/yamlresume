@@ -24,12 +24,22 @@
 
 import { describe, expect, it } from 'vitest'
 
-import { validateZodErrors } from '../utils'
-import { certificatesSchema } from './certificates'
+import { expectSchemaMetadata, validateZodErrors } from '../utils'
+import { certificatesSchema, issuerSchema } from './certificates'
 
 import type { Certificates } from '@/models'
 
+describe('issuerSchema', () => {
+  it('should have correct metadata', () => {
+    expectSchemaMetadata(issuerSchema)
+  })
+})
+
 describe('certificatesSchema', () => {
+  it('should have correct metadata', () => {
+    expectSchemaMetadata(certificatesSchema.shape.certificates)
+  })
+
   const date = '2025'
   const issuer = 'Organization'
   const name = 'Certificate name'

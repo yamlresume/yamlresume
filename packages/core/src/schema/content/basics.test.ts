@@ -24,14 +24,24 @@
 
 import { describe, expect, it } from 'vitest'
 
-import { validateZodErrors } from '../utils'
-import { basicsSchema } from './basics'
+import { expectSchemaMetadata, validateZodErrors } from '../utils'
+import { basicsSchema, headlineSchema } from './basics'
 
 import type { Basics } from '@/models'
 
 const summary = 'This is a summary with some text.'
 
+describe('headlineSchema', () => {
+  it('should have correct metadata', () => {
+    expectSchemaMetadata(headlineSchema)
+  })
+})
+
 describe('basicsSchema', () => {
+  it('should have correct metadata', () => {
+    expectSchemaMetadata(basicsSchema.shape.basics)
+  })
+
   const email = 'test@test.com'
   const headline = 'Headline'
   const name = 'Name'

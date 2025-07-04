@@ -23,7 +23,15 @@
  */
 import { z } from 'zod/v4'
 
+import { joinNonEmptyString } from '@/utils'
 import { keywordsSchema, nameSchema } from '../primitives'
+
+/**
+ * A zod schema for the name of an interest.
+ */
+export const interestNameSchema = nameSchema('name').describe(
+  'The name of the interest.'
+)
 
 /**
  * A zod schema for interests.
@@ -33,11 +41,21 @@ export const interestsSchema = z.object({
     .array(
       z.object({
         // required fields
-        name: nameSchema('name'),
+        name: interestNameSchema,
 
         // optional fields
         keywords: keywordsSchema.optional(),
       })
     )
-    .optional(),
+    .optional()
+    .meta({
+      title: 'Interests',
+      description: joinNonEmptyString(
+        [
+          'The interests section contains your personal and professional interests,',
+          'including hobbies, activities, and areas of passion.',
+        ],
+        ' '
+      ),
+    }),
 })

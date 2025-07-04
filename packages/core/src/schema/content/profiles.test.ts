@@ -24,12 +24,22 @@
 
 import { describe, expect, it } from 'vitest'
 
-import { validateZodErrors } from '../utils'
-import { profilesSchema } from './profiles'
+import { expectSchemaMetadata, validateZodErrors } from '../utils'
+import { profilesSchema, usernameSchema } from './profiles'
 
 import type { Profiles } from '@/models'
 
+describe('usernameSchema', () => {
+  it('should have correct metadata', () => {
+    expectSchemaMetadata(usernameSchema)
+  })
+})
+
 describe('profilesSchema', () => {
+  it('should have correct metadata', () => {
+    expectSchemaMetadata(profilesSchema.shape.profiles)
+  })
+
   const network = 'GitHub'
   const url = 'https://github.com/yamlresume'
   const username = 'yamlresume'

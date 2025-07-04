@@ -23,6 +23,7 @@
  */
 import { z } from 'zod/v4'
 
+import { joinNonEmptyString } from '@/utils'
 import {
   dateSchema,
   keywordsSchema,
@@ -33,6 +34,29 @@ import {
 } from '../primitives'
 
 /**
+ * A zod schema for the name of a company.
+ */
+export const companyNameSchema = organizationSchema('name').meta({
+  title: 'Company Name',
+  description: 'The name of the company or organization you worked for.',
+  examples: ['Google', 'Microsoft', 'Apple', 'Amazon'],
+})
+
+/**
+ * A zod schema for a position.
+ */
+export const positionSchema = sizedStringSchema('position', 2, 64).meta({
+  title: 'Position',
+  description: 'Your job title or position at the company.',
+  examples: [
+    'Software Engineer',
+    'Product Manager',
+    'Senior Developer',
+    'UX Designer',
+  ],
+})
+
+/**
  * A zod schema for work.
  */
 export const workSchema = z.object({
@@ -40,8 +64,8 @@ export const workSchema = z.object({
     .array(
       z.object({
         // required fields
-        name: organizationSchema('name'),
-        position: sizedStringSchema('position', 2, 64),
+        name: companyNameSchema,
+        position: positionSchema,
         startDate: dateSchema('startDate'),
         summary: summarySchema,
 
@@ -51,5 +75,15 @@ export const workSchema = z.object({
         url: urlSchema.optional(),
       })
     )
-    .optional(),
+    .optional()
+    .meta({
+      title: 'Work',
+      description: joinNonEmptyString(
+        [
+          'The work section contains your professional experience,',
+          'including job titles, companies, and responsibilities.',
+        ],
+        ' '
+      ),
+    }),
 })

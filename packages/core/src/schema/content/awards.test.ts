@@ -24,14 +24,30 @@
 
 import { describe, expect, it } from 'vitest'
 
-import { validateZodErrors } from '../utils'
-import { awardsSchema } from './awards'
+import { expectSchemaMetadata, validateZodErrors } from '../utils'
+import { awarderSchema, awardsSchema, titleSchema } from './awards'
 
 import type { Awards } from '@/models'
 
 const summary = 'This is a summary with some text.'
 
+describe('awarderSchema', () => {
+  it('should have correct metadata', () => {
+    expectSchemaMetadata(awarderSchema)
+  })
+})
+
+describe('titleSchema', () => {
+  it('should have correct metadata', () => {
+    expectSchemaMetadata(titleSchema)
+  })
+})
+
 describe('awardsSchema', () => {
+  it('should have correct metadata', () => {
+    expectSchemaMetadata(awardsSchema.shape.awards)
+  })
+
   const awarder = 'Organization'
   const date = '2025'
   const title = 'Award title'

@@ -25,13 +25,47 @@
 import { describe, expect, it } from 'vitest'
 
 import { optionSchemaMessage } from '../primitives'
-import { validateZodErrors } from '../utils'
-import { locationSchema } from './location'
+import { expectSchemaMetadata, validateZodErrors } from '../utils'
+import {
+  addressSchema,
+  citySchema,
+  locationSchema,
+  postalCodeSchema,
+  regionSchema,
+} from './location'
 
 import { COUNTRY_OPTIONS } from '@/models'
 import type { Location } from '@/models'
 
+describe('citySchema', () => {
+  it('should have correct metadata', () => {
+    expectSchemaMetadata(citySchema)
+  })
+})
+
+describe('addressSchema', () => {
+  it('should have correct metadata', () => {
+    expectSchemaMetadata(addressSchema)
+  })
+})
+
+describe('postalCodeSchema', () => {
+  it('should have correct metadata', () => {
+    expectSchemaMetadata(postalCodeSchema)
+  })
+})
+
+describe('regionSchema', () => {
+  it('should have correct metadata', () => {
+    expectSchemaMetadata(regionSchema)
+  })
+})
+
 describe('locationSchema', () => {
+  it('should have correct metadata', () => {
+    expectSchemaMetadata(locationSchema.shape.location)
+  })
+
   const city = 'San Francisco'
 
   const country = 'China'
