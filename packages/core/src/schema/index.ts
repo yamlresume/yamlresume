@@ -22,4 +22,4 @@
  * IN THE SOFTWARE.
  */
 
-export * from './content'
+export { resumeSchema } from './resume'

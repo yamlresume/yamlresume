@@ -50,6 +50,9 @@ importers:
       '@yamlresume/core':
         specifier: workspace:*
         version: link:../core
+      chalk:
+        specifier: ^5.4.1
+        version: 5.4.1
       commander:
         specifier: ^11.0.0
         version: 11.1.0
@@ -74,7 +77,13 @@ importers:
       yaml:
         specifier: ^2.7.1
         version: 2.7.1
+      zod:
+        specifier: ^3.25.56
+        version: 3.25.56
     devDependencies:
+      '@types/chalk':
+        specifier: ^2.2.4
+        version: 2.2.4
       '@types/commander':
         specifier: ^2.12.5
         version: 2.12.5
@@ -836,6 +845,10 @@ packages:
     resolution: {integrity: sha512-h1J+Yzjo/X+0EAvR2kIXJDuTuyT7drc+t2ALY0nIcGPbTatNOf0VWdhEA2Z4AAjv6X1NJV7SYo5oCTYRJhSlVA==}
     cpu: [x64]
     os: [win32]
+
+  '@types/chalk@2.2.4':
+    resolution: {integrity: sha512-pb/QoGqtCpH2famSp72qEsXkNzcErlVmiXlQ/ww+5AddD8TmmYS7EWg5T20YiNCAiTgs8pMf2G8SJG5h/ER1ZQ==}
+    deprecated: This is a stub types definition. chalk provides its own type definitions, so you do not need this installed.
 
   '@types/commander@2.12.5':
     resolution: {integrity: sha512-YXGZ/rz+s57VbzcvEV9fUoXeJlBt5HaKu5iUheiIWNsJs23bz6AnRuRiZBRVBLYyPnixNvVnuzM5pSaxr8Yp/g==}
@@ -3279,6 +3292,10 @@ snapshots:
 
   '@rollup/rollup-win32-x64-msvc@4.41.0':
     optional: true
+
+  '@types/chalk@2.2.4':
+    dependencies:
+      chalk: 5.4.1
 
   '@types/commander@2.12.5':
     dependencies:

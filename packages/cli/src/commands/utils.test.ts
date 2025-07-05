@@ -29,9 +29,9 @@ import { describe, expect, it } from 'vitest'
 
 describe('getFixture', () => {
   it('should return the correct path', () => {
-    for (const source of ['software-engineer.yml', 'accountant.yml']) {
-      const fixturePath = getFixture(source)
-      expect(fixturePath).toBe(path.join(__dirname, 'fixtures', source))
+    for (const resumePath of ['software-engineer.yml', 'accountant.yml']) {
+      const fixturePath = getFixture(resumePath)
+      expect(fixturePath).toBe(path.join(__dirname, 'fixtures', resumePath))
     }
   })
 })

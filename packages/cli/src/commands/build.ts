@@ -28,7 +28,6 @@ import path from 'node:path'
 import { Command } from 'commander'
 import { consola } from 'consola'
 import which from 'which'
-import yaml from 'yaml'
 
 import {
   type Resume,
@@ -38,25 +37,27 @@ import {
   toCodeBlock,
 } from '@yamlresume/core'
 
+import { readResume } from './validate'
+
 /**
  * Infer the output file name from the source file name
  *
  * For now we support yaml, yml and json file extensions, and the output file
  * will have a `.tex` extension.
  *
- * @param source - The source resume file
+ * @param resumePath - The source resume file
  * @returns The output file name
  * @throws {Error} If the source file has an unsupported extension.
  */
-export function inferOutput(source: string): string {
-  const extname = path.extname(source)
+export function inferOutput(resumePath: string): string {
+  const extname = path.extname(resumePath)
 
   if (
-    source.endsWith('.yaml') ||
-    source.endsWith('.yml') ||
-    source.endsWith('.json')
+    resumePath.endsWith('.yaml') ||
+    resumePath.endsWith('.yml') ||
+    resumePath.endsWith('.json')
   ) {
-    return source.replace(/\.yaml|\.yml|\.json$/, '.tex')
+    return resumePath.replace(/\.yaml|\.yml|\.json$/, '.tex')
   }
 
   throw new YAMLResumeError('INVALID_EXTNAME', { extname })
@@ -102,14 +103,14 @@ export function inferLaTeXEnvironment(): LaTeXEnvironment {
 /**
  * Infer the LaTeX command to use based on the LaTeX environment
  *
- * @param source - The source resume file
+ * @param resumePath - The source resume file
  * @returns The LaTeX command
  * @throws {Error} If the LaTeX environment cannot be inferred or the source
  * file extension is unsupported.
  */
-export function inferLaTeXCommand(source: string): string {
+export function inferLaTeXCommand(resumePath: string): string {
   const environment = inferLaTeXEnvironment()
-  const destination = inferOutput(source)
+  const destination = inferOutput(resumePath)
 
   switch (environment) {
     case 'xelatex':
@@ -122,31 +123,14 @@ export function inferLaTeXCommand(source: string): string {
 /**
  * Compiles the resume source file to a LaTeX file.
  *
- * @param source - The source resume file path (YAML, YML, or JSON).
- * @remarks This function performs file I/O: reads the source file and writes a
- * .tex file.
- * @throws {Error} Can throw if file reading, parsing, rendering, or writing
- * fails, or if the source file extension is unsupported.
+ * @param resumePath - The source resume file path (YAML, YML, or JSON).
+ * @param resume - The parsed resume object.
+ * @remarks This function performs file I/O: writes a .tex file.
+ * @throws {Error} Can throw if rendering or writing fails.
  */
-export function generateTeX(source: string) {
+export function generateTeX(resumePath: string, resume: Resume) {
   // make sure the file has an valid extension, i.e, '.json', '.yml' or '.yaml'
-  const texFile = inferOutput(source)
-
-  let resumeContent: string
-
-  try {
-    resumeContent = fs.readFileSync(source, 'utf8')
-  } catch (error) {
-    throw new YAMLResumeError('FILE_READ_ERROR', { path: source })
-  }
-
-  let resume: Resume
-
-  try {
-    resume = yaml.parse(resumeContent) as Resume
-  } catch (error) {
-    throw new YAMLResumeError('INVALID_YAML', { error: error.message })
-  }
+  const texFile = inferOutput(resumePath)
 
   const renderer = getResumeRenderer(resume)
   const tex = renderer.render()
@@ -161,37 +145,39 @@ export function generateTeX(source: string) {
 /**
  * Build a YAML resume to LaTeX & PDF
  *
- * It first generates the .tex file (using `generateTeX`) and then runs the
- * inferred LaTeX command (e.g., xelatex or tectonic) to produce the PDF.
+ * It first validates the resume against the schema (unless `--no-validate` flag
+ * is used), then generates the .tex file (using `generateTeX`) and then runs
+ * the inferred LaTeX command (e.g., xelatex or tectonic) to produce the PDF.
  *
  * Steps:
  * 1. read the resume from the source file
- * 2. infer the LaTeX command to use
- *    2.1. infer the LaTeX environment to use
- *    2.2. infer the output destination
- * 3. [TODO] check the resume format and make sure it aligns with YAMLResume
- * schema
+ * 2. validate the resume against YAMLResume schema (unless `--no-validate`)
+ * 3. infer the LaTeX command to use
+ *    3.1. infer the LaTeX environment to use
+ *    3.2. infer the output destination
  * 4. build the resume to LaTeX and PDF at the same time
  *
- * @param source - The source resume file path (YAML, YML, or JSON).
+ * @param resumePath - The source resume file path (YAML, YML, or JSON).
+ * @param options - Build options including validation and PDF generation flags.
  * @remarks This function performs file I/O (via `generateTeX`) and executes an
  * external process (LaTeX compiler).
  * @throws {Error} Can throw if .tex generation, LaTeX command inference, or the
  * LaTeX compilation process fails.
- * @todo Check the resume format against YAMLResume schema before compilation.
  */
 export function buildResume(
-  source: string,
-  options: { pdf?: boolean } = { pdf: true }
+  resumePath: string,
+  options: { pdf?: boolean; validate?: boolean } = { pdf: true, validate: true }
 ) {
-  generateTeX(source)
+  const resume = readResume(resumePath, options.validate)
+
+  generateTeX(resumePath, resume)
 
   if (!options.pdf) {
     consola.success('Generated resume TeX file successfully.')
     return
   }
 
-  const command = inferLaTeXCommand(source)
+  const command = inferLaTeXCommand(resumePath)
   consola.start(`Generating resume PDF file with command: \`${command}\`...`)
 
   try {
@@ -212,14 +198,20 @@ export function createBuildCommand() {
   return new Command()
     .name('build')
     .description('build a resume to LaTeX and PDF')
-    .argument('<source>', 'the source resume file')
+    .argument('<resume-path>', 'the resume file path')
     .option('--no-pdf', 'only generate TeX file without PDF')
-    .action(async (source: string, options: { pdf: boolean }) => {
-      try {
-        buildResume(source, options)
-      } catch (error) {
-        consola.error(error.message)
-        process.exit(error.errno)
+    .option('--no-validate', 'skip resume schema validation')
+    .action(
+      async (
+        resumePath: string,
+        options: { pdf: boolean; validate: boolean }
+      ) => {
+        try {
+          buildResume(resumePath, options)
+        } catch (error) {
+          consola.error(error.message)
+          process.exit(error.errno)
+        }
       }
-    })
+    )
 }

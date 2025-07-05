@@ -53,6 +53,7 @@ import {
   inferOutput,
   isCommandAvailable,
 } from './build'
+import { readResume } from './validate'
 
 function cleanupFiles() {
   const fixturesDir = path.join(__dirname, 'fixtures')
@@ -68,15 +69,18 @@ function cleanupFiles() {
 describe(inferOutput, () => {
   it('should infer the destination file', () => {
     const tests = [
-      { source: 'resume.yaml', expected: 'resume.tex' },
-      { source: 'resume.yml', expected: 'resume.tex' },
-      { source: 'resume.json', expected: 'resume.tex' },
-      { source: 'resumes/resume.yaml', expected: 'resumes/resume.tex' },
-      { source: '../resumes/resume.yaml', expected: '../resumes/resume.tex' },
+      { resumePath: 'resume.yaml', expected: 'resume.tex' },
+      { resumePath: 'resume.yml', expected: 'resume.tex' },
+      { resumePath: 'resume.json', expected: 'resume.tex' },
+      { resumePath: 'resumes/resume.yaml', expected: 'resumes/resume.tex' },
+      {
+        resumePath: '../resumes/resume.yaml',
+        expected: '../resumes/resume.tex',
+      },
     ]
 
-    tests.forEach(({ source, expected }) => {
-      expect(inferOutput(source)).toBe(expected)
+    tests.forEach(({ resumePath, expected }) => {
+      expect(inferOutput(resumePath)).toBe(expected)
     })
   })
 
@@ -183,19 +187,22 @@ describe(inferLaTeXCommand, () => {
     })
 
     const tests = [
-      { source: 'resume.json', expected: 'xelatex -halt-on-error resume.tex' },
       {
-        source: '../resume.yml',
+        resumePath: 'resume.json',
+        expected: 'xelatex -halt-on-error resume.tex',
+      },
+      {
+        resumePath: '../resume.yml',
         expected: 'xelatex -halt-on-error ../resume.tex',
       },
       {
-        source: './resume.yaml',
+        resumePath: './resume.yaml',
         expected: 'xelatex -halt-on-error ./resume.tex',
       },
     ]
 
-    tests.forEach(({ source, expected }) => {
-      expect(inferLaTeXCommand(source)).toBe(expected)
+    tests.forEach(({ resumePath, expected }) => {
+      expect(inferLaTeXCommand(resumePath)).toBe(expected)
     })
   })
 
@@ -209,19 +216,19 @@ describe(inferLaTeXCommand, () => {
     })
 
     const tests = [
-      { source: 'resume.json', expected: 'tectonic resume.tex' },
+      { resumePath: 'resume.json', expected: 'tectonic resume.tex' },
       {
-        source: '../resume.yml',
+        resumePath: '../resume.yml',
         expected: 'tectonic ../resume.tex',
       },
       {
-        source: './resume.yaml',
+        resumePath: './resume.yaml',
         expected: 'tectonic ./resume.tex',
       },
     ]
 
-    tests.forEach(({ source, expected }) => {
-      expect(inferLaTeXCommand(source)).toBe(expected)
+    tests.forEach(({ resumePath, expected }) => {
+      expect(inferLaTeXCommand(resumePath)).toBe(expected)
     })
   })
 })
@@ -236,39 +243,21 @@ describe(generateTeX, () => {
       .spyOn(fs, 'writeFileSync')
       .mockImplementation(vi.fn())
 
-    const source = getFixture('software-engineer.yml')
+    const resumePath = getFixture('software-engineer.yml')
+    const resume = readResume(resumePath)
 
-    generateTeX(source)
+    generateTeX(resumePath, resume)
     expect(writeFileSync).toBeCalledTimes(1)
   })
 
-  it('should throw an error when resume file is not exist', () => {
-    const writeFileSync = vi
-      .spyOn(fs, 'writeFileSync')
-      .mockImplementation(vi.fn())
-
-    const source = getFixture('non-exist.yml')
-
-    try {
-      generateTeX(source)
-    } catch (error) {
-      expect(error).toBeInstanceOf(YAMLResumeError)
-      expect(error.code).toBe('FILE_READ_ERROR')
-      expect(error.message).toContain('Failed to read resume file')
-    }
-
-    expect(writeFileSync).not.toBeCalled()
-  })
-
   it('should throw an error if the file extension is not supported', () => {
-    const readFileSync = vi
-      .spyOn(fs, 'readFileSync')
-      .mockImplementation(vi.fn())
+    const resumePath = 'resume.txt'
 
-    const source = 'resume.txt'
+    // mock the resume object here because we want to check the extension check
+    const resume = readResume(getFixture('software-engineer.yml'))
 
     try {
-      generateTeX(source)
+      generateTeX(resumePath, resume)
     } catch (error) {
       expect(error).toBeInstanceOf(YAMLResumeError)
       expect(error.code).toBe('INVALID_EXTNAME')
@@ -276,25 +265,6 @@ describe(generateTeX, () => {
         'Invalid file extension: .txt. Supported formats are: yaml, yml, json.'
       )
     }
-    expect(readFileSync).not.toBeCalled()
-  })
-
-  it('should throw an error if the resume cannot be parsed', () => {
-    const writeFileSync = vi
-      .spyOn(fs, 'writeFileSync')
-      .mockImplementation(vi.fn())
-
-    const source = getFixture('invalid-resume.yml')
-
-    try {
-      generateTeX(source)
-    } catch (error) {
-      expect(error).toBeInstanceOf(YAMLResumeError)
-      expect(error.code).toBe('INVALID_YAML')
-      expect(error.message).toContain('Invalid YAML format: ')
-    }
-
-    expect(writeFileSync).not.toBeCalled()
   })
 
   it('should throw an error if the generated tex cannot be saved', () => {
@@ -304,10 +274,11 @@ describe(generateTeX, () => {
         throw new Error()
       })
 
-    const source = getFixture('software-engineer.yml')
+    const resumePath = getFixture('software-engineer.yml')
+    const resume = readResume(resumePath)
 
     try {
-      generateTeX(source)
+      generateTeX(resumePath, resume)
     } catch (error) {
       expect(error).toBeInstanceOf(YAMLResumeError)
       expect(error.code).toBe('FILE_WRITE_ERROR')
@@ -348,9 +319,9 @@ describe(buildResume, () => {
   afterAll(cleanupFiles)
 
   it('should generate a tex file if pdf option is false', () => {
-    const source = getFixture('software-engineer.yml')
+    const resumePath = getFixture('software-engineer.yml')
 
-    buildResume(source, { pdf: false })
+    buildResume(resumePath, { pdf: false })
 
     expect(execSpy).toBeCalledTimes(0)
 
@@ -361,11 +332,11 @@ describe(buildResume, () => {
   })
 
   it('should generate a pdf file', () => {
-    const source = getFixture('software-engineer.yml')
+    const resumePath = getFixture('software-engineer.yml')
 
-    const command = inferLaTeXCommand(source)
+    const command = inferLaTeXCommand(resumePath)
 
-    buildResume(source)
+    buildResume(resumePath)
 
     expect(execSpy).toBeCalledTimes(1)
     expect(execSpy).toBeCalledWith(command, {
@@ -389,12 +360,12 @@ describe(buildResume, () => {
       throw new Error()
     })
 
-    const source = getFixture('software-engineer.yml')
+    const resumePath = getFixture('software-engineer.yml')
 
-    const command = inferLaTeXCommand(source)
+    const command = inferLaTeXCommand(resumePath)
 
     try {
-      buildResume(source)
+      buildResume(resumePath)
     } catch (error) {
       expect(error).toBeInstanceOf(YAMLResumeError)
       expect(error.code).toBe('LATEX_COMPILE_ERROR')
@@ -454,7 +425,7 @@ describe(createBuildCommand, () => {
     const args = buildCommand.registeredArguments
     expect(args).toHaveLength(1)
     expect(args[0].required).toBe(true)
-    expect(args[0].description).toBe('the source resume file')
+    expect(args[0].description).toBe('the resume file path')
   })
 
   it('should handle help flag', () => {
@@ -466,12 +437,12 @@ describe(createBuildCommand, () => {
   })
 
   it('should build resume to PDF', () => {
-    const source = getFixture('software-engineer.yml')
+    const resumePath = getFixture('software-engineer.yml')
 
-    buildCommand.parse(['yamlresume', 'build', source])
+    buildCommand.parse(['yamlresume', 'build', resumePath])
 
     expect(whichSpy).toBeCalledWith('xelatex')
-    expect(execSpy).toBeCalledWith(inferLaTeXCommand(source), {
+    expect(execSpy).toBeCalledWith(inferLaTeXCommand(resumePath), {
       encoding: 'utf8',
     })
     expect(consolaStartSpy).toBeCalledTimes(1)
@@ -479,9 +450,9 @@ describe(createBuildCommand, () => {
   })
 
   it('should build resume to TeX if no-pdf option is provided', () => {
-    const source = getFixture('software-engineer.yml')
+    const resumePath = getFixture('software-engineer.yml')
 
-    buildCommand.parse(['yamlresume', 'build', '--no-pdf', source])
+    buildCommand.parse(['yamlresume', 'build', '--no-pdf', resumePath])
 
     expect(whichSpy).not.toBeCalled()
     expect(consolaSuccessSpy).toBeCalledTimes(1)
@@ -496,9 +467,9 @@ describe(createBuildCommand, () => {
     // @ts-ignore
     const processExitSpy = vi.spyOn(process, 'exit').mockImplementation(vi.fn())
 
-    const source = getFixture('software-engineer.yml')
+    const resumePath = getFixture('software-engineer.yml')
 
-    buildCommand.parse(['yamlresume', 'build', source])
+    buildCommand.parse(['yamlresume', 'build', resumePath])
 
     expect(processExitSpy).toBeCalledTimes(1)
     expect(processExitSpy).toBeCalledWith(ErrorType.LATEX_COMPILE_ERROR.errno)
