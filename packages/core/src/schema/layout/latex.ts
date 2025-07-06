@@ -38,11 +38,11 @@ export const latexSchema = z.object({
     .object({
       fontspec: z
         .object({
-          numbers: fontspecNumbersOptionSchema.optional(),
+          numbers: fontspecNumbersOptionSchema.nullish(),
         })
-        .optional(),
+        .nullish(),
     })
-    .optional()
+    .nullish()
     .meta({
       title: 'LaTeX',
       description: joinNonEmptyString(

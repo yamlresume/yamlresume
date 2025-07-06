@@ -24,12 +24,19 @@
 
 import { describe, expect, it } from 'vitest'
 
-import { expectSchemaMetadata, validateZodErrors } from '../utils'
-import { awarderSchema, awardsSchema, titleSchema } from './awards'
+import {
+  expectSchemaMetadata,
+  getNullishTestCases,
+  validateZodErrors,
+} from '../utils'
+import {
+  awardItemSchema,
+  awarderSchema,
+  awardsSchema,
+  titleSchema,
+} from './awards'
 
 import type { Awards } from '@/models'
-
-const summary = 'This is a summary with some text.'
 
 describe('awarderSchema', () => {
   it('should have correct metadata', () => {
@@ -49,10 +56,17 @@ describe('awardsSchema', () => {
   })
 
   const awarder = 'Organization'
-  const date = '2025'
   const title = 'Award title'
 
+  const date = '2025'
+  const summary = 'This is a summary with some text.'
+
   it('should validate an awards object if it is valid', () => {
+    const baseAwardItem = {
+      awarder,
+      title,
+    }
+
     const tests: Array<Awards> = [
       {},
       {
@@ -62,38 +76,13 @@ describe('awardsSchema', () => {
         awards: [],
       },
       {
-        awards: [
-          {
-            awarder,
-            title,
-
-            date,
-            summary,
-          },
-        ],
+        awards: [{ ...baseAwardItem, date, summary }],
       },
-      {
-        awards: [
-          {
-            awarder,
-            title,
-
-            // optional date
-            summary,
-          },
-        ],
-      },
-      {
-        awards: [
-          {
-            awarder,
-            title,
-
-            // optional summary
-            date,
-          },
-        ],
-      },
+      ...getNullishTestCases(awardItemSchema, baseAwardItem).map(
+        (testCase) => ({
+          awards: [testCase],
+        })
+      ),
     ]
 
     for (const { awards } of tests) {

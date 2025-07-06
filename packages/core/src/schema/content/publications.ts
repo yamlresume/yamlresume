@@ -49,23 +49,26 @@ export const publisherSchema = organizationSchema('publisher').meta({
 })
 
 /**
+ * A zod schema for a publication item.
+ */
+export const publicationItemSchema = z.object({
+  // required fields
+  name: publicationNameSchema,
+  publisher: publisherSchema,
+
+  // optional fields
+  releaseDate: dateSchema('Release date').nullish(),
+  summary: summarySchema.nullish(),
+  url: urlSchema.nullish(),
+})
+
+/**
  * A zod schema for publications.
  */
 export const publicationsSchema = z.object({
   publications: z
-    .array(
-      z.object({
-        // required fields
-        name: publicationNameSchema,
-        publisher: publisherSchema,
-
-        // optional fields
-        releaseDate: dateSchema('Release date').optional(),
-        summary: summarySchema.optional(),
-        url: urlSchema.optional(),
-      })
-    )
-    .optional()
+    .array(publicationItemSchema)
+    .nullish()
     .meta({
       title: 'Publications',
       description: joinNonEmptyString(

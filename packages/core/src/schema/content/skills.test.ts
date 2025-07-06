@@ -24,8 +24,12 @@
 
 import { describe, expect, it } from 'vitest'
 
-import { expectSchemaMetadata, validateZodErrors } from '../utils'
-import { skillNameSchema, skillsSchema } from './skills'
+import {
+  expectSchemaMetadata,
+  getNullishTestCases,
+  validateZodErrors,
+} from '../utils'
+import { skillItemSchema, skillNameSchema, skillsSchema } from './skills'
 
 import type { Skills } from '@/models'
 
@@ -45,6 +49,11 @@ describe('skillsSchema', () => {
   const keywords = ['React', 'Node.js']
 
   it('should validate a skills object if it is valid', () => {
+    const baseSkillItem = {
+      name,
+      level,
+    } as const
+
     const tests: Array<Skills> = [
       {},
       {
@@ -56,22 +65,16 @@ describe('skillsSchema', () => {
       {
         skills: [
           {
-            name,
-            level,
+            ...baseSkillItem,
             keywords,
           },
         ],
       },
-      {
-        skills: [
-          {
-            name,
-            level,
-
-            // optional keywords
-          },
-        ],
-      },
+      ...getNullishTestCases(skillItemSchema, baseSkillItem).map(
+        (testCase) => ({
+          skills: [testCase],
+        })
+      ),
     ]
 
     for (const skills of tests) {

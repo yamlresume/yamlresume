@@ -24,16 +24,19 @@
 
 import { describe, expect, it } from 'vitest'
 
-import { expectSchemaMetadata, validateZodErrors } from '../utils'
+import {
+  expectSchemaMetadata,
+  getNullishTestCases,
+  validateZodErrors,
+} from '../utils'
 import {
   projectDescriptionSchema,
+  projectItemSchema,
   projectNameSchema,
   projectsSchema,
 } from './projects'
 
 import type { Projects } from '@/models'
-
-const summary = 'This is a summary with some text.'
 
 describe('projectNameSchema', () => {
   it('should have correct metadata', () => {
@@ -52,14 +55,22 @@ describe('projectsSchema', () => {
     expectSchemaMetadata(projectsSchema.shape.projects)
   })
 
+  const name = 'E-commerce Platform'
+  const startDate = '2022-01'
+  const summary = 'This is a summary with some text.'
+
   const description = 'Built a scalable web application'
   const endDate = '2023-06'
   const keywords = ['react', 'typescript', 'node']
-  const name = 'E-commerce Platform'
-  const startDate = '2022-01'
   const url = 'https://example.com/project1'
 
   it('should validate a projects object if it is valid', () => {
+    const baseProjectItem = {
+      name,
+      startDate,
+      summary,
+    }
+
     const tests: Array<Projects> = [
       {},
       {
@@ -71,9 +82,7 @@ describe('projectsSchema', () => {
       {
         projects: [
           {
-            name,
-            startDate,
-            summary,
+            ...baseProjectItem,
 
             description,
             endDate,
@@ -82,62 +91,11 @@ describe('projectsSchema', () => {
           },
         ],
       },
-      {
-        projects: [
-          {
-            name,
-            startDate,
-            summary,
-
-            // optional description
-            endDate,
-            keywords,
-            url,
-          },
-        ],
-      },
-      {
-        projects: [
-          {
-            name,
-            startDate,
-            summary,
-
-            // optional endDate
-            description,
-            keywords,
-            url,
-          },
-        ],
-      },
-      {
-        projects: [
-          {
-            name,
-            startDate,
-            summary,
-
-            // optional keywords
-            description,
-            endDate,
-            url,
-          },
-        ],
-      },
-      {
-        projects: [
-          {
-            name,
-            startDate,
-            summary,
-
-            // optional url
-            description,
-            endDate,
-            keywords,
-          },
-        ],
-      },
+      ...getNullishTestCases(projectItemSchema, baseProjectItem).map(
+        (testCase) => ({
+          projects: [testCase],
+        })
+      ),
     ]
 
     for (const project of tests) {

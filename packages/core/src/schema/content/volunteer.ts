@@ -62,24 +62,26 @@ export const volunteerPositionSchema = sizedStringSchema(
 })
 
 /**
+ * A zod schema for a volunteer item.
+ */
+export const volunteerItemSchema = z.object({
+  // required fields
+  organization: volunteerOrganizationSchema,
+  position: volunteerPositionSchema,
+  startDate: dateSchema('startDate'),
+  summary: summarySchema,
+
+  // optional fields
+  endDate: dateSchema('endDate').nullish(),
+  url: urlSchema.nullish(),
+})
+/**
  * A zod schema for volunteer.
  */
 export const volunteerSchema = z.object({
   volunteer: z
-    .array(
-      z.object({
-        // required fields
-        organization: volunteerOrganizationSchema,
-        position: volunteerPositionSchema,
-        startDate: dateSchema('startDate'),
-        summary: summarySchema,
-
-        // optional fields
-        endDate: dateSchema('endDate').optional(),
-        url: urlSchema.optional(),
-      })
-    )
-    .optional()
+    .array(volunteerItemSchema)
+    .nullish()
     .meta({
       title: 'Volunteer',
       description: joinNonEmptyString(

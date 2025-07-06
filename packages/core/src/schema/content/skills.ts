@@ -34,21 +34,23 @@ export const skillNameSchema = nameSchema('name').describe(
 )
 
 /**
+ * A zod schema for a skill item.
+ */
+export const skillItemSchema = z.object({
+  // required fields
+  level: levelOptionSchema,
+  name: skillNameSchema,
+
+  // optional fields
+  keywords: keywordsSchema.nullish(),
+})
+/**
  * A zod schema for skills
  */
 export const skillsSchema = z.object({
   skills: z
-    .array(
-      z.object({
-        // required fields
-        level: levelOptionSchema,
-        name: skillNameSchema,
-
-        // optional fields
-        keywords: keywordsSchema.optional(),
-      })
-    )
-    .optional()
+    .array(skillItemSchema)
+    .nullish()
     .meta({
       title: 'Skills',
       description: joinNonEmptyString(

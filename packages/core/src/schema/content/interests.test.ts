@@ -24,8 +24,17 @@
 
 import { describe, expect, it } from 'vitest'
 
-import { expectSchemaMetadata, validateZodErrors } from '../utils'
-import { interestNameSchema, interestsSchema } from './interests'
+import {
+  expectSchemaMetadata,
+  getNullishTestCases,
+  validateZodErrors,
+} from '../utils'
+
+import {
+  interestItemSchema,
+  interestNameSchema,
+  interestsSchema,
+} from './interests'
 
 import type { Interests } from '@/models'
 
@@ -44,6 +53,10 @@ describe('interestsSchema', () => {
   const name = 'Interest name'
 
   it('should validate an interests object if it is valid', () => {
+    const baseInterestItem = {
+      name,
+    }
+
     const tests: Array<Interests> = [
       {},
       {
@@ -55,19 +68,16 @@ describe('interestsSchema', () => {
       {
         interests: [
           {
-            name,
+            ...baseInterestItem,
             keywords,
           },
         ],
       },
-      {
-        interests: [
-          {
-            // optional keywords
-            name,
-          },
-        ],
-      },
+      ...getNullishTestCases(interestItemSchema, baseInterestItem).map(
+        (testCase) => ({
+          interests: [testCase],
+        })
+      ),
     ]
 
     for (const interests of tests) {

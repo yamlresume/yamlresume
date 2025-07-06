@@ -58,25 +58,28 @@ export const projectDescriptionSchema = sizedStringSchema(
 })
 
 /**
+ * A zod schema for a project item.
+ */
+export const projectItemSchema = z.object({
+  // required fields
+  name: projectNameSchema,
+  startDate: dateSchema('startDate'),
+  summary: summarySchema,
+
+  // optional fields
+  description: projectDescriptionSchema.nullish(),
+  endDate: dateSchema('endDate').nullish(),
+  keywords: keywordsSchema.nullish(),
+  url: urlSchema.nullish(),
+})
+
+/**
  * A zod schema for projects
  */
 export const projectsSchema = z.object({
   projects: z
-    .array(
-      z.object({
-        // required fields
-        name: projectNameSchema,
-        startDate: dateSchema('startDate'),
-        summary: summarySchema,
-
-        // optional fields
-        description: projectDescriptionSchema.optional(),
-        endDate: dateSchema('endDate').optional(),
-        keywords: keywordsSchema.optional(),
-        url: urlSchema.optional(),
-      })
-    )
-    .optional()
+    .array(projectItemSchema)
+    .nullish()
     .meta({
       title: 'Projects',
       description: joinNonEmptyString(

@@ -28,28 +28,63 @@
               "maxLength": 128
             },
             "email": {
-              "$ref": "#/$defs/email"
+              "anyOf": [
+                {
+                  "$ref": "#/$defs/email"
+                },
+                {
+                  "type": "null"
+                }
+              ]
             },
             "headline": {
-              "title": "Headline",
-              "description": "A short and catchy headline for your resume.",
-              "examples": [
-                "Full-stack software engineer",
-                "Data Scientist with a passion for Machine Learning",
-                "Product Manager driving innovation"
-              ],
-              "type": "string",
-              "minLength": 8,
-              "maxLength": 128
+              "anyOf": [
+                {
+                  "title": "Headline",
+                  "description": "A short and catchy headline for your resume.",
+                  "examples": [
+                    "Full-stack software engineer",
+                    "Data Scientist with a passion for Machine Learning",
+                    "Product Manager driving innovation"
+                  ],
+                  "type": "string",
+                  "minLength": 8,
+                  "maxLength": 128
+                },
+                {
+                  "type": "null"
+                }
+              ]
             },
             "phone": {
-              "$ref": "#/$defs/phone"
+              "anyOf": [
+                {
+                  "$ref": "#/$defs/phone"
+                },
+                {
+                  "type": "null"
+                }
+              ]
             },
             "summary": {
-              "$ref": "#/$defs/summary"
+              "anyOf": [
+                {
+                  "$ref": "#/$defs/summary"
+                },
+                {
+                  "type": "null"
+                }
+              ]
             },
             "url": {
-              "$ref": "#/$defs/url"
+              "anyOf": [
+                {
+                  "$ref": "#/$defs/url"
+                },
+                {
+                  "type": "null"
+                }
+              ]
             }
           },
           "required": [
@@ -117,64 +152,99 @@
                 "maxLength": 32
               },
               "courses": {
-                "title": "Courses",
-                "description": "A list of relevant courses you have taken.",
-                "examples": [
-                  [
-                    "Data Structures",
-                    "Algorithms",
-                    "Database Systems"
-                  ],
-                  [
-                    "Marketing",
-                    "Finance",
-                    "Operations Management"
-                  ],
-                  [
-                    "Calculus",
-                    "Physics",
-                    "Chemistry"
-                  ]
-                ],
-                "type": "array",
-                "items": {
-                  "type": "string",
-                  "minLength": 2,
-                  "maxLength": 128
-                }
+                "anyOf": [
+                  {
+                    "title": "Courses",
+                    "description": "A list of relevant courses you have taken.",
+                    "examples": [
+                      [
+                        "Data Structures",
+                        "Algorithms",
+                        "Database Systems"
+                      ],
+                      [
+                        "Marketing",
+                        "Finance",
+                        "Operations Management"
+                      ],
+                      [
+                        "Calculus",
+                        "Physics",
+                        "Chemistry"
+                      ]
+                    ],
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "minLength": 2,
+                      "maxLength": 128
+                    }
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
               },
               "endDate": {
-                "title": "End Date",
-                "description": "A valid date string that can be parsed by `Date.parse`.",
-                "examples": [
-                  "2025-01-01",
-                  "Jul 2025",
-                  "July 3, 2025",
-                  "2025-02-02T00:00:03.123Z"
-                ],
-                "type": "string",
-                "minLength": 4,
-                "maxLength": 32
+                "anyOf": [
+                  {
+                    "title": "End Date",
+                    "description": "A valid date string that can be parsed by `Date.parse`.",
+                    "examples": [
+                      "2025-01-01",
+                      "Jul 2025",
+                      "July 3, 2025",
+                      "2025-02-02T00:00:03.123Z"
+                    ],
+                    "type": "string",
+                    "minLength": 4,
+                    "maxLength": 32
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
               },
               "summary": {
-                "$ref": "#/$defs/summary"
+                "anyOf": [
+                  {
+                    "$ref": "#/$defs/summary"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
               },
               "score": {
-                "title": "Score",
-                "description": "Your GPA, grade, or other academic score.",
-                "examples": [
-                  "3.8",
-                  "3.8/4.0",
-                  "A+",
-                  "95%",
-                  "First Class Honours"
-                ],
-                "type": "string",
-                "minLength": 2,
-                "maxLength": 32
+                "anyOf": [
+                  {
+                    "title": "Score",
+                    "description": "Your GPA, grade, or other academic score.",
+                    "examples": [
+                      "3.8",
+                      "3.8/4.0",
+                      "A+",
+                      "95%",
+                      "First Class Honours"
+                    ],
+                    "type": "string",
+                    "minLength": 2,
+                    "maxLength": 32
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
               },
               "url": {
-                "$ref": "#/$defs/url"
+                "anyOf": [
+                  {
+                    "$ref": "#/$defs/url"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
               }
             },
             "required": [
@@ -189,1019 +259,1292 @@
         "awards": {
           "title": "Awards",
           "description": "The awards section contains your achievements and recognitions, including awards, honors, and special acknowledgments.",
-          "type": "array",
-          "items": {
-            "type": "object",
-            "properties": {
-              "awarder": {
-                "title": "Awarder",
-                "description": "The organization or institution that presented the award.",
-                "examples": [
-                  "Academy Awards",
-                  "Tech Conference",
-                  "Microsoft Scholarship"
+          "anyOf": [
+            {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "awarder": {
+                    "title": "Awarder",
+                    "description": "The organization or institution that presented the award.",
+                    "examples": [
+                      "Academy Awards",
+                      "Tech Conference",
+                      "Microsoft Scholarship"
+                    ],
+                    "type": "string",
+                    "minLength": 2,
+                    "maxLength": 128
+                  },
+                  "title": {
+                    "title": "Title",
+                    "description": "The title of the award.",
+                    "examples": [
+                      "Dean's List",
+                      "Outstanding Student",
+                      "Best Supporting Engineer"
+                    ],
+                    "type": "string",
+                    "minLength": 2,
+                    "maxLength": 128
+                  },
+                  "date": {
+                    "anyOf": [
+                      {
+                        "title": "Date",
+                        "description": "A valid date string that can be parsed by `Date.parse`.",
+                        "examples": [
+                          "2025-01-01",
+                          "Jul 2025",
+                          "July 3, 2025",
+                          "2025-02-02T00:00:03.123Z"
+                        ],
+                        "type": "string",
+                        "minLength": 4,
+                        "maxLength": 32
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  },
+                  "summary": {
+                    "anyOf": [
+                      {
+                        "$ref": "#/$defs/summary"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  }
+                },
+                "required": [
+                  "awarder",
+                  "title"
                 ],
-                "type": "string",
-                "minLength": 2,
-                "maxLength": 128
-              },
-              "title": {
-                "title": "Title",
-                "description": "The title of the award.",
-                "examples": [
-                  "Dean's List",
-                  "Outstanding Student",
-                  "Best Supporting Engineer"
-                ],
-                "type": "string",
-                "minLength": 2,
-                "maxLength": 128
-              },
-              "date": {
-                "title": "Date",
-                "description": "A valid date string that can be parsed by `Date.parse`.",
-                "examples": [
-                  "2025-01-01",
-                  "Jul 2025",
-                  "July 3, 2025",
-                  "2025-02-02T00:00:03.123Z"
-                ],
-                "type": "string",
-                "minLength": 4,
-                "maxLength": 32
-              },
-              "summary": {
-                "$ref": "#/$defs/summary"
+                "additionalProperties": false
               }
             },
-            "required": [
-              "awarder",
-              "title"
-            ],
-            "additionalProperties": false
-          }
+            {
+              "type": "null"
+            }
+          ]
         },
         "certificates": {
           "title": "Certificates",
           "description": "The certificates section contains your professional certifications, including training programs and industry-recognized credentials.",
-          "type": "array",
-          "items": {
-            "type": "object",
-            "properties": {
-              "issuer": {
-                "title": "Issuer",
-                "description": "The organization that issued the certificate.",
-                "examples": [
-                  "AWS",
-                  "Microsoft",
-                  "Coursera",
-                  "Google Cloud"
+          "anyOf": [
+            {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "issuer": {
+                    "title": "Issuer",
+                    "description": "The organization that issued the certificate.",
+                    "examples": [
+                      "AWS",
+                      "Microsoft",
+                      "Coursera",
+                      "Google Cloud"
+                    ],
+                    "type": "string",
+                    "minLength": 2,
+                    "maxLength": 128
+                  },
+                  "name": {
+                    "title": "Name",
+                    "description": "The name of the certificate.",
+                    "examples": [
+                      "Andy Dufrane",
+                      "Xiao Hanyu",
+                      "Jane Smith",
+                      "Dr. Robert John"
+                    ],
+                    "type": "string",
+                    "minLength": 2,
+                    "maxLength": 128
+                  },
+                  "date": {
+                    "anyOf": [
+                      {
+                        "title": "Date",
+                        "description": "A valid date string that can be parsed by `Date.parse`.",
+                        "examples": [
+                          "2025-01-01",
+                          "Jul 2025",
+                          "July 3, 2025",
+                          "2025-02-02T00:00:03.123Z"
+                        ],
+                        "type": "string",
+                        "minLength": 4,
+                        "maxLength": 32
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  },
+                  "url": {
+                    "anyOf": [
+                      {
+                        "$ref": "#/$defs/url"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  }
+                },
+                "required": [
+                  "issuer",
+                  "name"
                 ],
-                "type": "string",
-                "minLength": 2,
-                "maxLength": 128
-              },
-              "name": {
-                "title": "Name",
-                "description": "The name of the certificate.",
-                "examples": [
-                  "Andy Dufrane",
-                  "Xiao Hanyu",
-                  "Jane Smith",
-                  "Dr. Robert John"
-                ],
-                "type": "string",
-                "minLength": 2,
-                "maxLength": 128
-              },
-              "date": {
-                "title": "Date",
-                "description": "A valid date string that can be parsed by `Date.parse`.",
-                "examples": [
-                  "2025-01-01",
-                  "Jul 2025",
-                  "July 3, 2025",
-                  "2025-02-02T00:00:03.123Z"
-                ],
-                "type": "string",
-                "minLength": 4,
-                "maxLength": 32
-              },
-              "url": {
-                "$ref": "#/$defs/url"
+                "additionalProperties": false
               }
             },
-            "required": [
-              "issuer",
-              "name"
-            ],
-            "additionalProperties": false
-          }
+            {
+              "type": "null"
+            }
+          ]
         },
         "interests": {
           "title": "Interests",
           "description": "The interests section contains your personal and professional interests, including hobbies, activities, and areas of passion.",
-          "type": "array",
-          "items": {
-            "type": "object",
-            "properties": {
-              "name": {
-                "title": "Name",
-                "description": "The name of the interest.",
-                "examples": [
-                  "Andy Dufrane",
-                  "Xiao Hanyu",
-                  "Jane Smith",
-                  "Dr. Robert John"
+          "anyOf": [
+            {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "title": "Name",
+                    "description": "The name of the interest.",
+                    "examples": [
+                      "Andy Dufrane",
+                      "Xiao Hanyu",
+                      "Jane Smith",
+                      "Dr. Robert John"
+                    ],
+                    "type": "string",
+                    "minLength": 2,
+                    "maxLength": 128
+                  },
+                  "keywords": {
+                    "anyOf": [
+                      {
+                        "$ref": "#/$defs/keywords"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  }
+                },
+                "required": [
+                  "name"
                 ],
-                "type": "string",
-                "minLength": 2,
-                "maxLength": 128
-              },
-              "keywords": {
-                "$ref": "#/$defs/keywords"
+                "additionalProperties": false
               }
             },
-            "required": [
-              "name"
-            ],
-            "additionalProperties": false
-          }
+            {
+              "type": "null"
+            }
+          ]
         },
         "languages": {
           "title": "Languages",
           "description": "The languages section contains your language skills and proficiency levels, including native, fluent, and conversational abilities.",
-          "type": "array",
-          "items": {
-            "type": "object",
-            "properties": {
-              "fluency": {
-                "title": "Fluency option",
-                "description": "A predefined option from the available fluency choices.",
-                "type": "string",
-                "enum": [
-                  "Elementary Proficiency",
-                  "Limited Working Proficiency",
-                  "Minimum Professional Proficiency",
-                  "Full Professional Proficiency",
-                  "Native or Bilingual Proficiency"
-                ]
-              },
-              "language": {
-                "title": "Language option",
-                "description": "A predefined option from the available language choices.",
-                "type": "string",
-                "enum": [
-                  "Afrikaans",
-                  "Albanian",
-                  "Amharic",
-                  "Arabic",
-                  "Azerbaijani",
-                  "Belarusian",
-                  "Bengali",
-                  "Bhojpuri",
-                  "Bulgarian",
-                  "Burmese",
-                  "Cantonese",
-                  "Catalan",
-                  "Chinese",
-                  "Croatian",
-                  "Czech",
-                  "Danish",
-                  "Dutch",
-                  "English",
-                  "Estonian",
-                  "Farsi",
-                  "Filipino",
-                  "Finnish",
-                  "French",
-                  "German",
-                  "Greek",
-                  "Gujarati",
-                  "Hausa",
-                  "Hebrew",
-                  "Hindi",
-                  "Hungarian",
-                  "Icelandic",
-                  "Igbo",
-                  "Indonesian",
-                  "Irish",
-                  "Italian",
-                  "Japanese",
-                  "Javanese",
-                  "Kazakh",
-                  "Khmer",
-                  "Korean",
-                  "Lahnda",
-                  "Latvian",
-                  "Lithuanian",
-                  "Malay",
-                  "Mandarin",
-                  "Marathi",
-                  "Nepali",
-                  "Norwegian",
-                  "Oromo",
-                  "Pashto",
-                  "Polish",
-                  "Portuguese",
-                  "Romanian",
-                  "Russian",
-                  "Serbian",
-                  "Shona",
-                  "Sinhala",
-                  "Slovak",
-                  "Slovene",
-                  "Somali",
-                  "Spanish",
-                  "Sundanese",
-                  "Swahili",
-                  "Swedish",
-                  "Tagalog",
-                  "Tamil",
-                  "Telugu",
-                  "Thai",
-                  "Turkish",
-                  "Ukrainian",
-                  "Urdu",
-                  "Uzbek",
-                  "Vietnamese",
-                  "Yoruba",
-                  "Zulu"
-                ]
-              },
-              "keywords": {
-                "$ref": "#/$defs/keywords"
+          "anyOf": [
+            {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "fluency": {
+                    "title": "Fluency option",
+                    "description": "A predefined option from the available fluency choices.",
+                    "type": "string",
+                    "enum": [
+                      "Elementary Proficiency",
+                      "Limited Working Proficiency",
+                      "Minimum Professional Proficiency",
+                      "Full Professional Proficiency",
+                      "Native or Bilingual Proficiency"
+                    ]
+                  },
+                  "language": {
+                    "title": "Language option",
+                    "description": "A predefined option from the available language choices.",
+                    "type": "string",
+                    "enum": [
+                      "Afrikaans",
+                      "Albanian",
+                      "Amharic",
+                      "Arabic",
+                      "Azerbaijani",
+                      "Belarusian",
+                      "Bengali",
+                      "Bhojpuri",
+                      "Bulgarian",
+                      "Burmese",
+                      "Cantonese",
+                      "Catalan",
+                      "Chinese",
+                      "Croatian",
+                      "Czech",
+                      "Danish",
+                      "Dutch",
+                      "English",
+                      "Estonian",
+                      "Farsi",
+                      "Filipino",
+                      "Finnish",
+                      "French",
+                      "German",
+                      "Greek",
+                      "Gujarati",
+                      "Hausa",
+                      "Hebrew",
+                      "Hindi",
+                      "Hungarian",
+                      "Icelandic",
+                      "Igbo",
+                      "Indonesian",
+                      "Irish",
+                      "Italian",
+                      "Japanese",
+                      "Javanese",
+                      "Kazakh",
+                      "Khmer",
+                      "Korean",
+                      "Lahnda",
+                      "Latvian",
+                      "Lithuanian",
+                      "Malay",
+                      "Mandarin",
+                      "Marathi",
+                      "Nepali",
+                      "Norwegian",
+                      "Oromo",
+                      "Pashto",
+                      "Polish",
+                      "Portuguese",
+                      "Romanian",
+                      "Russian",
+                      "Serbian",
+                      "Shona",
+                      "Sinhala",
+                      "Slovak",
+                      "Slovene",
+                      "Somali",
+                      "Spanish",
+                      "Sundanese",
+                      "Swahili",
+                      "Swedish",
+                      "Tagalog",
+                      "Tamil",
+                      "Telugu",
+                      "Thai",
+                      "Turkish",
+                      "Ukrainian",
+                      "Urdu",
+                      "Uzbek",
+                      "Vietnamese",
+                      "Yoruba",
+                      "Zulu"
+                    ]
+                  },
+                  "keywords": {
+                    "anyOf": [
+                      {
+                        "$ref": "#/$defs/keywords"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  }
+                },
+                "required": [
+                  "fluency",
+                  "language"
+                ],
+                "additionalProperties": false
               }
             },
-            "required": [
-              "fluency",
-              "language"
-            ],
-            "additionalProperties": false
-          }
+            {
+              "type": "null"
+            }
+          ]
         },
         "location": {
           "title": "Location",
           "description": "The location section contains your geographical information, such as city, address, country, and postal code.",
-          "type": "object",
-          "properties": {
-            "city": {
-              "title": "City",
-              "description": "The name of the city where you are located.",
-              "examples": [
-                "San Francisco",
-                "New York",
-                "London",
-                "Tokyo"
+          "anyOf": [
+            {
+              "type": "object",
+              "properties": {
+                "city": {
+                  "title": "City",
+                  "description": "The name of the city where you are located.",
+                  "examples": [
+                    "San Francisco",
+                    "New York",
+                    "London",
+                    "Tokyo"
+                  ],
+                  "type": "string",
+                  "minLength": 2,
+                  "maxLength": 64
+                },
+                "address": {
+                  "anyOf": [
+                    {
+                      "title": "Address",
+                      "description": "Your full address including street, apartment, etc.",
+                      "examples": [
+                        "123 Main Street, Apt 4B",
+                        "456 Oak Avenue",
+                        "789 Pine Road, Suite 100"
+                      ],
+                      "type": "string",
+                      "minLength": 4,
+                      "maxLength": 256
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "country": {
+                  "anyOf": [
+                    {
+                      "title": "Country option",
+                      "description": "A predefined option from the available country choices.",
+                      "type": "string",
+                      "enum": [
+                        "Afghanistan",
+                        "Aland Islands",
+                        "Albania",
+                        "Algeria",
+                        "American Samoa",
+                        "Andorra",
+                        "Angola",
+                        "Anguilla",
+                        "Antarctica",
+                        "Antigua And Barbuda",
+                        "Argentina",
+                        "Armenia",
+                        "Aruba",
+                        "Australia",
+                        "Austria",
+                        "Azerbaijan",
+                        "Bahrain",
+                        "Bangladesh",
+                        "Barbados",
+                        "Belarus",
+                        "Belgium",
+                        "Belize",
+                        "Benin",
+                        "Bermuda",
+                        "Bhutan",
+                        "Bolivia",
+                        "Bonaire, Sint Eustatius and Saba",
+                        "Bosnia and Herzegovina",
+                        "Botswana",
+                        "Bouvet Island",
+                        "Brazil",
+                        "British Indian Ocean Territory",
+                        "Brunei",
+                        "Bulgaria",
+                        "Burkina Faso",
+                        "Burundi",
+                        "Cambodia",
+                        "Cameroon",
+                        "Canada",
+                        "Cape Verde",
+                        "Cayman Islands",
+                        "Central African Republic",
+                        "Chad",
+                        "Chile",
+                        "China",
+                        "Christmas Island",
+                        "Cocos (Keeling) Islands",
+                        "Colombia",
+                        "Comoros",
+                        "Congo",
+                        "Cook Islands",
+                        "Costa Rica",
+                        "Cote D'Ivoire (Ivory Coast)",
+                        "Croatia",
+                        "Cuba",
+                        "Curaçao",
+                        "Cyprus",
+                        "Czech Republic",
+                        "Democratic Republic of the Congo",
+                        "Denmark",
+                        "Djibouti",
+                        "Dominica",
+                        "Dominican Republic",
+                        "East Timor",
+                        "Ecuador",
+                        "Egypt",
+                        "El Salvador",
+                        "Equatorial Guinea",
+                        "Eritrea",
+                        "Estonia",
+                        "Ethiopia",
+                        "Falkland Islands",
+                        "Faroe Islands",
+                        "Fiji Islands",
+                        "Finland",
+                        "France",
+                        "French Guiana",
+                        "French Polynesia",
+                        "French Southern Territories",
+                        "Gabon",
+                        "Gambia The",
+                        "Georgia",
+                        "Germany",
+                        "Ghana",
+                        "Gibraltar",
+                        "Greece",
+                        "Greenland",
+                        "Grenada",
+                        "Guadeloupe",
+                        "Guam",
+                        "Guatemala",
+                        "Guernsey and Alderney",
+                        "Guinea",
+                        "Guinea-Bissau",
+                        "Guyana",
+                        "Haiti",
+                        "Heard Island and McDonald Islands",
+                        "Honduras",
+                        "Hong Kong S.A.R.",
+                        "Hungary",
+                        "Iceland",
+                        "India",
+                        "Indonesia",
+                        "Iran",
+                        "Iraq",
+                        "Ireland",
+                        "Israel",
+                        "Italy",
+                        "Jamaica",
+                        "Japan",
+                        "Jersey",
+                        "Jordan",
+                        "Kazakhstan",
+                        "Kenya",
+                        "Kiribati",
+                        "Kosovo",
+                        "Kuwait",
+                        "Kyrgyzstan",
+                        "Laos",
+                        "Latvia",
+                        "Lebanon",
+                        "Lesotho",
+                        "Liberia",
+                        "Libya",
+                        "Liechtenstein",
+                        "Lithuania",
+                        "Luxembourg",
+                        "Macau S.A.R.",
+                        "Madagascar",
+                        "Malawi",
+                        "Malaysia",
+                        "Maldives",
+                        "Mali",
+                        "Malta",
+                        "Man (Isle of)",
+                        "Marshall Islands",
+                        "Martinique",
+                        "Mauritania",
+                        "Mauritius",
+                        "Mayotte",
+                        "Mexico",
+                        "Micronesia",
+                        "Moldova",
+                        "Monaco",
+                        "Mongolia",
+                        "Montenegro",
+                        "Montserrat",
+                        "Morocco",
+                        "Mozambique",
+                        "Myanmar",
+                        "Namibia",
+                        "Nauru",
+                        "Nepal",
+                        "Netherlands",
+                        "New Caledonia",
+                        "New Zealand",
+                        "Nicaragua",
+                        "Niger",
+                        "Nigeria",
+                        "Niue",
+                        "Norfolk Island",
+                        "North Korea",
+                        "North Macedonia",
+                        "Northern Mariana Islands",
+                        "Norway",
+                        "Oman",
+                        "Pakistan",
+                        "Palau",
+                        "Palestinian Territory Occupied",
+                        "Panama",
+                        "Papua new Guinea",
+                        "Paraguay",
+                        "Peru",
+                        "Philippines",
+                        "Pitcairn Island",
+                        "Poland",
+                        "Portugal",
+                        "Puerto Rico",
+                        "Qatar",
+                        "Reunion",
+                        "Romania",
+                        "Russia",
+                        "Rwanda",
+                        "Saint Helena",
+                        "Saint Kitts And Nevis",
+                        "Saint Lucia",
+                        "Saint Pierre and Miquelon",
+                        "Saint Vincent And The Grenadines",
+                        "Saint-Barthelemy",
+                        "Saint-Martin (French part)",
+                        "Samoa",
+                        "San Marino",
+                        "Sao Tome and Principe",
+                        "Saudi Arabia",
+                        "Senegal",
+                        "Serbia",
+                        "Seychelles",
+                        "Sierra Leone",
+                        "Singapore",
+                        "Sint Maarten (Dutch part)",
+                        "Slovakia",
+                        "Slovenia",
+                        "Solomon Islands",
+                        "Somalia",
+                        "South Africa",
+                        "South Georgia",
+                        "South Korea",
+                        "South Sudan",
+                        "Spain",
+                        "Sri Lanka",
+                        "Sudan",
+                        "Suriname",
+                        "Svalbard And Jan Mayen Islands",
+                        "Swaziland",
+                        "Sweden",
+                        "Switzerland",
+                        "Syria",
+                        "Taiwan",
+                        "Tajikistan",
+                        "Tanzania",
+                        "Thailand",
+                        "The Bahamas",
+                        "Togo",
+                        "Tokelau",
+                        "Tonga",
+                        "Trinidad And Tobago",
+                        "Tunisia",
+                        "Turkey",
+                        "Turkmenistan",
+                        "Turks And Caicos Islands",
+                        "Tuvalu",
+                        "Uganda",
+                        "Ukraine",
+                        "United Arab Emirates",
+                        "United Kingdom",
+                        "United States",
+                        "United States Minor Outlying Islands",
+                        "Uruguay",
+                        "Uzbekistan",
+                        "Vanuatu",
+                        "Vatican City State (Holy See)",
+                        "Venezuela",
+                        "Vietnam",
+                        "Virgin Islands (British)",
+                        "Virgin Islands (US)",
+                        "Wallis And Futuna Islands",
+                        "Western Sahara",
+                        "Yemen",
+                        "Zambia",
+                        "Zimbabwe"
+                      ]
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "postalCode": {
+                  "anyOf": [
+                    {
+                      "title": "Postal Code",
+                      "description": "Your postal or ZIP code.",
+                      "examples": [
+                        "94102",
+                        "10001",
+                        "SW1A 1AA",
+                        "100-0001"
+                      ],
+                      "type": "string",
+                      "minLength": 2,
+                      "maxLength": 16
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "region": {
+                  "anyOf": [
+                    {
+                      "title": "Region",
+                      "description": "Your state, province, or region.",
+                      "examples": [
+                        "California",
+                        "New York",
+                        "England",
+                        "Tokyo"
+                      ],
+                      "type": "string",
+                      "minLength": 2,
+                      "maxLength": 64
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                }
+              },
+              "required": [
+                "city"
               ],
-              "type": "string",
-              "minLength": 2,
-              "maxLength": 64
+              "additionalProperties": false
             },
-            "address": {
-              "title": "Address",
-              "description": "Your full address including street, apartment, etc.",
-              "examples": [
-                "123 Main Street, Apt 4B",
-                "456 Oak Avenue",
-                "789 Pine Road, Suite 100"
-              ],
-              "type": "string",
-              "minLength": 4,
-              "maxLength": 256
-            },
-            "country": {
-              "title": "Country option",
-              "description": "A predefined option from the available country choices.",
-              "type": "string",
-              "enum": [
-                "Afghanistan",
-                "Aland Islands",
-                "Albania",
-                "Algeria",
-                "American Samoa",
-                "Andorra",
-                "Angola",
-                "Anguilla",
-                "Antarctica",
-                "Antigua And Barbuda",
-                "Argentina",
-                "Armenia",
-                "Aruba",
-                "Australia",
-                "Austria",
-                "Azerbaijan",
-                "Bahrain",
-                "Bangladesh",
-                "Barbados",
-                "Belarus",
-                "Belgium",
-                "Belize",
-                "Benin",
-                "Bermuda",
-                "Bhutan",
-                "Bolivia",
-                "Bonaire, Sint Eustatius and Saba",
-                "Bosnia and Herzegovina",
-                "Botswana",
-                "Bouvet Island",
-                "Brazil",
-                "British Indian Ocean Territory",
-                "Brunei",
-                "Bulgaria",
-                "Burkina Faso",
-                "Burundi",
-                "Cambodia",
-                "Cameroon",
-                "Canada",
-                "Cape Verde",
-                "Cayman Islands",
-                "Central African Republic",
-                "Chad",
-                "Chile",
-                "China",
-                "Christmas Island",
-                "Cocos (Keeling) Islands",
-                "Colombia",
-                "Comoros",
-                "Congo",
-                "Cook Islands",
-                "Costa Rica",
-                "Cote D'Ivoire (Ivory Coast)",
-                "Croatia",
-                "Cuba",
-                "Curaçao",
-                "Cyprus",
-                "Czech Republic",
-                "Democratic Republic of the Congo",
-                "Denmark",
-                "Djibouti",
-                "Dominica",
-                "Dominican Republic",
-                "East Timor",
-                "Ecuador",
-                "Egypt",
-                "El Salvador",
-                "Equatorial Guinea",
-                "Eritrea",
-                "Estonia",
-                "Ethiopia",
-                "Falkland Islands",
-                "Faroe Islands",
-                "Fiji Islands",
-                "Finland",
-                "France",
-                "French Guiana",
-                "French Polynesia",
-                "French Southern Territories",
-                "Gabon",
-                "Gambia The",
-                "Georgia",
-                "Germany",
-                "Ghana",
-                "Gibraltar",
-                "Greece",
-                "Greenland",
-                "Grenada",
-                "Guadeloupe",
-                "Guam",
-                "Guatemala",
-                "Guernsey and Alderney",
-                "Guinea",
-                "Guinea-Bissau",
-                "Guyana",
-                "Haiti",
-                "Heard Island and McDonald Islands",
-                "Honduras",
-                "Hong Kong S.A.R.",
-                "Hungary",
-                "Iceland",
-                "India",
-                "Indonesia",
-                "Iran",
-                "Iraq",
-                "Ireland",
-                "Israel",
-                "Italy",
-                "Jamaica",
-                "Japan",
-                "Jersey",
-                "Jordan",
-                "Kazakhstan",
-                "Kenya",
-                "Kiribati",
-                "Kosovo",
-                "Kuwait",
-                "Kyrgyzstan",
-                "Laos",
-                "Latvia",
-                "Lebanon",
-                "Lesotho",
-                "Liberia",
-                "Libya",
-                "Liechtenstein",
-                "Lithuania",
-                "Luxembourg",
-                "Macau S.A.R.",
-                "Madagascar",
-                "Malawi",
-                "Malaysia",
-                "Maldives",
-                "Mali",
-                "Malta",
-                "Man (Isle of)",
-                "Marshall Islands",
-                "Martinique",
-                "Mauritania",
-                "Mauritius",
-                "Mayotte",
-                "Mexico",
-                "Micronesia",
-                "Moldova",
-                "Monaco",
-                "Mongolia",
-                "Montenegro",
-                "Montserrat",
-                "Morocco",
-                "Mozambique",
-                "Myanmar",
-                "Namibia",
-                "Nauru",
-                "Nepal",
-                "Netherlands",
-                "New Caledonia",
-                "New Zealand",
-                "Nicaragua",
-                "Niger",
-                "Nigeria",
-                "Niue",
-                "Norfolk Island",
-                "North Korea",
-                "North Macedonia",
-                "Northern Mariana Islands",
-                "Norway",
-                "Oman",
-                "Pakistan",
-                "Palau",
-                "Palestinian Territory Occupied",
-                "Panama",
-                "Papua new Guinea",
-                "Paraguay",
-                "Peru",
-                "Philippines",
-                "Pitcairn Island",
-                "Poland",
-                "Portugal",
-                "Puerto Rico",
-                "Qatar",
-                "Reunion",
-                "Romania",
-                "Russia",
-                "Rwanda",
-                "Saint Helena",
-                "Saint Kitts And Nevis",
-                "Saint Lucia",
-                "Saint Pierre and Miquelon",
-                "Saint Vincent And The Grenadines",
-                "Saint-Barthelemy",
-                "Saint-Martin (French part)",
-                "Samoa",
-                "San Marino",
-                "Sao Tome and Principe",
-                "Saudi Arabia",
-                "Senegal",
-                "Serbia",
-                "Seychelles",
-                "Sierra Leone",
-                "Singapore",
-                "Sint Maarten (Dutch part)",
-                "Slovakia",
-                "Slovenia",
-                "Solomon Islands",
-                "Somalia",
-                "South Africa",
-                "South Georgia",
-                "South Korea",
-                "South Sudan",
-                "Spain",
-                "Sri Lanka",
-                "Sudan",
-                "Suriname",
-                "Svalbard And Jan Mayen Islands",
-                "Swaziland",
-                "Sweden",
-                "Switzerland",
-                "Syria",
-                "Taiwan",
-                "Tajikistan",
-                "Tanzania",
-                "Thailand",
-                "The Bahamas",
-                "Togo",
-                "Tokelau",
-                "Tonga",
-                "Trinidad And Tobago",
-                "Tunisia",
-                "Turkey",
-                "Turkmenistan",
-                "Turks And Caicos Islands",
-                "Tuvalu",
-                "Uganda",
-                "Ukraine",
-                "United Arab Emirates",
-                "United Kingdom",
-                "United States",
-                "United States Minor Outlying Islands",
-                "Uruguay",
-                "Uzbekistan",
-                "Vanuatu",
-                "Vatican City State (Holy See)",
-                "Venezuela",
-                "Vietnam",
-                "Virgin Islands (British)",
-                "Virgin Islands (US)",
-                "Wallis And Futuna Islands",
-                "Western Sahara",
-                "Yemen",
-                "Zambia",
-                "Zimbabwe"
-              ]
-            },
-            "postalCode": {
-              "title": "Postal Code",
-              "description": "Your postal or ZIP code.",
-              "examples": [
-                "94102",
-                "10001",
-                "SW1A 1AA",
-                "100-0001"
-              ],
-              "type": "string",
-              "minLength": 2,
-              "maxLength": 16
-            },
-            "region": {
-              "title": "Region",
-              "description": "Your state, province, or region.",
-              "examples": [
-                "California",
-                "New York",
-                "England",
-                "Tokyo"
-              ],
-              "type": "string",
-              "minLength": 2,
-              "maxLength": 64
+            {
+              "type": "null"
             }
-          },
-          "required": [
-            "city"
-          ],
-          "additionalProperties": false
+          ]
         },
         "profiles": {
           "title": "Profiles",
           "description": "The profiles section contains your social media and professional network profiles, such as LinkedIn, GitHub, Twitter, etc.",
-          "type": "array",
-          "items": {
-            "type": "object",
-            "properties": {
-              "network": {
-                "title": "Network option",
-                "description": "A predefined option from the available network choices.",
-                "type": "string",
-                "enum": [
-                  "Behance",
-                  "Dribbble",
-                  "Facebook",
-                  "GitHub",
-                  "Gitlab",
-                  "Instagram",
-                  "Line",
-                  "LinkedIn",
-                  "Medium",
-                  "Pinterest",
-                  "Reddit",
-                  "Snapchat",
-                  "Stack Overflow",
-                  "Telegram",
-                  "TikTok",
-                  "Twitch",
-                  "Twitter",
-                  "Vimeo",
-                  "Weibo",
-                  "WeChat",
-                  "WhatsApp",
-                  "YouTube",
-                  "Zhihu"
-                ]
-              },
-              "username": {
-                "title": "Username",
-                "description": "Your username or handle on the social network.",
-                "examples": [
-                  "john_doe",
-                  "jane.smith",
-                  "dev_engineer",
-                  "designer_123"
+          "anyOf": [
+            {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "network": {
+                    "title": "Network option",
+                    "description": "A predefined option from the available network choices.",
+                    "type": "string",
+                    "enum": [
+                      "Behance",
+                      "Dribbble",
+                      "Facebook",
+                      "GitHub",
+                      "Gitlab",
+                      "Instagram",
+                      "Line",
+                      "LinkedIn",
+                      "Medium",
+                      "Pinterest",
+                      "Reddit",
+                      "Snapchat",
+                      "Stack Overflow",
+                      "Telegram",
+                      "TikTok",
+                      "Twitch",
+                      "Twitter",
+                      "Vimeo",
+                      "Weibo",
+                      "WeChat",
+                      "WhatsApp",
+                      "YouTube",
+                      "Zhihu"
+                    ]
+                  },
+                  "username": {
+                    "title": "Username",
+                    "description": "Your username or handle on the social network.",
+                    "examples": [
+                      "john_doe",
+                      "jane.smith",
+                      "dev_engineer",
+                      "designer_123"
+                    ],
+                    "type": "string",
+                    "minLength": 2,
+                    "maxLength": 64
+                  },
+                  "url": {
+                    "anyOf": [
+                      {
+                        "$ref": "#/$defs/url"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  }
+                },
+                "required": [
+                  "network",
+                  "username"
                 ],
-                "type": "string",
-                "minLength": 2,
-                "maxLength": 64
-              },
-              "url": {
-                "$ref": "#/$defs/url"
+                "additionalProperties": false
               }
             },
-            "required": [
-              "network",
-              "username"
-            ],
-            "additionalProperties": false
-          }
+            {
+              "type": "null"
+            }
+          ]
         },
         "projects": {
           "title": "Projects",
           "description": "The projects section contains your personal and professional projects, including technical details, timelines, and outcomes.",
-          "type": "array",
-          "items": {
-            "type": "object",
-            "properties": {
-              "name": {
-                "title": "Name",
-                "description": "The name of the project.",
-                "examples": [
-                  "Andy Dufrane",
-                  "Xiao Hanyu",
-                  "Jane Smith",
-                  "Dr. Robert John"
+          "anyOf": [
+            {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "title": "Name",
+                    "description": "The name of the project.",
+                    "examples": [
+                      "Andy Dufrane",
+                      "Xiao Hanyu",
+                      "Jane Smith",
+                      "Dr. Robert John"
+                    ],
+                    "type": "string",
+                    "minLength": 2,
+                    "maxLength": 128
+                  },
+                  "startDate": {
+                    "title": "Start Date",
+                    "description": "A valid date string that can be parsed by `Date.parse`.",
+                    "examples": [
+                      "2025-01-01",
+                      "Jul 2025",
+                      "July 3, 2025",
+                      "2025-02-02T00:00:03.123Z"
+                    ],
+                    "type": "string",
+                    "minLength": 4,
+                    "maxLength": 32
+                  },
+                  "summary": {
+                    "$ref": "#/$defs/summary"
+                  },
+                  "description": {
+                    "anyOf": [
+                      {
+                        "title": "Project Description",
+                        "description": "A detailed description of the project and your role.",
+                        "examples": [
+                          "Led development of a full-stack web application",
+                          "Designed and implemented REST API endpoints",
+                          "Managed team of 5 developers for mobile app development"
+                        ],
+                        "type": "string",
+                        "minLength": 4,
+                        "maxLength": 128
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  },
+                  "endDate": {
+                    "anyOf": [
+                      {
+                        "title": "End Date",
+                        "description": "A valid date string that can be parsed by `Date.parse`.",
+                        "examples": [
+                          "2025-01-01",
+                          "Jul 2025",
+                          "July 3, 2025",
+                          "2025-02-02T00:00:03.123Z"
+                        ],
+                        "type": "string",
+                        "minLength": 4,
+                        "maxLength": 32
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  },
+                  "keywords": {
+                    "anyOf": [
+                      {
+                        "$ref": "#/$defs/keywords"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  },
+                  "url": {
+                    "anyOf": [
+                      {
+                        "$ref": "#/$defs/url"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  }
+                },
+                "required": [
+                  "name",
+                  "startDate",
+                  "summary"
                 ],
-                "type": "string",
-                "minLength": 2,
-                "maxLength": 128
-              },
-              "startDate": {
-                "title": "Start Date",
-                "description": "A valid date string that can be parsed by `Date.parse`.",
-                "examples": [
-                  "2025-01-01",
-                  "Jul 2025",
-                  "July 3, 2025",
-                  "2025-02-02T00:00:03.123Z"
-                ],
-                "type": "string",
-                "minLength": 4,
-                "maxLength": 32
-              },
-              "summary": {
-                "$ref": "#/$defs/summary"
-              },
-              "description": {
-                "title": "Project Description",
-                "description": "A detailed description of the project and your role.",
-                "examples": [
-                  "Led development of a full-stack web application",
-                  "Designed and implemented REST API endpoints",
-                  "Managed team of 5 developers for mobile app development"
-                ],
-                "type": "string",
-                "minLength": 4,
-                "maxLength": 128
-              },
-              "endDate": {
-                "title": "End Date",
-                "description": "A valid date string that can be parsed by `Date.parse`.",
-                "examples": [
-                  "2025-01-01",
-                  "Jul 2025",
-                  "July 3, 2025",
-                  "2025-02-02T00:00:03.123Z"
-                ],
-                "type": "string",
-                "minLength": 4,
-                "maxLength": 32
-              },
-              "keywords": {
-                "$ref": "#/$defs/keywords"
-              },
-              "url": {
-                "$ref": "#/$defs/url"
+                "additionalProperties": false
               }
             },
-            "required": [
-              "name",
-              "startDate",
-              "summary"
-            ],
-            "additionalProperties": false
-          }
+            {
+              "type": "null"
+            }
+          ]
         },
         "publications": {
           "title": "Publications",
           "description": "The publications section contains your academic and professional publications, including papers, articles, and research works.",
-          "type": "array",
-          "items": {
-            "type": "object",
-            "properties": {
-              "name": {
-                "title": "Name",
-                "description": "The name of the publication.",
-                "examples": [
-                  "Andy Dufrane",
-                  "Xiao Hanyu",
-                  "Jane Smith",
-                  "Dr. Robert John"
+          "anyOf": [
+            {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "title": "Name",
+                    "description": "The name of the publication.",
+                    "examples": [
+                      "Andy Dufrane",
+                      "Xiao Hanyu",
+                      "Jane Smith",
+                      "Dr. Robert John"
+                    ],
+                    "type": "string",
+                    "minLength": 2,
+                    "maxLength": 128
+                  },
+                  "publisher": {
+                    "title": "Publisher",
+                    "description": "The organization that published the work.",
+                    "examples": [
+                      "ACM",
+                      "IEEE",
+                      "Springer",
+                      "Nature Publishing Group"
+                    ],
+                    "type": "string",
+                    "minLength": 2,
+                    "maxLength": 128
+                  },
+                  "releaseDate": {
+                    "anyOf": [
+                      {
+                        "title": "Release Date",
+                        "description": "A valid date string that can be parsed by `Date.parse`.",
+                        "examples": [
+                          "2025-01-01",
+                          "Jul 2025",
+                          "July 3, 2025",
+                          "2025-02-02T00:00:03.123Z"
+                        ],
+                        "type": "string",
+                        "minLength": 4,
+                        "maxLength": 32
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  },
+                  "summary": {
+                    "anyOf": [
+                      {
+                        "$ref": "#/$defs/summary"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  },
+                  "url": {
+                    "anyOf": [
+                      {
+                        "$ref": "#/$defs/url"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  }
+                },
+                "required": [
+                  "name",
+                  "publisher"
                 ],
-                "type": "string",
-                "minLength": 2,
-                "maxLength": 128
-              },
-              "publisher": {
-                "title": "Publisher",
-                "description": "The organization that published the work.",
-                "examples": [
-                  "ACM",
-                  "IEEE",
-                  "Springer",
-                  "Nature Publishing Group"
-                ],
-                "type": "string",
-                "minLength": 2,
-                "maxLength": 128
-              },
-              "releaseDate": {
-                "title": "Release Date",
-                "description": "A valid date string that can be parsed by `Date.parse`.",
-                "examples": [
-                  "2025-01-01",
-                  "Jul 2025",
-                  "July 3, 2025",
-                  "2025-02-02T00:00:03.123Z"
-                ],
-                "type": "string",
-                "minLength": 4,
-                "maxLength": 32
-              },
-              "summary": {
-                "$ref": "#/$defs/summary"
-              },
-              "url": {
-                "$ref": "#/$defs/url"
+                "additionalProperties": false
               }
             },
-            "required": [
-              "name",
-              "publisher"
-            ],
-            "additionalProperties": false
-          }
+            {
+              "type": "null"
+            }
+          ]
         },
         "references": {
           "title": "References",
           "description": "The references section contains professional contacts who can vouch for your work, including their contact information and relationship to you.",
-          "type": "array",
-          "items": {
-            "type": "object",
-            "properties": {
-              "name": {
-                "title": "Name",
-                "description": "The name of the reference.",
-                "examples": [
-                  "Andy Dufrane",
-                  "Xiao Hanyu",
-                  "Jane Smith",
-                  "Dr. Robert John"
+          "anyOf": [
+            {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "title": "Name",
+                    "description": "The name of the reference.",
+                    "examples": [
+                      "Andy Dufrane",
+                      "Xiao Hanyu",
+                      "Jane Smith",
+                      "Dr. Robert John"
+                    ],
+                    "type": "string",
+                    "minLength": 2,
+                    "maxLength": 128
+                  },
+                  "summary": {
+                    "$ref": "#/$defs/summary"
+                  },
+                  "email": {
+                    "anyOf": [
+                      {
+                        "$ref": "#/$defs/email"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  },
+                  "phone": {
+                    "anyOf": [
+                      {
+                        "$ref": "#/$defs/phone"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  },
+                  "relationship": {
+                    "anyOf": [
+                      {
+                        "title": "Relationship",
+                        "description": "Your professional relationship with the reference.",
+                        "examples": [
+                          "Former Manager",
+                          "Colleague",
+                          "Professor",
+                          "Client"
+                        ],
+                        "type": "string",
+                        "minLength": 2,
+                        "maxLength": 128
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  }
+                },
+                "required": [
+                  "name",
+                  "summary"
                 ],
-                "type": "string",
-                "minLength": 2,
-                "maxLength": 128
-              },
-              "summary": {
-                "$ref": "#/$defs/summary"
-              },
-              "email": {
-                "$ref": "#/$defs/email"
-              },
-              "phone": {
-                "$ref": "#/$defs/phone"
-              },
-              "relationship": {
-                "title": "Relationship",
-                "description": "Your professional relationship with the reference.",
-                "examples": [
-                  "Former Manager",
-                  "Colleague",
-                  "Professor",
-                  "Client"
-                ],
-                "type": "string",
-                "minLength": 2,
-                "maxLength": 128
+                "additionalProperties": false
               }
             },
-            "required": [
-              "name",
-              "summary"
-            ],
-            "additionalProperties": false
-          }
+            {
+              "type": "null"
+            }
+          ]
         },
         "skills": {
           "title": "Skills",
           "description": "The skills section contains your technical and professional skills, including proficiency levels and related keywords.",
-          "type": "array",
-          "items": {
-            "type": "object",
-            "properties": {
-              "level": {
-                "title": "Level option",
-                "description": "A predefined option from the available level choices.",
-                "type": "string",
-                "enum": [
-                  "Novice",
-                  "Beginner",
-                  "Intermediate",
-                  "Advanced",
-                  "Expert",
-                  "Master"
-                ]
-              },
-              "name": {
-                "title": "Name",
-                "description": "The name of the skill.",
-                "examples": [
-                  "Andy Dufrane",
-                  "Xiao Hanyu",
-                  "Jane Smith",
-                  "Dr. Robert John"
+          "anyOf": [
+            {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "level": {
+                    "title": "Level option",
+                    "description": "A predefined option from the available level choices.",
+                    "type": "string",
+                    "enum": [
+                      "Novice",
+                      "Beginner",
+                      "Intermediate",
+                      "Advanced",
+                      "Expert",
+                      "Master"
+                    ]
+                  },
+                  "name": {
+                    "title": "Name",
+                    "description": "The name of the skill.",
+                    "examples": [
+                      "Andy Dufrane",
+                      "Xiao Hanyu",
+                      "Jane Smith",
+                      "Dr. Robert John"
+                    ],
+                    "type": "string",
+                    "minLength": 2,
+                    "maxLength": 128
+                  },
+                  "keywords": {
+                    "anyOf": [
+                      {
+                        "$ref": "#/$defs/keywords"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  }
+                },
+                "required": [
+                  "level",
+                  "name"
                 ],
-                "type": "string",
-                "minLength": 2,
-                "maxLength": 128
-              },
-              "keywords": {
-                "$ref": "#/$defs/keywords"
+                "additionalProperties": false
               }
             },
-            "required": [
-              "level",
-              "name"
-            ],
-            "additionalProperties": false
-          }
+            {
+              "type": "null"
+            }
+          ]
         },
         "volunteer": {
           "title": "Volunteer",
           "description": "The volunteer section contains your community service and volunteer work, including organizations, roles, and contributions.",
-          "type": "array",
-          "items": {
-            "type": "object",
-            "properties": {
-              "organization": {
-                "title": "Volunteer Organization",
-                "description": "The organization where you volunteered.",
-                "examples": [
-                  "Red Cross",
-                  "Local Food Bank",
-                  "Animal Shelter",
-                  "Community Center"
+          "anyOf": [
+            {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "organization": {
+                    "title": "Volunteer Organization",
+                    "description": "The organization where you volunteered.",
+                    "examples": [
+                      "Red Cross",
+                      "Local Food Bank",
+                      "Animal Shelter",
+                      "Community Center"
+                    ],
+                    "type": "string",
+                    "minLength": 2,
+                    "maxLength": 128
+                  },
+                  "position": {
+                    "title": "Volunteer Position",
+                    "description": "Your role or position in the volunteer organization.",
+                    "examples": [
+                      "Event Coordinator",
+                      "Tutor",
+                      "Fundraiser",
+                      "Board Member"
+                    ],
+                    "type": "string",
+                    "minLength": 2,
+                    "maxLength": 64
+                  },
+                  "startDate": {
+                    "title": "Start Date",
+                    "description": "A valid date string that can be parsed by `Date.parse`.",
+                    "examples": [
+                      "2025-01-01",
+                      "Jul 2025",
+                      "July 3, 2025",
+                      "2025-02-02T00:00:03.123Z"
+                    ],
+                    "type": "string",
+                    "minLength": 4,
+                    "maxLength": 32
+                  },
+                  "summary": {
+                    "$ref": "#/$defs/summary"
+                  },
+                  "endDate": {
+                    "anyOf": [
+                      {
+                        "title": "End Date",
+                        "description": "A valid date string that can be parsed by `Date.parse`.",
+                        "examples": [
+                          "2025-01-01",
+                          "Jul 2025",
+                          "July 3, 2025",
+                          "2025-02-02T00:00:03.123Z"
+                        ],
+                        "type": "string",
+                        "minLength": 4,
+                        "maxLength": 32
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  },
+                  "url": {
+                    "anyOf": [
+                      {
+                        "$ref": "#/$defs/url"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  }
+                },
+                "required": [
+                  "organization",
+                  "position",
+                  "startDate",
+                  "summary"
                 ],
-                "type": "string",
-                "minLength": 2,
-                "maxLength": 128
-              },
-              "position": {
-                "title": "Volunteer Position",
-                "description": "Your role or position in the volunteer organization.",
-                "examples": [
-                  "Event Coordinator",
-                  "Tutor",
-                  "Fundraiser",
-                  "Board Member"
-                ],
-                "type": "string",
-                "minLength": 2,
-                "maxLength": 64
-              },
-              "startDate": {
-                "title": "Start Date",
-                "description": "A valid date string that can be parsed by `Date.parse`.",
-                "examples": [
-                  "2025-01-01",
-                  "Jul 2025",
-                  "July 3, 2025",
-                  "2025-02-02T00:00:03.123Z"
-                ],
-                "type": "string",
-                "minLength": 4,
-                "maxLength": 32
-              },
-              "summary": {
-                "$ref": "#/$defs/summary"
-              },
-              "endDate": {
-                "title": "End Date",
-                "description": "A valid date string that can be parsed by `Date.parse`.",
-                "examples": [
-                  "2025-01-01",
-                  "Jul 2025",
-                  "July 3, 2025",
-                  "2025-02-02T00:00:03.123Z"
-                ],
-                "type": "string",
-                "minLength": 4,
-                "maxLength": 32
-              },
-              "url": {
-                "$ref": "#/$defs/url"
+                "additionalProperties": false
               }
             },
-            "required": [
-              "organization",
-              "position",
-              "startDate",
-              "summary"
-            ],
-            "additionalProperties": false
-          }
+            {
+              "type": "null"
+            }
+          ]
         },
         "work": {
           "title": "Work",
           "description": "The work section contains your professional experience, including job titles, companies, and responsibilities.",
-          "type": "array",
-          "items": {
-            "type": "object",
-            "properties": {
-              "name": {
-                "title": "Company Name",
-                "description": "The name of the company or organization you worked for.",
-                "examples": [
-                  "Google",
-                  "Microsoft",
-                  "Apple",
-                  "Amazon"
+          "anyOf": [
+            {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "title": "Company Name",
+                    "description": "The name of the company or organization you worked for.",
+                    "examples": [
+                      "Google",
+                      "Microsoft",
+                      "Apple",
+                      "Amazon"
+                    ],
+                    "type": "string",
+                    "minLength": 2,
+                    "maxLength": 128
+                  },
+                  "position": {
+                    "title": "Position",
+                    "description": "Your job title or position at the company.",
+                    "examples": [
+                      "Software Engineer",
+                      "Product Manager",
+                      "Senior Developer",
+                      "UX Designer"
+                    ],
+                    "type": "string",
+                    "minLength": 2,
+                    "maxLength": 64
+                  },
+                  "startDate": {
+                    "title": "Start Date",
+                    "description": "A valid date string that can be parsed by `Date.parse`.",
+                    "examples": [
+                      "2025-01-01",
+                      "Jul 2025",
+                      "July 3, 2025",
+                      "2025-02-02T00:00:03.123Z"
+                    ],
+                    "type": "string",
+                    "minLength": 4,
+                    "maxLength": 32
+                  },
+                  "summary": {
+                    "$ref": "#/$defs/summary"
+                  },
+                  "endDate": {
+                    "anyOf": [
+                      {
+                        "title": "End Date",
+                        "description": "A valid date string that can be parsed by `Date.parse`.",
+                        "examples": [
+                          "2025-01-01",
+                          "Jul 2025",
+                          "July 3, 2025",
+                          "2025-02-02T00:00:03.123Z"
+                        ],
+                        "type": "string",
+                        "minLength": 4,
+                        "maxLength": 32
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  },
+                  "keywords": {
+                    "anyOf": [
+                      {
+                        "$ref": "#/$defs/keywords"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  },
+                  "url": {
+                    "anyOf": [
+                      {
+                        "$ref": "#/$defs/url"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  }
+                },
+                "required": [
+                  "name",
+                  "position",
+                  "startDate",
+                  "summary"
                 ],
-                "type": "string",
-                "minLength": 2,
-                "maxLength": 128
-              },
-              "position": {
-                "title": "Position",
-                "description": "Your job title or position at the company.",
-                "examples": [
-                  "Software Engineer",
-                  "Product Manager",
-                  "Senior Developer",
-                  "UX Designer"
-                ],
-                "type": "string",
-                "minLength": 2,
-                "maxLength": 64
-              },
-              "startDate": {
-                "title": "Start Date",
-                "description": "A valid date string that can be parsed by `Date.parse`.",
-                "examples": [
-                  "2025-01-01",
-                  "Jul 2025",
-                  "July 3, 2025",
-                  "2025-02-02T00:00:03.123Z"
-                ],
-                "type": "string",
-                "minLength": 4,
-                "maxLength": 32
-              },
-              "summary": {
-                "$ref": "#/$defs/summary"
-              },
-              "endDate": {
-                "title": "End Date",
-                "description": "A valid date string that can be parsed by `Date.parse`.",
-                "examples": [
-                  "2025-01-01",
-                  "Jul 2025",
-                  "July 3, 2025",
-                  "2025-02-02T00:00:03.123Z"
-                ],
-                "type": "string",
-                "minLength": 4,
-                "maxLength": 32
-              },
-              "keywords": {
-                "$ref": "#/$defs/keywords"
-              },
-              "url": {
-                "$ref": "#/$defs/url"
+                "additionalProperties": false
               }
             },
-            "required": [
-              "name",
-              "position",
-              "startDate",
-              "summary"
-            ],
-            "additionalProperties": false
-          }
+            {
+              "type": "null"
+            }
+          ]
         }
       },
       "required": [
@@ -1213,159 +1556,273 @@
     "layout": {
       "title": "Layout",
       "description": "The layout section contains all layout-related configurations, including LaTeX, locale, margins, template, typography, etc.",
-      "type": "object",
-      "properties": {
-        "latex": {
-          "title": "LaTeX",
-          "description": "The LaTeX section contains LaTeX-specific settings, including fontspec package configurations.",
+      "anyOf": [
+        {
           "type": "object",
           "properties": {
-            "fontspec": {
-              "type": "object",
-              "properties": {
-                "numbers": {
-                  "title": "Fontspec numbers option",
-                  "description": "A predefined option from the available fontspec numbers choices.",
+            "latex": {
+              "title": "LaTeX",
+              "description": "The LaTeX section contains LaTeX-specific settings, including fontspec package configurations.",
+              "anyOf": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "fontspec": {
+                      "anyOf": [
+                        {
+                          "type": "object",
+                          "properties": {
+                            "numbers": {
+                              "anyOf": [
+                                {
+                                  "title": "Fontspec numbers option",
+                                  "description": "A predefined option from the available fontspec numbers choices.",
+                                  "type": "string",
+                                  "enum": [
+                                    "Lining",
+                                    "OldStyle",
+                                    "Auto"
+                                  ]
+                                },
+                                {
+                                  "type": "null"
+                                }
+                              ]
+                            }
+                          },
+                          "additionalProperties": false
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    }
+                  },
+                  "additionalProperties": false
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "locale": {
+              "title": "Locale",
+              "description": "The locale section contains locale language settings, determining the language used for the resume.",
+              "anyOf": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "language": {
+                      "anyOf": [
+                        {
+                          "title": "Locale language option",
+                          "description": "A predefined option from the available locale language choices.",
+                          "type": "string",
+                          "enum": [
+                            "en",
+                            "zh-hans",
+                            "zh-hant-hk",
+                            "zh-hant-tw",
+                            "es"
+                          ]
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    }
+                  },
+                  "additionalProperties": false
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "margins": {
+              "title": "Margins",
+              "description": "The margins section contains page margin settings, including top, bottom, left, and right margins.",
+              "anyOf": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "top": {
+                      "anyOf": [
+                        {
+                          "title": "Top Margin Size",
+                          "description": "A positive number followed by valid units: cm, pt, or in. Examples: \"2.5cm\", \"1in\", \"72pt\".",
+                          "examples": [
+                            "2.5cm",
+                            "1in",
+                            "72pt",
+                            "0.5cm",
+                            "12pt"
+                          ],
+                          "type": "string",
+                          "minLength": 2,
+                          "maxLength": 32
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "bottom": {
+                      "anyOf": [
+                        {
+                          "title": "Bottom Margin Size",
+                          "description": "A positive number followed by valid units: cm, pt, or in. Examples: \"2.5cm\", \"1in\", \"72pt\".",
+                          "examples": [
+                            "2.5cm",
+                            "1in",
+                            "72pt",
+                            "0.5cm",
+                            "12pt"
+                          ],
+                          "type": "string",
+                          "minLength": 2,
+                          "maxLength": 32
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "left": {
+                      "anyOf": [
+                        {
+                          "title": "Left Margin Size",
+                          "description": "A positive number followed by valid units: cm, pt, or in. Examples: \"2.5cm\", \"1in\", \"72pt\".",
+                          "examples": [
+                            "2.5cm",
+                            "1in",
+                            "72pt",
+                            "0.5cm",
+                            "12pt"
+                          ],
+                          "type": "string",
+                          "minLength": 2,
+                          "maxLength": 32
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "right": {
+                      "anyOf": [
+                        {
+                          "title": "Right Margin Size",
+                          "description": "A positive number followed by valid units: cm, pt, or in. Examples: \"2.5cm\", \"1in\", \"72pt\".",
+                          "examples": [
+                            "2.5cm",
+                            "1in",
+                            "72pt",
+                            "0.5cm",
+                            "12pt"
+                          ],
+                          "type": "string",
+                          "minLength": 2,
+                          "maxLength": 32
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    }
+                  },
+                  "additionalProperties": false
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "page": {
+              "title": "Page",
+              "description": "The page section contains page display settings, including whether to show page numbers.",
+              "anyOf": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "showPageNumbers": {
+                      "title": "Show Page Numbers",
+                      "description": "Whether to show page numbers on the page.",
+                      "anyOf": [
+                        {
+                          "type": "boolean"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    }
+                  },
+                  "additionalProperties": false
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "template": {
+              "title": "Template",
+              "description": "The template section contains the resume template selection, determining the overall visual style and layout.",
+              "anyOf": [
+                {
+                  "title": "Template option",
+                  "description": "A predefined option from the available template choices.",
                   "type": "string",
                   "enum": [
-                    "Lining",
-                    "OldStyle",
-                    "Auto"
+                    "moderncv-banking",
+                    "moderncv-casual",
+                    "moderncv-classic"
                   ]
+                },
+                {
+                  "type": "null"
                 }
-              },
-              "additionalProperties": false
-            }
-          },
-          "additionalProperties": false
-        },
-        "locale": {
-          "title": "Locale",
-          "description": "The locale section contains locale language settings, determining the language used for the resume.",
-          "type": "object",
-          "properties": {
-            "language": {
-              "title": "Locale language option",
-              "description": "A predefined option from the available locale language choices.",
-              "type": "string",
-              "enum": [
-                "en",
-                "zh-hans",
-                "zh-hant-hk",
-                "zh-hant-tw",
-                "es"
+              ]
+            },
+            "typography": {
+              "title": "Typography",
+              "description": "The typography section contains font settings, including font size options.",
+              "anyOf": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "fontSize": {
+                      "anyOf": [
+                        {
+                          "title": "Font size option",
+                          "description": "A predefined option from the available font size choices.",
+                          "type": "string",
+                          "enum": [
+                            "10pt",
+                            "11pt",
+                            "12pt"
+                          ]
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    }
+                  },
+                  "additionalProperties": false
+                },
+                {
+                  "type": "null"
+                }
               ]
             }
           },
           "additionalProperties": false
         },
-        "margins": {
-          "title": "Margins",
-          "description": "The margins section contains page margin settings, including top, bottom, left, and right margins.",
-          "type": "object",
-          "properties": {
-            "top": {
-              "title": "Top Margin Size",
-              "description": "A positive number followed by valid units: cm, pt, or in. Examples: \"2.5cm\", \"1in\", \"72pt\".",
-              "examples": [
-                "2.5cm",
-                "1in",
-                "72pt",
-                "0.5cm",
-                "12pt"
-              ],
-              "type": "string",
-              "minLength": 2,
-              "maxLength": 32
-            },
-            "bottom": {
-              "title": "Bottom Margin Size",
-              "description": "A positive number followed by valid units: cm, pt, or in. Examples: \"2.5cm\", \"1in\", \"72pt\".",
-              "examples": [
-                "2.5cm",
-                "1in",
-                "72pt",
-                "0.5cm",
-                "12pt"
-              ],
-              "type": "string",
-              "minLength": 2,
-              "maxLength": 32
-            },
-            "left": {
-              "title": "Left Margin Size",
-              "description": "A positive number followed by valid units: cm, pt, or in. Examples: \"2.5cm\", \"1in\", \"72pt\".",
-              "examples": [
-                "2.5cm",
-                "1in",
-                "72pt",
-                "0.5cm",
-                "12pt"
-              ],
-              "type": "string",
-              "minLength": 2,
-              "maxLength": 32
-            },
-            "right": {
-              "title": "Right Margin Size",
-              "description": "A positive number followed by valid units: cm, pt, or in. Examples: \"2.5cm\", \"1in\", \"72pt\".",
-              "examples": [
-                "2.5cm",
-                "1in",
-                "72pt",
-                "0.5cm",
-                "12pt"
-              ],
-              "type": "string",
-              "minLength": 2,
-              "maxLength": 32
-            }
-          },
-          "additionalProperties": false
-        },
-        "page": {
-          "title": "Page",
-          "description": "The page section contains page display settings, including whether to show page numbers.",
-          "type": "object",
-          "properties": {
-            "showPageNumbers": {
-              "title": "Show Page Numbers",
-              "description": "Whether to show page numbers on the page.",
-              "type": "boolean"
-            }
-          },
-          "additionalProperties": false
-        },
-        "template": {
-          "title": "Template",
-          "description": "The template section contains the resume template selection, determining the overall visual style and layout.",
-          "type": "string",
-          "enum": [
-            "moderncv-banking",
-            "moderncv-casual",
-            "moderncv-classic"
-          ]
-        },
-        "typography": {
-          "title": "Typography",
-          "description": "The typography section contains font settings, including font size options.",
-          "type": "object",
-          "properties": {
-            "fontSize": {
-              "title": "Font size option",
-              "description": "A predefined option from the available font size choices.",
-              "type": "string",
-              "enum": [
-                "10pt",
-                "11pt",
-                "12pt"
-              ]
-            }
-          },
-          "additionalProperties": false
+        {
+          "type": "null"
         }
-      },
-      "additionalProperties": false
+      ]
     }
   },
   "required": [

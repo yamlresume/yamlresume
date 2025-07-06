@@ -36,9 +36,9 @@ import { localeLanguageOptionSchema } from '../primitives'
 export const localeSchema = z.object({
   locale: z
     .object({
-      language: localeLanguageOptionSchema.optional(),
+      language: localeLanguageOptionSchema.nullish(),
     })
-    .optional()
+    .nullish()
     .meta({
       title: 'Locale',
       description: joinNonEmptyString(

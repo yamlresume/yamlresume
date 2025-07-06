@@ -25,10 +25,15 @@
 import { describe, expect, it } from 'vitest'
 
 import { optionSchemaMessage } from '../primitives'
-import { expectSchemaMetadata, validateZodErrors } from '../utils'
+import {
+  expectSchemaMetadata,
+  getNullishTestCases,
+  validateZodErrors,
+} from '../utils'
 import {
   addressSchema,
   citySchema,
+  locationItemSchema,
   locationSchema,
   postalCodeSchema,
   regionSchema,
@@ -74,6 +79,8 @@ describe('locationSchema', () => {
   const region = 'California'
 
   it('should validate valid location data', () => {
+    const baseLocationItem = { city }
+
     const tests: Array<Location> = [
       {},
       {
@@ -81,7 +88,7 @@ describe('locationSchema', () => {
       },
       {
         location: {
-          city,
+          ...baseLocationItem,
 
           country,
           address,
@@ -89,46 +96,11 @@ describe('locationSchema', () => {
           region,
         },
       },
-      {
-        location: {
-          city,
-
-          // optional address
-          country,
-          postalCode,
-          region,
-        },
-      },
-      {
-        location: {
-          city,
-
-          // optional country
-          address,
-          postalCode,
-          region,
-        },
-      },
-      {
-        location: {
-          city,
-
-          // optional postalCode
-          country,
-          address,
-          region,
-        },
-      },
-      {
-        location: {
-          city,
-
-          // optional region
-          country,
-          address,
-          postalCode,
-        },
-      },
+      ...getNullishTestCases(locationItemSchema, baseLocationItem).map(
+        (testCase) => ({
+          location: testCase,
+        })
+      ),
     ]
 
     for (const location of tests) {

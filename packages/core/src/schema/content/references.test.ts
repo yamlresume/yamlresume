@@ -24,16 +24,19 @@
 
 import { describe, expect, it } from 'vitest'
 
-import { expectSchemaMetadata, validateZodErrors } from '../utils'
 import {
+  expectSchemaMetadata,
+  getNullishTestCases,
+  validateZodErrors,
+} from '../utils'
+import {
+  referenceItemSchema,
   referenceNameSchema,
   referencesSchema,
   relationshipSchema,
 } from './references'
 
 import type { References } from '@/models'
-
-const summary = 'This is a summary with some text.'
 
 describe('referenceNameSchema', () => {
   it('should have correct metadata', () => {
@@ -53,11 +56,18 @@ describe('referencesSchema', () => {
   })
 
   const name = 'John Doe'
+  const summary = 'This is a summary with some text.'
+
   const email = 'john@example.com'
   const phone = '+1234567890'
   const relationship = 'Former Manager'
 
   it('should validate a references object if it is valid', () => {
+    const baseReferenceItem = {
+      name,
+      summary,
+    }
+
     const tests: Array<References> = [
       {},
       {
@@ -69,8 +79,7 @@ describe('referencesSchema', () => {
       {
         references: [
           {
-            name,
-            summary,
+            ...baseReferenceItem,
 
             email,
             phone,
@@ -78,42 +87,11 @@ describe('referencesSchema', () => {
           },
         ],
       },
-      {
-        references: [
-          {
-            name,
-            summary,
-
-            // optional email
-            phone,
-            relationship,
-          },
-        ],
-      },
-      {
-        references: [
-          {
-            name,
-            summary,
-
-            // optional phone
-            phone,
-            relationship,
-          },
-        ],
-      },
-      {
-        references: [
-          {
-            name,
-            summary,
-
-            // optional relationship
-            email,
-            phone,
-          },
-        ],
-      },
+      ...getNullishTestCases(referenceItemSchema, baseReferenceItem).map(
+        (testCase) => ({
+          references: [testCase],
+        })
+      ),
     ]
 
     for (const references of tests) {

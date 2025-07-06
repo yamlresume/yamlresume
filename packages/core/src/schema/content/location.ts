@@ -67,29 +67,31 @@ export const regionSchema = sizedStringSchema('region', 2, 64).meta({
 })
 
 /**
+ * A zod schema for a location item.
+ */
+export const locationItemSchema = z.object({
+  // required fields
+  city: citySchema,
+
+  // optional fields
+  address: addressSchema.nullish(),
+  country: countryOptionSchema.nullish(),
+  postalCode: postalCodeSchema.nullish(),
+  region: regionSchema.nullish(),
+})
+
+/**
  * A zod schema for location.
  */
 export const locationSchema = z.object({
-  location: z
-    .object({
-      // required fields
-      city: citySchema,
-
-      // optional fields
-      address: addressSchema.optional(),
-      country: countryOptionSchema.optional(),
-      postalCode: postalCodeSchema.optional(),
-      region: regionSchema.optional(),
-    })
-    .optional()
-    .meta({
-      title: 'Location',
-      description: joinNonEmptyString(
-        [
-          'The location section contains your geographical information,',
-          'such as city, address, country, and postal code.',
-        ],
-        ' '
-      ),
-    }),
+  location: locationItemSchema.nullish().meta({
+    title: 'Location',
+    description: joinNonEmptyString(
+      [
+        'The location section contains your geographical information,',
+        'such as city, address, country, and postal code.',
+      ],
+      ' '
+    ),
+  }),
 })

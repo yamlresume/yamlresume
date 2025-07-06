@@ -34,20 +34,23 @@ export const interestNameSchema = nameSchema('name').describe(
 )
 
 /**
+ * A zod schema for an interest item.
+ */
+export const interestItemSchema = z.object({
+  // required fields
+  name: interestNameSchema,
+
+  // optional fields
+  keywords: keywordsSchema.nullish(),
+})
+
+/**
  * A zod schema for interests.
  */
 export const interestsSchema = z.object({
   interests: z
-    .array(
-      z.object({
-        // required fields
-        name: interestNameSchema,
-
-        // optional fields
-        keywords: keywordsSchema.optional(),
-      })
-    )
-    .optional()
+    .array(interestItemSchema)
+    .nullish()
     .meta({
       title: 'Interests',
       description: joinNonEmptyString(

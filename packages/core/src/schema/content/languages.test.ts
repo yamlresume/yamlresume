@@ -25,8 +25,12 @@
 import { describe, expect, it } from 'vitest'
 
 import { optionSchemaMessage } from '../primitives'
-import { expectSchemaMetadata, validateZodErrors } from '../utils'
-import { languagesSchema } from './languages'
+import {
+  expectSchemaMetadata,
+  getNullishTestCases,
+  validateZodErrors,
+} from '../utils'
+import { languageItemSchema, languagesSchema } from './languages'
 
 import { FLUENCY_OPTIONS, LANGUAGE_OPTIONS } from '@/models'
 import type { Languages } from '@/models'
@@ -41,6 +45,11 @@ describe('languagesSchema', () => {
   const keywords = ['Keyword 1', 'Keyword 2']
 
   it('should validate a languages object if it is valid', () => {
+    const baseLanguageItem = {
+      fluency,
+      language,
+    }
+
     const tests: Array<Languages> = [
       {},
       {
@@ -52,23 +61,17 @@ describe('languagesSchema', () => {
       {
         languages: [
           {
-            fluency,
-            language,
+            ...baseLanguageItem,
 
             keywords,
           },
         ],
       },
-      {
-        languages: [
-          {
-            fluency,
-            language,
-
-            // optional keywords
-          },
-        ],
-      },
+      ...getNullishTestCases(languageItemSchema, baseLanguageItem).map(
+        (testCase) => ({
+          languages: [testCase],
+        })
+      ),
     ]
 
     for (const languages of tests) {

@@ -85,39 +85,41 @@ export const scoreSchema = sizedStringSchema('score', 2, 32).meta({
 })
 
 /**
+ * A zod schema for an education item.
+ */
+export const educationItemSchema = z.object({
+  // required fields
+  area: areaSchema,
+  institution: institutionSchema,
+  degree: degreeOptionSchema,
+  startDate: dateSchema('startDate'),
+
+  // optional fields
+  courses: coursesSchema.nullish(),
+  endDate: dateSchema('endDate').nullish(),
+  summary: summarySchema.nullish(),
+  score: scoreSchema.nullish(),
+  url: urlSchema.nullish(),
+})
+
+/**
  * A zod schema for education.
  */
 export const educationSchema = z.object({
   education: z
-    .array(
-      z.object({
-        // required fields
-        area: areaSchema,
-        institution: institutionSchema,
-        degree: degreeOptionSchema,
-        startDate: dateSchema('startDate'),
-
-        // optional fields
-        courses: coursesSchema.optional(),
-        endDate: dateSchema('endDate').optional(),
-        summary: summarySchema.optional(),
-        score: scoreSchema.optional(),
-        url: urlSchema.optional(),
-      }),
-      {
-        error: (issue) => {
-          if (issue.input === undefined) {
-            return {
-              message: 'education is required.',
-            }
-          }
-
+    .array(educationItemSchema, {
+      error: (issue) => {
+        if (issue.input === undefined) {
           return {
-            message: issue.message,
+            message: 'education is required.',
           }
-        },
-      }
-    )
+        }
+
+        return {
+          message: issue.message,
+        }
+      },
+    })
     .meta({
       title: 'Education',
       description: joinNonEmptyString(

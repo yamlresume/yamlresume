@@ -33,7 +33,7 @@ import { templateOptionSchema } from '../primitives'
  * Validates that the template field contains a valid template option.
  */
 export const templateSchema = z.object({
-  template: templateOptionSchema.optional().meta({
+  template: templateOptionSchema.nullish().meta({
     title: 'Template',
     description: joinNonEmptyString(
       [

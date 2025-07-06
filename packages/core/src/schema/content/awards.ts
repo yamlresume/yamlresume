@@ -50,22 +50,25 @@ export const titleSchema = nameSchema('title').meta({
 })
 
 /**
+ * A zod schema for an award item
+ */
+export const awardItemSchema = z.object({
+  // required fields
+  awarder: awarderSchema,
+  title: titleSchema,
+
+  // optional fields
+  date: dateSchema('date').nullish(),
+  summary: summarySchema.nullish(),
+})
+
+/**
  * A zod schema for awards.
  */
 export const awardsSchema = z.object({
   awards: z
-    .array(
-      z.object({
-        // required fields
-        awarder: awarderSchema,
-        title: titleSchema,
-
-        // optional fields
-        date: dateSchema('date').optional(),
-        summary: summarySchema.optional(),
-      })
-    )
-    .optional()
+    .array(awardItemSchema)
+    .nullish()
     .meta({
       title: 'Awards',
       description: joinNonEmptyString(

@@ -31,21 +31,24 @@ import {
 } from '../primitives'
 
 /**
+ * A zod schema for a language item.
+ */
+export const languageItemSchema = z.object({
+  // required fields
+  fluency: fluencyOptionSchema,
+  language: languageOptionSchema,
+
+  // optional fields
+  keywords: keywordsSchema.nullish(),
+})
+
+/**
  * A zod schema for languages.
  */
 export const languagesSchema = z.object({
   languages: z
-    .array(
-      z.object({
-        // required fields
-        fluency: fluencyOptionSchema,
-        language: languageOptionSchema,
-
-        // optional fields
-        keywords: keywordsSchema.optional(),
-      })
-    )
-    .optional()
+    .array(languageItemSchema)
+    .nullish()
     .meta({
       title: 'Languages',
       description: joinNonEmptyString(

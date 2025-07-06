@@ -21,51 +21,41 @@
  * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
  * IN THE SOFTWARE.
  */
+
+import { describe, expect, it } from 'vitest'
 import { z } from 'zod/v4'
 
-import { joinNonEmptyString } from '@/utils'
-import {
-  networkOptionSchema,
-  sizedStringSchema,
-  urlSchema,
-} from '../primitives'
+import { getNullishTestCases } from './utils'
 
-/**
- * A zod schema for a username.
- */
-export const usernameSchema = sizedStringSchema('username', 2, 64).meta({
-  title: 'Username',
-  description: 'Your username or handle on the social network.',
-  examples: ['john_doe', 'jane.smith', 'dev_engineer', 'designer_123'],
-})
+describe('getNullishTestCases', () => {
+  it('should return the correct test cases', () => {
+    const schema = z.object({
+      required: z.string(),
+      nullish1: z.string().nullish(),
+      nullish2: z.string().nullish(),
+    })
 
-/**
- * A zod schema for a profile item.
- */
-export const profileItemSchema = z.object({
-  // required fields
-  network: networkOptionSchema,
-  username: usernameSchema,
+    const testCases = getNullishTestCases(schema, {
+      required: 'required',
+    })
 
-  // optional fields
-  url: urlSchema.nullish(),
-})
-
-/**
- * A zod schema for profiles.
- */
-export const profilesSchema = z.object({
-  profiles: z
-    .array(profileItemSchema)
-    .nullish()
-    .meta({
-      title: 'Profiles',
-      description: joinNonEmptyString(
-        [
-          'The profiles section contains your social media and professional network profiles,',
-          'such as LinkedIn, GitHub, Twitter, etc.',
-        ],
-        ' '
-      ),
-    }),
+    expect(testCases).toEqual([
+      {
+        nullish1: null,
+        required: 'required',
+      },
+      {
+        nullish1: undefined,
+        required: 'required',
+      },
+      {
+        nullish2: null,
+        required: 'required',
+      },
+      {
+        nullish2: undefined,
+        required: 'required',
+      },
+    ])
+  })
 })

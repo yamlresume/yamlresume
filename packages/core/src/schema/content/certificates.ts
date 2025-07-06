@@ -41,22 +41,25 @@ export const issuerSchema = organizationSchema('issuer').meta({
 })
 
 /**
+ * A zod schema for a certificate item.
+ */
+export const certificateItemSchema = z.object({
+  // required fields
+  issuer: issuerSchema,
+  name: nameSchema('name').describe('The name of the certificate.'),
+
+  // optional fields
+  date: dateSchema('date').nullish(),
+  url: urlSchema.nullish(),
+})
+
+/**
  * A zod schema for certificates.
  */
 export const certificatesSchema = z.object({
   certificates: z
-    .array(
-      z.object({
-        // required fields
-        issuer: issuerSchema,
-        name: nameSchema('name').describe('The name of the certificate.'),
-
-        // optional fields
-        date: dateSchema('date').optional(),
-        url: urlSchema.optional(),
-      })
-    )
-    .optional()
+    .array(certificateItemSchema)
+    .nullish()
     .meta({
       title: 'Certificates',
       description: joinNonEmptyString(

@@ -24,18 +24,21 @@
 
 import { describe, expect, it } from 'vitest'
 
-import { expectSchemaMetadata, validateZodErrors } from '../utils'
+import {
+  expectSchemaMetadata,
+  getNullishTestCases,
+  validateZodErrors,
+} from '../utils'
 import {
   areaSchema,
   coursesSchema,
+  educationItemSchema,
   educationSchema,
   institutionSchema,
   scoreSchema,
 } from './education'
 
 import type { Education } from '@/models'
-
-const summary = 'This is a summary with some text.'
 
 describe('areaSchema', () => {
   it('should have correct metadata', () => {
@@ -67,15 +70,24 @@ describe('educationSchema', () => {
   })
 
   const area = 'Study area'
+  const degree = 'Bachelor'
+  const institution = 'Organization'
+  const startDate = '2020'
+
   const courses = ['Course 1', 'Course 2']
   const endDate = '2025'
-  const institution = 'Organization'
   const score = '100'
-  const startDate = '2020'
-  const degree = 'Bachelor'
+  const summary = 'This is a summary with some text.'
   const url = 'https://www.google.com'
 
   it('should validate an education object if it is valid', () => {
+    const baseEducationObject = {
+      area,
+      institution,
+      degree,
+      startDate,
+    }
+
     const tests: Array<Education> = [
       {
         education: [],
@@ -83,10 +95,7 @@ describe('educationSchema', () => {
       {
         education: [
           {
-            area,
-            institution,
-            degree,
-            startDate,
+            ...baseEducationObject,
 
             courses,
             endDate,
@@ -96,85 +105,13 @@ describe('educationSchema', () => {
           },
         ],
       },
+      ...getNullishTestCases(educationItemSchema, baseEducationObject).map(
+        (testCase) => ({
+          education: [testCase],
+        })
+      ),
       {
-        education: [
-          {
-            area,
-            institution,
-            degree,
-            startDate,
-
-            // optional courses
-            endDate,
-            score,
-            summary,
-            url,
-          },
-        ],
-      },
-      {
-        education: [
-          {
-            area,
-            institution,
-            degree,
-            startDate,
-
-            // optional endDate
-            courses,
-            score,
-            summary,
-            url,
-          },
-        ],
-      },
-      {
-        education: [
-          {
-            area,
-            institution,
-            degree,
-            startDate,
-
-            // optional score
-            courses,
-            endDate,
-            summary,
-            url,
-          },
-        ],
-      },
-      {
-        education: [
-          {
-            area,
-            institution,
-            degree,
-            startDate,
-
-            // optional summary
-            courses,
-            endDate,
-            score,
-            url,
-          },
-        ],
-      },
-      {
-        education: [
-          {
-            area,
-            institution,
-            degree,
-            startDate,
-
-            // optional url
-            courses,
-            endDate,
-            score,
-            summary,
-          },
-        ],
+        education: [baseEducationObject],
       },
     ]
 

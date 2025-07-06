@@ -24,8 +24,17 @@
 
 import { describe, expect, it } from 'vitest'
 
-import { expectSchemaMetadata, validateZodErrors } from '../utils'
-import { companyNameSchema, positionSchema, workSchema } from './work'
+import {
+  expectSchemaMetadata,
+  getNullishTestCases,
+  validateZodErrors,
+} from '../utils'
+import {
+  companyNameSchema,
+  positionSchema,
+  workItemSchema,
+  workSchema,
+} from './work'
 
 import type { Work } from '@/models'
 
@@ -50,11 +59,18 @@ describe('workSchema', () => {
   const position = 'Software Engineer'
   const startDate = '2020-01-01'
   const summary = 'Built amazing things'
+
   const endDate = '2023-01-01'
   const url = 'https://example.com'
   const keywords = ['typescript', 'react']
 
   it('should validate a work object if it is valid', () => {
+    const baseWorkItem = {
+      name,
+      position,
+      startDate,
+      summary,
+    }
     const tests: Array<Work> = [
       {},
       {
@@ -66,10 +82,7 @@ describe('workSchema', () => {
       {
         work: [
           {
-            name,
-            position,
-            startDate,
-            summary,
+            ...baseWorkItem,
 
             endDate,
             url,
@@ -77,48 +90,9 @@ describe('workSchema', () => {
           },
         ],
       },
-      {
-        work: [
-          {
-            name,
-            position,
-            startDate,
-            summary,
-
-            // optional endDate
-            url,
-            keywords,
-          },
-        ],
-      },
-      {
-        work: [
-          {
-            name,
-            position,
-            startDate,
-            summary,
-
-            // optional url
-            endDate,
-            keywords,
-          },
-        ],
-      },
-      {
-        work: [
-          {
-            name,
-            position,
-            startDate,
-            summary,
-
-            // optional keywords
-            endDate,
-            url,
-          },
-        ],
-      },
+      ...getNullishTestCases(workItemSchema, baseWorkItem).map((testCase) => ({
+        work: [testCase],
+      })),
     ]
 
     for (const work of tests) {

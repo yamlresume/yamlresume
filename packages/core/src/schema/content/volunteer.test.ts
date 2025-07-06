@@ -24,16 +24,19 @@
 
 import { describe, expect, it } from 'vitest'
 
-import { expectSchemaMetadata, validateZodErrors } from '../utils'
 import {
+  expectSchemaMetadata,
+  getNullishTestCases,
+  validateZodErrors,
+} from '../utils'
+import {
+  volunteerItemSchema,
   volunteerOrganizationSchema,
   volunteerPositionSchema,
   volunteerSchema,
 } from './volunteer'
 
 import type { Volunteer } from '@/models'
-
-const summary = 'This is a summary with some text.'
 
 describe('volunteerOrganizationSchema', () => {
   it('should have correct metadata', () => {
@@ -55,10 +58,19 @@ describe('volunteerSchema', () => {
   const organization = 'Volunteer Organization'
   const position = 'Volunteer Position'
   const startDate = '2020-01'
+  const summary = 'This is a summary with some text.'
+
   const endDate = '2021-12'
   const url = 'https://example.com'
 
   it('should validate a volunteer object if it is valid', () => {
+    const baseVolunteerItem = {
+      organization,
+      position,
+      startDate,
+      summary,
+    }
+
     const tests: Array<Volunteer> = [
       {},
       {
@@ -70,42 +82,18 @@ describe('volunteerSchema', () => {
       {
         volunteer: [
           {
-            organization,
-            position,
-            startDate,
+            ...baseVolunteerItem,
 
             endDate,
-            summary,
             url,
           },
         ],
       },
-      {
-        volunteer: [
-          {
-            organization,
-            position,
-            startDate,
-
-            // optional endDate
-            summary,
-            url,
-          },
-        ],
-      },
-      {
-        volunteer: [
-          {
-            organization,
-            position,
-            startDate,
-
-            // optional url
-            endDate,
-            summary,
-          },
-        ],
-      },
+      ...getNullishTestCases(volunteerItemSchema, baseVolunteerItem).map(
+        (testCase) => ({
+          volunteer: [testCase],
+        })
+      ),
     ]
 
     for (const volunteer of tests) {

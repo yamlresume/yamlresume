@@ -24,12 +24,14 @@
 
 import { describe, expect, it } from 'vitest'
 
-import { expectSchemaMetadata, validateZodErrors } from '../utils'
-import { basicsSchema, headlineSchema } from './basics'
+import {
+  expectSchemaMetadata,
+  getNullishTestCases,
+  validateZodErrors,
+} from '../utils'
+import { basicsItemSchema, basicsSchema, headlineSchema } from './basics'
 
 import type { Basics } from '@/models'
-
-const summary = 'This is a summary with some text.'
 
 describe('headlineSchema', () => {
   it('should have correct metadata', () => {
@@ -42,17 +44,23 @@ describe('basicsSchema', () => {
     expectSchemaMetadata(basicsSchema.shape.basics)
   })
 
+  const name = 'Name'
+
   const email = 'test@test.com'
   const headline = 'Headline'
-  const name = 'Name'
   const phone = '+1234567890'
+  const summary = 'This is a summary with some text.'
   const url = 'https://www.google.com'
 
   it('should validate a basics object if it is valid', () => {
+    const baseBasicsObject = {
+      name,
+    }
+
     const tests: Array<Basics> = [
       {
         basics: {
-          name,
+          ...baseBasicsObject,
 
           email,
           headline,
@@ -61,61 +69,11 @@ describe('basicsSchema', () => {
           url,
         },
       },
-      {
-        basics: {
-          name,
-
-          // optional email
-          headline,
-          phone,
-          summary,
-          url,
-        },
-      },
-      {
-        basics: {
-          name,
-
-          // optional headline
-          email,
-          phone,
-          summary,
-          url,
-        },
-      },
-      {
-        basics: {
-          name,
-
-          // optional phone
-          email,
-          headline,
-          summary,
-          url,
-        },
-      },
-      {
-        basics: {
-          name,
-
-          // optional summary
-          email,
-          headline,
-          phone,
-          url,
-        },
-      },
-      {
-        basics: {
-          name,
-
-          // optional url
-          email,
-          headline,
-          phone,
-          summary,
-        },
-      },
+      ...getNullishTestCases(basicsItemSchema, baseBasicsObject).map(
+        (testCase) => ({
+          basics: testCase,
+        })
+      ),
     ]
 
     for (const { basics } of tests) {

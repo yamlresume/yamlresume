@@ -53,23 +53,25 @@ export const relationshipSchema = sizedStringSchema(
 })
 
 /**
+ * A zod schema for a reference item.
+ */
+export const referenceItemSchema = z.object({
+  // required fields
+  name: referenceNameSchema,
+  summary: summarySchema,
+
+  // optional fields
+  email: emailSchema.nullish(),
+  phone: phoneSchema.nullish(),
+  relationship: relationshipSchema.nullish(),
+})
+/**
  * A zod schema for references.
  */
 export const referencesSchema = z.object({
   references: z
-    .array(
-      z.object({
-        // required fields
-        name: referenceNameSchema,
-        summary: summarySchema,
-
-        // optional fields
-        email: emailSchema.optional(),
-        phone: phoneSchema.optional(),
-        relationship: relationshipSchema.optional(),
-      })
-    )
-    .optional()
+    .array(referenceItemSchema)
+    .nullish()
     .meta({
       title: 'References',
       description: joinNonEmptyString(

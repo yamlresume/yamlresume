@@ -47,44 +47,47 @@ export const headlineSchema = sizedStringSchema('headline', 8, 128).meta({
 })
 
 /**
+ * A zod schema for a basics item.
+ */
+export const basicsItemSchema = z.object(
+  {
+    // required fields
+    name: nameSchema('name').describe('Your personal name.'),
+
+    // optional fields
+    email: emailSchema.nullish(),
+    headline: headlineSchema.nullish(),
+    phone: phoneSchema.nullish(),
+    summary: summarySchema.nullish(),
+    url: urlSchema.nullish(),
+  },
+  {
+    error: (issue) => {
+      if (issue.input === undefined) {
+        return {
+          message: 'basics is required.',
+        }
+      }
+
+      return {
+        message: issue.message,
+      }
+    },
+  }
+)
+
+/**
  * A zod schema for basics.
  */
 export const basicsSchema = z.object({
-  basics: z
-    .object(
-      {
-        // required fields
-        name: nameSchema('name').describe('Your personal name.'),
-
-        // optional fields
-        email: emailSchema.optional(),
-        headline: headlineSchema.optional(),
-        phone: phoneSchema.optional(),
-        summary: summarySchema.optional(),
-        url: urlSchema.optional(),
-      },
-      {
-        error: (issue) => {
-          if (issue.input === undefined) {
-            return {
-              message: 'basics is required.',
-            }
-          }
-
-          return {
-            message: issue.message,
-          }
-        },
-      }
-    )
-    .meta({
-      title: 'Basics',
-      description: joinNonEmptyString(
-        [
-          'The basics section contains your personal information,',
-          'such as your name, email, phone number, and a brief summary.',
-        ],
-        ' '
-      ),
-    }),
+  basics: basicsItemSchema.meta({
+    title: 'Basics',
+    description: joinNonEmptyString(
+      [
+        'The basics section contains your personal information,',
+        'such as your name, email, phone number, and a brief summary.',
+      ],
+      ' '
+    ),
+  }),
 })

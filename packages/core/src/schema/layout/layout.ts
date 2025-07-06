@@ -49,7 +49,7 @@ export const layoutSchema = z.object({
       ...templateSchema.shape,
       ...typographySchema.shape,
     })
-    .optional()
+    .nullish()
     .meta({
       title: 'Layout',
       description: joinNonEmptyString(

@@ -57,25 +57,28 @@ export const positionSchema = sizedStringSchema('position', 2, 64).meta({
 })
 
 /**
+ * A zod schema for a work item.
+ */
+export const workItemSchema = z.object({
+  // required fields
+  name: companyNameSchema,
+  position: positionSchema,
+  startDate: dateSchema('startDate'),
+  summary: summarySchema,
+
+  // optional fields
+  endDate: dateSchema('endDate').nullish(),
+  keywords: keywordsSchema.nullish(),
+  url: urlSchema.nullish(),
+})
+
+/**
  * A zod schema for work.
  */
 export const workSchema = z.object({
   work: z
-    .array(
-      z.object({
-        // required fields
-        name: companyNameSchema,
-        position: positionSchema,
-        startDate: dateSchema('startDate'),
-        summary: summarySchema,
-
-        // optional fields
-        endDate: dateSchema('endDate').optional(),
-        keywords: keywordsSchema.optional(),
-        url: urlSchema.optional(),
-      })
-    )
-    .optional()
+    .array(workItemSchema)
+    .nullish()
     .meta({
       title: 'Work',
       description: joinNonEmptyString(

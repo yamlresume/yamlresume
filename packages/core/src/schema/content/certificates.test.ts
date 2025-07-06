@@ -24,8 +24,16 @@
 
 import { describe, expect, it } from 'vitest'
 
-import { expectSchemaMetadata, validateZodErrors } from '../utils'
-import { certificatesSchema, issuerSchema } from './certificates'
+import {
+  expectSchemaMetadata,
+  getNullishTestCases,
+  validateZodErrors,
+} from '../utils'
+import {
+  certificateItemSchema,
+  certificatesSchema,
+  issuerSchema,
+} from './certificates'
 
 import type { Certificates } from '@/models'
 
@@ -46,6 +54,11 @@ describe('certificatesSchema', () => {
   const url = 'https://www.google.com'
 
   it('should return a certificate if it is valid', () => {
+    const baseCertificateItem = {
+      issuer,
+      name,
+    }
+
     const tests: Array<Certificates> = [
       {},
       {
@@ -57,36 +70,18 @@ describe('certificatesSchema', () => {
       {
         certificates: [
           {
-            issuer,
-            name,
+            ...baseCertificateItem,
 
             date,
             url,
           },
         ],
       },
-      {
-        certificates: [
-          {
-            issuer,
-            name,
-
-            // optional date
-            url,
-          },
-        ],
-      },
-      {
-        certificates: [
-          {
-            issuer,
-            name,
-
-            // optional url
-            date,
-          },
-        ],
-      },
+      ...getNullishTestCases(certificateItemSchema, baseCertificateItem).map(
+        (testCase) => ({
+          certificates: [testCase],
+        })
+      ),
     ]
 
     for (const { certificates } of tests) {

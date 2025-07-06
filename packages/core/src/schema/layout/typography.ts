@@ -36,9 +36,9 @@ import { fontSizeOptionSchema } from '../primitives'
 export const typographySchema = z.object({
   typography: z
     .object({
-      fontSize: fontSizeOptionSchema.optional(),
+      fontSize: fontSizeOptionSchema.nullish(),
     })
-    .optional()
+    .nullish()
     .meta({
       title: 'Typography',
       description: joinNonEmptyString(

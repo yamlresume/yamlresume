@@ -24,8 +24,12 @@
 
 import { describe, expect, it } from 'vitest'
 
-import { expectSchemaMetadata, validateZodErrors } from '../utils'
-import { profilesSchema, usernameSchema } from './profiles'
+import {
+  expectSchemaMetadata,
+  getNullishTestCases,
+  validateZodErrors,
+} from '../utils'
+import { profileItemSchema, profilesSchema, usernameSchema } from './profiles'
 
 import type { Profiles } from '@/models'
 
@@ -45,6 +49,11 @@ describe('profilesSchema', () => {
   const username = 'yamlresume'
 
   it('should validate a profiles object if it is valid', () => {
+    const baseProfileItem = {
+      network,
+      username,
+    } as const
+
     const tests: Array<Profiles> = [
       {},
       {
@@ -53,23 +62,17 @@ describe('profilesSchema', () => {
       {
         profiles: [
           {
-            network,
-            username,
+            ...baseProfileItem,
 
             url,
           },
         ],
       },
-      {
-        profiles: [
-          {
-            network,
-            username,
-
-            // optional url
-          },
-        ],
-      },
+      ...getNullishTestCases(profileItemSchema, baseProfileItem).map(
+        (testCase) => ({
+          profiles: [testCase],
+        })
+      ),
     ]
 
     for (const profiles of tests) {

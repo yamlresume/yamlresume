@@ -36,12 +36,12 @@ import { marginSizeSchema } from '../primitives'
 export const marginsSchema = z.object({
   margins: z
     .object({
-      top: marginSizeSchema('top').optional(),
-      bottom: marginSizeSchema('bottom').optional(),
-      left: marginSizeSchema('left').optional(),
-      right: marginSizeSchema('right').optional(),
+      top: marginSizeSchema('top').nullish(),
+      bottom: marginSizeSchema('bottom').nullish(),
+      left: marginSizeSchema('left').nullish(),
+      right: marginSizeSchema('right').nullish(),
     })
-    .optional()
+    .nullish()
     .meta({
       title: 'Margins',
       description: joinNonEmptyString(

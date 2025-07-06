@@ -26,6 +26,40 @@ import { expect } from 'vitest'
 import { z } from 'zod/v4'
 
 /**
+ * Returns an array of test cases for nullish fields.
+ *
+ * @param schema - The zod schema to validate.
+ * @param baseObject - The base object to use for the test cases.
+ * @returns An array of test cases for nullish fields.
+ */
+export function getNullishTestCases(
+  schema: z.ZodObject<Record<string, z.ZodTypeAny>>,
+  baseObject: Record<string, unknown>
+) {
+  const testCases = []
+
+  const baseObjectKeys = Object.keys(baseObject)
+
+  const nullishFields = Object.keys(schema.shape).filter(
+    (field) => !baseObjectKeys.includes(field)
+  )
+
+  for (const field of nullishFields) {
+    testCases.push({
+      ...baseObject,
+      [field]: null,
+    })
+
+    testCases.push({
+      ...baseObject,
+      [field]: undefined,
+    })
+  }
+
+  return testCases
+}
+
+/**
  * Validates that a zod schema returns the expected error when given invalid
  * data.
  *

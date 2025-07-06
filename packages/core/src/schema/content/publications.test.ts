@@ -24,16 +24,19 @@
 
 import { describe, expect, it } from 'vitest'
 
-import { expectSchemaMetadata, validateZodErrors } from '../utils'
 import {
+  expectSchemaMetadata,
+  getNullishTestCases,
+  validateZodErrors,
+} from '../utils'
+import {
+  publicationItemSchema,
   publicationNameSchema,
   publicationsSchema,
   publisherSchema,
 } from './publications'
 
 import type { Publications } from '@/models'
-
-const summary = 'This is a summary with some text.'
 
 describe('publicationNameSchema', () => {
   it('should have correct metadata', () => {
@@ -54,10 +57,17 @@ describe('publicationsSchema', () => {
 
   const name = 'Publication Name'
   const publisher = 'Publisher Name'
+
   const releaseDate = '2025'
+  const summary = 'This is a summary with some text.'
   const url = 'https://example.com'
 
   it('should validate a publications object if it is valid', () => {
+    const basePublicationItem = {
+      name,
+      publisher,
+    }
+
     const tests: Array<Publications> = [
       {},
       {
@@ -69,8 +79,7 @@ describe('publicationsSchema', () => {
       {
         publications: [
           {
-            name,
-            publisher,
+            ...basePublicationItem,
 
             releaseDate,
             summary,
@@ -78,42 +87,11 @@ describe('publicationsSchema', () => {
           },
         ],
       },
-      {
-        publications: [
-          {
-            name,
-            publisher,
-
-            // optional releaseDate
-            summary,
-            url,
-          },
-        ],
-      },
-      {
-        publications: [
-          {
-            name,
-            publisher,
-
-            // optional summary
-            releaseDate,
-            url,
-          },
-        ],
-      },
-      {
-        publications: [
-          {
-            name,
-            publisher,
-
-            // optional url
-            releaseDate,
-            summary,
-          },
-        ],
-      },
+      ...getNullishTestCases(publicationItemSchema, basePublicationItem).map(
+        (testCase) => ({
+          publications: [testCase],
+        })
+      ),
     ]
 
     for (const publications of tests) {
