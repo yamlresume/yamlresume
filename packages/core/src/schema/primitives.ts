@@ -150,7 +150,7 @@ export function optionSchemaMessage(options: Options, messagePrefix: string) {
   return joinNonEmptyString(
     [
       `${messagePrefix} option is invalid,`,
-      'it must be one of the following options:',
+      'it must be one of the following:',
       `[${options.map((option) => `"${option}"`).join(', ')}]`,
     ],
     ' '
@@ -165,19 +165,24 @@ export function optionSchemaMessage(options: Options, messagePrefix: string) {
  * @returns A Zod schema for an option.
  */
 function optionSchema(options: Options, messagePrefix: string) {
-  return z.enum(options, {
-    error: (issue) => {
-      if (issue.input === undefined) {
-        return {
-          message: `${messagePrefix} option is required.`,
+  return z
+    .enum(options, {
+      error: (issue) => {
+        if (issue.input === undefined) {
+          return {
+            message: `${messagePrefix} option is required.`,
+          }
         }
-      }
 
-      return {
-        message: optionSchemaMessage(options, messagePrefix),
-      }
-    },
-  })
+        return {
+          message: optionSchemaMessage(options, messagePrefix),
+        }
+      },
+    })
+    .meta({
+      title: `${startCase(messagePrefix)} Option`,
+      description: `A predefined option from the available ${messagePrefix} choices.`,
+    })
 }
 
 /**
@@ -198,13 +203,7 @@ export const sizedStringSchema = (name: string, min: number, max: number) => {
 /**
  * A zod schema for a country option.
  */
-export const countryOptionSchema = optionSchema(
-  COUNTRY_OPTIONS,
-  'country'
-).meta({
-  title: 'Country option',
-  description: 'A predefined option from the available country choices.',
-})
+export const countryOptionSchema = optionSchema(COUNTRY_OPTIONS, 'country')
 
 /**
  * Creates a zod schema for a date string.
@@ -271,10 +270,7 @@ export const dateSchema = (date: string) =>
 /**
  * A zod schema for a degree option.
  */
-export const degreeOptionSchema = optionSchema(DEGREE_OPTIONS, 'degree').meta({
-  title: 'Degree option',
-  description: 'A predefined option from the available degree choices.',
-})
+export const degreeOptionSchema = optionSchema(DEGREE_OPTIONS, 'degree')
 
 /**
  * An email schema used by various sections.
@@ -293,13 +289,7 @@ export const emailSchema = z.email({ message: 'email is invalid.' }).meta({
 /**
  * A zod schema for a language fluency option.
  */
-export const fluencyOptionSchema = optionSchema(
-  FLUENCY_OPTIONS,
-  'fluency'
-).meta({
-  title: 'Fluency option',
-  description: 'A predefined option from the available fluency choices.',
-})
+export const fluencyOptionSchema = optionSchema(FLUENCY_OPTIONS, 'fluency')
 
 /**
  * A zod schema for a font spec numbers style.
@@ -307,22 +297,12 @@ export const fluencyOptionSchema = optionSchema(
 export const fontspecNumbersOptionSchema = optionSchema(
   FONTSPEC_NUMBERS_OPTIONS,
   'fontspec numbers'
-).meta({
-  title: 'Fontspec numbers option',
-  description:
-    'A predefined option from the available fontspec numbers choices.',
-})
+)
 
 /**
  * A zod schema for fontSize option in layout.
  */
-export const fontSizeOptionSchema = optionSchema(
-  FONT_SIZE_OPTIONS,
-  'font size'
-).meta({
-  title: 'Font size option',
-  description: 'A predefined option from the available font size choices.',
-})
+export const fontSizeOptionSchema = optionSchema(FONT_SIZE_OPTIONS, 'font size')
 
 /**
  * A zod schema for a keywords array.
@@ -343,13 +323,7 @@ export const keywordsSchema = z
 /**
  * A zod schema for a language.
  */
-export const languageOptionSchema = optionSchema(
-  LANGUAGE_OPTIONS,
-  'language'
-).meta({
-  title: 'Language option',
-  description: 'A predefined option from the available language choices.',
-})
+export const languageOptionSchema = optionSchema(LANGUAGE_OPTIONS, 'language')
 
 /**
  * A zod schema for a locale language option.
@@ -357,19 +331,12 @@ export const languageOptionSchema = optionSchema(
 export const localeLanguageOptionSchema = optionSchema(
   LOCALE_LANGUAGE_OPTIONS,
   'locale language'
-).meta({
-  title: 'Locale language option',
-  description:
-    'A predefined option from the available locale language choices.',
-})
+)
 
 /**
  * A zod schema for a level option.
  */
-export const levelOptionSchema = optionSchema(LEVEL_OPTIONS, 'level').meta({
-  title: 'Level option',
-  description: 'A predefined option from the available level choices.',
-})
+export const levelOptionSchema = optionSchema(LEVEL_OPTIONS, 'level')
 
 /**
  * Creates a zod schema for a name.
@@ -387,13 +354,7 @@ export const nameSchema = (name: string) =>
 /**
  * A zod schema for a network.
  */
-export const networkOptionSchema = optionSchema(
-  NETWORK_OPTIONS,
-  'network'
-).meta({
-  title: 'Network option',
-  description: 'A predefined option from the available network choices.',
-})
+export const networkOptionSchema = optionSchema(NETWORK_OPTIONS, 'network')
 
 /**
  * A regex for a phone number.
@@ -410,7 +371,7 @@ export const phoneSchema = z
   })
   .meta({
     id: 'phone',
-    title: 'Phone number',
+    title: 'Phone',
     description: joinNonEmptyString(
       [
         'A valid phone number that may include',
@@ -468,13 +429,7 @@ export const organizationSchema = (name: string) =>
 /**
  * A zod schema for a template option.
  */
-export const templateOptionSchema = optionSchema(
-  TEMPLATE_OPTIONS,
-  'template'
-).meta({
-  title: 'Template option',
-  description: 'A predefined option from the available template choices.',
-})
+export const templateOptionSchema = optionSchema(TEMPLATE_OPTIONS, 'template')
 
 /**
  * A zod schema for a url.

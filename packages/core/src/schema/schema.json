@@ -125,7 +125,7 @@
                 "maxLength": 128
               },
               "degree": {
-                "title": "Degree option",
+                "title": "Degree Option",
                 "description": "A predefined option from the available degree choices.",
                 "type": "string",
                 "enum": [
@@ -464,7 +464,7 @@
                 "type": "object",
                 "properties": {
                   "fluency": {
-                    "title": "Fluency option",
+                    "title": "Fluency Option",
                     "description": "A predefined option from the available fluency choices.",
                     "type": "string",
                     "enum": [
@@ -476,7 +476,7 @@
                     ]
                   },
                   "language": {
-                    "title": "Language option",
+                    "title": "Language Option",
                     "description": "A predefined option from the available language choices.",
                     "type": "string",
                     "enum": [
@@ -622,7 +622,7 @@
                 "country": {
                   "anyOf": [
                     {
-                      "title": "Country option",
+                      "title": "Country Option",
                       "description": "A predefined option from the available country choices.",
                       "type": "string",
                       "enum": [
@@ -944,7 +944,7 @@
                 "type": "object",
                 "properties": {
                   "network": {
-                    "title": "Network option",
+                    "title": "Network Option",
                     "description": "A predefined option from the available network choices.",
                     "type": "string",
                     "enum": [
@@ -1050,7 +1050,7 @@
                   "description": {
                     "anyOf": [
                       {
-                        "title": "Project Description",
+                        "title": "Description",
                         "description": "A detailed description of the project and your role.",
                         "examples": [
                           "Led development of a full-stack web application",
@@ -1296,7 +1296,7 @@
                 "type": "object",
                 "properties": {
                   "level": {
-                    "title": "Level option",
+                    "title": "Level Option",
                     "description": "A predefined option from the available level choices.",
                     "type": "string",
                     "enum": [
@@ -1354,7 +1354,7 @@
                 "type": "object",
                 "properties": {
                   "organization": {
-                    "title": "Volunteer Organization",
+                    "title": "Organization",
                     "description": "The organization where you volunteered.",
                     "examples": [
                       "Red Cross",
@@ -1367,7 +1367,7 @@
                     "maxLength": 128
                   },
                   "position": {
-                    "title": "Volunteer Position",
+                    "title": "Position",
                     "description": "Your role or position in the volunteer organization.",
                     "examples": [
                       "Event Coordinator",
@@ -1450,7 +1450,7 @@
                 "type": "object",
                 "properties": {
                   "name": {
-                    "title": "Company Name",
+                    "title": "Name",
                     "description": "The name of the company or organization you worked for.",
                     "examples": [
                       "Google",
@@ -1575,7 +1575,7 @@
                             "numbers": {
                               "anyOf": [
                                 {
-                                  "title": "Fontspec numbers option",
+                                  "title": "Fontspec Numbers Option",
                                   "description": "A predefined option from the available fontspec numbers choices.",
                                   "type": "string",
                                   "enum": [
@@ -1615,7 +1615,7 @@
                     "language": {
                       "anyOf": [
                         {
-                          "title": "Locale language option",
+                          "title": "Locale Language Option",
                           "description": "A predefined option from the available locale language choices.",
                           "type": "string",
                           "enum": [
@@ -1770,7 +1770,7 @@
               "description": "The template section contains the resume template selection, determining the overall visual style and layout.",
               "anyOf": [
                 {
-                  "title": "Template option",
+                  "title": "Template Option",
                   "description": "A predefined option from the available template choices.",
                   "type": "string",
                   "enum": [
@@ -1794,7 +1794,7 @@
                     "fontSize": {
                       "anyOf": [
                         {
-                          "title": "Font size option",
+                          "title": "Font Size Option",
                           "description": "A predefined option from the available font size choices.",
                           "type": "string",
                           "enum": [
@@ -1845,7 +1845,7 @@
     },
     "phone": {
       "id": "phone",
-      "title": "Phone number",
+      "title": "Phone",
       "description": "A valid phone number that may include country code, parentheses, spaces, and hyphens.",
       "examples": [
         "555-123-4567",

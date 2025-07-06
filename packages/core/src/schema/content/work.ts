@@ -37,7 +37,7 @@ import {
  * A zod schema for the name of a company.
  */
 export const companyNameSchema = organizationSchema('name').meta({
-  title: 'Company Name',
+  title: 'Name',
   description: 'The name of the company or organization you worked for.',
   examples: ['Google', 'Microsoft', 'Apple', 'Amazon'],
 })

@@ -38,7 +38,7 @@ import {
 export const volunteerOrganizationSchema = organizationSchema(
   'organization'
 ).meta({
-  title: 'Volunteer Organization',
+  title: 'Organization',
   description: 'The organization where you volunteered.',
   examples: [
     'Red Cross',
@@ -56,7 +56,7 @@ export const volunteerPositionSchema = sizedStringSchema(
   2,
   64
 ).meta({
-  title: 'Volunteer Position',
+  title: 'Position',
   description: 'Your role or position in the volunteer organization.',
   examples: ['Event Coordinator', 'Tutor', 'Fundraiser', 'Board Member'],
 })

@@ -48,7 +48,7 @@ export const projectDescriptionSchema = sizedStringSchema(
   4,
   128
 ).meta({
-  title: 'Project Description',
+  title: 'Description',
   description: 'A detailed description of the project and your role.',
   examples: [
     'Led development of a full-stack web application',
