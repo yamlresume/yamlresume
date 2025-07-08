@@ -134,7 +134,7 @@ $ yamlresume build my-resume.yml
 ✔ Generated resume PDF file successfully.
 ```
 
-Check the generated PDF [here](./packages/cli/resources/resume.pdf).
+Check the generated PDF [here](./docs/static/images/resume.pdf).
 
 ![Software Engineer Page 1](./docs/static/images/resume-1.webp)
 ![Software Engineer Page 2](./docs/static/images/resume-2.webp)
