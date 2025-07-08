@@ -20,6 +20,8 @@
 # FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
 # IN THE SOFTWARE.
 
+# yaml-language-server: $schema=https://yamlresume.dev/schema.json
+
 ---
 content:
   basics:

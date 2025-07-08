@@ -20,6 +20,8 @@
 # FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
 # IN THE SOFTWARE.
 
+# yaml-language-server: $schema=https://yamlresume.dev/schema.json
+
 ---
 content:
   basics:
@@ -88,7 +90,7 @@ content:
     - name: PPResume
       url: https://ppresume.com
       startDate: Dec 1, 2022
-      endDate: ""
+      endDate:
       position: Senior Software Engineer
       summary: |
         - Developed and implemented efficient and scalable code, ensuring high-quality and maintainable web applications
