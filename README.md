@@ -122,7 +122,7 @@ details.
 ## Create a new resume
 
 You can create your own resume by cloning one of our sample resumes
-[here](./packages/cli/resources/software-engineer.yml), so once you have the
+[here](./packages/cli/src/commands/fixtures/software-engineer.yml), so once you have the
 sample resume on your local, you can get a pdf with:
 
 ```
