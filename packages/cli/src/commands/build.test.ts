@@ -244,7 +244,7 @@ describe(generateTeX, () => {
       .mockImplementation(vi.fn())
 
     const resumePath = getFixture('software-engineer.yml')
-    const resume = readResume(resumePath)
+    const { resume } = readResume(resumePath)
 
     generateTeX(resumePath, resume)
     expect(writeFileSync).toBeCalledTimes(1)
@@ -254,7 +254,7 @@ describe(generateTeX, () => {
     const resumePath = 'resume.txt'
 
     // mock the resume object here because we want to check the extension check
-    const resume = readResume(getFixture('software-engineer.yml'))
+    const { resume } = readResume(getFixture('software-engineer.yml'))
 
     try {
       generateTeX(resumePath, resume)
@@ -275,7 +275,7 @@ describe(generateTeX, () => {
       })
 
     const resumePath = getFixture('software-engineer.yml')
-    const resume = readResume(resumePath)
+    const { resume } = readResume(resumePath)
 
     try {
       generateTeX(resumePath, resume)

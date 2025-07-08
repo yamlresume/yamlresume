@@ -27,6 +27,7 @@ import yaml from 'yaml'
 
 import { type Resume, YAMLResumeError, resumeSchema } from '@yamlresume/core'
 import chalk from 'chalk'
+import { Command } from 'commander'
 import consola from 'consola'
 import { LineCounter, isNode, parseDocument } from 'yaml'
 
@@ -146,7 +147,10 @@ export function validateResume(
  * @returns The resume object.
  * @throws {Error} If the source file cannot be read or is invalid.
  */
-export function readResume(resuemPath: string, validate = true): Resume {
+export function readResume(
+  resuemPath: string,
+  validate = true
+): { resume: Resume; validated: 'success' | 'failed' | 'unknown' } {
   let resumeStr: string
 
   try {
@@ -165,12 +169,42 @@ export function readResume(resuemPath: string, validate = true): Resume {
 
   if (validate) {
     const errors = validateResume(resumeStr, resumeSchema)
+
     if (errors.length > 0) {
       for (const error of errors) {
         consola.log(prettifyError(error, resuemPath, resumeStr))
       }
+
+      return { resume, validated: 'failed' }
     }
+
+    return { resume, validated: 'success' }
   }
 
-  return resume
+  return { resume, validated: 'unknown' }
+}
+
+/**
+ * Create a command instance to validate a YAML resume
+ */
+export function createValidateCommand() {
+  return new Command()
+    .name('validate')
+    .description('validate a resume against the YAMLResume schema')
+    .argument('<resume-path>', 'the resume file path')
+    .action(async (resumePath: string) => {
+      try {
+        const { validated } = readResume(resumePath, true)
+
+        if (validated === 'success') {
+          consola.success('Resume validation passed.')
+        }
+        if (validated === 'failed') {
+          consola.fail('Resume validation failed.')
+        }
+      } catch (error) {
+        consola.error(error.message)
+        process.exit(error.errno)
+      }
+    })
 }

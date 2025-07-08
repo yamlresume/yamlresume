@@ -168,7 +168,7 @@ export function buildResume(
   resumePath: string,
   options: { pdf?: boolean; validate?: boolean } = { pdf: true, validate: true }
 ) {
-  const resume = readResume(resumePath, options.validate)
+  const { resume } = readResume(resumePath, options.validate)
 
   generateTeX(resumePath, resume)
 

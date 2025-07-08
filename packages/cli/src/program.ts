@@ -30,6 +30,7 @@ import {
   createLanguagesCommand,
   createNewCommand,
   createTemplatesCommand,
+  createValidateCommand,
 } from './commands'
 import { setVerboseLog } from './utils'
 
@@ -56,3 +57,4 @@ program.addCommand(createNewCommand())
 program.addCommand(createBuildCommand())
 program.addCommand(createLanguagesCommand())
 program.addCommand(createTemplatesCommand())
+program.addCommand(createValidateCommand())
