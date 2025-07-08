@@ -2,6 +2,31 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.5.0](https://github.com/yamlresume/yamlresume/compare/v0.4.2...v0.5.0) (2025-07-08)
+
+
+### Features
+
+* add `--no-validate` flag to build command ([4fc0ec2](https://github.com/yamlresume/yamlresume/commit/4fc0ec2474b5725c6c138a44c6e4c64410d842f6))
+* add metadata for content schemas ([b16a200](https://github.com/yamlresume/yamlresume/commit/b16a200014b0bc0296a9185d87e8da3912f10ff4))
+* add metadata for layout schemas ([59edb59](https://github.com/yamlresume/yamlresume/commit/59edb595147b6ff809b4490ea5cd66355b0c255f))
+* add metadata to primitive schemas ([2a711df](https://github.com/yamlresume/yamlresume/commit/2a711dfd021f52ffc09de69bb6dd38a017086ae3))
+* add resume schema ([4336dfa](https://github.com/yamlresume/yamlresume/commit/4336dfa86c4a2f1220a98496161d64bd0acc7f82))
+* add validate command ([931fddd](https://github.com/yamlresume/yamlresume/commit/931fddd85fa2f062ec6225f0c915dc758a26b776))
+* add yaml-language-server schema to sample resume ([e574220](https://github.com/yamlresume/yamlresume/commit/e574220ef8636b81f36697b0e5b56519760456ef))
+* making optional field nullish ([8eb4d8d](https://github.com/yamlresume/yamlresume/commit/8eb4d8d484b69ce9a18f5b5d305784348e847e98))
+* move fontspec config to layout.latex object ([a27f009](https://github.com/yamlresume/yamlresume/commit/a27f00995370a772c64e04ae1eeae222ba585f52))
+* new zod schema for resume content ([fa9f3dd](https://github.com/yamlresume/yamlresume/commit/fa9f3dd1471649b3d2305b8a1f47a0dae406dbdd))
+* new zod schema for resume layout ([7cd04df](https://github.com/yamlresume/yamlresume/commit/7cd04df7e25433ab6417dff5d6034abbe69f1d6c))
+* sunset underline mark node in AST ([3a329be](https://github.com/yamlresume/yamlresume/commit/3a329be550e77df1f5aac8d0c819908c64a1f20f))
+
+
+### Bug Fixes
+
+* fix typo 'scalibility' to 'scalability' in fixtures ([6db8ec6](https://github.com/yamlresume/yamlresume/commit/6db8ec6b1967c0e5ae25463352c9ee8999c62aad))
+* regenerate assets after fixing typos in resume.yml ([b6399c4](https://github.com/yamlresume/yamlresume/commit/b6399c406181bebd846f16d8973e22aaf0808a4a))
+* revise option schema error message ([1007a8c](https://github.com/yamlresume/yamlresume/commit/1007a8c5006c21943a7fc73febdecef1a16f82c9))
+
 ## [0.4.2](https://github.com/yamlresume/yamlresume/compare/v0.4.1...v0.4.2) (2025-06-18)
 
 
