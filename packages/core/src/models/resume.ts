@@ -205,18 +205,6 @@ export const NETWORK_OPTIONS = [
 ] as const
 
 /**
- * Defines network groups.
- */
-export const NETWORK_GROUP_OPTIONS = [
-  'Chat',
-  'Design',
-  'Media',
-  'Social',
-  'Technical',
-  'WWW',
-] as const
-
-/**
  * All valid top-level sections in the resume.
  * */
 export const SECTION_IDS = [

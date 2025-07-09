@@ -31,67 +31,70 @@ import type {
   LANGUAGE_OPTIONS,
   LEVEL_OPTIONS,
   LOCALE_LANGUAGE_OPTIONS,
-  NETWORK_GROUP_OPTIONS,
   NETWORK_OPTIONS,
   SECTION_IDS,
   TEMPLATE_OPTIONS,
 } from '@/models'
 
 /**
- * Type for all possible countries and regions in the world.
+ * A union type for all possible countries and regions in the world.
  */
 export type Country = (typeof COUNTRY_OPTIONS)[number]
 
 /**
- * Type for all possible degrees.
+ * A union type for all possible degrees.
  */
 export type Degree = (typeof DEGREE_OPTIONS)[number]
 
 /**
- * Type for language fluency levels.
+ * A union type for all possible language fluency levels.
  */
 export type Fluency = (typeof FLUENCY_OPTIONS)[number]
 
 /**
- * Type for keywords.
+ * Keywords type, just an alias for a string list.
  */
 type Keywords = string[]
 
 /**
- * Type for all supported languages.
+ * A union type for all supported languages.
  */
 export type Language = (typeof LANGUAGE_OPTIONS)[number]
 
 /**
- * Type for skill proficiency levels.
+ * A union type for all possible skill proficiency levels.
  */
 export type Level = (typeof LEVEL_OPTIONS)[number]
 
 /**
- * Type for all possible section IDs.
+ * A union type for all possible section IDs.
  */
 export type SectionID = (typeof SECTION_IDS)[number]
 
 /**
- * Type for template options.
+ * A union type for all possible template options.
+ *
+ * @see {@link https://yamlresume.dev/docs/layout/templates}
  */
 export type TemplateOption = (typeof TEMPLATE_OPTIONS)[number]
 
 /**
- * Type for all possible locale languages.
+ * A union type for all possible locale languages.
+ *
+ * @see {@link https://yamlresume.dev/docs/content/multi-languages}
  */
 export type LocaleLanguageOption = (typeof LOCALE_LANGUAGE_OPTIONS)[number]
 
 /**
- * Defines supported social media and professional network identifiers.
+ * A union type for all possible social network options.
  */
 export type Network = (typeof NETWORK_OPTIONS)[number]
 
 /**
- * Categorizes networks for potential grouping or display purposes. */
-export type NetworkGroup = (typeof NETWORK_GROUP_OPTIONS)[number]
-
-/** Represents a single award item. */
+ * Represents a single award, honor, or recognition received.
+ *
+ * @see {@link awardItemSchema} for its schema constraints.
+ */
 type AwardItem = {
   /** The organization or entity that gave the award. */
   awarder: string
@@ -100,7 +103,7 @@ type AwardItem = {
 
   /** The date the award was received (e.g., "2020", "Oct 2020"). */
   date?: string
-  /** A short description or details about the award (supports rich text). */
+  /** A short description or details about the award. */
   summary?: string
 
   /** Computed values derived during transformation. */
@@ -112,13 +115,21 @@ type AwardItem = {
   }
 }
 
-/** Represents the 'awards' section of the resume content. */
+/**
+ * Contains a collection of awards and recognitions.
+ *
+ * @see {@link awardsSchema} for its schema constraints.
+ */
 export type Awards = {
-  /** An array of award items. */
+  /** A list of awards. */
   awards?: AwardItem[]
 }
 
-/** Represents the basic personal information. */
+/**
+ * Represents the core personal and contact information.
+ *
+ * @see {@link basicsItemSchema} for its schema constraints.
+ */
 type BasicsItem = {
   /** Full name. */
   name: string
@@ -129,7 +140,7 @@ type BasicsItem = {
   headline?: string
   /** Phone number. */
   phone?: string
-  /** A professional summary or objective statement (supports rich text). */
+  /** A professional summary or objective statement. */
   summary?: string
   /** Personal website or portfolio URL. */
   url?: string
@@ -143,13 +154,21 @@ type BasicsItem = {
   }
 }
 
-/** Represents the 'basics' section of the resume content. */
+/**
+ * Contains the core personal and contact information.
+ *
+ * @see {@link basicsSchema} for its schema constraints.
+ */
 export type Basics = {
   /** The basic personal information item. */
   basics: BasicsItem
 }
 
-/** Represents a single certification item. */
+/**
+ * Represents a single certification, credential, or professional qualification.
+ *
+ * @see {@link certificateItemSchema} for its schema constraints.
+ */
 type CertificateItem = {
   /** The organization that issued the certificate. */
   issuer: string
@@ -168,28 +187,36 @@ type CertificateItem = {
   }
 }
 
-/** Represents the 'certificates' section of the resume content. */
+/**
+ * Contains a collection of certifications and credentials.
+ *
+ * @see {@link certificatesSchema} for its schema constraints.
+ */
 export type Certificates = {
-  /** An array of certificate items. */
+  /** A list of certificates. */
   certificates?: CertificateItem[]
 }
 
-/** Represents a single education history item. */
+/**
+ * Represents a single educational experience or degree program.
+ *
+ * @see {@link educationItemSchema} for its schema constraints.
+ */
 type EducationItem = {
-  /** Field of study (e.g., "Computer Science"). */
+  /** Area of study (e.g., "Computer Science"). */
   area: string
+  /** The type of degree obtained. */
+  degree: Degree
   /** Name of the institution. */
   institution: string
   /** Start date of study (e.g., "2016", "Sep 2016"). */
   startDate: string
-  /** The type of degree obtained. */
-  degree: Degree
 
-  /** List of courses taken (can be string array or pre-joined string). */
+  /** List of courses taken. */
   courses?: string[]
-  /** End date of study (e.g., "2020", "May 2020"). Empty implies "Present". */
+  /** End date of study (e.g., "2020", "May 2020"), empty implies "Present". */
   endDate?: string
-  /** Description of accomplishments or details (supports rich text). */
+  /** Description of accomplishments or details. */
   summary?: string
   /** GPA or academic score. */
   score?: string
@@ -213,13 +240,21 @@ type EducationItem = {
   }
 }
 
-/** Represents the 'education' section of the resume content. */
+/**
+ * Contains a collection of educational experiences.
+ *
+ * @see {@link educationSchema} for its schema constraints.
+ */
 export type Education = {
-  /** An array of education history items. */
+  /** A list of education experiences. */
   education: EducationItem[]
 }
 
-/** Represents a single interest item. */
+/**
+ * Represents a single interest, hobby, or personal activity.
+ *
+ * @see {@link interestItemSchema} for its schema constraints.
+ */
 type InterestItem = {
   /** Name of the interest category (e.g., "Reading", "Photography"). */
   name: string
@@ -234,13 +269,21 @@ type InterestItem = {
   }
 }
 
-/** Represents the 'interests' section of the resume content. */
+/**
+ * Contains a collection of personal interests and hobbies.
+ *
+ * @see {@link interestsSchema} for its schema constraints.
+ */
 export type Interests = {
-  /** An array of interest items. */
+  /** A list of interests. */
   interests?: InterestItem[]
 }
 
-/** Represents a single language proficiency item. */
+/**
+ * Represents a single language proficiency or skill level.
+ *
+ * @see {@link languageItemSchema} for its schema constraints.
+ */
 export type LanguageItem = {
   /** The level of proficiency of the language. */
   fluency: Fluency
@@ -261,13 +304,21 @@ export type LanguageItem = {
   }
 }
 
-/** Represents the 'languages' section of the resume content. */
+/**
+ * Contains a collection of language proficiencies.
+ *
+ * @see {@link languagesSchema} for its schema constraints.
+ */
 export type Languages = {
-  /** An array of language items. */
+  /** A list of languages. */
   languages?: LanguageItem[]
 }
 
-/** Represents the location information. */
+/**
+ * Represents location and address information.
+ *
+ * @see {@link locationItemSchema} for its schema constraints.
+ */
 type LocationItem = {
   /** City name. */
   city: string
@@ -283,22 +334,30 @@ type LocationItem = {
 
   /** Computed values derived during transformation. */
   computed?: {
+    /** Fully formatted address string based on locale. */
+    fullAddress: string
     /** Combined string of postal code and address. */
     postalCodeAndAddress: string
     /** Combined string of region and country. */
     regionAndCountry: string
-    /** Fully formatted address string based on locale. */
-    fullAddress: string
   }
 }
 
-/** Represents the 'location' section of the resume content. */
+/**
+ * Contains location and address information.
+ *
+ * @see {@link locationSchema} for its schema constraints.
+ */
 export type Location = {
   /** The location information item. */
   location?: LocationItem
 }
 
-/** Represents a single online profile item (e.g., GitHub, LinkedIn). */
+/**
+ * Represents a single online profile or social media presence.
+ *
+ * @see {@link profileItemSchema} for its schema constraints.
+ */
 export type ProfileItem = {
   /** The name of the network or platform. */
   network: Network
@@ -315,19 +374,27 @@ export type ProfileItem = {
   }
 }
 
-/** Represents the 'profiles' section of the resume content. */
+/**
+ * Contains a collection of online profiles and social media presence.
+ *
+ * @see {@link profilesSchema} for its schema constraints.
+ */
 export type Profiles = {
-  /** An array of online profile items. */
+  /** A list of online profiles. */
   profiles?: ProfileItem[]
 }
 
-/** Represents a single project item. */
+/**
+ * Represents a single project, portfolio piece, or technical work.
+ *
+ * @see {@link projectItemSchema} for its schema constraints.
+ */
 type ProjectItem = {
   /** Name of the project. */
   name: string
   /** Start date of the project (e.g., "2021", "Jan 2021"). */
   startDate: string
-  /** Detailed accomplishments for the project (supports rich text). */
+  /** Detailed accomplishments for the project. */
   summary: string
 
   /** Description of the project. */
@@ -341,10 +408,10 @@ type ProjectItem = {
   /** Computed values derived during transformation. */
 
   computed?: {
-    /** Transformed keywords string. */
-    keywords: string
     /** Combined string representing the date range. */
     dateRange: string
+    /** Transformed keywords string. */
+    keywords: string
     /** Transformed start date string. */
     startDate: string
     /** Transformed end date string (or "Present"). */
@@ -354,13 +421,21 @@ type ProjectItem = {
   }
 }
 
-/** Represents the 'projects' section of the resume content. */
+/**
+ * Contains a collection of projects and portfolio pieces.
+ *
+ * @see {@link projectsSchema} for its schema constraints.
+ */
 export type Projects = {
-  /** An array of project items. */
+  /** A list of projects. */
   projects?: ProjectItem[]
 }
 
-/** Represents a single publication item. */
+/**
+ * Represents a single publication, research work, or academic paper.
+ *
+ * @see {@link publicationItemSchema} for its schema constraints.
+ */
 type PublicationItem = {
   /** Name or title of the publication. */
   name: string
@@ -369,7 +444,7 @@ type PublicationItem = {
 
   /** Date of publication (e.g., "2023", "Mar 2023"). */
   releaseDate?: string
-  /** Summary or abstract of the publication (supports rich text). */
+  /** Summary or abstract of the publication. */
   summary?: string
   /** URL related to the publication (e.g., DOI, link). */
   url?: string
@@ -383,17 +458,25 @@ type PublicationItem = {
   }
 }
 
-/** Represents the 'publications' section of the resume content. */
+/**
+ * Contains a collection of publications and research works.
+ *
+ * @see {@link publicationsSchema} for its schema constraints.
+ */
 export type Publications = {
-  /** An array of publication items. */
+  /** A list of publications. */
   publications?: PublicationItem[]
 }
 
-/** Represents a single reference item. */
+/**
+ * Represents a single professional reference or recommendation.
+ *
+ * @see {@link referenceItemSchema} for its schema constraints.
+ */
 type ReferenceItem = {
   /** Name of the reference. */
   name: string
-  /** A brief note about the reference (supports rich text). */
+  /** A brief note about the reference. */
   summary: string
 
   /** Email address of the reference. */
@@ -410,20 +493,28 @@ type ReferenceItem = {
   }
 }
 
-/** Represents the 'references' section of the resume content. */
+/**
+ * Contains a collection of professional references and recommendations.
+ *
+ * @see {@link referencesSchema} for its schema constraints.
+ */
 export type References = {
-  /** An array of reference items. */
+  /** A list of references. */
   references?: ReferenceItem[]
 }
 
-/** Represents a single skill item. */
+/**
+ * Represents a single skill, competency, or technical ability.
+ *
+ * @see {@link skillItemSchema} for its schema constraints.
+ */
 type SkillItem = {
   /** Proficiency level in the skill. */
   level: Level
   /** Name of the skill. */
   name: string
-  /** Specific keywords or technologies related to the skill. */
 
+  /** Specific keywords or technologies related to the skill. */
   keywords?: Keywords
 
   /** Computed values derived during transformation. */
@@ -435,13 +526,21 @@ type SkillItem = {
   }
 }
 
-/** Represents the 'skills' section of the resume content. */
+/**
+ * Contains a collection of skills and competencies.
+ *
+ * @see {@link skillsSchema} for its schema constraints.
+ */
 export type Skills = {
-  /** An array of skill items. */
+  /** A list of skills. */
   skills?: SkillItem[]
 }
 
-/** Represents a single volunteer experience item. */
+/**
+ * Represents a single volunteer experience or community service.
+ *
+ * @see {@link volunteerItemSchema} for its schema constraints.
+ */
 type VolunteerItem = {
   /** Name of the organization. */
   organization: string
@@ -449,7 +548,7 @@ type VolunteerItem = {
   position: string
   /** Start date of the volunteer work (e.g., "2019", "Jun 2019"). */
   startDate: string
-  /** Summary of responsibilities or achievements (supports rich text). */
+  /** Summary of responsibilities or achievements. */
   summary: string
 
   /** End date of the volunteer work (e.g., "2020", "Dec 2020"). */
@@ -470,13 +569,21 @@ type VolunteerItem = {
   }
 }
 
-/** Represents the 'volunteer' section of the resume content. */
+/**
+ * Contains a collection of volunteer experiences and community service.
+ *
+ * @see {@link volunteerSchema} for its schema constraints.
+ */
 export type Volunteer = {
-  /** An array of volunteer experience items. */
+  /** A list of volunteer experiences. */
   volunteer?: VolunteerItem[]
 }
 
-/** Represents a single work experience item. */
+/**
+ * Represents a single work experience or employment position.
+ *
+ * @see {@link workItemSchema} for its schema constraints.
+ */
 type WorkItem = {
   /** Name of the company or employer. */
   name: string
@@ -484,7 +591,7 @@ type WorkItem = {
   position: string
   /** Start date of employment (e.g., "2021", "Apr 2021"). */
   startDate: string
-  /** Summary of responsibilities and accomplishments (supports rich text). */
+  /** Summary of responsibilities and accomplishments. */
   summary: string
 
   /** End date of employment (e.g., "2023", "Aug 2023"). */
@@ -509,32 +616,18 @@ type WorkItem = {
   }
 }
 
-/** Represents the 'work' section of the resume content. */
+/**
+ * Contains a collection of work experiences and employment history.
+ *
+ * @see {@link workSchema} for its schema constraints.
+ */
 export type Work = {
-  /** An array of work experience items. */
+  /** A list of work experiences. */
   work?: WorkItem[]
 }
 
-/** Union type representing the structure for any top-level resume section. */
-export type SectionDefaultValues =
-  | Awards
-  | Basics
-  | Certificates
-  | Education
-  | Interests
-  | Languages
-  | Location
-  | Profiles
-  | Projects
-  | Publications
-  | References
-  | Skills
-  | Volunteer
-  | Work
-
 /**
- * Type defining the structure for a single default item within each resume
- * section.
+ * Defines a collection of all possible "items" in a resume.
  */
 export type ResumeItem = {
   award: AwardItem
@@ -556,39 +649,46 @@ export type ResumeItem = {
 /**
  * Defines the structure for the entire resume content.
  *
- * @remarks - only `basics` and `education` sections are strictly required.
+ * - only `basics` and `education` sections are mandatory.
  */
 export type ResumeContent = {
-  /** Array of award items. */
-  awards?: AwardItem[]
-  /** Basic personal information. */
+  /// required sections
+
+  /** Represents the core personal and contact information. */
   basics: BasicsItem
-  /** List of certificate items. */
-  certificates?: CertificateItem[]
-  /** List of education history items. */
+  /** Contains a collection of educational experiences. */
   education: EducationItem[]
-  /** List of interest items. */
+
+  /// optional sections
+  /** Contains a collection of awards and recognitions. */
+  awards?: AwardItem[]
+  /** Contains a collection of certifications and credentials. */
+  certificates?: CertificateItem[]
+  /** Contains a collection of interests, hobbies, or personal activities. */
   interests?: InterestItem[]
-  /** List of language proficiency items. */
+  /** Contains a collection of language proficiencies. */
   languages?: LanguageItem[]
-  /** Location information. */
+  /** Contains location information. */
   location?: LocationItem
-  /** List of project items. */
+  /** Contains a collection of projects. */
   projects?: ProjectItem[]
-  /** List of online profile items. */
+  /** Contains a collection of online profiles. */
   profiles?: ProfileItem[]
-  /** List of publication items. */
+  /** Contains a collection of publications. */
   publications?: PublicationItem[]
-  /** List of reference items. */
+  /** Contains a collection of references. */
   references?: ReferenceItem[]
-  /** List of skill items. */
+  /** Contains a collection of skills. */
   skills?: SkillItem[]
-  /** List of volunteer experience items. */
+  /** Contains a collection of volunteer experiences. */
   volunteer?: VolunteerItem[]
-  /** List of work experience items. */
+  /** Contains a collection of work experiences and employment history. */
   work?: WorkItem[]
-  /* Computed values derived during transformation, applicable to the entire
-   * content. */
+
+  /**
+   * Computed values derived during transformation, applicable to the entire
+   * content.
+   */
   computed?: {
     /** Translated names for each resume section based on locale. */
     sectionNames?: {
@@ -612,7 +712,9 @@ export type ResumeContent = {
   }
 }
 
-/** Defines the structure for page margin settings. */
+/**
+ * Defines page margin settings for document layout.
+ */
 type ResumeLayoutMargins = {
   /** Top margin value (e.g., "2.5cm"). */
   top?: string
@@ -625,29 +727,37 @@ type ResumeLayoutMargins = {
 }
 
 /**
- * The type of fontspec numbers style.
+ * A union type for all possible latex fontspec numbers options.
  *
+ * - `Auto` - allowing the style to be automatically determined
+ *   based on the selected `LocaleLanguage` (default)
  * - `Lining` - standard lining figures (default for CJK languages)
  * - `OldStyle` - old style figures with varying heights (default for Latin
  *   languages)
- * - `Auto` - an undefined state, allowing the style to be automatically
- *   determined based on the selected `LocaleLanguage`
  */
 export type FontspecNumbers = (typeof FONTSPEC_NUMBERS_OPTIONS)[number]
 
 /**
- * The type of font size.
+ * A union type for all possible font size options.
+ *
+ * For now only 3 options are supported:
+ *
+ * - `10pt` - 10pt font size (default)
+ * - `11pt` - 11pt font size
+ * - `12pt` - 12pt font size
  */
 export type FontSize = (typeof FONT_SIZE_OPTIONS)[number]
 
-/** Defines typography settings like font size. */
+/**
+ * Defines typography settings for document formatting.
+ */
 type ResumeLayoutTypography = {
   /** Base font size for the document (e.g., "10pt", "11pt"). */
   fontSize?: string
 }
 
 /**
- * LaTeX specific settings.
+ * Defines LaTeX-specific configuration options.
  */
 type ResumeLayoutLaTeX = {
   /** LaTeX fontspec package configurations. */
@@ -657,45 +767,56 @@ type ResumeLayoutLaTeX = {
   }
 }
 
-/** Defines locale settings, primarily the language for translations. */
+/**
+ * Defines locale settings for internationalization and localization.
+ */
 type ResumeLayoutLocale = {
   /** The selected language for the resume content and template terms. */
   language?: LocaleLanguageOption
 }
 
-/** Defines page-level settings like page numbering. */
+/**
+ * Defines page-level settings for document presentation.
+ */
 type ResumeLayoutPage = {
   /** Whether to display page numbers. */
   showPageNumbers?: boolean
 }
 
-/** Defines the selected template identifier. */
+/**
+ * The selected template identifier.
+ */
 type ResumeTemplate = TemplateOption
 
-/** Defines the overall layout configuration, including template, margins,
- * typography, locale, and computed environment settings. */
+/**
+ * Defines the overall layout configuration.
+ */
 export type ResumeLayout = {
-  /** The selected template configuration. */
-  template?: ResumeTemplate
-  /** LaTeX specific settings. */
-  latex?: ResumeLayoutLaTeX
-  /** Page margin settings. */
-  margins?: ResumeLayoutMargins
-  /** Typography settings. */
-  typography?: ResumeLayoutTypography
-  /** Localization settings. */
+  /** Defines locale settings for internationalization and localization. */
   locale?: ResumeLayoutLocale
-  /** Page-level settings. */
+  /** Defines page margin settings for document layout. */
+  margins?: ResumeLayoutMargins
+  /** Defines page-level settings for document presentation. */
   page?: ResumeLayoutPage
+  /** Defines the selected template. */
+  template?: ResumeTemplate
+  /** Defines typography settings for document formatting. */
+  typography?: ResumeLayoutTypography
+
+  /// engine specific settings
+  /** Defines LaTeX-specific configuration options. */
+  latex?: ResumeLayoutLaTeX
 }
 
 /**
- * Represents the complete resume data structure, including metadata, content,
- * layout configuration, and build information.
+ * Defines the overall resume structure, including content and layout.
+ *
+ * - `content` is mandatory.
+ * - `layout` is optional, yamlresume provide a default layout if absent.
  */
 export type Resume = {
-  /** Contains all the textual and structured content of the resume sections. */
+  /** Defines the structure for the entire resume content. */
   content: ResumeContent
-  /** Defines the visual appearance, template, and localization settings. */
+  /** Defines the overall layout configuration. */
   layout?: ResumeLayout
 }
