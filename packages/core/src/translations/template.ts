@@ -22,7 +22,7 @@
  * IN THE SOFTWARE.
  */
 
-import type { LocaleLanguageOption } from '@/models'
+import type { LocaleLanguage } from '@/models'
 import { isEmptyValue } from '@/utils'
 
 /** Specific punctuation types used for formatting within templates. */
@@ -47,10 +47,7 @@ type TemplateTranslationValue = {
 
 /** The overall structure containing template-specific translations for all
  * supported languages. */
-type TemplateTranslation = Record<
-  LocaleLanguageOption,
-  TemplateTranslationValue
->
+type TemplateTranslation = Record<LocaleLanguage, TemplateTranslationValue>
 
 /**
  * Retrieves template-specific translations (punctuations and terms) for a given
@@ -62,7 +59,7 @@ type TemplateTranslation = Record<
  * specified language.
  */
 export function getTemplateTranslations(
-  language?: LocaleLanguageOption
+  language?: LocaleLanguage
 ): TemplateTranslationValue {
   const templateTranslation: TemplateTranslation = {
     en: {

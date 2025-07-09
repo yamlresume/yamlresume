@@ -24,7 +24,7 @@
 
 import {
   LOCALE_LANGUAGE_OPTIONS,
-  getLocaleLanguageOptionDetail,
+  getLocaleLanguageDetail,
 } from '@yamlresume/core'
 import { Command } from 'commander'
 import consola from 'consola'
@@ -42,7 +42,7 @@ export function listLanguages() {
     ['layout.locale.language', 'Language Name'],
     ...LOCALE_LANGUAGE_OPTIONS.map((value) => [
       value,
-      getLocaleLanguageOptionDetail(value).name,
+      getLocaleLanguageDetail(value).name,
     ]),
   ])
 }

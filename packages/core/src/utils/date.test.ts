@@ -24,7 +24,7 @@
 
 import { describe, expect, it, vi } from 'vitest'
 
-import type { LocaleLanguageOption } from '@/models'
+import type { LocaleLanguage } from '@/models'
 import {
   epochSecondsToLocaleDateString,
   getDateRange,
@@ -127,7 +127,7 @@ describe(getDateRange, () => {
     const tests: {
       startDate: string
       endDate: string
-      language: LocaleLanguageOption
+      language: LocaleLanguage
       expected: string
     }[] = [
       {

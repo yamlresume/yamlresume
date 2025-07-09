@@ -22,7 +22,7 @@
  * IN THE SOFTWARE.
  */
 
-import type { LocaleLanguageOption } from '@/models'
+import type { LocaleLanguage } from '@/models'
 import { isEmptyValue } from './object'
 
 /**
@@ -53,7 +53,7 @@ export function parseDate(dateStr: string | undefined | null): Date | null {
  */
 export function localizeDate(
   date: string,
-  language: LocaleLanguageOption | string
+  language: LocaleLanguage | string
 ): string {
   if (date === '') {
     return ''
@@ -82,7 +82,7 @@ export function localizeDate(
 export function getDateRange(
   startDate: string,
   endDate: string,
-  language: LocaleLanguageOption
+  language: LocaleLanguage
 ): string {
   if (!startDate) {
     return ''

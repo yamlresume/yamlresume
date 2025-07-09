@@ -28,7 +28,7 @@ import { describe, expect, it } from 'vitest'
 import { LatexCodeGenerator, MarkdownParser } from '@/compiler'
 import {
   LOCALE_LANGUAGE_OPTIONS,
-  type LocaleLanguageOption,
+  type LocaleLanguage,
   type Network,
   type ProfileItem,
   type ResumeLayout,
@@ -61,7 +61,7 @@ import {
 } from './transform'
 
 function testOverAllLocaleLanguages(
-  testFn: (language: LocaleLanguageOption) => void
+  testFn: (language: LocaleLanguage) => void
 ): void {
   for (const language of LOCALE_LANGUAGE_OPTIONS) {
     testFn(language)

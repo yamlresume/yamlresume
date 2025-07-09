@@ -26,27 +26,27 @@ import { describe, expect, it } from 'vitest'
 import {
   LOCALE_LANGUAGE_OPTIONS,
   TEMPLATE_OPTIONS,
-  getLocaleLanguageOptionDetail,
+  getLocaleLanguageDetail,
   getTemplateDetail,
 } from './resume'
 
-import type { LocaleLanguageOption, Template } from '@/models'
+import type { LocaleLanguage, Template } from '@/models'
 
-describe(getLocaleLanguageOptionDetail, () => {
+describe(getLocaleLanguageDetail, () => {
   it('should return the language code and name', () => {
     for (const localeLanguage of LOCALE_LANGUAGE_OPTIONS) {
-      const result = getLocaleLanguageOptionDetail(localeLanguage)
+      const result = getLocaleLanguageDetail(localeLanguage)
       expect(result).toEqual({
         localeLanguage,
-        name: getLocaleLanguageOptionDetail(localeLanguage).name,
+        name: getLocaleLanguageDetail(localeLanguage).name,
       })
     }
   })
 
   it('should throw an error for invalid locale language ', () => {
-    expect(() =>
-      getLocaleLanguageOptionDetail('invalid' as LocaleLanguageOption)
-    ).toThrow('Invalid locale language: invalid')
+    expect(() => getLocaleLanguageDetail('invalid' as LocaleLanguage)).toThrow(
+      'Invalid locale language: invalid'
+    )
   })
 })
 

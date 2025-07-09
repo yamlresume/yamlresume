@@ -24,7 +24,7 @@
 
 import { describe, expect, it } from 'vitest'
 
-import type { LocaleLanguageOption } from '@/models'
+import type { LocaleLanguage } from '@/models'
 import { getTemplateTranslations } from './template'
 
 describe(getTemplateTranslations, () => {
@@ -100,7 +100,7 @@ describe(getTemplateTranslations, () => {
 
     tests.forEach((test) => {
       const translations = getTemplateTranslations(
-        test.language as LocaleLanguageOption
+        test.language as LocaleLanguage
       )
 
       expect(translations.punctuations.colon).toEqual(

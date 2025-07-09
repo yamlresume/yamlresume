@@ -24,7 +24,7 @@
 
 import {
   LOCALE_LANGUAGE_OPTIONS,
-  getLocaleLanguageOptionDetail,
+  getLocaleLanguageDetail,
 } from '@yamlresume/core'
 import { consola } from 'consola'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
@@ -42,7 +42,7 @@ describe(listLanguages, () => {
     // Check if all languages are included
     LOCALE_LANGUAGE_OPTIONS.forEach((value) => {
       expect(result).toContain(value)
-      expect(result).toContain(getLocaleLanguageOptionDetail(value).name)
+      expect(result).toContain(getLocaleLanguageDetail(value).name)
     })
 
     // Check if the table has the correct number of rows

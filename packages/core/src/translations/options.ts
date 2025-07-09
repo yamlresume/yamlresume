@@ -30,7 +30,7 @@ import type {
   Fluency,
   Language,
   Level,
-  LocaleLanguageOption,
+  LocaleLanguage,
   SectionID,
 } from '@/models'
 
@@ -61,7 +61,7 @@ type OptionTranslation = {
 type OptionCategory = keyof OptionTranslation
 
 /** The structure containing translations for all supported languages. */
-type OptionsTranslations = Record<LocaleLanguageOption, OptionTranslation>
+type OptionsTranslations = Record<LocaleLanguage, OptionTranslation>
 
 /**
  * Retrieves the translated terms for a specific locale language.
@@ -75,7 +75,7 @@ type OptionsTranslations = Record<LocaleLanguageOption, OptionTranslation>
  * language.
  */
 export function getOptionTranslation<K extends OptionCategory>(
-  language: LocaleLanguageOption,
+  language: LocaleLanguage,
   category: K,
   option: keyof OptionTranslation[K]
 ): string {

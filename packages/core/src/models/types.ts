@@ -83,7 +83,7 @@ export type Template = (typeof TEMPLATE_OPTIONS)[number]
  *
  * @see {@link https://yamlresume.dev/docs/content/multi-languages}
  */
-export type LocaleLanguageOption = (typeof LOCALE_LANGUAGE_OPTIONS)[number]
+export type LocaleLanguage = (typeof LOCALE_LANGUAGE_OPTIONS)[number]
 
 /**
  * A union type for all possible social network options.
@@ -772,7 +772,7 @@ type ResumeLayoutLaTeX = {
  */
 type ResumeLayoutLocale = {
   /** The selected language for the resume content and template terms. */
-  language?: LocaleLanguageOption
+  language?: LocaleLanguage
 }
 
 /**

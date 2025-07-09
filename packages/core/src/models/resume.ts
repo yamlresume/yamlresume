@@ -23,7 +23,7 @@
  */
 
 import type {
-  LocaleLanguageOption,
+  LocaleLanguage,
   Resume,
   ResumeContent,
   ResumeItem,
@@ -424,10 +424,8 @@ export const marginOptions = [
  * @param localeLanguage The locale language to get the name for.
  * @returns The language code and name of the given locale language.
  */
-export function getLocaleLanguageOptionDetail(
-  localeLanguage: LocaleLanguageOption
-) {
-  const localeLanguageOptionName: Record<LocaleLanguageOption, string> = {
+export function getLocaleLanguageDetail(localeLanguage: LocaleLanguage) {
+  const localeLanguageDetails: Record<LocaleLanguage, string> = {
     en: 'English',
     'zh-hans': 'Simplified Chinese',
     'zh-hant-hk': 'Traditional Chinese (Hong Kong)',
@@ -435,18 +433,15 @@ export function getLocaleLanguageOptionDetail(
     es: 'Spanish',
   }
 
-  if (localeLanguage in localeLanguageOptionName) {
+  if (localeLanguage in localeLanguageDetails) {
     return {
       localeLanguage,
-      name: localeLanguageOptionName[localeLanguage],
+      name: localeLanguageDetails[localeLanguage],
     }
   }
 
   throw new Error(`Invalid locale language: ${localeLanguage}`)
 }
-
-/** The default language used when creating a new resume layout. */
-const defaultLanguage: LocaleLanguageOption = 'en'
 
 /** Default layout configuration for a new resume. */
 export const defaultResumeLayout: ResumeLayout = {
@@ -466,7 +461,7 @@ export const defaultResumeLayout: ResumeLayout = {
     right: defaultLeftRightMargin,
   },
   locale: {
-    language: defaultLanguage,
+    language: 'en',
   },
   page: {
     showPageNumbers: false,
