@@ -27,10 +27,10 @@ import {
   LOCALE_LANGUAGE_OPTIONS,
   TEMPLATE_OPTIONS,
   getLocaleLanguageOptionDetail,
-  getTemplateOptionDetail,
+  getTemplateDetail,
 } from './resume'
 
-import type { LocaleLanguageOption, TemplateOption } from '@/models'
+import type { LocaleLanguageOption, Template } from '@/models'
 
 describe(getLocaleLanguageOptionDetail, () => {
   it('should return the language code and name', () => {
@@ -50,20 +50,20 @@ describe(getLocaleLanguageOptionDetail, () => {
   })
 })
 
-describe(getTemplateOptionDetail, () => {
+describe(getTemplateDetail, () => {
   it('should return the template option code and name', () => {
-    for (const templateOption of TEMPLATE_OPTIONS) {
-      const result = getTemplateOptionDetail(templateOption)
+    for (const template of TEMPLATE_OPTIONS) {
+      const result = getTemplateDetail(template)
 
       expect(result).toEqual({
-        id: templateOption,
-        ...getTemplateOptionDetail(templateOption),
+        id: template,
+        ...getTemplateDetail(template),
       })
     }
   })
 
   it('should throw an error for invalid template option', () => {
-    expect(() => getTemplateOptionDetail('invalid' as TemplateOption)).toThrow(
+    expect(() => getTemplateDetail('invalid' as Template)).toThrow(
       'Invalid template option: invalid'
     )
   })

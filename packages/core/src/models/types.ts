@@ -76,7 +76,7 @@ export type SectionID = (typeof SECTION_IDS)[number]
  *
  * @see {@link https://yamlresume.dev/docs/layout/templates}
  */
-export type TemplateOption = (typeof TEMPLATE_OPTIONS)[number]
+export type Template = (typeof TEMPLATE_OPTIONS)[number]
 
 /**
  * A union type for all possible locale languages.
@@ -784,11 +784,6 @@ type ResumeLayoutPage = {
 }
 
 /**
- * The selected template identifier.
- */
-type ResumeTemplate = TemplateOption
-
-/**
  * Defines the overall layout configuration.
  */
 export type ResumeLayout = {
@@ -799,7 +794,7 @@ export type ResumeLayout = {
   /** Defines page-level settings for document presentation. */
   page?: ResumeLayoutPage
   /** Defines the selected template. */
-  template?: ResumeTemplate
+  template?: Template
   /** Defines typography settings for document formatting. */
   typography?: ResumeLayoutTypography
 

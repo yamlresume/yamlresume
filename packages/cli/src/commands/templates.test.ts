@@ -22,7 +22,7 @@
  * IN THE SOFTWARE.
  */
 
-import { TEMPLATE_OPTIONS, getTemplateOptionDetail } from '@yamlresume/core'
+import { TEMPLATE_OPTIONS, getTemplateDetail } from '@yamlresume/core'
 import type { Command } from 'commander'
 import { consola } from 'consola'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
@@ -40,7 +40,7 @@ describe(listTemplates, () => {
 
     // Check if all templates are included
     TEMPLATE_OPTIONS.forEach((value) => {
-      const details = getTemplateOptionDetail(value)
+      const details = getTemplateDetail(value)
       expect(result).toContain(value) // Template ID
       expect(result).toContain(details.name) // Template Name
       expect(result).toContain(details.description) // Description

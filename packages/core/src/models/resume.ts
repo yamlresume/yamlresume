@@ -28,7 +28,7 @@ import type {
   ResumeContent,
   ResumeItem,
   ResumeLayout,
-  TemplateOption,
+  Template,
 } from '@/models'
 
 /**
@@ -231,9 +231,9 @@ export const TEMPLATE_OPTIONS = [
   'moderncv-classic',
 ] as const
 
-export function getTemplateOptionDetail(templateOption: TemplateOption) {
-  const templateOptionName: Record<
-    TemplateOption,
+export function getTemplateDetail(template: Template) {
+  const templateDetails: Record<
+    Template,
     { name: string; description: string }
   > = {
     'moderncv-banking': {
@@ -250,14 +250,14 @@ export function getTemplateOptionDetail(templateOption: TemplateOption) {
     },
   }
 
-  if (templateOption in templateOptionName) {
+  if (template in templateDetails) {
     return {
-      id: templateOption,
-      ...templateOptionName[templateOption],
+      id: template,
+      ...templateDetails[template],
     }
   }
 
-  throw new Error(`Invalid template option: ${templateOption}`)
+  throw new Error(`Invalid template option: ${template}`)
 }
 
 /** Provides default, empty item structures for each resume section type. */

@@ -25,7 +25,7 @@
 import { describe, expect, it } from 'vitest'
 
 import { defaultResume } from '@/models'
-import type { Resume, TemplateOption } from '@/models'
+import type { Resume, Template } from '@/models'
 import {
   ModerncvBankingRenderer,
   ModerncvCasualRenderer,
@@ -94,7 +94,7 @@ describe(getResumeRenderer, () => {
       ...mockResume,
       layout: {
         ...mockResume.layout,
-        template: 'invalid-template' as TemplateOption,
+        template: 'invalid-template' as Template,
       },
     }
 
