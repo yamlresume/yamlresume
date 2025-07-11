@@ -25,24 +25,24 @@ import { z } from 'zod/v4'
 
 import { joinNonEmptyString } from '@/utils'
 import {
-  dateSchema,
-  nameSchema,
-  organizationSchema,
-  summarySchema,
-  urlSchema,
+  DateSchema,
+  NameSchema,
+  OrganizationSchema,
+  SummarySchema,
+  UrlSchema,
 } from '../primitives'
 
 /**
- * A zod schema for the name of a publication.
+ * A zod schema for a publication name.
  */
-export const publicationNameSchema = nameSchema('name').describe(
+export const PublicationNameSchema = NameSchema('name').describe(
   'The name of the publication.'
 )
 
 /**
  * A zod schema for a publisher.
  */
-export const publisherSchema = organizationSchema('publisher').meta({
+export const PublisherSchema = OrganizationSchema('publisher').meta({
   title: 'Publisher',
   description: 'The organization that published the work.',
   examples: ['ACM', 'IEEE', 'Springer', 'Nature Publishing Group'],
@@ -51,23 +51,23 @@ export const publisherSchema = organizationSchema('publisher').meta({
 /**
  * A zod schema for a publication item.
  */
-export const publicationItemSchema = z.object({
+export const PublicationItemSchema = z.object({
   // required fields
-  name: publicationNameSchema,
-  publisher: publisherSchema,
+  name: PublicationNameSchema,
+  publisher: PublisherSchema,
 
   // optional fields
-  releaseDate: dateSchema('Release date').nullish(),
-  summary: summarySchema.nullish(),
-  url: urlSchema.nullish(),
+  releaseDate: DateSchema('Release date').nullish(),
+  summary: SummarySchema.nullish(),
+  url: UrlSchema.nullish(),
 })
 
 /**
  * A zod schema for publications.
  */
-export const publicationsSchema = z.object({
+export const PublicationsSchema = z.object({
   publications: z
-    .array(publicationItemSchema)
+    .array(PublicationItemSchema)
     .nullish()
     .meta({
       title: 'Publications',

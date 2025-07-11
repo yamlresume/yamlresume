@@ -25,12 +25,12 @@
 import { z } from 'zod/v4'
 
 import { joinNonEmptyString } from '@/utils'
-import { latexSchema } from './latex'
-import { localeSchema } from './locale'
-import { marginsSchema } from './margins'
-import { pageSchema } from './page'
-import { templateSchema } from './template'
-import { typographySchema } from './typography'
+import { LatexSchema } from './latex'
+import { LocaleSchema } from './locale'
+import { MarginsSchema } from './margins'
+import { PageSchema } from './page'
+import { TemplateSchema } from './template'
+import { TypographySchema } from './typography'
 
 /**
  * A zod schema that combines all layout-related configurations.
@@ -39,15 +39,15 @@ import { typographySchema } from './typography'
  * schemas (template, margins, typography, locale, and page) to ensure a
  * complete and valid layout configuration.
  */
-export const layoutSchema = z.object({
+export const LayoutSchema = z.object({
   layout: z
     .object({
-      ...latexSchema.shape,
-      ...localeSchema.shape,
-      ...marginsSchema.shape,
-      ...pageSchema.shape,
-      ...templateSchema.shape,
-      ...typographySchema.shape,
+      ...LatexSchema.shape,
+      ...LocaleSchema.shape,
+      ...MarginsSchema.shape,
+      ...PageSchema.shape,
+      ...TemplateSchema.shape,
+      ...TypographySchema.shape,
     })
     .nullish()
     .meta({

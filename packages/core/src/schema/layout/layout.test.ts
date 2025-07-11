@@ -30,13 +30,13 @@ import {
   type ResumeLayout,
   TEMPLATE_OPTIONS,
 } from '@/models'
-import { layoutSchema } from '.'
+import { LayoutSchema } from '.'
 import { marginSizeSchemaMessage, optionSchemaMessage } from '../primitives'
 import { expectSchemaMetadata, validateZodErrors } from '../utils'
 
-describe('layoutSchema', () => {
+describe('LayoutSchema', () => {
   it('should have correct metadata', () => {
-    expectSchemaMetadata(layoutSchema.shape.layout)
+    expectSchemaMetadata(LayoutSchema.shape.layout)
   })
 
   it('should validate a layout object if it is valid', () => {
@@ -98,7 +98,7 @@ describe('layoutSchema', () => {
       },
     ]
     for (const layout of tests) {
-      expect(layoutSchema.parse(layout)).toStrictEqual(layout)
+      expect(LayoutSchema.parse(layout)).toStrictEqual(layout)
     }
   })
 
@@ -251,7 +251,7 @@ describe('layoutSchema', () => {
 
     for (const { layout, error } of tests) {
       // @ts-ignore
-      validateZodErrors(layoutSchema, { layout }, error)
+      validateZodErrors(LayoutSchema, { layout }, error)
     }
   })
 })

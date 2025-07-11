@@ -30,29 +30,29 @@ import {
   validateZodErrors,
 } from '../utils'
 import {
-  volunteerItemSchema,
-  volunteerOrganizationSchema,
-  volunteerPositionSchema,
-  volunteerSchema,
+  VolunteerItemSchema,
+  VolunteerOrganizationSchema,
+  VolunteerPositionSchema,
+  VolunteerSchema,
 } from './volunteer'
 
 import type { Volunteer } from '@/models'
 
-describe('volunteerOrganizationSchema', () => {
+describe('VolunteerOrganizationSchema', () => {
   it('should have correct metadata', () => {
-    expectSchemaMetadata(volunteerOrganizationSchema)
+    expectSchemaMetadata(VolunteerOrganizationSchema)
   })
 })
 
-describe('volunteerPositionSchema', () => {
+describe('VolunteerPositionSchema', () => {
   it('should have correct metadata', () => {
-    expectSchemaMetadata(volunteerPositionSchema)
+    expectSchemaMetadata(VolunteerPositionSchema)
   })
 })
 
-describe('volunteerSchema', () => {
+describe('VolunteerSchema', () => {
   it('should have correct metadata', () => {
-    expectSchemaMetadata(volunteerSchema.shape.volunteer)
+    expectSchemaMetadata(VolunteerSchema.shape.volunteer)
   })
 
   const organization = 'Volunteer Organization'
@@ -89,7 +89,7 @@ describe('volunteerSchema', () => {
           },
         ],
       },
-      ...getNullishTestCases(volunteerItemSchema, baseVolunteerItem).map(
+      ...getNullishTestCases(VolunteerItemSchema, baseVolunteerItem).map(
         (testCase) => ({
           volunteer: [testCase],
         })
@@ -97,7 +97,7 @@ describe('volunteerSchema', () => {
     ]
 
     for (const volunteer of tests) {
-      expect(volunteerSchema.parse(volunteer)).toStrictEqual(volunteer)
+      expect(VolunteerSchema.parse(volunteer)).toStrictEqual(volunteer)
     }
   })
 
@@ -270,7 +270,7 @@ describe('volunteerSchema', () => {
     ]
 
     for (const { volunteer, error } of tests) {
-      validateZodErrors(volunteerSchema, { volunteer }, error)
+      validateZodErrors(VolunteerSchema, { volunteer }, error)
     }
   })
 })

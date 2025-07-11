@@ -30,29 +30,29 @@ import {
   validateZodErrors,
 } from '../utils'
 import {
-  referenceItemSchema,
-  referenceNameSchema,
-  referencesSchema,
-  relationshipSchema,
+  ReferenceItemSchema,
+  ReferenceNameSchema,
+  ReferencesSchema,
+  RelationshipSchema,
 } from './references'
 
 import type { References } from '@/models'
 
-describe('referenceNameSchema', () => {
+describe('ReferenceNameSchema', () => {
   it('should have correct metadata', () => {
-    expectSchemaMetadata(referenceNameSchema)
+    expectSchemaMetadata(ReferenceNameSchema)
   })
 })
 
-describe('relationshipSchema', () => {
+describe('RelationshipSchema', () => {
   it('should have correct metadata', () => {
-    expectSchemaMetadata(relationshipSchema)
+    expectSchemaMetadata(RelationshipSchema)
   })
 })
 
-describe('referencesSchema', () => {
+describe('ReferencesSchema', () => {
   it('should have correct metadata', () => {
-    expectSchemaMetadata(referencesSchema.shape.references)
+    expectSchemaMetadata(ReferencesSchema.shape.references)
   })
 
   const name = 'John Doe'
@@ -87,7 +87,7 @@ describe('referencesSchema', () => {
           },
         ],
       },
-      ...getNullishTestCases(referenceItemSchema, baseReferenceItem).map(
+      ...getNullishTestCases(ReferenceItemSchema, baseReferenceItem).map(
         (testCase) => ({
           references: [testCase],
         })
@@ -95,7 +95,7 @@ describe('referencesSchema', () => {
     ]
 
     for (const references of tests) {
-      expect(referencesSchema.parse(references)).toStrictEqual(references)
+      expect(ReferencesSchema.parse(references)).toStrictEqual(references)
     }
   })
 
@@ -295,7 +295,7 @@ describe('referencesSchema', () => {
     ]
 
     for (const { references, error } of tests) {
-      validateZodErrors(referencesSchema, { references }, error)
+      validateZodErrors(ReferencesSchema, { references }, error)
     }
   })
 })

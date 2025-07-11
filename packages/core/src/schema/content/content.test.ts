@@ -26,11 +26,11 @@ import { describe, expect, it } from 'vitest'
 
 import { FLUENCY_OPTIONS, type ResumeContent } from '@/models'
 
-import { contentSchema } from './content'
+import { ContentSchema } from './content'
 
 import { validateZodErrors } from '../utils'
 
-describe('contentSchema', () => {
+describe('ContentSchema', () => {
   const basics = {
     name: 'John Doe',
   }
@@ -55,7 +55,7 @@ describe('contentSchema', () => {
     ]
 
     for (const content of tests) {
-      expect(contentSchema.parse(content)).toStrictEqual(content)
+      expect(ContentSchema.parse(content)).toStrictEqual(content)
     }
   })
 
@@ -549,7 +549,7 @@ describe('contentSchema', () => {
     ]
 
     for (const { content, error } of tests) {
-      validateZodErrors(contentSchema, { content }, error)
+      validateZodErrors(ContentSchema, { content }, error)
     }
   })
 })

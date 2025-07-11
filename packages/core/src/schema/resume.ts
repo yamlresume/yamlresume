@@ -24,16 +24,16 @@
 
 import { z } from 'zod/v4'
 
-import { contentSchema } from './content'
-import { layoutSchema } from './layout/layout'
+import { ContentSchema } from './content'
+import { LayoutSchema } from './layout/layout'
 
 /**
  * A zod schema for a yaml resume.
  */
-export const resumeSchema = z
+export const ResumeSchema = z
   .object({
-    ...contentSchema.shape,
-    ...layoutSchema.shape,
+    ...ContentSchema.shape,
+    ...LayoutSchema.shape,
   })
   .meta({
     $id: 'https://yamlresume.dev/schema.json',

@@ -30,43 +30,43 @@ import {
   validateZodErrors,
 } from '../utils'
 import {
-  areaSchema,
-  coursesSchema,
-  educationItemSchema,
-  educationSchema,
-  institutionSchema,
-  scoreSchema,
+  AreaSchema,
+  CoursesSchema,
+  EducationItemSchema,
+  EducationSchema,
+  InstitutionSchema,
+  ScoreSchema,
 } from './education'
 
 import type { Education } from '@/models'
 
-describe('areaSchema', () => {
+describe('AreaSchema', () => {
   it('should have correct metadata', () => {
-    expectSchemaMetadata(areaSchema)
+    expectSchemaMetadata(AreaSchema)
   })
 })
 
-describe('coursesSchema', () => {
+describe('CoursesSchema', () => {
   it('should have correct metadata', () => {
-    expectSchemaMetadata(coursesSchema)
+    expectSchemaMetadata(CoursesSchema)
   })
 })
 
-describe('institutionSchema', () => {
+describe('InstitutionSchema', () => {
   it('should have correct metadata', () => {
-    expectSchemaMetadata(institutionSchema)
+    expectSchemaMetadata(InstitutionSchema)
   })
 })
 
-describe('scoreSchema', () => {
+describe('ScoreSchema', () => {
   it('should have correct metadata', () => {
-    expectSchemaMetadata(scoreSchema)
+    expectSchemaMetadata(ScoreSchema)
   })
 })
 
-describe('educationSchema', () => {
+describe('EducationSchema', () => {
   it('should have correct metadata', () => {
-    expectSchemaMetadata(educationSchema.shape.education)
+    expectSchemaMetadata(EducationSchema.shape.education)
   })
 
   const area = 'Study area'
@@ -105,7 +105,7 @@ describe('educationSchema', () => {
           },
         ],
       },
-      ...getNullishTestCases(educationItemSchema, baseEducationObject).map(
+      ...getNullishTestCases(EducationItemSchema, baseEducationObject).map(
         (testCase) => ({
           education: [testCase],
         })
@@ -116,7 +116,7 @@ describe('educationSchema', () => {
     ]
 
     for (const education of tests) {
-      expect(educationSchema.parse(education)).toStrictEqual(education)
+      expect(EducationSchema.parse(education)).toStrictEqual(education)
     }
   })
 
@@ -327,12 +327,12 @@ describe('educationSchema', () => {
     ]
 
     for (const { education, error } of tests) {
-      validateZodErrors(educationSchema, { education }, error)
+      validateZodErrors(EducationSchema, { education }, error)
     }
 
     // test empty object as well
     validateZodErrors(
-      educationSchema,
+      EducationSchema,
       // @ts-ignore
       {},
       {

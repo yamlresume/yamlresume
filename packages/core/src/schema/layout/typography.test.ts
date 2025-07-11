@@ -27,11 +27,11 @@ import { describe, expect, it } from 'vitest'
 import { FONT_SIZE_OPTIONS } from '@/models'
 import { optionSchemaMessage } from '../primitives'
 import { expectSchemaMetadata, validateZodErrors } from '../utils'
-import { typographySchema } from './typography'
+import { TypographySchema } from './typography'
 
-describe('typographySchema', () => {
+describe('TypographySchema', () => {
   it('should have correct metadata', () => {
-    expectSchemaMetadata(typographySchema.shape.typography)
+    expectSchemaMetadata(TypographySchema.shape.typography)
   })
 
   it('should validate typography if it is valid', () => {
@@ -48,7 +48,7 @@ describe('typographySchema', () => {
     ]
 
     for (const typography of tests) {
-      expect(typographySchema.parse(typography)).toStrictEqual(typography)
+      expect(TypographySchema.parse(typography)).toStrictEqual(typography)
     }
   })
 
@@ -76,7 +76,7 @@ describe('typographySchema', () => {
 
     for (const { typography, error } of tests) {
       // @ts-ignore
-      validateZodErrors(typographySchema, { typography }, error)
+      validateZodErrors(TypographySchema, { typography }, error)
     }
   })
 })

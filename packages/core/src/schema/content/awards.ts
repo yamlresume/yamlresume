@@ -25,16 +25,16 @@ import { z } from 'zod/v4'
 
 import { joinNonEmptyString } from '@/utils'
 import {
-  dateSchema,
-  nameSchema,
-  organizationSchema,
-  summarySchema,
+  DateSchema,
+  NameSchema,
+  OrganizationSchema,
+  SummarySchema,
 } from '../primitives'
 
 /**
- * A zod schema for an awarder.
+ * A zod schema for the awarder of an award.
  */
-export const awarderSchema = organizationSchema('awarder').meta({
+export const AwarderSchema = OrganizationSchema('awarder').meta({
   title: 'Awarder',
   description: 'The organization or institution that presented the award.',
   examples: ['Academy Awards', 'Tech Conference', 'Microsoft Scholarship'],
@@ -43,31 +43,31 @@ export const awarderSchema = organizationSchema('awarder').meta({
 /**
  * A zod schema for the title of an award.
  */
-export const titleSchema = nameSchema('title').meta({
+export const TitleSchema = NameSchema('title').meta({
   title: 'Title',
   description: 'The title of the award.',
   examples: ["Dean's List", 'Outstanding Student', 'Best Supporting Engineer'],
 })
 
 /**
- * A zod schema for an award item
+ * A zod schema for an award item.
  */
-export const awardItemSchema = z.object({
+export const AwardItemSchema = z.object({
   // required fields
-  awarder: awarderSchema,
-  title: titleSchema,
+  awarder: AwarderSchema,
+  title: TitleSchema,
 
   // optional fields
-  date: dateSchema('date').nullish(),
-  summary: summarySchema.nullish(),
+  date: DateSchema('date').nullish(),
+  summary: SummarySchema.nullish(),
 })
 
 /**
  * A zod schema for awards.
  */
-export const awardsSchema = z.object({
+export const AwardsSchema = z.object({
   awards: z
-    .array(awardItemSchema)
+    .array(AwardItemSchema)
     .nullish()
     .meta({
       title: 'Awards',

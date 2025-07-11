@@ -35,7 +35,7 @@ import {
   type Resume,
   YAMLResumeError,
   joinNonEmptyString,
-  resumeSchema,
+  ResumeSchema,
 } from '@yamlresume/core'
 
 import { getFixture } from './utils'
@@ -97,7 +97,7 @@ describe(validateResume, () => {
       'utf8'
     )
 
-    const result = validateResume(resumeStr, resumeSchema)
+    const result = validateResume(resumeStr, ResumeSchema)
 
     expect(result).toEqual([])
   })
@@ -187,7 +187,7 @@ describe(validateResume, () => {
     ]
 
     for (const { resumeStr, errors } of tests) {
-      const result = validateResume(resumeStr, resumeSchema)
+      const result = validateResume(resumeStr, ResumeSchema)
       expect(result).toEqual(errors)
     }
   })

@@ -25,18 +25,18 @@ import { z } from 'zod/v4'
 
 import { joinNonEmptyString } from '@/utils'
 import {
-  emailSchema,
-  nameSchema,
-  phoneSchema,
-  sizedStringSchema,
-  summarySchema,
-  urlSchema,
+  EmailSchema,
+  NameSchema,
+  PhoneSchema,
+  SizedStringSchema,
+  SummarySchema,
+  UrlSchema,
 } from '../primitives'
 
 /**
  * A zod schema for a headline.
  */
-export const headlineSchema = sizedStringSchema('headline', 8, 128).meta({
+export const HeadlineSchema = SizedStringSchema('headline', 8, 128).meta({
   title: 'Headline',
   description: 'A short and catchy headline for your resume.',
   examples: [
@@ -49,17 +49,17 @@ export const headlineSchema = sizedStringSchema('headline', 8, 128).meta({
 /**
  * A zod schema for a basics item.
  */
-export const basicsItemSchema = z.object(
+export const BasicsItemSchema = z.object(
   {
     // required fields
-    name: nameSchema('name').describe('Your personal name.'),
+    name: NameSchema('name').describe('Your personal name.'),
 
     // optional fields
-    email: emailSchema.nullish(),
-    headline: headlineSchema.nullish(),
-    phone: phoneSchema.nullish(),
-    summary: summarySchema.nullish(),
-    url: urlSchema.nullish(),
+    email: EmailSchema.nullish(),
+    headline: HeadlineSchema.nullish(),
+    phone: PhoneSchema.nullish(),
+    summary: SummarySchema.nullish(),
+    url: UrlSchema.nullish(),
   },
   {
     error: (issue) => {
@@ -79,8 +79,8 @@ export const basicsItemSchema = z.object(
 /**
  * A zod schema for basics.
  */
-export const basicsSchema = z.object({
-  basics: basicsItemSchema.meta({
+export const BasicsSchema = z.object({
+  basics: BasicsItemSchema.meta({
     title: 'Basics',
     description: joinNonEmptyString(
       [

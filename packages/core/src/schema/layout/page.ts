@@ -29,7 +29,7 @@ import { joinNonEmptyString } from '@/utils'
 /**
  * A zod schema for the show page numbers setting.
  */
-export const showPageNumbersSchema = z.boolean().nullish().meta({
+export const ShowPageNumbersSchema = z.boolean().nullish().meta({
   title: 'Show Page Numbers',
   description: 'Whether to show page numbers on the page.',
 })
@@ -39,10 +39,10 @@ export const showPageNumbersSchema = z.boolean().nullish().meta({
  *
  * Validates page-related settings such as whether to show page numbers.
  */
-export const pageSchema = z.object({
+export const PageSchema = z.object({
   page: z
     .object({
-      showPageNumbers: showPageNumbersSchema,
+      showPageNumbers: ShowPageNumbersSchema,
     })
     .nullish()
     .meta({

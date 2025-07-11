@@ -25,18 +25,18 @@ import { z } from 'zod/v4'
 
 import { joinNonEmptyString } from '@/utils'
 import {
-  dateSchema,
-  degreeOptionSchema,
-  organizationSchema,
-  sizedStringSchema,
-  summarySchema,
-  urlSchema,
+  DateSchema,
+  DegreeOptionSchema,
+  OrganizationSchema,
+  SizedStringSchema,
+  SummarySchema,
+  UrlSchema,
 } from '../primitives'
 
 /**
  * A zod schema for an area of study.
  */
-export const areaSchema = sizedStringSchema('area', 2, 64).meta({
+export const AreaSchema = SizedStringSchema('area', 2, 64).meta({
   title: 'Area',
   description: 'Your field of study or major.',
   examples: [
@@ -50,8 +50,8 @@ export const areaSchema = sizedStringSchema('area', 2, 64).meta({
 /**
  * A zod schema for courses.
  */
-export const coursesSchema = z
-  .array(sizedStringSchema('courses', 2, 128))
+export const CoursesSchema = z
+  .array(SizedStringSchema('courses', 2, 128))
   .meta({
     title: 'Courses',
     description: 'A list of relevant courses you have taken.',
@@ -65,7 +65,7 @@ export const coursesSchema = z
 /**
  * A zod schema for an institution.
  */
-export const institutionSchema = organizationSchema('institution').meta({
+export const InstitutionSchema = OrganizationSchema('institution').meta({
   title: 'Institution',
   description: 'The institution that awarded the degree.',
   examples: [
@@ -78,7 +78,7 @@ export const institutionSchema = organizationSchema('institution').meta({
 /**
  * A zod schema for a score.
  */
-export const scoreSchema = sizedStringSchema('score', 2, 32).meta({
+export const ScoreSchema = SizedStringSchema('score', 2, 32).meta({
   title: 'Score',
   description: 'Your GPA, grade, or other academic score.',
   examples: ['3.8', '3.8/4.0', 'A+', '95%', 'First Class Honours'],
@@ -87,27 +87,27 @@ export const scoreSchema = sizedStringSchema('score', 2, 32).meta({
 /**
  * A zod schema for an education item.
  */
-export const educationItemSchema = z.object({
+export const EducationItemSchema = z.object({
   // required fields
-  area: areaSchema,
-  institution: institutionSchema,
-  degree: degreeOptionSchema,
-  startDate: dateSchema('startDate'),
+  area: AreaSchema,
+  institution: InstitutionSchema,
+  degree: DegreeOptionSchema,
+  startDate: DateSchema('startDate'),
 
   // optional fields
-  courses: coursesSchema.nullish(),
-  endDate: dateSchema('endDate').nullish(),
-  summary: summarySchema.nullish(),
-  score: scoreSchema.nullish(),
-  url: urlSchema.nullish(),
+  courses: CoursesSchema.nullish(),
+  endDate: DateSchema('endDate').nullish(),
+  summary: SummarySchema.nullish(),
+  score: ScoreSchema.nullish(),
+  url: UrlSchema.nullish(),
 })
 
 /**
  * A zod schema for education.
  */
-export const educationSchema = z.object({
+export const EducationSchema = z.object({
   education: z
-    .array(educationItemSchema, {
+    .array(EducationItemSchema, {
       error: (issue) => {
         if (issue.input === undefined) {
           return {

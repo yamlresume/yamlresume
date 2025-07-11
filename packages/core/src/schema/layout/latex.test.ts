@@ -27,11 +27,11 @@ import { describe, expect, it } from 'vitest'
 import { FONTSPEC_NUMBERS_OPTIONS } from '@/models'
 import { optionSchemaMessage } from '../primitives'
 import { expectSchemaMetadata, validateZodErrors } from '../utils'
-import { latexSchema } from './latex'
+import { LatexSchema } from './latex'
 
-describe('latexSchema', () => {
+describe('LatexSchema', () => {
   it('should have correct metadata', () => {
-    expectSchemaMetadata(latexSchema.shape.latex)
+    expectSchemaMetadata(LatexSchema.shape.latex)
   })
 
   it('should validate LaTeX if it is valid', () => {
@@ -53,7 +53,7 @@ describe('latexSchema', () => {
     ]
 
     for (const latex of tests) {
-      expect(latexSchema.parse(latex)).toStrictEqual(latex)
+      expect(LatexSchema.parse(latex)).toStrictEqual(latex)
     }
   })
 
@@ -91,7 +91,7 @@ describe('latexSchema', () => {
 
     for (const { latex, error } of tests) {
       // @ts-ignore
-      validateZodErrors(latexSchema, { latex }, error)
+      validateZodErrors(LatexSchema, { latex }, error)
     }
   })
 })

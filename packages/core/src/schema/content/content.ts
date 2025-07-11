@@ -23,44 +23,44 @@
  */
 import { z } from 'zod/v4'
 
-import { awardsSchema } from './awards'
-import { basicsSchema } from './basics'
-import { certificatesSchema } from './certificates'
-import { educationSchema } from './education'
-import { interestsSchema } from './interests'
-import { languagesSchema } from './languages'
-import { locationSchema } from './location'
-import { profilesSchema } from './profiles'
-import { projectsSchema } from './projects'
-import { publicationsSchema } from './publications'
-import { referencesSchema } from './references'
-import { skillsSchema } from './skills'
-import { volunteerSchema } from './volunteer'
-import { workSchema } from './work'
+import { AwardsSchema } from './awards'
+import { BasicsSchema } from './basics'
+import { CertificatesSchema } from './certificates'
+import { EducationSchema } from './education'
+import { InterestsSchema } from './interests'
+import { LanguagesSchema } from './languages'
+import { LocationSchema } from './location'
+import { ProfilesSchema } from './profiles'
+import { ProjectsSchema } from './projects'
+import { PublicationsSchema } from './publications'
+import { ReferencesSchema } from './references'
+import { SkillsSchema } from './skills'
+import { VolunteerSchema } from './volunteer'
+import { WorkSchema } from './work'
 
 /**
  * A zod schema for a resume, merging all section schemas.
  */
-export const contentSchema = z.object({
+export const ContentSchema = z.object({
   content: z.object(
     {
       // required sections
-      ...basicsSchema.shape,
-      ...educationSchema.shape,
+      ...BasicsSchema.shape,
+      ...EducationSchema.shape,
 
       // optional sections
-      ...awardsSchema.shape,
-      ...certificatesSchema.shape,
-      ...interestsSchema.shape,
-      ...languagesSchema.shape,
-      ...locationSchema.shape,
-      ...profilesSchema.shape,
-      ...projectsSchema.shape,
-      ...publicationsSchema.shape,
-      ...referencesSchema.shape,
-      ...skillsSchema.shape,
-      ...volunteerSchema.shape,
-      ...workSchema.shape,
+      ...AwardsSchema.shape,
+      ...CertificatesSchema.shape,
+      ...InterestsSchema.shape,
+      ...LanguagesSchema.shape,
+      ...LocationSchema.shape,
+      ...ProfilesSchema.shape,
+      ...ProjectsSchema.shape,
+      ...PublicationsSchema.shape,
+      ...ReferencesSchema.shape,
+      ...SkillsSchema.shape,
+      ...VolunteerSchema.shape,
+      ...WorkSchema.shape,
     },
     {
       error: (issue) => {

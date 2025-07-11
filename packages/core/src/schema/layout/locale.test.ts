@@ -27,11 +27,11 @@ import { describe, expect, it } from 'vitest'
 import { LOCALE_LANGUAGE_OPTIONS } from '@/models'
 import { optionSchemaMessage } from '../primitives'
 import { expectSchemaMetadata, validateZodErrors } from '../utils'
-import { localeSchema } from './locale'
+import { LocaleSchema } from './locale'
 
-describe('localeSchema', () => {
+describe('LocaleSchema', () => {
   it('should have correct metadata', () => {
-    expectSchemaMetadata(localeSchema.shape.locale)
+    expectSchemaMetadata(LocaleSchema.shape.locale)
   })
 
   it('should validate a locale if it is valid', () => {
@@ -42,7 +42,7 @@ describe('localeSchema', () => {
     ]
 
     for (const locale of tests) {
-      expect(localeSchema.parse(locale)).toStrictEqual(locale)
+      expect(LocaleSchema.parse(locale)).toStrictEqual(locale)
     }
   })
 
@@ -73,7 +73,7 @@ describe('localeSchema', () => {
 
     for (const { locale, error } of tests) {
       // @ts-ignore
-      validateZodErrors(localeSchema, { locale }, error)
+      validateZodErrors(LocaleSchema, { locale }, error)
     }
   })
 })

@@ -30,29 +30,29 @@ import {
   validateZodErrors,
 } from '../utils'
 import {
-  companyNameSchema,
-  positionSchema,
-  workItemSchema,
-  workSchema,
+  CompanyNameSchema,
+  PositionSchema,
+  WorkItemSchema,
+  WorkSchema,
 } from './work'
 
 import type { Work } from '@/models'
 
-describe('companyNameSchema', () => {
+describe('CompanyNameSchema', () => {
   it('should have correct metadata', () => {
-    expectSchemaMetadata(companyNameSchema)
+    expectSchemaMetadata(CompanyNameSchema)
   })
 })
 
-describe('positionSchema', () => {
+describe('PositionSchema', () => {
   it('should have correct metadata', () => {
-    expectSchemaMetadata(positionSchema)
+    expectSchemaMetadata(PositionSchema)
   })
 })
 
-describe('workSchema', () => {
+describe('WorkSchema', () => {
   it('should have correct metadata', () => {
-    expectSchemaMetadata(workSchema.shape.work)
+    expectSchemaMetadata(WorkSchema.shape.work)
   })
 
   const name = 'Test Company'
@@ -90,13 +90,13 @@ describe('workSchema', () => {
           },
         ],
       },
-      ...getNullishTestCases(workItemSchema, baseWorkItem).map((testCase) => ({
+      ...getNullishTestCases(WorkItemSchema, baseWorkItem).map((testCase) => ({
         work: [testCase],
       })),
     ]
 
     for (const work of tests) {
-      expect(workSchema.parse(work)).toStrictEqual(work)
+      expect(WorkSchema.parse(work)).toStrictEqual(work)
     }
   })
 
@@ -274,7 +274,7 @@ describe('workSchema', () => {
     ]
 
     for (const { work, error } of tests) {
-      validateZodErrors(workSchema, { work }, error)
+      validateZodErrors(WorkSchema, { work }, error)
     }
   })
 })

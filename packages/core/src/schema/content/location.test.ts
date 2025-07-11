@@ -31,44 +31,44 @@ import {
   validateZodErrors,
 } from '../utils'
 import {
-  addressSchema,
-  citySchema,
-  locationItemSchema,
-  locationSchema,
-  postalCodeSchema,
-  regionSchema,
+  AddressSchema,
+  CitySchema,
+  LocationItemSchema,
+  LocationSchema,
+  PostalCodeSchema,
+  RegionSchema,
 } from './location'
 
 import { COUNTRY_OPTIONS } from '@/models'
 import type { Location } from '@/models'
 
-describe('citySchema', () => {
+describe('CitySchema', () => {
   it('should have correct metadata', () => {
-    expectSchemaMetadata(citySchema)
+    expectSchemaMetadata(CitySchema)
   })
 })
 
-describe('addressSchema', () => {
+describe('AddressSchema', () => {
   it('should have correct metadata', () => {
-    expectSchemaMetadata(addressSchema)
+    expectSchemaMetadata(AddressSchema)
   })
 })
 
-describe('postalCodeSchema', () => {
+describe('PostalCodeSchema', () => {
   it('should have correct metadata', () => {
-    expectSchemaMetadata(postalCodeSchema)
+    expectSchemaMetadata(PostalCodeSchema)
   })
 })
 
-describe('regionSchema', () => {
+describe('RegionSchema', () => {
   it('should have correct metadata', () => {
-    expectSchemaMetadata(regionSchema)
+    expectSchemaMetadata(RegionSchema)
   })
 })
 
-describe('locationSchema', () => {
+describe('LocationSchema', () => {
   it('should have correct metadata', () => {
-    expectSchemaMetadata(locationSchema.shape.location)
+    expectSchemaMetadata(LocationSchema.shape.location)
   })
 
   const city = 'San Francisco'
@@ -96,7 +96,7 @@ describe('locationSchema', () => {
           region,
         },
       },
-      ...getNullishTestCases(locationItemSchema, baseLocationItem).map(
+      ...getNullishTestCases(LocationItemSchema, baseLocationItem).map(
         (testCase) => ({
           location: testCase,
         })
@@ -104,7 +104,7 @@ describe('locationSchema', () => {
     ]
 
     for (const location of tests) {
-      expect(locationSchema.parse(location)).toStrictEqual(location)
+      expect(LocationSchema.parse(location)).toStrictEqual(location)
     }
   })
 
@@ -187,7 +187,7 @@ describe('locationSchema', () => {
 
     for (const { location, error } of tests) {
       if (location && Object.keys(location).length > 0) {
-        validateZodErrors(locationSchema, { location }, error)
+        validateZodErrors(LocationSchema, { location }, error)
       }
     }
   })

@@ -32,13 +32,13 @@ import { describe, expect, it } from 'vitest'
 
 import type { Resume } from '@/models'
 
-import { resumeSchema } from './resume'
+import { ResumeSchema } from './resume'
 import { validateZodErrors } from './utils'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = dirname(__filename)
 
-describe('resumeSchema', () => {
+describe('ResumeSchema', () => {
   const minimalResume: Resume = {
     content: {
       basics: {
@@ -120,7 +120,7 @@ describe('resumeSchema', () => {
     ]
 
     for (const resume of tests) {
-      expect(resumeSchema.parse(resume)).toStrictEqual(resume)
+      expect(ResumeSchema.parse(resume)).toStrictEqual(resume)
     }
   })
 
@@ -264,13 +264,13 @@ describe('resumeSchema', () => {
 
     for (const { resume, error } of tests) {
       // @ts-ignore
-      validateZodErrors(resumeSchema, resume, error)
+      validateZodErrors(ResumeSchema, resume, error)
     }
   })
 
   describe('should generate a valid json schema', () => {
     it('should generate a valid json schema', () => {
-      const jsonSchema = z.toJSONSchema(resumeSchema)
+      const jsonSchema = z.toJSONSchema(ResumeSchema)
 
       const schemaPath = join(__dirname, 'schema.json')
       fs.writeFileSync(schemaPath, JSON.stringify(jsonSchema, null, 2))

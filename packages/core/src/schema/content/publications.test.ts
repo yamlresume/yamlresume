@@ -30,29 +30,29 @@ import {
   validateZodErrors,
 } from '../utils'
 import {
-  publicationItemSchema,
-  publicationNameSchema,
-  publicationsSchema,
-  publisherSchema,
+  PublicationItemSchema,
+  PublicationNameSchema,
+  PublicationsSchema,
+  PublisherSchema,
 } from './publications'
 
 import type { Publications } from '@/models'
 
-describe('publicationNameSchema', () => {
+describe('PublicationNameSchema', () => {
   it('should have correct metadata', () => {
-    expectSchemaMetadata(publicationNameSchema)
+    expectSchemaMetadata(PublicationNameSchema)
   })
 })
 
-describe('publisherSchema', () => {
+describe('PublisherSchema', () => {
   it('should have correct metadata', () => {
-    expectSchemaMetadata(publisherSchema)
+    expectSchemaMetadata(PublisherSchema)
   })
 })
 
-describe('publicationsSchema', () => {
+describe('PublicationsSchema', () => {
   it('should have correct metadata', () => {
-    expectSchemaMetadata(publicationsSchema.shape.publications)
+    expectSchemaMetadata(PublicationsSchema.shape.publications)
   })
 
   const name = 'Publication Name'
@@ -87,7 +87,7 @@ describe('publicationsSchema', () => {
           },
         ],
       },
-      ...getNullishTestCases(publicationItemSchema, basePublicationItem).map(
+      ...getNullishTestCases(PublicationItemSchema, basePublicationItem).map(
         (testCase) => ({
           publications: [testCase],
         })
@@ -95,7 +95,7 @@ describe('publicationsSchema', () => {
     ]
 
     for (const publications of tests) {
-      expect(publicationsSchema.parse(publications)).toStrictEqual(publications)
+      expect(PublicationsSchema.parse(publications)).toStrictEqual(publications)
     }
   })
 
@@ -199,7 +199,7 @@ describe('publicationsSchema', () => {
     ]
 
     for (const { publications, error } of tests) {
-      validateZodErrors(publicationsSchema, { publications }, error)
+      validateZodErrors(PublicationsSchema, { publications }, error)
     }
   })
 })

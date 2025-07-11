@@ -29,19 +29,19 @@ import {
   getNullishTestCases,
   validateZodErrors,
 } from '../utils'
-import { basicsItemSchema, basicsSchema, headlineSchema } from './basics'
+import { BasicsItemSchema, BasicsSchema, HeadlineSchema } from './basics'
 
 import type { Basics } from '@/models'
 
-describe('headlineSchema', () => {
+describe('HeadlineSchema', () => {
   it('should have correct metadata', () => {
-    expectSchemaMetadata(headlineSchema)
+    expectSchemaMetadata(HeadlineSchema)
   })
 })
 
-describe('basicsSchema', () => {
+describe('BasicsSchema', () => {
   it('should have correct metadata', () => {
-    expectSchemaMetadata(basicsSchema.shape.basics)
+    expectSchemaMetadata(BasicsSchema.shape.basics)
   })
 
   const name = 'Name'
@@ -69,7 +69,7 @@ describe('basicsSchema', () => {
           url,
         },
       },
-      ...getNullishTestCases(basicsItemSchema, baseBasicsObject).map(
+      ...getNullishTestCases(BasicsItemSchema, baseBasicsObject).map(
         (testCase) => ({
           basics: testCase,
         })
@@ -77,7 +77,7 @@ describe('basicsSchema', () => {
     ]
 
     for (const { basics } of tests) {
-      expect(basicsSchema.parse({ basics })).toStrictEqual({ basics })
+      expect(BasicsSchema.parse({ basics })).toStrictEqual({ basics })
     }
   })
 
@@ -130,12 +130,12 @@ describe('basicsSchema', () => {
     ]
 
     for (const { basics, error } of tests) {
-      validateZodErrors(basicsSchema, { basics }, error)
+      validateZodErrors(BasicsSchema, { basics }, error)
     }
 
     // test empty object as well
     validateZodErrors(
-      basicsSchema,
+      BasicsSchema,
       // @ts-ignore
       {},
       {

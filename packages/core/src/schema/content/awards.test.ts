@@ -30,29 +30,29 @@ import {
   validateZodErrors,
 } from '../utils'
 import {
-  awardItemSchema,
-  awarderSchema,
-  awardsSchema,
-  titleSchema,
+  AwardItemSchema,
+  AwarderSchema,
+  AwardsSchema,
+  TitleSchema,
 } from './awards'
 
 import type { Awards } from '@/models'
 
-describe('awarderSchema', () => {
+describe('AwarderSchema', () => {
   it('should have correct metadata', () => {
-    expectSchemaMetadata(awarderSchema)
+    expectSchemaMetadata(AwarderSchema)
   })
 })
 
-describe('titleSchema', () => {
+describe('TitleSchema', () => {
   it('should have correct metadata', () => {
-    expectSchemaMetadata(titleSchema)
+    expectSchemaMetadata(TitleSchema)
   })
 })
 
-describe('awardsSchema', () => {
+describe('AwardsSchema', () => {
   it('should have correct metadata', () => {
-    expectSchemaMetadata(awardsSchema.shape.awards)
+    expectSchemaMetadata(AwardsSchema.shape.awards)
   })
 
   const awarder = 'Organization'
@@ -78,7 +78,7 @@ describe('awardsSchema', () => {
       {
         awards: [{ ...baseAwardItem, date, summary }],
       },
-      ...getNullishTestCases(awardItemSchema, baseAwardItem).map(
+      ...getNullishTestCases(AwardItemSchema, baseAwardItem).map(
         (testCase) => ({
           awards: [testCase],
         })
@@ -86,7 +86,7 @@ describe('awardsSchema', () => {
     ]
 
     for (const { awards } of tests) {
-      expect(awardsSchema.parse({ awards })).toStrictEqual({
+      expect(AwardsSchema.parse({ awards })).toStrictEqual({
         awards,
       })
     }
@@ -249,7 +249,7 @@ describe('awardsSchema', () => {
     ]
 
     for (const { awards, error } of tests) {
-      validateZodErrors(awardsSchema, { awards }, error)
+      validateZodErrors(AwardsSchema, { awards }, error)
     }
   })
 })

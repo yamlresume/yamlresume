@@ -27,18 +27,18 @@ import { describe, expect, it } from 'vitest'
 import { TEMPLATE_OPTIONS } from '@/models'
 import { optionSchemaMessage } from '../primitives'
 import { expectSchemaMetadata, validateZodErrors } from '../utils'
-import { templateSchema } from './template'
+import { TemplateSchema } from './template'
 
-describe('templateSchema', () => {
+describe('TemplateSchema', () => {
   it('should have correct metadata', () => {
-    expectSchemaMetadata(templateSchema.shape.template)
+    expectSchemaMetadata(TemplateSchema.shape.template)
   })
 
   it('should validate a template if it is valid', () => {
     const tests = [{}, { template: TEMPLATE_OPTIONS[0] }]
 
     for (const template of tests) {
-      expect(templateSchema.parse(template)).toStrictEqual(template)
+      expect(TemplateSchema.parse(template)).toStrictEqual(template)
     }
   })
 
@@ -59,7 +59,7 @@ describe('templateSchema', () => {
 
     for (const { template, error } of tests) {
       // @ts-ignore
-      validateZodErrors(templateSchema, { template }, error)
+      validateZodErrors(TemplateSchema, { template }, error)
     }
   })
 })

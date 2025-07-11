@@ -64,65 +64,68 @@ export function marginSizeSchemaMessage(position: Position) {
  * Accepts positive numbers followed by valid units: cm, pt, or in
  * Examples: "2.5cm", "1in", "72pt"
  */
-export const marginSizeSchema = (position: Position) =>
+export function MarginSizeSchema(position: Position) {
   // We could simply use `z.string()` here with a custom check, but we use
-  // `sizedStringSchema` in order to get best JSON Schema capabilities.
-  sizedStringSchema(`${position} margin`, 2, 32)
-    // Please note that here we added a custom check, inside which we will
-    // override `ctx.issues`, therefore marginSizeSchema will always return one
-    // and only one precise issue if the value is not valid.
-    .check((ctx) => {
-      if (ctx.value.length < 2) {
-        ctx.issues = [
-          {
-            code: 'too_small',
-            input: ctx.value,
-            minimum: 2,
-            message: `${position} margin should be 2 characters or more.`,
-            origin: 'string',
-          },
-        ]
+  // `SizedStringSchema` in order to get best JSON Schema capabilities.
+  return (
+    SizedStringSchema(`${position} margin`, 2, 32)
+      // Please note that here we added a custom check, inside which we will
+      // override `ctx.issues`, therefore marginSizeSchema will always return one
+      // and only one precise issue if the value is not valid.
+      .check((ctx) => {
+        if (ctx.value.length < 2) {
+          ctx.issues = [
+            {
+              code: 'too_small',
+              input: ctx.value,
+              minimum: 2,
+              message: `${position} margin should be 2 characters or more.`,
+              origin: 'string',
+            },
+          ]
 
-        return
-      }
+          return
+        }
 
-      if (ctx.value.length > 32) {
-        ctx.issues = [
-          {
-            code: 'too_big',
-            input: ctx.value,
-            maximum: 32,
-            message: `${position} margin should be 32 characters or less.`,
-            origin: 'string',
-          },
-        ]
+        if (ctx.value.length > 32) {
+          ctx.issues = [
+            {
+              code: 'too_big',
+              input: ctx.value,
+              maximum: 32,
+              message: `${position} margin should be 32 characters or less.`,
+              origin: 'string',
+            },
+          ]
 
-        return
-      }
+          return
+        }
 
-      if (!ctx.value.match(/^\d+(\.\d+)?(cm|pt|in)$/)) {
-        ctx.issues = [
-          {
-            code: 'invalid_value',
-            input: ctx.value,
-            message: marginSizeSchemaMessage(position),
-            origin: 'string',
-            values: [ctx.value],
-          },
-        ]
-      }
-    })
-    .meta({
-      title: startCase(`${position} margin size`),
-      description: joinNonEmptyString(
-        [
-          'A positive number followed by valid units: cm, pt, or in.',
-          'Examples: "2.5cm", "1in", "72pt".',
-        ],
-        ' '
-      ),
-      examples: ['2.5cm', '1in', '72pt', '0.5cm', '12pt'],
-    })
+        if (!ctx.value.match(/^\d+(\.\d+)?(cm|pt|in)$/)) {
+          ctx.issues = [
+            {
+              code: 'invalid_value',
+              input: ctx.value,
+              message: marginSizeSchemaMessage(position),
+              origin: 'string',
+              values: [ctx.value],
+            },
+          ]
+        }
+      })
+      .meta({
+        title: startCase(`${position} margin size`),
+        description: joinNonEmptyString(
+          [
+            'A positive number followed by valid units: cm, pt, or in.',
+            'Examples: "2.5cm", "1in", "72pt".',
+          ],
+          ' '
+        ),
+        examples: ['2.5cm', '1in', '72pt', '0.5cm', '12pt'],
+      })
+  )
+}
 
 /**
  * A type for all options.
@@ -193,7 +196,7 @@ function optionSchema(options: Options, messagePrefix: string) {
  * @param max - The maximum length of the string.
  * @returns A Zod schema for a string with a minimum and maximum length.
  */
-export const sizedStringSchema = (name: string, min: number, max: number) => {
+export const SizedStringSchema = (name: string, min: number, max: number) => {
   return z
     .string({ message: `${name} is required.` })
     .min(min, { message: `${name} should be ${min} characters or more.` })
@@ -203,7 +206,7 @@ export const sizedStringSchema = (name: string, min: number, max: number) => {
 /**
  * A zod schema for a country option.
  */
-export const countryOptionSchema = optionSchema(COUNTRY_OPTIONS, 'country')
+export const CountryOptionSchema = optionSchema(COUNTRY_OPTIONS, 'country')
 
 /**
  * Creates a zod schema for a date string.
@@ -213,8 +216,8 @@ export const countryOptionSchema = optionSchema(COUNTRY_OPTIONS, 'country')
  * @param date - The name of the date.
  * @returns A Zod schema for a date string.
  */
-export const dateSchema = (date: string) =>
-  sizedStringSchema(date, 4, 32)
+export function DateSchema(date: string) {
+  return SizedStringSchema(date, 4, 32)
     .check((ctx) => {
       if (ctx.value.length < 4) {
         ctx.issues = [
@@ -266,16 +269,17 @@ export const dateSchema = (date: string) =>
         '2025-02-02T00:00:03.123Z',
       ],
     })
+}
 
 /**
  * A zod schema for a degree option.
  */
-export const degreeOptionSchema = optionSchema(DEGREE_OPTIONS, 'degree')
+export const DegreeOptionSchema = optionSchema(DEGREE_OPTIONS, 'degree')
 
 /**
  * An email schema used by various sections.
  */
-export const emailSchema = z.email({ message: 'email is invalid.' }).meta({
+export const EmailSchema = z.email({ message: 'email is invalid.' }).meta({
   id: 'email',
   title: 'Email',
   description: 'A valid email address.',
@@ -289,12 +293,12 @@ export const emailSchema = z.email({ message: 'email is invalid.' }).meta({
 /**
  * A zod schema for a language fluency option.
  */
-export const fluencyOptionSchema = optionSchema(FLUENCY_OPTIONS, 'fluency')
+export const FluencyOptionSchema = optionSchema(FLUENCY_OPTIONS, 'fluency')
 
 /**
  * A zod schema for a font spec numbers style.
  */
-export const fontspecNumbersOptionSchema = optionSchema(
+export const FontspecNumbersOptionSchema = optionSchema(
   FONTSPEC_NUMBERS_OPTIONS,
   'fontspec numbers'
 )
@@ -302,13 +306,13 @@ export const fontspecNumbersOptionSchema = optionSchema(
 /**
  * A zod schema for fontSize option in layout.
  */
-export const fontSizeOptionSchema = optionSchema(FONT_SIZE_OPTIONS, 'font size')
+export const FontSizeOptionSchema = optionSchema(FONT_SIZE_OPTIONS, 'font size')
 
 /**
  * A zod schema for a keywords array.
  */
-export const keywordsSchema = z
-  .array(sizedStringSchema('keyword', 1, 32))
+export const KeywordsSchema = z
+  .array(SizedStringSchema('keyword', 1, 32))
   .meta({
     id: 'keywords',
     title: 'Keywords',
@@ -323,12 +327,12 @@ export const keywordsSchema = z
 /**
  * A zod schema for a language.
  */
-export const languageOptionSchema = optionSchema(LANGUAGE_OPTIONS, 'language')
+export const LanguageOptionSchema = optionSchema(LANGUAGE_OPTIONS, 'language')
 
 /**
  * A zod schema for a locale language option.
  */
-export const localeLanguageOptionSchema = optionSchema(
+export const LocaleLanguageOptionSchema = optionSchema(
   LOCALE_LANGUAGE_OPTIONS,
   'locale language'
 )
@@ -336,7 +340,7 @@ export const localeLanguageOptionSchema = optionSchema(
 /**
  * A zod schema for a level option.
  */
-export const levelOptionSchema = optionSchema(LEVEL_OPTIONS, 'level')
+export const LevelOptionSchema = optionSchema(LEVEL_OPTIONS, 'level')
 
 /**
  * Creates a zod schema for a name.
@@ -344,8 +348,8 @@ export const levelOptionSchema = optionSchema(LEVEL_OPTIONS, 'level')
  * @param name - The name of the string.
  * @returns A Zod schema for a name string.
  */
-export const nameSchema = (name: string) =>
-  sizedStringSchema(name, 2, 128).meta({
+export const NameSchema = (name: string) =>
+  SizedStringSchema(name, 2, 128).meta({
     title: startCase(name),
     description: `A ${name} between 2 and 128 characters.`,
     examples: ['Andy Dufrane', 'Xiao Hanyu', 'Jane Smith', 'Dr. Robert John'],
@@ -354,7 +358,7 @@ export const nameSchema = (name: string) =>
 /**
  * A zod schema for a network.
  */
-export const networkOptionSchema = optionSchema(NETWORK_OPTIONS, 'network')
+export const NetworkOptionSchema = optionSchema(NETWORK_OPTIONS, 'network')
 
 /**
  * A regex for a phone number.
@@ -364,7 +368,7 @@ const phoneNumberRegex = /^[+]?[(]?[0-9\s-]{1,15}[)]?[0-9\s-]{1,15}$/im
 /**
  * A zod schema for a phone number.
  */
-export const phoneSchema = z
+export const PhoneSchema = z
   .string()
   .regex(phoneNumberRegex, {
     message: 'phone number may be invalid.',
@@ -385,7 +389,7 @@ export const phoneSchema = z
 /**
  * A zod schema for a summary.
  */
-export const summarySchema = sizedStringSchema('summary', 16, 1024).meta({
+export const SummarySchema = SizedStringSchema('summary', 16, 1024).meta({
   id: 'summary',
   title: 'Summary',
   description: 'A summary text between 16 and 1024 characters.',
@@ -414,8 +418,8 @@ export const summarySchema = sizedStringSchema('summary', 16, 1024).meta({
  * @param name - The name of the organization.
  * @returns A Zod schema for an organization.
  */
-export const organizationSchema = (name: string) =>
-  sizedStringSchema(name, 2, 128).meta({
+export const OrganizationSchema = (name: string) =>
+  SizedStringSchema(name, 2, 128).meta({
     title: startCase(name),
     description: 'An organization name between 2 and 128 characters.',
     examples: [
@@ -429,12 +433,12 @@ export const organizationSchema = (name: string) =>
 /**
  * A zod schema for a template option.
  */
-export const templateOptionSchema = optionSchema(TEMPLATE_OPTIONS, 'template')
+export const TemplateOptionSchema = optionSchema(TEMPLATE_OPTIONS, 'template')
 
 /**
  * A zod schema for a url.
  */
-export const urlSchema = z
+export const UrlSchema = z
   .url({ message: 'URL is invalid.' })
   .max(256, { message: 'URL should be 256 characters or less.' })
   .meta({

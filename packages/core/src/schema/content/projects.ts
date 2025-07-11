@@ -25,25 +25,25 @@ import { z } from 'zod/v4'
 
 import { joinNonEmptyString } from '@/utils'
 import {
-  dateSchema,
-  keywordsSchema,
-  nameSchema,
-  sizedStringSchema,
-  summarySchema,
-  urlSchema,
+  DateSchema,
+  KeywordsSchema,
+  NameSchema,
+  SizedStringSchema,
+  SummarySchema,
+  UrlSchema,
 } from '../primitives'
 
 /**
- * A zod schema for the name of a project.
+ * A zod schema for a project name.
  */
-export const projectNameSchema = nameSchema('name').describe(
+export const ProjectNameSchema = NameSchema('name').describe(
   'The name of the project.'
 )
 
 /**
  * A zod schema for a project description.
  */
-export const projectDescriptionSchema = sizedStringSchema(
+export const ProjectDescriptionSchema = SizedStringSchema(
   'description',
   4,
   128
@@ -60,25 +60,25 @@ export const projectDescriptionSchema = sizedStringSchema(
 /**
  * A zod schema for a project item.
  */
-export const projectItemSchema = z.object({
+export const ProjectItemSchema = z.object({
   // required fields
-  name: projectNameSchema,
-  startDate: dateSchema('startDate'),
-  summary: summarySchema,
+  name: ProjectNameSchema,
+  startDate: DateSchema('startDate'),
+  summary: SummarySchema,
 
   // optional fields
-  description: projectDescriptionSchema.nullish(),
-  endDate: dateSchema('endDate').nullish(),
-  keywords: keywordsSchema.nullish(),
-  url: urlSchema.nullish(),
+  description: ProjectDescriptionSchema.nullish(),
+  endDate: DateSchema('endDate').nullish(),
+  keywords: KeywordsSchema.nullish(),
+  url: UrlSchema.nullish(),
 })
 
 /**
- * A zod schema for projects
+ * A zod schema for projects.
  */
-export const projectsSchema = z.object({
+export const ProjectsSchema = z.object({
   projects: z
-    .array(projectItemSchema)
+    .array(ProjectItemSchema)
     .nullish()
     .meta({
       title: 'Projects',

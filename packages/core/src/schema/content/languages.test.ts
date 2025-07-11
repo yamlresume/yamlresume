@@ -30,14 +30,14 @@ import {
   getNullishTestCases,
   validateZodErrors,
 } from '../utils'
-import { languageItemSchema, languagesSchema } from './languages'
+import { LanguageItemSchema, LanguagesSchema } from './languages'
 
 import { FLUENCY_OPTIONS, LANGUAGE_OPTIONS } from '@/models'
 import type { Languages } from '@/models'
 
-describe('languagesSchema', () => {
+describe('LanguagesSchema', () => {
   it('should have correct metadata', () => {
-    expectSchemaMetadata(languagesSchema.shape.languages)
+    expectSchemaMetadata(LanguagesSchema.shape.languages)
   })
 
   const language = LANGUAGE_OPTIONS[0]
@@ -67,7 +67,7 @@ describe('languagesSchema', () => {
           },
         ],
       },
-      ...getNullishTestCases(languageItemSchema, baseLanguageItem).map(
+      ...getNullishTestCases(LanguageItemSchema, baseLanguageItem).map(
         (testCase) => ({
           languages: [testCase],
         })
@@ -75,7 +75,7 @@ describe('languagesSchema', () => {
     ]
 
     for (const languages of tests) {
-      expect(languagesSchema.parse(languages)).toStrictEqual(languages)
+      expect(LanguagesSchema.parse(languages)).toStrictEqual(languages)
     }
   })
 
@@ -225,7 +225,7 @@ describe('languagesSchema', () => {
     ]
 
     for (const { languages, error } of tests) {
-      validateZodErrors(languagesSchema, { languages }, error)
+      validateZodErrors(LanguagesSchema, { languages }, error)
     }
   })
 })

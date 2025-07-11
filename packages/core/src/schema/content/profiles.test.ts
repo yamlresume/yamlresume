@@ -29,19 +29,19 @@ import {
   getNullishTestCases,
   validateZodErrors,
 } from '../utils'
-import { profileItemSchema, profilesSchema, usernameSchema } from './profiles'
+import { ProfileItemSchema, ProfilesSchema, UsernameSchema } from './profiles'
 
 import type { Profiles } from '@/models'
 
-describe('usernameSchema', () => {
+describe('UsernameSchema', () => {
   it('should have correct metadata', () => {
-    expectSchemaMetadata(usernameSchema)
+    expectSchemaMetadata(UsernameSchema)
   })
 })
 
-describe('profilesSchema', () => {
+describe('ProfilesSchema', () => {
   it('should have correct metadata', () => {
-    expectSchemaMetadata(profilesSchema.shape.profiles)
+    expectSchemaMetadata(ProfilesSchema.shape.profiles)
   })
 
   const network = 'GitHub'
@@ -68,7 +68,7 @@ describe('profilesSchema', () => {
           },
         ],
       },
-      ...getNullishTestCases(profileItemSchema, baseProfileItem).map(
+      ...getNullishTestCases(ProfileItemSchema, baseProfileItem).map(
         (testCase) => ({
           profiles: [testCase],
         })
@@ -76,7 +76,7 @@ describe('profilesSchema', () => {
     ]
 
     for (const profiles of tests) {
-      expect(profilesSchema.parse(profiles)).toStrictEqual(profiles)
+      expect(ProfilesSchema.parse(profiles)).toStrictEqual(profiles)
     }
   })
 
@@ -174,7 +174,7 @@ describe('profilesSchema', () => {
     ]
 
     for (const { profiles, error } of tests) {
-      validateZodErrors(profilesSchema, { profiles }, error)
+      validateZodErrors(ProfilesSchema, { profiles }, error)
     }
   })
 })

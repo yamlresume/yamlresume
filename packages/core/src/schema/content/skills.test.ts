@@ -29,19 +29,19 @@ import {
   getNullishTestCases,
   validateZodErrors,
 } from '../utils'
-import { skillItemSchema, skillNameSchema, skillsSchema } from './skills'
+import { SkillItemSchema, SkillNameSchema, SkillsSchema } from './skills'
 
 import type { Skills } from '@/models'
 
-describe('skillNameSchema', () => {
+describe('SkillNameSchema', () => {
   it('should have correct metadata', () => {
-    expectSchemaMetadata(skillNameSchema)
+    expectSchemaMetadata(SkillNameSchema)
   })
 })
 
-describe('skillsSchema', () => {
+describe('SkillsSchema', () => {
   it('should have correct metadata', () => {
-    expectSchemaMetadata(skillsSchema.shape.skills)
+    expectSchemaMetadata(SkillsSchema.shape.skills)
   })
 
   const name = 'JavaScript'
@@ -70,7 +70,7 @@ describe('skillsSchema', () => {
           },
         ],
       },
-      ...getNullishTestCases(skillItemSchema, baseSkillItem).map(
+      ...getNullishTestCases(SkillItemSchema, baseSkillItem).map(
         (testCase) => ({
           skills: [testCase],
         })
@@ -78,7 +78,7 @@ describe('skillsSchema', () => {
     ]
 
     for (const skills of tests) {
-      expect(skillsSchema.parse(skills)).toStrictEqual(skills)
+      expect(SkillsSchema.parse(skills)).toStrictEqual(skills)
     }
   })
 
@@ -176,7 +176,7 @@ describe('skillsSchema', () => {
     ]
 
     for (const { skills, error } of tests) {
-      validateZodErrors(skillsSchema, { skills }, error)
+      validateZodErrors(SkillsSchema, { skills }, error)
     }
   })
 })

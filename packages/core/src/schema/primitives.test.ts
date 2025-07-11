@@ -38,34 +38,34 @@ import {
 } from '@/models'
 
 import {
-  countryOptionSchema,
-  dateSchema,
-  degreeOptionSchema,
-  emailSchema,
-  fluencyOptionSchema,
-  fontSizeOptionSchema,
-  fontspecNumbersOptionSchema,
-  keywordsSchema,
-  languageOptionSchema,
-  levelOptionSchema,
-  localeLanguageOptionSchema,
-  marginSizeSchema,
+  CountryOptionSchema,
+  DateSchema,
+  DegreeOptionSchema,
+  EmailSchema,
+  FluencyOptionSchema,
+  FontSizeOptionSchema,
+  FontspecNumbersOptionSchema,
+  KeywordsSchema,
+  LanguageOptionSchema,
+  LevelOptionSchema,
+  LocaleLanguageOptionSchema,
+  MarginSizeSchema,
+  NameSchema,
+  NetworkOptionSchema,
+  OrganizationSchema,
+  PhoneSchema,
+  SizedStringSchema,
+  SummarySchema,
+  TemplateOptionSchema,
+  UrlSchema,
   marginSizeSchemaMessage,
-  nameSchema,
-  networkOptionSchema,
   optionSchemaMessage,
-  organizationSchema,
-  phoneSchema,
-  sizedStringSchema,
-  summarySchema,
-  templateOptionSchema,
-  urlSchema,
 } from './primitives'
 
 import { expectSchemaMetadata, validateZodErrors } from './utils'
 
-describe(sizedStringSchema, () => {
-  const schema = sizedStringSchema('string', 1, 10)
+describe('SizedStringSchema', () => {
+  const schema = SizedStringSchema('string', 1, 10)
 
   it('should return a string schema with a min and max length', () => {
     const tests = ['a', 'aaa', 'a'.repeat(10)]
@@ -103,10 +103,10 @@ describe(sizedStringSchema, () => {
   })
 })
 
-describe('countryOptionSchema', () => {
+describe('CountryOptionSchema', () => {
   it('should return a country if it is valid', () => {
     for (const country of COUNTRY_OPTIONS) {
-      expect(countryOptionSchema.parse(country)).toBe(country)
+      expect(CountryOptionSchema.parse(country)).toBe(country)
     }
   })
 
@@ -127,17 +127,17 @@ describe('countryOptionSchema', () => {
     ]
 
     for (const { country, error } of tests) {
-      validateZodErrors(countryOptionSchema, country, error)
+      validateZodErrors(CountryOptionSchema, country, error)
     }
   })
 
   it('should have correct metadata', () => {
-    expectSchemaMetadata(countryOptionSchema)
+    expectSchemaMetadata(CountryOptionSchema)
   })
 })
 
-describe('dateSchema', () => {
-  const schema = dateSchema('date')
+describe('DateSchema', () => {
+  const schema = DateSchema('date')
 
   it('should return a date if it is valid', () => {
     const tests = [
@@ -193,15 +193,15 @@ describe('dateSchema', () => {
   })
 
   it('should have correct metadata', () => {
-    const schema = dateSchema('startDate')
+    const schema = DateSchema('startDate')
     expectSchemaMetadata(schema)
   })
 })
 
-describe('degreeOptionSchema', () => {
+describe('DegreeOptionSchema', () => {
   it('should return a degree if it is valid', () => {
     for (const degree of DEGREE_OPTIONS) {
-      expect(degreeOptionSchema.parse(degree)).toBe(degree)
+      expect(DegreeOptionSchema.parse(degree)).toBe(degree)
     }
   })
 
@@ -230,18 +230,18 @@ describe('degreeOptionSchema', () => {
     ]
 
     for (const { degree, error } of tests) {
-      validateZodErrors(degreeOptionSchema, degree, error)
+      validateZodErrors(DegreeOptionSchema, degree, error)
     }
   })
 
   it('should have correct metadata', () => {
-    expectSchemaMetadata(degreeOptionSchema)
+    expectSchemaMetadata(DegreeOptionSchema)
   })
 })
 
-describe('emailSchema', () => {
+describe('EmailSchema', () => {
   it('should return an email if it is valid', () => {
-    expect(emailSchema.parse('test@test.com')).toBe('test@test.com')
+    expect(EmailSchema.parse('test@test.com')).toBe('test@test.com')
   })
 
   it('should throw an error if the email is invalid', () => {
@@ -267,19 +267,19 @@ describe('emailSchema', () => {
     ]
 
     for (const { email, error } of tests) {
-      validateZodErrors(emailSchema, email, error)
+      validateZodErrors(EmailSchema, email, error)
     }
   })
 
   it('should have correct metadata', () => {
-    expectSchemaMetadata(emailSchema)
+    expectSchemaMetadata(EmailSchema)
   })
 })
 
-describe('fontspecNumbersOptionSchema', () => {
+describe('FontspecNumbersOptionSchema', () => {
   it('should return a fontspec numbers style if it is valid', () => {
     for (const numbers of FONTSPEC_NUMBERS_OPTIONS) {
-      expect(fontspecNumbersOptionSchema.parse(numbers)).toBe(numbers)
+      expect(FontspecNumbersOptionSchema.parse(numbers)).toBe(numbers)
     }
   })
 
@@ -310,19 +310,19 @@ describe('fontspecNumbersOptionSchema', () => {
     ]
 
     for (const { numbers, error } of tests) {
-      validateZodErrors(fontspecNumbersOptionSchema, numbers, error)
+      validateZodErrors(FontspecNumbersOptionSchema, numbers, error)
     }
   })
 
   it('should have correct metadata', () => {
-    expectSchemaMetadata(fontspecNumbersOptionSchema)
+    expectSchemaMetadata(FontspecNumbersOptionSchema)
   })
 })
 
-describe('fontSizeOptionSchema', () => {
+describe('FontSizeOptionSchema', () => {
   it('should return a font size if it is valid', () => {
     for (const fontSize of FONT_SIZE_OPTIONS) {
-      expect(fontSizeOptionSchema.parse(fontSize)).toBe(fontSize)
+      expect(FontSizeOptionSchema.parse(fontSize)).toBe(fontSize)
     }
   })
 
@@ -343,21 +343,21 @@ describe('fontSizeOptionSchema', () => {
     ]
 
     for (const { fontSize, error } of tests) {
-      validateZodErrors(fontSizeOptionSchema, fontSize, error)
+      validateZodErrors(FontSizeOptionSchema, fontSize, error)
     }
   })
 
   it('should have correct metadata', () => {
-    expectSchemaMetadata(fontSizeOptionSchema)
+    expectSchemaMetadata(FontSizeOptionSchema)
   })
 })
 
-describe('keywordsSchema', () => {
+describe('KeywordsSchema', () => {
   it('should return an array of keywords if they are valid', () => {
     const tests = [[], ['keyword 1', 'keyword 2']]
 
     for (const keywords of tests) {
-      expect(keywordsSchema.parse(keywords)).toEqual(keywords)
+      expect(KeywordsSchema.parse(keywords)).toEqual(keywords)
     }
   })
 
@@ -392,19 +392,19 @@ describe('keywordsSchema', () => {
     ]
 
     for (const { keywords, error } of tests) {
-      validateZodErrors(keywordsSchema, keywords, error)
+      validateZodErrors(KeywordsSchema, keywords, error)
     }
   })
 
   it('should have correct metadata', () => {
-    expectSchemaMetadata(keywordsSchema)
+    expectSchemaMetadata(KeywordsSchema)
   })
 })
 
-describe('languageOptionSchema', () => {
+describe('LanguageOptionSchema', () => {
   it('should return a language if it is valid', () => {
     for (const language of LANGUAGE_OPTIONS) {
-      expect(languageOptionSchema.parse(language)).toBe(language)
+      expect(LanguageOptionSchema.parse(language)).toBe(language)
     }
   })
 
@@ -442,19 +442,19 @@ describe('languageOptionSchema', () => {
     ]
 
     for (const { language, error } of tests) {
-      validateZodErrors(languageOptionSchema, language, error)
+      validateZodErrors(LanguageOptionSchema, language, error)
     }
   })
 
   it('should have correct metadata', () => {
-    expectSchemaMetadata(languageOptionSchema)
+    expectSchemaMetadata(LanguageOptionSchema)
   })
 })
 
-describe('fluencyOptionSchema', () => {
+describe('FluencyOptionSchema', () => {
   it('should return a language fluency if it is valid', () => {
     for (const fluency of FLUENCY_OPTIONS) {
-      expect(fluencyOptionSchema.parse(fluency)).toBe(fluency)
+      expect(FluencyOptionSchema.parse(fluency)).toBe(fluency)
     }
   })
 
@@ -492,19 +492,19 @@ describe('fluencyOptionSchema', () => {
     ]
 
     for (const { fluency, error } of tests) {
-      validateZodErrors(fluencyOptionSchema, fluency, error)
+      validateZodErrors(FluencyOptionSchema, fluency, error)
     }
   })
 
   it('should have correct metadata', () => {
-    expectSchemaMetadata(fluencyOptionSchema)
+    expectSchemaMetadata(FluencyOptionSchema)
   })
 })
 
-describe('levelOptionSchema', () => {
+describe('LevelOptionSchema', () => {
   it('should return a level if it is valid', () => {
     for (const level of LEVEL_OPTIONS) {
-      expect(levelOptionSchema.parse(level)).toBe(level)
+      expect(LevelOptionSchema.parse(level)).toBe(level)
     }
   })
 
@@ -539,19 +539,19 @@ describe('levelOptionSchema', () => {
     ]
 
     for (const { level, error } of tests) {
-      validateZodErrors(levelOptionSchema, level, error)
+      validateZodErrors(LevelOptionSchema, level, error)
     }
   })
 
   it('should have correct metadata', () => {
-    expectSchemaMetadata(levelOptionSchema)
+    expectSchemaMetadata(LevelOptionSchema)
   })
 })
 
-describe('localeLanguageOptionSchema', () => {
+describe('LocaleLanguageOptionSchema', () => {
   it('should return a locale language if it is valid', () => {
     for (const language of LOCALE_LANGUAGE_OPTIONS) {
-      expect(localeLanguageOptionSchema.parse(language)).toBe(language)
+      expect(LocaleLanguageOptionSchema.parse(language)).toBe(language)
     }
   })
 
@@ -590,21 +590,21 @@ describe('localeLanguageOptionSchema', () => {
     ]
 
     for (const { language, error } of tests) {
-      validateZodErrors(localeLanguageOptionSchema, language, error)
+      validateZodErrors(LocaleLanguageOptionSchema, language, error)
     }
   })
 
   it('should have correct metadata', () => {
-    expectSchemaMetadata(localeLanguageOptionSchema)
+    expectSchemaMetadata(LocaleLanguageOptionSchema)
   })
 })
 
-describe('marginSizeSchema', () => {
+describe('MarginSizeSchema', () => {
   it('should return a margin size if it is valid', () => {
     const tests = ['2.5cm', '1in', '72pt', '0.5cm', '12pt']
 
     for (const test of tests) {
-      expect(marginSizeSchema('top').parse(test)).toBe(test)
+      expect(MarginSizeSchema('top').parse(test)).toBe(test)
     }
   })
 
@@ -655,25 +655,25 @@ describe('marginSizeSchema', () => {
     ]
 
     for (const { top, error } of tests) {
-      validateZodErrors(marginSizeSchema('top'), top, error)
+      validateZodErrors(MarginSizeSchema('top'), top, error)
     }
   })
 
   it('should have correct metadata for top margin', () => {
-    const schema = marginSizeSchema('top')
+    const schema = MarginSizeSchema('top')
     expectSchemaMetadata(schema)
   })
 
   it('should have correct metadata for bottom margin', () => {
-    const schema = marginSizeSchema('bottom')
+    const schema = MarginSizeSchema('bottom')
     expectSchemaMetadata(schema)
   })
 })
 
-describe('networkOptionSchema', () => {
+describe('NetworkOptionSchema', () => {
   it('should return a network if it is valid', () => {
     for (const network of NETWORK_OPTIONS) {
-      expect(networkOptionSchema.parse(network)).toBe(network)
+      expect(NetworkOptionSchema.parse(network)).toBe(network)
     }
   })
 
@@ -711,17 +711,17 @@ describe('networkOptionSchema', () => {
     ]
 
     for (const { network, error } of tests) {
-      validateZodErrors(networkOptionSchema, network, error)
+      validateZodErrors(NetworkOptionSchema, network, error)
     }
   })
 
   it('should have correct metadata', () => {
-    expectSchemaMetadata(networkOptionSchema)
+    expectSchemaMetadata(NetworkOptionSchema)
   })
 })
 
-describe('nameSchema', () => {
-  const schema = nameSchema('name')
+describe('NameSchema', () => {
+  const schema = NameSchema('name')
 
   it('should return a name if it is valid', () => {
     const tests = ['John Doe', 'Jim Green', 'Xiao Hanyu']
@@ -759,17 +759,17 @@ describe('nameSchema', () => {
   })
 
   it('should have correct metadata', () => {
-    const schema = nameSchema('full')
+    const schema = NameSchema('full')
     expectSchemaMetadata(schema)
   })
 })
 
-describe('organizationSchema', () => {
+describe('OrganizationSchema', () => {
   it('should return an organization if it is valid', () => {
     const tests = ['Organization', 'Company', 'School', 'Institution']
 
     for (const organization of tests) {
-      expect(organizationSchema('Organization').parse(organization)).toBe(
+      expect(OrganizationSchema('Organization').parse(organization)).toBe(
         organization
       )
     }
@@ -798,17 +798,17 @@ describe('organizationSchema', () => {
     ]
 
     for (const { organization, error } of tests) {
-      validateZodErrors(organizationSchema('Organization'), organization, error)
+      validateZodErrors(OrganizationSchema('Organization'), organization, error)
     }
   })
 
   it('should have correct metadata', () => {
-    const schema = organizationSchema('company')
+    const schema = OrganizationSchema('company')
     expectSchemaMetadata(schema)
   })
 })
 
-describe('phoneSchema', () => {
+describe('PhoneSchema', () => {
   it('should return a phone number if it is valid', () => {
     const tests = [
       '+1234567890',
@@ -824,7 +824,7 @@ describe('phoneSchema', () => {
     ]
 
     for (const phoneNumber of tests) {
-      expect(phoneSchema.parse(phoneNumber)).toBe(phoneNumber)
+      expect(PhoneSchema.parse(phoneNumber)).toBe(phoneNumber)
     }
   })
 
@@ -857,21 +857,21 @@ describe('phoneSchema', () => {
     ]
 
     for (const { phoneNumber, error } of tests) {
-      validateZodErrors(phoneSchema, phoneNumber, error)
+      validateZodErrors(PhoneSchema, phoneNumber, error)
     }
   })
 
   it('should have correct metadata', () => {
-    expectSchemaMetadata(phoneSchema)
+    expectSchemaMetadata(PhoneSchema)
   })
 })
 
-describe('summarySchema', () => {
+describe('SummarySchema', () => {
   it('should return a summary if it is valid', () => {
     const tests = ['This is a summary with some text.', 'This is a summary.']
 
     for (const summary of tests) {
-      expect(summarySchema.parse(summary)).toBe(summary)
+      expect(SummarySchema.parse(summary)).toBe(summary)
     }
   })
 
@@ -898,19 +898,19 @@ describe('summarySchema', () => {
     ]
 
     for (const { summary, error } of tests) {
-      validateZodErrors(summarySchema, summary, error)
+      validateZodErrors(SummarySchema, summary, error)
     }
   })
 
   it('should have correct metadata', () => {
-    expectSchemaMetadata(summarySchema)
+    expectSchemaMetadata(SummarySchema)
   })
 })
 
-describe('templateOptionSchema', () => {
+describe('TemplateOptionSchema', () => {
   it('should return a template option if it is valid', () => {
     for (const template of TEMPLATE_OPTIONS) {
-      expect(templateOptionSchema.parse(template)).toBe(template)
+      expect(TemplateOptionSchema.parse(template)).toBe(template)
     }
   })
 
@@ -931,16 +931,16 @@ describe('templateOptionSchema', () => {
     ]
 
     for (const { template, error } of tests) {
-      validateZodErrors(templateOptionSchema, template, error)
+      validateZodErrors(TemplateOptionSchema, template, error)
     }
   })
 
   it('should have correct metadata', () => {
-    expectSchemaMetadata(templateOptionSchema)
+    expectSchemaMetadata(TemplateOptionSchema)
   })
 })
 
-describe('urlSchema', () => {
+describe('UrlSchema', () => {
   it('should return a url if it is valid', () => {
     const tests = [
       'https://www.google.com',
@@ -952,7 +952,7 @@ describe('urlSchema', () => {
     ]
 
     for (const url of tests) {
-      expect(urlSchema.parse(url)).toBe(url)
+      expect(UrlSchema.parse(url)).toBe(url)
     }
   })
 
@@ -973,11 +973,11 @@ describe('urlSchema', () => {
     ]
 
     for (const { url, error } of tests) {
-      validateZodErrors(urlSchema, url, error)
+      validateZodErrors(UrlSchema, url, error)
     }
   })
 
   it('should have correct metadata', () => {
-    expectSchemaMetadata(urlSchema)
+    expectSchemaMetadata(UrlSchema)
   })
 })

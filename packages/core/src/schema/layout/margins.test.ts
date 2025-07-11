@@ -25,11 +25,11 @@
 import { describe, expect, it } from 'vitest'
 
 import { expectSchemaMetadata, validateZodErrors } from '../utils'
-import { marginsSchema } from './margins'
+import { MarginsSchema } from './margins'
 
-describe('marginsSchema', () => {
+describe('MarginsSchema', () => {
   it('should have correct metadata', () => {
-    expectSchemaMetadata(marginsSchema.shape.margins)
+    expectSchemaMetadata(MarginsSchema.shape.margins)
   })
 
   const top = '1cm'
@@ -66,7 +66,7 @@ describe('marginsSchema', () => {
     ]
 
     for (const margins of tests) {
-      expect(marginsSchema.parse(margins)).toStrictEqual(margins)
+      expect(MarginsSchema.parse(margins)).toStrictEqual(margins)
     }
   })
 
@@ -91,7 +91,7 @@ describe('marginsSchema', () => {
     ]
 
     for (const { margins, error } of tests) {
-      validateZodErrors(marginsSchema, { margins }, error)
+      validateZodErrors(MarginsSchema, { margins }, error)
     }
   })
 })

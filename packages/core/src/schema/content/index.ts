@@ -22,4 +22,4 @@
  * IN THE SOFTWARE.
  */
 
-export { contentSchema } from './content'
+export { ContentSchema } from './content'

@@ -25,36 +25,36 @@ import { z } from 'zod/v4'
 
 import { joinNonEmptyString } from '@/utils'
 import {
-  fluencyOptionSchema,
-  keywordsSchema,
-  languageOptionSchema,
+  FluencyOptionSchema,
+  KeywordsSchema,
+  LanguageOptionSchema,
 } from '../primitives'
 
 /**
  * A zod schema for a language item.
  */
-export const languageItemSchema = z.object({
+export const LanguageItemSchema = z.object({
   // required fields
-  fluency: fluencyOptionSchema,
-  language: languageOptionSchema,
+  fluency: FluencyOptionSchema,
+  language: LanguageOptionSchema,
 
   // optional fields
-  keywords: keywordsSchema.nullish(),
+  keywords: KeywordsSchema.nullish(),
 })
 
 /**
  * A zod schema for languages.
  */
-export const languagesSchema = z.object({
+export const LanguagesSchema = z.object({
   languages: z
-    .array(languageItemSchema)
+    .array(LanguageItemSchema)
     .nullish()
     .meta({
       title: 'Languages',
       description: joinNonEmptyString(
         [
-          'The languages section contains your language skills and proficiency levels,',
-          'including native, fluent, and conversational abilities.',
+          'The languages section contains your language proficiencies,',
+          'including fluency levels and related skills.',
         ],
         ' '
       ),

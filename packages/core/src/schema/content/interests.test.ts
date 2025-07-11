@@ -31,22 +31,22 @@ import {
 } from '../utils'
 
 import {
-  interestItemSchema,
-  interestNameSchema,
-  interestsSchema,
+  InterestItemSchema,
+  InterestNameSchema,
+  InterestsSchema,
 } from './interests'
 
 import type { Interests } from '@/models'
 
-describe('interestNameSchema', () => {
+describe('InterestNameSchema', () => {
   it('should have correct metadata', () => {
-    expectSchemaMetadata(interestNameSchema)
+    expectSchemaMetadata(InterestNameSchema)
   })
 })
 
-describe('interestsSchema', () => {
+describe('InterestsSchema', () => {
   it('should have correct metadata', () => {
-    expectSchemaMetadata(interestsSchema.shape.interests)
+    expectSchemaMetadata(InterestsSchema.shape.interests)
   })
 
   const keywords = ['Keyword 1', 'Keyword 2']
@@ -73,7 +73,7 @@ describe('interestsSchema', () => {
           },
         ],
       },
-      ...getNullishTestCases(interestItemSchema, baseInterestItem).map(
+      ...getNullishTestCases(InterestItemSchema, baseInterestItem).map(
         (testCase) => ({
           interests: [testCase],
         })
@@ -81,7 +81,7 @@ describe('interestsSchema', () => {
     ]
 
     for (const interests of tests) {
-      expect(interestsSchema.parse(interests)).toStrictEqual(interests)
+      expect(InterestsSchema.parse(interests)).toStrictEqual(interests)
     }
   })
 
@@ -144,7 +144,7 @@ describe('interestsSchema', () => {
     ]
 
     for (const { interests, error } of tests) {
-      validateZodErrors(interestsSchema, { interests }, error)
+      validateZodErrors(InterestsSchema, { interests }, error)
     }
   })
 })

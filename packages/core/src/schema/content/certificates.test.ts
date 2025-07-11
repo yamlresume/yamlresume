@@ -30,22 +30,22 @@ import {
   validateZodErrors,
 } from '../utils'
 import {
-  certificateItemSchema,
-  certificatesSchema,
-  issuerSchema,
+  CertificateItemSchema,
+  CertificatesSchema,
+  IssuerSchema,
 } from './certificates'
 
 import type { Certificates } from '@/models'
 
-describe('issuerSchema', () => {
+describe('IssuerSchema', () => {
   it('should have correct metadata', () => {
-    expectSchemaMetadata(issuerSchema)
+    expectSchemaMetadata(IssuerSchema)
   })
 })
 
-describe('certificatesSchema', () => {
+describe('CertificatesSchema', () => {
   it('should have correct metadata', () => {
-    expectSchemaMetadata(certificatesSchema.shape.certificates)
+    expectSchemaMetadata(CertificatesSchema.shape.certificates)
   })
 
   const date = '2025'
@@ -77,7 +77,7 @@ describe('certificatesSchema', () => {
           },
         ],
       },
-      ...getNullishTestCases(certificateItemSchema, baseCertificateItem).map(
+      ...getNullishTestCases(CertificateItemSchema, baseCertificateItem).map(
         (testCase) => ({
           certificates: [testCase],
         })
@@ -85,7 +85,7 @@ describe('certificatesSchema', () => {
     ]
 
     for (const { certificates } of tests) {
-      expect(certificatesSchema.parse({ certificates })).toStrictEqual({
+      expect(CertificatesSchema.parse({ certificates })).toStrictEqual({
         certificates,
       })
     }
@@ -248,7 +248,7 @@ describe('certificatesSchema', () => {
     ]
 
     for (const { certificates, error } of tests) {
-      validateZodErrors(certificatesSchema, { certificates } as unknown, error)
+      validateZodErrors(CertificatesSchema, { certificates } as unknown, error)
     }
   })
 })

@@ -24,21 +24,21 @@
 import { z } from 'zod/v4'
 
 import { joinNonEmptyString } from '@/utils'
-import { countryOptionSchema, sizedStringSchema } from '../primitives'
+import { CountryOptionSchema, SizedStringSchema } from '../primitives'
 
 /**
  * A zod schema for a city.
  */
-export const citySchema = sizedStringSchema('city', 2, 64).meta({
+export const CitySchema = SizedStringSchema('city', 2, 64).meta({
   title: 'City',
-  description: 'The name of the city where you are located.',
+  description: 'The city where you are located.',
   examples: ['San Francisco', 'New York', 'London', 'Tokyo'],
 })
 
 /**
  * A zod schema for an address.
  */
-export const addressSchema = sizedStringSchema('address', 4, 256).meta({
+export const AddressSchema = SizedStringSchema('address', 4, 256).meta({
   title: 'Address',
   description: 'Your full address including street, apartment, etc.',
   examples: [
@@ -51,7 +51,7 @@ export const addressSchema = sizedStringSchema('address', 4, 256).meta({
 /**
  * A zod schema for a postal code.
  */
-export const postalCodeSchema = sizedStringSchema('postalCode', 2, 16).meta({
+export const PostalCodeSchema = SizedStringSchema('postalCode', 2, 16).meta({
   title: 'Postal Code',
   description: 'Your postal or ZIP code.',
   examples: ['94102', '10001', 'SW1A 1AA', '100-0001'],
@@ -60,7 +60,7 @@ export const postalCodeSchema = sizedStringSchema('postalCode', 2, 16).meta({
 /**
  * A zod schema for a region.
  */
-export const regionSchema = sizedStringSchema('region', 2, 64).meta({
+export const RegionSchema = SizedStringSchema('region', 2, 64).meta({
   title: 'Region',
   description: 'Your state, province, or region.',
   examples: ['California', 'New York', 'England', 'Tokyo'],
@@ -69,22 +69,22 @@ export const regionSchema = sizedStringSchema('region', 2, 64).meta({
 /**
  * A zod schema for a location item.
  */
-export const locationItemSchema = z.object({
+export const LocationItemSchema = z.object({
   // required fields
-  city: citySchema,
+  city: CitySchema,
 
   // optional fields
-  address: addressSchema.nullish(),
-  country: countryOptionSchema.nullish(),
-  postalCode: postalCodeSchema.nullish(),
-  region: regionSchema.nullish(),
+  address: AddressSchema.nullish(),
+  country: CountryOptionSchema.nullish(),
+  postalCode: PostalCodeSchema.nullish(),
+  region: RegionSchema.nullish(),
 })
 
 /**
  * A zod schema for location.
  */
-export const locationSchema = z.object({
-  location: locationItemSchema.nullish().meta({
+export const LocationSchema = z.object({
+  location: LocationItemSchema.nullish().meta({
     title: 'Location',
     description: joinNonEmptyString(
       [

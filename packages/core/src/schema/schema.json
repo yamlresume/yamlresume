@@ -421,7 +421,7 @@
         },
         "interests": {
           "title": "Interests",
-          "description": "The interests section contains your personal and professional interests, including hobbies, activities, and areas of passion.",
+          "description": "The interests section contains your personal interests and hobbies, including activities and topics you are passionate about.",
           "anyOf": [
             {
               "type": "array",
@@ -465,7 +465,7 @@
         },
         "languages": {
           "title": "Languages",
-          "description": "The languages section contains your language skills and proficiency levels, including native, fluent, and conversational abilities.",
+          "description": "The languages section contains your language proficiencies, including fluency levels and related skills.",
           "anyOf": [
             {
               "type": "array",
@@ -598,7 +598,7 @@
               "properties": {
                 "city": {
                   "title": "City",
-                  "description": "The name of the city where you are located.",
+                  "description": "The city where you are located.",
                   "examples": [
                     "San Francisco",
                     "New York",
@@ -945,7 +945,7 @@
         },
         "profiles": {
           "title": "Profiles",
-          "description": "The profiles section contains your social media and professional network profiles, such as LinkedIn, GitHub, Twitter, etc.",
+          "description": "The profiles section contains your online presence, including social media and professional network profiles.",
           "anyOf": [
             {
               "type": "array",
@@ -1219,7 +1219,7 @@
         },
         "references": {
           "title": "References",
-          "description": "The references section contains professional contacts who can vouch for your work, including their contact information and relationship to you.",
+          "description": "The references section contains your professional references, including contact information and relationships.",
           "anyOf": [
             {
               "type": "array",
@@ -1367,9 +1367,9 @@
                     "description": "The organization where you volunteered.",
                     "examples": [
                       "Red Cross",
+                      "Habitat for Humanity",
                       "Local Food Bank",
-                      "Animal Shelter",
-                      "Community Center"
+                      "Animal Shelter"
                     ],
                     "type": "string",
                     "minLength": 2,
@@ -1477,7 +1477,7 @@
                     "examples": [
                       "Software Engineer",
                       "Product Manager",
-                      "Senior Developer",
+                      "Data Scientist",
                       "UX Designer"
                     ],
                     "type": "string",

@@ -25,18 +25,15 @@
 import { z } from 'zod/v4'
 
 import { joinNonEmptyString } from '@/utils'
-import { fontSizeOptionSchema } from '../primitives'
+import { FontSizeOptionSchema } from '../primitives'
 
 /**
- * A zod schema for validating typography configuration.
- *
- * Validates font size and font specification settings including
- * number styling options.
+ * A zod schema for typography settings.
  */
-export const typographySchema = z.object({
+export const TypographySchema = z.object({
   typography: z
     .object({
-      fontSize: fontSizeOptionSchema.nullish(),
+      fontSize: FontSizeOptionSchema.nullish(),
     })
     .nullish()
     .meta({

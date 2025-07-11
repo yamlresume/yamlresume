@@ -25,16 +25,16 @@ import { z } from 'zod/v4'
 
 import { joinNonEmptyString } from '@/utils'
 import {
-  dateSchema,
-  nameSchema,
-  organizationSchema,
-  urlSchema,
+  DateSchema,
+  NameSchema,
+  OrganizationSchema,
+  UrlSchema,
 } from '../primitives'
 
 /**
- * A zod schema for an issuer.
+ * A zod schema for the issuer of a certificate.
  */
-export const issuerSchema = organizationSchema('issuer').meta({
+export const IssuerSchema = OrganizationSchema('issuer').meta({
   title: 'Issuer',
   description: 'The organization that issued the certificate.',
   examples: ['AWS', 'Microsoft', 'Coursera', 'Google Cloud'],
@@ -43,22 +43,22 @@ export const issuerSchema = organizationSchema('issuer').meta({
 /**
  * A zod schema for a certificate item.
  */
-export const certificateItemSchema = z.object({
+export const CertificateItemSchema = z.object({
   // required fields
-  issuer: issuerSchema,
-  name: nameSchema('name').describe('The name of the certificate.'),
+  issuer: IssuerSchema,
+  name: NameSchema('name').describe('The name of the certificate.'),
 
   // optional fields
-  date: dateSchema('date').nullish(),
-  url: urlSchema.nullish(),
+  date: DateSchema('date').nullish(),
+  url: UrlSchema.nullish(),
 })
 
 /**
  * A zod schema for certificates.
  */
-export const certificatesSchema = z.object({
+export const CertificatesSchema = z.object({
   certificates: z
-    .array(certificateItemSchema)
+    .array(CertificateItemSchema)
     .nullish()
     .meta({
       title: 'Certificates',

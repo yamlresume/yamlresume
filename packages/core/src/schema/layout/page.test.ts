@@ -25,17 +25,17 @@
 import { describe, expect, it } from 'vitest'
 
 import { expectSchemaMetadata, validateZodErrors } from '../utils'
-import { pageSchema, showPageNumbersSchema } from './page'
+import { PageSchema, ShowPageNumbersSchema } from './page'
 
-describe('showPageNumbersSchema', () => {
+describe('ShowPageNumbersSchema', () => {
   it('should have correct metadata', () => {
-    expectSchemaMetadata(showPageNumbersSchema)
+    expectSchemaMetadata(ShowPageNumbersSchema)
   })
 })
 
-describe('pageSchema', () => {
+describe('PageSchema', () => {
   it('should have correct metadata', () => {
-    expectSchemaMetadata(pageSchema.shape.page)
+    expectSchemaMetadata(PageSchema.shape.page)
   })
 
   it('should validate a page object if it is valid', () => {
@@ -47,7 +47,7 @@ describe('pageSchema', () => {
     ]
 
     for (const page of tests) {
-      expect(pageSchema.parse(page)).toStrictEqual(page)
+      expect(PageSchema.parse(page)).toStrictEqual(page)
     }
   })
 
@@ -73,7 +73,7 @@ describe('pageSchema', () => {
 
     for (const { page, error } of tests) {
       // @ts-ignore
-      validateZodErrors(pageSchema, { page }, error)
+      validateZodErrors(PageSchema, { page }, error)
     }
   })
 })

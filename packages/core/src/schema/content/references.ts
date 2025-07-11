@@ -25,24 +25,24 @@ import { z } from 'zod/v4'
 
 import { joinNonEmptyString } from '@/utils'
 import {
-  emailSchema,
-  nameSchema,
-  phoneSchema,
-  sizedStringSchema,
-  summarySchema,
+  EmailSchema,
+  NameSchema,
+  PhoneSchema,
+  SizedStringSchema,
+  SummarySchema,
 } from '../primitives'
 
 /**
- * A zod schema for the name of a reference.
+ * A zod schema for a reference name.
  */
-export const referenceNameSchema = nameSchema('name').describe(
+export const ReferenceNameSchema = NameSchema('name').describe(
   'The name of the reference.'
 )
 
 /**
  * A zod schema for a relationship.
  */
-export const relationshipSchema = sizedStringSchema(
+export const RelationshipSchema = SizedStringSchema(
   'relationship',
   2,
   128
@@ -55,29 +55,30 @@ export const relationshipSchema = sizedStringSchema(
 /**
  * A zod schema for a reference item.
  */
-export const referenceItemSchema = z.object({
+export const ReferenceItemSchema = z.object({
   // required fields
-  name: referenceNameSchema,
-  summary: summarySchema,
+  name: ReferenceNameSchema,
+  summary: SummarySchema,
 
   // optional fields
-  email: emailSchema.nullish(),
-  phone: phoneSchema.nullish(),
-  relationship: relationshipSchema.nullish(),
+  email: EmailSchema.nullish(),
+  phone: PhoneSchema.nullish(),
+  relationship: RelationshipSchema.nullish(),
 })
+
 /**
  * A zod schema for references.
  */
-export const referencesSchema = z.object({
+export const ReferencesSchema = z.object({
   references: z
-    .array(referenceItemSchema)
+    .array(ReferenceItemSchema)
     .nullish()
     .meta({
       title: 'References',
       description: joinNonEmptyString(
         [
-          'The references section contains professional contacts who can vouch for your work,',
-          'including their contact information and relationship to you.',
+          'The references section contains your professional references,',
+          'including contact information and relationships.',
         ],
         ' '
       ),

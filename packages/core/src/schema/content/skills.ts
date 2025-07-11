@@ -24,32 +24,33 @@
 import { z } from 'zod/v4'
 
 import { joinNonEmptyString } from '@/utils'
-import { keywordsSchema, levelOptionSchema, nameSchema } from '../primitives'
+import { KeywordsSchema, LevelOptionSchema, NameSchema } from '../primitives'
 
 /**
- * A zod schema for the name of a skill.
+ * A zod schema for a skill name.
  */
-export const skillNameSchema = nameSchema('name').describe(
+export const SkillNameSchema = NameSchema('name').describe(
   'The name of the skill.'
 )
 
 /**
  * A zod schema for a skill item.
  */
-export const skillItemSchema = z.object({
+export const SkillItemSchema = z.object({
   // required fields
-  level: levelOptionSchema,
-  name: skillNameSchema,
+  level: LevelOptionSchema,
+  name: SkillNameSchema,
 
   // optional fields
-  keywords: keywordsSchema.nullish(),
+  keywords: KeywordsSchema.nullish(),
 })
+
 /**
- * A zod schema for skills
+ * A zod schema for skills.
  */
-export const skillsSchema = z.object({
+export const SkillsSchema = z.object({
   skills: z
-    .array(skillItemSchema)
+    .array(SkillItemSchema)
     .nullish()
     .meta({
       title: 'Skills',

@@ -22,4 +22,4 @@
  * IN THE SOFTWARE.
  */
 
-export { layoutSchema } from './layout'
+export { LayoutSchema } from './layout'

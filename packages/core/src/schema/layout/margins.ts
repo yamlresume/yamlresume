@@ -25,7 +25,7 @@
 import { z } from 'zod/v4'
 
 import { joinNonEmptyString } from '@/utils'
-import { marginSizeSchema } from '../primitives'
+import { MarginSizeSchema } from '../primitives'
 
 /**
  * A zod schema for validating margin configuration.
@@ -33,13 +33,13 @@ import { marginSizeSchema } from '../primitives'
  * Validates that all margin fields (top, bottom, left, right) are strings
  * representing valid CSS length values (e.g., "1cm", "10pt").
  */
-export const marginsSchema = z.object({
+export const MarginsSchema = z.object({
   margins: z
     .object({
-      top: marginSizeSchema('top').nullish(),
-      bottom: marginSizeSchema('bottom').nullish(),
-      left: marginSizeSchema('left').nullish(),
-      right: marginSizeSchema('right').nullish(),
+      top: MarginSizeSchema('top').nullish(),
+      bottom: MarginSizeSchema('bottom').nullish(),
+      left: MarginSizeSchema('left').nullish(),
+      right: MarginSizeSchema('right').nullish(),
     })
     .nullish()
     .meta({

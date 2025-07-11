@@ -25,7 +25,7 @@
 import fs from 'node:fs'
 import yaml from 'yaml'
 
-import { type Resume, YAMLResumeError, resumeSchema } from '@yamlresume/core'
+import { type Resume, YAMLResumeError, ResumeSchema } from '@yamlresume/core'
 import chalk from 'chalk'
 import { Command } from 'commander'
 import consola from 'consola'
@@ -91,7 +91,7 @@ export function prettifyError(
  */
 export function validateResume(
   yamlStr: string,
-  schema: typeof resumeSchema
+  schema: typeof ResumeSchema
 ): PositionalError[] {
   const lineCounter = new LineCounter()
 
@@ -141,7 +141,7 @@ export function validateResume(
  *
  * 1. read the resume from the source file
  * 2. validate the resume with `yaml.parse`
- * 3. if `validate` is true, validate the resume with `resumeSchema`
+ * 3. if `validate` is true, validate the resume with `ResumeSchema`
  *
  * @param resuemPath - The source resume file path (YAML, YML, or JSON).
  * @returns The resume object.
@@ -168,7 +168,7 @@ export function readResume(
   }
 
   if (validate) {
-    const errors = validateResume(resumeStr, resumeSchema)
+    const errors = validateResume(resumeStr, ResumeSchema)
 
     if (errors.length > 0) {
       for (const error of errors) {

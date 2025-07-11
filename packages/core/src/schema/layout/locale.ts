@@ -25,7 +25,7 @@
 import { z } from 'zod/v4'
 
 import { joinNonEmptyString } from '@/utils'
-import { localeLanguageOptionSchema } from '../primitives'
+import { LocaleLanguageOptionSchema } from '../primitives'
 
 /**
  * A zod schema for validating locale configuration.
@@ -33,10 +33,10 @@ import { localeLanguageOptionSchema } from '../primitives'
  * Validates that the language field contains a supported locale language
  * option.
  */
-export const localeSchema = z.object({
+export const LocaleSchema = z.object({
   locale: z
     .object({
-      language: localeLanguageOptionSchema.nullish(),
+      language: LocaleLanguageOptionSchema.nullish(),
     })
     .nullish()
     .meta({

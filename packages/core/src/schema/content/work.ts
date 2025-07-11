@@ -25,18 +25,18 @@ import { z } from 'zod/v4'
 
 import { joinNonEmptyString } from '@/utils'
 import {
-  dateSchema,
-  keywordsSchema,
-  organizationSchema,
-  sizedStringSchema,
-  summarySchema,
-  urlSchema,
+  DateSchema,
+  KeywordsSchema,
+  OrganizationSchema,
+  SizedStringSchema,
+  SummarySchema,
+  UrlSchema,
 } from '../primitives'
 
 /**
- * A zod schema for the name of a company.
+ * A zod schema for a company name.
  */
-export const companyNameSchema = organizationSchema('name').meta({
+export const CompanyNameSchema = OrganizationSchema('name').meta({
   title: 'Name',
   description: 'The name of the company or organization you worked for.',
   examples: ['Google', 'Microsoft', 'Apple', 'Amazon'],
@@ -45,13 +45,13 @@ export const companyNameSchema = organizationSchema('name').meta({
 /**
  * A zod schema for a position.
  */
-export const positionSchema = sizedStringSchema('position', 2, 64).meta({
+export const PositionSchema = SizedStringSchema('position', 2, 64).meta({
   title: 'Position',
   description: 'Your job title or position at the company.',
   examples: [
     'Software Engineer',
     'Product Manager',
-    'Senior Developer',
+    'Data Scientist',
     'UX Designer',
   ],
 })
@@ -59,25 +59,25 @@ export const positionSchema = sizedStringSchema('position', 2, 64).meta({
 /**
  * A zod schema for a work item.
  */
-export const workItemSchema = z.object({
+export const WorkItemSchema = z.object({
   // required fields
-  name: companyNameSchema,
-  position: positionSchema,
-  startDate: dateSchema('startDate'),
-  summary: summarySchema,
+  name: CompanyNameSchema,
+  position: PositionSchema,
+  startDate: DateSchema('startDate'),
+  summary: SummarySchema,
 
   // optional fields
-  endDate: dateSchema('endDate').nullish(),
-  keywords: keywordsSchema.nullish(),
-  url: urlSchema.nullish(),
+  endDate: DateSchema('endDate').nullish(),
+  keywords: KeywordsSchema.nullish(),
+  url: UrlSchema.nullish(),
 })
 
 /**
  * A zod schema for work.
  */
-export const workSchema = z.object({
+export const WorkSchema = z.object({
   work: z
-    .array(workItemSchema)
+    .array(WorkItemSchema)
     .nullish()
     .meta({
       title: 'Work',

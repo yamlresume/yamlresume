@@ -30,29 +30,29 @@ import {
   validateZodErrors,
 } from '../utils'
 import {
-  projectDescriptionSchema,
-  projectItemSchema,
-  projectNameSchema,
-  projectsSchema,
+  ProjectDescriptionSchema,
+  ProjectItemSchema,
+  ProjectNameSchema,
+  ProjectsSchema,
 } from './projects'
 
 import type { Projects } from '@/models'
 
-describe('projectNameSchema', () => {
+describe('ProjectNameSchema', () => {
   it('should have correct metadata', () => {
-    expectSchemaMetadata(projectNameSchema)
+    expectSchemaMetadata(ProjectNameSchema)
   })
 })
 
-describe('projectDescriptionSchema', () => {
+describe('ProjectDescriptionSchema', () => {
   it('should have correct metadata', () => {
-    expectSchemaMetadata(projectDescriptionSchema)
+    expectSchemaMetadata(ProjectDescriptionSchema)
   })
 })
 
-describe('projectsSchema', () => {
+describe('ProjectsSchema', () => {
   it('should have correct metadata', () => {
-    expectSchemaMetadata(projectsSchema.shape.projects)
+    expectSchemaMetadata(ProjectsSchema.shape.projects)
   })
 
   const name = 'E-commerce Platform'
@@ -91,7 +91,7 @@ describe('projectsSchema', () => {
           },
         ],
       },
-      ...getNullishTestCases(projectItemSchema, baseProjectItem).map(
+      ...getNullishTestCases(ProjectItemSchema, baseProjectItem).map(
         (testCase) => ({
           projects: [testCase],
         })
@@ -99,7 +99,7 @@ describe('projectsSchema', () => {
     ]
 
     for (const project of tests) {
-      expect(projectsSchema.parse(project)).toStrictEqual(project)
+      expect(ProjectsSchema.parse(project)).toStrictEqual(project)
     }
   })
 
@@ -243,7 +243,7 @@ describe('projectsSchema', () => {
     ]
 
     for (const { projects, error } of tests) {
-      validateZodErrors(projectsSchema, { projects }, error)
+      validateZodErrors(ProjectsSchema, { projects }, error)
     }
   })
 })
