@@ -25,7 +25,12 @@
 import fs from 'node:fs'
 import yaml from 'yaml'
 
-import { type Resume, ResumeSchema, YAMLResumeError } from '@yamlresume/core'
+import {
+  type Resume,
+  ResumeSchema,
+  YAMLResumeError,
+  joinNonEmptyString,
+} from '@yamlresume/core'
 import chalk from 'chalk'
 import { Command } from 'commander'
 import consola from 'consola'
@@ -52,9 +57,9 @@ export interface PositionalError {
  * @param error The positional error to format
  * @param resumePath The source file path
  * @param resumeStr The content of the source file for line display
- * @returns Formatted error string
+ * @returns Formatted error string in clang style
  */
-export function prettifyError(
+export function prettifySchemaValidationError(
   error: PositionalError,
   resumePath: string,
   resumeStr: string
@@ -71,6 +76,63 @@ export function prettifyError(
   )
   const errorType = chalk.red.bold('warning')
   const message = chalk.white(error.message)
+  const codeLine = chalk.white(lineContent)
+  const pointerLine = chalk.green.bold(pointer)
+
+  return [
+    `${filePath}: ${errorType}: ${message}`,
+    `${codeLine}`,
+    `${pointerLine}`,
+  ].join('\n')
+}
+
+/**
+ * Parses YAML parsing error messages and extracts line/column information
+ *
+ * @param errorMessage The error message from `yaml.parse`
+ * @param resumePath The source file path
+ * @param resumeStr The content of the source file for line display
+ * @returns Formatted error string in clang style
+ */
+export function prettifyYamlParseError(
+  errorMessage: string,
+  resumePath: string,
+  resumeStr: string
+): string {
+  // Parse the error message to extract line and column
+  // Example:
+  // "Nested mappings are not allowed in compact mappings at line 6, column 10"
+  const lineMatch = errorMessage.match(/at line (\d+), column (\d+)/)
+
+  if (!lineMatch) {
+    // If we can't parse the error, return a simple formatted message
+    return joinNonEmptyString(
+      [
+        chalk.white.bold(resumePath),
+        chalk.red.bold('error'),
+        chalk.white(errorMessage),
+      ],
+      ': '
+    )
+  }
+
+  const line = Number.parseInt(lineMatch[1], 10)
+  const column = Number.parseInt(lineMatch[2], 10)
+  const lines = resumeStr.split('\n')
+  const lineContent = lines[line - 1] || ''
+
+  // Create the pointer line with spaces and caret
+  const pointer = `${' '.repeat(column - 1)}^`
+
+  // Color scheme similar to clang with enhanced visibility
+  const filePath = chalk.white.bold(`${resumePath}:${line}:${column}`)
+  const errorType = chalk.red.bold('error')
+  const message = chalk.white(
+    errorMessage
+      .split('\n')[0]
+      .replace(/ at line \d+, column \d+:?/, '.')
+      .trim()
+  )
   const codeLine = chalk.white(lineContent)
   const pointerLine = chalk.green.bold(pointer)
 
@@ -166,7 +228,21 @@ export function readResume(
   try {
     resume = yaml.parse(resumeStr) as Resume
   } catch (error) {
-    throw new YAMLResumeError('INVALID_YAML', { error: error.message })
+    // Format YAML parsing errors in clang style
+    //
+    // Actually you can use `parseDocument` to get a list of errors, here we
+    // only use `yaml.parse` to get the first error, which should be enough for
+    // users to know that there is something wrong with the yaml file.
+    const formattedError = prettifyYamlParseError(
+      error.message,
+      resuemPath,
+      resumeStr
+    )
+
+    console.log(formattedError)
+    throw new YAMLResumeError('INVALID_YAML', {
+      error: `Failed to parse ${resuemPath}.`,
+    })
   }
 
   if (validate) {
@@ -174,7 +250,7 @@ export function readResume(
 
     if (errors.length > 0) {
       for (const error of errors) {
-        console.log(prettifyError(error, resuemPath, resumeStr))
+        console.log(prettifySchemaValidationError(error, resuemPath, resumeStr))
       }
 
       return { resume, validated: 'failed' }

@@ -41,12 +41,13 @@ import {
 import { getFixture } from './utils'
 import {
   createValidateCommand,
-  prettifyError,
+  prettifySchemaValidationError,
+  prettifyYamlParseError,
   readResume,
   validateResume,
 } from './validate'
 
-describe(prettifyError, () => {
+describe(prettifySchemaValidationError, () => {
   it('should format error with line and column information', () => {
     const error = {
       message: 'Invalid field',
@@ -57,7 +58,7 @@ describe(prettifyError, () => {
     const resumePath = 'test.yaml'
     const resumeStr = 'name: John\nage: 30'
 
-    const result = prettifyError(error, resumePath, resumeStr)
+    const result = prettifySchemaValidationError(error, resumePath, resumeStr)
 
     expect(result).toEqual(
       [
@@ -78,7 +79,7 @@ describe(prettifyError, () => {
     const resumePath = 'test.yaml'
     const resumeStr = ''
 
-    const result = prettifyError(error, resumePath, resumeStr)
+    const result = prettifySchemaValidationError(error, resumePath, resumeStr)
 
     expect(result).toEqual(
       [
@@ -87,6 +88,45 @@ describe(prettifyError, () => {
         '^',
       ].join('\n')
     )
+  })
+})
+
+describe(prettifyYamlParseError, () => {
+  it('should format YAML parsing error with line and column information', () => {
+    const message = 'Nested mappings are not allowed in compact mappings'
+    const errorMessage = `${message} at line 6, column 10`
+    const resumePath = 'test.yaml'
+    const resumeStr = joinNonEmptyString(
+      [
+        'name: A',
+        '  nested: value',
+        '  another: line',
+        '  more: content',
+        '  even: more',
+        '  nested: value',
+      ],
+      '\n'
+    )
+
+    const result = prettifyYamlParseError(errorMessage, resumePath, resumeStr)
+
+    expect(result).toEqual(
+      [
+        `test.yaml:6:10: error: ${message}.`,
+        '  nested: value',
+        '         ^',
+      ].join('\n')
+    )
+  })
+
+  it('should handle YAML error without line/column information', () => {
+    const errorMessage = 'Some generic YAML error'
+    const resumePath = 'test.yaml'
+    const resumeStr = 'name: A'
+
+    const result = prettifyYamlParseError(errorMessage, resumePath, resumeStr)
+
+    expect(result).toEqual('test.yaml: error: Some generic YAML error')
   })
 })
 
@@ -213,6 +253,7 @@ describe(readResume, () => {
   })
 
   it('should throw an invalid yaml error if the resume cannot be parsed', () => {
+    const consoleLogSpy = vi.spyOn(console, 'log').mockImplementation(vi.fn())
     const resumePath = getFixture('invalid-yaml.yml')
 
     try {
@@ -221,6 +262,7 @@ describe(readResume, () => {
       expect(error).toBeInstanceOf(YAMLResumeError)
       expect(error.code).toBe('INVALID_YAML')
       expect(error.message).toContain('Invalid YAML format: ')
+      expect(consoleLogSpy).toBeCalledWith(expect.stringContaining('error'))
     }
   })
 
@@ -354,6 +396,7 @@ describe(createValidateCommand, () => {
     expect(consolaErrorSpy).toBeCalledWith(
       expect.stringContaining('Invalid YAML format:')
     )
+    expect(consoleLogSpy).toBeCalledTimes(1)
     expect(processExitSpy).toBeCalledTimes(1)
     expect(processExitSpy).toBeCalledWith(ErrorType.INVALID_YAML.errno)
   })
