@@ -100,11 +100,12 @@ Options:
   -h, --help                display help for command
 
 Commands:
-  new [filename]            create a new resume
-  build [options] <source>  build a resume to LaTeX and PDF
-  languages                 i18n and l10n support
-  templates                 manage resume templates
-  help [command]            display help for command
+  new [filename]                 create a new resume
+  build [options] <resume-path>  build a resume to LaTeX and PDF
+  languages                      i18n and l10n support
+  templates                      manage resume templates
+  validate <resume-path>         validate a resume against the YAMLResume schema
+  help [command]                 display help for command
 ```
 
 You then need to install a typesetting engine,
