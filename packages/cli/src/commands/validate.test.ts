@@ -225,7 +225,7 @@ describe(readResume, () => {
   })
 
   it('should print errors if resume is not checked by `resumeSchema`', () => {
-    const consolaSpy = vi.spyOn(consola, 'log')
+    const consoleSpy = vi.spyOn(console, 'log').mockImplementation(vi.fn())
 
     const resumePath = getFixture('invalid-schema.yml')
     const resumeStr = fs.readFileSync(resumePath, 'utf8')
@@ -234,7 +234,7 @@ describe(readResume, () => {
     let result = readResume(resumePath, false)
 
     expect(result).toEqual({ resume, validated: 'unknown' })
-    expect(consolaSpy).not.toBeCalled()
+    expect(consoleSpy).not.toBeCalled()
 
     const invalidResume = cloneDeep(resume)
     invalidResume.content.basics.name = ''
@@ -247,7 +247,7 @@ describe(readResume, () => {
     result = readResume(resumePath, true)
     expect(result).toEqual({ resume: invalidResume, validated: 'failed' })
 
-    expect(consolaSpy).toBeCalledWith(
+    expect(consoleSpy).toBeCalledWith(
       joinNonEmptyString(
         [
           `${resumePath}:26:11: warning: name should be 2 characters or more.`,
@@ -265,6 +265,7 @@ describe(createValidateCommand, () => {
   let consolaSuccessSpy: ReturnType<typeof vi.spyOn>
   let consolaFailSpy: ReturnType<typeof vi.spyOn>
   let consolaErrorSpy: ReturnType<typeof vi.spyOn>
+  let consoleLogSpy: ReturnType<typeof vi.spyOn>
 
   beforeEach(() => {
     validateCommand = createValidateCommand()
@@ -272,6 +273,7 @@ describe(createValidateCommand, () => {
     consolaSuccessSpy = vi.spyOn(consola, 'success').mockImplementation(vi.fn())
     consolaFailSpy = vi.spyOn(consola, 'fail').mockImplementation(vi.fn())
     consolaErrorSpy = vi.spyOn(consola, 'error').mockImplementation(vi.fn())
+    consoleLogSpy = vi.spyOn(console, 'log').mockImplementation(vi.fn())
   })
 
   afterEach(() => {
@@ -309,6 +311,7 @@ describe(createValidateCommand, () => {
     expect(consolaSuccessSpy).toBeCalledWith('Resume validation passed.')
     expect(consolaFailSpy).not.toBeCalled()
     expect(consolaErrorSpy).not.toBeCalled()
+    expect(consoleLogSpy).not.toBeCalled()
   })
 
   it('should fail validation for invalid resume', () => {
@@ -320,6 +323,7 @@ describe(createValidateCommand, () => {
     expect(consolaFailSpy).toBeCalledWith('Resume validation failed.')
     expect(consolaSuccessSpy).not.toBeCalled()
     expect(consolaErrorSpy).not.toBeCalled()
+    expect(consoleLogSpy).toBeCalled()
   })
 
   it('should handle file read error', () => {

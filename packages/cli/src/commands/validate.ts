@@ -172,7 +172,7 @@ export function readResume(
 
     if (errors.length > 0) {
       for (const error of errors) {
-        consola.log(prettifyError(error, resuemPath, resumeStr))
+        console.log(prettifyError(error, resuemPath, resumeStr))
       }
 
       return { resume, validated: 'failed' }
