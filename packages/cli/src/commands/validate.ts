@@ -25,7 +25,7 @@
 import fs from 'node:fs'
 import yaml from 'yaml'
 
-import { type Resume, YAMLResumeError, ResumeSchema } from '@yamlresume/core'
+import { type Resume, ResumeSchema, YAMLResumeError } from '@yamlresume/core'
 import chalk from 'chalk'
 import { Command } from 'commander'
 import consola from 'consola'
@@ -111,27 +111,29 @@ export function validateResume(
     error: { issues },
   } = validationResult
 
-  return issues.map((issue) => {
-    const path = issue.path
-    const node = resumeCST.getIn(path, true)
+  return issues
+    .map((issue) => {
+      const path = issue.path
+      const node = resumeCST.getIn(path, true)
 
-    let line = 1
-    let column = 1
+      let line = 1
+      let column = 1
 
-    if (isNode(node) && node.range) {
-      const startOffset = node.range[0]
-      const pos = lineCounter.linePos(startOffset)
-      line = pos.line
-      column = pos.col
-    }
+      if (isNode(node) && node.range) {
+        const startOffset = node.range[0]
+        const pos = lineCounter.linePos(startOffset)
+        line = pos.line
+        column = pos.col
+      }
 
-    return {
-      message: issue.message,
-      line,
-      column,
-      path,
-    }
-  })
+      return {
+        message: issue.message,
+        line,
+        column,
+        path,
+      }
+    })
+    .sort((a, b) => a.line - b.line)
 }
 
 /**

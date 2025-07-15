@@ -33,9 +33,9 @@ import yaml from 'yaml'
 import {
   ErrorType,
   type Resume,
+  ResumeSchema,
   YAMLResumeError,
   joinNonEmptyString,
-  ResumeSchema,
 } from '@yamlresume/core'
 
 import { getFixture } from './utils'
@@ -171,16 +171,16 @@ describe(validateResume, () => {
         ),
         errors: [
           {
-            message: 'name should be 2 characters or more.',
-            line: 3,
-            column: 11,
-            path: ['content', 'basics', 'name'],
-          },
-          {
             message: 'education is required.',
             line: 1,
             column: 1,
             path: ['content', 'education'],
+          },
+          {
+            message: 'name should be 2 characters or more.',
+            line: 3,
+            column: 11,
+            path: ['content', 'basics', 'name'],
           },
         ],
       },
