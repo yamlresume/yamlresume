@@ -30,6 +30,7 @@ import {
   OrganizationSchema,
   UrlSchema,
 } from '../primitives'
+import { nullifySchema } from '../utils'
 
 /**
  * A zod schema for the issuer of a certificate.
@@ -49,8 +50,8 @@ export const CertificateItemSchema = z.object({
   name: NameSchema('name').describe('The name of the certificate.'),
 
   // optional fields
-  date: DateSchema('date').nullish(),
-  url: UrlSchema.nullish(),
+  date: nullifySchema(DateSchema('date')),
+  url: nullifySchema(UrlSchema),
 })
 
 /**

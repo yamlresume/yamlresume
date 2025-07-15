@@ -31,6 +31,7 @@ import {
   SummarySchema,
   UrlSchema,
 } from '../primitives'
+import { nullifySchema } from '../utils'
 
 /**
  * A zod schema for a publication name.
@@ -57,9 +58,9 @@ export const PublicationItemSchema = z.object({
   publisher: PublisherSchema,
 
   // optional fields
-  releaseDate: DateSchema('Release date').nullish(),
-  summary: SummarySchema.nullish(),
-  url: UrlSchema.nullish(),
+  releaseDate: nullifySchema(DateSchema('Release date')),
+  summary: nullifySchema(SummarySchema),
+  url: nullifySchema(UrlSchema),
 })
 
 /**

@@ -30,6 +30,7 @@ import {
   OrganizationSchema,
   SummarySchema,
 } from '../primitives'
+import { nullifySchema } from '../utils'
 
 /**
  * A zod schema for the awarder of an award.
@@ -58,8 +59,8 @@ export const AwardItemSchema = z.object({
   title: TitleSchema,
 
   // optional fields
-  date: DateSchema('date').nullish(),
-  summary: SummarySchema.nullish(),
+  date: nullifySchema(DateSchema('date')),
+  summary: nullifySchema(SummarySchema),
 })
 
 /**

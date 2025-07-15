@@ -26,6 +26,23 @@ import { expect } from 'vitest'
 import { z } from 'zod/v4'
 
 /**
+ * Expects that a zod schema has metadata.
+ *
+ * @param schema - The zod schema to validate.
+ */
+export function expectSchemaMetadata<T>(schema: z.ZodType<T>) {
+  const metadata = schema.meta()
+  expect(metadata.title).toBeTypeOf('string')
+  expect(metadata.description).toBeTypeOf('string')
+
+  // Check if examples exist (some schemas like enums don't have examples)
+  if (metadata.examples !== undefined) {
+    expect(metadata.examples).toBeTypeOf('object')
+    expect(metadata.examples.length).toBeGreaterThan(0)
+  }
+}
+
+/**
  * Returns an array of test cases for nullish fields.
  *
  * @param schema - The zod schema to validate.
@@ -60,6 +77,32 @@ export function getNullishTestCases(
 }
 
 /**
+ * Returns a nullish schema with the same metadata as the original schema.
+ *
+ * Why we need this?
+ *
+ * By default Zod's `nullish` method will generate a `anyOf` JSON schema, with
+ * the second branch being `{ type: null }`, therefore, if users set `null` to a
+ * field in the YAML file, when hover over the field in VSCode, there will be no
+ * metadata for the field at all.
+ *
+ * Here we generate a new metadata for the nullish schema, so no matter whether
+ * the field is set to `null` or not, the metadata will always be the same.
+ *
+ * @param schema - The zod schema to make nullish.
+ * @returns A nullish schema with the same metadata as the original schema.
+ */
+export function nullifySchema<T>(schema: z.ZodType<T>) {
+  const nullishMeta = {
+    title: `[optional] ${schema.meta().title}`,
+    description: `${schema.meta().description.replace(/\.$/, '')} or \`null\`.`,
+    examples: schema.meta().examples,
+  }
+
+  return schema.meta(nullishMeta).nullish().meta(nullishMeta)
+}
+
+/**
  * Validates that a zod schema returns the expected error when given invalid
  * data.
  *
@@ -76,21 +119,4 @@ export function validateZodErrors<T>(
 
   expect(result.success).toBe(false)
   expect(z.treeifyError(result.error)).toEqual(error)
-}
-
-/**
- * Expects that a zod schema has metadata.
- *
- * @param schema - The zod schema to validate.
- */
-export function expectSchemaMetadata<T>(schema: z.ZodType<T>) {
-  const metadata = schema.meta()
-  expect(metadata.title).toBeTypeOf('string')
-  expect(metadata.description).toBeTypeOf('string')
-
-  // Check if examples exist (some schemas like enums don't have examples)
-  if (metadata.examples !== undefined) {
-    expect(metadata.examples).toBeTypeOf('object')
-    expect(metadata.examples.length).toBeGreaterThan(0)
-  }
 }

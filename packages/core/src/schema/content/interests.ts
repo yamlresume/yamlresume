@@ -25,6 +25,7 @@ import { z } from 'zod/v4'
 
 import { joinNonEmptyString } from '@/utils'
 import { KeywordsSchema, NameSchema } from '../primitives'
+import { nullifySchema } from '../utils'
 
 /**
  * A zod schema for an interest name.
@@ -41,7 +42,7 @@ export const InterestItemSchema = z.object({
   name: InterestNameSchema,
 
   // optional fields
-  keywords: KeywordsSchema.nullish(),
+  keywords: nullifySchema(KeywordsSchema),
 })
 
 /**

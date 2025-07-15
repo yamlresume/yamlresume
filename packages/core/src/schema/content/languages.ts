@@ -29,6 +29,7 @@ import {
   KeywordsSchema,
   LanguageOptionSchema,
 } from '../primitives'
+import { nullifySchema } from '../utils'
 
 /**
  * A zod schema for a language item.
@@ -39,7 +40,7 @@ export const LanguageItemSchema = z.object({
   language: LanguageOptionSchema,
 
   // optional fields
-  keywords: KeywordsSchema.nullish(),
+  keywords: nullifySchema(KeywordsSchema),
 })
 
 /**

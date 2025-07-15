@@ -32,6 +32,7 @@ import {
   SummarySchema,
   UrlSchema,
 } from '../primitives'
+import { nullifySchema } from '../utils'
 
 /**
  * A zod schema for an area of study.
@@ -95,11 +96,11 @@ export const EducationItemSchema = z.object({
   startDate: DateSchema('startDate'),
 
   // optional fields
-  courses: CoursesSchema.nullish(),
-  endDate: DateSchema('endDate').nullish(),
-  summary: SummarySchema.nullish(),
-  score: ScoreSchema.nullish(),
-  url: UrlSchema.nullish(),
+  courses: nullifySchema(CoursesSchema),
+  endDate: nullifySchema(DateSchema('endDate')),
+  summary: nullifySchema(SummarySchema),
+  score: nullifySchema(ScoreSchema),
+  url: nullifySchema(UrlSchema),
 })
 
 /**

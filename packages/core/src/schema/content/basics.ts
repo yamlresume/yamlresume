@@ -32,6 +32,7 @@ import {
   SummarySchema,
   UrlSchema,
 } from '../primitives'
+import { nullifySchema } from '../utils'
 
 /**
  * A zod schema for a headline.
@@ -55,11 +56,11 @@ export const BasicsItemSchema = z.object(
     name: NameSchema('name').describe('Your personal name.'),
 
     // optional fields
-    email: EmailSchema.nullish(),
-    headline: HeadlineSchema.nullish(),
-    phone: PhoneSchema.nullish(),
-    summary: SummarySchema.nullish(),
-    url: UrlSchema.nullish(),
+    email: nullifySchema(EmailSchema),
+    headline: nullifySchema(HeadlineSchema),
+    phone: nullifySchema(PhoneSchema),
+    summary: nullifySchema(SummarySchema),
+    url: nullifySchema(UrlSchema),
   },
   {
     error: (issue) => {

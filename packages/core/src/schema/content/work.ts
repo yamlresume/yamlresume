@@ -32,6 +32,7 @@ import {
   SummarySchema,
   UrlSchema,
 } from '../primitives'
+import { nullifySchema } from '../utils'
 
 /**
  * A zod schema for a company name.
@@ -67,9 +68,9 @@ export const WorkItemSchema = z.object({
   summary: SummarySchema,
 
   // optional fields
-  endDate: DateSchema('endDate').nullish(),
-  keywords: KeywordsSchema.nullish(),
-  url: UrlSchema.nullish(),
+  endDate: nullifySchema(DateSchema('endDate')),
+  keywords: nullifySchema(KeywordsSchema),
+  url: nullifySchema(UrlSchema),
 })
 
 /**

@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://yamlresume.dev/schema.json",
   "title": "YAMLResume Schema",
-  "description": "JSON Schema for YAMLResume resume format",
+  "description": "JSON Schema for YAMLResume resume format.",
   "version": "0.5.0",
   "license": "MIT",
   "keywords": [
@@ -37,8 +37,22 @@
               "maxLength": 128
             },
             "email": {
+              "title": "[optional] Email",
+              "description": "A valid email address or `null`.",
+              "examples": [
+                "hi@ppresume.com",
+                "first.last@company.org",
+                "test+tag@domain.co.uk"
+              ],
               "anyOf": [
                 {
+                  "title": "[optional] Email",
+                  "description": "A valid email address or `null`.",
+                  "examples": [
+                    "hi@ppresume.com",
+                    "first.last@company.org",
+                    "test+tag@domain.co.uk"
+                  ],
                   "$ref": "#/$defs/email"
                 },
                 {
@@ -47,10 +61,17 @@
               ]
             },
             "headline": {
+              "title": "[optional] Headline",
+              "description": "A short and catchy headline for your resume or `null`.",
+              "examples": [
+                "Full-stack software engineer",
+                "Data Scientist with a passion for Machine Learning",
+                "Product Manager driving innovation"
+              ],
               "anyOf": [
                 {
-                  "title": "Headline",
-                  "description": "A short and catchy headline for your resume.",
+                  "title": "[optional] Headline",
+                  "description": "A short and catchy headline for your resume or `null`.",
                   "examples": [
                     "Full-stack software engineer",
                     "Data Scientist with a passion for Machine Learning",
@@ -66,8 +87,22 @@
               ]
             },
             "phone": {
+              "title": "[optional] Phone",
+              "description": "A valid phone number that may include country code, parentheses, spaces, and hyphens or `null`.",
+              "examples": [
+                "555-123-4567",
+                "+44 20 7946 0958",
+                "(555) 123-4567"
+              ],
               "anyOf": [
                 {
+                  "title": "[optional] Phone",
+                  "description": "A valid phone number that may include country code, parentheses, spaces, and hyphens or `null`.",
+                  "examples": [
+                    "555-123-4567",
+                    "+44 20 7946 0958",
+                    "(555) 123-4567"
+                  ],
                   "$ref": "#/$defs/phone"
                 },
                 {
@@ -76,8 +111,22 @@
               ]
             },
             "summary": {
+              "title": "[optional] Summary",
+              "description": "A summary text between 16 and 1024 characters or `null`.",
+              "examples": [
+                "Experienced software engineer with 5+ years in full-stack development.",
+                "Creative designer passionate about user experience and modern design principles.",
+                "Dedicated project manager with proven track record of delivering complex projects on time and budget."
+              ],
               "anyOf": [
                 {
+                  "title": "[optional] Summary",
+                  "description": "A summary text between 16 and 1024 characters or `null`.",
+                  "examples": [
+                    "Experienced software engineer with 5+ years in full-stack development.",
+                    "Creative designer passionate about user experience and modern design principles.",
+                    "Dedicated project manager with proven track record of delivering complex projects on time and budget."
+                  ],
                   "$ref": "#/$defs/summary"
                 },
                 {
@@ -86,8 +135,26 @@
               ]
             },
             "url": {
+              "title": "[optional] URL",
+              "description": "A valid URL with maximum length of 256 characters or `null`.",
+              "examples": [
+                "https://yamlresume.dev",
+                "https://ppresume.com",
+                "https://github.com/yamlresume/yamlresume",
+                "https://linkedin.com/in/xiaohanyu1988",
+                "https://www.example.com"
+              ],
               "anyOf": [
                 {
+                  "title": "[optional] URL",
+                  "description": "A valid URL with maximum length of 256 characters or `null`.",
+                  "examples": [
+                    "https://yamlresume.dev",
+                    "https://ppresume.com",
+                    "https://github.com/yamlresume/yamlresume",
+                    "https://linkedin.com/in/xiaohanyu1988",
+                    "https://www.example.com"
+                  ],
                   "$ref": "#/$defs/url"
                 },
                 {
@@ -161,10 +228,29 @@
                 "maxLength": 32
               },
               "courses": {
+                "title": "[optional] Courses",
+                "description": "A list of relevant courses you have taken or `null`.",
+                "examples": [
+                  [
+                    "Data Structures",
+                    "Algorithms",
+                    "Database Systems"
+                  ],
+                  [
+                    "Marketing",
+                    "Finance",
+                    "Operations Management"
+                  ],
+                  [
+                    "Calculus",
+                    "Physics",
+                    "Chemistry"
+                  ]
+                ],
                 "anyOf": [
                   {
-                    "title": "Courses",
-                    "description": "A list of relevant courses you have taken.",
+                    "title": "[optional] Courses",
+                    "description": "A list of relevant courses you have taken or `null`.",
                     "examples": [
                       [
                         "Data Structures",
@@ -195,10 +281,18 @@
                 ]
               },
               "endDate": {
+                "title": "[optional] End Date",
+                "description": "A valid date string that can be parsed by `Date.parse` or `null`.",
+                "examples": [
+                  "2025-01-01",
+                  "Jul 2025",
+                  "July 3, 2025",
+                  "2025-02-02T00:00:03.123Z"
+                ],
                 "anyOf": [
                   {
-                    "title": "End Date",
-                    "description": "A valid date string that can be parsed by `Date.parse`.",
+                    "title": "[optional] End Date",
+                    "description": "A valid date string that can be parsed by `Date.parse` or `null`.",
                     "examples": [
                       "2025-01-01",
                       "Jul 2025",
@@ -215,8 +309,22 @@
                 ]
               },
               "summary": {
+                "title": "[optional] Summary",
+                "description": "A summary text between 16 and 1024 characters or `null`.",
+                "examples": [
+                  "Experienced software engineer with 5+ years in full-stack development.",
+                  "Creative designer passionate about user experience and modern design principles.",
+                  "Dedicated project manager with proven track record of delivering complex projects on time and budget."
+                ],
                 "anyOf": [
                   {
+                    "title": "[optional] Summary",
+                    "description": "A summary text between 16 and 1024 characters or `null`.",
+                    "examples": [
+                      "Experienced software engineer with 5+ years in full-stack development.",
+                      "Creative designer passionate about user experience and modern design principles.",
+                      "Dedicated project manager with proven track record of delivering complex projects on time and budget."
+                    ],
                     "$ref": "#/$defs/summary"
                   },
                   {
@@ -225,10 +333,19 @@
                 ]
               },
               "score": {
+                "title": "[optional] Score",
+                "description": "Your GPA, grade, or other academic score or `null`.",
+                "examples": [
+                  "3.8",
+                  "3.8/4.0",
+                  "A+",
+                  "95%",
+                  "First Class Honours"
+                ],
                 "anyOf": [
                   {
-                    "title": "Score",
-                    "description": "Your GPA, grade, or other academic score.",
+                    "title": "[optional] Score",
+                    "description": "Your GPA, grade, or other academic score or `null`.",
                     "examples": [
                       "3.8",
                       "3.8/4.0",
@@ -246,8 +363,26 @@
                 ]
               },
               "url": {
+                "title": "[optional] URL",
+                "description": "A valid URL with maximum length of 256 characters or `null`.",
+                "examples": [
+                  "https://yamlresume.dev",
+                  "https://ppresume.com",
+                  "https://github.com/yamlresume/yamlresume",
+                  "https://linkedin.com/in/xiaohanyu1988",
+                  "https://www.example.com"
+                ],
                 "anyOf": [
                   {
+                    "title": "[optional] URL",
+                    "description": "A valid URL with maximum length of 256 characters or `null`.",
+                    "examples": [
+                      "https://yamlresume.dev",
+                      "https://ppresume.com",
+                      "https://github.com/yamlresume/yamlresume",
+                      "https://linkedin.com/in/xiaohanyu1988",
+                      "https://www.example.com"
+                    ],
                     "$ref": "#/$defs/url"
                   },
                   {
@@ -299,10 +434,18 @@
                     "maxLength": 128
                   },
                   "date": {
+                    "title": "[optional] Date",
+                    "description": "A valid date string that can be parsed by `Date.parse` or `null`.",
+                    "examples": [
+                      "2025-01-01",
+                      "Jul 2025",
+                      "July 3, 2025",
+                      "2025-02-02T00:00:03.123Z"
+                    ],
                     "anyOf": [
                       {
-                        "title": "Date",
-                        "description": "A valid date string that can be parsed by `Date.parse`.",
+                        "title": "[optional] Date",
+                        "description": "A valid date string that can be parsed by `Date.parse` or `null`.",
                         "examples": [
                           "2025-01-01",
                           "Jul 2025",
@@ -319,8 +462,22 @@
                     ]
                   },
                   "summary": {
+                    "title": "[optional] Summary",
+                    "description": "A summary text between 16 and 1024 characters or `null`.",
+                    "examples": [
+                      "Experienced software engineer with 5+ years in full-stack development.",
+                      "Creative designer passionate about user experience and modern design principles.",
+                      "Dedicated project manager with proven track record of delivering complex projects on time and budget."
+                    ],
                     "anyOf": [
                       {
+                        "title": "[optional] Summary",
+                        "description": "A summary text between 16 and 1024 characters or `null`.",
+                        "examples": [
+                          "Experienced software engineer with 5+ years in full-stack development.",
+                          "Creative designer passionate about user experience and modern design principles.",
+                          "Dedicated project manager with proven track record of delivering complex projects on time and budget."
+                        ],
                         "$ref": "#/$defs/summary"
                       },
                       {
@@ -377,10 +534,18 @@
                     "maxLength": 128
                   },
                   "date": {
+                    "title": "[optional] Date",
+                    "description": "A valid date string that can be parsed by `Date.parse` or `null`.",
+                    "examples": [
+                      "2025-01-01",
+                      "Jul 2025",
+                      "July 3, 2025",
+                      "2025-02-02T00:00:03.123Z"
+                    ],
                     "anyOf": [
                       {
-                        "title": "Date",
-                        "description": "A valid date string that can be parsed by `Date.parse`.",
+                        "title": "[optional] Date",
+                        "description": "A valid date string that can be parsed by `Date.parse` or `null`.",
                         "examples": [
                           "2025-01-01",
                           "Jul 2025",
@@ -397,8 +562,26 @@
                     ]
                   },
                   "url": {
+                    "title": "[optional] URL",
+                    "description": "A valid URL with maximum length of 256 characters or `null`.",
+                    "examples": [
+                      "https://yamlresume.dev",
+                      "https://ppresume.com",
+                      "https://github.com/yamlresume/yamlresume",
+                      "https://linkedin.com/in/xiaohanyu1988",
+                      "https://www.example.com"
+                    ],
                     "anyOf": [
                       {
+                        "title": "[optional] URL",
+                        "description": "A valid URL with maximum length of 256 characters or `null`.",
+                        "examples": [
+                          "https://yamlresume.dev",
+                          "https://ppresume.com",
+                          "https://github.com/yamlresume/yamlresume",
+                          "https://linkedin.com/in/xiaohanyu1988",
+                          "https://www.example.com"
+                        ],
                         "$ref": "#/$defs/url"
                       },
                       {
@@ -442,8 +625,44 @@
                     "maxLength": 128
                   },
                   "keywords": {
+                    "title": "[optional] Keywords",
+                    "description": "An array of keyword, each between 1 and 32 characters or `null`.",
+                    "examples": [
+                      [
+                        "Javascript",
+                        "React",
+                        "Typescript"
+                      ],
+                      [
+                        "Design",
+                        "UI",
+                        "UX"
+                      ],
+                      [
+                        "Python",
+                        "Data Science"
+                      ]
+                    ],
                     "anyOf": [
                       {
+                        "title": "[optional] Keywords",
+                        "description": "An array of keyword, each between 1 and 32 characters or `null`.",
+                        "examples": [
+                          [
+                            "Javascript",
+                            "React",
+                            "Typescript"
+                          ],
+                          [
+                            "Design",
+                            "UI",
+                            "UX"
+                          ],
+                          [
+                            "Python",
+                            "Data Science"
+                          ]
+                        ],
                         "$ref": "#/$defs/keywords"
                       },
                       {
@@ -567,8 +786,44 @@
                     ]
                   },
                   "keywords": {
+                    "title": "[optional] Keywords",
+                    "description": "An array of keyword, each between 1 and 32 characters or `null`.",
+                    "examples": [
+                      [
+                        "Javascript",
+                        "React",
+                        "Typescript"
+                      ],
+                      [
+                        "Design",
+                        "UI",
+                        "UX"
+                      ],
+                      [
+                        "Python",
+                        "Data Science"
+                      ]
+                    ],
                     "anyOf": [
                       {
+                        "title": "[optional] Keywords",
+                        "description": "An array of keyword, each between 1 and 32 characters or `null`.",
+                        "examples": [
+                          [
+                            "Javascript",
+                            "React",
+                            "Typescript"
+                          ],
+                          [
+                            "Design",
+                            "UI",
+                            "UX"
+                          ],
+                          [
+                            "Python",
+                            "Data Science"
+                          ]
+                        ],
                         "$ref": "#/$defs/keywords"
                       },
                       {
@@ -610,10 +865,17 @@
                   "maxLength": 64
                 },
                 "address": {
+                  "title": "[optional] Address",
+                  "description": "Your full address including street, apartment, etc or `null`.",
+                  "examples": [
+                    "123 Main Street, Apt 4B",
+                    "456 Oak Avenue",
+                    "789 Pine Road, Suite 100"
+                  ],
                   "anyOf": [
                     {
-                      "title": "Address",
-                      "description": "Your full address including street, apartment, etc.",
+                      "title": "[optional] Address",
+                      "description": "Your full address including street, apartment, etc or `null`.",
                       "examples": [
                         "123 Main Street, Apt 4B",
                         "456 Oak Avenue",
@@ -629,10 +891,12 @@
                   ]
                 },
                 "country": {
+                  "title": "[optional] Country Option",
+                  "description": "A predefined option from the available country choices or `null`.",
                   "anyOf": [
                     {
-                      "title": "Country Option",
-                      "description": "A predefined option from the available country choices.",
+                      "title": "[optional] Country Option",
+                      "description": "A predefined option from the available country choices or `null`.",
                       "type": "string",
                       "enum": [
                         "Afghanistan",
@@ -893,10 +1157,18 @@
                   ]
                 },
                 "postalCode": {
+                  "title": "[optional] Postal Code",
+                  "description": "Your postal or ZIP code or `null`.",
+                  "examples": [
+                    "94102",
+                    "10001",
+                    "SW1A 1AA",
+                    "100-0001"
+                  ],
                   "anyOf": [
                     {
-                      "title": "Postal Code",
-                      "description": "Your postal or ZIP code.",
+                      "title": "[optional] Postal Code",
+                      "description": "Your postal or ZIP code or `null`.",
                       "examples": [
                         "94102",
                         "10001",
@@ -913,10 +1185,18 @@
                   ]
                 },
                 "region": {
+                  "title": "[optional] Region",
+                  "description": "Your state, province, or region or `null`.",
+                  "examples": [
+                    "California",
+                    "New York",
+                    "England",
+                    "Tokyo"
+                  ],
                   "anyOf": [
                     {
-                      "title": "Region",
-                      "description": "Your state, province, or region.",
+                      "title": "[optional] Region",
+                      "description": "Your state, province, or region or `null`.",
                       "examples": [
                         "California",
                         "New York",
@@ -996,8 +1276,26 @@
                     "maxLength": 64
                   },
                   "url": {
+                    "title": "[optional] URL",
+                    "description": "A valid URL with maximum length of 256 characters or `null`.",
+                    "examples": [
+                      "https://yamlresume.dev",
+                      "https://ppresume.com",
+                      "https://github.com/yamlresume/yamlresume",
+                      "https://linkedin.com/in/xiaohanyu1988",
+                      "https://www.example.com"
+                    ],
                     "anyOf": [
                       {
+                        "title": "[optional] URL",
+                        "description": "A valid URL with maximum length of 256 characters or `null`.",
+                        "examples": [
+                          "https://yamlresume.dev",
+                          "https://ppresume.com",
+                          "https://github.com/yamlresume/yamlresume",
+                          "https://linkedin.com/in/xiaohanyu1988",
+                          "https://www.example.com"
+                        ],
                         "$ref": "#/$defs/url"
                       },
                       {
@@ -1057,10 +1355,17 @@
                     "$ref": "#/$defs/summary"
                   },
                   "description": {
+                    "title": "[optional] Description",
+                    "description": "A detailed description of the project and your role or `null`.",
+                    "examples": [
+                      "Led development of a full-stack web application",
+                      "Designed and implemented REST API endpoints",
+                      "Managed team of 5 developers for mobile app development"
+                    ],
                     "anyOf": [
                       {
-                        "title": "Description",
-                        "description": "A detailed description of the project and your role.",
+                        "title": "[optional] Description",
+                        "description": "A detailed description of the project and your role or `null`.",
                         "examples": [
                           "Led development of a full-stack web application",
                           "Designed and implemented REST API endpoints",
@@ -1076,10 +1381,18 @@
                     ]
                   },
                   "endDate": {
+                    "title": "[optional] End Date",
+                    "description": "A valid date string that can be parsed by `Date.parse` or `null`.",
+                    "examples": [
+                      "2025-01-01",
+                      "Jul 2025",
+                      "July 3, 2025",
+                      "2025-02-02T00:00:03.123Z"
+                    ],
                     "anyOf": [
                       {
-                        "title": "End Date",
-                        "description": "A valid date string that can be parsed by `Date.parse`.",
+                        "title": "[optional] End Date",
+                        "description": "A valid date string that can be parsed by `Date.parse` or `null`.",
                         "examples": [
                           "2025-01-01",
                           "Jul 2025",
@@ -1096,8 +1409,44 @@
                     ]
                   },
                   "keywords": {
+                    "title": "[optional] Keywords",
+                    "description": "An array of keyword, each between 1 and 32 characters or `null`.",
+                    "examples": [
+                      [
+                        "Javascript",
+                        "React",
+                        "Typescript"
+                      ],
+                      [
+                        "Design",
+                        "UI",
+                        "UX"
+                      ],
+                      [
+                        "Python",
+                        "Data Science"
+                      ]
+                    ],
                     "anyOf": [
                       {
+                        "title": "[optional] Keywords",
+                        "description": "An array of keyword, each between 1 and 32 characters or `null`.",
+                        "examples": [
+                          [
+                            "Javascript",
+                            "React",
+                            "Typescript"
+                          ],
+                          [
+                            "Design",
+                            "UI",
+                            "UX"
+                          ],
+                          [
+                            "Python",
+                            "Data Science"
+                          ]
+                        ],
                         "$ref": "#/$defs/keywords"
                       },
                       {
@@ -1106,8 +1455,26 @@
                     ]
                   },
                   "url": {
+                    "title": "[optional] URL",
+                    "description": "A valid URL with maximum length of 256 characters or `null`.",
+                    "examples": [
+                      "https://yamlresume.dev",
+                      "https://ppresume.com",
+                      "https://github.com/yamlresume/yamlresume",
+                      "https://linkedin.com/in/xiaohanyu1988",
+                      "https://www.example.com"
+                    ],
                     "anyOf": [
                       {
+                        "title": "[optional] URL",
+                        "description": "A valid URL with maximum length of 256 characters or `null`.",
+                        "examples": [
+                          "https://yamlresume.dev",
+                          "https://ppresume.com",
+                          "https://github.com/yamlresume/yamlresume",
+                          "https://linkedin.com/in/xiaohanyu1988",
+                          "https://www.example.com"
+                        ],
                         "$ref": "#/$defs/url"
                       },
                       {
@@ -1165,10 +1532,18 @@
                     "maxLength": 128
                   },
                   "releaseDate": {
+                    "title": "[optional] Release Date",
+                    "description": "A valid date string that can be parsed by `Date.parse` or `null`.",
+                    "examples": [
+                      "2025-01-01",
+                      "Jul 2025",
+                      "July 3, 2025",
+                      "2025-02-02T00:00:03.123Z"
+                    ],
                     "anyOf": [
                       {
-                        "title": "Release Date",
-                        "description": "A valid date string that can be parsed by `Date.parse`.",
+                        "title": "[optional] Release Date",
+                        "description": "A valid date string that can be parsed by `Date.parse` or `null`.",
                         "examples": [
                           "2025-01-01",
                           "Jul 2025",
@@ -1185,8 +1560,22 @@
                     ]
                   },
                   "summary": {
+                    "title": "[optional] Summary",
+                    "description": "A summary text between 16 and 1024 characters or `null`.",
+                    "examples": [
+                      "Experienced software engineer with 5+ years in full-stack development.",
+                      "Creative designer passionate about user experience and modern design principles.",
+                      "Dedicated project manager with proven track record of delivering complex projects on time and budget."
+                    ],
                     "anyOf": [
                       {
+                        "title": "[optional] Summary",
+                        "description": "A summary text between 16 and 1024 characters or `null`.",
+                        "examples": [
+                          "Experienced software engineer with 5+ years in full-stack development.",
+                          "Creative designer passionate about user experience and modern design principles.",
+                          "Dedicated project manager with proven track record of delivering complex projects on time and budget."
+                        ],
                         "$ref": "#/$defs/summary"
                       },
                       {
@@ -1195,8 +1584,26 @@
                     ]
                   },
                   "url": {
+                    "title": "[optional] URL",
+                    "description": "A valid URL with maximum length of 256 characters or `null`.",
+                    "examples": [
+                      "https://yamlresume.dev",
+                      "https://ppresume.com",
+                      "https://github.com/yamlresume/yamlresume",
+                      "https://linkedin.com/in/xiaohanyu1988",
+                      "https://www.example.com"
+                    ],
                     "anyOf": [
                       {
+                        "title": "[optional] URL",
+                        "description": "A valid URL with maximum length of 256 characters or `null`.",
+                        "examples": [
+                          "https://yamlresume.dev",
+                          "https://ppresume.com",
+                          "https://github.com/yamlresume/yamlresume",
+                          "https://linkedin.com/in/xiaohanyu1988",
+                          "https://www.example.com"
+                        ],
                         "$ref": "#/$defs/url"
                       },
                       {
@@ -1243,8 +1650,22 @@
                     "$ref": "#/$defs/summary"
                   },
                   "email": {
+                    "title": "[optional] Email",
+                    "description": "A valid email address or `null`.",
+                    "examples": [
+                      "hi@ppresume.com",
+                      "first.last@company.org",
+                      "test+tag@domain.co.uk"
+                    ],
                     "anyOf": [
                       {
+                        "title": "[optional] Email",
+                        "description": "A valid email address or `null`.",
+                        "examples": [
+                          "hi@ppresume.com",
+                          "first.last@company.org",
+                          "test+tag@domain.co.uk"
+                        ],
                         "$ref": "#/$defs/email"
                       },
                       {
@@ -1253,8 +1674,22 @@
                     ]
                   },
                   "phone": {
+                    "title": "[optional] Phone",
+                    "description": "A valid phone number that may include country code, parentheses, spaces, and hyphens or `null`.",
+                    "examples": [
+                      "555-123-4567",
+                      "+44 20 7946 0958",
+                      "(555) 123-4567"
+                    ],
                     "anyOf": [
                       {
+                        "title": "[optional] Phone",
+                        "description": "A valid phone number that may include country code, parentheses, spaces, and hyphens or `null`.",
+                        "examples": [
+                          "555-123-4567",
+                          "+44 20 7946 0958",
+                          "(555) 123-4567"
+                        ],
                         "$ref": "#/$defs/phone"
                       },
                       {
@@ -1263,10 +1698,18 @@
                     ]
                   },
                   "relationship": {
+                    "title": "[optional] Relationship",
+                    "description": "Your professional relationship with the reference or `null`.",
+                    "examples": [
+                      "Former Manager",
+                      "Colleague",
+                      "Professor",
+                      "Client"
+                    ],
                     "anyOf": [
                       {
-                        "title": "Relationship",
-                        "description": "Your professional relationship with the reference.",
+                        "title": "[optional] Relationship",
+                        "description": "Your professional relationship with the reference or `null`.",
                         "examples": [
                           "Former Manager",
                           "Colleague",
@@ -1331,8 +1774,44 @@
                     "maxLength": 128
                   },
                   "keywords": {
+                    "title": "[optional] Keywords",
+                    "description": "An array of keyword, each between 1 and 32 characters or `null`.",
+                    "examples": [
+                      [
+                        "Javascript",
+                        "React",
+                        "Typescript"
+                      ],
+                      [
+                        "Design",
+                        "UI",
+                        "UX"
+                      ],
+                      [
+                        "Python",
+                        "Data Science"
+                      ]
+                    ],
                     "anyOf": [
                       {
+                        "title": "[optional] Keywords",
+                        "description": "An array of keyword, each between 1 and 32 characters or `null`.",
+                        "examples": [
+                          [
+                            "Javascript",
+                            "React",
+                            "Typescript"
+                          ],
+                          [
+                            "Design",
+                            "UI",
+                            "UX"
+                          ],
+                          [
+                            "Python",
+                            "Data Science"
+                          ]
+                        ],
                         "$ref": "#/$defs/keywords"
                       },
                       {
@@ -1405,10 +1884,18 @@
                     "$ref": "#/$defs/summary"
                   },
                   "endDate": {
+                    "title": "[optional] End Date",
+                    "description": "A valid date string that can be parsed by `Date.parse` or `null`.",
+                    "examples": [
+                      "2025-01-01",
+                      "Jul 2025",
+                      "July 3, 2025",
+                      "2025-02-02T00:00:03.123Z"
+                    ],
                     "anyOf": [
                       {
-                        "title": "End Date",
-                        "description": "A valid date string that can be parsed by `Date.parse`.",
+                        "title": "[optional] End Date",
+                        "description": "A valid date string that can be parsed by `Date.parse` or `null`.",
                         "examples": [
                           "2025-01-01",
                           "Jul 2025",
@@ -1425,8 +1912,26 @@
                     ]
                   },
                   "url": {
+                    "title": "[optional] URL",
+                    "description": "A valid URL with maximum length of 256 characters or `null`.",
+                    "examples": [
+                      "https://yamlresume.dev",
+                      "https://ppresume.com",
+                      "https://github.com/yamlresume/yamlresume",
+                      "https://linkedin.com/in/xiaohanyu1988",
+                      "https://www.example.com"
+                    ],
                     "anyOf": [
                       {
+                        "title": "[optional] URL",
+                        "description": "A valid URL with maximum length of 256 characters or `null`.",
+                        "examples": [
+                          "https://yamlresume.dev",
+                          "https://ppresume.com",
+                          "https://github.com/yamlresume/yamlresume",
+                          "https://linkedin.com/in/xiaohanyu1988",
+                          "https://www.example.com"
+                        ],
                         "$ref": "#/$defs/url"
                       },
                       {
@@ -1501,10 +2006,18 @@
                     "$ref": "#/$defs/summary"
                   },
                   "endDate": {
+                    "title": "[optional] End Date",
+                    "description": "A valid date string that can be parsed by `Date.parse` or `null`.",
+                    "examples": [
+                      "2025-01-01",
+                      "Jul 2025",
+                      "July 3, 2025",
+                      "2025-02-02T00:00:03.123Z"
+                    ],
                     "anyOf": [
                       {
-                        "title": "End Date",
-                        "description": "A valid date string that can be parsed by `Date.parse`.",
+                        "title": "[optional] End Date",
+                        "description": "A valid date string that can be parsed by `Date.parse` or `null`.",
                         "examples": [
                           "2025-01-01",
                           "Jul 2025",
@@ -1521,8 +2034,44 @@
                     ]
                   },
                   "keywords": {
+                    "title": "[optional] Keywords",
+                    "description": "An array of keyword, each between 1 and 32 characters or `null`.",
+                    "examples": [
+                      [
+                        "Javascript",
+                        "React",
+                        "Typescript"
+                      ],
+                      [
+                        "Design",
+                        "UI",
+                        "UX"
+                      ],
+                      [
+                        "Python",
+                        "Data Science"
+                      ]
+                    ],
                     "anyOf": [
                       {
+                        "title": "[optional] Keywords",
+                        "description": "An array of keyword, each between 1 and 32 characters or `null`.",
+                        "examples": [
+                          [
+                            "Javascript",
+                            "React",
+                            "Typescript"
+                          ],
+                          [
+                            "Design",
+                            "UI",
+                            "UX"
+                          ],
+                          [
+                            "Python",
+                            "Data Science"
+                          ]
+                        ],
                         "$ref": "#/$defs/keywords"
                       },
                       {
@@ -1531,8 +2080,26 @@
                     ]
                   },
                   "url": {
+                    "title": "[optional] URL",
+                    "description": "A valid URL with maximum length of 256 characters or `null`.",
+                    "examples": [
+                      "https://yamlresume.dev",
+                      "https://ppresume.com",
+                      "https://github.com/yamlresume/yamlresume",
+                      "https://linkedin.com/in/xiaohanyu1988",
+                      "https://www.example.com"
+                    ],
                     "anyOf": [
                       {
+                        "title": "[optional] URL",
+                        "description": "A valid URL with maximum length of 256 characters or `null`.",
+                        "examples": [
+                          "https://yamlresume.dev",
+                          "https://ppresume.com",
+                          "https://github.com/yamlresume/yamlresume",
+                          "https://linkedin.com/in/xiaohanyu1988",
+                          "https://www.example.com"
+                        ],
                         "$ref": "#/$defs/url"
                       },
                       {
@@ -1895,7 +2462,7 @@
     "keywords": {
       "id": "keywords",
       "title": "Keywords",
-      "description": "An array of keyword, each between 1 and 32 characters",
+      "description": "An array of keyword, each between 1 and 32 characters.",
       "examples": [
         [
           "Javascript",

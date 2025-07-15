@@ -316,7 +316,7 @@ export const KeywordsSchema = z
   .meta({
     id: 'keywords',
     title: 'Keywords',
-    description: 'An array of keyword, each between 1 and 32 characters',
+    description: 'An array of keyword, each between 1 and 32 characters.',
     examples: [
       ['Javascript', 'React', 'Typescript'],
       ['Design', 'UI', 'UX'],

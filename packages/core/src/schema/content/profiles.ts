@@ -29,6 +29,7 @@ import {
   SizedStringSchema,
   UrlSchema,
 } from '../primitives'
+import { nullifySchema } from '../utils'
 
 /**
  * A zod schema for a username.
@@ -48,7 +49,7 @@ export const ProfileItemSchema = z.object({
   username: UsernameSchema,
 
   // optional fields
-  url: UrlSchema.nullish(),
+  url: nullifySchema(UrlSchema),
 })
 
 /**

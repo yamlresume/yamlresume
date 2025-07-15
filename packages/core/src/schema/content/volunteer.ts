@@ -31,6 +31,7 @@ import {
   SummarySchema,
   UrlSchema,
 } from '../primitives'
+import { nullifySchema } from '../utils'
 
 /**
  * A zod schema for a volunteer organization.
@@ -72,8 +73,8 @@ export const VolunteerItemSchema = z.object({
   summary: SummarySchema,
 
   // optional fields
-  endDate: DateSchema('endDate').nullish(),
-  url: UrlSchema.nullish(),
+  endDate: nullifySchema(DateSchema('endDate')),
+  url: nullifySchema(UrlSchema),
 })
 /**
  * A zod schema for volunteer.

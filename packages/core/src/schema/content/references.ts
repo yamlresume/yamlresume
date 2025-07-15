@@ -31,6 +31,7 @@ import {
   SizedStringSchema,
   SummarySchema,
 } from '../primitives'
+import { nullifySchema } from '../utils'
 
 /**
  * A zod schema for a reference name.
@@ -61,9 +62,9 @@ export const ReferenceItemSchema = z.object({
   summary: SummarySchema,
 
   // optional fields
-  email: EmailSchema.nullish(),
-  phone: PhoneSchema.nullish(),
-  relationship: RelationshipSchema.nullish(),
+  email: nullifySchema(EmailSchema),
+  phone: nullifySchema(PhoneSchema),
+  relationship: nullifySchema(RelationshipSchema),
 })
 
 /**
