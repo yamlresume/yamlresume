@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.5.1](https://github.com/yamlresume/yamlresume/compare/v0.5.0...v0.5.1) (2025-07-15)
+
+
+### Features
+
+* bump schema.json version from 0.5.0 to 0.5.1 ([2882a01](https://github.com/yamlresume/yamlresume/commit/2882a019d326a666e94278521ccfb6d8d87e920a))
+* capitalize schema names to better align with types ([b1221b1](https://github.com/yamlresume/yamlresume/commit/b1221b19d129d28255b24b9344a6ce43348359a7))
+* prettify yaml.parse error in clang style ([deb61bf](https://github.com/yamlresume/yamlresume/commit/deb61bf34703b7222e6f282100e2504adb093190))
+
+
+### Bug Fixes
+
+* fixed broken references in README.md ([#35](https://github.com/yamlresume/yamlresume/issues/35)) ([b992dba](https://github.com/yamlresume/yamlresume/commit/b992dba8c67ab4b474d7a0ba6cce0483e1835dd2))
+* nullish fields should show metadata even when null ([682016b](https://github.com/yamlresume/yamlresume/commit/682016b9e474142322e7a886fb1fcff3e0ab5721))
+* sort validate errors by line numbers ascendingly ([47e0db4](https://github.com/yamlresume/yamlresume/commit/47e0db401e7efcae3a547b18d73df4a1a1366a7f))
+* sunset datetime for validation error message ([d34a6b0](https://github.com/yamlresume/yamlresume/commit/d34a6b0422fe5db77f05cf94ab32e0ed88c935f2))
+
 ## [0.5.0](https://github.com/yamlresume/yamlresume/compare/v0.4.2...v0.5.0) (2025-07-08)
 
 
