@@ -154,7 +154,7 @@ export function optionSchemaMessage(options: Options, messagePrefix: string) {
     [
       `${messagePrefix} option is invalid,`,
       'it must be one of the following:',
-      `[${options.map((option) => `"${option}"`).join(', ')}]`,
+      `[${options.map((option) => `"${option}"`).join(', ')}].`,
     ],
     ' '
   )
