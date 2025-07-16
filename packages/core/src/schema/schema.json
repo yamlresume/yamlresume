@@ -27,7 +27,7 @@
               "title": "Name",
               "description": "Your personal name.",
               "examples": [
-                "Andy Dufrane",
+                "Andy Dufresne",
                 "Xiao Hanyu",
                 "Jane Smith",
                 "Dr. Robert John"
@@ -524,7 +524,7 @@
                     "title": "Name",
                     "description": "The name of the certificate.",
                     "examples": [
-                      "Andy Dufrane",
+                      "Andy Dufresne",
                       "Xiao Hanyu",
                       "Jane Smith",
                       "Dr. Robert John"
@@ -615,7 +615,7 @@
                     "title": "Name",
                     "description": "The name of the interest.",
                     "examples": [
-                      "Andy Dufrane",
+                      "Andy Dufresne",
                       "Xiao Hanyu",
                       "Jane Smith",
                       "Dr. Robert John"
@@ -1329,7 +1329,7 @@
                     "title": "Name",
                     "description": "The name of the project.",
                     "examples": [
-                      "Andy Dufrane",
+                      "Andy Dufresne",
                       "Xiao Hanyu",
                       "Jane Smith",
                       "Dr. Robert John"
@@ -1509,7 +1509,7 @@
                     "title": "Name",
                     "description": "The name of the publication.",
                     "examples": [
-                      "Andy Dufrane",
+                      "Andy Dufresne",
                       "Xiao Hanyu",
                       "Jane Smith",
                       "Dr. Robert John"
@@ -1637,7 +1637,7 @@
                     "title": "Name",
                     "description": "The name of the reference.",
                     "examples": [
-                      "Andy Dufrane",
+                      "Andy Dufresne",
                       "Xiao Hanyu",
                       "Jane Smith",
                       "Dr. Robert John"
@@ -1764,7 +1764,7 @@
                     "title": "Name",
                     "description": "The name of the skill.",
                     "examples": [
-                      "Andy Dufrane",
+                      "Andy Dufresne",
                       "Xiao Hanyu",
                       "Jane Smith",
                       "Dr. Robert John"

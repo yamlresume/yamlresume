@@ -352,7 +352,7 @@ export const NameSchema = (name: string) =>
   SizedStringSchema(name, 2, 128).meta({
     title: startCase(name),
     description: `A ${name} between 2 and 128 characters.`,
-    examples: ['Andy Dufrane', 'Xiao Hanyu', 'Jane Smith', 'Dr. Robert John'],
+    examples: ['Andy Dufresne', 'Xiao Hanyu', 'Jane Smith', 'Dr. Robert John'],
   })
 
 /**
