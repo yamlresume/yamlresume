@@ -96,6 +96,31 @@ describe('LayoutSchema', () => {
           typography,
         },
       },
+      {
+        layout: {
+          sections: {
+            aliases: {
+              basics: 'Personal Information',
+              work: 'Professional Experience',
+            },
+          },
+        },
+      },
+      {
+        layout: {
+          locale,
+          margins,
+          page,
+          template,
+          typography,
+          sections: {
+            aliases: {
+              education: 'Academic Background',
+              skills: 'Technical Skills',
+            },
+          },
+        },
+      },
     ]
     for (const layout of tests) {
       expect(LayoutSchema.parse(layout)).toStrictEqual(layout)
@@ -239,6 +264,40 @@ describe('LayoutSchema', () => {
                       errors: [
                         optionSchemaMessage(FONT_SIZE_OPTIONS, 'font size'),
                       ],
+                    },
+                  },
+                },
+              },
+            },
+          },
+        },
+      },
+      {
+        layout: {
+          sections: {
+            aliases: {
+              basics: 'P'.repeat(129),
+            },
+          },
+        },
+        error: {
+          errors: [],
+          properties: {
+            layout: {
+              errors: [],
+              properties: {
+                sections: {
+                  errors: [],
+                  properties: {
+                    aliases: {
+                      errors: [],
+                      properties: {
+                        basics: {
+                          errors: [
+                            'basics alias should be 128 characters or less.',
+                          ],
+                        },
+                      },
                     },
                   },
                 },

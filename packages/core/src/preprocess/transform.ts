@@ -26,10 +26,10 @@ import { capitalize, cloneDeep, isArray, merge } from 'lodash-es'
 
 import { LatexCodeGenerator, type Parser } from '@/compiler'
 import {
+  type OrderableSectionID,
   type ProfileItem,
   type Resume,
   type ResumeContent,
-  type SectionID,
   defaultResumeLayout,
 } from '@/models'
 import { getOptionTranslation, getTemplateTranslations } from '@/translations'
@@ -623,9 +623,10 @@ export function transformProfileLinks(resume: Resume): Resume {
 
 /**
  * Translates standard section titles (like "Education", "Work") based on the
- * selected locale.
+ * selected locale, with support for section aliases.
  *
- * Stores the translations in `resume.content.computed.sectionNames`.
+ * Stores the translations in `resume.content.computed.sectionNames`. Section
+ * aliases in `layout.sections.alias` will override default translations.
  *
  * @param resume - The resume object.
  * @returns The transformed resume object.
@@ -640,11 +641,19 @@ export function transformSectionNames(resume: Resume): Resume {
           return translations
         }
 
-        translations[sectionName] = getOptionTranslation(
-          resume.layout.locale?.language,
-          'sections',
-          sectionName as SectionID
-        )
+        const sectionId = sectionName as OrderableSectionID
+
+        // Check if there's an alias for this section
+        const sectionAlias = resume.layout?.sections?.aliases?.[sectionId]
+
+        // Use the alias if provided, otherwise use default translation
+        translations[sectionName] =
+          sectionAlias ||
+          getOptionTranslation(
+            resume.layout.locale?.language,
+            'sections',
+            sectionId
+          )
 
         return translations
       },

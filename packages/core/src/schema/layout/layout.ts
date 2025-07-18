@@ -29,6 +29,7 @@ import { LatexSchema } from './latex'
 import { LocaleSchema } from './locale'
 import { MarginsSchema } from './margins'
 import { PageSchema } from './page'
+import { SectionsSchema } from './sections'
 import { TemplateSchema } from './template'
 import { TypographySchema } from './typography'
 
@@ -46,6 +47,7 @@ export const LayoutSchema = z.object({
       ...LocaleSchema.shape,
       ...MarginsSchema.shape,
       ...PageSchema.shape,
+      ...SectionsSchema.shape,
       ...TemplateSchema.shape,
       ...TypographySchema.shape,
     })

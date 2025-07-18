@@ -211,8 +211,30 @@ export const SECTION_IDS = [
   'basics',
   'location',
   'profiles',
-  'work',
   'education',
+  'work',
+  'volunteer',
+  'awards',
+  'certificates',
+  'publications',
+  'skills',
+  'languages',
+  'interests',
+  'references',
+  'projects',
+] as const
+
+/**
+ * All valid top-level sections in the resume that can be aliased and re-ordered.
+ *
+ * `location` and `profiles` are not excluded as these are not real sections,
+ * e.g, `location` and `profiles` information are not rendered as sections in
+ * the final resume.
+ */
+export const ORDERABLE_SECTION_IDS = [
+  'basics',
+  'education',
+  'work',
   'volunteer',
   'awards',
   'certificates',

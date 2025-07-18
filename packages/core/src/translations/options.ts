@@ -31,7 +31,7 @@ import type {
   Language,
   Level,
   LocaleLanguage,
-  SectionID,
+  OrderableSectionID,
 } from '@/models'
 
 import {
@@ -53,7 +53,7 @@ type OptionTranslation = {
   /** Translations for language names. */
   languages: Record<Language, string>
   /** Translations for resume section titles. */
-  sections: Record<SectionID, string>
+  sections: Record<OrderableSectionID, string>
   /** Translations for skill proficiency levels. */
   skills: Record<Level, string>
 }
@@ -182,8 +182,6 @@ export function getOptionTranslation<K extends OptionCategory>(
         education: 'Education',
         interests: 'Interests',
         languages: 'Languages',
-        location: 'Location',
-        profiles: 'Profiles',
         projects: 'Projects',
         publications: 'Publications',
         references: 'References',
@@ -302,8 +300,6 @@ export function getOptionTranslation<K extends OptionCategory>(
         education: '教育背景',
         interests: '兴趣爱好',
         languages: '语言',
-        location: '地址',
-        profiles: '社交信息',
         projects: '项目',
         publications: '出版刊物',
         references: '引荐',
@@ -422,8 +418,6 @@ export function getOptionTranslation<K extends OptionCategory>(
         education: '教育背景',
         interests: '興趣愛好',
         languages: '語言',
-        location: '地址',
-        profiles: '社交信息',
         projects: '項目',
         publications: '出版刊物',
         references: '引薦',
@@ -542,8 +536,6 @@ export function getOptionTranslation<K extends OptionCategory>(
         education: '教育背景',
         interests: '興趣愛好',
         languages: '語言',
-        location: '地址',
-        profiles: '社交信息',
         projects: '項目',
         publications: '出版刊物',
         references: '引薦',
@@ -663,8 +655,6 @@ export function getOptionTranslation<K extends OptionCategory>(
         education: 'Educación',
         interests: 'Intereses',
         languages: 'Idiomas',
-        location: 'Ubicación',
-        profiles: 'Perfiles',
         projects: 'Proyectos',
         publications: 'Publicaciones',
         references: 'Referencias',

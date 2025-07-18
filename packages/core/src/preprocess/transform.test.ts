@@ -30,9 +30,9 @@ import {
   LOCALE_LANGUAGE_OPTIONS,
   type LocaleLanguage,
   type Network,
+  ORDERABLE_SECTION_IDS,
   type ProfileItem,
   type ResumeLayout,
-  SECTION_IDS,
   defaultResume,
   filledResume,
 } from '@/models'
@@ -652,7 +652,7 @@ describe(transformSectionNames, () => {
 
       transformSectionNames(resume)
 
-      SECTION_IDS.forEach((section) => {
+      ORDERABLE_SECTION_IDS.forEach((section) => {
         expect(resume.content.computed?.sectionNames?.[section]).toEqual(
           getOptionTranslation(
             resume.layout.locale.language,
@@ -662,6 +662,98 @@ describe(transformSectionNames, () => {
         )
       })
     })
+  })
+
+  it('should use section aliases when provided in layout.sections.alias', () => {
+    const resume = cloneDeep(defaultResume)
+    resume.layout.locale.language = 'en'
+
+    // Set some section aliases
+    resume.layout.sections = {
+      aliases: {
+        basics: 'Personal Information',
+        work: 'Professional Experience',
+        education: 'Academic Background',
+      },
+    }
+
+    transformSectionNames(resume)
+
+    // Check that section aliases are used
+    expect(resume.content.computed?.sectionNames?.basics).toEqual(
+      'Personal Information'
+    )
+    expect(resume.content.computed?.sectionNames?.work).toEqual(
+      'Professional Experience'
+    )
+    expect(resume.content.computed?.sectionNames?.education).toEqual(
+      'Academic Background'
+    )
+
+    // Check that other sections still use default translations
+    expect(resume.content.computed?.sectionNames?.skills).toEqual(
+      getOptionTranslation('en', 'sections', 'skills')
+    )
+    expect(resume.content.computed?.sectionNames?.languages).toEqual(
+      getOptionTranslation('en', 'sections', 'languages')
+    )
+  })
+
+  it('should work correctly when sections.alias is undefined', () => {
+    const resume = cloneDeep(defaultResume)
+    resume.layout.locale.language = 'en'
+
+    // Ensure sections.alias is undefined
+    resume.layout.sections = {}
+
+    transformSectionNames(resume)
+
+    // Check that all sections use default translations
+    ORDERABLE_SECTION_IDS.forEach((section) => {
+      expect(resume.content.computed?.sectionNames?.[section]).toEqual(
+        getOptionTranslation('en', 'sections', section)
+      )
+    })
+  })
+
+  it('should work correctly in the full transform pipeline', () => {
+    const resume = cloneDeep(defaultResume)
+    resume.layout.locale.language = 'en'
+
+    // Set section aliases
+    resume.layout.sections = {
+      aliases: {
+        basics: 'Personal Information',
+        work: 'Professional Experience',
+        education: 'Academic Background',
+        skills: 'Technical Skills',
+      },
+    }
+
+    const summaryParser = new MarkdownParser()
+    const transformedResume = transformResumeContent(resume, summaryParser)
+
+    // Check that section aliases are used in the final transformed resume
+    expect(transformedResume.content.computed?.sectionNames?.basics).toEqual(
+      'Personal Information'
+    )
+    expect(transformedResume.content.computed?.sectionNames?.work).toEqual(
+      'Professional Experience'
+    )
+    expect(transformedResume.content.computed?.sectionNames?.education).toEqual(
+      'Academic Background'
+    )
+    expect(transformedResume.content.computed?.sectionNames?.skills).toEqual(
+      'Technical Skills'
+    )
+
+    // Check that other sections still use default translations
+    expect(transformedResume.content.computed?.sectionNames?.languages).toEqual(
+      getOptionTranslation('en', 'sections', 'languages')
+    )
+    expect(transformedResume.content.computed?.sectionNames?.projects).toEqual(
+      getOptionTranslation('en', 'sections', 'projects')
+    )
   })
 })
 

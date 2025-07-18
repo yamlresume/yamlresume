@@ -32,6 +32,7 @@ import type {
   LEVEL_OPTIONS,
   LOCALE_LANGUAGE_OPTIONS,
   NETWORK_OPTIONS,
+  ORDERABLE_SECTION_IDS,
   SECTION_IDS,
   TEMPLATE_OPTIONS,
 } from '@/models'
@@ -70,6 +71,11 @@ export type Level = (typeof LEVEL_OPTIONS)[number]
  * A union type for all possible section IDs.
  */
 export type SectionID = (typeof SECTION_IDS)[number]
+
+/**
+ * A union type for all possible section IDs that can be aliased and re-ordered.
+ */
+export type OrderableSectionID = (typeof ORDERABLE_SECTION_IDS)[number]
 
 /**
  * A union type for all possible template options.
@@ -784,6 +790,14 @@ type ResumeLayoutPage = {
 }
 
 /**
+ * Defines section alias settings for customizing section names.
+ */
+type ResumeLayoutSections = {
+  /** Custom aliases for section names, overriding default translations. */
+  aliases?: Partial<Record<OrderableSectionID, string>>
+}
+
+/**
  * Defines the overall layout configuration.
  */
 export type ResumeLayout = {
@@ -793,6 +807,8 @@ export type ResumeLayout = {
   margins?: ResumeLayoutMargins
   /** Defines page-level settings for document presentation. */
   page?: ResumeLayoutPage
+  /** Defines section customization settings. */
+  sections?: ResumeLayoutSections
   /** Defines the selected template. */
   template?: Template
   /** Defines typography settings for document formatting. */
