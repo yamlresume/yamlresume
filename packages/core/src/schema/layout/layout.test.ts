@@ -31,8 +31,9 @@ import {
   TEMPLATE_OPTIONS,
 } from '@/models'
 import { LayoutSchema } from '.'
-import { marginSizeSchemaMessage, optionSchemaMessage } from '../primitives'
+import { optionSchemaMessage } from '../primitives'
 import { expectSchemaMetadata, validateZodErrors } from '../utils'
+import { marginSizeSchemaMessage } from './margins'
 
 describe('LayoutSchema', () => {
   it('should have correct metadata', () => {

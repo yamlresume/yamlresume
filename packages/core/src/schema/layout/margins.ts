@@ -22,11 +22,101 @@
  * IN THE SOFTWARE.
  */
 
+import { startCase } from 'lodash-es'
 import { z } from 'zod/v4'
 
 import { joinNonEmptyString } from '@/utils'
-import { MarginSizeSchema } from '../primitives'
+import { SizedStringSchema } from '../primitives'
 import { nullifySchema } from '../utils'
+
+type Position = 'top' | 'bottom' | 'left' | 'right'
+
+/**
+ * Creates an error message for a marginSizeSchema
+ *
+ * @param options - The options to create a message for.
+ * @param messagePrefix - The message prefix to use for the message.
+ * @returns A message for an option schema.
+ */
+export function marginSizeSchemaMessage(position: Position) {
+  return joinNonEmptyString(
+    [
+      `invalid ${position} margin size,`,
+      `${position} margin must be a positive number followed by`,
+      `"cm", "pt" or "in", eg: "2.5cm", "1in", "72pt"`,
+    ],
+    ' '
+  )
+}
+
+/**
+ * Creates a zod schema for a margin size.
+ *
+ * Accepts positive numbers followed by valid units: cm, pt, or in
+ * Examples: "2.5cm", "1in", "72pt"
+ */
+export function MarginSizeSchema(position: Position) {
+  // We could simply use `z.string()` here with a custom check, but we use
+  // `SizedStringSchema` in order to get best JSON Schema capabilities.
+  return (
+    SizedStringSchema(`${position} margin`, 2, 32)
+      // Please note that here we added a custom check, inside which we will
+      // override `ctx.issues`, therefore marginSizeSchema will always return one
+      // and only one precise issue if the value is not valid.
+      .check((ctx) => {
+        if (ctx.value.length < 2) {
+          ctx.issues = [
+            {
+              code: 'too_small',
+              input: ctx.value,
+              minimum: 2,
+              message: `${position} margin should be 2 characters or more.`,
+              origin: 'string',
+            },
+          ]
+
+          return
+        }
+
+        if (ctx.value.length > 32) {
+          ctx.issues = [
+            {
+              code: 'too_big',
+              input: ctx.value,
+              maximum: 32,
+              message: `${position} margin should be 32 characters or less.`,
+              origin: 'string',
+            },
+          ]
+
+          return
+        }
+
+        if (!ctx.value.match(/^\d+(\.\d+)?(cm|pt|in)$/)) {
+          ctx.issues = [
+            {
+              code: 'invalid_value',
+              input: ctx.value,
+              message: marginSizeSchemaMessage(position),
+              origin: 'string',
+              values: [ctx.value],
+            },
+          ]
+        }
+      })
+      .meta({
+        title: startCase(`${position} margin size`),
+        description: joinNonEmptyString(
+          [
+            'A positive number followed by valid units: cm, pt, or in.',
+            'Examples: "2.5cm", "1in", "72pt".',
+          ],
+          ' '
+        ),
+        examples: ['2.5cm', '1in', '72pt', '0.5cm', '12pt'],
+      })
+  )
+}
 
 /**
  * A zod schema for validating margin configuration.

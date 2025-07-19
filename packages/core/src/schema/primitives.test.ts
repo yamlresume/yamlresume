@@ -49,7 +49,6 @@ import {
   LanguageOptionSchema,
   LevelOptionSchema,
   LocaleLanguageOptionSchema,
-  MarginSizeSchema,
   NameSchema,
   NetworkOptionSchema,
   OrganizationSchema,
@@ -58,7 +57,6 @@ import {
   SummarySchema,
   TemplateOptionSchema,
   UrlSchema,
-  marginSizeSchemaMessage,
   optionSchemaMessage,
 } from './primitives'
 
@@ -596,77 +594,6 @@ describe('LocaleLanguageOptionSchema', () => {
 
   it('should have correct metadata', () => {
     expectSchemaMetadata(LocaleLanguageOptionSchema)
-  })
-})
-
-describe('MarginSizeSchema', () => {
-  it('should return a margin size if it is valid', () => {
-    const tests = ['2.5cm', '1in', '72pt', '0.5cm', '12pt']
-
-    for (const test of tests) {
-      expect(MarginSizeSchema('top').parse(test)).toBe(test)
-    }
-  })
-
-  it('should throw an error if the margin size is invalid', () => {
-    const tests = [
-      {
-        top: '2',
-        error: {
-          errors: ['top margin should be 2 characters or more.'],
-        },
-      },
-      {
-        top: '2'.repeat(33),
-        error: {
-          errors: ['top margin should be 32 characters or less.'],
-        },
-      },
-      {
-        top: '2.5',
-        error: {
-          errors: [marginSizeSchemaMessage('top')],
-        },
-      },
-      {
-        top: '2.5px',
-        error: {
-          errors: [marginSizeSchemaMessage('top')],
-        },
-      },
-      {
-        top: 'abc',
-        error: {
-          errors: [marginSizeSchemaMessage('top')],
-        },
-      },
-      {
-        top: '-2.5cm',
-        error: {
-          errors: [marginSizeSchemaMessage('top')],
-        },
-      },
-      {
-        top: undefined,
-        error: {
-          errors: ['top margin is required.'],
-        },
-      },
-    ]
-
-    for (const { top, error } of tests) {
-      validateZodErrors(MarginSizeSchema('top'), top, error)
-    }
-  })
-
-  it('should have correct metadata for top margin', () => {
-    const schema = MarginSizeSchema('top')
-    expectSchemaMetadata(schema)
-  })
-
-  it('should have correct metadata for bottom margin', () => {
-    const schema = MarginSizeSchema('bottom')
-    expectSchemaMetadata(schema)
   })
 })
 
