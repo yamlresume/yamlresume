@@ -25,11 +25,12 @@
 import { z } from 'zod/v4'
 
 import { joinNonEmptyString } from '@/utils'
+import { nullifySchema } from '../utils'
 
 /**
  * A zod schema for the show page numbers setting.
  */
-export const ShowPageNumbersSchema = z.boolean().nullish().meta({
+export const ShowPageNumbersSchema = z.boolean().meta({
   title: 'Show Page Numbers',
   description: 'Whether to show page numbers on the page.',
 })
@@ -42,7 +43,7 @@ export const ShowPageNumbersSchema = z.boolean().nullish().meta({
 export const PageSchema = z.object({
   page: z
     .object({
-      showPageNumbers: ShowPageNumbersSchema,
+      showPageNumbers: nullifySchema(ShowPageNumbersSchema),
     })
     .nullish()
     .meta({

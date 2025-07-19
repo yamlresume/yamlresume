@@ -26,6 +26,7 @@ import { z } from 'zod/v4'
 
 import { joinNonEmptyString } from '@/utils'
 import { FontspecNumbersOptionSchema } from '../primitives'
+import { nullifySchema } from '../utils'
 
 /**
  * A zod schema for validating LaTeX configuration.
@@ -38,7 +39,7 @@ export const LatexSchema = z.object({
     .object({
       fontspec: z
         .object({
-          numbers: FontspecNumbersOptionSchema.nullish(),
+          numbers: nullifySchema(FontspecNumbersOptionSchema),
         })
         .nullish(),
     })

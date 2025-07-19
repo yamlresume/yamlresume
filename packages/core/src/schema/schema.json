@@ -2149,10 +2149,12 @@
                           "type": "object",
                           "properties": {
                             "numbers": {
+                              "title": "[optional] Fontspec Numbers Option",
+                              "description": "A predefined option from the available fontspec numbers choices or `null`.",
                               "anyOf": [
                                 {
-                                  "title": "Fontspec Numbers Option",
-                                  "description": "A predefined option from the available fontspec numbers choices.",
+                                  "title": "[optional] Fontspec Numbers Option",
+                                  "description": "A predefined option from the available fontspec numbers choices or `null`.",
                                   "type": "string",
                                   "enum": [
                                     "Lining",
@@ -2189,10 +2191,12 @@
                   "type": "object",
                   "properties": {
                     "language": {
+                      "title": "[optional] Locale Language Option",
+                      "description": "A predefined option from the available locale language choices or `null`.",
                       "anyOf": [
                         {
-                          "title": "Locale Language Option",
-                          "description": "A predefined option from the available locale language choices.",
+                          "title": "[optional] Locale Language Option",
+                          "description": "A predefined option from the available locale language choices or `null`.",
                           "type": "string",
                           "enum": [
                             "en",
@@ -2223,10 +2227,19 @@
                   "type": "object",
                   "properties": {
                     "top": {
+                      "title": "[optional] Top Margin Size",
+                      "description": "A positive number followed by valid units: cm, pt, or in. Examples: \"2.5cm\", \"1in\", \"72pt\" or `null`.",
+                      "examples": [
+                        "2.5cm",
+                        "1in",
+                        "72pt",
+                        "0.5cm",
+                        "12pt"
+                      ],
                       "anyOf": [
                         {
-                          "title": "Top Margin Size",
-                          "description": "A positive number followed by valid units: cm, pt, or in. Examples: \"2.5cm\", \"1in\", \"72pt\".",
+                          "title": "[optional] Top Margin Size",
+                          "description": "A positive number followed by valid units: cm, pt, or in. Examples: \"2.5cm\", \"1in\", \"72pt\" or `null`.",
                           "examples": [
                             "2.5cm",
                             "1in",
@@ -2244,10 +2257,19 @@
                       ]
                     },
                     "bottom": {
+                      "title": "[optional] Bottom Margin Size",
+                      "description": "A positive number followed by valid units: cm, pt, or in. Examples: \"2.5cm\", \"1in\", \"72pt\" or `null`.",
+                      "examples": [
+                        "2.5cm",
+                        "1in",
+                        "72pt",
+                        "0.5cm",
+                        "12pt"
+                      ],
                       "anyOf": [
                         {
-                          "title": "Bottom Margin Size",
-                          "description": "A positive number followed by valid units: cm, pt, or in. Examples: \"2.5cm\", \"1in\", \"72pt\".",
+                          "title": "[optional] Bottom Margin Size",
+                          "description": "A positive number followed by valid units: cm, pt, or in. Examples: \"2.5cm\", \"1in\", \"72pt\" or `null`.",
                           "examples": [
                             "2.5cm",
                             "1in",
@@ -2265,10 +2287,19 @@
                       ]
                     },
                     "left": {
+                      "title": "[optional] Left Margin Size",
+                      "description": "A positive number followed by valid units: cm, pt, or in. Examples: \"2.5cm\", \"1in\", \"72pt\" or `null`.",
+                      "examples": [
+                        "2.5cm",
+                        "1in",
+                        "72pt",
+                        "0.5cm",
+                        "12pt"
+                      ],
                       "anyOf": [
                         {
-                          "title": "Left Margin Size",
-                          "description": "A positive number followed by valid units: cm, pt, or in. Examples: \"2.5cm\", \"1in\", \"72pt\".",
+                          "title": "[optional] Left Margin Size",
+                          "description": "A positive number followed by valid units: cm, pt, or in. Examples: \"2.5cm\", \"1in\", \"72pt\" or `null`.",
                           "examples": [
                             "2.5cm",
                             "1in",
@@ -2286,10 +2317,19 @@
                       ]
                     },
                     "right": {
+                      "title": "[optional] Right Margin Size",
+                      "description": "A positive number followed by valid units: cm, pt, or in. Examples: \"2.5cm\", \"1in\", \"72pt\" or `null`.",
+                      "examples": [
+                        "2.5cm",
+                        "1in",
+                        "72pt",
+                        "0.5cm",
+                        "12pt"
+                      ],
                       "anyOf": [
                         {
-                          "title": "Right Margin Size",
-                          "description": "A positive number followed by valid units: cm, pt, or in. Examples: \"2.5cm\", \"1in\", \"72pt\".",
+                          "title": "[optional] Right Margin Size",
+                          "description": "A positive number followed by valid units: cm, pt, or in. Examples: \"2.5cm\", \"1in\", \"72pt\" or `null`.",
                           "examples": [
                             "2.5cm",
                             "1in",
@@ -2322,10 +2362,12 @@
                   "type": "object",
                   "properties": {
                     "showPageNumbers": {
-                      "title": "Show Page Numbers",
-                      "description": "Whether to show page numbers on the page.",
+                      "title": "[optional] Show Page Numbers",
+                      "description": "Whether to show page numbers on the page or `null`.",
                       "anyOf": [
                         {
+                          "title": "[optional] Show Page Numbers",
+                          "description": "Whether to show page numbers on the page or `null`.",
                           "type": "boolean"
                         },
                         {
@@ -2568,8 +2610,8 @@
               "description": "The template section contains the resume template selection, determining the overall visual style and layout.",
               "anyOf": [
                 {
-                  "title": "Template Option",
-                  "description": "A predefined option from the available template choices.",
+                  "title": "[optional] Template Option",
+                  "description": "A predefined option from the available template choices or `null`.",
                   "type": "string",
                   "enum": [
                     "moderncv-banking",
@@ -2590,10 +2632,12 @@
                   "type": "object",
                   "properties": {
                     "fontSize": {
+                      "title": "[optional] Font Size Option",
+                      "description": "A predefined option from the available font size choices or `null`.",
                       "anyOf": [
                         {
-                          "title": "Font Size Option",
-                          "description": "A predefined option from the available font size choices.",
+                          "title": "[optional] Font Size Option",
+                          "description": "A predefined option from the available font size choices or `null`.",
                           "type": "string",
                           "enum": [
                             "10pt",

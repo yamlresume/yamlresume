@@ -26,6 +26,7 @@ import { z } from 'zod/v4'
 
 import { joinNonEmptyString } from '@/utils'
 import { TemplateOptionSchema } from '../primitives'
+import { nullifySchema } from '../utils'
 
 /**
  * A zod schema for validating template configuration.
@@ -33,7 +34,7 @@ import { TemplateOptionSchema } from '../primitives'
  * Validates that the template field contains a valid template option.
  */
 export const TemplateSchema = z.object({
-  template: TemplateOptionSchema.nullish().meta({
+  template: nullifySchema(TemplateOptionSchema).meta({
     title: 'Template',
     description: joinNonEmptyString(
       [

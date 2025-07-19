@@ -26,6 +26,7 @@ import { z } from 'zod/v4'
 
 import { joinNonEmptyString } from '@/utils'
 import { FontSizeOptionSchema } from '../primitives'
+import { nullifySchema } from '../utils'
 
 /**
  * A zod schema for typography settings.
@@ -33,7 +34,7 @@ import { FontSizeOptionSchema } from '../primitives'
 export const TypographySchema = z.object({
   typography: z
     .object({
-      fontSize: FontSizeOptionSchema.nullish(),
+      fontSize: nullifySchema(FontSizeOptionSchema),
     })
     .nullish()
     .meta({
