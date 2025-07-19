@@ -24,7 +24,8 @@
 
 import { z } from 'zod/v4'
 
-import { SizedStringSchema } from '../primitives'
+import { ORDERABLE_SECTION_IDS } from '@/models'
+import { SizedStringSchema, optionSchema } from '../primitives'
 import { nullifySchema } from '../utils'
 
 /**
@@ -67,12 +68,26 @@ export const AliasesSchema = z.object({
 })
 
 /**
+ * A zod schema for section order configuration.
+ */
+export const OrderSchema = z.object({
+  order: z
+    .array(optionSchema(ORDERABLE_SECTION_IDS, 'section'))
+    .nullish()
+    .meta({
+      title: 'Order',
+      description: 'Custom order for sections in the final output.',
+    }),
+})
+
+/**
  * A zod schema for section alias configuration.
  */
 export const SectionsSchema = z.object({
   sections: z
     .object({
       ...AliasesSchema.shape,
+      ...OrderSchema.shape,
     })
     .nullish()
     .meta({

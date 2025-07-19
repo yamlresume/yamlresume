@@ -795,6 +795,8 @@ type ResumeLayoutPage = {
 type ResumeLayoutSections = {
   /** Custom aliases for section names, overriding default translations. */
   aliases?: Partial<Record<OrderableSectionID, string>>
+  /** Custom order for sections in the final output. */
+  order?: OrderableSectionID[]
 }
 
 /**

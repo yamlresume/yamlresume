@@ -22,7 +22,9 @@
  * IN THE SOFTWARE.
  */
 
-import type { Resume } from '@/models'
+import type { OrderableSectionID, Resume } from '@/models'
+import { DEFAULT_SECTIONS_ORDER } from '@/models'
+import { joinNonEmptyString, mergeArrayWithOrder } from '@/utils'
 
 /**
  * Abstract class for rendering resumes in TeX format.
@@ -178,6 +180,37 @@ abstract class Renderer {
    * @returns {string} The rendered resume
    */
   abstract render(): string
+
+  /**
+   * Render sections in the specified order.
+   *
+   * @returns {string} The rendered sections in the specified order
+   */
+  protected renderOrderedSections(): string {
+    const customOrder = this.resume.layout?.sections?.order
+    const order = mergeArrayWithOrder(customOrder, DEFAULT_SECTIONS_ORDER)
+
+    const sectionRenderers: Record<OrderableSectionID, () => string> = {
+      basics: () => this.renderSummary(),
+      education: () => this.renderEducation(),
+      work: () => this.renderWork(),
+      languages: () => this.renderLanguages(),
+      skills: () => this.renderSkills(),
+      awards: () => this.renderAwards(),
+      certificates: () => this.renderCertificates(),
+      publications: () => this.renderPublications(),
+      references: () => this.renderReferences(),
+      projects: () => this.renderProjects(),
+      interests: () => this.renderInterests(),
+      volunteer: () => this.renderVolunteer(),
+    }
+
+    const renderedSections = order
+      .map((sectionId) => sectionRenderers[sectionId]())
+      .filter((rendered) => rendered.trim() !== '')
+
+    return joinNonEmptyString(renderedSections)
+  }
 }
 
 export { Renderer }

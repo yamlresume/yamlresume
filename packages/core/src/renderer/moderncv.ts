@@ -633,20 +633,7 @@ ${content.volunteer
 
 \\maketitle
 
-${joinNonEmptyString([
-  this.renderSummary(),
-  this.renderEducation(),
-  this.renderWork(),
-  this.renderLanguages(),
-  this.renderSkills(),
-  this.renderAwards(),
-  this.renderCertificates(),
-  this.renderPublications(),
-  this.renderReferences(),
-  this.renderProjects(),
-  this.renderInterests(),
-  this.renderVolunteer(),
-])}
+${this.renderOrderedSections()}
 \\end{document}`
   }
 }

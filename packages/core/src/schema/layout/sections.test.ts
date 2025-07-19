@@ -24,8 +24,16 @@
 
 import { describe, expect, it } from 'vitest'
 
+import { ORDERABLE_SECTION_IDS } from '@/models'
+import { optionSchemaMessage } from '../primitives'
 import { validateZodErrors } from '../utils'
-import { AliasNameSchema, AliasesSchema, SectionsSchema } from './sections'
+
+import {
+  AliasNameSchema,
+  AliasesSchema,
+  OrderSchema,
+  SectionsSchema,
+} from './sections'
 
 describe('AliasNameSchema', () => {
   const schema = AliasNameSchema('section')
@@ -159,6 +167,138 @@ describe('AliasesSchema', () => {
   })
 })
 
+describe('OrderSchema', () => {
+  it('should validate correct order array', () => {
+    const tests = [
+      {
+        order: null,
+      },
+      {
+        order: undefined,
+      },
+      {
+        order: [],
+      },
+      {
+        order: ['education', 'work', 'skills'],
+      },
+      {
+        order: [
+          'basics',
+          'education',
+          'work',
+          'volunteer',
+          'awards',
+          'certificates',
+          'publications',
+          'skills',
+          'languages',
+          'interests',
+          'references',
+          'projects',
+        ],
+      },
+      {
+        order: ['work', 'education'],
+      },
+    ]
+
+    for (const test of tests) {
+      expect(OrderSchema.parse(test)).toStrictEqual(test)
+    }
+  })
+
+  it('should throw an error if order contains invalid section IDs', () => {
+    const tests = [
+      {
+        order: ['invalid-section', 'education'],
+        error: {
+          errors: [],
+          properties: {
+            order: {
+              errors: [],
+              items: [
+                {
+                  errors: [
+                    optionSchemaMessage(ORDERABLE_SECTION_IDS, 'section'),
+                  ],
+                },
+              ],
+            },
+          },
+        },
+      },
+      {
+        order: ['education', 'invalid-section'],
+        error: {
+          errors: [],
+          properties: {
+            order: {
+              errors: [],
+              items: [
+                undefined,
+                {
+                  errors: [
+                    optionSchemaMessage(ORDERABLE_SECTION_IDS, 'section'),
+                  ],
+                },
+              ],
+            },
+          },
+        },
+      },
+    ]
+
+    for (const { order, error } of tests) {
+      // @ts-ignore - Testing invalid input
+      validateZodErrors(OrderSchema, { order }, error)
+    }
+  })
+
+  it('should throw an error if order is not an array', () => {
+    const tests = [
+      {
+        order: 'education',
+        error: {
+          errors: [],
+          properties: {
+            order: {
+              errors: ['Invalid input: expected array, received string'],
+            },
+          },
+        },
+      },
+      {
+        order: 123,
+        error: {
+          errors: [],
+          properties: {
+            order: {
+              errors: ['Invalid input: expected array, received number'],
+            },
+          },
+        },
+      },
+      {
+        order: {},
+        error: {
+          errors: [],
+          properties: {
+            order: {
+              errors: ['Invalid input: expected array, received object'],
+            },
+          },
+        },
+      },
+    ]
+
+    for (const { order, error } of tests) {
+      // @ts-ignore - Testing invalid input
+      validateZodErrors(OrderSchema, { order }, error)
+    }
+  })
+})
+
 describe('SectionsSchema', () => {
   it('should validate correct sections object', () => {
     const basics = 'Basic Info'
@@ -217,6 +357,21 @@ describe('SectionsSchema', () => {
           },
         },
       },
+      {
+        sections: {
+          order: ['education', 'work', 'skills'],
+        },
+      },
+      {
+        sections: {
+          aliases: {
+            basics,
+            education,
+            work,
+          },
+          order: ['education', 'work', 'skills', 'languages'],
+        },
+      },
     ]
 
     for (const test of tests) {
@@ -269,6 +424,42 @@ describe('SectionsSchema', () => {
     ]
 
     for (const { sections, error } of tests) {
+      validateZodErrors(SectionsSchema, { sections }, error)
+    }
+  })
+
+  it('should throw an error if order contains invalid section IDs', () => {
+    const tests = [
+      {
+        sections: {
+          // @ts-ignore - Testing invalid input
+          order: ['invalid-section', 'education'],
+        },
+        error: {
+          errors: [],
+          properties: {
+            sections: {
+              errors: [],
+              properties: {
+                order: {
+                  errors: [],
+                  items: [
+                    {
+                      errors: [
+                        optionSchemaMessage(ORDERABLE_SECTION_IDS, 'section'),
+                      ],
+                    },
+                  ],
+                },
+              },
+            },
+          },
+        },
+      },
+    ]
+
+    for (const { sections, error } of tests) {
+      // @ts-ignore - Testing invalid input
       validateZodErrors(SectionsSchema, { sections }, error)
     }
   })

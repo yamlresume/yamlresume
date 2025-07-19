@@ -2596,6 +2596,37 @@
                           "type": "null"
                         }
                       ]
+                    },
+                    "order": {
+                      "title": "Order",
+                      "description": "Custom order for sections in the final output.",
+                      "anyOf": [
+                        {
+                          "type": "array",
+                          "items": {
+                            "title": "Section Option",
+                            "description": "A predefined option from the available section choices.",
+                            "type": "string",
+                            "enum": [
+                              "basics",
+                              "education",
+                              "work",
+                              "volunteer",
+                              "awards",
+                              "certificates",
+                              "publications",
+                              "skills",
+                              "languages",
+                              "interests",
+                              "references",
+                              "projects"
+                            ]
+                          }
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
                     }
                   },
                   "additionalProperties": false

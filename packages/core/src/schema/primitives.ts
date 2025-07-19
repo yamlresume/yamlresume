@@ -34,6 +34,7 @@ import {
   LEVEL_OPTIONS,
   LOCALE_LANGUAGE_OPTIONS,
   NETWORK_OPTIONS,
+  type ORDERABLE_SECTION_IDS,
   TEMPLATE_OPTIONS,
 } from '@/models'
 import { joinNonEmptyString } from '@/utils'
@@ -52,6 +53,7 @@ type Options =
   | typeof LEVEL_OPTIONS
   | typeof NETWORK_OPTIONS
   | typeof TEMPLATE_OPTIONS
+  | typeof ORDERABLE_SECTION_IDS
 
 /**
  * Creates an error message for an optionSchema
@@ -78,7 +80,7 @@ export function optionSchemaMessage(options: Options, messagePrefix: string) {
  * @param messagePrefix - The message to use for the schema.
  * @returns A Zod schema for an option.
  */
-function optionSchema(options: Options, messagePrefix: string) {
+export function optionSchema(options: Options, messagePrefix: string) {
   return z
     .enum(options, {
       error: (issue) => {

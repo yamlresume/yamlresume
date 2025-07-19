@@ -707,4 +707,122 @@ describe('ModerncvBase', () => {
       expect(result).toContain('')
     })
   })
+
+  describe('generateTeX -> renderOrderedSections', () => {
+    it('should prioritize custom sections', () => {
+      // set up a resume with partial custom section order
+      resume.layout = {
+        ...resume.layout,
+        sections: {
+          order: ['work', 'education'],
+        },
+      }
+
+      renderer = new ModerncvBankingRenderer(resume, summaryParser)
+      const result = renderer.render()
+
+      // extract the section order from the rendered output
+      const sectionMatches = result.match(/\\section\{[^}]+\}/g) || []
+      const sectionNames = sectionMatches.map((match) =>
+        match.replace(/\\section\{/, '').replace(/\}/, '')
+      )
+
+      // find the indices of the sections we care about
+      const workIndex = sectionNames.findIndex((name) => name.includes('Work'))
+      const educationIndex = sectionNames.findIndex((name) =>
+        name.includes('Education')
+      )
+      const languagesIndex = sectionNames.findIndex((name) =>
+        name.includes('Languages')
+      )
+      const skillsIndex = sectionNames.findIndex((name) =>
+        name.includes('Skills')
+      )
+
+      // verify the order: work should come first, then education, then
+      // remaining sections in default order
+      expect(workIndex).toBeGreaterThan(-1)
+      expect(educationIndex).toBeGreaterThan(-1)
+      expect(languagesIndex).toBeGreaterThan(-1)
+      expect(skillsIndex).toBeGreaterThan(-1)
+      expect(workIndex).toBeLessThan(educationIndex)
+      expect(educationIndex).toBeLessThan(languagesIndex)
+      expect(languagesIndex).toBeLessThan(skillsIndex)
+    })
+
+    it('should use default order when no custom order is specified', () => {
+      // ensure no custom order is set
+      resume.layout = {
+        ...resume.layout,
+        sections: {},
+      }
+
+      renderer = new ModerncvBankingRenderer(resume, summaryParser)
+      const result = renderer.render()
+
+      // extract the section order from the rendered output
+      const sectionMatches = result.match(/\\section\{[^}]+\}/g) || []
+      const sectionNames = sectionMatches.map((match) =>
+        match.replace(/\\section\{/, '').replace(/\}/, '')
+      )
+
+      // find the indices of the sections we care about
+      const educationIndex = sectionNames.findIndex((name) =>
+        name.includes('Education')
+      )
+      const workIndex = sectionNames.findIndex((name) => name.includes('Work'))
+      const languagesIndex = sectionNames.findIndex((name) =>
+        name.includes('Languages')
+      )
+
+      // verify the default order: education should come before work, which
+      // should come before languages
+      expect(educationIndex).toBeGreaterThan(-1)
+      expect(workIndex).toBeGreaterThan(-1)
+      expect(languagesIndex).toBeGreaterThan(-1)
+      expect(educationIndex).toBeLessThan(workIndex)
+      expect(workIndex).toBeLessThan(languagesIndex)
+    })
+
+    it('should filter out empty sections', () => {
+      // set up a resume with custom section order including empty sections
+      resume.content.education = []
+      resume.content.work = []
+      resume.content.skills = []
+
+      resume.layout = {
+        ...resume.layout,
+        sections: {
+          order: ['education', 'work', 'skills', 'languages'],
+        },
+      }
+
+      renderer = new ModerncvBankingRenderer(resume, summaryParser)
+      const result = renderer.render()
+
+      // extract the section order from the rendered output
+      const sectionMatches = result.match(/\\section\{[^}]+\}/g) || []
+      const sectionNames = sectionMatches.map((match) =>
+        match.replace(/\\section\{/, '').replace(/\}/, '')
+      )
+
+      // only languages section should be present (others are empty)
+      const languagesIndex = sectionNames.findIndex((name) =>
+        name.includes('Languages')
+      )
+      expect(languagesIndex).toBeGreaterThan(-1)
+
+      // education, work, and skills sections should not be present
+      const educationIndex = sectionNames.findIndex((name) =>
+        name.includes('Education')
+      )
+      const workIndex = sectionNames.findIndex((name) => name.includes('Work'))
+      const skillsIndex = sectionNames.findIndex((name) =>
+        name.includes('Skills')
+      )
+      expect(educationIndex).toBe(-1)
+      expect(workIndex).toBe(-1)
+      expect(skillsIndex).toBe(-1)
+    })
+  })
 })

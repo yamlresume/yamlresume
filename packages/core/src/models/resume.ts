@@ -24,6 +24,7 @@
 
 import type {
   LocaleLanguage,
+  OrderableSectionID,
   Resume,
   ResumeContent,
   ResumeItem,
@@ -245,6 +246,26 @@ export const ORDERABLE_SECTION_IDS = [
   'references',
   'projects',
 ] as const
+
+/**
+ * Default order for sections in the resume output.
+ *
+ * Sections not specified in custom order will follow this order.
+ */
+export const DEFAULT_SECTIONS_ORDER: OrderableSectionID[] = [
+  'basics',
+  'education',
+  'work',
+  'languages',
+  'skills',
+  'awards',
+  'certificates',
+  'publications',
+  'references',
+  'projects',
+  'interests',
+  'volunteer',
+]
 
 /** Defines identifiers for the available resume templates. */
 export const TEMPLATE_OPTIONS = [
