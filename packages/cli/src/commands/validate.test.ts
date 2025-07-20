@@ -126,7 +126,18 @@ describe(prettifyYamlParseError, () => {
 
     const result = prettifyYamlParseError(errorMessage, resumePath, resumeStr)
 
-    expect(result).toEqual('test.yaml: error: Some generic YAML error')
+    expect(result).toEqual('test.yaml: error: Some generic YAML error.')
+  })
+
+  it('should handle empty YAML file', () => {
+    const errorMessage = 'Some generic YAML error at line 1, column 1'
+    const resumePath = 'test.yaml'
+    const resumeStr = ''
+
+    const result = prettifyYamlParseError(errorMessage, resumePath, resumeStr)
+    expect(result).toEqual(
+      ['test.yaml:1:1: error: Some generic YAML error.', '', '^'].join('\n')
+    )
   })
 })
 

@@ -99,18 +99,18 @@ export function prettifyYamlParseError(
   resumePath: string,
   resumeStr: string
 ): string {
-  // Parse the error message to extract line and column
-  // Example:
+  // parse the error message to extract line and column
+  // example:
   // "Nested mappings are not allowed in compact mappings at line 6, column 10"
   const lineMatch = errorMessage.match(/at line (\d+), column (\d+)/)
 
   if (!lineMatch) {
-    // If we can't parse the error, return a simple formatted message
+    // if we can't parse the error, return a simple formatted message
     return joinNonEmptyString(
       [
         chalk.white.bold(resumePath),
         chalk.red.bold('error'),
-        chalk.white(errorMessage),
+        `${chalk.white(errorMessage)}.`,
       ],
       ': '
     )
@@ -121,10 +121,10 @@ export function prettifyYamlParseError(
   const lines = resumeStr.split('\n')
   const lineContent = lines[line - 1] || ''
 
-  // Create the pointer line with spaces and caret
+  // create the pointer line with spaces and caret
   const pointer = `${' '.repeat(column - 1)}^`
 
-  // Color scheme similar to clang with enhanced visibility
+  // color scheme similar to clang with enhanced visibility
   const filePath = chalk.white.bold(`${resumePath}:${line}:${column}`)
   const errorType = chalk.red.bold('error')
   const message = chalk.white(
