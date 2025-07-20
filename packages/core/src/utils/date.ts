@@ -59,13 +59,20 @@ export function localizeDate(
     return ''
   }
 
-  // For resumes, we only care about the year and month
+  // for resumes, we only care about the year and month
   const options: Intl.DateTimeFormatOptions = {
     year: 'numeric',
     month: 'short',
   }
 
-  return new Date(date).toLocaleDateString(
+  const dateObj = new Date(date)
+
+  // if the date is invalid, return the original date string
+  if (Number.isNaN(dateObj.getTime())) {
+    return date
+  }
+
+  return dateObj.toLocaleDateString(
     isEmptyValue(language) ? 'en' : language,
     options
   )

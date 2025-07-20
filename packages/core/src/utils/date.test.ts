@@ -120,6 +120,65 @@ describe(localizeDate, () => {
       expect(localizeDate(date, language)).toEqual(expected)
     }
   })
+
+  it('should return original date string for invalid dates', () => {
+    const tests = [
+      {
+        date: 'Invalid Date',
+        language: 'en',
+        expected: 'Invalid Date',
+      },
+      {
+        date: '25 déc 2023', // French date format
+        language: 'en',
+        expected: '25 déc 2023',
+      },
+      {
+        date: '25 十二月 2023', // Chinese date format
+        language: 'zh-hans',
+        expected: '25 十二月 2023',
+      },
+      {
+        date: 'lundi 25 déc 2023', // French with day name
+        language: 'es',
+        expected: 'lundi 25 déc 2023',
+      },
+      {
+        date: '2023-13-01', // Invalid month
+        language: 'en',
+        expected: '2023-13-01',
+      },
+      {
+        date: 'not a date at all',
+        language: 'en',
+        expected: 'not a date at all',
+      },
+      {
+        date: '25/12/2023', // Ambiguous format that might fail
+        language: 'en',
+        expected: '25/12/2023',
+      },
+      {
+        date: '2023-00-01', // Invalid month (0)
+        language: 'zh-hant-tw',
+        expected: '2023-00-01',
+      },
+      {
+        date: '2023-12-00', // Invalid day (0)
+        language: 'en',
+        expected: '2023-12-00',
+      },
+      {
+        date: '2023-12-32', // Invalid day (32)
+        language: 'es',
+        expected: '2023-12-32',
+      },
+    ]
+
+    for (const { date, language, expected } of tests) {
+      expect(localizeDate(date, language)).toEqual(expected)
+    }
+  })
 })
 
 describe(getDateRange, () => {
