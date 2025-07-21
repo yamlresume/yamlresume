@@ -140,10 +140,20 @@ Check the generated PDF [here](./docs/static/images/resume.pdf).
 ![Software Engineer Page 1](./docs/static/images/resume-1.webp)
 ![Software Engineer Page 2](./docs/static/images/resume-2.webp)
 
+
 [PPResume Gallery](https://ppresume.com/gallery/?ref=yamlresume) provides a
 showcase for all possible kind of resumes categoried by languages and templates.
 
 More samples would come soon!
+
+## Validate resumes
+
+YAMLResume provides a builtin
+[schema](https://yamlresume.dev/docs/compiler/schema) which can be used to
+validate resumes and help avoid lots of low level mistakes. Check out the
+following demo:
+
+[![YAMLResume Compiler Demo](https://asciinema.org/a/728098.svg)](https://asciinema.org/a/728098)
 
 ## Typesetting
 
@@ -174,8 +184,12 @@ Any kind of contributions will be deeply appreciated! Please read the
 ## Roadmap
 
 - [ ] support more font families
-- [ ] section alias
-- [ ] section reordering
 - [ ] section cloning
 - [ ] more resume templates
 - [ ] more locale languages
+
+## Support the Project
+
+If you find YAMLResume helpful, consider supporting the project:
+
+[![Buy Me a Coffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-FFDD00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black)](https://buymeacoffee.com/xiaohanyu)
