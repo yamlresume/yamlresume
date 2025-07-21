@@ -1,4 +1,14 @@
 # yaml-language-server: $schema=https://yamlresume.dev/schema.json
+#
+# YAMLResume provides a builtin schema to validate resumes and help avoid lots
+# of low level mistakes.
+#
+# You need to install https://github.com/redhat-developer/yaml-language-server
+# in order to get the best editing experience in your choice of editor/IDE.
+#
+# ref:
+# - https://yamlresume.dev/docs/compiler/schema
+# - https://yamlresume.dev/docs/compiler/schema/json
 
 ---
 content:
