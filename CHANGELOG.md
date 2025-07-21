@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.6.0](https://github.com/yamlresume/yamlresume/compare/v0.5.1...v0.6.0) (2025-07-21)
+
+
+### Features
+
+* add docs link to sample resume preamble ([07de6d4](https://github.com/yamlresume/yamlresume/commit/07de6d4f75f55dc7d705c50b994b96ee29c2d6aa))
+* aliasing sections with new titles ([e9b955b](https://github.com/yamlresume/yamlresume/commit/e9b955bb5df1edd3ba6f94590c88cfa6b86036ff))
+* support section reordering ([4841635](https://github.com/yamlresume/yamlresume/commit/4841635b50d61da3ad836f104b545d8ac0d6b3c4))
+* tolerate invalid date and fallback to string ([8c72cb3](https://github.com/yamlresume/yamlresume/commit/8c72cb3d68d84543525576472acf02eaf3ebc936))
+
+
+### Bug Fixes
+
+* missing the end dot in option schema message ([1e26c3b](https://github.com/yamlresume/yamlresume/commit/1e26c3b4c0f9f272b65ed242d1718897e902bb79))
+* typo in name schema example ([ba4ae63](https://github.com/yamlresume/yamlresume/commit/ba4ae639f63f65062ad16860708e83fb92bdffdc))
+
 ## [0.5.1](https://github.com/yamlresume/yamlresume/compare/v0.5.0...v0.5.1) (2025-07-15)
 
 
