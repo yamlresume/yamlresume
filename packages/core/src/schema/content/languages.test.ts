@@ -29,7 +29,7 @@ import {
   expectSchemaMetadata,
   getNullishTestCases,
   validateZodErrors,
-} from '../utils'
+} from '../zod'
 import { LanguageItemSchema, LanguagesSchema } from './languages'
 
 import { FLUENCY_OPTIONS, LANGUAGE_OPTIONS } from '@/models'

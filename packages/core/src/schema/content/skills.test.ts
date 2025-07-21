@@ -28,7 +28,7 @@ import {
   expectSchemaMetadata,
   getNullishTestCases,
   validateZodErrors,
-} from '../utils'
+} from '../zod'
 import { SkillItemSchema, SkillNameSchema, SkillsSchema } from './skills'
 
 import type { Skills } from '@/models'

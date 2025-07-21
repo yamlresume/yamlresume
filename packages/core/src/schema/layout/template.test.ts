@@ -26,7 +26,7 @@ import { describe, expect, it } from 'vitest'
 
 import { TEMPLATE_OPTIONS } from '@/models'
 import { optionSchemaMessage } from '../primitives'
-import { expectSchemaMetadata, validateZodErrors } from '../utils'
+import { expectSchemaMetadata, validateZodErrors } from '../zod'
 import { TemplateSchema } from './template'
 
 describe('TemplateSchema', () => {

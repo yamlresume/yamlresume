@@ -24,7 +24,7 @@
 
 import { describe, expect, it } from 'vitest'
 
-import { expectSchemaMetadata, validateZodErrors } from '../utils'
+import { expectSchemaMetadata, validateZodErrors } from '../zod'
 import {
   MarginSizeSchema,
   MarginsSchema,

@@ -26,7 +26,7 @@ import { describe, expect, it } from 'vitest'
 
 import { LOCALE_LANGUAGE_OPTIONS } from '@/models'
 import { optionSchemaMessage } from '../primitives'
-import { expectSchemaMetadata, validateZodErrors } from '../utils'
+import { expectSchemaMetadata, validateZodErrors } from '../zod'
 import { LocaleSchema } from './locale'
 
 describe('LocaleSchema', () => {

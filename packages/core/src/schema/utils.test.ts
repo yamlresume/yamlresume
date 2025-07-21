@@ -25,40 +25,7 @@
 import { describe, expect, it } from 'vitest'
 import { z } from 'zod/v4'
 
-import { getNullishTestCases, nullifySchema } from './utils'
-
-describe(getNullishTestCases, () => {
-  it('should return the correct test cases', () => {
-    const schema = z.object({
-      required: z.string(),
-      nullish1: z.string().nullish(),
-      nullish2: z.string().nullish(),
-    })
-
-    const testCases = getNullishTestCases(schema, {
-      required: 'required',
-    })
-
-    expect(testCases).toEqual([
-      {
-        nullish1: null,
-        required: 'required',
-      },
-      {
-        nullish1: undefined,
-        required: 'required',
-      },
-      {
-        nullish2: null,
-        required: 'required',
-      },
-      {
-        nullish2: undefined,
-        required: 'required',
-      },
-    ])
-  })
-})
+import { nullifySchema } from './utils'
 
 describe(nullifySchema, () => {
   it('should get a nullish schema with the same metadata as the original', () => {

@@ -33,7 +33,7 @@ import { describe, expect, it } from 'vitest'
 import type { Resume } from '@/models'
 
 import { ResumeSchema } from './resume'
-import { validateZodErrors } from './utils'
+import { validateZodErrors } from './zod'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = dirname(__filename)

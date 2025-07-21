@@ -28,7 +28,7 @@ import { FLUENCY_OPTIONS, type ResumeContent } from '@/models'
 
 import { ContentSchema } from './content'
 
-import { validateZodErrors } from '../utils'
+import { validateZodErrors } from '../zod'
 
 describe('ContentSchema', () => {
   const basics = {

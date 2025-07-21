@@ -26,7 +26,7 @@ import { describe, expect, it } from 'vitest'
 
 import { FONT_SIZE_OPTIONS } from '@/models'
 import { optionSchemaMessage } from '../primitives'
-import { expectSchemaMetadata, validateZodErrors } from '../utils'
+import { expectSchemaMetadata, validateZodErrors } from '../zod'
 import { TypographySchema } from './typography'
 
 describe('TypographySchema', () => {

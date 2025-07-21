@@ -22,30 +22,40 @@
  * IN THE SOFTWARE.
  */
 
-import type { z } from 'zod/v4'
+import { describe, expect, it } from 'vitest'
+import { z } from 'zod/v4'
 
-/**
- * Returns a nullish schema with the same metadata as the original schema.
- *
- * Why we need this?
- *
- * By default Zod's `nullish` method will generate a `anyOf` JSON schema, with
- * the second branch being `{ type: null }`, therefore, if users set `null` to a
- * field in the YAML file, when hover over the field in VSCode, there will be no
- * metadata for the field at all.
- *
- * Here we generate a new metadata for the nullish schema, so no matter whether
- * the field is set to `null` or not, the metadata will always be the same.
- *
- * @param schema - The zod schema to make nullish.
- * @returns A nullish schema with the same metadata as the original schema.
- */
-export function nullifySchema<T>(schema: z.ZodType<T>) {
-  const nullishMeta = {
-    title: `[optional] ${schema.meta().title}`,
-    description: `${schema.meta().description.replace(/\.$/, '')} or \`null\`.`,
-    examples: schema.meta().examples,
-  }
+import { getNullishTestCases } from './zod'
 
-  return schema.meta(nullishMeta).nullish().meta(nullishMeta)
-}
+describe(getNullishTestCases, () => {
+  it('should return the correct test cases', () => {
+    const schema = z.object({
+      required: z.string(),
+      nullish1: z.string().nullish(),
+      nullish2: z.string().nullish(),
+    })
+
+    const testCases = getNullishTestCases(schema, {
+      required: 'required',
+    })
+
+    expect(testCases).toEqual([
+      {
+        nullish1: null,
+        required: 'required',
+      },
+      {
+        nullish1: undefined,
+        required: 'required',
+      },
+      {
+        nullish2: null,
+        required: 'required',
+      },
+      {
+        nullish2: undefined,
+        required: 'required',
+      },
+    ])
+  })
+})

@@ -29,7 +29,7 @@ import {
   expectSchemaMetadata,
   getNullishTestCases,
   validateZodErrors,
-} from '../utils'
+} from '../zod'
 import {
   AddressSchema,
   CitySchema,

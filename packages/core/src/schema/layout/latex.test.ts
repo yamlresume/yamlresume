@@ -26,7 +26,7 @@ import { describe, expect, it } from 'vitest'
 
 import { FONTSPEC_NUMBERS_OPTIONS } from '@/models'
 import { optionSchemaMessage } from '../primitives'
-import { expectSchemaMetadata, validateZodErrors } from '../utils'
+import { expectSchemaMetadata, validateZodErrors } from '../zod'
 import { LatexSchema } from './latex'
 
 describe('LatexSchema', () => {

@@ -26,7 +26,7 @@ import { describe, expect, it } from 'vitest'
 
 import { ORDERABLE_SECTION_IDS } from '@/models'
 import { optionSchemaMessage } from '../primitives'
-import { validateZodErrors } from '../utils'
+import { validateZodErrors } from '../zod'
 
 import {
   AliasNameSchema,

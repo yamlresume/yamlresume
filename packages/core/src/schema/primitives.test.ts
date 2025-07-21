@@ -60,7 +60,7 @@ import {
   optionSchemaMessage,
 } from './primitives'
 
-import { expectSchemaMetadata, validateZodErrors } from './utils'
+import { expectSchemaMetadata, validateZodErrors } from './zod'
 
 describe('SizedStringSchema', () => {
   const schema = SizedStringSchema('string', 1, 10)

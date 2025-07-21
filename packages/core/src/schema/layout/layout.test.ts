@@ -32,7 +32,7 @@ import {
 } from '@/models'
 import { LayoutSchema } from '.'
 import { optionSchemaMessage } from '../primitives'
-import { expectSchemaMetadata, validateZodErrors } from '../utils'
+import { expectSchemaMetadata, validateZodErrors } from '../zod'
 import { marginSizeSchemaMessage } from './margins'
 
 describe('LayoutSchema', () => {

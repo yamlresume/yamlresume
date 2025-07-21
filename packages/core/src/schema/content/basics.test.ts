@@ -28,7 +28,7 @@ import {
   expectSchemaMetadata,
   getNullishTestCases,
   validateZodErrors,
-} from '../utils'
+} from '../zod'
 import { BasicsItemSchema, BasicsSchema, HeadlineSchema } from './basics'
 
 import type { Basics } from '@/models'
