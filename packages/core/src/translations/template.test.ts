@@ -96,6 +96,17 @@ describe(getTemplateTranslations, () => {
           },
         },
       },
+      {
+        language: 'no',
+        expected: {
+          punctuations: {
+            colon: ': ',
+          },
+          terms: {
+            keywords: 'Nøkkelord',
+          },
+        },
+      },
     ]
 
     tests.forEach((test) => {

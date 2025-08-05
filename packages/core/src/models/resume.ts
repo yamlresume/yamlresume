@@ -174,6 +174,7 @@ export const LOCALE_LANGUAGE_OPTIONS = [
   'zh-hant-hk',
   'zh-hant-tw',
   'es',
+  'no',
 ] as const
 
 /**
@@ -474,6 +475,7 @@ export function getLocaleLanguageDetail(localeLanguage: LocaleLanguage) {
     'zh-hant-hk': 'Traditional Chinese (Hong Kong)',
     'zh-hant-tw': 'Traditional Chinese (Taiwan)',
     es: 'Spanish',
+    no: 'Norwegian',
   }
 
   if (localeLanguage in localeLanguageDetails) {

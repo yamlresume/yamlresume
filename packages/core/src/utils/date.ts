@@ -103,6 +103,8 @@ export function getDateRange(
         return `${localizeDate(startDate, language)}至今`
       case 'es':
         return `${localizeDate(startDate, language)} hasta la fecha`
+      case 'no':
+        return `${localizeDate(startDate, language)} -- Nå`
       default:
         // by default we return English's "Present" if language is not supported
         return `${localizeDate(startDate, language)} -- Present`
