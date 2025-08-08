@@ -30,11 +30,11 @@ import { isEmptyValue, joinNonEmptyString, showIf } from '@/utils'
 import { Renderer } from './base'
 import {
   type ModerncvStyle,
+  renderBabelConfig,
   renderCTeXConfig,
   renderDocumentClassConfig,
   renderLayoutConfig,
   renderModerncvConfig,
-  renderSpanishConfig,
   renderfontspecConfig,
 } from './preamble'
 
@@ -72,7 +72,7 @@ class ModerncvBase extends Renderer {
       renderLayoutConfig(this.resume),
 
       // language specific
-      renderSpanishConfig(this.resume),
+      renderBabelConfig(this.resume),
 
       // fontspec
       // note that loading order of fontspec and babel packages matters here

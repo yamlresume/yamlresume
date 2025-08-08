@@ -29,11 +29,11 @@ import type { Resume } from '@/models'
 import {
   MODERNCV_STYLE_OPTIONS,
   normalizeUnit,
+  renderBabelConfig,
   renderCTeXConfig,
   renderDocumentClassConfig,
   renderLayoutConfig,
   renderModerncvConfig,
-  renderSpanishConfig,
   renderfontspecConfig,
 } from './preamble'
 
@@ -120,8 +120,8 @@ describe(renderCTeXConfig, () => {
   })
 })
 
-describe(renderSpanishConfig, () => {
-  it('should return empty string for non-Spanish environment', () => {
+describe(renderBabelConfig, () => {
+  it('should return empty string for English resume', () => {
     const nonSpanishResume: Resume = {
       ...mockResume,
       layout: {
@@ -132,12 +132,12 @@ describe(renderSpanishConfig, () => {
       },
     }
 
-    const result = renderSpanishConfig(nonSpanishResume)
+    const result = renderBabelConfig(nonSpanishResume)
 
     expect(result).toBe('')
   })
 
-  it('should render Spanish configuration for Spanish environment', () => {
+  it('should render Spanish configuration for Spanish resume', () => {
     const spanishResume: Resume = {
       ...mockResume,
       layout: {
@@ -148,10 +148,25 @@ describe(renderSpanishConfig, () => {
       },
     }
 
-    const result = renderSpanishConfig(spanishResume)
+    const result = renderBabelConfig(spanishResume)
 
-    expect(result).toContain('\\usepackage[T1]{fontenc}')
     expect(result).toContain('\\usepackage[spanish,es-lcroman]{babel}')
+  })
+
+  it('should render Norwegian configuration for Norwegian resume', () => {
+    const norwegianResume: Resume = {
+      ...mockResume,
+      layout: {
+        ...mockResume.layout,
+        locale: {
+          language: 'no',
+        },
+      },
+    }
+
+    const result = renderBabelConfig(norwegianResume)
+
+    expect(result).toContain('\\usepackage[norsk]{babel}')
   })
 })
 

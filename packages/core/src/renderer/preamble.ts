@@ -67,16 +67,6 @@ function isCJKResume(resume: Resume): boolean {
 }
 
 /**
- * Check if the resume is a Spanish resume.
- *
- * @param resume - The resume to check.
- * @returns {boolean} True if the resume is a Spanish resume, false otherwise.
- */
-function isSpanishResume(resume: Resume): boolean {
-  return resume.layout.locale?.language === 'es'
-}
-
-/**
  * Normalize a unit string
  *
  * Convert unit string with format of "<number> <unit>" to "<number><unit>" by
@@ -243,19 +233,24 @@ export function renderCTeXConfig(_resume: Resume): string {
  * @param resume - The resume object
  * @returns The LaTeX code for the Spanish support
  */
-export function renderSpanishConfig(resume: Resume): string {
-  if (!isSpanishResume(resume)) {
-    return ''
-  }
-
-  return `%% Spanish support
-\\usepackage[T1]{fontenc}
+export function renderBabelConfig(resume: Resume): string {
+  switch (resume.layout.locale?.language) {
+    case 'es':
+      return `%% Babel config for Spanish language
 % \`\\usepackage[spanish]{babel}\` has some conflicting issues with moderncv
 % so we have to use enable the following options to make it work
 %
 % ref:
 % - https://tex.stackexchange.com/a/140161/36007
 \\usepackage[spanish,es-lcroman]{babel}`
+    case 'no':
+      return `%% Babel config for Norwegian language
+% ref:
+% - https://latex3.github.io/babel/guides/locale-norwegian.html
+\\usepackage[norsk]{babel}`
+    default:
+      return ''
+  }
 }
 
 /**
