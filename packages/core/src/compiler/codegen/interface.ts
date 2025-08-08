@@ -23,6 +23,15 @@
  */
 
 import type { Node } from '@/compiler'
+import type { Resume } from '@/models'
+
+/**
+ * Context for code generation containing layout settings.
+ */
+export interface CodeGenerationContext {
+  /** Typography settings from the resume layout. */
+  typography?: Resume['layout']['typography']
+}
 
 /**
  * Interface to generate code from an AST.
@@ -38,7 +47,8 @@ export interface CodeGenerator {
    * Generate code from an AST node.
    *
    * @param node - The AST node to generate code from.
+   * @param context - Optional context containing layout settings.
    * @returns The generated code.
    */
-  generate(node: Node): string
+  generate(node: Node, context?: CodeGenerationContext): string
 }

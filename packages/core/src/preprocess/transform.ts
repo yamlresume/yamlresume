@@ -680,11 +680,18 @@ export function transformSummary(
   resume: Resume,
   summaryParser: Parser
 ): Resume {
+  const typographyContext = {
+    typography: resume.layout?.typography,
+  }
+
   resume.content.basics.computed = {
     ...resume.content.basics.computed,
     summary: replaceBlankLinesWithPercent(
       new LatexCodeGenerator()
-        .generate(summaryParser.parse(resume.content.basics.summary))
+        .generate(
+          summaryParser.parse(resume.content.basics.summary),
+          typographyContext
+        )
         .trim()
     ),
   }
@@ -701,7 +708,8 @@ export function transformSummary(
     resume.content[section].forEach(
       (item: { summary: string }, index: number) => {
         const summary = new LatexCodeGenerator().generate(
-          summaryParser.parse(item.summary)
+          summaryParser.parse(item.summary),
+          typographyContext
         )
         if (summary) {
           // The reason we need to replace blank lines with percent is that, the

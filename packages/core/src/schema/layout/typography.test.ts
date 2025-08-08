@@ -45,6 +45,21 @@ describe('TypographySchema', () => {
           fontSize: '12pt',
         },
       },
+      {
+        typography: {
+          fontSize: '12pt',
+          links: {
+            underline: true,
+          },
+        },
+      },
+      {
+        typography: {
+          links: {
+            underline: false,
+          },
+        },
+      },
     ]
 
     for (const typography of tests) {

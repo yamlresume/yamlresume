@@ -396,6 +396,44 @@ describe(nodeToTeX, () => {
       }
     })
 
+    it('should handle link underline based on typography context', () => {
+      const linkMark: Mark = {
+        type: 'link',
+        attrs: { href: url, class: '', target: '' },
+      }
+
+      const node: TextNode = {
+        marks: [linkMark],
+        text,
+        type: 'text',
+      }
+
+      // Test without context (default behavior - no underline)
+      expect(nodeToTeX(node)).toBe(`\\href{${url}}{${text}}`)
+
+      // Test with underline disabled
+      const contextDisabled = {
+        typography: {
+          links: {
+            underline: false,
+          },
+        },
+      }
+      expect(nodeToTeX(node, contextDisabled)).toBe(`\\href{${url}}{${text}}`)
+
+      // Test with underline enabled
+      const contextEnabled = {
+        typography: {
+          links: {
+            underline: true,
+          },
+        },
+      }
+      expect(nodeToTeX(node, contextEnabled)).toBe(
+        `\\href{${url}}{\\underline{${text}}}`
+      )
+    })
+
     it('should return plain text with multiple marks', () => {
       const tests: { marks: Mark[]; expected: string }[] = [
         {

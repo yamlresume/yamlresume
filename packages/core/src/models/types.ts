@@ -755,11 +755,21 @@ export type FontspecNumbers = (typeof FONTSPEC_NUMBERS_OPTIONS)[number]
 export type FontSize = (typeof FONT_SIZE_OPTIONS)[number]
 
 /**
+ * Defines link styling settings for typography.
+ */
+type ResumeLayoutTypographyLinks = {
+  /** Whether to underline links in the document. */
+  underline?: boolean
+}
+
+/**
  * Defines typography settings for document formatting.
  */
 type ResumeLayoutTypography = {
   /** Base font size for the document (e.g., "10pt", "11pt"). */
   fontSize?: string
+  /** Link styling settings. */
+  links?: ResumeLayoutTypographyLinks
 }
 
 /**

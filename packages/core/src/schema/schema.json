@@ -2658,7 +2658,7 @@
             },
             "typography": {
               "title": "Typography",
-              "description": "The typography section contains font settings, including font size options.",
+              "description": "The typography section contains font settings, including font size options and link styling.",
               "anyOf": [
                 {
                   "type": "object",
@@ -2676,6 +2676,34 @@
                             "11pt",
                             "12pt"
                           ]
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "links": {
+                      "title": "Typography Links",
+                      "description": "Link styling settings for typography.",
+                      "anyOf": [
+                        {
+                          "type": "object",
+                          "properties": {
+                            "underline": {
+                              "title": "Underline Links",
+                              "description": "Whether to underline links in the document.",
+                              "examples": [
+                                false,
+                                true
+                              ],
+                              "default": false,
+                              "type": "boolean"
+                            }
+                          },
+                          "required": [
+                            "underline"
+                          ],
+                          "additionalProperties": false
                         },
                         {
                           "type": "null"

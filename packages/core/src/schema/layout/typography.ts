@@ -29,12 +29,35 @@ import { FontSizeOptionSchema } from '../primitives'
 import { nullifySchema } from '../utils'
 
 /**
+ * A zod schema for link styling settings.
+ */
+const TypographyLinksSchema = z.object({
+  links: z
+    .object({
+      underline: z
+        .boolean()
+        .default(false)
+        .meta({
+          title: 'Underline Links',
+          description: 'Whether to underline links in the document.',
+          examples: [false, true],
+        }),
+    })
+    .nullish()
+    .meta({
+      title: 'Typography Links',
+      description: 'Link styling settings for typography.',
+    }),
+})
+
+/**
  * A zod schema for typography settings.
  */
 export const TypographySchema = z.object({
   typography: z
     .object({
       fontSize: nullifySchema(FontSizeOptionSchema),
+      ...TypographyLinksSchema.shape,
     })
     .nullish()
     .meta({
@@ -42,7 +65,7 @@ export const TypographySchema = z.object({
       description: joinNonEmptyString(
         [
           'The typography section contains font settings,',
-          'including font size options.',
+          'including font size options and link styling.',
         ],
         ' '
       ),
