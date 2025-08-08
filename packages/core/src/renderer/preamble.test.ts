@@ -114,7 +114,7 @@ describe(renderCTeXConfig, () => {
   it('should render CTeX configuration', () => {
     const result = renderCTeXConfig(mockResume)
 
-    expect(result).toContain('\\usepackage[UTF8, fontset=none')
+    expect(result).toContain('\\usepackage[UTF8, heading=false, punct=kaiming')
     expect(result).toContain('\\setCJKmainfont{Noto Serif CJK SC}')
     expect(result).toContain('\\setCJKsansfont{Noto Sans CJK SC}')
   })

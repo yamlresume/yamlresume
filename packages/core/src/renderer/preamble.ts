@@ -217,7 +217,7 @@ export function renderCTeXConfig(_resume: Resume): string {
 %
 % ref:
 % - http://ctan.mirrorcatalogs.com/language/chinese/ctex/ctex.pdf
-\\usepackage[UTF8, fontset=none, heading=false, punct=kaiming, scheme=plain, space=auto]{ctex}
+\\usepackage[UTF8, heading=false, punct=kaiming, scheme=plain, space=auto]{ctex}
 
 \\IfFontExistsTF{Noto Serif CJK SC}{
   \\setCJKmainfont{Noto Serif CJK SC}
