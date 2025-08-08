@@ -259,7 +259,7 @@ export function renderBabelConfig(resume: Resume): string {
  * @param resume - The resume object
  * @returns The LaTeX code for the fontspec support
  */
-export function renderfontspecConfig(resume: Resume): string {
+export function renderFontspecConfig(resume: Resume): string {
   const {
     layout: {
       latex: {

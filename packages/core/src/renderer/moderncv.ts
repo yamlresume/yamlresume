@@ -33,9 +33,9 @@ import {
   renderBabelConfig,
   renderCTeXConfig,
   renderDocumentClassConfig,
+  renderFontspecConfig,
   renderLayoutConfig,
   renderModerncvConfig,
-  renderfontspecConfig,
 } from './preamble'
 
 /**
@@ -79,7 +79,7 @@ class ModerncvBase extends Renderer {
       // babel package should be loaded before fontspec package, otherwise
       // Spanish resumes cannot render correct font styles in my testing,
       // reason still unknown though
-      renderfontspecConfig(this.resume),
+      renderFontspecConfig(this.resume),
 
       // CTeX for CJK
       // CTeX needs to load after fontspec because we use `\IfFontExistsTF` to
