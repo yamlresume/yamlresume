@@ -90,6 +90,11 @@ describe(localizeDate, () => {
         expected: '2016年10月',
       },
       {
+        date: 'Oct 1, 2016',
+        language: 'no',
+        expected: 'okt. 2016',
+      },
+      {
         date: '',
         language: 'en',
         expected: '',
@@ -112,6 +117,11 @@ describe(localizeDate, () => {
       {
         date: '',
         language: 'zh-hant-tw',
+        expected: '',
+      },
+      {
+        date: '',
+        language: 'no',
         expected: '',
       },
     ]
@@ -255,6 +265,18 @@ describe(getDateRange, () => {
         endDate: '',
         language: 'zh-hant-tw',
         expected: '2016年10月至今',
+      },
+      {
+        startDate: 'Oct 1, 2016',
+        endDate: 'Jan 1, 2018',
+        language: 'no',
+        expected: 'okt. 2016 -- jan. 2018',
+      },
+      {
+        startDate: 'Oct 1, 2016',
+        endDate: '',
+        language: 'no',
+        expected: 'okt. 2016 -- Nå',
       },
       {
         startDate: '',

@@ -403,6 +403,12 @@ describe(transformLocation, () => {
       'United States'
     )
 
+    const norwegianLocation = getOptionTranslation(
+      'no',
+      'countries',
+      'United States'
+    )
+
     const tests = [
       {
         postalCode: '',
@@ -417,6 +423,7 @@ describe(transformLocation, () => {
           'zh-hans': '',
           'zh-hant-hk': '',
           'zh-hant-tw': '',
+          no: '',
         },
       },
       {
@@ -435,6 +442,7 @@ describe(transformLocation, () => {
           'zh-hant-tw': `${
             traditionalChineseTWLocation
           } -- Sacramento -- 95814`,
+          no: `Sacramento -- ${norwegianLocation}${latinComma}95814`,
         },
       },
       {
@@ -450,6 +458,7 @@ describe(transformLocation, () => {
           'zh-hans': 'California -- Sacramento -- 123 Main Street',
           'zh-hant-hk': 'California -- Sacramento -- 123 Main Street',
           'zh-hant-tw': 'California -- Sacramento -- 123 Main Street',
+          no: '123 Main Street -- Sacramento -- California',
         },
       },
       {
@@ -475,6 +484,7 @@ describe(transformLocation, () => {
           'zh-hant-tw': `${
             traditionalChineseTWLocation
           }${chineseComma}California -- Sacramento -- 123 Main Street${chineseComma}95814`,
+          no: `123 Main Street -- Sacramento -- California${latinComma}${norwegianLocation}${latinComma}95814`,
         },
       },
     ]
@@ -950,8 +960,8 @@ describe(transformResumeContent, () => {
 })
 
 describe(transformResumeLayoutLaTeX, () => {
-  it('should set numbers to OldStyle for English, and Spanish resume', () => {
-    for (const language of ['en', 'es'] as const) {
+  it('should set numbers to OldStyle for English, Norwegian, and Spanish resume', () => {
+    for (const language of ['en', 'es', 'no'] as const) {
       const resume = cloneDeep(defaultResume)
 
       resume.layout.locale.language = language

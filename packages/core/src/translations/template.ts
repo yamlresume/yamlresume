@@ -122,6 +122,18 @@ export function getTemplateTranslations(
         score: 'Puntuación',
       },
     },
+    no: {
+      punctuations: {
+        comma: ', ',
+        colon: ': ',
+        separator: ', ',
+      },
+      terms: {
+        courses: 'Kurs',
+        keywords: 'Nøkkelord',
+        score: 'Poeng',
+      },
+    },
   }
 
   return templateTranslation[isEmptyValue(language) ? 'en' : language]
