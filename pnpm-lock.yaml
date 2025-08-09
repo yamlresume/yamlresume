@@ -93,6 +93,9 @@ importers:
       '@types/which':
         specifier: ^3.0.4
         version: 3.0.4
+      coalescifn:
+        specifier: ^0.1.0
+        version: 0.1.0
       tsx:
         specifier: ^4.19.3
         version: 4.19.3
@@ -1068,6 +1071,10 @@ packages:
   cliui@8.0.1:
     resolution: {integrity: sha512-BSeNnyus75C4//NQ9gQt1/csTXyo/8Sb+afLAkzAptFuMsod9HFokGNudZpi/oQV73hnVK+sR+5PVRMd+Dr7YQ==}
     engines: {node: '>=12'}
+
+  coalescifn@0.1.0:
+    resolution: {integrity: sha512-QyBqBiAiTl39nyJNq+FJmkZGXDXJPcM7Gmncg/59WhI9KVwUsT3Xx4gGXe6nRVlCPVYpf9Xq5xurov79kGPgdg==}
+    engines: {node: '>=20'}
 
   color-convert@1.9.3:
     resolution: {integrity: sha512-QfAUtd+vFdAtFQcC8CCyYt1fYWxSqAiK2cSD6zDB8N3cpsEBAvRxp9zOGg6G/SHHJYAT88/az/IuDGALsNVbGg==}
@@ -2325,6 +2332,7 @@ packages:
   source-map@0.8.0-beta.0:
     resolution: {integrity: sha512-2ymg6oRBpebeZi9UUNsgQ89bhx01TcTkmNTGnNO88imTmbSgy4nfujrgVEFKWpMTEGA11EDkTt7mqObTPdigIA==}
     engines: {node: '>= 8'}
+    deprecated: The work that was done in this beta branch won't be included in future versions
 
   spdx-correct@3.2.0:
     resolution: {integrity: sha512-kN9dJbvnySHULIluDHy32WHRUu3Og7B9sbY7tsFLctQkIqnMh3hErYgdMjTYuqmcXX+lK5T1lnUt3G7zNswmZA==}
@@ -3524,6 +3532,10 @@ snapshots:
       string-width: 4.2.3
       strip-ansi: 6.0.1
       wrap-ansi: 7.0.0
+
+  coalescifn@0.1.0:
+    dependencies:
+      tslib: 2.8.1
 
   color-convert@1.9.3:
     dependencies:
