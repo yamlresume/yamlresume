@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.7.0](https://github.com/yamlresume/yamlresume/compare/v0.6.0...v0.7.0) (2025-08-10)
+
+
+### Features
+
+* add a dev sub-command ([8fd6265](https://github.com/yamlresume/yamlresume/commit/8fd62655d48ee6929671cf10b6b9acc8da1b2e5b))
+* add Norwegian language translation ([#44](https://github.com/yamlresume/yamlresume/issues/44)) ([5cae8bf](https://github.com/yamlresume/yamlresume/commit/5cae8bf884fc84521621589fcbaa2a5b5853a0dc))
+* render proper babel config for norwegian language ([b72a444](https://github.com/yamlresume/yamlresume/commit/b72a4441ad2542873f449bc35a265e7208eafbe7))
+* support links with underline ([e6ab8a6](https://github.com/yamlresume/yamlresume/commit/e6ab8a6dab26ea60f98220c6b17574b4fff20bfb))
+
+
+### Bug Fixes
+
+* normalize object leaf values for parsed resumes ([cad07fd](https://github.com/yamlresume/yamlresume/commit/cad07fdda24357cf48af19b8dd55b4d1f3a937ce))
+* revise font loading for CJK resumes in CTeX package ([80cf55d](https://github.com/yamlresume/yamlresume/commit/80cf55d7ea96dca573b6b2e35eab143cb9b04651))
+
 ## [0.6.0](https://github.com/yamlresume/yamlresume/compare/v0.5.1...v0.6.0) (2025-07-21)
 
 
