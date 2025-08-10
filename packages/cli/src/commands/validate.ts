@@ -30,6 +30,7 @@ import {
   ResumeSchema,
   YAMLResumeError,
   joinNonEmptyString,
+  normalizeObjectLeafValues,
 } from '@yamlresume/core'
 import chalk from 'chalk'
 import { Command } from 'commander'
@@ -226,7 +227,7 @@ export function readResume(
   let resume: Resume
 
   try {
-    resume = yaml.parse(resumeStr) as Resume
+    resume = normalizeObjectLeafValues(yaml.parse(resumeStr))
   } catch (error) {
     // Format YAML parsing errors in clang style
     //
