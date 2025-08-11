@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.7.1](https://github.com/yamlresume/yamlresume/compare/v0.7.0...v0.7.1) (2025-08-11)
+
+
+### Bug Fixes
+
+* a critical security alert for a dev dependency form-data ([9ce7468](https://github.com/yamlresume/yamlresume/commit/9ce74683887b7c34ec65fd56f2bed31a7c84c1aa))
+* move coalescifn to runtime dependency ([c911853](https://github.com/yamlresume/yamlresume/commit/c9118538b73c5e8d689189e256431303dc0f3533))
+
 ## [0.7.0](https://github.com/yamlresume/yamlresume/compare/v0.6.0...v0.7.0) (2025-08-10)
 
 
