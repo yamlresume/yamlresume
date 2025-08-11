@@ -53,6 +53,9 @@ importers:
       chalk:
         specifier: ^5.4.1
         version: 5.4.1
+      coalescifn:
+        specifier: ^0.1.0
+        version: 0.1.0
       commander:
         specifier: ^11.0.0
         version: 11.1.0
@@ -93,9 +96,6 @@ importers:
       '@types/which':
         specifier: ^3.0.4
         version: 3.0.4
-      coalescifn:
-        specifier: ^0.1.0
-        version: 0.1.0
       tsx:
         specifier: ^4.19.3
         version: 4.19.3
