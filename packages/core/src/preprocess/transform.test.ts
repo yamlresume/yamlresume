@@ -657,6 +657,12 @@ describe(transformLocation, () => {
       'United States'
     )
 
+    const frenchLocation = getOptionTranslation(
+      'fr',
+      'countries',
+      'United States'
+    )
+
     const tests = [
       {
         postalCode: '',
@@ -671,6 +677,7 @@ describe(transformLocation, () => {
           'zh-hans': '',
           'zh-hant-hk': '',
           'zh-hant-tw': '',
+          fr: '',
           no: '',
         },
       },
@@ -690,6 +697,7 @@ describe(transformLocation, () => {
           'zh-hant-tw': `${
             traditionalChineseTWLocation
           } -- Sacramento -- 95814`,
+          fr: `Sacramento -- ${frenchLocation}${latinComma}95814`,
           no: `Sacramento -- ${norwegianLocation}${latinComma}95814`,
         },
       },
@@ -706,6 +714,7 @@ describe(transformLocation, () => {
           'zh-hans': 'California -- Sacramento -- 123 Main Street',
           'zh-hant-hk': 'California -- Sacramento -- 123 Main Street',
           'zh-hant-tw': 'California -- Sacramento -- 123 Main Street',
+          fr: '123 Main Street -- Sacramento -- California',
           no: '123 Main Street -- Sacramento -- California',
         },
       },
@@ -732,6 +741,7 @@ describe(transformLocation, () => {
           'zh-hant-tw': `${
             traditionalChineseTWLocation
           }${chineseComma}California -- Sacramento -- 123 Main Street${chineseComma}95814`,
+          fr: `123 Main Street -- Sacramento -- California${latinComma}${frenchLocation}${latinComma}95814`,
           no: `123 Main Street -- Sacramento -- California${latinComma}${norwegianLocation}${latinComma}95814`,
         },
       },
@@ -1208,8 +1218,8 @@ describe(transformResumeContent, () => {
 })
 
 describe(transformResumeLayoutLaTeX, () => {
-  it('should set numbers to OldStyle for English, Norwegian, and Spanish resume', () => {
-    for (const language of ['en', 'es', 'no'] as const) {
+  it('should set numbers to OldStyle for English, Norwegian, Spanish, and French resume', () => {
+    for (const language of ['en', 'es', 'fr', 'no'] as const) {
       const resume = cloneDeep(DEFAULT_RESUME)
 
       resume.layout.locale.language = language

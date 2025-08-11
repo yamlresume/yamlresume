@@ -243,6 +243,11 @@ export function renderBabelConfig(resume: Resume): string {
 % ref:
 % - https://tex.stackexchange.com/a/140161/36007
 \\usepackage[spanish,es-lcroman]{babel}`
+    case 'fr':
+      return `%% Babel config for French language
+% ref:
+% - https://latex3.github.io/babel/guides/locale-french.html
+\\usepackage[french]{babel}`
     case 'no':
       return `%% Babel config for Norwegian language
 % ref:

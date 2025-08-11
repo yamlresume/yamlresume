@@ -122,6 +122,18 @@ export function getTemplateTranslations(
         score: 'Puntuación',
       },
     },
+    fr: {
+      punctuations: {
+        comma: ', ',
+        colon: ' : ',
+        separator: ', ',
+      },
+      terms: {
+        courses: 'Cours',
+        keywords: 'Mots-clés',
+        score: 'Score',
+      },
+    },
     no: {
       punctuations: {
         comma: ', ',

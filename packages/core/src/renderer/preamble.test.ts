@@ -167,6 +167,22 @@ describe(renderBabelConfig, () => {
 
     expect(result).toContain('\\usepackage[norsk]{babel}')
   })
+
+  it('should render French configuration for French resume', () => {
+    const frenchResume: Resume = {
+      ...mockResume,
+      layout: {
+        ...mockResume.layout,
+        locale: {
+          language: 'fr',
+        },
+      },
+    }
+
+    const result = renderBabelConfig(frenchResume)
+
+    expect(result).toContain('\\usepackage[french]{babel}')
+  })
 })
 
 describe(renderFontspecConfig, () => {
