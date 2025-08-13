@@ -162,7 +162,9 @@ describe(createDevCommand, () => {
 
   it('should have correct name and description', () => {
     expect(devCommand.name()).toBe('dev')
-    expect(devCommand.description()).toBe('build on file changes (watch mode)')
+    expect(devCommand.description()).toBe(
+      'build a resume on file changes (watch mode)'
+    )
   })
 
   it('should require a source argument', () => {

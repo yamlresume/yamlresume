@@ -81,7 +81,7 @@ export function watchResume(
 export function createDevCommand() {
   return new Command()
     .name('dev')
-    .description('build on file changes (watch mode)')
+    .description('build a resume on file changes (watch mode)')
     .argument('<resume-path>', 'the resume file path')
     .option('--no-pdf', 'only generate TeX file without PDF')
     .option('--no-validate', 'skip resume schema validation')
