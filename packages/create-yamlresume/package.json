@@ -1,0 +1,60 @@
+{
+  "name": "create-yamlresume",
+  "version": "0.7.3",
+  "description": "Create a new YAMLResume project",
+  "license": "MIT",
+  "author": {
+    "name": "YAMLResume",
+    "email": "support@yamlresume.com",
+    "url": "https://yamlresume.dev"
+  },
+  "keywords": ["YAMLResume", "CV", "Resume", "YAML", "CLI", "create"],
+  "type": "module",
+  "bin": {
+    "create-yamlresume": "./dist/cli.js"
+  },
+  "files": ["dist", "README.md", "LICENSE"],
+  "scripts": {
+    "build": "tsup",
+    "build:watch": "tsup --watch",
+    "build:clean": "rm -rf dist",
+    "build:prod": "tsup --dts --minify --sourcemap",
+    "prepublishOnly": "pnpm test",
+    "dev": "tsx src/cli.ts",
+    "test": "vitest --run",
+    "test:cov": "vitest --coverage --run",
+    "test:watch": "vitest"
+  },
+  "dependencies": {
+    "@yamlresume/core": "workspace:*",
+    "chalk": "^5.4.1",
+    "commander": "^11.0.0",
+    "consola": "^3.4.2",
+    "execa": "^8.0.1",
+    "prompts": "^2.4.2",
+    "tslib": "^2.6.2",
+    "yamlresume": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/prompts": "^2.4.9",
+    "@vitest/coverage-v8": "^3.2.4",
+    "tsx": "^4.19.3",
+    "vite-tsconfig-paths": "^5.1.4",
+    "vitest": "^3.2.4"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yamlresume/yamlresume.git",
+    "directory": "packages/create-yamlresume"
+  },
+  "bugs": {
+    "url": "https://github.com/yamlresume/yamlresume/issues"
+  },
+  "homepage": "https://github.com/yamlresume/yamlresume/tree/main/packages/create-yamlresume#readme",
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}

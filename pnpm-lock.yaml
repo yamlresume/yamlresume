@@ -137,6 +137,49 @@ importers:
         specifier: ^2.8.1
         version: 2.8.1
 
+  packages/create-yamlresume:
+    dependencies:
+      '@yamlresume/core':
+        specifier: workspace:*
+        version: link:../core
+      chalk:
+        specifier: ^5.4.1
+        version: 5.5.0
+      commander:
+        specifier: ^11.0.0
+        version: 11.1.0
+      consola:
+        specifier: ^3.4.2
+        version: 3.4.2
+      execa:
+        specifier: ^8.0.1
+        version: 8.0.1
+      prompts:
+        specifier: ^2.4.2
+        version: 2.4.2
+      tslib:
+        specifier: ^2.6.2
+        version: 2.8.1
+      yamlresume:
+        specifier: workspace:*
+        version: link:../cli
+    devDependencies:
+      '@types/prompts':
+        specifier: ^2.4.9
+        version: 2.4.9
+      '@vitest/coverage-v8':
+        specifier: ^3.2.4
+        version: 3.2.4(vitest@3.2.4(@types/debug@4.1.12)(@types/node@24.2.1)(jiti@2.4.2)(jsdom@25.0.1)(tsx@4.19.3)(yaml@2.8.1))
+      tsx:
+        specifier: ^4.19.3
+        version: 4.19.3
+      vite-tsconfig-paths:
+        specifier: ^5.1.4
+        version: 5.1.4(typescript@5.4.5)(vite@7.1.1(@types/node@24.2.1)(jiti@2.4.2)(tsx@4.19.3)(yaml@2.8.1))
+      vitest:
+        specifier: ^3.2.4
+        version: 3.2.4(@types/debug@4.1.12)(@types/node@24.2.1)(jiti@2.4.2)(jsdom@25.0.1)(tsx@4.19.3)(yaml@2.8.1)
+
 packages:
 
   '@ampproject/remapping@2.3.0':
@@ -823,6 +866,9 @@ packages:
 
   '@types/normalize-package-data@2.4.4':
     resolution: {integrity: sha512-37i+OaWTh9qeK4LSHPsyRC7NahnGotNuZvjLSgcPzblpHB3rrCJxAOgI5gCdKm7coonsaX1Of0ILiTcnZjbfxA==}
+
+  '@types/prompts@2.4.9':
+    resolution: {integrity: sha512-qTxFi6Buiu8+50/+3DGIWLHM6QuWsEKugJnnP6iv2Mc4ncxE4A/OJkjuVOA+5X0X1S/nq5VJRa8Lu+nwcvbrKA==}
 
   '@types/unist@3.0.3':
     resolution: {integrity: sha512-ko/gIFJRv177XgZsZcBwnqJN5x/Gien8qNOn0D5bQU/zAzVf9Zt3BlcUiLqhV9y4ARk0GbT3tnUiPNgnTXzc/Q==}
@@ -1699,6 +1745,10 @@ packages:
     resolution: {integrity: sha512-dcS1ul+9tmeD95T+x28/ehLgd9mENa3LsvDTtzm3vyBEO7RPptvAD+t44WVXaUjTBRcrpFeFlC8WCruUR456hw==}
     engines: {node: '>=0.10.0'}
 
+  kleur@3.0.3:
+    resolution: {integrity: sha512-eTIzlVOSUR+JxdDFepEYcBMtZ9Qqdef+rnzWdRZuMbOywu5tO2w2N7rqjoANZ5k9vywhL6Br1VRjUIgTQx4E8w==}
+    engines: {node: '>=6'}
+
   lilconfig@3.1.3:
     resolution: {integrity: sha512-/vlFKAoH5Cgt3Ie+JLhRbwOsCQePABiU3tJ1egGvyQ+33R/vcwM2Zl2QR/LzjsBeItPt3oSVXapn+m4nQDvpzw==}
     engines: {node: '>=14'}
@@ -2143,6 +2193,10 @@ packages:
   process-nextick-args@2.0.1:
     resolution: {integrity: sha512-3ouUOpQhtgrbOa17J7+uxOTpITYWaGP7/AhoR3+A+/1e9skrzelGi/dXzEYyvbxubEF6Wn2ypscTKiKJFFn1ag==}
 
+  prompts@2.4.2:
+    resolution: {integrity: sha512-NxNv/kLguCA7p3jE8oL2aEBsrJWgAakBpgmgK6lpPWV+WuOmY6r2/zbAVnP+T8bQlA0nzHXSJSJW0Hq7ylaD2Q==}
+    engines: {node: '>= 6'}
+
   punycode@2.3.1:
     resolution: {integrity: sha512-vYt7UD1U9Wg6138shLtLOvdAu+8DsC/ilFtEVHcH+wydcSpNE20AfSOduf6MkRFahL5FY7X1oU7nKVZFtfq8Fg==}
     engines: {node: '>=6'}
@@ -2268,6 +2322,9 @@ packages:
   signal-exit@4.1.0:
     resolution: {integrity: sha512-bzyZ1e88w9O1iNJbKnOlvYTrWPDl46O1bG0D3XInv+9tkPrxrN8jUUTiFlDkkmKWgn1M6CfIA13SuGqOa9Korw==}
     engines: {node: '>=14'}
+
+  sisteransi@1.0.5:
+    resolution: {integrity: sha512-bLGGlR1QxBcynn2d5YmDX4MGjlZvy2MRBDRNHLJ8VI6l6+9FUiyTFNJ0IveOSP0bcXgVDPRcfGqA0pjaqUpfVg==}
 
   slice-ansi@5.0.0:
     resolution: {integrity: sha512-FC+lgizVPfie0kkhqUScwRu1O/lF6NOgJmlCgK+/LYxDCTk8sGelYaHDhFcDN+Sn3Cv+3VSa4Byeo+IMCzpMgQ==}
@@ -2863,7 +2920,7 @@ snapshots:
   '@commitlint/format@19.8.0':
     dependencies:
       '@commitlint/types': 19.8.0
-      chalk: 5.4.1
+      chalk: 5.5.0
 
   '@commitlint/is-ignored@19.8.0':
     dependencies:
@@ -2883,7 +2940,7 @@ snapshots:
       '@commitlint/execute-rule': 19.8.0
       '@commitlint/resolve-extends': 19.8.0
       '@commitlint/types': 19.8.0
-      chalk: 5.4.1
+      chalk: 5.5.0
       cosmiconfig: 9.0.0(typescript@5.4.5)
       cosmiconfig-typescript-loader: 6.1.0(@types/node@24.2.1)(cosmiconfig@9.0.0(typescript@5.4.5))(typescript@5.4.5)
       lodash.isplainobject: 4.0.6
@@ -2934,7 +2991,7 @@ snapshots:
   '@commitlint/types@19.8.0':
     dependencies:
       '@types/conventional-commits-parser': 5.0.1
-      chalk: 5.4.1
+      chalk: 5.5.0
 
   '@commitlint/types@19.8.1':
     dependencies:
@@ -3269,6 +3326,11 @@ snapshots:
       undici-types: 7.10.0
 
   '@types/normalize-package-data@2.4.4': {}
+
+  '@types/prompts@2.4.9':
+    dependencies:
+      '@types/node': 24.2.1
+      kleur: 3.0.3
 
   '@types/unist@3.0.3': {}
 
@@ -4199,6 +4261,8 @@ snapshots:
 
   kind-of@6.0.3: {}
 
+  kleur@3.0.3: {}
+
   lilconfig@3.1.3: {}
 
   lines-and-columns@1.2.4: {}
@@ -4702,6 +4766,11 @@ snapshots:
 
   process-nextick-args@2.0.1: {}
 
+  prompts@2.4.2:
+    dependencies:
+      kleur: 3.0.3
+      sisteransi: 1.0.5
+
   punycode@2.3.1: {}
 
   quick-lru@4.0.1: {}
@@ -4840,6 +4909,8 @@ snapshots:
   siginfo@2.0.0: {}
 
   signal-exit@4.1.0: {}
+
+  sisteransi@1.0.5: {}
 
   slice-ansi@5.0.0:
     dependencies:
