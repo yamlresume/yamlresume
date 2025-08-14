@@ -34,7 +34,7 @@
     "commit-and-tag-version": "^12.5.2",
     "husky": "^9.1.7",
     "lint-staged": "^15.5.0",
-    "tsup": "^8.4.0",
+    "tsup": "^8.5.0",
     "typescript": "~5.4.5",
     "vite-tsconfig-paths": "^5.1.4",
     "vitest": "^3.2.4"
