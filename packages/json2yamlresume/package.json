@@ -1,0 +1,69 @@
+{
+  "name": "json2yamlresume",
+  "version": "0.7.2",
+  "description": "Convert JSON Resume to YAMLResume format",
+  "license": "MIT",
+  "author": {
+    "name": "YAMLResume",
+    "email": "support@yamlresume.com",
+    "url": "https://yamlresume.dev"
+  },
+  "keywords": [
+    "JSON Resume",
+    "YAMLResume",
+    "CV",
+    "Resume",
+    "Converter",
+    "YAML",
+    "JSON"
+  ],
+  "type": "module",
+  "bin": {
+    "json2yamlresume": "./dist/cli.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "build:watch": "tsup --watch",
+    "build:clean": "rm -rf dist",
+    "build:prod": "tsup --dts --minify --sourcemap",
+    "prepublishOnly": "pnpm test",
+    "dev": "tsx src/cli.ts",
+    "test": "vitest --run",
+    "test:cov": "vitest --coverage --run",
+    "test:watch": "vitest"
+  },
+  "dependencies": {
+    "@yamlresume/core": "workspace:*",
+    "chalk": "^5.4.1",
+    "commander": "^11.0.0",
+    "consola": "^3.4.2",
+    "lodash-es": "^4.17.21",
+    "tslib": "^2.8.1",
+    "yaml": "^2.8.1",
+    "zod": "^3.25.56"
+  },
+  "devDependencies": {
+    "@types/lodash-es": "^4.17.12",
+    "tsx": "^4.19.3"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yamlresume/yamlresume.git",
+    "directory": "packages/json2yamlresume"
+  },
+  "bugs": {
+    "url": "https://github.com/yamlresume/yamlresume/issues"
+  },
+  "homepage": "https://github.com/yamlresume/yamlresume/tree/main/packages/json2yamlresume#readme",
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}

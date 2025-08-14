@@ -137,6 +137,40 @@ importers:
         specifier: ^2.8.1
         version: 2.8.1
 
+  packages/json2yamlresume:
+    dependencies:
+      '@yamlresume/core':
+        specifier: workspace:*
+        version: link:../core
+      chalk:
+        specifier: ^5.4.1
+        version: 5.5.0
+      commander:
+        specifier: ^11.0.0
+        version: 11.1.0
+      consola:
+        specifier: ^3.4.2
+        version: 3.4.2
+      lodash-es:
+        specifier: ^4.17.21
+        version: 4.17.21
+      tslib:
+        specifier: ^2.8.1
+        version: 2.8.1
+      yaml:
+        specifier: ^2.8.1
+        version: 2.8.1
+      zod:
+        specifier: ^3.25.56
+        version: 3.25.56
+    devDependencies:
+      '@types/lodash-es':
+        specifier: ^4.17.12
+        version: 4.17.12
+      tsx:
+        specifier: ^4.19.3
+        version: 4.19.3
+
 packages:
 
   '@ampproject/remapping@2.3.0':
@@ -2863,7 +2897,7 @@ snapshots:
   '@commitlint/format@19.8.0':
     dependencies:
       '@commitlint/types': 19.8.0
-      chalk: 5.4.1
+      chalk: 5.5.0
 
   '@commitlint/is-ignored@19.8.0':
     dependencies:
@@ -2883,7 +2917,7 @@ snapshots:
       '@commitlint/execute-rule': 19.8.0
       '@commitlint/resolve-extends': 19.8.0
       '@commitlint/types': 19.8.0
-      chalk: 5.4.1
+      chalk: 5.5.0
       cosmiconfig: 9.0.0(typescript@5.4.5)
       cosmiconfig-typescript-loader: 6.1.0(@types/node@24.2.1)(cosmiconfig@9.0.0(typescript@5.4.5))(typescript@5.4.5)
       lodash.isplainobject: 4.0.6
@@ -2934,7 +2968,7 @@ snapshots:
   '@commitlint/types@19.8.0':
     dependencies:
       '@types/conventional-commits-parser': 5.0.1
-      chalk: 5.4.1
+      chalk: 5.5.0
 
   '@commitlint/types@19.8.1':
     dependencies:
