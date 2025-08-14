@@ -42,6 +42,7 @@
   "dependencies": {
     "@yamlresume/core": "workspace:*",
     "chalk": "^5.4.1",
+    "chokidar": "^4.0.3",
     "coalescifn": "^0.1.0",
     "commander": "^11.0.0",
     "consola": "^3.4.2",

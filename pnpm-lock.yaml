@@ -56,6 +56,9 @@ importers:
       chalk:
         specifier: ^5.4.1
         version: 5.4.1
+      chokidar:
+        specifier: ^4.0.3
+        version: 4.0.3
       coalescifn:
         specifier: ^0.1.0
         version: 0.1.0
