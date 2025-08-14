@@ -152,6 +152,32 @@ export async function createYamlResumeProject(projectName?: string): Promise<voi
     consola.warn(`Failed to create resume file automatically. Please run ${chalk.cyan(`npx yamlresume new ${resumeFile}`)} manually.`)
   }
 
+  // Initialize git repository
+  consola.start('Initializing git repository...')
+  
+  try {
+    await execa('git', ['init'], {
+      cwd: projectPath,
+      stdio: 'inherit'
+    })
+    consola.success('Git repository initialized!')
+    
+    // Add all files to git
+    await execa('git', ['add', '.'], {
+      cwd: projectPath,
+      stdio: 'inherit'
+    })
+    
+    // Create initial commit
+    await execa('git', ['commit', '-m', 'Initial commit: YAMLResume project setup'], {
+      cwd: projectPath,
+      stdio: 'inherit'
+    })
+    consola.success('Initial commit created!')
+  } catch (error) {
+    consola.warn('Failed to initialize git repository. You can run git init manually if needed.')
+  }
+
   // Show help
   consola.info('\\n' + chalk.green('✨ Project created successfully!'))
   consola.info('\\nNext steps:')

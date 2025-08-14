@@ -113,4 +113,10 @@ describe('create-yamlresume integration', () => {
       expect(packageJson.name).toBe(projectName)
     }
   })
+
+  it('should throw error for unknown package manager', async () => {
+    await expect(
+      createYamlResumeProjectNonInteractive('test-project', 'unknown-pm', 'resume')
+    ).rejects.toThrow('Unknown package manager: unknown-pm')
+  })
 })

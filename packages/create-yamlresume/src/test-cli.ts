@@ -26,8 +26,8 @@
 import { createYamlResumeProjectNonInteractive } from './test-utils.js'
 
 // Simple test version that runs non-interactively
-async function main() {
-  const projectName = process.argv[2] || 'test-project'
+export async function runTestCli(args: string[] = process.argv): Promise<void> {
+  const projectName = args[2] || 'test-project'
   const packageManager = 'npm'
   const resumeFilename = 'my-resume'
   
@@ -40,4 +40,7 @@ async function main() {
   }
 }
 
-main()
+// Only run if this file is executed directly
+if (import.meta.url === `file://${process.argv[1]}`) {
+  runTestCli()
+}

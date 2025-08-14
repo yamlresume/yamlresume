@@ -27,20 +27,32 @@ import { Command } from 'commander'
 import { createYamlResumeProject } from './index.js'
 import packageJson from '../package.json' with { type: 'json' }
 
-const program = new Command()
+export async function createCliProgram(): Promise<Command> {
+  const program = new Command()
 
-program
-  .name('create-yamlresume')
-  .description('Create a new YAMLResume project')
-  .version(packageJson.version)
-  .argument('[project-name]', 'name of the project directory')
-  .action(async (projectName) => {
-    try {
-      await createYamlResumeProject(projectName)
-    } catch (error) {
-      console.error('Error creating project:', error.message)
-      process.exit(1)
-    }
-  })
+  program
+    .name('create-yamlresume')
+    .description('Create a new YAMLResume project')
+    .version(packageJson.version)
+    .argument('[project-name]', 'name of the project directory')
+    .action(async (projectName) => {
+      try {
+        await createYamlResumeProject(projectName)
+      } catch (error) {
+        console.error('Error creating project:', error.message)
+        process.exit(1)
+      }
+    })
 
-program.parse()
+  return program
+}
+
+export async function runCli(): Promise<void> {
+  const program = await createCliProgram()
+  program.parse()
+}
+
+// Only run if this file is executed directly
+if (import.meta.url === `file://${process.argv[1]}`) {
+  runCli()
+}
