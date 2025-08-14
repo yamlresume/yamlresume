@@ -1,0 +1,21 @@
+{
+  "name": "{{projectName}}",
+  "version": "1.0.0",
+  "description": "My YAMLResume project",
+  "main": "index.js",
+  "scripts": {
+    "build": "yamlresume build {{resumeFile}}",
+    "dev": "yamlresume dev {{resumeFile}}",
+    "validate": "yamlresume validate {{resumeFile}}"
+  },
+  "keywords": [
+    "resume",
+    "cv",
+    "yamlresume"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "yamlresume": "latest"
+  }
+}
