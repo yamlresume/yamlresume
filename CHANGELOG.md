@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.7.2](https://github.com/yamlresume/yamlresume/compare/v0.7.1...v0.7.2) (2025-08-14)
+
+
+### Bug Fixes
+
+* adopt chokidar for more robust watch mode ([a684dfe](https://github.com/yamlresume/yamlresume/commit/a684dfef2c926a7ab2a9955632ea007c3cd2ce3f))
+
 ## [0.7.1](https://github.com/yamlresume/yamlresume/compare/v0.7.0...v0.7.1) (2025-08-11)
 
 
