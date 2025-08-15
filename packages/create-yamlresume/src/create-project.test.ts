@@ -22,14 +22,32 @@
  * IN THE SOFTWARE.
  */
 
-// Export main functionality
-export { createYamlResumeProject } from './create-project.js'
+import { describe, it, expect, vi, beforeEach } from 'vitest'
+import { createYamlResumeProject } from './create-project.js'
 
-// Export package manager utilities
-export { type PackageManager, packageManagers } from './package-manager.js'
+// Mock all dependencies
+vi.mock('fs-extra')
+vi.mock('prompts')
+vi.mock('consola')
+vi.mock('./package-manager.js')
+vi.mock('./template-utils.js')
+vi.mock('./git-utils.js')
 
-// Export git utilities
-export { isGitAvailable, initializeGitRepository } from './git-utils.js'
+describe('create-project', () => {
+  beforeEach(() => {
+    vi.clearAllMocks()
+  })
 
-// Export template utilities
-export { copyTemplateFiles, getTemplatesDir } from './template-utils.js'
+  describe('createYamlResumeProject', () => {
+    it('should be a function', () => {
+      expect(typeof createYamlResumeProject).toBe('function')
+    })
+
+    it('should handle cancellation gracefully', async () => {
+      const prompts = await import('prompts')
+      vi.mocked(prompts.default).mockResolvedValueOnce({})
+      
+      await expect(createYamlResumeProject()).resolves.toBeUndefined()
+    })
+  })
+})
