@@ -334,7 +334,7 @@ export const RESUME_SECTION_ITEMS: ResumeSectionItem = {
     institution: '',
     score: '',
     startDate: '',
-    degree: undefined,
+    degree: null,
     url: '',
   },
   interest: {
@@ -342,8 +342,8 @@ export const RESUME_SECTION_ITEMS: ResumeSectionItem = {
     name: '',
   },
   language: {
-    fluency: undefined,
-    language: undefined,
+    fluency: null,
+    language: null,
     keywords: [],
   },
   location: {
@@ -354,7 +354,7 @@ export const RESUME_SECTION_ITEMS: ResumeSectionItem = {
     region: '',
   },
   profile: {
-    network: undefined,
+    network: null,
     url: '',
     username: '',
   },

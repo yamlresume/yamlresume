@@ -28,6 +28,7 @@ import {
   isEmptyString,
   joinNonEmptyString,
   showIf,
+  showIfNotEmpty,
   toCodeBlock,
 } from './string'
 
@@ -68,6 +69,52 @@ describe(showIf, () => {
     for (const [predicate, content, expected] of tests) {
       expect(showIf(predicate, content)).toBe(expected)
     }
+  })
+})
+
+describe(showIfNotEmpty, () => {
+  it('should return content if value is not empty', () => {
+    const tests: [undefined | null | object | string, string, string][] = [
+      ['hello', 'content', 'content'],
+      [' hello ', 'content', 'content'],
+      [{ key: 'value' }, 'content', 'content'],
+      [['item'], 'content', 'content'],
+      // @ts-ignore
+      [0, 'content', 'content'],
+      // @ts-ignore
+      [false, 'content', 'content'],
+    ]
+
+    for (const [value, content, expected] of tests) {
+      expect(showIfNotEmpty(value, content)).toBe(expected)
+    }
+  })
+
+  it('should return empty string if value is empty', () => {
+    const tests: [undefined | null | object | string, string, string][] = [
+      [undefined, 'content', ''],
+      [null, 'content', ''],
+      ['', 'content', ''],
+      [' ', 'content', ''],
+      ['  \t\n  ', 'content', ''],
+      [{}, 'content', ''],
+    ]
+
+    for (const [value, content, expected] of tests) {
+      expect(showIfNotEmpty(value, content)).toBe(expected)
+    }
+  })
+
+  it('should handle edge cases correctly', () => {
+    expect(showIfNotEmpty('', '\\extrainfo{urls}')).toBe('')
+    expect(showIfNotEmpty(' ', '\\extrainfo{urls}')).toBe('')
+    expect(
+      showIfNotEmpty('https://example.com', '\\extrainfo{https://example.com}')
+    ).toBe('\\extrainfo{https://example.com}')
+    expect(showIfNotEmpty({}, '\\extrainfo{urls}')).toBe('')
+    expect(
+      showIfNotEmpty({ url: 'https://example.com' }, '\\extrainfo{urls}')
+    ).toBe('\\extrainfo{urls}')
   })
 })
 

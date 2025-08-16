@@ -46,6 +46,20 @@ export function showIf(predicate: boolean, content: string) {
 }
 
 /**
+ * Show content if value is not empty
+ *
+ * @param value - The value to check (undefined, null, object, or string)
+ * @param content - The content to show
+ * @returns The content if value is not empty, empty string otherwise
+ */
+export function showIfNotEmpty(
+  value: undefined | null | object | string,
+  content: string
+) {
+  return showIf(!isEmptyValue(value), content)
+}
+
+/**
  * Join an array of strings , but only if the string is not empty
  *
  * @param codes - The array of strings to join

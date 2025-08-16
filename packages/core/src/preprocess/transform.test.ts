@@ -34,11 +34,14 @@ import {
   type Network,
   ORDERABLE_SECTION_IDS,
   type ProfileItem,
+  RESUME_SECTION_ITEMS,
+  type Resume,
   type ResumeLayout,
 } from '@/models'
 import { getOptionTranslation, getTemplateTranslations } from '@/translations'
-import { isEmptyValue } from '@/utils'
 import {
+  normalizeResumeContentSections,
+  normalizedResumeContent,
   replaceBlankLinesWithPercent,
   transformBasicsUrl,
   transformDate,
@@ -104,6 +107,255 @@ describe(replaceBlankLinesWithPercent, () => {
     for (const { content, expected } of tests) {
       expect(replaceBlankLinesWithPercent(content)).toEqual(expected)
     }
+  })
+})
+
+describe(normalizeResumeContentSections, () => {
+  it('should fill missing sections with default values', () => {
+    const basics = { name: 'John Doe' }
+    const education = [
+      {
+        institution: 'Test University',
+        area: '',
+        degree: undefined,
+        startDate: '',
+        endDate: '',
+      },
+    ]
+
+    const resume: Resume = {
+      content: {
+        basics,
+        education,
+      },
+    }
+
+    const normalizedResume = normalizeResumeContentSections(resume)
+
+    expect(normalizedResume.content.awards).toEqual([])
+    expect(normalizedResume.content.basics).toEqual(basics)
+    expect(normalizedResume.content.certificates).toEqual([])
+    expect(normalizedResume.content.education).toEqual(education)
+    expect(normalizedResume.content.interests).toEqual([])
+    expect(normalizedResume.content.languages).toEqual([])
+    expect(normalizedResume.content.location).toEqual(
+      RESUME_SECTION_ITEMS.location
+    )
+    expect(normalizedResume.content.profiles).toEqual([])
+    expect(normalizedResume.content.projects).toEqual([])
+    expect(normalizedResume.content.publications).toEqual([])
+    expect(normalizedResume.content.references).toEqual([])
+    expect(normalizedResume.content.skills).toEqual([])
+    expect(normalizedResume.content.volunteer).toEqual([])
+    expect(normalizedResume.content.work).toEqual([])
+  })
+
+  it('should not overwrite existing sections', () => {
+    const basics = { name: 'Jane Doe' }
+    const education = [{ institution: 'Another University' }]
+    const awards = [{ title: 'Best Student' }]
+    const skills = [{ name: 'Programming' }]
+    const location = { city: 'New York' }
+
+    const resume = {
+      content: {
+        basics,
+        education,
+        awards,
+        skills,
+        location,
+      },
+    }
+
+    // @ts-ignore
+    const normalizedResume = normalizeResumeContentSections(resume)
+    expect(normalizedResume.content.basics).toEqual(basics)
+    expect(normalizedResume.content.education).toEqual(education)
+    expect(normalizedResume.content.awards).toEqual(awards)
+    expect(normalizedResume.content.skills).toEqual(skills)
+    expect(normalizedResume.content.location).toEqual(location)
+  })
+
+  it('should handle empty input gracefully', () => {
+    const resume = { content: {} }
+
+    // @ts-ignore
+    const normalizedResume = normalizeResumeContentSections(resume)
+    expect(normalizedResume.content.basics).toEqual(RESUME_SECTION_ITEMS.basics)
+    expect(normalizedResume.content.education).toEqual([])
+    expect(normalizedResume.content.awards).toEqual([])
+    expect(normalizedResume.content.certificates).toEqual([])
+    expect(normalizedResume.content.interests).toEqual([])
+    expect(normalizedResume.content.languages).toEqual([])
+    expect(normalizedResume.content.location).toEqual(
+      RESUME_SECTION_ITEMS.location
+    )
+    expect(normalizedResume.content.profiles).toEqual([])
+    expect(normalizedResume.content.projects).toEqual([])
+    expect(normalizedResume.content.publications).toEqual([])
+    expect(normalizedResume.content.references).toEqual([])
+    expect(normalizedResume.content.skills).toEqual([])
+    expect(normalizedResume.content.volunteer).toEqual([])
+    expect(normalizedResume.content.work).toEqual([])
+  })
+
+  it('should not mutate the original resume object', () => {
+    const resume = {
+      content: {
+        basics: { name: 'Original' },
+      },
+    }
+    const resumeCopy = JSON.parse(JSON.stringify(resume))
+    // @ts-ignore
+    normalizeResumeContentSections(resume)
+    expect(resume).toEqual(resumeCopy)
+  })
+
+  it('should not mutate computed section', () => {
+    const computed = { someValue: 'test' }
+    const resume = {
+      content: {
+        computed,
+      },
+    }
+
+    // @ts-ignore
+    const normalizedResume = normalizeResumeContentSections(resume)
+
+    expect(normalizedResume.content.computed).toEqual(computed)
+  })
+})
+
+describe(normalizedResumeContent, () => {
+  it('should fill missing fields with empty strings or arrays', () => {
+    const computed = {
+      someValue: 'test',
+    }
+    const resume = {
+      content: {
+        basics: { name: 'Alice', email: null, phone: undefined },
+        education: [{ area: 'CS', institution: null, startDate: undefined }],
+        location: { city: 'Paris', country: null },
+        awards: null,
+        skills: undefined,
+        computed,
+      },
+    }
+    // @ts-ignore
+    const normalized = normalizedResumeContent(resume)
+
+    // basics: all fields present, missing/undefined/null replaced with ""
+    expect(normalized.content.basics).toEqual({
+      ...RESUME_SECTION_ITEMS.basics,
+      name: 'Alice',
+      email: '',
+      phone: '',
+    })
+
+    // education: array, each item filled
+    expect(normalized.content.education[0].area).toBe('CS')
+    expect(normalized.content.education[0].institution).toBe('')
+    expect(normalized.content.education[0].startDate).toBe('')
+    // all other fields present
+    Object.keys(RESUME_SECTION_ITEMS.education).forEach((key) => {
+      expect(normalized.content.education[0]).toHaveProperty(key)
+    })
+
+    // location: all fields present, missing/undefined/null replaced with ""
+    expect(normalized.content.location).toEqual({
+      ...RESUME_SECTION_ITEMS.location,
+      city: 'Paris',
+      country: '',
+    })
+
+    // awards: should be []
+    expect(normalized.content.awards).toEqual([])
+
+    // skills: should be []
+    expect(normalized.content.skills).toEqual([])
+
+    // volunteer, certificates, etc: should be []
+    expect(normalized.content.certificates).toEqual([])
+    expect(normalized.content.interests).toEqual([])
+    expect(normalized.content.languages).toEqual([])
+    expect(normalized.content.profiles).toEqual([])
+    expect(normalized.content.projects).toEqual([])
+    expect(normalized.content.publications).toEqual([])
+    expect(normalized.content.references).toEqual([])
+    expect(normalized.content.volunteer).toEqual([])
+    expect(normalized.content.work).toEqual([])
+    expect(normalized.content.computed).toEqual(computed)
+  })
+
+  it('should not mutate the input object', () => {
+    const resume = {
+      content: {
+        basics: { name: 'Bob' },
+        education: [{ area: 'Math' }],
+      },
+    }
+    const original = JSON.parse(JSON.stringify(resume))
+
+    // @ts-ignore
+    normalizedResumeContent(resume)
+    expect(resume).toEqual(original)
+  })
+
+  it('should handle empty content gracefully', () => {
+    const resume = { content: {} }
+
+    // @ts-ignore
+    const normalized = normalizedResumeContent(resume)
+
+    expect(normalized.content.basics).toEqual(RESUME_SECTION_ITEMS.basics)
+    expect(normalized.content.location).toEqual(RESUME_SECTION_ITEMS.location)
+    expect(normalized.content.education).toEqual([])
+    expect(normalized.content.awards).toEqual([])
+    expect(normalized.content.skills).toEqual([])
+    expect(normalized.content.certificates).toEqual([])
+    expect(normalized.content.interests).toEqual([])
+    expect(normalized.content.languages).toEqual([])
+    expect(normalized.content.profiles).toEqual([])
+    expect(normalized.content.projects).toEqual([])
+    expect(normalized.content.publications).toEqual([])
+    expect(normalized.content.references).toEqual([])
+    expect(normalized.content.volunteer).toEqual([])
+    expect(normalized.content.work).toEqual([])
+  })
+
+  it('should handle null and undefined values in arrays', () => {
+    const resume = {
+      content: {
+        education: [
+          { area: null, institution: undefined, startDate: '2020' },
+          undefined,
+          null,
+        ],
+      },
+    }
+
+    // @ts-ignore
+    const normalized = normalizedResumeContent(resume)
+
+    expect(normalized.content.education[0].area).toBe('')
+    expect(normalized.content.education[0].institution).toBe('')
+    expect(normalized.content.education[0].startDate).toBe('2020')
+    // Should not throw for undefined/null array items
+    expect(normalized.content.education.length).toBe(3)
+  })
+
+  it('should preserve extra fields not in RESUME_SECTION_ITEMS', () => {
+    const resume = {
+      content: {
+        basics: { name: 'Eve', customField: 'custom' },
+      },
+    }
+
+    // @ts-ignore
+    const normalized = normalizedResumeContent(resume)
+
+    // @ts-ignore
+    expect(normalized.content.basics.customField).toBe('custom')
   })
 })
 
@@ -319,7 +571,7 @@ describe(transformEndDate, () => {
 })
 
 describe(transformLanguage, () => {
-  it('should transform language option according to user chosen locale language', () => {
+  it("should transform language option according to user's language", () => {
     testOverAllLocaleLanguages((language) => {
       const resume = cloneDeep(DEFAULT_RESUME)
 
@@ -330,10 +582,6 @@ describe(transformLanguage, () => {
       transformLanguage(resume)
 
       resume.content.languages.forEach((item) => {
-        if (isEmptyValue(item.language) || isEmptyValue(item.fluency)) {
-          return
-        }
-
         item.language &&
           expect(item.computed?.language).toBe(
             getOptionTranslation(
