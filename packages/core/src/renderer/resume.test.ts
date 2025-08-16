@@ -24,7 +24,7 @@
 
 import { describe, expect, it } from 'vitest'
 
-import { defaultResume } from '@/models'
+import { DEFAULT_RESUME } from '@/models'
 import type { Resume, Template } from '@/models'
 import {
   ModerncvBankingRenderer,
@@ -34,7 +34,7 @@ import {
 import { getResumeRenderer } from './resume'
 
 describe(getResumeRenderer, () => {
-  const mockResume: Resume = defaultResume
+  const mockResume: Resume = DEFAULT_RESUME
 
   it('should return correct renderer when template is specified', () => {
     const tests = [

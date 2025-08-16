@@ -24,7 +24,7 @@
 
 import { describe, expect, it } from 'vitest'
 
-import { defaultResume } from '@/models'
+import { DEFAULT_RESUME } from '@/models'
 import type { Resume } from '@/models'
 import {
   MODERNCV_STYLE_OPTIONS,
@@ -37,7 +37,7 @@ import {
   renderModerncvConfig,
 } from './preamble'
 
-const mockResume = defaultResume
+const mockResume = DEFAULT_RESUME
 
 describe(normalizeUnit, () => {
   it('should remove spaces between number and unit', () => {

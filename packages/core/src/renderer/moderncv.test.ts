@@ -26,7 +26,7 @@ import { cloneDeep } from 'lodash-es'
 import { beforeEach, describe, expect, it } from 'vitest'
 
 import { MarkdownParser } from '@/compiler'
-import { type Resume, filledResume } from '@/models'
+import { FILLED_RESUME, type Resume } from '@/models'
 import {
   ModerncvBankingRenderer,
   ModerncvBase,
@@ -40,7 +40,7 @@ describe('ModerncvBase', () => {
   const summaryParser = new MarkdownParser()
 
   beforeEach(() => {
-    resume = cloneDeep(filledResume)
+    resume = cloneDeep(FILLED_RESUME)
     renderer = new ModerncvBankingRenderer(resume, summaryParser)
   })
 

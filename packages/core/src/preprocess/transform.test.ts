@@ -27,14 +27,14 @@ import { describe, expect, it } from 'vitest'
 
 import { LatexCodeGenerator, MarkdownParser } from '@/compiler'
 import {
+  DEFAULT_RESUME,
+  FILLED_RESUME,
   LOCALE_LANGUAGE_OPTIONS,
   type LocaleLanguage,
   type Network,
   ORDERABLE_SECTION_IDS,
   type ProfileItem,
   type ResumeLayout,
-  defaultResume,
-  filledResume,
 } from '@/models'
 import { getOptionTranslation, getTemplateTranslations } from '@/translations'
 import { isEmptyValue } from '@/utils'
@@ -110,7 +110,7 @@ describe(replaceBlankLinesWithPercent, () => {
 describe(transformEducationCourses, () => {
   it('should transform courses from string[] to comma space separated string', () => {
     testOverAllLocaleLanguages((language) => {
-      const resume = cloneDeep(defaultResume)
+      const resume = cloneDeep(DEFAULT_RESUME)
       resume.layout.locale.language = language
 
       const coursesList = [
@@ -181,7 +181,7 @@ describe(transformEducationDegreeAreaAndScore, () => {
       ]
 
       for (const { degree, area, score, expected } of tests) {
-        const resume = cloneDeep(defaultResume)
+        const resume = cloneDeep(DEFAULT_RESUME)
 
         resume.layout.locale.language = language
 
@@ -203,7 +203,7 @@ describe(transformEducationDegreeAreaAndScore, () => {
 describe(transformKeywords, () => {
   it('should transform keywords from string[] to comma separated string', () => {
     testOverAllLocaleLanguages((language) => {
-      const resume = cloneDeep(defaultResume)
+      const resume = cloneDeep(DEFAULT_RESUME)
       resume.layout.locale.language = language
 
       const keywordList = ['JavaScript', 'TypeScript', 'React', 'Node.js']
@@ -238,7 +238,7 @@ describe(transformKeywords, () => {
 
 describe(transformDate, () => {
   it('should transform date by removing day for various sections', () => {
-    const resume = cloneDeep(filledResume)
+    const resume = cloneDeep(FILLED_RESUME)
 
     const date = 'Oct 1, 2016'
     const startDate = 'Oct 1, 2016'
@@ -296,7 +296,7 @@ describe(transformDate, () => {
 
 describe(transformEndDate, () => {
   it('should transform endDate by setting to "Present" if it is empty', () => {
-    const resume = cloneDeep(filledResume)
+    const resume = cloneDeep(FILLED_RESUME)
 
     const endDate = ''
 
@@ -321,7 +321,7 @@ describe(transformEndDate, () => {
 describe(transformLanguage, () => {
   it('should transform language option according to user chosen locale language', () => {
     testOverAllLocaleLanguages((language) => {
-      const resume = cloneDeep(defaultResume)
+      const resume = cloneDeep(DEFAULT_RESUME)
 
       resume.layout.locale.language = language
       resume.content.languages[0].language = 'Arabic'
@@ -355,7 +355,7 @@ describe(transformLanguage, () => {
   })
 
   it('should do nothing when either language or fluency is empty', () => {
-    const resume = cloneDeep(defaultResume)
+    const resume = cloneDeep(DEFAULT_RESUME)
 
     resume.content.languages = [
       {
@@ -498,7 +498,7 @@ describe(transformLocation, () => {
       expected,
     } of tests) {
       testOverAllLocaleLanguages((language) => {
-        const resume = cloneDeep(defaultResume)
+        const resume = cloneDeep(DEFAULT_RESUME)
         resume.layout.locale.language = language
 
         resume.content.location = {
@@ -522,7 +522,7 @@ describe(transformLocation, () => {
 
 describe(transformSummary, () => {
   it('should parse summary from markdown to tex', () => {
-    const resume = cloneDeep(filledResume)
+    const resume = cloneDeep(FILLED_RESUME)
     const summary = 'Test summary'
 
     resume.content.basics.summary = summary
@@ -572,7 +572,7 @@ describe(transformSummary, () => {
 
   it('should transform summary to empty string if it is empty', () => {
     for (const summary of ['', undefined, null]) {
-      const resume = cloneDeep(filledResume)
+      const resume = cloneDeep(FILLED_RESUME)
       resume.content.basics.summary = summary
 
       for (const section of [
@@ -616,7 +616,7 @@ describe(transformSkills, () => {
   it('should translate null/undefined levels', () => {
     testOverAllLocaleLanguages((language) => {
       for (const level of [null, undefined, '']) {
-        const resume = cloneDeep(filledResume)
+        const resume = cloneDeep(FILLED_RESUME)
 
         resume.layout.locale.language = language
         // @ts-ignore
@@ -639,7 +639,7 @@ describe(transformSkills, () => {
         'Expert',
         'Master',
       ] as const) {
-        const resume = cloneDeep(filledResume)
+        const resume = cloneDeep(FILLED_RESUME)
 
         resume.layout.locale.language = language
         resume.content.skills[0].level = level
@@ -657,7 +657,7 @@ describe(transformSkills, () => {
 describe(transformSectionNames, () => {
   it('should translate section names according to user chosen language', () => {
     testOverAllLocaleLanguages((language) => {
-      const resume = cloneDeep(defaultResume)
+      const resume = cloneDeep(DEFAULT_RESUME)
       resume.layout.locale.language = language
 
       transformSectionNames(resume)
@@ -675,7 +675,7 @@ describe(transformSectionNames, () => {
   })
 
   it('should use section aliases when provided in layout.sections.alias', () => {
-    const resume = cloneDeep(defaultResume)
+    const resume = cloneDeep(DEFAULT_RESUME)
     resume.layout.locale.language = 'en'
 
     // Set some section aliases
@@ -710,7 +710,7 @@ describe(transformSectionNames, () => {
   })
 
   it('should work correctly when sections.alias is undefined', () => {
-    const resume = cloneDeep(defaultResume)
+    const resume = cloneDeep(DEFAULT_RESUME)
     resume.layout.locale.language = 'en'
 
     // Ensure sections.alias is undefined
@@ -727,7 +727,7 @@ describe(transformSectionNames, () => {
   })
 
   it('should work correctly in the full transform pipeline', () => {
-    const resume = cloneDeep(defaultResume)
+    const resume = cloneDeep(DEFAULT_RESUME)
     resume.layout.locale.language = 'en'
 
     // Set section aliases
@@ -769,7 +769,7 @@ describe(transformSectionNames, () => {
 
 describe(transformBasicsUrl, () => {
   it('should transform basics.url to latex href with fontawesome5 icon', () => {
-    const resume = cloneDeep(defaultResume)
+    const resume = cloneDeep(DEFAULT_RESUME)
 
     const url = 'https://yamlresume.dev'
     const tests = [
@@ -792,7 +792,7 @@ describe(transformBasicsUrl, () => {
 
 describe(transformProfileUrls, () => {
   it('should transform profile urls to latex href with fontawesome5 icon', () => {
-    const resume = cloneDeep(defaultResume)
+    const resume = cloneDeep(DEFAULT_RESUME)
 
     const tests: {
       network: Network
@@ -848,7 +848,7 @@ describe(transformProfileUrls, () => {
 
 describe(transformProfileLinks, () => {
   it('should transform profile links to latex with icons', () => {
-    const resume = cloneDeep(defaultResume)
+    const resume = cloneDeep(DEFAULT_RESUME)
 
     const url = 'https://yamlresume.dev'
     const profiles: ProfileItem[] = [
@@ -881,7 +881,7 @@ describe(transformProfileLinks, () => {
 
 describe(transformResumeValues, () => {
   it('should transform resume values with escapeLatex', () => {
-    const resume = cloneDeep(filledResume)
+    const resume = cloneDeep(FILLED_RESUME)
 
     resume.content.basics.headline = 'Again & Again'
     resume.content.basics.email = 'again_again@yamlresume.com'
@@ -911,7 +911,7 @@ describe(transformResumeValues, () => {
   })
 
   it('should ignore computed values', () => {
-    const resume = cloneDeep(filledResume)
+    const resume = cloneDeep(FILLED_RESUME)
     const urls = 'url1 {} url2 {}'
 
     resume.content.computed = {
@@ -928,7 +928,7 @@ describe(transformResumeValues, () => {
 
 describe(transformResumeContent, () => {
   it('should transform resume.content by calling transform functions', () => {
-    const resume = cloneDeep(filledResume)
+    const resume = cloneDeep(FILLED_RESUME)
 
     const summaryParser = new MarkdownParser()
     const transformedResume = transformResumeContent(resume, summaryParser)
@@ -962,7 +962,7 @@ describe(transformResumeContent, () => {
 describe(transformResumeLayoutLaTeX, () => {
   it('should set numbers to OldStyle for English, Norwegian, and Spanish resume', () => {
     for (const language of ['en', 'es', 'no'] as const) {
-      const resume = cloneDeep(defaultResume)
+      const resume = cloneDeep(DEFAULT_RESUME)
 
       resume.layout.locale.language = language
       transformResumeLayoutLaTeX(resume)
@@ -973,7 +973,7 @@ describe(transformResumeLayoutLaTeX, () => {
 
   it('should set numbers to Lining for CJK resume', () => {
     for (const language of ['zh-hans', 'zh-hant-hk', 'zh-hant-tw'] as const) {
-      const resume = cloneDeep(defaultResume)
+      const resume = cloneDeep(DEFAULT_RESUME)
 
       resume.layout.locale.language = language
       transformResumeLayoutLaTeX(resume)
@@ -984,7 +984,7 @@ describe(transformResumeLayoutLaTeX, () => {
 
   it('should set correct numbers when latex.fontspec.numbers is undefined', () => {
     for (const language of ['en', 'es'] as const) {
-      const resume = cloneDeep(defaultResume)
+      const resume = cloneDeep(DEFAULT_RESUME)
       // @ts-ignore
       resume.layout.latex = undefined
 
@@ -997,7 +997,7 @@ describe(transformResumeLayoutLaTeX, () => {
 
   it('should set correct numbers when latex.fontspec.numbers is "Auto"', () => {
     for (const language of ['en', 'es'] as const) {
-      const resume = cloneDeep(defaultResume)
+      const resume = cloneDeep(DEFAULT_RESUME)
       resume.layout.latex.fontspec.numbers = 'Auto'
 
       resume.layout.locale.language = language
@@ -1008,7 +1008,7 @@ describe(transformResumeLayoutLaTeX, () => {
   })
 
   it('should do nothing when latex.fontspec.numbers is defined', () => {
-    const resume = cloneDeep(defaultResume)
+    const resume = cloneDeep(DEFAULT_RESUME)
     resume.layout.latex.fontspec.numbers = 'OldStyle'
 
     transformResumeLayoutLaTeX(resume)
@@ -1019,20 +1019,20 @@ describe(transformResumeLayoutLaTeX, () => {
 
 describe(transformResumeLayoutWithDefaultValues, () => {
   it('should transform resume with no layout', () => {
-    const resume = cloneDeep(defaultResume)
+    const resume = cloneDeep(DEFAULT_RESUME)
     resume.layout = undefined
 
     expect(resume.layout).toBeUndefined()
 
     expect(transformResumeLayoutWithDefaultValues(resume).layout).toEqual(
-      defaultResume.layout
+      DEFAULT_RESUME.layout
     )
   })
 })
 
 describe(transformResumeLayout, () => {
   it('should transform provided resumeLayout with default values', () => {
-    const resume = cloneDeep(defaultResume)
+    const resume = cloneDeep(DEFAULT_RESUME)
     const providedLayout: ResumeLayout = {
       template: 'moderncv-banking',
       margins: {

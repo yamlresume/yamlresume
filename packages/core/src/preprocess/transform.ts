@@ -26,11 +26,11 @@ import { capitalize, cloneDeep, isArray, merge } from 'lodash-es'
 
 import { LatexCodeGenerator, type Parser } from '@/compiler'
 import {
+  DEFAULT_RESUME_LAYOUT,
   type OrderableSectionID,
   type ProfileItem,
   type Resume,
   type ResumeContent,
-  defaultResumeLayout,
 } from '@/models'
 import { getOptionTranslation, getTemplateTranslations } from '@/translations'
 import {
@@ -790,7 +790,7 @@ export function transformResumeContent(
 export function transformResumeLayoutWithDefaultValues(resume: Resume): Resume {
   return {
     ...resume,
-    layout: merge(cloneDeep(defaultResumeLayout), resume.layout),
+    layout: merge(cloneDeep(DEFAULT_RESUME_LAYOUT), resume.layout),
   }
 }
 
