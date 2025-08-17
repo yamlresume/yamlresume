@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.7.3](https://github.com/yamlresume/yamlresume/compare/v0.7.2...v0.7.3) (2025-08-17)
+
+
+### Bug Fixes
+
+* no `null`/`undefined` should be allowed in output PDF ([1a16b35](https://github.com/yamlresume/yamlresume/commit/1a16b351f290b274a155b94d45cbd72ee75cc226))
+* revert "fix: normalize object leaf values for parsed resumes" ([9fa8c3f](https://github.com/yamlresume/yamlresume/commit/9fa8c3f9a64c8be0892e49273fa3f5bc8bbf3c9c))
+
 ## [0.7.2](https://github.com/yamlresume/yamlresume/compare/v0.7.1...v0.7.2) (2025-08-14)
 
 
