@@ -64,7 +64,6 @@ export function replaceBlankLinesWithPercent(content: string): string {
  *
  * @param resume - The resume object.
  * @returns The transformed resume object.
- * @remarks Modifies `resume.content` in place.
  */
 export function normalizeResumeContentSections(resume: Resume): Resume {
   const clonedResume = cloneDeep(resume)
@@ -100,7 +99,6 @@ export function normalizeResumeContentSections(resume: Resume): Resume {
  *
  * @param resume - The resume object to normalize.
  * @returns The normalized resume object.
- * @remarks Modifies the `resume.content` object and its children directly.
  */
 export function normalizedResumeContent(resume: Resume): Resume {
   // First, apply default values to ensure all sections exist
