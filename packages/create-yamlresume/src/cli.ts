@@ -23,10 +23,6 @@
  * IN THE SOFTWARE.
  */
 
-import { createCliProgram } from './program'
+import { createProgram } from './program'
 
-/* v8 ignore start */
-if (import.meta.url === `file://${process.argv[1]}`) {
-  createCliProgram().parse()
-}
-/* v8 ignore stop */
+createProgram().parse()

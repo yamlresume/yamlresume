@@ -23,7 +23,7 @@
  */
 
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
-import { createCliProgram, createProjectAction } from './program'
+import { createProgram, createProjectAction } from './program'
 
 // Mock dependencies
 vi.mock('./project')
@@ -43,7 +43,7 @@ describe('program', () => {
   })
 
   it('should create CLI program with correct configuration', () => {
-    const program = createCliProgram()
+    const program = createProgram()
 
     expect(program).toBeDefined()
     expect(program.name).toBeCalledWith('create-yamlresume')

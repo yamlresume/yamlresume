@@ -48,7 +48,7 @@ export async function createProjectAction(projectName: string) {
  *
  * @returns The CLI program.
  */
-export function createCliProgram(): Command {
+export function createProgram(): Command {
   const program = new Command()
 
   program
