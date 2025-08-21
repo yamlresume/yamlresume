@@ -24,25 +24,30 @@
 
 import { beforeEach, describe, expect, it, vi } from 'vitest'
 
-import { program } from './program'
+describe('cli.ts', () => {
+  let createProgramMock: ReturnType<typeof vi.fn>
+  let parseMock: ReturnType<typeof vi.fn>
 
-// Mock the program's parse method
-vi.mock('./program', () => ({
-  program: {
-    parse: vi.fn(),
-  },
-}))
-
-describe('CLI', () => {
   beforeEach(() => {
-    vi.resetAllMocks()
+    // Reset modules before each test to ensure clean import
+    vi.resetModules()
+
+    // Mock createProgram to return an object with a parse method
+    parseMock = vi.fn()
+    createProgramMock = vi.fn(() => ({
+      parse: parseMock,
+    }))
+
+    vi.doMock('./program', () => ({
+      createProgram: createProgramMock,
+    }))
   })
 
-  it('should call program.parse when cli is executed', async () => {
-    // Import the cli module which will execute the code
+  it('should call createProgram and parse once', async () => {
+    // Import the CLI file, which should trigger the calls
     await import('./cli')
 
-    // Check that parse was called
-    expect(program.parse).toBeCalledTimes(1)
+    expect(createProgramMock).toHaveBeenCalledTimes(1)
+    expect(parseMock).toHaveBeenCalledTimes(1)
   })
 })

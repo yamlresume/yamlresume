@@ -23,6 +23,6 @@
  * IN THE SOFTWARE.
  */
 
-import { program } from './program'
+import { createProgram } from './program'
 
-program.parse()
+createProgram().parse()
