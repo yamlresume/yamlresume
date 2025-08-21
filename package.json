@@ -20,7 +20,8 @@
     "commitlint": "commitlint --edit",
     "release": "commit-and-tag-version --bumpFiles package.json packages/*/package.json",
     "cli": "pnpm --filter yamlresume",
-    "core": "pnpm --filter @yamlresume/core"
+    "core": "pnpm --filter @yamlresume/core",
+    "json2yamlresume": "pnpm --filter json2yamlresume"
   },
   "lint-staged": {
     "packages/*/src/**/*.ts": "pnpm check"

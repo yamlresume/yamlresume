@@ -239,4 +239,226 @@ describe('convertJSONResumeToYAMLResume', () => {
       'Organized food distribution events.\n\n- Coordinated 50+ volunteers\n- Served 1000+ families\n- Implemented new tracking system'
     )
   })
+
+  it('should handle empty highlights array', () => {
+    const jsonResume: JSONResume = {
+      basics: {
+        name: 'Test User',
+      },
+      education: [],
+      work: [
+        {
+          name: 'Company',
+          position: 'Developer',
+          summary: 'Working on projects.',
+          highlights: [], // Empty highlights
+        },
+      ],
+    }
+
+    const result = convertJSONResumeToYAMLResume(jsonResume)
+
+    expect(result.content.work?.[0].summary).toBe('Working on projects.')
+  })
+
+  it('should handle missing highlights with summary', () => {
+    const jsonResume: JSONResume = {
+      basics: {
+        name: 'Test User',
+      },
+      education: [],
+      work: [
+        {
+          name: 'Company',
+          position: 'Developer',
+          summary: 'Working on projects.',
+          // No highlights property
+        },
+      ],
+    }
+
+    const result = convertJSONResumeToYAMLResume(jsonResume)
+
+    expect(result.content.work?.[0].summary).toBe('Working on projects.')
+  })
+
+  it('should handle all optional sections', () => {
+    const jsonResume: JSONResume = {
+      basics: {
+        name: 'Complete User',
+      },
+      education: [],
+      awards: [
+        {
+          title: 'Best Developer',
+          date: '2023',
+          awarder: 'Tech Company',
+          summary: 'Recognized for excellence',
+        },
+      ],
+      certificates: [
+        {
+          name: 'AWS Certified',
+          date: '2023',
+          issuer: 'Amazon',
+          url: 'https://aws.amazon.com/certification/',
+        },
+      ],
+      publications: [
+        {
+          name: 'How to Code',
+          publisher: 'Tech Journal',
+          releaseDate: '2023',
+          url: 'https://example.com',
+          summary: 'A guide to programming',
+        },
+      ],
+      skills: [
+        {
+          name: 'Programming',
+          level: 'Expert',
+          keywords: ['JavaScript', 'TypeScript', 'Python'],
+        },
+      ],
+      languages: [
+        {
+          language: 'English',
+          fluency: 'Native',
+        },
+      ],
+      interests: [
+        {
+          name: 'Technology',
+          keywords: ['AI', 'Machine Learning'],
+        },
+      ],
+      references: [
+        {
+          name: 'John Smith',
+          reference: 'Great developer to work with',
+        },
+      ],
+    }
+
+    const result = convertJSONResumeToYAMLResume(jsonResume)
+
+    expect(result.content.awards).toBeDefined()
+    expect(result.content.certificates).toBeDefined()
+    expect(result.content.publications).toBeDefined()
+    expect(result.content.skills).toBeDefined()
+    expect(result.content.languages).toBeDefined()
+    expect(result.content.interests).toBeDefined()
+    expect(result.content.references).toBeDefined()
+
+    expect(result.content.awards?.[0]).toEqual({
+      title: 'Best Developer',
+      date: '2023',
+      awarder: 'Tech Company',
+      summary: 'Recognized for excellence',
+    })
+
+    expect(result.content.certificates?.[0]).toEqual({
+      name: 'AWS Certified',
+      date: '2023',
+      issuer: 'Amazon',
+      url: 'https://aws.amazon.com/certification/',
+    })
+
+    expect(result.content.publications?.[0]).toEqual({
+      name: 'How to Code',
+      publisher: 'Tech Journal',
+      releaseDate: '2023',
+      url: 'https://example.com',
+      summary: 'A guide to programming',
+    })
+
+    expect(result.content.skills?.[0]).toEqual({
+      name: 'Programming',
+      level: 'Expert',
+      keywords: ['JavaScript', 'TypeScript', 'Python'],
+    })
+
+    expect(result.content.languages?.[0]).toEqual({
+      language: 'English',
+      fluency: 'Native',
+    })
+
+    expect(result.content.interests?.[0]).toEqual({
+      name: 'Technology',
+      keywords: ['AI', 'Machine Learning'],
+    })
+
+    expect(result.content.references?.[0]).toEqual({
+      name: 'John Smith',
+      reference: 'Great developer to work with',
+    })
+  })
+
+  it('should handle interests with empty keywords', () => {
+    const jsonResume: JSONResume = {
+      basics: {
+        name: 'Test User',
+      },
+      education: [],
+      interests: [
+        {
+          name: 'Technology',
+          keywords: [], // Empty keywords
+        },
+        {
+          name: 'Sports',
+          // No keywords property
+        },
+      ],
+    }
+
+    const result = convertJSONResumeToYAMLResume(jsonResume)
+
+    expect(result.content.interests?.[0]).toEqual({
+      name: 'Technology',
+      keywords: null,
+    })
+
+    expect(result.content.interests?.[1]).toEqual({
+      name: 'Sports',
+      keywords: null,
+    })
+  })
+
+  it('should handle sections with null/undefined fields', () => {
+    const jsonResume: JSONResume = {
+      basics: {
+        name: 'Test User',
+      },
+      education: [],
+      awards: [
+        {
+          title: 'Award',
+          // Missing optional fields
+        },
+      ],
+      certificates: [
+        {
+          name: 'Certificate',
+          // Missing optional fields
+        },
+      ],
+    }
+
+    const result = convertJSONResumeToYAMLResume(jsonResume)
+
+    expect(result.content.awards?.[0]).toEqual({
+      title: 'Award',
+      awarder: '',
+      date: '',
+      summary: null,
+    })
+
+    expect(result.content.certificates?.[0]).toEqual({
+      name: 'Certificate',
+      date: '',
+      issuer: '',
+      url: null,
+    })
+  })
 })
