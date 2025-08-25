@@ -449,16 +449,16 @@ export const FILLED_RESUME_CONTENT: ResumeContent = {
 }
 
 /** Default top/bottom margin value. */
-const DEFAULT_TOP_BOTTOM_MARGIN = '2.5 cm'
+const DEFAULT_TOP_BOTTOM_MARGIN = '2.5cm'
 /** Default left/right margin value. */
-const DEFAULT_LEFT_RIGHT_MARGIN = '1.5 cm'
+const DEFAULT_LEFT_RIGHT_MARGIN = '1.5cm'
 
 /** Available margin size options for resume layout. */
 export const MARGIN_OPTIONS = [
   DEFAULT_LEFT_RIGHT_MARGIN,
-  '1.75 cm',
-  '2.0 cm',
-  '2.25 cm',
+  '1.75cm',
+  '2.0cm',
+  '2.25cm',
   DEFAULT_TOP_BOTTOM_MARGIN,
 ]
 
