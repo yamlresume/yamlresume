@@ -22,7 +22,7 @@
  * IN THE SOFTWARE.
  */
 
-import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
+import { describe, expect, it, vi } from 'vitest'
 import { createProgram, createProjectAction } from './program'
 
 // Mock dependencies
@@ -38,10 +38,6 @@ vi.mock('commander', () => ({
 }))
 
 describe('program', () => {
-  beforeEach(() => {
-    vi.clearAllMocks()
-  })
-
   it('should create CLI program with correct configuration', () => {
     const program = createProgram()
 
@@ -56,115 +52,111 @@ describe('program', () => {
     )
     expect(program.action).toBeCalledWith(createProjectAction)
   })
+})
 
-  describe('createProjectAction', () => {
-    afterEach(() => {
-      vi.clearAllMocks()
-    })
+describe(createProjectAction, () => {
+  it('should successfully create project when no error occurs', async () => {
+    // Mock createYamlResumeProject to succeed
+    const { createYamlResumeProject } = await import('./project')
+    vi.mocked(createYamlResumeProject).mockResolvedValue(undefined)
 
-    it('should successfully create project when no error occurs', async () => {
-      // Mock createYamlResumeProject to succeed
-      const { createYamlResumeProject } = await import('./project')
-      vi.mocked(createYamlResumeProject).mockResolvedValue(undefined)
+    // Call the action function directly
+    await createProjectAction('test-project')
 
-      // Call the action function directly
-      await createProjectAction('test-project')
+    // Verify createYamlResumeProject was called
+    expect(createYamlResumeProject).toBeCalledWith('test-project')
+  })
 
-      // Verify createYamlResumeProject was called
-      expect(createYamlResumeProject).toBeCalledWith('test-project')
-    })
+  it('should handle errors when creating project', async () => {
+    const mockConsoleError = vi
+      .spyOn(console, 'error')
+      .mockImplementation(() => {})
+    const mockProcessExit = vi
+      .spyOn(process, 'exit')
+      .mockImplementation(() => undefined as never)
 
-    it('should handle errors when creating project', async () => {
-      const mockConsoleError = vi
-        .spyOn(console, 'error')
-        .mockImplementation(() => {})
-      const mockProcessExit = vi
-        .spyOn(process, 'exit')
-        .mockImplementation(() => undefined as never)
+    // Mock createYamlResumeProject to throw an error
+    const { createYamlResumeProject } = await import('./project')
+    vi.mocked(createYamlResumeProject).mockRejectedValue(
+      new Error('Test error')
+    )
 
-      // Mock createYamlResumeProject to throw an error
-      const { createYamlResumeProject } = await import('./project')
-      vi.mocked(createYamlResumeProject).mockRejectedValue(
-        new Error('Test error')
-      )
+    // Call the action function
+    await createProjectAction('test-project')
 
-      // Call the action function
-      await createProjectAction('test-project')
+    expect(mockConsoleError).toBeCalledWith(
+      'Error creating project:',
+      'Test error'
+    )
+    expect(mockProcessExit).toBeCalledWith(1)
+  })
 
-      expect(mockConsoleError).toBeCalledWith(
-        'Error creating project:',
-        'Test error'
-      )
-      expect(mockProcessExit).toBeCalledWith(1)
-    })
+  it('should handle errors with undefined message property', async () => {
+    const mockConsoleError = vi
+      .spyOn(console, 'error')
+      .mockImplementation(() => {})
+    const mockProcessExit = vi
+      .spyOn(process, 'exit')
+      .mockImplementation(() => undefined as never)
 
-    it('should handle errors with undefined message property', async () => {
-      const mockConsoleError = vi
-        .spyOn(console, 'error')
-        .mockImplementation(() => {})
-      const mockProcessExit = vi
-        .spyOn(process, 'exit')
-        .mockImplementation(() => undefined as never)
+    // Mock createYamlResumeProject to throw an error without message property
+    const { createYamlResumeProject } = await import('./project')
+    const errorWithoutMessage = { toString: () => 'Custom error string' }
+    vi.mocked(createYamlResumeProject).mockRejectedValue(errorWithoutMessage)
 
-      // Mock createYamlResumeProject to throw an error without message property
-      const { createYamlResumeProject } = await import('./project')
-      const errorWithoutMessage = { toString: () => 'Custom error string' }
-      vi.mocked(createYamlResumeProject).mockRejectedValue(errorWithoutMessage)
+    // Call the action function
+    await createProjectAction('test-project')
 
-      // Call the action function
-      await createProjectAction('test-project')
+    expect(mockConsoleError).toBeCalledWith(
+      'Error creating project:',
+      errorWithoutMessage
+    )
+    expect(mockProcessExit).toBeCalledWith(1)
+  })
 
-      expect(mockConsoleError).toBeCalledWith(
-        'Error creating project:',
-        errorWithoutMessage
-      )
-      expect(mockProcessExit).toBeCalledWith(1)
-    })
+  it('should handle errors when createYamlResumeProject throws an exception', async () => {
+    const mockConsoleError = vi
+      .spyOn(console, 'error')
+      .mockImplementation(() => {})
+    const mockProcessExit = vi
+      .spyOn(process, 'exit')
+      .mockImplementation(() => undefined as never)
 
-    it('should handle errors when createYamlResumeProject throws an exception', async () => {
-      const mockConsoleError = vi
-        .spyOn(console, 'error')
-        .mockImplementation(() => {})
-      const mockProcessExit = vi
-        .spyOn(process, 'exit')
-        .mockImplementation(() => undefined as never)
+    // Mock createYamlResumeProject to throw an exception
+    const { createYamlResumeProject } = await import('./project')
+    vi.mocked(createYamlResumeProject).mockRejectedValue(
+      new Error('Project creation failed')
+    )
 
-      // Mock createYamlResumeProject to throw an exception
-      const { createYamlResumeProject } = await import('./project')
-      vi.mocked(createYamlResumeProject).mockRejectedValue(
-        new Error('Project creation failed')
-      )
+    // Call the action function
+    await createProjectAction('test-project')
 
-      // Call the action function
-      await createProjectAction('test-project')
+    expect(mockConsoleError).toBeCalledWith(
+      'Error creating project:',
+      'Project creation failed'
+    )
+    expect(mockProcessExit).toBeCalledWith(1)
+  })
 
-      expect(mockConsoleError).toBeCalledWith(
-        'Error creating project:',
-        'Project creation failed'
-      )
-      expect(mockProcessExit).toBeCalledWith(1)
-    })
+  it('should handle errors with no message or toString properties', async () => {
+    const mockConsoleError = vi
+      .spyOn(console, 'error')
+      .mockImplementation(() => {})
+    const mockProcessExit = vi
+      .spyOn(process, 'exit')
+      .mockImplementation(() => undefined as never)
 
-    it('should handle errors with no message or toString properties', async () => {
-      const mockConsoleError = vi
-        .spyOn(console, 'error')
-        .mockImplementation(() => {})
-      const mockProcessExit = vi
-        .spyOn(process, 'exit')
-        .mockImplementation(() => undefined as never)
+    // Mock createYamlResumeProject to throw null to trigger 'Unknown error' fallback
+    const { createYamlResumeProject } = await import('./project')
+    vi.mocked(createYamlResumeProject).mockRejectedValue(null)
 
-      // Mock createYamlResumeProject to throw null to trigger 'Unknown error' fallback
-      const { createYamlResumeProject } = await import('./project')
-      vi.mocked(createYamlResumeProject).mockRejectedValue(null)
+    // Call the action function
+    await createProjectAction('test-project')
 
-      // Call the action function
-      await createProjectAction('test-project')
-
-      expect(mockConsoleError).toBeCalledWith(
-        'Error creating project:',
-        'Unknown error'
-      )
-      expect(mockProcessExit).toBeCalledWith(1)
-    })
+    expect(mockConsoleError).toBeCalledWith(
+      'Error creating project:',
+      'Unknown error'
+    )
+    expect(mockProcessExit).toBeCalledWith(1)
   })
 })
