@@ -30,7 +30,7 @@
     "chalk": "^5.4.1",
     "commander": "^11.0.0",
     "consola": "^3.4.2",
-    "execa": "^8.0.1",
+    "execa": "^9.6.0",
     "prompts": "^2.4.2",
     "tslib": "^2.6.2",
     "yamlresume": "workspace:*"
