@@ -63,8 +63,8 @@ importers:
         specifier: ^0.1.0
         version: 0.1.0
       commander:
-        specifier: ^11.0.0
-        version: 11.1.0
+        specifier: ^14.0.0
+        version: 14.0.0
       consola:
         specifier: ^3.4.2
         version: 3.4.2
@@ -146,8 +146,8 @@ importers:
         specifier: ^5.4.1
         version: 5.5.0
       commander:
-        specifier: ^11.0.0
-        version: 11.1.0
+        specifier: ^14.0.0
+        version: 14.0.0
       consola:
         specifier: ^3.4.2
         version: 3.4.2
@@ -189,8 +189,8 @@ importers:
         specifier: ^5.4.1
         version: 5.5.0
       commander:
-        specifier: ^11.0.0
-        version: 11.1.0
+        specifier: ^14.0.0
+        version: 14.0.0
       consola:
         specifier: ^3.4.2
         version: 3.4.2
@@ -1133,13 +1133,13 @@ packages:
     resolution: {integrity: sha512-FQN4MRfuJeHf7cBbBMJFXhKSDq+2kAArBlmRBvcvFE5BB1HZKXtSFASDhdlz9zOYwxh8lDdnvmMOe/+5cdoEdg==}
     engines: {node: '>= 0.8'}
 
-  commander@11.1.0:
-    resolution: {integrity: sha512-yPVavfyCcRhmorC7rWlkHn15b4wDVgVmBA7kV4QVBsF7kv/9TKJAbAXVTxvTnwP8HHKjRCJDClKbciiYS7p0DQ==}
-    engines: {node: '>=16'}
-
   commander@13.1.0:
     resolution: {integrity: sha512-/rFeCpNJQbhSZjGVwO9RFV3xPqbnERS8MmIQzCtD/zl6gpJuV/bMLuN92oG3F7d8oDEHHRrujSXNUr8fpjntKw==}
     engines: {node: '>=18'}
+
+  commander@14.0.0:
+    resolution: {integrity: sha512-2uM9rYjPvyq39NwLRqaiLtWHyDC1FvryJDa2ATTVims5YAS4PupsEQsDvP14FqhFr0P49CYDugi59xaxJlTXRA==}
+    engines: {node: '>=20'}
 
   commander@4.1.1:
     resolution: {integrity: sha512-NOKm8xhkzAjzFx8B2v5OAHT+u5pRQc2UCa2Vq9jYL/31o2wi9mxBA7LIFs3sV5VSC49z6pEhfbMULvShKj26WA==}
@@ -3387,7 +3387,7 @@ snapshots:
 
   '@types/commander@2.12.5':
     dependencies:
-      commander: 11.1.0
+      commander: 14.0.0
 
   '@types/conventional-commits-parser@5.0.1':
     dependencies:
@@ -3657,9 +3657,9 @@ snapshots:
     dependencies:
       delayed-stream: 1.0.0
 
-  commander@11.1.0: {}
-
   commander@13.1.0: {}
+
+  commander@14.0.0: {}
 
   commander@4.1.1: {}
 
