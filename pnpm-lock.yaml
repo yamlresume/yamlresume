@@ -87,8 +87,8 @@ importers:
         specifier: ^2.8.1
         version: 2.8.1
       zod:
-        specifier: ^3.25.56
-        version: 3.25.56
+        specifier: ^4.1.3
+        version: 4.1.3
     devDependencies:
       '@types/chalk':
         specifier: ^2.2.4
@@ -124,8 +124,8 @@ importers:
         specifier: ^11.0.5
         version: 11.0.5
       zod:
-        specifier: ^3.25.56
-        version: 3.25.56
+        specifier: ^4.1.3
+        version: 4.1.3
     devDependencies:
       '@types/lodash-es':
         specifier: ^4.17.12
@@ -2902,8 +2902,8 @@ packages:
     resolution: {integrity: sha512-CzhO+pFNo8ajLM2d2IW/R93ipy99LWjtwblvC1RsoSUMZgyLbYFr221TnSNT7GjGdYui6P459mw9JH/g/zW2ug==}
     engines: {node: '>=18'}
 
-  zod@3.25.56:
-    resolution: {integrity: sha512-rd6eEF3BTNvQnR2e2wwolfTmUTnp70aUTqr0oaGbHifzC3BKJsoV+Gat8vxUMR1hwOKBs6El+qWehrHbCpW6SQ==}
+  zod@4.1.3:
+    resolution: {integrity: sha512-1neef4bMce1hNTrxvHVKxWjKfGDn0oAli3Wy1Uwb7TRO1+wEwoZUZNP1NXIEESybOBiFnBOhI6a4m6tCLE8dog==}
 
 snapshots:
 
@@ -5524,4 +5524,4 @@ snapshots:
 
   yoctocolors@2.1.2: {}
 
-  zod@3.25.56: {}
+  zod@4.1.3: {}
