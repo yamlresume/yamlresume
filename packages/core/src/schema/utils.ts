@@ -22,7 +22,7 @@
  * IN THE SOFTWARE.
  */
 
-import type { z } from 'zod/v4'
+import type { z } from 'zod'
 
 /**
  * Returns a nullish schema with the same metadata as the original schema.

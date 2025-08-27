@@ -23,7 +23,7 @@
  */
 
 import { startCase } from 'lodash-es'
-import { z } from 'zod/v4'
+import { z } from 'zod'
 
 import { joinNonEmptyString } from '@/utils'
 import { SizedStringSchema } from '../primitives'

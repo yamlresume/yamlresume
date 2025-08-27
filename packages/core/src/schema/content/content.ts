@@ -21,7 +21,7 @@
  * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
  * IN THE SOFTWARE.
  */
-import { z } from 'zod/v4'
+import { z } from 'zod'
 
 import { AwardsSchema } from './awards'
 import { BasicsSchema } from './basics'
