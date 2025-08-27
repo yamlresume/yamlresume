@@ -44,7 +44,7 @@ export function copyTemplateFiles(
 
   for (const file of files) {
     const sourcePath = path.join(templatesDir, file)
-    const targetPath = path.join(targetDir, file)
+    const targetPath = getTargetPath(targetDir, file)
 
     const stats = fs.statSync(sourcePath)
 
@@ -61,6 +61,24 @@ export function copyTemplateFiles(
       fs.mkdirSync(targetPath, { recursive: true })
       copyTemplateFiles(sourcePath, targetPath, variables)
     }
+  }
+}
+
+/**
+ * Get proper target path for files in templates
+ *
+ * @param targetDir - The directory to copy the template files to.
+ * @param file - The file to be checked
+ * @returns - The target path for the template file to be copied to.
+ */
+export function getTargetPath(targetDir: string, file: string) {
+  switch (file) {
+    // `npm publish` will by default exclude `.gitignore`, super weird behavior,
+    // this is just a workaround
+    case 'gitignore':
+      return path.join(targetDir, '.gitignore')
+    default:
+      return path.join(targetDir, file)
   }
 }
 
