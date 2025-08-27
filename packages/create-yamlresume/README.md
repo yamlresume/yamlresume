@@ -1,5 +1,10 @@
 # create-yamlresume
 
+[![npm version](https://img.shields.io/npm/v/create-yamlresume.svg?style=flat-square&logo=npm)](https://www.npmjs.com/package/create-yamlresume)
+[![npm downloads](https://img.shields.io/npm/dm/create-yamlresume.svg?style=flat-square&logo=npm&color=CB3837)](https://www.npmjs.com/package/create-yamlresume)
+[![Node.js Version](https://img.shields.io/node/v/create-yamlresume.svg?style=flat-square&logo=node.js&color=339933)](https://nodejs.org/)
+[![Discord](https://img.shields.io/discord/1371488902023479336?style=flat-square&logo=discord&color=5865F2)](https://discord.gg/9SyT7mVV4K)
+
 [create-yamlresume](https://yamlresume.dev/docs/ecosystem/create-yamlresume)
 helps you create a new [YAMLResume](https://yamlresume.dev) project with a
 one-liner command.

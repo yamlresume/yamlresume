@@ -53,7 +53,7 @@
   "bugs": {
     "url": "https://github.com/yamlresume/yamlresume/issues"
   },
-  "homepage": "https://github.com/yamlresume/yamlresume/tree/main/packages/create-yamlresume#readme",
+  "homepage": "https://yamlresume.dev/docs/ecosystem/create-yamlresume",
   "engines": {
     "node": ">=20.0.0"
   }

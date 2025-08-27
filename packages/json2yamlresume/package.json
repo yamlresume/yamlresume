@@ -21,11 +21,7 @@
   "bin": {
     "json2yamlresume": "./dist/cli.js"
   },
-  "files": [
-    "dist",
-    "README.md",
-    "LICENSE"
-  ],
+  "files": ["dist", "README.md", "LICENSE"],
   "scripts": {
     "build": "tsup",
     "build:watch": "tsup --watch",
@@ -61,7 +57,7 @@
   "bugs": {
     "url": "https://github.com/yamlresume/yamlresume/issues"
   },
-  "homepage": "https://github.com/yamlresume/yamlresume/tree/main/packages/json2yamlresume#readme",
+  "homepage": "https://yamlresume.dev/docs/ecosystem/json2yamlresume",
   "engines": {
     "node": ">=20.0.0"
   }

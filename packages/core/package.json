@@ -27,11 +27,7 @@
       "default": "./dist/index.js"
     }
   },
-  "files": [
-    "dist",
-    "README.md",
-    "LICENSE"
-  ],
+  "files": ["dist", "README.md", "LICENSE"],
   "scripts": {
     "build": "tsup",
     "build:watch": "tsup --watch",
@@ -66,7 +62,7 @@
   "bugs": {
     "url": "https://github.com/yamlresume/yamlresume/issues"
   },
-  "homepage": "https://github.com/yamlresume/yamlresume/tree/main/packages/core#readme",
+  "homepage": "https://yamlresume.dev/",
   "engines": {
     "node": ">=20.0.0"
   }
