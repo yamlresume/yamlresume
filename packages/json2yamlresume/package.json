@@ -1,6 +1,6 @@
 {
   "name": "json2yamlresume",
-  "version": "0.7.3",
+  "version": "0.7.4",
   "description": "Convert JSON Resume to YAMLResume format",
   "license": "MIT",
   "author": {
@@ -21,7 +21,11 @@
   "bin": {
     "json2yamlresume": "./dist/cli.js"
   },
-  "files": ["dist", "README.md", "LICENSE"],
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
   "scripts": {
     "build": "tsup",
     "build:watch": "tsup --watch",

@@ -1,6 +1,6 @@
 {
   "name": "create-yamlresume",
-  "version": "0.7.3",
+  "version": "0.7.4",
   "description": "Create a new YAMLResume project",
   "license": "MIT",
   "author": {
@@ -8,12 +8,23 @@
     "email": "support@yamlresume.com",
     "url": "https://yamlresume.dev"
   },
-  "keywords": ["YAMLResume", "CV", "Resume", "YAML", "CLI", "create"],
+  "keywords": [
+    "YAMLResume",
+    "CV",
+    "Resume",
+    "YAML",
+    "CLI",
+    "create"
+  ],
   "type": "module",
   "bin": {
     "create-yamlresume": "./dist/cli.js"
   },
-  "files": ["dist", "README.md", "LICENSE"],
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
   "scripts": {
     "build": "tsup",
     "build:watch": "tsup --watch",

@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.7.4](https://github.com/yamlresume/yamlresume/compare/v0.7.3...v0.7.4) (2025-08-27)
+
+
+### Features
+
+* add a new json2yamlresume package ([349709e](https://github.com/yamlresume/yamlresume/commit/349709e27fad86208d3dde051510384cc07bf880))
+* add create-yamlresume package ([5baca0a](https://github.com/yamlresume/yamlresume/commit/5baca0a9bd94d861fc44221649258c2cb7fc303a))
+
+
+### Bug Fixes
+
+* remove space in margins's unit for DEFAULT_RESUME_LAYOUT ([d31f6bb](https://github.com/yamlresume/yamlresume/commit/d31f6bb17aebfa835636a1211cae592951acbfe3))
+
 ## [0.7.3](https://github.com/yamlresume/yamlresume/compare/v0.7.2...v0.7.3) (2025-08-17)
 
 
