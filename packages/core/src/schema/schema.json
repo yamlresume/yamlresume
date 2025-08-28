@@ -78,7 +78,7 @@
                     "Product Manager driving innovation"
                   ],
                   "type": "string",
-                  "minLength": 8,
+                  "minLength": 2,
                   "maxLength": 128
                 },
                 {

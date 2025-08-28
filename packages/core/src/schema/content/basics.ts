@@ -37,7 +37,7 @@ import { nullifySchema } from '../utils'
 /**
  * A zod schema for a headline.
  */
-export const HeadlineSchema = SizedStringSchema('headline', 8, 128).meta({
+export const HeadlineSchema = SizedStringSchema('headline', 2, 128).meta({
   title: 'Headline',
   description: 'A short and catchy headline for your resume.',
   examples: [
