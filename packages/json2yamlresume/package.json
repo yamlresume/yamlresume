@@ -1,6 +1,6 @@
 {
   "name": "json2yamlresume",
-  "version": "0.7.4",
+  "version": "0.7.5",
   "description": "Convert JSON Resume to YAMLResume format",
   "license": "MIT",
   "author": {

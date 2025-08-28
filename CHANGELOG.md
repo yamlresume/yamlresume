@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.7.5](https://github.com/yamlresume/yamlresume/compare/v0.7.4...v0.7.5) (2025-08-28)
+
+
+### Bug Fixes
+
+* include `.gitignore` in create-yamlresume npm packge ([ed6523a](https://github.com/yamlresume/yamlresume/commit/ed6523a7a9711a971fb26def848f34aef73af3aa))
+* revise minimum length of headline from 8 to 2 ([8d030b4](https://github.com/yamlresume/yamlresume/commit/8d030b467bd04ad588077906ae31b35f73027972))
+
 ## [0.7.4](https://github.com/yamlresume/yamlresume/compare/v0.7.3...v0.7.4) (2025-08-27)
 
 

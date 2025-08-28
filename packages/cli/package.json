@@ -1,6 +1,6 @@
 {
   "name": "yamlresume",
-  "version": "0.7.4",
+  "version": "0.7.5",
   "description": "The CLI interface for YAMLResume's engine",
   "license": "MIT",
   "author": {
