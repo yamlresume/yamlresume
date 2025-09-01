@@ -43,7 +43,7 @@
     "@yamlresume/core": "workspace:*",
     "chalk": "^5.4.1",
     "chokidar": "^4.0.3",
-    "coalescifn": "^0.1.0",
+    "coalescifn": "^0.1.1",
     "commander": "^14.0.0",
     "consola": "^3.4.2",
     "extensionless": "^1.9.9",
