@@ -39,7 +39,7 @@
   },
   "dependencies": {
     "@yamlresume/core": "workspace:*",
-    "chalk": "^5.4.1",
+    "chalk": "^5.6.0",
     "commander": "^14.0.0",
     "consola": "^3.4.2",
     "lodash-es": "^4.17.21",

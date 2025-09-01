@@ -38,7 +38,7 @@
   },
   "dependencies": {
     "@yamlresume/core": "workspace:*",
-    "chalk": "^5.4.1",
+    "chalk": "^5.6.0",
     "commander": "^14.0.0",
     "consola": "^3.4.2",
     "execa": "^9.6.0",
