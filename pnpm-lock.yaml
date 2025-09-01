@@ -60,8 +60,8 @@ importers:
         specifier: ^4.0.3
         version: 4.0.3
       coalescifn:
-        specifier: ^0.1.0
-        version: 0.1.0
+        specifier: ^0.1.1
+        version: 0.1.1
       commander:
         specifier: ^14.0.0
         version: 14.0.0
@@ -956,8 +956,8 @@ packages:
     resolution: {integrity: sha512-BSeNnyus75C4//NQ9gQt1/csTXyo/8Sb+afLAkzAptFuMsod9HFokGNudZpi/oQV73hnVK+sR+5PVRMd+Dr7YQ==}
     engines: {node: '>=12'}
 
-  coalescifn@0.1.0:
-    resolution: {integrity: sha512-QyBqBiAiTl39nyJNq+FJmkZGXDXJPcM7Gmncg/59WhI9KVwUsT3Xx4gGXe6nRVlCPVYpf9Xq5xurov79kGPgdg==}
+  coalescifn@0.1.1:
+    resolution: {integrity: sha512-rr10VTeBQtwQoWbSEnjRb4fqBBOkGYlHSnyCn8mIN8V7wdKuxvUVERSMK0nI9tY92neMECzqAxI0sl7h2Is4oA==}
     engines: {node: '>=20'}
 
   color-convert@1.9.3:
@@ -3357,7 +3357,7 @@ snapshots:
       strip-ansi: 6.0.1
       wrap-ansi: 7.0.0
 
-  coalescifn@0.1.0:
+  coalescifn@0.1.1:
     dependencies:
       tslib: 2.8.1
 
