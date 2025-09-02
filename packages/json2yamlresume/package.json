@@ -48,7 +48,7 @@
   },
   "devDependencies": {
     "@types/lodash-es": "^4.17.12",
-    "tsx": "^4.19.3"
+    "tsx": "^4.20.5"
   },
   "publishConfig": {
     "access": "public"
