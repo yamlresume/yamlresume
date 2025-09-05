@@ -52,7 +52,6 @@ import {
 import type { Command } from 'commander'
 import {
   buildResume,
-  buildLatexWithOutput,
   createBuildCommand,
   generateTeX,
   getPdfPath,
@@ -415,14 +414,15 @@ describe(buildResume, () => {
     await buildResume(resumePath)
 
     expect(execSpy).toBeCalledTimes(1)
-    expect(execSpy).toBeCalledWith('xelatex', ['-halt-on-error', texFile], {
+    expect(execSpy).toBeCalledWith('xelatex', ['-halt-on-error', path.basename(texFile)], {
+      cwd: path.dirname(path.resolve(texFile)),
       encoding: 'utf8',
     })
 
     expect(whichSpy).toBeCalledWith('xelatex')
 
     expect(outputStr).toEqual([
-      `Generating resume PDF file with command: \`xelatex -halt-on-error ${texFile}\`...`,
+      `Generating resume PDF file with command: \`xelatex -halt-on-error ${path.basename(texFile)}\`...`,
       'Generated resume PDF file successfully.',
     ])
     expect(consolaStartSpy).toBeCalledTimes(1)
@@ -446,14 +446,15 @@ describe(buildResume, () => {
     }
 
     expect(execSpy).toBeCalledTimes(1)
-    expect(execSpy).toBeCalledWith('xelatex', ['-halt-on-error', texFile], {
+    expect(execSpy).toBeCalledWith('xelatex', ['-halt-on-error', path.basename(texFile)], {
+      cwd: path.dirname(path.resolve(texFile)),
       encoding: 'utf8',
     })
 
     expect(whichSpy).toBeCalledWith('xelatex')
 
     expect(outputStr).toEqual([
-      `Generating resume PDF file with command: \`xelatex -halt-on-error ${texFile}\`...`,
+      `Generating resume PDF file with command: \`xelatex -halt-on-error ${path.basename(texFile)}\`...`,
     ])
     expect(consolaStartSpy).toBeCalledTimes(1)
     expect(consolaSuccessSpy).not.toBeCalled()
@@ -470,6 +471,24 @@ describe(buildResume, () => {
     expect(whichSpy).not.toBeCalled()
     expect(outputStr).toEqual(['Generated resume TeX file successfully.'])
     expect(consolaSuccessSpy).toBeCalledTimes(1)
+  })
+
+  it('should generate pdf file in output directory', async () => {
+    const outputDir = '/tmp/test-output'
+    const resumePath = getFixture('software-engineer.yml')
+    const texFile = inferOutput(resumePath, outputDir)
+
+    await buildResume(resumePath, { pdf: true, output: outputDir })
+
+    expect(execSpy).toBeCalledTimes(1)
+    expect(execSpy).toBeCalledWith('xelatex', ['-halt-on-error', path.basename(texFile)], {
+      cwd: path.resolve(outputDir),
+      encoding: 'utf8',
+    })
+    expect(whichSpy).toBeCalledWith('xelatex')
+    expect(consolaStartSpy).toBeCalledTimes(1)
+    expect(consolaSuccessSpy).toBeCalledTimes(1)
+    expect(consolaDebugSpy).toBeCalledTimes(1)
   })
 })
 
@@ -540,7 +559,8 @@ describe(createBuildCommand, () => {
     await buildCommand.parseAsync(['yamlresume', 'build', resumePath])
 
     expect(whichSpy).toBeCalledWith('xelatex')
-    expect(execSpy).toBeCalledWith('xelatex', ['-halt-on-error', inferOutput(resumePath)], {
+    expect(execSpy).toBeCalledWith('xelatex', ['-halt-on-error', path.basename(inferOutput(resumePath))], {
+      cwd: path.dirname(path.resolve(inferOutput(resumePath))),
       encoding: 'utf8',
     })
     expect(consolaStartSpy).toBeCalledTimes(1)

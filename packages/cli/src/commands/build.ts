@@ -23,7 +23,6 @@
  */
 
 import fs from 'node:fs'
-import os from 'node:os'
 import path from 'node:path'
 import { Command } from 'commander'
 import { consola } from 'consola'
@@ -164,77 +163,7 @@ export function generateTeX(resumePath: string, resume: Resume, outputDir?: stri
   }
 }
 
-/**
- * Build LaTeX in a temporary directory and copy artifacts to output
- *
- * @param resumePath - The source resume file path
- * @param resume - The parsed resume object
- * @param outputDir - The target output directory
- * @returns void
- * @throws {Error} If LaTeX compilation fails
- */
-export async function buildLatexWithOutput(resumePath: string, resume: Resume, outputDir: string) {
-  // Create a temporary directory for LaTeX compilation
-  const tempDir = fs.mkdtempSync(path.join(os.tmpdir(), 'yamlresume-'))
-  
-  try {
-    // Generate tex file in temporary directory
-    const baseName = path.basename(resumePath.replace(/\.yaml|\.yml|\.json$/, ''))
-    const tempTexFile = path.join(tempDir, `${baseName}.tex`)
-    
-    // Get the tex content
-    const renderer = getResumeRenderer(resume)
-    const tex = renderer.render()
-    
-    // Write tex file to temp directory
-    fs.writeFileSync(tempTexFile, tex)
-    
-    // Run LaTeX compiler in the temporary directory
-    const environment = inferLaTeXEnvironment()
-    let command: string
-    let args: string[]
-    
-    switch (environment) {
-      case 'xelatex':
-        command = 'xelatex'
-        args = ['-halt-on-error', path.basename(tempTexFile)]
-        break
-      case 'tectonic':
-        command = 'tectonic'
-        args = [path.basename(tempTexFile)]
-        break
-    }
-    
-    // Execute LaTeX command in the temp directory using execa
-    const result = await execa(command, args, { 
-      cwd: tempDir,
-      encoding: 'utf8'
-    })
-    consola.debug(joinNonEmptyString(['stdout: ', toCodeBlock(result.stdout)]))
-    
-    // Create output directory if it doesn't exist
-    if (!fs.existsSync(outputDir)) {
-      fs.mkdirSync(outputDir, { recursive: true })
-    }
-    
-    // Copy generated files to output directory
-    const tempPdfFile = path.join(tempDir, `${baseName}.pdf`)
-    const outputTexFile = path.join(outputDir, `${baseName}.tex`)
-    const outputPdfFile = path.join(outputDir, `${baseName}.pdf`)
-    
-    // Copy tex file
-    fs.copyFileSync(tempTexFile, outputTexFile)
-    
-    // Copy pdf file if it exists
-    if (fs.existsSync(tempPdfFile)) {
-      fs.copyFileSync(tempPdfFile, outputPdfFile)
-    }
-    
-  } finally {
-    // Clean up temporary directory
-    fs.rmSync(tempDir, { recursive: true, force: true })
-  }
-}
+
 
 /**
  * Build a YAML resume to LaTeX & PDF
@@ -264,19 +193,6 @@ export async function buildResume(
 ) {
   const { resume } = readResume(resumePath, options.validate)
 
-  // If output directory is specified and we need PDF, use temp directory approach
-  if (options.output && options.pdf) {
-    try {
-      await buildLatexWithOutput(resumePath, resume, options.output)
-      consola.success('Generated resume PDF file successfully.')
-      return
-    } catch (error) {
-      consola.debug(joinNonEmptyString(['stdout: ', toCodeBlock(error.stdout)]))
-      consola.debug(joinNonEmptyString(['stderr: ', toCodeBlock(error.stderr)]))
-      throw new YAMLResumeError('LATEX_COMPILE_ERROR', { error: error.message })
-    }
-  }
-
   // Generate tex file (in output directory if specified, current directory otherwise)
   generateTeX(resumePath, resume, options.output)
 
@@ -285,27 +201,32 @@ export async function buildResume(
     return
   }
 
-  // If we get here, we're generating PDF in current directory (no output option)
+  // Generate PDF using LaTeX
   const environment = inferLaTeXEnvironment()
-  const texFile = inferOutput(resumePath)
+  const texFile = inferOutput(resumePath, options.output)
   let command: string
   let args: string[]
 
   switch (environment) {
     case 'xelatex':
       command = 'xelatex'
-      args = ['-halt-on-error', texFile]
+      args = ['-halt-on-error', path.basename(texFile)]
       break
     case 'tectonic':
       command = 'tectonic'
-      args = [texFile]
+      args = [path.basename(texFile)]
       break
   }
 
   consola.start(`Generating resume PDF file with command: \`${command} ${args.join(' ')}\`...`)
 
   try {
-    const result = await execa(command, args, { encoding: 'utf8' })
+    // Use execa with cwd parameter to run LaTeX command in the correct directory
+    const cwd = options.output ? path.resolve(options.output) : path.dirname(path.resolve(texFile))
+    const result = await execa(command, args, { 
+      cwd,
+      encoding: 'utf8' 
+    })
     consola.success('Generated resume PDF file successfully.')
     consola.debug(joinNonEmptyString(['stdout: ', toCodeBlock(result.stdout)]))
   } catch (error) {
