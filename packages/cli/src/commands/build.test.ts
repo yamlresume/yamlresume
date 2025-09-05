@@ -22,7 +22,6 @@
  * IN THE SOFTWARE.
  */
 
-import child_process from 'node:child_process'
 import fs from 'node:fs'
 import path from 'node:path'
 import { consola } from 'consola'
@@ -37,6 +36,13 @@ import {
 } from 'vitest'
 import which from 'which'
 import { getFixture } from './utils'
+
+// Mock execa
+vi.mock('execa', () => ({
+  execa: vi.fn()
+}))
+
+import { execa } from 'execa'
 
 import {
   ErrorType,
@@ -346,15 +352,30 @@ describe(generateTeX, () => {
 
 describe(buildResume, () => {
   const outputStr: string[] = []
-  let execSpy: ReturnType<typeof vi.spyOn>
+  let execSpy: ReturnType<typeof vi.mocked>
   let whichSpy: ReturnType<typeof vi.spyOn>
   let consolaStartSpy: ReturnType<typeof vi.spyOn>
   let consolaSuccessSpy: ReturnType<typeof vi.spyOn>
   let consolaDebugSpy: ReturnType<typeof vi.spyOn>
 
   beforeEach(() => {
-    // @ts-ignore
-    execSpy = vi.spyOn(child_process, 'execSync').mockImplementation(vi.fn())
+    execSpy = vi.mocked(execa).mockResolvedValue({ 
+      stdout: 'mocked output', 
+      stderr: '',
+      exitCode: 0,
+      command: '',
+      escapedCommand: '',
+      failed: false,
+      killed: false,
+      signal: undefined,
+      signalDescription: undefined,
+      timedOut: false,
+      isCanceled: false,
+      cwd: '',
+      durationMs: 0,
+      pipedFrom: undefined,
+      all: undefined,
+    })
     // @ts-ignore
     whichSpy = vi.spyOn(which, 'sync').mockImplementation(() => 'xelatex')
     consolaStartSpy = vi
@@ -373,10 +394,10 @@ describe(buildResume, () => {
 
   afterAll(cleanupFiles)
 
-  it('should generate a tex file if pdf option is false', () => {
+  it('should generate a tex file if pdf option is false', async () => {
     const resumePath = getFixture('software-engineer.yml')
 
-    buildResume(resumePath, { pdf: false })
+    await buildResume(resumePath, { pdf: false })
 
     expect(execSpy).toBeCalledTimes(0)
 
@@ -386,22 +407,22 @@ describe(buildResume, () => {
     expect(consolaSuccessSpy).toBeCalledTimes(1)
   })
 
-  it('should generate a pdf file', () => {
+  it('should generate a pdf file', async () => {
     const resumePath = getFixture('software-engineer.yml')
 
-    const command = inferLaTeXCommand(resumePath)
+    const texFile = inferOutput(resumePath)
 
-    buildResume(resumePath)
+    await buildResume(resumePath)
 
     expect(execSpy).toBeCalledTimes(1)
-    expect(execSpy).toBeCalledWith(command, {
+    expect(execSpy).toBeCalledWith('xelatex', ['-halt-on-error', texFile], {
       encoding: 'utf8',
     })
 
     expect(whichSpy).toBeCalledWith('xelatex')
 
     expect(outputStr).toEqual([
-      `Generating resume PDF file with command: \`${command}\`...`,
+      `Generating resume PDF file with command: \`xelatex -halt-on-error ${texFile}\`...`,
       'Generated resume PDF file successfully.',
     ])
     expect(consolaStartSpy).toBeCalledTimes(1)
@@ -409,18 +430,15 @@ describe(buildResume, () => {
     expect(consolaDebugSpy).toBeCalledTimes(1)
   })
 
-  it('should handle error when generating pdf', () => {
-    // @ts-ignore
-    execSpy = vi.spyOn(child_process, 'execSync').mockImplementation(() => {
-      throw new Error()
-    })
+  it('should handle error when generating pdf', async () => {
+    execSpy.mockRejectedValue(new Error('Mock error'))
 
     const resumePath = getFixture('software-engineer.yml')
 
-    const command = inferLaTeXCommand(resumePath)
+    const texFile = inferOutput(resumePath)
 
     try {
-      buildResume(resumePath)
+      await buildResume(resumePath)
     } catch (error) {
       expect(error).toBeInstanceOf(YAMLResumeError)
       expect(error.code).toBe('LATEX_COMPILE_ERROR')
@@ -428,25 +446,25 @@ describe(buildResume, () => {
     }
 
     expect(execSpy).toBeCalledTimes(1)
-    expect(execSpy).toBeCalledWith(command, {
+    expect(execSpy).toBeCalledWith('xelatex', ['-halt-on-error', texFile], {
       encoding: 'utf8',
     })
 
     expect(whichSpy).toBeCalledWith('xelatex')
 
     expect(outputStr).toEqual([
-      `Generating resume PDF file with command: \`${command}\`...`,
+      `Generating resume PDF file with command: \`xelatex -halt-on-error ${texFile}\`...`,
     ])
     expect(consolaStartSpy).toBeCalledTimes(1)
     expect(consolaSuccessSpy).not.toBeCalled()
     expect(consolaDebugSpy).toBeCalledTimes(2)
   })
 
-  it('should generate tex file in output directory when pdf is false', () => {
+  it('should generate tex file in output directory when pdf is false', async () => {
     const outputDir = '/tmp/test-output'
     const resumePath = getFixture('software-engineer.yml')
 
-    buildResume(resumePath, { pdf: false, output: outputDir })
+    await buildResume(resumePath, { pdf: false, output: outputDir })
 
     expect(execSpy).toBeCalledTimes(0)
     expect(whichSpy).not.toBeCalled()
@@ -457,7 +475,7 @@ describe(buildResume, () => {
 
 describe(createBuildCommand, () => {
   let buildCommand: Command
-  let execSpy: ReturnType<typeof vi.spyOn>
+  let execSpy: ReturnType<typeof vi.mocked>
   let whichSpy: ReturnType<typeof vi.spyOn>
   let consolaStartSpy: ReturnType<typeof vi.spyOn>
   let consolaSuccessSpy: ReturnType<typeof vi.spyOn>
@@ -466,10 +484,23 @@ describe(createBuildCommand, () => {
   beforeEach(() => {
     buildCommand = createBuildCommand()
 
-    execSpy = vi
-      // biome-ignore lint/suspicious/noExplicitAny: ignore
-      .spyOn(child_process, 'execSync' as any)
-      .mockImplementation(vi.fn())
+    execSpy = vi.mocked(execa).mockResolvedValue({ 
+      stdout: 'mocked output', 
+      stderr: '',
+      exitCode: 0,
+      command: '',
+      escapedCommand: '',
+      failed: false,
+      killed: false,
+      signal: undefined,
+      signalDescription: undefined,
+      timedOut: false,
+      isCanceled: false,
+      cwd: '',
+      durationMs: 0,
+      pipedFrom: undefined,
+      all: undefined,
+    })
     whichSpy = vi
       // biome-ignore lint/suspicious/noExplicitAny: ignore
       .spyOn(which, 'sync' as any)
@@ -503,40 +534,37 @@ describe(createBuildCommand, () => {
     )
   })
 
-  it('should build resume to PDF', () => {
+  it('should build resume to PDF', async () => {
     const resumePath = getFixture('software-engineer.yml')
 
-    buildCommand.parse(['yamlresume', 'build', resumePath])
+    await buildCommand.parseAsync(['yamlresume', 'build', resumePath])
 
     expect(whichSpy).toBeCalledWith('xelatex')
-    expect(execSpy).toBeCalledWith(inferLaTeXCommand(resumePath), {
+    expect(execSpy).toBeCalledWith('xelatex', ['-halt-on-error', inferOutput(resumePath)], {
       encoding: 'utf8',
     })
     expect(consolaStartSpy).toBeCalledTimes(1)
     expect(consolaSuccessSpy).toBeCalledTimes(1)
   })
 
-  it('should build resume to TeX if no-pdf option is provided', () => {
+  it('should build resume to TeX if no-pdf option is provided', async () => {
     const resumePath = getFixture('software-engineer.yml')
 
-    buildCommand.parse(['yamlresume', 'build', '--no-pdf', resumePath])
+    await buildCommand.parseAsync(['yamlresume', 'build', '--no-pdf', resumePath])
 
     expect(whichSpy).not.toBeCalled()
     expect(consolaSuccessSpy).toBeCalledTimes(1)
   })
 
-  it('should handle error when building resume to PDF', () => {
-    // @ts-ignore
-    execSpy = vi.spyOn(child_process, 'execSync').mockImplementation(() => {
-      throw new Error()
-    })
+  it('should handle error when building resume to PDF', async () => {
+    execSpy.mockRejectedValue(new Error('Mock error'))
 
     // @ts-ignore
     const processExitSpy = vi.spyOn(process, 'exit').mockImplementation(vi.fn())
 
     const resumePath = getFixture('software-engineer.yml')
 
-    buildCommand.parse(['yamlresume', 'build', resumePath])
+    await buildCommand.parseAsync(['yamlresume', 'build', resumePath])
 
     expect(processExitSpy).toBeCalledTimes(1)
     expect(processExitSpy).toBeCalledWith(ErrorType.LATEX_COMPILE_ERROR.errno)

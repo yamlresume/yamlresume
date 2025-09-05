@@ -22,12 +22,12 @@
  * IN THE SOFTWARE.
  */
 
-import child_process from 'node:child_process'
 import fs from 'node:fs'
 import os from 'node:os'
 import path from 'node:path'
 import { Command } from 'commander'
 import { consola } from 'consola'
+import { execa } from 'execa'
 import which from 'which'
 
 import {
@@ -173,7 +173,7 @@ export function generateTeX(resumePath: string, resume: Resume, outputDir?: stri
  * @returns void
  * @throws {Error} If LaTeX compilation fails
  */
-export function buildLatexWithOutput(resumePath: string, resume: Resume, outputDir: string) {
+export async function buildLatexWithOutput(resumePath: string, resume: Resume, outputDir: string) {
   // Create a temporary directory for LaTeX compilation
   const tempDir = fs.mkdtempSync(path.join(os.tmpdir(), 'yamlresume-'))
   
@@ -192,22 +192,25 @@ export function buildLatexWithOutput(resumePath: string, resume: Resume, outputD
     // Run LaTeX compiler in the temporary directory
     const environment = inferLaTeXEnvironment()
     let command: string
+    let args: string[]
     
     switch (environment) {
       case 'xelatex':
-        command = `xelatex -halt-on-error ${path.basename(tempTexFile)}`
+        command = 'xelatex'
+        args = ['-halt-on-error', path.basename(tempTexFile)]
         break
       case 'tectonic':
-        command = `tectonic ${path.basename(tempTexFile)}`
+        command = 'tectonic'
+        args = [path.basename(tempTexFile)]
         break
     }
     
-    // Execute LaTeX command in the temp directory
-    const stdout = child_process.execSync(command, { 
-      cwd: tempDir, 
-      encoding: 'utf8' 
+    // Execute LaTeX command in the temp directory using execa
+    const result = await execa(command, args, { 
+      cwd: tempDir,
+      encoding: 'utf8'
     })
-    consola.debug(joinNonEmptyString(['stdout: ', toCodeBlock(stdout)]))
+    consola.debug(joinNonEmptyString(['stdout: ', toCodeBlock(result.stdout)]))
     
     // Create output directory if it doesn't exist
     if (!fs.existsSync(outputDir)) {
@@ -255,7 +258,7 @@ export function buildLatexWithOutput(resumePath: string, resume: Resume, outputD
  * @throws {Error} Can throw if .tex generation, LaTeX command inference, or the
  * LaTeX compilation process fails.
  */
-export function buildResume(
+export async function buildResume(
   resumePath: string,
   options: { pdf?: boolean; validate?: boolean; output?: string } = { pdf: true, validate: true }
 ) {
@@ -264,7 +267,7 @@ export function buildResume(
   // If output directory is specified and we need PDF, use temp directory approach
   if (options.output && options.pdf) {
     try {
-      buildLatexWithOutput(resumePath, resume, options.output)
+      await buildLatexWithOutput(resumePath, resume, options.output)
       consola.success('Generated resume PDF file successfully.')
       return
     } catch (error) {
@@ -283,13 +286,28 @@ export function buildResume(
   }
 
   // If we get here, we're generating PDF in current directory (no output option)
-  const command = inferLaTeXCommand(resumePath)
-  consola.start(`Generating resume PDF file with command: \`${command}\`...`)
+  const environment = inferLaTeXEnvironment()
+  const texFile = inferOutput(resumePath)
+  let command: string
+  let args: string[]
+
+  switch (environment) {
+    case 'xelatex':
+      command = 'xelatex'
+      args = ['-halt-on-error', texFile]
+      break
+    case 'tectonic':
+      command = 'tectonic'
+      args = [texFile]
+      break
+  }
+
+  consola.start(`Generating resume PDF file with command: \`${command} ${args.join(' ')}\`...`)
 
   try {
-    const stdout = child_process.execSync(command, { encoding: 'utf8' })
+    const result = await execa(command, args, { encoding: 'utf8' })
     consola.success('Generated resume PDF file successfully.')
-    consola.debug(joinNonEmptyString(['stdout: ', toCodeBlock(stdout)]))
+    consola.debug(joinNonEmptyString(['stdout: ', toCodeBlock(result.stdout)]))
   } catch (error) {
     consola.debug(joinNonEmptyString(['stdout: ', toCodeBlock(error.stdout)]))
     consola.debug(joinNonEmptyString(['stderr: ', toCodeBlock(error.stderr)]))
@@ -314,7 +332,7 @@ export function createBuildCommand() {
         options: { pdf: boolean; validate: boolean; output?: string }
       ) => {
         try {
-          buildResume(resumePath, options)
+          await buildResume(resumePath, options)
         } catch (error) {
           consola.error(error.message)
           process.exit(error.errno)

@@ -68,6 +68,9 @@ importers:
       consola:
         specifier: ^3.4.2
         version: 3.4.2
+      execa:
+        specifier: ^9.6.0
+        version: 9.6.0
       extensionless:
         specifier: ^1.9.9
         version: 1.9.9
