@@ -46,8 +46,10 @@ import {
 import type { Command } from 'commander'
 import {
   buildResume,
+  buildLatexWithOutput,
   createBuildCommand,
   generateTeX,
+  getPdfPath,
   inferLaTeXCommand,
   inferLaTeXEnvironment,
   inferOutput,
@@ -105,6 +107,34 @@ describe(inferOutput, () => {
           )
         )
       }
+    })
+  })
+
+  it('should infer the destination file with output directory', () => {
+    const tests = [
+      { resumePath: 'resume.yaml', outputDir: '/output', expected: '/output/resume.tex' },
+      { resumePath: 'resume.yml', outputDir: 'dist', expected: 'dist/resume.tex' },
+      { resumePath: 'resume.json', outputDir: '../build', expected: '../build/resume.tex' },
+      { resumePath: 'path/to/resume.yaml', outputDir: '/output', expected: '/output/resume.tex' },
+      { resumePath: '../resumes/resume.yaml', outputDir: '/output', expected: '/output/resume.tex' },
+    ]
+
+    tests.forEach(({ resumePath, outputDir, expected }) => {
+      expect(inferOutput(resumePath, outputDir)).toBe(expected)
+    })
+  })
+})
+
+describe(getPdfPath, () => {
+  it('should convert tex path to pdf path', () => {
+    const tests = [
+      { texPath: 'resume.tex', expected: 'resume.pdf' },
+      { texPath: '/output/resume.tex', expected: '/output/resume.pdf' },
+      { texPath: './dist/resume.tex', expected: './dist/resume.pdf' },
+    ]
+
+    tests.forEach(({ texPath, expected }) => {
+      expect(getPdfPath(texPath)).toBe(expected)
     })
   })
 })
@@ -287,6 +317,31 @@ describe(generateTeX, () => {
 
     expect(writeFileSync).toBeCalledTimes(1)
   })
+
+  it('should generate tex file in specified output directory', () => {
+    const writeFileSync = vi
+      .spyOn(fs, 'writeFileSync')
+      .mockImplementation(vi.fn())
+    const mkdirSync = vi
+      .spyOn(fs, 'mkdirSync')
+      .mockImplementation(vi.fn())
+    const existsSync = vi
+      .spyOn(fs, 'existsSync')
+      .mockReturnValue(false)
+
+    const resumePath = getFixture('software-engineer.yml')
+    const { resume } = readResume(resumePath)
+    const outputDir = '/tmp/test-output'
+
+    generateTeX(resumePath, resume, outputDir)
+    
+    expect(mkdirSync).toBeCalledWith(outputDir, { recursive: true })
+    expect(writeFileSync).toBeCalledTimes(1)
+    expect(writeFileSync).toBeCalledWith(
+      path.join(outputDir, 'software-engineer.tex'),
+      expect.any(String)
+    )
+  })
 })
 
 describe(buildResume, () => {
@@ -386,6 +441,18 @@ describe(buildResume, () => {
     expect(consolaSuccessSpy).not.toBeCalled()
     expect(consolaDebugSpy).toBeCalledTimes(2)
   })
+
+  it('should generate tex file in output directory when pdf is false', () => {
+    const outputDir = '/tmp/test-output'
+    const resumePath = getFixture('software-engineer.yml')
+
+    buildResume(resumePath, { pdf: false, output: outputDir })
+
+    expect(execSpy).toBeCalledTimes(0)
+    expect(whichSpy).not.toBeCalled()
+    expect(outputStr).toEqual(['Generated resume TeX file successfully.'])
+    expect(consolaSuccessSpy).toBeCalledTimes(1)
+  })
 })
 
 describe(createBuildCommand, () => {
@@ -473,5 +540,15 @@ describe(createBuildCommand, () => {
 
     expect(processExitSpy).toBeCalledTimes(1)
     expect(processExitSpy).toBeCalledWith(ErrorType.LATEX_COMPILE_ERROR.errno)
+  })
+
+  it('should accept output option', () => {
+    const options = buildCommand.options
+    const outputOption = options.find(opt => opt.short === '-o' || opt.long === '--output')
+    
+    expect(outputOption).toBeDefined()
+    expect(outputOption?.short).toBe('-o')
+    expect(outputOption?.long).toBe('--output')
+    expect(outputOption?.description).toBe('output directory for generated files')
   })
 })

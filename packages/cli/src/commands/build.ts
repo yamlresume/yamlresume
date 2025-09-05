@@ -24,6 +24,7 @@
 
 import child_process from 'node:child_process'
 import fs from 'node:fs'
+import os from 'node:os'
 import path from 'node:path'
 import { Command } from 'commander'
 import { consola } from 'consola'
@@ -46,10 +47,11 @@ import { readResume } from './validate'
  * will have a `.tex` extension.
  *
  * @param resumePath - The source resume file
+ * @param outputDir - Optional output directory to place the file in
  * @returns The output file name
  * @throws {Error} If the source file has an unsupported extension.
  */
-export function inferOutput(resumePath: string): string {
+export function inferOutput(resumePath: string, outputDir?: string): string {
   const extname = path.extname(resumePath)
 
   if (
@@ -57,10 +59,24 @@ export function inferOutput(resumePath: string): string {
     resumePath.endsWith('.yml') ||
     resumePath.endsWith('.json')
   ) {
+    const baseName = path.basename(resumePath.replace(/\.yaml|\.yml|\.json$/, '.tex'))
+    if (outputDir) {
+      return path.join(outputDir, baseName)
+    }
     return resumePath.replace(/\.yaml|\.yml|\.json$/, '.tex')
   }
 
   throw new YAMLResumeError('INVALID_EXTNAME', { extname })
+}
+
+/**
+ * Get the PDF output path from a tex file path
+ *
+ * @param texPath - The tex file path
+ * @returns The PDF file path
+ */
+export function getPdfPath(texPath: string): string {
+  return texPath.replace(/\.tex$/, '.pdf')
 }
 
 type LaTeXEnvironment = 'xelatex' | 'tectonic'
@@ -125,12 +141,18 @@ export function inferLaTeXCommand(resumePath: string): string {
  *
  * @param resumePath - The source resume file path (YAML, YML, or JSON).
  * @param resume - The parsed resume object.
+ * @param outputDir - Optional output directory for the generated tex file.
  * @remarks This function performs file I/O: writes a .tex file.
  * @throws {Error} Can throw if rendering or writing fails.
  */
-export function generateTeX(resumePath: string, resume: Resume) {
+export function generateTeX(resumePath: string, resume: Resume, outputDir?: string) {
   // make sure the file has an valid extension, i.e, '.json', '.yml' or '.yaml'
-  const texFile = inferOutput(resumePath)
+  const texFile = inferOutput(resumePath, outputDir)
+
+  // Create output directory if it doesn't exist
+  if (outputDir && !fs.existsSync(outputDir)) {
+    fs.mkdirSync(outputDir, { recursive: true })
+  }
 
   const renderer = getResumeRenderer(resume)
   const tex = renderer.render()
@@ -139,6 +161,75 @@ export function generateTeX(resumePath: string, resume: Resume) {
     fs.writeFileSync(texFile, tex)
   } catch (error) {
     throw new YAMLResumeError('FILE_WRITE_ERROR', { path: texFile })
+  }
+}
+
+/**
+ * Build LaTeX in a temporary directory and copy artifacts to output
+ *
+ * @param resumePath - The source resume file path
+ * @param resume - The parsed resume object
+ * @param outputDir - The target output directory
+ * @returns void
+ * @throws {Error} If LaTeX compilation fails
+ */
+export function buildLatexWithOutput(resumePath: string, resume: Resume, outputDir: string) {
+  // Create a temporary directory for LaTeX compilation
+  const tempDir = fs.mkdtempSync(path.join(os.tmpdir(), 'yamlresume-'))
+  
+  try {
+    // Generate tex file in temporary directory
+    const baseName = path.basename(resumePath.replace(/\.yaml|\.yml|\.json$/, ''))
+    const tempTexFile = path.join(tempDir, `${baseName}.tex`)
+    
+    // Get the tex content
+    const renderer = getResumeRenderer(resume)
+    const tex = renderer.render()
+    
+    // Write tex file to temp directory
+    fs.writeFileSync(tempTexFile, tex)
+    
+    // Run LaTeX compiler in the temporary directory
+    const environment = inferLaTeXEnvironment()
+    let command: string
+    
+    switch (environment) {
+      case 'xelatex':
+        command = `xelatex -halt-on-error ${path.basename(tempTexFile)}`
+        break
+      case 'tectonic':
+        command = `tectonic ${path.basename(tempTexFile)}`
+        break
+    }
+    
+    // Execute LaTeX command in the temp directory
+    const stdout = child_process.execSync(command, { 
+      cwd: tempDir, 
+      encoding: 'utf8' 
+    })
+    consola.debug(joinNonEmptyString(['stdout: ', toCodeBlock(stdout)]))
+    
+    // Create output directory if it doesn't exist
+    if (!fs.existsSync(outputDir)) {
+      fs.mkdirSync(outputDir, { recursive: true })
+    }
+    
+    // Copy generated files to output directory
+    const tempPdfFile = path.join(tempDir, `${baseName}.pdf`)
+    const outputTexFile = path.join(outputDir, `${baseName}.tex`)
+    const outputPdfFile = path.join(outputDir, `${baseName}.pdf`)
+    
+    // Copy tex file
+    fs.copyFileSync(tempTexFile, outputTexFile)
+    
+    // Copy pdf file if it exists
+    if (fs.existsSync(tempPdfFile)) {
+      fs.copyFileSync(tempPdfFile, outputPdfFile)
+    }
+    
+  } finally {
+    // Clean up temporary directory
+    fs.rmSync(tempDir, { recursive: true, force: true })
   }
 }
 
@@ -158,7 +249,7 @@ export function generateTeX(resumePath: string, resume: Resume) {
  * 4. build the resume to LaTeX and PDF at the same time
  *
  * @param resumePath - The source resume file path (YAML, YML, or JSON).
- * @param options - Build options including validation and PDF generation flags.
+ * @param options - Build options including validation, PDF generation flags, and output directory.
  * @remarks This function performs file I/O (via `generateTeX`) and executes an
  * external process (LaTeX compiler).
  * @throws {Error} Can throw if .tex generation, LaTeX command inference, or the
@@ -166,17 +257,32 @@ export function generateTeX(resumePath: string, resume: Resume) {
  */
 export function buildResume(
   resumePath: string,
-  options: { pdf?: boolean; validate?: boolean } = { pdf: true, validate: true }
+  options: { pdf?: boolean; validate?: boolean; output?: string } = { pdf: true, validate: true }
 ) {
   const { resume } = readResume(resumePath, options.validate)
 
-  generateTeX(resumePath, resume)
+  // If output directory is specified and we need PDF, use temp directory approach
+  if (options.output && options.pdf) {
+    try {
+      buildLatexWithOutput(resumePath, resume, options.output)
+      consola.success('Generated resume PDF file successfully.')
+      return
+    } catch (error) {
+      consola.debug(joinNonEmptyString(['stdout: ', toCodeBlock(error.stdout)]))
+      consola.debug(joinNonEmptyString(['stderr: ', toCodeBlock(error.stderr)]))
+      throw new YAMLResumeError('LATEX_COMPILE_ERROR', { error: error.message })
+    }
+  }
+
+  // Generate tex file (in output directory if specified, current directory otherwise)
+  generateTeX(resumePath, resume, options.output)
 
   if (!options.pdf) {
     consola.success('Generated resume TeX file successfully.')
     return
   }
 
+  // If we get here, we're generating PDF in current directory (no output option)
   const command = inferLaTeXCommand(resumePath)
   consola.start(`Generating resume PDF file with command: \`${command}\`...`)
 
@@ -201,10 +307,11 @@ export function createBuildCommand() {
     .argument('<resume-path>', 'the resume file path')
     .option('--no-pdf', 'only generate TeX file without PDF')
     .option('--no-validate', 'skip resume schema validation')
+    .option('-o, --output <dir>', 'output directory for generated files')
     .action(
       async (
         resumePath: string,
-        options: { pdf: boolean; validate: boolean }
+        options: { pdf: boolean; validate: boolean; output?: string }
       ) => {
         try {
           buildResume(resumePath, options)
