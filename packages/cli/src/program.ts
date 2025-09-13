@@ -35,9 +35,15 @@ import {
 } from './commands'
 import { setVerboseLog } from './utils'
 
-export const program = new Command()
+/**
+ * Create the CLI program.
+ *
+ * @returns The CLI program.
+ */
+export function createProgram(): Command {
+  const program = new Command()
 
-const banner = `
+  const banner = `
  __   __ _    __  __ _     ____
  \\ \\ / // \\  |  \\/  | |   |  _ \\ ___  ___ _   _ ___  ___   ___
   \\ V // _ \\ | |\\/| | |   | |_) / _ \\/ __| | | / _ \\/ _ \\ / _ \\
@@ -45,18 +51,21 @@ const banner = `
    |_/_/   \\_\\_|  |_|_____|_| \\_\\___||___/\\____|_| |_| |_|\\___|
 `
 
-program
-  .name('yamlresume')
-  .description(['YAMLResume — Resume as Code in YAML', banner].join('\n'))
-  .version(packageJson.version)
-  .option('-v, --verbose', 'verbose output')
-  .hook('preAction', (thisCommand) => {
-    setVerboseLog(thisCommand.opts().verbose)
-  })
+  program
+    .name('yamlresume')
+    .description(['YAMLResume — Resume as Code in YAML', banner].join('\n'))
+    .version(packageJson.version)
+    .option('-v, --verbose', 'verbose output')
+    .hook('preAction', (thisCommand) => {
+      setVerboseLog(thisCommand.opts().verbose)
+    })
 
-program.addCommand(createNewCommand())
-program.addCommand(createBuildCommand())
-program.addCommand(createDevCommand())
-program.addCommand(createLanguagesCommand())
-program.addCommand(createTemplatesCommand())
-program.addCommand(createValidateCommand())
+  program.addCommand(createNewCommand())
+  program.addCommand(createBuildCommand())
+  program.addCommand(createDevCommand())
+  program.addCommand(createLanguagesCommand())
+  program.addCommand(createTemplatesCommand())
+  program.addCommand(createValidateCommand())
+
+  return program
+}

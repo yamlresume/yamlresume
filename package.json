@@ -20,27 +20,29 @@
     "commitlint": "commitlint --edit",
     "release": "commit-and-tag-version --bumpFiles package.json packages/*/package.json",
     "cli": "pnpm --filter yamlresume",
-    "core": "pnpm --filter @yamlresume/core"
+    "core": "pnpm --filter @yamlresume/core",
+    "create-yamlresume": "pnpm --filter create-yamlresume",
+    "json2yamlresume": "pnpm --filter json2yamlresume"
   },
   "lint-staged": {
     "packages/*/src/**/*.ts": "pnpm check"
   },
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
-    "@commitlint/cli": "^19.8.0",
-    "@commitlint/config-conventional": "^19.8.0",
-    "@types/node": "^20.17.25",
+    "@commitlint/cli": "^19.8.1",
+    "@commitlint/config-conventional": "^19.8.1",
+    "@types/node": "^24.3.1",
     "@vitest/coverage-v8": "^3.2.4",
-    "commit-and-tag-version": "^12.5.2",
+    "commit-and-tag-version": "^12.6.0",
     "husky": "^9.1.7",
-    "lint-staged": "^15.5.0",
-    "tsup": "^8.4.0",
-    "typescript": "~5.4.5",
+    "lint-staged": "^16.1.6",
+    "tsup": "^8.5.0",
+    "typescript": "~5.9.2",
     "vite-tsconfig-paths": "^5.1.4",
     "vitest": "^3.2.4"
   },
   "packageManager": "pnpm@10.12.1",
-  "version": "0.7.1",
+  "version": "0.7.5",
   "pnpm": {
     "overrides": {
       "form-data": "^4.0.4"

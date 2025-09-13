@@ -22,7 +22,7 @@
  * IN THE SOFTWARE.
  */
 
-import { z } from 'zod/v4'
+import { z } from 'zod'
 
 import { joinNonEmptyString } from '@/utils'
 import { LocaleLanguageOptionSchema } from '../primitives'

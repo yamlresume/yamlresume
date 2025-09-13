@@ -1,6 +1,6 @@
 {
   "name": "@yamlresume/core",
-  "version": "0.7.1",
+  "version": "0.7.5",
   "description": "The typesetting and layout core for YAMLResume",
   "license": "MIT",
   "author": {
@@ -48,12 +48,12 @@
     "remark-parse": "^11.0.0",
     "tslib": "^2.8.1",
     "unified": "^11.0.5",
-    "zod": "^3.25.56"
+    "zod": "^4.1.5"
   },
   "devDependencies": {
     "@types/lodash-es": "^4.17.12",
     "@types/mdast": "^4.0.4",
-    "yaml": "^2.7.1"
+    "yaml": "^2.8.1"
   },
   "publishConfig": {
     "access": "public"
@@ -66,7 +66,7 @@
   "bugs": {
     "url": "https://github.com/yamlresume/yamlresume/issues"
   },
-  "homepage": "https://github.com/yamlresume/yamlresume/tree/main/packages/core#readme",
+  "homepage": "https://yamlresume.dev/",
   "engines": {
     "node": ">=20.0.0"
   }

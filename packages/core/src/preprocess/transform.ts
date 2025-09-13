@@ -26,11 +26,11 @@ import { capitalize, cloneDeep, isArray, merge } from 'lodash-es'
 
 import { LatexCodeGenerator, type Parser } from '@/compiler'
 import {
+  DEFAULT_RESUME_LAYOUT,
+  FILLED_RESUME_CONTENT,
   type OrderableSectionID,
   type ProfileItem,
   type Resume,
-  type ResumeContent,
-  defaultResumeLayout,
 } from '@/models'
 import { getOptionTranslation, getTemplateTranslations } from '@/translations'
 import {
@@ -64,34 +64,92 @@ export function replaceBlankLinesWithPercent(content: string): string {
  *
  * @param resume - The resume object.
  * @returns The transformed resume object.
- * @remarks Modifies `resume.content` in place.
  */
-export function transformSectionsWithDefaultValues(resume: Resume): Resume {
-  const emptyResumeContent: ResumeContent = {
-    awards: [],
-    basics: {
-      name: '',
-    },
-    certificates: [],
-    education: [],
-    interests: [],
-    languages: [],
-    location: {
-      city: '',
-    },
-    profiles: [],
-    projects: [],
-    publications: [],
-    references: [],
-    skills: [],
-    volunteer: [],
-    work: [],
-  }
+export function normalizeResumeContentSections(resume: Resume): Resume {
+  const clonedResume = cloneDeep(resume)
 
-  return {
-    ...resume,
-    content: merge(emptyResumeContent, resume.content),
-  }
+  Object.keys(FILLED_RESUME_CONTENT).forEach((key) => {
+    switch (key) {
+      case 'basics':
+        if (isEmptyValue(clonedResume.content[key])) {
+          clonedResume.content.basics = FILLED_RESUME_CONTENT.basics
+        }
+        break
+      case 'location':
+        if (isEmptyValue(clonedResume.content[key])) {
+          clonedResume.content.location = FILLED_RESUME_CONTENT.location
+        }
+        break
+      default:
+        if (isEmptyValue(clonedResume.content[key])) {
+          clonedResume.content[key] = []
+        }
+        break
+    }
+  })
+
+  return clonedResume
+}
+
+/**
+ * Normalizes resume content by replacing null and undefined with `""`
+ *
+ * 1. call `normalizeResumeContentSections` to ensure all sections exist
+ * 2. iterate through all sections to ensure no null or undefined values exist
+ *
+ * @param resume - The resume object to normalize.
+ * @returns The normalized resume object.
+ */
+export function normalizedResumeContent(resume: Resume): Resume {
+  // First, apply default values to ensure all sections exist
+  const resumeWithDefaults = normalizeResumeContentSections(resume)
+
+  // Handle basics and location sections (these are objects, not arrays)
+  Object.entries(resumeWithDefaults.content).forEach(
+    ([sectionKey, sectionValue]) => {
+      switch (sectionKey) {
+        case 'computed':
+          break
+        case 'basics':
+        case 'location':
+          // for basics and location, iterate through all keys
+          Object.keys(FILLED_RESUME_CONTENT[sectionKey]).forEach((propKey) => {
+            if (
+              sectionValue[propKey] === null ||
+              sectionValue[propKey] === undefined
+            ) {
+              sectionValue[propKey] = ''
+            }
+          })
+          break
+        default:
+          // For other sections (arrays), iterate through each element
+          if (Array.isArray(sectionValue)) {
+            sectionValue.forEach((item) => {
+              if (item && typeof item === 'object') {
+                Object.keys(FILLED_RESUME_CONTENT[sectionKey][0]).forEach(
+                  (propKey) => {
+                    if (item[propKey] === null || item[propKey] === undefined) {
+                      switch (propKey) {
+                        // for courses and keywords, we set them to empty array
+                        case 'courses':
+                        case 'keywords':
+                          item[propKey] = []
+                          break
+                        default:
+                          item[propKey] = ''
+                      }
+                    }
+                  }
+                )
+              }
+            })
+          }
+      }
+    }
+  )
+
+  return resumeWithDefaults
 }
 
 /**
@@ -385,10 +443,6 @@ export function transformEndDate(resume: Resume): Resume {
  */
 export function transformLanguage(resume: Resume): Resume {
   resume.content.languages.forEach((item) => {
-    if (isEmptyValue(item.language) || isEmptyValue(item.fluency)) {
-      return
-    }
-
     item.computed = {
       ...item.computed,
       language: getOptionTranslation(
@@ -760,7 +814,7 @@ export function transformResumeContent(
     // The order of the following functions matters, `transformResumeValues`
     // should be called first to process all leaf values properly with LaTeX
     // special characters escaped,
-    transformSectionsWithDefaultValues,
+    normalizedResumeContent,
     transformResumeValues,
     transformEducationCourses,
     transformEducationDegreeAreaAndScore,
@@ -790,7 +844,7 @@ export function transformResumeContent(
 export function transformResumeLayoutWithDefaultValues(resume: Resume): Resume {
   return {
     ...resume,
-    layout: merge(cloneDeep(defaultResumeLayout), resume.layout),
+    layout: merge(cloneDeep(DEFAULT_RESUME_LAYOUT), resume.layout),
   }
 }
 

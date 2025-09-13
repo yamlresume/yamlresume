@@ -22,7 +22,7 @@
  * IN THE SOFTWARE.
  */
 
-import { z } from 'zod/v4'
+import { z } from 'zod'
 
 import { ContentSchema } from './content'
 import { LayoutSchema } from './layout/layout'
@@ -39,7 +39,7 @@ export const ResumeSchema = z
     $id: 'https://yamlresume.dev/schema.json',
     title: 'YAMLResume Schema',
     description: 'JSON Schema for YAMLResume resume format.',
-    version: '0.7.0',
+    version: '0.7.5',
     license: 'MIT',
     keywords: ['Resume', 'CV', 'YAML', 'LaTeX', 'PDF', 'YAMLResume'],
   })

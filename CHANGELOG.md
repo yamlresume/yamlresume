@@ -2,6 +2,42 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.7.5](https://github.com/yamlresume/yamlresume/compare/v0.7.4...v0.7.5) (2025-08-28)
+
+
+### Bug Fixes
+
+* include `.gitignore` in create-yamlresume npm packge ([ed6523a](https://github.com/yamlresume/yamlresume/commit/ed6523a7a9711a971fb26def848f34aef73af3aa))
+* revise minimum length of headline from 8 to 2 ([8d030b4](https://github.com/yamlresume/yamlresume/commit/8d030b467bd04ad588077906ae31b35f73027972))
+
+## [0.7.4](https://github.com/yamlresume/yamlresume/compare/v0.7.3...v0.7.4) (2025-08-27)
+
+
+### Features
+
+* add a new json2yamlresume package ([349709e](https://github.com/yamlresume/yamlresume/commit/349709e27fad86208d3dde051510384cc07bf880))
+* add create-yamlresume package ([5baca0a](https://github.com/yamlresume/yamlresume/commit/5baca0a9bd94d861fc44221649258c2cb7fc303a))
+
+
+### Bug Fixes
+
+* remove space in margins's unit for DEFAULT_RESUME_LAYOUT ([d31f6bb](https://github.com/yamlresume/yamlresume/commit/d31f6bb17aebfa835636a1211cae592951acbfe3))
+
+## [0.7.3](https://github.com/yamlresume/yamlresume/compare/v0.7.2...v0.7.3) (2025-08-17)
+
+
+### Bug Fixes
+
+* no `null`/`undefined` should be allowed in output PDF ([1a16b35](https://github.com/yamlresume/yamlresume/commit/1a16b351f290b274a155b94d45cbd72ee75cc226))
+* revert "fix: normalize object leaf values for parsed resumes" ([9fa8c3f](https://github.com/yamlresume/yamlresume/commit/9fa8c3f9a64c8be0892e49273fa3f5bc8bbf3c9c))
+
+## [0.7.2](https://github.com/yamlresume/yamlresume/compare/v0.7.1...v0.7.2) (2025-08-14)
+
+
+### Bug Fixes
+
+* adopt chokidar for more robust watch mode ([a684dfe](https://github.com/yamlresume/yamlresume/commit/a684dfef2c926a7ab2a9955632ea007c3cd2ce3f))
+
 ## [0.7.1](https://github.com/yamlresume/yamlresume/compare/v0.7.0...v0.7.1) (2025-08-11)
 
 

@@ -23,7 +23,7 @@
  */
 
 import { expect } from 'vitest'
-import { z } from 'zod/v4'
+import { z } from 'zod'
 
 /**
  * Expects that a zod schema has metadata.
@@ -36,8 +36,7 @@ export function expectSchemaMetadata<T>(schema: z.ZodType<T>) {
   expect(metadata.description).toBeTypeOf('string')
 
   // Check if examples exist (some schemas like enums don't have examples)
-  if (metadata.examples !== undefined) {
-    expect(metadata.examples).toBeTypeOf('object')
+  if (metadata.examples !== undefined && Array.isArray(metadata.examples)) {
     expect(metadata.examples.length).toBeGreaterThan(0)
   }
 }

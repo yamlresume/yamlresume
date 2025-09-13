@@ -93,6 +93,13 @@ export function getOptionTranslation<K extends OptionCategory>(
         Master: 'Master',
         Doctor: 'Doctor',
       },
+      fluency: {
+        'Elementary Proficiency': 'Elementary Proficiency',
+        'Limited Working Proficiency': 'Limited Working Proficiency',
+        'Minimum Professional Proficiency': 'Minimum Professional Proficiency',
+        'Full Professional Proficiency': 'Full Professional Proficiency',
+        'Native or Bilingual Proficiency': 'Native or Bilingual Proficiency',
+      },
       languages: {
         Afrikaans: 'Afrikaans',
         Albanian: 'Albanian',
@@ -170,13 +177,6 @@ export function getOptionTranslation<K extends OptionCategory>(
         Yoruba: 'Yoruba',
         Zulu: 'Zulu',
       },
-      fluency: {
-        'Elementary Proficiency': 'Elementary Proficiency',
-        'Limited Working Proficiency': 'Limited Working Proficiency',
-        'Minimum Professional Proficiency': 'Minimum Professional Proficiency',
-        'Full Professional Proficiency': 'Full Professional Proficiency',
-        'Native or Bilingual Proficiency': 'Native or Bilingual Proficiency',
-      },
       sections: {
         awards: 'Awards',
         basics: 'Basics',
@@ -210,6 +210,13 @@ export function getOptionTranslation<K extends OptionCategory>(
         Bachelor: '学士',
         Master: '硕士',
         Doctor: '博士',
+      },
+      fluency: {
+        'Elementary Proficiency': '初级水平',
+        'Limited Working Proficiency': '有限工作水平',
+        'Minimum Professional Proficiency': '最低专业水平',
+        'Full Professional Proficiency': '完全专业水平',
+        'Native or Bilingual Proficiency': '母语或双语水平',
       },
       languages: {
         Afrikaans: '南非语',
@@ -288,13 +295,6 @@ export function getOptionTranslation<K extends OptionCategory>(
         Yoruba: '约鲁巴语',
         Zulu: '祖鲁语',
       },
-      fluency: {
-        'Elementary Proficiency': '初级水平',
-        'Limited Working Proficiency': '有限工作水平',
-        'Minimum Professional Proficiency': '最低专业水平',
-        'Full Professional Proficiency': '完全专业水平',
-        'Native or Bilingual Proficiency': '母语或双语水平',
-      },
       sections: {
         awards: '荣誉',
         basics: '简介',
@@ -328,6 +328,13 @@ export function getOptionTranslation<K extends OptionCategory>(
         Bachelor: '學士',
         Master: '碩士',
         Doctor: '博士',
+      },
+      fluency: {
+        'Elementary Proficiency': '初級水平',
+        'Limited Working Proficiency': '有限工作水平',
+        'Minimum Professional Proficiency': '最低專業水平',
+        'Full Professional Proficiency': '完全專業水平',
+        'Native or Bilingual Proficiency': '母語或雙語水平',
       },
       languages: {
         Afrikaans: '南非語',
@@ -405,13 +412,6 @@ export function getOptionTranslation<K extends OptionCategory>(
         Vietnamese: '越南語',
         Yoruba: '約魯巴語',
         Zulu: '祖魯語',
-      },
-      fluency: {
-        'Elementary Proficiency': '初級水平',
-        'Limited Working Proficiency': '有限工作水平',
-        'Minimum Professional Proficiency': '最低專業水平',
-        'Full Professional Proficiency': '完全專業水平',
-        'Native or Bilingual Proficiency': '母語或雙語水平',
       },
       sections: {
         awards: '榮譽',
@@ -447,6 +447,13 @@ export function getOptionTranslation<K extends OptionCategory>(
         Master: '碩士',
         Doctor: '博士',
       },
+      fluency: {
+        'Elementary Proficiency': '初級水平',
+        'Limited Working Proficiency': '有限工作水平',
+        'Minimum Professional Proficiency': '最低專業水平',
+        'Full Professional Proficiency': '完全專業水平',
+        'Native or Bilingual Proficiency': '母語或雙語水平',
+      },
       languages: {
         Afrikaans: '南非語',
         Albanian: '阿爾巴尼亞語',
@@ -524,13 +531,6 @@ export function getOptionTranslation<K extends OptionCategory>(
         Yoruba: '約魯巴語',
         Zulu: '祖魯語',
       },
-      fluency: {
-        'Elementary Proficiency': '初級水平',
-        'Limited Working Proficiency': '有限工作水平',
-        'Minimum Professional Proficiency': '最低專業水平',
-        'Full Professional Proficiency': '完全專業水平',
-        'Native or Bilingual Proficiency': '母語或雙語水平',
-      },
       sections: {
         awards: '榮譽',
         basics: '簡介',
@@ -564,6 +564,14 @@ export function getOptionTranslation<K extends OptionCategory>(
         Bachelor: 'Licenciatura',
         Master: 'Maestría',
         Doctor: 'Doctorado',
+      },
+      fluency: {
+        'Elementary Proficiency': 'Competencia elemental',
+        'Limited Working Proficiency': 'Competencia limitada de trabajo',
+        'Minimum Professional Proficiency':
+          'Competencia profesional de trabajo',
+        'Full Professional Proficiency': 'Competencia profesional plena',
+        'Native or Bilingual Proficiency': 'Competencia nativa o bilingüe',
       },
       languages: {
         Afrikaans: 'Afrikáns',
@@ -641,14 +649,6 @@ export function getOptionTranslation<K extends OptionCategory>(
         Vietnamese: 'Vietnamita',
         Yoruba: 'Yoruba',
         Zulu: 'Zulú',
-      },
-      fluency: {
-        'Elementary Proficiency': 'Competencia elemental',
-        'Limited Working Proficiency': 'Competencia limitada de trabajo',
-        'Minimum Professional Proficiency':
-          'Competencia profesional de trabajo',
-        'Full Professional Proficiency': 'Competencia profesional plena',
-        'Native or Bilingual Proficiency': 'Competencia nativa o bilingüe',
       },
       sections: {
         awards: 'Premios',

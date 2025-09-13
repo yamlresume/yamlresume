@@ -22,7 +22,7 @@
  * IN THE SOFTWARE.
  */
 import { startCase } from 'lodash-es'
-import { z } from 'zod/v4'
+import { z } from 'zod'
 
 import {
   COUNTRY_OPTIONS,

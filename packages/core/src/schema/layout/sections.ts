@@ -22,7 +22,7 @@
  * IN THE SOFTWARE.
  */
 
-import { z } from 'zod/v4'
+import { z } from 'zod'
 
 import { ORDERABLE_SECTION_IDS } from '@/models'
 import { SizedStringSchema, optionSchema } from '../primitives'

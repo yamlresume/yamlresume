@@ -22,18 +22,16 @@
  * IN THE SOFTWARE.
  */
 
-import child_process from 'node:child_process'
 import fs from 'node:fs'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 
 import consola from 'consola'
 import packageJson from '../package.json' with { type: 'json' }
-import { program } from './program'
-
-program.exitOverride()
+import { createProgram } from './program'
 
 describe('program', () => {
   let writeSpy: ReturnType<typeof vi.spyOn>
+  const program = createProgram()
 
   beforeEach(() => {
     writeSpy = vi
@@ -41,6 +39,7 @@ describe('program', () => {
       .spyOn(process.stdout, 'write' as any)
       // suppress output
       .mockImplementation(() => true)
+    program.exitOverride()
   })
 
   afterEach(() => {

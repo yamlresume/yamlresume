@@ -22,7 +22,7 @@
  * IN THE SOFTWARE.
  */
 
-import fs from 'node:fs'
+import chokidar from 'chokidar'
 
 import { coalesce } from 'coalescifn'
 import { Command } from 'commander'
@@ -47,10 +47,11 @@ type WatchOptions = {
  * - Only one build runs at a time.
  * - If multiple events arrive during a build, run exactly one more build after
  *   it finishes (coalesce bursts).
+ * - Uses chokidar for robust file watching that handles editor operations.
  *
  * @param resumePath - The resume file to watch
  * @param options - Build and watch options
- * @returns FSWatcher instance
+ * @returns Chokidar watcher instance
  */
 export function watchResume(
   resumePath: string,
@@ -68,9 +69,28 @@ export function watchResume(
 
   consola.start(`Watching file changes: ${resumePath}...`)
 
-  const watcher = fs.watch(resumePath, () => {
-    exclusiveBuild()
+  // use chokidar for robust file watching that handles vim and other editors
+  // properly.
+  //
+  // vim will save the file in a single atomic operation, that being said, it
+  // will first create a temporary file (the '.swp' file), then rename it to the
+  // final file.
+  //
+  // Node.js `fs.watch` has trouble with this, so we use chokidar instead.
+  const watcher = chokidar.watch(resumePath, {
+    awaitWriteFinish: {
+      stabilityThreshold: 200, // wait 200ms after file stops changing
+      pollInterval: 200, // check every 200ms
+    },
+    ignoreInitial: true, // don't trigger on initial file discovery
   })
+
+  // handle file changes - chokidar's awaitWriteFinish already handles
+  // debouncing
+  watcher.on('change', () => exclusiveBuild())
+
+  // handle file additions (in case file gets recreated)
+  watcher.on('add', () => exclusiveBuild())
 
   return watcher
 }
@@ -81,7 +101,7 @@ export function watchResume(
 export function createDevCommand() {
   return new Command()
     .name('dev')
-    .description('build on file changes (watch mode)')
+    .description('build a resume on file changes (watch mode)')
     .argument('<resume-path>', 'the resume file path')
     .option('--no-pdf', 'only generate TeX file without PDF')
     .option('--no-validate', 'skip resume schema validation')

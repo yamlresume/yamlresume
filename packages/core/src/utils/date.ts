@@ -120,7 +120,7 @@ export function getDateRange(
 /**
  * The number of seconds in one day
  */
-export const oneDay = 24 * 60 * 60
+export const ONE_DAY = 24 * 60 * 60
 
 /**
  * Get the current time in UTC seconds

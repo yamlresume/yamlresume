@@ -60,6 +60,14 @@ describe('smoke test for all renderers', () => {
   ]
   const summaryParser = new MarkdownParser()
 
+  function expectValidLaTeXDocument(result: string) {
+    expect(result).toContain('\\documentclass')
+    expect(result).toContain('\\begin{document}')
+    expect(result).toContain('\\end{document}')
+    expect(result).not.toContain('null')
+    expect(result).not.toContain('undefined')
+  }
+
   beforeEach(() => {
     resume = getFixture('full-resume.yml')
   })
@@ -68,7 +76,7 @@ describe('smoke test for all renderers', () => {
     it('should render resume with all sections', () => {
       for (const renderer of renderers) {
         const result = new renderer(resume, summaryParser).render()
-        expect(result).toContain('\\documentclass')
+        expectValidLaTeXDocument(result)
       }
     })
 
@@ -79,7 +87,7 @@ describe('smoke test for all renderers', () => {
             removeKeysFromObject(resume, [section]),
             summaryParser
           ).render()
-          expect(result).toContain('\\documentclass')
+          expectValidLaTeXDocument(result)
         }
       }
     })
@@ -95,7 +103,7 @@ describe('smoke test for all renderers', () => {
           removeKeysFromObject(resume, sectionsToRemove),
           summaryParser
         ).render()
-        expect(result).toContain('\\documentclass')
+        expectValidLaTeXDocument(result)
       }
     })
   })
@@ -106,7 +114,7 @@ describe('smoke test for all renderers', () => {
         resume.layout = undefined
 
         const result = new renderer(resume, summaryParser).render()
-        expect(result).toContain('\\documentclass')
+        expectValidLaTeXDocument(result)
       }
     })
   })
@@ -116,7 +124,7 @@ describe('smoke test for all renderers', () => {
       const allKeys = collectAllKeys(resume)
 
       let testCount = 0
-      const maxTests = 100 // Limit to prevent extremely long test runs
+      const maxTests = 200 // Limit to prevent extremely long test runs
 
       for (const key of Array.from(allKeys)) {
         if (testCount >= maxTests) {
@@ -139,9 +147,7 @@ describe('smoke test for all renderers', () => {
 
             const result = new renderer(modifiedResume, summaryParser).render()
 
-            expect(result).toContain('\\documentclass')
-            expect(result).toContain('\\begin{document}')
-            expect(result).toContain('\\end{document}')
+            expectValidLaTeXDocument(result)
           } catch (error) {
             // provide detailed information about for failed test
             throw new Error(
@@ -177,9 +183,7 @@ describe('smoke test for all renderers', () => {
 
             const result = new renderer(modifiedResume, summaryParser).render()
 
-            expect(result).toContain('\\documentclass')
-            expect(result).toContain('\\begin{document}')
-            expect(result).toContain('\\end{document}')
+            expectValidLaTeXDocument(result)
           } catch (error) {
             // provide detailed information about for failed test
             throw new Error(

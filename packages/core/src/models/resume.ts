@@ -27,8 +27,8 @@ import type {
   OrderableSectionID,
   Resume,
   ResumeContent,
-  ResumeItem,
   ResumeLayout,
+  ResumeItem as ResumeSectionItem,
   Template,
 } from '@/models'
 
@@ -306,7 +306,7 @@ export function getTemplateDetail(template: Template) {
 }
 
 /** Provides default, empty item structures for each resume section type. */
-export const resumeItems: ResumeItem = {
+export const RESUME_SECTION_ITEMS: ResumeSectionItem = {
   award: {
     awarder: '',
     date: '',
@@ -343,8 +343,8 @@ export const resumeItems: ResumeItem = {
     name: '',
   },
   language: {
-    fluency: 'Elementary Proficiency',
-    language: 'English',
+    fluency: null,
+    language: null,
     keywords: [],
   },
   location: {
@@ -355,7 +355,7 @@ export const resumeItems: ResumeItem = {
     region: '',
   },
   profile: {
-    network: 'GitHub',
+    network: null,
     url: '',
     username: '',
   },
@@ -384,7 +384,7 @@ export const resumeItems: ResumeItem = {
   },
   skill: {
     keywords: [],
-    level: null,
+    level: undefined,
     name: '',
   },
   volunteer: {
@@ -410,21 +410,21 @@ export const resumeItems: ResumeItem = {
  * Default content structure for a new resume, containing empty or minimal
  * sections.
  */
-export const defaultResumeContent: ResumeContent = {
+export const DEFAULT_RESUME_CONTENT: ResumeContent = {
   awards: [],
-  basics: resumeItems.basics,
+  basics: RESUME_SECTION_ITEMS.basics,
   certificates: [],
-  education: [resumeItems.education],
+  education: [RESUME_SECTION_ITEMS.education],
   interests: [],
-  languages: [resumeItems.language],
-  location: resumeItems.location,
-  profiles: [resumeItems.profile],
+  languages: [RESUME_SECTION_ITEMS.language],
+  location: RESUME_SECTION_ITEMS.location,
+  profiles: [RESUME_SECTION_ITEMS.profile],
   projects: [],
   publications: [],
   references: [],
-  skills: [resumeItems.skill],
+  skills: [RESUME_SECTION_ITEMS.skill],
   volunteer: [],
-  work: [resumeItems.work],
+  work: [RESUME_SECTION_ITEMS.work],
 }
 
 /**
@@ -432,35 +432,35 @@ export const defaultResumeContent: ResumeContent = {
  *
  * Useful for testing transformations and rendering.
  */
-export const filledResumeContent: ResumeContent = {
-  awards: [resumeItems.award],
-  basics: resumeItems.basics,
-  certificates: [resumeItems.certificate],
-  education: [resumeItems.education],
-  interests: [resumeItems.interest],
-  languages: [resumeItems.language],
-  location: resumeItems.location,
-  profiles: [resumeItems.profile],
-  projects: [resumeItems.project],
-  publications: [resumeItems.publication],
-  references: [resumeItems.reference],
-  skills: [resumeItems.skill],
-  volunteer: [resumeItems.volunteer],
-  work: [resumeItems.work],
+export const FILLED_RESUME_CONTENT: ResumeContent = {
+  awards: [RESUME_SECTION_ITEMS.award],
+  basics: RESUME_SECTION_ITEMS.basics,
+  certificates: [RESUME_SECTION_ITEMS.certificate],
+  education: [RESUME_SECTION_ITEMS.education],
+  interests: [RESUME_SECTION_ITEMS.interest],
+  languages: [RESUME_SECTION_ITEMS.language],
+  location: RESUME_SECTION_ITEMS.location,
+  profiles: [RESUME_SECTION_ITEMS.profile],
+  projects: [RESUME_SECTION_ITEMS.project],
+  publications: [RESUME_SECTION_ITEMS.publication],
+  references: [RESUME_SECTION_ITEMS.reference],
+  skills: [RESUME_SECTION_ITEMS.skill],
+  volunteer: [RESUME_SECTION_ITEMS.volunteer],
+  work: [RESUME_SECTION_ITEMS.work],
 }
 
 /** Default top/bottom margin value. */
-const defaultTopBottomMargin = '2.5 cm'
+const DEFAULT_TOP_BOTTOM_MARGIN = '2.5cm'
 /** Default left/right margin value. */
-const defaultLeftRightMargin = '1.5 cm'
+const DEFAULT_LEFT_RIGHT_MARGIN = '1.5cm'
 
 /** Available margin size options for resume layout. */
-export const marginOptions = [
-  defaultLeftRightMargin,
-  '1.75 cm',
-  '2.0 cm',
-  '2.25 cm',
-  defaultTopBottomMargin,
+export const MARGIN_OPTIONS = [
+  DEFAULT_LEFT_RIGHT_MARGIN,
+  '1.75cm',
+  '2.0cm',
+  '2.25cm',
+  DEFAULT_TOP_BOTTOM_MARGIN,
 ]
 
 /**
@@ -491,7 +491,7 @@ export function getLocaleLanguageDetail(localeLanguage: LocaleLanguage) {
 }
 
 /** Default layout configuration for a new resume. */
-export const defaultResumeLayout: ResumeLayout = {
+export const DEFAULT_RESUME_LAYOUT: ResumeLayout = {
   template: 'moderncv-banking',
   typography: {
     fontSize: FONT_SIZE_OPTIONS[0],
@@ -502,10 +502,10 @@ export const defaultResumeLayout: ResumeLayout = {
     },
   },
   margins: {
-    top: defaultTopBottomMargin,
-    bottom: defaultTopBottomMargin,
-    left: defaultLeftRightMargin,
-    right: defaultLeftRightMargin,
+    top: DEFAULT_TOP_BOTTOM_MARGIN,
+    bottom: DEFAULT_TOP_BOTTOM_MARGIN,
+    left: DEFAULT_LEFT_RIGHT_MARGIN,
+    right: DEFAULT_LEFT_RIGHT_MARGIN,
   },
   locale: {
     language: 'en',
@@ -516,9 +516,9 @@ export const defaultResumeLayout: ResumeLayout = {
 }
 
 /** Default value when user creates a new `Resume` object. */
-export const defaultResume: Resume = {
-  content: defaultResumeContent,
-  layout: defaultResumeLayout,
+export const DEFAULT_RESUME: Resume = {
+  content: DEFAULT_RESUME_CONTENT,
+  layout: DEFAULT_RESUME_LAYOUT,
 }
 
 /**
@@ -526,7 +526,7 @@ export const defaultResume: Resume = {
  *
  * This is useful for testing transformations and rendering.
  */
-export const filledResume: Resume = {
-  content: filledResumeContent,
-  layout: defaultResumeLayout,
+export const FILLED_RESUME: Resume = {
+  content: FILLED_RESUME_CONTENT,
+  layout: DEFAULT_RESUME_LAYOUT,
 }

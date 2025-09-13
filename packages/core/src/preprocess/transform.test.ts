@@ -27,18 +27,21 @@ import { describe, expect, it } from 'vitest'
 
 import { LatexCodeGenerator, MarkdownParser } from '@/compiler'
 import {
+  DEFAULT_RESUME,
+  FILLED_RESUME,
   LOCALE_LANGUAGE_OPTIONS,
   type LocaleLanguage,
   type Network,
   ORDERABLE_SECTION_IDS,
   type ProfileItem,
+  RESUME_SECTION_ITEMS,
+  type Resume,
   type ResumeLayout,
-  defaultResume,
-  filledResume,
 } from '@/models'
 import { getOptionTranslation, getTemplateTranslations } from '@/translations'
-import { isEmptyValue } from '@/utils'
 import {
+  normalizeResumeContentSections,
+  normalizedResumeContent,
   replaceBlankLinesWithPercent,
   transformBasicsUrl,
   transformDate,
@@ -107,10 +110,259 @@ describe(replaceBlankLinesWithPercent, () => {
   })
 })
 
+describe(normalizeResumeContentSections, () => {
+  it('should fill missing sections with default values', () => {
+    const basics = { name: 'John Doe' }
+    const education = [
+      {
+        institution: 'Test University',
+        area: '',
+        degree: undefined,
+        startDate: '',
+        endDate: '',
+      },
+    ]
+
+    const resume: Resume = {
+      content: {
+        basics,
+        education,
+      },
+    }
+
+    const normalizedResume = normalizeResumeContentSections(resume)
+
+    expect(normalizedResume.content.awards).toEqual([])
+    expect(normalizedResume.content.basics).toEqual(basics)
+    expect(normalizedResume.content.certificates).toEqual([])
+    expect(normalizedResume.content.education).toEqual(education)
+    expect(normalizedResume.content.interests).toEqual([])
+    expect(normalizedResume.content.languages).toEqual([])
+    expect(normalizedResume.content.location).toEqual(
+      RESUME_SECTION_ITEMS.location
+    )
+    expect(normalizedResume.content.profiles).toEqual([])
+    expect(normalizedResume.content.projects).toEqual([])
+    expect(normalizedResume.content.publications).toEqual([])
+    expect(normalizedResume.content.references).toEqual([])
+    expect(normalizedResume.content.skills).toEqual([])
+    expect(normalizedResume.content.volunteer).toEqual([])
+    expect(normalizedResume.content.work).toEqual([])
+  })
+
+  it('should not overwrite existing sections', () => {
+    const basics = { name: 'Jane Doe' }
+    const education = [{ institution: 'Another University' }]
+    const awards = [{ title: 'Best Student' }]
+    const skills = [{ name: 'Programming' }]
+    const location = { city: 'New York' }
+
+    const resume = {
+      content: {
+        basics,
+        education,
+        awards,
+        skills,
+        location,
+      },
+    }
+
+    // @ts-ignore
+    const normalizedResume = normalizeResumeContentSections(resume)
+    expect(normalizedResume.content.basics).toEqual(basics)
+    expect(normalizedResume.content.education).toEqual(education)
+    expect(normalizedResume.content.awards).toEqual(awards)
+    expect(normalizedResume.content.skills).toEqual(skills)
+    expect(normalizedResume.content.location).toEqual(location)
+  })
+
+  it('should handle empty input gracefully', () => {
+    const resume = { content: {} }
+
+    // @ts-ignore
+    const normalizedResume = normalizeResumeContentSections(resume)
+    expect(normalizedResume.content.basics).toEqual(RESUME_SECTION_ITEMS.basics)
+    expect(normalizedResume.content.education).toEqual([])
+    expect(normalizedResume.content.awards).toEqual([])
+    expect(normalizedResume.content.certificates).toEqual([])
+    expect(normalizedResume.content.interests).toEqual([])
+    expect(normalizedResume.content.languages).toEqual([])
+    expect(normalizedResume.content.location).toEqual(
+      RESUME_SECTION_ITEMS.location
+    )
+    expect(normalizedResume.content.profiles).toEqual([])
+    expect(normalizedResume.content.projects).toEqual([])
+    expect(normalizedResume.content.publications).toEqual([])
+    expect(normalizedResume.content.references).toEqual([])
+    expect(normalizedResume.content.skills).toEqual([])
+    expect(normalizedResume.content.volunteer).toEqual([])
+    expect(normalizedResume.content.work).toEqual([])
+  })
+
+  it('should not mutate the original resume object', () => {
+    const resume = {
+      content: {
+        basics: { name: 'Original' },
+      },
+    }
+    const resumeCopy = JSON.parse(JSON.stringify(resume))
+    // @ts-ignore
+    normalizeResumeContentSections(resume)
+    expect(resume).toEqual(resumeCopy)
+  })
+
+  it('should not mutate computed section', () => {
+    const computed = { someValue: 'test' }
+    const resume = {
+      content: {
+        computed,
+      },
+    }
+
+    // @ts-ignore
+    const normalizedResume = normalizeResumeContentSections(resume)
+
+    expect(normalizedResume.content.computed).toEqual(computed)
+  })
+})
+
+describe(normalizedResumeContent, () => {
+  it('should fill missing fields with empty strings or arrays', () => {
+    const computed = {
+      someValue: 'test',
+    }
+    const resume = {
+      content: {
+        basics: { name: 'Alice', email: null, phone: undefined },
+        education: [{ area: 'CS', institution: null, startDate: undefined }],
+        location: { city: 'Paris', country: null },
+        awards: null,
+        skills: undefined,
+        computed,
+      },
+    }
+    // @ts-ignore
+    const normalized = normalizedResumeContent(resume)
+
+    // basics: all fields present, missing/undefined/null replaced with ""
+    expect(normalized.content.basics).toEqual({
+      ...RESUME_SECTION_ITEMS.basics,
+      name: 'Alice',
+      email: '',
+      phone: '',
+    })
+
+    // education: array, each item filled
+    expect(normalized.content.education[0].area).toBe('CS')
+    expect(normalized.content.education[0].institution).toBe('')
+    expect(normalized.content.education[0].startDate).toBe('')
+    // all other fields present
+    Object.keys(RESUME_SECTION_ITEMS.education).forEach((key) => {
+      expect(normalized.content.education[0]).toHaveProperty(key)
+    })
+
+    // location: all fields present, missing/undefined/null replaced with ""
+    expect(normalized.content.location).toEqual({
+      ...RESUME_SECTION_ITEMS.location,
+      city: 'Paris',
+      country: '',
+    })
+
+    // awards: should be []
+    expect(normalized.content.awards).toEqual([])
+
+    // skills: should be []
+    expect(normalized.content.skills).toEqual([])
+
+    // volunteer, certificates, etc: should be []
+    expect(normalized.content.certificates).toEqual([])
+    expect(normalized.content.interests).toEqual([])
+    expect(normalized.content.languages).toEqual([])
+    expect(normalized.content.profiles).toEqual([])
+    expect(normalized.content.projects).toEqual([])
+    expect(normalized.content.publications).toEqual([])
+    expect(normalized.content.references).toEqual([])
+    expect(normalized.content.volunteer).toEqual([])
+    expect(normalized.content.work).toEqual([])
+    expect(normalized.content.computed).toEqual(computed)
+  })
+
+  it('should not mutate the input object', () => {
+    const resume = {
+      content: {
+        basics: { name: 'Bob' },
+        education: [{ area: 'Math' }],
+      },
+    }
+    const original = JSON.parse(JSON.stringify(resume))
+
+    // @ts-ignore
+    normalizedResumeContent(resume)
+    expect(resume).toEqual(original)
+  })
+
+  it('should handle empty content gracefully', () => {
+    const resume = { content: {} }
+
+    // @ts-ignore
+    const normalized = normalizedResumeContent(resume)
+
+    expect(normalized.content.basics).toEqual(RESUME_SECTION_ITEMS.basics)
+    expect(normalized.content.location).toEqual(RESUME_SECTION_ITEMS.location)
+    expect(normalized.content.education).toEqual([])
+    expect(normalized.content.awards).toEqual([])
+    expect(normalized.content.skills).toEqual([])
+    expect(normalized.content.certificates).toEqual([])
+    expect(normalized.content.interests).toEqual([])
+    expect(normalized.content.languages).toEqual([])
+    expect(normalized.content.profiles).toEqual([])
+    expect(normalized.content.projects).toEqual([])
+    expect(normalized.content.publications).toEqual([])
+    expect(normalized.content.references).toEqual([])
+    expect(normalized.content.volunteer).toEqual([])
+    expect(normalized.content.work).toEqual([])
+  })
+
+  it('should handle null and undefined values in arrays', () => {
+    const resume = {
+      content: {
+        education: [
+          { area: null, institution: undefined, startDate: '2020' },
+          undefined,
+          null,
+        ],
+      },
+    }
+
+    // @ts-ignore
+    const normalized = normalizedResumeContent(resume)
+
+    expect(normalized.content.education[0].area).toBe('')
+    expect(normalized.content.education[0].institution).toBe('')
+    expect(normalized.content.education[0].startDate).toBe('2020')
+    // Should not throw for undefined/null array items
+    expect(normalized.content.education.length).toBe(3)
+  })
+
+  it('should preserve extra fields not in RESUME_SECTION_ITEMS', () => {
+    const resume = {
+      content: {
+        basics: { name: 'Eve', customField: 'custom' },
+      },
+    }
+
+    // @ts-ignore
+    const normalized = normalizedResumeContent(resume)
+
+    // @ts-ignore
+    expect(normalized.content.basics.customField).toBe('custom')
+  })
+})
+
 describe(transformEducationCourses, () => {
   it('should transform courses from string[] to comma space separated string', () => {
     testOverAllLocaleLanguages((language) => {
-      const resume = cloneDeep(defaultResume)
+      const resume = cloneDeep(DEFAULT_RESUME)
       resume.layout.locale.language = language
 
       const coursesList = [
@@ -181,7 +433,7 @@ describe(transformEducationDegreeAreaAndScore, () => {
       ]
 
       for (const { degree, area, score, expected } of tests) {
-        const resume = cloneDeep(defaultResume)
+        const resume = cloneDeep(DEFAULT_RESUME)
 
         resume.layout.locale.language = language
 
@@ -203,7 +455,7 @@ describe(transformEducationDegreeAreaAndScore, () => {
 describe(transformKeywords, () => {
   it('should transform keywords from string[] to comma separated string', () => {
     testOverAllLocaleLanguages((language) => {
-      const resume = cloneDeep(defaultResume)
+      const resume = cloneDeep(DEFAULT_RESUME)
       resume.layout.locale.language = language
 
       const keywordList = ['JavaScript', 'TypeScript', 'React', 'Node.js']
@@ -238,7 +490,7 @@ describe(transformKeywords, () => {
 
 describe(transformDate, () => {
   it('should transform date by removing day for various sections', () => {
-    const resume = cloneDeep(filledResume)
+    const resume = cloneDeep(FILLED_RESUME)
 
     const date = 'Oct 1, 2016'
     const startDate = 'Oct 1, 2016'
@@ -296,7 +548,7 @@ describe(transformDate, () => {
 
 describe(transformEndDate, () => {
   it('should transform endDate by setting to "Present" if it is empty', () => {
-    const resume = cloneDeep(filledResume)
+    const resume = cloneDeep(FILLED_RESUME)
 
     const endDate = ''
 
@@ -319,9 +571,9 @@ describe(transformEndDate, () => {
 })
 
 describe(transformLanguage, () => {
-  it('should transform language option according to user chosen locale language', () => {
+  it("should transform language option according to user's language", () => {
     testOverAllLocaleLanguages((language) => {
-      const resume = cloneDeep(defaultResume)
+      const resume = cloneDeep(DEFAULT_RESUME)
 
       resume.layout.locale.language = language
       resume.content.languages[0].language = 'Arabic'
@@ -330,10 +582,6 @@ describe(transformLanguage, () => {
       transformLanguage(resume)
 
       resume.content.languages.forEach((item) => {
-        if (isEmptyValue(item.language) || isEmptyValue(item.fluency)) {
-          return
-        }
-
         item.language &&
           expect(item.computed?.language).toBe(
             getOptionTranslation(
@@ -355,7 +603,7 @@ describe(transformLanguage, () => {
   })
 
   it('should do nothing when either language or fluency is empty', () => {
-    const resume = cloneDeep(defaultResume)
+    const resume = cloneDeep(DEFAULT_RESUME)
 
     resume.content.languages = [
       {
@@ -508,7 +756,7 @@ describe(transformLocation, () => {
       expected,
     } of tests) {
       testOverAllLocaleLanguages((language) => {
-        const resume = cloneDeep(defaultResume)
+        const resume = cloneDeep(DEFAULT_RESUME)
         resume.layout.locale.language = language
 
         resume.content.location = {
@@ -532,7 +780,7 @@ describe(transformLocation, () => {
 
 describe(transformSummary, () => {
   it('should parse summary from markdown to tex', () => {
-    const resume = cloneDeep(filledResume)
+    const resume = cloneDeep(FILLED_RESUME)
     const summary = 'Test summary'
 
     resume.content.basics.summary = summary
@@ -582,7 +830,7 @@ describe(transformSummary, () => {
 
   it('should transform summary to empty string if it is empty', () => {
     for (const summary of ['', undefined, null]) {
-      const resume = cloneDeep(filledResume)
+      const resume = cloneDeep(FILLED_RESUME)
       resume.content.basics.summary = summary
 
       for (const section of [
@@ -626,7 +874,7 @@ describe(transformSkills, () => {
   it('should translate null/undefined levels', () => {
     testOverAllLocaleLanguages((language) => {
       for (const level of [null, undefined, '']) {
-        const resume = cloneDeep(filledResume)
+        const resume = cloneDeep(FILLED_RESUME)
 
         resume.layout.locale.language = language
         // @ts-ignore
@@ -649,7 +897,7 @@ describe(transformSkills, () => {
         'Expert',
         'Master',
       ] as const) {
-        const resume = cloneDeep(filledResume)
+        const resume = cloneDeep(FILLED_RESUME)
 
         resume.layout.locale.language = language
         resume.content.skills[0].level = level
@@ -667,7 +915,7 @@ describe(transformSkills, () => {
 describe(transformSectionNames, () => {
   it('should translate section names according to user chosen language', () => {
     testOverAllLocaleLanguages((language) => {
-      const resume = cloneDeep(defaultResume)
+      const resume = cloneDeep(DEFAULT_RESUME)
       resume.layout.locale.language = language
 
       transformSectionNames(resume)
@@ -685,7 +933,7 @@ describe(transformSectionNames, () => {
   })
 
   it('should use section aliases when provided in layout.sections.alias', () => {
-    const resume = cloneDeep(defaultResume)
+    const resume = cloneDeep(DEFAULT_RESUME)
     resume.layout.locale.language = 'en'
 
     // Set some section aliases
@@ -720,7 +968,7 @@ describe(transformSectionNames, () => {
   })
 
   it('should work correctly when sections.alias is undefined', () => {
-    const resume = cloneDeep(defaultResume)
+    const resume = cloneDeep(DEFAULT_RESUME)
     resume.layout.locale.language = 'en'
 
     // Ensure sections.alias is undefined
@@ -737,7 +985,7 @@ describe(transformSectionNames, () => {
   })
 
   it('should work correctly in the full transform pipeline', () => {
-    const resume = cloneDeep(defaultResume)
+    const resume = cloneDeep(DEFAULT_RESUME)
     resume.layout.locale.language = 'en'
 
     // Set section aliases
@@ -779,7 +1027,7 @@ describe(transformSectionNames, () => {
 
 describe(transformBasicsUrl, () => {
   it('should transform basics.url to latex href with fontawesome5 icon', () => {
-    const resume = cloneDeep(defaultResume)
+    const resume = cloneDeep(DEFAULT_RESUME)
 
     const url = 'https://yamlresume.dev'
     const tests = [
@@ -802,7 +1050,7 @@ describe(transformBasicsUrl, () => {
 
 describe(transformProfileUrls, () => {
   it('should transform profile urls to latex href with fontawesome5 icon', () => {
-    const resume = cloneDeep(defaultResume)
+    const resume = cloneDeep(DEFAULT_RESUME)
 
     const tests: {
       network: Network
@@ -858,7 +1106,7 @@ describe(transformProfileUrls, () => {
 
 describe(transformProfileLinks, () => {
   it('should transform profile links to latex with icons', () => {
-    const resume = cloneDeep(defaultResume)
+    const resume = cloneDeep(DEFAULT_RESUME)
 
     const url = 'https://yamlresume.dev'
     const profiles: ProfileItem[] = [
@@ -891,7 +1139,7 @@ describe(transformProfileLinks, () => {
 
 describe(transformResumeValues, () => {
   it('should transform resume values with escapeLatex', () => {
-    const resume = cloneDeep(filledResume)
+    const resume = cloneDeep(FILLED_RESUME)
 
     resume.content.basics.headline = 'Again & Again'
     resume.content.basics.email = 'again_again@yamlresume.com'
@@ -921,7 +1169,7 @@ describe(transformResumeValues, () => {
   })
 
   it('should ignore computed values', () => {
-    const resume = cloneDeep(filledResume)
+    const resume = cloneDeep(FILLED_RESUME)
     const urls = 'url1 {} url2 {}'
 
     resume.content.computed = {
@@ -938,7 +1186,7 @@ describe(transformResumeValues, () => {
 
 describe(transformResumeContent, () => {
   it('should transform resume.content by calling transform functions', () => {
-    const resume = cloneDeep(filledResume)
+    const resume = cloneDeep(FILLED_RESUME)
 
     const summaryParser = new MarkdownParser()
     const transformedResume = transformResumeContent(resume, summaryParser)
@@ -972,7 +1220,7 @@ describe(transformResumeContent, () => {
 describe(transformResumeLayoutLaTeX, () => {
   it('should set numbers to OldStyle for English, Norwegian, Spanish, and French resume', () => {
     for (const language of ['en', 'es', 'fr', 'no'] as const) {
-      const resume = cloneDeep(defaultResume)
+      const resume = cloneDeep(DEFAULT_RESUME)
 
       resume.layout.locale.language = language
       transformResumeLayoutLaTeX(resume)
@@ -983,7 +1231,7 @@ describe(transformResumeLayoutLaTeX, () => {
 
   it('should set numbers to Lining for CJK resume', () => {
     for (const language of ['zh-hans', 'zh-hant-hk', 'zh-hant-tw'] as const) {
-      const resume = cloneDeep(defaultResume)
+      const resume = cloneDeep(DEFAULT_RESUME)
 
       resume.layout.locale.language = language
       transformResumeLayoutLaTeX(resume)
@@ -994,7 +1242,7 @@ describe(transformResumeLayoutLaTeX, () => {
 
   it('should set correct numbers when latex.fontspec.numbers is undefined', () => {
     for (const language of ['en', 'es'] as const) {
-      const resume = cloneDeep(defaultResume)
+      const resume = cloneDeep(DEFAULT_RESUME)
       // @ts-ignore
       resume.layout.latex = undefined
 
@@ -1007,7 +1255,7 @@ describe(transformResumeLayoutLaTeX, () => {
 
   it('should set correct numbers when latex.fontspec.numbers is "Auto"', () => {
     for (const language of ['en', 'es'] as const) {
-      const resume = cloneDeep(defaultResume)
+      const resume = cloneDeep(DEFAULT_RESUME)
       resume.layout.latex.fontspec.numbers = 'Auto'
 
       resume.layout.locale.language = language
@@ -1018,7 +1266,7 @@ describe(transformResumeLayoutLaTeX, () => {
   })
 
   it('should do nothing when latex.fontspec.numbers is defined', () => {
-    const resume = cloneDeep(defaultResume)
+    const resume = cloneDeep(DEFAULT_RESUME)
     resume.layout.latex.fontspec.numbers = 'OldStyle'
 
     transformResumeLayoutLaTeX(resume)
@@ -1029,20 +1277,20 @@ describe(transformResumeLayoutLaTeX, () => {
 
 describe(transformResumeLayoutWithDefaultValues, () => {
   it('should transform resume with no layout', () => {
-    const resume = cloneDeep(defaultResume)
+    const resume = cloneDeep(DEFAULT_RESUME)
     resume.layout = undefined
 
     expect(resume.layout).toBeUndefined()
 
     expect(transformResumeLayoutWithDefaultValues(resume).layout).toEqual(
-      defaultResume.layout
+      DEFAULT_RESUME.layout
     )
   })
 })
 
 describe(transformResumeLayout, () => {
   it('should transform provided resumeLayout with default values', () => {
-    const resume = cloneDeep(defaultResume)
+    const resume = cloneDeep(DEFAULT_RESUME)
     const providedLayout: ResumeLayout = {
       template: 'moderncv-banking',
       margins: {

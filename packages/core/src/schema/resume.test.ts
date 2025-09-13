@@ -26,7 +26,7 @@ import fs from 'node:fs'
 import { dirname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
-import { z } from 'zod/v4'
+import { z } from 'zod'
 
 import { describe, expect, it } from 'vitest'
 
