@@ -8,7 +8,11 @@
     "validate": "yamlresume validate {{resumeFile}}",
     "yamlresume": "yamlresume"
   },
-  "keywords": ["YAMLResume", "Resume", "CV"],
+  "keywords": [
+    "YAMLResume",
+    "Resume",
+    "CV"
+  ],
   "author": "",
   "license": "MIT",
   "dependencies": {

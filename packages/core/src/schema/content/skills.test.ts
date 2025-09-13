@@ -23,15 +23,13 @@
  */
 
 import { describe, expect, it } from 'vitest'
-
+import type { Skills } from '@/models'
 import {
   expectSchemaMetadata,
   getNullishTestCases,
   validateZodErrors,
 } from '../zod'
 import { SkillItemSchema, SkillNameSchema, SkillsSchema } from './skills'
-
-import type { Skills } from '@/models'
 
 describe('SkillNameSchema', () => {
   it('should have correct metadata', () => {

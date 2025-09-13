@@ -22,7 +22,7 @@
  * IN THE SOFTWARE.
  */
 
-import { TEMPLATE_OPTIONS, getTemplateDetail } from '@yamlresume/core'
+import { getTemplateDetail, TEMPLATE_OPTIONS } from '@yamlresume/core'
 import type { Command } from 'commander'
 import { consola } from 'consola'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'

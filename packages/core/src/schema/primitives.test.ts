@@ -28,8 +28,8 @@ import {
   COUNTRY_OPTIONS,
   DEGREE_OPTIONS,
   FLUENCY_OPTIONS,
-  FONTSPEC_NUMBERS_OPTIONS,
   FONT_SIZE_OPTIONS,
+  FONTSPEC_NUMBERS_OPTIONS,
   LANGUAGE_OPTIONS,
   LEVEL_OPTIONS,
   LOCALE_LANGUAGE_OPTIONS,
@@ -52,12 +52,12 @@ import {
   NameSchema,
   NetworkOptionSchema,
   OrganizationSchema,
+  optionSchemaMessage,
   PhoneSchema,
   SizedStringSchema,
   SummarySchema,
   TemplateOptionSchema,
   UrlSchema,
-  optionSchemaMessage,
 } from './primitives'
 
 import { expectSchemaMetadata, validateZodErrors } from './zod'

@@ -23,13 +23,12 @@
  */
 
 import {
-  LOCALE_LANGUAGE_OPTIONS,
   getLocaleLanguageDetail,
+  LOCALE_LANGUAGE_OPTIONS,
 } from '@yamlresume/core'
+import type { Command } from 'commander'
 import { consola } from 'consola'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
-
-import type { Command } from 'commander'
 import { createLanguagesCommand, listLanguages } from './languages'
 
 describe(listLanguages, () => {

@@ -25,10 +25,8 @@
 import { describe, expect, it } from 'vitest'
 
 import { FLUENCY_OPTIONS, type ResumeContent } from '@/models'
-
-import { ContentSchema } from './content'
-
 import { validateZodErrors } from '../zod'
+import { ContentSchema } from './content'
 
 describe('ContentSchema', () => {
   const basics = {

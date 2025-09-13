@@ -23,7 +23,7 @@
  */
 
 import { describe, expect, it } from 'vitest'
-
+import type { Education } from '@/models'
 import {
   expectSchemaMetadata,
   getNullishTestCases,
@@ -37,8 +37,6 @@ import {
   InstitutionSchema,
   ScoreSchema,
 } from './education'
-
-import type { Education } from '@/models'
 
 describe('AreaSchema', () => {
   it('should have correct metadata', () => {

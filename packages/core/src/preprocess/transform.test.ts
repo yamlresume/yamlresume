@@ -40,8 +40,8 @@ import {
 } from '@/models'
 import { getOptionTranslation, getTemplateTranslations } from '@/translations'
 import {
-  normalizeResumeContentSections,
   normalizedResumeContent,
+  normalizeResumeContentSections,
   replaceBlankLinesWithPercent,
   transformBasicsUrl,
   transformDate,

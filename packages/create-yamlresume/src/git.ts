@@ -22,10 +22,9 @@
  * IN THE SOFTWARE.
  */
 
+import { joinNonEmptyString } from '@yamlresume/core'
 import consola from 'consola'
 import { execa } from 'execa'
-
-import { joinNonEmptyString } from '@yamlresume/core'
 
 /**
  * Check if git is available on the system.
@@ -81,7 +80,7 @@ export async function initializeGitRepository(
       stdio: 'inherit',
     })
     consola.success('Initial commit created!')
-  } catch (error) {
+  } catch (_error) {
     consola.warn(
       joinNonEmptyString(
         [

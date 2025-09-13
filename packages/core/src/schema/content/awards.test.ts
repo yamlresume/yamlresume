@@ -23,20 +23,18 @@
  */
 
 import { describe, expect, it } from 'vitest'
-
+import type { Awards } from '@/models'
 import {
   expectSchemaMetadata,
   getNullishTestCases,
   validateZodErrors,
 } from '../zod'
 import {
-  AwardItemSchema,
   AwarderSchema,
+  AwardItemSchema,
   AwardsSchema,
   TitleSchema,
 } from './awards'
-
-import type { Awards } from '@/models'
 
 describe('AwarderSchema', () => {
   it('should have correct metadata', () => {

@@ -22,11 +22,10 @@
  * IN THE SOFTWARE.
  */
 
+import { joinNonEmptyString } from '@yamlresume/core'
 import chalk from 'chalk'
 import consola from 'consola'
 import { execa } from 'execa'
-
-import { joinNonEmptyString } from '@yamlresume/core'
 
 /**
  * The package manager interface.
@@ -94,7 +93,7 @@ export async function installDependencies(
       stdio: 'inherit',
     })
     consola.success('Dependencies installed successfully!')
-  } catch (error) {
+  } catch (_error) {
     consola.warn(
       joinNonEmptyString(
         [
@@ -125,7 +124,7 @@ export async function createResumeFile(
       cwd: projectPath,
       stdio: 'inherit',
     })
-  } catch (error) {
+  } catch (_error) {
     consola.warn(
       joinNonEmptyString(
         [

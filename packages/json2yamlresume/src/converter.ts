@@ -22,13 +22,12 @@
  * IN THE SOFTWARE.
  */
 
-import { mapKeys, omit } from 'lodash-es'
-
 import {
   DEFAULT_RESUME_LAYOUT,
-  type Resume,
   isEmptyValue,
+  type Resume,
 } from '@yamlresume/core'
+import { mapKeys, omit } from 'lodash-es'
 
 import type { JSONResume } from './types'
 

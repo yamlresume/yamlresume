@@ -30,10 +30,10 @@ import prompts from 'prompts'
 
 import { initializeGitRepository } from './git.js'
 import {
-  type PackageManager,
   createResumeFile,
   detectPackageManager,
   installDependencies,
+  type PackageManager,
 } from './package-manager.js'
 import { copyTemplateFiles, getTemplatesDir } from './template.js'
 

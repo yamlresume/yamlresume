@@ -23,20 +23,18 @@
  */
 
 import fs from 'node:fs'
-
+import {
+  ErrorType,
+  joinNonEmptyString,
+  type Resume,
+  ResumeSchema,
+  YAMLResumeError,
+} from '@yamlresume/core'
 import type { Command } from 'commander'
 import consola from 'consola'
 import { cloneDeep } from 'lodash-es'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import yaml from 'yaml'
-
-import {
-  ErrorType,
-  type Resume,
-  ResumeSchema,
-  YAMLResumeError,
-  joinNonEmptyString,
-} from '@yamlresume/core'
 
 import { getFixture } from './utils'
 import {

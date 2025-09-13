@@ -25,6 +25,12 @@
 import child_process from 'node:child_process'
 import fs from 'node:fs'
 import path from 'node:path'
+import {
+  ErrorType,
+  joinNonEmptyString,
+  YAMLResumeError,
+} from '@yamlresume/core'
+import type { Command } from 'commander'
 import { consola } from 'consola'
 import {
   afterAll,
@@ -36,14 +42,6 @@ import {
   vi,
 } from 'vitest'
 import which from 'which'
-import { getFixture } from './utils'
-
-import {
-  ErrorType,
-  YAMLResumeError,
-  joinNonEmptyString,
-} from '@yamlresume/core'
-import type { Command } from 'commander'
 import {
   buildResume,
   createBuildCommand,
@@ -53,6 +51,7 @@ import {
   inferOutput,
   isCommandAvailable,
 } from './build'
+import { getFixture } from './utils'
 import { readResume } from './validate'
 
 function cleanupFiles() {
@@ -394,7 +393,7 @@ describe(createBuildCommand, () => {
   let whichSpy: ReturnType<typeof vi.spyOn>
   let consolaStartSpy: ReturnType<typeof vi.spyOn>
   let consolaSuccessSpy: ReturnType<typeof vi.spyOn>
-  let consolaErrorSpy: ReturnType<typeof vi.spyOn>
+  let _consolaErrorSpy: ReturnType<typeof vi.spyOn>
 
   beforeEach(() => {
     buildCommand = createBuildCommand()
@@ -409,7 +408,7 @@ describe(createBuildCommand, () => {
       .mockReturnValue('/usr/bin/xelatex')
     consolaStartSpy = vi.spyOn(consola, 'start').mockImplementation(vi.fn())
     consolaSuccessSpy = vi.spyOn(consola, 'success').mockImplementation(vi.fn())
-    consolaErrorSpy = vi.spyOn(consola, 'error').mockImplementation(vi.fn())
+    _consolaErrorSpy = vi.spyOn(consola, 'error').mockImplementation(vi.fn())
   })
 
   afterEach(() => {

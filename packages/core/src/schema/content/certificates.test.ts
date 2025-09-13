@@ -23,7 +23,7 @@
  */
 
 import { describe, expect, it } from 'vitest'
-
+import type { Certificates } from '@/models'
 import {
   expectSchemaMetadata,
   getNullishTestCases,
@@ -34,8 +34,6 @@ import {
   CertificatesSchema,
   IssuerSchema,
 } from './certificates'
-
-import type { Certificates } from '@/models'
 
 describe('IssuerSchema', () => {
   it('should have correct metadata', () => {

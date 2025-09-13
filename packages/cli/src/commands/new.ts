@@ -25,14 +25,13 @@
 import fs from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
-import { Command } from 'commander'
-import consola from 'consola'
-
 import {
-  YAMLResumeError,
   joinNonEmptyString,
   toCodeBlock,
+  YAMLResumeError,
 } from '@yamlresume/core'
+import { Command } from 'commander'
+import consola from 'consola'
 
 /**
  * Creates a new resume file with the given filename

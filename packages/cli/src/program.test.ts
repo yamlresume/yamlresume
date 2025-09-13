@@ -23,9 +23,8 @@
  */
 
 import fs from 'node:fs'
-import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
-
 import consola from 'consola'
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import packageJson from '../package.json' with { type: 'json' }
 import { createProgram } from './program'
 

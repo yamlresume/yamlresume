@@ -23,9 +23,8 @@
  */
 
 import { describe, expect, it } from 'vitest'
-
-import { ErrorCategory, ErrorType, ErrorUtils, YAMLResumeError } from './error'
 import type { ErrorCodeType } from './error'
+import { ErrorCategory, ErrorType, ErrorUtils, YAMLResumeError } from './error'
 
 describe('ErrorCode', () => {
   it('should be a non-empty object', () => {

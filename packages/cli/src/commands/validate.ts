@@ -23,18 +23,16 @@
  */
 
 import fs from 'node:fs'
-import yaml from 'yaml'
-
 import {
+  joinNonEmptyString,
   type Resume,
   ResumeSchema,
   YAMLResumeError,
-  joinNonEmptyString,
 } from '@yamlresume/core'
 import chalk from 'chalk'
 import { Command } from 'commander'
 import consola from 'consola'
-import { LineCounter, isNode, parseDocument } from 'yaml'
+import yaml, { isNode, LineCounter, parseDocument } from 'yaml'
 
 /**
  * A positional error with line number, column number, and path.
@@ -219,7 +217,7 @@ export function readResume(
 
   try {
     resumeStr = fs.readFileSync(resuemPath, 'utf8')
-  } catch (error) {
+  } catch (_error) {
     throw new YAMLResumeError('FILE_READ_ERROR', { path: resuemPath })
   }
 

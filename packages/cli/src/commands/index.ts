@@ -24,7 +24,7 @@
 
 export { createBuildCommand } from './build'
 export { createDevCommand } from './dev'
-export { createNewCommand } from './new'
 export { createLanguagesCommand } from './languages'
+export { createNewCommand } from './new'
 export { createTemplatesCommand } from './templates'
 export { createValidateCommand } from './validate'

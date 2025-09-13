@@ -23,10 +23,9 @@
  */
 import fs from 'node:fs'
 import path from 'node:path'
-import yaml from 'yaml'
-
 import { cloneDeep } from 'lodash-es'
 import { beforeEach, describe, expect, it } from 'vitest'
+import yaml from 'yaml'
 
 import { MarkdownParser } from '@/compiler'
 import { type Resume, SECTION_IDS } from '@/models'

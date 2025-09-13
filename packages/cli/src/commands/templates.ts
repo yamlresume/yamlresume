@@ -22,7 +22,7 @@
  * IN THE SOFTWARE.
  */
 
-import { TEMPLATE_OPTIONS, getTemplateDetail } from '@yamlresume/core'
+import { getTemplateDetail, TEMPLATE_OPTIONS } from '@yamlresume/core'
 import { Command } from 'commander'
 import consola from 'consola'
 import { markdownTable } from 'markdown-table'

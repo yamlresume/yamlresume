@@ -23,12 +23,10 @@
  */
 
 import fs from 'node:fs'
-
+import { DEFAULT_RESUME_LAYOUT } from '@yamlresume/core'
 import { mapKeys, omit } from 'lodash-es'
 import { describe, expect, it } from 'vitest'
 import yaml from 'yaml'
-
-import { DEFAULT_RESUME_LAYOUT } from '@yamlresume/core'
 
 import {
   convertBasics,

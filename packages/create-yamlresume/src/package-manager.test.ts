@@ -22,12 +22,11 @@
  * IN THE SOFTWARE.
  */
 
+import { joinNonEmptyString } from '@yamlresume/core'
 import chalk from 'chalk'
 import consola from 'consola'
 import { execa } from 'execa'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
-
-import { joinNonEmptyString } from '@yamlresume/core'
 
 import {
   createResumeFile,

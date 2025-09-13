@@ -23,20 +23,17 @@
  */
 
 import { describe, expect, it } from 'vitest'
-
+import type { Interests } from '@/models'
 import {
   expectSchemaMetadata,
   getNullishTestCases,
   validateZodErrors,
 } from '../zod'
-
 import {
   InterestItemSchema,
   InterestNameSchema,
   InterestsSchema,
 } from './interests'
-
-import type { Interests } from '@/models'
 
 describe('InterestNameSchema', () => {
   it('should have correct metadata', () => {

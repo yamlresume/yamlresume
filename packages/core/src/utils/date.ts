@@ -39,7 +39,7 @@ export function parseDate(dateStr: string | undefined | null): Date | null {
     // MDN says that date parsing may return NaN or raise exceptions, ref:
     // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Errors/Invalid_date
     return Number.isNaN(date.getTime()) ? null : date
-  } catch (e) {
+  } catch (_e) {
     return null
   }
 }

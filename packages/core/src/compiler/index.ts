@@ -23,12 +23,12 @@
  */
 
 export type {
-  Node,
-  DocNode,
-  TextNode,
-  ParagraphNode,
   BulletListNode,
+  DocNode,
+  Node,
   OrderedListNode,
+  ParagraphNode,
+  TextNode,
 } from './ast'
 export { LatexCodeGenerator } from './codegen'
 export { MarkdownParser, type Parser } from './parser'

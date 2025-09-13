@@ -25,19 +25,17 @@
 import fs from 'node:fs'
 import { tmpdir } from 'node:os'
 import path from 'node:path'
-
+import type { Resume } from '@yamlresume/core'
 import type { ConsolaInstance } from 'consola'
 import {
-  type MockInstance,
   afterEach,
   beforeEach,
   describe,
   expect,
   it,
+  type MockInstance,
   vi,
 } from 'vitest'
-
-import type { Resume } from '@yamlresume/core'
 
 import { convertResumeAction, createProgram, inferOutputPath } from './program'
 import type { JSONResume } from './types'
