@@ -1293,11 +1293,14 @@ describe(transformResumeLayout, () => {
     const resume = cloneDeep(DEFAULT_RESUME)
     const providedLayout: ResumeLayout = {
       template: 'moderncv-banking',
-      margins: {
-        top: '0cm',
-        bottom: '0cm',
-        left: '0cm',
-        right: '0cm',
+      page: {
+        margins: {
+          top: '0cm',
+          bottom: '0cm',
+          left: '0cm',
+          right: '0cm',
+        },
+        showPageNumbers: true,
       },
       typography: {
         fontSize: '11pt',
@@ -1309,9 +1312,6 @@ describe(transformResumeLayout, () => {
       },
       locale: {
         language: 'zh-hans',
-      },
-      page: {
-        showPageNumbers: true,
       },
     }
 

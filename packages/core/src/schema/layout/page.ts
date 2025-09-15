@@ -26,6 +26,7 @@ import { z } from 'zod'
 
 import { joinNonEmptyString } from '@/utils'
 import { nullifySchema } from '../utils'
+import { MarginsSchema } from './margins'
 
 /**
  * A zod schema for the show page numbers setting.
@@ -38,12 +39,13 @@ export const ShowPageNumbersSchema = z.boolean().meta({
 /**
  * A zod schema for validating page configuration.
  *
- * Validates page-related settings such as whether to show page numbers.
+ * Validates page-related settings such as whether to show page numbers and margins.
  */
 export const PageSchema = z.object({
   page: z
     .object({
       showPageNumbers: nullifySchema(ShowPageNumbersSchema),
+      ...MarginsSchema.shape,
     })
     .nullish()
     .meta({
@@ -51,7 +53,7 @@ export const PageSchema = z.object({
       description: joinNonEmptyString(
         [
           'The page section contains page display settings,',
-          'including whether to show page numbers.',
+          'including whether to show page numbers and margins.',
         ],
         ' '
       ),

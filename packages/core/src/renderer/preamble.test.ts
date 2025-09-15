@@ -98,6 +98,12 @@ describe(renderLayoutConfig, () => {
       layout: {
         ...mockResume.layout,
         page: {
+          margins: {
+            top: '2.5cm',
+            bottom: '2.5cm',
+            left: '1.5cm',
+            right: '1.5cm',
+          },
           showPageNumbers: false,
         },
       },

@@ -231,12 +231,12 @@ layout:
   locale:
     # `yamlresume languages list` to get the list of supported languages
     language: en
-  margins:
-    top: 2.5cm
-    left: 1.5cm
-    right: 1.5cm
-    bottom: 2.5cm
   page:
+    margins:
+      top: 2.5cm
+      left: 1.5cm
+      right: 1.5cm
+      bottom: 2.5cm
     showPageNumbers: true
   # `yamlresume templates list` to get the list of available templates
   template: moderncv-banking

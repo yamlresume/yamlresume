@@ -721,7 +721,7 @@ export type ResumeContent = {
 /**
  * Defines page margin settings for document layout.
  */
-type ResumeLayoutMargins = {
+type ResumeLayoutPageMargins = {
   /** Top margin value (e.g., "2.5cm"). */
   top?: string
   /** Bottom margin value (e.g., "2.5cm"). */
@@ -797,6 +797,8 @@ type ResumeLayoutLocale = {
 type ResumeLayoutPage = {
   /** Whether to display page numbers. */
   showPageNumbers?: boolean
+  /** Defines page margin settings for document layout. */
+  margins?: ResumeLayoutPageMargins
 }
 
 /**
@@ -815,8 +817,6 @@ type ResumeLayoutSections = {
 export type ResumeLayout = {
   /** Defines locale settings for internationalization and localization. */
   locale?: ResumeLayoutLocale
-  /** Defines page margin settings for document layout. */
-  margins?: ResumeLayoutMargins
   /** Defines page-level settings for document presentation. */
   page?: ResumeLayoutPage
   /** Defines section customization settings. */

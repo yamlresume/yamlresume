@@ -2131,7 +2131,7 @@
     },
     "layout": {
       "title": "Layout",
-      "description": "The layout section contains all layout-related configurations, including LaTeX, locale, margins, template, typography, etc.",
+      "description": "The layout section contains all layout-related configurations, including LaTeX, locale, page, template, typography, etc.",
       "anyOf": [
         {
           "type": "object",
@@ -2221,144 +2221,9 @@
                 }
               ]
             },
-            "margins": {
-              "title": "Margins",
-              "description": "The margins section contains page margin settings, including top, bottom, left, and right margins.",
-              "anyOf": [
-                {
-                  "type": "object",
-                  "properties": {
-                    "top": {
-                      "title": "[optional] Top Margin Size",
-                      "description": "A positive number followed by valid units: cm, pt, or in. Examples: \"2.5cm\", \"1in\", \"72pt\" or `null`.",
-                      "examples": [
-                        "2.5cm",
-                        "1in",
-                        "72pt",
-                        "0.5cm",
-                        "12pt"
-                      ],
-                      "anyOf": [
-                        {
-                          "title": "[optional] Top Margin Size",
-                          "description": "A positive number followed by valid units: cm, pt, or in. Examples: \"2.5cm\", \"1in\", \"72pt\" or `null`.",
-                          "examples": [
-                            "2.5cm",
-                            "1in",
-                            "72pt",
-                            "0.5cm",
-                            "12pt"
-                          ],
-                          "type": "string",
-                          "minLength": 2,
-                          "maxLength": 32
-                        },
-                        {
-                          "type": "null"
-                        }
-                      ]
-                    },
-                    "bottom": {
-                      "title": "[optional] Bottom Margin Size",
-                      "description": "A positive number followed by valid units: cm, pt, or in. Examples: \"2.5cm\", \"1in\", \"72pt\" or `null`.",
-                      "examples": [
-                        "2.5cm",
-                        "1in",
-                        "72pt",
-                        "0.5cm",
-                        "12pt"
-                      ],
-                      "anyOf": [
-                        {
-                          "title": "[optional] Bottom Margin Size",
-                          "description": "A positive number followed by valid units: cm, pt, or in. Examples: \"2.5cm\", \"1in\", \"72pt\" or `null`.",
-                          "examples": [
-                            "2.5cm",
-                            "1in",
-                            "72pt",
-                            "0.5cm",
-                            "12pt"
-                          ],
-                          "type": "string",
-                          "minLength": 2,
-                          "maxLength": 32
-                        },
-                        {
-                          "type": "null"
-                        }
-                      ]
-                    },
-                    "left": {
-                      "title": "[optional] Left Margin Size",
-                      "description": "A positive number followed by valid units: cm, pt, or in. Examples: \"2.5cm\", \"1in\", \"72pt\" or `null`.",
-                      "examples": [
-                        "2.5cm",
-                        "1in",
-                        "72pt",
-                        "0.5cm",
-                        "12pt"
-                      ],
-                      "anyOf": [
-                        {
-                          "title": "[optional] Left Margin Size",
-                          "description": "A positive number followed by valid units: cm, pt, or in. Examples: \"2.5cm\", \"1in\", \"72pt\" or `null`.",
-                          "examples": [
-                            "2.5cm",
-                            "1in",
-                            "72pt",
-                            "0.5cm",
-                            "12pt"
-                          ],
-                          "type": "string",
-                          "minLength": 2,
-                          "maxLength": 32
-                        },
-                        {
-                          "type": "null"
-                        }
-                      ]
-                    },
-                    "right": {
-                      "title": "[optional] Right Margin Size",
-                      "description": "A positive number followed by valid units: cm, pt, or in. Examples: \"2.5cm\", \"1in\", \"72pt\" or `null`.",
-                      "examples": [
-                        "2.5cm",
-                        "1in",
-                        "72pt",
-                        "0.5cm",
-                        "12pt"
-                      ],
-                      "anyOf": [
-                        {
-                          "title": "[optional] Right Margin Size",
-                          "description": "A positive number followed by valid units: cm, pt, or in. Examples: \"2.5cm\", \"1in\", \"72pt\" or `null`.",
-                          "examples": [
-                            "2.5cm",
-                            "1in",
-                            "72pt",
-                            "0.5cm",
-                            "12pt"
-                          ],
-                          "type": "string",
-                          "minLength": 2,
-                          "maxLength": 32
-                        },
-                        {
-                          "type": "null"
-                        }
-                      ]
-                    }
-                  },
-                  "additionalProperties": false
-                },
-                {
-                  "type": "null"
-                }
-              ]
-            },
             "page": {
               "title": "Page",
-              "description": "The page section contains page display settings, including whether to show page numbers.",
+              "description": "The page section contains page display settings, including whether to show page numbers and margins.",
               "anyOf": [
                 {
                   "type": "object",
@@ -2371,6 +2236,141 @@
                           "title": "[optional] Show Page Numbers",
                           "description": "Whether to show page numbers on the page or `null`.",
                           "type": "boolean"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "margins": {
+                      "title": "Margins",
+                      "description": "The margins section contains page margin settings, including top, bottom, left, and right margins.",
+                      "anyOf": [
+                        {
+                          "type": "object",
+                          "properties": {
+                            "top": {
+                              "title": "[optional] Top Margin Size",
+                              "description": "A positive number followed by valid units: cm, pt, or in. Examples: \"2.5cm\", \"1in\", \"72pt\" or `null`.",
+                              "examples": [
+                                "2.5cm",
+                                "1in",
+                                "72pt",
+                                "0.5cm",
+                                "12pt"
+                              ],
+                              "anyOf": [
+                                {
+                                  "title": "[optional] Top Margin Size",
+                                  "description": "A positive number followed by valid units: cm, pt, or in. Examples: \"2.5cm\", \"1in\", \"72pt\" or `null`.",
+                                  "examples": [
+                                    "2.5cm",
+                                    "1in",
+                                    "72pt",
+                                    "0.5cm",
+                                    "12pt"
+                                  ],
+                                  "type": "string",
+                                  "minLength": 2,
+                                  "maxLength": 32
+                                },
+                                {
+                                  "type": "null"
+                                }
+                              ]
+                            },
+                            "bottom": {
+                              "title": "[optional] Bottom Margin Size",
+                              "description": "A positive number followed by valid units: cm, pt, or in. Examples: \"2.5cm\", \"1in\", \"72pt\" or `null`.",
+                              "examples": [
+                                "2.5cm",
+                                "1in",
+                                "72pt",
+                                "0.5cm",
+                                "12pt"
+                              ],
+                              "anyOf": [
+                                {
+                                  "title": "[optional] Bottom Margin Size",
+                                  "description": "A positive number followed by valid units: cm, pt, or in. Examples: \"2.5cm\", \"1in\", \"72pt\" or `null`.",
+                                  "examples": [
+                                    "2.5cm",
+                                    "1in",
+                                    "72pt",
+                                    "0.5cm",
+                                    "12pt"
+                                  ],
+                                  "type": "string",
+                                  "minLength": 2,
+                                  "maxLength": 32
+                                },
+                                {
+                                  "type": "null"
+                                }
+                              ]
+                            },
+                            "left": {
+                              "title": "[optional] Left Margin Size",
+                              "description": "A positive number followed by valid units: cm, pt, or in. Examples: \"2.5cm\", \"1in\", \"72pt\" or `null`.",
+                              "examples": [
+                                "2.5cm",
+                                "1in",
+                                "72pt",
+                                "0.5cm",
+                                "12pt"
+                              ],
+                              "anyOf": [
+                                {
+                                  "title": "[optional] Left Margin Size",
+                                  "description": "A positive number followed by valid units: cm, pt, or in. Examples: \"2.5cm\", \"1in\", \"72pt\" or `null`.",
+                                  "examples": [
+                                    "2.5cm",
+                                    "1in",
+                                    "72pt",
+                                    "0.5cm",
+                                    "12pt"
+                                  ],
+                                  "type": "string",
+                                  "minLength": 2,
+                                  "maxLength": 32
+                                },
+                                {
+                                  "type": "null"
+                                }
+                              ]
+                            },
+                            "right": {
+                              "title": "[optional] Right Margin Size",
+                              "description": "A positive number followed by valid units: cm, pt, or in. Examples: \"2.5cm\", \"1in\", \"72pt\" or `null`.",
+                              "examples": [
+                                "2.5cm",
+                                "1in",
+                                "72pt",
+                                "0.5cm",
+                                "12pt"
+                              ],
+                              "anyOf": [
+                                {
+                                  "title": "[optional] Right Margin Size",
+                                  "description": "A positive number followed by valid units: cm, pt, or in. Examples: \"2.5cm\", \"1in\", \"72pt\" or `null`.",
+                                  "examples": [
+                                    "2.5cm",
+                                    "1in",
+                                    "72pt",
+                                    "0.5cm",
+                                    "12pt"
+                                  ],
+                                  "type": "string",
+                                  "minLength": 2,
+                                  "maxLength": 32
+                                },
+                                {
+                                  "type": "null"
+                                }
+                              ]
+                            }
+                          },
+                          "additionalProperties": false
                         },
                         {
                           "type": "null"

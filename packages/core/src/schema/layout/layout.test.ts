@@ -44,13 +44,13 @@ describe('LayoutSchema', () => {
     const locale = {
       language: LOCALE_LANGUAGE_OPTIONS[0],
     }
-    const margins = {
-      top: '1cm',
-      bottom: '1cm',
-      left: '1cm',
-      right: '1cm',
-    }
     const page = {
+      margins: {
+        top: '1cm',
+        bottom: '1cm',
+        left: '1cm',
+        right: '1cm',
+      },
       showPageNumbers: true,
     }
     const template = TEMPLATE_OPTIONS[0]
@@ -70,20 +70,12 @@ describe('LayoutSchema', () => {
       {
         layout: {
           locale,
-          margins,
-        },
-      },
-      {
-        layout: {
-          locale,
-          margins,
           page,
         },
       },
       {
         layout: {
           locale,
-          margins,
           page,
           template,
         },
@@ -91,7 +83,6 @@ describe('LayoutSchema', () => {
       {
         layout: {
           locale,
-          margins,
           page,
           template,
           typography,
@@ -110,7 +101,6 @@ describe('LayoutSchema', () => {
       {
         layout: {
           locale,
-          margins,
           page,
           template,
           typography,
@@ -164,11 +154,13 @@ describe('LayoutSchema', () => {
       {
         // @ts-ignore
         layout: {
-          margins: {
-            top: '1',
-            bottom: '-1cm',
-            left: '1cm',
-            right: '1cm',
+          page: {
+            margins: {
+              top: '1',
+              bottom: '-1cm',
+              left: '1cm',
+              right: '1cm',
+            },
           },
         },
         error: {
@@ -177,14 +169,21 @@ describe('LayoutSchema', () => {
             layout: {
               errors: [],
               properties: {
-                margins: {
+                page: {
                   errors: [],
                   properties: {
-                    top: {
-                      errors: ['top margin should be 2 characters or more.'],
-                    },
-                    bottom: {
-                      errors: [marginSizeSchemaMessage('bottom')],
+                    margins: {
+                      errors: [],
+                      properties: {
+                        top: {
+                          errors: [
+                            'top margin should be 2 characters or more.',
+                          ],
+                        },
+                        bottom: {
+                          errors: [marginSizeSchemaMessage('bottom')],
+                        },
+                      },
                     },
                   },
                 },

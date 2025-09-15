@@ -493,25 +493,25 @@ export function getLocaleLanguageDetail(localeLanguage: LocaleLanguage) {
 /** Default layout configuration for a new resume. */
 export const DEFAULT_RESUME_LAYOUT: ResumeLayout = {
   template: 'moderncv-banking',
-  typography: {
-    fontSize: FONT_SIZE_OPTIONS[0],
-  },
   latex: {
     fontspec: {
       numbers: 'Auto',
     },
   },
-  margins: {
-    top: DEFAULT_TOP_BOTTOM_MARGIN,
-    bottom: DEFAULT_TOP_BOTTOM_MARGIN,
-    left: DEFAULT_LEFT_RIGHT_MARGIN,
-    right: DEFAULT_LEFT_RIGHT_MARGIN,
-  },
   locale: {
     language: 'en',
   },
   page: {
+    margins: {
+      top: DEFAULT_TOP_BOTTOM_MARGIN,
+      bottom: DEFAULT_TOP_BOTTOM_MARGIN,
+      left: DEFAULT_LEFT_RIGHT_MARGIN,
+      right: DEFAULT_LEFT_RIGHT_MARGIN,
+    },
     showPageNumbers: false,
+  },
+  typography: {
+    fontSize: FONT_SIZE_OPTIONS[0],
   },
 }
 

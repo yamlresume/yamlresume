@@ -178,8 +178,10 @@ export function renderModerncvConfig(
 export function renderLayoutConfig(resume: Resume): string {
   const {
     layout: {
-      margins: { top, bottom, left, right },
-      page: { showPageNumbers },
+      page: {
+        margins: { top, bottom, left, right },
+        showPageNumbers,
+      },
     },
   } = resume
 
