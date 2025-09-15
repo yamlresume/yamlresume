@@ -39,6 +39,7 @@ import { buildResume } from './build'
 type WatchOptions = {
   pdf?: boolean
   validate?: boolean
+  output?: string
 }
 
 /**
@@ -57,11 +58,11 @@ export function watchResume(
   resumePath: string,
   options: WatchOptions = { pdf: true, validate: true }
 ) {
-  const { pdf, validate } = options
+  const { pdf, validate, output } = options
 
   // there should be only one build running at a time
   const exclusiveBuild = coalesce(() =>
-    buildResume(resumePath, { pdf, validate })
+    buildResume(resumePath, { pdf, validate, output })
   )
 
   // initial build
@@ -105,8 +106,12 @@ export function createDevCommand() {
     .argument('<resume-path>', 'the resume file path')
     .option('--no-pdf', 'only generate TeX file without PDF')
     .option('--no-validate', 'skip resume schema validation')
+    .option('-o, --output <dir>', 'output directory for generated files')
     .action(
-      (resumePath: string, options: { pdf: boolean; validate: boolean }) => {
+      (
+        resumePath: string,
+        options: { pdf: boolean; validate: boolean; output?: string }
+      ) => {
         watchResume(resumePath, options)
       }
     )

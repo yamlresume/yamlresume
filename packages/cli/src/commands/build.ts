@@ -22,7 +22,6 @@
  * IN THE SOFTWARE.
  */
 
-import child_process from 'node:child_process'
 import fs from 'node:fs'
 import path from 'node:path'
 import {
@@ -34,6 +33,7 @@ import {
 } from '@yamlresume/core'
 import { Command } from 'commander'
 import { consola } from 'consola'
+import { execa } from 'execa'
 import which from 'which'
 
 import { readResume } from './validate'
@@ -45,10 +45,11 @@ import { readResume } from './validate'
  * will have a `.tex` extension.
  *
  * @param resumePath - The source resume file
+ * @param outputDir - Optional output directory to place the file in
  * @returns The output file name
  * @throws {Error} If the source file has an unsupported extension.
  */
-export function inferOutput(resumePath: string): string {
+export function inferOutput(resumePath: string, outputDir?: string): string {
   const extname = path.extname(resumePath)
 
   if (
@@ -56,10 +57,26 @@ export function inferOutput(resumePath: string): string {
     resumePath.endsWith('.yml') ||
     resumePath.endsWith('.json')
   ) {
+    const baseName = path.basename(
+      resumePath.replace(/\.yaml|\.yml|\.json$/, '.tex')
+    )
+    if (outputDir) {
+      return path.join(outputDir, baseName)
+    }
     return resumePath.replace(/\.yaml|\.yml|\.json$/, '.tex')
   }
 
   throw new YAMLResumeError('INVALID_EXTNAME', { extname })
+}
+
+/**
+ * Get the PDF output path from a tex file path
+ *
+ * @param texPath - The tex file path
+ * @returns The PDF file path
+ */
+export function getPdfPath(texPath: string): string {
+  return texPath.replace(/\.tex$/, '.pdf')
 }
 
 type LaTeXEnvironment = 'xelatex' | 'tectonic'
@@ -107,16 +124,32 @@ export function inferLaTeXEnvironment(): LaTeXEnvironment {
  * @throws {Error} If the LaTeX environment cannot be inferred or the source
  * file extension is unsupported.
  */
-export function inferLaTeXCommand(resumePath: string): string {
+export function inferLaTeXCommand(
+  resumePath: string,
+  outputDir?: string
+): { command: string; args: string[]; cwd: string } {
   const environment = inferLaTeXEnvironment()
-  const destination = inferOutput(resumePath)
+  const texFile = inferOutput(resumePath, outputDir)
+
+  let command = ''
+  let args: string[] = []
 
   switch (environment) {
     case 'xelatex':
-      return `xelatex -halt-on-error ${destination}`
+      command = 'xelatex'
+      args = ['-halt-on-error', path.basename(texFile)]
+      break
     case 'tectonic':
-      return `tectonic ${destination}`
+      command = 'tectonic'
+      args = [path.basename(texFile)]
+      break
   }
+
+  const cwd = outputDir
+    ? path.resolve(outputDir)
+    : path.dirname(path.resolve(texFile))
+
+  return { command, args, cwd }
 }
 
 /**
@@ -124,12 +157,22 @@ export function inferLaTeXCommand(resumePath: string): string {
  *
  * @param resumePath - The source resume file path (YAML, YML, or JSON).
  * @param resume - The parsed resume object.
+ * @param outputDir - Optional output directory for the generated tex file.
  * @remarks This function performs file I/O: writes a .tex file.
  * @throws {Error} Can throw if rendering or writing fails.
  */
-export function generateTeX(resumePath: string, resume: Resume) {
+export function generateTeX(
+  resumePath: string,
+  resume: Resume,
+  outputDir?: string
+) {
   // make sure the file has an valid extension, i.e, '.json', '.yml' or '.yaml'
-  const texFile = inferOutput(resumePath)
+  const texFile = inferOutput(resumePath, outputDir)
+
+  // Create output directory if it doesn't exist
+  if (outputDir && !fs.existsSync(outputDir)) {
+    fs.mkdirSync(outputDir, { recursive: true })
+  }
 
   const renderer = getResumeRenderer(resume)
   const tex = renderer.render()
@@ -157,32 +200,44 @@ export function generateTeX(resumePath: string, resume: Resume) {
  * 4. build the resume to LaTeX and PDF at the same time
  *
  * @param resumePath - The source resume file path (YAML, YML, or JSON).
- * @param options - Build options including validation and PDF generation flags.
+ * @param options - Build options including validation, PDF generation flags, and output directory.
  * @remarks This function performs file I/O (via `generateTeX`) and executes an
  * external process (LaTeX compiler).
  * @throws {Error} Can throw if .tex generation, LaTeX command inference, or the
  * LaTeX compilation process fails.
  */
-export function buildResume(
+export async function buildResume(
   resumePath: string,
-  options: { pdf?: boolean; validate?: boolean } = { pdf: true, validate: true }
+  options: { pdf?: boolean; validate?: boolean; output?: string } = {
+    pdf: true,
+    validate: true,
+  }
 ) {
   const { resume } = readResume(resumePath, options.validate)
 
-  generateTeX(resumePath, resume)
+  // Generate tex file (in output directory if specified, current directory otherwise)
+  generateTeX(resumePath, resume, options.output)
 
   if (!options.pdf) {
     consola.success('Generated resume TeX file successfully.')
     return
   }
 
-  const command = inferLaTeXCommand(resumePath)
-  consola.start(`Generating resume PDF file with command: \`${command}\`...`)
+  // Generate PDF using LaTeX
+  const { command, args, cwd } = inferLaTeXCommand(resumePath, options.output)
+
+  consola.start(
+    `Generating resume PDF file with command: \`${command} ${args.join(' ')}\`...`
+  )
 
   try {
-    const stdout = child_process.execSync(command, { encoding: 'utf8' })
+    // Use execa with cwd parameter to run LaTeX command in the correct directory
+    const result = await execa(command, args, {
+      cwd,
+      encoding: 'utf8',
+    })
     consola.success('Generated resume PDF file successfully.')
-    consola.debug(joinNonEmptyString(['stdout: ', toCodeBlock(stdout)]))
+    consola.debug(joinNonEmptyString(['stdout: ', toCodeBlock(result.stdout)]))
   } catch (error) {
     consola.debug(joinNonEmptyString(['stdout: ', toCodeBlock(error.stdout)]))
     consola.debug(joinNonEmptyString(['stderr: ', toCodeBlock(error.stderr)]))
@@ -200,13 +255,14 @@ export function createBuildCommand() {
     .argument('<resume-path>', 'the resume file path')
     .option('--no-pdf', 'only generate TeX file without PDF')
     .option('--no-validate', 'skip resume schema validation')
+    .option('-o, --output <dir>', 'output directory for generated files')
     .action(
       async (
         resumePath: string,
-        options: { pdf: boolean; validate: boolean }
+        options: { pdf: boolean; validate: boolean; output?: string }
       ) => {
         try {
-          buildResume(resumePath, options)
+          await buildResume(resumePath, options)
         } catch (error) {
           consola.error(error.message)
           process.exit(error.errno)

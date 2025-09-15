@@ -120,6 +120,7 @@ describe(watchResume, () => {
     const watcher = watchResume(resumePath, {
       pdf: false,
       validate: true,
+      output: '/tmp/foo',
     })
 
     // initial build
@@ -216,7 +217,7 @@ describe(createDevCommand, () => {
 
   it('should start watching and build initially', () => {
     const resumePath = getFixture('software-engineer.yml')
-    devCommand.parse(['yamlresume', 'dev', resumePath])
+    devCommand.parse(['yamlresume', 'dev', resumePath, '--output', '/tmp/foo'])
 
     expect(chokidarWatchSpy).toBeCalledTimes(1)
     expect(buildResumeSpy).toBeCalledTimes(1)
