@@ -1,5 +1,7 @@
 # YAMLResume
 
+[简体中文](./README-zh-cn.md) | [繁體中文](./README-zh-tw.md)
+
 <!-- Build, Quality & Docs -->
 [![GitHub CI](https://github.com/yamlresume/yamlresume/workflows/test/badge.svg)](https://github.com/yamlresume/yamlresume/actions/workflows/test.yml)
 [![Codecov](https://img.shields.io/codecov/c/github/yamlresume/yamlresume?style=flat-square&logo=codecov)](https://codecov.io/gh/yamlresume/yamlresume)
@@ -210,7 +212,6 @@ Any kind of contributions will be deeply appreciated! Please read the
 ## Roadmap
 
 - [ ] support more font families
-- [ ] section cloning
 - [ ] more resume templates
 - [ ] more locale languages
 
