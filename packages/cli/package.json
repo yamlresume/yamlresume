@@ -44,7 +44,7 @@
     "chalk": "^5.6.0",
     "chokidar": "^4.0.3",
     "coalescifn": "^0.1.1",
-    "commander": "^14.0.0",
+    "commander": "^14.0.1",
     "consola": "^3.4.2",
     "execa": "^9.6.0",
     "extensionless": "^1.9.9",
