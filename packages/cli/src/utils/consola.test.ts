@@ -22,9 +22,8 @@
  * IN THE SOFTWARE.
  */
 
-import { describe, expect, it } from 'vitest'
-
 import consola from 'consola'
+import { describe, expect, it } from 'vitest'
 import { setVerboseLog } from './consola'
 
 describe('setVerbose', () => {

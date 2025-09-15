@@ -26,12 +26,12 @@ import chokidar, { type ChokidarOptions, type FSWatcher } from 'chokidar'
 import type { Command } from 'commander'
 import { consola } from 'consola'
 import {
-  type MockInstance,
   afterEach,
   beforeEach,
   describe,
   expect,
   it,
+  type MockInstance,
   vi,
 } from 'vitest'
 
@@ -85,7 +85,7 @@ describe(watchResume, () => {
     vi
       .spyOn(chokidar, 'watch')
       .mockImplementation(
-        (paths: string | string[], options?: ChokidarOptions): FSWatcher => {
+        (_paths: string | string[], _options?: ChokidarOptions): FSWatcher => {
           const watcher = {
             on: vi.fn((event: string, handler: (path?: string) => void) => {
               if (!h[event]) {

@@ -23,7 +23,7 @@
  */
 
 import { describe, expect, it } from 'vitest'
-
+import type { Volunteer } from '@/models'
 import {
   expectSchemaMetadata,
   getNullishTestCases,
@@ -35,8 +35,6 @@ import {
   VolunteerPositionSchema,
   VolunteerSchema,
 } from './volunteer'
-
-import type { Volunteer } from '@/models'
 
 describe('VolunteerOrganizationSchema', () => {
   it('should have correct metadata', () => {

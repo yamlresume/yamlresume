@@ -23,8 +23,8 @@
  */
 
 import {
-  LOCALE_LANGUAGE_OPTIONS,
   getLocaleLanguageDetail,
+  LOCALE_LANGUAGE_OPTIONS,
 } from '@yamlresume/core'
 import { Command } from 'commander'
 import consola from 'consola'

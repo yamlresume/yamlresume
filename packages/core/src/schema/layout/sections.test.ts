@@ -29,8 +29,8 @@ import { optionSchemaMessage } from '../primitives'
 import { validateZodErrors } from '../zod'
 
 import {
-  AliasNameSchema,
   AliasesSchema,
+  AliasNameSchema,
   OrderSchema,
   SectionsSchema,
 } from './sections'

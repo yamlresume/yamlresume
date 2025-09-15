@@ -23,15 +23,13 @@
  */
 
 import { describe, expect, it } from 'vitest'
-
+import type { Profiles } from '@/models'
 import {
   expectSchemaMetadata,
   getNullishTestCases,
   validateZodErrors,
 } from '../zod'
 import { ProfileItemSchema, ProfilesSchema, UsernameSchema } from './profiles'
-
-import type { Profiles } from '@/models'
 
 describe('UsernameSchema', () => {
   it('should have correct metadata', () => {

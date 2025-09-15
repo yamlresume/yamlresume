@@ -23,9 +23,8 @@
  */
 
 import path from 'node:path'
-import { getFixture } from './utils'
-
 import { describe, expect, it } from 'vitest'
+import { getFixture } from './utils'
 
 describe('getFixture', () => {
   it('should return the correct path', () => {

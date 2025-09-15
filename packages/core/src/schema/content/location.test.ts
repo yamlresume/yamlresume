@@ -23,7 +23,8 @@
  */
 
 import { describe, expect, it } from 'vitest'
-
+import type { Location } from '@/models'
+import { COUNTRY_OPTIONS } from '@/models'
 import { optionSchemaMessage } from '../primitives'
 import {
   expectSchemaMetadata,
@@ -38,9 +39,6 @@ import {
   PostalCodeSchema,
   RegionSchema,
 } from './location'
-
-import { COUNTRY_OPTIONS } from '@/models'
-import type { Location } from '@/models'
 
 describe('CitySchema', () => {
   it('should have correct metadata', () => {

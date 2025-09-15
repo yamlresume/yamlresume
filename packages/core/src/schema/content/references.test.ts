@@ -23,7 +23,7 @@
  */
 
 import { describe, expect, it } from 'vitest'
-
+import type { References } from '@/models'
 import {
   expectSchemaMetadata,
   getNullishTestCases,
@@ -35,8 +35,6 @@ import {
   ReferencesSchema,
   RelationshipSchema,
 } from './references'
-
-import type { References } from '@/models'
 
 describe('ReferenceNameSchema', () => {
   it('should have correct metadata', () => {

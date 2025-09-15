@@ -23,7 +23,8 @@
  */
 
 import { describe, expect, it } from 'vitest'
-
+import type { Languages } from '@/models'
+import { FLUENCY_OPTIONS, LANGUAGE_OPTIONS } from '@/models'
 import { optionSchemaMessage } from '../primitives'
 import {
   expectSchemaMetadata,
@@ -31,9 +32,6 @@ import {
   validateZodErrors,
 } from '../zod'
 import { LanguageItemSchema, LanguagesSchema } from './languages'
-
-import { FLUENCY_OPTIONS, LANGUAGE_OPTIONS } from '@/models'
-import type { Languages } from '@/models'
 
 describe('LanguagesSchema', () => {
   it('should have correct metadata', () => {

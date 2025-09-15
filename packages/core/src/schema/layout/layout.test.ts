@@ -30,9 +30,9 @@ import {
   type ResumeLayout,
   TEMPLATE_OPTIONS,
 } from '@/models'
-import { LayoutSchema } from '.'
 import { optionSchemaMessage } from '../primitives'
 import { expectSchemaMetadata, validateZodErrors } from '../zod'
+import { LayoutSchema } from '.'
 import { marginSizeSchemaMessage } from './margins'
 
 describe('LayoutSchema', () => {

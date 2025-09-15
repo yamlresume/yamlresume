@@ -29,11 +29,9 @@ import chalk from 'chalk'
 import { Command } from 'commander'
 import { consola } from 'consola'
 import yaml from 'yaml'
-
+import packageJson from '../package.json' with { type: 'json' }
 import { convertJSONResumeToYAMLResume } from './converter'
 import type { JSONResume } from './types'
-
-import packageJson from '../package.json' with { type: 'json' }
 
 /**
  * Generate output filename by replacing .json extension with .yml

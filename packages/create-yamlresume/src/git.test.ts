@@ -22,11 +22,10 @@
  * IN THE SOFTWARE.
  */
 
+import { joinNonEmptyString } from '@yamlresume/core'
 import consola from 'consola'
 import { execa } from 'execa'
 import { beforeEach, describe, expect, it, vi } from 'vitest'
-
-import { joinNonEmptyString } from '@yamlresume/core'
 
 import { initializeGitRepository, isGitAvailable } from './git'
 

@@ -23,7 +23,7 @@
  */
 
 import { describe, expect, it } from 'vitest'
-
+import type { Publications } from '@/models'
 import {
   expectSchemaMetadata,
   getNullishTestCases,
@@ -35,8 +35,6 @@ import {
   PublicationsSchema,
   PublisherSchema,
 } from './publications'
-
-import type { Publications } from '@/models'
 
 describe('PublicationNameSchema', () => {
   it('should have correct metadata', () => {

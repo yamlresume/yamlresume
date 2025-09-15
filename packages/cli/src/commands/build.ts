@@ -25,17 +25,16 @@
 import child_process from 'node:child_process'
 import fs from 'node:fs'
 import path from 'node:path'
+import {
+  getResumeRenderer,
+  joinNonEmptyString,
+  type Resume,
+  toCodeBlock,
+  YAMLResumeError,
+} from '@yamlresume/core'
 import { Command } from 'commander'
 import { consola } from 'consola'
 import which from 'which'
-
-import {
-  type Resume,
-  YAMLResumeError,
-  getResumeRenderer,
-  joinNonEmptyString,
-  toCodeBlock,
-} from '@yamlresume/core'
 
 import { readResume } from './validate'
 
@@ -137,7 +136,7 @@ export function generateTeX(resumePath: string, resume: Resume) {
 
   try {
     fs.writeFileSync(texFile, tex)
-  } catch (error) {
+  } catch (_error) {
     throw new YAMLResumeError('FILE_WRITE_ERROR', { path: texFile })
   }
 }

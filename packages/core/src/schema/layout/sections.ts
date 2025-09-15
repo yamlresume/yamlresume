@@ -25,7 +25,7 @@
 import { z } from 'zod'
 
 import { ORDERABLE_SECTION_IDS } from '@/models'
-import { SizedStringSchema, optionSchema } from '../primitives'
+import { optionSchema, SizedStringSchema } from '../primitives'
 import { nullifySchema } from '../utils'
 
 /**
