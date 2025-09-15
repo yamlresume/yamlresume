@@ -95,13 +95,14 @@ YAMLResume — Resume as Code in YAML
 
 
 Options:
-  -V, --version             output the version number
-  -v, --verbose             verbose output
-  -h, --help                display help for command
+  -V, --version                  output the version number
+  -v, --verbose                  verbose output
+  -h, --help                     display help for command
 
 Commands:
   new [filename]                 create a new resume
   build [options] <resume-path>  build a resume to LaTeX and PDF
+  dev [options] <resume-path>    build a resume on file changes (watch mode)
   languages                      i18n and l10n support
   templates                      manage resume templates
   validate <resume-path>         validate a resume against the YAMLResume schema
@@ -135,11 +136,21 @@ $ yamlresume build my-resume.yml
 ✔ Generated resume PDF file successfully.
 ```
 
+You can also use the [`dev` command](https://yamlresume.dev/docs/cli#dev) to
+build the resume on file changes which provides **a modern web development like
+experience**:
+
+```
+$ yamlresume dev my-resume.yml
+◐ Generating resume PDF file with command: xelatex -halt-on-error my-resume.tex...
+✔ Generated resume PDF file successfully.
+◐ Watching file changes: my-resume.yml...
+```
+
 Check the generated PDF [here](./docs/static/images/resume.pdf).
 
 ![Software Engineer Page 1](./docs/static/images/resume-1.webp)
 ![Software Engineer Page 2](./docs/static/images/resume-2.webp)
-
 
 [PPResume Gallery](https://ppresume.com/gallery/?ref=yamlresume) provides a
 showcase for all possible kind of resumes categoried by languages and templates.
@@ -167,6 +178,21 @@ guarantees you **Pixel Perfect** resumes.
 
 In the future we may support other typesetting engines like
 [Typst](https://github.com/typst/typst), HTML/CSS, etc.
+
+## Ecosystem
+
+YAMLResume provides a set of tools to help you create, convert and manage your
+resumes more efficiently. Here are some of the key utilities available:
+
+- [create-yamlresume](https://yamlresume.dev/docs/ecosystem/create-yamlresume)
+  makes it easy to start a new YAMLResume project with a one-liner command. It
+  will scaffold your project directory, installs necessary dependencies, and
+  generates a sample resume file so you can get started right away. Try it with
+  `npx create-yamlresume my-resume` or similar commands for `npm`, `yarn`,
+  `pnpm` or `bun`.
+- [json2yamlresume](https://yamlresume.dev/docs/ecosystem/json2yamlresume) is a
+  CLI tool for converting [JSON Resume](https://jsonresume.org/) files to the
+  YAMLResume format.
 
 ## Contributing
 
