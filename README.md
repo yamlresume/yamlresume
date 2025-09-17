@@ -1,6 +1,6 @@
 # YAMLResume
 
-[简体中文](./README-zh-cn.md) | [繁體中文](./README-zh-tw.md)
+[Français](./README-fr.md) | [简体中文](./README-zh-cn.md) | [繁體中文](./README-zh-tw.md)
 
 <!-- Build, Quality & Docs -->
 [![GitHub CI](https://github.com/yamlresume/yamlresume/workflows/test/badge.svg)](https://github.com/yamlresume/yamlresume/actions/workflows/test.yml)
