@@ -1,6 +1,6 @@
 # YAMLResume
 
-[English](./README.md) | [简体中文](./README-zh-cn.md) | 繁體中文
+[English](./README.md) | [Français](./README-fr.md) | [简体中文](./README-zh-cn.md)
 
 [![GitHub CI](https://github.com/yamlresume/yamlresume/workflows/test/badge.svg)](https://github.com/yamlresume/yamlresume/actions/workflows/test.yml)
 [![Codecov](https://img.shields.io/codecov/c/github/yamlresume/yamlresume?style=flat-square&logo=codecov)](https://codecov.io/gh/yamlresume/yamlresume)
