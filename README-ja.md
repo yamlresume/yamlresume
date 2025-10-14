@@ -68,7 +68,7 @@ $ bun add -g yamlresume
 
 `yamlresume`が正常にインストールされたことを確認：
 
-```bash
+```
 $ yamlresume help
 Usage: yamlresume [options] [command]
 
@@ -82,18 +82,18 @@ YAMLResume — Resume as Code in YAML
 
 
 Options:
-  -V, --version                  バージョン番号を出力
-  -v, --verbose                  詳細出力
-  -h, --help                     コマンドのヘルプを表示
+  -V, --version                  output the version number
+  -v, --verbose                  verbose output
+  -h, --help                     display help for command
 
 Commands:
-  new [filename]                 新しい履歴書を作成
-  build [options] <resume-path>  履歴書をLaTeXとPDFにビルド
-  dev [options] <resume-path>    ファイル変更時に履歴書をビルド（ウォッチモード）
-  languages                      i18nとl10nサポート
-  templates                      履歴書テンプレートを管理
-  validate <resume-path>         YAMLResumeスキーマに対して履歴書を検証
-  help [command]                 コマンドのヘルプを表示
+  new [filename]                 create a new resume
+  build [options] <resume-path>  build a resume to LaTeX and PDF
+  dev [options] <resume-path>    build a resume on file changes (watch mode)
+  languages                      i18n and l10n support
+  templates                      manage resume templates
+  validate <resume-path>         validate a resume against the YAMLResume schema
+  help [command]                 display help for command
 ```
 
 次に、PDFを生成するために組版エンジンの[XeTeX](http://yamlresume.dev/docs/getting-started#xetex)または[Tectonic](http://yamlresume.dev/docs/getting-started#xetex)をインストールする必要があります。
@@ -106,22 +106,22 @@ Commands:
 
 [こちら](./packages/cli/src/commands/fixtures/software-engineer.yml)のサンプル履歴書をクローンして、独自の履歴書を作成できます。サンプル履歴書をローカルに配置したら、以下でPDFを取得できます：
 
-```bash
+```
 $ yamlresume new my-resume.yml
-✔ my-resume.ymlを正常に作成しました。
+✔ Created my-resume.yml successfully.
 
 $ yamlresume build my-resume.yml
-◐ コマンドでresume PDFを生成中: xelatex -halt-on-error my-resume.tex...
-✔ resume PDFファイルを正常に生成しました。
+◐ Generating resume PDF with command: xelatex -halt-on-error my-resume.tex...
+✔ Generated resume PDF file successfully.
 ```
 
 また、[`dev`コマンド](https://yamlresume.dev/docs/cli#dev)を使用してファイル変更時に履歴書をビルドすることもでき、これにより**モダンなWeb開発のような体験**を提供します：
 
-```bash
+```
 $ yamlresume dev my-resume.yml
-◐ コマンドでresume PDFファイルを生成中: xelatex -halt-on-error my-resume.tex...
-✔ resume PDFファイルを正常に生成しました。
-◐ ファイル変更を監視中: my-resume.yml...
+◐ Generating resume PDF file with command: xelatex -halt-on-error my-resume.tex...
+✔ Generated resume PDF file successfully.
+◐ Watching file changes: my-resume.yml...
 ```
 
 生成されたPDFは[こちら](./docs/static/images/resume.pdf)で確認できます。
