@@ -25,30 +25,28 @@
 [![Vitest](https://img.shields.io/badge/Vitest-Tested-6E9F18?style=flat-square&logo=vitest)](https://vitest.dev/)
 
 
-Writing resumes may not be hard, but it is definitely not fun and tedious.
+Writing resumes may not be hard, but it is definitely not fun and it's tedious.
 
 [YAMLResume](https://yamlresume.dev) allows you to manage and version control
-your resumes using [YAML](https://yaml.org/) and generate professional looking
-PDFs with beautiful typesetting in a breeze.
+your resumes using [YAML](https://yaml.org/) and makes generating professional looking PDFs with beautiful typesetting a breeze.
 
 ![YAMLResume YAML and PDF](./docs/static/images/yamlresume-yaml-and-pdf.webp)
 
 ## The Design Principle
 
-This project was started as the core typesetting engine for
+This project started as the core typesetting engine for
 [PPResume](https://ppresume.com/?ref=yamlresume), a LaTeX based, pixel perfect
 resume builder. After careful consideration, we decided to open source it so
 people can always have the right to say [no to vendor
 lock-in](https://blog.ppresume.com/posts/no-vendor-lock-in).
 
-The core design principle of YAMLResume is [Separation of
-Concerns](https://en.wikipedia.org/wiki/Separation_of_concerns). One of the most
-famous examples that follows this principle is HTML & CSS, which are the
-foundation of the modern web—HTML is used for organization of webpage content,
-CSS is used for definition of content presentation style.
+The core design principle behind YAMLResume is [Separation of
+Concerns](https://en.wikipedia.org/wiki/Separation_of_concerns). One of the
+best-known examples of this principle is HTML and CSS, which form the foundation
+of the modern web. HTML defines webpage content, and CSS styles that content.
 
-Following the core principle, YAMLResume is implemented by satisfying the
-following requirements:
+Following this principle, we designed YAMLResume with the following requirements
+in mind:
 
 - the resume content is drafted in plain text
 - the plain text is structured using YAML—YAML is better than JSON because it is
@@ -59,29 +57,32 @@ following requirements:
 
 ## Quick Start
 
-If you have docker installed, you can get started with `yamlresume` in one
-second, this has packaged `yamlresume` and all its dependencies:
+If you have Docker installed, you can get started with `yamlresume` in one
+second, this package includes `yamlresume` and all of its dependencies:
 
 [![YAMLResume Docker Demo](https://asciinema.org/a/722057.svg)](https://asciinema.org/a/722057)
 
-Otherwise you can install `yamlresume` with your favorite JavaScript package
+Alternatively, you can install `yamlresume` using your favorite package
 manager:
 
 ```
-# using npm
+# NPM
 $ npm install -g yamlresume
 
-# using yarn
+# Yarn
 $ yarn global add yamlresume
 
-# using pnpm
+# pnpm
 $ pnpm add -g yamlresume
 
-# using bun
+# Bun
 $ bun add -g yamlresume
+
+# Homebrew
+$ brew install yamlresume
 ```
 
-Verify `yamlresume` is installed successfully:
+Verify that `yamlresume` installed successfully:
 
 ```
 $ yamlresume help
@@ -111,23 +112,23 @@ Commands:
   help [command]                 display help for command
 ```
 
-You then need to install a typesetting engine,
+You then need to install a typesetting engine, either
 [XeTeX](http://yamlresume.dev/docs/getting-started#xetex) or
 [Tectonic](http://yamlresume.dev/docs/getting-started#xetex) in order to
 generate PDFs.
 
-Last but not least, we recommend you to install [Linux
+Last but not least, we recommend you install the [Linux
 Libertine](http://yamlresume.dev/docs/getting-started#linux-libertine) font in
 order to get the best looking PDFs.
 
-Check our [installation guide](http://yamlresume.dev/docs/installation) for more
-details.
+Check out our [installation guide](http://yamlresume.dev/docs/installation) for
+more details.
 
 ## Create a new resume
 
 You can create your own resume by cloning one of our sample resumes
-[here](./packages/cli/src/commands/fixtures/software-engineer.yml), so once you have the
-sample resume on your local, you can get a pdf with:
+[here](./packages/cli/src/commands/fixtures/software-engineer.yml). Once you
+have the sample resume on your computer, you can generate a PDF with:
 
 ```
 $ yamlresume new my-resume.yml
@@ -139,8 +140,8 @@ $ yamlresume build my-resume.yml
 ```
 
 You can also use the [`dev` command](https://yamlresume.dev/docs/cli#dev) to
-build the resume on file changes which provides **a modern web development like
-experience**:
+rebuild the resume on each file change, which provides **a modern web
+development-like experience**:
 
 ```
 $ yamlresume dev my-resume.yml
@@ -149,32 +150,31 @@ $ yamlresume dev my-resume.yml
 ◐ Watching file changes: my-resume.yml...
 ```
 
-Check the generated PDF [here](./docs/static/images/resume.pdf).
+Check out the generated PDF [here](./docs/static/images/resume.pdf).
 
 ![Software Engineer Page 1](./docs/static/images/resume-1.webp)
 ![Software Engineer Page 2](./docs/static/images/resume-2.webp)
 
 [PPResume Gallery](https://ppresume.com/gallery/?ref=yamlresume) provides a
-showcase for all possible kind of resumes categoried by languages and templates.
+showcase of all the possible types of resumes, categorized by languages and
+templates.
 
-More samples would come soon!
-
-## Validate resumes
+## Validating resumes
 
 YAMLResume provides a builtin
-[schema](https://yamlresume.dev/docs/compiler/schema) which can be used to
-validate resumes and help avoid lots of low level mistakes. Check out the
-following demo:
+[schema](https://yamlresume.dev/docs/compiler/schema) which you can use to
+validate resumes and avoid low level mistakes. Check out the following demo to
+see it in action:
 
 [![YAMLResume Compiler Demo](https://asciinema.org/a/728098.svg)](https://asciinema.org/a/728098)
 
 ## Typesetting
 
-YAMLResume adopts [LaTeX](https://www.latex-project.org/) as the default
+YAMLResume uses [LaTeX](https://www.latex-project.org/) as its default
 typesetting engine, which is the state of the art typesetting system in the
 academic and technical publishing industry.
 
-Meanwhile, by following the [resume typesetting best
+By following a series of [best
 practices](https://docs.ppresume.com/guide?ref=yamlresume), YAMLResume always
 guarantees you **Pixel Perfect** resumes.
 
@@ -183,27 +183,27 @@ In the future we may support other typesetting engines like
 
 ## Ecosystem
 
-YAMLResume provides a set of tools to help you create, convert and manage your
-resumes more efficiently. Here are some of the key utilities available:
+YAMLResume provides a set of tools to help you create, convert, and manage your
+resumes more efficiently. These tools include:
 
 - [create-yamlresume](https://yamlresume.dev/docs/ecosystem/create-yamlresume)
-  makes it easy to start a new YAMLResume project with a one-liner command. It
-  will scaffold your project directory, installs necessary dependencies, and
+  makes it easy to start a new YAMLResume project with one command. It
+  will scaffold your project directory, install necessary dependencies, and
   generates a sample resume file so you can get started right away. Try it with
   `npx create-yamlresume my-resume` or similar commands for `npm`, `yarn`,
   `pnpm` or `bun`.
 - [json2yamlresume](https://yamlresume.dev/docs/ecosystem/json2yamlresume) is a
   CLI tool for converting [JSON Resume](https://jsonresume.org/) files to the
-  YAMLResume format.
+  native format for YAMLResume.
 
 ## Contributing
 
-This project is still under active development, we are constantly working on
+This project is still under active development and we are constantly working on
 new features and bug fixes. The public API is not stable yet, so please be
-patient and spare us some time.
+patient.
 
-Any kind of contributions will be deeply appreciated! Please read the
-[contributing guidelines](./CONTRIBUTING.md) before submitting a pull request.
+Contributions are deeply appreciated! Please read the
+[guidelines](./CONTRIBUTING.md) before submitting a pull request.
 
 ### Star History
 
@@ -217,6 +217,6 @@ Any kind of contributions will be deeply appreciated! Please read the
 
 ## Support the Project
 
-If you find YAMLResume helpful, consider supporting the project:
+If you find YAMLResume helpful, please consider supporting the project:
 
 [![Buy Me a Coffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-FFDD00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black)](https://buymeacoffee.com/xiaohanyu)
