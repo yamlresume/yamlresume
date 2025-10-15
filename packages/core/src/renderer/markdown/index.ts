@@ -22,4 +22,4 @@
  * IN THE SOFTWARE.
  */
 
-export { LayoutSchema } from './layout'
+export { MarkdownRenderer } from './renderer'

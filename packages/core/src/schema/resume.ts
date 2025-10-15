@@ -25,7 +25,8 @@
 import { z } from 'zod'
 
 import { ContentSchema } from './content'
-import { LayoutSchema } from './layout/layout'
+import { LayoutsSchema } from './layouts'
+import { LocaleSchema } from './locale'
 
 /**
  * A zod schema for a yaml resume.
@@ -33,7 +34,8 @@ import { LayoutSchema } from './layout/layout'
 export const ResumeSchema = z
   .object({
     ...ContentSchema.shape,
-    ...LayoutSchema.shape,
+    ...LocaleSchema.shape,
+    ...LayoutsSchema.shape,
   })
   .meta({
     $id: 'https://yamlresume.dev/schema.json',

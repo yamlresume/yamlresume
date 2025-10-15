@@ -22,18 +22,21 @@
  * IN THE SOFTWARE.
  */
 
+import { cloneDeep } from 'lodash-es'
 import { describe, expect, it } from 'vitest'
-import type { Resume, Template } from '@/models'
+import type { LatexTemplate, Resume } from '@/models'
 import { DEFAULT_RESUME } from '@/models'
 import {
   ModerncvBankingRenderer,
   ModerncvCasualRenderer,
   ModerncvClassicRenderer,
-} from './moderncv'
+} from './latex/moderncv'
+import { MarkdownRenderer } from './markdown'
 import { getResumeRenderer } from './resume'
 
 describe(getResumeRenderer, () => {
   const mockResume: Resume = DEFAULT_RESUME
+  const layoutIndex = 0
 
   it('should return correct renderer when template is specified', () => {
     const tests = [
@@ -52,52 +55,79 @@ describe(getResumeRenderer, () => {
     ] as const
 
     for (const { template, expected } of tests) {
-      const resume = {
-        ...mockResume,
-        layout: {
-          ...mockResume.layout,
-          template,
-        },
+      const resume = cloneDeep(mockResume)
+      const layout = {
+        ...resume.layouts?.[layoutIndex],
+        template,
       }
+      resume.layouts = [layout]
 
-      const renderer = getResumeRenderer(resume)
+      const renderer = getResumeRenderer(resume, layoutIndex)
       expect(renderer).toBeInstanceOf(expected)
     }
   })
 
   it('should return default renderer when template is not specified', () => {
-    const resumeWithNoTemplate = {
-      ...mockResume,
-      layout: {
-        ...mockResume.layout,
-        template: undefined,
-      },
+    const resume = cloneDeep(mockResume)
+    const layoutWithNoTemplate = {
+      ...resume.layouts?.[layoutIndex],
+      template: undefined,
     }
+    resume.layouts = [layoutWithNoTemplate]
 
-    const resumeWithNoTemplateId = {
-      ...mockResume,
-      layout: {
-        ...mockResume.layout,
-        template: undefined,
-      },
-    }
-
-    for (const resume of [resumeWithNoTemplate, resumeWithNoTemplateId]) {
-      const renderer = getResumeRenderer(resume)
-      expect(renderer).toBeInstanceOf(ModerncvBankingRenderer)
-    }
+    const renderer = getResumeRenderer(resume, layoutIndex)
+    expect(renderer).toBeInstanceOf(ModerncvBankingRenderer)
   })
 
   it('should return default renderer when template id is not valid', () => {
-    const resume = {
-      ...mockResume,
-      layout: {
-        ...mockResume.layout,
-        template: 'invalid-template' as Template,
-      },
+    const resume = cloneDeep(mockResume)
+    const layout = {
+      ...resume.layouts?.[layoutIndex],
+      template: 'invalid-template' as LatexTemplate,
     }
+    resume.layouts = [layout]
 
-    const renderer = getResumeRenderer(resume)
+    const renderer = getResumeRenderer(resume, layoutIndex)
     expect(renderer).toBeInstanceOf(ModerncvBankingRenderer)
+  })
+
+  it('should return markdown renderer when engine is markdown', () => {
+    const resume = cloneDeep(mockResume)
+    const layout = {
+      engine: 'markdown' as const,
+    }
+    // @ts-ignore
+    resume.layouts = [layout]
+
+    const renderer = getResumeRenderer(resume, layoutIndex)
+    expect(renderer).toBeInstanceOf(MarkdownRenderer)
+  })
+
+  it('should throw error when layout is not found', () => {
+    const resume = cloneDeep(mockResume)
+    resume.layouts = []
+
+    expect(() => getResumeRenderer(resume, layoutIndex)).toThrow(
+      'Layout not found in resume.layouts at index: 0.'
+    )
+  })
+
+  it('should throw error when layouts is undefined', () => {
+    const resume = cloneDeep(mockResume)
+    resume.layouts = undefined
+
+    expect(() => getResumeRenderer(resume, layoutIndex)).toThrow(
+      'Layout not found in resume.layouts at index: 0.'
+    )
+  })
+
+  it('should throw error when engine is unknown', () => {
+    const resume = cloneDeep(mockResume)
+    // @ts-ignore
+    resume.layouts = [{ engine: 'unknown-engine' }]
+
+    expect(() => getResumeRenderer(resume, layoutIndex)).toThrow(
+      'Unknown engine: unknown-engine'
+    )
   })
 })

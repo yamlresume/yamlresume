@@ -31,22 +31,22 @@ import { LatexSchema } from './latex'
 
 describe('LatexSchema', () => {
   it('should have correct metadata', () => {
-    expectSchemaMetadata(LatexSchema.shape.latex)
+    expectSchemaMetadata(LatexSchema.shape.advanced)
   })
 
   it('should validate LaTeX if it is valid', () => {
     const tests = [
       {},
       {
-        latex: {},
+        advanced: {},
       },
       {
-        latex: {
+        advanced: {
           fontspec: { numbers: FONTSPEC_NUMBERS_OPTIONS[0] },
         },
       },
       {
-        latex: {
+        advanced: {
           fontspec: {},
         },
       },
@@ -60,13 +60,13 @@ describe('LatexSchema', () => {
   it('should throw an error if LaTeX is invalid', () => {
     const tests = [
       {
-        latex: {
+        advanced: {
           fontspec: { numbers: 'invalid' },
         },
         error: {
           errors: [],
           properties: {
-            latex: {
+            advanced: {
               errors: [],
               properties: {
                 fontspec: {
@@ -89,9 +89,9 @@ describe('LatexSchema', () => {
       },
     ]
 
-    for (const { latex, error } of tests) {
+    for (const { advanced, error } of tests) {
       // @ts-ignore
-      validateZodErrors(LatexSchema, { latex }, error)
+      validateZodErrors(LatexSchema, { advanced }, error)
     }
   })
 })

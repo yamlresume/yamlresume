@@ -22,42 +22,4 @@
  * IN THE SOFTWARE.
  */
 
-import { z } from 'zod'
-
-import { joinNonEmptyString } from '@/utils'
-import { LatexSchema } from './latex'
-import { LocaleSchema } from './locale'
-import { PageSchema } from './page'
-import { SectionsSchema } from './sections'
-import { TemplateSchema } from './template'
-import { TypographySchema } from './typography'
-
-/**
- * A zod schema that combines all layout-related configurations.
- *
- * This schema validates the entire layout object by intersecting all individual
- * schemas (template, typography, locale, and page) to ensure a
- * complete and valid layout configuration.
- */
-export const LayoutSchema = z.object({
-  layout: z
-    .object({
-      ...LatexSchema.shape,
-      ...LocaleSchema.shape,
-      ...PageSchema.shape,
-      ...SectionsSchema.shape,
-      ...TemplateSchema.shape,
-      ...TypographySchema.shape,
-    })
-    .nullish()
-    .meta({
-      title: 'Layout',
-      description: joinNonEmptyString(
-        [
-          'The layout section contains all layout-related configurations,',
-          'including LaTeX, locale, page, template, typography, etc.',
-        ],
-        ' '
-      ),
-    }),
-})
+export { LocaleSchema } from './locale'

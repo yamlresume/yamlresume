@@ -23,7 +23,7 @@
  */
 
 import fs from 'node:fs'
-import { DEFAULT_RESUME_LAYOUT } from '@yamlresume/core'
+import { DEFAULT_RESUME_LAYOUTS, DEFAULT_RESUME_LOCALE } from '@yamlresume/core'
 import { mapKeys, omit } from 'lodash-es'
 import { describe, expect, it } from 'vitest'
 import yaml from 'yaml'
@@ -601,7 +601,8 @@ describe(convertJSONResumeToYAMLResume, () => {
 
     expect(result).toEqual({
       content: {},
-      layout: DEFAULT_RESUME_LAYOUT,
+      locale: DEFAULT_RESUME_LOCALE,
+      layouts: DEFAULT_RESUME_LAYOUTS,
     })
   })
 

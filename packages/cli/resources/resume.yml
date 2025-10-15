@@ -224,19 +224,25 @@ content:
         - Assisted in organizing workshops, coding competitions, and networking events for the society members
         - Contributed to fostering a collaborative and supportive environment within the student community
 
-layout:
-  locale:
-    # Use `yamlresume languages list` to get the list of supported languages
-    language: en
-  page:
-    margins:
-      top: 2.5cm
-      left: 1.5cm
-      right: 1.5cm
-      bottom: 2.5cm
-    showPageNumbers: true
-  # Use `yamlresume templates list` to get the list of available templates
-  template: moderncv-banking
-  typography:
-    # LaTeX engine only supports 10pt, 11pt, and 12pt
-    fontSize: 11pt
+# Top-level locale setting
+locale:
+  # Use `yamlresume languages list` to get the list of supported languages
+  language: en
+
+# Multiple output layouts configuration
+layouts:
+  - engine: latex
+    page:
+      margins:
+        top: 2.5cm
+        left: 1.5cm
+        right: 1.5cm
+        bottom: 2.5cm
+      showPageNumbers: true
+    # Use `yamlresume templates list` to get the list of available templates
+    template: moderncv-banking
+    typography:
+      # LaTeX engine only supports 10pt, 11pt, and 12pt
+      fontSize: 11pt
+  - engine: markdown
+

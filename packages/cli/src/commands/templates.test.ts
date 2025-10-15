@@ -22,7 +22,10 @@
  * IN THE SOFTWARE.
  */
 
-import { getTemplateDetail, TEMPLATE_OPTIONS } from '@yamlresume/core'
+import {
+  getLatexTemplateDetail,
+  LATEX_TEMPLATE_OPTIONS,
+} from '@yamlresume/core'
 import type { Command } from 'commander'
 import { consola } from 'consola'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
@@ -39,8 +42,8 @@ describe(listTemplates, () => {
     expect(result).toContain('Description')
 
     // Check if all templates are included
-    TEMPLATE_OPTIONS.forEach((value) => {
-      const details = getTemplateDetail(value)
+    LATEX_TEMPLATE_OPTIONS.forEach((value) => {
+      const details = getLatexTemplateDetail(value)
       expect(result).toContain(value) // Template ID
       expect(result).toContain(details.name) // Template Name
       expect(result).toContain(details.description) // Description
@@ -49,7 +52,7 @@ describe(listTemplates, () => {
     // Check if the table has the correct number of rows
     const rows = result.trim().split('\n')
     // +2 for header and separator
-    expect(rows.length).toBe(TEMPLATE_OPTIONS.length + 2)
+    expect(rows.length).toBe(LATEX_TEMPLATE_OPTIONS.length + 2)
   })
 })
 

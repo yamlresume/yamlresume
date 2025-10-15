@@ -23,12 +23,12 @@
  */
 
 import { describe, expect, it } from 'vitest'
-import type { LocaleLanguage, Template } from '@/models'
+import type { LatexTemplate, LocaleLanguage } from '@/models'
 import {
+  getLatexTemplateDetail,
   getLocaleLanguageDetail,
-  getTemplateDetail,
+  LATEX_TEMPLATE_OPTIONS,
   LOCALE_LANGUAGE_OPTIONS,
-  TEMPLATE_OPTIONS,
 } from './resume'
 
 describe(getLocaleLanguageDetail, () => {
@@ -49,20 +49,20 @@ describe(getLocaleLanguageDetail, () => {
   })
 })
 
-describe(getTemplateDetail, () => {
+describe(getLatexTemplateDetail, () => {
   it('should return the template option code and name', () => {
-    for (const template of TEMPLATE_OPTIONS) {
-      const result = getTemplateDetail(template)
+    for (const template of LATEX_TEMPLATE_OPTIONS) {
+      const result = getLatexTemplateDetail(template)
 
       expect(result).toEqual({
         id: template,
-        ...getTemplateDetail(template),
+        ...getLatexTemplateDetail(template),
       })
     }
   })
 
   it('should throw an error for invalid template option', () => {
-    expect(() => getTemplateDetail('invalid' as Template)).toThrow(
+    expect(() => getLatexTemplateDetail('invalid' as LatexTemplate)).toThrow(
       'Invalid template option: invalid'
     )
   })

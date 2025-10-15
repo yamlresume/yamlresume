@@ -25,7 +25,6 @@
 import { cloneDeep } from 'lodash-es'
 import { beforeEach, describe, expect, it } from 'vitest'
 
-import { MarkdownParser } from '@/compiler'
 import { FILLED_RESUME, type Resume } from '@/models'
 import {
   ModerncvBankingRenderer,
@@ -37,11 +36,11 @@ import {
 describe('ModerncvBase', () => {
   let resume: Resume
   let renderer: ModerncvBase
-  const summaryParser = new MarkdownParser()
+  const layoutIndex = 0
 
   beforeEach(() => {
     resume = cloneDeep(FILLED_RESUME)
-    renderer = new ModerncvBankingRenderer(resume, summaryParser)
+    renderer = new ModerncvBankingRenderer(resume, layoutIndex)
   })
 
   it('should generate complete LaTeX document', () => {
@@ -53,6 +52,236 @@ describe('ModerncvBase', () => {
     expect(result).toContain('\\end{document}')
   })
 
+  describe('renderPreamble', () => {
+    it('should render correct document class configuration', () => {
+      const result = renderer.renderPreamble()
+
+      expect(result).toContain(
+        '\\documentclass[a4paper, serif, 10pt]{moderncv}'
+      )
+    })
+
+    it('should render basic moderncv configuration', () => {
+      const result = renderer.renderPreamble()
+
+      expect(result).toContain('\\moderncvstyle{banking}')
+      expect(result).toContain('\\moderncvcolor{black}')
+      expect(result).toContain('\\usepackage{fontawesome5}')
+    })
+
+    it('should include CJK override for banking style when language is CJK', () => {
+      const cjkResume = cloneDeep(resume)
+      cjkResume.locale = { ...cjkResume.locale, language: 'zh-hans' }
+
+      const renderer = new ModerncvBankingRenderer(cjkResume, layoutIndex)
+      const result = renderer.renderPreamble()
+
+      expect(result).toContain('\\renewcommand*{\\cvitem}')
+      expect(result).toContain('\\renewcommand*{\\cvitemwithcomment}')
+    })
+
+    it('should render correct layout configuration', () => {
+      const result = renderer.renderPreamble()
+
+      expect(result).toContain(
+        '\\usepackage[top=2.5cm, bottom=2.5cm, left=1.5cm, right=1.5cm]{geometry}'
+      )
+    })
+
+    it('should include nopagenumbers when showPageNumbers is false', () => {
+      const noPageNumbersResume = cloneDeep(resume)
+      noPageNumbersResume.layouts = [
+        {
+          engine: 'latex' as const,
+          page: {
+            margins: {
+              top: '2.5cm',
+              bottom: '2.5cm',
+              left: '1.5cm',
+              right: '1.5cm',
+            },
+            showPageNumbers: false,
+          },
+        },
+      ]
+
+      const renderer = new ModerncvBankingRenderer(
+        noPageNumbersResume,
+        layoutIndex
+      )
+      const result = renderer.renderPreamble()
+
+      expect(result).toContain('\\nopagenumbers{}')
+    })
+
+    it('should render CTeX configuration', () => {
+      const result = renderer.renderPreamble()
+
+      expect(result).toContain(
+        '\\usepackage[UTF8, heading=false, punct=kaiming'
+      )
+      expect(result).toContain('\\setCJKmainfont{Noto Serif CJK SC}')
+      expect(result).toContain('\\setCJKsansfont{Noto Sans CJK SC}')
+    })
+
+    it('should return empty string for Babel config for English resume', () => {
+      const nonSpanishResume = cloneDeep(resume)
+      nonSpanishResume.locale = { ...nonSpanishResume.locale, language: 'en' }
+
+      const renderer = new ModerncvBankingRenderer(
+        nonSpanishResume,
+        layoutIndex
+      )
+      const result = renderer.renderPreamble()
+
+      expect(result).not.toContain('\\usepackage[spanish,es-lcroman]{babel}')
+      expect(result).not.toContain('\\usepackage[norsk]{babel}')
+      expect(result).not.toContain('\\usepackage[french]{babel}')
+    })
+
+    it('should render Spanish configuration for Spanish resume', () => {
+      const spanishResume = cloneDeep(resume)
+      spanishResume.locale = { ...spanishResume.locale, language: 'es' }
+
+      const renderer = new ModerncvBankingRenderer(spanishResume, layoutIndex)
+      const result = renderer.renderPreamble()
+
+      expect(result).toContain('\\usepackage[spanish,es-lcroman]{babel}')
+    })
+
+    it('should render Norwegian configuration for Norwegian resume', () => {
+      const norwegianResume = cloneDeep(resume)
+      norwegianResume.locale = { ...norwegianResume.locale, language: 'no' }
+
+      const renderer = new ModerncvBankingRenderer(norwegianResume, layoutIndex)
+      const result = renderer.renderPreamble()
+
+      expect(result).toContain('\\usepackage[norsk]{babel}')
+    })
+
+    it('should render French configuration for French resume', () => {
+      const frenchResume = cloneDeep(resume)
+      frenchResume.locale = { ...frenchResume.locale, language: 'fr' }
+
+      const renderer = new ModerncvBankingRenderer(frenchResume, layoutIndex)
+      const result = renderer.renderPreamble()
+
+      expect(result).toContain('\\usepackage[french]{babel}')
+    })
+
+    it('should render basic fontspec configuration', () => {
+      const linuxLibertineFont = 'Linux Libertine'
+      const linuxLibertineOFont = 'Linux Libertine O'
+      const cjkResume = cloneDeep(resume)
+      cjkResume.locale = { ...cjkResume.locale, language: 'en' }
+      cjkResume.layouts = [
+        {
+          engine: 'latex',
+          advanced: {
+            fontspec: {
+              numbers: 'OldStyle',
+            },
+          },
+        },
+      ]
+
+      const renderer = new ModerncvBankingRenderer(cjkResume, layoutIndex)
+      const result = renderer.renderPreamble()
+
+      expect(result).toContain('\\usepackage{fontspec}')
+      expect(result).toContain(`\\IfFontExistsTF{${linuxLibertineFont}}`)
+      expect(result).toContain(
+        `\\setmainfont[Ligatures={TeX, Common}, Numbers=OldStyle]{${linuxLibertineFont}}`
+      )
+      expect(result).toContain(`\\IfFontExistsTF{${linuxLibertineOFont}}`)
+      expect(result).toContain(
+        `\\setmainfont[Ligatures={TeX, Common}, Numbers=OldStyle]{${linuxLibertineOFont}}`
+      )
+    })
+
+    it('should render basic fontspec configuration for CJK', () => {
+      const linuxLibertineFont = 'Linux Libertine'
+      const linuxLibertineOFont = 'Linux Libertine O'
+      const cjkResume = cloneDeep(resume)
+      cjkResume.locale = { ...cjkResume.locale, language: 'zh-hans' }
+      cjkResume.layouts = [
+        {
+          engine: 'latex',
+          advanced: {
+            fontspec: {
+              numbers: 'Lining',
+            },
+          },
+        },
+      ]
+
+      const renderer = new ModerncvBankingRenderer(cjkResume, layoutIndex)
+      const result = renderer.renderPreamble()
+
+      expect(result).toContain('\\usepackage{fontspec}')
+      expect(result).toContain(`\\IfFontExistsTF{${linuxLibertineFont}}`)
+      expect(result).toContain(
+        `\\setmainfont[Ligatures={TeX, Common}, Numbers=Lining, ItalicFont=${linuxLibertineFont}]{${linuxLibertineFont}}`
+      )
+      expect(result).toContain(`\\IfFontExistsTF{${linuxLibertineOFont}}`)
+      expect(result).toContain(
+        `\\setmainfont[Ligatures={TeX, Common}, Numbers=Lining, ItalicFont=${linuxLibertineOFont}]{${linuxLibertineOFont}}`
+      )
+    })
+
+    it('should use default font size when layout is undefined', () => {
+      resume.layouts = undefined
+      renderer = new ModerncvBankingRenderer(resume, layoutIndex)
+      const result = renderer.renderPreamble()
+      expect(result).toContain(
+        '\\documentclass[a4paper, serif, 10pt]{moderncv}'
+      )
+    })
+
+    it('should return empty preamble when layout engine is not latex', () => {
+      resume.layouts = [{ engine: 'markdown', sections: {} }]
+      renderer = new ModerncvBankingRenderer(resume, layoutIndex)
+      const result = renderer.renderPreamble()
+      expect(result).toBe('')
+    })
+
+    it('should use default font size when typography is missing', () => {
+      resume.layouts = [{ engine: 'latex', typography: undefined }]
+      renderer = new ModerncvBankingRenderer(resume, layoutIndex)
+      const result = renderer.renderPreamble()
+      expect(result).toContain(
+        '\\documentclass[a4paper, serif, 10pt]{moderncv}'
+      )
+    })
+
+    it('should use default margins when page config is missing', () => {
+      resume.layouts = [{ engine: 'latex', page: undefined }]
+      renderer = new ModerncvBankingRenderer(resume, layoutIndex)
+      const result = renderer.renderPreamble()
+      expect(result).toContain('top=2.5cm')
+      expect(result).toContain('bottom=2.5cm')
+      expect(result).toContain('left=1.5cm')
+      expect(result).toContain('right=1.5cm')
+    })
+
+    it('should use default margins when margins are partial/missing', () => {
+      resume.layouts = [{ engine: 'latex', page: undefined }]
+      renderer = new ModerncvBankingRenderer(resume, layoutIndex)
+      const result = renderer.renderPreamble()
+      expect(result).toContain('top=2.5cm')
+      expect(result).toContain('bottom=2.5cm')
+      expect(result).toContain('left=1.5cm')
+      expect(result).toContain('right=1.5cm')
+    })
+
+    it('should use default numbers style when advanced config is missing', () => {
+      resume.layouts = [{ engine: 'latex', advanced: undefined }]
+      renderer = new ModerncvBankingRenderer(resume, layoutIndex)
+      const result = renderer.renderPreamble()
+      expect(result).toContain('Numbers=OldStyle')
+    })
+  })
+
   describe('ModerncvStyle', () => {
     it('should render moderncv style', () => {
       const tests = [
@@ -62,7 +291,7 @@ describe('ModerncvBase', () => {
       ]
 
       for (const test of tests) {
-        const renderer = new test.renderer(resume, summaryParser)
+        const renderer = new test.renderer(resume, layoutIndex)
         expect(renderer).toBeInstanceOf(ModerncvBase)
 
         expect(renderer.style).toBe(test.style)
@@ -76,19 +305,19 @@ describe('ModerncvBase', () => {
 
     it('should render moderncv override for CJK', () => {
       const cjkResume = cloneDeep(resume)
-      cjkResume.layout.locale.language = 'zh-hans'
+      cjkResume.locale = { ...cjkResume.locale, language: 'zh-hans' }
 
-      let renderer = new ModerncvBankingRenderer(cjkResume, summaryParser)
+      let renderer = new ModerncvBankingRenderer(cjkResume, layoutIndex)
 
       expect(renderer.render()).toContain(
         '\\renewcommand*{\\cvitem}[3][.25em]{%'
       )
 
-      renderer = new ModerncvClassicRenderer(cjkResume, summaryParser)
+      renderer = new ModerncvClassicRenderer(cjkResume, layoutIndex)
       expect(renderer.render()).not.toContain(
         '\\\\renewcommand*{\\\\cvitem}[3][.25em]{%'
       )
-      renderer = new ModerncvCasualRenderer(cjkResume, summaryParser)
+      renderer = new ModerncvCasualRenderer(cjkResume, layoutIndex)
       expect(renderer.render()).not.toContain(
         '\\\\renewcommand*{\\\\cvitem}[3][.25em]{%'
       )
@@ -107,7 +336,7 @@ describe('ModerncvBase', () => {
       resume.content.basics.email = email
       resume.content.basics.phone = phone
 
-      renderer = new ModerncvBankingRenderer(resume, summaryParser)
+      renderer = new ModerncvBankingRenderer(resume, layoutIndex)
       const result = renderer.renderBasics()
 
       expect(result).toMatch(new RegExp(`^\\\\name{${name}}{}`))
@@ -121,7 +350,7 @@ describe('ModerncvBase', () => {
 
       resume.content.basics.name = name
 
-      renderer = new ModerncvBankingRenderer(resume, summaryParser)
+      renderer = new ModerncvBankingRenderer(resume, layoutIndex)
       const result = renderer.renderBasics()
 
       expect(result).toMatch(/^\\name{}{}/)
@@ -138,7 +367,7 @@ describe('ModerncvBase', () => {
       resume.content.basics.email = email
       resume.content.basics.phone = phone
 
-      renderer = new ModerncvBankingRenderer(resume, summaryParser)
+      renderer = new ModerncvBankingRenderer(resume, layoutIndex)
       const result = renderer.renderBasics()
 
       expect(result).toMatch(new RegExp(`^\\\\name{${name}}{}`))
@@ -158,7 +387,7 @@ describe('ModerncvBase', () => {
       resume.content.basics.email = email
       resume.content.basics.phone = phone
 
-      renderer = new ModerncvBankingRenderer(resume, summaryParser)
+      renderer = new ModerncvBankingRenderer(resume, layoutIndex)
       const result = renderer.renderBasics()
 
       expect(result).toMatch(new RegExp(`^\\\\name{${name}}{}`))
@@ -170,7 +399,7 @@ describe('ModerncvBase', () => {
 
   describe('renderLocation', () => {
     it('should return empty string if no address information', () => {
-      renderer = new ModerncvBankingRenderer(resume, summaryParser)
+      renderer = new ModerncvBankingRenderer(resume, layoutIndex)
       const result = renderer.renderLocation()
 
       expect(result).toBe('')
@@ -187,16 +416,16 @@ describe('ModerncvBase', () => {
         country,
       }
 
-      renderer = new ModerncvBankingRenderer(resume, summaryParser)
+      renderer = new ModerncvBankingRenderer(resume, layoutIndex)
       const result = renderer.renderLocation()
 
-      expect(result).toBe(`\\address{${address} -- ${city} -- ${country}}{}{}`)
+      expect(result).toBe(`\\address{${address}, ${city}, ${country}}{}{}`)
     })
   })
 
   describe('renderProfiles', () => {
     it('should return empty string if no urls', () => {
-      renderer = new ModerncvBankingRenderer(resume, summaryParser)
+      renderer = new ModerncvBankingRenderer(resume, layoutIndex)
       const result = renderer.renderProfiles()
 
       expect(result).toBe('')
@@ -214,7 +443,7 @@ describe('ModerncvBase', () => {
         },
       ]
 
-      renderer = new ModerncvBankingRenderer(resume, summaryParser)
+      renderer = new ModerncvBankingRenderer(resume, layoutIndex)
       const result = renderer.renderProfiles()
 
       expect(result).toBe(
@@ -246,7 +475,7 @@ describe('ModerncvBase', () => {
         },
       ]
 
-      renderer = new ModerncvBankingRenderer(resume, summaryParser)
+      renderer = new ModerncvBankingRenderer(resume, layoutIndex)
       const result = renderer.renderProfiles()
 
       expect(result).toBe(
@@ -261,7 +490,7 @@ describe('ModerncvBase', () => {
 
   describe('renderSummary', () => {
     it('should return empty string if no summary', () => {
-      renderer = new ModerncvBankingRenderer(resume, summaryParser)
+      renderer = new ModerncvBankingRenderer(resume, layoutIndex)
       const result = renderer.renderSummary()
 
       expect(result).toBe('')
@@ -274,7 +503,7 @@ describe('ModerncvBase', () => {
     it('should return empty string if no education entries', () => {
       resume.content.education = []
 
-      renderer = new ModerncvBankingRenderer(resume, summaryParser)
+      renderer = new ModerncvBankingRenderer(resume, layoutIndex)
       const result = renderer.renderEducation()
 
       expect(result).toBe('')
@@ -301,11 +530,11 @@ describe('ModerncvBase', () => {
         },
       ]
 
-      renderer = new ModerncvBankingRenderer(resume, summaryParser)
+      renderer = new ModerncvBankingRenderer(resume, layoutIndex)
       const result = renderer.renderEducation()
 
       expect(result).toMatch(/^\\section{Education}/)
-      expect(result).toContain('\\cventry{Jan 2020 -- Jan 2024}')
+      expect(result).toContain('\\cventry{Jan 2020–Jan 2024}')
       expect(result).toContain(`{${degree}, ${area}}`)
       expect(result).toContain(institution)
       expect(result).toContain(`{\\\href{${url}}{${url}}}`)
@@ -316,7 +545,7 @@ describe('ModerncvBase', () => {
     it('should return empty string if no work entries', () => {
       resume.content.work = []
 
-      renderer = new ModerncvBankingRenderer(resume, summaryParser)
+      renderer = new ModerncvBankingRenderer(resume, layoutIndex)
       const result = renderer.renderWork()
 
       expect(result).toBe('')
@@ -343,11 +572,11 @@ describe('ModerncvBase', () => {
         },
       ]
 
-      renderer = new ModerncvBankingRenderer(resume, summaryParser)
+      renderer = new ModerncvBankingRenderer(resume, layoutIndex)
       const result = renderer.renderWork()
 
       expect(result).toMatch(/^\\section{Work}/)
-      expect(result).toContain('\\cventry{Jan 2020 -- Jan 2024}')
+      expect(result).toContain('\\cventry{Jan 2020–Jan 2024}')
       expect(result).toContain(`{${position}}`)
       expect(result).toContain(`{${name}}`)
       expect(result).toContain(`{\\\href{${url}}{${url}}}`)
@@ -359,7 +588,7 @@ describe('ModerncvBase', () => {
     it('should return empty string if no language entries', () => {
       resume.content.languages = []
 
-      renderer = new ModerncvBankingRenderer(resume, summaryParser)
+      renderer = new ModerncvBankingRenderer(resume, layoutIndex)
       const result = renderer.renderLanguages()
 
       expect(result).toBe('')
@@ -374,7 +603,7 @@ describe('ModerncvBase', () => {
         },
       ]
 
-      renderer = new ModerncvBankingRenderer(resume, summaryParser)
+      renderer = new ModerncvBankingRenderer(resume, layoutIndex)
       const result = renderer.renderLanguages()
 
       expect(result).toMatch(/^\\section{Languages}/)
@@ -391,7 +620,7 @@ describe('ModerncvBase', () => {
         },
       ]
 
-      renderer = new ModerncvBankingRenderer(resume, summaryParser)
+      renderer = new ModerncvBankingRenderer(resume, layoutIndex)
       const result = renderer.renderLanguages()
 
       expect(result).toMatch(/^\\section{Languages}/)
@@ -405,7 +634,7 @@ describe('ModerncvBase', () => {
     it('should return empty string if no skill entries', () => {
       resume.content.skills = []
 
-      renderer = new ModerncvBankingRenderer(resume, summaryParser)
+      renderer = new ModerncvBankingRenderer(resume, layoutIndex)
       const result = renderer.renderSkills()
 
       expect(result).toBe('')
@@ -420,7 +649,7 @@ describe('ModerncvBase', () => {
         },
       ]
 
-      renderer = new ModerncvBankingRenderer(resume, summaryParser)
+      renderer = new ModerncvBankingRenderer(resume, layoutIndex)
       const result = renderer.renderSkills()
 
       expect(result).toMatch(/^\\section{Skills}/)
@@ -437,7 +666,7 @@ describe('ModerncvBase', () => {
         },
       ]
 
-      renderer = new ModerncvBankingRenderer(resume, summaryParser)
+      renderer = new ModerncvBankingRenderer(resume, layoutIndex)
       const result = renderer.renderSkills()
 
       expect(result).toMatch(/^\\section{Skills}/)
@@ -449,7 +678,7 @@ describe('ModerncvBase', () => {
     it('should return empty string if no award entries', () => {
       resume.content.awards = []
 
-      renderer = new ModerncvBankingRenderer(resume, summaryParser)
+      renderer = new ModerncvBankingRenderer(resume, layoutIndex)
       const result = renderer.renderAwards()
 
       expect(result).toBe('')
@@ -470,7 +699,7 @@ describe('ModerncvBase', () => {
         },
       ]
 
-      renderer = new ModerncvBankingRenderer(resume, summaryParser)
+      renderer = new ModerncvBankingRenderer(resume, layoutIndex)
       const result = renderer.renderAwards()
 
       expect(result).toMatch(/^\\section{Awards}/)
@@ -484,7 +713,7 @@ describe('ModerncvBase', () => {
     it('should return empty string if no certificate entries', () => {
       resume.content.certificates = []
 
-      renderer = new ModerncvBankingRenderer(resume, summaryParser)
+      renderer = new ModerncvBankingRenderer(resume, layoutIndex)
       const result = renderer.renderCertificates()
 
       expect(result).toBe('')
@@ -505,7 +734,7 @@ describe('ModerncvBase', () => {
         },
       ]
 
-      renderer = new ModerncvBankingRenderer(resume, summaryParser)
+      renderer = new ModerncvBankingRenderer(resume, layoutIndex)
       const result = renderer.renderCertificates()
 
       expect(result).toMatch(/^\\section{Certificates}/)
@@ -520,7 +749,7 @@ describe('ModerncvBase', () => {
     it('should return empty string if no publication entries', () => {
       resume.content.publications = []
 
-      renderer = new ModerncvBankingRenderer(resume, summaryParser)
+      renderer = new ModerncvBankingRenderer(resume, layoutIndex)
       const result = renderer.renderPublications()
 
       expect(result).toBe('')
@@ -543,7 +772,7 @@ describe('ModerncvBase', () => {
         },
       ]
 
-      renderer = new ModerncvBankingRenderer(resume, summaryParser)
+      renderer = new ModerncvBankingRenderer(resume, layoutIndex)
       const result = renderer.renderPublications()
 
       expect(result).toMatch(/^\\section{Publications}/)
@@ -558,7 +787,7 @@ describe('ModerncvBase', () => {
     it('should return empty string if no reference entries', () => {
       resume.content.references = []
 
-      renderer = new ModerncvBankingRenderer(resume, summaryParser)
+      renderer = new ModerncvBankingRenderer(resume, layoutIndex)
       const result = renderer.renderReferences()
 
       expect(result).toBe('')
@@ -584,7 +813,7 @@ describe('ModerncvBase', () => {
         },
       ]
 
-      renderer = new ModerncvBankingRenderer(resume, summaryParser)
+      renderer = new ModerncvBankingRenderer(resume, layoutIndex)
       const result = renderer.renderReferences()
 
       expect(result).toMatch(/^\\section{References}/)
@@ -599,7 +828,7 @@ describe('ModerncvBase', () => {
     it('should return empty string if no project entries', () => {
       resume.content.projects = []
 
-      renderer = new ModerncvBankingRenderer(resume, summaryParser)
+      renderer = new ModerncvBankingRenderer(resume, layoutIndex)
       const result = renderer.renderProjects()
 
       expect(result).toBe('')
@@ -626,11 +855,11 @@ describe('ModerncvBase', () => {
         },
       ]
 
-      renderer = new ModerncvBankingRenderer(resume, summaryParser)
+      renderer = new ModerncvBankingRenderer(resume, layoutIndex)
       const result = renderer.renderProjects()
 
       expect(result).toMatch(/^\\section{Projects}/)
-      expect(result).toContain('\\cventry{Jan 2023 -- Dec 2023}')
+      expect(result).toContain('\\cventry{Jan 2023–Dec 2023}')
       expect(result).toContain(`{${description}}`)
       expect(result).toContain(`{${name}}`)
       expect(result).toContain(`{\\href{${url}}{${url}}}`)
@@ -642,7 +871,7 @@ describe('ModerncvBase', () => {
     it('should return empty string if no interest entries', () => {
       resume.content.interests = []
 
-      renderer = new ModerncvBankingRenderer(resume, summaryParser)
+      renderer = new ModerncvBankingRenderer(resume, layoutIndex)
       const result = renderer.renderInterests()
 
       expect(result).toBe('')
@@ -659,7 +888,7 @@ describe('ModerncvBase', () => {
         },
       ]
 
-      renderer = new ModerncvBankingRenderer(resume, summaryParser)
+      renderer = new ModerncvBankingRenderer(resume, layoutIndex)
       const result = renderer.renderInterests()
 
       expect(result).toMatch(/^\\section{Interests}/)
@@ -671,7 +900,7 @@ describe('ModerncvBase', () => {
     it('should return empty string if no volunteer entries', () => {
       resume.content.volunteer = []
 
-      renderer = new ModerncvBankingRenderer(resume, summaryParser)
+      renderer = new ModerncvBankingRenderer(resume, layoutIndex)
       const result = renderer.renderVolunteer()
 
       expect(result).toBe('')
@@ -696,11 +925,11 @@ describe('ModerncvBase', () => {
         },
       ]
 
-      renderer = new ModerncvBankingRenderer(resume, summaryParser)
+      renderer = new ModerncvBankingRenderer(resume, layoutIndex)
       const result = renderer.renderVolunteer()
 
       expect(result).toMatch(/^\\section{Volunteer}/)
-      expect(result).toContain('\\cventry{Jan 2023 -- Dec 2023}')
+      expect(result).toContain('\\cventry{Jan 2023–Dec 2023}')
       expect(result).toContain(`{${position}}`)
       expect(result).toContain(`{${organization}}`)
       expect(result).toContain(`{\\href{${url}}{${url}}}`)
@@ -711,14 +940,16 @@ describe('ModerncvBase', () => {
   describe('generateTeX -> renderOrderedSections', () => {
     it('should prioritize custom sections', () => {
       // set up a resume with partial custom section order
-      resume.layout = {
-        ...resume.layout,
-        sections: {
-          order: ['work', 'education'],
+      resume.layouts = [
+        {
+          ...resume.layouts?.[layoutIndex],
+          sections: {
+            order: ['work', 'education'],
+          },
         },
-      }
+      ]
 
-      renderer = new ModerncvBankingRenderer(resume, summaryParser)
+      renderer = new ModerncvBankingRenderer(resume, layoutIndex)
       const result = renderer.render()
 
       // extract the section order from the rendered output
@@ -752,12 +983,14 @@ describe('ModerncvBase', () => {
 
     it('should use default order when no custom order is specified', () => {
       // ensure no custom order is set
-      resume.layout = {
-        ...resume.layout,
-        sections: {},
-      }
+      resume.layouts = [
+        {
+          ...resume.layouts?.[layoutIndex],
+          sections: {},
+        },
+      ]
 
-      renderer = new ModerncvBankingRenderer(resume, summaryParser)
+      renderer = new ModerncvBankingRenderer(resume, layoutIndex)
       const result = renderer.render()
 
       // extract the section order from the rendered output
@@ -790,14 +1023,16 @@ describe('ModerncvBase', () => {
       resume.content.work = []
       resume.content.skills = []
 
-      resume.layout = {
-        ...resume.layout,
-        sections: {
-          order: ['education', 'work', 'skills', 'languages'],
+      resume.layouts = [
+        {
+          ...resume.layouts?.[layoutIndex],
+          sections: {
+            order: ['education', 'work', 'skills', 'languages'],
+          },
         },
-      }
+      ]
 
-      renderer = new ModerncvBankingRenderer(resume, summaryParser)
+      renderer = new ModerncvBankingRenderer(resume, layoutIndex)
       const result = renderer.render()
 
       // extract the section order from the rendered output

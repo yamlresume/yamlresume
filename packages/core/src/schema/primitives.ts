@@ -31,11 +31,11 @@ import {
   FONT_SIZE_OPTIONS,
   FONTSPEC_NUMBERS_OPTIONS,
   LANGUAGE_OPTIONS,
+  LATEX_TEMPLATE_OPTIONS,
   LEVEL_OPTIONS,
   LOCALE_LANGUAGE_OPTIONS,
   NETWORK_OPTIONS,
   type ORDERABLE_SECTION_IDS,
-  TEMPLATE_OPTIONS,
 } from '@/models'
 import { joinNonEmptyString } from '@/utils'
 
@@ -52,7 +52,7 @@ type Options =
   | typeof LOCALE_LANGUAGE_OPTIONS
   | typeof LEVEL_OPTIONS
   | typeof NETWORK_OPTIONS
-  | typeof TEMPLATE_OPTIONS
+  | typeof LATEX_TEMPLATE_OPTIONS
   | typeof ORDERABLE_SECTION_IDS
 
 /**
@@ -346,7 +346,10 @@ export const OrganizationSchema = (name: string) =>
 /**
  * A zod schema for a template option.
  */
-export const TemplateOptionSchema = optionSchema(TEMPLATE_OPTIONS, 'template')
+export const TemplateOptionSchema = optionSchema(
+  LATEX_TEMPLATE_OPTIONS,
+  'template'
+)
 
 /**
  * A zod schema for a url.

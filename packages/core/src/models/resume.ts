@@ -23,14 +23,17 @@
  */
 
 import type {
+  LatexLayout,
+  LatexTemplate,
   LocaleLanguage,
+  MarkdownLayout,
   OrderableSectionID,
   Resume,
   ResumeContent,
-  ResumeLayout,
+  ResumeLayouts,
+  ResumeLocale,
   ResumeItem as ResumeSectionItem,
-  Template,
-} from '@/models'
+} from './types'
 
 /**
  * Defines all possible degrees.
@@ -228,11 +231,11 @@ export const SECTION_IDS = [
 ] as const
 
 /**
- * All valid top-level sections in the resume that can be aliased and re-ordered.
+ * All valid top-level sections in the resume that can be re-ordered.
  *
- * `location` and `profiles` are not excluded as these are not real sections,
- * e.g, `location` and `profiles` information are not rendered as sections in
- * the final resume.
+ * `location` and `profiles` are excluded as these are not real sections, i.e,
+ * they are always rendered as part of the "core" information at the start of a
+ * resume, not rendered as normal sections
  */
 export const ORDERABLE_SECTION_IDS = [
   'basics',
@@ -270,15 +273,15 @@ export const DEFAULT_SECTIONS_ORDER: OrderableSectionID[] = [
 ]
 
 /** Defines identifiers for the available resume templates. */
-export const TEMPLATE_OPTIONS = [
+export const LATEX_TEMPLATE_OPTIONS = [
   'moderncv-banking',
   'moderncv-casual',
   'moderncv-classic',
 ] as const
 
-export function getTemplateDetail(template: Template) {
+export function getLatexTemplateDetail(template: LatexTemplate) {
   const templateDetails: Record<
-    Template,
+    LatexTemplate,
     { name: string; description: string }
   > = {
     'moderncv-banking': {
@@ -490,16 +493,19 @@ export function getLocaleLanguageDetail(localeLanguage: LocaleLanguage) {
   throw new Error(`Invalid locale language: ${localeLanguage}`)
 }
 
-/** Default layout configuration for a new resume. */
-export const DEFAULT_RESUME_LAYOUT: ResumeLayout = {
+/** Default Markdown layout configuration. */
+export const DEFAULT_MARKDOWN_LAYOUT: MarkdownLayout = {
+  engine: 'markdown',
+}
+
+/** Default LaTeX layout configuration for the new layouts array. */
+export const DEFAULT_LATEX_LAYOUT: LatexLayout = {
+  engine: 'latex',
   template: 'moderncv-banking',
-  latex: {
+  advanced: {
     fontspec: {
       numbers: 'Auto',
     },
-  },
-  locale: {
-    language: 'en',
   },
   page: {
     margins: {
@@ -515,10 +521,22 @@ export const DEFAULT_RESUME_LAYOUT: ResumeLayout = {
   },
 }
 
+/** Default layouts configuration. */
+export const DEFAULT_RESUME_LAYOUTS: ResumeLayouts = [
+  DEFAULT_LATEX_LAYOUT,
+  DEFAULT_MARKDOWN_LAYOUT,
+]
+
+/** Default locale configuration. */
+export const DEFAULT_RESUME_LOCALE: ResumeLocale = {
+  language: 'en',
+}
+
 /** Default value when user creates a new `Resume` object. */
 export const DEFAULT_RESUME: Resume = {
   content: DEFAULT_RESUME_CONTENT,
-  layout: DEFAULT_RESUME_LAYOUT,
+  locale: DEFAULT_RESUME_LOCALE,
+  layouts: DEFAULT_RESUME_LAYOUTS,
 }
 
 /**
@@ -528,5 +546,6 @@ export const DEFAULT_RESUME: Resume = {
  */
 export const FILLED_RESUME: Resume = {
   content: FILLED_RESUME_CONTENT,
-  layout: DEFAULT_RESUME_LAYOUT,
+  locale: DEFAULT_RESUME_LOCALE,
+  layouts: DEFAULT_RESUME_LAYOUTS,
 }

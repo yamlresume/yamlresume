@@ -100,20 +100,26 @@ describe('ResumeSchema', () => {
         content: {
           ...minimalResume.content,
         },
-        layout: {
-          template: 'moderncv-banking',
-        },
+        layouts: [
+          {
+            engine: 'latex',
+            template: 'moderncv-banking',
+          },
+        ],
       },
       {
         content: {
           ...minimalResume.content,
         },
-        layout: {
-          template: 'moderncv-banking',
-          typography: {
-            fontSize: '11pt',
+        layouts: [
+          {
+            engine: 'latex',
+            template: 'moderncv-banking',
+            typography: {
+              fontSize: '11pt',
+            },
           },
-        },
+        ],
       },
     ]
 

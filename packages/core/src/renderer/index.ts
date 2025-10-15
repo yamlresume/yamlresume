@@ -22,4 +22,11 @@
  * IN THE SOFTWARE.
  */
 
+export {
+  ModerncvBankingRenderer,
+  ModerncvCasualRenderer,
+  ModerncvClassicRenderer,
+} from './latex'
+export { MarkdownRenderer } from './markdown'
+
 export { getResumeRenderer } from './resume'

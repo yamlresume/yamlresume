@@ -203,26 +203,26 @@ describe(getDateRange, () => {
         startDate: 'Oct 1, 2016',
         endDate: 'Jan 1, 2018',
         language: 'en',
-        expected: 'Oct 2016 -- Jan 2018',
+        expected: 'Oct 2016–Jan 2018',
       },
       {
         startDate: 'Oct 1, 2016',
         endDate: '',
         language: 'en',
-        expected: 'Oct 2016 -- Present',
+        expected: 'Oct 2016–Present',
       },
       {
         startDate: 'Oct 1, 2016',
         endDate: '',
         // @ts-ignore fallback to English if language is not supported
         language: '',
-        expected: 'Oct 2016 -- Present',
+        expected: 'Oct 2016–Present',
       },
       {
         startDate: 'Oct 1, 2016',
         endDate: 'Jan 1, 2018',
         language: 'es',
-        expected: 'oct 2016 -- ene 2018',
+        expected: 'oct 2016–ene 2018',
       },
       {
         startDate: 'Oct 1, 2016',
@@ -234,7 +234,7 @@ describe(getDateRange, () => {
         startDate: 'Oct 1, 2016',
         endDate: 'Jan 1, 2018',
         language: 'zh-hans',
-        expected: '2016年10月 -- 2018年1月',
+        expected: '2016年10月–2018年1月',
       },
       {
         startDate: 'Oct 1, 2016',
@@ -246,7 +246,7 @@ describe(getDateRange, () => {
         startDate: 'Oct 1, 2016',
         endDate: 'Jan 1, 2018',
         language: 'zh-hant-hk',
-        expected: '2016年10月 -- 2018年1月',
+        expected: '2016年10月–2018年1月',
       },
       {
         startDate: 'Oct 1, 2016',
@@ -258,7 +258,7 @@ describe(getDateRange, () => {
         startDate: 'Oct 1, 2016',
         endDate: 'Jan 1, 2018',
         language: 'zh-hant-tw',
-        expected: '2016年10月 -- 2018年1月',
+        expected: '2016年10月–2018年1月',
       },
       {
         startDate: 'Oct 1, 2016',
@@ -270,13 +270,13 @@ describe(getDateRange, () => {
         startDate: 'Oct 1, 2016',
         endDate: 'Jan 1, 2018',
         language: 'no',
-        expected: 'okt. 2016 -- jan. 2018',
+        expected: 'okt. 2016–jan. 2018',
       },
       {
         startDate: 'Oct 1, 2016',
         endDate: '',
         language: 'no',
-        expected: 'okt. 2016 -- Nå',
+        expected: 'okt. 2016–Nå',
       },
       {
         startDate: '',

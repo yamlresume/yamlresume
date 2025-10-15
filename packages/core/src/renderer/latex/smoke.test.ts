@@ -21,43 +21,27 @@
  * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
  * IN THE SOFTWARE.
  */
-import fs from 'node:fs'
-import path from 'node:path'
 import { cloneDeep } from 'lodash-es'
 import { beforeEach, describe, expect, it } from 'vitest'
-import yaml from 'yaml'
 
-import { MarkdownParser } from '@/compiler'
-import { type Resume, SECTION_IDS } from '@/models'
+import type { Resume } from '@/models'
 import { collectAllKeys, removeKeysFromObject } from '@/utils'
+import { getFixture, getRandomSections, sections } from '../test-utils'
 import {
   ModerncvBankingRenderer,
   ModerncvCasualRenderer,
   ModerncvClassicRenderer,
 } from './moderncv'
 
-function getFixture(resume: string): Resume {
-  const resumePath = path.join(__dirname, 'fixtures', resume)
-  const resumeContent = fs.readFileSync(resumePath, 'utf8')
-  return yaml.parse(resumeContent) as Resume
-}
-
-const sections = SECTION_IDS.filter((section) => section !== 'basics')
-
-function getRandomSections(count: number): string[] {
-  const shuffled = [...sections].sort(() => 0.5 - Math.random())
-  return shuffled.slice(0, count)
-}
-
 describe('smoke test for all renderers', () => {
   let resume: Resume
+  const layoutIndex = 0
 
   const renderers = [
     ModerncvBankingRenderer,
     ModerncvClassicRenderer,
     ModerncvCasualRenderer,
   ]
-  const summaryParser = new MarkdownParser()
 
   function expectValidLaTeXDocument(result: string) {
     expect(result).toContain('\\documentclass')
@@ -68,13 +52,13 @@ describe('smoke test for all renderers', () => {
   }
 
   beforeEach(() => {
-    resume = getFixture('full-resume.yml')
+    resume = getFixture('full-resume.yml', __dirname)
   })
 
   describe('should handle optional sections', () => {
     it('should render resume with all sections', () => {
       for (const renderer of renderers) {
-        const result = new renderer(resume, summaryParser).render()
+        const result = new renderer(resume, layoutIndex).render()
         expectValidLaTeXDocument(result)
       }
     })
@@ -84,7 +68,7 @@ describe('smoke test for all renderers', () => {
         for (const section of sections) {
           const result = new renderer(
             removeKeysFromObject(resume, [section]),
-            summaryParser
+            layoutIndex
           ).render()
           expectValidLaTeXDocument(result)
         }
@@ -100,7 +84,7 @@ describe('smoke test for all renderers', () => {
 
         const result = new renderer(
           removeKeysFromObject(resume, sectionsToRemove),
-          summaryParser
+          layoutIndex
         ).render()
         expectValidLaTeXDocument(result)
       }
@@ -110,9 +94,9 @@ describe('smoke test for all renderers', () => {
   describe('should handle optional layout', () => {
     it('should render resume with no layout', () => {
       for (const renderer of renderers) {
-        resume.layout = undefined
+        resume.layouts = undefined
 
-        const result = new renderer(resume, summaryParser).render()
+        const result = new renderer(resume, layoutIndex).render()
         expectValidLaTeXDocument(result)
       }
     })
@@ -132,7 +116,7 @@ describe('smoke test for all renderers', () => {
         }
 
         // skip certain keys that might be critical for basic functionality
-        if (key === 'content' || key === 'layout') {
+        if (['content', 'layouts', 'engine'].includes(key as string)) {
           continue
         }
 
@@ -144,7 +128,7 @@ describe('smoke test for all renderers', () => {
               key,
             ])
 
-            const result = new renderer(modifiedResume, summaryParser).render()
+            const result = new renderer(modifiedResume, layoutIndex).render()
 
             expectValidLaTeXDocument(result)
           } catch (error) {
@@ -169,7 +153,9 @@ describe('smoke test for all renderers', () => {
       for (let i = 0; i < testCases; i++) {
         // randomly select 5-15 keys to remove (but not critical ones)
         const keysToRemove = allKeys
-          .filter((key) => key !== 'content' && key !== 'layout')
+          .filter(
+            (key) => !['content', 'layouts', 'engine'].includes(key as string)
+          )
           .sort(() => 0.5 - Math.random())
           .slice(0, Math.floor(Math.random() * 10) + 5)
 
@@ -180,7 +166,7 @@ describe('smoke test for all renderers', () => {
               keysToRemove
             )
 
-            const result = new renderer(modifiedResume, summaryParser).render()
+            const result = new renderer(modifiedResume, layoutIndex).render()
 
             expectValidLaTeXDocument(result)
           } catch (error) {

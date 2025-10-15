@@ -22,37 +22,44 @@
  * IN THE SOFTWARE.
  */
 
-import type { Node } from '@/compiler'
-import type { Resume } from '@/models'
+import { describe, expect, it } from 'vitest'
 
-/**
- * Context for code generation containing layout settings.
- */
-export interface CodeGenerationContext {
-  /** Typography settings from the resume layout. */
-  typography?: Resume['layouts'] extends Array<infer T>
-    ? T extends { typography?: infer U }
-      ? U
-      : never
-    : never
-}
+import { LATEX_TEMPLATE_OPTIONS } from '@/models'
+import { optionSchemaMessage } from '../primitives'
+import { expectSchemaMetadata, validateZodErrors } from '../zod'
+import { TemplateSchema } from './template'
 
-/**
- * Interface to generate code from an AST.
- *
- * This interface defines the contract for code generation of abstract syntax
- * tree (AST) nodes. Implementations of this interface are responsible for
- * converting AST nodes into their corresponding code representations.
- *
- * @see {@link Node}
- */
-export interface CodeGenerator {
-  /**
-   * Generate code from an AST node.
-   *
-   * @param node - The AST node to generate code from.
-   * @param context - Optional context containing layout settings.
-   * @returns The generated code.
-   */
-  generate(node: Node, context?: CodeGenerationContext): string
-}
+describe('TemplateSchema', () => {
+  it('should have correct metadata', () => {
+    expectSchemaMetadata(TemplateSchema.shape.template)
+  })
+
+  it('should validate a template if it is valid', () => {
+    const tests = [{}, { template: LATEX_TEMPLATE_OPTIONS[0] }]
+
+    for (const template of tests) {
+      expect(TemplateSchema.parse(template)).toStrictEqual(template)
+    }
+  })
+
+  it('should throw an error if the template is invalid', () => {
+    const tests = [
+      {
+        template: 'invalid-template',
+        error: {
+          errors: [],
+          properties: {
+            template: {
+              errors: [optionSchemaMessage(LATEX_TEMPLATE_OPTIONS, 'template')],
+            },
+          },
+        },
+      },
+    ]
+
+    for (const { template, error } of tests) {
+      // @ts-ignore
+      validateZodErrors(TemplateSchema, { template }, error)
+    }
+  })
+})

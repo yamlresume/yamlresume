@@ -31,7 +31,7 @@ import type {
   Language,
   Level,
   LocaleLanguage,
-  OrderableSectionID,
+  SectionID,
 } from '@/models'
 
 import {
@@ -55,7 +55,7 @@ type OptionTranslation = {
   /** Translations for language names. */
   languages: Record<Language, string>
   /** Translations for resume section titles. */
-  sections: Record<OrderableSectionID, string>
+  sections: Record<SectionID, string>
   /** Translations for skill proficiency levels. */
   skills: Record<Level, string>
 }
@@ -184,6 +184,8 @@ export function getOptionTranslation<K extends OptionCategory>(
         education: 'Education',
         interests: 'Interests',
         languages: 'Languages',
+        location: 'Location',
+        profiles: 'Profiles',
         projects: 'Projects',
         publications: 'Publications',
         references: 'References',
@@ -302,6 +304,8 @@ export function getOptionTranslation<K extends OptionCategory>(
         education: '教育背景',
         interests: '兴趣爱好',
         languages: '语言',
+        location: '位置',
+        profiles: '个人主页',
         projects: '项目',
         publications: '出版刊物',
         references: '引荐',
@@ -420,6 +424,8 @@ export function getOptionTranslation<K extends OptionCategory>(
         education: '教育背景',
         interests: '興趣愛好',
         languages: '語言',
+        location: '位置',
+        profiles: '個人主頁',
         projects: '項目',
         publications: '出版刊物',
         references: '引薦',
@@ -538,6 +544,8 @@ export function getOptionTranslation<K extends OptionCategory>(
         education: '教育背景',
         interests: '興趣愛好',
         languages: '語言',
+        location: '位置',
+        profiles: '個人主頁',
         projects: '項目',
         publications: '出版刊物',
         references: '引薦',
@@ -657,6 +665,8 @@ export function getOptionTranslation<K extends OptionCategory>(
         education: 'Educación',
         interests: 'Intereses',
         languages: 'Idiomas',
+        location: 'Ubicación',
+        profiles: 'Perfiles',
         projects: 'Proyectos',
         publications: 'Publicaciones',
         references: 'Referencias',
@@ -775,6 +785,8 @@ export function getOptionTranslation<K extends OptionCategory>(
         education: 'Formation',
         interests: "Centres d'intérêt",
         languages: 'Langues',
+        location: 'Localisation',
+        profiles: 'Profils',
         projects: 'Projets',
         publications: 'Publications',
         references: 'Références',
@@ -893,6 +905,8 @@ export function getOptionTranslation<K extends OptionCategory>(
         education: 'Utdanning',
         interests: 'Interesser',
         languages: 'Språk',
+        location: 'Plassering',
+        profiles: 'Profiler',
         projects: 'Prosjekter',
         publications: 'Publikasjoner',
         references: 'Referanser',

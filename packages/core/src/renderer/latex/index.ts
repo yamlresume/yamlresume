@@ -22,37 +22,9 @@
  * IN THE SOFTWARE.
  */
 
-import type { Node } from '@/compiler'
-import type { Resume } from '@/models'
-
-/**
- * Context for code generation containing layout settings.
- */
-export interface CodeGenerationContext {
-  /** Typography settings from the resume layout. */
-  typography?: Resume['layouts'] extends Array<infer T>
-    ? T extends { typography?: infer U }
-      ? U
-      : never
-    : never
-}
-
-/**
- * Interface to generate code from an AST.
- *
- * This interface defines the contract for code generation of abstract syntax
- * tree (AST) nodes. Implementations of this interface are responsible for
- * converting AST nodes into their corresponding code representations.
- *
- * @see {@link Node}
- */
-export interface CodeGenerator {
-  /**
-   * Generate code from an AST node.
-   *
-   * @param node - The AST node to generate code from.
-   * @param context - Optional context containing layout settings.
-   * @returns The generated code.
-   */
-  generate(node: Node, context?: CodeGenerationContext): string
-}
+export {
+  ModerncvBankingRenderer,
+  ModerncvBase,
+  ModerncvCasualRenderer,
+  ModerncvClassicRenderer,
+} from './moderncv'

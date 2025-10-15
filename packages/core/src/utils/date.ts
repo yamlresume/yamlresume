@@ -104,14 +104,15 @@ export function getDateRange(
       case 'es':
         return `${localizeDate(startDate, language)} hasta la fecha`
       case 'no':
-        return `${localizeDate(startDate, language)} -- Nå`
+        return `${localizeDate(startDate, language)}–Nå`
       default:
         // by default we return English's "Present" if language is not supported
-        return `${localizeDate(startDate, language)} -- Present`
+        return `${localizeDate(startDate, language)}–Present`
     }
   }
 
-  return `${localizeDate(startDate, language)} -- ${localizeDate(
+  // Please note that we use en-dash instead of hyphen as the date separator
+  return `${localizeDate(startDate, language)}–${localizeDate(
     endDate,
     language
   )}`

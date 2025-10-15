@@ -22,37 +22,32 @@
  * IN THE SOFTWARE.
  */
 
-import type { Node } from '@/compiler'
-import type { Resume } from '@/models'
+import { z } from 'zod'
+
+import { joinNonEmptyString } from '@/utils'
+import { LocaleLanguageOptionSchema } from '../primitives'
+import { nullifySchema } from '../utils'
 
 /**
- * Context for code generation containing layout settings.
- */
-export interface CodeGenerationContext {
-  /** Typography settings from the resume layout. */
-  typography?: Resume['layouts'] extends Array<infer T>
-    ? T extends { typography?: infer U }
-      ? U
-      : never
-    : never
-}
-
-/**
- * Interface to generate code from an AST.
+ * A zod schema for validating locale configuration.
  *
- * This interface defines the contract for code generation of abstract syntax
- * tree (AST) nodes. Implementations of this interface are responsible for
- * converting AST nodes into their corresponding code representations.
- *
- * @see {@link Node}
+ * Validates that the language field contains a supported locale language
+ * option.
  */
-export interface CodeGenerator {
-  /**
-   * Generate code from an AST node.
-   *
-   * @param node - The AST node to generate code from.
-   * @param context - Optional context containing layout settings.
-   * @returns The generated code.
-   */
-  generate(node: Node, context?: CodeGenerationContext): string
-}
+export const LocaleSchema = z.object({
+  locale: z
+    .object({
+      language: nullifySchema(LocaleLanguageOptionSchema),
+    })
+    .nullish()
+    .meta({
+      title: 'Locale',
+      description: joinNonEmptyString(
+        [
+          'Top-level locale language settings,',
+          'determining the language used for the resume.',
+        ],
+        ' '
+      ),
+    }),
+})

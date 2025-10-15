@@ -90,6 +90,7 @@ class TestRenderer extends Renderer {
 describe('Renderer', () => {
   let mockResume: Resume
   let renderer: TestRenderer
+  const layoutIndex = 0
 
   beforeEach(() => {
     mockResume = {
@@ -105,7 +106,7 @@ describe('Renderer', () => {
       },
     } as Resume
 
-    renderer = new TestRenderer(mockResume)
+    renderer = new TestRenderer(mockResume, layoutIndex)
   })
 
   describe('constructor', () => {
@@ -133,7 +134,7 @@ describe('Renderer', () => {
 
     it('should handle missing data gracefully', () => {
       const emptyResume = {} as Resume
-      const emptyRenderer = new TestRenderer(emptyResume)
+      const emptyRenderer = new TestRenderer(emptyResume, layoutIndex)
 
       expect(emptyRenderer.renderBasics()).toBe('')
       expect(emptyRenderer.renderSummary()).toBe('')

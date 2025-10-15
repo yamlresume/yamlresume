@@ -25,6 +25,7 @@
 import fs from 'node:fs'
 import path from 'node:path'
 import {
+  DEFAULT_RESUME_LAYOUTS,
   getResumeRenderer,
   joinNonEmptyString,
   type Resume,
@@ -67,6 +68,38 @@ export function inferOutput(resumePath: string, outputDir?: string): string {
   }
 
   throw new YAMLResumeError('INVALID_EXTNAME', { extname })
+}
+
+/**
+ * Get the output file path with support for multiple outputs and custom extension
+ *
+ * @param resumePath - The source resume file path
+ * @param extension - The target file extension (e.g., '.tex', '.md')
+ * @param index - The index of the current layout
+ * @param total - The total number of layouts for this engine
+ * @param outputDir - Optional output directory
+ * @returns The determined output file path
+ */
+function getOutputPath(
+  resumePath: string,
+  extension: string,
+  index: number,
+  total: number,
+  outputDir?: string
+): string {
+  const baseName = path.basename(resumePath.replace(/\.yaml|\.yml|\.json$/, ''))
+
+  // If there are multiple layouts, append the index to the filename
+  // e.g., resume.0.tex, resume.1.tex
+  // Otherwise, use the base filename
+  // e.g., resume.tex
+  const fileName =
+    total > 1 ? `${baseName}.${index}${extension}` : `${baseName}${extension}`
+
+  if (outputDir) {
+    return path.join(outputDir, fileName)
+  }
+  return path.join(path.dirname(resumePath), fileName)
 }
 
 /**
@@ -119,17 +152,22 @@ export function inferLaTeXEnvironment(): LaTeXEnvironment {
 /**
  * Infer the LaTeX command to use based on the LaTeX environment
  *
- * @param resumePath - The source resume file
+ * @param resumePathOrTexFile - The source resume file OR the target .tex file
+ * @param outputDir - Optional output directory
  * @returns The LaTeX command
  * @throws {Error} If the LaTeX environment cannot be inferred or the source
  * file extension is unsupported.
  */
 export function inferLaTeXCommand(
-  resumePath: string,
+  resumePathOrTexFile: string,
   outputDir?: string
 ): { command: string; args: string[]; cwd: string } {
   const environment = inferLaTeXEnvironment()
-  const texFile = inferOutput(resumePath, outputDir)
+
+  // If the input is already a .tex file, use it directly; otherwise infer from .yaml/.json
+  const texFile = resumePathOrTexFile.endsWith('.tex')
+    ? resumePathOrTexFile
+    : inferOutput(resumePathOrTexFile, outputDir)
 
   let command = ''
   let args: string[] = []
@@ -153,58 +191,103 @@ export function inferLaTeXCommand(
 }
 
 /**
- * Compiles the resume source file to a LaTeX file.
+ * Normalize the file extension that can be used in the output file name
  *
- * @param resumePath - The source resume file path (YAML, YML, or JSON).
- * @param resume - The parsed resume object.
- * @param outputDir - Optional output directory for the generated tex file.
- * @remarks This function performs file I/O: writes a .tex file.
- * @throws {Error} Can throw if rendering or writing fails.
+ * @param extension - file extension
+ * @returns
  */
-export function generateTeX(
-  resumePath: string,
-  resume: Resume,
-  outputDir?: string
-) {
-  // make sure the file has an valid extension, i.e, '.json', '.yml' or '.yaml'
-  const texFile = inferOutput(resumePath, outputDir)
-
-  // Create output directory if it doesn't exist
-  if (outputDir && !fs.existsSync(outputDir)) {
-    fs.mkdirSync(outputDir, { recursive: true })
-  }
-
-  const renderer = getResumeRenderer(resume)
-  const tex = renderer.render()
-
-  try {
-    fs.writeFileSync(texFile, tex)
-  } catch (_error) {
-    throw new YAMLResumeError('FILE_WRITE_ERROR', { path: texFile })
+export function normalizeExtension(extension: string): string {
+  switch (extension) {
+    case '.tex':
+      return 'tex'
+    case '.md':
+      return 'markdown'
+    default:
+      return extension.replace('.', '')
   }
 }
 
 /**
- * Build a YAML resume to LaTeX & PDF
+ * Shared helper to generate output file from a layout
+ */
+function generateOutput(
+  resumePath: string,
+  resume: Resume,
+  index: number,
+  total: number,
+  outputDir: string | undefined,
+  extension: string,
+  layoutIndex: number
+): string {
+  const outputFile = getOutputPath(
+    resumePath,
+    extension,
+    index,
+    total,
+    outputDir
+  )
+
+  const dir = path.dirname(outputFile)
+  if (!fs.existsSync(dir)) {
+    fs.mkdirSync(dir, { recursive: true })
+  }
+
+  const renderer = getResumeRenderer(resume, layoutIndex)
+  const content = renderer.render()
+
+  try {
+    fs.writeFileSync(outputFile, content)
+    consola.success(
+      joinNonEmptyString(
+        [
+          `Generated resume ${normalizeExtension(extension)} file successfully:`,
+          outputFile,
+        ],
+        ' '
+      )
+    )
+  } catch (_error) {
+    throw new YAMLResumeError('FILE_WRITE_ERROR', { path: outputFile })
+  }
+
+  return outputFile
+}
+
+/**
+ * Compile a TeX file to PDF
+ */
+async function compileLaTeX(texFile: string, outputDir?: string) {
+  const { command, args, cwd } = inferLaTeXCommand(texFile, outputDir)
+
+  consola.start(
+    `Generating resume pdf file with command: \`${command} ${args.join(' ')}\`...`
+  )
+
+  try {
+    const result = await execa(command, args, {
+      cwd,
+      encoding: 'utf8',
+    })
+    consola.success(
+      `Generated resume pdf file successfully: ${getPdfPath(texFile)}`
+    )
+    consola.debug(joinNonEmptyString(['stdout: ', toCodeBlock(result.stdout)]))
+  } catch (error) {
+    consola.debug(joinNonEmptyString(['stdout: ', toCodeBlock(error.stdout)]))
+    consola.debug(joinNonEmptyString(['stderr: ', toCodeBlock(error.stderr)]))
+    throw new YAMLResumeError('LATEX_COMPILE_ERROR', { error: error.message })
+  }
+}
+
+/**
+ * Build a YAML resume to LaTeX & PDF and/or Markdown
  *
  * It first validates the resume against the schema (unless `--no-validate` flag
- * is used), then generates the .tex file (using `generateTeX`) and then runs
- * the inferred LaTeX command (e.g., xelatex or tectonic) to produce the PDF.
- *
- * Steps:
- * 1. read the resume from the source file
- * 2. validate the resume against YAMLResume schema (unless `--no-validate`)
- * 3. infer the LaTeX command to use
- *    3.1. infer the LaTeX environment to use
- *    3.2. infer the output destination
- * 4. build the resume to LaTeX and PDF at the same time
+ * is used), then iterates through configured layouts to generate outputs.
  *
  * @param resumePath - The source resume file path (YAML, YML, or JSON).
- * @param options - Build options including validation, PDF generation flags, and output directory.
- * @remarks This function performs file I/O (via `generateTeX`) and executes an
- * external process (LaTeX compiler).
- * @throws {Error} Can throw if .tex generation, LaTeX command inference, or the
- * LaTeX compilation process fails.
+ * @param options - Build options including validation, PDF generation flags,
+ * and output directory.
  */
 export async function buildResume(
   resumePath: string,
@@ -215,33 +298,59 @@ export async function buildResume(
 ) {
   const { resume } = readResume(resumePath, options.validate)
 
-  // Generate tex file (in output directory if specified, current directory otherwise)
-  generateTeX(resumePath, resume, options.output)
-
-  if (!options.pdf) {
-    consola.success('Generated resume TeX file successfully.')
-    return
+  // Fallback to default layout if none provided
+  const allLayouts = resume.layouts ?? DEFAULT_RESUME_LAYOUTS
+  // Ensure resume has layouts for the renderer to use
+  if (!resume.layouts) {
+    resume.layouts = allLayouts
   }
 
-  // Generate PDF using LaTeX
-  const { command, args, cwd } = inferLaTeXCommand(resumePath, options.output)
+  // Count totals for each engine to determine file naming strategy
+  // (e.g. resume.0.tex vs resume.tex)
+  const totals = {
+    latex: allLayouts.filter((l) => l.engine === 'latex').length,
+    markdown: allLayouts.filter((l) => l.engine === 'markdown').length,
+  }
 
-  consola.start(
-    `Generating resume PDF file with command: \`${command} ${args.join(' ')}\`...`
-  )
+  // Track current index for each engine
+  const indices = {
+    latex: 0,
+    markdown: 0,
+  }
 
-  try {
-    // Use execa with cwd parameter to run LaTeX command in the correct directory
-    const result = await execa(command, args, {
-      cwd,
-      encoding: 'utf8',
-    })
-    consola.success('Generated resume PDF file successfully.')
-    consola.debug(joinNonEmptyString(['stdout: ', toCodeBlock(result.stdout)]))
-  } catch (error) {
-    consola.debug(joinNonEmptyString(['stdout: ', toCodeBlock(error.stdout)]))
-    consola.debug(joinNonEmptyString(['stderr: ', toCodeBlock(error.stderr)]))
-    throw new YAMLResumeError('LATEX_COMPILE_ERROR', { error: error.message })
+  for (let layoutIndex = 0; layoutIndex < allLayouts.length; layoutIndex++) {
+    const layout = allLayouts[layoutIndex]
+
+    switch (layout.engine) {
+      case 'latex': {
+        const texFile = generateOutput(
+          resumePath,
+          resume,
+          indices.latex++,
+          totals.latex,
+          options.output,
+          '.tex',
+          layoutIndex
+        )
+
+        if (options.pdf === true) {
+          await compileLaTeX(texFile, options.output)
+        }
+        break
+      }
+      case 'markdown': {
+        generateOutput(
+          resumePath,
+          resume,
+          indices.markdown++,
+          totals.markdown,
+          options.output,
+          '.md',
+          layoutIndex
+        )
+        break
+      }
+    }
   }
 }
 
@@ -251,9 +360,12 @@ export async function buildResume(
 export function createBuildCommand() {
   return new Command()
     .name('build')
-    .description('build a resume to LaTeX and PDF')
+    .description('build a resume to LaTeX, PDF, or Markdown')
     .argument('<resume-path>', 'the resume file path')
-    .option('--no-pdf', 'only generate TeX file without PDF')
+    .option(
+      '--no-pdf',
+      'only generate TeX file without PDF (for LaTeX layouts)'
+    )
     .option('--no-validate', 'skip resume schema validation')
     .option('-o, --output <dir>', 'output directory for generated files')
     .action(

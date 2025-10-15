@@ -23,7 +23,8 @@
  */
 
 import {
-  DEFAULT_RESUME_LAYOUT,
+  DEFAULT_RESUME_LAYOUTS,
+  DEFAULT_RESUME_LOCALE,
   isEmptyValue,
   type Resume,
 } from '@yamlresume/core'
@@ -258,6 +259,7 @@ export function convertJSONResumeToYAMLResume(jsonResume: JSONResume): Resume {
   // return a valid YAMLResume object, with content and a default layout
   return {
     content,
-    layout: DEFAULT_RESUME_LAYOUT,
+    locale: DEFAULT_RESUME_LOCALE,
+    layouts: DEFAULT_RESUME_LAYOUTS,
   } as Resume
 }

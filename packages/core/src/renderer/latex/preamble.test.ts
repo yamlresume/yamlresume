@@ -22,36 +22,13 @@
  * IN THE SOFTWARE.
  */
 
-import { z } from 'zod'
+import { describe, expect, it } from 'vitest'
+import { normalizeUnit } from './preamble'
 
-import { joinNonEmptyString } from '@/utils'
-import { FontspecNumbersOptionSchema } from '../primitives'
-import { nullifySchema } from '../utils'
-
-/**
- * A zod schema for validating LaTeX configuration.
- *
- * Validates LaTeX-specific settings including font specification
- * options like number styling.
- */
-export const LatexSchema = z.object({
-  latex: z
-    .object({
-      fontspec: z
-        .object({
-          numbers: nullifySchema(FontspecNumbersOptionSchema),
-        })
-        .nullish(),
-    })
-    .nullish()
-    .meta({
-      title: 'LaTeX',
-      description: joinNonEmptyString(
-        [
-          'The LaTeX section contains LaTeX-specific settings,',
-          'including fontspec package configurations.',
-        ],
-        ' '
-      ),
-    }),
+describe(normalizeUnit, () => {
+  it('should remove spaces between number and unit', () => {
+    expect(normalizeUnit('10 cm')).toBe('10cm')
+    expect(normalizeUnit('11 pt')).toBe('11pt')
+    expect(normalizeUnit('12.5 em')).toBe('12.5em')
+  })
 })

@@ -24,42 +24,67 @@
 
 import { get } from 'lodash-es'
 
-import { MarkdownParser, type Parser } from '@/compiler'
+import type { Parser } from '@/compiler'
+import { MarkdownParser } from '@/compiler'
 import type { Resume } from '@/models'
 import type { Renderer } from './base'
 import {
   ModerncvBankingRenderer,
   ModerncvCasualRenderer,
   ModerncvClassicRenderer,
-} from './moderncv'
+} from './latex/moderncv'
+import { MarkdownRenderer } from './markdown'
 
-const RESUME_RENDERER_MAP = {
+const LATEX_RESUME_RENDERER_MAP = {
   'moderncv-banking': ModerncvBankingRenderer,
   'moderncv-classic': ModerncvClassicRenderer,
   'moderncv-casual': ModerncvCasualRenderer,
 }
 
 /**
- * Get the appropriate resume renderer based on the provided resume.
+ * Get the appropriate resume renderer based on the provided resume layout.
  *
- * @param {Resume} resume - The resume object
+ * @param {number} layoutIndex - The index of the layout to use.
  * @param {Parser} summaryParser - The parser instance for the summary field.
  * Default to `MarkdownParser` if not provided.
  * @returns {Renderer} The renderer instance for the specified template.
  */
 export function getResumeRenderer(
   resume: Resume,
+  layoutIndex: number,
   summaryParser: Parser = new MarkdownParser()
 ): Renderer {
-  const template = resume.layout?.template
+  const layout = resume.layouts?.[layoutIndex]
 
-  // default to use moderncv banking style if template is not specified
-  if (!template) {
-    return new ModerncvBankingRenderer(resume as Resume, summaryParser)
+  if (!layout) {
+    throw new Error(
+      `Layout not found in resume.layouts at index: ${layoutIndex}.`
+    )
   }
 
-  return new (get(RESUME_RENDERER_MAP, template, ModerncvBankingRenderer))(
-    resume as Resume,
-    summaryParser
-  )
+  switch (layout.engine) {
+    case 'markdown':
+      return new MarkdownRenderer(resume, layoutIndex, summaryParser)
+    case 'latex': {
+      const template = layout.template
+
+      // default to use moderncv banking style if template is not specified
+      if (!template) {
+        return new ModerncvBankingRenderer(
+          resume as Resume,
+          layoutIndex,
+          summaryParser
+        )
+      }
+
+      return new (get(
+        LATEX_RESUME_RENDERER_MAP,
+        template,
+        ModerncvBankingRenderer
+      ))(resume as Resume, layoutIndex, summaryParser)
+    }
+    default:
+      // @ts-ignore
+      throw new Error(`Unknown engine: ${layout.engine}`)
+  }
 }

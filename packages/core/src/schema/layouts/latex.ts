@@ -25,27 +25,31 @@
 import { z } from 'zod'
 
 import { joinNonEmptyString } from '@/utils'
-import { LocaleLanguageOptionSchema } from '../primitives'
+import { FontspecNumbersOptionSchema } from '../primitives'
 import { nullifySchema } from '../utils'
 
 /**
- * A zod schema for validating locale configuration.
+ * A zod schema for validating LaTeX configuration.
  *
- * Validates that the language field contains a supported locale language
- * option.
+ * Validates LaTeX-specific settings including font specification
+ * options like number styling.
  */
-export const LocaleSchema = z.object({
-  locale: z
+export const LatexSchema = z.object({
+  advanced: z
     .object({
-      language: nullifySchema(LocaleLanguageOptionSchema),
+      fontspec: z
+        .object({
+          numbers: nullifySchema(FontspecNumbersOptionSchema),
+        })
+        .nullish(),
     })
     .nullish()
     .meta({
-      title: 'Locale',
+      title: 'Advanced',
       description: joinNonEmptyString(
         [
-          'The locale section contains locale language settings,',
-          'determining the language used for the resume.',
+          'The Advanced section contains advanced latex settings,',
+          'including fontspec package configurations.',
         ],
         ' '
       ),

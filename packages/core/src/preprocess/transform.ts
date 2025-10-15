@@ -26,17 +26,21 @@ import { capitalize, cloneDeep, isArray, merge } from 'lodash-es'
 
 import { LatexCodeGenerator, type Parser } from '@/compiler'
 import {
-  DEFAULT_RESUME_LAYOUT,
+  DEFAULT_LATEX_LAYOUT,
+  DEFAULT_MARKDOWN_LAYOUT,
+  DEFAULT_RESUME_LAYOUTS,
+  DEFAULT_RESUME_LOCALE,
   FILLED_RESUME_CONTENT,
-  type OrderableSectionID,
   type ProfileItem,
   type Resume,
+  type SectionID,
 } from '@/models'
 import { getOptionTranslation, getTemplateTranslations } from '@/translations'
 import {
   escapeLatex,
   getDateRange,
   isEmptyValue,
+  joinNonEmptyString,
   localizeDate,
   showIf,
 } from '@/utils'
@@ -238,15 +242,13 @@ function transformResumeSectionValues(sectionResumeItem: Object): void {
 export function transformEducationCourses(resume: Resume): Resume {
   const {
     punctuations: { separator },
-  } = getTemplateTranslations(resume.layout.locale?.language)
+  } = getTemplateTranslations(resume.locale?.language)
 
   resume.content.education.forEach((item, index: number) => {
     if (!isEmptyValue(item.courses)) {
       resume.content.education[index].computed = {
         ...resume.content.education[index].computed,
-        // courses are generally longer than keywords, so we use both separator
-        // and newline to separate them to improve readability
-        courses: (item.courses as string[]).join(`${separator}\n`),
+        courses: (item.courses as string[]).join(`${separator}`),
       }
     }
   })
@@ -267,15 +269,15 @@ export function transformEducationCourses(resume: Resume): Resume {
 export function transformEducationDegreeAreaAndScore(resume: Resume): Resume {
   const {
     punctuations: { colon, comma },
-  } = getTemplateTranslations(resume.layout.locale?.language)
+  } = getTemplateTranslations(resume.locale?.language)
 
   const {
     terms: { score },
-  } = getTemplateTranslations(resume.layout.locale?.language)
+  } = getTemplateTranslations(resume.locale?.language)
 
   resume.content.education.forEach((item) => {
     const degree = getOptionTranslation(
-      resume.layout.locale?.language,
+      resume.locale?.language,
       'degrees',
       item.degree
     )
@@ -309,7 +311,7 @@ export function transformEducationDegreeAreaAndScore(resume: Resume): Resume {
 export function transformKeywords(resume: Resume): Resume {
   const {
     punctuations: { separator },
-  } = getTemplateTranslations(resume.layout.locale?.language)
+  } = getTemplateTranslations(resume.locale?.language)
 
   for (const section of [
     'interests',
@@ -356,7 +358,7 @@ export function transformDate(resume: Resume): Resume {
     resume.content[section].forEach((item: { date: string }, index: number) => {
       resume.content[section][index].computed = {
         ...resume.content[section][index].computed,
-        date: localizeDate(item.date, resume.layout.locale?.language),
+        date: localizeDate(item.date, resume.locale?.language),
       }
     })
   }
@@ -366,10 +368,7 @@ export function transformDate(resume: Resume): Resume {
       (item: { releaseDate: string }, index: number) => {
         resume.content[section][index].computed = {
           ...resume.content[section][index].computed,
-          releaseDate: localizeDate(
-            item.releaseDate,
-            resume.layout.locale?.language
-          ),
+          releaseDate: localizeDate(item.releaseDate, resume.locale?.language),
         }
       }
     )
@@ -380,21 +379,18 @@ export function transformDate(resume: Resume): Resume {
       (item: { startDate: string; endDate: string }, index: number) => {
         resume.content[section][index].computed = {
           ...resume.content[section][index].computed,
-          startDate: localizeDate(
-            item.startDate,
-            resume.layout.locale?.language
-          ),
+          startDate: localizeDate(item.startDate, resume.locale?.language),
         }
         resume.content[section][index].computed = {
           ...resume.content[section][index].computed,
-          endDate: localizeDate(item.endDate, resume.layout.locale?.language),
+          endDate: localizeDate(item.endDate, resume.locale?.language),
         }
         resume.content[section][index].computed = {
           ...resume.content[section][index].computed,
           dateRange: getDateRange(
             item.startDate,
             item.endDate,
-            resume.layout.locale?.language
+            resume.locale?.language
           ),
         }
       }
@@ -446,12 +442,12 @@ export function transformLanguage(resume: Resume): Resume {
     item.computed = {
       ...item.computed,
       language: getOptionTranslation(
-        resume.layout.locale?.language,
+        resume.locale?.language,
         'languages',
         item.language
       ),
       fluency: getOptionTranslation(
-        resume.layout.locale?.language,
+        resume.locale?.language,
         'fluency',
         item.fluency
       ),
@@ -476,76 +472,50 @@ export function transformLanguage(resume: Resume): Resume {
 export function transformLocation(resume: Resume): Resume {
   const {
     punctuations: { comma },
-  } = getTemplateTranslations(resume.layout.locale?.language)
+  } = getTemplateTranslations(resume.locale?.language)
+
+  const {
+    content: {
+      location: { address, city, region, postalCode },
+    },
+  } = resume
 
   const country = getOptionTranslation(
-    resume.layout.locale?.language,
+    resume.locale?.language,
     'countries',
     resume.content.location.country
   )
 
-  switch (resume.layout.locale?.language) {
+  switch (resume.locale?.language) {
     case 'zh-hans':
     case 'zh-hant-hk':
     case 'zh-hant-tw': {
-      // For Chinese and Spanish, the address format is:
+      // For Chinese, the address format is most generic to more specific, i.e,
       // Country > Region > City  > Address
-      const postalCodeAndAddress = [
-        resume.content.location.address,
-        resume.content.location.postalCode,
-      ]
-        .filter((value) => !isEmptyValue(value))
-        .join(comma)
-
-      const regionAndCountry = [country, resume.content.location.region]
-        .filter((value) => !isEmptyValue(value))
-        .join(comma)
-
-      const fullAddress = [
-        regionAndCountry,
-        resume.content.location.city,
-        postalCodeAndAddress,
-      ]
-        .filter((value) => !isEmptyValue(value))
-        // en-dash here in latex
-        .join(' -- ')
+      const fullAddress = joinNonEmptyString(
+        [country, region, city, address, postalCode].filter(
+          (value) => !isEmptyValue(value)
+        ),
+        comma
+      )
 
       resume.content.location.computed = {
         ...resume.content.location.computed,
-        postalCodeAndAddress,
-        regionAndCountry,
         fullAddress,
       }
 
       break
     }
     default: {
-      // For English, the address format is Country > Region > City > Address
-      const postalCodeAndAddress = [resume.content.location.address]
-        .filter((value) => !isEmptyValue(value))
-        .join(comma)
-
-      const regionCountryAndPostalCode = [
-        resume.content.location.region,
-        country,
-        resume.content.location.postalCode,
-      ]
-        .filter((value) => !isEmptyValue(value))
-        .join(comma)
-
-      const fullAddress = [
-        resume.content.location.address,
-        resume.content.location.city,
-        regionCountryAndPostalCode,
-      ]
-        .filter((value) => !isEmptyValue(value))
-        // en-dash here in latex
-        .join(' -- ')
+      const fullAddress = joinNonEmptyString(
+        [address, city, region, country, postalCode].filter(
+          (value) => !isEmptyValue(value)
+        ),
+        comma
+      )
 
       resume.content.location.computed = {
         ...resume.content.location.computed,
-        postalCodeAndAddress,
-        regionAndCountry: regionCountryAndPostalCode,
         fullAddress,
       }
 
@@ -630,7 +600,7 @@ export function transformProfileUrls(resume: Resume): Resume {
 export function transformSkills(resume: Resume): Resume {
   resume.content.skills.forEach((item) => {
     const level = getOptionTranslation(
-      resume.layout.locale?.language,
+      resume.locale?.language,
       'skills',
       item.level
     )
@@ -683,10 +653,17 @@ export function transformProfileLinks(resume: Resume): Resume {
  * aliases in `layout.sections.alias` will override default translations.
  *
  * @param resume - The resume object.
+ * @param layoutIndex - The index of the selected layout to pull section aliases
+ * from.
+ * @param _summaryParser - Unused parser kept for API consistency.
  * @returns The transformed resume object.
  * @remarks Modifies `resume.content.computed`.
  */
-export function transformSectionNames(resume: Resume): Resume {
+export function transformSectionNames(
+  resume: Resume,
+  layoutIndex: number,
+  _summaryParser: Parser
+): Resume {
   resume.content.computed = {
     ...resume.content.computed,
     sectionNames: Object.keys(resume.content).reduce(
@@ -695,19 +672,16 @@ export function transformSectionNames(resume: Resume): Resume {
           return translations
         }
 
-        const sectionId = sectionName as OrderableSectionID
+        const sectionId = sectionName as SectionID
 
-        // Check if there's an alias for this section
-        const sectionAlias = resume.layout?.sections?.aliases?.[sectionId]
+        // Check if there's an alias for this section in the first layout
+        const sectionAlias =
+          resume.layouts?.[layoutIndex]?.sections?.aliases?.[sectionId]
 
         // Use the alias if provided, otherwise use default translation
         translations[sectionName] =
           sectionAlias ||
-          getOptionTranslation(
-            resume.layout.locale?.language,
-            'sections',
-            sectionId
-          )
+          getOptionTranslation(resume.locale?.language, 'sections', sectionId)
 
         return translations
       },
@@ -725,6 +699,8 @@ export function transformSectionNames(resume: Resume): Resume {
  * Stores the result in the corresponding `computed.summary` field, replacing blank lines.
  *
  * @param resume - The resume object.
+ * @param layoutIndex - The index of the selected layout to pull typography
+ * overrides from.
  * @param summaryParser - The parser instance (e.g., `MarkdownParser`)
  * @returns The transformed resume object.
  * @remarks Modifies `computed.summary` within `basics` and items in sections
@@ -732,10 +708,17 @@ export function transformSectionNames(resume: Resume): Resume {
  */
 export function transformSummary(
   resume: Resume,
+  layoutIndex: number,
   summaryParser: Parser
 ): Resume {
+  const layout = resume.layouts?.[layoutIndex]
+
+  if (layout?.engine === 'markdown') {
+    return resume
+  }
+
   const typographyContext = {
-    typography: resume.layout?.typography,
+    typography: layout?.typography,
   }
 
   resume.content.basics.computed = {
@@ -802,12 +785,14 @@ export function transformSummary(
  * The order of internal transformations is important.
  *
  * @param resume - The resume object to transform.
+ * @param layoutIndex - The index of the selected layout.
  * @param summaryParser - The parser for handling summary fields.
  * @returns The transformed resume object.
  * @remarks Modifies the `resume.content` object and its children in place.
  */
 export function transformResumeContent(
   resume: Resume,
+  layoutIndex: number,
   summaryParser: Parser
 ): Resume {
   return [
@@ -828,23 +813,60 @@ export function transformResumeContent(
     transformSummary,
     transformSectionNames,
   ].reduce(
-    (resume, tranformFunc) => tranformFunc(resume, summaryParser),
+    (resume, tranformFunc) => tranformFunc(resume, layoutIndex, summaryParser),
     resume
   )
 }
 
 /**
- * Merges the provided resume layout configuration with default layout values,
- * ensuring all necessary layout properties are set.
+ * Merges the provided resume layout and locale configuration with default
+ * values, ensuring all necessary properties are set.
  *
  * @param resume - The resume object.
  * @returns The transformed resume object.
- * @remarks Modifies `resume.layout` in place.
+ * @remarks Modifies `resume.layouts` and `resume.locale` in place.
  */
-export function transformResumeLayoutWithDefaultValues(resume: Resume): Resume {
+export function transformResumeLocaleWithDefaultValues(resume: Resume): Resume {
+  if (resume.locale) {
+    return resume
+  }
+
   return {
     ...resume,
-    layout: merge(cloneDeep(DEFAULT_RESUME_LAYOUT), resume.layout),
+    locale: cloneDeep(DEFAULT_RESUME_LOCALE),
+  }
+}
+
+/**
+ * Ensures the resume has layouts configuration by applying defaults when absent.
+ *
+ * @param resume - The resume object.
+ * @returns The transformed resume object.
+ */
+export function transformResumeLayoutsWithDefaultValues(
+  resume: Resume
+): Resume {
+  if (resume.layouts && resume.layouts.length > 0) {
+    const normalizedLayouts = resume.layouts.map((layout) => {
+      switch (layout.engine) {
+        case 'markdown':
+          return merge(cloneDeep(DEFAULT_MARKDOWN_LAYOUT), layout)
+        case 'latex':
+          return merge(cloneDeep(DEFAULT_LATEX_LAYOUT), layout)
+        default:
+          return layout
+      }
+    })
+
+    return {
+      ...resume,
+      layouts: normalizedLayouts,
+    }
+  }
+
+  return {
+    ...resume,
+    layouts: cloneDeep(DEFAULT_RESUME_LAYOUTS),
   }
 }
 
@@ -856,38 +878,46 @@ export function transformResumeLayoutWithDefaultValues(resume: Resume): Resume {
  *
  * @param resume - The resume object.
  * @returns The transformed resume object.
- * @remarks Modifies `resume.layout.latex.fontspec` in place.
+ * @remarks Modifies LaTeX layouts' `advanced.fontspec` in place.
  */
 export function transformResumeLayoutLaTeX(resume: Resume): Resume {
-  if (
-    resume.layout.latex?.fontspec?.numbers !== undefined &&
-    resume.layout.latex?.fontspec?.numbers !== 'Auto'
-  ) {
+  if (!resume.layouts) {
     return resume
   }
 
-  switch (resume.layout.locale?.language) {
-    case 'zh-hans':
-    case 'zh-hant-hk':
-    case 'zh-hant-tw':
-      resume.layout.latex = {
-        ...resume.layout.latex,
+  resume.layouts = resume.layouts.map((layout) => {
+    // Only transform LaTeX layouts
+    if (layout.engine !== 'latex') {
+      return layout
+    }
+
+    // Skip if numbers is already explicitly set to a non-Auto value
+    if (
+      layout.advanced?.fontspec?.numbers !== undefined &&
+      layout.advanced?.fontspec?.numbers !== 'Auto'
+    ) {
+      return layout
+    }
+
+    // Determine the number style based on locale
+    const numbers =
+      resume.locale?.language === 'zh-hans' ||
+      resume.locale?.language === 'zh-hant-hk' ||
+      resume.locale?.language === 'zh-hant-tw'
+        ? 'Lining'
+        : 'OldStyle'
+
+    return {
+      ...layout,
+      advanced: {
+        ...layout.advanced,
         fontspec: {
-          ...resume.layout.latex?.fontspec,
-          numbers: 'Lining',
+          ...layout.advanced?.fontspec,
+          numbers,
         },
-      }
-      break
-    default:
-      resume.layout.latex = {
-        ...resume.layout.latex,
-        fontspec: {
-          ...resume.layout.latex?.fontspec,
-          numbers: 'OldStyle',
-        },
-      }
-      break
-  }
+      },
+    }
+  })
 
   return resume
 }
@@ -906,7 +936,8 @@ export function transformResumeLayoutLaTeX(resume: Resume): Resume {
  */
 export function transformResumeLayout(resume: Resume): Resume {
   return [
-    transformResumeLayoutWithDefaultValues,
+    transformResumeLocaleWithDefaultValues,
+    transformResumeLayoutsWithDefaultValues,
     transformResumeLayoutLaTeX,
   ].reduce((resume, transformFunc) => transformFunc(resume), resume)
 }
@@ -921,14 +952,19 @@ export function transformResumeLayout(resume: Resume): Resume {
  * The order of transformations is: content, layout, environment.
  *
  * @param resume - The original resume object.
+ * @param layoutIndex - The index of the selected layout.
  * @param summaryParser - The parser instance for handling summary fields.
  * @returns A new, transformed resume object ready for rendering.
  * @remarks This function operates on and returns a deep clone of the original
  * resume.
  */
-export function transformResume(resume: Resume, summaryParser: Parser): Resume {
+export function transformResume(
+  resume: Resume,
+  layoutIndex: number,
+  summaryParser: Parser
+): Resume {
   return [transformResumeLayout, transformResumeContent].reduce(
-    (resume, tranformFunc) => tranformFunc(resume, summaryParser),
+    (resume, tranformFunc) => tranformFunc(resume, layoutIndex, summaryParser),
     cloneDeep(resume)
   )
 }

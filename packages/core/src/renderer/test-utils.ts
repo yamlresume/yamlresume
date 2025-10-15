@@ -21,45 +21,37 @@
  * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
  * IN THE SOFTWARE.
  */
+import fs from 'node:fs'
+import path from 'node:path'
+import yaml from 'yaml'
 
-import { describe, expect, it } from 'vitest'
+import { type Resume, SECTION_IDS } from '@/models'
 
-import { TEMPLATE_OPTIONS } from '@/models'
-import { optionSchemaMessage } from '../primitives'
-import { expectSchemaMetadata, validateZodErrors } from '../zod'
-import { TemplateSchema } from './template'
+/**
+ * Load a resume fixture from the fixtures directory.
+ *
+ * @param resume - The name of the resume fixture file
+ * @param baseDir - The base directory to resolve from (typically __dirname from the caller)
+ * @returns The parsed resume object
+ */
+export function getFixture(resume: string, baseDir: string): Resume {
+  const resumePath = path.join(baseDir, '..', 'fixtures', resume)
+  const resumeContent = fs.readFileSync(resumePath, 'utf8')
+  return yaml.parse(resumeContent) as Resume
+}
 
-describe('TemplateSchema', () => {
-  it('should have correct metadata', () => {
-    expectSchemaMetadata(TemplateSchema.shape.template)
-  })
+/**
+ * All section IDs except 'basics' (which is required).
+ */
+export const sections = SECTION_IDS.filter((section) => section !== 'basics')
 
-  it('should validate a template if it is valid', () => {
-    const tests = [{}, { template: TEMPLATE_OPTIONS[0] }]
-
-    for (const template of tests) {
-      expect(TemplateSchema.parse(template)).toStrictEqual(template)
-    }
-  })
-
-  it('should throw an error if the template is invalid', () => {
-    const tests = [
-      {
-        template: 'invalid-template',
-        error: {
-          errors: [],
-          properties: {
-            template: {
-              errors: [optionSchemaMessage(TEMPLATE_OPTIONS, 'template')],
-            },
-          },
-        },
-      },
-    ]
-
-    for (const { template, error } of tests) {
-      // @ts-ignore
-      validateZodErrors(TemplateSchema, { template }, error)
-    }
-  })
-})
+/**
+ * Get a random subset of sections.
+ *
+ * @param count - The number of random sections to return
+ * @returns An array of random section IDs
+ */
+export function getRandomSections(count: number): string[] {
+  const shuffled = [...sections].sort(() => 0.5 - Math.random())
+  return shuffled.slice(0, count)
+}

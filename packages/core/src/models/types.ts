@@ -29,12 +29,12 @@ import type {
   FONT_SIZE_OPTIONS,
   FONTSPEC_NUMBERS_OPTIONS,
   LANGUAGE_OPTIONS,
+  LATEX_TEMPLATE_OPTIONS,
   LEVEL_OPTIONS,
   LOCALE_LANGUAGE_OPTIONS,
   NETWORK_OPTIONS,
   ORDERABLE_SECTION_IDS,
   SECTION_IDS,
-  TEMPLATE_OPTIONS,
 } from '@/models'
 
 /**
@@ -82,7 +82,7 @@ export type OrderableSectionID = (typeof ORDERABLE_SECTION_IDS)[number]
  *
  * @see {@link https://yamlresume.dev/docs/layout/templates}
  */
-export type Template = (typeof TEMPLATE_OPTIONS)[number]
+export type LatexTemplate = (typeof LATEX_TEMPLATE_OPTIONS)[number]
 
 /**
  * A union type for all possible locale languages.
@@ -342,10 +342,6 @@ type LocationItem = {
   computed?: {
     /** Fully formatted address string based on locale. */
     fullAddress: string
-    /** Combined string of postal code and address. */
-    postalCodeAndAddress: string
-    /** Combined string of region and country. */
-    regionAndCountry: string
   }
 }
 
@@ -757,7 +753,7 @@ export type FontSize = (typeof FONT_SIZE_OPTIONS)[number]
 /**
  * Defines link styling settings for typography.
  */
-type ResumeLayoutTypographyLinks = {
+type LayoutTypographyLinks = {
   /** Whether to underline links in the document. */
   underline?: boolean
 }
@@ -765,17 +761,17 @@ type ResumeLayoutTypographyLinks = {
 /**
  * Defines typography settings for document formatting.
  */
-type ResumeLayoutTypography = {
+type LaTeXLayoutTypography = {
   /** Base font size for the document (e.g., "10pt", "11pt"). */
   fontSize?: string
   /** Link styling settings. */
-  links?: ResumeLayoutTypographyLinks
+  links?: LayoutTypographyLinks
 }
 
 /**
- * Defines LaTeX-specific configuration options.
+ * Defines advanced configuration options.
  */
-type ResumeLayoutLaTeX = {
+type LaTeXLayoutAdvanced = {
   /** LaTeX fontspec package configurations. */
   fontspec?: {
     /** Style for rendering numbers (Lining or OldStyle). */
@@ -786,7 +782,7 @@ type ResumeLayoutLaTeX = {
 /**
  * Defines locale settings for internationalization and localization.
  */
-type ResumeLayoutLocale = {
+export type ResumeLocale = {
   /** The selected language for the resume content and template terms. */
   language?: LocaleLanguage
 }
@@ -794,7 +790,7 @@ type ResumeLayoutLocale = {
 /**
  * Defines page-level settings for document presentation.
  */
-type ResumeLayoutPage = {
+type LaTeXLayoutPage = {
   /** Whether to display page numbers. */
   showPageNumbers?: boolean
   /** Defines page margin settings for document layout. */
@@ -804,32 +800,50 @@ type ResumeLayoutPage = {
 /**
  * Defines section alias settings for customizing section names.
  */
-type ResumeLayoutSections = {
+type LayoutSections = {
   /** Custom aliases for section names, overriding default translations. */
-  aliases?: Partial<Record<OrderableSectionID, string>>
+  aliases?: Partial<Record<SectionID, string>>
   /** Custom order for sections in the final output. */
   order?: OrderableSectionID[]
 }
 
 /**
- * Defines the overall layout configuration.
+ * A union type for all possible layout engines.
  */
-export type ResumeLayout = {
-  /** Defines locale settings for internationalization and localization. */
-  locale?: ResumeLayoutLocale
-  /** Defines page-level settings for document presentation. */
-  page?: ResumeLayoutPage
-  /** Defines section customization settings. */
-  sections?: ResumeLayoutSections
-  /** Defines the selected template. */
-  template?: Template
-  /** Defines typography settings for document formatting. */
-  typography?: ResumeLayoutTypography
+export type ResumeLayoutEngine = 'latex' | 'markdown'
 
-  /// engine specific settings
-  /** Defines LaTeX-specific configuration options. */
-  latex?: ResumeLayoutLaTeX
+/**
+ * LaTeX layout configuration.
+ */
+export type LatexLayout = {
+  engine: 'latex'
+  /** Defines page-level settings for document presentation. */
+  page?: LaTeXLayoutPage
+  /** Defines section customization settings. */
+  sections?: LayoutSections
+  /** Defines the selected template. */
+  template?: LatexTemplate
+  /** Defines typography settings for document formatting. */
+  typography?: LaTeXLayoutTypography
+  /** Defines advanced configuration options. */
+  advanced?: LaTeXLayoutAdvanced
 }
+
+/**
+ * Markdown layout configuration.
+ *
+ * Keep it minimal for now; can be extended later.
+ */
+export type MarkdownLayout = {
+  engine: 'markdown'
+  /** Defines section customization settings. */
+  sections?: LayoutSections
+}
+
+/**
+ * Array of layout items supporting multiple output formats.
+ */
+export type ResumeLayouts = (LatexLayout | MarkdownLayout)[]
 
 /**
  * Defines the overall resume structure, including content and layout.
@@ -840,6 +854,8 @@ export type ResumeLayout = {
 export type Resume = {
   /** Defines the structure for the entire resume content. */
   content: ResumeContent
-  /** Defines the overall layout configuration. */
-  layout?: ResumeLayout
+  /** Top-level locale setting. */
+  locale?: ResumeLocale
+  /** Multiple output layout configurations. */
+  layouts?: ResumeLayouts
 }

@@ -31,10 +31,10 @@ import {
   FONT_SIZE_OPTIONS,
   FONTSPEC_NUMBERS_OPTIONS,
   LANGUAGE_OPTIONS,
+  LATEX_TEMPLATE_OPTIONS,
   LEVEL_OPTIONS,
   LOCALE_LANGUAGE_OPTIONS,
   NETWORK_OPTIONS,
-  TEMPLATE_OPTIONS,
 } from '@/models'
 
 import {
@@ -836,7 +836,7 @@ describe('SummarySchema', () => {
 
 describe('TemplateOptionSchema', () => {
   it('should return a template option if it is valid', () => {
-    for (const template of TEMPLATE_OPTIONS) {
+    for (const template of LATEX_TEMPLATE_OPTIONS) {
       expect(TemplateOptionSchema.parse(template)).toBe(template)
     }
   })
@@ -846,7 +846,7 @@ describe('TemplateOptionSchema', () => {
       {
         template: 'invalid-template',
         error: {
-          errors: [optionSchemaMessage(TEMPLATE_OPTIONS, 'template')],
+          errors: [optionSchemaMessage(LATEX_TEMPLATE_OPTIONS, 'template')],
         },
       },
       {

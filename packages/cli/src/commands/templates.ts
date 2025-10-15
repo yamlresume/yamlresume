@@ -22,7 +22,10 @@
  * IN THE SOFTWARE.
  */
 
-import { getTemplateDetail, TEMPLATE_OPTIONS } from '@yamlresume/core'
+import {
+  getLatexTemplateDetail,
+  LATEX_TEMPLATE_OPTIONS,
+} from '@yamlresume/core'
 import { Command } from 'commander'
 import consola from 'consola'
 import { markdownTable } from 'markdown-table'
@@ -37,8 +40,8 @@ import { markdownTable } from 'markdown-table'
 export function listTemplates() {
   return markdownTable([
     ['layout.template', 'Template Name', 'Description'],
-    ...TEMPLATE_OPTIONS.map((value) => {
-      const details = getTemplateDetail(value)
+    ...LATEX_TEMPLATE_OPTIONS.map((value) => {
+      const details = getLatexTemplateDetail(value)
       return [value, details.name, details.description]
     }),
   ])

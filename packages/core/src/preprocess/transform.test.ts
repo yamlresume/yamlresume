@@ -27,16 +27,20 @@ import { describe, expect, it } from 'vitest'
 
 import { LatexCodeGenerator, MarkdownParser } from '@/compiler'
 import {
+  DEFAULT_LATEX_LAYOUT,
   DEFAULT_RESUME,
+  DEFAULT_RESUME_LAYOUTS,
+  DEFAULT_RESUME_LOCALE,
   FILLED_RESUME,
+  type LatexLayout,
   LOCALE_LANGUAGE_OPTIONS,
   type LocaleLanguage,
   type Network,
   ORDERABLE_SECTION_IDS,
+  type OrderableSectionID,
   type ProfileItem,
   RESUME_SECTION_ITEMS,
   type Resume,
-  type ResumeLayout,
 } from '@/models'
 import { getOptionTranslation, getTemplateTranslations } from '@/translations'
 import {
@@ -56,7 +60,8 @@ import {
   transformResumeContent,
   transformResumeLayout,
   transformResumeLayoutLaTeX,
-  transformResumeLayoutWithDefaultValues,
+  transformResumeLayoutsWithDefaultValues,
+  transformResumeLocaleWithDefaultValues,
   transformResumeValues,
   transformSectionNames,
   transformSkills,
@@ -363,7 +368,7 @@ describe(transformEducationCourses, () => {
   it('should transform courses from string[] to comma space separated string', () => {
     testOverAllLocaleLanguages((language) => {
       const resume = cloneDeep(DEFAULT_RESUME)
-      resume.layout.locale.language = language
+      resume.locale = { ...resume.locale, language }
 
       const coursesList = [
         'Introduction to Programming',
@@ -376,10 +381,10 @@ describe(transformEducationCourses, () => {
 
       const {
         punctuations: { separator },
-      } = getTemplateTranslations(resume.layout.locale.language)
+      } = getTemplateTranslations(resume.locale?.language)
 
       expect(resume.content.education[0].computed?.courses).toEqual(
-        coursesList.join(`${separator}\n`)
+        coursesList.join(`${separator}`)
       )
     })
   })
@@ -435,7 +440,7 @@ describe(transformEducationDegreeAreaAndScore, () => {
       for (const { degree, area, score, expected } of tests) {
         const resume = cloneDeep(DEFAULT_RESUME)
 
-        resume.layout.locale.language = language
+        resume.locale = { ...resume.locale, language }
 
         // @ts-ignore
         resume.content.education[0].degree = degree
@@ -456,11 +461,11 @@ describe(transformKeywords, () => {
   it('should transform keywords from string[] to comma separated string', () => {
     testOverAllLocaleLanguages((language) => {
       const resume = cloneDeep(DEFAULT_RESUME)
-      resume.layout.locale.language = language
+      resume.locale = { ...resume.locale, language }
 
       const keywordList = ['JavaScript', 'TypeScript', 'React', 'Node.js']
       const { punctuations } = getTemplateTranslations(
-        resume.layout.locale.language
+        resume.locale?.language || DEFAULT_RESUME_LOCALE.language
       )
 
       const tests = [
@@ -575,7 +580,7 @@ describe(transformLanguage, () => {
     testOverAllLocaleLanguages((language) => {
       const resume = cloneDeep(DEFAULT_RESUME)
 
-      resume.layout.locale.language = language
+      resume.locale = { ...resume.locale, language }
       resume.content.languages[0].language = 'Arabic'
       resume.content.languages[0].fluency = 'Native or Bilingual Proficiency'
 
@@ -585,7 +590,7 @@ describe(transformLanguage, () => {
         item.language &&
           expect(item.computed?.language).toBe(
             getOptionTranslation(
-              resume.layout.locale.language,
+              resume.locale?.language,
               'languages',
               item.language
             )
@@ -593,7 +598,7 @@ describe(transformLanguage, () => {
         item.fluency &&
           expect(item.computed?.fluency).toBe(
             getOptionTranslation(
-              resume.layout.locale.language,
+              resume.locale?.language,
               'fluency',
               item.fluency
             )
@@ -673,7 +678,6 @@ describe(transformLocation, () => {
         expected: {
           en: '',
           es: '',
-
           'zh-hans': '',
           'zh-hant-hk': '',
           'zh-hant-tw': '',
@@ -688,17 +692,17 @@ describe(transformLocation, () => {
         region: '',
         country: 'United States',
         expected: {
-          en: `Sacramento -- ${englishLocation}${latinComma}95814`,
-          es: `Sacramento -- ${spanishLocation}${latinComma}95814`,
-          'zh-hans': `${simplifiedChineseLocation} -- Sacramento -- 95814`,
+          en: `Sacramento${latinComma}${englishLocation}${latinComma}95814`,
+          es: `Sacramento${latinComma}${spanishLocation}${latinComma}95814`,
+          'zh-hans': `${simplifiedChineseLocation}${chineseComma}Sacramento${chineseComma}95814`,
           'zh-hant-hk': `${
             traditionalChineseHKLocation
-          } -- Sacramento -- 95814`,
+          }${chineseComma}Sacramento${chineseComma}95814`,
           'zh-hant-tw': `${
             traditionalChineseTWLocation
-          } -- Sacramento -- 95814`,
-          fr: `Sacramento -- ${frenchLocation}${latinComma}95814`,
-          no: `Sacramento -- ${norwegianLocation}${latinComma}95814`,
+          }${chineseComma}Sacramento${chineseComma}95814`,
+          fr: `Sacramento${latinComma}${frenchLocation}${latinComma}95814`,
+          no: `Sacramento${latinComma}${norwegianLocation}${latinComma}95814`,
         },
       },
       {
@@ -708,14 +712,13 @@ describe(transformLocation, () => {
         region: 'California',
         country: null,
         expected: {
-          en: '123 Main Street -- Sacramento -- California',
-          es: '123 Main Street -- Sacramento -- California',
-
-          'zh-hans': 'California -- Sacramento -- 123 Main Street',
-          'zh-hant-hk': 'California -- Sacramento -- 123 Main Street',
-          'zh-hant-tw': 'California -- Sacramento -- 123 Main Street',
-          fr: '123 Main Street -- Sacramento -- California',
-          no: '123 Main Street -- Sacramento -- California',
+          en: `123 Main Street${latinComma}Sacramento${latinComma}California`,
+          es: `123 Main Street${latinComma}Sacramento${latinComma}California`,
+          'zh-hans': `California${chineseComma}Sacramento${chineseComma}123 Main Street`,
+          'zh-hant-hk': `California${chineseComma}Sacramento${chineseComma}123 Main Street`,
+          'zh-hant-tw': `California${chineseComma}Sacramento${chineseComma}123 Main Street`,
+          fr: `123 Main Street${latinComma}Sacramento${latinComma}California`,
+          no: `123 Main Street${latinComma}Sacramento${latinComma}California`,
         },
       },
       {
@@ -725,24 +728,23 @@ describe(transformLocation, () => {
         region: 'California',
         country: 'United States',
         expected: {
-          en: `123 Main Street -- Sacramento -- California${latinComma}${
+          en: `123 Main Street${latinComma}Sacramento${latinComma}California${latinComma}${
             englishLocation
           }${latinComma}95814`,
-          es: `123 Main Street -- Sacramento -- California${latinComma}${
+          es: `123 Main Street${latinComma}Sacramento${latinComma}California${latinComma}${
             spanishLocation
           }${latinComma}95814`,
-
           'zh-hans': `${
             simplifiedChineseLocation
-          }${chineseComma}California -- Sacramento -- 123 Main Street${chineseComma}95814`,
+          }${chineseComma}California${chineseComma}Sacramento${chineseComma}123 Main Street${chineseComma}95814`,
           'zh-hant-hk': `${
             traditionalChineseHKLocation
-          }${chineseComma}California -- Sacramento -- 123 Main Street${chineseComma}95814`,
+          }${chineseComma}California${chineseComma}Sacramento${chineseComma}123 Main Street${chineseComma}95814`,
           'zh-hant-tw': `${
             traditionalChineseTWLocation
-          }${chineseComma}California -- Sacramento -- 123 Main Street${chineseComma}95814`,
-          fr: `123 Main Street -- Sacramento -- California${latinComma}${frenchLocation}${latinComma}95814`,
-          no: `123 Main Street -- Sacramento -- California${latinComma}${norwegianLocation}${latinComma}95814`,
+          }${chineseComma}California${chineseComma}Sacramento${chineseComma}123 Main Street${chineseComma}95814`,
+          fr: `123 Main Street${latinComma}Sacramento${latinComma}California${latinComma}${frenchLocation}${latinComma}95814`,
+          no: `123 Main Street${latinComma}Sacramento${latinComma}California${latinComma}${norwegianLocation}${latinComma}95814`,
         },
       },
     ]
@@ -757,7 +759,7 @@ describe(transformLocation, () => {
     } of tests) {
       testOverAllLocaleLanguages((language) => {
         const resume = cloneDeep(DEFAULT_RESUME)
-        resume.layout.locale.language = language
+        resume.locale = { ...resume.locale, language }
 
         resume.content.location = {
           ...resume.content.location,
@@ -779,6 +781,8 @@ describe(transformLocation, () => {
 })
 
 describe(transformSummary, () => {
+  const layoutIndex = 0
+
   it('should parse summary from markdown to tex', () => {
     const resume = cloneDeep(FILLED_RESUME)
     const summary = 'Test summary'
@@ -801,7 +805,7 @@ describe(transformSummary, () => {
 
     const summaryParser = new MarkdownParser()
 
-    transformSummary(resume, summaryParser)
+    transformSummary(resume, layoutIndex, summaryParser)
 
     const expected = new LatexCodeGenerator()
       .generate(summaryParser.parse(summary))
@@ -849,7 +853,7 @@ describe(transformSummary, () => {
 
       const summaryParser = new MarkdownParser()
 
-      transformSummary(resume, summaryParser)
+      transformSummary(resume, layoutIndex, summaryParser)
 
       expect(resume.content.basics.computed?.summary).toEqual('')
 
@@ -868,6 +872,46 @@ describe(transformSummary, () => {
       }
     }
   })
+
+  it('should handle layout without typography property', () => {
+    const resume = cloneDeep(FILLED_RESUME)
+    const summary = 'Test summary'
+
+    resume.content.basics.summary = summary
+    // Create a layout without typography property
+    resume.layouts = [{ engine: 'latex' as const }]
+
+    const summaryParser = new MarkdownParser()
+
+    transformSummary(resume, layoutIndex, summaryParser)
+
+    const expected = new LatexCodeGenerator()
+      .generate(summaryParser.parse(summary))
+      .trim()
+
+    expect(resume.content.basics.computed?.summary).toEqual(
+      replaceBlankLinesWithPercent(expected)
+    )
+  })
+
+  it('should skip transformation for markdown layout', () => {
+    const resume = cloneDeep(FILLED_RESUME)
+    const summary = 'Test summary'
+
+    resume.content.basics.summary = summary
+    resume.layouts = [{ engine: 'markdown' as const }]
+
+    const summaryParser = new MarkdownParser()
+
+    // Capture the original resume state to ensure no changes
+    const originalResume = cloneDeep(resume)
+
+    transformSummary(resume, layoutIndex, summaryParser)
+
+    // Should be identical to original, meaning no computed properties added
+    expect(resume).toEqual(originalResume)
+    expect(resume.content.basics.computed).toBeUndefined()
+  })
 })
 
 describe(transformSkills, () => {
@@ -876,7 +920,7 @@ describe(transformSkills, () => {
       for (const level of [null, undefined, '']) {
         const resume = cloneDeep(FILLED_RESUME)
 
-        resume.layout.locale.language = language
+        resume.locale = { ...resume.locale, language }
         // @ts-ignore
         resume.content.skills[0].level = level
 
@@ -899,13 +943,13 @@ describe(transformSkills, () => {
       ] as const) {
         const resume = cloneDeep(FILLED_RESUME)
 
-        resume.layout.locale.language = language
+        resume.locale = { ...resume.locale, language }
         resume.content.skills[0].level = level
 
         transformSkills(resume)
 
         expect(resume.content.skills[0].computed?.level).toBe(
-          getOptionTranslation(resume.layout.locale.language, 'skills', level)
+          getOptionTranslation(resume.locale?.language, 'skills', level)
         )
       }
     })
@@ -913,20 +957,19 @@ describe(transformSkills, () => {
 })
 
 describe(transformSectionNames, () => {
+  const layoutIndex = 0
+  const summaryParser = new MarkdownParser()
+
   it('should translate section names according to user chosen language', () => {
     testOverAllLocaleLanguages((language) => {
       const resume = cloneDeep(DEFAULT_RESUME)
-      resume.layout.locale.language = language
+      resume.locale = { ...resume.locale, language }
 
-      transformSectionNames(resume)
+      transformSectionNames(resume, layoutIndex, summaryParser)
 
       ORDERABLE_SECTION_IDS.forEach((section) => {
         expect(resume.content.computed?.sectionNames?.[section]).toEqual(
-          getOptionTranslation(
-            resume.layout.locale.language,
-            'sections',
-            section
-          )
+          getOptionTranslation(resume.locale?.language, 'sections', section)
         )
       })
     })
@@ -934,18 +977,20 @@ describe(transformSectionNames, () => {
 
   it('should use section aliases when provided in layout.sections.alias', () => {
     const resume = cloneDeep(DEFAULT_RESUME)
-    resume.layout.locale.language = 'en'
+    resume.locale = { language: 'en' }
 
     // Set some section aliases
-    resume.layout.sections = {
-      aliases: {
-        basics: 'Personal Information',
-        work: 'Professional Experience',
-        education: 'Academic Background',
-      },
+    if (resume.layouts?.[layoutIndex]) {
+      resume.layouts[layoutIndex].sections = {
+        aliases: {
+          basics: 'Personal Information',
+          work: 'Professional Experience',
+          education: 'Academic Background',
+        },
+      }
     }
 
-    transformSectionNames(resume)
+    transformSectionNames(resume, layoutIndex, summaryParser)
 
     // Check that section aliases are used
     expect(resume.content.computed?.sectionNames?.basics).toEqual(
@@ -969,12 +1014,14 @@ describe(transformSectionNames, () => {
 
   it('should work correctly when sections.alias is undefined', () => {
     const resume = cloneDeep(DEFAULT_RESUME)
-    resume.layout.locale.language = 'en'
+    resume.locale = { language: 'en' }
 
     // Ensure sections.alias is undefined
-    resume.layout.sections = {}
+    if (resume.layouts?.[layoutIndex]) {
+      resume.layouts[layoutIndex].sections = {}
+    }
 
-    transformSectionNames(resume)
+    transformSectionNames(resume, layoutIndex, summaryParser)
 
     // Check that all sections use default translations
     ORDERABLE_SECTION_IDS.forEach((section) => {
@@ -986,20 +1033,25 @@ describe(transformSectionNames, () => {
 
   it('should work correctly in the full transform pipeline', () => {
     const resume = cloneDeep(DEFAULT_RESUME)
-    resume.layout.locale.language = 'en'
+    resume.locale = { language: 'en' }
 
     // Set section aliases
-    resume.layout.sections = {
-      aliases: {
-        basics: 'Personal Information',
-        work: 'Professional Experience',
-        education: 'Academic Background',
-        skills: 'Technical Skills',
-      },
+    if (resume.layouts?.[layoutIndex]) {
+      resume.layouts[layoutIndex].sections = {
+        aliases: {
+          basics: 'Personal Information',
+          work: 'Professional Experience',
+          education: 'Academic Background',
+          skills: 'Technical Skills',
+        },
+      }
     }
 
-    const summaryParser = new MarkdownParser()
-    const transformedResume = transformResumeContent(resume, summaryParser)
+    const transformedResume = transformResumeContent(
+      resume,
+      layoutIndex,
+      summaryParser
+    )
 
     // Check that section aliases are used in the final transformed resume
     expect(transformedResume.content.computed?.sectionNames?.basics).toEqual(
@@ -1156,9 +1208,6 @@ describe(transformResumeValues, () => {
     expect(resume.content.location.address).toEqual(
       '123 \\textasciitilde{}Main Street'
     )
-    expect(resume.content.location.computed?.postalCodeAndAddress).toEqual(
-      resume.content.location.address
-    )
     expect(resume.content.education[0].area).toEqual(
       'Computer Science \\{Engineering\\}'
     )
@@ -1185,11 +1234,17 @@ describe(transformResumeValues, () => {
 })
 
 describe(transformResumeContent, () => {
+  const layoutIndex = 0
+
   it('should transform resume.content by calling transform functions', () => {
     const resume = cloneDeep(FILLED_RESUME)
 
     const summaryParser = new MarkdownParser()
-    const transformedResume = transformResumeContent(resume, summaryParser)
+    const transformedResume = transformResumeContent(
+      resume,
+      layoutIndex,
+      summaryParser
+    )
 
     expect(transformedResume.content).toHaveProperty('computed')
 
@@ -1218,14 +1273,27 @@ describe(transformResumeContent, () => {
 })
 
 describe(transformResumeLayoutLaTeX, () => {
+  const layoutIndex = 0
+
+  it('should return resume as is when layouts is undefined', () => {
+    const resume = cloneDeep(DEFAULT_RESUME)
+    resume.layouts = undefined
+
+    const transformed = transformResumeLayoutLaTeX(resume)
+    expect(transformed).toEqual(resume)
+  })
+
   it('should set numbers to OldStyle for English, Norwegian, Spanish, and French resume', () => {
     for (const language of ['en', 'es', 'fr', 'no'] as const) {
       const resume = cloneDeep(DEFAULT_RESUME)
 
-      resume.layout.locale.language = language
+      resume.locale = { ...resume.locale, language }
       transformResumeLayoutLaTeX(resume)
 
-      expect(resume.layout.latex.fontspec.numbers).toEqual('OldStyle')
+      expect(
+        (resume.layouts?.[layoutIndex] as LatexLayout).advanced?.fontspec
+          ?.numbers
+      ).toEqual('OldStyle')
     }
   })
 
@@ -1233,65 +1301,161 @@ describe(transformResumeLayoutLaTeX, () => {
     for (const language of ['zh-hans', 'zh-hant-hk', 'zh-hant-tw'] as const) {
       const resume = cloneDeep(DEFAULT_RESUME)
 
-      resume.layout.locale.language = language
+      resume.locale = { ...resume.locale, language }
       transformResumeLayoutLaTeX(resume)
 
-      expect(resume.layout.latex.fontspec.numbers).toEqual('Lining')
+      expect(
+        (resume.layouts?.[layoutIndex] as LatexLayout).advanced?.fontspec
+          ?.numbers
+      ).toEqual('Lining')
     }
   })
 
-  it('should set correct numbers when latex.fontspec.numbers is undefined', () => {
+  it('should set correct numbers when advanced.fontspec.numbers is undefined', () => {
     for (const language of ['en', 'es'] as const) {
       const resume = cloneDeep(DEFAULT_RESUME)
       // @ts-ignore
-      resume.layout.latex = undefined
+      ;(resume.layouts?.[layoutIndex] as LatexLayout).advanced = undefined
 
-      resume.layout.locale.language = language
+      resume.locale = { ...resume.locale, language }
       transformResumeLayoutLaTeX(resume)
 
-      expect(resume.layout.latex.fontspec.numbers).toEqual('OldStyle')
+      expect(
+        (resume.layouts?.[layoutIndex] as LatexLayout).advanced?.fontspec
+          ?.numbers
+      ).toEqual('OldStyle')
     }
   })
 
-  it('should set correct numbers when latex.fontspec.numbers is "Auto"', () => {
+  it('should set correct numbers when advanced.fontspec.numbers is "Auto"', () => {
     for (const language of ['en', 'es'] as const) {
       const resume = cloneDeep(DEFAULT_RESUME)
-      resume.layout.latex.fontspec.numbers = 'Auto'
+      const layout = resume.layouts?.[layoutIndex] as LatexLayout
 
-      resume.layout.locale.language = language
+      if (layout.advanced?.fontspec) {
+        layout.advanced.fontspec.numbers = 'Auto'
+      }
+
+      resume.locale = { ...resume.locale, language }
       transformResumeLayoutLaTeX(resume)
 
-      expect(resume.layout.latex.fontspec.numbers).toEqual('OldStyle')
+      expect(
+        (resume.layouts?.[layoutIndex] as LatexLayout).advanced?.fontspec
+          ?.numbers
+      ).toEqual('OldStyle')
     }
   })
 
-  it('should do nothing when latex.fontspec.numbers is defined', () => {
+  it('should do nothing when advanced.fontspec.numbers is defined', () => {
     const resume = cloneDeep(DEFAULT_RESUME)
-    resume.layout.latex.fontspec.numbers = 'OldStyle'
+    const layout = resume.layouts?.[layoutIndex] as LatexLayout
+
+    if (layout.advanced?.fontspec) {
+      layout.advanced.fontspec.numbers = 'OldStyle'
+    }
 
     transformResumeLayoutLaTeX(resume)
 
-    expect(resume.layout.latex.fontspec.numbers).toEqual('OldStyle')
+    expect(
+      (resume.layouts?.[layoutIndex] as LatexLayout).advanced?.fontspec?.numbers
+    ).toEqual('OldStyle')
   })
 })
 
-describe(transformResumeLayoutWithDefaultValues, () => {
-  it('should transform resume with no layout', () => {
+describe(transformResumeLocaleWithDefaultValues, () => {
+  it('should set default locale when it is not defined', () => {
     const resume = cloneDeep(DEFAULT_RESUME)
-    resume.layout = undefined
+    resume.locale = undefined
 
-    expect(resume.layout).toBeUndefined()
+    const transformed = transformResumeLocaleWithDefaultValues(resume)
+    expect(transformed.locale).toEqual(DEFAULT_RESUME.locale)
+  })
 
-    expect(transformResumeLayoutWithDefaultValues(resume).layout).toEqual(
-      DEFAULT_RESUME.layout
+  it('should keep existing locale when defined', () => {
+    const resume = cloneDeep(DEFAULT_RESUME)
+    const customLocale = { language: 'es' as const }
+    resume.locale = customLocale
+
+    const transformed = transformResumeLocaleWithDefaultValues(resume)
+    expect(transformed.locale).toEqual(customLocale)
+  })
+})
+
+describe(transformResumeLayoutsWithDefaultValues, () => {
+  it('should set default layouts when they are not defined', () => {
+    const resume = cloneDeep(DEFAULT_RESUME)
+    resume.layouts = undefined
+
+    const transformed = transformResumeLayoutsWithDefaultValues(resume)
+    expect(transformed.layouts).toEqual(DEFAULT_RESUME_LAYOUTS)
+  })
+
+  it('should set default layouts when provided layouts are empty', () => {
+    const resume = cloneDeep(DEFAULT_RESUME)
+    resume.layouts = []
+
+    const transformed = transformResumeLayoutsWithDefaultValues(resume)
+    expect(transformed.layouts).toEqual(DEFAULT_RESUME_LAYOUTS)
+  })
+
+  it('should keep existing layouts when defined', () => {
+    const resume = cloneDeep(DEFAULT_RESUME)
+    const customLayout = cloneDeep(DEFAULT_RESUME_LAYOUTS)
+    resume.layouts = customLayout
+
+    const transformed = transformResumeLayoutsWithDefaultValues(resume)
+    expect(transformed.layouts).toEqual(customLayout)
+  })
+
+  it('should merge latex layout with defaults', () => {
+    const resume = cloneDeep(DEFAULT_RESUME)
+    resume.layouts = [
+      {
+        engine: 'latex',
+        page: {
+          margins: {
+            top: '1cm',
+          },
+        },
+      } as LatexLayout,
+    ]
+
+    const transformed = transformResumeLayoutsWithDefaultValues(resume)
+    const layout = transformed.layouts?.[0] as LatexLayout
+    expect(layout.template).toEqual(DEFAULT_LATEX_LAYOUT.template)
+    expect(layout.page?.margins?.top).toEqual('1cm')
+    expect(layout.page?.margins?.bottom).toEqual(
+      DEFAULT_LATEX_LAYOUT.page?.margins?.bottom
     )
+  })
+
+  it('should merge markdown layout with defaults', () => {
+    const resume = cloneDeep(DEFAULT_RESUME)
+    const sectionOrder: OrderableSectionID[] = ['work', 'education']
+    resume.layouts = [{ engine: 'markdown', sections: { order: sectionOrder } }]
+
+    const transformed = transformResumeLayoutsWithDefaultValues(resume)
+    expect(transformed.layouts?.[0].engine).toEqual('markdown')
+    expect(transformed.layouts?.[0].sections?.order).toEqual(sectionOrder)
+  })
+
+  it('should return layout with unknown engine', () => {
+    const resume = cloneDeep(DEFAULT_RESUME)
+    // @ts-ignore
+    resume.layouts = [{ engine: 'unknown' }]
+
+    const transformed = transformResumeLayoutsWithDefaultValues(resume)
+    expect(transformed.layouts?.[0]).toEqual({ engine: 'unknown' })
   })
 })
 
 describe(transformResumeLayout, () => {
+  const layoutIndex = 0
+
   it('should transform provided resumeLayout with default values', () => {
     const resume = cloneDeep(DEFAULT_RESUME)
-    const providedLayout: ResumeLayout = {
+    const providedLayout: LatexLayout = {
+      engine: 'latex',
       template: 'moderncv-banking',
       page: {
         margins: {
@@ -1305,24 +1469,23 @@ describe(transformResumeLayout, () => {
       typography: {
         fontSize: '11pt',
       },
-      latex: {
+      advanced: {
         fontspec: {
           numbers: 'Auto',
         },
       },
-      locale: {
-        language: 'zh-hans',
-      },
     }
 
-    resume.layout = providedLayout
+    resume.layouts = [providedLayout]
+    resume.locale = { language: 'zh-hans' }
 
-    expect(transformResumeLayout(resume).layout).toEqual({
+    const transformed = transformResumeLayout(resume)
+    expect(transformed.layouts?.[layoutIndex] as LatexLayout).toEqual({
       ...providedLayout,
-      latex: {
-        ...providedLayout.latex,
+      advanced: {
+        ...providedLayout.advanced,
         fontspec: {
-          ...providedLayout.latex.fontspec,
+          ...providedLayout.advanced?.fontspec,
           // only set numbers to Lining for CJK resume
           numbers: 'Lining',
         },

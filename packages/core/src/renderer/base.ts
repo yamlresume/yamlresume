@@ -42,14 +42,17 @@ import { joinNonEmptyString, mergeArrayWithOrder } from '@/utils'
  */
 abstract class Renderer {
   resume: Resume
+  layoutIndex: number
 
   /**
    * Constructor for the Renderer class.
    *
    * @param resume - The resume to render.
+   * @param layoutIndex - The index of the selected layout.
    */
-  constructor(resume: Resume) {
+  constructor(resume: Resume, layoutIndex: number) {
     this.resume = resume
+    this.layoutIndex = layoutIndex
   }
 
   /**
@@ -187,7 +190,7 @@ abstract class Renderer {
    * @returns {string} The rendered sections in the specified order
    */
   protected renderOrderedSections(): string {
-    const customOrder = this.resume.layout?.sections?.order
+    const customOrder = this.resume.layouts?.[this.layoutIndex]?.sections?.order
     const order = mergeArrayWithOrder(customOrder, DEFAULT_SECTIONS_ORDER)
 
     const sectionRenderers: Record<OrderableSectionID, () => string> = {
