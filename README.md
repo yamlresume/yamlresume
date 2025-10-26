@@ -113,12 +113,12 @@ Commands:
 ```
 
 You then need to install a typesetting engine, either
-[XeTeX](http://yamlresume.dev/docs/getting-started#xetex) or
-[Tectonic](http://yamlresume.dev/docs/getting-started#xetex) in order to
+[XeTeX](http://yamlresume.dev/docs#install-typesetting-engine) or
+[Tectonic](http://yamlresume.dev/docs#install-typesetting-engine) in order to
 generate PDFs.
 
 Last but not least, we recommend you install the [Linux
-Libertine](http://yamlresume.dev/docs/getting-started#linux-libertine) font in
+Libertine](http://yamlresume.dev/docs#linux-libertine-font) font in
 order to get the best looking PDFs.
 
 Check out our [installation guide](http://yamlresume.dev/docs/installation) for

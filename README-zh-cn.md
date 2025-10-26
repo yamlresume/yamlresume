@@ -92,9 +92,9 @@ Commands:
   help [command]                 display help for command
 ```
 
-你需要安装排版引擎以生成 PDF：推荐 [XeTeX](https://yamlresume.dev/zh-cn/docs/getting-started#xetex) 或 [Tectonic](https://yamlresume.dev/zh-cn/docs/getting-started#xetex)。
+你需要安装排版引擎以生成 PDF：推荐 [XeTeX](https://yamlresume.dev/zh-cn/docs#install-typesetting-engine) 或 [Tectonic](https://yamlresume.dev/zh-cn/docs#install-typesetting-engine)。
 
-建议安装 [Linux Libertine](https://yamlresume.dev/zh-cn/docs/getting-started#linux-libertine) 字体以获得最佳视觉效果。
+建议安装 [Linux Libertine](https://yamlresume.dev/zh-cn/docs#linux-libertine-font) 字体以获得最佳视觉效果。
 
 更多细节见[安装指南](https://yamlresume.dev/zh-cn/docs/installation)。
 
