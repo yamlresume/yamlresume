@@ -96,9 +96,9 @@ Commands:
   help [command]                 display help for command
 ```
 
-次に、PDFを生成するために組版エンジンの[XeTeX](http://yamlresume.dev/docs/getting-started#xetex)または[Tectonic](http://yamlresume.dev/docs/getting-started#xetex)をインストールする必要があります。
+次に、PDFを生成するために組版エンジンの[XeTeX](http://yamlresume.dev/docs#install-typesetting-engine)または[Tectonic](http://yamlresume.dev/docs#install-typesetting-engine)をインストールする必要があります。
 
-最後に、最高品質のPDFを得るために[Linux Libertine](http://yamlresume.dev/docs/getting-started#linux-libertine)フォントのインストールをお勧めします。
+最後に、最高品質のPDFを得るために[Linux Libertine](http://yamlresume.dev/docs#linux-libertine-font)フォントのインストールをお勧めします。
 
 詳細については、[インストールガイド](http://yamlresume.dev/docs/installation)をご確認ください。
 
