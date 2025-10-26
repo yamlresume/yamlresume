@@ -98,11 +98,11 @@ Commands:
 ```
 
 Vous devez ensuite installer un moteur de composition typographique,
-[XeTeX](http://yamlresume.dev/docs/getting-started#xetex) ou
-[Tectonic](http://yamlresume.dev/docs/getting-started#xetex), afin de générer des PDF.
+[XeTeX](http://yamlresume.dev/docs#install-typesetting-engine) ou
+[Tectonic](http://yamlresume.dev/docs#install-typesetting-engine), afin de générer des PDF.
 
 Enfin, nous vous recommandons d’installer la police [Linux
-Libertine](http://yamlresume.dev/docs/getting-started#linux-libertine) pour obtenir les meilleurs rendus.
+Libertine](http://yamlresume.dev/docs#linux-libertine-font) pour obtenir les meilleurs rendus.
 
 Consultez notre [guide d’installation](http://yamlresume.dev/docs/installation) pour plus de détails.
 
@@ -196,5 +196,4 @@ Toute forme de contribution est grandement appréciée ! Merci de lire le
 Si YAMLResume vous est utile, envisagez de soutenir le projet :
 
 [![Buy Me a Coffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-FFDD00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black)](https://buymeacoffee.com/xiaohanyu)
-
 
