@@ -59,7 +59,7 @@
     "@types/commander": "^2.12.5",
     "@types/lodash-es": "^4.17.12",
     "@types/which": "^3.0.4",
-    "tsx": "^4.20.5"
+    "tsx": "^4.20.6"
   },
   "publishConfig": {
     "access": "public"
