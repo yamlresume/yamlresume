@@ -30,14 +30,15 @@ import type { Command } from 'commander'
 import { consola } from 'consola'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 
-import { createTemplatesCommand, listTemplates } from './templates'
+import { createTemplatesCommand, listLaTeXTemplates } from './templates'
 
-describe(listTemplates, () => {
+describe(listLaTeXTemplates, () => {
   it('should generate a markdown table with all supported templates', () => {
-    const result = listTemplates()
+    const result = listLaTeXTemplates()
 
     // Check for headers
     expect(result).toContain('layout.template')
+    expect(result).toContain('Engine')
     expect(result).toContain('Template Name')
     expect(result).toContain('Description')
 
@@ -45,6 +46,7 @@ describe(listTemplates, () => {
     LATEX_TEMPLATE_OPTIONS.forEach((value) => {
       const details = getLatexTemplateDetail(value)
       expect(result).toContain(value) // Template ID
+      expect(result).toContain(details.engine) // Engine
       expect(result).toContain(details.name) // Template Name
       expect(result).toContain(details.description) // Description
     })
@@ -84,7 +86,7 @@ describe(createTemplatesCommand, () => {
 
     templatesCommand.parse(['yamlresume', 'templates', 'list'])
 
-    expect(consolaSpy).toBeCalledWith(listTemplates())
+    expect(consolaSpy).toBeCalledWith(listLaTeXTemplates())
   })
 
   it('should show help for templates list command', () => {

@@ -30,6 +30,7 @@ import type {
   OrderableSectionID,
   Resume,
   ResumeContent,
+  ResumeLayoutEngine,
   ResumeLayouts,
   ResumeLocale,
   ResumeItem as ResumeSectionItem,
@@ -279,20 +280,29 @@ export const LATEX_TEMPLATE_OPTIONS = [
   'moderncv-classic',
 ] as const
 
+/**
+ * Get the detail of the given LaTeX template.
+ *
+ * @param template - The template to get the detail for.
+ * @returns The detail of the template.
+ */
 export function getLatexTemplateDetail(template: LatexTemplate) {
   const templateDetails: Record<
     LatexTemplate,
-    { name: string; description: string }
+    { engine: ResumeLayoutEngine; name: string; description: string }
   > = {
     'moderncv-banking': {
+      engine: 'latex',
       name: 'ModernCV Banking',
       description: 'ModernCV template with banking style',
     },
     'moderncv-casual': {
+      engine: 'latex',
       name: 'ModernCV Casual',
       description: 'ModernCV template with casual style',
     },
     'moderncv-classic': {
+      engine: 'latex',
       name: 'ModernCV Classic',
       description: 'ModernCV template with classic style',
     },

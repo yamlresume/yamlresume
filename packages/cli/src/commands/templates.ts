@@ -37,12 +37,12 @@ import { markdownTable } from 'markdown-table'
  *
  * @returns A string containing the formatted markdown table.
  */
-export function listTemplates() {
+export function listLaTeXTemplates() {
   return markdownTable([
-    ['layout.template', 'Template Name', 'Description'],
+    ['layout.template', 'Engine', 'Template Name', 'Description'],
     ...LATEX_TEMPLATE_OPTIONS.map((value) => {
       const details = getLatexTemplateDetail(value)
-      return [value, details.name, details.description]
+      return [value, details.engine, details.name, details.description]
     }),
   ])
 }
@@ -59,7 +59,7 @@ export function createTemplatesCommand() {
     .command('list')
     .description('list all supported templates')
     .action(() => {
-      consola.log(listTemplates())
+      consola.log(listLaTeXTemplates())
     })
 
   return cmd
