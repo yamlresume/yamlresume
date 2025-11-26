@@ -3,7 +3,7 @@ name: publish
 on:
   push:
     tags:
-      - 'v*'
+      - v*
 
 jobs:
   test:
@@ -20,8 +20,8 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '22'
-          registry-url: 'https://registry.npmjs.org'
+          node-version: 22
+          registry-url: https://registry.npmjs.org
 
       - name: Install pnpm
         uses: pnpm/action-setup@v4
@@ -102,7 +102,6 @@ jobs:
         with:
           context: .
           platforms: linux/amd64,linux/arm64
-          load: true
           push: true
           labels: ${{ steps.meta.outputs.labels }}
           tags: ${{ steps.meta.outputs.tags }}
