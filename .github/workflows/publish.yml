@@ -112,11 +112,12 @@ jobs:
 
       - name: Fail if low disk space
         run: |
-          available_kb=$(df --output=avail / | tail -1)
-          # Set min_kb to 10 GB (adjustable). Use 10*1024*1024 = 10485760 KB
-          min_kb=$((10 * 1024 * 1024))
+          # Check root filesystem where Docker stores build artifacts
+          available_kb=$(df --output=avail /var/lib/docker 2>/dev/null | tail -1 || df --output=avail / | tail -1)
+          # Minimum 10 GB required (10 * 1024 * 1024 KB)
+          min_kb=10485760
           if [ "$available_kb" -lt "$min_kb" ]; then
-            echo "Not enough disk space: ${available_kb} KB available"
+            echo "Not enough disk space: ${available_kb} KB available (need ${min_kb} KB)"
             exit 1
           fi
 
