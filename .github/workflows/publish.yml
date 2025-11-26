@@ -72,6 +72,30 @@ jobs:
                 "containerd-snapshotter": true
               }
             }
+      - name: Check disk / prune Docker before build
+        run: |
+          echo "=== Disk usage before cleanup ==="
+          df -h /
+          echo "--- Docker disk summary ---"
+          docker system df || true
+          # aggressive cleanup to free space - safe for ephemeral runners
+          docker builder prune -af || true
+          docker container prune -f || true
+          docker image prune -af || true
+          docker volume prune -f || true
+          echo "=== Disk usage after cleanup ==="
+          df -h /
+
+      - name: Fail if low disk space
+        run: |
+          available_kb=$(df --output=avail / | tail -1)
+          # Set min_kb to 20 GB (user requested)
+          min_kb=$((20 * 1024 * 1024))
+          if [ "$available_kb" -lt "$min_kb" ]; then
+            echo "Not enough disk space: ${available_kb} KB available"
+            exit 1
+          fi
+
       - name: Set up docker buildx
         uses: docker/setup-buildx-action@v2
 
@@ -113,6 +137,18 @@ jobs:
           subject-name: ghcr.io/${{ github.repository }}
           subject-digest: ${{ steps.push.outputs.digest }}
           push-to-registry: true
+
+      - name: Final Docker cleanup
+        if: always()
+        run: |
+          echo "=== Final Docker cleanup ==="
+          docker system df || true
+          docker builder prune -af || true
+          docker container prune -f || true
+          docker image prune -af || true
+          docker volume prune -f || true
+          echo "=== Disk usage after final cleanup ==="
+          df -h /
 
   github-release:
     needs: [npm, docker]
