@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.8.0](https://github.com/yamlresume/yamlresume/compare/v0.7.5...v0.8.0) (2025-11-26)
+
+
+### Features
+
+* add French language support ([114227a](https://github.com/yamlresume/yamlresume/commit/114227ad2b4db6b1125c161ab81655067a8703a6))
+* **breaking:** support multi layouts, starting with markdown ([56f38c2](https://github.com/yamlresume/yamlresume/commit/56f38c2c726898246ab3d7a0f1ab017989db33f3))
+* **cli:** add engine column for templates list command ([16e4cc6](https://github.com/yamlresume/yamlresume/commit/16e4cc6d12f9a53cd1f8012fe0e04080eec9a5e9))
+* move `layout.margins` to `layout.page.margins` ([d5935ea](https://github.com/yamlresume/yamlresume/commit/d5935ea82ad483a2842ad64276cb97d2af8da1f5))
+* remove "S.A.R." postfix in Hong Kong and Macau ([c9b2712](https://github.com/yamlresume/yamlresume/commit/c9b2712aab02d41fe3ccd4d95c7ceb4edf3fee63))
+* support --output/-o option for build/dev command ([ed39ff3](https://github.com/yamlresume/yamlresume/commit/ed39ff3ed44aa4820969b19a4870fa10481a488b))
+
 ## [0.7.5](https://github.com/yamlresume/yamlresume/compare/v0.7.4...v0.7.5) (2025-08-28)
 
 
