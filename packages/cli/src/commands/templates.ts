@@ -39,7 +39,7 @@ import { markdownTable } from 'markdown-table'
  */
 export function listLaTeXTemplates() {
   return markdownTable([
-    ['layout.template', 'Engine', 'Template Name', 'Description'],
+    ['layouts.[].template', 'Engine', 'Template Name', 'Description'],
     ...LATEX_TEMPLATE_OPTIONS.map((value) => {
       const details = getLatexTemplateDetail(value)
       return [value, details.engine, details.name, details.description]

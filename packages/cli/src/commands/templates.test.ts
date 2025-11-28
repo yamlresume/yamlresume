@@ -37,7 +37,7 @@ describe(listLaTeXTemplates, () => {
     const result = listLaTeXTemplates()
 
     // Check for headers
-    expect(result).toContain('layout.template')
+    expect(result).toContain('layouts.[].template')
     expect(result).toContain('Engine')
     expect(result).toContain('Template Name')
     expect(result).toContain('Description')

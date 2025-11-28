@@ -35,7 +35,7 @@ describe(listLanguages, () => {
   it('should generate a markdown table with all supported languages', () => {
     const result = listLanguages()
 
-    expect(result).toContain('layout.locale.language')
+    expect(result).toContain('locale.language')
     expect(result).toContain('Language Name')
 
     // Check if all languages are included
