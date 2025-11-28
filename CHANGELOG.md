@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.8.1](https://github.com/yamlresume/yamlresume/compare/v0.8.0...v0.8.1) (2025-11-28)
+
+
+### Bug Fixes
+
+* align templates and languages list command output ([4f28843](https://github.com/yamlresume/yamlresume/commit/4f28843be21fe0b4f43c6d5d36beff115c752bc4))
+
 ## [0.8.0](https://github.com/yamlresume/yamlresume/compare/v0.7.5...v0.8.0) (2025-11-26)
 
 
