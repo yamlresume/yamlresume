@@ -116,8 +116,10 @@ $ yamlresume new my-resume.yml
 ✔ Created my-resume.yml successfully.
 
 $ yamlresume build my-resume.yml
-◐ Generating resume PDF with command: xelatex -halt-on-error my-resume.tex...
-✔ Generated resume PDF file successfully.
+✔ Generated resume tex file successfully: my-resume.tex
+◐ Generating resume pdf file with command: xelatex -halt-on-error my-resume.tex...
+✔ Generated resume pdf file successfully: my-resume.pdf
+✔ Generated resume markdown file successfully: my-resume.md
 ```
 
 Vous pouvez également utiliser la [commande `dev`](https://yamlresume.dev/fr/docs/cli#dev) pour
@@ -125,9 +127,11 @@ reconstruire le CV à chaque modification de fichier, offrant **une expérience 
 
 ```
 $ yamlresume dev my-resume.yml
-◐ Generating resume PDF file with command: xelatex -halt-on-error my-resume.tex...
-✔ Generated resume PDF file successfully.
+✔ Generated resume tex file successfully: my-resume.tex
+◐ Generating resume pdf file with command: xelatex -halt-on-error my-resume.tex...
 ◐ Watching file changes: my-resume.yml...
+✔ Generated resume pdf file successfully: my-resume.pdf
+✔ Generated resume markdown file successfully: my-resume.md
 ```
 
 Consultez le PDF généré [ici](./docs/static/images/resume.pdf).

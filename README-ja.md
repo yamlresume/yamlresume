@@ -111,17 +111,21 @@ $ yamlresume new my-resume.yml
 ✔ Created my-resume.yml successfully.
 
 $ yamlresume build my-resume.yml
-◐ Generating resume PDF with command: xelatex -halt-on-error my-resume.tex...
-✔ Generated resume PDF file successfully.
+✔ Generated resume tex file successfully: my-resume.tex
+◐ Generating resume pdf file with command: xelatex -halt-on-error my-resume.tex...
+✔ Generated resume pdf file successfully: my-resume.pdf
+✔ Generated resume markdown file successfully: my-resume.md
 ```
 
 また、[`dev`コマンド](https://yamlresume.dev/docs/cli#dev)を使用してファイル変更時に履歴書をビルドすることもでき、これにより**モダンなWeb開発のような体験**を提供します：
 
 ```
 $ yamlresume dev my-resume.yml
-◐ Generating resume PDF file with command: xelatex -halt-on-error my-resume.tex...
-✔ Generated resume PDF file successfully.
+✔ Generated resume tex file successfully: my-resume.tex
+◐ Generating resume pdf file with command: xelatex -halt-on-error my-resume.tex...
 ◐ Watching file changes: my-resume.yml...
+✔ Generated resume pdf file successfully: my-resume.pdf
+✔ Generated resume markdown file successfully: my-resume.md
 ```
 
 生成されたPDFは[こちら](./docs/static/images/resume.pdf)で確認できます。

@@ -101,17 +101,21 @@ $ yamlresume new my-resume.yml
 ✔ Created my-resume.yml successfully.
 
 $ yamlresume build my-resume.yml
-◐ Generating resume PDF with command: xelatex -halt-on-error my-resume.tex...
-✔ Generated resume PDF file successfully.
+✔ Generated resume tex file successfully: my-resume.tex
+◐ Generating resume pdf file with command: xelatex -halt-on-error my-resume.tex...
+✔ Generated resume pdf file successfully: my-resume.pdf
+✔ Generated resume markdown file successfully: my-resume.md
 ```
 
 或使用 [`dev` 指令](https://yamlresume.dev/zh-tw/docs/cli#dev) 監聽變更並自動建置：
 
 ```
 $ yamlresume dev my-resume.yml
-◐ Generating resume PDF file with command: xelatex -halt-on-error my-resume.tex...
-✔ Generated resume PDF file successfully.
+✔ Generated resume tex file successfully: my-resume.tex
+◐ Generating resume pdf file with command: xelatex -halt-on-error my-resume.tex...
 ◐ Watching file changes: my-resume.yml...
+✔ Generated resume pdf file successfully: my-resume.pdf
+✔ Generated resume markdown file successfully: my-resume.md
 ```
 
 產生的 PDF 範例：[點此查看](./docs/static/images/resume.pdf)。
