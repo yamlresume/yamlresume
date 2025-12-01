@@ -25,35 +25,47 @@
 import { z } from 'zod'
 
 import { joinNonEmptyString } from '@/utils'
-import { nullifySchema } from '../utils'
-import { MarginsSchema } from './margins'
+import { FontSizeOptionSchema } from '../../primitives'
+import { nullifySchema } from '../../utils'
 
 /**
- * A zod schema for the show page numbers setting.
+ * A zod schema for link styling settings.
  */
-export const ShowPageNumbersSchema = z.boolean().meta({
-  title: 'Show Page Numbers',
-  description: 'Whether to show page numbers on the page.',
-})
-
-/**
- * A zod schema for validating page configuration.
- *
- * Validates page-related settings such as whether to show page numbers and margins.
- */
-export const PageSchema = z.object({
-  page: z
+const LinksSchema = z.object({
+  links: z
     .object({
-      showPageNumbers: nullifySchema(ShowPageNumbersSchema),
-      ...MarginsSchema.shape,
+      underline: z
+        .boolean()
+        .default(false)
+        .meta({
+          title: 'Underline Links',
+          description: 'Whether to underline links in the document.',
+          examples: [false, true],
+        }),
     })
     .nullish()
     .meta({
-      title: 'Page',
+      title: 'Typography Links',
+      description: 'Link styling settings for typography.',
+    }),
+})
+
+/**
+ * A zod schema for typography settings.
+ */
+export const LatexTypographySchema = z.object({
+  typography: z
+    .object({
+      fontSize: nullifySchema(FontSizeOptionSchema),
+      ...LinksSchema.shape,
+    })
+    .nullish()
+    .meta({
+      title: 'Typography',
       description: joinNonEmptyString(
         [
-          'The page section contains page display settings,',
-          'including whether to show page numbers and margins.',
+          'The typography section contains font settings,',
+          'including font size options and link styling.',
         ],
         ' '
       ),

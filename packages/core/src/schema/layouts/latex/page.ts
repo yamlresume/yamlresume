@@ -25,31 +25,35 @@
 import { z } from 'zod'
 
 import { joinNonEmptyString } from '@/utils'
-import { FontspecNumbersOptionSchema } from '../primitives'
-import { nullifySchema } from '../utils'
+import { nullifySchema } from '../../utils'
+import { MarginsSchema } from '../common/margins'
 
 /**
- * A zod schema for validating LaTeX configuration.
- *
- * Validates LaTeX-specific settings including font specification
- * options like number styling.
+ * A zod schema for the show page numbers setting.
  */
-export const LatexSchema = z.object({
-  advanced: z
+export const ShowPageNumbersSchema = z.boolean().meta({
+  title: 'Show Page Numbers',
+  description: 'Whether to show page numbers on the page.',
+})
+
+/**
+ * A zod schema for validating page configuration.
+ *
+ * Validates page-related settings such as whether to show page numbers and margins.
+ */
+export const LatexPageSchema = z.object({
+  page: z
     .object({
-      fontspec: z
-        .object({
-          numbers: nullifySchema(FontspecNumbersOptionSchema),
-        })
-        .nullish(),
+      showPageNumbers: nullifySchema(ShowPageNumbersSchema),
+      ...MarginsSchema.shape,
     })
     .nullish()
     .meta({
-      title: 'Advanced',
+      title: 'Page',
       description: joinNonEmptyString(
         [
-          'The Advanced section contains advanced latex settings,',
-          'including fontspec package configurations.',
+          'The page section contains page display settings,',
+          'including whether to show page numbers and margins.',
         ],
         ' '
       ),

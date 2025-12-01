@@ -27,8 +27,8 @@ import { describe, expect, it } from 'vitest'
 import { LATEX_FONT_SIZE_OPTIONS, LATEX_TEMPLATE_OPTIONS } from '@/models'
 import { optionSchemaMessage } from '../primitives'
 import { expectSchemaMetadata, validateZodErrors } from '../zod'
+import { marginSizeSchemaMessage } from './common/margins'
 import { LayoutsSchema } from './layouts'
-import { marginSizeSchemaMessage } from './margins'
 
 describe('LayoutsSchema', () => {
   it('should have correct metadata', () => {

@@ -24,27 +24,18 @@
 
 import { z } from 'zod'
 
-import { joinNonEmptyString } from '@/utils'
-import { LatexLayoutSchema } from './latex/'
-import { MarkdownLayoutSchema } from './markdown/'
+import { SectionsSchema } from '../common'
 
 /**
  * A zod schema that combines all layout-related configurations.
+ *
+ * This schema validates the entire layout object by intersecting all individual
+ * schemas (template, typography, locale, and page) to ensure a
+ * complete and valid layout configuration.
  */
-export const LayoutsSchema = z.object({
-  layouts: z
-    .array(
-      z.discriminatedUnion('engine', [LatexLayoutSchema, MarkdownLayoutSchema])
-    )
-    .nullish()
-    .meta({
-      title: 'Layouts',
-      description: joinNonEmptyString(
-        [
-          'Multiple output layouts configuration as a discriminated union array,',
-          'supporting engines like "latex" and "markdown".',
-        ],
-        ' '
-      ),
-    }),
-})
+export const MarkdownLayoutSchema = z
+  .object({
+    engine: z.literal('markdown'),
+    ...SectionsSchema.shape,
+  })
+  .meta({ title: 'Markdown Engine Layout' })

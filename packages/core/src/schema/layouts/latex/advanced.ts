@@ -25,24 +25,31 @@
 import { z } from 'zod'
 
 import { joinNonEmptyString } from '@/utils'
-import { LatexLayoutSchema } from './latex/'
-import { MarkdownLayoutSchema } from './markdown/'
+import { FontspecNumbersOptionSchema } from '../../primitives'
+import { nullifySchema } from '../../utils'
 
 /**
- * A zod schema that combines all layout-related configurations.
+ * A zod schema for validating some advanced latex configuration.
+ *
+ * Validates some advanced latex settings including font specification options
+ * like number styling.
  */
-export const LayoutsSchema = z.object({
-  layouts: z
-    .array(
-      z.discriminatedUnion('engine', [LatexLayoutSchema, MarkdownLayoutSchema])
-    )
+export const LatexAdvancedSchema = z.object({
+  advanced: z
+    .object({
+      fontspec: z
+        .object({
+          numbers: nullifySchema(FontspecNumbersOptionSchema),
+        })
+        .nullish(),
+    })
     .nullish()
     .meta({
-      title: 'Layouts',
+      title: 'Advanced',
       description: joinNonEmptyString(
         [
-          'Multiple output layouts configuration as a discriminated union array,',
-          'supporting engines like "latex" and "markdown".',
+          'The Advanced section contains advanced latex settings,',
+          'including fontspec package configurations.',
         ],
         ' '
       ),

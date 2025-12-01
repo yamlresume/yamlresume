@@ -26,8 +26,8 @@ import { startCase } from 'lodash-es'
 import { z } from 'zod'
 
 import { joinNonEmptyString } from '@/utils'
-import { SizedStringSchema } from '../primitives'
-import { nullifySchema } from '../utils'
+import { SizedStringSchema } from '../../primitives'
+import { nullifySchema } from '../../utils'
 
 type Position = 'top' | 'bottom' | 'left' | 'right'
 

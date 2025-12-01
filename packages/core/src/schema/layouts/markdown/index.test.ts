@@ -22,29 +22,44 @@
  * IN THE SOFTWARE.
  */
 
-import { z } from 'zod'
+import { describe, expect, it } from 'vitest'
+import { MarkdownLayoutSchema } from './index'
 
-import { joinNonEmptyString } from '@/utils'
-import { LatexLayoutSchema } from './latex/'
-import { MarkdownLayoutSchema } from './markdown/'
+describe('MarkdownLayoutSchema', () => {
+  it('should validate a valid markdown layout', () => {
+    const validLayout = {
+      engine: 'markdown',
+      sections: {
+        aliases: {
+          work: 'Experience',
+        },
+        order: ['work', 'education'],
+      },
+    }
+    expect(MarkdownLayoutSchema.parse(validLayout)).toEqual(validLayout)
+  })
 
-/**
- * A zod schema that combines all layout-related configurations.
- */
-export const LayoutsSchema = z.object({
-  layouts: z
-    .array(
-      z.discriminatedUnion('engine', [LatexLayoutSchema, MarkdownLayoutSchema])
-    )
-    .nullish()
-    .meta({
-      title: 'Layouts',
-      description: joinNonEmptyString(
-        [
-          'Multiple output layouts configuration as a discriminated union array,',
-          'supporting engines like "latex" and "markdown".',
-        ],
-        ' '
-      ),
-    }),
+  it('should validate a minimal markdown layout', () => {
+    const minimalLayout = {
+      engine: 'markdown',
+    }
+    expect(MarkdownLayoutSchema.parse(minimalLayout)).toEqual(minimalLayout)
+  })
+
+  it('should fail with invalid engine', () => {
+    const invalidLayout = {
+      engine: 'latex',
+    }
+    expect(() => MarkdownLayoutSchema.parse(invalidLayout)).toThrow()
+  })
+
+  it('should fail with invalid sections structure', () => {
+    const invalidLayout = {
+      engine: 'markdown',
+      sections: {
+        order: 'not-an-array',
+      },
+    }
+    expect(() => MarkdownLayoutSchema.parse(invalidLayout)).toThrow()
+  })
 })

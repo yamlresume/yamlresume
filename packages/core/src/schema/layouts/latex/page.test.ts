@@ -24,65 +24,45 @@
 
 import { describe, expect, it } from 'vitest'
 
-import { LATEX_FONT_SIZE_OPTIONS } from '@/models'
-import { optionSchemaMessage } from '../primitives'
-import { expectSchemaMetadata, validateZodErrors } from '../zod'
-import { TypographySchema } from './typography'
+import { expectSchemaMetadata, validateZodErrors } from '../../zod'
+import { LatexPageSchema, ShowPageNumbersSchema } from './page'
 
-describe('TypographySchema', () => {
+describe('ShowPageNumbersSchema', () => {
   it('should have correct metadata', () => {
-    expectSchemaMetadata(TypographySchema.shape.typography)
+    expectSchemaMetadata(ShowPageNumbersSchema)
+  })
+})
+
+describe('LatexPageSchema', () => {
+  it('should have correct metadata', () => {
+    expectSchemaMetadata(LatexPageSchema.shape.page)
   })
 
-  it('should validate typography if it is valid', () => {
+  it('should validate a page object if it is valid', () => {
     const tests = [
       {},
-      {
-        typography: {},
-      },
-      {
-        typography: {
-          fontSize: '12pt',
-        },
-      },
-      {
-        typography: {
-          fontSize: '12pt',
-          links: {
-            underline: true,
-          },
-        },
-      },
-      {
-        typography: {
-          links: {
-            underline: false,
-          },
-        },
-      },
+      { page: {} },
+      { page: { showPageNumbers: true } },
+      { page: { showPageNumbers: false } },
     ]
 
-    for (const typography of tests) {
-      expect(TypographySchema.parse(typography)).toStrictEqual(typography)
+    for (const page of tests) {
+      expect(LatexPageSchema.parse(page)).toStrictEqual(page)
     }
   })
 
-  it('should throw an error if typography is invalid', () => {
+  it('should throw an error if showPageNumbers is invalid', () => {
     const tests = [
       {
-        typography: {
-          fontSize: '13pt',
-        },
+        page: { showPageNumbers: 'true' },
         error: {
           errors: [],
           properties: {
-            typography: {
+            page: {
               errors: [],
               properties: {
-                fontSize: {
-                  errors: [
-                    optionSchemaMessage(LATEX_FONT_SIZE_OPTIONS, 'font size'),
-                  ],
+                showPageNumbers: {
+                  errors: ['Invalid input: expected boolean, received string'],
                 },
               },
             },
@@ -91,9 +71,9 @@ describe('TypographySchema', () => {
       },
     ]
 
-    for (const { typography, error } of tests) {
+    for (const { page, error } of tests) {
       // @ts-ignore
-      validateZodErrors(TypographySchema, { typography }, error)
+      validateZodErrors(LatexPageSchema, { page }, error)
     }
   })
 })

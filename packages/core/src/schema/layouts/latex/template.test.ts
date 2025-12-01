@@ -22,26 +22,44 @@
  * IN THE SOFTWARE.
  */
 
-import { z } from 'zod'
+import { describe, expect, it } from 'vitest'
 
-import { joinNonEmptyString } from '@/utils'
-import { TemplateOptionSchema } from '../primitives'
-import { nullifySchema } from '../utils'
+import { LATEX_TEMPLATE_OPTIONS } from '@/models'
+import { optionSchemaMessage } from '../../primitives'
+import { expectSchemaMetadata, validateZodErrors } from '../../zod'
+import { LatexTemplateSchema } from './template'
 
-/**
- * A zod schema for validating template configuration.
- *
- * Validates that the template field contains a valid template option.
- */
-export const TemplateSchema = z.object({
-  template: nullifySchema(TemplateOptionSchema).meta({
-    title: 'Template',
-    description: joinNonEmptyString(
-      [
-        'The template section contains the resume template selection,',
-        'determining the overall visual style and layout.',
-      ],
-      ' '
-    ),
-  }),
+describe('LatexTemplateSchema', () => {
+  it('should have correct metadata', () => {
+    expectSchemaMetadata(LatexTemplateSchema.shape.template)
+  })
+
+  it('should validate a template if it is valid', () => {
+    const tests = [{}, { template: LATEX_TEMPLATE_OPTIONS[0] }]
+
+    for (const template of tests) {
+      expect(LatexTemplateSchema.parse(template)).toStrictEqual(template)
+    }
+  })
+
+  it('should throw an error if the template is invalid', () => {
+    const tests = [
+      {
+        template: 'invalid-template',
+        error: {
+          errors: [],
+          properties: {
+            template: {
+              errors: [optionSchemaMessage(LATEX_TEMPLATE_OPTIONS, 'template')],
+            },
+          },
+        },
+      },
+    ]
+
+    for (const { template, error } of tests) {
+      // @ts-ignore
+      validateZodErrors(LatexTemplateSchema, { template }, error)
+    }
+  })
 })

@@ -25,8 +25,8 @@
 import { z } from 'zod'
 
 import { ORDERABLE_SECTION_IDS } from '@/models'
-import { optionSchema, SizedStringSchema } from '../primitives'
-import { nullifySchema } from '../utils'
+import { optionSchema, SizedStringSchema } from '../../primitives'
+import { nullifySchema } from '../../utils'
 
 /**
  * A zod schema for an alias name.

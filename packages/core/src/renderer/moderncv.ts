@@ -22,29 +22,3 @@
  * IN THE SOFTWARE.
  */
 
-import { z } from 'zod'
-
-import { joinNonEmptyString } from '@/utils'
-import { LatexLayoutSchema } from './latex/'
-import { MarkdownLayoutSchema } from './markdown/'
-
-/**
- * A zod schema that combines all layout-related configurations.
- */
-export const LayoutsSchema = z.object({
-  layouts: z
-    .array(
-      z.discriminatedUnion('engine', [LatexLayoutSchema, MarkdownLayoutSchema])
-    )
-    .nullish()
-    .meta({
-      title: 'Layouts',
-      description: joinNonEmptyString(
-        [
-          'Multiple output layouts configuration as a discriminated union array,',
-          'supporting engines like "latex" and "markdown".',
-        ],
-        ' '
-      ),
-    }),
-})

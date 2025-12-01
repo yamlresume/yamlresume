@@ -23,43 +23,42 @@
  */
 
 import { describe, expect, it } from 'vitest'
+import { LatexLayoutSchema } from './index'
 
-import { LATEX_TEMPLATE_OPTIONS } from '@/models'
-import { optionSchemaMessage } from '../primitives'
-import { expectSchemaMetadata, validateZodErrors } from '../zod'
-import { TemplateSchema } from './template'
-
-describe('TemplateSchema', () => {
-  it('should have correct metadata', () => {
-    expectSchemaMetadata(TemplateSchema.shape.template)
-  })
-
-  it('should validate a template if it is valid', () => {
-    const tests = [{}, { template: LATEX_TEMPLATE_OPTIONS[0] }]
-
-    for (const template of tests) {
-      expect(TemplateSchema.parse(template)).toStrictEqual(template)
-    }
-  })
-
-  it('should throw an error if the template is invalid', () => {
-    const tests = [
-      {
-        template: 'invalid-template',
-        error: {
-          errors: [],
-          properties: {
-            template: {
-              errors: [optionSchemaMessage(LATEX_TEMPLATE_OPTIONS, 'template')],
-            },
-          },
-        },
+describe('LatexLayoutSchema', () => {
+  it('should validate a valid latex layout', () => {
+    const validLayout = {
+      engine: 'latex',
+      template: 'moderncv-classic',
+      typography: {
+        fontSize: '11pt',
       },
-    ]
-
-    for (const { template, error } of tests) {
-      // @ts-ignore
-      validateZodErrors(TemplateSchema, { template }, error)
+      page: {
+        showPageNumbers: true,
+      },
     }
+    expect(LatexLayoutSchema.parse(validLayout)).toEqual(validLayout)
+  })
+
+  it('should validate a minimal latex layout', () => {
+    const minimalLayout = {
+      engine: 'latex',
+    }
+    expect(LatexLayoutSchema.parse(minimalLayout)).toEqual(minimalLayout)
+  })
+
+  it('should fail with invalid engine', () => {
+    const invalidLayout = {
+      engine: 'markdown',
+    }
+    expect(() => LatexLayoutSchema.parse(invalidLayout)).toThrow()
+  })
+
+  it('should fail with invalid typography structure', () => {
+    const invalidLayout = {
+      engine: 'latex',
+      typography: 'not-an-object',
+    }
+    expect(() => LatexLayoutSchema.parse(invalidLayout)).toThrow()
   })
 })
