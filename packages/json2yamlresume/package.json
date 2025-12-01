@@ -44,7 +44,7 @@
     "consola": "^3.4.2",
     "lodash-es": "^4.17.21",
     "tslib": "^2.8.1",
-    "yaml": "^2.8.1"
+    "yaml": "^2.8.2"
   },
   "devDependencies": {
     "@types/lodash-es": "^4.17.12",
