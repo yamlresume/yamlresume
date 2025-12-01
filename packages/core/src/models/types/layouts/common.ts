@@ -22,7 +22,33 @@
  * IN THE SOFTWARE.
  */
 
-export * from './country'
-export * from './options'
-export * from './resume'
-export * from './types'
+import type { OrderableSectionID, SectionID } from '../resume'
+
+/**
+ * Defines page margin settings for document layout.
+ */
+export type Margins = {
+  /** Top margin value (e.g., "2.5cm"). */
+  top?: string
+  /** Bottom margin value (e.g., "2.5cm"). */
+  bottom?: string
+  /** Left margin value (e.g., "1.5cm"). */
+  left?: string
+  /** Right margin value (e.g., "1.5cm"). */
+  right?: string
+}
+
+/**
+ * A union type for all possible layout engines.
+ */
+export type LayoutEngine = 'latex' | 'markdown'
+
+/**
+ * Defines section alias settings for customizing section names.
+ */
+export type Sections = {
+  /** Custom aliases for section names, overriding default translations. */
+  aliases?: Partial<Record<SectionID, string>>
+  /** Custom order for sections in the final output. */
+  order?: OrderableSectionID[]
+}

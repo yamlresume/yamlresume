@@ -24,12 +24,8 @@
 
 import { describe, expect, it } from 'vitest'
 import type { LatexTemplate, LocaleLanguage } from '@/models'
-import {
-  getLatexTemplateDetail,
-  getLocaleLanguageDetail,
-  LATEX_TEMPLATE_OPTIONS,
-  LOCALE_LANGUAGE_OPTIONS,
-} from './resume'
+import { LATEX_TEMPLATE_OPTIONS, LOCALE_LANGUAGE_OPTIONS } from './options'
+import { getLatexTemplateDetail, getLocaleLanguageDetail } from './resume'
 
 describe(getLocaleLanguageDetail, () => {
   it('should return the language code and name', () => {

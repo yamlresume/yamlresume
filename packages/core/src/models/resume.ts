@@ -22,198 +22,24 @@
  * IN THE SOFTWARE.
  */
 
+import { LATEX_FONT_SIZE_OPTIONS } from './options'
 import type {
+  Content,
   LatexLayout,
   LatexTemplate,
+  LayoutEngine,
+  Layouts,
+  Locale,
   LocaleLanguage,
   MarkdownLayout,
   OrderableSectionID,
   Resume,
-  ResumeContent,
-  ResumeLayoutEngine,
-  ResumeLayouts,
-  ResumeLocale,
-  ResumeItem as ResumeSectionItem,
+  ResumeItem,
 } from './types'
 
 /**
- * Defines all possible degrees.
- */
-export const DEGREE_OPTIONS = [
-  'Middle School',
-  'High School',
-  'Diploma',
-  'Associate',
-  'Bachelor',
-  'Master',
-  'Doctor',
-] as const
-
-/**
- * Defines language fluency levels.
- *
- * Based on the Interagency Language Roundtable (ILR) scale.
- */
-export const FLUENCY_OPTIONS = [
-  'Elementary Proficiency',
-  'Limited Working Proficiency',
-  'Minimum Professional Proficiency',
-  'Full Professional Proficiency',
-  'Native or Bilingual Proficiency',
-] as const
-
-/** The options for the font size. */
-export const FONT_SIZE_OPTIONS = ['10pt', '11pt', '12pt'] as const
-
-/** The options for the font spec numbers style. */
-export const FONTSPEC_NUMBERS_OPTIONS = ['Lining', 'OldStyle', 'Auto'] as const
-
-/**
- * Defines common world languages.
- *
- * This list contains the most used languages in the world.
- *
- * TODO: allow users to add their own languages
- */
-export const LANGUAGE_OPTIONS = [
-  'Afrikaans',
-  'Albanian',
-  'Amharic',
-  'Arabic',
-  'Azerbaijani',
-  'Belarusian',
-  'Bengali',
-  'Bhojpuri',
-  'Bulgarian',
-  'Burmese',
-  'Cantonese',
-  'Catalan',
-  'Chinese',
-  'Croatian',
-  'Czech',
-  'Danish',
-  'Dutch',
-  'English',
-  'Estonian',
-  'Farsi',
-  'Filipino',
-  'Finnish',
-  'French',
-  'German',
-  'Greek',
-  'Gujarati',
-  'Hausa',
-  'Hebrew',
-  'Hindi',
-  'Hungarian',
-  'Icelandic',
-  'Igbo',
-  'Indonesian',
-  'Irish',
-  'Italian',
-  'Japanese',
-  'Javanese',
-  'Kazakh',
-  'Khmer',
-  'Korean',
-  'Lahnda',
-  'Latvian',
-  'Lithuanian',
-  'Malay',
-  'Mandarin',
-  'Marathi',
-  'Nepali',
-  'Norwegian',
-  'Oromo',
-  'Pashto',
-  'Polish',
-  'Portuguese',
-  'Romanian',
-  'Russian',
-  'Serbian',
-  'Shona',
-  'Sinhala',
-  'Slovak',
-  'Slovene',
-  'Somali',
-  'Spanish',
-  'Sundanese',
-  'Swahili',
-  'Swedish',
-  'Tagalog',
-  'Tamil',
-  'Telugu',
-  'Thai',
-  'Turkish',
-  'Ukrainian',
-  'Urdu',
-  'Uzbek',
-  'Vietnamese',
-  'Yoruba',
-  'Zulu',
-] as const
-
-/**
- * Defines skill proficiency levels.
- *
- * Based on common industry standards for skill assessment.
- */
-export const LEVEL_OPTIONS = [
-  'Novice',
-  'Beginner',
-  'Intermediate',
-  'Advanced',
-  'Expert',
-  'Master',
-] as const
-
-/**
- * Defines supported languages for UI display and template translation.
- *
- * @see {@link https://en.wikipedia.org/wiki/IETF_language_tag}
- */
-export const LOCALE_LANGUAGE_OPTIONS = [
-  'en',
-  'zh-hans',
-  'zh-hant-hk',
-  'zh-hant-tw',
-  'es',
-  'fr',
-  'no',
-] as const
-
-/**
- * Defines network options.
- */
-export const NETWORK_OPTIONS = [
-  'Behance',
-  'Dribbble',
-  'Facebook',
-  'GitHub',
-  'Gitlab',
-  'Instagram',
-  'Line',
-  'LinkedIn',
-  'Medium',
-  'Pinterest',
-  'Reddit',
-  'Snapchat',
-  'Stack Overflow',
-  'Telegram',
-  'TikTok',
-  'Twitch',
-  'Twitter',
-  'Vimeo',
-  'Weibo',
-  'WeChat',
-  'WhatsApp',
-  'YouTube',
-  'Zhihu',
-] as const
-
-/**
  * All valid top-level sections in the resume.
- * */
+ */
 export const SECTION_IDS = [
   'basics',
   'location',
@@ -273,13 +99,6 @@ export const DEFAULT_SECTIONS_ORDER: OrderableSectionID[] = [
   'volunteer',
 ]
 
-/** Defines identifiers for the available resume templates. */
-export const LATEX_TEMPLATE_OPTIONS = [
-  'moderncv-banking',
-  'moderncv-casual',
-  'moderncv-classic',
-] as const
-
 /**
  * Get the detail of the given LaTeX template.
  *
@@ -289,7 +108,7 @@ export const LATEX_TEMPLATE_OPTIONS = [
 export function getLatexTemplateDetail(template: LatexTemplate) {
   const templateDetails: Record<
     LatexTemplate,
-    { engine: ResumeLayoutEngine; name: string; description: string }
+    { engine: LayoutEngine; name: string; description: string }
   > = {
     'moderncv-banking': {
       engine: 'latex',
@@ -319,7 +138,7 @@ export function getLatexTemplateDetail(template: LatexTemplate) {
 }
 
 /** Provides default, empty item structures for each resume section type. */
-export const RESUME_SECTION_ITEMS: ResumeSectionItem = {
+export const RESUME_SECTION_ITEMS: ResumeItem = {
   award: {
     awarder: '',
     date: '',
@@ -423,7 +242,7 @@ export const RESUME_SECTION_ITEMS: ResumeSectionItem = {
  * Default content structure for a new resume, containing empty or minimal
  * sections.
  */
-export const DEFAULT_RESUME_CONTENT: ResumeContent = {
+export const DEFAULT_RESUME_CONTENT: Content = {
   awards: [],
   basics: RESUME_SECTION_ITEMS.basics,
   certificates: [],
@@ -445,7 +264,7 @@ export const DEFAULT_RESUME_CONTENT: ResumeContent = {
  *
  * Useful for testing transformations and rendering.
  */
-export const FILLED_RESUME_CONTENT: ResumeContent = {
+export const FILLED_RESUME_CONTENT: Content = {
   awards: [RESUME_SECTION_ITEMS.award],
   basics: RESUME_SECTION_ITEMS.basics,
   certificates: [RESUME_SECTION_ITEMS.certificate],
@@ -527,18 +346,18 @@ export const DEFAULT_LATEX_LAYOUT: LatexLayout = {
     showPageNumbers: false,
   },
   typography: {
-    fontSize: FONT_SIZE_OPTIONS[0],
+    fontSize: LATEX_FONT_SIZE_OPTIONS[0],
   },
 }
 
 /** Default layouts configuration. */
-export const DEFAULT_RESUME_LAYOUTS: ResumeLayouts = [
+export const DEFAULT_RESUME_LAYOUTS: Layouts = [
   DEFAULT_LATEX_LAYOUT,
   DEFAULT_MARKDOWN_LAYOUT,
 ]
 
 /** Default locale configuration. */
-export const DEFAULT_RESUME_LOCALE: ResumeLocale = {
+export const DEFAULT_RESUME_LOCALE: Locale = {
   language: 'en',
 }
 

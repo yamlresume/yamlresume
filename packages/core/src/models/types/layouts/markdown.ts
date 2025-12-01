@@ -22,7 +22,15 @@
  * IN THE SOFTWARE.
  */
 
-export * from './country'
-export * from './options'
-export * from './resume'
-export * from './types'
+import type { Sections } from './common'
+
+/**
+ * Markdown layout configuration.
+ *
+ * Keep it minimal for now; can be extended later.
+ */
+export type MarkdownLayout = {
+  engine: 'markdown'
+  /** Defines section customization settings. */
+  sections?: Sections
+}

@@ -31,7 +31,6 @@ import {
   DEFAULT_RESUME_LAYOUTS,
   DEFAULT_RESUME_LOCALE,
   FILLED_RESUME_CONTENT,
-  type ProfileItem,
   type Resume,
   type SectionID,
 } from '@/models'
@@ -573,7 +572,7 @@ export function transformProfileUrls(resume: Resume): Resume {
     }
   }
 
-  resume.content.profiles.forEach((item: ProfileItem, index: number) => {
+  resume.content.profiles.forEach((item, index: number) => {
     resume.content.profiles[index].computed = {
       ...resume.content.profiles[index].computed,
       url:

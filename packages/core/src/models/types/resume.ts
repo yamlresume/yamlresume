@@ -22,7 +22,34 @@
  * IN THE SOFTWARE.
  */
 
-export * from './country'
-export * from './options'
-export * from './resume'
-export * from './types'
+import type { ORDERABLE_SECTION_IDS, SECTION_IDS } from '@/models'
+
+import type { Content } from './content'
+import type { Layouts } from './layouts'
+import type { Locale } from './locale'
+
+/**
+ * A union type for all possible section IDs that can be aliased and re-ordered.
+ */
+export type OrderableSectionID = (typeof ORDERABLE_SECTION_IDS)[number]
+
+/**
+ * A union type for all possible section IDs.
+ */
+export type SectionID = (typeof SECTION_IDS)[number]
+
+/**
+ * Defines the overall resume structure, including content and layout.
+ *
+ * - `content` is mandatory.
+ * - `layouts` is optional, yamlresume provide a default list of layouts if
+ * absent.
+ */
+export type Resume = {
+  /** Defines the structure for the entire resume content. */
+  content: Content
+  /** Top-level locale setting. */
+  locale?: Locale
+  /** Multiple output layout configurations. */
+  layouts?: Layouts
+}

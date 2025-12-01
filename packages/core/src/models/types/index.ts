@@ -22,7 +22,31 @@
  * IN THE SOFTWARE.
  */
 
-export * from './country'
+export type {
+  Awards,
+  Basics,
+  Certificates,
+  Content,
+  Education,
+  Interests,
+  Languages,
+  Location,
+  Profiles,
+  Projects,
+  Publications,
+  References,
+  ResumeItem,
+  Skills,
+  Volunteer,
+  Work,
+} from './content'
+
+export type {
+  LatexLayout,
+  LayoutEngine,
+  Layouts,
+  MarkdownLayout,
+} from './layouts'
+export type { Locale } from './locale'
 export * from './options'
-export * from './resume'
-export * from './types'
+export type { OrderableSectionID, Resume, SectionID } from './resume'

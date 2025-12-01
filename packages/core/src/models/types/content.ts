@@ -23,78 +23,14 @@
  */
 
 import type {
-  COUNTRY_OPTIONS,
-  DEGREE_OPTIONS,
-  FLUENCY_OPTIONS,
-  FONT_SIZE_OPTIONS,
-  FONTSPEC_NUMBERS_OPTIONS,
-  LANGUAGE_OPTIONS,
-  LATEX_TEMPLATE_OPTIONS,
-  LEVEL_OPTIONS,
-  LOCALE_LANGUAGE_OPTIONS,
-  NETWORK_OPTIONS,
-  ORDERABLE_SECTION_IDS,
-  SECTION_IDS,
-} from '@/models'
-
-/**
- * A union type for all possible countries and regions in the world.
- */
-export type Country = (typeof COUNTRY_OPTIONS)[number]
-
-/**
- * A union type for all possible degrees.
- */
-export type Degree = (typeof DEGREE_OPTIONS)[number]
-
-/**
- * A union type for all possible language fluency levels.
- */
-export type Fluency = (typeof FLUENCY_OPTIONS)[number]
-
-/**
- * Keywords type, just an alias for a string list.
- */
-type Keywords = string[]
-
-/**
- * A union type for all supported languages.
- */
-export type Language = (typeof LANGUAGE_OPTIONS)[number]
-
-/**
- * A union type for all possible skill proficiency levels.
- */
-export type Level = (typeof LEVEL_OPTIONS)[number]
-
-/**
- * A union type for all possible section IDs.
- */
-export type SectionID = (typeof SECTION_IDS)[number]
-
-/**
- * A union type for all possible section IDs that can be aliased and re-ordered.
- */
-export type OrderableSectionID = (typeof ORDERABLE_SECTION_IDS)[number]
-
-/**
- * A union type for all possible template options.
- *
- * @see {@link https://yamlresume.dev/docs/layout/templates}
- */
-export type LatexTemplate = (typeof LATEX_TEMPLATE_OPTIONS)[number]
-
-/**
- * A union type for all possible locale languages.
- *
- * @see {@link https://yamlresume.dev/docs/content/multi-languages}
- */
-export type LocaleLanguage = (typeof LOCALE_LANGUAGE_OPTIONS)[number]
-
-/**
- * A union type for all possible social network options.
- */
-export type Network = (typeof NETWORK_OPTIONS)[number]
+  Country,
+  Degree,
+  Fluency,
+  Keywords,
+  Language,
+  Level,
+  Network,
+} from './options'
 
 /**
  * Represents a single award, honor, or recognition received.
@@ -653,7 +589,7 @@ export type ResumeItem = {
  *
  * - only `basics` and `education` sections are mandatory.
  */
-export type ResumeContent = {
+export type Content = {
   /// required sections
 
   /** Represents the core personal and contact information. */
@@ -712,150 +648,4 @@ export type ResumeContent = {
     /** Combined and formatted string of URLs from basics and profiles. */
     urls?: string
   }
-}
-
-/**
- * Defines page margin settings for document layout.
- */
-type ResumeLayoutPageMargins = {
-  /** Top margin value (e.g., "2.5cm"). */
-  top?: string
-  /** Bottom margin value (e.g., "2.5cm"). */
-  bottom?: string
-  /** Left margin value (e.g., "1.5cm"). */
-  left?: string
-  /** Right margin value (e.g., "1.5cm"). */
-  right?: string
-}
-
-/**
- * A union type for all possible latex fontspec numbers options.
- *
- * - `Auto` - allowing the style to be automatically determined
- *   based on the selected `LocaleLanguage` (default)
- * - `Lining` - standard lining figures (default for CJK languages)
- * - `OldStyle` - old style figures with varying heights (default for Latin
- *   languages)
- */
-export type FontspecNumbers = (typeof FONTSPEC_NUMBERS_OPTIONS)[number]
-
-/**
- * A union type for all possible font size options.
- *
- * For now only 3 options are supported:
- *
- * - `10pt` - 10pt font size (default)
- * - `11pt` - 11pt font size
- * - `12pt` - 12pt font size
- */
-export type FontSize = (typeof FONT_SIZE_OPTIONS)[number]
-
-/**
- * Defines link styling settings for typography.
- */
-type LayoutTypographyLinks = {
-  /** Whether to underline links in the document. */
-  underline?: boolean
-}
-
-/**
- * Defines typography settings for document formatting.
- */
-type LaTeXLayoutTypography = {
-  /** Base font size for the document (e.g., "10pt", "11pt"). */
-  fontSize?: string
-  /** Link styling settings. */
-  links?: LayoutTypographyLinks
-}
-
-/**
- * Defines advanced configuration options.
- */
-type LaTeXLayoutAdvanced = {
-  /** LaTeX fontspec package configurations. */
-  fontspec?: {
-    /** Style for rendering numbers (Lining or OldStyle). */
-    numbers?: FontspecNumbers
-  }
-}
-
-/**
- * Defines locale settings for internationalization and localization.
- */
-export type ResumeLocale = {
-  /** The selected language for the resume content and template terms. */
-  language?: LocaleLanguage
-}
-
-/**
- * Defines page-level settings for document presentation.
- */
-type LaTeXLayoutPage = {
-  /** Whether to display page numbers. */
-  showPageNumbers?: boolean
-  /** Defines page margin settings for document layout. */
-  margins?: ResumeLayoutPageMargins
-}
-
-/**
- * Defines section alias settings for customizing section names.
- */
-type LayoutSections = {
-  /** Custom aliases for section names, overriding default translations. */
-  aliases?: Partial<Record<SectionID, string>>
-  /** Custom order for sections in the final output. */
-  order?: OrderableSectionID[]
-}
-
-/**
- * A union type for all possible layout engines.
- */
-export type ResumeLayoutEngine = 'latex' | 'markdown'
-
-/**
- * LaTeX layout configuration.
- */
-export type LatexLayout = {
-  engine: 'latex'
-  /** Defines page-level settings for document presentation. */
-  page?: LaTeXLayoutPage
-  /** Defines section customization settings. */
-  sections?: LayoutSections
-  /** Defines the selected template. */
-  template?: LatexTemplate
-  /** Defines typography settings for document formatting. */
-  typography?: LaTeXLayoutTypography
-  /** Defines advanced configuration options. */
-  advanced?: LaTeXLayoutAdvanced
-}
-
-/**
- * Markdown layout configuration.
- *
- * Keep it minimal for now; can be extended later.
- */
-export type MarkdownLayout = {
-  engine: 'markdown'
-  /** Defines section customization settings. */
-  sections?: LayoutSections
-}
-
-/**
- * Array of layout items supporting multiple output formats.
- */
-export type ResumeLayouts = (LatexLayout | MarkdownLayout)[]
-
-/**
- * Defines the overall resume structure, including content and layout.
- *
- * - `content` is mandatory.
- * - `layout` is optional, yamlresume provide a default layout if absent.
- */
-export type Resume = {
-  /** Defines the structure for the entire resume content. */
-  content: ResumeContent
-  /** Top-level locale setting. */
-  locale?: ResumeLocale
-  /** Multiple output layout configurations. */
-  layouts?: ResumeLayouts
 }

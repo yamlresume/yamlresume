@@ -38,7 +38,6 @@ import {
   type Network,
   ORDERABLE_SECTION_IDS,
   type OrderableSectionID,
-  type ProfileItem,
   RESUME_SECTION_ITEMS,
   type Resume,
 } from '@/models'
@@ -1161,7 +1160,9 @@ describe(transformProfileLinks, () => {
     const resume = cloneDeep(DEFAULT_RESUME)
 
     const url = 'https://yamlresume.dev'
-    const profiles: ProfileItem[] = [
+    resume.content.basics.url = url
+
+    resume.content.profiles = [
       {
         network: 'GitHub',
         url: 'https://github.com/yamlresume',
@@ -1173,9 +1174,6 @@ describe(transformProfileLinks, () => {
         username: 'yamlresume',
       },
     ]
-
-    resume.content.basics.url = url
-    resume.content.profiles = profiles
 
     transformProfileLinks(resume)
 

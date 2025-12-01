@@ -24,7 +24,7 @@
 
 import { describe, expect, it } from 'vitest'
 
-import { FONTSPEC_NUMBERS_OPTIONS } from '@/models'
+import { LATEX_FONTSPEC_NUMBERS_OPTIONS } from '@/models'
 import { optionSchemaMessage } from '../primitives'
 import { expectSchemaMetadata, validateZodErrors } from '../zod'
 import { LatexSchema } from './latex'
@@ -42,7 +42,7 @@ describe('LatexSchema', () => {
       },
       {
         advanced: {
-          fontspec: { numbers: FONTSPEC_NUMBERS_OPTIONS[0] },
+          fontspec: { numbers: LATEX_FONTSPEC_NUMBERS_OPTIONS[0] },
         },
       },
       {
@@ -75,7 +75,7 @@ describe('LatexSchema', () => {
                     numbers: {
                       errors: [
                         optionSchemaMessage(
-                          FONTSPEC_NUMBERS_OPTIONS,
+                          LATEX_FONTSPEC_NUMBERS_OPTIONS,
                           'fontspec numbers'
                         ),
                       ],

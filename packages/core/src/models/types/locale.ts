@@ -22,7 +22,12 @@
  * IN THE SOFTWARE.
  */
 
-export * from './country'
-export * from './options'
-export * from './resume'
-export * from './types'
+import type { LocaleLanguage } from './options'
+
+/**
+ * Defines locale settings for internationalization and localization.
+ */
+export type Locale = {
+  /** The selected language for the resume content and template terms. */
+  language?: LocaleLanguage
+}

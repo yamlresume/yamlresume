@@ -24,7 +24,7 @@
 
 import { describe, expect, it } from 'vitest'
 
-import { FONT_SIZE_OPTIONS } from '@/models'
+import { LATEX_FONT_SIZE_OPTIONS } from '@/models'
 import { optionSchemaMessage } from '../primitives'
 import { expectSchemaMetadata, validateZodErrors } from '../zod'
 import { TypographySchema } from './typography'
@@ -80,7 +80,9 @@ describe('TypographySchema', () => {
               errors: [],
               properties: {
                 fontSize: {
-                  errors: [optionSchemaMessage(FONT_SIZE_OPTIONS, 'font size')],
+                  errors: [
+                    optionSchemaMessage(LATEX_FONT_SIZE_OPTIONS, 'font size'),
+                  ],
                 },
               },
             },

@@ -24,7 +24,7 @@
 
 import { describe, expect, it } from 'vitest'
 
-import { FONT_SIZE_OPTIONS, LATEX_TEMPLATE_OPTIONS } from '@/models'
+import { LATEX_FONT_SIZE_OPTIONS, LATEX_TEMPLATE_OPTIONS } from '@/models'
 import { optionSchemaMessage } from '../primitives'
 import { expectSchemaMetadata, validateZodErrors } from '../zod'
 import { LayoutsSchema } from './layouts'
@@ -47,7 +47,7 @@ describe('LayoutsSchema', () => {
     }
     const template = LATEX_TEMPLATE_OPTIONS[0]
     const typography = {
-      fontSize: FONT_SIZE_OPTIONS[0],
+      fontSize: LATEX_FONT_SIZE_OPTIONS[0],
     }
 
     const tests = [
@@ -283,7 +283,10 @@ describe('LayoutsSchema', () => {
                       properties: {
                         fontSize: {
                           errors: [
-                            optionSchemaMessage(FONT_SIZE_OPTIONS, 'font size'),
+                            optionSchemaMessage(
+                              LATEX_FONT_SIZE_OPTIONS,
+                              'font size'
+                            ),
                           ],
                         },
                       },

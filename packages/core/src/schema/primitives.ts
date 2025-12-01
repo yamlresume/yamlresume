@@ -28,9 +28,9 @@ import {
   COUNTRY_OPTIONS,
   DEGREE_OPTIONS,
   FLUENCY_OPTIONS,
-  FONT_SIZE_OPTIONS,
-  FONTSPEC_NUMBERS_OPTIONS,
   LANGUAGE_OPTIONS,
+  LATEX_FONT_SIZE_OPTIONS,
+  LATEX_FONTSPEC_NUMBERS_OPTIONS,
   LATEX_TEMPLATE_OPTIONS,
   LEVEL_OPTIONS,
   LOCALE_LANGUAGE_OPTIONS,
@@ -45,8 +45,8 @@ import { joinNonEmptyString } from '@/utils'
 type Options =
   | typeof COUNTRY_OPTIONS
   | typeof DEGREE_OPTIONS
-  | typeof FONTSPEC_NUMBERS_OPTIONS
-  | typeof FONT_SIZE_OPTIONS
+  | typeof LATEX_FONTSPEC_NUMBERS_OPTIONS
+  | typeof LATEX_FONT_SIZE_OPTIONS
   | typeof FLUENCY_OPTIONS
   | typeof LANGUAGE_OPTIONS
   | typeof LOCALE_LANGUAGE_OPTIONS
@@ -212,14 +212,17 @@ export const FluencyOptionSchema = optionSchema(FLUENCY_OPTIONS, 'fluency')
  * A zod schema for a font spec numbers style.
  */
 export const FontspecNumbersOptionSchema = optionSchema(
-  FONTSPEC_NUMBERS_OPTIONS,
+  LATEX_FONTSPEC_NUMBERS_OPTIONS,
   'fontspec numbers'
 )
 
 /**
  * A zod schema for fontSize option in layout.
  */
-export const FontSizeOptionSchema = optionSchema(FONT_SIZE_OPTIONS, 'font size')
+export const FontSizeOptionSchema = optionSchema(
+  LATEX_FONT_SIZE_OPTIONS,
+  'font size'
+)
 
 /**
  * A zod schema for a keywords array.

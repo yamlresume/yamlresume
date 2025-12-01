@@ -24,7 +24,7 @@
 
 import { describe, expect, it } from 'vitest'
 
-import { FLUENCY_OPTIONS, type ResumeContent } from '@/models'
+import { type Content, FLUENCY_OPTIONS } from '@/models'
 import { validateZodErrors } from '../zod'
 import { ContentSchema } from './content'
 
@@ -43,7 +43,7 @@ describe('ContentSchema', () => {
   ]
 
   it('should validate a resume content object if it is valid', () => {
-    const tests: Array<{ content: ResumeContent }> = [
+    const tests: Array<{ content: Content }> = [
       {
         content: {
           basics,
@@ -58,7 +58,7 @@ describe('ContentSchema', () => {
   })
 
   it('should throw an error if the resume content object is invalid', () => {
-    const tests: Array<{ content: ResumeContent; error: object }> = [
+    const tests: Array<{ content: Content; error: object }> = [
       {
         // @ts-ignore
         content: {

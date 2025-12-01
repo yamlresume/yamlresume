@@ -28,9 +28,9 @@ import {
   COUNTRY_OPTIONS,
   DEGREE_OPTIONS,
   FLUENCY_OPTIONS,
-  FONT_SIZE_OPTIONS,
-  FONTSPEC_NUMBERS_OPTIONS,
   LANGUAGE_OPTIONS,
+  LATEX_FONT_SIZE_OPTIONS,
+  LATEX_FONTSPEC_NUMBERS_OPTIONS,
   LATEX_TEMPLATE_OPTIONS,
   LEVEL_OPTIONS,
   LOCALE_LANGUAGE_OPTIONS,
@@ -276,7 +276,7 @@ describe('EmailSchema', () => {
 
 describe('FontspecNumbersOptionSchema', () => {
   it('should return a fontspec numbers style if it is valid', () => {
-    for (const numbers of FONTSPEC_NUMBERS_OPTIONS) {
+    for (const numbers of LATEX_FONTSPEC_NUMBERS_OPTIONS) {
       expect(FontspecNumbersOptionSchema.parse(numbers)).toBe(numbers)
     }
   })
@@ -287,7 +287,10 @@ describe('FontspecNumbersOptionSchema', () => {
         numbers: 'bold',
         error: {
           errors: [
-            optionSchemaMessage(FONTSPEC_NUMBERS_OPTIONS, 'fontspec numbers'),
+            optionSchemaMessage(
+              LATEX_FONTSPEC_NUMBERS_OPTIONS,
+              'fontspec numbers'
+            ),
           ],
         },
       },
@@ -295,7 +298,10 @@ describe('FontspecNumbersOptionSchema', () => {
         numbers: '',
         error: {
           errors: [
-            optionSchemaMessage(FONTSPEC_NUMBERS_OPTIONS, 'fontspec numbers'),
+            optionSchemaMessage(
+              LATEX_FONTSPEC_NUMBERS_OPTIONS,
+              'fontspec numbers'
+            ),
           ],
         },
       },
@@ -319,7 +325,7 @@ describe('FontspecNumbersOptionSchema', () => {
 
 describe('FontSizeOptionSchema', () => {
   it('should return a font size if it is valid', () => {
-    for (const fontSize of FONT_SIZE_OPTIONS) {
+    for (const fontSize of LATEX_FONT_SIZE_OPTIONS) {
       expect(FontSizeOptionSchema.parse(fontSize)).toBe(fontSize)
     }
   })
@@ -329,7 +335,7 @@ describe('FontSizeOptionSchema', () => {
       {
         fontSize: '13pt',
         error: {
-          errors: [optionSchemaMessage(FONT_SIZE_OPTIONS, 'font size')],
+          errors: [optionSchemaMessage(LATEX_FONT_SIZE_OPTIONS, 'font size')],
         },
       },
       {
