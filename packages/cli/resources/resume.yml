@@ -245,4 +245,9 @@ layouts:
       # LaTeX engine only supports 10pt, 11pt, and 12pt
       fontSize: 11pt
   - engine: markdown
-
+  - engine: html
+    # Use `yamlresume templates list` to get the list of available templates
+    template: calm
+    typography:
+      # HTML engine only supports font size in px unit, from 10px to 24px
+      fontSize: 16px

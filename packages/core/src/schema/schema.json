@@ -2170,12 +2170,342 @@
     },
     "layouts": {
       "title": "Layouts",
-      "description": "Multiple output layouts configuration as a discriminated union array, supporting engines like \"latex\" and \"markdown\".",
+      "description": "Multiple output layouts configuration as a discriminated union array, supporting engines like \"latex\", \"markdown\", and \"html\".",
       "anyOf": [
         {
           "type": "array",
           "items": {
             "anyOf": [
+              {
+                "title": "HTML Engine Layout",
+                "type": "object",
+                "properties": {
+                  "engine": {
+                    "type": "string",
+                    "const": "html"
+                  },
+                  "template": {
+                    "title": "Template",
+                    "description": "The template section contains the resume template selection, determining the overall visual style and layout.",
+                    "anyOf": [
+                      {
+                        "title": "[optional] HTML Template Option",
+                        "description": "A predefined option from the available HTML template choices or `null`.",
+                        "type": "string",
+                        "enum": [
+                          "calm"
+                        ]
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  },
+                  "typography": {
+                    "title": "Typography",
+                    "description": "The typography section contains font settings, including font size options for HTML output.",
+                    "anyOf": [
+                      {
+                        "type": "object",
+                        "properties": {
+                          "fontSize": {
+                            "title": "[optional] HTML Font Size Option",
+                            "description": "A predefined option from the available HTML font size choices or `null`.",
+                            "anyOf": [
+                              {
+                                "title": "[optional] HTML Font Size Option",
+                                "description": "A predefined option from the available HTML font size choices or `null`.",
+                                "type": "string",
+                                "enum": [
+                                  "10px",
+                                  "11px",
+                                  "12px",
+                                  "13px",
+                                  "14px",
+                                  "15px",
+                                  "16px",
+                                  "17px",
+                                  "18px",
+                                  "19px",
+                                  "20px",
+                                  "21px",
+                                  "22px",
+                                  "23px",
+                                  "24px"
+                                ]
+                              },
+                              {
+                                "type": "null"
+                              }
+                            ]
+                          }
+                        },
+                        "additionalProperties": false
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  },
+                  "sections": {
+                    "title": "Sections",
+                    "description": "Section customization settings.",
+                    "anyOf": [
+                      {
+                        "type": "object",
+                        "properties": {
+                          "aliases": {
+                            "title": "Aliases",
+                            "description": "Section alias customization settings.",
+                            "anyOf": [
+                              {
+                                "type": "object",
+                                "properties": {
+                                  "basics": {
+                                    "title": "[optional] basics",
+                                    "description": "The name of the alias for basics section or `null`.",
+                                    "anyOf": [
+                                      {
+                                        "title": "[optional] basics",
+                                        "description": "The name of the alias for basics section or `null`.",
+                                        "type": "string",
+                                        "minLength": 2,
+                                        "maxLength": 128
+                                      },
+                                      {
+                                        "type": "null"
+                                      }
+                                    ]
+                                  },
+                                  "education": {
+                                    "title": "[optional] education",
+                                    "description": "The name of the alias for education section or `null`.",
+                                    "anyOf": [
+                                      {
+                                        "title": "[optional] education",
+                                        "description": "The name of the alias for education section or `null`.",
+                                        "type": "string",
+                                        "minLength": 2,
+                                        "maxLength": 128
+                                      },
+                                      {
+                                        "type": "null"
+                                      }
+                                    ]
+                                  },
+                                  "work": {
+                                    "title": "[optional] work",
+                                    "description": "The name of the alias for work section or `null`.",
+                                    "anyOf": [
+                                      {
+                                        "title": "[optional] work",
+                                        "description": "The name of the alias for work section or `null`.",
+                                        "type": "string",
+                                        "minLength": 2,
+                                        "maxLength": 128
+                                      },
+                                      {
+                                        "type": "null"
+                                      }
+                                    ]
+                                  },
+                                  "volunteer": {
+                                    "title": "[optional] volunteer",
+                                    "description": "The name of the alias for volunteer section or `null`.",
+                                    "anyOf": [
+                                      {
+                                        "title": "[optional] volunteer",
+                                        "description": "The name of the alias for volunteer section or `null`.",
+                                        "type": "string",
+                                        "minLength": 2,
+                                        "maxLength": 128
+                                      },
+                                      {
+                                        "type": "null"
+                                      }
+                                    ]
+                                  },
+                                  "awards": {
+                                    "title": "[optional] awards",
+                                    "description": "The name of the alias for awards section or `null`.",
+                                    "anyOf": [
+                                      {
+                                        "title": "[optional] awards",
+                                        "description": "The name of the alias for awards section or `null`.",
+                                        "type": "string",
+                                        "minLength": 2,
+                                        "maxLength": 128
+                                      },
+                                      {
+                                        "type": "null"
+                                      }
+                                    ]
+                                  },
+                                  "certificates": {
+                                    "title": "[optional] certificates",
+                                    "description": "The name of the alias for certificates section or `null`.",
+                                    "anyOf": [
+                                      {
+                                        "title": "[optional] certificates",
+                                        "description": "The name of the alias for certificates section or `null`.",
+                                        "type": "string",
+                                        "minLength": 2,
+                                        "maxLength": 128
+                                      },
+                                      {
+                                        "type": "null"
+                                      }
+                                    ]
+                                  },
+                                  "publications": {
+                                    "title": "[optional] publications",
+                                    "description": "The name of the alias for publications section or `null`.",
+                                    "anyOf": [
+                                      {
+                                        "title": "[optional] publications",
+                                        "description": "The name of the alias for publications section or `null`.",
+                                        "type": "string",
+                                        "minLength": 2,
+                                        "maxLength": 128
+                                      },
+                                      {
+                                        "type": "null"
+                                      }
+                                    ]
+                                  },
+                                  "skills": {
+                                    "title": "[optional] skills",
+                                    "description": "The name of the alias for skills section or `null`.",
+                                    "anyOf": [
+                                      {
+                                        "title": "[optional] skills",
+                                        "description": "The name of the alias for skills section or `null`.",
+                                        "type": "string",
+                                        "minLength": 2,
+                                        "maxLength": 128
+                                      },
+                                      {
+                                        "type": "null"
+                                      }
+                                    ]
+                                  },
+                                  "languages": {
+                                    "title": "[optional] languages",
+                                    "description": "The name of the alias for languages section or `null`.",
+                                    "anyOf": [
+                                      {
+                                        "title": "[optional] languages",
+                                        "description": "The name of the alias for languages section or `null`.",
+                                        "type": "string",
+                                        "minLength": 2,
+                                        "maxLength": 128
+                                      },
+                                      {
+                                        "type": "null"
+                                      }
+                                    ]
+                                  },
+                                  "interests": {
+                                    "title": "[optional] interests",
+                                    "description": "The name of the alias for interests section or `null`.",
+                                    "anyOf": [
+                                      {
+                                        "title": "[optional] interests",
+                                        "description": "The name of the alias for interests section or `null`.",
+                                        "type": "string",
+                                        "minLength": 2,
+                                        "maxLength": 128
+                                      },
+                                      {
+                                        "type": "null"
+                                      }
+                                    ]
+                                  },
+                                  "references": {
+                                    "title": "[optional] references",
+                                    "description": "The name of the alias for references section or `null`.",
+                                    "anyOf": [
+                                      {
+                                        "title": "[optional] references",
+                                        "description": "The name of the alias for references section or `null`.",
+                                        "type": "string",
+                                        "minLength": 2,
+                                        "maxLength": 128
+                                      },
+                                      {
+                                        "type": "null"
+                                      }
+                                    ]
+                                  },
+                                  "projects": {
+                                    "title": "[optional] projects",
+                                    "description": "The name of the alias for projects section or `null`.",
+                                    "anyOf": [
+                                      {
+                                        "title": "[optional] projects",
+                                        "description": "The name of the alias for projects section or `null`.",
+                                        "type": "string",
+                                        "minLength": 2,
+                                        "maxLength": 128
+                                      },
+                                      {
+                                        "type": "null"
+                                      }
+                                    ]
+                                  }
+                                },
+                                "additionalProperties": false
+                              },
+                              {
+                                "type": "null"
+                              }
+                            ]
+                          },
+                          "order": {
+                            "title": "Order",
+                            "description": "Custom order for sections in the final output.",
+                            "anyOf": [
+                              {
+                                "type": "array",
+                                "items": {
+                                  "title": "Section Option",
+                                  "description": "A predefined option from the available section choices.",
+                                  "type": "string",
+                                  "enum": [
+                                    "basics",
+                                    "education",
+                                    "work",
+                                    "volunteer",
+                                    "awards",
+                                    "certificates",
+                                    "publications",
+                                    "skills",
+                                    "languages",
+                                    "interests",
+                                    "references",
+                                    "projects"
+                                  ]
+                                }
+                              },
+                              {
+                                "type": "null"
+                              }
+                            ]
+                          }
+                        },
+                        "additionalProperties": false
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  }
+                },
+                "required": [
+                  "engine"
+                ],
+                "additionalProperties": false
+              },
               {
                 "title": "LaTeX Engine Layout",
                 "type": "object",
@@ -2353,8 +2683,8 @@
                     "description": "The template section contains the resume template selection, determining the overall visual style and layout.",
                     "anyOf": [
                       {
-                        "title": "[optional] Template Option",
-                        "description": "A predefined option from the available template choices or `null`.",
+                        "title": "[optional] LaTeX Template Option",
+                        "description": "A predefined option from the available LaTeX template choices or `null`.",
                         "type": "string",
                         "enum": [
                           "moderncv-banking",
@@ -2375,12 +2705,12 @@
                         "type": "object",
                         "properties": {
                           "fontSize": {
-                            "title": "[optional] Font Size Option",
-                            "description": "A predefined option from the available font size choices or `null`.",
+                            "title": "[optional] LaTeX Font Size Option",
+                            "description": "A predefined option from the available LaTeX font size choices or `null`.",
                             "anyOf": [
                               {
-                                "title": "[optional] Font Size Option",
-                                "description": "A predefined option from the available font size choices or `null`.",
+                                "title": "[optional] LaTeX Font Size Option",
+                                "description": "A predefined option from the available LaTeX font size choices or `null`.",
                                 "type": "string",
                                 "enum": [
                                   "10pt",
@@ -2442,12 +2772,12 @@
                                 "type": "object",
                                 "properties": {
                                   "numbers": {
-                                    "title": "[optional] Fontspec Numbers Option",
-                                    "description": "A predefined option from the available fontspec numbers choices or `null`.",
+                                    "title": "[optional] LaTeX Fontspec Numbers Option",
+                                    "description": "A predefined option from the available LaTeX fontspec numbers choices or `null`.",
                                     "anyOf": [
                                       {
-                                        "title": "[optional] Fontspec Numbers Option",
-                                        "description": "A predefined option from the available fontspec numbers choices or `null`.",
+                                        "title": "[optional] LaTeX Fontspec Numbers Option",
+                                        "description": "A predefined option from the available LaTeX fontspec numbers choices or `null`.",
                                         "type": "string",
                                         "enum": [
                                           "Lining",

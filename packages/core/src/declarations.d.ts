@@ -22,12 +22,7 @@
  * IN THE SOFTWARE.
  */
 
-export { HtmlRenderer } from './html'
-export {
-  ModerncvBankingRenderer,
-  ModerncvCasualRenderer,
-  ModerncvClassicRenderer,
-} from './latex'
-export { MarkdownRenderer } from './markdown'
-
-export { getResumeRenderer } from './resume'
+declare module '*.css' {
+  const content: string
+  export default content
+}

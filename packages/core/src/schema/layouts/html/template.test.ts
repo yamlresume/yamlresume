@@ -24,25 +24,25 @@
 
 import { describe, expect, it } from 'vitest'
 
-import { LATEX_TEMPLATE_OPTIONS } from '@/models'
+import { HTML_TEMPLATE_OPTIONS } from '@/models'
 import { optionSchemaMessage } from '../../primitives'
 import { expectSchemaMetadata, validateZodErrors } from '../../zod'
-import { LatexTemplateSchema } from './template'
+import { HtmlTemplateSchema } from './template'
 
-describe('LatexTemplateSchema', () => {
+describe('HtmlTemplateSchema', () => {
   it('should have correct metadata', () => {
-    expectSchemaMetadata(LatexTemplateSchema.shape.template)
+    expectSchemaMetadata(HtmlTemplateSchema.shape.template)
   })
 
   it('should validate a template if it is valid', () => {
     const tests = [
       {},
-      { template: LATEX_TEMPLATE_OPTIONS[0] },
+      { template: HTML_TEMPLATE_OPTIONS[0] },
       { template: null },
     ]
 
     for (const template of tests) {
-      expect(LatexTemplateSchema.parse(template)).toStrictEqual(template)
+      expect(HtmlTemplateSchema.parse(template)).toStrictEqual(template)
     }
   })
 
@@ -55,7 +55,7 @@ describe('LatexTemplateSchema', () => {
           properties: {
             template: {
               errors: [
-                optionSchemaMessage(LATEX_TEMPLATE_OPTIONS, 'LaTeX template'),
+                optionSchemaMessage(HTML_TEMPLATE_OPTIONS, 'HTML template'),
               ],
             },
           },
@@ -65,7 +65,7 @@ describe('LatexTemplateSchema', () => {
 
     for (const { template, error } of tests) {
       // @ts-ignore
-      validateZodErrors(LatexTemplateSchema, { template }, error)
+      validateZodErrors(HtmlTemplateSchema, { template }, error)
     }
   })
 })

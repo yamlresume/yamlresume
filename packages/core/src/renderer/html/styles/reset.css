@@ -22,12 +22,22 @@
  * IN THE SOFTWARE.
  */
 
-export { HtmlRenderer } from './html'
-export {
-  ModerncvBankingRenderer,
-  ModerncvCasualRenderer,
-  ModerncvClassicRenderer,
-} from './latex'
-export { MarkdownRenderer } from './markdown'
+/* Modified from: https://www.joshwcomeau.com/css/custom-css-reset/ */
 
-export { getResumeRenderer } from './resume'
+/* 1. Use a more-intuitive box-sizing model */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+*:not(dialog) {
+  margin: 0;
+}
+
+body {
+  /* 3. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

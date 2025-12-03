@@ -21,6 +21,16 @@
 # IN THE SOFTWARE.
 
 # yaml-language-server: $schema=https://yamlresume.dev/schema.json
+#
+# YAMLResume provides a builtin schema to validate resumes and help avoid lots
+# of low level mistakes.
+#
+# You need to install https://github.com/redhat-developer/yaml-language-server
+# in order to get the best editing experience in your choice of editor/IDE.
+#
+# ref:
+# - https://yamlresume.dev/docs/compiler/schema
+# - https://yamlresume.dev/docs/compiler/schema/json
 
 ---
 content:
@@ -30,7 +40,9 @@ content:
     phone: "(213) 555-9876"
     email: hi@ppresume.com
     url: https://ppresume.com/gallery
-    # all summary fields supports a limited rich text markdown syntax
+    # All summary fields supports a limited rich text capabilities in markdown
+    # syntax:
+    #
     # - bold, (e.g, `**bold**`)
     # - italic, (e.g, `*italic*`)
     # - ordered list, unordored list and nested sub list
@@ -56,7 +68,8 @@ content:
   education:
     - institution: University of Southern California
       url: https://www.cs.usc.edu/
-      # valid degree options:
+      # Valid degree options:
+      #
       # - 'Middle School'
       # - 'High School'
       # - 'Diploma'
@@ -67,11 +80,15 @@ content:
       degree: Bachelor
       area: Computer Engineering and Computer Science
       score: "3.8"
-      # should be a valid date string that can be parsed by `new Date(dateStr)`
+      # Should be a valid date string that can be parsed by `new Date(dateStr)`
       # in JavaScript, eg. '2020-01', '2020-02-03', 'Jul 1, 2023' etc.
+      #
+      # The date part would be removed in the final output as most of the time
+      # people won't really care about the exact date for your working
+      # experience or education background, etc.
       # ref: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/Date
       startDate: Sep 1, 2016
-      # leave endDate blank to indicate "Present"
+      # Leave endDate blank to indicate "Present"
       endDate: Jul 1, 2020
       courses:
         - Discrete Methods in Computer Science
@@ -118,7 +135,8 @@ content:
         - React
         - Agile
   languages:
-    # valid language fluency options:
+    # Valid language fluency options:
+    #
     # - 'Elementary Proficiency'
     # - 'Limited Working Proficiency'
     # - 'Minimum Professional Proficiency'
@@ -133,7 +151,8 @@ content:
       fluency: Elementary Proficiency
       keywords: []
   skills:
-    # valid level options:
+    # Valid level options:
+    #
     # - 'Novice'
     # - 'Beginner'
     # - 'Intermediate'
@@ -245,6 +264,12 @@ layouts:
     # Use `yamlresume templates list` to get the list of available templates
     template: moderncv-banking
     typography:
-      # The LaTeX engine only supports 10pt, 11pt, and 12pt
+      # LaTeX engine only supports 10pt, 11pt, and 12pt
       fontSize: 11pt
   - engine: markdown
+  - engine: html
+    # Use `yamlresume templates list` to get the list of available templates
+    template: calm
+    typography:
+      # HTML engine only supports font size in px unit, from 10px to 24px
+      fontSize: 16px

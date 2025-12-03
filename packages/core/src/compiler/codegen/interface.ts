@@ -23,18 +23,14 @@
  */
 
 import type { Node } from '@/compiler'
-import type { Resume } from '@/models'
+import type { HtmlLayout, LatexLayout } from '@/models'
 
 /**
  * Context for code generation containing layout settings.
  */
 export interface CodeGenerationContext {
   /** Typography settings from the resume layout. */
-  typography?: Resume['layouts'] extends Array<infer T>
-    ? T extends { typography?: infer U }
-      ? U
-      : never
-    : never
+  typography?: LatexLayout['typography'] | HtmlLayout['typography']
 }
 
 /**

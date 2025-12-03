@@ -25,6 +25,8 @@
 import { LATEX_FONT_SIZE_OPTIONS } from './options'
 import type {
   Content,
+  HtmlLayout,
+  HtmlTemplate,
   LatexLayout,
   LatexTemplate,
   LayoutEngine,
@@ -124,6 +126,34 @@ export function getLatexTemplateDetail(template: LatexTemplate) {
       engine: 'latex',
       name: 'ModernCV Classic',
       description: 'ModernCV template with classic style',
+    },
+  }
+
+  if (template in templateDetails) {
+    return {
+      id: template,
+      ...templateDetails[template],
+    }
+  }
+
+  throw new Error(`Invalid template option: ${template}`)
+}
+
+/**
+ * Get the detail of the given HTML template.
+ *
+ * @param template - The template to get the detail for.
+ * @returns The detail of the template.
+ */
+export function getHtmlTemplateDetail(template: HtmlTemplate) {
+  const templateDetails: Record<
+    HtmlTemplate,
+    { engine: LayoutEngine; name: string; description: string }
+  > = {
+    calm: {
+      engine: 'html',
+      name: 'Calm',
+      description: 'A dedicated Calm HTML template, suitable for all.',
     },
   }
 
@@ -322,6 +352,15 @@ export function getLocaleLanguageDetail(localeLanguage: LocaleLanguage) {
   throw new Error(`Invalid locale language: ${localeLanguage}`)
 }
 
+/** Default HTML layout configuration. */
+export const DEFAULT_HTML_LAYOUT: HtmlLayout = {
+  engine: 'html',
+  template: 'calm',
+  typography: {
+    fontSize: '16px',
+  },
+}
+
 /** Default Markdown layout configuration. */
 export const DEFAULT_MARKDOWN_LAYOUT: MarkdownLayout = {
   engine: 'markdown',
@@ -354,6 +393,7 @@ export const DEFAULT_LATEX_LAYOUT: LatexLayout = {
 export const DEFAULT_RESUME_LAYOUTS: Layouts = [
   DEFAULT_LATEX_LAYOUT,
   DEFAULT_MARKDOWN_LAYOUT,
+  DEFAULT_HTML_LAYOUT,
 ]
 
 /** Default locale configuration. */

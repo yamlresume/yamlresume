@@ -23,9 +23,17 @@
  */
 
 import { describe, expect, it } from 'vitest'
-import type { LatexTemplate, LocaleLanguage } from '@/models'
-import { LATEX_TEMPLATE_OPTIONS, LOCALE_LANGUAGE_OPTIONS } from './options'
-import { getLatexTemplateDetail, getLocaleLanguageDetail } from './resume'
+import type { HtmlTemplate, LatexTemplate, LocaleLanguage } from '@/models'
+import {
+  HTML_TEMPLATE_OPTIONS,
+  LATEX_TEMPLATE_OPTIONS,
+  LOCALE_LANGUAGE_OPTIONS,
+} from './options'
+import {
+  getHtmlTemplateDetail,
+  getLatexTemplateDetail,
+  getLocaleLanguageDetail,
+} from './resume'
 
 describe(getLocaleLanguageDetail, () => {
   it('should return the language code and name', () => {
@@ -59,6 +67,25 @@ describe(getLatexTemplateDetail, () => {
 
   it('should throw an error for invalid template option', () => {
     expect(() => getLatexTemplateDetail('invalid' as LatexTemplate)).toThrow(
+      'Invalid template option: invalid'
+    )
+  })
+})
+
+describe(getHtmlTemplateDetail, () => {
+  it('should return the template option code and name', () => {
+    for (const template of HTML_TEMPLATE_OPTIONS) {
+      const result = getHtmlTemplateDetail(template)
+
+      expect(result).toEqual({
+        id: template,
+        ...getHtmlTemplateDetail(template),
+      })
+    }
+  })
+
+  it('should throw an error for invalid template option', () => {
+    expect(() => getHtmlTemplateDetail('invalid' as HtmlTemplate)).toThrow(
       'Invalid template option: invalid'
     )
   })

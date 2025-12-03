@@ -24,8 +24,9 @@
 
 import { capitalize, cloneDeep, isArray, merge } from 'lodash-es'
 
-import { LatexCodeGenerator, type Parser } from '@/compiler'
+import { HtmlCodeGenerator, LatexCodeGenerator, type Parser } from '@/compiler'
 import {
+  DEFAULT_HTML_LAYOUT,
   DEFAULT_LATEX_LAYOUT,
   DEFAULT_MARKDOWN_LAYOUT,
   DEFAULT_RESUME_LAYOUTS,
@@ -36,7 +37,6 @@ import {
 } from '@/models'
 import { getOptionTranslation, getTemplateTranslations } from '@/translations'
 import {
-  escapeLatex,
   getDateRange,
   isEmptyValue,
   joinNonEmptyString,
@@ -156,25 +156,31 @@ export function normalizedResumeContent(resume: Resume): Resume {
 }
 
 /**
- * Iterates through all resume content sections and applies `escapeLatex` to
+ * Iterates through all resume content sections and applies `escapeFunc` to
  * relevant string fields and array elements using helper functions.
  *
  * @param resume - The resume object to process.
  * @returns The processed resume object.
  * @remarks Modifies the `resume.content` object and its children directly.
  */
-export function transformResumeValues(resume: Resume): Resume {
+export function transformResumeValues(
+  resume: Resume,
+  escapeFunc: (input: string) => string
+): Resume {
   Object.entries(resume.content).forEach(([key, value]) => {
     // only resume.basics and resume.location are objects, others are all arrays
     if (key === 'basics' || key === 'location') {
-      transformResumeSectionValues(value)
+      transformResumeSectionValues(value as Record<string, unknown>, escapeFunc)
     } else if (key === 'computed') {
       // `computed` object will be handled separately
       // for now, `transformSocialLinks` will handle it
       return
     } else {
       resume.content[key].forEach((_, index: number) => {
-        transformResumeSectionValues(value[index])
+        transformResumeSectionValues(
+          value[index] as Record<string, unknown>,
+          escapeFunc
+        )
       })
     }
   })
@@ -183,26 +189,31 @@ export function transformResumeValues(resume: Resume): Resume {
 }
 
 /**
- * Transform all values in `computed` field with `escapeLatex`.
+ * Transform all values in `computed` field with `escapeFunc`.
  */
-function transformResumeSectionComputedValues(sectionResumeComputed: {
-  [key: string]: string
-}): void {
+function transformResumeSectionComputedValues(
+  sectionResumeComputed: {
+    [key: string]: string
+  },
+  escapeFunc: (input: string) => string
+): void {
   Object.entries(sectionResumeComputed).forEach(([key, value]) => {
-    sectionResumeComputed[key] = escapeLatex(value)
+    sectionResumeComputed[key] = escapeFunc(value)
   })
 }
 
 /**
- * Transform all the values in `sectionResumeItem` with `escapeLatex`
+ * Transform all the values in `sectionResumeItem` with `escapeFunc`
  *
  * @param sectionResumeItem - a dictionary object in a resume section, for
  * 'basics` and 'locations', it would be `resume.basics` and `resume.location`
  * respectively, for other sections, it would be `resume.education[0]`,
  * `resume.projects[0]` etc.
  */
-// biome-ignore lint/complexity/noBannedTypes: ignore
-function transformResumeSectionValues(sectionResumeItem: Object): void {
+function transformResumeSectionValues(
+  sectionResumeItem: Record<string, unknown>,
+  escapeFunc: (input: string) => string
+): void {
   Object.entries(sectionResumeItem).forEach(([key, value]) => {
     if (key === 'summary') {
       // we will handle the `summary` field in a `textNodeToTeX` function
@@ -212,19 +223,22 @@ function transformResumeSectionValues(sectionResumeItem: Object): void {
 
     if (key === 'computed') {
       // deal with `computed` field separately
-      transformResumeSectionComputedValues(value)
+      transformResumeSectionComputedValues(
+        value as { [key: string]: string },
+        escapeFunc
+      )
       return
     }
 
     if (['courses', 'keywords'].includes(key)) {
       sectionResumeItem[key] = (value as string[]).map((item) => {
-        return escapeLatex(item)
+        return escapeFunc(item)
       })
 
       return
     }
 
-    sectionResumeItem[key] = escapeLatex(value)
+    sectionResumeItem[key] = escapeFunc(value as string)
   })
 }
 
@@ -720,15 +734,28 @@ export function transformSummary(
     typography: layout?.typography,
   }
 
+  // Choose the appropriate code generator based on the layout engine
+  let codeGenerator: LatexCodeGenerator | HtmlCodeGenerator
+  let processOutput = (output: string) => output.trim()
+
+  switch (layout?.engine) {
+    case 'latex':
+      codeGenerator = new LatexCodeGenerator()
+      processOutput = (output: string) =>
+        replaceBlankLinesWithPercent(output.trim())
+      break
+    case 'html':
+      codeGenerator = new HtmlCodeGenerator()
+      break
+  }
+
   resume.content.basics.computed = {
     ...resume.content.basics.computed,
-    summary: replaceBlankLinesWithPercent(
-      new LatexCodeGenerator()
-        .generate(
-          summaryParser.parse(resume.content.basics.summary),
-          typographyContext
-        )
-        .trim()
+    summary: processOutput(
+      codeGenerator.generate(
+        summaryParser.parse(resume.content.basics.summary),
+        typographyContext
+      )
     ),
   }
 
@@ -743,24 +770,14 @@ export function transformSummary(
   ]) {
     resume.content[section].forEach(
       (item: { summary: string }, index: number) => {
-        const summary = new LatexCodeGenerator().generate(
+        const summary = codeGenerator.generate(
           summaryParser.parse(item.summary),
           typographyContext
         )
         if (summary) {
-          // The reason we need to replace blank lines with percent is that, the
-          // argument of `\cventry` command in LaTeX's moderncv package do not
-          // support consecutive blank lines. It will report ugly errors like:
-          // `Paragraph ended before \cventry was complete.`, thus we have to
-          // replace all blank lines in `\cventry`'s argument with a percent sign.
-          // Ref:
-          // - https://www.reddit.com/r/LaTeX/comments/2szgdi/odd_error_using_extra_line_breaks_in_argument_of/cnudnos/
-          //
-          // BTW, debugging LaTeX's error with its arcane messages is really a
-          // boring, dirty and meaningless job.
           resume.content[section][index].computed = {
             ...resume.content[section][index].computed,
-            summary: replaceBlankLinesWithPercent(summary.trim()),
+            summary: processOutput(summary),
           }
         } else {
           resume.content[section][index].computed = {
@@ -786,20 +803,22 @@ export function transformSummary(
  * @param resume - The resume object to transform.
  * @param layoutIndex - The index of the selected layout.
  * @param summaryParser - The parser for handling summary fields.
+ * @param escapeFunc - The function to escape string values
  * @returns The transformed resume object.
  * @remarks Modifies the `resume.content` object and its children in place.
  */
 export function transformResumeContent(
   resume: Resume,
   layoutIndex: number,
-  summaryParser: Parser
+  summaryParser: Parser,
+  escapeFunc: (input: string) => string
 ): Resume {
   return [
     // The order of the following functions matters, `transformResumeValues`
     // should be called first to process all leaf values properly with LaTeX
     // special characters escaped,
     normalizedResumeContent,
-    transformResumeValues,
+    (resume: Resume) => transformResumeValues(resume, escapeFunc),
     transformEducationCourses,
     transformEducationDegreeAreaAndScore,
     transformDate,
@@ -852,6 +871,8 @@ export function transformResumeLayoutsWithDefaultValues(
           return merge(cloneDeep(DEFAULT_MARKDOWN_LAYOUT), layout)
         case 'latex':
           return merge(cloneDeep(DEFAULT_LATEX_LAYOUT), layout)
+        case 'html':
+          return merge(cloneDeep(DEFAULT_HTML_LAYOUT), layout)
         default:
           return layout
       }
@@ -953,6 +974,8 @@ export function transformResumeLayout(resume: Resume): Resume {
  * @param resume - The original resume object.
  * @param layoutIndex - The index of the selected layout.
  * @param summaryParser - The parser instance for handling summary fields.
+ * @param escapeFunc - The function to escape string values, i.e, `escapeLatex`
+ * or `escapeHtml`
  * @returns A new, transformed resume object ready for rendering.
  * @remarks This function operates on and returns a deep clone of the original
  * resume.
@@ -960,10 +983,12 @@ export function transformResumeLayout(resume: Resume): Resume {
 export function transformResume(
   resume: Resume,
   layoutIndex: number,
-  summaryParser: Parser
+  summaryParser: Parser,
+  escapeFunc: (input: string) => string
 ): Resume {
   return [transformResumeLayout, transformResumeContent].reduce(
-    (resume, tranformFunc) => tranformFunc(resume, layoutIndex, summaryParser),
+    (resume, tranformFunc) =>
+      tranformFunc(resume, layoutIndex, summaryParser, escapeFunc),
     cloneDeep(resume)
   )
 }

@@ -51,6 +51,28 @@ export const FLUENCY_OPTIONS = [
 /** The options for the latex layout font size. */
 export const LATEX_FONT_SIZE_OPTIONS = ['10pt', '11pt', '12pt'] as const
 
+/** The options for the HTML layout font size. */
+export const HTML_FONT_SIZE_OPTIONS = [
+  '10px',
+  '11px',
+  '12px',
+  '13px',
+  '14px',
+  '15px',
+  '16px',
+  '17px',
+  '18px',
+  '19px',
+  '20px',
+  '21px',
+  '22px',
+  '23px',
+  '24px',
+] as const
+
+/** Defines identifiers for the available HTML layout templates. */
+export const HTML_TEMPLATE_OPTIONS = ['calm'] as const
+
 /** The options for the latex layout fontspec numbers style. */
 export const LATEX_FONTSPEC_NUMBERS_OPTIONS = [
   'Lining',

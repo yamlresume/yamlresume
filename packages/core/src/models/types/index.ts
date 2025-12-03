@@ -42,6 +42,7 @@ export type {
 } from './content'
 
 export type {
+  HtmlLayout,
   LatexLayout,
   LayoutEngine,
   Layouts,

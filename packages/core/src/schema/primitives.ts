@@ -28,6 +28,8 @@ import {
   COUNTRY_OPTIONS,
   DEGREE_OPTIONS,
   FLUENCY_OPTIONS,
+  HTML_FONT_SIZE_OPTIONS,
+  HTML_TEMPLATE_OPTIONS,
   LANGUAGE_OPTIONS,
   LATEX_FONT_SIZE_OPTIONS,
   LATEX_FONTSPEC_NUMBERS_OPTIONS,
@@ -45,14 +47,16 @@ import { joinNonEmptyString } from '@/utils'
 type Options =
   | typeof COUNTRY_OPTIONS
   | typeof DEGREE_OPTIONS
+  | typeof HTML_FONT_SIZE_OPTIONS
+  | typeof HTML_TEMPLATE_OPTIONS
   | typeof LATEX_FONTSPEC_NUMBERS_OPTIONS
   | typeof LATEX_FONT_SIZE_OPTIONS
+  | typeof LATEX_TEMPLATE_OPTIONS
   | typeof FLUENCY_OPTIONS
   | typeof LANGUAGE_OPTIONS
   | typeof LOCALE_LANGUAGE_OPTIONS
   | typeof LEVEL_OPTIONS
   | typeof NETWORK_OPTIONS
-  | typeof LATEX_TEMPLATE_OPTIONS
   | typeof ORDERABLE_SECTION_IDS
 
 /**
@@ -80,7 +84,10 @@ export function optionSchemaMessage(options: Options, messagePrefix: string) {
  * @param messagePrefix - The message to use for the schema.
  * @returns A Zod schema for an option.
  */
-export function optionSchema(options: Options, messagePrefix: string) {
+export function optionSchema<T extends Options>(
+  options: T,
+  messagePrefix: string
+) {
   return z
     .enum(options, {
       error: (issue) => {
@@ -213,7 +220,7 @@ export const FluencyOptionSchema = optionSchema(FLUENCY_OPTIONS, 'fluency')
  */
 export const FontspecNumbersOptionSchema = optionSchema(
   LATEX_FONTSPEC_NUMBERS_OPTIONS,
-  'fontspec numbers'
+  'LaTeX fontspec numbers'
 )
 
 /**
@@ -221,7 +228,23 @@ export const FontspecNumbersOptionSchema = optionSchema(
  */
 export const FontSizeOptionSchema = optionSchema(
   LATEX_FONT_SIZE_OPTIONS,
-  'font size'
+  'LaTeX font size'
+)
+
+/**
+ * A zod schema for HTML fontSize option in layout.
+ */
+export const HtmlFontSizeOptionSchema = optionSchema(
+  HTML_FONT_SIZE_OPTIONS,
+  'HTML font size'
+)
+
+/**
+ * A zod schema for an HTML template option.
+ */
+export const HtmlTemplateOptionSchema = optionSchema(
+  HTML_TEMPLATE_OPTIONS,
+  'HTML template'
 )
 
 /**
@@ -244,6 +267,14 @@ export const KeywordsSchema = z
  * A zod schema for a language.
  */
 export const LanguageOptionSchema = optionSchema(LANGUAGE_OPTIONS, 'language')
+
+/**
+ * A zod schema for a template option.
+ */
+export const LatexTemplateOptionSchema = optionSchema(
+  LATEX_TEMPLATE_OPTIONS,
+  'LaTeX template'
+)
 
 /**
  * A zod schema for a locale language option.
@@ -345,14 +376,6 @@ export const OrganizationSchema = (name: string) =>
       'Non-Profit Organization',
     ],
   })
-
-/**
- * A zod schema for a template option.
- */
-export const TemplateOptionSchema = optionSchema(
-  LATEX_TEMPLATE_OPTIONS,
-  'template'
-)
 
 /**
  * A zod schema for a url.

@@ -22,45 +22,24 @@
  * IN THE SOFTWARE.
  */
 
-import rawEscapeLatex from 'escape-latex'
-import { describe, expect, it } from 'vitest'
+import { z } from 'zod'
 
-import { escapeLatex } from './tex'
+import { SectionsSchema } from '../common'
+import { HtmlTemplateSchema } from './template'
+import { HtmlTypographySchema } from './typography'
 
-describe('escapeLatex', () => {
-  it('returns empty values as original', () => {
-    const tests = [
-      {
-        value: null,
-        expected: null,
-      },
-      {
-        value: undefined,
-        expected: undefined,
-      },
-      {
-        value: '',
-        expected: '',
-      },
-    ]
-
-    for (const { value, expected } of tests) {
-      expect(escapeLatex(value)).toBe(expected)
-    }
+/**
+ * A zod schema that combines all HTML layout-related configurations.
+ *
+ * This schema validates the entire HTML layout object by intersecting all individual
+ * schemas (template, typography, and sections) to ensure a
+ * complete and valid layout configuration.
+ */
+export const HtmlLayoutSchema = z
+  .object({
+    engine: z.literal('html'),
+    ...HtmlTemplateSchema.shape,
+    ...HtmlTypographySchema.shape,
+    ...SectionsSchema.shape,
   })
-
-  it('escapes non-empty values', () => {
-    const tests = [
-      {
-        value: 'Hello, world!',
-      },
-      {
-        value: 'Hello, $world$!',
-      },
-    ]
-
-    for (const { value } of tests) {
-      expect(escapeLatex(value)).toBe(rawEscapeLatex(value))
-    }
-  })
-})
+  .meta({ title: 'HTML Engine Layout' })

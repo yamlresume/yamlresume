@@ -27,11 +27,15 @@ import { DEFAULT_SECTIONS_ORDER } from '@/models'
 import { joinNonEmptyString, mergeArrayWithOrder } from '@/utils'
 
 /**
- * Abstract class for rendering resumes in TeX format.
+ * Abstract class for rendering resumes to various format.
  *
- * TeXRenderer provides the base functionality for converting Resume objects
- * into TeX documents. It follows a specific rendering order for resume
- * sections:
+ * The renderer will render the resume to different formats such as HTML,
+ * Markdown, and LaTeX based on the selected layout.
+ *
+ * You should not use this class directly, instead, use the `getResumeRenderer`
+ * function to get the appropriate renderer for the given resume layout.
+ *
+ * By default, the renderer will render the resume in the following order:
  *
  * 1. Core information (basics, location, profiles)
  * 2. Education and career (education, work)

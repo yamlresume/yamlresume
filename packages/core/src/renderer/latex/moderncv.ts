@@ -28,6 +28,7 @@ import type { LatexLayout, Resume } from '@/models'
 import { transformResume } from '@/preprocess'
 import { getTemplateTranslations } from '@/translations'
 import {
+  escapeLatex,
   isEmptyValue,
   joinNonEmptyString,
   showIf,
@@ -57,7 +58,10 @@ class ModerncvBase extends Renderer {
     layoutIndex: number,
     summaryParser: Parser
   ) {
-    super(transformResume(resume, layoutIndex, summaryParser), layoutIndex)
+    super(
+      transformResume(resume, layoutIndex, summaryParser, escapeLatex),
+      layoutIndex
+    )
     this.style = style
   }
 

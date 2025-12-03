@@ -22,12 +22,29 @@
  * IN THE SOFTWARE.
  */
 
-export { HtmlRenderer } from './html'
-export {
-  ModerncvBankingRenderer,
-  ModerncvCasualRenderer,
-  ModerncvClassicRenderer,
-} from './latex'
-export { MarkdownRenderer } from './markdown'
+import type { HtmlFontSize, HtmlTemplate } from '../options'
+import type { Sections } from './common'
 
-export { getResumeRenderer } from './resume'
+/**
+ * Defines HTML typography settings for document formatting.
+ */
+type HtmlTypography = {
+  /** Base font size for the document (e.g., "small", "medium", "large"). */
+  fontSize?: HtmlFontSize
+}
+
+/**
+ * HTML layout configuration.
+ *
+ * Defines the structure for HTML-specific layout settings including
+ * template selection, typography options, and section configuration.
+ */
+export type HtmlLayout = {
+  engine: 'html'
+  /** Defines the selected template. */
+  template?: HtmlTemplate
+  /** Defines typography settings for document formatting. */
+  typography?: HtmlTypography
+  /** Defines section customization settings. */
+  sections?: Sections
+}

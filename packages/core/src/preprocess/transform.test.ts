@@ -42,6 +42,7 @@ import {
   type Resume,
 } from '@/models'
 import { getOptionTranslation, getTemplateTranslations } from '@/translations'
+import { escapeLatex } from '@/utils'
 import {
   normalizedResumeContent,
   normalizeResumeContentSections,
@@ -1049,7 +1050,8 @@ describe(transformSectionNames, () => {
     const transformedResume = transformResumeContent(
       resume,
       layoutIndex,
-      summaryParser
+      summaryParser,
+      escapeLatex
     )
 
     // Check that section aliases are used in the final transformed resume
@@ -1199,7 +1201,7 @@ describe(transformResumeValues, () => {
     resume.content.certificates[0].issuer = 'AWS%Amazon'
 
     transformLocation(resume)
-    transformResumeValues(resume)
+    transformResumeValues(resume, escapeLatex)
 
     expect(resume.content.basics.headline).toEqual('Again \\& Again')
     expect(resume.content.basics.email).toEqual('again\\_again@yamlresume.com')
@@ -1215,6 +1217,19 @@ describe(transformResumeValues, () => {
     expect(resume.content.certificates[0].issuer).toEqual('AWS\\%Amazon')
   })
 
+  it('should use custom escape function', () => {
+    let resume = cloneDeep(FILLED_RESUME)
+    resume.content.basics.headline = 'test'
+    // Ensure resume is normalized so all fields are strings/arrays as expected
+    resume = normalizedResumeContent(resume)
+
+    const customEscape = (s: string) => (s ? s.toUpperCase() : s)
+
+    transformResumeValues(resume, customEscape)
+
+    expect(resume.content.basics.headline).toBe('TEST')
+  })
+
   it('should ignore computed values', () => {
     const resume = cloneDeep(FILLED_RESUME)
     const urls = 'url1 {} url2 {}'
@@ -1223,7 +1238,7 @@ describe(transformResumeValues, () => {
       urls,
     }
 
-    transformResumeValues(resume)
+    transformResumeValues(resume, escapeLatex)
 
     expect(resume.content.computed).toEqual({
       urls,
@@ -1241,7 +1256,8 @@ describe(transformResumeContent, () => {
     const transformedResume = transformResumeContent(
       resume,
       layoutIndex,
-      summaryParser
+      summaryParser,
+      escapeLatex
     )
 
     expect(transformedResume.content).toHaveProperty('computed')

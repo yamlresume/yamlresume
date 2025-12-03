@@ -33,146 +33,141 @@ import type {
   ParagraphNode,
   TextNode,
 } from '@/compiler/ast'
-import type { LatexLayout } from '@/models'
-import { escapeLatex } from '@/utils'
+import { escapeHtml } from '@/utils'
 import type { CodeGenerationContext, CodeGenerator } from './interface'
 
 /**
- * Generate LaTeX code from a Node.
+ * Generate HTML code from a Node.
  *
  * This class implements the `CodeGenerator` interface and provides a method
- * to convert an AST node into its corresponding LaTeX code.
+ * to convert an AST node into its corresponding HTML code.
  *
  * @see {@link CodeGenerator}
  */
-export class LatexCodeGenerator implements CodeGenerator {
+export class HtmlCodeGenerator implements CodeGenerator {
   /**
-   * Generate LaTeX code from an AST node.
+   * Generate HTML code from an AST node.
    *
-   * @param node - The AST node to generate LaTeX code from.
+   * @param node - The AST node to generate HTML code from.
    * @param context - Optional context containing layout settings.
-   * @returns The generated LaTeX code.
+   * @returns The generated HTML code.
    */
   generate(node: Node, context?: CodeGenerationContext): string {
-    return nodeToTeX(node, context)
+    return nodeToHTML(node, context)
   }
 }
 
 /**
- * Convert an AST node to its corresponding LaTeX code.
+ * Convert an AST node to its corresponding HTML code.
  *
  * @param node - The AST node to convert.
  * @param context - Optional context containing layout settings.
- * @returns The generated LaTeX code.
+ * @returns The generated HTML code.
  */
-export function nodeToTeX(node: Node, context?: CodeGenerationContext): string {
+export function nodeToHTML(
+  node: Node,
+  context?: CodeGenerationContext
+): string {
   switch (node.type) {
     case 'bulletList':
-      return bulletListNodeToTeX(node, context)
+      return bulletListNodeToHTML(node, context)
     case 'doc':
-      return docNodeToTeX(node, context)
+      return docNodeToHTML(node, context)
     case 'listItem':
-      return listItemNodeToTeX(node, context)
+      return listItemNodeToHTML(node, context)
     case 'orderedList':
-      return orderedListNodeToTeX(node, context)
+      return orderedListNodeToHTML(node, context)
     case 'paragraph':
-      return paragraphNodeToTeX(node, context)
+      return paragraphNodeToHTML(node, context)
     case 'text':
-      return textNodeToTeX(node, context)
+      return textNodeToHTML(node, context)
   }
 }
 
 /**
- * Convert a bullet list node to its corresponding LaTeX code.
+ * Convert a bullet list node to its corresponding HTML code.
  *
  * @param node - The bullet list node to convert.
  * @param context - Optional context containing layout settings.
- * @returns The generated LaTeX code.
+ * @returns The generated HTML code.
  */
-function bulletListNodeToTeX(
+function bulletListNodeToHTML(
   node: BulletListNode,
   context?: CodeGenerationContext
 ): string {
-  return `\\begin{itemize}\n${fragmentToTeX(node.content, context)}\\end{itemize}\n`
+  return `<ul>${fragmentToHTML(node.content, context)}</ul>`
 }
 
 /**
- * Convert a document node to its corresponding LaTeX code.
+ * Convert a document node to its corresponding HTML code.
  *
  * @param node - The document node to convert.
  * @param context - Optional context containing layout settings.
- * @returns The generated LaTeX code.
+ * @returns The generated HTML code.
  */
-function docNodeToTeX(node: DocNode, context?: CodeGenerationContext): string {
-  return fragmentToTeX(node.content, context)
+function docNodeToHTML(node: DocNode, context?: CodeGenerationContext): string {
+  return fragmentToHTML(node.content, context)
 }
 
 /**
- * Convert a list item node to its corresponding LaTeX code.
+ * Convert a list item node to its corresponding HTML code.
  *
  * @param node - The list item node to convert.
  * @param context - Optional context containing layout settings.
- * @returns The generated LaTeX code.
+ * @returns The generated HTML code.
  */
-function listItemNodeToTeX(
+function listItemNodeToHTML(
   node: ListItemNode,
   context?: CodeGenerationContext
 ): string {
-  const itemContent = fragmentToTeX(node.content, context)
-  // Here we made some special handling to make the output with more prettier
-  if (itemContent.includes('\n\n')) {
-    return `\\item ${itemContent.replace('\n\n', '\n')}`
-  }
-  return `\\item ${itemContent}`
+  return `<li>${fragmentToHTML(node.content, context)}</li>`
 }
 
 /**
- * Convert an ordered list node to its corresponding LaTeX code.
+ * Convert an ordered list node to its corresponding HTML code.
  *
  * @param node - The ordered list node to convert.
  * @param context - Optional context containing layout settings.
- * @returns The generated LaTeX code.
+ * @returns The generated HTML code.
  */
-function orderedListNodeToTeX(
+function orderedListNodeToHTML(
   node: OrderedListNode,
   context?: CodeGenerationContext
 ): string {
-  return `\\begin{enumerate}\n${fragmentToTeX(node.content, context)}\\end{enumerate}\n`
+  return `<ol>${fragmentToHTML(node.content, context)}</ol>`
 }
 
 /**
- * Convert a paragraph node to its corresponding LaTeX code.
+ * Convert a paragraph node to its corresponding HTML code.
  *
  * @param node - The paragraph node to convert.
  * @param context - Optional context containing layout settings.
- * @returns The generated LaTeX code.
+ * @returns The generated HTML code.
  */
-function paragraphNodeToTeX(
+function paragraphNodeToHTML(
   node: ParagraphNode,
   context?: CodeGenerationContext
 ): string {
   if (node.content === undefined || node.content.length === 0) {
-    return '\n'
+    return '<p></p>'
   }
 
-  // We need to output two new lines to make the paragraph a real paagraph in
-  // LaTeX. However if the paragraph is empty, we just output one new line,
-  // check the `if` above.
-  return `${fragmentToTeX(node.content, context)}\n\n`
+  return `<p>${fragmentToHTML(node.content, context)}</p>`
 }
 
 /**
- * Convert a text node to its corresponding LaTeX code.
+ * Convert a text node to its corresponding HTML code.
  *
  * @param node - The text node to convert.
  * @param context - Optional context containing layout settings.
- * @returns The generated LaTeX code.
+ * @returns The generated HTML code.
  */
-function textNodeToTeX(
+function textNodeToHTML(
   node: TextNode,
   context?: CodeGenerationContext
 ): string {
-  const escapedText = escapeLatex(node.text)
+  // Escape HTML entities
+  const escapedText = escapeHtml(node.text)
 
   if (node.marks === undefined) {
     return escapedText
@@ -194,38 +189,40 @@ function textNodeToTeX(
 function applyMarkToText(
   text: string,
   mark: Mark,
-  context?: CodeGenerationContext
+  _context?: CodeGenerationContext
 ) {
   switch (mark.type) {
     case 'bold':
-      return `\\textbf{${text}}`
+      return `<strong>${text}</strong>`
     case 'italic':
-      return `\\textit{${text}}`
+      return `<em>${text}</em>`
     case 'link': {
-      const shouldUnderline =
-        (context?.typography as LatexLayout['typography'])?.links?.underline ??
-        false
-      if (shouldUnderline) {
-        return `\\href{${mark.attrs.href}}{\\underline{${text}}}`
-      }
-      return `\\href{${mark.attrs.href}}{${text}}`
+      const href = mark.attrs?.href || '#'
+      const target = mark.attrs?.target
+        ? ` target="${escapeHtml(mark.attrs.target)}"`
+        : ''
+      const className = mark.attrs?.class
+        ? ` class="${escapeHtml(mark.attrs.class)}"`
+        : ''
+
+      return `<a href="${escapeHtml(href)}"${target}${className}>${text}</a>`
     }
   }
 }
 
 /**
- * Convert a fragment to its corresponding LaTeX code.
+ * Convert a fragment to its corresponding HTML code.
  *
  * @param fragment - The fragment to convert.
  * @param context - Optional context containing layout settings.
- * @returns The generated LaTeX code.
+ * @returns The generated HTML code.
  */
-function fragmentToTeX(
+function fragmentToHTML(
   fragment: Fragment,
   context?: CodeGenerationContext
 ): string {
   if (fragment === undefined) {
     return ''
   }
-  return fragment.map((node) => nodeToTeX(node, context)).join('')
+  return fragment.map((node) => nodeToHTML(node, context)).join('')
 }

@@ -81,7 +81,10 @@ describe('LatexTypographySchema', () => {
               properties: {
                 fontSize: {
                   errors: [
-                    optionSchemaMessage(LATEX_FONT_SIZE_OPTIONS, 'font size'),
+                    optionSchemaMessage(
+                      LATEX_FONT_SIZE_OPTIONS,
+                      'LaTeX font size'
+                    ),
                   ],
                 },
               },

@@ -384,6 +384,7 @@ describe(buildResume, () => {
     const texFile = inferOutput(resumePath)
     const mdFile = resumePath.replace('.yml', '.md')
 
+    const htmlFile = resumePath.replace('.yml', '.html')
     await buildResume(resumePath, { pdf: false })
 
     expect(execSpy).toBeCalledTimes(0)
@@ -393,8 +394,9 @@ describe(buildResume, () => {
     expect(outputStr).toEqual([
       `Generated resume tex file successfully: ${texFile}`,
       `Generated resume markdown file successfully: ${mdFile}`,
+      `Generated resume html file successfully: ${htmlFile}`,
     ])
-    expect(consolaSuccessSpy).toBeCalledTimes(2)
+    expect(consolaSuccessSpy).toBeCalledTimes(3)
   })
 
   it('should generate a pdf file', async () => {
@@ -403,6 +405,7 @@ describe(buildResume, () => {
     const texFile = inferOutput(resumePath)
     const pdfFile = getPdfPath(texFile)
     const mdFile = resumePath.replace('.yml', '.md')
+    const htmlFile = resumePath.replace('.yml', '.html')
     const { command, args } = inferLaTeXCommand(texFile)
 
     await buildResume(resumePath)
@@ -424,10 +427,11 @@ describe(buildResume, () => {
       `Generating resume pdf file with command: \`${command} ${args.join(' ')}\`...`,
       `Generated resume pdf file successfully: ${pdfFile}`,
       `Generated resume markdown file successfully: ${mdFile}`,
+      `Generated resume html file successfully: ${htmlFile}`,
     ])
 
     expect(consolaStartSpy).toBeCalledTimes(1)
-    expect(consolaSuccessSpy).toBeCalledTimes(3)
+    expect(consolaSuccessSpy).toBeCalledTimes(4)
     expect(consolaDebugSpy).toBeCalledTimes(1)
   })
 
@@ -474,6 +478,7 @@ describe(buildResume, () => {
     const resumePath = getFixture('software-engineer.yml')
     const texFile = inferOutput(resumePath, outputDir)
     const mdFile = path.join(outputDir, 'software-engineer.md')
+    const htmlFile = path.join(outputDir, 'software-engineer.html')
 
     await buildResume(resumePath, { pdf: false, output: outputDir })
 
@@ -482,9 +487,10 @@ describe(buildResume, () => {
     expect(outputStr).toEqual([
       `Generated resume tex file successfully: ${texFile}`,
       `Generated resume markdown file successfully: ${mdFile}`,
+      `Generated resume html file successfully: ${htmlFile}`,
     ])
     expect(outputStr[0]).toContain(outputDir)
-    expect(consolaSuccessSpy).toBeCalledTimes(2)
+    expect(consolaSuccessSpy).toBeCalledTimes(3)
   })
 
   it('should generate pdf file in output directory', async () => {
@@ -493,6 +499,7 @@ describe(buildResume, () => {
     const texFile = inferOutput(resumePath, outputDir)
     const pdfFile = getPdfPath(texFile)
     const mdFile = path.join(outputDir, 'software-engineer.md')
+    const htmlFile = path.join(outputDir, 'software-engineer.html')
     const { command, args } = inferLaTeXCommand(texFile, outputDir)
 
     await buildResume(resumePath, { pdf: true, output: outputDir })
@@ -508,7 +515,7 @@ describe(buildResume, () => {
     )
     expect(whichSpy).toBeCalledWith('xelatex')
     expect(consolaStartSpy).toBeCalledTimes(1)
-    expect(consolaSuccessSpy).toBeCalledTimes(3)
+    expect(consolaSuccessSpy).toBeCalledTimes(4)
     expect(consolaDebugSpy).toBeCalledTimes(1)
 
     expect(outputStr).toEqual([
@@ -516,6 +523,7 @@ describe(buildResume, () => {
       `Generating resume pdf file with command: \`${command} ${args.join(' ')}\`...`,
       `Generated resume pdf file successfully: ${pdfFile}`,
       `Generated resume markdown file successfully: ${mdFile}`,
+      `Generated resume html file successfully: ${htmlFile}`,
     ])
   })
 
@@ -628,6 +636,7 @@ describe(buildResume, () => {
     const texFile = inferOutput(resumePath)
     const pdfFile = getPdfPath(texFile)
     const mdFile = resumePath.replace('.yml', '.md')
+    const htmlFile = resumePath.replace('.yml', '.html')
     const { command, args } = inferLaTeXCommand(texFile)
 
     await buildResume(resumePath)
@@ -641,6 +650,7 @@ describe(buildResume, () => {
       `Generating resume pdf file with command: \`${command} ${args.join(' ')}\`...`,
       `Generated resume pdf file successfully: ${pdfFile}`,
       `Generated resume markdown file successfully: ${mdFile}`,
+      `Generated resume html file successfully: ${htmlFile}`,
     ])
   })
 })
@@ -689,7 +699,7 @@ describe(createBuildCommand, () => {
   it('should have correct name and description', () => {
     expect(buildCommand.name()).toBe('build')
     expect(buildCommand.description()).toBe(
-      'build a resume to LaTeX, PDF, or Markdown'
+      'build a resume to LaTeX, PDF, Markdown, or HTML'
     )
   })
 
@@ -723,7 +733,7 @@ describe(createBuildCommand, () => {
       }
     )
     expect(consolaStartSpy).toBeCalledTimes(1)
-    expect(consolaSuccessSpy).toBeCalledTimes(3)
+    expect(consolaSuccessSpy).toBeCalledTimes(4)
   })
 
   it('should not build resume to PDF if no-pdf option is provided', async () => {
@@ -737,7 +747,7 @@ describe(createBuildCommand, () => {
     ])
 
     expect(whichSpy).not.toBeCalled()
-    expect(consolaSuccessSpy).toBeCalledTimes(2)
+    expect(consolaSuccessSpy).toBeCalledTimes(3)
   })
 
   it('should handle error when building resume to PDF', async () => {

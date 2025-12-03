@@ -23,18 +23,20 @@
  */
 
 import {
+  getHtmlTemplateDetail,
   getLatexTemplateDetail,
+  HTML_TEMPLATE_OPTIONS,
   LATEX_TEMPLATE_OPTIONS,
 } from '@yamlresume/core'
 import type { Command } from 'commander'
 import { consola } from 'consola'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 
-import { createTemplatesCommand, listLaTeXTemplates } from './templates'
+import { createTemplatesCommand, listTemplates } from './templates'
 
-describe(listLaTeXTemplates, () => {
+describe(listTemplates, () => {
   it('should generate a markdown table with all supported templates', () => {
-    const result = listLaTeXTemplates()
+    const result = listTemplates()
 
     // Check for headers
     expect(result).toContain('layouts.[].template')
@@ -42,9 +44,18 @@ describe(listLaTeXTemplates, () => {
     expect(result).toContain('Template Name')
     expect(result).toContain('Description')
 
-    // Check if all templates are included
+    // Check if all LaTeX templates are included
     LATEX_TEMPLATE_OPTIONS.forEach((value) => {
       const details = getLatexTemplateDetail(value)
+      expect(result).toContain(value) // Template ID
+      expect(result).toContain(details.engine) // Engine
+      expect(result).toContain(details.name) // Template Name
+      expect(result).toContain(details.description) // Description
+    })
+
+    // Check if all HTML templates are included
+    HTML_TEMPLATE_OPTIONS.forEach((value) => {
+      const details = getHtmlTemplateDetail(value)
       expect(result).toContain(value) // Template ID
       expect(result).toContain(details.engine) // Engine
       expect(result).toContain(details.name) // Template Name
@@ -54,7 +65,9 @@ describe(listLaTeXTemplates, () => {
     // Check if the table has the correct number of rows
     const rows = result.trim().split('\n')
     // +2 for header and separator
-    expect(rows.length).toBe(LATEX_TEMPLATE_OPTIONS.length + 2)
+    expect(rows.length).toBe(
+      LATEX_TEMPLATE_OPTIONS.length + HTML_TEMPLATE_OPTIONS.length + 2
+    )
   })
 })
 
@@ -86,7 +99,7 @@ describe(createTemplatesCommand, () => {
 
     templatesCommand.parse(['yamlresume', 'templates', 'list'])
 
-    expect(consolaSpy).toBeCalledWith(listLaTeXTemplates())
+    expect(consolaSpy).toBeCalledWith(listTemplates())
   })
 
   it('should show help for templates list command', () => {

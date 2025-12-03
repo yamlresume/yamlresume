@@ -47,6 +47,7 @@ import {
   FontspecNumbersOptionSchema,
   KeywordsSchema,
   LanguageOptionSchema,
+  LatexTemplateOptionSchema,
   LevelOptionSchema,
   LocaleLanguageOptionSchema,
   NameSchema,
@@ -56,7 +57,6 @@ import {
   PhoneSchema,
   SizedStringSchema,
   SummarySchema,
-  TemplateOptionSchema,
   UrlSchema,
 } from './primitives'
 
@@ -289,7 +289,7 @@ describe('FontspecNumbersOptionSchema', () => {
           errors: [
             optionSchemaMessage(
               LATEX_FONTSPEC_NUMBERS_OPTIONS,
-              'fontspec numbers'
+              'LaTeX fontspec numbers'
             ),
           ],
         },
@@ -300,7 +300,7 @@ describe('FontspecNumbersOptionSchema', () => {
           errors: [
             optionSchemaMessage(
               LATEX_FONTSPEC_NUMBERS_OPTIONS,
-              'fontspec numbers'
+              'LaTeX fontspec numbers'
             ),
           ],
         },
@@ -308,7 +308,7 @@ describe('FontspecNumbersOptionSchema', () => {
       {
         numbers: undefined,
         error: {
-          errors: ['fontspec numbers option is required.'],
+          errors: ['LaTeX fontspec numbers option is required.'],
         },
       },
     ]
@@ -335,13 +335,15 @@ describe('FontSizeOptionSchema', () => {
       {
         fontSize: '13pt',
         error: {
-          errors: [optionSchemaMessage(LATEX_FONT_SIZE_OPTIONS, 'font size')],
+          errors: [
+            optionSchemaMessage(LATEX_FONT_SIZE_OPTIONS, 'LaTeX font size'),
+          ],
         },
       },
       {
         fontSize: undefined,
         error: {
-          errors: ['font size option is required.'],
+          errors: ['LaTeX font size option is required.'],
         },
       },
     ]
@@ -502,6 +504,41 @@ describe('FluencyOptionSchema', () => {
 
   it('should have correct metadata', () => {
     expectSchemaMetadata(FluencyOptionSchema)
+  })
+})
+
+describe('LatexTemplateOptionSchema', () => {
+  it('should return a template option if it is valid', () => {
+    for (const template of LATEX_TEMPLATE_OPTIONS) {
+      expect(LatexTemplateOptionSchema.parse(template)).toBe(template)
+    }
+  })
+
+  it('should throw an error if the LaTeX template option is invalid', () => {
+    const tests = [
+      {
+        template: 'invalid-template',
+        error: {
+          errors: [
+            optionSchemaMessage(LATEX_TEMPLATE_OPTIONS, 'LaTeX template'),
+          ],
+        },
+      },
+      {
+        template: undefined,
+        error: {
+          errors: ['LaTeX template option is required.'],
+        },
+      },
+    ]
+
+    for (const { template, error } of tests) {
+      validateZodErrors(LatexTemplateOptionSchema, template, error)
+    }
+  })
+
+  it('should have correct metadata', () => {
+    expectSchemaMetadata(LatexTemplateOptionSchema)
   })
 })
 
@@ -837,39 +874,6 @@ describe('SummarySchema', () => {
 
   it('should have correct metadata', () => {
     expectSchemaMetadata(SummarySchema)
-  })
-})
-
-describe('TemplateOptionSchema', () => {
-  it('should return a template option if it is valid', () => {
-    for (const template of LATEX_TEMPLATE_OPTIONS) {
-      expect(TemplateOptionSchema.parse(template)).toBe(template)
-    }
-  })
-
-  it('should throw an error if the template option is invalid', () => {
-    const tests = [
-      {
-        template: 'invalid-template',
-        error: {
-          errors: [optionSchemaMessage(LATEX_TEMPLATE_OPTIONS, 'template')],
-        },
-      },
-      {
-        template: undefined,
-        error: {
-          errors: ['template option is required.'],
-        },
-      },
-    ]
-
-    for (const { template, error } of tests) {
-      validateZodErrors(TemplateOptionSchema, template, error)
-    }
-  })
-
-  it('should have correct metadata', () => {
-    expectSchemaMetadata(TemplateOptionSchema)
   })
 })
 

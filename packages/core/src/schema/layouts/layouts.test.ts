@@ -24,7 +24,12 @@
 
 import { describe, expect, it } from 'vitest'
 
-import { LATEX_FONT_SIZE_OPTIONS, LATEX_TEMPLATE_OPTIONS } from '@/models'
+import {
+  HTML_FONT_SIZE_OPTIONS,
+  HTML_TEMPLATE_OPTIONS,
+  LATEX_FONT_SIZE_OPTIONS,
+  LATEX_TEMPLATE_OPTIONS,
+} from '@/models'
 import { optionSchemaMessage } from '../primitives'
 import { expectSchemaMetadata, validateZodErrors } from '../zod'
 import { marginSizeSchemaMessage } from './common/margins'
@@ -244,7 +249,10 @@ describe('LayoutsSchema', () => {
                   properties: {
                     template: {
                       errors: [
-                        optionSchemaMessage(LATEX_TEMPLATE_OPTIONS, 'template'),
+                        optionSchemaMessage(
+                          LATEX_TEMPLATE_OPTIONS,
+                          'LaTeX template'
+                        ),
                       ],
                     },
                   },
@@ -275,7 +283,10 @@ describe('LayoutsSchema', () => {
                   properties: {
                     template: {
                       errors: [
-                        optionSchemaMessage(LATEX_TEMPLATE_OPTIONS, 'template'),
+                        optionSchemaMessage(
+                          LATEX_TEMPLATE_OPTIONS,
+                          'LaTeX template'
+                        ),
                       ],
                     },
                     typography: {
@@ -285,7 +296,7 @@ describe('LayoutsSchema', () => {
                           errors: [
                             optionSchemaMessage(
                               LATEX_FONT_SIZE_OPTIONS,
-                              'font size'
+                              'LaTeX font size'
                             ),
                           ],
                         },
@@ -330,6 +341,53 @@ describe('LayoutsSchema', () => {
                               ],
                             },
                           },
+                        },
+                      },
+                    },
+                  },
+                },
+              ],
+            },
+          },
+        },
+      },
+      {
+        layouts: [
+          {
+            engine: 'html',
+            template: 'invalid-template',
+            typography: {
+              fontSize: '25pt',
+            },
+          },
+        ],
+        error: {
+          errors: [],
+          properties: {
+            layouts: {
+              errors: [],
+              items: [
+                {
+                  errors: [],
+                  properties: {
+                    template: {
+                      errors: [
+                        optionSchemaMessage(
+                          HTML_TEMPLATE_OPTIONS,
+                          'HTML template'
+                        ),
+                      ],
+                    },
+                    typography: {
+                      errors: [],
+                      properties: {
+                        fontSize: {
+                          errors: [
+                            optionSchemaMessage(
+                              HTML_FONT_SIZE_OPTIONS,
+                              'HTML font size'
+                            ),
+                          ],
                         },
                       },
                     },

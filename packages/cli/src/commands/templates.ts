@@ -23,7 +23,9 @@
  */
 
 import {
+  getHtmlTemplateDetail,
   getLatexTemplateDetail,
+  HTML_TEMPLATE_OPTIONS,
   LATEX_TEMPLATE_OPTIONS,
 } from '@yamlresume/core'
 import { Command } from 'commander'
@@ -37,13 +39,21 @@ import { markdownTable } from 'markdown-table'
  *
  * @returns A string containing the formatted markdown table.
  */
-export function listLaTeXTemplates() {
-  return markdownTable([
-    ['layouts.[].template', 'Engine', 'Template Name', 'Description'],
+export function listTemplates() {
+  const templates = [
     ...LATEX_TEMPLATE_OPTIONS.map((value) => {
       const details = getLatexTemplateDetail(value)
       return [value, details.engine, details.name, details.description]
     }),
+    ...HTML_TEMPLATE_OPTIONS.map((value) => {
+      const details = getHtmlTemplateDetail(value)
+      return [value, details.engine, details.name, details.description]
+    }),
+  ]
+
+  return markdownTable([
+    ['layouts.[].template', 'Engine', 'Template Name', 'Description'],
+    ...templates,
   ])
 }
 
@@ -59,7 +69,7 @@ export function createTemplatesCommand() {
     .command('list')
     .description('list all supported templates')
     .action(() => {
-      consola.log(listLaTeXTemplates())
+      consola.log(listTemplates())
     })
 
   return cmd

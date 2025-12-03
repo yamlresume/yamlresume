@@ -1,0 +1,1116 @@
+/**
+ * MIT License
+ *
+ * Copyright (c) 2023–Present PPResume (https://ppresume.com)
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to
+ * deal in the Software without restriction, including without limitation the
+ * rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+ * sell copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+ * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+ * IN THE SOFTWARE.
+ */
+
+import { cloneDeep } from 'lodash-es'
+import { beforeEach, describe, expect, it } from 'vitest'
+import {
+  DEFAULT_RESUME,
+  FILLED_RESUME,
+  type HtmlLayout,
+  type Resume,
+} from '@/models'
+import { HtmlRenderer } from './renderer'
+
+describe('HtmlRenderer', () => {
+  let resume: Resume
+  let renderer: HtmlRenderer
+  let layoutIndex: number
+
+  beforeEach(() => {
+    resume = cloneDeep(FILLED_RESUME)
+
+    layoutIndex = FILLED_RESUME.layouts.findIndex(
+      (layout) => layout.engine === 'html'
+    )
+  })
+
+  describe('renderPreamble', () => {
+    it('should render correct preamble with metadata and styles', () => {
+      const htmlLayout = resume.layouts[layoutIndex] as HtmlLayout
+      const fontSize = '14px'
+
+      resume.content.basics.name = 'John Doe'
+      htmlLayout.typography.fontSize = fontSize
+
+      renderer = new HtmlRenderer(resume, layoutIndex)
+      const result = renderer.renderPreamble()
+
+      expect(result).toContain('<meta charset="UTF-8">')
+      expect(result).toContain(
+        '<meta name="viewport" content="width=device-width, initial-scale=1.0">'
+      )
+      expect(result).toContain(
+        '<meta name="generator" content="YAMLResume (https://yamlresume.dev)">'
+      )
+      expect(result).toContain('<title>John Doe Resume</title>')
+      expect(result).toContain('<style>')
+      expect(result).toContain(`--text-font-size: ${fontSize}`)
+      expect(result).toContain('</style>')
+    })
+
+    it('should use default title when name is missing', () => {
+      const resume = cloneDeep(DEFAULT_RESUME)
+      resume.content.basics.name = undefined
+
+      const renderer = new HtmlRenderer(resume, 0)
+      const result = renderer.renderPreamble()
+
+      expect(result).toContain('<title>YAMLResume</title>')
+    })
+
+    it('should use default font size when typography is empty', () => {
+      for (const test of [undefined, {}]) {
+        const resume = cloneDeep(DEFAULT_RESUME)
+        const layoutIndex = resume.layouts.findIndex((l) => l.engine === 'html')
+        const htmlLayout = resume.layouts[layoutIndex] as HtmlLayout
+        htmlLayout.typography = test
+
+        const renderer = new HtmlRenderer(resume, layoutIndex)
+        const result = renderer.renderPreamble()
+
+        expect(result).toContain('--text-font-size: 16px')
+      }
+    })
+
+    it('should use default font size when font size is empty string', () => {
+      const resume = cloneDeep(DEFAULT_RESUME)
+      const layoutIndex = resume.layouts.findIndex((l) => l.engine === 'html')
+      const htmlLayout = resume.layouts[layoutIndex] as HtmlLayout
+      // @ts-ignore
+      htmlLayout.typography = { fontSize: '' }
+
+      const renderer = new HtmlRenderer(resume, layoutIndex)
+      const result = renderer.renderPreamble()
+
+      expect(result).toContain('--text-font-size: 16px')
+    })
+  })
+
+  describe('renderBasics', () => {
+    it('should return empty string when basics is missing', () => {
+      resume.content.basics = undefined
+
+      renderer = new HtmlRenderer(resume, layoutIndex)
+      const result = renderer.renderBasics()
+
+      expect(result).toBe('')
+    })
+
+    it('should render basic information', () => {
+      const name = 'Andy Dufresne'
+      const headline = 'Headed for the Pacific'
+      const email = 'hi@ppresume.com'
+      const phone = '(213) 555-9876'
+      const url = 'https://ppresume.com/gallery'
+
+      resume.content.basics = {
+        name,
+        headline,
+        email,
+        phone,
+        url,
+      }
+
+      renderer = new HtmlRenderer(resume, layoutIndex)
+      const result = renderer.renderBasics()
+
+      expect(result).toContain(`<h1 class="resume-name">${name}</h1>`)
+      expect(result).toContain(`<p class="resume-headline">${headline}</p>`)
+      expect(result).toContain(
+        `<span class="resume-icon">📧</span><a href="mailto:${
+          email
+        }" class="resume-contact-link">${email}</a>`
+      )
+      expect(result).toContain(`<span class="resume-icon">📞</span>${phone}`)
+      expect(result).toContain(
+        `<span class="resume-icon">🔗</span><a href="${
+          url
+        }" class="resume-contact-link">${url}</a>`
+      )
+      expect(result).toContain('<div class="resume-contact-info">')
+    })
+
+    it('should handle missing optional fields', () => {
+      const name = 'Andy Dufresne'
+
+      resume.content.basics = {
+        name,
+        headline: undefined,
+        email: undefined,
+        phone: undefined,
+        url: undefined,
+      }
+
+      renderer = new HtmlRenderer(resume, layoutIndex)
+      const result = renderer.renderBasics()
+
+      expect(result).toContain(`<h1 class="resume-name">${name}</h1>`)
+      expect(result).not.toContain('resume-headline')
+      expect(result).not.toContain('mailto:')
+      expect(result).not.toContain('📞')
+      expect(result).not.toContain('🔗')
+      expect(result).not.toContain('resume-contact-info')
+    })
+  })
+
+  describe('renderSummary', () => {
+    it('should return empty string when summary is missing', () => {
+      resume.content.basics.summary = undefined
+
+      renderer = new HtmlRenderer(resume, layoutIndex)
+      const result = renderer.renderSummary()
+
+      expect(result).toBe('')
+    })
+
+    it('should render summary section', () => {
+      const summary = 'A passionate developer.'
+      resume.content.basics.summary = summary
+
+      renderer = new HtmlRenderer(resume, layoutIndex)
+      const result = renderer.renderSummary()
+
+      expect(result).toContain(
+        '<section class="resume-section" data-section="summary">'
+      )
+      expect(result).toContain('<div class="resume-section-content">')
+      expect(result).toContain('<div class="resume-summary-content">')
+      expect(result).toContain(summary)
+      expect(result).toContain('</div>')
+      expect(result).toContain('</section>')
+    })
+  })
+
+  describe('renderLocation', () => {
+    it('should return empty string when location is missing', () => {
+      resume.content.location = undefined
+
+      renderer = new HtmlRenderer(resume, layoutIndex)
+      const result = renderer.renderLocation()
+
+      expect(result).toBe('')
+    })
+
+    it('should render location with all fields', () => {
+      const address = '123 Main St'
+      const city = 'Sacramento'
+      const region = 'California'
+      const postalCode = '95814'
+      const country = 'United States'
+
+      resume.content.location = {
+        address,
+        city,
+        region,
+        postalCode,
+        country,
+      }
+
+      renderer = new HtmlRenderer(resume, layoutIndex)
+      const result = renderer.renderLocation()
+
+      expect(result).toContain(
+        '<div class="resume-contact-info resume-location-info">'
+      )
+      expect(result).toContain(
+        `<span class="resume-contact-item"><span class="resume-icon">📍</span>${
+          address
+        }, ${city}, ${region}, ${country}, ${postalCode}</span>`
+      )
+      expect(result).toContain('</div>')
+    })
+
+    it('should handle partial location data', () => {
+      const city = 'San Francisco'
+      const country = 'United States'
+
+      resume.content.location = {
+        city,
+        country,
+      }
+
+      renderer = new HtmlRenderer(resume, layoutIndex)
+      const result = renderer.renderLocation()
+
+      expect(result).toContain(
+        '<div class="resume-contact-info resume-location-info">'
+      )
+      expect(result).toContain(
+        `<span class="resume-contact-item"><span class="resume-icon">📍</span>${
+          city
+        }, ${country}</span>`
+      )
+    })
+  })
+
+  describe('renderProfiles', () => {
+    it('should return empty string when profiles are missing', () => {
+      for (const test of [undefined, []]) {
+        resume.content.profiles = test
+
+        renderer = new HtmlRenderer(resume, layoutIndex)
+        const result = renderer.renderProfiles()
+
+        expect(result).toBe('')
+      }
+    })
+
+    it('should render profiles as html links', () => {
+      const username = 'andydufresne'
+      const lineUrl = 'https://line.me/ti/p/andydufresne'
+      const githubUrl = 'https://github.com/andydufresne'
+
+      resume.content.profiles = [
+        {
+          network: 'Line',
+          username,
+          url: lineUrl,
+        },
+        {
+          network: 'GitHub',
+          username,
+          url: githubUrl,
+        },
+      ]
+
+      renderer = new HtmlRenderer(resume, layoutIndex)
+      const result = renderer.renderProfiles()
+
+      expect(result).toContain(
+        '<div class="resume-contact-info resume-profiles-info">'
+      )
+      expect(result).toContain(
+        `<span class="resume-contact-item">Line: <a href="${
+          lineUrl
+        }" class="resume-contact-link">${username}</a></span>`
+      )
+      expect(result).toContain(
+        `<span class="resume-contact-item">GitHub: <a href="${
+          githubUrl
+        }" class="resume-contact-link">${username}</a></span>`
+      )
+      expect(result).toContain('</div>')
+    })
+
+    it('should render profile as plain text if url is missing', () => {
+      const username = 'testuser'
+
+      resume.content.profiles = [
+        { network: 'GitHub', username, url: undefined },
+        { network: 'Twitter', username, url: '' },
+      ]
+
+      renderer = new HtmlRenderer(resume, layoutIndex)
+      const result = renderer.renderProfiles()
+
+      expect(result).toContain(
+        '<div class="resume-contact-info resume-profiles-info">'
+      )
+      expect(result).toContain(
+        `<span class="resume-contact-item">GitHub: @${username}</span>`
+      )
+      expect(result).toContain(
+        `<span class="resume-contact-item">Twitter: @${username}</span>`
+      )
+      expect(result).toContain('</div>')
+    })
+  })
+
+  describe('renderEducation', () => {
+    it('should return empty string when education is empty', () => {
+      for (const test of [undefined, []]) {
+        resume.content.education = test
+        renderer = new HtmlRenderer(resume, layoutIndex)
+        expect(renderer.renderEducation()).toBe('')
+      }
+    })
+
+    it('should render education with all fields (and link)', () => {
+      const institution = 'University of Tech'
+      const degree = 'Bachelor'
+      const area = 'Software Engineering'
+      const score = '4.0'
+      const courses = ['Algorithms', 'Data Structures']
+      const url = 'https://university.edu'
+      const startDate = '2019-01-01'
+      const endDate = '2023-01-01'
+
+      resume.content.education = [
+        {
+          institution,
+          degree,
+          area,
+          score,
+          courses,
+          url,
+          startDate,
+          endDate,
+        },
+      ]
+
+      renderer = new HtmlRenderer(resume, layoutIndex)
+      const result = renderer.renderEducation()
+
+      expect(result).toContain(`<a href="${url}">${institution}</a>`)
+      expect(result).toContain(degree)
+      expect(result).toContain(area)
+      expect(result).toContain(score)
+      expect(result).toContain('2019')
+      expect(result).toContain('Algorithms, Data Structures')
+    })
+
+    it('should render education with minimal fields', () => {
+      const institution = 'School'
+      // @ts-ignore
+      resume.content.education = [{ institution }]
+      renderer = new HtmlRenderer(resume, layoutIndex)
+      const result = renderer.renderEducation()
+
+      expect(result).toContain(institution)
+      expect(result).not.toContain('Major:')
+      expect(result).not.toContain('GPA:')
+      expect(result).not.toContain('resume-labeled-list')
+    })
+  })
+
+  describe('renderWork', () => {
+    it('should return empty string when work is empty', () => {
+      for (const test of [undefined, []]) {
+        resume.content.work = test
+        renderer = new HtmlRenderer(resume, layoutIndex)
+        expect(renderer.renderWork()).toBe('')
+      }
+    })
+
+    it('should render work with all fields', () => {
+      const name = 'Tech Corp'
+      const position = 'Senior Engineer'
+      const url = 'https://techcorp.com'
+      const summary = 'Built amazing things.'
+      const startDate = '2020-01-01'
+      const endDate = '2022-01-01'
+      const keywords = 'Java, Python'
+
+      resume.content.work = [
+        {
+          name,
+          position,
+          url,
+          summary,
+          startDate,
+          endDate,
+          keywords: ['Java', 'Python'],
+        },
+      ]
+
+      renderer = new HtmlRenderer(resume, layoutIndex)
+      const result = renderer.renderWork()
+
+      expect(result).toContain(`<a href="${url}">${name}</a>`)
+      expect(result).toContain(
+        `<div class="resume-entry-title"><a href="${url}">${name}</a></div>`
+      )
+      expect(result).toContain(
+        `<div class="resume-entry-organization">${position}</div>`
+      )
+
+      expect(result).toContain(summary)
+      expect(result).toContain(keywords)
+      expect(result).toContain('2020')
+    })
+
+    it('should render work with minimal fields', () => {
+      const name = 'Startup'
+      // @ts-ignore
+      resume.content.work = [{ name }]
+      renderer = new HtmlRenderer(resume, layoutIndex)
+      const result = renderer.renderWork()
+
+      expect(result).not.toContain('resume-labeled-list')
+    })
+  })
+
+  describe('renderLanguages', () => {
+    it('should return empty string when languages are empty', () => {
+      for (const test of [undefined, []]) {
+        resume.content.languages = test
+
+        renderer = new HtmlRenderer(resume, layoutIndex)
+        const result = renderer.renderLanguages()
+
+        expect(result).toBe('')
+      }
+    })
+
+    it('should render language with all fields', () => {
+      const language = 'English'
+      const fluency = 'Native or Bilingual Proficiency'
+      const keywords = 'reading, writing, speaking'
+
+      resume.content.languages = [
+        {
+          language,
+          fluency,
+          keywords: ['reading', 'writing', 'speaking'],
+        },
+      ]
+
+      renderer = new HtmlRenderer(resume, layoutIndex)
+      const result = renderer.renderLanguages()
+
+      expect(result).toContain(
+        '<section class="resume-section" data-section="languages">'
+      )
+      expect(result).toContain(
+        '<h2 class="resume-section-title">Languages</h2>'
+      )
+      expect(result).toContain('<div class="resume-language-item">')
+      expect(result).toContain(`<div class="resume-language-name">${language}`)
+      expect(result).toContain(
+        `<span class="resume-language-fluency">: ${fluency}</span>`
+      )
+      expect(result).toContain(
+        '<div class="resume-labeled-list"><span>Keywords</span>: '
+      )
+      expect(result).toContain(keywords)
+    })
+
+    it('should render multiple languages', () => {
+      const english = 'English'
+      const englishFluency = 'Native or Bilingual Proficiency'
+      const chinese = 'Chinese'
+      const chineseFluency = 'Full Professional Proficiency'
+
+      resume.content.languages = [
+        {
+          language: english,
+          fluency: englishFluency,
+        },
+        {
+          language: chinese,
+          fluency: chineseFluency,
+        },
+      ]
+
+      renderer = new HtmlRenderer(resume, layoutIndex)
+      const result = renderer.renderLanguages()
+
+      expect(result).toContain(english)
+      expect(result).toContain(englishFluency)
+      expect(result).toContain(chinese)
+      expect(result).toContain(chineseFluency)
+    })
+
+    it('should render language without keywords', () => {
+      const language = 'Spanish'
+      const fluency = 'Limited Working Proficiency'
+
+      resume.content.languages = [
+        {
+          language,
+          fluency,
+        },
+      ]
+
+      renderer = new HtmlRenderer(resume, layoutIndex)
+      const result = renderer.renderLanguages()
+
+      expect(result).toContain(language)
+      expect(result).toContain(fluency)
+      expect(result).not.toContain('resume-language-keywords')
+    })
+  })
+
+  describe('renderSkills', () => {
+    it('should return empty string when skills are empty', () => {
+      for (const test of [undefined, []]) {
+        resume.content.skills = test
+
+        renderer = new HtmlRenderer(resume, layoutIndex)
+        const result = renderer.renderSkills()
+
+        expect(result).toBe('')
+      }
+    })
+
+    it('should render skill with all fields', () => {
+      const name = 'JavaScript'
+      const level = 'Expert'
+      const keywords = 'React, Node.js, TypeScript'
+
+      resume.content.skills = [
+        {
+          name,
+          level,
+          keywords: ['React', 'Node.js', 'TypeScript'],
+        },
+      ]
+
+      renderer = new HtmlRenderer(resume, layoutIndex)
+      const result = renderer.renderSkills()
+
+      expect(result).toContain(
+        '<section class="resume-section" data-section="skills">'
+      )
+      expect(result).toContain('<h2 class="resume-section-title">Skills</h2>')
+      expect(result).toContain('<div class="resume-skill-item">')
+      expect(result).toContain(name)
+      expect(result).toContain(
+        `<span class="resume-skill-level">: ${level}</span>`
+      )
+      expect(result).toContain(
+        '<div class="resume-labeled-list"><span>Keywords</span>: '
+      )
+      expect(result).toContain(keywords)
+    })
+
+    it('should render multiple skills', () => {
+      const javascript = 'JavaScript'
+      const jsLevel = 'Expert'
+      const python = 'Python'
+      const pyLevel = 'Advanced'
+
+      resume.content.skills = [
+        {
+          name: javascript,
+          level: jsLevel,
+        },
+        {
+          name: python,
+          level: pyLevel,
+        },
+      ]
+
+      renderer = new HtmlRenderer(resume, layoutIndex)
+      const result = renderer.renderSkills()
+
+      expect(result).toContain(javascript)
+      expect(result).toContain(`: ${jsLevel}`)
+      expect(result).toContain(python)
+      expect(result).toContain(`: ${pyLevel}`)
+    })
+
+    it('should render skill without level', () => {
+      const name = 'Git'
+      const keywords = ['Version Control', 'Java']
+
+      resume.content.skills = [
+        {
+          name,
+          keywords,
+          level: undefined,
+        },
+      ]
+
+      renderer = new HtmlRenderer(resume, layoutIndex)
+      const result = renderer.renderSkills()
+
+      expect(result).toContain(name)
+      expect(result).toContain(keywords.join(', '))
+      // Should not have empty parentheses
+      expect(result).not.toMatch(/\(\s*\)/)
+    })
+
+    it('should render skill without keywords', () => {
+      const name = 'Communication'
+      const level = 'Expert'
+
+      resume.content.skills = [
+        {
+          name,
+          level,
+        },
+      ]
+
+      renderer = new HtmlRenderer(resume, layoutIndex)
+      const result = renderer.renderSkills()
+
+      expect(result).toContain(name)
+      expect(result).toContain(`: ${level}`)
+      expect(result).not.toContain('resume-skill-keywords')
+    })
+  })
+
+  describe('renderAwards', () => {
+    it('should return empty string when awards are empty', () => {
+      for (const test of [undefined, []]) {
+        resume.content.awards = test
+        renderer = new HtmlRenderer(resume, layoutIndex)
+        expect(renderer.renderAwards()).toBe('')
+      }
+    })
+
+    it('should render award with all fields', () => {
+      const title = 'Best Developer'
+      const awarder = 'Tech Corp'
+      const date = '2023-01-01'
+      const summary = 'Awarded for excellence'
+
+      resume.content.awards = [
+        {
+          title,
+          awarder,
+          date,
+          summary,
+        },
+      ]
+
+      renderer = new HtmlRenderer(resume, layoutIndex)
+      const result = renderer.renderAwards()
+
+      expect(result).toContain(title)
+      expect(result).toContain(awarder)
+      expect(result).toContain('Jan 2023')
+      expect(result).toContain(summary)
+    })
+
+    it('should render award with minimal fields', () => {
+      const title = 'Participation'
+      // @ts-ignore
+      resume.content.awards = [{ title }]
+      renderer = new HtmlRenderer(resume, layoutIndex)
+      const result = renderer.renderAwards()
+
+      expect(result).toContain(title)
+      expect(result).not.toContain('resume-entry-date')
+      expect(result).not.toContain('resume-entry-organization')
+    })
+  })
+
+  describe('renderCertificates', () => {
+    it('should return empty string when certificates are empty', () => {
+      for (const test of [undefined, []]) {
+        resume.content.certificates = test
+        renderer = new HtmlRenderer(resume, layoutIndex)
+        expect(renderer.renderCertificates()).toBe('')
+      }
+    })
+
+    it('should render certificate with all fields (and link)', () => {
+      const name = 'Certified Dev'
+      const issuer = 'Dev Institute'
+      const date = '2023-05-01'
+      const url = 'https://example.com/cert'
+
+      resume.content.certificates = [
+        {
+          name,
+          issuer,
+          date,
+          url,
+        },
+      ]
+
+      renderer = new HtmlRenderer(resume, layoutIndex)
+      const result = renderer.renderCertificates()
+
+      expect(result).toContain(issuer)
+      expect(result).toContain('May 2023')
+      expect(result).toContain(`<a href="${url}">${name}</a>`)
+    })
+
+    it('should render certificate without url', () => {
+      const name = 'Basic Cert'
+      // @ts-ignore
+      resume.content.certificates = [{ name }]
+
+      renderer = new HtmlRenderer(resume, layoutIndex)
+      const result = renderer.renderCertificates()
+
+      expect(result).toContain(`<div class="resume-entry-title">${name}</div>`)
+      expect(result).not.toContain('<a href=')
+    })
+  })
+
+  describe('renderPublications', () => {
+    it('should return empty string when publications are empty', () => {
+      for (const test of [undefined, []]) {
+        resume.content.publications = test
+        renderer = new HtmlRenderer(resume, layoutIndex)
+        expect(renderer.renderPublications()).toBe('')
+      }
+    })
+
+    it('should render publication with all fields (and link)', () => {
+      const name = 'Research Paper'
+      const publisher = 'Science Journal'
+      const url = 'https://paper.com'
+      const summary = 'Groundbreaking study.'
+      const releaseDate = '2021-05-01'
+
+      resume.content.publications = [
+        {
+          name,
+          publisher,
+          url,
+          summary,
+          releaseDate,
+        },
+      ]
+
+      renderer = new HtmlRenderer(resume, layoutIndex)
+      const result = renderer.renderPublications()
+
+      expect(result).toContain(`<a href="${url}">${name}</a>`)
+      expect(result).toContain(
+        `<div class="resume-entry-title"><a href="${url}">${name}</a></div>`
+      )
+      expect(result).toContain(
+        `<div class="resume-entry-organization">${publisher}</div>`
+      )
+
+      expect(result).toContain(summary)
+    })
+
+    it('should render publication with minimal fields', () => {
+      const name = 'Blog Post'
+      // @ts-ignore
+      resume.content.publications = [{ name }]
+      renderer = new HtmlRenderer(resume, layoutIndex)
+      const result = renderer.renderPublications()
+
+      expect(result).toContain(name)
+      expect(result).not.toContain('resume-entry-organization')
+    })
+  })
+
+  describe('renderReferences', () => {
+    it('should return empty string when references are empty', () => {
+      for (const test of [undefined, []]) {
+        resume.content.references = test
+        renderer = new HtmlRenderer(resume, layoutIndex)
+        expect(renderer.renderReferences()).toBe('')
+      }
+    })
+
+    it('should render reference with all fields (merged layout)', () => {
+      const name = 'Dr. Amanda Reynolds'
+      const relationship = 'Professor'
+      const phone = '(555) 123-4567'
+      const email = 'amanda@usc.edu'
+      const summary = 'Outstanding student.'
+
+      resume.content.references = [
+        {
+          name,
+          relationship,
+          phone,
+          email,
+          summary,
+        },
+      ]
+
+      renderer = new HtmlRenderer(resume, layoutIndex)
+      const result = renderer.renderReferences()
+
+      // Verify Name is Linked to Email
+      expect(result).toContain(`<a href="mailto:${email}">${name}</a>`)
+
+      // Verify Organization (Relationship)
+      expect(result).toContain(
+        `<div class="resume-entry-organization">${relationship}</div>`
+      )
+
+      // Verify Phone
+      expect(result).toContain(`<div>${phone}</div>`)
+
+      // No inline style
+      expect(result).not.toContain('text-align: right')
+
+      expect(result).toContain(summary)
+    })
+
+    it('should render reference with minimal fields', () => {
+      const name = 'Dr. Smith'
+      // @ts-ignore
+      resume.content.references = [{ name }]
+      renderer = new HtmlRenderer(resume, layoutIndex)
+      const result = renderer.renderReferences()
+
+      expect(result).toContain(name)
+      expect(result).not.toContain('resume-entry-organization')
+    })
+  })
+
+  describe('renderProjects', () => {
+    it('should return empty string when projects are empty', () => {
+      for (const test of [undefined, []]) {
+        resume.content.projects = test
+        renderer = new HtmlRenderer(resume, layoutIndex)
+        expect(renderer.renderProjects()).toBe('')
+      }
+    })
+
+    it('should render project with all fields (and link)', () => {
+      const name = 'Project X'
+      const description = 'A web app'
+      const url = 'https://projectx.com'
+      const summary = 'Solved big problems.'
+      const startDate = '2021-01-01'
+      const endDate = '2021-06-01'
+      const keywords = ['React', 'TypeScript']
+
+      resume.content.projects = [
+        {
+          name,
+          description,
+          url,
+          summary,
+          startDate,
+          endDate,
+          keywords,
+        },
+      ]
+
+      renderer = new HtmlRenderer(resume, layoutIndex)
+      const result = renderer.renderProjects()
+
+      expect(result).toContain(`<a href="${url}">${name}</a>`)
+      // Verify Name is Title (Bold)
+      expect(result).toContain(
+        `<div class="resume-entry-title"><a href="${url}">${name}</a></div>`
+      )
+      // Verify Description is Description (Secondary)
+      expect(result).toContain(
+        `<div class="resume-entry-description">${description}</div>`
+      )
+
+      expect(result).toContain(summary)
+      expect(result).toContain('React, TypeScript') // Keywords joined
+      expect(result).toContain('resume-labeled-list')
+      expect(result).toContain('2021')
+    })
+
+    it('should render project with minimal fields', () => {
+      const name = 'Side Project'
+      // @ts-ignore
+      resume.content.projects = [{ name }]
+      renderer = new HtmlRenderer(resume, layoutIndex)
+      const result = renderer.renderProjects()
+
+      expect(result).toContain(name)
+      expect(result).not.toContain('resume-entry-keywords')
+    })
+  })
+
+  describe('renderInterests', () => {
+    it('should return empty string when interests are empty', () => {
+      for (const test of [undefined, []]) {
+        resume.content.interests = test
+
+        renderer = new HtmlRenderer(resume, layoutIndex)
+        const result = renderer.renderInterests()
+
+        expect(result).toBe('')
+      }
+    })
+
+    it('should render interest with name and keywords', () => {
+      const name = 'Reading'
+      const keywords = ['Sci-Fi', 'Fantasy']
+
+      resume.content.interests = [
+        {
+          name,
+          keywords,
+        },
+      ]
+
+      renderer = new HtmlRenderer(resume, layoutIndex)
+      const result = renderer.renderInterests()
+
+      expect(result).toContain(
+        '<section class="resume-section" data-section="interests">'
+      )
+      expect(result).toContain(
+        '<h2 class="resume-section-title">Interests</h2>'
+      )
+      expect(result).toContain('<div class="resume-interest-item">')
+      expect(result).toContain(
+        `<span class="resume-interest-name">${name}</span>`
+      )
+      expect(result).toContain(`: ${keywords.join(', ')}`)
+    })
+
+    it('should render multiple interests', () => {
+      const name1 = 'Reading'
+      const name2 = 'Sports'
+
+      resume.content.interests = [
+        {
+          name: name1,
+          keywords: ['Sci-Fi', 'Fantasy'],
+        },
+        {
+          name: name2,
+        },
+      ]
+
+      renderer = new HtmlRenderer(resume, layoutIndex)
+      const result = renderer.renderInterests()
+
+      expect(result).toContain(name1)
+      expect(result).toContain(name2)
+    })
+
+    it('should render interest without keywords', () => {
+      const name = 'Traveling'
+
+      resume.content.interests = [
+        {
+          name,
+        },
+      ]
+
+      renderer = new HtmlRenderer(resume, layoutIndex)
+      const result = renderer.renderInterests()
+
+      expect(result).toContain(
+        `<span class="resume-interest-name">${name}</span>`
+      )
+      expect(result).not.toContain(':')
+    })
+  })
+
+  describe('renderVolunteer', () => {
+    it('should return empty string when volunteer is empty', () => {
+      for (const test of [undefined, []]) {
+        resume.content.volunteer = test
+        renderer = new HtmlRenderer(resume, layoutIndex)
+        expect(renderer.renderVolunteer()).toBe('')
+      }
+    })
+
+    it('should render volunteer entry with all fields', () => {
+      const organization = 'Red Cross'
+      const position = 'Volunteer'
+      const url = 'https://redcross.org'
+      const summary = 'Helped people.'
+      const startDate = '2020-01-01'
+      const endDate = '2022-01-01'
+
+      resume.content.volunteer = [
+        {
+          organization,
+          position,
+          url,
+          summary,
+          startDate,
+          endDate,
+        },
+      ]
+
+      renderer = new HtmlRenderer(resume, layoutIndex)
+      const result = renderer.renderVolunteer()
+
+      expect(result).toContain(`<a href="${url}">${organization}</a>`)
+      expect(result).toContain(
+        `<div class="resume-entry-title"><a href="${url}">${organization}</a></div>`
+      )
+      expect(result).toContain(
+        `<div class="resume-entry-organization">${position}</div>`
+      )
+
+      expect(result).toContain(summary)
+      expect(result).toContain('2020')
+    })
+
+    it('should render volunteer with minimal fields', () => {
+      const organization = 'Local Charity'
+      // @ts-ignore
+      resume.content.volunteer = [{ organization }]
+      renderer = new HtmlRenderer(resume, layoutIndex)
+      const result = renderer.renderVolunteer()
+
+      expect(result).toContain(organization)
+      expect(result).not.toContain('resume-entry-keywords')
+    })
+  })
+
+  describe('render', () => {
+    it('should render complete HTML document', () => {
+      // Set up a complete resume with all sections
+      resume.content.basics = {
+        name: 'Andy Dufresne',
+        summary: 'A complete summary',
+      }
+      resume.content.location = {
+        city: 'Sacramento',
+        country: 'United States',
+      }
+      resume.content.profiles = [{ network: 'GitHub', username: 'test' }]
+      resume.content.education = [
+        {
+          degree: 'Bachelor',
+          area: 'CS',
+          institution: 'University',
+          startDate: '2020',
+        },
+      ]
+      resume.content.work = [
+        {
+          name: 'Company',
+          position: 'Engineer',
+          startDate: '2020',
+          summary: 'Work summary',
+        },
+      ]
+      resume.content.languages = [
+        {
+          language: 'English',
+          fluency: 'Native or Bilingual Proficiency',
+        },
+      ]
+      resume.content.skills = [{ name: 'JavaScript', level: 'Expert' }]
+
+      renderer = new HtmlRenderer(resume, layoutIndex)
+      const result = renderer.render()
+
+      // Check that all major sections are included
+      expect(result).toContain('<html lang="en">')
+      expect(result).toContain('<title>Andy Dufresne Resume</title>')
+      expect(result).toContain('Andy Dufresne')
+      expect(result).toContain('A complete summary')
+      expect(result).toContain('Sacramento, United States')
+      expect(result).toContain('GitHub')
+      expect(result).toContain('Education')
+      expect(result).toContain('Work')
+      expect(result).toContain('Languages')
+      expect(result).toContain('Skills')
+    })
+
+    it('should handle empty resume gracefully', () => {
+      resume.content = {
+        basics: { name: 'Test User' },
+        education: [],
+      }
+
+      renderer = new HtmlRenderer(resume, layoutIndex)
+      const result = renderer.render()
+
+      expect(result).toContain('Test User')
+      expect(result).not.toContain('Education')
+    })
+  })
+})

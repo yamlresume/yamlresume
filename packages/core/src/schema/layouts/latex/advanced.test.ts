@@ -76,7 +76,7 @@ describe('LatexAdvancedSchema', () => {
                       errors: [
                         optionSchemaMessage(
                           LATEX_FONTSPEC_NUMBERS_OPTIONS,
-                          'fontspec numbers'
+                          'LaTeX fontspec numbers'
                         ),
                       ],
                     },

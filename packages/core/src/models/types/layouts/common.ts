@@ -41,7 +41,7 @@ export type Margins = {
 /**
  * A union type for all possible layout engines.
  */
-export type LayoutEngine = 'latex' | 'markdown'
+export type LayoutEngine = 'html' | 'latex' | 'markdown'
 
 /**
  * Defines section alias settings for customizing section names.

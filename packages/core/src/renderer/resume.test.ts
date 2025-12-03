@@ -24,8 +24,9 @@
 
 import { cloneDeep } from 'lodash-es'
 import { describe, expect, it } from 'vitest'
-import type { LatexTemplate, Resume } from '@/models'
+import type { LatexLayout, LatexTemplate, Resume } from '@/models'
 import { DEFAULT_RESUME } from '@/models'
+import { HtmlRenderer } from './html'
 import {
   ModerncvBankingRenderer,
   ModerncvCasualRenderer,
@@ -57,7 +58,7 @@ describe(getResumeRenderer, () => {
     for (const { template, expected } of tests) {
       const resume = cloneDeep(mockResume)
       const layout = {
-        ...resume.layouts?.[layoutIndex],
+        ...(resume.layouts?.[layoutIndex] as LatexLayout),
         template,
       }
       resume.layouts = [layout]
@@ -70,7 +71,7 @@ describe(getResumeRenderer, () => {
   it('should return default renderer when template is not specified', () => {
     const resume = cloneDeep(mockResume)
     const layoutWithNoTemplate = {
-      ...resume.layouts?.[layoutIndex],
+      ...(resume.layouts?.[layoutIndex] as LatexLayout),
       template: undefined,
     }
     resume.layouts = [layoutWithNoTemplate]
@@ -82,7 +83,7 @@ describe(getResumeRenderer, () => {
   it('should return default renderer when template id is not valid', () => {
     const resume = cloneDeep(mockResume)
     const layout = {
-      ...resume.layouts?.[layoutIndex],
+      ...(resume.layouts?.[layoutIndex] as LatexLayout),
       template: 'invalid-template' as LatexTemplate,
     }
     resume.layouts = [layout]
@@ -103,6 +104,18 @@ describe(getResumeRenderer, () => {
     expect(renderer).toBeInstanceOf(MarkdownRenderer)
   })
 
+  it('should return html renderer when engine is html', () => {
+    const resume = cloneDeep(mockResume)
+    const layout = {
+      engine: 'html' as const,
+    }
+    // @ts-ignore
+    resume.layouts = [layout]
+
+    const renderer = getResumeRenderer(resume, layoutIndex)
+    expect(renderer).toBeInstanceOf(HtmlRenderer)
+  })
+
   it('should throw error when layout is not found', () => {
     const resume = cloneDeep(mockResume)
     resume.layouts = []
@@ -118,6 +131,16 @@ describe(getResumeRenderer, () => {
 
     expect(() => getResumeRenderer(resume, layoutIndex)).toThrow(
       'Layout not found in resume.layouts at index: 0.'
+    )
+  })
+
+  it('should throw error when engine is missing', () => {
+    const resume = cloneDeep(mockResume)
+    // @ts-ignore
+    resume.layouts = [{ engine: undefined }]
+
+    expect(() => getResumeRenderer(resume, layoutIndex)).toThrow(
+      'Layout engine not found at index: 0.'
     )
   })
 

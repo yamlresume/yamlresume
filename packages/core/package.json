@@ -44,6 +44,7 @@
   },
   "dependencies": {
     "escape-latex": "^1.2.0",
+    "js-beautify": "^1.15.4",
     "lodash-es": "^4.17.21",
     "remark-parse": "^11.0.0",
     "tslib": "^2.8.1",

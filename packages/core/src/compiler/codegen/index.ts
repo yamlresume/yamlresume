@@ -22,4 +22,5 @@
  * IN THE SOFTWARE.
  */
 
+export { HtmlCodeGenerator } from './html'
 export { LatexCodeGenerator } from './latex'

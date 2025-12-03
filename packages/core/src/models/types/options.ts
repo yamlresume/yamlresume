@@ -26,6 +26,8 @@ import type {
   COUNTRY_OPTIONS,
   DEGREE_OPTIONS,
   FLUENCY_OPTIONS,
+  HTML_FONT_SIZE_OPTIONS,
+  HTML_TEMPLATE_OPTIONS,
   LANGUAGE_OPTIONS,
   LATEX_FONT_SIZE_OPTIONS,
   LATEX_FONTSPEC_NUMBERS_OPTIONS,
@@ -71,6 +73,18 @@ export type Language = (typeof LANGUAGE_OPTIONS)[number]
  */
 export type LatexFontspecNumbers =
   (typeof LATEX_FONTSPEC_NUMBERS_OPTIONS)[number]
+
+/**
+ * A union type for all possible HTML font size options.
+ */
+export type HtmlFontSize = (typeof HTML_FONT_SIZE_OPTIONS)[number]
+
+/**
+ * A union type for all possible HTML template options.
+ *
+ * @see {@link https://yamlresume.dev/docs/layouts/html/templates}
+ */
+export type HtmlTemplate = (typeof HTML_TEMPLATE_OPTIONS)[number]
 
 /**
  * A union type for all possible latex font size options.

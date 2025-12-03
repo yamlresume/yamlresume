@@ -22,12 +22,29 @@
  * IN THE SOFTWARE.
  */
 
-export { HtmlRenderer } from './html'
-export {
-  ModerncvBankingRenderer,
-  ModerncvCasualRenderer,
-  ModerncvClassicRenderer,
-} from './latex'
-export { MarkdownRenderer } from './markdown'
+import { z } from 'zod'
 
-export { getResumeRenderer } from './resume'
+import { joinNonEmptyString } from '@/utils'
+import { HtmlFontSizeOptionSchema } from '../../primitives'
+import { nullifySchema } from '../../utils'
+
+/**
+ * A zod schema for typography settings.
+ */
+export const HtmlTypographySchema = z.object({
+  typography: z
+    .object({
+      fontSize: nullifySchema(HtmlFontSizeOptionSchema),
+    })
+    .nullish()
+    .meta({
+      title: 'Typography',
+      description: joinNonEmptyString(
+        [
+          'The typography section contains font settings,',
+          'including font size options for HTML output.',
+        ],
+        ' '
+      ),
+    }),
+})

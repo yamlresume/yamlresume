@@ -24,48 +24,69 @@
 
 import { describe, expect, it } from 'vitest'
 
-import { LATEX_TEMPLATE_OPTIONS } from '@/models'
+import { HTML_FONT_SIZE_OPTIONS } from '@/models'
 import { optionSchemaMessage } from '../../primitives'
 import { expectSchemaMetadata, validateZodErrors } from '../../zod'
-import { LatexTemplateSchema } from './template'
+import { HtmlTypographySchema } from './typography'
 
-describe('LatexTemplateSchema', () => {
+describe('HtmlTypographySchema', () => {
   it('should have correct metadata', () => {
-    expectSchemaMetadata(LatexTemplateSchema.shape.template)
+    expectSchemaMetadata(HtmlTypographySchema.shape.typography)
   })
 
-  it('should validate a template if it is valid', () => {
+  it('should validate typography if it is valid', () => {
     const tests = [
       {},
-      { template: LATEX_TEMPLATE_OPTIONS[0] },
-      { template: null },
+      {
+        typography: {},
+      },
+      {
+        typography: {
+          fontSize: '12px',
+        },
+      },
+      {
+        typography: {
+          fontSize: null,
+        },
+      },
     ]
 
-    for (const template of tests) {
-      expect(LatexTemplateSchema.parse(template)).toStrictEqual(template)
+    for (const typography of tests) {
+      expect(HtmlTypographySchema.parse(typography)).toStrictEqual(typography)
     }
   })
 
-  it('should throw an error if the template is invalid', () => {
+  it('should throw an error if typography is invalid', () => {
     const tests = [
       {
-        template: 'invalid-template',
+        typography: {
+          fontSize: '25px',
+        },
         error: {
           errors: [],
           properties: {
-            template: {
-              errors: [
-                optionSchemaMessage(LATEX_TEMPLATE_OPTIONS, 'LaTeX template'),
-              ],
+            typography: {
+              errors: [],
+              properties: {
+                fontSize: {
+                  errors: [
+                    optionSchemaMessage(
+                      HTML_FONT_SIZE_OPTIONS,
+                      'HTML font size'
+                    ),
+                  ],
+                },
+              },
             },
           },
         },
       },
     ]
 
-    for (const { template, error } of tests) {
+    for (const { typography, error } of tests) {
       // @ts-ignore
-      validateZodErrors(LatexTemplateSchema, { template }, error)
+      validateZodErrors(HtmlTypographySchema, { typography }, error)
     }
   })
 })

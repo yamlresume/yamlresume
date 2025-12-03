@@ -25,7 +25,7 @@
 import { z } from 'zod'
 
 import { joinNonEmptyString } from '@/utils'
-import { TemplateOptionSchema } from '../../primitives'
+import { LatexTemplateOptionSchema } from '../../primitives'
 import { nullifySchema } from '../../utils'
 
 /**
@@ -34,7 +34,7 @@ import { nullifySchema } from '../../utils'
  * Validates that the template field contains a valid latex template option.
  */
 export const LatexTemplateSchema = z.object({
-  template: nullifySchema(TemplateOptionSchema).meta({
+  template: nullifySchema(LatexTemplateOptionSchema).meta({
     title: 'Template',
     description: joinNonEmptyString(
       [

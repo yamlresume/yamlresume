@@ -47,7 +47,10 @@ export class MarkdownRenderer extends Renderer {
     layoutIndex: number,
     summaryParser: Parser = new MarkdownParser()
   ) {
-    super(transformResume(resume, layoutIndex, summaryParser), layoutIndex)
+    super(
+      transformResume(resume, layoutIndex, summaryParser, (input) => input),
+      layoutIndex
+    )
   }
 
   /**

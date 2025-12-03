@@ -22,15 +22,72 @@
  * IN THE SOFTWARE.
  */
 
+import rawEscapeLatex from 'escape-latex'
 import { describe, expect, it } from 'vitest'
 
 import {
+  escapeHtml,
+  escapeLatex,
   isEmptyString,
   joinNonEmptyString,
   showIf,
   showIfNotEmpty,
   toCodeBlock,
 } from './string'
+
+describe(escapeHtml, () => {
+  it('should escape &, <, >, ", and \' characters', () => {
+    const raw = `& < > " '`
+    const escaped = escapeHtml(raw)
+    expect(escaped).toBe('&amp; &lt; &gt; &quot; &#39;')
+  })
+
+  it('should escape only necessary characters and no others', () => {
+    expect(escapeHtml('Hello world')).toBe('Hello world')
+    expect(escapeHtml('Text & more text')).toBe('Text &amp; more text')
+    expect(escapeHtml('1 < 2 and 2 > 1')).toBe('1 &lt; 2 and 2 &gt; 1')
+    expect(escapeHtml('She said "hello"')).toBe('She said &quot;hello&quot;')
+    expect(escapeHtml("That's great")).toBe('That&#39;s great')
+  })
+})
+
+describe(escapeLatex, () => {
+  it('returns empty values as original', () => {
+    const tests = [
+      {
+        value: null,
+        expected: null,
+      },
+      {
+        value: undefined,
+        expected: undefined,
+      },
+      {
+        value: '',
+        expected: '',
+      },
+    ]
+
+    for (const { value, expected } of tests) {
+      expect(escapeLatex(value)).toBe(expected)
+    }
+  })
+
+  it('escapes non-empty values', () => {
+    const tests = [
+      {
+        value: 'Hello, world!',
+      },
+      {
+        value: 'Hello, $world$!',
+      },
+    ]
+
+    for (const { value } of tests) {
+      expect(escapeLatex(value)).toBe(rawEscapeLatex(value))
+    }
+  })
+})
 
 describe(isEmptyString, () => {
   it('should return true for empty string', () => {

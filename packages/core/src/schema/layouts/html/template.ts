@@ -22,3 +22,26 @@
  * IN THE SOFTWARE.
  */
 
+import { z } from 'zod'
+
+import { joinNonEmptyString } from '@/utils'
+import { HtmlTemplateOptionSchema } from '../../primitives'
+import { nullifySchema } from '../../utils'
+
+/**
+ * A zod schema for validating HTML template configuration.
+ *
+ * Validates that the template field contains a valid HTML template option.
+ */
+export const HtmlTemplateSchema = z.object({
+  template: nullifySchema(HtmlTemplateOptionSchema).meta({
+    title: 'Template',
+    description: joinNonEmptyString(
+      [
+        'The template section contains the resume template selection,',
+        'determining the overall visual style and layout.',
+      ],
+      ' '
+    ),
+  }),
+})

@@ -28,6 +28,7 @@ import type { Parser } from '@/compiler'
 import { MarkdownParser } from '@/compiler'
 import type { Resume } from '@/models'
 import type { Renderer } from './base'
+import { HtmlRenderer } from './html'
 import {
   ModerncvBankingRenderer,
   ModerncvCasualRenderer,
@@ -62,7 +63,13 @@ export function getResumeRenderer(
     )
   }
 
+  if (!layout.engine) {
+    throw new Error(`Layout engine not found at index: ${layoutIndex}.`)
+  }
+
   switch (layout.engine) {
+    case 'html':
+      return new HtmlRenderer(resume, layoutIndex, summaryParser)
     case 'markdown':
       return new MarkdownRenderer(resume, layoutIndex, summaryParser)
     case 'latex': {

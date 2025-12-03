@@ -202,6 +202,8 @@ export function normalizeExtension(extension: string): string {
       return 'tex'
     case '.md':
       return 'markdown'
+    case '.html':
+      return 'html'
     default:
       return extension.replace('.', '')
   }
@@ -310,12 +312,14 @@ export async function buildResume(
   const totals = {
     latex: allLayouts.filter((l) => l.engine === 'latex').length,
     markdown: allLayouts.filter((l) => l.engine === 'markdown').length,
+    html: allLayouts.filter((l) => l.engine === 'html').length,
   }
 
   // Track current index for each engine
   const indices = {
     latex: 0,
     markdown: 0,
+    html: 0,
   }
 
   for (let layoutIndex = 0; layoutIndex < allLayouts.length; layoutIndex++) {
@@ -350,6 +354,18 @@ export async function buildResume(
         )
         break
       }
+      case 'html': {
+        generateOutput(
+          resumePath,
+          resume,
+          indices.html++,
+          totals.html,
+          options.output,
+          '.html',
+          layoutIndex
+        )
+        break
+      }
     }
   }
 }
@@ -360,7 +376,7 @@ export async function buildResume(
 export function createBuildCommand() {
   return new Command()
     .name('build')
-    .description('build a resume to LaTeX, PDF, or Markdown')
+    .description('build a resume to LaTeX, PDF, Markdown, or HTML')
     .argument('<resume-path>', 'the resume file path')
     .option(
       '--no-pdf',
