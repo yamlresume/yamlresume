@@ -42,7 +42,7 @@ subcommands you want to run.
 
 - [YAMLResume Documentation](https://yamlresume.dev/docs/)
 - [CLI Reference](https://yamlresume.dev/docs/cli/)
-- [Multi Languages](https://yamlresume.dev/docs/content/multi-languages)
+- [Multi Languages](https://yamlresume.dev/docs/locale)
 - [Schema Reference](https://yamlresume.dev/docs/compiler/schema)
-- [Section Customization](https://yamlresume.dev/docs/layout/sections)
-- [Templates](https://yamlresume.dev/docs/layout/templates)
+- [Section Customization](https://yamlresume.dev/docs/layouts/sections)
+- [Templates](https://yamlresume.dev/docs/layouts/latex/templates)

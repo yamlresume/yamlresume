@@ -83,9 +83,9 @@ For more detailed information, please visit our official documentation:
   reference for all commands.
 - **[Schema Validation](https://yamlresume.dev/docs/compiler/schema)**: The complete
   resume schema reference.
-- **[Multi Language Support](https://yamlresume.dev/docs/content/multi-languages)**:
+- **[Multi Language Support](https://yamlresume.dev/docs/locale)**:
   Learn how to write resumes in multiple languages.
-- **[Templates](https://yamlresume.dev/docs/layout/templates)**: Learn how to
+- **[Templates](https://yamlresume.dev/docs/layouts/latex/templates)**: Learn how to
   use and create templates.
 
 ## Support the Project

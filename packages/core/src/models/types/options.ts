@@ -98,7 +98,7 @@ export type Level = (typeof LEVEL_OPTIONS)[number]
 /**
  * A union type for all possible locale languages.
  *
- * @see {@link https://yamlresume.dev/docs/content/multi-languages}
+ * @see {@link https://yamlresume.dev/docs/locale}
  */
 export type LocaleLanguage = (typeof LOCALE_LANGUAGE_OPTIONS)[number]
 

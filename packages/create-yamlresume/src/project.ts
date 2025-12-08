@@ -179,6 +179,7 @@ export function showProjectHelp(
   consola.info('\nLearn more:')
   consola.info('  🏠 Homepage: https://yamlresume.dev')
   consola.info('  📖 Documentation: https://yamlresume.dev/docs/')
-  consola.info('  🎨 Templates: https://yamlresume.dev/docs/layout/templates')
+  consola.info('  🎨 Layouts: https://yamlresume.dev/docs/layouts')
+  consola.info('  🌐 Locale: https://yamlresume.dev/docs/locale')
   consola.info('  📝 Schema: https://yamlresume.dev/docs/compiler/schema')
 }
