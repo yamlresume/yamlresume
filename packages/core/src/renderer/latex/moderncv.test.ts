@@ -36,10 +36,13 @@ import {
 describe('ModerncvBase', () => {
   let resume: Resume
   let renderer: ModerncvBase
-  const layoutIndex = 0
+  let layoutIndex: number
 
   beforeEach(() => {
     resume = cloneDeep(FILLED_RESUME)
+    layoutIndex = FILLED_RESUME.layouts.findIndex(
+      (layout) => layout.engine === 'latex'
+    )
     renderer = new ModerncvBankingRenderer(resume, layoutIndex)
   })
 

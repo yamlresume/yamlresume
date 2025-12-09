@@ -32,15 +32,19 @@ import { MarkdownRenderer } from './renderer'
 describe('MarkdownRenderer', () => {
   let resume: Resume
   let renderer: MarkdownRenderer
-  const layoutIndex = 0
+  let layoutIndex: number
 
   beforeEach(() => {
     resume = cloneDeep(FILLED_RESUME)
-    renderer = new MarkdownRenderer(resume, layoutIndex)
+    layoutIndex = FILLED_RESUME.layouts.findIndex(
+      (layout) => layout.engine === 'markdown'
+    )
   })
 
   describe('renderPreamble', () => {
     it('should return empty string for markdown', () => {
+      renderer = new MarkdownRenderer(resume, layoutIndex)
+
       const result = renderer.renderPreamble()
       expect(result).toBe('')
     })
