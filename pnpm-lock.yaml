@@ -72,8 +72,8 @@ importers:
         specifier: ^9.6.1
         version: 9.6.1
       extensionless:
-        specifier: ^1.9.9
-        version: 1.9.9
+        specifier: ^2.0.5
+        version: 2.0.5
       lodash-es:
         specifier: ^4.17.21
         version: 4.17.21
@@ -1304,8 +1304,8 @@ packages:
   extend@3.0.2:
     resolution: {integrity: sha512-fjquC59cD7CyW6urNXK0FBufkZcoiGG80wTuPujX590cB5Ttln20E2UB4S/WARVqhXffZl2LNgS+gQdPIIim/g==}
 
-  extensionless@1.9.9:
-    resolution: {integrity: sha512-fz0cWfLA4pgc2nwmg6lc2UH+g+NlFuD63VWqp8n1wGAZSSbPNoARkA54BxXRjYCYW9LvhBnA3NyJaGS2KudkWw==}
+  extensionless@2.0.5:
+    resolution: {integrity: sha512-Bkm8gmAcjjoB/8rbeVjYHjeCHyem8BhbMkoaJOxMR6xJUEu+bw+n6s3zM4gjOL8mDBgu/bLOplEtC28ImDVhZg==}
 
   fast-deep-equal@3.1.3:
     resolution: {integrity: sha512-f3qQ9oQy9j2AhBe/H9VC91wLmKBCCU/gDOnKNAYG5hswO7BLKj09Hc5HYNz9cGI++xlpDCIgDaitVs03ATR84Q==}
@@ -3789,7 +3789,7 @@ snapshots:
 
   extend@3.0.2: {}
 
-  extensionless@1.9.9: {}
+  extensionless@2.0.5: {}
 
   fast-deep-equal@3.1.3: {}
 

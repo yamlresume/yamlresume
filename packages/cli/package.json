@@ -47,7 +47,7 @@
     "commander": "^14.0.1",
     "consola": "^3.4.2",
     "execa": "^9.6.1",
-    "extensionless": "^1.9.9",
+    "extensionless": "^2.0.5",
     "lodash-es": "^4.17.21",
     "markdown-table": "^3.0.4",
     "tslib": "^2.8.1",
