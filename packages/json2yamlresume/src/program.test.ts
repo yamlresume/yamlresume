@@ -49,15 +49,17 @@ vi.mock('consola', () => ({
   },
 }))
 
-vi.mock('commander', () => ({
-  Command: vi.fn().mockImplementation(() => ({
-    name: vi.fn().mockReturnThis(),
-    description: vi.fn().mockReturnThis(),
-    version: vi.fn().mockReturnThis(),
-    argument: vi.fn().mockReturnThis(),
-    action: vi.fn().mockReturnThis(),
-  })),
-}))
+vi.mock('commander', () => {
+  return {
+    Command: class {
+      name = vi.fn().mockReturnThis()
+      description = vi.fn().mockReturnThis()
+      version = vi.fn().mockReturnThis()
+      argument = vi.fn().mockReturnThis()
+      action = vi.fn().mockReturnThis()
+    },
+  }
+})
 
 vi.mock('./converter', () => ({
   convertJSONResumeToYAMLResume: vi.fn(),

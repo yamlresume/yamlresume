@@ -243,6 +243,10 @@ describe(validateResume, () => {
 })
 
 describe(readResume, () => {
+  afterEach(() => {
+    vi.restoreAllMocks()
+  })
+
   it('should check valid resume successfully', () => {
     const resumePath = getFixture('software-engineer.yml')
     const { validated } = readResume(resumePath)
