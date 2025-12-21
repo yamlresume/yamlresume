@@ -42,7 +42,7 @@
     "vitest": "^4.0.16"
   },
   "packageManager": "pnpm@10.12.1",
-  "version": "0.8.1",
+  "version": "0.9.0",
   "pnpm": {
     "overrides": {
       "form-data": "^4.0.4"

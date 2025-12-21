@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.9.0](https://github.com/yamlresume/yamlresume/compare/v0.8.1...v0.9.0) (2025-12-21)
+
+
+### Features
+
+* **refactor:** rename and split schemas ([52d1f4e](https://github.com/yamlresume/yamlresume/commit/52d1f4ede96f4c2257492338e5b0076211395b3a))
+* **refactor:** rename and split types ([1d6e948](https://github.com/yamlresume/yamlresume/commit/1d6e9486288071fe2b537d2bdaf4d9998cc770f6))
+* support HTML layout ([3a4221f](https://github.com/yamlresume/yamlresume/commit/3a4221f896ef7bdb7ed07643969ae2c6792484ec))
+
+
+### Bug Fixes
+
+* revise docs links for README and create-yamlresume ([a3147c6](https://github.com/yamlresume/yamlresume/commit/a3147c6e9ecd27bf7c349e055938ca69e295df8c))
+
 ## [0.8.1](https://github.com/yamlresume/yamlresume/compare/v0.8.0...v0.8.1) (2025-11-28)
 
 
