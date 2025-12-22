@@ -30,7 +30,7 @@
   "devDependencies": {
     "@biomejs/biome": "2.0.6",
     "@commitlint/cli": "^19.8.1",
-    "@commitlint/config-conventional": "^20.0.0",
+    "@commitlint/config-conventional": "^20.2.0",
     "@types/node": "^24.4.0",
     "@vitest/coverage-v8": "^4.0.16",
     "commit-and-tag-version": "^12.6.0",
