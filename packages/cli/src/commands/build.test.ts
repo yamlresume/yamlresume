@@ -39,6 +39,7 @@ import {
   describe,
   expect,
   it,
+  type MockedFunction,
   vi,
 } from 'vitest'
 import which from 'which'
@@ -337,7 +338,7 @@ describe(inferLaTeXCommand, () => {
 
 describe(buildResume, () => {
   const outputStr: string[] = []
-  let execSpy: ReturnType<typeof vi.mocked>
+  let execSpy: MockedFunction<typeof execa>
   let whichSpy: ReturnType<typeof vi.spyOn>
   let consolaStartSpy: ReturnType<typeof vi.spyOn>
   let consolaSuccessSpy: ReturnType<typeof vi.spyOn>
@@ -591,6 +592,7 @@ describe(buildResume, () => {
           { engine: 'latex', template: 'moderncv-classic' },
         ],
       },
+      validated: 'success',
     })
 
     const texFile0 = inferOutput(resumePath).replace('.tex', '.0.tex')
@@ -631,6 +633,7 @@ describe(buildResume, () => {
         content: {},
         layouts: undefined,
       },
+      validated: 'success',
     })
 
     const texFile = inferOutput(resumePath)
@@ -657,10 +660,11 @@ describe(buildResume, () => {
 
 describe(createBuildCommand, () => {
   let buildCommand: Command
-  let execSpy: ReturnType<typeof vi.mocked>
+  let execSpy: MockedFunction<typeof execa>
   let whichSpy: ReturnType<typeof vi.spyOn>
   let consolaStartSpy: ReturnType<typeof vi.spyOn>
   let consolaSuccessSpy: ReturnType<typeof vi.spyOn>
+  let consolaErrorSpy: ReturnType<typeof vi.spyOn>
 
   beforeEach(() => {
     buildCommand = createBuildCommand()
@@ -688,6 +692,7 @@ describe(createBuildCommand, () => {
       .mockReturnValue('/usr/bin/xelatex')
     consolaStartSpy = vi.spyOn(consola, 'start').mockImplementation(vi.fn())
     consolaSuccessSpy = vi.spyOn(consola, 'success').mockImplementation(vi.fn())
+    consolaErrorSpy = vi.spyOn(consola, 'error').mockImplementation(vi.fn())
   })
 
   afterEach(() => {
@@ -762,6 +767,7 @@ describe(createBuildCommand, () => {
 
     expect(processExitSpy).toBeCalledTimes(1)
     expect(processExitSpy).toBeCalledWith(ErrorType.LATEX_COMPILE_ERROR.errno)
+    expect(consolaErrorSpy).toBeCalledTimes(1)
   })
 
   it('should accept output option', () => {

@@ -51,9 +51,9 @@ describe(parseDate, () => {
   })
 
   it('should handle exception if Date constructor throws an error', () => {
-    vi.spyOn(global, 'Date').mockImplementation(() => {
+    vi.spyOn(global, 'Date').mockImplementation((() => {
       throw new Error('Invalid date format')
-    })
+    }) as unknown as DateConstructor)
 
     expect(parseDate('2020-01-01')).toBeNull()
 
