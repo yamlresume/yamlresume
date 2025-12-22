@@ -28,7 +28,7 @@
     "packages/*/src/**/*.ts": "pnpm check"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.0.6",
+    "@biomejs/biome": "2.3.10",
     "@commitlint/cli": "^19.8.1",
     "@commitlint/config-conventional": "^20.0.0",
     "@types/node": "^24.4.0",
