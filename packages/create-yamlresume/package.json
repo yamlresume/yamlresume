@@ -48,7 +48,7 @@
   },
   "devDependencies": {
     "@types/prompts": "^2.4.9",
-    "@vitest/coverage-v8": "^3.2.4",
+    "@vitest/coverage-v8": "^4.0.16",
     "tsx": "^4.20.5",
     "vite-tsconfig-paths": "^5.1.4",
     "vitest": "^3.2.4"
