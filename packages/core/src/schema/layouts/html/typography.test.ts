@@ -42,7 +42,7 @@ describe('HtmlTypographySchema', () => {
       },
       {
         typography: {
-          fontSize: '12px',
+          fontSize: '14px',
         },
       },
       {

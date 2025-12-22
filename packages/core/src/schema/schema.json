@@ -2217,21 +2217,13 @@
                                 "description": "A predefined option from the available HTML font size choices or `null`.",
                                 "type": "string",
                                 "enum": [
-                                  "10px",
-                                  "11px",
-                                  "12px",
-                                  "13px",
                                   "14px",
                                   "15px",
                                   "16px",
                                   "17px",
                                   "18px",
                                   "19px",
-                                  "20px",
-                                  "21px",
-                                  "22px",
-                                  "23px",
-                                  "24px"
+                                  "20px"
                                 ]
                               },
                               {
