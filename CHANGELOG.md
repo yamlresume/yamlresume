@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.9.1](https://github.com/yamlresume/yamlresume/compare/v0.9.0...v0.9.1) (2025-12-22)
+
+
+### Features
+
+* more opinionated html font size options ([cb44dd3](https://github.com/yamlresume/yamlresume/commit/cb44dd3eb146cb420731150a4a10d6594b39c1a8))
+
 ## [0.9.0](https://github.com/yamlresume/yamlresume/compare/v0.8.1...v0.9.0) (2025-12-21)
 
 
