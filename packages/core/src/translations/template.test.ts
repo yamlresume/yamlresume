@@ -107,6 +107,17 @@ describe(getTemplateTranslations, () => {
           },
         },
       },
+      {
+        language: 'nl',
+        expected: {
+          punctuations: {
+            colon: ': ',
+          },
+          terms: {
+            keywords: 'Trefwoorden',
+          },
+        },
+      },
     ]
 
     tests.forEach((test) => {

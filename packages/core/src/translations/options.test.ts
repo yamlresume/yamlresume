@@ -85,6 +85,14 @@ describe(getOptionTranslation, () => {
           },
         },
       },
+      {
+        language: 'nl',
+        expected: {
+          education: {
+            Bachelor: 'Bachelor',
+          },
+        },
+      },
     ] as const
 
     tests.forEach((test) => {
