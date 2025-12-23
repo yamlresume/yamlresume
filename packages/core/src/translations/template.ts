@@ -146,6 +146,18 @@ export function getTemplateTranslations(
         score: 'Poeng',
       },
     },
+    nl: {
+      punctuations: {
+        comma: ', ',
+        colon: ': ',
+        separator: ', ',
+      },
+      terms: {
+        courses: 'Cursussen',
+        keywords: 'Trefwoorden',
+        score: 'Score',
+      },
+    },
   }
 
   return templateTranslation[isEmptyValue(language) ? 'en' : language]

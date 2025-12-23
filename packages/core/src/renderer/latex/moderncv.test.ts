@@ -140,6 +140,7 @@ describe('ModerncvBase', () => {
       expect(result).not.toContain('\\usepackage[spanish,es-lcroman]{babel}')
       expect(result).not.toContain('\\usepackage[norsk]{babel}')
       expect(result).not.toContain('\\usepackage[french]{babel}')
+      expect(result).not.toContain('\\usepackage[dutch]{babel}')
     })
 
     it('should render Spanish configuration for Spanish resume', () => {
@@ -170,6 +171,16 @@ describe('ModerncvBase', () => {
       const result = renderer.renderPreamble()
 
       expect(result).toContain('\\usepackage[french]{babel}')
+    })
+
+    it('should render Dutch configuration for Dutch resume', () => {
+      const dutchResume = cloneDeep(resume)
+      dutchResume.locale = { ...dutchResume.locale, language: 'nl' }
+
+      const renderer = new ModerncvBankingRenderer(dutchResume, layoutIndex)
+      const result = renderer.renderPreamble()
+
+      expect(result).toContain('\\usepackage[dutch]{babel}')
     })
 
     it('should render basic fontspec configuration', () => {
