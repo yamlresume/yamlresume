@@ -56,11 +56,55 @@ describe('ModerncvBase', () => {
   })
 
   describe('renderPreamble', () => {
-    it('should render correct document class configuration', () => {
+    it('should render correct default document class configuration', () => {
       const result = renderer.renderPreamble()
 
       expect(result).toContain(
         '\\documentclass[a4paper, serif, 10pt]{moderncv}'
+      )
+    })
+
+    it('should render A4 paper size when paperSize is A4', () => {
+      const a4PaperSizeResume = cloneDeep(resume)
+      a4PaperSizeResume.layouts = [
+        {
+          engine: 'latex',
+          page: {
+            paperSize: 'A4',
+          },
+        },
+      ]
+
+      const renderer = new ModerncvBankingRenderer(
+        a4PaperSizeResume,
+        layoutIndex
+      )
+      const result = renderer.renderPreamble()
+
+      expect(result).toContain(
+        '\\documentclass[a4paper, serif, 10pt]{moderncv}'
+      )
+    })
+
+    it('should render Letter paper size when paperSize is LEtter', () => {
+      const letterPaperSizeResume = cloneDeep(resume)
+      letterPaperSizeResume.layouts = [
+        {
+          engine: 'latex',
+          page: {
+            paperSize: 'Letter',
+          },
+        },
+      ]
+
+      const renderer = new ModerncvBankingRenderer(
+        letterPaperSizeResume,
+        layoutIndex
+      )
+      const result = renderer.renderPreamble()
+
+      expect(result).toContain(
+        '\\documentclass[letterpaper, serif, 10pt]{moderncv}'
       )
     })
 

@@ -82,7 +82,12 @@ class ModerncvBase extends Renderer {
 
     const fontSize = (layout as LatexLayout)?.typography?.fontSize
 
-    return `\\documentclass[a4paper, serif, ${normalizeUnit(
+    const paperSize =
+      (layout as LatexLayout)?.page?.paperSize === 'Letter'
+        ? 'letterpaper'
+        : 'a4paper'
+
+    return `\\documentclass[${paperSize}, serif, ${normalizeUnit(
       fontSize
     )}]{moderncv}`
   }

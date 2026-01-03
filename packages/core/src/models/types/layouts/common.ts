@@ -52,3 +52,5 @@ export type Sections = {
   /** Custom order for sections in the final output. */
   order?: OrderableSectionID[]
 }
+
+export type PaperSize = 'A4' | 'Letter'
