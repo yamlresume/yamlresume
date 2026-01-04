@@ -1489,6 +1489,7 @@ describe(transformResumeLayout, () => {
           right: '0cm',
         },
         showPageNumbers: true,
+        paperSize: 'a4',
       },
       typography: {
         fontSize: '11pt',

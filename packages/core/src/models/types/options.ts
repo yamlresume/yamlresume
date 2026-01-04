@@ -31,6 +31,7 @@ import type {
   LANGUAGE_OPTIONS,
   LATEX_FONT_SIZE_OPTIONS,
   LATEX_FONTSPEC_NUMBERS_OPTIONS,
+  LATEX_PAPER_SIZE_OPTIONS,
   LATEX_TEMPLATE_OPTIONS,
   LEVEL_OPTIONS,
   LOCALE_LANGUAGE_OPTIONS,
@@ -108,6 +109,11 @@ export type LatexTemplate = (typeof LATEX_TEMPLATE_OPTIONS)[number]
  * A union type for all possible skill proficiency levels.
  */
 export type Level = (typeof LEVEL_OPTIONS)[number]
+
+/**
+ * A union type for all possible latex paper size options.
+ */
+export type LatexPaperSize = (typeof LATEX_PAPER_SIZE_OPTIONS)[number]
 
 /**
  * A union type for all possible locale languages.

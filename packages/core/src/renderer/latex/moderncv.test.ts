@@ -64,13 +64,13 @@ describe('ModerncvBase', () => {
       )
     })
 
-    it('should render A4 paper size when paperSize is A4', () => {
+    it('should render a4 paper size when paperSize is a4', () => {
       const a4PaperSizeResume = cloneDeep(resume)
       a4PaperSizeResume.layouts = [
         {
           engine: 'latex',
           page: {
-            paperSize: 'A4',
+            paperSize: 'a4',
           },
         },
       ]
@@ -86,13 +86,13 @@ describe('ModerncvBase', () => {
       )
     })
 
-    it('should render Letter paper size when paperSize is LEtter', () => {
+    it('should render letter paper size when paperSize is letter', () => {
       const letterPaperSizeResume = cloneDeep(resume)
       letterPaperSizeResume.layouts = [
         {
           engine: 'latex',
           page: {
-            paperSize: 'Letter',
+            paperSize: 'letter',
           },
         },
       ]

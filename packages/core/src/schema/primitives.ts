@@ -33,6 +33,7 @@ import {
   LANGUAGE_OPTIONS,
   LATEX_FONT_SIZE_OPTIONS,
   LATEX_FONTSPEC_NUMBERS_OPTIONS,
+  LATEX_PAPER_SIZE_OPTIONS,
   LATEX_TEMPLATE_OPTIONS,
   LEVEL_OPTIONS,
   LOCALE_LANGUAGE_OPTIONS,
@@ -57,6 +58,7 @@ type Options =
   | typeof LOCALE_LANGUAGE_OPTIONS
   | typeof LEVEL_OPTIONS
   | typeof NETWORK_OPTIONS
+  | typeof LATEX_PAPER_SIZE_OPTIONS
   | typeof ORDERABLE_SECTION_IDS
 
 /**
@@ -267,6 +269,14 @@ export const KeywordsSchema = z
  * A zod schema for a language.
  */
 export const LanguageOptionSchema = optionSchema(LANGUAGE_OPTIONS, 'language')
+
+/**
+ * A zod schema for a paper size option.
+ */
+export const PaperSizeOptionSchema = optionSchema(
+  LATEX_PAPER_SIZE_OPTIONS,
+  'LaTeX paper size'
+)
 
 /**
  * A zod schema for a template option.

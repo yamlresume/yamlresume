@@ -22,6 +22,7 @@
  * IN THE SOFTWARE.
  */
 
+import type { LatexPaperSize } from '../options'
 import type { OrderableSectionID, SectionID } from '../resume'
 
 /**
@@ -53,4 +54,4 @@ export type Sections = {
   order?: OrderableSectionID[]
 }
 
-export type PaperSize = 'A4' | 'Letter'
+export type { LatexPaperSize as PaperSize }

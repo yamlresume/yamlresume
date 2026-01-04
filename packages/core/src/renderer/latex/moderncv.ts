@@ -83,7 +83,7 @@ class ModerncvBase extends Renderer {
     const fontSize = (layout as LatexLayout)?.typography?.fontSize
 
     const paperSize =
-      (layout as LatexLayout)?.page?.paperSize === 'Letter'
+      (layout as LatexLayout)?.page?.paperSize === 'letter'
         ? 'letterpaper'
         : 'a4paper'
 

@@ -51,6 +51,9 @@ export const FLUENCY_OPTIONS = [
 /** The options for the latex layout font size. */
 export const LATEX_FONT_SIZE_OPTIONS = ['10pt', '11pt', '12pt'] as const
 
+/** The options for the paper size. */
+export const LATEX_PAPER_SIZE_OPTIONS = ['a4', 'letter'] as const
+
 /** The options for the HTML layout font size. */
 export const HTML_FONT_SIZE_OPTIONS = [
   '14px',
