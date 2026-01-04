@@ -47,8 +47,7 @@
     "yaml": "^2.8.2"
   },
   "devDependencies": {
-    "@types/lodash-es": "^4.17.12",
-    "tsx": "^4.20.5"
+    "@types/lodash-es": "^4.17.12"
   },
   "publishConfig": {
     "access": "public"

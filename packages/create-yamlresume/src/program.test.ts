@@ -28,13 +28,13 @@ import { createProgram, createProjectAction } from './program'
 // Mock dependencies
 vi.mock('./project')
 vi.mock('commander', () => ({
-  Command: vi.fn().mockImplementation(() => ({
-    name: vi.fn().mockReturnThis(),
-    description: vi.fn().mockReturnThis(),
-    version: vi.fn().mockReturnThis(),
-    argument: vi.fn().mockReturnThis(),
-    action: vi.fn().mockReturnThis(),
-  })),
+  Command: class {
+    name = vi.fn().mockReturnThis()
+    description = vi.fn().mockReturnThis()
+    version = vi.fn().mockReturnThis()
+    argument = vi.fn().mockReturnThis()
+    action = vi.fn().mockReturnThis()
+  },
 }))
 
 describe('program', () => {

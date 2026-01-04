@@ -47,11 +47,7 @@
     "yamlresume": "workspace:*"
   },
   "devDependencies": {
-    "@types/prompts": "^2.4.9",
-    "@vitest/coverage-v8": "^3.2.4",
-    "tsx": "^4.20.5",
-    "vite-tsconfig-paths": "^5.1.4",
-    "vitest": "^3.2.4"
+    "@types/prompts": "^2.4.9"
   },
   "publishConfig": {
     "access": "public"
