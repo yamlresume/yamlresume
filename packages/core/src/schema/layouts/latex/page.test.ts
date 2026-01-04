@@ -44,6 +44,8 @@ describe('LatexPageSchema', () => {
       { page: {} },
       { page: { showPageNumbers: true } },
       { page: { showPageNumbers: false } },
+      { page: { paperSize: 'a4' } },
+      { page: { paperSize: 'letter' } },
     ]
 
     for (const page of tests) {
@@ -51,7 +53,7 @@ describe('LatexPageSchema', () => {
     }
   })
 
-  it('should throw an error if showPageNumbers is invalid', () => {
+  it('should throw an error if page settings are invalid', () => {
     const tests = [
       {
         page: { showPageNumbers: 'true' },
@@ -63,6 +65,24 @@ describe('LatexPageSchema', () => {
               properties: {
                 showPageNumbers: {
                   errors: ['Invalid input: expected boolean, received string'],
+                },
+              },
+            },
+          },
+        },
+      },
+      {
+        page: { paperSize: 'InvalidSize' },
+        error: {
+          errors: [],
+          properties: {
+            page: {
+              errors: [],
+              properties: {
+                paperSize: {
+                  errors: [
+                    'LaTeX paper size option is invalid, it must be one of the following: ["a4", "letter"].',
+                  ],
                 },
               },
             },

@@ -2528,6 +2528,24 @@
                               }
                             ]
                           },
+                          "paperSize": {
+                            "title": "[optional] La Te X Paper Size Option",
+                            "description": "A predefined option from the available LaTeX paper size choices or `null`.",
+                            "anyOf": [
+                              {
+                                "title": "[optional] La Te X Paper Size Option",
+                                "description": "A predefined option from the available LaTeX paper size choices or `null`.",
+                                "type": "string",
+                                "enum": [
+                                  "a4",
+                                  "letter"
+                                ]
+                              },
+                              {
+                                "type": "null"
+                              }
+                            ]
+                          },
                           "margins": {
                             "title": "Margins",
                             "description": "The margins section contains page margin settings, including top, bottom, left, and right margins.",

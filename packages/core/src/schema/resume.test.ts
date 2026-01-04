@@ -118,6 +118,9 @@ describe('ResumeSchema', () => {
             typography: {
               fontSize: '11pt',
             },
+            page: {
+              paperSize: 'a4',
+            },
           },
         ],
       },

@@ -25,6 +25,7 @@
 import { z } from 'zod'
 
 import { joinNonEmptyString } from '@/utils'
+import { PaperSizeOptionSchema } from '../../primitives'
 import { nullifySchema } from '../../utils'
 import { MarginsSchema } from '../common/margins'
 
@@ -45,6 +46,7 @@ export const LatexPageSchema = z.object({
   page: z
     .object({
       showPageNumbers: nullifySchema(ShowPageNumbersSchema),
+      paperSize: nullifySchema(PaperSizeOptionSchema),
       ...MarginsSchema.shape,
     })
     .nullish()

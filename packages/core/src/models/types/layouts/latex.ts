@@ -27,7 +27,7 @@ import type {
   LatexFontspecNumbers,
   LatexTemplate,
 } from '../options'
-import type { Margins, Sections } from './common'
+import type { Margins, PaperSize, Sections } from './common'
 
 /**
  * Defines latex link styling settings for typography.
@@ -66,6 +66,7 @@ type LatexPage = {
   showPageNumbers?: boolean
   /** Defines page margin settings for document layout. */
   margins?: Margins
+  paperSize?: PaperSize
 }
 
 /**

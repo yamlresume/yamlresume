@@ -384,6 +384,7 @@ export const DEFAULT_LATEX_LAYOUT: LatexLayout = {
       right: DEFAULT_LEFT_RIGHT_MARGIN,
     },
     showPageNumbers: false,
+    paperSize: 'a4',
   },
   typography: {
     fontSize: LATEX_FONT_SIZE_OPTIONS[0],
