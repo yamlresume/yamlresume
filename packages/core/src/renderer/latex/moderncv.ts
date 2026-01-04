@@ -22,6 +22,8 @@
  * IN THE SOFTWARE.
  */
 
+import { capitalize } from 'lodash-es'
+
 import type { Parser } from '@/compiler'
 import { MarkdownParser } from '@/compiler'
 import type { LatexLayout, Resume } from '@/models'
@@ -63,6 +65,14 @@ class ModerncvBase extends Renderer {
       layoutIndex
     )
     this.style = style
+  }
+
+  /**
+   * Whether to show icons in the rendered LaTeX.
+   */
+  private get showIcons(): boolean {
+    const layout = this.resume.layouts?.[this.layoutIndex] as LatexLayout
+    return layout?.advanced?.showIcons ?? true
   }
 
   /**
@@ -138,6 +148,15 @@ class ModerncvBase extends Renderer {
 
 % needed by moderncv for showing icons
 \\usepackage{fontawesome5}`,
+      this.showIcons
+        ? ''
+        : `% disable icons
+\\renewcommand*{\\addresssymbol}{}
+\\renewcommand*{\\mobilephonesymbol}{}
+\\renewcommand*{\\fixedphonesymbol}{}
+\\renewcommand*{\\faxphonesymbol}{}
+\\renewcommand*{\\emailsymbol}{}
+\\renewcommand*{\\homepagesymbol}{}`,
       this.renderModerncvOverride(),
     ])
   }
@@ -305,7 +324,7 @@ class ModerncvBase extends Renderer {
   renderBasics(): string {
     const {
       content: {
-        basics: { name, headline, phone, email },
+        basics: { name, headline, phone, email, url },
       },
     } = this.resume
 
@@ -318,6 +337,7 @@ class ModerncvBase extends Renderer {
         showIfNotEmpty(headline, `\\title{${headline}}`),
         showIfNotEmpty(phone, `\\phone[mobile]{${phone}}`),
         showIfNotEmpty(email, `\\email{${email}}`),
+        showIfNotEmpty(url, `\\homepage{${url}}`),
       ],
       '\n'
     )
@@ -341,16 +361,43 @@ class ModerncvBase extends Renderer {
   }
 
   /**
+   * Get FontAwesome icon for a network.
+   */
+  private getFaIcon(network: string): string {
+    if (!this.showIcons) {
+      return ''
+    }
+
+    switch (network) {
+      case 'Stack Overflow':
+        return '{\\small \\faStackOverflow}\\ '
+      case 'WeChat':
+        return '{\\small \\faWeixin}\\ '
+      default:
+        return `{\\small \\fa${capitalize(network)}}\\ `
+    }
+  }
+
+  /**
    * Render the profiles section of the resume.
    *
    * @returns The LaTeX code for the profiles section
    */
   renderProfiles(): string {
     const {
-      content: {
-        computed: { urls },
-      },
+      content: { profiles },
     } = this.resume
+
+    const profileLinks = profiles.map(({ network, url, username }) => {
+      const icon = this.getFaIcon(network)
+      return isEmptyValue(username) || isEmptyValue(network)
+        ? ''
+        : `${icon}\\href{${url}}{@${username}}`
+    })
+
+    const urls = profileLinks
+      .filter((link) => !isEmptyValue(link))
+      .join(' {} {} {} • {} {} {} \n')
 
     return showIfNotEmpty(urls, `\\extrainfo{${urls}}`)
   }

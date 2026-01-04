@@ -55,6 +55,61 @@ describe('ModerncvBase', () => {
     expect(result).toContain('\\end{document}')
   })
 
+  describe('layouts', () => {
+    describe('advanced.showIcons', () => {
+      it('should default showIcons to true when layout is missing', () => {
+        resume.layouts = undefined
+
+        const renderer = new ModerncvBankingRenderer(resume, layoutIndex)
+
+        const result = renderer.renderPreamble()
+        expect(result).not.toContain('\\renewcommand*{\\homepagesymbol}{}')
+      })
+
+      it('should default showIcons to true when advanced options are missing', () => {
+        // @ts-ignore
+        resume.layouts[layoutIndex].advanced = undefined
+
+        const renderer = new ModerncvBankingRenderer(resume, layoutIndex)
+
+        const result = renderer.renderPreamble()
+        expect(result).not.toContain('\\renewcommand*{\\homepagesymbol}{}')
+      })
+
+      it('should default showIcons to true when showIcons is undefined/null', () => {
+        for (const test of [undefined, null]) {
+          // @ts-ignore
+          resume.layouts[layoutIndex].advanced.showIcons = test
+          const renderer = new ModerncvBankingRenderer(resume, layoutIndex)
+
+          const result = renderer.renderPreamble()
+          expect(result).not.toContain('\\renewcommand*{\\homepagesymbol}{}')
+        }
+      })
+
+      it('should disable icons in preamble when showIcons is false', () => {
+        resume.layouts[layoutIndex] = {
+          ...resume.layouts[layoutIndex],
+          // @ts-ignore
+          advanced: {
+            showIcons: false,
+          },
+        }
+
+        const renderer = new ModerncvBankingRenderer(resume, layoutIndex)
+        const result = renderer.renderPreamble()
+
+        expect(result).toContain('% disable icons')
+        expect(result).toContain('\\renewcommand*{\\addresssymbol}{}')
+        expect(result).toContain('\\renewcommand*{\\mobilephonesymbol}{}')
+        expect(result).toContain('\\renewcommand*{\\fixedphonesymbol}{}')
+        expect(result).toContain('\\renewcommand*{\\faxphonesymbol}{}')
+        expect(result).toContain('\\renewcommand*{\\emailsymbol}{}')
+        expect(result).toContain('\\renewcommand*{\\homepagesymbol}{}')
+      })
+    })
+  })
+
   describe('renderPreamble', () => {
     it('should render correct default document class configuration', () => {
       const result = renderer.renderPreamble()
@@ -388,11 +443,13 @@ describe('ModerncvBase', () => {
       const headline = 'Software Engineer'
       const email = 'john@example.com'
       const phone = '+1234567890'
+      const url = 'https://example.com'
 
       resume.content.basics.name = name
       resume.content.basics.headline = headline
       resume.content.basics.email = email
       resume.content.basics.phone = phone
+      resume.content.basics.url = url
 
       renderer = new ModerncvBankingRenderer(resume, layoutIndex)
       const result = renderer.renderBasics()
@@ -401,6 +458,7 @@ describe('ModerncvBase', () => {
       expect(result).toContain(`\\title{${headline}}`)
       expect(result).toContain(`\\email{${email}}`)
       expect(result).toContain(`\\phone[mobile]{${phone}}`)
+      expect(result).toContain(`\\homepage{${url}}`)
     })
 
     it('should render name field even name is empty', () => {
@@ -419,11 +477,13 @@ describe('ModerncvBase', () => {
       const headline = ''
       const email = ''
       const phone = ''
+      const url = ''
 
       resume.content.basics.name = name
       resume.content.basics.headline = headline
       resume.content.basics.email = email
       resume.content.basics.phone = phone
+      resume.content.basics.url = url
 
       renderer = new ModerncvBankingRenderer(resume, layoutIndex)
       const result = renderer.renderBasics()
@@ -432,6 +492,7 @@ describe('ModerncvBase', () => {
       expect(result).not.toContain('\\title')
       expect(result).not.toContain('\\email')
       expect(result).not.toContain('\\phone')
+      expect(result).not.toContain('\\homepage')
     })
 
     it('should handle undefined values', () => {
@@ -439,11 +500,13 @@ describe('ModerncvBase', () => {
       const headline = undefined
       const email = undefined
       const phone = undefined
+      const url = undefined
 
       resume.content.basics.name = name
       resume.content.basics.headline = headline
       resume.content.basics.email = email
       resume.content.basics.phone = phone
+      resume.content.basics.url = url
 
       renderer = new ModerncvBankingRenderer(resume, layoutIndex)
       const result = renderer.renderBasics()
@@ -452,6 +515,7 @@ describe('ModerncvBase', () => {
       expect(result).not.toContain('\\title')
       expect(result).not.toContain('\\email')
       expect(result).not.toContain('\\phone')
+      expect(result).not.toContain('\\homepage')
     })
   })
 
@@ -509,10 +573,40 @@ describe('ModerncvBase', () => {
       )
     })
 
+    it('should NOT render icons if showIcons is false', () => {
+      const url = 'https://github.com/username'
+      const username = 'username'
+
+      resume.content.profiles = [
+        {
+          network: 'GitHub',
+          url,
+          username,
+        },
+      ]
+
+      const layoutIndex = resume.layouts.findIndex(
+        (layout) => layout.engine === 'latex'
+      )
+      resume.layouts[layoutIndex] = {
+        ...resume.layouts[layoutIndex],
+        // @ts-ignore
+        advanced: {
+          showIcons: false,
+        },
+      }
+
+      renderer = new ModerncvBankingRenderer(resume, layoutIndex)
+      const result = renderer.renderProfiles()
+
+      expect(result).toBe(`\\extrainfo{\\href{${url}}{@${username}}}`)
+    })
+
     it('should render multiple social profiles', () => {
       const githubUrl = 'https://github.com/username'
       const twitterUrl = 'https://twitter.com/username'
       const lineUrl = 'https://line.me/username'
+      const stackOverflowUrl = 'https://stackoverflow.com/users/username'
       const username = 'username'
 
       resume.content.profiles = [
@@ -531,6 +625,16 @@ describe('ModerncvBase', () => {
           url: lineUrl,
           username,
         },
+        {
+          network: 'Stack Overflow',
+          url: stackOverflowUrl,
+          username,
+        },
+        {
+          network: 'WeChat',
+          url: '',
+          username,
+        },
       ]
 
       renderer = new ModerncvBankingRenderer(resume, layoutIndex)
@@ -541,6 +645,8 @@ describe('ModerncvBase', () => {
           `{\\small \\faGithub}\\ \\href{${githubUrl}}{@${username}}`,
           `{\\small \\faTwitter}\\ \\href{${twitterUrl}}{@${username}}`,
           `{\\small \\faLine}\\ \\href{${lineUrl}}{@${username}}`,
+          `{\\small \\faStackOverflow}\\ \\href{${stackOverflowUrl}}{@${username}}`,
+          `{\\small \\faWeixin}\\ \\href{}{@${username}}`,
         ].join(' {} {} {} • {} {} {} \n')}}`
       )
     })

@@ -645,7 +645,5 @@ export type Content = {
       volunteer?: string
       work?: string
     }
-    /** Combined and formatted string of URLs from basics and profiles. */
-    urls?: string
   }
 }

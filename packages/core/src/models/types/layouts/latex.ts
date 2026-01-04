@@ -56,6 +56,8 @@ type LatexAdvanced = {
     /** Style for rendering numbers (Lining or OldStyle). */
     numbers?: LatexFontspecNumbers
   }
+  /** Whether to show icons for links and profiles. */
+  showIcons?: boolean
 }
 
 /**

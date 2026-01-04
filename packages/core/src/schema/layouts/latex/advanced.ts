@@ -42,6 +42,7 @@ export const LatexAdvancedSchema = z.object({
           numbers: nullifySchema(FontspecNumbersOptionSchema),
         })
         .nullish(),
+      showIcons: z.boolean().default(true),
     })
     .nullish()
     .meta({

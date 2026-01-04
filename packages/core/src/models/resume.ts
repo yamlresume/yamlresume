@@ -378,6 +378,7 @@ export const DEFAULT_LATEX_LAYOUT: LatexLayout = {
     fontspec: {
       numbers: 'Auto',
     },
+    showIcons: true,
   },
   page: {
     margins: {

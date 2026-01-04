@@ -2830,8 +2830,15 @@
                                 "type": "null"
                               }
                             ]
+                          },
+                          "showIcons": {
+                            "default": true,
+                            "type": "boolean"
                           }
                         },
+                        "required": [
+                          "showIcons"
+                        ],
                         "additionalProperties": false
                       },
                       {

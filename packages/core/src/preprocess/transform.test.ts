@@ -35,7 +35,6 @@ import {
   type LatexLayout,
   LOCALE_LANGUAGE_OPTIONS,
   type LocaleLanguage,
-  type Network,
   ORDERABLE_SECTION_IDS,
   type OrderableSectionID,
   RESUME_SECTION_ITEMS,
@@ -47,7 +46,6 @@ import {
   normalizedResumeContent,
   normalizeResumeContentSections,
   replaceBlankLinesWithPercent,
-  transformBasicsUrl,
   transformDate,
   transformEducationCourses,
   transformEducationDegreeAreaAndScore,
@@ -55,8 +53,6 @@ import {
   transformKeywords,
   transformLanguage,
   transformLocation,
-  transformProfileLinks,
-  transformProfileUrls,
   transformResumeContent,
   transformResumeLayout,
   transformResumeLayoutLaTeX,
@@ -1088,117 +1084,6 @@ describe(transformSectionNames, () => {
   })
 })
 
-describe(transformBasicsUrl, () => {
-  it('should transform basics.url to latex href with fontawesome5 icon', () => {
-    const resume = cloneDeep(DEFAULT_RESUME)
-
-    const url = 'https://yamlresume.dev'
-    const tests = [
-      { url: '', expected: '' },
-      {
-        url,
-        expected: `{\\small \\faLink}\\ \\href{${url}}{${url}}`,
-      },
-    ]
-
-    for (const { url, expected } of tests) {
-      resume.content.basics.url = url
-
-      transformBasicsUrl(resume)
-
-      expect(resume.content.basics.computed?.url).toEqual(expected)
-    }
-  })
-})
-
-describe(transformProfileUrls, () => {
-  it('should transform profile urls to latex href with fontawesome5 icon', () => {
-    const resume = cloneDeep(DEFAULT_RESUME)
-
-    const tests: {
-      network: Network
-      url: string
-      username: string
-      expected: string
-    }[] = [
-      {
-        network: 'GitHub',
-        url: '',
-        username: '',
-        expected: '',
-      },
-      {
-        network: 'GitHub',
-        url: 'https://github.com/yamlresume',
-        username: '',
-        expected: '',
-      },
-      {
-        network: 'GitHub',
-        url: 'https://github.com/yamlresume',
-        username: 'yamlresume',
-        expected:
-          '{\\small \\faGithub}\\ \\href{https://github.com/yamlresume}{@yamlresume}',
-      },
-      {
-        network: 'Stack Overflow',
-        url: 'https://stackoverflow.com/yamlresume',
-        username: 'yamlresume',
-        expected:
-          '{\\small \\faStackOverflow}\\ \\href{https://stackoverflow.com/yamlresume}{@yamlresume}',
-      },
-      {
-        network: 'WeChat',
-        url: '',
-        username: 'yamlresume',
-        expected: '{\\small \\faWeixin}\\ \\href{}{@yamlresume}',
-      },
-    ]
-
-    for (const { network, url, username, expected } of tests) {
-      resume.content.profiles[0].network = network
-      resume.content.profiles[0].url = url
-      resume.content.profiles[0].username = username
-
-      transformProfileUrls(resume)
-
-      expect(resume.content.profiles[0].computed?.url).toEqual(expected)
-    }
-  })
-})
-
-describe(transformProfileLinks, () => {
-  it('should transform profile links to latex with icons', () => {
-    const resume = cloneDeep(DEFAULT_RESUME)
-
-    const url = 'https://yamlresume.dev'
-    resume.content.basics.url = url
-
-    resume.content.profiles = [
-      {
-        network: 'GitHub',
-        url: 'https://github.com/yamlresume',
-        username: 'yamlresume',
-      },
-      {
-        network: 'Stack Overflow',
-        url: 'https://stackoverflow.com/yamlresume',
-        username: 'yamlresume',
-      },
-    ]
-
-    transformProfileLinks(resume)
-
-    expect(resume.content.computed?.urls).toEqual(
-      [
-        '{\\small \\faLink}\\ \\href{https://yamlresume.dev}{https://yamlresume.dev}',
-        '{\\small \\faGithub}\\ \\href{https://github.com/yamlresume}{@yamlresume}',
-        '{\\small \\faStackOverflow}\\ \\href{https://stackoverflow.com/yamlresume}{@yamlresume}',
-      ].join(' {} {} {} • {} {} {} \n')
-    )
-  })
-})
-
 describe(transformResumeValues, () => {
   it('should transform resume values with escapeLatex', () => {
     const resume = cloneDeep(FILLED_RESUME)
@@ -1239,21 +1124,6 @@ describe(transformResumeValues, () => {
 
     expect(resume.content.basics.headline).toBe('TEST')
   })
-
-  it('should ignore computed values', () => {
-    const resume = cloneDeep(FILLED_RESUME)
-    const urls = 'url1 {} url2 {}'
-
-    resume.content.computed = {
-      urls,
-    }
-
-    transformResumeValues(resume, escapeLatex)
-
-    expect(resume.content.computed).toEqual({
-      urls,
-    })
-  })
 })
 
 describe(transformResumeContent, () => {
@@ -1281,7 +1151,6 @@ describe(transformResumeContent, () => {
       'certificates',
       'education',
       'interests',
-      'profiles',
       'projects',
       'publications',
       'references',
@@ -1514,6 +1383,7 @@ describe(transformResumeLayout, () => {
           // only set numbers to Lining for CJK resume
           numbers: 'Lining',
         },
+        showIcons: true,
       },
     })
   })

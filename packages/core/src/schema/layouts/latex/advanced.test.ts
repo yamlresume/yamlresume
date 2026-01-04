@@ -53,6 +53,29 @@ describe('LatexAdvancedSchema', () => {
     ]
 
     for (const latex of tests) {
+      const parsed = LatexAdvancedSchema.parse(latex)
+      // Check if showIcons defaults to true if not provided in advanced object
+      if (latex.advanced) {
+        expect(parsed.advanced.showIcons).toBe(true)
+      }
+    }
+  })
+
+  it('should validate showIcons if provided', () => {
+    const tests = [
+      {
+        advanced: {
+          showIcons: true,
+        },
+      },
+      {
+        advanced: {
+          showIcons: false,
+        },
+      },
+    ]
+
+    for (const latex of tests) {
       expect(LatexAdvancedSchema.parse(latex)).toStrictEqual(latex)
     }
   })

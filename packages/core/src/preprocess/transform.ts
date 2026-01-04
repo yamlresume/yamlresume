@@ -22,7 +22,7 @@
  * IN THE SOFTWARE.
  */
 
-import { capitalize, cloneDeep, isArray, merge } from 'lodash-es'
+import { cloneDeep, isArray, merge } from 'lodash-es'
 
 import { HtmlCodeGenerator, LatexCodeGenerator, type Parser } from '@/compiler'
 import {
@@ -171,10 +171,6 @@ export function transformResumeValues(
     // only resume.basics and resume.location are objects, others are all arrays
     if (key === 'basics' || key === 'location') {
       transformResumeSectionValues(value as Record<string, unknown>, escapeFunc)
-    } else if (key === 'computed') {
-      // `computed` object will be handled separately
-      // for now, `transformSocialLinks` will handle it
-      return
     } else {
       resume.content[key].forEach((_, index: number) => {
         transformResumeSectionValues(
@@ -540,68 +536,6 @@ export function transformLocation(resume: Resume): Resume {
 }
 
 /**
- * Transforms the `basics.url` field into a LaTeX `\href` command with a link
- * icon, stored in `computed.url`.
- *
- * @param resume - The resume object.
- * @returns The transformed resume object.
- * @remarks Modifies `resume.content.basics.computed` in place.
- */
-export function transformBasicsUrl(resume: Resume): Resume {
-  // `basics.url` is not a mandatory field, so we have to check if it is empty
-  const basicsLink = isEmptyValue(resume.content.basics.url)
-    ? ''
-    : `{\\small \\faLink}\\ \\href{${resume.content.basics.url}}{${resume.content.basics.url}}`
-
-  resume.content.basics.computed = {
-    ...resume.content.basics.computed,
-    url: basicsLink,
-  }
-
-  return resume
-}
-
-/**
- * Transforms profile URLs into LaTeX `\href` commands with appropriate
- * FontAwesome icons based on the network name.
- *
- * Stores the result in `computed.url` for each profile item.
- *
- * @param resume - The resume object.
- * @returns The transformed resume object.
- * @remarks Modifies `resume.content.profiles` items in place.
- */
-export function transformProfileUrls(resume: Resume): Resume {
-  // In general, to get the fontawesome5 symbol for a given network, we can
-  // simply use the following use `capitalise(network)` as the icon name, though
-  // there are some exceptions such as WeChat and `Stack Overflow`
-  const getFaIcon = (network: string): string => {
-    switch (network) {
-      case 'Stack Overflow':
-        return '\\faStackOverflow'
-      case 'WeChat':
-        return '\\faWeixin'
-      default:
-        return `\\fa${capitalize(network)}`
-    }
-  }
-
-  resume.content.profiles.forEach((item, index: number) => {
-    resume.content.profiles[index].computed = {
-      ...resume.content.profiles[index].computed,
-      url:
-        isEmptyValue(item.username) || isEmptyValue(item.network)
-          ? ''
-          : `{\\small ${getFaIcon(item.network)}}\\ \\href{${item.url}}{@${
-              item.username
-            }}`,
-    }
-  })
-
-  return resume
-}
-
-/**
  * Translates skill proficiency levels based on the selected locale.
  *
  * Stores the translated string in `computed.level`.
@@ -623,37 +557,6 @@ export function transformSkills(resume: Resume): Resume {
       level: showIf(!isEmptyValue(item.level), level),
     }
   })
-
-  return resume
-}
-
-/**
- * Collects URLs from `basics` and `profiles` sections, formats them as LaTeX
- * links (requires `transformBasicsUrl` and `transformProfileUrls` to be run
- * first),
- *
- * Join them into a single string stored in `resume.content.computed.urls`.
- *
- * @param resume - The resume object.
- * @returns The transformed resume object.
- * @remarks Modifies `resume.content.computed`.
- */
-export function transformProfileLinks(resume: Resume): Resume {
-  transformBasicsUrl(resume)
-  transformProfileUrls(resume)
-
-  resume.content.computed = {
-    ...resume.content.computed,
-    urls: [
-      resume.content.basics.computed.url,
-      ...resume.content.profiles.map((item) => item.computed.url),
-    ]
-      // here we filter out empty values is the processed link is still empty
-      .filter((link) => !isEmptyValue(link))
-      // we use 4 lefet spaces, a dot and 4 right spaces to separate links, just
-      // to align with default moderncv style
-      .join(' {} {} {} • {} {} {} \n'),
-  }
 
   return resume
 }
@@ -827,7 +730,6 @@ export function transformResumeContent(
     transformLanguage,
     transformLocation,
     transformSkills,
-    transformProfileLinks,
     transformSummary,
     transformSectionNames,
   ].reduce(
