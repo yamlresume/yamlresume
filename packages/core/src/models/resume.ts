@@ -360,6 +360,9 @@ export const DEFAULT_HTML_LAYOUT: HtmlLayout = {
   typography: {
     fontSize: '16px',
   },
+  advanced: {
+    showIcons: true,
+  },
 }
 
 /** Default Markdown layout configuration. */

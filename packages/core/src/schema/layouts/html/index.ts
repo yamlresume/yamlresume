@@ -25,6 +25,7 @@
 import { z } from 'zod'
 
 import { SectionsSchema } from '../common'
+import { HtmlAdvancedSchema } from './advanced'
 import { HtmlTemplateSchema } from './template'
 import { HtmlTypographySchema } from './typography'
 
@@ -40,6 +41,7 @@ export const HtmlLayoutSchema = z
     engine: z.literal('html'),
     ...HtmlTemplateSchema.shape,
     ...HtmlTypographySchema.shape,
+    ...HtmlAdvancedSchema.shape,
     ...SectionsSchema.shape,
   })
   .meta({ title: 'HTML Engine Layout' })

@@ -45,6 +45,74 @@ describe('HtmlRenderer', () => {
     )
   })
 
+  describe('layouts', () => {
+    describe('advanced.showIcons', () => {
+      it('should default showIcons to true when layout is missing', () => {
+        resume.content.basics.email = 'john.doe@example.com'
+        const renderer = new HtmlRenderer(resume, layoutIndex)
+
+        // @ts-ignore
+        renderer.resume.layouts = undefined
+        const result = renderer.renderBasics()
+        expect(result).toContain('<span class="resume-contact-icon">📧</span>')
+      })
+
+      it('should default showIcons to true when advanced is missing', () => {
+        resume.content.basics.email = 'john.doe@example.com'
+        const renderer = new HtmlRenderer(resume, layoutIndex)
+        // @ts-ignore
+        renderer.resume.layouts[layoutIndex].advanced = undefined
+
+        const result = renderer.renderBasics()
+        expect(result).toContain('<span class="resume-contact-icon">📧</span>')
+      })
+
+      it('should default showIcons to true when showIcons is undefined', () => {
+        resume.content.basics.email = 'john.doe@example.com'
+        const renderer = new HtmlRenderer(resume, layoutIndex)
+        // @ts-ignore
+        if (renderer.resume.layouts[layoutIndex].advanced) {
+          // @ts-ignore
+          renderer.resume.layouts[layoutIndex].advanced.showIcons = undefined
+        }
+
+        const result = renderer.renderBasics()
+        expect(result).toContain('<span class="resume-contact-icon">📧</span>')
+      })
+    })
+
+    describe('typography.fontSize', () => {
+      it('should use default font size when typography is empty', () => {
+        for (const test of [undefined, {}]) {
+          const resume = cloneDeep(DEFAULT_RESUME)
+          const layoutIndex = resume.layouts.findIndex(
+            (l) => l.engine === 'html'
+          )
+          const htmlLayout = resume.layouts[layoutIndex] as HtmlLayout
+          htmlLayout.typography = test
+
+          const renderer = new HtmlRenderer(resume, layoutIndex)
+          const result = renderer.renderPreamble()
+
+          expect(result).toContain('--text-font-size: 16px')
+        }
+      })
+
+      it('should use default font size when font size is empty string', () => {
+        const resume = cloneDeep(DEFAULT_RESUME)
+        const layoutIndex = resume.layouts.findIndex((l) => l.engine === 'html')
+        const htmlLayout = resume.layouts[layoutIndex] as HtmlLayout
+        // @ts-ignore
+        htmlLayout.typography = { fontSize: '' }
+
+        const renderer = new HtmlRenderer(resume, layoutIndex)
+        const result = renderer.renderPreamble()
+
+        expect(result).toContain('--text-font-size: 16px')
+      })
+    })
+  })
+
   describe('renderPreamble', () => {
     it('should render correct preamble with metadata and styles', () => {
       const htmlLayout = resume.layouts[layoutIndex] as HtmlLayout
@@ -77,33 +145,6 @@ describe('HtmlRenderer', () => {
       const result = renderer.renderPreamble()
 
       expect(result).toContain('<title>YAMLResume</title>')
-    })
-
-    it('should use default font size when typography is empty', () => {
-      for (const test of [undefined, {}]) {
-        const resume = cloneDeep(DEFAULT_RESUME)
-        const layoutIndex = resume.layouts.findIndex((l) => l.engine === 'html')
-        const htmlLayout = resume.layouts[layoutIndex] as HtmlLayout
-        htmlLayout.typography = test
-
-        const renderer = new HtmlRenderer(resume, layoutIndex)
-        const result = renderer.renderPreamble()
-
-        expect(result).toContain('--text-font-size: 16px')
-      }
-    })
-
-    it('should use default font size when font size is empty string', () => {
-      const resume = cloneDeep(DEFAULT_RESUME)
-      const layoutIndex = resume.layouts.findIndex((l) => l.engine === 'html')
-      const htmlLayout = resume.layouts[layoutIndex] as HtmlLayout
-      // @ts-ignore
-      htmlLayout.typography = { fontSize: '' }
-
-      const renderer = new HtmlRenderer(resume, layoutIndex)
-      const result = renderer.renderPreamble()
-
-      expect(result).toContain('--text-font-size: 16px')
     })
   })
 
@@ -138,17 +179,37 @@ describe('HtmlRenderer', () => {
       expect(result).toContain(`<h1 class="resume-name">${name}</h1>`)
       expect(result).toContain(`<p class="resume-headline">${headline}</p>`)
       expect(result).toContain(
-        `<span class="resume-icon">📧</span><a href="mailto:${
+        `<span class="resume-contact-icon">📧</span><a href="mailto:${
           email
         }" class="resume-contact-link">${email}</a>`
       )
-      expect(result).toContain(`<span class="resume-icon">📞</span>${phone}`)
       expect(result).toContain(
-        `<span class="resume-icon">🔗</span><a href="${
+        `<span class="resume-contact-icon">📞</span>${phone}`
+      )
+      expect(result).toContain(
+        `<span class="resume-contact-icon">🔗</span><a href="${
           url
         }" class="resume-contact-link">${url}</a>`
       )
       expect(result).toContain('<div class="resume-contact-info">')
+    })
+
+    it('should NOT render icons if showIcons is false', () => {
+      const email = 'hi@ppresume.com'
+      resume.content.basics.email = email
+
+      const htmlLayout = resume.layouts[layoutIndex] as HtmlLayout
+      htmlLayout.advanced = { showIcons: false }
+
+      renderer = new HtmlRenderer(resume, layoutIndex)
+      const result = renderer.renderBasics()
+
+      expect(result).toContain(
+        `<span class="resume-contact-item"><a href="mailto:${
+          email
+        }" class="resume-contact-link">${email}</a></span>`
+      )
+      expect(result).not.toContain('resume-contact-icon')
     })
 
     it('should handle missing optional fields', () => {
@@ -234,7 +295,7 @@ describe('HtmlRenderer', () => {
         '<div class="resume-contact-info resume-location-info">'
       )
       expect(result).toContain(
-        `<span class="resume-contact-item"><span class="resume-icon">📍</span>${
+        `<span class="resume-contact-item"><span class="resume-contact-icon">📍</span>${
           address
         }, ${city}, ${region}, ${country}, ${postalCode}</span>`
       )
@@ -257,7 +318,7 @@ describe('HtmlRenderer', () => {
         '<div class="resume-contact-info resume-location-info">'
       )
       expect(result).toContain(
-        `<span class="resume-contact-item"><span class="resume-icon">📍</span>${
+        `<span class="resume-contact-item"><span class="resume-contact-icon">📍</span>${
           city
         }, ${country}</span>`
       )
@@ -301,16 +362,42 @@ describe('HtmlRenderer', () => {
         '<div class="resume-contact-info resume-profiles-info">'
       )
       expect(result).toContain(
-        `<span class="resume-contact-item">Line: <a href="${
+        `<span class="resume-contact-item"><span class="resume-contact-label">Line</span>: <a href="${
           lineUrl
-        }" class="resume-contact-link">${username}</a></span>`
+        }" class="resume-contact-link">@${username}</a></span>`
       )
       expect(result).toContain(
-        `<span class="resume-contact-item">GitHub: <a href="${
+        `<span class="resume-contact-item"><span class="resume-contact-label">GitHub</span>: <a href="${
           githubUrl
-        }" class="resume-contact-link">${username}</a></span>`
+        }" class="resume-contact-link">@${username}</a></span>`
       )
       expect(result).toContain('</div>')
+    })
+
+    it('should NOT render icons for profiles if showIcons is false', () => {
+      const username = 'andydufresne'
+      const githubUrl = 'https://github.com/andydufresne'
+
+      resume.content.profiles = [
+        {
+          network: 'GitHub',
+          username,
+          url: githubUrl,
+        },
+      ]
+
+      const htmlLayout = resume.layouts[layoutIndex] as HtmlLayout
+      htmlLayout.advanced = { showIcons: false }
+
+      renderer = new HtmlRenderer(resume, layoutIndex)
+      const result = renderer.renderProfiles()
+
+      expect(result).toContain(
+        `<span class="resume-contact-item"><span class="resume-contact-label">GitHub</span>: <a href="${
+          githubUrl
+        }" class="resume-contact-link">@${username}</a></span>`
+      )
+      expect(result).not.toContain('resume-contact-icon')
     })
 
     it('should render profile as plain text if url is missing', () => {
@@ -328,12 +415,34 @@ describe('HtmlRenderer', () => {
         '<div class="resume-contact-info resume-profiles-info">'
       )
       expect(result).toContain(
-        `<span class="resume-contact-item">GitHub: @${username}</span>`
+        `<span class="resume-contact-item"><span class="resume-contact-label">GitHub</span>: @${
+          username
+        }</span>`
       )
       expect(result).toContain(
-        `<span class="resume-contact-item">Twitter: @${username}</span>`
+        `<span class="resume-contact-item"><span class="resume-contact-label">Twitter</span>: @${
+          username
+        }</span>`
       )
       expect(result).toContain('</div>')
+    })
+
+    it('should render profile with url if username is missing', () => {
+      const url = 'https://github.com/testuser'
+
+      resume.content.profiles = [
+        // @ts-ignore
+        { network: 'GitHub', username: undefined, url },
+      ]
+
+      renderer = new HtmlRenderer(resume, layoutIndex)
+      const result = renderer.renderProfiles()
+
+      expect(result).toContain(
+        `<span class="resume-contact-item"><span class="resume-contact-label">GitHub</span>: <a href="${
+          url
+        }" class="resume-contact-link">${url}</a></span>`
+      )
     })
   })
 

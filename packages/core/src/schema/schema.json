@@ -2240,6 +2240,28 @@
                       }
                     ]
                   },
+                  "advanced": {
+                    "title": "Advanced",
+                    "description": "The Advanced section contains advanced HTML settings.",
+                    "anyOf": [
+                      {
+                        "type": "object",
+                        "properties": {
+                          "showIcons": {
+                            "default": true,
+                            "type": "boolean"
+                          }
+                        },
+                        "required": [
+                          "showIcons"
+                        ],
+                        "additionalProperties": false
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  },
                   "sections": {
                     "title": "Sections",
                     "description": "Section customization settings.",

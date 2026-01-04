@@ -22,39 +22,41 @@
  * IN THE SOFTWARE.
  */
 
-import type { HtmlFontSize, HtmlTemplate } from '../options'
-import type { Sections } from './common'
+import { describe, expect, it } from 'vitest'
 
-/**
- * Defines HTML typography settings for document formatting.
- */
-type HtmlTypography = {
-  /** Base font size for the document (e.g., "small", "medium", "large"). */
-  fontSize?: HtmlFontSize
-}
+import { expectSchemaMetadata } from '../../zod'
+import { HtmlAdvancedSchema } from './advanced'
 
-/**
- * Defines advanced HTML configuration options.
- */
-type HtmlAdvanced = {
-  /** Whether to show icons for links and profiles. */
-  showIcons?: boolean
-}
+describe('HtmlAdvancedSchema', () => {
+  it('should have correct metadata', () => {
+    expectSchemaMetadata(HtmlAdvancedSchema.shape.advanced)
+  })
 
-/**
- * HTML layout configuration.
- *
- * Defines the structure for HTML-specific layout settings including
- * template selection, typography options, and section configuration.
- */
-export type HtmlLayout = {
-  engine: 'html'
-  /** Defines the selected template. */
-  template?: HtmlTemplate
-  /** Defines typography settings for document formatting. */
-  typography?: HtmlTypography
-  /** Defines section customization settings. */
-  sections?: Sections
-  /** Defines advanced configuration options. */
-  advanced?: HtmlAdvanced
-}
+  it('should validate HTML advanced settings if it is valid', () => {
+    const tests = [
+      {},
+      {
+        advanced: {},
+      },
+      {
+        advanced: {
+          showIcons: true,
+        },
+      },
+      {
+        advanced: {
+          showIcons: false,
+        },
+      },
+    ]
+
+    for (const html of tests) {
+      const parsed = HtmlAdvancedSchema.parse(html)
+      if (html.advanced) {
+        expect(parsed.advanced.showIcons).toBe(
+          html.advanced.showIcons !== undefined ? html.advanced.showIcons : true
+        )
+      }
+    }
+  })
+})

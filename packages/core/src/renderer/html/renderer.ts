@@ -34,6 +34,7 @@ import {
   escapeHtml,
   isEmptyValue,
   joinNonEmptyString,
+  showIf,
   showIfNotEmpty,
 } from '@/utils'
 import { Renderer } from '../base'
@@ -61,6 +62,14 @@ export class HtmlRenderer extends Renderer {
       transformResume(resume, layoutIndex, summaryParser, escapeHtml),
       layoutIndex
     )
+  }
+
+  /**
+   * Get whether to show icons.
+   */
+  private get showIcons(): boolean {
+    const layout = this.resume.layouts?.[this.layoutIndex] as HtmlLayout
+    return layout?.advanced?.showIcons ?? true
   }
 
   /**
@@ -120,7 +129,9 @@ ${this.getStyles()}
           joinNonEmptyString(
             [
               '<span class="resume-contact-item">',
-              `<span class="resume-icon">📧</span>`,
+              this.showIcons
+                ? `<span class="resume-contact-icon">📧</span>`
+                : '',
               `<a href="mailto:${email}" class="resume-contact-link">`,
               email,
               '</a>',
@@ -134,7 +145,11 @@ ${this.getStyles()}
           joinNonEmptyString(
             [
               '<span class="resume-contact-item">',
-              `<span class="resume-icon">📞</span>${phone}</span>`,
+              this.showIcons
+                ? `<span class="resume-contact-icon">📞</span>`
+                : '',
+              phone,
+              '</span>',
             ],
             ''
           )
@@ -144,7 +159,9 @@ ${this.getStyles()}
           joinNonEmptyString(
             [
               '<span class="resume-contact-item">',
-              `<span class="resume-icon">🔗</span>`,
+              this.showIcons
+                ? `<span class="resume-contact-icon">🔗</span>`
+                : '',
               `<a href="${url}" class="resume-contact-link">${url}</a>`,
               '</span>',
             ],
@@ -216,9 +233,10 @@ ${this.getStyles()}
     return showIfNotEmpty(
       fullAddress,
       `<div class="resume-contact-info resume-location-info">
-        <span class="resume-contact-item"><span class="resume-icon">📍</span>${
-          fullAddress
-        }</span>
+        <span class="resume-contact-item">${showIf(
+          this.showIcons,
+          '<span class="resume-contact-icon">📍</span>'
+        )}${fullAddress}</span>
       </div>`
     )
   }
@@ -238,12 +256,14 @@ ${this.getStyles()}
     if (isEmptyValue(profiles)) return ''
 
     const profileItems = profiles
-      .map(({ network, url, username }) => {
+      .map((profile) => {
+        const { network, username, url } = profile
         if (isEmptyValue(url)) {
           return joinNonEmptyString(
             [
               '<span class="resume-contact-item">',
-              `${network}: @${username}`,
+              `<span class="resume-contact-label">${network}</span>: `,
+              showIfNotEmpty(username, `@${username}`),
               '</span>',
             ],
             ''
@@ -253,9 +273,9 @@ ${this.getStyles()}
         return joinNonEmptyString(
           [
             '<span class="resume-contact-item">',
-            `${network}: `,
+            `<span class="resume-contact-label">${network}</span>: `,
             `<a href="${url}" class="resume-contact-link">${
-              username || url
+              username ? `@${username}` : url
             }</a>`,
             '</span>',
           ],

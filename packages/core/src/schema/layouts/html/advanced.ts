@@ -22,39 +22,27 @@
  * IN THE SOFTWARE.
  */
 
-import type { HtmlFontSize, HtmlTemplate } from '../options'
-import type { Sections } from './common'
+import { z } from 'zod'
+
+import { joinNonEmptyString } from '@/utils'
 
 /**
- * Defines HTML typography settings for document formatting.
- */
-type HtmlTypography = {
-  /** Base font size for the document (e.g., "small", "medium", "large"). */
-  fontSize?: HtmlFontSize
-}
-
-/**
- * Defines advanced HTML configuration options.
- */
-type HtmlAdvanced = {
-  /** Whether to show icons for links and profiles. */
-  showIcons?: boolean
-}
-
-/**
- * HTML layout configuration.
+ * A zod schema for validating some advanced HTML configuration.
  *
- * Defines the structure for HTML-specific layout settings including
- * template selection, typography options, and section configuration.
+ * Validates some advanced HTML settings including options to control
+ * UI elements like icons.
  */
-export type HtmlLayout = {
-  engine: 'html'
-  /** Defines the selected template. */
-  template?: HtmlTemplate
-  /** Defines typography settings for document formatting. */
-  typography?: HtmlTypography
-  /** Defines section customization settings. */
-  sections?: Sections
-  /** Defines advanced configuration options. */
-  advanced?: HtmlAdvanced
-}
+export const HtmlAdvancedSchema = z.object({
+  advanced: z
+    .object({
+      showIcons: z.boolean().default(true),
+    })
+    .nullish()
+    .meta({
+      title: 'Advanced',
+      description: joinNonEmptyString(
+        ['The Advanced section contains advanced HTML settings.'],
+        ' '
+      ),
+    }),
+})
