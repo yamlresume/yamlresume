@@ -136,7 +136,6 @@ jobs:
         uses: softprops/action-gh-release@v2
         if: github.ref_type == 'tag'
         with:
-          append_body: true
           discussion_category_name: Announcements
           draft: false
           body_path: release_notes.md
