@@ -22,7 +22,7 @@
  * IN THE SOFTWARE.
  */
 
-import { startCase } from 'lodash-es'
+import { capitalize } from 'lodash-es'
 import { z } from 'zod'
 
 import { joinNonEmptyString } from '@/utils'
@@ -105,7 +105,7 @@ export function MarginSizeSchema(position: Position) {
         }
       })
       .meta({
-        title: startCase(`${position} margin size`),
+        title: capitalize(`${position} margin size`),
         description: joinNonEmptyString(
           [
             'A positive number followed by valid units: cm, pt, or in.',

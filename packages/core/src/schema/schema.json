@@ -202,7 +202,7 @@
                 "maxLength": 128
               },
               "degree": {
-                "title": "Degree Option",
+                "title": "Degree option",
                 "description": "A predefined option from the available degree choices.",
                 "type": "string",
                 "enum": [
@@ -216,7 +216,7 @@
                 ]
               },
               "startDate": {
-                "title": "Start Date",
+                "title": "Start date",
                 "description": "A valid date string that can be parsed by `Date.parse`.",
                 "examples": [
                   "2025-01-01",
@@ -282,7 +282,7 @@
                 ]
               },
               "endDate": {
-                "title": "[optional] End Date",
+                "title": "[optional] End date",
                 "description": "A valid date string that can be parsed by `Date.parse` or `null`.",
                 "examples": [
                   "2025-01-01",
@@ -292,7 +292,7 @@
                 ],
                 "anyOf": [
                   {
-                    "title": "[optional] End Date",
+                    "title": "[optional] End date",
                     "description": "A valid date string that can be parsed by `Date.parse` or `null`.",
                     "examples": [
                       "2025-01-01",
@@ -693,7 +693,7 @@
                 "type": "object",
                 "properties": {
                   "fluency": {
-                    "title": "Fluency Option",
+                    "title": "Fluency option",
                     "description": "A predefined option from the available fluency choices.",
                     "type": "string",
                     "enum": [
@@ -705,7 +705,7 @@
                     ]
                   },
                   "language": {
-                    "title": "Language Option",
+                    "title": "Language option",
                     "description": "A predefined option from the available language choices.",
                     "type": "string",
                     "enum": [
@@ -892,11 +892,11 @@
                   ]
                 },
                 "country": {
-                  "title": "[optional] Country Option",
+                  "title": "[optional] Country option",
                   "description": "A predefined option from the available country choices or `null`.",
                   "anyOf": [
                     {
-                      "title": "[optional] Country Option",
+                      "title": "[optional] Country option",
                       "description": "A predefined option from the available country choices or `null`.",
                       "type": "string",
                       "enum": [
@@ -1234,7 +1234,7 @@
                 "type": "object",
                 "properties": {
                   "network": {
-                    "title": "Network Option",
+                    "title": "Network option",
                     "description": "A predefined option from the available network choices.",
                     "type": "string",
                     "enum": [
@@ -1340,7 +1340,7 @@
                     "maxLength": 128
                   },
                   "startDate": {
-                    "title": "Start Date",
+                    "title": "Start date",
                     "description": "A valid date string that can be parsed by `Date.parse`.",
                     "examples": [
                       "2025-01-01",
@@ -1382,7 +1382,7 @@
                     ]
                   },
                   "endDate": {
-                    "title": "[optional] End Date",
+                    "title": "[optional] End date",
                     "description": "A valid date string that can be parsed by `Date.parse` or `null`.",
                     "examples": [
                       "2025-01-01",
@@ -1392,7 +1392,7 @@
                     ],
                     "anyOf": [
                       {
-                        "title": "[optional] End Date",
+                        "title": "[optional] End date",
                         "description": "A valid date string that can be parsed by `Date.parse` or `null`.",
                         "examples": [
                           "2025-01-01",
@@ -1533,7 +1533,7 @@
                     "maxLength": 128
                   },
                   "releaseDate": {
-                    "title": "[optional] Release Date",
+                    "title": "[optional] Release date",
                     "description": "A valid date string that can be parsed by `Date.parse` or `null`.",
                     "examples": [
                       "2025-01-01",
@@ -1543,7 +1543,7 @@
                     ],
                     "anyOf": [
                       {
-                        "title": "[optional] Release Date",
+                        "title": "[optional] Release date",
                         "description": "A valid date string that can be parsed by `Date.parse` or `null`.",
                         "examples": [
                           "2025-01-01",
@@ -1749,7 +1749,7 @@
                 "type": "object",
                 "properties": {
                   "level": {
-                    "title": "Level Option",
+                    "title": "Level option",
                     "description": "A predefined option from the available level choices.",
                     "type": "string",
                     "enum": [
@@ -1869,7 +1869,7 @@
                     "maxLength": 64
                   },
                   "startDate": {
-                    "title": "Start Date",
+                    "title": "Start date",
                     "description": "A valid date string that can be parsed by `Date.parse`.",
                     "examples": [
                       "2025-01-01",
@@ -1885,7 +1885,7 @@
                     "$ref": "#/$defs/summary"
                   },
                   "endDate": {
-                    "title": "[optional] End Date",
+                    "title": "[optional] End date",
                     "description": "A valid date string that can be parsed by `Date.parse` or `null`.",
                     "examples": [
                       "2025-01-01",
@@ -1895,7 +1895,7 @@
                     ],
                     "anyOf": [
                       {
-                        "title": "[optional] End Date",
+                        "title": "[optional] End date",
                         "description": "A valid date string that can be parsed by `Date.parse` or `null`.",
                         "examples": [
                           "2025-01-01",
@@ -1991,7 +1991,7 @@
                     "maxLength": 64
                   },
                   "startDate": {
-                    "title": "Start Date",
+                    "title": "Start date",
                     "description": "A valid date string that can be parsed by `Date.parse`.",
                     "examples": [
                       "2025-01-01",
@@ -2007,7 +2007,7 @@
                     "$ref": "#/$defs/summary"
                   },
                   "endDate": {
-                    "title": "[optional] End Date",
+                    "title": "[optional] End date",
                     "description": "A valid date string that can be parsed by `Date.parse` or `null`.",
                     "examples": [
                       "2025-01-01",
@@ -2017,7 +2017,7 @@
                     ],
                     "anyOf": [
                       {
-                        "title": "[optional] End Date",
+                        "title": "[optional] End date",
                         "description": "A valid date string that can be parsed by `Date.parse` or `null`.",
                         "examples": [
                           "2025-01-01",
@@ -2138,11 +2138,11 @@
           "type": "object",
           "properties": {
             "language": {
-              "title": "[optional] Locale Language Option",
+              "title": "[optional] Locale language option",
               "description": "A predefined option from the available locale language choices or `null`.",
               "anyOf": [
                 {
-                  "title": "[optional] Locale Language Option",
+                  "title": "[optional] Locale language option",
                   "description": "A predefined option from the available locale language choices or `null`.",
                   "type": "string",
                   "enum": [
@@ -2190,7 +2190,7 @@
                     "description": "The template section contains the resume template selection, determining the overall visual style and layout.",
                     "anyOf": [
                       {
-                        "title": "[optional] HTML Template Option",
+                        "title": "[optional] Html template option",
                         "description": "A predefined option from the available HTML template choices or `null`.",
                         "type": "string",
                         "enum": [
@@ -2211,11 +2211,11 @@
                         "type": "object",
                         "properties": {
                           "fontSize": {
-                            "title": "[optional] HTML Font Size Option",
+                            "title": "[optional] Html font size option",
                             "description": "A predefined option from the available HTML font size choices or `null`.",
                             "anyOf": [
                               {
-                                "title": "[optional] HTML Font Size Option",
+                                "title": "[optional] Html font size option",
                                 "description": "A predefined option from the available HTML font size choices or `null`.",
                                 "type": "string",
                                 "enum": [
@@ -2484,7 +2484,7 @@
                               {
                                 "type": "array",
                                 "items": {
-                                  "title": "Section Option",
+                                  "title": "Section option",
                                   "description": "A predefined option from the available section choices.",
                                   "type": "string",
                                   "enum": [
@@ -2552,11 +2552,11 @@
                             ]
                           },
                           "paperSize": {
-                            "title": "[optional] La Te X Paper Size Option",
+                            "title": "[optional] Latex paper size option",
                             "description": "A predefined option from the available LaTeX paper size choices or `null`.",
                             "anyOf": [
                               {
-                                "title": "[optional] La Te X Paper Size Option",
+                                "title": "[optional] Latex paper size option",
                                 "description": "A predefined option from the available LaTeX paper size choices or `null`.",
                                 "type": "string",
                                 "enum": [
@@ -2577,7 +2577,7 @@
                                 "type": "object",
                                 "properties": {
                                   "top": {
-                                    "title": "[optional] Top Margin Size",
+                                    "title": "[optional] Top margin size",
                                     "description": "A positive number followed by valid units: cm, pt, or in. Examples: \"2.5cm\", \"1in\", \"72pt\" or `null`.",
                                     "examples": [
                                       "2.5cm",
@@ -2588,7 +2588,7 @@
                                     ],
                                     "anyOf": [
                                       {
-                                        "title": "[optional] Top Margin Size",
+                                        "title": "[optional] Top margin size",
                                         "description": "A positive number followed by valid units: cm, pt, or in. Examples: \"2.5cm\", \"1in\", \"72pt\" or `null`.",
                                         "examples": [
                                           "2.5cm",
@@ -2607,7 +2607,7 @@
                                     ]
                                   },
                                   "bottom": {
-                                    "title": "[optional] Bottom Margin Size",
+                                    "title": "[optional] Bottom margin size",
                                     "description": "A positive number followed by valid units: cm, pt, or in. Examples: \"2.5cm\", \"1in\", \"72pt\" or `null`.",
                                     "examples": [
                                       "2.5cm",
@@ -2618,7 +2618,7 @@
                                     ],
                                     "anyOf": [
                                       {
-                                        "title": "[optional] Bottom Margin Size",
+                                        "title": "[optional] Bottom margin size",
                                         "description": "A positive number followed by valid units: cm, pt, or in. Examples: \"2.5cm\", \"1in\", \"72pt\" or `null`.",
                                         "examples": [
                                           "2.5cm",
@@ -2637,7 +2637,7 @@
                                     ]
                                   },
                                   "left": {
-                                    "title": "[optional] Left Margin Size",
+                                    "title": "[optional] Left margin size",
                                     "description": "A positive number followed by valid units: cm, pt, or in. Examples: \"2.5cm\", \"1in\", \"72pt\" or `null`.",
                                     "examples": [
                                       "2.5cm",
@@ -2648,7 +2648,7 @@
                                     ],
                                     "anyOf": [
                                       {
-                                        "title": "[optional] Left Margin Size",
+                                        "title": "[optional] Left margin size",
                                         "description": "A positive number followed by valid units: cm, pt, or in. Examples: \"2.5cm\", \"1in\", \"72pt\" or `null`.",
                                         "examples": [
                                           "2.5cm",
@@ -2667,7 +2667,7 @@
                                     ]
                                   },
                                   "right": {
-                                    "title": "[optional] Right Margin Size",
+                                    "title": "[optional] Right margin size",
                                     "description": "A positive number followed by valid units: cm, pt, or in. Examples: \"2.5cm\", \"1in\", \"72pt\" or `null`.",
                                     "examples": [
                                       "2.5cm",
@@ -2678,7 +2678,7 @@
                                     ],
                                     "anyOf": [
                                       {
-                                        "title": "[optional] Right Margin Size",
+                                        "title": "[optional] Right margin size",
                                         "description": "A positive number followed by valid units: cm, pt, or in. Examples: \"2.5cm\", \"1in\", \"72pt\" or `null`.",
                                         "examples": [
                                           "2.5cm",
@@ -2717,7 +2717,7 @@
                     "description": "The template section contains the resume template selection, determining the overall visual style and layout.",
                     "anyOf": [
                       {
-                        "title": "[optional] La Te X Template Option",
+                        "title": "[optional] Latex template option",
                         "description": "A predefined option from the available LaTeX template choices or `null`.",
                         "type": "string",
                         "enum": [
@@ -2739,11 +2739,11 @@
                         "type": "object",
                         "properties": {
                           "fontSize": {
-                            "title": "[optional] La Te X Font Size Option",
+                            "title": "[optional] Latex font size option",
                             "description": "A predefined option from the available LaTeX font size choices or `null`.",
                             "anyOf": [
                               {
-                                "title": "[optional] La Te X Font Size Option",
+                                "title": "[optional] Latex font size option",
                                 "description": "A predefined option from the available LaTeX font size choices or `null`.",
                                 "type": "string",
                                 "enum": [
@@ -2806,11 +2806,11 @@
                                 "type": "object",
                                 "properties": {
                                   "numbers": {
-                                    "title": "[optional] La Te X Fontspec Numbers Option",
+                                    "title": "[optional] Latex fontspec numbers option",
                                     "description": "A predefined option from the available LaTeX fontspec numbers choices or `null`.",
                                     "anyOf": [
                                       {
-                                        "title": "[optional] La Te X Fontspec Numbers Option",
+                                        "title": "[optional] Latex fontspec numbers option",
                                         "description": "A predefined option from the available LaTeX fontspec numbers choices or `null`.",
                                         "type": "string",
                                         "enum": [
@@ -3068,7 +3068,7 @@
                               {
                                 "type": "array",
                                 "items": {
-                                  "title": "Section Option",
+                                  "title": "Section option",
                                   "description": "A predefined option from the available section choices.",
                                   "type": "string",
                                   "enum": [
@@ -3335,7 +3335,7 @@
                               {
                                 "type": "array",
                                 "items": {
-                                  "title": "Section Option",
+                                  "title": "Section option",
                                   "description": "A predefined option from the available section choices.",
                                   "type": "string",
                                   "enum": [

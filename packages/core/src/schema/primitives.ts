@@ -21,7 +21,7 @@
  * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
  * IN THE SOFTWARE.
  */
-import { startCase } from 'lodash-es'
+import { capitalize, startCase } from 'lodash-es'
 import { z } from 'zod'
 
 import {
@@ -105,7 +105,7 @@ export function optionSchema<T extends Options>(
       },
     })
     .meta({
-      title: `${startCase(messagePrefix)} Option`,
+      title: `${capitalize(messagePrefix)} option`,
       description: `A predefined option from the available ${messagePrefix} choices.`,
     })
 }
@@ -182,7 +182,7 @@ export function DateSchema(date: string) {
       }
     })
     .meta({
-      title: startCase(date),
+      title: capitalize(startCase(date)),
       description: 'A valid date string that can be parsed by `Date.parse`.',
       examples: [
         '2025-01-01',
@@ -307,7 +307,7 @@ export const LevelOptionSchema = optionSchema(LEVEL_OPTIONS, 'level')
  */
 export const NameSchema = (name: string) =>
   SizedStringSchema(name, 2, 128).meta({
-    title: startCase(name),
+    title: capitalize(name),
     description: `A ${name} between 2 and 128 characters.`,
     examples: ['Andy Dufresne', 'Xiao Hanyu', 'Jane Smith', 'Dr. Robert John'],
   })
@@ -377,7 +377,7 @@ export const SummarySchema = SizedStringSchema('summary', 16, 1024).meta({
  */
 export const OrganizationSchema = (name: string) =>
   SizedStringSchema(name, 2, 128).meta({
-    title: startCase(name),
+    title: capitalize(name),
     description: 'An organization name between 2 and 128 characters.',
     examples: [
       'Google Inc.',
