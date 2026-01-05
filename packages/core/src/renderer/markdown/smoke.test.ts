@@ -31,7 +31,7 @@ import { MarkdownRenderer } from './renderer'
 
 describe('smoke test for markdown renderer', () => {
   let resume: Resume
-  const layoutIndex = 0
+  let layoutIndex: number
 
   function expectValidMarkdownDocument(result: string) {
     // Check that result is a non-empty string
@@ -49,6 +49,7 @@ describe('smoke test for markdown renderer', () => {
 
   beforeEach(() => {
     resume = getFixture('full-resume.yml', __dirname)
+    layoutIndex = resume.layouts.findIndex((l) => l.engine === 'markdown')
   })
 
   describe('should handle optional sections', () => {

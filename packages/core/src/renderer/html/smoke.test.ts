@@ -31,7 +31,7 @@ import { HtmlRenderer } from './renderer'
 
 describe('smoke test for HTML renderer', () => {
   let resume: Resume
-  const layoutIndex = 2
+  let layoutIndex: number
 
   function expectValidHtmlDocument(result: string) {
     // Check that result is a non-empty string
@@ -55,6 +55,7 @@ describe('smoke test for HTML renderer', () => {
 
   beforeEach(() => {
     resume = getFixture('full-resume.yml', __dirname)
+    layoutIndex = resume.layouts.findIndex((l) => l.engine === 'html')
   })
 
   describe('should handle optional sections', () => {

@@ -35,7 +35,7 @@ import {
 
 describe('smoke test for all renderers', () => {
   let resume: Resume
-  const layoutIndex = 0
+  let layoutIndex: number
 
   const renderers = [
     ModerncvBankingRenderer,
@@ -53,6 +53,7 @@ describe('smoke test for all renderers', () => {
 
   beforeEach(() => {
     resume = getFixture('full-resume.yml', __dirname)
+    layoutIndex = resume.layouts.findIndex((l) => l.engine === 'latex')
   })
 
   describe('should handle optional sections', () => {
