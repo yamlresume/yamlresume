@@ -1082,6 +1082,20 @@ describe(transformSectionNames, () => {
       getOptionTranslation('en', 'sections', 'projects')
     )
   })
+
+  it('should ignore "computed" property in content', () => {
+    const resume = cloneDeep(FILLED_RESUME)
+    // @ts-ignore
+    resume.content.computed = { someProp: 'test' }
+
+    const transformedResume = transformSectionNames(
+      resume,
+      layoutIndex,
+      new MarkdownParser()
+    )
+
+    expect(transformedResume.content.computed?.sectionNames).toBeDefined()
+  })
 })
 
 describe(transformResumeValues, () => {
@@ -1162,6 +1176,21 @@ describe(transformResumeContent, () => {
         expect(item).toHaveProperty('computed')
       }
     }
+  })
+
+  it('should ignore non-array custom sections in normalizedResumeContent', () => {
+    const resume = {
+      content: {
+        basics: {},
+        customSection: 'not an array',
+      },
+    }
+
+    // @ts-ignore
+    const normalized = normalizedResumeContent(resume)
+
+    // @ts-ignore
+    expect(normalized.content.customSection).toBe('not an array')
   })
 })
 

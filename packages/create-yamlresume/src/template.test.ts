@@ -44,6 +44,7 @@ vi.mocked(fs.mkdirSync).mockImplementation(mockMkdirSync)
 
 describe(copyTemplateFiles, () => {
   beforeEach(() => {
+    vi.clearAllMocks()
     // Mock path.join implementation
     vi.doMock('node:path', () => ({
       join: (...args: string[]) => args.join('/'),
@@ -169,6 +170,19 @@ describe(copyTemplateFiles, () => {
       '/target/file.txt',
       'Plain text content'
     )
+  })
+
+  it('should ignore non-file non-directory entries', () => {
+    const mockFiles = ['special-file']
+    const mockStats = { isFile: () => false, isDirectory: () => false }
+
+    mockReadDirSync.mockReturnValueOnce(mockFiles)
+    mockStatSync.mockReturnValueOnce(mockStats)
+
+    copyTemplateFiles('/templates', '/target', {})
+
+    expect(mockWriteFileSync).not.toBeCalled()
+    expect(mockMkdirSync).not.toBeCalled()
   })
 })
 
