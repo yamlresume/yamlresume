@@ -1,0 +1,284 @@
+/**
+ * MIT License
+ *
+ * Copyright (c) 2023–Present PPResume (https://ppresume.com)
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to
+ * deal in the Software without restriction, including without limitation the
+ * rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+ * sell copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+ * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+ * IN THE SOFTWARE.
+ */
+
+/**
+ * VS Code Theme for YAMLResume HTML Renderer
+ * Inspired by VS Code Dark+ theme.
+ */
+
+:root {
+  --border-color: #3e3e42;
+  --link-color: #3794ff;
+
+  /* text colors */
+  --text-color-primary: #d4d4d4;
+  --text-color-secondary: #858585; /* Comments/Subtle */
+  --keyword-color: #569cd6; /* Blue for keywords */
+  --string-color: #ce9178; /* Orange for strings */
+  --class-color: #4ec9b0; /* Teal for classes */
+  --function-color: #dcdcaa; /* Yellow for functions */
+  --background-color: #1e1e1e;
+
+  /* spacing */
+  --spacing-xss: 2px;
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 12px;
+  --spacing-lg: 16px;
+  --spacing-xl: 20px;
+  --spacing-xxl: 32px;
+  --spacing-xxxl: 48px;
+
+  /* font sizes */
+  --font-size-xs: 0.8rem;
+  --font-size-sm: 0.9rem;
+  --font-size-md: 1rem;
+  --font-size-lg: 1.1rem;
+  --font-size-xl: 1.25rem;
+  --font-size-xxl: 2rem;
+
+  /* line heights */
+  --line-height-base: 1.5;
+  --line-height-tight: 1.2;
+
+  /* layout */
+  --page-max-width: 900px;
+}
+
+html {
+  font-size: var(--text-font-size);
+  background-color: var(--background-color);
+}
+
+body {
+  /* font & text */
+  color: var(--text-color-primary);
+  background-color: var(--background-color);
+  font-family: "Consolas", "Monaco", "Courier New", monospace;
+  /* this variable is defined by `typography.fontSize` in resume html layout */
+  text-autospace: normal;
+
+  /* layout */
+  line-height: var(--line-height-base);
+  max-width: var(--page-max-width);
+  margin: 0 auto;
+  padding: var(--spacing-xxxl) var(--spacing-xxl);
+}
+
+/* header */
+.resume-header {
+  margin-bottom: var(--spacing-xxl);
+  text-align: left;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: var(--spacing-lg);
+}
+
+.resume-name {
+  font-size: var(--font-size-xxl);
+  font-weight: 700;
+  margin-bottom: var(--spacing-sm);
+  color: var(--class-color); /* Treat name like a Class */
+}
+
+.resume-name::before {
+  content: "class ";
+  color: var(--keyword-color);
+  font-size: var(--font-size-lg);
+  font-weight: normal;
+}
+
+.resume-name::after {
+  content: " {";
+  color: var(--text-color-primary);
+}
+
+.resume-headline {
+  font-size: var(--font-size-lg);
+  margin-bottom: var(--spacing-md);
+  color: var(--string-color); /* Treat headline like a string */
+  font-style: italic;
+}
+
+.resume-headline::before {
+  content: "// ";
+  color: var(--text-color-secondary);
+  font-style: normal;
+}
+
+/* contact info */
+.resume-contact-info {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  column-gap: var(--spacing-lg);
+  row-gap: var(--spacing-xs);
+  margin-top: var(--spacing-sm);
+  font-size: var(--font-size-sm);
+}
+
+.resume-contact-icon {
+  margin-right: var(--spacing-xs);
+  vertical-align: middle;
+  opacity: 0.8;
+}
+
+/* links: vscode style */
+a {
+  color: var(--link-color);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* sections */
+.resume-section {
+  margin-bottom: var(--spacing-xl);
+  padding-left: var(--spacing-lg); /* Indent content */
+  border-left: 1px solid var(--border-color); /* Indentation guide */
+}
+
+.resume-section-title {
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+  margin-bottom: var(--spacing-md);
+  color: var(--function-color); /* Treat section like a Function */
+  margin-left: calc(-1 * var(--spacing-lg)); /* Pull title back */
+  padding-left: var(--spacing-lg); /* Add padding to match indentation */
+}
+
+.resume-section-title::after {
+  content: "()";
+  color: var(--text-color-primary);
+}
+
+/* entries */
+.resume-entry {
+  margin-bottom: var(--spacing-lg);
+}
+
+.resume-entry:last-child {
+  margin-bottom: 0;
+}
+
+.resume-entry-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: var(--spacing-xs);
+}
+
+.resume-entry-title {
+  font-weight: 700;
+  margin-bottom: var(--spacing-xss);
+  color: var(--class-color);
+}
+
+.resume-entry-organization {
+  color: var(--text-color-secondary);
+}
+
+.resume-entry-date {
+  color: var(--text-color-secondary);
+  font-size: var(--font-size-sm);
+}
+
+.resume-entry-summary p,
+.resume-summary-content p {
+  margin-bottom: var(--spacing-xs);
+}
+
+/* lists */
+.resume-entry-summary ul,
+.resume-entry-summary ol,
+.resume-summary-content ul,
+.resume-summary-content ol {
+  padding-left: var(--spacing-lg);
+  list-style-type: disc;
+}
+
+.resume-entry-summary li::marker,
+.resume-summary-content li::marker {
+  color: var(--keyword-color);
+}
+
+/* labeled lists (courses, keywords, etc.) */
+.resume-labeled-list span {
+  font-weight: 700;
+  color: var(--keyword-color);
+}
+
+/* skills grid */
+.resume-skill-item,
+.resume-language-item {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: var(--spacing-xs);
+}
+
+.resume-skill-name,
+.resume-language-name {
+  font-weight: 700;
+  color: var(--string-color); /* Keys in an object */
+}
+
+.resume-skill-name::after,
+.resume-language-name::after {
+  content: ":";
+  color: var(--text-color-primary);
+}
+
+.resume-skill-level,
+.resume-language-fluency {
+  font-weight: 400;
+  color: var(--text-color-secondary); /* Comment-like for values/levels */
+}
+
+/* mobile */
+@media (max-width: 768px) {
+  body {
+    padding: var(--spacing-xl);
+  }
+
+  .resume-header {
+    margin-bottom: var(--spacing-xl);
+  }
+
+  .resume-contact-info {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .resume-entry-header {
+    flex-wrap: wrap;
+  }
+
+  .resume-skill-item,
+  .resume-language-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

@@ -66,7 +66,7 @@ export const HTML_FONT_SIZE_OPTIONS = [
 ] as const
 
 /** Defines identifiers for the available HTML layout templates. */
-export const HTML_TEMPLATE_OPTIONS = ['calm'] as const
+export const HTML_TEMPLATE_OPTIONS = ['calm', 'vscode'] as const
 
 /** The options for the latex layout fontspec numbers style. */
 export const LATEX_FONTSPEC_NUMBERS_OPTIONS = [

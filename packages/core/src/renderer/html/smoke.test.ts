@@ -31,7 +31,7 @@ import { HtmlRenderer } from './renderer'
 
 describe('smoke test for HTML renderer', () => {
   let resume: Resume
-  const layoutIndex = 0
+  const layoutIndex = 2
 
   function expectValidHtmlDocument(result: string) {
     // Check that result is a non-empty string

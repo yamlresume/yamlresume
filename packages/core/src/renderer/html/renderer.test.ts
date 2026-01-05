@@ -23,7 +23,7 @@
  */
 
 import { cloneDeep } from 'lodash-es'
-import { beforeEach, describe, expect, it } from 'vitest'
+import { beforeEach, describe, expect, it, vi } from 'vitest'
 import {
   DEFAULT_RESUME,
   FILLED_RESUME,
@@ -100,7 +100,6 @@ describe('HtmlRenderer', () => {
 
       it('should use default font size when font size is empty string', () => {
         const resume = cloneDeep(DEFAULT_RESUME)
-        const layoutIndex = resume.layouts.findIndex((l) => l.engine === 'html')
         const htmlLayout = resume.layouts[layoutIndex] as HtmlLayout
         // @ts-ignore
         htmlLayout.typography = { fontSize: '' }
@@ -109,6 +108,33 @@ describe('HtmlRenderer', () => {
         const result = renderer.renderPreamble()
 
         expect(result).toContain('--text-font-size: 16px')
+      })
+    })
+
+    describe('template', () => {
+      vi.mock('./styles/calm.css', () => ({ default: 'MOCK_CALM_CSS' }))
+      vi.mock('./styles/vscode.css', () => ({ default: 'MOCK_VSCODE_CSS' }))
+
+      it('should use calm css by default', () => {
+        const htmlLayout = resume.layouts[layoutIndex] as HtmlLayout
+        delete htmlLayout.template
+
+        const renderer = new HtmlRenderer(resume, layoutIndex)
+        const result = renderer.renderPreamble()
+
+        expect(result).toContain('MOCK_CALM_CSS')
+        expect(result).not.toContain('MOCK_VSCODE_CSS')
+      })
+
+      it('should use other css when template is not the default calm', () => {
+        const htmlLayout = resume.layouts[layoutIndex] as HtmlLayout
+        htmlLayout.template = 'vscode'
+
+        const renderer = new HtmlRenderer(resume, layoutIndex)
+        const result = renderer.renderPreamble()
+
+        expect(result).toContain('MOCK_VSCODE_CSS')
+        expect(result).not.toContain('MOCK_CALM_CSS')
       })
     })
   })
@@ -141,7 +167,7 @@ describe('HtmlRenderer', () => {
       const resume = cloneDeep(DEFAULT_RESUME)
       resume.content.basics.name = undefined
 
-      const renderer = new HtmlRenderer(resume, 0)
+      const renderer = new HtmlRenderer(resume, layoutIndex)
       const result = renderer.renderPreamble()
 
       expect(result).toContain('<title>YAMLResume</title>')

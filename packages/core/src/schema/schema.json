@@ -2194,7 +2194,8 @@
                         "description": "A predefined option from the available HTML template choices or `null`.",
                         "type": "string",
                         "enum": [
-                          "calm"
+                          "calm",
+                          "vscode"
                         ]
                       },
                       {

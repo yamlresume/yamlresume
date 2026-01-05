@@ -40,6 +40,7 @@ import {
 import { Renderer } from '../base'
 import calm from './styles/calm.css'
 import reset from './styles/reset.css'
+import vscode from './styles/vscode.css'
 
 /**
  * HTML renderer for generating HTML5 documents from resume data.
@@ -78,16 +79,24 @@ export class HtmlRenderer extends Renderer {
    * @returns {string} The CSS styles
    */
   private getStyles(): string {
+    const trimCss = (css: string) => css.replace(/^\/\*[\s\S]*?\*\//, '').trim()
+
     const layout = this.resume.layouts?.[this.layoutIndex] as HtmlLayout
     const fontSize = layout?.typography?.fontSize || '16px' // default to 16px
-    const trimCss = (css: string) => css.replace(/^\/\*[\s\S]*?\*\//, '').trim()
+
+    const templates = {
+      calm: calm,
+      vscode: vscode,
+    }
+    // default to calm css if template is not found
+    const templateCss = templates[layout?.template] || calm
 
     return `<style>
 :root {
   --text-font-size: ${fontSize};
 }
 ${trimCss(reset)}
-${trimCss(calm)}
+${trimCss(templateCss)}
 </style>`
   }
 

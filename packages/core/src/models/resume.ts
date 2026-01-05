@@ -153,7 +153,14 @@ export function getHtmlTemplateDetail(template: HtmlTemplate) {
     calm: {
       engine: 'html',
       name: 'Calm',
-      description: 'A dedicated Calm HTML template, suitable for all.',
+      description:
+        'Clean and minimalist design suitable for all professionals.',
+    },
+    vscode: {
+      engine: 'html',
+      name: 'VS Code',
+      description:
+        'Dark theme inspired by Visual Studio Code, tailored for developers.',
     },
   }
 
