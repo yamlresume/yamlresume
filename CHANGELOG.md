@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.10.0](https://github.com/yamlresume/yamlresume/compare/v0.9.1...v0.10.0) (2026-01-05)
+
+
+### Features
+
+* add a new vscode html template ([b310a84](https://github.com/yamlresume/yamlresume/commit/b310a840fd50f635fe1b4f60ddfcaf6140a0f1cc))
+* add Dutch (nl) language support ([b52c76f](https://github.com/yamlresume/yamlresume/commit/b52c76f530672b5cafc6e08858c2603cafe38a46))
+* add latex paper size support ([#142](https://github.com/yamlresume/yamlresume/issues/142)) ([d604c1b](https://github.com/yamlresume/yamlresume/commit/d604c1b9906aac6e475ffbb46806cf89a64e6118))
+* add showIcons option for html engine ([4b0e898](https://github.com/yamlresume/yamlresume/commit/4b0e898000ab90f6b4ed6e16618a9a3d07a7d11c))
+* add showIcons option for latex engine ([b53f73d](https://github.com/yamlresume/yamlresume/commit/b53f73d9b4b04bf04b90236ef01da56062f8ca1f))
+
+
+### Bug Fixes
+
+* revise title case for schema ([fb5142f](https://github.com/yamlresume/yamlresume/commit/fb5142f5b44ebf067516d423d3ab9c85cb3d4612))
+
 ## [0.9.1](https://github.com/yamlresume/yamlresume/compare/v0.9.0...v0.9.1) (2025-12-22)
 
 
