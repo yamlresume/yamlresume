@@ -143,6 +143,60 @@ describe('HtmlRenderer', () => {
       })
     })
 
+    describe('advanced.description', () => {
+      it('should render description meta tag when provided', () => {
+        const htmlLayout = resume.layouts[layoutIndex] as HtmlLayout
+        htmlLayout.advanced = {
+          ...htmlLayout.advanced,
+          description: 'Custom Description',
+        }
+
+        const renderer = new HtmlRenderer(resume, layoutIndex)
+        const result = renderer.renderPreamble()
+
+        expect(result).toContain(
+          '<meta name="description" content="Custom Description">'
+        )
+      })
+
+      it('should not render description meta tag when not provided', () => {
+        const htmlLayout = resume.layouts[layoutIndex] as HtmlLayout
+        htmlLayout.advanced = { ...htmlLayout.advanced, description: undefined }
+
+        const renderer = new HtmlRenderer(resume, layoutIndex)
+        const result = renderer.renderPreamble()
+
+        expect(result).not.toContain('<meta name="description"')
+      })
+    })
+
+    describe('advanced.keywords', () => {
+      it('should render keywords meta tag when provided', () => {
+        const htmlLayout = resume.layouts[layoutIndex] as HtmlLayout
+        htmlLayout.advanced = {
+          ...htmlLayout.advanced,
+          keywords: 'keyword1, keyword2',
+        }
+
+        const renderer = new HtmlRenderer(resume, layoutIndex)
+        const result = renderer.renderPreamble()
+
+        expect(result).toContain(
+          '<meta name="keywords" content="keyword1, keyword2">'
+        )
+      })
+
+      it('should not render keywords meta tag when not provided', () => {
+        const htmlLayout = resume.layouts[layoutIndex] as HtmlLayout
+        htmlLayout.advanced = { ...htmlLayout.advanced, keywords: undefined }
+
+        const renderer = new HtmlRenderer(resume, layoutIndex)
+        const result = renderer.renderPreamble()
+
+        expect(result).not.toContain('<meta name="keywords"')
+      })
+    })
+
     describe('typography.fontSize', () => {
       it('should use default font size when typography is empty', () => {
         for (const test of [undefined, {}]) {

@@ -43,6 +43,10 @@ type HtmlAdvanced = {
   title?: string
   /** Custom footer for the HTML document. */
   footer?: string
+  /** Meta description for the HTML document. */
+  description?: string
+  /** Meta keywords for the HTML document. */
+  keywords?: string
 }
 
 /**

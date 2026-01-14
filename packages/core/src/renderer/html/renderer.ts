@@ -108,13 +108,18 @@ ${trimCss(templateCss)}
   renderPreamble(): string {
     const layout = this.resume.layouts?.[this.layoutIndex] as HtmlLayout
     const name = this.resume.content?.basics?.name
-    const title =
+    const title = escapeHtml(
       layout?.advanced?.title || (name ? `${name} Resume` : 'YAMLResume')
+    )
+    const description = escapeHtml(layout?.advanced?.description || '')
+    const keywords = escapeHtml(layout?.advanced?.keywords || '')
 
     return `<head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="YAMLResume (https://yamlresume.dev)">
+${showIfNotEmpty(description, `<meta name="description" content="${description}">`)}
+${showIfNotEmpty(keywords, `<meta name="keywords" content="${keywords}">`)}
 <title>${title}</title>
 ${this.getStyles()}
 </head>
