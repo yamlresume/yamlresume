@@ -5,7 +5,7 @@ import { join } from 'node:path'
 
 export default defineConfig({
   ...baseConfig,
-  entry: ['src/cli.ts'],
+  entry: ['src/cli.ts', 'src/index.ts'],
   onSuccess: async () => {
     // copy templates directory to dist
     try {
