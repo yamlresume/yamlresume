@@ -40,7 +40,8 @@
     "prepublishOnly": "pnpm test",
     "test": "vitest --run",
     "test:cov": "vitest --coverage --run",
-    "test:watch": "vitest"
+    "test:watch": "vitest",
+    "typedoc": "typedoc src/index.ts"
   },
   "dependencies": {
     "escape-latex": "^1.2.0",

@@ -43,7 +43,8 @@
     "dev": "tsx src/cli.ts",
     "test": "vitest --run",
     "test:cov": "vitest --coverage --run",
-    "test:watch": "vitest"
+    "test:watch": "vitest",
+    "typedoc": "typedoc src/index.ts"
   },
   "dependencies": {
     "@yamlresume/core": "workspace:*",
