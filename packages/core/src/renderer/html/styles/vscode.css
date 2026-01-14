@@ -83,7 +83,7 @@ body {
   line-height: var(--line-height-base);
   max-width: var(--page-max-width);
   margin: 0 auto;
-  padding: var(--spacing-xxxl) var(--spacing-xxl);
+  padding: var(--spacing-xxxl) var(--spacing-xxl) var(--spacing-xxl);
 }
 
 /* header */
@@ -280,5 +280,28 @@ a:hover {
   .resume-language-item {
     flex-direction: column;
     align-items: flex-start;
+  }
+}
+
+/* footer */
+.resume-footer {
+  margin-top: var(--spacing-xxl);
+  padding-top: var(--spacing-xl);
+  border-top: 1px solid var(--border-color);
+  font-size: var(--font-size-sm);
+  color: var(--text-color-secondary);
+}
+
+.resume-footer::before {
+  content: "/* ";
+}
+
+.resume-footer::after {
+  content: " */";
+}
+
+@media print {
+  .resume-footer {
+    display: none;
   }
 }

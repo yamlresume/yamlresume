@@ -39,6 +39,10 @@ type HtmlTypography = {
 type HtmlAdvanced = {
   /** Whether to show icons for links and profiles. */
   showIcons?: boolean
+  /** Custom title for the HTML document. */
+  title?: string
+  /** Custom footer for the HTML document. */
+  footer?: string
 }
 
 /**
