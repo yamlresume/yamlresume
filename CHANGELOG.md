@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.10.1](https://github.com/yamlresume/yamlresume/compare/v0.10.0...v0.10.1) (2026-01-14)
+
+
+### Features
+
+* add advanced.footer and advanced.title for html ([5919206](https://github.com/yamlresume/yamlresume/commit/5919206db7bb8a0d9e452cfcb00ea3a2f8d3bced))
+* allow description and keywords to html advanced ([99afac5](https://github.com/yamlresume/yamlresume/commit/99afac5d0568d81b03107102fcf9b04b35bb213a))
+* init SDK setup for cli/create-yamlresume/json2yamlresume package ([0fb06fc](https://github.com/yamlresume/yamlresume/commit/0fb06fcacd11bce7134f361401c8149b6b635b00))
+
 ## [0.10.0](https://github.com/yamlresume/yamlresume/compare/v0.9.1...v0.10.0) (2026-01-05)
 
 
