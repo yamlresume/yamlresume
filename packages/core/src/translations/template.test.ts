@@ -118,6 +118,17 @@ describe(getTemplateTranslations, () => {
           },
         },
       },
+      {
+        language: 'ja',
+        expected: {
+          punctuations: {
+            colon: '：',
+          },
+          terms: {
+            keywords: 'キーワード',
+          },
+        },
+      },
     ]
 
     tests.forEach((test) => {

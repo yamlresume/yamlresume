@@ -624,6 +624,7 @@ describe(transformLocation, () => {
   it('should transform location for English resume', () => {
     const latinComma = getTemplateTranslations('en').punctuations.comma
     const chineseComma = getTemplateTranslations('zh-hans').punctuations.comma
+    const japaneseComma = getTemplateTranslations('ja').punctuations.comma
 
     const englishLocation = getOptionTranslation(
       'en',
@@ -638,6 +639,11 @@ describe(transformLocation, () => {
 
     const simplifiedChineseLocation = getOptionTranslation(
       'zh-hans',
+      'countries',
+      'United States'
+    )
+    const japaneseLocation = getOptionTranslation(
+      'ja',
       'countries',
       'United States'
     )
@@ -684,6 +690,7 @@ describe(transformLocation, () => {
           'zh-hant-hk': '',
           'zh-hant-tw': '',
           fr: '',
+          ja: '',
           no: '',
           nl: '',
         },
@@ -705,6 +712,7 @@ describe(transformLocation, () => {
             traditionalChineseTWLocation
           }${chineseComma}Sacramento${chineseComma}95814`,
           fr: `Sacramento${latinComma}${frenchLocation}${latinComma}95814`,
+          ja: `${japaneseLocation}${japaneseComma}Sacramento${japaneseComma}95814`,
           no: `Sacramento${latinComma}${norwegianLocation}${latinComma}95814`,
           nl: `Sacramento${latinComma}${dutchLocation}${latinComma}95814`,
         },
@@ -722,6 +730,7 @@ describe(transformLocation, () => {
           'zh-hant-hk': `California${chineseComma}Sacramento${chineseComma}123 Main Street`,
           'zh-hant-tw': `California${chineseComma}Sacramento${chineseComma}123 Main Street`,
           fr: `123 Main Street${latinComma}Sacramento${latinComma}California`,
+          ja: `California${japaneseComma}Sacramento${japaneseComma}123 Main Street`,
           no: `123 Main Street${latinComma}Sacramento${latinComma}California`,
           nl: `123 Main Street${latinComma}Sacramento${latinComma}California`,
         },
@@ -749,6 +758,7 @@ describe(transformLocation, () => {
             traditionalChineseTWLocation
           }${chineseComma}California${chineseComma}Sacramento${chineseComma}123 Main Street${chineseComma}95814`,
           fr: `123 Main Street${latinComma}Sacramento${latinComma}California${latinComma}${frenchLocation}${latinComma}95814`,
+          ja: `${japaneseLocation}${japaneseComma}California${japaneseComma}Sacramento${japaneseComma}123 Main Street${japaneseComma}95814`,
           no: `123 Main Street${latinComma}Sacramento${latinComma}California${latinComma}${norwegianLocation}${latinComma}95814`,
           nl: `123 Main Street${latinComma}Sacramento${latinComma}California${latinComma}${dutchLocation}${latinComma}95814`,
         },
@@ -778,6 +788,7 @@ describe(transformLocation, () => {
         }
 
         transformLocation(resume)
+        // @ts-ignore
         expect(resume.content.location?.computed?.fullAddress).toEqual(
           expected[language]
         )
@@ -1220,7 +1231,12 @@ describe(transformResumeLayoutLaTeX, () => {
   })
 
   it('should set numbers to Lining for CJK resume', () => {
-    for (const language of ['zh-hans', 'zh-hant-hk', 'zh-hant-tw'] as const) {
+    for (const language of [
+      'zh-hans',
+      'zh-hant-hk',
+      'zh-hant-tw',
+      'ja',
+    ] as const) {
       const resume = cloneDeep(DEFAULT_RESUME)
 
       resume.locale = { ...resume.locale, language }

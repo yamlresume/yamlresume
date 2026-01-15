@@ -348,6 +348,7 @@ export function getLocaleLanguageDetail(localeLanguage: LocaleLanguage) {
     fr: 'French',
     no: 'Norwegian',
     nl: 'Dutch',
+    ja: 'Japanese',
   }
 
   if (localeLanguage in localeLanguageDetails) {

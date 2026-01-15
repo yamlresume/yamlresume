@@ -195,6 +195,7 @@ export const LOCALE_LANGUAGE_OPTIONS = [
   'fr',
   'no',
   'nl',
+  'ja',
 ] as const
 
 /**

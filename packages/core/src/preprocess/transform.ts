@@ -498,8 +498,9 @@ export function transformLocation(resume: Resume): Resume {
   switch (resume.locale?.language) {
     case 'zh-hans':
     case 'zh-hant-hk':
-    case 'zh-hant-tw': {
-      // For Chinese, the address format is most generic to more specific, i.e,
+    case 'zh-hant-tw':
+    case 'ja': {
+      // For CJK languages, the address format is most generic to more specific, i.e,
       // Country > Region > City  > Address
       const fullAddress = joinNonEmptyString(
         [country, region, city, address, postalCode].filter(
@@ -825,7 +826,8 @@ export function transformResumeLayoutLaTeX(resume: Resume): Resume {
     const numbers =
       resume.locale?.language === 'zh-hans' ||
       resume.locale?.language === 'zh-hant-hk' ||
-      resume.locale?.language === 'zh-hant-tw'
+      resume.locale?.language === 'zh-hant-tw' ||
+      resume.locale?.language === 'ja'
         ? 'Lining'
         : 'OldStyle'
 

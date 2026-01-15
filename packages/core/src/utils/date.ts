@@ -107,6 +107,8 @@ export function getDateRange(
         return `${localizeDate(startDate, language)}–Nå`
       case 'nl':
         return `${localizeDate(startDate, language)}–Huidig`
+      case 'ja':
+        return `${localizeDate(startDate, language)}～現在`
       default:
         // by default we return English's "Present" if language is not supported
         return `${localizeDate(startDate, language)}–Present`
@@ -114,7 +116,8 @@ export function getDateRange(
   }
 
   // Please note that we use en-dash instead of hyphen as the date separator
-  return `${localizeDate(startDate, language)}–${localizeDate(
+  const separator = language === 'ja' ? '～' : '–'
+  return `${localizeDate(startDate, language)}${separator}${localizeDate(
     endDate,
     language
   )}`

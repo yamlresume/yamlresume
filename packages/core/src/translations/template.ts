@@ -158,6 +158,18 @@ export function getTemplateTranslations(
         score: 'Score',
       },
     },
+    ja: {
+      punctuations: {
+        comma: '、',
+        colon: '：',
+        separator: '、',
+      },
+      terms: {
+        courses: 'コース',
+        keywords: 'キーワード',
+        score: '成績',
+      },
+    },
   }
 
   return templateTranslation[isEmptyValue(language) ? 'en' : language]

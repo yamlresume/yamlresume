@@ -79,7 +79,7 @@ class ModerncvBase extends Renderer {
    * Check if the resume is a CJK resume.
    */
   private isCJKResume(): boolean {
-    return ['zh-hans', 'zh-hant-hk', 'zh-hant-tw'].includes(
+    return ['zh-hans', 'zh-hant-hk', 'zh-hant-tw', 'ja'].includes(
       this.resume.locale?.language
     )
   }
@@ -246,7 +246,7 @@ class ModerncvBase extends Renderer {
   }
 
   /**
-   * Render the LaTeX packages for fontspec support
+   * Render the LaTeX packages for Spanish support
    */
   private renderFontspecConfig(): string {
     const layout = this.resume.layouts?.[this.layoutIndex]
