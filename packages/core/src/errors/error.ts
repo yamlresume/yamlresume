@@ -120,6 +120,19 @@ export const ErrorType = {
     message: 'LaTeX compilation failed: {error}',
     error: '',
   },
+  LATEX_COMPILE_TIMEOUT: {
+    code: 'LATEX_COMPILE_TIMEOUT',
+    errno: ErrorCategory.LATEX | 0x03,
+    message: joinNonEmptyString(
+      [
+        'LaTeX compilation timed out after {timeout} seconds.',
+        'This may indicate missing LaTeX packages (e.g., fontawesome5).',
+        'Check docs for installation guide: https://yamlresume.dev/docs/installation',
+      ],
+      '\n'
+    ),
+    timeout: '',
+  },
 } as const
 
 /**

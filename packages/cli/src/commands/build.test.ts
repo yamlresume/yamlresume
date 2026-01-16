@@ -52,6 +52,7 @@ import {
   inferLaTeXEnvironment,
   inferOutput,
   isCommandAvailable,
+  LATEX_COMPILE_TIMEOUT_MS,
   normalizeExtension,
 } from './build'
 import { getFixture } from './utils'
@@ -418,6 +419,7 @@ describe(buildResume, () => {
       {
         cwd: path.dirname(path.resolve(texFile)),
         encoding: 'utf8',
+        timeout: LATEX_COMPILE_TIMEOUT_MS,
       }
     )
 
@@ -459,6 +461,7 @@ describe(buildResume, () => {
       {
         cwd: path.dirname(path.resolve(texFile)),
         encoding: 'utf8',
+        timeout: LATEX_COMPILE_TIMEOUT_MS,
       }
     )
 
@@ -472,6 +475,90 @@ describe(buildResume, () => {
     expect(consolaStartSpy).toBeCalledTimes(1)
     expect(consolaSuccessSpy).toBeCalledTimes(1)
     expect(consolaDebugSpy).toBeCalledTimes(2)
+  })
+
+  it('should handle timeout when generating pdf', async () => {
+    const timeoutError = Object.assign(new Error('Command timed out'), {
+      timedOut: true,
+      stdout: 'Partial LaTeX output before timeout',
+      stderr: 'Some error output',
+    })
+    execSpy.mockRejectedValue(timeoutError)
+
+    const consolaInfoSpy = vi.spyOn(consola, 'info').mockImplementation(vi.fn())
+    const consolaLogSpy = vi.spyOn(consola, 'log').mockImplementation(vi.fn())
+
+    const resumePath = getFixture('software-engineer.yml')
+
+    const texFile = inferOutput(resumePath)
+    inferLaTeXCommand(texFile)
+
+    try {
+      await buildResume(resumePath)
+    } catch (error) {
+      expect(error).toBeInstanceOf(YAMLResumeError)
+      expect(error.code).toBe('LATEX_COMPILE_TIMEOUT')
+      expect(error.message).toContain('timed out after 15 seconds')
+    }
+
+    expect(execSpy).toBeCalledTimes(1)
+    expect(consolaInfoSpy).toBeCalledTimes(2)
+    expect(consolaInfoSpy).toBeCalledWith('LaTeX output before timeout:')
+    expect(consolaInfoSpy).toBeCalledWith('LaTeX error output:')
+    expect(consolaLogSpy).toBeCalledWith('Partial LaTeX output before timeout')
+    expect(consolaLogSpy).toBeCalledWith('Some error output')
+  })
+
+  it('should handle timeout with only stdout', async () => {
+    const timeoutError = Object.assign(new Error('Command timed out'), {
+      timedOut: true,
+      stdout: 'Partial LaTeX output before timeout',
+      stderr: '',
+    })
+    execSpy.mockRejectedValue(timeoutError)
+
+    const consolaInfoSpy = vi.spyOn(consola, 'info').mockImplementation(vi.fn())
+    const consolaLogSpy = vi.spyOn(consola, 'log').mockImplementation(vi.fn())
+
+    const resumePath = getFixture('software-engineer.yml')
+
+    try {
+      await buildResume(resumePath)
+    } catch (error) {
+      expect(error).toBeInstanceOf(YAMLResumeError)
+      expect(error.code).toBe('LATEX_COMPILE_TIMEOUT')
+    }
+
+    expect(consolaInfoSpy).toBeCalledTimes(1)
+    expect(consolaInfoSpy).toBeCalledWith('LaTeX output before timeout:')
+    expect(consolaLogSpy).toBeCalledTimes(1)
+    expect(consolaLogSpy).toBeCalledWith('Partial LaTeX output before timeout')
+  })
+
+  it('should handle timeout with only stderr', async () => {
+    const timeoutError = Object.assign(new Error('Command timed out'), {
+      timedOut: true,
+      stdout: '',
+      stderr: 'Some error output',
+    })
+    execSpy.mockRejectedValue(timeoutError)
+
+    const consolaInfoSpy = vi.spyOn(consola, 'info').mockImplementation(vi.fn())
+    const consolaLogSpy = vi.spyOn(consola, 'log').mockImplementation(vi.fn())
+
+    const resumePath = getFixture('software-engineer.yml')
+
+    try {
+      await buildResume(resumePath)
+    } catch (error) {
+      expect(error).toBeInstanceOf(YAMLResumeError)
+      expect(error.code).toBe('LATEX_COMPILE_TIMEOUT')
+    }
+
+    expect(consolaInfoSpy).toBeCalledTimes(1)
+    expect(consolaInfoSpy).toBeCalledWith('LaTeX error output:')
+    expect(consolaLogSpy).toBeCalledTimes(1)
+    expect(consolaLogSpy).toBeCalledWith('Some error output')
   })
 
   it('should generate tex file in output directory when pdf is false', async () => {
@@ -512,6 +599,7 @@ describe(buildResume, () => {
       {
         cwd: path.resolve(outputDir),
         encoding: 'utf8',
+        timeout: LATEX_COMPILE_TIMEOUT_MS,
       }
     )
     expect(whichSpy).toBeCalledWith('xelatex')
@@ -735,6 +823,7 @@ describe(createBuildCommand, () => {
       {
         cwd: path.dirname(path.resolve(inferOutput(resumePath))),
         encoding: 'utf8',
+        timeout: LATEX_COMPILE_TIMEOUT_MS,
       }
     )
     expect(consolaStartSpy).toBeCalledTimes(1)

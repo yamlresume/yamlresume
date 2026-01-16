@@ -256,6 +256,11 @@ function generateOutput(
 }
 
 /**
+ * Default timeout for LaTeX compilation in milliseconds (15 seconds)
+ */
+export const LATEX_COMPILE_TIMEOUT_MS = 15000
+
+/**
  * Compile a TeX file to PDF
  */
 async function compileLaTeX(texFile: string, outputDir?: string) {
@@ -269,12 +274,29 @@ async function compileLaTeX(texFile: string, outputDir?: string) {
     const result = await execa(command, args, {
       cwd,
       encoding: 'utf8',
+      timeout: LATEX_COMPILE_TIMEOUT_MS,
     })
     consola.success(
       `Generated resume pdf file successfully: ${getPdfPath(texFile)}`
     )
     consola.debug(joinNonEmptyString(['stdout: ', toCodeBlock(result.stdout)]))
   } catch (error) {
+    // Check if it's a timeout error
+    if (error.timedOut) {
+      // Show raw logs to help users diagnose the issue
+      if (error.stdout) {
+        consola.info('LaTeX output before timeout:')
+        consola.log(error.stdout)
+      }
+      if (error.stderr) {
+        consola.info('LaTeX error output:')
+        consola.log(error.stderr)
+      }
+      throw new YAMLResumeError('LATEX_COMPILE_TIMEOUT', {
+        timeout: String(LATEX_COMPILE_TIMEOUT_MS / 1000),
+      })
+    }
+
     consola.debug(joinNonEmptyString(['stdout: ', toCodeBlock(error.stdout)]))
     consola.debug(joinNonEmptyString(['stderr: ', toCodeBlock(error.stderr)]))
     throw new YAMLResumeError('LATEX_COMPILE_ERROR', { error: error.message })
