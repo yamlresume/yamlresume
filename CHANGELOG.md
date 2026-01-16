@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.10.2](https://github.com/yamlresume/yamlresume/compare/v0.10.1...v0.10.2) (2026-01-16)
+
+
+### Features
+
+* add a timeout check for latex build ([594be62](https://github.com/yamlresume/yamlresume/commit/594be6201b817914a233b51d7b8cecf8290740b7))
+
 ## [0.10.1](https://github.com/yamlresume/yamlresume/compare/v0.10.0...v0.10.1) (2026-01-14)
 
 
