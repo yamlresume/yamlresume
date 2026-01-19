@@ -64,8 +64,6 @@
     "yaml": "^2.8.2"
   },
   "devDependencies": {
-    "@types/chalk": "^2.2.4",
-    "@types/commander": "^2.12.5",
     "@types/which": "^3.0.4"
   },
   "publishConfig": {
