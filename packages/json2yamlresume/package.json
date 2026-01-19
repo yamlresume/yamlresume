@@ -55,9 +55,7 @@
     "tslib": "^2.8.1",
     "yaml": "^2.8.2"
   },
-  "devDependencies": {
-    "@types/lodash-es": "^4.17.12"
-  },
+  "devDependencies": {},
   "publishConfig": {
     "access": "public"
   },
