@@ -62,7 +62,8 @@ export function prettifySchemaValidationError(
   resumePath: string,
   resumeStr: string
 ): string {
-  const lines = resumeStr.split('\n')
+  // Normalize CRLF to LF for cross-platform consistency
+  const lines = resumeStr.replace(/\r\n/g, '\n').split('\n')
   const lineContent = lines[error.line - 1] || ''
 
   // Create the pointer line with spaces and caret
@@ -116,7 +117,8 @@ export function prettifyYamlParseError(
 
   const line = Number.parseInt(lineMatch[1], 10)
   const column = Number.parseInt(lineMatch[2], 10)
-  const lines = resumeStr.split('\n')
+  // Normalize CRLF to LF for cross-platform consistency
+  const lines = resumeStr.replace(/\r\n/g, '\n').split('\n')
   const lineContent = lines[line - 1] || ''
 
   // create the pointer line with spaces and caret

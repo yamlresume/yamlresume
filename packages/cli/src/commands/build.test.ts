@@ -130,27 +130,27 @@ describe(inferOutput, () => {
       {
         resumePath: 'resume.yaml',
         outputDir: '/output',
-        expected: '/output/resume.tex',
+        expected: path.join('/output', 'resume.tex'),
       },
       {
         resumePath: 'resume.yml',
         outputDir: 'dist',
-        expected: 'dist/resume.tex',
+        expected: path.join('dist', 'resume.tex'),
       },
       {
         resumePath: 'resume.json',
         outputDir: '../build',
-        expected: '../build/resume.tex',
+        expected: path.join('../build', 'resume.tex'),
       },
       {
         resumePath: 'path/to/resume.yaml',
         outputDir: '/output',
-        expected: '/output/resume.tex',
+        expected: path.join('/output', 'resume.tex'),
       },
       {
         resumePath: '../resumes/resume.yaml',
         outputDir: '/output',
-        expected: '/output/resume.tex',
+        expected: path.join('/output', 'resume.tex'),
       },
     ]
 
@@ -577,7 +577,8 @@ describe(buildResume, () => {
       `Generated resume markdown file successfully: ${mdFile}`,
       `Generated resume html file successfully: ${htmlFile}`,
     ])
-    expect(outputStr[0]).toContain(outputDir)
+    // Check that output contains the directory (normalize for cross-platform)
+    expect(outputStr[0]).toContain(path.normalize(outputDir))
     expect(consolaSuccessSpy).toBeCalledTimes(3)
   })
 

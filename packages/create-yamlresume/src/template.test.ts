@@ -23,6 +23,7 @@
  */
 
 import fs from 'node:fs'
+import path from 'node:path'
 import { beforeEach, describe, expect, it, vi } from 'vitest'
 import { copyTemplateFiles, getTargetPath, getTemplatesDir } from './template'
 
@@ -45,10 +46,6 @@ vi.mocked(fs.mkdirSync).mockImplementation(mockMkdirSync)
 describe(copyTemplateFiles, () => {
   beforeEach(() => {
     vi.clearAllMocks()
-    // Mock path.join implementation
-    vi.doMock('node:path', () => ({
-      join: (...args: string[]) => args.join('/'),
-    }))
   })
 
   it('should copy files and replace variables', () => {
@@ -69,11 +66,11 @@ describe(copyTemplateFiles, () => {
 
     expect(mockReadDirSync).toBeCalledWith('/templates')
     expect(mockWriteFileSync).toBeCalledWith(
-      '/target/file1.txt',
+      path.join('/target', 'file1.txt'),
       'Hello TestProject!'
     )
     expect(mockWriteFileSync).toBeCalledWith(
-      '/target/file2.yml',
+      path.join('/target', 'file2.yml'),
       'Resume: test.yml'
     )
   })
@@ -101,15 +98,15 @@ describe(copyTemplateFiles, () => {
       resumeFile: 'test.yml',
     })
 
-    expect(mockMkdirSync).toBeCalledWith('/target/subdir', {
+    expect(mockMkdirSync).toBeCalledWith(path.join('/target', 'subdir'), {
       recursive: true,
     })
     expect(mockWriteFileSync).toBeCalledWith(
-      '/target/subdir/nested1.txt',
+      path.join('/target', 'subdir', 'nested1.txt'),
       'Nested content'
     )
     expect(mockWriteFileSync).toBeCalledWith(
-      '/target/subdir/nested2.txt',
+      path.join('/target', 'subdir', 'nested2.txt'),
       'Nested content'
     )
   })
@@ -130,7 +127,7 @@ describe(copyTemplateFiles, () => {
     })
 
     expect(mockWriteFileSync).toBeCalledWith(
-      '/target/template.txt',
+      path.join('/target', 'template.txt'),
       'Hello TestProject! Welcome to TestProject project.'
     )
   })
@@ -151,7 +148,7 @@ describe(copyTemplateFiles, () => {
     })
 
     expect(mockWriteFileSync).toBeCalledWith(
-      '/target/resume.yml',
+      path.join('/target', 'resume.yml'),
       'Project: MyProject, Resume: my-resume.yml'
     )
   })
@@ -167,7 +164,7 @@ describe(copyTemplateFiles, () => {
     copyTemplateFiles('/templates', '/target', {})
 
     expect(mockWriteFileSync).toBeCalledWith(
-      '/target/file.txt',
+      path.join('/target', 'file.txt'),
       'Plain text content'
     )
   })
@@ -193,11 +190,11 @@ describe(getTargetPath, () => {
     const tests = [
       {
         file: 'resume.yml',
-        targetPath: `${targetDir}/resume.yml`,
+        targetPath: path.join(targetDir, 'resume.yml'),
       },
       {
         file: 'gitignore',
-        targetPath: `${targetDir}/.gitignore`,
+        targetPath: path.join(targetDir, '.gitignore'),
       },
     ]
 

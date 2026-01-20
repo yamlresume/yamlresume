@@ -66,7 +66,8 @@ describe(newResume, () => {
 
     expect(readFileSync).toBeCalledTimes(1)
 
-    expect(readFileSync.mock.calls[0][0]).toContain('resources/resume.yml')
+    // Check for path with either forward or back slashes (cross-platform)
+    expect(readFileSync.mock.calls[0][0]).toMatch(/resources[\\/]resume\.yml$/)
     expect(readFileSync.mock.calls[0][1]).toBe('utf8')
 
     expect(writeFileSync).toBeCalledTimes(1)
@@ -78,7 +79,8 @@ describe(newResume, () => {
     newResume(resumeFilename)
 
     expect(readFileSync).toBeCalledTimes(1)
-    expect(readFileSync.mock.calls[0][0]).toContain('resources/resume.yml')
+    // Check for path with either forward or back slashes (cross-platform)
+    expect(readFileSync.mock.calls[0][0]).toMatch(/resources[\\/]resume\.yml$/)
     expect(readFileSync.mock.calls[0][1]).toBe('utf8')
 
     expect(writeFileSync).toBeCalledTimes(1)
@@ -111,7 +113,8 @@ describe(newResume, () => {
     } catch (error) {
       expect(error).toBeInstanceOf(YAMLResumeError)
       expect(error.code).toBe('FILE_READ_ERROR')
-      expect(error.message).toContain('resources/resume.yml')
+      // Check for path with either forward or back slashes (cross-platform)
+      expect(error.message).toMatch(/resources[\\/]resume\.yml/)
     }
 
     expect(consolaDebugSpy).toBeCalledTimes(1)

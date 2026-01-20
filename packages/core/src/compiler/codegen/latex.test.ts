@@ -169,7 +169,10 @@ describe(nodeToTeX, () => {
     })
 
     it('should return proper string with a json object', () => {
-      expect(nodeToTeX(astJson as DocNode)).toBe(outputTex)
+      // Normalize line endings to LF for cross-platform compatibility
+      // (Windows may convert LF to CRLF when checking out the .tex file)
+      const normalizedOutputTex = outputTex.replace(/\r\n/g, '\n')
+      expect(nodeToTeX(astJson as DocNode)).toBe(normalizedOutputTex)
     })
   })
 

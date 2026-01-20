@@ -302,6 +302,7 @@ describe(readResume, () => {
     result = readResume(resumePath, true)
     expect(result).toEqual({ resume: invalidResume, validated: 'failed' })
 
+    // Use resumePath directly since it's already resolved with OS-specific separators
     expect(consoleSpy).toBeCalledWith(
       joinNonEmptyString(
         [

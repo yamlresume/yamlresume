@@ -85,8 +85,13 @@ jobs:
 
       - name: Check files
         if: always()
+        shell: bash
         run: |
-          ls -lah
+          if [ "$RUNNER_OS" == "Windows" ]; then
+            powershell -Command "Get-ChildItem -Force"
+          else
+            ls -lah
+          fi
 
       - name: Upload PDF file
         if: matrix.os == 'ubuntu-latest' && matrix.node-version == 22
