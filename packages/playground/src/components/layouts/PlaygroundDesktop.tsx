@@ -22,15 +22,47 @@
  * IN THE SOFTWARE.
  */
 
-import type { LayoutEngine } from './common'
-import type { HtmlLayout } from './html'
-import type { LatexLayout } from './latex'
-import type { MarkdownLayout } from './markdown'
-
-export type { HtmlLayout, LatexLayout, LayoutEngine, MarkdownLayout }
+import type { ReactNode } from 'react'
+import { Group, Panel } from 'react-resizable-panels'
+import { PanelSeparator } from '@/components'
 
 /**
- * Array of layout items supporting multiple output formats.
+ * Props for the PlaygroundDesktop component.
  */
-export type Layout = LatexLayout | MarkdownLayout | HtmlLayout
-export type Layouts = Layout[]
+export interface PlaygroundDesktopProps {
+  /** The editor panel content to render. */
+  editorPanel: ReactNode
+  /** The preview panel content to render. */
+  previewPanel: ReactNode
+}
+
+/**
+ * The desktop layout component for the playground.
+ * Shows a side-by-side resizable panel layout.
+ * This component is only visible on medium and larger screens (hidden on mobile).
+ *
+ * @param props - The component props.
+ * @returns The rendered desktop layout.
+ */
+export function PlaygroundDesktop({
+  editorPanel,
+  previewPanel,
+}: PlaygroundDesktopProps) {
+  const panelMinSize = 360
+
+  return (
+    <div className="hidden md:flex flex-1 overflow-hidden">
+      <Group orientation="horizontal">
+        <Panel minSize={panelMinSize} className="flex flex-col">
+          {editorPanel}
+        </Panel>
+
+        <PanelSeparator />
+
+        <Panel minSize={panelMinSize} className="flex flex-col">
+          {previewPanel}
+        </Panel>
+      </Group>
+    </div>
+  )
+}

@@ -1,0 +1,62 @@
+{
+  "name": "@yamlresume/playground",
+  "version": "0.10.2",
+  "description": "Shared playground component for YAMLResume",
+  "license": "MIT",
+  "author": {
+    "name": "YAMLResume",
+    "email": "support@yamlresume.com",
+    "url": "https://yamlresume.dev"
+  },
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "build:prod": "tsup --dts --minify --sourcemap",
+    "build:watch": "tsup --watch",
+    "build:clean": "rm -rf dist",
+    "test": "vitest --run",
+    "test:cov": "vitest --coverage --run",
+    "test:watch": "vitest",
+    "lint": "biome check src"
+  },
+  "peerDependencies": {
+    "react": ">=18",
+    "react-dom": ">=18",
+    "tailwindcss": ">=3"
+  },
+  "dependencies": {
+    "@monaco-editor/react": "^4.6.0",
+    "@tabler/icons-react": "^3.36.1",
+    "@yamlresume/core": "workspace:*",
+    "clsx": "^2.1.1",
+    "next-themes": "^0.4.6",
+    "react-resizable-panels": "^4.4.1",
+    "yaml": "^2.8.2"
+  },
+  "devDependencies": {
+    "@testing-library/react": "^16.3.2",
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0",
+    "@vitejs/plugin-react": "^4.7.0",
+    "jsdom": "^27.4.0",
+    "monaco-editor": "^0.55.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

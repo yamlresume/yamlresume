@@ -22,15 +22,31 @@
  * IN THE SOFTWARE.
  */
 
-import type { LayoutEngine } from './common'
-import type { HtmlLayout } from './html'
-import type { LatexLayout } from './latex'
-import type { MarkdownLayout } from './markdown'
-
-export type { HtmlLayout, LatexLayout, LayoutEngine, MarkdownLayout }
+import clsx from 'clsx'
+import { Separator } from 'react-resizable-panels'
 
 /**
- * Array of layout items supporting multiple output formats.
+ * A separator component for the Playground.
+ *
+ * @returns The rendered separator.
  */
-export type Layout = LatexLayout | MarkdownLayout | HtmlLayout
-export type Layouts = Layout[]
+export function PanelSeparator() {
+  return (
+    <Separator
+      className={clsx(
+        'w-2',
+        'flex flex-col justify-center items-center group',
+        'transition-colors cursor-col-resize'
+      )}
+      data-testid="separator"
+    >
+      <div
+        className={clsx(
+          'w-1 h-8',
+          'bg-neutral-400',
+          'group-hover:bg-neutral-300'
+        )}
+      />
+    </Separator>
+  )
+}

@@ -22,15 +22,19 @@
  * IN THE SOFTWARE.
  */
 
-import type { LayoutEngine } from './common'
-import type { HtmlLayout } from './html'
-import type { LatexLayout } from './latex'
-import type { MarkdownLayout } from './markdown'
-
-export type { HtmlLayout, LatexLayout, LayoutEngine, MarkdownLayout }
+import clsx from 'clsx'
+import type { PropsWithChildren } from 'react'
 
 /**
- * Array of layout items supporting multiple output formats.
+ * A scrollable container for preview tabs.
+ *
+ * @param props - The component props.
+ * @returns The rendered tabs container.
  */
-export type Layout = LatexLayout | MarkdownLayout | HtmlLayout
-export type Layouts = Layout[]
+export function PreviewTabs({ children }: PropsWithChildren) {
+  return (
+    <div role="tablist" className={clsx('flex h-full overflow-x-auto')}>
+      {children}
+    </div>
+  )
+}

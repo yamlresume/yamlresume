@@ -22,15 +22,23 @@
  * IN THE SOFTWARE.
  */
 
-import type { LayoutEngine } from './common'
-import type { HtmlLayout } from './html'
-import type { LatexLayout } from './latex'
-import type { MarkdownLayout } from './markdown'
+import { render, screen } from '@testing-library/react'
+import { describe, expect, it } from 'vitest'
+import { EditorTitle } from './EditorTitle'
 
-export type { HtmlLayout, LatexLayout, LayoutEngine, MarkdownLayout }
+describe('EditorTitle', () => {
+  it('renders default title correctly', () => {
+    render(<EditorTitle />)
+    expect(screen.getByText('resume.yaml')).toBeDefined()
+  })
 
-/**
- * Array of layout items supporting multiple output formats.
- */
-export type Layout = LatexLayout | MarkdownLayout | HtmlLayout
-export type Layouts = Layout[]
+  it('renders provided filename', () => {
+    render(<EditorTitle filename="custom.yml" />)
+    expect(screen.getByText('custom.yml')).toBeDefined()
+  })
+
+  it('renders basename from path', () => {
+    render(<EditorTitle filename="/path/to/my-resume.yml" />)
+    expect(screen.getByText('my-resume.yml')).toBeDefined()
+  })
+})

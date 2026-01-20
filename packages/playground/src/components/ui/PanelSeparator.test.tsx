@@ -22,15 +22,31 @@
  * IN THE SOFTWARE.
  */
 
-import type { LayoutEngine } from './common'
-import type { HtmlLayout } from './html'
-import type { LatexLayout } from './latex'
-import type { MarkdownLayout } from './markdown'
+import { render, screen } from '@testing-library/react'
+import { describe, expect, it, vi } from 'vitest'
+import { PanelSeparator } from './PanelSeparator'
 
-export type { HtmlLayout, LatexLayout, LayoutEngine, MarkdownLayout }
+// Mock resizable panels
+vi.mock('react-resizable-panels', () => ({
+  Separator: ({
+    children,
+    className,
+  }: {
+    children: React.ReactNode
+    className?: string
+  }) => (
+    <div data-testid="separator" className={className}>
+      {children}
+    </div>
+  ),
+}))
 
-/**
- * Array of layout items supporting multiple output formats.
- */
-export type Layout = LatexLayout | MarkdownLayout | HtmlLayout
-export type Layouts = Layout[]
+describe(PanelSeparator, () => {
+  it('renders correctly', () => {
+    // Need a wrapping PanelGroup normally, but our mock handles Separator in isolation
+    render(<PanelSeparator />)
+    const separator = screen.getByTestId('separator')
+    expect(separator).toBeDefined()
+    expect(separator.className).toContain('cursor-col-resize')
+  })
+})

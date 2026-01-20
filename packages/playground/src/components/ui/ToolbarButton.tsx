@@ -22,15 +22,47 @@
  * IN THE SOFTWARE.
  */
 
-import type { LayoutEngine } from './common'
-import type { HtmlLayout } from './html'
-import type { LatexLayout } from './latex'
-import type { MarkdownLayout } from './markdown'
-
-export type { HtmlLayout, LatexLayout, LayoutEngine, MarkdownLayout }
+import clsx from 'clsx'
+import type { ReactNode } from 'react'
 
 /**
- * Array of layout items supporting multiple output formats.
+ * Props for the ToolbarButton component.
  */
-export type Layout = LatexLayout | MarkdownLayout | HtmlLayout
-export type Layouts = Layout[]
+export interface ToolbarButtonProps {
+  /** Callback triggered when the button is clicked. */
+  onClick: () => void
+  /** The content to be rendered inside the button, typically an icon. */
+  children: ReactNode
+  /** The tooltip text displayed when hovering over the button. */
+  title: string
+}
+
+/**
+ * A generic button component used in the playground toolbar.
+ *
+ * It provides consistent styling and behavior for all toolbar actions.
+ *
+ * @param props - The component props.
+ * @returns The rendered toolbar button.
+ */
+export function ToolbarButton({
+  onClick,
+  children,
+  title,
+}: ToolbarButtonProps) {
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      className={clsx(
+        'flex items-center justify-center h-8 w-8',
+        'text-neutral-200 hover:text-neutral-700 hover:bg-neutral-200',
+        'transition-colors',
+        'focus:outline-none focus:ring-1 focus:ring-neutral-400'
+      )}
+      title={title}
+    >
+      {children}
+    </button>
+  )
+}

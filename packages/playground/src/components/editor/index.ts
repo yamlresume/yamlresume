@@ -22,15 +22,6 @@
  * IN THE SOFTWARE.
  */
 
-import type { LayoutEngine } from './common'
-import type { HtmlLayout } from './html'
-import type { LatexLayout } from './latex'
-import type { MarkdownLayout } from './markdown'
-
-export type { HtmlLayout, LatexLayout, LayoutEngine, MarkdownLayout }
-
-/**
- * Array of layout items supporting multiple output formats.
- */
-export type Layout = LatexLayout | MarkdownLayout | HtmlLayout
-export type Layouts = Layout[]
+export { Editor, type EditorProps } from './Editor'
+export { EditorPanel, type EditorPanelProps } from './EditorPanel'
+export { ResumeEditor, type ResumeEditorProps } from './ResumeEditor'

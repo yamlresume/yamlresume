@@ -22,15 +22,24 @@
  * IN THE SOFTWARE.
  */
 
-import type { LayoutEngine } from './common'
-import type { HtmlLayout } from './html'
-import type { LatexLayout } from './latex'
-import type { MarkdownLayout } from './markdown'
-
-export type { HtmlLayout, LatexLayout, LayoutEngine, MarkdownLayout }
+import clsx from 'clsx'
+import type { PropsWithChildren } from 'react'
 
 /**
- * Array of layout items supporting multiple output formats.
+ * A shared toolbar component for panels.
+ *
+ * @param props - The component props.
+ * @returns The rendered toolbar.
  */
-export type Layout = LatexLayout | MarkdownLayout | HtmlLayout
-export type Layouts = Layout[]
+export function PanelToolbar({ children }: PropsWithChildren) {
+  return (
+    <div
+      className={clsx(
+        'flex items-center border-b border-neutral-400 h-10 text-sm',
+        'bg-neutral-800'
+      )}
+    >
+      {children}
+    </div>
+  )
+}

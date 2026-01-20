@@ -22,15 +22,29 @@
  * IN THE SOFTWARE.
  */
 
-import type { LayoutEngine } from './common'
-import type { HtmlLayout } from './html'
-import type { LatexLayout } from './latex'
-import type { MarkdownLayout } from './markdown'
-
-export type { HtmlLayout, LatexLayout, LayoutEngine, MarkdownLayout }
+import clsx from 'clsx'
+import type { PropsWithChildren } from 'react'
 
 /**
- * Array of layout items supporting multiple output formats.
+ * A styled panel container component for the Playground.
+ *
+ * Provides consistent styling including:
+ * - Flexbox layout for content organization
+ * - Shadow effect for visual depth
+ * - Border styling for clear boundaries
+ *
+ * @param props - The component props.
+ * @returns The rendered panel container.
  */
-export type Layout = LatexLayout | MarkdownLayout | HtmlLayout
-export type Layouts = Layout[]
+export function Panel({ children }: PropsWithChildren) {
+  return (
+    <div
+      className={clsx(
+        'flex-1 flex flex-col',
+        'border border-neutral-400 overflow-hidden'
+      )}
+    >
+      {children}
+    </div>
+  )
+}

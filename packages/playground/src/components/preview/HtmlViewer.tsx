@@ -22,15 +22,26 @@
  * IN THE SOFTWARE.
  */
 
-import type { LayoutEngine } from './common'
-import type { HtmlLayout } from './html'
-import type { LatexLayout } from './latex'
-import type { MarkdownLayout } from './markdown'
-
-export type { HtmlLayout, LatexLayout, LayoutEngine, MarkdownLayout }
+/**
+ * Props for the HtmlViewer component.
+ */
+export interface HtmlViewerProps {
+  /** The HTML content to render. */
+  content: string
+}
 
 /**
- * Array of layout items supporting multiple output formats.
+ * Component to preview HTML content in an iframe.
+ *
+ * @param props - The props for the HtmlPreview component.
+ * @returns The rendered iframe element.
  */
-export type Layout = LatexLayout | MarkdownLayout | HtmlLayout
-export type Layouts = Layout[]
+export function HtmlViewer({ content }: HtmlViewerProps) {
+  return (
+    <iframe
+      title="Resume HTML Preview"
+      className="w-full h-full border-none"
+      srcDoc={content}
+    />
+  )
+}

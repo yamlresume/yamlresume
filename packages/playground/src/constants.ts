@@ -22,15 +22,24 @@
  * IN THE SOFTWARE.
  */
 
-import type { LayoutEngine } from './common'
-import type { HtmlLayout } from './html'
-import type { LatexLayout } from './latex'
-import type { MarkdownLayout } from './markdown'
+export const ICON_SIZES = {
+  xs: 12,
+  sm: 16,
+  md: 20,
+  lg: 24,
+  xl: 28,
+}
 
-export type { HtmlLayout, LatexLayout, LayoutEngine, MarkdownLayout }
+export const ICON_STROKES = {
+  xs: 1,
+  sm: 1.25,
+  md: 1.5,
+  lg: 1.75,
+  xl: 2,
+}
 
-/**
- * Array of layout items supporting multiple output formats.
- */
-export type Layout = LatexLayout | MarkdownLayout | HtmlLayout
-export type Layouts = Layout[]
+// Monaco's default dark theme (aka, the `vsdark` theme) background color
+export const EDITOR_BG_COLOR = '#1e1e1e'
+
+// Monaco's default font size
+export const EDITOR_FONT_SIZE = 14

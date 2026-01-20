@@ -22,15 +22,32 @@
  * IN THE SOFTWARE.
  */
 
-import type { LayoutEngine } from './common'
-import type { HtmlLayout } from './html'
-import type { LatexLayout } from './latex'
-import type { MarkdownLayout } from './markdown'
-
-export type { HtmlLayout, LatexLayout, LayoutEngine, MarkdownLayout }
+import { Editor } from '@/components'
 
 /**
- * Array of layout items supporting multiple output formats.
+ * Props for the CodeViewer component.
  */
-export type Layout = LatexLayout | MarkdownLayout | HtmlLayout
-export type Layouts = Layout[]
+export interface CodeViewerProps {
+  /** The code content to display. */
+  content: string
+  /** The language of the code (markdown or latex). */
+  language: 'markdown' | 'latex' | 'yaml'
+}
+
+/**
+ * Component to preview code (Markdown or LaTeX) using Monaco Editor.
+ *
+ * @param props - The props for the CodePreview component.
+ * @returns The rendered Monaco Editor.
+ */
+export function CodeViewer({ content, language }: CodeViewerProps) {
+  return (
+    <Editor
+      language={language}
+      value={content}
+      readOnly={true}
+      minimap={false}
+      lineNumbers={false}
+    />
+  )
+}

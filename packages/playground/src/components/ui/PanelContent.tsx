@@ -22,15 +22,15 @@
  * IN THE SOFTWARE.
  */
 
-import type { LayoutEngine } from './common'
-import type { HtmlLayout } from './html'
-import type { LatexLayout } from './latex'
-import type { MarkdownLayout } from './markdown'
-
-export type { HtmlLayout, LatexLayout, LayoutEngine, MarkdownLayout }
+import type { PropsWithChildren } from 'react'
 
 /**
- * Array of layout items supporting multiple output formats.
+ * A shared container for panel content.
+ * Provides a flexible layout for the main content area of a panel.
+ *
+ * @param props - The component props.
+ * @returns The rendered content container.
  */
-export type Layout = LatexLayout | MarkdownLayout | HtmlLayout
-export type Layouts = Layout[]
+export function PanelContent({ children }: PropsWithChildren) {
+  return <div className="flex-1 relative">{children}</div>
+}

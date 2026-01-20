@@ -22,15 +22,35 @@
  * IN THE SOFTWARE.
  */
 
-import type { LayoutEngine } from './common'
-import type { HtmlLayout } from './html'
-import type { LatexLayout } from './latex'
-import type { MarkdownLayout } from './markdown'
+import clsx from 'clsx'
 
-export type { HtmlLayout, LatexLayout, LayoutEngine, MarkdownLayout }
+import logo from '@/resources/logo.png'
 
 /**
- * Array of layout items supporting multiple output formats.
+ * A placeholder component shown when no resume layouts are defined.
+ * Displays a logo and a helpful message.
+ *
+ * @returns The rendered empty state component.
  */
-export type Layout = LatexLayout | MarkdownLayout | HtmlLayout
-export type Layouts = Layout[]
+export function PreviewNoLayouts() {
+  return (
+    <div
+      className={clsx(
+        'h-full w-full',
+        'flex flex-col items-center justify-center gap-4',
+        'text-neutral-200'
+      )}
+    >
+      <img
+        src={logo}
+        alt="YAML Resume Logo"
+        className="w-32 h-32 opacity-70 grayscale"
+        draggable={false}
+      />
+      <div className="text-lg font-medium">No Layouts Defined</div>
+      <p className="max-w-xs text-center text-sm text-neutral-400">
+        Your resume appears to be empty or contains no layout definitions.
+      </p>
+    </div>
+  )
+}

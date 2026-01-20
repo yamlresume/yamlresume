@@ -22,15 +22,7 @@
  * IN THE SOFTWARE.
  */
 
-import type { LayoutEngine } from './common'
-import type { HtmlLayout } from './html'
-import type { LatexLayout } from './latex'
-import type { MarkdownLayout } from './markdown'
-
-export type { HtmlLayout, LatexLayout, LayoutEngine, MarkdownLayout }
-
-/**
- * Array of layout items supporting multiple output formats.
- */
-export type Layout = LatexLayout | MarkdownLayout | HtmlLayout
-export type Layouts = Layout[]
+export { CodeViewer, type CodeViewerProps } from './CodeViewer'
+export { HtmlViewer, type HtmlViewerProps } from './HtmlViewer'
+export { PreviewPanel, type PreviewPanelProps } from './PreviewPanel'
+export { ResumeViewer, type ResumeViewerProps } from './ResumeViewer'

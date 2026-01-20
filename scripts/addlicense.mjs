@@ -19,7 +19,8 @@ const args = [
   'packages/cli/src',
   'packages/core/src',
   'packages/create-yamlresume/src',
-  'packages/json2yamlresume/src'
+  'packages/json2yamlresume/src',
+  'packages/playground/src'
 ];
 
 // Check for -c flag

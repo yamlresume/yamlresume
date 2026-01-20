@@ -22,15 +22,26 @@
  * IN THE SOFTWARE.
  */
 
-import type { LayoutEngine } from './common'
-import type { HtmlLayout } from './html'
-import type { LatexLayout } from './latex'
-import type { MarkdownLayout } from './markdown'
+import { render, screen } from '@testing-library/react'
+import { describe, expect, it } from 'vitest'
 
-export type { HtmlLayout, LatexLayout, LayoutEngine, MarkdownLayout }
+import { PreviewNoLayouts } from './PreviewNoLayouts'
 
-/**
- * Array of layout items supporting multiple output formats.
- */
-export type Layout = LatexLayout | MarkdownLayout | HtmlLayout
-export type Layouts = Layout[]
+describe(PreviewNoLayouts, () => {
+  it('renders correctly', () => {
+    render(<PreviewNoLayouts />)
+
+    // Check for main text elements
+    expect(screen.getByText('No Layouts Defined')).toBeDefined()
+    expect(
+      screen.getByText(
+        'Your resume appears to be empty or contains no layout definitions.'
+      )
+    ).toBeDefined()
+
+    // Check for logo image
+    const logo = screen.getByAltText('YAML Resume Logo')
+    expect(logo).toBeDefined()
+    expect(logo.getAttribute('src')).toBeDefined()
+  })
+})

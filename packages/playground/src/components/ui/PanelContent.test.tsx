@@ -22,15 +22,17 @@
  * IN THE SOFTWARE.
  */
 
-import type { LayoutEngine } from './common'
-import type { HtmlLayout } from './html'
-import type { LatexLayout } from './latex'
-import type { MarkdownLayout } from './markdown'
+import { render, screen } from '@testing-library/react'
+import { describe, expect, it } from 'vitest'
+import { PanelContent } from './PanelContent'
 
-export type { HtmlLayout, LatexLayout, LayoutEngine, MarkdownLayout }
-
-/**
- * Array of layout items supporting multiple output formats.
- */
-export type Layout = LatexLayout | MarkdownLayout | HtmlLayout
-export type Layouts = Layout[]
+describe('PanelContent', () => {
+  it('renders children correctly', () => {
+    render(
+      <PanelContent>
+        <div data-testid="child">child</div>
+      </PanelContent>
+    )
+    expect(screen.getByTestId('child')).toBeDefined()
+  })
+})

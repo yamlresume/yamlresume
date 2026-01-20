@@ -22,15 +22,36 @@
  * IN THE SOFTWARE.
  */
 
-import type { LayoutEngine } from './common'
-import type { HtmlLayout } from './html'
-import type { LatexLayout } from './latex'
-import type { MarkdownLayout } from './markdown'
+import { IconFileCode } from '@tabler/icons-react'
+import clsx from 'clsx'
 
-export type { HtmlLayout, LatexLayout, LayoutEngine, MarkdownLayout }
+import { EDITOR_BG_COLOR, ICON_SIZES, ICON_STROKES } from '@/constants'
+import { getBasename } from '@/utils'
 
 /**
- * Array of layout items supporting multiple output formats.
+ * The title component for the editor panel.
+ * Displays as a tab with a YAML icon.
+ *
+ * @returns The rendered title element.
  */
-export type Layout = LatexLayout | MarkdownLayout | HtmlLayout
-export type Layouts = Layout[]
+interface EditorTitleProps {
+  filename?: string
+}
+
+export function EditorTitle({ filename = 'resume.yaml' }: EditorTitleProps) {
+  // Extract basename if path is provided
+  const basename = getBasename(filename)
+  return (
+    <div
+      className={clsx(
+        'flex items-center gap-2',
+        'h-full px-4',
+        'border-r border-neutral-600'
+      )}
+      style={{ backgroundColor: EDITOR_BG_COLOR }}
+    >
+      <IconFileCode size={ICON_SIZES.sm} stroke={ICON_STROKES.sm} />
+      <span>{basename}</span>
+    </div>
+  )
+}

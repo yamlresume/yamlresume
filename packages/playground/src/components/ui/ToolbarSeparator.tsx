@@ -22,15 +22,11 @@
  * IN THE SOFTWARE.
  */
 
-import type { LayoutEngine } from './common'
-import type { HtmlLayout } from './html'
-import type { LatexLayout } from './latex'
-import type { MarkdownLayout } from './markdown'
-
-export type { HtmlLayout, LatexLayout, LayoutEngine, MarkdownLayout }
-
 /**
- * Array of layout items supporting multiple output formats.
+ * A toolbar separator component.
+ *
+ * @returns The rendered separator.
  */
-export type Layout = LatexLayout | MarkdownLayout | HtmlLayout
-export type Layouts = Layout[]
+export function ToolbarSeparator() {
+  return <div className="w-px h-4 bg-neutral-400 mx-1" />
+}

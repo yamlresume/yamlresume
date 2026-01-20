@@ -22,15 +22,15 @@
  * IN THE SOFTWARE.
  */
 
-import type { LayoutEngine } from './common'
-import type { HtmlLayout } from './html'
-import type { LatexLayout } from './latex'
-import type { MarkdownLayout } from './markdown'
+import { render } from '@testing-library/react'
+import { describe, expect, it } from 'vitest'
+import { ToolbarSeparator } from './ToolbarSeparator'
 
-export type { HtmlLayout, LatexLayout, LayoutEngine, MarkdownLayout }
-
-/**
- * Array of layout items supporting multiple output formats.
- */
-export type Layout = LatexLayout | MarkdownLayout | HtmlLayout
-export type Layouts = Layout[]
+describe(ToolbarSeparator, () => {
+  it('renders correctly', () => {
+    const { container } = render(<ToolbarSeparator />)
+    expect(container.firstElementChild?.className).toBe(
+      'w-px h-4 bg-neutral-400 mx-1'
+    )
+  })
+})

@@ -22,15 +22,46 @@
  * IN THE SOFTWARE.
  */
 
-import type { LayoutEngine } from './common'
-import type { HtmlLayout } from './html'
-import type { LatexLayout } from './latex'
-import type { MarkdownLayout } from './markdown'
-
-export type { HtmlLayout, LatexLayout, LayoutEngine, MarkdownLayout }
+import { IconEdit, IconEye } from '@tabler/icons-react'
+import { MobileTabButton } from './MobileTabButton'
 
 /**
- * Array of layout items supporting multiple output formats.
+ * The available tab options for the mobile playground.
  */
-export type Layout = LatexLayout | MarkdownLayout | HtmlLayout
-export type Layouts = Layout[]
+export type MobileTab = 'editor' | 'preview'
+
+/**
+ * Props for the MobileTabBar component.
+ */
+interface MobileTabBarProps {
+  /** The currently active tab. */
+  activeTab: MobileTab
+  /** Callback when the active tab changes. */
+  onTabChange: (tab: MobileTab) => void
+}
+
+/**
+ * A tab bar component for switching between Editor and Preview on mobile devices.
+ * This component is only visible on small screens (hidden on md+).
+ *
+ * @param props - The component props.
+ * @returns The rendered tab bar.
+ */
+export function MobileTabBar({ activeTab, onTabChange }: MobileTabBarProps) {
+  return (
+    <div className="flex md:hidden border-b border-neutral-400">
+      <MobileTabButton
+        label="Editor"
+        icon={IconEdit}
+        active={activeTab === 'editor'}
+        onClick={() => onTabChange('editor')}
+      />
+      <MobileTabButton
+        label="Preview"
+        icon={IconEye}
+        active={activeTab === 'preview'}
+        onClick={() => onTabChange('preview')}
+      />
+    </div>
+  )
+}

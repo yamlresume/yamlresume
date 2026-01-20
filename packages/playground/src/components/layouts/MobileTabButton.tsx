@@ -22,15 +22,50 @@
  * IN THE SOFTWARE.
  */
 
-import type { LayoutEngine } from './common'
-import type { HtmlLayout } from './html'
-import type { LatexLayout } from './latex'
-import type { MarkdownLayout } from './markdown'
+import clsx from 'clsx'
+import type { ElementType } from 'react'
 
-export type { HtmlLayout, LatexLayout, LayoutEngine, MarkdownLayout }
+import { ICON_SIZES, ICON_STROKES } from '@/constants'
 
 /**
- * Array of layout items supporting multiple output formats.
+ * Props for the MobileTabButton component.
  */
-export type Layout = LatexLayout | MarkdownLayout | HtmlLayout
-export type Layouts = Layout[]
+interface MobileTabButtonProps {
+  /** The label text to display on the tab. */
+  label: string
+  /** Whether this tab is currently active. */
+  active: boolean
+  /** Callback when the tab is clicked. */
+  onClick: () => void
+  /** The icon to display on the tab. */
+  icon: ElementType
+}
+
+/**
+ * A reusable tab button component for the mobile playground layout.
+ *
+ * @param props - The component props.
+ * @returns The rendered tab button.
+ */
+export function MobileTabButton({
+  label,
+  active,
+  onClick,
+  icon: Icon,
+}: MobileTabButtonProps) {
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      className={clsx(
+        'flex-1 flex items-center justify-center gap-2 h-10',
+        'text-sm',
+        'transition-colors',
+        active && 'border-b-2 border-neutral-200 font-medium'
+      )}
+    >
+      <Icon size={ICON_SIZES.sm} stroke={ICON_STROKES.sm} />
+      {label}
+    </button>
+  )
+}

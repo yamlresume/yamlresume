@@ -22,15 +22,44 @@
  * IN THE SOFTWARE.
  */
 
-import type { LayoutEngine } from './common'
-import type { HtmlLayout } from './html'
-import type { LatexLayout } from './latex'
-import type { MarkdownLayout } from './markdown'
-
-export type { HtmlLayout, LatexLayout, LayoutEngine, MarkdownLayout }
+import type { OnMount } from '@monaco-editor/react'
+import { Editor } from './Editor'
 
 /**
- * Array of layout items supporting multiple output formats.
+ * Props for the ResumeEditor component.
  */
-export type Layout = LatexLayout | MarkdownLayout | HtmlLayout
-export type Layouts = Layout[]
+export interface ResumeEditorProps {
+  /**
+   * The current value of the YAML resume.
+   */
+  value: string
+  /**
+   * Callback triggered when the editor content changes.
+   * @param value - The new value of the editor content.
+   */
+  onChange: (value: string | undefined) => void
+  /** Callback triggered when the editor is mounted. */
+  onMount?: OnMount
+}
+
+/**
+ * A specialized editor component for editing the resume YAML content.
+ *
+ * This component wraps the shared {@link Editor} component, pre-configured
+ * for YAML editing.
+ *
+ * @param props - The component props.
+ * @param props.value - The string content to display in the editor.
+ * @param props.onChange - Handler called when content is modified.
+ * @returns The rendered editor component.
+ */
+export function ResumeEditor({ value, onChange, onMount }: ResumeEditorProps) {
+  return (
+    <Editor
+      language="yaml"
+      value={value}
+      onChange={onChange}
+      onMount={onMount}
+    />
+  )
+}
