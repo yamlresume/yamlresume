@@ -13,7 +13,12 @@ on:
 
 jobs:
   test:
-    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        node-version: [22, 24]
+        os: [ubuntu-latest, macos-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
 
     steps:
       - uses: actions/checkout@v4
@@ -21,7 +26,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: "22"
+          node-version: ${{ matrix.node-version }}
 
       - name: Install pnpm
         uses: pnpm/action-setup@v4
@@ -43,6 +48,7 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Install addlicense
+        if: runner.os == 'Linux'
         run: |
           go install github.com/google/addlicense@latest
           echo "$(go env GOPATH)/bin" >> $GITHUB_PATH
@@ -54,12 +60,14 @@ jobs:
         run: pnpm cli build:prod
 
       - name: Run check
+        if: runner.os == 'Linux'
         run: pnpm check:ci
 
       - name: Run tests
         run: pnpm test:cov
 
       - name: Upload results to Codecov
+        if: matrix.os == 'ubuntu-latest' && matrix.node-version == 22
         uses: codecov/codecov-action@v5
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
@@ -71,6 +79,7 @@ jobs:
           node packages/cli/dist/cli.js build --no-pdf resume.yml
 
       - name: Smoke test LaTeX build
+        if: runner.os == 'Linux'
         run: |
           docker run --rm -v $(pwd):/tmp -w /tmp yamlresume/yamlresume-base:v1.0.0 xelatex resume.tex
 
@@ -80,6 +89,7 @@ jobs:
           ls -lah
 
       - name: Upload PDF file
+        if: matrix.os == 'ubuntu-latest' && matrix.node-version == 22
         uses: actions/upload-artifact@v4
         with:
           name: yamlresume-sample
