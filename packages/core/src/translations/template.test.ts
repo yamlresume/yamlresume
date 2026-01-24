@@ -129,6 +129,17 @@ describe(getTemplateTranslations, () => {
           },
         },
       },
+      {
+        language: 'de',
+        expected: {
+          punctuations: {
+            colon: ': ',
+          },
+          terms: {
+            keywords: 'Schlüsselwörter',
+          },
+        },
+      },
     ]
 
     tests.forEach((test) => {

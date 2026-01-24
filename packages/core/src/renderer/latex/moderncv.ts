@@ -240,6 +240,11 @@ class ModerncvBase extends Renderer {
 % ref:
 % - https://latex3.github.io/babel/guides/locale-dutch.html
 \\usepackage[dutch]{babel}`
+      case 'de':
+        return `%% Babel config for German language
+% ref:
+% - https://latex3.github.io/babel/guides/locale-german.html
+\\usepackage[ngerman]{babel}`
       default:
         return ''
     }
