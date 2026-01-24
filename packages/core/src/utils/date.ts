@@ -109,6 +109,8 @@ export function getDateRange(
         return `${localizeDate(startDate, language)}–Huidig`
       case 'ja':
         return `${localizeDate(startDate, language)}～現在`
+      case 'de':
+        return `${localizeDate(startDate, language)}–Heute`
       default:
         // by default we return English's "Present" if language is not supported
         return `${localizeDate(startDate, language)}–Present`

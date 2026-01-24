@@ -676,6 +676,12 @@ describe(transformLocation, () => {
       'United States'
     )
 
+    const germanLocation = getOptionTranslation(
+      'de',
+      'countries',
+      'United States'
+    )
+
     const tests = [
       {
         postalCode: '',
@@ -693,6 +699,7 @@ describe(transformLocation, () => {
           ja: '',
           no: '',
           nl: '',
+          de: '',
         },
       },
       {
@@ -715,6 +722,7 @@ describe(transformLocation, () => {
           ja: `${japaneseLocation}${japaneseComma}Sacramento${japaneseComma}95814`,
           no: `Sacramento${latinComma}${norwegianLocation}${latinComma}95814`,
           nl: `Sacramento${latinComma}${dutchLocation}${latinComma}95814`,
+          de: `Sacramento${latinComma}${germanLocation}${latinComma}95814`,
         },
       },
       {
@@ -733,6 +741,7 @@ describe(transformLocation, () => {
           ja: `California${japaneseComma}Sacramento${japaneseComma}123 Main Street`,
           no: `123 Main Street${latinComma}Sacramento${latinComma}California`,
           nl: `123 Main Street${latinComma}Sacramento${latinComma}California`,
+          de: `123 Main Street${latinComma}Sacramento${latinComma}California`,
         },
       },
       {
@@ -761,6 +770,7 @@ describe(transformLocation, () => {
           ja: `${japaneseLocation}${japaneseComma}California${japaneseComma}Sacramento${japaneseComma}123 Main Street${japaneseComma}95814`,
           no: `123 Main Street${latinComma}Sacramento${latinComma}California${latinComma}${norwegianLocation}${latinComma}95814`,
           nl: `123 Main Street${latinComma}Sacramento${latinComma}California${latinComma}${dutchLocation}${latinComma}95814`,
+          de: `123 Main Street${latinComma}Sacramento${latinComma}California${latinComma}${germanLocation}${latinComma}95814`,
         },
       },
     ]

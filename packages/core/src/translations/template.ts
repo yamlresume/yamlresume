@@ -170,6 +170,18 @@ export function getTemplateTranslations(
         score: '成績',
       },
     },
+    de: {
+      punctuations: {
+        comma: ', ',
+        colon: ': ',
+        separator: ', ',
+      },
+      terms: {
+        courses: 'Kurse',
+        keywords: 'Schlüsselwörter',
+        score: 'Punkte',
+      },
+    },
   }
 
   return templateTranslation[isEmptyValue(language) ? 'en' : language]
