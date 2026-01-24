@@ -44,7 +44,7 @@
     "test": "vitest --run",
     "test:cov": "vitest --coverage --run",
     "test:watch": "vitest",
-    "typedoc": "typedoc src/index.ts"
+    "typedoc": "typedoc"
   },
   "dependencies": {
     "@yamlresume/core": "workspace:*",

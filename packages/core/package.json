@@ -41,7 +41,7 @@
     "test": "vitest --run",
     "test:cov": "vitest --coverage --run",
     "test:watch": "vitest",
-    "typedoc": "typedoc src/index.ts"
+    "typedoc": "typedoc"
   },
   "dependencies": {
     "escape-latex": "^1.2.0",
