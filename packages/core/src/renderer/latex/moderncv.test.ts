@@ -323,6 +323,55 @@ describe('ModerncvBase', () => {
       )
     })
 
+    it('should configure custom font families', () => {
+      const linuxLibertineFont = 'Linux Libertine'
+      const linuxLibertineOFont = 'Linux Libertine O'
+      const customFont1 = 'Monaco'
+      const customFont2 = 'Helvetica'
+      resume.layouts = [
+        {
+          engine: 'latex',
+          typography: {
+            fontFamily: `${customFont1}, ${customFont2}`,
+          },
+        },
+      ]
+
+      const renderer = new ModerncvBankingRenderer(resume, layoutIndex)
+      const result = renderer.renderPreamble()
+
+      // Should contain checks for default fonts
+      expect(result).toContain(`\\IfFontExistsTF{${linuxLibertineFont}}`)
+      expect(result).toContain(`\\IfFontExistsTF{${linuxLibertineOFont}}`)
+
+      // Should contain checks for custom fonts
+      expect(result).toContain(`\\IfFontExistsTF{${customFont1}}`)
+      expect(result).toContain(`\\IfFontExistsTF{${customFont2}}`)
+
+      // Check order: default fonts should appear before custom fonts in the generated code
+      // because we reverse the list for precedence (last one overrides previous ones)
+      // The precedence we want is: Custom1 > Custom2 > DefaultO > Default
+      // So in the iteration (which generates the \\setmainfont calls):
+      // 1. Default (Linux Libertine)
+      // 2. DefaultO (Linux Libertine O)
+      // 3. Custom2 (Helvetica)
+      // 4. Custom1 (Monaco)
+      //
+      // This means Custom1 appears LAST in the output string.
+      const idxDefault = result.indexOf(
+        `\\IfFontExistsTF{${linuxLibertineFont}}`
+      )
+      const idxDefaultO = result.indexOf(
+        `\\IfFontExistsTF{${linuxLibertineOFont}}`
+      )
+      const idxCustom2 = result.indexOf(`\\IfFontExistsTF{${customFont2}}`)
+      const idxCustom1 = result.indexOf(`\\IfFontExistsTF{${customFont1}}`)
+
+      expect(idxDefault).toBeLessThan(idxDefaultO)
+      expect(idxDefaultO).toBeLessThan(idxCustom2)
+      expect(idxCustom2).toBeLessThan(idxCustom1)
+    })
+
     it('should render basic fontspec configuration for CJK', () => {
       const linuxLibertineFont = 'Linux Libertine'
       const linuxLibertineOFont = 'Linux Libertine O'

@@ -43,10 +43,11 @@ import {
   DegreeOptionSchema,
   EmailSchema,
   FluencyOptionSchema,
-  FontSizeOptionSchema,
-  FontspecNumbersOptionSchema,
   KeywordsSchema,
   LanguageOptionSchema,
+  LatexFontFamilySchema,
+  LatexFontSizeOptionSchema,
+  LatexFontspecNumbersOptionSchema,
   LatexTemplateOptionSchema,
   LevelOptionSchema,
   LocaleLanguageOptionSchema,
@@ -274,10 +275,24 @@ describe('EmailSchema', () => {
   })
 })
 
+describe('LatexFontFamilySchema', () => {
+  it('should return a font family string if it is valid', () => {
+    const tests = ['Monaco', 'Monaco, Helvetica', 'Arial, font with spaces']
+
+    for (const fontFamily of tests) {
+      expect(LatexFontFamilySchema.parse(fontFamily)).toBe(fontFamily)
+    }
+  })
+
+  it('should have correct metadata', () => {
+    expectSchemaMetadata(LatexFontFamilySchema)
+  })
+})
+
 describe('FontspecNumbersOptionSchema', () => {
   it('should return a fontspec numbers style if it is valid', () => {
     for (const numbers of LATEX_FONTSPEC_NUMBERS_OPTIONS) {
-      expect(FontspecNumbersOptionSchema.parse(numbers)).toBe(numbers)
+      expect(LatexFontspecNumbersOptionSchema.parse(numbers)).toBe(numbers)
     }
   })
 
@@ -314,19 +329,19 @@ describe('FontspecNumbersOptionSchema', () => {
     ]
 
     for (const { numbers, error } of tests) {
-      validateZodErrors(FontspecNumbersOptionSchema, numbers, error)
+      validateZodErrors(LatexFontspecNumbersOptionSchema, numbers, error)
     }
   })
 
   it('should have correct metadata', () => {
-    expectSchemaMetadata(FontspecNumbersOptionSchema)
+    expectSchemaMetadata(LatexFontspecNumbersOptionSchema)
   })
 })
 
 describe('FontSizeOptionSchema', () => {
   it('should return a font size if it is valid', () => {
     for (const fontSize of LATEX_FONT_SIZE_OPTIONS) {
-      expect(FontSizeOptionSchema.parse(fontSize)).toBe(fontSize)
+      expect(LatexFontSizeOptionSchema.parse(fontSize)).toBe(fontSize)
     }
   })
 
@@ -349,12 +364,12 @@ describe('FontSizeOptionSchema', () => {
     ]
 
     for (const { fontSize, error } of tests) {
-      validateZodErrors(FontSizeOptionSchema, fontSize, error)
+      validateZodErrors(LatexFontSizeOptionSchema, fontSize, error)
     }
   })
 
   it('should have correct metadata', () => {
-    expectSchemaMetadata(FontSizeOptionSchema)
+    expectSchemaMetadata(LatexFontSizeOptionSchema)
   })
 })
 

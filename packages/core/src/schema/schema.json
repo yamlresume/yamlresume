@@ -2773,6 +2773,21 @@
                               }
                             ]
                           },
+                          "fontFamily": {
+                            "title": "[optional] Font Family",
+                            "description": "A comma-separated list of font families to use. The first available font will be used or `null`.",
+                            "anyOf": [
+                              {
+                                "title": "[optional] Font Family",
+                                "description": "A comma-separated list of font families to use. The first available font will be used or `null`.",
+                                "example": "Monaco, Helvetica",
+                                "type": "string"
+                              },
+                              {
+                                "type": "null"
+                              }
+                            ]
+                          },
                           "links": {
                             "title": "Typography Links",
                             "description": "Link styling settings for typography.",

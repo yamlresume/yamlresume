@@ -25,7 +25,7 @@
 import { z } from 'zod'
 
 import { joinNonEmptyString } from '@/utils'
-import { FontspecNumbersOptionSchema } from '../../primitives'
+import { LatexFontspecNumbersOptionSchema } from '../../primitives'
 import { nullifySchema } from '../../utils'
 
 /**
@@ -39,7 +39,7 @@ export const LatexAdvancedSchema = z.object({
     .object({
       fontspec: z
         .object({
-          numbers: nullifySchema(FontspecNumbersOptionSchema),
+          numbers: nullifySchema(LatexFontspecNumbersOptionSchema),
         })
         .nullish(),
       showIcons: z.boolean().default(true),

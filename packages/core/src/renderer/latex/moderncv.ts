@@ -254,36 +254,41 @@ class ModerncvBase extends Renderer {
    * Render the LaTeX packages for Spanish support
    */
   private renderFontspecConfig(): string {
-    const layout = this.resume.layouts?.[this.layoutIndex]
+    const layout = this.resume.layouts?.[this.layoutIndex] as LatexLayout
 
-    const numbers = (layout as LatexLayout)?.advanced?.fontspec?.numbers
+    const numbers = layout.advanced?.fontspec?.numbers
 
     const linuxLibertineFont = 'Linux Libertine'
     const linuxLibertineOFont = 'Linux Libertine O'
 
+    const fontFamily = layout.typography?.fontFamily
+    const fonts = fontFamily
+      ?.split(',')
+      .map((font) => font.trim())
+      .filter((font) => font.length > 0)
+    // reverse the fonts so that the first font in the list will be the last one
+    // to be set, so it will be the one used if it exists
+    const fontList = Array.from(
+      new Set([...(fonts ?? []), linuxLibertineOFont, linuxLibertineFont])
+    ).reverse()
+
     return `%% fontspec
 \\usepackage{fontspec}
 
-\\IfFontExistsTF{${linuxLibertineFont}}{
+${fontList
+  .map(
+    (font) => `\\IfFontExistsTF{${font}}{
   \\setmainfont[${joinNonEmptyString(
     [
       'Ligatures={TeX, Common}',
       `Numbers=${numbers}`,
-      showIf(this.isCJKResume(), `ItalicFont=${linuxLibertineFont}`),
+      showIf(this.isCJKResume(), `ItalicFont=${font}`),
     ],
     ', '
-  )}]{${linuxLibertineFont}}
-}{}
-\\IfFontExistsTF{${linuxLibertineOFont}}{
-  \\setmainfont[${joinNonEmptyString(
-    [
-      'Ligatures={TeX, Common}',
-      `Numbers=${numbers}`,
-      showIf(this.isCJKResume(), `ItalicFont=${linuxLibertineOFont}`),
-    ],
-    ', '
-  )}]{${linuxLibertineOFont}}
+  )}]{${font}}
 }{}`
+  )
+  .join('\n')}`
   }
 
   /**

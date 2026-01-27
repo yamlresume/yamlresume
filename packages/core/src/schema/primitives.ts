@@ -218,22 +218,6 @@ export const EmailSchema = z.email({ message: 'email is invalid.' }).meta({
 export const FluencyOptionSchema = optionSchema(FLUENCY_OPTIONS, 'fluency')
 
 /**
- * A zod schema for a font spec numbers style.
- */
-export const FontspecNumbersOptionSchema = optionSchema(
-  LATEX_FONTSPEC_NUMBERS_OPTIONS,
-  'LaTeX fontspec numbers'
-)
-
-/**
- * A zod schema for fontSize option in layout.
- */
-export const FontSizeOptionSchema = optionSchema(
-  LATEX_FONT_SIZE_OPTIONS,
-  'LaTeX font size'
-)
-
-/**
  * A zod schema for HTML fontSize option in layout.
  */
 export const HtmlFontSizeOptionSchema = optionSchema(
@@ -269,6 +253,32 @@ export const KeywordsSchema = z
  * A zod schema for a language.
  */
 export const LanguageOptionSchema = optionSchema(LANGUAGE_OPTIONS, 'language')
+
+/**
+ * A zod schema for fontFamily option in layout.
+ */
+export const LatexFontFamilySchema = z.string().meta({
+  title: 'Font Family',
+  description:
+    'A comma-separated list of font families to use. The first available font will be used.',
+  example: 'Monaco, Helvetica',
+})
+
+/**
+ * A zod schema for fontSize option in layout.
+ */
+export const LatexFontSizeOptionSchema = optionSchema(
+  LATEX_FONT_SIZE_OPTIONS,
+  'LaTeX font size'
+)
+
+/**
+ * A zod schema for a font spec numbers style.
+ */
+export const LatexFontspecNumbersOptionSchema = optionSchema(
+  LATEX_FONTSPEC_NUMBERS_OPTIONS,
+  'LaTeX fontspec numbers'
+)
 
 /**
  * A zod schema for a paper size option.

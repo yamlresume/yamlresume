@@ -43,6 +43,8 @@ type Links = {
 type LatexTypography = {
   /** Base font size for the document (e.g., "10pt", "11pt"). */
   fontSize?: LatexFontSize
+  /** A comma-separated list of font families to use. */
+  fontFamily?: string
   /** Link styling settings. */
   links?: Links
 }

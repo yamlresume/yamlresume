@@ -25,7 +25,10 @@
 import { z } from 'zod'
 
 import { joinNonEmptyString } from '@/utils'
-import { FontSizeOptionSchema } from '../../primitives'
+import {
+  LatexFontFamilySchema,
+  LatexFontSizeOptionSchema,
+} from '../../primitives'
 import { nullifySchema } from '../../utils'
 
 /**
@@ -56,7 +59,8 @@ const LinksSchema = z.object({
 export const LatexTypographySchema = z.object({
   typography: z
     .object({
-      fontSize: nullifySchema(FontSizeOptionSchema),
+      fontSize: nullifySchema(LatexFontSizeOptionSchema),
+      fontFamily: nullifySchema(LatexFontFamilySchema),
       ...LinksSchema.shape,
     })
     .nullish()
