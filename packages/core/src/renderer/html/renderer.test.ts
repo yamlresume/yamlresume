@@ -227,6 +227,35 @@ describe('HtmlRenderer', () => {
       })
     })
 
+    describe('typography.fontFamily', () => {
+      it('should use default font family when typography is empty', () => {
+        const resume = cloneDeep(DEFAULT_RESUME)
+        const htmlLayout = resume.layouts[layoutIndex] as HtmlLayout
+        htmlLayout.typography = undefined
+
+        const renderer = new HtmlRenderer(resume, layoutIndex)
+        const result = renderer.renderPreamble()
+
+        expect(result).toContain(
+          '--text-font-family: var(--text-default-font-family)'
+        )
+      })
+
+      it('should use custom font family when provided', () => {
+        const fontFamily = 'Monaco, Helvetica'
+        const resume = cloneDeep(DEFAULT_RESUME)
+        const htmlLayout = resume.layouts[layoutIndex] as HtmlLayout
+        htmlLayout.typography = { ...htmlLayout.typography, fontFamily }
+
+        const renderer = new HtmlRenderer(resume, layoutIndex)
+        const result = renderer.renderPreamble()
+
+        expect(result).toContain(
+          `--text-font-family: ${fontFamily}, var(--text-default-font-family)`
+        )
+      })
+    })
+
     describe('template', () => {
       vi.mock('./styles/calm.css', () => ({ default: 'MOCK_CALM_CSS' }))
       vi.mock('./styles/vscode.css', () => ({ default: 'MOCK_VSCODE_CSS' }))

@@ -25,7 +25,10 @@
 import { z } from 'zod'
 
 import { joinNonEmptyString } from '@/utils'
-import { HtmlFontSizeOptionSchema } from '../../primitives'
+import {
+  HtmlFontFamilySchema,
+  HtmlFontSizeOptionSchema,
+} from '../../primitives'
 import { nullifySchema } from '../../utils'
 
 /**
@@ -35,6 +38,7 @@ export const HtmlTypographySchema = z.object({
   typography: z
     .object({
       fontSize: nullifySchema(HtmlFontSizeOptionSchema),
+      fontFamily: nullifySchema(HtmlFontFamilySchema),
     })
     .nullish()
     .meta({

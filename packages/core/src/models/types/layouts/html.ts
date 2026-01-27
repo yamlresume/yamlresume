@@ -31,6 +31,8 @@ import type { Sections } from './common'
 type HtmlTypography = {
   /** Base font size for the document (e.g., "small", "medium", "large"). */
   fontSize?: HtmlFontSize
+  /** A comma-separated list of font families to use. */
+  fontFamily?: string
 }
 
 /**

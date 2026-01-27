@@ -64,6 +64,9 @@
 
   /* layout */
   --page-max-width: 900px;
+
+  /* typography */
+  --text-default-font-family: "Consolas", "Monaco", "Courier New", monospace;
 }
 
 html {
@@ -75,7 +78,7 @@ body {
   /* font & text */
   color: var(--text-color-primary);
   background-color: var(--background-color);
-  font-family: "Consolas", "Monaco", "Courier New", monospace;
+  font-family: var(--text-font-family);
   /* this variable is defined by `typography.fontSize` in resume html layout */
   text-autospace: normal;
 

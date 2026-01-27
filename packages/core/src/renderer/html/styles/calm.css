@@ -53,6 +53,11 @@
 
   /* layout */
   --page-max-width: 900px;
+
+  /* typography */
+  --text-default-font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu,
+    Cantarell, sans-serif;
 }
 
 html {
@@ -62,9 +67,7 @@ html {
 body {
   /* font & text */
   color: var(--text-color-primary);
-  font-family:
-    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu,
-    Cantarell, sans-serif;
+  font-family: var(--text-font-family);
   /* this variable is defined by `typography.fontSize` in resume html layout */
   text-autospace: normal;
 

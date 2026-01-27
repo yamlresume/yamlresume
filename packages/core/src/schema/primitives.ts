@@ -218,6 +218,16 @@ export const EmailSchema = z.email({ message: 'email is invalid.' }).meta({
 export const FluencyOptionSchema = optionSchema(FLUENCY_OPTIONS, 'fluency')
 
 /**
+ * A zod schema for HTML fontFamily option in layout.
+ */
+export const HtmlFontFamilySchema = z.string().meta({
+  title: 'Font Family',
+  description:
+    'A comma-separated list of font families to use. The first available font will be used.',
+  example: 'Monaco, Helvetica',
+})
+
+/**
  * A zod schema for HTML fontSize option in layout.
  */
 export const HtmlFontSizeOptionSchema = optionSchema(

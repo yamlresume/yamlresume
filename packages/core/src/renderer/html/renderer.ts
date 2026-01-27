@@ -83,6 +83,7 @@ export class HtmlRenderer extends Renderer {
 
     const layout = this.resume.layouts?.[this.layoutIndex] as HtmlLayout
     const fontSize = layout?.typography?.fontSize || '16px' // default to 16px
+    const fontFamily = layout?.typography?.fontFamily
 
     const templates = {
       calm: calm,
@@ -94,6 +95,10 @@ export class HtmlRenderer extends Renderer {
     return `<style>
 :root {
   --text-font-size: ${fontSize};
+  --text-font-family: ${showIfNotEmpty(
+    fontFamily,
+    `${fontFamily}, `
+  )}var(--text-default-font-family);
 }
 ${trimCss(reset)}
 ${trimCss(templateCss)}

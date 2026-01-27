@@ -43,6 +43,7 @@ import {
   DegreeOptionSchema,
   EmailSchema,
   FluencyOptionSchema,
+  HtmlFontFamilySchema,
   KeywordsSchema,
   LanguageOptionSchema,
   LatexFontFamilySchema,
@@ -519,6 +520,20 @@ describe('FluencyOptionSchema', () => {
 
   it('should have correct metadata', () => {
     expectSchemaMetadata(FluencyOptionSchema)
+  })
+})
+
+describe('HtmlFontFamilySchema', () => {
+  it('should return a font family string if it is valid', () => {
+    const tests = ['Monaco', 'Monaco, Helvetica', 'Arial, font with spaces']
+
+    for (const fontFamily of tests) {
+      expect(HtmlFontFamilySchema.parse(fontFamily)).toBe(fontFamily)
+    }
+  })
+
+  it('should have correct metadata', () => {
+    expectSchemaMetadata(HtmlFontFamilySchema)
   })
 })
 
