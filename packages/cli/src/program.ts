@@ -28,6 +28,7 @@ import packageJson from '../package.json' with { type: 'json' }
 import {
   createBuildCommand,
   createDevCommand,
+  createDoctorCommand,
   createLanguagesCommand,
   createNewCommand,
   createTemplatesCommand,
@@ -63,6 +64,7 @@ export function createProgram(): Command {
   program.addCommand(createNewCommand())
   program.addCommand(createBuildCommand())
   program.addCommand(createDevCommand())
+  program.addCommand(createDoctorCommand())
   program.addCommand(createLanguagesCommand())
   program.addCommand(createTemplatesCommand())
   program.addCommand(createValidateCommand())
