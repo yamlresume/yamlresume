@@ -139,6 +139,7 @@ $ yamlresume build my-resume.yml
 ◐ Generating resume pdf file with command: xelatex -halt-on-error my-resume.tex...
 ✔ Generated resume pdf file successfully: my-resume.pdf
 ✔ Generated resume markdown file successfully: my-resume.md
+✔ Generated resume html file successfully: my-resume.html
 ```
 
 You can also use the [`dev` command](https://yamlresume.dev/docs/cli#dev) to
@@ -178,18 +179,22 @@ YAMLResume uses [LaTeX](https://www.latex-project.org/) as its default
 typesetting engine, which is the state of the art typesetting system in the
 academic and technical publishing industry.
 
+It also supports [HTML/CSS based layout
+engines](https://yamlresume.dev/docs/layouts/html), which allows you to generate
+web-friendly resumes.
+
 By following a series of [best
 practices](https://docs.ppresume.com/guide?ref=yamlresume), YAMLResume always
 guarantees you **Pixel Perfect** resumes.
-
-In the future we may support other typesetting engines like
-[Typst](https://github.com/typst/typst), HTML/CSS, etc.
 
 ## Ecosystem
 
 YAMLResume provides a set of tools to help you create, convert, and manage your
 resumes more efficiently. These tools include:
 
+- [@yamlresume/playground](https://www.npmjs.com/package/@yamlresume/playground)
+  is a React component for building your own resume editor. It powers the
+  official [Playground](https://yamlresume.dev/playground).
 - [create-yamlresume](https://yamlresume.dev/docs/ecosystem/create-yamlresume)
   makes it easy to start a new YAMLResume project with one command. It
   will scaffold your project directory, install necessary dependencies, and
@@ -215,9 +220,8 @@ Contributions are deeply appreciated! Please read the
 
 ## Roadmap
 
-- [ ] support more font families
 - [ ] more resume templates
-- [ ] more locale languages
+- [ ] more layout engines (typst, docx)
 
 ## Support the Project
 

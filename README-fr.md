@@ -120,6 +120,7 @@ $ yamlresume build my-resume.yml
 ◐ Generating resume pdf file with command: xelatex -halt-on-error my-resume.tex...
 ✔ Generated resume pdf file successfully: my-resume.pdf
 ✔ Generated resume markdown file successfully: my-resume.md
+✔ Generated resume html file successfully: my-resume.html
 ```
 
 Vous pouvez également utiliser la [commande `dev`](https://yamlresume.dev/fr/docs/cli#dev) pour
@@ -159,12 +160,15 @@ composition par défaut, référence dans l’édition académique et technique.
 
 En suivant les [bonnes pratiques de composition d’un CV](https://docs.ppresume.com/guide?ref=yamlresume), YAMLResume garantit des CV **Pixel Perfect**.
 
-À l’avenir, nous pourrions prendre en charge d’autres moteurs comme
-[Typst](https://github.com/typst/typst), HTML/CSS, etc.
+Il supporte également les [moteurs de mise en page basés sur HTML/CSS](https://yamlresume.dev/docs/layouts/html), ce qui vous permet de générer des CV adaptés au web.
 
 ## Écosystème
 
 YAMLResume fournit un ensemble d’outils pour créer, convertir et gérer vos CV plus efficacement. Voici quelques utilitaires clés :
+
+- [@yamlresume/playground](https://www.npmjs.com/package/@yamlresume/playground)
+  est un composant React pour construire votre propre éditeur de CV. Il alimente le
+  [Playground](https://yamlresume.dev/playground) officiel.
 
 - [create-yamlresume](https://yamlresume.dev/fr/docs/ecosystem/create-yamlresume)
   facilite le démarrage d’un projet YAMLResume avec une simple commande. Il
@@ -191,9 +195,8 @@ Toute forme de contribution est grandement appréciée ! Merci de lire le
 
 ## Feuille de route
 
-- [ ] prise en charge de plus de familles de polices
 - [ ] davantage de modèles de CV
-- [ ] davantage de langues locales
+- [ ] davantage de moteurs de mise en page (typst, docx)
 
 ## Soutenir le projet
 

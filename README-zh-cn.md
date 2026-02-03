@@ -111,6 +111,7 @@ $ yamlresume build my-resume.yml
 ◐ Generating resume pdf file with command: xelatex -halt-on-error my-resume.tex...
 ✔ Generated resume pdf file successfully: my-resume.pdf
 ✔ Generated resume markdown file successfully: my-resume.md
+✔ Generated resume html file successfully: my-resume.html
 ```
 
 或使用 [`dev` 命令](https://yamlresume.dev/zh-cn/docs/cli#dev)监听变更并自动构建：
@@ -134,9 +135,11 @@ YAMLResume 提供了[内置 Schema](https://yamlresume.dev/zh-cn/docs/compiler/s
 
 YAMLResume 采用 [LaTeX](https://www.latex-project.org/) 作为默认排版引擎，并遵循[简历排版最佳实践](https://docs.ppresume.com/guide?ref=yamlresume)，确保像素级精致的呈现。
 
-未来我们也可能支持 [Typst](https://github.com/typst/typst)、HTML/CSS 等其他引擎。
+它还支持 [HTML/CSS 布局引擎](https://yamlresume.dev/docs/layouts/html)，让你可以生成对 Web 友好的简历。
 
 ## 生态
+
+- [@yamlresume/playground](https://www.npmjs.com/package/@yamlresume/playground) 是一个用于构建你自己的简历编辑器的 React 组件。它驱动了官方的 [Playground](https://yamlresume.dev/playground)。
 
 - [create-yamlresume](https://yamlresume.dev/zh-cn/docs/ecosystem/create-yamlresume)：一条命令初始化项目并生成示例
 - [json2yamlresume](https://yamlresume.dev/zh-cn/docs/ecosystem/json2yamlresume)：将 JSON Resume 转换为 YAMLResume
@@ -153,9 +156,8 @@ YAMLResume 采用 [LaTeX](https://www.latex-project.org/) 作为默认排版引�
 
 ## 路线图
 
-- [ ] 支持更多字体族
 - [ ] 增加更多简历模板
-- [ ] 增加更多本地化语言
+- [ ] 更多布局引擎 (typst, docx)
 
 ## 支持本项目
 

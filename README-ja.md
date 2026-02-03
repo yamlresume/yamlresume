@@ -115,6 +115,7 @@ $ yamlresume build my-resume.yml
 ◐ Generating resume pdf file with command: xelatex -halt-on-error my-resume.tex...
 ✔ Generated resume pdf file successfully: my-resume.pdf
 ✔ Generated resume markdown file successfully: my-resume.md
+✔ Generated resume html file successfully: my-resume.html
 ```
 
 また、[`dev`コマンド](https://yamlresume.dev/docs/cli#dev)を使用してファイル変更時に履歴書をビルドすることもでき、これにより**モダンなWeb開発のような体験**を提供します：
@@ -149,11 +150,13 @@ YAMLResumeは、学術・技術出版業界における最先端の組版シス�
 
 一方、[履歴書組版のベストプラクティス](https://docs.ppresume.com/guide?ref=yamlresume)に従うことで、YAMLResumeは常に**ピクセルパーフェクト**な履歴書を保証します。
 
-将来的には、[Typst](https://github.com/typst/typst)、HTML/CSSなどの他の組版エンジンもサポートする可能性があります。
+また、[HTML/CSSベースのレイアウトエンジン](https://yamlresume.dev/docs/layouts/html)もサポートしており、Webフレンドリーな履歴書を作成できます。
 
 ## エコシステム
 
 YAMLResumeは、履歴書をより効率的に作成、変換、管理するためのツールセットを提供しています。主要なユーティリティをいくつか紹介します：
+
+- [@yamlresume/playground](https://www.npmjs.com/package/@yamlresume/playground) は、独自の履歴書エディタを構築するためのReactコンポーネントです。公式の[Playground](https://yamlresume.dev/playground)で採用されています。
 
 - [create-yamlresume](https://yamlresume.dev/docs/ecosystem/create-yamlresume)は、ワンライナーコマンドで新しいYAMLResumeプロジェクトを簡単に開始できます。プロジェクトディレクトリを構築し、必要な依存関係をインストールし、サンプル履歴書ファイルを生成するので、すぐに開始できます。`npx create-yamlresume my-resume`や`npm`、`yarn`、`pnpm`、`bun`の類似コマンドで試してください。
 - [json2yamlresume](https://yamlresume.dev/docs/ecosystem/json2yamlresume)は、[JSON Resume](https://jsonresume.org/)ファイルをYAMLResume形式に変換するCLIツールです。
@@ -170,9 +173,8 @@ YAMLResumeは、履歴書をより効率的に作成、変換、管理するた�
 
 ## ロードマップ
 
-- [ ] より多くのフォントファミリーのサポート
 - [ ] より多くの履歴書テンプレート
-- [ ] より多くのロケール言語
+- [ ] より多くのレイアウトエンジン (typst, docx)
 
 ## プロジェクトのサポート
 
