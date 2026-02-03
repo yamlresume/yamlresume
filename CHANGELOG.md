@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.11.0](https://github.com/yamlresume/yamlresume/compare/v0.10.2...v0.11.0) (2026-02-03)
+
+
+### Features
+
+* add German language support ([1727c00](https://github.com/yamlresume/yamlresume/commit/1727c00cb5f4a884f408f4ef31ea4f7f979d89c8))
+* add Japanese language support ([4beb91d](https://github.com/yamlresume/yamlresume/commit/4beb91d86a4e3eef01a3bbda9ed38cbcb819dfa3))
+* add packages/playground ([e1fda8f](https://github.com/yamlresume/yamlresume/commit/e1fda8fe4525bf53b71a91f97fa6581b187f1e13))
+* fontFamily customization for html engine ([d78e198](https://github.com/yamlresume/yamlresume/commit/d78e198bf66fa020dab20bd5680f84b2c2fdc668))
+* fontFamily customization for latex engine ([4c08d31](https://github.com/yamlresume/yamlresume/commit/4c08d31d38f1e4739c18443671533ca71163614f))
+
+
+### Bug Fixes
+
+* rename Turkey with Türkiye ([c340eb5](https://github.com/yamlresume/yamlresume/commit/c340eb57e4231ebb7181e2d8b956002b3a8c2bcd))
+
 ## [0.10.2](https://github.com/yamlresume/yamlresume/compare/v0.10.1...v0.10.2) (2026-01-16)
 
 
