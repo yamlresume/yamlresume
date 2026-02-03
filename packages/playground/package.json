@@ -8,6 +8,15 @@
     "email": "support@yamlresume.com",
     "url": "https://yamlresume.dev"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yamlresume/yamlresume.git",
+    "directory": "packages/playground"
+  },
+  "bugs": {
+    "url": "https://github.com/yamlresume/yamlresume/issues"
+  },
+  "homepage": "https://yamlresume.dev/playground",
   "type": "module",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
