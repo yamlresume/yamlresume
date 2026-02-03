@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.11.1](https://github.com/yamlresume/yamlresume/compare/v0.11.0...v0.11.1) (2026-02-03)
+
+
+### Features
+
+* implement a new `yamlresume doctor` command ([b5c6656](https://github.com/yamlresume/yamlresume/commit/b5c665684897742c5f42c4fb4f1b50eef93caea7))
+
+
+### Bug Fixes
+
+* add license to json2yamlresume and playground ([918f565](https://github.com/yamlresume/yamlresume/commit/918f565ad24456b826a206da71255a617cf7ab58))
+
 ## [0.11.0](https://github.com/yamlresume/yamlresume/compare/v0.10.2...v0.11.0) (2026-02-03)
 
 
