@@ -109,7 +109,6 @@ jobs:
           push-to-registry: true
 
   github-release:
-    needs: [npm, docker]
     runs-on: ubuntu-latest
     permissions:
       contents: write
