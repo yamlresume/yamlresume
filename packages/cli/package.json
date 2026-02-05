@@ -57,7 +57,7 @@
     "consola": "^3.4.2",
     "envinfo": "^7.21.0",
     "execa": "^9.6.1",
-    "extensionless": "^2.0.5",
+    "extensionless": "^2.0.6",
     "font-list": "^2.0.2",
     "lodash-es": "^4.17.21",
     "markdown-table": "^3.0.4",
