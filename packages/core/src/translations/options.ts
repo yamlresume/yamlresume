@@ -1019,7 +1019,7 @@ export function getOptionTranslation<K extends OptionCategory>(
         'Limited Working Proficiency': 'Beperkte werkvaardigheid',
         'Minimum Professional Proficiency':
           'Minimale professionele vaardigheid',
-        'Full Professional Proficiency': 'Volledige professionele vaaridheid',
+        'Full Professional Proficiency': 'Volledige professionele vaardigheid',
         'Native or Bilingual Proficiency':
           'Moedertaal of tweetalige vaardigheid',
       },
