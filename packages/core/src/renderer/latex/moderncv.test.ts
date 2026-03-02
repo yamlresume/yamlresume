@@ -535,6 +535,21 @@ describe('ModerncvBase', () => {
       expect(result).toContain('\\homepage[http]{example.com}')
     })
 
+    it('should render homepage as-is when URL has no http/https scheme', () => {
+      const name = 'John Doe'
+      const url = 'example.com'
+
+      resume.content.basics.name = name
+      resume.content.basics.url = url
+
+      renderer = new ModerncvBankingRenderer(resume, layoutIndex)
+      const result = renderer.renderBasics()
+
+      expect(result).toMatch(new RegExp(`^\\\\name{${name}}{}`))
+      expect(result).toContain('\\homepage{example.com}')
+      expect(result).not.toContain('\\homepage[')
+    })
+
     it('should render name field even name is empty', () => {
       const name = ''
 
