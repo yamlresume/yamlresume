@@ -60,7 +60,7 @@ jobs:
         run: pnpm cli build:prod
 
       - name: Run check
-        if: runner.os == 'Linux'
+        if: runner.os == 'Linux' || runner.os == 'macOS'
         run: pnpm check:ci
 
       - name: Run tests

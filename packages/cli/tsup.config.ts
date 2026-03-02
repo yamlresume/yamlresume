@@ -5,4 +5,5 @@ import { baseConfig } from '../../tsup.config.base'
 export default defineConfig({
   ...baseConfig,
   entry: ['src/cli.ts', 'src/index.ts'],
+  tsconfig: 'tsconfig.build.json',
 })

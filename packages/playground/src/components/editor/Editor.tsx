@@ -421,6 +421,7 @@ export function Editor({
         automaticLayout: true,
         roundedSelection: false,
         smoothScrolling: true,
+        scrollBeyondLastLine: false,
       }}
     />
   )

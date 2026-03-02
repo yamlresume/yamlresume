@@ -137,6 +137,7 @@ describe('Editor', () => {
     expect(options.readOnly).toBe(false)
     expect(options.minimap.enabled).toBe(true)
     expect(options.lineNumbers).toBe('on')
+    expect(options.scrollBeyondLastLine).toBe(false)
   })
 
   it('renders correctly with custom props', () => {
