@@ -22,36 +22,36 @@
  * IN THE SOFTWARE.
  */
 
-import { fireEvent, render, screen } from "@testing-library/react";
-import { describe, expect, it, vi } from "vitest";
-import { getTabIcon, PreviewTab } from "./PreviewTab";
+import { fireEvent, render, screen } from '@testing-library/react'
+import { describe, expect, it, vi } from 'vitest'
+import { getTabIcon, PreviewTab } from './PreviewTab'
 
 describe(getTabIcon, () => {
-  it("renders correct icon for html", () => {
-    const { container } = render(getTabIcon("html"));
-    expect(container.querySelector(".tabler-icon-html")).toBeDefined();
-  });
+  it('renders correct icon for html', () => {
+    const { container } = render(getTabIcon('html'))
+    expect(container.querySelector('.tabler-icon-html')).toBeDefined()
+  })
 
-  it("renders correct icon for markdown", () => {
-    const { container } = render(getTabIcon("markdown"));
-    expect(container.querySelector(".tabler-icon-markdown")).toBeDefined();
-  });
+  it('renders correct icon for markdown', () => {
+    const { container } = render(getTabIcon('markdown'))
+    expect(container.querySelector('.tabler-icon-markdown')).toBeDefined()
+  })
 
-  it("renders correct icon for latex", () => {
-    const { container } = render(getTabIcon("latex"));
-    expect(container.querySelector(".tabler-icon-tex")).toBeDefined();
-  });
+  it('renders correct icon for latex', () => {
+    const { container } = render(getTabIcon('latex'))
+    expect(container.querySelector('.tabler-icon-tex')).toBeDefined()
+  })
 
-  it("renders default icon for unknown engine", () => {
+  it('renders default icon for unknown engine', () => {
     // @ts-expect-error Testing fallback
-    const { container } = render(getTabIcon("unknown"));
-    expect(container.querySelector(".tabler-icon-file-text")).toBeDefined();
-  });
-});
+    const { container } = render(getTabIcon('unknown'))
+    expect(container.querySelector('.tabler-icon-file-text')).toBeDefined()
+  })
+})
 
 describe(PreviewTab, () => {
-  it("renders active tab correctly", () => {
-    const onClick = vi.fn();
+  it('renders active tab correctly', () => {
+    const onClick = vi.fn()
     render(
       <PreviewTab
         active={true}
@@ -59,14 +59,14 @@ describe(PreviewTab, () => {
         engine="html"
         index={0}
         filename="resume"
-      />,
-    );
-    expect(screen.getByRole("tab").getAttribute("aria-selected")).toBe("true");
-    expect(screen.getByTitle("resume.0.html")).toBeDefined();
-  });
+      />
+    )
+    expect(screen.getByRole('tab').getAttribute('aria-selected')).toBe('true')
+    expect(screen.getByTitle('resume.0.html')).toBeDefined()
+  })
 
-  it("renders inactive tab correctly", () => {
-    const onClick = vi.fn();
+  it('renders inactive tab correctly', () => {
+    const onClick = vi.fn()
     render(
       <PreviewTab
         active={false}
@@ -74,14 +74,14 @@ describe(PreviewTab, () => {
         engine="markdown"
         index={1}
         filename="resume"
-      />,
-    );
-    expect(screen.getByRole("tab")).toBeDefined();
-    expect(screen.getByTitle("resume.1.md")).toBeDefined();
-  });
+      />
+    )
+    expect(screen.getByRole('tab')).toBeDefined()
+    expect(screen.getByTitle('resume.1.md')).toBeDefined()
+  })
 
-  it("triggers onClick when clicked", () => {
-    const onClick = vi.fn();
+  it('triggers onClick when clicked', () => {
+    const onClick = vi.fn()
     render(
       <PreviewTab
         active={false}
@@ -89,14 +89,14 @@ describe(PreviewTab, () => {
         engine="latex"
         index={2}
         filename="resume"
-      />,
-    );
-    fireEvent.click(screen.getByRole("tab"));
-    expect(onClick).toHaveBeenCalled();
-  });
+      />
+    )
+    fireEvent.click(screen.getByRole('tab'))
+    expect(onClick).toHaveBeenCalled()
+  })
 
-  it("displays custom filename", () => {
-    const onClick = vi.fn();
+  it('displays custom filename', () => {
+    const onClick = vi.fn()
     render(
       <PreviewTab
         active={true}
@@ -104,9 +104,9 @@ describe(PreviewTab, () => {
         engine="html"
         index={0}
         filename="my-cv"
-      />,
-    );
-    expect(screen.getByTitle("my-cv.0.html")).toBeDefined();
-    expect(screen.getByText("my-cv.0.html")).toBeDefined();
-  });
-});
+      />
+    )
+    expect(screen.getByTitle('my-cv.0.html')).toBeDefined()
+    expect(screen.getByText('my-cv.0.html')).toBeDefined()
+  })
+})
