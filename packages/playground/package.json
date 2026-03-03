@@ -32,7 +32,7 @@
     "LICENSE"
   ],
   "scripts": {
-    "build": "tsup  --dts",
+    "build": "tsup --dts",
     "build:prod": "tsup --dts --minify --sourcemap",
     "build:watch": "tsup --watch",
     "build:clean": "rm -rf dist",
