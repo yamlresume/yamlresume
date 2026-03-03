@@ -22,6 +22,9 @@
  * IN THE SOFTWARE.
  */
 
+/**
+ * Tooltip label strings for each action button in the playground toolbar.
+ */
 export interface PlaygroundTooltipMessages {
   copy: string
   undo: string
@@ -32,14 +35,25 @@ export interface PlaygroundTooltipMessages {
   download: string
 }
 
+/**
+ * All user-facing messages consumed by the playground component.
+ */
 export interface PlaygroundMessages {
   tooltips: PlaygroundTooltipMessages
 }
 
+/**
+ * Partial overrides for {@link PlaygroundMessages}, allowing consumers to
+ * customize individual strings without providing the full message object.
+ */
 export interface PlaygroundMessageOverrides {
   tooltips?: Partial<PlaygroundTooltipMessages>
 }
 
+/**
+ * Default English messages used by the playground when no overrides are
+ * provided.
+ */
 export const DEFAULT_PLAYGROUND_MESSAGES: PlaygroundMessages = {
   tooltips: {
     copy: 'Copy',
