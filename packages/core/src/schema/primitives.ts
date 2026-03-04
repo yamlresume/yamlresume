@@ -36,6 +36,7 @@ import {
   LATEX_PAPER_SIZE_OPTIONS,
   LATEX_TEMPLATE_OPTIONS,
   LEVEL_OPTIONS,
+  LINE_SPACING_OPTIONS,
   LOCALE_LANGUAGE_OPTIONS,
   NETWORK_OPTIONS,
   type ORDERABLE_SECTION_IDS,
@@ -55,6 +56,7 @@ type Options =
   | typeof LATEX_TEMPLATE_OPTIONS
   | typeof FLUENCY_OPTIONS
   | typeof LANGUAGE_OPTIONS
+  | typeof LINE_SPACING_OPTIONS
   | typeof LOCALE_LANGUAGE_OPTIONS
   | typeof LEVEL_OPTIONS
   | typeof NETWORK_OPTIONS
@@ -304,6 +306,20 @@ export const PaperSizeOptionSchema = optionSchema(
 export const LatexTemplateOptionSchema = optionSchema(
   LATEX_TEMPLATE_OPTIONS,
   'LaTeX template'
+)
+
+/**
+ * A zod schema for a line spacing option.
+ *
+ * Line spacing options are semantic values that map to engine-specific values:
+ * - tight: Compact spacing for fitting more content
+ * - normal: Balanced readability (default)
+ * - relaxed: Comfortable reading with more breathing room
+ * - loose: Very spacious layout
+ */
+export const LineSpacingOptionSchema = optionSchema(
+  LINE_SPACING_OPTIONS,
+  'line spacing'
 )
 
 /**

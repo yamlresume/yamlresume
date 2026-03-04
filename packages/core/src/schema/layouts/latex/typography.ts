@@ -28,6 +28,7 @@ import { joinNonEmptyString } from '@/utils'
 import {
   LatexFontFamilySchema,
   LatexFontSizeOptionSchema,
+  LineSpacingOptionSchema,
 } from '../../primitives'
 import { nullifySchema } from '../../utils'
 
@@ -61,6 +62,7 @@ export const LatexTypographySchema = z.object({
     .object({
       fontSize: nullifySchema(LatexFontSizeOptionSchema),
       fontFamily: nullifySchema(LatexFontFamilySchema),
+      lineSpacing: nullifySchema(LineSpacingOptionSchema),
       ...LinksSchema.shape,
     })
     .nullish()

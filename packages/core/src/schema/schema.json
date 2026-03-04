@@ -2207,7 +2207,7 @@
                   },
                   "typography": {
                     "title": "Typography",
-                    "description": "The typography section contains font settings, including font size options for HTML output.",
+                    "description": "The typography section contains font settings, including font size and line spacing options for HTML output.",
                     "anyOf": [
                       {
                         "type": "object",
@@ -2244,6 +2244,27 @@
                                 "description": "A comma-separated list of font families to use. The first available font will be used or `null`.",
                                 "example": "Monaco, Helvetica",
                                 "type": "string"
+                              },
+                              {
+                                "type": "null"
+                              }
+                            ]
+                          },
+                          "lineSpacing": {
+                            "title": "[optional] Line spacing option",
+                            "description": "A predefined option from the available line spacing choices or `null`.",
+                            "anyOf": [
+                              {
+                                "title": "[optional] Line spacing option",
+                                "description": "A predefined option from the available line spacing choices or `null`.",
+                                "type": "string",
+                                "enum": [
+                                  "tight",
+                                  "snug",
+                                  "normal",
+                                  "relaxed",
+                                  "loose"
+                                ]
                               },
                               {
                                 "type": "null"
@@ -2797,6 +2818,27 @@
                                 "description": "A comma-separated list of font families to use. The first available font will be used or `null`.",
                                 "example": "Monaco, Helvetica",
                                 "type": "string"
+                              },
+                              {
+                                "type": "null"
+                              }
+                            ]
+                          },
+                          "lineSpacing": {
+                            "title": "[optional] Line spacing option",
+                            "description": "A predefined option from the available line spacing choices or `null`.",
+                            "anyOf": [
+                              {
+                                "title": "[optional] Line spacing option",
+                                "description": "A predefined option from the available line spacing choices or `null`.",
+                                "type": "string",
+                                "enum": [
+                                  "tight",
+                                  "snug",
+                                  "normal",
+                                  "relaxed",
+                                  "loose"
+                                ]
                               },
                               {
                                 "type": "null"

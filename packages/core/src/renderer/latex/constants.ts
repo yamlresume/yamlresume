@@ -22,35 +22,35 @@
  * IN THE SOFTWARE.
  */
 
-import { z } from 'zod'
-
-import { joinNonEmptyString } from '@/utils'
-import {
-  HtmlFontFamilySchema,
-  HtmlFontSizeOptionSchema,
-  LineSpacingOptionSchema,
-} from '../../primitives'
-import { nullifySchema } from '../../utils'
+import type { LineSpacing } from '@/models'
 
 /**
- * A zod schema for typography settings.
+ * Default line spacing for LaTeX output.
  */
-export const HtmlTypographySchema = z.object({
-  typography: z
-    .object({
-      fontSize: nullifySchema(HtmlFontSizeOptionSchema),
-      fontFamily: nullifySchema(HtmlFontFamilySchema),
-      lineSpacing: nullifySchema(LineSpacingOptionSchema),
-    })
-    .nullish()
-    .meta({
-      title: 'Typography',
-      description: joinNonEmptyString(
-        [
-          'The typography section contains font settings,',
-          'including font size and line spacing options for HTML output.',
-        ],
-        ' '
-      ),
-    }),
-})
+export const DEFAULT_LINE_SPACING: LineSpacing = 'normal'
+
+/**
+ * Mapping of semantic line spacing options to LaTeX setstretch values.
+ *
+ * Note: These values differ from Tailwind CSS's leading scale because LaTeX
+ * and HTML handle line spacing differently. LaTeX's `\setstretch{}` command
+ * applies a multiplier to the baseline skip, which has different visual
+ * results compared to CSS's `line-height` property.
+ *
+ * These values are calibrated to produce visually similar results to their
+ * HTML counterparts:
+ * - `tight`: 0.95 - Compact spacing for dense content
+ * - `snug`: 1.0 - Slightly more space than tight
+ * - `normal`: 1.125 - Default balanced spacing
+ * - `relaxed`: 1.25 - More breathing room between lines
+ * - `loose`: 1.45 - Maximum spacing for readability
+ *
+ * Used with `\usepackage{setspace}` and `\setstretch{}` command.
+ */
+export const LINE_SPACING_MAP: Record<LineSpacing, number> = {
+  tight: 0.95,
+  snug: 1.0,
+  normal: 1.125,
+  relaxed: 1.25,
+  loose: 1.45,
+}

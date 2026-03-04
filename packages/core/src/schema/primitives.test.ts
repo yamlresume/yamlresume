@@ -33,6 +33,7 @@ import {
   LATEX_FONTSPEC_NUMBERS_OPTIONS,
   LATEX_TEMPLATE_OPTIONS,
   LEVEL_OPTIONS,
+  LINE_SPACING_OPTIONS,
   LOCALE_LANGUAGE_OPTIONS,
   NETWORK_OPTIONS,
 } from '@/models'
@@ -51,6 +52,7 @@ import {
   LatexFontspecNumbersOptionSchema,
   LatexTemplateOptionSchema,
   LevelOptionSchema,
+  LineSpacingOptionSchema,
   LocaleLanguageOptionSchema,
   NameSchema,
   NetworkOptionSchema,
@@ -946,5 +948,61 @@ describe('UrlSchema', () => {
 
   it('should have correct metadata', () => {
     expectSchemaMetadata(UrlSchema)
+  })
+})
+
+describe('LineSpacingOptionSchema', () => {
+  it('should return a line spacing option if it is valid', () => {
+    for (const lineSpacing of LINE_SPACING_OPTIONS) {
+      expect(LineSpacingOptionSchema.parse(lineSpacing)).toBe(lineSpacing)
+    }
+  })
+
+  it('should throw an error if the line spacing option is invalid', () => {
+    const invalidLineSpacingMessage = optionSchemaMessage(
+      LINE_SPACING_OPTIONS,
+      'line spacing'
+    )
+
+    const tests = [
+      {
+        lineSpacing: 'invalid',
+        error: {
+          errors: [invalidLineSpacingMessage],
+        },
+      },
+      {
+        lineSpacing: '1.5',
+        error: {
+          errors: [invalidLineSpacingMessage],
+        },
+      },
+      {
+        lineSpacing: 'single',
+        error: {
+          errors: [invalidLineSpacingMessage],
+        },
+      },
+      {
+        lineSpacing: 'double',
+        error: {
+          errors: [invalidLineSpacingMessage],
+        },
+      },
+      {
+        lineSpacing: undefined,
+        error: {
+          errors: ['line spacing option is required.'],
+        },
+      },
+    ]
+
+    for (const { lineSpacing, error } of tests) {
+      validateZodErrors(LineSpacingOptionSchema, lineSpacing, error)
+    }
+  })
+
+  it('should have correct metadata', () => {
+    expectSchemaMetadata(LineSpacingOptionSchema)
   })
 })

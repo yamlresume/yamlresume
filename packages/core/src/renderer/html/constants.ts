@@ -22,35 +22,29 @@
  * IN THE SOFTWARE.
  */
 
-import { z } from 'zod'
-
-import { joinNonEmptyString } from '@/utils'
-import {
-  HtmlFontFamilySchema,
-  HtmlFontSizeOptionSchema,
-  LineSpacingOptionSchema,
-} from '../../primitives'
-import { nullifySchema } from '../../utils'
+import type { LineSpacing } from '@/models'
 
 /**
- * A zod schema for typography settings.
+ * Default line spacing for HTML output.
  */
-export const HtmlTypographySchema = z.object({
-  typography: z
-    .object({
-      fontSize: nullifySchema(HtmlFontSizeOptionSchema),
-      fontFamily: nullifySchema(HtmlFontFamilySchema),
-      lineSpacing: nullifySchema(LineSpacingOptionSchema),
-    })
-    .nullish()
-    .meta({
-      title: 'Typography',
-      description: joinNonEmptyString(
-        [
-          'The typography section contains font settings,',
-          'including font size and line spacing options for HTML output.',
-        ],
-        ' '
-      ),
-    }),
-})
+export const DEFAULT_LINE_SPACING: LineSpacing = 'normal'
+
+/**
+ * Mapping of semantic line spacing options to CSS line-height values.
+ *
+ * These values follow Tailwind CSS's leading scale exactly:
+ * - `tight`: 1.25 - Compact spacing for dense content
+ * - `snug`: 1.375 - Slightly more space than tight
+ * - `normal`: 1.5 - Default balanced spacing
+ * - `relaxed`: 1.625 - More breathing room between lines
+ * - `loose`: 2 - Maximum spacing for readability
+ *
+ * @see {@link https://tailwindcss.com/docs/line-height}
+ */
+export const LINE_SPACING_MAP: Record<LineSpacing, number> = {
+  tight: 1.25,
+  snug: 1.375,
+  normal: 1.5,
+  relaxed: 1.625,
+  loose: 2,
+}

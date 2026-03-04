@@ -26,6 +26,7 @@ import type {
   LatexFontSize,
   LatexFontspecNumbers,
   LatexTemplate,
+  LineSpacing,
 } from '../options'
 import type { Margins, PaperSize, Sections } from './common'
 
@@ -45,6 +46,8 @@ type LatexTypography = {
   fontSize?: LatexFontSize
   /** A comma-separated list of font families to use. */
   fontFamily?: string
+  /** Line spacing for the document (e.g., "tight", "normal", "relaxed"). */
+  lineSpacing?: LineSpacing
   /** Link styling settings. */
   links?: Links
 }

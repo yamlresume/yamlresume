@@ -37,6 +37,7 @@ import {
   showIfNotEmpty,
 } from '@/utils'
 import { Renderer } from '../base'
+import { DEFAULT_LINE_SPACING, LINE_SPACING_MAP } from './constants'
 import { type ModerncvStyle, normalizeUnit } from './preamble'
 
 /**
@@ -292,6 +293,21 @@ ${fontList
   }
 
   /**
+   * Render the line spacing configuration using the setspace package.
+   *
+   * @returns The LaTeX code for line spacing configuration
+   */
+  private renderLineSpacingConfig(): string {
+    const layout = this.resume.layouts?.[this.layoutIndex] as LatexLayout
+    const lineSpacing = layout?.typography?.lineSpacing || DEFAULT_LINE_SPACING
+    const stretchValue = LINE_SPACING_MAP[lineSpacing]
+
+    return `%% line spacing
+\\usepackage{setspace}
+\\setstretch{${stretchValue}}`
+  }
+
+  /**
    * Render the preamble for the resume.
    *
    * @returns The LaTeX code for the preamble
@@ -323,6 +339,9 @@ ${fontList
       // CTeX needs to load after fontspec because we use `\IfFontExistsTF` to
       // set the CJK font manually if the required Google Noto font exists
       this.renderCTeXConfig(),
+
+      // line spacing
+      this.renderLineSpacingConfig(),
     ])
   }
 

@@ -38,6 +38,7 @@ import {
   showIfNotEmpty,
 } from '@/utils'
 import { Renderer } from '../base'
+import { DEFAULT_LINE_SPACING, LINE_SPACING_MAP } from './constants'
 import calm from './styles/calm.css'
 import reset from './styles/reset.css'
 import vscode from './styles/vscode.css'
@@ -84,6 +85,8 @@ export class HtmlRenderer extends Renderer {
     const layout = this.resume.layouts?.[this.layoutIndex] as HtmlLayout
     const fontSize = layout?.typography?.fontSize || '16px' // default to 16px
     const fontFamily = layout?.typography?.fontFamily
+    const lineSpacing = layout?.typography?.lineSpacing || DEFAULT_LINE_SPACING
+    const lineHeight = LINE_SPACING_MAP[lineSpacing]
 
     const templates = {
       calm: calm,
@@ -99,6 +102,7 @@ export class HtmlRenderer extends Renderer {
     fontFamily,
     `${fontFamily}, `
   )}var(--text-default-font-family);
+  --line-height: ${lineHeight};
 }
 ${trimCss(reset)}
 ${trimCss(templateCss)}

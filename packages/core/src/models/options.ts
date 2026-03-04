@@ -83,6 +83,26 @@ export const LATEX_TEMPLATE_OPTIONS = [
 ] as const
 
 /**
+ * Defines line spacing options (shared across all engines).
+ *
+ * These semantic values follow Tailwind CSS's leading scale exactly:
+ * - tight: Compact spacing for fitting more content
+ * - snug: Slightly more space than tight
+ * - normal: Balanced readability (default)
+ * - relaxed: Comfortable reading with more breathing room
+ * - loose: Very spacious layout (generally not recommended)
+ *
+ * @see {@link https://tailwindcss.com/docs/line-height}
+ */
+export const LINE_SPACING_OPTIONS = [
+  'tight',
+  'snug',
+  'normal',
+  'relaxed',
+  'loose',
+] as const
+
+/**
  * Defines common world languages.
  *
  * This list contains the most used languages in the world.

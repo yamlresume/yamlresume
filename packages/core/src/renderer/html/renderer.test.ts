@@ -30,6 +30,7 @@ import {
   type HtmlLayout,
   type Resume,
 } from '@/models'
+import { LINE_SPACING_MAP } from './constants'
 import { HtmlRenderer } from './renderer'
 
 describe('HtmlRenderer', () => {
@@ -253,6 +254,46 @@ describe('HtmlRenderer', () => {
         expect(result).toContain(
           `--text-font-family: ${fontFamily}, var(--text-default-font-family)`
         )
+      })
+    })
+
+    describe('typography.lineSpacing', () => {
+      it('should use default line spacing (normal = 1.5) when typography is empty', () => {
+        const resume = cloneDeep(DEFAULT_RESUME)
+        const htmlLayout = resume.layouts[layoutIndex] as HtmlLayout
+        htmlLayout.typography = undefined
+
+        const renderer = new HtmlRenderer(resume, layoutIndex)
+        const result = renderer.renderPreamble()
+
+        expect(result).toContain('--line-height: 1.5')
+      })
+
+      it('should use default line spacing when lineSpacing is not provided', () => {
+        const resume = cloneDeep(DEFAULT_RESUME)
+        const htmlLayout = resume.layouts[layoutIndex] as HtmlLayout
+        htmlLayout.typography = { fontSize: '14px' }
+
+        const renderer = new HtmlRenderer(resume, layoutIndex)
+        const result = renderer.renderPreamble()
+
+        expect(result).toContain('--line-height: 1.5')
+      })
+
+      it('should use provided line spacing when lineSpacing is set', () => {
+        for (const [spacing, value] of Object.entries(LINE_SPACING_MAP)) {
+          const resume = cloneDeep(DEFAULT_RESUME)
+          const htmlLayout = resume.layouts[layoutIndex] as HtmlLayout
+          htmlLayout.typography = {
+            ...htmlLayout.typography,
+            lineSpacing: spacing as keyof typeof LINE_SPACING_MAP,
+          }
+
+          const renderer = new HtmlRenderer(resume, layoutIndex)
+          const result = renderer.renderPreamble()
+
+          expect(result).toContain(`--line-height: ${value}`)
+        }
       })
     })
 
