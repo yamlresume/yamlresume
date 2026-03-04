@@ -28,6 +28,13 @@ import { describe, expect, it, vi } from 'vitest'
 
 import { EditorPanel } from './EditorPanel'
 
+const tooltips = {
+  copy: 'Copy',
+  undo: 'Undo',
+  redo: 'Redo',
+  clear: 'Clear',
+}
+
 // Mock dependencies
 vi.mock('./ResumeEditor', () => ({
   ResumeEditor: (props: unknown) => ResumeEditorMock(props),
@@ -41,7 +48,13 @@ vi.mock('../ui/Panel', () => ({
 
 describe(EditorPanel, () => {
   it('renders editor correctly', () => {
-    render(<EditorPanel value="test content" onChange={vi.fn()} />)
+    render(
+      <EditorPanel
+        value="test content"
+        onChange={vi.fn()}
+        tooltips={tooltips}
+      />
+    )
 
     expect(screen.getByText('resume.yaml')).toBeDefined()
     expect(screen.getByTestId('resume-editor-mock')).toBeDefined()
@@ -81,7 +94,11 @@ describe(EditorPanel, () => {
     })
 
     const { container } = render(
-      <EditorPanel value="test content" onChange={vi.fn()} />
+      <EditorPanel
+        value="test content"
+        onChange={vi.fn()}
+        tooltips={tooltips}
+      />
     )
 
     // 1. Undo

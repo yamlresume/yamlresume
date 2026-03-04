@@ -22,17 +22,46 @@
  * IN THE SOFTWARE.
  */
 
-// Components
-export * from './components'
+/**
+ * Tooltip label strings for each action button in the playground toolbar.
+ */
+export interface PlaygroundTooltipMessages {
+  copy: string
+  undo: string
+  redo: string
+  clear: string
+  print: string
+  openInNewTab: string
+  download: string
+}
 
-// Constants
-export * from './constants'
+/**
+ * All user-facing messages consumed by the playground component.
+ */
+export interface PlaygroundMessages {
+  tooltips: PlaygroundTooltipMessages
+}
 
-// Hooks
-export * from './hooks'
+/**
+ * Partial overrides for {@link PlaygroundMessages}, allowing consumers to
+ * customize individual strings without providing the full message object.
+ */
+export interface PlaygroundMessageOverrides {
+  tooltips?: Partial<PlaygroundTooltipMessages>
+}
 
-// Messages
-export * from './messages'
-
-// Utils
-export * from './utils'
+/**
+ * Default English messages used by the playground when no overrides are
+ * provided.
+ */
+export const DEFAULT_PLAYGROUND_MESSAGES: PlaygroundMessages = {
+  tooltips: {
+    copy: 'Copy',
+    undo: 'Undo',
+    redo: 'Redo',
+    clear: 'Clear',
+    print: 'Print',
+    openInNewTab: 'Open in New Tab',
+    download: 'Download',
+  },
+}
