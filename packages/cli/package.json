@@ -59,7 +59,7 @@
     "execa": "^9.6.1",
     "extensionless": "^2.0.5",
     "font-list": "^2.0.2",
-    "lodash-es": "^4.17.21",
+    "lodash-es": "^4.17.23",
     "markdown-table": "^3.0.4",
     "tslib": "^2.8.1",
     "which": "^6.0.0",
