@@ -187,6 +187,7 @@ export function DateSchema(date: string) {
       title: capitalize(startCase(date)),
       description: 'A valid date string that can be parsed by `Date.parse`.',
       examples: [
+        '2025',
         '2025-01-01',
         'Jul 2025',
         'July 3, 2025',

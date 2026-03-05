@@ -219,6 +219,7 @@
                 "title": "Start date",
                 "description": "A valid date string that can be parsed by `Date.parse`.",
                 "examples": [
+                  "2025",
                   "2025-01-01",
                   "Jul 2025",
                   "July 3, 2025",
@@ -285,6 +286,7 @@
                 "title": "[optional] End date",
                 "description": "A valid date string that can be parsed by `Date.parse` or `null`.",
                 "examples": [
+                  "2025",
                   "2025-01-01",
                   "Jul 2025",
                   "July 3, 2025",
@@ -295,6 +297,7 @@
                     "title": "[optional] End date",
                     "description": "A valid date string that can be parsed by `Date.parse` or `null`.",
                     "examples": [
+                      "2025",
                       "2025-01-01",
                       "Jul 2025",
                       "July 3, 2025",
@@ -438,6 +441,7 @@
                     "title": "[optional] Date",
                     "description": "A valid date string that can be parsed by `Date.parse` or `null`.",
                     "examples": [
+                      "2025",
                       "2025-01-01",
                       "Jul 2025",
                       "July 3, 2025",
@@ -448,6 +452,7 @@
                         "title": "[optional] Date",
                         "description": "A valid date string that can be parsed by `Date.parse` or `null`.",
                         "examples": [
+                          "2025",
                           "2025-01-01",
                           "Jul 2025",
                           "July 3, 2025",
@@ -538,6 +543,7 @@
                     "title": "[optional] Date",
                     "description": "A valid date string that can be parsed by `Date.parse` or `null`.",
                     "examples": [
+                      "2025",
                       "2025-01-01",
                       "Jul 2025",
                       "July 3, 2025",
@@ -548,6 +554,7 @@
                         "title": "[optional] Date",
                         "description": "A valid date string that can be parsed by `Date.parse` or `null`.",
                         "examples": [
+                          "2025",
                           "2025-01-01",
                           "Jul 2025",
                           "July 3, 2025",
@@ -1343,6 +1350,7 @@
                     "title": "Start date",
                     "description": "A valid date string that can be parsed by `Date.parse`.",
                     "examples": [
+                      "2025",
                       "2025-01-01",
                       "Jul 2025",
                       "July 3, 2025",
@@ -1385,6 +1393,7 @@
                     "title": "[optional] End date",
                     "description": "A valid date string that can be parsed by `Date.parse` or `null`.",
                     "examples": [
+                      "2025",
                       "2025-01-01",
                       "Jul 2025",
                       "July 3, 2025",
@@ -1395,6 +1404,7 @@
                         "title": "[optional] End date",
                         "description": "A valid date string that can be parsed by `Date.parse` or `null`.",
                         "examples": [
+                          "2025",
                           "2025-01-01",
                           "Jul 2025",
                           "July 3, 2025",
@@ -1536,6 +1546,7 @@
                     "title": "[optional] Release date",
                     "description": "A valid date string that can be parsed by `Date.parse` or `null`.",
                     "examples": [
+                      "2025",
                       "2025-01-01",
                       "Jul 2025",
                       "July 3, 2025",
@@ -1546,6 +1557,7 @@
                         "title": "[optional] Release date",
                         "description": "A valid date string that can be parsed by `Date.parse` or `null`.",
                         "examples": [
+                          "2025",
                           "2025-01-01",
                           "Jul 2025",
                           "July 3, 2025",
@@ -1872,6 +1884,7 @@
                     "title": "Start date",
                     "description": "A valid date string that can be parsed by `Date.parse`.",
                     "examples": [
+                      "2025",
                       "2025-01-01",
                       "Jul 2025",
                       "July 3, 2025",
@@ -1888,6 +1901,7 @@
                     "title": "[optional] End date",
                     "description": "A valid date string that can be parsed by `Date.parse` or `null`.",
                     "examples": [
+                      "2025",
                       "2025-01-01",
                       "Jul 2025",
                       "July 3, 2025",
@@ -1898,6 +1912,7 @@
                         "title": "[optional] End date",
                         "description": "A valid date string that can be parsed by `Date.parse` or `null`.",
                         "examples": [
+                          "2025",
                           "2025-01-01",
                           "Jul 2025",
                           "July 3, 2025",
@@ -1994,6 +2009,7 @@
                     "title": "Start date",
                     "description": "A valid date string that can be parsed by `Date.parse`.",
                     "examples": [
+                      "2025",
                       "2025-01-01",
                       "Jul 2025",
                       "July 3, 2025",
@@ -2010,6 +2026,7 @@
                     "title": "[optional] End date",
                     "description": "A valid date string that can be parsed by `Date.parse` or `null`.",
                     "examples": [
+                      "2025",
                       "2025-01-01",
                       "Jul 2025",
                       "July 3, 2025",
@@ -2020,6 +2037,7 @@
                         "title": "[optional] End date",
                         "description": "A valid date string that can be parsed by `Date.parse` or `null`.",
                         "examples": [
+                          "2025",
                           "2025-01-01",
                           "Jul 2025",
                           "July 3, 2025",
