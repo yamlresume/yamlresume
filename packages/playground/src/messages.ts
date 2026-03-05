@@ -22,35 +22,46 @@
  * IN THE SOFTWARE.
  */
 
-import { z } from 'zod'
-
-import { joinNonEmptyString } from '@/utils'
-import {
-  HtmlFontFamilySchema,
-  HtmlFontSizeOptionSchema,
-  LineSpacingOptionSchema,
-} from '../../primitives'
-import { nullifySchema } from '../../utils'
+/**
+ * Tooltip label strings for each action button in the playground toolbar.
+ */
+export interface PlaygroundTooltipMessages {
+  copy: string
+  undo: string
+  redo: string
+  clear: string
+  print: string
+  openInNewTab: string
+  download: string
+}
 
 /**
- * A zod schema for typography settings.
+ * All user-facing messages consumed by the playground component.
  */
-export const HtmlTypographySchema = z.object({
-  typography: z
-    .object({
-      fontSize: nullifySchema(HtmlFontSizeOptionSchema),
-      fontFamily: nullifySchema(HtmlFontFamilySchema),
-      lineSpacing: nullifySchema(LineSpacingOptionSchema),
-    })
-    .nullish()
-    .meta({
-      title: 'Typography',
-      description: joinNonEmptyString(
-        [
-          'The typography section contains font settings,',
-          'including font size and line spacing options for HTML output.',
-        ],
-        ' '
-      ),
-    }),
-})
+export interface PlaygroundMessages {
+  tooltips: PlaygroundTooltipMessages
+}
+
+/**
+ * Partial overrides for {@link PlaygroundMessages}, allowing consumers to
+ * customize individual strings without providing the full message object.
+ */
+export interface PlaygroundMessageOverrides {
+  tooltips?: Partial<PlaygroundTooltipMessages>
+}
+
+/**
+ * Default English messages used by the playground when no overrides are
+ * provided.
+ */
+export const DEFAULT_PLAYGROUND_MESSAGES: PlaygroundMessages = {
+  tooltips: {
+    copy: 'Copy',
+    undo: 'Undo',
+    redo: 'Redo',
+    clear: 'Clear',
+    print: 'Print',
+    openInNewTab: 'Open in New Tab',
+    download: 'Download',
+  },
+}

@@ -47,10 +47,6 @@
   --font-size-xl: 1.25rem;
   --font-size-xxl: 2.5rem;
 
-  /* line heights */
-  --line-height-base: 1.5;
-  --line-height-tight: 1.375;
-
   /* layout */
   --page-max-width: 900px;
 
@@ -72,7 +68,7 @@ body {
   text-autospace: normal;
 
   /* layout */
-  line-height: var(--line-height-base);
+  line-height: var(--line-height);
   max-width: var(--page-max-width);
   margin: 0 auto;
   padding: var(--spacing-xxxl) var(--spacing-xxl) var(--spacing-xxl);
@@ -172,11 +168,6 @@ a:hover {
 .resume-summary-content ol {
   padding-left: var(--spacing-lg);
   list-style-type: circle;
-}
-
-.resume-entry-summary li,
-.resume-summary-content li {
-  line-height: var(--line-height-tight);
 }
 
 /* labeled lists (courses, keywords, etc.) */

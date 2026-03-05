@@ -1,6 +1,6 @@
 {
   "name": "yamlresume",
-  "version": "0.11.1",
+  "version": "0.11.2",
   "description": "The CLI interface for YAMLResume's engine",
   "license": "MIT",
   "author": {
@@ -50,16 +50,16 @@
   },
   "dependencies": {
     "@yamlresume/core": "workspace:*",
-    "chalk": "^5.6.0",
+    "chalk": "^5.6.2",
     "chokidar": "^4.0.3",
     "coalescifn": "^0.1.1",
     "commander": "^14.0.1",
     "consola": "^3.4.2",
     "envinfo": "^7.21.0",
     "execa": "^9.6.1",
-    "extensionless": "^2.0.5",
+    "extensionless": "^2.0.6",
     "font-list": "^2.0.2",
-    "lodash-es": "^4.17.21",
+    "lodash-es": "^4.17.23",
     "markdown-table": "^3.0.4",
     "tslib": "^2.8.1",
     "which": "^6.0.0",

@@ -86,6 +86,7 @@ The main split-view component.
 | `yaml`     | `string`                  | `undefined` | The YAML content to display/edit. Defaults to a sample resume. |
 | `onChange` | `(value: string) => void` | `undefined` | Callback fired when editor content changes.                    |
 | `filename` | `string`                  | `undefined` | The filename to display in the editor.                         |
+| `messages` | `PlaygroundMessageOverrides` | `undefined` | Optional localized tooltip messages for toolbar actions.       |
 
 #### `<ResumeEditor />`
 

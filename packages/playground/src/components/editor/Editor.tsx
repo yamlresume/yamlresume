@@ -377,7 +377,6 @@ export interface EditorProps {
   /** Whether to show line numbers. Defaults to true. */
   lineNumbers?: boolean
   /** Whether to show the minimap. Defaults to true. */
-  /** Whether to show the minimap. Defaults to true. */
   minimap?: boolean
   /** Callback triggered when the editor is mounted. */
   onMount?: OnMount

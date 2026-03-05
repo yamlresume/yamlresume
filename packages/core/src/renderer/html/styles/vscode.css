@@ -58,10 +58,6 @@
   --font-size-xl: 1.25rem;
   --font-size-xxl: 2rem;
 
-  /* line heights */
-  --line-height-base: 1.5;
-  --line-height-tight: 1.2;
-
   /* layout */
   --page-max-width: 900px;
 
@@ -83,7 +79,7 @@ body {
   text-autospace: normal;
 
   /* layout */
-  line-height: var(--line-height-base);
+  line-height: var(--line-height);
   max-width: var(--page-max-width);
   margin: 0 auto;
   padding: var(--spacing-xxxl) var(--spacing-xxl) var(--spacing-xxl);

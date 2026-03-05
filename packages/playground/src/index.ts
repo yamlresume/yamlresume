@@ -31,5 +31,8 @@ export * from './constants'
 // Hooks
 export * from './hooks'
 
+// Messages
+export * from './messages'
+
 // Utils
 export * from './utils'

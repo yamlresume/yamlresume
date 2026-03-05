@@ -137,6 +137,20 @@ describe(localizeDate, () => {
     }
   })
 
+  it('should return year-only input as-is', () => {
+    const tests = [
+      { date: '2020', language: 'en', expected: '2020' },
+      { date: '1999', language: 'en', expected: '1999' },
+      { date: '2025', language: 'zh-hans', expected: '2025' },
+      { date: '2016', language: 'es', expected: '2016' },
+      { date: '2016', language: 'ja', expected: '2016' },
+    ]
+
+    for (const { date, language, expected } of tests) {
+      expect(localizeDate(date, language)).toEqual(expected)
+    }
+  })
+
   it('should return original date string for invalid dates', () => {
     const tests = [
       {
@@ -331,6 +345,90 @@ describe(getDateRange, () => {
         endDate: 'Jan 1, 2018',
         language: 'en',
         expected: '',
+      },
+    ]
+
+    for (const { startDate, endDate, language, expected } of tests) {
+      expect(getDateRange(startDate, endDate, language)).toEqual(expected)
+    }
+  })
+
+  it('should handle year-only dates', () => {
+    const tests: {
+      startDate: string
+      endDate: string
+      language: LocaleLanguage
+      expected: string
+    }[] = [
+      // Year-only start and end dates
+      {
+        startDate: '2016',
+        endDate: '2018',
+        language: 'en',
+        expected: '2016–2018',
+      },
+      {
+        startDate: '2016',
+        endDate: '2018',
+        language: 'zh-hans',
+        expected: '2016–2018',
+      },
+      {
+        startDate: '2016',
+        endDate: '2018',
+        language: 'ja',
+        expected: '2016～2018',
+      },
+      // Year-only start with Present
+      {
+        startDate: '2020',
+        endDate: '',
+        language: 'en',
+        expected: '2020–Present',
+      },
+      {
+        startDate: '2020',
+        endDate: '',
+        language: 'es',
+        expected: '2020 hasta la fecha',
+      },
+      {
+        startDate: '2020',
+        endDate: '',
+        language: 'zh-hans',
+        expected: '2020至今',
+      },
+      {
+        startDate: '2020',
+        endDate: '',
+        language: 'ja',
+        expected: '2020～現在',
+      },
+      // Mixed formats: year-only start with month-year end
+      {
+        startDate: '2016',
+        endDate: 'Jan 1, 2018',
+        language: 'en',
+        expected: '2016–Jan 2018',
+      },
+      {
+        startDate: '2016',
+        endDate: 'Jan 1, 2018',
+        language: 'zh-hans',
+        expected: '2016–2018年1月',
+      },
+      // Mixed formats: month-year start with year-only end
+      {
+        startDate: 'Oct 1, 2016',
+        endDate: '2018',
+        language: 'en',
+        expected: 'Oct 2016–2018',
+      },
+      {
+        startDate: 'Oct 1, 2016',
+        endDate: '2018',
+        language: 'zh-hans',
+        expected: '2016年10月–2018',
       },
     ]
 

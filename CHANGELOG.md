@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.11.2](https://github.com/yamlresume/yamlresume/compare/v0.11.1...v0.11.2) (2026-03-04)
+
+
+### Bug Fixes
+
+* **locale:** Fixed type in Dutch translation ([542bd2e](https://github.com/yamlresume/yamlresume/commit/542bd2e879669d1155e1212eb99b104b53a5ba5a))
+* **playground:** resolve @yamlresume/core type definition issue in dev ([#157](https://github.com/yamlresume/yamlresume/issues/157)) ([3a5b9cb](https://github.com/yamlresume/yamlresume/commit/3a5b9cb5ea08f2eed96bc5b9c91d5cff5461c9c5))
+
 ## [0.11.1](https://github.com/yamlresume/yamlresume/compare/v0.11.0...v0.11.1) (2026-02-03)
 
 

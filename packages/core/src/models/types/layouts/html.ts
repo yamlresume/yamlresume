@@ -22,7 +22,7 @@
  * IN THE SOFTWARE.
  */
 
-import type { HtmlFontSize, HtmlTemplate } from '../options'
+import type { HtmlFontSize, HtmlTemplate, LineSpacing } from '../options'
 import type { Sections } from './common'
 
 /**
@@ -33,6 +33,8 @@ type HtmlTypography = {
   fontSize?: HtmlFontSize
   /** A comma-separated list of font families to use. */
   fontFamily?: string
+  /** Line spacing for the document (e.g., "tight", "normal", "relaxed"). */
+  lineSpacing?: LineSpacing
 }
 
 /**

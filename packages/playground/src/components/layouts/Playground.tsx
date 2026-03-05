@@ -34,6 +34,10 @@ import {
 } from '@/components'
 import { EDITOR_BG_COLOR } from '@/constants'
 import { useResumeState } from '@/hooks'
+import {
+  DEFAULT_PLAYGROUND_MESSAGES,
+  type PlaygroundMessageOverrides,
+} from '@/messages'
 import DEFAULT_RESUME_YAML from '@/resources/default-resume.yml'
 
 /**
@@ -46,6 +50,8 @@ export interface PlaygroundProps {
   onChange?: (value: string) => void
   /** The name of the file being edited. */
   filename?: string
+  /** Optional localized UI messages for tooltip labels. */
+  messages?: PlaygroundMessageOverrides
 }
 
 /**
@@ -62,6 +68,7 @@ export function Playground({
   yaml: yamlStr = DEFAULT_RESUME_YAML,
   onChange,
   filename,
+  messages,
 }: PlaygroundProps) {
   const {
     yaml,
@@ -74,12 +81,18 @@ export function Playground({
     onChange,
   })
 
+  const tooltips = {
+    ...DEFAULT_PLAYGROUND_MESSAGES.tooltips,
+    ...messages?.tooltips,
+  }
+
   // Create editor panel element
   const editorPanel = (
     <EditorPanel
       value={yaml}
       onChange={(v) => handleYamlChange(v || '')}
       filename={filename}
+      tooltips={tooltips}
     />
   )
 
@@ -90,6 +103,7 @@ export function Playground({
       setActiveLayoutIndex={setActiveLayoutIndex}
       resume={resume}
       filename={filename}
+      tooltips={tooltips}
     />
   )
 

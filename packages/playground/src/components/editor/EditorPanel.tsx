@@ -39,6 +39,7 @@ import {
   ToolbarSeparator,
 } from '@/components'
 import { ICON_SIZES, ICON_STROKES } from '@/constants'
+import type { PlaygroundTooltipMessages } from '@/messages'
 
 import { EditorTitle } from './EditorTitle'
 import { ResumeEditor } from './ResumeEditor'
@@ -53,6 +54,8 @@ export interface EditorPanelProps {
   onChange: (value: string) => void
   /** The name of the file being edited. */
   filename?: string
+  /** Localized tooltip labels for editor actions. */
+  tooltips: Pick<PlaygroundTooltipMessages, 'copy' | 'undo' | 'redo' | 'clear'>
 }
 
 /**
@@ -61,7 +64,12 @@ export interface EditorPanelProps {
  * @param props - The component props.
  * @returns The rendered editor panel.
  */
-export function EditorPanel({ value, onChange, filename }: EditorPanelProps) {
+export function EditorPanel({
+  value,
+  onChange,
+  filename,
+  tooltips,
+}: EditorPanelProps) {
   const editorRef = useRef<Parameters<OnMount>[0] | null>(null)
 
   const handleEditorMount: OnMount = (editor) => {
@@ -101,16 +109,16 @@ export function EditorPanel({ value, onChange, filename }: EditorPanelProps) {
         </div>
         <div className="flex-1" />
         <div className="flex items-center gap-0.5 pr-2">
-          <ToolbarCopyButton onClick={handleCopy} />
+          <ToolbarCopyButton onClick={handleCopy} title={tooltips.copy} />
           <ToolbarSeparator />
-          <ToolbarButton onClick={handleUndo} title="Undo">
+          <ToolbarButton onClick={handleUndo} title={tooltips.undo}>
             <IconArrowBackUp size={ICON_SIZES.sm} stroke={ICON_STROKES.sm} />
           </ToolbarButton>
-          <ToolbarButton onClick={handleRedo} title="Redo">
+          <ToolbarButton onClick={handleRedo} title={tooltips.redo}>
             <IconArrowForwardUp size={ICON_SIZES.sm} stroke={ICON_STROKES.sm} />
           </ToolbarButton>
           <ToolbarSeparator />
-          <ToolbarButton onClick={handleClear} title="Clear">
+          <ToolbarButton onClick={handleClear} title={tooltips.clear}>
             <IconEraser size={ICON_SIZES.sm} stroke={ICON_STROKES.sm} />
           </ToolbarButton>
         </div>

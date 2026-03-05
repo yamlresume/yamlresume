@@ -34,11 +34,19 @@ vi.mock('../editor/EditorPanel', () => ({
   EditorPanel: ({
     value,
     onChange,
+    tooltips,
   }: {
     value: string
     onChange: (value: string) => void
+    tooltips: {
+      copy: string
+      undo: string
+      redo: string
+      clear: string
+    }
   }) => (
     <div data-testid="editor-panel">
+      <div data-testid="editor-copy-tooltip">{tooltips.copy}</div>
       <input
         data-testid="editor-input"
         value={value}
@@ -53,12 +61,20 @@ vi.mock('../preview/PreviewPanel', () => ({
     resume,
     activeLayoutIndex,
     setActiveLayoutIndex,
+    tooltips,
   }: {
     resume: Resume | null
     activeLayoutIndex: number
     setActiveLayoutIndex: (index: number) => void
+    tooltips: {
+      copy: string
+      print: string
+      openInNewTab: string
+      download: string
+    }
   }) => (
     <div data-testid="preview-panel">
+      <div data-testid="preview-download-tooltip">{tooltips.download}</div>
       <div data-testid="active-layout-index">{activeLayoutIndex}</div>
       <div data-testid="resume-prop">
         {resume ? 'resume-present' : 'resume-absent'}
@@ -213,5 +229,25 @@ describe(Playground, () => {
     })
 
     expect(onChange).toHaveBeenCalledWith('')
+  })
+
+  it('passes localized tooltip messages to child panels', () => {
+    render(
+      <Playground
+        messages={{
+          tooltips: {
+            copy: 'Copiar',
+            download: 'Descargar',
+          },
+        }}
+      />
+    )
+
+    expect(screen.getAllByTestId('editor-copy-tooltip')[0].textContent).toBe(
+      'Copiar'
+    )
+    expect(
+      screen.getAllByTestId('preview-download-tooltip')[0].textContent
+    ).toBe('Descargar')
   })
 })

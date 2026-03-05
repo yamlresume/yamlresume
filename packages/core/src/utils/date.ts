@@ -59,6 +59,13 @@ export function localizeDate(
     return ''
   }
 
+  // If the input is exactly a 4-digit year, return it as-is
+  // This allows users to specify year-only dates like "2020" without
+  // forcing a month to be displayed
+  if (/^\d{4}$/.test(date)) {
+    return date
+  }
+
   // for resumes, we only care about the year and month
   const options: Intl.DateTimeFormatOptions = {
     year: 'numeric',

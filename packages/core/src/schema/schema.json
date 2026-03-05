@@ -221,6 +221,7 @@
                 "title": "Start date",
                 "description": "A valid date string that can be parsed by `Date.parse`.",
                 "examples": [
+                  "2025",
                   "2025-01-01",
                   "Jul 2025",
                   "July 3, 2025",
@@ -287,6 +288,7 @@
                 "title": "[optional] End date",
                 "description": "A valid date string that can be parsed by `Date.parse` or `null`.",
                 "examples": [
+                  "2025",
                   "2025-01-01",
                   "Jul 2025",
                   "July 3, 2025",
@@ -297,6 +299,7 @@
                     "title": "[optional] End date",
                     "description": "A valid date string that can be parsed by `Date.parse` or `null`.",
                     "examples": [
+                      "2025",
                       "2025-01-01",
                       "Jul 2025",
                       "July 3, 2025",
@@ -442,6 +445,7 @@
                     "title": "[optional] Date",
                     "description": "A valid date string that can be parsed by `Date.parse` or `null`.",
                     "examples": [
+                      "2025",
                       "2025-01-01",
                       "Jul 2025",
                       "July 3, 2025",
@@ -452,6 +456,7 @@
                         "title": "[optional] Date",
                         "description": "A valid date string that can be parsed by `Date.parse` or `null`.",
                         "examples": [
+                          "2025",
                           "2025-01-01",
                           "Jul 2025",
                           "July 3, 2025",
@@ -542,6 +547,7 @@
                     "title": "[optional] Date",
                     "description": "A valid date string that can be parsed by `Date.parse` or `null`.",
                     "examples": [
+                      "2025",
                       "2025-01-01",
                       "Jul 2025",
                       "July 3, 2025",
@@ -552,6 +558,7 @@
                         "title": "[optional] Date",
                         "description": "A valid date string that can be parsed by `Date.parse` or `null`.",
                         "examples": [
+                          "2025",
                           "2025-01-01",
                           "Jul 2025",
                           "July 3, 2025",
@@ -1351,6 +1358,7 @@
                     "title": "Start date",
                     "description": "A valid date string that can be parsed by `Date.parse`.",
                     "examples": [
+                      "2025",
                       "2025-01-01",
                       "Jul 2025",
                       "July 3, 2025",
@@ -1393,6 +1401,7 @@
                     "title": "[optional] End date",
                     "description": "A valid date string that can be parsed by `Date.parse` or `null`.",
                     "examples": [
+                      "2025",
                       "2025-01-01",
                       "Jul 2025",
                       "July 3, 2025",
@@ -1403,6 +1412,7 @@
                         "title": "[optional] End date",
                         "description": "A valid date string that can be parsed by `Date.parse` or `null`.",
                         "examples": [
+                          "2025",
                           "2025-01-01",
                           "Jul 2025",
                           "July 3, 2025",
@@ -1546,6 +1556,7 @@
                     "title": "[optional] Release date",
                     "description": "A valid date string that can be parsed by `Date.parse` or `null`.",
                     "examples": [
+                      "2025",
                       "2025-01-01",
                       "Jul 2025",
                       "July 3, 2025",
@@ -1556,6 +1567,7 @@
                         "title": "[optional] Release date",
                         "description": "A valid date string that can be parsed by `Date.parse` or `null`.",
                         "examples": [
+                          "2025",
                           "2025-01-01",
                           "Jul 2025",
                           "July 3, 2025",
@@ -1884,6 +1896,7 @@
                     "title": "Start date",
                     "description": "A valid date string that can be parsed by `Date.parse`.",
                     "examples": [
+                      "2025",
                       "2025-01-01",
                       "Jul 2025",
                       "July 3, 2025",
@@ -1900,6 +1913,7 @@
                     "title": "[optional] End date",
                     "description": "A valid date string that can be parsed by `Date.parse` or `null`.",
                     "examples": [
+                      "2025",
                       "2025-01-01",
                       "Jul 2025",
                       "July 3, 2025",
@@ -1910,6 +1924,7 @@
                         "title": "[optional] End date",
                         "description": "A valid date string that can be parsed by `Date.parse` or `null`.",
                         "examples": [
+                          "2025",
                           "2025-01-01",
                           "Jul 2025",
                           "July 3, 2025",
@@ -2008,6 +2023,7 @@
                     "title": "Start date",
                     "description": "A valid date string that can be parsed by `Date.parse`.",
                     "examples": [
+                      "2025",
                       "2025-01-01",
                       "Jul 2025",
                       "July 3, 2025",
@@ -2024,6 +2040,7 @@
                     "title": "[optional] End date",
                     "description": "A valid date string that can be parsed by `Date.parse` or `null`.",
                     "examples": [
+                      "2025",
                       "2025-01-01",
                       "Jul 2025",
                       "July 3, 2025",
@@ -2034,6 +2051,7 @@
                         "title": "[optional] End date",
                         "description": "A valid date string that can be parsed by `Date.parse` or `null`.",
                         "examples": [
+                          "2025",
                           "2025-01-01",
                           "Jul 2025",
                           "July 3, 2025",
@@ -2223,7 +2241,7 @@
                   },
                   "typography": {
                     "title": "Typography",
-                    "description": "The typography section contains font settings, including font size options for HTML output.",
+                    "description": "The typography section contains font settings, including font size and line spacing options for HTML output.",
                     "anyOf": [
                       {
                         "type": "object",
@@ -2260,6 +2278,27 @@
                                 "description": "A comma-separated list of font families to use. The first available font will be used or `null`.",
                                 "example": "Monaco, Helvetica",
                                 "type": "string"
+                              },
+                              {
+                                "type": "null"
+                              }
+                            ]
+                          },
+                          "lineSpacing": {
+                            "title": "[optional] Line spacing option",
+                            "description": "A predefined option from the available line spacing choices or `null`.",
+                            "anyOf": [
+                              {
+                                "title": "[optional] Line spacing option",
+                                "description": "A predefined option from the available line spacing choices or `null`.",
+                                "type": "string",
+                                "enum": [
+                                  "tight",
+                                  "snug",
+                                  "normal",
+                                  "relaxed",
+                                  "loose"
+                                ]
                               },
                               {
                                 "type": "null"
@@ -2813,6 +2852,27 @@
                                 "description": "A comma-separated list of font families to use. The first available font will be used or `null`.",
                                 "example": "Monaco, Helvetica",
                                 "type": "string"
+                              },
+                              {
+                                "type": "null"
+                              }
+                            ]
+                          },
+                          "lineSpacing": {
+                            "title": "[optional] Line spacing option",
+                            "description": "A predefined option from the available line spacing choices or `null`.",
+                            "anyOf": [
+                              {
+                                "title": "[optional] Line spacing option",
+                                "description": "A predefined option from the available line spacing choices or `null`.",
+                                "type": "string",
+                                "enum": [
+                                  "tight",
+                                  "snug",
+                                  "normal",
+                                  "relaxed",
+                                  "loose"
+                                ]
                               },
                               {
                                 "type": "null"

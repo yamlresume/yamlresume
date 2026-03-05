@@ -1,6 +1,6 @@
 {
   "name": "create-yamlresume",
-  "version": "0.11.1",
+  "version": "0.11.2",
   "description": "Create a new YAMLResume project",
   "license": "MIT",
   "author": {
@@ -47,7 +47,7 @@
   },
   "dependencies": {
     "@yamlresume/core": "workspace:*",
-    "chalk": "^5.6.0",
+    "chalk": "^5.6.2",
     "commander": "^14.0.1",
     "consola": "^3.4.2",
     "execa": "^9.6.1",

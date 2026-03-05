@@ -25,7 +25,13 @@
 import { cloneDeep } from 'lodash-es'
 import { beforeEach, describe, expect, it } from 'vitest'
 
-import { FILLED_RESUME, type Resume } from '@/models'
+import {
+  DEFAULT_RESUME,
+  FILLED_RESUME,
+  type LatexLayout,
+  type Resume,
+} from '@/models'
+import { LINE_SPACING_MAP } from './constants'
 import {
   ModerncvBankingRenderer,
   ModerncvBase,
@@ -452,6 +458,51 @@ describe('ModerncvBase', () => {
       renderer = new ModerncvBankingRenderer(resume, layoutIndex)
       const result = renderer.renderPreamble()
       expect(result).toContain('Numbers=OldStyle')
+    })
+
+    describe('typography.lineSpacing', () => {
+      it('should use default line spacing when typography is undefined', () => {
+        const testResume = cloneDeep(resume)
+        testResume.layouts = [{ engine: 'latex', typography: undefined }]
+
+        const renderer = new ModerncvBankingRenderer(testResume, layoutIndex)
+        const result = renderer.renderPreamble()
+
+        expect(result).toContain('\\usepackage{setspace}')
+        expect(result).toContain('\\setstretch{1.125}')
+      })
+
+      it('should use default line spacing when lineSpacing is not provided', () => {
+        const testResume = cloneDeep(resume)
+        const latexLayout = testResume.layouts[layoutIndex] as LatexLayout
+        latexLayout.typography = { fontSize: '10pt' }
+
+        const renderer = new ModerncvBankingRenderer(testResume, layoutIndex)
+        const result = renderer.renderPreamble()
+
+        expect(result).toContain('\\usepackage{setspace}')
+        expect(result).toContain('\\setstretch{1.125}')
+      })
+
+      it('should use provided line spacing when lineSpacing is set', () => {
+        for (const [spacing, value] of Object.entries(LINE_SPACING_MAP)) {
+          const testResume = cloneDeep(DEFAULT_RESUME)
+          const layoutIndex = testResume.layouts.findIndex(
+            (l) => l.engine === 'latex'
+          )
+          const latexLayout = testResume.layouts[layoutIndex] as LatexLayout
+          latexLayout.typography = {
+            ...latexLayout.typography,
+            lineSpacing: spacing as keyof typeof LINE_SPACING_MAP,
+          }
+
+          const renderer = new ModerncvBankingRenderer(testResume, layoutIndex)
+          const result = renderer.renderPreamble()
+
+          expect(result).toContain('\\usepackage{setspace}')
+          expect(result).toContain(`\\setstretch{${value}}`)
+        }
+      })
     })
   })
 

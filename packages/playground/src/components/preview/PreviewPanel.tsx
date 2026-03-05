@@ -39,6 +39,7 @@ import {
   ToolbarSeparator,
 } from '@/components'
 import { ICON_SIZES, ICON_STROKES } from '@/constants'
+import type { PlaygroundTooltipMessages } from '@/messages'
 import {
   copyResumeToClipboard,
   downloadResume,
@@ -64,6 +65,11 @@ export interface PreviewPanelProps {
   resume: Resume | null
   /** Callback to change the active layout index. */
   setActiveLayoutIndex: (index: number) => void
+  /** Localized tooltip labels for preview actions. */
+  tooltips: Pick<
+    PlaygroundTooltipMessages,
+    'copy' | 'print' | 'openInNewTab' | 'download'
+  >
 }
 
 /**
@@ -77,6 +83,7 @@ export function PreviewPanel({
   filename,
   resume,
   setActiveLayoutIndex,
+  tooltips,
 }: PreviewPanelProps) {
   // Filter out invalid layouts (null or missing engine property)
   // This can happen when user is typing incomplete YAML like "- " in layouts array
@@ -135,16 +142,16 @@ export function PreviewPanel({
         </PreviewTabs>
         <div className="flex-1" />
         <div className="flex items-center gap-0.5 pr-2">
-          <ToolbarCopyButton onClick={handleCopy} />
+          <ToolbarCopyButton onClick={handleCopy} title={tooltips.copy} />
           <ToolbarSeparator />
           {resume?.layouts?.[activeLayoutIndex]?.engine === 'html' && (
             <>
-              <ToolbarButton onClick={handlePrint} title="Print">
+              <ToolbarButton onClick={handlePrint} title={tooltips.print}>
                 <IconPrinter size={ICON_SIZES.sm} stroke={ICON_STROKES.sm} />
               </ToolbarButton>
               <ToolbarButton
                 onClick={handleOpenInNewTab}
-                title="Open in New Tab"
+                title={tooltips.openInNewTab}
               >
                 <IconExternalLink
                   size={ICON_SIZES.sm}
@@ -154,7 +161,7 @@ export function PreviewPanel({
               <ToolbarSeparator />
             </>
           )}
-          <ToolbarButton onClick={handleDownload} title="Download">
+          <ToolbarButton onClick={handleDownload} title={tooltips.download}>
             <IconDownload size={ICON_SIZES.sm} stroke={ICON_STROKES.sm} />
           </ToolbarButton>
         </div>

@@ -57,6 +57,13 @@ vi.mock('../../utils', async (importOriginal) => {
 })
 
 describe(PreviewPanel, () => {
+  const tooltips = {
+    copy: 'Copy',
+    print: 'Print',
+    openInNewTab: 'Open in New Tab',
+    download: 'Download',
+  }
+
   const layouts = [
     { engine: 'html' },
     { engine: 'markdown' },
@@ -78,6 +85,7 @@ describe(PreviewPanel, () => {
         activeLayoutIndex={0}
         setActiveLayoutIndex={vi.fn()}
         resume={resumeWithLayouts}
+        tooltips={tooltips}
       />
     )
 
@@ -98,6 +106,7 @@ describe(PreviewPanel, () => {
         activeLayoutIndex={0}
         setActiveLayoutIndex={setActiveLayoutIndex}
         resume={resumeWithLayouts}
+        tooltips={tooltips}
       />
     )
 
@@ -113,6 +122,7 @@ describe(PreviewPanel, () => {
         activeLayoutIndex={0}
         setActiveLayoutIndex={vi.fn()}
         resume={resumeWithLayouts}
+        tooltips={tooltips}
       />
     )
 
@@ -129,6 +139,7 @@ describe(PreviewPanel, () => {
         activeLayoutIndex={0}
         setActiveLayoutIndex={vi.fn()}
         resume={resumeWithLayouts}
+        tooltips={tooltips}
       />
     )
 
@@ -155,6 +166,7 @@ describe(PreviewPanel, () => {
         activeLayoutIndex={0}
         setActiveLayoutIndex={vi.fn()}
         resume={resumeEmpty}
+        tooltips={tooltips}
       />
     )
 
@@ -169,6 +181,7 @@ describe(PreviewPanel, () => {
         activeLayoutIndex={0}
         setActiveLayoutIndex={vi.fn()}
         resume={resumeInvalid}
+        tooltips={tooltips}
       />
     )
     expect(screen.getByText('No Layouts Defined')).toBeDefined()
@@ -183,6 +196,7 @@ describe(PreviewPanel, () => {
         setActiveLayoutIndex={vi.fn()}
         resume={resumeWithLayouts}
         filename="/path/to/john-doe.yml"
+        tooltips={tooltips}
       />
     )
 
@@ -199,6 +213,7 @@ describe(PreviewPanel, () => {
         setActiveLayoutIndex={vi.fn()}
         resume={resumeWithLayouts}
         filename=".yaml"
+        tooltips={tooltips}
       />
     )
     // Should fallback to 'resume'

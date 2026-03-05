@@ -34,6 +34,7 @@ import type {
   LATEX_PAPER_SIZE_OPTIONS,
   LATEX_TEMPLATE_OPTIONS,
   LEVEL_OPTIONS,
+  LINE_SPACING_OPTIONS,
   LOCALE_LANGUAGE_OPTIONS,
   NETWORK_OPTIONS,
 } from '@/models'
@@ -114,6 +115,11 @@ export type Level = (typeof LEVEL_OPTIONS)[number]
  * A union type for all possible latex paper size options.
  */
 export type LatexPaperSize = (typeof LATEX_PAPER_SIZE_OPTIONS)[number]
+
+/**
+ * A union type for all possible line spacing options.
+ */
+export type LineSpacing = (typeof LINE_SPACING_OPTIONS)[number]
 
 /**
  * A union type for all possible locale languages.
