@@ -345,6 +345,9 @@ ${fontList
 
       // URL styling - use same font as surrounding text instead of monospace
       this.renderUrlConfig(),
+
+      // Patch httplink/httpslink to support full URLs with protocols
+      this.renderHomepageRedefinition(),
     ])
   }
 
@@ -354,6 +357,51 @@ ${fontList
   private renderUrlConfig(): string {
     return `%% URL styling - use normal text instead of monospace
 \\urlstyle{same}`
+  }
+
+  /**
+   * Render a redefinition of \httplink and \httpslink to support full URLs.
+   *
+   * The original moderncv \httplink and \httpslink macros always prepend
+   * the protocol (http:// or https://) to the URL. This causes issues when
+   * the URL already contains a protocol (e.g., https://example.com), resulting
+   * in malformed URLs like https://https://example.com.
+   *
+   * This redefinition checks if the URL already contains "://" and if so,
+   * uses the URL directly without prepending the protocol.
+   *
+   * Note: We use \str_set:Nx (with x-expansion) to fully expand the argument
+   * before converting to a string. This is necessary because moderncv passes
+   * the URL via a macro (\@homepage), and without expansion we would be
+   * checking the literal string "\@homepage" instead of its value.
+   * We then use \str_if_in:NnTF to check for "://" in the expanded URL.
+   *
+   * @returns The LaTeX code for the httplink/httpslink redefinition
+   */
+  private renderHomepageRedefinition(): string {
+    return `%% Patch \\httplink and \\httpslink to handle full URLs
+% The original moderncv macros always prepend http:// or https:// to URLs.
+% This causes issues when the URL already has a protocol (e.g., https://example.com)
+% resulting in malformed URLs like https://https://example.com.
+% This patch checks if the URL already contains "://" and uses it directly if so.
+% Note: We use \\str_set:Nx (x-expansion) to expand macros like \\@homepage first.
+\\ExplSyntaxOn
+\\str_new:N \\g_yamlresume_url_str
+
+\\RenewDocumentCommand{\\httpslink}{O{}m}{
+  \\str_set:Nx \\g_yamlresume_url_str {#2}
+  \\str_if_in:NnTF \\g_yamlresume_url_str {://}
+    { \\url{#2} }
+    { \\url{https://#2} }
+}
+
+\\RenewDocumentCommand{\\httplink}{O{}m}{
+  \\str_set:Nx \\g_yamlresume_url_str {#2}
+  \\str_if_in:NnTF \\g_yamlresume_url_str {://}
+    { \\url{#2} }
+    { \\url{http://#2} }
+}
+\\ExplSyntaxOff`
   }
 
   /**
