@@ -512,6 +512,38 @@ describe('ModerncvBase', () => {
         expect(result).toContain('\\urlstyle{same}')
       })
     })
+
+    describe('homepage redefinition', () => {
+      it('should include httplink and httpslink patches in preamble', () => {
+        const result = renderer.renderPreamble()
+
+        expect(result).toContain(
+          'Patch \\httplink and \\httpslink to handle full URLs'
+        )
+        expect(result).toContain('\\RenewDocumentCommand{\\httpslink}{O{}m}')
+        expect(result).toContain('\\RenewDocumentCommand{\\httplink}{O{}m}')
+      })
+
+      it('should use str_set:Nx for macro expansion and str_if_in for detection', () => {
+        const result = renderer.renderPreamble()
+
+        // Using \str_set:Nx to expand macros like \@homepage before checking
+        expect(result).toContain('\\str_set:Nx \\g_yamlresume_url_str {#2}')
+        // Using \str_if_in:NnTF for correct protocol detection
+        expect(result).toContain(
+          '\\str_if_in:NnTF \\g_yamlresume_url_str {://}'
+        )
+      })
+
+      it('should use url command for URLs with and without protocol', () => {
+        const result = renderer.renderPreamble()
+
+        // Should use \url for both cases (with and without protocol)
+        expect(result).toContain('{ \\url{#2} }')
+        expect(result).toContain('{ \\url{https://#2} }')
+        expect(result).toContain('{ \\url{http://#2} }')
+      })
+    })
   })
 
   describe('ModerncvStyle', () => {
