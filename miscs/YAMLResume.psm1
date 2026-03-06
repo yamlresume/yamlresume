@@ -27,7 +27,7 @@ function New-YamlResume {
         return
     }
 
-    $absoluteOutputPath = Get-Location | Get-AbsoluteOutputPath
+    $absoluteOutputPath = Get-AbsoluteOutputPath (Get-Location).Path
 
     Write-Verbose "About to execute: docker run --rm -v `"$($absoluteOutputPath):/home/yamlresume`" yamlresume/yamlresume new $YamlFile"
     docker run --rm -v "$($absoluteOutputPath):/home/yamlresume" yamlresume/yamlresume new $YamlFile
@@ -59,6 +59,11 @@ function Build-YamlResume {
         return
     }
 
+    if (-not (Test-Path $YamlFile -PathType Leaf)) {
+        Write-Error "YamlFile '$YamlFile' not found."
+        return
+    }
+
     $absoluteOutputPath = Get-AbsoluteOutputPath $OutputPath
 
     if (Test-Path $absoluteOutputPath) {
@@ -66,9 +71,9 @@ function Build-YamlResume {
     }
 
     Copy-Item -Path $YamlFile -Destination $absoluteOutputPath -Force
-    $YamlFile = $YamlFile -replace '\\', '/'
-    Write-Verbose "About to execute: docker run --rm -v `"$($absoluteOutputPath):/home/yamlresume`" yamlresume/yamlresume build $YamlFile"
-    docker run --rm -v "$($absoluteOutputPath):/home/yamlresume" yamlresume/yamlresume build $YamlFile
+    $containerFile = Split-Path -Leaf $YamlFile
+    Write-Verbose "About to execute: docker run --rm -v `"$($absoluteOutputPath):/home/yamlresume`" yamlresume/yamlresume build $containerFile"
+    docker run --rm -v "$($absoluteOutputPath):/home/yamlresume" yamlresume/yamlresume build $containerFile
 }
 
 # Private helper: checks if a path is relative and throws if not
