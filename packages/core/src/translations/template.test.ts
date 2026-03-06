@@ -140,6 +140,17 @@ describe(getTemplateTranslations, () => {
           },
         },
       },
+      {
+        language: 'id',
+        expected: {
+          punctuations: {
+            colon: ': ',
+          },
+          terms: {
+            keywords: 'Kata Kunci',
+          },
+        },
+      },
     ]
 
     tests.forEach((test) => {

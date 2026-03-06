@@ -182,6 +182,18 @@ export function getTemplateTranslations(
         score: 'Punkte',
       },
     },
+    id: {
+      punctuations: {
+        comma: ', ',
+        colon: ': ',
+        separator: ', ',
+      },
+      terms: {
+        courses: 'Mata Kuliah',
+        keywords: 'Kata Kunci',
+        score: 'Nilai',
+      },
+    },
   }
 
   return templateTranslation[isEmptyValue(language) ? 'en' : language]

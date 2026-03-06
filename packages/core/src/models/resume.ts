@@ -350,6 +350,7 @@ export function getLocaleLanguageDetail(localeLanguage: LocaleLanguage) {
     nl: 'Dutch',
     ja: 'Japanese',
     de: 'German',
+    id: 'Indonesian',
   }
 
   if (localeLanguage in localeLanguageDetails) {
