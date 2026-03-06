@@ -504,6 +504,14 @@ describe('ModerncvBase', () => {
         }
       })
     })
+
+    describe('urlstyle settings', () => {
+      it('should configure url style to same', () => {
+        const result = renderer.renderPreamble()
+
+        expect(result).toContain('\\urlstyle{same}')
+      })
+    })
   })
 
   describe('ModerncvStyle', () => {
@@ -812,7 +820,7 @@ describe('ModerncvBase', () => {
       expect(result).toContain('\\cventry{Jan 2020–Jan 2024}')
       expect(result).toContain(`{${degree}, ${area}}`)
       expect(result).toContain(institution)
-      expect(result).toContain(`{\\\href{${url}}{${url}}}`)
+      expect(result).toContain(`{\\url{${url}}}`)
     })
   })
 
@@ -854,7 +862,7 @@ describe('ModerncvBase', () => {
       expect(result).toContain('\\cventry{Jan 2020–Jan 2024}')
       expect(result).toContain(`{${position}}`)
       expect(result).toContain(`{${name}}`)
-      expect(result).toContain(`{\\\href{${url}}{${url}}}`)
+      expect(result).toContain(`{\\url{${url}}}`)
       expect(result).toContain(`\\textbf{Keywords}: ${keywords.join(', ')}`)
     })
   })
@@ -1016,7 +1024,7 @@ describe('ModerncvBase', () => {
       expect(result).toContain('\\cventry{Jan 2023}')
       expect(result).toContain(`{${name}}`)
       expect(result).toContain(`{${issuer}}`)
-      expect(result).toContain(`{\\\href{${url}}{${url}}}`)
+      expect(result).toContain(`{\\url{${url}}}`)
     })
   })
 
@@ -1054,7 +1062,7 @@ describe('ModerncvBase', () => {
       expect(result).toContain('\\cventry{Jan 2023}')
       expect(result).toContain(`{${name}}`)
       expect(result).toContain(`{${publisher}}`)
-      expect(result).toContain(`{\\\href{${url}}{${url}}}`)
+      expect(result).toContain(`{\\url{${url}}}`)
     })
   })
 
@@ -1137,7 +1145,7 @@ describe('ModerncvBase', () => {
       expect(result).toContain('\\cventry{Jan 2023–Dec 2023}')
       expect(result).toContain(`{${description}}`)
       expect(result).toContain(`{${name}}`)
-      expect(result).toContain(`{\\href{${url}}{${url}}}`)
+      expect(result).toContain(`{\\url{${url}}}`)
       expect(result).toContain(`\\textbf{Keywords}: ${keywords.join(', ')}`)
     })
   })
@@ -1207,7 +1215,7 @@ describe('ModerncvBase', () => {
       expect(result).toContain('\\cventry{Jan 2023–Dec 2023}')
       expect(result).toContain(`{${position}}`)
       expect(result).toContain(`{${organization}}`)
-      expect(result).toContain(`{\\href{${url}}{${url}}}`)
+      expect(result).toContain(`{\\url{${url}}}`)
       expect(result).toContain('')
     })
   })
