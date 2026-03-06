@@ -35,6 +35,7 @@ import {
   showIfNotEmpty,
 } from '@/utils'
 import { LatexRenderer } from './base'
+import { DEFAULT_FONT_SIZE } from './constants'
 import { type ModerncvStyle, normalizeUnit } from './preamble'
 
 /**
@@ -71,7 +72,8 @@ class ModerncvBase extends LatexRenderer {
   private renderDocumentClassConfig(): string {
     const layout = this.resume.layouts?.[this.layoutIndex]
 
-    const fontSize = (layout as LatexLayout)?.typography?.fontSize
+    const fontSize =
+      (layout as LatexLayout)?.typography?.fontSize || DEFAULT_FONT_SIZE
 
     const paperSize =
       (layout as LatexLayout)?.page?.paperSize === 'letter'
@@ -240,6 +242,19 @@ class ModerncvBase extends LatexRenderer {
       // Patch httplink/httpslink to support full URLs with protocols
       this.renderHomepageRedefinition(),
     ])
+  }
+
+  /**
+   * Join multiple rendered sections into a single output.
+   *
+   * @param sections - The sections to join
+   * @returns {string} The joined LaTeX sections
+   */
+  protected joinSections(sections: string[]): string {
+    return joinNonEmptyString(
+      sections.filter((rendered) => rendered.trim() !== ''),
+      '\n'
+    )
   }
 
   /**

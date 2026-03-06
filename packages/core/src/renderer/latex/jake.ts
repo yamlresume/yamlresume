@@ -35,6 +35,7 @@ import {
   showIfNotEmpty,
 } from '@/utils'
 import { LatexRenderer } from './base'
+import { DEFAULT_FONT_SIZE } from './constants'
 import { normalizeUnit } from './preamble'
 
 /**
@@ -81,16 +82,24 @@ class JakeRenderer extends LatexRenderer {
     this.separator = ' $|$ '
   }
 
+  protected joinSections(sections: string[]): string {
+    return joinNonEmptyString(
+      sections.filter((rendered) => rendered.trim() !== ''),
+      '\n'
+    )
+  }
+
   /**
    * Render the document class configuration.
    *
    * Uses the `article` document class, respecting user-configured paper size
-   * and font size, with Jake's defaults of letterpaper and 11pt.
+   * and font size, with Jake's defaults of letterpaper and 10pt.
    */
   private renderDocumentClassConfig(): string {
     const layout = this.resume.layouts?.[this.layoutIndex]
 
-    const fontSize = (layout as LatexLayout)?.typography?.fontSize || '11pt'
+    const fontSize =
+      (layout as LatexLayout)?.typography?.fontSize || DEFAULT_FONT_SIZE
 
     const paperSize =
       (layout as LatexLayout)?.page?.paperSize === 'a4'

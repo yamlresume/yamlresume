@@ -240,6 +240,23 @@ describe('ModerncvBase', () => {
       )
     })
 
+    it('should use default font size when typography.fontSize is empty', () => {
+      resume.layouts = [
+        {
+          engine: 'latex',
+          typography: {
+            // @ts-ignore
+            fontSize: '',
+          },
+        },
+      ]
+      renderer = new ModerncvBankingRenderer(resume, layoutIndex)
+      const result = renderer.renderPreamble()
+      expect(result).toContain(
+        '\\documentclass[a4paper, serif, 10pt]{moderncv}'
+      )
+    })
+
     it('should use default numbers style when advanced config is missing', () => {
       resume.layouts = [{ engine: 'latex', advanced: undefined }]
       renderer = new ModerncvBankingRenderer(resume, layoutIndex)

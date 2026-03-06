@@ -23,6 +23,8 @@
  */
 
 import {
+  DOCX_TEMPLATE_OPTIONS,
+  getDocxTemplateDetail,
   getHtmlTemplateDetail,
   getLatexTemplateDetail,
   HTML_TEMPLATE_OPTIONS,
@@ -62,11 +64,23 @@ describe(listTemplates, () => {
       expect(result).toContain(details.description) // Description
     })
 
+    // Check if all DOCX templates are included
+    DOCX_TEMPLATE_OPTIONS.forEach((value) => {
+      const details = getDocxTemplateDetail(value)
+      expect(result).toContain(value) // Template ID
+      expect(result).toContain(details.engine) // Engine
+      expect(result).toContain(details.name) // Template Name
+      expect(result).toContain(details.description) // Description
+    })
+
     // Check if the table has the correct number of rows
     const rows = result.trim().split('\n')
     // +2 for header and separator
     expect(rows.length).toBe(
-      LATEX_TEMPLATE_OPTIONS.length + HTML_TEMPLATE_OPTIONS.length + 2
+      LATEX_TEMPLATE_OPTIONS.length +
+        HTML_TEMPLATE_OPTIONS.length +
+        DOCX_TEMPLATE_OPTIONS.length +
+        2
     )
   })
 })

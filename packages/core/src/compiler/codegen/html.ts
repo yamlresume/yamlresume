@@ -32,7 +32,7 @@ import type {
   OrderedListNode,
   ParagraphNode,
   TextNode,
-} from '@/compiler/ast'
+} from '@/compiler'
 import { escapeHtml } from '@/utils'
 import type { CodeGenerationContext, CodeGenerator } from './interface'
 

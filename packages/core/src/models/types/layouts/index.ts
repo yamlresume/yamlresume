@@ -23,14 +23,21 @@
  */
 
 import type { LayoutEngine } from './common'
+import type { DocxLayout } from './docx'
 import type { HtmlLayout } from './html'
 import type { LatexLayout } from './latex'
 import type { MarkdownLayout } from './markdown'
 
-export type { HtmlLayout, LatexLayout, LayoutEngine, MarkdownLayout }
+export type {
+  DocxLayout,
+  HtmlLayout,
+  LatexLayout,
+  LayoutEngine,
+  MarkdownLayout,
+}
 
 /**
  * Array of layout items supporting multiple output formats.
  */
-export type Layout = LatexLayout | MarkdownLayout | HtmlLayout
+export type Layout = DocxLayout | HtmlLayout | LatexLayout | MarkdownLayout
 export type Layouts = Layout[]

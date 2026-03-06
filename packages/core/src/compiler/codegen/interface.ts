@@ -23,14 +23,17 @@
  */
 
 import type { Node } from '@/compiler'
-import type { HtmlLayout, LatexLayout } from '@/models'
+import type { DocxLayout, HtmlLayout, LatexLayout } from '@/models'
 
 /**
  * Context for code generation containing layout settings.
  */
 export interface CodeGenerationContext {
   /** Typography settings from the resume layout. */
-  typography?: LatexLayout['typography'] | HtmlLayout['typography']
+  typography?:
+    | LatexLayout['typography']
+    | HtmlLayout['typography']
+    | DocxLayout['typography']
 }
 
 /**
@@ -40,9 +43,13 @@ export interface CodeGenerationContext {
  * tree (AST) nodes. Implementations of this interface are responsible for
  * converting AST nodes into their corresponding code representations.
  *
+ * HTMLCodeGenerator and LatexCodeGenerator will generate strings while
+ * DocxCodeGenerator will generate docx Paragraph objects, hence the generic
+ * type parameter T.
+ *
  * @see {@link Node}
  */
-export interface CodeGenerator {
+export interface CodeGenerator<T = string> {
   /**
    * Generate code from an AST node.
    *
@@ -50,5 +57,5 @@ export interface CodeGenerator {
    * @param context - Optional context containing layout settings.
    * @returns The generated code.
    */
-  generate(node: Node, context?: CodeGenerationContext): string
+  generate(node: Node, context?: CodeGenerationContext): T
 }

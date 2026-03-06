@@ -103,8 +103,30 @@ export function useResumeRenderer({
       setEngine(currentEngine)
 
       const renderer = getResumeRenderer(resume, layoutIndex)
-      setRenderedContent(renderer.render())
-      setError(null)
+      const result = renderer.render()
+
+      if (typeof result === 'string') {
+        setRenderedContent(result)
+        setError(null)
+      } else if (ArrayBuffer.isView(result)) {
+        setRenderedContent('[DOCX binary content - download to view]')
+        setError(null)
+      } else {
+        result
+          .then((content) => {
+            if (typeof content === 'string') {
+              setRenderedContent(content)
+            } else {
+              setRenderedContent('[DOCX binary content - download to view]')
+            }
+            setError(null)
+          })
+          .catch((e) => {
+            setError(
+              `Render Error: ${e instanceof Error ? e.message : String(e)}`
+            )
+          })
+      }
     } catch (e) {
       setError(`Render Error: ${e instanceof Error ? e.message : String(e)}`)
     }

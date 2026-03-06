@@ -44,6 +44,7 @@
     "typedoc": "typedoc"
   },
   "dependencies": {
+    "docx": "^9.6.0",
     "escape-latex": "^1.2.0",
     "js-beautify": "^1.15.4",
     "lodash-es": "^4.18.1",

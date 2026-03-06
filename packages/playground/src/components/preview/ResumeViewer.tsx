@@ -67,6 +67,30 @@ export function ResumeViewer({ resume, layoutIndex }: ResumeViewerProps) {
     )
   }
 
+  // DOCX produces binary output that cannot be previewed in the browser
+  if (engine === 'docx') {
+    return (
+      <div
+        className={clsx(
+          'h-full w-full p-8 flex flex-col items-center justify-center',
+          'text-gray-600 bg-gray-50'
+        )}
+      >
+        <div className="text-4xl mb-4">📄</div>
+        <div className="text-lg font-medium mb-2">
+          DOCX Preview Not Available
+        </div>
+        <div className="text-sm text-gray-500 text-center max-w-md">
+          DOCX files are binary documents that cannot be previewed in the
+          browser. Use the CLI to generate DOCX files:{' '}
+          <code className="bg-gray-200 px-1 rounded">
+            yamlresume build resume.yaml
+          </code>
+        </div>
+      </div>
+    )
+  }
+
   return (
     <div className="h-full w-full flex flex-col bg-white">
       {engine === 'html' ? (

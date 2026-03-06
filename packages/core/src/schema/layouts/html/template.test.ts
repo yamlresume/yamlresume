@@ -64,7 +64,7 @@ describe('HtmlTemplateSchema', () => {
     ]
 
     for (const { template, error } of tests) {
-      // @ts-ignore
+      // @ts-expect-error Testing invalid template
       validateZodErrors(HtmlTemplateSchema, { template }, error)
     }
   })

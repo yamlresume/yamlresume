@@ -22,5 +22,6 @@
  * IN THE SOFTWARE.
  */
 
+export { DocxCodeGenerator } from './docx'
 export { HtmlCodeGenerator } from './html'
 export { LatexCodeGenerator } from './latex'

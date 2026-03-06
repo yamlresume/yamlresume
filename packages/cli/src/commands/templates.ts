@@ -23,6 +23,8 @@
  */
 
 import {
+  DOCX_TEMPLATE_OPTIONS,
+  getDocxTemplateDetail,
   getHtmlTemplateDetail,
   getLatexTemplateDetail,
   HTML_TEMPLATE_OPTIONS,
@@ -47,6 +49,10 @@ export function listTemplates() {
     }),
     ...HTML_TEMPLATE_OPTIONS.map((value) => {
       const details = getHtmlTemplateDetail(value)
+      return [value, details.engine, details.name, details.description]
+    }),
+    ...DOCX_TEMPLATE_OPTIONS.map((value) => {
+      const details = getDocxTemplateDetail(value)
       return [value, details.engine, details.name, details.description]
     }),
   ]

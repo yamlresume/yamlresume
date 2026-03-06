@@ -49,7 +49,10 @@ export const HtmlAdvancedSchema = z.object({
     .meta({
       title: 'Advanced',
       description: joinNonEmptyString(
-        ['The Advanced section contains advanced HTML settings.'],
+        [
+          'The Advanced section contains advanced HTML settings,',
+          'including options to show raw URLs and icons.',
+        ],
         ' '
       ),
     }),

@@ -25,7 +25,11 @@
 import { cloneDeep } from 'lodash-es'
 import { describe, expect, it } from 'vitest'
 
-import { LatexCodeGenerator, MarkdownParser } from '@/compiler'
+import {
+  HtmlCodeGenerator,
+  LatexCodeGenerator,
+  MarkdownParser,
+} from '@/compiler'
 import {
   DEFAULT_LATEX_LAYOUT,
   DEFAULT_RESUME,
@@ -940,7 +944,7 @@ describe(transformSummary, () => {
     )
   })
 
-  it('should skip transformation for markdown layout', () => {
+  it('should preserve raw summary for markdown layout', () => {
     const resume = cloneDeep(FILLED_RESUME)
     const summary = 'Test summary'
 
@@ -949,14 +953,96 @@ describe(transformSummary, () => {
 
     const summaryParser = new MarkdownParser()
 
-    // Capture the original resume state to ensure no changes
-    const originalResume = cloneDeep(resume)
+    transformSummary(resume, layoutIndex, summaryParser)
+
+    // Should preserve raw summary in computed.summary for downstream compatibility
+    expect(resume.content.basics.computed?.summary).toBe(summary)
+  })
+
+  it('should preserve raw summary for docx layout', () => {
+    const resume = cloneDeep(FILLED_RESUME)
+    const summary = 'Test summary'
+
+    resume.content.basics.summary = summary
+    resume.layouts = [{ engine: 'docx' as const }]
+
+    const summaryParser = new MarkdownParser()
 
     transformSummary(resume, layoutIndex, summaryParser)
 
-    // Should be identical to original, meaning no computed properties added
-    expect(resume).toEqual(originalResume)
-    expect(resume.content.basics.computed).toBeUndefined()
+    // docx engine handles markdown parsing internally in the renderer
+    expect(resume.content.basics.computed?.summary).toBe(summary)
+  })
+
+  it('should handle docx layout with undefined summary', () => {
+    const resume = cloneDeep(FILLED_RESUME)
+
+    resume.content.basics.summary = undefined as any
+    resume.layouts = [{ engine: 'docx' as const }]
+
+    const summaryParser = new MarkdownParser()
+
+    transformSummary(resume, layoutIndex, summaryParser)
+
+    expect(resume.content.basics.computed?.summary).toBe('')
+  })
+
+  it('should handle docx layout with section items having undefined summary', () => {
+    const resume = cloneDeep(FILLED_RESUME)
+
+    resume.layouts = [{ engine: 'docx' as const }]
+    resume.content.work = [
+      {
+        name: 'Test',
+        position: 'Dev',
+        startDate: '2020',
+        summary: undefined as any,
+      },
+    ]
+
+    const summaryParser = new MarkdownParser()
+
+    transformSummary(resume, layoutIndex, summaryParser)
+
+    expect(resume.content.work[0].computed?.summary).toBe('')
+  })
+
+  it('should handle html layout with typography', () => {
+    const resume = cloneDeep(FILLED_RESUME)
+    const summary = 'Test summary'
+
+    resume.content.basics.summary = summary
+    resume.layouts = [
+      {
+        engine: 'html' as const,
+        typography: {
+          fontSize: '16px',
+        },
+      },
+    ]
+
+    const summaryParser = new MarkdownParser()
+
+    transformSummary(resume, layoutIndex, summaryParser)
+
+    const expected = new HtmlCodeGenerator()
+      .generate(summaryParser.parse(summary))
+      .trim()
+
+    expect(resume.content.basics.computed?.summary).toEqual(expected)
+  })
+
+  it('should handle layout without engine property', () => {
+    const resume = cloneDeep(FILLED_RESUME)
+    const summary = 'Test summary'
+
+    resume.content.basics.summary = summary
+    // @ts-ignore
+    resume.layouts = [{}]
+
+    const summaryParser = new MarkdownParser()
+
+    expect(() => transformSummary(resume, layoutIndex, summaryParser)).toThrow()
   })
 })
 

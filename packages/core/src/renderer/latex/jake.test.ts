@@ -71,7 +71,7 @@ describe('JakeRenderer', () => {
       expect(result).toContain('\\documentclass[a4paper,10pt]{article}')
     })
 
-    it('should use Jake defaults (letterpaper, 11pt) when layout has no page/typography', () => {
+    it('should use Jake defaults (letterpaper, 10pt) when layout has no page/typography', () => {
       // After transformResume, the default layout fills in a4/10pt from
       // DEFAULT_LATEX_LAYOUT, so Jake's own defaults only apply when the
       // layout engine lookup returns undefined for page/typography.
@@ -233,7 +233,7 @@ describe('JakeRenderer', () => {
       expect(result).toContain('\\documentclass[a4paper,10pt]{article}')
     })
 
-    it('should use default font size 11pt when typography.fontSize is empty', () => {
+    it('should use default font size 10pt when typography.fontSize is empty', () => {
       resume.layouts = [
         {
           engine: 'latex',
@@ -245,7 +245,7 @@ describe('JakeRenderer', () => {
       ]
       renderer = new JakeRenderer(resume, layoutIndex)
       const result = renderer.renderPreamble()
-      expect(result).toContain('\\documentclass[a4paper,11pt]{article}')
+      expect(result).toContain('\\documentclass[a4paper,10pt]{article}')
     })
 
     it('should use default numbers style when advanced config is missing', () => {

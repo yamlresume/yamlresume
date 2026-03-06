@@ -58,7 +58,7 @@ describe('HtmlTypographySchema', () => {
   })
 
   it('should throw an error if typography is invalid', () => {
-    const tests = [
+    const tests: { typography: Record<string, unknown>; error: object }[] = [
       {
         typography: {
           fontSize: '25px',
@@ -85,7 +85,6 @@ describe('HtmlTypographySchema', () => {
     ]
 
     for (const { typography, error } of tests) {
-      // @ts-ignore
       validateZodErrors(HtmlTypographySchema, { typography }, error)
     }
   })

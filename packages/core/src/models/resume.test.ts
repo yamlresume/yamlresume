@@ -23,13 +23,20 @@
  */
 
 import { describe, expect, it } from 'vitest'
-import type { HtmlTemplate, LatexTemplate, LocaleLanguage } from '@/models'
+import type {
+  DocxTemplate,
+  HtmlTemplate,
+  LatexTemplate,
+  LocaleLanguage,
+} from '@/models'
 import {
+  DOCX_TEMPLATE_OPTIONS,
   HTML_TEMPLATE_OPTIONS,
   LATEX_TEMPLATE_OPTIONS,
   LOCALE_LANGUAGE_OPTIONS,
 } from './options'
 import {
+  getDocxTemplateDetail,
   getHtmlTemplateDetail,
   getLatexTemplateDetail,
   getLocaleLanguageDetail,
@@ -67,6 +74,25 @@ describe(getLatexTemplateDetail, () => {
 
   it('should throw an error for invalid template option', () => {
     expect(() => getLatexTemplateDetail('invalid' as LatexTemplate)).toThrow(
+      'Invalid template option: invalid'
+    )
+  })
+})
+
+describe(getDocxTemplateDetail, () => {
+  it('should return the template option code and name', () => {
+    for (const template of DOCX_TEMPLATE_OPTIONS) {
+      const result = getDocxTemplateDetail(template)
+
+      expect(result).toEqual({
+        id: template,
+        ...getDocxTemplateDetail(template),
+      })
+    }
+  })
+
+  it('should throw an error for invalid template option', () => {
+    expect(() => getDocxTemplateDetail('invalid' as DocxTemplate)).toThrow(
       'Invalid template option: invalid'
     )
   })

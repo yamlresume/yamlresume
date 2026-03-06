@@ -27,6 +27,9 @@ import { z } from 'zod'
 import {
   COUNTRY_OPTIONS,
   DEGREE_OPTIONS,
+  DOCX_FONT_SIZE_OPTIONS,
+  DOCX_PAPER_SIZE_OPTIONS,
+  DOCX_TEMPLATE_OPTIONS,
   FLUENCY_OPTIONS,
   HTML_FONT_SIZE_OPTIONS,
   HTML_TEMPLATE_OPTIONS,
@@ -49,6 +52,9 @@ import { joinNonEmptyString } from '@/utils'
 type Options =
   | typeof COUNTRY_OPTIONS
   | typeof DEGREE_OPTIONS
+  | typeof DOCX_FONT_SIZE_OPTIONS
+  | typeof DOCX_PAPER_SIZE_OPTIONS
+  | typeof DOCX_TEMPLATE_OPTIONS
   | typeof HTML_FONT_SIZE_OPTIONS
   | typeof HTML_TEMPLATE_OPTIONS
   | typeof LATEX_FONTSPEC_NUMBERS_OPTIONS
@@ -202,6 +208,40 @@ export function DateSchema(date: string) {
 export const DegreeOptionSchema = optionSchema(DEGREE_OPTIONS, 'degree')
 
 /**
+ * A zod schema for DOCX fontFamily option in layout.
+ */
+export const DocxFontFamilySchema = z.string().meta({
+  title: 'Font Family',
+  description:
+    'The font family to use in DOCX output. Should be a font name available on the system.',
+  example: 'Arial',
+})
+
+/**
+ * A zod schema for DOCX fontSize option in layout.
+ */
+export const DocxFontSizeOptionSchema = optionSchema(
+  DOCX_FONT_SIZE_OPTIONS,
+  'DOCX font size'
+)
+
+/**
+ * A zod schema for a DOCX paper size option.
+ */
+export const DocxPaperSizeOptionSchema = optionSchema(
+  DOCX_PAPER_SIZE_OPTIONS,
+  'DOCX paper size'
+)
+
+/**
+ * A zod schema for a DOCX template option.
+ */
+export const DocxTemplateOptionSchema = optionSchema(
+  DOCX_TEMPLATE_OPTIONS,
+  'DOCX template'
+)
+
+/**
  * An email schema used by various sections.
  */
 export const EmailSchema = z.email({ message: 'email is invalid.' }).meta({
@@ -294,14 +334,6 @@ export const LatexFontspecNumbersOptionSchema = optionSchema(
 )
 
 /**
- * A zod schema for a paper size option.
- */
-export const PaperSizeOptionSchema = optionSchema(
-  LATEX_PAPER_SIZE_OPTIONS,
-  'LaTeX paper size'
-)
-
-/**
  * A zod schema for a template option.
  */
 export const LatexTemplateOptionSchema = optionSchema(
@@ -353,6 +385,14 @@ export const NameSchema = (name: string) =>
  * A zod schema for a network.
  */
 export const NetworkOptionSchema = optionSchema(NETWORK_OPTIONS, 'network')
+
+/**
+ * A zod schema for a paper size option.
+ */
+export const PaperSizeOptionSchema = optionSchema(
+  LATEX_PAPER_SIZE_OPTIONS,
+  'LaTeX paper size'
+)
 
 /**
  * A regex for a phone number.

@@ -113,7 +113,7 @@ describe(downloadResume, () => {
     vi.clearAllMocks()
   })
 
-  it('should download resume correctly when valid resume and layout provided', () => {
+  it('should download resume correctly when valid resume and layout provided', async () => {
     const renderMock = vi.fn().mockReturnValue('resume content')
     vi.mocked(getResumeRenderer).mockReturnValue({
       render: renderMock,
@@ -137,7 +137,7 @@ describe(downloadResume, () => {
       .spyOn(document.body, 'removeChild')
       .mockImplementation(() => anchorMock)
 
-    downloadResume(mockResume, 0)
+    await downloadResume(mockResume, 0)
 
     expect(getResumeRenderer).toHaveBeenCalledWith(mockResume, 0)
     expect(renderMock).toHaveBeenCalled()
@@ -152,7 +152,7 @@ describe(downloadResume, () => {
     expect(mockRevokeObjectURL).toHaveBeenCalledWith('blob:url')
   })
 
-  it('should rely on getExtension for filename', () => {
+  it('should rely on getExtension for filename', async () => {
     const renderMock = vi.fn().mockReturnValue('md content')
     vi.mocked(getResumeRenderer).mockReturnValue({
       render: renderMock,
@@ -165,36 +165,36 @@ describe(downloadResume, () => {
     vi.spyOn(document.body, 'appendChild').mockImplementation(() => anchorMock)
     vi.spyOn(document.body, 'removeChild').mockImplementation(() => anchorMock)
 
-    downloadResume(mockResume, 1) // index 1 is markdown
+    await downloadResume(mockResume, 1) // index 1 is markdown
 
     expect(anchorMock.download).toBe('resume.1.md')
   })
 
-  it('should warn and return if resume is null', () => {
+  it('should warn and return if resume is null', async () => {
     const consoleSpy = vi.spyOn(console, 'warn').mockImplementation(() => {})
-    downloadResume(null, 0)
+    await downloadResume(null, 0)
     expect(getResumeRenderer).not.toHaveBeenCalled()
     expect(consoleSpy).toHaveBeenCalledWith(
       'No resume or layout found for download'
     )
   })
 
-  it('should warn and return if layoutIndex is invalid', () => {
+  it('should warn and return if layoutIndex is invalid', async () => {
     const consoleSpy = vi.spyOn(console, 'warn').mockImplementation(() => {})
-    downloadResume(mockResume, 99)
+    await downloadResume(mockResume, 99)
     expect(getResumeRenderer).not.toHaveBeenCalled()
     expect(consoleSpy).toHaveBeenCalledWith(
       'No resume or layout found for download'
     )
   })
 
-  it('should handle errors gracefully', () => {
+  it('should handle errors gracefully', async () => {
     const consoleSpy = vi.spyOn(console, 'error').mockImplementation(() => {})
     vi.mocked(getResumeRenderer).mockImplementation(() => {
       throw new Error('Renderer error')
     })
 
-    downloadResume(mockResume, 0)
+    await downloadResume(mockResume, 0)
 
     expect(consoleSpy).toHaveBeenCalledWith(
       'Failed to download resume:',

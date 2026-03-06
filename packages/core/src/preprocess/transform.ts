@@ -26,6 +26,7 @@ import { cloneDeep, isArray, merge } from 'lodash-es'
 
 import { HtmlCodeGenerator, LatexCodeGenerator, type Parser } from '@/compiler'
 import {
+  DEFAULT_DOCX_LAYOUT,
   DEFAULT_HTML_LAYOUT,
   DEFAULT_LATEX_LAYOUT,
   DEFAULT_MARKDOWN_LAYOUT,
@@ -630,7 +631,34 @@ export function transformSummary(
 ): Resume {
   const layout = resume.layouts?.[layoutIndex]
 
-  if (layout?.engine === 'markdown') {
+  if (layout?.engine === 'docx' || layout?.engine === 'markdown') {
+    // docx engine handles markdown parsing internally in the renderer,
+    // markdown engine keeps the markdown syntax as-is, but we still
+    // populate computed.summary for downstream compatibility.
+    resume.content.basics.computed = {
+      ...resume.content.basics.computed,
+      summary: resume.content.basics.summary ?? '',
+    }
+
+    for (const section of [
+      'awards',
+      'education',
+      'projects',
+      'publications',
+      'references',
+      'volunteer',
+      'work',
+    ]) {
+      resume.content[section].forEach(
+        (item: { summary: string }, index: number) => {
+          resume.content[section][index].computed = {
+            ...resume.content[section][index].computed,
+            summary: item.summary ?? '',
+          }
+        }
+      )
+    }
+
     return resume
   }
 
@@ -643,13 +671,13 @@ export function transformSummary(
   let processOutput = (output: string) => output.trim()
 
   switch (layout?.engine) {
+    case 'html':
+      codeGenerator = new HtmlCodeGenerator()
+      break
     case 'latex':
       codeGenerator = new LatexCodeGenerator()
       processOutput = (output: string) =>
         replaceBlankLinesWithPercent(output.trim())
-      break
-    case 'html':
-      codeGenerator = new HtmlCodeGenerator()
       break
   }
 
@@ -770,6 +798,8 @@ export function transformResumeLayoutsWithDefaultValues(
   if (resume.layouts && resume.layouts.length > 0) {
     const normalizedLayouts = resume.layouts.map((layout) => {
       switch (layout.engine) {
+        case 'docx':
+          return merge(cloneDeep(DEFAULT_DOCX_LAYOUT), layout)
         case 'markdown':
           return merge(cloneDeep(DEFAULT_MARKDOWN_LAYOUT), layout)
         case 'latex':

@@ -240,6 +240,19 @@ ${this.getStyles()}
   }
 
   /**
+   * Join multiple rendered sections into a single output.
+   *
+   * @param sections - The sections to join
+   * @returns {string} The joined HTML sections
+   */
+  protected joinSections(sections: string[]): string {
+    return joinNonEmptyString(
+      sections.filter((rendered) => rendered.trim() !== ''),
+      '\n'
+    )
+  }
+
+  /**
    * Render the location section of the resume.
    *
    * Note: Location is handled in renderBasics() for HTML output.

@@ -26,7 +26,7 @@ import type { Root, RootContent } from 'mdast'
 import remarkParse from 'remark-parse'
 import { unified } from 'unified'
 
-import type { BoldMark, ItalicMark, LinkMark, Mark, Node } from '@/compiler/ast'
+import type { BoldMark, ItalicMark, LinkMark, Mark, Node } from '@/compiler'
 import type { Parser } from './interface'
 
 /**

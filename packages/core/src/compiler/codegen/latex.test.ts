@@ -32,7 +32,7 @@ import type {
   OrderedListNode,
   ParagraphNode,
   TextNode,
-} from '@/compiler/ast'
+} from '@/compiler'
 import astJson from './fixtures/ast.json'
 
 // I didn't manage to find a way to get rid of the loading error here:

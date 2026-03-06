@@ -25,6 +25,7 @@
 import { z } from 'zod'
 
 import { joinNonEmptyString } from '@/utils'
+import { DocxLayoutSchema } from './docx/'
 import { HtmlLayoutSchema } from './html/'
 import { LatexLayoutSchema } from './latex/'
 import { MarkdownLayoutSchema } from './markdown/'
@@ -36,6 +37,7 @@ export const LayoutsSchema = z.object({
   layouts: z
     .array(
       z.discriminatedUnion('engine', [
+        DocxLayoutSchema,
         HtmlLayoutSchema,
         LatexLayoutSchema,
         MarkdownLayoutSchema,
@@ -47,7 +49,7 @@ export const LayoutsSchema = z.object({
       description: joinNonEmptyString(
         [
           'Multiple output layouts configuration as a discriminated union array,',
-          'supporting engines like "latex", "markdown", and "html".',
+          'supporting engines like "docx", "html", "latex" and "markdown".',
         ],
         ' '
       ),

@@ -95,7 +95,7 @@ describe('LatexTypographySchema', () => {
     ]
 
     for (const { typography, error } of tests) {
-      // @ts-ignore
+      // @ts-expect-error Testing invalid typography
       validateZodErrors(LatexTypographySchema, { typography }, error)
     }
   })

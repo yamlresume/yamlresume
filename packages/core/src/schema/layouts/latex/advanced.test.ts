@@ -115,7 +115,7 @@ describe('LatexAdvancedSchema', () => {
     ]
 
     for (const { advanced, error } of tests) {
-      // @ts-ignore
+      // @ts-expect-error Testing invalid advanced settings
       validateZodErrors(LatexAdvancedSchema, { advanced }, error)
     }
   })

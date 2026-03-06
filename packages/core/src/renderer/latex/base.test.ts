@@ -35,6 +35,10 @@ import { LatexRenderer } from './base'
 import { LINE_SPACING_MAP } from './constants'
 
 class TestableLatexRenderer extends LatexRenderer {
+  protected joinSections(sections: string[]): string {
+    return sections.filter((s) => s.trim() !== '').join('\n')
+  }
+
   public testIsCJKResume() {
     return this.isCJKResume()
   }

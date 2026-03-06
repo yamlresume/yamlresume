@@ -117,6 +117,19 @@ export class MarkdownRenderer extends Renderer {
   }
 
   /**
+   * Join multiple rendered sections into a single output.
+   *
+   * @param sections - The sections to join
+   * @returns {string} The joined Markdown sections
+   */
+  protected joinSections(sections: string[]): string {
+    return joinNonEmptyString(
+      sections.filter((rendered) => rendered.trim() !== ''),
+      '\n\n'
+    )
+  }
+
+  /**
    * Render the location section of the resume.
    *
    * @returns {string} The rendered location section
@@ -589,7 +602,7 @@ ${volunteer
   /**
    * Render the complete markdown resume.
    *
-   * @returns {string} The rendered markdown resume
+   * @returns {Promise<string>} The rendered markdown resume
    */
   render(): string {
     const sections = [

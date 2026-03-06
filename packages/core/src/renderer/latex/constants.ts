@@ -25,6 +25,14 @@
 import type { LineSpacing } from '@/models'
 
 /**
+ * Default font size for LaTeX output.
+ *
+ * 10pt is the standard LaTeX article class default and is used consistently
+ * across all LaTeX templates (Jake, moderncv) for unified typography.
+ */
+export const DEFAULT_FONT_SIZE = '10pt'
+
+/**
  * Default line spacing for LaTeX output.
  */
 export const DEFAULT_LINE_SPACING: LineSpacing = 'normal'

@@ -85,6 +85,10 @@ class TestRenderer extends Renderer {
   render(): string {
     return ''
   }
+
+  protected joinSections(sections: string[]): string {
+    return sections.filter((s) => s.trim() !== '').join('\n')
+  }
 }
 
 describe('Renderer', () => {

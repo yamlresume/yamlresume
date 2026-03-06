@@ -26,6 +26,7 @@ import { cloneDeep } from 'lodash-es'
 import { describe, expect, it } from 'vitest'
 import type { LatexLayout, LatexTemplate, Resume } from '@/models'
 import { DEFAULT_RESUME } from '@/models'
+import { DocxRenderer } from './docx'
 import { HtmlRenderer } from './html'
 import {
   ModerncvBankingRenderer,
@@ -114,6 +115,31 @@ describe(getResumeRenderer, () => {
 
     const renderer = getResumeRenderer(resume, layoutIndex)
     expect(renderer).toBeInstanceOf(HtmlRenderer)
+  })
+
+  it('should return docx renderer when engine is docx', () => {
+    const resume = cloneDeep(mockResume)
+    const layout = {
+      engine: 'docx' as const,
+    }
+    // @ts-ignore
+    resume.layouts = [layout]
+
+    const renderer = getResumeRenderer(resume, layoutIndex)
+    expect(renderer).toBeInstanceOf(DocxRenderer)
+  })
+
+  it('should return docx renderer with calm template when specified', () => {
+    const resume = cloneDeep(mockResume)
+    const layout = {
+      engine: 'docx' as const,
+      template: 'calm' as const,
+    }
+    // @ts-ignore
+    resume.layouts = [layout]
+
+    const renderer = getResumeRenderer(resume, layoutIndex)
+    expect(renderer).toBeInstanceOf(DocxRenderer)
   })
 
   it('should throw error when layout is not found', () => {

@@ -250,7 +250,7 @@ describe('OrderSchema', () => {
     ]
 
     for (const { order, error } of tests) {
-      // @ts-ignore - Testing invalid input
+      // @ts-expect-error Testing invalid input
       validateZodErrors(OrderSchema, { order }, error)
     }
   })
@@ -293,7 +293,7 @@ describe('OrderSchema', () => {
     ]
 
     for (const { order, error } of tests) {
-      // @ts-ignore - Testing invalid input
+      // @ts-expect-error Testing invalid input
       validateZodErrors(OrderSchema, { order }, error)
     }
   })
@@ -432,7 +432,6 @@ describe('SectionsSchema', () => {
     const tests = [
       {
         sections: {
-          // @ts-ignore - Testing invalid input
           order: ['invalid-section', 'education'],
         },
         error: {
@@ -459,7 +458,7 @@ describe('SectionsSchema', () => {
     ]
 
     for (const { sections, error } of tests) {
-      // @ts-ignore - Testing invalid input
+      // @ts-expect-error Testing invalid input
       validateZodErrors(SectionsSchema, { sections }, error)
     }
   })

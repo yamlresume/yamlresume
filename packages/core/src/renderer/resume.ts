@@ -27,7 +27,7 @@ import { get } from 'lodash-es'
 import type { Parser } from '@/compiler'
 import { MarkdownParser } from '@/compiler'
 import type { Resume } from '@/models'
-import type { Renderer } from './base'
+import { CalmDocxRenderer } from './docx'
 import { HtmlRenderer } from './html'
 import {
   JakeRenderer,
@@ -36,6 +36,10 @@ import {
   ModerncvClassicRenderer,
 } from './latex'
 import { MarkdownRenderer } from './markdown'
+
+const DOCX_RESUME_RENDERER_MAP = {
+  calm: CalmDocxRenderer,
+}
 
 const LATEX_RESUME_RENDERER_MAP = {
   jake: JakeRenderer,
@@ -56,7 +60,7 @@ export function getResumeRenderer(
   resume: Resume,
   layoutIndex: number,
   summaryParser: Parser = new MarkdownParser()
-): Renderer {
+) {
   const layout = resume.layouts?.[layoutIndex]
 
   if (!layout) {
@@ -70,6 +74,20 @@ export function getResumeRenderer(
   }
 
   switch (layout.engine) {
+    case 'docx': {
+      const template = layout.template
+
+      // default to use calm style if template is not specified
+      if (!template) {
+        return new CalmDocxRenderer(resume, layoutIndex, summaryParser)
+      }
+
+      return new (get(DOCX_RESUME_RENDERER_MAP, template, CalmDocxRenderer))(
+        resume,
+        layoutIndex,
+        summaryParser
+      )
+    }
     case 'html':
       return new HtmlRenderer(resume, layoutIndex, summaryParser)
     case 'markdown':

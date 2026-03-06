@@ -43,7 +43,10 @@ import { readResume } from './validate'
  * Infer the output file name from the source file name
  *
  * For now we support yaml, yml and json file extensions, and the output file
- * will have a `.tex` extension.
+ * will have a `.docx`, `.html`, `.md` or `.tex` extension based on the
+ * `layouts` config in the resume. The output file will be placed in the same
+ * directory as the source file, or in the specified output directory if
+ * provided.
  *
  * @param resumePath - The source resume file
  * @param outputDir - Optional output directory to place the file in
@@ -198,12 +201,14 @@ export function inferLaTeXCommand(
  */
 export function normalizeExtension(extension: string): string {
   switch (extension) {
-    case '.tex':
-      return 'tex'
-    case '.md':
-      return 'markdown'
+    case '.docx':
+      return 'docx'
     case '.html':
       return 'html'
+    case '.md':
+      return 'markdown'
+    case '.tex':
+      return 'tex'
     default:
       return extension.replace('.', '')
   }
@@ -212,7 +217,7 @@ export function normalizeExtension(extension: string): string {
 /**
  * Shared helper to generate output file from a layout
  */
-function generateOutput(
+async function generateOutput(
   resumePath: string,
   resume: Resume,
   index: number,
@@ -220,7 +225,7 @@ function generateOutput(
   outputDir: string | undefined,
   extension: string,
   layoutIndex: number
-): string {
+): Promise<string> {
   const outputFile = getOutputPath(
     resumePath,
     extension,
@@ -235,7 +240,7 @@ function generateOutput(
   }
 
   const renderer = getResumeRenderer(resume, layoutIndex)
-  const content = renderer.render()
+  const content = await renderer.render()
 
   try {
     fs.writeFileSync(outputFile, content)
@@ -378,24 +383,50 @@ export async function buildResume(
   // Count totals for each engine to determine file naming strategy
   // (e.g. resume.0.tex vs resume.tex)
   const totals = {
+    docx: allLayouts.filter((l) => l.engine === 'docx').length,
+    html: allLayouts.filter((l) => l.engine === 'html').length,
     latex: allLayouts.filter((l) => l.engine === 'latex').length,
     markdown: allLayouts.filter((l) => l.engine === 'markdown').length,
-    html: allLayouts.filter((l) => l.engine === 'html').length,
   }
 
   // Track current index for each engine
   const indices = {
+    docx: 0,
+    html: 0,
     latex: 0,
     markdown: 0,
-    html: 0,
   }
 
   for (let layoutIndex = 0; layoutIndex < allLayouts.length; layoutIndex++) {
     const layout = allLayouts[layoutIndex]
 
     switch (layout.engine) {
+      case 'docx': {
+        await generateOutput(
+          resumePath,
+          resume,
+          indices.docx++,
+          totals.docx,
+          options.output,
+          '.docx',
+          layoutIndex
+        )
+        break
+      }
+      case 'html': {
+        await generateOutput(
+          resumePath,
+          resume,
+          indices.html++,
+          totals.html,
+          options.output,
+          '.html',
+          layoutIndex
+        )
+        break
+      }
       case 'latex': {
-        const texFile = generateOutput(
+        const texFile = await generateOutput(
           resumePath,
           resume,
           indices.latex++,
@@ -411,25 +442,13 @@ export async function buildResume(
         break
       }
       case 'markdown': {
-        generateOutput(
+        await generateOutput(
           resumePath,
           resume,
           indices.markdown++,
           totals.markdown,
           options.output,
           '.md',
-          layoutIndex
-        )
-        break
-      }
-      case 'html': {
-        generateOutput(
-          resumePath,
-          resume,
-          indices.html++,
-          totals.html,
-          options.output,
-          '.html',
           layoutIndex
         )
         break
@@ -444,7 +463,7 @@ export async function buildResume(
 export function createBuildCommand() {
   return new Command()
     .name('build')
-    .description('build a resume to LaTeX, PDF, Markdown, or HTML')
+    .description('build a resume to Docx, HTML, Markdown or LaTeX/PDF')
     .argument('<resume-path>', 'the resume file path')
     .option(
       '--no-pdf',

@@ -30,7 +30,7 @@ import type {
   OrderedListNode,
   ParagraphNode,
   TextNode,
-} from '@/compiler/ast'
+} from '@/compiler'
 import { joinNonEmptyString } from '@/utils'
 import { HtmlCodeGenerator, nodeToHTML } from './html'
 

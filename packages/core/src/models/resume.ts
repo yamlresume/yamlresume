@@ -22,9 +22,11 @@
  * IN THE SOFTWARE.
  */
 
-import { LATEX_FONT_SIZE_OPTIONS } from './options'
+import { DOCX_FONT_SIZE_OPTIONS, LATEX_FONT_SIZE_OPTIONS } from './options'
 import type {
   Content,
+  DocxLayout,
+  DocxTemplate,
   HtmlLayout,
   HtmlTemplate,
   LatexLayout,
@@ -167,6 +169,35 @@ export function getHtmlTemplateDetail(template: HtmlTemplate) {
       name: 'VS Code',
       description:
         'Dark theme inspired by Visual Studio Code, tailored for developers.',
+    },
+  }
+
+  if (template in templateDetails) {
+    return {
+      id: template,
+      ...templateDetails[template],
+    }
+  }
+
+  throw new Error(`Invalid template option: ${template}`)
+}
+
+/**
+ * Get the detail of the given DOCX template.
+ *
+ * @param template - The template to get the detail for.
+ * @returns The detail of the template.
+ */
+export function getDocxTemplateDetail(template: DocxTemplate) {
+  const templateDetails: Record<
+    DocxTemplate,
+    { engine: LayoutEngine; name: string; description: string }
+  > = {
+    calm: {
+      engine: 'docx',
+      name: 'Calm',
+      description:
+        'Clean and minimalist design suitable for all professionals.',
     },
   }
 
@@ -370,6 +401,33 @@ export function getLocaleLanguageDetail(localeLanguage: LocaleLanguage) {
   throw new Error(`Invalid locale language: ${localeLanguage}`)
 }
 
+/** Default DOCX layout configuration. */
+export const DEFAULT_DOCX_LAYOUT: DocxLayout = {
+  engine: 'docx',
+  template: 'calm',
+  page: {
+    margins: {
+      top: DEFAULT_TOP_BOTTOM_MARGIN,
+      bottom: DEFAULT_TOP_BOTTOM_MARGIN,
+      left: DEFAULT_LEFT_RIGHT_MARGIN,
+      right: DEFAULT_LEFT_RIGHT_MARGIN,
+    },
+    showPageNumbers: false,
+    paperSize: 'a4',
+  },
+  sections: {
+    order: DEFAULT_SECTIONS_ORDER,
+  },
+  typography: {
+    fontSize: DOCX_FONT_SIZE_OPTIONS[0],
+    lineSpacing: 'normal',
+  },
+  advanced: {
+    showUrls: true,
+    showIcons: true,
+  },
+}
+
 /** Default HTML layout configuration. */
 export const DEFAULT_HTML_LAYOUT: HtmlLayout = {
   engine: 'html',
@@ -413,7 +471,13 @@ export const DEFAULT_LATEX_LAYOUT: LatexLayout = {
   },
 }
 
-/** Default layouts configuration. */
+/**
+ * Default layouts configuration.
+ *
+ * We only include LaTeX, Markdown, and HTML layouts by default, which should be
+ * good enough for most people.
+ */
+
 export const DEFAULT_RESUME_LAYOUTS: Layouts = [
   DEFAULT_LATEX_LAYOUT,
   DEFAULT_MARKDOWN_LAYOUT,

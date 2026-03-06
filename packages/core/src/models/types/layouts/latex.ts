@@ -75,6 +75,7 @@ type LatexPage = {
   showPageNumbers?: boolean
   /** Defines page margin settings for document layout. */
   margins?: Margins
+  /** * Defines the paper size for the document.  */
   paperSize?: PaperSize
 }
 

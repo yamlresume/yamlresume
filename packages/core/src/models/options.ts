@@ -35,6 +35,21 @@ export const DEGREE_OPTIONS = [
   'Doctor',
 ] as const
 
+/** The options for the DOCX layout font size (in half-points, displayed as pt). */
+export const DOCX_FONT_SIZE_OPTIONS = [
+  '10pt',
+  '10.5pt',
+  '11pt',
+  '11.5pt',
+  '12pt',
+] as const
+
+/** The options for the docx layout paper size. */
+export const DOCX_PAPER_SIZE_OPTIONS = ['a4', 'letter'] as const
+
+/** Defines identifiers for the available DOCX layout templates. */
+export const DOCX_TEMPLATE_OPTIONS = ['calm'] as const
+
 /**
  * Defines language fluency levels.
  *
@@ -48,11 +63,8 @@ export const FLUENCY_OPTIONS = [
   'Native or Bilingual Proficiency',
 ] as const
 
-/** The options for the latex layout font size. */
-export const LATEX_FONT_SIZE_OPTIONS = ['10pt', '11pt', '12pt'] as const
-
-/** The options for the paper size. */
-export const LATEX_PAPER_SIZE_OPTIONS = ['a4', 'letter'] as const
+/** Defines identifiers for the available HTML layout templates. */
+export const HTML_TEMPLATE_OPTIONS = ['calm', 'vscode'] as const
 
 /** The options for the HTML layout font size. */
 export const HTML_FONT_SIZE_OPTIONS = [
@@ -65,8 +77,8 @@ export const HTML_FONT_SIZE_OPTIONS = [
   '20px',
 ] as const
 
-/** Defines identifiers for the available HTML layout templates. */
-export const HTML_TEMPLATE_OPTIONS = ['calm', 'vscode'] as const
+/** The options for the latex layout font size. */
+export const LATEX_FONT_SIZE_OPTIONS = ['10pt', '11pt', '12pt'] as const
 
 /** The options for the latex layout fontspec numbers style. */
 export const LATEX_FONTSPEC_NUMBERS_OPTIONS = [
@@ -75,32 +87,15 @@ export const LATEX_FONTSPEC_NUMBERS_OPTIONS = [
   'Auto',
 ] as const
 
+/** The options for the paper size. */
+export const LATEX_PAPER_SIZE_OPTIONS = ['a4', 'letter'] as const
+
 /** Defines identifiers for the available latex layout templates. */
 export const LATEX_TEMPLATE_OPTIONS = [
   'jake',
   'moderncv-banking',
   'moderncv-casual',
   'moderncv-classic',
-] as const
-
-/**
- * Defines line spacing options (shared across all engines).
- *
- * These semantic values follow Tailwind CSS's leading scale exactly:
- * - tight: Compact spacing for fitting more content
- * - snug: Slightly more space than tight
- * - normal: Balanced readability (default)
- * - relaxed: Comfortable reading with more breathing room
- * - loose: Very spacious layout (generally not recommended)
- *
- * @see {@link https://tailwindcss.com/docs/line-height}
- */
-export const LINE_SPACING_OPTIONS = [
-  'tight',
-  'snug',
-  'normal',
-  'relaxed',
-  'loose',
 ] as const
 
 /**
@@ -200,6 +195,26 @@ export const LEVEL_OPTIONS = [
   'Advanced',
   'Expert',
   'Master',
+] as const
+
+/**
+ * Defines line spacing options (shared across all engines).
+ *
+ * These semantic values follow Tailwind CSS's leading scale exactly:
+ * - tight: Compact spacing for fitting more content
+ * - snug: Slightly more space than tight
+ * - normal: Balanced readability (default)
+ * - relaxed: Comfortable reading with more breathing room
+ * - loose: Very spacious layout (generally not recommended)
+ *
+ * @see {@link https://tailwindcss.com/docs/line-height}
+ */
+export const LINE_SPACING_OPTIONS = [
+  'tight',
+  'snug',
+  'normal',
+  'relaxed',
+  'loose',
 ] as const
 
 /**

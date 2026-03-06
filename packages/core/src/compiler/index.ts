@@ -23,12 +23,22 @@
  */
 
 export type {
+  BoldMark,
   BulletListNode,
   DocNode,
+  Fragment,
+  ItalicMark,
+  LinkMark,
+  ListItemNode,
+  Mark,
   Node,
   OrderedListNode,
   ParagraphNode,
   TextNode,
 } from './ast'
-export { HtmlCodeGenerator, LatexCodeGenerator } from './codegen'
+export {
+  DocxCodeGenerator,
+  HtmlCodeGenerator,
+  LatexCodeGenerator,
+} from './codegen'
 export { MarkdownParser, type Parser } from './parser'

@@ -60,6 +60,8 @@ export const getExtension = (engine: LayoutEngine): string => {
       return '.tex'
     case 'markdown':
       return '.md'
+    case 'docx':
+      return '.docx'
     default:
       return ''
   }
@@ -71,7 +73,10 @@ export const getExtension = (engine: LayoutEngine): string => {
  * @param resume - The resume object.
  * @param layoutIndex - The index of the layout to download.
  */
-export const downloadResume = (resume: Resume | null, layoutIndex: number) => {
+export const downloadResume = async (
+  resume: Resume | null,
+  layoutIndex: number
+) => {
   try {
     const layouts = resume?.layouts
     if (!resume || !layouts[layoutIndex]) {
@@ -80,12 +85,19 @@ export const downloadResume = (resume: Resume | null, layoutIndex: number) => {
     }
 
     const renderer = getResumeRenderer(resume, layoutIndex)
-    const content = renderer.render()
+    const renderResult = renderer.render()
     const layout = layouts[layoutIndex]
     const extension = getExtension(layout.engine)
     const filename = `resume.${layoutIndex}${extension}`
 
-    const blob = new Blob([content], { type: 'text/plain' })
+    const content =
+      renderResult instanceof Promise ? await renderResult : renderResult
+    const blob =
+      content instanceof Uint8Array
+        ? new Blob([content.buffer as BlobPart], {
+            type: 'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+          })
+        : new Blob([content], { type: 'text/plain' })
     const url = URL.createObjectURL(blob)
     const a = document.createElement('a')
     a.href = url
@@ -118,6 +130,10 @@ export const copyResumeToClipboard = (
 
     const renderer = getResumeRenderer(resume, layoutIndex)
     const content = renderer.render()
+    if (typeof content !== 'string') {
+      console.warn('Copy to clipboard is not supported for binary layouts')
+      return Promise.resolve()
+    }
 
     return navigator.clipboard.writeText(content)
   } catch (e) {
@@ -148,6 +164,10 @@ export const printResume = (resume: Resume | null, layoutIndex: number) => {
 
     const renderer = getResumeRenderer(resume, layoutIndex)
     const content = renderer.render()
+    if (typeof content !== 'string') {
+      console.warn('Printing is only supported for string-based layouts')
+      return
+    }
 
     const iframe = document.createElement('iframe')
     iframe.style.position = 'absolute'
@@ -199,6 +219,10 @@ export const openResumeInNewTab = (
 
     const renderer = getResumeRenderer(resume, layoutIndex)
     const content = renderer.render()
+    if (typeof content !== 'string') {
+      console.warn('Open in new tab is only supported for string-based layouts')
+      return
+    }
 
     const blob = new Blob([content], { type: 'text/html' })
     const url = URL.createObjectURL(blob)

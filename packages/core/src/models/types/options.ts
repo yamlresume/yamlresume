@@ -25,6 +25,9 @@
 import type {
   COUNTRY_OPTIONS,
   DEGREE_OPTIONS,
+  DOCX_FONT_SIZE_OPTIONS,
+  DOCX_PAPER_SIZE_OPTIONS,
+  DOCX_TEMPLATE_OPTIONS,
   FLUENCY_OPTIONS,
   HTML_FONT_SIZE_OPTIONS,
   HTML_TEMPLATE_OPTIONS,
@@ -50,9 +53,38 @@ export type Country = (typeof COUNTRY_OPTIONS)[number]
 export type Degree = (typeof DEGREE_OPTIONS)[number]
 
 /**
+ * A union type for all possible docx paper size options.
+ */
+export type DocxPaperSize = (typeof DOCX_PAPER_SIZE_OPTIONS)[number]
+
+/**
+ * A union type for all possible DOCX template options.
+ *
+ * @see {@link https://yamlresume.dev/docs/layouts/docx/templates}
+ */
+export type DocxTemplate = (typeof DOCX_TEMPLATE_OPTIONS)[number]
+
+/**
+ * A union type for all possible docx layout font size options.
+ */
+export type DocxFontSize = (typeof DOCX_FONT_SIZE_OPTIONS)[number]
+
+/**
  * A union type for all possible language fluency levels.
  */
 export type Fluency = (typeof FLUENCY_OPTIONS)[number]
+
+/**
+ * A union type for all possible HTML font size options.
+ */
+export type HtmlFontSize = (typeof HTML_FONT_SIZE_OPTIONS)[number]
+
+/**
+ * A union type for all possible HTML template options.
+ *
+ * @see {@link https://yamlresume.dev/docs/layouts/html/templates}
+ */
+export type HtmlTemplate = (typeof HTML_TEMPLATE_OPTIONS)[number]
 
 /**
  * Keywords type, just an alias for a string list.
@@ -75,18 +107,6 @@ export type Language = (typeof LANGUAGE_OPTIONS)[number]
  */
 export type LatexFontspecNumbers =
   (typeof LATEX_FONTSPEC_NUMBERS_OPTIONS)[number]
-
-/**
- * A union type for all possible HTML font size options.
- */
-export type HtmlFontSize = (typeof HTML_FONT_SIZE_OPTIONS)[number]
-
-/**
- * A union type for all possible HTML template options.
- *
- * @see {@link https://yamlresume.dev/docs/layouts/html/templates}
- */
-export type HtmlTemplate = (typeof HTML_TEMPLATE_OPTIONS)[number]
 
 /**
  * A union type for all possible latex font size options.

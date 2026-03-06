@@ -24,7 +24,7 @@
 
 import type { OrderableSectionID, Resume } from '@/models'
 import { DEFAULT_SECTIONS_ORDER } from '@/models'
-import { joinNonEmptyString, mergeArrayWithOrder } from '@/utils'
+import { mergeArrayWithOrder } from '@/utils'
 
 /**
  * Abstract class for rendering resumes to various format.
@@ -44,7 +44,7 @@ import { joinNonEmptyString, mergeArrayWithOrder } from '@/utils'
  * 5. Persons and projects (references, projects)
  * 6. Non-essential information (interests, volunteer)
  */
-abstract class Renderer {
+abstract class Renderer<T = string> {
   resume: Resume
   layoutIndex: number
 
@@ -64,14 +64,14 @@ abstract class Renderer {
    *
    * @returns {string} The preamble of the TeX document.
    */
-  abstract renderPreamble(): string
+  abstract renderPreamble(): T
 
   /**
    * Render the basics section of the resume.
    *
    * @returns {string} The rendered basics section
    */
-  abstract renderBasics(): string
+  abstract renderBasics(): T
 
   /**
    * Render the summary section of the resume.
@@ -83,21 +83,21 @@ abstract class Renderer {
    *
    * @returns {string} The rendered summary section
    */
-  abstract renderSummary(): string
+  abstract renderSummary(): T
 
   /**
    * Render the location section of the resume.
    *
    * @returns {string} The rendered location section
    */
-  abstract renderLocation(): string
+  abstract renderLocation(): T
 
   /**
    * Render the profiles section of the resume.
    *
    * @returns {string} The rendered profiles section
    */
-  abstract renderProfiles(): string
+  abstract renderProfiles(): T
 
   // education and career
   /**
@@ -105,14 +105,14 @@ abstract class Renderer {
    *
    * @returns {string} The rendered education section
    */
-  abstract renderEducation(): string
+  abstract renderEducation(): T
 
   /**
    * Render the work section of the resume.
    *
    * @returns {string} The rendered work section
    */
-  abstract renderWork(): string
+  abstract renderWork(): T
 
   // languages and skills
   /**
@@ -120,14 +120,14 @@ abstract class Renderer {
    *
    * @returns {string} The rendered languages section
    */
-  abstract renderLanguages(): string
+  abstract renderLanguages(): T
 
   /**
    * Render the skills section of the resume.
    *
    * @returns {string} The rendered skills section
    */
-  abstract renderSkills(): string
+  abstract renderSkills(): T
 
   // paper works
   /**
@@ -135,21 +135,21 @@ abstract class Renderer {
    *
    * @returns {string} The rendered awards section
    */
-  abstract renderAwards(): string
+  abstract renderAwards(): T
 
   /**
    * Render the certificates section of the resume.
    *
    * @returns {string} The rendered certificates section
    */
-  abstract renderCertificates(): string
+  abstract renderCertificates(): T
 
   /**
    * Render the publications section of the resume.
    *
    * @returns {string} The rendered publications section
    */
-  abstract renderPublications(): string
+  abstract renderPublications(): T
 
   // persons and projects
   /**
@@ -157,14 +157,14 @@ abstract class Renderer {
    *
    * @returns {string} The rendered references section
    */
-  abstract renderReferences(): string
+  abstract renderReferences(): T
 
   /**
    * Render the projects section of the resume.
    *
    * @returns {string} The rendered projects section
    */
-  abstract renderProjects(): string
+  abstract renderProjects(): T
 
   // non-essential information
   /**
@@ -172,32 +172,40 @@ abstract class Renderer {
    *
    * @returns {string} The rendered interests section
    */
-  abstract renderInterests(): string
+  abstract renderInterests(): T
 
   /**
    * Render the volunteer section of the resume.
    *
    * @returns {string} The rendered volunteer section
    */
-  abstract renderVolunteer(): string
+  abstract renderVolunteer(): T
 
   /**
    * Render the resume.
    *
-   * @returns {string} The rendered resume
+   * @returns {string | Uint8Array | Promise<string | Uint8Array>} The rendered resume
    */
-  abstract render(): string
+  abstract render(): string | Uint8Array | Promise<string | Uint8Array>
+
+  /**
+   * Join multiple rendered sections into a single output.
+   *
+   * @param sections - The sections to join
+   * @returns {T} The joined sections
+   */
+  protected abstract joinSections(sections: T[]): T
 
   /**
    * Render sections in the specified order.
    *
-   * @returns {string} The rendered sections in the specified order
+   * @returns {T} The rendered sections in the specified order
    */
-  protected renderOrderedSections(): string {
+  protected renderOrderedSections(): T {
     const customOrder = this.resume.layouts?.[this.layoutIndex]?.sections?.order
     const order = mergeArrayWithOrder(customOrder, DEFAULT_SECTIONS_ORDER)
 
-    const sectionRenderers: Record<OrderableSectionID, () => string> = {
+    const sectionRenderers: Record<OrderableSectionID, () => T> = {
       basics: () => this.renderSummary(),
       education: () => this.renderEducation(),
       work: () => this.renderWork(),
@@ -212,11 +220,11 @@ abstract class Renderer {
       volunteer: () => this.renderVolunteer(),
     }
 
-    const renderedSections = order
-      .map((sectionId) => sectionRenderers[sectionId]())
-      .filter((rendered) => rendered.trim() !== '')
+    const renderedSections = order.map((sectionId) =>
+      sectionRenderers[sectionId]()
+    )
 
-    return joinNonEmptyString(renderedSections)
+    return this.joinSections(renderedSections)
   }
 }
 

@@ -92,7 +92,7 @@ describe('LatexPageSchema', () => {
     ]
 
     for (const { page, error } of tests) {
-      // @ts-ignore
+      // @ts-expect-error Testing invalid page settings
       validateZodErrors(LatexPageSchema, { page }, error)
     }
   })

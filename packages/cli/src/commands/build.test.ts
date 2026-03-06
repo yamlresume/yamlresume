@@ -382,6 +382,34 @@ describe(buildResume, () => {
 
   afterAll(cleanupFiles)
 
+  it('should generate docx file', async () => {
+    const resumePath = getFixture('software-engineer.yml')
+
+    // Mock readResume to return resume with docx layout
+    vi.mocked(readResume).mockReturnValue({
+      resume: {
+        // @ts-ignore
+        content: {},
+        layouts: [{ engine: 'docx', template: 'banking' }],
+      },
+      validated: 'success',
+    })
+
+    const docxFile = resumePath.replace('.yml', '.docx')
+
+    await buildResume(resumePath)
+
+    expect(execSpy).not.toBeCalled() // DOCX doesn't trigger latex compilation
+    expect(fs.existsSync(docxFile)).toBe(true)
+
+    expect(outputStr).toEqual([
+      `Generated resume docx file successfully: ${docxFile}`,
+    ])
+
+    // cleanup
+    if (fs.existsSync(docxFile)) fs.unlinkSync(docxFile)
+  })
+
   it('should generate a tex file if pdf option is false', async () => {
     const resumePath = getFixture('software-engineer.yml')
     const texFile = inferOutput(resumePath)
@@ -718,8 +746,8 @@ describe(buildResume, () => {
 
     // Mock readResume to return resume without layouts
     vi.mocked(readResume).mockReturnValue({
-      // @ts-ignore
       resume: {
+        // @ts-ignore
         content: {},
         layouts: undefined,
       },
@@ -846,7 +874,7 @@ describe(createBuildCommand, () => {
   it('should have correct name and description', () => {
     expect(buildCommand.name()).toBe('build')
     expect(buildCommand.description()).toBe(
-      'build a resume to LaTeX, PDF, Markdown, or HTML'
+      'build a resume to Docx, HTML, Markdown or LaTeX/PDF'
     )
   })
 
