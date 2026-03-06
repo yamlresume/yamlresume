@@ -342,7 +342,18 @@ ${fontList
 
       // line spacing
       this.renderLineSpacingConfig(),
+
+      // URL styling - use same font as surrounding text instead of monospace
+      this.renderUrlConfig(),
     ])
+  }
+
+  /**
+   * Render URL configuration to use normal text instead of monospace.
+   */
+  private renderUrlConfig(): string {
+    return `%% URL styling - use normal text instead of monospace
+\\urlstyle{same}`
   }
 
   /**
@@ -488,7 +499,7 @@ ${education
     }) => `\\cventry{${showIfNotEmpty(startDate, dateRange)}}
         {${degreeAreaAndScore}}
         {${institution}}
-        {${showIfNotEmpty(url, `\\href{${url}}{${url}}`)}}
+        {${showIfNotEmpty(url, `\\url{${url}}`)}}
         {}
         {${showIf(
           !isEmptyValue(summary) || !isEmptyValue(courses),
@@ -538,7 +549,7 @@ ${content.work
     return `\\cventry{${showIfNotEmpty(startDate, dateRange)}}
         {${position}}
         {${name}}
-        {${showIfNotEmpty(url, `\\href{${url}}{${url}}`)}}
+        {${showIfNotEmpty(url, `\\url{${url}}`)}}
         {}
         {${showIf(
           !isEmptyValue(summary) || !isEmptyValue(keywords),
@@ -684,7 +695,7 @@ ${certificates
     ({ computed: { date }, issuer, name, url }) => `\\cventry{${date}}
         {${issuer}}
         {${name}}
-        {${showIfNotEmpty(url, `\\href{${url}}{${url}}`)}}
+        {${showIfNotEmpty(url, `\\url{${url}}`)}}
         {}
         {}`
   )
@@ -720,7 +731,7 @@ ${publications
     }) => `\\cventry{${releaseDate}}
         {${name}}
         {${publisher}}
-        {${showIfNotEmpty(url, `\\href{${url}}{${url}}`)}}
+        {${showIfNotEmpty(url, `\\url{${url}}`)}}
         {}
         {${summary}}`
   )
@@ -822,7 +833,7 @@ ${content.projects
     }) => `\\cventry{${showIfNotEmpty(startDate, dateRange)}}
         {${description}}
         {${name}}
-        {${showIfNotEmpty(url, `\\href{${url}}{${url}}`)}}
+        {${showIfNotEmpty(url, `\\url{${url}}`)}}
         {}
         {${showIf(
           !isEmptyValue(summary) || !isEmptyValue(keywords),
@@ -884,7 +895,7 @@ ${content.volunteer
     }) => `\\cventry{${showIfNotEmpty(startDate, dateRange)}}
         {${position}}
         {${organization}}
-        {${showIfNotEmpty(url, `\\href{${url}}{${url}}`)}}
+        {${showIfNotEmpty(url, `\\url{${url}}`)}}
         {}
         {${showIfNotEmpty(summary, summary)}}
     `
