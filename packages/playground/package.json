@@ -39,7 +39,8 @@
     "test": "vitest --run",
     "test:cov": "vitest --coverage --run",
     "test:watch": "vitest",
-    "lint": "biome check src"
+    "lint": "biome check src",
+    "typedoc": "typedoc"
   },
   "peerDependencies": {
     "react": ">=18",
