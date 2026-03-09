@@ -718,10 +718,10 @@ export function transformResumeContent(
   escapeFunc: (input: string) => string
 ): Resume {
   return [
-    // The order of the following functions matters, `transformResumeValues`
-    // should be called first to process all leaf values properly with LaTeX
-    // special characters escaped,
     normalizedResumeContent,
+    // The order of the following functions matters, `transformResumeValues`
+    // should be called as the first transformXXX function to process all leaf
+    // values properly with proper engine-specific escape functions
     (resume: Resume) => transformResumeValues(resume, escapeFunc),
     transformEducationCourses,
     transformEducationDegreeAreaAndScore,
