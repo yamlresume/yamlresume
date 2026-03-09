@@ -25,13 +25,7 @@
 import { cloneDeep } from 'lodash-es'
 import { beforeEach, describe, expect, it } from 'vitest'
 
-import {
-  DEFAULT_RESUME,
-  FILLED_RESUME,
-  type LatexLayout,
-  type Resume,
-} from '@/models'
-import { LINE_SPACING_MAP } from './constants'
+import { FILLED_RESUME, type Resume } from '@/models'
 import {
   ModerncvBankingRenderer,
   ModerncvBase,
@@ -117,6 +111,13 @@ describe('ModerncvBase', () => {
   })
 
   describe('renderPreamble', () => {
+    it('should return empty preamble when layout engine is not latex', () => {
+      resume.layouts = [{ engine: 'markdown', sections: {} }]
+      renderer = new ModerncvBankingRenderer(resume, layoutIndex)
+      const result = renderer.renderPreamble()
+      expect(result).toBe('')
+    })
+
     it('should render correct default document class configuration', () => {
       const result = renderer.renderPreamble()
 
@@ -174,7 +175,6 @@ describe('ModerncvBase', () => {
 
       expect(result).toContain('\\moderncvstyle{banking}')
       expect(result).toContain('\\moderncvcolor{black}')
-      expect(result).toContain('\\usepackage{fontawesome5}')
     })
 
     it('should include CJK override for banking style when language is CJK', () => {
@@ -222,192 +222,6 @@ describe('ModerncvBase', () => {
       expect(result).toContain('\\nopagenumbers{}')
     })
 
-    it('should render CTeX configuration', () => {
-      const result = renderer.renderPreamble()
-
-      expect(result).toContain(
-        '\\usepackage[UTF8, heading=false, punct=kaiming'
-      )
-      expect(result).toContain('\\setCJKmainfont{Noto Serif CJK SC}')
-      expect(result).toContain('\\setCJKsansfont{Noto Sans CJK SC}')
-    })
-
-    it('should return empty string for Babel config for English resume', () => {
-      const nonSpanishResume = cloneDeep(resume)
-      nonSpanishResume.locale = { ...nonSpanishResume.locale, language: 'en' }
-
-      const renderer = new ModerncvBankingRenderer(
-        nonSpanishResume,
-        layoutIndex
-      )
-      const result = renderer.renderPreamble()
-
-      expect(result).not.toContain('\\usepackage[spanish,es-lcroman]{babel}')
-      expect(result).not.toContain('\\usepackage[norsk]{babel}')
-      expect(result).not.toContain('\\usepackage[french]{babel}')
-      expect(result).not.toContain('\\usepackage[dutch]{babel}')
-      expect(result).not.toContain('\\usepackage[ngerman]{babel}')
-    })
-
-    it('should render Spanish configuration for Spanish resume', () => {
-      const spanishResume = cloneDeep(resume)
-      spanishResume.locale = { ...spanishResume.locale, language: 'es' }
-
-      const renderer = new ModerncvBankingRenderer(spanishResume, layoutIndex)
-      const result = renderer.renderPreamble()
-
-      expect(result).toContain('\\usepackage[spanish,es-lcroman]{babel}')
-    })
-
-    it('should render Norwegian configuration for Norwegian resume', () => {
-      const norwegianResume = cloneDeep(resume)
-      norwegianResume.locale = { ...norwegianResume.locale, language: 'no' }
-
-      const renderer = new ModerncvBankingRenderer(norwegianResume, layoutIndex)
-      const result = renderer.renderPreamble()
-
-      expect(result).toContain('\\usepackage[norsk]{babel}')
-    })
-
-    it('should render French configuration for French resume', () => {
-      const frenchResume = cloneDeep(resume)
-      frenchResume.locale = { ...frenchResume.locale, language: 'fr' }
-
-      const renderer = new ModerncvBankingRenderer(frenchResume, layoutIndex)
-      const result = renderer.renderPreamble()
-
-      expect(result).toContain('\\usepackage[french]{babel}')
-    })
-
-    it('should render Dutch configuration for Dutch resume', () => {
-      const dutchResume = cloneDeep(resume)
-      dutchResume.locale = { ...dutchResume.locale, language: 'nl' }
-
-      const renderer = new ModerncvBankingRenderer(dutchResume, layoutIndex)
-      const result = renderer.renderPreamble()
-
-      expect(result).toContain('\\usepackage[dutch]{babel}')
-    })
-
-    it('should render German configuration for German resume', () => {
-      const germanResume = cloneDeep(resume)
-      germanResume.locale = { ...germanResume.locale, language: 'de' }
-
-      const renderer = new ModerncvBankingRenderer(germanResume, layoutIndex)
-      const result = renderer.renderPreamble()
-
-      expect(result).toContain('\\usepackage[ngerman]{babel}')
-    })
-
-    it('should render basic fontspec configuration', () => {
-      const linuxLibertineFont = 'Linux Libertine'
-      const linuxLibertineOFont = 'Linux Libertine O'
-      const cjkResume = cloneDeep(resume)
-      cjkResume.locale = { ...cjkResume.locale, language: 'en' }
-      cjkResume.layouts = [
-        {
-          engine: 'latex',
-          advanced: {
-            fontspec: {
-              numbers: 'OldStyle',
-            },
-          },
-        },
-      ]
-
-      const renderer = new ModerncvBankingRenderer(cjkResume, layoutIndex)
-      const result = renderer.renderPreamble()
-
-      expect(result).toContain('\\usepackage{fontspec}')
-      expect(result).toContain(`\\IfFontExistsTF{${linuxLibertineFont}}`)
-      expect(result).toContain(
-        `\\setmainfont[Ligatures={TeX, Common}, Numbers=OldStyle]{${linuxLibertineFont}}`
-      )
-      expect(result).toContain(`\\IfFontExistsTF{${linuxLibertineOFont}}`)
-      expect(result).toContain(
-        `\\setmainfont[Ligatures={TeX, Common}, Numbers=OldStyle]{${linuxLibertineOFont}}`
-      )
-    })
-
-    it('should configure custom font families', () => {
-      const linuxLibertineFont = 'Linux Libertine'
-      const linuxLibertineOFont = 'Linux Libertine O'
-      const customFont1 = 'Monaco'
-      const customFont2 = 'Helvetica'
-      resume.layouts = [
-        {
-          engine: 'latex',
-          typography: {
-            fontFamily: `${customFont1}, ${customFont2}`,
-          },
-        },
-      ]
-
-      const renderer = new ModerncvBankingRenderer(resume, layoutIndex)
-      const result = renderer.renderPreamble()
-
-      // Should contain checks for default fonts
-      expect(result).toContain(`\\IfFontExistsTF{${linuxLibertineFont}}`)
-      expect(result).toContain(`\\IfFontExistsTF{${linuxLibertineOFont}}`)
-
-      // Should contain checks for custom fonts
-      expect(result).toContain(`\\IfFontExistsTF{${customFont1}}`)
-      expect(result).toContain(`\\IfFontExistsTF{${customFont2}}`)
-
-      // Check order: default fonts should appear before custom fonts in the generated code
-      // because we reverse the list for precedence (last one overrides previous ones)
-      // The precedence we want is: Custom1 > Custom2 > DefaultO > Default
-      // So in the iteration (which generates the \\setmainfont calls):
-      // 1. Default (Linux Libertine)
-      // 2. DefaultO (Linux Libertine O)
-      // 3. Custom2 (Helvetica)
-      // 4. Custom1 (Monaco)
-      //
-      // This means Custom1 appears LAST in the output string.
-      const idxDefault = result.indexOf(
-        `\\IfFontExistsTF{${linuxLibertineFont}}`
-      )
-      const idxDefaultO = result.indexOf(
-        `\\IfFontExistsTF{${linuxLibertineOFont}}`
-      )
-      const idxCustom2 = result.indexOf(`\\IfFontExistsTF{${customFont2}}`)
-      const idxCustom1 = result.indexOf(`\\IfFontExistsTF{${customFont1}}`)
-
-      expect(idxDefault).toBeLessThan(idxDefaultO)
-      expect(idxDefaultO).toBeLessThan(idxCustom2)
-      expect(idxCustom2).toBeLessThan(idxCustom1)
-    })
-
-    it('should render basic fontspec configuration for CJK', () => {
-      const linuxLibertineFont = 'Linux Libertine'
-      const linuxLibertineOFont = 'Linux Libertine O'
-      const cjkResume = cloneDeep(resume)
-      cjkResume.locale = { ...cjkResume.locale, language: 'zh-hans' }
-      cjkResume.layouts = [
-        {
-          engine: 'latex',
-          advanced: {
-            fontspec: {
-              numbers: 'Lining',
-            },
-          },
-        },
-      ]
-
-      const renderer = new ModerncvBankingRenderer(cjkResume, layoutIndex)
-      const result = renderer.renderPreamble()
-
-      expect(result).toContain('\\usepackage{fontspec}')
-      expect(result).toContain(`\\IfFontExistsTF{${linuxLibertineFont}}`)
-      expect(result).toContain(
-        `\\setmainfont[Ligatures={TeX, Common}, Numbers=Lining, ItalicFont=${linuxLibertineFont}]{${linuxLibertineFont}}`
-      )
-      expect(result).toContain(`\\IfFontExistsTF{${linuxLibertineOFont}}`)
-      expect(result).toContain(
-        `\\setmainfont[Ligatures={TeX, Common}, Numbers=Lining, ItalicFont=${linuxLibertineOFont}]{${linuxLibertineOFont}}`
-      )
-    })
-
     it('should use default font size when layout is undefined', () => {
       resume.layouts = undefined
       renderer = new ModerncvBankingRenderer(resume, layoutIndex)
@@ -415,13 +229,6 @@ describe('ModerncvBase', () => {
       expect(result).toContain(
         '\\documentclass[a4paper, serif, 10pt]{moderncv}'
       )
-    })
-
-    it('should return empty preamble when layout engine is not latex', () => {
-      resume.layouts = [{ engine: 'markdown', sections: {} }]
-      renderer = new ModerncvBankingRenderer(resume, layoutIndex)
-      const result = renderer.renderPreamble()
-      expect(result).toBe('')
     })
 
     it('should use default font size when typography is missing', () => {
@@ -433,84 +240,11 @@ describe('ModerncvBase', () => {
       )
     })
 
-    it('should use default margins when page config is missing', () => {
-      resume.layouts = [{ engine: 'latex', page: undefined }]
-      renderer = new ModerncvBankingRenderer(resume, layoutIndex)
-      const result = renderer.renderPreamble()
-      expect(result).toContain('top=2.5cm')
-      expect(result).toContain('bottom=2.5cm')
-      expect(result).toContain('left=1.5cm')
-      expect(result).toContain('right=1.5cm')
-    })
-
-    it('should use default margins when margins are partial/missing', () => {
-      resume.layouts = [{ engine: 'latex', page: undefined }]
-      renderer = new ModerncvBankingRenderer(resume, layoutIndex)
-      const result = renderer.renderPreamble()
-      expect(result).toContain('top=2.5cm')
-      expect(result).toContain('bottom=2.5cm')
-      expect(result).toContain('left=1.5cm')
-      expect(result).toContain('right=1.5cm')
-    })
-
     it('should use default numbers style when advanced config is missing', () => {
       resume.layouts = [{ engine: 'latex', advanced: undefined }]
       renderer = new ModerncvBankingRenderer(resume, layoutIndex)
       const result = renderer.renderPreamble()
       expect(result).toContain('Numbers=OldStyle')
-    })
-
-    describe('typography.lineSpacing', () => {
-      it('should use default line spacing when typography is undefined', () => {
-        const testResume = cloneDeep(resume)
-        testResume.layouts = [{ engine: 'latex', typography: undefined }]
-
-        const renderer = new ModerncvBankingRenderer(testResume, layoutIndex)
-        const result = renderer.renderPreamble()
-
-        expect(result).toContain('\\usepackage{setspace}')
-        expect(result).toContain('\\setstretch{1.125}')
-      })
-
-      it('should use default line spacing when lineSpacing is not provided', () => {
-        const testResume = cloneDeep(resume)
-        const latexLayout = testResume.layouts[layoutIndex] as LatexLayout
-        latexLayout.typography = { fontSize: '10pt' }
-
-        const renderer = new ModerncvBankingRenderer(testResume, layoutIndex)
-        const result = renderer.renderPreamble()
-
-        expect(result).toContain('\\usepackage{setspace}')
-        expect(result).toContain('\\setstretch{1.125}')
-      })
-
-      it('should use provided line spacing when lineSpacing is set', () => {
-        for (const [spacing, value] of Object.entries(LINE_SPACING_MAP)) {
-          const testResume = cloneDeep(DEFAULT_RESUME)
-          const layoutIndex = testResume.layouts.findIndex(
-            (l) => l.engine === 'latex'
-          )
-          const latexLayout = testResume.layouts[layoutIndex] as LatexLayout
-          latexLayout.typography = {
-            ...latexLayout.typography,
-            lineSpacing: spacing as keyof typeof LINE_SPACING_MAP,
-          }
-
-          const renderer = new ModerncvBankingRenderer(testResume, layoutIndex)
-          const result = renderer.renderPreamble()
-
-          expect(result).toContain('\\usepackage{setspace}')
-          expect(result).toContain(`\\setstretch{${value}}`)
-        }
-      })
-    })
-
-    describe('urlstyle settings', () => {
-      it('should configure url style to same', () => {
-        const result = renderer.renderPreamble()
-
-        expect(result).toContain('\\urlstyle{same}')
-      })
     })
 
     describe('homepage redefinition', () => {
@@ -671,13 +405,6 @@ describe('ModerncvBase', () => {
   })
 
   describe('renderLocation', () => {
-    it('should return empty string if no address information', () => {
-      renderer = new ModerncvBankingRenderer(resume, layoutIndex)
-      const result = renderer.renderLocation()
-
-      expect(result).toBe('')
-    })
-
     it('should render location if has address information', () => {
       const address = '123 Main St'
       const city = 'City'
@@ -697,13 +424,6 @@ describe('ModerncvBase', () => {
   })
 
   describe('renderProfiles', () => {
-    it('should return empty string if no urls', () => {
-      renderer = new ModerncvBankingRenderer(resume, layoutIndex)
-      const result = renderer.renderProfiles()
-
-      expect(result).toBe('')
-    })
-
     it('should render one social profile', () => {
       const url = 'https://github.com/username'
       const username = 'username'
@@ -803,27 +523,7 @@ describe('ModerncvBase', () => {
     })
   })
 
-  describe('renderSummary', () => {
-    it('should return empty string if no summary', () => {
-      renderer = new ModerncvBankingRenderer(resume, layoutIndex)
-      const result = renderer.renderSummary()
-
-      expect(result).toBe('')
-    })
-
-    // TODO: add test for non-empty summary
-  })
-
   describe('renderEducation', () => {
-    it('should return empty string if no education entries', () => {
-      resume.content.education = []
-
-      renderer = new ModerncvBankingRenderer(resume, layoutIndex)
-      const result = renderer.renderEducation()
-
-      expect(result).toBe('')
-    })
-
     it('should render education section', () => {
       const institution = 'University'
       const area = 'Computer Science'
@@ -857,15 +557,6 @@ describe('ModerncvBase', () => {
   })
 
   describe('renderWork', () => {
-    it('should return empty string if no work entries', () => {
-      resume.content.work = []
-
-      renderer = new ModerncvBankingRenderer(resume, layoutIndex)
-      const result = renderer.renderWork()
-
-      expect(result).toBe('')
-    })
-
     it('should render work section', () => {
       const name = 'Company'
       const position = 'Software Engineer'
@@ -900,15 +591,6 @@ describe('ModerncvBase', () => {
   })
 
   describe('renderLanguages', () => {
-    it('should return empty string if no language entries', () => {
-      resume.content.languages = []
-
-      renderer = new ModerncvBankingRenderer(resume, layoutIndex)
-      const result = renderer.renderLanguages()
-
-      expect(result).toBe('')
-    })
-
     it('should render languages section with keywords', () => {
       resume.content.languages = [
         {
@@ -946,15 +628,6 @@ describe('ModerncvBase', () => {
   })
 
   describe('renderSkills', () => {
-    it('should return empty string if no skill entries', () => {
-      resume.content.skills = []
-
-      renderer = new ModerncvBankingRenderer(resume, layoutIndex)
-      const result = renderer.renderSkills()
-
-      expect(result).toBe('')
-    })
-
     it('should render skills section with keywords', () => {
       resume.content.skills = [
         {
@@ -990,15 +663,6 @@ describe('ModerncvBase', () => {
   })
 
   describe('renderAwards', () => {
-    it('should return empty string if no award entries', () => {
-      resume.content.awards = []
-
-      renderer = new ModerncvBankingRenderer(resume, layoutIndex)
-      const result = renderer.renderAwards()
-
-      expect(result).toBe('')
-    })
-
     it('should render awards section', () => {
       const title = 'Best Developer Award'
       const awarder = 'Tech Company'
@@ -1025,15 +689,6 @@ describe('ModerncvBase', () => {
   })
 
   describe('renderCertificates', () => {
-    it('should return empty string if no certificate entries', () => {
-      resume.content.certificates = []
-
-      renderer = new ModerncvBankingRenderer(resume, layoutIndex)
-      const result = renderer.renderCertificates()
-
-      expect(result).toBe('')
-    })
-
     it('should render certificates section', () => {
       const name = 'AWS Certified Solutions Architect'
       const issuer = 'Amazon Web Services'
@@ -1061,15 +716,6 @@ describe('ModerncvBase', () => {
   })
 
   describe('renderPublications', () => {
-    it('should return empty string if no publication entries', () => {
-      resume.content.publications = []
-
-      renderer = new ModerncvBankingRenderer(resume, layoutIndex)
-      const result = renderer.renderPublications()
-
-      expect(result).toBe('')
-    })
-
     it('should render publications section', () => {
       const name = 'Research Paper Title'
       const publisher = 'Academic Journal'
@@ -1099,15 +745,6 @@ describe('ModerncvBase', () => {
   })
 
   describe('renderReferences', () => {
-    it('should return empty string if no reference entries', () => {
-      resume.content.references = []
-
-      renderer = new ModerncvBankingRenderer(resume, layoutIndex)
-      const result = renderer.renderReferences()
-
-      expect(result).toBe('')
-    })
-
     it('should render references section', () => {
       const name = 'John Smith'
       const email = 'john@example.com'
@@ -1140,15 +777,6 @@ describe('ModerncvBase', () => {
   })
 
   describe('renderProjects', () => {
-    it('should return empty string if no project entries', () => {
-      resume.content.projects = []
-
-      renderer = new ModerncvBankingRenderer(resume, layoutIndex)
-      const result = renderer.renderProjects()
-
-      expect(result).toBe('')
-    })
-
     it('should render projects section', () => {
       const name = 'Project Name'
       const description = 'Project Description'
@@ -1183,15 +811,6 @@ describe('ModerncvBase', () => {
   })
 
   describe('renderInterests', () => {
-    it('should return empty string if no interest entries', () => {
-      resume.content.interests = []
-
-      renderer = new ModerncvBankingRenderer(resume, layoutIndex)
-      const result = renderer.renderInterests()
-
-      expect(result).toBe('')
-    })
-
     it('should render interests section', () => {
       const name = 'Programming'
       const keywords = ['Open Source', 'Web Development']
@@ -1212,15 +831,6 @@ describe('ModerncvBase', () => {
   })
 
   describe('renderVolunteer', () => {
-    it('should return empty string if no volunteer entries', () => {
-      resume.content.volunteer = []
-
-      renderer = new ModerncvBankingRenderer(resume, layoutIndex)
-      const result = renderer.renderVolunteer()
-
-      expect(result).toBe('')
-    })
-
     it('should render volunteer section', () => {
       const organization = 'Code for Good'
       const position = 'Technical Lead'
@@ -1249,130 +859,6 @@ describe('ModerncvBase', () => {
       expect(result).toContain(`{${organization}}`)
       expect(result).toContain(`{\\url{${url}}}`)
       expect(result).toContain('')
-    })
-  })
-
-  describe('generateTeX -> renderOrderedSections', () => {
-    it('should prioritize custom sections', () => {
-      // set up a resume with partial custom section order
-      resume.layouts = [
-        {
-          ...resume.layouts?.[layoutIndex],
-          sections: {
-            order: ['work', 'education'],
-          },
-        },
-      ]
-
-      renderer = new ModerncvBankingRenderer(resume, layoutIndex)
-      const result = renderer.render()
-
-      // extract the section order from the rendered output
-      const sectionMatches = result.match(/\\section\{[^}]+\}/g) || []
-      const sectionNames = sectionMatches.map((match) =>
-        match.replace(/\\section\{/, '').replace(/\}/, '')
-      )
-
-      // find the indices of the sections we care about
-      const workIndex = sectionNames.findIndex((name) => name.includes('Work'))
-      const educationIndex = sectionNames.findIndex((name) =>
-        name.includes('Education')
-      )
-      const languagesIndex = sectionNames.findIndex((name) =>
-        name.includes('Languages')
-      )
-      const skillsIndex = sectionNames.findIndex((name) =>
-        name.includes('Skills')
-      )
-
-      // verify the order: work should come first, then education, then
-      // remaining sections in default order
-      expect(workIndex).toBeGreaterThan(-1)
-      expect(educationIndex).toBeGreaterThan(-1)
-      expect(languagesIndex).toBeGreaterThan(-1)
-      expect(skillsIndex).toBeGreaterThan(-1)
-      expect(workIndex).toBeLessThan(educationIndex)
-      expect(educationIndex).toBeLessThan(languagesIndex)
-      expect(languagesIndex).toBeLessThan(skillsIndex)
-    })
-
-    it('should use default order when no custom order is specified', () => {
-      // ensure no custom order is set
-      resume.layouts = [
-        {
-          ...resume.layouts?.[layoutIndex],
-          sections: {},
-        },
-      ]
-
-      renderer = new ModerncvBankingRenderer(resume, layoutIndex)
-      const result = renderer.render()
-
-      // extract the section order from the rendered output
-      const sectionMatches = result.match(/\\section\{[^}]+\}/g) || []
-      const sectionNames = sectionMatches.map((match) =>
-        match.replace(/\\section\{/, '').replace(/\}/, '')
-      )
-
-      // find the indices of the sections we care about
-      const educationIndex = sectionNames.findIndex((name) =>
-        name.includes('Education')
-      )
-      const workIndex = sectionNames.findIndex((name) => name.includes('Work'))
-      const languagesIndex = sectionNames.findIndex((name) =>
-        name.includes('Languages')
-      )
-
-      // verify the default order: education should come before work, which
-      // should come before languages
-      expect(educationIndex).toBeGreaterThan(-1)
-      expect(workIndex).toBeGreaterThan(-1)
-      expect(languagesIndex).toBeGreaterThan(-1)
-      expect(educationIndex).toBeLessThan(workIndex)
-      expect(workIndex).toBeLessThan(languagesIndex)
-    })
-
-    it('should filter out empty sections', () => {
-      // set up a resume with custom section order including empty sections
-      resume.content.education = []
-      resume.content.work = []
-      resume.content.skills = []
-
-      resume.layouts = [
-        {
-          ...resume.layouts?.[layoutIndex],
-          sections: {
-            order: ['education', 'work', 'skills', 'languages'],
-          },
-        },
-      ]
-
-      renderer = new ModerncvBankingRenderer(resume, layoutIndex)
-      const result = renderer.render()
-
-      // extract the section order from the rendered output
-      const sectionMatches = result.match(/\\section\{[^}]+\}/g) || []
-      const sectionNames = sectionMatches.map((match) =>
-        match.replace(/\\section\{/, '').replace(/\}/, '')
-      )
-
-      // only languages section should be present (others are empty)
-      const languagesIndex = sectionNames.findIndex((name) =>
-        name.includes('Languages')
-      )
-      expect(languagesIndex).toBeGreaterThan(-1)
-
-      // education, work, and skills sections should not be present
-      const educationIndex = sectionNames.findIndex((name) =>
-        name.includes('Education')
-      )
-      const workIndex = sectionNames.findIndex((name) => name.includes('Work'))
-      const skillsIndex = sectionNames.findIndex((name) =>
-        name.includes('Skills')
-      )
-      expect(educationIndex).toBe(-1)
-      expect(workIndex).toBe(-1)
-      expect(skillsIndex).toBe(-1)
     })
   })
 })

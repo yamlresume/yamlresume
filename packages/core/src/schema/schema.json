@@ -2792,6 +2792,7 @@
                         "description": "A predefined option from the available LaTeX template choices or `null`.",
                         "type": "string",
                         "enum": [
+                          "jake",
                           "moderncv-banking",
                           "moderncv-casual",
                           "moderncv-classic"

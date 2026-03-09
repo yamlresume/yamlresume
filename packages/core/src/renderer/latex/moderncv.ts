@@ -22,8 +22,6 @@
  * IN THE SOFTWARE.
  */
 
-import { capitalize } from 'lodash-es'
-
 import type { Parser } from '@/compiler'
 import { MarkdownParser } from '@/compiler'
 import type { LatexLayout, Resume } from '@/models'
@@ -36,14 +34,13 @@ import {
   showIf,
   showIfNotEmpty,
 } from '@/utils'
-import { Renderer } from '../base'
-import { DEFAULT_LINE_SPACING, LINE_SPACING_MAP } from './constants'
+import { LatexRenderer } from './base'
 import { type ModerncvStyle, normalizeUnit } from './preamble'
 
 /**
  * Base class for moderncv renderers.
  */
-class ModerncvBase extends Renderer {
+class ModerncvBase extends LatexRenderer {
   style: ModerncvStyle
 
   /**
@@ -66,23 +63,6 @@ class ModerncvBase extends Renderer {
       layoutIndex
     )
     this.style = style
-  }
-
-  /**
-   * Whether to show icons in the rendered LaTeX.
-   */
-  private get showIcons(): boolean {
-    const layout = this.resume.layouts?.[this.layoutIndex] as LatexLayout
-    return layout?.advanced?.showIcons ?? true
-  }
-
-  /**
-   * Check if the resume is a CJK resume.
-   */
-  private isCJKResume(): boolean {
-    return ['zh-hans', 'zh-hant-hk', 'zh-hant-tw', 'ja'].includes(
-      this.resume.locale?.language
-    )
   }
 
   /**
@@ -145,10 +125,7 @@ class ModerncvBase extends Renderer {
       `%% moderncv
 % style and color
 \\moderncvstyle{${this.style}}
-\\moderncvcolor{black}
-
-% needed by moderncv for showing icons
-\\usepackage{fontawesome5}`,
+\\moderncvcolor{black}`,
       this.showIcons
         ? ''
         : `% disable icons
@@ -163,200 +140,13 @@ class ModerncvBase extends Renderer {
   }
 
   /**
-   * Render the layout configuration.
+   * Render the page numbers configuration.
    */
-  private renderLayoutConfig(): string {
+  private renderPageNumbersConfig(): string {
     const layout = this.resume.layouts?.[this.layoutIndex]
 
     const page = (layout as LatexLayout)?.page
-
-    const margins = page?.margins
-    const showPageNumbers = page?.showPageNumbers
-
-    const t = normalizeUnit(margins?.top)
-    const b = normalizeUnit(margins?.bottom)
-    const l = normalizeUnit(margins?.left)
-    const r = normalizeUnit(margins?.right)
-
-    return joinNonEmptyString(
-      [
-        `%% page layout/margins
-\\usepackage[top=${t}, bottom=${b}, left=${l}, right=${r}]{geometry}`,
-        showIf(!showPageNumbers, '\\nopagenumbers{}'),
-      ],
-      '\n'
-    )
-  }
-
-  /**
-   * Render the LaTeX packages for CJK support
-   */
-  private renderCTeXConfig(): string {
-    return `%% CTeX
-% CJK support, used to show CJK characters in the resume
-%
-% - fontset=none: disable builtin fontset but instead set the CJK font manually
-% - heading=false: disable ctex heading
-% - punct=kaiming: use kaiming punctuations styles for CJK
-% - scheme=plain: use plain scheme, do not override \`\\normalsize\` font size
-% - space=auto: space settings for CJK characters
-%
-% ref:
-% - http://ctan.mirrorcatalogs.com/language/chinese/ctex/ctex.pdf
-\\usepackage[UTF8, heading=false, punct=kaiming, scheme=plain, space=auto]{ctex}
-
-\\IfFontExistsTF{Noto Serif CJK SC}{
-  \\setCJKmainfont{Noto Serif CJK SC}
-}{}
-\\IfFontExistsTF{Noto Sans CJK SC}{
-  \\setCJKsansfont{Noto Sans CJK SC}
-}{}`
-  }
-
-  /**
-   * Render the LaTeX packages for Spanish support
-   */
-  private renderBabelConfig(): string {
-    switch (this.resume.locale?.language) {
-      case 'es':
-        return `%% Babel config for Spanish language
-% \`\\usepackage[spanish]{babel}\` has some conflicting issues with moderncv
-% so we have to use enable the following options to make it work
-%
-% ref:
-% - https://tex.stackexchange.com/a/140161/36007
-\\usepackage[spanish,es-lcroman]{babel}`
-      case 'fr':
-        return `%% Babel config for French language
-% ref:
-% - https://latex3.github.io/babel/guides/locale-french.html
-\\usepackage[french]{babel}`
-      case 'no':
-        return `%% Babel config for Norwegian language
-% ref:
-% - https://latex3.github.io/babel/guides/locale-norwegian.html
-\\usepackage[norsk]{babel}`
-      case 'nl':
-        return `%% Babel config for Dutch language
-% ref:
-% - https://latex3.github.io/babel/guides/locale-dutch.html
-\\usepackage[dutch]{babel}`
-      case 'de':
-        return `%% Babel config for German language
-% ref:
-% - https://latex3.github.io/babel/guides/locale-german.html
-\\usepackage[ngerman]{babel}`
-      default:
-        return ''
-    }
-  }
-
-  /**
-   * Render the LaTeX packages for Spanish support
-   */
-  private renderFontspecConfig(): string {
-    const layout = this.resume.layouts?.[this.layoutIndex] as LatexLayout
-
-    const numbers = layout.advanced?.fontspec?.numbers
-
-    const linuxLibertineFont = 'Linux Libertine'
-    const linuxLibertineOFont = 'Linux Libertine O'
-
-    const fontFamily = layout.typography?.fontFamily
-    const fonts = fontFamily
-      ?.split(',')
-      .map((font) => font.trim())
-      .filter((font) => font.length > 0)
-    // reverse the fonts so that the first font in the list will be the last one
-    // to be set, so it will be the one used if it exists
-    const fontList = Array.from(
-      new Set([...(fonts ?? []), linuxLibertineOFont, linuxLibertineFont])
-    ).reverse()
-
-    return `%% fontspec
-\\usepackage{fontspec}
-
-${fontList
-  .map(
-    (font) => `\\IfFontExistsTF{${font}}{
-  \\setmainfont[${joinNonEmptyString(
-    [
-      'Ligatures={TeX, Common}',
-      `Numbers=${numbers}`,
-      showIf(this.isCJKResume(), `ItalicFont=${font}`),
-    ],
-    ', '
-  )}]{${font}}
-}{}`
-  )
-  .join('\n')}`
-  }
-
-  /**
-   * Render the line spacing configuration using the setspace package.
-   *
-   * @returns The LaTeX code for line spacing configuration
-   */
-  private renderLineSpacingConfig(): string {
-    const layout = this.resume.layouts?.[this.layoutIndex] as LatexLayout
-    const lineSpacing = layout?.typography?.lineSpacing || DEFAULT_LINE_SPACING
-    const stretchValue = LINE_SPACING_MAP[lineSpacing]
-
-    return `%% line spacing
-\\usepackage{setspace}
-\\setstretch{${stretchValue}}`
-  }
-
-  /**
-   * Render the preamble for the resume.
-   *
-   * @returns The LaTeX code for the preamble
-   */
-  renderPreamble(): string {
-    if (this.resume.layouts?.[this.layoutIndex]?.engine !== 'latex') {
-      return ''
-    }
-
-    return joinNonEmptyString([
-      // document class
-      this.renderDocumentClassConfig(),
-      this.renderModerncvConfig(),
-
-      // layout
-      this.renderLayoutConfig(),
-
-      // language specific
-      this.renderBabelConfig(),
-
-      // fontspec
-      // note that loading order of fontspec and babel packages matters here
-      // babel package should be loaded before fontspec package, otherwise
-      // Spanish resumes cannot render correct font styles in my testing,
-      // reason still unknown though
-      this.renderFontspecConfig(),
-
-      // CTeX for CJK
-      // CTeX needs to load after fontspec because we use `\IfFontExistsTF` to
-      // set the CJK font manually if the required Google Noto font exists
-      this.renderCTeXConfig(),
-
-      // line spacing
-      this.renderLineSpacingConfig(),
-
-      // URL styling - use same font as surrounding text instead of monospace
-      this.renderUrlConfig(),
-
-      // Patch httplink/httpslink to support full URLs with protocols
-      this.renderHomepageRedefinition(),
-    ])
-  }
-
-  /**
-   * Render URL configuration to use normal text instead of monospace.
-   */
-  private renderUrlConfig(): string {
-    return `%% URL styling - use normal text instead of monospace
-\\urlstyle{same}`
+    return showIf(!page?.showPageNumbers, '\\nopagenumbers{}')
   }
 
   /**
@@ -405,6 +195,51 @@ ${fontList
   }
 
   /**
+   * Render the preamble for the resume.
+   *
+   * @returns The LaTeX code for the preamble
+   */
+  renderPreamble(): string {
+    if (this.resume.layouts?.[this.layoutIndex]?.engine !== 'latex') {
+      return ''
+    }
+
+    return joinNonEmptyString([
+      // document class
+      this.renderDocumentClassConfig(),
+      this.renderModerncvConfig(),
+
+      // layout
+      this.renderGeometry(),
+      this.renderPageNumbersConfig(),
+
+      // language specific
+      this.renderBabelConfig(),
+
+      // fontspec
+      // note that loading order of fontspec and babel packages matters here
+      // babel package should be loaded before fontspec package, otherwise
+      // Spanish resumes cannot render correct font styles in my testing,
+      // reason still unknown though
+      this.renderFontspecConfig(),
+
+      // CTeX for CJK
+      // CTeX needs to load after fontspec because we use `\IfFontExistsTF` to
+      // set the CJK font manually if the required Google Noto font exists
+      this.renderCTeXConfig(),
+
+      // line spacing
+      this.renderLineSpacingConfig(),
+
+      // URL styling - use same font as surrounding text instead of monospace
+      this.renderUrlConfig(),
+
+      // Patch httplink/httpslink to support full URLs with protocols
+      this.renderHomepageRedefinition(),
+    ])
+  }
+
+  /**
    * Render the basics section of the resume.
    *
    * @returns The LaTeX code for the basics section
@@ -449,24 +284,6 @@ ${fontList
   }
 
   /**
-   * Get FontAwesome icon for a network.
-   */
-  private getFaIcon(network: string): string {
-    if (!this.showIcons) {
-      return ''
-    }
-
-    switch (network) {
-      case 'Stack Overflow':
-        return '{\\small \\faStackOverflow}\\ '
-      case 'WeChat':
-        return '{\\small \\faWeixin}\\ '
-      default:
-        return `{\\small \\fa${capitalize(network)}}\\ `
-    }
-  }
-
-  /**
    * Render the profiles section of the resume.
    *
    * @returns The LaTeX code for the profiles section
@@ -475,6 +292,10 @@ ${fontList
     const {
       content: { profiles },
     } = this.resume
+
+    if (isEmptyValue(profiles)) {
+      return ''
+    }
 
     const profileLinks = profiles.map(({ network, url, username }) => {
       const icon = this.getFaIcon(network)
@@ -532,7 +353,7 @@ ${fontList
       terms,
     } = getTemplateTranslations(locale?.language)
 
-    if (!education.length) {
+    if (isEmptyValue(education)) {
       return ''
     }
 
@@ -572,29 +393,31 @@ ${education
    * @returns The LaTeX code for the work section
    */
   renderWork(): string {
-    const { content, locale } = this.resume
+    const {
+      content: { work, computed },
+      locale,
+    } = this.resume
 
     const {
       punctuations: { colon },
       terms,
     } = getTemplateTranslations(locale?.language)
 
-    if (!content.work.length) {
+    if (isEmptyValue(work)) {
       return ''
     }
 
-    return `\\section{${content.computed.sectionNames.work}}
+    return `\\section{${computed.sectionNames.work}}
 
-${content.work
-  .map((work) => {
-    const {
+${work
+  .map(
+    ({
       computed: { startDate, dateRange, summary, keywords },
       name,
       position,
       url,
-    } = work
-
-    return `\\cventry{${showIfNotEmpty(startDate, dateRange)}}
+    }) => {
+      return `\\cventry{${showIfNotEmpty(startDate, dateRange)}}
         {${position}}
         {${name}}
         {${showIfNotEmpty(url, `\\url{${url}}`)}}
@@ -612,7 +435,8 @@ ${content.work
             '\n'
           )}`
         )}}`
-  })
+    }
+  )
   .join('\n\n')}`
   }
 
@@ -630,7 +454,7 @@ ${content.work
       locale,
     } = this.resume
 
-    if (!languages.length) {
+    if (isEmptyValue(languages)) {
       return ''
     }
 
@@ -671,7 +495,7 @@ ${languages
       terms,
     } = getTemplateTranslations(locale?.language)
 
-    if (!skills.length) {
+    if (isEmptyValue(skills)) {
       return ''
     }
 
@@ -701,7 +525,7 @@ ${skills
       },
     } = this.resume
 
-    if (!awards.length) {
+    if (isEmptyValue(awards)) {
       return ''
     }
 
@@ -732,7 +556,7 @@ ${awards
       },
     } = this.resume
 
-    if (!certificates.length) {
+    if (isEmptyValue(certificates)) {
       return ''
     }
 
@@ -763,7 +587,7 @@ ${certificates
       },
     } = this.resume
 
-    if (!publications.length) {
+    if (isEmptyValue(publications)) {
       return ''
     }
 
@@ -799,7 +623,7 @@ ${publications
       },
     } = this.resume
 
-    if (!references.length) {
+    if (isEmptyValue(references)) {
       return ''
     }
 
@@ -859,19 +683,21 @@ ${references
    * @returns The LaTeX code for the projects section
    */
   renderProjects(): string {
-    const { content } = this.resume
+    const {
+      content: { projects, computed },
+    } = this.resume
     const {
       punctuations: { colon },
       terms,
     } = getTemplateTranslations(this.resume.locale?.language)
 
-    if (!content.projects.length) {
+    if (isEmptyValue(projects)) {
       return ''
     }
 
-    return `\\section{${content.computed.sectionNames.projects}}
+    return `\\section{${computed.sectionNames.projects}}
 
-${content.projects
+${projects
   .map(
     ({
       name,
@@ -906,15 +732,17 @@ ${content.projects
    * @returns The LaTeX code for the interests section
    */
   renderInterests(): string {
-    const { content } = this.resume
+    const {
+      content: { interests, computed },
+    } = this.resume
 
-    if (!content.interests.length) {
+    if (isEmptyValue(interests)) {
       return ''
     }
 
-    return `\\section{${content.computed.sectionNames.interests}}
+    return `\\section{${computed.sectionNames.interests}}
 
-${content.interests
+${interests
   .map(({ name, computed: { keywords } }) => `\\cvline{${name}}{${keywords}}`)
   .join('\n')}`
   }
@@ -925,15 +753,17 @@ ${content.interests
    * @returns The LaTeX code for the volunteer section
    */
   renderVolunteer(): string {
-    const { content } = this.resume
+    const {
+      content: { volunteer, computed },
+    } = this.resume
 
-    if (!content.volunteer.length) {
+    if (isEmptyValue(volunteer)) {
       return ''
     }
 
-    return `\\section{${content.computed.sectionNames.volunteer}}
+    return `\\section{${computed.sectionNames.volunteer}}
 
-${content.volunteer
+${volunteer
   .map(
     ({
       position,

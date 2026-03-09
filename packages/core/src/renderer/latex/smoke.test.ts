@@ -27,6 +27,7 @@ import { beforeEach, describe, expect, it } from 'vitest'
 import type { Resume } from '@/models'
 import { collectAllKeys, removeKeysFromObject } from '@/utils'
 import { getFixture, getRandomSections, sections } from '../test-utils'
+import { JakeRenderer } from './jake'
 import {
   ModerncvBankingRenderer,
   ModerncvCasualRenderer,
@@ -38,6 +39,7 @@ describe('smoke test for all renderers', () => {
   let layoutIndex: number
 
   const renderers = [
+    JakeRenderer,
     ModerncvBankingRenderer,
     ModerncvClassicRenderer,
     ModerncvCasualRenderer,

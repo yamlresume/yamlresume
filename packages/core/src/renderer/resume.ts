@@ -30,13 +30,15 @@ import type { Resume } from '@/models'
 import type { Renderer } from './base'
 import { HtmlRenderer } from './html'
 import {
+  JakeRenderer,
   ModerncvBankingRenderer,
   ModerncvCasualRenderer,
   ModerncvClassicRenderer,
-} from './latex/moderncv'
+} from './latex'
 import { MarkdownRenderer } from './markdown'
 
 const LATEX_RESUME_RENDERER_MAP = {
+  jake: JakeRenderer,
   'moderncv-banking': ModerncvBankingRenderer,
   'moderncv-classic': ModerncvClassicRenderer,
   'moderncv-casual': ModerncvCasualRenderer,
