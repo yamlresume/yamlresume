@@ -77,6 +77,7 @@ export const LATEX_FONTSPEC_NUMBERS_OPTIONS = [
 
 /** Defines identifiers for the available latex layout templates. */
 export const LATEX_TEMPLATE_OPTIONS = [
+  'jake',
   'moderncv-banking',
   'moderncv-casual',
   'moderncv-classic',

@@ -24,6 +24,7 @@
 
 export { HtmlRenderer } from './html'
 export {
+  JakeRenderer,
   ModerncvBankingRenderer,
   ModerncvCasualRenderer,
   ModerncvClassicRenderer,

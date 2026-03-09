@@ -172,7 +172,7 @@ export function transformResumeValues(
     if (key === 'basics' || key === 'location') {
       transformResumeSectionValues(value as Record<string, unknown>, escapeFunc)
     } else {
-      resume.content[key].forEach((_, index: number) => {
+      resume.content[key]?.forEach((_, index: number) => {
         transformResumeSectionValues(
           value[index] as Record<string, unknown>,
           escapeFunc

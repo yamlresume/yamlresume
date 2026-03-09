@@ -22,6 +22,8 @@
  * IN THE SOFTWARE.
  */
 
+export { LatexRenderer } from './base'
+export { JakeRenderer } from './jake'
 export {
   ModerncvBankingRenderer,
   ModerncvBase,

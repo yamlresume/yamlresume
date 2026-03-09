@@ -112,6 +112,12 @@ export function getLatexTemplateDetail(template: LatexTemplate) {
     LatexTemplate,
     { engine: LayoutEngine; name: string; description: string }
   > = {
+    jake: {
+      engine: 'latex',
+      name: "Jake's Resume",
+      description:
+        "A simple, straight-forward resume template based on Jake's Resume",
+    },
     'moderncv-banking': {
       engine: 'latex',
       name: 'ModernCV Banking',
