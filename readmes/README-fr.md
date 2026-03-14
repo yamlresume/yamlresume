@@ -1,6 +1,6 @@
 # YAMLResume
 
-[English](./README.md) | [日本語](./README-ja.md) | [简体中文](./README-zh-cn.md) | [繁體中文](./README-zh-tw.md)
+[English](../README.md) | [日本語](./README-ja.md) | [简体中文](./README-zh-cn.md) | [繁體中文](./README-zh-tw.md)
 
 <!-- Build, Quality & Docs -->
 [![GitHub CI](https://github.com/yamlresume/yamlresume/workflows/test/badge.svg)](https://github.com/yamlresume/yamlresume/actions/workflows/test.yml)
@@ -29,7 +29,7 @@ Rédiger un CV n’est peut‑être pas difficile, mais ce n’est clairement pa
 
 [YAMLResume](https://yamlresume.dev/fr) vous permet de gérer et de versionner vos CV avec [YAML](https://yaml.org/) et de générer en un clin d’œil des PDF professionnels avec une belle composition typographique.
 
-![YAMLResume YAML and PDF](./docs/static/images/yamlresume-yaml-and-pdf.webp)
+![YAMLResume YAML and PDF](../docs/static/images/yamlresume-yaml-and-pdf.webp)
 
 ## Principe de conception
 
@@ -109,7 +109,7 @@ Consultez notre [guide d’installation](http://yamlresume.dev/docs/installation
 ## Créer un nouveau CV
 
 Vous pouvez créer votre propre CV en clonant l’un de nos exemples
-[ici](./packages/cli/src/commands/fixtures/software-engineer.yml). Une fois l’exemple en local, vous pouvez générer un PDF :
+[ici](../packages/cli/src/commands/fixtures/software-engineer.yml). Une fois l’exemple en local, vous pouvez générer un PDF :
 
 ```
 $ yamlresume new my-resume.yml
@@ -135,10 +135,10 @@ $ yamlresume dev my-resume.yml
 ✔ Generated resume markdown file successfully: my-resume.md
 ```
 
-Consultez le PDF généré [ici](./docs/static/images/resume.pdf).
+Consultez le PDF généré [ici](../docs/static/images/resume.pdf).
 
-![Software Engineer Page 1](./docs/static/images/resume-1.webp)
-![Software Engineer Page 2](./docs/static/images/resume-2.webp)
+![Software Engineer Page 1](../docs/static/images/resume-1.webp)
+![Software Engineer Page 2](../docs/static/images/resume-2.webp)
 
 [PPResume Gallery](https://ppresume.com/gallery/?ref=yamlresume) propose une
 galerie de tous types de CV, classés par langues et modèles.
@@ -187,7 +187,7 @@ nouvelles fonctionnalités et corrections de bugs. L’API publique n’est pas 
 totalement stable, merci de votre patience.
 
 Toute forme de contribution est grandement appréciée ! Merci de lire le
-[guide de contribution](./CONTRIBUTING.md) avant d’ouvrir une pull request.
+[guide de contribution](../CONTRIBUTING.md) avant d’ouvrir une pull request.
 
 ### Historique des étoiles
 

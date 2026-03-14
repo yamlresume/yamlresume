@@ -1,19 +1,22 @@
 # YAMLResume
 
-[English](./README.md) | [Français](./README-fr.md) | [日本語](./README-ja.md) | [简体中文](./README-zh-cn.md)
+[English](../README.md) | [Français](./README-fr.md) | [Deutsch](./README-de.md) | [Español](./README-es.md) | [Português](./README-pt.md) | [Bahasa Indonesia](./README-id.md) | [日本語](./README-ja.md) | [简体中文](./README-zh-cn.md) | [繁體中文](./README-zh-tw.md)
 
+<!-- Build, Quality & Docs -->
 [![GitHub CI](https://github.com/yamlresume/yamlresume/workflows/test/badge.svg)](https://github.com/yamlresume/yamlresume/actions/workflows/test.yml)
 [![Codecov](https://img.shields.io/codecov/c/github/yamlresume/yamlresume?style=flat-square&logo=codecov)](https://codecov.io/gh/yamlresume/yamlresume)
 [![Security Rating](https://img.shields.io/badge/Security-A+-brightgreen?style=flat-square&logo=shield)](https://github.com/yamlresume/yamlresume/security)
-[![Documentation](https://img.shields.io/badge/docs-yamlresume.dev-blue?style=flat-square&logo=gitbook)](https://yamlresume.dev/zh-tw)
+[![Documentation](https://img.shields.io/badge/docs-yamlresume.dev-blue?style=flat-square&logo=gitbook)](https://yamlresume.dev)
 [![Discord](https://img.shields.io/discord/1371488902023479336?style=flat-square&logo=discord&color=5865F2)](https://discord.gg/9SyT7mVV4K)
 
+<!-- Package & Distribution -->
 [![Node.js Version](https://img.shields.io/node/v/yamlresume.svg?style=flat-square&logo=node.js&color=339933)](https://nodejs.org/)
 [![npm version](https://img.shields.io/npm/v/yamlresume.svg?style=flat-square&logo=npm)](https://www.npmjs.com/package/yamlresume)
 [![npm downloads](https://img.shields.io/npm/dm/yamlresume.svg?style=flat-square&logo=npm&color=CB3837)](https://www.npmjs.com/package/yamlresume)
 [![Docker Pulls](https://img.shields.io/docker/pulls/yamlresume/yamlresume.svg?style=flat-square&logo=docker)](https://hub.docker.com/r/yamlresume/yamlresume)
 [![Docker Image Size](https://img.shields.io/docker/image-size/yamlresume/yamlresume/latest.svg?style=flat-square&logo=docker&color=2496ED)](https://hub.docker.com/r/yamlresume/yamlresume)
 
+<!-- Technology Stack -->
 [![LaTeX](https://img.shields.io/badge/LaTeX-Typesetting-008080?style=flat-square&logo=latex)](https://www.latex-project.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.0+-blue?style=flat-square&logo=typescript)](https://www.typescriptlang.org/)
 [![PNPM](https://img.shields.io/badge/PNPM-Workspace-orange?style=flat-square&logo=pnpm)](https://pnpm.io/)
@@ -21,54 +24,69 @@
 [![Biome](https://img.shields.io/badge/Biome-Linted-60a5fa?style=flat-square&logo=biome)](https://biomejs.dev/)
 [![Vitest](https://img.shields.io/badge/Vitest-Tested-6E9F18?style=flat-square&logo=vitest)](https://vitest.dev/)
 
-> 📢 **新聞：** [YAMLResume GitHub
-> Action](https://github.com/marketplace/actions/yamlresume) 現已發布！
-> 您現在可以直接在 CI/CD 流水線中自動生成履歷 PDF。前往查看
-> [使用文件](https://yamlresume.dev/docs/ecosystem/action) 以及
-> [發布文章](https://yamlresume.dev/blog/yamlresume-action)。
+> 📢 **Novidades:** O [YAMLResume GitHub
+> Action](https://github.com/marketplace/actions/yamlresume) foi lançado!
+> Automatize a geração de PDFs do seu currículo diretamente na sua pipeline CI/CD. Confira
+> a [documentação](https://yamlresume.dev/docs/ecosystem/action) e a
+> [postagem de anúncio no blog](https://yamlresume.dev/blog/yamlresume-action).
 
-撰寫履歷或許不難，但往往繁瑣乏味且容易出錯。
+Escrever currículos pode não ser difícil, mas definitivamente não é divertido e é tedioso.
 
-[YAMLResume](https://yamlresume.dev/zh-tw) 讓你以 [YAML](https://yaml.org/) 管理並版本控制你的履歷，並一鍵產生專業的 PDF，擁有優雅的排版。
+[YAMLResume](https://yamlresume.dev) permite que você gerencie e controle a versão dos seus
+currículos usando [YAML](https://yaml.org/) e torna a geração de PDFs com aparência profissional
+e tipografia agradável muito fácil.
 
-![YAMLResume YAML and PDF](./docs/static/images/yamlresume-yaml-and-pdf.webp)
+![YAMLResume YAML and PDF](../docs/static/images/yamlresume-yaml-and-pdf.webp)
 
-## 設計理念
+## O Princípio de Design
 
-本專案最初是 [PPResume](https://ppresume.com/?ref=yamlresume) 的核心排版引擎。經過審慎考量，我們決定將其開源，讓每個人都能對廠商鎖定說不。
+Este projeto começou como o motor principal de tipografia para
+[PPResume](https://ppresume.com/?ref=yamlresume), um construtor de currículos baseado
+em LaTeX. Após cuidadosa consideração, decidimos torná-lo de código aberto para que
+as pessoas sempre tenham o direito de dizer [não ao vendor
+lock-in](https://blog.ppresume.com/posts/no-vendor-lock-in).
 
-YAMLResume 的核心設計理念是[關注點分離](https://zh.wikipedia.org/zh-tw/%E9%97%9C%E6%B3%A8%E9%BB%9E%E5%88%86%E9%9B%A2)。如同 HTML 與 CSS——HTML 負責內容結構，CSS 定義呈現樣式。
+O principal princípio de design por trás do YAMLResume é a [Separação de
+Preocupações](https://pt.wikipedia.org/wiki/Separa%C3%A7%C3%A3o_de_conceitos). Um dos
+melhores exemplos conhecidos desse princípio é HTML e CSS, que formam a base
+da web moderna. O HTML define o conteúdo da página, e o CSS o estiliza.
 
-遵循該原則，YAMLResume 滿足以下要求：
+Seguindo esse princípio, projetamos o YAMLResume com os seguintes requisitos em
+mente:
 
-- 內容以純文字撰寫
-- 使用 YAML 結構化內容（相較 JSON 更易讀易寫）
-- 將 YAML 渲染為 PDF，排版引擎可插拔
-- 佈局可透過字體大小、頁邊距等選項自由調整
+- o conteúdo do currículo é elaborado em texto simples
+- o texto simples é estruturado usando YAML — YAML é melhor que JSON porque é
+  mais legível por humanos
+- o texto simples YAML é então renderizado em um PDF com um motor conectável
+- o layout pode ser ajustado com opções como tamanhos de fonte, margens da página, etc.
 
-## 快速開始
+## Início Rápido
 
-若已安裝 Docker，可直接體驗已打包好依賴的映像：
+Se você tem o Docker instalado, pode começar com `yamlresume` em um
+segundo, este pacote inclui `yamlresume` e todas as suas dependências:
 
 [![YAMLResume Docker Demo](https://asciinema.org/a/722057.svg)](https://asciinema.org/a/722057)
 
-或使用你偏好的套件管理器安裝 `yamlresume`：
+Como alternativa, você pode instalar localmente usando seu gerenciador favorito:
 
 ```
-# using npm
+# NPM
 $ npm install -g yamlresume
 
-# using yarn
+# Yarn
 $ yarn global add yamlresume
 
-# using pnpm
+# pnpm
 $ pnpm add -g yamlresume
 
-# using bun
+# Bun
 $ bun add -g yamlresume
+
+# Homebrew
+$ brew install yamlresume
 ```
 
-驗證安裝：
+Verifique se a instalação foi bem-sucedida:
 
 ```
 $ yamlresume help
@@ -98,9 +116,10 @@ Commands:
   help [command]                 display help for command
 ```
 
-## 建立新履歷
+## Criar um novo currículo
 
-你可以從我們的[範例履歷](./packages/cli/src/commands/fixtures/software-engineer.yml)開始：
+Você pode criar seu próprio currículo clonando um de nossos exemplos
+[aqui](../packages/cli/src/commands/fixtures/software-engineer.yml).
 
 ```
 $ yamlresume new my-resume.yml
@@ -114,7 +133,9 @@ $ yamlresume build my-resume.yml
 ✔ Generated resume html file successfully: my-resume.html
 ```
 
-或使用 [`dev` 指令](https://yamlresume.dev/zh-tw/docs/cli#dev) 監聽變更並自動建置：
+Você também pode usar o [comando `dev`](https://yamlresume.dev/docs/cli#dev) para
+reconstruir a cada mudança de arquivo, o que fornece **uma experiência de
+desenvolvimento web moderna**:
 
 ```
 $ yamlresume dev my-resume.yml
@@ -125,42 +146,29 @@ $ yamlresume dev my-resume.yml
 ✔ Generated resume markdown file successfully: my-resume.md
 ```
 
-產生的 PDF 範例：[點此查看](./docs/static/images/resume.pdf)。
+Temos vários resumos disponíveis em nosso site para servir de inspiração e templates práticos.
 
-## 驗證履歷
+## Validação de currículos
 
-YAMLResume 提供[內建 Schema](https://yamlresume.dev/zh-tw/docs/compiler/schema)，可在建置前驗證履歷，避免低階錯誤。
+YAMLResume fornece um
+[schema](https://yamlresume.dev/docs/compiler/schema) embutido que você pode usar
+para validar e evitar erros de baixo nível.
 
-## 排版
+## Tipografia
 
-YAMLResume 採用 [LaTeX](https://www.latex-project.org/) 作為預設排版引擎，並遵循[履歷排版最佳實踐](https://docs.ppresume.com/guide?ref=yamlresume)，確保像素級精緻的呈現。
+O projeto permite utilizar [HTML/CSS layout](https://yamlresume.dev/docs/layouts/html) juntamente
+com o sistema original do LaTeX.
 
-它還支援 [HTML/CSS 佈局引擎](https://yamlresume.dev/docs/layouts/html)，讓你可產生對 Web 友善的履歷。
+## Colaboradores e Ecossistema
 
-## 生態系
+- [@yamlresume/playground](https://www.npmjs.com/package/@yamlresume/playground)
+  é um componente React para criar seu próprio editor. Potencializa o
+  [Playground](https://yamlresume.dev/playground) oficial.
+- [create-yamlresume](https://yamlresume.dev/docs/ecosystem/create-yamlresume)
+  facilita a iniciar um novo projeto instantaneamente.
 
-- [@yamlresume/playground](https://www.npmjs.com/package/@yamlresume/playground) 是一個用於建置你自己的履歷編輯器的 React 元件。它驅動了官方的 [Playground](https://yamlresume.dev/playground)。
+## Suporte
 
-- [create-yamlresume](https://yamlresume.dev/zh-tw/docs/ecosystem/create-yamlresume)：一鍵初始化專案並產生範例
-- [json2yamlresume](https://yamlresume.dev/zh-tw/docs/ecosystem/json2yamlresume)：將 JSON Resume 轉換為 YAMLResume
-
-## 貢獻
-
-專案仍在積極開發中，公開 API 尚未完全穩定，歡迎耐心等候並協助改進。
-
-非常歡迎任何形式的貢獻！在提交 PR 之前，請閱讀[貢獻指南](./CONTRIBUTING.md)。
-
-### Star 歷史
-
-[![YAMLResume Star History Chart](https://api.star-history.com/svg?repos=yamlresume/yamlresume&type=Date)](https://www.star-history.com/#yamlresume/yamlresume&Date)
-
-## 路線圖
-
-- [ ] 更多履歷模板
-- [ ] 更多佈局引擎 (typst, docx)
-
-## 支援本專案
-
-如果你覺得 YAMLResume 有幫助，歡迎支持我們：
+Se você considera o YAMLResume útil, considere apoiar o projeto:
 
 [![Buy Me a Coffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-FFDD00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black)](https://buymeacoffee.com/xiaohanyu)
