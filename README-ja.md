@@ -24,6 +24,11 @@
 [![Biome](https://img.shields.io/badge/Biome-Linted-60a5fa?style=flat-square&logo=biome)](https://biomejs.dev/)
 [![Vitest](https://img.shields.io/badge/Vitest-Tested-6E9F18?style=flat-square&logo=vitest)](https://vitest.dev/)
 
+> 📢 **ニュース:** [YAMLResume GitHub
+> Action](https://github.com/marketplace/actions/yamlresume) がリリースされました！
+> CI/CD パイプラインで履歴書の PDF 生成を自動化できます。詳しくは、
+> [ドキュメント](https://yamlresume.dev/docs/ecosystem/action) と
+> [リリース発表ブログ記事](https://yamlresume.dev/blog/yamlresume-action) をご覧ください。
 
 履歴書の作成は難しくないかもしれませんが、確実に楽しくもなく退屈な作業です。
 

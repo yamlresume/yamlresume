@@ -24,6 +24,11 @@
 [![Biome](https://img.shields.io/badge/Biome-Linted-60a5fa?style=flat-square&logo=biome)](https://biomejs.dev/)
 [![Vitest](https://img.shields.io/badge/Vitest-Tested-6E9F18?style=flat-square&logo=vitest)](https://vitest.dev/)
 
+> 📢 **News:** [YAMLResume GitHub
+> Action](https://github.com/marketplace/actions/yamlresume) has been released!
+> Automate your resume PDF generation directly in your CI/CD pipeline. Check out
+> the [documentation](https://yamlresume.dev/docs/ecosystem/action) and the
+> [announcement blog post](https://yamlresume.dev/blog/yamlresume-action).
 
 Writing resumes may not be hard, but it is definitely not fun and it's tedious.
 

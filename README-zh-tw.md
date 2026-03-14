@@ -21,6 +21,12 @@
 [![Biome](https://img.shields.io/badge/Biome-Linted-60a5fa?style=flat-square&logo=biome)](https://biomejs.dev/)
 [![Vitest](https://img.shields.io/badge/Vitest-Tested-6E9F18?style=flat-square&logo=vitest)](https://vitest.dev/)
 
+> 📢 **新聞：** [YAMLResume GitHub
+> Action](https://github.com/marketplace/actions/yamlresume) 現已發布！
+> 您現在可以直接在 CI/CD 流水線中自動生成履歷 PDF。前往查看
+> [使用文件](https://yamlresume.dev/docs/ecosystem/action) 以及
+> [發布文章](https://yamlresume.dev/blog/yamlresume-action)。
+
 撰寫履歷或許不難，但往往繁瑣乏味且容易出錯。
 
 [YAMLResume](https://yamlresume.dev/zh-tw) 讓你以 [YAML](https://yaml.org/) 管理並版本控制你的履歷，並一鍵產生專業的 PDF，擁有優雅的排版。
