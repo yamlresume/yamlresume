@@ -233,6 +233,7 @@ describe('LatexRenderer', () => {
       { language: 'no', expected: /\\usepackage\[norsk\]{babel}/ },
       { language: 'nl', expected: /\\usepackage\[dutch\]{babel}/ },
       { language: 'de', expected: /\\usepackage\[ngerman\]{babel}/ },
+      { language: 'id', expected: /\\usepackage\[indonesian\]{babel}/ },
       { language: 'en', expected: /\\usepackage\[english\]{babel}/ },
     ]
 

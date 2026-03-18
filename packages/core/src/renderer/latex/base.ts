@@ -76,6 +76,11 @@ export abstract class LatexRenderer extends Renderer {
 % ref:
 % - https://latex3.github.io/babel/guides/locale-german.html
 \\usepackage[ngerman]{babel}`
+      case 'id':
+        return `%% Babel config for Indonesian (Bahasa Indonesia) language
+% ref:
+% - https://latex3.github.io/babel/guides/locale-indonesian.html
+\\usepackage[indonesian]{babel}`
       default:
         return `%% Babel config for English language
 \\usepackage[english]{babel}`
