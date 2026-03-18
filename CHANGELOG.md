@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.12.0](https://github.com/yamlresume/yamlresume/compare/v0.11.2...v0.12.0) (2026-03-18)
+
+
+### Features
+
+* add Indonesian language support ([6583031](https://github.com/yamlresume/yamlresume/commit/6583031c8758f4b198f21236af3a3aee4e7c17e0))
+* line spacing customization ([7d71ea6](https://github.com/yamlresume/yamlresume/commit/7d71ea6fdb153a1a396cec92db753ba5446222e3))
+* new jake's resume template for latex engine ([a3de669](https://github.com/yamlresume/yamlresume/commit/a3de6691db94dd17547cf44718bb0a2bf55251f0))
+* support year only dates ([439a766](https://github.com/yamlresume/yamlresume/commit/439a7663c62f54230389000e998d2f2467f6a1c4))
+
+
+### Bug Fixes
+
+* **core:** patch \homepage to support general URLs ([77c6956](https://github.com/yamlresume/yamlresume/commit/77c695689a66eeceb771fcf0ac1b9cb31e5f769b))
+* set proper babel config for Indonesian ([efe4a03](https://github.com/yamlresume/yamlresume/commit/efe4a0377ee461cbf28086abf57bf329f241c1d2))
+
 ## [0.11.2](https://github.com/yamlresume/yamlresume/compare/v0.11.1...v0.11.2) (2026-03-04)
 
 
