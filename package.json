@@ -40,7 +40,7 @@
     "husky": "^9.1.7",
     "lint-staged": "^16.1.6",
     "tsup": "8.3.5",
-    "tsx": "^4.20.5",
+    "tsx": "^4.21.0",
     "typedoc": "^0.28.16",
     "typedoc-plugin-markdown": "^4.9.0",
     "typescript": "~5.9.3",
