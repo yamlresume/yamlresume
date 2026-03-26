@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.12.1](https://github.com/yamlresume/yamlresume/compare/v0.12.0...v0.12.1) (2026-03-26)
+
+
+### Bug Fixes
+
+* revise fontawesome7 compatibility with old texlive 2022 ([37cd895](https://github.com/yamlresume/yamlresume/commit/37cd8951c6fd570c8db8e8aee5fb03275f0fbf67))
+
 ## [0.12.0](https://github.com/yamlresume/yamlresume/compare/v0.11.2...v0.12.0) (2026-03-18)
 
 
