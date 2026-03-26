@@ -101,6 +101,28 @@ class JakeRenderer extends LatexRenderer {
   }
 
   /**
+   * Render the fontawesome package with fallback from v7 to v5.
+   *
+   * Uses \IfFileExists to detect if fontawesome7 is available on the user's
+   * system, falling back to fontawesome5 if not. Returns an empty string if
+   * showIcons is false.
+   *
+   * @returns The LaTeX code for loading fontawesome package, or empty string
+   * if icons are disabled
+   */
+  private renderFontawesome(): string {
+    if (!this.showIcons) {
+      return ''
+    }
+
+    return `\\IfFileExists{fontawesome7.sty}{%
+  \\usepackage{fontawesome7}%
+}{%
+  \\usepackage{fontawesome5}%
+}`
+  }
+
+  /**
    * Render the LaTeX packages required by Jake's Resume template.
    */
   private renderPackages(): string {
@@ -109,7 +131,7 @@ class JakeRenderer extends LatexRenderer {
         '\\usepackage{changepage}',
         '\\usepackage[usenames,dvipsnames]{color}',
         '\\usepackage{enumitem}',
-        showIf(this.showIcons, '\\usepackage{fontawesome7}'),
+        this.renderFontawesome(),
         '\\usepackage[hidelinks]{hyperref}',
         '\\usepackage{titlesec}',
       ],
@@ -245,7 +267,7 @@ class JakeRenderer extends LatexRenderer {
       `{\\Large ${headline}}`,
       joinNonEmptyString(
         [
-          showIfNotEmpty(phone, this.iconedString('\\faMobileScreen', phone)),
+          showIfNotEmpty(phone, this.iconedString('\\faPhoneVolume', phone)),
           showIfNotEmpty(
             email,
             this.iconedString(

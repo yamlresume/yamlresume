@@ -190,12 +190,15 @@ describe('JakeRenderer', () => {
       expect(result).toContain('\\pagenumbering{gobble}')
     })
 
-    it('should include fontawesome7 when showIcons is true (default)', () => {
+    it('should include conditional fontawesome loading when showIcons is true (default)', () => {
       const result = renderer.renderPreamble()
+      // Should contain the conditional logic to load fontawesome7 with fontawesome5 fallback
+      expect(result).toContain('\\IfFileExists{fontawesome7.sty}')
       expect(result).toContain('\\usepackage{fontawesome7}')
+      expect(result).toContain('\\usepackage{fontawesome5}')
     })
 
-    it('should not include fontawesome7 when showIcons is false', () => {
+    it('should not include fontawesome when showIcons is false', () => {
       resume.layouts = [
         {
           engine: 'latex',
@@ -209,7 +212,9 @@ describe('JakeRenderer', () => {
       renderer = new JakeRenderer(resume, layoutIndex)
       const result = renderer.renderPreamble()
 
-      expect(result).not.toContain('\\usepackage{fontawesome7}')
+      expect(result).not.toContain('fontawesome7')
+      expect(result).not.toContain('fontawesome5')
+      expect(result).not.toContain('\\IfFileExists')
     })
 
     it('should use default font size when layout is undefined', () => {
@@ -283,7 +288,7 @@ describe('JakeRenderer', () => {
         `\\textbf{\\Huge \\scshape ${name}}\\vspace{2pt}`
       )
       expect(result).toContain(`{\\Large ${headline}}`)
-      expect(result).toContain('\\faMobileScreen')
+      expect(result).toContain('\\faPhoneVolume')
       expect(result).toContain(phone)
       expect(result).toContain('\\faEnvelope[regular]')
       expect(result).toContain(`\\href{mailto:${email}}{${email}}`)
