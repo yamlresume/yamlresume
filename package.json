@@ -30,7 +30,7 @@
     "packages/*/src/**/*.ts": "pnpm check"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.0.6",
+    "@biomejs/biome": "2.4.8",
     "@commitlint/cli": "^20.4.3",
     "@commitlint/config-conventional": "^20.3.1",
     "@types/lodash-es": "^4.17.12",
