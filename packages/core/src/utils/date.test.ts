@@ -313,7 +313,7 @@ describe(getDateRange, () => {
         startDate: 'Oct 1, 2016',
         endDate: '',
         language: 'nl',
-        expected: 'okt 2016–Huidig',
+        expected: 'okt 2016–Heden',
       },
       {
         startDate: 'Oct 1, 2016',
