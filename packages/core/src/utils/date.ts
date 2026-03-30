@@ -113,7 +113,7 @@ export function getDateRange(
       case 'no':
         return `${localizeDate(startDate, language)}–Nå`
       case 'nl':
-        return `${localizeDate(startDate, language)}–Huidig`
+        return `${localizeDate(startDate, language)}–Heden`
       case 'ja':
         return `${localizeDate(startDate, language)}～現在`
       case 'de':
