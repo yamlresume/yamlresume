@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.12.2](https://github.com/yamlresume/yamlresume/compare/v0.12.1...v0.12.2) (2026-03-31)
+
+
+### Bug Fixes
+
+* **cli:** enable --timeout flag to yamlresume build ([4f23339](https://github.com/yamlresume/yamlresume/commit/4f23339943a47c2c1520cd8d6c69787f5b231f6f))
+* **locale:** improved wording of "present" keyword ([#192](https://github.com/yamlresume/yamlresume/issues/192)) ([2c559c4](https://github.com/yamlresume/yamlresume/commit/2c559c4151563e1573cdf66be4c44770d4ce1c49))
+
 ## [0.12.1](https://github.com/yamlresume/yamlresume/compare/v0.12.0...v0.12.1) (2026-03-26)
 
 
