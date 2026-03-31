@@ -92,7 +92,6 @@ export const ErrorType = {
     ),
     extname: '',
   },
-
   // Format parsing errors (0x20 - 0x3F)
   INVALID_YAML: {
     code: 'INVALID_YAML',

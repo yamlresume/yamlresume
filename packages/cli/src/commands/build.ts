@@ -256,25 +256,36 @@ function generateOutput(
 }
 
 /**
- * Default timeout for LaTeX compilation in milliseconds (15 seconds)
+ * Default timeout for LaTeX compilation in milliseconds (30 seconds)
  */
-export const LATEX_COMPILE_TIMEOUT_MS = 15000
+export const LATEX_COMPILE_TIMEOUT_MS = 30000
 
 /**
  * Compile a TeX file to PDF
+ *
+ * @param texFile - The TeX file to compile.
+ * @param outputDir - Optional output directory.
+ * @param timeout - Timeout in milliseconds. 0 means no timeout.
  */
-async function compileLaTeX(texFile: string, outputDir?: string) {
+async function compileLaTeX(
+  texFile: string,
+  outputDir?: string,
+  timeout: number = LATEX_COMPILE_TIMEOUT_MS
+) {
   const { command, args, cwd } = inferLaTeXCommand(texFile, outputDir)
 
   consola.start(
     `Generating resume pdf file with command: \`${command} ${args.join(' ')}\`...`
   )
 
+  // When timeout is 0, disable timeout by setting it to undefined
+  const execaTimeout = timeout === 0 ? undefined : timeout
+
   try {
     const result = await execa(command, args, {
       cwd,
       encoding: 'utf8',
-      timeout: LATEX_COMPILE_TIMEOUT_MS,
+      timeout: execaTimeout,
     })
     consola.success(
       `Generated resume pdf file successfully: ${getPdfPath(texFile)}`
@@ -293,7 +304,7 @@ async function compileLaTeX(texFile: string, outputDir?: string) {
         consola.log(error.stderr)
       }
       throw new YAMLResumeError('LATEX_COMPILE_TIMEOUT', {
-        timeout: String(LATEX_COMPILE_TIMEOUT_MS / 1000),
+        timeout: String(timeout / 1000),
       })
     }
 
@@ -304,6 +315,35 @@ async function compileLaTeX(texFile: string, outputDir?: string) {
 }
 
 /**
+ * Parse and validate the timeout option.
+ *
+ * If the value is invalid, logs a warning and returns the default timeout.
+ *
+ * @param value - The timeout value in seconds as a string.
+ * @returns The parsed timeout in milliseconds.
+ */
+export function parseTimeout(value: string): number {
+  const num = Number(value)
+
+  if (Number.isNaN(num) || num < 0) {
+    consola.warn(
+      joinNonEmptyString(
+        [
+          `Invalid timeout value: "${value}".`,
+          `Using default timeout: ${LATEX_COMPILE_TIMEOUT_MS / 1000}s.`,
+          'Timeout must be a non-negative number in seconds (0 to disable).',
+        ],
+        ' '
+      )
+    )
+    return LATEX_COMPILE_TIMEOUT_MS
+  }
+
+  // Convert seconds to milliseconds (supports fractional seconds like curl)
+  return num * 1000
+}
+
+/**
  * Build a YAML resume to LaTeX & PDF and/or Markdown
  *
  * It first validates the resume against the schema (unless `--no-validate` flag
@@ -311,13 +351,19 @@ async function compileLaTeX(texFile: string, outputDir?: string) {
  *
  * @param resumePath - The source resume file path (YAML, YML, or JSON).
  * @param options - Build options including validation, PDF generation flags,
- * and output directory.
+ * output directory, and LaTeX compilation timeout.
  */
 export async function buildResume(
   resumePath: string,
-  options: { pdf?: boolean; validate?: boolean; output?: string } = {
+  options: {
+    pdf?: boolean
+    validate?: boolean
+    output?: string
+    timeout?: number
+  } = {
     pdf: true,
     validate: true,
+    timeout: LATEX_COMPILE_TIMEOUT_MS,
   }
 ) {
   const { resume } = readResume(resumePath, options.validate)
@@ -360,7 +406,7 @@ export async function buildResume(
         )
 
         if (options.pdf === true) {
-          await compileLaTeX(texFile, options.output)
+          await compileLaTeX(texFile, options.output, options.timeout)
         }
         break
       }
@@ -406,10 +452,26 @@ export function createBuildCommand() {
     )
     .option('--no-validate', 'skip resume schema validation')
     .option('-o, --output <dir>', 'output directory for generated files')
+    .option(
+      '-t, --timeout <seconds>',
+      joinNonEmptyString(
+        [
+          'timeout for LaTeX compilation in seconds',
+          `(default: ${LATEX_COMPILE_TIMEOUT_MS / 1000}, 0 to disable)`,
+        ],
+        ' '
+      ),
+      (value) => parseTimeout(value)
+    )
     .action(
       async (
         resumePath: string,
-        options: { pdf: boolean; validate: boolean; output?: string }
+        options: {
+          pdf: boolean
+          validate: boolean
+          output?: string
+          timeout: number
+        }
       ) => {
         try {
           await buildResume(resumePath, options)

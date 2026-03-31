@@ -54,6 +54,7 @@ import {
   isCommandAvailable,
   LATEX_COMPILE_TIMEOUT_MS,
   normalizeExtension,
+  parseTimeout,
 } from './build'
 import { getFixture } from './utils'
 import { readResume } from './validate'
@@ -498,7 +499,7 @@ describe(buildResume, () => {
     } catch (error) {
       expect(error).toBeInstanceOf(YAMLResumeError)
       expect(error.code).toBe('LATEX_COMPILE_TIMEOUT')
-      expect(error.message).toContain('timed out after 15 seconds')
+      expect(error.message).toContain('timed out after 30 seconds')
     }
 
     expect(execSpy).toBeCalledTimes(1)
@@ -747,6 +748,58 @@ describe(buildResume, () => {
   })
 })
 
+describe(parseTimeout, () => {
+  let consolaWarnSpy: ReturnType<typeof vi.spyOn>
+
+  beforeEach(() => {
+    consolaWarnSpy = vi.spyOn(consola, 'warn').mockImplementation(vi.fn())
+  })
+
+  afterEach(() => {
+    vi.restoreAllMocks()
+  })
+
+  it('should convert integer seconds to milliseconds', () => {
+    expect(parseTimeout('30')).toBe(30000)
+    expect(consolaWarnSpy).not.toBeCalled()
+  })
+
+  it('should convert fractional seconds to milliseconds', () => {
+    expect(parseTimeout('10.5')).toBe(10500)
+    expect(parseTimeout('0.5')).toBe(500)
+    expect(parseTimeout('1.234')).toBe(1234)
+    expect(consolaWarnSpy).not.toBeCalled()
+  })
+
+  it('should convert zero to 0 milliseconds', () => {
+    expect(parseTimeout('0')).toBe(0)
+    expect(consolaWarnSpy).not.toBeCalled()
+  })
+
+  it('should return default timeout for non-numeric values and log warning', () => {
+    const result = parseTimeout('abc')
+    expect(result).toBe(LATEX_COMPILE_TIMEOUT_MS)
+    expect(consolaWarnSpy).toBeCalledTimes(1)
+    expect(consolaWarnSpy).toBeCalledWith(
+      expect.stringContaining('Invalid timeout value: "abc"')
+    )
+  })
+
+  it('should return default timeout for negative values and log warning', () => {
+    const result = parseTimeout('-5')
+    expect(result).toBe(LATEX_COMPILE_TIMEOUT_MS)
+    expect(consolaWarnSpy).toBeCalledTimes(1)
+    expect(consolaWarnSpy).toBeCalledWith(
+      expect.stringContaining('Invalid timeout value: "-5"')
+    )
+  })
+
+  it('should handle very small fractional values', () => {
+    expect(parseTimeout('0.001')).toBe(1)
+    expect(consolaWarnSpy).not.toBeCalled()
+  })
+})
+
 describe(createBuildCommand, () => {
   let buildCommand: Command
   let execSpy: MockedFunction<typeof execa>
@@ -871,6 +924,151 @@ describe(createBuildCommand, () => {
     expect(outputOption?.long).toBe('--output')
     expect(outputOption?.description).toBe(
       'output directory for generated files'
+    )
+  })
+
+  it('should accept timeout option', () => {
+    const options = buildCommand.options
+    const timeoutOption = options.find(
+      (opt) => opt.short === '-t' || opt.long === '--timeout'
+    )
+
+    expect(timeoutOption).toBeDefined()
+    expect(timeoutOption?.short).toBe('-t')
+    expect(timeoutOption?.long).toBe('--timeout')
+  })
+
+  it('should use custom timeout when provided', async () => {
+    const resumePath = getFixture('software-engineer.yml')
+    const texFile = inferOutput(resumePath)
+
+    await buildCommand.parseAsync([
+      'yamlresume',
+      'build',
+      '--timeout',
+      '30',
+      resumePath,
+    ])
+
+    expect(execSpy).toBeCalledWith(
+      'xelatex',
+      ['-halt-on-error', path.basename(texFile)],
+      {
+        cwd: path.dirname(path.resolve(texFile)),
+        encoding: 'utf8',
+        timeout: 30000,
+      }
+    )
+  })
+
+  it('should disable timeout when set to 0', async () => {
+    const resumePath = getFixture('software-engineer.yml')
+    const texFile = inferOutput(resumePath)
+
+    await buildCommand.parseAsync([
+      'yamlresume',
+      'build',
+      '--timeout',
+      '0',
+      resumePath,
+    ])
+
+    expect(execSpy).toBeCalledWith(
+      'xelatex',
+      ['-halt-on-error', path.basename(texFile)],
+      {
+        cwd: path.dirname(path.resolve(texFile)),
+        encoding: 'utf8',
+        timeout: undefined,
+      }
+    )
+  })
+
+  it('should use default timeout for invalid value (non-number) and log warning', async () => {
+    const resumePath = getFixture('software-engineer.yml')
+    const texFile = inferOutput(resumePath)
+    const consolaWarnSpy = vi.spyOn(consola, 'warn').mockImplementation(vi.fn())
+
+    await buildCommand.parseAsync([
+      'yamlresume',
+      'build',
+      '--timeout',
+      'abc',
+      resumePath,
+    ])
+
+    expect(consolaWarnSpy).toBeCalledTimes(1)
+    expect(consolaWarnSpy).toBeCalledWith(
+      expect.stringContaining('Invalid timeout value: "abc"')
+    )
+    expect(consolaWarnSpy).toBeCalledWith(
+      expect.stringContaining('non-negative number')
+    )
+    // Should use default timeout
+    expect(execSpy).toBeCalledWith(
+      'xelatex',
+      ['-halt-on-error', path.basename(texFile)],
+      {
+        cwd: path.dirname(path.resolve(texFile)),
+        encoding: 'utf8',
+        timeout: LATEX_COMPILE_TIMEOUT_MS,
+      }
+    )
+  })
+
+  it('should use default timeout for negative value and log warning', async () => {
+    const resumePath = getFixture('software-engineer.yml')
+    const texFile = inferOutput(resumePath)
+    const consolaWarnSpy = vi.spyOn(consola, 'warn').mockImplementation(vi.fn())
+
+    await buildCommand.parseAsync([
+      'yamlresume',
+      'build',
+      '--timeout',
+      '-5',
+      resumePath,
+    ])
+
+    expect(consolaWarnSpy).toBeCalledTimes(1)
+    expect(consolaWarnSpy).toBeCalledWith(
+      expect.stringContaining('Invalid timeout value: "-5"')
+    )
+    expect(consolaWarnSpy).toBeCalledWith(
+      expect.stringContaining('non-negative number')
+    )
+    // Should use default timeout
+    expect(execSpy).toBeCalledWith(
+      'xelatex',
+      ['-halt-on-error', path.basename(texFile)],
+      {
+        cwd: path.dirname(path.resolve(texFile)),
+        encoding: 'utf8',
+        timeout: LATEX_COMPILE_TIMEOUT_MS,
+      }
+    )
+  })
+
+  it('should accept fractional seconds for timeout', async () => {
+    const resumePath = getFixture('software-engineer.yml')
+    const texFile = inferOutput(resumePath)
+
+    await buildCommand.parseAsync([
+      'yamlresume',
+      'build',
+      '--timeout',
+      '10.5',
+      resumePath,
+    ])
+
+    // 10.5 seconds = 10500 milliseconds
+    expect(execSpy).toBeCalledWith(
+      'xelatex',
+      ['-halt-on-error', path.basename(texFile)],
+      {
+        cwd: path.dirname(path.resolve(texFile)),
+        encoding: 'utf8',
+        timeout: 10500,
+      }
     )
   })
 })
