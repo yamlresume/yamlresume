@@ -207,8 +207,8 @@ importers:
         specifier: ^4.6.0
         version: 4.7.0(monaco-editor@0.55.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@tabler/icons-react':
-        specifier: ^3.40.0
-        version: 3.40.0(react@18.3.1)
+        specifier: ^3.41.1
+        version: 3.41.1(react@18.3.1)
       '@yamlresume/core':
         specifier: workspace:*
         version: link:../core
@@ -1265,13 +1265,13 @@ packages:
   '@standard-schema/spec@1.1.0':
     resolution: {integrity: sha512-l2aFy5jALhniG5HgqrD6jXLi/rUWrKvqN/qJx6yoJsgKhblVd+iqqU4RCXavm/jPityDo5TCvKMnpjKnOriy0w==}
 
-  '@tabler/icons-react@3.40.0':
-    resolution: {integrity: sha512-oO5+6QCnna4a//mYubx4euZfECtzQZFDGsDMIdzZUhbdyBCT+3bRVFBPueGIcemWld4Vb/0UQ39C/cmGfGylAg==}
+  '@tabler/icons-react@3.41.1':
+    resolution: {integrity: sha512-kUgweE+DJtAlMZVIns1FTDdcbpRVnkK7ZpUOXmoxy3JAF0rSHj0TcP4VHF14+gMJGnF+psH2Zt26BLT6owetBA==}
     peerDependencies:
       react: '>= 16'
 
-  '@tabler/icons@3.40.0':
-    resolution: {integrity: sha512-V/Q4VgNPKubRTiLdmWjV/zscYcj5IIk+euicUtaVVqF6luSC9rDngYWgST5/yh3Mrg/mYUwRv1YVTk71Jp0twQ==}
+  '@tabler/icons@3.41.1':
+    resolution: {integrity: sha512-OaRnVbRmH2nHtFeg+RmMJ/7m2oBIF9XCJAUD5gQnMrpK9f05ydj8MZrAf3NZQqOXyxGN1UBL0D5IKLLEUfr74Q==}
 
   '@testing-library/dom@10.4.1':
     resolution: {integrity: sha512-o4PXJQidqJl82ckFaXUeoAW+XysPLauYI43Abki5hABd853iMhitooc6znOnczgbTYmEP6U6/y1ZyKAIsvMKGg==}
@@ -4430,12 +4430,12 @@ snapshots:
 
   '@standard-schema/spec@1.1.0': {}
 
-  '@tabler/icons-react@3.40.0(react@18.3.1)':
+  '@tabler/icons-react@3.41.1(react@18.3.1)':
     dependencies:
-      '@tabler/icons': 3.40.0
+      '@tabler/icons': 3.41.1
       react: 18.3.1
 
-  '@tabler/icons@3.40.0': {}
+  '@tabler/icons@3.41.1': {}
 
   '@testing-library/dom@10.4.1':
     dependencies:
