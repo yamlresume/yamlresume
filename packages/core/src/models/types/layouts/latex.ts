@@ -63,6 +63,8 @@ type LatexAdvanced = {
   }
   /** Whether to show icons for links and profiles. */
   showIcons?: boolean
+  /** Whether to show raw URLs or hide them behind reasonable text. */
+  showUrls?: boolean
 }
 
 /**

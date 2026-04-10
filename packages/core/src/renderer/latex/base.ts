@@ -226,6 +226,52 @@ ${fontList
   }
 
   /**
+   * Whether to show raw URLs or hide them behind reasonable text.
+   */
+  protected get showUrls(): boolean {
+    const layout = this.resume.layouts?.[this.layoutIndex] as LatexLayout
+    return layout?.advanced?.showUrls ?? true
+  }
+
+  /**
+   * Render a URL in the URL position based on showUrls setting.
+   *
+   * When showUrls is true, returns the URL formatted with \url{}.
+   * When showUrls is false, returns an empty string (the URL is hidden
+   * and should be rendered as a clickable link on the adjacent text via
+   * renderLinkedText instead).
+   *
+   * @param url - The URL to render
+   * @returns The formatted URL LaTeX code, or empty string
+   */
+  protected renderUrl(url: string): string {
+    if (!url) {
+      return ''
+    }
+    if (this.showUrls) {
+      return `\\url{${url}}`
+    }
+    return ''
+  }
+
+  /**
+   * Render text that may be linked to a URL.
+   *
+   * When showUrls is false and a URL is provided, the text is wrapped in a
+   * clickable \href link. Otherwise, the plain text is returned.
+   *
+   * @param text - The text to display
+   * @param url - Optional URL to link the text to
+   * @returns The text, optionally wrapped in a hyperlink
+   */
+  protected renderLinkedText(text: string, url?: string): string {
+    if (!url || this.showUrls) {
+      return text
+    }
+    return `\\href{${url}}{${text}}`
+  }
+
+  /**
    * Render a string with an icon.
    *
    * It should respect the `showIcons` option as well.

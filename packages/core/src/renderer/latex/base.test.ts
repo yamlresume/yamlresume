@@ -71,6 +71,18 @@ class TestableLatexRenderer extends LatexRenderer {
     return this.showIcons
   }
 
+  public get testShowUrls() {
+    return this.showUrls
+  }
+
+  public testRenderUrl(url: string) {
+    return this.renderUrl(url)
+  }
+
+  public testRenderLinkedText(text: string, url?: string) {
+    return this.renderLinkedText(text, url)
+  }
+
   public testIconedString(icon: string, info: string) {
     return this.iconedString(icon, info)
   }
@@ -560,6 +572,108 @@ describe('LatexRenderer', () => {
       renderer = new TestableLatexRenderer(resume, layoutIndex)
 
       expect(renderer.testShowIcons).toBe(true)
+    })
+  })
+
+  describe('showUrls', () => {
+    it('should return true by default', () => {
+      resume.layouts[layoutIndex] = {
+        engine: 'latex',
+      } as LatexLayout
+      renderer = new TestableLatexRenderer(resume, layoutIndex)
+
+      expect(renderer.testShowUrls).toBe(true)
+    })
+
+    it('should return true when showUrls is undefined', () => {
+      resume.layouts[layoutIndex] = {
+        engine: 'latex',
+        advanced: {},
+      } as LatexLayout
+      renderer = new TestableLatexRenderer(resume, layoutIndex)
+
+      expect(renderer.testShowUrls).toBe(true)
+    })
+
+    it('should return true when showUrls is true', () => {
+      resume.layouts[layoutIndex] = {
+        ...resume.layouts[layoutIndex],
+        advanced: {
+          showUrls: true,
+        },
+      } as LatexLayout
+      renderer = new TestableLatexRenderer(resume, layoutIndex)
+
+      expect(renderer.testShowUrls).toBe(true)
+    })
+
+    it('should return false when showUrls is false', () => {
+      resume.layouts[layoutIndex] = {
+        ...resume.layouts[layoutIndex],
+        advanced: {
+          showUrls: false,
+        },
+      } as LatexLayout
+      renderer = new TestableLatexRenderer(resume, layoutIndex)
+
+      expect(renderer.testShowUrls).toBe(false)
+    })
+
+    it('should return true when layouts is undefined', () => {
+      resume.layouts = undefined
+      renderer = new TestableLatexRenderer(resume, layoutIndex)
+
+      expect(renderer.testShowUrls).toBe(true)
+    })
+  })
+
+  describe('renderUrl', () => {
+    it('should return empty string when url is empty', () => {
+      expect(renderer.testRenderUrl('')).toBe('')
+    })
+
+    it('should render url command when showUrls is true (default)', () => {
+      const url = 'https://example.com'
+      expect(renderer.testRenderUrl(url)).toBe(`\\url{${url}}`)
+    })
+
+    it('should return empty string when showUrls is false', () => {
+      resume.layouts[layoutIndex] = {
+        ...resume.layouts[layoutIndex],
+        advanced: {
+          showUrls: false,
+        },
+      } as LatexLayout
+      renderer = new TestableLatexRenderer(resume, layoutIndex)
+
+      const url = 'https://example.com'
+      expect(renderer.testRenderUrl(url)).toBe('')
+    })
+  })
+
+  describe('renderLinkedText', () => {
+    it('should return plain text when no url provided', () => {
+      expect(renderer.testRenderLinkedText('Example')).toBe('Example')
+    })
+
+    it('should return plain text when showUrls is true', () => {
+      const url = 'https://example.com'
+      expect(renderer.testRenderLinkedText('Example', url)).toBe('Example')
+    })
+
+    it('should render href link when showUrls is false and url is provided', () => {
+      resume.layouts[layoutIndex] = {
+        ...resume.layouts[layoutIndex],
+        advanced: {
+          showUrls: false,
+        },
+      } as LatexLayout
+      renderer = new TestableLatexRenderer(resume, layoutIndex)
+
+      const url = 'https://example.com'
+      expect(renderer.testRenderLinkedText('Example', url)).toBe(
+        `\\href{${url}}{Example}`
+      )
     })
   })
 

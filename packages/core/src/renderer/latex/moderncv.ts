@@ -367,8 +367,8 @@ ${education
       url,
     }) => `\\cventry{${showIfNotEmpty(startDate, dateRange)}}
         {${degreeAreaAndScore}}
-        {${institution}}
-        {${showIfNotEmpty(url, `\\url{${url}}`)}}
+        {${this.renderLinkedText(institution, url)}}
+        {${this.renderUrl(url)}}
         {}
         {${showIf(
           !isEmptyValue(summary) || !isEmptyValue(courses),
@@ -419,8 +419,8 @@ ${work
     }) => {
       return `\\cventry{${showIfNotEmpty(startDate, dateRange)}}
         {${position}}
-        {${name}}
-        {${showIfNotEmpty(url, `\\url{${url}}`)}}
+        {${this.renderLinkedText(name, url)}}
+        {${this.renderUrl(url)}}
         {}
         {${showIf(
           !isEmptyValue(summary) || !isEmptyValue(keywords),
@@ -566,8 +566,8 @@ ${certificates
   .map(
     ({ computed: { date }, issuer, name, url }) => `\\cventry{${date}}
         {${issuer}}
-        {${name}}
-        {${showIfNotEmpty(url, `\\url{${url}}`)}}
+        {${this.renderLinkedText(name, url)}}
+        {${this.renderUrl(url)}}
         {}
         {}`
   )
@@ -601,9 +601,9 @@ ${publications
       publisher,
       url,
     }) => `\\cventry{${releaseDate}}
-        {${name}}
+        {${this.renderLinkedText(name, url)}}
         {${publisher}}
-        {${showIfNotEmpty(url, `\\url{${url}}`)}}
+        {${this.renderUrl(url)}}
         {}
         {${summary}}`
   )
@@ -706,8 +706,8 @@ ${projects
       computed: { dateRange, startDate, summary, keywords },
     }) => `\\cventry{${showIfNotEmpty(startDate, dateRange)}}
         {${description}}
-        {${name}}
-        {${showIfNotEmpty(url, `\\url{${url}}`)}}
+        {${this.renderLinkedText(name, url)}}
+        {${this.renderUrl(url)}}
         {}
         {${showIf(
           !isEmptyValue(summary) || !isEmptyValue(keywords),
@@ -772,8 +772,8 @@ ${volunteer
       computed: { startDate, dateRange, summary },
     }) => `\\cventry{${showIfNotEmpty(startDate, dateRange)}}
         {${position}}
-        {${organization}}
-        {${showIfNotEmpty(url, `\\url{${url}}`)}}
+        {${this.renderLinkedText(organization, url)}}
+        {${this.renderUrl(url)}}
         {}
         {${showIfNotEmpty(summary, summary)}}
     `

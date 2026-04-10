@@ -43,6 +43,7 @@ export const LatexAdvancedSchema = z.object({
         })
         .nullish(),
       showIcons: z.boolean().default(true),
+      showUrls: z.boolean().default(true),
     })
     .nullish()
     .meta({

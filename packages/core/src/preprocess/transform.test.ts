@@ -1449,6 +1449,7 @@ describe(transformResumeLayout, () => {
           numbers: 'Lining',
         },
         showIcons: true,
+        showUrls: true,
       },
     })
   })

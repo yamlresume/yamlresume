@@ -454,7 +454,7 @@ describe('JakeRenderer', () => {
       expect(result).toMatch(/^\\section{Education}/)
       expect(result).toContain('\\resumeSubheading')
       expect(result).toContain(institution)
-      expect(result).toContain(`\\href{${url}}{${url}}`)
+      expect(result).toContain(`\\url{${url}}`)
     })
   })
 
@@ -487,7 +487,7 @@ describe('JakeRenderer', () => {
       expect(result).toContain('\\resumeSubheading')
       expect(result).toContain(`{${position}}`)
       expect(result).toContain(`{${name}}`)
-      expect(result).toContain(`\\href{${url}}{${url}}`)
+      expect(result).toContain(`\\url{${url}}`)
     })
   })
 
@@ -591,7 +591,7 @@ describe('JakeRenderer', () => {
       expect(result).toContain('\\resumeSubheading')
       expect(result).toContain(`{${name}}`)
       expect(result).toContain(`{${issuer}}`)
-      expect(result).toContain(`\\href{${url}}{${url}}`)
+      expect(result).toContain(`\\url{${url}}`)
     })
   })
 
@@ -620,7 +620,7 @@ describe('JakeRenderer', () => {
       expect(result).toContain('\\resumeSubheading')
       expect(result).toContain(`{${name}}`)
       expect(result).toContain(`{${publisher}}`)
-      expect(result).toContain(`\\href{${url}}{${url}}`)
+      expect(result).toContain(`\\url{${url}}`)
     })
   })
 
@@ -735,7 +735,7 @@ describe('JakeRenderer', () => {
       expect(result).toContain('\\resumeSubheading')
       expect(result).toContain(`{${position}}`)
       expect(result).toContain(`{${organization}}`)
-      expect(result).toContain(`\\href{${url}}{${url}}`)
+      expect(result).toContain(`\\url{${url}}`)
     })
   })
 

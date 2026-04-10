@@ -395,6 +395,7 @@ export const DEFAULT_LATEX_LAYOUT: LatexLayout = {
       numbers: 'Auto',
     },
     showIcons: true,
+    showUrls: true,
   },
   page: {
     margins: {

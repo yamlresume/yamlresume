@@ -76,7 +76,9 @@ describe('LatexAdvancedSchema', () => {
     ]
 
     for (const latex of tests) {
-      expect(LatexAdvancedSchema.parse(latex)).toStrictEqual(latex)
+      const parsed = LatexAdvancedSchema.parse(latex)
+      expect(parsed.advanced.showIcons).toBe(latex.advanced.showIcons)
+      expect(parsed.advanced.showUrls).toBe(true)
     }
   })
 

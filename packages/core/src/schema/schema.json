@@ -2752,10 +2752,15 @@
                           "showIcons": {
                             "default": true,
                             "type": "boolean"
+                          },
+                          "showUrls": {
+                            "default": true,
+                            "type": "boolean"
                           }
                         },
                         "required": [
-                          "showIcons"
+                          "showIcons",
+                          "showUrls"
                         ],
                         "additionalProperties": false
                       },
