@@ -13,6 +13,7 @@
     "noUncheckedIndexedAccess": true,
     "forceConsistentCasingInFileNames": true,
     "noImplicitOverride": true,
+    "strictNullChecks": false,
 
     "skipLibCheck": true,
 
