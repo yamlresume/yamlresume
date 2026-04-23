@@ -18,17 +18,18 @@ jobs:
       id-token: write
       contents: read
     steps:
-      - uses: actions/checkout@v4
-
-      - name: Install pnpm
-        uses: pnpm/action-setup@v4
+      - uses: actions/checkout@v6
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
-          node-version: 22
+          node-version: 24
           registry-url: https://registry.npmjs.org
           cache: pnpm
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v5
+
 
       # for npm trusted publishing
       - run: npm install -g npm@latest
@@ -52,7 +53,7 @@ jobs:
       id-token: write
     steps:
       - name: Checkout the repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Set up qemu
         uses: docker/setup-qemu-action@v2
