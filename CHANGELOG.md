@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.12.3](https://github.com/yamlresume/yamlresume/compare/v0.12.2...v0.12.3) (2026-04-23)
+
+
+### Features
+
+* add showUrls options to show/hide urls ([3bf8db9](https://github.com/yamlresume/yamlresume/commit/3bf8db95363e662ee68b4f754c65e52c59b0be3b))
+* **latex:** apply href with tel prefix for phone in jake template ([76f99cb](https://github.com/yamlresume/yamlresume/commit/76f99cbb80f139a22e2406af33ad2deb05fa9fc9))
+* underline hrefs for moderncv templates ([cb02d74](https://github.com/yamlresume/yamlresume/commit/cb02d74171f9875f1b024d8b08800452b69b686f))
+
 ## [0.12.2](https://github.com/yamlresume/yamlresume/compare/v0.12.1...v0.12.2) (2026-03-31)
 
 
