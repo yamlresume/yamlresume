@@ -266,7 +266,13 @@ class JakeRenderer extends LatexRenderer {
       `{\\Large ${headline}}`,
       joinNonEmptyString(
         [
-          showIfNotEmpty(phone, this.iconedString('\\faPhoneVolume', phone)),
+          showIfNotEmpty(
+            phone,
+            this.iconedString(
+              '\\faPhoneVolume',
+              `\\href{tel:${phone}}{${phone}}`
+            )
+          ),
           showIfNotEmpty(
             email,
             this.iconedString(
