@@ -178,10 +178,6 @@ class JakeRenderer extends LatexRenderer {
     \\textit{#3} & \\textit{#4} \\\\
   \\end{tabular*}
 }
-
-% Auto-underline all links
-\\let\\oldhref\\href
-\\renewcommand{\\href}[2]{\\oldhref{#1}{\\underline{#2}}}
 `
   }
 
@@ -236,6 +232,9 @@ class JakeRenderer extends LatexRenderer {
 
       // URL styling - use same font as surrounding text instead of monospace
       this.renderUrlConfig(),
+
+      // auto-underline all links
+      this.renderHrefUnderlineConfig(),
 
       // PDF metadata
       this.renderPdfMetadata(),

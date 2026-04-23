@@ -234,6 +234,9 @@ class ModerncvBase extends LatexRenderer {
       // URL styling - use same font as surrounding text instead of monospace
       this.renderUrlConfig(),
 
+      // auto-underline all links
+      this.renderHrefUnderlineConfig(),
+
       // Patch httplink/httpslink to support full URLs with protocols
       this.renderHomepageRedefinition(),
     ])

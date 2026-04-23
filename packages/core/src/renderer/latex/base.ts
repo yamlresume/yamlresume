@@ -200,6 +200,22 @@ ${fontList
   }
 
   /**
+   * Render auto-underline configuration for all hyperref links.
+   *
+   * Redefines \\href to automatically underline link text.
+   *
+   * @returns The LaTeX code for auto-underlining links
+   */
+  protected renderHrefUnderlineConfig(): string {
+    return `% Auto-underline all links
+% Defer until \\begin{document} so hyperref is already loaded
+\\AtBeginDocument{%
+  \\let\\oldhref\\href
+  \\renewcommand{\\href}[2]{\\oldhref{#1}{\\underline{#2}}}%
+}`
+  }
+
+  /**
    * Get FontAwesome icon for a network.
    */
   protected getFaIcon(network: string): string {
