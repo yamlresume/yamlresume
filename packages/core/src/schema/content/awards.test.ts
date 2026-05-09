@@ -143,7 +143,10 @@ describe('AwardsSchema', () => {
                   errors: [],
                   properties: {
                     title: {
-                      errors: ['title is required.'],
+                      errors: [
+                        'title is required.',
+                        'Invalid input: expected record, received undefined',
+                      ],
                     },
                   },
                 },
@@ -235,7 +238,10 @@ describe('AwardsSchema', () => {
                       errors: ['awarder is required.'],
                     },
                     title: {
-                      errors: ['title is required.'],
+                      errors: [
+                        'title is required.',
+                        'Invalid input: expected record, received undefined',
+                      ],
                     },
                   },
                 },

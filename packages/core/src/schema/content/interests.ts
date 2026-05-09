@@ -24,7 +24,7 @@
 import { z } from 'zod'
 
 import { joinNonEmptyString } from '@/utils'
-import { KeywordsSchema, NameSchema } from '../primitives'
+import { KeywordsSchema, multilingualString, NameSchema } from '../primitives'
 import { nullifySchema } from '../utils'
 
 /**
@@ -39,7 +39,7 @@ export const InterestNameSchema = NameSchema('name').describe(
  */
 export const InterestItemSchema = z.object({
   // required fields
-  name: InterestNameSchema,
+  name: multilingualString(InterestNameSchema),
 
   // optional fields
   keywords: nullifySchema(KeywordsSchema),

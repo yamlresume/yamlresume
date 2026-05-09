@@ -425,6 +425,30 @@ export const OrganizationSchema = (name: string) =>
   })
 
 /**
+ * Wraps any Zod schema with multilingual string support.
+ *
+ * The resulting schema accepts either the original value (with all its
+ * constraints enforced) or a partial record mapping locale language codes to
+ * translated strings. When the record form is used, individual translation
+ * strings are not length-validated so translators have full flexibility.
+ *
+ * @param schema - The base schema to wrap.
+ * @returns A union schema that accepts the base type or a locale map.
+ *
+ * @example Required field
+ * ```ts
+ * position: multilingualString(PositionSchema)
+ * ```
+ *
+ * @example Optional field
+ * ```ts
+ * summary: multilingualString(SummarySchema).nullish()
+ * ```
+ */
+export const multilingualString = <T extends z.ZodType>(schema: T) =>
+  z.union([schema, z.record(z.string(), z.string())])
+
+/**
  * A zod schema for a url.
  */
 export const UrlSchema = z

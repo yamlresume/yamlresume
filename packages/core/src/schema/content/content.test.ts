@@ -191,7 +191,10 @@ describe('ContentSchema', () => {
                       errors: [],
                       properties: {
                         name: {
-                          errors: ['name is required.'],
+                          errors: [
+                            'name is required.',
+                            'Invalid input: expected record, received undefined',
+                          ],
                         },
                       },
                     },
@@ -316,7 +319,10 @@ describe('ContentSchema', () => {
                       errors: [],
                       properties: {
                         summary: {
-                          errors: ['summary is required.'],
+                          errors: [
+                            'summary is required.',
+                            'Invalid input: expected record, received undefined',
+                          ],
                         },
                       },
                     },
@@ -348,7 +354,10 @@ describe('ContentSchema', () => {
                       errors: [],
                       properties: {
                         name: {
-                          errors: ['name is required.'],
+                          errors: [
+                            'name is required.',
+                            'Invalid input: expected record, received undefined',
+                          ],
                         },
                       },
                     },
@@ -380,7 +389,10 @@ describe('ContentSchema', () => {
                       errors: [],
                       properties: {
                         summary: {
-                          errors: ['summary is required.'],
+                          errors: [
+                            'summary is required.',
+                            'Invalid input: expected record, received undefined',
+                          ],
                         },
                       },
                     },

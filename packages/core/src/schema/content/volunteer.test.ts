@@ -156,7 +156,10 @@ describe('VolunteerSchema', () => {
                   errors: [],
                   properties: {
                     position: {
-                      errors: ['position is required.'],
+                      errors: [
+                        'position is required.',
+                        'Invalid input: expected record, received undefined',
+                      ],
                     },
                   },
                 },
@@ -220,7 +223,10 @@ describe('VolunteerSchema', () => {
                   errors: [],
                   properties: {
                     summary: {
-                      errors: ['summary is required.'],
+                      errors: [
+                        'summary is required.',
+                        'Invalid input: expected record, received undefined',
+                      ],
                     },
                   },
                 },
@@ -253,7 +259,10 @@ describe('VolunteerSchema', () => {
                       errors: ['organization is required.'],
                     },
                     position: {
-                      errors: ['position is required.'],
+                      errors: [
+                        'position is required.',
+                        'Invalid input: expected record, received undefined',
+                      ],
                     },
                     startDate: {
                       errors: ['startDate is required.'],

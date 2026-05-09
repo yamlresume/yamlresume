@@ -169,7 +169,10 @@ describe('EducationSchema', () => {
                   errors: [],
                   properties: {
                     area: {
-                      errors: ['area is required.'],
+                      errors: [
+                        'area is required.',
+                        'Invalid input: expected record, received undefined',
+                      ],
                     },
                   },
                 },
@@ -307,7 +310,10 @@ describe('EducationSchema', () => {
                   errors: [],
                   properties: {
                     area: {
-                      errors: ['area is required.'],
+                      errors: [
+                        'area is required.',
+                        'Invalid input: expected record, received undefined',
+                      ],
                     },
                     degree: {
                       errors: ['degree option is required.'],

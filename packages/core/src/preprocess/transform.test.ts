@@ -46,6 +46,7 @@ import {
   normalizedResumeContent,
   normalizeResumeContentSections,
   replaceBlankLinesWithPercent,
+  resolveMultilingualStrings,
   transformDate,
   transformEducationCourses,
   transformEducationDegreeAreaAndScore,
@@ -1452,5 +1453,116 @@ describe(transformResumeLayout, () => {
         showUrls: true,
       },
     })
+  })
+})
+
+describe(resolveMultilingualStrings, () => {
+  it('should leave plain strings unchanged', () => {
+    const resume = cloneDeep(DEFAULT_RESUME)
+    resume.locale = { language: 'en' }
+    resume.content.basics.summary = 'Software engineer.'
+
+    const result = resolveMultilingualStrings(resume)
+    expect(result.content.basics.summary).toBe('Software engineer.')
+  })
+
+  it('should resolve a multilingual record to the active locale', () => {
+    const resume = cloneDeep(DEFAULT_RESUME)
+    resume.locale = { language: 'es' }
+    resume.content.basics.summary = {
+      en: 'Software engineer.',
+      es: 'Ingeniero de software.',
+    } as unknown as string
+
+    const result = resolveMultilingualStrings(resume)
+    expect(result.content.basics.summary).toBe('Ingeniero de software.')
+  })
+
+  it('should fall back to English when the active locale is missing', () => {
+    const resume = cloneDeep(DEFAULT_RESUME)
+    resume.locale = { language: 'fr' }
+    resume.content.basics.summary = {
+      en: 'Software engineer.',
+      es: 'Ingeniero de software.',
+    } as unknown as string
+
+    const result = resolveMultilingualStrings(resume)
+    expect(result.content.basics.summary).toBe('Software engineer.')
+  })
+
+  it('should fall back to first available translation when English is also missing', () => {
+    const resume = cloneDeep(DEFAULT_RESUME)
+    resume.locale = { language: 'fr' }
+    resume.content.basics.summary = {
+      es: 'Ingeniero de software.',
+      de: 'Softwareingenieur.',
+    } as unknown as string
+
+    const result = resolveMultilingualStrings(resume)
+    expect(result.content.basics.summary).toBe('Ingeniero de software.')
+  })
+
+  it('should default to English when locale is not set', () => {
+    const resume = cloneDeep(DEFAULT_RESUME)
+    resume.locale = undefined
+    resume.content.basics.summary = {
+      en: 'Software engineer.',
+      es: 'Ingeniero de software.',
+    } as unknown as string
+
+    const result = resolveMultilingualStrings(resume)
+    expect(result.content.basics.summary).toBe('Software engineer.')
+  })
+
+  it('should resolve multilingual fields in array sections', () => {
+    const resume = cloneDeep(DEFAULT_RESUME)
+    resume.locale = { language: 'es' }
+    resume.content.work = [
+      {
+        name: 'Acme Corp',
+        position: {
+          en: 'Senior Engineer',
+          es: 'Ingeniero Senior',
+        } as unknown as string,
+        startDate: '2020-01',
+        summary: {
+          en: 'Led the backend team.',
+          es: 'Lideré el equipo de backend.',
+        } as unknown as string,
+      },
+    ]
+
+    const result = resolveMultilingualStrings(resume)
+    expect(result.content.work?.[0].position).toBe('Ingeniero Senior')
+    expect(result.content.work?.[0].summary).toBe(
+      'Lideré el equipo de backend.'
+    )
+  })
+
+  it('should resolve multilingual fields in location', () => {
+    const resume = cloneDeep(DEFAULT_RESUME)
+    resume.locale = { language: 'es' }
+    resume.content.location = {
+      city: 'Barcelona',
+      region: { en: 'Catalonia', es: 'Cataluña' } as unknown as string,
+    }
+
+    const result = resolveMultilingualStrings(resume)
+    expect(result.content.location?.region).toBe('Cataluña')
+  })
+
+  it('should not mutate the original resume', () => {
+    const resume = cloneDeep(DEFAULT_RESUME)
+    resume.locale = { language: 'es' }
+    resume.content.basics.summary = {
+      en: 'Software engineer.',
+      es: 'Ingeniero de software.',
+    } as unknown as string
+    const original = cloneDeep(resume)
+
+    resolveMultilingualStrings(resume)
+    expect(resume.content.basics.summary).toEqual(
+      original.content.basics.summary
+    )
   })
 })

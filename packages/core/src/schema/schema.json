@@ -41,24 +41,30 @@
               ]
             },
             "headline": {
-              "title": "[optional] Headline",
-              "description": "A short and catchy headline for your resume or `null`.",
-              "examples": [
-                "Full-stack software engineer",
-                "Data Scientist with a passion for Machine Learning",
-                "Product Manager driving innovation"
-              ],
               "anyOf": [
                 {
-                  "type": "string",
-                  "minLength": 2,
-                  "maxLength": 128,
-                  "title": "[optional] Headline",
-                  "description": "A short and catchy headline for your resume or `null`.",
-                  "examples": [
-                    "Full-stack software engineer",
-                    "Data Scientist with a passion for Machine Learning",
-                    "Product Manager driving innovation"
+                  "anyOf": [
+                    {
+                      "type": "string",
+                      "minLength": 2,
+                      "maxLength": 128,
+                      "title": "Headline",
+                      "description": "A short and catchy headline for your resume.",
+                      "examples": [
+                        "Full-stack software engineer",
+                        "Data Scientist with a passion for Machine Learning",
+                        "Product Manager driving innovation"
+                      ]
+                    },
+                    {
+                      "type": "object",
+                      "propertyNames": {
+                        "type": "string"
+                      },
+                      "additionalProperties": {
+                        "type": "string"
+                      }
+                    }
                   ]
                 },
                 {
@@ -86,18 +92,22 @@
               ]
             },
             "summary": {
-              "title": "[optional] Summary",
-              "description": "A summary text between 16 and 1024 characters or `null`.",
-              "examples": [
-                "Experienced software engineer with 5+ years in full-stack development.",
-                "Creative designer passionate about user experience and modern design principles.",
-                "Dedicated project manager with proven track record of delivering complex projects on time and budget."
-              ],
               "anyOf": [
                 {
-                  "title": "[optional] Summary",
-                  "description": "A summary text between 16 and 1024 characters or `null`.",
-                  "$ref": "#/$defs/summary"
+                  "anyOf": [
+                    {
+                      "$ref": "#/$defs/summary"
+                    },
+                    {
+                      "type": "object",
+                      "propertyNames": {
+                        "type": "string"
+                      },
+                      "additionalProperties": {
+                        "type": "string"
+                      }
+                    }
+                  ]
                 },
                 {
                   "type": "null"
@@ -139,16 +149,29 @@
             "type": "object",
             "properties": {
               "area": {
-                "type": "string",
-                "minLength": 2,
-                "maxLength": 64,
-                "title": "Area",
-                "description": "Your field of study or major.",
-                "examples": [
-                  "Computer Science",
-                  "Business Administration",
-                  "Engineering",
-                  "Arts"
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "minLength": 2,
+                    "maxLength": 64,
+                    "title": "Area",
+                    "description": "Your field of study or major.",
+                    "examples": [
+                      "Computer Science",
+                      "Business Administration",
+                      "Engineering",
+                      "Arts"
+                    ]
+                  },
+                  {
+                    "type": "object",
+                    "propertyNames": {
+                      "type": "string"
+                    },
+                    "additionalProperties": {
+                      "type": "string"
+                    }
+                  }
                 ]
               },
               "institution": {
@@ -275,18 +298,22 @@
                 ]
               },
               "summary": {
-                "title": "[optional] Summary",
-                "description": "A summary text between 16 and 1024 characters or `null`.",
-                "examples": [
-                  "Experienced software engineer with 5+ years in full-stack development.",
-                  "Creative designer passionate about user experience and modern design principles.",
-                  "Dedicated project manager with proven track record of delivering complex projects on time and budget."
-                ],
                 "anyOf": [
                   {
-                    "title": "[optional] Summary",
-                    "description": "A summary text between 16 and 1024 characters or `null`.",
-                    "$ref": "#/$defs/summary"
+                    "anyOf": [
+                      {
+                        "$ref": "#/$defs/summary"
+                      },
+                      {
+                        "type": "object",
+                        "propertyNames": {
+                          "type": "string"
+                        },
+                        "additionalProperties": {
+                          "type": "string"
+                        }
+                      }
+                    ]
                   },
                   {
                     "type": "null"
@@ -378,15 +405,28 @@
                     ]
                   },
                   "title": {
-                    "type": "string",
-                    "minLength": 2,
-                    "maxLength": 128,
-                    "title": "Title",
-                    "description": "The title of the award.",
-                    "examples": [
-                      "Dean's List",
-                      "Outstanding Student",
-                      "Best Supporting Engineer"
+                    "anyOf": [
+                      {
+                        "type": "string",
+                        "minLength": 2,
+                        "maxLength": 128,
+                        "title": "Title",
+                        "description": "The title of the award.",
+                        "examples": [
+                          "Dean's List",
+                          "Outstanding Student",
+                          "Best Supporting Engineer"
+                        ]
+                      },
+                      {
+                        "type": "object",
+                        "propertyNames": {
+                          "type": "string"
+                        },
+                        "additionalProperties": {
+                          "type": "string"
+                        }
+                      }
                     ]
                   },
                   "date": {
@@ -420,18 +460,22 @@
                     ]
                   },
                   "summary": {
-                    "title": "[optional] Summary",
-                    "description": "A summary text between 16 and 1024 characters or `null`.",
-                    "examples": [
-                      "Experienced software engineer with 5+ years in full-stack development.",
-                      "Creative designer passionate about user experience and modern design principles.",
-                      "Dedicated project manager with proven track record of delivering complex projects on time and budget."
-                    ],
                     "anyOf": [
                       {
-                        "title": "[optional] Summary",
-                        "description": "A summary text between 16 and 1024 characters or `null`.",
-                        "$ref": "#/$defs/summary"
+                        "anyOf": [
+                          {
+                            "$ref": "#/$defs/summary"
+                          },
+                          {
+                            "type": "object",
+                            "propertyNames": {
+                              "type": "string"
+                            },
+                            "additionalProperties": {
+                              "type": "string"
+                            }
+                          }
+                        ]
                       },
                       {
                         "type": "null"
@@ -474,16 +518,29 @@
                     ]
                   },
                   "name": {
-                    "type": "string",
-                    "minLength": 2,
-                    "maxLength": 128,
-                    "title": "Name",
-                    "description": "The name of the certificate.",
-                    "examples": [
-                      "Andy Dufresne",
-                      "Xiao Hanyu",
-                      "Jane Smith",
-                      "Dr. Robert John"
+                    "anyOf": [
+                      {
+                        "type": "string",
+                        "minLength": 2,
+                        "maxLength": 128,
+                        "title": "Name",
+                        "description": "The name of the certificate.",
+                        "examples": [
+                          "Andy Dufresne",
+                          "Xiao Hanyu",
+                          "Jane Smith",
+                          "Dr. Robert John"
+                        ]
+                      },
+                      {
+                        "type": "object",
+                        "propertyNames": {
+                          "type": "string"
+                        },
+                        "additionalProperties": {
+                          "type": "string"
+                        }
+                      }
                     ]
                   },
                   "date": {
@@ -560,16 +617,29 @@
                 "type": "object",
                 "properties": {
                   "name": {
-                    "type": "string",
-                    "minLength": 2,
-                    "maxLength": 128,
-                    "title": "Name",
-                    "description": "The name of the interest.",
-                    "examples": [
-                      "Andy Dufresne",
-                      "Xiao Hanyu",
-                      "Jane Smith",
-                      "Dr. Robert John"
+                    "anyOf": [
+                      {
+                        "type": "string",
+                        "minLength": 2,
+                        "maxLength": 128,
+                        "title": "Name",
+                        "description": "The name of the interest.",
+                        "examples": [
+                          "Andy Dufresne",
+                          "Xiao Hanyu",
+                          "Jane Smith",
+                          "Dr. Robert John"
+                        ]
+                      },
+                      {
+                        "type": "object",
+                        "propertyNames": {
+                          "type": "string"
+                        },
+                        "additionalProperties": {
+                          "type": "string"
+                        }
+                      }
                     ]
                   },
                   "keywords": {
@@ -781,24 +851,30 @@
                   ]
                 },
                 "address": {
-                  "title": "[optional] Address",
-                  "description": "Your full address including street, apartment, etc or `null`.",
-                  "examples": [
-                    "123 Main Street, Apt 4B",
-                    "456 Oak Avenue",
-                    "789 Pine Road, Suite 100"
-                  ],
                   "anyOf": [
                     {
-                      "type": "string",
-                      "minLength": 4,
-                      "maxLength": 256,
-                      "title": "[optional] Address",
-                      "description": "Your full address including street, apartment, etc or `null`.",
-                      "examples": [
-                        "123 Main Street, Apt 4B",
-                        "456 Oak Avenue",
-                        "789 Pine Road, Suite 100"
+                      "anyOf": [
+                        {
+                          "type": "string",
+                          "minLength": 4,
+                          "maxLength": 256,
+                          "title": "Address",
+                          "description": "Your full address including street, apartment, etc.",
+                          "examples": [
+                            "123 Main Street, Apt 4B",
+                            "456 Oak Avenue",
+                            "789 Pine Road, Suite 100"
+                          ]
+                        },
+                        {
+                          "type": "object",
+                          "propertyNames": {
+                            "type": "string"
+                          },
+                          "additionalProperties": {
+                            "type": "string"
+                          }
+                        }
                       ]
                     },
                     {
@@ -1101,26 +1177,31 @@
                   ]
                 },
                 "region": {
-                  "title": "[optional] Region",
-                  "description": "Your state, province, or region or `null`.",
-                  "examples": [
-                    "California",
-                    "New York",
-                    "England",
-                    "Tokyo"
-                  ],
                   "anyOf": [
                     {
-                      "type": "string",
-                      "minLength": 2,
-                      "maxLength": 64,
-                      "title": "[optional] Region",
-                      "description": "Your state, province, or region or `null`.",
-                      "examples": [
-                        "California",
-                        "New York",
-                        "England",
-                        "Tokyo"
+                      "anyOf": [
+                        {
+                          "type": "string",
+                          "minLength": 2,
+                          "maxLength": 64,
+                          "title": "Region",
+                          "description": "Your state, province, or region.",
+                          "examples": [
+                            "California",
+                            "New York",
+                            "England",
+                            "Tokyo"
+                          ]
+                        },
+                        {
+                          "type": "object",
+                          "propertyNames": {
+                            "type": "string"
+                          },
+                          "additionalProperties": {
+                            "type": "string"
+                          }
+                        }
                       ]
                     },
                     {
@@ -1235,16 +1316,29 @@
                 "type": "object",
                 "properties": {
                   "name": {
-                    "type": "string",
-                    "minLength": 2,
-                    "maxLength": 128,
-                    "title": "Name",
-                    "description": "The name of the project.",
-                    "examples": [
-                      "Andy Dufresne",
-                      "Xiao Hanyu",
-                      "Jane Smith",
-                      "Dr. Robert John"
+                    "anyOf": [
+                      {
+                        "type": "string",
+                        "minLength": 2,
+                        "maxLength": 128,
+                        "title": "Name",
+                        "description": "The name of the project.",
+                        "examples": [
+                          "Andy Dufresne",
+                          "Xiao Hanyu",
+                          "Jane Smith",
+                          "Dr. Robert John"
+                        ]
+                      },
+                      {
+                        "type": "object",
+                        "propertyNames": {
+                          "type": "string"
+                        },
+                        "additionalProperties": {
+                          "type": "string"
+                        }
+                      }
                     ]
                   },
                   "startDate": {
@@ -1262,27 +1356,46 @@
                     ]
                   },
                   "summary": {
-                    "$ref": "#/$defs/summary"
-                  },
-                  "description": {
-                    "title": "[optional] Description",
-                    "description": "A detailed description of the project and your role or `null`.",
-                    "examples": [
-                      "Led development of a full-stack web application",
-                      "Designed and implemented REST API endpoints",
-                      "Managed team of 5 developers for mobile app development"
-                    ],
                     "anyOf": [
                       {
-                        "type": "string",
-                        "minLength": 4,
-                        "maxLength": 128,
-                        "title": "[optional] Description",
-                        "description": "A detailed description of the project and your role or `null`.",
-                        "examples": [
-                          "Led development of a full-stack web application",
-                          "Designed and implemented REST API endpoints",
-                          "Managed team of 5 developers for mobile app development"
+                        "$ref": "#/$defs/summary"
+                      },
+                      {
+                        "type": "object",
+                        "propertyNames": {
+                          "type": "string"
+                        },
+                        "additionalProperties": {
+                          "type": "string"
+                        }
+                      }
+                    ]
+                  },
+                  "description": {
+                    "anyOf": [
+                      {
+                        "anyOf": [
+                          {
+                            "type": "string",
+                            "minLength": 4,
+                            "maxLength": 128,
+                            "title": "Description",
+                            "description": "A detailed description of the project and your role.",
+                            "examples": [
+                              "Led development of a full-stack web application",
+                              "Designed and implemented REST API endpoints",
+                              "Managed team of 5 developers for mobile app development"
+                            ]
+                          },
+                          {
+                            "type": "object",
+                            "propertyNames": {
+                              "type": "string"
+                            },
+                            "additionalProperties": {
+                              "type": "string"
+                            }
+                          }
                         ]
                       },
                       {
@@ -1395,16 +1508,29 @@
                 "type": "object",
                 "properties": {
                   "name": {
-                    "type": "string",
-                    "minLength": 2,
-                    "maxLength": 128,
-                    "title": "Name",
-                    "description": "The name of the publication.",
-                    "examples": [
-                      "Andy Dufresne",
-                      "Xiao Hanyu",
-                      "Jane Smith",
-                      "Dr. Robert John"
+                    "anyOf": [
+                      {
+                        "type": "string",
+                        "minLength": 2,
+                        "maxLength": 128,
+                        "title": "Name",
+                        "description": "The name of the publication.",
+                        "examples": [
+                          "Andy Dufresne",
+                          "Xiao Hanyu",
+                          "Jane Smith",
+                          "Dr. Robert John"
+                        ]
+                      },
+                      {
+                        "type": "object",
+                        "propertyNames": {
+                          "type": "string"
+                        },
+                        "additionalProperties": {
+                          "type": "string"
+                        }
+                      }
                     ]
                   },
                   "publisher": {
@@ -1451,18 +1577,22 @@
                     ]
                   },
                   "summary": {
-                    "title": "[optional] Summary",
-                    "description": "A summary text between 16 and 1024 characters or `null`.",
-                    "examples": [
-                      "Experienced software engineer with 5+ years in full-stack development.",
-                      "Creative designer passionate about user experience and modern design principles.",
-                      "Dedicated project manager with proven track record of delivering complex projects on time and budget."
-                    ],
                     "anyOf": [
                       {
-                        "title": "[optional] Summary",
-                        "description": "A summary text between 16 and 1024 characters or `null`.",
-                        "$ref": "#/$defs/summary"
+                        "anyOf": [
+                          {
+                            "$ref": "#/$defs/summary"
+                          },
+                          {
+                            "type": "object",
+                            "propertyNames": {
+                              "type": "string"
+                            },
+                            "additionalProperties": {
+                              "type": "string"
+                            }
+                          }
+                        ]
                       },
                       {
                         "type": "null"
@@ -1526,7 +1656,20 @@
                     ]
                   },
                   "summary": {
-                    "$ref": "#/$defs/summary"
+                    "anyOf": [
+                      {
+                        "$ref": "#/$defs/summary"
+                      },
+                      {
+                        "type": "object",
+                        "propertyNames": {
+                          "type": "string"
+                        },
+                        "additionalProperties": {
+                          "type": "string"
+                        }
+                      }
+                    ]
                   },
                   "email": {
                     "title": "[optional] Email",
@@ -1630,16 +1773,29 @@
                     "description": "A predefined option from the available level choices."
                   },
                   "name": {
-                    "type": "string",
-                    "minLength": 2,
-                    "maxLength": 128,
-                    "title": "Name",
-                    "description": "The name of the skill.",
-                    "examples": [
-                      "Andy Dufresne",
-                      "Xiao Hanyu",
-                      "Jane Smith",
-                      "Dr. Robert John"
+                    "anyOf": [
+                      {
+                        "type": "string",
+                        "minLength": 2,
+                        "maxLength": 128,
+                        "title": "Name",
+                        "description": "The name of the skill.",
+                        "examples": [
+                          "Andy Dufresne",
+                          "Xiao Hanyu",
+                          "Jane Smith",
+                          "Dr. Robert John"
+                        ]
+                      },
+                      {
+                        "type": "object",
+                        "propertyNames": {
+                          "type": "string"
+                        },
+                        "additionalProperties": {
+                          "type": "string"
+                        }
+                      }
                     ]
                   },
                   "keywords": {
@@ -1708,16 +1864,29 @@
                     ]
                   },
                   "position": {
-                    "type": "string",
-                    "minLength": 2,
-                    "maxLength": 64,
-                    "title": "Position",
-                    "description": "Your role or position in the volunteer organization.",
-                    "examples": [
-                      "Event Coordinator",
-                      "Tutor",
-                      "Fundraiser",
-                      "Board Member"
+                    "anyOf": [
+                      {
+                        "type": "string",
+                        "minLength": 2,
+                        "maxLength": 64,
+                        "title": "Position",
+                        "description": "Your role or position in the volunteer organization.",
+                        "examples": [
+                          "Event Coordinator",
+                          "Tutor",
+                          "Fundraiser",
+                          "Board Member"
+                        ]
+                      },
+                      {
+                        "type": "object",
+                        "propertyNames": {
+                          "type": "string"
+                        },
+                        "additionalProperties": {
+                          "type": "string"
+                        }
+                      }
                     ]
                   },
                   "startDate": {
@@ -1735,7 +1904,20 @@
                     ]
                   },
                   "summary": {
-                    "$ref": "#/$defs/summary"
+                    "anyOf": [
+                      {
+                        "$ref": "#/$defs/summary"
+                      },
+                      {
+                        "type": "object",
+                        "propertyNames": {
+                          "type": "string"
+                        },
+                        "additionalProperties": {
+                          "type": "string"
+                        }
+                      }
+                    ]
                   },
                   "endDate": {
                     "title": "[optional] End date",
@@ -1826,16 +2008,29 @@
                     ]
                   },
                   "position": {
-                    "type": "string",
-                    "minLength": 2,
-                    "maxLength": 64,
-                    "title": "Position",
-                    "description": "Your job title or position at the company.",
-                    "examples": [
-                      "Software Engineer",
-                      "Product Manager",
-                      "Data Scientist",
-                      "UX Designer"
+                    "anyOf": [
+                      {
+                        "type": "string",
+                        "minLength": 2,
+                        "maxLength": 64,
+                        "title": "Position",
+                        "description": "Your job title or position at the company.",
+                        "examples": [
+                          "Software Engineer",
+                          "Product Manager",
+                          "Data Scientist",
+                          "UX Designer"
+                        ]
+                      },
+                      {
+                        "type": "object",
+                        "propertyNames": {
+                          "type": "string"
+                        },
+                        "additionalProperties": {
+                          "type": "string"
+                        }
+                      }
                     ]
                   },
                   "startDate": {
@@ -1853,7 +2048,20 @@
                     ]
                   },
                   "summary": {
-                    "$ref": "#/$defs/summary"
+                    "anyOf": [
+                      {
+                        "$ref": "#/$defs/summary"
+                      },
+                      {
+                        "type": "object",
+                        "propertyNames": {
+                          "type": "string"
+                        },
+                        "additionalProperties": {
+                          "type": "string"
+                        }
+                      }
+                    ]
                   },
                   "endDate": {
                     "title": "[optional] End date",

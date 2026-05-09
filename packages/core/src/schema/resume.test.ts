@@ -250,13 +250,19 @@ describe('ResumeSchema', () => {
                           errors: ['name should be 2 characters or more.'],
                         },
                         position: {
-                          errors: ['position is required.'],
+                          errors: [
+                            'position is required.',
+                            'Invalid input: expected record, received undefined',
+                          ],
                         },
                         startDate: {
                           errors: ['startDate is invalid.'],
                         },
                         summary: {
-                          errors: ['summary is required.'],
+                          errors: [
+                            'summary is required.',
+                            'Invalid input: expected record, received undefined',
+                          ],
                         },
                       },
                     },

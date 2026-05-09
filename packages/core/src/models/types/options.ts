@@ -132,3 +132,26 @@ export type LocaleLanguage = (typeof LOCALE_LANGUAGE_OPTIONS)[number]
  * A union type for all possible social network options.
  */
 export type Network = (typeof NETWORK_OPTIONS)[number]
+
+/**
+ * A string value that can be expressed either as a plain string (locale-agnostic)
+ * or as a mapping of locale language codes to translated strings.
+ *
+ * During preprocessing, `resolveMultilingualStrings` resolves this to a plain
+ * string for the active `locale.language` (English fallback).
+ *
+ * @example Plain string (works in every locale)
+ * ```yaml
+ * summary: "Software engineer with 10 years of experience."
+ * ```
+ *
+ * @example Multilingual map
+ * ```yaml
+ * summary:
+ *   en: "Software engineer with 10 years of experience."
+ *   es: "Ingeniero de software con 10 años de experiencia."
+ * ```
+ */
+export type MultilingualString =
+  | string
+  | Partial<Record<LocaleLanguage, string>>
