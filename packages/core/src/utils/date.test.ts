@@ -46,7 +46,7 @@ describe(parseDate, () => {
       const parsedDate = parseDate(dateStr)
 
       expect(parsedDate).toBeInstanceOf(Date)
-      expect(parsedDate?.getFullYear()).toBe(2020)
+      expect(parsedDate?.getUTCFullYear()).toBe(2020)
     }
   })
 
