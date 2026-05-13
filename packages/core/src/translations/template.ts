@@ -194,6 +194,18 @@ export function getTemplateTranslations(
         score: 'Nilai',
       },
     },
+    'pt-br': {
+      punctuations: {
+        comma: ', ',
+        colon: ': ',
+        separator: ', ',
+      },
+      terms: {
+        courses: 'Cursos',
+        keywords: 'Palavras-chave',
+        score: 'Nota',
+      },
+    },
   }
 
   return templateTranslation[isEmptyValue(language) ? 'en' : language]

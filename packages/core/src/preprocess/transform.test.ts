@@ -687,6 +687,11 @@ describe(transformLocation, () => {
       'countries',
       'United States'
     )
+    const brazilianPortugueseLocation = getOptionTranslation(
+      'pt-br',
+      'countries',
+      'United States'
+    )
 
     const tests = [
       {
@@ -707,6 +712,7 @@ describe(transformLocation, () => {
           nl: '',
           de: '',
           id: '',
+          'pt-br': '',
         },
       },
       {
@@ -731,6 +737,7 @@ describe(transformLocation, () => {
           nl: `Sacramento${latinComma}${dutchLocation}${latinComma}95814`,
           de: `Sacramento${latinComma}${germanLocation}${latinComma}95814`,
           id: `Sacramento${latinComma}${indonesianLocation}${latinComma}95814`,
+          'pt-br': `Sacramento${latinComma}${brazilianPortugueseLocation}${latinComma}95814`,
         },
       },
       {
@@ -751,6 +758,7 @@ describe(transformLocation, () => {
           nl: `123 Main Street${latinComma}Sacramento${latinComma}California`,
           de: `123 Main Street${latinComma}Sacramento${latinComma}California`,
           id: `123 Main Street${latinComma}Sacramento${latinComma}California`,
+          'pt-br': `123 Main Street${latinComma}Sacramento${latinComma}California`,
         },
       },
       {
@@ -781,6 +789,7 @@ describe(transformLocation, () => {
           nl: `123 Main Street${latinComma}Sacramento${latinComma}California${latinComma}${dutchLocation}${latinComma}95814`,
           de: `123 Main Street${latinComma}Sacramento${latinComma}California${latinComma}${germanLocation}${latinComma}95814`,
           id: `123 Main Street${latinComma}Sacramento${latinComma}California${latinComma}${indonesianLocation}${latinComma}95814`,
+          'pt-br': `123 Main Street${latinComma}Sacramento${latinComma}California${latinComma}${brazilianPortugueseLocation}${latinComma}95814`,
         },
       },
     ]
