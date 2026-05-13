@@ -70,7 +70,6 @@ export function localizeDate(
   const options: Intl.DateTimeFormatOptions = {
     year: 'numeric',
     month: 'short',
-    timeZone: 'UTC',
   }
 
   const dateObj = new Date(date)
@@ -165,7 +164,6 @@ export function epochSecondsToLocaleDateString(
   return new Date(epochTime * 1000).toLocaleDateString(locale, {
     day: 'numeric',
     month: 'short',
-    timeZone: 'UTC',
     year: 'numeric',
   })
 }
