@@ -151,6 +151,17 @@ describe(getTemplateTranslations, () => {
           },
         },
       },
+      {
+        language: 'pt-br',
+        expected: {
+          punctuations: {
+            colon: ': ',
+          },
+          terms: {
+            keywords: 'Palavras-chave',
+          },
+        },
+      },
     ]
 
     tests.forEach((test) => {

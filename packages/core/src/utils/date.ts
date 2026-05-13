@@ -120,6 +120,8 @@ export function getDateRange(
         return `${localizeDate(startDate, language)}–Heute`
       case 'id':
         return `${localizeDate(startDate, language)}–Sekarang`
+      case 'pt-br':
+        return `${localizeDate(startDate, language)}–Atual`
       default:
         // by default we return English's "Present" if language is not supported
         return `${localizeDate(startDate, language)}–Present`

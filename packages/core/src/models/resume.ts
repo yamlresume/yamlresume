@@ -357,6 +357,7 @@ export function getLocaleLanguageDetail(localeLanguage: LocaleLanguage) {
     ja: 'Japanese',
     de: 'German',
     id: 'Indonesian',
+    'pt-br': 'Brazilian Portuguese',
   }
 
   if (localeLanguage in localeLanguageDetails) {

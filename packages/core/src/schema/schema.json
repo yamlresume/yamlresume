@@ -1982,7 +1982,8 @@
                     "nl",
                     "ja",
                     "de",
-                    "id"
+                    "id",
+                    "pt-br"
                   ],
                   "title": "[optional] Locale language option",
                   "description": "A predefined option from the available locale language choices or `null`."
