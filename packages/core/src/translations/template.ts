@@ -195,6 +195,7 @@ export function getTemplateTranslations(
       },
     },
     cat: {
+    'pt-br': {
       punctuations: {
         comma: ', ',
         colon: ': ',
@@ -204,6 +205,8 @@ export function getTemplateTranslations(
         courses: 'Cursos',
         keywords: 'Paraules clau',
         score: 'Puntuació',
+        keywords: 'Palavras-chave',
+        score: 'Nota',
       },
     },
   }

@@ -220,6 +220,7 @@ export const LOCALE_LANGUAGE_OPTIONS = [
   'de',
   'id',
   'cat',
+  'pt-br',
 ] as const
 
 /**
