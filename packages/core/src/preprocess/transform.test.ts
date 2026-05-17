@@ -689,6 +689,12 @@ describe(transformLocation, () => {
       'United States'
     )
 
+    const catalanLocation = getOptionTranslation(
+      'cat',
+      'countries',
+      'United States'
+    )
+
     const tests = [
       {
         postalCode: '',
@@ -708,6 +714,7 @@ describe(transformLocation, () => {
           nl: '',
           de: '',
           id: '',
+          cat: '',
         },
       },
       {
@@ -732,6 +739,7 @@ describe(transformLocation, () => {
           nl: `Sacramento${latinComma}${dutchLocation}${latinComma}95814`,
           de: `Sacramento${latinComma}${germanLocation}${latinComma}95814`,
           id: `Sacramento${latinComma}${indonesianLocation}${latinComma}95814`,
+          cat: `Sacramento${latinComma}${catalanLocation}${latinComma}95814`,
         },
       },
       {
@@ -752,6 +760,7 @@ describe(transformLocation, () => {
           nl: `123 Main Street${latinComma}Sacramento${latinComma}California`,
           de: `123 Main Street${latinComma}Sacramento${latinComma}California`,
           id: `123 Main Street${latinComma}Sacramento${latinComma}California`,
+          cat: `123 Main Street${latinComma}Sacramento${latinComma}California`,
         },
       },
       {
@@ -782,6 +791,7 @@ describe(transformLocation, () => {
           nl: `123 Main Street${latinComma}Sacramento${latinComma}California${latinComma}${dutchLocation}${latinComma}95814`,
           de: `123 Main Street${latinComma}Sacramento${latinComma}California${latinComma}${germanLocation}${latinComma}95814`,
           id: `123 Main Street${latinComma}Sacramento${latinComma}California${latinComma}${indonesianLocation}${latinComma}95814`,
+          cat: `123 Main Street${latinComma}Sacramento${latinComma}California${latinComma}${catalanLocation}${latinComma}95814`,
         },
       },
     ]
@@ -1238,7 +1248,7 @@ describe(transformResumeLayoutLaTeX, () => {
   })
 
   it('should set numbers to OldStyle for English, Norwegian, Spanish, and French resume', () => {
-    for (const language of ['en', 'es', 'fr', 'no'] as const) {
+    for (const language of ['en', 'es', 'fr', 'no', 'cat'] as const) {
       const resume = cloneDeep(DEFAULT_RESUME)
 
       resume.locale = { ...resume.locale, language }

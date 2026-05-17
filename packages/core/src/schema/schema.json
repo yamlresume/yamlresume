@@ -2190,7 +2190,8 @@
                     "nl",
                     "ja",
                     "de",
-                    "id"
+                    "id",
+                    "cat"
                   ],
                   "title": "[optional] Locale language option",
                   "description": "A predefined option from the available locale language choices or `null`."

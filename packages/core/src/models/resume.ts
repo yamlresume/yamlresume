@@ -357,6 +357,7 @@ export function getLocaleLanguageDetail(localeLanguage: LocaleLanguage) {
     ja: 'Japanese',
     de: 'German',
     id: 'Indonesian',
+    cat: 'Catalan',
   }
 
   if (localeLanguage in localeLanguageDetails) {

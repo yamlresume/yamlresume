@@ -203,7 +203,7 @@ describe('LatexRenderer', () => {
 
   describe('isCJKResume', () => {
     const cjkLanguages = ['zh-hans', 'zh-hant-hk', 'zh-hant-tw', 'ja'] as const
-    const nonCjkLanguages = ['en', 'es', 'fr', 'de', 'no', 'nl'] as const
+    const nonCjkLanguages = ['en', 'es', 'fr', 'de', 'no', 'nl', 'cat'] as const
 
     it('should return true for CJK languages', () => {
       for (const language of cjkLanguages) {
@@ -246,6 +246,7 @@ describe('LatexRenderer', () => {
       { language: 'nl', expected: /\\usepackage\[dutch\]{babel}/ },
       { language: 'de', expected: /\\usepackage\[ngerman\]{babel}/ },
       { language: 'id', expected: /\\usepackage\[indonesian\]{babel}/ },
+      { language: 'cat', expected: /\\usepackage\[catalan\]{babel}/ },
       { language: 'en', expected: /\\usepackage\[english\]{babel}/ },
     ]
 
