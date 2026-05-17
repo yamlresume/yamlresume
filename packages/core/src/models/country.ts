@@ -3361,6 +3361,10 @@ export const CatalanCountryNames: Record<Country, string> = {
   Yemen: 'Iemen',
   Zambia: 'Zàmbia',
   Zimbabwe: 'Zimbàbue',
+}
+
+/**
+ * Represents all possible countries & regions with their corresponding
  * Brazilian Portuguese names.
  */
 export const BrazilianPortugueseCountryNames: Record<Country, string> = {

@@ -35,8 +35,8 @@ import type {
 } from '@/models'
 
 import {
-  CatalanCountryNames,
   BrazilianPortugueseCountryNames,
+  CatalanCountryNames,
   DutchCountryNames,
   EnglishCountryNames,
   FrenchCountryNames,
@@ -1528,6 +1528,9 @@ export function getOptionTranslation<K extends OptionCategory>(
         Intermediate: 'Intermedi',
         Advanced: 'Avançat',
         Expert: 'Expert',
+        Master: 'Mestre',
+      },
+    },
     'pt-br': {
       countries: BrazilianPortugueseCountryNames,
       degrees: {
