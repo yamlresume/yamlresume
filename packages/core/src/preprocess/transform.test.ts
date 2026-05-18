@@ -1570,6 +1570,15 @@ describe(resolveMultilingualStrings, () => {
     expect(result.content.location?.region).toBe('Cataluña')
   })
 
+  it('should default to empty string when multilingual record is empty', () => {
+    const resume = cloneDeep(DEFAULT_RESUME)
+    resume.locale = { language: 'en' }
+    resume.content.basics.summary = {} as unknown as string
+
+    const result = resolveMultilingualStrings(resume)
+    expect(result.content.basics.summary).toBe('')
+  })
+
   it('should not mutate the original resume', () => {
     const resume = cloneDeep(DEFAULT_RESUME)
     resume.locale = { language: 'es' }

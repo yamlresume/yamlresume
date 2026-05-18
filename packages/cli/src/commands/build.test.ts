@@ -713,6 +713,12 @@ describe(buildResume, () => {
     ])
   })
 
+  it('should override locale language when language option is provided', async () => {
+    const resumePath = getFixture('software-engineer.yml')
+    await buildResume(resumePath, { pdf: false, language: 'es' })
+    expect(consolaSuccessSpy).toBeCalledTimes(3)
+  })
+
   it('should fallback to default layout if resume has no layouts', async () => {
     const resumePath = getFixture('software-engineer.yml')
 
@@ -1046,6 +1052,32 @@ describe(createBuildCommand, () => {
         timeout: LATEX_COMPILE_TIMEOUT_MS,
       }
     )
+  })
+
+  it('should build resume with valid language option', async () => {
+    const resumePath = getFixture('software-engineer.yml')
+    await buildCommand.parseAsync([
+      'yamlresume',
+      'build',
+      '--language',
+      'es',
+      '--no-pdf',
+      resumePath,
+    ])
+    expect(consolaSuccessSpy).toBeCalledTimes(3)
+  })
+
+  it('should throw for invalid language option', () => {
+    const resumePath = getFixture('software-engineer.yml')
+    expect(() =>
+      buildCommand.parse([
+        'yamlresume',
+        'build',
+        '--language',
+        'invalid-lang',
+        resumePath,
+      ])
+    ).toThrow('Invalid language "invalid-lang"')
   })
 
   it('should accept fractional seconds for timeout', async () => {
