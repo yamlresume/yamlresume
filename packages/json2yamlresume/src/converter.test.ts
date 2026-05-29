@@ -263,6 +263,44 @@ describe(convertProjects, () => {
       },
     ])
   })
+
+  it('should preserve summary when projects have summary and no highlights', () => {
+    const projectsItem = {
+      name: 'Project With Summary',
+      description: 'A project with a summary paragraph',
+      summary: 'Led the architecture design for the platform.',
+    }
+
+    const resume = { projects: [projectsItem] }
+    const result = convertProjects(resume)
+
+    expect(result).toEqual([
+      {
+        ...projectsItem,
+        summary: 'Led the architecture design for the platform.',
+      },
+    ])
+  })
+
+  it('should merge summary and highlights when both are set', () => {
+    const projectsItem = {
+      name: 'Project Both',
+      description: 'A project with summary and highlights',
+      summary: 'Member of the Architecture Group.',
+      highlights: ['Shipped feature X', 'Led rewrite of service Y'],
+    }
+
+    const resume = { projects: [projectsItem] }
+    const result = convertProjects(resume)
+
+    expect(result).toEqual([
+      {
+        ...omit(projectsItem, ['highlights']),
+        summary:
+          'Member of the Architecture Group.\n\n- Shipped feature X\n- Led rewrite of service Y',
+      },
+    ])
+  })
 })
 
 describe(convertReferences, () => {
@@ -423,6 +461,44 @@ describe(convertVolunteer, () => {
       },
     ])
   })
+
+  it('should preserve summary when volunteer items have summary and no highlights', () => {
+    const volunteerItem = {
+      organization: 'Org With Summary',
+      position: 'Helper',
+      summary: 'Coordinated community outreach programs.',
+    }
+
+    const resume = { volunteer: [volunteerItem] }
+    const result = convertVolunteer(resume)
+
+    expect(result).toEqual([
+      {
+        ...volunteerItem,
+        summary: 'Coordinated community outreach programs.',
+      },
+    ])
+  })
+
+  it('should merge summary and highlights when both are set on volunteer items', () => {
+    const volunteerItem = {
+      organization: 'Org Both',
+      position: 'Lead',
+      summary: 'Organized annual fundraising events.',
+      highlights: ['Raised $50K', 'Recruited 30 volunteers'],
+    }
+
+    const resume = { volunteer: [volunteerItem] }
+    const result = convertVolunteer(resume)
+
+    expect(result).toEqual([
+      {
+        ...omit(volunteerItem, ['highlights']),
+        summary:
+          'Organized annual fundraising events.\n\n- Raised $50K\n- Recruited 30 volunteers',
+      },
+    ])
+  })
 })
 
 describe(convertWork, () => {
@@ -462,7 +538,7 @@ describe(convertWork, () => {
     expect(result).toEqual([
       {
         ...workItem,
-        summary: '',
+        summary: 'Did engineering',
       },
     ])
   })
@@ -497,11 +573,32 @@ describe(convertWork, () => {
     expect(result).toEqual([
       {
         ...omit(workItem1, 'highlights'),
-        summary: '- Did A\n- Did B',
+        summary: 'Worked on X\n\n- Did A\n- Did B',
       },
       {
         ...omit(workItem2, 'highlights'),
-        summary: '- Led C\n- Improved D',
+        summary: 'Worked on Y\n\n- Led C\n- Improved D',
+      },
+    ])
+  })
+
+  it('should preserve summary when work items have summary and no highlights', () => {
+    const workItem = {
+      company: 'Company D',
+      position: 'Architect',
+      startDate: '2021-01-01',
+      endDate: '2022-01-01',
+      summary: 'Member of the Architecture Group; established team standards.',
+    }
+
+    const resume = { ...jsonResume, work: [workItem] }
+    const result = convertWork(resume)
+
+    expect(result).toEqual([
+      {
+        ...workItem,
+        summary:
+          'Member of the Architecture Group; established team standards.',
       },
     ])
   })
