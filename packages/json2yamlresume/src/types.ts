@@ -94,6 +94,7 @@ export type JSONResumeProjectItem = {
   highlights?: string[]
   name?: string
   startDate?: string
+  summary?: string
   url?: string
 }
 

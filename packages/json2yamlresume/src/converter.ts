@@ -96,7 +96,7 @@ export function convertProjects(
   // @ts-ignore
   return projects.map((item) => ({
     ...omit(item, ['highlights']),
-    summary: mergeHighlightsIntoSummary('', item.highlights),
+    summary: mergeHighlightsIntoSummary(item.summary ?? '', item.highlights),
   }))
 }
 
@@ -132,7 +132,7 @@ export function convertVolunteer(
   // @ts-ignore
   return volunteer.map((item) => ({
     ...omit(item, ['highlights']),
-    summary: mergeHighlightsIntoSummary('', item.highlights),
+    summary: mergeHighlightsIntoSummary(item.summary ?? '', item.highlights),
   }))
 }
 
@@ -148,7 +148,7 @@ export function convertWork(resume: JSONResume): Resume['content']['work'] {
   // @ts-ignore
   return work.map((item) => ({
     ...omit(item, ['highlights']),
-    summary: mergeHighlightsIntoSummary('', item.highlights),
+    summary: mergeHighlightsIntoSummary(item.summary ?? '', item.highlights),
   }))
 }
 
