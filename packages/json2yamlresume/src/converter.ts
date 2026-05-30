@@ -25,6 +25,7 @@
 import {
   DEFAULT_RESUME_LAYOUTS,
   DEFAULT_RESUME_LOCALE,
+  isEmptyString,
   isEmptyValue,
   type Resume,
 } from '@yamlresume/core'
@@ -96,7 +97,7 @@ export function convertProjects(
   // @ts-ignore
   return projects.map((item) => ({
     ...omit(item, ['highlights']),
-    summary: mergeHighlightsIntoSummary(item.summary ?? '', item.highlights),
+    summary: mergeHighlightsIntoSummary(item.summary, item.highlights),
   }))
 }
 
@@ -132,7 +133,7 @@ export function convertVolunteer(
   // @ts-ignore
   return volunteer.map((item) => ({
     ...omit(item, ['highlights']),
-    summary: mergeHighlightsIntoSummary(item.summary ?? '', item.highlights),
+    summary: mergeHighlightsIntoSummary(item.summary, item.highlights),
   }))
 }
 
@@ -148,7 +149,7 @@ export function convertWork(resume: JSONResume): Resume['content']['work'] {
   // @ts-ignore
   return work.map((item) => ({
     ...omit(item, ['highlights']),
-    summary: mergeHighlightsIntoSummary(item.summary ?? '', item.highlights),
+    summary: mergeHighlightsIntoSummary(item.summary, item.highlights),
   }))
 }
 
@@ -163,20 +164,15 @@ export function mergeHighlightsIntoSummary(
   summary?: string,
   highlights?: string[]
 ): string {
-  if (isEmptyValue(highlights)) {
-    return summary
-  }
-
-  const highlightsList = highlights
-    .filter((str) => !isEmptyValue(str))
+  const normalizedSummary = summary ?? ''
+  const highlightsList = (highlights ?? [])
+    .filter((str) => !isEmptyString(str))
     .map((highlight) => `- ${highlight}`)
     .join('\n')
 
-  if (isEmptyValue(summary)) {
-    return highlightsList
-  }
-
-  return `${summary}\n\n${highlightsList}`
+  return [normalizedSummary, highlightsList]
+    .filter((part) => !isEmptyString(part))
+    .join('\n\n')
 }
 
 /**

@@ -605,6 +605,43 @@ describe(convertWork, () => {
 })
 
 describe(mergeHighlightsIntoSummary, () => {
+  it('should return summary when both summary and highlights are empty/undefined/null', () => {
+    const tests = [
+      {
+        summary: '',
+        highlights: [],
+        expected: '',
+      },
+      {
+        summary: '',
+        highlights: undefined,
+        expected: '',
+      },
+      {
+        summary: '',
+        highlights: null,
+        expected: '',
+      },
+      {
+        summary: undefined,
+        highlights: [],
+        expected: '',
+      },
+      {
+        summary: null,
+        highlights: [],
+        expected: '',
+      },
+    ]
+
+    for (const test of tests) {
+      // @ts-ignore
+      expect(mergeHighlightsIntoSummary(test.summary, test.highlights)).toBe(
+        test.expected
+      )
+    }
+  })
+
   it('should return summary when highlights is empty value', () => {
     const tests = [
       {
