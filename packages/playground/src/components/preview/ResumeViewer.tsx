@@ -26,6 +26,7 @@ import type { Resume } from '@yamlresume/core'
 import clsx from 'clsx'
 import { useResumeRenderer } from '../../hooks'
 import { CodeViewer } from './CodeViewer'
+import { DocxViewer } from './DocxViewer'
 import { HtmlViewer } from './HtmlViewer'
 
 /**
@@ -40,13 +41,13 @@ export interface ResumeViewerProps {
 
 /**
  * ResumeViewer component responsible for rendering the appropriate preview
- * (HTML, Markdown, or LaTeX) based on the selected layout.
+ * (HTML, Markdown, LaTeX, or DOCX) based on the selected layout.
  *
  * @param props - The props for the ResumeViewer component.
  * @returns The rendered ResumeViewer component.
  */
 export function ResumeViewer({ resume, layoutIndex }: ResumeViewerProps) {
-  const { renderedContent, engine, error } = useResumeRenderer({
+  const { renderedContent, binaryContent, engine, error } = useResumeRenderer({
     resume,
     layoutIndex,
   })
@@ -67,28 +68,8 @@ export function ResumeViewer({ resume, layoutIndex }: ResumeViewerProps) {
     )
   }
 
-  // DOCX produces binary output that cannot be previewed in the browser
   if (engine === 'docx') {
-    return (
-      <div
-        className={clsx(
-          'h-full w-full p-8 flex flex-col items-center justify-center',
-          'text-gray-600 bg-gray-50'
-        )}
-      >
-        <div className="text-4xl mb-4">📄</div>
-        <div className="text-lg font-medium mb-2">
-          DOCX Preview Not Available
-        </div>
-        <div className="text-sm text-gray-500 text-center max-w-md">
-          DOCX files are binary documents that cannot be previewed in the
-          browser. Use the CLI to generate DOCX files:{' '}
-          <code className="bg-gray-200 px-1 rounded">
-            yamlresume build resume.yaml
-          </code>
-        </div>
-      </div>
-    )
+    return <DocxViewer content={binaryContent} />
   }
 
   return (

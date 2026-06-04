@@ -23,6 +23,7 @@
  */
 
 export { CodeViewer, type CodeViewerProps } from './CodeViewer'
+export { DocxViewer, type DocxViewerProps } from './DocxViewer'
 export { HtmlViewer, type HtmlViewerProps } from './HtmlViewer'
 export { PreviewPanel, type PreviewPanelProps } from './PreviewPanel'
 export { ResumeViewer, type ResumeViewerProps } from './ResumeViewer'

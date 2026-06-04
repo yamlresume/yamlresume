@@ -49,6 +49,7 @@ describe(getBasename, () => {
     expect(getBasename('resume.yaml')).toBe('resume.yaml')
     expect(getBasename('path\\to\\resume.yaml')).toBe('resume.yaml')
     expect(getBasename(undefined)).toBe('resume.yaml')
+    expect(getBasename('/')).toBe('/')
   })
 
   it('should remove extension if requested', () => {
@@ -77,6 +78,10 @@ describe(getExtension, () => {
       {
         engine: 'latex',
         extension: '.tex',
+      },
+      {
+        engine: 'docx',
+        extension: '.docx',
       },
       {
         engine: 'unknown',
@@ -188,6 +193,45 @@ describe(downloadResume, () => {
     )
   })
 
+  it('should handle binary content download', async () => {
+    const binaryData = new Uint8Array([1, 2, 3])
+    const renderMock = vi.fn().mockReturnValue(binaryData)
+    vi.mocked(getResumeRenderer).mockReturnValue({
+      render: renderMock,
+    } as unknown as Renderer)
+
+    const anchorMock = {
+      click: vi.fn(),
+    } as unknown as HTMLAnchorElement
+    vi.spyOn(document, 'createElement').mockReturnValue(anchorMock)
+    vi.spyOn(document.body, 'appendChild').mockImplementation(() => anchorMock)
+    vi.spyOn(document.body, 'removeChild').mockImplementation(() => anchorMock)
+
+    await downloadResume(mockResume, 0)
+
+    expect(mockCreateObjectURL).toHaveBeenCalled()
+  })
+
+  it('should handle promise-based render result', async () => {
+    const renderMock = vi
+      .fn()
+      .mockReturnValue(Promise.resolve('promise content'))
+    vi.mocked(getResumeRenderer).mockReturnValue({
+      render: renderMock,
+    } as unknown as Renderer)
+
+    const anchorMock = {
+      click: vi.fn(),
+    } as unknown as HTMLAnchorElement
+    vi.spyOn(document, 'createElement').mockReturnValue(anchorMock)
+    vi.spyOn(document.body, 'appendChild').mockImplementation(() => anchorMock)
+    vi.spyOn(document.body, 'removeChild').mockImplementation(() => anchorMock)
+
+    await downloadResume(mockResume, 0)
+
+    expect(anchorMock.download).toBe('resume.0.html')
+  })
+
   it('should handle errors gracefully', async () => {
     const consoleSpy = vi.spyOn(console, 'error').mockImplementation(() => {})
     vi.mocked(getResumeRenderer).mockImplementation(() => {
@@ -248,6 +292,19 @@ describe(copyResumeToClipboard, () => {
     expect(getResumeRenderer).not.toHaveBeenCalled()
     expect(consoleSpy).toHaveBeenCalledWith(
       'No resume or layout found for copy'
+    )
+  })
+
+  it('should warn and return if content is not a string', () => {
+    const consoleSpy = vi.spyOn(console, 'warn').mockImplementation(() => {})
+    vi.mocked(getResumeRenderer).mockReturnValue({
+      render: () => new Uint8Array([1, 2, 3]),
+    } as unknown as Renderer)
+
+    copyResumeToClipboard(mockResume, 0)
+
+    expect(consoleSpy).toHaveBeenCalledWith(
+      'Copy to clipboard is not supported for binary layouts'
     )
   })
 
@@ -377,6 +434,19 @@ describe(printResume, () => {
     )
   })
 
+  it('should warn and return if content is not a string', () => {
+    const consoleSpy = vi.spyOn(console, 'warn').mockImplementation(() => {})
+    vi.mocked(getResumeRenderer).mockReturnValue({
+      render: () => new Uint8Array([1, 2, 3]),
+    } as unknown as Renderer)
+
+    printResume(mockResume, 0)
+
+    expect(consoleSpy).toHaveBeenCalledWith(
+      'Printing is only supported for string-based layouts'
+    )
+  })
+
   it('should handle errors gracefully', () => {
     const consoleSpy = vi.spyOn(console, 'error').mockImplementation(() => {})
     vi.mocked(getResumeRenderer).mockImplementation(() => {
@@ -458,6 +528,19 @@ describe(openResumeInNewTab, () => {
     expect(getResumeRenderer).not.toHaveBeenCalled()
     expect(consoleSpy).toHaveBeenCalledWith(
       'Open in new tab is only supported for HTML layouts'
+    )
+  })
+
+  it('should warn and return if content is not a string', () => {
+    const consoleSpy = vi.spyOn(console, 'warn').mockImplementation(() => {})
+    vi.mocked(getResumeRenderer).mockReturnValue({
+      render: () => new Uint8Array([1, 2, 3]),
+    } as unknown as Renderer)
+
+    openResumeInNewTab(mockResume, 0)
+
+    expect(consoleSpy).toHaveBeenCalledWith(
+      'Open in new tab is only supported for string-based layouts'
     )
   })
 

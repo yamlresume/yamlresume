@@ -26,6 +26,7 @@ import { cleanup, render, screen } from '@testing-library/react'
 import { DEFAULT_RESUME, getResumeRenderer } from '@yamlresume/core'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import type { CodeViewerProps } from './CodeViewer'
+import type { DocxViewerProps } from './DocxViewer'
 import type { HtmlViewerProps } from './HtmlViewer'
 import { ResumeViewer } from './ResumeViewer'
 
@@ -47,6 +48,16 @@ vi.mock('./CodeViewer', () => ({
   ),
 }))
 
+vi.mock('./DocxViewer', () => ({
+  DocxViewer: ({ content }: DocxViewerProps) => (
+    <div data-testid="docx-viewer-mock">
+      <div data-testid="docx-content">
+        {content ? `binary:${content.length}` : 'no-content'}
+      </div>
+    </div>
+  ),
+}))
+
 // Mock @yamlresume/core
 vi.mock('@yamlresume/core', async (importOriginal) => {
   const actual = await importOriginal<typeof import('@yamlresume/core')>()
@@ -64,6 +75,11 @@ describe(ResumeViewer, () => {
   const emptyLayoutsResume = {
     ...DEFAULT_RESUME,
     layouts: [],
+  }
+
+  const docxResume = {
+    ...DEFAULT_RESUME,
+    layouts: [{ engine: 'docx' as const }],
   }
 
   beforeEach(() => {
@@ -98,6 +114,19 @@ describe(ResumeViewer, () => {
     expect(screen.getByTestId('code-content').textContent).toBe(
       'rendered content'
     )
+  })
+
+  it('renders DOCX preview correctly', () => {
+    const binaryData = new Uint8Array([1, 2, 3])
+    vi.mocked(getResumeRenderer).mockImplementationOnce(
+      () =>
+        ({
+          render: () => binaryData as unknown as string,
+        }) as unknown as ReturnType<typeof getResumeRenderer>
+    )
+    render(<ResumeViewer resume={docxResume} layoutIndex={0} />)
+    expect(screen.getByTestId('docx-viewer-mock')).toBeDefined()
+    expect(screen.getByTestId('docx-content').textContent).toBe('binary:3')
   })
 
   it('renders nothing when resume is null', () => {

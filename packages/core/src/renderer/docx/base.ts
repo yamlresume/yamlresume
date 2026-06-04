@@ -694,7 +694,7 @@ export abstract class DocxRenderer extends Renderer<Paragraph[]> {
    */
   async render(): Promise<Uint8Array> {
     const doc = this.createDocument()
-    const buffer = await Packer.toBuffer(doc)
+    const buffer = await Packer.toArrayBuffer(doc)
     return new Uint8Array(buffer)
   }
 

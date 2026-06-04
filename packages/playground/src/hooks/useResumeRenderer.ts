@@ -80,6 +80,7 @@ export function useResumeRenderer({
   layoutIndex,
 }: UseResumeRendererProps) {
   const [renderedContent, setRenderedContent] = useState<string>('')
+  const [binaryContent, setBinaryContent] = useState<Uint8Array | null>(null)
   const [engine, setEngine] = useState<LayoutEngine>('html')
   const [error, setError] = useState<string | null>(null)
 
@@ -107,17 +108,21 @@ export function useResumeRenderer({
 
       if (typeof result === 'string') {
         setRenderedContent(result)
+        setBinaryContent(null)
         setError(null)
-      } else if (ArrayBuffer.isView(result)) {
-        setRenderedContent('[DOCX binary content - download to view]')
+      } else if (result instanceof Uint8Array) {
+        setRenderedContent('')
+        setBinaryContent(result)
         setError(null)
       } else {
         result
           .then((content) => {
             if (typeof content === 'string') {
               setRenderedContent(content)
-            } else {
-              setRenderedContent('[DOCX binary content - download to view]')
+              setBinaryContent(null)
+            } else if (content instanceof Uint8Array) {
+              setRenderedContent('')
+              setBinaryContent(content)
             }
             setError(null)
           })
@@ -134,6 +139,7 @@ export function useResumeRenderer({
 
   return {
     renderedContent,
+    binaryContent,
     engine,
     error,
   }
