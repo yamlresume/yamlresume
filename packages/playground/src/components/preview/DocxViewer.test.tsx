@@ -22,7 +22,7 @@
  * IN THE SOFTWARE.
  */
 
-import { cleanup, render, screen, waitFor } from '@testing-library/react'
+import { act, cleanup, render, screen, waitFor } from '@testing-library/react'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import { DocxViewer } from './DocxViewer'
 
@@ -48,9 +48,12 @@ describe(DocxViewer, () => {
     expect(screen.getByText('No DOCX content to preview.')).toBeDefined()
   })
 
-  it('calls renderAsync with content and container when content is provided', () => {
+  it('calls renderAsync with content and container when content is provided', async () => {
     const binaryData = new Uint8Array([1, 2, 3])
     render(<DocxViewer content={binaryData} />)
+    await act(async () => {
+      await Promise.resolve()
+    })
 
     expect(renderAsyncMock).toHaveBeenCalledOnce()
     expect(renderAsyncMock).toHaveBeenCalledWith(

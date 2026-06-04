@@ -33,6 +33,9 @@ import {
 import { LINE_SPACING_MAP } from './constants'
 import { HtmlRenderer } from './renderer'
 
+vi.mock('./styles/calm.css', () => ({ default: 'MOCK_CALM_CSS' }))
+vi.mock('./styles/vscode.css', () => ({ default: 'MOCK_VSCODE_CSS' }))
+
 describe('HtmlRenderer', () => {
   let resume: Resume
   let renderer: HtmlRenderer
@@ -298,9 +301,6 @@ describe('HtmlRenderer', () => {
     })
 
     describe('template', () => {
-      vi.mock('./styles/calm.css', () => ({ default: 'MOCK_CALM_CSS' }))
-      vi.mock('./styles/vscode.css', () => ({ default: 'MOCK_VSCODE_CSS' }))
-
       it('should use calm css by default', () => {
         const htmlLayout = resume.layouts[layoutIndex] as HtmlLayout
         delete htmlLayout.template
