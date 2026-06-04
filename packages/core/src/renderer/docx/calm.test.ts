@@ -573,8 +573,10 @@ describe('CalmDocxRenderer', () => {
       const result = JSON.stringify(renderer.renderLanguages())
 
       expect(result).toContain('Languages')
-      expect(result).toContain('English: Native or Bilingual Proficiency')
-      expect(result).toContain('Spanish: Limited Working Proficiency')
+      expect(result).toContain('English:')
+      expect(result).toContain('Native or Bilingual Proficiency')
+      expect(result).toContain('Spanish:')
+      expect(result).toContain('Limited Working Proficiency')
     })
 
     it('should include keywords when provided', () => {
@@ -616,8 +618,10 @@ describe('CalmDocxRenderer', () => {
       const result = JSON.stringify(renderer.renderSkills())
 
       expect(result).toContain('Skills')
-      expect(result).toContain('JavaScript: Expert')
-      expect(result).toContain('Python: Intermediate')
+      expect(result).toContain('JavaScript:')
+      expect(result).toContain('Expert')
+      expect(result).toContain('Python:')
+      expect(result).toContain('Intermediate')
     })
 
     it('should include keywords when provided', () => {
@@ -1013,8 +1017,10 @@ describe('CalmDocxRenderer', () => {
       const result = JSON.stringify(renderer.renderInterests())
 
       expect(result).toContain('Interests')
-      expect(result).toContain('Photography: Digital, Film')
-      expect(result).toContain('Hiking: Mountains, Trails')
+      expect(result).toContain('Photography')
+      expect(result).toContain('Digital, Film')
+      expect(result).toContain('Hiking')
+      expect(result).toContain('Mountains, Trails')
     })
 
     it('should handle interests without keywords', () => {

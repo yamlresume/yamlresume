@@ -26,7 +26,7 @@ import { AlignmentType, ExternalHyperlink, Paragraph, TextRun } from 'docx'
 import { MarkdownParser, type Parser } from '@/compiler'
 import type { Resume } from '@/models'
 import { getTemplateTranslations } from '@/translations'
-import { isEmptyValue, joinNonEmptyString, showIfNotEmpty } from '@/utils'
+import { isEmptyValue, showIfNotEmpty } from '@/utils'
 import { DocxRenderer } from './base'
 
 export class CalmDocxRenderer extends DocxRenderer {
@@ -483,7 +483,7 @@ export class CalmDocxRenderer extends DocxRenderer {
 
         if (courses) {
           paragraphs.push(
-            this.createTextParagraph(`${terms.courses}${colon}${courses}`)
+            this.createBoldLabelParagraph(`${terms.courses}${colon}`, courses)
           )
         }
       }
@@ -573,7 +573,7 @@ export class CalmDocxRenderer extends DocxRenderer {
 
         if (keywords) {
           paragraphs.push(
-            this.createTextParagraph(`${terms.keywords}${colon}${keywords}`)
+            this.createBoldLabelParagraph(`${terms.keywords}${colon}`, keywords)
           )
         }
       }
@@ -608,11 +608,32 @@ export class CalmDocxRenderer extends DocxRenderer {
     ]
 
     languages.forEach(({ computed: { language, fluency, keywords } }) => {
-      const text = `${language}${colon}${fluency}${showIfNotEmpty(
+      const keywordText = showIfNotEmpty(
         keywords,
         `${comma}${terms.keywords}${colon}${keywords}`
-      )}`
-      paragraphs.push(this.createTextParagraph(`• ${text}`))
+      )
+      const fontFamily = this.getFontFamily()
+      const fontSize = this.getBaseFontSize()
+      const lineSpacing = this.getLineSpacing()
+
+      paragraphs.push(
+        new Paragraph({
+          children: [
+            new TextRun({
+              text: `• ${language}${colon}`,
+              bold: true,
+              size: fontSize,
+              font: fontFamily,
+            }),
+            new TextRun({
+              text: `${fluency}${keywordText}`,
+              size: fontSize,
+              font: fontFamily,
+            }),
+          ],
+          spacing: { after: 100, line: lineSpacing },
+        })
+      )
     })
 
     return paragraphs
@@ -644,11 +665,32 @@ export class CalmDocxRenderer extends DocxRenderer {
     ]
 
     skills.forEach(({ name, computed: { level, keywords } }) => {
-      const text = `${name}${colon}${level}${showIfNotEmpty(
+      const keywordText = showIfNotEmpty(
         keywords,
         `${comma}${terms.keywords}${colon}${keywords}`
-      )}`
-      paragraphs.push(this.createTextParagraph(`• ${text}`))
+      )
+      const fontFamily = this.getFontFamily()
+      const fontSize = this.getBaseFontSize()
+      const lineSpacing = this.getLineSpacing()
+
+      paragraphs.push(
+        new Paragraph({
+          children: [
+            new TextRun({
+              text: `• ${name}${colon}`,
+              bold: true,
+              size: fontSize,
+              font: fontFamily,
+            }),
+            new TextRun({
+              text: `${level}${keywordText}`,
+              size: fontSize,
+              font: fontFamily,
+            }),
+          ],
+          spacing: { after: 100, line: lineSpacing },
+        })
+      )
     })
 
     return paragraphs
@@ -983,7 +1025,7 @@ export class CalmDocxRenderer extends DocxRenderer {
 
         if (keywords) {
           paragraphs.push(
-            this.createTextParagraph(`${terms.keywords}${colon}${keywords}`)
+            this.createBoldLabelParagraph(`${terms.keywords}${colon}`, keywords)
           )
         }
       }
@@ -1017,8 +1059,32 @@ export class CalmDocxRenderer extends DocxRenderer {
     ]
 
     interests.forEach(({ name, computed: { keywords } }) => {
-      const text = joinNonEmptyString([name, keywords], colon)
-      paragraphs.push(this.createTextParagraph(`• ${text}`))
+      const fontFamily = this.getFontFamily()
+      const fontSize = this.getBaseFontSize()
+      const lineSpacing = this.getLineSpacing()
+
+      paragraphs.push(
+        new Paragraph({
+          children: [
+            new TextRun({
+              text: `• ${name}`,
+              bold: true,
+              size: fontSize,
+              font: fontFamily,
+            }),
+            ...(keywords
+              ? [
+                  new TextRun({
+                    text: `${colon}${keywords}`,
+                    size: fontSize,
+                    font: fontFamily,
+                  }),
+                ]
+              : []),
+          ],
+          spacing: { after: 100, line: lineSpacing },
+        })
+      )
     })
 
     return paragraphs

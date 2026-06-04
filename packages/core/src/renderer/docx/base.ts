@@ -391,6 +391,32 @@ export abstract class DocxRenderer extends Renderer<Paragraph[]> {
   }
 
   /**
+   * Create a text paragraph with a bold label prefix and normal value suffix.
+   *
+   * @param label - The bold label text (e.g., "Keywords: ")
+   * @param value - The normal value text
+   * @returns {Paragraph} A DOCX paragraph with mixed bold/normal text
+   */
+  protected createBoldLabelParagraph(label: string, value: string): Paragraph {
+    const fontFamily = this.getFontFamily()
+    const lineSpacing = this.getLineSpacing()
+    const fontSize = this.getBaseFontSize()
+
+    return new Paragraph({
+      children: [
+        new TextRun({
+          text: label,
+          bold: true,
+          size: fontSize,
+          font: fontFamily,
+        }),
+        new TextRun({ text: value, size: fontSize, font: fontFamily }),
+      ],
+      spacing: { after: 100, line: lineSpacing },
+    })
+  }
+
+  /**
    * Create a detail line paragraph (italicized).
    *
    * @param text - The text content
