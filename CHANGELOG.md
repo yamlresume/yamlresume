@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.13.0](https://github.com/yamlresume/yamlresume/compare/v0.12.3...v0.13.0) (2026-06-05)
+
+
+### Features
+
+* add Brazilian Portuguese locale ([67f88f5](https://github.com/yamlresume/yamlresume/commit/67f88f540ac6a2ebe26798291c28f43cba2f3371))
+* enable docx preview for playground ([6317d64](https://github.com/yamlresume/yamlresume/commit/6317d64cd223f95b5d626e54085ebc403b360413))
+* init docx engine ([569d422](https://github.com/yamlresume/yamlresume/commit/569d422b2277e2b4bbe606d32bd84c23c76ea737))
+* show bold font for various labels and keywords ([d68d006](https://github.com/yamlresume/yamlresume/commit/d68d00646f2963252314f93d55af2e50fc0cb148))
+
+
+### Bug Fixes
+
+* **json2yamlresume:** preserve JSON Resume summary for work, projects, volunteer ([aee0532](https://github.com/yamlresume/yamlresume/commit/aee05327e83e2bdbde7e07206f9c44826d22590e))
+
 ## [0.12.3](https://github.com/yamlresume/yamlresume/compare/v0.12.2...v0.12.3) (2026-04-23)
 
 
