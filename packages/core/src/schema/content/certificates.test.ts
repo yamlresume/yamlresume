@@ -142,7 +142,10 @@ describe('CertificatesSchema', () => {
                   errors: [],
                   properties: {
                     name: {
-                      errors: ['name is required.'],
+                      errors: [
+                        'name is required.',
+                        'Invalid input: expected record, received undefined',
+                      ],
                     },
                   },
                 },
@@ -234,7 +237,10 @@ describe('CertificatesSchema', () => {
                       errors: ['issuer is required.'],
                     },
                     name: {
-                      errors: ['name is required.'],
+                      errors: [
+                        'name is required.',
+                        'Invalid input: expected record, received undefined',
+                      ],
                     },
                   },
                 },

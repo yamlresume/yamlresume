@@ -27,6 +27,7 @@ import { joinNonEmptyString } from '@/utils'
 import {
   DateSchema,
   KeywordsSchema,
+  multilingualString,
   OrganizationSchema,
   SizedStringSchema,
   SummarySchema,
@@ -63,9 +64,9 @@ export const PositionSchema = SizedStringSchema('position', 2, 64).meta({
 export const WorkItemSchema = z.object({
   // required fields
   name: CompanyNameSchema,
-  position: PositionSchema,
+  position: multilingualString(PositionSchema),
   startDate: DateSchema('startDate'),
-  summary: SummarySchema,
+  summary: multilingualString(SummarySchema),
 
   // optional fields
   endDate: nullifySchema(DateSchema('endDate')),

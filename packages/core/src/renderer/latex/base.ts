@@ -81,6 +81,11 @@ export abstract class LatexRenderer extends Renderer {
 % ref:
 % - https://latex3.github.io/babel/guides/locale-indonesian.html
 \\usepackage[indonesian]{babel}`
+      case 'cat':
+        return `%% Babel config for Catalan language
+% ref:
+% - https://latex3.github.io/babel/guides/locale-catalan.html
+\\usepackage[catalan]{babel}`
       case 'pt-br':
         return `%% Babel config for Brazilian Portuguese language
 % ref:

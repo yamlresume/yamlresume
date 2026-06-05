@@ -388,6 +388,7 @@ export function getLocaleLanguageDetail(localeLanguage: LocaleLanguage) {
     ja: 'Japanese',
     de: 'German',
     id: 'Indonesian',
+    cat: 'Catalan',
     'pt-br': 'Brazilian Portuguese',
   }
 

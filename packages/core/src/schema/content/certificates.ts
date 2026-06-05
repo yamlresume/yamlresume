@@ -26,6 +26,7 @@ import { z } from 'zod'
 import { joinNonEmptyString } from '@/utils'
 import {
   DateSchema,
+  multilingualString,
   NameSchema,
   OrganizationSchema,
   UrlSchema,
@@ -47,7 +48,9 @@ export const IssuerSchema = OrganizationSchema('issuer').meta({
 export const CertificateItemSchema = z.object({
   // required fields
   issuer: IssuerSchema,
-  name: NameSchema('name').describe('The name of the certificate.'),
+  name: multilingualString(
+    NameSchema('name').describe('The name of the certificate.')
+  ),
 
   // optional fields
   date: nullifySchema(DateSchema('date')),

@@ -33,6 +33,7 @@ import {
   DEFAULT_RESUME_LAYOUTS,
   DEFAULT_RESUME_LOCALE,
   FILLED_RESUME_CONTENT,
+  type LocaleLanguage,
   type Resume,
   type SectionID,
 } from '@/models'
@@ -60,6 +61,95 @@ export function replaceBlankLinesWithPercent(content: string): string {
   }
 
   return content.replace(/(^[ \t]*\n)/gm, '%\n')
+}
+
+/**
+ * Returns true when `value` is a multilingual string record: a plain object
+ * (not null, not an array) whose every own-property value is a string.
+ */
+function isMultilingualRecord(value: unknown): value is Record<string, string> {
+  return (
+    typeof value === 'object' &&
+    value !== null &&
+    !Array.isArray(value) &&
+    Object.values(value).every((v) => typeof v === 'string')
+  )
+}
+
+/**
+ * Resolves multilingual fields inside a single section item object.
+ *
+ * For each field whose value is a `Record<string, string>`, the function
+ * picks the translation for `language`, falling back to `"en"`, then to the
+ * first available translation, then to an empty string.
+ */
+function resolveItemMultilingualFields(
+  item: Record<string, unknown>,
+  language: LocaleLanguage
+): void {
+  for (const key of Object.keys(item)) {
+    if (key === 'computed') continue
+    const value = item[key]
+    if (isMultilingualRecord(value)) {
+      item[key] = value[language] ?? value.en ?? Object.values(value)[0] ?? ''
+    }
+  }
+}
+
+/**
+ * Resolves all `MultilingualString` fields in the resume content to plain
+ * strings for the active locale.
+ *
+ * This is the first step in the preprocessing pipeline. It must run before any
+ * other transform so that downstream functions always receive plain strings.
+ *
+ * A plain string value is returned unchanged. A `Record<LocaleLanguage, string>`
+ * value is resolved in priority order: active locale → `en` → first available
+ * translation → `""`.
+ *
+ * @param resume - The resume object (locale must already be set).
+ * @returns A new resume object with all multilingual fields resolved.
+ */
+export function resolveMultilingualStrings(resume: Resume): Resume {
+  const language = resume.locale?.language ?? 'en'
+  const cloned = cloneDeep(resume)
+  const { content } = cloned
+
+  if (content.basics) {
+    resolveItemMultilingualFields(
+      content.basics as unknown as Record<string, unknown>,
+      language
+    )
+  }
+
+  if (content.location) {
+    resolveItemMultilingualFields(
+      content.location as unknown as Record<string, unknown>,
+      language
+    )
+  }
+
+  const arraySections = [
+    'awards',
+    'certificates',
+    'education',
+    'interests',
+    'languages',
+    'projects',
+    'publications',
+    'references',
+    'skills',
+    'volunteer',
+    'work',
+  ] as const
+
+  for (const section of arraySections) {
+    content[section]?.forEach((item: Record<string, unknown>) => {
+      resolveItemMultilingualFields(item, language)
+    })
+  }
+
+  return cloned
 }
 
 /**
@@ -746,6 +836,7 @@ export function transformResumeContent(
   escapeFunc: (input: string) => string
 ): Resume {
   return [
+    resolveMultilingualStrings,
     normalizedResumeContent,
     // The order of the following functions matters, `transformResumeValues`
     // should be called as the first transformXXX function to process all leaf
