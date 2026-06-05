@@ -239,7 +239,7 @@ describe(getDateRange, () => {
       {
         startDate: 'Oct 1, 2016',
         endDate: '',
-        // @ts-ignore fallback to English if language is not supported
+        // @ts-expect-error fallback to English if language is not supported
         language: '',
         expected: 'Oct 2016–Present',
       },

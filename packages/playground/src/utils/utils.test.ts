@@ -107,9 +107,7 @@ describe(downloadResume, () => {
   beforeEach(() => {
     global.URL.createObjectURL = mockCreateObjectURL
     global.URL.revokeObjectURL = mockRevokeObjectURL
-    // @ts-ignore
     window.URL.createObjectURL = mockCreateObjectURL
-    // @ts-ignore
     window.URL.revokeObjectURL = mockRevokeObjectURL
   })
 
@@ -475,9 +473,7 @@ describe(openResumeInNewTab, () => {
   beforeEach(() => {
     global.URL.createObjectURL = mockCreateObjectURL
     global.URL.revokeObjectURL = mockRevokeObjectURL
-    // @ts-ignore
     window.URL.createObjectURL = mockCreateObjectURL
-    // @ts-ignore
     window.URL.revokeObjectURL = mockRevokeObjectURL
     window.open = mockOpen
   })

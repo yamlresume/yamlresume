@@ -86,7 +86,7 @@ describe('InterestsSchema', () => {
     const tests: Array<Interests & { error: object }> = [
       {
         interests: [
-          // @ts-ignore
+          // @ts-expect-error
           {
             // missing name
             keywords,

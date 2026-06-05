@@ -94,7 +94,7 @@ describe('AwardsSchema', () => {
     const tests: Array<Awards & { error: object }> = [
       {
         awards: [
-          // @ts-ignore
+          // @ts-expect-error
           {
             // missing awarder
             title,
@@ -124,7 +124,7 @@ describe('AwardsSchema', () => {
       },
       {
         awards: [
-          // @ts-ignore
+          // @ts-expect-error
           {
             // missing title
             awarder,
@@ -214,7 +214,7 @@ describe('AwardsSchema', () => {
       },
       {
         awards: [
-          // @ts-ignore
+          // @ts-expect-error
           {
             // missing awarder and title
 

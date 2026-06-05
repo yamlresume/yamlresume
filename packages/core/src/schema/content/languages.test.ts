@@ -81,7 +81,7 @@ describe('LanguagesSchema', () => {
     const tests: Array<Languages & { error: object }> = [
       {
         languages: [
-          // @ts-ignore
+          // @ts-expect-error
           {
             // missing fluency
             language,
@@ -108,7 +108,7 @@ describe('LanguagesSchema', () => {
       },
       {
         languages: [
-          // @ts-ignore
+          // @ts-expect-error
           {
             // missing language
             fluency,
@@ -137,7 +137,7 @@ describe('LanguagesSchema', () => {
         languages: [
           {
             // invalid fluency
-            // @ts-ignore
+            // @ts-expect-error
             fluency: 'Invalid',
             language,
           },
@@ -166,7 +166,7 @@ describe('LanguagesSchema', () => {
           {
             // invalid language
             fluency,
-            // @ts-ignore
+            // @ts-expect-error
             language: 'Invalid',
           },
         ],
@@ -193,7 +193,7 @@ describe('LanguagesSchema', () => {
       },
       {
         languages: [
-          // @ts-ignore
+          // @ts-expect-error
           {
             // missing fluency and language
           },

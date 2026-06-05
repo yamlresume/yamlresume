@@ -82,7 +82,7 @@ describe('ProfilesSchema', () => {
     const tests: Array<Profiles & { error: object }> = [
       {
         profiles: [
-          // @ts-ignore
+          // @ts-expect-error
           {
             // missing network
             username,
@@ -111,7 +111,7 @@ describe('ProfilesSchema', () => {
       },
       {
         profiles: [
-          // @ts-ignore
+          // @ts-expect-error
           {
             // missing username
             network,
@@ -140,7 +140,7 @@ describe('ProfilesSchema', () => {
       },
       {
         profiles: [
-          // @ts-ignore
+          // @ts-expect-error
           {
             // missing username and network
 

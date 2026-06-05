@@ -103,7 +103,7 @@ describe('VolunteerSchema', () => {
     const tests: Array<Volunteer & { error: object }> = [
       {
         volunteer: [
-          // @ts-ignore
+          // @ts-expect-error
           {
             // missing organization
             position,
@@ -135,7 +135,7 @@ describe('VolunteerSchema', () => {
       },
       {
         volunteer: [
-          // @ts-ignore
+          // @ts-expect-error
           {
             // missing position
             organization,
@@ -167,7 +167,7 @@ describe('VolunteerSchema', () => {
       },
       {
         volunteer: [
-          // @ts-ignore
+          // @ts-expect-error
           {
             // missing startDate
             organization,
@@ -199,7 +199,7 @@ describe('VolunteerSchema', () => {
       },
       {
         volunteer: [
-          // @ts-ignore
+          // @ts-expect-error
           {
             // missing summary
             organization,
@@ -231,7 +231,7 @@ describe('VolunteerSchema', () => {
       },
       {
         volunteer: [
-          // @ts-ignore
+          // @ts-expect-error
           {
             // missing organization, position, startDate and summary
             summary,

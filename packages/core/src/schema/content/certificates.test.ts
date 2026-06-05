@@ -93,7 +93,7 @@ describe('CertificatesSchema', () => {
     const tests: Array<Certificates & { error: object }> = [
       {
         certificates: [
-          // @ts-ignore
+          // @ts-expect-error
           {
             // missing issuer
             name,
@@ -123,7 +123,7 @@ describe('CertificatesSchema', () => {
       },
       {
         certificates: [
-          // @ts-ignore
+          // @ts-expect-error
           {
             // missing name
             issuer,
@@ -213,7 +213,7 @@ describe('CertificatesSchema', () => {
       },
       {
         certificates: [
-          // @ts-ignore
+          // @ts-expect-error
           {
             // missing name and issuer
 

@@ -98,7 +98,6 @@ describe(getResumeRenderer, () => {
     const layout = {
       engine: 'markdown' as const,
     }
-    // @ts-ignore
     resume.layouts = [layout]
 
     const renderer = getResumeRenderer(resume, layoutIndex)
@@ -110,7 +109,6 @@ describe(getResumeRenderer, () => {
     const layout = {
       engine: 'html' as const,
     }
-    // @ts-ignore
     resume.layouts = [layout]
 
     const renderer = getResumeRenderer(resume, layoutIndex)
@@ -122,7 +120,6 @@ describe(getResumeRenderer, () => {
     const layout = {
       engine: 'docx' as const,
     }
-    // @ts-ignore
     resume.layouts = [layout]
 
     const renderer = getResumeRenderer(resume, layoutIndex)
@@ -135,7 +132,6 @@ describe(getResumeRenderer, () => {
       engine: 'docx' as const,
       template: 'calm' as const,
     }
-    // @ts-ignore
     resume.layouts = [layout]
 
     const renderer = getResumeRenderer(resume, layoutIndex)
@@ -162,7 +158,6 @@ describe(getResumeRenderer, () => {
 
   it('should throw error when engine is missing', () => {
     const resume = cloneDeep(mockResume)
-    // @ts-ignore
     resume.layouts = [{ engine: undefined }]
 
     expect(() => getResumeRenderer(resume, layoutIndex)).toThrow(
@@ -172,7 +167,7 @@ describe(getResumeRenderer, () => {
 
   it('should throw error when engine is unknown', () => {
     const resume = cloneDeep(mockResume)
-    // @ts-ignore
+    // @ts-expect-error
     resume.layouts = [{ engine: 'unknown-engine' }]
 
     expect(() => getResumeRenderer(resume, layoutIndex)).toThrow(

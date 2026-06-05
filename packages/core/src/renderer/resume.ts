@@ -111,7 +111,7 @@ export function getResumeRenderer(
       ))(resume as Resume, layoutIndex, summaryParser)
     }
     default:
-      // @ts-ignore
+      // @ts-expect-error
       throw new Error(`Unknown engine: ${layout.engine}`)
   }
 }

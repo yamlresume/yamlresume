@@ -38,7 +38,7 @@ import astJson from './fixtures/ast.json'
 // I didn't manage to find a way to get rid of the loading error here:
 // `Cannot find module './output.tex' or its corresponding type
 // declarations.`, let's just ignore here
-// @ts-ignore
+// @ts-expect-error
 import outputTex from './fixtures/output.tex?raw'
 import { nodeToTeX } from './latex'
 

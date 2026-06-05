@@ -154,7 +154,6 @@ function bulletListNodeToParagraphs(
   const paragraphs: Paragraph[] = []
 
   // biome-ignore lint/style/noNonNullAssertion: content is guaranteed by parser
-  // biome-ignore lint/style/noNonNullAssertion: content is guaranteed by parser
   for (const listItem of node.content!) {
     paragraphs.push(
       ...convertListItem(

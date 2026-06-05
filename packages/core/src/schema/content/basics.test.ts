@@ -93,7 +93,7 @@ describe('BasicsSchema', () => {
         },
       },
       {
-        // @ts-ignore
+        // @ts-expect-error
         basics: 123,
         error: {
           errors: [],
@@ -105,7 +105,7 @@ describe('BasicsSchema', () => {
         },
       },
       {
-        // @ts-ignore
+        // @ts-expect-error
         basics: {
           // missing name
           phone,
@@ -134,7 +134,7 @@ describe('BasicsSchema', () => {
     // test empty object as well
     validateZodErrors(
       BasicsSchema,
-      // @ts-ignore
+      // @ts-expect-error
       {},
       {
         errors: [],

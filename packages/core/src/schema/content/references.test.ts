@@ -101,7 +101,7 @@ describe('ReferencesSchema', () => {
     const tests: Array<References & { error: object }> = [
       {
         references: [
-          // @ts-ignore
+          // @ts-expect-error
           {
             // missing name
             summary,
@@ -132,7 +132,7 @@ describe('ReferencesSchema', () => {
       },
       {
         references: [
-          // @ts-ignore
+          // @ts-expect-error
           {
             // missing summary
             name,
@@ -163,7 +163,6 @@ describe('ReferencesSchema', () => {
       },
       {
         references: [
-          // @ts-ignore
           {
             name,
             summary,
@@ -194,7 +193,6 @@ describe('ReferencesSchema', () => {
       },
       {
         references: [
-          // @ts-ignore
           {
             name,
             summary,
@@ -225,7 +223,6 @@ describe('ReferencesSchema', () => {
       },
       {
         references: [
-          // @ts-ignore
           {
             name,
             summary,
@@ -256,7 +253,7 @@ describe('ReferencesSchema', () => {
       },
       {
         references: [
-          // @ts-ignore
+          // @ts-expect-error
           {
             // missing name and summary
 

@@ -109,7 +109,7 @@ describe('LocationSchema', () => {
   it('should throw an error if the location is invalid', () => {
     const tests: Array<Location & { error: object }> = [
       {
-        // @ts-ignore
+        // @ts-expect-error
         location: {
           // missing city
           country,
@@ -134,7 +134,6 @@ describe('LocationSchema', () => {
       {
         location: {
           // city too long
-          // @ts-ignore
           city: 'C'.repeat(129),
           country,
 
@@ -159,9 +158,8 @@ describe('LocationSchema', () => {
       {
         location: {
           // city too long
-          // @ts-ignore
           city: 'C'.repeat(129),
-          // @ts-ignore
+          // @ts-expect-error
           country: 'non-exist-country',
         },
         error: {

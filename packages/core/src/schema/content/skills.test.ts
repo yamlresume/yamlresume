@@ -84,7 +84,7 @@ describe('SkillsSchema', () => {
     const tests: Array<Skills & { error: object }> = [
       {
         skills: [
-          // @ts-ignore
+          // @ts-expect-error
           {
             // missing name
             level,
@@ -113,7 +113,7 @@ describe('SkillsSchema', () => {
       },
       {
         skills: [
-          // @ts-ignore
+          // @ts-expect-error
           {
             // missing level
             name,
@@ -142,7 +142,7 @@ describe('SkillsSchema', () => {
       },
       {
         skills: [
-          // @ts-ignore
+          // @ts-expect-error
           {
             // missing level and name
 

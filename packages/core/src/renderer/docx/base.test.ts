@@ -73,6 +73,7 @@ class TestableDocxRenderer extends DocxRenderer {
   }
 
   public testParseMargin(margin: string | undefined) {
+    // biome-ignore lint/suspicious/noExplicitAny: accessing private method in test
     return (this as any).parseMargin(margin)
   }
 
@@ -284,6 +285,7 @@ describe('DocxRenderer', () => {
     it('should return default when typography is undefined', () => {
       renderer = new TestableDocxRenderer(resume, layoutIndex)
       const docxLayout = renderer.resume.layouts[layoutIndex] as DocxLayout
+      // biome-ignore lint/suspicious/noExplicitAny: test fixture
       ;(docxLayout as any).typography = undefined
 
       expect(renderer.testGetLineSpacing()).toBe(
@@ -344,6 +346,7 @@ describe('DocxRenderer', () => {
     it('should return true when advanced is undefined', () => {
       renderer = new TestableDocxRenderer(resume, layoutIndex)
       const docxLayout = renderer.resume.layouts[layoutIndex] as DocxLayout
+      // biome-ignore lint/suspicious/noExplicitAny: test fixture
       ;(docxLayout as any).advanced = undefined
 
       expect(renderer.testShowIcons).toBe(true)
@@ -395,6 +398,7 @@ describe('DocxRenderer', () => {
     it('should return true when advanced is undefined', () => {
       renderer = new TestableDocxRenderer(resume, layoutIndex)
       const docxLayout = renderer.resume.layouts[layoutIndex] as DocxLayout
+      // biome-ignore lint/suspicious/noExplicitAny: test fixture
       ;(docxLayout as any).advanced = undefined
 
       expect(renderer.testGetShowUrls()).toBe(true)
@@ -533,6 +537,7 @@ describe('DocxRenderer', () => {
     it('should return true when page is undefined', () => {
       renderer = new TestableDocxRenderer(resume, layoutIndex)
       const docxLayout = renderer.resume.layouts[layoutIndex] as DocxLayout
+      // biome-ignore lint/suspicious/noExplicitAny: test fixture
       ;(docxLayout as any).page = undefined
 
       expect(renderer.testGetShowPageNumbers()).toBe(true)
@@ -586,6 +591,7 @@ describe('DocxRenderer', () => {
     it('should return A4 when page is undefined', () => {
       renderer = new TestableDocxRenderer(resume, layoutIndex)
       const docxLayout = renderer.resume.layouts[layoutIndex] as DocxLayout
+      // biome-ignore lint/suspicious/noExplicitAny: test fixture
       ;(docxLayout as any).page = undefined
 
       expect(renderer.testGetPaperSize()).toEqual({

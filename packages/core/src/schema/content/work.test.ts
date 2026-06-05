@@ -102,7 +102,7 @@ describe('WorkSchema', () => {
     const tests: Array<Work & { error: object }> = [
       {
         work: [
-          // @ts-ignore
+          // @ts-expect-error
           {
             // missing name
             position,
@@ -135,7 +135,7 @@ describe('WorkSchema', () => {
       },
       {
         work: [
-          // @ts-ignore
+          // @ts-expect-error
           {
             // missing position
             name,
@@ -168,7 +168,7 @@ describe('WorkSchema', () => {
       },
       {
         work: [
-          // @ts-ignore
+          // @ts-expect-error
           {
             // missing startDate
             name,
@@ -201,7 +201,7 @@ describe('WorkSchema', () => {
       },
       {
         work: [
-          // @ts-ignore
+          // @ts-expect-error
           {
             // missing summary
             name,
@@ -234,7 +234,7 @@ describe('WorkSchema', () => {
       },
       {
         work: [
-          // @ts-ignore
+          // @ts-expect-error
           {
             // missing name, position, startDate
             summary,

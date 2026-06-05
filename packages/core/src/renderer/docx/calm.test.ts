@@ -452,6 +452,7 @@ describe('CalmDocxRenderer', () => {
       resume.content.education = [
         {
           area: '',
+          // biome-ignore lint/suspicious/noExplicitAny: test fixture
           degree: '' as any,
           institution,
           startDate,
@@ -851,6 +852,7 @@ describe('CalmDocxRenderer', () => {
         {
           name,
           releaseDate,
+          // biome-ignore lint/suspicious/noExplicitAny: test fixture
         } as any,
       ]
 
@@ -927,6 +929,7 @@ describe('CalmDocxRenderer', () => {
           name,
           email,
           summary: 'Test summary',
+          // biome-ignore lint/suspicious/noExplicitAny: test fixture
         } as any,
       ]
 
@@ -1101,6 +1104,7 @@ describe('CalmDocxRenderer', () => {
           organization,
           startDate,
           summary: 'Test summary',
+          // biome-ignore lint/suspicious/noExplicitAny: test fixture
         } as any,
       ]
 

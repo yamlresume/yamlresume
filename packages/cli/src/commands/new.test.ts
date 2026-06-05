@@ -47,9 +47,9 @@ describe(newResume, () => {
   beforeEach(() => {
     consolaDebugSpy = vi.spyOn(consola, 'debug').mockImplementation(vi.fn())
 
-    // @ts-ignore
+    // @ts-expect-error
     existsSync = vi.spyOn(fs, 'existsSync').mockReturnValue(false)
-    // @ts-ignore
+    // @ts-expect-error
     readFileSync = vi
       .spyOn(fs, 'readFileSync')
       .mockImplementation(() => resumeContent)
@@ -163,7 +163,7 @@ describe(createNewCommand, () => {
       .mockImplementation(() => {})
     consolaErrorSpy = vi.spyOn(consola, 'error').mockImplementation(() => {})
 
-    // @ts-ignore
+    // @ts-expect-error
     processExitSpy = vi
       .spyOn(process, 'exit')
       .mockImplementation((() => {}) as NodeJS.Process['exit'])

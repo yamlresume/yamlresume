@@ -635,7 +635,7 @@ describe(mergeHighlightsIntoSummary, () => {
     ]
 
     for (const test of tests) {
-      // @ts-ignore
+      // @ts-expect-error
       expect(mergeHighlightsIntoSummary(test.summary, test.highlights)).toBe(
         test.expected
       )
@@ -662,7 +662,7 @@ describe(mergeHighlightsIntoSummary, () => {
     ]
 
     for (const test of tests) {
-      // @ts-ignore
+      // @ts-expect-error
       expect(mergeHighlightsIntoSummary(test.summary, test.highlights)).toBe(
         test.expected
       )
@@ -689,7 +689,7 @@ describe(mergeHighlightsIntoSummary, () => {
     ]
 
     for (const test of tests) {
-      // @ts-ignore
+      // @ts-expect-error
       expect(mergeHighlightsIntoSummary(test.summary, test.highlights)).toBe(
         test.expected
       )

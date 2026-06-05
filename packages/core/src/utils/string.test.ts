@@ -110,7 +110,7 @@ describe(isEmptyString, () => {
     const tests = [null, undefined, 0, 1, true, false, {}, []]
 
     for (const test of tests) {
-      // @ts-ignore
+      // @ts-expect-error
       expect(isEmptyString(test)).toBe(false)
     }
   })
@@ -136,9 +136,9 @@ describe(showIfNotEmpty, () => {
       [' hello ', 'content', 'content'],
       [{ key: 'value' }, 'content', 'content'],
       [['item'], 'content', 'content'],
-      // @ts-ignore
+      // @ts-expect-error
       [0, 'content', 'content'],
-      // @ts-ignore
+      // @ts-expect-error
       [false, 'content', 'content'],
     ]
 

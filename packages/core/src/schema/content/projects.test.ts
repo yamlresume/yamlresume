@@ -102,11 +102,10 @@ describe('ProjectsSchema', () => {
   })
 
   it('should throw an error if a projects object is invalid', () => {
-    // @ts-ignore
     const tests: Array<Projects & { error: object }> = [
       {
         projects: [
-          // @ts-ignore
+          // @ts-expect-error
           {
             // missing name
             startDate,
@@ -139,7 +138,7 @@ describe('ProjectsSchema', () => {
       },
       {
         projects: [
-          // @ts-ignore
+          // @ts-expect-error
           {
             // missing startDate
             name,
@@ -172,7 +171,7 @@ describe('ProjectsSchema', () => {
       },
       {
         projects: [
-          // @ts-ignore
+          // @ts-expect-error
           {
             // missing summary
             name,
@@ -205,7 +204,7 @@ describe('ProjectsSchema', () => {
       },
       {
         projects: [
-          // @ts-ignore
+          // @ts-expect-error
           {
             // missing name and startDate
             summary,

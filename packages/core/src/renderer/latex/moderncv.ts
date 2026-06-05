@@ -891,8 +891,8 @@ class ModerncvClassicRenderer extends ModerncvBase {
 }
 
 export {
-  ModerncvBase,
   ModerncvBankingRenderer,
+  ModerncvBase,
   ModerncvCasualRenderer,
   ModerncvClassicRenderer,
 }

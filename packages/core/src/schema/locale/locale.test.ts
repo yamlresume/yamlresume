@@ -72,7 +72,7 @@ describe('LocaleSchema', () => {
     ]
 
     for (const { locale, error } of tests) {
-      // @ts-ignore
+      // @ts-expect-error
       validateZodErrors(LocaleSchema, { locale }, error)
     }
   })

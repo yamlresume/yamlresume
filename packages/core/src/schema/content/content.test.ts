@@ -60,7 +60,7 @@ describe('ContentSchema', () => {
   it('should throw an error if the resume content object is invalid', () => {
     const tests: Array<{ content: Content; error: object }> = [
       {
-        // @ts-ignore
+        // @ts-expect-error
         content: {
           education,
         },
@@ -79,7 +79,7 @@ describe('ContentSchema', () => {
         },
       },
       {
-        // @ts-ignore
+        // @ts-expect-error
         content: {
           basics,
         },
@@ -103,7 +103,7 @@ describe('ContentSchema', () => {
           education,
 
           awards: [
-            // @ts-ignore
+            // @ts-expect-error
             {
               title: 'Award',
               date: '2020-01-01',
@@ -140,7 +140,7 @@ describe('ContentSchema', () => {
           education,
 
           certificates: [
-            // @ts-ignore
+            // @ts-expect-error
             {
               name: 'Certificate',
             },
@@ -175,7 +175,7 @@ describe('ContentSchema', () => {
           basics,
           education,
 
-          // @ts-ignore
+          // @ts-expect-error
           interests: [{ keywords: ['Interest'] }],
         },
         error: {
@@ -207,7 +207,7 @@ describe('ContentSchema', () => {
           basics,
           education,
 
-          // @ts-ignore
+          // @ts-expect-error
           languages: [{ fluency: FLUENCY_OPTIONS[0] }],
         },
         error: {
@@ -239,7 +239,7 @@ describe('ContentSchema', () => {
           basics,
           education,
 
-          // @ts-ignore
+          // @ts-expect-error
           location: {
             address: '123 Main St',
           },
@@ -268,7 +268,7 @@ describe('ContentSchema', () => {
           basics,
           education,
 
-          // @ts-ignore
+          // @ts-expect-error
           profiles: [{ network: 'GitHub' }],
         },
         error: {
@@ -300,7 +300,7 @@ describe('ContentSchema', () => {
           basics,
           education,
 
-          // @ts-ignore
+          // @ts-expect-error
           projects: [{ name: 'Project', startDate: '2020-01-01' }],
         },
         error: {
@@ -332,7 +332,7 @@ describe('ContentSchema', () => {
           basics,
           education,
 
-          // @ts-ignore
+          // @ts-expect-error
           publications: [{ publisher: 'Publisher' }],
         },
         error: {
@@ -364,7 +364,7 @@ describe('ContentSchema', () => {
           basics,
           education,
 
-          // @ts-ignore
+          // @ts-expect-error
           references: [{ name: 'Reference' }],
         },
         error: {
@@ -396,7 +396,7 @@ describe('ContentSchema', () => {
           basics,
           education,
 
-          // @ts-ignore
+          // @ts-expect-error
           skills: [{ name: 'Skill' }],
         },
         error: {
@@ -429,7 +429,7 @@ describe('ContentSchema', () => {
           education,
 
           volunteer: [
-            // @ts-ignore
+            // @ts-expect-error
             {
               position: 'Volunteer',
               startDate: '2020-01-01',
@@ -470,7 +470,7 @@ describe('ContentSchema', () => {
           education,
 
           work: [
-            // @ts-ignore
+            // @ts-expect-error
             {
               position: 'Engineer',
               startDate: '2020-01-01',
@@ -533,7 +533,7 @@ describe('ContentSchema', () => {
         },
       },
       {
-        // @ts-ignore
+        // @ts-expect-error
         content: 123,
         error: {
           errors: [],

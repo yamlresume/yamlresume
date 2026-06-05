@@ -172,7 +172,7 @@ describe(normalizeResumeContentSections, () => {
       },
     }
 
-    // @ts-ignore
+    // @ts-expect-error
     const normalizedResume = normalizeResumeContentSections(resume)
     expect(normalizedResume.content.basics).toEqual(basics)
     expect(normalizedResume.content.education).toEqual(education)
@@ -184,7 +184,7 @@ describe(normalizeResumeContentSections, () => {
   it('should handle empty input gracefully', () => {
     const resume = { content: {} }
 
-    // @ts-ignore
+    // @ts-expect-error
     const normalizedResume = normalizeResumeContentSections(resume)
     expect(normalizedResume.content.basics).toEqual(RESUME_SECTION_ITEMS.basics)
     expect(normalizedResume.content.education).toEqual([])
@@ -211,7 +211,7 @@ describe(normalizeResumeContentSections, () => {
       },
     }
     const resumeCopy = JSON.parse(JSON.stringify(resume))
-    // @ts-ignore
+    // @ts-expect-error
     normalizeResumeContentSections(resume)
     expect(resume).toEqual(resumeCopy)
   })
@@ -224,7 +224,7 @@ describe(normalizeResumeContentSections, () => {
       },
     }
 
-    // @ts-ignore
+    // @ts-expect-error
     const normalizedResume = normalizeResumeContentSections(resume)
 
     expect(normalizedResume.content.computed).toEqual(computed)
@@ -246,7 +246,7 @@ describe(normalizedResumeContent, () => {
         computed,
       },
     }
-    // @ts-ignore
+    // @ts-expect-error
     const normalized = normalizedResumeContent(resume)
 
     // basics: all fields present, missing/undefined/null replaced with ""
@@ -301,7 +301,7 @@ describe(normalizedResumeContent, () => {
     }
     const original = JSON.parse(JSON.stringify(resume))
 
-    // @ts-ignore
+    // @ts-expect-error
     normalizedResumeContent(resume)
     expect(resume).toEqual(original)
   })
@@ -309,7 +309,7 @@ describe(normalizedResumeContent, () => {
   it('should handle empty content gracefully', () => {
     const resume = { content: {} }
 
-    // @ts-ignore
+    // @ts-expect-error
     const normalized = normalizedResumeContent(resume)
 
     expect(normalized.content.basics).toEqual(RESUME_SECTION_ITEMS.basics)
@@ -339,7 +339,7 @@ describe(normalizedResumeContent, () => {
       },
     }
 
-    // @ts-ignore
+    // @ts-expect-error
     const normalized = normalizedResumeContent(resume)
 
     expect(normalized.content.education[0].area).toBe('')
@@ -356,10 +356,10 @@ describe(normalizedResumeContent, () => {
       },
     }
 
-    // @ts-ignore
+    // @ts-expect-error
     const normalized = normalizedResumeContent(resume)
 
-    // @ts-ignore
+    // @ts-expect-error
     expect(normalized.content.basics.customField).toBe('custom')
   })
 })
@@ -442,7 +442,7 @@ describe(transformEducationDegreeAreaAndScore, () => {
 
         resume.locale = { ...resume.locale, language }
 
-        // @ts-ignore
+        // @ts-expect-error
         resume.content.education[0].degree = degree
         resume.content.education[0].area = area
         resume.content.education[0].score = score
@@ -816,12 +816,11 @@ describe(transformLocation, () => {
           address,
           city,
           region,
-          // @ts-ignore
+          // @ts-expect-error
           country,
         }
 
         transformLocation(resume)
-        // @ts-ignore
         expect(resume.content.location?.computed?.fullAddress).toEqual(
           expected[language]
         )
@@ -977,6 +976,7 @@ describe(transformSummary, () => {
   it('should handle docx layout with undefined summary', () => {
     const resume = cloneDeep(FILLED_RESUME)
 
+    // biome-ignore lint/suspicious/noExplicitAny: test fixture
     resume.content.basics.summary = undefined as any
     resume.layouts = [{ engine: 'docx' as const }]
 
@@ -996,6 +996,7 @@ describe(transformSummary, () => {
         name: 'Test',
         position: 'Dev',
         startDate: '2020',
+        // biome-ignore lint/suspicious/noExplicitAny: test fixture
         summary: undefined as any,
       },
     ]
@@ -1037,7 +1038,7 @@ describe(transformSummary, () => {
     const summary = 'Test summary'
 
     resume.content.basics.summary = summary
-    // @ts-ignore
+    // @ts-expect-error
     resume.layouts = [{}]
 
     const summaryParser = new MarkdownParser()
@@ -1053,7 +1054,7 @@ describe(transformSkills, () => {
         const resume = cloneDeep(FILLED_RESUME)
 
         resume.locale = { ...resume.locale, language }
-        // @ts-ignore
+        // @ts-expect-error
         resume.content.skills[0].level = level
 
         transformSkills(resume)
@@ -1211,7 +1212,7 @@ describe(transformSectionNames, () => {
 
   it('should ignore "computed" property in content', () => {
     const resume = cloneDeep(FILLED_RESUME)
-    // @ts-ignore
+    // @ts-expect-error
     resume.content.computed = { someProp: 'test' }
 
     const transformedResume = transformSectionNames(
@@ -1312,10 +1313,10 @@ describe(transformResumeContent, () => {
       },
     }
 
-    // @ts-ignore
+    // @ts-expect-error
     const normalized = normalizedResumeContent(resume)
 
-    // @ts-ignore
+    // @ts-expect-error
     expect(normalized.content.customSection).toBe('not an array')
   })
 })
@@ -1367,7 +1368,6 @@ describe(transformResumeLayoutLaTeX, () => {
   it('should set correct numbers when advanced.fontspec.numbers is undefined', () => {
     for (const language of ['en', 'es'] as const) {
       const resume = cloneDeep(DEFAULT_RESUME)
-      // @ts-ignore
       ;(resume.layouts?.[layoutIndex] as LatexLayout).advanced = undefined
 
       resume.locale = { ...resume.locale, language }
@@ -1494,7 +1494,7 @@ describe(transformResumeLayoutsWithDefaultValues, () => {
 
   it('should return layout with unknown engine', () => {
     const resume = cloneDeep(DEFAULT_RESUME)
-    // @ts-ignore
+    // @ts-expect-error
     resume.layouts = [{ engine: 'unknown' }]
 
     const transformed = transformResumeLayoutsWithDefaultValues(resume)

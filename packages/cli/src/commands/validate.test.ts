@@ -385,7 +385,7 @@ describe(createValidateCommand, () => {
   it('should handle file read error', () => {
     const resumePath = 'non-existent-file.yml'
 
-    // @ts-ignore
+    // @ts-expect-error
     const processExitSpy = vi.spyOn(process, 'exit').mockImplementation(vi.fn())
 
     validateCommand.parse(['yamlresume', 'validate', resumePath])
@@ -401,7 +401,7 @@ describe(createValidateCommand, () => {
   it('should handle invalid YAML error', () => {
     const resumePath = getFixture('invalid-yaml.yml')
 
-    // @ts-ignore
+    // @ts-expect-error
     const processExitSpy = vi.spyOn(process, 'exit').mockImplementation(vi.fn())
 
     validateCommand.parse(['yamlresume', 'validate', resumePath])

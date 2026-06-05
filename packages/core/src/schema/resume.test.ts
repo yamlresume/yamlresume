@@ -134,7 +134,7 @@ describe('ResumeSchema', () => {
   it('should throw an error if the resume is invalid', () => {
     const tests: Array<{ resume: Resume; error: object }> = [
       {
-        // @ts-ignore
+        // @ts-expect-error
         resume: {},
         error: {
           errors: [],
@@ -147,7 +147,7 @@ describe('ResumeSchema', () => {
       },
       {
         resume: {
-          // @ts-ignore
+          // @ts-expect-error
           content: {},
         },
         error: {
@@ -169,7 +169,7 @@ describe('ResumeSchema', () => {
       },
       {
         resume: {
-          // @ts-ignore
+          // @ts-expect-error
           content: {
             basics: minimalResume.content.basics,
           },
@@ -190,7 +190,7 @@ describe('ResumeSchema', () => {
       },
       {
         resume: {
-          // @ts-ignore
+          // @ts-expect-error
           content: {
             basics: {
               ...minimalResume.content.basics,
@@ -226,7 +226,7 @@ describe('ResumeSchema', () => {
           content: {
             ...minimalResume.content,
             work: [
-              // @ts-ignore
+              // @ts-expect-error
               {
                 name: 'C',
                 startDate: 'invalid-date',
@@ -270,7 +270,7 @@ describe('ResumeSchema', () => {
     ]
 
     for (const { resume, error } of tests) {
-      // @ts-ignore
+      // @ts-expect-error
       validateZodErrors(ResumeSchema, resume, error)
     }
   })

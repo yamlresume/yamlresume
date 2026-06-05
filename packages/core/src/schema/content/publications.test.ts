@@ -101,7 +101,7 @@ describe('PublicationsSchema', () => {
     const tests: Array<Publications & { error: object }> = [
       {
         publications: [
-          // @ts-ignore
+          // @ts-expect-error
           {
             // missing name
             publisher,
@@ -132,7 +132,7 @@ describe('PublicationsSchema', () => {
       },
       {
         publications: [
-          // @ts-ignore
+          // @ts-expect-error
           {
             // missing publisher
             name,
@@ -163,7 +163,7 @@ describe('PublicationsSchema', () => {
       },
       {
         publications: [
-          // @ts-ignore
+          // @ts-expect-error
           {
             // missing name and publisher
 

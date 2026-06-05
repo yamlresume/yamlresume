@@ -42,7 +42,7 @@ import type { JSONResume } from './types'
 export function convertBasics(resume: JSONResume): Resume['content']['basics'] {
   const { basics = {} } = resume
 
-  // @ts-ignore
+  // @ts-expect-error
   return mapKeys(omit(basics, ['location', 'profiles']), (_, key) =>
     key === 'label' ? 'headline' : key
   )
@@ -59,7 +59,7 @@ export function convertEducation(
 ): Resume['content']['education'] {
   const { education = [] } = resume
 
-  // @ts-ignore
+  // @ts-expect-error
   return education.map((item) =>
     mapKeys(item, (_, key) => (key === 'studyType' ? 'degree' : key))
   )
@@ -77,7 +77,7 @@ export function convertLocation(
   const { basics = {} } = resume
   const { location } = basics
 
-  // @ts-ignore
+  // @ts-expect-error
   return mapKeys(location, (_, key) =>
     key === 'countryCode' ? 'country' : key
   )
@@ -94,7 +94,7 @@ export function convertProjects(
 ): Resume['content']['projects'] {
   const { projects = [] } = resume
 
-  // @ts-ignore
+  // @ts-expect-error
   return projects.map((item) => ({
     ...omit(item, ['highlights']),
     summary: mergeHighlightsIntoSummary(item.summary, item.highlights),
@@ -112,7 +112,7 @@ export function convertReferences(
 ): Resume['content']['references'] {
   const { references = [] } = resume
 
-  // @ts-ignore
+  // @ts-expect-error
   return references.map((item) => ({
     ...omit(item, ['reference']),
     summary: item.reference,
@@ -130,7 +130,7 @@ export function convertVolunteer(
 ): Resume['content']['volunteer'] {
   const { volunteer = [] } = resume
 
-  // @ts-ignore
+  // @ts-expect-error
   return volunteer.map((item) => ({
     ...omit(item, ['highlights']),
     summary: mergeHighlightsIntoSummary(item.summary, item.highlights),
@@ -146,7 +146,7 @@ export function convertVolunteer(
 export function convertWork(resume: JSONResume): Resume['content']['work'] {
   const { work = [] } = resume
 
-  // @ts-ignore
+  // @ts-expect-error
   return work.map((item) => ({
     ...omit(item, ['highlights']),
     summary: mergeHighlightsIntoSummary(item.summary, item.highlights),
@@ -221,7 +221,7 @@ export function convertJSONResumeToYAMLResume(jsonResume: JSONResume): Resume {
   const { location, profiles } = basics
 
   // Create the YAMLResume content structure
-  // @ts-ignore
+  // @ts-expect-error
   const content: Resume['content'] = {
     ...(isEmptyValue(awards) ? {} : { awards }),
     ...(isEmptyValue(basics) ? {} : { basics: convertBasics(jsonResume) }),

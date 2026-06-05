@@ -129,7 +129,9 @@ describe(watchResume, () => {
     expect(chokidarWatchSpy).toBeCalledTimes(1)
 
     // trigger one change via registered handler
-    handlers.change.forEach((h) => h('software-engineer.yml'))
+    for (const h of handlers.change) {
+      h('software-engineer.yml')
+    }
     expect(buildResumeSpy).toBeCalledTimes(2)
 
     // cleanup
@@ -142,7 +144,9 @@ describe(watchResume, () => {
     expect(buildResumeSpy).toBeCalledTimes(1) // initial build
 
     // Simulate add event to reflect atomic save behavior with chokidar
-    handlers.add.forEach((h) => h('software-engineer.yml'))
+    for (const h of handlers.add) {
+      h('software-engineer.yml')
+    }
     expect(buildResumeSpy).toBeCalledTimes(2) // triggered by rename
   })
 
@@ -152,15 +156,23 @@ describe(watchResume, () => {
 
     // second call: during active build, emit multiple events → one follow-up
     buildResumeSpy.mockImplementationOnce(() => {
-      handlers.change.forEach((h) => h('software-engineer.yml'))
-      handlers.add.forEach((h) => h('software-engineer.yml'))
-      handlers.change.forEach((h) => h('software-engineer.yml'))
+      for (const h of handlers.change) {
+        h('software-engineer.yml')
+      }
+      for (const h of handlers.add) {
+        h('software-engineer.yml')
+      }
+      for (const h of handlers.change) {
+        h('software-engineer.yml')
+      }
     })
 
     watchResume(resumePath, { pdf: true, validate: true })
 
     // trigger the second build
-    handlers.change.forEach((h) => h('software-engineer.yml'))
+    for (const h of handlers.change) {
+      h('software-engineer.yml')
+    }
 
     // Calls: 1 (initial) + 1 (triggered) + 1 (coalesced follow-up) = 3
     expect(buildResumeSpy).toBeCalledTimes(3)

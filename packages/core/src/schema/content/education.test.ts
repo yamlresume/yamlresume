@@ -132,7 +132,7 @@ describe('EducationSchema', () => {
         },
       },
       {
-        // @ts-ignore
+        // @ts-expect-error
         education: 123,
         error: {
           errors: [],
@@ -145,7 +145,7 @@ describe('EducationSchema', () => {
       },
       {
         education: [
-          // @ts-ignore
+          // @ts-expect-error
           {
             // missing area
             degree,
@@ -180,7 +180,7 @@ describe('EducationSchema', () => {
       },
       {
         education: [
-          // @ts-ignore
+          // @ts-expect-error
           {
             // missing degree
             area,
@@ -215,7 +215,7 @@ describe('EducationSchema', () => {
       },
       {
         education: [
-          // @ts-ignore
+          // @ts-expect-error
           {
             // missing institution
             area,
@@ -250,7 +250,7 @@ describe('EducationSchema', () => {
       },
       {
         education: [
-          // @ts-ignore
+          // @ts-expect-error
           {
             // missing startDate
             area,
@@ -285,7 +285,7 @@ describe('EducationSchema', () => {
       },
       {
         education: [
-          // @ts-ignore
+          // @ts-expect-error
           {
             // missing area, degree, institution
             startDate,
@@ -331,7 +331,7 @@ describe('EducationSchema', () => {
     // test empty object as well
     validateZodErrors(
       EducationSchema,
-      // @ts-ignore
+      // @ts-expect-error
       {},
       {
         errors: [],

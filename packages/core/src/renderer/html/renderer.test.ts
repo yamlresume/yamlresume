@@ -55,7 +55,6 @@ describe('HtmlRenderer', () => {
         resume.content.basics.email = 'john.doe@example.com'
         const renderer = new HtmlRenderer(resume, layoutIndex)
 
-        // @ts-ignore
         renderer.resume.layouts = undefined
         const result = renderer.renderBasics()
         expect(result).toContain('<span class="resume-contact-icon">📧</span>')
@@ -64,7 +63,7 @@ describe('HtmlRenderer', () => {
       it('should default showIcons to true when advanced is missing', () => {
         resume.content.basics.email = 'john.doe@example.com'
         const renderer = new HtmlRenderer(resume, layoutIndex)
-        // @ts-ignore
+        // @ts-expect-error
         renderer.resume.layouts[layoutIndex].advanced = undefined
 
         const result = renderer.renderBasics()
@@ -74,9 +73,9 @@ describe('HtmlRenderer', () => {
       it('should default showIcons to true when showIcons is undefined', () => {
         resume.content.basics.email = 'john.doe@example.com'
         const renderer = new HtmlRenderer(resume, layoutIndex)
-        // @ts-ignore
+        // @ts-expect-error
         if (renderer.resume.layouts[layoutIndex].advanced) {
-          // @ts-ignore
+          // @ts-expect-error
           renderer.resume.layouts[layoutIndex].advanced.showIcons = undefined
         }
 
@@ -221,7 +220,7 @@ describe('HtmlRenderer', () => {
       it('should use default font size when font size is empty string', () => {
         const resume = cloneDeep(DEFAULT_RESUME)
         const htmlLayout = resume.layouts[layoutIndex] as HtmlLayout
-        // @ts-ignore
+        // @ts-expect-error
         htmlLayout.typography = { fontSize: '' }
 
         const renderer = new HtmlRenderer(resume, layoutIndex)
@@ -643,7 +642,6 @@ describe('HtmlRenderer', () => {
       const url = 'https://github.com/testuser'
 
       resume.content.profiles = [
-        // @ts-ignore
         { network: 'GitHub', username: undefined, url },
       ]
 
@@ -703,7 +701,7 @@ describe('HtmlRenderer', () => {
 
     it('should render education with minimal fields', () => {
       const institution = 'School'
-      // @ts-ignore
+      // @ts-expect-error
       resume.content.education = [{ institution }]
       renderer = new HtmlRenderer(resume, layoutIndex)
       const result = renderer.renderEducation()
@@ -763,7 +761,7 @@ describe('HtmlRenderer', () => {
 
     it('should render work with minimal fields', () => {
       const name = 'Startup'
-      // @ts-ignore
+      // @ts-expect-error
       resume.content.work = [{ name }]
       renderer = new HtmlRenderer(resume, layoutIndex)
       const result = renderer.renderWork()
@@ -1008,7 +1006,7 @@ describe('HtmlRenderer', () => {
 
     it('should render award with minimal fields', () => {
       const title = 'Participation'
-      // @ts-ignore
+      // @ts-expect-error
       resume.content.awards = [{ title }]
       renderer = new HtmlRenderer(resume, layoutIndex)
       const result = renderer.renderAwards()
@@ -1053,7 +1051,7 @@ describe('HtmlRenderer', () => {
 
     it('should render certificate without url', () => {
       const name = 'Basic Cert'
-      // @ts-ignore
+      // @ts-expect-error
       resume.content.certificates = [{ name }]
 
       renderer = new HtmlRenderer(resume, layoutIndex)
@@ -1106,7 +1104,7 @@ describe('HtmlRenderer', () => {
 
     it('should render publication with minimal fields', () => {
       const name = 'Blog Post'
-      // @ts-ignore
+      // @ts-expect-error
       resume.content.publications = [{ name }]
       renderer = new HtmlRenderer(resume, layoutIndex)
       const result = renderer.renderPublications()
@@ -1164,7 +1162,7 @@ describe('HtmlRenderer', () => {
 
     it('should render reference with minimal fields', () => {
       const name = 'Dr. Smith'
-      // @ts-ignore
+      // @ts-expect-error
       resume.content.references = [{ name }]
       renderer = new HtmlRenderer(resume, layoutIndex)
       const result = renderer.renderReferences()
@@ -1225,7 +1223,7 @@ describe('HtmlRenderer', () => {
 
     it('should render project with minimal fields', () => {
       const name = 'Side Project'
-      // @ts-ignore
+      // @ts-expect-error
       resume.content.projects = [{ name }]
       renderer = new HtmlRenderer(resume, layoutIndex)
       const result = renderer.renderProjects()
@@ -1359,7 +1357,7 @@ describe('HtmlRenderer', () => {
 
     it('should render volunteer with minimal fields', () => {
       const organization = 'Local Charity'
-      // @ts-ignore
+      // @ts-expect-error
       resume.content.volunteer = [{ organization }]
       renderer = new HtmlRenderer(resume, layoutIndex)
       const result = renderer.renderVolunteer()

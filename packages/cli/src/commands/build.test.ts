@@ -364,7 +364,7 @@ describe(buildResume, () => {
       pipedFrom: [],
       all: undefined,
     })
-    // @ts-ignore
+    // @ts-expect-error
     whichSpy = vi.spyOn(which, 'sync').mockImplementation(() => 'xelatex')
     consolaStartSpy = vi
       .spyOn(consola, 'start')
@@ -388,7 +388,7 @@ describe(buildResume, () => {
     // Mock readResume to return resume with docx layout
     vi.mocked(readResume).mockReturnValue({
       resume: {
-        // @ts-ignore
+        // @ts-expect-error
         content: {},
         layouts: [{ engine: 'docx', template: 'banking' }],
       },
@@ -703,7 +703,7 @@ describe(buildResume, () => {
     // Mock readResume to return resume with multiple layouts
     vi.mocked(readResume).mockReturnValue({
       resume: {
-        // @ts-ignore
+        // @ts-expect-error
         content: {},
         layouts: [
           { engine: 'latex', template: 'moderncv-banking' },
@@ -747,7 +747,7 @@ describe(buildResume, () => {
     // Mock readResume to return resume without layouts
     vi.mocked(readResume).mockReturnValue({
       resume: {
-        // @ts-ignore
+        // @ts-expect-error
         content: {},
         layouts: undefined,
       },
@@ -929,7 +929,7 @@ describe(createBuildCommand, () => {
   it('should handle error when building resume to PDF', async () => {
     execSpy.mockRejectedValue(new Error('Mock error'))
 
-    // @ts-ignore
+    // @ts-expect-error
     const processExitSpy = vi.spyOn(process, 'exit').mockImplementation(vi.fn())
 
     const resumePath = getFixture('software-engineer.yml')

@@ -67,7 +67,7 @@ describe('ModerncvBase', () => {
       })
 
       it('should default showIcons to true when advanced options are missing', () => {
-        // @ts-ignore
+        // @ts-expect-error
         resume.layouts[layoutIndex].advanced = undefined
 
         const renderer = new ModerncvBankingRenderer(resume, layoutIndex)
@@ -78,7 +78,7 @@ describe('ModerncvBase', () => {
 
       it('should default showIcons to true when showIcons is undefined/null', () => {
         for (const test of [undefined, null]) {
-          // @ts-ignore
+          // @ts-expect-error
           resume.layouts[layoutIndex].advanced.showIcons = test
           const renderer = new ModerncvBankingRenderer(resume, layoutIndex)
 
@@ -90,7 +90,7 @@ describe('ModerncvBase', () => {
       it('should disable icons in preamble when showIcons is false', () => {
         resume.layouts[layoutIndex] = {
           ...resume.layouts[layoutIndex],
-          // @ts-ignore
+          // @ts-expect-error
           advanced: {
             showIcons: false,
           },
@@ -245,7 +245,7 @@ describe('ModerncvBase', () => {
         {
           engine: 'latex',
           typography: {
-            // @ts-ignore
+            // @ts-expect-error
             fontSize: '',
           },
         },
@@ -478,7 +478,7 @@ describe('ModerncvBase', () => {
       )
       resume.layouts[layoutIndex] = {
         ...resume.layouts[layoutIndex],
-        // @ts-ignore
+        // @ts-expect-error
         advanced: {
           showIcons: false,
         },

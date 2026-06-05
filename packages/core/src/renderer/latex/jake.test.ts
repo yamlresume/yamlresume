@@ -202,7 +202,6 @@ describe('JakeRenderer', () => {
       resume.layouts = [
         {
           engine: 'latex',
-          // @ts-ignore
           advanced: {
             showIcons: false,
           },
@@ -238,7 +237,7 @@ describe('JakeRenderer', () => {
         {
           engine: 'latex',
           typography: {
-            // @ts-ignore
+            // @ts-expect-error
             fontSize: '',
           },
         },
@@ -385,7 +384,7 @@ describe('JakeRenderer', () => {
 
       resume.layouts[layoutIndex] = {
         ...resume.layouts[layoutIndex],
-        // @ts-ignore
+        // @ts-expect-error
         advanced: {
           showIcons: false,
         },

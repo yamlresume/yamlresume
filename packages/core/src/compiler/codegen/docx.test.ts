@@ -234,7 +234,6 @@ This is a paragraph with **bold** and *italic* text.
     it('should handle empty paragraph node', () => {
       const emptyParagraphNode = {
         type: 'paragraph' as const,
-        // @ts-ignore
         content: [],
       }
       const paragraphs = nodeToParagraphs(emptyParagraphNode, {
@@ -301,7 +300,6 @@ This is a paragraph with **bold** and *italic* text.
     it('should handle listItem node with empty content', () => {
       const listItemNode = {
         type: 'listItem' as const,
-        // @ts-ignore
         content: [],
       }
       const paragraphs = nodeToParagraphs(listItemNode, {
