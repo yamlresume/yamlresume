@@ -23,6 +23,8 @@
  * IN THE SOFTWARE.
  */
 
+import './suppress-warnings'
+
 import { createProgram } from './program'
 
 createProgram().parse()
