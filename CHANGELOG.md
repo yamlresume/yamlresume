@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.13.1](https://github.com/yamlresume/yamlresume/compare/v0.13.0...v0.13.1) (2026-06-09)
+
+
+### Bug Fixes
+
+* **playground:** fix toolbar height and docx content scroll ([667d7a8](https://github.com/yamlresume/yamlresume/commit/667d7a82c70bac2daea607fdeb1e669d5ef924a9))
+* silence the boring localStorage warnings ([e495605](https://github.com/yamlresume/yamlresume/commit/e495605999c4b80520379d5c0b4c3454372c4405))
+
 ## [0.13.0](https://github.com/yamlresume/yamlresume/compare/v0.12.3...v0.13.0) (2026-06-05)
 
 
