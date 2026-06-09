@@ -38,7 +38,7 @@
     "@vitest/coverage-v8": "^4.1.4",
     "commit-and-tag-version": "^12.6.0",
     "husky": "^9.1.7",
-    "lint-staged": "^16.4.0",
+    "lint-staged": "^17.0.7",
     "tsup": "8.3.5",
     "tsx": "^4.22.4",
     "typedoc": "^0.28.16",
