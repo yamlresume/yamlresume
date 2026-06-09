@@ -35,7 +35,7 @@ export function PanelToolbar({ children }: PropsWithChildren) {
   return (
     <div
       className={clsx(
-        'flex items-center border-b border-neutral-400 h-10 text-sm',
+        'flex items-center border-b border-neutral-400 h-10 text-sm shrink-0',
         'bg-neutral-800'
       )}
     >

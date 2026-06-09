@@ -32,5 +32,5 @@ import type { PropsWithChildren } from 'react'
  * @returns The rendered content container.
  */
 export function PanelContent({ children }: PropsWithChildren) {
-  return <div className="flex-1 relative">{children}</div>
+  return <div className="flex-1 relative min-h-0">{children}</div>
 }
