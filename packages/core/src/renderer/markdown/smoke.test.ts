@@ -26,12 +26,16 @@ import { beforeEach, describe, expect, it } from 'vitest'
 
 import type { Resume } from '@/models'
 import { collectAllKeys, removeKeysFromObject } from '@/utils'
-import { getFixture, getRandomSections, sections } from '../test-utils'
+import {
+  findLayoutIndex,
+  getFixture,
+  getRandomSections,
+  sections,
+} from '../test-utils'
 import { MarkdownRenderer } from './renderer'
 
 describe('smoke test for markdown renderer', () => {
   let resume: Resume
-  let layoutIndex: number
 
   function expectValidMarkdownDocument(result: string) {
     // Check that result is a non-empty string
@@ -49,12 +53,14 @@ describe('smoke test for markdown renderer', () => {
 
   beforeEach(() => {
     resume = getFixture('full-resume.yml', __dirname)
-    layoutIndex = resume.layouts.findIndex((l) => l.engine === 'markdown')
   })
 
   describe('should handle optional sections', () => {
     it('should render resume with all sections', () => {
-      const result = new MarkdownRenderer(resume, layoutIndex).render()
+      const result = new MarkdownRenderer(
+        resume,
+        findLayoutIndex(resume, 'markdown')
+      ).render()
       expectValidMarkdownDocument(result)
     })
 
@@ -62,7 +68,7 @@ describe('smoke test for markdown renderer', () => {
       for (const section of sections) {
         const result = new MarkdownRenderer(
           removeKeysFromObject(resume, [section]),
-          layoutIndex
+          findLayoutIndex(resume, 'markdown')
         ).render()
         expectValidMarkdownDocument(result)
       }
@@ -74,7 +80,7 @@ describe('smoke test for markdown renderer', () => {
 
       const result = new MarkdownRenderer(
         removeKeysFromObject(resume, sectionsToRemove),
-        layoutIndex
+        findLayoutIndex(resume, 'markdown')
       ).render()
       expectValidMarkdownDocument(result)
     })
@@ -84,7 +90,7 @@ describe('smoke test for markdown renderer', () => {
     it('should render resume with no layout', () => {
       resume.layouts = undefined
 
-      const result = new MarkdownRenderer(resume, layoutIndex).render()
+      const result = new MarkdownRenderer(resume, 1).render()
       expectValidMarkdownDocument(result)
     })
   })
@@ -114,7 +120,7 @@ describe('smoke test for markdown renderer', () => {
 
           const result = new MarkdownRenderer(
             modifiedResume,
-            layoutIndex
+            findLayoutIndex(modifiedResume, 'markdown')
           ).render()
 
           expectValidMarkdownDocument(result)
@@ -153,7 +159,7 @@ describe('smoke test for markdown renderer', () => {
 
           const result = new MarkdownRenderer(
             modifiedResume,
-            layoutIndex
+            findLayoutIndex(modifiedResume, 'markdown')
           ).render()
 
           expectValidMarkdownDocument(result)

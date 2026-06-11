@@ -31,6 +31,7 @@ import {
   type LatexLayout,
   type Resume,
 } from '@/models'
+import { findLayoutIndex } from '../test-utils'
 import { LatexRenderer } from './base'
 import { LINE_SPACING_MAP } from './constants'
 
@@ -195,14 +196,13 @@ class TestableLatexRenderer extends LatexRenderer {
 describe('LatexRenderer', () => {
   let resume: Resume
   let renderer: TestableLatexRenderer
-  let layoutIndex: number
 
   beforeEach(() => {
     resume = cloneDeep(FILLED_RESUME)
-    layoutIndex = FILLED_RESUME.layouts.findIndex(
-      (layout) => layout.engine === 'latex'
+    renderer = new TestableLatexRenderer(
+      resume,
+      findLayoutIndex(resume, 'latex')
     )
-    renderer = new TestableLatexRenderer(resume, layoutIndex)
   })
 
   describe('isCJKResume', () => {
@@ -212,7 +212,10 @@ describe('LatexRenderer', () => {
     it('should return true for CJK languages', () => {
       for (const language of cjkLanguages) {
         resume.locale = { ...resume.locale, language }
-        renderer = new TestableLatexRenderer(resume, layoutIndex)
+        renderer = new TestableLatexRenderer(
+          resume,
+          findLayoutIndex(resume, 'latex')
+        )
 
         expect(renderer.testIsCJKResume()).toBe(true)
       }
@@ -221,7 +224,10 @@ describe('LatexRenderer', () => {
     it('should return false for non-CJK languages', () => {
       for (const language of nonCjkLanguages) {
         resume.locale = { ...resume.locale, language }
-        renderer = new TestableLatexRenderer(resume, layoutIndex)
+        renderer = new TestableLatexRenderer(
+          resume,
+          findLayoutIndex(resume, 'latex')
+        )
 
         expect(renderer.testIsCJKResume()).toBe(false)
       }
@@ -229,14 +235,20 @@ describe('LatexRenderer', () => {
 
     it('should return false when locale is undefined', () => {
       resume.locale = undefined
-      renderer = new TestableLatexRenderer(resume, layoutIndex)
+      renderer = new TestableLatexRenderer(
+        resume,
+        findLayoutIndex(resume, 'latex')
+      )
 
       expect(renderer.testIsCJKResume()).toBe(false)
     })
 
     it('should return false when language is undefined', () => {
       resume.locale = {}
-      renderer = new TestableLatexRenderer(resume, layoutIndex)
+      renderer = new TestableLatexRenderer(
+        resume,
+        findLayoutIndex(resume, 'latex')
+      )
 
       expect(renderer.testIsCJKResume()).toBe(false)
     })
@@ -260,7 +272,10 @@ describe('LatexRenderer', () => {
           ...resume.locale,
           language: language as typeof resume.locale.language,
         }
-        renderer = new TestableLatexRenderer(resume, layoutIndex)
+        renderer = new TestableLatexRenderer(
+          resume,
+          findLayoutIndex(resume, 'latex')
+        )
 
         const result = renderer.testRenderBabelConfig()
 
@@ -270,7 +285,10 @@ describe('LatexRenderer', () => {
 
     it('should render English babel config when locale is undefined', () => {
       resume.locale = undefined
-      renderer = new TestableLatexRenderer(resume, layoutIndex)
+      renderer = new TestableLatexRenderer(
+        resume,
+        findLayoutIndex(resume, 'latex')
+      )
 
       const result = renderer.testRenderBabelConfig()
 
@@ -296,15 +314,18 @@ describe('LatexRenderer', () => {
     })
 
     it('should render basic fontspec configuration with OldStyle numbers', () => {
-      resume.layouts[layoutIndex] = {
-        ...resume.layouts[layoutIndex],
+      resume.layouts[findLayoutIndex(resume, 'latex')] = {
+        ...resume.layouts[findLayoutIndex(resume, 'latex')],
         advanced: {
           fontspec: {
             numbers: 'OldStyle',
           },
         },
       } as LatexLayout
-      renderer = new TestableLatexRenderer(resume, layoutIndex)
+      renderer = new TestableLatexRenderer(
+        resume,
+        findLayoutIndex(resume, 'latex')
+      )
 
       const result = renderer.testRenderFontspecConfig()
 
@@ -322,13 +343,16 @@ describe('LatexRenderer', () => {
     it('should configure custom font families with correct precedence', () => {
       const customFont1 = 'Monaco'
       const customFont2 = 'Helvetica'
-      resume.layouts[layoutIndex] = {
-        ...resume.layouts[layoutIndex],
+      resume.layouts[findLayoutIndex(resume, 'latex')] = {
+        ...resume.layouts[findLayoutIndex(resume, 'latex')],
         typography: {
           fontFamily: `${customFont1}, ${customFont2}`,
         },
       } as LatexLayout
-      renderer = new TestableLatexRenderer(resume, layoutIndex)
+      renderer = new TestableLatexRenderer(
+        resume,
+        findLayoutIndex(resume, 'latex')
+      )
 
       const result = renderer.testRenderFontspecConfig()
 
@@ -352,13 +376,16 @@ describe('LatexRenderer', () => {
     })
 
     it('should handle empty fontFamily string', () => {
-      resume.layouts[layoutIndex] = {
-        ...resume.layouts[layoutIndex],
+      resume.layouts[findLayoutIndex(resume, 'latex')] = {
+        ...resume.layouts[findLayoutIndex(resume, 'latex')],
         typography: {
           fontFamily: '',
         },
       } as LatexLayout
-      renderer = new TestableLatexRenderer(resume, layoutIndex)
+      renderer = new TestableLatexRenderer(
+        resume,
+        findLayoutIndex(resume, 'latex')
+      )
 
       const result = renderer.testRenderFontspecConfig()
 
@@ -368,15 +395,18 @@ describe('LatexRenderer', () => {
 
     it('should render fontspec configuration for CJK with ItalicFont', () => {
       resume.locale = { ...resume.locale, language: 'zh-hans' }
-      resume.layouts[layoutIndex] = {
-        ...resume.layouts[layoutIndex],
+      resume.layouts[findLayoutIndex(resume, 'latex')] = {
+        ...resume.layouts[findLayoutIndex(resume, 'latex')],
         advanced: {
           fontspec: {
             numbers: 'Lining',
           },
         },
       } as LatexLayout
-      renderer = new TestableLatexRenderer(resume, layoutIndex)
+      renderer = new TestableLatexRenderer(
+        resume,
+        findLayoutIndex(resume, 'latex')
+      )
 
       const result = renderer.testRenderFontspecConfig()
 
@@ -416,8 +446,8 @@ describe('LatexRenderer', () => {
     })
 
     it('should normalize unit by removing whitespace', () => {
-      resume.layouts[layoutIndex] = {
-        ...resume.layouts[layoutIndex],
+      resume.layouts[findLayoutIndex(resume, 'latex')] = {
+        ...resume.layouts[findLayoutIndex(resume, 'latex')],
         page: {
           margins: {
             top: '2.5 cm',
@@ -427,7 +457,10 @@ describe('LatexRenderer', () => {
           },
         },
       } as LatexLayout
-      renderer = new TestableLatexRenderer(resume, layoutIndex)
+      renderer = new TestableLatexRenderer(
+        resume,
+        findLayoutIndex(resume, 'latex')
+      )
 
       const result = renderer.testRenderGeometry()
 
@@ -447,10 +480,13 @@ describe('LatexRenderer', () => {
     })
 
     it('should use default line spacing when not specified', () => {
-      resume.layouts[layoutIndex] = {
+      resume.layouts[findLayoutIndex(resume, 'latex')] = {
         engine: 'latex',
       } as LatexLayout
-      renderer = new TestableLatexRenderer(resume, layoutIndex)
+      renderer = new TestableLatexRenderer(
+        resume,
+        findLayoutIndex(resume, 'latex')
+      )
 
       const result = renderer.testRenderLineSpacingConfig()
 
@@ -460,10 +496,15 @@ describe('LatexRenderer', () => {
 
     it('should use default line spacing when lineSpacing is not provided', () => {
       const testResume = cloneDeep(resume)
-      const latexLayout = testResume.layouts[layoutIndex] as LatexLayout
+      const latexLayout = testResume.layouts[
+        findLayoutIndex(testResume, 'latex')
+      ] as LatexLayout
       latexLayout.typography = { fontSize: '10pt' }
 
-      const renderer = new TestableLatexRenderer(testResume, layoutIndex)
+      const renderer = new TestableLatexRenderer(
+        testResume,
+        findLayoutIndex(testResume, 'latex')
+      )
       const result = renderer.testRenderLineSpacingConfig()
 
       expect(result).toContain('\\usepackage{setspace}')
@@ -473,7 +514,7 @@ describe('LatexRenderer', () => {
     it('should render all line spacing values', () => {
       for (const [spacing, value] of Object.entries(LINE_SPACING_MAP)) {
         resume = cloneDeep(DEFAULT_RESUME)
-        const idx = resume.layouts.findIndex((l) => l.engine === 'latex')
+        const idx = findLayoutIndex(resume, 'latex')
         resume.layouts[idx] = {
           ...resume.layouts[idx],
           typography: {
@@ -500,13 +541,16 @@ describe('LatexRenderer', () => {
 
   describe('getFaIcon', () => {
     it('should return empty string when icons are disabled', () => {
-      resume.layouts[layoutIndex] = {
-        ...resume.layouts[layoutIndex],
+      resume.layouts[findLayoutIndex(resume, 'latex')] = {
+        ...resume.layouts[findLayoutIndex(resume, 'latex')],
         advanced: {
           showIcons: false,
         },
       } as LatexLayout
-      renderer = new TestableLatexRenderer(resume, layoutIndex)
+      renderer = new TestableLatexRenderer(
+        resume,
+        findLayoutIndex(resume, 'latex')
+      )
 
       const result = renderer.testGetFaIcon('GitHub')
 
@@ -530,51 +574,66 @@ describe('LatexRenderer', () => {
 
   describe('showIcons', () => {
     it('should return true by default', () => {
-      resume.layouts[layoutIndex] = {
+      resume.layouts[findLayoutIndex(resume, 'latex')] = {
         engine: 'latex',
       } as LatexLayout
-      renderer = new TestableLatexRenderer(resume, layoutIndex)
+      renderer = new TestableLatexRenderer(
+        resume,
+        findLayoutIndex(resume, 'latex')
+      )
 
       expect(renderer.testShowIcons).toBe(true)
     })
 
     it('should return true when showIcons is undefined', () => {
-      resume.layouts[layoutIndex] = {
+      resume.layouts[findLayoutIndex(resume, 'latex')] = {
         engine: 'latex',
         advanced: {},
       } as LatexLayout
-      renderer = new TestableLatexRenderer(resume, layoutIndex)
+      renderer = new TestableLatexRenderer(
+        resume,
+        findLayoutIndex(resume, 'latex')
+      )
 
       expect(renderer.testShowIcons).toBe(true)
     })
 
     it('should return true when showIcons is true', () => {
-      resume.layouts[layoutIndex] = {
-        ...resume.layouts[layoutIndex],
+      resume.layouts[findLayoutIndex(resume, 'latex')] = {
+        ...resume.layouts[findLayoutIndex(resume, 'latex')],
         advanced: {
           showIcons: true,
         },
       } as LatexLayout
-      renderer = new TestableLatexRenderer(resume, layoutIndex)
+      renderer = new TestableLatexRenderer(
+        resume,
+        findLayoutIndex(resume, 'latex')
+      )
 
       expect(renderer.testShowIcons).toBe(true)
     })
 
     it('should return false when showIcons is false', () => {
-      resume.layouts[layoutIndex] = {
-        ...resume.layouts[layoutIndex],
+      resume.layouts[findLayoutIndex(resume, 'latex')] = {
+        ...resume.layouts[findLayoutIndex(resume, 'latex')],
         advanced: {
           showIcons: false,
         },
       } as LatexLayout
-      renderer = new TestableLatexRenderer(resume, layoutIndex)
+      renderer = new TestableLatexRenderer(
+        resume,
+        findLayoutIndex(resume, 'latex')
+      )
 
       expect(renderer.testShowIcons).toBe(false)
     })
 
     it('should return true when layouts is undefined', () => {
+      renderer = new TestableLatexRenderer(
+        resume,
+        findLayoutIndex(resume, 'latex')
+      )
       resume.layouts = undefined
-      renderer = new TestableLatexRenderer(resume, layoutIndex)
 
       expect(renderer.testShowIcons).toBe(true)
     })
@@ -582,51 +641,66 @@ describe('LatexRenderer', () => {
 
   describe('showUrls', () => {
     it('should return true by default', () => {
-      resume.layouts[layoutIndex] = {
+      resume.layouts[findLayoutIndex(resume, 'latex')] = {
         engine: 'latex',
       } as LatexLayout
-      renderer = new TestableLatexRenderer(resume, layoutIndex)
+      renderer = new TestableLatexRenderer(
+        resume,
+        findLayoutIndex(resume, 'latex')
+      )
 
       expect(renderer.testShowUrls).toBe(true)
     })
 
     it('should return true when showUrls is undefined', () => {
-      resume.layouts[layoutIndex] = {
+      resume.layouts[findLayoutIndex(resume, 'latex')] = {
         engine: 'latex',
         advanced: {},
       } as LatexLayout
-      renderer = new TestableLatexRenderer(resume, layoutIndex)
+      renderer = new TestableLatexRenderer(
+        resume,
+        findLayoutIndex(resume, 'latex')
+      )
 
       expect(renderer.testShowUrls).toBe(true)
     })
 
     it('should return true when showUrls is true', () => {
-      resume.layouts[layoutIndex] = {
-        ...resume.layouts[layoutIndex],
+      resume.layouts[findLayoutIndex(resume, 'latex')] = {
+        ...resume.layouts[findLayoutIndex(resume, 'latex')],
         advanced: {
           showUrls: true,
         },
       } as LatexLayout
-      renderer = new TestableLatexRenderer(resume, layoutIndex)
+      renderer = new TestableLatexRenderer(
+        resume,
+        findLayoutIndex(resume, 'latex')
+      )
 
       expect(renderer.testShowUrls).toBe(true)
     })
 
     it('should return false when showUrls is false', () => {
-      resume.layouts[layoutIndex] = {
-        ...resume.layouts[layoutIndex],
+      resume.layouts[findLayoutIndex(resume, 'latex')] = {
+        ...resume.layouts[findLayoutIndex(resume, 'latex')],
         advanced: {
           showUrls: false,
         },
       } as LatexLayout
-      renderer = new TestableLatexRenderer(resume, layoutIndex)
+      renderer = new TestableLatexRenderer(
+        resume,
+        findLayoutIndex(resume, 'latex')
+      )
 
       expect(renderer.testShowUrls).toBe(false)
     })
 
     it('should return true when layouts is undefined', () => {
+      renderer = new TestableLatexRenderer(
+        resume,
+        findLayoutIndex(resume, 'latex')
+      )
       resume.layouts = undefined
-      renderer = new TestableLatexRenderer(resume, layoutIndex)
 
       expect(renderer.testShowUrls).toBe(true)
     })
@@ -643,13 +717,16 @@ describe('LatexRenderer', () => {
     })
 
     it('should return empty string when showUrls is false', () => {
-      resume.layouts[layoutIndex] = {
-        ...resume.layouts[layoutIndex],
+      resume.layouts[findLayoutIndex(resume, 'latex')] = {
+        ...resume.layouts[findLayoutIndex(resume, 'latex')],
         advanced: {
           showUrls: false,
         },
       } as LatexLayout
-      renderer = new TestableLatexRenderer(resume, layoutIndex)
+      renderer = new TestableLatexRenderer(
+        resume,
+        findLayoutIndex(resume, 'latex')
+      )
 
       const url = 'https://example.com'
       expect(renderer.testRenderUrl(url)).toBe('')
@@ -667,13 +744,16 @@ describe('LatexRenderer', () => {
     })
 
     it('should render href link when showUrls is false and url is provided', () => {
-      resume.layouts[layoutIndex] = {
-        ...resume.layouts[layoutIndex],
+      resume.layouts[findLayoutIndex(resume, 'latex')] = {
+        ...resume.layouts[findLayoutIndex(resume, 'latex')],
         advanced: {
           showUrls: false,
         },
       } as LatexLayout
-      renderer = new TestableLatexRenderer(resume, layoutIndex)
+      renderer = new TestableLatexRenderer(
+        resume,
+        findLayoutIndex(resume, 'latex')
+      )
 
       const url = 'https://example.com'
       expect(renderer.testRenderLinkedText('Example', url)).toBe(
@@ -684,13 +764,16 @@ describe('LatexRenderer', () => {
 
   describe('iconedString', () => {
     it('should return info without icon when icons are disabled', () => {
-      resume.layouts[layoutIndex] = {
-        ...resume.layouts[layoutIndex],
+      resume.layouts[findLayoutIndex(resume, 'latex')] = {
+        ...resume.layouts[findLayoutIndex(resume, 'latex')],
         advanced: {
           showIcons: false,
         },
       } as LatexLayout
-      renderer = new TestableLatexRenderer(resume, layoutIndex)
+      renderer = new TestableLatexRenderer(
+        resume,
+        findLayoutIndex(resume, 'latex')
+      )
 
       const result = renderer.testIconedString('\\faGithub', 'username')
 
@@ -710,13 +793,16 @@ describe('LatexRenderer', () => {
     it('should prioritize custom sections', () => {
       resume.layouts = [
         {
-          ...resume.layouts?.[layoutIndex],
+          ...resume.layouts?.[findLayoutIndex(resume, 'latex')],
           sections: {
             order: ['work', 'education'],
           },
         },
       ]
-      renderer = new TestableLatexRenderer(resume, layoutIndex)
+      renderer = new TestableLatexRenderer(
+        resume,
+        findLayoutIndex(resume, 'latex')
+      )
 
       const result = renderer.testRenderOrderedSections()
 
@@ -737,11 +823,14 @@ describe('LatexRenderer', () => {
     it('should use default order when no custom order is specified', () => {
       resume.layouts = [
         {
-          ...resume.layouts?.[layoutIndex],
+          ...resume.layouts?.[findLayoutIndex(resume, 'latex')],
           sections: {},
         },
       ]
-      renderer = new TestableLatexRenderer(resume, layoutIndex)
+      renderer = new TestableLatexRenderer(
+        resume,
+        findLayoutIndex(resume, 'latex')
+      )
 
       const result = renderer.testRenderOrderedSections()
 
@@ -763,13 +852,16 @@ describe('LatexRenderer', () => {
 
       resume.layouts = [
         {
-          ...resume.layouts?.[layoutIndex],
+          ...resume.layouts?.[findLayoutIndex(resume, 'latex')],
           sections: {
             order: ['education', 'work', 'skills', 'languages'],
           },
         },
       ]
-      renderer = new TestableLatexRenderer(resume, layoutIndex)
+      renderer = new TestableLatexRenderer(
+        resume,
+        findLayoutIndex(resume, 'latex')
+      )
 
       const result = renderer.testRenderOrderedSections()
 
@@ -807,7 +899,10 @@ describe('LatexRenderer', () => {
       it(`should return empty string if no ${field}`, () => {
         for (const sectionValue of [undefined, []]) {
           resume.content[field] = sectionValue
-          renderer = new TestableLatexRenderer(resume, layoutIndex)
+          renderer = new TestableLatexRenderer(
+            resume,
+            findLayoutIndex(resume, 'latex')
+          )
           const result = renderer[method]()
           expect(result).toBe('')
         }

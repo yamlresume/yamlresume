@@ -32,6 +32,7 @@ import {
   type Resume,
 } from '@/models'
 import { joinNonEmptyString } from '@/utils'
+import { findLayoutIndex } from '../test-utils'
 import { CalmDocxRenderer } from './calm'
 
 class TestableCalmDocxRenderer extends CalmDocxRenderer {
@@ -43,17 +44,18 @@ class TestableCalmDocxRenderer extends CalmDocxRenderer {
 describe('CalmDocxRenderer', () => {
   let resume: Resume
   let renderer: TestableCalmDocxRenderer
-  let layoutIndex: number
 
   beforeEach(() => {
     resume = cloneDeep(FILLED_RESUME)
     resume.layouts = [...(resume.layouts ?? []), cloneDeep(DEFAULT_DOCX_LAYOUT)]
-    layoutIndex = resume.layouts.findIndex((layout) => layout.engine === 'docx')
   })
 
   describe('renderPreamble', () => {
     it('should return empty string for docx', () => {
-      renderer = new TestableCalmDocxRenderer(resume, layoutIndex)
+      renderer = new TestableCalmDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
 
       const result = renderer.renderPreamble()
       expect(result).toEqual([])
@@ -64,7 +66,10 @@ describe('CalmDocxRenderer', () => {
     it('should return empty array when basics is missing', () => {
       resume.content.basics = undefined
 
-      renderer = new TestableCalmDocxRenderer(resume, layoutIndex)
+      renderer = new TestableCalmDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
       const result = renderer.renderBasics()
 
       expect(result).toEqual([])
@@ -85,7 +90,10 @@ describe('CalmDocxRenderer', () => {
         url,
       }
 
-      renderer = new TestableCalmDocxRenderer(resume, layoutIndex)
+      renderer = new TestableCalmDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
       const result = JSON.stringify(renderer.renderBasics())
 
       expect(result).toContain(name)
@@ -106,7 +114,10 @@ describe('CalmDocxRenderer', () => {
         url: undefined,
       }
 
-      renderer = new TestableCalmDocxRenderer(resume, layoutIndex)
+      renderer = new TestableCalmDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
       const result = JSON.stringify(renderer.renderBasics())
 
       expect(result).toContain(name)
@@ -127,7 +138,10 @@ describe('CalmDocxRenderer', () => {
         url: undefined,
       }
 
-      renderer = new TestableCalmDocxRenderer(resume, layoutIndex)
+      renderer = new TestableCalmDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
       const result = JSON.stringify(renderer.renderBasics())
 
       expect(result).toContain(headline)
@@ -146,7 +160,10 @@ describe('CalmDocxRenderer', () => {
         url,
       }
 
-      renderer = new TestableCalmDocxRenderer(resume, layoutIndex)
+      renderer = new TestableCalmDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
       const result = JSON.stringify(renderer.renderBasics())
 
       expect(result).toContain('📧')
@@ -166,10 +183,15 @@ describe('CalmDocxRenderer', () => {
         url,
       }
 
-      const docxLayout = resume.layouts[layoutIndex] as DocxLayout
+      const docxLayout = resume.layouts[
+        findLayoutIndex(resume, 'docx')
+      ] as DocxLayout
       docxLayout.advanced = { showIcons: false }
 
-      renderer = new TestableCalmDocxRenderer(resume, layoutIndex)
+      renderer = new TestableCalmDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
       const result = JSON.stringify(renderer.renderBasics())
 
       expect(result).toContain(email)
@@ -188,7 +210,10 @@ describe('CalmDocxRenderer', () => {
         summary: undefined,
       }
 
-      renderer = new TestableCalmDocxRenderer(resume, layoutIndex)
+      renderer = new TestableCalmDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
       const result = renderer.renderSummary()
 
       expect(result).toEqual([])
@@ -208,7 +233,10 @@ describe('CalmDocxRenderer', () => {
         summary,
       }
 
-      renderer = new TestableCalmDocxRenderer(resume, layoutIndex)
+      renderer = new TestableCalmDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
       const result = JSON.stringify(renderer.renderSummary())
 
       expect(result).toContain('Basics')
@@ -223,7 +251,10 @@ describe('CalmDocxRenderer', () => {
     it('should return empty array when location is missing', () => {
       resume.content.location = undefined
 
-      renderer = new TestableCalmDocxRenderer(resume, layoutIndex)
+      renderer = new TestableCalmDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
       const result = renderer.renderLocation()
 
       expect(result).toEqual([])
@@ -244,7 +275,10 @@ describe('CalmDocxRenderer', () => {
         country,
       }
 
-      renderer = new TestableCalmDocxRenderer(resume, layoutIndex)
+      renderer = new TestableCalmDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
       const result = JSON.stringify(renderer.renderLocation())
 
       expect(result).toContain(address)
@@ -263,7 +297,10 @@ describe('CalmDocxRenderer', () => {
         country,
       }
 
-      renderer = new TestableCalmDocxRenderer(resume, layoutIndex)
+      renderer = new TestableCalmDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
       const result = JSON.stringify(renderer.renderLocation())
 
       expect(result).toContain(city)
@@ -277,10 +314,15 @@ describe('CalmDocxRenderer', () => {
         city,
       }
 
-      const docxLayout = resume.layouts[layoutIndex] as DocxLayout
+      const docxLayout = resume.layouts[
+        findLayoutIndex(resume, 'docx')
+      ] as DocxLayout
       docxLayout.advanced = { showIcons: false }
 
-      renderer = new TestableCalmDocxRenderer(resume, layoutIndex)
+      renderer = new TestableCalmDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
       const result = JSON.stringify(renderer.renderLocation())
 
       expect(result).toContain(city)
@@ -292,7 +334,10 @@ describe('CalmDocxRenderer', () => {
     it('should return empty array when profiles are missing', () => {
       resume.content.profiles = undefined
 
-      renderer = new TestableCalmDocxRenderer(resume, layoutIndex)
+      renderer = new TestableCalmDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
       const result = renderer.renderProfiles()
 
       expect(result).toEqual([])
@@ -316,7 +361,10 @@ describe('CalmDocxRenderer', () => {
         },
       ]
 
-      renderer = new TestableCalmDocxRenderer(resume, layoutIndex)
+      renderer = new TestableCalmDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
       const result = JSON.stringify(renderer.renderProfiles())
 
       expect(result).toContain(`@${username}`)
@@ -335,7 +383,10 @@ describe('CalmDocxRenderer', () => {
         },
       ]
 
-      renderer = new TestableCalmDocxRenderer(resume, layoutIndex)
+      renderer = new TestableCalmDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
       const result = JSON.stringify(renderer.renderProfiles())
 
       expect(result).toContain(`@${username}`)
@@ -346,7 +397,10 @@ describe('CalmDocxRenderer', () => {
 
       resume.content.profiles = [{ network: 'GitHub', username }]
 
-      renderer = new TestableCalmDocxRenderer(resume, layoutIndex)
+      renderer = new TestableCalmDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
       const result = JSON.stringify(renderer.renderProfiles())
 
       expect(result).toContain(`@${username}`)
@@ -355,7 +409,10 @@ describe('CalmDocxRenderer', () => {
     it('should return empty array when all profiles are empty', () => {
       resume.content.profiles = []
 
-      renderer = new TestableCalmDocxRenderer(resume, layoutIndex)
+      renderer = new TestableCalmDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
       const result = renderer.renderProfiles()
 
       expect(result).toEqual([])
@@ -366,7 +423,10 @@ describe('CalmDocxRenderer', () => {
     it('should return empty array when education is missing', () => {
       resume.content.education = []
 
-      renderer = new TestableCalmDocxRenderer(resume, layoutIndex)
+      renderer = new TestableCalmDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
       const result = renderer.renderEducation()
 
       expect(result).toEqual([])
@@ -410,7 +470,10 @@ describe('CalmDocxRenderer', () => {
         },
       ]
 
-      renderer = new TestableCalmDocxRenderer(resume, layoutIndex)
+      renderer = new TestableCalmDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
       const result = JSON.stringify(renderer.renderEducation())
 
       expect(result).toContain('Education')
@@ -436,7 +499,10 @@ describe('CalmDocxRenderer', () => {
         },
       ]
 
-      renderer = new TestableCalmDocxRenderer(resume, layoutIndex)
+      renderer = new TestableCalmDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
       const result = JSON.stringify(renderer.renderEducation())
 
       expect(result).toContain(institution)
@@ -459,7 +525,10 @@ describe('CalmDocxRenderer', () => {
         },
       ]
 
-      renderer = new TestableCalmDocxRenderer(resume, layoutIndex)
+      renderer = new TestableCalmDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
       const result = JSON.stringify(renderer.renderEducation())
 
       expect(result).toContain(institution)
@@ -471,7 +540,10 @@ describe('CalmDocxRenderer', () => {
     it('should return empty array when work is missing', () => {
       resume.content.work = undefined
 
-      renderer = new TestableCalmDocxRenderer(resume, layoutIndex)
+      renderer = new TestableCalmDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
       const result = renderer.renderWork()
 
       expect(result).toEqual([])
@@ -494,7 +566,10 @@ describe('CalmDocxRenderer', () => {
         },
       ]
 
-      renderer = new TestableCalmDocxRenderer(resume, layoutIndex)
+      renderer = new TestableCalmDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
       const result = JSON.stringify(renderer.renderWork())
 
       expect(result).toContain('Work')
@@ -518,7 +593,10 @@ describe('CalmDocxRenderer', () => {
         },
       ]
 
-      renderer = new TestableCalmDocxRenderer(resume, layoutIndex)
+      renderer = new TestableCalmDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
       const result = JSON.stringify(renderer.renderWork())
 
       expect(result).toContain(position)
@@ -540,7 +618,10 @@ describe('CalmDocxRenderer', () => {
         },
       ]
 
-      renderer = new TestableCalmDocxRenderer(resume, layoutIndex)
+      renderer = new TestableCalmDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
       const result = JSON.stringify(renderer.renderWork())
 
       expect(result).toContain(name)
@@ -552,7 +633,10 @@ describe('CalmDocxRenderer', () => {
     it('should return empty array when languages are missing', () => {
       resume.content.languages = undefined
 
-      renderer = new TestableCalmDocxRenderer(resume, layoutIndex)
+      renderer = new TestableCalmDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
       const result = renderer.renderLanguages()
 
       expect(result).toEqual([])
@@ -570,7 +654,10 @@ describe('CalmDocxRenderer', () => {
         },
       ]
 
-      renderer = new TestableCalmDocxRenderer(resume, layoutIndex)
+      renderer = new TestableCalmDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
       const result = JSON.stringify(renderer.renderLanguages())
 
       expect(result).toContain('Languages')
@@ -591,7 +678,10 @@ describe('CalmDocxRenderer', () => {
         },
       ]
 
-      renderer = new TestableCalmDocxRenderer(resume, layoutIndex)
+      renderer = new TestableCalmDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
       const result = JSON.stringify(renderer.renderLanguages())
 
       expect(result).toContain('Keywords:')
@@ -603,7 +693,10 @@ describe('CalmDocxRenderer', () => {
     it('should return empty array when skills are missing', () => {
       resume.content.skills = undefined
 
-      renderer = new TestableCalmDocxRenderer(resume, layoutIndex)
+      renderer = new TestableCalmDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
       const result = renderer.renderSkills()
 
       expect(result).toEqual([])
@@ -615,7 +708,10 @@ describe('CalmDocxRenderer', () => {
         { name: 'Python', level: 'Intermediate' },
       ]
 
-      renderer = new TestableCalmDocxRenderer(resume, layoutIndex)
+      renderer = new TestableCalmDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
       const result = JSON.stringify(renderer.renderSkills())
 
       expect(result).toContain('Skills')
@@ -636,7 +732,10 @@ describe('CalmDocxRenderer', () => {
         },
       ]
 
-      renderer = new TestableCalmDocxRenderer(resume, layoutIndex)
+      renderer = new TestableCalmDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
       const result = JSON.stringify(renderer.renderSkills())
 
       expect(result).toContain('Keywords:')
@@ -648,7 +747,10 @@ describe('CalmDocxRenderer', () => {
     it('should return empty array when awards are missing', () => {
       resume.content.awards = undefined
 
-      renderer = new TestableCalmDocxRenderer(resume, layoutIndex)
+      renderer = new TestableCalmDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
       const result = renderer.renderAwards()
 
       expect(result).toEqual([])
@@ -669,7 +771,10 @@ describe('CalmDocxRenderer', () => {
         },
       ]
 
-      renderer = new TestableCalmDocxRenderer(resume, layoutIndex)
+      renderer = new TestableCalmDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
       const result = JSON.stringify(renderer.renderAwards())
 
       expect(result).toContain('Awards')
@@ -689,7 +794,10 @@ describe('CalmDocxRenderer', () => {
         },
       ]
 
-      renderer = new TestableCalmDocxRenderer(resume, layoutIndex)
+      renderer = new TestableCalmDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
       const result = JSON.stringify(renderer.renderAwards())
 
       expect(result).toContain(title)
@@ -708,7 +816,10 @@ describe('CalmDocxRenderer', () => {
         },
       ]
 
-      renderer = new TestableCalmDocxRenderer(resume, layoutIndex)
+      renderer = new TestableCalmDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
       const result = JSON.stringify(renderer.renderAwards())
 
       expect(result).toContain(title)
@@ -720,7 +831,10 @@ describe('CalmDocxRenderer', () => {
     it('should return empty array when certificates are missing', () => {
       resume.content.certificates = undefined
 
-      renderer = new TestableCalmDocxRenderer(resume, layoutIndex)
+      renderer = new TestableCalmDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
       const result = renderer.renderCertificates()
 
       expect(result).toEqual([])
@@ -741,7 +855,10 @@ describe('CalmDocxRenderer', () => {
         },
       ]
 
-      renderer = new TestableCalmDocxRenderer(resume, layoutIndex)
+      renderer = new TestableCalmDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
       const result = JSON.stringify(renderer.renderCertificates())
 
       expect(result).toContain('Certificates')
@@ -761,7 +878,10 @@ describe('CalmDocxRenderer', () => {
         },
       ]
 
-      renderer = new TestableCalmDocxRenderer(resume, layoutIndex)
+      renderer = new TestableCalmDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
       const result = JSON.stringify(renderer.renderCertificates())
 
       expect(result).toContain(name)
@@ -780,7 +900,10 @@ describe('CalmDocxRenderer', () => {
         },
       ]
 
-      renderer = new TestableCalmDocxRenderer(resume, layoutIndex)
+      renderer = new TestableCalmDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
       const result = JSON.stringify(renderer.renderCertificates())
 
       expect(result).toContain(name)
@@ -792,7 +915,10 @@ describe('CalmDocxRenderer', () => {
     it('should return empty array when publications are missing', () => {
       resume.content.publications = undefined
 
-      renderer = new TestableCalmDocxRenderer(resume, layoutIndex)
+      renderer = new TestableCalmDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
       const result = renderer.renderPublications()
 
       expect(result).toEqual([])
@@ -815,7 +941,10 @@ describe('CalmDocxRenderer', () => {
         },
       ]
 
-      renderer = new TestableCalmDocxRenderer(resume, layoutIndex)
+      renderer = new TestableCalmDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
       const result = JSON.stringify(renderer.renderPublications())
 
       expect(result).toContain('Publications')
@@ -837,7 +966,10 @@ describe('CalmDocxRenderer', () => {
         },
       ]
 
-      renderer = new TestableCalmDocxRenderer(resume, layoutIndex)
+      renderer = new TestableCalmDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
       const result = JSON.stringify(renderer.renderPublications())
 
       expect(result).toContain(name)
@@ -856,7 +988,10 @@ describe('CalmDocxRenderer', () => {
         } as any,
       ]
 
-      renderer = new TestableCalmDocxRenderer(resume, layoutIndex)
+      renderer = new TestableCalmDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
       const result = JSON.stringify(renderer.renderPublications())
 
       expect(result).toContain(name)
@@ -868,7 +1003,10 @@ describe('CalmDocxRenderer', () => {
     it('should return empty array when references are missing', () => {
       resume.content.references = undefined
 
-      renderer = new TestableCalmDocxRenderer(resume, layoutIndex)
+      renderer = new TestableCalmDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
       const result = renderer.renderReferences()
 
       expect(result).toEqual([])
@@ -891,7 +1029,10 @@ describe('CalmDocxRenderer', () => {
         },
       ]
 
-      renderer = new TestableCalmDocxRenderer(resume, layoutIndex)
+      renderer = new TestableCalmDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
       const result = JSON.stringify(renderer.renderReferences())
 
       expect(result).toContain('References')
@@ -913,7 +1054,10 @@ describe('CalmDocxRenderer', () => {
         },
       ]
 
-      renderer = new TestableCalmDocxRenderer(resume, layoutIndex)
+      renderer = new TestableCalmDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
       const result = JSON.stringify(renderer.renderReferences())
 
       expect(result).toContain(name)
@@ -933,7 +1077,10 @@ describe('CalmDocxRenderer', () => {
         } as any,
       ]
 
-      renderer = new TestableCalmDocxRenderer(resume, layoutIndex)
+      renderer = new TestableCalmDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
       const result = JSON.stringify(renderer.renderReferences())
 
       expect(result).toContain(name)
@@ -945,7 +1092,10 @@ describe('CalmDocxRenderer', () => {
     it('should return empty array when projects are missing', () => {
       resume.content.projects = undefined
 
-      renderer = new TestableCalmDocxRenderer(resume, layoutIndex)
+      renderer = new TestableCalmDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
       const result = renderer.renderProjects()
 
       expect(result).toEqual([])
@@ -968,7 +1118,10 @@ describe('CalmDocxRenderer', () => {
         },
       ]
 
-      renderer = new TestableCalmDocxRenderer(resume, layoutIndex)
+      renderer = new TestableCalmDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
       const result = JSON.stringify(renderer.renderProjects())
 
       expect(result).toContain('Projects')
@@ -991,7 +1144,10 @@ describe('CalmDocxRenderer', () => {
         },
       ]
 
-      renderer = new TestableCalmDocxRenderer(resume, layoutIndex)
+      renderer = new TestableCalmDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
       const result = JSON.stringify(renderer.renderProjects())
 
       expect(result).toContain(name)
@@ -1004,7 +1160,10 @@ describe('CalmDocxRenderer', () => {
     it('should return empty array when interests are missing', () => {
       resume.content.interests = undefined
 
-      renderer = new TestableCalmDocxRenderer(resume, layoutIndex)
+      renderer = new TestableCalmDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
       const result = renderer.renderInterests()
 
       expect(result).toEqual([])
@@ -1016,7 +1175,10 @@ describe('CalmDocxRenderer', () => {
         { name: 'Hiking', keywords: ['Mountains', 'Trails'] },
       ]
 
-      renderer = new TestableCalmDocxRenderer(resume, layoutIndex)
+      renderer = new TestableCalmDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
       const result = JSON.stringify(renderer.renderInterests())
 
       expect(result).toContain('Interests')
@@ -1029,7 +1191,10 @@ describe('CalmDocxRenderer', () => {
     it('should handle interests without keywords', () => {
       resume.content.interests = [{ name: 'Reading' }]
 
-      renderer = new TestableCalmDocxRenderer(resume, layoutIndex)
+      renderer = new TestableCalmDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
       const result = JSON.stringify(renderer.renderInterests())
 
       expect(result).toContain('Reading')
@@ -1040,7 +1205,10 @@ describe('CalmDocxRenderer', () => {
     it('should return empty array when volunteer is missing', () => {
       resume.content.volunteer = undefined
 
-      renderer = new TestableCalmDocxRenderer(resume, layoutIndex)
+      renderer = new TestableCalmDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
       const result = renderer.renderVolunteer()
 
       expect(result).toEqual([])
@@ -1063,7 +1231,10 @@ describe('CalmDocxRenderer', () => {
         },
       ]
 
-      renderer = new TestableCalmDocxRenderer(resume, layoutIndex)
+      renderer = new TestableCalmDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
       const result = JSON.stringify(renderer.renderVolunteer())
 
       expect(result).toContain('Volunteer')
@@ -1087,7 +1258,10 @@ describe('CalmDocxRenderer', () => {
         },
       ]
 
-      renderer = new TestableCalmDocxRenderer(resume, layoutIndex)
+      renderer = new TestableCalmDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
       const result = JSON.stringify(renderer.renderVolunteer())
 
       expect(result).toContain(organization)
@@ -1108,7 +1282,10 @@ describe('CalmDocxRenderer', () => {
         } as any,
       ]
 
-      renderer = new TestableCalmDocxRenderer(resume, layoutIndex)
+      renderer = new TestableCalmDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
       const result = JSON.stringify(renderer.renderVolunteer())
 
       expect(result).toContain(organization)
@@ -1151,7 +1328,10 @@ describe('CalmDocxRenderer', () => {
       ]
       resume.content.skills = [{ name: 'JavaScript', level: 'Expert' }]
 
-      renderer = new TestableCalmDocxRenderer(resume, layoutIndex)
+      renderer = new TestableCalmDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
 
       // Test renderBasics separately since renderOrderedSections doesn't include it
       const basicsResult = JSON.stringify(renderer.renderBasics())
@@ -1180,7 +1360,10 @@ describe('CalmDocxRenderer', () => {
         education: [],
       }
 
-      renderer = new TestableCalmDocxRenderer(resume, layoutIndex)
+      renderer = new TestableCalmDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
 
       // Test renderBasics separately
       const basicsResult = JSON.stringify(renderer.renderBasics())
@@ -1201,7 +1384,10 @@ describe('CalmDocxRenderer', () => {
         email: 'test@test.com',
       }
 
-      renderer = new TestableCalmDocxRenderer(resume, layoutIndex)
+      renderer = new TestableCalmDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
       const buffer = await renderer.render()
 
       expect(buffer.length).toBeGreaterThan(0)
@@ -1214,7 +1400,10 @@ describe('CalmDocxRenderer', () => {
         name: 'Andy Dufresne',
       }
 
-      renderer = new TestableCalmDocxRenderer(resume, layoutIndex)
+      renderer = new TestableCalmDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
       const buffer = await renderer.render()
 
       expect(buffer).toBeInstanceOf(Uint8Array)
@@ -1228,7 +1417,10 @@ describe('CalmDocxRenderer', () => {
         name: 'Andy Dufresne',
       }
 
-      renderer = new TestableCalmDocxRenderer(resume, layoutIndex)
+      renderer = new TestableCalmDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
       const blob = await renderer.renderDocumentBlob()
 
       expect(blob).toBeInstanceOf(Blob)
@@ -1246,7 +1438,10 @@ describe('CalmDocxRenderer', () => {
         url: 'https://example.com',
       }
 
-      renderer = new TestableCalmDocxRenderer(resume, layoutIndex)
+      renderer = new TestableCalmDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
       const buffer = await renderer.render()
 
       // Should have created the document
@@ -1268,7 +1463,10 @@ describe('CalmDocxRenderer', () => {
         },
       ]
 
-      renderer = new TestableCalmDocxRenderer(resume, layoutIndex)
+      renderer = new TestableCalmDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
       const buffer = await renderer.render()
 
       expect(buffer.length).toBeGreaterThan(0)
@@ -1288,7 +1486,10 @@ describe('CalmDocxRenderer', () => {
         },
       ]
 
-      renderer = new TestableCalmDocxRenderer(resume, layoutIndex)
+      renderer = new TestableCalmDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
       const buffer = await renderer.render()
 
       expect(buffer.length).toBeGreaterThan(0)
@@ -1305,7 +1506,10 @@ describe('CalmDocxRenderer', () => {
         },
       ]
 
-      renderer = new TestableCalmDocxRenderer(resume, layoutIndex)
+      renderer = new TestableCalmDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
       const buffer = await renderer.render()
 
       expect(buffer.length).toBeGreaterThan(0)
@@ -1322,7 +1526,10 @@ describe('CalmDocxRenderer', () => {
         },
       ]
 
-      renderer = new TestableCalmDocxRenderer(resume, layoutIndex)
+      renderer = new TestableCalmDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
       const buffer = await renderer.render()
 
       expect(buffer.length).toBeGreaterThan(0)
@@ -1340,7 +1547,10 @@ describe('CalmDocxRenderer', () => {
         },
       ]
 
-      renderer = new TestableCalmDocxRenderer(resume, layoutIndex)
+      renderer = new TestableCalmDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
       const buffer = await renderer.render()
 
       expect(buffer.length).toBeGreaterThan(0)
@@ -1358,7 +1568,10 @@ describe('CalmDocxRenderer', () => {
         },
       ]
 
-      renderer = new TestableCalmDocxRenderer(resume, layoutIndex)
+      renderer = new TestableCalmDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
       const buffer = await renderer.render()
 
       expect(buffer.length).toBeGreaterThan(0)
@@ -1378,7 +1591,10 @@ describe('CalmDocxRenderer', () => {
         },
       ]
 
-      renderer = new TestableCalmDocxRenderer(resume, layoutIndex)
+      renderer = new TestableCalmDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
       const buffer = await renderer.render()
 
       expect(buffer.length).toBeGreaterThan(0)
@@ -1397,7 +1613,10 @@ describe('CalmDocxRenderer', () => {
         },
       ]
 
-      renderer = new TestableCalmDocxRenderer(resume, layoutIndex)
+      renderer = new TestableCalmDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
       const buffer = await renderer.render()
 
       expect(buffer.length).toBeGreaterThan(0)
@@ -1416,7 +1635,10 @@ describe('CalmDocxRenderer', () => {
         },
       ]
 
-      renderer = new TestableCalmDocxRenderer(resume, layoutIndex)
+      renderer = new TestableCalmDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
       const buffer = await renderer.render()
 
       expect(buffer.length).toBeGreaterThan(0)
@@ -1436,7 +1658,10 @@ describe('CalmDocxRenderer', () => {
         },
       ]
 
-      renderer = new TestableCalmDocxRenderer(resume, layoutIndex)
+      renderer = new TestableCalmDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
       const buffer = await renderer.render()
 
       expect(buffer.length).toBeGreaterThan(0)
@@ -1460,7 +1685,10 @@ describe('CalmDocxRenderer', () => {
       resume.content.basics = { name: 'Test' }
       ;(resume.content as Record<string, unknown>)[key] = undefined
 
-      renderer = new TestableCalmDocxRenderer(resume, layoutIndex)
+      renderer = new TestableCalmDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
       const buffer = await renderer.render()
 
       expect(buffer.length).toBeGreaterThan(0)
@@ -1472,7 +1700,10 @@ describe('CalmDocxRenderer', () => {
         phone: '123-456-7890',
       }
 
-      renderer = new TestableCalmDocxRenderer(resume, layoutIndex)
+      renderer = new TestableCalmDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
       const buffer = await renderer.render()
 
       expect(buffer.length).toBeGreaterThan(0)
@@ -1484,7 +1715,10 @@ describe('CalmDocxRenderer', () => {
         url: 'https://example.com',
       }
 
-      renderer = new TestableCalmDocxRenderer(resume, layoutIndex)
+      renderer = new TestableCalmDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
       const buffer = await renderer.render()
 
       expect(buffer.length).toBeGreaterThan(0)
@@ -1497,7 +1731,10 @@ describe('CalmDocxRenderer', () => {
         phone: '123-456-7890',
       }
 
-      renderer = new TestableCalmDocxRenderer(resume, layoutIndex)
+      renderer = new TestableCalmDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
       const buffer = await renderer.render()
 
       expect(buffer.length).toBeGreaterThan(0)
@@ -1511,7 +1748,10 @@ describe('CalmDocxRenderer', () => {
         country: 'United States',
       }
 
-      renderer = new TestableCalmDocxRenderer(resume, layoutIndex)
+      renderer = new TestableCalmDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
       const buffer = await renderer.render()
 
       expect(buffer.length).toBeGreaterThan(0)
@@ -1523,7 +1763,10 @@ describe('CalmDocxRenderer', () => {
         summary: 'Test summary content',
       }
 
-      renderer = new TestableCalmDocxRenderer(resume, layoutIndex)
+      renderer = new TestableCalmDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
       const buffer = await renderer.render()
 
       expect(buffer.length).toBeGreaterThan(0)
@@ -1537,7 +1780,10 @@ describe('CalmDocxRenderer', () => {
 - Third item`,
       }
 
-      renderer = new TestableCalmDocxRenderer(resume, layoutIndex)
+      renderer = new TestableCalmDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
       // Call renderDocxDocument to exercise markdown parsing code
       const buffer = await renderer.render()
       expect(buffer.length).toBeGreaterThan(0)
@@ -1557,7 +1803,10 @@ describe('CalmDocxRenderer', () => {
 3. Third item`,
       }
 
-      renderer = new TestableCalmDocxRenderer(resume, layoutIndex)
+      renderer = new TestableCalmDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
       // Call renderDocxDocument to exercise ordered list parsing code
       const buffer = await renderer.render()
       expect(buffer.length).toBeGreaterThan(0)
@@ -1575,7 +1824,10 @@ describe('CalmDocxRenderer', () => {
         summary: 'This is **bold** and *italic* text.',
       }
 
-      renderer = new TestableCalmDocxRenderer(resume, layoutIndex)
+      renderer = new TestableCalmDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
       // Call renderDocxDocument to exercise text formatting code
       const buffer = await renderer.render()
       expect(buffer.length).toBeGreaterThan(0)
@@ -1592,7 +1844,10 @@ describe('CalmDocxRenderer', () => {
         summary: 'Check out [my website](https://example.com) for more info.',
       }
 
-      renderer = new TestableCalmDocxRenderer(resume, layoutIndex)
+      renderer = new TestableCalmDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
       // Call renderDocxDocument to exercise link parsing code
       const buffer = await renderer.render()
       expect(buffer.length).toBeGreaterThan(0)
@@ -1615,7 +1870,10 @@ describe('CalmDocxRenderer', () => {
         },
       ]
 
-      renderer = new TestableCalmDocxRenderer(resume, layoutIndex)
+      renderer = new TestableCalmDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
       // Call renderDocxDocument to exercise work summary markdown parsing
       const buffer = await renderer.render()
       expect(buffer.length).toBeGreaterThan(0)
@@ -1640,7 +1898,10 @@ describe('CalmDocxRenderer', () => {
         },
       ]
 
-      renderer = new TestableCalmDocxRenderer(resume, layoutIndex)
+      renderer = new TestableCalmDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
       // Call renderDocxDocument to exercise education summary markdown parsing
       const buffer = await renderer.render()
       expect(buffer.length).toBeGreaterThan(0)
@@ -1660,7 +1921,10 @@ describe('CalmDocxRenderer', () => {
 - Parent item 2`,
       }
 
-      renderer = new TestableCalmDocxRenderer(resume, layoutIndex)
+      renderer = new TestableCalmDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
       // Call renderDocxDocument to exercise nested list handling
       const buffer = await renderer.render()
       expect(buffer.length).toBeGreaterThan(0)
@@ -1674,7 +1938,10 @@ describe('CalmDocxRenderer', () => {
 - Another bullet`,
       }
 
-      renderer = new TestableCalmDocxRenderer(resume, layoutIndex)
+      renderer = new TestableCalmDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
       // Call renderDocxDocument to exercise mixed list handling
       const buffer = await renderer.render()
       expect(buffer.length).toBeGreaterThan(0)
@@ -1692,7 +1959,10 @@ describe('CalmDocxRenderer', () => {
         },
       ]
 
-      renderer = new TestableCalmDocxRenderer(resume, layoutIndex)
+      renderer = new TestableCalmDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
       const buffer = await renderer.render()
       expect(buffer.length).toBeGreaterThan(0)
     })
@@ -1710,7 +1980,10 @@ describe('CalmDocxRenderer', () => {
         },
       ]
 
-      renderer = new TestableCalmDocxRenderer(resume, layoutIndex)
+      renderer = new TestableCalmDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
       const buffer = await renderer.render()
       expect(buffer.length).toBeGreaterThan(0)
     })
@@ -1724,7 +1997,10 @@ describe('CalmDocxRenderer', () => {
         },
       ]
 
-      renderer = new TestableCalmDocxRenderer(resume, layoutIndex)
+      renderer = new TestableCalmDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
       const buffer = await renderer.render()
       expect(buffer.length).toBeGreaterThan(0)
     })
@@ -1741,7 +2017,10 @@ describe('CalmDocxRenderer', () => {
         },
       ]
 
-      renderer = new TestableCalmDocxRenderer(resume, layoutIndex)
+      renderer = new TestableCalmDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
       const buffer = await renderer.render()
       expect(buffer.length).toBeGreaterThan(0)
     })
@@ -1759,7 +2038,10 @@ describe('CalmDocxRenderer', () => {
         },
       ]
 
-      renderer = new TestableCalmDocxRenderer(resume, layoutIndex)
+      renderer = new TestableCalmDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
       const buffer = await renderer.render()
       expect(buffer.length).toBeGreaterThan(0)
     })
@@ -1770,7 +2052,10 @@ describe('CalmDocxRenderer', () => {
         summary: '',
       }
 
-      renderer = new TestableCalmDocxRenderer(resume, layoutIndex)
+      renderer = new TestableCalmDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
       const buffer = await renderer.render()
       expect(buffer.length).toBeGreaterThan(0)
     })
@@ -1781,7 +2066,10 @@ describe('CalmDocxRenderer', () => {
         summary: 'Just plain text without any markdown formatting.',
       }
 
-      renderer = new TestableCalmDocxRenderer(resume, layoutIndex)
+      renderer = new TestableCalmDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
       const buffer = await renderer.render()
       expect(buffer.length).toBeGreaterThan(0)
 
@@ -1816,14 +2104,17 @@ describe('CalmDocxRenderer', () => {
       ]
 
       // Set custom order: work before education
-      resume.layouts[layoutIndex] = {
+      resume.layouts[findLayoutIndex(resume, 'docx')] = {
         engine: 'docx',
         sections: {
           order: ['work', 'education'],
         },
       }
 
-      renderer = new TestableCalmDocxRenderer(resume, layoutIndex)
+      renderer = new TestableCalmDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
       const result = JSON.stringify(renderer.testRenderOrderedSections())
 
       const workIndex = result.indexOf('Work')
@@ -1853,14 +2144,17 @@ describe('CalmDocxRenderer', () => {
       ]
 
       // Set custom typography with fontSize
-      resume.layouts[layoutIndex] = {
+      resume.layouts[findLayoutIndex(resume, 'docx')] = {
         engine: 'docx',
         typography: {
           fontSize: '12pt',
         },
       }
 
-      renderer = new TestableCalmDocxRenderer(resume, layoutIndex)
+      renderer = new TestableCalmDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
       const buffer = await renderer.render()
 
       expect(buffer.length).toBeGreaterThan(0)
@@ -1874,14 +2168,17 @@ describe('CalmDocxRenderer', () => {
       }
 
       // Set custom typography with fontFamily
-      resume.layouts[layoutIndex] = {
+      resume.layouts[findLayoutIndex(resume, 'docx')] = {
         engine: 'docx',
         typography: {
           fontFamily: 'Arial',
         },
       }
 
-      renderer = new TestableCalmDocxRenderer(resume, layoutIndex)
+      renderer = new TestableCalmDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
       const buffer = await renderer.render()
 
       expect(buffer.length).toBeGreaterThan(0)
@@ -1904,14 +2201,17 @@ describe('CalmDocxRenderer', () => {
       ]
 
       // Set custom typography with lineSpacing
-      resume.layouts[layoutIndex] = {
+      resume.layouts[findLayoutIndex(resume, 'docx')] = {
         engine: 'docx',
         typography: {
           lineSpacing: 'relaxed',
         },
       }
 
-      renderer = new TestableCalmDocxRenderer(resume, layoutIndex)
+      renderer = new TestableCalmDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
       const buffer = await renderer.render()
 
       expect(buffer.length).toBeGreaterThan(0)
@@ -1957,7 +2257,7 @@ And **bold** text with *italic* and [links](https://example.com).`,
       ]
 
       // Set all typography options
-      resume.layouts[layoutIndex] = {
+      resume.layouts[findLayoutIndex(resume, 'docx')] = {
         engine: 'docx',
         typography: {
           fontSize: '10.5pt',
@@ -1966,7 +2266,10 @@ And **bold** text with *italic* and [links](https://example.com).`,
         },
       }
 
-      renderer = new TestableCalmDocxRenderer(resume, layoutIndex)
+      renderer = new TestableCalmDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
       const buffer = await renderer.render()
 
       expect(buffer.length).toBeGreaterThan(0)
@@ -1979,14 +2282,17 @@ And **bold** text with *italic* and [links](https://example.com).`,
       }
 
       // Set typography with decimal fontSize
-      resume.layouts[layoutIndex] = {
+      resume.layouts[findLayoutIndex(resume, 'docx')] = {
         engine: 'docx',
         typography: {
           fontSize: '11.5pt',
         },
       }
 
-      renderer = new TestableCalmDocxRenderer(resume, layoutIndex)
+      renderer = new TestableCalmDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
       const buffer = await renderer.render()
 
       expect(buffer.length).toBeGreaterThan(0)
@@ -2001,7 +2307,7 @@ And **bold** text with *italic* and [links](https://example.com).`,
           summary: 'Test summary',
         }
 
-        resume.layouts[layoutIndex] = {
+        resume.layouts[findLayoutIndex(resume, 'docx')] = {
           engine: 'docx',
           typography: {
             lineSpacing: lineSpacing as
@@ -2013,7 +2319,10 @@ And **bold** text with *italic* and [links](https://example.com).`,
           },
         }
 
-        renderer = new TestableCalmDocxRenderer(resume, layoutIndex)
+        renderer = new TestableCalmDocxRenderer(
+          resume,
+          findLayoutIndex(resume, 'docx')
+        )
         const buffer = await renderer.render()
 
         expect(buffer.length).toBeGreaterThan(0)
@@ -2027,11 +2336,14 @@ And **bold** text with *italic* and [links](https://example.com).`,
       }
 
       // DOCX layout without typography settings
-      resume.layouts[layoutIndex] = {
+      resume.layouts[findLayoutIndex(resume, 'docx')] = {
         engine: 'docx',
       }
 
-      renderer = new TestableCalmDocxRenderer(resume, layoutIndex)
+      renderer = new TestableCalmDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
       const buffer = await renderer.render()
 
       expect(buffer.length).toBeGreaterThan(0)
@@ -2066,7 +2378,7 @@ And **bold** text with *italic* and [links](https://example.com).`,
 - Third achievement`,
       }
 
-      resume.layouts[layoutIndex] = {
+      resume.layouts[findLayoutIndex(resume, 'docx')] = {
         engine: 'docx',
         typography: {
           fontSize: '11pt',
@@ -2075,7 +2387,10 @@ And **bold** text with *italic* and [links](https://example.com).`,
         },
       }
 
-      renderer = new TestableCalmDocxRenderer(resume, layoutIndex)
+      renderer = new TestableCalmDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
       const buffer = await renderer.render()
 
       expect(buffer.length).toBeGreaterThan(0)
@@ -2094,7 +2409,7 @@ And **bold** text with *italic* and [links](https://example.com).`,
         },
       ]
 
-      resume.layouts[layoutIndex] = {
+      resume.layouts[findLayoutIndex(resume, 'docx')] = {
         engine: 'docx',
         typography: {
           fontSize: '10pt',
@@ -2103,7 +2418,10 @@ And **bold** text with *italic* and [links](https://example.com).`,
         },
       }
 
-      renderer = new TestableCalmDocxRenderer(resume, layoutIndex)
+      renderer = new TestableCalmDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
       const buffer = await renderer.render()
 
       expect(buffer.length).toBeGreaterThan(0)
@@ -2116,7 +2434,7 @@ And **bold** text with *italic* and [links](https://example.com).`,
       }
 
       // Force an invalid font size format (defensive test)
-      resume.layouts[layoutIndex] = {
+      resume.layouts[findLayoutIndex(resume, 'docx')] = {
         engine: 'docx',
         typography: {
           // Use type coercion to test fallback behavior for invalid format
@@ -2124,7 +2442,10 @@ And **bold** text with *italic* and [links](https://example.com).`,
         },
       }
 
-      renderer = new TestableCalmDocxRenderer(resume, layoutIndex)
+      renderer = new TestableCalmDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
       const buffer = await renderer.render()
 
       // Should still generate document with default font size
@@ -2143,7 +2464,10 @@ And **bold** text with *italic* and [links](https://example.com).`,
     - Level 3 deeply nested item`,
       }
 
-      renderer = new TestableCalmDocxRenderer(resume, layoutIndex)
+      renderer = new TestableCalmDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
       const buffer = await renderer.render()
       expect(buffer.length).toBeGreaterThan(0)
     })
@@ -2156,7 +2480,10 @@ And **bold** text with *italic* and [links](https://example.com).`,
   2. Nested ordered item 2`,
       }
 
-      renderer = new TestableCalmDocxRenderer(resume, layoutIndex)
+      renderer = new TestableCalmDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
       const buffer = await renderer.render()
       expect(buffer.length).toBeGreaterThan(0)
     })
@@ -2169,7 +2496,10 @@ And **bold** text with *italic* and [links](https://example.com).`,
    - Nested bullet item 2`,
       }
 
-      renderer = new TestableCalmDocxRenderer(resume, layoutIndex)
+      renderer = new TestableCalmDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
       const buffer = await renderer.render()
       expect(buffer.length).toBeGreaterThan(0)
     })
@@ -2183,7 +2513,10 @@ And **bold** text with *italic* and [links](https://example.com).`,
 - Another item with [multiple](https://a.com) [links](https://b.com)`,
       }
 
-      renderer = new TestableCalmDocxRenderer(resume, layoutIndex)
+      renderer = new TestableCalmDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
       const buffer = await renderer.render()
       expect(buffer.length).toBeGreaterThan(0)
     })
@@ -2196,7 +2529,10 @@ And **bold** text with *italic* and [links](https://example.com).`,
 - Item with ***bold italic*** text`,
       }
 
-      renderer = new TestableCalmDocxRenderer(resume, layoutIndex)
+      renderer = new TestableCalmDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
       const buffer = await renderer.render()
       expect(buffer.length).toBeGreaterThan(0)
     })
@@ -2210,7 +2546,10 @@ And **bold** text with *italic* and [links](https://example.com).`,
 - Back to first level`,
       }
 
-      renderer = new TestableCalmDocxRenderer(resume, layoutIndex)
+      renderer = new TestableCalmDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
       const buffer = await renderer.render()
       expect(buffer.length).toBeGreaterThan(0)
     })
@@ -2227,7 +2566,10 @@ And **bold** text with *italic* and [links](https://example.com).`,
 - Next list item`,
       }
 
-      renderer = new TestableCalmDocxRenderer(resume, layoutIndex)
+      renderer = new TestableCalmDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
       const buffer = await renderer.render()
       expect(buffer.length).toBeGreaterThan(0)
     })
@@ -2247,7 +2589,10 @@ And **bold** text with *italic* and [links](https://example.com).`,
         },
       ]
 
-      renderer = new TestableCalmDocxRenderer(resume, layoutIndex)
+      renderer = new TestableCalmDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
       const buffer = await renderer.render()
       expect(buffer.length).toBeGreaterThan(0)
     })
@@ -2268,7 +2613,10 @@ And **bold** text with *italic* and [links](https://example.com).`,
         },
       ]
 
-      renderer = new TestableCalmDocxRenderer(resume, layoutIndex)
+      renderer = new TestableCalmDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
       const buffer = await renderer.render()
       expect(buffer.length).toBeGreaterThan(0)
     })
@@ -2279,7 +2627,10 @@ And **bold** text with *italic* and [links](https://example.com).`,
       // Test the false branch of `if (name)` in createBasicsParagraphs
       resume.content.basics = { name: '' }
 
-      renderer = new TestableCalmDocxRenderer(resume, layoutIndex)
+      renderer = new TestableCalmDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
       const buffer = await renderer.render()
       expect(buffer.length).toBeGreaterThan(0)
     })
@@ -2287,7 +2638,7 @@ And **bold** text with *italic* and [links](https://example.com).`,
     it('should handle invalid lineSpacing value gracefully', async () => {
       // Test the fallback branch for invalid lineSpacing
       resume.content.basics = { name: 'Test' }
-      resume.layouts[layoutIndex] = {
+      resume.layouts[findLayoutIndex(resume, 'docx')] = {
         engine: 'docx',
         typography: {
           // Use type coercion to test fallback behavior for invalid lineSpacing
@@ -2295,7 +2646,10 @@ And **bold** text with *italic* and [links](https://example.com).`,
         },
       }
 
-      renderer = new TestableCalmDocxRenderer(resume, layoutIndex)
+      renderer = new TestableCalmDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
       const buffer = await renderer.render()
       expect(buffer.length).toBeGreaterThan(0)
     })
@@ -2304,7 +2658,10 @@ And **bold** text with *italic* and [links](https://example.com).`,
       // Test the isEmptyValue(markdown) branch returning true
       resume.content.basics = { name: 'Test', summary: '' }
 
-      renderer = new TestableCalmDocxRenderer(resume, layoutIndex)
+      renderer = new TestableCalmDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
       const buffer = await renderer.render()
       expect(buffer.length).toBeGreaterThan(0)
     })
@@ -2315,7 +2672,10 @@ And **bold** text with *italic* and [links](https://example.com).`,
       // Explicitly set summary to undefined
       resume.content.basics.summary = undefined
 
-      renderer = new TestableCalmDocxRenderer(resume, layoutIndex)
+      renderer = new TestableCalmDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
       const buffer = await renderer.render()
       expect(buffer.length).toBeGreaterThan(0)
     })
@@ -2324,7 +2684,10 @@ And **bold** text with *italic* and [links](https://example.com).`,
       // Test the isEmptyValue(markdown) with whitespace string
       resume.content.basics = { name: 'Test', summary: '   ' }
 
-      renderer = new TestableCalmDocxRenderer(resume, layoutIndex)
+      renderer = new TestableCalmDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
       const buffer = await renderer.render()
       expect(buffer.length).toBeGreaterThan(0)
     })
@@ -2341,25 +2704,31 @@ And **bold** text with *italic* and [links](https://example.com).`,
         },
       ]
 
-      renderer = new TestableCalmDocxRenderer(resume, layoutIndex)
+      renderer = new TestableCalmDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
       const buffer = await renderer.render()
       expect(buffer.length).toBeGreaterThan(0)
     })
 
     it('should handle minimal layout without page or advanced', async () => {
       resume.content.basics = { name: 'Test' }
-      resume.layouts[layoutIndex] = {
+      resume.layouts[findLayoutIndex(resume, 'docx')] = {
         engine: 'docx',
       }
 
-      renderer = new TestableCalmDocxRenderer(resume, layoutIndex)
+      renderer = new TestableCalmDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
       const buffer = await renderer.render()
       expect(buffer.length).toBeGreaterThan(0)
     })
 
     it('should handle custom page margins', async () => {
       resume.content.basics = { name: 'Test' }
-      resume.layouts[layoutIndex] = {
+      resume.layouts[findLayoutIndex(resume, 'docx')] = {
         engine: 'docx',
         page: {
           margins: {
@@ -2371,14 +2740,17 @@ And **bold** text with *italic* and [links](https://example.com).`,
         },
       }
 
-      renderer = new TestableCalmDocxRenderer(resume, layoutIndex)
+      renderer = new TestableCalmDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
       const buffer = await renderer.render()
       expect(buffer.length).toBeGreaterThan(0)
     })
 
     it('should handle invalid margin values gracefully', async () => {
       resume.content.basics = { name: 'Test' }
-      resume.layouts[layoutIndex] = {
+      resume.layouts[findLayoutIndex(resume, 'docx')] = {
         engine: 'docx',
         page: {
           margins: {
@@ -2390,7 +2762,10 @@ And **bold** text with *italic* and [links](https://example.com).`,
         },
       }
 
-      renderer = new TestableCalmDocxRenderer(resume, layoutIndex)
+      renderer = new TestableCalmDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
       const buffer = await renderer.render()
       expect(buffer.length).toBeGreaterThan(0)
     })
@@ -2409,14 +2784,17 @@ And **bold** text with *italic* and [links](https://example.com).`,
           startDate: '2020',
         },
       ]
-      resume.layouts[layoutIndex] = {
+      resume.layouts[findLayoutIndex(resume, 'docx')] = {
         engine: 'docx',
         advanced: {
           showUrls: false,
         },
       }
 
-      renderer = new TestableCalmDocxRenderer(resume, layoutIndex)
+      renderer = new TestableCalmDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
       const paragraphs = renderer.renderEducation()
       const result = JSON.stringify(paragraphs)
       expect(result).not.toContain('https://test.edu')
@@ -2424,39 +2802,48 @@ And **bold** text with *italic* and [links](https://example.com).`,
 
     it('should show page numbers by default', async () => {
       resume.content.basics = { name: 'Test' }
-      resume.layouts[layoutIndex] = {
+      resume.layouts[findLayoutIndex(resume, 'docx')] = {
         engine: 'docx',
       }
 
-      renderer = new TestableCalmDocxRenderer(resume, layoutIndex)
+      renderer = new TestableCalmDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
       const buffer = await renderer.render()
       expect(buffer.length).toBeGreaterThan(0)
     })
 
     it('should hide page numbers when showPageNumbers is false', async () => {
       resume.content.basics = { name: 'Test' }
-      resume.layouts[layoutIndex] = {
+      resume.layouts[findLayoutIndex(resume, 'docx')] = {
         engine: 'docx',
         page: {
           showPageNumbers: false,
         },
       }
 
-      renderer = new TestableCalmDocxRenderer(resume, layoutIndex)
+      renderer = new TestableCalmDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
       const buffer = await renderer.render()
       expect(buffer.length).toBeGreaterThan(0)
     })
 
     it('should handle letter paper size', async () => {
       resume.content.basics = { name: 'Test' }
-      resume.layouts[layoutIndex] = {
+      resume.layouts[findLayoutIndex(resume, 'docx')] = {
         engine: 'docx',
         page: {
           paperSize: 'letter' as const,
         },
       }
 
-      renderer = new TestableCalmDocxRenderer(resume, layoutIndex)
+      renderer = new TestableCalmDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
       const buffer = await renderer.render()
       expect(buffer.length).toBeGreaterThan(0)
     })

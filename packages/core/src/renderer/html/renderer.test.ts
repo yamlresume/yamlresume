@@ -30,6 +30,7 @@ import {
   type HtmlLayout,
   type Resume,
 } from '@/models'
+import { findLayoutIndex } from '../test-utils'
 import { LINE_SPACING_MAP } from './constants'
 import { HtmlRenderer } from './renderer'
 
@@ -39,21 +40,19 @@ vi.mock('./styles/vscode.css', () => ({ default: 'MOCK_VSCODE_CSS' }))
 describe('HtmlRenderer', () => {
   let resume: Resume
   let renderer: HtmlRenderer
-  let layoutIndex: number
 
   beforeEach(() => {
     resume = cloneDeep(FILLED_RESUME)
-
-    layoutIndex = FILLED_RESUME.layouts.findIndex(
-      (layout) => layout.engine === 'html'
-    )
   })
 
   describe('layouts', () => {
     describe('advanced.showIcons', () => {
       it('should default showIcons to true when layout is missing', () => {
         resume.content.basics.email = 'john.doe@example.com'
-        const renderer = new HtmlRenderer(resume, layoutIndex)
+        const renderer = new HtmlRenderer(
+          resume,
+          findLayoutIndex(resume, 'html')
+        )
 
         renderer.resume.layouts = undefined
         const result = renderer.renderBasics()
@@ -62,9 +61,15 @@ describe('HtmlRenderer', () => {
 
       it('should default showIcons to true when advanced is missing', () => {
         resume.content.basics.email = 'john.doe@example.com'
-        const renderer = new HtmlRenderer(resume, layoutIndex)
-        // @ts-expect-error
-        renderer.resume.layouts[layoutIndex].advanced = undefined
+        const renderer = new HtmlRenderer(
+          resume,
+          findLayoutIndex(resume, 'html')
+        )
+        ;(
+          renderer.resume.layouts[
+            findLayoutIndex(renderer.resume, 'html')
+          ] as HtmlLayout
+        ).advanced = undefined
 
         const result = renderer.renderBasics()
         expect(result).toContain('<span class="resume-contact-icon">📧</span>')
@@ -72,11 +77,22 @@ describe('HtmlRenderer', () => {
 
       it('should default showIcons to true when showIcons is undefined', () => {
         resume.content.basics.email = 'john.doe@example.com'
-        const renderer = new HtmlRenderer(resume, layoutIndex)
-        // @ts-expect-error
-        if (renderer.resume.layouts[layoutIndex].advanced) {
-          // @ts-expect-error
-          renderer.resume.layouts[layoutIndex].advanced.showIcons = undefined
+        const renderer = new HtmlRenderer(
+          resume,
+          findLayoutIndex(resume, 'html')
+        )
+        if (
+          (
+            renderer.resume.layouts[
+              findLayoutIndex(renderer.resume, 'html')
+            ] as HtmlLayout
+          ).advanced
+        ) {
+          ;(
+            renderer.resume.layouts[
+              findLayoutIndex(renderer.resume, 'html')
+            ] as HtmlLayout
+          ).advanced.showIcons = undefined
         }
 
         const result = renderer.renderBasics()
@@ -86,10 +102,15 @@ describe('HtmlRenderer', () => {
 
     describe('advanced.title', () => {
       it('should use custom title when provided', () => {
-        const htmlLayout = resume.layouts[layoutIndex] as HtmlLayout
+        const htmlLayout = resume.layouts[
+          findLayoutIndex(resume, 'html')
+        ] as HtmlLayout
         htmlLayout.advanced = { ...htmlLayout.advanced, title: 'Custom Title' }
 
-        const renderer = new HtmlRenderer(resume, layoutIndex)
+        const renderer = new HtmlRenderer(
+          resume,
+          findLayoutIndex(resume, 'html')
+        )
         const result = renderer.renderPreamble()
 
         expect(result).toContain('<title>Custom Title</title>')
@@ -97,10 +118,15 @@ describe('HtmlRenderer', () => {
 
       it('should fall back to default title when title is missing', () => {
         resume.content.basics.name = 'John Doe'
-        const htmlLayout = resume.layouts[layoutIndex] as HtmlLayout
+        const htmlLayout = resume.layouts[
+          findLayoutIndex(resume, 'html')
+        ] as HtmlLayout
         htmlLayout.advanced = { ...htmlLayout.advanced, title: undefined }
 
-        const renderer = new HtmlRenderer(resume, layoutIndex)
+        const renderer = new HtmlRenderer(
+          resume,
+          findLayoutIndex(resume, 'html')
+        )
         const result = renderer.renderPreamble()
 
         expect(result).toContain('<title>John Doe Resume</title>')
@@ -109,7 +135,10 @@ describe('HtmlRenderer', () => {
 
     describe('advanced.footer', () => {
       it('should render default footer when footer is not provided', () => {
-        const renderer = new HtmlRenderer(resume, layoutIndex)
+        const renderer = new HtmlRenderer(
+          resume,
+          findLayoutIndex(resume, 'html')
+        )
         const result = renderer.render()
 
         expect(result).toContain('<footer class="resume-footer">')
@@ -119,13 +148,18 @@ describe('HtmlRenderer', () => {
       })
 
       it('should render custom footer when provided', () => {
-        const htmlLayout = resume.layouts[layoutIndex] as HtmlLayout
+        const htmlLayout = resume.layouts[
+          findLayoutIndex(resume, 'html')
+        ] as HtmlLayout
         htmlLayout.advanced = {
           ...htmlLayout.advanced,
           footer: 'Custom Footer Content',
         }
 
-        const renderer = new HtmlRenderer(resume, layoutIndex)
+        const renderer = new HtmlRenderer(
+          resume,
+          findLayoutIndex(resume, 'html')
+        )
         const result = renderer.render()
 
         expect(result).toContain('<footer class="resume-footer">')
@@ -133,13 +167,18 @@ describe('HtmlRenderer', () => {
       })
 
       it('should not render footer when footer is empty string', () => {
-        const htmlLayout = resume.layouts[layoutIndex] as HtmlLayout
+        const htmlLayout = resume.layouts[
+          findLayoutIndex(resume, 'html')
+        ] as HtmlLayout
         htmlLayout.advanced = {
           ...htmlLayout.advanced,
           footer: '',
         }
 
-        const renderer = new HtmlRenderer(resume, layoutIndex)
+        const renderer = new HtmlRenderer(
+          resume,
+          findLayoutIndex(resume, 'html')
+        )
         const result = renderer.render()
 
         expect(result).not.toContain('<footer class="resume-footer">')
@@ -148,13 +187,18 @@ describe('HtmlRenderer', () => {
 
     describe('advanced.description', () => {
       it('should render description meta tag when provided', () => {
-        const htmlLayout = resume.layouts[layoutIndex] as HtmlLayout
+        const htmlLayout = resume.layouts[
+          findLayoutIndex(resume, 'html')
+        ] as HtmlLayout
         htmlLayout.advanced = {
           ...htmlLayout.advanced,
           description: 'Custom Description',
         }
 
-        const renderer = new HtmlRenderer(resume, layoutIndex)
+        const renderer = new HtmlRenderer(
+          resume,
+          findLayoutIndex(resume, 'html')
+        )
         const result = renderer.renderPreamble()
 
         expect(result).toContain(
@@ -163,10 +207,15 @@ describe('HtmlRenderer', () => {
       })
 
       it('should not render description meta tag when not provided', () => {
-        const htmlLayout = resume.layouts[layoutIndex] as HtmlLayout
+        const htmlLayout = resume.layouts[
+          findLayoutIndex(resume, 'html')
+        ] as HtmlLayout
         htmlLayout.advanced = { ...htmlLayout.advanced, description: undefined }
 
-        const renderer = new HtmlRenderer(resume, layoutIndex)
+        const renderer = new HtmlRenderer(
+          resume,
+          findLayoutIndex(resume, 'html')
+        )
         const result = renderer.renderPreamble()
 
         expect(result).not.toContain('<meta name="description"')
@@ -175,13 +224,18 @@ describe('HtmlRenderer', () => {
 
     describe('advanced.keywords', () => {
       it('should render keywords meta tag when provided', () => {
-        const htmlLayout = resume.layouts[layoutIndex] as HtmlLayout
+        const htmlLayout = resume.layouts[
+          findLayoutIndex(resume, 'html')
+        ] as HtmlLayout
         htmlLayout.advanced = {
           ...htmlLayout.advanced,
           keywords: 'keyword1, keyword2',
         }
 
-        const renderer = new HtmlRenderer(resume, layoutIndex)
+        const renderer = new HtmlRenderer(
+          resume,
+          findLayoutIndex(resume, 'html')
+        )
         const result = renderer.renderPreamble()
 
         expect(result).toContain(
@@ -190,10 +244,15 @@ describe('HtmlRenderer', () => {
       })
 
       it('should not render keywords meta tag when not provided', () => {
-        const htmlLayout = resume.layouts[layoutIndex] as HtmlLayout
+        const htmlLayout = resume.layouts[
+          findLayoutIndex(resume, 'html')
+        ] as HtmlLayout
         htmlLayout.advanced = { ...htmlLayout.advanced, keywords: undefined }
 
-        const renderer = new HtmlRenderer(resume, layoutIndex)
+        const renderer = new HtmlRenderer(
+          resume,
+          findLayoutIndex(resume, 'html')
+        )
         const result = renderer.renderPreamble()
 
         expect(result).not.toContain('<meta name="keywords"')
@@ -204,13 +263,15 @@ describe('HtmlRenderer', () => {
       it('should use default font size when typography is empty', () => {
         for (const test of [undefined, {}]) {
           const resume = cloneDeep(DEFAULT_RESUME)
-          const layoutIndex = resume.layouts.findIndex(
-            (l) => l.engine === 'html'
-          )
-          const htmlLayout = resume.layouts[layoutIndex] as HtmlLayout
+          const htmlLayout = resume.layouts[
+            findLayoutIndex(resume, 'html')
+          ] as HtmlLayout
           htmlLayout.typography = test
 
-          const renderer = new HtmlRenderer(resume, layoutIndex)
+          const renderer = new HtmlRenderer(
+            resume,
+            findLayoutIndex(resume, 'html')
+          )
           const result = renderer.renderPreamble()
 
           expect(result).toContain('--text-font-size: 16px')
@@ -219,11 +280,16 @@ describe('HtmlRenderer', () => {
 
       it('should use default font size when font size is empty string', () => {
         const resume = cloneDeep(DEFAULT_RESUME)
-        const htmlLayout = resume.layouts[layoutIndex] as HtmlLayout
+        const htmlLayout = resume.layouts[
+          findLayoutIndex(resume, 'html')
+        ] as HtmlLayout
         // @ts-expect-error
         htmlLayout.typography = { fontSize: '' }
 
-        const renderer = new HtmlRenderer(resume, layoutIndex)
+        const renderer = new HtmlRenderer(
+          resume,
+          findLayoutIndex(resume, 'html')
+        )
         const result = renderer.renderPreamble()
 
         expect(result).toContain('--text-font-size: 16px')
@@ -233,10 +299,15 @@ describe('HtmlRenderer', () => {
     describe('typography.fontFamily', () => {
       it('should use default font family when typography is empty', () => {
         const resume = cloneDeep(DEFAULT_RESUME)
-        const htmlLayout = resume.layouts[layoutIndex] as HtmlLayout
+        const htmlLayout = resume.layouts[
+          findLayoutIndex(resume, 'html')
+        ] as HtmlLayout
         htmlLayout.typography = undefined
 
-        const renderer = new HtmlRenderer(resume, layoutIndex)
+        const renderer = new HtmlRenderer(
+          resume,
+          findLayoutIndex(resume, 'html')
+        )
         const result = renderer.renderPreamble()
 
         expect(result).toContain(
@@ -247,10 +318,15 @@ describe('HtmlRenderer', () => {
       it('should use custom font family when provided', () => {
         const fontFamily = 'Monaco, Helvetica'
         const resume = cloneDeep(DEFAULT_RESUME)
-        const htmlLayout = resume.layouts[layoutIndex] as HtmlLayout
+        const htmlLayout = resume.layouts[
+          findLayoutIndex(resume, 'html')
+        ] as HtmlLayout
         htmlLayout.typography = { ...htmlLayout.typography, fontFamily }
 
-        const renderer = new HtmlRenderer(resume, layoutIndex)
+        const renderer = new HtmlRenderer(
+          resume,
+          findLayoutIndex(resume, 'html')
+        )
         const result = renderer.renderPreamble()
 
         expect(result).toContain(
@@ -262,10 +338,15 @@ describe('HtmlRenderer', () => {
     describe('typography.lineSpacing', () => {
       it('should use default line spacing (normal = 1.5) when typography is empty', () => {
         const resume = cloneDeep(DEFAULT_RESUME)
-        const htmlLayout = resume.layouts[layoutIndex] as HtmlLayout
+        const htmlLayout = resume.layouts[
+          findLayoutIndex(resume, 'html')
+        ] as HtmlLayout
         htmlLayout.typography = undefined
 
-        const renderer = new HtmlRenderer(resume, layoutIndex)
+        const renderer = new HtmlRenderer(
+          resume,
+          findLayoutIndex(resume, 'html')
+        )
         const result = renderer.renderPreamble()
 
         expect(result).toContain('--line-height: 1.5')
@@ -273,10 +354,15 @@ describe('HtmlRenderer', () => {
 
       it('should use default line spacing when lineSpacing is not provided', () => {
         const resume = cloneDeep(DEFAULT_RESUME)
-        const htmlLayout = resume.layouts[layoutIndex] as HtmlLayout
+        const htmlLayout = resume.layouts[
+          findLayoutIndex(resume, 'html')
+        ] as HtmlLayout
         htmlLayout.typography = { fontSize: '14px' }
 
-        const renderer = new HtmlRenderer(resume, layoutIndex)
+        const renderer = new HtmlRenderer(
+          resume,
+          findLayoutIndex(resume, 'html')
+        )
         const result = renderer.renderPreamble()
 
         expect(result).toContain('--line-height: 1.5')
@@ -285,13 +371,18 @@ describe('HtmlRenderer', () => {
       it('should use provided line spacing when lineSpacing is set', () => {
         for (const [spacing, value] of Object.entries(LINE_SPACING_MAP)) {
           const resume = cloneDeep(DEFAULT_RESUME)
-          const htmlLayout = resume.layouts[layoutIndex] as HtmlLayout
+          const htmlLayout = resume.layouts[
+            findLayoutIndex(resume, 'html')
+          ] as HtmlLayout
           htmlLayout.typography = {
             ...htmlLayout.typography,
             lineSpacing: spacing as keyof typeof LINE_SPACING_MAP,
           }
 
-          const renderer = new HtmlRenderer(resume, layoutIndex)
+          const renderer = new HtmlRenderer(
+            resume,
+            findLayoutIndex(resume, 'html')
+          )
           const result = renderer.renderPreamble()
 
           expect(result).toContain(`--line-height: ${value}`)
@@ -301,10 +392,15 @@ describe('HtmlRenderer', () => {
 
     describe('template', () => {
       it('should use calm css by default', () => {
-        const htmlLayout = resume.layouts[layoutIndex] as HtmlLayout
+        const htmlLayout = resume.layouts[
+          findLayoutIndex(resume, 'html')
+        ] as HtmlLayout
         delete htmlLayout.template
 
-        const renderer = new HtmlRenderer(resume, layoutIndex)
+        const renderer = new HtmlRenderer(
+          resume,
+          findLayoutIndex(resume, 'html')
+        )
         const result = renderer.renderPreamble()
 
         expect(result).toContain('MOCK_CALM_CSS')
@@ -312,10 +408,15 @@ describe('HtmlRenderer', () => {
       })
 
       it('should use other css when template is not the default calm', () => {
-        const htmlLayout = resume.layouts[layoutIndex] as HtmlLayout
+        const htmlLayout = resume.layouts[
+          findLayoutIndex(resume, 'html')
+        ] as HtmlLayout
         htmlLayout.template = 'vscode'
 
-        const renderer = new HtmlRenderer(resume, layoutIndex)
+        const renderer = new HtmlRenderer(
+          resume,
+          findLayoutIndex(resume, 'html')
+        )
         const result = renderer.renderPreamble()
 
         expect(result).toContain('MOCK_VSCODE_CSS')
@@ -326,13 +427,15 @@ describe('HtmlRenderer', () => {
 
   describe('renderPreamble', () => {
     it('should render correct preamble with metadata and styles', () => {
-      const htmlLayout = resume.layouts[layoutIndex] as HtmlLayout
+      const htmlLayout = resume.layouts[
+        findLayoutIndex(resume, 'html')
+      ] as HtmlLayout
       const fontSize = '14px'
 
       resume.content.basics.name = 'John Doe'
       htmlLayout.typography.fontSize = fontSize
 
-      renderer = new HtmlRenderer(resume, layoutIndex)
+      renderer = new HtmlRenderer(resume, findLayoutIndex(resume, 'html'))
       const result = renderer.renderPreamble()
 
       expect(result).toContain('<meta charset="UTF-8">')
@@ -352,7 +455,7 @@ describe('HtmlRenderer', () => {
       const resume = cloneDeep(DEFAULT_RESUME)
       resume.content.basics.name = undefined
 
-      const renderer = new HtmlRenderer(resume, layoutIndex)
+      const renderer = new HtmlRenderer(resume, findLayoutIndex(resume, 'html'))
       const result = renderer.renderPreamble()
 
       expect(result).toContain('<title>YAMLResume</title>')
@@ -363,7 +466,7 @@ describe('HtmlRenderer', () => {
     it('should return empty string when basics is missing', () => {
       resume.content.basics = undefined
 
-      renderer = new HtmlRenderer(resume, layoutIndex)
+      renderer = new HtmlRenderer(resume, findLayoutIndex(resume, 'html'))
       const result = renderer.renderBasics()
 
       expect(result).toBe('')
@@ -384,7 +487,7 @@ describe('HtmlRenderer', () => {
         url,
       }
 
-      renderer = new HtmlRenderer(resume, layoutIndex)
+      renderer = new HtmlRenderer(resume, findLayoutIndex(resume, 'html'))
       const result = renderer.renderBasics()
 
       expect(result).toContain(`<h1 class="resume-name">${name}</h1>`)
@@ -409,10 +512,12 @@ describe('HtmlRenderer', () => {
       const email = 'hi@ppresume.com'
       resume.content.basics.email = email
 
-      const htmlLayout = resume.layouts[layoutIndex] as HtmlLayout
+      const htmlLayout = resume.layouts[
+        findLayoutIndex(resume, 'html')
+      ] as HtmlLayout
       htmlLayout.advanced = { showIcons: false }
 
-      renderer = new HtmlRenderer(resume, layoutIndex)
+      renderer = new HtmlRenderer(resume, findLayoutIndex(resume, 'html'))
       const result = renderer.renderBasics()
 
       expect(result).toContain(
@@ -434,7 +539,7 @@ describe('HtmlRenderer', () => {
         url: undefined,
       }
 
-      renderer = new HtmlRenderer(resume, layoutIndex)
+      renderer = new HtmlRenderer(resume, findLayoutIndex(resume, 'html'))
       const result = renderer.renderBasics()
 
       expect(result).toContain(`<h1 class="resume-name">${name}</h1>`)
@@ -450,7 +555,7 @@ describe('HtmlRenderer', () => {
     it('should return empty string when summary is missing', () => {
       resume.content.basics.summary = undefined
 
-      renderer = new HtmlRenderer(resume, layoutIndex)
+      renderer = new HtmlRenderer(resume, findLayoutIndex(resume, 'html'))
       const result = renderer.renderSummary()
 
       expect(result).toBe('')
@@ -460,7 +565,7 @@ describe('HtmlRenderer', () => {
       const summary = 'A passionate developer.'
       resume.content.basics.summary = summary
 
-      renderer = new HtmlRenderer(resume, layoutIndex)
+      renderer = new HtmlRenderer(resume, findLayoutIndex(resume, 'html'))
       const result = renderer.renderSummary()
 
       expect(result).toContain(
@@ -478,7 +583,7 @@ describe('HtmlRenderer', () => {
     it('should return empty string when location is missing', () => {
       resume.content.location = undefined
 
-      renderer = new HtmlRenderer(resume, layoutIndex)
+      renderer = new HtmlRenderer(resume, findLayoutIndex(resume, 'html'))
       const result = renderer.renderLocation()
 
       expect(result).toBe('')
@@ -499,7 +604,7 @@ describe('HtmlRenderer', () => {
         country,
       }
 
-      renderer = new HtmlRenderer(resume, layoutIndex)
+      renderer = new HtmlRenderer(resume, findLayoutIndex(resume, 'html'))
       const result = renderer.renderLocation()
 
       expect(result).toContain(
@@ -522,7 +627,7 @@ describe('HtmlRenderer', () => {
         country,
       }
 
-      renderer = new HtmlRenderer(resume, layoutIndex)
+      renderer = new HtmlRenderer(resume, findLayoutIndex(resume, 'html'))
       const result = renderer.renderLocation()
 
       expect(result).toContain(
@@ -541,7 +646,7 @@ describe('HtmlRenderer', () => {
       for (const test of [undefined, []]) {
         resume.content.profiles = test
 
-        renderer = new HtmlRenderer(resume, layoutIndex)
+        renderer = new HtmlRenderer(resume, findLayoutIndex(resume, 'html'))
         const result = renderer.renderProfiles()
 
         expect(result).toBe('')
@@ -566,7 +671,7 @@ describe('HtmlRenderer', () => {
         },
       ]
 
-      renderer = new HtmlRenderer(resume, layoutIndex)
+      renderer = new HtmlRenderer(resume, findLayoutIndex(resume, 'html'))
       const result = renderer.renderProfiles()
 
       expect(result).toContain(
@@ -597,10 +702,12 @@ describe('HtmlRenderer', () => {
         },
       ]
 
-      const htmlLayout = resume.layouts[layoutIndex] as HtmlLayout
+      const htmlLayout = resume.layouts[
+        findLayoutIndex(resume, 'html')
+      ] as HtmlLayout
       htmlLayout.advanced = { showIcons: false }
 
-      renderer = new HtmlRenderer(resume, layoutIndex)
+      renderer = new HtmlRenderer(resume, findLayoutIndex(resume, 'html'))
       const result = renderer.renderProfiles()
 
       expect(result).toContain(
@@ -619,7 +726,7 @@ describe('HtmlRenderer', () => {
         { network: 'Twitter', username, url: '' },
       ]
 
-      renderer = new HtmlRenderer(resume, layoutIndex)
+      renderer = new HtmlRenderer(resume, findLayoutIndex(resume, 'html'))
       const result = renderer.renderProfiles()
 
       expect(result).toContain(
@@ -645,7 +752,7 @@ describe('HtmlRenderer', () => {
         { network: 'GitHub', username: undefined, url },
       ]
 
-      renderer = new HtmlRenderer(resume, layoutIndex)
+      renderer = new HtmlRenderer(resume, findLayoutIndex(resume, 'html'))
       const result = renderer.renderProfiles()
 
       expect(result).toContain(
@@ -660,7 +767,7 @@ describe('HtmlRenderer', () => {
     it('should return empty string when education is empty', () => {
       for (const test of [undefined, []]) {
         resume.content.education = test
-        renderer = new HtmlRenderer(resume, layoutIndex)
+        renderer = new HtmlRenderer(resume, findLayoutIndex(resume, 'html'))
         expect(renderer.renderEducation()).toBe('')
       }
     })
@@ -688,7 +795,7 @@ describe('HtmlRenderer', () => {
         },
       ]
 
-      renderer = new HtmlRenderer(resume, layoutIndex)
+      renderer = new HtmlRenderer(resume, findLayoutIndex(resume, 'html'))
       const result = renderer.renderEducation()
 
       expect(result).toContain('id="education"')
@@ -704,7 +811,7 @@ describe('HtmlRenderer', () => {
       const institution = 'School'
       // @ts-expect-error
       resume.content.education = [{ institution }]
-      renderer = new HtmlRenderer(resume, layoutIndex)
+      renderer = new HtmlRenderer(resume, findLayoutIndex(resume, 'html'))
       const result = renderer.renderEducation()
 
       expect(result).toContain(institution)
@@ -718,7 +825,7 @@ describe('HtmlRenderer', () => {
     it('should return empty string when work is empty', () => {
       for (const test of [undefined, []]) {
         resume.content.work = test
-        renderer = new HtmlRenderer(resume, layoutIndex)
+        renderer = new HtmlRenderer(resume, findLayoutIndex(resume, 'html'))
         expect(renderer.renderWork()).toBe('')
       }
     })
@@ -744,7 +851,7 @@ describe('HtmlRenderer', () => {
         },
       ]
 
-      renderer = new HtmlRenderer(resume, layoutIndex)
+      renderer = new HtmlRenderer(resume, findLayoutIndex(resume, 'html'))
       const result = renderer.renderWork()
 
       expect(result).toContain('id="work"')
@@ -765,7 +872,7 @@ describe('HtmlRenderer', () => {
       const name = 'Startup'
       // @ts-expect-error
       resume.content.work = [{ name }]
-      renderer = new HtmlRenderer(resume, layoutIndex)
+      renderer = new HtmlRenderer(resume, findLayoutIndex(resume, 'html'))
       const result = renderer.renderWork()
 
       expect(result).not.toContain('resume-labeled-list')
@@ -777,7 +884,7 @@ describe('HtmlRenderer', () => {
       for (const test of [undefined, []]) {
         resume.content.languages = test
 
-        renderer = new HtmlRenderer(resume, layoutIndex)
+        renderer = new HtmlRenderer(resume, findLayoutIndex(resume, 'html'))
         const result = renderer.renderLanguages()
 
         expect(result).toBe('')
@@ -797,7 +904,7 @@ describe('HtmlRenderer', () => {
         },
       ]
 
-      renderer = new HtmlRenderer(resume, layoutIndex)
+      renderer = new HtmlRenderer(resume, findLayoutIndex(resume, 'html'))
       const result = renderer.renderLanguages()
 
       expect(result).toContain(
@@ -834,7 +941,7 @@ describe('HtmlRenderer', () => {
         },
       ]
 
-      renderer = new HtmlRenderer(resume, layoutIndex)
+      renderer = new HtmlRenderer(resume, findLayoutIndex(resume, 'html'))
       const result = renderer.renderLanguages()
 
       expect(result).toContain(english)
@@ -854,7 +961,7 @@ describe('HtmlRenderer', () => {
         },
       ]
 
-      renderer = new HtmlRenderer(resume, layoutIndex)
+      renderer = new HtmlRenderer(resume, findLayoutIndex(resume, 'html'))
       const result = renderer.renderLanguages()
 
       expect(result).toContain(language)
@@ -868,7 +975,7 @@ describe('HtmlRenderer', () => {
       for (const test of [undefined, []]) {
         resume.content.skills = test
 
-        renderer = new HtmlRenderer(resume, layoutIndex)
+        renderer = new HtmlRenderer(resume, findLayoutIndex(resume, 'html'))
         const result = renderer.renderSkills()
 
         expect(result).toBe('')
@@ -888,7 +995,7 @@ describe('HtmlRenderer', () => {
         },
       ]
 
-      renderer = new HtmlRenderer(resume, layoutIndex)
+      renderer = new HtmlRenderer(resume, findLayoutIndex(resume, 'html'))
       const result = renderer.renderSkills()
 
       expect(result).toContain(
@@ -923,7 +1030,7 @@ describe('HtmlRenderer', () => {
         },
       ]
 
-      renderer = new HtmlRenderer(resume, layoutIndex)
+      renderer = new HtmlRenderer(resume, findLayoutIndex(resume, 'html'))
       const result = renderer.renderSkills()
 
       expect(result).toContain(javascript)
@@ -944,7 +1051,7 @@ describe('HtmlRenderer', () => {
         },
       ]
 
-      renderer = new HtmlRenderer(resume, layoutIndex)
+      renderer = new HtmlRenderer(resume, findLayoutIndex(resume, 'html'))
       const result = renderer.renderSkills()
 
       expect(result).toContain(name)
@@ -964,7 +1071,7 @@ describe('HtmlRenderer', () => {
         },
       ]
 
-      renderer = new HtmlRenderer(resume, layoutIndex)
+      renderer = new HtmlRenderer(resume, findLayoutIndex(resume, 'html'))
       const result = renderer.renderSkills()
 
       expect(result).toContain(name)
@@ -977,7 +1084,7 @@ describe('HtmlRenderer', () => {
     it('should return empty string when awards are empty', () => {
       for (const test of [undefined, []]) {
         resume.content.awards = test
-        renderer = new HtmlRenderer(resume, layoutIndex)
+        renderer = new HtmlRenderer(resume, findLayoutIndex(resume, 'html'))
         expect(renderer.renderAwards()).toBe('')
       }
     })
@@ -997,7 +1104,7 @@ describe('HtmlRenderer', () => {
         },
       ]
 
-      renderer = new HtmlRenderer(resume, layoutIndex)
+      renderer = new HtmlRenderer(resume, findLayoutIndex(resume, 'html'))
       const result = renderer.renderAwards()
 
       expect(result).toContain('id="awards"')
@@ -1011,7 +1118,7 @@ describe('HtmlRenderer', () => {
       const title = 'Participation'
       // @ts-expect-error
       resume.content.awards = [{ title }]
-      renderer = new HtmlRenderer(resume, layoutIndex)
+      renderer = new HtmlRenderer(resume, findLayoutIndex(resume, 'html'))
       const result = renderer.renderAwards()
 
       expect(result).toContain(title)
@@ -1024,7 +1131,7 @@ describe('HtmlRenderer', () => {
     it('should return empty string when certificates are empty', () => {
       for (const test of [undefined, []]) {
         resume.content.certificates = test
-        renderer = new HtmlRenderer(resume, layoutIndex)
+        renderer = new HtmlRenderer(resume, findLayoutIndex(resume, 'html'))
         expect(renderer.renderCertificates()).toBe('')
       }
     })
@@ -1044,7 +1151,7 @@ describe('HtmlRenderer', () => {
         },
       ]
 
-      renderer = new HtmlRenderer(resume, layoutIndex)
+      renderer = new HtmlRenderer(resume, findLayoutIndex(resume, 'html'))
       const result = renderer.renderCertificates()
 
       expect(result).toContain('id="certificates"')
@@ -1058,7 +1165,7 @@ describe('HtmlRenderer', () => {
       // @ts-expect-error
       resume.content.certificates = [{ name }]
 
-      renderer = new HtmlRenderer(resume, layoutIndex)
+      renderer = new HtmlRenderer(resume, findLayoutIndex(resume, 'html'))
       const result = renderer.renderCertificates()
 
       expect(result).toContain(`<div class="resume-entry-title">${name}</div>`)
@@ -1070,7 +1177,7 @@ describe('HtmlRenderer', () => {
     it('should return empty string when publications are empty', () => {
       for (const test of [undefined, []]) {
         resume.content.publications = test
-        renderer = new HtmlRenderer(resume, layoutIndex)
+        renderer = new HtmlRenderer(resume, findLayoutIndex(resume, 'html'))
         expect(renderer.renderPublications()).toBe('')
       }
     })
@@ -1092,7 +1199,7 @@ describe('HtmlRenderer', () => {
         },
       ]
 
-      renderer = new HtmlRenderer(resume, layoutIndex)
+      renderer = new HtmlRenderer(resume, findLayoutIndex(resume, 'html'))
       const result = renderer.renderPublications()
 
       expect(result).toContain('id="publications"')
@@ -1111,7 +1218,7 @@ describe('HtmlRenderer', () => {
       const name = 'Blog Post'
       // @ts-expect-error
       resume.content.publications = [{ name }]
-      renderer = new HtmlRenderer(resume, layoutIndex)
+      renderer = new HtmlRenderer(resume, findLayoutIndex(resume, 'html'))
       const result = renderer.renderPublications()
 
       expect(result).toContain(name)
@@ -1123,7 +1230,7 @@ describe('HtmlRenderer', () => {
     it('should return empty string when references are empty', () => {
       for (const test of [undefined, []]) {
         resume.content.references = test
-        renderer = new HtmlRenderer(resume, layoutIndex)
+        renderer = new HtmlRenderer(resume, findLayoutIndex(resume, 'html'))
         expect(renderer.renderReferences()).toBe('')
       }
     })
@@ -1145,7 +1252,7 @@ describe('HtmlRenderer', () => {
         },
       ]
 
-      renderer = new HtmlRenderer(resume, layoutIndex)
+      renderer = new HtmlRenderer(resume, findLayoutIndex(resume, 'html'))
       const result = renderer.renderReferences()
 
       expect(result).toContain('id="references"')
@@ -1170,7 +1277,7 @@ describe('HtmlRenderer', () => {
       const name = 'Dr. Smith'
       // @ts-expect-error
       resume.content.references = [{ name }]
-      renderer = new HtmlRenderer(resume, layoutIndex)
+      renderer = new HtmlRenderer(resume, findLayoutIndex(resume, 'html'))
       const result = renderer.renderReferences()
 
       expect(result).toContain(name)
@@ -1182,7 +1289,7 @@ describe('HtmlRenderer', () => {
     it('should return empty string when projects are empty', () => {
       for (const test of [undefined, []]) {
         resume.content.projects = test
-        renderer = new HtmlRenderer(resume, layoutIndex)
+        renderer = new HtmlRenderer(resume, findLayoutIndex(resume, 'html'))
         expect(renderer.renderProjects()).toBe('')
       }
     })
@@ -1208,7 +1315,7 @@ describe('HtmlRenderer', () => {
         },
       ]
 
-      renderer = new HtmlRenderer(resume, layoutIndex)
+      renderer = new HtmlRenderer(resume, findLayoutIndex(resume, 'html'))
       const result = renderer.renderProjects()
 
       expect(result).toContain('id="projects"')
@@ -1232,7 +1339,7 @@ describe('HtmlRenderer', () => {
       const name = 'Side Project'
       // @ts-expect-error
       resume.content.projects = [{ name }]
-      renderer = new HtmlRenderer(resume, layoutIndex)
+      renderer = new HtmlRenderer(resume, findLayoutIndex(resume, 'html'))
       const result = renderer.renderProjects()
 
       expect(result).toContain(name)
@@ -1245,7 +1352,7 @@ describe('HtmlRenderer', () => {
       for (const test of [undefined, []]) {
         resume.content.interests = test
 
-        renderer = new HtmlRenderer(resume, layoutIndex)
+        renderer = new HtmlRenderer(resume, findLayoutIndex(resume, 'html'))
         const result = renderer.renderInterests()
 
         expect(result).toBe('')
@@ -1263,7 +1370,7 @@ describe('HtmlRenderer', () => {
         },
       ]
 
-      renderer = new HtmlRenderer(resume, layoutIndex)
+      renderer = new HtmlRenderer(resume, findLayoutIndex(resume, 'html'))
       const result = renderer.renderInterests()
 
       expect(result).toContain(
@@ -1293,7 +1400,7 @@ describe('HtmlRenderer', () => {
         },
       ]
 
-      renderer = new HtmlRenderer(resume, layoutIndex)
+      renderer = new HtmlRenderer(resume, findLayoutIndex(resume, 'html'))
       const result = renderer.renderInterests()
 
       expect(result).toContain(name1)
@@ -1309,7 +1416,7 @@ describe('HtmlRenderer', () => {
         },
       ]
 
-      renderer = new HtmlRenderer(resume, layoutIndex)
+      renderer = new HtmlRenderer(resume, findLayoutIndex(resume, 'html'))
       const result = renderer.renderInterests()
 
       expect(result).toContain(
@@ -1323,7 +1430,7 @@ describe('HtmlRenderer', () => {
     it('should return empty string when volunteer is empty', () => {
       for (const test of [undefined, []]) {
         resume.content.volunteer = test
-        renderer = new HtmlRenderer(resume, layoutIndex)
+        renderer = new HtmlRenderer(resume, findLayoutIndex(resume, 'html'))
         expect(renderer.renderVolunteer()).toBe('')
       }
     })
@@ -1347,7 +1454,7 @@ describe('HtmlRenderer', () => {
         },
       ]
 
-      renderer = new HtmlRenderer(resume, layoutIndex)
+      renderer = new HtmlRenderer(resume, findLayoutIndex(resume, 'html'))
       const result = renderer.renderVolunteer()
 
       expect(result).toContain('id="volunteer"')
@@ -1367,7 +1474,7 @@ describe('HtmlRenderer', () => {
       const organization = 'Local Charity'
       // @ts-expect-error
       resume.content.volunteer = [{ organization }]
-      renderer = new HtmlRenderer(resume, layoutIndex)
+      renderer = new HtmlRenderer(resume, findLayoutIndex(resume, 'html'))
       const result = renderer.renderVolunteer()
 
       expect(result).toContain(organization)
@@ -1411,7 +1518,7 @@ describe('HtmlRenderer', () => {
       ]
       resume.content.skills = [{ name: 'JavaScript', level: 'Expert' }]
 
-      renderer = new HtmlRenderer(resume, layoutIndex)
+      renderer = new HtmlRenderer(resume, findLayoutIndex(resume, 'html'))
       const result = renderer.render()
 
       // Check that all major sections are included
@@ -1433,7 +1540,7 @@ describe('HtmlRenderer', () => {
         education: [],
       }
 
-      renderer = new HtmlRenderer(resume, layoutIndex)
+      renderer = new HtmlRenderer(resume, findLayoutIndex(resume, 'html'))
       const result = renderer.render()
 
       expect(result).toContain('Test User')

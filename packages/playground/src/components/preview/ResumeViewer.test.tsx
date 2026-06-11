@@ -91,24 +91,15 @@ describe(ResumeViewer, () => {
   })
 
   it('renders HTML preview correctly', () => {
-    render(<ResumeViewer resume={validResume} layoutIndex={2} />)
+    render(<ResumeViewer resume={validResume} layoutIndex={0} />)
     expect(screen.getByTestId('html-viewer-mock')).toBeDefined()
     expect(screen.getByTestId('html-content').textContent).toBe(
       'rendered content'
     )
   })
 
-  it('renders Markdown preview correctly', () => {
-    render(<ResumeViewer resume={validResume} layoutIndex={1} />)
-    expect(screen.getByTestId('code-viewer-mock')).toBeDefined()
-    expect(screen.getByTestId('code-language').textContent).toBe('markdown')
-    expect(screen.getByTestId('code-content').textContent).toBe(
-      'rendered content'
-    )
-  })
-
   it('renders LaTeX preview correctly', () => {
-    render(<ResumeViewer resume={validResume} layoutIndex={0} />)
+    render(<ResumeViewer resume={validResume} layoutIndex={1} />)
     expect(screen.getByTestId('code-viewer-mock')).toBeDefined()
     expect(screen.getByTestId('code-language').textContent).toBe('latex')
     expect(screen.getByTestId('code-content').textContent).toBe(
@@ -125,6 +116,28 @@ describe(ResumeViewer, () => {
         }) as unknown as ReturnType<typeof getResumeRenderer>
     )
     render(<ResumeViewer resume={docxResume} layoutIndex={0} />)
+    expect(screen.getByTestId('docx-viewer-mock')).toBeDefined()
+    expect(screen.getByTestId('docx-content').textContent).toBe('binary:3')
+  })
+
+  it('renders Markdown preview correctly', () => {
+    render(<ResumeViewer resume={validResume} layoutIndex={3} />)
+    expect(screen.getByTestId('code-viewer-mock')).toBeDefined()
+    expect(screen.getByTestId('code-language').textContent).toBe('markdown')
+    expect(screen.getByTestId('code-content').textContent).toBe(
+      'rendered content'
+    )
+  })
+
+  it('renders DOCX preview correctly with default layouts', () => {
+    const binaryData = new Uint8Array([1, 2, 3])
+    vi.mocked(getResumeRenderer).mockImplementationOnce(
+      () =>
+        ({
+          render: () => binaryData as unknown as string,
+        }) as unknown as ReturnType<typeof getResumeRenderer>
+    )
+    render(<ResumeViewer resume={validResume} layoutIndex={2} />)
     expect(screen.getByTestId('docx-viewer-mock')).toBeDefined()
     expect(screen.getByTestId('docx-content').textContent).toBe('binary:3')
   })

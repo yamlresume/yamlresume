@@ -32,6 +32,7 @@ import {
   FILLED_RESUME,
   type Resume,
 } from '@/models'
+import { findLayoutIndex } from '../test-utils'
 import { DocxRenderer } from './base'
 import {
   DEFAULT_FONT_SIZE,
@@ -183,13 +184,11 @@ class TestableDocxRenderer extends DocxRenderer {
 describe('DocxRenderer', () => {
   let resume: Resume
   let renderer: TestableDocxRenderer
-  let layoutIndex: number
 
   beforeEach(() => {
     resume = cloneDeep(FILLED_RESUME)
     resume.layouts = [...(resume.layouts ?? []), cloneDeep(DEFAULT_DOCX_LAYOUT)]
-    layoutIndex = resume.layouts.findIndex((layout) => layout.engine === 'docx')
-    renderer = new TestableDocxRenderer(resume, layoutIndex)
+    renderer = new TestableDocxRenderer(resume, findLayoutIndex(resume, 'docx'))
   })
 
   describe('getBaseFontSize', () => {
@@ -201,18 +200,28 @@ describe('DocxRenderer', () => {
     })
 
     it('should parse font size correctly', () => {
-      const docxLayout = resume.layouts[layoutIndex] as DocxLayout
+      const docxLayout = resume.layouts[
+        findLayoutIndex(resume, 'docx')
+      ] as DocxLayout
       docxLayout.typography = { fontSize: '12pt' }
 
-      renderer = new TestableDocxRenderer(resume, layoutIndex)
+      renderer = new TestableDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
       expect(renderer.testGetBaseFontSize()).toBe(24)
     })
 
     it('should return default font size for invalid format', () => {
-      const docxLayout = resume.layouts[layoutIndex] as DocxLayout
+      const docxLayout = resume.layouts[
+        findLayoutIndex(resume, 'docx')
+      ] as DocxLayout
       docxLayout.typography = { fontSize: '12px' } as unknown
 
-      renderer = new TestableDocxRenderer(resume, layoutIndex)
+      renderer = new TestableDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
       expect(renderer.testGetBaseFontSize()).toBe(DEFAULT_FONT_SIZE)
     })
   })
@@ -226,18 +235,28 @@ describe('DocxRenderer', () => {
     })
 
     it('should return font family from layout', () => {
-      const docxLayout = resume.layouts[layoutIndex] as DocxLayout
+      const docxLayout = resume.layouts[
+        findLayoutIndex(resume, 'docx')
+      ] as DocxLayout
       docxLayout.typography = { fontFamily: 'Arial' }
 
-      renderer = new TestableDocxRenderer(resume, layoutIndex)
+      renderer = new TestableDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
       expect(renderer.testGetFontFamily()).toBe('Arial')
     })
 
     it('should return undefined when fontFamily is not set', () => {
-      const docxLayout = resume.layouts[layoutIndex] as DocxLayout
+      const docxLayout = resume.layouts[
+        findLayoutIndex(resume, 'docx')
+      ] as DocxLayout
       docxLayout.typography = {}
 
-      renderer = new TestableDocxRenderer(resume, layoutIndex)
+      renderer = new TestableDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
       expect(renderer.testGetFontFamily()).toBeUndefined()
     })
   })
@@ -253,38 +272,58 @@ describe('DocxRenderer', () => {
     })
 
     it('should return default line spacing when not set', () => {
-      const docxLayout = resume.layouts[layoutIndex] as DocxLayout
+      const docxLayout = resume.layouts[
+        findLayoutIndex(resume, 'docx')
+      ] as DocxLayout
       docxLayout.typography = {}
 
-      renderer = new TestableDocxRenderer(resume, layoutIndex)
+      renderer = new TestableDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
       expect(renderer.testGetLineSpacing()).toBe(
         LINE_SPACING_MAP[DEFAULT_LINE_SPACING]
       )
     })
 
     it('should return mapped line spacing', () => {
-      const docxLayout = resume.layouts[layoutIndex] as DocxLayout
+      const docxLayout = resume.layouts[
+        findLayoutIndex(resume, 'docx')
+      ] as DocxLayout
       docxLayout.typography = { lineSpacing: 'loose' }
 
-      renderer = new TestableDocxRenderer(resume, layoutIndex)
+      renderer = new TestableDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
       expect(renderer.testGetLineSpacing()).toBe(LINE_SPACING_MAP.loose)
     })
 
     it('should return default for invalid line spacing', () => {
-      const docxLayout = resume.layouts[layoutIndex] as DocxLayout
+      const docxLayout = resume.layouts[
+        findLayoutIndex(resume, 'docx')
+      ] as DocxLayout
       docxLayout.typography = {
         lineSpacing: 'invalid',
       } as unknown
 
-      renderer = new TestableDocxRenderer(resume, layoutIndex)
+      renderer = new TestableDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
       expect(renderer.testGetLineSpacing()).toBe(
         LINE_SPACING_MAP[DEFAULT_LINE_SPACING]
       )
     })
 
     it('should return default when typography is undefined', () => {
-      renderer = new TestableDocxRenderer(resume, layoutIndex)
-      const docxLayout = renderer.resume.layouts[layoutIndex] as DocxLayout
+      renderer = new TestableDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
+      const docxLayout = renderer.resume.layouts[
+        findLayoutIndex(resume, 'docx')
+      ] as DocxLayout
       // biome-ignore lint/suspicious/noExplicitAny: test fixture
       ;(docxLayout as any).typography = undefined
 
@@ -296,10 +335,15 @@ describe('DocxRenderer', () => {
 
   describe('getLineSpacingName', () => {
     it('should return line spacing name from layout', () => {
-      const docxLayout = resume.layouts[layoutIndex] as DocxLayout
+      const docxLayout = resume.layouts[
+        findLayoutIndex(resume, 'docx')
+      ] as DocxLayout
       docxLayout.typography = { lineSpacing: 'tight' }
 
-      renderer = new TestableDocxRenderer(resume, layoutIndex)
+      renderer = new TestableDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
       expect(renderer.testGetLineSpacingName()).toBe('tight')
     })
 
@@ -320,32 +364,52 @@ describe('DocxRenderer', () => {
     })
 
     it('should return true by default', () => {
-      const docxLayout = resume.layouts[layoutIndex] as DocxLayout
+      const docxLayout = resume.layouts[
+        findLayoutIndex(resume, 'docx')
+      ] as DocxLayout
       docxLayout.advanced = {}
 
-      renderer = new TestableDocxRenderer(resume, layoutIndex)
+      renderer = new TestableDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
       expect(renderer.testShowIcons).toBe(true)
     })
 
     it('should return true when showIcons is true', () => {
-      const docxLayout = resume.layouts[layoutIndex] as DocxLayout
+      const docxLayout = resume.layouts[
+        findLayoutIndex(resume, 'docx')
+      ] as DocxLayout
       docxLayout.advanced = { showIcons: true }
 
-      renderer = new TestableDocxRenderer(resume, layoutIndex)
+      renderer = new TestableDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
       expect(renderer.testShowIcons).toBe(true)
     })
 
     it('should return false when showIcons is false', () => {
-      const docxLayout = resume.layouts[layoutIndex] as DocxLayout
+      const docxLayout = resume.layouts[
+        findLayoutIndex(resume, 'docx')
+      ] as DocxLayout
       docxLayout.advanced = { showIcons: false }
 
-      renderer = new TestableDocxRenderer(resume, layoutIndex)
+      renderer = new TestableDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
       expect(renderer.testShowIcons).toBe(false)
     })
 
     it('should return true when advanced is undefined', () => {
-      renderer = new TestableDocxRenderer(resume, layoutIndex)
-      const docxLayout = renderer.resume.layouts[layoutIndex] as DocxLayout
+      renderer = new TestableDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
+      const docxLayout = renderer.resume.layouts[
+        findLayoutIndex(resume, 'docx')
+      ] as DocxLayout
       // biome-ignore lint/suspicious/noExplicitAny: test fixture
       ;(docxLayout as any).advanced = undefined
 
@@ -355,10 +419,15 @@ describe('DocxRenderer', () => {
 
   describe('getScaledFontSize', () => {
     it('should scale font size correctly', () => {
-      const docxLayout = resume.layouts[layoutIndex] as DocxLayout
+      const docxLayout = resume.layouts[
+        findLayoutIndex(resume, 'docx')
+      ] as DocxLayout
       docxLayout.typography = { fontSize: '12pt' }
 
-      renderer = new TestableDocxRenderer(resume, layoutIndex)
+      renderer = new TestableDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
       expect(renderer.testGetScaledFontSize(1.5)).toBe(36)
     })
   })
@@ -372,32 +441,52 @@ describe('DocxRenderer', () => {
     })
 
     it('should return true by default', () => {
-      const docxLayout = resume.layouts[layoutIndex] as DocxLayout
+      const docxLayout = resume.layouts[
+        findLayoutIndex(resume, 'docx')
+      ] as DocxLayout
       docxLayout.advanced = {}
 
-      renderer = new TestableDocxRenderer(resume, layoutIndex)
+      renderer = new TestableDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
       expect(renderer.testGetShowUrls()).toBe(true)
     })
 
     it('should return true when showUrls is true', () => {
-      const docxLayout = resume.layouts[layoutIndex] as DocxLayout
+      const docxLayout = resume.layouts[
+        findLayoutIndex(resume, 'docx')
+      ] as DocxLayout
       docxLayout.advanced = { showUrls: true }
 
-      renderer = new TestableDocxRenderer(resume, layoutIndex)
+      renderer = new TestableDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
       expect(renderer.testGetShowUrls()).toBe(true)
     })
 
     it('should return false when showUrls is false', () => {
-      const docxLayout = resume.layouts[layoutIndex] as DocxLayout
+      const docxLayout = resume.layouts[
+        findLayoutIndex(resume, 'docx')
+      ] as DocxLayout
       docxLayout.advanced = { showUrls: false }
 
-      renderer = new TestableDocxRenderer(resume, layoutIndex)
+      renderer = new TestableDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
       expect(renderer.testGetShowUrls()).toBe(false)
     })
 
     it('should return true when advanced is undefined', () => {
-      renderer = new TestableDocxRenderer(resume, layoutIndex)
-      const docxLayout = renderer.resume.layouts[layoutIndex] as DocxLayout
+      renderer = new TestableDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
+      const docxLayout = renderer.resume.layouts[
+        findLayoutIndex(resume, 'docx')
+      ] as DocxLayout
       // biome-ignore lint/suspicious/noExplicitAny: test fixture
       ;(docxLayout as any).advanced = undefined
 
@@ -420,7 +509,9 @@ describe('DocxRenderer', () => {
     })
 
     it('should parse cm margins', () => {
-      const docxLayout = resume.layouts[layoutIndex] as DocxLayout
+      const docxLayout = resume.layouts[
+        findLayoutIndex(resume, 'docx')
+      ] as DocxLayout
       docxLayout.page = {
         margins: {
           top: '2.5cm',
@@ -430,14 +521,19 @@ describe('DocxRenderer', () => {
         },
       }
 
-      renderer = new TestableDocxRenderer(resume, layoutIndex)
+      renderer = new TestableDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
       const margins = renderer.testGetPageMargins()
       expect(margins.top).toBe(1418)
       expect(margins.left).toBe(1134)
     })
 
     it('should parse pt margins', () => {
-      const docxLayout = resume.layouts[layoutIndex] as DocxLayout
+      const docxLayout = resume.layouts[
+        findLayoutIndex(resume, 'docx')
+      ] as DocxLayout
       docxLayout.page = {
         margins: {
           top: '72pt',
@@ -447,13 +543,18 @@ describe('DocxRenderer', () => {
         },
       }
 
-      renderer = new TestableDocxRenderer(resume, layoutIndex)
+      renderer = new TestableDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
       const margins = renderer.testGetPageMargins()
       expect(margins.top).toBe(1440)
     })
 
     it('should parse in margins', () => {
-      const docxLayout = resume.layouts[layoutIndex] as DocxLayout
+      const docxLayout = resume.layouts[
+        findLayoutIndex(resume, 'docx')
+      ] as DocxLayout
       docxLayout.page = {
         margins: {
           top: '1in',
@@ -463,13 +564,18 @@ describe('DocxRenderer', () => {
         },
       }
 
-      renderer = new TestableDocxRenderer(resume, layoutIndex)
+      renderer = new TestableDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
       const margins = renderer.testGetPageMargins()
       expect(margins.top).toBe(1440)
     })
 
     it('should return default for invalid margin format', () => {
-      const docxLayout = resume.layouts[layoutIndex] as DocxLayout
+      const docxLayout = resume.layouts[
+        findLayoutIndex(resume, 'docx')
+      ] as DocxLayout
       docxLayout.page = {
         margins: {
           top: 'invalid',
@@ -479,7 +585,10 @@ describe('DocxRenderer', () => {
         },
       }
 
-      renderer = new TestableDocxRenderer(resume, layoutIndex)
+      renderer = new TestableDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
       const margins = renderer.testGetPageMargins()
       expect(margins.top).toBe(1440)
     })
@@ -493,7 +602,10 @@ describe('DocxRenderer', () => {
     })
 
     it('should return default for undefined margin', () => {
-      renderer = new TestableDocxRenderer(resume, layoutIndex)
+      renderer = new TestableDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
       expect(renderer.testParseMargin(undefined)).toBe(1440)
     })
 
@@ -519,24 +631,39 @@ describe('DocxRenderer', () => {
     })
 
     it('should return true when showPageNumbers is true', () => {
-      const docxLayout = resume.layouts[layoutIndex] as DocxLayout
+      const docxLayout = resume.layouts[
+        findLayoutIndex(resume, 'docx')
+      ] as DocxLayout
       docxLayout.page = { showPageNumbers: true }
 
-      renderer = new TestableDocxRenderer(resume, layoutIndex)
+      renderer = new TestableDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
       expect(renderer.testGetShowPageNumbers()).toBe(true)
     })
 
     it('should return false when showPageNumbers is false', () => {
-      const docxLayout = resume.layouts[layoutIndex] as DocxLayout
+      const docxLayout = resume.layouts[
+        findLayoutIndex(resume, 'docx')
+      ] as DocxLayout
       docxLayout.page = { showPageNumbers: false }
 
-      renderer = new TestableDocxRenderer(resume, layoutIndex)
+      renderer = new TestableDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
       expect(renderer.testGetShowPageNumbers()).toBe(false)
     })
 
     it('should return true when page is undefined', () => {
-      renderer = new TestableDocxRenderer(resume, layoutIndex)
-      const docxLayout = renderer.resume.layouts[layoutIndex] as DocxLayout
+      renderer = new TestableDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
+      const docxLayout = renderer.resume.layouts[
+        findLayoutIndex(resume, 'docx')
+      ] as DocxLayout
       // biome-ignore lint/suspicious/noExplicitAny: test fixture
       ;(docxLayout as any).page = undefined
 
@@ -556,10 +683,15 @@ describe('DocxRenderer', () => {
     })
 
     it('should return A4 when paperSize is not set', () => {
-      const docxLayout = resume.layouts[layoutIndex] as DocxLayout
+      const docxLayout = resume.layouts[
+        findLayoutIndex(resume, 'docx')
+      ] as DocxLayout
       docxLayout.page = {}
 
-      renderer = new TestableDocxRenderer(resume, layoutIndex)
+      renderer = new TestableDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
       expect(renderer.testGetPaperSize()).toEqual({
         width: 11906,
         height: 16838,
@@ -567,10 +699,15 @@ describe('DocxRenderer', () => {
     })
 
     it('should return A4 dimensions', () => {
-      const docxLayout = resume.layouts[layoutIndex] as DocxLayout
+      const docxLayout = resume.layouts[
+        findLayoutIndex(resume, 'docx')
+      ] as DocxLayout
       docxLayout.page = { paperSize: 'a4' }
 
-      renderer = new TestableDocxRenderer(resume, layoutIndex)
+      renderer = new TestableDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
       expect(renderer.testGetPaperSize()).toEqual({
         width: 11906,
         height: 16838,
@@ -578,10 +715,15 @@ describe('DocxRenderer', () => {
     })
 
     it('should return letter dimensions', () => {
-      const docxLayout = resume.layouts[layoutIndex] as DocxLayout
+      const docxLayout = resume.layouts[
+        findLayoutIndex(resume, 'docx')
+      ] as DocxLayout
       docxLayout.page = { paperSize: 'letter' }
 
-      renderer = new TestableDocxRenderer(resume, layoutIndex)
+      renderer = new TestableDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
       expect(renderer.testGetPaperSize()).toEqual({
         width: 12240,
         height: 15840,
@@ -589,8 +731,13 @@ describe('DocxRenderer', () => {
     })
 
     it('should return A4 when page is undefined', () => {
-      renderer = new TestableDocxRenderer(resume, layoutIndex)
-      const docxLayout = renderer.resume.layouts[layoutIndex] as DocxLayout
+      renderer = new TestableDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
+      const docxLayout = renderer.resume.layouts[
+        findLayoutIndex(resume, 'docx')
+      ] as DocxLayout
       // biome-ignore lint/suspicious/noExplicitAny: test fixture
       ;(docxLayout as any).page = undefined
 
@@ -676,10 +823,15 @@ describe('DocxRenderer', () => {
     })
 
     it('should render with page numbers', async () => {
-      const docxLayout = resume.layouts[layoutIndex] as DocxLayout
+      const docxLayout = resume.layouts[
+        findLayoutIndex(resume, 'docx')
+      ] as DocxLayout
       docxLayout.page = { showPageNumbers: true }
 
-      renderer = new TestableDocxRenderer(resume, layoutIndex)
+      renderer = new TestableDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
       const buffer = await renderer.render()
 
       expect(buffer).toBeInstanceOf(Uint8Array)
@@ -687,10 +839,15 @@ describe('DocxRenderer', () => {
     })
 
     it('should render without page numbers', async () => {
-      const docxLayout = resume.layouts[layoutIndex] as DocxLayout
+      const docxLayout = resume.layouts[
+        findLayoutIndex(resume, 'docx')
+      ] as DocxLayout
       docxLayout.page = { showPageNumbers: false }
 
-      renderer = new TestableDocxRenderer(resume, layoutIndex)
+      renderer = new TestableDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
       const buffer = await renderer.render()
 
       expect(buffer).toBeInstanceOf(Uint8Array)

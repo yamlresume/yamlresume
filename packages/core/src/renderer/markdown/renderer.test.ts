@@ -27,23 +27,23 @@ import { beforeEach, describe, expect, it } from 'vitest'
 
 import { FILLED_RESUME, type Resume } from '@/models'
 import { joinNonEmptyString } from '@/utils'
+import { findLayoutIndex } from '../test-utils'
 import { MarkdownRenderer } from './renderer'
 
 describe('MarkdownRenderer', () => {
   let resume: Resume
   let renderer: MarkdownRenderer
-  let layoutIndex: number
 
   beforeEach(() => {
     resume = cloneDeep(FILLED_RESUME)
-    layoutIndex = FILLED_RESUME.layouts.findIndex(
-      (layout) => layout.engine === 'markdown'
-    )
   })
 
   describe('renderPreamble', () => {
     it('should return empty string for markdown', () => {
-      renderer = new MarkdownRenderer(resume, layoutIndex)
+      renderer = new MarkdownRenderer(
+        resume,
+        findLayoutIndex(resume, 'markdown')
+      )
 
       const result = renderer.renderPreamble()
       expect(result).toBe('')
@@ -54,7 +54,10 @@ describe('MarkdownRenderer', () => {
     it('should return empty string when basics is missing', () => {
       resume.content.basics = undefined
 
-      renderer = new MarkdownRenderer(resume, layoutIndex)
+      renderer = new MarkdownRenderer(
+        resume,
+        findLayoutIndex(resume, 'markdown')
+      )
       const result = renderer.renderBasics()
 
       expect(result).toBe('')
@@ -75,7 +78,10 @@ describe('MarkdownRenderer', () => {
         url,
       }
 
-      renderer = new MarkdownRenderer(resume, layoutIndex)
+      renderer = new MarkdownRenderer(
+        resume,
+        findLayoutIndex(resume, 'markdown')
+      )
       const result = renderer.renderBasics()
 
       expect(result).toMatch(`# ${name}`)
@@ -96,7 +102,10 @@ describe('MarkdownRenderer', () => {
         url: undefined,
       }
 
-      renderer = new MarkdownRenderer(resume, layoutIndex)
+      renderer = new MarkdownRenderer(
+        resume,
+        findLayoutIndex(resume, 'markdown')
+      )
       const result = renderer.renderBasics()
 
       expect(result).toMatch(`# ${name}`)
@@ -115,7 +124,10 @@ describe('MarkdownRenderer', () => {
         summary: undefined,
       }
 
-      renderer = new MarkdownRenderer(resume, layoutIndex)
+      renderer = new MarkdownRenderer(
+        resume,
+        findLayoutIndex(resume, 'markdown')
+      )
       const result = renderer.renderSummary()
 
       expect(result).toBe('')
@@ -135,7 +147,10 @@ describe('MarkdownRenderer', () => {
         summary,
       }
 
-      renderer = new MarkdownRenderer(resume, layoutIndex)
+      renderer = new MarkdownRenderer(
+        resume,
+        findLayoutIndex(resume, 'markdown')
+      )
       const result = renderer.renderSummary()
 
       expect(result).toMatch('## Basics')
@@ -150,7 +165,10 @@ describe('MarkdownRenderer', () => {
     it('should return empty string when location is missing', () => {
       resume.content.location = undefined
 
-      renderer = new MarkdownRenderer(resume, layoutIndex)
+      renderer = new MarkdownRenderer(
+        resume,
+        findLayoutIndex(resume, 'markdown')
+      )
       const result = renderer.renderLocation()
 
       expect(result).toBe('')
@@ -171,7 +189,10 @@ describe('MarkdownRenderer', () => {
         country,
       }
 
-      renderer = new MarkdownRenderer(resume, layoutIndex)
+      renderer = new MarkdownRenderer(
+        resume,
+        findLayoutIndex(resume, 'markdown')
+      )
       const result = renderer.renderLocation()
 
       expect(result).toMatch('Location: ')
@@ -189,7 +210,10 @@ describe('MarkdownRenderer', () => {
         country,
       }
 
-      renderer = new MarkdownRenderer(resume, layoutIndex)
+      renderer = new MarkdownRenderer(
+        resume,
+        findLayoutIndex(resume, 'markdown')
+      )
       const result = renderer.renderLocation()
 
       expect(result).toMatch('Location: ')
@@ -202,7 +226,10 @@ describe('MarkdownRenderer', () => {
     it('should return empty string when profiles are missing', () => {
       resume.content.profiles = undefined
 
-      renderer = new MarkdownRenderer(resume, layoutIndex)
+      renderer = new MarkdownRenderer(
+        resume,
+        findLayoutIndex(resume, 'markdown')
+      )
       const result = renderer.renderProfiles()
 
       expect(result).toBe('')
@@ -226,7 +253,10 @@ describe('MarkdownRenderer', () => {
         },
       ]
 
-      renderer = new MarkdownRenderer(resume, layoutIndex)
+      renderer = new MarkdownRenderer(
+        resume,
+        findLayoutIndex(resume, 'markdown')
+      )
       const result = renderer.renderProfiles()
 
       expect(result).toMatch('Profiles: ')
@@ -239,7 +269,10 @@ describe('MarkdownRenderer', () => {
 
       resume.content.profiles = [{ network: 'GitHub', username }]
 
-      renderer = new MarkdownRenderer(resume, layoutIndex)
+      renderer = new MarkdownRenderer(
+        resume,
+        findLayoutIndex(resume, 'markdown')
+      )
       const result = renderer.renderProfiles()
 
       expect(result).toMatch(`- GitHub: @${username}`)
@@ -250,7 +283,10 @@ describe('MarkdownRenderer', () => {
     it('should return empty string when education is missing', () => {
       resume.content.education = []
 
-      renderer = new MarkdownRenderer(resume, layoutIndex)
+      renderer = new MarkdownRenderer(
+        resume,
+        findLayoutIndex(resume, 'markdown')
+      )
       const result = renderer.renderEducation()
 
       expect(result).toBe('')
@@ -294,7 +330,10 @@ describe('MarkdownRenderer', () => {
         },
       ]
 
-      renderer = new MarkdownRenderer(resume, layoutIndex)
+      renderer = new MarkdownRenderer(
+        resume,
+        findLayoutIndex(resume, 'markdown')
+      )
       const result = renderer.renderEducation()
 
       expect(result).toMatch('## Education')
@@ -321,7 +360,10 @@ describe('MarkdownRenderer', () => {
         },
       ]
 
-      renderer = new MarkdownRenderer(resume, layoutIndex)
+      renderer = new MarkdownRenderer(
+        resume,
+        findLayoutIndex(resume, 'markdown')
+      )
       const result = renderer.renderEducation()
 
       expect(result).toMatch(`### ${institution}`)
@@ -335,7 +377,10 @@ describe('MarkdownRenderer', () => {
     it('should return empty string when work is missing', () => {
       resume.content.work = undefined
 
-      renderer = new MarkdownRenderer(resume, layoutIndex)
+      renderer = new MarkdownRenderer(
+        resume,
+        findLayoutIndex(resume, 'markdown')
+      )
       const result = renderer.renderWork()
 
       expect(result).toBe('')
@@ -358,7 +403,10 @@ describe('MarkdownRenderer', () => {
         },
       ]
 
-      renderer = new MarkdownRenderer(resume, layoutIndex)
+      renderer = new MarkdownRenderer(
+        resume,
+        findLayoutIndex(resume, 'markdown')
+      )
       const result = renderer.renderWork()
 
       expect(result).toMatch('## Work')
@@ -383,7 +431,10 @@ describe('MarkdownRenderer', () => {
         },
       ]
 
-      renderer = new MarkdownRenderer(resume, layoutIndex)
+      renderer = new MarkdownRenderer(
+        resume,
+        findLayoutIndex(resume, 'markdown')
+      )
       const result = renderer.renderWork()
 
       expect(result).toMatch(`### ${position}`)
@@ -397,7 +448,10 @@ describe('MarkdownRenderer', () => {
     it('should return empty string when languages are missing', () => {
       resume.content.languages = undefined
 
-      renderer = new MarkdownRenderer(resume, layoutIndex)
+      renderer = new MarkdownRenderer(
+        resume,
+        findLayoutIndex(resume, 'markdown')
+      )
       const result = renderer.renderLanguages()
 
       expect(result).toBe('')
@@ -415,7 +469,10 @@ describe('MarkdownRenderer', () => {
         },
       ]
 
-      renderer = new MarkdownRenderer(resume, layoutIndex)
+      renderer = new MarkdownRenderer(
+        resume,
+        findLayoutIndex(resume, 'markdown')
+      )
       const result = renderer.renderLanguages()
 
       expect(result).toMatch('## Languages')
@@ -434,7 +491,10 @@ describe('MarkdownRenderer', () => {
         },
       ]
 
-      renderer = new MarkdownRenderer(resume, layoutIndex)
+      renderer = new MarkdownRenderer(
+        resume,
+        findLayoutIndex(resume, 'markdown')
+      )
       const result = renderer.renderLanguages()
 
       expect(result).toMatch(
@@ -447,7 +507,10 @@ describe('MarkdownRenderer', () => {
     it('should return empty string when skills are missing', () => {
       resume.content.skills = undefined
 
-      renderer = new MarkdownRenderer(resume, layoutIndex)
+      renderer = new MarkdownRenderer(
+        resume,
+        findLayoutIndex(resume, 'markdown')
+      )
       const result = renderer.renderSkills()
 
       expect(result).toBe('')
@@ -459,7 +522,10 @@ describe('MarkdownRenderer', () => {
         { name: 'Python', level: 'Intermediate' },
       ]
 
-      renderer = new MarkdownRenderer(resume, layoutIndex)
+      renderer = new MarkdownRenderer(
+        resume,
+        findLayoutIndex(resume, 'markdown')
+      )
       const result = renderer.renderSkills()
 
       expect(result).toMatch('## Skills')
@@ -478,7 +544,10 @@ describe('MarkdownRenderer', () => {
         },
       ]
 
-      renderer = new MarkdownRenderer(resume, layoutIndex)
+      renderer = new MarkdownRenderer(
+        resume,
+        findLayoutIndex(resume, 'markdown')
+      )
       const result = renderer.renderSkills()
 
       expect(result).toMatch(
@@ -491,7 +560,10 @@ describe('MarkdownRenderer', () => {
     it('should return empty string when awards are missing', () => {
       resume.content.awards = undefined
 
-      renderer = new MarkdownRenderer(resume, layoutIndex)
+      renderer = new MarkdownRenderer(
+        resume,
+        findLayoutIndex(resume, 'markdown')
+      )
       const result = renderer.renderAwards()
 
       expect(result).toBe('')
@@ -512,7 +584,10 @@ describe('MarkdownRenderer', () => {
         },
       ]
 
-      renderer = new MarkdownRenderer(resume, layoutIndex)
+      renderer = new MarkdownRenderer(
+        resume,
+        findLayoutIndex(resume, 'markdown')
+      )
       const result = renderer.renderAwards()
 
       expect(result).toMatch('## Awards')
@@ -532,7 +607,10 @@ describe('MarkdownRenderer', () => {
         },
       ]
 
-      renderer = new MarkdownRenderer(resume, layoutIndex)
+      renderer = new MarkdownRenderer(
+        resume,
+        findLayoutIndex(resume, 'markdown')
+      )
       const result = renderer.renderAwards()
 
       expect(result).toMatch(`### ${title}`)
@@ -544,7 +622,10 @@ describe('MarkdownRenderer', () => {
     it('should return empty string when certificates are missing', () => {
       resume.content.certificates = undefined
 
-      renderer = new MarkdownRenderer(resume, layoutIndex)
+      renderer = new MarkdownRenderer(
+        resume,
+        findLayoutIndex(resume, 'markdown')
+      )
       const result = renderer.renderCertificates()
 
       expect(result).toBe('')
@@ -565,7 +646,10 @@ describe('MarkdownRenderer', () => {
         },
       ]
 
-      renderer = new MarkdownRenderer(resume, layoutIndex)
+      renderer = new MarkdownRenderer(
+        resume,
+        findLayoutIndex(resume, 'markdown')
+      )
       const result = renderer.renderCertificates()
 
       expect(result).toMatch('## Certificates')
@@ -585,7 +669,10 @@ describe('MarkdownRenderer', () => {
         },
       ]
 
-      renderer = new MarkdownRenderer(resume, layoutIndex)
+      renderer = new MarkdownRenderer(
+        resume,
+        findLayoutIndex(resume, 'markdown')
+      )
       const result = renderer.renderCertificates()
 
       expect(result).toMatch(`### ${name}`)
@@ -597,7 +684,10 @@ describe('MarkdownRenderer', () => {
     it('should return empty string when publications are missing', () => {
       resume.content.publications = undefined
 
-      renderer = new MarkdownRenderer(resume, layoutIndex)
+      renderer = new MarkdownRenderer(
+        resume,
+        findLayoutIndex(resume, 'markdown')
+      )
       const result = renderer.renderPublications()
 
       expect(result).toBe('')
@@ -620,7 +710,10 @@ describe('MarkdownRenderer', () => {
         },
       ]
 
-      renderer = new MarkdownRenderer(resume, layoutIndex)
+      renderer = new MarkdownRenderer(
+        resume,
+        findLayoutIndex(resume, 'markdown')
+      )
       const result = renderer.renderPublications()
 
       expect(result).toMatch('## Publications')
@@ -642,7 +735,10 @@ describe('MarkdownRenderer', () => {
         },
       ]
 
-      renderer = new MarkdownRenderer(resume, layoutIndex)
+      renderer = new MarkdownRenderer(
+        resume,
+        findLayoutIndex(resume, 'markdown')
+      )
       const result = renderer.renderPublications()
 
       expect(result).toMatch(`### ${name}`)
@@ -656,7 +752,10 @@ describe('MarkdownRenderer', () => {
     it('should return empty string when references are missing', () => {
       resume.content.references = undefined
 
-      renderer = new MarkdownRenderer(resume, layoutIndex)
+      renderer = new MarkdownRenderer(
+        resume,
+        findLayoutIndex(resume, 'markdown')
+      )
       const result = renderer.renderReferences()
 
       expect(result).toBe('')
@@ -679,7 +778,10 @@ describe('MarkdownRenderer', () => {
         },
       ]
 
-      renderer = new MarkdownRenderer(resume, layoutIndex)
+      renderer = new MarkdownRenderer(
+        resume,
+        findLayoutIndex(resume, 'markdown')
+      )
       const result = renderer.renderReferences()
 
       expect(result).toMatch('## References')
@@ -702,7 +804,10 @@ describe('MarkdownRenderer', () => {
         },
       ]
 
-      renderer = new MarkdownRenderer(resume, layoutIndex)
+      renderer = new MarkdownRenderer(
+        resume,
+        findLayoutIndex(resume, 'markdown')
+      )
       const result = renderer.renderReferences()
 
       expect(result).toMatch(`### ${name}`)
@@ -715,7 +820,10 @@ describe('MarkdownRenderer', () => {
     it('should return empty string when projects are missing', () => {
       resume.content.projects = undefined
 
-      renderer = new MarkdownRenderer(resume, layoutIndex)
+      renderer = new MarkdownRenderer(
+        resume,
+        findLayoutIndex(resume, 'markdown')
+      )
       const result = renderer.renderProjects()
 
       expect(result).toBe('')
@@ -738,7 +846,10 @@ describe('MarkdownRenderer', () => {
         },
       ]
 
-      renderer = new MarkdownRenderer(resume, layoutIndex)
+      renderer = new MarkdownRenderer(
+        resume,
+        findLayoutIndex(resume, 'markdown')
+      )
       const result = renderer.renderProjects()
 
       expect(result).toMatch('## Projects')
@@ -761,7 +872,10 @@ describe('MarkdownRenderer', () => {
         },
       ]
 
-      renderer = new MarkdownRenderer(resume, layoutIndex)
+      renderer = new MarkdownRenderer(
+        resume,
+        findLayoutIndex(resume, 'markdown')
+      )
       const result = renderer.renderProjects()
 
       expect(result).toMatch(`### ${name}`)
@@ -774,7 +888,10 @@ describe('MarkdownRenderer', () => {
     it('should return empty string when interests are missing', () => {
       resume.content.interests = undefined
 
-      renderer = new MarkdownRenderer(resume, layoutIndex)
+      renderer = new MarkdownRenderer(
+        resume,
+        findLayoutIndex(resume, 'markdown')
+      )
       const result = renderer.renderInterests()
 
       expect(result).toBe('')
@@ -786,7 +903,10 @@ describe('MarkdownRenderer', () => {
         { name: 'Hiking', keywords: ['Mountains', 'Trails'] },
       ]
 
-      renderer = new MarkdownRenderer(resume, layoutIndex)
+      renderer = new MarkdownRenderer(
+        resume,
+        findLayoutIndex(resume, 'markdown')
+      )
       const result = renderer.renderInterests()
 
       expect(result).toMatch('## Interests')
@@ -797,7 +917,10 @@ describe('MarkdownRenderer', () => {
     it('should handle interests without keywords', () => {
       resume.content.interests = [{ name: 'Reading' }]
 
-      renderer = new MarkdownRenderer(resume, layoutIndex)
+      renderer = new MarkdownRenderer(
+        resume,
+        findLayoutIndex(resume, 'markdown')
+      )
       const result = renderer.renderInterests()
 
       expect(result).toMatch('- Reading')
@@ -808,7 +931,10 @@ describe('MarkdownRenderer', () => {
     it('should return empty string when volunteer is missing', () => {
       resume.content.volunteer = undefined
 
-      renderer = new MarkdownRenderer(resume, layoutIndex)
+      renderer = new MarkdownRenderer(
+        resume,
+        findLayoutIndex(resume, 'markdown')
+      )
       const result = renderer.renderVolunteer()
 
       expect(result).toBe('')
@@ -831,7 +957,10 @@ describe('MarkdownRenderer', () => {
         },
       ]
 
-      renderer = new MarkdownRenderer(resume, layoutIndex)
+      renderer = new MarkdownRenderer(
+        resume,
+        findLayoutIndex(resume, 'markdown')
+      )
       const result = renderer.renderVolunteer()
 
       expect(result).toMatch('## Volunteer')
@@ -856,7 +985,10 @@ describe('MarkdownRenderer', () => {
         },
       ]
 
-      renderer = new MarkdownRenderer(resume, layoutIndex)
+      renderer = new MarkdownRenderer(
+        resume,
+        findLayoutIndex(resume, 'markdown')
+      )
       const result = renderer.renderVolunteer()
 
       expect(result).toMatch(`### ${organization}`)
@@ -902,7 +1034,10 @@ describe('MarkdownRenderer', () => {
       ]
       resume.content.skills = [{ name: 'JavaScript', level: 'Expert' }]
 
-      renderer = new MarkdownRenderer(resume, layoutIndex)
+      renderer = new MarkdownRenderer(
+        resume,
+        findLayoutIndex(resume, 'markdown')
+      )
       const result = renderer.render()
 
       // Check that all major sections are included
@@ -922,7 +1057,10 @@ describe('MarkdownRenderer', () => {
         education: [],
       }
 
-      renderer = new MarkdownRenderer(resume, layoutIndex)
+      renderer = new MarkdownRenderer(
+        resume,
+        findLayoutIndex(resume, 'markdown')
+      )
       const result = renderer.render()
 
       expect(result).toMatch('# Test User')

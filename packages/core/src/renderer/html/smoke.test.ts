@@ -26,12 +26,16 @@ import { beforeEach, describe, expect, it } from 'vitest'
 
 import type { Resume } from '@/models'
 import { collectAllKeys, removeKeysFromObject } from '@/utils'
-import { getFixture, getRandomSections, sections } from '../test-utils'
+import {
+  findLayoutIndex,
+  getFixture,
+  getRandomSections,
+  sections,
+} from '../test-utils'
 import { HtmlRenderer } from './renderer'
 
 describe('smoke test for HTML renderer', () => {
   let resume: Resume
-  let layoutIndex: number
 
   function expectValidHtmlDocument(result: string) {
     // Check that result is a non-empty string
@@ -55,12 +59,14 @@ describe('smoke test for HTML renderer', () => {
 
   beforeEach(() => {
     resume = getFixture('full-resume.yml', __dirname)
-    layoutIndex = resume.layouts.findIndex((l) => l.engine === 'html')
   })
 
   describe('should handle optional sections', () => {
     it('should render resume with all sections', () => {
-      const result = new HtmlRenderer(resume, layoutIndex).render()
+      const result = new HtmlRenderer(
+        resume,
+        findLayoutIndex(resume, 'html')
+      ).render()
       expectValidHtmlDocument(result)
     })
 
@@ -68,7 +74,7 @@ describe('smoke test for HTML renderer', () => {
       for (const section of sections) {
         const result = new HtmlRenderer(
           removeKeysFromObject(resume, [section]),
-          layoutIndex
+          findLayoutIndex(resume, 'html')
         ).render()
         expectValidHtmlDocument(result)
       }
@@ -80,7 +86,7 @@ describe('smoke test for HTML renderer', () => {
 
       const result = new HtmlRenderer(
         removeKeysFromObject(resume, sectionsToRemove),
-        layoutIndex
+        findLayoutIndex(resume, 'html')
       ).render()
       expectValidHtmlDocument(result)
     })
@@ -90,7 +96,7 @@ describe('smoke test for HTML renderer', () => {
     it('should render resume with no layout', () => {
       resume.layouts = undefined
 
-      const result = new HtmlRenderer(resume, layoutIndex).render()
+      const result = new HtmlRenderer(resume, 2).render()
       expectValidHtmlDocument(result)
     })
   })
@@ -118,7 +124,10 @@ describe('smoke test for HTML renderer', () => {
         try {
           const modifiedResume = removeKeysFromObject(cloneDeep(resume), [key])
 
-          const result = new HtmlRenderer(modifiedResume, layoutIndex).render()
+          const result = new HtmlRenderer(
+            modifiedResume,
+            findLayoutIndex(modifiedResume, 'html')
+          ).render()
 
           expectValidHtmlDocument(result)
         } catch (error) {
@@ -154,7 +163,10 @@ describe('smoke test for HTML renderer', () => {
             keysToRemove
           )
 
-          const result = new HtmlRenderer(modifiedResume, layoutIndex).render()
+          const result = new HtmlRenderer(
+            modifiedResume,
+            findLayoutIndex(modifiedResume, 'html')
+          ).render()
 
           expectValidHtmlDocument(result)
         } catch (error) {

@@ -24,9 +24,14 @@
 import { cloneDeep } from 'lodash-es'
 import { beforeEach, describe, expect, it } from 'vitest'
 
-import type { Resume } from '@/models'
+import { DEFAULT_RESUME_LAYOUTS, type Resume } from '@/models'
 import { collectAllKeys, removeKeysFromObject } from '@/utils'
-import { getFixture, getRandomSections, sections } from '../test-utils'
+import {
+  findLayoutIndex,
+  getFixture,
+  getRandomSections,
+  sections,
+} from '../test-utils'
 import { JakeRenderer } from './jake'
 import {
   ModerncvBankingRenderer,
@@ -36,7 +41,6 @@ import {
 
 describe('smoke test for all renderers', () => {
   let resume: Resume
-  let layoutIndex: number
 
   const renderers = [
     JakeRenderer,
@@ -55,13 +59,15 @@ describe('smoke test for all renderers', () => {
 
   beforeEach(() => {
     resume = getFixture('full-resume.yml', __dirname)
-    layoutIndex = resume.layouts.findIndex((l) => l.engine === 'latex')
   })
 
   describe('should handle optional sections', () => {
     it('should render resume with all sections', () => {
       for (const renderer of renderers) {
-        const result = new renderer(resume, layoutIndex).render()
+        const result = new renderer(
+          resume,
+          findLayoutIndex(resume, 'latex')
+        ).render()
         expectValidLaTeXDocument(result)
       }
     })
@@ -71,7 +77,7 @@ describe('smoke test for all renderers', () => {
         for (const section of sections) {
           const result = new renderer(
             removeKeysFromObject(resume, [section]),
-            layoutIndex
+            findLayoutIndex(removeKeysFromObject(resume, [section]), 'latex')
           ).render()
           expectValidLaTeXDocument(result)
         }
@@ -87,7 +93,10 @@ describe('smoke test for all renderers', () => {
 
         const result = new renderer(
           removeKeysFromObject(resume, sectionsToRemove),
-          layoutIndex
+          findLayoutIndex(
+            removeKeysFromObject(resume, sectionsToRemove),
+            'latex'
+          )
         ).render()
         expectValidLaTeXDocument(result)
       }
@@ -98,8 +107,11 @@ describe('smoke test for all renderers', () => {
     it('should render resume with no layout', () => {
       for (const renderer of renderers) {
         resume.layouts = undefined
+        const defaultLayoutIndex = DEFAULT_RESUME_LAYOUTS.findIndex(
+          (l) => l.engine === 'latex'
+        )
 
-        const result = new renderer(resume, layoutIndex).render()
+        const result = new renderer(resume, defaultLayoutIndex).render()
         expectValidLaTeXDocument(result)
       }
     })
@@ -131,7 +143,10 @@ describe('smoke test for all renderers', () => {
               key,
             ])
 
-            const result = new renderer(modifiedResume, layoutIndex).render()
+            const result = new renderer(
+              modifiedResume,
+              findLayoutIndex(modifiedResume, 'latex')
+            ).render()
 
             expectValidLaTeXDocument(result)
           } catch (error) {
@@ -169,7 +184,10 @@ describe('smoke test for all renderers', () => {
               keysToRemove
             )
 
-            const result = new renderer(modifiedResume, layoutIndex).render()
+            const result = new renderer(
+              modifiedResume,
+              findLayoutIndex(modifiedResume, 'latex')
+            ).render()
 
             expectValidLaTeXDocument(result)
           } catch (error) {

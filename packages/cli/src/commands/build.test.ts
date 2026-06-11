@@ -758,20 +758,22 @@ describe(buildResume, () => {
     const pdfFile = getPdfPath(texFile)
     const mdFile = resumePath.replace('.yml', '.md')
     const htmlFile = resumePath.replace('.yml', '.html')
+    const docxFile = resumePath.replace('.yml', '.docx')
     const { command, args } = inferLaTeXCommand(texFile)
 
     await buildResume(resumePath)
 
-    // Should generate one output (default layout)
+    // Should generate outputs for all default layouts
     expect(execSpy).toBeCalledTimes(1)
     expect(execSpy.mock.calls[0][1]).toContain('software-engineer.tex')
 
     expect(outputStr).toEqual([
+      `Generated resume html file successfully: ${htmlFile}`,
       `Generated resume tex file successfully: ${texFile}`,
       `Generating resume pdf file with command: \`${command} ${args.join(' ')}\`...`,
       `Generated resume pdf file successfully: ${pdfFile}`,
+      `Generated resume docx file successfully: ${docxFile}`,
       `Generated resume markdown file successfully: ${mdFile}`,
-      `Generated resume html file successfully: ${htmlFile}`,
     ])
   })
 })

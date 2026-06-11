@@ -479,9 +479,10 @@ export const DEFAULT_LATEX_LAYOUT: LatexLayout = {
  */
 
 export const DEFAULT_RESUME_LAYOUTS: Layouts = [
-  DEFAULT_LATEX_LAYOUT,
-  DEFAULT_MARKDOWN_LAYOUT,
   DEFAULT_HTML_LAYOUT,
+  DEFAULT_LATEX_LAYOUT,
+  DEFAULT_DOCX_LAYOUT,
+  DEFAULT_MARKDOWN_LAYOUT,
 ]
 
 /** Default locale configuration. */

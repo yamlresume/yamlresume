@@ -38,7 +38,9 @@ import { getResumeRenderer } from './resume'
 
 describe(getResumeRenderer, () => {
   const mockResume: Resume = DEFAULT_RESUME
-  const layoutIndex = 0
+  const latexLayout = mockResume.layouts?.find(
+    (layout) => layout.engine === 'latex'
+  ) as LatexLayout
 
   it('should return correct renderer when template is specified', () => {
     const tests = [
@@ -59,12 +61,12 @@ describe(getResumeRenderer, () => {
     for (const { template, expected } of tests) {
       const resume = cloneDeep(mockResume)
       const layout = {
-        ...(resume.layouts?.[layoutIndex] as LatexLayout),
+        ...latexLayout,
         template,
       }
       resume.layouts = [layout]
 
-      const renderer = getResumeRenderer(resume, layoutIndex)
+      const renderer = getResumeRenderer(resume, 0)
       expect(renderer).toBeInstanceOf(expected)
     }
   })
@@ -72,24 +74,24 @@ describe(getResumeRenderer, () => {
   it('should return default renderer when template is not specified', () => {
     const resume = cloneDeep(mockResume)
     const layoutWithNoTemplate = {
-      ...(resume.layouts?.[layoutIndex] as LatexLayout),
+      ...latexLayout,
       template: undefined,
     }
     resume.layouts = [layoutWithNoTemplate]
 
-    const renderer = getResumeRenderer(resume, layoutIndex)
+    const renderer = getResumeRenderer(resume, 0)
     expect(renderer).toBeInstanceOf(ModerncvBankingRenderer)
   })
 
   it('should return default renderer when template id is not valid', () => {
     const resume = cloneDeep(mockResume)
     const layout = {
-      ...(resume.layouts?.[layoutIndex] as LatexLayout),
+      ...latexLayout,
       template: 'invalid-template' as LatexTemplate,
     }
     resume.layouts = [layout]
 
-    const renderer = getResumeRenderer(resume, layoutIndex)
+    const renderer = getResumeRenderer(resume, 0)
     expect(renderer).toBeInstanceOf(ModerncvBankingRenderer)
   })
 
@@ -100,7 +102,7 @@ describe(getResumeRenderer, () => {
     }
     resume.layouts = [layout]
 
-    const renderer = getResumeRenderer(resume, layoutIndex)
+    const renderer = getResumeRenderer(resume, 0)
     expect(renderer).toBeInstanceOf(MarkdownRenderer)
   })
 
@@ -111,7 +113,7 @@ describe(getResumeRenderer, () => {
     }
     resume.layouts = [layout]
 
-    const renderer = getResumeRenderer(resume, layoutIndex)
+    const renderer = getResumeRenderer(resume, 0)
     expect(renderer).toBeInstanceOf(HtmlRenderer)
   })
 
@@ -122,7 +124,7 @@ describe(getResumeRenderer, () => {
     }
     resume.layouts = [layout]
 
-    const renderer = getResumeRenderer(resume, layoutIndex)
+    const renderer = getResumeRenderer(resume, 0)
     expect(renderer).toBeInstanceOf(DocxRenderer)
   })
 
@@ -134,7 +136,7 @@ describe(getResumeRenderer, () => {
     }
     resume.layouts = [layout]
 
-    const renderer = getResumeRenderer(resume, layoutIndex)
+    const renderer = getResumeRenderer(resume, 0)
     expect(renderer).toBeInstanceOf(DocxRenderer)
   })
 
@@ -142,7 +144,7 @@ describe(getResumeRenderer, () => {
     const resume = cloneDeep(mockResume)
     resume.layouts = []
 
-    expect(() => getResumeRenderer(resume, layoutIndex)).toThrow(
+    expect(() => getResumeRenderer(resume, 0)).toThrow(
       'Layout not found in resume.layouts at index: 0.'
     )
   })
@@ -151,7 +153,7 @@ describe(getResumeRenderer, () => {
     const resume = cloneDeep(mockResume)
     resume.layouts = undefined
 
-    expect(() => getResumeRenderer(resume, layoutIndex)).toThrow(
+    expect(() => getResumeRenderer(resume, 0)).toThrow(
       'Layout not found in resume.layouts at index: 0.'
     )
   })
@@ -160,7 +162,7 @@ describe(getResumeRenderer, () => {
     const resume = cloneDeep(mockResume)
     resume.layouts = [{ engine: undefined }]
 
-    expect(() => getResumeRenderer(resume, layoutIndex)).toThrow(
+    expect(() => getResumeRenderer(resume, 0)).toThrow(
       'Layout engine not found at index: 0.'
     )
   })
@@ -170,7 +172,7 @@ describe(getResumeRenderer, () => {
     // @ts-expect-error
     resume.layouts = [{ engine: 'unknown-engine' }]
 
-    expect(() => getResumeRenderer(resume, layoutIndex)).toThrow(
+    expect(() => getResumeRenderer(resume, 0)).toThrow(
       'Unknown engine: unknown-engine'
     )
   })

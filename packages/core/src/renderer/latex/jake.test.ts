@@ -26,19 +26,16 @@ import { cloneDeep } from 'lodash-es'
 import { beforeEach, describe, expect, it } from 'vitest'
 
 import { FILLED_RESUME, type Resume } from '@/models'
+import { findLayoutIndex } from '../test-utils'
 import { JakeRenderer } from './jake'
 
 describe('JakeRenderer', () => {
   let resume: Resume
   let renderer: JakeRenderer
-  let layoutIndex: number
 
   beforeEach(() => {
     resume = cloneDeep(FILLED_RESUME)
-    layoutIndex = FILLED_RESUME.layouts.findIndex(
-      (layout) => layout.engine === 'latex'
-    )
-    renderer = new JakeRenderer(resume, layoutIndex)
+    renderer = new JakeRenderer(resume, findLayoutIndex(resume, 'latex'))
   })
 
   it('should generate complete LaTeX document', () => {
@@ -59,7 +56,10 @@ describe('JakeRenderer', () => {
   describe('renderPreamble', () => {
     it('should return empty preamble when layout engine is not latex', () => {
       resume.layouts = [{ engine: 'markdown', sections: {} }]
-      renderer = new JakeRenderer(resume, layoutIndex)
+      renderer = new JakeRenderer(
+        resume,
+        resume.layouts.findIndex((l) => l.engine === 'markdown')
+      )
       const result = renderer.renderPreamble()
       expect(result).toBe('')
     })
@@ -78,7 +78,7 @@ describe('JakeRenderer', () => {
       // With { engine: 'latex' } alone, transformResume fills defaults.
       // Test that articledocument class is used in all cases.
       resume.layouts = [{ engine: 'latex' }]
-      renderer = new JakeRenderer(resume, layoutIndex)
+      renderer = new JakeRenderer(resume, findLayoutIndex(resume, 'latex'))
       const result = renderer.renderPreamble()
 
       expect(result).toContain('{article}')
@@ -96,7 +96,10 @@ describe('JakeRenderer', () => {
         },
       ]
 
-      const renderer = new JakeRenderer(a4Resume, layoutIndex)
+      const renderer = new JakeRenderer(
+        a4Resume,
+        findLayoutIndex(a4Resume, 'latex')
+      )
       const result = renderer.renderPreamble()
 
       expect(result).toContain('\\documentclass[a4paper,')
@@ -113,7 +116,10 @@ describe('JakeRenderer', () => {
         },
       ]
 
-      const renderer = new JakeRenderer(letterResume, layoutIndex)
+      const renderer = new JakeRenderer(
+        letterResume,
+        findLayoutIndex(letterResume, 'latex')
+      )
       const result = renderer.renderPreamble()
 
       expect(result).toContain('\\documentclass[letterpaper,')
@@ -165,7 +171,7 @@ describe('JakeRenderer', () => {
           },
         },
       ]
-      renderer = new JakeRenderer(resume, layoutIndex)
+      renderer = new JakeRenderer(resume, findLayoutIndex(resume, 'latex'))
       const result = renderer.renderPreamble()
 
       expect(result).toContain('top=1cm')
@@ -184,7 +190,7 @@ describe('JakeRenderer', () => {
         },
       ]
 
-      renderer = new JakeRenderer(resume, layoutIndex)
+      renderer = new JakeRenderer(resume, findLayoutIndex(resume, 'latex'))
       const result = renderer.renderPreamble()
 
       expect(result).toContain('\\pagenumbering{gobble}')
@@ -208,7 +214,7 @@ describe('JakeRenderer', () => {
         },
       ]
 
-      renderer = new JakeRenderer(resume, layoutIndex)
+      renderer = new JakeRenderer(resume, findLayoutIndex(resume, 'latex'))
       const result = renderer.renderPreamble()
 
       expect(result).not.toContain('fontawesome7')
@@ -217,8 +223,8 @@ describe('JakeRenderer', () => {
     })
 
     it('should use default font size when layout is undefined', () => {
+      renderer = new JakeRenderer(resume, findLayoutIndex(resume, 'latex'))
       resume.layouts = undefined
-      renderer = new JakeRenderer(resume, layoutIndex)
       const result = renderer.renderPreamble()
       // transformResume fills DEFAULT_LATEX_LAYOUT defaults (a4paper, 10pt)
       expect(result).toContain('\\documentclass[a4paper,10pt]{article}')
@@ -226,7 +232,7 @@ describe('JakeRenderer', () => {
 
     it('should use default font size when typography is missing', () => {
       resume.layouts = [{ engine: 'latex' }]
-      renderer = new JakeRenderer(resume, layoutIndex)
+      renderer = new JakeRenderer(resume, findLayoutIndex(resume, 'latex'))
       const result = renderer.renderPreamble()
       // transformResume fills DEFAULT_LATEX_LAYOUT defaults (a4paper, 10pt)
       expect(result).toContain('\\documentclass[a4paper,10pt]{article}')
@@ -242,14 +248,14 @@ describe('JakeRenderer', () => {
           },
         },
       ]
-      renderer = new JakeRenderer(resume, layoutIndex)
+      renderer = new JakeRenderer(resume, findLayoutIndex(resume, 'latex'))
       const result = renderer.renderPreamble()
       expect(result).toContain('\\documentclass[a4paper,10pt]{article}')
     })
 
     it('should use default numbers style when advanced config is missing', () => {
       resume.layouts = [{ engine: 'latex', advanced: undefined }]
-      renderer = new JakeRenderer(resume, layoutIndex)
+      renderer = new JakeRenderer(resume, findLayoutIndex(resume, 'latex'))
       const result = renderer.renderPreamble()
       expect(result).toContain('Numbers=OldStyle')
     })
@@ -279,7 +285,7 @@ describe('JakeRenderer', () => {
       resume.content.basics.email = email
       resume.content.basics.url = url
 
-      renderer = new JakeRenderer(resume, layoutIndex)
+      renderer = new JakeRenderer(resume, findLayoutIndex(resume, 'latex'))
       const result = renderer.renderBasics()
 
       expect(result).not.toContain('\\begin{center}')
@@ -298,7 +304,7 @@ describe('JakeRenderer', () => {
     it('should NOT render name when name is empty', () => {
       resume.content.basics.name = ''
 
-      renderer = new JakeRenderer(resume, layoutIndex)
+      renderer = new JakeRenderer(resume, findLayoutIndex(resume, 'latex'))
       const result = renderer.renderBasics()
 
       expect(result).not.toContain('\\textbf{\\Huge \\scshape }')
@@ -309,7 +315,7 @@ describe('JakeRenderer', () => {
       resume.content.basics.name = name
       resume.content.basics.headline = ''
 
-      renderer = new JakeRenderer(resume, layoutIndex)
+      renderer = new JakeRenderer(resume, findLayoutIndex(resume, 'latex'))
       const result = renderer.renderBasics()
 
       expect(result).toContain(
@@ -322,7 +328,7 @@ describe('JakeRenderer', () => {
       resume.content.basics.name = name
       resume.content.basics.headline = undefined
 
-      renderer = new JakeRenderer(resume, layoutIndex)
+      renderer = new JakeRenderer(resume, findLayoutIndex(resume, 'latex'))
       const result = renderer.renderBasics()
 
       expect(result).toContain(
@@ -343,7 +349,7 @@ describe('JakeRenderer', () => {
         country,
       }
 
-      renderer = new JakeRenderer(resume, layoutIndex)
+      renderer = new JakeRenderer(resume, findLayoutIndex(resume, 'latex'))
       const result = renderer.renderLocation()
 
       expect(result).toContain(`${address}, ${city}, ${country}`)
@@ -363,7 +369,7 @@ describe('JakeRenderer', () => {
         },
       ]
 
-      renderer = new JakeRenderer(resume, layoutIndex)
+      renderer = new JakeRenderer(resume, findLayoutIndex(resume, 'latex'))
       const result = renderer.renderProfiles()
 
       expect(result).toContain(`\\href{${url}}{${username}}`)
@@ -382,15 +388,15 @@ describe('JakeRenderer', () => {
         },
       ]
 
-      resume.layouts[layoutIndex] = {
-        ...resume.layouts[layoutIndex],
+      resume.layouts[findLayoutIndex(resume, 'latex')] = {
+        ...resume.layouts[findLayoutIndex(resume, 'latex')],
         // @ts-expect-error
         advanced: {
           showIcons: false,
         },
       }
 
-      renderer = new JakeRenderer(resume, layoutIndex)
+      renderer = new JakeRenderer(resume, findLayoutIndex(resume, 'latex'))
       const result = renderer.renderProfiles()
 
       expect(result).not.toContain('\\faGithub')
@@ -415,7 +421,7 @@ describe('JakeRenderer', () => {
         },
       ]
 
-      renderer = new JakeRenderer(resume, layoutIndex)
+      renderer = new JakeRenderer(resume, findLayoutIndex(resume, 'latex'))
       const result = renderer.renderProfiles()
 
       expect(result).toContain('\\faGithub')
@@ -447,7 +453,7 @@ describe('JakeRenderer', () => {
         },
       ]
 
-      renderer = new JakeRenderer(resume, layoutIndex)
+      renderer = new JakeRenderer(resume, findLayoutIndex(resume, 'latex'))
       const result = renderer.renderEducation()
 
       expect(result).toMatch(/^\\section{Education}/)
@@ -479,7 +485,7 @@ describe('JakeRenderer', () => {
         },
       ]
 
-      renderer = new JakeRenderer(resume, layoutIndex)
+      renderer = new JakeRenderer(resume, findLayoutIndex(resume, 'latex'))
       const result = renderer.renderWork()
 
       expect(result).toMatch(/^\\section{Work}/)
@@ -499,7 +505,7 @@ describe('JakeRenderer', () => {
         },
       ]
 
-      renderer = new JakeRenderer(resume, layoutIndex)
+      renderer = new JakeRenderer(resume, findLayoutIndex(resume, 'latex'))
       const result = renderer.renderLanguages()
 
       expect(result).toMatch(/^\\section{Languages}/)
@@ -518,7 +524,7 @@ describe('JakeRenderer', () => {
         },
       ]
 
-      renderer = new JakeRenderer(resume, layoutIndex)
+      renderer = new JakeRenderer(resume, findLayoutIndex(resume, 'latex'))
       const result = renderer.renderSkills()
 
       expect(result).toMatch(/^\\section{Skills}/)
@@ -533,7 +539,7 @@ describe('JakeRenderer', () => {
         },
       ]
 
-      renderer = new JakeRenderer(resume, layoutIndex)
+      renderer = new JakeRenderer(resume, findLayoutIndex(resume, 'latex'))
       const result = renderer.renderSkills()
 
       expect(result).toMatch(/^\\section{Skills}/)
@@ -557,7 +563,7 @@ describe('JakeRenderer', () => {
         },
       ]
 
-      renderer = new JakeRenderer(resume, layoutIndex)
+      renderer = new JakeRenderer(resume, findLayoutIndex(resume, 'latex'))
       const result = renderer.renderAwards()
 
       expect(result).toMatch(/^\\section{Awards}/)
@@ -583,7 +589,7 @@ describe('JakeRenderer', () => {
         },
       ]
 
-      renderer = new JakeRenderer(resume, layoutIndex)
+      renderer = new JakeRenderer(resume, findLayoutIndex(resume, 'latex'))
       const result = renderer.renderCertificates()
 
       expect(result).toMatch(/^\\section{Certificates}/)
@@ -612,7 +618,7 @@ describe('JakeRenderer', () => {
         },
       ]
 
-      renderer = new JakeRenderer(resume, layoutIndex)
+      renderer = new JakeRenderer(resume, findLayoutIndex(resume, 'latex'))
       const result = renderer.renderPublications()
 
       expect(result).toMatch(/^\\section{Publications}/)
@@ -644,7 +650,7 @@ describe('JakeRenderer', () => {
         },
       ]
 
-      renderer = new JakeRenderer(resume, layoutIndex)
+      renderer = new JakeRenderer(resume, findLayoutIndex(resume, 'latex'))
       const result = renderer.renderReferences()
 
       expect(result).toMatch(/^\\section{References}/)
@@ -676,7 +682,7 @@ describe('JakeRenderer', () => {
         },
       ]
 
-      renderer = new JakeRenderer(resume, layoutIndex)
+      renderer = new JakeRenderer(resume, findLayoutIndex(resume, 'latex'))
       const result = renderer.renderProjects()
 
       expect(result).toMatch(/^\\section{Projects}/)
@@ -699,7 +705,7 @@ describe('JakeRenderer', () => {
         },
       ]
 
-      renderer = new JakeRenderer(resume, layoutIndex)
+      renderer = new JakeRenderer(resume, findLayoutIndex(resume, 'latex'))
       const result = renderer.renderInterests()
 
       expect(result).toMatch(/^\\section{Interests}/)
@@ -727,7 +733,7 @@ describe('JakeRenderer', () => {
         },
       ]
 
-      renderer = new JakeRenderer(resume, layoutIndex)
+      renderer = new JakeRenderer(resume, findLayoutIndex(resume, 'latex'))
       const result = renderer.renderVolunteer()
 
       expect(result).toMatch(/^\\section{Volunteer}/)
@@ -743,7 +749,7 @@ describe('JakeRenderer', () => {
       const name = 'John Doe'
       resume.content.basics.name = name
 
-      renderer = new JakeRenderer(resume, layoutIndex)
+      renderer = new JakeRenderer(resume, findLayoutIndex(resume, 'latex'))
       const result = renderer.render()
 
       expect(result).toContain('\\begin{center}')

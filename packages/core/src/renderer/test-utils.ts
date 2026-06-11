@@ -25,7 +25,7 @@ import fs from 'node:fs'
 import path from 'node:path'
 import yaml from 'yaml'
 
-import { type Resume, SECTION_IDS } from '@/models'
+import { type LayoutEngine, type Resume, SECTION_IDS } from '@/models'
 
 /**
  * Load a resume fixture from the fixtures directory.
@@ -54,4 +54,15 @@ export const sections = SECTION_IDS.filter((section) => section !== 'basics')
 export function getRandomSections(count: number): string[] {
   const shuffled = [...sections].sort(() => 0.5 - Math.random())
   return shuffled.slice(0, count)
+}
+
+/**
+ * Find the index of the first layout with the given engine in the resume.
+ *
+ * @param resume - The resume object to search
+ * @param engine - The layout engine to find
+ * @returns The index of the first matching layout, or -1 if not found
+ */
+export function findLayoutIndex(resume: Resume, engine: LayoutEngine): number {
+  return resume.layouts?.findIndex((layout) => layout.engine === engine) ?? -1
 }

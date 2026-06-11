@@ -44,6 +44,7 @@ import {
   RESUME_SECTION_ITEMS,
   type Resume,
 } from '@/models'
+import { findLayoutIndex } from '@/renderer/test-utils'
 import { getOptionTranslation, getTemplateTranslations } from '@/translations'
 import { escapeLatex } from '@/utils'
 import {
@@ -830,7 +831,8 @@ describe(transformLocation, () => {
 })
 
 describe(transformSummary, () => {
-  const layoutIndex = 0
+  const latexLayoutIndex =
+    FILLED_RESUME.layouts?.findIndex((l) => l.engine === 'latex') ?? 0
 
   it('should parse summary from markdown to tex', () => {
     const resume = cloneDeep(FILLED_RESUME)
@@ -854,7 +856,7 @@ describe(transformSummary, () => {
 
     const summaryParser = new MarkdownParser()
 
-    transformSummary(resume, layoutIndex, summaryParser)
+    transformSummary(resume, latexLayoutIndex, summaryParser)
 
     const expected = new LatexCodeGenerator()
       .generate(summaryParser.parse(summary))
@@ -902,7 +904,7 @@ describe(transformSummary, () => {
 
       const summaryParser = new MarkdownParser()
 
-      transformSummary(resume, layoutIndex, summaryParser)
+      transformSummary(resume, latexLayoutIndex, summaryParser)
 
       expect(resume.content.basics.computed?.summary).toEqual('')
 
@@ -932,7 +934,7 @@ describe(transformSummary, () => {
 
     const summaryParser = new MarkdownParser()
 
-    transformSummary(resume, layoutIndex, summaryParser)
+    transformSummary(resume, findLayoutIndex(resume, 'latex'), summaryParser)
 
     const expected = new LatexCodeGenerator()
       .generate(summaryParser.parse(summary))
@@ -952,7 +954,7 @@ describe(transformSummary, () => {
 
     const summaryParser = new MarkdownParser()
 
-    transformSummary(resume, layoutIndex, summaryParser)
+    transformSummary(resume, findLayoutIndex(resume, 'markdown'), summaryParser)
 
     // Should preserve raw summary in computed.summary for downstream compatibility
     expect(resume.content.basics.computed?.summary).toBe(summary)
@@ -967,7 +969,7 @@ describe(transformSummary, () => {
 
     const summaryParser = new MarkdownParser()
 
-    transformSummary(resume, layoutIndex, summaryParser)
+    transformSummary(resume, findLayoutIndex(resume, 'docx'), summaryParser)
 
     // docx engine handles markdown parsing internally in the renderer
     expect(resume.content.basics.computed?.summary).toBe(summary)
@@ -982,7 +984,7 @@ describe(transformSummary, () => {
 
     const summaryParser = new MarkdownParser()
 
-    transformSummary(resume, layoutIndex, summaryParser)
+    transformSummary(resume, findLayoutIndex(resume, 'docx'), summaryParser)
 
     expect(resume.content.basics.computed?.summary).toBe('')
   })
@@ -1003,7 +1005,7 @@ describe(transformSummary, () => {
 
     const summaryParser = new MarkdownParser()
 
-    transformSummary(resume, layoutIndex, summaryParser)
+    transformSummary(resume, findLayoutIndex(resume, 'docx'), summaryParser)
 
     expect(resume.content.work[0].computed?.summary).toBe('')
   })
@@ -1024,7 +1026,7 @@ describe(transformSummary, () => {
 
     const summaryParser = new MarkdownParser()
 
-    transformSummary(resume, layoutIndex, summaryParser)
+    transformSummary(resume, findLayoutIndex(resume, 'html'), summaryParser)
 
     const expected = new HtmlCodeGenerator()
       .generate(summaryParser.parse(summary))
@@ -1043,7 +1045,9 @@ describe(transformSummary, () => {
 
     const summaryParser = new MarkdownParser()
 
-    expect(() => transformSummary(resume, layoutIndex, summaryParser)).toThrow()
+    expect(() =>
+      transformSummary(resume, findLayoutIndex(resume, 'latex'), summaryParser)
+    ).toThrow()
   })
 })
 
@@ -1090,7 +1094,8 @@ describe(transformSkills, () => {
 })
 
 describe(transformSectionNames, () => {
-  const layoutIndex = 0
+  const layoutIndex =
+    DEFAULT_RESUME.layouts?.findIndex((l) => l.engine === 'latex') ?? 0
   const summaryParser = new MarkdownParser()
 
   it('should translate section names according to user chosen language', () => {
@@ -1268,7 +1273,8 @@ describe(transformResumeValues, () => {
 })
 
 describe(transformResumeContent, () => {
-  const layoutIndex = 0
+  const layoutIndex =
+    FILLED_RESUME.layouts?.findIndex((l) => l.engine === 'latex') ?? 0
 
   it('should transform resume.content by calling transform functions', () => {
     const resume = cloneDeep(FILLED_RESUME)
@@ -1322,7 +1328,8 @@ describe(transformResumeContent, () => {
 })
 
 describe(transformResumeLayoutLaTeX, () => {
-  const layoutIndex = 0
+  const layoutIndex =
+    DEFAULT_RESUME.layouts?.findIndex((l) => l.engine === 'latex') ?? 0
 
   it('should return resume as is when layouts is undefined', () => {
     const resume = cloneDeep(DEFAULT_RESUME)

@@ -25,6 +25,8 @@
 import { describe, expect, it } from 'vitest'
 
 import {
+  DOCX_FONT_SIZE_OPTIONS,
+  DOCX_TEMPLATE_OPTIONS,
   HTML_FONT_SIZE_OPTIONS,
   HTML_TEMPLATE_OPTIONS,
   LATEX_FONT_SIZE_OPTIONS,
@@ -132,11 +134,41 @@ describe('LayoutsSchema', () => {
       {
         layouts: [
           {
+            engine: 'docx' as const,
+          },
+        ],
+      },
+      {
+        layouts: [
+          {
+            engine: 'docx' as const,
+            template: DOCX_TEMPLATE_OPTIONS[0],
+            typography: {
+              fontSize: DOCX_FONT_SIZE_OPTIONS[0],
+            },
+          },
+        ],
+      },
+      {
+        layouts: [
+          {
             engine: 'latex' as const,
             template,
           },
           {
             engine: 'markdown' as const,
+          },
+        ],
+      },
+      {
+        layouts: [
+          {
+            engine: 'docx' as const,
+            template: DOCX_TEMPLATE_OPTIONS[0],
+          },
+          {
+            engine: 'html' as const,
+            template: HTML_TEMPLATE_OPTIONS[0],
           },
         ],
       },
@@ -386,6 +418,53 @@ describe('LayoutsSchema', () => {
                             optionSchemaMessage(
                               HTML_FONT_SIZE_OPTIONS,
                               'HTML font size'
+                            ),
+                          ],
+                        },
+                      },
+                    },
+                  },
+                },
+              ],
+            },
+          },
+        },
+      },
+      {
+        layouts: [
+          {
+            engine: 'docx',
+            template: 'invalid-template',
+            typography: {
+              fontSize: '25pt',
+            },
+          },
+        ],
+        error: {
+          errors: [],
+          properties: {
+            layouts: {
+              errors: [],
+              items: [
+                {
+                  errors: [],
+                  properties: {
+                    template: {
+                      errors: [
+                        optionSchemaMessage(
+                          DOCX_TEMPLATE_OPTIONS,
+                          'DOCX template'
+                        ),
+                      ],
+                    },
+                    typography: {
+                      errors: [],
+                      properties: {
+                        fontSize: {
+                          errors: [
+                            optionSchemaMessage(
+                              DOCX_FONT_SIZE_OPTIONS,
+                              'DOCX font size'
                             ),
                           ],
                         },
