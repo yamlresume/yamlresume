@@ -234,6 +234,7 @@ export const LOCALE_LANGUAGE_OPTIONS = [
   'ja',
   'de',
   'id',
+  'cat',
   'pt-br',
 ] as const
 

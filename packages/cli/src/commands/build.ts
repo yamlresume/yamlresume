@@ -28,6 +28,8 @@ import {
   DEFAULT_RESUME_LAYOUTS,
   getResumeRenderer,
   joinNonEmptyString,
+  LOCALE_LANGUAGE_OPTIONS,
+  type LocaleLanguage,
   type Resume,
   toCodeBlock,
   YAMLResumeError,
@@ -365,6 +367,7 @@ export async function buildResume(
     validate?: boolean
     output?: string
     timeout?: number
+    language?: LocaleLanguage
   } = {
     pdf: true,
     validate: true,
@@ -372,6 +375,10 @@ export async function buildResume(
   }
 ) {
   const { resume } = readResume(resumePath, options.validate)
+
+  if (options.language) {
+    resume.locale = { ...resume.locale, language: options.language }
+  }
 
   // Fallback to default layout if none provided
   const allLayouts = resume.layouts ?? DEFAULT_RESUME_LAYOUTS
@@ -472,6 +479,24 @@ export function createBuildCommand() {
     .option('--no-validate', 'skip resume schema validation')
     .option('-o, --output <dir>', 'output directory for generated files')
     .option(
+      '-l, --language <lang>',
+      joinNonEmptyString(
+        [
+          'override the locale language from the YAML file',
+          `(supported: ${LOCALE_LANGUAGE_OPTIONS.join(', ')})`,
+        ],
+        ' '
+      ),
+      (value) => {
+        if (!LOCALE_LANGUAGE_OPTIONS.includes(value as LocaleLanguage)) {
+          throw new Error(
+            `Invalid language "${value}". Must be one of: ${LOCALE_LANGUAGE_OPTIONS.join(', ')}`
+          )
+        }
+        return value as LocaleLanguage
+      }
+    )
+    .option(
       '-t, --timeout <seconds>',
       joinNonEmptyString(
         [
@@ -490,6 +515,7 @@ export function createBuildCommand() {
           validate: boolean
           output?: string
           timeout: number
+          language?: LocaleLanguage
         }
       ) => {
         try {

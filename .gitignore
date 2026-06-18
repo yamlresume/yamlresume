@@ -153,3 +153,8 @@ packages/cli/resources/*.pdf
 packages/cli/my-resume.*
 
 .vscode
+
+# own gitignore rules
+.idea
+packages/cli/resources/portfolio.html
+packages/cli/resources/portfolio.md

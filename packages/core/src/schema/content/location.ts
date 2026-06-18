@@ -24,7 +24,11 @@
 import { z } from 'zod'
 
 import { joinNonEmptyString } from '@/utils'
-import { CountryOptionSchema, SizedStringSchema } from '../primitives'
+import {
+  CountryOptionSchema,
+  multilingualString,
+  SizedStringSchema,
+} from '../primitives'
 import { nullifySchema } from '../utils'
 
 /**
@@ -75,10 +79,10 @@ export const LocationItemSchema = z.object({
   city: CitySchema,
 
   // optional fields
-  address: nullifySchema(AddressSchema),
+  address: multilingualString(AddressSchema).nullish(),
   country: nullifySchema(CountryOptionSchema),
   postalCode: nullifySchema(PostalCodeSchema),
-  region: nullifySchema(RegionSchema),
+  region: multilingualString(RegionSchema).nullish(),
 })
 
 /**

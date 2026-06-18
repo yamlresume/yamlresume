@@ -121,7 +121,10 @@ describe('PublicationsSchema', () => {
                   errors: [],
                   properties: {
                     name: {
-                      errors: ['name is required.'],
+                      errors: [
+                        'name is required.',
+                        'Invalid input: expected record, received undefined',
+                      ],
                     },
                   },
                 },
@@ -182,7 +185,10 @@ describe('PublicationsSchema', () => {
                   errors: [],
                   properties: {
                     name: {
-                      errors: ['name is required.'],
+                      errors: [
+                        'name is required.',
+                        'Invalid input: expected record, received undefined',
+                      ],
                     },
                     publisher: {
                       errors: ['publisher is required.'],

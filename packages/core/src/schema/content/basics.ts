@@ -26,6 +26,7 @@ import { z } from 'zod'
 import { joinNonEmptyString } from '@/utils'
 import {
   EmailSchema,
+  multilingualString,
   NameSchema,
   PhoneSchema,
   SizedStringSchema,
@@ -57,9 +58,9 @@ export const BasicsItemSchema = z.object(
 
     // optional fields
     email: nullifySchema(EmailSchema),
-    headline: nullifySchema(HeadlineSchema),
+    headline: multilingualString(HeadlineSchema).nullish(),
     phone: nullifySchema(PhoneSchema),
-    summary: nullifySchema(SummarySchema),
+    summary: multilingualString(SummarySchema).nullish(),
     url: nullifySchema(UrlSchema),
   },
   {

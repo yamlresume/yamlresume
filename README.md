@@ -161,6 +161,11 @@ $ yamlresume dev my-resume.yml
 ✔ Generated resume markdown file successfully: my-resume.md
 ```
 
+Using Docker you can also use all of the above commands. In this case:
+```shell
+docker run --rm -v ${PWD}/packages/cli/resources:/home/yamlresume AleixMT/yamlportfolio dev portfolio.yml
+```
+
 Check out the generated PDF [here](./docs/static/images/resume.pdf).
 
 ![Software Engineer Page 1](./docs/static/images/resume-1.webp)

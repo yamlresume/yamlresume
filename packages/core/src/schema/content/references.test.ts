@@ -152,7 +152,10 @@ describe('ReferencesSchema', () => {
                   errors: [],
                   properties: {
                     summary: {
-                      errors: ['summary is required.'],
+                      errors: [
+                        'summary is required.',
+                        'Invalid input: expected record, received undefined',
+                      ],
                     },
                   },
                 },
@@ -275,7 +278,10 @@ describe('ReferencesSchema', () => {
                       errors: ['name is required.'],
                     },
                     summary: {
-                      errors: ['summary is required.'],
+                      errors: [
+                        'summary is required.',
+                        'Invalid input: expected record, received undefined',
+                      ],
                     },
                     relationship: {
                       errors: ['relationship should be 2 characters or more.'],

@@ -27,6 +27,7 @@ import { joinNonEmptyString } from '@/utils'
 import {
   DateSchema,
   DegreeOptionSchema,
+  multilingualString,
   OrganizationSchema,
   SizedStringSchema,
   SummarySchema,
@@ -90,7 +91,7 @@ export const ScoreSchema = SizedStringSchema('score', 2, 32).meta({
  */
 export const EducationItemSchema = z.object({
   // required fields
-  area: AreaSchema,
+  area: multilingualString(AreaSchema),
   institution: InstitutionSchema,
   degree: DegreeOptionSchema,
   startDate: DateSchema('startDate'),
@@ -98,7 +99,7 @@ export const EducationItemSchema = z.object({
   // optional fields
   courses: nullifySchema(CoursesSchema),
   endDate: nullifySchema(DateSchema('endDate')),
-  summary: nullifySchema(SummarySchema),
+  summary: multilingualString(SummarySchema).nullish(),
   score: nullifySchema(ScoreSchema),
   url: nullifySchema(UrlSchema),
 })

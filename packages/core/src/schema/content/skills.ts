@@ -24,7 +24,12 @@
 import { z } from 'zod'
 
 import { joinNonEmptyString } from '@/utils'
-import { KeywordsSchema, LevelOptionSchema, NameSchema } from '../primitives'
+import {
+  KeywordsSchema,
+  LevelOptionSchema,
+  multilingualString,
+  NameSchema,
+} from '../primitives'
 import { nullifySchema } from '../utils'
 
 /**
@@ -40,7 +45,7 @@ export const SkillNameSchema = NameSchema('name').describe(
 export const SkillItemSchema = z.object({
   // required fields
   level: LevelOptionSchema,
-  name: SkillNameSchema,
+  name: multilingualString(SkillNameSchema),
 
   // optional fields
   keywords: nullifySchema(KeywordsSchema),
