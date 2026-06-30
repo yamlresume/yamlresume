@@ -1152,6 +1152,7 @@
                     "type": "string",
                     "enum": [
                       "Behance",
+                      "Discord",
                       "Dribbble",
                       "Facebook",
                       "GitHub",

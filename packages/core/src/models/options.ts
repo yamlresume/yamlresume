@@ -227,6 +227,7 @@ export const LOCALE_LANGUAGE_OPTIONS = [
  */
 export const NETWORK_OPTIONS = [
   'Behance',
+  'Discord',
   'Dribbble',
   'Facebook',
   'GitHub',
