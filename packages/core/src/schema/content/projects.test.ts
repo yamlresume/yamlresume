@@ -237,6 +237,70 @@ describe('ProjectsSchema', () => {
           },
         },
       },
+      {
+        projects: [
+          // @ts-ignore
+          {
+            // description too short
+            name,
+            startDate,
+            summary,
+
+            description: 'abc',
+          },
+        ],
+        error: {
+          errors: [],
+          properties: {
+            projects: {
+              errors: [],
+              items: [
+                {
+                  errors: [],
+                  properties: {
+                    description: {
+                      errors: ['description should be 4 characters or more.'],
+                    },
+                  },
+                },
+              ],
+            },
+          },
+        },
+      },
+      {
+        projects: [
+          // @ts-ignore
+          {
+            // description too long
+            name,
+            startDate,
+            summary,
+
+            description: 'a'.repeat(1025),
+          },
+        ],
+        error: {
+          errors: [],
+          properties: {
+            projects: {
+              errors: [],
+              items: [
+                {
+                  errors: [],
+                  properties: {
+                    description: {
+                      errors: [
+                        'description should be 1024 characters or less.',
+                      ],
+                    },
+                  },
+                },
+              ],
+            },
+          },
+        },
+      },
     ]
 
     for (const { projects, error } of tests) {
