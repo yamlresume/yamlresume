@@ -47,7 +47,7 @@ export const ProjectNameSchema = NameSchema('name').describe(
 export const ProjectDescriptionSchema = SizedStringSchema(
   'description',
   4,
-  128
+  1024
 ).meta({
   title: 'Description',
   description: 'A detailed description of the project and your role.',

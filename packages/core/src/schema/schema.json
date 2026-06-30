@@ -1276,7 +1276,7 @@
                       {
                         "type": "string",
                         "minLength": 4,
-                        "maxLength": 128,
+                        "maxLength": 1024,
                         "title": "[optional] Description",
                         "description": "A detailed description of the project and your role or `null`.",
                         "examples": [
