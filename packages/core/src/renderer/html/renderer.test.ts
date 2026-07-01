@@ -465,7 +465,7 @@ describe('HtmlRenderer', () => {
       const result = renderer.renderSummary()
 
       expect(result).toContain(
-        '<section class="resume-section" data-section="summary">'
+        '<section class="resume-section" id="summary" data-section="summary">'
       )
       expect(result).toContain('<div class="resume-section-content">')
       expect(result).toContain('<div class="resume-summary-content">')
@@ -693,6 +693,7 @@ describe('HtmlRenderer', () => {
       renderer = new HtmlRenderer(resume, layoutIndex)
       const result = renderer.renderEducation()
 
+      expect(result).toContain('id="education"')
       expect(result).toContain(`<a href="${url}">${institution}</a>`)
       expect(result).toContain(degree)
       expect(result).toContain(area)
@@ -748,6 +749,7 @@ describe('HtmlRenderer', () => {
       renderer = new HtmlRenderer(resume, layoutIndex)
       const result = renderer.renderWork()
 
+      expect(result).toContain('id="work"')
       expect(result).toContain(`<a href="${url}">${name}</a>`)
       expect(result).toContain(
         `<div class="resume-entry-title"><a href="${url}">${name}</a></div>`
@@ -801,7 +803,7 @@ describe('HtmlRenderer', () => {
       const result = renderer.renderLanguages()
 
       expect(result).toContain(
-        '<section class="resume-section" data-section="languages">'
+        '<section class="resume-section" id="languages" data-section="languages">'
       )
       expect(result).toContain(
         '<h2 class="resume-section-title">Languages</h2>'
@@ -892,7 +894,7 @@ describe('HtmlRenderer', () => {
       const result = renderer.renderSkills()
 
       expect(result).toContain(
-        '<section class="resume-section" data-section="skills">'
+        '<section class="resume-section" id="skills" data-section="skills">'
       )
       expect(result).toContain('<h2 class="resume-section-title">Skills</h2>')
       expect(result).toContain('<div class="resume-skill-item">')
@@ -1000,6 +1002,7 @@ describe('HtmlRenderer', () => {
       renderer = new HtmlRenderer(resume, layoutIndex)
       const result = renderer.renderAwards()
 
+      expect(result).toContain('id="awards"')
       expect(result).toContain(title)
       expect(result).toContain(awarder)
       expect(result).toContain('Jan 2023')
@@ -1046,6 +1049,7 @@ describe('HtmlRenderer', () => {
       renderer = new HtmlRenderer(resume, layoutIndex)
       const result = renderer.renderCertificates()
 
+      expect(result).toContain('id="certificates"')
       expect(result).toContain(issuer)
       expect(result).toContain('May 2023')
       expect(result).toContain(`<a href="${url}">${name}</a>`)
@@ -1093,6 +1097,7 @@ describe('HtmlRenderer', () => {
       renderer = new HtmlRenderer(resume, layoutIndex)
       const result = renderer.renderPublications()
 
+      expect(result).toContain('id="publications"')
       expect(result).toContain(`<a href="${url}">${name}</a>`)
       expect(result).toContain(
         `<div class="resume-entry-title"><a href="${url}">${name}</a></div>`
@@ -1145,6 +1150,7 @@ describe('HtmlRenderer', () => {
       renderer = new HtmlRenderer(resume, layoutIndex)
       const result = renderer.renderReferences()
 
+      expect(result).toContain('id="references"')
       // Verify Name is Linked to Email
       expect(result).toContain(`<a href="mailto:${email}">${name}</a>`)
 
@@ -1207,6 +1213,7 @@ describe('HtmlRenderer', () => {
       renderer = new HtmlRenderer(resume, layoutIndex)
       const result = renderer.renderProjects()
 
+      expect(result).toContain('id="projects"')
       expect(result).toContain(`<a href="${url}">${name}</a>`)
       // Verify Name is Title (Bold)
       expect(result).toContain(
@@ -1262,7 +1269,7 @@ describe('HtmlRenderer', () => {
       const result = renderer.renderInterests()
 
       expect(result).toContain(
-        '<section class="resume-section" data-section="interests">'
+        '<section class="resume-section" id="interests" data-section="interests">'
       )
       expect(result).toContain(
         '<h2 class="resume-section-title">Interests</h2>'
@@ -1345,6 +1352,7 @@ describe('HtmlRenderer', () => {
       renderer = new HtmlRenderer(resume, layoutIndex)
       const result = renderer.renderVolunteer()
 
+      expect(result).toContain('id="volunteer"')
       expect(result).toContain(`<a href="${url}">${organization}</a>`)
       expect(result).toContain(
         `<div class="resume-entry-title"><a href="${url}">${organization}</a></div>`
