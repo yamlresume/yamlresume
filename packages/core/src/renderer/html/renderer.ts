@@ -231,7 +231,7 @@ ${this.getStyles()}
       return ''
     }
 
-    return `<section class="resume-section" data-section="summary">
+    return `<section class="resume-section" id="summary" data-section="summary">
       <h2 class="resume-section-title">${sectionNames.basics}</h2>
       <div class="resume-section-content">
         <div class="resume-summary-content">${summary}</div>
@@ -396,7 +396,7 @@ ${this.getStyles()}
       }
     )
 
-    return `<section class="resume-section" data-section="education">
+    return `<section class="resume-section" id="education" data-section="education">
       <h2 class="resume-section-title">${sectionNames.education}</h2>
       <div class="resume-section-content">
         ${educationEntries.join('\n')}
@@ -472,7 +472,7 @@ ${this.getStyles()}
       }
     )
 
-    return `<section class="resume-section" data-section="work">
+    return `<section class="resume-section" id="work" data-section="work">
       <h2 class="resume-section-title">${sectionNames.work}</h2>
       <div class="resume-section-content">
         ${workEntries.join('\n')}
@@ -524,7 +524,7 @@ ${this.getStyles()}
         )
     )
 
-    return `<section class="resume-section" data-section="languages">
+    return `<section class="resume-section" id="languages" data-section="languages">
       <h2 class="resume-section-title">${sectionNames.languages}</h2>
       <div class="resume-section-content">
         <div class="resume-languages-list">
@@ -581,7 +581,7 @@ ${this.getStyles()}
       )
     )
 
-    return `<section class="resume-section" data-section="skills">
+    return `<section class="resume-section" id="skills" data-section="skills">
       <h2 class="resume-section-title">${sectionNames.skills}</h2>
       <div class="resume-section-content">
         ${skillItems.join('\n')}
@@ -638,7 +638,7 @@ ${this.getStyles()}
       }
     )
 
-    return `<section class="resume-section" data-section="awards">
+    return `<section class="resume-section" id="awards" data-section="awards">
       <h2 class="resume-section-title">${sectionNames.awards}</h2>
       <div class="resume-section-content">
         ${awardEntries.join('\n')}
@@ -693,7 +693,7 @@ ${this.getStyles()}
       }
     )
 
-    return `<section class="resume-section" data-section="certificates">
+    return `<section class="resume-section" id="certificates" data-section="certificates">
       <h2 class="resume-section-title">${sectionNames.certificates}</h2>
       <div class="resume-section-content">
         ${certificateEntries.join('\n')}
@@ -752,7 +752,7 @@ ${this.getStyles()}
       }
     )
 
-    return `<section class="resume-section" data-section="publications">
+    return `<section class="resume-section" id="publications" data-section="publications">
       <h2 class="resume-section-title">${sectionNames.publications}</h2>
       <div class="resume-section-content">
         ${publicationEntries.join('\n')}
@@ -810,7 +810,7 @@ ${this.getStyles()}
       }
     )
 
-    return `<section class="resume-section" data-section="references">
+    return `<section class="resume-section" id="references" data-section="references">
       <h2 class="resume-section-title">${sectionNames.references}</h2>
       <div class="resume-section-content">
         ${referenceEntries.join('\n')}
@@ -886,7 +886,7 @@ ${this.getStyles()}
       }
     )
 
-    return `<section class="resume-section" data-section="projects">
+    return `<section class="resume-section" id="projects" data-section="projects">
       <h2 class="resume-section-title">${sectionNames.projects}</h2>
       <div class="resume-section-content">
         ${projectEntries.join('\n')}
@@ -928,7 +928,7 @@ ${this.getStyles()}
       )
     )
 
-    return `<section class="resume-section" data-section="interests">
+    return `<section class="resume-section" id="interests" data-section="interests">
       <h2 class="resume-section-title">${sectionNames.interests}</h2>
       <div class="resume-section-content">
         ${interestItems.join('\n')}
@@ -994,7 +994,7 @@ ${this.getStyles()}
       }
     )
 
-    return `<section class="resume-section" data-section="volunteer">
+    return `<section class="resume-section" id="volunteer" data-section="volunteer">
       <h2 class="resume-section-title">${sectionNames.volunteer}</h2>
       <div class="resume-section-content">
         ${volunteerEntries.join('\n')}
