@@ -49,14 +49,5 @@
     "vitest": "^4.1.10"
   },
   "packageManager": "pnpm@10.12.1",
-  "version": "0.13.1",
-  "pnpm": {
-    "overrides": {
-      "form-data": "^4.0.4"
-    },
-    "onlyBuiltDependencies": [
-      "electron",
-      "esbuild"
-    ]
-  }
+  "version": "0.13.1"
 }

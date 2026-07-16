@@ -1,2 +1,9 @@
 packages:
   - 'packages/*'
+
+overrides:
+  form-data: ^4.0.4
+
+onlyBuiltDependencies:
+  - electron
+  - esbuild
