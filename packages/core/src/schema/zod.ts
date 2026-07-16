@@ -51,8 +51,12 @@ export function expectSchemaMetadata<T>(schema: z.ZodType<T>) {
 export function getNullishTestCases(
   schema: z.ZodObject<Record<string, z.ZodTypeAny>>,
   baseObject: Record<string, unknown>
-) {
-  const testCases = []
+  // This utility is used across many schemas with incompatible shapes, so a
+  // loose return type is intentional.
+  // biome-ignore lint/suspicious/noExplicitAny: test utility needs loose typing
+): any[] {
+  // biome-ignore lint/suspicious/noExplicitAny: test utility needs loose typing
+  const testCases: any[] = []
 
   const baseObjectKeys = Object.keys(baseObject)
 

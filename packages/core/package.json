@@ -55,7 +55,7 @@
   },
   "devDependencies": {
     "@types/mdast": "^4.0.4",
-    "yaml": "^2.8.3"
+    "yaml": "^2.9.0"
   },
   "publishConfig": {
     "access": "public"

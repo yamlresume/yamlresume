@@ -105,7 +105,8 @@ describe('AST Types', () => {
       }
       expect(paragraphNode.type).toBe('paragraph')
       expect(paragraphNode.content?.[0].type).toBe('text')
-      expect((paragraphNode.content?.[0] as TextNode).text).toBe('Hello world')
+      const textNode = paragraphNode.content?.[0] as TextNode | undefined
+      expect(textNode?.text).toBe('Hello world')
     })
 
     it('should allow valid ordered list node', () => {
@@ -205,47 +206,25 @@ describe('AST Types', () => {
       }
       expect(complexNode.type).toBe('doc')
       expect(complexNode.content?.[0].type).toBe('orderedList')
-      expect(
-        (complexNode.content?.[0] as OrderedListNode).content?.[0].type
-      ).toBe('listItem')
 
-      expect(
-        (
-          (complexNode.content?.[0] as OrderedListNode)
-            .content?.[0] as ListItemNode
-        ).content?.[0].type
-      ).toBe('paragraph')
+      const orderedListNode = complexNode.content?.[0] as
+        | OrderedListNode
+        | undefined
+      expect(orderedListNode?.content?.[0].type).toBe('listItem')
 
-      expect(
-        (
-          (
-            (complexNode.content?.[0] as OrderedListNode)
-              .content?.[0] as ListItemNode
-          ).content?.[0] as ParagraphNode
-        ).content?.[0].type
-      ).toBe('text')
+      const listItemNode = orderedListNode?.content?.[0] as
+        | ListItemNode
+        | undefined
+      expect(listItemNode?.content?.[0].type).toBe('paragraph')
 
-      expect(
-        (
-          (
-            (
-              (complexNode.content?.[0] as OrderedListNode)
-                .content?.[0] as ListItemNode
-            ).content?.[0] as ParagraphNode
-          ).content?.[0] as TextNode
-        ).marks?.[0].type
-      ).toBe('bold')
+      const paragraphNode = listItemNode?.content?.[0] as
+        | ParagraphNode
+        | undefined
+      expect(paragraphNode?.content?.[0].type).toBe('text')
 
-      expect(
-        (
-          (
-            (
-              (complexNode.content?.[0] as OrderedListNode)
-                .content?.[0] as ListItemNode
-            ).content?.[0] as ParagraphNode
-          ).content?.[0] as TextNode
-        ).marks?.[1].type
-      ).toBe('link')
+      const textNode = paragraphNode?.content?.[0] as TextNode | undefined
+      expect(textNode?.marks?.[0].type).toBe('bold')
+      expect(textNode?.marks?.[1].type).toBe('link')
     })
   })
 })

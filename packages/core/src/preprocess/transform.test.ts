@@ -1346,10 +1346,8 @@ describe(transformResumeLayoutLaTeX, () => {
       resume.locale = { ...resume.locale, language }
       transformResumeLayoutLaTeX(resume)
 
-      expect(
-        (resume.layouts?.[layoutIndex] as LatexLayout).advanced?.fontspec
-          ?.numbers
-      ).toEqual('OldStyle')
+      const layout = resume.layouts?.[layoutIndex] as LatexLayout | undefined
+      expect(layout?.advanced?.fontspec?.numbers).toEqual('OldStyle')
     }
   })
 
@@ -1365,25 +1363,26 @@ describe(transformResumeLayoutLaTeX, () => {
       resume.locale = { ...resume.locale, language }
       transformResumeLayoutLaTeX(resume)
 
-      expect(
-        (resume.layouts?.[layoutIndex] as LatexLayout).advanced?.fontspec
-          ?.numbers
-      ).toEqual('Lining')
+      const layout = resume.layouts?.[layoutIndex] as LatexLayout | undefined
+      expect(layout?.advanced?.fontspec?.numbers).toEqual('Lining')
     }
   })
 
   it('should set correct numbers when advanced.fontspec.numbers is undefined', () => {
     for (const language of ['en', 'es'] as const) {
       const resume = cloneDeep(DEFAULT_RESUME)
-      ;(resume.layouts?.[layoutIndex] as LatexLayout).advanced = undefined
+      const layout = resume.layouts?.[layoutIndex] as LatexLayout | undefined
+      if (layout) {
+        layout.advanced = undefined
+      }
 
       resume.locale = { ...resume.locale, language }
       transformResumeLayoutLaTeX(resume)
 
-      expect(
-        (resume.layouts?.[layoutIndex] as LatexLayout).advanced?.fontspec
-          ?.numbers
-      ).toEqual('OldStyle')
+      const transformedLayout = resume.layouts?.[layoutIndex] as
+        | LatexLayout
+        | undefined
+      expect(transformedLayout?.advanced?.fontspec?.numbers).toEqual('OldStyle')
     }
   })
 
@@ -1399,10 +1398,10 @@ describe(transformResumeLayoutLaTeX, () => {
       resume.locale = { ...resume.locale, language }
       transformResumeLayoutLaTeX(resume)
 
-      expect(
-        (resume.layouts?.[layoutIndex] as LatexLayout).advanced?.fontspec
-          ?.numbers
-      ).toEqual('OldStyle')
+      const transformedLayout = resume.layouts?.[layoutIndex] as
+        | LatexLayout
+        | undefined
+      expect(transformedLayout?.advanced?.fontspec?.numbers).toEqual('OldStyle')
     }
   })
 
@@ -1416,9 +1415,10 @@ describe(transformResumeLayoutLaTeX, () => {
 
     transformResumeLayoutLaTeX(resume)
 
-    expect(
-      (resume.layouts?.[layoutIndex] as LatexLayout).advanced?.fontspec?.numbers
-    ).toEqual('OldStyle')
+    const transformedLayout = resume.layouts?.[layoutIndex] as
+      | LatexLayout
+      | undefined
+    expect(transformedLayout?.advanced?.fontspec?.numbers).toEqual('OldStyle')
   })
 })
 
