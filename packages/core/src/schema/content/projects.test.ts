@@ -239,7 +239,6 @@ describe('ProjectsSchema', () => {
       },
       {
         projects: [
-          // @ts-ignore
           {
             // description too short
             name,
@@ -270,7 +269,6 @@ describe('ProjectsSchema', () => {
       },
       {
         projects: [
-          // @ts-ignore
           {
             // description too long
             name,
