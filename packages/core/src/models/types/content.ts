@@ -151,13 +151,13 @@ type EducationItem = {
   degree: Degree
   /** Name of the institution. */
   institution: string
-  /** Start date of study (e.g., "2016", "Sep 2016"). */
-  startDate: string
 
   /** List of courses taken. */
   courses?: string[]
   /** End date of study (e.g., "2020", "May 2020"), empty implies "Present". */
   endDate?: string
+  /** Start date of study (e.g., "2016", "Sep 2016"). */
+  startDate?: string
   /** Description of accomplishments or details. */
   summary?: string
   /** GPA or academic score. */

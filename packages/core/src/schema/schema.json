@@ -177,20 +177,6 @@
                 "title": "Degree option",
                 "description": "A predefined option from the available degree choices."
               },
-              "startDate": {
-                "type": "string",
-                "minLength": 4,
-                "maxLength": 32,
-                "title": "Start date",
-                "description": "A valid date string that can be parsed by `Date.parse`.",
-                "examples": [
-                  "2025",
-                  "2025-01-01",
-                  "Jul 2025",
-                  "July 3, 2025",
-                  "2025-02-02T00:00:03.123Z"
-                ]
-              },
               "courses": {
                 "title": "[optional] Courses",
                 "description": "A list of relevant courses you have taken or `null`.",
@@ -260,6 +246,36 @@
                     "minLength": 4,
                     "maxLength": 32,
                     "title": "[optional] End date",
+                    "description": "A valid date string that can be parsed by `Date.parse` or `null`.",
+                    "examples": [
+                      "2025",
+                      "2025-01-01",
+                      "Jul 2025",
+                      "July 3, 2025",
+                      "2025-02-02T00:00:03.123Z"
+                    ]
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "startDate": {
+                "title": "[optional] Start date",
+                "description": "A valid date string that can be parsed by `Date.parse` or `null`.",
+                "examples": [
+                  "2025",
+                  "2025-01-01",
+                  "Jul 2025",
+                  "July 3, 2025",
+                  "2025-02-02T00:00:03.123Z"
+                ],
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "minLength": 4,
+                    "maxLength": 32,
+                    "title": "[optional] Start date",
                     "description": "A valid date string that can be parsed by `Date.parse` or `null`.",
                     "examples": [
                       "2025",
@@ -348,8 +364,7 @@
             "required": [
               "area",
               "institution",
-              "degree",
-              "startDate"
+              "degree"
             ],
             "additionalProperties": false
           },

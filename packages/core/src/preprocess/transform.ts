@@ -384,9 +384,9 @@ export function transformDate(resume: Resume): Resume {
     )
   }
 
-  for (const section of ['education', 'projects', 'volunteer', 'work']) {
+  for (const section of ['projects', 'volunteer', 'work']) {
     resume.content[section].forEach(
-      (item: { startDate: string; endDate: string }, index: number) => {
+      (item: { startDate: string; endDate?: string }, index: number) => {
         resume.content[section][index].computed = {
           ...resume.content[section][index].computed,
           startDate: localizeDate(item.startDate, resume.locale?.language),
@@ -406,6 +406,27 @@ export function transformDate(resume: Resume): Resume {
       }
     )
   }
+
+  resume.content.education.forEach(
+    (item: { startDate?: string; endDate?: string }, index: number) => {
+      resume.content.education[index].computed = {
+        ...resume.content.education[index].computed,
+        startDate: localizeDate(item.startDate, resume.locale?.language),
+      }
+      resume.content.education[index].computed = {
+        ...resume.content.education[index].computed,
+        endDate: localizeDate(item.endDate, resume.locale?.language),
+      }
+      resume.content.education[index].computed = {
+        ...resume.content.education[index].computed,
+        dateRange: getDateRange(
+          item.startDate,
+          item.endDate,
+          resume.locale?.language
+        ),
+      }
+    }
+  )
 
   return resume
 }

@@ -111,6 +111,15 @@ describe('EducationSchema', () => {
       {
         education: [baseEducationObject],
       },
+      {
+        education: [
+          {
+            area,
+            institution,
+            degree,
+          },
+        ],
+      },
     ]
 
     for (const education of tests) {
@@ -240,41 +249,6 @@ describe('EducationSchema', () => {
                   properties: {
                     institution: {
                       errors: ['institution is required.'],
-                    },
-                  },
-                },
-              ],
-            },
-          },
-        },
-      },
-      {
-        education: [
-          // @ts-expect-error
-          {
-            // missing startDate
-            area,
-            degree,
-            institution,
-
-            courses,
-            endDate,
-            score,
-            summary,
-            url,
-          },
-        ],
-        error: {
-          errors: [],
-          properties: {
-            education: {
-              errors: [],
-              items: [
-                {
-                  errors: [],
-                  properties: {
-                    startDate: {
-                      errors: ['startDate is required.'],
                     },
                   },
                 },

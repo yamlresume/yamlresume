@@ -93,11 +93,11 @@ export const EducationItemSchema = z.object({
   area: AreaSchema,
   institution: InstitutionSchema,
   degree: DegreeOptionSchema,
-  startDate: DateSchema('startDate'),
 
   // optional fields
   courses: nullifySchema(CoursesSchema),
   endDate: nullifySchema(DateSchema('endDate')),
+  startDate: nullifySchema(DateSchema('startDate')),
   summary: nullifySchema(SummarySchema),
   score: nullifySchema(ScoreSchema),
   url: nullifySchema(UrlSchema),
