@@ -238,12 +238,28 @@ layouts:
         left: 1.5cm
         right: 1.5cm
         bottom: 2.5cm
+      # a4 or letter
+      paperSize: a4
       showPageNumbers: true
     # Use `yamlresume templates list` to get the list of available templates
     template: moderncv-banking
     typography:
       # LaTeX engine only supports 10pt, 11pt, and 12pt
       fontSize: 11pt
+  - engine: docx
+    page:
+      margins:
+        top: 2.5cm
+        left: 1.5cm
+        right: 1.5cm
+        bottom: 2.5cm
+      # a4 or letter
+      paperSize: a4
+      showPageNumbers: true
+    typography:
+      # docx engine support 10pt, 10.5pt, 11pt, 11.5pt and 12pt
+      fontSize: 11pt
+      lineSpacing: normal
   - engine: markdown
   - engine: html
     # Use `yamlresume templates list` to get the list of available templates
