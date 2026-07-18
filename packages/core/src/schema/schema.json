@@ -3894,7 +3894,7 @@
   "$id": "https://yamlresume.dev/schema.json",
   "title": "YAMLResume Schema",
   "description": "JSON Schema for YAMLResume resume format.",
-  "version": "0.13.1",
+  "version": "0.13.2",
   "license": "MIT",
   "keywords": [
     "Resume",

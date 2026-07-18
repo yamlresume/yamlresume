@@ -49,5 +49,5 @@
     "vitest": "^4.1.10"
   },
   "packageManager": "pnpm@10.12.1",
-  "version": "0.13.1"
+  "version": "0.13.2"
 }

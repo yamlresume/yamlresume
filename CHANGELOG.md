@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.13.2](https://github.com/yamlresume/yamlresume/compare/v0.13.1...v0.13.2) (2026-07-18)
+
+
+### Features
+
+* add docx layout to default layouts ([2577271](https://github.com/yamlresume/yamlresume/commit/25772714d069c142a1867613a51ffa1e8f1a6d99))
+* **core:** add Discord to NETWORK_OPTIONS ([020cf54](https://github.com/yamlresume/yamlresume/commit/020cf54b328ecfc5ba4527b12e93a71e85d6ad2e))
+* **core:** extend project description maxLength from 128 to 1024 ([6c31cb4](https://github.com/yamlresume/yamlresume/commit/6c31cb43e43e92cced741d6c42d00bd22e93faf5))
+* enable docx engine for yamlresume new command ([11c54db](https://github.com/yamlresume/yamlresume/commit/11c54db13b22529ddf7c082673b71cb5c0fe50b0))
+* **html:** add id attributes to section elements for anchor navigation ([2bef138](https://github.com/yamlresume/yamlresume/commit/2bef138920d5b62356f017e1162513aec60865d1))
+* mark education's startDate optional ([caec2a6](https://github.com/yamlresume/yamlresume/commit/caec2a67b333057e023d345f9348ca03b93fb0b9))
+
 ## [0.13.1](https://github.com/yamlresume/yamlresume/compare/v0.13.0...v0.13.1) (2026-06-09)
 
 
