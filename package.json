@@ -37,7 +37,7 @@
     "@types/node": "^26.1.1",
     "@vitest/coverage-v8": "^4.1.10",
     "addlicense-ts": "^1.1.0",
-    "commit-and-tag-version": "^12.7.3",
+    "commit-and-tag-version": "^13.0.0",
     "husky": "^9.1.7",
     "lint-staged": "^17.0.8",
     "tsup": "8.5.1",
