@@ -47,12 +47,6 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Install addlicense
-        if: runner.os == 'Linux'
-        run: |
-          go install github.com/google/addlicense@latest
-          echo "$(go env GOPATH)/bin" >> $GITHUB_PATH
-
       - name: Build core package
         run: pnpm core build:prod
 

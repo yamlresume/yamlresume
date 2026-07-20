@@ -1,35 +1,33 @@
-import { execSync, spawn } from 'node:child_process';
+import { run } from 'addlicense-ts';
 import process from 'node:process';
 
+const check = process.argv.includes('-c');
+
+/** @type {import('addlicense-ts').Options} */
+const options = {
+  patterns: [
+    'packages/cli/src',
+    'packages/core/src',
+    'packages/create-yamlresume/src',
+    'packages/json2yamlresume/src',
+    'packages/playground/src',
+  ],
+  holder: 'PPResume (https://ppresume.com)',
+  license: 'mit',
+  year: '2023–Present',
+  verbose: false,
+  check,
+  spdx: 0, // SpdxMode.Off
+  ignore: [],
+  skip: [],
+  licenseFile: 'LICENSE',
+};
+
 try {
-  // Check if addlicense exists
-  execSync('command -v addlicense', { stdio: 'ignore' });
-} catch (e) {
-  console.log('addlicense binary not found, skipping.');
-  process.exit(0);
+  await run(options);
+} catch (error) {
+  if (error instanceof Error) {
+    console.error(error.message);
+  }
+  process.exit(1);
 }
-
-const args = [
-  '-c',
-  'PPResume (https://ppresume.com)',
-  '-y',
-  '2023–Present',
-  '-f',
-  'LICENSE',
-  'packages/cli/src',
-  'packages/core/src',
-  'packages/create-yamlresume/src',
-  'packages/json2yamlresume/src',
-  'packages/playground/src'
-];
-
-// Check for -c flag
-if (process.argv.includes('-c')) {
-  args.unshift('-check');
-}
-
-const child = spawn('addlicense', args, { stdio: 'inherit' });
-
-child.on('close', (code) => {
-  process.exit(code);
-});

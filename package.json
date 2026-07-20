@@ -36,6 +36,7 @@
     "@types/lodash-es": "^4.17.12",
     "@types/node": "^26.1.1",
     "@vitest/coverage-v8": "^4.1.10",
+    "addlicense-ts": "^1.1.0",
     "commit-and-tag-version": "^12.7.3",
     "husky": "^9.1.7",
     "lint-staged": "^17.0.8",

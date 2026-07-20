@@ -29,6 +29,9 @@ importers:
       '@vitest/coverage-v8':
         specifier: ^4.1.10
         version: 4.1.10(vitest@4.1.10)
+      addlicense-ts:
+        specifier: ^1.1.0
+        version: 1.1.0
       commit-and-tag-version:
         specifier: ^12.7.3
         version: 12.7.3
@@ -251,7 +254,7 @@ importers:
         version: 19.2.3(@types/react@19.2.17)
       '@vitejs/plugin-react':
         specifier: ^6.0.3
-        version: 6.0.3(vite@8.1.5(@types/node@26.1.1)(esbuild@0.28.1)(jiti@2.6.1)(tsx@4.23.1)(yaml@2.8.3))
+        version: 6.0.3(vite@8.1.5(@types/node@26.1.1)(esbuild@0.28.1)(jiti@1.21.7)(tsx@4.23.1)(yaml@2.8.3))
       jsdom:
         specifier: ^29.1.1
         version: 29.1.1
@@ -1299,6 +1302,11 @@ packages:
 
   add-stream@1.0.0:
     resolution: {integrity: sha512-qQLMr+8o0WC4FZGQTcJiKBVC59JylcPSrTtk6usvmIDFUOCKegapy1VHQwRbFMOFyb/inzUVqHs+eMYKDM1YeQ==}
+
+  addlicense-ts@1.1.0:
+    resolution: {integrity: sha512-gHNNUvfSzx9Dkby7OHz9GP8RrStJndmqEoI7RQpZbNqdVS1rfI0T+cs15+o0qXHsgITBV4Qb9D5WoJ4zK6rB4w==}
+    engines: {node: '>=18'}
+    hasBin: true
 
   ajv@8.20.0:
     resolution: {integrity: sha512-Thbli+OlOj+iMPYFBVBfJ3OmCAnaSyNn4M1vz9T6Gka5Jt9ba/HIR56joy65tY6kx/FCF5VXNB819Y7/GUrBGA==}
@@ -4201,10 +4209,10 @@ snapshots:
 
   '@types/which@3.0.4': {}
 
-  '@vitejs/plugin-react@6.0.3(vite@8.1.5(@types/node@26.1.1)(esbuild@0.28.1)(jiti@2.6.1)(tsx@4.23.1)(yaml@2.8.3))':
+  '@vitejs/plugin-react@6.0.3(vite@8.1.5(@types/node@26.1.1)(esbuild@0.28.1)(jiti@1.21.7)(tsx@4.23.1)(yaml@2.8.3))':
     dependencies:
       '@rolldown/pluginutils': 1.0.1
-      vite: 8.1.5(@types/node@26.1.1)(esbuild@0.28.1)(jiti@2.6.1)(tsx@4.23.1)(yaml@2.8.3)
+      vite: 8.1.5(@types/node@26.1.1)(esbuild@0.28.1)(jiti@1.21.7)(tsx@4.23.1)(yaml@2.8.3)
 
   '@vitest/coverage-v8@4.1.10(vitest@4.1.10)':
     dependencies:
@@ -4271,6 +4279,11 @@ snapshots:
   acorn@8.17.0: {}
 
   add-stream@1.0.0: {}
+
+  addlicense-ts@1.1.0:
+    dependencies:
+      commander: 14.0.3
+      minimatch: 10.2.5
 
   ajv@8.20.0:
     dependencies:
@@ -6356,7 +6369,7 @@ snapshots:
       tsx: 4.23.1
       yaml: 2.9.0
 
-  vite@8.1.5(@types/node@26.1.1)(esbuild@0.28.1)(jiti@2.6.1)(tsx@4.23.1)(yaml@2.8.3):
+  vite@8.1.5(@types/node@26.1.1)(esbuild@0.28.1)(jiti@1.21.7)(tsx@4.23.1)(yaml@2.8.3):
     dependencies:
       lightningcss: 1.32.0
       picomatch: 4.0.5
@@ -6367,7 +6380,7 @@ snapshots:
       '@types/node': 26.1.1
       esbuild: 0.28.1
       fsevents: 2.3.3
-      jiti: 2.6.1
+      jiti: 1.21.7
       tsx: 4.23.1
       yaml: 2.8.3
 
