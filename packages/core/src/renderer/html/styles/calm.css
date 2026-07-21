@@ -179,8 +179,7 @@ a:hover {
 .resume-skill-item,
 .resume-language-item {
   display: flex;
-  align-items: baseline;
-  justify-content: space-between;
+  flex-direction: column;
   margin-bottom: var(--spacing-xs);
 }
 
@@ -211,12 +210,6 @@ a:hover {
 
   .resume-entry-header {
     flex-wrap: wrap;
-  }
-
-  .resume-skill-item,
-  .resume-language-item {
-    flex-direction: column;
-    align-items: flex-start;
   }
 }
 
