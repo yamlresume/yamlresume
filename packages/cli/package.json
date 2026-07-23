@@ -56,7 +56,7 @@
     "commander": "^14.0.3",
     "consola": "^3.4.2",
     "envinfo": "^7.21.0",
-    "execa": "^9.6.1",
+    "execa": "^10.0.0",
     "extensionless": "^2.0.6",
     "font-list": "^2.0.2",
     "lodash-es": "^4.18.1",
