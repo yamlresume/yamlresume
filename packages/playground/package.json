@@ -49,14 +49,14 @@
   },
   "dependencies": {
     "@monaco-editor/react": "^4.7.0",
-    "@tabler/icons-react": "^3.40.0",
+    "@tabler/icons-react": "^3.45.0",
     "@yamlresume/core": "workspace:*",
     "clsx": "^2.1.1",
-    "docx-preview": "^0.3.7",
+    "docx-preview": "^0.4.0",
     "jszip": "^3.10.1",
     "next-themes": "^0.4.6",
-    "react-resizable-panels": "^4.7.2",
-    "yaml": "^2.8.3"
+    "react-resizable-panels": "^4.12.2",
+    "yaml": "^2.9.0"
   },
   "devDependencies": {
     "@testing-library/react": "^16.3.2",
