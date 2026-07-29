@@ -22,11 +22,16 @@
  * IN THE SOFTWARE.
  */
 
-export { createAICommand } from './ai'
-export { createBuildCommand } from './build'
-export { createDevCommand } from './dev'
-export { createDoctorCommand } from './doctor'
-export { createLanguagesCommand } from './languages'
-export { createNewCommand } from './new'
-export { createTemplatesCommand } from './templates'
-export { createValidateCommand } from './validate'
+import { Command } from 'commander'
+
+import { createAIGenerateCommand } from './generate'
+
+/**
+ * Create the AI command group.
+ */
+export function createAICommand() {
+  return new Command()
+    .name('ai')
+    .description('AI-powered resume generation')
+    .addCommand(createAIGenerateCommand())
+}

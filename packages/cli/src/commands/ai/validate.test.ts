@@ -22,11 +22,27 @@
  * IN THE SOFTWARE.
  */
 
-export { createAICommand } from './ai'
-export { createBuildCommand } from './build'
-export { createDevCommand } from './dev'
-export { createDoctorCommand } from './doctor'
-export { createLanguagesCommand } from './languages'
-export { createNewCommand } from './new'
-export { createTemplatesCommand } from './templates'
-export { createValidateCommand } from './validate'
+import { ErrorType, YAMLResumeError } from '@yamlresume/core'
+import { describe, expect, it } from 'vitest'
+
+import { validateLocaleLanguage } from './validate'
+
+describe(validateLocaleLanguage, () => {
+  it('does not throw for supported locale languages', () => {
+    expect(() => validateLocaleLanguage('en')).not.toThrow()
+    expect(() => validateLocaleLanguage('es')).not.toThrow()
+    expect(() => validateLocaleLanguage('zh-hans')).not.toThrow()
+  })
+
+  it('throws INVALID_LANGUAGE for unsupported locale languages', () => {
+    expect(() => validateLocaleLanguage('klingon')).toThrow(YAMLResumeError)
+
+    try {
+      validateLocaleLanguage('klingon')
+    } catch (error) {
+      expect(error).toBeInstanceOf(YAMLResumeError)
+      expect(error.code).toBe('INVALID_LANGUAGE')
+      expect(error.errno).toBe(ErrorType.INVALID_LANGUAGE.errno)
+    }
+  })
+})

@@ -1,7 +1,7 @@
 {
-  "name": "yamlresume",
+  "name": "@yamlresume/ai",
   "version": "0.13.2",
-  "description": "The CLI interface for YAMLResume's engine",
+  "description": "AI-powered generation and translation for YAMLResume",
   "license": "MIT",
   "author": {
     "name": "YAMLResume",
@@ -12,11 +12,10 @@
     "YAMLResume",
     "CV",
     "Resume",
-    "LaTeX",
-    "Typesetting",
-    "PDF",
-    "YAML",
-    "JSON"
+    "AI",
+    "LLM",
+    "Generation",
+    "Translation"
   ],
   "type": "module",
   "main": "./dist/index.js",
@@ -27,14 +26,10 @@
       "default": "./dist/index.js"
     }
   },
-  "bin": {
-    "yamlresume": "./dist/cli.js"
-  },
   "files": [
     "dist",
     "README.md",
-    "LICENSE",
-    "resources/resume.yml"
+    "LICENSE"
   ],
   "scripts": {
     "build": "tsup",
@@ -42,35 +37,20 @@
     "build:clean": "rm -rf dist",
     "build:prod": "tsup --dts --minify --sourcemap",
     "prepublishOnly": "pnpm test",
-    "dev": "tsx src/cli.ts",
     "test": "vitest --run",
     "test:cov": "vitest --coverage --run",
     "test:watch": "vitest",
     "typedoc": "typedoc"
   },
   "dependencies": {
-    "@ai-sdk/openai": "^1.3.10",
-    "@yamlresume/ai": "workspace:*",
     "@yamlresume/core": "workspace:*",
-    "chalk": "^5.6.2",
-    "chokidar": "^5.0.0",
-    "coalescifn": "^0.1.1",
-    "commander": "^15.0.0",
+    "ai": "^4.3.5",
     "consola": "^3.4.2",
-    "envinfo": "^7.21.0",
-    "execa": "^10.0.0",
-    "extensionless": "^2.0.6",
-    "font-list": "^2.1.0",
-    "lodash-es": "^4.18.1",
-    "markdown-table": "^3.0.4",
-    "ora": "^8.0.0",
     "tslib": "^2.8.1",
-    "which": "^7.0.0",
     "yaml": "^2.9.0"
   },
   "devDependencies": {
-    "@types/envinfo": "^7.8.4",
-    "@types/which": "^3.0.4"
+    "@types/node": "^26.1.1"
   },
   "publishConfig": {
     "access": "public"
@@ -78,12 +58,12 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/yamlresume/yamlresume.git",
-    "directory": "packages/cli"
+    "directory": "packages/ai"
   },
   "bugs": {
     "url": "https://github.com/yamlresume/yamlresume/issues"
   },
-  "homepage": "https://yamlresume.dev/docs/cli",
+  "homepage": "https://yamlresume.dev/docs/ecosystem/ai",
   "engines": {
     "node": ">=20.0.0"
   }

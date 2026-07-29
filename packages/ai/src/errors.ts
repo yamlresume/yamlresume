@@ -22,11 +22,39 @@
  * IN THE SOFTWARE.
  */
 
-export { createAICommand } from './ai'
-export { createBuildCommand } from './build'
-export { createDevCommand } from './dev'
-export { createDoctorCommand } from './doctor'
-export { createLanguagesCommand } from './languages'
-export { createNewCommand } from './new'
-export { createTemplatesCommand } from './templates'
-export { createValidateCommand } from './validate'
+/**
+ * Error codes for AI-related failures.
+ */
+export type AIResumeErrorCode =
+  | 'GENERATION_FAILED'
+  | 'VALIDATION_FAILED'
+  | 'PROVIDER_ERROR'
+
+/**
+ * Custom error class for AI resume generation and translation failures.
+ */
+export class AIResumeError extends Error {
+  /**
+   * The error code.
+   */
+  code: AIResumeErrorCode
+
+  /**
+   * The underlying cause, if any.
+   */
+  override cause?: Error
+
+  /**
+   * Creates a new AIResumeError.
+   *
+   * @param code - The error code.
+   * @param message - The human-readable error message.
+   * @param cause - The underlying error that caused this failure.
+   */
+  constructor(code: AIResumeErrorCode, message: string, cause?: Error) {
+    super(message)
+    this.name = 'AIResumeError'
+    this.code = code
+    this.cause = cause
+  }
+}

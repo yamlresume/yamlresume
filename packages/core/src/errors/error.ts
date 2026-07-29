@@ -40,6 +40,7 @@ export const ErrorCategory = {
   FILE: 0x00, // 00000000
   FORMAT: 0x20, // 00100000
   LATEX: 0x40, // 01000000
+  AI: 0x80, // 10000000
 } as const
 
 /**
@@ -113,6 +114,7 @@ export const ErrorType = {
     message:
       'LaTeX compiler not found. Please install either xelatex or tectonic',
   },
+
   LATEX_COMPILE_ERROR: {
     code: 'LATEX_COMPILE_ERROR',
     errno: ErrorCategory.LATEX | 0x02,
@@ -132,6 +134,23 @@ export const ErrorType = {
     ),
     timeout: '',
   },
+
+  // AI related errors (0x80 - 0x9F)
+  AI_PROVIDER_NOT_CONFIGURED: {
+    code: 'AI_PROVIDER_NOT_CONFIGURED',
+    errno: ErrorCategory.AI | 0x01,
+    message:
+      'AI provider {provider} is not configured. Please set the {envVar} environment variable.',
+    provider: '',
+    envVar: '',
+  },
+  INVALID_LANGUAGE: {
+    code: 'INVALID_LANGUAGE',
+    errno: ErrorCategory.AI | 0x02,
+    message:
+      'Invalid language: {language}. Run `yamlresume languages list` to see supported languages.',
+    language: '',
+  },
 } as const
 
 /**
@@ -145,7 +164,7 @@ export const ErrorUtils = {
    * @returns The category name or undefined if not found
    */
   getCategory(errno: number): keyof typeof ErrorCategory | undefined {
-    const category = errno & 0x60 // 01100000
+    const category = errno & 0xe0 // 11100000
     return Object.entries(ErrorCategory).find(
       ([_, value]) => value === category
     )?.[0] as keyof typeof ErrorCategory
@@ -168,7 +187,7 @@ export const ErrorUtils = {
    * @returns True if the error belongs to the category
    */
   isCategory(errno: number, category: keyof typeof ErrorCategory): boolean {
-    return (errno & 0x60) === ErrorCategory[category]
+    return (errno & 0xe0) === ErrorCategory[category]
   },
 } as const
 

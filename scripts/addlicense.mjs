@@ -6,6 +6,7 @@ const check = process.argv.includes('-c');
 /** @type {import('addlicense-ts').Options} */
 const options = {
   patterns: [
+    'packages/ai/src',
     'packages/cli/src',
     'packages/core/src',
     'packages/create-yamlresume/src',
@@ -18,7 +19,9 @@ const options = {
   verbose: false,
   check,
   spdx: 0, // SpdxMode.Off
-  ignore: [],
+  ignore: [
+    'packages/ai/src/resources/resume.yml',
+  ],
   skip: [],
   licenseFile: 'LICENSE',
 };

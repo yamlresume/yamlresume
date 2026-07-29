@@ -22,11 +22,23 @@
  * IN THE SOFTWARE.
  */
 
-export { createAICommand } from './ai'
-export { createBuildCommand } from './build'
-export { createDevCommand } from './dev'
-export { createDoctorCommand } from './doctor'
-export { createLanguagesCommand } from './languages'
-export { createNewCommand } from './new'
-export { createTemplatesCommand } from './templates'
-export { createValidateCommand } from './validate'
+import type { Command } from 'commander'
+import { describe, expect, it } from 'vitest'
+
+import { createAICommand } from './index'
+
+describe(createAICommand, () => {
+  it('should have correct name and description', () => {
+    const command: Command = createAICommand()
+
+    expect(command.name()).toBe('ai')
+    expect(command.description()).toBe('AI-powered resume generation')
+  })
+
+  it('should register generate subcommand', () => {
+    const command: Command = createAICommand()
+    const names = command.commands.map((cmd) => cmd.name())
+
+    expect(names).toContain('generate')
+  })
+})

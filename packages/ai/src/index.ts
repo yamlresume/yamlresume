@@ -22,11 +22,12 @@
  * IN THE SOFTWARE.
  */
 
-export { createAICommand } from './ai'
-export { createBuildCommand } from './build'
-export { createDevCommand } from './dev'
-export { createDoctorCommand } from './doctor'
-export { createLanguagesCommand } from './languages'
-export { createNewCommand } from './new'
-export { createTemplatesCommand } from './templates'
-export { createValidateCommand } from './validate'
+export type { LanguageModel } from 'ai'
+export { AIResumeError } from './errors'
+export { generateResume } from './generate'
+export { parseGeneratedResume } from './parse'
+export type {
+  AIOptions,
+  GenerateResumeOptions,
+  LocaleLanguage,
+} from './types'

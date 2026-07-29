@@ -26,6 +26,7 @@ import { Command } from 'commander'
 
 import packageJson from '../package.json' with { type: 'json' }
 import {
+  createAICommand,
   createBuildCommand,
   createDevCommand,
   createDoctorCommand,
@@ -61,11 +62,12 @@ export function createProgram(): Command {
       setVerboseLog(thisCommand.opts().verbose)
     })
 
-  program.addCommand(createNewCommand())
+  program.addCommand(createAICommand())
   program.addCommand(createBuildCommand())
   program.addCommand(createDevCommand())
   program.addCommand(createDoctorCommand())
   program.addCommand(createLanguagesCommand())
+  program.addCommand(createNewCommand())
   program.addCommand(createTemplatesCommand())
   program.addCommand(createValidateCommand())
 

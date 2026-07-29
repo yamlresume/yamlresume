@@ -22,11 +22,26 @@
  * IN THE SOFTWARE.
  */
 
-export { createAICommand } from './ai'
-export { createBuildCommand } from './build'
-export { createDevCommand } from './dev'
-export { createDoctorCommand } from './doctor'
-export { createLanguagesCommand } from './languages'
-export { createNewCommand } from './new'
-export { createTemplatesCommand } from './templates'
-export { createValidateCommand } from './validate'
+import {
+  LOCALE_LANGUAGE_OPTIONS,
+  type LocaleLanguage,
+  YAMLResumeError,
+} from '@yamlresume/core'
+
+/**
+ * Validate that a locale language is supported by YAMLResume.
+ *
+ * @param language - The language code to validate.
+ * @throws {YAMLResumeError} When the language is not supported.
+ */
+export function validateLocaleLanguage(
+  language: string
+): asserts language is LocaleLanguage {
+  if (
+    !LOCALE_LANGUAGE_OPTIONS.includes(
+      language as (typeof LOCALE_LANGUAGE_OPTIONS)[number]
+    )
+  ) {
+    throw new YAMLResumeError('INVALID_LANGUAGE', { language })
+  }
+}
