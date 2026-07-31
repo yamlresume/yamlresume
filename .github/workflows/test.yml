@@ -50,6 +50,9 @@ jobs:
       - name: Build core package
         run: pnpm core build:prod
 
+      - name: Build ai package
+        run: pnpm ai build:prod
+
       - name: Build cli package
         run: pnpm cli build:prod
 
