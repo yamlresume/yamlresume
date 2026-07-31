@@ -187,6 +187,16 @@ describe(generateResumeFile, () => {
     }
   })
 
+  it('should handle non-Error values thrown while writing', async () => {
+    writeFileSync.mockImplementation(() => {
+      throw 'write failed'
+    })
+
+    await expect(
+      generateResumeFile('my-resume.yml', 'Nurse', 'en')
+    ).rejects.toThrow(YAMLResumeError)
+  })
+
   it('should surface AI generation errors', async () => {
     vi.mocked(generateResume).mockRejectedValue(
       new AIResumeError('GENERATION_FAILED', 'AI failed')
@@ -216,6 +226,7 @@ describe(createAIGenerateCommand, () => {
   let consolaSuccessSpy: ReturnType<typeof vi.spyOn>
   let consolaErrorSpy: ReturnType<typeof vi.spyOn>
   let processExitSpy: ReturnType<typeof vi.spyOn>
+  let _stderrWriteSpy: ReturnType<typeof vi.spyOn>
 
   beforeEach(() => {
     resetMockSpinner()
@@ -226,6 +237,9 @@ describe(createAIGenerateCommand, () => {
     processExitSpy = vi
       .spyOn(process, 'exit')
       .mockImplementation((() => {}) as NodeJS.Process['exit'])
+    _stderrWriteSpy = vi
+      .spyOn(process.stderr, 'write')
+      .mockImplementation(vi.fn())
 
     vi.mocked(generateResume).mockImplementation(async (options) => {
       options.onChunk?.('Hello')
@@ -380,6 +394,27 @@ describe(createAIGenerateCommand, () => {
     expect(processExitSpy).toBeCalledWith(ErrorType.INVALID_LANGUAGE.errno)
   })
 
+  it('should exit with file write errno when writing fails', async () => {
+    vi.spyOn(fs, 'writeFileSync').mockImplementation(() => {
+      throw new Error('write failed')
+    })
+
+    await generateCommand.parseAsync([
+      'yamlresume',
+      'generate',
+      '--position',
+      'Nurse',
+      '--language',
+      'en',
+      'my-resume.yml',
+    ])
+
+    expect(consolaSuccessSpy).not.toBeCalled()
+    expect(consolaErrorSpy).toBeCalledTimes(1)
+    expect(processExitSpy).toBeCalledTimes(1)
+    expect(processExitSpy).toBeCalledWith(ErrorType.FILE_WRITE_ERROR.errno)
+  })
+
   it('should exit with code 1 on AI errors', async () => {
     vi.mocked(generateResume).mockRejectedValue(
       new AIResumeError('GENERATION_FAILED', 'AI failed')
@@ -399,5 +434,52 @@ describe(createAIGenerateCommand, () => {
     expect(consolaErrorSpy).toBeCalledTimes(1)
     expect(processExitSpy).toBeCalledTimes(1)
     expect(processExitSpy).toBeCalledWith(1)
+  })
+
+  it('should exit with code 1 on non-Error generation failures', async () => {
+    vi.mocked(generateResume).mockRejectedValue('AI failed')
+
+    await generateCommand.parseAsync([
+      'yamlresume',
+      'generate',
+      '--position',
+      'Nurse',
+      '--language',
+      'en',
+      'my-resume.yml',
+    ])
+
+    expect(consolaSuccessSpy).not.toBeCalled()
+    expect(consolaErrorSpy).toBeCalledTimes(1)
+    expect(consolaErrorSpy).toBeCalledWith('AI failed')
+    expect(processExitSpy).toBeCalledTimes(1)
+    expect(processExitSpy).toBeCalledWith(1)
+  })
+
+  it('should log the stack trace when consola level is verbose', async () => {
+    const originalLevel = consola.level
+    consola.level = 4
+
+    const error = new Error('generation failed')
+    vi.mocked(generateResume).mockRejectedValue(error)
+
+    await generateCommand.parseAsync([
+      'yamlresume',
+      'generate',
+      '--position',
+      'Nurse',
+      '--language',
+      'en',
+      'my-resume.yml',
+    ])
+
+    expect(consolaSuccessSpy).not.toBeCalled()
+    expect(consolaErrorSpy).toBeCalledTimes(2)
+    expect(consolaErrorSpy).toHaveBeenNthCalledWith(1, error.message)
+    expect(consolaErrorSpy).toHaveBeenNthCalledWith(2, error.stack)
+    expect(processExitSpy).toBeCalledTimes(1)
+    expect(processExitSpy).toBeCalledWith(1)
+
+    consola.level = originalLevel
   })
 })

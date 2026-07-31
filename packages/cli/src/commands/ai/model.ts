@@ -98,7 +98,7 @@ export function getAIProvider(): AIProvider {
  *
  * @returns The base URL.
  */
-function getOllamaBaseURL(): string {
+export function getOllamaBaseURL(): string {
   const host = process.env.OLLAMA_HOST?.trim() ?? 'localhost:11434'
   const url = host.startsWith('http') ? host : `http://${host}`
   return url.endsWith('/v1') ? url : `${url}/v1`

@@ -26,7 +26,7 @@ import { createOpenAI } from '@ai-sdk/openai'
 import { ErrorType, YAMLResumeError } from '@yamlresume/core'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 
-import { getAIProvider, getModelFromEnv } from './model'
+import { getAIProvider, getModelFromEnv, getOllamaBaseURL } from './model'
 
 vi.mock('@ai-sdk/openai', () => ({
   createOpenAI: vi.fn(() => vi.fn((modelId: string) => ({ id: modelId }))),
@@ -76,6 +76,47 @@ describe(getAIProvider, () => {
     process.env.OPENAI_API_KEY = 'test-openai-key'
     process.env.MOONSHOT_API_KEY = 'test-moonshot-key'
     expect(getAIProvider()).toBe('deepseek')
+  })
+})
+
+describe(getOllamaBaseURL, () => {
+  const originalEnv = process.env
+
+  beforeEach(() => {
+    process.env = { ...originalEnv }
+    delete process.env.OLLAMA_HOST
+  })
+
+  afterEach(() => {
+    process.env = originalEnv
+  })
+
+  it('should default to localhost when OLLAMA_HOST is not set', () => {
+    expect(getOllamaBaseURL()).toBe('http://localhost:11434/v1')
+  })
+
+  it('should normalize a host without protocol or path', () => {
+    process.env.OLLAMA_HOST = '192.168.1.100:11434'
+
+    expect(getOllamaBaseURL()).toBe('http://192.168.1.100:11434/v1')
+  })
+
+  it('should preserve a host that already includes a protocol', () => {
+    process.env.OLLAMA_HOST = 'http://192.168.1.100:11434'
+
+    expect(getOllamaBaseURL()).toBe('http://192.168.1.100:11434/v1')
+  })
+
+  it('should preserve a host that already ends with /v1', () => {
+    process.env.OLLAMA_HOST = 'http://192.168.1.100:11434/v1'
+
+    expect(getOllamaBaseURL()).toBe('http://192.168.1.100:11434/v1')
+  })
+
+  it('should trim whitespace from OLLAMA_HOST', () => {
+    process.env.OLLAMA_HOST = '  192.168.1.100:11434  '
+
+    expect(getOllamaBaseURL()).toBe('http://192.168.1.100:11434/v1')
   })
 })
 
@@ -230,17 +271,6 @@ describe(getModelFromEnv, () => {
       baseURL: 'http://192.168.1.100:11434/v1',
     })
     expect(model).toEqual({ id: 'llama3.2' })
-  })
-
-  it('should normalize an Ollama host without protocol or path', () => {
-    process.env.OLLAMA_HOST = '192.168.1.100:11434'
-
-    getModelFromEnv()
-
-    expect(createOpenAI).toBeCalledWith({
-      apiKey: 'dummy',
-      baseURL: 'http://192.168.1.100:11434/v1',
-    })
   })
 
   it('should override the model from env with the model option', () => {
