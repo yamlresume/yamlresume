@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.14.1](https://github.com/yamlresume/yamlresume/compare/v0.14.0...v0.14.1) (2026-07-31)
+
+
+### Bug Fixes
+
+* **ci:** forgot to bump @yamlresume/ai version to v0.14 ([f7ee740](https://github.com/yamlresume/yamlresume/commit/f7ee740d33ed78a8bb7deac2be363eb475feceee))
+
 ## [0.14.0](https://github.com/yamlresume/yamlresume/compare/v0.13.2...v0.14.0) (2026-07-31)
 
 
