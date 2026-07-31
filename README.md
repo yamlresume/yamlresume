@@ -109,10 +109,12 @@ Options:
   -h, --help                     display help for command
 
 Commands:
-  new [filename]                 create a new resume
-  build [options] <resume-path>  build a resume to LaTeX and PDF
+  ai                             AI-powered resume generation
+  build [options] <resume-path>  build a resume to Docx, HTML, Markdown or LaTeX/PDF
   dev [options] <resume-path>    build a resume on file changes (watch mode)
+  doctor                         check environment for YAMLResume dependencies
   languages                      i18n and l10n support
+  new [filename]                 create a new resume
   templates                      manage resume templates
   validate <resume-path>         validate a resume against the YAMLResume schema
   help [command]                 display help for command
@@ -144,6 +146,7 @@ $ yamlresume build my-resume.yml
 ✔ Generated resume tex file successfully: my-resume.tex
 ◐ Generating resume pdf file with command: xelatex -halt-on-error my-resume.tex...
 ✔ Generated resume pdf file successfully: my-resume.pdf
+✔ Generated resume docx file successfully: my-resume.docx
 ✔ Generated resume markdown file successfully: my-resume.md
 ✔ Generated resume html file successfully: my-resume.html
 ```
@@ -158,6 +161,7 @@ $ yamlresume dev my-resume.yml
 ◐ Generating resume pdf file with command: xelatex -halt-on-error my-resume.tex...
 ◐ Watching file changes: my-resume.yml...
 ✔ Generated resume pdf file successfully: my-resume.pdf
+✔ Generated resume docx file successfully: my-resume.docx
 ✔ Generated resume markdown file successfully: my-resume.md
 ```
 
@@ -201,6 +205,10 @@ resumes more efficiently. These tools include:
 - [@yamlresume/playground](https://www.npmjs.com/package/@yamlresume/playground)
   is a React component for building your own resume editor. It powers the
   official [Playground](https://yamlresume.dev/playground).
+- [yamlresume/action](https://github.com/yamlresume/yamlresume) is a GitHub
+  Action for automating resume PDF generation in your CI/CD pipeline. It is
+  powered by the `yamlresume` CLI and can be easily integrated into your GitHub
+  workflow.
 - [create-yamlresume](https://yamlresume.dev/docs/ecosystem/create-yamlresume)
   makes it easy to start a new YAMLResume project with one command. It
   will scaffold your project directory, install necessary dependencies, and
