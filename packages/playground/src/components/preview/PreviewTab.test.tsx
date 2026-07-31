@@ -23,6 +23,7 @@
  */
 
 import { fireEvent, render, screen } from '@testing-library/react'
+import type { LayoutEngine } from '@yamlresume/core'
 import { describe, expect, it, vi } from 'vitest'
 import { getTabIcon, PreviewTab } from './PreviewTab'
 
@@ -43,8 +44,7 @@ describe(getTabIcon, () => {
   })
 
   it('renders default icon for unknown engine', () => {
-    // @ts-expect-error Testing fallback
-    const { container } = render(getTabIcon('unknown'))
+    const { container } = render(getTabIcon('unknown' as LayoutEngine))
     expect(container.querySelector('.tabler-icon-file-text')).toBeDefined()
   })
 })

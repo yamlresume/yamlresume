@@ -42,10 +42,9 @@ import type { JSONResume } from './types'
 export function convertBasics(resume: JSONResume): Resume['content']['basics'] {
   const { basics = {} } = resume
 
-  // @ts-expect-error
   return mapKeys(omit(basics, ['location', 'profiles']), (_, key) =>
     key === 'label' ? 'headline' : key
-  )
+  ) as unknown as Resume['content']['basics']
 }
 
 /**
@@ -59,10 +58,9 @@ export function convertEducation(
 ): Resume['content']['education'] {
   const { education = [] } = resume
 
-  // @ts-expect-error
   return education.map((item) =>
     mapKeys(item, (_, key) => (key === 'studyType' ? 'degree' : key))
-  )
+  ) as unknown as Resume['content']['education']
 }
 
 /**
@@ -77,10 +75,9 @@ export function convertLocation(
   const { basics = {} } = resume
   const { location } = basics
 
-  // @ts-expect-error
   return mapKeys(location, (_, key) =>
     key === 'countryCode' ? 'country' : key
-  )
+  ) as unknown as Resume['content']['location']
 }
 
 /**
@@ -94,11 +91,10 @@ export function convertProjects(
 ): Resume['content']['projects'] {
   const { projects = [] } = resume
 
-  // @ts-expect-error
   return projects.map((item) => ({
     ...omit(item, ['highlights']),
     summary: mergeHighlightsIntoSummary(item.summary, item.highlights),
-  }))
+  })) as unknown as Resume['content']['projects']
 }
 
 /**
@@ -112,11 +108,10 @@ export function convertReferences(
 ): Resume['content']['references'] {
   const { references = [] } = resume
 
-  // @ts-expect-error
   return references.map((item) => ({
     ...omit(item, ['reference']),
     summary: item.reference,
-  }))
+  })) as unknown as Resume['content']['references']
 }
 
 /**
@@ -130,11 +125,10 @@ export function convertVolunteer(
 ): Resume['content']['volunteer'] {
   const { volunteer = [] } = resume
 
-  // @ts-expect-error
   return volunteer.map((item) => ({
     ...omit(item, ['highlights']),
     summary: mergeHighlightsIntoSummary(item.summary, item.highlights),
-  }))
+  })) as unknown as Resume['content']['volunteer']
 }
 
 /**
@@ -146,11 +140,10 @@ export function convertVolunteer(
 export function convertWork(resume: JSONResume): Resume['content']['work'] {
   const { work = [] } = resume
 
-  // @ts-expect-error
   return work.map((item) => ({
     ...omit(item, ['highlights']),
     summary: mergeHighlightsIntoSummary(item.summary, item.highlights),
-  }))
+  })) as unknown as Resume['content']['work']
 }
 
 /**
@@ -221,8 +214,7 @@ export function convertJSONResumeToYAMLResume(jsonResume: JSONResume): Resume {
   const { location, profiles } = basics
 
   // Create the YAMLResume content structure
-  // @ts-expect-error
-  const content: Resume['content'] = {
+  const content = {
     ...(isEmptyValue(awards) ? {} : { awards }),
     ...(isEmptyValue(basics) ? {} : { basics: convertBasics(jsonResume) }),
     ...(isEmptyValue(certificates) ? {} : { certificates }),
@@ -250,7 +242,7 @@ export function convertJSONResumeToYAMLResume(jsonResume: JSONResume): Resume {
       ? {}
       : { volunteer: convertVolunteer(jsonResume) }),
     ...(isEmptyValue(work) ? {} : { work: convertWork(jsonResume) }),
-  }
+  } as unknown as Resume['content']
 
   // return a valid YAMLResume object, with content and a default layout
   return {
