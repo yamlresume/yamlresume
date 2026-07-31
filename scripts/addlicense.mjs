@@ -1,9 +1,9 @@
-import { run } from 'addlicense-ts';
+import { addLicense } from 'addlicense-ts';
 import process from 'node:process';
 
 const check = process.argv.includes('-c');
 
-/** @type {import('addlicense-ts').Options} */
+/** @type {import('addlicense-ts').AddLicenseOptions} */
 const options = {
   patterns: [
     'packages/ai/src',
@@ -27,7 +27,7 @@ const options = {
 };
 
 try {
-  await run(options);
+  await addLicense(options);
 } catch (error) {
   if (error instanceof Error) {
     console.error(error.message);
