@@ -44,7 +44,7 @@
   },
   "dependencies": {
     "@yamlresume/core": "workspace:*",
-    "ai": "^4.3.5",
+    "ai": "^5.0.52",
     "consola": "^3.4.2",
     "tslib": "^2.8.1",
     "yaml": "^2.9.0"
