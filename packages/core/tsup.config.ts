@@ -5,7 +5,7 @@ import { baseConfig } from '../../tsup.config.base'
 export default defineConfig({
   ...baseConfig,
   dts: true,
-  tsconfig: 'tsconfig.prod.json',
+  tsconfig: 'tsconfig.build.json',
   entry: ['src/index.ts'],
   loader: {
     '.css': 'text',
