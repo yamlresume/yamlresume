@@ -106,8 +106,8 @@ importers:
         specifier: ^5.0.0
         version: 5.0.0
       coalescifn:
-        specifier: ^0.1.1
-        version: 0.1.1
+        specifier: ^1.0.0
+        version: 1.0.0
       commander:
         specifier: ^15.0.0
         version: 15.0.0
@@ -1584,8 +1584,8 @@ packages:
     resolution: {integrity: sha512-eYm0QWBtUrBWZWG0d386OGAw16Z995PiOVo2B7bjWSbHedGl5e0ZWaq65kOGgUSNesEIDkB9ISbTg/JK9dhCZA==}
     engines: {node: '>=6'}
 
-  coalescifn@0.1.1:
-    resolution: {integrity: sha512-rr10VTeBQtwQoWbSEnjRb4fqBBOkGYlHSnyCn8mIN8V7wdKuxvUVERSMK0nI9tY92neMECzqAxI0sl7h2Is4oA==}
+  coalescifn@1.0.0:
+    resolution: {integrity: sha512-m39c7IUmBJrYc+mPc293vv1ekZZhpVfvP3ymeqhbqmmK84T9I3xtItoX1HHPw8uu3GXSRFAwwnTUiibuH88aOw==}
     engines: {node: '>=20'}
 
   color-convert@1.9.3:
@@ -4657,7 +4657,7 @@ snapshots:
 
   clsx@2.1.1: {}
 
-  coalescifn@0.1.1:
+  coalescifn@1.0.0:
     dependencies:
       tslib: 2.8.1
 
