@@ -2,6 +2,9 @@ import path from 'path'
 import type { UserConfig } from 'vitest/config'
 
 export const baseConfig: UserConfig = {
+  resolve: {
+    tsconfigPaths: true,
+  },
   test: {
     include: ['src/**/*.{test,spec}.ts'],
     environment: 'node',
