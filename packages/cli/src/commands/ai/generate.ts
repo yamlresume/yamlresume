@@ -43,12 +43,14 @@ import { validateLocaleLanguage } from './validate'
  * @param filename - The output resume file path.
  * @param position - The target position or job title.
  * @param language - The target locale language.
+ * @param overrides - Optional CLI overrides for model and base URL.
  * @throws {YAMLResumeError} When the file already exists or writing fails.
  */
 export async function generateResumeFile(
   filename: string,
   position: string,
-  language: string
+  language: string,
+  overrides: { model?: string; baseURL?: string } = {}
 ): Promise<void> {
   if (fs.existsSync(filename)) {
     throw new YAMLResumeError('FILE_CONFLICT', { path: filename })
@@ -64,7 +66,10 @@ export async function generateResumeFile(
     content = await generateResume({
       position,
       language,
-      model: getModelFromEnv(),
+      model: getModelFromEnv({
+        ...(overrides.model && { model: overrides.model }),
+        ...(overrides.baseURL && { baseURL: overrides.baseURL }),
+      }),
       onChunk: (chunk) => {
         streamedText += chunk
         spinner.text = `Generating resume...\n${streamedText.slice(-200)}`
@@ -100,6 +105,8 @@ export function createAIGenerateCommand() {
     .description('generate a new resume with AI')
     .requiredOption('-p, --position <position>', 'target position or job title')
     .requiredOption('-l, --language <language>', 'target locale language')
+    .option('-m, --model <model>', 'AI provider model to use')
+    .option('-b, --base-url <url>', 'AI provider base URL')
     .argument('<filename>', 'output filename')
     .addHelpText(
       'after',
@@ -113,17 +120,25 @@ Environment variables:
 
   Optional:
     OLLAMA_HOST               Ollama host for local models
-    YAMLRESUME_AI_MODEL       model override
-    YAMLRESUME_AI_BASE_URL    API base URL override
+    YAMLRESUME_AI_MODEL       model override (overridden by --model)
+    YAMLRESUME_AI_BASE_URL    API base URL override (overridden by --base-url)
 `
     )
     .action(async function (
       this: Command,
       filename: string,
-      options: { position: string; language: string }
+      options: {
+        position: string
+        language: string
+        model?: string
+        baseUrl?: string
+      }
     ) {
       try {
-        await generateResumeFile(filename, options.position, options.language)
+        await generateResumeFile(filename, options.position, options.language, {
+          model: options.model,
+          baseURL: options.baseUrl,
+        })
       } catch (error) {
         const message = error instanceof Error ? error.message : String(error)
         consola.error(message)

@@ -242,4 +242,42 @@ describe(getModelFromEnv, () => {
       baseURL: 'http://192.168.1.100:11434/v1',
     })
   })
+
+  it('should override the model from env with the model option', () => {
+    process.env.OPENAI_API_KEY = 'test-openai-key'
+    process.env.YAMLRESUME_AI_MODEL = 'gpt-4o-mini'
+
+    const model = getModelFromEnv({ model: 'gpt-5' })
+
+    expect(model).toEqual({ id: 'gpt-5' })
+  })
+
+  it('should override the base URL from env with the baseURL option', () => {
+    process.env.OPENAI_API_KEY = 'test-openai-key'
+    process.env.YAMLRESUME_AI_BASE_URL = 'https://env.openai.example.com/v1'
+
+    getModelFromEnv({ baseURL: 'https://cli.openai.example.com/v1' })
+
+    expect(createOpenAI).toBeCalledWith({
+      apiKey: 'test-openai-key',
+      baseURL: 'https://cli.openai.example.com/v1',
+    })
+  })
+
+  it('should override both model and base URL from env with CLI options', () => {
+    process.env.DEEPSEEK_API_KEY = 'test-deepseek-key'
+    process.env.YAMLRESUME_AI_MODEL = 'deepseek-v4-flash'
+    process.env.YAMLRESUME_AI_BASE_URL = 'https://env.deepseek.com'
+
+    const model = getModelFromEnv({
+      model: 'deepseek-reasoner',
+      baseURL: 'https://cli.deepseek.com',
+    })
+
+    expect(createOpenAI).toBeCalledWith({
+      apiKey: 'test-deepseek-key',
+      baseURL: 'https://cli.deepseek.com',
+    })
+    expect(model).toEqual({ id: 'deepseek-reasoner' })
+  })
 })

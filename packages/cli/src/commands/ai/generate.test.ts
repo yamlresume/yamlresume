@@ -106,6 +106,7 @@ describe(generateResumeFile, () => {
     expect(mockSpinner.fail).not.toBeCalled()
     expect(mockSpinner.text).toBe('Generating resume...\nHello world')
     expect(getModelFromEnv).toBeCalledTimes(1)
+    expect(getModelFromEnv).toBeCalledWith({})
     expect(generateResume).toBeCalledWith({
       position: 'Nurse',
       language: 'en',
@@ -117,6 +118,19 @@ describe(generateResumeFile, () => {
     expect(consolaSuccessSpy).toBeCalledWith(
       'Generated my-resume.yml successfully.'
     )
+  })
+
+  it('should pass model and base URL overrides to getModelFromEnv', async () => {
+    await generateResumeFile('my-resume.yml', 'Nurse', 'en', {
+      model: 'gpt-5',
+      baseURL: 'https://custom.example.com/v1',
+    })
+
+    expect(getModelFromEnv).toBeCalledTimes(1)
+    expect(getModelFromEnv).toBeCalledWith({
+      model: 'gpt-5',
+      baseURL: 'https://custom.example.com/v1',
+    })
   })
 
   it('should throw a file conflict error if the file exists', async () => {
@@ -242,11 +256,19 @@ describe(createAIGenerateCommand, () => {
     const options = generateCommand.options
     const positionOption = options.find((opt) => opt.long === '--position')
     const languageOption = options.find((opt) => opt.long === '--language')
+    const modelOption = options.find((opt) => opt.long === '--model')
+    const baseUrlOption = options.find((opt) => opt.long === '--base-url')
 
     expect(positionOption).toBeDefined()
     expect(positionOption?.required).toBe(true)
+    expect(positionOption?.mandatory).toBe(true)
     expect(languageOption).toBeDefined()
     expect(languageOption?.required).toBe(true)
+    expect(languageOption?.mandatory).toBe(true)
+    expect(modelOption).toBeDefined()
+    expect(modelOption?.mandatory).toBe(false)
+    expect(baseUrlOption).toBeDefined()
+    expect(baseUrlOption?.mandatory).toBe(false)
   })
 
   it('should handle help flag', () => {
@@ -276,6 +298,8 @@ describe(createAIGenerateCommand, () => {
     expect(helpOutput).toContain('Optional:')
     expect(helpOutput).toContain('YAMLRESUME_AI_MODEL')
     expect(helpOutput).toContain('YAMLRESUME_AI_BASE_URL')
+    expect(helpOutput).toContain('--model')
+    expect(helpOutput).toContain('--base-url')
 
     stdoutSpy.mockRestore()
   })
@@ -295,6 +319,29 @@ describe(createAIGenerateCommand, () => {
     expect(consolaSuccessSpy).toBeCalledWith(
       'Generated my-resume.yml successfully.'
     )
+  })
+
+  it('should pass --model and --base-url flags to getModelFromEnv', async () => {
+    await generateCommand.parseAsync([
+      'yamlresume',
+      'generate',
+      '--position',
+      'Nurse',
+      '--language',
+      'en',
+      '--model',
+      'gpt-5',
+      '--base-url',
+      'https://custom.example.com/v1',
+      'my-resume.yml',
+    ])
+
+    expect(getModelFromEnv).toBeCalledTimes(1)
+    expect(getModelFromEnv).toBeCalledWith({
+      model: 'gpt-5',
+      baseURL: 'https://custom.example.com/v1',
+    })
+    expect(consolaSuccessSpy).toBeCalledTimes(1)
   })
 
   it('should exit with file conflict errno on conflict', async () => {

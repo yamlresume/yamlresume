@@ -111,10 +111,13 @@ function getOllamaBaseURL(): string {
  * providers expose an OpenAI-compatible endpoint, so they are created through
  * `@ai-sdk/openai`.
  *
+ * @param overrides - Optional CLI overrides for model and base URL.
  * @returns A configured language model.
  * @throws {YAMLResumeError} When a cloud provider's required API key is missing.
  */
-export function getModelFromEnv(): LanguageModel {
+export function getModelFromEnv(
+  overrides: { model?: string; baseURL?: string } = {}
+): LanguageModel {
   const provider = getAIProvider()
   const apiKeyEnvVar = API_KEY_ENV_VARS[provider]
   const apiKey = apiKeyEnvVar ? process.env[apiKeyEnvVar] : undefined
@@ -126,22 +129,33 @@ export function getModelFromEnv(): LanguageModel {
     })
   }
 
-  const modelId = process.env.YAMLRESUME_AI_MODEL ?? DEFAULT_MODELS[provider]
+  const modelId =
+    overrides.model ??
+    process.env.YAMLRESUME_AI_MODEL ??
+    DEFAULT_MODELS[provider]
 
   let baseURL: string | undefined
   switch (provider) {
     case 'deepseek':
-      baseURL = process.env.YAMLRESUME_AI_BASE_URL ?? 'https://api.deepseek.com'
+      baseURL =
+        overrides.baseURL ??
+        process.env.YAMLRESUME_AI_BASE_URL ??
+        'https://api.deepseek.com'
       break
     case 'kimi':
       baseURL =
-        process.env.YAMLRESUME_AI_BASE_URL ?? 'https://api.moonshot.cn/v1'
+        overrides.baseURL ??
+        process.env.YAMLRESUME_AI_BASE_URL ??
+        'https://api.moonshot.cn/v1'
       break
     case 'ollama':
-      baseURL = process.env.YAMLRESUME_AI_BASE_URL ?? getOllamaBaseURL()
+      baseURL =
+        overrides.baseURL ??
+        process.env.YAMLRESUME_AI_BASE_URL ??
+        getOllamaBaseURL()
       break
     case 'openai':
-      baseURL = process.env.YAMLRESUME_AI_BASE_URL
+      baseURL = overrides.baseURL ?? process.env.YAMLRESUME_AI_BASE_URL
       break
   }
 
