@@ -258,6 +258,28 @@ describe(createAIGenerateCommand, () => {
     ).toThrow('process.exit')
   })
 
+  it('should document environment variables in help output', () => {
+    const stdoutSpy = vi
+      .spyOn(process.stdout, 'write')
+      .mockImplementation(vi.fn())
+
+    generateCommand.outputHelp()
+
+    const helpOutput = stdoutSpy.mock.calls.map((call) => call[0]).join('')
+    expect(helpOutput).toContain('Environment variables:')
+    expect(helpOutput).toContain(
+      'Required (one API key for the selected cloud provider):'
+    )
+    expect(helpOutput).toContain('DEEPSEEK_API_KEY')
+    expect(helpOutput).toContain('OPENAI_API_KEY')
+    expect(helpOutput).toContain('MOONSHOT_API_KEY')
+    expect(helpOutput).toContain('Optional:')
+    expect(helpOutput).toContain('YAMLRESUME_AI_MODEL')
+    expect(helpOutput).toContain('YAMLRESUME_AI_BASE_URL')
+
+    stdoutSpy.mockRestore()
+  })
+
   it('should generate a resume from CLI options', async () => {
     await generateCommand.parseAsync([
       'yamlresume',

@@ -101,6 +101,22 @@ export function createAIGenerateCommand() {
     .requiredOption('-p, --position <position>', 'target position or job title')
     .requiredOption('-l, --language <language>', 'target locale language')
     .argument('<filename>', 'output filename')
+    .addHelpText(
+      'after',
+      `
+Environment variables:
+
+  Required (one API key for the selected cloud provider):
+    DEEPSEEK_API_KEY          DeepSeek API key
+    OPENAI_API_KEY            OpenAI API key
+    MOONSHOT_API_KEY          Kimi (Moonshot AI) API key
+
+  Optional:
+    OLLAMA_HOST               Ollama host for local models
+    YAMLRESUME_AI_MODEL       model override
+    YAMLRESUME_AI_BASE_URL    API base URL override
+`
+    )
     .action(async function (
       this: Command,
       filename: string,
