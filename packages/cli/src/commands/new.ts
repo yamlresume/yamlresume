@@ -30,8 +30,9 @@ import {
   toCodeBlock,
   YAMLResumeError,
 } from '@yamlresume/core'
-import { Command } from 'commander'
 import consola from 'consola'
+
+import { Command } from './utils'
 
 /**
  * Creates a new resume file with the given filename

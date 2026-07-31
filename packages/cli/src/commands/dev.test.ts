@@ -227,6 +227,14 @@ describe(createDevCommand, () => {
     expect(args[0].description).toBe('the resume file path')
   })
 
+  it('should handle help positional argument', () => {
+    vi.spyOn(process.stdout, 'write').mockImplementation(vi.fn())
+
+    expect(() => devCommand.parse(['yamlresume', 'dev', 'help'])).toThrow(
+      'process.exit'
+    )
+  })
+
   it('should start watching and build initially', () => {
     const resumePath = getFixture('software-engineer.yml')
     devCommand.parse(['yamlresume', 'dev', resumePath, '--output', '/tmp/foo'])

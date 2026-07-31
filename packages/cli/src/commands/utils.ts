@@ -24,6 +24,8 @@
 
 import path from 'node:path'
 
+import { Command as CommanderCommand, InvalidArgumentError } from 'commander'
+
 /**
  * Get the path to a fixture file
  *
@@ -32,4 +34,40 @@ import path from 'node:path'
  */
 export function getFixture(resumePath: string) {
   return path.join(__dirname, 'fixtures', resumePath)
+}
+
+/**
+ * A Command subclass that makes `<command> help` show the help text.
+ *
+ * Commander.js only auto-adds a `help` subcommand to commands that already have
+ * subcommands. Leaf commands that take positional arguments interpret `help` as
+ * a regular argument value, leading to confusing errors or side effects. This
+ * subclass automatically registers a `preAction` hook so that `help` works as a
+ * positional argument on every leaf command.
+ *
+ * For commands without positional arguments, an optional `[help]` argument is
+ * registered so that `help` is accepted; any other value is rejected.
+ */
+export class Command extends CommanderCommand {
+  override createCommand(name?: string): Command {
+    return new Command(name)
+  }
+
+  override action(...args: Parameters<CommanderCommand['action']>): this {
+    if (this.registeredArguments.length === 0) {
+      this.argument('[help]', 'show help for command', (value) => {
+        if (value !== 'help') {
+          throw new InvalidArgumentError(`unknown argument: ${value}`)
+        }
+
+        return value
+      })
+    }
+
+    return super.action(...args).hook('preAction', (thisCommand) => {
+      if (thisCommand.args[0] === 'help') {
+        thisCommand.help()
+      }
+    })
+  }
 }

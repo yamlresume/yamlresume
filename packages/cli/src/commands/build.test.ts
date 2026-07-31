@@ -895,6 +895,14 @@ describe(createBuildCommand, () => {
     )
   })
 
+  it('should handle help positional argument', () => {
+    vi.spyOn(process.stdout, 'write').mockImplementation(vi.fn())
+
+    expect(() => buildCommand.parse(['yamlresume', 'build', 'help'])).toThrow(
+      'process.exit'
+    )
+  })
+
   it('should build resume', async () => {
     const resumePath = getFixture('software-engineer.yml')
 

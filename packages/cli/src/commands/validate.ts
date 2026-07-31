@@ -30,9 +30,10 @@ import {
   YAMLResumeError,
 } from '@yamlresume/core'
 import chalk from 'chalk'
-import { Command } from 'commander'
 import consola from 'consola'
 import yaml, { isNode, LineCounter, parseDocument } from 'yaml'
+
+import { Command } from './utils'
 
 /**
  * A positional error with line number, column number, and path.

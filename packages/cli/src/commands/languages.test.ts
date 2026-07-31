@@ -84,11 +84,19 @@ describe(createLanguagesCommand, () => {
   })
 
   describe('languages command', () => {
-    it('should support languages list', () => {
+    it('should support languages help', () => {
       vi.spyOn(process.stdout, 'write').mockImplementation(() => true)
 
       expect(() =>
         languagesCommand.parse(['yamlresume', 'languages', 'help'])
+      ).toThrow('process.exit')
+    })
+
+    it('should support languages list help', () => {
+      vi.spyOn(process.stdout, 'write').mockImplementation(() => true)
+
+      expect(() =>
+        languagesCommand.parse(['yamlresume', 'languages', 'list', 'help'])
       ).toThrow('process.exit')
     })
   })

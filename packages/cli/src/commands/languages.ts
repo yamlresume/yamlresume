@@ -26,9 +26,10 @@ import {
   getLocaleLanguageDetail,
   LOCALE_LANGUAGE_OPTIONS,
 } from '@yamlresume/core'
-import { Command } from 'commander'
 import consola from 'consola'
 import { markdownTable } from 'markdown-table'
+
+import { Command } from './utils'
 
 /**
  * Generates a markdown table listing all supported locale languages.

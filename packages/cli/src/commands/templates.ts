@@ -30,9 +30,10 @@ import {
   HTML_TEMPLATE_OPTIONS,
   LATEX_TEMPLATE_OPTIONS,
 } from '@yamlresume/core'
-import { Command } from 'commander'
 import consola from 'consola'
 import { markdownTable } from 'markdown-table'
+
+import { Command } from './utils'
 
 /**
  * Generates a markdown table listing all supported templates.

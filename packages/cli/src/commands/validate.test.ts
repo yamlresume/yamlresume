@@ -358,6 +358,14 @@ describe(createValidateCommand, () => {
     ).toThrow('process.exit')
   })
 
+  it('should handle help positional argument', () => {
+    vi.spyOn(process.stdout, 'write').mockImplementation(vi.fn())
+
+    expect(() =>
+      validateCommand.parse(['yamlresume', 'validate', 'help'])
+    ).toThrow('process.exit')
+  })
+
   it('should validate resume successfully', () => {
     const resumePath = getFixture('software-engineer.yml')
 

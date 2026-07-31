@@ -23,8 +23,8 @@
  */
 
 import path from 'node:path'
-import { describe, expect, it } from 'vitest'
-import { getFixture } from './utils'
+import { describe, expect, it, vi } from 'vitest'
+import { Command, getFixture } from './utils'
 
 describe('getFixture', () => {
   it('should return the correct path', () => {
@@ -32,5 +32,76 @@ describe('getFixture', () => {
       const fixturePath = getFixture(resumePath)
       expect(fixturePath).toBe(path.join(__dirname, 'fixtures', resumePath))
     }
+  })
+})
+
+describe(Command, () => {
+  it('should display help when help is passed to a command with arguments', () => {
+    const command = new Command()
+      .name('test')
+      .description('test command')
+      .argument('<arg>', 'a required argument')
+      .action(() => {})
+
+    const helpSpy = vi.spyOn(command, 'help').mockImplementation(() => {
+      throw new Error('process.exit')
+    })
+
+    expect(() => command.parse(['yamlresume', 'test', 'help'])).toThrow(
+      'process.exit'
+    )
+    expect(helpSpy).toHaveBeenCalledTimes(1)
+  })
+
+  it('should not interfere with normal execution of a command with arguments', () => {
+    const actionSpy = vi.fn()
+    const command = new Command()
+      .name('test')
+      .argument('<arg>', 'a required argument')
+      .action(actionSpy)
+
+    command.parse(['yamlresume', 'test', 'value'])
+
+    expect(actionSpy).toHaveBeenCalledTimes(1)
+    expect(actionSpy.mock.calls[0][0]).toBe('value')
+  })
+
+  it('should display help when help is passed to a command without arguments', () => {
+    const command = new Command()
+      .name('test')
+      .description('test command')
+      .action(() => {})
+
+    const helpSpy = vi.spyOn(command, 'help').mockImplementation(() => {
+      throw new Error('process.exit')
+    })
+
+    expect(() => command.parse(['yamlresume', 'test', 'help'])).toThrow(
+      'process.exit'
+    )
+    expect(helpSpy).toHaveBeenCalledTimes(1)
+  })
+
+  it('should not interfere with normal execution of a command without arguments', () => {
+    const actionSpy = vi.fn()
+    const command = new Command().name('test').action(actionSpy)
+
+    command.parse(['yamlresume', 'test'])
+
+    expect(actionSpy).toHaveBeenCalledTimes(1)
+  })
+
+  it('should reject unknown arguments for a command without arguments', () => {
+    const command = new Command().name('test').action(() => {})
+
+    // @ts-expect-error
+    const processExitSpy = vi.spyOn(process, 'exit').mockImplementation(() => {
+      throw new Error('process.exit')
+    })
+
+    expect(() => command.parse(['yamlresume', 'test', 'foo'])).toThrow(
+      'process.exit'
+    )
+    expect(processExitSpy).toHaveBeenCalledWith(1)
   })
 })

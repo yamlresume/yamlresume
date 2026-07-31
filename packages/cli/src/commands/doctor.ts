@@ -22,11 +22,12 @@
  * IN THE SOFTWARE.
  */
 
-import { Command } from 'commander'
 import consola from 'consola'
 import envinfo from 'envinfo'
 import { execa } from 'execa'
 import { getFonts } from 'font-list'
+
+import { Command } from './utils'
 
 /**
  * Check system information

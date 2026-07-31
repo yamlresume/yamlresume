@@ -22,7 +22,7 @@
  * IN THE SOFTWARE.
  */
 
-import { Command } from 'commander'
+import { Command } from '../utils'
 
 import { createAIGenerateCommand } from './generate'
 

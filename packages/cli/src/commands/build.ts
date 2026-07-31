@@ -32,11 +32,11 @@ import {
   toCodeBlock,
   YAMLResumeError,
 } from '@yamlresume/core'
-import { Command } from 'commander'
 import { consola } from 'consola'
 import { execa } from 'execa'
 import which from 'which'
 
+import { Command } from './utils'
 import { readResume } from './validate'
 
 /**

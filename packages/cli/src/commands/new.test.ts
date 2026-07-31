@@ -208,6 +208,16 @@ describe(createNewCommand, () => {
     )
   })
 
+  it('should handle help positional argument', () => {
+    processExitSpy.mockRestore()
+
+    vi.spyOn(process.stdout, 'write').mockImplementation(vi.fn())
+
+    expect(() => newCommand.parse(['yamlresume', 'new', 'help'])).toThrow(
+      'process.exit'
+    )
+  })
+
   it('should create a new resume with default filename', () => {
     newCommand.parse(['yamlresume', 'new'])
 

@@ -25,10 +25,10 @@
 import chokidar from 'chokidar'
 
 import { coalesce } from 'coalescifn'
-import { Command } from 'commander'
 import { consola } from 'consola'
 
 import { buildResume } from './build'
+import { Command } from './utils'
 
 /**
  * Options for the watchResume function

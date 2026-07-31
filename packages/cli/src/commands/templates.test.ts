@@ -123,4 +123,12 @@ describe(createTemplatesCommand, () => {
       templatesCommand.parse(['yamlresume', 'templates', 'list', '--help'])
     ).toThrow() // commander throws an error with exitOverride
   })
+
+  it('should show help when help is passed to templates list command', () => {
+    vi.spyOn(process.stdout, 'write').mockImplementation(() => true)
+
+    expect(() =>
+      templatesCommand.parse(['yamlresume', 'templates', 'list', 'help'])
+    ).toThrow('process.exit')
+  })
 })

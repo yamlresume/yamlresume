@@ -30,10 +30,10 @@ import {
   toCodeBlock,
   YAMLResumeError,
 } from '@yamlresume/core'
-import { Command } from 'commander'
 import consola from 'consola'
 import ora from 'ora'
 
+import { Command } from '../utils'
 import { getModelFromEnv } from './model'
 import { validateLocaleLanguage } from './validate'
 

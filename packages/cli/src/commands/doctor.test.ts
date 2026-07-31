@@ -164,6 +164,15 @@ describe('doctor', () => {
   })
 
   describe('createDoctorCommand', () => {
+    it('should handle help positional argument', () => {
+      const doctorCommand = createDoctorCommand()
+      vi.spyOn(process.stdout, 'write').mockImplementation(vi.fn())
+
+      expect(() =>
+        doctorCommand.parse(['yamlresume', 'doctor', 'help'])
+      ).toThrow('process.exit')
+    })
+
     it('should run all checks', async () => {
       // We don't need to mock internals if we trust the integration, but
       // testing the command invokes the functions would ideally require spying
