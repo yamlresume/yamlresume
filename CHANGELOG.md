@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.14.0](https://github.com/yamlresume/yamlresume/compare/v0.13.2...v0.14.0) (2026-07-31)
+
+
+### Features
+
+* allow CLI flags to override model and baseUrl for ai generate ([085db48](https://github.com/yamlresume/yamlresume/commit/085db481977ad4f428f3b37e2fec00a95b550862))
+* init @yamlresume/ai package ([20495e8](https://github.com/yamlresume/yamlresume/commit/20495e8a6a9834f2503750ad4459ccb191f15ecb))
+* revise ai generate help message with env docs ([203ea17](https://github.com/yamlresume/yamlresume/commit/203ea1700cf664858febfd2cc7a70e4ad029bd73))
+
+
+### Bug Fixes
+
+* **html:** stack calm template skills vertically when using keywords ([a3b2ee4](https://github.com/yamlresume/yamlresume/commit/a3b2ee4cac4d37b22a3357596eb1cd3c2b0f2480))
+* lint and build warnings ([65b0d65](https://github.com/yamlresume/yamlresume/commit/65b0d653e70e4cb45f272cc286df791e6abd4c44))
+
 ## [0.13.2](https://github.com/yamlresume/yamlresume/compare/v0.13.1...v0.13.2) (2026-07-18)
 
 
