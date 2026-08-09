@@ -280,7 +280,7 @@ describe('ResumeSchema', () => {
       const jsonSchema = z.toJSONSchema(ResumeSchema)
 
       const schemaPath = join(__dirname, 'schema.json')
-      fs.writeFileSync(schemaPath, JSON.stringify(jsonSchema, null, 2))
+      fs.writeFileSync(schemaPath, `${JSON.stringify(jsonSchema, null, 2)}\n`)
     })
   })
 })
