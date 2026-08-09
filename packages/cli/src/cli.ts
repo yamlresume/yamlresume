@@ -25,6 +25,6 @@
 
 import './suppress-warnings'
 
-import { createProgram } from './program'
+const { createProgram } = await import('./program')
 
 createProgram().parse()
