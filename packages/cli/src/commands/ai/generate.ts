@@ -30,7 +30,7 @@ import {
   toCodeBlock,
   YAMLResumeError,
 } from '@yamlresume/core'
-import { Command } from 'commander'
+import { Command, InvalidArgumentError } from 'commander'
 import consola from 'consola'
 import ora from 'ora'
 
@@ -43,14 +43,14 @@ import { validateLocaleLanguage } from './validate'
  * @param filename - The output resume file path.
  * @param position - The target position or job title.
  * @param language - The target locale language.
- * @param overrides - Optional CLI overrides for model and base URL.
+ * @param overrides - Optional CLI overrides for model, base URL, and retries.
  * @throws {YAMLResumeError} When the file already exists or writing fails.
  */
 export async function generateResumeFile(
   filename: string,
   position: string,
   language: string,
-  overrides: { model?: string; baseURL?: string } = {}
+  overrides: { model?: string; baseURL?: string; maxRetries?: number } = {}
 ): Promise<void> {
   if (fs.existsSync(filename)) {
     throw new YAMLResumeError('FILE_CONFLICT', { path: filename })
@@ -69,6 +69,9 @@ export async function generateResumeFile(
       model: getModelFromEnv({
         ...(overrides.model && { model: overrides.model }),
         ...(overrides.baseURL && { baseURL: overrides.baseURL }),
+      }),
+      ...(overrides.maxRetries !== undefined && {
+        maxRetries: overrides.maxRetries,
       }),
       onChunk: (chunk) => {
         streamedText += chunk
@@ -107,6 +110,19 @@ export function createAIGenerateCommand() {
     .requiredOption('-l, --language <language>', 'target locale language')
     .option('-m, --model <model>', 'AI provider model to use')
     .option('-b, --base-url <url>', 'AI provider base URL')
+    .option(
+      '-r, --retry <count>',
+      'maximum retries when validation fails (default: 2)',
+      (value) => {
+        const parsed = Number.parseInt(value, 10)
+        if (Number.isNaN(parsed) || parsed < 0) {
+          throw new InvalidArgumentError(
+            'Retry count must be a non-negative integer.'
+          )
+        }
+        return parsed
+      }
+    )
     .argument('<filename>', 'output filename')
     .addHelpText(
       'after',
@@ -132,12 +148,14 @@ Environment variables:
         language: string
         model?: string
         baseUrl?: string
+        retry?: number
       }
     ) {
       try {
         await generateResumeFile(filename, options.position, options.language, {
           model: options.model,
           baseURL: options.baseUrl,
+          maxRetries: options.retry,
         })
       } catch (error) {
         const message = error instanceof Error ? error.message : String(error)

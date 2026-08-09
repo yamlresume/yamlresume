@@ -133,6 +133,31 @@ describe(generateResumeFile, () => {
     })
   })
 
+  it('should pass maxRetries override to generateResume', async () => {
+    await generateResumeFile('my-resume.yml', 'Nurse', 'en', {
+      maxRetries: 5,
+    })
+
+    expect(generateResume).toBeCalledWith({
+      position: 'Nurse',
+      language: 'en',
+      model: { id: 'mock-model' },
+      maxRetries: 5,
+      onChunk: expect.any(Function),
+    })
+  })
+
+  it('should not pass maxRetries to generateResume when omitted', async () => {
+    await generateResumeFile('my-resume.yml', 'Nurse', 'en')
+
+    expect(generateResume).toBeCalledWith({
+      position: 'Nurse',
+      language: 'en',
+      model: { id: 'mock-model' },
+      onChunk: expect.any(Function),
+    })
+  })
+
   it('should throw a file conflict error if the file exists', async () => {
     existsSync.mockReturnValue(true)
 
@@ -272,6 +297,7 @@ describe(createAIGenerateCommand, () => {
     const languageOption = options.find((opt) => opt.long === '--language')
     const modelOption = options.find((opt) => opt.long === '--model')
     const baseUrlOption = options.find((opt) => opt.long === '--base-url')
+    const retryOption = options.find((opt) => opt.long === '--retry')
 
     expect(positionOption).toBeDefined()
     expect(positionOption?.required).toBe(true)
@@ -283,6 +309,8 @@ describe(createAIGenerateCommand, () => {
     expect(modelOption?.mandatory).toBe(false)
     expect(baseUrlOption).toBeDefined()
     expect(baseUrlOption?.mandatory).toBe(false)
+    expect(retryOption).toBeDefined()
+    expect(retryOption?.mandatory).toBe(false)
   })
 
   it('should handle help flag', () => {
@@ -314,6 +342,7 @@ describe(createAIGenerateCommand, () => {
     expect(helpOutput).toContain('YAMLRESUME_AI_BASE_URL')
     expect(helpOutput).toContain('--model')
     expect(helpOutput).toContain('--base-url')
+    expect(helpOutput).toContain('--retry')
 
     stdoutSpy.mockRestore()
   })
@@ -356,6 +385,63 @@ describe(createAIGenerateCommand, () => {
       baseURL: 'https://custom.example.com/v1',
     })
     expect(consolaSuccessSpy).toBeCalledTimes(1)
+  })
+
+  it('should pass --retry flag to generateResume', async () => {
+    await generateCommand.parseAsync([
+      'yamlresume',
+      'generate',
+      '--position',
+      'Nurse',
+      '--language',
+      'en',
+      '--retry',
+      '5',
+      'my-resume.yml',
+    ])
+
+    expect(generateResume).toBeCalledWith(
+      expect.objectContaining({
+        maxRetries: 5,
+      })
+    )
+    expect(consolaSuccessSpy).toBeCalledTimes(1)
+  })
+
+  it('should reject a negative --retry value', async () => {
+    await expect(
+      generateCommand.parseAsync([
+        'yamlresume',
+        'generate',
+        '--position',
+        'Nurse',
+        '--language',
+        'en',
+        '--retry',
+        '-1',
+        'my-resume.yml',
+      ])
+    ).rejects.toThrow('Retry count must be a non-negative integer.')
+
+    expect(consolaSuccessSpy).not.toBeCalled()
+  })
+
+  it('should reject a non-numeric --retry value', async () => {
+    await expect(
+      generateCommand.parseAsync([
+        'yamlresume',
+        'generate',
+        '--position',
+        'Nurse',
+        '--language',
+        'en',
+        '--retry',
+        'abc',
+        'my-resume.yml',
+      ])
+    ).rejects.toThrow('Retry count must be a non-negative integer.')
+
+    expect(consolaSuccessSpy).not.toBeCalled()
   })
 
   it('should exit with file conflict errno on conflict', async () => {
