@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.14.2](https://github.com/yamlresume/yamlresume/compare/v0.14.1...v0.14.2) (2026-08-09)
+
+
+### Features
+
+* accept --retry option for yamlresume ai generate ([8f91e2e](https://github.com/yamlresume/yamlresume/commit/8f91e2e250a73bc83ce5eb20aca79a147842b0e8))
+
+
+### Bug Fixes
+
+* silence the localStorage warnings ([004b527](https://github.com/yamlresume/yamlresume/commit/004b5272538287f547ef54eb47dca210ec7ff45b))
+
 ## [0.14.1](https://github.com/yamlresume/yamlresume/compare/v0.14.0...v0.14.1) (2026-07-31)
 
 
