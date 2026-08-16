@@ -25,7 +25,6 @@
 import { joinNonEmptyString } from '@yamlresume/core'
 import { generateText, streamText } from 'ai'
 import consola from 'consola'
-import yaml from 'yaml'
 
 import { AIResumeError } from './errors'
 import { parseGeneratedResume } from './parse'
@@ -106,8 +105,8 @@ export async function generateResume(
       consola.debug(`Attempt ${attempt + 1} model output:`, text)
 
       lastText = text
-      const resume = parseGeneratedResume(text)
-      return yaml.stringify(resume)
+      const { yaml } = parseGeneratedResume(text)
+      return yaml
     } catch (error) {
       if (error instanceof AIResumeError) {
         consola.debug(`Attempt ${attempt + 1} validation error:`, error.message)

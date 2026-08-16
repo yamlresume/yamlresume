@@ -43,7 +43,7 @@ describe(parseGeneratedResume, () => {
   })
 
   it('parses and validates a clean YAML string', () => {
-    const resume = parseGeneratedResume(validYaml)
+    const { resume } = parseGeneratedResume(validYaml)
 
     expect(resume.content.basics.name).toBeTypeOf('string')
     expect(resume.locale?.language).toBe('en')
@@ -51,7 +51,7 @@ describe(parseGeneratedResume, () => {
 
   it('extracts YAML from markdown code fences', () => {
     const fenced = `\`\`\`yaml\n${validYaml}\n\`\`\``
-    const resume = parseGeneratedResume(fenced)
+    const { resume } = parseGeneratedResume(fenced)
 
     expect(resume.content.basics.name).toBeTypeOf('string')
   })
@@ -72,5 +72,19 @@ describe(parseGeneratedResume, () => {
     })
 
     expect(() => parseGeneratedResume(validYaml)).toThrow(AIResumeError)
+  })
+
+  it('returns the extracted YAML string', () => {
+    const { yaml } = parseGeneratedResume(validYaml)
+
+    expect(yaml).toBe(validYaml.trim())
+  })
+
+  it('strips markdown fences from the returned YAML string', () => {
+    const fenced = `\`\`\`yaml\n${validYaml}\n\`\`\``
+    const { yaml } = parseGeneratedResume(fenced)
+
+    expect(yaml).toBe(validYaml.trim())
+    expect(yaml).not.toContain('```')
   })
 })

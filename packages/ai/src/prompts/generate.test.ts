@@ -46,7 +46,7 @@ describe('buildGeneratePrompt', () => {
 
 describe('sampleResume', () => {
   it('parses and validates against the YAMLResume schema', () => {
-    const resume = parseGeneratedResume(sampleResume)
+    const { resume } = parseGeneratedResume(sampleResume)
 
     expect(resume.content.basics.name).toBe('Andy Dufresne')
     expect(resume.locale?.language).toBe('en')

@@ -47,13 +47,16 @@ function extractYaml(text: string): string {
 }
 
 /**
- * Parse and validate LLM-generated YAML into a Resume.
+ * Extract, parse and validate LLM-generated YAML.
  *
  * @param text - The raw text returned by the model.
- * @returns The parsed and validated resume object.
+ * @returns The parsed resume and the extracted YAML string.
  * @throws {AIResumeError} When parsing or validation fails.
  */
-export function parseGeneratedResume(text: string): Resume {
+export function parseGeneratedResume(text: string): {
+  resume: Resume
+  yaml: string
+} {
   const yamlText = extractYaml(text)
 
   let resume: unknown
@@ -79,5 +82,5 @@ export function parseGeneratedResume(text: string): Resume {
     )
   }
 
-  return result.data
+  return { resume: result.data, yaml: yamlText }
 }

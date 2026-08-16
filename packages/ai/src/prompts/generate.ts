@@ -195,6 +195,6 @@ publications, projects, interests, and volunteer.
 
 Make the content detailed, professional, and tailored to the position. Use the
 example above only as a formatting reference; do not reuse its personal details.
-Output ONLY valid YAMLResume YAML with no markdown fences and no commentary.`,
+Output ONLY valid YAMLResume YAML with no markdown fences.`,
   }
 }

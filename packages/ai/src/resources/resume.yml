@@ -113,14 +113,14 @@ content:
         - React
         - Agile
   languages:
-    # Valid language fluency options:
-    #
-    # - 'Elementary Proficiency'
-    # - 'Limited Working Proficiency'
-    # - 'Minimum Professional Proficiency'
-    # - 'Full Professional Proficiency'
-    # - 'Native or Bilingual Proficiency'
     - language: English
+      # Valid language fluency options:
+      #
+      # - 'Elementary Proficiency'
+      # - 'Limited Working Proficiency'
+      # - 'Minimum Professional Proficiency'
+      # - 'Full Professional Proficiency'
+      # - 'Native or Bilingual Proficiency'
       fluency: Native or Bilingual Proficiency
       keywords:
         - TOEFL 110
@@ -129,15 +129,15 @@ content:
       fluency: Elementary Proficiency
       keywords: []
   skills:
-    # Valid level options:
-    #
-    # - 'Novice'
-    # - 'Beginner'
-    # - 'Intermediate'
-    # - 'Advanced'
-    # - 'Expert'
-    # - 'Master'
     - name: Web Development
+      # Valid level options:
+      #
+      # - 'Novice'
+      # - 'Beginner'
+      # - 'Intermediate'
+      # - 'Advanced'
+      # - 'Expert'
+      # - 'Master'
       level: Expert
       keywords:
         - Python
