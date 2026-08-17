@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.14.3](https://github.com/yamlresume/yamlresume/compare/v0.14.2...v0.14.3) (2026-08-17)
+
+
+### Bug Fixes
+
+* keep the helpful comments when generating resume ([35d0e3a](https://github.com/yamlresume/yamlresume/commit/35d0e3ace52a9af976e62f6bf24d3aa44d0ee500))
+
 ## [0.14.2](https://github.com/yamlresume/yamlresume/compare/v0.14.1...v0.14.2) (2026-08-09)
 
 
