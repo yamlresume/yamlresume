@@ -1,0 +1,190 @@
+content:
+  basics:
+    name: Marcus Williams
+    headline: Senior Product Manager
+    phone: "(212) 555-0456"
+    email: marcus.williams@example.com
+    url: https://marcuswilliams.pm
+    summary: |
+      - Product leader with 8+ years of experience shipping B2B SaaS and consumer products
+      - Proven track record of driving 0-to-1 product launches and scaling products to millions of users
+      - Strong background in user research, data-informed prioritization, and cross-functional leadership
+      - Advocate for agile methodologies, transparent roadmaps, and customer-centric design
+  location:
+    address: 789 Broadway
+    city: New York
+    region: New York
+    country: United States
+    postalCode: "10003"
+  profiles:
+    - network: LinkedIn
+      url: https://linkedin.com/in/marcuswilliams
+      username: marcuswilliams
+    - network: Twitter
+      url: https://twitter.com/marcuswilliams
+      username: marcuswilliams
+  education:
+    - institution: Harvard Business School
+      url: https://www.hbs.edu/
+      degree: Master
+      area: Business Administration
+      score: "3.7"
+      startDate: Sep 1, 2014
+      endDate: May 1, 2016
+      summary: |
+        - Focused on technology strategy, entrepreneurship, and product management
+        - Led a student consulting project for an early-stage fintech startup
+    - institution: University of Michigan
+      url: https://umich.edu/
+      degree: Bachelor
+      area: Economics
+      score: "3.8"
+      startDate: Sep 1, 2010
+      endDate: May 1, 2014
+      summary: |
+        - Graduated with high distinction
+        - Co-founded the campus product management club
+  work:
+    - name: CloudSync
+      url: https://cloudsync.example.com
+      startDate: Mar 1, 2020
+      endDate:
+      position: Senior Product Manager
+      summary: |
+        - Own the product roadmap for the core collaboration platform used by 2M+ users
+        - Drove a 25% increase in activation rate through onboarding redesign
+        - Lead a team of 3 product managers, 8 engineers, and 2 designers
+        - Partner with sales and customer success to close enterprise deals
+      keywords:
+        - SaaS
+        - Roadmapping
+        - Activation
+        - Enterprise
+    - name: ShopFlow
+      url: https://shopflow.example.com
+      startDate: Jun 1, 2016
+      endDate: Feb 1, 2020
+      position: Product Manager
+      summary: |
+        - Launched the merchant analytics dashboard used by 50,000+ sellers
+        - Conducted user interviews and usability tests to inform feature prioritization
+        - Defined OKRs and metrics framework for the seller experience team
+      keywords:
+        - E-commerce
+        - Analytics
+        - OKRs
+        - User Research
+  languages:
+    - language: English
+      fluency: Native or Bilingual Proficiency
+      keywords: []
+    - language: Spanish
+      fluency: Limited Working Proficiency
+      keywords: []
+  skills:
+    - name: Product Strategy
+      level: Expert
+      keywords:
+        - Roadmapping
+        - Market Analysis
+        - Competitive Positioning
+        - OKRs
+    - name: Execution
+      level: Expert
+      keywords:
+        - Agile
+        - Scrum
+        - Sprint Planning
+        - Jira
+    - name: Analytics
+      level: Intermediate
+      keywords:
+        - SQL
+        - Mixpanel
+        - Amplitude
+        - Tableau
+  awards:
+    - title: Product-Led Growth Award
+      awarder: SaaS Awards
+      date: Sep 2023
+      summary: |
+        Honored for delivering measurable growth through product-led initiatives.
+  certificates:
+    - name: Certified Scrum Product Owner
+      url: https://www.scrumalliance.org/
+      issuer: Scrum Alliance
+      date: Jan 2018
+  references:
+    - name: Jennifer Lee
+      phone: "(555) 234-5678"
+      relationship: Former VP of Product
+      email: jennifer.lee@example.com
+      summary: |
+        Marcus is a strategic product leader who consistently delivers results while keeping teams aligned and motivated.
+  projects:
+    - name: CloudSync Mobile
+      url: https://cloudsync.example.com/mobile
+      description: Native mobile app for the CloudSync collaboration platform
+      startDate: Jan 2022
+      endDate: Dec 2022
+      summary: |
+        - Led the launch of iOS and Android apps reaching 500K downloads in the first quarter
+        - Defined core mobile value proposition and MVP scope
+        - Collaborated with engineering on offline-first architecture
+      keywords:
+        - Mobile
+        - MVP
+        - Launch
+  interests:
+    - name: Travel
+      keywords:
+        - Photography
+        - Hiking
+        - Food
+    - name: Technology
+      keywords:
+        - AI
+        - Productivity Tools
+  volunteer:
+    - organization: Product Guild
+      url: https://productguild.example.com
+      position: Mentor
+      startDate: Jan 2019
+      endDate:
+      summary: |
+        - Mentor aspiring product managers through mock interviews and portfolio reviews
+        - Organize monthly meetups on product management best practices
+
+locale:
+  language: en
+
+layouts:
+  - engine: latex
+    page:
+      margins:
+        top: 2.5cm
+        left: 1.5cm
+        right: 1.5cm
+        bottom: 2.5cm
+      paperSize: a4
+      showPageNumbers: true
+    template: moderncv-banking
+    typography:
+      fontSize: 11pt
+  - engine: docx
+    page:
+      margins:
+        top: 2.5cm
+        left: 1.5cm
+        right: 1.5cm
+        bottom: 2.5cm
+      paperSize: a4
+      showPageNumbers: true
+    typography:
+      fontSize: 11pt
+      lineSpacing: normal
+  - engine: markdown
+  - engine: html
+    template: calm
+    typography:
+      fontSize: 16px

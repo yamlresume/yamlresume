@@ -1,0 +1,221 @@
+content:
+  basics:
+    name: 陳思涵
+    email: sihan.chen@example.com
+    headline: 資深產品經理 | 專注於用戶成長與數據驅動決策
+    phone: +886 912 345 678
+    summary: |
+      - 擁有 8 年以上軟體與 App 產品管理經驗，擅長從 0 到 1 打造產品、制定策略並推動跨部門協作
+      - 專注於使用者研究、數據分析與 A/B 測試，持續以數據驅動優化產品體驗與商業指標
+      - 熟悉敏捷開發流程，具備 Scrum Master 實務經驗，能有效管理產品待辦清單與迭代節奏
+      - 善於溝通與表達，曾協調工程、設計、行銷與業務團隊，成功交付多項高影響力產品專案
+    url: https://sihanchen.me
+  education:
+    - area: 資訊管理學系
+      institution: 國立台灣大學
+      degree: Bachelor
+      courses:
+        - 資料庫管理
+        - 使用者體驗設計
+        - 電子商務
+        - 統計學
+        - 作業研究
+      endDate: Jun 1, 2015
+      startDate: Sep 1, 2011
+      summary: |
+        - 主修資訊管理，修習程式設計、資料庫與電子商務等課程，奠定產品開發與數據分析的基礎
+        - 畢業專題「行動點餐 App」獲選為系所優秀專題，並於校內創新創業競賽獲得第二名
+      score: "3.9"
+      url: https://www.management.ntu.edu.tw/
+  awards:
+    - awarder: 樂灣科技股份有限公司
+      title: 年度優秀產品經理
+      date: Dec 2023
+      summary: |
+        肯定其在訂閱制產品營收成長與團隊協作上的卓越貢獻，成功帶領產品團隊達成年度目標。
+  certificates:
+    - issuer: Scrum Alliance
+      name: Certified Scrum Product Owner (CSPO)
+      date: Jun 2022
+      url: https://www.scrumalliance.org/certifications/practitioners/cspo-certification
+    - issuer: Google
+      name: Google Analytics 個人認證
+      date: Mar 2021
+      url: https://skillshop.exceedlms.com/student/path/18027566
+  interests:
+    - name: 閱讀
+      keywords:
+        - 商業管理
+        - 設計思考
+        - 心理學
+    - name: 戶外運動
+      keywords:
+        - 登山
+        - 露營
+        - 自行車
+  languages:
+    - fluency: Native or Bilingual Proficiency
+      language: Chinese
+      keywords:
+        - 中文 (母語)
+    - fluency: Full Professional Proficiency
+      language: English
+      keywords:
+        - TOEIC 950
+        - TOEFL iBT 105
+  location:
+    city: 台北市
+    address: 忠孝東路四段 100 號 12 樓
+    country: Taiwan
+    postalCode: "106"
+    region: 大安區
+  profiles:
+    - network: LinkedIn
+      username: sihanchen
+      url: https://www.linkedin.com/in/sihanchen
+    - network: Medium
+      username: sihanchen
+      url: https://medium.com/@sihanchen
+  projects:
+    - name: 會員成長與忠誠度計畫
+      startDate: Jan 2023
+      summary: |
+        - 分析用戶分群與購買行為，設計新版會員等級與點數機制
+        - 與工程、設計團隊合作開發會員中心頁面與個人化推薦模組
+        - 專案上線後三個月內，會員月平均回購率提升 18%
+      description: 重新設計會員制度與點數系統，以數據驅動提升用戶留存與回購率
+      endDate: Oct 2023
+      keywords:
+        - 會員經營
+        - 忠誠度計畫
+        - 使用者分析
+      url: https://sihanchen.me/projects/loyalty-program
+  publications:
+    - name: 從數據洞察到產品決策：資深產品經理的五個實戰心法
+      publisher: Medium
+      releaseDate: Aug 2023
+      summary: |
+        - 分享如何結合定性訪談與定量數據找出產品優化機會
+        - 以實際案例說明 A/B 測試的設計陷阱與分析框架
+        - 探討產品經理在跨部門協作中建立數據文化的方法
+      url: https://medium.com/@sihanchen/data-driven-product-decisions
+  skills:
+    - level: Expert
+      name: 產品管理
+      keywords:
+        - 產品策略
+        - 路線圖規劃
+        - 需求分析
+        - 使用者故事
+        - 產品發布
+    - level: Advanced
+      name: 使用者研究
+      keywords:
+        - 使用者訪談
+        - 可用性測試
+        - 競品分析
+        - Persona
+    - level: Advanced
+      name: 數據分析
+      keywords:
+        - SQL
+        - Google Analytics
+        - Mixpanel
+        - A/B 測試
+    - level: Expert
+      name: 敏捷開發
+      keywords:
+        - Scrum
+        - Kanban
+        - Jira
+        - Trello
+    - level: Intermediate
+      name: 設計工具
+      keywords:
+        - Figma
+        - Sketch
+        - Axure
+  volunteer:
+    - organization: TechGirls Taiwan
+      position: 職涯導師
+      startDate: Jan 2022
+      summary: |
+        - 擔任科技領域女性學生之職涯導師，提供產品經理職涯規劃建議
+        - 協助籌辦工作坊與模擬面試，累計指導超過 30 位學員
+      endDate: Dec 2023
+      url: https://www.techgirls.tw
+  work:
+    - name: 樂灣科技股份有限公司
+      position: 資深產品經理
+      startDate: Mar 1, 2021
+      summary: |
+        - 負責訂閱制 SaaS 產品線，掌管產品藍圖與季度開發優先序，年度營收成長 45%
+        - 建立用戶訪談與使用數據分析機制，找出關鍵流失環節，將 30 日留存率提升 22%
+        - 導入 A/B testing 流程並與工程團隊協作，優化註冊轉換率，從 12% 提升至 18%
+        - 主導跨部門（業務、行銷、客服）溝通，確保需求蒐集與產品發布策略一致
+      keywords:
+        - 產品策略
+        - A/B 測試
+        - 敏捷開發
+        - 資料分析
+      url: https://www.lovewan.tw
+    - name: 智慧雲端股份有限公司
+      position: 產品經理
+      startDate: Jul 1, 2018
+      summary: |
+        - 負責 B2B 雲端人資系統之產品規劃，涵蓋薪資計算、請假打卡與績效考核模組
+        - 訪談超過 30 家企業客戶，歸納痛點並轉化為產品需求文件，縮短需求確認時程 40%
+        - 協調設計與工程團隊進行敏捷開發，定期主持 Sprint 規劃與回顧會議
+        - 與客戶成功團隊合作，建立產品使用手冊與教育訓練內容，降低入門障礙
+      endDate: Feb 1, 2021
+      keywords:
+        - B2B SaaS
+        - 需求訪談
+        - Scrum
+        - 產品文件
+      url: https://www.smartcloud.com.tw
+    - name: 宏遠資訊有限公司
+      position: 助理產品經理
+      startDate: Jul 1, 2016
+      summary: |
+        - 協助產品經理進行競品分析、市場調查與用戶問卷設計，並產出分析報告供團隊決策
+        - 管理產品需求清單與 Bug 追蹤表，定期整理版本發布說明並與利害關係人同步
+        - 參與 App 改版專案，協助進行 UI Flow 繪製與原型測試，累積扎實的產品實務經驗
+      endDate: Jun 1, 2018
+      keywords:
+        - 競品分析
+        - 原型設計
+        - 專案管理
+      url: https://www.hongyuan.com.tw
+locale:
+  language: zh-hant-tw
+layouts:
+  - engine: latex
+    page:
+      showPageNumbers: true
+      paperSize: a4
+      margins:
+        top: 2.5cm
+        bottom: 2.5cm
+        left: 1.5cm
+        right: 1.5cm
+    template: moderncv-banking
+    typography:
+      fontSize: 11pt
+  - engine: docx
+    page:
+      showPageNumbers: true
+      paperSize: a4
+      margins:
+        top: 2.5cm
+        bottom: 2.5cm
+        left: 1.5cm
+        right: 1.5cm
+    typography:
+      fontSize: 11pt
+      lineSpacing: normal
+  - engine: markdown
+  - engine: html
+    template: calm
+    typography:
+      fontSize: 16px

@@ -1,0 +1,293 @@
+content:
+  basics:
+    name: Lucía Fernández
+    email: lucia.fernandez@example.com
+    headline: Ingeniera de Software Full Stack
+    phone: +34 612 345 678
+    summary: >
+      - Ingeniera de software con más de 6 años de experiencia en el diseño,
+      desarrollo y despliegue de aplicaciones web escalables
+
+      - Especializada en arquitecturas de microservicios, APIs RESTful y
+      computación en la nube con AWS y Google Cloud
+
+      - Sólida experiencia trabajando con metodologías ágiles y equipos
+      multidisciplinares
+
+      - Apasionada por la calidad del código, las pruebas automatizadas y la
+      mejora continua
+    url: https://luciafernandez.dev
+  education:
+    - area: Ingeniería Informática
+      institution: Universidad Politécnica de Madrid
+      degree: Bachelor
+      courses:
+        - Arquitectura de Computadores
+        - Bases de Datos
+        - Ingeniería del Software
+        - Sistemas Operativos
+        - Redes de Computadores
+        - Inteligencia Artificial
+      endDate: Jul 1, 2015
+      startDate: Sep 1, 2010
+      summary: >
+        - Formación integral en fundamentos de programación, algoritmos y
+        estructuras de datos
+
+        - Proyecto fin de grado sobre plataforma de colaboración educativa en
+        tiempo real
+
+        - Colaboración en proyectos de investigación del grupo de sistemas
+        distribuidos
+      score: "8.7"
+      url: https://www.upm.es/
+  awards:
+    - awarder: TechNova Solutions
+      title: Premio a la Innovación Tecnológica
+      date: Jun 2022
+      summary: >
+        Reconocimiento a la implementación de un sistema de recomendación
+        inteligente que incrementó la retención de usuarios en un 25%.
+  certificates:
+    - issuer: Amazon Web Services
+      name: AWS Certified Solutions Architect – Associate
+      date: Jan 2023
+      url: https://aws.amazon.com/certification/
+    - issuer: Scrum.org
+      name: Professional Scrum Master I
+      date: Sep 2020
+      url: https://www.scrum.org/
+  interests:
+    - name: Tecnología
+      keywords:
+        - Open source
+        - Inteligencia artificial
+        - Ciberseguridad
+    - name: Senderismo
+      keywords:
+        - Montaña
+        - Naturaleza
+        - Fotografía
+    - name: Música
+      keywords:
+        - Piano
+        - Jazz
+        - Conciertos
+  languages:
+    - fluency: Native or Bilingual Proficiency
+      language: Spanish
+      keywords:
+        - Lengua materna
+    - fluency: Full Professional Proficiency
+      language: English
+      keywords:
+        - TOEFL 105
+        - IELTS 7.5
+    - fluency: Elementary Proficiency
+      language: French
+      keywords:
+        - Nivel básico
+  location:
+    city: Madrid
+    country: Spain
+    postalCode: "28001"
+    region: Comunidad de Madrid
+  profiles:
+    - network: GitHub
+      username: luciafernandez
+      url: https://github.com/luciafernandez
+    - network: LinkedIn
+      username: luciafernandez
+      url: https://www.linkedin.com/in/luciafernandez
+  projects:
+    - name: EventFlow
+      startDate: Jan 2023
+      summary: |
+        - Desarrollo de una aplicación web con React, Node.js y PostgreSQL
+        - Sistema de autenticación basado en JWT y autorización por roles
+        - Despliegue automatizado en AWS mediante Docker y GitHub Actions
+      description: Plataforma open source para la gestión y organización de eventos técnicos
+      endDate: null
+      keywords:
+        - Open Source
+        - React
+        - Node.js
+        - PostgreSQL
+      url: https://eventflow.example.com
+    - name: DevMetrics
+      startDate: Apr 2021
+      summary: >
+        - Dashboard interactivo construido con Next.js y Chart.js
+
+        - Integración con Jira y GitHub para la recopilación de métricas de
+        sprints
+
+        - Más de 200 estrellas en GitHub y adopción en varias empresas
+        tecnológicas
+      description: Herramienta de análisis de productividad para equipos de desarrollo
+        ágiles
+      endDate: Dec 2022
+      keywords:
+        - Next.js
+        - Jira API
+        - GitHub API
+        - Chart.js
+      url: https://devmetrics.example.com
+  publications:
+    - name: Optimización de consultas en bases de datos NoSQL para aplicaciones web a
+        gran escala
+      publisher: Revista Española de Ingeniería del Software
+      releaseDate: Mar 2022
+      summary: >
+        - Análisis comparativo de estrategias de modelado de datos en MongoDB y
+        Cassandra
+
+        - Propuesta de un conjunto de buenas prácticas para mejorar el
+        rendimiento en entornos distribuidos
+      url: https://www.revistaingenieriasoftware.es/articulo/optimizacion-nosql
+  skills:
+    - level: Expert
+      name: Desarrollo Frontend
+      keywords:
+        - React
+        - TypeScript
+        - Next.js
+        - Tailwind CSS
+        - Jest
+    - level: Expert
+      name: Desarrollo Backend
+      keywords:
+        - Node.js
+        - Python
+        - Express
+        - FastAPI
+        - GraphQL
+    - level: Advanced
+      name: DevOps y Cloud
+      keywords:
+        - AWS
+        - Docker
+        - Kubernetes
+        - Terraform
+        - CI/CD
+    - level: Advanced
+      name: Bases de Datos
+      keywords:
+        - PostgreSQL
+        - MongoDB
+        - Redis
+        - Prisma
+  volunteer:
+    - organization: Código para Todos
+      position: Mentora de Programación
+      startDate: Oct 2019
+      summary: >
+        - Impartí talleres de introducción a la programación web para jóvenes en
+        riesgo de exclusión social
+
+        - Mentoricé a 15 estudiantes en proyectos personales de desarrollo de
+        software
+
+        - Colaboré en la creación de material didáctico gratuito disponible en
+        abierto
+      endDate: Jun 2023
+      url: https://codigoparatodos.example.org
+  work:
+    - name: TechNova Solutions
+      position: Ingeniera de Software Senior
+      startDate: Mar 1, 2021
+      summary: >
+        - Lideré el diseño e implementación de una plataforma de gestión de
+        datos basada en microservicios, reduciendo el tiempo de despliegue en un
+        40%
+
+        - Coordiné un equipo de 5 desarrolladores para migrar una aplicación
+        monolítica a una arquitectura orientada a eventos
+
+        - Introduje prácticas de integración continua y despliegue continuo
+        (CI/CD) con GitHub Actions y AWS CodePipeline
+
+        - Implementé sistemas de monitorización y alertas con Prometheus y
+        Grafana, mejorando la disponibilidad del servicio al 99.9%
+      endDate: null
+      keywords:
+        - Microservicios
+        - AWS
+        - Kubernetes
+        - CI/CD
+        - Liderazgo técnico
+      url: https://technova.example.com
+    - name: InnovaSoft
+      position: Ingeniera de Software
+      startDate: Sep 1, 2017
+      summary: >
+        - Desarrollé nuevas funcionalidades para aplicaciones web de clientes en
+        sectores bancario y sanitario
+
+        - Creé componentes reutilizables con React y TypeScript, mejorando la
+        mantenibilidad del código
+
+        - Diseñé e implementé APIs RESTful con Node.js y Express, integradas con
+        bases de datos PostgreSQL y MongoDB
+
+        - Participé en la definición de estándares de calidad y revisiones de
+        código del equipo
+      endDate: Feb 1, 2021
+      keywords:
+        - React
+        - Node.js
+        - PostgreSQL
+        - REST APIs
+        - Scrum
+      url: https://innovasoft.example.com
+    - name: ThinkWeb Lab
+      position: Desarrolladora Web Junior
+      startDate: Jul 1, 2015
+      summary: >
+        - Maquetación e implementación de interfaces de usuario responsive con
+        HTML, CSS y JavaScript
+
+        - Colaboré en el desarrollo de un gestor de contenidos para un cliente
+        del sector editorial
+
+        - Realicé pruebas de usabilidad y corrección de errores en distintos
+        navegadores
+      endDate: Aug 1, 2017
+      keywords:
+        - JavaScript
+        - HTML
+        - CSS
+        - Usabilidad
+      url: https://thinkweblab.example.com
+locale:
+  language: es
+layouts:
+  - engine: latex
+    page:
+      showPageNumbers: true
+      paperSize: a4
+      margins:
+        top: 2.5cm
+        bottom: 2.5cm
+        left: 1.5cm
+        right: 1.5cm
+    template: moderncv-banking
+    typography:
+      fontSize: 11pt
+  - engine: docx
+    page:
+      showPageNumbers: true
+      paperSize: a4
+      margins:
+        top: 2.5cm
+        bottom: 2.5cm
+        left: 1.5cm
+        right: 1.5cm
+    typography:
+      fontSize: 11pt
+      lineSpacing: normal
+  - engine: markdown
+  - engine: html
+    template: calm
+    typography:
+      fontSize: 16px

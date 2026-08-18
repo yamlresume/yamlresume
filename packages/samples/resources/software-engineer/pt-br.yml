@@ -1,0 +1,296 @@
+content:
+  basics:
+    name: Lucas Almeida
+    email: lucas.almeida.dev@gmail.com
+    headline: Engenheiro de Software Full Stack
+    phone: (11) 98765-4321
+    summary: >
+      - Engenheiro de software com mais de 9 anos de experiência no projeto,
+      desenvolvimento e operação de aplicações web escaláveis
+
+      - Especialista em arquiteturas de microsserviços, integração de APIs REST
+      e boas práticas de qualidade e segurança de software
+
+      - Experiência sólida com Java, Node.js, React, bancos de dados relacionais
+      e não relacionais, além de serviços em nuvem como AWS e Azure
+
+      - Atuação em equipes ágeis, com forte comunicação, mentoria técnica e foco
+      em entregas de alto valor para o negócio
+    url: https://lucasalmeida.dev
+  education:
+    - area: Ciência da Computação
+      institution: Universidade de São Paulo (USP)
+      degree: Bachelor
+      courses:
+        - Algoritmos e Estruturas de Dados
+        - Engenharia de Software
+        - Banco de Dados
+        - Sistemas Operacionais
+        - Redes de Computadores
+        - Computação Distribuída
+        - Inteligência Artificial
+      endDate: 2014-12-15
+      startDate: 2010-02-01
+      summary: >
+        - Formação sólida em fundamentos de computação, engenharia de software e
+        sistemas distribuídos
+
+        - Participei de projetos de iniciação científica e programas de
+        monitoria em disciplinas de programação
+
+        - Desenvolvi trabalho de conclusão de curso sobre otimização de
+        consultas em bancos de dados NoSQL
+      score: "8.7"
+      url: https://www.usp.br
+  awards:
+    - awarder: TechNova Soluções
+      title: Prêmio Destaque em Inovação
+      date: 2023-12-15
+      summary: >
+        Reconhecimento concedido anualmente pela empresa ao profissional com
+        maior impacto em inovação e melhoria contínua.
+  certificates:
+    - issuer: Amazon Web Services
+      name: AWS Certified Developer - Associate
+      date: 2022-07-15
+      url: https://aws.amazon.com/certification/
+  interests:
+    - name: Tecnologia
+      keywords:
+        - Open Source
+        - Inteligência Artificial
+        - Computação em Nuvem
+        - Segurança da Informação
+    - name: Esportes
+      keywords:
+        - Corrida
+        - Natação
+        - Ciclismo
+  languages:
+    - fluency: Native or Bilingual Proficiency
+      language: Portuguese
+      keywords:
+        - Português do Brasil
+    - fluency: Full Professional Proficiency
+      language: English
+      keywords:
+        - TOEFL iBT 94
+        - C1 Advanced
+    - fluency: Limited Working Proficiency
+      language: Spanish
+      keywords:
+        - Leitura técnica
+  location:
+    city: São Paulo
+    address: Av. Paulista, 1000, apto. 123
+    country: Brazil
+    postalCode: 01310-100
+    region: São Paulo
+  profiles:
+    - network: GitHub
+      username: lucasalmeida-dev
+      url: https://github.com/lucasalmeida-dev
+    - network: LinkedIn
+      username: lucas-almeida-dev
+      url: https://www.linkedin.com/in/lucas-almeida-dev
+  projects:
+    - name: StockFlow
+      startDate: 2022-05-01
+      summary: >
+        - Projetei a arquitetura do sistema em microsserviços com Node.js, React
+        e PostgreSQL
+
+        - Implementei autenticação via JWT, controle de permissões e auditoria
+        de operações
+
+        - Configurei pipeline de CI/CD com GitHub Actions e deploy automatizado
+        em contêineres Docker
+
+        - Alcancei redução de 30% no tempo de processamento de relatórios
+        gerenciais
+      description: Sistema integrado de gestão de estoque, compras e vendas para
+        pequenas e médias empresas.
+      endDate: 2023-04-30
+      keywords:
+        - React
+        - Node.js
+        - PostgreSQL
+        - Docker
+        - SaaS
+      url: https://stockflow.example.com
+  publications:
+    - name: Arquitetura de Microsserviços em Produção
+      publisher: Revista Brasileira de Engenharia de Software
+      releaseDate: 2021-06-10
+      summary: >
+        - Aborda lições aprendidas na migração de uma aplicação monolítica para
+        microsserviços
+
+        - Apresenta estratégias de observabilidade, escalabilidade e resiliência
+        em ambientes cloud
+
+        - Compartilha decisões técnicas e trade-offs relevantes para times de
+        engenharia
+      url: https://rbengsoft.example.com/artigos/arquitetura-microsservicos
+  skills:
+    - level: Expert
+      name: Desenvolvimento Web
+      keywords:
+        - JavaScript
+        - TypeScript
+        - React
+        - Node.js
+        - HTML
+        - CSS
+    - level: Advanced
+      name: Back-end
+      keywords:
+        - Java
+        - Spring Boot
+        - REST APIs
+        - Microsserviços
+        - Mensageria
+    - level: Advanced
+      name: Banco de Dados
+      keywords:
+        - PostgreSQL
+        - MySQL
+        - MongoDB
+        - Redis
+        - Query Optimization
+    - level: Intermediate
+      name: DevOps
+      keywords:
+        - Docker
+        - Kubernetes
+        - AWS
+        - CI/CD
+        - Terraform
+    - level: Advanced
+      name: Arquitetura de Software
+      keywords:
+        - Clean Architecture
+        - Domain-Driven Design
+        - Design Patterns
+        - SOLID
+        - Event-Driven Architecture
+  volunteer:
+    - organization: Instituto Codificar
+      position: Voluntário de Ensino de Programação
+      startDate: 2019-04-01
+      summary: >
+        - Ministrei oficinas de lógica de programação e desenvolvimento web para
+        jovens em situação de vulnerabilidade
+
+        - Auxiliei na elaboração de material didático e na realização de
+        hackathons educacionais
+
+        - Contribuí para a formação inicial de mais de 100 estudantes na área de
+        tecnologia
+      endDate: 2021-11-30
+      url: https://institutocodificar.org.br
+  work:
+    - name: TechNova Soluções
+      position: Engenheiro de Software Sênior
+      startDate: 2021-03-01
+      summary: >
+        - Lidero o desenvolvimento de uma plataforma de gestão financeira para
+        clientes empresariais, atendendo mais de 250 mil usuários
+
+        - Desenho e implemento microsserviços em Node.js e Java, reduzindo o
+        tempo de resposta das APIs em 40%
+
+        - Atuo na definição da arquitetura de software, conduzo code reviews e
+        estabeleço padrões de qualidade e segurança
+
+        - Oriento engenheiros júnior e pleno, promovendo boas práticas de testes
+        automatizados, CI/CD e documentação
+
+        - Colaboro com product managers e designers para transformar requisitos
+        de negócio em soluções técnicas robustas
+      keywords:
+        - Microsserviços
+        - Node.js
+        - Java
+        - AWS
+        - Kubernetes
+        - Mentoria
+      url: https://technova.com.br
+    - name: Fintech InovaPay
+      position: Desenvolvedor de Software Pleno
+      startDate: 2018-02-01
+      summary: >
+        - Atuei no desenvolvimento full stack de um aplicativo de pagamentos
+        móveis utilizado por mais de 1 milhão de pessoas
+
+        - Implementei funcionalidades com React Native e Node.js, integrando
+        gateways de pagamento e sistemas antifraude
+
+        - Melhorei a cobertura de testes automatizados de 35% para 78%,
+        reduzindo incidentes em produção
+
+        - Participei de cerimônias ágeis e colaborei com times de engenharia,
+        produto e suporte ao cliente
+      endDate: 2021-02-26
+      keywords:
+        - React Native
+        - Node.js
+        - APIs REST
+        - Testes automatizados
+        - Pagamentos
+      url: https://inovapay.com.br
+    - name: Agência Web Mídia Digital
+      position: Desenvolvedor Full Stack Júnior
+      startDate: 2015-01-05
+      summary: >
+        - Desenvolvi e mantive websites e sistemas web para clientes de diversos
+        segmentos
+
+        - Trabalhei com JavaScript, HTML, CSS, PHP e WordPress, criando
+        interfaces responsivas e otimizadas para SEO
+
+        - Colaborei no aperfeiçoamento de processos internos e na migração de
+        projetos legados para versões mais modernas
+
+        - Aprendi e apliquei princípios de design responsivo e acessibilidade
+        digital
+      endDate: 2018-01-19
+      keywords:
+        - JavaScript
+        - PHP
+        - WordPress
+        - SEO
+        - Responsive Design
+      url: https://webmidia.com.br
+locale:
+  language: pt-br
+layouts:
+  - engine: latex
+    page:
+      showPageNumbers: true
+      paperSize: a4
+      margins:
+        top: 2.5cm
+        bottom: 2.5cm
+        left: 1.5cm
+        right: 1.5cm
+    template: moderncv-banking
+    typography:
+      fontSize: 11pt
+  - engine: docx
+    page:
+      showPageNumbers: true
+      paperSize: a4
+      margins:
+        top: 2.5cm
+        bottom: 2.5cm
+        left: 1.5cm
+        right: 1.5cm
+    typography:
+      fontSize: 11pt
+      lineSpacing: normal
+  - engine: markdown
+  - engine: html
+    template: calm
+    typography:
+      fontSize: 16px

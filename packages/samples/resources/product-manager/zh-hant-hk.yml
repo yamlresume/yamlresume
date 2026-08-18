@@ -1,0 +1,240 @@
+content:
+  basics:
+    name: 陳曉彤
+    email: hiutung.chan@protonmail.com
+    headline: 資深產品經理 | 以用戶為本推動數碼產品創新
+    phone: +852 9123 4567
+    summary: |
+      - 擁有超過 8 年產品管理經驗，專注於金融科技、電子商貿及企業數碼轉型領域
+      - 善於從用戶需求與商業目標出發，制定產品策略、路線圖及需求優先次序
+      - 具備跨部門協作及敏捷開發經驗，能有效帶領工程、設計、市場及營運團隊交付高品質產品
+      - 熟悉數據驅動決策流程，擅長利用 A/B 測試、用戶研究及數據分析持續優化產品體驗
+    url: https://www.linkedin.com/in/hiutung-chan
+  education:
+    - area: 工商管理（資訊系統）
+      institution: 香港科技大學
+      degree: Bachelor
+      courses:
+        - 資訊系統分析與設計
+        - 數據庫管理
+        - 人機互動
+        - 市場學原理
+        - 統計學
+        - 商業溝通與談判
+      endDate: Jun 1, 2016
+      startDate: Sep 1, 2012
+      summary: |
+        - 主修資訊系統及商業管理，掌握科技與商業結合的基礎知識
+        - 透過課程項目及實習累積產品開發、數據分析及項目管理經驗
+        - 於畢業專題中設計流動應用程式原型，獲學系最佳項目獎提名
+      score: 3.6/4.0
+      url: https://www.hkust.edu.hk/
+  awards:
+    - awarder: 香港資訊科技商會
+      title: 年度最佳金融科技產品獎
+      date: Jan 15, 2023
+      summary: |
+        表揚團隊於流動支付產品中創新結合人工智能及合規科技，顯著提升交易安全及用戶體驗。
+    - awarder: 智匯金融科技有限公司
+      title: 傑出員工獎
+      date: Dec 1, 2019
+      summary: |
+        因主導開戶流程數碼轉型項目，為公司帶來顯著營運效益及客戶滿意度提升而獲獎。
+  certificates:
+    - issuer: Scrum Alliance
+      name: Certified Scrum Product Owner (CSPO)
+      date: Mar 12, 2020
+      url: https://www.scrumalliance.org/
+    - issuer: Google
+      name: Google Analytics Individual Qualification
+      date: Jul 20, 2021
+      url: https://skillshop.exceedlms.com/
+    - issuer: CodeMobility
+      name: Professional Certificate in Product Management
+      date: Sep 5, 2022
+      url: https://www.codemobility.com/
+  interests:
+    - name: 閱讀
+      keywords:
+        - 產品設計
+        - 商業策略
+        - 科技趨勢
+        - 科幻小說
+    - name: 戶外運動
+      keywords:
+        - 遠足
+        - 跑步
+        - 露營
+    - name: 攝影
+      keywords:
+        - 街頭攝影
+        - 人像攝影
+        - 手機攝影
+  languages:
+    - fluency: Native or Bilingual Proficiency
+      language: Cantonese
+    - fluency: Full Professional Proficiency
+      language: English
+      keywords:
+        - IELTS 7.5
+    - fluency: Full Professional Proficiency
+      language: Mandarin
+  location:
+    city: 香港
+    address: 香港中環皇后大道中99號
+    country: Hong Kong
+    postalCode: "999077"
+    region: 香港島
+  profiles:
+    - network: LinkedIn
+      username: hiutung-chan
+      url: https://www.linkedin.com/in/hiutung-chan
+    - network: GitHub
+      username: htchan
+      url: https://github.com/htchan
+  projects:
+    - name: PayEasy 流動支付應用程式
+      startDate: Jan 1, 2021
+      summary: |
+        - 從 0 到 1 規劃本地中小企流動收款方案，涵蓋用戶研究、功能定義及市場推廣策略
+        - 推出後首 6 個月錄得超過 8,000 個商戶註冊，每月交易額突破 5,000 萬港元
+      description: |
+        為本地中小企提供一站式收款、報表及客戶管理功能的流動應用程式，結合安全合規及簡易介面，降低數碼支付入門門檻。
+      endDate: Dec 1, 2022
+      keywords:
+        - FinTech
+        - 流動支付
+        - 金融科技
+        - B2B
+        - 用戶體驗
+      url: https://www.payeasyhk.com
+  publications:
+    - name: 如何打造以用戶為中心的產品策略
+      publisher: Medium
+      releaseDate: May 15, 2022
+      summary: |
+        - 分享如何透過用戶研究、數據分析及跨部門協作，制定能平衡用戶需求與商業目標的產品策略
+        - 以實際案例說明產品路線圖的取捨原則及敏捷團隊的執行方法
+      url: https://medium.com/@hiutung-chan/user-centric-product-strategy
+  skills:
+    - level: Expert
+      name: 產品管理
+      keywords:
+        - 產品策略
+        - 路線圖規劃
+        - 需求分析
+        - 用戶故事
+        - 優先次序管理
+    - level: Advanced
+      name: 數據分析
+      keywords:
+        - SQL
+        - Google Analytics
+        - Mixpanel
+        - Tableau
+        - A/B 測試
+    - level: Advanced
+      name: 敏捷開發
+      keywords:
+        - Scrum
+        - Kanban
+        - Jira
+        - Confluence
+        - OKR
+    - level: Advanced
+      name: 用戶研究
+      keywords:
+        - 用戶訪談
+        - 問卷調查
+        - 可用性測試
+        - Personas
+        - 顧客旅程地圖
+  volunteer:
+    - organization: 香港產品經理協會
+      position: 義務導師
+      startDate: Jan 1, 2022
+      summary: |
+        - 定期為年輕產品經理舉辦工作坊，分享用戶研究、敏捷開發及職涯規劃心得
+        - 協助協會策劃年度研討會，邀請行業領袖交流產品管理趨勢
+        - 為初創團隊提供免費產品策略諮詢，支援本地創新科技社群發展
+      url: https://www.hkpma.org/
+  work:
+    - name: 翱翔科技集團
+      position: 高級產品經理
+      startDate: Jan 1, 2021
+      summary: |
+        - 負責旗艦流動支付產品的整體策略、路線圖及交付，管理 6 人的產品設計團隊
+        - 與工程、合規及營運團隊協作，於 9 個月內推出新商戶後台系統，提升營運效率 30%
+        - 建立用戶研究及數據分析機制，透過 NPS 調查及行為分析，推動用戶留存率提升 18%
+        - 主導 B2B 客戶需求發掘及概念驗證，成功簽下 3 間大型連鎖零售集團
+      keywords:
+        - 產品策略
+        - 金融科技
+        - 用戶研究
+        - 數據分析
+        - 敏捷開發
+      url: https://www.techwinghk.com
+    - name: 智匯金融科技有限公司
+      position: 產品經理
+      startDate: Jul 1, 2018
+      summary: |
+        - 負責網上銀行及投資平台的功能規劃，涵蓋需求收集、用戶故事編寫及驗收測試
+        - 與設計團隊合作重新設計開戶流程，將平均開戶時間由 15 分鐘縮短至 6 分鐘
+        - 與工程團隊採用 Scrum 方式進行兩週一次迭代，按時交付 20 多個主要版本
+        - 定期向管理層匯報產品績效指標，並根據數據調整產品優先次序
+      endDate: Dec 1, 2020
+      keywords:
+        - 數碼銀行
+        - Scrum
+        - 用戶體驗
+        - 產品需求文件
+        - KPI
+      url: https://www.nexpayhk.com
+    - name: 創意軟件工作室
+      position: 助理產品經理
+      startDate: Jul 1, 2016
+      summary: |
+        - 協助高級產品經理規劃電商平台新功能，包括購物車優化及會員積分系統
+        - 與客戶進行需求訪談，整理會議紀錄並轉化為用戶故事及線框圖
+        - 協調設計及開發資源，確保項目按時完成並符合品質標準
+        - 參與產品測試及用戶驗收，收集意見並跟進問題修復
+      endDate: Jun 1, 2018
+      keywords:
+        - 電子商貿
+        - 需求分析
+        - 線框圖
+        - 項目協調
+        - 用戶驗收
+      url: https://www.ideastudiohk.com
+locale:
+  language: zh-hant-hk
+layouts:
+  - engine: latex
+    page:
+      showPageNumbers: true
+      paperSize: a4
+      margins:
+        top: 2.5cm
+        bottom: 2.5cm
+        left: 1.5cm
+        right: 1.5cm
+    template: moderncv-banking
+    typography:
+      fontSize: 11pt
+  - engine: docx
+    page:
+      showPageNumbers: true
+      paperSize: a4
+      margins:
+        top: 2.5cm
+        bottom: 2.5cm
+        left: 1.5cm
+        right: 1.5cm
+    typography:
+      fontSize: 11pt
+      lineSpacing: normal
+  - engine: markdown
+  - engine: html
+    template: calm
+    typography:
+      fontSize: 16px

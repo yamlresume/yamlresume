@@ -1,0 +1,314 @@
+content:
+  basics:
+    name: Mariana Carvalho
+    email: mariana.carvalho@exemplo.com.br
+    headline: Gerente de Produto Sênior com foco em produtos digitais e experiências
+      centradas no cliente
+    phone: +55 11 98234-5678
+    summary: >
+      - Gerente de Produto com mais de 8 anos de experiência em produtos
+      digitais nos setores financeiro, varejo e tecnologia
+
+      - Especialista em transformar visão estratégica em roadmap priorizado e
+      liderar squads multidisciplinares para entregar valor ao cliente
+
+      - Uso de dados qualitativos e quantitativos para embasar decisões de
+      produto e acelerar o crescimento do negócio
+
+      - Sólida vivência em discovery, OKRs, métricas de produto e metodologias
+      ágeis (Scrum e Kanban)
+    url: https://marianacarvalho.com.br
+  education:
+    - area: Gestão Estratégica de Negócios
+      institution: Fundação Getulio Vargas (FGV)
+      degree: Master
+      courses:
+        - Estratégia de Produtos e Mercados
+        - Customer Experience
+        - Finanças Corporativas
+        - Gestão de Dados para Decisão
+      endDate: Dec 1, 2021
+      startDate: Jan 1, 2020
+      summary: >
+        - Aprofundei conhecimentos em estratégia, finanças e gestão de dados
+        aplicados à tomada de decisão de negócio
+
+        - Desenvolvi trabalho de conclusão sobre modelos de crescimento para
+        marketplaces B2B no Brasil
+      url: https://portal.fgv.br/
+    - area: Administração de Empresas
+      institution: Universidade de São Paulo (USP)
+      degree: Bachelor
+      courses:
+        - Estatística Aplicada
+        - Marketing
+        - Comportamento Organizacional
+        - Administração de Operações
+      endDate: Dec 1, 2013
+      startDate: Feb 1, 2010
+      summary: >
+        - Formação generalista em negócios, com ênfase em marketing, estatística
+        e operações
+
+        - Participação em projetos de consultoria júnior, desenvolvendo
+        habilidades de liderança e comunicação
+      url: https://www.usp.br/
+  awards:
+    - awarder: Zetta Fintech
+      title: Prêmio Inovação em Produtos Digitais
+      date: Dec 15, 2023
+      summary: >
+        Reconhecimento pela liderança do lançamento do Zetta Pay, produto que
+        alcançou mais de R$ 200 milhões em volume transacionado no primeiro
+        trimestre.
+    - awarder: Grupo Varejo Digital
+      title: Destaque de Liderança
+      date: Nov 1, 2021
+      summary: >
+        Prêmio interno concedido pela atuação na integração dos times de produto
+        e tecnologia durante a migração para a nova plataforma de e-commerce.
+  certificates:
+    - issuer: Scrum Alliance
+      name: Certificação Scrum Product Owner (CSPO)
+      date: Aug 1, 2020
+      url: https://www.scrumalliance.org/
+    - issuer: Product School
+      name: Certificado de Gestão de Produto
+      date: May 1, 2021
+      url: https://productschool.com/
+  interests:
+    - name: Tecnologia e Inovação
+      keywords:
+        - Produtos Digitais
+        - IA Generativa
+        - Open Finance
+    - name: Bem-estar
+      keywords:
+        - Corrida
+        - Yoga
+        - Mindfulness
+  languages:
+    - fluency: Native or Bilingual Proficiency
+      language: Portuguese
+      keywords:
+        - Português nativo
+    - fluency: Full Professional Proficiency
+      language: English
+      keywords:
+        - TOEFL iBT 105
+        - Inglês para negócios
+    - fluency: Limited Working Proficiency
+      language: Spanish
+      keywords:
+        - Comunicação básica
+  location:
+    city: São Paulo
+    address: Av. Paulista, 1000 - Bela Vista
+    country: Brazil
+    postalCode: 01310-100
+    region: SP
+  profiles:
+    - network: LinkedIn
+      username: mariana-carvalho
+      url: https://www.linkedin.com/in/mariana-carvalho
+    - network: GitHub
+      username: mariana-carvalho
+      url: https://github.com/mariana-carvalho
+  projects:
+    - name: Zetta Pay
+      startDate: Jan 1, 2022
+      summary: >
+        - Liderei o produto do zero, desde a descoberta até o lançamento
+        nacional
+
+        - Construí parcerias estratégicas com bancos e adquirentes para ampliar
+        a distribuição
+
+        - Alcancei 50 mil empresas ativas em 12 meses de operação
+
+        - Defini precificação, posicionamento e estratégia de lançamento
+      description: Plataforma de pagamentos instantâneos para pequenas e médias empresas.
+      endDate: Dec 1, 2023
+      keywords:
+        - Fintech
+        - Pagamentos
+        - Para empresas
+        - Lançamento
+        - Descoberta
+      url: https://www.zettafintech.com.br/zetta-pay
+    - name: Programa de Fidelidade Varejo Digital
+      startDate: Jun 1, 2020
+      summary: >
+        - Reformulei a proposta de valor do programa, elevando a recorrência de
+        compras em 22%
+
+        - Integrei o programa ao CRM e aos canais de notificação, aumentando o
+        engajamento dos clientes
+
+        - Priorizei funcionalidades com base em dados de uso e pesquisas de
+        satisfação
+      description: Programa de pontos e recompensas integrado ao e-commerce e ao aplicativo.
+      endDate: Oct 1, 2021
+      keywords:
+        - Fidelização
+        - CRM
+        - Retenção
+        - Personalização
+      url: https://www.grupovarejodigital.com.br/fidelidade
+  publications:
+    - name: "Do problema à solução: um guia prático para product discovery"
+      publisher: Product Dive Brasil
+      releaseDate: Apr 10, 2023
+      summary: >
+        Artigo sobre como estruturar sessões de discovery com clientes e
+        transformar insights em hipóteses priorizadas no roadmap.
+      url: https://medium.com/product-dive-brasil/do-problema-a-solucao
+  skills:
+    - level: Expert
+      name: Gestão de Produto
+      keywords:
+        - Descoberta de Produto
+        - Roadmap
+        - OKRs
+        - Estratégia de Produto
+        - Backlog
+        - Posicionamento
+        - Pesquisa com Usuários
+    - level: Advanced
+      name: Métodos Ágeis
+      keywords:
+        - Scrum
+        - Kanban
+        - Lean Startup
+        - Design Sprint
+        - SAFe
+    - level: Advanced
+      name: Análise de Dados
+      keywords:
+        - SQL
+        - Amplitude
+        - Mixpanel
+        - Google Analytics
+        - Testes A/B
+    - level: Intermediate
+      name: UX e Prototipação
+      keywords:
+        - Figma
+        - Jornada do Usuário
+        - Prototipagem
+        - Testes de Usabilidade
+  volunteer:
+    - organization: Instituto Codificar
+      position: Mentora em Gestão de Produto
+      startDate: Jan 1, 2022
+      summary: >
+        - Atuo como mentora voluntária em programa de formação de mulheres para
+        carreiras em tecnologia
+
+        - Apoio mentoradas no desenvolvimento de habilidades de gestão de
+        produto, análise de dados e preparação para processos seletivos
+      url: https://www.institutocodificar.org.br/
+  work:
+    - name: Zetta Fintech
+      position: Gerente de Produto Sênior
+      startDate: Mar 1, 2022
+      summary: >
+        - Lidero o roadmap de pagamentos digitais B2B, produto com mais de 1
+        milhão de usuários ativos
+
+        - Implementei processo de discovery contínuo, reduzindo em 40% o tempo
+        entre ideação e teste de novas hipóteses
+
+        - Defino OKRs e KPIs de ativação, retenção e receita, acompanhando a
+        evolução semanalmente com o time de dados
+
+        - Conduzo squads multidisciplinares de engenharia, design e dados, com
+        foco em autonomia e orientação a resultados
+
+        - Realizo entrevistas com clientes e testes de usabilidade para validar
+        dores e melhorar a experiência do produto
+      keywords:
+        - Pagamentos
+        - PIX
+        - B2B
+        - OKRs
+        - Descoberta de Produto
+        - KPIs
+        - APIs
+      url: https://www.zettafintech.com.br/
+    - name: Grupo Varejo Digital
+      position: Gerente de Produto
+      startDate: Jun 1, 2019
+      summary: >
+        - Gerenciei o ciclo de vida do aplicativo de e-commerce, que cresceu de
+        3,5 milhões para 6 milhões de pedidos mensais
+
+        - Implementei testes A/B e personalização da home, elevando a taxa de
+        conversão em 15%
+
+        - Priorizei o backlog de 4 squads com base em impacto para o negócio,
+        valor para o cliente e viabilidade técnica
+
+        - Colaborei com marketing, logística e atendimento para assegurar
+        jornadas integradas e sem fricção
+      endDate: Feb 1, 2022
+      keywords:
+        - E-commerce
+        - Testes A/B
+        - Backlog
+        - Retenção
+        - Personalização
+        - CRM
+      url: https://www.grupovarejodigital.com.br/
+    - name: Agência Click Digital
+      position: Analista de Produto
+      startDate: Jan 1, 2016
+      summary: >
+        - Apoiei a gestão de portfólio de produtos digitais para clientes de
+        médio porte em diferentes segmentos
+
+        - Estruturei relatórios de performance e análises de funil, orientando
+        decisões de melhoria dos produtos
+
+        - Participei de cerimônias ágeis e liderei a integração entre UX,
+        desenvolvimento e operações
+      endDate: May 1, 2019
+      keywords:
+        - Analytics
+        - Funil
+        - Ágil
+        - Sucesso do Cliente
+        - Relatórios
+      url: https://www.agenciaclick.com.br/
+locale:
+  language: pt-br
+layouts:
+  - engine: latex
+    page:
+      showPageNumbers: true
+      paperSize: a4
+      margins:
+        top: 2.5cm
+        bottom: 2.5cm
+        left: 1.5cm
+        right: 1.5cm
+    template: moderncv-banking
+    typography:
+      fontSize: 11pt
+  - engine: docx
+    page:
+      showPageNumbers: true
+      paperSize: a4
+      margins:
+        top: 2.5cm
+        bottom: 2.5cm
+        left: 1.5cm
+        right: 1.5cm
+    typography:
+      fontSize: 11pt
+      lineSpacing: normal
+  - engine: markdown
+  - engine: html
+    template: calm
+    typography:
+      fontSize: 16px

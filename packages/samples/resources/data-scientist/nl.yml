@@ -1,0 +1,303 @@
+content:
+  basics:
+    name: Sanne van den Berg
+    email: sanne.vandenberg@datascope.nl
+    headline: Data Scientist
+    phone: +31 6 12345678
+    summary: >
+      - Data Scientist met ruim drie jaar ervaring in het ontwikkelen van
+      voorspellende modellen en het ontsluiten van data
+
+      - Sterk in het vertalen van businessvraagstukken naar datagedreven
+      oplossingen
+
+      - Ervaren met Python, SQL en cloudplatforms zoals Azure en AWS
+
+      - Gedreven om complexe problemen op te lossen met machine learning en
+      statistische methoden
+
+      - Communicatief vaardig en in staat om resultaten helder te presenteren
+      aan niet-technische stakeholders
+    url: https://www.datascope.nl
+  education:
+    - area: Data Science
+      institution: Universiteit van Amsterdam
+      degree: Master
+      courses:
+        - Machine Learning
+        - Statistisch Leren
+        - Big Data Technologieën
+        - Datavisualisatie
+        - Experimenteel Ontwerp
+      endDate: Jul 1, 2020
+      startDate: Sep 1, 2018
+      summary: >
+        - Afstudeerrichting Data Science met specialisatie in toegepast machine
+        learning
+
+        - Scriptie over voorspellende modellen voor klantverloop met behulp van
+        gradient boosting
+
+        - Vakken gevolgd op het gebied van statistiek, datamining en
+        software-engineering
+      score: "8.5"
+      url: https://www.uva.nl
+    - area: Informatica
+      institution: Hogeschool Rotterdam
+      degree: Bachelor
+      courses:
+        - Programmeren in Java
+        - Databases
+        - Software Engineering
+        - Web Development
+      endDate: Jul 1, 2018
+      startDate: Sep 1, 2014
+      summary: >
+        - Bachelor Informatica met minor Data Science
+
+        - Afstudeerproject over een dashboard voor real-time monitoring van
+        logistieke processen
+      score: "8.0"
+      url: https://www.hogeschoolrotterdam.nl
+  awards:
+    - awarder: ACM SIGKDD
+      title: "KDD Cup 2021 Einduitslag: Top 10"
+      date: Aug 2021
+      summary: >
+        Internationaal team van vier data scientists behaalde een top 10-positie
+        in de KDD Cup 2021-competitie voor tijdreeksvoorspelling.
+    - awarder: Universiteit van Amsterdam
+      title: Afstudeerprijs beste data-scriptie
+      date: Jun 2020
+      summary: >
+        Prijs voor de beste masterthesis op het gebied van toegepaste data
+        science.
+  certificates:
+    - issuer: Microsoft
+      name: "Microsoft Certified: Azure Data Scientist Associate"
+      date: May 2022
+      url: https://learn.microsoft.com/certifications/azure-data-scientist
+    - issuer: Coursera
+      name: Deep Learning Specialization
+      date: Nov 2020
+      url: https://www.coursera.org/specializations/deep-learning
+  interests:
+    - name: Datavisualisatie
+      keywords:
+        - D3.js
+        - Storytelling met data
+    - name: Hardlopen
+      keywords:
+        - 10 kilometer
+        - Estafetteloop
+    - name: Schaakspel
+      keywords:
+        - Correspondentieschaak
+        - Tactiek
+  languages:
+    - fluency: Native or Bilingual Proficiency
+      language: Dutch
+      keywords:
+        - Moedertaal
+    - fluency: Full Professional Proficiency
+      language: English
+      keywords:
+        - Cambridge CPE
+    - fluency: Limited Working Proficiency
+      language: German
+      keywords:
+        - Zakelijke communicatie
+  location:
+    city: Amsterdam
+    address: Keizersgracht 456
+    country: Netherlands
+    postalCode: 1016 EG
+    region: Noord-Holland
+  profiles:
+    - network: LinkedIn
+      username: sannevandenberg
+      url: https://www.linkedin.com/in/sannevandenberg
+    - network: GitHub
+      username: sannevdb
+      url: https://github.com/sannevdb
+  projects:
+    - name: Churnpredictie voor telecomklanten
+      startDate: Jan 1, 2023
+      summary: >
+        - Ontwikkelde een geautomatiseerde pipeline voor het trainen en
+        evalueren van churnmodellen
+
+        - Gebruikte SHAP-values om modeluitkomsten te visualiseren en te
+        communiceren naar niet-technische stakeholders
+      description: Een machine learning-project dat klantverloop voorspelt op basis
+        van historische klantdata.
+      endDate: Apr 1, 2023
+      keywords:
+        - Python
+        - SHAP
+        - Machine Learning
+      url: https://github.com/sannevdb/churn-prediction
+    - name: Dashboard voor energieverbruik
+      startDate: Sep 1, 2021
+      summary: >
+        - Bouwde een interactief dashboard met Plotly Dash
+
+        - Integreerde een voorspellingsmodel op basis van historische
+        verbruiksdata
+      description: Interactief dashboard voor het monitoren en voorspellen van
+        energieverbruik in woningen.
+      endDate: Dec 1, 2021
+      keywords:
+        - Plotly
+        - Dash
+        - Voorspelling
+      url: https://github.com/sannevdb/energy-dashboard
+  publications:
+    - name: Predicting Customer Churn with Explainable AI
+      publisher: Data & Inzichten
+      releaseDate: Mar 1, 2023
+      summary: >
+        Praktijkgericht artikel over het voorspellen van klantverloop met
+        machine learning en de waarde van uitlegbare modellen voor bedrijven.
+      url: https://www.datainzicht.nl/churn
+  references:
+    - name: Dr. Anneke de Vries
+      summary: >
+        Sanne is een gedreven en analytische data scientist. Ze combineert een
+        sterke technische basis met uitstekende communicatieve vaardigheden en
+        brengt daardoor ideeën effectief in de praktijk.
+      email: anneke.devries@uva.nl
+      phone: +31 20 1234567
+      relationship: Hoogleraar Data Science aan de Universiteit van Amsterdam
+  skills:
+    - level: Expert
+      name: Machine Learning
+      keywords:
+        - Python
+        - scikit-learn
+        - TensorFlow
+        - XGBoost
+        - PyTorch
+    - level: Expert
+      name: Data-analyse
+      keywords:
+        - SQL
+        - Pandas
+        - Spark
+        - Excel
+    - level: Advanced
+      name: Datavisualisatie
+      keywords:
+        - Tableau
+        - Power BI
+        - Matplotlib
+    - level: Intermediate
+      name: Big Data
+      keywords:
+        - Hadoop
+        - Spark
+        - Kafka
+    - level: Advanced
+      name: Communicatie
+      keywords:
+        - Presentaties
+        - Stakeholder management
+        - Rapportage
+  volunteer:
+    - organization: Stichting Data voor Goed
+      position: Vrijwilliger Data Science
+      startDate: Jan 1, 2021
+      summary: >
+        - Ondersteun non-profitorganisaties met data-analyse en het bouwen van
+        dashboards
+
+        - Geef workshops over datageletterdheid aan maatschappelijke
+        organisaties
+      url: https://www.datavoorgoed.nl
+    - organization: Vrouwen in Tech
+      position: Tech Mentor
+      startDate: Feb 1, 2022
+      summary: >
+        - Begeleid beginnende data scientists bij hun carrière in de
+        technologiesector
+
+        - Draag bij aan een inclusieve werkcultuur door het organiseren van
+        netwerkevents
+      url: https://www.vrouwenintech.nl
+  work:
+    - name: Nova Analytics
+      position: Data Scientist
+      startDate: Jan 1, 2022
+      summary: >
+        - Ontwikkel en implementeer machine learning-modellen voor
+        klantvoorspelling en churnanalyse
+
+        - Werk samen met data-ingenieurs om datapijplijnen te optimaliseren in
+        Azure Data Factory
+
+        - Presenteer resultaten aan stakeholders en adviseer over datagedreven
+        strategieën
+
+        - Begeleid junior data scientists en stagiaires bij hun projecten
+
+        - Initieer experimenten om de impact van modellen op bedrijfsprocessen
+        te meten
+      keywords:
+        - Python
+        - Azure
+        - Machine Learning
+        - Stakeholder Management
+      url: https://www.nova-analytics.nl
+    - name: FinTech Nederland
+      position: Junior Data Scientist
+      startDate: Jul 1, 2020
+      summary: >
+        - Bouwde dashboards met Power BI voor het monitoren van betalingsgedrag
+
+        - Analyseerde transactiedata om fraudegevallen te detecteren met behulp
+        van anomaliedetectie
+
+        - Verbeterde datakwaliteit door het opschonen en structureren van
+        datasets in SQL
+
+        - Werkte in een Agile team en leverde wekelijks inzichten aan product
+        owners
+      endDate: Dec 1, 2021
+      keywords:
+        - Power BI
+        - SQL
+        - Anomaliedetectie
+        - Agile
+      url: https://www.fintech-nederland.nl
+locale:
+  language: nl
+layouts:
+  - engine: latex
+    page:
+      showPageNumbers: true
+      paperSize: a4
+      margins:
+        top: 2.5cm
+        bottom: 2.5cm
+        left: 1.5cm
+        right: 1.5cm
+    template: moderncv-banking
+    typography:
+      fontSize: 11pt
+  - engine: docx
+    page:
+      showPageNumbers: true
+      paperSize: a4
+      margins:
+        top: 2.5cm
+        bottom: 2.5cm
+        left: 1.5cm
+        right: 1.5cm
+    typography:
+      fontSize: 11pt
+      lineSpacing: normal
+  - engine: markdown
+  - engine: html
+    template: calm
+    typography:
+      fontSize: 16px

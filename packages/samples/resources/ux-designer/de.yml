@@ -1,0 +1,276 @@
+content:
+  basics:
+    name: Lena Hoffmann
+    email: kontakt@lenahoffmann-ux.de
+    headline: Senior UX-Designerin & Produktstrategin
+    phone: +49 170 1234567
+    summary: >
+      Senior UX-Designerin mit über 8 Jahren Erfahrung in der nutzerzentrierten
+      Gestaltung komplexer digitaler Produkte für B2B- und B2C-Märkte.
+      Spezialisiert auf Design Systems, strategisches Interaction Design und
+      evidenzbasierte UX-Forschung.
+
+
+      Leitet cross-funktionale Teams in agilen Umgebungen und vereint
+      analytisches Denken mit ästhetischer Präzision. Leidenschaftlich für
+      barrierefreies Design und datengetriebene Entscheidungsfindung, um
+      messbare Geschäftsergebnisse zu erzielen.
+    url: https://lenahoffmann-ux.de
+  education:
+    - area: Human-Computer Interaction
+      institution: Hochschule für Gestaltung Schwäbisch Gmünd
+      degree: Master
+      courses:
+        - Interaktionsgestaltung
+        - Empirische Forschungsmethoden
+        - Design Thinking
+        - Prototyping und Testverfahren
+      endDate: Sep 1, 2017
+      startDate: Oct 1, 2015
+      summary: >
+        Schwerpunkt auf nutzerzentrierter Forschung und evidenzbasierter
+        Gestaltung komplexer digitaler Systeme. Abschlussarbeit zur Reduktion
+        kognitiver Belastung in medizinischen Software-Systemen.
+      score: 1,3
+      url: https://www.hfg-gmuend.de
+    - area: Mediendesign und Kommunikation
+      institution: Hochschule München
+      degree: Bachelor
+      courses:
+        - Informationsdesign
+        - Webtechnologien
+        - Visuelle Kommunikation
+        - Typografie und Layout
+      endDate: Sep 1, 2014
+      startDate: Oct 1, 2011
+      summary: >
+        Fundierte Ausbildung in visuellem Design, Informationsarchitektur und
+        Grundlagen der Frontend-Entwicklung.
+      score: 1,7
+      url: https://www.hm.edu
+  awards:
+    - awarder: iF International Forum Design GmbH
+      title: iF Design Award
+      date: Mar 2023
+      summary: >
+        Auszeichnung für das Redesign des Patientenportals der Nexa Health AG in
+        der Kategorie User Experience.
+  certificates:
+    - issuer: UXQB / ibi research
+      name: CPUX-F (Certified Professional for Usability and User Experience -
+        Foundation Level)
+      date: Jun 2019
+      url: https://www.uxqb.org
+  interests:
+    - name: Typografie
+      keywords:
+        - Schriftgestaltung
+        - Variable Fonts
+        - Leseforschung
+    - name: Fotografie
+      keywords:
+        - Street Photography
+        - Analog
+        - Bildkomposition
+    - name: Soziales Engagement
+      keywords:
+        - Tech4Germany
+        - Mentoring
+        - Diversity in Tech
+  languages:
+    - fluency: Native or Bilingual Proficiency
+      language: German
+    - fluency: Full Professional Proficiency
+      language: English
+      keywords:
+        - Business English
+        - Technical Documentation
+  location:
+    city: München
+    address: Lindwurmstraße 88
+    country: Germany
+    postalCode: "80337"
+    region: Bayern
+  profiles:
+    - network: LinkedIn
+      username: lena-hoffmann-ux
+      url: https://linkedin.com/in/lena-hoffmann-ux
+    - network: Behance
+      username: lenahoffmann
+      url: https://behance.net/lenahoffmann
+    - network: Dribbble
+      username: lenahoffmann
+      url: https://dribbble.com/lenahoffmann
+  projects:
+    - name: CareConnect App
+      startDate: Jan 1, 2022
+      summary: >
+        - End-to-End-UX für eine iOS- und Android-App mit über 50.000 aktiven
+        Nutzern
+
+        - Entwicklung eines empathischen Onboardings für Nutzer in
+        Stresssituationen
+
+        - Integration von Sprachassistenten und Barrierefreiheitsfunktionen
+      description: Mobile App zur Vernetzung von Pflegekräften und Angehörigen
+      endDate: Jun 1, 2023
+      keywords:
+        - Mobile UX
+        - Healthcare
+        - Accessibility
+      url: https://www.nexa-health.de/careconnect
+  publications:
+    - name: Barrierefreiheit im medizinischen E-Commerce
+      publisher: UX Magazin
+      releaseDate: Nov 2022
+      summary: >
+        Praxisleitfaden zur Umsetzung von WCAG 2.1 AA in komplexen
+        Gesundheitsportalen mit Fokus auf ältere Nutzergruppen.
+      url: https://www.ux-magazin.de/barrierefreiheit-medizin-ecommerce
+  skills:
+    - level: Expert
+      name: UX Research & Strategie
+      keywords:
+        - User Interviews
+        - Usability Testing
+        - Journey Mapping
+        - Personas
+        - A/B Testing
+    - level: Expert
+      name: UI Design & Prototyping
+      keywords:
+        - Figma
+        - Sketch
+        - Adobe XD
+        - Principle
+        - ProtoPie
+    - level: Advanced
+      name: Design Operations
+      keywords:
+        - Design Systems
+        - Zeroheight
+        - Storybook
+        - Component Libraries
+        - Token Studio
+    - level: Intermediate
+      name: Frontend-Grundlagen
+      keywords:
+        - HTML5
+        - CSS3
+        - JavaScript
+        - React Basics
+        - Accessibility (WCAG)
+  volunteer:
+    - organization: Tech4Germany
+      position: UX-Mentorin
+      startDate: Sep 1, 2020
+      summary: >
+        - Mentoring von Nachwuchsdesignern aus unterrepräsentierten Gruppen
+
+        - Begleitung bei Portfolio-Reviews und Bewerbungsprozessen in der
+        Tech-Branche
+
+        - Workshop-Leitung zu Themen wie Design Thinking und UX-Grundlagen
+      url: https://www.tech4germany.org
+  work:
+    - name: Nexa Health AG
+      position: Lead UX Designer
+      startDate: Mar 1, 2021
+      summary: >
+        - Leitung des UX-Teams (5 Personen) für Patienten- und Ärzteportale im
+        Gesundheitssektor
+
+        - Entwicklung und Pflege eines umfassenden Design Systems mit Figma und
+        Zeroheight
+
+        - Durchführung von User Research, Usability-Tests und
+        Journey-Mapping-Workshops
+
+        - Enge Zusammenarbeit mit Product Ownern, Entwicklern und Medizinern in
+        agilen Scrum-Teams
+
+        - Steigerung der Task-Completion-Rate um 35 % durch Redesign des
+        Terminbuchungsflows
+      keywords:
+        - Design Systems
+        - Figma
+        - User Research
+        - Scrum
+        - Healthcare
+      url: https://www.nexa-health.de
+    - name: Formwerk Digital GmbH
+      position: Senior UX Designer
+      startDate: Jan 1, 2018
+      summary: >
+        - Konzeption und Gestaltung von E-Commerce-Plattformen und mobilen Apps
+        für DAX-Kunden
+
+        - Moderation von Design Sprints und Stakeholder-Workshops zur
+        Anforderungsklärung
+
+        - Erstellung interaktiver Prototypen für frühe Nutzervalidierung und
+        Stakeholder-Pitches
+
+        - Mentoring von Junior Designern und Einführung von
+        Peer-Review-Prozessen
+      endDate: Feb 1, 2021
+      keywords:
+        - E-Commerce
+        - Design Sprints
+        - Prototyping
+        - Mentoring
+      url: https://www.formwerk.de
+    - name: UX Studio Mitte
+      position: UX/UI Designer
+      startDate: Nov 1, 2014
+      summary: >
+        - Unterstützung bei der Konzeption von Websites und Apps für Start-ups
+        und KMU
+
+        - Erstellung von Wireframes, Moodboards und visuellen Designs in Sketch
+        und Adobe CC
+
+        - Durchführung von Heuristischen Evaluationen und Erstellung von Style
+        Guides
+
+        - Zusammenarbeit mit Frontend-Entwicklern zur Sicherstellung der
+        Design-Implementierung
+      endDate: Dec 1, 2017
+      keywords:
+        - Wireframing
+        - Visual Design
+        - Sketch
+        - Heuristische Evaluation
+      url: https://www.uxstudio-mitte.de
+locale:
+  language: de
+layouts:
+  - engine: latex
+    page:
+      showPageNumbers: true
+      paperSize: a4
+      margins:
+        top: 2.5cm
+        bottom: 2.5cm
+        left: 1.5cm
+        right: 1.5cm
+    template: moderncv-banking
+    typography:
+      fontSize: 11pt
+  - engine: docx
+    page:
+      showPageNumbers: true
+      paperSize: a4
+      margins:
+        top: 2.5cm
+        bottom: 2.5cm
+        left: 1.5cm
+        right: 1.5cm
+    typography:
+      fontSize: 11pt
+      lineSpacing: normal
+  - engine: markdown
+  - engine: html
+    template: calm
+    typography:
+      fontSize: 16px

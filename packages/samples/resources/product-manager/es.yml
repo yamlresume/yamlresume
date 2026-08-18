@@ -1,0 +1,289 @@
+content:
+  basics:
+    name: Lucía Fernández Ortega
+    email: lucia.fernandez@luciafernandezpm.com
+    headline: Product Manager con más de 8 años de experiencia en producto digital
+    phone: +34 622 345 678
+    summary: >
+      Product Manager orientada a resultados con más de 8 años de experiencia en
+      el diseño, desarrollo y lanzamiento de productos digitales en sectores
+      fintech y SaaS.
+
+
+      - Lidero equipos multidisciplinares para definir visión, estrategia y hoja
+      de ruta de producto.
+
+      - Aplico metodologías ágiles y tomo decisiones basadas en datos.
+
+      - Experiencia en descubrimiento de clientes, priorización de backlog y
+      medición de KPIs.
+
+      - Colaboro estrechamente con diseño e ingeniería para ofrecer experiencias
+      de usuario impactantes.
+    url: https://www.luciafernandezpm.com
+  education:
+    - area: Product Management
+      institution: IE Business School
+      degree: Master
+      courses:
+        - Product Strategy
+        - Data-Driven Product Management
+        - UX Research
+        - Digital Business Models
+      endDate: Jun 30, 2019
+      startDate: Oct 1, 2018
+      summary: |
+        - Adquirí una visión integral de la gestión de producto digital.
+        - Desarrollé habilidades de análisis de datos y experimentación.
+        - Colaboré en proyectos reales con empresas del sector tecnológico.
+      score: "9.1"
+      url: https://www.ie.edu
+    - area: Administración de Empresas
+      institution: Universidad Carlos III de Madrid
+      degree: Bachelor
+      courses:
+        - Fundamentos de Marketing
+        - Finanzas Corporativas
+        - Estrategia Empresarial
+        - Estadística Aplicada
+        - Dirección de Operaciones
+      endDate: Jun 30, 2012
+      startDate: Sep 1, 2008
+      summary: |
+        - Base sólida en gestión empresarial, análisis financiero y marketing.
+        - Desarrollo de competencias analíticas y de comunicación.
+        - Participación en proyectos de simulación y casos de negocio.
+      score: "8.4"
+      url: https://www.uc3m.es
+  awards:
+    - awarder: Universidad Carlos III de Madrid
+      title: Premio al Mejor Proyecto Fin de Grado
+      date: Jul 1, 2012
+      summary: >
+        Reconocimiento al proyecto final más innovador dentro del grado de
+        Administración de Empresas.
+  certificates:
+    - issuer: Scrum Alliance
+      name: Certified Scrum Product Owner (CSPO)
+      date: Feb 1, 2019
+      url: https://www.scrumalliance.org/certifications/cspo
+    - issuer: Product School
+      name: Product Analytics Micro-Certification
+      date: Oct 1, 2021
+      url: https://productschool.com
+  interests:
+    - name: Tecnología
+      keywords:
+        - IA aplicada
+        - Automatización
+    - name: Actividades al aire libre
+      keywords:
+        - Senderismo
+        - Ciclismo
+    - name: Lectura
+      keywords:
+        - Liderazgo
+        - Innovación
+  languages:
+    - fluency: Native or Bilingual Proficiency
+      language: Spanish
+      keywords:
+        - Lengua materna
+    - fluency: Full Professional Proficiency
+      language: English
+      keywords:
+        - TOEFL 105
+        - Nivel C1
+    - fluency: Limited Working Proficiency
+      language: French
+      keywords:
+        - Nivel B1
+  location:
+    city: Madrid
+    address: Calle de Alcalá 45
+    country: Spain
+    postalCode: "28014"
+    region: Comunidad de Madrid
+  profiles:
+    - network: LinkedIn
+      username: luciafernandezpm
+      url: https://www.linkedin.com/in/luciafernandezpm
+    - network: Twitter
+      username: luciafernandezpm
+      url: https://twitter.com/luciafernandezpm
+  projects:
+    - name: App Salud360
+      startDate: Mar 1, 2023
+      summary: >
+        - Diseñé la propuesta de valor y definí el MVP junto al equipo de
+        ingeniería.
+
+        - Coordiné un equipo remoto de 5 desarrolladores.
+
+        - Validé la solución con más de 40 usuarios y ajusté las funcionalidades
+        clave.
+      description: Aplicación móvil de seguimiento de hábitos de salud para
+        consumidores finales.
+      endDate: Sep 30, 2023
+      keywords:
+        - Salud
+        - Mobile
+        - MVP
+        - User Research
+      url: https://salud360.es
+  publications:
+    - name: "De la idea al producto: cómo priorizar funciones con impacto"
+      publisher: Medium
+      releaseDate: Sep 15, 2021
+      summary: >
+        Artículo orientado a product managers sobre métodos de priorización
+        basados en datos, valor de negocio y esfuerzo de desarrollo.
+      url: https://medium.com/@luciafernandezpm
+  skills:
+    - level: Expert
+      name: Gestión de Producto
+      keywords:
+        - Roadmap
+        - Priorización
+        - Discovery
+        - OKRs
+        - KPI
+    - level: Advanced
+      name: Metodologías Ágiles
+      keywords:
+        - Scrum
+        - Kanban
+        - Lean Startup
+        - Sprint Planning
+    - level: Advanced
+      name: Herramientas de Análisis
+      keywords:
+        - SQL
+        - Mixpanel
+        - Amplitude
+        - Excel
+    - level: Advanced
+      name: User Research
+      keywords:
+        - Entrevistas
+        - Encuestas
+        - Usabilidad
+        - Prototipado
+    - level: Expert
+      name: Herramientas de Producto
+      keywords:
+        - Jira
+        - Confluence
+        - Figma
+        - Miro
+  volunteer:
+    - organization: Junior Achievement España
+      position: Mentora de emprendedores
+      startDate: Sep 1, 2020
+      summary: >
+        - Acompañé a jóvenes emprendedores en el desarrollo de modelos de
+        negocio.
+
+        - Impartí talleres de propuesta de valor y validación de ideas.
+
+        - Participé en eventos de networking y evaluación de proyectos.
+      endDate: Jun 30, 2023
+      url: https://www.juniorachievement.es
+  work:
+    - name: Nixal Digital
+      position: Senior Product Manager
+      startDate: Jan 1, 2022
+      summary: >
+        - Defino la visión y estrategia de producto para dos líneas principales:
+        banca móvil y soluciones de pago.
+
+        - Lidero un equipo de 8 personas entre ingeniería, diseño y datos.
+
+        - Priorizo el backlog mediante OKRs, análisis de impacto y entrevistas
+        con clientes.
+
+        - Lancé una nueva funcionalidad de pagos que incrementó la retención un
+        12 %.
+
+        - Acompaño al equipo en la medición de KPIs con Mixpanel, SQL y Google
+        Analytics.
+      keywords:
+        - Product Strategy
+        - OKRs
+        - FinTech
+        - Agile
+        - SaaS
+        - Data Analysis
+      url: https://nixal.digital
+    - name: Wandatech
+      position: Product Manager
+      startDate: Jun 1, 2019
+      summary: >
+        - Gestioné el ciclo de vida completo de un SaaS B2B de automatización de
+        marketing.
+
+        - Creé el roadmap, épicas e historias de usuario en Jira.
+
+        - Coordiné con equipos comerciales y de éxito del cliente para
+        identificar oportunidades de mejora.
+
+        - Rediseñé el onboarding de la plataforma y reduje el churn un 20 %.
+      endDate: Dec 31, 2021
+      keywords:
+        - SaaS
+        - B2B
+        - Marketing Automation
+        - Jira
+        - Roadmap
+      url: https://wandatech.io
+    - name: Innova Retail Solutions
+      position: Product Manager Jr.
+      startDate: Sep 1, 2016
+      summary: >
+        - Apoyé al Product Manager en el análisis de mercado y la definición de
+        requisitos.
+
+        - Diseñé y ejecuté pruebas de usabilidad con clientes reales.
+
+        - Elaboré informes semanales de métricas y propuestas de mejora.
+
+        - Colaboré con el equipo de desarrollo en la resolución de incidencias.
+      endDate: May 31, 2019
+      keywords:
+        - Retail
+        - Usabilidad
+        - Analítica
+        - Requirements
+      url: https://innovaretail.es
+locale:
+  language: es
+layouts:
+  - engine: latex
+    page:
+      showPageNumbers: true
+      paperSize: a4
+      margins:
+        top: 2.5cm
+        bottom: 2.5cm
+        left: 1.5cm
+        right: 1.5cm
+    template: moderncv-banking
+    typography:
+      fontSize: 11pt
+  - engine: docx
+    page:
+      showPageNumbers: true
+      paperSize: a4
+      margins:
+        top: 2.5cm
+        bottom: 2.5cm
+        left: 1.5cm
+        right: 1.5cm
+    typography:
+      fontSize: 11pt
+      lineSpacing: normal
+  - engine: markdown
+  - engine: html
+    template: calm
+    typography:
+      fontSize: 16px

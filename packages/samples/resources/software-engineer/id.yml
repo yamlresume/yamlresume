@@ -1,0 +1,294 @@
+content:
+  basics:
+    name: Budi Santoso
+    email: budi.santoso.dev@gmail.com
+    headline: Software Engineer Berpengalaman dalam Aplikasi Web Skala Besar
+    phone: +62 811 9876 5432
+    summary: >
+      - Software engineer dengan **4+ tahun** pengalaman membangun aplikasi web
+      dan backend yang scalable.
+
+      - Mahir dalam pengembangan full-stack menggunakan *TypeScript*, *React*,
+      *Node.js*, dan *Go*.
+
+      - Berpengalaman mendesain arsitektur microservices dan mengelola
+      infrastruktur cloud di AWS/GCP.
+
+      - Terbiasa dengan praktik CI/CD, containerization, dan Infrastructure as
+      Code.
+
+      - Berorientasi pada detail, kolaborasi tim, dan pengembangan produk
+      berkualitas.
+    url: https://budisantoso.id
+  education:
+    - area: Teknik Informatika
+      institution: Universitas Indonesia
+      degree: Bachelor
+      courses:
+        - Struktur Data dan Algoritma
+        - Pemrograman Berorientasi Objek
+        - Sistem Operasi
+        - Basis Data
+        - Jaringan Komputer
+        - Rekayasa Perangkat Lunak
+        - Kecerdasan Buatan
+        - Keamanan Informasi
+      endDate: Jul 1, 2019
+      startDate: Aug 1, 2015
+      summary: >
+        - Lulus dengan predikat cum laude dan IPK 3.78/4.00.
+
+        - Aktif dalam organisasi mahasiswa dan asisten dosen untuk mata kuliah
+        Struktur Data.
+
+        - Proyek akhir: pengembangan platform manajemen inventori berbasis web
+        untuk UMKM.
+      score: "3.78"
+      url: https://www.ui.ac.id/
+  awards:
+    - awarder: Asia Pacific ICT Alliance (APICTA)
+      title: Best Innovation in Smart City
+      date: Nov 2021
+      summary: >
+        Penghargaan atas inovasi aplikasi pelaporan publik berbasis smart city
+        yang dikembangkan bersama tim.
+  certificates:
+    - issuer: Amazon Web Services
+      name: AWS Certified Developer - Associate
+      date: Mar 2022
+      url: https://aws.amazon.com/certification/
+    - issuer: Google Cloud
+      name: Professional Cloud Developer
+      date: Sep 2023
+      url: https://cloud.google.com/certification/
+  interests:
+    - name: Olahraga
+      keywords:
+        - Lari
+        - Futsal
+        - Bersepeda
+    - name: Teknologi
+      keywords:
+        - Open Source
+        - Cloud Computing
+        - AI & Machine Learning
+  languages:
+    - fluency: Native or Bilingual Proficiency
+      language: Indonesian
+      keywords:
+        - Bahasa ibu
+    - fluency: Full Professional Proficiency
+      language: English
+      keywords:
+        - TOEFL ITP 573
+        - IELTS 7.0
+  location:
+    city: Jakarta Selatan
+    address: Jl. Jenderal Sudirman No. 123
+    country: Indonesia
+    postalCode: "12190"
+    region: DKI Jakarta
+  profiles:
+    - network: GitHub
+      username: budisantoso-dev
+      url: https://github.com/budisantoso-dev
+    - network: LinkedIn
+      username: budisantoso
+      url: https://www.linkedin.com/in/budisantoso
+  projects:
+    - name: SiUMKM
+      startDate: Jan 2020
+      summary: >
+        - Membangun aplikasi web full-stack dengan fitur manajemen stok, laporan
+        penjualan, dan integrasi marketplace.
+
+        - Digunakan oleh lebih dari 50 UMKM binaan pada program inkubasi bisnis.
+      description: Platform manajemen inventori dan pemasaran digital untuk UMKM
+      endDate: Jun 2020
+      keywords:
+        - React
+        - Node.js
+        - PostgreSQL
+        - UMKM
+      url: https://github.com/budisantoso-dev/siumkm
+    - name: Dashboard Analitik Real-Time
+      startDate: Feb 2022
+      summary: >
+        - Mengembangkan dashboard analitik yang menampilkan metrik penjualan,
+        stok, dan prediksi permintaan.
+
+        - Menggunakan WebSocket untuk pembaruan data secara langsung dan Google
+        Charts untuk visualisasi.
+      description: Dashboard visualisasi data penjualan secara real-time untuk
+        perusahaan ritel
+      endDate: Dec 2022
+      keywords:
+        - React
+        - WebSocket
+        - Data Visualization
+        - Node.js
+      url: https://github.com/budisantoso-dev/dashboard-analitik
+  publications:
+    - name: Arsitektur Microservices untuk Sistem E-Commerce pada Platform UMKM
+      publisher: Jurnal Teknologi Informasi dan Ilmu Komputer (JTIIK)
+      releaseDate: Jul 2022
+      summary: >
+        Artikel ini membahas perancangan dan implementasi arsitektur
+        microservices pada sistem e-commerce, mencakup strategi komunikasi
+        antar-layanan dan manajemen data terdistribusi.
+      url: https://jtiik.ub.ac.id/index.php/jtiik/article/view/12345
+  skills:
+    - level: Expert
+      name: Pengembangan Web
+      keywords:
+        - TypeScript
+        - React
+        - Node.js
+        - Next.js
+        - GraphQL
+    - level: Advanced
+      name: Backend & Microservices
+      keywords:
+        - Go
+        - Python
+        - PostgreSQL
+        - Kafka
+        - Redis
+    - level: Intermediate
+      name: DevOps & Cloud
+      keywords:
+        - Docker
+        - Kubernetes
+        - AWS
+        - Terraform
+        - GitHub Actions
+    - level: Advanced
+      name: Testing & Kualitas
+      keywords:
+        - Jest
+        - Cypress
+        - Playwright
+        - SonarQube
+  volunteer:
+    - organization: Komunitas Developer Indonesia
+      position: Mentor Pemrograman Web
+      startDate: Jan 2021
+      summary: >
+        Menjadi mentor dalam program pelatihan pemrograman web bagi mahasiswa
+        dan profesional muda. Mendampingi peserta dalam membangun portofolio dan
+        persiapan karier.
+      endDate: Dec 2023
+      url: https://komunitasdeveloper.id
+    - organization: Yayasan Pendidikan Anak Nusantara
+      position: Relawan Pengajar Coding
+      startDate: Jun 2019
+      summary: >
+        Mengajar dasar-dasar logika pemrograman dan Scratch kepada siswa sekolah
+        dasar di daerah terpencil.
+      endDate: Dec 2020
+  work:
+    - name: PT Nusantara Digital Solusi
+      position: Senior Software Engineer
+      startDate: Mar 1, 2023
+      summary: >
+        - Memimpin pengembangan backend layanan pembayaran dengan arsitektur
+        microservices menggunakan Go dan Kafka.
+
+        - Menerapkan desain API yang aman dan efisien, mengurangi waktu respons
+        rata-rata hingga 35%.
+
+        - Berkolaborasi dengan tim produk, desain, dan QA untuk menghadirkan
+        fitur-fitur baru secara iteratif.
+
+        - Melakukan mentoring kepada 4 engineer junior dan melakukan code review
+        secara berkala.
+
+        - Meningkatkan keandalan sistem melalui observability, logging, dan
+        otomatisasi deployment.
+      endDate: null
+      keywords:
+        - Microservices
+        - Go
+        - Kafka
+        - REST API
+        - AWS
+        - Scrum
+      url: https://nusantaradigitalsolusi.co.id
+    - name: PT Kreatif Media Indonesia
+      position: Software Engineer
+      startDate: Jul 1, 2019
+      summary: >
+        - Mengembangkan aplikasi web untuk klien termasuk dashboard analitik dan
+        platform e-commerce.
+
+        - Membangun frontend dengan React dan TypeScript, serta backend API
+        menggunakan Node.js dan PostgreSQL.
+
+        - Mengintegrasikan payment gateway dan layanan pihak ketiga untuk
+        mendukung proses transaksi.
+
+        - Menulis skrip CI/CD dengan GitHub Actions dan Docker untuk mempercepat
+        proses delivery.
+
+        - Berpartisipasi dalam perencanaan sprint dan melakukan grooming backlog
+        bersama product owner.
+      endDate: Feb 28, 2023
+      keywords:
+        - React
+        - Node.js
+        - PostgreSQL
+        - Docker
+        - CI/CD
+        - E-commerce
+      url: https://kreatifmedia.co.id
+    - name: PT Solusi Teknologi Nusantara
+      position: Software Engineer Intern
+      startDate: Jan 1, 2019
+      summary: >
+        - Membantu pengembangan fitur manajemen pengguna pada aplikasi internal
+        perusahaan.
+
+        - Menulis unit test dengan Jest dan melakukan debugging pada aplikasi
+        produksi.
+
+        - Mendokumentasikan API dan menyusun panduan penggunaan sistem untuk tim
+        teknis.
+      endDate: Jun 30, 2019
+      keywords:
+        - JavaScript
+        - Jest
+        - REST API
+        - Dokumentasi
+      url: https://solusiteknologi.co.id
+locale:
+  language: id
+layouts:
+  - engine: latex
+    page:
+      showPageNumbers: true
+      paperSize: a4
+      margins:
+        top: 2.5cm
+        bottom: 2.5cm
+        left: 1.5cm
+        right: 1.5cm
+    template: moderncv-banking
+    typography:
+      fontSize: 11pt
+  - engine: docx
+    page:
+      showPageNumbers: true
+      paperSize: a4
+      margins:
+        top: 2.5cm
+        bottom: 2.5cm
+        left: 1.5cm
+        right: 1.5cm
+    typography:
+      fontSize: 11pt
+      lineSpacing: normal
+  - engine: markdown
+  - engine: html
+    template: calm
+    typography:
+      fontSize: 16px

@@ -1,0 +1,224 @@
+content:
+  basics:
+    name: 陈雨萱
+    email: chenyuxuan@designmail.com
+    headline: 资深用户体验设计师与交互设计专家
+    phone: +86 138 1234 5678
+    summary: |
+      拥有8年以上互联网产品设计经验，擅长将复杂业务需求转化为简洁优雅的用户体验方案。精通设计思维方法论，主导过多个百万级用户产品的体验升级与从0到1的创新项目。
+
+      具备极强的跨团队协作能力，善于通过用户研究驱动设计决策，并建立可复用的设计系统以提升团队整体效能。持续关注AI、车载系统等新兴领域的交互范式演进，致力于创造兼具商业价值与用户情感共鸣的数字产品。
+    url: https://chenyuxuan.design
+  education:
+    - area: 工业设计
+      institution: 江南大学
+      degree: Bachelor
+      courses:
+        - 人机交互设计
+        - 信息架构与导视系统
+        - 视觉传达设计
+        - 用户研究方法
+        - 设计心理学
+        - 交互原型制作
+        - 数字媒体技术
+        - 产品与服务系统设计
+      endDate: Jul 1, 2016
+      startDate: Sep 1, 2012
+      summary: |
+        系统学习人机交互、信息设计、视觉传达等核心课程，掌握以用户为中心的设计思维与方法。
+
+        在校期间多次参与设计工作坊与企业合作项目，完成多个涵盖移动端与实体产品的完整设计案例。担任设计学院学生会视觉部部长，负责学院品牌形象设计与大型活动视觉策划。
+      score: "3.7"
+      url: https://www.jiangnan.edu.cn/
+  awards:
+    - awarder: 红点设计大奖组委会
+      title: 红点设计概念奖
+      date: Nov 2019
+      summary: |
+        凭借为医疗行业设计的创新交互方案，从全球数千件作品中脱颖而出，获得国际评审团的高度认可。
+  certificates:
+    - issuer: Coursera
+      name: 交互设计专业证书
+      date: Jun 2020
+      url: https://coursera.org/verify/ABCD1234EFGH
+  interests:
+    - name: 设计观察
+      keywords:
+        - 建筑设计
+        - 博物馆展览
+        - 街头摄影
+    - name: 生活方式
+      keywords:
+        - 手冲咖啡
+        - 徒步旅行
+        - 科幻电影
+  languages:
+    - fluency: Native or Bilingual Proficiency
+      language: Chinese
+      keywords:
+        - 普通话二级甲等
+        - 商务中文
+    - fluency: Full Professional Proficiency
+      language: English
+      keywords:
+        - CET-6
+        - 专业英文读写
+  location:
+    city: 北京
+    address: 建国路88号SOHO现代城A座1202室
+    country: China
+    postalCode: "100022"
+    region: 朝阳区
+  profiles:
+    - network: LinkedIn
+      username: chenyuxuan-ux
+      url: https://linkedin.com/in/chenyuxuan-ux
+    - network: Dribbble
+      username: chenyuxuan
+      url: https://dribbble.com/chenyuxuan
+  projects:
+    - name: 智慧医疗问诊平台体验重构
+      startDate: Jan 2022
+      summary: |
+        - 针对现有问诊流程复杂、信息层级混乱等核心痛点，进行全面用户体验诊断与重构
+        - 通过为期两个月的用户调研，覆盖医生、患者、药师三类核心用户群体，输出关键洞察与机会点
+        - 重新设计信息架构与核心问诊流程，简化预约、复诊、购药等关键步骤，平均操作时长缩短28%
+        - 建立医疗行业专属的设计语言与组件库，涵盖200+基础组件与业务模板，支持多业务线快速搭建
+        - 项目上线后，NPS评分提升15分，医生端日活跃使用率增长22%
+      description: 为大型互联网医疗平台进行的全面体验升级与设计系统构建项目
+      endDate: Dec 2022
+      keywords:
+        - 医疗产品设计
+        - B端体验设计
+        - 设计系统
+        - 用户研究
+      url: https://chenyuxuan.design/projects/medical-platform
+  publications:
+    - name: 智能时代下的用户体验设计范式转变
+      publisher: 装饰杂志
+      releaseDate: May 2023
+      summary: |
+        - 探讨人工智能生成内容（AIGC）对传统交互设计流程的冲击与重构可能
+        - 提出面向智能时代的人机协同设计框架，为从业者应对技术变革提供理论参考与实践路径
+      url: https://www.zhuangshizazhi.com/article/ux-paradigm-shift
+  references:
+    - name: 李明轩
+      summary: |
+        陈雨萱是极具洞察力的设计师，她不仅能精准捕捉用户需求，更能将设计策略与商业目标紧密结合，是推动产品体验升级的核心力量。
+      email: limingxuan@yunzhi-tech.com
+      phone: +86 139 8765 4321
+      relationship: 前直属上级 / 云智科技产品总监
+  skills:
+    - level: Expert
+      name: 用户体验设计
+      keywords:
+        - Figma
+        - Sketch
+        - Axure
+        - 用户旅程图
+        - 信息架构
+    - level: Advanced
+      name: 用户研究
+      keywords:
+        - 可用性测试
+        - 深度访谈
+        - A/B测试
+        - 问卷调查
+        - 数据分析
+    - level: Intermediate
+      name: 前端开发基础
+      keywords:
+        - HTML
+        - CSS
+        - JavaScript
+        - React基础
+  volunteer:
+    - organization: IXDC国际体验设计大会
+      position: 志愿者设计顾问
+      startDate: Sep 2019
+      summary: |
+        - 连续四届担任大会志愿者设计顾问，负责工作坊物料设计、会场导视系统规划及参会者体验优化
+        - 协助组委会对接国内外演讲嘉宾，参与设计论坛的策划与现场执行，服务超过2000名设计从业者
+        - 通过志愿活动积累了广泛的行业人脉，持续跟进全球体验设计前沿趋势与最佳实践
+      endDate: Sep 2023
+      url: https://ixdc.org
+  work:
+    - name: 云智科技有限公司
+      position: 高级用户体验设计师
+      startDate: Mar 1, 2021
+      summary: |
+        - 主导公司核心B端产品线的用户体验策略制定，建立覆盖Web、移动端及小程序的统一设计系统，使设计交付效率提升40%
+        - 带领5人设计团队完成企业级协作平台的全面体验重构，通过深度用户访谈与可用性测试，将核心任务完成率提升35%
+        - 搭建用户研究体系，推动数据驱动的设计文化在组织内的落地，建立定期可用性测试机制与体验度量指标
+        - 与产品、研发、运营等跨职能团队紧密合作，主导设计评审与方案推演，确保设计高质量落地
+        - 负责设计团队的招聘、培养与专业能力建设，制定设计规范与组件库维护流程
+      keywords:
+        - 用户研究
+        - 交互设计
+        - 设计系统
+        - 团队管理
+        - 跨团队协作
+      url: https://www.yunzhi-tech.com
+    - name: 蓝途数字创新有限公司
+      position: 用户体验设计师
+      startDate: Jul 1, 2018
+      summary: |
+        - 负责移动端App及Web端的交互与视觉设计，独立完成从需求分析、信息架构到高保真原型的全流程设计
+        - 参与用户调研与竞品分析，输出用户画像、用户旅程图及交互流程图，为产品决策提供设计视角支持
+        - 推动并执行可用性测试20余场，收集并分析用户反馈，迭代优化方案，显著降低用户操作流失率
+        - 协助建立设计规范与组件库，提升团队协作效率，保障多端产品体验的一致性
+      endDate: Feb 1, 2021
+      keywords:
+        - 移动端设计
+        - 可用性测试
+        - 原型设计
+        - 视觉设计
+        - 竞品分析
+      url: https://www.lantu-digital.com
+    - name: 创意方舟设计工作室
+      position: 初级UI设计师
+      startDate: Jul 1, 2016
+      summary: |
+        - 参与多款移动端应用与后台管理系统的界面视觉设计，负责图标绘制、界面排版及视觉规范制定
+        - 配合资深设计师完成交互原型设计与设计走查，确保设计稿与前端实现的高保真还原
+        - 负责日常运营活动页面的视觉设计，根据品牌调性输出Banner、H5及推广物料
+        - 学习并实践用户体验设计方法论，逐步承担独立模块的交互设计工作
+      endDate: Jun 1, 2018
+      keywords:
+        - 界面设计
+        - 品牌视觉
+        - 运营设计
+        - 设计规范
+      url: https://www.creativeark-studio.com
+locale:
+  language: zh-hans
+layouts:
+  - engine: latex
+    page:
+      showPageNumbers: true
+      paperSize: a4
+      margins:
+        top: 2.5cm
+        bottom: 2.5cm
+        left: 1.5cm
+        right: 1.5cm
+    template: moderncv-banking
+    typography:
+      fontSize: 11pt
+  - engine: docx
+    page:
+      showPageNumbers: true
+      paperSize: a4
+      margins:
+        top: 2.5cm
+        bottom: 2.5cm
+        left: 1.5cm
+        right: 1.5cm
+    typography:
+      fontSize: 11pt
+      lineSpacing: normal
+  - engine: markdown
+  - engine: html
+    template: calm
+    typography:
+      fontSize: 16px

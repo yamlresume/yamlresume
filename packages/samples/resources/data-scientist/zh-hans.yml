@@ -1,0 +1,230 @@
+content:
+  basics:
+    name: 林晓雨
+    email: xiaoyu.lin@example.com
+    headline: 资深数据科学家 | 机器学习与大数据分析专家
+    phone: +86 138 1234 5678
+    summary: |
+      - 拥有统计学硕士背景和 6 年数据科学实战经验，专注于机器学习模型、用户增长分析和商业智能
+      - 精通 Python 与 R，熟练使用 Spark、Hive、Airflow 等大数据工程工具，能够独立完成从数据清洗到模型部署的全流程
+      - 主导过多个千万级用户场景的数据项目，通过用户画像、推荐系统和风险控制模型为业务带来显著提升
+      - 善于以数据驱动业务决策，具备优秀的跨部门沟通能力和团队协作精神
+    url: https://linxiaoyu.dev
+  education:
+    - area: 统计学
+      institution: 复旦大学
+      degree: Master
+      courses:
+        - 高等数理统计
+        - 统计机器学习
+        - 数据挖掘与模式识别
+        - 时间序列分析
+        - 贝叶斯推断
+        - 多元统计分析
+      endDate: 2018-06-30
+      startDate: 2015-09-01
+      summary: |
+        - 研究方向为统计学习理论与应用，毕业论文聚焦于基于正则化回归的高维数据特征选择方法
+        - 在学期间担任统计咨询中心助研，为校内外项目提供实验设计与数据分析支持
+        - 获得研究生国家奖学金及校级优秀毕业生荣誉
+      score: 3.8/4.0
+      url: https://www.fudan.edu.cn/
+  awards:
+    - awarder: 复旦大学
+      title: 研究生国家奖学金
+      date: 2017-10-01
+      summary: |
+        因学术成绩和科研表现优异，获得教育部设立的研究生国家奖学金。
+    - awarder: 蓝海数据科技有限公司
+      title: 优秀数据科学家奖
+      date: 2023-01-15
+      summary: |
+        年度内部评选中，因在用户增长分析项目中做出的突出贡献而获得表彰。
+  certificates:
+    - issuer: Amazon Web Services
+      name: AWS 认证机器学习专业
+      date: 2022-08-01
+      url: https://aws.amazon.com/certification/
+  interests:
+    - name: 阅读
+      keywords:
+        - 统计学
+        - 机器学习
+        - 商业分析
+    - name: 户外运动
+      keywords:
+        - 马拉松
+        - 登山
+        - 骑行
+  languages:
+    - fluency: Native or Bilingual Proficiency
+      language: Chinese
+      keywords:
+        - 普通话二级甲等
+    - fluency: Full Professional Proficiency
+      language: English
+      keywords:
+        - 雅思 7.5
+        - CET-6 640
+  location:
+    city: 上海
+    address: 上海市浦东新区世纪大道 100 号
+    country: China
+    postalCode: "200120"
+    region: 上海市
+  profiles:
+    - network: GitHub
+      username: xiaoyu-lin
+      url: https://github.com/xiaoyu-lin
+    - network: LinkedIn
+      username: xiaoyu-lin
+      url: https://www.linkedin.com/in/xiaoyu-lin
+  projects:
+    - name: 智能用户增长分析平台
+      startDate: 2022-03-01
+      summary: |
+        - 主导搭建面向业务团队的自助式增长分析平台，整合画像分析、漏斗归因和实验评估模块
+        - 平台上线后日均查询量超过 2 万次，帮助多个业务线降低数据获取成本约 60%
+      description: |
+        该项目旨在构建一个端到端的用户增长分析解决方案，覆盖数据接入、特征计算、人群圈选、策略模拟与效果回流全流程。
+        采用 Spark 进行批量计算，ClickHouse 提供实时查询，前端通过可视化看板展示核心指标。整体架构兼顾灵活性与高可用性，
+        被公司内部多数业务团队采用。
+      endDate: 2023-02-28
+      keywords:
+        - 用户增长
+        - 数据可视化
+        - 实验平台
+      url: https://www.lanhai-data.com/products/growth
+    - name: 智能客服语义理解系统
+      startDate: 2019-06-01
+      summary: |
+        - 参与基于 BERT 的意图识别和实体抽取模型开发，将智能客服问题解决率提升 15%
+        - 构建标注数据管理流程与主动学习策略，有效降低人工标注成本
+      description: |
+        面向电商客服场景的语义理解系统，通过微调中文预训练模型实现多轮对话中的意图分类与槽位填充。
+        项目上线后成为公司智能客服产品的核心模块，日处理请求量超过百万次。
+      endDate: 2020-05-31
+      keywords:
+        - 自然语言处理
+        - BERT
+        - 意图识别
+      url: https://www.yunfan.ai/solutions/nlp
+  publications:
+    - name: 基于深度学习与多源行为数据的用户流失预测研究
+      publisher: 计算机工程与应用
+      releaseDate: 2021-03-01
+      summary: |
+        - 提出一种融合用户行为序列与静态属性的混合深度模型，在公开数据集和工业数据上均取得显著效果提升
+        - 结合注意力机制解释重要特征，为业务决策提供了可解释性支持
+      url: https://www.cea.com.cn/article/2021/03/0112
+  references:
+    - name: 王启明
+      summary: |
+        林晓雨具备扎实的数据科学功底和出色的业务洞察力，能够独立带领团队解决复杂问题，是一位值得信赖的技术伙伴。
+      email: qiming.wang@lanhai-data.com
+      phone: +86 139 5678 1234
+      relationship: 蓝海数据科技有限公司 数据副总裁
+  skills:
+    - level: Expert
+      name: 机器学习
+      keywords:
+        - 分类与回归
+        - 集成学习
+        - 特征工程
+        - 模型调优
+        - 交叉验证
+    - level: Advanced
+      name: 深度学习
+      keywords:
+        - TensorFlow
+        - PyTorch
+        - 神经网络
+        - 自然语言处理
+        - 时序预测
+    - level: Expert
+      name: 编程与数据处理
+      keywords:
+        - Python
+        - R
+        - SQL
+        - Spark
+        - Hive
+    - level: Intermediate
+      name: 大数据与工程化
+      keywords:
+        - Airflow
+        - Docker
+        - Kubernetes
+        - MLflow
+        - 数据管道
+  volunteer:
+    - organization: 上海数据科学公益小组
+      position: 数据分析讲师
+      startDate: 2019-09-01
+      summary: |
+        - 定期为非营利组织和社区青年开展数据分析和 Python 基础培训课程
+        - 协助公益机构完成捐赠数据整理和效果评估报告，提升数据公开透明度和运营效率
+      endDate: 2022-06-30
+      url: https://www.datasci-volunteer.org
+  work:
+    - name: 蓝海数据科技有限公司
+      position: 高级数据科学家
+      startDate: 2021-07-01
+      summary: |
+        - 带领 5 人数据分析团队，负责用户增长与流失预警模型的研发，累计覆盖超过 5000 万活跃用户
+        - 设计并部署基于 LightGBM 与深度交叉网络的用户流失预测系统，模型 AUC 提升 8%，有效提升用户留存率
+        - 搭建自动化特征工程流水线，整合 Hive 与 Spark 数据源，将特征上线时间从两周缩短至两天
+        - 与产品、运营团队紧密协作，通过 A/B 测试和因果推断方法量化策略效果，推动多个核心业务指标增长
+      keywords:
+        - 用户流失预测
+        - 特征工程
+        - A/B 测试
+        - 团队管理
+      url: https://www.lanhai-data.com
+    - name: 云帆智能科技有限公司
+      position: 数据科学家
+      startDate: 2018-07-01
+      summary: |
+        - 负责智能风控场景中的反欺诈模型开发，利用 XGBoost 和孤立森林识别异常交易，模型准确率提升 12%
+        - 构建用户行为特征仓库，统一多业务线数据口径，支撑推荐、营销与风控团队的数据需求
+        - 开发基于 Prophet 的运营指标预测工具，帮助业务部门提前预判波峰波谷，优化资源调配
+        - 撰写数据科学方法论文档并定期组织分享会，提升团队整体数据分析与建模能力
+      endDate: 2021-06-30
+      keywords:
+        - 反欺诈
+        - XGBoost
+        - 异常检测
+        - 数据仓库
+      url: https://www.yunfan.ai
+locale:
+  language: zh-hans
+layouts:
+  - engine: latex
+    page:
+      showPageNumbers: true
+      paperSize: a4
+      margins:
+        top: 2.5cm
+        bottom: 2.5cm
+        left: 1.5cm
+        right: 1.5cm
+    template: moderncv-banking
+    typography:
+      fontSize: 11pt
+  - engine: docx
+    page:
+      showPageNumbers: true
+      paperSize: a4
+      margins:
+        top: 2.5cm
+        bottom: 2.5cm
+        left: 1.5cm
+        right: 1.5cm
+    typography:
+      fontSize: 11pt
+      lineSpacing: normal
+  - engine: markdown
+  - engine: html
+    template: calm
+    typography:
+      fontSize: 16px

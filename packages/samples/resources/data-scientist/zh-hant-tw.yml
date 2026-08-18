@@ -1,0 +1,246 @@
+content:
+  basics:
+    name: 林品璇
+    email: pinxuan.lin@datascience.tw
+    headline: 資料科學家｜機器學習與大數據分析
+    phone: +886 912 345 678
+    summary: |
+      - 具備四年以上資料科學與機器學習實務經驗，擅長從數據中挖掘商業洞察並建置可落地之預測模型。
+      - 熟悉統計分析、機器學習、深度學習與資料工程流程，曾主導多項客戶行為與需求預測專案。
+      - 能有效地跨部門溝通，將複雜的技術成果轉化為清晰的商業決策建議。
+      - 持續關注 AI 與資料科學新技術，樂於分享並參與開源社群。
+    url: https://linpinxuan.dev
+  education:
+    - area: 資料科學研究所
+      institution: 國立臺灣大學
+      degree: Master
+      courses:
+        - 機器學習
+        - 巨量資料分析
+        - 統計學習理論
+        - 深度學習
+        - 資料視覺化
+        - 雲端大數據系統
+      endDate: Jul 1, 2020
+      startDate: Sep 1, 2018
+      summary: |
+        - 主要研究領域為機器學習與預測模型，碩士論文探討基於深度學習之使用者行為預測。
+        - 協助教授與實驗室執行多項產學合作計畫，累積實務資料分析經驗。
+      score: "4.2"
+      url: https://www.ntu.edu.tw
+    - area: 統計學系
+      institution: 國立政治大學
+      degree: Bachelor
+      courses:
+        - 高等統計學
+        - 線性代數
+        - 機率論
+        - 資料庫管理
+        - 程式設計
+        - 迴歸分析
+      endDate: Jun 1, 2018
+      startDate: Sep 1, 2014
+      summary: |
+        - 修習統計與資訊相關課程，奠定資料分析、程式設計與數學基礎。
+        - 參與校內統計分析競賽，並擔任統計軟體教學助理。
+      score: "3.9"
+      url: https://www.nccu.edu.tw
+  awards:
+    - awarder: 中華民國人工智慧學會
+      title: 中華民國人工智慧學會最佳論文獎
+      date: Oct 1, 2022
+      summary: |
+        以「基於注意力機制之智慧零售需求預測模型」榮獲年度最佳論文獎，肯定研究成果在理論與實務應用上的貢獻。
+  certificates:
+    - issuer: Amazon Web Services
+      name: AWS Certified Machine Learning – Specialty
+      date: Mar 1, 2023
+      url: https://aws.amazon.com/certification/
+    - issuer: Google
+      name: Google Data Analytics Professional Certificate
+      date: Jun 1, 2021
+      url: https://www.coursera.org/professional-certificates/google-data-analytics
+  interests:
+    - name: 資料科學競賽
+      keywords:
+        - Kaggle
+        - 特徵工程
+        - 視覺化分析
+    - name: 戶外運動
+      keywords:
+        - 登山
+        - 慢跑
+        - 自行車
+  languages:
+    - fluency: Native or Bilingual Proficiency
+      language: Chinese
+      keywords:
+        - 國語
+        - 閩南語
+    - fluency: Full Professional Proficiency
+      language: English
+      keywords:
+        - TOEIC 960
+        - OPIc Advanced Low
+  location:
+    city: 台北市
+    address: 台北市大安區復興南路一段 200 號
+    country: Taiwan
+    postalCode: "106"
+    region: 台北市
+  profiles:
+    - network: GitHub
+      username: pinxuanl
+      url: https://github.com/pinxuanl
+    - network: LinkedIn
+      username: pinxuan-lin
+      url: https://www.linkedin.com/in/pinxuan-lin
+  projects:
+    - name: 智慧零售需求預測平台
+      startDate: Jan 1, 2023
+      summary: |
+        - 使用 Python、FastAPI 建置 API 服務，提供預測結果查詢與匯出。
+        - 串接 Airflow 定期更新模型與預測結果，降低人工介入成本。
+        - 以 Docker 打包服務，並部署於 GCP Cloud Run。
+      description: 一套自動化需求預測平台，整合資料前處理、模型訓練、預測排程與結果視覺化，協助零售業者即時掌握各門市需求。
+      keywords:
+        - FastAPI
+        - Airflow
+        - GCP
+        - Docker
+        - 需求預測
+      url: https://github.com/pinxuanl/retail-demand-forecast
+    - name: 客戶流失預警儀表板
+      startDate: Jun 1, 2021
+      summary: |
+        - 以 XGBoost 建立流失預測模型，AUC 達 0.87。
+        - 使用 Streamlit 開發儀表板，支援篩選與明細檢視。
+        - 建立特徵重要性分析與 SHAP 解釋報表。
+      description: 透過機器學習模型評估客戶流失風險，並以互動式儀表板呈現流失因子與區隔，提供客戶成功團隊即時行動建議。
+      endDate: Dec 1, 2021
+      keywords:
+        - XGBoost
+        - Streamlit
+        - SHAP
+        - 儀表板
+      url: https://github.com/pinxuanl/churn-dashboard
+  publications:
+    - name: 基於深度學習之消費者行為預測模型
+      publisher: 國際資料科學期刊
+      releaseDate: Dec 1, 2022
+      summary: |
+        - 提出結合時間序列與深度學習之混合模型，有效預測消費者行為。
+        - 採用真實零售資料驗證模型穩健性，並與傳統統計模型進行比較。
+      url: https://doi.org/10.1000/jds.2022.001
+  skills:
+    - level: Expert
+      name: 機器學習
+      keywords:
+        - 監督式學習
+        - 非監督式學習
+        - 特徵工程
+        - XGBoost
+        - LightGBM
+        - TensorFlow
+        - PyTorch
+    - level: Expert
+      name: 資料分析
+      keywords:
+        - Python
+        - R
+        - SQL
+        - Pandas
+        - NumPy
+        - Spark
+    - level: Intermediate
+      name: 資料工程與 MLOps
+      keywords:
+        - Docker
+        - Kubernetes
+        - Airflow
+        - MLflow
+        - AWS
+        - GCP
+    - level: Advanced
+      name: 資料視覺化
+      keywords:
+        - Tableau
+        - Power BI
+        - Matplotlib
+        - D3.js
+  volunteer:
+    - organization: 台灣資料科學社群
+      position: 志工講師
+      startDate: Jan 1, 2021
+      summary: |
+        - 定期於社群聚會分享機器學習實作與資料分析案例。
+        - 協助辦理年度資料科學研討會，並擔任新手工作坊助教。
+        - 參與開放原始碼資料科學工具的中文化文件翻譯與推廣。
+      endDate: Dec 1, 2023
+      url: https://www.datascience.tw
+  work:
+    - name: 霖雲科技股份有限公司
+      position: 資料科學家
+      startDate: Mar 1, 2022
+      summary: |
+        - 主導智慧零售需求預測專案，整合銷售、庫存與促銷資料，建立多門市預測模型，預測準確率提升 18%。
+        - 設計並實作推薦系統，以協同過濾與深度學習模型提升交叉銷售比例。
+        - 導入 MLflow 與 Airflow 建立模型訓練與排程流程，縮短模型上線時間。
+        - 與產品、行銷團隊緊密合作，將資料洞察轉化為可執行的商業策略。
+      keywords:
+        - 需求預測
+        - 推薦系統
+        - Python
+        - Spark
+        - MLOps
+        - Airflow
+      url: https://www.linyun-tech.com.tw
+    - name: 宏量數據顧問股份有限公司
+      position: 資料分析師
+      startDate: Jul 1, 2020
+      summary: |
+        - 負責金融與零售產業客戶之資料分析專案，提供客群分群、流失預警與行銷成效分析。
+        - 建立資料清洗與特徵工程標準流程，降低各專案資料前處理時間。
+        - 利用視覺化工具製作動態儀表板，協助客戶即時掌握關鍵指標。
+        - 參與敏捷式專案開發，定期與利害關係人回報分析結果與建議。
+      endDate: Feb 28, 2022
+      keywords:
+        - 客群分群
+        - 流失預警
+        - SQL
+        - Tableau
+        - 專案管理
+        - 敏捷開發
+      url: https://www.hldata.com.tw
+locale:
+  language: zh-hant-tw
+layouts:
+  - engine: latex
+    page:
+      showPageNumbers: true
+      paperSize: a4
+      margins:
+        top: 2.5cm
+        bottom: 2.5cm
+        left: 1.5cm
+        right: 1.5cm
+    template: moderncv-banking
+    typography:
+      fontSize: 11pt
+  - engine: docx
+    page:
+      showPageNumbers: true
+      paperSize: a4
+      margins:
+        top: 2.5cm
+        bottom: 2.5cm
+        left: 1.5cm
+        right: 1.5cm
+    typography:
+      fontSize: 11pt
+      lineSpacing: normal
+  - engine: markdown
+  - engine: html
+    template: calm
+    typography:
+      fontSize: 16px

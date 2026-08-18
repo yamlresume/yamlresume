@@ -1,0 +1,300 @@
+content:
+  basics:
+    name: Rizky Adi Prakoso
+    email: rizky.adiprakoso@gmail.com
+    headline: Manajer Produk dengan 8+ Tahun Pengalaman di Produk Digital
+    phone: +62 811-2345-6789
+    summary: >
+      Manajer produk yang berorientasi pada dampak bisnis dan kebutuhan
+      pengguna, dengan pengalaman lebih dari 8 tahun dalam membangun serta
+      mengembangkan produk digital di sektor e-commerce, fintech, dan logistik.
+
+
+      - Terbiasa memimpin siklus hidup produk secara end-to-end, mulai dari
+      riset pengguna, product discovery, hingga go-to-market
+
+      - Berpengalaman menggunakan pendekatan data-driven dan eksperimen A/B
+      testing untuk meningkatkan retensi, aktivasi, dan pendapatan produk
+
+      - Mampu berkolaborasi lintas fungsi bersama tim engineering, desain, data,
+      pemasaran, dan compliance
+
+      - Memiliki kemampuan komunikasi dan kepemimpinan yang kuat dalam menyusun
+      visi produk serta memprioritaskan peta jalan produk
+    url: https://rizkyadiprakoso.id
+  education:
+    - area: Sistem Informasi
+      institution: Universitas Indonesia
+      degree: Bachelor
+      courses:
+        - Analisis dan Perancangan Sistem Informasi
+        - Manajemen Proyek Teknologi Informasi
+        - Interaksi Manusia dan Komputer
+        - Basis Data Lanjutan
+        - Pemasaran Digital
+        - Kewirausahaan Teknologi
+      endDate: Jul 1, 2016
+      startDate: Aug 1, 2012
+      summary: >
+        - Lulus dengan predikat cum laude dan fokus pada pengembangan produk
+        digital
+
+        - Aktif dalam organisasi mahasiswa dan menjadi ketua panitia seminar
+        teknologi nasional 2015
+
+        - Menyelesaikan proyek akhir tentang perancangan aplikasi mobile untuk
+        UMKM lokal
+      score: "3.72"
+      url: https://www.ui.ac.id/
+  awards:
+    - awarder: Asosiasi E-Commerce Indonesia
+      title: Manajer Produk Terbaik 2023
+      date: Dec 15, 2023
+      summary: >
+        Penghargaan tahunan yang diberikan atas kontribusi luar biasa dalam
+        pengembangan produk digital yang berdampak pada pertumbuhan industri
+        e-commerce nasional.
+  certificates:
+    - issuer: Scrum Alliance
+      name: Certified Scrum Product Owner (CSPO)
+      date: Mar 1, 2021
+      url: https://www.scrumalliance.org/certifications/cspo
+    - issuer: Google
+      name: Google Project Management Certificate
+      date: Aug 1, 2022
+      url: https://www.coursera.org/professional-certificates/google-project-management
+  interests:
+    - name: Teknologi
+      keywords:
+        - Kecerdasan Buatan
+        - Internet of Things
+        - Startup Digital
+    - name: Olahraga
+      keywords:
+        - Lari
+        - Badminton
+        - Yoga
+    - name: Literasi
+      keywords:
+        - Membaca
+        - Menulis Blog
+  languages:
+    - fluency: Native or Bilingual Proficiency
+      language: Indonesian
+      keywords:
+        - Bahasa Ibu
+    - fluency: Full Professional Proficiency
+      language: English
+      keywords:
+        - TOEFL iBT 100
+        - IELTS 7.5
+  location:
+    city: Jakarta Selatan
+    address: Jl. Kemang Raya No. 12
+    country: Indonesia
+    postalCode: "12190"
+    region: DKI Jakarta
+  profiles:
+    - network: LinkedIn
+      username: rizkyadiprakoso
+      url: https://www.linkedin.com/in/rizkyadiprakoso
+    - network: Medium
+      username: rizkyadiprakoso
+      url: https://medium.com/@rizkyadiprakoso
+  projects:
+    - name: Platform Analitik Produk
+      startDate: Feb 1, 2022
+      summary: >
+        - Merancang kebutuhan produk bersama tim data untuk memvisualisasikan
+        metrik utama
+
+        - Mengurangi waktu penyusunan laporan mingguan dari 6 jam menjadi 30
+        menit
+
+        - Mendorong adopsi pengambilan keputusan berbasis data di seluruh
+        organisasi
+      description: Dasbor analitik internal untuk memantau kesehatan produk dan
+        perilaku pengguna secara real-time.
+      endDate: Aug 1, 2022
+      keywords:
+        - Data Analytics
+        - Dashboard
+        - Product Metrics
+        - SQL
+      url: https://analitik.produk.id/
+    - name: Program On-boarding Pengguna
+      startDate: Sep 1, 2023
+      summary: >
+        - Memimpin eksperimen A/B testing pada alur on-boarding dengan lebih
+        dari 50 ribu pengguna
+
+        - Meningkatkan tingkat aktivasi hari pertama sebesar 18% melalui
+        penyederhanaan alur dan pesan yang relevan
+      description: Rangkaian eksperimen untuk meningkatkan aktivasi pengguna baru pada
+        aplikasi KirimKilat.
+      endDate: Mar 1, 2024
+      keywords:
+        - A/B Testing
+        - Onboarding
+        - Activation
+  publications:
+    - name: Membangun Produk Digital yang Berpusat pada Pengguna
+      publisher: Medium
+      releaseDate: Jun 1, 2022
+      summary: >
+        Artikel yang membahas pendekatan product discovery, validasi ide, dan
+        pentingnya budaya eksperimen dalam tim produk.
+      url: https://medium.com/@rizkyadiprakoso/membangun-produk-digital
+  skills:
+    - level: Expert
+      name: Manajemen Produk
+      keywords:
+        - Product Roadmap
+        - User Stories
+        - Scrum
+        - Agile
+        - Go-to-Market
+    - level: Advanced
+      name: Analisis Data
+      keywords:
+        - SQL
+        - Google Analytics
+        - Mixpanel
+        - Tableau
+        - A/B Testing
+    - level: Advanced
+      name: Riset Pengguna
+      keywords:
+        - Wawancara Pengguna
+        - Survey
+        - Persona
+        - Usability Testing
+    - level: Intermediate
+      name: Prototyping
+      keywords:
+        - Figma
+        - Whimsical
+        - Miro
+  volunteer:
+    - organization: Yayasan Cinta Literasi Digital
+      position: Fasilitator Pelatihan
+      startDate: Jan 1, 2020
+      summary: >
+        - Mengajar literasi digital dan keamanan internet kepada 500 pelajar dan
+        guru di 10 kota
+
+        - Menyusun modul pelatihan praktis tentang penggunaan aplikasi
+        produktivitas dan pengenalan karier teknologi
+      endDate: Dec 1, 2023
+      url: https://cintaliterasi.or.id/
+    - organization: Komunitas Produk Indonesia
+      position: Mentor Produk
+      startDate: Jul 1, 2021
+      summary: >
+        - Menjadi mentor bagi calon product manager dari berbagai latar belakang
+        melalui program mentoring bulanan
+
+        - Memberikan sesi berbagi pengetahuan tentang product discovery,
+        prioritisasi, dan kolaborasi lintas tim
+      url: https://produkindonesia.id/
+  work:
+    - name: PT Maju Digital Nusantara
+      position: Manajer Produk
+      startDate: Jan 1, 2021
+      summary: >
+        - Memimpin pengembangan aplikasi superapp logistik KirimKilat dengan
+        lebih dari 2 juta pengguna aktif bulanan
+
+        - Menyusun visi, strategi, dan peta jalan produk bersama pemangku
+        kepentingan lintas fungsi
+
+        - Meningkatkan retensi pengguna sebesar 35% melalui optimasi on-boarding
+        dan personalisasi fitur
+
+        - Mengelola backlog produk serta memprioritaskan inisiatif berdasarkan
+        dampak bisnis, data analitik, dan riset pengguna
+
+        - Berkolaborasi dengan tim engineering, desain, data, dan pemasaran
+        untuk memastikan kecepatan dan kualitas pengiriman
+      keywords:
+        - Product Roadmap
+        - Agile
+        - Scrum
+        - User Research
+        - Data-Driven
+        - Stakeholder Management
+      url: https://www.majudigital.co.id/
+    - name: PT Fintek Sejahtera
+      position: Manajer Produk Digital
+      startDate: Apr 1, 2018
+      summary: >
+        - Mengelola produk pinjaman digital dengan portofolio lebih dari 500
+        ribu pengguna
+
+        - Memimpin proses penemuan produk melalui wawancara pengguna, survei,
+        dan analisis data perilaku
+
+        - Meluncurkan fitur limit kredit dinamis yang meningkatkan pendapatan
+        bunga sebesar 22% dalam enam bulan
+
+        - Berkoordinasi dengan tim compliance dan risk untuk memastikan
+        kepatuhan terhadap regulasi OJK
+      endDate: Dec 1, 2020
+      keywords:
+        - Fintech
+        - Kepatuhan
+        - Analisis Data
+        - A/B Testing
+        - Regulasi
+      url: https://finteksejahtera.id/
+    - name: PT Media Kreatif Indonesia
+      position: Product Owner
+      startDate: Jun 1, 2016
+      summary: >
+        - Berperan sebagai penghubung antara tim pengembang dan pemangku
+        kepentingan untuk produk media digital
+
+        - Menulis cerita pengguna, menyusun kriteria penerimaan, dan
+        memprioritaskan backlog sprint
+
+        - Mendukung peluncuran situs web portofolio dan platform manajemen
+        konten dengan 200 ribu kunjungan bulanan
+      endDate: Mar 1, 2018
+      keywords:
+        - Product Backlog
+        - JIRA
+        - Prototyping
+        - User Stories
+      url: https://mediakreatif.co.id/
+locale:
+  language: id
+layouts:
+  - engine: latex
+    page:
+      showPageNumbers: true
+      paperSize: a4
+      margins:
+        top: 2.5cm
+        bottom: 2.5cm
+        left: 1.5cm
+        right: 1.5cm
+    template: moderncv-banking
+    typography:
+      fontSize: 11pt
+  - engine: docx
+    page:
+      showPageNumbers: true
+      paperSize: a4
+      margins:
+        top: 2.5cm
+        bottom: 2.5cm
+        left: 1.5cm
+        right: 1.5cm
+    typography:
+      fontSize: 11pt
+      lineSpacing: normal
+  - engine: markdown
+  - engine: html
+    template: calm
+    typography:
+      fontSize: 16px

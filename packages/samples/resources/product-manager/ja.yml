@@ -1,0 +1,236 @@
+content:
+  basics:
+    name: 佐藤 健一
+    email: kenichi.sato@example.jp
+    headline: データドリブンなプロダクト開発で顧客体験を向上させるプロダクトマネージャー
+    phone: 090-1234-5678
+    summary: |
+      - 10年以上にわたり、B2B SaaS・モバイルアプリ領域でプロダクトマネジメントを牽引
+      - ユーザーインタビューやデータ分析を活用した仮説検証サイクルを構築し、主要KPIである継続率を30%改善
+      - エンジニア・デザイナー・営業など多様なステークホルダーを巻き込みながら、ロードマップ策定からローンチ、グロースまでを一気通貫で推進
+      - プロダクト戦略の策定、要件定義、UI/UX改善、アジャイル開発のリードなど、上流から下流まで幅広いスキルを持つ
+    url: https://kenichi-sato.example.jp
+  education:
+    - area: 経済学部 経営学科
+      institution: 東京大学
+      degree: Bachelor
+      courses:
+        - 経営戦略論
+        - マーケティング論
+        - 統計学
+        - 情報科学入門
+      endDate: Mar 31, 2012
+      startDate: Apr 1, 2008
+      summary: |
+        - 在学中にマーケティングゼミに所属し、消費者の意思決定プロセスに関する研究を行う
+        - 学園祭の実行委員会で企画責任者を務め、来場者数1.5倍を達成
+      score: "3.7"
+      url: https://www.u-tokyo.ac.jp/
+  awards:
+    - awarder: 日本ネット経済新聞社
+      title: 日本ネット経済新聞「デジタルプロダクト賞」
+      date: Nov 2023
+      summary: |
+        自社SaaSプロダクトの顧客獲得力と使いやすさが評価され受賞。
+    - awarder: 株式会社ネクストイノベーション
+      title: 社内MVP
+      date: Dec 2022
+      summary: |
+        新規プロダクトの立ち上げを成功に導き、年間売上目標を120%達成。
+  certificates:
+    - issuer: PMI
+      name: PMP (Project Management Professional)
+      date: Jun 2018
+      url: https://www.pmi.org/
+    - issuer: Scrum Alliance
+      name: Certified Scrum Product Owner (CSPO)
+      date: Jan 2020
+      url: https://www.scrumalliance.org/
+  interests:
+    - name: ランニング
+      keywords:
+        - フルマラソン
+        - 東京マラソン
+    - name: 読書
+      keywords:
+        - ビジネス書
+        - 行動経済学
+    - name: 旅行
+      keywords:
+        - 国内旅行
+        - 食文化探求
+  languages:
+    - fluency: Native or Bilingual Proficiency
+      language: Japanese
+      keywords:
+        - 母国語
+    - fluency: Full Professional Proficiency
+      language: English
+      keywords:
+        - TOEIC 950
+        - ビジネス会議
+        - 英字ドキュメント作成
+  location:
+    city: 東京都
+    address: 〒150-0002 東京都渋谷区渋谷1-2-3
+    country: Japan
+    postalCode: 150-0002
+    region: 渋谷区
+  profiles:
+    - network: LinkedIn
+      username: kenichi-sato
+      url: https://www.linkedin.com/in/kenichi-sato
+    - network: Twitter
+      username: kenichi_pm
+      url: https://twitter.com/kenichi_pm
+  projects:
+    - name: 顧客分析ダッシュボードの再設計
+      startDate: Jun 1, 2022
+      summary: |
+        - ユーザーが主要指標を一目で把握できるダッシュボードを企画・設計
+        - 導線改善により、ダッシュボードの週次利用率が45%向上
+      endDate: Dec 31, 2022
+      keywords:
+        - データ可視化
+        - UX改善
+        - SQL
+        - Tableau
+      url: https://example.jp/projects/dashboard
+    - name: モバイルアプリ「ハビットログ」企画
+      startDate: Jan 1, 2023
+      summary: |
+        - 習慣化を支援するiOSアプリのコンセプト立案からリリースまでを実施
+        - リリース後3ヶ月でダウンロード数1万件を突破
+      endDate: Mar 31, 2023
+      keywords:
+        - モバイルアプリ
+        - 習慣化
+        - UXリサーチ
+        - プロダクトローンチ
+      url: https://example.jp/projects/habitlog
+  publications:
+    - name: データドリブンなプロダクト改善の実践ガイド
+      publisher: Qiita
+      releaseDate: Aug 15, 2023
+      summary: |
+        - 定量・定性データを組み合わせた仮説検証プロセスを解説
+        - 累計10万PVを突破し、Qiitaのトレンド記事に選出
+      url: https://qiita.com/kenichi-pm/items/example
+  skills:
+    - level: Expert
+      name: プロダクトマネジメント
+      keywords:
+        - ロードマップ策定
+        - 要件定義
+        - プライオリティ管理
+        - ステークホルダー調整
+        - KPI設計
+    - level: Advanced
+      name: データ分析
+      keywords:
+        - SQL
+        - Google Analytics
+        - Tableau
+        - A/Bテスト
+        - ユーザー行動分析
+    - level: Advanced
+      name: アジャイル開発
+      keywords:
+        - Scrum
+        - スプリントマネジメント
+        - Jira
+        - Confluence
+        - ふりかえり
+    - level: Intermediate
+      name: デザイン
+      keywords:
+        - Figma
+        - Adobe XD
+        - プロトタイピング
+  volunteer:
+    - organization: 日本プロダクトマネージャー協会
+      position: コミュニティ運営スタッフ
+      startDate: Apr 1, 2021
+      summary: |
+        - PM勉強会の企画・運営を担当し、毎回100名以上の参加者を集める
+        - 若手PMのメンタリングプログラムを立ち上げ、累計30名をサポート
+      endDate: Mar 31, 2024
+      url: https://www.pmkyoukai.example.org
+  work:
+    - name: 株式会社ネクストイノベーション
+      position: シニアプロダクトマネージャー
+      startDate: Apr 1, 2022
+      summary: |
+        - 新規SaaSプロダクト「KPIダッシュボード」の企画・立ち上げをリードし、ローンチから半年で有償契約25社を獲得
+        - ユーザーインタビューとアクセス解析を組み合わせ、優先順位付けの仕組みを確立。継続率を30%改善
+        - エンジニア・デザイナー・セールスからなるクロスファンクショナルチームを結成し、アジャイル開発を推進
+        - 経営陣への定期的な進捗報告とKPIレビューを実施し、プロダクト戦略の透明性を向上
+      keywords:
+        - プロダクト戦略
+        - ロードマップ
+        - データ分析
+        - 顧客インタビュー
+        - アジャイル
+      url: https://www.nextinnovation.co.jp
+    - name: 株式会社ビジョンテック
+      position: プロダクトマネージャー
+      startDate: Apr 1, 2019
+      summary: |
+        - B2B向け営業支援システムのリニューアルプロジェクトを担当し、UI/UXを抜本的に改善
+        - ユーザーストーリーマッピングを導入し、開発チームと要件認識のズレを解消。リリース後の問い合わせ件数を45%削減
+        - A/Bテストを活用したランディングページ改善により、資料請求率を2.3倍に向上
+        - 顧客サポートチームと連携し、NPS調査の仕組みを構築。スコアを10ポイント向上させた
+      endDate: Mar 31, 2022
+      keywords:
+        - 要件定義
+        - UI/UX改善
+        - A/Bテスト
+        - ステークホルダー管理
+      url: https://www.visiontech.example.co.jp
+    - name: 株式会社ブリッジソリューションズ
+      position: プロジェクトマネージャー / プロダクトオーナー
+      startDate: Apr 1, 2015
+      summary: |
+        - 複数クライアントのWebシステム開発案件において、要件定義から納品までを一貫してマネジメント
+        - プロジェクトの進捗管理・リスク管理・予算管理を担当し、全12案件を納期内で完遂
+        - オフショア開発チームとのブリッジエンジニアとしてコミュニケーション体制を構築し、手戻り工数を30%削減
+        - 社内標準の開発プロセスを策定し、プロジェクトの属人化を防止
+      endDate: Mar 31, 2019
+      keywords:
+        - プロジェクトマネジメント
+        - 要件定義
+        - オフショア開発
+        - 品質管理
+      url: https://www.bridgesol.example.co.jp
+locale:
+  language: ja
+layouts:
+  - engine: latex
+    page:
+      showPageNumbers: true
+      paperSize: a4
+      margins:
+        top: 2.5cm
+        bottom: 2.5cm
+        left: 1.5cm
+        right: 1.5cm
+    template: moderncv-banking
+    typography:
+      fontSize: 11pt
+  - engine: docx
+    page:
+      showPageNumbers: true
+      paperSize: a4
+      margins:
+        top: 2.5cm
+        bottom: 2.5cm
+        left: 1.5cm
+        right: 1.5cm
+    typography:
+      fontSize: 11pt
+      lineSpacing: normal
+  - engine: markdown
+  - engine: html
+    template: calm
+    typography:
+      fontSize: 16px

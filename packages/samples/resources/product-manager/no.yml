@@ -1,0 +1,237 @@
+content:
+  basics:
+    name: Ingrid Larsen
+    email: ingrid.larsen@produktleder.no
+    headline: Produktleder med fokus på brukeropplevelse og strategisk vekst
+    phone: +47 912 34 567
+    summary: >
+      - Produktleder med 8 års erfaring fra finans- og mediebransjen
+
+      - Sterk på produktstrategi, brukerinnsikt og datadrevet utvikling
+
+      - Erfaring med å lede tverrfaglige team og bygge en tydelig produktkultur
+
+      - Resultatorientert med stort engasjement for brukeropplevelse og
+      forretningsverdi
+    url: https://no.linkedin.com/in/ingridlarsen
+  education:
+    - area: Industriell økonomi og teknologiledelse
+      institution: NTNU – Norges teknisk-naturvitenskapelige universitet
+      degree: Master
+      courses:
+        - Produkt- og prosjektledelse
+        - Markedsføring og strategi
+        - Datateknologi og programmering
+        - Statistikk og dataanalyse
+        - Innovasjon og entreprenørskap
+      endDate: Jun 1, 2016
+      startDate: Aug 1, 2011
+      summary: |
+        - Masteroppgave om datadrevet produktutvikling i norske scaleups
+        - Fordypning i teknologi, økonomi og organisasjonsdesign
+        - Erfaringsbasert læring gjennom teamprosjekter og case-oppgaver
+      score: "4.8"
+      url: https://www.ntnu.no/
+  awards:
+    - awarder: Produktlederforeningen i Norge
+      title: Årets produktleder 2022
+      date: Mar 2022
+      summary: >
+        Tildelt for fremragende produktledelse og evnen til å skape
+        brukerfokuserte løsninger med tydelige forretningsresultater.
+  certificates:
+    - issuer: Scrum Alliance
+      name: Certified Scrum Product Owner (CSPO)
+      date: Feb 2019
+      url: https://www.scrumalliance.org/
+    - issuer: Amplitude
+      name: Product Analytics Certification
+      date: Oct 2021
+      url: https://amplitude.com/
+  interests:
+    - name: Friluftsliv
+      keywords:
+        - Fjellturer
+        - Ski
+        - Kajakk
+    - name: Mat og kultur
+      keywords:
+        - Matlaging
+        - Reise
+        - Litteratur
+  languages:
+    - fluency: Native or Bilingual Proficiency
+      language: Norwegian
+      keywords:
+        - Morsmål
+    - fluency: Full Professional Proficiency
+      language: English
+      keywords:
+        - IELTS 8.0
+        - Forretningsflytende
+  location:
+    city: Oslo
+    address: Akersgata 12
+    country: Norway
+    postalCode: "0158"
+    region: Oslo
+  profiles:
+    - network: LinkedIn
+      username: ingridlarsen
+      url: https://www.linkedin.com/in/ingridlarsen
+    - network: Medium
+      username: "@ingridlarsen"
+      url: https://medium.com/@ingridlarsen
+  projects:
+    - name: PengePilot – personlig økonomi-app
+      startDate: Jan 2020
+      summary: >
+        Sideprosjekt sammen med to utviklere for å hjelpe unge voksne med
+        sparing og budsjettering.
+      description: >
+        Utformet konseptet, gjennomførte brukertester og ledet utviklingen av en
+        MVP som fikk over 10 000 nedlastinger det første halvåret.
+      endDate: Jun 2020
+      keywords:
+        - Sparing
+        - Budsjett
+        - App-utvikling
+      url: https://www.pengepilot.no
+  publications:
+    - name: Hvordan bygge digitale produkter brukerne faktisk vil ha
+      publisher: Produktbloggen.no
+      releaseDate: Jun 2021
+      summary: >
+        En praktisk guide til å kombinere kvalitativ brukerinnsikt med
+        kvantitativ analyse i produktutvikling.
+      url: https://produktbloggen.no/hvordan-bygge-digitale-produkter
+  skills:
+    - level: Expert
+      name: Produktstrategi
+      keywords:
+        - Produktroadmap
+        - Go-to-market
+        - OKR
+        - Konkurranseanalyse
+        - Forretningsforståelse
+    - level: Advanced
+      name: Brukerinnsikt
+      keywords:
+        - Brukerintervjuer
+        - Personas
+        - Service design
+        - Prototyping
+        - Tilgjengelighet
+    - level: Advanced
+      name: Data og analyse
+      keywords:
+        - SQL
+        - Google Analytics
+        - Amplitude
+        - A/B-testing
+        - KPI-dashboards
+  volunteer:
+    - organization: Girls in Tech Norway
+      position: Mentor
+      startDate: Jan 2020
+      summary: >
+        Mentor for unge kvinner som ønsker å utvikle seg innen produktledelse og
+        teknologi. Holder jevnlige workshops i produktutvikling og
+        karriereveiledning.
+      endDate: Dec 2023
+      url: https://girlsintechnorway.com/
+  work:
+    - name: Vipps AS
+      position: Senior Produktleder
+      startDate: Jan 1, 2021
+      summary: >
+        - Ansvarlig for produktområdet betaling i nettbutikk med årlig
+        transaksjonsverdi i milliarder av kroner
+
+        - Leder tverrfaglige team av utviklere, designere og dataanalytikere i
+        Scrum
+
+        - Utarbeider strategi og roadmap i tett samarbeid med interessenter og
+        kunder
+
+        - Gjennomfører brukerintervjuer, kvantitative analyser og A/B-tester for
+        å forbedre konvertering og brukeropplevelse
+
+        - Etablerer og følger opp OKR-er som rapporteres til konsernledelsen
+      endDate: null
+      keywords:
+        - Betaling
+        - E-handel
+        - Vekst
+        - OKR
+        - Agile
+      url: https://www.vipps.no
+    - name: DNB
+      position: Produktleder
+      startDate: Aug 1, 2018
+      summary: >
+        - Ansvarlig for mobilbankens spare- og budsjetteringsfunksjoner
+
+        - Forbedret opplevelsen for 1,5 millioner månedlige aktive brukere
+
+        - Reduserte churn gjennom datadrevne tiltak og personaliserte tips
+
+        - Jobbet tett med compliance og risikostyring for å sikre trygge og
+        bærekraftige produkter
+      endDate: Dec 31, 2020
+      keywords:
+        - Mobilbank
+        - Finans
+        - Brukerinnsikt
+        - KPI
+      url: https://www.dnb.no
+    - name: Schibsted
+      position: Produktansvarlig
+      startDate: Jan 1, 2017
+      summary: >
+        - Produktansvarlig for anbefalingsmotor på en av Norges største
+        nyhetsplattformer
+
+        - Samarbeidet med redaksjonen og data science-team for å optimalisere
+        innholdsdistribusjon
+
+        - Økte brukerengasjement og lesetid med 15 prosent gjennom
+        personalisering
+      endDate: Jul 31, 2018
+      keywords:
+        - Nyhetsmedier
+        - Personalisering
+        - Data science
+      url: https://www.schibsted.com
+locale:
+  language: no
+layouts:
+  - engine: latex
+    page:
+      showPageNumbers: true
+      paperSize: a4
+      margins:
+        top: 2.5cm
+        bottom: 2.5cm
+        left: 1.5cm
+        right: 1.5cm
+    template: moderncv-banking
+    typography:
+      fontSize: 11pt
+  - engine: docx
+    page:
+      showPageNumbers: true
+      paperSize: a4
+      margins:
+        top: 2.5cm
+        bottom: 2.5cm
+        left: 1.5cm
+        right: 1.5cm
+    typography:
+      fontSize: 11pt
+      lineSpacing: normal
+  - engine: markdown
+  - engine: html
+    template: calm
+    typography:
+      fontSize: 16px

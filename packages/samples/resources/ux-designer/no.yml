@@ -1,0 +1,284 @@
+content:
+  basics:
+    name: Ingrid Solberg
+    email: ingrid.solberg@epost.no
+    headline: Senior UX-designer med fokus på tilgjengelighet og brukersentrert design
+    phone: +47 912 34 567
+    summary: >
+      Erfaren UX-designer med over åtte års erfaring fra å designe digitale
+      produkter og tjenester som setter brukeren i sentrum. Jeg har solid
+      kompetanse innen brukerinnsikt, interaksjonsdesign og prototyping, og har
+      levert løsninger for både oppstartsbedrifter og store etablerte selskaper.
+
+
+      Jeg jobber tverrfaglig og trives i samarbeid med produktteam, utviklere og
+      forretningssiden for å skape sømløse og intuitive brukeropplevelser. Min
+      tilnærming er alltid datadrevet, med vekt på brukertesting,
+      tilgjengelighet og kontinuerlig iterasjon for å sikre høy kvalitet i
+      sluttproduktet.
+    url: https://ingridsolberg.no
+  education:
+    - area: Interaksjonsdesign
+      institution: Arkitektur- og designhøgskolen i Oslo
+      degree: Master
+      courses:
+        - Brukerorientert design
+        - Tjenestedesign
+        - Designmetoder og prototyping
+        - Visuell kommunikasjon
+      endDate: Jun 2016
+      startDate: Aug 2014
+      summary: >
+        - Spesialiserte meg innen brukersentrert design og tjenesteinnovasjon
+
+        - Gjennomførte flere tverrfaglige prosjekter i samarbeid med
+        næringslivet
+
+        - Utviklet kompetanse i kvalitative og kvantitative brukerstudier
+      score: A+
+      url: https://www.aho.no
+    - area: Informasjonsvitenskap
+      institution: Universitetet i Bergen
+      degree: Bachelor
+      courses:
+        - Webdesign og utvikling
+        - Menneske-maskin-interaksjon
+        - Informasjonsarkitektur
+      endDate: Jun 2014
+      startDate: Aug 2011
+      summary: >
+        - Bygget fundament innen digital design, teknologi og brukeratferd
+
+        - Jobbet med praktiske prosjekter innen webutvikling og
+        interaksjonsdesign
+      score: B+
+      url: https://www.uib.no
+  awards:
+    - awarder: Designforeningen Norge
+      title: Årets UX-designer
+      date: Nov 2023
+      summary: >
+        Pris tildelt for fremragende arbeid med brukersentrert design og for å
+        ha løftet tilgjengelighet som en integrert del av designprosessen i
+        store digitale transformasjonsprosjekter.
+  certificates:
+    - issuer: Nielsen Norman Group
+      name: UX Master Certification
+      date: May 2022
+      url: https://www.nngroup.com/
+    - issuer: UX Design Institute
+      name: Professional Diploma in UX Design
+      date: Oct 2019
+      url: https://www.uxdesigninstitute.com/
+  interests:
+    - name: Friluftsliv
+      keywords:
+        - Fjelltur
+        - Ski
+        - Kajakk
+    - name: Fotografi
+      keywords:
+        - Gatefotografi
+        - Natur
+        - Analogt
+  languages:
+    - fluency: Native or Bilingual Proficiency
+      language: Norwegian
+      keywords:
+        - Morsmål
+    - fluency: Full Professional Proficiency
+      language: English
+      keywords:
+        - Flytende skriftlig og muntlig
+  location:
+    city: Oslo
+    address: Storgata 45
+    country: Norway
+    postalCode: "0182"
+    region: Oslo
+  profiles:
+    - network: LinkedIn
+      username: ingridsolberg
+      url: https://linkedin.com/in/ingridsolberg
+    - network: Behance
+      username: ingridsolberg
+      url: https://behance.net/ingridsolberg
+    - network: Dribbble
+      username: ingridsolberg
+      url: https://dribbble.com/ingridsolberg
+  projects:
+    - name: HelseID
+      startDate: Jan 2022
+      summary: >
+        - Ledet designprosessen for en ny, tilgjengelig påloggingsflyt brukt av
+        over to millioner brukere
+
+        - Gjennomførte 30+ dybdeintervjuer og brukbarhetstester med personer med
+        ulike funksjonsnedsettelser
+
+        - Resultatet økte konverteringsraten med 25 % og reduserte
+        supporthenvendelser med 40 %
+      description: Redesign av påloggingsløsning for helsetjenester i Norge
+      endDate: Dec 2022
+      keywords:
+        - Tilgjengelighet
+        - Offentlig sektor
+        - Pålogging
+      url: https://helseid.no
+    - name: Klimakalkulatoren
+      startDate: Mar 2020
+      summary: >
+        - Designet en engasjerende og pedagogisk brukeropplevelse for
+        bærekraftig forbruk
+
+        - Samarbeidet med miljøforskere for å sikre nøyaktighet og troverdighet
+        i datavisualisering
+
+        - Løsningen ble nominert til Årets digitale formidlingspris
+      description: Webapplikasjon for å beregne personlig karbonavtrykk
+      endDate: Aug 2020
+      keywords:
+        - Bærekraft
+        - Datavisualisering
+        - App
+      url: https://klimakalkulatoren.no
+  skills:
+    - level: Expert
+      name: UX-design
+      keywords:
+        - Brukerinnsikt
+        - Interaksjonsdesign
+        - Informasjonsarkitektur
+        - Brukertesting
+    - level: Advanced
+      name: Visuell design og prototyping
+      keywords:
+        - Figma
+        - Sketch
+        - Adobe XD
+        - InVision
+        - Principle
+    - level: Advanced
+      name: Tilgjengelighet og standarder
+      keywords:
+        - WCAG 2.1
+        - Universell utforming
+        - WAI-ARIA
+    - level: Expert
+      name: Samarbeid og metodikk
+      keywords:
+        - Design Thinking
+        - Scrum
+        - Workshops
+        - Designsystem
+  volunteer:
+    - organization: UX Norge
+      position: Faglig mentor
+      startDate: Jan 2020
+      summary: >
+        - Veileder junior designere og studenter som ønsker å etablere seg i
+        UX-bransjen
+
+        - Holder foredrag og workshops om tilgjengelighet og etisk design på
+        lokale meetups
+
+        - Bidrar til å bygge et inkluderende og lærerikt fagmiljø i Oslo
+      url: https://uxnorge.no
+  work:
+    - name: Nordisk Design AS
+      position: Senior UX-designer
+      startDate: Mar 2021
+      summary: >
+        - Leder UX-prosessen fra innsikt til ferdig design for kunder innen
+        finans og helse
+
+        - Etablerte en felles designpraksis og komponentbibliotek som reduserte
+        leveringstiden med 30 %
+
+        - Gjennomfører regelmessig brukertesting og tilgjengelighetsvurderinger
+        (WCAG 2.1)
+
+        - Veileder junior designere og fasiliterer designworkshops for interne
+        team og kunder
+      endDate: null
+      keywords:
+        - Ledelse
+        - WCAG
+        - Designsystem
+        - Brukertesting
+        - Workshops
+      url: https://nordiskdesign.no
+    - name: Fjord Digital
+      position: UX-designer
+      startDate: Aug 2017
+      summary: >
+        - Designet brukeropplevelser for mobilapper og webplattformer i tett
+        samarbeid med utviklere
+
+        - Utførte brukerintervjuer, personas og reisekart for å bygge felles
+        forståelse i teamet
+
+        - Laget interaktive prototyper i Figma for brukertesting og validering
+        av konsepter
+
+        - Drev kontinuerlig iterasjon basert på analyser, tilbakemeldinger og
+        innsiktsdata
+      endDate: Feb 2021
+      keywords:
+        - Figma
+        - Prototyping
+        - Innsikt
+        - Mobildesign
+        - Iterasjon
+      url: https://fjorddigital.no
+    - name: NettSprint Oslo
+      position: Junior UX-designer
+      startDate: Aug 2016
+      summary: >
+        - Bistod i utforming av wireframes og visuell design for nettbutikker og
+        bedriftsnettsteder
+
+        - Gjennomførte heuristiske evalueringer og enkle brukertester for
+        eksisterende løsninger
+
+        - Oppdaterte style guides og samarbeidet tett med frontendutviklere i et
+        smidig miljø
+      endDate: Jul 2017
+      keywords:
+        - Wireframing
+        - Style guide
+        - Smidig
+        - Evaluering
+      url: https://nettsprint.no
+locale:
+  language: no
+layouts:
+  - engine: latex
+    page:
+      showPageNumbers: true
+      paperSize: a4
+      margins:
+        top: 2.5cm
+        bottom: 2.5cm
+        left: 1.5cm
+        right: 1.5cm
+    template: moderncv-banking
+    typography:
+      fontSize: 11pt
+  - engine: docx
+    page:
+      showPageNumbers: true
+      paperSize: a4
+      margins:
+        top: 2.5cm
+        bottom: 2.5cm
+        left: 1.5cm
+        right: 1.5cm
+    typography:
+      fontSize: 11pt
+      lineSpacing: normal
+  - engine: markdown
+  - engine: html
+    template: calm
+    typography:
+      fontSize: 16px

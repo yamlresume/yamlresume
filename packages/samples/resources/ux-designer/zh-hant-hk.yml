@@ -1,0 +1,244 @@
+content:
+  basics:
+    name: 陳雅琪
+    email: kay.chan@designfolio.hk
+    headline: 資深用戶體驗設計師
+    phone: +852 9876 5432
+    summary: |
+      - 擁有逾八年數碼產品設計經驗，專注於以用戶為中心的設計方法與商業策略結合
+      - 擅長帶領跨職能團隊進行用戶研究、旅程地圖至互動原型設計，成功推出多款獲獎流動應用
+      - 具備豐富的設計系統建構經驗，能統一視覺語言並顯著提升開發效率與產品一致性
+      - 熱衷於設計思維與無障礙設計，持續推動以數據驅動的設計決策與迭代優化
+    url: https://kaychan.hk
+  education:
+    - area: 交互設計學
+      institution: 香港理工大學
+      degree: Bachelor
+      courses:
+        - 用戶研究方法
+        - 交互設計原理
+        - 視覺傳達設計
+        - 資訊架構與導航設計
+        - 設計思維與創新
+      endDate: Jun 2017
+      startDate: Sep 2013
+      summary: |
+        - 主修交互設計，深入鑽研人機交互、認知心理學及用戶中心設計流程
+        - 畢業專題探討本地長者使用流動應用的行為模式，獲院長嘉許名單
+        - 積極參與校內外設計比賽，培養出敏銳的視覺觸覺與問題解決能力
+      score: "3.7"
+      url: https://www.polyu.edu.hk/
+  awards:
+    - awarder: 香港設計師協會
+      title: 香港設計師協會環球設計大獎 優異獎
+      date: Nov 2022
+      summary: |
+        憑藉智慧城市流動應用項目，於用戶體驗設計類別獲頒優異獎，表彰以人為本的創新設計方案。
+    - awarder: 香港理工大學設計學院
+      title: 院長嘉許名單
+      date: Jun 2017
+      summary: |
+        於學術成績及畢業專題表現優異，獲列入院長嘉許名單以資鼓勵。
+  certificates:
+    - issuer: Google
+      name: Google UX Design Professional Certificate
+      date: May 2021
+      url: https://www.coursera.org/professional-certificates/google-ux-design
+    - issuer: Nielsen Norman Group
+      name: Nielsen Norman Group UX Masterclass
+      date: Oct 2019
+      url: https://www.nngroup.com/
+  interests:
+    - name: 攝影
+      keywords:
+        - 街頭攝影
+        - 建築攝影
+    - name: 城市探索
+      keywords:
+        - 歷史建築導賞
+        - 社區文化
+    - name: 咖啡文化
+      keywords:
+        - 精品咖啡
+        - 手沖技藝
+  languages:
+    - fluency: Native or Bilingual Proficiency
+      language: Cantonese
+      keywords:
+        - 母語
+        - 口語溝通
+    - fluency: Full Professional Proficiency
+      language: English
+      keywords:
+        - 商務溝通
+        - 技術文件撰寫
+    - fluency: Full Professional Proficiency
+      language: Mandarin
+      keywords:
+        - 普通話會話
+        - 簡報演示
+  location:
+    city: 九龍
+    address: 尖沙咀彌敦道132號美麗華大廈8樓
+    country: Hong Kong
+    postalCode: "999077"
+    region: 油尖旺區
+  profiles:
+    - network: LinkedIn
+      username: kaychan-ux
+      url: https://www.linkedin.com/in/kaychan-ux
+    - network: Behance
+      username: kaychan
+      url: https://www.behance.net/kaychan
+    - network: Dribbble
+      username: kaychan
+      url: https://dribbble.com/kaychan
+  projects:
+    - name: 智慧城市流動應用
+      startDate: Jan 2022
+      summary: |
+        - 重新設計資訊架構與導航系統，令用戶平均完成任務時間縮短四成
+        - 引入無障礙設計指引，確保視障及長者用戶均能輕鬆使用
+        - 設計系統涵蓋超過五十個核心組件，獲團隊廣泛採用於後續項目
+      description: 為本地政府部門設計的一站式城市服務流動應用
+      endDate: Oct 2022
+      keywords:
+        - 政府項目
+        - 無障礙設計
+        - 設計系統
+      url: https://kaychan.hk/projects/smart-city
+    - name: 網上銀行平台重設計
+      startDate: Jun 2020
+      summary: |
+        - 透過用戶訪談與數據分析，識別關鍵痛點並提出針對性的設計方案
+        - 設計全新儀表板與轉賬流程，提升用戶滿意度與交易完成率
+        - 與開發團隊緊密合作，確保設計細節於產品上準確呈現
+      description: 針對年輕用戶群的網上銀行體驗重設計項目
+      endDate: Dec 2020
+      keywords:
+        - 金融科技
+        - 用戶研究
+        - 體驗重設計
+      url: https://kaychan.hk/projects/bank-redesign
+  publications:
+    - name: 以設計系統提升金融科技產品的一致性
+      publisher: 設計雜誌 Design Magazine
+      releaseDate: Mar 2023
+      summary: |
+        - 探討設計系統在金融科技產品中的實踐方法與挑戰
+        - 分享如何透過組件化設計與跨部門協作，提升產品開發效率與用戶體驗
+      url: https://www.designmag.hk/articles/design-system-fintech
+  skills:
+    - level: Expert
+      name: UX 設計
+      keywords:
+        - Figma
+        - Sketch
+        - Adobe XD
+        - Wireframing
+        - Prototyping
+    - level: Advanced
+      name: 用戶研究
+      keywords:
+        - 可用性測試
+        - 用戶訪談
+        - 問卷調查
+        - 數據分析
+    - level: Advanced
+      name: UI 視覺設計
+      keywords:
+        - 視覺設計
+        - Design Systems
+        - 排版
+        - 色彩理論
+    - level: Intermediate
+      name: 前端技術
+      keywords:
+        - HTML
+        - CSS
+        - JavaScript
+        - React
+  volunteer:
+    - organization: 香港用戶體驗專業協會
+      position: 活動統籌及設計導師
+      startDate: Sep 2018
+      summary: |
+        - 統籌每月的 UX 設計分享會，邀請業界專家進行演講與工作坊
+        - 為初學者提供設計思維與原型工具指導，協助他們建立設計基礎
+        - 推動本地 UX 設計社群交流，促進知識分享與專業發展
+      url: https://www.uxpahk.org
+  work:
+    - name: 領創數碼科技有限公司
+      position: 資深用戶體驗設計師
+      startDate: Mar 2020
+      summary: |
+        - 主導多個金融科技與電商平台的用戶體驗設計，涵蓋用戶研究、旅程地圖至互動原型
+        - 建立並維護跨產品的設計系統，統一超過三十個模組的視覺與互動規範
+        - 帶領三名初級設計師，制定設計評審流程與用戶測試標準，提升團隊交付質素
+        - 與產品經理及工程團隊緊密協作，推動敏捷開發中的設計衝刺與快速迭代
+      keywords:
+        - Figma
+        - Design System
+        - 用戶研究
+        - 團隊領導
+      url: https://www.leadcx.hk
+    - name: 雅卓互動設計顧問有限公司
+      position: 用戶體驗設計師
+      startDate: Jul 2017
+      summary: |
+        - 為教育、醫療及零售行業客戶設計直覺易用的網站與流動應用介面
+        - 負責進行可用性測試與用戶訪談，將洞察轉化為具體的設計改進方案
+        - 製作高保真互動原型與動效規範，有效降低開發階段的溝通成本
+        - 協助公司贏得多項設計招標，並在業界建立良好的客戶口碑
+      endDate: Feb 2020
+      keywords:
+        - Prototyping
+        - 可用性測試
+        - 客戶協作
+        - 視覺設計
+      url: https://www.artjoy.hk
+    - name: 創意流動科技有限公司
+      position: UX 設計實習生
+      startDate: Jun 2016
+      summary: |
+        - 參與社交應用的介面設計，協助繪製線框圖與整理設計素材庫
+        - 協助進行競品分析與用戶反饋整理，為產品優化提供數據支持
+        - 學習並實踐以用戶為中心的設計流程，奠定紮實的專業基礎
+      endDate: Aug 2016
+      keywords:
+        - 線框圖
+        - 競品分析
+        - 設計素材
+      url: https://www.creativemobile.hk
+locale:
+  language: zh-hant-hk
+layouts:
+  - engine: latex
+    page:
+      showPageNumbers: true
+      paperSize: a4
+      margins:
+        top: 2.5cm
+        bottom: 2.5cm
+        left: 1.5cm
+        right: 1.5cm
+    template: moderncv-banking
+    typography:
+      fontSize: 11pt
+  - engine: docx
+    page:
+      showPageNumbers: true
+      paperSize: a4
+      margins:
+        top: 2.5cm
+        bottom: 2.5cm
+        left: 1.5cm
+        right: 1.5cm
+    typography:
+      fontSize: 11pt
+      lineSpacing: normal
+  - engine: markdown
+  - engine: html
+    template: calm
+    typography:
+      fontSize: 16px

@@ -1,0 +1,296 @@
+content:
+  basics:
+    name: Jonas Weber
+    email: jonas.weber@beispiel-software.de
+    headline: Senior Software Engineer für Cloud- und Full-Stack-Anwendungen
+    phone: +49 30 23456789
+    summary: >
+      - Full-Stack-Softwareentwickler mit über 8 Jahren Erfahrung in der
+      Entwicklung skalierbarer Webanwendungen
+
+      - Umfassende Kenntnisse in Java, TypeScript, React und Cloud-Technologien
+      (AWS, Kubernetes, Docker)
+
+      - Erfahrung in der Architektur von Microservices und der Automatisierung
+      von CI/CD-Pipelines
+
+      - Agile Arbeitsweise, Teamplayer und Mentor mit Fokus auf Codequalität und
+      nachhaltige Softwareentwicklung
+    url: https://jonasweber.dev
+  education:
+    - area: Informatik
+      institution: Technische Universität München
+      degree: Bachelor
+      courses:
+        - Softwareentwicklung im Team
+        - Algorithmen und Datenstrukturen
+        - Datenbanksysteme
+        - Kommunikationsnetze
+        - Web-Engineering
+        - Grundlagen der Betriebssysteme
+      endDate: Jun 1, 2015
+      startDate: Oct 1, 2011
+      summary: >
+        - Abschluss mit der Gesamtnote 1.7 (gut)
+
+        - Bachelorarbeit zum Thema "Entwicklung einer Microservice-basierten
+        Plattform für Echtzeit-Analysen"
+
+        - Studentische Hilfskraft am Lehrstuhl für Datenbanksysteme
+      score: "1.7"
+      url: https://www.in.tum.de/
+  awards:
+    - awarder: Technische Universität München
+      title: Best Student Paper Award
+      date: 2015-06
+      summary: >
+        Auszeichnung für die Bachelorarbeit im Bereich Microservices und
+        Echtzeit-Analysen.
+  certificates:
+    - issuer: Amazon Web Services
+      name: AWS Certified Solutions Architect – Associate
+      date: 2022-08
+      url: https://aws.amazon.com/certification/
+    - issuer: Cloud Native Computing Foundation
+      name: Certified Kubernetes Administrator
+      date: 2023-03
+      url: https://www.cncf.io/certification/cka/
+  interests:
+    - name: Open-Source-Software
+      keywords:
+        - GitHub
+        - Linux
+    - name: Laufen
+      keywords:
+        - Halbmarathon
+        - Trailrunning
+    - name: Schach
+      keywords:
+        - Turnierschach
+        - Eröffnungstheorie
+  languages:
+    - fluency: Native or Bilingual Proficiency
+      language: German
+      keywords:
+        - Muttersprache
+    - fluency: Full Professional Proficiency
+      language: English
+      keywords:
+        - TOEFL 105
+    - fluency: Limited Working Proficiency
+      language: French
+      keywords:
+        - Grundkenntnisse
+  location:
+    city: Berlin
+    address: Beusselstraße 33
+    country: Germany
+    postalCode: "10115"
+    region: Berlin
+  profiles:
+    - network: GitHub
+      username: jonasweber-dev
+      url: https://github.com/jonasweber-dev
+    - network: LinkedIn
+      username: jonas-weber
+      url: https://www.linkedin.com/in/jonas-weber
+  projects:
+    - name: terraform-aws-modules
+      startDate: Jan 1, 2023
+      summary: >
+        - Entwicklung von Terraform-Modulen für RDS, EKS und S3 mit Fokus auf
+        Sicherheit und Best Practices
+
+        - Veröffentlichung als Open-Source-Projekt mit über 200 GitHub-Sternen
+
+        - Dokumentation und Beispiele zur einfachen Wiederverwendung
+      description: Sammlung wiederverwendbarer Terraform-Module für den Aufbau
+        AWS-basierter Infrastruktur
+      keywords:
+        - Terraform
+        - AWS
+        - Open Source
+      url: https://github.com/jonasweber-dev/terraform-aws-modules
+    - name: Event-Board
+      startDate: Jan 1, 2020
+      summary: >
+        - Entwicklung einer React- und Node.js-Anwendung mit
+        JWT-Authentifizierung und PostgreSQL
+
+        - Deployment auf AWS Elastic Beanstalk mit automatisiertem
+        CI/CD-Pipeline
+
+        - Integration von Google-Maps-API zur Darstellung von
+        Veranstaltungsorten
+      description: Full-Stack-Anwendung zur Organisation und Verwaltung lokaler Events
+      endDate: Aug 1, 2020
+      keywords:
+        - React
+        - Node.js
+        - PostgreSQL
+      url: https://github.com/jonasweber-dev/event-board
+  publications:
+    - name: Microservices in der Praxis – Erfahrungen aus einem
+        Cloud-Migrationsprojekt
+      publisher: JavaSPEKTRUM
+      releaseDate: 2021-05
+      summary: >
+        Fachartikel über die Migration einer monolithischen Anwendung zu einer
+        Microservice-Architektur mit Spring Boot und Kubernetes.
+      url: https://www.javaspektrum.de/
+  references:
+    - name: Dr. Katharina Scholz
+      summary: >
+        Jonas Weber gehört zu den besten Ingenieuren, mit denen ich
+        zusammengearbeitet habe. Seine Fähigkeit, komplexe technische
+        Zusammenhänge klar zu kommunizieren und Lösungen pragmatisch umzusetzen,
+        ist außergewöhnlich.
+      email: katharina.scholz@cloudnative-solutions.example
+      phone: +49 89 1234567
+      relationship: Vorgesetzte bei CloudNative Solutions GmbH
+  skills:
+    - level: Expert
+      name: Programmiersprachen
+      keywords:
+        - Java
+        - TypeScript
+        - Python
+        - Go
+    - level: Advanced
+      name: Webentwicklung
+      keywords:
+        - React
+        - Angular
+        - Node.js
+        - HTML
+        - CSS
+    - level: Advanced
+      name: Cloud & DevOps
+      keywords:
+        - AWS
+        - Kubernetes
+        - Docker
+        - Terraform
+        - CI/CD
+    - level: Advanced
+      name: Datenbanken
+      keywords:
+        - PostgreSQL
+        - MongoDB
+        - Redis
+        - SQL
+    - level: Advanced
+      name: Agile Softwareentwicklung
+      keywords:
+        - Scrum
+        - Kanban
+        - Test-Driven Development
+        - Pair Programming
+  volunteer:
+    - organization: Jugend hackt Berlin
+      position: Mentor
+      startDate: 2017-03
+      summary: >
+        - Unterstützung von Jugendlichen bei ersten Programmierprojekten mit
+        Python und Webtechnologien
+
+        - Planung und Durchführung von Workshops zu Webentwicklung und
+        Datenschutz
+      endDate: 2020-09
+      url: https://jugendhackt.org/
+  work:
+    - name: CloudNative Solutions GmbH
+      position: Senior Software Engineer
+      startDate: Apr 1, 2022
+      summary: >
+        - Entwicklung und Betrieb einer Kubernetes-basierten SaaS-Plattform für
+        datenintensive Anwendungen
+
+        - Verantwortlich für die technische Architektur neuer Microservices und
+        die Weiterentwicklung bestehender Systeme
+
+        - Einführung von Infrastructure-as-Code mit Terraform, wodurch die
+        Bereitstellungszeit um 40 % reduziert wurde
+
+        - Durchführung von Code-Reviews, Architektur-Workshops und Mentoring für
+        fünf Entwickler:innen
+      keywords:
+        - Kubernetes
+        - AWS
+        - Microservices
+        - Terraform
+        - Mentoring
+      url: https://www.cloudnative-solutions.example
+    - name: DataPulse AG
+      position: Software Engineer
+      startDate: Aug 1, 2017
+      summary: >
+        - Implementierung von Java- und TypeScript-basierten Backend-Diensten
+        für eine Big-Data-Analyseplattform
+
+        - Migration einer monolithischen Anwendung zu einer
+        Microservice-Architektur mit Spring Boot
+
+        - Aufbau von CI/CD-Pipelines mit Jenkins und GitLab CI
+
+        - Enge Zusammenarbeit mit Product Management und QA zur termingerechten
+        Auslieferung neuer Features
+      endDate: Mar 1, 2022
+      keywords:
+        - Java
+        - Spring Boot
+        - TypeScript
+        - CI/CD
+        - Big Data
+      url: https://www.datapulse.example
+    - name: WebCraft GmbH
+      position: Junior Full-Stack Developer
+      startDate: Sep 1, 2015
+      summary: >
+        - Entwicklung und Wartung von Kundenwebseiten mit Angular, Node.js und
+        MySQL
+
+        - Umsetzung responsiver UI-Komponenten und Anbindung an
+        REST-Schnittstellen
+
+        - Unterstützung bei der Einführung von automatisierten Tests mit Jest
+        und Cypress
+      endDate: Jul 1, 2017
+      keywords:
+        - Angular
+        - Node.js
+        - REST
+        - MySQL
+      url: https://www.webcraft.example
+locale:
+  language: de
+layouts:
+  - engine: latex
+    page:
+      showPageNumbers: true
+      paperSize: a4
+      margins:
+        top: 2.5cm
+        bottom: 2.5cm
+        left: 1.5cm
+        right: 1.5cm
+    template: moderncv-banking
+    typography:
+      fontSize: 11pt
+  - engine: docx
+    page:
+      showPageNumbers: true
+      paperSize: a4
+      margins:
+        top: 2.5cm
+        bottom: 2.5cm
+        left: 1.5cm
+        right: 1.5cm
+    typography:
+      fontSize: 11pt
+      lineSpacing: normal
+  - engine: markdown
+  - engine: html
+    template: calm
+    typography:
+      fontSize: 16px

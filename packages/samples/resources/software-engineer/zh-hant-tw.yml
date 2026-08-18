@@ -1,0 +1,252 @@
+content:
+  basics:
+    name: 林冠宇
+    email: guanyu.lin@example.com
+    headline: 資深軟體工程師
+    phone: +886 912 345 678
+    summary: |
+      - 擁有 8 年以上軟體開發經驗，專注於後端系統設計、雲端架構與微服務開發
+      - 熟悉 Node.js、Python 與 Go，具備大流量分散式系統的設計與維運能力
+      - 善於與產品、設計團隊協作，重視程式碼品質與可維護性
+      - 具備技術領導經驗，曾帶領團隊完成多項關鍵業務系統的現代化重構
+    url: https://www.guanyu.dev
+  education:
+    - area: 資訊工程學系
+      institution: 國立臺灣大學
+      degree: Master
+      courses:
+        - 分散式系統
+        - 雲端運算
+        - 資料庫系統
+        - 機器學習
+        - 高等演算法
+      endDate: Jun 1, 2014
+      startDate: Sep 1, 2012
+      summary: |
+        - 研究主題為分散式資料處理與雲端資源排程
+        - 於研究所期間開發一套容器化工作排程器，改善叢集利用率約 30%
+        - 修習多門進階系統課程，奠定扎實的電腦科學基礎
+      url: https://www.ntu.edu.tw/
+    - area: 資訊工程學系
+      institution: 國立交通大學
+      degree: Bachelor
+      courses:
+        - 資料結構
+        - 作業系統
+        - 計算機網路
+        - 程式設計
+      endDate: Jun 1, 2012
+      startDate: Sep 1, 2008
+      summary: |
+        - 主修資訊工程，熟悉 C/C++、Java 與網頁程式設計
+        - 參與系上專題競賽，以「智慧校園導覽系統」獲得佳作
+      url: https://www.nctu.edu.tw/
+  awards:
+    - awarder: 中華民國資訊軟體協會
+      title: 優秀青年工程師獎
+      date: Dec 2023
+      summary: |
+        肯定在雲端架構與微服務領域的技術貢獻，以及對開源社群的長期投入。
+  certificates:
+    - issuer: Amazon Web Services
+      name: AWS Certified Solutions Architect - Associate
+      date: Mar 2022
+      url: https://aws.amazon.com/certification/
+    - issuer: Cloud Native Computing Foundation
+      name: "CKAD: Certified Kubernetes Application Developer"
+      date: Aug 2021
+      url: https://www.cncf.io/certification/ckad/
+  interests:
+    - name: 程式語言
+      keywords:
+        - Go
+        - Rust
+        - Functional Programming
+    - name: 戶外活動
+      keywords:
+        - 登山
+        - 單車
+        - 露營
+    - name: 閱讀
+      keywords:
+        - 科幻小說
+        - 系統設計
+  languages:
+    - fluency: Native or Bilingual Proficiency
+      language: Chinese
+      keywords:
+        - 母語
+    - fluency: Full Professional Proficiency
+      language: English
+      keywords:
+        - TOEIC 850
+        - 技術文件閱讀與撰寫
+  location:
+    city: 台北市
+    address: 信義區松仁路 123 號 8 樓
+    country: Taiwan
+    postalCode: "110"
+    region: 台北市
+  profiles:
+    - network: GitHub
+      username: guanyu-lin
+      url: https://github.com/guanyu-lin
+    - network: LinkedIn
+      username: guanyu-lin
+      url: https://www.linkedin.com/in/guanyu-lin
+  projects:
+    - name: 微服務監控平台
+      startDate: Mar 1, 2023
+      summary: |
+        - 內部開源專案，用於收集與視覺化微服務之間的呼叫鏈路
+        - 自動偵測異常服務並發送警報，協助團隊快速定位問題
+      description: >
+        這是一個為團隊量身打造的微服務監控平台。系統透過 OpenTelemetry 收集分散式追蹤資料，並以 Go
+        撰寫資料收集器，將資料正規化後儲存於 ClickHouse。前端使用 React 與 D3.js
+        繪製服務拓撲圖，讓工程師可以直觀地掌握服務間的相依關係與延遲狀況。此外，平台也提供自訂告警規則，當服務錯誤率或延遲超過門檻時，會透過 Slack
+        與電子郵件通知值班人員。
+      endDate: Sep 1, 2023
+      keywords:
+        - OpenTelemetry
+        - Go
+        - React
+        - ClickHouse
+      url: https://www.guanyu.dev/projects/microservice-monitor
+    - name: 智慧庫存預測系統
+      startDate: Jan 1, 2021
+      summary: |
+        - 協助零售業客戶預測商品需求量，降低缺貨與庫存過剩風險
+        - 使用時間序列模型與歷史銷售資料，產生每日預測報表
+      description: >
+        基於 Python 與 Prophet 建置之庫存預測系統，串接客戶既有 ERP 的銷售資料，並以 FastAPI
+        提供預測服務。系統每日批次更新模型，並將預測結果寫入資料庫，供管理儀表板與採購流程使用。專案上線後，客戶平均庫存周轉天數減少約 20%。
+      endDate: Jun 1, 2021
+      keywords:
+        - Python
+        - FastAPI
+        - Prophet
+        - ERP
+      url: https://www.guanyu.dev/projects/inventory-forecast
+  publications:
+    - name: 基於容器化技術之高效能雲端工作排程機制
+      publisher: 中華民國資訊學會期刊
+      releaseDate: Sep 2014
+      summary: |
+        提出一套以容器為基礎的雲端資源排程方法，透過動態資源預測與工作優先權管理，有效提升資料中心整體利用率。
+      url: https://www.guanyu.dev/publications/container-scheduler
+  skills:
+    - level: Expert
+      name: 後端開發
+      keywords:
+        - Node.js
+        - Go
+        - Python
+        - RESTful API
+        - GraphQL
+    - level: Advanced
+      name: 雲端與 DevOps
+      keywords:
+        - AWS
+        - Kubernetes
+        - Docker
+        - Terraform
+        - CI/CD
+    - level: Advanced
+      name: 資料庫
+      keywords:
+        - PostgreSQL
+        - MySQL
+        - MongoDB
+        - Redis
+    - level: Intermediate
+      name: 前端開發
+      keywords:
+        - React
+        - TypeScript
+        - HTML5
+        - CSS
+  volunteer:
+    - organization: Taiwan Python 社群
+      position: 技術志工
+      startDate: Jan 1, 2018
+      summary: |
+        - 協助籌辦年度 PyCon Taiwan，負責議程徵稿與講者接待
+        - 定期於社群聚會分享後端開發與雲端架構主題
+      endDate: Dec 31, 2023
+      url: https://www.taiwanpython.tw
+  work:
+    - name: 雲端互動科技
+      position: 資深軟體工程師
+      startDate: Jul 1, 2020
+      summary: |
+        - 主導微服務架構設計，將單體式後端拆分為 20 餘個可獨立部署的服務
+        - 導入 Kubernetes 與 GitOps 流程，縮短部署時間由 40 分鐘降至 8 分鐘
+        - 設計並實作高流量 API 閘道，每日處理超過 5,000 萬次請求
+        - 帶領 4 人小組開發會員與訂單系統，並負責程式碼審查與技術決策
+      keywords:
+        - Kubernetes
+        - 微服務
+        - Node.js
+        - Go
+        - API Gateway
+      url: https://www.cloudinteractive.tw
+    - name: 台灣數位金融資訊
+      position: 軟體工程師
+      startDate: Jul 1, 2017
+      summary: |
+        - 開發銀行核心系統與行動銀行 API，服務超過 200 萬名用戶
+        - 使用 Python 與 PostgreSQL 建立即時交易查詢服務，降低 50% 查詢延遲
+        - 協助推動 CI/CD 流程，整合自動化測試與靜態分析工具
+        - 與外部廠商合作串接第三方支付，完成金流服務的介接與驗證
+      endDate: Jun 1, 2020
+      keywords:
+        - Python
+        - PostgreSQL
+        - RESTful API
+        - 金融科技
+      url: https://www.tdfi.com.tw
+    - name: 新創軟體工作室
+      position: 全端工程師
+      startDate: Jul 1, 2014
+      summary: |
+        - 獨立開發多個客戶專案，涵蓋電商網站、內容管理系統與內部工具
+        - 使用 React 與 Express 建構響應式網頁應用，並部署於 AWS
+        - 協助客戶進行需求訪談與系統分析，提供可行的技術解決方案
+      endDate: Jun 1, 2017
+      keywords:
+        - React
+        - Express
+        - AWS
+      url: https://www.startup-lab.tw
+locale:
+  language: zh-hant-tw
+layouts:
+  - engine: latex
+    page:
+      showPageNumbers: true
+      paperSize: a4
+      margins:
+        top: 2.5cm
+        bottom: 2.5cm
+        left: 1.5cm
+        right: 1.5cm
+    template: moderncv-banking
+    typography:
+      fontSize: 11pt
+  - engine: docx
+    page:
+      showPageNumbers: true
+      paperSize: a4
+      margins:
+        top: 2.5cm
+        bottom: 2.5cm
+        left: 1.5cm
+        right: 1.5cm
+    typography:
+      fontSize: 11pt
+      lineSpacing: normal
+  - engine: markdown
+  - engine: html
+    template: calm
+    typography:
+      fontSize: 16px

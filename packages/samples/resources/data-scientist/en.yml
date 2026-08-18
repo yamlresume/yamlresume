@@ -1,0 +1,204 @@
+content:
+  basics:
+    name: Sarah Chen
+    headline: Senior Data Scientist
+    phone: "(415) 555-0123"
+    email: sarah.chen@example.com
+    url: https://sarahchen.dev
+    summary: |
+      - Ph.D. in Statistics with 6+ years of experience building machine learning models at scale
+      - Specialized in predictive modeling, NLP, and recommendation systems
+      - Strong communicator who bridges the gap between research and production engineering
+      - Passionate about ethical AI and reproducible data science
+  location:
+    address: 456 Market Street
+    city: San Francisco
+    region: California
+    country: United States
+    postalCode: "94105"
+  profiles:
+    - network: GitHub
+      url: https://github.com/sarahchen
+      username: sarahchen
+    - network: LinkedIn
+      url: https://linkedin.com/in/sarahchen
+      username: sarahchen
+  education:
+    - institution: Stanford University
+      url: https://statistics.stanford.edu/
+      degree: Doctor
+      area: Statistics
+      score: "3.9"
+      startDate: Sep 1, 2014
+      endDate: Jun 1, 2019
+      courses:
+        - Statistical Learning Theory
+        - Bayesian Methods
+        - Deep Learning
+        - Causal Inference
+        - Large-Scale Optimization
+      summary: |
+        - Conducted research on probabilistic graphical models and variational inference
+        - Published 4 peer-reviewed papers at NeurIPS and ICML
+        - Taught graduate courses in statistical computing and machine learning
+    - institution: University of California, Berkeley
+      url: https://www.berkeley.edu/
+      degree: Bachelor
+      area: Applied Mathematics
+      score: "3.8"
+      startDate: Sep 1, 2010
+      endDate: May 1, 2014
+      summary: |
+        - Graduated with honors
+        - Completed coursework in linear algebra, probability, and numerical methods
+  work:
+    - name: DataCorp
+      url: https://datacorp.example.com
+      startDate: Jul 1, 2021
+      endDate:
+      position: Senior Data Scientist
+      summary: |
+        - Lead a team of 4 data scientists building real-time fraud detection models
+        - Reduced false positives by 32% through improved feature engineering and model ensembling
+        - Deployed models to production using Kubernetes and MLflow
+        - Partnered with product and engineering to define KPIs and A/B testing frameworks
+      keywords:
+        - Fraud Detection
+        - Kubernetes
+        - MLflow
+        - A/B Testing
+    - name: Insight Analytics
+      url: https://insightanalytics.example.com
+      startDate: Aug 1, 2019
+      endDate: Jun 1, 2021
+      position: Data Scientist
+      summary: |
+        - Built recommendation engines that increased user engagement by 18%
+        - Developed NLP pipelines for sentiment analysis and topic modeling
+        - Created dashboards and self-service analytics tools for stakeholders
+      keywords:
+        - Recommendation Systems
+        - NLP
+        - Topic Modeling
+  languages:
+    - language: English
+      fluency: Native or Bilingual Proficiency
+      keywords: []
+    - language: Chinese
+      fluency: Full Professional Proficiency
+      keywords: []
+  skills:
+    - name: Machine Learning
+      level: Expert
+      keywords:
+        - Python
+        - scikit-learn
+        - XGBoost
+        - PyTorch
+        - TensorFlow
+    - name: Data Engineering
+      level: Intermediate
+      keywords:
+        - SQL
+        - Spark
+        - Airflow
+        - dbt
+    - name: Statistics
+      level: Expert
+      keywords:
+        - Bayesian Inference
+        - Causal Inference
+        - Experimental Design
+  awards:
+    - title: Best Applied Paper Award
+      awarder: ACM SIGKDD
+      date: Aug 2022
+      summary: |
+        Recognized for outstanding applied research in large-scale recommender systems.
+  certificates:
+    - name: AWS Certified Machine Learning - Specialty
+      url: https://aws.amazon.com/certification/
+      issuer: AWS
+      date: Nov 2020
+  publications:
+    - publisher: Journal of Machine Learning Research
+      url: https://jmlr.org/
+      name: Scalable Variational Inference for Structured Prediction
+      releaseDate: Mar 2020
+      summary: |
+        - Proposes a scalable variational inference algorithm for structured prediction tasks
+        - Demonstrates state-of-the-art results on several benchmark datasets
+  references:
+    - name: Dr. Michael Ross
+      phone: "(555) 987-6543"
+      relationship: Ph.D. Advisor
+      email: michael.ross@stanford.edu
+      summary: |
+        Sarah is one of the most capable applied researchers I have worked with; her work consistently bridges theory and practice.
+  projects:
+    - name: Churn Predictor
+      url: https://github.com/sarahchen/churn-predictor
+      description: End-to-end customer churn prediction system
+      startDate: Jan 2022
+      endDate: Jun 2022
+      summary: |
+        - Built a gradient boosting classifier to predict customer churn
+        - Implemented SHAP-based explainability for model predictions
+        - Deployed the model as a REST API with FastAPI
+      keywords:
+        - Classification
+        - SHAP
+        - FastAPI
+  interests:
+    - name: Outdoor Activities
+      keywords:
+        - Hiking
+        - Cycling
+        - Kayaking
+    - name: Reading
+      keywords:
+        - Science Fiction
+        - History
+  volunteer:
+    - organization: Women in Data Science
+      url: https://www.widsconference.org/
+      position: Workshop Lead
+      startDate: Jan 2020
+      endDate:
+      summary: |
+        - Lead technical workshops on introductory machine learning for underrepresented groups
+        - Mentor early-career data scientists transitioning into the field
+
+locale:
+  language: en
+
+layouts:
+  - engine: latex
+    page:
+      margins:
+        top: 2.5cm
+        left: 1.5cm
+        right: 1.5cm
+        bottom: 2.5cm
+      paperSize: a4
+      showPageNumbers: true
+    template: moderncv-banking
+    typography:
+      fontSize: 11pt
+  - engine: docx
+    page:
+      margins:
+        top: 2.5cm
+        left: 1.5cm
+        right: 1.5cm
+        bottom: 2.5cm
+      paperSize: a4
+      showPageNumbers: true
+    typography:
+      fontSize: 11pt
+      lineSpacing: normal
+  - engine: markdown
+  - engine: html
+    template: calm
+    typography:
+      fontSize: 16px

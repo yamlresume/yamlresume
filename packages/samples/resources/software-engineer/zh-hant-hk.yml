@@ -1,0 +1,252 @@
+content:
+  basics:
+    name: 陳志明
+    email: chiming.chan@example.com
+    headline: 資深軟件工程師（全端開發）
+    phone: +852 9123 4567
+    summary: |
+      - 擁有超過 8 年軟件開發經驗的資深軟件工程師，專注於全端網頁應用程式及雲端解決方案
+      - 精通 TypeScript、Node.js、React、Python 等主流技術，並具備微服務及分散式系統設計經驗
+      - 重視代碼品質、測試驅動開發與 CI/CD，能在敏捷環境下高效交付可擴展的產品
+      - 善於與產品、設計及工程團隊協作，能將複雜業務需求轉化為簡潔可靠的技術方案
+    url: https://chimingchan.dev
+  education:
+    - area: 計算機科學
+      institution: 香港科技大學
+      degree: Bachelor
+      courses:
+        - 數據結構與算法
+        - 操作系統
+        - 計算機網絡
+        - 數據庫系統
+        - 軟件工程
+        - 人工智能
+        - 編譯器原理
+        - 離散數學
+      endDate: May 30, 2016
+      startDate: Sep 1, 2012
+      summary: |
+        - 主修計算機科學，副修數學，畢業成績 GPA 3.7/4.0
+        - 參與分散式系統及機器學習相關課程項目，具備扎實的理論基礎與實踐能力
+        - 曾擔任「程式設計入門」課程教學助理，協助批改作業及指導學生
+      score: 3.7/4.0
+      url: https://www.hkust.edu.hk/
+  awards:
+    - awarder: 智雲科技有限公司
+      title: 傑出員工獎
+      date: Dec 2022
+      summary: |
+        表揚在年度核心系統遷移項目中的卓越領導能力及貢獻，成功帶領團隊提前完成遷移並達成可靠性目標。
+  certificates:
+    - issuer: Amazon Web Services
+      name: AWS 認證開發人員 – 助理級
+      date: Mar 2021
+      url: https://aws.amazon.com/certification/
+    - issuer: Cloud Native Computing Foundation
+      name: CKA – Kubernetes 管理員認證
+      date: Nov 2021
+      url: https://www.cncf.io/certification/cka/
+  interests:
+    - name: 跑步
+      keywords:
+        - 馬拉松
+        - 越野跑
+    - name: 科技閱讀
+      keywords:
+        - 軟件架構
+        - 人工智能
+  languages:
+    - fluency: Native or Bilingual Proficiency
+      language: Cantonese
+      keywords:
+        - 母語
+    - fluency: Full Professional Proficiency
+      language: English
+      keywords:
+        - IELTS 7.5
+    - fluency: Full Professional Proficiency
+      language: Mandarin
+      keywords:
+        - 普通話水平測試二級甲等
+  location:
+    city: 香港
+    address: 九龍觀塘道 388 號 18 樓
+    country: Hong Kong
+    region: 九龍
+  profiles:
+    - network: GitHub
+      username: chimingchan
+      url: https://github.com/chimingchan
+    - network: LinkedIn
+      username: chimingchan
+      url: https://www.linkedin.com/in/chimingchan
+  projects:
+    - name: OpenAuth Lite
+      startDate: Jan 1, 2021
+      summary: >
+        - 以 TypeScript 及 Node.js 開發，提供授權碼流程、client credentials 及 refresh token
+        支援
+
+        - 使用 PostgreSQL 儲存用戶及 client 資料，並透過 Redis 快取 session 提升效能
+
+        - 提供完整 API 文檔及 Docker Compose 設定，方便開發者本地部署及測試
+      description: 一個輕量級開源身份認證服務，支援 OAuth 2.0 及 OpenID Connect。
+      endDate: Mar 31, 2021
+      keywords:
+        - OAuth
+        - OpenID Connect
+        - TypeScript
+        - Node.js
+        - PostgreSQL
+      url: https://github.com/chimingchan/openauth-lite
+    - name: 實時協作看板 DevBoard
+      startDate: Jun 1, 2022
+      summary: |
+        - 採用 React、Redux Toolkit 及 WebSocket 實現任務卡片的實時同步與拖放操作
+        - 後端以 Express.js 及 MongoDB 建構，使用 JWT 進行身份驗證及授權
+        - 設計可擴展的任務狀態機，支援自訂 workflow，並以 Socket.IO 處理衝突與重連機制
+      description: 支援多用戶實時協作的敏捷開發看板工具。
+      endDate: Sep 30, 2022
+      keywords:
+        - React
+        - WebSocket
+        - Express.js
+        - MongoDB
+        - JWT
+      url: https://github.com/chimingchan/devboard
+  publications:
+    - name: 基於微服務架構的金融交易系統設計模式
+      publisher: 香港計算機學會期刊
+      releaseDate: May 2019
+      summary: |
+        探討金融交易系統中採用微服務架構的優點與挑戰，提出一套包括服務拆分、數據一致性及故障隔離的設計模式，並以真實案例驗證其效果。
+      url: https://www.hkcs.org.hk/journal
+  skills:
+    - level: Expert
+      name: 全端開發
+      keywords:
+        - TypeScript
+        - Node.js
+        - React
+        - Next.js
+        - GraphQL
+        - Tailwind CSS
+    - level: Advanced
+      name: 雲端及 DevOps
+      keywords:
+        - AWS
+        - Docker
+        - Kubernetes
+        - Terraform
+        - Argo CD
+        - GitHub Actions
+    - level: Advanced
+      name: 數據庫
+      keywords:
+        - PostgreSQL
+        - MySQL
+        - MongoDB
+        - Redis
+        - SQL
+    - level: Advanced
+      name: 系統設計
+      keywords:
+        - Microservices
+        - Distributed Systems
+        - Message Queue
+        - Event-Driven
+        - RESTful API
+  volunteer:
+    - organization: 香港程式教育協會
+      position: 義務導師
+      startDate: Jan 1, 2018
+      summary: |
+        - 定期到本地中學舉辦編程工作坊，教授 Python 及 Scratch
+        - 協助設計及籌劃年度「全港中學生編程挑戰賽」
+        - 透過線上平台為學生提供程式疑難解答及學習資源
+      url: https://www.code.org.hk
+  work:
+    - name: 智雲科技有限公司
+      position: 高級軟件工程師
+      startDate: Jul 1, 2020
+      summary: |
+        - 主導三個核心產品的後端系統重構，將單體架構遷移至 Kubernetes 微服務架構，服務可用性提升至 99.99%
+        - 帶領 5 人團隊開發及維護客戶管理系統，採用 React、GraphQL 及 PostgreSQL，支援超過 10 萬名用戶
+        - 制定及推行程式碼審查與自動化測試策略，將單元測試覆蓋率由 45% 提升至 85%
+        - 透過引入 Terraform 及 Argo CD 完善 CI/CD 流程，令部署時間由每週一次縮短至每日多次
+      keywords:
+        - TypeScript
+        - Node.js
+        - React
+        - Kubernetes
+        - Microservices
+        - CI/CD
+        - AWS
+      url: https://www.zhiyuntech.com.hk
+    - name: 卓越金融科技有限公司
+      position: 軟件工程師
+      startDate: Aug 1, 2017
+      summary: |
+        - 開發及維護電子交易平台的前後端功能，以 Java Spring Boot 及 Angular 構建高頻交易介面
+        - 設計並優化 MySQL 及 Redis 數據存取層，將查詢響應時間平均降低 40%
+        - 與風控團隊合作實現實時交易監控系統，透過消息隊列處理每日逾百萬筆交易事件
+        - 參與敏捷開發流程，定期進行 sprint 規劃及回顧，持續改善團隊交付效率
+      endDate: Jun 30, 2020
+      keywords:
+        - Java
+        - Spring Boot
+        - Angular
+        - MySQL
+        - Redis
+        - Kafka
+        - Docker
+      url: https://www.excellencefintech.com.hk
+    - name: 初創網絡科技有限公司
+      position: 程式設計員
+      startDate: Jun 1, 2016
+      summary: |
+        - 負責開發及維護多個中小企網站及內容管理系統，支援客戶自訂版面及功能
+        - 使用 JavaScript、Python 及 MongoDB 構建伺服器端應用程式，並整合第三方 API
+        - 配合設計師進行響應式網頁開發，確保跨瀏覽器及流動裝置的用戶體驗
+        - 參與代碼部署及伺服器配置，熟悉 Linux 環境及 Shell 指令操作
+      endDate: Jul 31, 2017
+      keywords:
+        - JavaScript
+        - Python
+        - MongoDB
+        - Express.js
+        - HTML/CSS
+        - Linux
+      url: https://www.initwebtech.com.hk
+locale:
+  language: zh-hant-hk
+layouts:
+  - engine: latex
+    page:
+      showPageNumbers: true
+      paperSize: a4
+      margins:
+        top: 2.5cm
+        bottom: 2.5cm
+        left: 1.5cm
+        right: 1.5cm
+    template: moderncv-banking
+    typography:
+      fontSize: 11pt
+  - engine: docx
+    page:
+      showPageNumbers: true
+      paperSize: a4
+      margins:
+        top: 2.5cm
+        bottom: 2.5cm
+        left: 1.5cm
+        right: 1.5cm
+    typography:
+      fontSize: 11pt
+      lineSpacing: normal
+  - engine: markdown
+  - engine: html
+    template: calm
+    typography:
+      fontSize: 16px

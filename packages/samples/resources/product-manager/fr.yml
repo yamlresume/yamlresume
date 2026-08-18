@@ -1,0 +1,282 @@
+content:
+  basics:
+    name: Camille Lefèvre
+    email: camille.lefevre@email.fr
+    headline: Product Manager senior – SaaS & logiciels d'entreprise
+    phone: +33 6 12 34 56 78
+    summary: >
+      Product Manager senior avec plus de 6 ans d'expérience dans la conception,
+      le lancement et l'amélioration continue de produits SaaS.
+
+
+      - Pilote la stratégie produit de la plateforme Lumina, de la découverte à
+      la mise sur le marché
+
+      - Construit des feuilles de route orientées données, en collaboration avec
+      les équipes design, tech et commerciales
+
+      - Experte en méthodes agiles, tests A/B et analyse de l'engagement
+      utilisateur
+
+      - Recherche en permanence l'équilibre entre objectifs business,
+      faisabilité technique et satisfaction client
+    url: https://www.camillelefevre.fr
+  education:
+    - area: Management de l'innovation numérique
+      institution: HEC Paris
+      degree: Master
+      courses:
+        - Stratégie numérique et transformation digitale
+        - Marketing digital
+        - Gestion de projet informatique
+        - Data science pour la décision
+        - Comportement du consommateur
+        - Gestion de l'innovation
+        - Économie numérique
+        - Droit du numérique
+      endDate: Jun 1, 2016
+      startDate: Sep 1, 2014
+      summary: >
+        - Formation généraliste en management avec une spécialisation en
+        innovation numérique
+
+        - Réalisation d'un mémoire sur la transformation digitale des PME
+
+        - Projet de fin d'études : conception et prototypage d'une application
+        mobile de suivi de santé
+      score: 3.7/4.0
+      url: https://www.hec.edu/fr
+  awards:
+    - awarder: Talents du Digital
+      title: Prix Product Manager de l'année 2023
+      date: Oct 1, 2023
+      summary: >
+        Distinction remise aux jeunes product managers pour la qualité de la
+        stratégie produit et l'impact mesuré sur la croissance de l'entreprise.
+  certificates:
+    - issuer: Scrum.org
+      name: Professional Scrum Product Owner I (PSPO I)
+      date: Mar 1, 2021
+      url: https://www.scrum.org/certifications
+    - issuer: Amplitude
+      name: Product Analytics Micro-Certification
+      date: Jun 1, 2022
+      url: https://amplitude.com/learn/micro-certifications
+  interests:
+    - name: Technologie
+      keywords:
+        - IA générative
+        - No-code
+        - Produits durables
+    - name: Design & créativité
+      keywords:
+        - UX design
+        - Illustration
+        - Design thinking
+    - name: Sport & bien-être
+      keywords:
+        - Course à pied
+        - Yoga
+        - Randonnée
+  languages:
+    - fluency: Native or Bilingual Proficiency
+      language: French
+      keywords:
+        - Langue maternelle
+    - fluency: Full Professional Proficiency
+      language: English
+      keywords:
+        - TOEIC 940
+        - Réunions clients
+        - Documentation produit
+    - fluency: Limited Working Proficiency
+      language: Spanish
+  location:
+    city: Paris
+    address: 12 rue de la Paix
+    country: France
+    postalCode: "75002"
+    region: Île-de-France
+  profiles:
+    - network: LinkedIn
+      username: camille-lefevre
+      url: https://www.linkedin.com/in/camille-lefevre
+    - network: Medium
+      username: camillelefevre
+      url: https://medium.com/@camillelefevre
+  projects:
+    - name: Sérénité
+      startDate: Jun 1, 2023
+      summary: >
+        - Concevoir un produit personnel pour explorer les usages de l'IA
+        générative
+
+        - Réaliser des tests utilisateurs auprès de 15 participants
+
+        - Développer un prototype interactif sur Figma
+      description: Prototype d'application mobile de méditation conçu pour explorer
+        l'IA générative et le design émotionnel.
+      endDate: Aug 1, 2023
+      keywords:
+        - IA générative
+        - Figma
+        - Prototype
+        - Tests utilisateurs
+      url: https://medium.com/@camillelefevre/serenite-app
+  publications:
+    - name: Comment mener une discovery produit efficace en 4 étapes
+      publisher: Medium
+      releaseDate: Mar 1, 2023
+      summary: >
+        - Partage de méthode pour cadrer la découverte produit en environnement
+        SaaS
+
+        - Retour d'expérience sur les entretiens utilisateurs et la priorisation
+        des apprentissages
+      url: https://medium.com/@camillelefevre/discovery-produit-4-etapes
+  skills:
+    - level: Expert
+      name: Gestion de produit
+      keywords:
+        - Découverte produit
+        - Roadmap
+        - User stories
+        - Priorisation
+        - OKR
+        - Méthodes agiles
+    - level: Advanced
+      name: Analyse de données
+      keywords:
+        - SQL
+        - Mixpanel
+        - Amplitude
+        - Tableau
+        - Excel
+    - level: Intermediate
+      name: Design & collaboration
+      keywords:
+        - Figma
+        - Design thinking
+        - Tests utilisateurs
+        - Miro
+        - Accessibilité
+  volunteer:
+    - organization: Femmes du Digital
+      position: Mentor produit
+      startDate: Jan 1, 2022
+      summary: >
+        - Accompagner les femmes souhaitant débuter une carrière dans le product
+        management
+
+        - Animer des ateliers de rédaction de CV et de préparation aux
+        entretiens
+
+        - Co-organiser le meetup mensuel « Product Chat » à Paris
+      endDate: null
+      url: https://femmesdudigital.fr
+  work:
+    - name: Lumina
+      position: Product Manager Senior
+      startDate: Jan 1, 2021
+      summary: >
+        - Définir et piloter la stratégie produit de la plateforme web et
+        mobile, représentant 120 000 utilisateurs actifs
+
+        - Mettre en place un processus de découverte continue : entretiens
+        utilisateurs, tests d'usage et analyse quantitative
+
+        - Prioriser la roadmap en collaboration avec les équipes tech, design,
+        marketing et commerciales
+
+        - Lancer 8 fonctionnalités majeures et améliorer la rétention de 15 % en
+        18 mois
+
+        - Piloter les OKR trimestriels et présenter les résultats au comité de
+        direction
+      endDate: null
+      keywords:
+        - Roadmap
+        - Découverte produit
+        - Continuous discovery
+        - OKR
+        - A/B testing
+        - Leadership transverse
+      url: https://www.lumina.fr
+    - name: Dataventis
+      position: Product Owner
+      startDate: Mar 1, 2019
+      summary: >
+        - Gérer le backlog produit de la solution d'analyse de données destinée
+        aux PME
+
+        - Rédiger les user stories et les spécifications fonctionnelles en
+        collaboration avec les développeurs
+
+        - Organiser les sprints agiles et animer les cérémonies Scrum : daily,
+        sprint review et rétrospective
+
+        - Accompagner les clients pilotes pour recueillir les retours et
+        améliorer l'expérience utilisateur
+
+        - Contribuer à l'augmentation du taux de déploiement de la solution de
+        20 %
+      endDate: Dec 1, 2020
+      keywords:
+        - Scrum
+        - Backlog
+        - User stories
+        - UX
+        - Pilotage clients
+      url: https://www.dataventis.com
+    - name: Webigo
+      position: Product Manager Junior
+      startDate: Jan 1, 2018
+      summary: >
+        - Participer à la refonte du site e-commerce d'un client majeur du
+        secteur de la mode
+
+        - Réaliser des benchmarkings concurrentiels et analyser les parcours
+        utilisateurs
+
+        - Aider à la rédaction des cahiers des charges et au suivi des recettes
+
+        - Présenter les maquettes aux clients et recueillir leurs retours
+      endDate: Feb 1, 2019
+      keywords:
+        - E-commerce
+        - Parcours utilisateur
+        - Cahier des charges
+        - Recette
+      url: https://www.webigo.fr
+locale:
+  language: fr
+layouts:
+  - engine: latex
+    page:
+      showPageNumbers: true
+      paperSize: a4
+      margins:
+        top: 2.5cm
+        bottom: 2.5cm
+        left: 1.5cm
+        right: 1.5cm
+    template: moderncv-banking
+    typography:
+      fontSize: 11pt
+  - engine: docx
+    page:
+      showPageNumbers: true
+      paperSize: a4
+      margins:
+        top: 2.5cm
+        bottom: 2.5cm
+        left: 1.5cm
+        right: 1.5cm
+    typography:
+      fontSize: 11pt
+      lineSpacing: normal
+  - engine: markdown
+  - engine: html
+    template: calm
+    typography:
+      fontSize: 16px

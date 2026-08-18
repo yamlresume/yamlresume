@@ -1,0 +1,280 @@
+content:
+  basics:
+    name: Lars van den Berg
+    email: lars@vandenberg.dev
+    headline: Softwareontwikkelaar met focus op schaalbare cloudapplicaties
+    phone: +31 6 12345678
+    summary: >
+      - Softwareontwikkelaar met ruim 8 jaar ervaring in het ontwerpen en bouwen
+      van schaalbare webapplicaties
+
+      - Specialisatie in backendontwikkeling met .NET en Node.js, aangevuld met
+      ervaring in React en TypeScript
+
+      - Ervaren met cloudplatforms als Azure en AWS, CI/CD-pipelines en
+      containerisatie met Docker en Kubernetes
+
+      - Gedreven door clean code, testbaarheid en het verbeteren van
+      developmentprocessen
+
+      - Sterke samenwerker in agile teams, met oog voor zowel techniek als
+      bedrijfswaarde
+    url: https://larsvandenberg.dev
+  education:
+    - area: Hbo-ict
+      institution: Hogeschool van Amsterdam
+      degree: Bachelor
+      courses:
+        - Objectgeoriënteerd programmeren
+        - Databases en SQL
+        - Webdevelopment
+        - Software Engineering
+        - Projectmanagement
+        - Netwerken en security
+      endDate: Jul 1, 2015
+      startDate: Sep 1, 2011
+      summary: >
+        - Afstudeerrichting Software Engineering
+
+        - Afstudeerproject: ontwikkelen van een webshop-platform voor een
+        mkb-bedrijf
+
+        - Minor: Mobile Application Development
+      score: "8.2"
+      url: https://www.hva.nl/
+  awards:
+    - awarder: TechNova B.V.
+      title: TechNova Innovatieprijs
+      date: Dec 1, 2023
+      summary: >
+        Toegekend voor het initiatief om de CI/CD-pijplijn te versnellen en de
+        ontwikkelervaring van het team te verbeteren.
+  certificates:
+    - issuer: Microsoft
+      name: "Microsoft Certified: Azure Developer Associate"
+      date: Jun 1, 2022
+      url: https://learn.microsoft.com/en-us/credentials/certifications/azure-developer/
+    - issuer: Amazon Web Services
+      name: AWS Certified Developer - Associate
+      date: Mar 1, 2020
+      url: https://aws.amazon.com/certification/
+  interests:
+    - name: Wielrennen
+      keywords:
+        - Toertochten
+        - Mountainbiken
+    - name: Technologielezingen
+      keywords:
+        - Meetups
+        - Conferenties
+    - name: Fotografie
+      keywords:
+        - Stadsfotografie
+        - Landschappen
+  languages:
+    - fluency: Native or Bilingual Proficiency
+      language: Dutch
+      keywords:
+        - Moedertaal
+    - fluency: Full Professional Proficiency
+      language: English
+      keywords:
+        - Professioneel niveau
+        - C1/C2
+    - fluency: Limited Working Proficiency
+      language: German
+      keywords:
+        - Basisgesprekken
+  location:
+    city: Amsterdam
+    address: Keizersgracht 123
+    country: Netherlands
+    postalCode: 1012 AB
+    region: Noord-Holland
+  profiles:
+    - network: LinkedIn
+      username: larsvandenberg
+      url: https://www.linkedin.com/in/larsvandenberg
+    - network: GitHub
+      username: larsvdb
+      url: https://github.com/larsvdb
+  projects:
+    - name: dotnet-api-starter
+      startDate: Jan 1, 2023
+      summary: |
+        - Opgezet als startpunt voor nieuwe microservices binnen TechNova
+        - Bevat configuratie voor health checks, observability en CI/CD
+        - Voorzien van uitgebreide documentatie en voorbeeld-tests
+      description: Een herbruikbaar template voor schaalbare .NET-web-API's met
+        logging, validatie, JWT-authenticatie en Docker-ondersteuning.
+      keywords:
+        - .NET
+        - Open Source
+        - Docker
+        - RESTful API's
+      url: https://github.com/larsvdb/dotnet-api-starter
+  publications:
+    - name: "Clean Code in .NET: Praktische richtlijnen voor onderhoudbare code"
+      publisher: Medium
+      releaseDate: Apr 1, 2023
+      summary: >
+        - Beschrijft concrete refactoringstechnieken en voorbeelden uit de
+        dagelijkse praktijk
+
+        - Behandelt dependency injection, exception handling en het schrijven
+        van leesbare tests
+
+        - Gebaseerd op ervaringen in agile teams en codebase-migraties
+      url: https://medium.com/@larsvdb/clean-code-in-dotnet-praktische-richtlijnen-voor-onderhoudbare-code
+  skills:
+    - level: Expert
+      name: Backendontwikkeling
+      keywords:
+        - C#
+        - .NET
+        - Node.js
+        - RESTful API's
+        - SQL
+        - Entity Framework
+    - level: Advanced
+      name: Frontendontwikkeling
+      keywords:
+        - React
+        - TypeScript
+        - HTML
+        - CSS
+        - Next.js
+    - level: Advanced
+      name: Cloud & DevOps
+      keywords:
+        - Azure
+        - AWS
+        - Docker
+        - Kubernetes
+        - Terraform
+        - CI/CD
+    - level: Advanced
+      name: Methodieken
+      keywords:
+        - Scrum
+        - Kanban
+        - Clean Code
+        - Test-Driven Development
+  volunteer:
+    - organization: CoderDojo Nederland
+      position: Vrijwilliger en coach
+      startDate: Sep 1, 2019
+      summary: >
+        - Begeleid kinderen en jongeren bij het leren programmeren met Scratch,
+        Python en HTML/CSS
+
+        - Organiseerde maandelijkse workshops en droeg bij aan lesmateriaal
+
+        - Stimuleerde een inclusieve en toegankelijke leeromgeving
+      endDate: Dec 1, 2023
+      url: https://coderdojo.nl
+  work:
+    - name: TechNova B.V.
+      position: Senior Softwareontwikkelaar
+      startDate: Jan 1, 2022
+      summary: >
+        - Ontwerp en implementeer microservices in .NET en Node.js voor een
+        digitaal klantportaal
+
+        - Leid een squad van 4 ontwikkelaars; verantwoordelijk voor code
+        reviews, architectuurkeuzes en kennisoverdracht
+
+        - Introduceerde event-driven architectuur met Azure Service Bus, wat de
+        verwerkingstijd met 40% verminderde
+
+        - Richtte CI/CD-pipelines in met Azure DevOps en geautomatiseerde
+        deployments naar Kubernetes
+
+        - Werk samen met product owners en UX-designers om requirements te
+        vertalen naar technische oplossingen
+      keywords:
+        - Microservices
+        - .NET
+        - Azure
+        - Kubernetes
+        - Event-Driven Architecture
+        - CI/CD
+        - Teamlead
+      url: https://www.technova.nl
+    - name: FinTech Solutions Nederland
+      position: Softwareontwikkelaar
+      startDate: Jul 1, 2018
+      summary: >
+        - Ontwikkelde en onderhield RESTful API's voor een online betaalplatform
+        met meer dan 200.000 gebruikers
+
+        - Werkt in een agile team met tweewekelijkse releases en sprints
+
+        - Implementeerde OAuth 2.0 en PKCE voor veilige authenticatie en
+        autorisatie
+
+        - Schreef unit- en integratietests en verhoogde de testcoverage naar 85%
+
+        - Migreerde on-premise applicaties naar AWS (EC2, S3, RDS)
+      endDate: Dec 31, 2021
+      keywords:
+        - RESTful API's
+        - OAuth 2.0
+        - AWS
+        - Scrum
+        - Testen
+        - C#
+      url: https://www.fintechsolutions.nl
+    - name: WebWijs B.V.
+      position: Junior Softwareontwikkelaar
+      startDate: Aug 1, 2015
+      summary: >
+        - Ontwikkelde responsive websites en webapplicaties met React,
+        JavaScript en PHP
+
+        - Onderhield en breidde een CMS-platform uit voor diverse klanten
+
+        - Optimaliseerde laadtijden en SEO, wat leidde tot betere vindbaarheid
+        bij projecten
+
+        - Nam deel aan dagelijkse stand-ups en sprintplanningen
+      endDate: Jun 30, 2018
+      keywords:
+        - React
+        - JavaScript
+        - PHP
+        - WordPress
+        - SEO
+      url: https://www.webwijs.nl
+locale:
+  language: nl
+layouts:
+  - engine: latex
+    page:
+      showPageNumbers: true
+      paperSize: a4
+      margins:
+        top: 2.5cm
+        bottom: 2.5cm
+        left: 1.5cm
+        right: 1.5cm
+    template: moderncv-banking
+    typography:
+      fontSize: 11pt
+  - engine: docx
+    page:
+      showPageNumbers: true
+      paperSize: a4
+      margins:
+        top: 2.5cm
+        bottom: 2.5cm
+        left: 1.5cm
+        right: 1.5cm
+    typography:
+      fontSize: 11pt
+      lineSpacing: normal
+  - engine: markdown
+  - engine: html
+    template: calm
+    typography:
+      fontSize: 16px

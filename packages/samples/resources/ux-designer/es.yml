@@ -1,0 +1,297 @@
+content:
+  basics:
+    name: Elena Vargas Morales
+    email: elena.vargas@disenoux.es
+    headline: Diseñadora de UX Senior especializada en productos digitales
+    phone: +34 612 345 678
+    summary: >
+      Diseñadora de UX con más de 8 años de experiencia creando experiencias
+      digitales centradas en el usuario para productos SaaS y aplicaciones
+      móviles. Especializada en investigación cualitativa, diseño de interacción
+      y sistemas de diseño escalables.
+
+
+      Apasionada por transformar problemas complejos en soluciones intuitivas
+      mediante metodologías ágiles y prácticas de diseño colaborativo. He
+      liderado equipos multidisciplinarios en entornos internacionales, logrando
+      aumentar la retención de usuarios y mejorar métricas de usabilidad en
+      proyectos de alto impacto.
+    url: https://elenavargas.design
+  education:
+    - area: Diseño de Interacción y Usabilidad
+      institution: Universidad Politécnica de Madrid (UPM)
+      degree: Bachelor
+      courses:
+        - Diseño de Interfaces de Usuario
+        - Psicología Cognitiva
+        - Investigación de Usuarios
+        - Diseño de Interacción
+        - Prototipado y Pruebas
+        - Accesibilidad Web
+        - Visualización de Datos
+      endDate: Jul 1, 2016
+      startDate: Sep 1, 2012
+      summary: >
+        - Formación integral en diseño centrado en el usuario y metodologías de
+        investigación cualitativa
+
+        - Desarrollo de proyectos finales enfocados en la mejora de la
+        accesibilidad digital
+
+        - Participación en talleres interdisciplinarios de innovación
+        tecnológica
+      score: 9.1/10
+      url: https://www.upm.es
+    - area: Diseño de Servicios y Experiencia de Usuario
+      institution: Universidad de Barcelona
+      degree: Master
+      courses:
+        - Estrategia de Diseño
+        - Narrativas Digitales
+        - Ética y Privacidad en UX
+        - Diseño Multidispositivo
+        - Métricas y UX Research
+      endDate: Jun 1, 2018
+      startDate: Oct 1, 2016
+      summary: >
+        - Especialización en diseño de servicios y estrategia de experiencia de
+        usuario
+
+        - Realización de prácticas en consultoras de transformación digital
+
+        - Tesis sobre sistemas de diseño inclusivos en entornos corporativos
+      score: Matrícula de Honor
+      url: https://www.ub.edu
+  awards:
+    - awarder: Asociación Española de Diseño (AED)
+      title: Premio a la Mejor Experiencia de Usuario
+      date: Nov 2022
+      summary: >
+        Reconocimiento al rediseño integral de una plataforma de banca digital
+        que mejoró la accesibilidad y satisfacción del cliente.
+  certificates:
+    - issuer: W3C / Fundación CTIC
+      name: Certificación en Accesibilidad Web (WCAG)
+      date: May 2023
+      url: https://www.w3.org/WAI/
+  interests:
+    - name: Arte y Cultura
+      keywords:
+        - Fotografía
+        - Museos
+        - Arquitectura
+    - name: Tecnología
+      keywords:
+        - Inteligencia Artificial
+        - Realidad Virtual
+        - Gadgets
+  languages:
+    - fluency: Native or Bilingual Proficiency
+      language: Spanish
+      keywords:
+        - Nativo
+    - fluency: Full Professional Proficiency
+      language: English
+      keywords:
+        - TOEIC 950
+        - Negociación
+    - fluency: Limited Working Proficiency
+      language: Catalan
+      keywords:
+        - Comprensión lectora
+  location:
+    city: Madrid
+    address: Calle de Alcalá 45, 2º B
+    country: Spain
+    postalCode: "28014"
+    region: Comunidad de Madrid
+  profiles:
+    - network: LinkedIn
+      username: elenavargasux
+      url: https://linkedin.com/in/elenavargasux
+    - network: Behance
+      username: elenavargas
+      url: https://behance.net/elenavargas
+    - network: Dribbble
+      username: elenavargas
+      url: https://dribbble.com/elenavargas
+  projects:
+    - name: SaludApp Redesign
+      startDate: Jan 1, 2022
+      summary: >
+        - Investigación con médicos y pacientes para redefinir los flujos de
+        consulta y prescripción
+
+        - Creación de un design system accesible conforme a los estándares WCAG
+        2.1 AA
+
+        - Incremento del 40% en la tasa de reserva de citas tras el lanzamiento
+        del nuevo diseño
+      description: Rediseño completo de la app de telemedicina líder en España
+      endDate: Jun 1, 2022
+      keywords:
+        - Telemedicina
+        - WCAG
+        - Health
+        - Design System
+      url: https://saludapp.example.com
+  publications:
+    - name: Diseñando para la diversidad cognitiva en entornos digitales
+      publisher: Revista Iberoamericana de Diseño
+      releaseDate: Mar 2023
+      summary: >
+        Artículo sobre patrones de diseño inclusivo y cómo adaptar interfaces
+        para usuarios con distintas capacidades cognitivas.
+      url: https://revistadiseno.es/articulo/diversidad-cognitiva
+  skills:
+    - level: Expert
+      name: UX Research
+      keywords:
+        - Entrevistas
+        - Encuestas
+        - Testing
+        - Analytics
+        - Heatmaps
+    - level: Expert
+      name: Interaction Design
+      keywords:
+        - Figma
+        - Sketch
+        - Principle
+        - Prototipado
+        - Wireframing
+    - level: Intermediate
+      name: Front-end & Design Ops
+      keywords:
+        - HTML/CSS
+        - Design Tokens
+        - Storybook
+        - Git
+        - Agile
+    - level: Advanced
+      name: Visual Design
+      keywords:
+        - Tipografía
+        - Color
+        - Illustrator
+        - Photoshop
+        - Motion
+  volunteer:
+    - organization: Tecnología para Todos
+      position: Mentora de Diseño UX
+      startDate: Sep 1, 2019
+      summary: >
+        - Mentora voluntaria en un programa de formación para jóvenes en riesgo
+        de exclusión social
+
+        - Diseñé el plan de estudios introductorio de diseño digital y
+        herramientas de prototipado
+
+        - Acompañé a los participantes en la creación de sus primeros portfolios
+        profesionales
+      endDate: Jul 1, 2023
+      url: https://tecnologiaparatodos.org
+  work:
+    - name: InnovaDigital
+      position: Lead UX Designer
+      startDate: Mar 1, 2021
+      summary: >
+        - Lidero un equipo de 6 diseñadores definiendo la estrategia de UX para
+        productos fintech y salud digital
+
+        - Diseño y valido arquitecturas de información mediante investigación
+        con usuarios y pruebas de usabilidad
+
+        - Implemento un sistema de diseño unificado que redujo el tiempo de
+        desarrollo en un 30%
+
+        - Colaboro estrechamente con producto e ingeniería para alinear
+        objetivos de negocio y necesidades del usuario
+
+        - Presento hallazgos de research a stakeholders ejecutivos para impulsar
+        decisiones basadas en datos
+      keywords:
+        - Liderazgo
+        - Fintech
+        - Design Systems
+        - Research
+        - Strategy
+      url: https://innovadigital.es
+    - name: PixelCrafters
+      position: UX Designer Senior
+      startDate: Sep 1, 2018
+      summary: >
+        - Rediseñé la experiencia de onboarding de una app de ecommerce,
+        aumentando la conversión en un 25%
+
+        - Condujé entrevistas con usuarios, mapas de empatía y journey maps para
+        identificar puntos de dolor críticos
+
+        - Creé prototipos de alta fidelidad en Figma y coordiné pruebas de
+        usabilidad remotas con más de 50 participantes
+
+        - Trabajé con desarrolladores frontend para garantizar la fidelidad
+        visual y funcional de los diseños entregados
+      endDate: Feb 1, 2021
+      keywords:
+        - Ecommerce
+        - Figma
+        - Usability
+        - Prototyping
+        - Onboarding
+      url: https://pixelcrafters.es
+    - name: Estudio Creativo Nexo
+      position: UX/UI Designer
+      startDate: Oct 1, 2016
+      summary: >
+        - Diseñé interfaces web y móviles para clientes del sector turístico y
+        educativo
+
+        - Realicé auditorías heurísticas y análisis comparativos para proponer
+        mejoras basadas en buenas prácticas
+
+        - Colaboré en la creación de guías de estilo y componentes reutilizables
+        para agilizar la producción
+
+        - Facilité talleres de cocreación con clientes para alinear expectativas
+        y definir requisitos funcionales
+      endDate: Aug 1, 2018
+      keywords:
+        - UI Design
+        - Heuristics
+        - Workshops
+        - Tourism
+        - Mobile
+      url: https://nexoestudio.com
+locale:
+  language: es
+layouts:
+  - engine: latex
+    page:
+      showPageNumbers: true
+      paperSize: a4
+      margins:
+        top: 2.5cm
+        bottom: 2.5cm
+        left: 1.5cm
+        right: 1.5cm
+    template: moderncv-banking
+    typography:
+      fontSize: 11pt
+  - engine: docx
+    page:
+      showPageNumbers: true
+      paperSize: a4
+      margins:
+        top: 2.5cm
+        bottom: 2.5cm
+        left: 1.5cm
+        right: 1.5cm
+    typography:
+      fontSize: 11pt
+      lineSpacing: normal
+  - engine: markdown
+  - engine: html
+    template: calm
+    typography:
+      fontSize: 16px

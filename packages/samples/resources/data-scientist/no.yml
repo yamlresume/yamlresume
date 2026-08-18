@@ -1,0 +1,267 @@
+content:
+  basics:
+    name: Erik Solheim
+    email: erik.solheim@example.com
+    headline: Data Scientist med fokus på prediktiv analyse og maskinlæring
+    phone: +47 912 34 567
+    summary: >
+      Data Scientist med 5 års erfaring fra å utvikle og drifte prediktive
+      modeller i produksjon. Sterk kompetanse innen maskinlæring, statistisk
+      analyse og datavisualisering.
+
+
+      - Har levert ML-løsninger for energibransjen og finanssektoren, fra idé
+      til produksjon
+
+      - Erfaring med Python, PyTorch, TensorFlow og skyplattformer som AWS og
+      Azure
+
+      - God på å kommunisere innsikt til ikke-tekniske interessenter
+
+      - Opptatt av ansvarlig AI, robust modellvalidering og god datakvalitet
+    url: https://eriksolheim.no
+  education:
+    - area: Datavitenskap
+      institution: Universitetet i Oslo
+      degree: Master
+      courses:
+        - Avansert maskinlæring
+        - Statistisk læringsteori
+        - Big Data-behandling
+        - Dataanalyse og visualisering
+        - Etikk og personvern i AI
+      endDate: Jun 15, 2020
+      startDate: Aug 15, 2018
+      summary: >
+        - Gjennomførte masteroppgave om prediktiv modellering av energiforbruk i
+        smarthus
+
+        - Jobbet med moderne teknikker innen dyp læring, tidsserieanalyse og
+        modellvalidering
+
+        - Utviklet solid kompetanse i Python, R og distributed computing
+      score: A / 5.0
+      url: https://www.uio.no/
+    - area: Matematikk og statistikk
+      institution: Norges teknisk-naturvitenskapelige universitet (NTNU)
+      degree: Bachelor
+      courses:
+        - Lineær algebra
+        - Matematisk analyse
+        - Statistisk teori
+        - Sannsynlighetsregning
+        - Regresjonsanalyse
+      endDate: Jun 10, 2018
+      startDate: Aug 14, 2015
+      summary: >
+        - Ga grunnlag for videre spesialisering innen data science og
+        maskinlæring
+
+        - Utviklet analytisk og kvantitativ tankegang
+
+        - Gjennomførte statistiske prosjekter i samarbeid med lokale bedrifter
+      score: B / 4.0
+      url: https://www.ntnu.no/
+  awards:
+    - awarder: Universitetet i Oslo
+      title: Årets masteroppgave i informatikk
+      date: Jun 1, 2020
+      summary: >
+        Tildelt for masteroppgaven som viste særlig høy faglig kvalitet og
+        praktisk relevans innen anvendt maskinlæring.
+  certificates:
+    - issuer: Amazon Web Services
+      name: AWS Certified Machine Learning – Specialty
+      date: Oct 15, 2022
+      url: https://aws.amazon.com/certification/
+    - issuer: Google
+      name: TensorFlow Developer Certificate
+      date: Mar 1, 2023
+      url: https://www.tensorflow.org/certificate
+  interests:
+    - name: Friluftsliv
+      keywords:
+        - Fjellvandring
+        - Ski
+        - Kajakk
+        - Sykkel
+    - name: Teknologi og samfunn
+      keywords:
+        - Ansvarlig AI
+        - Dataprivatliv
+        - Åpne data
+  languages:
+    - fluency: Native or Bilingual Proficiency
+      language: Norwegian
+      keywords:
+        - Bokmål
+    - fluency: Full Professional Proficiency
+      language: English
+      keywords:
+        - IELTS 7.5
+  location:
+    city: Oslo
+    address: Storgata 12
+    country: Norway
+    postalCode: "0184"
+    region: Oslo
+  profiles:
+    - network: LinkedIn
+      username: eriksolheim
+      url: https://www.linkedin.com/in/eriksolheim
+    - network: GitHub
+      username: eriksolheim
+      url: https://github.com/eriksolheim
+  projects:
+    - name: Energiforbruksprediksjon for boliger
+      startDate: Jan 1, 2023
+      summary: |
+        - Bygget et end-to-end-prosjekt fra datainnsamling til modelltjeneste
+        - Eksperimenterte med tidsseriemodeller som ARIMA, XGBoost og LSTM
+        - Leverte en interaktiv dashboard-prototype for å utforske prediksjoner
+      description: Utviklet en modell som predikerer strømforbruk basert på værdata og
+        historiske målerdata.
+      endDate: May 15, 2023
+      keywords:
+        - Tidsserieanalyse
+        - Python
+        - XGBoost
+        - Dashboard
+      url: https://github.com/eriksolheim/energy-forecast
+  publications:
+    - name: Prediktiv modellering av energiforbruk i smarthus
+      publisher: IEEE Xplore
+      releaseDate: Sep 1, 2023
+      summary: >
+        - Presenterer en sammenlignende studie av maskinlæringsmodeller for
+        korttidsprognoser av strømforbruk
+
+        - Viser at gradient boosting og nevrale nettverk gir best
+        prediksjonsnøyaktighet på åpne datasett
+
+        - Diskuterer utfordringer knyttet til generalisering og
+        modellforklarbarhet
+      url: https://doi.org/10.1109/ENERGY52055.2023.00012
+  skills:
+    - level: Expert
+      name: Maskinlæring
+      keywords:
+        - Python
+        - PyTorch
+        - TensorFlow
+        - Scikit-learn
+        - XGBoost
+        - LightGBM
+    - level: Advanced
+      name: Statistisk analyse
+      keywords:
+        - Hypotesetesting
+        - Regresjon
+        - Tidsserieanalyse
+        - Kausal inferens
+    - level: Advanced
+      name: Datavisualisering
+      keywords:
+        - Matplotlib
+        - Plotly
+        - Seaborn
+        - Power BI
+    - level: Advanced
+      name: Programmering
+      keywords:
+        - Python
+        - SQL
+        - R
+        - Git
+        - Bash
+    - level: Intermediate
+      name: Sky og MLOps
+      keywords:
+        - AWS
+        - Azure
+        - Docker
+        - Kubernetes
+        - MLflow
+  volunteer:
+    - organization: Oslo Data Science Meetup
+      position: Frivillig organisator og foredragsholder
+      startDate: Jan 1, 2021
+      summary: >
+        - Bidro til å arrangere månedlige møter og workshops for data
+        science-miljøet i Oslo
+
+        - Holdt presentasjoner om tidsserieanalyse og MLOps i praksis
+
+        - Sørget for et inkluderende og læringsorientert fagfellesskap
+      endDate: Dec 31, 2023
+      url: https://www.meetup.com/Oslo-Data-Science-Meetup/
+  work:
+    - name: Nordic Energy Analytics AS
+      position: Data Scientist
+      startDate: Sep 1, 2022
+      summary: >
+        - Utvikler prediktive modeller for energiforbruk og produksjon basert på
+        værdata og sensordata
+
+        - Drifter ML-løsninger i produksjon med fokus på MLOps, overvåking og
+        modellvedlikehold
+
+        - Samarbeider tett med produktteam og kunder for å oversette
+        forretningsbehov til analyseoppgaver
+
+        - Innfører eksperimentstyring og versjonering av datasett og modeller
+      keywords:
+        - Prediktiv modellering
+        - MLOps
+        - Python
+        - XGBoost
+        - Datavarehus
+      url: https://www.nordicenergyanalytics.no
+    - name: Fintech Solutions Norge AS
+      position: Dataanalytiker og ML-ingeniør
+      startDate: Jun 1, 2020
+      summary: |
+        - Bygget modeller for kredittrisiko og kundesegmentering
+        - Visualiserte innsikt i dashbord for ledelse og forretningsenheter
+        - Forbedret datakvalitet og etablerte automatiserte dataflyter
+        - Bidro til utvikling av internt rammeverk for A/B-testing
+      endDate: Aug 31, 2022
+      keywords:
+        - Risikomodellering
+        - A/B-testing
+        - SQL
+        - Power BI
+        - Scikit-learn
+      url: https://www.fintechsolutions.no
+locale:
+  language: no
+layouts:
+  - engine: latex
+    page:
+      showPageNumbers: true
+      paperSize: a4
+      margins:
+        top: 2.5cm
+        bottom: 2.5cm
+        left: 1.5cm
+        right: 1.5cm
+    template: moderncv-banking
+    typography:
+      fontSize: 11pt
+  - engine: docx
+    page:
+      showPageNumbers: true
+      paperSize: a4
+      margins:
+        top: 2.5cm
+        bottom: 2.5cm
+        left: 1.5cm
+        right: 1.5cm
+    typography:
+      fontSize: 11pt
+      lineSpacing: normal
+  - engine: markdown
+  - engine: html
+    template: calm
+    typography:
+      fontSize: 16px

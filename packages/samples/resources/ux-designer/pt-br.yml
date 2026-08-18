@@ -1,0 +1,289 @@
+content:
+  basics:
+    name: Ana Carolina Mendes
+    email: ana.mendes@email.com
+    headline: UX Designer Senior | Estratégia de Produto e Design de Interação
+    phone: +55 11 98765-4321
+    summary: >
+      Designer de experiência do usuário com mais de 6 anos de atuação em
+      produtos digitais complexos, especializada em transformar dados
+      qualitativos e quantitativos em soluções centradas no usuário. Combina
+      estratégia de negócios com práticas de design thinking para criar
+      interfaces intuitivas e acessíveis.
+
+
+      Lidera processos de discovery e delivery em times multidisciplinares,
+      conduzindo pesquisas, workshops de cocriação e testes de usabilidade que
+      resultaram em aumento de 35% na conversão de fluxos críticos em produtos
+      SaaS e fintech.
+    url: https://anacarolinaux.com.br
+  education:
+    - area: Design
+      institution: Universidade de São Paulo
+      degree: Bachelor
+      courses:
+        - Design de Interação
+        - Ergonomia Cognitiva e Usabilidade
+        - Métodos de Pesquisa Qualitativa
+        - Tipografia e Informação
+        - Programação para Designers
+        - Semiótica e Comunicação Visual
+      endDate: Dec 1, 2017
+      startDate: Mar 1, 2013
+      summary: >
+        - Desenvolveu projeto de conclusão de curso sobre acessibilidade digital
+        em serviços bancários mobile
+
+        - Participou do grupo de pesquisa em Interfaces Tangíveis e Experiência
+        do Usuário
+
+        - Recebeu menção honrosa no Salão de Criação USP por projeto de redesign
+        de sistema de transporte público
+      score: "8.9"
+      url: https://www.usp.br
+  awards:
+    - awarder: Associação Brasileira de Design de Interação
+      title: Melhor Case de UX em Fintech
+      date: Nov 2023
+      summary: >
+        Reconhecimento pelo redesign do fluxo de transferências que aumentou a
+        confiança dos usuários e reduziu erros operacionais em 25%.
+  certificates:
+    - issuer: Google via Coursera
+      name: Google UX Design Professional Certificate
+      date: Aug 2021
+      url: https://www.coursera.org/professional-certificates/google-ux-design
+    - issuer: Nielsen Norman Group
+      name: UX Master Certification
+      date: Mar 2023
+      url: https://www.nngroup.com/ux-master-certification/
+  interests:
+    - name: Arte e Cultura
+      keywords:
+        - Museus
+        - Fotografia
+        - Cinema independente
+        - Arte urbana
+    - name: Comunidade e Educação
+      keywords:
+        - Mentoria
+        - Palestras
+        - Workshops
+        - Design inclusivo
+  languages:
+    - fluency: Native or Bilingual Proficiency
+      language: Portuguese
+      keywords:
+        - Nativo
+    - fluency: Full Professional Proficiency
+      language: English
+      keywords:
+        - TOEFL 110
+        - Fluente corporativo
+    - fluency: Limited Working Proficiency
+      language: Spanish
+      keywords:
+        - Comunicação básica
+  location:
+    city: São Paulo
+    address: Rua Augusta, 1500, Apto 42
+    country: Brazil
+    postalCode: 01305-100
+    region: São Paulo
+  profiles:
+    - network: LinkedIn
+      username: anacarolinamendesux
+      url: https://linkedin.com/in/anacarolinamendesux
+    - network: Behance
+      username: anacarolinamendes
+      url: https://behance.net/anacarolinamendes
+    - network: Dribbble
+      username: anacarolinamendes
+      url: https://dribbble.com/anacarolinamendes
+  projects:
+    - name: Redesign App Saúde Conectada
+      startDate: Jan 2022
+      summary: >
+        - Conduziu pesquisa com 40 pacientes e 15 profissionais de saúde para
+        mapear dores no agendamento de consultas
+
+        - Projetou nova arquitetura de informação e fluxo de agendamento,
+        reduzindo etapas em 50%
+
+        - Desenvolveu protótipo navegável em alta fidelidade validado em testes
+        de usabilidade com nota SUS de 85
+      description: Redesign completo de aplicativo de telemedicina para o SUS
+      endDate: Jun 2022
+      keywords:
+        - Telemedicina
+        - Acessibilidade
+        - Pesquisa de Campo
+        - Figma
+      url: https://anacarolinaux.com.br/saude-conectada
+    - name: Design System Orbit
+      startDate: Jul 2022
+      summary: >
+        - Estruturou biblioteca de componentes reutilizáveis em Figma com tokens
+        de design e documentação interativa
+
+        - Definiu padrões de acessibilidade e responsividade adotados por 6
+        squads de produto
+
+        - Reduziu tempo de handoff entre design e desenvolvimento em
+        aproximadamente 20 horas por sprint
+      description: Sistema de componentes escalável para plataforma SaaS B2B
+      endDate: Dec 2022
+      keywords:
+        - Design System
+        - Tokens de Design
+        - Documentação
+        - Escalabilidade
+      url: https://anacarolinaux.com.br/orbit
+  skills:
+    - level: Expert
+      name: Pesquisa e Estratégia em UX
+      keywords:
+        - User Research
+        - Testes de Usabilidade
+        - Design Thinking
+        - Métricas de UX
+        - Personas
+    - level: Expert
+      name: Design de Interface e Prototipagem
+      keywords:
+        - Figma
+        - Sketch
+        - Adobe XD
+        - Prototipagem
+        - Design Systems
+    - level: Intermediate
+      name: Desenvolvimento Front-end
+      keywords:
+        - HTML5
+        - CSS3
+        - JavaScript
+        - React básico
+        - Tailwind CSS
+    - level: Advanced
+      name: Facilitação e Liderança
+      keywords:
+        - Workshops
+        - Design Sprint
+        - Colaboração
+        - Mentoria
+        - Stakeholder Management
+  volunteer:
+    - organization: UX para Todes
+      position: Mentora de Carreira
+      startDate: Mar 2022
+      summary: >
+        - Realiza mentorias mensais para profissionais em transição de carreira
+        para UX
+
+        - Facilita oficinas gratuitas de introdução ao design de experiência do
+        usuário em comunidades periféricas
+
+        - Colabora na curadoria de conteúdos sobre diversidade e inclusão no
+        design brasileiro
+      url: https://uxparatodes.org.br
+  work:
+    - name: InovaTech Soluções
+      position: UX Designer Senior
+      startDate: Feb 1, 2022
+      summary: >
+        - Lidera o chapter de UX no squad de contas digitais, definindo o design
+        system e padrões de acessibilidade WCAG 2.1
+
+        - Conduz pesquisas exploratórias e avaliativas com mais de 50 usuários
+        por sprint, gerando insights para roadmap de produto
+
+        - Redesenhou o fluxo de onboarding reduzindo o tempo de cadastro em 40%
+        e aumentando a taxa de conclusão em 28%
+
+        - Facilita workshops de discovery e ideação com stakeholders de
+        negócios, engenharia e suporte ao cliente
+      keywords:
+        - Design System
+        - Acessibilidade
+        - Pesquisa em UX
+        - Figma
+        - Facilitação
+      url: https://inovatech.com.br
+    - name: Agência Pixel Lab
+      position: UX Designer Pleno
+      startDate: Jun 1, 2019
+      summary: >
+        - Atuou em projetos de transformação digital para clientes dos setores
+        de saúde, educação e varejo
+
+        - Criou protótipos de alta fidelidade e mapas de jornada do usuário para
+        validar hipóteses antes do desenvolvimento
+
+        - Implementou processo de testes de usabilidade remoto, reduzindo custos
+        de pesquisa em 30%
+
+        - Colaborou com desenvolvedores front-end para garantir fidelidade
+        visual e comportamental das entregas
+      endDate: Jan 1, 2022
+      keywords:
+        - Prototipagem
+        - Jornada do Usuário
+        - Testes de Usabilidade
+        - Design Responsivo
+        - HTML/CSS
+      url: https://pixelab.com.br
+    - name: Estúdio Criação Digital
+      position: Estagiária de UX/UI
+      startDate: Jan 1, 2018
+      summary: >
+        - Auxiliou na criação de wireframes e fluxos de navegação para
+        aplicativos mobile e plataformas web
+
+        - Realizou benchmarkings de mercado e análises heurísticas de interfaces
+        concorrentes
+
+        - Apoiou a equipe na documentação de style guides e handoff para
+        desenvolvimento
+
+        - Participou de entrevistas com usuários e síntese de dados em personas
+        e mapas de empatia
+      endDate: May 1, 2019
+      keywords:
+        - Wireframing
+        - Análise Heurística
+        - Personas
+        - Handoff
+        - Benchmarking
+      url: https://estudiocriacaodigital.com.br
+locale:
+  language: pt-br
+layouts:
+  - engine: latex
+    page:
+      showPageNumbers: true
+      paperSize: a4
+      margins:
+        top: 2.5cm
+        bottom: 2.5cm
+        left: 1.5cm
+        right: 1.5cm
+    template: moderncv-banking
+    typography:
+      fontSize: 11pt
+  - engine: docx
+    page:
+      showPageNumbers: true
+      paperSize: a4
+      margins:
+        top: 2.5cm
+        bottom: 2.5cm
+        left: 1.5cm
+        right: 1.5cm
+    typography:
+      fontSize: 11pt
+      lineSpacing: normal
+  - engine: markdown
+  - engine: html
+    template: calm
+    typography:
+      fontSize: 16px

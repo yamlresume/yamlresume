@@ -1,0 +1,310 @@
+content:
+  basics:
+    name: Claire Moreau
+    email: claire.moreau@proton.me
+    headline: Ingénieure logicielle full-stack passionnée par les systèmes distribués
+    phone: +33 6 12 34 56 78
+    summary: >
+      - Ingénieure logicielle full-stack avec plus de 6 ans d'expérience dans la
+      conception d'applications web scalables
+
+      - Passionnée par les systèmes distribués, l'observabilité et les
+      architectures cloud natives
+
+      - Habituée aux environnements agiles et à la collaboration avec des
+      équipes produit, design et ops
+
+      - Attachée à la qualité du code, au partage des connaissances et à
+      l'accompagnement des développeurs juniors
+    url: https://clairemoreau.dev
+  education:
+    - area: Ingénierie logicielle et systèmes distribués
+      institution: Télécom Paris
+      degree: Master
+      courses:
+        - Programmation avancée en C++ et Java
+        - Architectures logicielles et conception orientée objet
+        - Systèmes distribués et tolérance aux pannes
+        - Bases de données avancées et entrepôts de données
+        - Génie logiciel et méthodes agiles
+        - "Projet de fin d'études : supervision d'infrastructures cloud"
+      endDate: 2018-07-01
+      startDate: 2016-09-01
+      summary: >
+        - Acquisition de solides compétences en conception et en développement
+        d'applications distribuées
+
+        - Travail sur des projets de groupe appliqués à des cas réels
+        d'entreprises partenaires
+
+        - Réalisation d'un mémoire sur l'observabilité des architectures
+        microservices
+      score: 3.7/4.0
+      url: https://www.telecom-paris.fr/
+    - area: Informatique
+      institution: Université de Rennes 1
+      degree: Bachelor
+      courses:
+        - Algorithmique et structures de données
+        - Programmation orientée objet en Java
+        - Introduction aux bases de données relationnelles
+        - Systèmes d'exploitation
+      endDate: 2016-06-30
+      startDate: 2015-09-01
+      summary: >
+        - Formation généraliste en informatique avec une forte composante
+        pratique
+
+        - Projet de fin de licence : développement d'une application de gestion
+        de bibliothèque
+      score: 3.5/4.0
+      url: https://www.univ-rennes1.fr/
+  awards:
+    - awarder: Paris Open Source Summit
+      title: Prix de l'innovation open source
+      date: 2022-06-23
+      summary: >
+        - Récompense pour la conception de la plateforme d'observabilité
+        TraceFlow et sa contribution à l'écosystème open source.
+  certificates:
+    - issuer: Amazon Web Services
+      name: AWS Certified Solutions Architect – Associate
+      date: 2021-06-10
+      url: https://aws.amazon.com/verification/
+  interests:
+    - name: Randonnée
+      keywords:
+        - Alpes
+        - Sentiers de grande randonnée
+    - name: Photographie
+      keywords:
+        - Paysage
+        - Retouche numérique
+    - name: Open source
+      keywords:
+        - Linux
+        - Communautés
+        - DIY
+  languages:
+    - fluency: Native or Bilingual Proficiency
+      language: French
+      keywords:
+        - Langue maternelle
+    - fluency: Full Professional Proficiency
+      language: English
+      keywords:
+        - TOEIC 950
+        - Rédaction technique
+  location:
+    city: Paris
+    address: 12, rue de la Roquette
+    country: France
+    postalCode: "75011"
+    region: Île-de-France
+  profiles:
+    - network: GitHub
+      username: clairemoreau
+      url: https://github.com/clairemoreau
+    - network: LinkedIn
+      username: claire-moreau
+      url: https://www.linkedin.com/in/claire-moreau
+  projects:
+    - name: TraceFlow
+      startDate: 2023-04-01
+      summary: >
+        - Collecte et visualisation de métriques, logs et traces en temps réel
+
+        - Interface web développée avec React et TypeScript
+
+        - Agent de collecte léger en Go, configurable par simple fichier YAML
+
+        - Export des données au format OpenTelemetry et intégration avec
+        Prometheus
+      description: Plateforme open source d'observabilité pour applications distribuées
+      keywords:
+        - Observabilité
+        - OpenTelemetry
+        - Go
+        - TypeScript
+      url: https://traceflow.io
+    - name: OpenPlanner
+      startDate: 2020-02-01
+      summary: >
+        - Développement d'une progressive web app avec React, Node.js et
+        PostgreSQL
+
+        - Synchronisation collaborative des plannings via WebSocket
+
+        - Authentification via OAuth2 et gestion fine des rôles
+
+        - Déploiement automatisé sur une instance Kubernetes légère
+      description: Application de gestion de planning pour associations et petites équipes
+      endDate: 2021-01-31
+      keywords:
+        - PWA
+        - WebSocket
+        - OAuth2
+        - Kubernetes
+      url: https://openplanner.fr
+  publications:
+    - name: Observabilité des architectures microservices avec OpenTelemetry
+      publisher: Revue Informatique & Industries
+      releaseDate: 2022-12-15
+      summary: >
+        - Article technique présentant les bonnes pratiques pour instrumenter
+        une plateforme cloud native.
+
+        - Retour d'expérience sur l'adoption d'OpenTelemetry dans une équipe de
+        15 développeurs.
+
+        - Méthodologie pour corréler métriques, logs et traces sans dégrader les
+        performances.
+      url: https://doi.org/10.1000/xyz123
+  skills:
+    - level: Expert
+      name: Développement full-stack
+      keywords:
+        - JavaScript
+        - TypeScript
+        - React
+        - Node.js
+        - GraphQL
+        - PostgreSQL
+    - level: Advanced
+      name: Architecture logicielle
+      keywords:
+        - Microservices
+        - Docker
+        - Kubernetes
+        - Kafka
+        - API REST
+        - CI/CD
+    - level: Intermediate
+      name: Gestion de projet agile
+      keywords:
+        - Scrum
+        - Kanban
+        - Jira
+        - Méthodes agiles
+  volunteer:
+    - organization: Association Les Débrouillards du Numérique
+      position: Mentor bénévole
+      startDate: 2019-01-01
+      summary: >
+        - Accompagnement d'étudiants issus de milieux éloignés du numérique dans
+        la découverte du code
+
+        - Animation d'ateliers hebdomadaires sur la création de pages web et de
+        petits jeux en Python
+
+        - Participation à l'organisation de deux événements 'coding goûter' par
+        an
+      endDate: 2023-12-31
+      url: https://debrouillards-numerique.fr
+  work:
+    - name: Avantiotech
+      position: Ingénieure logicielle full-stack
+      startDate: 2022-03-01
+      summary: >
+        - Conception et développement d'une plateforme SaaS de gestion
+        documentaire utilisée par plus de 200 000 utilisateurs
+
+        - Refonte progressive d'un monolithe en microservices avec Node.js,
+        Kafka et PostgreSQL
+
+        - Mise en place d'une chaîne CI/CD complète avec GitHub Actions et Argo
+        CD, réduisant le temps de déploiement de 45 %
+
+        - Encadrement de deux développeurs juniors et animation des rituels
+        agiles
+
+        - Collaboration étroite avec les équipes produit et design pour affiner
+        les spécifications techniques
+      endDate: null
+      keywords:
+        - Node.js
+        - TypeScript
+        - PostgreSQL
+        - Kafka
+        - Kubernetes
+        - CI/CD
+        - Mentorat
+      url: https://avantiotech.fr
+    - name: Sylveo
+      position: Développeuse full-stack
+      startDate: 2019-09-01
+      summary: >
+        - Développement d'API REST et GraphQL en TypeScript pour des
+        applications web et mobiles
+
+        - Contribution à la création d'une bibliothèque de composants React
+        réutilisables
+
+        - Optimisation des requêtes PostgreSQL et mise en place de mesures de
+        performance réduisant le temps de réponse de 30 %
+
+        - Participation aux revues de code, aux tests de charge avec k6 et aux
+        audits de sécurité
+      endDate: 2022-02-28
+      keywords:
+        - React
+        - GraphQL
+        - API REST
+        - Performance
+        - Sécurité
+        - Agile
+      url: https://sylveo.io
+    - name: WebAtlas
+      position: Développeuse web junior
+      startDate: 2018-01-15
+      summary: >
+        - Développement de sites vitrines et d'applications internes en PHP et
+        JavaScript
+
+        - Intégration de maquettes Figma et mise en place de tests d'acceptation
+        avec Cypress
+
+        - Maintenance corrective et évolutive de plusieurs outils métiers
+
+        - Rédaction de documentations techniques et de guides de démarrage pour
+        l'équipe
+      endDate: 2019-08-31
+      keywords:
+        - PHP
+        - JavaScript
+        - Cypress
+        - Figma
+        - Maintenance
+      url: https://webatlas.fr
+locale:
+  language: fr
+layouts:
+  - engine: latex
+    page:
+      showPageNumbers: true
+      paperSize: a4
+      margins:
+        top: 2.5cm
+        bottom: 2.5cm
+        left: 1.5cm
+        right: 1.5cm
+    template: moderncv-banking
+    typography:
+      fontSize: 11pt
+  - engine: docx
+    page:
+      showPageNumbers: true
+      paperSize: a4
+      margins:
+        top: 2.5cm
+        bottom: 2.5cm
+        left: 1.5cm
+        right: 1.5cm
+    typography:
+      fontSize: 11pt
+      lineSpacing: normal
+  - engine: markdown
+  - engine: html
+    template: calm
+    typography:
+      fontSize: 16px

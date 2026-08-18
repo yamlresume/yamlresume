@@ -1,0 +1,278 @@
+content:
+  basics:
+    name: Eva van den Berg
+    email: eva.vandenberg@designmail.nl
+    headline: Senior UX Designer gespecialiseerd in design systems en toegankelijkheid
+    phone: +31 6 2847 1936
+    summary: >
+      Gepassioneerde UX Designer met meer dan 7 jaar ervaring in het ontwerpen
+      van digitale producten die gebruikers én bedrijven vooruithelpen. Ik
+      combineer diepgaand gebruikersonderzoek met een sterk visueel
+      ontwerpvermogen om intuïtieve, toegankelijke en schaalbare ervaringen te
+      creëren.
+
+
+      Ervaring in het leiden van design teams en het opzetten van design systems
+      binnen agile organisaties. Sterk in het overbruggen van de kloof tussen
+      ontwerp en ontwikkeling door middel van prototyping en heldere
+      documentatie.
+    url: https://evavandenberg.nl
+  education:
+    - area: Communicatie- en Multimediadesign
+      institution: Hogeschool van Amsterdam
+      degree: Bachelor
+      courses:
+        - Interactieontwerp
+        - Gebruikersonderzoek
+        - Visual Interface Design
+        - Design Thinking
+        - Prototyping
+      endDate: Jul 1, 2016
+      startDate: Sep 1, 2012
+      summary: >
+        - Verdiept in mens-computer interactie, visuele communicatie en
+        gebruikersonderzoeksmethoden
+
+        - Afgestudeerd met een uitstekend resultaat op een project gericht op
+        zorgtechnologie en toegankelijkheid
+      score: "8.2"
+      url: https://www.hva.nl/
+  awards:
+    - awarder: Dutch Interactive Awards
+      title: UX Design Award
+      date: May 2023
+      summary: >
+        Erkenning voor het ontwerpen van het meest gebruiksvriendelijke
+        B2B-platform binnen de financiële dienstverlening
+  certificates:
+    - issuer: UX Academy Nederland
+      name: Gebruikersonderzoek Masterclass
+      date: Nov 2022
+      url: https://uxacademynl.nl/certificaat
+  interests:
+    - name: Kunst & Cultuur
+      keywords:
+        - Musea
+        - Moderne kunst
+        - Fotografie
+    - name: Sport
+      keywords:
+        - Hardlopen
+        - Yoga
+        - Wandelen
+  languages:
+    - fluency: Native or Bilingual Proficiency
+      language: Dutch
+      keywords:
+        - Moedertaal
+    - fluency: Full Professional Proficiency
+      language: English
+      keywords:
+        - Zakelijk vloeiend
+    - fluency: Limited Working Proficiency
+      language: German
+      keywords:
+        - Gespreksniveau
+  location:
+    city: Amsterdam
+    address: Keizersgracht 456
+    country: Netherlands
+    postalCode: 1016 EJ
+    region: Noord-Holland
+  profiles:
+    - network: LinkedIn
+      username: evavandenberg
+      url: https://linkedin.com/in/evavandenberg
+    - network: Behance
+      username: evavandenberg
+      url: https://behance.net/evavandenberg
+  projects:
+    - name: ZorgApp Redesign
+      startDate: Jan 2022
+      summary: >
+        - Uitgevoerd diepgaand veldonderzoek onder thuiszorgmedewerkers om
+        pijnpunten in de bestaande app in kaart te brengen
+
+        - Ontworpen een intuïtief nieuw informatiearchitectuur dat de
+        planningstijd significant verminderde
+
+        - Gebouwd een schaalbaar componentensysteem in Figma dat de consistentie
+        over iOS en Android waarborgde
+
+        - Getest met 12 eindgebruikers en gevalideerd dat de nieuwe interface de
+        foutmarge bij het invoeren van diensten met 40% verlaagde
+      description: Complete herontwerp van een zorgplanning app voor thuiszorgmedewerkers
+      endDate: Jun 2022
+      keywords:
+        - Zorg
+        - Mobiel
+        - Redesign
+        - Toegankelijkheid
+      url: https://evavandenberg.nl/project/zorgapp
+  publications:
+    - name: Het belang van toegankelijkheid in mobiele apps
+      publisher: UX Collective Nederland
+      releaseDate: Mar 2023
+      summary: >
+        - Beschrijft praktische methoden om WCAG 2.1-richtlijnen toe te passen
+        in native iOS- en Android-applicaties
+
+        - Bespreekt veelgemaakte fouten en biedt concrete oplossingen voor
+        ontwerpers en ontwikkelaars
+      url: https://uxcollective.nl/toegankelijkheid-mobiel
+  skills:
+    - level: Expert
+      name: UX Research
+      keywords:
+        - Interviews
+        - Usability Testing
+        - Personas
+        - Journey Mapping
+        - Analytics
+    - level: Expert
+      name: UI Design & Prototyping
+      keywords:
+        - Figma
+        - Sketch
+        - Adobe XD
+        - Prototyping
+        - Micro-interactions
+    - level: Advanced
+      name: Design Systems
+      keywords:
+        - Component Libraries
+        - Style Guides
+        - Tokens
+        - Documentation
+    - level: Intermediate
+      name: Frontend Development
+      keywords:
+        - HTML
+        - CSS
+        - JavaScript
+        - React
+        - Accessibility
+    - level: Intermediate
+      name: Project Management
+      keywords:
+        - Agile
+        - Scrum
+        - Jira
+        - Miro
+        - Workshop Facilitation
+  volunteer:
+    - organization: Stichting Digitaal Erfgoed
+      position: UX Consultant
+      startDate: Feb 2020
+      summary: >
+        - Adviseer non-profitorganisaties over het verbeteren van de digitale
+        gebruikerservaring van hun online platforms
+
+        - Ontwikkelde gratis wireframes en prototypes voor culturele
+        erfgoedprojecten met een beperkt budget
+
+        - Gaf workshops over toegankelijkheid en inclusief ontwerp aan
+        vrijwilligers en medewerkers
+      url: https://digitaalerfgoed.nl
+  work:
+    - name: CleverCode B.V.
+      position: Senior UX Designer
+      startDate: Mar 1, 2021
+      summary: >
+        - Ontwikkelde en implementeerde een compleet design system dat de
+        time-to-market voor nieuwe features met 30% verkorte
+
+        - Leidde kwalitatief en kwantitatief gebruikersonderzoek om strategische
+        designbeslissingen te onderbouwen voor B2B-platformen
+
+        - Creëerde toegankelijke interface-ontwerpen conform WCAG 2.1
+        AA-richtlijnen en trainde het team in toegankelijkheidsbest practices
+
+        - Begeleide twee junior designers en introduceerde gestructureerde
+        design reviews en critiques binnen het team
+
+        - Werkte nauw samen met product owners en ontwikkelaars in een
+        agile/scrum omgeving
+      keywords:
+        - UX Strategy
+        - Design Systems
+        - User Research
+        - Mentoring
+        - Accessibility
+      url: https://clevercode.nl
+    - name: Blue Mango Digital
+      position: UX Designer
+      startDate: Aug 1, 2018
+      summary: >
+        - Ontworpen en geoptimaliseerd e-commerce ervaringen voor diverse
+        A-merken, resulterend in een gemiddelde conversieverbetering van 15%
+
+        - Gebouwd en getest interactieve prototypes in Figma en Sketch voor
+        zowel mobiele als desktop applicaties
+
+        - Uitgevoerd A/B-testen en heatmap-analyses om knelpunten in
+        gebruikersstromen te identificeren en op te heffen
+
+        - Gepresenteerd aan stakeholders en overtuigd van user-centered design
+        aanpakken door middel van data-gedreven verhalen
+      endDate: Feb 1, 2021
+      keywords:
+        - E-commerce
+        - Prototyping
+        - A/B Testing
+        - Mobile Design
+      url: https://bluemango.digital
+    - name: Studio Verve
+      position: Junior UI/UX Designer
+      startDate: Sep 1, 2016
+      summary: >
+        - Ondersteund bij het ontwerpen van wireframes en visuele ontwerpen voor
+        websites en mobiele applicaties
+
+        - Geholpen bij het uitvoeren van usability tests en het verwerken van
+        feedback in iteratieve ontwerpcycli
+
+        - Samengewerkt met front-end developers om designs pixel-perfect te
+        implementeren in HTML, CSS en JavaScript
+
+        - Ontwikkelde een sterke basis in typografie, kleurtheorie en responsief
+        ontwerp
+      endDate: Jul 1, 2018
+      keywords:
+        - Wireframing
+        - UI Design
+        - Usability Testing
+        - HTML/CSS
+      url: https://studioverve.nl
+locale:
+  language: nl
+layouts:
+  - engine: latex
+    page:
+      showPageNumbers: true
+      paperSize: a4
+      margins:
+        top: 2.5cm
+        bottom: 2.5cm
+        left: 1.5cm
+        right: 1.5cm
+    template: moderncv-banking
+    typography:
+      fontSize: 11pt
+  - engine: docx
+    page:
+      showPageNumbers: true
+      paperSize: a4
+      margins:
+        top: 2.5cm
+        bottom: 2.5cm
+        left: 1.5cm
+        right: 1.5cm
+    typography:
+      fontSize: 11pt
+      lineSpacing: normal
+  - engine: markdown
+  - engine: html
+    template: calm
+    typography:
+      fontSize: 16px

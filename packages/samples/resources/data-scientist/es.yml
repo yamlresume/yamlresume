@@ -1,0 +1,304 @@
+content:
+  basics:
+    name: Lucía Fernández Ortega
+    email: lucia.fernandez.dev@gmail.com
+    headline: Científica de Datos especializada en Machine Learning y analítica
+      predictiva
+    phone: +34 612 345 678
+    summary: >
+      Científica de Datos con más de 6 años de experiencia en los sectores
+      financiero y de telecomunicaciones. Especializada en el diseño de modelos
+      de machine learning, analítica avanzada y visualización de datos para
+      impulsar la toma de decisiones basada en evidencia.
+
+      - Sólida experiencia en Python, SQL, AWS y GCP, aplicada a casos de uso de
+      fraude, segmentación y predicción de abandono.
+
+      - Capacidad demostrada para liderar equipos técnicos y colaborar con áreas
+      de negocio.
+
+      - Comunicación clara de resultados complejos a audiencias no
+      especializadas.
+    url: https://luciafernandez.dev
+  education:
+    - area: Ciencia de Datos e Inteligencia Artificial
+      institution: Universidad Politécnica de Madrid
+      degree: Master
+      courses:
+        - Aprendizaje automático
+        - Análisis multivariante
+        - Minado de datos
+        - Modelos predictivos
+        - Tratamiento de datos masivos
+        - Visualización de datos
+      endDate: Jul 1, 2018
+      startDate: Sep 1, 2016
+      summary: >
+        - Formación avanzada en técnicas de machine learning, estadística
+        computacional y big data.
+
+        - Trabajo fin de máster centrado en la predicción de impagos mediante
+        modelos de ensemble.
+
+        - Colaboración en proyectos de investigación aplicada con empresas del
+        sector bancario.
+      score: "9.4"
+      url: https://www.upm.es/
+    - area: Estadística
+      institution: Universidad de Salamanca
+      degree: Bachelor
+      courses:
+        - Inferencia estadística
+        - Modelos de regresión
+        - Diseño de experimentos
+        - Estadística multivariante
+        - Muestreo y encuestas
+      endDate: Jun 1, 2016
+      startDate: Sep 1, 2012
+      summary: >
+        - Base sólida en estadística, probabilidad y métodos cuantitativos.
+
+        - Desarrollo de habilidades analíticas aplicadas a problemas económicos
+        y sociales.
+      score: "8.7"
+      url: https://www.usal.es/
+  awards:
+    - awarder: Universidad Politécnica de Madrid
+      title: Premio a la Innovación Analítica
+      date: Jun 1, 2018
+      summary: >
+        Reconocimiento al mejor trabajo fin de máster en ciencia de datos por un
+        modelo de predicción de impagos basado en técnicas de ensemble.
+  certificates:
+    - issuer: Amazon Web Services
+      name: AWS Certified Machine Learning – Specialty
+      date: Nov 15, 2023
+      url: https://aws.amazon.com/verification
+  interests:
+    - name: Lectura
+      keywords:
+        - Novela negra
+        - Ciencia ficción
+    - name: Deporte
+      keywords:
+        - Natación
+        - Senderismo
+        - Yoga
+  languages:
+    - fluency: Native or Bilingual Proficiency
+      language: Spanish
+      keywords:
+        - Lengua materna
+    - fluency: Full Professional Proficiency
+      language: English
+      keywords:
+        - IELTS 7.5
+        - Nivel C1
+    - fluency: Elementary Proficiency
+      language: French
+      keywords:
+        - Nivel A2
+  location:
+    city: Madrid
+    address: Calle de la Princesa 29, 3º Izquierda
+    country: Spain
+    postalCode: "28008"
+    region: Comunidad de Madrid
+  profiles:
+    - network: GitHub
+      username: luciafernandez
+      url: https://github.com/luciafernandez
+    - network: LinkedIn
+      username: luciafernandezdata
+      url: https://www.linkedin.com/in/luciafernandezdata
+  projects:
+    - name: Recomendador de contenidos para streaming
+      startDate: Sep 1, 2022
+      summary: >
+        - Diseñé un motor de recomendación en Python con la librería Surprise.
+
+        - Evalué la precisión mediante RMSE y métricas de ranking como NDCG.
+
+        - Desplegué una API del modelo en AWS Lambda para pruebas con usuarios
+        reales.
+      description: Sistema de recomendación basado en filtrado colaborativo y
+        factorización matricial para una plataforma de vídeo bajo demanda.
+      endDate: Mar 1, 2023
+      keywords:
+        - Filtrado colaborativo
+        - Python
+        - AWS Lambda
+        - Evaluación offline
+      url: https://github.com/luciafernandez/recommender
+    - name: Predicción de abandono de clientes
+      startDate: Feb 1, 2021
+      summary: >
+        - Desarrollé un modelo de churn con XGBoost e interpretabilidad mediante
+        SHAP.
+
+        - Segmenté a los clientes según su probabilidad de abandono y su valor
+        económico.
+
+        - Ayudé al equipo de marketing a priorizar acciones de retención,
+        incrementando un 12 % la tasa de reenganche.
+      description: Modelo de clasificación para identificar clientes en riesgo y
+        optimizar campañas de retención en una compañía de telecomunicaciones.
+      endDate: Jul 1, 2021
+      keywords:
+        - Churn
+        - XGBoost
+        - SHAP
+        - Segmentación
+  publications:
+    - name: Predicción de fraude en tiempo real mediante machine learning en entornos
+        bancarios
+      publisher: Revista Española de Ciencia de Datos
+      releaseDate: Feb 10, 2023
+      summary: >
+        - Publicación centrada en la comparación de modelos XGBoost, Random
+        Forest y redes neuronales para la detección de fraude.
+
+        - Propone un enfoque de desequilibrio de clases basado en SMOTE y
+        validación temporal.
+
+        - Incluye un caso de estudio real con datos anonimizados de
+        transacciones bancarias.
+      url: https://www.recsd.es/articulos/prediccion-fraude-ml
+  skills:
+    - level: Expert
+      name: Machine Learning
+      keywords:
+        - Python
+        - Scikit-learn
+        - TensorFlow
+        - PyTorch
+        - XGBoost
+        - LightGBM
+    - level: Expert
+      name: Estadística y Modelos Predictivos
+      keywords:
+        - Regresión
+        - Series temporales
+        - Modelos Bayesianos
+        - Diseño experimental
+        - Análisis de supervivencia
+    - level: Advanced
+      name: Análisis de Datos
+      keywords:
+        - Pandas
+        - SQL
+        - Spark
+        - Databricks
+        - ETL
+    - level: Advanced
+      name: Visualización de Datos
+      keywords:
+        - Tableau
+        - Power BI
+        - Matplotlib
+        - Seaborn
+        - D3.js
+    - level: Intermediate
+      name: Cloud y MLOps
+      keywords:
+        - AWS
+        - GCP
+        - Docker
+        - Kubernetes
+        - CI/CD
+  volunteer:
+    - organization: Data For Good España
+      position: Mentora de proyectos
+      startDate: Mar 1, 2022
+      summary: >
+        - Mentora en proyectos de análisis de datos para organizaciones sin
+        ánimo de lucro.
+
+        - Ayudo a las ONG a definir métricas de impacto y a construir informes
+        visuales.
+
+        - Imparto talleres introductorios de Python y visualización de datos
+        para voluntarios.
+      url: https://www.dataforgood.es
+  work:
+    - name: Banco Atlántico Digital
+      position: Científica de Datos Sénior
+      startDate: May 1, 2021
+      summary: >
+        - Diseñé e implementé modelos predictivos de detección de fraude,
+        reduciendo las pérdidas por operaciones ilícitas en un 23 %.
+
+        - Lideré el despliegue de modelos en producción con AWS SageMaker y
+        buenas prácticas de MLOps.
+
+        - Desarrollé cuadros de mando en Tableau para monitorizar el rendimiento
+        de los modelos en tiempo real.
+
+        - Coordiné un equipo de 4 analistas de datos y fomenté la revisión de
+        código y la experimentación continua.
+
+        - Colaboré con las áreas de riesgo y negocio para transformar requisitos
+        complejos en soluciones analíticas.
+      keywords:
+        - Detección de fraude
+        - Python
+        - AWS
+        - MLOps
+        - Tableau
+        - Liderazgo
+      url: https://www.bancatlanticodigital.com
+    - name: Grupo Aura Telecom
+      position: Analista de Datos
+      startDate: Sep 1, 2018
+      summary: >
+        - Construí informes de KPIs y análisis de cohortes para el área de
+        marketing, mejorando la retención de clientes.
+
+        - Automatizé procesos ETL con Python y SQL, reduciendo el tiempo de
+        preparación de datos en un 40 %.
+
+        - Implementé modelos de segmentación RFM para campañas de fidelización y
+        venta cruzada.
+
+        - Realicé pruebas A/B y análisis de significancia estadística para
+        evaluar el impacto de las campañas.
+      endDate: May 1, 2021
+      keywords:
+        - SQL
+        - Python
+        - ETL
+        - Segmentación
+        - Pruebas A/B
+      url: https://www.grupoauratelecom.es
+locale:
+  language: es
+layouts:
+  - engine: latex
+    page:
+      showPageNumbers: true
+      paperSize: a4
+      margins:
+        top: 2.5cm
+        bottom: 2.5cm
+        left: 1.5cm
+        right: 1.5cm
+    template: moderncv-banking
+    typography:
+      fontSize: 11pt
+  - engine: docx
+    page:
+      showPageNumbers: true
+      paperSize: a4
+      margins:
+        top: 2.5cm
+        bottom: 2.5cm
+        left: 1.5cm
+        right: 1.5cm
+    typography:
+      fontSize: 11pt
+      lineSpacing: normal
+  - engine: markdown
+  - engine: html
+    template: calm
+    typography:
+      fontSize: 16px

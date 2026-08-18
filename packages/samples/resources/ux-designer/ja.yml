@@ -1,0 +1,212 @@
+content:
+  basics:
+    name: 山田 花子
+    email: hanako.yamada@example.com
+    headline: ユーザー体験をデザインするUXデザイナー
+    phone: +81 90-1234-5678
+    summary: |
+      デジタルプロダクトのUXデザインを専門とするデザイナーです。ユーザー中心設計（UCD）の手法を駆使し、定性・定量調査に基づく洞察から戦略的なデザイン意思決定を行います。複雑な課題を整理し、エンジニア・プロダクトマネージャー・ビジネスステークホルダーと緊密に連携して、使いやすく美しいプロダクトを構築することに情熱を持っています。
+
+      デザインシステム構築、アクセシビリティ対応、グローバルプロダクトのローカライゼーションを含む大規模プロジェクトを複数リードしてきました。Figmaを中心とした最新のデザインツールと共に、フロントエンド技術の基礎知識も活かし、実装可能性を考慮したデザイン提案を行っています。
+    url: https://hanadayamada.design
+  education:
+    - area: デザイン情報学科
+      institution: 武蔵野美術大学
+      degree: Bachelor
+      courses:
+        - ユーザー中心設計論
+        - 情報アーキテクチャ
+        - インタラクションデザイン
+        - 視覚伝達デザイン
+        - 人間工学
+      endDate: Mar 31, 2017
+      startDate: Apr 1, 2013
+      summary: |
+        デザインとテクノロジーの融合領域において、ユーザー行動の分析とデジタルメディアの設計手法を体系的に学びました。卒業制作では、高齢者向けヘルスケアアプリのUXデザインを提案し、最優秀賞を受賞しました。
+      score: "3.7"
+      url: https://www.musabi.ac.jp/
+  awards:
+    - awarder: 日本デザイン振興会
+      title: GOOD DESIGN AWARD
+      date: Oct 2022
+      summary: |
+        高齢者のデジタル金融サービス利用を支援するアプリ「Silver Pay」のUXデザインにおいて、社会的意義と優れたユーザー体験を評価され受賞。
+  certificates:
+    - issuer: Coursera / Google
+      name: Google UX Design Professional Certificate
+      date: Jun 2021
+      url: https://www.coursera.org/professional-certificates/google-ux-design
+    - issuer: IAAP
+      name: CPACC
+      date: Mar 2023
+      url: https://www.accessibilityassociation.org/
+  interests:
+    - name: 写真
+      keywords:
+        - ストリートスナップ
+        - フィルムカメラ
+        - ポートレート
+    - name: 文化・芸術
+      keywords:
+        - 現代美術館巡り
+        - 建築鑑賞
+        - 読書
+  languages:
+    - fluency: Native or Bilingual Proficiency
+      language: Japanese
+      keywords:
+        - 母語
+    - fluency: Full Professional Proficiency
+      language: English
+      keywords:
+        - TOEIC 960
+        - ビジネス交渉可
+  location:
+    city: 渋谷区
+    address: 東京都渋谷区神宮前1-2-3
+    country: Japan
+    postalCode: 150-0001
+    region: 東京都
+  profiles:
+    - network: LinkedIn
+      username: hanakoyamada
+      url: https://linkedin.com/in/hanakoyamada
+    - network: Behance
+      username: hanakoyamada
+      url: https://behance.net/hanakoyamada
+    - network: Twitter
+      username: hanako_ux
+      url: https://twitter.com/hanako_ux
+  projects:
+    - name: ECOモールアプリリニューアル
+      startDate: Jan 2022
+      summary: |
+        - ユーザーリサーチを通じて購買における環境配慮の意思決定プロセスを可視化
+        - カーボンフットプリント表示機能のUX設計を担当し、情報設計からビジュアルデザインまでを一貫して実施
+        - リリース後、ユーザー継続率が25%向上し、App Store評価が4.2から4.7に改善
+      description: 持続可能な消費を促進するECアプリのUX/UI全面リニューアル
+      endDate: Dec 2022
+      keywords:
+        - EC
+        - Sustainability
+        - App Design
+      url: https://ecomall.example.com
+  publications:
+    - name: 感情をデザインする ― 共感型UXの実践
+      publisher: ビジネスデザイン誌
+      releaseDate: May 2023
+      summary: |
+        ユーザーとの感情的な接続を重視した共感型UXデザインのフレームワークを提案。実際のプロダクト開発における適用事例と効果測定の方法論を解説。
+      url: https://businessdesign.jp/articles/empathy-ux
+  skills:
+    - level: Expert
+      name: UX Research
+      keywords:
+        - ユーザビリティテスト
+        - インタビュー
+        - アンケート設計
+        - データ分析
+        - ペルソナ作成
+    - level: Expert
+      name: UI Design
+      keywords:
+        - Figma
+        - Sketch
+        - Adobe XD
+        - デザインシステム
+        - プロトタイピング
+    - level: Intermediate
+      name: Front-end
+      keywords:
+        - HTML
+        - CSS
+        - JavaScript
+        - React
+        - アクセシビリティ
+  volunteer:
+    - organization: NPO法人デザインのチカラ
+      position: UXデザインメンター
+      startDate: Apr 1, 2020
+      summary: |
+        - 地方在住の若手デザイナーやキャリアチェンジ希望者に対し、UXデザインの基礎からポートフォリオレビューまでをメンタリング
+        - 年2回のデザインathonの企画・運営に携わり、地域課題の解決を目指したプロトタイピングワークショップを実施
+        - 非営利団体のWebサイト改善プロボノとして、アクセシビリティ診断と改善提案を無償で提供
+      url: https://design-chikara.or.jp
+  work:
+    - name: 株式会社クリエイティブビジョン
+      position: シニアUXデザイナー
+      startDate: Apr 1, 2022
+      summary: |
+        - 月間アクティブユーザー500万人規模のECプラットフォームのUX戦略をリードし、コンバージョン率15%向上を実現
+        - デザインシステム「CV Design System」の構築と運用を主導し、デザイン・開発の効率化を推進
+        - ユーザビリティテストやインタビューを月次で実施し、データに基づくデザイン改善サイクルを確立
+        - ジュニアデザイナー3名のマネジメントと育成を担当し、チーム全体のデザイン品質向上に貢献
+        - アクセシビリティガイドライン（WCAG 2.1）の策定と社内浸透施策を推進
+      keywords:
+        - Design System
+        - User Research
+        - A11y
+        - Leadership
+      url: https://creativevision.co.jp
+    - name: グローバルデジタル株式会社
+      position: UXデザイナー
+      startDate: Apr 1, 2019
+      summary: |
+        - 金融系WebアプリケーションのUI/UXデザインを担当し、顧客満足度（NPS）20ポイント向上に寄与
+        - ペルソナ設計からカスタマージャーニーマップ作成、プロトタイピングまで一連の設計プロセスを実行
+        - Figmaを用いた共同編集環境を整備し、リモートワーク下でのデザインレビュー効率を40%改善
+        - エンジニアリングチームとのデザインQAプロセスを確立し、実装品質の一貫性を担保
+      endDate: Mar 31, 2022
+      keywords:
+        - Fintech
+        - Prototyping
+        - Journey Map
+        - Design QA
+      url: https://globaldigital.jp
+    - name: スタートアップテック株式会社
+      position: UI/UXデザイナー
+      startDate: May 1, 2017
+      summary: |
+        - スタートアップ企業にて、ソーシャルメディアアプリの初期UI/UXデザインを0から構築
+        - ローファイワイヤーフレームからハイファイモックアップ、インタラクションデザインまでを一貫して担当
+        - ユーザーテストを週次で実施し、アジャイル開発サイクルにデザインを迅速に統合
+        - App Storeベストアプリ選出を受賞したプロダクトのデザインに従事
+      endDate: Mar 31, 2019
+      keywords:
+        - Mobile App
+        - Agile
+        - Wireframing
+        - Interaction
+      url: https://startuptech.example.com
+locale:
+  language: ja
+layouts:
+  - engine: latex
+    page:
+      showPageNumbers: true
+      paperSize: a4
+      margins:
+        top: 2.5cm
+        bottom: 2.5cm
+        left: 1.5cm
+        right: 1.5cm
+    template: moderncv-banking
+    typography:
+      fontSize: 11pt
+  - engine: docx
+    page:
+      showPageNumbers: true
+      paperSize: a4
+      margins:
+        top: 2.5cm
+        bottom: 2.5cm
+        left: 1.5cm
+        right: 1.5cm
+    typography:
+      fontSize: 11pt
+      lineSpacing: normal
+  - engine: markdown
+  - engine: html
+    template: calm
+    typography:
+      fontSize: 16px

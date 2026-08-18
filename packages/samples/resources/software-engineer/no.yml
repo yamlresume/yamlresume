@@ -1,0 +1,215 @@
+content:
+  basics:
+    name: Maren Eriksen
+    email: maren.eriksen@outlook.com
+    headline: Backend-utvikler med fokus på skalerbare tjenester
+    phone: +47 912 34 567
+    summary: >
+      Backend-utvikler med fem års erfaring fra web- og skybaserte systemer i
+      offentlig og privat sektor.
+
+      Opptatt av å bygge løsninger som er robuste, skalerbare og enkle å drifte,
+      og har stort engasjement for godt håndverk og smidig prosess.
+
+      Trives med tett samarbeid med produkt, design og drift, og med å lære opp
+      nye kolleger.
+    url: https://maren-eriksen.dev
+  education:
+    - area: Informatikk
+      institution: Norges teknisk-naturvitenskapelige universitet (NTNU)
+      degree: Bachelor
+      courses:
+        - Algoritmer og datastrukturer
+        - Databasesystemer
+        - Programmeringsspråk
+        - Programvarearkitektur
+        - Maskinvare nær programmering
+      endDate: Jun 1, 2018
+      startDate: Aug 1, 2015
+      summary: >
+        - Spesialisering i programvareutvikling med fordypning i distribuerte
+        systemer
+
+        - Bacheloroppgave om smidig IoT-utvikling, som fikk karakter A
+
+        - Erfaring med både faglig og sosialt miljø gjennom verv i
+        linjeforeningen
+      score: "3.7"
+      url: https://www.ntnu.no
+  awards:
+    - awarder: NTNU
+      title: NTNUs innovasjonspris
+      date: Jun 2018
+      summary: >
+        Pris for bacheloroppgaven «Smidig IoT-utvikling med sanntidsdata»,
+        levert sammen med to medstudenter.
+  certificates:
+    - issuer: Amazon Web Services
+      name: AWS Certified Developer – Associate
+      date: Mar 2022
+      url: https://aws.amazon.com/certification/
+  interests:
+    - name: Friluftsliv
+      keywords:
+        - Fjellturer
+        - Sykling
+        - Ski
+    - name: Teknologi
+      keywords:
+        - Smarte hjem
+        - 3D-printing
+  languages:
+    - fluency: Native or Bilingual Proficiency
+      language: Norwegian
+      keywords:
+        - Muntlig og skriftlig
+    - fluency: Full Professional Proficiency
+      language: English
+      keywords:
+        - Daglig arbeidsspråk
+  location:
+    city: Oslo
+    address: Bogstadveien 42
+    country: Norway
+    postalCode: "0368"
+    region: Oslo
+  profiles:
+    - network: GitHub
+      username: marenkode
+      url: https://github.com/marenkode
+    - network: LinkedIn
+      username: maren-eriksen
+      url: https://www.linkedin.com/in/maren-eriksen
+  projects:
+    - name: Turplanlegger
+      startDate: Mar 2020
+      summary: |
+        - Utviklet en fullstack-app med React, TypeScript, GraphQL og PostgreSQL
+        - Integrert med kartdata fra OpenStreetMap og rute-API fra entur.no
+        - Publisert som open source med Apache 2.0-lisens
+      description: Åpen kildekode-app for planlegging av turer til fots og på sykkel.
+      endDate: Sep 2020
+      keywords:
+        - React
+        - GraphQL
+        - PostgreSQL
+        - Open Source
+      url: https://github.com/marenkode/turplanlegger
+  skills:
+    - level: Expert
+      name: Programmeringsspråk
+      keywords:
+        - TypeScript
+        - Python
+        - Java
+        - Go
+    - level: Expert
+      name: Web- og API-utvikling
+      keywords:
+        - Node.js
+        - React
+        - GraphQL
+        - REST
+    - level: Advanced
+      name: DevOps
+      keywords:
+        - Docker
+        - Kubernetes
+        - AWS
+        - GitHub Actions
+    - level: Advanced
+      name: Databaser
+      keywords:
+        - PostgreSQL
+        - MongoDB
+        - Redis
+  volunteer:
+    - organization: Norsk programmering
+      position: Mentor
+      startDate: Jan 2022
+      summary: |
+        - Var mentor for ungdommer som lærte seg programmering i fritiden
+        - Laget øvelser og oppgaver i Python og web-utvikling
+      endDate: Dec 2023
+      url: https://www.norskprogrammering.no
+  work:
+    - name: BEKK
+      position: Systemutvikler
+      startDate: Jan 1, 2021
+      summary: >
+        - Utvikler og vedlikeholder skalerbare mikrotjenester med TypeScript,
+        Node.js og PostgreSQL
+
+        - Ledet utviklingen av et nytt offentlig API for kundeidentifisering som
+        håndterer over 10K forespørsler per sekund
+
+        - Innførte kontinuerlig levering med GitHub Actions og AWS, noe som
+        reduserte produksjonstid fra uker til timer
+
+        - Veileder juniorutviklere gjennom code review og interne fagmøter
+
+        - Deltar i krav- og designprosesser sammen med produkteiere og
+        arkitekter
+      keywords:
+        - Node.js
+        - TypeScript
+        - PostgreSQL
+        - AWS
+        - CI/CD
+        - Microservices
+      url: https://www.bekk.no
+    - name: Knowit Solutions
+      position: Utvikler
+      startDate: Aug 1, 2018
+      summary: >
+        - Utviklet frontend og backend for selvbetjeningsløsninger i offentlig
+        sektor
+
+        - Bygget REST-APIer i Java Spring Boot og React-baserte
+        admin-grensesnitt
+
+        - Arbeidet i tverrfaglige team med designere og prosjektledere for å
+        levere brukervennlige tjenester
+
+        - Bisto i å sette opp automatiserte tester og forbedret testdekningen
+        til over 80 %
+      endDate: Dec 31, 2020
+      keywords:
+        - Java
+        - Spring Boot
+        - React
+        - REST
+        - Testing
+      url: https://www.knowit.no
+locale:
+  language: no
+layouts:
+  - engine: latex
+    page:
+      showPageNumbers: true
+      paperSize: a4
+      margins:
+        top: 2.5cm
+        bottom: 2.5cm
+        left: 1.5cm
+        right: 1.5cm
+    template: moderncv-banking
+    typography:
+      fontSize: 11pt
+  - engine: docx
+    page:
+      showPageNumbers: true
+      paperSize: a4
+      margins:
+        top: 2.5cm
+        bottom: 2.5cm
+        left: 1.5cm
+        right: 1.5cm
+    typography:
+      fontSize: 11pt
+      lineSpacing: normal
+  - engine: markdown
+  - engine: html
+    template: calm
+    typography:
+      fontSize: 16px

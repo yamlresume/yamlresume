@@ -1,0 +1,266 @@
+content:
+  basics:
+    name: Camille Rousseau
+    email: camille.rousseau@design-interactif.fr
+    headline: Designer UX Senior & Stratège en Expérience Utilisateur
+    phone: +33 6 12 34 56 78
+    summary: >
+      - Designer UX passionnée avec plus de 8 ans d'expérience dans la
+      conception de produits digitaux centrés sur l'utilisateur.
+
+      - Expertise en recherche utilisateur, architecture de l'information et
+      prototypage interactif pour des applications web et mobiles.
+
+      - Solide capacité à collaborer avec des équipes pluridisciplinaires
+      (produit, développement, marketing) pour livrer des expériences cohérentes
+      et accessibles.
+
+      - Animée par la résolution de problèmes complexes et l'amélioration
+      continue des parcours utilisateurs à travers des méthodologies agiles et
+      Lean UX.
+    url: https://camillerousseau.design
+  education:
+    - area: Design Interactif et Multimédia
+      institution: Gobelins, l'école de l'image
+      degree: Master
+      courses:
+        - Méthodes de recherche utilisateur
+        - Ergonomie et accessibilité
+        - Design d'interface mobile
+        - Prototypage avancé
+      endDate: Jul 1, 2014
+      startDate: Sep 1, 2012
+      summary: >
+        - Acquisition d'une expertise en conception centrée utilisateur et en
+        stratégie de design interactif.
+
+        - Réalisation de projets pluridisciplinaires alliant narration,
+        technologie et sciences cognitives.
+
+        - Approfondissement des méthodes de recherche qualitative et des outils
+        de co-conception.
+      score: Très bien
+      url: https://www.gobelins.fr
+    - area: Arts Numériques et Technologies
+      institution: Université de Nantes
+      degree: Bachelor
+      endDate: Jul 1, 2012
+      startDate: Sep 1, 2009
+      summary: >
+        - Formation aux fondamentaux du design numérique, de la programmation
+        créative et des médias interactifs.
+
+        - Développement d'une sensibilité esthétique et technique pour la
+        création d'expériences utilisateur engageantes.
+      url: https://www.univ-nantes.fr
+  awards:
+    - awarder: Festival de l'Interaction Design (Paris)
+      title: Prix de l'Innovation Digitale
+      date: Jun 1, 2020
+      summary: >
+        Récompense décernée pour la conception d'une solution inclusive
+        facilitant l'autonomie des personnes en situation de handicap visuel.
+  certificates:
+    - issuer: Google / Coursera
+      name: Google UX Design Certificate
+      date: Nov 1, 2022
+      url: https://coursera.org/google-ux
+    - issuer: IAAP
+      name: Certified Professional in Accessibility Core Competencies (CPACC)
+      date: May 1, 2023
+      url: https://www.accessibility.org/certifications
+  interests:
+    - name: Arts & Culture
+      keywords:
+        - Photographie
+        - Musées
+        - Architecture
+    - name: Bien-être
+      keywords:
+        - Yoga
+        - Randonnée
+        - Méditation
+  languages:
+    - fluency: Native or Bilingual Proficiency
+      language: French
+      keywords: []
+    - fluency: Full Professional Proficiency
+      language: English
+      keywords:
+        - TOEIC 980
+    - fluency: Limited Working Proficiency
+      language: Spanish
+      keywords: []
+  location:
+    city: Paris
+    country: France
+    postalCode: "75011"
+    region: Île-de-France
+  profiles:
+    - network: LinkedIn
+      username: camillerousseau
+      url: https://linkedin.com/in/camillerousseau
+    - network: Behance
+      username: camillerousseau
+      url: https://behance.net/camillerousseau
+    - network: Dribbble
+      username: camillerousseau
+      url: https://dribbble.com/camillerousseau
+  projects:
+    - name: Mobilité+
+      startDate: Feb 1, 2022
+      summary: >
+        - Conception UX complète depuis la recherche terrain jusqu'aux tests
+        d'utilisabilité finaux.
+
+        - Mise en place d'un design system accessible respectant les critères
+        WCAG 2.1 AA.
+
+        - Lancement réussi avec 10 000 téléchargements lors du premier
+        trimestre.
+      description: Application mobile d'aide à la mobilité pour seniors
+      endDate: Sep 1, 2022
+      keywords:
+        - Accessibilité
+        - Senior
+        - Mobile
+      url: https://mobilite-plus.fr
+  publications:
+    - name: "Au-delà du pixel : intégrer l'accessibilité dès la phase de recherche"
+      publisher: UX Collective (FR)
+      releaseDate: Mar 1, 2023
+      summary: >
+        Article explorant les méthodologies de recherche utilisateur adaptées
+        aux besoins des personnes en situation de handicap, avec études de cas
+        concrets.
+      url: https://uxdesign.cc/accessibilite-recherche-fr
+  skills:
+    - level: Expert
+      name: Recherche Utilisateur
+      keywords:
+        - Entretiens
+        - Tests A/B
+        - Cartographie d'expérience
+        - Analyse quantitative
+    - level: Expert
+      name: Conception & Prototypage
+      keywords:
+        - Figma
+        - Sketch
+        - Prototypage haute fidélité
+        - Systèmes de design
+    - level: Advanced
+      name: Facilitation & Stratégie
+      keywords:
+        - Ateliers de co-conception
+        - Design Thinking
+        - Lean UX
+        - Facilitation graphique
+  volunteer:
+    - organization: Designers Ethiques
+      position: Animatrice de conférences
+      startDate: Jan 1, 2019
+      summary: >
+        - Organisation et animation d'ateliers sur les enjeux éthiques du design
+        numérique.
+
+        - Intervention dans des écoles supérieures pour sensibiliser les
+        étudiants aux biais cognitifs et à l'accessibilité.
+      url: https://designersethiques.org
+  work:
+    - name: Aether Studio
+      position: Lead UX Designer
+      startDate: Jan 1, 2021
+      summary: >
+        - Pilotage de la stratégie UX pour les clients du secteur fintech et
+        e-santé.
+
+        - Animation d'ateliers de co-conception et de recherche utilisateur
+        (entretiens, tests d'utilisabilité, card sorting).
+
+        - Conception de systèmes de design et supervision de leur implémentation
+        dans des équipes Agile/Scrum.
+
+        - Formation et mentorat de designers juniors, renforcement d'une culture
+        produit centrée sur l'utilisateur.
+      keywords:
+        - Fintech
+        - E-santé
+        - Design Systems
+        - Recherche utilisateur
+        - Mentorat
+      url: https://aether-studio.fr
+    - name: Kuzzle Agence
+      position: Designer UX Senior
+      startDate: Mar 1, 2018
+      summary: >
+        - Conception et itération sur les parcours utilisateurs d'une plateforme
+        SaaS B2B destinée au secteur logistique.
+
+        - Réalisation de tests d'utilisabilité modérés et non modérés auprès de
+        plus de 50 utilisateurs finaux.
+
+        - Collaboration étroite avec les développeurs front-end pour garantir la
+        fidélité des maquettes au pixel près.
+
+        - Amélioration du taux de conversion de 25 % grâce à une refonte du
+        tunnel de commande.
+      endDate: Dec 1, 2020
+      keywords:
+        - SaaS B2B
+        - Logistique
+        - Tests utilisateur
+        - Conversion
+      url: https://kuzzle.fr
+    - name: Novacloud
+      position: Designer UX/UI
+      startDate: Sep 1, 2015
+      summary: >
+        - Design d'interfaces pour des applications mobiles iOS et Android dans
+        le domaine du voyage.
+
+        - Création de wireframes, prototypes interactifs (Figma, Principle) et
+        spécifications fonctionnelles détaillées.
+
+        - Participation à la mise en place d'une démarche d'accessibilité
+        conforme aux normes WCAG 2.1 niveau AA.
+      endDate: Feb 1, 2018
+      keywords:
+        - Mobile
+        - iOS
+        - Android
+        - Accessibilité
+        - Figma
+      url: https://novacloud.io
+locale:
+  language: fr
+layouts:
+  - engine: latex
+    page:
+      showPageNumbers: true
+      paperSize: a4
+      margins:
+        top: 2.5cm
+        bottom: 2.5cm
+        left: 1.5cm
+        right: 1.5cm
+    template: moderncv-banking
+    typography:
+      fontSize: 11pt
+  - engine: docx
+    page:
+      showPageNumbers: true
+      paperSize: a4
+      margins:
+        top: 2.5cm
+        bottom: 2.5cm
+        left: 1.5cm
+        right: 1.5cm
+    typography:
+      fontSize: 11pt
+      lineSpacing: normal
+  - engine: markdown
+  - engine: html
+    template: calm
+    typography:
+      fontSize: 16px

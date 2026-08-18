@@ -1,0 +1,211 @@
+content:
+  basics:
+    name: 山田 太郎
+    email: taro.yamada@example.jp
+    headline: バックエンドを中心としたフルスタックソフトウェアエンジニア
+    phone: 080-1234-5678
+    summary: |
+      - 9年以上のソフトウェア開発経験を持ち、大規模Webサービスの設計・開発・運用に携わる
+      - バックエンドAPI設計、マイクロサービスアーキテクチャ、クラウドネイティブ開発を得意とする
+      - チームリーダーとして、開発プロセスの改善やメンタリングにも積極的に取り組む
+      - ビジネス要件を理解し、スピード感を持って価値あるソフトウェアを届けることを大切にしている
+    url: https://example.com
+  education:
+    - area: 工学部 電子情報工学科
+      institution: 東京大学
+      degree: Bachelor
+      courses:
+        - アルゴリズムとデータ構造
+        - オペレーティングシステム
+        - コンピュータネットワーク
+        - データベースシステム
+        - ソフトウェア工学
+        - 機械学習基礎
+      endDate: Mar 31, 2020
+      startDate: Apr 1, 2016
+      summary: |
+        - 情報工学の基礎から応用まで幅広く学び、卒業研究では分散システム上でのデータ整合性に関する研究を行う
+        - 学業成績は優秀で、Dean's Listに3回選出される
+      score: "3.8"
+      url: https://www.t.u-tokyo.ac.jp/
+  awards:
+    - awarder: 株式会社テックイノベーション
+      title: 社内技術賞 最優秀賞
+      date: Dec 2023
+      summary: |
+        マイクロサービス移行プロジェクトのリーダーとして、システム安定性と開発生産性の向上に貢献したことが評価され、社内技術賞を受賞。
+    - awarder: 東京大学
+      title: Dean's List
+      date: Sep 2019
+      summary: |
+        優秀な学業成績を収めた学生に贈られる表彰。
+  certificates:
+    - issuer: Amazon Web Services
+      name: AWS認定 ソリューションアーキテクト – アソシエイト
+      date: Mar 2022
+      url: https://aws.amazon.com/certification/
+    - issuer: IPA 独立行政法人情報処理推進機構
+      name: 応用情報技術者試験
+      date: Dec 2019
+      url: https://www.jitec.ipa.go.jp/
+  interests:
+    - name: アウトドア
+      keywords:
+        - 登山
+        - キャンプ
+        - ランニング
+    - name: 読書
+      keywords:
+        - 技術書
+        - SF小説
+  languages:
+    - fluency: Native or Bilingual Proficiency
+      language: Japanese
+    - fluency: Full Professional Proficiency
+      language: English
+      keywords:
+        - TOEIC 920
+        - 技術文書の読解・作成が可能
+  location:
+    city: 港区
+    address: 東京都港区虎ノ門1-2-3
+    country: Japan
+    postalCode: 105-0001
+    region: 東京
+  profiles:
+    - network: GitHub
+      username: taro-yamada
+      url: https://github.com/taro-yamada
+    - network: LinkedIn
+      username: taro-yamada
+      url: https://www.linkedin.com/in/taro-yamada
+  projects:
+    - name: オープンソースライブラリ "gocache"
+      startDate: Jan 2023
+      summary: |
+        - 自社サービスでの利用を目的に開発し、現在はオープンソースとして公開
+        - GitHubで150以上のStarを獲得し、複数の外部プロジェクトで採用されている
+        - キャッシュの整合性や障害耐性に関する設計を担当
+      description: Go製の分散キャッシュライブラリ。Redis互換のシンプルなAPIを提供し、マイクロサービス間でのキャッシュ共有を実現する。
+      keywords:
+        - Go
+        - Redis
+        - OSS
+      url: https://github.com/taro-yamada/gocache
+    - name: 履歴書管理システム "ResumeHub"
+      startDate: Jul 2021
+      summary: |
+        - React/TypeScriptによるフロントエンドと、Ruby on Railsによるバックエンドを実装
+        - 全文検索機能とタグ付け機能により、履歴書の探索効率を大幅に向上
+        - 社内ハッカソンにて最優秀賞を受賞
+      description: 採用活動における候補者の履歴書・職務経歴書を一元管理するWebアプリケーション。チーム開発の一環として開発。
+      endDate: Nov 2021
+      keywords:
+        - React
+        - Rails
+        - ハッカソン
+      url: https://resumehub.example
+  skills:
+    - level: Expert
+      name: バックエンド開発
+      keywords:
+        - Go
+        - Python
+        - Ruby
+        - Node.js
+        - RESTful API
+        - GraphQL
+    - level: Advanced
+      name: フロントエンド開発
+      keywords:
+        - TypeScript
+        - React
+        - Next.js
+        - Tailwind CSS
+    - level: Advanced
+      name: クラウド / インフラ
+      keywords:
+        - AWS
+        - Docker
+        - Kubernetes
+        - Terraform
+        - CI/CD
+    - level: Advanced
+      name: データベース
+      keywords:
+        - PostgreSQL
+        - MySQL
+        - Redis
+        - DynamoDB
+  volunteer:
+    - organization: 技術コミュニティ "Tokyo Go Meetup"
+      position: オーガナイザー
+      startDate: Jun 2022
+      summary: |
+        - Go言語の技術コミュニティのオーガナイザーとして、月次ミートアップの企画・運営を担当
+        - 登壇者の募集やイベント広報、当日の進行を行い、毎回50名以上の参加者を集める
+      endDate: null
+      url: https://tokyogo.example
+  work:
+    - name: 株式会社テックイノベーション
+      position: シニアソフトウェアエンジニア
+      startDate: Apr 1, 2022
+      summary: |
+        - 中古品ECプラットフォームのバックエンド基盤を担当し、月間利用者数300万人規模のシステムを運用
+        - マイクロサービス化を推進し、デプロイ頻度を2倍に改善
+        - チームリーダーとして5名のエンジニアを指導し、コードレビューや設計レビューを主導
+        - GoとAWSを中心とした新規サービスの立ち上げに参画し、システム全体の設計を担当
+      endDate: null
+      keywords:
+        - Go
+        - AWS
+        - マイクロサービス
+        - Kubernetes
+      url: https://www.tech-innovation.example
+    - name: 株式会社フューチャーシステム
+      position: ソフトウェアエンジニア
+      startDate: Apr 1, 2020
+      summary: |
+        - 業務管理SaaSのバックエンドAPI開発を担当し、Ruby on RailsとPostgreSQLを用いて機能開発
+        - フロントエンドのReact/TypeScriptへのリプレイスにも関与し、UIコンポーネント設計を実施
+        - 自動テストの整備とCIパイプラインの改善により、リグレッションバグを30%削減
+        - 顧客からのフィードバックを開発プロセスに取り入れ、プロダクト改善サイクルを強化
+      endDate: Mar 31, 2022
+      keywords:
+        - Ruby on Rails
+        - React
+        - PostgreSQL
+        - CI/CD
+      url: https://www.future-system.example
+locale:
+  language: ja
+layouts:
+  - engine: latex
+    page:
+      showPageNumbers: true
+      paperSize: a4
+      margins:
+        top: 2.5cm
+        bottom: 2.5cm
+        left: 1.5cm
+        right: 1.5cm
+    template: moderncv-banking
+    typography:
+      fontSize: 11pt
+  - engine: docx
+    page:
+      showPageNumbers: true
+      paperSize: a4
+      margins:
+        top: 2.5cm
+        bottom: 2.5cm
+        left: 1.5cm
+        right: 1.5cm
+    typography:
+      fontSize: 11pt
+      lineSpacing: normal
+  - engine: markdown
+  - engine: html
+    template: calm
+    typography:
+      fontSize: 16px

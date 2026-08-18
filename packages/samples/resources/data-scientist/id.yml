@@ -1,0 +1,299 @@
+content:
+  basics:
+    name: Ratna Sari Dewi
+    email: ratna.saridewi@datasci.id
+    headline: Data Scientist | Machine Learning & Analitik Data
+    phone: +62 812-3456-7890
+    summary: >
+      - Data Scientist dengan pengalaman 5+ tahun dalam mengembangkan solusi
+      machine learning dan analitik data untuk industri keuangan dan e-commerce
+
+      - Mahir dalam Python, SQL, dan platform cloud untuk membangun pipeline
+      data end-to-end, dari pengumpulan hingga deployment model
+
+      - Berpengalaman memimpin proyek prediksi churn, personalisasi rekomendasi,
+      dan deteksi fraud dengan dampak bisnis yang signifikan
+
+      - Komunikatif, kolaboratif, dan fokus pada penerjemahan kebutuhan bisnis
+      menjadi model berbasis data yang actionable
+    url: https://ratnasaridewi.id
+  education:
+    - area: Sains Data
+      institution: Universitas Indonesia
+      degree: Master
+      courses:
+        - Machine Learning Tingkat Lanjut
+        - Statistika Bayesian
+        - Penambangan Data
+        - Analisis Deret Waktu
+        - Pembelajaran Mendalam
+        - Etika dan Privasi Data
+      endDate: 2021-06-01
+      startDate: 2019-08-01
+      summary: >
+        - Memperoleh pemahaman mendalam tentang algoritma machine learning dan
+        metodologi riset
+
+        - Menyelesaikan tesis berjudul "Deteksi Anomali Transaksi Keuangan
+        Menggunakan Deep Learning"
+
+        - Aktif sebagai asisten peneliti di Laboratorium Sains Data
+      score: "3.92"
+      url: https://www.ui.ac.id
+    - area: Statistika dan Sains Data
+      institution: Institut Teknologi Bandung
+      degree: Bachelor
+      courses:
+        - Probabilitas dan Statistika
+        - Pemasaran Data (Data Mining)
+        - Analisis Regresi
+        - Ekonometrika
+        - Basis Data
+        - Metode Numerik
+      endDate: 2018-07-01
+      startDate: 2014-08-01
+      summary: >
+        - Mendapatkan dasar yang kuat dalam statistika, matematika, dan
+        pemrograman
+
+        - Mengerjakan proyek akhir tentang prediksi harga properti menggunakan
+        regresi
+
+        - Aktif dalam organisasi Himpunan Mahasiswa Statistika
+      score: "3.78"
+      url: https://www.itb.ac.id
+  awards:
+    - awarder: Indonesian Data Science Society
+      title: Juara 1 Indonesian Datathon
+      date: 2019-11-15
+      summary: Mencapai akurasi 94% dalam memprediksi penjualan ritel dan mengalahkan
+        250+ tim peserta.
+    - awarder: Konferensi Nasional Sistem Informasi
+      title: Best Paper Award
+      date: 2021-09-20
+      summary: Penelitian tentang deteksi anomali transaksi keuangan menggunakan LSTM
+        Autoencoder yang dipilih sebagai paper terbaik.
+  certificates:
+    - issuer: Google
+      name: TensorFlow Developer Certificate
+      date: 2020-03-15
+      url: https://www.credential.net/ratnasaridewi
+    - issuer: Amazon Web Services
+      name: AWS Certified Machine Learning - Specialty
+      date: 2022-01-10
+      url: https://aws.amazon.com/verification/ratnasaridewi
+  interests:
+    - name: Komunitas Data
+      keywords:
+        - Kaggle
+        - Open Source
+        - Hackathon
+    - name: Olahraga
+      keywords:
+        - Lari
+        - Renang
+        - Yoga
+  languages:
+    - fluency: Native or Bilingual Proficiency
+      language: Indonesian
+    - fluency: Full Professional Proficiency
+      language: English
+      keywords:
+        - TOEFL iBT 105
+        - IELTS 7.5
+  location:
+    city: Jakarta Selatan
+    address: Jl. Kemang Raya No. 12
+    country: Indonesia
+    postalCode: "12520"
+    region: DKI Jakarta
+  profiles:
+    - network: LinkedIn
+      username: ratnasaridewi
+      url: https://www.linkedin.com/in/ratnasaridewi
+    - network: GitHub
+      username: ratnasaridewi
+      url: https://github.com/ratnasaridewi
+  projects:
+    - name: Sistem Rekomendasi Produk E-Commerce
+      startDate: 2020-05-01
+      summary: >
+        - Implementasi algoritma ALS di Apache Spark untuk menangani data
+        interaksi pengguna berskala besar
+
+        - Evaluasi model menggunakan metrik RMSE dan Precision@10
+
+        - Membangun API sederhana dengan FastAPI untuk melayani rekomendasi
+        secara real-time
+      description: Mengembangkan sistem rekomendasi menggunakan collaborative
+        filtering dan matrix factorization.
+      endDate: 2020-08-31
+      keywords:
+        - Recommender System
+        - Apache Spark
+        - FastAPI
+        - Python
+      url: https://github.com/ratnasaridewi/recommendation-system
+    - name: Dashboard Prediksi Churn Pelanggan
+      startDate: 2021-03-01
+      summary: >
+        - Menggunakan Tableau untuk menampilkan skor risiko churn secara
+        real-time
+
+        - Terintegrasi dengan database PostgreSQL untuk pembaruan otomatis
+        setiap hari
+
+        - Digunakan oleh tim pemasaran untuk merancang program retensi pelanggan
+      description: Dashboard interaktif untuk memvisualisasikan hasil model prediksi
+        churn pelanggan.
+      endDate: 2021-06-30
+      keywords:
+        - Tableau
+        - PostgreSQL
+        - Dashboard
+      url: https://github.com/ratnasaridewi/churn-dashboard
+  publications:
+    - name: Deteksi Anomali Transaksi Keuangan Menggunakan LSTM Autoencoder
+      publisher: Jurnal Teknologi Informasi dan Ilmu Komputer
+      releaseDate: 2021-08-12
+      summary: Membahas penggunaan arsitektur LSTM autoencoder untuk mengidentifikasi
+        pola transaksi mencurigakan pada data keuangan.
+      url: https://jtiik.ub.ac.id/index.php/jtiik/article/view/1234
+    - name: Penerapan XGBoost untuk Klasifikasi Kelayakan Kredit
+      publisher: Prosiding Seminar Nasional Data Science
+      releaseDate: 2020-11-05
+      summary: Mengevaluasi performa XGBoost dibandingkan metode tradisional dalam
+        menilai kelayakan kredit menggunakan dataset publik.
+      url: https://snds2020.org/prosiding/xgboost
+  skills:
+    - level: Expert
+      name: Machine Learning
+      keywords:
+        - Python
+        - TensorFlow
+        - PyTorch
+        - scikit-learn
+        - XGBoost
+        - Keras
+    - level: Advanced
+      name: Data Engineering
+      keywords:
+        - Apache Spark
+        - Airflow
+        - dbt
+        - SQL
+        - Hadoop
+        - Kafka
+    - level: Advanced
+      name: Data Visualization
+      keywords:
+        - Tableau
+        - Power BI
+        - Matplotlib
+        - Seaborn
+        - Looker
+    - level: Expert
+      name: Statistical Analysis
+      keywords:
+        - R
+        - Regression
+        - Time Series
+        - A/B Testing
+        - Bayesian
+  volunteer:
+    - organization: Komunitas Python Indonesia
+      position: Mentor
+      startDate: 2019-01-01
+      summary: >
+        - Memfasilitasi lokakarya Python dan pengenalan data science untuk
+        pemula
+
+        - Membantu anggota komunitas dalam menyelesaikan proyek data dan
+        debugging
+
+        - Menjadi pembicara pada meetup bulanan tentang praktik terbaik machine
+        learning
+      endDate: 2020-12-31
+      url: https://python.or.id
+  work:
+    - name: PT Sejahtera Digital
+      position: Senior Data Scientist
+      startDate: 2022-05-01
+      summary: >
+        - Memimpin tim data scientist dalam pengembangan model machine learning
+        untuk personalisasi rekomendasi di platform e-commerce
+
+        - Meningkatkan konversi penjualan hingga 23% melalui implementasi sistem
+        rekomendasi berbasis deep learning
+
+        - Merancang arsitektur data pipeline menggunakan Apache Airflow dan
+        Spark untuk mempercepat pemrosesan data harian
+
+        - Berkolaborasi dengan product manager dan engineer dalam
+        mengintegrasikan model ke aplikasi produksi menggunakan Docker dan
+        Kubernetes
+
+        - Melakukan mentoring dan code review untuk menjaga kualitas kode dan
+        penerapan best practice
+      keywords:
+        - Machine Learning
+        - Deep Learning
+        - Apache Spark
+        - Kubernetes
+        - Mentoring
+      url: https://www.sejahteradigital.co.id
+    - name: PT Karya Data Analitika
+      position: Data Scientist
+      startDate: 2018-08-01
+      summary: >
+        - Mengembangkan model prediksi churn pelanggan untuk produk perbankan
+        digital dengan akurasi 87%
+
+        - Membangun dashboard analitik untuk memantau metrik bisnis dan KPI
+        menggunakan Tableau
+
+        - Melakukan analisis A/B testing untuk mengevaluasi efektivitas kampanye
+        pemasaran
+
+        - Menulis skrip Python untuk otomatisasi data cleaning dan feature
+        engineering
+      endDate: 2022-04-01
+      keywords:
+        - Python
+        - SQL
+        - Tableau
+        - A/B Testing
+        - Churn Prediction
+      url: https://www.karyadata.co.id
+locale:
+  language: id
+layouts:
+  - engine: latex
+    page:
+      showPageNumbers: true
+      paperSize: a4
+      margins:
+        top: 2.5cm
+        bottom: 2.5cm
+        left: 1.5cm
+        right: 1.5cm
+    template: moderncv-banking
+    typography:
+      fontSize: 11pt
+  - engine: docx
+    page:
+      showPageNumbers: true
+      paperSize: a4
+      margins:
+        top: 2.5cm
+        bottom: 2.5cm
+        left: 1.5cm
+        right: 1.5cm
+    typography:
+      fontSize: 11pt
+      lineSpacing: normal
+  - engine: markdown
+  - engine: html
+    template: calm
+    typography:
+      fontSize: 16px
