@@ -32,6 +32,7 @@ import {
   createDoctorCommand,
   createLanguagesCommand,
   createNewCommand,
+  createSamplesCommand,
   createTemplatesCommand,
   createValidateCommand,
 } from './commands'
@@ -68,6 +69,7 @@ export function createProgram(): Command {
   program.addCommand(createDoctorCommand())
   program.addCommand(createLanguagesCommand())
   program.addCommand(createNewCommand())
+  program.addCommand(createSamplesCommand())
   program.addCommand(createTemplatesCommand())
   program.addCommand(createValidateCommand())
 

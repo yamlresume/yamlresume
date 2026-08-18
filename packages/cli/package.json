@@ -51,6 +51,7 @@
   "dependencies": {
     "@yamlresume/ai": "workspace:*",
     "@yamlresume/core": "workspace:*",
+    "@yamlresume/samples": "workspace:*",
     "chalk": "^5.6.2",
     "chokidar": "^5.0.0",
     "coalescifn": "^1.0.0",

@@ -22,12 +22,16 @@
  * IN THE SOFTWARE.
  */
 
-export { createAICommand } from './ai'
-export { createBuildCommand } from './build'
-export { createDevCommand } from './dev'
-export { createDoctorCommand } from './doctor'
-export { createLanguagesCommand } from './languages'
-export { createNewCommand } from './new'
-export { createSamplesCommand } from './samples'
-export { createTemplatesCommand } from './templates'
-export { createValidateCommand } from './validate'
+import { Command } from 'commander'
+
+import { createSamplesListCommand } from './list'
+
+/**
+ * Create the samples command group.
+ */
+export function createSamplesCommand() {
+  return new Command()
+    .name('samples')
+    .description('manage sample resumes')
+    .addCommand(createSamplesListCommand())
+}

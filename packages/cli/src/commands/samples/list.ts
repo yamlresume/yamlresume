@@ -22,12 +22,40 @@
  * IN THE SOFTWARE.
  */
 
-export { createAICommand } from './ai'
-export { createBuildCommand } from './build'
-export { createDevCommand } from './dev'
-export { createDoctorCommand } from './doctor'
-export { createLanguagesCommand } from './languages'
-export { createNewCommand } from './new'
-export { createSamplesCommand } from './samples'
-export { createTemplatesCommand } from './templates'
-export { createValidateCommand } from './validate'
+import { listSampleResumes } from '@yamlresume/samples'
+import { Command } from 'commander'
+import consola from 'consola'
+import { markdownTable } from 'markdown-table'
+
+/**
+ * Generates a markdown table listing all available sample resumes.
+ *
+ * The table includes columns for the sample id, position, title, and category.
+ *
+ * @returns A string containing the formatted markdown table.
+ */
+export function listSamples() {
+  const samples = listSampleResumes()
+
+  return markdownTable([
+    ['ID', 'Position', 'Title', 'Category'],
+    ...samples.map((sample) => [
+      sample.id,
+      sample.position,
+      sample.title,
+      sample.category,
+    ]),
+  ])
+}
+
+/**
+ * Create a command instance to list sample resumes.
+ */
+export function createSamplesListCommand() {
+  return new Command()
+    .name('list')
+    .description('list all sample resumes')
+    .action(() => {
+      consola.log(listSamples())
+    })
+}
