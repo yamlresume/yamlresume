@@ -1,0 +1,71 @@
+{
+  "name": "@yamlresume/samples",
+  "version": "0.14.3",
+  "description": "Curated sample resumes for YAMLResume",
+  "license": "MIT",
+  "author": {
+    "name": "YAMLResume",
+    "email": "support@yamlresume.com",
+    "url": "https://yamlresume.dev"
+  },
+  "keywords": [
+    "YAMLResume",
+    "CV",
+    "Resume",
+    "YAML",
+    "Samples"
+  ],
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "pnpm build:registry && tsup",
+    "build:registry": "tsx scripts/build-registry.ts",
+    "build:watch": "tsup --watch",
+    "build:clean": "rm -rf dist",
+    "build:prod": "pnpm build:registry && tsup --dts --minify --sourcemap",
+    "prepublishOnly": "pnpm test",
+    "test": "vitest --run",
+    "test:cov": "vitest --coverage --run",
+    "test:watch": "vitest",
+    "typedoc": "typedoc"
+  },
+  "dependencies": {
+    "@yamlresume/core": "workspace:*",
+    "tslib": "^2.8.1",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@yamlresume/ai": "workspace:*",
+    "commander": "^15.0.0",
+    "consola": "^3.4.2",
+    "tsx": "^4.23.1",
+    "yaml": "^2.9.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yamlresume/yamlresume.git",
+    "directory": "packages/samples"
+  },
+  "bugs": {
+    "url": "https://github.com/yamlresume/yamlresume/issues"
+  },
+  "homepage": "https://yamlresume.dev/docs/samples",
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}

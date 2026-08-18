@@ -25,6 +25,7 @@
     "create-yamlresume": "pnpm --filter create-yamlresume",
     "json2yamlresume": "pnpm --filter json2yamlresume",
     "playground": "pnpm --filter @yamlresume/playground",
+    "samples": "pnpm --filter @yamlresume/samples",
     "typedoc": "pnpm -r typedoc"
   },
   "lint-staged": {
