@@ -415,9 +415,6 @@ export const DEFAULT_DOCX_LAYOUT: DocxLayout = {
     showPageNumbers: false,
     paperSize: 'a4',
   },
-  sections: {
-    order: DEFAULT_SECTIONS_ORDER,
-  },
   typography: {
     fontSize: DOCX_FONT_SIZE_OPTIONS[0],
     lineSpacing: 'normal',
