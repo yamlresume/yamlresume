@@ -27,9 +27,12 @@ import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 import {
   joinNonEmptyString,
+  type LocaleLanguage,
   toCodeBlock,
   YAMLResumeError,
 } from '@yamlresume/core'
+import { getSampleResume, listSampleResumes } from '@yamlresume/samples'
+
 import { Command } from 'commander'
 import consola from 'consola'
 
@@ -81,6 +84,41 @@ export function newResume(filename: string) {
 }
 
 /**
+ * Creates a new resume file from a curated sample resume.
+ *
+ * @param filename - The name of the resume file to create.
+ * @param sampleId - The identifier of the sample resume to use.
+ * @param language - The locale language of the sample resume.
+ * @throws {YAMLResumeError} When there are file-related errors:
+ * - FILE_CONFLICT: When the file already exists
+ * - FILE_WRITE_ERROR: When there's an error writing the file
+ * @throws {Error} When the sample or language does not exist.
+ */
+export function createSampleResume(
+  filename: string,
+  sampleId: string,
+  language: LocaleLanguage
+) {
+  if (fs.existsSync(filename)) {
+    throw new YAMLResumeError('FILE_CONFLICT', { path: filename })
+  }
+
+  const sampleContent = getSampleResume(sampleId, language)
+
+  try {
+    fs.writeFileSync(filename, sampleContent)
+    consola.success(
+      `Created ${filename} from sample "${sampleId}" successfully.`
+    )
+  } catch (error) {
+    consola.debug(
+      joinNonEmptyString(['Error creating resume: ', toCodeBlock(error.stack)])
+    )
+    throw new YAMLResumeError('FILE_WRITE_ERROR', { path: filename })
+  }
+}
+
+/**
  * Create a command instance to create a new YAML resume
  */
 export function createNewCommand() {
@@ -88,12 +126,29 @@ export function createNewCommand() {
     .name('new')
     .description('create a new resume')
     .argument('[filename]', 'output filename', 'resume.yml')
-    .action((filename) => {
+    .option('--sample <id>', 'create from a curated sample resume')
+    .option('--language <language>', 'locale language for the sample', 'en')
+    .action((filename, options) => {
       try {
-        newResume(filename)
+        if (options.sample) {
+          createSampleResume(filename, options.sample, options.language)
+        } else {
+          newResume(filename)
+        }
       } catch (error) {
+        if (error instanceof YAMLResumeError) {
+          consola.error(error.message)
+          process.exit(error.errno)
+          return
+        }
+
         consola.error(error.message)
-        process.exit(error.errno)
+        consola.info(
+          `Available samples:\n${listSampleResumes()
+            .map((sample) => `  - ${sample.id}: ${sample.title}`)
+            .join('\n')}`
+        )
+        process.exit(1)
       }
     })
 }

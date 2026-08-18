@@ -27,7 +27,7 @@ import { ErrorType, YAMLResumeError } from '@yamlresume/core'
 import type { Command } from 'commander'
 import { consola } from 'consola'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
-import { createNewCommand, newResume } from './new'
+import { createNewCommand, createSampleResume, newResume } from './new'
 import { getFixture } from './utils'
 
 describe(newResume, () => {
@@ -137,6 +137,78 @@ describe(newResume, () => {
 
     expect(consolaDebugSpy).toBeCalledTimes(1)
     expect(readFileSync).toBeCalledTimes(1)
+    expect(writeFileSync).toBeCalledTimes(1)
+  })
+})
+
+describe(createSampleResume, () => {
+  let existsSync: ReturnType<typeof vi.spyOn>
+  let writeFileSync: ReturnType<typeof vi.spyOn>
+
+  beforeEach(() => {
+    existsSync = vi.spyOn(fs, 'existsSync').mockReturnValue(false)
+    writeFileSync = vi.spyOn(fs, 'writeFileSync').mockImplementation(vi.fn())
+  })
+
+  afterEach(() => {
+    vi.resetAllMocks()
+  })
+
+  it('should create a resume from a sample', () => {
+    createSampleResume('resume.yml', 'software-engineer', 'en')
+
+    expect(writeFileSync).toBeCalledTimes(1)
+    const writtenContent = writeFileSync.mock.calls[0][1] as string
+    expect(writtenContent).toContain('Andy Dufresne')
+  })
+
+  it('should support a custom language', () => {
+    createSampleResume('resume.yml', 'software-engineer', 'zh-hans')
+
+    expect(writeFileSync).toBeCalledTimes(1)
+    const writtenContent = writeFileSync.mock.calls[0][1] as string
+    expect(writtenContent).toContain('zh-hans')
+  })
+
+  it('should not create a resume if file already exists', () => {
+    existsSync.mockReturnValue(true)
+
+    try {
+      createSampleResume('resume.yml', 'software-engineer', 'en')
+    } catch (error) {
+      expect(error).toBeInstanceOf(YAMLResumeError)
+      expect(error.code).toBe('FILE_CONFLICT')
+    }
+
+    expect(writeFileSync).not.toBeCalled()
+  })
+
+  it('should throw for an invalid sample', () => {
+    expect(() =>
+      createSampleResume('resume.yml', 'not-a-sample', 'en')
+    ).toThrow('Sample resume not found: not-a-sample')
+    expect(writeFileSync).not.toBeCalled()
+  })
+
+  it('should throw for an unsupported language', () => {
+    expect(() =>
+      createSampleResume('resume.yml', 'software-engineer', 'ko' as 'en')
+    ).toThrow('Language "ko" is not available for sample "software-engineer"')
+    expect(writeFileSync).not.toBeCalled()
+  })
+
+  it('should handle errors during file write', () => {
+    writeFileSync.mockImplementation(() => {
+      throw new Error()
+    })
+
+    try {
+      createSampleResume('resume.yml', 'software-engineer', 'en')
+    } catch (error) {
+      expect(error).toBeInstanceOf(YAMLResumeError)
+      expect(error.code).toBe('FILE_WRITE_ERROR')
+    }
+
     expect(writeFileSync).toBeCalledTimes(1)
   })
 })
@@ -259,5 +331,40 @@ describe(createNewCommand, () => {
     expect(consolaErrorSpy).toBeCalledTimes(1)
     expect(processExitSpy).toBeCalledTimes(1)
     expect(processExitSpy).toBeCalledWith(ErrorType.FILE_WRITE_ERROR.errno)
+  })
+
+  it('should create a resume from a sample with --sample', () => {
+    newCommand.parse(['yamlresume', 'new', '--sample', 'software-engineer'])
+
+    expect(consolaSuccessSpy).toBeCalledTimes(1)
+    expect(consolaSuccessSpy).toBeCalledWith(
+      'Created resume.yml from sample "software-engineer" successfully.'
+    )
+  })
+
+  it('should create a resume from a sample with custom filename and language', () => {
+    newCommand.parse([
+      'yamlresume',
+      'new',
+      'my-resume.yml',
+      '--sample',
+      'software-engineer',
+      '--language',
+      'zh-hans',
+    ])
+
+    expect(consolaSuccessSpy).toBeCalledTimes(1)
+    expect(consolaSuccessSpy).toBeCalledWith(
+      'Created my-resume.yml from sample "software-engineer" successfully.'
+    )
+  })
+
+  it('should handle an invalid sample id', () => {
+    newCommand.parse(['yamlresume', 'new', '--sample', 'not-a-sample'])
+
+    expect(consolaSuccessSpy).not.toBeCalled()
+    expect(consolaErrorSpy).toBeCalledTimes(1)
+    expect(processExitSpy).toBeCalledTimes(1)
+    expect(processExitSpy).toBeCalledWith(1)
   })
 })
