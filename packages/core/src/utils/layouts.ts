@@ -22,11 +22,35 @@
  * IN THE SOFTWARE.
  */
 
-export * from './array'
-export * from './comments'
-export * from './date'
-export * from './font'
-export * from './layouts'
-export * from './object'
-export * from './string'
-export * from './yaml'
+import { Document, isMap, Pair, Scalar, type YAMLMap } from 'yaml'
+import { DEFAULT_RESUME_LAYOUTS } from '@/models'
+
+/**
+ * Append the default layouts block to a resume YAML document.
+ *
+ * The layouts are taken from {@link DEFAULT_RESUME_LAYOUTS} and added to the
+ * document as AST nodes, so the appended block always matches the canonical
+ * default configuration without requiring another parse pass.
+ *
+ * @param doc - The parsed resume YAML document.
+ */
+export function appendResumeLayouts(doc: Document): void {
+  const layoutsDoc = new Document({ layouts: DEFAULT_RESUME_LAYOUTS })
+  const layoutsMap = layoutsDoc.contents as YAMLMap
+  const layoutsNode = layoutsMap.get('layouts', true)
+
+  if (!isMap(doc.contents)) {
+    doc.contents = layoutsMap
+    return
+  }
+
+  doc.contents.delete('layouts')
+
+  const layoutsKey = new Scalar('layouts') as unknown as {
+    spaceBefore?: boolean
+  }
+  layoutsKey.spaceBefore = true
+
+  const layoutsPair = new Pair(layoutsKey, layoutsNode)
+  doc.contents.add(layoutsPair)
+}
