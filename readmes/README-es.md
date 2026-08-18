@@ -186,7 +186,7 @@ Este proyecto aún está bajo desarrollo activo. ¡Las contribuciones son profun
 
 ### Historial de Estrellas
 
-[![YAMLResume Star History Chart](https://api.star-history.com/svg?repos=yamlresume/yamlresume&type=Date)](https://www.star-history.com/#yamlresume/yamlresume&Date)
+[![YAMLResume Star History Chart](https://star-history.dera.page/svg?repos=yamlresume/yamlresume&type=Date)](https://star-history.dera.page/#yamlresume/yamlresume&Date)
 
 ## Soporta el Proyecto
 

@@ -158,7 +158,7 @@ YAMLResume 采用 [LaTeX](https://www.latex-project.org/) 作为默认排版引�
 
 ### Star 历史
 
-[![YAMLResume Star History Chart](https://api.star-history.com/svg?repos=yamlresume/yamlresume&type=Date)](https://www.star-history.com/#yamlresume/yamlresume&Date)
+[![YAMLResume Star History Chart](https://star-history.dera.page/svg?repos=yamlresume/yamlresume&type=Date)](https://star-history.dera.page/#yamlresume/yamlresume&Date)
 
 ## 路线图
 
