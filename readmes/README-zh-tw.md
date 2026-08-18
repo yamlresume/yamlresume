@@ -152,7 +152,7 @@ YAMLResume 採用 [LaTeX](https://www.latex-project.org/) 作為預設排版引�
 
 ### Star 歷史
 
-[![YAMLResume Star History Chart](https://api.star-history.com/svg?repos=yamlresume/yamlresume&type=Date)](https://www.star-history.com/#yamlresume/yamlresume&Date)
+[![YAMLResume Star History Chart](https://star-history.dera.page/svg?repos=yamlresume/yamlresume&type=Date)](https://star-history.dera.page/#yamlresume/yamlresume&Date)
 
 ## 路線圖
 

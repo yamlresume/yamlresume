@@ -191,7 +191,7 @@ Toute forme de contribution est grandement appréciée ! Merci de lire le
 
 ### Historique des étoiles
 
-[![Courbe d’étoiles YAMLResume](https://api.star-history.com/svg?repos=yamlresume/yamlresume&type=Date)](https://www.star-history.com/#yamlresume/yamlresume&Date)
+[![Courbe d’étoiles YAMLResume](https://star-history.dera.page/svg?repos=yamlresume/yamlresume&type=Date)](https://star-history.dera.page/#yamlresume/yamlresume&Date)
 
 ## Feuille de route
 

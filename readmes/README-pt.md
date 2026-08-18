@@ -167,6 +167,19 @@ com o sistema original do LaTeX.
 - [create-yamlresume](https://yamlresume.dev/docs/ecosystem/create-yamlresume)
   facilita a iniciar um novo projeto instantaneamente.
 
+## Contribuições
+
+Este projeto ainda está em desenvolvimento ativo e estamos constantemente
+trabalhando em novos recursos e correções de bugs. A API pública ainda não é
+estável, então seja paciente.
+
+As contribuições são profundamente apreciadas! Por favor, leia o
+[guia de contribuição](../CONTRIBUTING.md) antes de enviar um pull request.
+
+### Histórico de Estrelas
+
+[![YAMLResume Star History Chart](https://star-history.dera.page/svg?repos=yamlresume/yamlresume&type=Date)](https://star-history.dera.page/#yamlresume/yamlresume&Date)
+
 ## Suporte
 
 Se você considera o YAMLResume útil, considere apoiar o projeto:

@@ -110,6 +110,18 @@ Commands:
 
 Lalu, instalkan engine typesetting `XeTeX` atau `Tectonic` agar bisa merender file PDF.
 
+## Berkontribusi
+
+Proyek ini masih dalam pengembangan aktif dan kami terus mengerjakan fitur
+baru serta perbaikan bug. API publik belum stabil, jadi harap bersabar.
+
+Kontribusi sangat dihargai! Silakan baca
+[panduan kontribusi](../CONTRIBUTING.md) sebelum mengirimkan pull request.
+
+### Riwayat Bintang
+
+[![YAMLResume Star History Chart](https://star-history.dera.page/svg?repos=yamlresume/yamlresume&type=Date)](https://star-history.dera.page/#yamlresume/yamlresume&Date)
+
 ## Dukungan Proyek
 
 Jika Anda merasa Proyek ini membantu, dukung kami di:
