@@ -43,6 +43,7 @@
     "typedoc": "typedoc"
   },
   "dependencies": {
+    "@ai-sdk/openai": "^1.3.10",
     "@yamlresume/core": "workspace:*",
     "ai": "^4.3.5",
     "consola": "^3.4.2",

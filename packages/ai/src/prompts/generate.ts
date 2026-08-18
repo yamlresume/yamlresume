@@ -48,7 +48,7 @@ General rules:
 - [CRITICAL] The yaml comments (i.e, the lines starting with '#') must be kept
   because it is super helpful to assist users to edit the generated resume in
   their editors/IDEs with the builtin YAMLResume schema validation.
-- Top-level keys: content, locale, layouts.
+- Top-level keys: content, locale.
 - Dates should be strings parseable by JavaScript's new Date(), e.g., 'Sep 1,
   2020', 'Dec 2022', 'Jul 1, 2020'. Date strings must be between 4 and 32
   characters.
@@ -68,6 +68,7 @@ General rules:
   for strings that contain special characters, e.g., 'C++', 'Node.js'.
 - Do NOT emit empty strings ('') or blank values. If a value is unknown or
   optional, omit the key entirely.
+- Keep the blank line between top-level keys (content and locale).
 
 Field length and format constraints:
 ----
@@ -142,10 +143,6 @@ Locale rules:
   language. For example, if locale.language is 'zh-hans', then most of the
   content.* values should be in Simplified Chinese.
 
-Layouts rules:
-----
-
-- use the layouts from the sample resume, keep all layout engines.
 `
 
 /**

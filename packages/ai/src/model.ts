@@ -23,8 +23,8 @@
  */
 
 import { createOpenAI } from '@ai-sdk/openai'
-import type { LanguageModel } from '@yamlresume/ai'
 import { YAMLResumeError } from '@yamlresume/core'
+import type { LanguageModel } from 'ai'
 
 /**
  * Supported AI providers.
@@ -111,7 +111,7 @@ export function getOllamaBaseURL(): string {
  * providers expose an OpenAI-compatible endpoint, so they are created through
  * `@ai-sdk/openai`.
  *
- * @param overrides - Optional CLI overrides for model and base URL.
+ * @param overrides - Optional overrides for model and base URL.
  * @returns A configured language model.
  * @throws {YAMLResumeError} When a cloud provider's required API key is missing.
  */

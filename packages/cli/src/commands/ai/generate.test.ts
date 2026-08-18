@@ -24,17 +24,17 @@
 
 import fs from 'node:fs'
 
-import { AIResumeError } from '@yamlresume/ai'
+import { AIResumeError, getModelFromEnv } from '@yamlresume/ai'
 import { ErrorType, YAMLResumeError } from '@yamlresume/core'
 import type { Command } from 'commander'
 import { consola } from 'consola'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 
 import { createAIGenerateCommand, generateResumeFile } from './generate'
-import { getModelFromEnv } from './model'
 
 vi.mock('@yamlresume/ai', () => ({
   generateResume: vi.fn(),
+  getModelFromEnv: vi.fn(() => ({ id: 'mock-model' })),
   AIResumeError: class AIResumeError extends Error {
     code: string
     constructor(code: string, message: string) {
@@ -43,10 +43,6 @@ vi.mock('@yamlresume/ai', () => ({
       this.code = code
     }
   },
-}))
-
-vi.mock('./model', () => ({
-  getModelFromEnv: vi.fn(() => ({ id: 'mock-model' })),
 }))
 
 const { mockSpinner, oraMock } = vi.hoisted(() => {

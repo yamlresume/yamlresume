@@ -50,6 +50,5 @@ describe('sampleResume', () => {
 
     expect(resume.content.basics.name).toBe('Andy Dufresne')
     expect(resume.locale?.language).toBe('en')
-    expect(resume.layouts).toHaveLength(4)
   })
 })

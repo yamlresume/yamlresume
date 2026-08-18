@@ -22,10 +22,15 @@
  * IN THE SOFTWARE.
  */
 
-import { joinNonEmptyString } from '@yamlresume/core'
+import {
+  appendResumeLayouts,
+  clearComments,
+  getErrorMessage,
+  injectResumeComments,
+  joinNonEmptyString,
+} from '@yamlresume/core'
 import { generateText, streamText } from 'ai'
 import consola from 'consola'
-
 import { AIResumeError } from './errors'
 import { parseGeneratedResume } from './parse'
 import { buildGeneratePrompt } from './prompts/generate'
@@ -52,6 +57,8 @@ export async function generateResume(
     maxTokens = 16384,
     maxRetries = 2,
     onChunk,
+    withLayouts = true,
+    withComments = true,
   } = options
 
   const { system, prompt } = buildGeneratePrompt(position, language)
@@ -105,8 +112,20 @@ export async function generateResume(
       consola.debug(`Attempt ${attempt + 1} model output:`, text)
 
       lastText = text
-      const { yaml } = parseGeneratedResume(text)
-      return yaml
+      const { doc } = parseGeneratedResume(text)
+
+      if (withLayouts) {
+        appendResumeLayouts(doc)
+      }
+
+      if (withComments) {
+        return injectResumeComments(doc)
+      }
+
+      clearComments(doc)
+      clearComments(doc.contents)
+      doc.directives.docStart = null
+      return doc.toString()
     } catch (error) {
       if (error instanceof AIResumeError) {
         consola.debug(`Attempt ${attempt + 1} validation error:`, error.message)
@@ -117,7 +136,7 @@ export async function generateResume(
 
       throw new AIResumeError(
         'PROVIDER_ERROR',
-        `LLM provider failed: ${error instanceof Error ? error.message : String(error)}`,
+        `LLM provider failed: ${getErrorMessage(error)}`,
         error instanceof Error ? error : undefined
       )
     }

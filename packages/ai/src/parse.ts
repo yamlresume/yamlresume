@@ -22,8 +22,8 @@
  * IN THE SOFTWARE.
  */
 
-import { type Resume, ResumeSchema } from '@yamlresume/core'
-import yaml from 'yaml'
+import { getErrorMessage, type Resume, ResumeSchema } from '@yamlresume/core'
+import yaml, { type Document } from 'yaml'
 
 import { AIResumeError } from './errors'
 
@@ -35,7 +35,7 @@ import { AIResumeError } from './errors'
  * @param text - The raw text returned by the model.
  * @returns The YAML string.
  */
-function extractYaml(text: string): string {
+export function extractYamlFromLLM(text: string): string {
   const trimmed = text.trim()
 
   const fenceMatch = trimmed.match(/^```(?:yaml|yml)?\s*\n([\s\S]*?)\n```\s*$/)
@@ -49,23 +49,37 @@ function extractYaml(text: string): string {
 /**
  * Extract, parse and validate LLM-generated YAML.
  *
+ * Parsing is done with `yaml.parseDocument` so the returned AST can be reused
+ * for downstream layout/comment injection without re-parsing the YAML string.
+ *
  * @param text - The raw text returned by the model.
- * @returns The parsed resume and the extracted YAML string.
+ * @returns The parsed resume and the parsed YAML document.
  * @throws {AIResumeError} When parsing or validation fails.
  */
 export function parseGeneratedResume(text: string): {
   resume: Resume
-  yaml: string
+  doc: Document
 } {
-  const yamlText = extractYaml(text)
+  const yamlText = extractYamlFromLLM(text)
 
-  let resume: unknown
+  let doc: Document
   try {
-    resume = yaml.parse(yamlText)
+    doc = yaml.parseDocument(yamlText)
   } catch (error) {
     throw new AIResumeError(
       'VALIDATION_FAILED',
-      `Failed to parse generated YAML: ${error instanceof Error ? error.message : String(error)}`,
+      `Failed to parse generated YAML: ${getErrorMessage(error)}`,
+      error instanceof Error ? error : undefined
+    )
+  }
+
+  let resume: unknown
+  try {
+    resume = doc.toJS()
+  } catch (error) {
+    throw new AIResumeError(
+      'VALIDATION_FAILED',
+      `Failed to convert parsed YAML to JavaScript: ${getErrorMessage(error)}`,
       error instanceof Error ? error : undefined
     )
   }
@@ -82,5 +96,5 @@ export function parseGeneratedResume(text: string): {
     )
   }
 
-  return { resume: result.data, yaml: yamlText }
+  return { resume: result.data, doc }
 }

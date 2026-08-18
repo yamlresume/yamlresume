@@ -53,6 +53,41 @@ describe(generateResume, () => {
   const mockModel = {} as import('ai').LanguageModel
   const validYaml = sampleResume
 
+  const plainYaml = `content:
+  basics:
+    name: Andy Dufresne
+    headline: Senior Software Engineer
+    phone: "(213) 555-9876"
+    email: hi@ppresume.com
+    url: https://ppresume.com
+    summary: |
+      Computer Science major with strong foundation in data structures.
+  location:
+    city: Sacramento
+    region: California
+    country: United States
+  education:
+    - institution: USC
+      degree: Bachelor
+      area: Computer Science
+      startDate: Sep 1, 2016
+      endDate: Jul 1, 2020
+  work:
+    - name: PPResume
+      position: Software Engineer
+      startDate: Sep 1, 2020
+      summary: |
+        Built scalable web applications and RESTful APIs used by thousands of users.
+  skills:
+    - name: Web
+      level: Expert
+  languages:
+    - language: English
+      fluency: Native or Bilingual Proficiency
+locale:
+  language: en
+`
+
   beforeEach(() => {
     vi.resetAllMocks()
   })
@@ -107,6 +142,185 @@ describe(generateResume, () => {
     expect(onChunk).toHaveBeenCalledTimes(2)
     expect(onChunk).toHaveBeenNthCalledWith(1, chunks[0])
     expect(onChunk).toHaveBeenNthCalledWith(2, chunks[1])
+  })
+
+  it('appends default layouts by default', async () => {
+    vi.mocked(generateText).mockResolvedValue({
+      text: validYaml,
+    } as Awaited<ReturnType<typeof generateText>>)
+
+    const result = await generateResume({
+      position: 'Software Engineer',
+      language: 'en',
+      model: mockModel,
+    })
+
+    expect(result).toContain('layouts:')
+    expect(result).toContain('engine: latex')
+  })
+
+  it('does not append default layouts when withLayouts is false', async () => {
+    vi.mocked(generateText).mockResolvedValue({
+      text: validYaml,
+    } as Awaited<ReturnType<typeof generateText>>)
+
+    const result = await generateResume({
+      position: 'Software Engineer',
+      language: 'en',
+      model: mockModel,
+      withLayouts: false,
+    })
+
+    expect(result).not.toContain('layouts:')
+  })
+
+  it('injects deterministic comments by default', async () => {
+    vi.mocked(generateText).mockResolvedValue({
+      text: validYaml,
+    } as Awaited<ReturnType<typeof generateText>>)
+
+    const result = await generateResume({
+      position: 'Software Engineer',
+      language: 'en',
+      model: mockModel,
+    })
+
+    expect(result).toContain('# yaml-language-server:')
+    expect(result).toContain('Valid degree options:')
+    expect(result).toContain('Valid language fluency options:')
+    expect(result).toContain('Valid level options:')
+    expect(result).toContain('Use `yamlresume templates list`')
+    expect(result).toContain('LaTeX engine only supports')
+  })
+
+  it('does not inject comments when withComments is false', async () => {
+    vi.mocked(generateText).mockResolvedValue({
+      text: plainYaml,
+    } as Awaited<ReturnType<typeof generateText>>)
+
+    const result = await generateResume({
+      position: 'Software Engineer',
+      language: 'en',
+      model: mockModel,
+      withComments: false,
+      withLayouts: false,
+    })
+
+    expect(result).not.toContain('# yaml-language-server:')
+    expect(result).not.toContain('Valid degree options:')
+    expect(result).not.toContain('Valid level options:')
+  })
+
+  it('strips the document start marker when withComments is false', async () => {
+    vi.mocked(generateText).mockResolvedValue({
+      text: `---\n${plainYaml}`,
+    } as Awaited<ReturnType<typeof generateText>>)
+
+    const result = await generateResume({
+      position: 'Software Engineer',
+      language: 'en',
+      model: mockModel,
+      withComments: false,
+      withLayouts: false,
+    })
+
+    expect(result.trim().startsWith('---')).toBe(false)
+    expect(result).not.toContain('\n---\n')
+  })
+
+  it('strips LLM comments when withComments is false', async () => {
+    const yamlWithComments = `# This is a redundant comment
+content:
+  basics:
+    name: Andy Dufresne
+    headline: Senior Software Engineer
+    phone: "(213) 555-9876"
+    email: hi@ppresume.com
+    url: https://ppresume.com
+    summary: |
+      Computer Science major with strong foundation in data structures.
+  education:
+    - institution: USC
+      degree: Bachelor
+      area: Computer Science
+      startDate: Sep 1, 2016
+      endDate: Jul 1, 2020
+  work:
+    - name: PPResume
+      position: Software Engineer
+      startDate: Sep 1, 2020
+      summary: Built scalable web applications.
+  skills:
+    - name: Web
+      level: Expert
+  languages:
+    - language: English
+      fluency: Native or Bilingual Proficiency
+locale:
+  language: en
+`
+
+    vi.mocked(generateText).mockResolvedValue({
+      text: yamlWithComments,
+    } as Awaited<ReturnType<typeof generateText>>)
+
+    const result = await generateResume({
+      position: 'Software Engineer',
+      language: 'en',
+      model: mockModel,
+      withComments: false,
+      withLayouts: false,
+    })
+
+    expect(result).not.toContain('This is a redundant comment')
+  })
+
+  it('preserves literal block scalar style for summaries', async () => {
+    const yamlWithLiteralBlock = `content:
+  basics:
+    name: Andy Dufresne
+    headline: Senior Software Engineer
+    phone: "(213) 555-9876"
+    email: hi@ppresume.com
+    url: https://ppresume.com
+    summary: |
+      Computer Science major with strong foundation in data structures.
+  education:
+    - institution: USC
+      degree: Bachelor
+      area: Computer Science
+      startDate: Sep 1, 2016
+      endDate: Jul 1, 2020
+  work:
+    - name: PPResume
+      position: Software Engineer
+      startDate: Sep 1, 2020
+      summary: |
+        Built scalable web applications.
+  skills:
+    - name: Web
+      level: Expert
+  languages:
+    - language: English
+      fluency: Native or Bilingual Proficiency
+locale:
+  language: en
+`
+
+    vi.mocked(generateText).mockResolvedValue({
+      text: yamlWithLiteralBlock,
+    } as Awaited<ReturnType<typeof generateText>>)
+
+    const result = await generateResume({
+      position: 'Software Engineer',
+      language: 'en',
+      model: mockModel,
+      withComments: false,
+      withLayouts: false,
+    })
+
+    expect(result).toContain('summary: |')
+    expect(result).not.toContain('summary: >')
   })
 
   it('retries when the first response is invalid', async () => {

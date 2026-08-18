@@ -81,4 +81,19 @@ export interface GenerateResumeOptions extends AIOptions {
    * The target locale language for the resume.
    */
   language: LocaleLanguage
+
+  /**
+   * Whether to append the default layouts block to the generated resume.
+   *
+   * @default true
+   */
+  withLayouts?: boolean
+
+  /**
+   * Whether to inject deterministic YAML comments (schema header, enum option
+   * hints, date hints, etc.) into the generated resume.
+   *
+   * @default true
+   */
+  withComments?: boolean
 }

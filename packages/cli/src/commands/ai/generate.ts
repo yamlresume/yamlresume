@@ -24,8 +24,9 @@
 
 import fs from 'node:fs'
 
-import { generateResume } from '@yamlresume/ai'
+import { generateResume, getModelFromEnv } from '@yamlresume/ai'
 import {
+  getErrorMessage,
   joinNonEmptyString,
   toCodeBlock,
   YAMLResumeError,
@@ -34,7 +35,6 @@ import { Command, InvalidArgumentError } from 'commander'
 import consola from 'consola'
 import ora from 'ora'
 
-import { getModelFromEnv } from './model'
 import { validateLocaleLanguage } from './validate'
 
 /**
@@ -158,7 +158,7 @@ Environment variables:
           maxRetries: options.retry,
         })
       } catch (error) {
-        const message = error instanceof Error ? error.message : String(error)
+        const message = getErrorMessage(error)
         consola.error(message)
 
         if (consola.level >= 4 && error instanceof Error && error.stack) {

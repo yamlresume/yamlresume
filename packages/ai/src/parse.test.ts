@@ -23,7 +23,7 @@
  */
 
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
-import yaml from 'yaml'
+import yaml, { Document } from 'yaml'
 
 import { AIResumeError } from './errors'
 import { parseGeneratedResume } from './parse'
@@ -35,7 +35,7 @@ describe(parseGeneratedResume, () => {
   let parseSpy: ReturnType<typeof vi.spyOn>
 
   beforeEach(() => {
-    parseSpy = vi.spyOn(yaml, 'parse')
+    parseSpy = vi.spyOn(yaml, 'parseDocument')
   })
 
   afterEach(() => {
@@ -47,6 +47,13 @@ describe(parseGeneratedResume, () => {
 
     expect(resume.content.basics.name).toBeTypeOf('string')
     expect(resume.locale?.language).toBe('en')
+  })
+
+  it('returns the parsed YAML document', () => {
+    const { doc } = parseGeneratedResume(validYaml)
+
+    expect(doc).toBeInstanceOf(Document)
+    expect(doc.toString()).toContain('content:')
   })
 
   it('extracts YAML from markdown code fences', () => {
@@ -62,6 +69,21 @@ describe(parseGeneratedResume, () => {
     )
   })
 
+  it('includes the original error as cause when YAML parsing fails', () => {
+    const parseError = new Error('parse failed')
+    parseSpy.mockImplementation(() => {
+      throw parseError
+    })
+
+    expect(() => parseGeneratedResume(validYaml)).toThrow(
+      new AIResumeError(
+        'VALIDATION_FAILED',
+        'Failed to parse generated YAML: parse failed',
+        parseError
+      )
+    )
+  })
+
   it('throws a validation error for YAML that fails the schema', () => {
     expect(() => parseGeneratedResume('content: {}')).toThrow(AIResumeError)
   })
@@ -74,17 +96,29 @@ describe(parseGeneratedResume, () => {
     expect(() => parseGeneratedResume(validYaml)).toThrow(AIResumeError)
   })
 
-  it('returns the extracted YAML string', () => {
-    const { yaml } = parseGeneratedResume(validYaml)
+  it('throws a validation error when converting parsed YAML fails', () => {
+    const doc = yaml.parseDocument(validYaml)
+    vi.spyOn(doc, 'toJS').mockImplementation(() => {
+      throw new Error('conversion failed')
+    })
+    parseSpy.mockReturnValue(doc)
 
-    expect(yaml).toBe(validYaml.trim())
+    expect(() => parseGeneratedResume(validYaml)).toThrow(
+      new AIResumeError(
+        'VALIDATION_FAILED',
+        'Failed to convert parsed YAML to JavaScript: conversion failed',
+        new Error('conversion failed')
+      )
+    )
   })
 
-  it('strips markdown fences from the returned YAML string', () => {
-    const fenced = `\`\`\`yaml\n${validYaml}\n\`\`\``
-    const { yaml } = parseGeneratedResume(fenced)
+  it('handles YAML conversion failures that are not Error instances', () => {
+    const doc = yaml.parseDocument(validYaml)
+    vi.spyOn(doc, 'toJS').mockImplementation(() => {
+      throw 'conversion exploded'
+    })
+    parseSpy.mockReturnValue(doc)
 
-    expect(yaml).toBe(validYaml.trim())
-    expect(yaml).not.toContain('```')
+    expect(() => parseGeneratedResume(validYaml)).toThrow(AIResumeError)
   })
 })

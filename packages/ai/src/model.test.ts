@@ -294,7 +294,7 @@ describe(getModelFromEnv, () => {
     })
   })
 
-  it('should override both model and base URL from env with CLI options', () => {
+  it('should override both model and base URL from env with options', () => {
     process.env.DEEPSEEK_API_KEY = 'test-deepseek-key'
     process.env.YAMLRESUME_AI_MODEL = 'deepseek-v4-flash'
     process.env.YAMLRESUME_AI_BASE_URL = 'https://env.deepseek.com'

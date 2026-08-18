@@ -23,9 +23,15 @@
  */
 
 export type { LanguageModel } from 'ai'
+export { generateText } from 'ai'
 export { AIResumeError } from './errors'
 export { generateResume } from './generate'
-export { parseGeneratedResume } from './parse'
+export {
+  type AIProvider,
+  getAIProvider,
+  getModelFromEnv,
+} from './model'
+export { extractYamlFromLLM, parseGeneratedResume } from './parse'
 export type {
   AIOptions,
   GenerateResumeOptions,
