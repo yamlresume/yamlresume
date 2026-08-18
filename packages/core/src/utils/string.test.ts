@@ -28,6 +28,7 @@ import { describe, expect, it } from 'vitest'
 import {
   escapeHtml,
   escapeLatex,
+  getErrorMessage,
   isEmptyString,
   joinNonEmptyString,
   showIf,
@@ -218,5 +219,21 @@ describe(toCodeBlock, () => {
     for (const [code, lang, expected] of tests) {
       expect(toCodeBlock(code, lang)).toBe(expected)
     }
+  })
+})
+
+describe(getErrorMessage, () => {
+  it('should return the message for Error instances', () => {
+    expect(getErrorMessage(new Error('something went wrong'))).toBe(
+      'something went wrong'
+    )
+  })
+
+  it('should return the string representation for non-error values', () => {
+    expect(getErrorMessage('raw failure')).toBe('raw failure')
+    expect(getErrorMessage(42)).toBe('42')
+    expect(getErrorMessage(null)).toBe('null')
+    expect(getErrorMessage(undefined)).toBe('undefined')
+    expect(getErrorMessage({ key: 'value' })).toBe('[object Object]')
   })
 })

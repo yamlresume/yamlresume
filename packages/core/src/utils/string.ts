@@ -107,6 +107,16 @@ export function joinNonEmptyString(
 }
 
 /**
+ * Convert an unknown error value into a human-readable string.
+ *
+ * @param error - The error value.
+ * @returns The error message if it is an Error, otherwise its string representation.
+ */
+export function getErrorMessage(error: unknown): string {
+  return error instanceof Error ? error.message : String(error)
+}
+
+/**
  * Convert a string to a code block in markdown format
  *
  * @param code - The string to convert
