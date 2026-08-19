@@ -1,314 +1,222 @@
 content:
   basics:
-    name: Elena Vogt
-    email: elena.vogt@posteo.de
-    headline: Data Scientistin mit Schwerpunkt Machine Learning & NLP
-    phone: +49 151 12345678
-    summary: >
-      Data Scientistin mit über 5 Jahren Erfahrung in der Entwicklung
-      produktionsreifer Machine-Learning-Modelle. Schwerpunkt auf Natural
-      Language Processing, Predictive Analytics und MLOps.
+    name: Anna Weber
+    headline: Senior Data Scientistin für Machine Learning & Predictive Analytics
+    phone: "+49 170 5557890"
+    email: anna.weber@datacraft.de
+    url: https://www.datacraft.de/anna-weber
+    summary: |
+      Data Scientistin mit über sechs Jahren Erfahrung in der Entwicklung und Implementierung von Machine-Learning-Modellen und skalierbaren Datenpipelines.
 
+      - Expertise in Python, statistischer Analyse und Big-Data-Technologien wie Apache Spark und Kubernetes
+      - Nachgewiesene Erfolge bei der Steigerung von Umsatz und Kundenzufriedenheit durch datengetriebene Entscheidungen
+      - Erfahrung in der Zusammenarbeit mit cross-funktionalen Teams und der Kommunikation komplexer Ergebnisse an nicht-technische Stakeholder
+      - Leidenschaft für die Verbesserung von Modellgenauigkeit und die Automatisierung von ML-Workflows
 
-      * Entwicklung von Modellen, die messbare Geschäftsergebnisse verbessern
-
-      * Enge Zusammenarbeit mit Product und Engineering, um ML-Lösungen in
-      skalierbare Services zu überführen
-
-      * Erfahrung mit Cloud-Plattformen (AWS, GCP) und Container-Technologien
-
-      * Leidenschaft für klare Datenkommunikation und datengetriebene
-      Entscheidungsfindung
-    url: https://www.elenavogt-data.de
-  education:
-    - area: Data Science
-      institution: Humboldt-Universität zu Berlin
-      degree: Master
-      courses:
-        - Maschinelles Lernen
-        - Deep Learning
-        - Statistische Modellierung
-        - Natural Language Processing
-        - Big-Data-Infrastrukturen
-        - Datenvisualisierung
-      endDate: Sep 1, 2019
-      startDate: Oct 1, 2017
-      summary: >
-        * Abschluss als Jahrgangsbeste mit Gesamtnote 1.3
-
-        * Fokus auf angewandte Machine-Learning-Verfahren und NLP
-
-        * Masterarbeit: "Transfer Learning für die Klassifikation medizinischer
-        Dokumente"
-      score: "1.3"
-      url: https://www.hu-berlin.de
-    - area: Informatik
-      institution: Technische Universität Berlin
-      degree: Bachelor
-      courses:
-        - Algorithmen und Datenstrukturen
-        - Programmierpraktikum Python
-        - Datenbanksysteme
-        - Softwaretechnik
-        - Lineare Algebra
-      endDate: Sep 1, 2017
-      startDate: Oct 1, 2014
-      summary: |
-        * Bachelorarbeit über "Evaluierung von Machine-Learning-Pipelines"
-        * Arbeit als studentische Hilfskraft am Lehrstuhl für Datenbanken
-      score: "1.8"
-      url: https://www.tu.berlin
-  awards:
-    - awarder: Bundesverband Künstliche Intelligenz
-      title: KI-Nachwuchspreis 2022
-      date: Nov 2022
-      summary: >
-        Verliehen für herausragende angewandte Forschung im Bereich NLP,
-        insbesondere für die Entwicklung eines Modells zur Früherkennung von
-        Fehlinformationen.
-    - awarder: Deutscher Akademischer Austauschdienst
-      title: DAAD-Preis für internationale Studierende
-      date: Dec 2018
-      summary: >
-        Auszeichnung für hervorragende akademische Leistungen und
-        gesellschaftliches Engagement während des Masterstudiums.
-  certificates:
-    - issuer: Amazon Web Services
-      name: AWS Certified Machine Learning – Specialty
-      date: Feb 2022
-      url: https://aws.amazon.com/de/certification/
-    - issuer: deeplearning.ai / Coursera
-      name: Deep Learning Specialization
-      date: May 2020
-      url: https://www.coursera.org/specializations/deep-learning
-  interests:
-    - name: Data Science & Open Data
-      keywords:
-        - Kaggle
-        - Open-Source-Software
-        - Datenjournalismus
-    - name: Nachhaltigkeit
-      keywords:
-        - Klimadaten
-        - Umweltanalytik
-    - name: Sport
-      keywords:
-        - Bouldern
-        - Yoga
-  languages:
-    - fluency: Native or Bilingual Proficiency
-      language: German
-      keywords:
-        - Muttersprache
-    - fluency: Full Professional Proficiency
-      language: English
-      keywords:
-        - Täglich im Arbeitsumfeld
-        - C1
-    - fluency: Limited Working Proficiency
-      language: French
-      keywords:
-        - Grundkenntnisse
   location:
+    address: Musterstraße 12
     city: Berlin
+    region: Berlin
     country: Germany
     postalCode: "10115"
-    region: Berlin
+
   profiles:
-    - network: GitHub
-      username: elenavogt
-      url: https://github.com/elenavogt
     - network: LinkedIn
-      username: elena-vogt
-      url: https://www.linkedin.com/in/elena-vogt
-  projects:
-    - name: Feedbackradar – NLP-Dashboard
-      startDate: Jan 2022
-      summary: >
-        * Automatische Extraktion von Themen und Stimmungen aus mehrsprachigen
-        Kundenrezensionen
+      url: https://www.linkedin.com/in/anna-weber
+      username: anna-weber
+    - network: GitHub
+      url: https://github.com/annaweber
+      username: annaweber
 
-        * Einsatz von Sentence-BERT und Latent Dirichlet Allocation
-
-        * Visualisierung der Ergebnisse in einem Streamlit-Dashboard
-      description: Interaktives Dashboard zur Analyse von Kundenbewertungen mit Topic
-        Modeling und Stimmungsanalyse.
-      endDate: Jun 2022
-      keywords:
-        - NLP
-        - Streamlit
-        - Topic Modeling
-      url: https://github.com/elenavogt/feedbackradar
-    - name: Churn-Prediction Pipeline
-      startDate: Mar 2021
+  education:
+    - institution: Technische Universität München
+      url: https://www.tum.de
+      degree: Master
+      area: Data Science
+      score: "1,3"
+      startDate: "Oct 1, 2015"
+      endDate: "Sep 30, 2017"
+      courses:
+        - Maschinelles Lernen
+        - Statistische Modellierung
+        - Big Data Infrastrukturen
+        - Datenvisualisierung
+        - Deep Learning
+        - Zeitreihenanalyse
       summary: |
-        * Feature Engineering auf Transaktions- und Interaktionsdaten
-        * Modellvergleich mit Cross-Validation und Hyperparameter-Optimierung
-        * Deployment als REST-API mit FastAPI und Docker
-      description: End-to-End-ML-System zur Vorhersage von Kundenabwanderung für einen
-        SaaS-Anbieter.
-      endDate: Aug 2021
+        - Abschlussarbeit: „Ein Deep-Learning-Ansatz zur Vorhersage des Energiebedarfs in intelligenten Stromnetzen"
+        - Vertiefung in Machine Learning, statistischer Datenanalyse und verteilten Systemen
+        - Praktische Erfahrung durch Projekte mit TensorFlow, Spark und Cloud-Technologien
+
+    - institution: Universität Heidelberg
+      url: https://www.uni-heidelberg.de
+      degree: Bachelor
+      area: Informatik
+      score: "2,0"
+      startDate: "Oct 1, 2012"
+      endDate: "Sep 30, 2015"
+      courses:
+        - Algorithmen und Datenstrukturen
+        - Datenbanken
+        - Softwaretechnik
+        - Statistik
+      summary: |
+        - Bachelorarbeit: „Entwicklung einer interaktiven Visualisierung zur explorativen Datenanalyse"
+        - Grundlagen in Mathematik, Informatik und Statistik
+
+  work:
+    - name: DataCraft GmbH
+      url: https://www.datacraft.de
+      position: Senior Data Scientistin
+      startDate: "Jan 1, 2020"
+      summary: |
+        - Leitung der Entwicklung einer ML-Plattform für Kundensegmentierung und personalisierte Empfehlungen
+        - Aufbau und Automatisierung von Data-Pipelines auf AWS mit Docker, Kubernetes und Terraform
+        - Einführung von MLflow zur Modellverwaltung und Reproduzierbarkeit
+        - Enge Zusammenarbeit mit Produktmanagement und Softwareentwicklung zur Integration von Modellen in Produktionssysteme
       keywords:
-        - FastAPI
-        - Docker
-        - XGBoost
-      url: https://github.com/elenavogt/churn-pipeline
-  publications:
-    - name: "Fairness-Metriken für Predictive Policing: Eine vergleichende Analyse"
-      publisher: Workshop Fairness & Transparenz in ML-Systemen
-      releaseDate: Sep 2022
-      summary: >
-        * Untersuchung unterschiedlicher Fairness-Definitionen in einem realen
-        Evaluierungsdatensatz
+        - Machine Learning
+        - Python
+        - Kubernetes
+        - AWS
+        - MLflow
 
-        * Entwicklung eines Open-Source-Toolkits zur Reproduktion der Ergebnisse
-      url: https://www.fairml-workshop.de/paper/2022/predictive
-    - name: BERT-basierte Klassifikation medizinischer Dokumente im klinischen Alltag
-      publisher: Proceedings der Tagung Datenwissenschaft & KI 2023
-      releaseDate: Mar 2023
-      summary: >
-        * Veröffentlichung der Ergebnisse einer Machbarkeitsstudie zum Einsatz
-        von Transfer Learning für die automatische Dokumentenklassifikation
+    - name: FinanzInsight AG
+      url: https://www.finanzinsight.de
+      position: Data Scientistin
+      startDate: "Oct 1, 2017"
+      endDate: "Dec 31, 2019"
+      summary: |
+        - Entwicklung von Risikomodellen zur Betrugserkennung im Zahlungsverkehr
+        - Analyse großer Transaktionsdatensätze mit Apache Spark und SQL
+        - Erstellung interaktiver Dashboards zur Überwachung von Modell-Performance und Geschäftskennzahlen
+        - Präsentation von Ergebnissen vor Fachbereichsleitungen und externen Partnern
+      keywords:
+        - Risikomodellierung
+        - Apache Spark
+        - SQL
+        - Tableau
 
-        * Kooperation mit einem Berliner Klinikum und dem Fachbereich
-        Medizininformatik
-      url: https://www.dwki2023.de/publikationen/bert-medizin
-  skills:
-    - level: Expert
-      name: Machine Learning
+    - name: Analytik Solutions GmbH
+      url: https://www.analytiksolutions.de
+      position: Werkstudentin Datenanalyse
+      startDate: "Apr 1, 2015"
+      endDate: "Sep 30, 2016"
+      summary: |
+        - Unterstützung des Data-Science-Teams bei der Datenaufbereitung und explorativen Analyse
+        - Automatisierung von Reporting-Prozessen mit Python und Excel
+        - Durchführung statistischer Auswertungen für Kundenprojekte
       keywords:
         - Python
-        - scikit-learn
+        - Statistik
+        - Excel
+        - Reporting
+
+  skills:
+    - name: Machine Learning
+      level: Expert
+      keywords:
+        - Python
         - TensorFlow
         - PyTorch
+        - scikit-learn
         - XGBoost
-    - level: Advanced
-      name: Deep Learning
+    - name: Datenanalyse
+      level: Expert
       keywords:
-        - NLP
-        - Transformers
-        - BERT
-        - LSTMs
-        - Computer Vision
-    - level: Intermediate
-      name: Data Engineering
-      keywords:
+        - Pandas
+        - NumPy
         - SQL
         - Apache Spark
-        - Airflow
+        - Tableau
+    - name: Cloud Computing
+      level: Advanced
+      keywords:
+        - AWS
+        - Azure
         - Docker
-    - level: Advanced
-      name: Datenvisualisierung
+        - Kubernetes
+        - Terraform
+    - name: Statistik
+      level: Advanced
       keywords:
-        - Matplotlib
-        - Plotly
-        - Tableau
-        - Streamlit
+        - Hypothesentests
+        - Regressionsanalyse
+        - Clusteranalyse
+        - Zeitreihen
+
+  languages:
+    - language: German
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - Muttersprache
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - TOEFL 108
+        - Verhandlungssicher
+    - language: French
+      fluency: Limited Working Proficiency
+      keywords:
+        - Grundkenntnisse
+
+  awards:
+    - title: KI-Innovationspreis 2019
+      date: "Sep 2019"
+      awarder: Bitkom
+      summary: |
+        Auszeichnung für die Arbeit zur Optimierung von Prognosemodellen für den Energiebedarf mittels Deep Learning.
+
+  certificates:
+    - name: AWS Certified Machine Learning – Specialty
+      issuer: Amazon Web Services
+      date: "Feb 2021"
+      url: https://aws.amazon.com/certification/aws-certified-machine-learning-specialty/
+
+  publications:
+    - name: Vorhersage von Kundenabwanderung mittels Ensemble-Methoden
+      publisher: Zeitschrift für Praktische Datenwissenschaft
+      releaseDate: "Jun 15, 2021"
+      url: https://www.zfpd.de/publikationen/abwanderung-ensemble
+      summary: |
+        Vergleich verschiedener Ensemble-Methoden zur Prognose der Kundenabwanderung im Telekommunikationssektor.
+
+  projects:
+    - name: Churn Prediction Platform
+      url: https://github.com/annaweber/churn-prediction
+      description: End-to-End-Machine-Learning-Pipeline zur Identifikation von
+        Kundinnen und Kunden mit hohem Abwanderungsrisiko.
+      startDate: "Feb 1, 2020"
+      endDate: "Nov 30, 2020"
+      summary: |
+        - Entwicklung einer skalierbaren ML-Pipeline mit automatisiertem Retraining und Monitoring
+        - Integration von Kafka zur Echtzeit-Datenverarbeitung
+        - Deployment als Docker-Container auf Kubernetes
+      keywords:
+        - Python
+        - MLflow
+        - AWS
+        - Kafka
+
+  interests:
+    - name: Datenvisualisierung
+      keywords:
+        - D3.js
+        - ggplot2
+        - Storytelling mit Daten
+    - name: Bergsteigen
+      keywords:
+        - Alpen
+        - Trekking
+
   volunteer:
-    - organization: CorrelAid e.V.
-      position: Ehrenamtliche Data Scientistin
-      startDate: Jan 2021
-      summary: >
-        * Unterstützung gemeinnütziger Organisationen bei der Datenauswertung
-        und Visualisierung
+    - organization: Code for Germany
+      url: https://codefor.de
+      position: Freiwillige Datenexpertin
+      startDate: "Jun 2019"
+      summary: |
+        - Unterstützung gemeinnütziger Organisationen bei der Analyse offener Daten
+        - Entwicklung datenbasierter Anwendungen für bürgernahe Projekte
 
-        * Mitentwicklung eines Bildungsprojekts zu ethischen Fragestellungen in
-        Machine-Learning-Projekten
-
-        * Durchführung von Workshops zu Python und Datenanalyse für
-        Einsteiger*innen
-      endDate: Dec 2023
-      url: https://correlaid.org
-  work:
-    - name: Nordlicht Analytics GmbH
-      position: Data Scientistin
-      startDate: Nov 1, 2021
-      summary: >
-        * Konzeption und Entwicklung von NLP-Modellen zur automatisierten
-        Auswertung von Kundenfeedback
-
-        * Aufbau einer MLOps-Pipeline mit Docker, Airflow und AWS SageMaker zur
-        Modellbereitstellung
-
-        * Reduktion der Modell-Latenz um 40% durch Optimierung der
-        Inferenz-Infrastruktur
-
-        * Leitung eines Data-Science-Mentoring-Programms für neue Teammitglieder
-      keywords:
-        - NLP
-        - MLOps
-        - AWS SageMaker
-        - Airflow
-        - Python
-      url: https://www.nordlicht-analytics.de
-    - name: Berliner Gesundheitsdaten AG
-      position: Junior Data Scientistin
-      startDate: Oct 1, 2019
-      summary: >
-        * Entwicklung von Vorhersagemodellen zur Identifikation von
-        Risikopatienten (Python, scikit-learn)
-
-        * Automatisierte Datenqualitätsprüfung und ETL-Prozesse mit SQL und
-        Pandas
-
-        * Erstellung interaktiver Dashboards in Tableau für medizinische
-        Fachabteilungen
-
-        * Mitarbeit an einem Forschungsprojekt zur Anonymisierung von
-        Gesundheitsdaten
-      endDate: Sep 30, 2021
-      keywords:
-        - Python
-        - SQL
-        - Tableau
-        - ETL
-        - Modellvalidierung
-      url: https://www.berliner-gesundheitsdaten.de
-    - name: Datenwerk Solutions (Werkstudentin)
-      position: Data-Analytics-Werkstudentin
-      startDate: Apr 1, 2018
-      summary: >
-        * Unterstützung des Beratungsteams bei explorativen Datenanalysen und
-        Reportings
-
-        * Implementierung wiederkehrender Auswertungen mit Python und Excel
-
-        * Dokumentation von Datenquellen und Ableitung von Qualitätsmetriken
-      endDate: Aug 31, 2019
-      keywords:
-        - Data Analysis
-        - Python
-        - Reporting
-      url: https://www.datenwerk.solutions
 locale:
   language: de
-layouts:
-  - engine: latex
-    page:
-      showPageNumbers: true
-      paperSize: a4
-      margins:
-        top: 2.5cm
-        bottom: 2.5cm
-        left: 1.5cm
-        right: 1.5cm
-    template: moderncv-banking
-    typography:
-      fontSize: 11pt
-  - engine: docx
-    page:
-      showPageNumbers: true
-      paperSize: a4
-      margins:
-        top: 2.5cm
-        bottom: 2.5cm
-        left: 1.5cm
-        right: 1.5cm
-    typography:
-      fontSize: 11pt
-      lineSpacing: normal
-  - engine: markdown
-  - engine: html
-    template: calm
-    typography:
-      fontSize: 16px

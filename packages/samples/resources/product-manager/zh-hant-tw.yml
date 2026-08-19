@@ -1,221 +1,197 @@
 content:
   basics:
-    name: 陳思涵
-    email: sihan.chen@example.com
-    headline: 資深產品經理 | 專注於用戶成長與數據驅動決策
-    phone: +886 912 345 678
+    name: 林佳穎
+    headline: 產品經理 | 8 年軟體與金融科技產品經驗 | 數據驅動決策
+    phone: "+886 912 345 678"
+    email: chia.ying.lin@example.tw
+    url: https://www.linkedin.com/in/chiaying-lin
     summary: |
-      - 擁有 8 年以上軟體與 App 產品管理經驗，擅長從 0 到 1 打造產品、制定策略並推動跨部門協作
-      - 專注於使用者研究、數據分析與 A/B 測試，持續以數據驅動優化產品體驗與商業指標
-      - 熟悉敏捷開發流程，具備 Scrum Master 實務經驗，能有效管理產品待辦清單與迭代節奏
-      - 善於溝通與表達，曾協調工程、設計、行銷與業務團隊，成功交付多項高影響力產品專案
-    url: https://sihanchen.me
-  education:
-    - area: 資訊管理學系
-      institution: 國立台灣大學
-      degree: Bachelor
-      courses:
-        - 資料庫管理
-        - 使用者體驗設計
-        - 電子商務
-        - 統計學
-        - 作業研究
-      endDate: Jun 1, 2015
-      startDate: Sep 1, 2011
-      summary: |
-        - 主修資訊管理，修習程式設計、資料庫與電子商務等課程，奠定產品開發與數據分析的基礎
-        - 畢業專題「行動點餐 App」獲選為系所優秀專題，並於校內創新創業競賽獲得第二名
-      score: "3.9"
-      url: https://www.management.ntu.edu.tw/
-  awards:
-    - awarder: 樂灣科技股份有限公司
-      title: 年度優秀產品經理
-      date: Dec 2023
-      summary: |
-        肯定其在訂閱制產品營收成長與團隊協作上的卓越貢獻，成功帶領產品團隊達成年度目標。
-  certificates:
-    - issuer: Scrum Alliance
-      name: Certified Scrum Product Owner (CSPO)
-      date: Jun 2022
-      url: https://www.scrumalliance.org/certifications/practitioners/cspo-certification
-    - issuer: Google
-      name: Google Analytics 個人認證
-      date: Mar 2021
-      url: https://skillshop.exceedlms.com/student/path/18027566
-  interests:
-    - name: 閱讀
-      keywords:
-        - 商業管理
-        - 設計思考
-        - 心理學
-    - name: 戶外運動
-      keywords:
-        - 登山
-        - 露營
-        - 自行車
-  languages:
-    - fluency: Native or Bilingual Proficiency
-      language: Chinese
-      keywords:
-        - 中文 (母語)
-    - fluency: Full Professional Proficiency
-      language: English
-      keywords:
-        - TOEIC 950
-        - TOEFL iBT 105
+      擁有 8 年以上軟體與金融科技產品管理經驗的產品經理，擅長從 0 到 1 打造產品，也熟悉產品成熟期的迭代與優化。
+
+      - 主導過 20+ 個跨國、跨團隊專案，涵蓋行動支付、數位帳戶、電商推薦等領域
+      - 以數據分析與用戶研究為核心，制定產品策略與路線圖，成功提升 DAU 與轉換率
+      - 熟悉 Scrum 開發流程，善於與工程、設計、業務團隊協作，建立高效敏捷團隊
+      - 具備 SQL、Amplitude、Google Analytics 等數據工具能力，能獨立完成分析並驅動決策
+
   location:
     city: 台北市
-    address: 忠孝東路四段 100 號 12 樓
+    region: 大安區
     country: Taiwan
     postalCode: "106"
-    region: 大安區
+
   profiles:
     - network: LinkedIn
-      username: sihanchen
-      url: https://www.linkedin.com/in/sihanchen
-    - network: Medium
-      username: sihanchen
-      url: https://medium.com/@sihanchen
-  projects:
-    - name: 會員成長與忠誠度計畫
-      startDate: Jan 2023
+      url: https://www.linkedin.com/in/chiaying-lin
+      username: chiaying-lin
+    - network: GitHub
+      url: https://github.com/chiayinglin
+      username: chiayinglin
+
+  education:
+    - institution: 國立臺灣大學
+      url: https://www.ntu.edu.tw
+      degree: Bachelor
+      area: 資訊管理學系
+      score: "3.9"
+      startDate: Sep 1, 2011
+      endDate: Jun 1, 2015
+      courses:
+        - 資料庫管理
+        - 系統分析與設計
+        - 行銷管理
+        - 統計學
+        - 電子商務
       summary: |
-        - 分析用戶分群與購買行為，設計新版會員等級與點數機制
-        - 與工程、設計團隊合作開發會員中心頁面與個人化推薦模組
-        - 專案上線後三個月內，會員月平均回購率提升 18%
-      description: 重新設計會員制度與點數系統，以數據驅動提升用戶留存與回購率
-      endDate: Oct 2023
-      keywords:
-        - 會員經營
-        - 忠誠度計畫
-        - 使用者分析
-      url: https://sihanchen.me/projects/loyalty-program
-  publications:
-    - name: 從數據洞察到產品決策：資深產品經理的五個實戰心法
-      publisher: Medium
-      releaseDate: Aug 2023
+        - 主修資訊管理，具備扎實的資訊系統與商業管理雙領域知識
+        - 以「線上購物平台的推薦系統」專題獲選為畢業專題競賽佳作
+
+  work:
+    - name: 雲端金融科技股份有限公司
+      position: 資深產品經理
+      startDate: Mar 1, 2022
       summary: |
-        - 分享如何結合定性訪談與定量數據找出產品優化機會
-        - 以實際案例說明 A/B 測試的設計陷阱與分析框架
-        - 探討產品經理在跨部門協作中建立數據文化的方法
-      url: https://medium.com/@sihanchen/data-driven-product-decisions
-  skills:
-    - level: Expert
-      name: 產品管理
+        - 負責行動支付 App 之產品策略、路線圖規劃與需求優先級排序，涵蓋 iOS、Android、Web 三端
+        - 帶領 2 位產品設計師與 3 位數據分析師，與 6 個 Scrum Team 協作，年度目標達成率 120%
+        - 主導「一鍵轉帳」與「電子發票載具」功能，上線 3 個月內提升月活躍用戶 35%
+        - 建立用戶回饋與數據監控機制，運用 SQL 與 Amplitude 進行留存分析，降低 15% 用戶流失率
       keywords:
         - 產品策略
-        - 路線圖規劃
-        - 需求分析
-        - 使用者故事
-        - 產品發布
-    - level: Advanced
-      name: 使用者研究
+        - 行動支付
+        - Scrum
+        - SQL
+        - Amplitude
+    - name: 樂購電子商務股份有限公司
+      position: 產品經理
+      startDate: Jul 1, 2019
+      endDate: Feb 1, 2022
+      summary: |
+        - 負責電商平台會員系統與個人化推薦功能，與工程、設計、行銷團隊協作完成季度產品目標
+        - 運用 A/B 測試優化商品詳情頁，將下單轉換率提升 18%
+        - 導入用戶訪談與問卷調查機制，整理 200+ 位用戶回饋，驅動產品迭代方向
+        - 透過 GA 與內部數據儀表板監控關鍵指標，建立產品績效追蹤流程
       keywords:
-        - 使用者訪談
-        - 可用性測試
+        - 電商平台
+        - A/B 測試
+        - Google Analytics
+        - 用戶研究
+    - name: 數位導航科技股份有限公司
+      position: 助理產品經理
+      startDate: Jul 1, 2017
+      endDate: Jun 1, 2019
+      summary: |
+        - 協助產品經理進行競品分析、需求文件撰寫與原型設計
+        - 負責地圖導航 App 之數據報表產出，定期追蹤 DAU、留存率與功能使用率
+        - 與客服團隊合作建立問題分級機制，縮短 30% 問題回應時間
+      keywords:
         - 競品分析
-        - Persona
-    - level: Advanced
-      name: 數據分析
+        - Axure
+        - 數據報表
+
+  skills:
+    - name: 產品管理
+      level: Expert
+      keywords:
+        - 產品策略
+        - 產品路線圖
+        - 需求分析
+        - 競品分析
+        - 用戶故事
+        - 優先級排序
+    - name: 數據分析
+      level: Advanced
       keywords:
         - SQL
+        - Amplitude
         - Google Analytics
-        - Mixpanel
         - A/B 測試
-    - level: Expert
-      name: 敏捷開發
+        - Tableau
+    - name: 專案管理
+      level: Advanced
       keywords:
         - Scrum
         - Kanban
-        - Jira
-        - Trello
-    - level: Intermediate
-      name: 設計工具
-      keywords:
+        - JIRA
+        - Confluence
         - Figma
-        - Sketch
-        - Axure
-  volunteer:
-    - organization: TechGirls Taiwan
-      position: 職涯導師
-      startDate: Jan 2022
+
+  languages:
+    - language: Chinese
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - 母語
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - TOEIC 910
+        - 商務簡報
+        - 跨國會議
+
+  awards:
+    - title: 年度最佳產品獎
+      date: Dec 2023
+      awarder: 雲端金融科技股份有限公司
       summary: |
-        - 擔任科技領域女性學生之職涯導師，提供產品經理職涯規劃建議
-        - 協助籌辦工作坊與模擬面試，累計指導超過 30 位學員
-      endDate: Dec 2023
-      url: https://www.techgirls.tw
-  work:
-    - name: 樂灣科技股份有限公司
-      position: 資深產品經理
+        以「電子發票載具」專案獲得內部年度最佳產品獎，肯定其對用戶價值與商業指標的卓越貢獻。
+
+  certificates:
+    - name: Certified Scrum Product Owner (CSPO)
+      issuer: Scrum Alliance
+      date: Jun 2021
+      url: https://www.scrumalliance.org/
+    - name: Google Analytics Individual Qualification
+      issuer: Google
+      date: Feb 2020
+      url: https://skillshop.exceedlms.com/
+
+  publications:
+    - name: 從用戶數據到產品決策：行動支付產品經理實戰筆記
+      publisher: 產品思維電子報
+      releaseDate: Mar 2023
+      url: https://medium.com/@chiaying-lin/product-data-decision
+      summary: |
+        分享行動支付產品在用戶增長與留存優化上的數據分析方法與實務經驗。
+
+  projects:
+    - name: 個人化商品推薦系統
+      url: https://github.com/chiayinglin/recommendation-system
       startDate: Mar 1, 2021
+      endDate: Aug 1, 2021
       summary: |
-        - 負責訂閱制 SaaS 產品線，掌管產品藍圖與季度開發優先序，年度營收成長 45%
-        - 建立用戶訪談與使用數據分析機制，找出關鍵流失環節，將 30 日留存率提升 22%
-        - 導入 A/B testing 流程並與工程團隊協作，優化註冊轉換率，從 12% 提升至 18%
-        - 主導跨部門（業務、行銷、客服）溝通，確保需求蒐集與產品發布策略一致
+        主導電商平台個人化推薦系統建置，整合用戶行為數據與商品標籤，提升整體點擊率。
+      description: |
+        與資料科學團隊合作，導入 LightGBM 與協同過濾演算法，並設計 A/B 測試驗證成效。最終將首頁推薦點擊率提升 25%，並降低 10% 的跳出率。
       keywords:
-        - 產品策略
+        - 推薦系統
         - A/B 測試
-        - 敏捷開發
-        - 資料分析
-      url: https://www.lovewan.tw
-    - name: 智慧雲端股份有限公司
-      position: 產品經理
-      startDate: Jul 1, 2018
+        - LightGBM
+    - name: 行動支付用戶成長計畫
+      startDate: Jan 1, 2023
+      endDate: Jun 1, 2023
       summary: |
-        - 負責 B2B 雲端人資系統之產品規劃，涵蓋薪資計算、請假打卡與績效考核模組
-        - 訪談超過 30 家企業客戶，歸納痛點並轉化為產品需求文件，縮短需求確認時程 40%
-        - 協調設計與工程團隊進行敏捷開發，定期主持 Sprint 規劃與回顧會議
-        - 與客戶成功團隊合作，建立產品使用手冊與教育訓練內容，降低入門障礙
-      endDate: Feb 1, 2021
+        跨部門推動用戶成長專案，透過分眾行銷與產品功能優化，達成新增用戶翻倍目標。
+      description: |
+        結合用戶分眾、推播通知與新戶引導流程優化，在 6 個月內將每月新增用戶數提升 120%，並有效改善新戶次月留存率。
       keywords:
-        - B2B SaaS
-        - 需求訪談
-        - Scrum
-        - 產品文件
-      url: https://www.smartcloud.com.tw
-    - name: 宏遠資訊有限公司
-      position: 助理產品經理
-      startDate: Jul 1, 2016
+        - 用戶成長
+        - 行銷自動化
+        - 留存分析
+
+  interests:
+    - name: 閱讀
+      keywords:
+        - 產品設計
+        - 行為經濟學
+    - name: 旅行
+      keywords:
+        - 自助旅行
+        - 美食探索
+
+  volunteer:
+    - organization: 女力科技社群 Taiwan
+      position: 產品管理導師
+      startDate: Jan 1, 2022
       summary: |
-        - 協助產品經理進行競品分析、市場調查與用戶問卷設計，並產出分析報告供團隊決策
-        - 管理產品需求清單與 Bug 追蹤表，定期整理版本發布說明並與利害關係人同步
-        - 參與 App 改版專案，協助進行 UI Flow 繪製與原型測試，累積扎實的產品實務經驗
-      endDate: Jun 1, 2018
-      keywords:
-        - 競品分析
-        - 原型設計
-        - 專案管理
-      url: https://www.hongyuan.com.tw
+        擔任產品管理線上課程導師，協助 30 位以上女性職場夥伴建立產品思維，並提供職涯發展建議。
+
 locale:
   language: zh-hant-tw
-layouts:
-  - engine: latex
-    page:
-      showPageNumbers: true
-      paperSize: a4
-      margins:
-        top: 2.5cm
-        bottom: 2.5cm
-        left: 1.5cm
-        right: 1.5cm
-    template: moderncv-banking
-    typography:
-      fontSize: 11pt
-  - engine: docx
-    page:
-      showPageNumbers: true
-      paperSize: a4
-      margins:
-        top: 2.5cm
-        bottom: 2.5cm
-        left: 1.5cm
-        right: 1.5cm
-    typography:
-      fontSize: 11pt
-      lineSpacing: normal
-  - engine: markdown
-  - engine: html
-    template: calm
-    typography:
-      fontSize: 16px

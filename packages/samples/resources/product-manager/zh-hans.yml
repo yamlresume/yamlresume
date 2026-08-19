@@ -1,256 +1,241 @@
 content:
   basics:
-    name: 林晓
-    email: linxiao.pm@example.com
-    headline: 资深产品经理 | 专注 B 端 SaaS 与数据产品
-    phone: +86 138 0000 1234
+    name: 林晓慧
+    headline: 高级产品经理 · 8 年互联网产品经验
+    phone: "+86 138 1234 5678"
+    email: xiaohui.lin@linpm.cn
+    url: https://www.linpm.cn
     summary: |
-      - **6 年**企业级 SaaS 与数据产品经验，擅长从 0 到 1 搭建产品并驱动增长
-      - 主导过 3 款 B 端产品，累计服务 300+ 家企业客户，核心商业化指标提升 30% 以上
-      - 具备扎实的数据分析能力，习惯用 A/B 测试与用户行为数据指导产品决策
-      - 熟悉敏捷开发流程，能够高效统筹设计、研发、运营资源，保障高质量交付
-      - 拥有良好的跨部门沟通能力，乐于将复杂业务场景抽象为清晰的产品方案
-    url: https://www.linxiao-pm.com
+      拥有 8 年互联网产品设计与团队管理经验，擅长从 0 到 1 打造 SaaS 产品，并推动成熟产品持续增长。
+
+      - 主导过多个企业级产品，覆盖数据洞察、协同办公、数字化营销等方向
+      - 注重用户需求与商业目标的结合，善于通过数据分析驱动产品决策
+      - 具备优秀的跨部门沟通能力和团队领导力，多次带领团队完成关键业务目标
+  location:
+    address: 上海市浦东新区祖冲之路 123 弄
+    city: 上海
+    region: 上海市
+    country: China
+    postalCode: "200120"
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/xiaohui-lin
+      username: xiaohui-lin
+    - network: GitHub
+      url: https://github.com/xiaohuilin
+      username: xiaohuilin
   education:
-    - area: 计算机技术
-      institution: 复旦大学
-      degree: Master
-      courses:
-        - 人机交互
-        - 数据挖掘
-        - 软件工程
-        - 产品创新与设计
-      endDate: Jun 1, 2020
-      startDate: Sep 1, 2017
-      summary: |
-        - 研究方向为智能化产品设计与用户行为分析
-        - 毕业论文完成 SaaS 产品留存优化研究，相关框架被实习公司采用
-      score: 3.8/4.0
+    - institution: 复旦大学
       url: https://www.fudan.edu.cn/
-    - area: 信息管理与信息系统
-      institution: 南京大学
       degree: Bachelor
+      area: 计算机科学与技术
+      score: "3.7/4.0"
+      startDate: 2011-09
+      endDate: 2015-06
       courses:
-        - 管理学原理
-        - 经济学
+        - 数据结构与算法
+        - 操作系统
         - 数据库系统
-        - Web 开发技术
-      endDate: Jun 1, 2017
-      startDate: Sep 1, 2013
+        - 计算机网络
+        - 软件工程
+        - 人机交互
       summary: |
-        - 主修信息管理与信息系统，积累产品、技术与商业融合的知识体系
-        - 参与校级创新项目，完成一款校园活动信息聚合产品原型
-      score: 3.6/4.0
-      url: https://www.nju.edu.cn/
-  awards:
-    - awarder: 上海云枢信息科技有限公司
-      title: 年度优秀产品经理
-      date: Dec 2023
-      summary: 凭借智能数据洞察平台的成功落地，获评公司年度优秀产品经理。
-    - awarder: 中国软件行业协会
-      title: 企业服务产品创新奖
-      date: Nov 2022
-      summary: 主导设计的数据可视化产品获评年度企业服务类创新产品。
-  certificates:
-    - issuer: 产品开发与管理协会
-      name: NPDP 产品经理国际认证
-      date: Aug 1, 2021
-      url: https://www.pdma.org/
-    - issuer: Scrum.org
-      name: Professional Scrum Master I
-      date: May 1, 2020
-      url: https://www.scrum.org/
-  interests:
-    - name: 商业阅读
+        - 系统学习计算机科学与技术，具备扎实的技术基础，为后续产品管理工作提供技术支撑
+        - 参加校内互联网创业团队，负责产品需求分析、原型设计与用户测试，初步建立产品思维
+  work:
+    - name: 星云科技
+      url: https://www.nebulatech.cn
+      position: 高级产品经理
+      startDate: 2022-01
+      summary: |
+        - 负责公司核心 SaaS 数据产品的整体规划与迭代，产品月活跃用户增长 80%，年度营收同比增长 120%
+        - 搭建产品数据指标体系，推动 A/B 测试常态化，关键转化率提升 35%
+        - 带领 6 人产品团队，建立需求评审、版本发布和数据复盘流程，提升团队交付效率
+        - 与销售、客户成功团队紧密协作，梳理客户反馈并转化为产品需求，提升客户留存率
       keywords:
-        - 产品思维
-        - 增长黑客
+        - SaaS
+        - 数据分析
+        - 团队管理
+        - 用户增长
+        - A/B 测试
+        - 商业化
+    - name: 上海蓝海信息技术有限公司
+      url: https://www.blueocean-info.cn
+      position: 产品经理
+      startDate: 2019-03
+      endDate: 2021-12
+      summary: |
+        - 负责企业协同办公产品的用户调研、需求分析和功能设计，覆盖超过 200 家企业客户
+        - 设计全新任务协作模块，上线后周活跃用户提升 45%，客户续费率提升 20%
+        - 独立完成 20 余份 PRD，协调设计、研发、测试资源，保障产品按期高质量交付
+        - 建立用户反馈闭环，定期输出产品数据分析报告，为管理层决策提供依据
+      keywords:
+        - 协同办公
+        - 需求分析
+        - PRD
+        - 用户调研
+        - 数据分析
+    - name: 上海云帆网络科技有限公司
+      url: https://www.yunfan-tech.cn
+      position: 产品经理
+      startDate: 2017-02
+      endDate: 2019-02
+      summary: |
+        - 负责移动端营销工具产品的功能规划与迭代，累计服务 50 万注册用户
+        - 通过用户分群与行为分析，优化核心转化流程，付费转化率提升 28%
+        - 与运营团队合作策划增长活动，实现单季度新增用户 12 万
+      keywords:
+        - 移动端
+        - 营销工具
+        - 增长
+        - 用户运营
+        - 数据分析
+    - name: 萌芽科技
+      url: https://www.mengya-startup.cn
+      position: 产品助理
+      startDate: 2015-07
+      endDate: 2016-12
+      summary: |
+        - 协助产品经理完成需求收集、竞品分析和原型绘制，支持 3 条产品线的日常迭代
+        - 跟进开发进度并组织验收测试，保证功能上线质量
+      keywords:
+        - 竞品分析
+        - 原型设计
+        - 项目跟进
+  languages:
+    - language: Chinese
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - 普通话母语
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - 大学英语六级
+        - 商务邮件写作
+        - 英文需求文档
+  skills:
+    - name: 产品规划与设计
+      level: Expert
+      keywords:
+        - 需求分析
+        - 用户研究
+        - 竞品分析
+        - 产品路线图
+        - PRD
+        - 原型设计
+    - name: 数据分析
+      level: Advanced
+      keywords:
+        - SQL
+        - Excel
+        - Tableau
+        - A/B 测试
+        - 用户行为分析
+        - 指标体系建设
+    - name: 项目管理
+      level: Advanced
+      keywords:
+        - 敏捷开发
+        - Scrum
+        - JIRA
+        - 跨部门协作
+        - OKR
+        - 风险管理
+    - name: 产品运营与增长
+      level: Intermediate
+      keywords:
+        - 用户留存
+        - 转化率优化
+        - 增长实验
+        - 渠道分析
+    - name: 工具与协作
+      level: Advanced
+      keywords:
+        - Figma
+        - Axure
+        - Sketch
+        - 禅道
+        - 企业微信
+  awards:
+    - title: 年度优秀产品经理
+      awarder: 星云科技
+      date: 2023-12
+      summary: |
+        因主导的 SaaS 数据产品实现年度营收翻倍增长，并推动产品团队形成高效迭代机制，获评公司年度优秀产品经理。
+    - title: 最佳创新产品奖
+      awarder: 华东 SaaS 创新峰会
+      date: 2022-06
+      summary: |
+        负责设计的智能数据分析平台获评峰会“最佳创新产品奖”，评审组认可其在易用性和数据智能化方面的创新。
+  certificates:
+    - name: NPDP 产品经理国际资格认证
+      issuer: PDMA
+      date: 2021-05
+      url: https://www.pdma.org
+    - name: CSPO 认证 Scrum 产品负责人
+      issuer: Scrum Alliance
+      date: 2020-08
+      url: https://www.scrumalliance.org
+  publications:
+    - name: 数据驱动的 SaaS 产品体验优化实践
+      publisher: 产品经理社区
+      releaseDate: 2022-08
+      url: https://www.pmcommunity.cn/articles/data-driven-saas-ux
+      summary: |
+        结合团队实践经验，总结如何通过用户行为数据和 A/B 测试持续优化 SaaS 产品体验，并分享可复用的分析框架与关键指标。
+  projects:
+    - name: 智能数据分析平台
+      url: https://www.nebulatech.cn/products/analytics
+      description: 面向中小企业的自助式数据洞察 SaaS 产品
+      startDate: 2022-01
+      endDate: 2023-12
+      summary: |
+        - 从市场调研、用户访谈、竞品分析到 MVP 上线，全程主导产品规划与落地
+        - 设计可视化报表与智能分析助手，降低用户使用门槛，上线一年付费客户超 300 家
+        - 与算法团队合作引入自动洞察功能，显著提升用户活跃度与留存
+      keywords:
+        - SaaS
+        - 数据可视化
+        - 智能分析
+        - 产品从 0 到 1
+    - name: 企业协同办公移动端改版
+      description: 面向中小企业的协同办公 App 体验升级项目
+      startDate: 2019-06
+      endDate: 2020-09
+      summary: |
+        - 负责移动端信息架构重构与核心任务流程优化
+        - 通过可用性测试和灰度发布，新版上线后 7 日留存率提升 25%
+      keywords:
+        - 移动端
+        - 体验优化
+        - B 端产品
+        - 可用性测试
+  interests:
+    - name: 商业与科技阅读
+      keywords:
         - 商业分析
+        - 设计心理学
+        - AI 应用
+        - 数字化转型
     - name: 户外运动
       keywords:
         - 徒步
-        - 露营
         - 骑行
-  languages:
-    - fluency: Native or Bilingual Proficiency
-      language: Chinese
+        - 露营
+    - name: 社区分享
       keywords:
-        - 普通话
-        - 母语
-    - fluency: Full Professional Proficiency
-      language: English
-      keywords:
-        - CET-6
-        - 英文需求文档
-        - 商务沟通
-  location:
-    city: 上海
-    address: 徐汇区漕河泾开发区宜山路 900 号
-    country: China
-    postalCode: "200233"
-    region: 上海市
-  profiles:
-    - network: LinkedIn
-      username: linxiaopm
-      url: https://www.linkedin.com/in/linxiaopm
-    - network: Zhihu
-      username: linxiao-pm
-      url: https://www.zhihu.com/people/linxiao-pm
-    - network: GitHub
-      username: linxiaopm
-      url: https://github.com/linxiaopm
-  projects:
-    - name: 智能数据洞察平台
-      startDate: Mar 1, 2022
-      summary: |
-        - 担任产品负责人，统筹市场调研、需求分析、原型设计和迭代规划
-        - 设计可视化报表、自助分析、智能预警三大核心模块
-        - 上线后 6 个月内签约企业客户 40+，客户续约率达 92%
-      description: 面向企业客户的一站式数据分析与可视化平台，帮助业务人员自助完成数据接入、指标看板搭建和异常监控。
-      endDate: Dec 31, 2023
-      keywords:
-        - 数据分析
-        - 可视化
-        - SaaS
-        - B端产品
-      url: https://www.example.com/products/insight
-    - name: 跨境电商 ERP 自动化对账模块
-      startDate: Oct 1, 2019
-      summary: |
-        - 负责对账流程的需求梳理与产品设计，实现多平台订单、账单自动匹配
-        - 协同算法团队开发异常交易识别规则，对账准确率提升至 99.2%
-        - 为客服团队提供可视化处理工作台，单次异常处理时长缩短 50%
-      description: 针对跨境电商卖家与财务团队的对账痛点，构建自动拉取、智能匹配、异常预警和人工复核一体化的产品模块。
-      endDate: Jun 30, 2020
-      keywords:
-        - ERP
-        - 自动化
-        - 跨境电商
-        - 工作流
-      url: https://www.example.com/products/reconciliation
-  publications:
-    - name: 从行为数据到产品优化：SaaS 留存分析框架
-      publisher: 人人都是产品经理
-      releaseDate: Jun 15, 2023
-      summary: |
-        - 提出基于激活、留存、推荐等环节的行为分析框架
-        - 结合企业服务场景给出可落地的数据指标体系和实验方法
-      url: https://www.example.com/articles/saas-retention-framework
-  skills:
-    - level: Expert
-      name: 产品规划与设计
-      keywords:
-        - 需求分析
-        - PRD
-        - 用户故事
-        - 原型设计
-        - Figma
-        - Axure
-    - level: Advanced
-      name: 数据分析
-      keywords:
-        - SQL
-        - A/B测试
-        - 埋点体系
-        - Tableau
-        - Google Analytics
-    - level: Advanced
-      name: 项目管理
-      keywords:
-        - Scrum
-        - 看板
-        - Jira
-        - 路线图规划
-        - 跨部门协作
-    - level: Advanced
-      name: 用户研究
-      keywords:
-        - 用户访谈
-        - 问卷调查
-        - 可用性测试
-        - 竞品分析
+        - 产品经理沙龙
+        - 创业辅导
+        - 写作
   volunteer:
-    - organization: 上海产品经理社区
-      position: 志愿讲师
-      startDate: Jan 1, 2023
+    - organization: 上海青年创业者协会
+      url: https://www.shyea.cn
+      position: 产品创业导师
+      startDate: 2020-03
+      endDate: 2023-12
       summary: |
-        - 策划并主讲「数据驱动产品决策」系列工作坊，共 4 场
-        - 设计实战案例与互动环节，累计参与人数 200+
-      endDate: Dec 31, 2023
-      url: https://www.example.com/pm-community
-  work:
-    - name: 上海云枢信息科技有限公司
-      position: 高级产品经理
-      startDate: Feb 1, 2022
-      summary: |
-        - 负责公司核心数据中台产品「智能数据洞察平台」的整体规划与迭代，管理 5 人产品小组
-        - 深入访谈 30+ 企业客户，重构权限模型与工作流引擎，客户续费率提升 18 个百分点
-        - 建立数据驱动的需求评估机制，与设计、研发、运营协同，季度需求按时交付率稳定在 95% 以上
-        - 主导产品商业化探索，设计按量付费与增值服务包，年度 ARR 增长 120%
-      keywords:
-        - 产品规划
-        - 数据中台
-        - 商业化
-        - 团队管理
-      url: https://www.example.com/yunshu
-    - name: 杭州云帆数字科技有限公司
-      position: 产品经理
-      startDate: Jul 1, 2019
-      summary: |
-        - 负责跨境电商 ERP 系统的订单、库存与供应链模块，服务 200+ 中小型客户
-        - 独立完成需求调研、PRD 撰写与原型设计，协调 3 个敏捷开发团队按版本发布
-        - 设计自动化对账与异常预警功能，将客服人工处理量降低 40%
-        - 与销售、客户成功团队共建上线流程，新客户平均上手时间从 7 天缩短至 2 天
-      endDate: Jan 31, 2022
-      keywords:
-        - 跨境电商
-        - ERP
-        - 敏捷管理
-        - 用户调研
-      url: https://www.example.com/yunfan
-    - name: 上海艾数信息技术有限公司
-      position: 助理产品经理
-      startDate: Jul 1, 2017
-      summary: |
-        - 协助高级产品经理完成企业官网与营销活动页的需求梳理、原型绘制和上线跟进
-        - 维护需求池与产品文档，组织跨部门评审会议，确保版本迭代信息同步
-        - 参与用户客服工单分析，提炼高频问题并推动产品改进，相关反馈闭环机制沿用至今
-      endDate: Jun 30, 2019
-      keywords:
-        - 需求文档
-        - 原型设计
-        - 数据分析
-        - 跨部门协作
-      url: https://www.example.com/aishu
+        - 为早期创业者提供产品定位、用户研究、MVP 验证等公益咨询，累计服务 30 余个创业团队
+        - 参与组织行业沙龙，分享从 0 到 1 的产品方法论
+
 locale:
   language: zh-hans
-layouts:
-  - engine: latex
-    page:
-      showPageNumbers: true
-      paperSize: a4
-      margins:
-        top: 2.5cm
-        bottom: 2.5cm
-        left: 1.5cm
-        right: 1.5cm
-    template: moderncv-banking
-    typography:
-      fontSize: 11pt
-  - engine: docx
-    page:
-      showPageNumbers: true
-      paperSize: a4
-      margins:
-        top: 2.5cm
-        bottom: 2.5cm
-        left: 1.5cm
-        right: 1.5cm
-    typography:
-      fontSize: 11pt
-      lineSpacing: normal
-  - engine: markdown
-  - engine: html
-    template: calm
-    typography:
-      fontSize: 16px

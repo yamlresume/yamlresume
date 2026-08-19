@@ -1,239 +1,241 @@
 content:
   basics:
-    name: 陳曉彤
-    email: hiu.tung.chan@example.com
-    headline: 數據科學家｜機器學習｜大數據分析
-    phone: +852 9123 4567
+    name: 陳詠欣
+    headline: "數據科學家｜機器學習與大數據分析專家"
+    phone: "+852 9876 5432"
+    email: wingyan@wingyanchan.com
+    url: https://www.wingyanchan.com
     summary: |
-      - 具 5 年數據科學及機器學習經驗，專注於金融科技及客戶分析
-      - 擅長以 Python、R 及 SQL 處理大型數據集，並部署機器學習模型至生產環境
-      - 熟悉端對端數據科學流程：問題定義、數據清洗、特徵工程、模型訓練及驗證
-      - 善於與業務團隊溝通，將複雜分析結果轉化為可行商業建議
-    url: https://www.hiutungchan.ds
-  education:
-    - area: 數據科學
-      institution: 香港大學
-      degree: Master
-      courses:
-        - 機器學習
-        - 深度學習
-        - 大數據分析
-        - 統計推斷
-        - 數據可視化
-        - 雲端運算
-      endDate: Nov 1, 2019
-      startDate: Sep 1, 2018
-      summary: |
-        - 以優異成績畢業，論文題目為「基於深度學習的香港股票市場預測模型」
-        - 完成多個真實數據項目，涵蓋自然語言處理及時間序列預測
-      score: 4.2 / 4.3
-      url: https://www.hku.hk/
-    - area: 統計學
-      institution: 香港中文大學
-      degree: Bachelor
-      courses:
-        - 概率論
-        - 數理統計
-        - 迴歸分析
-        - 實驗設計
-        - 計算機科學導論
-      endDate: Jun 1, 2018
-      startDate: Sep 1, 2014
-      summary: |
-        - 副修計算機科學，奠定程式開發與演算法基礎
-        - 畢業專題利用 R 建立物價指數預測模型
-      score: 3.9 / 4.0
-      url: https://www.cuhk.edu.hk/
-  awards:
-    - awarder: 香港數據科學學會
-      title: 傑出數據科學獎
-      date: Nov 2022
-      summary: |
-        表揚於金融科技領域中應用機器學習解決實際商業問題的卓越表現。
-  certificates:
-    - issuer: Amazon Web Services
-      name: AWS Certified Machine Learning – Specialty
-      date: Jun 2023
-      url: https://aws.amazon.com/certification/
-  interests:
-    - name: 行山
-      keywords:
-        - 麥理浩徑
-        - 露營
-    - name: 圍棋
-      keywords:
-        - 業餘初段
-  languages:
-    - fluency: Native or Bilingual Proficiency
-      language: Cantonese
-      keywords:
-        - 母語
-    - fluency: Full Professional Proficiency
-      language: English
-      keywords:
-        - IELTS 7.5
-    - fluency: Full Professional Proficiency
-      language: Mandarin
-      keywords:
-        - 普通話水平測試二級甲等
+      擁有超過 6 年數據科學及機器學習經驗，專注於金融科技、智慧城市及零售分析等領域。
+
+      - 善於運用統計建模、機器學習及深度學習技術解決實際商業問題
+      - 熟悉大數據平台（Spark、Hadoop）及雲端服務（AWS、Azure）
+      - 具備端到端數據產品開發經驗，由數據收集、特徵工程到模型部署及監控
+      - 熱衷於把複雜的數據分析結果轉化為清晰的商業決策建議
+      - 擁有多項專業認證及期刊論文發表經驗
   location:
+    address: 香港中環皇后大道中100號
     city: 香港
-    address: 中環皇后大道中 100 號
-    country: Hong Kong
     region: 香港島
+    country: Hong Kong
   profiles:
     - network: GitHub
-      username: hiutungchan
-      url: https://github.com/hiutungchan
+      url: https://github.com/wingyanchan
+      username: wingyanchan
     - network: LinkedIn
-      username: hiu-tung-chan
-      url: https://www.linkedin.com/in/hiutungchan
-  projects:
-    - name: 智能客戶流失預警系統
-      startDate: Jan 2023
+      url: https://www.linkedin.com/in/wingyanchan
+      username: wingyanchan
+    - network: Medium
+      url: https://medium.com/@wingyanchan
+      username: wingyanchan
+  education:
+    - institution: 香港大學
+      url: https://www.hku.hk/
+      degree: Master
+      area: 數據科學
+      score: 3.8/4.3
+      startDate: Sep 2017
+      endDate: Jul 2019
+      courses:
+        - 高級機器學習
+        - 大數據分析
+        - 統計學習理論
+        - 深度學習
+        - 數據可視化
+        - 雲端運算
       summary: |
-        - 整合 CRM 數據及通話記錄，建構梯度提升樹模型，AUC 達 0.87
-        - 開發 Streamlit 互動儀表板，供業務用戶自行查閱預測結果
-        - 定期以 Airflow 排程重訓模型，確保預測準確度
-      description: 為電訊公司設計的客戶流失預警平台
-      endDate: Jun 2023
+        - 以優異成績（Distinction）畢業，專注於機器學習及大數據分析
+        - 畢業論文題目為「基於深度學習的香港樓價預測模型」，獲學院最佳論文獎
+        - 擔任研究助理，協助教授進行自然語言處理相關研究
+    - institution: 香港中文大學
+      url: https://www.cuhk.edu.hk/
+      degree: Bachelor
+      area: 計算機科學
+      score: 3.5/4.3
+      startDate: Sep 2013
+      endDate: Jul 2017
+      courses:
+        - 數據結構
+        - 算法設計
+        - 數據庫系統
+        - 概率與統計
+        - 人工智能
+      summary: |
+        - 副修統計學，建立扎實的數學及程式設計基礎
+        - 參與多個編程比賽及黑客松，曾獲校內數據分析比賽冠軍
+  work:
+    - name: 智庫數據科技有限公司
+      url: https://www.thinktankdata.io
+      position: 高級數據科學家
+      startDate: Jan 2020
+      summary: |
+        - 領導數據科學團隊，為銀行及零售客戶開發風險評估及客戶分群模型
+        - 設計並部署基於 Python 及 Spark 的機器學習平台，將模型訓練時間縮短 40%
+        - 與業務部門緊密合作，將分析結果轉化為可執行的商業策略
+        - 推動 MLOps 實踐，建立自動化模型監控及重新訓練流程
+        - 指導初級數據科學家，並定期舉辦內部培訓
       keywords:
+        - Python
+        - Spark
+        - MLOps
+        - 機器學習
+        - 風險建模
+    - name: 香港電訊有限公司
+      url: https://www.hkt.com
+      position: 數據科學家
+      startDate: Aug 2019
+      endDate: Dec 2019
+      summary: |
+        - 分析流動通訊客戶的使用行為及流失率，建立客戶流失預警模型
+        - 利用 SQL 及 Hive 處理每日數十億條數據記錄，製作儀表板供管理層參考
+        - 開發客戶生命週期價值（LTV）模型，協助市場部制定精準營銷策略
+      keywords:
+        - SQL
+        - Hive
         - 客戶流失
-        - XGBoost
-        - Streamlit
-        - Airflow
-      url: https://github.com/hiutungchan/churn-prediction
-    - name: 香港股市新聞情感分析系統
-      startDate: Oct 2019
-      summary: |
-        - 爬取超過 10 萬篇財經新聞，以 BERT 模型進行情感分類
-        - 結合情感分數與股價數據，驗證新聞情緒與指數走勢的相關性
-        - 研究成果發表於本地數據科學研討會
-      description: 利用自然語言處理分析新聞對恒生指數的影響
-      endDate: Mar 2020
+        - Tableau
+  languages:
+    - language: Cantonese
+      fluency: Native or Bilingual Proficiency
       keywords:
-        - 自然語言處理
-        - BERT
-        - 情感分析
-        - 財經新聞
-      url: https://github.com/hiutungchan/news-sentiment
-  publications:
-    - name: 基於長短期記憶網絡的香港樓價指數預測研究
-      publisher: 香港數據科學期刊
-      releaseDate: Aug 2021
-      summary: |
-        - 提出以 LSTM 模型預測香港私人住宅樓價指數的框架
-        - 實驗結果顯示模型在短期預測上優於傳統 ARIMA 模型
-      url: https://www.hkdj.org.hk/articles/2021/08/lstm-hk-property
+        - 廣東話
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - IELTS 8.0
+    - language: Mandarin
+      fluency: Full Professional Proficiency
+      keywords:
+        - 普通話水平測試二級甲等
   skills:
-    - level: Expert
-      name: 程式設計
+    - name: 機器學習
+      level: Expert
+      keywords:
+        - 監督式學習
+        - 非監督式學習
+        - 深度學習
+        - 模型評估
+        - 特徵工程
+        - 強化學習
+    - name: 程式語言及工具
+      level: Expert
       keywords:
         - Python
         - R
         - SQL
-        - PyTorch
+        - Java
         - TensorFlow
-    - level: Expert
-      name: 數據分析
+        - PyTorch
+        - scikit-learn
+    - name: 大數據平台
+      level: Advanced
       keywords:
-        - 統計分析
-        - 數據可視化
-        - A/B 測試
-        - Pandas
-        - Matplotlib
-    - level: Advanced
-      name: 機器學習
-      keywords:
-        - 迴歸
-        - 分類
-        - 集群
-        - 時間序列
-        - XGBoost
-    - level: Intermediate
-      name: 大數據技術
-      keywords:
+        - Apache Spark
         - Hadoop
-        - Spark
+        - Hive
         - Kafka
-    - level: Intermediate
-      name: 雲端運算
+        - Airflow
+        - Databricks
+    - name: 雲端及 MLOps
+      level: Advanced
       keywords:
         - AWS
-        - GCP
+        - Azure
         - Docker
         - Kubernetes
-  volunteer:
-    - organization: 香港青年數據科學學會
-      position: 義務導師
-      startDate: Jan 2021
+        - MLflow
+        - CI/CD
+  awards:
+    - title: 亞太數據科學競賽亞軍
+      awarder: 亞太數據科學協會
+      date: Nov 2021
       summary: |
-        - 指導大專學生進行數據科學專題研習
-        - 定期舉辦工作坊，教授機器學習基礎及 Python 應用
-        - 協助籌辦年度數據科學黑客松比賽
-      endDate: Dec 2023
-      url: https://www.hkydsa.org.hk
-  work:
-    - name: 智庫數據科技有限公司
-      position: 高級數據科學家
-      startDate: Mar 1, 2022
+        與團隊成員於 300 多支參賽隊伍中脫穎而出，運用機器學習技術預測城市交通流量，獲亞軍。
+    - title: 最佳畢業論文獎
+      awarder: 香港大學統計學系
+      date: Jul 2019
       summary: |
-        - 帶領 3 人數據科學團隊，為零售客戶開發客戶流失預測及推薦系統
-        - 與工程團隊合作，將模型部署至 Kubernetes 集群，減低推理延遲 40%
-        - 設計 A/B 測試框架，評估模型對業務指標的影響
-        - 定期向管理層匯報分析結果，並提出數據驅動的增長策略
-      endDate: null
+        畢業論文「基於深度學習的香港樓價預測模型」獲評為年度最佳碩士論文。
+  certificates:
+    - name: AWS Certified Machine Learning – Specialty
+      issuer: Amazon Web Services
+      date: Mar 2022
+      url: https://aws.amazon.com/certification/
+    - name: Azure Data Scientist Associate
+      issuer: Microsoft
+      date: Aug 2021
+      url: https://learn.microsoft.com/en-us/credentials/
+    - name: TensorFlow Developer Certificate
+      issuer: Google
+      date: Jan 2021
+      url: https://www.tensorflow.org/certificate
+  publications:
+    - name: A Hybrid Deep Learning Approach for Urban Traffic Flow Prediction
+      publisher: IEEE Access
+      releaseDate: Jun 2022
+      url: https://doi.org/10.1109/ACCESS.2022.1234567
+      summary: |
+        - 提出結合 CNN 及 LSTM 的混合深度學習模型，用於預測香港市區交通流量
+        - 實驗結果顯示所提出的模型比傳統 ARIMA 減少 25% 預測誤差
+        - 文章已獲 IEEE Access 收錄，並被多位學者引用
+    - name: 應用自然語言處理於金融文本情感分析
+      publisher: 香港數據科學期刊
+      releaseDate: Dec 2020
+      url: https://www.hkdsj.org/articles/2020/12
+      summary: |
+        - 探討如何利用 BERT 模型分析上市公司年報及新聞稿中的情感傾向
+        - 結合金融領域知識詞典，提升情感分析模型於金融文本的準確度
+  projects:
+    - name: 香港樓價預測系統
+      url: https://github.com/wingyanchan/hk-property-price
+      description: 一個基於深度學習的香港物業估價及樓價預測平台
+      startDate: Feb 2021
+      endDate: Jun 2021
+      summary: |
+        - 整合差餉物業估價署、土地註冊處及公共交通數據
+        - 使用 XGBoost 及深度神經網絡建立樓價預測模型，R² 達 0.91
+        - 開發 Flask API 及 React 前端，讓用戶輸入物業資料即時獲得估價
       keywords:
         - Python
-        - Scikit-learn
-        - 客戶流失預測
-        - A/B 測試
-        - Kubernetes
-      url: https://www.thinktankdata.hk
-    - name: 香港金融數據服務有限公司
-      position: 數據科學家
-      startDate: Dec 1, 2019
+        - XGBoost
+        - React
+        - 房地產
+        - 深度學習
+    - name: 智能客戶服務聊天機器人
+      url: https://github.com/wingyanchan/chatbot
+      description: 為銀行客戶服務部門設計的粵語智能聊天機器人
+      startDate: Sep 2022
+      endDate: Mar 2023
       summary: |
-        - 建構信用風險評分模型，協助銀行審批流程自動化
-        - 運用自然語言處理分析客戶意見，識別潛在投訴風險
-        - 建立即時交易監察儀表板，提升異常交易偵測效率
-        - 優化特徵工程流程，將模型訓練時間縮短 30%
-      endDate: Feb 1, 2022
+        - 利用 RAG（檢索增強生成）架構結合領域知識庫，解答客戶常見問題
+        - 使用 LangChain 及 OpenAI API 開發，並部署至企業 Kubernetes 集群
+        - 聊天機器人成功處理 70% 的常見查詢，大幅減輕前線客服人員負擔
       keywords:
-        - 風險管理
-        - 自然語言處理
-        - 儀表板
-        - 特徵工程
-      url: https://www.hkfds.com.hk
+        - RAG
+        - LangChain
+        - Kubernetes
+        - 生成式 AI
+        - 客戶服務
+  interests:
+    - name: 人工智能倫理
+      keywords:
+        - 負責任AI
+        - 數據私隱
+        - 公平性
+    - name: 戶外活動
+      keywords:
+        - 行山
+        - 露營
+        - 攝影
+  volunteer:
+    - organization: 香港數據科學義工網絡
+      url: https://www.datasciencevolunteer.hk
+      position: 兼職導師
+      startDate: Jan 2021
+      summary: |
+        - 為非牟利機構提供免費數據分析諮詢
+        - 定期主持數據科學工作坊，教授 Python 及數據可視化技巧
+        - 協助設計「社企數據儀表板」，用於追蹤服務成效
+
 locale:
   language: zh-hant-hk
-layouts:
-  - engine: latex
-    page:
-      showPageNumbers: true
-      paperSize: a4
-      margins:
-        top: 2.5cm
-        bottom: 2.5cm
-        left: 1.5cm
-        right: 1.5cm
-    template: moderncv-banking
-    typography:
-      fontSize: 11pt
-  - engine: docx
-    page:
-      showPageNumbers: true
-      paperSize: a4
-      margins:
-        top: 2.5cm
-        bottom: 2.5cm
-        left: 1.5cm
-        right: 1.5cm
-    typography:
-      fontSize: 11pt
-      lineSpacing: normal
-  - engine: markdown
-  - engine: html
-    template: calm
-    typography:
-      fontSize: 16px

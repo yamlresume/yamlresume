@@ -1,296 +1,226 @@
 content:
   basics:
     name: Lucas Almeida
-    email: lucas.almeida.dev@gmail.com
-    headline: Engenheiro de Software Full Stack
-    phone: (11) 98765-4321
-    summary: >
-      - Engenheiro de software com mais de 9 anos de experiência no projeto,
-      desenvolvimento e operação de aplicações web escaláveis
-
-      - Especialista em arquiteturas de microsserviços, integração de APIs REST
-      e boas práticas de qualidade e segurança de software
-
-      - Experiência sólida com Java, Node.js, React, bancos de dados relacionais
-      e não relacionais, além de serviços em nuvem como AWS e Azure
-
-      - Atuação em equipes ágeis, com forte comunicação, mentoria técnica e foco
-      em entregas de alto valor para o negócio
+    headline: 'Engenheiro de Software Sênior | Full Stack & Cloud'
+    phone: "+55 11 98765-4321"
+    email: lucas.almeida.dev@email.com
     url: https://lucasalmeida.dev
-  education:
-    - area: Ciência da Computação
-      institution: Universidade de São Paulo (USP)
-      degree: Bachelor
-      courses:
-        - Algoritmos e Estruturas de Dados
-        - Engenharia de Software
-        - Banco de Dados
-        - Sistemas Operacionais
-        - Redes de Computadores
-        - Computação Distribuída
-        - Inteligência Artificial
-      endDate: 2014-12-15
-      startDate: 2010-02-01
-      summary: >
-        - Formação sólida em fundamentos de computação, engenharia de software e
-        sistemas distribuídos
+    summary: |
+      Engenheiro de software com mais de 5 anos de experiência no desenvolvimento de aplicações web escaláveis e na construção de arquiteturas de microsserviços.
 
-        - Participei de projetos de iniciação científica e programas de
-        monitoria em disciplinas de programação
-
-        - Desenvolvi trabalho de conclusão de curso sobre otimização de
-        consultas em bancos de dados NoSQL
-      score: "8.7"
-      url: https://www.usp.br
-  awards:
-    - awarder: TechNova Soluções
-      title: Prêmio Destaque em Inovação
-      date: 2023-12-15
-      summary: >
-        Reconhecimento concedido anualmente pela empresa ao profissional com
-        maior impacto em inovação e melhoria contínua.
-  certificates:
-    - issuer: Amazon Web Services
-      name: AWS Certified Developer - Associate
-      date: 2022-07-15
-      url: https://aws.amazon.com/certification/
-  interests:
-    - name: Tecnologia
-      keywords:
-        - Open Source
-        - Inteligência Artificial
-        - Computação em Nuvem
-        - Segurança da Informação
-    - name: Esportes
-      keywords:
-        - Corrida
-        - Natação
-        - Ciclismo
-  languages:
-    - fluency: Native or Bilingual Proficiency
-      language: Portuguese
-      keywords:
-        - Português do Brasil
-    - fluency: Full Professional Proficiency
-      language: English
-      keywords:
-        - TOEFL iBT 94
-        - C1 Advanced
-    - fluency: Limited Working Proficiency
-      language: Spanish
-      keywords:
-        - Leitura técnica
+      - Especialista em Node.js, React e Python, com atuação em ambientes cloud como AWS, Kubernetes e Docker
+      - Experiência em liderança técnica, mentoria de desenvolvedores e colaboração com times multidisciplinares
+      - Foco em qualidade de código, testes automatizados, CI/CD e boas práticas de segurança
+      - Buscando novos desafios em projetos de alto impacto e inovação tecnológica
   location:
+    address: Avenida Paulista, 1000
     city: São Paulo
-    address: Av. Paulista, 1000, apto. 123
+    region: SP
     country: Brazil
-    postalCode: 01310-100
-    region: São Paulo
+    postalCode: "01310-100"
   profiles:
     - network: GitHub
-      username: lucasalmeida-dev
       url: https://github.com/lucasalmeida-dev
+      username: lucasalmeida-dev
     - network: LinkedIn
-      username: lucas-almeida-dev
-      url: https://www.linkedin.com/in/lucas-almeida-dev
-  projects:
-    - name: StockFlow
-      startDate: 2022-05-01
-      summary: >
-        - Projetei a arquitetura do sistema em microsserviços com Node.js, React
-        e PostgreSQL
-
-        - Implementei autenticação via JWT, controle de permissões e auditoria
-        de operações
-
-        - Configurei pipeline de CI/CD com GitHub Actions e deploy automatizado
-        em contêineres Docker
-
-        - Alcancei redução de 30% no tempo de processamento de relatórios
-        gerenciais
-      description: Sistema integrado de gestão de estoque, compras e vendas para
-        pequenas e médias empresas.
-      endDate: 2023-04-30
+      url: https://www.linkedin.com/in/lucasalmeida-dev
+      username: lucasalmeida-dev
+  education:
+    - institution: Universidade de São Paulo
+      url: https://www.usp.br/
+      degree: Bachelor
+      area: Ciência da Computação
+      score: "8.7"
+      startDate: Feb 2014
+      endDate: Dec 2018
+      courses:
+        - Algoritmos e Estruturas de Dados
+        - Programação Orientada a Objetos
+        - Engenharia de Software
+        - Sistemas Operacionais
+        - Redes de Computadores
+        - Banco de Dados
+      summary: |
+        - Desenvolvimento de uma base sólida em computação, matemática e desenvolvimento de software
+        - Participação em projetos de pesquisa na área de aprendizado de máquina, com bolsa de iniciação científica
+        - Atuação como monitor da disciplina de Programação Orientada a Objetos por dois semestres
+  work:
+    - name: CloudNova Tecnologia
+      url: https://www.cloudnova.com.br
+      startDate: Jan 2023
+      position: Engenheiro de Software Sênior
+      summary: |
+        - Liderou o redesenho da plataforma principal com arquitetura de microsserviços, resultando em 40% de melhoria na escalabilidade
+        - Implementou pipelines de CI/CD com GitHub Actions e ArgoCD, reduzindo o tempo de deploy de 45 para 10 minutos
+        - Orientou 5 desenvolvedores júnior e plenos, conduzindo code reviews e definindo padrões de qualidade
+        - Colaborou com as equipes de produto e design para priorizar e entregar funcionalidades de alto valor
+      keywords:
+        - Node.js
+        - TypeScript
+        - Kubernetes
+        - AWS
+        - Microsserviços
+        - CI/CD
+    - name: Inova Tech Soluções
+      url: https://www.inovatech.com.br
+      startDate: Mar 2020
+      endDate: Dec 2022
+      position: Engenheiro de Software
+      summary: |
+        - Desenvolveu e manteve aplicações web com React, Node.js e PostgreSQL, atendendo mais de 200 mil usuários ativos
+        - Implementou testes automatizados com Jest e Cypress, elevando a cobertura de testes para 85%
+        - Refatorou módulos legados, melhorando a performance e reduzindo o consumo de recursos em 30%
+        - Atuou em squads ágeis, participando de cerimônias, planejamentos e retrospectivas
       keywords:
         - React
         - Node.js
         - PostgreSQL
         - Docker
-        - SaaS
-      url: https://stockflow.example.com
-  publications:
-    - name: Arquitetura de Microsserviços em Produção
-      publisher: Revista Brasileira de Engenharia de Software
-      releaseDate: 2021-06-10
-      summary: >
-        - Aborda lições aprendidas na migração de uma aplicação monolítica para
-        microsserviços
-
-        - Apresenta estratégias de observabilidade, escalabilidade e resiliência
-        em ambientes cloud
-
-        - Compartilha decisões técnicas e trade-offs relevantes para times de
-        engenharia
-      url: https://rbengsoft.example.com/artigos/arquitetura-microsservicos
+        - Testes Automatizados
+        - Agile
+    - name: AzulCode Startup
+      url: https://www.azulcode.com.br
+      startDate: Feb 2019
+      endDate: Feb 2020
+      position: Desenvolvedor Full Stack Júnior
+      summary: |
+        - Auxiliou no desenvolvimento de um MVP para um aplicativo de mobilidade urbana usando React Native e Express
+        - Criou e consumiu APIs REST, implementando autenticação e integração com serviços de terceiros
+        - Participou de sessões de pair programming e contribuiu para a melhoria contínua do código
+      keywords:
+        - React Native
+        - Express
+        - JavaScript
+        - REST APIs
+  languages:
+    - language: Portuguese
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - Português brasileiro
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - TOEFL iBT 98
+    - language: Spanish
+      fluency: Limited Working Proficiency
+      keywords:
+        - Comunicação básica
   skills:
-    - level: Expert
-      name: Desenvolvimento Web
+    - name: Linguagens de Programação
+      level: Expert
       keywords:
         - JavaScript
         - TypeScript
+        - Python
+        - Go
+        - SQL
+    - name: Desenvolvimento Web
+      level: Expert
+      keywords:
         - React
         - Node.js
-        - HTML
-        - CSS
-    - level: Advanced
-      name: Back-end
+        - Express
+        - HTML5
+        - CSS3
+    - name: 'Cloud & DevOps'
+      level: Advanced
       keywords:
-        - Java
-        - Spring Boot
-        - REST APIs
-        - Microsserviços
-        - Mensageria
-    - level: Advanced
-      name: Banco de Dados
+        - AWS
+        - Docker
+        - Kubernetes
+        - Terraform
+        - GitHub Actions
+    - name: Banco de Dados
+      level: Advanced
       keywords:
         - PostgreSQL
         - MySQL
         - MongoDB
         - Redis
-        - Query Optimization
-    - level: Intermediate
-      name: DevOps
-      keywords:
-        - Docker
-        - Kubernetes
-        - AWS
-        - CI/CD
-        - Terraform
-    - level: Advanced
-      name: Arquitetura de Software
-      keywords:
-        - Clean Architecture
-        - Domain-Driven Design
-        - Design Patterns
-        - SOLID
-        - Event-Driven Architecture
-  volunteer:
-    - organization: Instituto Codificar
-      position: Voluntário de Ensino de Programação
-      startDate: 2019-04-01
-      summary: >
-        - Ministrei oficinas de lógica de programação e desenvolvimento web para
-        jovens em situação de vulnerabilidade
-
-        - Auxiliei na elaboração de material didático e na realização de
-        hackathons educacionais
-
-        - Contribuí para a formação inicial de mais de 100 estudantes na área de
-        tecnologia
-      endDate: 2021-11-30
-      url: https://institutocodificar.org.br
-  work:
-    - name: TechNova Soluções
-      position: Engenheiro de Software Sênior
-      startDate: 2021-03-01
-      summary: >
-        - Lidero o desenvolvimento de uma plataforma de gestão financeira para
-        clientes empresariais, atendendo mais de 250 mil usuários
-
-        - Desenho e implemento microsserviços em Node.js e Java, reduzindo o
-        tempo de resposta das APIs em 40%
-
-        - Atuo na definição da arquitetura de software, conduzo code reviews e
-        estabeleço padrões de qualidade e segurança
-
-        - Oriento engenheiros júnior e pleno, promovendo boas práticas de testes
-        automatizados, CI/CD e documentação
-
-        - Colaboro com product managers e designers para transformar requisitos
-        de negócio em soluções técnicas robustas
+    - name: Arquitetura de Software
+      level: Advanced
       keywords:
         - Microsserviços
-        - Node.js
-        - Java
-        - AWS
-        - Kubernetes
-        - Mentoria
-      url: https://technova.com.br
-    - name: Fintech InovaPay
-      position: Desenvolvedor de Software Pleno
-      startDate: 2018-02-01
-      summary: >
-        - Atuei no desenvolvimento full stack de um aplicativo de pagamentos
-        móveis utilizado por mais de 1 milhão de pessoas
-
-        - Implementei funcionalidades com React Native e Node.js, integrando
-        gateways de pagamento e sistemas antifraude
-
-        - Melhorei a cobertura de testes automatizados de 35% para 78%,
-        reduzindo incidentes em produção
-
-        - Participei de cerimônias ágeis e colaborei com times de engenharia,
-        produto e suporte ao cliente
-      endDate: 2021-02-26
+        - REST APIs
+        - GraphQL
+        - Clean Architecture
+  awards:
+    - title: Prêmio Inovação em Engenharia de Software
+      date: Dec 2022
+      awarder: Inova Tech Soluções
+      summary: |
+        Reconhecimento concedido pela automação do processo de testes e deploy, que reduziu drasticamente o tempo de entrega da squad.
+    - title: Bolsa de Iniciação Científica
+      date: Aug 2017
+      awarder: Conselho Nacional de Desenvolvimento Científico e Tecnológico (CNPq)
+      summary: |
+        Bolsa de pesquisa para o projeto "Aplicação de redes neurais na classificação de imagens médicas", desenvolvido na Universidade de São Paulo.
+  certificates:
+    - name: AWS Certified Solutions Architect - Associate
+      url: https://aws.amazon.com/certification/
+      issuer: Amazon Web Services
+      date: Mar 2024
+    - name: Certified Kubernetes Application Developer (CKAD)
+      url: https://www.cncf.io/certification/ckad/
+      issuer: Cloud Native Computing Foundation
+      date: Sep 2022
+  projects:
+    - name: Petinder - Adoção de Animais
+      url: https://github.com/lucasalmeida-dev/petinder
+      description: Plataforma web para facilitar a adoção responsável de animais de
+        estimação, conectando ONGs a tutores em potencial.
+      startDate: Apr 2021
+      endDate: Oct 2021
+      summary: |
+        - Desenvolvido com React, Node.js e PostgreSQL, incluindo painel administrativo e sistema de busca com filtros
+        - Implementou autenticação JWT, envio de e-mails transacionais e integração com mapas
+        - Projeto de código aberto com mais de 300 estrelas no GitHub
       keywords:
-        - React Native
+        - React
         - Node.js
-        - APIs REST
-        - Testes automatizados
-        - Pagamentos
-      url: https://inovapay.com.br
-    - name: Agência Web Mídia Digital
-      position: Desenvolvedor Full Stack Júnior
-      startDate: 2015-01-05
-      summary: >
-        - Desenvolvi e mantive websites e sistemas web para clientes de diversos
-        segmentos
-
-        - Trabalhei com JavaScript, HTML, CSS, PHP e WordPress, criando
-        interfaces responsivas e otimizadas para SEO
-
-        - Colaborei no aperfeiçoamento de processos internos e na migração de
-        projetos legados para versões mais modernas
-
-        - Aprendi e apliquei princípios de design responsivo e acessibilidade
-        digital
-      endDate: 2018-01-19
+        - PostgreSQL
+        - Open Source
+    - name: Plataforma de Feedback Contínuo
+      url: https://github.com/lucasalmeida-dev/feedback360
+      description: Ferramenta interna para gestão de feedback entre colaboradores, com
+        metas e reconhecimento.
+      startDate: Jan 2022
+      endDate: Dec 2022
+      summary: |
+        - Criado com Next.js, Prisma e GraphQL para atender cerca de 3 mil colaboradores
+        - Permitiu a criação de ciclos de avaliação personalizáveis e relatórios gerenciais automatizados
+        - Reduziu em 50% o tempo gasto com processos manuais de avaliação de desempenho
       keywords:
-        - JavaScript
-        - PHP
-        - WordPress
-        - SEO
-        - Responsive Design
-      url: https://webmidia.com.br
+        - Next.js
+        - GraphQL
+        - Prisma
+        - TypeScript
+  interests:
+    - name: Tecnologia
+      keywords:
+        - Inteligência Artificial
+        - Computação em Nuvem
+        - Open Source
+    - name: Esportes
+      keywords:
+        - Futebol
+        - Corrida
+        - Musculação
+    - name: Música
+      keywords:
+        - Violão
+        - MPB
+        - Jazz
+  volunteer:
+    - organization: Código do Bem
+      url: https://www.codigodobem.org.br
+      position: Instrutor Voluntário de Programação
+      startDate: Jan 2019
+      endDate: Dec 2022
+      summary: |
+        - Ministrou cursos introdutórios de lógica de programação e desenvolvimento web para jovens de baixa renda
+        - Auxiliou na elaboração de material didático e na mentoria de projetos finais
+        - Participou de mutirões de ensino com impacto direto em mais de 200 estudantes
+
 locale:
-  language: pt-br
-layouts:
-  - engine: latex
-    page:
-      showPageNumbers: true
-      paperSize: a4
-      margins:
-        top: 2.5cm
-        bottom: 2.5cm
-        left: 1.5cm
-        right: 1.5cm
-    template: moderncv-banking
-    typography:
-      fontSize: 11pt
-  - engine: docx
-    page:
-      showPageNumbers: true
-      paperSize: a4
-      margins:
-        top: 2.5cm
-        bottom: 2.5cm
-        left: 1.5cm
-        right: 1.5cm
-    typography:
-      fontSize: 11pt
-      lineSpacing: normal
-  - engine: markdown
-  - engine: html
-    template: calm
-    typography:
-      fontSize: 16px
+  language: 'pt-br'

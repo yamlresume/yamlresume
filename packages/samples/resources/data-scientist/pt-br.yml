@@ -1,346 +1,287 @@
 content:
   basics:
-    name: Ana Clara Souza
-    email: ana.clara.souza@example.com.br
-    headline: Cientista de Dados Sênior com foco em Machine Learning e Inteligência
-      de Negócio
+    name: Ana Beatriz Carvalho
+    headline: Cientista de Dados Sênior com foco em Machine Learning e soluções
+      analíticas
     phone: +55 11 98765-4321
-    summary: >
-      - Cientista de dados com mais de 8 anos de experiência em modelagem
-      preditiva, análise estatística e machine learning
+    email: ana.carvalho@datainsight.com.br
+    url: https://anabeatrizcarvalho.com.br
+    summary: |
+      - Cientista de Dados com mais de 8 anos de experiência em modelagem preditiva, mineração de dados e inteligência de negócio.
+      - Especialista em desenvolver soluções de machine learning para os setores financeiro e de varejo, gerando redução de custos e aumento de receita.
+      - Sólida vivência em Python, SQL, computação em nuvem (AWS, GCP) e ferramentas de visualização de dados.
+      - Experiência na liderança de times ágeis, na definição de indicadores e na comunicação de resultados para públicos não técnicos.
 
-      - Especialista no desenvolvimento de soluções para crédito, cobrança e
-      detecção de fraude no setor financeiro
-
-      - Sólida experiência em Python, R, SQL e ferramentas de big data como
-      Spark, Airflow e Docker
-
-      - Capacidade de traduzir problemas complexos de negócio em modelos
-      analíticos escaláveis e acionáveis
-
-      - Perfil colaborativo, com histórico de mentoria, comunicação com
-      stakeholders e desenvolvimento de times analíticos
-    url: https://anaclarasouza.dev
-  education:
-    - area: Estatística
-      institution: Universidade Estadual de Campinas (Unicamp)
-      degree: Master
-      courses:
-        - Métodos de Regressão Avançada
-        - Aprendizado de Máquina Supervisionado
-        - Análise de Séries Temporais
-        - Inferência Causal e Experimentação
-        - Processos Estocásticos
-      endDate: Feb 1, 2019
-      startDate: Mar 1, 2017
-      summary: >
-        - Dissertação sobre detecção de anomalias em transações financeiras com
-        técnicas de séries temporais e aprendizado de máquina
-
-        - Publiquei artigo acadêmico em periódico qualificado a partir dos
-        resultados da pesquisa
-
-        - Apliquei métodos de validação cruzada e análise de sensibilidade para
-        garantir robustez dos modelos
-      score: "9.1"
-      url: https://www.unicamp.br/
-    - area: Estatística
-      institution: Universidade de São Paulo (USP)
-      degree: Bachelor
-      courses:
-        - Cálculo Diferencial e Integral
-        - Probabilidade e Estatística
-        - Modelos Lineares
-        - Banco de Dados
-        - Programação Científica com R
-      endDate: Dec 1, 2016
-      startDate: Mar 1, 2012
-      summary: >
-        - Iniciação científica em análise de sobrevivência aplicada a dados de
-        saúde pública
-
-        - Experiência em monitoria de disciplinas de estatística computacional e
-        probabilidade
-
-        - Participei de projetos de extensão envolvendo visualização de dados
-        abertos do município de São Paulo
-      score: "8.6"
-      url: https://www.usp.br/
-  awards:
-    - awarder: Programa de Pós-Graduação em Estatística - Unicamp
-      title: Menção Honrosa no Prêmio de Melhor Dissertação
-      date: Feb 1, 2019
-      summary: >
-        Reconhecimento pela dissertação de mestrado que apresentou contribuição
-        metodológica relevante para a detecção de fraudes financeiras com
-        aprendizado de máquina.
-  certificates:
-    - issuer: Amazon Web Services
-      name: AWS Certified Machine Learning - Specialty
-      date: May 1, 2022
-      url: https://aws.amazon.com/certification/
-    - issuer: Coursera
-      name: Deep Learning Specialization
-      date: Aug 1, 2020
-      url: https://www.coursera.org/specializations/deep-learning
-  interests:
-    - name: Esportes
-      keywords:
-        - Corrida de rua
-        - Ciclismo
-        - Futebol
-    - name: Música
-      keywords:
-        - Violão
-        - Jazz
-    - name: Tecnologia e Comunidade
-      keywords:
-        - Open Source
-        - Meetups de dados
-  languages:
-    - fluency: Native or Bilingual Proficiency
-      language: Portuguese
-      keywords:
-        - Escrita técnica
-        - Apresentações executivas
-    - fluency: Full Professional Proficiency
-      language: English
-      keywords:
-        - TOEFL 105
-        - IELTS 7.5
-    - fluency: Minimum Professional Proficiency
-      language: Spanish
-      keywords:
-        - Leitura técnica
-        - Comunicação básica
   location:
+    address: 'Av. Paulista, 1000'
     city: São Paulo
-    address: Av. Paulista, 1578
+    region: São Paulo
     country: Brazil
-    postalCode: 01310-100
-    region: SP
+    postalCode: "01310-100"
+
   profiles:
     - network: LinkedIn
-      username: anaclarasouza
-      url: https://www.linkedin.com/in/anaclarasouza
+      url: https://www.linkedin.com/in/anabeatrizcarvalho
+      username: anabeatrizcarvalho
     - network: GitHub
-      username: anaclarasouza
-      url: https://github.com/anaclarasouza
-  projects:
-    - name: Detector de Fraudes em Tempo Real
-      startDate: Jan 1, 2023
-      summary: >
-        - Arquitetura de streaming com Kafka e PySpark para processamento de
-        eventos em larga escala
+      url: https://github.com/anabeatriz-data
+      username: anabeatriz-data
+    - network: Medium
+      url: https://medium.com/@anabeatrizcarvalho
+      username: anabeatrizcarvalho
 
-        - Modelos de classificação treinados com dados sintéticos alcançaram AUC
-        de 0.94
-
-        - Inclui API REST para consulta de escore de risco em tempo real
-      description: Pipeline open source para detecção de fraudes em transações
-        financeiras com aprendizado de máquina.
-      endDate: Dec 1, 2023
-      keywords:
-        - Kafka
-        - PySpark
-        - Machine Learning
-        - Streaming
-      url: https://github.com/anaclarasouza/fraud-detector
-    - name: Dashboard de Análise de Churn
-      startDate: Jun 1, 2021
-      summary: >
-        - Desenvolvido com Streamlit e Plotly para visualização interativa de
-        métricas de retenção
-
-        - Inclui segmentação de clientes com análise RFM e algoritmo K-means
-
-        - Apoiou o time de retenção na priorização de ações para clientes de
-        alto valor
-      description: Painel interativo para monitoramento de churn e identificação de
-        padrões de cancelamento.
-      endDate: Sep 1, 2021
-      keywords:
-        - Streamlit
-        - CRM
-        - Segmentação
-        - K-means
-      url: https://github.com/anaclarasouza/churn-dashboard
-  publications:
-    - name: Detecção de anomalias em transações financeiras usando aprendizado de
-        máquina e séries temporais
-      publisher: Revista Brasileira de Computação Aplicada
-      releaseDate: Jun 1, 2023
-      summary: >
-        - Propõe uma abordagem híbrida de modelos ARIMA e redes neurais para
-        detecção de fraudes
-
-        - Demonstra redução de 28% nos falsos positivos em relação a métodos
-        tradicionais
-
-        - Utiliza dados bancários sintéticos e métricas de negócio para validar
-        a metodologia
-      url: https://www.scielo.br/j/rbca
-  skills:
-    - level: Expert
-      name: Machine Learning
-      keywords:
+  education:
+    - institution: Universidade de São Paulo (USP)
+      url: https://www.usp.br/
+      degree: Master
+      area: Ciência de Dados
+      score: "9.1"
+      startDate: 2015-01-01
+      endDate: 2017-12-01
+      courses:
+        - Aprendizado de Máquina Avançado
+        - Estatística Computacional
+        - Mineração de Dados
         - Modelagem Preditiva
-        - Classificação
-        - Regressão
-        - Séries Temporais
-        - Scikit-learn
-        - XGBoost
-    - level: Expert
-      name: Estatística
-      keywords:
+        - Visualização de Dados
+      summary: |
+        - Dissertação sobre seleção de atributos e interpretabilidade de modelos preditivos.
+        - Atuação como monitora nas disciplinas de estatística e aprendizado de máquina.
+    - institution: Universidade Estadual de Campinas (Unicamp)
+      url: https://www.unicamp.br/
+      degree: Bachelor
+      area: Estatística
+      score: "8.7"
+      startDate: 2010-02-01
+      endDate: 2014-12-01
+      courses:
         - Inferência Estatística
-        - Teste A/B
         - Modelos Lineares
+        - Amostragem
+        - Análise Multivariada
+      summary: |
+        - Iniciação científica em modelos de sobrevivência aplicados à saúde pública.
+        - Participação em projetos de consultoria estatística para empresas locais.
+
+  work:
+    - name: DataWise Soluções em Dados
+      url: https://www.datawise.com.br
+      position: Cientista de Dados Sênior
+      startDate: 2021-03-01
+      summary: |
+        - Lidero o desenvolvimento de modelos de previsão de churn e propensão de compra para clientes de varejo e finanças.
+        - Implementei um pipeline de MLOps que reduziu em 40% o tempo de deploy dos modelos em produção.
+        - Criei um framework de testes A/B e de validação offline que melhorou a confiabilidade dos experimentos.
+        - Supervisiono cientistas de dados júnior e contribuo com a definição da arquitetura de dados.
+      keywords:
+        - Machine Learning
+        - MLOps
+        - Python
+        - AWS
+        - Airflow
+        - Testes A/B
+
+    - name: VarejoTech
+      url: https://www.varejotech.com.br
+      position: Cientista de Dados
+      startDate: 2018-01-01
+      endDate: 2021-02-01
+      summary: |
+        - Construí modelos de precificação e segmentação de clientes que elevaram a margem operacional em 12%.
+        - Desenvolvi painéis analíticos em Power BI para acompanhamento de metas e detecção de anomalias.
+        - Automatizei a coleta, limpeza e integração de dados de vendas e estoque com Python e SQL.
+      keywords:
+        - Segmentação
+        - Preços
+        - Power BI
+        - SQL
+        - Python
+        - Previsão de Demanda
+
+    - name: Grupo Financeiro Beta
+      url: https://www.grupobeta.com.br
+      position: Analista de Dados
+      startDate: 2016-01-01
+      endDate: 2017-12-01
+      summary: |
+        - Atuei na construção de relatórios gerenciais de risco de crédito e inadimplência.
+        - Realizei análises exploratórias para apoiar a área de crédito na definição de políticas de concessão.
+        - Elaborei indicadores para comitês executivos e apresentações de resultados.
+      keywords:
+        - Risco de Crédito
+        - Relatórios Gerenciais
+        - SQL
+        - Excel Avançado
         - Análise Exploratória
-        - Amostragem Complexa
-    - level: Advanced
-      name: Engenharia de Dados
+
+  languages:
+    - language: Portuguese
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - Português do Brasil
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - TOEFL iBT 110
+    - language: Spanish
+      fluency: Limited Working Proficiency
+      keywords:
+        - Leitura técnica
+
+  skills:
+    - name: Machine Learning
+      level: Expert
       keywords:
         - Python
+        - Scikit-learn
+        - TensorFlow
+        - PyTorch
+        - XGBoost
+        - LightGBM
+        - MLflow
+        - Feature Store
+
+    - name: Estatística
+      level: Expert
+      keywords:
+        - Inferência Bayesiana
+        - Séries Temporais
+        - Testes A/B
+        - Modelos Lineares
+        - Modelos de Sobrevivência
+
+    - name: Engenharia de Dados
+      level: Advanced
+      keywords:
         - SQL
-        - Spark
+        - Apache Spark
         - Airflow
         - dbt
         - Docker
-    - level: Advanced
-      name: Deep Learning
+        - AWS
+        - GCP
+
+    - name: Visualização de Dados
+      level: Advanced
       keywords:
-        - TensorFlow
-        - PyTorch
-        - Redes Neurais Recorrentes
-        - Transformers
-        - NLP
-    - level: Advanced
-      name: Visualização de Dados
-      keywords:
-        - Power BI
-        - Tableau
-        - Plotly
         - Matplotlib
         - Seaborn
-  volunteer:
-    - organization: Rede Analytics para Mulheres
-      position: Mentora de Dados
-      startDate: Jan 1, 2020
-      summary: >
-        - Mentorei mais de 30 profissionais em transição para a área de ciência
-        de dados
-
-        - Organizei workshops de Python, SQL e estatística aplicada para
-        mulheres em tecnologia
-
-        - Contribuí com a construção de trilhas de estudo e materiais didáticos
-        de acesso aberto
-      endDate: Dec 1, 2023
-      url: https://www.redeanalytics.org.br
-  work:
-    - name: Aurora Bank S.A.
-      position: Cientista de Dados Sênior
-      startDate: Mar 1, 2021
-      summary: >
-        - Desenvolvi modelos de credit scoring e detecção de fraude em tempo
-        real, contribuindo para redução de 34% nas perdas operacionais
-
-        - Liderei a migração dos pipelines analíticos para uma arquitetura em
-        Spark e Airflow, reduzindo o tempo de processamento em 60%
-
-        - Conduzi experimentos A/B e análises de uplift para otimizar campanhas
-        de retenção e relacionamento com clientes
-
-        - Criei dashboards estratégicos em Power BI para acompanhamento de
-        indicadores de risco e performance dos modelos
-
-        - Atuei como mentora de cientistas de dados juniores em boas práticas de
-        Python, versionamento de modelos e testes estatísticos
-      keywords:
-        - Credit Scoring
-        - Detecção de Fraude
-        - Spark
-        - Airflow
-        - Experimentação A/B
-        - Modelos Preditivos
-      url: https://www.aurorabank.com.br
-    - name: DigiData Analytics LTDA.
-      position: Cientista de Dados
-      startDate: Jan 1, 2019
-      summary: >
-        - Construí pipelines de ingestão e tratamento de dados com Python e SQL
-        para clientes de varejo, finanças e telecomunicações
-
-        - Implementei modelos de churn e propensão à compra que aumentaram a
-        conversão de campanhas em cerca de 21%
-
-        - Desenvolvi visualizações interativas com Plotly e Dash para apoiar
-        comitês executivos e reuniões de resultado
-
-        - Estruturei metodologias de teste estatístico e amostragem para avaliar
-        a efetividade de ações de marketing
-      endDate: Feb 1, 2021
-      keywords:
-        - Python
-        - SQL
-        - Churn
-        - Propensão à Compra
         - Plotly
-        - Dash
-      url: https://www.digidata.com.br
-    - name: VarejoTech Soluções Inteligentes
-      position: Analista de BI e Dados
-      startDate: Jun 1, 2016
-      summary: >
-        - Estruturei o data warehouse da empresa utilizando modelagem
-        dimensional em SQL Server
+        - Power BI
+        - Looker
 
-        - Construí relatórios e dashboards de vendas, estoque e performance
-        comercial para as áreas de negócio
+  awards:
+    - title: Prêmio ABRADe de Inovação em Dados
+      awarder: Associação Brasileira de Análise de Dados
+      date: 2023-11-15
+      summary: |
+        Reconhecimento pelo projeto de MLOps aplicado à prevenção de churn em uma base com mais de 5 milhões de clientes.
+    - title: Destaque Acadêmico
+      awarder: Universidade Estadual de Campinas
+      date: 2014-12-10
+      summary: |
+        Reconhecimento pela excelência no desempenho do curso de Estatística entre os concluintes daquele ano.
 
-        - Automatizei processos de coleta e transformação de dados com scripts
-        em Python e agendamentos no Pentaho
+  certificates:
+    - name: AWS Certified Machine Learning - Specialty
+      url: https://aws.amazon.com/certification/
+      issuer: Amazon Web Services
+      date: 2022-06-20
+    - name: TensorFlow Developer Certificate
+      url: https://www.tensorflow.org/certificate
+      issuer: Google
+      date: 2021-03-15
 
-        - Apoiei decisões gerenciais com análises descritivas, indicadores de
-        desempenho e acompanhamento de metas
-      endDate: Dec 1, 2018
+  publications:
+    - publisher: Revista Brasileira de Inteligência Computacional
+      url: https://www.rbic.org.br
+      name: Previsão de inadimplência em carteiras de crédito usando aprendizado de
+        máquina
+      releaseDate: 2020-09-15
+      summary: |
+        - Apresenta uma comparação entre regressão logística, florestas aleatórias e redes neurais para predição de inadimplência.
+        - Discute estratégias de balanceamento de classes e interpretabilidade de modelos em cenários reais de crédito.
+
+  projects:
+    - name: Plataforma de MLOps para Previsão de Churn
+      url: https://github.com/anabeatriz-data/churn-mlops
+      description: Pipeline end-to-end que combina automação de treinamento, validação
+        e deploy de modelos de churn.
+      startDate: 2022-03-01
+      summary: |
+        - Utiliza Docker, Airflow e MLflow para orquestrar as etapas do ciclo de vida do modelo.
+        - Reduziu o tempo de atualização dos modelos de semanas para horas no ambiente de produção.
       keywords:
-        - SQL Server
-        - Business Intelligence
-        - Dashboards
-        - ETL
-        - KPIs
-      url: https://www.varejotech.com.br
+        - MLOps
+        - Docker
+        - Airflow
+        - MLflow
+        - Churn
+
+    - name: Modelo de Séries Temporais para Previsão de Vendas
+      url: https://github.com/anabeatriz-data/series-temporais-vendas
+      description: Projeto de estudo com modelos ARIMA, Prophet e redes LSTM aplicados
+        a uma base pública de vendas.
+      startDate: 2020-01-01
+      endDate: 2020-12-01
+      summary: |
+        - Análise comparativa de acurácia entre abordagens clássicas e neurais.
+        - Desenvolvimento de um dashboard interativo em Streamlit para exploração dos resultados.
+      keywords:
+        - Séries Temporais
+        - ARIMA
+        - Prophet
+        - LSTM
+        - Streamlit
+
+    - name: Painel de Indicadores de Negócio
+      url: https://github.com/anabeatriz-data/dashboard-indicadores
+      description: Dashboard criado com Power BI para monitoramento de metas
+        comerciais e qualidade dos dados.
+      startDate: 2019-08-01
+      endDate: 2019-10-01
+      summary: |
+        - Consolidou mais de 15 fontes de dados em um único painel gerencial.
+        - Facilitou a tomada de decisão semanal dos times comerciais.
+      keywords:
+        - Power BI
+        - Indicadores
+        - DAX
+        - SQL
+
+  interests:
+    - name: Leitura
+      keywords:
+        - Ficção científica
+        - Não ficção
+    - name: Esportes
+      keywords:
+        - Corrida
+        - Yoga
+
+  volunteer:
+    - organization: Mulheres em Dados
+      url: https://www.mulheresemdados.org.br
+      position: Mentora voluntária
+      startDate: 2020-01-01
+      summary: |
+        - Mentoria de carreira para mulheres que estão ingressando na área de dados.
+        - Criação de conteúdos sobre machine learning e estatística para a comunidade.
+    - organization: Ciência de Dados para o Bem
+      url: https://www.datascienceforgood.org.br
+      position: Voluntária em projetos sociais
+      startDate: 2019-03-01
+      endDate: 2022-12-01
+      summary: |
+        - Atuação em projetos de análise de dados para organizações sem fins lucrativos nas áreas de educação e saúde.
+
+  references:
+    - name: Ricardo Nogueira
+      phone: +55 11 99876-5432
+      relationship: Gerente de Dados na DataWise Soluções em Dados
+      email: ricardo.nogueira@datawise.com.br
+      summary: |
+        Ana Beatriz combina sólida formação estatística com capacidade de liderança e comunicação. Foi fundamental para a evolução dos nossos modelos de machine learning.
+
 locale:
   language: pt-br
-layouts:
-  - engine: latex
-    page:
-      showPageNumbers: true
-      paperSize: a4
-      margins:
-        top: 2.5cm
-        bottom: 2.5cm
-        left: 1.5cm
-        right: 1.5cm
-    template: moderncv-banking
-    typography:
-      fontSize: 11pt
-  - engine: docx
-    page:
-      showPageNumbers: true
-      paperSize: a4
-      margins:
-        top: 2.5cm
-        bottom: 2.5cm
-        left: 1.5cm
-        right: 1.5cm
-    typography:
-      fontSize: 11pt
-      lineSpacing: normal
-  - engine: markdown
-  - engine: html
-    template: calm
-    typography:
-      fontSize: 16px

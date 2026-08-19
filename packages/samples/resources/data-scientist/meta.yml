@@ -1,11 +1,12 @@
 id: data-scientist
 title: Data Scientist
 position: data scientist
-category: Engineering
+category: Data Science
 tags:
-  - data
+  - data-scientist
   - machine-learning
-  - senior
-description: >-
-  A senior data scientist resume showcasing education, work experience, skills,
-  projects, and certifications.
+  - python
+  - statistics
+  - analytics
+description: Sample resume demonstrating education, work experience, skills,
+  projects, and certifications for a data scientist position.

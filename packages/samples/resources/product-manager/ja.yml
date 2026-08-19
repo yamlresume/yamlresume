@@ -1,236 +1,172 @@
 content:
   basics:
-    name: 佐藤 健一
-    email: kenichi.sato@example.jp
-    headline: データドリブンなプロダクト開発で顧客体験を向上させるプロダクトマネージャー
-    phone: 090-1234-5678
+    name: 鈴木 彩花
+    headline: 顧客価値と事業成長を両立するプロダクトマネージャー
+    phone: "+81 90-1234-5678"
+    email: ayaka.suzuki@example.jp
+    url: https://ayakasuzuki.example.jp
     summary: |
-      - 10年以上にわたり、B2B SaaS・モバイルアプリ領域でプロダクトマネジメントを牽引
-      - ユーザーインタビューやデータ分析を活用した仮説検証サイクルを構築し、主要KPIである継続率を30%改善
-      - エンジニア・デザイナー・営業など多様なステークホルダーを巻き込みながら、ロードマップ策定からローンチ、グロースまでを一気通貫で推進
-      - プロダクト戦略の策定、要件定義、UI/UX改善、アジャイル開発のリードなど、上流から下流まで幅広いスキルを持つ
-    url: https://kenichi-sato.example.jp
-  education:
-    - area: 経済学部 経営学科
-      institution: 東京大学
-      degree: Bachelor
-      courses:
-        - 経営戦略論
-        - マーケティング論
-        - 統計学
-        - 情報科学入門
-      endDate: Mar 31, 2012
-      startDate: Apr 1, 2008
-      summary: |
-        - 在学中にマーケティングゼミに所属し、消費者の意思決定プロセスに関する研究を行う
-        - 学園祭の実行委員会で企画責任者を務め、来場者数1.5倍を達成
-      score: "3.7"
-      url: https://www.u-tokyo.ac.jp/
-  awards:
-    - awarder: 日本ネット経済新聞社
-      title: 日本ネット経済新聞「デジタルプロダクト賞」
-      date: Nov 2023
-      summary: |
-        自社SaaSプロダクトの顧客獲得力と使いやすさが評価され受賞。
-    - awarder: 株式会社ネクストイノベーション
-      title: 社内MVP
-      date: Dec 2022
-      summary: |
-        新規プロダクトの立ち上げを成功に導き、年間売上目標を120%達成。
-  certificates:
-    - issuer: PMI
-      name: PMP (Project Management Professional)
-      date: Jun 2018
-      url: https://www.pmi.org/
-    - issuer: Scrum Alliance
-      name: Certified Scrum Product Owner (CSPO)
-      date: Jan 2020
-      url: https://www.scrumalliance.org/
-  interests:
-    - name: ランニング
-      keywords:
-        - フルマラソン
-        - 東京マラソン
-    - name: 読書
-      keywords:
-        - ビジネス書
-        - 行動経済学
-    - name: 旅行
-      keywords:
-        - 国内旅行
-        - 食文化探求
-  languages:
-    - fluency: Native or Bilingual Proficiency
-      language: Japanese
-      keywords:
-        - 母国語
-    - fluency: Full Professional Proficiency
-      language: English
-      keywords:
-        - TOEIC 950
-        - ビジネス会議
-        - 英字ドキュメント作成
+      ユーザー中心のプロダクトマネジメントを専門とし、SaaSプロダクトの企画から改善まで一貫してリードしてきたプロダクトマネージャーです。データに基づく仮説立案と定量・定性調査を組み合わせ、KPI改善と顧客満足度向上を両立させます。ステークホルダーとの合意形成やクロスファンクショナルなチーム推進を強みとし、グローバル展開を見据えたプロダクト戦略にも経験があります。
   location:
-    city: 東京都
-    address: 〒150-0002 東京都渋谷区渋谷1-2-3
+    address: 東京都千代田区丸の内1-2-3
+    city: 千代田区
+    region: 東京都
+    postalCode: "100-0005"
     country: Japan
-    postalCode: 150-0002
-    region: 渋谷区
   profiles:
     - network: LinkedIn
-      username: kenichi-sato
-      url: https://www.linkedin.com/in/kenichi-sato
-    - network: Twitter
-      username: kenichi_pm
-      url: https://twitter.com/kenichi_pm
-  projects:
-    - name: 顧客分析ダッシュボードの再設計
-      startDate: Jun 1, 2022
+      url: https://www.linkedin.com/in/ayaka-suzuki
+      username: ayaka-suzuki
+    - network: GitHub
+      url: https://github.com/ayaka-suzuki
+      username: ayaka-suzuki
+  education:
+    - institution: 早稲田大学
+      url: https://www.waseda.jp
+      degree: Bachelor
+      area: 経営工学
+      score: "3.7"
+      startDate: Apr 1, 2014
+      endDate: Mar 31, 2018
+      courses:
+        - マーケティングリサーチ
+        - データサイエンス入門
+        - プロジェクトマネジメント
+        - 組織行動論
+        - サービスイノベーション
       summary: |
-        - ユーザーが主要指標を一目で把握できるダッシュボードを企画・設計
-        - 導線改善により、ダッシュボードの週次利用率が45%向上
-      endDate: Dec 31, 2022
+        - 経営工学を専攻し、データ分析・マーケティング・組織マネジメントを学ぶ
+        - チームでのプロジェクト演習を通じて、課題発見から解決策の提案までを経験
+        - 卒業研究では「顧客ロイヤルティ向上要因の分析」をテーマに調査・分析を実施
+  work:
+    - name: 株式会社ネクストソリューションズ
+      url: https://www.next-sol.example.jp
+      position: シニアプロダクトマネージャー
+      startDate: Apr 1, 2021
+      summary: |
+        - B2B SaaSプロダクト「TeamFlow」のプロダクトマネージャーとして、ロードマップ策定から機能開発、ローンチまでを統括
+        - ユーザーインタビューや利用ログ分析に基づき、オンボーディング機能を再設計し、アクティベーション率を45%から68%に改善
+        - 営業・カスタマーサクセス・開発チームと連携し、顧客フィードバックを優先順位付けする仕組みを構築
+        - 四半期ごとのKPIレビューを主導し、プロダクト改善サイクルを定着させた
       keywords:
-        - データ可視化
-        - UX改善
-        - SQL
-        - Tableau
-      url: https://example.jp/projects/dashboard
-    - name: モバイルアプリ「ハビットログ」企画
-      startDate: Jan 1, 2023
+        - プロダクト戦略
+        - ロードマップ
+        - ステークホルダー管理
+        - KPI改善
+        - データ分析
+    - name: 株式会社デジタルイノベーション
+      url: https://www.digital-innovation.example.jp
+      position: プロダクトマネージャー
+      startDate: Apr 1, 2018
+      endDate: Mar 31, 2021
       summary: |
-        - 習慣化を支援するiOSアプリのコンセプト立案からリリースまでを実施
-        - リリース後3ヶ月でダウンロード数1万件を突破
-      endDate: Mar 31, 2023
+        - 自社メディア向けCMSのリニューアルプロジェクトに参画し、要件定義からリリースまでを主導
+        - 編集者・営業チームへのヒアリングを実施し、業務効率化に貢献する編集ワークフロー機能を企画・実装
+        - A/Bテストを活用したUI改善を繰り返し、記事編集時間を平均30%削減
+        - エンジニア・デザイナー約10名のチームをプロジェクトマネジメントとして支援
       keywords:
-        - モバイルアプリ
-        - 習慣化
-        - UXリサーチ
-        - プロダクトローンチ
-      url: https://example.jp/projects/habitlog
-  publications:
-    - name: データドリブンなプロダクト改善の実践ガイド
-      publisher: Qiita
-      releaseDate: Aug 15, 2023
-      summary: |
-        - 定量・定性データを組み合わせた仮説検証プロセスを解説
-        - 累計10万PVを突破し、Qiitaのトレンド記事に選出
-      url: https://qiita.com/kenichi-pm/items/example
+        - 要件定義
+        - アジャイル開発
+        - A/Bテスト
+        - UI改善
+        - プロジェクト推進
   skills:
-    - level: Expert
-      name: プロダクトマネジメント
+    - name: プロダクトマネジメント
+      level: Expert
       keywords:
         - ロードマップ策定
-        - 要件定義
-        - プライオリティ管理
-        - ステークホルダー調整
+        - 要求分析
         - KPI設計
-    - level: Advanced
-      name: データ分析
+        - 顧客インタビュー
+        - プライオリティ管理
+    - name: データ分析
+      level: Advanced
       keywords:
         - SQL
         - Google Analytics
         - Tableau
         - A/Bテスト
-        - ユーザー行動分析
-    - level: Advanced
-      name: アジャイル開発
-      keywords:
-        - Scrum
-        - スプリントマネジメント
-        - Jira
-        - Confluence
-        - ふりかえり
-    - level: Intermediate
-      name: デザイン
+        - コホート分析
+    - name: UI/UXデザイン
+      level: Intermediate
       keywords:
         - Figma
-        - Adobe XD
         - プロトタイピング
+        - ユーザビリティテスト
+        - ワイヤーフレーム
+  languages:
+    - language: Japanese
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - ビジネス文書作成
+        - プレゼンテーション
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - TOEIC 905
+        - 海外チームとの会議
+  awards:
+    - title: 2023年度 ベストプロダクト賞
+      date: Mar 2024
+      awarder: 株式会社ネクストソリューションズ
+      summary: |
+        - TeamFlowの大型リニューアルプロジェクトをリードし、顧客満足度の大幅向上と売上成長に貢献したことが評価され受賞
+  certificates:
+    - name: PMP
+      issuer: PMI日本支部
+      date: Jun 2022
+      url: https://www.pmi.org/certifications/project-management-pmp
+  publications:
+    - name: データドリブンなプロダクト改善の実践
+      publisher: note
+      releaseDate: May 2023
+      url: https://note.example.jp/ayaka-suzuki/datadriven-pm
+      summary: |
+        - プロダクトマネージャー向けに、KPI設計やA/Bテストの進め方、ステークホルダーを巻き込む方法を事例付きで紹介
+  projects:
+    - name: TeamFlow オンボーディング改善
+      url: https://www.next-sol.example.jp/teamflow
+      description: B2B SaaSプロダクトにおけるオンボーディング機能のリニューアルプロジェクト
+      startDate: Jul 2022
+      endDate: Feb 2023
+      summary: |
+        - ユーザーインタビューと利用ログ分析を実施し、離脱要因を特定
+        - ステップ形式のガイドとテンプレート機能を新たに設計・実装
+        - アクティベーション率を45%から68%に改善し、解約率を削減
+      keywords:
+        - オンボーディング
+        - ユーザーリサーチ
+        - プロダクト改善
+    - name: メディア向けCMS編集ワークフロー設計
+      url: https://www.digital-innovation.example.jp/cms
+      description: 自社CMSに搭載する編集ワークフロー機能の企画・設計プロジェクト
+      startDate: Sep 2019
+      endDate: Mar 2020
+      summary: |
+        - 編集者と営業チームの業務プロセスを可視化し、課題を整理
+        - 承認フローとタスク管理機能の要件定義を実施
+        - 編集時間を平均30%削減し、業務効率化に貢献
+      keywords:
+        - 業務分析
+        - 要件定義
+        - UX設計
+  interests:
+    - name: 旅行
+      keywords:
+        - 国内旅行
+        - 写真
+    - name: 読書
+      keywords:
+        - ビジネス書
+        - デザイン
   volunteer:
-    - organization: 日本プロダクトマネージャー協会
-      position: コミュニティ運営スタッフ
-      startDate: Apr 1, 2021
+    - organization: PMラーニングコミュニティ
+      url: https://www.pm-learning.example.jp
+      position: メンター
+      startDate: Jun 2022
       summary: |
-        - PM勉強会の企画・運営を担当し、毎回100名以上の参加者を集める
-        - 若手PMのメンタリングプログラムを立ち上げ、累計30名をサポート
-      endDate: Mar 31, 2024
-      url: https://www.pmkyoukai.example.org
-  work:
-    - name: 株式会社ネクストイノベーション
-      position: シニアプロダクトマネージャー
-      startDate: Apr 1, 2022
-      summary: |
-        - 新規SaaSプロダクト「KPIダッシュボード」の企画・立ち上げをリードし、ローンチから半年で有償契約25社を獲得
-        - ユーザーインタビューとアクセス解析を組み合わせ、優先順位付けの仕組みを確立。継続率を30%改善
-        - エンジニア・デザイナー・セールスからなるクロスファンクショナルチームを結成し、アジャイル開発を推進
-        - 経営陣への定期的な進捗報告とKPIレビューを実施し、プロダクト戦略の透明性を向上
-      keywords:
-        - プロダクト戦略
-        - ロードマップ
-        - データ分析
-        - 顧客インタビュー
-        - アジャイル
-      url: https://www.nextinnovation.co.jp
-    - name: 株式会社ビジョンテック
-      position: プロダクトマネージャー
-      startDate: Apr 1, 2019
-      summary: |
-        - B2B向け営業支援システムのリニューアルプロジェクトを担当し、UI/UXを抜本的に改善
-        - ユーザーストーリーマッピングを導入し、開発チームと要件認識のズレを解消。リリース後の問い合わせ件数を45%削減
-        - A/Bテストを活用したランディングページ改善により、資料請求率を2.3倍に向上
-        - 顧客サポートチームと連携し、NPS調査の仕組みを構築。スコアを10ポイント向上させた
-      endDate: Mar 31, 2022
-      keywords:
-        - 要件定義
-        - UI/UX改善
-        - A/Bテスト
-        - ステークホルダー管理
-      url: https://www.visiontech.example.co.jp
-    - name: 株式会社ブリッジソリューションズ
-      position: プロジェクトマネージャー / プロダクトオーナー
-      startDate: Apr 1, 2015
-      summary: |
-        - 複数クライアントのWebシステム開発案件において、要件定義から納品までを一貫してマネジメント
-        - プロジェクトの進捗管理・リスク管理・予算管理を担当し、全12案件を納期内で完遂
-        - オフショア開発チームとのブリッジエンジニアとしてコミュニケーション体制を構築し、手戻り工数を30%削減
-        - 社内標準の開発プロセスを策定し、プロジェクトの属人化を防止
-      endDate: Mar 31, 2019
-      keywords:
-        - プロジェクトマネジメント
-        - 要件定義
-        - オフショア開発
-        - 品質管理
-      url: https://www.bridgesol.example.co.jp
+        - 若手プロダクトマネージャー向けの勉強会で講師を務め、ロードマップ策定やKPI設計の実践的なノウハウを共有
+        - 参加者からの相談に定期的に応じ、キャリア形成の支援を行った
+
 locale:
   language: ja
-layouts:
-  - engine: latex
-    page:
-      showPageNumbers: true
-      paperSize: a4
-      margins:
-        top: 2.5cm
-        bottom: 2.5cm
-        left: 1.5cm
-        right: 1.5cm
-    template: moderncv-banking
-    typography:
-      fontSize: 11pt
-  - engine: docx
-    page:
-      showPageNumbers: true
-      paperSize: a4
-      margins:
-        top: 2.5cm
-        bottom: 2.5cm
-        left: 1.5cm
-        right: 1.5cm
-    typography:
-      fontSize: 11pt
-      lineSpacing: normal
-  - engine: markdown
-  - engine: html
-    template: calm
-    typography:
-      fontSize: 16px

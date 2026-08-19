@@ -1,266 +1,220 @@
 content:
   basics:
-    name: Camille Rousseau
-    email: camille.rousseau@design-interactif.fr
-    headline: Designer UX Senior & Stratège en Expérience Utilisateur
-    phone: +33 6 12 34 56 78
-    summary: >
-      - Designer UX passionnée avec plus de 8 ans d'expérience dans la
-      conception de produits digitaux centrés sur l'utilisateur.
+    name: Camille Moreau
+    headline: "Designer UX senior — conception de produits numériques centrés
+      utilisateur"
+    phone: "+33 6 12 34 56 78"
+    email: camille.moreau@email.fr
+    url: https://www.camillemoreau.fr
+    summary: |
+      Designer UX senior avec plus de 7 ans d'expérience dans la conception de produits numériques pour les secteurs de la santé, du e-commerce et des services financiers. Je m'applique à comprendre les besoins réels des utilisateurs pour concevoir des interfaces intuitives, accessibles et désirables.
 
-      - Expertise en recherche utilisateur, architecture de l'information et
-      prototypage interactif pour des applications web et mobiles.
-
-      - Solide capacité à collaborer avec des équipes pluridisciplinaires
-      (produit, développement, marketing) pour livrer des expériences cohérentes
-      et accessibles.
-
-      - Animée par la résolution de problèmes complexes et l'amélioration
-      continue des parcours utilisateurs à travers des méthodologies agiles et
-      Lean UX.
-    url: https://camillerousseau.design
-  education:
-    - area: Design Interactif et Multimédia
-      institution: Gobelins, l'école de l'image
-      degree: Master
-      courses:
-        - Méthodes de recherche utilisateur
-        - Ergonomie et accessibilité
-        - Design d'interface mobile
-        - Prototypage avancé
-      endDate: Jul 1, 2014
-      startDate: Sep 1, 2012
-      summary: >
-        - Acquisition d'une expertise en conception centrée utilisateur et en
-        stratégie de design interactif.
-
-        - Réalisation de projets pluridisciplinaires alliant narration,
-        technologie et sciences cognitives.
-
-        - Approfondissement des méthodes de recherche qualitative et des outils
-        de co-conception.
-      score: Très bien
-      url: https://www.gobelins.fr
-    - area: Arts Numériques et Technologies
-      institution: Université de Nantes
-      degree: Bachelor
-      endDate: Jul 1, 2012
-      startDate: Sep 1, 2009
-      summary: >
-        - Formation aux fondamentaux du design numérique, de la programmation
-        créative et des médias interactifs.
-
-        - Développement d'une sensibilité esthétique et technique pour la
-        création d'expériences utilisateur engageantes.
-      url: https://www.univ-nantes.fr
-  awards:
-    - awarder: Festival de l'Interaction Design (Paris)
-      title: Prix de l'Innovation Digitale
-      date: Jun 1, 2020
-      summary: >
-        Récompense décernée pour la conception d'une solution inclusive
-        facilitant l'autonomie des personnes en situation de handicap visuel.
-  certificates:
-    - issuer: Google / Coursera
-      name: Google UX Design Certificate
-      date: Nov 1, 2022
-      url: https://coursera.org/google-ux
-    - issuer: IAAP
-      name: Certified Professional in Accessibility Core Competencies (CPACC)
-      date: May 1, 2023
-      url: https://www.accessibility.org/certifications
-  interests:
-    - name: Arts & Culture
-      keywords:
-        - Photographie
-        - Musées
-        - Architecture
-    - name: Bien-être
-      keywords:
-        - Yoga
-        - Randonnée
-        - Méditation
-  languages:
-    - fluency: Native or Bilingual Proficiency
-      language: French
-      keywords: []
-    - fluency: Full Professional Proficiency
-      language: English
-      keywords:
-        - TOEIC 980
-    - fluency: Limited Working Proficiency
-      language: Spanish
-      keywords: []
+      - Expertise en recherche utilisateur, prototypage interactif et design system
+      - Approche centrée utilisateur, guidée par les données et les tests d'utilisabilité
+      - Collaboration étroite avec les développeurs, les product managers et les métiers
+      - Passionnée par l'accessibilité numérique et le design inclusif
   location:
+    address: "12 Rue de la Paix"
     city: Paris
-    country: France
-    postalCode: "75011"
     region: Île-de-France
+    postalCode: "75002"
+    country: France
   profiles:
     - network: LinkedIn
-      username: camillerousseau
-      url: https://linkedin.com/in/camillerousseau
+      url: https://www.linkedin.com/in/camillemoreau
+      username: camillemoreau
     - network: Behance
-      username: camillerousseau
-      url: https://behance.net/camillerousseau
+      url: https://www.behance.net/camillemoreau
+      username: camillemoreau
     - network: Dribbble
-      username: camillerousseau
-      url: https://dribbble.com/camillerousseau
-  projects:
-    - name: Mobilité+
-      startDate: Feb 1, 2022
-      summary: >
-        - Conception UX complète depuis la recherche terrain jusqu'aux tests
-        d'utilisabilité finaux.
-
-        - Mise en place d'un design system accessible respectant les critères
-        WCAG 2.1 AA.
-
-        - Lancement réussi avec 10 000 téléchargements lors du premier
-        trimestre.
-      description: Application mobile d'aide à la mobilité pour seniors
-      endDate: Sep 1, 2022
+      url: https://dribbble.com/camillemoreau
+      username: camillemoreau
+  education:
+    - institution: L'École de design Nantes Atlantique
+      url: https://www.lecolededesign.com/
+      degree: Master
+      area: Design d'interaction et expérience utilisateur
+      score: "3.8"
+      startDate: Sep 2014
+      endDate: Jul 2016
+      courses:
+        - Ergonomie cognitive
+        - Design thinking
+        - Prototypage interactif
+        - Recherche utilisateur
+        - Design visuel
+        - Méthodes agiles
+      summary: |
+        - Formation centrée sur la conception d'interfaces et de services numériques innovants
+        - Projet de fin d'études sur la conception d'un parcours de soin connecté pour patients chroniques
+        - Stage de fin d'études en agence UX, avec création de tests utilisateurs et de wireframes
+    - institution: Université de Rennes 2
+      url: https://www.univ-rennes2.fr/
+      degree: Bachelor
+      area: Arts plastiques — Design
+      startDate: Sep 2011
+      endDate: Jul 2014
+      summary: |
+        - Acquisition des fondamentaux du design visuel, de l'histoire de l'art et de la sémiologie de l'image
+        - Réalisation de projets graphiques individuels et collectifs, alliant créativité et rigueur
+  work:
+    - name: Cortex Design
+      url: https://www.cortex-design.fr
+      position: Designer UX senior
+      startDate: Jan 2022
+      summary: |
+        - Pilote la conception UX/UI de la plateforme de télémédecine pour un client du secteur de la santé
+        - Anime des ateliers de co-design avec les équipes produit, technique et médicale
+        - Développe et fait évoluer le design system multi-produits (Figma, Storybook)
+        - Planifie et réalise des tests d'utilisabilité, puis formalise des recommandations d'amélioration
+        - Accompagne l'équipe dans l'application des critères d'accessibilité RGAA et WCAG 2.1
       keywords:
+        - Recherche utilisateur
+        - Tests d'utilisabilité
+        - Design system
         - Accessibilité
-        - Senior
-        - Mobile
-      url: https://mobilite-plus.fr
-  publications:
-    - name: "Au-delà du pixel : intégrer l'accessibilité dès la phase de recherche"
-      publisher: UX Collective (FR)
-      releaseDate: Mar 1, 2023
-      summary: >
-        Article explorant les méthodologies de recherche utilisateur adaptées
-        aux besoins des personnes en situation de handicap, avec études de cas
-        concrets.
-      url: https://uxdesign.cc/accessibilite-recherche-fr
-  skills:
-    - level: Expert
-      name: Recherche Utilisateur
+        - Figma
+    - name: Numen Studio
+      url: https://www.numen-studio.fr
+      position: Product Designer
+      startDate: Mar 2019
+      endDate: Dec 2021
+      summary: |
+        - Conception de parcours utilisateurs et de wireframes pour des applications web et mobiles
+        - Réalisation de prototypes interactifs présentés lors de recettes avec les clients
+        - Mise en place d'un design system interne, réduisant de 30 % le temps de production
+        - Participation à la refonte de l'application mobile d'une grande enseigne de distribution
+        - Contribution aux tests utilisateurs en laboratoire et à distance
       keywords:
-        - Entretiens
-        - Tests A/B
-        - Cartographie d'expérience
-        - Analyse quantitative
-    - level: Expert
-      name: Conception & Prototypage
+        - Wireframing
+        - Prototypage
+        - User journey
+        - Design system
+        - Sketch
+    - name: Pixelea
+      url: https://www.pixelea.fr
+      position: UI/UX Designer
+      startDate: Sep 2016
+      endDate: Feb 2019
+      summary: |
+        - Conception d'interfaces responsives pour des sites vitrines et des outils intranet
+        - Création d'identités visuelles et de chartes graphiques pour des PME
+        - Collaboration avec les développeurs pour assurer la faisabilité technique des maquettes
+        - Réalisation de supports de présentation pour les réponses aux appels d'offres
+      keywords:
+        - UI design
+        - Intégration HTML/CSS
+        - Identité visuelle
+        - Responsive design
+  languages:
+    - language: French
+      fluency: Native or Bilingual Proficiency
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - TOEIC 950
+  skills:
+    - name: Recherche utilisateur
+      level: Expert
+      keywords:
+        - Entretiens utilisateurs
+        - Personas
+        - Parcours utilisateur
+        - Tests d'utilisabilité
+        - Analyse de données
+    - name: Prototypage et design d'interface
+      level: Expert
       keywords:
         - Figma
         - Sketch
-        - Prototypage haute fidélité
-        - Systèmes de design
-    - level: Advanced
-      name: Facilitation & Stratégie
+        - Adobe XD
+        - InVision
+        - Principle
+    - name: Design system et accessibilité
+      level: Advanced
       keywords:
-        - Ateliers de co-conception
-        - Design Thinking
+        - Design tokens
+        - Composants
+        - WCAG 2.1
+        - RGAA
+    - name: Collaboration et méthodes agiles
+      level: Advanced
+      keywords:
+        - Scrum
+        - Kanban
         - Lean UX
-        - Facilitation graphique
-  volunteer:
-    - organization: Designers Ethiques
-      position: Animatrice de conférences
-      startDate: Jan 1, 2019
-      summary: >
-        - Organisation et animation d'ateliers sur les enjeux éthiques du design
-        numérique.
-
-        - Intervention dans des écoles supérieures pour sensibiliser les
-        étudiants aux biais cognitifs et à l'accessibilité.
-      url: https://designersethiques.org
-  work:
-    - name: Aether Studio
-      position: Lead UX Designer
-      startDate: Jan 1, 2021
-      summary: >
-        - Pilotage de la stratégie UX pour les clients du secteur fintech et
-        e-santé.
-
-        - Animation d'ateliers de co-conception et de recherche utilisateur
-        (entretiens, tests d'utilisabilité, card sorting).
-
-        - Conception de systèmes de design et supervision de leur implémentation
-        dans des équipes Agile/Scrum.
-
-        - Formation et mentorat de designers juniors, renforcement d'une culture
-        produit centrée sur l'utilisateur.
-      keywords:
-        - Fintech
-        - E-santé
-        - Design Systems
-        - Recherche utilisateur
-        - Mentorat
-      url: https://aether-studio.fr
-    - name: Kuzzle Agence
-      position: Designer UX Senior
-      startDate: Mar 1, 2018
-      summary: >
-        - Conception et itération sur les parcours utilisateurs d'une plateforme
-        SaaS B2B destinée au secteur logistique.
-
-        - Réalisation de tests d'utilisabilité modérés et non modérés auprès de
-        plus de 50 utilisateurs finaux.
-
-        - Collaboration étroite avec les développeurs front-end pour garantir la
-        fidélité des maquettes au pixel près.
-
-        - Amélioration du taux de conversion de 25 % grâce à une refonte du
-        tunnel de commande.
-      endDate: Dec 1, 2020
-      keywords:
-        - SaaS B2B
-        - Logistique
-        - Tests utilisateur
-        - Conversion
-      url: https://kuzzle.fr
-    - name: Novacloud
-      position: Designer UX/UI
-      startDate: Sep 1, 2015
-      summary: >
-        - Design d'interfaces pour des applications mobiles iOS et Android dans
-        le domaine du voyage.
-
-        - Création de wireframes, prototypes interactifs (Figma, Principle) et
-        spécifications fonctionnelles détaillées.
-
-        - Participation à la mise en place d'une démarche d'accessibilité
-        conforme aux normes WCAG 2.1 niveau AA.
-      endDate: Feb 1, 2018
+        - Ateliers de co-design
+  awards:
+    - title: Prix UX Design – Mention accessibilité
+      date: Oct 2021
+      awarder: UX Design Awards Europe
+      summary: |
+        Récompense le projet « Mon Suivi Santé » pour sa conception inclusive et son interface accessible aux utilisateurs seniors.
+  certificates:
+    - name: Certified User Experience Professional (CUP)
+      issuer: Nielsen Norman Group
+      date: Mar 2020
+      url: https://www.nngroup.com/
+    - name: Google UX Design Professional Certificate
+      issuer: Coursera
+      date: Aug 2021
+      url: https://www.coursera.org/
+  publications:
+    - name: Améliorer l'accessibilité des interfaces mobiles pour les seniors
+      publisher: Les Cahiers du Design
+      releaseDate: Jun 2022
+      url: https://www.lescahiersdudesign.fr/
+      summary: |
+        Article de synthèse présentant les bonnes pratiques d'accessibilité numérique et les retours d'expérience de tests utilisateurs menés auprès de personnes âgées.
+  projects:
+    - name: Mon Suivi Santé
+      url: https://www.monsuivisante.fr
+      startDate: Sep 2021
+      description: Conception UX/UI d'une application mobile de suivi médical pour
+        patients chroniques.
+      summary: |
+        - Conduite d'entretiens utilisateurs et de tests d'utilisabilité
+        - Création de l'architecture de l'information et des parcours clés
+        - Conception d'une interface accessible conforme aux normes WCAG 2.1
       keywords:
         - Mobile
-        - iOS
-        - Android
+        - Santé
         - Accessibilité
         - Figma
-      url: https://novacloud.io
+        - Tests utilisateurs
+    - name: Maison Verte
+      url: https://www.maisonverte.fr
+      startDate: Jan 2023
+      endDate: Jun 2023
+      description: Refonte de l'expérience d'achat d'une marque de décoration
+        éco-responsable.
+      summary: |
+        - Audit UX et analyse des parcours d'achat existants
+        - Conception d'une interface épurée mettant en avant les engagements éco-responsables
+        - Mise en place d'un design system et de composants réutilisables
+      keywords:
+        - E-commerce
+        - UX/UI
+        - Design system
+        - Conversion
+  interests:
+    - name: Design social
+      keywords:
+        - Design inclusif
+        - Accessibilité numérique
+        - Éco-conception
+    - name: Arts et culture
+      keywords:
+        - Photographie
+        - Musées
+        - Littérature
+  volunteer:
+    - organization: Designers Éthiques
+      url: https://www.designersethiques.org/
+      position: Bénévole UX
+      startDate: Sep 2020
+      summary: |
+        Accompagnement d'associations à but non lucratif dans l'amélioration de leurs outils numériques et la formation de leurs équipes aux bonnes pratiques d'accessibilité.
+
 locale:
   language: fr
-layouts:
-  - engine: latex
-    page:
-      showPageNumbers: true
-      paperSize: a4
-      margins:
-        top: 2.5cm
-        bottom: 2.5cm
-        left: 1.5cm
-        right: 1.5cm
-    template: moderncv-banking
-    typography:
-      fontSize: 11pt
-  - engine: docx
-    page:
-      showPageNumbers: true
-      paperSize: a4
-      margins:
-        top: 2.5cm
-        bottom: 2.5cm
-        left: 1.5cm
-        right: 1.5cm
-    typography:
-      fontSize: 11pt
-      lineSpacing: normal
-  - engine: markdown
-  - engine: html
-    template: calm
-    typography:
-      fontSize: 16px

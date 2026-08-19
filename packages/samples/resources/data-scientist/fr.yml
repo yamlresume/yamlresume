@@ -1,315 +1,228 @@
 content:
   basics:
     name: Camille Moreau
+    headline: Data Scientist spécialisée en machine learning et analyse prédictive
+    phone: "+33 6 12 34 56 78"
     email: camille.moreau@email.fr
-    headline: Data Scientist Senior | Machine Learning & Analyse Prédictive
-    phone: +33 6 12 34 56 78
-    summary: >
-      - Data Scientist Senior avec plus de 5 ans d'expérience dans la conception
-      et le déploiement de modèles prédictifs
-
-      - Expertise en machine learning, statistiques et traitement de données
-      massives pour accompagner la décision stratégique
-
-      - Solide maîtrise de l'écosystème Python, des outils Big Data et des
-      plateformes cloud
-
-      - Esprit d'analyse, rigueur scientifique et forte capacité à vulgariser
-      les résultats auprès des parties prenantes métier
     url: https://camillemoreau.fr
-  education:
-    - area: Data Science et Intelligence Artificielle
-      institution: Université Paris-Saclay
-      degree: Master
-      courses:
-        - Apprentissage automatique avancé
-        - Deep Learning
-        - Statistiques bayésiennes
-        - Big Data et architectures distribuées
-        - Visualisation de données
-        - Éthique de la donnée
-      endDate: Sep 1, 2020
-      startDate: Sep 1, 2018
-      summary: >
-        - Formation approfondie en mathématiques appliquées et en apprentissage
-        automatique
+    summary: |
+      Data Scientist avec plus de 6 ans d'expérience dans la conception, le déploiement et le suivi de modèles de machine learning en environnement production.
 
-        - Réalisation d'un projet de fin d'études sur la détection de fraude par
-        réseaux de neurones
-
-        - Obtention de la mention Très Bien
-      score: "3.9"
-      url: https://www.universite-paris-saclay.fr/
-    - area: Mathématiques et Informatique
-      institution: Université Claude Bernard Lyon 1
-      degree: Bachelor
-      courses:
-        - Algèbre linéaire
-        - Probabilités
-        - Programmation en Python
-        - Bases de données
-        - Algorithmique
-      endDate: Jun 1, 2018
-      startDate: Sep 1, 2015
-      summary: |
-        - Acquisition des fondamentaux en mathématiques et en programmation
-        - Stage de fin de licence sur l'analyse exploratoire de données de santé
-      score: "3.6"
-      url: https://www.univ-lyon1.fr/
-  awards:
-    - awarder: Association Data for Good
-      title: Prix "Data for Good" 2022
-      date: Jun 1, 2022
-      summary: >
-        Récompense pour la conception d'un modèle d'optimisation des tournées de
-        livraison permettant de réduire les émissions de CO2 de 12 % pour une
-        association caritative.
-  certificates:
-    - issuer: Amazon Web Services
-      name: AWS Certified Machine Learning – Specialty
-      date: Mar 1, 2023
-      url: https://aws.amazon.com/certification/
-    - issuer: deeplearning.ai / Coursera
-      name: Deep Learning Specialization
-      date: Dec 1, 2020
-      url: https://www.coursera.org/specializations/deep-learning
-  interests:
-    - name: Data Visualisation
-      keywords:
-        - D3.js
-        - Tableau
-        - Infographies
-    - name: Sport
-      keywords:
-        - Course à pied
-        - Randonnée
-        - Natation
-  languages:
-    - fluency: Native or Bilingual Proficiency
-      language: French
-      keywords:
-        - Langue maternelle
-    - fluency: Full Professional Proficiency
-      language: English
-      keywords:
-        - TOEIC 950
-        - Lecture d'articles scientifiques
-    - fluency: Limited Working Proficiency
-      language: Spanish
-      keywords:
-        - Notions professionnelles
+      - Expertise en Python, SQL et visualisation de données (Power BI, Tableau)
+      - Expérience en modélisation prédictive, traitement du langage naturel et détection de fraude
+      - Solide connaissance des environnements cloud (AWS, GCP) et des pratiques MLOps
+      - Esprit analytique, rigueur scientifique et capacité à vulgariser les résultats auprès des parties prenantes non techniques
   location:
+    address: 12 rue de la Paix
     city: Paris
-    address: 12 rue de la Roquette
-    country: France
-    postalCode: "75011"
     region: Île-de-France
+    country: France
+    postalCode: "75002"
   profiles:
     - network: LinkedIn
-      username: camillemoreau
-      url: https://www.linkedin.com/in/camillemoreau
+      url: https://www.linkedin.com/in/camille-moreau-data
+      username: camille-moreau-data
     - network: GitHub
-      username: camillemoreau
       url: https://github.com/camillemoreau
-  projects:
-    - name: Détection de fraude bancaire en temps réel
-      startDate: Jan 1, 2021
-      summary: >
-        - Développement d'un pipeline de streaming avec Kafka et Spark
-        Structured Streaming
-
-        - Entraînement d'un modèle de classification sur des transactions
-        anonymisées avec un rappel de 91 %
-
-        - Mise en place d'une API de scoring pour intégration dans le système
-        d'information
-      description: Plateforme de détection des transactions frauduleuses à partir de
-        données de flux temps réel
-      endDate: Jun 1, 2021
+      username: camillemoreau
+    - network: Medium
+      url: https://medium.com/@camillemoreau
+      username: camillemoreau
+  education:
+    - institution: Sorbonne Université
+      url: https://www.sorbonne-universite.fr/
+      degree: Master
+      area: Data Science et Intelligence Artificielle
+      score: Mention Bien
+      startDate: Sep 1, 2017
+      endDate: Jun 1, 2019
+      courses:
+        - Apprentissage statistique
+        - Deep Learning
+        - Big Data Analytics
+        - Visualisation de données
+        - Optimisation et recherche opérationnelle
+        - Systèmes de recommandation
+        - Traitement automatique du langage naturel
+        - Éthique des données
+      summary: |
+        - Diplômée avec mention Bien, spécialisation en apprentissage automatique
+        - Mémoire de fin d'études sur l'utilisation du deep learning pour la détection de fraude financière
+        - Projet de fin d'études réalisé en collaboration avec un grand acteur bancaire
+    - institution: Université Claude Bernard Lyon 1
+      url: https://www.univ-lyon1.fr/
+      degree: Bachelor
+      area: Mathématiques et Informatique
+      startDate: Sep 1, 2014
+      endDate: Jun 1, 2017
+      summary: |
+        - Formation fondamentale en mathématiques, algorithmique et programmation
+        - Projets pratiques de statistiques et d'analyse de données
+        - Stage de fin de licence sur l'analyse exploratoire de données de consommation énergétique
+  work:
+    - name: Nova Analytics
+      url: https://www.nova-analytics.fr/
+      position: Data Scientist Senior
+      startDate: Mar 1, 2021
+      endDate:
+      summary: |
+        - Conception et déploiement de modèles de machine learning pour l'optimisation de la chaîne logistique
+        - Développement de pipelines de données automatisés en Python et Spark, réduisant de 30 % le temps de préparation des données
+        - Mise en place de tableaux de bord interactifs avec Power BI pour suivre les indicateurs de performance
+        - Encadrement d'une équipe de trois data scientists juniors, avec revue de code et suivi des bonnes pratiques
+        - Collaboration avec les équipes produit et métier pour traduire les besoins en solutions analytiques
       keywords:
-        - Kafka
-        - Spark
         - Python
-        - API
-      url: https://github.com/camillemoreau/fraud-detection
-    - name: Segmentation client RFM
-      startDate: Sep 1, 2020
-      summary: >
-        - Construction d'une segmentation en huit classes à partir de données
-        transactionnelles
-
-        - Création d'un tableau de bord interactif permettant d'ajuster les
-        campagnes par segment
-
-        - Documentation et mise à disposition de la méthodologie pour les
-        équipes métier
-      description: Outil de segmentation marketing fondé sur la récence, la fréquence
-        et le montant des achats
-      endDate: Dec 1, 2020
-      keywords:
-        - RFM
-        - Clustering
+        - Spark
         - Power BI
-      url: https://github.com/camillemoreau/rfm-segmentation
-  publications:
-    - name: Prédiction de la désertion client en banque de détail, une approche par
-        gradient boosting
-      publisher: Revue française de data science
-      releaseDate: Mai 2022
-      summary: >
-        - Proposition d'une méthodologie comparative de modèles de
-        classification pour anticiper la résiliation de contrats
-
-        - Application sur un jeu de données anonymisé de 200 000 clients
-        bancaires
-
-        - Mise en évidence de l'importance de l'ingénierie de variables
-        temporelles pour la performance du modèle
-      url: https://www.revue-data-science.fr/articles/prediction-desertion-client
+        - Machine Learning
+        - MLOps
+        - AWS
+        - Management
+    - name: PayLogic
+      url: https://www.paylogic.fr/
+      position: Data Scientist
+      startDate: Jul 1, 2019
+      endDate: Feb 1, 2021
+      summary: |
+        - Développement de modèles de scoring pour la détection de fraude aux transactions bancaires
+        - Amélioration de la précision du modèle de détection de 15 % grâce à l'ingénierie de caractéristiques
+        - Mise en œuvre d'algorithmes de traitement du langage naturel pour l'analyse des retours clients
+        - Rédaction de rapports d'analyse et présentation des résultats aux comités de direction
+      keywords:
+        - Python
+        - Scikit-learn
+        - SQL
+        - Détection de fraude
+        - NLP
   skills:
-    - level: Expert
-      name: Machine Learning
+    - name: Machine Learning
+      level: Expert
       keywords:
         - Python
         - Scikit-learn
         - TensorFlow
         - PyTorch
         - XGBoost
-    - level: Advanced
-      name: Statistiques
+        - LightGBM
+    - name: Analyse et Visualisation de Données
+      level: Expert
       keywords:
-        - R
-        - Tests statistiques
-        - Analyse multivariée
-        - Régression
-        - Séries temporelles
-    - level: Intermediate
-      name: Big Data
-      keywords:
-        - Spark
-        - Hadoop
-        - Kafka
-        - Airflow
-        - SQL
-    - level: Advanced
-      name: Data Visualisation
-      keywords:
+        - Pandas
+        - NumPy
         - Matplotlib
         - Seaborn
         - Power BI
         - Tableau
-        - D3.js
-    - level: Intermediate
-      name: MLOps
-      keywords:
-        - Docker
-        - Kubernetes
-        - MLflow
-        - CI/CD
-  volunteer:
-    - organization: Femmes & Numérique
-      position: Mentor en data science
-      startDate: Sep 1, 2021
-      summary: >
-        - Accompagnement de femmes en reconversion professionnelle vers les
-        métiers de la data
-
-        - Animation d'ateliers de prise en main de Python et de machine learning
-
-        - Participation à l'organisation de conférences et de sessions de
-        networking
-      url: https://www.femmes-et-numerique.fr
-  work:
-    - name: Groupe NexData
-      position: Senior Data Scientist
-      startDate: Jan 1, 2022
-      summary: >
-        - Pilotage de projets data de bout en bout, de la formulation du besoin
-        à la mise en production
-
-        - Développement de modèles de scoring et de recommandation améliorant de
-        18 % le taux de rétention client
-
-        - Encadrement d'une équipe de trois data scientists juniors et
-        organisation des comités de revue de modèles
-
-        - Collaboration avec les équipes produit et marketing pour définir les
-        indicateurs de performance
-      keywords:
-        - Machine Learning
-        - Python
-        - MLOps
-        - Leadership
-      url: https://www.nexdata.fr
-    - name: Solutions Analytics
-      position: Data Scientist
-      startDate: Sep 1, 2020
-      summary: >
-        - Conception de tableaux de bord décisionnels et d'indicateurs de suivi
-        pour des clients du secteur bancaire
-
-        - Mise en place d'un moteur de segmentation client basé sur des méthodes
-        de clustering non supervisé
-
-        - Automatisation de chaînes de traitement de données avec Airflow et
-        Python
-
-        - Rédaction de rapports d'analyse clairs et actionnables destinés aux
-        directions métier
-      endDate: Dec 1, 2021
-      keywords:
-        - Python
         - SQL
-        - Power BI
-        - Airflow
-      url: https://www.solutions-analytics.fr
-    - name: Conseil Régional Auvergne-Rhône-Alpes
-      position: Stagiaire Data Analyst
-      startDate: Apr 1, 2020
-      summary: >
-        - Analyse des données de fréquentation des transports en commun
-        régionaux
-
-        - Production de cartes interactives et de rapports statistiques pour la
-        direction de la mobilité
-
-        - Participation à l'optimisation des campagnes de communication via
-        l'analyse des données publiques
-      endDate: Aug 1, 2020
+    - name: Big Data et Cloud
+      level: Advanced
       keywords:
-        - Data Analysis
-        - Cartographie
-        - Dataviz
-      url: https://www.auvergnerhonealpes.fr
+        - Apache Spark
+        - Hadoop
+        - AWS
+        - GCP
+        - Docker
+        - Airflow
+    - name: Statistiques
+      level: Advanced
+      keywords:
+        - R
+        - Régression
+        - Séries temporelles
+        - Statistiques inférentielles
+        - Tests d'hypothèses
+  languages:
+    - language: French
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - Langue maternelle
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - TOEIC 960
+        - Lecture d'articles scientifiques
+        - Présentations internationales
+  awards:
+    - title: Prix de la meilleure innovation data
+      awarder: Data Innovation Summit France
+      date: Nov 2023
+      summary: |
+        Récompense attribuée pour le développement d'un modèle prédictif de maintenance industrielle ayant réduit les coûts d'arrêt de production de 20 %.
+    - title: Prix du meilleur mémoire de Master
+      awarder: Sorbonne Université
+      date: Oct 2019
+      summary: |
+        Distinction décernée pour le mémoire portant sur la détection de fraude financière par réseaux de neurones profonds.
+  certificates:
+    - name: AWS Certified Machine Learning – Specialty
+      issuer: Amazon Web Services
+      date: Sep 2021
+      url: https://aws.amazon.com/certification/
+    - name: Deep Learning Specialization
+      issuer: Coursera
+      date: Apr 2020
+      url: https://www.coursera.org/specializations/deep-learning
+  publications:
+    - name: "Détection de fraude financière par réseaux de neurones profonds"
+      publisher: Revue Française de Data Science
+      releaseDate: Feb 2022
+      url: https://www.rfds.fr/articles/detection-fraude
+      summary: |
+        Publication co-écrite présentant une approche de deep learning pour détecter des transactions frauduleuses en temps réel. L'article détaille les architectures comparées et les résultats sur un jeu de données bancaires anonymisé.
+  projects:
+    - name: Système de recommandation de contenus
+      url: https://github.com/camillemoreau/reco-system
+      description: Moteur de recommandation de contenus culturels basé sur le filtrage
+        collaboratif et le deep learning.
+      startDate: Jan 2023
+      endDate: Jun 2023
+      summary: |
+        - Conception d'un système de recommandation hybride combinant filtrage collaboratif et embeddings
+        - Amélioration de 12 % du taux de clics sur une plateforme de streaming culturel
+        - APIs Dockerisées déployées sur AWS Elastic Beanstalk
+      keywords:
+        - Recommandation
+        - TensorFlow
+        - AWS
+        - API
+    - name: Analyse de sentiments des tweets
+      url: https://github.com/camillemoreau/sentiment-twitter
+      description: Outil d'analyse d'opinions en temps réel à partir de Twitter.
+      startDate: Sep 2022
+      endDate: Dec 2022
+      summary: |
+        - Modèle de NLP basé sur BERT pour classer les tweets en sentiments positifs, négatifs ou neutres
+        - Pipeline de collecte de données avec Twitter API et Kafka
+        - Visualisation des tendances avec Grafana
+      keywords:
+        - NLP
+        - BERT
+        - Kafka
+        - Grafana
+  interests:
+    - name: Randonnée
+      keywords:
+        - Alpes
+        - Mont Blanc
+    - name: Photographie
+      keywords:
+        - Photo de rue
+        - Voyages
+    - name: Lecture
+      keywords:
+        - Science-fiction
+        - Essais
+  volunteer:
+    - organization: Data for Good France
+      url: https://dataforgood.fr/
+      position: Data Scientist bénévole
+      startDate: Jan 1, 2022
+      endDate:
+      summary: |
+        - Accompagnement d'associations à but non lucratif dans l'analyse de leurs données
+        - Développement d'un outil de suivi des bénéficiaires pour une association d'aide alimentaire
+        - Animation d'ateliers de sensibilisation aux enjeux éthiques de la donnée
+
 locale:
   language: fr
-layouts:
-  - engine: latex
-    page:
-      showPageNumbers: true
-      paperSize: a4
-      margins:
-        top: 2.5cm
-        bottom: 2.5cm
-        left: 1.5cm
-        right: 1.5cm
-    template: moderncv-banking
-    typography:
-      fontSize: 11pt
-  - engine: docx
-    page:
-      showPageNumbers: true
-      paperSize: a4
-      margins:
-        top: 2.5cm
-        bottom: 2.5cm
-        left: 1.5cm
-        right: 1.5cm
-    typography:
-      fontSize: 11pt
-      lineSpacing: normal
-  - engine: markdown
-  - engine: html
-    template: calm
-    typography:
-      fontSize: 16px

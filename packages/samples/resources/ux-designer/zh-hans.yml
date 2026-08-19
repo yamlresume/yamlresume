@@ -1,224 +1,225 @@
 content:
   basics:
-    name: 陈雨萱
-    email: chenyuxuan@designmail.com
-    headline: 资深用户体验设计师与交互设计专家
-    phone: +86 138 1234 5678
+    name: 林晓彤
+    headline: 资深用户体验设计师 / 设计思维践行者
+    phone: "+86 138 5712 8899"
+    email: xiaotong.lin@example.com
+    url: https://www.xiaotong.design
     summary: |
-      拥有8年以上互联网产品设计经验，擅长将复杂业务需求转化为简洁优雅的用户体验方案。精通设计思维方法论，主导过多个百万级用户产品的体验升级与从0到1的创新项目。
+      拥有 6 年数字产品设计经验的用户体验设计师，擅长从用户研究到高保真交付的全流程设计。
 
-      具备极强的跨团队协作能力，善于通过用户研究驱动设计决策，并建立可复用的设计系统以提升团队整体效能。持续关注AI、车载系统等新兴领域的交互范式演进，致力于创造兼具商业价值与用户情感共鸣的数字产品。
-    url: https://chenyuxuan.design
-  education:
-    - area: 工业设计
-      institution: 江南大学
-      degree: Bachelor
-      courses:
-        - 人机交互设计
-        - 信息架构与导视系统
-        - 视觉传达设计
-        - 用户研究方法
-        - 设计心理学
-        - 交互原型制作
-        - 数字媒体技术
-        - 产品与服务系统设计
-      endDate: Jul 1, 2016
-      startDate: Sep 1, 2012
-      summary: |
-        系统学习人机交互、信息设计、视觉传达等核心课程，掌握以用户为中心的设计思维与方法。
+      - 主导过 20+ 款移动应用与 Web 产品的体验设计，覆盖金融、教育、智能硬件等领域
+      - 熟悉用户研究、信息架构、交互与视觉设计，善于用数据驱动设计决策
+      - 注重无障碍设计，致力于打造包容、易用的数字产品
+      - 具备跨职能协作经验，能有效组织设计评审与需求对齐
 
-        在校期间多次参与设计工作坊与企业合作项目，完成多个涵盖移动端与实体产品的完整设计案例。担任设计学院学生会视觉部部长，负责学院品牌形象设计与大型活动视觉策划。
-      score: "3.7"
-      url: https://www.jiangnan.edu.cn/
-  awards:
-    - awarder: 红点设计大奖组委会
-      title: 红点设计概念奖
-      date: Nov 2019
-      summary: |
-        凭借为医疗行业设计的创新交互方案，从全球数千件作品中脱颖而出，获得国际评审团的高度认可。
-  certificates:
-    - issuer: Coursera
-      name: 交互设计专业证书
-      date: Jun 2020
-      url: https://coursera.org/verify/ABCD1234EFGH
-  interests:
-    - name: 设计观察
-      keywords:
-        - 建筑设计
-        - 博物馆展览
-        - 街头摄影
-    - name: 生活方式
-      keywords:
-        - 手冲咖啡
-        - 徒步旅行
-        - 科幻电影
-  languages:
-    - fluency: Native or Bilingual Proficiency
-      language: Chinese
-      keywords:
-        - 普通话二级甲等
-        - 商务中文
-    - fluency: Full Professional Proficiency
-      language: English
-      keywords:
-        - CET-6
-        - 专业英文读写
   location:
-    city: 北京
-    address: 建国路88号SOHO现代城A座1202室
+    address: 西湖区文三路 90 号
+    city: 杭州市
+    region: 浙江省
     country: China
-    postalCode: "100022"
-    region: 朝阳区
+    postalCode: "310012"
+
   profiles:
     - network: LinkedIn
-      username: chenyuxuan-ux
-      url: https://linkedin.com/in/chenyuxuan-ux
+      url: https://www.linkedin.com/in/xiaotong-lin
+      username: xiaotong-lin
     - network: Dribbble
-      username: chenyuxuan
-      url: https://dribbble.com/chenyuxuan
-  projects:
-    - name: 智慧医疗问诊平台体验重构
-      startDate: Jan 2022
+      url: https://dribbble.com/xiaotonglin
+      username: xiaotonglin
+
+  education:
+    - institution: 浙江大学
+      url: https://www.zju.edu.cn/
+      degree: Bachelor
+      area: 工业设计
+      score: "3.8/4.0"
+      startDate: Sep 1, 2015
+      endDate: Jun 1, 2019
+      courses:
+        - 设计心理学
+        - 人机交互
+        - 用户研究与设计调研
+        - 可视化设计
+        - 设计管理
+        - 产品设计与开发
       summary: |
-        - 针对现有问诊流程复杂、信息层级混乱等核心痛点，进行全面用户体验诊断与重构
-        - 通过为期两个月的用户调研，覆盖医生、患者、药师三类核心用户群体，输出关键洞察与机会点
-        - 重新设计信息架构与核心问诊流程，简化预约、复诊、购药等关键步骤，平均操作时长缩短28%
-        - 建立医疗行业专属的设计语言与组件库，涵盖200+基础组件与业务模板，支持多业务线快速搭建
-        - 项目上线后，NPS评分提升15分，医生端日活跃使用率增长22%
-      description: 为大型互联网医疗平台进行的全面体验升级与设计系统构建项目
-      endDate: Dec 2022
+        - 在校期间主修工业设计与交互设计方向，多次参与校企合作实践项目
+        - 毕业设计《面向老年人的智能健康管理应用设计》获学院优秀毕业设计
+
+  work:
+    - name: 杭州云创智能科技有限公司
+      url: https://www.yunchuang.example.com
+      position: 高级用户体验设计师
+      startDate: Jul 1, 2021
+      summary: |
+        - 负责公司核心产品「云创健康」App 的体验设计，主导用户研究、信息架构和交互设计
+        - 搭建并维护团队设计系统，提升设计效率与多端一致性，组件复用率提升 40%
+        - 与产品经理、工程师紧密协作，推动可用性测试与 A/B 实验落地，关键转化率提升 18%
+        - 带领 2 名初级设计师，负责设计评审、培训与职业成长辅导
       keywords:
-        - 医疗产品设计
-        - B端体验设计
         - 设计系统
         - 用户研究
-      url: https://chenyuxuan.design/projects/medical-platform
-  publications:
-    - name: 智能时代下的用户体验设计范式转变
-      publisher: 装饰杂志
-      releaseDate: May 2023
+        - 可用性测试
+        - 数据分析
+        - 团队管理
+
+    - name: 上海数字视界信息技术有限公司
+      url: https://www.digitalhorizon.example.com
+      position: 用户体验设计师
+      startDate: Jul 1, 2019
+      endDate: Jun 30, 2021
       summary: |
-        - 探讨人工智能生成内容（AIGC）对传统交互设计流程的冲击与重构可能
-        - 提出面向智能时代的人机协同设计框架，为从业者应对技术变革提供理论参考与实践路径
-      url: https://www.zhuangshizazhi.com/article/ux-paradigm-shift
-  references:
-    - name: 李明轩
+        - 参与在线教育产品「乐学」的 Web 与移动端设计，独立负责课程详情页、学习路径等核心模块
+        - 通过用户访谈和竞品分析，重新设计课程筛选与推荐流程，用户平均学习时长提高 22%
+        - 与开发团队协作输出设计标注与交互说明，确保设计还原度达 95% 以上
+      keywords:
+        - 交互设计
+        - 产品设计
+        - 设计交付
+        - 在线教育
+
+    - name: 上海艾维设计咨询有限公司
+      url: https://www.aiwei.example.com
+      position: 设计实习生
+      startDate: Jun 1, 2018
+      endDate: May 31, 2019
       summary: |
-        陈雨萱是极具洞察力的设计师，她不仅能精准捕捉用户需求，更能将设计策略与商业目标紧密结合，是推动产品体验升级的核心力量。
-      email: limingxuan@yunzhi-tech.com
-      phone: +86 139 8765 4321
-      relationship: 前直属上级 / 云智科技产品总监
+        - 协助资深顾问完成多个品牌官网与移动端项目的视觉设计和原型制作
+        - 参与用户访谈、现场调研和可用性测试，整理并输出用户报告
+      keywords:
+        - 视觉设计
+        - 原型制作
+        - 用户访谈
+
   skills:
-    - level: Expert
-      name: 用户体验设计
+    - name: 用户研究
+      level: Expert
+      keywords:
+        - 深度访谈
+        - 可用性测试
+        - 问卷调查
+        - 用户画像
+        - 竞品分析
+
+    - name: 交互设计
+      level: Expert
+      keywords:
+        - 信息架构
+        - 用户旅程地图
+        - 线框图
+        - 交互原型
+        - 微交互
+
+    - name: 视觉设计
+      level: Advanced
       keywords:
         - Figma
         - Sketch
-        - Axure
-        - 用户旅程图
-        - 信息架构
-    - level: Advanced
-      name: 用户研究
-      keywords:
-        - 可用性测试
-        - 深度访谈
-        - A/B测试
-        - 问卷调查
-        - 数据分析
-    - level: Intermediate
-      name: 前端开发基础
-      keywords:
-        - HTML
-        - CSS
-        - JavaScript
-        - React基础
-  volunteer:
-    - organization: IXDC国际体验设计大会
-      position: 志愿者设计顾问
-      startDate: Sep 2019
-      summary: |
-        - 连续四届担任大会志愿者设计顾问，负责工作坊物料设计、会场导视系统规划及参会者体验优化
-        - 协助组委会对接国内外演讲嘉宾，参与设计论坛的策划与现场执行，服务超过2000名设计从业者
-        - 通过志愿活动积累了广泛的行业人脉，持续跟进全球体验设计前沿趋势与最佳实践
-      endDate: Sep 2023
-      url: https://ixdc.org
-  work:
-    - name: 云智科技有限公司
-      position: 高级用户体验设计师
-      startDate: Mar 1, 2021
-      summary: |
-        - 主导公司核心B端产品线的用户体验策略制定，建立覆盖Web、移动端及小程序的统一设计系统，使设计交付效率提升40%
-        - 带领5人设计团队完成企业级协作平台的全面体验重构，通过深度用户访谈与可用性测试，将核心任务完成率提升35%
-        - 搭建用户研究体系，推动数据驱动的设计文化在组织内的落地，建立定期可用性测试机制与体验度量指标
-        - 与产品、研发、运营等跨职能团队紧密合作，主导设计评审与方案推演，确保设计高质量落地
-        - 负责设计团队的招聘、培养与专业能力建设，制定设计规范与组件库维护流程
-      keywords:
-        - 用户研究
-        - 交互设计
         - 设计系统
-        - 团队管理
-        - 跨团队协作
-      url: https://www.yunzhi-tech.com
-    - name: 蓝途数字创新有限公司
-      position: 用户体验设计师
-      startDate: Jul 1, 2018
-      summary: |
-        - 负责移动端App及Web端的交互与视觉设计，独立完成从需求分析、信息架构到高保真原型的全流程设计
-        - 参与用户调研与竞品分析，输出用户画像、用户旅程图及交互流程图，为产品决策提供设计视角支持
-        - 推动并执行可用性测试20余场，收集并分析用户反馈，迭代优化方案，显著降低用户操作流失率
-        - 协助建立设计规范与组件库，提升团队协作效率，保障多端产品体验的一致性
-      endDate: Feb 1, 2021
+        - 视觉规范
+        - 无障碍设计
+
+    - name: 原型与工具
+      level: Expert
       keywords:
-        - 移动端设计
-        - 可用性测试
-        - 原型设计
-        - 视觉设计
-        - 竞品分析
-      url: https://www.lantu-digital.com
-    - name: 创意方舟设计工作室
-      position: 初级UI设计师
-      startDate: Jul 1, 2016
-      summary: |
-        - 参与多款移动端应用与后台管理系统的界面视觉设计，负责图标绘制、界面排版及视觉规范制定
-        - 配合资深设计师完成交互原型设计与设计走查，确保设计稿与前端实现的高保真还原
-        - 负责日常运营活动页面的视觉设计，根据品牌调性输出Banner、H5及推广物料
-        - 学习并实践用户体验设计方法论，逐步承担独立模块的交互设计工作
-      endDate: Jun 1, 2018
+        - Figma
+        - Framer
+        - ProtoPie
+        - Axure
+        - Maze
+
+  languages:
+    - language: Chinese
+      fluency: Native or Bilingual Proficiency
       keywords:
-        - 界面设计
-        - 品牌视觉
-        - 运营设计
-        - 设计规范
-      url: https://www.creativeark-studio.com
+        - 普通话二级甲等
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - CET-6
+        - 可用英语进行用户访谈与设计评审
+
+  awards:
+    - title: 浙江省优秀工业设计奖
+      date: Dec 2020
+      awarder: 浙江省工业设计协会
+      summary: |
+        作品「智护老年人健康终端」获得年度优秀工业设计奖，该奖项旨在表彰在功能、体验与美学方面表现突出的设计作品。
+    - title: 公司季度创新之星
+      date: Mar 2022
+      awarder: 杭州云创智能科技有限公司
+      summary: |
+        因主导设计系统重构并显著提升产研协作效率，被评选为当季创新之星。
+
+  certificates:
+    - name: 认证用户体验设计师（CUXD）
+      issuer: 国际用户体验专业协会
+      date: May 2021
+      url: https://www.uxpa.org/certification
+    - name: Google UX Design Professional Certificate
+      issuer: Google
+      date: Aug 2020
+      url: https://www.coursera.org/google-certificates/ux-design
+
+  publications:
+    - name: 基于用户旅程地图的移动健康应用体验优化研究
+      publisher: 《设计》
+      releaseDate: Mar 2022
+      url: https://www.designmag.example.com/article/123
+      summary: |
+        本文结合用户旅程地图方法，分析了移动健康应用在用户留存、任务完成效率等方面存在的体验问题，并提出了以场景为导向的设计优化策略。
+
+  projects:
+    - name: 云创健康 App 体验升级
+      url: https://www.yunchuang.example.com/
+      description: 面向中老年用户的健康管理应用，旨在帮助用户便捷记录健康数据、获取个性化建议。
+      startDate: Mar 1, 2022
+      endDate: Dec 31, 2022
+      summary: |
+        - 主导从用户研究到设计交付的全流程体验升级，覆盖健康档案、数据看板、用药提醒等核心模块
+        - 重构信息架构与视觉语言，建立适老化设计规范，提升产品可用性与用户满意度
+        - 与算法团队合作设计个性化健康建议的展示方式，用户日活提升 25%
+      keywords:
+        - 健康管理
+        - 适老化设计
+        - 设计系统
+        - 数据可视化
+
+    - name: 乐学在线学习平台课程路径重构
+      url: https://www.lexue.example.com/
+      description: 为在线教育平台重构课程推荐与学习路径，以提升用户学习连续性与完课率。
+      startDate: Sep 1, 2020
+      endDate: May 1, 2021
+      summary: |
+        - 基于学习行为数据与用户访谈，梳理用户在选课、学习、复习阶段的核心痛点
+        - 设计新的课程卡片、筛选器与学习路径视图，降低用户认知负担
+        - 通过 A/B 测试验证方案效果，课程完课率提升 18%
+      keywords:
+        - 在线教育
+        - 行为数据
+        - A/B 测试
+        - 信息架构
+
+  interests:
+    - name: 公益设计
+      keywords:
+        - 无障碍设计
+        - 乡村教育
+    - name: 艺术与生活
+      keywords:
+        - 水彩
+        - 摄影
+        - 博物馆
+
+  volunteer:
+    - organization: 中国信息无障碍产品联盟
+      url: https://www.capa11y.example.org/
+      position: 设计志愿者
+      startDate: Jan 1, 2021
+      summary: |
+        - 参与联盟组织的无障碍设计工作坊，为视障用户常用 App 提供体验优化建议
+        - 撰写并分享无障碍设计实践指南，推动更多人关注数字包容
+
 locale:
   language: zh-hans
-layouts:
-  - engine: latex
-    page:
-      showPageNumbers: true
-      paperSize: a4
-      margins:
-        top: 2.5cm
-        bottom: 2.5cm
-        left: 1.5cm
-        right: 1.5cm
-    template: moderncv-banking
-    typography:
-      fontSize: 11pt
-  - engine: docx
-    page:
-      showPageNumbers: true
-      paperSize: a4
-      margins:
-        top: 2.5cm
-        bottom: 2.5cm
-        left: 1.5cm
-        right: 1.5cm
-    typography:
-      fontSize: 11pt
-      lineSpacing: normal
-  - engine: markdown
-  - engine: html
-    template: calm
-    typography:
-      fontSize: 16px

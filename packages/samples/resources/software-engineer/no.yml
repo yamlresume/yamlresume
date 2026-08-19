@@ -1,215 +1,197 @@
 content:
   basics:
-    name: Maren Eriksen
-    email: maren.eriksen@outlook.com
-    headline: Backend-utvikler med fokus på skalerbare tjenester
-    phone: +47 912 34 567
-    summary: >
-      Backend-utvikler med fem års erfaring fra web- og skybaserte systemer i
-      offentlig og privat sektor.
+    name: Ingrid Solberg
+    headline: Senior programvareutvikler
+    phone: "+47 900 00 000"
+    email: ingrid.solberg@example.no
+    url: https://www.ingridsolberg.no
+    summary: |
+      Erfaren programvareutvikler med over 8 års erfaring innen utvikling av skalerbare webapplikasjoner og mikrotjenester. Spesialisert på backend-utvikling med Java, Python og Node.js, samt frontend med React. Opptatt av god kodekvalitet, testing og automatisering. Har erfaring med skyplattformer som AWS og Azure, og trives i tverrfaglige team med stort fokus på leveranse og samarbeid.
 
-      Opptatt av å bygge løsninger som er robuste, skalerbare og enkle å drifte,
-      og har stort engasjement for godt håndverk og smidig prosess.
+      - Sterk kompetanse innen systemarkitektur og API-design
+      - Erfaring med kontinuerlig leveranse (CI/CD) og DevOps-praksiser
+      - God kommunikasjonsevne på norsk og engelsk
 
-      Trives med tett samarbeid med produkt, design og drift, og med å lære opp
-      nye kolleger.
-    url: https://maren-eriksen.dev
-  education:
-    - area: Informatikk
-      institution: Norges teknisk-naturvitenskapelige universitet (NTNU)
-      degree: Bachelor
-      courses:
-        - Algoritmer og datastrukturer
-        - Databasesystemer
-        - Programmeringsspråk
-        - Programvarearkitektur
-        - Maskinvare nær programmering
-      endDate: Jun 1, 2018
-      startDate: Aug 1, 2015
-      summary: >
-        - Spesialisering i programvareutvikling med fordypning i distribuerte
-        systemer
-
-        - Bacheloroppgave om smidig IoT-utvikling, som fikk karakter A
-
-        - Erfaring med både faglig og sosialt miljø gjennom verv i
-        linjeforeningen
-      score: "3.7"
-      url: https://www.ntnu.no
-  awards:
-    - awarder: NTNU
-      title: NTNUs innovasjonspris
-      date: Jun 2018
-      summary: >
-        Pris for bacheloroppgaven «Smidig IoT-utvikling med sanntidsdata»,
-        levert sammen med to medstudenter.
-  certificates:
-    - issuer: Amazon Web Services
-      name: AWS Certified Developer – Associate
-      date: Mar 2022
-      url: https://aws.amazon.com/certification/
-  interests:
-    - name: Friluftsliv
-      keywords:
-        - Fjellturer
-        - Sykling
-        - Ski
-    - name: Teknologi
-      keywords:
-        - Smarte hjem
-        - 3D-printing
-  languages:
-    - fluency: Native or Bilingual Proficiency
-      language: Norwegian
-      keywords:
-        - Muntlig og skriftlig
-    - fluency: Full Professional Proficiency
-      language: English
-      keywords:
-        - Daglig arbeidsspråk
   location:
+    address: Karl Johans gate 1
     city: Oslo
-    address: Bogstadveien 42
-    country: Norway
-    postalCode: "0368"
     region: Oslo
+    country: Norway
+    postalCode: "0150"
+
   profiles:
     - network: GitHub
-      username: marenkode
-      url: https://github.com/marenkode
+      url: https://github.com/ingridsolberg
+      username: ingridsolberg
     - network: LinkedIn
-      username: maren-eriksen
-      url: https://www.linkedin.com/in/maren-eriksen
-  projects:
-    - name: Turplanlegger
-      startDate: Mar 2020
+      url: https://www.linkedin.com/in/ingridsolberg
+      username: ingridsolberg
+
+  education:
+    - institution: Universitetet i Oslo
+      url: https://www.uio.no
+      degree: Master
+      area: Informatikk
+      score: "A (5.0)"
+      startDate: Aug 1, 2010
+      endDate: Jun 1, 2015
+      courses:
+        - Algoritmer og datastrukturer
+        - Programvaresystemer
+        - Distribuerte systemer
+        - Maskinlæring
+        - Databasesystemer
+        - Sikkerhet og sårbarheter
       summary: |
-        - Utviklet en fullstack-app med React, TypeScript, GraphQL og PostgreSQL
-        - Integrert med kartdata fra OpenStreetMap og rute-API fra entur.no
-        - Publisert som open source med Apache 2.0-lisens
-      description: Åpen kildekode-app for planlegging av turer til fots og på sykkel.
-      endDate: Sep 2020
+        - Masteroppgave om skalerbare mikrotjenestearkitekturer i skyen
+        - Fordypning i distribuerte systemer og algoritmer
+        - Gjennomført med karakter A
+
+  work:
+    - name: Fjord Analytics AS
+      url: https://www.fjordanalytics.no
+      position: Senior programvareutvikler
+      startDate: Mar 1, 2021
+      summary: |
+        - Utvikler og vedlikeholder databehandlingsplattform basert på Java og Kubernetes
+        - Ledet migrering fra monolittisk arkitektur til mikrotjenester, noe som reduserte deploy-tiden med 60 %
+        - Veileder utviklere i beste praksis innen testing, kodegjennomgang og arkitektur
+        - Sentral i arbeidet med å forbedre observability med OpenTelemetry og Grafana
       keywords:
-        - React
-        - GraphQL
-        - PostgreSQL
-        - Open Source
-      url: https://github.com/marenkode/turplanlegger
-  skills:
-    - level: Expert
-      name: Programmeringsspråk
-      keywords:
-        - TypeScript
-        - Python
+        - Mikrotjenester
+        - Kubernetes
         - Java
-        - Go
-    - level: Expert
-      name: Web- og API-utvikling
+        - Observability
+    - name: Oslo Digital AS
+      url: https://www.oslodigital.no
+      position: Programvareutvikler
+      startDate: Jan 1, 2018
+      endDate: Feb 1, 2021
+      summary: |
+        - Bygget REST-APIer med Node.js, TypeScript og PostgreSQL
+        - Innførte automatiserte tester med Jest og Cypress; økte testdekningen fra 35 % til 80 %
+        - Samarbeidet tett med produktteam for å spesifisere krav og levere nye funksjoner hver sprint
       keywords:
         - Node.js
         - React
-        - GraphQL
+        - Testing
+        - CI/CD
+    - name: Bergen IT Consulting
+      url: https://www.biit.no
+      position: Systemutvikler
+      startDate: Jul 1, 2015
+      endDate: Dec 1, 2017
+      summary: |
+        - Utviklet kundeportaler med React og Python (Django)
+        - Driftet og videreutviklet interne verktøy for saksbehandling
+        - Deltok i kodegjennomganger og bidro til bedre utviklingsprosesser
+      keywords:
+        - Python
+        - Django
+        - React
+        - Drift
+
+  skills:
+    - name: Programmeringsspråk
+      level: Expert
+      keywords:
+        - Java
+        - Python
+        - TypeScript
+        - JavaScript
+        - Node.js
+    - name: Web-utvikling
+      level: Advanced
+      keywords:
+        - React
+        - HTML
+        - CSS
         - REST
-    - level: Advanced
-      name: DevOps
+        - GraphQL
+    - name: DevOps
+      level: Advanced
       keywords:
         - Docker
         - Kubernetes
         - AWS
+        - Azure
         - GitHub Actions
-    - level: Advanced
-      name: Databaser
+    - name: Databaser
+      level: Advanced
       keywords:
         - PostgreSQL
+        - MySQL
         - MongoDB
         - Redis
-  volunteer:
-    - organization: Norsk programmering
-      position: Mentor
-      startDate: Jan 2022
+
+  languages:
+    - language: Norwegian
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - Morsmål
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - IELTS 8.0
+    - language: German
+      fluency: Limited Working Proficiency
+      keywords:
+        - Grunnleggende samtale
+
+  awards:
+    - title: Årets teknologibragd
+      awarder: Fjord Analytics AS
+      date: Dec 1, 2023
       summary: |
-        - Var mentor for ungdommer som lærte seg programmering i fritiden
-        - Laget øvelser og oppgaver i Python og web-utvikling
-      endDate: Dec 2023
-      url: https://www.norskprogrammering.no
-  work:
-    - name: BEKK
-      position: Systemutvikler
-      startDate: Jan 1, 2021
-      summary: >
-        - Utvikler og vedlikeholder skalerbare mikrotjenester med TypeScript,
-        Node.js og PostgreSQL
+        Tildelt for arbeidet med migrering til mikrotjenester som forbedret systemets pålitelighet og reduserte kostnader.
 
-        - Ledet utviklingen av et nytt offentlig API for kundeidentifisering som
-        håndterer over 10K forespørsler per sekund
+  certificates:
+    - name: 'AWS Certified Developer – Associate'
+      url: https://aws.amazon.com/certification/
+      issuer: Amazon Web Services
+      date: Mar 1, 2021
 
-        - Innførte kontinuerlig levering med GitHub Actions og AWS, noe som
-        reduserte produksjonstid fra uker til timer
+  publications:
+    - publisher: Norsk informatikkonferanse
+      url: https://www.nik.no
+      name: Skalerbare mikrotjenester med event-drevet arkitektur
+      releaseDate: Nov 1, 2023
+      summary: |
+        Artikkelen beskriver erfaringer og resultater fra migrering av en databehandlingsplattform til en event-drevet mikrotjenestearkitektur.
 
-        - Veileder juniorutviklere gjennom code review og interne fagmøter
-
-        - Deltar i krav- og designprosesser sammen med produkteiere og
-        arkitekter
+  projects:
+    - name: 'Portefølje: Ingrid Solberg'
+      url: https://www.ingridsolberg.no
+      description: Personlig nettside med utvalgte prosjekter og tekniske skriverier.
+      startDate: Jan 1, 2020
+      summary: |
+        - Bygget med Astro og Tailwind CSS
+        - Inneholder blogginnlegg om systemarkitektur og beste praksis
       keywords:
-        - Node.js
-        - TypeScript
-        - PostgreSQL
-        - AWS
-        - CI/CD
-        - Microservices
-      url: https://www.bekk.no
-    - name: Knowit Solutions
-      position: Utvikler
-      startDate: Aug 1, 2018
-      summary: >
-        - Utviklet frontend og backend for selvbetjeningsløsninger i offentlig
-        sektor
+        - Astro
+        - Tailwind CSS
+        - Blogg
 
-        - Bygget REST-APIer i Java Spring Boot og React-baserte
-        admin-grensesnitt
-
-        - Arbeidet i tverrfaglige team med designere og prosjektledere for å
-        levere brukervennlige tjenester
-
-        - Bisto i å sette opp automatiserte tester og forbedret testdekningen
-        til over 80 %
-      endDate: Dec 31, 2020
+  interests:
+    - name: Friluftsliv
       keywords:
-        - Java
-        - Spring Boot
-        - React
-        - REST
-        - Testing
-      url: https://www.knowit.no
+        - Ski
+        - Fottur
+        - Kajakk
+    - name: Brettspill
+      keywords:
+        - Sjakk
+        - Catan
+        - Strategispill
+
+  volunteer:
+    - organization: Oslo Coding Meetup
+      url: https://www.meetup.com/Oslo-Coding/
+      position: Arrangør og foredragsholder
+      startDate: Jan 1, 2022
+      summary: |
+        - Arrangerer månedlige møter for utviklere i Oslo
+        - Holder foredrag om mikrotjenester, testing og skyplattformer
+
 locale:
   language: no
-layouts:
-  - engine: latex
-    page:
-      showPageNumbers: true
-      paperSize: a4
-      margins:
-        top: 2.5cm
-        bottom: 2.5cm
-        left: 1.5cm
-        right: 1.5cm
-    template: moderncv-banking
-    typography:
-      fontSize: 11pt
-  - engine: docx
-    page:
-      showPageNumbers: true
-      paperSize: a4
-      margins:
-        top: 2.5cm
-        bottom: 2.5cm
-        left: 1.5cm
-        right: 1.5cm
-    typography:
-      fontSize: 11pt
-      lineSpacing: normal
-  - engine: markdown
-  - engine: html
-    template: calm
-    typography:
-      fontSize: 16px

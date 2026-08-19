@@ -1,343 +1,205 @@
 content:
   basics:
     name: Julia Brandt
+    headline: Senior Produktmanagerin für digitale B2B-Plattformen
+    phone: "+49 151 23456789"
     email: julia.brandt@example.de
-    headline: Produktmanagerin mit Fokus auf SaaS und digitale Plattformen
-    phone: +49 151 23456789
-    summary: >
-      Produktmanagerin mit über 6 Jahren Erfahrung in der Entwicklung digitaler
-      B2B- und B2C-Produkte.
-
-      Ich verbinde strategisches Denken mit agiler Umsetzung und nutze Daten, um
-      Produkte zu schaffen,
-
-      die Kund:innen begeistern und Geschäftsziele erreichen.
-
-
-      - Schwerpunkte: FinTech, SaaS-Plattformen und datengetriebene
-      Produktentwicklung
-
-      - Erfahrung in der Führung cross-funktionaler Teams aus Design,
-      Engineering und Marketing
-
-      - Strukturierte Arbeitsweise mit OKRs, User Research und kontinuierlicher
-      Produktiteration
-
-      - Leidenschaft für nutzerzentriertes Design und evidenzbasierte
-      Entscheidungen
     url: https://juliabrandt.de
-  education:
-    - area: Wirtschaftsinformatik
-      institution: Technische Universität München
-      degree: Master
-      courses:
-        - Software Engineering
-        - Datenbanken
-        - IT-Projektmanagement
-        - Business Analytics
-        - Mensch-Computer-Interaktion
-        - Digitale Geschäftsmodelle
-      endDate: Sep 1, 2018
-      startDate: Oct 1, 2016
-      summary: >
-        - Fokus auf agile Softwareentwicklung, Datenanalyse und digitale
-        Geschäftsstrategien
-
-        - Masterarbeit zum Thema „KI-gestützte Personalisierung im E-Commerce“
-
-        - Abschluss mit Auszeichnung (Note 1,7)
-      score: 1,7
-      url: https://www.tum.de
-    - area: Betriebswirtschaftslehre
-      institution: Universität zu Köln
-      degree: Bachelor
-      courses:
-        - Marketing
-        - Organisation und Unternehmensführung
-        - Wirtschaftsinformatik
-        - Statistik
-        - Finanzwirtschaft
-      endDate: Sep 1, 2016
-      startDate: Oct 1, 2013
-      summary: |
-        - Schwerpunkt Marketing und Technologiemanagement
-        - Praxissemester bei einem Start-up im Bereich E-Commerce
-        - Erste Erfahrungen in Produktentwicklung und Marktanalyse
-      score: 1,9
-      url: https://www.uni-koeln.de
-  awards:
-    - awarder: FinTech Solutions GmbH
-      title: Produktmanagerin des Jahres 2023
-      date: Dec 2023
-      summary: >
-        Auszeichnung für herausragende Leistungen bei der Neuausrichtung der
-        Zahlungsplattform und die erfolgreiche Einführung datengetriebener
-        Produktentscheidungen.
-    - awarder: Technische Universität München
-      title: Deutschlandstipendium
-      date: Nov 2016
-      summary: >
-        Leistungsstipendium für herausragende akademische Leistungen und
-        gesellschaftliches Engagement.
-  certificates:
-    - issuer: Scrum Alliance
-      name: Certified Scrum Product Owner (CSPO)
-      date: Mar 2021
-      url: https://www.scrumalliance.org
-  interests:
-    - name: Reisen
-      keywords:
-        - Rucksackreisen
-        - Fotografie
-        - Kulturelle Entdeckungen
-    - name: Yoga
-      keywords:
-        - Achtsamkeit
-        - Vinyasa
-        - Meditation
-    - name: Fachliteratur
-      keywords:
-        - Produktmanagement
-        - KI & Ethik
-        - Agilität
-  languages:
-    - fluency: Native or Bilingual Proficiency
-      language: German
-      keywords:
-        - Muttersprache
-    - fluency: Full Professional Proficiency
-      language: English
-      keywords:
-        - TOEFL 108
-        - Verhandlungssicher
-    - fluency: Limited Working Proficiency
-      language: French
-      keywords:
-        - Grundkenntnisse
+    summary: |
+      - Produktmanagerin mit über 8 Jahren Erfahrung in der Entwicklung und Skalierung digitaler B2B-Produkte
+      - Ausgewiesene Expertise in Produktstrategie, agiler Entwicklung und datengetriebener Entscheidungsfindung
+      - Erfolgreiche Führung cross-funktionaler Teams und enge Zusammenarbeit mit Vertrieb, Engineering und Design
+      - Leidenschaft für nutzerzentriertes Design und die Umsetzung messbarer Geschäftsziele
   location:
+    address: Torstraße 101
     city: Berlin
-    address: Musterstraße 1
-    country: Germany
-    postalCode: "10115"
     region: Berlin
+    country: Germany
+    postalCode: "10119"
   profiles:
     - network: LinkedIn
-      username: julia-brandt
-      url: https://www.linkedin.com/in/julia-brandt
-    - network: GitHub
+      url: https://www.linkedin.com/in/juliabrandt
       username: juliabrandt
-      url: https://github.com/juliabrandt
-  projects:
-    - name: KI-Onboarding-Assistent
-      startDate: Jan 2023
-      summary: >
-        - Identifikation von Nutzerproblemen durch qualitative Interviews und
-        Analyse von Funnel-Daten
-
-        - Definition von Erfolgsmetriken und kontinuierliche Optimierung per
-        A/B-Testing
-
-        - Reduktion der Abbruchrate im Onboarding um 31 % innerhalb des
-        Testzeitraums
-      description: >
-        Konzeption und Markteinführung eines KI-gestützten
-        Onboarding-Assistenten für ein B2B-Zahlungsprodukt.
-      endDate: Aug 2023
+    - network: Medium
+      url: https://medium.com/@juliabrandt
+      username: "@juliabrandt"
+  education:
+    - institution: Technische Universität München
+      url: https://www.tum.de/
+      degree: Master
+      area: Management and Technology
+      score: "1,7"
+      startDate: Oct 1, 2013
+      endDate: Mar 31, 2016
+      courses:
+        - Strategisches Management
+        - Innovations- und Technologiemanagement
+        - Empirische Forschungsmethoden
+        - Produktentwicklung
+      summary: |
+        - Vertiefung in Produkt- und Innovationsmanagement sowie quantitative Methoden
+        - Masterarbeit über Erfolgsfaktoren digitaler B2B-Plattformen
+    - institution: Hochschule für Wirtschaft und Recht Berlin
+      url: https://www.hwr-berlin.de/
+      degree: Bachelor
+      area: Wirtschaftsinformatik
+      score: "2,1"
+      startDate: Oct 1, 2010
+      endDate: Sep 30, 2013
+      courses:
+        - Softwaretechnik
+        - Datenbanken
+        - Business Process Management
+        - Marketing
+      summary: |
+        - Fundierte Kenntnisse in Softwareentwicklung, Datenmodellierung und Geschäftsprozessen
+        - Bachelorarbeit zur Einführung agiler Methoden in mittelständischen Unternehmen
+  work:
+    - name: FinTech Solutions GmbH
+      url: https://www.fintech-solutions.de
+      position: Senior Produktmanagerin
+      startDate: Jan 1, 2022
+      summary: |
+        - Verantwortlich für Produktstrategie und Roadmap der B2B-Zahlungsplattform mit über 50.000 Nutzern
+        - Führung eines cross-funktionalen Teams aus acht Entwicklern, Designern und Data Scientists
+        - Steigerung der Aktivierungsrate um 25 % durch Einführung eines personalisierten Onboardings
+        - Durchführung von über 100 Nutzerinterviews und kontinuierlichen A/B-Tests zur Verbesserung der User Experience
+        - Enge Abstimmung mit Vertrieb und Customer Success zur Identifikation von Kundenbedürfnissen
       keywords:
-        - KI
-        - Onboarding
-        - A/B-Testing
-        - B2B
-      url: https://www.ki-onboarding.example
-    - name: Content-Management-Plattform Relaunch
-      startDate: Feb 2021
-      summary: >
-        - Koordination eines agilen Teams über mehrere Releases hinweg
-
-        - Einführung eines Design-Systems und nutzerzentrierter
-        Entwicklungsprozesse
-
-        - Steigerung der monatlich aktiven Nutzer:innen um 42 % nach dem Release
-      description: >
-        Kompletter Relaunch einer SaaS-Content-Management-Plattform mit neuem
-        Design, moderner Architektur und erweiterten Funktionen.
-      endDate: Jan 2022
-      keywords:
-        - Relaunch
-        - Design System
-        - SaaS
         - Produktstrategie
-      url: https://www.cms-relaunch.example
-  publications:
-    - name: Agile Produktentwicklung im Finanzsektor – Best Practices aus der Praxis
-      publisher: Produktmanagement Magazin
-      releaseDate: Jun 2023
-      summary: >
-        - Praxisbericht über die Einführung agiler Produktentwicklungsprozesse
-        in einem regulierten Umfeld
-
-        - Diskussion von Herausforderungen und Lösungen bei der Zusammenarbeit
-        zwischen Produkt, Compliance und Engineering
-      url: https://www.produktmanagement-magazin.example
-  skills:
-    - level: Expert
-      name: Produktmanagement
-      keywords:
         - Roadmapping
-        - OKRs
+        - Agile Methoden
+        - Datenanalyse
+        - B2B Plattform
+    - name: E-Commerce AG
+      url: https://www.ecommerce.ag
+      position: Produktmanagerin
+      startDate: Mar 1, 2019
+      endDate: Dec 31, 2021
+      summary: |
+        - Entwicklung und Skalierung der Mobile-Shopping-App von 10.000 auf 250.000 monatliche Nutzer
+        - Definition von Produktanforderungen und User Stories in Zusammenarbeit mit internen Stakeholdern
+        - Aufbau eines Feedback-Systems zur systematischen Auswertung von Nutzerbewertungen
+        - Einführung von SQL-basierten Dashboards zur Überwachung von KPIs und Conversion-Raten
+      keywords:
+        - Mobile App
         - User Stories
-        - Marktanalyse
-        - Wettbewerbsanalyse
+        - KPI-Analyse
         - Stakeholder-Management
-    - level: Advanced
-      name: Methoden & Frameworks
+    - name: DigitalAgentur GmbH
+      url: https://www.digitalagentur.de
+      position: Junior Produktmanagerin
+      startDate: Jun 1, 2016
+      endDate: Feb 28, 2019
+      summary: |
+        - Unterstützung der Produktverantwortlichen bei der Konzeption und Umsetzung von Webprojekten
+        - Erstellung von Wireframes und Prototypen für kundenspezifische Lösungen
+        - Koordination von agilen Sprints und regelmäßiges Reporting an die Geschäftsleitung
+      keywords:
+        - Prototyping
+        - Projektkoordination
+        - Scrum
+  skills:
+    - name: Produktmanagement
+      level: Expert
+      keywords:
+        - Produktstrategie
+        - Roadmapping
+        - User Stories
+        - Priorisierung
+        - Stakeholder-Management
+    - name: Agile Methoden
+      level: Expert
       keywords:
         - Scrum
         - Kanban
-        - Design Thinking
-        - Lean Startup
-        - Jobs-to-be-Done
-    - level: Advanced
-      name: Daten & Analyse
+        - OKRs
+        - Design Sprint
+    - name: Datenanalyse
+      level: Advanced
       keywords:
         - SQL
         - Google Analytics
-        - Tableau
-        - A/B-Testing
-        - Produktkennzahlen
-    - level: Advanced
-      name: Tools
-      keywords:
-        - Jira
-        - Confluence
-        - Figma
-        - Miro
         - Amplitude
-    - level: Advanced
-      name: Teamführung
-      keywords:
-        - Coaching
-        - Konfliktlösung
-        - Moderation
-        - Cross-funktionale Arbeit
-  volunteer:
-    - organization: Code4Future e.V.
-      position: Mentorin für Technik und Produktdenken
-      startDate: Jan 2020
-      summary: >
-        - Unterstützung von Schülerinnen bei ersten Programmierprojekten
-
-        - Vermittlung von Grundlagen des Produktdenkens und kreativen
-        Problemlösens
-
-        - Organisation von Workshops zu Digitalisierung und verantwortungsvoller
-        KI-Nutzung
-      endDate: Dec 2023
-      url: https://www.code4future.example
-  work:
-    - name: FinTech Solutions GmbH
-      position: Senior Product Manager
-      startDate: Apr 1, 2022
-      summary: >
-        - Verantwortlich für die Produktstrategie und Roadmap einer
-        B2B-Zahlungsplattform mit über 500.000 Nutzer:innen
-
-        - Führung eines cross-funktionalen Teams aus 12 Engineering-, Design-
-        und Data-Science-Mitarbeitenden
-
-        - Einführung von OKRs und datengetriebenen Entscheidungsprozessen;
-        Steigerung der Conversion-Rate um 23 %
-
-        - Enge Zusammenarbeit mit Key Accounts, Compliance und Vertrieb zur
-        Priorisierung von Produktfeatures
-
-        - Aufbau eines regelmäßigen User-Research-Programms zur Validierung
-        neuer Produktideen
-      keywords:
-        - Produktstrategie
-        - OKRs
-        - B2B
-        - FinTech
-        - Agilität
-      url: https://www.fintech-solutions.example
-    - name: TechMedia Solutions AG
-      position: Produktmanagerin
-      startDate: Oct 1, 2019
-      summary: >
-        - Entwicklung und Markteinführung einer SaaS-Plattform für
-        Content-Management mit 2.000+ Kund:innen
-
-        - Verantwortung für den gesamten Produktlebenszyklus: von Discovery bis
-        Launch und Iteration
-
-        - Durchführung von Kundeninterviews, Usability-Tests und A/B-Tests zur
-        Optimierung der User Journey
-
-        - Priorisierung des Backlogs gemeinsam mit Engineering und Design im
-        Scrum-Prozess
-
-        - Steigerung der Nutzerzufriedenheit (CSAT) von 76 % auf 89 % innerhalb
-        von zwölf Monaten
-      endDate: Mar 1, 2022
-      keywords:
-        - SaaS
-        - Scrum
-        - User Research
         - A/B-Tests
-        - Product Discovery
-      url: https://www.techmedia-solutions.example
-    - name: StartupHub GmbH
-      position: Junior Produktmanagerin
-      startDate: Sep 1, 2018
-      summary: >
-        - Mitarbeit an einem KI-basierten Chatbot-Produkt für den Kundenservice
-        im E-Commerce
-
-        - Unterstützung bei der Anforderungsanalyse, Erstellung von User Stories
-        und Tests von Prototypen
-
-        - Aufbereitung und Analyse von Produktdaten zur Ableitung konkreter
-        Verbesserungsmaßnahmen
-
-        - Enge Zusammenarbeit mit externen Entwicklungspartnern und ersten
-        Pilotkund:innen
-      endDate: Sep 1, 2019
+    - name: UX/UI Design
+      level: Intermediate
       keywords:
-        - User Stories
+        - Figma
+        - Wireframes
         - Prototyping
-        - KI
+        - Usability Tests
+  languages:
+    - language: German
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - Muttersprache
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - Verhandlungssicher
+        - TOEFL 110
+    - language: French
+      fluency: Limited Working Proficiency
+      keywords:
+        - Grundkenntnisse
+  awards:
+    - title: Award für beste Produktinnovation
+      awarder: FinTech Solutions GmbH
+      date: Jan 2024
+      summary: |
+        Auszeichnung für die erfolgreiche Einführung einer KI-basierten Betrugserkennung in der Zahlungsplattform.
+  certificates:
+    - name: Certified Scrum Product Owner (CSPO)
+      issuer: Scrum Alliance
+      url: https://www.scrumalliance.org/
+      date: Jun 2019
+    - name: Professional Product Discovery
+      issuer: Product School
+      url: https://productschool.com/
+      date: Nov 2020
+  publications:
+    - name: So gelingt die digitale Transformation im B2B-Vertrieb
+      publisher: Medium
+      url: https://medium.com/@juliabrandt
+      releaseDate: Apr 2023
+      summary: |
+        - Praxisbericht über agile Produktentwicklungsmethoden und Kundenorientierung
+        - Teilen von Learnings aus der Einführung einer B2B-Plattform
+  projects:
+    - name: KI-gestützte Preisoptimierung
+      url: https://github.com/juliabrandt/preisoptimierung
+      description: Prototyp eines KI-Modells zur dynamischen Preisgestaltung für
+        E-Commerce-Produkte.
+      startDate: Jan 2023
+      endDate: Mai 2023
+      summary: |
+        - Entwicklung eines Machine-Learning-Modells mit Python zur Analyse von Preiselastizitäten
+        - Integration in ein Dashboard zur Entscheidungsunterstützung
+      keywords:
+        - Machine Learning
+        - Python
+        - Pricing
         - E-Commerce
-        - Datenanalyse
-      url: https://www.startuphub.example
+  interests:
+    - name: Digitale Bildung
+      keywords:
+        - E-Learning
+        - Mentoring
+        - EdTech
+    - name: Sport
+      keywords:
+        - Laufen
+        - Yoga
+        - Bouldern
+  volunteer:
+    - organization: Frauen in der Digitalwirtschaft e.V.
+      url: https://www.fid-ev.de/
+      position: Mentorin
+      startDate: Jan 2021
+      endDate: Dez 2023
+      summary: |
+        - Begleitung von Studentinnen und Berufseinsteigerinnen in die Produktmanagement-Rolle
+        - Durchführung von monatlichen Workshops zu Karriereplanung und Verhandlungsstrategien
 locale:
   language: de
-layouts:
-  - engine: latex
-    page:
-      showPageNumbers: true
-      paperSize: a4
-      margins:
-        top: 2.5cm
-        bottom: 2.5cm
-        left: 1.5cm
-        right: 1.5cm
-    template: moderncv-banking
-    typography:
-      fontSize: 11pt
-  - engine: docx
-    page:
-      showPageNumbers: true
-      paperSize: a4
-      margins:
-        top: 2.5cm
-        bottom: 2.5cm
-        left: 1.5cm
-        right: 1.5cm
-    typography:
-      fontSize: 11pt
-      lineSpacing: normal
-  - engine: markdown
-  - engine: html
-    template: calm
-    typography:
-      fontSize: 16px

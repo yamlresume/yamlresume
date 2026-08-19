@@ -1,236 +1,236 @@
 content:
   basics:
-    name: 陳思妤
-    email: siyu.chen@example.com
-    headline: 資深使用者體驗設計師
-    phone: +886 912 345 678
+    name: 林怡君
+    headline: 資深使用者經驗設計師 ｜ 打造以人為本的數位體驗
+    phone: "+886 912 345 678"
+    email: yichun.lin@example.com
+    url: https://www.behance.net/yichunlin
     summary: |
-      擁有超過八年使用者體驗設計經驗，專精於數位金融與電子商務領域。擅長透過質性與量化研究洞察使用者需求，並將其轉化為直覺且具商業價值的產品設計。具備從零到一建置設計系統的實戰經驗，以及帶領跨職能設計團隊的能力。熱衷於推動以使用者為中心的設計文化，相信優秀的設計應該同時兼顧美學、功能與情感連結。
-    url: https://siyuchen.design
+      擁有 8 年以上產品設計與使用者研究經驗，專精於 Web 與 App 的 UX 策略、互動設計與設計系統。
+
+      - 主導超過 20 個跨國與本土專案，涵蓋金融科技、電商、SaaS 與醫療照護領域
+      - 擅長以質化與量化研究發掘使用者需求，並將研究洞見轉化為具體設計決策
+      - 熟悉 Design Sprint、雙鑽石流程與敏捷開發，能有效與產品、工程團隊協作
+      - 透過設計系統與反覆原型測試，協助團隊提升開發效率與產品易用性
+  location:
+    address: 信義路二段 100 號 8 樓
+    city: 台北市
+    region: 大安區
+    country: Taiwan
+    postalCode: "106"
+  profiles:
+    - network: Behance
+      url: https://www.behance.net/yichunlin
+      username: yichunlin
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/yichunlin
+      username: yichunlin
+    - network: Medium
+      url: https://medium.com/@yichunlin
+      username: yichunlin
   education:
-    - area: 創新設計研究所
-      institution: 國立臺灣科技大學
+    - institution: 國立臺灣科技大學
+      url: https://www.ntust.edu.tw
       degree: Master
+      area: 設計系 互動設計組
+      score: "3.9"
+      startDate: Sep 1, 2012
+      endDate: Jul 1, 2014
       courses:
-        - 使用者研究與需求分析
-        - 互動設計與原型開發
-        - 認知心理學與人因工程
-        - 設計思考與創新策略
-        - 服務設計工作坊
-      endDate: Jun 1, 2016
-      startDate: Sep 1, 2014
+        - 人機互動
+        - 認知心理學
+        - 使用者經驗研究
+        - 互動多媒體設計
+        - 服務設計
       summary: |
-        專注於使用者體驗與互動設計領域，透過系統性研究方法探索使用者行為與需求。畢業專題以行動金融應用為題，結合設計思考與易用性測試，提出創新的介面解決方案並獲得系上最佳設計獎。
-      score: 4.0/4.0
-      url: https://www.ntust.edu.tw/
-    - area: 工業產品設計學系
-      institution: 實踐大學
+        - 碩士論文以「高齡者行動支付應用程式之介面設計研究」獲選為系所優秀論文
+        - 協助教授執行科技部研究計畫，負責使用者訪談、數據整理與原型測試
+    - institution: 國立臺北科技大學
+      url: https://www.ntut.edu.tw
       degree: Bachelor
+      area: 工業設計系
+      score: "3.7"
+      startDate: Sep 1, 2008
+      endDate: Jul 1, 2012
       courses:
-        - 產品設計原理
-        - 設計素描與表現技法
-        - 色彩學與材質應用
-        - 設計史與設計理論
-        - 電腦輔助設計
-      endDate: Jun 1, 2014
-      startDate: Sep 1, 2010
-      summary: >
-        奠定扎實的設計基礎與造型能力，培養對人、物、環境的敏銳觀察力。在校期間積極參與跨領域合作專案，初次接觸使用者中心設計方法，確立朝向 UX
-        設計發展的職涯方向。
-      score: 3.9/4.0
-      url: https://www.usc.edu.tw/
-  awards:
-    - awarder: 金點設計獎評審委員會
-      title: 金點設計獎 Best Design
-      date: Dec 2019
+        - 產品設計
+        - 人因工程
+        - 色彩學
+        - 設計素描
+        - 材料與製造程序
       summary: |
-        以創新的行動支付使用體驗設計獲得年度 Best Design 獎項，肯定以使用者為核心的設計價值與商業影響力。
-  certificates:
-    - issuer: Nielsen Norman Group
-      name: Nielsen Norman Group UX Master Certification
-      date: Aug 2020
-      url: https://www.nngroup.com/ux-master-certification/
-    - issuer: Google
-      name: Google UX Design Professional Certificate
-      date: Apr 2019
-      url: https://www.coursera.org/professional-certificates/google-ux-design
-  interests:
-    - name: 攝影
+        - 畢業專題「城市公共座椅設計」入圍全國設計專題競賽前 10 名
+        - 在校期間參與跨系所合作案，學習將工程技術與設計思維整合
+  work:
+    - name: 澄心設計顧問股份有限公司
+      url: https://www.chengxin-design.example.com
+      startDate: Jan 1, 2021
+      position: 資深 UX Designer
+      summary: |
+        - 主導金融科技與醫療照護產品的 UX 策略，包含使用者研究、資訊架構、互動流程與設計系統建置
+        - 與產品經理、前後端工程師協作，透過設計衝刺與快速原型測試，將新功能上線時間縮短 30%
+        - 建立以使用者為中心的設計流程，導入易用性測試與數據分析，提升產品滿意度與留存率
+        - 擔任設計導師，協助資淺設計師提升研究與視覺傳達能力
       keywords:
-        - 街頭攝影
-        - 人像攝影
-        - 底片相機
-    - name: 閱讀與寫作
+        - 使用者研究
+        - 設計策略
+        - 設計系統
+        - 跨職能協作
+        - 敏捷開發
+    - name: FutureLab 科技股份有限公司
+      url: https://www.futurelab.example.com
+      startDate: Jul 1, 2018
+      endDate: Dec 1, 2020
+      position: UX Designer
+      summary: |
+        - 負責 B2B SaaS 產品線的介面設計與使用流程優化，涵蓋資料儀表板、權限管理與報表系統
+        - 執行超過 15 場使用者訪談與遠端易用性測試，持續將研究發現轉化為設計迭代
+        - 與工程團隊共同建立元件庫與設計規範，降低跨團隊溝通成本並提升開發效率
+        - 參與產品需求定義與優先級排序，提出以數據驅動的設計方案，協助達成年度留存目標
       keywords:
-        - 設計心理學
-        - 行為經濟學
-        - 部落格經營
+        - B2B SaaS
+        - 易用性測試
+        - 設計系統
+        - 數據分析
+        - 使用者訪談
+    - name: 好點子數位設計有限公司
+      url: https://www.goodidea.example.com
+      startDate: Aug 1, 2016
+      endDate: Jun 1, 2018
+      position: UI/UX Designer
+      summary: |
+        - 負責電商品牌與行銷活動網頁的視覺設計、RWD 切版與 Prototype 製作
+        - 與設計總監合作建立設計規範，統一元件樣式與互動行為，提升品牌一致性
+        - 運用 Google Analytics 與 Hotjar 分析使用者行為，提出頁面優化建議並提升轉換率 15%
+      keywords:
+        - 響應式設計
+        - 視覺設計
+        - Prototype
+        - 電商
+        - 數據分析
   languages:
-    - fluency: Native or Bilingual Proficiency
-      language: Chinese
+    - language: Chinese
+      fluency: Native or Bilingual Proficiency
       keywords:
         - 母語
-    - fluency: Full Professional Proficiency
-      language: English
+        - 繁體中文
+    - language: English
+      fluency: Full Professional Proficiency
       keywords:
-        - TOEIC 950
-        - 商務英語
-  location:
-    city: 台北市
-    address: 信義路五段7號
-    country: Taiwan
-    postalCode: "110"
-    region: 信義區
-  profiles:
-    - network: LinkedIn
-      username: siyuchen
-      url: https://linkedin.com/in/siyuchen
-    - network: Dribbble
-      username: siyuchen
-      url: https://dribbble.com/siyuchen
-    - network: Medium
-      username: siyuchen
-      url: https://medium.com/@siyuchen
-  projects:
-    - name: 智能理財應用程式改版設計
-      startDate: Jan 2022
-      summary: |
-        - 透過深度訪談與問卷調查洞察投資新手痛點，重新定義產品定位
-        - 重新設計資訊架構與導航系統，降低任務完成時間 35%
-        - 建立可擴充的設計系統，統一跨平台設計語言與元件標準
-        - 與產品及工程團隊協作導入迭代式開發流程，確保設計品質與開發效率
-      description: 為台灣本土銀行重新設計行動理財應用程式，提升整體使用體驗與交易轉換率
-      endDate: Dec 2022
-      keywords:
-        - 金融科技
-        - 行動應用
-        - 設計系統
-        - 使用者研究
-      url: https://siyuchen.design/projects/wealth-app
-  publications:
-    - name: 數位金融產品中的信任建構：以使用者為中心的設計策略
-      publisher: 設計學報
-      releaseDate: May 2022
-      summary: |
-        探討如何在金融科技產品中透過介面設計、資訊架構與互動回饋機制建立使用者信任，並提出實證研究架構與設計準則，供業界與學界參考。
-      url: https://doi.org/10.1234/design.journal.2022
+        - TOEIC 900
+        - 產品簡報
+        - 跨國協作
   skills:
-    - level: Expert
-      name: 使用者研究與測試
+    - name: 使用者研究
+      level: Expert
       keywords:
         - 深度訪談
-        - 問卷調查
+        - 脈絡探查
         - 易用性測試
-        - 人物誌
-        - 使用者旅程地圖
-    - level: Expert
-      name: 介面與視覺設計
+        - 問卷調查
+        - Persona
+        - 顧客旅程地圖
+    - name: 互動設計
+      level: Expert
+      keywords:
+        - 線框圖
+        - 互動原型
+        - 資訊架構
+        - 使用者流程
+        - 微互動
+    - name: 視覺設計
+      level: Advanced
       keywords:
         - Figma
-        - Sketch
         - Adobe XD
+        - Sketch
         - 設計系統
-        - 視覺規範
-    - level: Advanced
-      name: 原型與互動設計
+        - 排版與色彩
+    - name: 原型開發
+      level: Intermediate
       keywords:
-        - ProtoPie
-        - Principle
+        - HTML/CSS
+        - JavaScript
         - Framer
-        - 動態設計
-        - 微互動
-    - level: Advanced
-      name: 設計領導與策略
+        - Principle
+        - ProtoPie
+  awards:
+    - title: 金點設計獎
+      date: Nov 1, 2022
+      awarder: 台灣設計研究院
+      summary: |
+        以「記憶守護者」失智症照護 App 榮獲年度最佳設計獎，肯定其在介面設計、服務流程與社會關懷上的創新。
+    - title: 設計系所優秀論文獎
+      date: Jul 1, 2014
+      awarder: 國立臺灣科技大學
+      summary: |
+        碩士論文「高齡者行動支付應用程式之介面設計研究」獲選為當年度優秀論文。
+  certificates:
+    - name: Google UX Design Professional Certificate
+      issuer: Google
+      date: Jan 1, 2023
+      url: https://www.coursera.org/
+    - name: NN/g UX Certification
+      issuer: Nielsen Norman Group
+      date: Mar 1, 2022
+      url: https://www.nngroup.com/
+  publications:
+    - name: 以服務設計觀點探討智慧健康照護平台之使用者經驗
+      publisher: 設計學報
+      releaseDate: Jul 1, 2023
+      url: https://www.jodesign.org.tw
+      summary: |
+        探討智慧健康照護平台在使用者經驗上的挑戰，提出以服務藍圖與使用者旅程地圖整合的設計評估架構，並以實際案例驗證其可行性。
+  projects:
+    - name: 記憶守護者（Memory Keeper）
+      url: https://www.memorykeeper.example.com
+      description: 為失智症患者與家屬設計的照護協作 App，整合用藥提醒、日常紀錄與緊急聯絡功能。
+      startDate: Mar 1, 2021
+      endDate: Dec 31, 2022
+      summary: |
+        - 主導田野調查與訪談，深入理解照顧者與患者的痛點，建立人物誌與使用情境
+        - 設計完整的服務流程與互動原型，並進行 3 輪易用性測試，任務完成率提升 42%
+        - 與工程團隊密切協作，確保設計系統在 iOS 與 Android 平台上的一致體驗
       keywords:
-        - 設計思考
-        - 工作坊引導
-        - 跨部門協作
-        - 設計衝刺
+        - 服務設計
+        - 使用者研究
+        - 原型測試
+        - 失智症照護
+        - 設計系統
+    - name: 遠距醫療預約平台 Redesign
+      url: https://www.telehealth.example.com
+      description: 重新設計醫療院所遠距掛號與視訊看診流程，降低患者的操作焦慮並提升預約成功率。
+      startDate: Jan 1, 2020
+      endDate: Jun 30, 2021
+      summary: |
+        - 分析既有使用者流程與客服數據，找出 10 個關鍵斷點並進行重新設計
+        - 建立符合無障礙規範的設計元件，確保高齡使用者也能順利操作
+        - 系統上線後，預約成功率提升 27%，客服進線量減少 18%
+      keywords:
+        - 醫療設計
+        - 無障礙設計
+        - 使用者流程
+        - 數據分析
+  interests:
+    - name: 設計寫作
+      keywords:
+        - Medium
+        - 設計方法
+        - 個案研究
+    - name: 戶外運動
+      keywords:
+        - 登山
+        - 單車
+        - 露營
   volunteer:
     - organization: 台灣使用者經驗設計協會
-      position: 活動講師與工作坊引導師
-      startDate: Mar 2019
+      url: https://uxpataiwan.example.com
+      position: 實體活動志工
+      startDate: Jan 1, 2019
+      endDate: Dec 31, 2022
       summary: |
-        - 定期參與設計社群活動，分享產業實務經驗與設計趨勢觀察
-        - 帶領設計思考與使用者研究工作坊，累積超過三百位學員
-        - 協助籌辦年度設計年會，促進業界交流與知識傳遞
-      endDate: null
-      url: https://www.ixda.org.tw
-  work:
-    - name: 智匯金融科技股份有限公司
-      position: 資深使用者體驗設計師
-      startDate: Mar 1, 2021
-      summary: |
-        - 主導企業級設計系統建置，統一跨產品線設計語言，縮短設計交付週期 40%
-        - 帶領五人設計團隊，建立標準化研究流程與設計評審機制
-        - 推動以使用者研究為核心的產品開發流程，主導超過三十場深度訪談與易用性測試
-        - 與產品經理及工程團隊緊密協作，將複雜的金融業務轉化為直覺的數位體驗
-      endDate: null
-      keywords:
-        - 設計系統
-        - 使用者研究
-        - 產品策略
-        - 團隊領導
-      url: https://www.smartfintech.com.tw
-    - name: 樂購電子商務股份有限公司
-      position: 使用者體驗設計師
-      startDate: Jul 1, 2018
-      summary: |
-        - 負責 iOS 與 Android 雙平台行動應用程式的 UX 設計，月活躍用戶超過兩百萬
-        - 規劃並執行超過二十場易用性測試，迭代優化購物流程與會員系統
-        - 建立完整的設計規範與元件庫，提升設計與前端協作效率
-        - 透過 A/B 測試優化結帳流程，成功提升交易轉換率 18%
-      endDate: Feb 1, 2021
-      keywords:
-        - 行動應用
-        - 易用性測試
-        - 線框圖
-        - 設計規範
-      url: https://www.lego-shop.tw
-    - name: 創想互動設計有限公司
-      position: UI/UX 設計師
-      startDate: Aug 1, 2016
-      summary: |
-        - 參與多個網頁與行動應用專案的介面設計，涵蓋醫療、教育與零售產業
-        - 繪製使用者流程圖與線框圖，協助客戶釐清產品需求與資訊架構
-        - 製作高擬真互動原型，有效降低開發階段的溝通成本
-        - 與前端工程師協作，確保設計細節能忠實呈現於最終產品
-      endDate: Jun 1, 2018
-      keywords:
-        - 介面設計
-        - 原型製作
-        - 使用者流程
-        - 跨部門協作
-      url: https://www.imagine-interactive.tw
+        - 協助籌辦年度使用者經驗研討會，負責講者邀請、工作坊規劃與現場活動執行
+        - 參與線上社群文章翻譯與推廣，促進台灣設計社群知識交流
+
 locale:
   language: zh-hant-tw
-layouts:
-  - engine: latex
-    page:
-      showPageNumbers: true
-      paperSize: a4
-      margins:
-        top: 2.5cm
-        bottom: 2.5cm
-        left: 1.5cm
-        right: 1.5cm
-    template: moderncv-banking
-    typography:
-      fontSize: 11pt
-  - engine: docx
-    page:
-      showPageNumbers: true
-      paperSize: a4
-      margins:
-        top: 2.5cm
-        bottom: 2.5cm
-        left: 1.5cm
-        right: 1.5cm
-    typography:
-      fontSize: 11pt
-      lineSpacing: normal
-  - engine: markdown
-  - engine: html
-    template: calm
-    typography:
-      fontSize: 16px

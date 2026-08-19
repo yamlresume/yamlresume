@@ -1,296 +1,198 @@
 content:
   basics:
     name: Jonas Weber
-    email: jonas.weber@beispiel-software.de
-    headline: Senior Software Engineer für Cloud- und Full-Stack-Anwendungen
-    phone: +49 30 23456789
-    summary: >
-      - Full-Stack-Softwareentwickler mit über 8 Jahren Erfahrung in der
-      Entwicklung skalierbarer Webanwendungen
+    headline: Senior Softwareentwickler für cloud-native Anwendungen
+    phone: +49 30 12345678
+    email: jonas.weber@example.de
+    url: https://jonas-weber.dev
+    summary: |
+      - Senior Softwareentwickler mit über 6 Jahren Erfahrung in der Konzeption und Umsetzung skalierbarer Backend-Systeme
+      - Spezialisiert auf Cloud-native Architekturen mit Kubernetes, Docker und AWS
+      - Erfahrung in der Zusammenarbeit in agilen Teams sowie in der Einführung von CI/CD-Pipelines
+      - Leidenschaft für Clean Code, automatisiertes Testen und Wissensaustausch im Team
+      - Bachelor-Abschluss in Informatik von der Technischen Universität Berlin
 
-      - Umfassende Kenntnisse in Java, TypeScript, React und Cloud-Technologien
-      (AWS, Kubernetes, Docker)
-
-      - Erfahrung in der Architektur von Microservices und der Automatisierung
-      von CI/CD-Pipelines
-
-      - Agile Arbeitsweise, Teamplayer und Mentor mit Fokus auf Codequalität und
-      nachhaltige Softwareentwicklung
-    url: https://jonasweber.dev
-  education:
-    - area: Informatik
-      institution: Technische Universität München
-      degree: Bachelor
-      courses:
-        - Softwareentwicklung im Team
-        - Algorithmen und Datenstrukturen
-        - Datenbanksysteme
-        - Kommunikationsnetze
-        - Web-Engineering
-        - Grundlagen der Betriebssysteme
-      endDate: Jun 1, 2015
-      startDate: Oct 1, 2011
-      summary: >
-        - Abschluss mit der Gesamtnote 1.7 (gut)
-
-        - Bachelorarbeit zum Thema "Entwicklung einer Microservice-basierten
-        Plattform für Echtzeit-Analysen"
-
-        - Studentische Hilfskraft am Lehrstuhl für Datenbanksysteme
-      score: "1.7"
-      url: https://www.in.tum.de/
-  awards:
-    - awarder: Technische Universität München
-      title: Best Student Paper Award
-      date: 2015-06
-      summary: >
-        Auszeichnung für die Bachelorarbeit im Bereich Microservices und
-        Echtzeit-Analysen.
-  certificates:
-    - issuer: Amazon Web Services
-      name: AWS Certified Solutions Architect – Associate
-      date: 2022-08
-      url: https://aws.amazon.com/certification/
-    - issuer: Cloud Native Computing Foundation
-      name: Certified Kubernetes Administrator
-      date: 2023-03
-      url: https://www.cncf.io/certification/cka/
-  interests:
-    - name: Open-Source-Software
-      keywords:
-        - GitHub
-        - Linux
-    - name: Laufen
-      keywords:
-        - Halbmarathon
-        - Trailrunning
-    - name: Schach
-      keywords:
-        - Turnierschach
-        - Eröffnungstheorie
-  languages:
-    - fluency: Native or Bilingual Proficiency
-      language: German
-      keywords:
-        - Muttersprache
-    - fluency: Full Professional Proficiency
-      language: English
-      keywords:
-        - TOEFL 105
-    - fluency: Limited Working Proficiency
-      language: French
-      keywords:
-        - Grundkenntnisse
   location:
+    address: Hauptstraße 12
     city: Berlin
-    address: Beusselstraße 33
+    region: Berlin
     country: Germany
     postalCode: "10115"
-    region: Berlin
+
   profiles:
     - network: GitHub
-      username: jonasweber-dev
-      url: https://github.com/jonasweber-dev
+      url: https://github.com/jweber-dev
+      username: jweber-dev
     - network: LinkedIn
-      username: jonas-weber
-      url: https://www.linkedin.com/in/jonas-weber
-  projects:
-    - name: terraform-aws-modules
-      startDate: Jan 1, 2023
-      summary: >
-        - Entwicklung von Terraform-Modulen für RDS, EKS und S3 mit Fokus auf
-        Sicherheit und Best Practices
+      url: https://www.linkedin.com/in/jonasweber-dev
+      username: jonasweber-dev
 
-        - Veröffentlichung als Open-Source-Projekt mit über 200 GitHub-Sternen
+  education:
+    - institution: Technische Universität Berlin
+      url: https://www.tu.berlin/
+      degree: Bachelor
+      area: Informatik
+      score: "1.7"
+      startDate: Oct 1, 2014
+      endDate: Sep 30, 2018
+      courses:
+        - Algorithmen und Datenstrukturen
+        - Softwaretechnik
+        - Datenbanksysteme
+        - Betriebssysteme
+        - Rechnernetze
+        - Verteilte Systeme
+        - IT-Sicherheit
+        - Theoretische Informatik
+      summary: |
+        - Schwerpunkt Softwaretechnik und verteilte Systeme
+        - Bachelorarbeit „Entwicklung einer containerisierten Microservice-Anwendung zur automatisierten Auswertung von Sensordaten“ mit Note 1,0
+        - Studentische Hilfskraft am Fachgebiet Datenbanksysteme und Informationsmanagement
 
-        - Dokumentation und Beispiele zur einfachen Wiederverwendung
-      description: Sammlung wiederverwendbarer Terraform-Module für den Aufbau
-        AWS-basierter Infrastruktur
+  work:
+    - name: CloudNative Solutions GmbH
+      url: https://cloudnative-solutions.de
+      position: Senior Softwareentwickler
+      startDate: Apr 1, 2022
+      summary: |
+        - Architektur und Entwicklung einer Event-basierten Microservice-Plattform für Industriekunden
+        - Einführung von GitOps-Praktiken sowie Aufbau einer Kubernetes-basierten Plattform auf AWS
+        - Verbesserung der Deployment-Frequenz um 60 % durch Automatisierung von CI/CD-Pipelines
+        - Fachliche Führung eines dreiköpfigen Entwicklungsteams und Durchführung von Code-Reviews
+        - Enge Zusammenarbeit mit Product Management zur Ableitung technischer Lösungen aus Anforderungen
       keywords:
-        - Terraform
+        - Kubernetes
+        - Go
+        - Microservices
         - AWS
-        - Open Source
-      url: https://github.com/jonasweber-dev/terraform-aws-modules
-    - name: Event-Board
-      startDate: Jan 1, 2020
-      summary: >
-        - Entwicklung einer React- und Node.js-Anwendung mit
-        JWT-Authentifizierung und PostgreSQL
+        - GitOps
+        - Mentoring
 
-        - Deployment auf AWS Elastic Beanstalk mit automatisiertem
-        CI/CD-Pipeline
-
-        - Integration von Google-Maps-API zur Darstellung von
-        Veranstaltungsorten
-      description: Full-Stack-Anwendung zur Organisation und Verwaltung lokaler Events
-      endDate: Aug 1, 2020
-      keywords:
-        - React
-        - Node.js
-        - PostgreSQL
-      url: https://github.com/jonasweber-dev/event-board
-  publications:
-    - name: Microservices in der Praxis – Erfahrungen aus einem
-        Cloud-Migrationsprojekt
-      publisher: JavaSPEKTRUM
-      releaseDate: 2021-05
-      summary: >
-        Fachartikel über die Migration einer monolithischen Anwendung zu einer
-        Microservice-Architektur mit Spring Boot und Kubernetes.
-      url: https://www.javaspektrum.de/
-  references:
-    - name: Dr. Katharina Scholz
-      summary: >
-        Jonas Weber gehört zu den besten Ingenieuren, mit denen ich
-        zusammengearbeitet habe. Seine Fähigkeit, komplexe technische
-        Zusammenhänge klar zu kommunizieren und Lösungen pragmatisch umzusetzen,
-        ist außergewöhnlich.
-      email: katharina.scholz@cloudnative-solutions.example
-      phone: +49 89 1234567
-      relationship: Vorgesetzte bei CloudNative Solutions GmbH
-  skills:
-    - level: Expert
-      name: Programmiersprachen
+    - name: DataMinds AG
+      url: https://dataminds.de
+      position: Softwareentwickler
+      startDate: Jan 1, 2019
+      endDate: Mar 31, 2022
+      summary: |
+        - Entwicklung von REST-APIs und Backend-Diensten mit Java, Spring Boot und PostgreSQL
+        - Migrierung einer monolithischen Anwendung in eine serviceorientierte Architektur
+        - Implementierung von Frontend-Features mit React und TypeScript im Team
+        - Mitwirkung beim Aufbau einer automatisierten Teststrategie mit JUnit und Testcontainers
       keywords:
         - Java
-        - TypeScript
-        - Python
-        - Go
-    - level: Advanced
-      name: Webentwicklung
-      keywords:
+        - Spring Boot
         - React
+        - PostgreSQL
+        - Docker
+
+    - name: IT-Labs GmbH
+      url: https://it-labs.de
+      position: Werkstudent Softwareentwicklung
+      startDate: Apr 1, 2017
+      endDate: Dec 31, 2018
+      summary: |
+        - Unterstützung des Teams bei der Entwicklung eines Webportals für Bildungsträger
+        - Implementierung von UI-Komponenten mit Angular und Sass
+        - Pflege von SQL-Datenbanken und Erstellung von Reports
+      keywords:
         - Angular
-        - Node.js
-        - HTML
-        - CSS
-    - level: Advanced
-      name: Cloud & DevOps
+        - SQL
+        - Sass
+
+  languages:
+    - language: German
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - Muttersprache
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - Verhandlungssicher
+        - TOEFL 105
+
+  skills:
+    - name: Backend-Entwicklung
+      level: Expert
+      keywords:
+        - Go
+        - Java
+        - Spring Boot
+        - REST APIs
+        - Microservices
+    - name: Cloud & DevOps
+      level: Advanced
       keywords:
         - AWS
         - Kubernetes
         - Docker
         - Terraform
         - CI/CD
-    - level: Advanced
-      name: Datenbanken
+    - name: Frontend-Entwicklung
+      level: Intermediate
+      keywords:
+        - TypeScript
+        - React
+        - Next.js
+        - Tailwind CSS
+    - name: Datenbanken
+      level: Advanced
       keywords:
         - PostgreSQL
         - MongoDB
         - Redis
-        - SQL
-    - level: Advanced
-      name: Agile Softwareentwicklung
+        - Datenmodellierung
+
+  awards:
+    - title: Fakultätspreis für herausragende Bachelorarbeit
+      awarder: Technische Universität Berlin
+      date: Nov 1, 2018
+      summary: |
+        Auszeichnung für die Bachelorarbeit „Entwicklung einer containerisierten Microservice-Anwendung zur automatisierten Auswertung von Sensordaten“.
+
+  certificates:
+    - name: AWS Certified Solutions Architect – Associate
+      url: https://aws.amazon.com/certification/
+      issuer: Amazon Web Services (AWS)
+      date: Jun 15, 2023
+
+  projects:
+    - name: GoCloud CLI
+      url: https://github.com/jweber-dev/gocloud
+      description: Open-Source-Kommandozeilentool zur Verwaltung von Cloud-Ressourcen
+      startDate: Jan 1, 2023
+      endDate: Dec 31, 2023
+      summary: |
+        - Entwicklung eines plattformunabhängigen CLI zur Steuerung von AWS- und Kubernetes-Ressourcen
+        - Automatisierung wiederkehrender Aufgaben wie Deployment und Log-Analyse
+        - Mehr als 500 GitHub-Sterne und aktive Community-Beiträge
       keywords:
-        - Scrum
-        - Kanban
-        - Test-Driven Development
-        - Pair Programming
-  volunteer:
-    - organization: Jugend hackt Berlin
-      position: Mentor
-      startDate: 2017-03
-      summary: >
-        - Unterstützung von Jugendlichen bei ersten Programmierprojekten mit
-        Python und Webtechnologien
-
-        - Planung und Durchführung von Workshops zu Webentwicklung und
-        Datenschutz
-      endDate: 2020-09
-      url: https://jugendhackt.org/
-  work:
-    - name: CloudNative Solutions GmbH
-      position: Senior Software Engineer
-      startDate: Apr 1, 2022
-      summary: >
-        - Entwicklung und Betrieb einer Kubernetes-basierten SaaS-Plattform für
-        datenintensive Anwendungen
-
-        - Verantwortlich für die technische Architektur neuer Microservices und
-        die Weiterentwicklung bestehender Systeme
-
-        - Einführung von Infrastructure-as-Code mit Terraform, wodurch die
-        Bereitstellungszeit um 40 % reduziert wurde
-
-        - Durchführung von Code-Reviews, Architektur-Workshops und Mentoring für
-        fünf Entwickler:innen
-      keywords:
-        - Kubernetes
+        - Go
+        - CLI
+        - Open Source
         - AWS
-        - Microservices
-        - Terraform
-        - Mentoring
-      url: https://www.cloudnative-solutions.example
-    - name: DataPulse AG
-      position: Software Engineer
-      startDate: Aug 1, 2017
-      summary: >
-        - Implementierung von Java- und TypeScript-basierten Backend-Diensten
-        für eine Big-Data-Analyseplattform
 
-        - Migration einer monolithischen Anwendung zu einer
-        Microservice-Architektur mit Spring Boot
-
-        - Aufbau von CI/CD-Pipelines mit Jenkins und GitLab CI
-
-        - Enge Zusammenarbeit mit Product Management und QA zur termingerechten
-        Auslieferung neuer Features
-      endDate: Mar 1, 2022
+  interests:
+    - name: Sport
       keywords:
-        - Java
-        - Spring Boot
-        - TypeScript
-        - CI/CD
-        - Big Data
-      url: https://www.datapulse.example
-    - name: WebCraft GmbH
-      position: Junior Full-Stack Developer
-      startDate: Sep 1, 2015
-      summary: >
-        - Entwicklung und Wartung von Kundenwebseiten mit Angular, Node.js und
-        MySQL
-
-        - Umsetzung responsiver UI-Komponenten und Anbindung an
-        REST-Schnittstellen
-
-        - Unterstützung bei der Einführung von automatisierten Tests mit Jest
-        und Cypress
-      endDate: Jul 1, 2017
+        - Laufen
+        - Bouldern
+        - Radfahren
+    - name: Technologie
       keywords:
-        - Angular
-        - Node.js
-        - REST
-        - MySQL
-      url: https://www.webcraft.example
+        - Open Source
+        - Künstliche Intelligenz
+        - Smart Home
+
+  volunteer:
+    - organization: Code for Germany
+      url: https://codefor.de
+      position: Ehrenamtlicher Entwickler
+      startDate: Jan 1, 2020
+      endDate: Dec 31, 2023
+      summary: |
+        - Mitentwicklung einer Open-Source-Plattform zur Visualisierung von kommunalen Haushaltsdaten
+        - Unterstützung von lokalen OK-Lab-Gruppen bei technischen Fragen und Workshops
+        - Durchführung von Vorträgen zu Open Data und digitaler Teilhabe
+
 locale:
   language: de
-layouts:
-  - engine: latex
-    page:
-      showPageNumbers: true
-      paperSize: a4
-      margins:
-        top: 2.5cm
-        bottom: 2.5cm
-        left: 1.5cm
-        right: 1.5cm
-    template: moderncv-banking
-    typography:
-      fontSize: 11pt
-  - engine: docx
-    page:
-      showPageNumbers: true
-      paperSize: a4
-      margins:
-        top: 2.5cm
-        bottom: 2.5cm
-        left: 1.5cm
-        right: 1.5cm
-    typography:
-      fontSize: 11pt
-      lineSpacing: normal
-  - engine: markdown
-  - engine: html
-    template: calm
-    typography:
-      fontSize: 16px

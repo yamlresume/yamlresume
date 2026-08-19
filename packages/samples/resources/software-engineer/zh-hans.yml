@@ -1,251 +1,202 @@
 content:
   basics:
-    name: 林晓明
-    email: xiaoming.lin@outlook.com
-    headline: 高级软件工程师，精通分布式系统与全栈开发
-    phone: +86 138-0013-8000
+    name: 王强
+    headline: 高级后端软件工程师 / 专注于大规模分布式系统
+    phone: "+86 138 0013 8000"
+    email: wangqiang.dev@example.com
+    url: https://github.com/wangqiang-dev
     summary: |
-      拥有 7 年软件研发经验的高级软件工程师，专注于高性能分布式系统设计、微服务架构和云原生技术落地。带领团队完成多个日活百万级业务系统的架构升级，具备出色的跨团队协作与技术决策能力。
-
-      - 熟悉 Java、Go、Python，精通 Spring Cloud、Kubernetes、Docker 等主流技术栈
-      - 善于从业务视角出发，设计高可用、可扩展的系统方案，持续提升研发效能
-      - 热衷技术分享与开源贡献，曾在多个技术大会发表演讲
-    url: https://xiaominglin.dev
-  education:
-    - area: 计算机科学与技术
-      institution: 复旦大学
-      degree: Bachelor
-      courses:
-        - 数据结构与算法
-        - 操作系统
-        - 计算机网络
-        - 数据库系统
-        - 软件工程
-        - 编译原理
-        - 计算机系统结构
-        - 人工智能导论
-      endDate: Jul 1, 2018
-      startDate: Sep 1, 2014
-      summary: |
-        - 主修计算机科学与技术，连续三年获得校级奖学金
-        - 参与分布式数据库课程设计，完成基于 Raft 的一致性 KV 存储引擎
-        - 担任 ACM 集训队核心成员，获亚洲区域赛银奖
-      score: 3.9/4.0
-      url: https://www.fudan.edu.cn/
-  awards:
-    - awarder: 上海云启科技有限公司
-      title: 年度优秀员工
-      date: Jan 2023
-      summary: |
-        因在核心系统架构升级和团队建设中的突出贡献，被评为 2022 年度优秀员工。
-    - awarder: 国际大学生程序设计竞赛
-      title: ACM-ICPC 亚洲区域赛银奖
-      date: Nov 2016
-      summary: |
-        作为复旦大学代表队核心成员，在 ACM-ICPC 亚洲区域赛中获得银奖。
-  certificates:
-    - issuer: 亚马逊云服务
-      name: AWS 认证解决方案架构师 - 助理级
-      date: Mar 2023
-      url: https://aws.amazon.com/certification/
-    - issuer: Linux 基金会
-      name: CKS - Kubernetes 安全专家
-      date: Jun 2023
-      url: https://training.linuxfoundation.org/certification/cks/
-  interests:
-    - name: 技术阅读
-      keywords:
-        - 云原生
-        - 分布式系统
-        - 科幻小说
-    - name: 运动
-      keywords:
-        - 跑步
-        - 篮球
-        - 健身
-  languages:
-    - fluency: Native or Bilingual Proficiency
-      language: Chinese
-      keywords:
-        - 普通话
-    - fluency: Full Professional Proficiency
-      language: English
-      keywords:
-        - CET-6
-        - TOEFL 102
+      - 拥有 8 年以上软件研发经验，擅长设计高并发、高可用的分布式系统
+      - 熟悉微服务架构、容器化部署与云原生技术，主导过多个从 0 到 1 的核心业务系统
+      - 具备优秀的团队协作与跨部门沟通能力，热衷于技术分享与开源社区贡献
   location:
-    city: 上海
-    address: 上海市浦东新区世纪大道100号
+    address: 西湖区文一西路 969 号
+    city: 杭州
+    region: 浙江省
     country: China
-    postalCode: "200120"
-    region: 上海市
+    postalCode: "310000"
   profiles:
     - network: GitHub
-      username: linxiaoming
-      url: https://github.com/linxiaoming
+      url: https://github.com/wangqiang-dev
+      username: wangqiang-dev
     - network: LinkedIn
-      username: linxiaoming
-      url: https://www.linkedin.com/in/linxiaoming
-  projects:
-    - name: 企业级微服务开发脚手架
-      startDate: Jan 2023
+      url: https://www.linkedin.com/in/wangqiang-dev
+      username: wangqiang-dev
+  education:
+    - institution: 浙江大学
+      url: https://www.zju.edu.cn/
+      degree: Master
+      area: 计算机科学与技术
+      score: "3.8"
+      startDate: Sep 1, 2014
+      endDate: Jun 1, 2017
+      courses:
+        - 分布式系统
+        - 高级操作系统
+        - 算法设计与分析
+        - 大数据处理技术
       summary: |
-        - 提供多模块模板和自动化代码生成工具，新服务开发启动时间从 2 天缩短到 2 小时
-        - 集成 OpenTelemetry 与 Prometheus，实现全链路可观测性
-        - 在 GitHub 上累计获得 500+ Star，并被多个团队采用
-      description: 基于 Spring Cloud 与 Kubernetes
-        的微服务项目脚手架，内置统一配置、日志、监控、分布式链路追踪等能力，帮助团队快速创建符合规范的服务。
-      keywords:
-        - Spring Cloud
-        - Kubernetes
-        - 脚手架
-        - OpenTelemetry
-      url: https://github.com/linxiaoming/ms-starter
-    - name: 实时数据可视化平台
-      startDate: Sep 1, 2021
+        - 研究方向为分布式一致性协议与高性能存储，硕士论文获校级优秀论文
+        - 以第一作者发表 CCF-B 类会议论文一篇
+    - institution: 南京大学
+      url: https://www.nju.edu.cn/
+      degree: Bachelor
+      area: 软件工程
+      score: "3.7"
+      startDate: Sep 1, 2010
+      endDate: Jun 1, 2014
+      courses:
+        - 数据结构
+        - 数据库原理
+        - 操作系统
+        - 计算机网络
       summary: |
-        - 前后端分离架构，前端使用 React + ECharts，后端使用 Node.js + WebSocket 推送实时数据
-        - 设计基于 ClickHouse 的查询服务，支持亿级数据秒级响应
-        - 服务公司内部 20+ 个业务团队，日均 PV 超过 50 万
-      description: 面向运营和数据分析师的实时数据可视化平台，支持拖拽式图表搭建、多维数据下钻和异常告警。
-      endDate: Aug 31, 2022
+        - 连续三年获得校级一等奖学金
+        - 参与开源项目开发，积累 Linux 环境下的工程实践能力
+  work:
+    - name: 阿里巴巴集团
+      url: https://www.alibaba.com/
+      position: 高级后端工程师
+      startDate: Jul 1, 2020
+      summary: |
+        - 负责交易核心链路的稳定性和性能优化，支撑双 11 峰值每秒 50 万笔订单
+        - 主导订单中心微服务化改造，落地全链路压测与混沌工程体系
+        - 推进 Go 技术栈在业务线推广，提升研发效率 30%
+        - 带领 5 人小组完成多个大促项目，培养 2 名新人成长为核心研发
       keywords:
-        - React
-        - Node.js
-        - ClickHouse
-        - WebSocket
-        - ECharts
-      url: https://github.com/linxiaoming/realdata-dashboard
-  publications:
-    - name: 基于 Kubernetes 的微服务架构实践与演进
-      publisher: 《软件工程》期刊
-      releaseDate: Apr 2022
-      summary: >
-        本文结合生产环境实际案例，介绍了从单体架构向 Kubernetes
-        微服务架构迁移的路径、关键设计决策以及可观测性建设经验，为中小型团队提供可落地的参考方案。
-      url: https://www.jsoftech.org.cn/
+        - 高并发
+        - 微服务
+        - 全链路压测
+        - 团队管理
+    - name: 蚂蚁集团
+      url: https://www.antgroup.com/
+      position: 后端软件开发工程师
+      startDate: Jul 1, 2017
+      endDate: Jun 1, 2020
+      summary: |
+        - 参与智能风控平台开发，使用 Flink 构建实时特征计算引擎
+        - 设计并实现规则引擎与模型推理服务，将决策延迟降低至 100ms 以内
+        - 负责日常需求迭代与线上问题排查，保障服务稳定性
+      keywords:
+        - Flink
+        - 风控
+        - 规则引擎
+        - Java
+    - name: 华为技术有限公司
+      url: https://www.huawei.com/
+      position: 后端开发实习生
+      startDate: Sep 1, 2016
+      endDate: Jun 1, 2017
+      summary: |
+        - 参与分布式存储系统的开发，完成文件分片与副本同步模块的编码工作
+        - 编写自动化测试脚本，提升模块测试覆盖率至 85%
+      keywords:
+        - 分布式存储
+        - C++
+        - 自动化测试
   skills:
-    - level: Expert
-      name: 后端开发
+    - name: 后端开发
+      level: Expert
       keywords:
         - Java
         - Go
         - Python
-        - Spring Cloud
-        - MySQL
-        - Redis
-        - Kafka
-    - level: Advanced
-      name: 前端开发
+        - Spring Boot
+        - gRPC
+    - name: 分布式系统
+      level: Expert
       keywords:
-        - React
-        - Vue.js
-        - TypeScript
-        - HTML5
-        - CSS3
-    - level: Advanced
-      name: 云原生与 DevOps
+        - Kafka
+        - Redis
+        - ZooKeeper
+        - 一致性算法
+    - name: 云原生
+      level: Advanced
       keywords:
         - Kubernetes
         - Docker
-        - Terraform
-        - CI/CD
-        - AWS
-    - level: Expert
-      name: 软件架构
+        - Istio
+        - Prometheus
+    - name: 数据库
+      level: Advanced
       keywords:
-        - 微服务
-        - 分布式系统
-        - DDD
-        - 高并发
-        - 性能优化
-  volunteer:
-    - organization: 中国开源软件推进联盟
-      position: 开源布道师
-      startDate: Jan 2020
-      summary: |
-        - 作为开源布道师，在 COSCon 等开源大会上分享 Kubernetes 实践与云原生落地经验
-        - 参与开源社区文档翻译与本地化工作，累计贡献 100+ PR
-        - 协助组织线下 Meetup，促进开发者之间的技术交流
-      url: https://www.oss.org.cn/
-  work:
-    - name: 上海云启科技有限公司
-      position: 高级软件工程师
-      startDate: Sep 1, 2022
-      summary: |
-        - 负责公司核心业务中台的技术架构与研发管理，带领 6 人团队完成订单、用户、支付等微服务模块的设计与落地
-        - 主导将单体应用拆分为 30+ 个微服务，并引入 Service Mesh 与 Kubernetes，使系统可用性提升至 99.99%
-        - 建设统一的日志、监控、链路追踪体系，将线上故障定位时间从小时级缩短至分钟级
-        - 制定并推行代码评审、自动化测试和 DevOps 规范，团队交付效率提升约 40%
-        - 与产品、运营团队紧密协作，支撑多个千万级用户营销活动的平稳运行
-      keywords:
-        - 微服务
-        - Kubernetes
-        - 高并发
-        - 系统架构
-        - 团队管理
-      url: https://www.yunqi.tech
-    - name: 杭州数聚网络科技有限公司
-      position: 软件工程师
-      startDate: Jul 1, 2021
-      summary: |
-        - 参与数据可视化平台的前后端开发，使用 React、TypeScript 和 Node.js 重构核心模块，页面渲染性能提升 50%
-        - 基于 PostgreSQL 和 Redis 设计数据存储与缓存方案，支撑日均千万级数据查询
-        - 负责与大数据团队协作，开发实时数据看板和报表系统，为业务决策提供支持
-        - 推动单元测试和端到端测试落地，将发布故障率降低 30%
-      endDate: Aug 31, 2022
-      keywords:
-        - React
-        - Node.js
-        - TypeScript
-        - PostgreSQL
-        - 数据可视化
-      url: https://www.shuju-tech.cn
-    - name: 深圳华创信息技术有限公司
-      position: 软件开发工程师
-      startDate: Jul 1, 2018
-      summary: |
-        - 参与企业级 ERP 系统的开发与维护，基于 Java Spring Boot 和 MySQL 完成采购、库存、财务等模块
-        - 优化数据库索引与慢查询，核心接口响应时间从 1.2s 降至 200ms 以内
-        - 负责 Linux 环境下的应用部署与自动化脚本编写，提高了环境交付效率
-        - 编写技术文档并参与新员工培训，帮助团队快速熟悉系统代码库
-      endDate: Jun 30, 2021
-      keywords:
-        - Java
-        - Spring Boot
         - MySQL
-        - Linux
-        - Git
-      url: https://www.huaichuang-info.cn
+        - TiDB
+        - PostgreSQL
+        - 索引优化
+  languages:
+    - language: Chinese
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - 普通话
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - CET-6
+        - 技术文档阅读
+  awards:
+    - title: 阿里巴巴双 11 技术尖兵
+      awarder: 阿里巴巴集团
+      date: Nov 2021
+      summary: |
+        在 2021 年双 11 大促中，因保障核心交易链路零故障并获得显著性能提升而获此奖项。
+  certificates:
+    - name: AWS Certified Solutions Architect - Associate
+      issuer: Amazon Web Services
+      date: Mar 2022
+      url: https://aws.amazon.com/certification/
+    - name: 软考系统架构设计师
+      issuer: 人力资源和社会保障部
+      date: Nov 2019
+      url: https://www.ruankao.org.cn/
+  publications:
+    - name: 一种基于 Raft 优化的分布式存储共识机制
+      publisher: 中国计算机学会(CCF) 分布式计算与系统会议
+      releaseDate: Oct 2016
+      summary: |
+        提出一种改进的 Raft 联合共识算法，减少了领导选举延迟，并在 100 节点模拟集群中验证吞吐量提升 23%。
+  projects:
+    - name: 开源分布式缓存组件 OpenCache
+      url: https://github.com/wangqiang-dev/opencache
+      startDate: Jan 1, 2021
+      description: 一个基于 Go 实现的高性能分布式缓存中间件，支持 LRU/TTL 和多节点分片。
+      summary: |
+        - 设计并实现了分布式缓存的核心读写链路，采用一致性哈希进行数据分片
+        - 使用 gRPC 进行节点间通信，集成 Prometheus 指标暴露与 Grafana 监控界面
+        - 项目累计获得 800+ Star，被多家创业公司用于生产环境
+      keywords:
+        - Go
+        - 分布式缓存
+        - 一致性哈希
+    - name: 实时日志分析平台 LogStream
+      url: https://github.com/wangqiang-dev/logstream
+      startDate: Jan 1, 2019
+      endDate: Jun 1, 2019
+      description: 一个基于 Flink 和 Kafka 的日志实时聚合与分析平台。
+      summary: |
+        - 基于 Flink SQL 实现实时 ETL，支持毫秒级窗口聚合
+        - 设计消息回放与采样机制，保障数据准确性与系统吞吐
+        - 在蚂蚁内部上线后，处理日志量峰值达 200 万条/秒
+      keywords:
+        - Flink
+        - Kafka
+        - 实时计算
+  interests:
+    - name: 开源社区
+      keywords:
+        - Kubernetes
+        - CNCF
+    - name: 户外运动
+      keywords:
+        - 登山
+        - 马拉松
+  volunteer:
+    - organization: 杭州开源技术社区
+      position: 组织者
+      startDate: Jan 1, 2021
+      summary: |
+        - 定期组织线下技术分享会，邀请业内外专家交流云原生与后端架构实践
+        - 累计组织 20+ 场活动，参与人数超 2000 人次
+
 locale:
   language: zh-hans
-layouts:
-  - engine: latex
-    page:
-      showPageNumbers: true
-      paperSize: a4
-      margins:
-        top: 2.5cm
-        bottom: 2.5cm
-        left: 1.5cm
-        right: 1.5cm
-    template: moderncv-banking
-    typography:
-      fontSize: 11pt
-  - engine: docx
-    page:
-      showPageNumbers: true
-      paperSize: a4
-      margins:
-        top: 2.5cm
-        bottom: 2.5cm
-        left: 1.5cm
-        right: 1.5cm
-    typography:
-      fontSize: 11pt
-      lineSpacing: normal
-  - engine: markdown
-  - engine: html
-    template: calm
-    typography:
-      fontSize: 16px

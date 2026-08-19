@@ -1,246 +1,212 @@
 content:
   basics:
-    name: 林品璇
-    email: pinxuan.lin@datascience.tw
-    headline: 資料科學家｜機器學習與大數據分析
-    phone: +886 912 345 678
+    name: 陳怡君
+    headline: '資料科學家 | 機器學習與數據分析'
+    phone: "+886 912 345 678"
+    email: yichun.chen@datasci.tw
+    url: https://yichun-ds.tw
     summary: |
-      - 具備四年以上資料科學與機器學習實務經驗，擅長從數據中挖掘商業洞察並建置可落地之預測模型。
-      - 熟悉統計分析、機器學習、深度學習與資料工程流程，曾主導多項客戶行為與需求預測專案。
-      - 能有效地跨部門溝通，將複雜的技術成果轉化為清晰的商業決策建議。
-      - 持續關注 AI 與資料科學新技術，樂於分享並參與開源社群。
-    url: https://linpinxuan.dev
-  education:
-    - area: 資料科學研究所
-      institution: 國立臺灣大學
-      degree: Master
-      courses:
-        - 機器學習
-        - 巨量資料分析
-        - 統計學習理論
-        - 深度學習
-        - 資料視覺化
-        - 雲端大數據系統
-      endDate: Jul 1, 2020
-      startDate: Sep 1, 2018
-      summary: |
-        - 主要研究領域為機器學習與預測模型，碩士論文探討基於深度學習之使用者行為預測。
-        - 協助教授與實驗室執行多項產學合作計畫，累積實務資料分析經驗。
-      score: "4.2"
-      url: https://www.ntu.edu.tw
-    - area: 統計學系
-      institution: 國立政治大學
-      degree: Bachelor
-      courses:
-        - 高等統計學
-        - 線性代數
-        - 機率論
-        - 資料庫管理
-        - 程式設計
-        - 迴歸分析
-      endDate: Jun 1, 2018
-      startDate: Sep 1, 2014
-      summary: |
-        - 修習統計與資訊相關課程，奠定資料分析、程式設計與數學基礎。
-        - 參與校內統計分析競賽，並擔任統計軟體教學助理。
-      score: "3.9"
-      url: https://www.nccu.edu.tw
-  awards:
-    - awarder: 中華民國人工智慧學會
-      title: 中華民國人工智慧學會最佳論文獎
-      date: Oct 1, 2022
-      summary: |
-        以「基於注意力機制之智慧零售需求預測模型」榮獲年度最佳論文獎，肯定研究成果在理論與實務應用上的貢獻。
-  certificates:
-    - issuer: Amazon Web Services
-      name: AWS Certified Machine Learning – Specialty
-      date: Mar 1, 2023
-      url: https://aws.amazon.com/certification/
-    - issuer: Google
-      name: Google Data Analytics Professional Certificate
-      date: Jun 1, 2021
-      url: https://www.coursera.org/professional-certificates/google-data-analytics
-  interests:
-    - name: 資料科學競賽
-      keywords:
-        - Kaggle
-        - 特徵工程
-        - 視覺化分析
-    - name: 戶外運動
-      keywords:
-        - 登山
-        - 慢跑
-        - 自行車
-  languages:
-    - fluency: Native or Bilingual Proficiency
-      language: Chinese
-      keywords:
-        - 國語
-        - 閩南語
-    - fluency: Full Professional Proficiency
-      language: English
-      keywords:
-        - TOEIC 960
-        - OPIc Advanced Low
+      我是一位擁有 6 年經驗的資料科學家，專精於機器學習、統計分析與大數據處理，擅長從複雜資料中挖掘商業洞見。
+
+      - 主導多項端到端資料科學專案，包括推薦系統、客戶流失預測與需求預測
+      - 具備將模型導入生產環境的實務經驗，熟悉 GCP、AWS 等雲端服務
+      - 重視跨部門溝通，能將技術成果轉化為具體商業決策
+      - 持續學習新技術，並熱衷於透過 Medium 分享資料科學知識
   location:
+    address: 台北市大安區信義路三段 100 號
     city: 台北市
-    address: 台北市大安區復興南路一段 200 號
+    region: 台北市
     country: Taiwan
     postalCode: "106"
-    region: 台北市
   profiles:
     - network: GitHub
-      username: pinxuanl
-      url: https://github.com/pinxuanl
+      url: https://github.com/yichun-data
+      username: yichun-data
     - network: LinkedIn
-      username: pinxuan-lin
-      url: https://www.linkedin.com/in/pinxuan-lin
-  projects:
-    - name: 智慧零售需求預測平台
-      startDate: Jan 1, 2023
+      url: https://www.linkedin.com/in/yichunchen
+      username: yichunchen
+    - network: Medium
+      url: https://medium.com/@yichun.ds
+      username: yichun.ds
+  education:
+    - institution: 國立臺灣大學
+      url: https://www.ntu.edu.tw
+      degree: Master
+      area: 資料科學學程
+      score: "4.2"
+      startDate: Sep 1, 2015
+      endDate: Jul 1, 2017
+      courses:
+        - 機器學習
+        - 統計推論
+        - 深度學習
+        - 大數據分析
+        - 資料視覺化
       summary: |
-        - 使用 Python、FastAPI 建置 API 服務，提供預測結果查詢與匯出。
-        - 串接 Airflow 定期更新模型與預測結果，降低人工介入成本。
-        - 以 Docker 打包服務，並部署於 GCP Cloud Run。
-      description: 一套自動化需求預測平台，整合資料前處理、模型訓練、預測排程與結果視覺化，協助零售業者即時掌握各門市需求。
-      keywords:
-        - FastAPI
-        - Airflow
-        - GCP
-        - Docker
-        - 需求預測
-      url: https://github.com/pinxuanl/retail-demand-forecast
-    - name: 客戶流失預警儀表板
-      startDate: Jun 1, 2021
+        研究方向為可解釋機器學習與推薦系統，碩士論文題目為「基於注意力機制之可解釋推薦模型」。擔任統計學助教，並協助教授整理實驗資料。
+    - institution: 國立清華大學
+      url: https://www.nthu.edu.tw
+      degree: Bachelor
+      area: 數學系（雙主修資訊工程）
+      score: "3.9"
+      startDate: Sep 1, 2011
+      endDate: Jul 1, 2015
+      courses:
+        - 微積分
+        - 線性代數
+        - 機率論
+        - 統計學
+        - 程式設計
       summary: |
-        - 以 XGBoost 建立流失預測模型，AUC 達 0.87。
-        - 使用 Streamlit 開發儀表板，支援篩選與明細檢視。
-        - 建立特徵重要性分析與 SHAP 解釋報表。
-      description: 透過機器學習模型評估客戶流失風險，並以互動式儀表板呈現流失因子與區隔，提供客戶成功團隊即時行動建議。
-      endDate: Dec 1, 2021
-      keywords:
-        - XGBoost
-        - Streamlit
-        - SHAP
-        - 儀表板
-      url: https://github.com/pinxuanl/churn-dashboard
-  publications:
-    - name: 基於深度學習之消費者行為預測模型
-      publisher: 國際資料科學期刊
-      releaseDate: Dec 1, 2022
-      summary: |
-        - 提出結合時間序列與深度學習之混合模型，有效預測消費者行為。
-        - 採用真實零售資料驗證模型穩健性，並與傳統統計模型進行比較。
-      url: https://doi.org/10.1000/jds.2022.001
-  skills:
-    - level: Expert
-      name: 機器學習
-      keywords:
-        - 監督式學習
-        - 非監督式學習
-        - 特徵工程
-        - XGBoost
-        - LightGBM
-        - TensorFlow
-        - PyTorch
-    - level: Expert
-      name: 資料分析
-      keywords:
-        - Python
-        - R
-        - SQL
-        - Pandas
-        - NumPy
-        - Spark
-    - level: Intermediate
-      name: 資料工程與 MLOps
-      keywords:
-        - Docker
-        - Kubernetes
-        - Airflow
-        - MLflow
-        - AWS
-        - GCP
-    - level: Advanced
-      name: 資料視覺化
-      keywords:
-        - Tableau
-        - Power BI
-        - Matplotlib
-        - D3.js
-  volunteer:
-    - organization: 台灣資料科學社群
-      position: 志工講師
-      startDate: Jan 1, 2021
-      summary: |
-        - 定期於社群聚會分享機器學習實作與資料分析案例。
-        - 協助辦理年度資料科學研討會，並擔任新手工作坊助教。
-        - 參與開放原始碼資料科學工具的中文化文件翻譯與推廣。
-      endDate: Dec 1, 2023
-      url: https://www.datascience.tw
+        建立紮實的數學與程式基礎，參與系上專題競賽，並於大三暑期至科技公司實習，負責資料前處理與初步分析。
   work:
-    - name: 霖雲科技股份有限公司
-      position: 資料科學家
-      startDate: Mar 1, 2022
+    - name: 雲端數據科技股份有限公司
+      url: https://www.datacloud.com.tw
+      position: 資深資料科學家
+      startDate: Mar 1, 2021
       summary: |
-        - 主導智慧零售需求預測專案，整合銷售、庫存與促銷資料，建立多門市預測模型，預測準確率提升 18%。
-        - 設計並實作推薦系統，以協同過濾與深度學習模型提升交叉銷售比例。
-        - 導入 MLflow 與 Airflow 建立模型訓練與排程流程，縮短模型上線時間。
-        - 與產品、行銷團隊緊密合作，將資料洞察轉化為可執行的商業策略。
+        - 主導客戶流失預測專案，整合 CRM、交易與行為數據，建立 XGBoost 模型，精準率提升 25%
+        - 開發個人化推薦系統，結合協同過濾與深度學習，帶動部門營收成長 18%
+        - 設計 A/B 測試評估框架，協助產品團隊建立數據驅動的決策流程
+        - 負責資料科學團隊的 code review 與技術分享，提升團隊整體開發品質
       keywords:
-        - 需求預測
+        - 客戶流失預測
         - 推薦系統
-        - Python
-        - Spark
-        - MLOps
-        - Airflow
-      url: https://www.linyun-tech.com.tw
-    - name: 宏量數據顧問股份有限公司
-      position: 資料分析師
-      startDate: Jul 1, 2020
+        - 深度學習
+        - A/B 測試
+        - 團隊領導
+    - name: 智慧零售顧問有限公司
+      url: https://www.smartretail.tw
+      position: 資料科學家
+      startDate: Aug 1, 2017
+      endDate: Feb 28, 2021
       summary: |
-        - 負責金融與零售產業客戶之資料分析專案，提供客群分群、流失預警與行銷成效分析。
-        - 建立資料清洗與特徵工程標準流程，降低各專案資料前處理時間。
-        - 利用視覺化工具製作動態儀表板，協助客戶即時掌握關鍵指標。
-        - 參與敏捷式專案開發，定期與利害關係人回報分析結果與建議。
-      endDate: Feb 28, 2022
+        - 建立門市銷售預測模型，整合歷史銷售、天氣與促銷活動資料，預測誤差降低 30%
+        - 建置客戶分群系統，利用 RFM 分析與 K-Means 分群，協助行銷團隊規劃精準行銷活動
+        - 開發自動化報表流程，以 Python 與 Airflow 取代人工產出，每月節省 20 人時
+        - 與工程團隊協作，將模型包裝為 RESTful API 並部署至雲端環境
       keywords:
-        - 客群分群
-        - 流失預警
+        - 銷售預測
+        - RFM 分析
+        - K-Means
+        - Airflow
+        - API 部署
+  languages:
+    - language: Chinese
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - 母語
+        - 商務溝通與簡報
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - TOEIC 950
+        - 技術文件閱讀與撰寫
+  skills:
+    - name: 機器學習
+      level: Expert
+      keywords:
+        - Python
+        - scikit-learn
+        - XGBoost
+        - PyTorch
+        - 自然語言處理
+    - name: 資料分析與統計
+      level: Expert
+      keywords:
         - SQL
+        - R
+        - 統計檢定
+        - 時間序列分析
+        - 實驗設計
+    - name: 資料工程
+      level: Advanced
+      keywords:
+        - Apache Spark
+        - Airflow
+        - dbt
+        - Docker
+        - 雲端服務
+    - name: 資料視覺化
+      level: Advanced
+      keywords:
         - Tableau
-        - 專案管理
-        - 敏捷開發
-      url: https://www.hldata.com.tw
+        - Looker
+        - Matplotlib
+        - Plotly
+        - 資料故事化
+  awards:
+    - title: 台灣資料科學競賽金牌獎
+      date: Nov 15, 2022
+      awarder: 台灣資料科學協會
+      summary: |
+        以自動化機器學習平台參賽，自 300 多組隊伍中脫穎而出，獲得金牌獎。
+  certificates:
+    - name: AWS Certified Machine Learning – Specialty
+      url: https://aws.amazon.com/certification/
+      issuer: Amazon Web Services
+      date: Apr 15, 2023
+    - name: Google Professional Data Engineer
+      url: https://cloud.google.com/certification/data-engineer
+      issuer: Google
+      date: Jun 10, 2021
+  publications:
+    - name: 基於注意力機制之可解釋推薦模型
+      publisher: 國際資料科學與分析期刊
+      releaseDate: Mar 1, 2022
+      url: https://doi.org/10.1007/s41060-022-00300-5
+      summary: |
+        提出結合注意力機制與可解釋性的推薦系統架構，在公開資料集上取得領先成果，並深入探討模型決策的透明性。
+  projects:
+    - name: 即時人流預測系統
+      url: https://github.com/yichun-data/people-flow-forecast
+      description: 整合政府開放資料與天氣資料，預測商圈即時人流，協助零售業者進行營運調度。
+      startDate: Jan 1, 2023
+      endDate: Jun 30, 2023
+      summary: |
+        - 使用 LightGBM 與時間序列特徵，預測準確度達 92%
+        - 部署至 GCP Cloud Run，並提供 REST API 供內部系統串接
+        - 設計資料監控流程，確保模型穩定性
+      keywords:
+        - 時間序列
+        - LightGBM
+        - GCP
+        - 開放資料
+    - name: 自動化機器學習平台
+      url: https://github.com/yichun-data/automl-platform
+      description: 建置可重現的 AutoML 流程，簡化模型訓練與部署。
+      startDate: Mar 1, 2022
+      endDate: Dec 31, 2022
+      summary: |
+        - 以 Kubeflow 與 MLflow 搭建機器學習生命週期管理平台
+        - 支援多團隊協作與模型版本管理，降低 40% 模型上線時間
+        - 整合 CI/CD 流程，提升開發效率與可靠性
+      keywords:
+        - AutoML
+        - Kubeflow
+        - MLflow
+        - CI/CD
+  interests:
+    - name: 閱讀
+      keywords:
+        - 資料科學
+        - 經濟學
+        - 科幻小說
+    - name: 戶外活動
+      keywords:
+        - 登山
+        - 自行車
+        - 路跑
+  volunteer:
+    - organization: 資料科學教育協會
+      url: https://www.datascitw.org
+      position: 志工講師
+      startDate: Jan 1, 2019
+      endDate: Dec 31, 2023
+      summary: |
+        - 協助舉辦資料科學工作坊與線上課程，累計教導超過 500 名學員
+        - 維護開源教材，推廣資料素養教育
+        - 輔導學生完成實作專案，並提供職涯建議
+
 locale:
   language: zh-hant-tw
-layouts:
-  - engine: latex
-    page:
-      showPageNumbers: true
-      paperSize: a4
-      margins:
-        top: 2.5cm
-        bottom: 2.5cm
-        left: 1.5cm
-        right: 1.5cm
-    template: moderncv-banking
-    typography:
-      fontSize: 11pt
-  - engine: docx
-    page:
-      showPageNumbers: true
-      paperSize: a4
-      margins:
-        top: 2.5cm
-        bottom: 2.5cm
-        left: 1.5cm
-        right: 1.5cm
-    typography:
-      fontSize: 11pt
-      lineSpacing: normal
-  - engine: markdown
-  - engine: html
-    template: calm
-    typography:
-      fontSize: 16px

@@ -1,280 +1,240 @@
 content:
   basics:
     name: Lars van den Berg
+    headline: Software Engineer met passie voor schaalbare cloud-native systemen
+    phone: "+31 6 12345678"
     email: lars@vandenberg.dev
-    headline: Softwareontwikkelaar met focus op schaalbare cloudapplicaties
-    phone: +31 6 12345678
-    summary: >
-      - Softwareontwikkelaar met ruim 8 jaar ervaring in het ontwerpen en bouwen
-      van schaalbare webapplicaties
+    url: https://www.larsvandenberg.dev
+    summary: |
+      Software Engineer met ruim 8 jaar ervaring in het ontwerpen en bouwen van
+      schaalbare, cloud-native applicaties. Specialist in backend-ontwikkeling met
+      Python, Java en Go, en uitgebreide ervaring met AWS en Kubernetes.
 
-      - Specialisatie in backendontwikkeling met .NET en Node.js, aangevuld met
-      ervaring in React en TypeScript
-
-      - Ervaren met cloudplatforms als Azure en AWS, CI/CD-pipelines en
-      containerisatie met Docker en Kubernetes
-
-      - Gedreven door clean code, testbaarheid en het verbeteren van
-      developmentprocessen
-
-      - Sterke samenwerker in agile teams, met oog voor zowel techniek als
-      bedrijfswaarde
-    url: https://larsvandenberg.dev
+      - Ontwerpen van event-gedreven microservices met hoge beschikbaarheid
+      - Automatiseren van deployment pipelines met CI/CD en Infrastructure as Code
+      - Sterke focus op codekwaliteit, testbaarheid en maintainability
+      - Ervaren in het begeleiden van junior ontwikkelaars en agile samenwerking
+  location:
+    address: Oudegracht 123
+    city: Utrecht
+    region: Utrecht
+    country: Netherlands
+    postalCode: "3511 AB"
+  profiles:
+    - network: GitHub
+      url: https://github.com/larsvandenberg
+      username: larsvandenberg
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/larsvandenberg
+      username: larsvandenberg
   education:
-    - area: Hbo-ict
-      institution: Hogeschool van Amsterdam
+    - institution: Technische Universiteit Delft
+      url: https://www.tudelft.nl
+      degree: Master
+      area: Informatica
+      score: "8.0"
+      startDate: Sep 1, 2013
+      endDate: Aug 1, 2015
+      courses:
+        - Distributed Systems
+        - Machine Learning
+        - Software Architecture
+        - Big Data Processing
+      summary: |
+        Afstudeeronderzoek gericht op schaalbare, event-gebaseerde architecturen.
+        Ontwikkelde een prototype voor een event-sourcing platform dat gebruikt
+        werd door meerdere onderzoeksgroepen.
+    - institution: Hogeschool Utrecht
+      url: https://www.hu.nl
       degree: Bachelor
+      area: Informatica
+      score: "7.8"
+      startDate: Sep 1, 2010
+      endDate: Aug 1, 2013
       courses:
         - Objectgeoriënteerd programmeren
-        - Databases en SQL
-        - Webdevelopment
+        - Databases
         - Software Engineering
-        - Projectmanagement
-        - Netwerken en security
-      endDate: Jul 1, 2015
-      startDate: Sep 1, 2011
-      summary: >
-        - Afstudeerrichting Software Engineering
-
-        - Afstudeerproject: ontwikkelen van een webshop-platform voor een
-        mkb-bedrijf
-
-        - Minor: Mobile Application Development
-      score: "8.2"
-      url: https://www.hva.nl/
-  awards:
-    - awarder: TechNova B.V.
-      title: TechNova Innovatieprijs
-      date: Dec 1, 2023
-      summary: >
-        Toegekend voor het initiatief om de CI/CD-pijplijn te versnellen en de
-        ontwikkelervaring van het team te verbeteren.
-  certificates:
-    - issuer: Microsoft
-      name: "Microsoft Certified: Azure Developer Associate"
-      date: Jun 1, 2022
-      url: https://learn.microsoft.com/en-us/credentials/certifications/azure-developer/
-    - issuer: Amazon Web Services
-      name: AWS Certified Developer - Associate
-      date: Mar 1, 2020
-      url: https://aws.amazon.com/certification/
-  interests:
-    - name: Wielrennen
-      keywords:
-        - Toertochten
-        - Mountainbiken
-    - name: Technologielezingen
-      keywords:
-        - Meetups
-        - Conferenties
-    - name: Fotografie
-      keywords:
-        - Stadsfotografie
-        - Landschappen
-  languages:
-    - fluency: Native or Bilingual Proficiency
-      language: Dutch
-      keywords:
-        - Moedertaal
-    - fluency: Full Professional Proficiency
-      language: English
-      keywords:
-        - Professioneel niveau
-        - C1/C2
-    - fluency: Limited Working Proficiency
-      language: German
-      keywords:
-        - Basisgesprekken
-  location:
-    city: Amsterdam
-    address: Keizersgracht 123
-    country: Netherlands
-    postalCode: 1012 AB
-    region: Noord-Holland
-  profiles:
-    - network: LinkedIn
-      username: larsvandenberg
-      url: https://www.linkedin.com/in/larsvandenberg
-    - network: GitHub
-      username: larsvdb
-      url: https://github.com/larsvdb
-  projects:
-    - name: dotnet-api-starter
-      startDate: Jan 1, 2023
+        - Webtechnologie
       summary: |
-        - Opgezet als startpunt voor nieuwe microservices binnen TechNova
-        - Bevat configuratie voor health checks, observability en CI/CD
-        - Voorzien van uitgebreide documentatie en voorbeeld-tests
-      description: Een herbruikbaar template voor schaalbare .NET-web-API's met
-        logging, validatie, JWT-authenticatie en Docker-ondersteuning.
+        Bachelorstage uitgevoerd bij een fintech-bedrijf, waar ik een
+        realtime-transactiemonitor bouwde met Java en WebSocket.
+  work:
+    - name: CloudNimbus B.V.
+      url: https://www.cloudnimbus.nl
+      position: Senior Backend Engineer
+      startDate: Feb 1, 2022
+      summary: |
+        - Verantwoordelijk voor de architectuur en ontwikkeling van meerdere event-gedreven microservices
+        - Migreerde een monolithische applicatie naar Kubernetes en AWS EKS
+        - Introduceerde Infrastructure as Code met Terraform, wat de deploymenttijd met 70% verminderde
+        - Begeleidde een team van vijf ontwikkelaars middels code reviews en technische workshops
+        - Werkt nauw samen met productowners om technische roadmap en sprints te bepalen
       keywords:
-        - .NET
-        - Open Source
-        - Docker
-        - RESTful API's
-      url: https://github.com/larsvdb/dotnet-api-starter
-  publications:
-    - name: "Clean Code in .NET: Praktische richtlijnen voor onderhoudbare code"
-      publisher: Medium
-      releaseDate: Apr 1, 2023
-      summary: >
-        - Beschrijft concrete refactoringstechnieken en voorbeelden uit de
-        dagelijkse praktijk
-
-        - Behandelt dependency injection, exception handling en het schrijven
-        van leesbare tests
-
-        - Gebaseerd op ervaringen in agile teams en codebase-migraties
-      url: https://medium.com/@larsvdb/clean-code-in-dotnet-praktische-richtlijnen-voor-onderhoudbare-code
+        - Microservices
+        - Kubernetes
+        - AWS
+        - Terraform
+        - Java
+        - Mentoring
+    - name: DataVault Solutions
+      url: https://www.datavault.nl
+      position: Software Engineer
+      startDate: Jun 1, 2018
+      endDate: Jan 1, 2022
+      summary: |
+        - Ontwikkelde en onderhield een API-platform voor veilige data-uitwisseling
+        - Implementeerde OAuth2 en JWT-authenticatie voor meerdere externe partijen
+        - Optimaliseerde databasequery's, wat leidde tot een significante verlaging van de responstijden
+        - Droeg bij aan de inrichting van CI/CD-pipelines met GitLab CI
+        - Werkte in een multidisciplinair team volgens de Scrum-methodiek
+      keywords:
+        - Python
+        - FastAPI
+        - PostgreSQL
+        - OAuth2
+        - GitLab CI
+    - name: BrightCode
+      url: https://www.brightcode.nl
+      position: Junior Software Engineer
+      startDate: Jul 1, 2016
+      endDate: May 1, 2018
+      summary: |
+        - Ontwikkelde webapplicaties met Java Spring Boot en Angular
+        - Vulde user stories aan met technische ontwerpen en testplannen
+        - Schreef unit- en integratietests om de kwaliteit van de software te waarborgen
+        - Participeerde in dagelijkse stand-ups en sprint retrospectives
+      keywords:
+        - Java
+        - Spring Boot
+        - Angular
+        - JUnit
+        - Scrum
   skills:
-    - level: Expert
-      name: Backendontwikkeling
+    - name: Backend-ontwikkeling
+      level: Expert
       keywords:
-        - C#
-        - .NET
+        - Python
+        - Java
+        - Go
         - Node.js
-        - RESTful API's
-        - SQL
-        - Entity Framework
-    - level: Advanced
-      name: Frontendontwikkeling
+        - Spring Boot
+        - FastAPI
+    - name: Cloud & DevOps
+      level: Advanced
+      keywords:
+        - AWS
+        - Kubernetes
+        - Docker
+        - Terraform
+        - GitHub Actions
+        - ArgoCD
+    - name: Databases
+      level: Advanced
+      keywords:
+        - PostgreSQL
+        - MySQL
+        - MongoDB
+        - Redis
+        - DynamoDB
+    - name: Frontend-ontwikkeling
+      level: Intermediate
       keywords:
         - React
         - TypeScript
-        - HTML
-        - CSS
+        - Tailwind CSS
         - Next.js
-    - level: Advanced
-      name: Cloud & DevOps
+  languages:
+    - language: Dutch
+      fluency: Native or Bilingual Proficiency
       keywords:
-        - Azure
-        - AWS
+        - Moedertaal
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - Cambridge C2
+        - Zakelijk Engels
+    - language: German
+      fluency: Limited Working Proficiency
+      keywords:
+        - Conversational
+  awards:
+    - title: Afstudeerprijs Informatica
+      awarder: Technische Universiteit Delft
+      date: Aug 2015
+      summary: |
+        Ontvangen voor het afstudeeronderzoek naar schaalbare event-gebaseerde
+        systemen, inclusief de publicatie van een bijbehorend prototype als
+        open-source project.
+  certificates:
+    - name: AWS Certified Solutions Architect – Associate
+      issuer: Amazon Web Services
+      date: Mar 2021
+      url: https://www.credly.com/badges/aws-solutions-architect
+    - name: Certified Kubernetes Application Developer
+      issuer: Cloud Native Computing Foundation
+      date: Jun 2022
+      url: https://www.cncf.io/certification/ckad/
+  publications:
+    - name: Event-driven microservices in de praktijk
+      publisher: Java Magazine NL
+      releaseDate: Apr 2020
+      url: https://www.java-magazine.nl/publicaties/event-driven-microservices
+      summary: |
+        Praktijkartikel over het ontwerpen van event-driven microservices, inclusief
+        lessons learned bij de migratie van een legacy-systeem naar een
+        cloud-native architectuur.
+  projects:
+    - name: ContainerCLI
+      url: https://github.com/larsvandenberg/containercli
+      startDate: Jan 2023
+      description: |
+        Open-source command-line tool voor het beheren van Docker-containers.
+        Voorziet in overzicht van actieve containers, logweergave en healthchecks.
+      summary: |
+        Gebouwd in Go met behulp van Cobra en de Docker Engine API. Het project
+        heeft inmiddels meer dan 200 GitHub-sterren en wordt actief gebruikt door
+        ontwikkelaars wereldwijd.
+      keywords:
+        - Go
         - Docker
-        - Kubernetes
-        - Terraform
-        - CI/CD
-    - level: Advanced
-      name: Methodieken
+        - CLI
+        - Cobra
+    - name: Portfolio-website
+      url: https://www.larsvandenberg.dev
+      startDate: Sep 2021
+      endDate: Dec 2021
+      description: |
+        Persoonlijke portfolio-website met projectenoverzicht, blog en
+        contactformulier.
+      summary: |
+        Ontworpen en geïmplementeerd met Next.js, TypeScript en Tailwind CSS.
+        De website scoort 100 op Lighthouse voor prestaties, toegankelijkheid en
+        SEO.
       keywords:
-        - Scrum
-        - Kanban
-        - Clean Code
-        - Test-Driven Development
+        - Next.js
+        - TypeScript
+        - Tailwind CSS
+        - Vercel
+  interests:
+    - name: Duurzaamheid
+      keywords:
+        - Fietsen
+        - Klimaattechnologie
+        - Zonne-energie
+    - name: Technologie
+      keywords:
+        - Open source
+        - Self-hosting
+        - Retrocomputing
   volunteer:
-    - organization: CoderDojo Nederland
-      position: Vrijwilliger en coach
-      startDate: Sep 1, 2019
-      summary: >
-        - Begeleid kinderen en jongeren bij het leren programmeren met Scratch,
-        Python en HTML/CSS
-
-        - Organiseerde maandelijkse workshops en droeg bij aan lesmateriaal
-
-        - Stimuleerde een inclusieve en toegankelijke leeromgeving
-      endDate: Dec 1, 2023
-      url: https://coderdojo.nl
-  work:
-    - name: TechNova B.V.
-      position: Senior Softwareontwikkelaar
-      startDate: Jan 1, 2022
-      summary: >
-        - Ontwerp en implementeer microservices in .NET en Node.js voor een
-        digitaal klantportaal
-
-        - Leid een squad van 4 ontwikkelaars; verantwoordelijk voor code
-        reviews, architectuurkeuzes en kennisoverdracht
-
-        - Introduceerde event-driven architectuur met Azure Service Bus, wat de
-        verwerkingstijd met 40% verminderde
-
-        - Richtte CI/CD-pipelines in met Azure DevOps en geautomatiseerde
-        deployments naar Kubernetes
-
-        - Werk samen met product owners en UX-designers om requirements te
-        vertalen naar technische oplossingen
-      keywords:
-        - Microservices
-        - .NET
-        - Azure
-        - Kubernetes
-        - Event-Driven Architecture
-        - CI/CD
-        - Teamlead
-      url: https://www.technova.nl
-    - name: FinTech Solutions Nederland
-      position: Softwareontwikkelaar
-      startDate: Jul 1, 2018
-      summary: >
-        - Ontwikkelde en onderhield RESTful API's voor een online betaalplatform
-        met meer dan 200.000 gebruikers
-
-        - Werkt in een agile team met tweewekelijkse releases en sprints
-
-        - Implementeerde OAuth 2.0 en PKCE voor veilige authenticatie en
-        autorisatie
-
-        - Schreef unit- en integratietests en verhoogde de testcoverage naar 85%
-
-        - Migreerde on-premise applicaties naar AWS (EC2, S3, RDS)
-      endDate: Dec 31, 2021
-      keywords:
-        - RESTful API's
-        - OAuth 2.0
-        - AWS
-        - Scrum
-        - Testen
-        - C#
-      url: https://www.fintechsolutions.nl
-    - name: WebWijs B.V.
-      position: Junior Softwareontwikkelaar
-      startDate: Aug 1, 2015
-      summary: >
-        - Ontwikkelde responsive websites en webapplicaties met React,
-        JavaScript en PHP
-
-        - Onderhield en breidde een CMS-platform uit voor diverse klanten
-
-        - Optimaliseerde laadtijden en SEO, wat leidde tot betere vindbaarheid
-        bij projecten
-
-        - Nam deel aan dagelijkse stand-ups en sprintplanningen
-      endDate: Jun 30, 2018
-      keywords:
-        - React
-        - JavaScript
-        - PHP
-        - WordPress
-        - SEO
-      url: https://www.webwijs.nl
+    - organization: NL Design System
+      url: https://www.nldesignsystem.nl
+      position: Open-source bijdrager
+      startDate: Jan 2023
+      summary: |
+        Draag bij aan toegankelijke, herbruikbare UI-componenten voor Nederlandse
+        overheidswebsites. Geef feedback op code, schrijf documentatie en lever
+        verbeteringen aan op het gebied van toegankelijkheid.
 locale:
   language: nl
-layouts:
-  - engine: latex
-    page:
-      showPageNumbers: true
-      paperSize: a4
-      margins:
-        top: 2.5cm
-        bottom: 2.5cm
-        left: 1.5cm
-        right: 1.5cm
-    template: moderncv-banking
-    typography:
-      fontSize: 11pt
-  - engine: docx
-    page:
-      showPageNumbers: true
-      paperSize: a4
-      margins:
-        top: 2.5cm
-        bottom: 2.5cm
-        left: 1.5cm
-        right: 1.5cm
-    typography:
-      fontSize: 11pt
-      lineSpacing: normal
-  - engine: markdown
-  - engine: html
-    template: calm
-    typography:
-      fontSize: 16px

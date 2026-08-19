@@ -1,252 +1,215 @@
 content:
   basics:
-    name: 陳志明
-    email: chiming.chan@example.com
-    headline: 資深軟件工程師（全端開發）
-    phone: +852 9123 4567
+    name: 陳俊傑
+    headline: '軟件工程師 | 全端開發 | 雲端應用'
+    phone: '+852 9123 4567'
+    email: chun.kit.chan@example.com
+    url: https://ckchan.dev
     summary: |
-      - 擁有超過 8 年軟件開發經驗的資深軟件工程師，專注於全端網頁應用程式及雲端解決方案
-      - 精通 TypeScript、Node.js、React、Python 等主流技術，並具備微服務及分散式系統設計經驗
-      - 重視代碼品質、測試驅動開發與 CI/CD，能在敏捷環境下高效交付可擴展的產品
-      - 善於與產品、設計及工程團隊協作，能將複雜業務需求轉化為簡潔可靠的技術方案
-    url: https://chimingchan.dev
+      具超過 5 年經驗的軟件工程師，專注於全端開發、微服務架構及雲端應用。擅長以 TypeScript、Python 及 Go 構建高效且可擴展的系統，並熱衷於透過最佳實踐及自動化測試提升軟件品質。
+
+      - 曾帶領團隊由單體架構遷移至微服務，提升系統可靠性和部署效率。
+      - 熟悉 AWS 及 Kubernetes，擁有大型分散式系統設計及維運經驗。
+      - 具備良好跨部門溝通與項目管理能力，能將業務需求轉化為實際技術方案。
+  location:
+    city: 香港
+    region: 香港
+    country: Hong Kong
+  profiles:
+    - network: GitHub
+      url: https://github.com/ckchan-dev
+      username: ckchan-dev
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/ckchan-dev
+      username: ckchan-dev
   education:
-    - area: 計算機科學
-      institution: 香港科技大學
+    - institution: 香港科技大學
+      url: https://www.hkust.edu.hk
       degree: Bachelor
+      area: 計算機科學
+      score: 3.6/4.0
+      startDate: 2014-09-01
+      endDate: 2018-06-30
       courses:
         - 數據結構與算法
         - 操作系統
-        - 計算機網絡
         - 數據庫系統
+        - 計算機網絡
         - 軟件工程
-        - 人工智能
-        - 編譯器原理
-        - 離散數學
-      endDate: May 30, 2016
-      startDate: Sep 1, 2012
+        - 分散式系統
+        - 編譯原理
       summary: |
-        - 主修計算機科學，副修數學，畢業成績 GPA 3.7/4.0
-        - 參與分散式系統及機器學習相關課程項目，具備扎實的理論基礎與實踐能力
-        - 曾擔任「程式設計入門」課程教學助理，協助批改作業及指導學生
-      score: 3.7/4.0
-      url: https://www.hkust.edu.hk/
-  awards:
-    - awarder: 智雲科技有限公司
-      title: 傑出員工獎
-      date: Dec 2022
+        主修計算機科學，專注於軟件工程及系統設計。畢業項目為「基於區塊鏈的供應鏈追蹤系統」，獲得系內最佳畢業項目獎。
+  work:
+    - name: 星辰科技（香港）有限公司
+      url: https://www.startechhk.com
+      position: 高級軟件工程師
+      startDate: 2022-03-01
       summary: |
-        表揚在年度核心系統遷移項目中的卓越領導能力及貢獻，成功帶領團隊提前完成遷移並達成可靠性目標。
-  certificates:
-    - issuer: Amazon Web Services
-      name: AWS 認證開發人員 – 助理級
-      date: Mar 2021
-      url: https://aws.amazon.com/certification/
-    - issuer: Cloud Native Computing Foundation
-      name: CKA – Kubernetes 管理員認證
-      date: Nov 2021
-      url: https://www.cncf.io/certification/cka/
-  interests:
-    - name: 跑步
+        - 主導團隊為金融科技客戶設計及開發分散式交易系統，支援每日數百萬宗交易。
+        - 將單體應用遷移至 Kubernetes 微服務架構，部署時間由 45 分鐘縮短至 8 分鐘。
+        - 推行 CI/CD 流程及基礎設施即程式碼（IaC），提升環境一致性及交付效率。
+        - 與產品經理及業務單位緊密合作，將複雜業務需求拆解為可執行的技術方案。
+        - 指導初級工程師進行代碼審查及系統設計，提升團隊整體工程文化。
       keywords:
-        - 馬拉松
-        - 越野跑
-    - name: 科技閱讀
+        - 微服務
+        - Kubernetes
+        - 系統設計
+        - 團隊管理
+        - 金融科技
+    - name: 藍海軟件開發有限公司
+      url: https://www.blueocean-soft.com.hk
+      position: 軟件工程師
+      startDate: 2019-07-01
+      endDate: 2022-02-28
+      summary: |
+        - 負責開發及維護 B2B 電子商貿平台的前端及後端功能，服務超過 500 家企業客戶。
+        - 使用 React、Node.js 及 PostgreSQL 構建實時庫存管理系統，提升營運效率 30%。
+        - 設計並整合 RESTful API 至第三方物流及支付服務，簡化訂單處理流程。
+        - 參與 Scrum 團隊，進行衝刺規劃、代碼審查及單元測試，確保產品質素。
       keywords:
-        - 軟件架構
-        - 人工智能
-  languages:
-    - fluency: Native or Bilingual Proficiency
-      language: Cantonese
-      keywords:
-        - 母語
-    - fluency: Full Professional Proficiency
-      language: English
-      keywords:
-        - IELTS 7.5
-    - fluency: Full Professional Proficiency
-      language: Mandarin
-      keywords:
-        - 普通話水平測試二級甲等
-  location:
-    city: 香港
-    address: 九龍觀塘道 388 號 18 樓
-    country: Hong Kong
-    region: 九龍
-  profiles:
-    - network: GitHub
-      username: chimingchan
-      url: https://github.com/chimingchan
-    - network: LinkedIn
-      username: chimingchan
-      url: https://www.linkedin.com/in/chimingchan
-  projects:
-    - name: OpenAuth Lite
-      startDate: Jan 1, 2021
-      summary: >
-        - 以 TypeScript 及 Node.js 開發，提供授權碼流程、client credentials 及 refresh token
-        支援
-
-        - 使用 PostgreSQL 儲存用戶及 client 資料，並透過 Redis 快取 session 提升效能
-
-        - 提供完整 API 文檔及 Docker Compose 設定，方便開發者本地部署及測試
-      description: 一個輕量級開源身份認證服務，支援 OAuth 2.0 及 OpenID Connect。
-      endDate: Mar 31, 2021
-      keywords:
-        - OAuth
-        - OpenID Connect
-        - TypeScript
+        - React
         - Node.js
         - PostgreSQL
-      url: https://github.com/chimingchan/openauth-lite
-    - name: 實時協作看板 DevBoard
-      startDate: Jun 1, 2022
-      summary: |
-        - 採用 React、Redux Toolkit 及 WebSocket 實現任務卡片的實時同步與拖放操作
-        - 後端以 Express.js 及 MongoDB 建構，使用 JWT 進行身份驗證及授權
-        - 設計可擴展的任務狀態機，支援自訂 workflow，並以 Socket.IO 處理衝突與重連機制
-      description: 支援多用戶實時協作的敏捷開發看板工具。
-      endDate: Sep 30, 2022
-      keywords:
-        - React
-        - WebSocket
-        - Express.js
-        - MongoDB
-        - JWT
-      url: https://github.com/chimingchan/devboard
-  publications:
-    - name: 基於微服務架構的金融交易系統設計模式
-      publisher: 香港計算機學會期刊
-      releaseDate: May 2019
-      summary: |
-        探討金融交易系統中採用微服務架構的優點與挑戰，提出一套包括服務拆分、數據一致性及故障隔離的設計模式，並以真實案例驗證其效果。
-      url: https://www.hkcs.org.hk/journal
+        - RESTful API
+        - Scrum
   skills:
-    - level: Expert
-      name: 全端開發
+    - name: 程式語言
+      level: Expert
       keywords:
         - TypeScript
-        - Node.js
+        - Python
+        - Go
+        - Java
+        - 'C#'
+        - SQL
+    - name: 前端開發
+      level: Advanced
+      keywords:
         - React
+        - Vue.js
         - Next.js
-        - GraphQL
+        - HTML5
+        - CSS3
         - Tailwind CSS
-    - level: Advanced
-      name: 雲端及 DevOps
+    - name: 後端開發
+      level: Expert
+      keywords:
+        - Node.js
+        - Express
+        - Django
+        - Gin
+        - RESTful API
+        - GraphQL
+    - name: 雲端與 DevOps
+      level: Advanced
       keywords:
         - AWS
         - Docker
         - Kubernetes
         - Terraform
-        - Argo CD
-        - GitHub Actions
-    - level: Advanced
-      name: 數據庫
+        - CI/CD
+        - Prometheus
+        - Grafana
+    - name: 數據庫
+      level: Advanced
       keywords:
         - PostgreSQL
         - MySQL
         - MongoDB
         - Redis
-        - SQL
-    - level: Advanced
-      name: 系統設計
+        - Elasticsearch
+  languages:
+    - language: Chinese
+      fluency: Native or Bilingual Proficiency
       keywords:
-        - Microservices
-        - Distributed Systems
-        - Message Queue
-        - Event-Driven
-        - RESTful API
-  volunteer:
-    - organization: 香港程式教育協會
-      position: 義務導師
-      startDate: Jan 1, 2018
-      summary: |
-        - 定期到本地中學舉辦編程工作坊，教授 Python 及 Scratch
-        - 協助設計及籌劃年度「全港中學生編程挑戰賽」
-        - 透過線上平台為學生提供程式疑難解答及學習資源
-      url: https://www.code.org.hk
-  work:
-    - name: 智雲科技有限公司
-      position: 高級軟件工程師
-      startDate: Jul 1, 2020
-      summary: |
-        - 主導三個核心產品的後端系統重構，將單體架構遷移至 Kubernetes 微服務架構，服務可用性提升至 99.99%
-        - 帶領 5 人團隊開發及維護客戶管理系統，採用 React、GraphQL 及 PostgreSQL，支援超過 10 萬名用戶
-        - 制定及推行程式碼審查與自動化測試策略，將單元測試覆蓋率由 45% 提升至 85%
-        - 透過引入 Terraform 及 Argo CD 完善 CI/CD 流程，令部署時間由每週一次縮短至每日多次
+        - 粵語（母語）
+        - 普通話（流利）
+        - 繁體中文寫作
+    - language: English
+      fluency: Full Professional Proficiency
       keywords:
-        - TypeScript
-        - Node.js
+        - 'HKDSE 英文 5*'
+        - IELTS 7.5
+  awards:
+    - title: 院長嘉許名單
+      date: 2016-12-01
+      awarder: 香港科技大學
+      summary: |
+        於 2016-2017 學年因學業成績優異而獲列入院長嘉許名單。
+    - title: 最佳畢業項目獎
+      date: 2018-06-01
+      awarder: 香港科技大學
+      summary: |
+        畢業項目「基於區塊鏈的供應鏈追蹤系統」獲評為年度最佳計算機科學畢業項目。
+  certificates:
+    - name: AWS 解決方案架構師 – 助理級
+      issuer: Amazon Web Services
+      date: 2021-05-01
+      url: https://aws.amazon.com/certification/
+    - name: Certified Kubernetes Application Developer
+      issuer: CNCF
+      date: 2022-08-01
+      url: https://www.cncf.io/certification/ckad/
+  publications:
+    - name: 以領域驅動設計提升微服務系統可維護性之研究
+      publisher: 香港軟件工程協會期刊
+      releaseDate: 2023-10-01
+      url: https://example.com/publications/ddd-microservices
+      summary: |
+        探討如何運用領域驅動設計（DDD）於微服務劃分及業務邏輯建模，並以實際案例驗證其對系統可維護性、測試性及團隊協作效率的正面影響。
+  projects:
+    - name: 即時協作文檔平台
+      url: https://github.com/ckchan-dev/realtime-collab-doc
+      description: 一個支援多人實時協作編輯的文檔平台，採用 CRDT 演算法自動合併衝突。
+      startDate: 2022-06-01
+      endDate: 2022-10-31
+      summary: |
+        - 以 TypeScript、React 及 WebSocket 開發，支援離線編輯及自動同步。
+        - 使用 Yjs CRDT 演算法處理多端同時編輯的衝突，確保一致性。
+        - 加入操作歷史及版本回溯功能，提升協作效率與用戶體驗。
+      keywords:
         - React
+        - TypeScript
+        - WebSocket
+        - CRDT
+        - Yjs
+    - name: 容器化微服務監控系統
+      url: https://github.com/ckchan-dev/k8s-monitoring-platform
+      description: 基於 Kubernetes 的微服務監控及日誌聚合平台。
+      startDate: 2021-09-01
+      endDate: 2022-01-31
+      summary: |
+        - 整合 Prometheus、Grafana 與 Loki，提供多租戶的即時監控告警。
+        - 自訂 Helm Chart 簡化部署流程，令新服務接入監控只需數分鐘。
+        - 設計告警規則及儀表板，協助團隊快速定位系統異常。
+      keywords:
         - Kubernetes
-        - Microservices
-        - CI/CD
-        - AWS
-      url: https://www.zhiyuntech.com.hk
-    - name: 卓越金融科技有限公司
-      position: 軟件工程師
-      startDate: Aug 1, 2017
-      summary: |
-        - 開發及維護電子交易平台的前後端功能，以 Java Spring Boot 及 Angular 構建高頻交易介面
-        - 設計並優化 MySQL 及 Redis 數據存取層，將查詢響應時間平均降低 40%
-        - 與風控團隊合作實現實時交易監控系統，透過消息隊列處理每日逾百萬筆交易事件
-        - 參與敏捷開發流程，定期進行 sprint 規劃及回顧，持續改善團隊交付效率
-      endDate: Jun 30, 2020
+        - Prometheus
+        - Grafana
+        - Loki
+        - Helm
+  interests:
+    - name: 科技創新
       keywords:
-        - Java
-        - Spring Boot
-        - Angular
-        - MySQL
-        - Redis
-        - Kafka
-        - Docker
-      url: https://www.excellencefintech.com.hk
-    - name: 初創網絡科技有限公司
-      position: 程式設計員
-      startDate: Jun 1, 2016
-      summary: |
-        - 負責開發及維護多個中小企網站及內容管理系統，支援客戶自訂版面及功能
-        - 使用 JavaScript、Python 及 MongoDB 構建伺服器端應用程式，並整合第三方 API
-        - 配合設計師進行響應式網頁開發，確保跨瀏覽器及流動裝置的用戶體驗
-        - 參與代碼部署及伺服器配置，熟悉 Linux 環境及 Shell 指令操作
-      endDate: Jul 31, 2017
+        - 開源軟件
+        - 區塊鏈
+        - 人工智能
+    - name: 戶外活動
       keywords:
-        - JavaScript
-        - Python
-        - MongoDB
-        - Express.js
-        - HTML/CSS
-        - Linux
-      url: https://www.initwebtech.com.hk
+        - 遠足
+        - 露營
+        - 攝影
+  volunteer:
+    - organization: 香港軟件開發者社群
+      url: https://hkdevcommunity.org
+      position: 技術導師
+      startDate: 2020-01-01
+      endDate: 2023-12-31
+      summary: |
+        - 定期主持 Web 開發工作坊及編程入門講座，協助初學者學習現代前端技術。
+        - 為開源項目提供代碼審查及技術諮詢，促進本地開發者社群交流。
+        - 籌辦年度黑客松活動，吸引超過 200 名參與者。
+
 locale:
   language: zh-hant-hk
-layouts:
-  - engine: latex
-    page:
-      showPageNumbers: true
-      paperSize: a4
-      margins:
-        top: 2.5cm
-        bottom: 2.5cm
-        left: 1.5cm
-        right: 1.5cm
-    template: moderncv-banking
-    typography:
-      fontSize: 11pt
-  - engine: docx
-    page:
-      showPageNumbers: true
-      paperSize: a4
-      margins:
-        top: 2.5cm
-        bottom: 2.5cm
-        left: 1.5cm
-        right: 1.5cm
-    typography:
-      fontSize: 11pt
-      lineSpacing: normal
-  - engine: markdown
-  - engine: html
-    template: calm
-    typography:
-      fontSize: 16px

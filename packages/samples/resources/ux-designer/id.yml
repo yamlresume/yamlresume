@@ -1,260 +1,199 @@
 content:
   basics:
-    name: Rina Andriani Sutanto
-    email: rina.sutanto@email.co.id
-    headline: Desainer UX Senior | Spesialis Produk Digital
-    phone: +62 812 3456 7890
-    summary: >
-      Desainer UX berpengalaman dengan lebih dari 6 tahun membangun produk
-      digital yang berpusat pada pengguna. Ahli dalam melakukan riset pengguna,
-      membuat wireframe, prototype interaktif, hingga pengujian kegunaan untuk
-      memastikan solusi desain memenuhi kebutuhan bisnis dan pengguna.
-
-
-      Memiliki rekam jejak terbukti dalam meningkatkan metrik keterlibatan
-      pengguna dan mengurangi tingkat kesalahan tugas melalui pendekatan desain
-      berbasis data. Terbiasa berkolaborasi dengan tim produk, engineer, dan
-      stakeholder dalam lingkungan Agile untuk menghadirkan pengalaman yang
-      seamless di berbagai platform.
-    url: https://rinaandriani.myportfolio.com
-  education:
-    - area: Desain Komunikasi Visual
-      institution: Universitas Indonesia
-      degree: Bachelor
-      courses:
-        - Interaksi Manusia dan Komputer
-        - Desain Antarmuka Pengguna
-        - Metodologi Riset Desain
-        - Tipografi dan Komunikasi Visual
-        - Desain Informasi dan Visualisasi Data
-      endDate: Jul 1, 2018
-      startDate: Sep 1, 2014
-      summary: >
-        Fokus studi pada bidang desain interaksi dan pengalaman pengguna. Aktif
-        dalam organisasi desain kampus dan berpartisipasi dalam berbagai
-        kompetisi desain nasional.
-      score: "3.82"
-      url: https://www.ui.ac.id
-  awards:
-    - awarder: Asosiasi Desainer Indonesia
-      title: Pemenang Kompetisi Desain UX Nasional
-      date: Nov 2021
-      summary: >
-        Meraih juara pertama dalam kompetisi desain pengalaman pengguna tingkat
-        nasional dengan proyek solusi kesehatan digital untuk daerah terpencil.
-  certificates:
-    - issuer: Coursera
-      name: Google UX Design Professional Certificate
-      date: Jun 2020
-      url: https://coursera.org/verify/professional-cert/google-ux-design
-    - issuer: Human Factors International
-      name: Certified Usability Analyst
-      date: Sep 2021
-      url: https://www.humanfactors.com/certification
-  interests:
-    - name: Desain dan Seni
-      keywords:
-        - Fotografi
-        - Ilustrasi Digital
-        - Tipografi
-    - name: Komunitas
-      keywords:
-        - Mentoring
-        - Design Talk
-        - Volunteering
-  languages:
-    - fluency: Native or Bilingual Proficiency
-      language: Indonesian
-      keywords:
-        - Penutur Asli
-    - fluency: Full Professional Proficiency
-      language: English
-      keywords:
-        - TOEFL 105
-        - IELTS 7.0
+    name: Sari Wulandari
+    headline: UX Designer Berfokus pada Riset Pengguna dan Desain Inklusif
+    phone: "+62 812-3456-7890"
+    email: sari.wulandari@email.com
+    url: https://sariwulandari.design
+    summary: |
+      - UX Designer dengan lebih dari 6 tahun pengalaman merancang produk digital yang berpusat pada pengguna untuk industri fintech, kesehatan, dan e-commerce.
+      - Terampil dalam menjalankan riset pengguna, usability testing, wireframing, prototyping, dan membangun design system yang konsisten.
+      - Berpengalaman berkolaborasi dengan product manager, engineer, dan stakeholder untuk menghadirkan solusi yang memenuhi kebutuhan bisnis dan pengguna.
+      - Memiliki pemahaman kuat tentang prinsip aksesibilitas dan desain inklusif, serta terbiasa menggunakan Figma, Sketch, dan tools riset seperti Maze dan Hotjar.
   location:
+    address: Jl. Jenderal Sudirman No. 12
     city: Jakarta Selatan
-    address: Jl. Sudirman No. 45, Karet Semanggi
-    country: Indonesia
-    postalCode: "12930"
     region: DKI Jakarta
+    country: Indonesia
+    postalCode: "12190"
   profiles:
     - network: LinkedIn
-      username: rinaandrianisutanto
-      url: https://linkedin.com/in/rinaandrianisutanto
-    - network: Dribbble
-      username: rinaandriani
-      url: https://dribbble.com/rinaandriani
+      url: https://www.linkedin.com/in/sariwulandari
+      username: sariwulandari
     - network: Behance
-      username: rinaandriani
-      url: https://behance.net/rinaandriani
-  projects:
-    - name: Redesign Aplikasi Kesehatan SehatKu
-      startDate: Jan 2023
-      summary: >
-        - Melakukan riset komprehensif dengan 30+ responden untuk memahami pain
-        point dalam konsultasi daring
-
-        - Merancang ulang alur pemesanan janji temu dokter yang mengurangi waktu
-        penyelesaian tugas sebesar 40%
-
-        - Mengimplementasikan fitur aksesibilitas seperti voice command dan text
-        scaling untuk penyandang disabilitas
-      description: Redesign end-to-end aplikasi telemedicine untuk meningkatkan
-        aksesibilitas pengguna
-      endDate: Jun 2023
+      url: https://www.behance.net/sariwulandari
+      username: sariwulandari
+  education:
+    - institution: Institut Teknologi Bandung
+      url: https://www.itb.ac.id
+      degree: Bachelor
+      area: Desain Produk
+      score: "3.78/4.00"
+      startDate: Aug 1, 2012
+      endDate: Jul 1, 2016
+      courses:
+        - Interaksi Manusia dan Komputer
+        - Psikologi Desain
+        - Desain Antarmuka Digital
+        - Metode Riset Desain
+        - Desain Berbasis Bukti
+        - Manajemen Proyek Desain
+      summary: |
+        - Mempelajari dasar-dasar desain produk, termasuk ergonomi, estetika, dan pengalaman pengguna.
+        - Menyelesaikan proyek akhir tentang aplikasi mobile untuk lansia, yang menjadi fondasi minat pada desain inklusif.
+        - Aktif dalam organisasi mahasiswa desain dan menjadi asisten laboratorium untuk mata kuliah interaksi manusia dan komputer.
+  work:
+    - name: PT Finansial Nusantara
+      url: https://www.finansialnusantara.co.id
+      position: Senior UX Designer
+      startDate: Jan 2022
+      summary: |
+        - Memimpin proses desain end-to-end untuk aplikasi mobile perbankan dengan 5 juta pengguna aktif.
+        - Membangun dan mengelola design system bernama "Aksara" yang digunakan oleh 12 tim produk, meningkatkan konsistensi desain hingga 40%.
+        - Melakukan riset pengguna secara berkala, termasuk depth interview dan usability testing dengan responden dari berbagai segmen.
+        - Berkolaborasi dengan product manager dan engineer untuk memprioritaskan perbaikan UX berdasarkan data analitik dan feedback pengguna.
+        - Mentoring tiga desainer junior dan mengadakan workshop desain internal setiap bulan.
+      keywords:
+        - Riset Pengguna
+        - Sistem Desain
+        - Pengujian Kegunaan
+        - Perbankan Mobile
+        - Mentoring Desain
+        - Figma
+    - name: PT Kesehatan Digital Indonesia
+      url: https://www.kesehatandigital.id
+      position: Product Designer
+      startDate: Mar 2019
+      endDate: Dec 2021
+      summary: |
+        - Merancang pengalaman pengguna untuk aplikasi telemedicine dan platform manajemen rekam medis.
+        - Menyusun user journey map dan service blueprint untuk mengidentifikasi titik perbaikan layanan.
+        - Mengembangkan prototipe interaktif menggunakan Figma dan menjalankan usability testing dengan 100+ partisipan.
+        - Meningkatkan tingkat penyelesaian alur pendaftaran pasien dari 58% menjadi 82% melalui penyederhanaan form dan microcopy.
+        - Menjalin komunikasi erat dengan tim klinis dan engineering untuk memastikan kepatuhan terhadap regulasi kesehatan.
       keywords:
         - Telemedicine
-        - Accessibility
-        - Mobile App
-        - Redesign
-      url: https://rinaandriani.myportfolio.com/sehatku
-  publications:
-    - name: Meningkatkan Adopsi Digital pada Generasi Silver melalui Pendekatan Desain
-        Inklusif
-      publisher: Jurnal Desain dan Teknologi Indonesia
-      releaseDate: Mar 2023
-      summary: >
-        - Menganalisis tantangan yang dihadapi pengguna lansia dalam menggunakan
-        aplikasi digital
-
-        - Memproposikan kerangka kerja desain inklusif yang mempertimbangkan
-        aspek kognitif, motorik, dan perceptual
-
-        - Menyajikan hasil usability testing pada prototipe aplikasi kesehatan
-        yang dirancang khusus untuk generasi silver
-      url: https://jdti.ui.ac.id/article/desain-inklusif-silver
-  skills:
-    - level: Expert
-      name: UX Research
+        - Peta Perjalanan Pengguna
+        - Pembuatan Prototipe
+        - Tulisan Antarmuka
+        - Regulasi Kesehatan
+    - name: PT Media Kreasi Nusantara
+      url: https://www.mediakreasi.co.id
+      position: Junior UX Designer
+      startDate: Sep 2016
+      endDate: Feb 2019
+      summary: |
+        - Mendukung desain antarmuka untuk portal berita dan aplikasi media sosial internal.
+        - Membantu pelaksanaan user testing dan menyusun laporan temuan untuk tim produk.
+        - Membuat wireframe dan mockup untuk fitur-fitur baru dengan pendekatan mobile-first.
+        - Berpartisipasi dalam sprint planning dan daily stand-up untuk memastikan kelancaran iterasi desain.
       keywords:
-        - User Interview
-        - Usability Testing
-        - Survey Design
-        - Persona
-        - Journey Map
-    - level: Expert
-      name: UI Design & Prototyping
-      keywords:
-        - Figma
+        - Wireframe
+        - Pengujian Pengguna
+        - Mobile-First
+        - Agile
         - Sketch
-        - Adobe XD
-        - Prototyping
-        - Wireframing
-    - level: Advanced
-      name: Design Operations
+  languages:
+    - language: Indonesian
+      fluency: Native or Bilingual Proficiency
       keywords:
-        - Design System
-        - DesignOps
-        - Facilitation
-        - Workshop
+        - Bahasa sehari-hari dan formal
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - TOEFL ITP 620
+        - IELTS 7.0
+  skills:
+    - name: Riset Pengguna
+      level: Expert
+      keywords:
+        - Wawancara Mendalam
+        - Survei
+        - Analisis Kompetitor
+        - Persona
+        - Peta Perjalanan Pengguna
+    - name: Desain Interaksi
+      level: Expert
+      keywords:
+        - Wireframe
+        - Pembuatan Prototipe
+        - Desain Interaksi
+        - Interaksi Mikro
+        - Aksesibilitas
+    - name: Sistem Desain
+      level: Advanced
+      keywords:
+        - Token Desain
+        - Komponen UI
+        - Dokumentasi
+        - Pustaka Figma
+    - name: Pengujian dan Analitik
+      level: Advanced
+      keywords:
+        - Pengujian Kegunaan
+        - Pengujian A/B
+        - Hotjar
+        - Maze
+        - Google Analytics
+  awards:
+    - title: Penghargaan Desain Inklusif 2023
+      awarder: Asosiasi UX Indonesia
+      date: Nov 2023
+      summary: |
+        Diberikan kepada perancang yang berhasil menghadirkan solusi digital yang dapat diakses oleh pengguna dengan berbagai kemampuan, termasuk lansia dan penyandang disabilitas.
+  certificates:
+    - name: Google UX Design Professional Certificate
+      issuer: Google
+      date: Aug 2021
+      url: https://www.coursera.org/professional-certificates/google-ux-design
+  publications:
+    - name: Meningkatkan Kepercayaan Pengguna melalui Desain Transparan pada Aplikasi
+        Finansial
+      publisher: Medium
+      releaseDate: Jun 2023
+      url: https://medium.com/@sariwulandari/meningkatkan-kepercayaan-pengguna
+      summary: |
+        Artikel ini membahas pentingnya transparansi informasi dan kontrol pengguna dalam aplikasi finansial, dilengkapi studi kasus dan rekomendasi praktis untuk desainer produk.
+  projects:
+    - name: SehatKu
+      url: https://www.sehatku.id
+      description: Aplikasi mobile untuk konsultasi dokter dan pemantauan kesehatan pasien.
+      startDate: Apr 2020
+      endDate: Nov 2021
+      summary: |
+        - Merancang alur konsultasi online yang intuitif, termasuk pemilihan dokter, jadwal, dan pembayaran dalam satu aplikasi.
+        - Membangun komponen desain yang dapat digunakan ulang untuk mempercepat pengembangan fitur baru.
+        - Berkolaborasi dengan tim medis untuk memastikan informasi kesehatan disajikan secara jelas dan tidak menyesatkan.
+      keywords:
+        - Kesehatan
+        - Aplikasi Mobile
+        - Telemedicine
+        - Desain Inklusif
+  interests:
+    - name: Membaca
+      keywords:
+        - Buku desain
+        - Fiksi sains
+        - Jurnal UX
+    - name: Fotografi
+      keywords:
+        - Street photography
+        - Komposisi visual
+        - Pengeditan foto
+    - name: Komunitas
+      keywords:
+        - UX Indonesia
+        - Mentoring
+        - Workshop desain
   volunteer:
-    - organization: Komunitas Desainer UX Indonesia
-      position: Mentor Desain UX
+    - organization: Komunitas UX Indonesia
+      url: https://www.uxindo.id
+      position: Mentor Desain
       startDate: Jan 2022
-      summary: >
-        - Membimbing calon desainer UX melalui program mentoring berkala dengan
-        fokus pada portfolio review dan persiapan karir
-
-        - Menyelenggarakan workshop gratis mengenai dasar-dasar riset pengguna
-        dan prototyping untuk mahasiswa dan fresh graduate
-
-        - Berkontribusi dalam penyusunan kurikulum pembelajaran desain berbasis
-        komunitas yang telah membantu 200+ peserta
-      url: https://uxindonesia.org
-  work:
-    - name: PT Inovasi Digital Nusantara
-      position: Lead UX Designer
-      startDate: Jan 1, 2022
-      summary: >
-        - Memimpin tim desain yang terdiri dari 5 orang desainer UX/UI dalam
-        pengembangan produk digital untuk klien enterprise
-
-        - Merancang dan mengimplementasikan design system komprehensif yang
-        meningkatkan konsistensi visual dan mengurangi waktu pengembangan
-        sebesar 30%
-
-        - Melakukan riset pengguna secara berkala termasuk wawancara mendalam,
-        survei, dan usability testing untuk mengidentifikasi pain point pengguna
-
-        - Berkolaborasi erat dengan product manager dan tim engineer dalam
-        sprint planning dan grooming untuk memastikan feasibilitas desain
-      keywords:
-        - Leadership
-        - Design System
-        - User Research
-        - Enterprise
-      url: https://inovasidigital.co.id
-    - name: PT Teknologi Karya Abadi
-      position: Desainer UX Senior
-      startDate: Mar 1, 2019
-      summary: >
-        - Bertanggung jawab atas pengalaman pengguna aplikasi fintech dengan
-        lebih dari 2 juta pengguna aktif bulanan
-
-        - Melakukan redesign total alur pembayaran yang berhasil meningkatkan
-        tingkat konversi sebesar 25% dan mengurangi drop-off rate
-
-        - Membuat prototype interaktif tingkat tinggi menggunakan Figma untuk
-        keperluan user testing dan stakeholder presentation
-
-        - Mengadopsi pendekatan data-driven design dengan menganalisis heatmap,
-        session recording, dan analitik pengguna
-      endDate: Dec 1, 2021
-      keywords:
-        - Fintech
-        - Conversion
-        - Prototyping
-        - Data-Driven
-      url: https://tekabadi.id
-    - name: Studio Kreasi Digital
-      position: Desainer UX
-      startDate: Aug 1, 2018
-      summary: >
-        - Mendesain antarmuka dan pengalaman pengguna untuk berbagai proyek
-        aplikasi mobile dan website e-commerce
-
-        - Membantu klien UMKM dalam memahami kebutuhan pengguna melalui riset
-        sederhana dan workshop desain
-
-        - Menghasilkan wireframe, mockup, dan prototype yang siap untuk handover
-        ke tim pengembangan
-      endDate: Feb 1, 2019
-      keywords:
-        - E-Commerce
-        - Mobile App
-        - Wireframing
-        - UMKM
-      url: https://studiokreasidigital.com
+      endDate: Dec 2023
+      summary: |
+        - Menjadi mentor untuk desainer muda dan profesional yang ingin beralih ke bidang UX.
+        - Menyusun materi lokakarya tentang riset pengguna, design thinking, dan penyusunan portofolio.
+        - Membantu menyelenggarakan acara tahunan "UX Fair" yang dihadiri lebih dari 500 peserta.
 locale:
   language: id
-layouts:
-  - engine: latex
-    page:
-      showPageNumbers: true
-      paperSize: a4
-      margins:
-        top: 2.5cm
-        bottom: 2.5cm
-        left: 1.5cm
-        right: 1.5cm
-    template: moderncv-banking
-    typography:
-      fontSize: 11pt
-  - engine: docx
-    page:
-      showPageNumbers: true
-      paperSize: a4
-      margins:
-        top: 2.5cm
-        bottom: 2.5cm
-        left: 1.5cm
-        right: 1.5cm
-    typography:
-      fontSize: 11pt
-      lineSpacing: normal
-  - engine: markdown
-  - engine: html
-    template: calm
-    typography:
-      fontSize: 16px

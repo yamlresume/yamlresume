@@ -1,190 +1,212 @@
 content:
   basics:
-    name: Marcus Williams
-    headline: Senior Product Manager
-    phone: "(212) 555-0456"
-    email: marcus.williams@example.com
-    url: https://marcuswilliams.pm
+    name: Maya Patel
+    headline: Product Manager with 7+ years of SaaS and AI product experience
+    phone: "(415) 555-0193"
+    email: maya.patel@example.com
+    url: https://mayapatel.dev
     summary: |
-      - Product leader with 8+ years of experience shipping B2B SaaS and consumer products
-      - Proven track record of driving 0-to-1 product launches and scaling products to millions of users
-      - Strong background in user research, data-informed prioritization, and cross-functional leadership
-      - Advocate for agile methodologies, transparent roadmaps, and customer-centric design
+      - Product Manager with 7+ years of experience defining and launching data-driven SaaS products
+      - Proven track record of growing ARR by 3x through customer discovery, roadmap execution, and cross-functional leadership
+      - Skilled in merging qualitative user research with quantitative analytics to prioritize features that deliver measurable outcomes
+      - Experienced in leading agile teams and collaborating with engineering, design, GTM, and executive stakeholders
+      - Passionate about applying AI/ML capabilities to solve real customer problems in responsible and user-friendly ways
   location:
-    address: 789 Broadway
-    city: New York
-    region: New York
+    city: San Francisco
+    region: California
     country: United States
-    postalCode: "10003"
+    postalCode: "94107"
   profiles:
     - network: LinkedIn
-      url: https://linkedin.com/in/marcuswilliams
-      username: marcuswilliams
+      url: https://www.linkedin.com/in/mayapatel
+      username: mayapatel
     - network: Twitter
-      url: https://twitter.com/marcuswilliams
-      username: marcuswilliams
+      url: https://twitter.com/mayapatel_pm
+      username: mayapatel_pm
   education:
-    - institution: Harvard Business School
-      url: https://www.hbs.edu/
-      degree: Master
-      area: Business Administration
-      score: "3.7"
-      startDate: Sep 1, 2014
-      endDate: May 1, 2016
-      summary: |
-        - Focused on technology strategy, entrepreneurship, and product management
-        - Led a student consulting project for an early-stage fintech startup
-    - institution: University of Michigan
-      url: https://umich.edu/
+    - institution: University of California, Berkeley
+      url: https://www.berkeley.edu/
       degree: Bachelor
-      area: Economics
-      score: "3.8"
-      startDate: Sep 1, 2010
-      endDate: May 1, 2014
+      area: Business Administration and Computer Science
+      score: "3.9"
+      startDate: Aug 25, 2014
+      endDate: May 20, 2018
+      courses:
+        - Product Management and Innovation
+        - Data Structures and Algorithms
+        - Consumer Behavior
+        - Marketing Analytics
+        - Finance
+        - Machine Learning and Artificial Intelligence
+        - Entrepreneurship
+        - Design Thinking
       summary: |
-        - Graduated with high distinction
-        - Co-founded the campus product management club
+        - Graduated with highest honors and completed an interdisciplinary capstone that resulted in a working product prototype
+        - Served as president of the campus Product Club, organizing industry speaker series and product case competitions
+        - Developed foundational skills in software development, data analysis, and customer-centric business strategy
   work:
-    - name: CloudSync
-      url: https://cloudsync.example.com
-      startDate: Mar 1, 2020
-      endDate:
+    - name: Nimbus Cloud Technologies
+      url: https://www.nimbus-cloud.io
       position: Senior Product Manager
+      startDate: Jun 1, 2022
       summary: |
-        - Own the product roadmap for the core collaboration platform used by 2M+ users
-        - Drove a 25% increase in activation rate through onboarding redesign
-        - Lead a team of 3 product managers, 8 engineers, and 2 designers
-        - Partner with sales and customer success to close enterprise deals
+        - Own the product strategy and roadmap for an AI-powered customer service platform used by 1,200+ enterprise teams
+        - Grew monthly active users by 45% and increased paid conversion by 28% through targeted onboarding improvements and a rebuilt pricing page
+        - Led discovery and delivery of an intelligent suggestions feature, reducing average first-response time by 22%
+        - Partner with engineering, design, data science, and sales leaders to align quarterly OKRs and accelerate time-to-market
+        - Direct cross-functional squads of 12 with a mentorship focus on design and product analytics
+      keywords:
+        - AI/ML
+        - Roadmap Strategy
+        - OKR Planning
+        - Customer Discovery
+        - Cross-functional Leadership
+    - name: Brightpath Analytics
+      url: https://www.brightpath.ai
+      position: Product Manager
+      startDate: Jun 15, 2020
+      endDate: May 31, 2022
+      summary: |
+        - Managed the analytics suite for a mid-market B2B SaaS product, handling 30+ releases per year
+        - Introduced an experimentation framework that increased feature adoption by 20% and reduced churn by 15%
+        - Conducted 50+ user interviews and synthesized insights into prioritized product themes and acceptance criteria
+        - Launched a self-serve reporting module that drove a $1.2M increase in annual recurring revenue
+        - Developed a product analytics maturity model to improve data quality and internal decision-making
       keywords:
         - SaaS
-        - Roadmapping
-        - Activation
-        - Enterprise
-    - name: ShopFlow
-      url: https://shopflow.example.com
-      startDate: Jun 1, 2016
-      endDate: Feb 1, 2020
-      position: Product Manager
+        - A/B Testing
+        - User Interviews
+        - Experimentation
+        - B2B Analytics
+    - name: LeadGenix
+      url: https://www.leadgenix.co
+      position: Associate Product Manager
+      startDate: Jul 2, 2018
+      endDate: Jun 1, 2020
       summary: |
-        - Launched the merchant analytics dashboard used by 50,000+ sellers
-        - Conducted user interviews and usability tests to inform feature prioritization
-        - Defined OKRs and metrics framework for the seller experience team
+        - Supported the senior product team in building a marketing automation web application for SMBs
+        - Coordinated sprint planning, backlog grooming, and release communication across remote teams
+        - Automated weekly competitor analysis and usability review processes, saving 6 hours of manual work per week
+        - Collaborated with customer success on win/loss analysis that refined the qualification criteria for lead-scoring workflows
       keywords:
-        - E-commerce
-        - Analytics
-        - OKRs
+        - Backlog Management
+        - Agile
+        - Customer Success
+        - Sprint Planning
+        - Competitor Analysis
+  skills:
+    - name: Product Management
+      level: Expert
+      keywords:
+        - Roadmapping
         - User Research
+        - Agile Development
+        - Stakeholder Management
+        - OKR Planning
+        - Pricing Strategy
+    - name: Data Analytics
+      level: Advanced
+      keywords:
+        - SQL
+        - Amplitude
+        - Google Analytics
+        - A/B Testing
+        - Metrics
+    - name: Design & Prototyping
+      level: Intermediate
+      keywords:
+        - Figma
+        - Miro
+        - Wireframing
+        - User Journey Mapping
+    - name: Technical Fluency
+      level: Intermediate
+      keywords:
+        - REST APIs
+        - Python
+        - JavaScript
+        - AWS
+        - Machine Learning Basics
   languages:
     - language: English
       fluency: Native or Bilingual Proficiency
-      keywords: []
+      keywords:
+        - TOEFL 118
     - language: Spanish
-      fluency: Limited Working Proficiency
-      keywords: []
-  skills:
-    - name: Product Strategy
-      level: Expert
+      fluency: Full Professional Proficiency
       keywords:
-        - Roadmapping
-        - Market Analysis
-        - Competitive Positioning
-        - OKRs
-    - name: Execution
-      level: Expert
+        - DELE C1
+    - language: Mandarin
+      fluency: Elementary Proficiency
       keywords:
-        - Agile
-        - Scrum
-        - Sprint Planning
-        - Jira
-    - name: Analytics
-      level: Intermediate
-      keywords:
-        - SQL
-        - Mixpanel
-        - Amplitude
-        - Tableau
+        - HSK 3
   awards:
-    - title: Product-Led Growth Award
-      awarder: SaaS Awards
-      date: Sep 2023
+    - title: Product Leader of the Year
+      date: Dec 10, 2023
+      awarder: SFF Product Leadership Forum
       summary: |
-        Honored for delivering measurable growth through product-led initiatives.
+        Recognized for delivering an AI-native user experience that became a company flagship feature and significantly exceeded adoption targets.
+    - title: Dean's List
+      date: May 2016
+      awarder: University of California, Berkeley
+      summary: |
+        Awarded for outstanding academic performance in business and computer science coursework.
   certificates:
-    - name: Certified Scrum Product Owner
-      url: https://www.scrumalliance.org/
-      issuer: Scrum Alliance
-      date: Jan 2018
-  references:
-    - name: Jennifer Lee
-      phone: "(555) 234-5678"
-      relationship: Former VP of Product
-      email: jennifer.lee@example.com
+    - name: Certified Product Manager (CPM)
+      issuer: Product Management Consortium
+      date: Apr 8, 2022
+      url: https://www.productmanagementconsortium.org/certification
+    - name: Pragmatic Institute Certification
+      issuer: Pragmatic Institute
+      date: Sep 12, 2021
+      url: https://www.pragmaticinstitute.com
+    - name: AWS Cloud Practitioner
+      issuer: Amazon Web Services
+      date: Feb 3, 2021
+      url: https://aws.amazon.com/certification/certified-cloud-practitioner
+  publications:
+    - name: Designing Responsible AI Product Features Customers Can Trust
+      publisher: Product Coalition
+      releaseDate: Feb 12, 2023
+      url: https://medium.com/product-coalition/designing-responsible-ai-product-features-customers-can-trust
       summary: |
-        Marcus is a strategic product leader who consistently delivers results while keeping teams aligned and motivated.
+        Explores how product managers can combine transparent AI model disclosures, user control, and ethical design principles to create products that earn long-term customer trust.
   projects:
-    - name: CloudSync Mobile
-      url: https://cloudsync.example.com/mobile
-      description: Native mobile app for the CloudSync collaboration platform
-      startDate: Jan 2022
-      endDate: Dec 2022
+    - name: MarketPulse Analytics Dashboard
+      url: https://github.com/mayapatel/marketpulse
+      description: A self-served product analytics dashboard concept designed to help
+        small teams understand feature adoption and user retention.
+      startDate: Jan 2021
+      endDate: Apr 2021
       summary: |
-        - Led the launch of iOS and Android apps reaching 500K downloads in the first quarter
-        - Defined core mobile value proposition and MVP scope
-        - Collaborated with engineering on offline-first architecture
+        - Created end-to-end UX concept and interactive MVP in Figma
+        - Defined event taxonomy and sample SQL queries for core product metrics
+        - Ran usability tests with 10 potential users and iterated based on the findings
       keywords:
-        - Mobile
-        - MVP
-        - Launch
-  interests:
-    - name: Travel
-      keywords:
-        - Photography
-        - Hiking
-        - Food
-    - name: Technology
-      keywords:
-        - AI
-        - Productivity Tools
+        - Product Analytics
+        - Figma
+        - SQL
+        - Information Architecture
   volunteer:
-    - organization: Product Guild
-      url: https://productguild.example.com
-      position: Mentor
-      startDate: Jan 2019
-      endDate:
+    - organization: Women in Product
+      url: https://www.womeninproduct.org
+      position: Mentorship Lead
+      startDate: Jan 2021
       summary: |
-        - Mentor aspiring product managers through mock interviews and portfolio reviews
-        - Organize monthly meetups on product management best practices
+        - Mentored 12 early-career product managers and developed a structured onboarding guide for the mentorship program
+        - Organized monthly speaker events and cross-company product workshops with 200+ attendees
+        - Built a resource library of product templates and interview preparation material for the community
+  interests:
+    - name: Tech & Design
+      keywords:
+        - AI Ethics
+        - Design Thinking
+        - No-Code
+    - name: Outdoor Activities
+      keywords:
+        - Hiking
+        - Trail Running
+        - Kayaking
 
 locale:
   language: en
-
-layouts:
-  - engine: latex
-    page:
-      margins:
-        top: 2.5cm
-        left: 1.5cm
-        right: 1.5cm
-        bottom: 2.5cm
-      paperSize: a4
-      showPageNumbers: true
-    template: moderncv-banking
-    typography:
-      fontSize: 11pt
-  - engine: docx
-    page:
-      margins:
-        top: 2.5cm
-        left: 1.5cm
-        right: 1.5cm
-        bottom: 2.5cm
-      paperSize: a4
-      showPageNumbers: true
-    typography:
-      fontSize: 11pt
-      lineSpacing: normal
-  - engine: markdown
-  - engine: html
-    template: calm
-    typography:
-      fontSize: 16px

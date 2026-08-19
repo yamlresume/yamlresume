@@ -1,244 +1,192 @@
 content:
   basics:
-    name: 陳雅琪
-    email: kay.chan@designfolio.hk
-    headline: 資深用戶體驗設計師
-    phone: +852 9876 5432
+    name: 林曉彤
+    headline: 資深用戶體驗設計師，專注金融科技及流動應用程式
+    phone: "+852 9123 4567"
+    email: hello@lamhiutung.design
+    url: https://www.lamhiutung.design
     summary: |
-      - 擁有逾八年數碼產品設計經驗，專注於以用戶為中心的設計方法與商業策略結合
-      - 擅長帶領跨職能團隊進行用戶研究、旅程地圖至互動原型設計，成功推出多款獲獎流動應用
-      - 具備豐富的設計系統建構經驗，能統一視覺語言並顯著提升開發效率與產品一致性
-      - 熱衷於設計思維與無障礙設計，持續推動以數據驅動的設計決策與迭代優化
-    url: https://kaychan.hk
-  education:
-    - area: 交互設計學
-      institution: 香港理工大學
-      degree: Bachelor
-      courses:
-        - 用戶研究方法
-        - 交互設計原理
-        - 視覺傳達設計
-        - 資訊架構與導航設計
-        - 設計思維與創新
-      endDate: Jun 2017
-      startDate: Sep 2013
-      summary: |
-        - 主修交互設計，深入鑽研人機交互、認知心理學及用戶中心設計流程
-        - 畢業專題探討本地長者使用流動應用的行為模式，獲院長嘉許名單
-        - 積極參與校內外設計比賽，培養出敏銳的視覺觸覺與問題解決能力
-      score: "3.7"
-      url: https://www.polyu.edu.hk/
-  awards:
-    - awarder: 香港設計師協會
-      title: 香港設計師協會環球設計大獎 優異獎
-      date: Nov 2022
-      summary: |
-        憑藉智慧城市流動應用項目，於用戶體驗設計類別獲頒優異獎，表彰以人為本的創新設計方案。
-    - awarder: 香港理工大學設計學院
-      title: 院長嘉許名單
-      date: Jun 2017
-      summary: |
-        於學術成績及畢業專題表現優異，獲列入院長嘉許名單以資鼓勵。
-  certificates:
-    - issuer: Google
-      name: Google UX Design Professional Certificate
-      date: May 2021
-      url: https://www.coursera.org/professional-certificates/google-ux-design
-    - issuer: Nielsen Norman Group
-      name: Nielsen Norman Group UX Masterclass
-      date: Oct 2019
-      url: https://www.nngroup.com/
-  interests:
-    - name: 攝影
-      keywords:
-        - 街頭攝影
-        - 建築攝影
-    - name: 城市探索
-      keywords:
-        - 歷史建築導賞
-        - 社區文化
-    - name: 咖啡文化
-      keywords:
-        - 精品咖啡
-        - 手沖技藝
-  languages:
-    - fluency: Native or Bilingual Proficiency
-      language: Cantonese
-      keywords:
-        - 母語
-        - 口語溝通
-    - fluency: Full Professional Proficiency
-      language: English
-      keywords:
-        - 商務溝通
-        - 技術文件撰寫
-    - fluency: Full Professional Proficiency
-      language: Mandarin
-      keywords:
-        - 普通話會話
-        - 簡報演示
+      具超過六年經驗的用戶體驗設計師，擅長為金融科技及流動應用程式提供以用戶為中心的設計方案。
+
+      - 主導大型銀行應用程式的用戶體驗重塑，提升用戶滿意度達 35%
+      - 熟悉設計系統建立及管理，確保產品一致性及開發效率
+      - 善於透過用戶研究及可用性測試，發掘用戶需要並轉化為具體設計方案
+      - 與產品經理及工程師緊密合作，推動設計主導的產品開發流程
   location:
-    city: 九龍
-    address: 尖沙咀彌敦道132號美麗華大廈8樓
+    address: 中環皇后大道中 100 號
+    city: 香港
+    region: 香港島
     country: Hong Kong
-    postalCode: "999077"
-    region: 油尖旺區
   profiles:
-    - network: LinkedIn
-      username: kaychan-ux
-      url: https://www.linkedin.com/in/kaychan-ux
     - network: Behance
-      username: kaychan
-      url: https://www.behance.net/kaychan
+      url: https://www.behance.net/lamhiutung
+      username: lamhiutung
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/lamhiutung
+      username: lam-hiu-tung
     - network: Dribbble
-      username: kaychan
-      url: https://dribbble.com/kaychan
-  projects:
-    - name: 智慧城市流動應用
-      startDate: Jan 2022
+      url: https://dribbble.com/lamhiutung
+      username: lamhiutung
+  education:
+    - institution: 香港理工大學
+      url: https://www.polyu.edu.hk/
+      degree: Bachelor
+      area: 設計學（互動媒體）
+      score: "3.5"
+      startDate: Sep 1, 2015
+      endDate: Jun 1, 2019
+      courses:
+        - 用戶體驗設計
+        - 人機互動
+        - 視覺傳達設計
+        - 設計研究方法
+        - 流動應用程式設計
+        - 設計心理學
       summary: |
-        - 重新設計資訊架構與導航系統，令用戶平均完成任務時間縮短四成
-        - 引入無障礙設計指引，確保視障及長者用戶均能輕鬆使用
-        - 設計系統涵蓋超過五十個核心組件，獲團隊廣泛採用於後續項目
-      description: 為本地政府部門設計的一站式城市服務流動應用
-      endDate: Oct 2022
+        - 專攻互動媒體設計，畢業作品獲學院頒發「最佳設計項目」獎
+        - 透過多個跨學科項目，累積用戶研究、原型設計及可用性測試的實戰經驗
+        - 積極參與設計學會活動，並擔任學生設計展覽的策展人
+  work:
+    - name: Fintastic 金融科技有限公司
+      url: https://www.fintastic.example
+      position: 高級用戶體驗設計師
+      startDate: Jul 1, 2022
+      summary: |
+        - 主導公司旗艦投資應用程式的設計策略，與產品及工程團隊合作推出新功能
+        - 建立及維護設計系統，統一組件規範，縮短設計到開發的交付時間約 30%
+        - 規劃及執行季度用戶研究計劃，包括深度訪談及可用性測試，為產品路線圖提供建議
+        - 指導初級設計師，並定期舉辦設計分享會，促進團隊專業成長
       keywords:
-        - 政府項目
-        - 無障礙設計
         - 設計系統
-      url: https://kaychan.hk/projects/smart-city
-    - name: 網上銀行平台重設計
-      startDate: Jun 2020
-      summary: |
-        - 透過用戶訪談與數據分析，識別關鍵痛點並提出針對性的設計方案
-        - 設計全新儀表板與轉賬流程，提升用戶滿意度與交易完成率
-        - 與開發團隊緊密合作，確保設計細節於產品上準確呈現
-      description: 針對年輕用戶群的網上銀行體驗重設計項目
-      endDate: Dec 2020
-      keywords:
-        - 金融科技
         - 用戶研究
-        - 體驗重設計
-      url: https://kaychan.hk/projects/bank-redesign
-  publications:
-    - name: 以設計系統提升金融科技產品的一致性
-      publisher: 設計雜誌 Design Magazine
-      releaseDate: Mar 2023
+        - 可用性測試
+        - 金融科技
+        - 團隊領導
+    - name: Digital Gear Studio
+      url: https://www.digitalgear.example
+      position: 用戶體驗設計師
+      startDate: Sep 1, 2019
+      endDate: Jun 1, 2022
       summary: |
-        - 探討設計系統在金融科技產品中的實踐方法與挑戰
-        - 分享如何透過組件化設計與跨部門協作，提升產品開發效率與用戶體驗
-      url: https://www.designmag.hk/articles/design-system-fintech
+        - 負責多個客戶項目的用戶體驗設計，涵蓋零售、旅遊及教育等行業
+        - 運用設計思考方法，與客戶共同定義問題，並製作線框圖及互動原型
+        - 進行競爭分析及用戶訪談，將研究結果轉化為清晰的用戶旅程地圖
+        - 與視覺設計師及開發人員協作，確保設計在技術上可行並符合品牌形象
+      keywords:
+        - 設計思考
+        - 用戶旅程地圖
+        - 互動原型
+        - 客戶溝通
+    - name: 雲創科技
+      url: https://www.cloudinnovation.example
+      position: 用戶體驗設計實習生
+      startDate: Jun 1, 2018
+      endDate: Aug 1, 2018
+      summary: |
+        - 協助高級設計師進行用戶訪談及問卷調查，整理研究報告
+        - 參與設計工作坊，製作低保真原型及可用性測試材料
+        - 與開發團隊合作，撰寫設計規格文件及交接材料
+      keywords:
+        - 用戶訪談
+        - 問卷調查
+        - 低保真原型
   skills:
-    - level: Expert
-      name: UX 設計
+    - name: 用戶研究
+      level: Expert
+      keywords:
+        - 深度訪談
+        - 可用性測試
+        - 問卷調查
+        - 人物誌
+        - 用戶旅程地圖
+    - name: 原型與設計工具
+      level: Expert
       keywords:
         - Figma
         - Sketch
         - Adobe XD
-        - Wireframing
-        - Prototyping
-    - level: Advanced
-      name: 用戶研究
+        - InVision
+        - Protopie
+    - name: 互動設計
+      level: Advanced
       keywords:
-        - 可用性測試
-        - 用戶訪談
-        - 問卷調查
-        - 數據分析
-    - level: Advanced
-      name: UI 視覺設計
-      keywords:
-        - 視覺設計
-        - Design Systems
-        - 排版
-        - 色彩理論
-    - level: Intermediate
-      name: 前端技術
+        - 線框圖
+        - 微互動
+        - 無障礙設計
+        - 設計系統
+    - name: 前端協作
+      level: Beginner
       keywords:
         - HTML
         - CSS
         - JavaScript
-        - React
-  volunteer:
-    - organization: 香港用戶體驗專業協會
-      position: 活動統籌及設計導師
-      startDate: Sep 2018
-      summary: |
-        - 統籌每月的 UX 設計分享會，邀請業界專家進行演講與工作坊
-        - 為初學者提供設計思維與原型工具指導，協助他們建立設計基礎
-        - 推動本地 UX 設計社群交流，促進知識分享與專業發展
-      url: https://www.uxpahk.org
-  work:
-    - name: 領創數碼科技有限公司
-      position: 資深用戶體驗設計師
-      startDate: Mar 2020
-      summary: |
-        - 主導多個金融科技與電商平台的用戶體驗設計，涵蓋用戶研究、旅程地圖至互動原型
-        - 建立並維護跨產品的設計系統，統一超過三十個模組的視覺與互動規範
-        - 帶領三名初級設計師，制定設計評審流程與用戶測試標準，提升團隊交付質素
-        - 與產品經理及工程團隊緊密協作，推動敏捷開發中的設計衝刺與快速迭代
+  languages:
+    - language: Cantonese
+      fluency: Native or Bilingual Proficiency
       keywords:
-        - Figma
-        - Design System
+        - 母語
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - IELTS 8.0
+        - 商業英語
+    - language: Mandarin
+      fluency: Full Professional Proficiency
+      keywords:
+        - 普通話水平測試二級甲等
+  awards:
+    - title: 香港設計師協會環球設計大獎 2022 – 銀獎
+      awarder: 香港設計師協會
+      date: Oct 1, 2022
+      summary: |
+        憑藉「智能銀行應用程式用戶體驗重塑」項目，獲得數碼介面組別銀獎，表揚項目在用戶體驗及視覺設計上的卓越表現。
+  certificates:
+    - name: Certified Usability Analyst
+      issuer: Human Factors International
+      date: Jan 1, 2021
+      url: https://www.humanfactors.com/
+  publications:
+    - name: 「建立可持續設計系統的五大原則」
+      publisher: Medium（UX Collective）
+      releaseDate: Mar 1, 2023
+      url: https://medium.com/ux-collective/design-system-principles
+      summary: |
+        分享在金融科技公司建立及管理設計系統的實際經驗，包括組件設計、文件規範及團隊協作流程。
+  projects:
+    - name: 智能銀行應用程式重塑
+      url: https://www.fintastic.example/projects/banking-app
+      startDate: Jan 1, 2022
+      endDate: Dec 1, 2022
+      description: |
+        為一家主流銀行重新設計流動應用程式，整合帳戶管理、投資及支付功能，提升整體用戶體驗。
+      summary: |
+        - 透過用戶研究及數據分析，辨識用戶痛點，並制定設計策略
+        - 設計全新的資訊架構及互動流程，簡化複雜交易步驟
+        - 建立可擴展的設計系統，支援 iOS 及 Android 平台
+        - 推出後應用程式商店評分由 3.2 升至 4.5 星
+      keywords:
+        - 金融科技
+        - 設計系統
         - 用戶研究
-        - 團隊領導
-      url: https://www.leadcx.hk
-    - name: 雅卓互動設計顧問有限公司
-      position: 用戶體驗設計師
-      startDate: Jul 2017
-      summary: |
-        - 為教育、醫療及零售行業客戶設計直覺易用的網站與流動應用介面
-        - 負責進行可用性測試與用戶訪談，將洞察轉化為具體的設計改進方案
-        - 製作高保真互動原型與動效規範，有效降低開發階段的溝通成本
-        - 協助公司贏得多項設計招標，並在業界建立良好的客戶口碑
-      endDate: Feb 2020
-      keywords:
-        - Prototyping
         - 可用性測試
-        - 客戶協作
-        - 視覺設計
-      url: https://www.artjoy.hk
-    - name: 創意流動科技有限公司
-      position: UX 設計實習生
-      startDate: Jun 2016
-      summary: |
-        - 參與社交應用的介面設計，協助繪製線框圖與整理設計素材庫
-        - 協助進行競品分析與用戶反饋整理，為產品優化提供數據支持
-        - 學習並實踐以用戶為中心的設計流程，奠定紮實的專業基礎
-      endDate: Aug 2016
+  interests:
+    - name: 行山
       keywords:
-        - 線框圖
-        - 競品分析
-        - 設計素材
-      url: https://www.creativemobile.hk
+        - 麥理浩徑
+        - 露營
+        - 攝影
+    - name: 烹飪
+      keywords:
+        - 烘焙
+        - 港式茶餐廳美食
+  volunteer:
+    - organization: 香港導盲犬協會
+      url: https://www.guidedogs.org.hk/
+      position: 網站設計義工
+      startDate: Jan 1, 2023
+      summary: |
+        - 協助協會重新設計官方網站，改善資訊架構及捐款流程
+        - 拍攝及挑選照片，提升網站視覺吸引力及故事性
+
 locale:
   language: zh-hant-hk
-layouts:
-  - engine: latex
-    page:
-      showPageNumbers: true
-      paperSize: a4
-      margins:
-        top: 2.5cm
-        bottom: 2.5cm
-        left: 1.5cm
-        right: 1.5cm
-    template: moderncv-banking
-    typography:
-      fontSize: 11pt
-  - engine: docx
-    page:
-      showPageNumbers: true
-      paperSize: a4
-      margins:
-        top: 2.5cm
-        bottom: 2.5cm
-        left: 1.5cm
-        right: 1.5cm
-    typography:
-      fontSize: 11pt
-      lineSpacing: normal
-  - engine: markdown
-  - engine: html
-    template: calm
-    typography:
-      fontSize: 16px

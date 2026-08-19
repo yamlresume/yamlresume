@@ -1,294 +1,237 @@
 content:
   basics:
-    name: Budi Santoso
-    email: budi.santoso.dev@gmail.com
-    headline: Software Engineer Berpengalaman dalam Aplikasi Web Skala Besar
-    phone: +62 811 9876 5432
-    summary: >
-      - Software engineer dengan **4+ tahun** pengalaman membangun aplikasi web
-      dan backend yang scalable.
-
-      - Mahir dalam pengembangan full-stack menggunakan *TypeScript*, *React*,
-      *Node.js*, dan *Go*.
-
-      - Berpengalaman mendesain arsitektur microservices dan mengelola
-      infrastruktur cloud di AWS/GCP.
-
-      - Terbiasa dengan praktik CI/CD, containerization, dan Infrastructure as
-      Code.
-
-      - Berorientasi pada detail, kolaborasi tim, dan pengembangan produk
-      berkualitas.
-    url: https://budisantoso.id
+    name: Rizky Aditya Pratama
+    headline: Software Engineer Berfokus pada Backend, Cloud, dan Arsitektur Skalabel
+    phone: +62 812-3456-7890
+    email: rizky.aditya@example.com
+    url: https://rizkyaditya.dev
+    summary: |
+      - Software engineer dengan 5+ tahun pengalaman membangun layanan backend yang skalabel dan andal di lingkungan startup serta perusahaan teknologi.
+      - Mahir menggunakan Go, Java, dan Node.js, serta berpengalaman menerapkan arsitektur mikroservis, event-driven, dan RESTful API.
+      - Berpengalaman mengelola infrastruktur di AWS, Docker, dan Kubernetes, termasuk penerapan CI/CD dan observability.
+      - Terbiasa berkolaborasi dalam tim agile, melakukan code review, menulis dokumentasi teknis, dan menjadi mentor bagi engineer junior.
+  location:
+    address: Jl. Senopati No. 45, Kebayoran Baru
+    city: Jakarta Selatan
+    region: DKI Jakarta
+    country: Indonesia
+    postalCode: "12190"
+  profiles:
+    - network: GitHub
+      url: https://github.com/rizkyadityap
+      username: rizkyadityap
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/rizkyadityapratama
+      username: rizkyadityapratama
   education:
-    - area: Teknik Informatika
-      institution: Universitas Indonesia
+    - institution: Universitas Indonesia
+      url: https://www.ui.ac.id/
       degree: Bachelor
+      area: Ilmu Komputer
+      score: "3.76"
+      startDate: Aug 15, 2016
+      endDate: Jul 30, 2021
       courses:
         - Struktur Data dan Algoritma
-        - Pemrograman Berorientasi Objek
-        - Sistem Operasi
         - Basis Data
+        - Sistem Operasi
         - Jaringan Komputer
         - Rekayasa Perangkat Lunak
         - Kecerdasan Buatan
-        - Keamanan Informasi
-      endDate: Jul 1, 2019
-      startDate: Aug 1, 2015
-      summary: >
-        - Lulus dengan predikat cum laude dan IPK 3.78/4.00.
-
-        - Aktif dalam organisasi mahasiswa dan asisten dosen untuk mata kuliah
-        Struktur Data.
-
-        - Proyek akhir: pengembangan platform manajemen inventori berbasis web
-        untuk UMKM.
-      score: "3.78"
-      url: https://www.ui.ac.id/
-  awards:
-    - awarder: Asia Pacific ICT Alliance (APICTA)
-      title: Best Innovation in Smart City
-      date: Nov 2021
-      summary: >
-        Penghargaan atas inovasi aplikasi pelaporan publik berbasis smart city
-        yang dikembangkan bersama tim.
-  certificates:
-    - issuer: Amazon Web Services
-      name: AWS Certified Developer - Associate
-      date: Mar 2022
-      url: https://aws.amazon.com/certification/
-    - issuer: Google Cloud
-      name: Professional Cloud Developer
-      date: Sep 2023
-      url: https://cloud.google.com/certification/
-  interests:
-    - name: Olahraga
-      keywords:
-        - Lari
-        - Futsal
-        - Bersepeda
-    - name: Teknologi
-      keywords:
-        - Open Source
-        - Cloud Computing
-        - AI & Machine Learning
-  languages:
-    - fluency: Native or Bilingual Proficiency
-      language: Indonesian
-      keywords:
-        - Bahasa ibu
-    - fluency: Full Professional Proficiency
-      language: English
-      keywords:
-        - TOEFL ITP 573
-        - IELTS 7.0
-  location:
-    city: Jakarta Selatan
-    address: Jl. Jenderal Sudirman No. 123
-    country: Indonesia
-    postalCode: "12190"
-    region: DKI Jakarta
-  profiles:
-    - network: GitHub
-      username: budisantoso-dev
-      url: https://github.com/budisantoso-dev
-    - network: LinkedIn
-      username: budisantoso
-      url: https://www.linkedin.com/in/budisantoso
-  projects:
-    - name: SiUMKM
-      startDate: Jan 2020
-      summary: >
-        - Membangun aplikasi web full-stack dengan fitur manajemen stok, laporan
-        penjualan, dan integrasi marketplace.
-
-        - Digunakan oleh lebih dari 50 UMKM binaan pada program inkubasi bisnis.
-      description: Platform manajemen inventori dan pemasaran digital untuk UMKM
-      endDate: Jun 2020
-      keywords:
-        - React
-        - Node.js
-        - PostgreSQL
-        - UMKM
-      url: https://github.com/budisantoso-dev/siumkm
-    - name: Dashboard Analitik Real-Time
-      startDate: Feb 2022
-      summary: >
-        - Mengembangkan dashboard analitik yang menampilkan metrik penjualan,
-        stok, dan prediksi permintaan.
-
-        - Menggunakan WebSocket untuk pembaruan data secara langsung dan Google
-        Charts untuk visualisasi.
-      description: Dashboard visualisasi data penjualan secara real-time untuk
-        perusahaan ritel
-      endDate: Dec 2022
-      keywords:
-        - React
-        - WebSocket
-        - Data Visualization
-        - Node.js
-      url: https://github.com/budisantoso-dev/dashboard-analitik
-  publications:
-    - name: Arsitektur Microservices untuk Sistem E-Commerce pada Platform UMKM
-      publisher: Jurnal Teknologi Informasi dan Ilmu Komputer (JTIIK)
-      releaseDate: Jul 2022
-      summary: >
-        Artikel ini membahas perancangan dan implementasi arsitektur
-        microservices pada sistem e-commerce, mencakup strategi komunikasi
-        antar-layanan dan manajemen data terdistribusi.
-      url: https://jtiik.ub.ac.id/index.php/jtiik/article/view/12345
-  skills:
-    - level: Expert
-      name: Pengembangan Web
-      keywords:
-        - TypeScript
-        - React
-        - Node.js
-        - Next.js
-        - GraphQL
-    - level: Advanced
-      name: Backend & Microservices
+        - Pemrograman Berorientasi Objek
+        - Matematika Diskret
+      summary: |
+        - Lulus dengan predikat cum laude dan fokus pada mata kuliah rekayasa perangkat lunak, basis data, dan sistem terdistribusi.
+        - Menjadi asisten dosen untuk praktikum Pemrograman Dasar dan Struktur Data selama dua semester.
+        - Menyelesaikan skripsi berjudul 'Perancangan API Gateway untuk Layanan Mikroservis pada Aplikasi E-Commerce'.
+  work:
+    - name: PT Nusantara Digital Solusi
+      url: https://www.nusantaradigital.co.id
+      position: Software Engineer
+      startDate: Jan 3, 2022
+      summary: |
+        - Merancang dan mengembangkan RESTful API untuk platform logistik menggunakan Go dan PostgreSQL, melayani 2 juta permintaan per hari.
+        - Memigrasikan sistem monolitik menjadi arsitektur mikroservis dengan Kafka dan gRPC, mengurangi waktu deployment hingga 40%.
+        - Menerapkan Circuit Breaker dan Retry Mechanism untuk meningkatkan ketahanan sistem terhadap kegagalan upstream.
+        - Berkolaborasi dengan tim DevOps membuat pipeline CI/CD menggunakan GitHub Actions dan Argo CD.
+        - Memimpin technical sharing dan menjadi mentor bagi onboarding engineer baru.
       keywords:
         - Go
-        - Python
-        - PostgreSQL
+        - Kubernetes
         - Kafka
+        - gRPC
+        - PostgreSQL
+        - Microservices
+        - CI/CD
+        - REST API
+    - name: PT Kreatif Media Nusantara
+      url: https://kreatifmedia.co.id
+      position: Backend Developer
+      startDate: Aug 1, 2020
+      endDate: Dec 31, 2021
+      summary: |
+        - Mengembangkan layanan backend untuk aplikasi media streaming menggunakan Node.js, Express, dan MongoDB.
+        - Merancang skema database dan mengoptimalkan query sehingga response time turun dari 800 ms menjadi 200 ms.
+        - Mengintegrasikan penyedia pembayaran digital seperti Midtrans dan Xendit untuk fitur langganan premium.
+        - Menulis unit test dan integration test menggunakan Jest, meningkatkan code coverage dari 45% menjadi 85%.
+        - Berpartisipasi aktif dalam sprint planning, daily standup, dan retrospektif bersama tim produk.
+      keywords:
+        - Node.js
+        - Express
+        - MongoDB
         - Redis
-    - level: Intermediate
-      name: DevOps & Cloud
+        - Jest
+        - Payment Gateway
+        - REST API
+    - name: PT Aplikasi Anak Negeri
+      url: https://aplikasianaknegeri.co.id
+      position: Junior Web Developer
+      startDate: Jul 1, 2019
+      endDate: Jul 31, 2020
+      summary: |
+        - Membangun fitur frontend dan backend pada sistem informasi desa menggunakan PHP Laravel dan MySQL.
+        - Membuat modul manajemen pengguna, inventaris aset, dan pelaporan pendapatan desa.
+        - Melakukan debugging serta pemeliharaan aplikasi produksi dan menyusun dokumentasi penggunaan untuk admin desa.
+      keywords:
+        - Laravel
+        - PHP
+        - MySQL
+        - JavaScript
+        - Bootstrap
+  skills:
+    - name: Pengembangan Backend
+      level: Expert
+      keywords:
+        - Go
+        - Java
+        - Node.js
+        - REST API
+        - gRPC
+        - GraphQL
+    - name: Arsitektur & Infrastruktur
+      level: Advanced
       keywords:
         - Docker
         - Kubernetes
         - AWS
         - Terraform
-        - GitHub Actions
-    - level: Advanced
-      name: Testing & Kualitas
-      keywords:
-        - Jest
-        - Cypress
-        - Playwright
-        - SonarQube
-  volunteer:
-    - organization: Komunitas Developer Indonesia
-      position: Mentor Pemrograman Web
-      startDate: Jan 2021
-      summary: >
-        Menjadi mentor dalam program pelatihan pemrograman web bagi mahasiswa
-        dan profesional muda. Mendampingi peserta dalam membangun portofolio dan
-        persiapan karier.
-      endDate: Dec 2023
-      url: https://komunitasdeveloper.id
-    - organization: Yayasan Pendidikan Anak Nusantara
-      position: Relawan Pengajar Coding
-      startDate: Jun 2019
-      summary: >
-        Mengajar dasar-dasar logika pemrograman dan Scratch kepada siswa sekolah
-        dasar di daerah terpencil.
-      endDate: Dec 2020
-  work:
-    - name: PT Nusantara Digital Solusi
-      position: Senior Software Engineer
-      startDate: Mar 1, 2023
-      summary: >
-        - Memimpin pengembangan backend layanan pembayaran dengan arsitektur
-        microservices menggunakan Go dan Kafka.
-
-        - Menerapkan desain API yang aman dan efisien, mengurangi waktu respons
-        rata-rata hingga 35%.
-
-        - Berkolaborasi dengan tim produk, desain, dan QA untuk menghadirkan
-        fitur-fitur baru secara iteratif.
-
-        - Melakukan mentoring kepada 4 engineer junior dan melakukan code review
-        secara berkala.
-
-        - Meningkatkan keandalan sistem melalui observability, logging, dan
-        otomatisasi deployment.
-      endDate: null
-      keywords:
-        - Microservices
-        - Go
         - Kafka
-        - REST API
-        - AWS
-        - Scrum
-      url: https://nusantaradigitalsolusi.co.id
-    - name: PT Kreatif Media Indonesia
-      position: Software Engineer
-      startDate: Jul 1, 2019
-      summary: >
-        - Mengembangkan aplikasi web untuk klien termasuk dashboard analitik dan
-        platform e-commerce.
-
-        - Membangun frontend dengan React dan TypeScript, serta backend API
-        menggunakan Node.js dan PostgreSQL.
-
-        - Mengintegrasikan payment gateway dan layanan pihak ketiga untuk
-        mendukung proses transaksi.
-
-        - Menulis skrip CI/CD dengan GitHub Actions dan Docker untuk mempercepat
-        proses delivery.
-
-        - Berpartisipasi dalam perencanaan sprint dan melakukan grooming backlog
-        bersama product owner.
-      endDate: Feb 28, 2023
+        - Redis
+    - name: Database
+      level: Advanced
+      keywords:
+        - PostgreSQL
+        - MySQL
+        - MongoDB
+        - Elasticsearch
+        - Redis
+    - name: Frontend Web
+      level: Intermediate
       keywords:
         - React
-        - Node.js
-        - PostgreSQL
-        - Docker
-        - CI/CD
-        - E-commerce
-      url: https://kreatifmedia.co.id
-    - name: PT Solusi Teknologi Nusantara
-      position: Software Engineer Intern
-      startDate: Jan 1, 2019
-      summary: >
-        - Membantu pengembangan fitur manajemen pengguna pada aplikasi internal
-        perusahaan.
-
-        - Menulis unit test dengan Jest dan melakukan debugging pada aplikasi
-        produksi.
-
-        - Mendokumentasikan API dan menyusun panduan penggunaan sistem untuk tim
-        teknis.
-      endDate: Jun 30, 2019
+        - TypeScript
+        - Tailwind CSS
+        - Vite
+  languages:
+    - language: Malay
+      fluency: Native or Bilingual Proficiency
       keywords:
-        - JavaScript
-        - Jest
-        - REST API
-        - Dokumentasi
-      url: https://solusiteknologi.co.id
+        - Bahasa Indonesia
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - TOEFL ITP 600
+        - IELTS 7.0
+  awards:
+    - title: Juara 2 Hackathon API Nasional 2020
+      awarder: Kementerian Komunikasi dan Informatika RI
+      date: Nov 15, 2020
+      summary: |
+        Membangun API inovasi untuk layanan kesehatan berbasis komunitas bersama tim dan menang dari 150+ peserta.
+  certificates:
+    - name: AWS Certified Solutions Architect - Associate
+      issuer: Amazon Web Services
+      date: Mar 2023
+      url: https://aws.amazon.com/certification/
+    - name: Professional Cloud Developer - Google Cloud
+      issuer: Google Cloud
+      date: Aug 2022
+      url: https://cloud.google.com/certification
+  publications:
+    - name: Implementasi Service Mesh menggunakan Istio pada Layanan Mikroservis
+      publisher: Jurnal Teknologi Informasi dan Ilmu Komputer
+      releaseDate: Jun 30, 2023
+      url: https://jtiik.ub.ac.id/index.php/jtiik
+      summary: |
+        Membahas pola penerapan service mesh Istio untuk observability, keamanan, dan traffic management pada layanan mikroservis di lingkungan Kubernetes.
+  projects:
+    - name: Sirekap Desa
+      url: https://github.com/rizkyadityap/sirekap-desa
+      startDate: Mar 2021
+      endDate: Aug 2021
+      description: Platform pelaporan keuangan dan aset desa berbasis web
+      summary: |
+        - Mengembangkan aplikasi berbasis Laravel dan MySQL untuk digitalisasi administrasi desa.
+        - Merancang sistem autentikasi multi-level untuk admin desa, camat, dan dinas pemberdayaan masyarakat.
+        - Menghasilkan dashboard visualisasi pendapatan dan belanja desa menggunakan Chart.js.
+      keywords:
+        - Laravel
+        - MySQL
+        - Chart.js
+        - Bootstrap
+    - name: GoShop API
+      url: https://github.com/rizkyadityap/goshop-api
+      startDate: Jan 2022
+      endDate: Jun 2022
+      description: Backend microservices untuk aplikasi e-commerce sederhana
+      summary: |
+        - Merancang service catalog, cart, order, dan payment menggunakan arsitektur microservices.
+        - Menggunakan komunikasi gRPC antar service dan REST API untuk klien.
+        - Menerapkan Saga Pattern untuk distributed transaction dan Kafka sebagai event bus.
+      keywords:
+        - Go
+        - gRPC
+        - Kafka
+        - Docker
+        - PostgreSQL
+  interests:
+    - name: Sepak Bola
+      keywords:
+        - Futsal
+        - Premier League
+    - name: Teknologi Open Source
+      keywords:
+        - Kubernetes
+        - Golang
+        - Linux
+    - name: Literasi
+      keywords:
+        - Buku Teknologi
+        - Jurnal Ilmiah
+  volunteer:
+    - organization: Google Developer Groups Jakarta
+      url: https://gdg.community.dev/gdg-jakarta/
+      position: Relawan Acara
+      startDate: Feb 2022
+      endDate: Dec 2023
+      summary: |
+        - Menjadi relawan untuk Google I/O Extended Jakarta dan Cloud Study Jam.
+        - Membantu koordinasi peserta, dokumentasi, serta moderasi sesi diskusi.
+    - organization: Komunitas Programmer Indonesia
+      url: https://komunitasprogrammer.id
+      position: Mentor Belajar Backend
+      startDate: Jan 2021
+      endDate: Dec 2021
+      summary: |
+        - Memberikan mentorship gratis bagi anggota komunitas yang ingin mendalami backend development.
+        - Membimbing lima mentee dalam menyelesaikan proyek capstone API sederhana.
+  references:
+    - name: Budi Santoso
+      phone: +62 811-9876-5432
+      relationship: Engineering Manager di PT Nusantara Digital Solusi
+      email: budi.santoso@nusantaradigital.co.id
+      summary: |
+        Rizky adalah salah satu engineer paling andal di tim. Ia memiliki kemampuan analitis yang kuat dan selalu mengutamakan kualitas kode serta kolaborasi tim.
+
 locale:
   language: id
-layouts:
-  - engine: latex
-    page:
-      showPageNumbers: true
-      paperSize: a4
-      margins:
-        top: 2.5cm
-        bottom: 2.5cm
-        left: 1.5cm
-        right: 1.5cm
-    template: moderncv-banking
-    typography:
-      fontSize: 11pt
-  - engine: docx
-    page:
-      showPageNumbers: true
-      paperSize: a4
-      margins:
-        top: 2.5cm
-        bottom: 2.5cm
-        left: 1.5cm
-        right: 1.5cm
-    typography:
-      fontSize: 11pt
-      lineSpacing: normal
-  - engine: markdown
-  - engine: html
-    template: calm
-    typography:
-      fontSize: 16px

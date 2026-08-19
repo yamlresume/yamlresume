@@ -1,304 +1,237 @@
 content:
   basics:
-    name: Lucía Fernández Ortega
-    email: lucia.fernandez.dev@gmail.com
-    headline: Científica de Datos especializada en Machine Learning y analítica
-      predictiva
-    phone: +34 612 345 678
-    summary: >
-      Científica de Datos con más de 6 años de experiencia en los sectores
-      financiero y de telecomunicaciones. Especializada en el diseño de modelos
-      de machine learning, analítica avanzada y visualización de datos para
-      impulsar la toma de decisiones basada en evidencia.
+    name: Carlos Mendoza
+    headline: Científico de Datos Senior | Machine Learning & Analítica Predictiva
+    phone: "+34 612 345 678"
+    email: carlos.mendoza@example.com
+    url: https://www.carlosmendoza.dev
+    summary: |
+      Científico de datos con más de 8 años de experiencia en el desarrollo de soluciones analíticas y modelos predictivos para los sectores financiero, retail y telecomunicaciones.
 
-      - Sólida experiencia en Python, SQL, AWS y GCP, aplicada a casos de uso de
-      fraude, segmentación y predicción de abandono.
+      Especializado en machine learning, procesamiento del lenguaje natural (NLP) y análisis de grandes volúmenes de datos con Python, Spark y cloud computing (AWS y GCP).
 
-      - Capacidad demostrada para liderar equipos técnicos y colaborar con áreas
-      de negocio.
-
-      - Comunicación clara de resultados complejos a audiencias no
-      especializadas.
-    url: https://luciafernandez.dev
-  education:
-    - area: Ciencia de Datos e Inteligencia Artificial
-      institution: Universidad Politécnica de Madrid
-      degree: Master
-      courses:
-        - Aprendizaje automático
-        - Análisis multivariante
-        - Minado de datos
-        - Modelos predictivos
-        - Tratamiento de datos masivos
-        - Visualización de datos
-      endDate: Jul 1, 2018
-      startDate: Sep 1, 2016
-      summary: >
-        - Formación avanzada en técnicas de machine learning, estadística
-        computacional y big data.
-
-        - Trabajo fin de máster centrado en la predicción de impagos mediante
-        modelos de ensemble.
-
-        - Colaboración en proyectos de investigación aplicada con empresas del
-        sector bancario.
-      score: "9.4"
-      url: https://www.upm.es/
-    - area: Estadística
-      institution: Universidad de Salamanca
-      degree: Bachelor
-      courses:
-        - Inferencia estadística
-        - Modelos de regresión
-        - Diseño de experimentos
-        - Estadística multivariante
-        - Muestreo y encuestas
-      endDate: Jun 1, 2016
-      startDate: Sep 1, 2012
-      summary: >
-        - Base sólida en estadística, probabilidad y métodos cuantitativos.
-
-        - Desarrollo de habilidades analíticas aplicadas a problemas económicos
-        y sociales.
-      score: "8.7"
-      url: https://www.usal.es/
-  awards:
-    - awarder: Universidad Politécnica de Madrid
-      title: Premio a la Innovación Analítica
-      date: Jun 1, 2018
-      summary: >
-        Reconocimiento al mejor trabajo fin de máster en ciencia de datos por un
-        modelo de predicción de impagos basado en técnicas de ensemble.
-  certificates:
-    - issuer: Amazon Web Services
-      name: AWS Certified Machine Learning – Specialty
-      date: Nov 15, 2023
-      url: https://aws.amazon.com/verification
-  interests:
-    - name: Lectura
-      keywords:
-        - Novela negra
-        - Ciencia ficción
-    - name: Deporte
-      keywords:
-        - Natación
-        - Senderismo
-        - Yoga
-  languages:
-    - fluency: Native or Bilingual Proficiency
-      language: Spanish
-      keywords:
-        - Lengua materna
-    - fluency: Full Professional Proficiency
-      language: English
-      keywords:
-        - IELTS 7.5
-        - Nivel C1
-    - fluency: Elementary Proficiency
-      language: French
-      keywords:
-        - Nivel A2
+      - Diseño e implementación de modelos de clasificación y regresión con impacto directo en la reducción de costes y optimización de ingresos.
+      - Experiencia en la dirección de equipos multidisciplinares y en la comunicación de resultados a stakeholders no técnicos.
+      - Apasionado por el aprendizaje continuo y la aplicación de técnicas de IA responsable y explicable.
   location:
+    address: Calle de Alcalá 123
     city: Madrid
-    address: Calle de la Princesa 29, 3º Izquierda
-    country: Spain
-    postalCode: "28008"
     region: Comunidad de Madrid
+    country: Spain
+    postalCode: "28001"
   profiles:
-    - network: GitHub
-      username: luciafernandez
-      url: https://github.com/luciafernandez
     - network: LinkedIn
-      username: luciafernandezdata
-      url: https://www.linkedin.com/in/luciafernandezdata
-  projects:
-    - name: Recomendador de contenidos para streaming
-      startDate: Sep 1, 2022
-      summary: >
-        - Diseñé un motor de recomendación en Python con la librería Surprise.
-
-        - Evalué la precisión mediante RMSE y métricas de ranking como NDCG.
-
-        - Desplegué una API del modelo en AWS Lambda para pruebas con usuarios
-        reales.
-      description: Sistema de recomendación basado en filtrado colaborativo y
-        factorización matricial para una plataforma de vídeo bajo demanda.
-      endDate: Mar 1, 2023
+      url: https://www.linkedin.com/in/carlosmendoza
+      username: carlosmendoza
+    - network: GitHub
+      url: https://github.com/carlosmendoza
+      username: carlosmendoza
+  education:
+    - institution: Universidad Politécnica de Madrid
+      url: https://www.upm.es/
+      degree: Master
+      area: Ciencia de Datos e Inteligencia Artificial
+      score: "9,2"
+      startDate: Sep 1, 2014
+      endDate: Jul 1, 2016
+      courses:
+        - Aprendizaje Automático Avanzado
+        - Big Data y Computación Distribuida
+        - Visualización de Datos
+        - Estadística Bayesiana
+        - Deep Learning
+        - Minería de Datos
+      summary: |
+        - Graduado con matrícula de honor en el trabajo final: "Modelos híbridos para la predicción de series temporales financieras."
+        - Colaboré como investigador ayudante en el grupo de Sistemas Inteligentes, desarrollando algoritmos de clasificación para datos no balanceados.
+    - institution: Universidad Carlos III de Madrid
+      url: https://www.uc3m.es/
+      degree: Bachelor
+      area: Ingeniería Informática
+      score: "8,7"
+      startDate: Sep 1, 2010
+      endDate: Jun 1, 2014
+      courses:
+        - Estructuras de Datos y Algoritmos
+        - Bases de Datos
+        - Ingeniería del Software
+        - Redes de Computadores
+      summary: |
+        - Formación integral en ingeniería del software, sistemas operativos y arquitectura de computadores.
+        - Realicé prácticas en empresa en el departamento de inteligencia de negocio de una consultora tecnológica.
+  work:
+    - name: TechNova Analytics
+      url: https://www.technova-analytics.es
+      position: Científico de Datos Senior
+      startDate: Mar 1, 2020
+      summary: |
+        - Lidero el diseño y despliegue de modelos predictivos de fraude en tiempo real, logrando reducir las pérdidas por fraude en un 23 % en el primer año.
+        - Desarrollo pipelines de datos escalables en AWS (S3, Glue, SageMaker) y orquestación con Apache Airflow.
+        - Impulso la adopción de MLOps y buenas prácticas de reproducibilidad, monitorización y gobernanza de modelos.
+        - Coordino un equipo de 4 científicos de datos y colaboro con ingenieros de software y analistas de negocio para priorizar casos de uso de alto impacto.
+        - Presento resultados ejecutivos periódicos al comité de dirección y asesoro en la definición de la estrategia de datos de la compañía.
       keywords:
-        - Filtrado colaborativo
+        - Machine Learning
+        - AWS
+        - MLOps
+        - Fraude
+        - Liderazgo
+    - name: Grupo Financiero Íbero
+      url: https://www.grupoibero.es
+      position: Analista de Datos / Científico de Datos Junior
+      startDate: Sep 1, 2016
+      endDate: Feb 1, 2020
+      summary: |
+        - Construí modelos de segmentación de clientes mediante clustering (K-means, DBSCAN) para campañas de marketing personalizadas, incrementando la tasa de conversión en un 15 %.
+        - Automatizé informes de negocio con Python y SQL, reduciendo el tiempo de generación de reportes de 3 días a 2 horas.
+        - Implementé sistemas de recomendación basados en filtrado colaborativo para la banca online.
+        - Participé en la migración de un data warehouse on-premise a Google BigQuery.
+      keywords:
         - Python
-        - AWS Lambda
-        - Evaluación offline
-      url: https://github.com/luciafernandez/recommender
-    - name: Predicción de abandono de clientes
-      startDate: Feb 1, 2021
-      summary: >
-        - Desarrollé un modelo de churn con XGBoost e interpretabilidad mediante
-        SHAP.
-
-        - Segmenté a los clientes según su probabilidad de abandono y su valor
-        económico.
-
-        - Ayudé al equipo de marketing a priorizar acciones de retención,
-        incrementando un 12 % la tasa de reenganche.
-      description: Modelo de clasificación para identificar clientes en riesgo y
-        optimizar campañas de retención en una compañía de telecomunicaciones.
-      endDate: Jul 1, 2021
-      keywords:
-        - Churn
-        - XGBoost
-        - SHAP
+        - SQL
+        - Clustering
+        - BigQuery
         - Segmentación
-  publications:
-    - name: Predicción de fraude en tiempo real mediante machine learning en entornos
-        bancarios
-      publisher: Revista Española de Ciencia de Datos
-      releaseDate: Feb 10, 2023
-      summary: >
-        - Publicación centrada en la comparación de modelos XGBoost, Random
-        Forest y redes neuronales para la detección de fraude.
-
-        - Propone un enfoque de desequilibrio de clases basado en SMOTE y
-        validación temporal.
-
-        - Incluye un caso de estudio real con datos anonimizados de
-        transacciones bancarias.
-      url: https://www.recsd.es/articulos/prediccion-fraude-ml
+    - name: Consultora Ábaco Digital
+      url: https://www.abacodigital.es
+      position: Ingeniero de Datos
+      startDate: Jul 1, 2014
+      endDate: Aug 1, 2016
+      summary: |
+        - Diseñé y mantuve procesos ETL para la integración de datos de múltiples fuentes en entornos Hadoop y Spark.
+        - Desarrollé dashboards en Tableau y Power BI para monitorizar KPIs de clientes del sector retail.
+        - Optimicé consultas SQL y modelos dimensionales para acelerar el acceso a datos analíticos.
+      keywords:
+        - ETL
+        - Hadoop
+        - Spark
+        - Tableau
+        - SQL
   skills:
-    - level: Expert
-      name: Machine Learning
+    - name: Aprendizaje Automático
+      level: Expert
       keywords:
         - Python
         - Scikit-learn
         - TensorFlow
         - PyTorch
         - XGBoost
-        - LightGBM
-    - level: Expert
-      name: Estadística y Modelos Predictivos
+        - NLP
+    - name: Ingeniería de Datos
+      level: Advanced
       keywords:
-        - Regresión
-        - Series temporales
-        - Modelos Bayesianos
-        - Diseño experimental
-        - Análisis de supervivencia
-    - level: Advanced
-      name: Análisis de Datos
-      keywords:
-        - Pandas
         - SQL
-        - Spark
-        - Databricks
-        - ETL
-    - level: Advanced
-      name: Visualización de Datos
+        - Apache Spark
+        - Hadoop
+        - Airflow
+        - dbt
+    - name: Visualización de Datos
+      level: Advanced
       keywords:
         - Tableau
         - Power BI
         - Matplotlib
-        - Seaborn
-        - D3.js
-    - level: Intermediate
-      name: Cloud y MLOps
+        - ggplot2
+        - Looker
+  languages:
+    - language: Spanish
+      fluency: Native or Bilingual Proficiency
       keywords:
-        - AWS
-        - GCP
+        - Lengua materna
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - TOEFL 110
+        - Experiencia internacional
+  awards:
+    - title: Premio Nacional de Inteligencia Artificial Aplicada
+      awarder: Asociación Española de Inteligencia Artificial (AEPIA)
+      date: Nov 1, 2021
+      summary: |
+        Reconocimiento al proyecto "Detección temprana de enfermedades cardiovasculares mediante deep learning", desarrollado en colaboración con el Hospital Universitario de La Paz.
+    - title: Mejor Comunicación en el Congreso de Ciencia de Datos
+      awarder: Universidad Politécnica de Madrid
+      date: Jun 1, 2016
+      summary: |
+        Premio al trabajo fin de máster por su contribución a la predicción de series temporales financieras con modelos híbridos.
+  certificates:
+    - name: AWS Certified Machine Learning - Specialty
+      issuer: Amazon Web Services
+      date: Mar 1, 2022
+      url: https://aws.amazon.com/es/certification/
+    - name: Professional Data Engineer
+      issuer: Google Cloud
+      date: Oct 1, 2020
+      url: https://cloud.google.com/certification
+  publications:
+    - name: Técnicas de ensemble learning para la detección de fraude en seguros
+      publisher: Revista Iberoamericana de Inteligencia Artificial
+      releaseDate: Apr 1, 2022
+      url: https://www.iberamia.org/revista
+      summary: |
+        - Propone un sistema híbrido basado en Random Forest, Gradient Boosting y redes neuronales para identificar patrones de fraude.
+        - El modelo alcanza una AUC-ROC de 0,97 sobre un conjunto de datos real del sector asegurador.
+        - Analiza la interpretabilidad de los modelos mediante SHAP para facilitar su adopción en entornos regulados.
+  projects:
+    - name: Detección de noticias falsas en redes sociales
+      url: https://github.com/carlosmendoza/fake-news-detector
+      description: Sistema de PLN basado en Transformers para clasificar noticias en
+        español como verdaderas o falsas.
+      startDate: Jan 1, 2023
+      endDate: Jun 1, 2023
+      summary: |
+        - Fine-tuning de modelos BERT y RoBERTa sobre un corpus de noticias etiquetadas en español.
+        - Desarrollo de una API REST con FastAPI y despliegue en un contenedor Docker en Google Cloud Run.
+        - Publicación de los notebooks y el dataset procesado en GitHub como recurso educativo.
+      keywords:
+        - NLP
+        - Transformers
+        - FastAPI
         - Docker
-        - Kubernetes
-        - CI/CD
+    - name: Cuadro de mando integral para pymes
+      url: https://github.com/carlosmendoza/dashboard-pymes
+      description: Dashboard interactivo construido con Streamlit para visualizar KPIs
+        financieros y operativos de pequeñas empresas.
+      startDate: Mar 1, 2023
+      endDate: Jul 1, 2023
+      summary: |
+        - Permite a los usuarios sin perfil técnico explorar sus datos de ventas, gastos y rentabilidad de forma intuitiva.
+        - Incluye módulos de predicción de tesorería mediante Prophet y análisis de desviaciones.
+      keywords:
+        - Streamlit
+        - Prophet
+        - Dashboard
+        - KPI
+  interests:
+    - name: Ajedrez
+      keywords:
+        - Competiciones locales
+        - Táctica
+    - name: Senderismo
+      keywords:
+        - Sierra de Guadarrama
+        - Fotografía de naturaleza
+    - name: Música
+      keywords:
+        - Piano
+        - Jazz
   volunteer:
-    - organization: Data For Good España
-      position: Mentora de proyectos
-      startDate: Mar 1, 2022
-      summary: >
-        - Mentora en proyectos de análisis de datos para organizaciones sin
-        ánimo de lucro.
+    - organization: Data Science for Social Good España
+      url: https://www.datascienceforsocialgood.es
+      position: Voluntario Científico de Datos
+      startDate: May 1, 2019
+      endDate: Dec 1, 2022
+      summary: |
+        - Colaboré con ONG en el análisis de datos socioeconómicos para optimizar la distribución de ayudas alimentarias.
+        - Desarrollé modelos de predicción de desempleo a nivel comarcal para orientar políticas públicas locales.
+        - Impartí talleres introductorios de Python y visualización de datos a estudiantes de secundaria en zonas rurales.
+  references:
+    - name: Dra. Lucía Fernández
+      phone: "+34 655 123 987"
+      relationship: Directora de Data Science en TechNova Analytics
+      email: lucia.fernandez@technova-analytics.es
+      summary: |
+        Carlos es un profesional excepcional, con una gran capacidad para traducir problemas de negocio en soluciones analíticas. Su liderazgo técnico y visión estratégica han sido clave para el éxito de nuestro equipo.
 
-        - Ayudo a las ONG a definir métricas de impacto y a construir informes
-        visuales.
-
-        - Imparto talleres introductorios de Python y visualización de datos
-        para voluntarios.
-      url: https://www.dataforgood.es
-  work:
-    - name: Banco Atlántico Digital
-      position: Científica de Datos Sénior
-      startDate: May 1, 2021
-      summary: >
-        - Diseñé e implementé modelos predictivos de detección de fraude,
-        reduciendo las pérdidas por operaciones ilícitas en un 23 %.
-
-        - Lideré el despliegue de modelos en producción con AWS SageMaker y
-        buenas prácticas de MLOps.
-
-        - Desarrollé cuadros de mando en Tableau para monitorizar el rendimiento
-        de los modelos en tiempo real.
-
-        - Coordiné un equipo de 4 analistas de datos y fomenté la revisión de
-        código y la experimentación continua.
-
-        - Colaboré con las áreas de riesgo y negocio para transformar requisitos
-        complejos en soluciones analíticas.
-      keywords:
-        - Detección de fraude
-        - Python
-        - AWS
-        - MLOps
-        - Tableau
-        - Liderazgo
-      url: https://www.bancatlanticodigital.com
-    - name: Grupo Aura Telecom
-      position: Analista de Datos
-      startDate: Sep 1, 2018
-      summary: >
-        - Construí informes de KPIs y análisis de cohortes para el área de
-        marketing, mejorando la retención de clientes.
-
-        - Automatizé procesos ETL con Python y SQL, reduciendo el tiempo de
-        preparación de datos en un 40 %.
-
-        - Implementé modelos de segmentación RFM para campañas de fidelización y
-        venta cruzada.
-
-        - Realicé pruebas A/B y análisis de significancia estadística para
-        evaluar el impacto de las campañas.
-      endDate: May 1, 2021
-      keywords:
-        - SQL
-        - Python
-        - ETL
-        - Segmentación
-        - Pruebas A/B
-      url: https://www.grupoauratelecom.es
 locale:
   language: es
-layouts:
-  - engine: latex
-    page:
-      showPageNumbers: true
-      paperSize: a4
-      margins:
-        top: 2.5cm
-        bottom: 2.5cm
-        left: 1.5cm
-        right: 1.5cm
-    template: moderncv-banking
-    typography:
-      fontSize: 11pt
-  - engine: docx
-    page:
-      showPageNumbers: true
-      paperSize: a4
-      margins:
-        top: 2.5cm
-        bottom: 2.5cm
-        left: 1.5cm
-        right: 1.5cm
-    typography:
-      fontSize: 11pt
-      lineSpacing: normal
-  - engine: markdown
-  - engine: html
-    template: calm
-    typography:
-      fontSize: 16px

@@ -1,289 +1,265 @@
 content:
   basics:
-    name: Lucía Fernández Ortega
-    email: lucia.fernandez@luciafernandezpm.com
-    headline: Product Manager con más de 8 años de experiencia en producto digital
-    phone: +34 622 345 678
-    summary: >
-      Product Manager orientada a resultados con más de 8 años de experiencia en
-      el diseño, desarrollo y lanzamiento de productos digitales en sectores
-      fintech y SaaS.
-
-
-      - Lidero equipos multidisciplinares para definir visión, estrategia y hoja
-      de ruta de producto.
-
-      - Aplico metodologías ágiles y tomo decisiones basadas en datos.
-
-      - Experiencia en descubrimiento de clientes, priorización de backlog y
-      medición de KPIs.
-
-      - Colaboro estrechamente con diseño e ingeniería para ofrecer experiencias
-      de usuario impactantes.
-    url: https://www.luciafernandezpm.com
-  education:
-    - area: Product Management
-      institution: IE Business School
-      degree: Master
-      courses:
-        - Product Strategy
-        - Data-Driven Product Management
-        - UX Research
-        - Digital Business Models
-      endDate: Jun 30, 2019
-      startDate: Oct 1, 2018
-      summary: |
-        - Adquirí una visión integral de la gestión de producto digital.
-        - Desarrollé habilidades de análisis de datos y experimentación.
-        - Colaboré en proyectos reales con empresas del sector tecnológico.
-      score: "9.1"
-      url: https://www.ie.edu
-    - area: Administración de Empresas
-      institution: Universidad Carlos III de Madrid
-      degree: Bachelor
-      courses:
-        - Fundamentos de Marketing
-        - Finanzas Corporativas
-        - Estrategia Empresarial
-        - Estadística Aplicada
-        - Dirección de Operaciones
-      endDate: Jun 30, 2012
-      startDate: Sep 1, 2008
-      summary: |
-        - Base sólida en gestión empresarial, análisis financiero y marketing.
-        - Desarrollo de competencias analíticas y de comunicación.
-        - Participación en proyectos de simulación y casos de negocio.
-      score: "8.4"
-      url: https://www.uc3m.es
-  awards:
-    - awarder: Universidad Carlos III de Madrid
-      title: Premio al Mejor Proyecto Fin de Grado
-      date: Jul 1, 2012
-      summary: >
-        Reconocimiento al proyecto final más innovador dentro del grado de
-        Administración de Empresas.
-  certificates:
-    - issuer: Scrum Alliance
-      name: Certified Scrum Product Owner (CSPO)
-      date: Feb 1, 2019
-      url: https://www.scrumalliance.org/certifications/cspo
-    - issuer: Product School
-      name: Product Analytics Micro-Certification
-      date: Oct 1, 2021
-      url: https://productschool.com
-  interests:
-    - name: Tecnología
-      keywords:
-        - IA aplicada
-        - Automatización
-    - name: Actividades al aire libre
-      keywords:
-        - Senderismo
-        - Ciclismo
-    - name: Lectura
-      keywords:
-        - Liderazgo
-        - Innovación
-  languages:
-    - fluency: Native or Bilingual Proficiency
-      language: Spanish
-      keywords:
-        - Lengua materna
-    - fluency: Full Professional Proficiency
-      language: English
-      keywords:
-        - TOEFL 105
-        - Nivel C1
-    - fluency: Limited Working Proficiency
-      language: French
-      keywords:
-        - Nivel B1
+    name: Laura Gómez Fernández
+    headline: "Product Manager Senior | Estrategia de producto y transformación digital"
+    phone: "+34 612 345 678"
+    email: laura@lauragomez.es
+    url: https://lauragomez.es
+    summary: |
+      Product Manager Senior con más de 6 años de experiencia en el ciclo de vida completo de productos digitales, desde la investigación de usuario hasta el lanzamiento y crecimiento.
+      Especializada en estrategia de producto, definición de hoja de ruta (roadmap), OKRs y descubrimiento de producto en entornos ágiles.
+      Experiencia en sectores fintech, movilidad y ecommerce, liderando equipos multifuncionales y colaborando estrechamente con diseño, ingeniería y negocio.
+      Orientada a datos, con toma de decisiones basada en métricas, analítica de producto, experimentación y A/B testing.
   location:
+    address: "Calle de Alcalá 45, 3º D"
     city: Madrid
-    address: Calle de Alcalá 45
-    country: Spain
-    postalCode: "28014"
     region: Comunidad de Madrid
+    country: Spain
+    postalCode: "28001"
   profiles:
     - network: LinkedIn
-      username: luciafernandezpm
-      url: https://www.linkedin.com/in/luciafernandezpm
-    - network: Twitter
-      username: luciafernandezpm
-      url: https://twitter.com/luciafernandezpm
-  projects:
-    - name: App Salud360
-      startDate: Mar 1, 2023
-      summary: >
-        - Diseñé la propuesta de valor y definí el MVP junto al equipo de
-        ingeniería.
-
-        - Coordiné un equipo remoto de 5 desarrolladores.
-
-        - Validé la solución con más de 40 usuarios y ajusté las funcionalidades
-        clave.
-      description: Aplicación móvil de seguimiento de hábitos de salud para
-        consumidores finales.
-      endDate: Sep 30, 2023
-      keywords:
-        - Salud
-        - Mobile
-        - MVP
-        - User Research
-      url: https://salud360.es
-  publications:
-    - name: "De la idea al producto: cómo priorizar funciones con impacto"
-      publisher: Medium
-      releaseDate: Sep 15, 2021
-      summary: >
-        Artículo orientado a product managers sobre métodos de priorización
-        basados en datos, valor de negocio y esfuerzo de desarrollo.
-      url: https://medium.com/@luciafernandezpm
-  skills:
-    - level: Expert
-      name: Gestión de Producto
+      url: https://www.linkedin.com/in/lauragomezpm
+      username: lauragomezpm
+    - network: Medium
+      url: https://medium.com/@lauragomezpm
+      username: lauragomezpm
+  education:
+    - institution: IE Business School
+      url: https://www.ie.edu
+      degree: Master
+      area: Dirección de Producto
+      score: "8.9"
+      startDate: Sep 2020
+      endDate: Jul 2021
+      courses:
+        - Estrategia de Producto
+        - Analítica Digital
+        - Design Thinking
+        - Liderazgo Ágil
+        - Finanzas para Product Managers
+      summary: |
+        Programa intensivo centrado en el desarrollo de habilidades de liderazgo de producto y toma de decisiones basada en datos.
+        Proyecto final: diseño de una solución de banca digital para jóvenes, con validación de usuario y prototipo funcional.
+    - institution: Universidad Autónoma de Madrid
+      url: https://www.uam.es
+      degree: Bachelor
+      area: Administración y Dirección de Empresas
+      score: "8.2"
+      startDate: Sep 2013
+      endDate: Jul 2017
+      courses:
+        - Dirección Estratégica
+        - Marketing Estratégico
+        - Estadística Aplicada
+        - Finanzas Corporativas
+        - Comportamiento del Consumidor
+      summary: |
+        Formación en gestión empresarial con especial interés en marketing digital y estrategia.
+        Trabajo de fin de grado sobre la adopción de plataformas digitales en el sector retail.
+  work:
+    - name: Mobiliti
+      url: https://mobiliti.io
+      position: Senior Product Manager
+      startDate: Jun 2023
+      summary: |
+        Lidero la estrategia de producto de la app de movilidad compartida con más de 2M de usuarios en España y América Latina.
+        Defino la hoja de ruta del producto alineada con los OKRs de la compañía, priorizando iniciativas de retención y monetización.
+        Coordino tres squads multifuncionales de diseño, ingeniería y datos para lanzar funcionalidades de pago, geolocalización y fidelización.
+        Impulso la experimentación continua mediante A/B testing y análisis de métricas de producto para reducir el churn y mejorar el LTV.
+        Colaboro con marketing y atención al cliente para incorporar insights de usuario y elevar la satisfacción (CSAT/NPS).
       keywords:
         - Roadmap
-        - Priorización
-        - Discovery
         - OKRs
-        - KPI
-    - level: Advanced
-      name: Metodologías Ágiles
+        - Metodologías ágiles
+        - Analítica de producto
+        - A/B testing
+        - Retención
+    - name: Finpagos
+      url: https://finpagos.com
+      position: Product Manager
+      startDate: Jan 2021
+      endDate: May 2023
+      summary: |
+        Gestioné el producto de pasarela de pagos B2B, desde la identificación de oportunidades hasta el lanzamiento y adopción.
+        Rediseñé el flujo de onboarding de comercios, logrando reducir el tiempo de alta en un 40% y aumentando la conversión.
+        Implementé un proceso de descubrimiento de producto con entrevistas, tests de usabilidad y prototipado rápido.
+        Colaboré con ingeniería en la priorización del backlog y la definición de criterios de aceptación.
+        Presenté métricas y resultados a stakeholders, apoyándome en dashboards con Tableau y Amplitude.
+      keywords:
+        - Fintech
+        - Pasarela de pagos
+        - Descubrimiento de producto
+        - Backlog
+        - Tableau
+        - Amplitude
+    - name: RetailWise
+      url: https://retailwise.io
+      position: Product Owner
+      startDate: Mar 2018
+      endDate: Dec 2020
+      summary: |
+        Actué como product owner de una plataforma de comercio electrónico para clientes de retail y gran consumo.
+        Definí la visión y el backlog del producto en colaboración con stakeholders de negocio y tecnología.
+        Coordiné los sprints de desarrollo y las entregas a producción en ciclos quincenales con metodología Scrum.
+        Implementé mejoras en el proceso de checkout que incrementaron la tasa de conversión media en un 15%.
+        Realicé análisis de competencia y estudios de mercado para fundamentar las decisiones de producto.
+      keywords:
+        - Ecommerce
+        - Scrum
+        - Product Owner
+        - Conversión
+        - Investigación de mercado
+  languages:
+    - language: Spanish
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - Lengua materna
+        - Comunicación
+        - Redacción
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - C1 Advanced
+        - Inglés de negocio
+        - Reuniones internacionales
+    - language: Catalan
+      fluency: Limited Working Proficiency
+      keywords:
+        - Comprensión lectora
+        - Conversación básica
+  skills:
+    - name: Gestión de Producto
+      level: Expert
+      keywords:
+        - Roadmaps
+        - OKRs
+        - Priorización
+        - Story Mapping
+        - Product Discovery
+        - Go-to-Market
+    - name: Metodologías Ágiles
+      level: Expert
       keywords:
         - Scrum
         - Kanban
         - Lean Startup
-        - Sprint Planning
-    - level: Advanced
-      name: Herramientas de Análisis
+        - Design Sprint
+    - name: Análisis de Datos
+      level: Advanced
       keywords:
         - SQL
-        - Mixpanel
         - Amplitude
-        - Excel
-    - level: Advanced
-      name: User Research
+        - Mixpanel
+        - Google Analytics
+        - A/B testing
+    - name: UX / UI
+      level: Intermediate
       keywords:
-        - Entrevistas
-        - Encuestas
-        - Usabilidad
+        - Figma
         - Prototipado
-    - level: Expert
-      name: Herramientas de Producto
+        - User Research
+        - Usabilidad
+    - name: Herramientas de Producto
+      level: Expert
       keywords:
         - Jira
         - Confluence
+        - Notion
+        - Trello
+  awards:
+    - title: Premio al Mejor Lanzamiento de Producto
+      awarder: Finpagos
+      date: Nov 2022
+      summary: |
+        Reconocimiento interno al equipo de producto por el lanzamiento de la nueva pasarela de pagos, que alcanzó un crecimiento del 32% en transacciones en el primer trimestre.
+    - title: Reconocimiento al Liderazgo en Producto
+      awarder: Mobiliti
+      date: Feb 2024
+      summary: |
+        Destacada por mi contribución a la mejora de la retención de usuarios y la consolidación de la estrategia de producto de la compañía.
+  certificates:
+    - name: Professional Scrum Product Owner (PSPO I)
+      issuer: Scrum.org
+      date: Jun 2022
+      url: https://www.scrum.org/certifications/pspo-i
+    - name: Product Management Certification
+      issuer: Product School
+      date: Mar 2020
+      url: https://productschool.com
+    - name: Google Analytics Individual Qualification
+      issuer: Google
+      date: Apr 2021
+      url: https://skillshop.exceedlms.com
+  publications:
+    - name: Cómo descubrir oportunidades de producto a través de la experimentación
+      publisher: Medium
+      releaseDate: Nov 2022
+      url: https://medium.com/@lauragomezpm/como-descubrir-oportunidades-de-producto
+      summary: |
+        Artículo en el que comparto un marco práctico para priorizar experimentos de producto basados en datos y aprendizaje continuo.
+    - name: Claves para construir un roadmap de producto orientado a resultados
+      publisher: LinkedIn Articles
+      releaseDate: Jul 2023
+      url: https://www.linkedin.com/pulse/claves-roadmap-producto-laura-gomez
+      summary: |
+        Guía práctica para conectar la visión de producto con la ejecución táctica del equipo y la estrategia de negocio.
+  projects:
+    - name: MentorPM
+      url: https://mentorpm.es
+      description: Comunidad online para mentorear a product managers en activo.
+      startDate: Sep 2022
+      summary: |
+        Creé una comunidad de producto y crecimiento con más de 500 miembros activos.
+        Organizo mentorías mensuales con product managers senior de empresas tecnológicas.
+        Desarrollo una newsletter semanal con aprendizajes de producto y liderazgo.
+      keywords:
+        - Comunidad
+        - Mentoría
+        - Liderazgo
+        - Newsletter
+    - name: App de hábitos saludables
+      url: https://github.com/lauragomez/habitos
+      description: Prototipo en Figma de una aplicación móvil de bienestar y hábitos
+        diarios.
+      startDate: Jan 2023
+      endDate: May 2023
+      summary: |
+        Diseñé un MVP en Figma con pruebas de usuario para validar la propuesta de valor.
+        Definición de métricas de éxito y test de usabilidad con 15 participantes.
+      keywords:
+        - UX
         - Figma
-        - Miro
+        - Prototipado
+  interests:
+    - name: Lectura
+      keywords:
+        - Producto
+        - Marketing
+        - Novela histórica
+    - name: Running
+      keywords:
+        - Maratones
+        - Trail
+    - name: Tecnología
+      keywords:
+        - Inteligencia artificial
+        - Startups
+        - Low-code
   volunteer:
-    - organization: Junior Achievement España
-      position: Mentora de emprendedores
-      startDate: Sep 1, 2020
-      summary: >
-        - Acompañé a jóvenes emprendedores en el desarrollo de modelos de
-        negocio.
+    - organization: Mujeres Tech España
+      url: https://mujerestech.es
+      position: Mentora de producto
+      startDate: Mar 2022
+      summary: |
+        Acompaño a mujeres que quieren iniciarse en gestión de producto mediante sesiones de mentoría mensuales.
+        Colaboro en el diseño de talleres de desarrollo profesional y de liderazgo.
+  references:
+    - name: Marta López Sánchez
+      email: marta.lopez@mobiliti.io
+      phone: "+34 699 123 456"
+      relationship: Directora de Producto en Mobiliti
+      summary: |
+        Laura es una profesional excepcional, con una gran capacidad para priorizar, comunicar y ejecutar estrategias de producto. Su liderazgo ha sido clave para el crecimiento de nuestro producto.
 
-        - Impartí talleres de propuesta de valor y validación de ideas.
-
-        - Participé en eventos de networking y evaluación de proyectos.
-      endDate: Jun 30, 2023
-      url: https://www.juniorachievement.es
-  work:
-    - name: Nixal Digital
-      position: Senior Product Manager
-      startDate: Jan 1, 2022
-      summary: >
-        - Defino la visión y estrategia de producto para dos líneas principales:
-        banca móvil y soluciones de pago.
-
-        - Lidero un equipo de 8 personas entre ingeniería, diseño y datos.
-
-        - Priorizo el backlog mediante OKRs, análisis de impacto y entrevistas
-        con clientes.
-
-        - Lancé una nueva funcionalidad de pagos que incrementó la retención un
-        12 %.
-
-        - Acompaño al equipo en la medición de KPIs con Mixpanel, SQL y Google
-        Analytics.
-      keywords:
-        - Product Strategy
-        - OKRs
-        - FinTech
-        - Agile
-        - SaaS
-        - Data Analysis
-      url: https://nixal.digital
-    - name: Wandatech
-      position: Product Manager
-      startDate: Jun 1, 2019
-      summary: >
-        - Gestioné el ciclo de vida completo de un SaaS B2B de automatización de
-        marketing.
-
-        - Creé el roadmap, épicas e historias de usuario en Jira.
-
-        - Coordiné con equipos comerciales y de éxito del cliente para
-        identificar oportunidades de mejora.
-
-        - Rediseñé el onboarding de la plataforma y reduje el churn un 20 %.
-      endDate: Dec 31, 2021
-      keywords:
-        - SaaS
-        - B2B
-        - Marketing Automation
-        - Jira
-        - Roadmap
-      url: https://wandatech.io
-    - name: Innova Retail Solutions
-      position: Product Manager Jr.
-      startDate: Sep 1, 2016
-      summary: >
-        - Apoyé al Product Manager en el análisis de mercado y la definición de
-        requisitos.
-
-        - Diseñé y ejecuté pruebas de usabilidad con clientes reales.
-
-        - Elaboré informes semanales de métricas y propuestas de mejora.
-
-        - Colaboré con el equipo de desarrollo en la resolución de incidencias.
-      endDate: May 31, 2019
-      keywords:
-        - Retail
-        - Usabilidad
-        - Analítica
-        - Requirements
-      url: https://innovaretail.es
 locale:
   language: es
-layouts:
-  - engine: latex
-    page:
-      showPageNumbers: true
-      paperSize: a4
-      margins:
-        top: 2.5cm
-        bottom: 2.5cm
-        left: 1.5cm
-        right: 1.5cm
-    template: moderncv-banking
-    typography:
-      fontSize: 11pt
-  - engine: docx
-    page:
-      showPageNumbers: true
-      paperSize: a4
-      margins:
-        top: 2.5cm
-        bottom: 2.5cm
-        left: 1.5cm
-        right: 1.5cm
-    typography:
-      fontSize: 11pt
-      lineSpacing: normal
-  - engine: markdown
-  - engine: html
-    template: calm
-    typography:
-      fontSize: 16px

@@ -1,276 +1,203 @@
 content:
   basics:
-    name: Lena Hoffmann
-    email: kontakt@lenahoffmann-ux.de
-    headline: Senior UX-Designerin & Produktstrategin
-    phone: +49 170 1234567
-    summary: >
-      Senior UX-Designerin mit über 8 Jahren Erfahrung in der nutzerzentrierten
-      Gestaltung komplexer digitaler Produkte für B2B- und B2C-Märkte.
-      Spezialisiert auf Design Systems, strategisches Interaction Design und
-      evidenzbasierte UX-Forschung.
+    name: Katrin Vogel
+    headline: UX Designerin mit Fokus auf nutzerzentrierte Gestaltung
+    phone: "+49 151 23456789"
+    email: hallo@katrinvogel.de
+    url: https://katrinvogel.de
+    summary: |
+      Leidenschaftliche UX Designerin mit über 6 Jahren Erfahrung in der Gestaltung digitaler Produkte, die Menschen begeistern und im Alltag echten Mehrwert schaffen. Ich verbinde tiefes User Research mit klarem visuellem Design, um barrierefreie, intuitive und ästhetisch überzeugende Erlebnisse zu entwickeln. Meine Expertise umfasst Design Thinking, Prototyping, Design Systems sowie die enge Zusammenarbeit mit Product Management und Entwicklung.
 
-
-      Leitet cross-funktionale Teams in agilen Umgebungen und vereint
-      analytisches Denken mit ästhetischer Präzision. Leidenschaftlich für
-      barrierefreies Design und datengetriebene Entscheidungsfindung, um
-      messbare Geschäftsergebnisse zu erzielen.
-    url: https://lenahoffmann-ux.de
-  education:
-    - area: Human-Computer Interaction
-      institution: Hochschule für Gestaltung Schwäbisch Gmünd
-      degree: Master
-      courses:
-        - Interaktionsgestaltung
-        - Empirische Forschungsmethoden
-        - Design Thinking
-        - Prototyping und Testverfahren
-      endDate: Sep 1, 2017
-      startDate: Oct 1, 2015
-      summary: >
-        Schwerpunkt auf nutzerzentrierter Forschung und evidenzbasierter
-        Gestaltung komplexer digitaler Systeme. Abschlussarbeit zur Reduktion
-        kognitiver Belastung in medizinischen Software-Systemen.
-      score: 1,3
-      url: https://www.hfg-gmuend.de
-    - area: Mediendesign und Kommunikation
-      institution: Hochschule München
-      degree: Bachelor
-      courses:
-        - Informationsdesign
-        - Webtechnologien
-        - Visuelle Kommunikation
-        - Typografie und Layout
-      endDate: Sep 1, 2014
-      startDate: Oct 1, 2011
-      summary: >
-        Fundierte Ausbildung in visuellem Design, Informationsarchitektur und
-        Grundlagen der Frontend-Entwicklung.
-      score: 1,7
-      url: https://www.hm.edu
-  awards:
-    - awarder: iF International Forum Design GmbH
-      title: iF Design Award
-      date: Mar 2023
-      summary: >
-        Auszeichnung für das Redesign des Patientenportals der Nexa Health AG in
-        der Kategorie User Experience.
-  certificates:
-    - issuer: UXQB / ibi research
-      name: CPUX-F (Certified Professional for Usability and User Experience -
-        Foundation Level)
-      date: Jun 2019
-      url: https://www.uxqb.org
-  interests:
-    - name: Typografie
-      keywords:
-        - Schriftgestaltung
-        - Variable Fonts
-        - Leseforschung
-    - name: Fotografie
-      keywords:
-        - Street Photography
-        - Analog
-        - Bildkomposition
-    - name: Soziales Engagement
-      keywords:
-        - Tech4Germany
-        - Mentoring
-        - Diversity in Tech
-  languages:
-    - fluency: Native or Bilingual Proficiency
-      language: German
-    - fluency: Full Professional Proficiency
-      language: English
-      keywords:
-        - Business English
-        - Technical Documentation
+      - Schwerpunkt auf nutzerzentrierten Prozessen und datenbasierten Designentscheidungen
+      - Erfahrung in der Leitung von Design Sprints und Workshops
+      - Starkes Gespür für Typografie, Farbe und visuelle Hierarchie
+      - Überzeugte Verfechterin von Barrierefreiheit und Inklusion im digitalen Raum
   location:
     city: München
-    address: Lindwurmstraße 88
-    country: Germany
-    postalCode: "80337"
     region: Bayern
+    country: Germany
+    postalCode: "80331"
   profiles:
     - network: LinkedIn
-      username: lena-hoffmann-ux
-      url: https://linkedin.com/in/lena-hoffmann-ux
+      url: https://www.linkedin.com/in/katrinvogel
+      username: katrinvogel
     - network: Behance
-      username: lenahoffmann
-      url: https://behance.net/lenahoffmann
+      url: https://www.behance.net/katrinvogel
+      username: katrinvogel
     - network: Dribbble
-      username: lenahoffmann
-      url: https://dribbble.com/lenahoffmann
-  projects:
-    - name: CareConnect App
-      startDate: Jan 1, 2022
-      summary: >
-        - End-to-End-UX für eine iOS- und Android-App mit über 50.000 aktiven
-        Nutzern
-
-        - Entwicklung eines empathischen Onboardings für Nutzer in
-        Stresssituationen
-
-        - Integration von Sprachassistenten und Barrierefreiheitsfunktionen
-      description: Mobile App zur Vernetzung von Pflegekräften und Angehörigen
-      endDate: Jun 1, 2023
+      url: https://dribbble.com/katrinvogel
+      username: katrinvogel
+  education:
+    - institution: Hochschule für Gestaltung München
+      url: https://www.hfg-muenchen.de
+      degree: Bachelor
+      area: Kommunikationsdesign
+      score: "1,6"
+      startDate: Oct 2015
+      endDate: Sep 2019
+      courses:
+        - Grundlagen der Gestaltung
+        - Typografie
+        - Interaktionsdesign
+        - Usability Engineering
+        - Design Research
+        - Bewegtbild und Animation
+      summary: |
+        - Vertiefung in Interaktions- und Interface-Design mit Fokus auf digitale Produkte
+        - Praxisprojekte in Kooperation mit Unternehmen aus den Bereichen FinTech und Mobilität
+        - Abschlussarbeit zum Thema „Inclusive Design – Barrierefreiheit in digitalen Produkten“ mit der Note 1,3
+        - Studentische Hilfskraft im UX-Labor, Betreuung von Usability-Studien
+  work:
+    - name: Pixelwerk GmbH
+      url: https://pixelwerk.de
+      position: Senior UX Designerin
+      startDate: Mar 2022
+      summary: |
+        - Verantwortlich für die UX-Strategie und die Weiterentwicklung des Design Systems der SaaS-Plattform „DataFlow“
+        - Leitung von User-Research-Studien mit über 40 qualitativen Interviews und iterativen Usability-Tests
+        - Etablierung eines Design-Sprint-Formats, das die Time-to-Market neuer Features um 30 % reduzierte
+        - Enge Zusammenarbeit mit Product Management, Engineering und Data Science zur Integration nutzerzentrierter Prozesse
+        - Mentoring von Junior UX Designerinnen und Designern sowie Aufbau einer internen Wissensdatenbank
       keywords:
-        - Mobile UX
-        - Healthcare
-        - Accessibility
-      url: https://www.nexa-health.de/careconnect
-  publications:
-    - name: Barrierefreiheit im medizinischen E-Commerce
-      publisher: UX Magazin
-      releaseDate: Nov 2022
-      summary: >
-        Praxisleitfaden zur Umsetzung von WCAG 2.1 AA in komplexen
-        Gesundheitsportalen mit Fokus auf ältere Nutzergruppen.
-      url: https://www.ux-magazin.de/barrierefreiheit-medizin-ecommerce
-  skills:
-    - level: Expert
-      name: UX Research & Strategie
+        - Design Thinking
+        - Design System
+        - User Research
+        - Design Sprints
+        - Mentoring
+    - name: Appsphere Solutions
+      url: https://appsphere-solutions.de
+      position: UX Designerin
+      startDate: Sep 2019
+      endDate: Feb 2022
+      summary: |
+        - Konzeption und Gestaltung von User Interfaces für iOS- und Android-Apps im Bereich Health und E-Commerce
+        - Durchführung von Stakeholder-Workshops und Ableitung von UX-Strategien für neue Produktfunktionen
+        - Erstellung von interaktiven Prototypen mit Figma und InVision zur frühzeitigen Validierung von Ideen
+        - Durchführung von A/B-Tests und Ableitung datenbasierter Designentscheidungen
+        - Aufbau eines nutzerzentrierten Designprozesses in einem agilen Entwicklungsteam
       keywords:
-        - User Interviews
+        - Mobile Apps
+        - Prototyping
         - Usability Testing
-        - Journey Mapping
+        - A/B-Tests
+        - Agile
+  languages:
+    - language: German
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - Muttersprache
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - Business English
+        - UX-Workshops
+  skills:
+    - name: UX Research
+      level: Advanced
+      keywords:
+        - Tiefeninterviews
+        - Usability-Tests
         - Personas
-        - A/B Testing
-    - level: Expert
-      name: UI Design & Prototyping
+        - Customer Journey
+        - Umfragen
+    - name: UI-Design
+      level: Expert
       keywords:
         - Figma
         - Sketch
         - Adobe XD
-        - Principle
+        - Design Systems
+        - Barrierefreiheit
+    - name: Prototyping
+      level: Advanced
+      keywords:
+        - Figma Prototype
+        - InVision
         - ProtoPie
-    - level: Advanced
-      name: Design Operations
+        - Micro-Interactions
+    - name: Methoden
+      level: Advanced
       keywords:
-        - Design Systems
-        - Zeroheight
-        - Storybook
-        - Component Libraries
-        - Token Studio
-    - level: Intermediate
-      name: Frontend-Grundlagen
-      keywords:
-        - HTML5
-        - CSS3
-        - JavaScript
-        - React Basics
-        - Accessibility (WCAG)
-  volunteer:
-    - organization: Tech4Germany
-      position: UX-Mentorin
-      startDate: Sep 1, 2020
-      summary: >
-        - Mentoring von Nachwuchsdesignern aus unterrepräsentierten Gruppen
-
-        - Begleitung bei Portfolio-Reviews und Bewerbungsprozessen in der
-        Tech-Branche
-
-        - Workshop-Leitung zu Themen wie Design Thinking und UX-Grundlagen
-      url: https://www.tech4germany.org
-  work:
-    - name: Nexa Health AG
-      position: Lead UX Designer
-      startDate: Mar 1, 2021
-      summary: >
-        - Leitung des UX-Teams (5 Personen) für Patienten- und Ärzteportale im
-        Gesundheitssektor
-
-        - Entwicklung und Pflege eines umfassenden Design Systems mit Figma und
-        Zeroheight
-
-        - Durchführung von User Research, Usability-Tests und
-        Journey-Mapping-Workshops
-
-        - Enge Zusammenarbeit mit Product Ownern, Entwicklern und Medizinern in
-        agilen Scrum-Teams
-
-        - Steigerung der Task-Completion-Rate um 35 % durch Redesign des
-        Terminbuchungsflows
-      keywords:
-        - Design Systems
-        - Figma
-        - User Research
-        - Scrum
-        - Healthcare
-      url: https://www.nexa-health.de
-    - name: Formwerk Digital GmbH
-      position: Senior UX Designer
-      startDate: Jan 1, 2018
-      summary: >
-        - Konzeption und Gestaltung von E-Commerce-Plattformen und mobilen Apps
-        für DAX-Kunden
-
-        - Moderation von Design Sprints und Stakeholder-Workshops zur
-        Anforderungsklärung
-
-        - Erstellung interaktiver Prototypen für frühe Nutzervalidierung und
-        Stakeholder-Pitches
-
-        - Mentoring von Junior Designern und Einführung von
-        Peer-Review-Prozessen
-      endDate: Feb 1, 2021
-      keywords:
-        - E-Commerce
+        - Design Thinking
         - Design Sprints
-        - Prototyping
-        - Mentoring
-      url: https://www.formwerk.de
-    - name: UX Studio Mitte
-      position: UX/UI Designer
-      startDate: Nov 1, 2014
-      summary: >
-        - Unterstützung bei der Konzeption von Websites und Apps für Start-ups
-        und KMU
-
-        - Erstellung von Wireframes, Moodboards und visuellen Designs in Sketch
-        und Adobe CC
-
-        - Durchführung von Heuristischen Evaluationen und Erstellung von Style
-        Guides
-
-        - Zusammenarbeit mit Frontend-Entwicklern zur Sicherstellung der
-        Design-Implementierung
-      endDate: Dec 1, 2017
+        - Service Blueprint
+        - Jobs-to-be-Done
+  awards:
+    - title: German Design Award 2023
+      date: Feb 2023
+      awarder: Rat für Formgebung
+      summary: |
+        Auszeichnung für herausragendes Interface-Design der mobilen App „FairTrade Finder“ in der Kategorie „Excellent Communications Design“.
+  certificates:
+    - name: Google UX Design Professional Certificate
+      issuer: Google
+      date: Jan 2021
+      url: https://www.coursera.org/professional-certificates/google-ux-design
+    - name: Certified Professional for Usability and User Experience
+      issuer: Fraunhofer-Institut für Arbeitswirtschaft und Organisation
+      date: Nov 2020
+      url: https://www.iao.fraunhofer.de
+  publications:
+    - name: Barrierefreiheit im digitalen Produktdesign – Ein Leitfaden für Teams
+      publisher: UX-Love Magazin
+      releaseDate: Mar 2023
+      url: https://ux-love-magazin.de/artikel/barrierefreiheit
+      summary: |
+        - Praxisorientierter Leitfaden zur Integration von Barrierefreiheit in agile Designprozesse
+        - Vorstellung von Methoden und Tools für inklusive Nutzertests
+        - Plädoyer für Barrierefreiheit als Gestaltungsprinzip statt nachträglicher Anforderung
+  projects:
+    - name: FairTrade Finder
+      url: https://fairtrade-finder.de
+      description: Mobiler Produktbegleiter für nachhaltigen Konsum
+      startDate: Sep 2021
+      endDate: Feb 2022
+      summary: |
+        - Konzeption einer App, die Verbraucher:innen transparente Informationen zu Herkunft und Nachhaltigkeit von Produkten bietet
+        - Durchführung von User Research mit 25 Teilnehmenden zur Identifikation von Entscheidungsmustern im Kaufprozess
+        - Erstellung von interaktiven Prototypen und iterative Usability-Tests über drei Zyklen
+        - Finale Gestaltung des UI-Kits unter Berücksichtigung der WCAG-2.1-Richtlinien
       keywords:
-        - Wireframing
-        - Visual Design
-        - Sketch
-        - Heuristische Evaluation
-      url: https://www.uxstudio-mitte.de
+        - Mobile App
+        - Nachhaltigkeit
+        - User Research
+        - WCAG
+    - name: Design System „Kiosk“
+      url: https://github.com/katrinvogel/kiosk
+      description: Open-Source Design System für barrierefreie Webanwendungen
+      startDate: Jan 2022
+      endDate: Dec 2023
+      summary: |
+        - Aufbau eines modular aufgebauten Design Systems mit über 60 Komponenten in Figma
+        - Entwicklung von Dokumentationsstandards für Design-Tokens und Nutzungskontexte
+        - Aktive Pflege der Community und Organisation von monatlichen Contributing-Workshops
+      keywords:
+        - Design System
+        - Figma
+        - Open Source
+        - Accessibility
+  interests:
+    - name: Design
+      keywords:
+        - Design Thinking
+        - Generative KI
+        - Nachhaltiges Design
+    - name: Musik
+      keywords:
+        - Klavier
+        - Konzerte
+    - name: Reisen
+      keywords:
+        - Skandinavien
+        - Städte mit Designkultur
+  volunteer:
+    - organization: ReDI School of Digital Integration
+      url: https://www.redi-school.org
+      position: Mentorin für UX Design
+      startDate: Sep 2022
+      summary: |
+        - Unterstützung geflüchteter und zugewanderter Menschen beim Einstieg in den UX-Design-Bereich
+        - Planung und Durchführung von monatlichen Feedback-Sessions zu Portfolio-Projekten
+        - Aufbau von Lernmaterialien und Übungen zu den Grundlagen nutzerzentrierter Gestaltung
 locale:
   language: de
-layouts:
-  - engine: latex
-    page:
-      showPageNumbers: true
-      paperSize: a4
-      margins:
-        top: 2.5cm
-        bottom: 2.5cm
-        left: 1.5cm
-        right: 1.5cm
-    template: moderncv-banking
-    typography:
-      fontSize: 11pt
-  - engine: docx
-    page:
-      showPageNumbers: true
-      paperSize: a4
-      margins:
-        top: 2.5cm
-        bottom: 2.5cm
-        left: 1.5cm
-        right: 1.5cm
-    typography:
-      fontSize: 11pt
-      lineSpacing: normal
-  - engine: markdown
-  - engine: html
-    template: calm
-    typography:
-      fontSize: 16px

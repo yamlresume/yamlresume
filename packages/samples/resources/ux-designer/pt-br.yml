@@ -1,289 +1,262 @@
 content:
   basics:
-    name: Ana Carolina Mendes
-    email: ana.mendes@email.com
-    headline: UX Designer Senior | Estratégia de Produto e Design de Interação
-    phone: +55 11 98765-4321
-    summary: >
-      Designer de experiência do usuário com mais de 6 anos de atuação em
-      produtos digitais complexos, especializada em transformar dados
-      qualitativos e quantitativos em soluções centradas no usuário. Combina
-      estratégia de negócios com práticas de design thinking para criar
-      interfaces intuitivas e acessíveis.
+    name: Mariana Costa
+    headline: 'UX Designer Plena | Pesquisa, Prototipação e Design de Interfaces'
+    phone: "+55 11 98765-4321"
+    email: mariana.design@email.com
+    url: https://marianacosta.design
+    summary: |
+      UX Designer com 6+ anos de experiência em produtos digitais, atuando em todo o ciclo de discovery e delivery.
 
+      Especialista em pesquisa com usuários, arquitetura da informação, prototipação em alta fidelidade e design de interfaces para web e mobile. Facilita a criação e a evolução de design systems, colabora com times de produto e engenharia e conduz testes de usabilidade para embasar decisões com dados e evidências.
 
-      Lidera processos de discovery e delivery em times multidisciplinares,
-      conduzindo pesquisas, workshops de cocriação e testes de usabilidade que
-      resultaram em aumento de 35% na conversão de fluxos críticos em produtos
-      SaaS e fintech.
-    url: https://anacarolinaux.com.br
-  education:
-    - area: Design
-      institution: Universidade de São Paulo
-      degree: Bachelor
-      courses:
-        - Design de Interação
-        - Ergonomia Cognitiva e Usabilidade
-        - Métodos de Pesquisa Qualitativa
-        - Tipografia e Informação
-        - Programação para Designers
-        - Semiótica e Comunicação Visual
-      endDate: Dec 1, 2017
-      startDate: Mar 1, 2013
-      summary: >
-        - Desenvolveu projeto de conclusão de curso sobre acessibilidade digital
-        em serviços bancários mobile
-
-        - Participou do grupo de pesquisa em Interfaces Tangíveis e Experiência
-        do Usuário
-
-        - Recebeu menção honrosa no Salão de Criação USP por projeto de redesign
-        de sistema de transporte público
-      score: "8.9"
-      url: https://www.usp.br
-  awards:
-    - awarder: Associação Brasileira de Design de Interação
-      title: Melhor Case de UX em Fintech
-      date: Nov 2023
-      summary: >
-        Reconhecimento pelo redesign do fluxo de transferências que aumentou a
-        confiança dos usuários e reduziu erros operacionais em 25%.
-  certificates:
-    - issuer: Google via Coursera
-      name: Google UX Design Professional Certificate
-      date: Aug 2021
-      url: https://www.coursera.org/professional-certificates/google-ux-design
-    - issuer: Nielsen Norman Group
-      name: UX Master Certification
-      date: Mar 2023
-      url: https://www.nngroup.com/ux-master-certification/
-  interests:
-    - name: Arte e Cultura
-      keywords:
-        - Museus
-        - Fotografia
-        - Cinema independente
-        - Arte urbana
-    - name: Comunidade e Educação
-      keywords:
-        - Mentoria
-        - Palestras
-        - Workshops
-        - Design inclusivo
-  languages:
-    - fluency: Native or Bilingual Proficiency
-      language: Portuguese
-      keywords:
-        - Nativo
-    - fluency: Full Professional Proficiency
-      language: English
-      keywords:
-        - TOEFL 110
-        - Fluente corporativo
-    - fluency: Limited Working Proficiency
-      language: Spanish
-      keywords:
-        - Comunicação básica
   location:
+    address: Av. Paulista, 1000
     city: São Paulo
-    address: Rua Augusta, 1500, Apto 42
-    country: Brazil
-    postalCode: 01305-100
     region: São Paulo
+    country: Brazil
+    postalCode: "01310-100"
+
   profiles:
     - network: LinkedIn
-      username: anacarolinamendesux
-      url: https://linkedin.com/in/anacarolinamendesux
+      url: https://www.linkedin.com/in/marianacosta-ux
+      username: marianacosta-ux
     - network: Behance
-      username: anacarolinamendes
-      url: https://behance.net/anacarolinamendes
-    - network: Dribbble
-      username: anacarolinamendes
-      url: https://dribbble.com/anacarolinamendes
-  projects:
-    - name: Redesign App Saúde Conectada
-      startDate: Jan 2022
-      summary: >
-        - Conduziu pesquisa com 40 pacientes e 15 profissionais de saúde para
-        mapear dores no agendamento de consultas
+      url: https://www.behance.net/marianacosta
+      username: marianacosta
+    - network: Medium
+      url: https://medium.com/@marianacosta
+      username: marianacosta
 
-        - Projetou nova arquitetura de informação e fluxo de agendamento,
-        reduzindo etapas em 50%
+  education:
+    - institution: Universidade de São Paulo (USP)
+      url: https://www.usp.br/
+      degree: Bachelor
+      area: Design
+      score: "8.2"
+      startDate: Feb 1, 2013
+      endDate: Dec 1, 2017
+      courses:
+        - Ergonomia e Usabilidade
+        - Design de Informação
+        - Metodologia de Projeto em Design
+        - Psicologia da Percepção
+        - Tipografia
+        - Design de Interfaces Digitais
+        - Antropologia do Consumo
+        - Processos de Criação em Mídias Digitais
+      summary: |
+        - Desenvolvimento de projetos práticos em design de produto e design digital
+        - Pesquisa e desenvolvimento de interfaces centradas no usuário
+        - Trabalhos em equipe com ênfase em metodologias ágeis e design thinking
 
-        - Desenvolveu protótipo navegável em alta fidelidade validado em testes
-        de usabilidade com nota SUS de 85
-      description: Redesign completo de aplicativo de telemedicina para o SUS
-      endDate: Jun 2022
-      keywords:
-        - Telemedicina
-        - Acessibilidade
-        - Pesquisa de Campo
-        - Figma
-      url: https://anacarolinaux.com.br/saude-conectada
-    - name: Design System Orbit
-      startDate: Jul 2022
-      summary: >
-        - Estruturou biblioteca de componentes reutilizáveis em Figma com tokens
-        de design e documentação interativa
-
-        - Definiu padrões de acessibilidade e responsividade adotados por 6
-        squads de produto
-
-        - Reduziu tempo de handoff entre design e desenvolvimento em
-        aproximadamente 20 horas por sprint
-      description: Sistema de componentes escalável para plataforma SaaS B2B
-      endDate: Dec 2022
-      keywords:
-        - Design System
-        - Tokens de Design
-        - Documentação
-        - Escalabilidade
-      url: https://anacarolinaux.com.br/orbit
-  skills:
-    - level: Expert
-      name: Pesquisa e Estratégia em UX
-      keywords:
-        - User Research
-        - Testes de Usabilidade
-        - Design Thinking
-        - Métricas de UX
-        - Personas
-    - level: Expert
-      name: Design de Interface e Prototipagem
-      keywords:
-        - Figma
-        - Sketch
-        - Adobe XD
-        - Prototipagem
-        - Design Systems
-    - level: Intermediate
-      name: Desenvolvimento Front-end
-      keywords:
-        - HTML5
-        - CSS3
-        - JavaScript
-        - React básico
-        - Tailwind CSS
-    - level: Advanced
-      name: Facilitação e Liderança
-      keywords:
-        - Workshops
-        - Design Sprint
-        - Colaboração
-        - Mentoria
-        - Stakeholder Management
-  volunteer:
-    - organization: UX para Todes
-      position: Mentora de Carreira
-      startDate: Mar 2022
-      summary: >
-        - Realiza mentorias mensais para profissionais em transição de carreira
-        para UX
-
-        - Facilita oficinas gratuitas de introdução ao design de experiência do
-        usuário em comunidades periféricas
-
-        - Colabora na curadoria de conteúdos sobre diversidade e inclusão no
-        design brasileiro
-      url: https://uxparatodes.org.br
   work:
-    - name: InovaTech Soluções
-      position: UX Designer Senior
-      startDate: Feb 1, 2022
-      summary: >
-        - Lidera o chapter de UX no squad de contas digitais, definindo o design
-        system e padrões de acessibilidade WCAG 2.1
-
-        - Conduz pesquisas exploratórias e avaliativas com mais de 50 usuários
-        por sprint, gerando insights para roadmap de produto
-
-        - Redesenhou o fluxo de onboarding reduzindo o tempo de cadastro em 40%
-        e aumentando a taxa de conclusão em 28%
-
-        - Facilita workshops de discovery e ideação com stakeholders de
-        negócios, engenharia e suporte ao cliente
+    - name: Nexo Digital
+      url: https://nexodigital.com.br
+      position: UX Designer Plena
+      startDate: Mar 1, 2023
+      summary: |
+        - Lidera o discovery de novas funcionalidades para a plataforma de investimentos, conduzindo entrevistas, testes de usabilidade e sessões de cocriação com stakeholders
+        - Cria protótipos em alta fidelidade e colabora com product managers e desenvolvedores na evolução contínua do design system
+        - Implementou um processo de pesquisa contínua que reduziu em 35% o retrabalho em especificações de produto
+        - Atua como referência em acessibilidade, garantindo conformidade com WCAG 2.1 nos fluxos principais do produto
       keywords:
         - Design System
+        - Pesquisa com usuários
+        - Testes de usabilidade
         - Acessibilidade
-        - Pesquisa em UX
+        - Descoberta de produto
+        - Colaboração
+    - name: Grupo Vai
+      url: https://grupovai.com.br
+      position: UX Designer
+      startDate: Jan 1, 2021
+      endDate: Feb 1, 2023
+      summary: |
+        - Responsável pelo redesign do aplicativo de mobilidade urbana, aumentando a taxa de conversão de cadastro em 22%
+        - Conduziu mais de 40 entrevistas e testes de usabilidade com usuários de diferentes perfis
+        - Desenvolveu o design system do app, documentando padrões visuais e componentes para as plataformas Android, iOS e web
+        - Trabalhou em squads multidisciplinares, participando de rituais ágeis e revisões dos componentes de interface
+      keywords:
         - Figma
-        - Facilitação
-      url: https://inovatech.com.br
-    - name: Agência Pixel Lab
-      position: UX Designer Pleno
-      startDate: Jun 1, 2019
-      summary: >
-        - Atuou em projetos de transformação digital para clientes dos setores
-        de saúde, educação e varejo
-
-        - Criou protótipos de alta fidelidade e mapas de jornada do usuário para
-        validar hipóteses antes do desenvolvimento
-
-        - Implementou processo de testes de usabilidade remoto, reduzindo custos
-        de pesquisa em 30%
-
-        - Colaborou com desenvolvedores front-end para garantir fidelidade
-        visual e comportamental das entregas
-      endDate: Jan 1, 2022
-      keywords:
-        - Prototipagem
-        - Jornada do Usuário
-        - Testes de Usabilidade
-        - Design Responsivo
-        - HTML/CSS
-      url: https://pixelab.com.br
-    - name: Estúdio Criação Digital
-      position: Estagiária de UX/UI
+        - Design System
+        - Pesquisa contextual
+        - Prototipação
+        - Experimentação
+    - name: Up Design Studio
+      url: https://updesign.example
+      position: Designer de Produto
       startDate: Jan 1, 2018
-      summary: >
-        - Auxiliou na criação de wireframes e fluxos de navegação para
-        aplicativos mobile e plataformas web
-
-        - Realizou benchmarkings de mercado e análises heurísticas de interfaces
-        concorrentes
-
-        - Apoiou a equipe na documentação de style guides e handoff para
-        desenvolvimento
-
-        - Participou de entrevistas com usuários e síntese de dados em personas
-        e mapas de empatia
-      endDate: May 1, 2019
+      endDate: Dec 1, 2020
+      summary: |
+        - Realizou projetos de branding e UI para startups dos setores de saúde, educação e fintech
+        - Criou wireframes, fluxos de navegação e protótipos funcionais para validação com clientes
+        - Aplicou métodos de design thinking em workshops de definição de produto
+        - Colaborou com desenvolvedores na implementação dos layouts, garantindo consistência visual
       keywords:
-        - Wireframing
-        - Análise Heurística
+        - UI Design
+        - Wireframes
+        - Design Thinking
+        - Branding
+        - Front-end
+
+  skills:
+    - name: Pesquisa com Usuários
+      level: Advanced
+      keywords:
+        - Entrevistas
+        - Testes de usabilidade
         - Personas
-        - Handoff
-        - Benchmarking
-      url: https://estudiocriacaodigital.com.br
+        - Jornada do usuário
+        - Métricas de UX
+        - Desk research
+    - name: Design de Interfaces
+      level: Expert
+      keywords:
+        - Figma
+        - Design System
+        - Design responsivo
+        - Acessibilidade
+        - Grid e espaçamento
+        - Motion Design
+    - name: Prototipação
+      level: Advanced
+      keywords:
+        - Alta fidelidade
+        - Interactive prototyping
+        - Fluxos de navegação
+        - Design tokens
+    - name: Colaboração em Produto
+      level: Advanced
+      keywords:
+        - Scrum
+        - Kanban
+        - Design critique
+        - Documentação
+        - Product discovery
+    - name: Front-end para Designers
+      level: Intermediate
+      keywords:
+        - HTML
+        - CSS
+        - JavaScript
+        - Tailwind CSS
+
+  languages:
+    - language: Portuguese
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - Português do Brasil
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - TOEFL 102
+        - Leitura e escrita técnicas
+    - language: Spanish
+      fluency: Limited Working Proficiency
+      keywords:
+        - Comunicação básica
+        - Leitura técnica
+
+  awards:
+    - title: Prêmio Latino-Americano de Design de Interfaces
+      date: Nov 2022
+      awarder: Associação Brasileira de Design
+      summary: |
+        Reconhecimento pelo redesign do app de mobilidade urbana desenvolvido no Grupo Vai, com ênfase em usabilidade e inclusão.
+    - title: Destaque em Inovação
+      date: Oct 2019
+      awarder: Up Design Studio
+      summary: |
+        Premiação interna pelo projeto de interface para uma plataforma de telemedicina, avaliado por sua navegação intuitiva e impacto positivo no tempo de atendimento.
+
+  certificates:
+    - name: Google UX Design Professional Certificate
+      issuer: Google
+      date: Aug 2021
+      url: https://www.coursera.org/professional-certificates/google-ux-design
+    - name: Certified Usability Analyst
+      issuer: Human Factors International
+      date: Mar 2022
+      url: https://www.humanfactors.com/
+
+  publications:
+    - name: 'Case: os bastidores do redesign do fluxo de pagamento'
+      publisher: Medium
+      releaseDate: Jun 2023
+      url: https://medium.com/@marianacosta/case-redesign-fluxo-pagamento
+      summary: |
+        Artigo com o processo de discovery, testes de usabilidade e os resultados obtidos após a reformulação do fluxo de pagamento de um aplicativo de serviços financeiros.
+    - name: Padrões de acessibilidade para aplicações móveis
+      publisher: UXDicas
+      releaseDate: Sep 2020
+      url: https://uxdicas.com.br/artigos/padroes-de-acessibilidade
+      summary: |
+        Guia prático com boas práticas de acessibilidade aplicadas a aplicações móveis, incluindo contraste, leitores de tela e alvos de toque.
+
+  projects:
+    - name: Nebula Design System
+      description: Design system para produtos digitais da Nexo Digital
+      startDate: Mar 1, 2023
+      summary: |
+        Desenvolveu tokens de design, componentes acessíveis e documentação interativa para acelerar a criação de novas telas.
+      keywords:
+        - Design System
+        - Design Tokens
+        - Documentação
+        - Acessibilidade
+      url: https://marianacosta.design/projetos/nebula
+    - name: Jornada Invest
+      description: Aplicativo de educação financeira para investidores iniciantes
+      startDate: Aug 2022
+      endDate: Jan 2023
+      summary: |
+        Projeto autoral de UX com pesquisa com usuários, ideação e prototipação de uma jornada gamificada para aprendizado em investimentos.
+      keywords:
+        - UX Research
+        - Gamificação
+        - Prototipação
+      url: https://www.behance.net/gallery/jornada-invest
+
+  interests:
+    - name: Acessibilidade Digital
+      keywords:
+        - Tecnologia assistiva
+        - Inclusão
+        - WCAG
+    - name: Fotografia
+      keywords:
+        - Composição
+        - Fotografia urbana
+        - Edição de imagens
+    - name: Economia Comportamental
+      keywords:
+        - Heurísticas
+        - Decisão de compra
+        - Experiência do usuário
+
+  volunteer:
+    - organization: Mulheres de UX Brasil
+      position: Mentora de Carreira
+      startDate: Jan 2022
+      summary: |
+        Orienta mulheres em transição para a área de UX, revisa portfólios e oferece suporte em processos seletivos.
+      url: https://www.mulheresdeux.com.br/
+    - organization: ONG Rede Incluir
+      position: Facilitadora de Oficinas de Design
+      startDate: Feb 2019
+      endDate: Dec 2021
+      summary: |
+        Ministrou oficinas de design participativo com jovens de escolas públicas, estimulando a criação de soluções para problemas locais.
+      url: https://www.redecincluir.org.br/
+
+  references:
+    - name: Dra. Fernanda Lima
+      phone: "+55 11 91234-1080"
+      relationship: Gerente de Produto na Nexo Digital
+      email: fernanda.lima@nexodigital.com.br
+      summary: |
+        Mariana é uma profissional extremamente empática e analítica. Sua capacidade de transformar dados de pesquisa em decisões de design elevou a qualidade do nosso produto.
+
 locale:
   language: pt-br
-layouts:
-  - engine: latex
-    page:
-      showPageNumbers: true
-      paperSize: a4
-      margins:
-        top: 2.5cm
-        bottom: 2.5cm
-        left: 1.5cm
-        right: 1.5cm
-    template: moderncv-banking
-    typography:
-      fontSize: 11pt
-  - engine: docx
-    page:
-      showPageNumbers: true
-      paperSize: a4
-      margins:
-        top: 2.5cm
-        bottom: 2.5cm
-        left: 1.5cm
-        right: 1.5cm
-    typography:
-      fontSize: 11pt
-      lineSpacing: normal
-  - engine: markdown
-  - engine: html
-    template: calm
-    typography:
-      fontSize: 16px

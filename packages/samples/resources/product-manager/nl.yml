@@ -1,289 +1,227 @@
 content:
   basics:
-    name: Sanne van Dijk
-    email: sanne.vandijk@example.nl
-    headline: Productmanager | Digital Product Strategy | Agile
-    phone: +31 6 12345678
-    summary: >
-      Gedreven productmanager met 7+ jaar ervaring in het bouwen van digitale
-
-      producten die gebruikers waarderen en bedrijven laten groeien. Expertise
-
-      in het vertalen van klantinzichten naar een heldere productstrategie en
-
-      roadmap. Sterk in het leiden van cross-functionele teams en het creëren
-
-      van draagvlak bij stakeholders.
-
-
-      - Ervaring met zowel B2B- als B2C-producten in e-commerce en financiële
-      dienstverlening
-
-      - Bewezen track record in het verbeteren van conversie en
-      klanttevredenheid
-
-      - Data-gedreven besluitvorming met oog voor UX en technische haalbaarheid
-
-      - Gecertificeerd Professional Scrum Product Owner
-    url: https://www.linkedin.com/in/sannevandijk
-  education:
-    - area: Information Studies (Human-Centred Multimedia)
-      institution: University of Amsterdam
-      degree: Master
-      courses:
-        - Design Research
-        - User Experience
-        - Data Analytics
-        - Product Strategy
-      endDate: Jul 1, 2020
-      startDate: Sep 1, 2018
-      summary: >
-        - Afgestudeerd met een scriptie over de inzet van AI bij het
-        personaliseren van digitale producten
-
-        - Praktische ervaring opgedaan met usability-onderzoek en rapid
-        prototyping
-      url: https://www.uva.nl/
-    - area: Information Science
-      institution: Rijksuniversiteit Groningen
-      degree: Bachelor
-      courses:
-        - Human-Computer Interaction
-        - Web Technology
-        - Organizational Science
-        - Business Intelligence
-      endDate: Jul 1, 2018
-      startDate: Sep 1, 2015
-      summary: |
-        - Minor in Marketing en Bedrijfskunde
-        - Bachelorproef over de adoptie van fintech-apps onder jongeren
-      url: https://www.rug.nl/
-  awards:
-    - awarder: Dutch Design Foundation
-      title: Best Product Concept - Dutch Design Week
-      date: Oct 2021
-      summary: >
-        Award voor het concept "Duurzaam op Reis", een app die reizigers helpt
-        om duurzame keuzes te maken.
-  certificates:
-    - issuer: Scrum.org
-      name: Professional Scrum Product Owner I (PSPO I)
-      date: Mar 2021
-      url: https://www.scrum.org/
-  interests:
-    - name: Hardlopen
-      keywords:
-        - Amsterdamse Bos
-        - 10 km
-        - Trailrunning
-    - name: Koken
-      keywords:
-        - Vegetarisch
-        - Fermenteren
-    - name: Lezen
-      keywords:
-        - Fictie
-        - Productmanagement
-  languages:
-    - fluency: Native or Bilingual Proficiency
-      language: Dutch
-      keywords:
-        - Moedertaal
-    - fluency: Full Professional Proficiency
-      language: English
-      keywords:
-        - IELTS 8.0
-    - fluency: Minimum Professional Proficiency
-      language: German
-      keywords:
-        - B2-niveau
+    name: Sanne van den Berg
+    headline: Senior productmanager voor B2B SaaS en datagedreven productontwikkeling
+    phone: "+31 6 12345678"
+    email: sanne.vandenberg@outlook.com
+    url: https://sannevandenberg.nl
+    summary: |
+      - Senior productmanager met 7+ jaar ervaring in B2B SaaS en datagedreven productontwikkeling.
+      - Bewezen track record in het opstellen en uitvoeren van productroadmaps die commerciële groei en gebruikerswaarde realiseren.
+      - Sterk in het vertalen van klantinzichten naar duidelijke productvereisten en het begeleiden van cross-functionele teams.
+      - Ervaren met Agile/Scrum, A/B-testen, data-analyse en stakeholdermanagement.
   location:
-    city: Amsterdam
     address: Keizersgracht 123
-    country: Netherlands
-    postalCode: 1015 CJ
+    city: Amsterdam
     region: Noord-Holland
+    country: Netherlands
+    postalCode: "1015 CJ"
   profiles:
     - network: LinkedIn
-      username: sannevandijk
-      url: https://www.linkedin.com/in/sannevandijk
-    - network: GitHub
-      username: sannevandijk
-      url: https://github.com/sannevandijk
-  projects:
-    - name: Duurzaam op Reis
-      startDate: Jan 1, 2022
+      url: https://www.linkedin.com/in/sannevandenberg
+      username: sannevandenberg
+    - network: Twitter
+      url: https://twitter.com/sanne_pm
+      username: sanne_pm
+  education:
+    - institution: Erasmus Universiteit Rotterdam
+      url: https://www.eur.nl/
+      degree: Master
+      area: Strategisch Management
+      score: "8.2"
+      startDate: Sep 1, 2012
+      endDate: Jul 1, 2014
+      courses:
+        - Productontwikkeling en Innovatiemanagement
+        - Strategisch Marketingmanagement
+        - Datagedreven Besluitvorming
+        - Leiderschap en Organisatiegedrag
       summary: |
-        - Van idee tot MVP gebouwd met een klein team van vrijwilligers
-        - In 2023 genomineerd voor een Dutch Interactive Award
-        - Gebruikt door meer dan 10.000 reizigers
-      description: Een mobiele app die duurzame reiskeuzes inzichtelijk en makkelijk maakt.
-      keywords:
-        - Duurzaamheid
-        - React Native
-        - UI/UX
-      url: https://duurzaamopreis.nl
-  publications:
-    - name: De kracht van continu experimenteren in productontwikkeling
-      publisher: Medium
-      releaseDate: Apr 2023
-      summary: >
-        - Praktijkartikel over het opzetten van een experimenteercultuur binnen
-        een productorganisatie
-
-        - Beschrijft concrete methodes zoals A/B-testen, feature flags en
-        feedback loops
-      url: https://medium.com/@sannevandijk/de-kracht-van-continu-experimenteren
-  skills:
-    - level: Expert
-      name: Productstrategie
-      keywords:
-        - Roadmapping
-        - Marktonderzoek
-        - Positionering
-        - Product life cycle
-    - level: Expert
-      name: Product Discovery
-      keywords:
-        - Gebruikersonderzoek
-        - Interviews
-        - Prototyping
-        - UX-testen
-    - level: Advanced
-      name: Agile & Scrum
-      keywords:
-        - Scrum
-        - Kanban
-        - JIRA
-        - Agile transformatie
-    - level: Intermediate
-      name: Data & Analytics
-      keywords:
-        - Google Analytics
-        - Amplitude
-        - SQL
-        - A/B-testen
-    - level: Advanced
-      name: Stakeholdermanagement
-      keywords:
-        - Communicatie
-        - Presenteren
-        - Beïnvloeden
-        - Verandermanagement
-  volunteer:
-    - organization: Women in Tech Netherlands
-      position: Mentor
-      startDate: Jan 1, 2022
-      summary: >
-        - Begeleidt vrouwelijke professionals in de technieksector bij hun
-        loopbaan in productmanagement
-
-        - Geeft workshops over personal branding en datagedreven werken
-      url: https://www.womenintech.nl/
+        - Afstudeeronderzoek naar de adoptie van SaaS-producten binnen het MKB.
+        - Specialisatie in productstrategie en innovatiemanagement.
+    - institution: Hogeschool van Amsterdam
+      degree: Bachelor
+      area: Communicatie- en Informatiewetenschappen
+      startDate: Sep 1, 2008
+      endDate: Jul 1, 2012
+      courses:
+        - Digitale Media
+        - User Experience Design
+        - Statistiek en Onderzoeksmethoden
+      summary: |
+        - Minor in Digitale Productontwikkeling.
+        - Afstudeerproject: ontwerp van een mobiele studiegids-app.
   work:
-    - name: Bol.com
+    - name: BrightAnalytics
+      url: https://www.brightanalytics.nl
       position: Senior Productmanager
-      startDate: Jan 1, 2023
-      summary: >
-        Verantwoordelijk voor de zoek- en navigatiebeleving in de mobiele app
-        van Bol.com, met meer dan 5 miljoen maandelijkse actieve gebruikers.
-
-        - Ontwikkelde een nieuwe zoekgedrag-analyse die leidde tot een
-        conversiestijging van 18%
-
-        - Leidt een cross-functioneel team van 8 ontwikkelaars, designers en
-        data-analisten
-
-        - Introduceerde een experimenteerplatform dat het aantal A/B-tests per
-        kwartaal verdrievoudigde
-
-        - Werkt nauw samen met merken en fulfilmentpartners om de klantreis te
-        verbeteren
+      startDate: Mar 1, 2021
+      summary: |
+        - Verantwoordelijk voor de productstrategie en roadmap van het analytics-platform met meer dan 500 B2B-klanten.
+        - Leidde een cross-functioneel team van 7 engineers, 2 designers en 1 data scientist in een Agile/Scrum-omgeving.
+        - Introductie van een selfservice-onboarding-flow, resulterend in 30% hogere activatiegraad.
+        - Opzetten van continu klantonderzoek en een A/B-testprogramma, bijdragend aan een 15% stijging in NPS.
+        - Samen met sales en marketing gewerkt aan positionering en go-to-marketstrategie voor nieuwe modules.
       keywords:
         - Productstrategie
         - Roadmap
+        - SaaS
+        - Agile
         - A/B-testen
-        - Mobiele app
-        - E-commerce
-      url: https://www.bol.com/nl/nl/
-    - name: Takeaway.com
-      position: Productmanager
-      startDate: Nov 1, 2020
-      summary: >
-        Productmanager voor de klantreis van bestellen tot bezorging in de
-        internationale bestelapp.
-
-        - Leverde een herontwerp van de checkout op, resulterend in 12% minder
-        afhakers
-
-        - Werkte samen met lokale marketeers in 12 landen om de app per markt te
-        optimaliseren
-
-        - Startte een feedbackloop met restaurantpartners die leidde tot een
-        NPS-stijging van 8 punten
-
-        - Beheerde de feature roadmap en prioriteerde met behulp van RICE en
-        jobs-to-be-done
-      endDate: Dec 31, 2022
-      keywords:
-        - Product discovery
-        - Checkout optimalisatie
-        - Internationale markten
         - NPS
-      url: https://www.takeaway.com/
-    - name: ING Nederland
+    - name: HealthHub
       position: Productmanager
-      startDate: Sep 1, 2018
-      summary: >
-        Productmanager binnen het domein Internet Banking, met focus op personal
-        finance management.
-
-        - Introduceerde een nieuwe spaarfunctionaliteit die binnen een half jaar
-        door 250.000 klanten werd gebruikt
-
-        - Werkte samen met UX designers en data scientists om gebruikersgedrag
-        te vertalen naar productverbeteringen
-
-        - Droeg bij aan de agile transformatie van het team als Scrum Product
-        Owner
-
-        - Begeleidde twee junior productmanagers in hun ontwikkeling
-      endDate: Oct 31, 2020
+      startDate: Jan 1, 2018
+      endDate: Feb 1, 2021
+      summary: |
+        - Beheerde het volledige productlevenscyclus van een webportaal voor zorgverleners, van concept tot lancering en opschaling.
+        - Initieerde en implementeerde een gebruikersfeedbackcyclus met interviews, surveys en usabilitytests.
+        - Realiseerde een stijging van 40% in maandelijkse actieve gebruikers door gerichte productverbeteringen.
+        - Werkte nauw samen met engineers, compliance en klantsupport om aan wet- en regelgeving te voldoen.
       keywords:
-        - Financiële dienstverlening
-        - Personal finance
-        - Agile transformatie
-        - Mentoring
-      url: https://www.ing.nl/
+        - Productlevenscyclus
+        - Klantonderzoek
+        - Gebruikersgericht ontwerp
+        - Compliance
+        - Stakeholdermanagement
+    - name: DigiWorks
+      position: Junior Productmanager
+      startDate: Aug 1, 2016
+      endDate: Dec 1, 2017
+      summary: |
+        - Ondersteunde senior productmanagers bij het specificeren van requirements en het prioriteren van backlogitems.
+        - Analyseerde gebruikersdata en maandelijkse productmetrics om inzichten te verschaffen voor het productteam.
+        - Coördineerde usabilitytestsessies en verwerkte resultaten in productverbeteringen.
+      keywords:
+        - Backlog
+        - Requirements
+        - Data-analyse
+    - name: StartUp365
+      position: Product Owner
+      startDate: Sep 1, 2014
+      endDate: Jul 1, 2016
+      summary: |
+        - Startte als projectmedewerker en groeide door naar product owner voor een nieuw e-commerceplatform.
+        - Verantwoordelijk voor het schrijven van user stories en het accepteren van opgeleverde features.
+        - Vertaalde samen met de CTO de technische roadmap naar een haalbare sprintplanning.
+      keywords:
+        - Product Owner
+        - User Stories
+        - Sprint Planning
+  languages:
+    - language: Dutch
+      fluency: Native or Bilingual Proficiency
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - Cambridge C1
+    - language: German
+      fluency: Limited Working Proficiency
+  skills:
+    - name: Productmanagement
+      level: Expert
+      keywords:
+        - Roadmapping
+        - Requirements
+        - Prioritering
+        - Stakeholdermanagement
+        - Productlevenscyclus
+    - name: Agile & Scrum
+      level: Expert
+      keywords:
+        - Scrum
+        - Kanban
+        - Sprint planning
+        - User stories
+    - name: Data-analyse
+      level: Advanced
+      keywords:
+        - SQL
+        - Google Analytics
+        - Amplitude
+        - A/B-testen
+        - Datagedreven werken
+    - name: UX & User Research
+      level: Advanced
+      keywords:
+        - User interviews
+        - Usability testing
+        - Persona's
+        - Customer journey
+    - name: Producttools
+      level: Advanced
+      keywords:
+        - Jira
+        - Confluence
+        - Figma
+        - Miro
+        - Productboard
+  awards:
+    - title: Productmanager van het Jaar - Dutch SaaS Awards
+      date: Nov 2023
+      awarder: Dutch SaaS Awards
+      summary: |
+        Uitgereikt voor excellente productstrategie en aantoonbare impact op gebruikersgroei binnen het B2B SaaS-domein.
+  certificates:
+    - name: Professional Scrum Product Owner (PSPO I)
+      issuer: Scrum.org
+      date: Jun 2019
+      url: https://www.scrum.org/
+    - name: Datagedreven Productmanagement
+      issuer: Product School
+      date: Apr 2020
+      url: https://productschool.com/
+  publications:
+    - name: Van idee tot impact - datagedreven productmanagement
+      publisher: Productize Magazine
+      releaseDate: Jan 2023
+      url: https://www.productizemagazine.nl/van-idee-tot-impact
+      summary: |
+        Artikel over het toepassen van datagedreven methodieken bij het prioriteren van productinvesteringen. Deelt concrete praktijkvoorbeelden uit de B2B SaaS-sector en een stappenplan voor productteams.
+  references:
+    - name: Dr. Ingrid Bakker
+      relationship: 'Directeur Product & Technologie bij BrightAnalytics'
+      email: ingrid.bakker@brightanalytics.nl
+      phone: "+31 20 123 4567"
+      summary: |
+        Sanne is een strategische en gedreven productmanager met een uitzonderlijk vermogen om klantbehoeften te vertalen naar een duidelijke productstrategie. Haar datagedreven aanpak en leiderschap hebben een grote bijdrage geleverd aan de groei van ons product.
+  projects:
+    - name: Selfservice-onboarding voor het analytics-platform
+      url: https://www.brightanalytics.nl/product/onboarding
+      startDate: Jun 2022
+      endDate: Dec 2022
+      summary: |
+        - Leidde het ontwerp en de implementatie van een nieuwe selfservice-onboarding om de time-to-value voor nieuwe klanten te verkorten.
+        - Zette een experimenteel framework op om impact op activatie en retentie te meten.
+      description: |
+        Het project richtte zich op het reduceren van time-to-value voor nieuwe klanten. Door middel van een stapsgewijze onboarding, interactieve product tours en slimme datakoppelingen werd de activatiegraad significant verhoogd en de supportdruk verlaagd.
+      keywords:
+        - Onboarding
+        - Selfservice
+        - Activering
+        - Experimentatie
+  interests:
+    - name: Innovatie
+      keywords:
+        - AI
+        - Startups
+        - Tech trends
+    - name: Duurzaamheid
+      keywords:
+        - Circulaire economie
+        - Duurzame mobiliteit
+    - name: Sport
+      keywords:
+        - Hardlopen
+        - Yoga
+  volunteer:
+    - organization: Amsterdam Product Management Meetup
+      url: https://www.meetup.com/amsterdam-product-management/
+      position: Mede-organisator
+      startDate: Jan 2022
+      summary: |
+        - Organiseer maandelijkse meetups voor 100+ productprofessionals.
+        - Verzorg workshops en panels over actuele thema's zoals AI in productontwikkeling.
+
 locale:
   language: nl
-layouts:
-  - engine: latex
-    page:
-      showPageNumbers: true
-      paperSize: a4
-      margins:
-        top: 2.5cm
-        bottom: 2.5cm
-        left: 1.5cm
-        right: 1.5cm
-    template: moderncv-banking
-    typography:
-      fontSize: 11pt
-  - engine: docx
-    page:
-      showPageNumbers: true
-      paperSize: a4
-      margins:
-        top: 2.5cm
-        bottom: 2.5cm
-        left: 1.5cm
-        right: 1.5cm
-    typography:
-      fontSize: 11pt
-      lineSpacing: normal
-  - engine: markdown
-  - engine: html
-    template: calm
-    typography:
-      fontSize: 16px

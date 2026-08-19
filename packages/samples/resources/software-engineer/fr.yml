@@ -1,310 +1,224 @@
 content:
   basics:
-    name: Claire Moreau
-    email: claire.moreau@proton.me
-    headline: Ingénieure logicielle full-stack passionnée par les systèmes distribués
-    phone: +33 6 12 34 56 78
-    summary: >
-      - Ingénieure logicielle full-stack avec plus de 6 ans d'expérience dans la
-      conception d'applications web scalables
+    name: Camille Renard
+    headline: Ingénieure logicielle full-stack & cloud
+    phone: "+33 6 12 34 56 78"
+    email: contact@camille-renard.dev
+    url: https://camille-renard.dev
+    summary: |
+      Ingénieure logicielle passionnée par la conception d’applications web robustes et scalables.
+      Forte de six ans d’expérience en développement full-stack et en architecture cloud, j’accompagne les équipes produit de la conception au déploiement continu.
 
-      - Passionnée par les systèmes distribués, l'observabilité et les
-      architectures cloud natives
-
-      - Habituée aux environnements agiles et à la collaboration avec des
-      équipes produit, design et ops
-
-      - Attachée à la qualité du code, au partage des connaissances et à
-      l'accompagnement des développeurs juniors
-    url: https://clairemoreau.dev
+      Compétences clés :
+      - Développement front-end avec React, TypeScript et Next.js
+      - Conception d’API REST et GraphQL, intégration de bases de données SQL/NoSQL
+      - Déploiement sur AWS avec conteneurisation Docker et orchestration Kubernetes
+      - Pratiques DevOps : CI/CD, automatisation, monitoring et observabilité
+      - Collaboration Agile, revues de code exigeantes et mentorat technique
+  location:
+    address: 12 rue de la Paix
+    city: Paris
+    region: Île-de-France
+    country: France
+    postalCode: "75002"
+  profiles:
+    - network: GitHub
+      url: https://github.com/camille-renard
+      username: camille-renard
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/camille-renard
+      username: camille-renard
   education:
-    - area: Ingénierie logicielle et systèmes distribués
-      institution: Télécom Paris
-      degree: Master
-      courses:
-        - Programmation avancée en C++ et Java
-        - Architectures logicielles et conception orientée objet
-        - Systèmes distribués et tolérance aux pannes
-        - Bases de données avancées et entrepôts de données
-        - Génie logiciel et méthodes agiles
-        - "Projet de fin d'études : supervision d'infrastructures cloud"
-      endDate: 2018-07-01
-      startDate: 2016-09-01
-      summary: >
-        - Acquisition de solides compétences en conception et en développement
-        d'applications distribuées
-
-        - Travail sur des projets de groupe appliqués à des cas réels
-        d'entreprises partenaires
-
-        - Réalisation d'un mémoire sur l'observabilité des architectures
-        microservices
-      score: 3.7/4.0
+    - institution: Télécom Paris
       url: https://www.telecom-paris.fr/
-    - area: Informatique
-      institution: Université de Rennes 1
-      degree: Bachelor
+      degree: Master
+      area: Ingénierie logicielle et systèmes informatiques
+      score: "3.8/4.0"
+      startDate: Sep 1, 2015
+      endDate: Jun 1, 2018
       courses:
         - Algorithmique et structures de données
-        - Programmation orientée objet en Java
-        - Introduction aux bases de données relationnelles
-        - Systèmes d'exploitation
-      endDate: 2016-06-30
-      startDate: 2015-09-01
-      summary: >
-        - Formation généraliste en informatique avec une forte composante
-        pratique
-
-        - Projet de fin de licence : développement d'une application de gestion
-        de bibliothèque
-      score: 3.5/4.0
-      url: https://www.univ-rennes1.fr/
-  awards:
-    - awarder: Paris Open Source Summit
-      title: Prix de l'innovation open source
-      date: 2022-06-23
-      summary: >
-        - Récompense pour la conception de la plateforme d'observabilité
-        TraceFlow et sa contribution à l'écosystème open source.
+        - Génie logiciel et méthodes Agiles
+        - Systèmes distribués
+        - Architectures cloud et virtualisation
+        - Programmation concurrente et parallèle
+        - Bases de données avancées
+        - Sécurité des systèmes d'information
+        - Interactions homme-machine
+      summary: |
+        - Formation d'ingénieur spécialisée en génie logiciel, systèmes distribués et informatique en nuage
+        - Projet de fin d’études sur la mise en place d’une plateforme de traitement de données en temps réel
+        - Engagement associatif actif au sein du laboratoire d’innovation numérique de l’école
+  work:
+    - name: Bluewave Technologies
+      url: https://bluewave-tech.fr
+      position: Ingénieure logicielle senior
+      startDate: Jan 1, 2022
+      summary: |
+        - Pilote la conception et le développement d’une plateforme SaaS de gestion documentaire utilisée par plus de 120 000 utilisateurs
+        - Encadre une équipe de cinq développeurs et développeuses, en favorisant les revues de code et la montée en compétence
+        - Modernise l’architecture monolithique vers une architecture microservices déployée sur Kubernetes
+        - Met en place une chaîne CI/CD complète avec GitHub Actions et Argo CD, réduisant les délais de livraison de 40 %
+        - Collabore avec les équipes produit, design et infrastructure pour définir les feuilles de route techniques
+      keywords:
+        - Architecture microservices
+        - Kubernetes
+        - React
+        - Node.js
+        - Mentorat
+        - CI/CD
+    - name: Dataflow SAS
+      url: https://dataflow-sas.fr
+      position: Ingénieure full-stack
+      startDate: Mar 1, 2019
+      endDate: Dec 31, 2021
+      summary: |
+        - Développe des applications web de traitement et de visualisation de données pour des clients grands comptes
+        - Conçoit des API REST performantes avec Node.js, Express et PostgreSQL
+        - Réalise des interfaces riches en React et TypeScript, avec une attention particulière à l’accessibilité
+        - Participe à l’industrialisation des déploiements via Docker et AWS Elastic Beanstalk
+        - Rédige la documentation technique et organise des ateliers de partage de connaissances
+      keywords:
+        - TypeScript
+        - React
+        - Node.js
+        - PostgreSQL
+        - Docker
+        - AWS
+    - name: Agence Pixely
+      url: https://pixely.fr
+      position: Développeuse web
+      startDate: Jul 1, 2018
+      endDate: Feb 28, 2019
+      summary: |
+        - Conçoit des sites vitrines et des applications e-commerce pour des clients PME et associations
+        - Intervient sur la partie front-end (HTML, CSS, JavaScript vanilla) et l’intégration de CMS
+        - Optimise les performances et l’accessibilité des sites, améliorant le score Lighthouse moyen de 65 à 92
+        - Assure la maintenance évolutive et corrective des projets livrés
+      keywords:
+        - JavaScript
+        - HTML/CSS
+        - CMS
+        - Performance
+        - Accessibilité
+  skills:
+    - name: Développement front-end
+      level: Expert
+      keywords:
+        - TypeScript
+        - React
+        - Next.js
+        - Tailwind CSS
+        - Vitest
+    - name: Développement back-end
+      level: Expert
+      keywords:
+        - Node.js
+        - Express
+        - NestJS
+        - GraphQL
+        - REST API
+    - name: Cloud & DevOps
+      level: Advanced
+      keywords:
+        - AWS
+        - Docker
+        - Kubernetes
+        - Terraform
+        - GitHub Actions
+    - name: Bases de données
+      level: Advanced
+      keywords:
+        - PostgreSQL
+        - MongoDB
+        - Redis
+        - Elasticsearch
+        - Prisma
+  languages:
+    - language: French
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - Langue maternelle
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - TOEIC 960
+        - Lecture technique
+        - Réunions clients
+    - language: German
+      fluency: Limited Working Proficiency
+      keywords:
+        - Bases de la conversation
   certificates:
-    - issuer: Amazon Web Services
-      name: AWS Certified Solutions Architect – Associate
-      date: 2021-06-10
-      url: https://aws.amazon.com/verification/
+    - name: AWS Certified Solutions Architect – Associate
+      issuer: Amazon Web Services
+      date: Mar 2022
+      url: https://aws.amazon.com/fr/certification/
+    - name: Certified Kubernetes Application Developer
+      issuer: Cloud Native Computing Foundation
+      date: Oct 2023
+      url: https://www.cncf.io/certification/ckad/
+  awards:
+    - title: Prix de l’innovation technique
+      date: Jun 2023
+      awarder: Bluewave Technologies
+      summary: |
+        Récompense décernée à l’issue du hackathon interne pour la conception d’un assistant de recherche documentaire basé sur l’IA générative.
+  projects:
+    - name: OpenTrack
+      url: https://github.com/camille-renard/opentrack
+      description: Application open-source de suivi de temps et de gestion de projets
+        pour les équipes distribuées.
+      startDate: Jan 2023
+      endDate: Mar 2023
+      summary: |
+        - Conception complète d’une application full-stack avec Next.js, Prisma et PostgreSQL
+        - Authentification sécurisée avec NextAuth, déploiement sur Vercel et Supabase
+        - Intégration d’un tableau de bord temps réel à l’aide de WebSockets
+      keywords:
+        - Next.js
+        - Prisma
+        - PostgreSQL
+        - WebSockets
+        - Open Source
+    - name: DataViz – Tableau de bord énergie
+      url: https://dataviz.camille-renard.dev
+      description: Visualisation interactive de la consommation énergétique de
+        bâtiments publics à partir de données ouvertes.
+      startDate: Oct 2020
+      endDate: Feb 2021
+      summary: |
+        - Création d’un pipeline de collecte et de transformation de données ouvertes avec Python et Pandas
+        - Développement d’une interface de visualisation avec D3.js et TypeScript
+        - Publication du projet en open source et présentation lors d’un meetup Data Paris
+      keywords:
+        - D3.js
+        - Python
+        - Pandas
+        - Open Data
+  volunteer:
+    - organization: Les Codeurs de l’Espoir
+      url: https://lescodeursdelespoir.org
+      position: Bénévole développeuse
+      startDate: Sep 2021
+      endDate: Jun 2023
+      summary: |
+        - Accompagne des associations caritatives dans la création de leurs sites web et outils internes
+        - Anime des ateliers d’initiation au code pour des publics éloignés du numérique
+        - Participe au développement d’une plateforme solidaire de mise en relation des bénévoles et des associations
   interests:
     - name: Randonnée
       keywords:
         - Alpes
-        - Sentiers de grande randonnée
-    - name: Photographie
+        - Trail
+        - Photographie
+        - Nature
+    - name: Programmation créative
       keywords:
-        - Paysage
-        - Retouche numérique
-    - name: Open source
-      keywords:
-        - Linux
-        - Communautés
-        - DIY
-  languages:
-    - fluency: Native or Bilingual Proficiency
-      language: French
-      keywords:
-        - Langue maternelle
-    - fluency: Full Professional Proficiency
-      language: English
-      keywords:
-        - TOEIC 950
-        - Rédaction technique
-  location:
-    city: Paris
-    address: 12, rue de la Roquette
-    country: France
-    postalCode: "75011"
-    region: Île-de-France
-  profiles:
-    - network: GitHub
-      username: clairemoreau
-      url: https://github.com/clairemoreau
-    - network: LinkedIn
-      username: claire-moreau
-      url: https://www.linkedin.com/in/claire-moreau
-  projects:
-    - name: TraceFlow
-      startDate: 2023-04-01
-      summary: >
-        - Collecte et visualisation de métriques, logs et traces en temps réel
+        - Generative art
+        - p5.js
+        - Processing
+        - Musique électronique
 
-        - Interface web développée avec React et TypeScript
-
-        - Agent de collecte léger en Go, configurable par simple fichier YAML
-
-        - Export des données au format OpenTelemetry et intégration avec
-        Prometheus
-      description: Plateforme open source d'observabilité pour applications distribuées
-      keywords:
-        - Observabilité
-        - OpenTelemetry
-        - Go
-        - TypeScript
-      url: https://traceflow.io
-    - name: OpenPlanner
-      startDate: 2020-02-01
-      summary: >
-        - Développement d'une progressive web app avec React, Node.js et
-        PostgreSQL
-
-        - Synchronisation collaborative des plannings via WebSocket
-
-        - Authentification via OAuth2 et gestion fine des rôles
-
-        - Déploiement automatisé sur une instance Kubernetes légère
-      description: Application de gestion de planning pour associations et petites équipes
-      endDate: 2021-01-31
-      keywords:
-        - PWA
-        - WebSocket
-        - OAuth2
-        - Kubernetes
-      url: https://openplanner.fr
-  publications:
-    - name: Observabilité des architectures microservices avec OpenTelemetry
-      publisher: Revue Informatique & Industries
-      releaseDate: 2022-12-15
-      summary: >
-        - Article technique présentant les bonnes pratiques pour instrumenter
-        une plateforme cloud native.
-
-        - Retour d'expérience sur l'adoption d'OpenTelemetry dans une équipe de
-        15 développeurs.
-
-        - Méthodologie pour corréler métriques, logs et traces sans dégrader les
-        performances.
-      url: https://doi.org/10.1000/xyz123
-  skills:
-    - level: Expert
-      name: Développement full-stack
-      keywords:
-        - JavaScript
-        - TypeScript
-        - React
-        - Node.js
-        - GraphQL
-        - PostgreSQL
-    - level: Advanced
-      name: Architecture logicielle
-      keywords:
-        - Microservices
-        - Docker
-        - Kubernetes
-        - Kafka
-        - API REST
-        - CI/CD
-    - level: Intermediate
-      name: Gestion de projet agile
-      keywords:
-        - Scrum
-        - Kanban
-        - Jira
-        - Méthodes agiles
-  volunteer:
-    - organization: Association Les Débrouillards du Numérique
-      position: Mentor bénévole
-      startDate: 2019-01-01
-      summary: >
-        - Accompagnement d'étudiants issus de milieux éloignés du numérique dans
-        la découverte du code
-
-        - Animation d'ateliers hebdomadaires sur la création de pages web et de
-        petits jeux en Python
-
-        - Participation à l'organisation de deux événements 'coding goûter' par
-        an
-      endDate: 2023-12-31
-      url: https://debrouillards-numerique.fr
-  work:
-    - name: Avantiotech
-      position: Ingénieure logicielle full-stack
-      startDate: 2022-03-01
-      summary: >
-        - Conception et développement d'une plateforme SaaS de gestion
-        documentaire utilisée par plus de 200 000 utilisateurs
-
-        - Refonte progressive d'un monolithe en microservices avec Node.js,
-        Kafka et PostgreSQL
-
-        - Mise en place d'une chaîne CI/CD complète avec GitHub Actions et Argo
-        CD, réduisant le temps de déploiement de 45 %
-
-        - Encadrement de deux développeurs juniors et animation des rituels
-        agiles
-
-        - Collaboration étroite avec les équipes produit et design pour affiner
-        les spécifications techniques
-      endDate: null
-      keywords:
-        - Node.js
-        - TypeScript
-        - PostgreSQL
-        - Kafka
-        - Kubernetes
-        - CI/CD
-        - Mentorat
-      url: https://avantiotech.fr
-    - name: Sylveo
-      position: Développeuse full-stack
-      startDate: 2019-09-01
-      summary: >
-        - Développement d'API REST et GraphQL en TypeScript pour des
-        applications web et mobiles
-
-        - Contribution à la création d'une bibliothèque de composants React
-        réutilisables
-
-        - Optimisation des requêtes PostgreSQL et mise en place de mesures de
-        performance réduisant le temps de réponse de 30 %
-
-        - Participation aux revues de code, aux tests de charge avec k6 et aux
-        audits de sécurité
-      endDate: 2022-02-28
-      keywords:
-        - React
-        - GraphQL
-        - API REST
-        - Performance
-        - Sécurité
-        - Agile
-      url: https://sylveo.io
-    - name: WebAtlas
-      position: Développeuse web junior
-      startDate: 2018-01-15
-      summary: >
-        - Développement de sites vitrines et d'applications internes en PHP et
-        JavaScript
-
-        - Intégration de maquettes Figma et mise en place de tests d'acceptation
-        avec Cypress
-
-        - Maintenance corrective et évolutive de plusieurs outils métiers
-
-        - Rédaction de documentations techniques et de guides de démarrage pour
-        l'équipe
-      endDate: 2019-08-31
-      keywords:
-        - PHP
-        - JavaScript
-        - Cypress
-        - Figma
-        - Maintenance
-      url: https://webatlas.fr
 locale:
   language: fr
-layouts:
-  - engine: latex
-    page:
-      showPageNumbers: true
-      paperSize: a4
-      margins:
-        top: 2.5cm
-        bottom: 2.5cm
-        left: 1.5cm
-        right: 1.5cm
-    template: moderncv-banking
-    typography:
-      fontSize: 11pt
-  - engine: docx
-    page:
-      showPageNumbers: true
-      paperSize: a4
-      margins:
-        top: 2.5cm
-        bottom: 2.5cm
-        left: 1.5cm
-        right: 1.5cm
-    typography:
-      fontSize: 11pt
-      lineSpacing: normal
-  - engine: markdown
-  - engine: html
-    template: calm
-    typography:
-      fontSize: 16px

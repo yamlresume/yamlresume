@@ -1,292 +1,210 @@
 content:
   basics:
-    name: Maya Chen
-    email: maya.chen@email.com
-    headline: Senior UX Designer specializing in human-centered digital products
-    phone: (415) 555-0198
-    summary: >
-      Passionate and detail-oriented UX Designer with over 6 years of experience
-      crafting intuitive digital experiences for web and mobile platforms.
-      Skilled in translating complex user needs into elegant, accessible design
-      solutions that drive engagement and business growth.
+    name: Elena Marsh
+    headline: UX Designer creating inclusive, human-centered digital experiences
+    phone: "(415) 555-0139"
+    email: elena.marsh@example.com
+    url: https://elenamarsh.design
+    summary: |
+      - UX designer with 7+ years of experience designing web and mobile products across health tech, fintech, and analytics
+      - Human-centered design advocate specializing in user research, prototyping, and design systems
+      - Collaborative team player skilled at partnering with product managers, engineers, and stakeholders to ship intuitive solutions
+      - Passionate about accessibility and inclusive design, ensuring every user can accomplish their goals with ease
 
-
-      Expertise spans the full design lifecycle, from generative user research
-      and journey mapping to high-fidelity prototyping and design system
-      governance. Strong advocate for inclusive design practices and
-      cross-functional collaboration with product, engineering, and research
-      teams.
-
-
-      Currently leading UX strategy and design operations at a fast-paced
-      technology company, while mentoring junior designers and scaling reusable
-      component libraries across multiple product lines.
-    url: https://mayachen.design
-  education:
-    - area: Human-Computer Interaction + Design
-      institution: University of Washington
-      degree: Master
-      courses:
-        - User-Centered Design
-        - Information Architecture
-        - Qualitative Research Methods
-        - Interaction Design Studio
-        - Data Visualization
-      endDate: Jun 1, 2017
-      startDate: Sep 1, 2015
-      summary: >
-        Completed an interdisciplinary thesis on predictive touch targeting for
-        mobile accessibility, resulting in a peer-reviewed workshop paper.
-        Collaborated with engineering and design teams through
-        industry-sponsored studio projects.
-      url: https://www.washington.edu/
-    - area: Psychology
-      institution: University of Texas at Austin
-      degree: Bachelor
-      courses:
-        - Cognitive Psychology
-        - Statistics and Data Analysis
-        - Human Factors
-        - Visual Perception
-      endDate: May 1, 2015
-      startDate: Aug 1, 2011
-      summary: >
-        Developed a strong foundation in human behavior, perception, and
-        decision-making. Graduated with honors and presented undergraduate
-        research on attention and interface complexity at a regional psychology
-        conference.
-      url: https://www.utexas.edu/
-  awards:
-    - awarder: UX Design Awards
-      title: Excellence in Health Tech Design
-      date: Nov 2022
-      summary: >
-        Recognized for the redesign of a patient-facing telehealth platform that
-        significantly improved accessibility scores and user satisfaction
-        metrics among underserved communities.
-  certificates:
-    - issuer: Coursera
-      name: Google UX Design Professional Certificate
-      date: Mar 2019
-      url: https://coursera.org/professional-certificates/google-ux-design
-    - issuer: IAAP
-      name: Certified Professional in Accessibility Core Competencies
-      date: Nov 2021
-      url: https://www.accessibilityassociation.org/s/certified-professional
-  interests:
-    - name: Photography
-      keywords:
-        - Street Photography
-        - Film
-        - Darkroom
-    - name: Outdoor Activities
-      keywords:
-        - Hiking
-        - Kayaking
-        - Birdwatching
-  languages:
-    - fluency: Native or Bilingual Proficiency
-      language: English
-      keywords: []
-    - fluency: Full Professional Proficiency
-      language: French
-      keywords:
-        - Business French
-        - Technical Writing
   location:
+    address: 548 Market St, Suite 300
     city: San Francisco
-    address: 450 Mission Bay Boulevard
-    country: United States
-    postalCode: "94158"
     region: California
+    country: United States
+    postalCode: "94104"
+
   profiles:
     - network: LinkedIn
-      username: mayachen
-      url: https://linkedin.com/in/mayachen
+      url: https://www.linkedin.com/in/elenamarshux
+      username: elenamarshux
     - network: Dribbble
-      username: mayachen
-      url: https://dribbble.com/mayachen
-    - network: Behance
-      username: mayachen
-      url: https://behance.net/mayachen
-  projects:
-    - name: Aero Travel
-      startDate: Jan 1, 2020
-      summary: >
-        - Conducted competitive analysis and user interviews to identify pain
-        points in sustainable travel planning
+      url: https://dribbble.com/elenamarsh
+      username: elenamarsh
+    - network: Medium
+      url: https://medium.com/@elenamarsh.ux
+      username: elenamarsh.ux
 
-        - Designed an end-to-end mobile experience featuring itinerary building,
-        carbon offset tracking, and local eco-guide integration
+  education:
+    - institution: California College of the Arts
+      url: https://www.cca.edu/
+      degree: Bachelor
+      area: Interaction Design
+      score: "3.8"
+      startDate: Sep 1, 2013
+      endDate: May 1, 2017
+      courses:
+        - Human-Computer Interaction
+        - Visual Communication
+        - Design Research Methods
+        - Prototyping for Digital Products
+        - Psychology of User Experience
+        - Design Ethics and Accessibility
+      summary: |
+        - Developed a strong foundation in user-centered design principles and iterative design processes
+        - Completed hands-on projects in mobile app design, responsive web design, and interactive installations
+        - Recognized for outstanding work in the senior capstone project, a public transit navigation tool for elderly users
 
-        - Delivered high-fidelity prototypes and a usability report that
-        informed the MVP scope for investor presentations
-      description: A mobile application for sustainable travel planning and carbon
-        footprint tracking
-      endDate: Jun 1, 2020
+  work:
+    - name: Nimbus Analytics
+      url: https://www.nimbusanalytics.com/
+      position: Senior Product Designer
+      startDate: Mar 1, 2021
+      summary: |
+        - Led end-to-end design for a data visualization platform used by 50,000+ analysts, revamping the dashboard experience and reducing onboarding time by 35%
+        - Built and maintained the company’s first design system, including 120+ accessible components and tokens, resulting in a 40% faster handoff to engineering
+        - Drove user research initiatives, conducting 30+ contextual interviews and usability tests to shape the product roadmap
+        - Partnered with product and engineering leadership to define design strategy and quarterly OKRs for the analytics suite
+        - Mentored two junior designers, facilitating design critiques and skill-building workshops
       keywords:
-        - Sustainability
-        - Mobile Design
-        - User Research
-      url: https://aerotravel.app
-    - name: CityLights
-      startDate: Aug 1, 2022
-      summary: >
-        - Audited accessibility and usability of existing municipal websites
-        across three partner cities
-
-        - Built a scalable component library in Figma covering typography,
-        color, form elements, and navigation patterns
-
-        - Authored documentation and usage guidelines to empower non-designer
-        content managers to maintain visual consistency
-      description: An open-source design system for municipal government digital services
-      endDate: Dec 1, 2022
-      keywords:
+        - Product Strategy
         - Design Systems
-        - Open Source
-        - Government
-      url: https://citylights.designsystem.org
+        - User Research
+        - Data Visualization
+        - Figma
+        - Mentorship
+
+    - name: Brightline Health
+      url: https://www.brightlinehealth.com/
+      position: Product Designer
+      startDate: Jun 1, 2017
+      endDate: Feb 1, 2021
+      summary: |
+        - Designed patient-facing mobile app and web portal for a telehealth startup, improving task completion rate by 28%
+        - Collaborated with clinical and engineering teams to translate complex healthcare workflows into simple, accessible experiences
+        - Planned and moderated remote usability testing sessions, synthesizing findings into actionable design recommendations
+        - Created high-fidelity prototypes in Figma and ran rapid iteration cycles to validate concepts with real patients
+        - Advocated for accessibility standards, partnering with engineers to meet WCAG 2.1 AA compliance across all products
+      keywords:
+        - Healthcare
+        - Mobile App Design
+        - Accessibility
+        - Prototyping
+        - Usability Testing
+        - User Flows
+
+  languages:
+    - language: English
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - Native speaker
+        - Writing and documentation
+    - language: Spanish
+      fluency: Limited Working Proficiency
+      keywords:
+        - Conversational
+        - Basic reading comprehension
+
   skills:
-    - level: Expert
-      name: User Research
+    - name: User Research
+      level: Advanced
       keywords:
         - Interviews
-        - Usability Testing
+        - Surveys
         - Personas
         - Journey Mapping
-    - level: Expert
-      name: Design & Prototyping
+        - Usability Testing
+    - name: Prototyping
+      level: Expert
       keywords:
         - Figma
         - Sketch
         - Adobe XD
-        - Principle
         - Framer
-    - level: Intermediate
-      name: Frontend Development
+        - Interactive Prototypes
+    - name: Visual Design
+      level: Advanced
       keywords:
-        - HTML
-        - CSS
-        - JavaScript
-        - React
-    - level: Advanced
-      name: Design Operations
-      keywords:
+        - Typography
+        - Color Theory
+        - Layout
         - Design Systems
-        - DesignOps
-        - Storybook
-        - Accessibility
-  volunteer:
-    - organization: Design for America
-      position: UX Mentor
-      startDate: Sep 1, 2019
-      summary: >
-        - Mentor undergraduate design students through semester-long social
-        innovation projects focused on community health
-
-        - Lead workshops on design thinking, wireframing, and accessible design
-        practices for non-profit organizations
-
-        - Judge annual student design showcase, providing constructive critique
-        and career guidance to emerging UX professionals
-      url: https://designforamerica.com
-  work:
-    - name: Nexus Digital
-      position: Senior UX Designer
-      startDate: Mar 1, 2021
-      summary: >
-        - Lead UX strategy and execution for core product initiatives, managing
-        the end-to-end design process from discovery to delivery
-
-        - Established and maintained a comprehensive design system used by 30+
-        product teams, improving design consistency and reducing development
-        time by 25%
-
-        - Conducted mixed-methods user research including contextual inquiry,
-        usability testing, and surveys to inform product roadmaps
-
-        - Mentor a team of four junior designers, conducting design critiques
-        and fostering a culture of feedback and iterative improvement
-
-        - Collaborate closely with product managers and engineers to ensure
-        feasible implementation of complex interaction patterns
+        - Accessibility (WCAG)
+    - name: UX Strategy
+      level: Intermediate
       keywords:
-        - Design Systems
+        - Product Roadmapping
+        - Stakeholder Management
+        - Design Sprints
+        - Metrics
+        - A/B Testing
+
+  awards:
+    - title: UX Design Award — Best Mobile App
+      awarder: Interaction Design Association
+      date: Oct 2022
+      summary: |
+        Recognized for designing a mindful spending app that helps users understand their financial habits through visual data and gentle behavioral nudges.
+
+  certificates:
+    - name: NN/g UX Certification
+      url: https://www.nngroup.com/
+      issuer: Nielsen Norman Group
+      date: Jun 2022
+    - name: Google UX Design Professional Certificate
+      url: https://www.coursera.org/professional-certificates/google-ux-design
+      issuer: Google
+      date: Aug 2021
+
+  publications:
+    - name: Designing for Trust in Health Tech
+      publisher: UX Collective
+      releaseDate: Jan 2021
+      url: https://uxdesign.cc/designing-for-trust-in-health-tech
+      summary: |
+        Explores how transparency, clear language, and coherent visual hierarchy can build trust in digital health products, sharing lessons learned from patient-facing design research.
+
+  projects:
+    - name: Mindful Spending App
+      url: https://www.behance.net/gallery/mindful-spending-app
+      description: A personal finance app concept that helps users build mindful
+        spending habits through visual spending insights and gentle,
+        non-judgmental nudges.
+      startDate: Jan 2020
+      endDate: May 2020
+      summary: |
+        - Conducted diary studies and interviews with 12 participants to understand emotional relationships with money
+        - Designed low-fidelity paper prototypes and iterated through high-fidelity Figma mockups based on feedback
+        - Developed an interactive prototype in Framer to test navigation and core-spending reflection features
+        - Awarded an honorable mention in the IxDA student design showcase
+      keywords:
+        - Mobile App
+        - Fintech
         - User Research
-        - Mentorship
-        - Figma
-      url: https://nexusdigital.com
-    - name: Brightfield Health
-      position: UX Designer
-      startDate: Jun 1, 2018
-      summary: >
-        - Redesigned the flagship telehealth mobile application used by 500,000+
-        patients, improving task completion rates by 35% through streamlined
-        navigation
-
-        - Championed accessibility compliance (WCAG 2.1 AA) across all digital
-        products, conducting audits and delivering remediation guidelines
-
-        - Created interactive prototypes and facilitated user testing sessions
-        with diverse patient populations including elderly and low-vision users
-
-        - Partnered with clinical stakeholders to translate complex medical
-        workflows into simple, reassuring user experiences
-      endDate: Feb 1, 2021
-      keywords:
-        - Healthcare
-        - Mobile First
-        - Accessibility
         - Prototyping
-      url: https://brightfieldhealth.com
-    - name: Atlas Financial Group
-      position: Junior UX Designer
-      startDate: Jul 1, 2017
-      summary: >
-        - Designed responsive web interfaces for consumer banking tools,
-        producing wireframes, mockups, and clickable prototypes in Figma
+        - Accessibility
 
-        - Assisted senior researchers in moderating usability tests and
-        synthesizing findings into actionable design recommendations
-
-        - Contributed to the company's first pattern library by documenting UI
-        components and interaction guidelines for the development team
-      endDate: May 1, 2018
+  interests:
+    - name: Photography
       keywords:
-        - Wireframing
-        - Usability Testing
-        - Responsive Web
-      url: https://atlasfinancial.com
+        - Street photography
+        - Portraits
+        - Film photography
+    - name: Accessibility
+      keywords:
+        - Inclusive design
+        - Assistive technology
+        - Web accessibility
+    - name: Hiking
+      keywords:
+        - Bay Area trails
+        - National parks
+        - Nature photography
+
+  volunteer:
+    - organization: Design4Good SF
+      url: https://www.design4goodsf.org/
+      position: Design Mentor
+      startDate: Sep 2018
+      endDate: Dec 2022
+      summary: |
+        - Mentored early-career designers from underrepresented backgrounds in portfolio development and interview preparation
+        - Facilitated monthly critique sessions to help mentees refine their design thinking and presentation skills
+        - Partnered with local nonprofits on pro-bono design projects, including a website refresh for a food bank and a donation flow redesign for a homeless shelter
+
 locale:
   language: en
-layouts:
-  - engine: latex
-    page:
-      showPageNumbers: true
-      paperSize: a4
-      margins:
-        top: 2.5cm
-        bottom: 2.5cm
-        left: 1.5cm
-        right: 1.5cm
-    template: moderncv-banking
-    typography:
-      fontSize: 11pt
-  - engine: docx
-    page:
-      showPageNumbers: true
-      paperSize: a4
-      margins:
-        top: 2.5cm
-        bottom: 2.5cm
-        left: 1.5cm
-        right: 1.5cm
-    typography:
-      fontSize: 11pt
-      lineSpacing: normal
-  - engine: markdown
-  - engine: html
-    template: calm
-    typography:
-      fontSize: 16px

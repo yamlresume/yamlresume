@@ -1,240 +1,205 @@
 content:
   basics:
-    name: 陳曉彤
-    email: hiutung.chan@protonmail.com
-    headline: 資深產品經理 | 以用戶為本推動數碼產品創新
-    phone: +852 9123 4567
+    name: 陳雅婷
+    headline: 資深產品經理 | 金融科技與數碼解決方案
+    phone: "+852 9123 4567"
+    email: ngating.chan@example.com
+    url: https://www.linkedin.com/in/ngatingchan
     summary: |
-      - 擁有超過 8 年產品管理經驗，專注於金融科技、電子商貿及企業數碼轉型領域
-      - 善於從用戶需求與商業目標出發，制定產品策略、路線圖及需求優先次序
-      - 具備跨部門協作及敏捷開發經驗，能有效帶領工程、設計、市場及營運團隊交付高品質產品
-      - 熟悉數據驅動決策流程，擅長利用 A/B 測試、用戶研究及數據分析持續優化產品體驗
-    url: https://www.linkedin.com/in/hiutung-chan
-  education:
-    - area: 工商管理（資訊系統）
-      institution: 香港科技大學
-      degree: Bachelor
-      courses:
-        - 資訊系統分析與設計
-        - 數據庫管理
-        - 人機互動
-        - 市場學原理
-        - 統計學
-        - 商業溝通與談判
-      endDate: Jun 1, 2016
-      startDate: Sep 1, 2012
-      summary: |
-        - 主修資訊系統及商業管理，掌握科技與商業結合的基礎知識
-        - 透過課程項目及實習累積產品開發、數據分析及項目管理經驗
-        - 於畢業專題中設計流動應用程式原型，獲學系最佳項目獎提名
-      score: 3.6/4.0
-      url: https://www.hkust.edu.hk/
-  awards:
-    - awarder: 香港資訊科技商會
-      title: 年度最佳金融科技產品獎
-      date: Jan 15, 2023
-      summary: |
-        表揚團隊於流動支付產品中創新結合人工智能及合規科技，顯著提升交易安全及用戶體驗。
-    - awarder: 智匯金融科技有限公司
-      title: 傑出員工獎
-      date: Dec 1, 2019
-      summary: |
-        因主導開戶流程數碼轉型項目，為公司帶來顯著營運效益及客戶滿意度提升而獲獎。
-  certificates:
-    - issuer: Scrum Alliance
-      name: Certified Scrum Product Owner (CSPO)
-      date: Mar 12, 2020
-      url: https://www.scrumalliance.org/
-    - issuer: Google
-      name: Google Analytics Individual Qualification
-      date: Jul 20, 2021
-      url: https://skillshop.exceedlms.com/
-    - issuer: CodeMobility
-      name: Professional Certificate in Product Management
-      date: Sep 5, 2022
-      url: https://www.codemobility.com/
-  interests:
-    - name: 閱讀
-      keywords:
-        - 產品設計
-        - 商業策略
-        - 科技趨勢
-        - 科幻小說
-    - name: 戶外運動
-      keywords:
-        - 遠足
-        - 跑步
-        - 露營
-    - name: 攝影
-      keywords:
-        - 街頭攝影
-        - 人像攝影
-        - 手機攝影
-  languages:
-    - fluency: Native or Bilingual Proficiency
-      language: Cantonese
-    - fluency: Full Professional Proficiency
-      language: English
-      keywords:
-        - IELTS 7.5
-    - fluency: Full Professional Proficiency
-      language: Mandarin
+      擁有超過 8 年產品管理經驗的資深產品經理，專注於金融科技、電子商貿及流動應用程式領域。擅長由 0 到 1 建立產品，並通過數據驅動決策、用戶研究及跨團隊協作，持續提升產品價值及用戶體驗。
+
+      - 主導多個大型數碼產品項目，涵蓋流動銀行、數碼支付及零售電商，累計服務用戶超過 200 萬
+      - 熟悉敏捷開發、精實啟動及 OKR 管理，能夠有效協調工程、設計、市場及業務團隊
+      - 擁有數據分析及 A/B 測試實戰經驗，利用 SQL、Amplitude、Mixpanel 等工具制定產品策略
+      - 具備國際視野及本地市場洞察，能靈活應對瞬息萬變的業務需求
   location:
+    address: 香港鰂魚涌英皇道 979 號
     city: 香港
-    address: 香港中環皇后大道中99號
-    country: Hong Kong
-    postalCode: "999077"
     region: 香港島
+    country: Hong Kong
   profiles:
     - network: LinkedIn
-      username: hiutung-chan
-      url: https://www.linkedin.com/in/hiutung-chan
-    - network: GitHub
-      username: htchan
-      url: https://github.com/htchan
-  projects:
-    - name: PayEasy 流動支付應用程式
-      startDate: Jan 1, 2021
+      url: https://www.linkedin.com/in/ngatingchan
+      username: ngatingchan
+    - network: Medium
+      url: https://medium.com/@ngatingchan
+      username: ngatingchan
+  education:
+    - institution: 香港中文大學
+      url: https://www.cuhk.edu.hk/
+      degree: Bachelor
+      area: 工商管理學士（資訊系統）
+      score: "3.7"
+      startDate: Sep 1, 2010
+      endDate: Jul 1, 2014
+      courses:
+        - 產品管理與開發
+        - 數據庫管理
+        - 電子商貿策略
+        - 市場研究與分析
+        - 資訊系統審計
+        - 企業架構
       summary: |
-        - 從 0 到 1 規劃本地中小企流動收款方案，涵蓋用戶研究、功能定義及市場推廣策略
-        - 推出後首 6 個月錄得超過 8,000 個商戶註冊，每月交易額突破 5,000 萬港元
-      description: |
-        為本地中小企提供一站式收款、報表及客戶管理功能的流動應用程式，結合安全合規及簡易介面，降低數碼支付入門門檻。
-      endDate: Dec 1, 2022
+        - 主修資訊系統，副修市場學，畢業論文探討流動支付在香港的普及因素
+        - 擔任學生會資訊科技幹事，統籌校園數碼轉型項目
+        - 獲院長嘉許名單（Dean's List）兩次
+  work:
+    - name: 智融香港有限公司
+      url: https://www.smartfintech.com.hk
+      position: 高級產品經理
+      startDate: Apr 1, 2022
+      summary: |
+        - 主導新一代流動銀行應用程式的產品規劃，由研究、設計、開發至上市全程管理，用戶評分提升至 4.8 星
+        - 與工程、設計、風控及合規團隊緊密合作，確保產品符合金管局監管要求及銀行安全標準
+        - 制定並執行產品路線圖，利用 OKR 框架與持份者對齊目標，按季度交付 15 項以上功能更新
+        - 建立數據分析機制，透過 A/B 測試優化入門流程，令新用戶轉換率提升 32%
+        - 帶領 3 名產品助理及 2 名產品設計師，建立以用戶為中心的產品文化
       keywords:
-        - FinTech
-        - 流動支付
         - 金融科技
-        - B2B
-        - 用戶體驗
-      url: https://www.payeasyhk.com
-  publications:
-    - name: 如何打造以用戶為中心的產品策略
-      publisher: Medium
-      releaseDate: May 15, 2022
+        - 流動銀行
+        - 產品路線圖
+        - A/B 測試
+        - 敏捷開發
+        - 持份者管理
+    - name: 數碼支付香港有限公司
+      url: https://www.digitalpay.com.hk
+      position: 產品經理
+      startDate: Jul 1, 2018
+      endDate: Mar 1, 2022
       summary: |
-        - 分享如何透過用戶研究、數據分析及跨部門協作，制定能平衡用戶需求與商業目標的產品策略
-        - 以實際案例說明產品路線圖的取捨原則及敏捷團隊的執行方法
-      url: https://medium.com/@hiutung-chan/user-centric-product-strategy
+        - 負責數碼錢包及電子支付產品的端到端交付，包括 QR Code 支付、P2P 轉賬及商戶管理系統
+        - 與超過 50 間合作商戶進行需求訪談，設計並推出商家促銷及會員積分功能，帶動交易量增長 45%
+        - 利用 SQL 及 Amplitude 分析用戶行為，提出並落實減低支付失敗率的措施，成功將失敗率由 3.5% 降至 1.8%
+        - 參與 Scrum 團隊，擔任 Product Owner，撰寫用戶故事及驗收準則，確保每個 Sprint 按時交付
+      keywords:
+        - 數碼支付
+        - Fintech
+        - 用戶研究
+        - SQL
+        - Product Owner
+        - 電子錢包
+    - name: 環球電商方案有限公司
+      url: https://www.globalecom.io
+      position: 助理產品經理
+      startDate: Aug 1, 2015
+      endDate: Jun 1, 2018
+      summary: |
+        - 協助高級產品經理管理 B2B 電子商貿平台的功能開發，涵蓋商品管理、訂單處理及物流追蹤模組
+        - 撰寫產品需求文件（PRD），與工程師及設計師協作進行功能驗收，確保產品質素
+        - 定期分析網站流量及銷售數據，為團隊提供營運建議，推動平均訂單價值提升 18%
+        - 協調客戶服務部門處理用戶反饋，整理常見問題並優化自助服務流程
+      keywords:
+        - B2B
+        - 電子商貿
+        - PRD
+        - 數據分析
+        - 客戶成功
   skills:
-    - level: Expert
-      name: 產品管理
+    - name: 產品管理
+      level: Expert
       keywords:
         - 產品策略
         - 路線圖規劃
-        - 需求分析
         - 用戶故事
-        - 優先次序管理
-    - level: Advanced
-      name: 數據分析
+        - 敏捷／Scrum
+        - 持份者管理
+        - 競品分析
+    - name: 數據分析
+      level: Advanced
       keywords:
         - SQL
-        - Google Analytics
+        - Amplitude
         - Mixpanel
-        - Tableau
-        - A/B 測試
-    - level: Advanced
-      name: 敏捷開發
+        - Google Analytics
+        - A/B Testing
+    - name: 用戶體驗設計
+      level: Intermediate
       keywords:
-        - Scrum
-        - Kanban
+        - Figma
+        - 用戶訪談
+        - 可用性測試
+        - Wireframe
+        - 用戶流程圖
+    - name: 商業工具
+      level: Expert
+      keywords:
         - Jira
         - Confluence
-        - OKR
-    - level: Advanced
-      name: 用戶研究
+        - Notion
+        - Tableau
+        - Excel
+  languages:
+    - language: Cantonese
+      fluency: Native or Bilingual Proficiency
       keywords:
-        - 用戶訪談
-        - 問卷調查
-        - 可用性測試
-        - Personas
-        - 顧客旅程地圖
+        - 母語
+    - language: Mandarin
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - 母語
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - IELTS Overall 8.0
+        - TOEIC 950
+  awards:
+    - title: 香港金融科技發展獎（最佳流動支付體驗）
+      date: Oct 2021
+      awarder: 香港金融科技協會
+      summary: |
+        憑藉數碼錢包產品的創新功能和用戶體驗設計，獲頒「最佳流動支付體驗」獎項，表揚團隊在支付流程簡化及安全合規方面的卓越表現。
+  certificates:
+    - name: Certified Scrum Product Owner (CSPO)
+      issuer: Scrum Alliance
+      date: Jun 2019
+      url: https://www.scrumalliance.org/
+    - name: 高級產品管理專業證書
+      issuer: 香港產品管理學會
+      date: Aug 2020
+      url: https://www.hkpm.org.hk
+  publications:
+    - name: 數碼產品經理必須掌握的數據分析方法
+      publisher: Medium
+      releaseDate: Mar 15, 2022
+      url: https://medium.com/@ngatingchan/data-driven-product-management
+      summary: |
+        分享如何利用 SQL 及 A/B 測試制定產品決策，並以實際案例說明數據分析在金融科技產品中的應用。
+  projects:
+    - name: 投資知識學習平台「理財新手村」
+      url: https://www.finlearn.hk
+      description: 一款專為年輕用戶設計的互動理財學習應用程式，利用遊戲化元素提升金融知識普及率。
+      startDate: Jan 1, 2023
+      endDate: Jul 1, 2023
+      summary: |
+        - 針對 18-30 歲用戶缺乏理財知識的痛點，主導產品概念開發及用戶驗證
+        - 與教育機構及設計顧問合作，設計 12 個互動課程及投資情境模擬
+        - 上線三個月內錄得超過 10,000 名註冊用戶，課程完成率達 68%
+      keywords:
+        - 金融教育
+        - 遊戲化
+        - 用戶研究
+        - 產品設計
+  interests:
+    - name: 閱讀
+      keywords:
+        - 商業書籍
+        - 行為經濟學
+        - 科技趨勢
+    - name: 戶外活動
+      keywords:
+        - 行山
+        - 露營
+        - 跑步
   volunteer:
     - organization: 香港產品經理協會
+      url: https://www.hkpmassociation.org
       position: 義務導師
-      startDate: Jan 1, 2022
+      startDate: Jan 1, 2020
+      endDate: Dec 31, 2023
       summary: |
-        - 定期為年輕產品經理舉辦工作坊，分享用戶研究、敏捷開發及職涯規劃心得
-        - 協助協會策劃年度研討會，邀請行業領袖交流產品管理趨勢
-        - 為初創團隊提供免費產品策略諮詢，支援本地創新科技社群發展
-      url: https://www.hkpma.org/
-  work:
-    - name: 翱翔科技集團
-      position: 高級產品經理
-      startDate: Jan 1, 2021
-      summary: |
-        - 負責旗艦流動支付產品的整體策略、路線圖及交付，管理 6 人的產品設計團隊
-        - 與工程、合規及營運團隊協作，於 9 個月內推出新商戶後台系統，提升營運效率 30%
-        - 建立用戶研究及數據分析機制，透過 NPS 調查及行為分析，推動用戶留存率提升 18%
-        - 主導 B2B 客戶需求發掘及概念驗證，成功簽下 3 間大型連鎖零售集團
-      keywords:
-        - 產品策略
-        - 金融科技
-        - 用戶研究
-        - 數據分析
-        - 敏捷開發
-      url: https://www.techwinghk.com
-    - name: 智匯金融科技有限公司
-      position: 產品經理
-      startDate: Jul 1, 2018
-      summary: |
-        - 負責網上銀行及投資平台的功能規劃，涵蓋需求收集、用戶故事編寫及驗收測試
-        - 與設計團隊合作重新設計開戶流程，將平均開戶時間由 15 分鐘縮短至 6 分鐘
-        - 與工程團隊採用 Scrum 方式進行兩週一次迭代，按時交付 20 多個主要版本
-        - 定期向管理層匯報產品績效指標，並根據數據調整產品優先次序
-      endDate: Dec 1, 2020
-      keywords:
-        - 數碼銀行
-        - Scrum
-        - 用戶體驗
-        - 產品需求文件
-        - KPI
-      url: https://www.nexpayhk.com
-    - name: 創意軟件工作室
-      position: 助理產品經理
-      startDate: Jul 1, 2016
-      summary: |
-        - 協助高級產品經理規劃電商平台新功能，包括購物車優化及會員積分系統
-        - 與客戶進行需求訪談，整理會議紀錄並轉化為用戶故事及線框圖
-        - 協調設計及開發資源，確保項目按時完成並符合品質標準
-        - 參與產品測試及用戶驗收，收集意見並跟進問題修復
-      endDate: Jun 1, 2018
-      keywords:
-        - 電子商貿
-        - 需求分析
-        - 線框圖
-        - 項目協調
-        - 用戶驗收
-      url: https://www.ideastudiohk.com
+        - 為轉職產品管理人士提供一對一職業指導，分享求職及面試技巧
+        - 定期主持工作坊，主題包括「從 0 到 1 建立產品」及「數據驅動決策」
+        - 協助協會舉辦年度研討會，邀請業界領袖分享最新產品管理趨勢
+
 locale:
   language: zh-hant-hk
-layouts:
-  - engine: latex
-    page:
-      showPageNumbers: true
-      paperSize: a4
-      margins:
-        top: 2.5cm
-        bottom: 2.5cm
-        left: 1.5cm
-        right: 1.5cm
-    template: moderncv-banking
-    typography:
-      fontSize: 11pt
-  - engine: docx
-    page:
-      showPageNumbers: true
-      paperSize: a4
-      margins:
-        top: 2.5cm
-        bottom: 2.5cm
-        left: 1.5cm
-        right: 1.5cm
-    typography:
-      fontSize: 11pt
-      lineSpacing: normal
-  - engine: markdown
-  - engine: html
-    template: calm
-    typography:
-      fontSize: 16px

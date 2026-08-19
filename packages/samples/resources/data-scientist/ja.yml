@@ -1,245 +1,184 @@
 content:
   basics:
-    name: 佐藤 健一
-    email: kenichi.sato@datainsight.co.jp
+    name: 佐藤 恵子
     headline: データサイエンティスト / 機械学習エンジニア
-    phone: 080-1234-5678
+    phone: "080-1234-5678"
+    email: keiko.sato@example.jp
+    url: https://keiko-sato.dev
     summary: |
-      データサイエンスの専門知識とソフトウェアエンジニアリングの経験を活かし、ビジネス課題をデータ駆動で解決するデータサイエンティスト。
+      データサイエンティストとして、顧客分析・需要予測・レコメンドシステムの構築に5年以上従事。
+      ビジネス課題を統計分析・機械学習で解決し、施策の意思決定を支援しています。
 
-      - 機械学習モデルの企画・開発から本番運用まで一気通貫で携わる
-      - 小売・EC領域における需要予測、顧客セグメンテーション、施策効果分析の実績
-      - Python・SQL・クラウド基盤を活用したデータ分析基盤の構築経験
-      - ビジネスサイドと連携し、分析結果を意思決定に結び付けるコミュニケーション能力
-    url: https://github.com/kenichi-sato
-  education:
-    - area: 統計科学専攻
-      institution: 東京大学 大学院情報理工学系研究科
-      degree: Master
-      courses:
-        - 統計的機械学習
-        - ベイズ統計学
-        - 時系列解析
-        - 最適化理論
-        - データ可視化
-      endDate: 2019-03-31
-      startDate: 2017-04-01
-      summary: |
-        - 教師あり学習・教師なし学習・強化学習の理論と実装を学ぶ
-        - 修士論文では、小売業の需要予測における勾配ブースティング手法の性能比較を研究
-        - Python・Rを用いた大規模データ解析の実践経験を積む
-      score: "3.9"
-      url: https://www.i.u-tokyo.ac.jp/
-    - area: 計数工学科
-      institution: 東京大学 工学部
-      degree: Bachelor
-      courses:
-        - 確率・統計
-        - 線形代数
-        - プログラミング基礎
-        - アルゴリズムとデータ構造
-        - 数理モデル論
-      endDate: 2017-03-31
-      startDate: 2013-04-01
-      summary: |
-        - 数理工学の基礎を幅広く学び、論理的思考力と問題解決力を培う
-        - 統計解析・機械学習のゼミに参加し、自分の興味をデータサイエンス分野に定める
-      score: "3.7"
-      url: https://www.t.u-tokyo.ac.jp/
-  awards:
-    - awarder: 一般社団法人データサイエンティスト協会
-      title: データ分析コンペティション 最優秀賞
-      date: 2018-11-01
-      summary: |
-        与えられた小売データを用いた需要予測コンペティションにおいて、予測精度と分析の妥当性が高く評価され、最優秀賞を受賞。
-  certificates:
-    - issuer: 一般財団法人 日本統計学会
-      name: 統計検定1級
-      date: 2019-06-01
-      url: https://www.toukei-kentei.jp/
-    - issuer: Amazon Web Services
-      name: AWS Certified Data Analytics - Specialty
-      date: 2021-08-01
-      url: https://aws.amazon.com/certification/
-  interests:
-    - name: 読書
-      keywords:
-        - データサイエンス
-        - AI倫理
-        - ビジネス戦略
-    - name: ランニング
-      keywords:
-        - マラソン
-        - トレイルランニング
-  languages:
-    - fluency: Native or Bilingual Proficiency
-      language: Japanese
-      keywords:
-        - ビジネス文書作成
-        - プレゼンテーション
-    - fluency: Full Professional Proficiency
-      language: English
-      keywords:
-        - TOEIC 950
-        - 技術文書の読解
-        - 海外メンバーとの打ち合わせ
+      - Python/Rを用いたデータ分析基盤の構築と運用
+      - 機械学習モデルの設計・実装・評価（分類、回帰、クラスタリング、レコメンド）
+      - ダッシュボード作成によるKPI可視化とインサイト共有
+      - ビジネス部門と連携し、PoCから本番適用まで一気通貫で推進
+
   location:
-    city: 渋谷区
-    address: 神宮前1-2-3
-    country: Japan
-    postalCode: 150-0001
+    address: 東京都千代田区丸の内1-2-3
+    city: 東京
     region: 東京都
+    country: Japan
+    postalCode: "100-0001"
+
   profiles:
     - network: GitHub
-      username: kenichi-sato
-      url: https://github.com/kenichi-sato
+      url: https://github.com/keikosato
+      username: keikosato
     - network: LinkedIn
-      username: kenichi-sato
-      url: https://www.linkedin.com/in/kenichi-sato
-    - network: Twitter
-      username: kenichi_sato
-      url: https://twitter.com/kenichi_sato
-  projects:
-    - name: 小売需要予測ダッシュボードの開発
-      startDate: 2022-07-01
-      summary: |
-        - 時系列モデルと機械学習モデルを組み合わせたハイブリッド予測手法を実装
-        - Tableauと連携し、担当者が直感的に予測結果を確認できる画面を提供
-        - 予測精度の改善により、在庫廃棄ロスを約20%削減
-      description: 小売クライアント向けに、売上・在庫データを入力して翌月以降の需要予測を行うダッシュボードを開発
-      endDate: 2023-03-31
-      keywords:
-        - 需要予測
-        - Python
-        - Tableau
-        - 時系列解析
-      url: https://github.com/kenichi-sato/sales-forecasting
-    - name: 顧客セグメンテーション分析基盤の構築
-      startDate: 2020-04-01
-      summary: |
-        - k-means法やRFM分析を用いて顧客セグメントを設計
-        - SQLでデータマートを整備し、セグメント定義をコードで管理
-        - 施策効果の検証までを一貫して実施し、顧客ロイヤルティ向上に貢献
-      description: 購買履歴データをもとに顧客を複数のセグメントに分類し、マーケティング施策に活用する分析基盤を構築
-      endDate: 2021-03-31
-      keywords:
-        - RFM分析
-        - k-means
-        - SQL
-        - マーケティング
-  publications:
-    - name: 需要予測における勾配ブースティング手法の比較検討
-      publisher: 情報処理学会 シンポジウム論文集
-      releaseDate: 2020-03-01
-      summary: |
-        - 小売業の需要予測を題材に、XGBoost・LightGBM・CatBoostの予測精度と計算コストを比較
-        - 実データを用いた評価により、特徴量設計とハイパーパラメータ調整の重要性を示した
-      url: https://ipsj.ixsq.nii.ac.jp/
-  skills:
-    - level: Expert
-      name: 機械学習
-      keywords:
-        - Python
-        - scikit-learn
-        - PyTorch
-        - LightGBM
-        - XGBoost
-        - Optuna
-    - level: Expert
-      name: 統計解析
-      keywords:
-        - R
-        - ベイズ統計
-        - 時系列解析
-        - 検定
-        - 実験計画法
-    - level: Advanced
-      name: データ基盤
-      keywords:
-        - SQL
-        - Spark
-        - Airflow
-        - dbt
-        - AWS
-        - GCP
-    - level: Advanced
-      name: 可視化・コミュニケーション
-      keywords:
-        - Tableau
-        - matplotlib
-        - Plotly
-        - 文書化
-        - ステークホルダー調整
-  volunteer:
-    - organization: データサイエンス勉強会コミュニティ
-      position: 勉強会主催者
-      startDate: 2021-04-01
-      summary: |
-        - 月1回のデータサイエンス勉強会を企画・運営
-        - 参加者の発表サポートや、実務での機械学習活用事例の紹介
-        - 初学者向けのハンズオンセッションを実施し、コミュニティの成長に貢献
-      url: https://ds-study-group.example.com/
-  work:
-    - name: 株式会社インサイトデータ
-      position: シニアデータサイエンティスト
-      startDate: 2022-04-01
-      summary: |
-        - 小売・ECクライアント向けに需要予測モデルやレコメンドモデルを開発し、ビジネスインパクトを創出
-        - データサイエンスチームを牽引し、メンバーのタスク管理や技術指導を担当
-        - クライアントの経営層向けに分析結果を報告し、施策提案まで一貫して支援
-        - 分析基盤のクラウド移行を推進し、データ処理時間を60%短縮
-      keywords:
+      url: https://www.linkedin.com/in/keikosato
+      username: keiko-sato
+
+  education:
+    - institution: 東京大学大学院
+      url: https://www.u-tokyo.ac.jp/
+      degree: Master
+      area: 統計学
+      score: "4.0"
+      startDate: Apr 1, 2018
+      endDate: Mar 31, 2020
+      courses:
+        - 多変量解析
         - 機械学習
-        - 需要予測
-        - チームマネジメント
-        - Python
-        - AWS
-      url: https://www.insightdata.co.jp/
-    - name: 株式会社テックイノベーション
-      position: データサイエンティスト
-      startDate: 2019-04-01
+        - ベイズ統計学
+        - 時系列解析
+        - 実験計画法
+        - データ可視化
       summary: |
-        - マーケティング施策の効果測定や顧客分析を担当し、データに基づく意思決定を支援
-        - A/Bテストの設計・分析を実施し、コンバージョン率改善に貢献
-        - SQL・Pythonを用いてデータマートを構築し、レポーティング業務を自動化
-        - 非エンジニア向けにデータ分析研修を実施し、社内のデータリテラシー向上に寄与
-      endDate: 2022-03-31
+        - マーケティングデータのセグメンテーション手法に関する研究を行い、修士論文を執筆
+        - 統計モデリングとPythonによる実データ分析のスキルを習得
+        - 学会発表1回、論文投稿1件
+
+  work:
+    - name: 株式会社インサイトラボ
+      url: https://insightlab.example.com
+      position: データサイエンティスト
+      startDate: Apr 1, 2021
+      summary: |
+        - 小売業向け需要予測モデルを開発し、在庫削減と売上向上に貢献
+        - 顧客セグメンテーションとLTV予測モデルを構築し、マーケティング施策のROI改善を実現
+        - 各種分析ダッシュボードをLooker Studioで整備し、非エンジニアでもデータ活用できる環境を提供
+        - データ基盤（BigQuery・dbt）の設計・運用を担当し、分析工数を50%削減
       keywords:
-        - A/Bテスト
-        - 顧客分析
+        - Python
+        - BigQuery
+        - Looker Studio
+        - 需要予測
+        - セグメンテーション
+
+    - name: 株式会社マーケットアナリティクス
+      url: https://market-analytics.example.com
+      position: データアナリスト
+      startDate: Apr 1, 2020
+      endDate: Mar 31, 2021
+      summary: |
+        - ウェブアクセスログと購買データを統合し、ユーザー行動分析を実施
+        - アンケートデータの統計解析（クロス集計・回帰分析）による顧客満足度要因の特定
+        - SQLやExcelを用いた定常レポートの自動作成により、レポート作成時間を短縮
+      keywords:
         - SQL
-        - レポーティング自動化
-        - Tableau
-      url: https://www.tech-innovation.co.jp/
+        - Excel
+        - 統計解析
+        - レポーティング
+
+  skills:
+    - name: データ分析・統計
+      level: Expert
+      keywords:
+        - Python
+        - R
+        - SQL
+        - 統計モデリング
+        - A/Bテスト
+
+    - name: 機械学習
+      level: Advanced
+      keywords:
+        - scikit-learn
+        - LightGBM
+        - TensorFlow
+        - XGBoost
+        - ハイパーパラメータ最適化
+
+    - name: データ基盤・クラウド
+      level: Intermediate
+      keywords:
+        - BigQuery
+        - dbt
+        - Airflow
+        - Docker
+        - Google Cloud
+
+  languages:
+    - language: Japanese
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - 母国語
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - TOEIC 920
+        - 技術文書読解
+        - プレゼン
+
+  awards:
+    - title: 社内データ活用コンペ 最優秀賞
+      awarder: 株式会社インサイトラボ
+      date: Dec 2022
+      summary: |
+        小売需要予測の精度改善をテーマにした社内データコンペティションで最優秀賞を受賞。
+
+  certificates:
+    - name: AWS Certified Machine Learning - Specialty
+      url: https://aws.amazon.com/certification/
+      issuer: Amazon Web Services
+      date: Mar 2023
+
+  publications:
+    - name: マーケティングデータに基づく顧客セグメンテーション手法の比較検討
+      publisher: データサイエンスジャーナル
+      releaseDate: Sep 2020
+      url: https://example.com/publications/segmentation
+      summary: |
+        実データを用いたクラスタリング手法の比較分析を行い、ビジネス適用における有効性を考察。
+
+  projects:
+    - name: 需要予測ダッシュボード
+      url: https://github.com/keikosato/demand-forecast
+      description: 小売店舗向け需要予測および発注支援のためのWebダッシュボード
+      startDate: Jun 1, 2021
+      endDate: Sep 1, 2021
+      summary: |
+        - LightGBMとProphetによるアンサンブル予測
+        - BigQueryでのデータ集計パイプライン構築
+        - 店舗ごとの特性を考慮した特徴量エンジニアリング
+      keywords:
+        - Python
+        - LightGBM
+        - Prophet
+        - BigQuery
+        - Dash
+
+  interests:
+    - name: データ活用コミュニティ
+      keywords:
+        - 勉強会
+        - ハッカソン
+        - データ可視化
+    - name: 読書
+      keywords:
+        - 統計学
+        - SF小説
+        - 技術書
+
+  volunteer:
+    - organization: データ分析勉強会 Tokyo
+      url: https://example.com/study-group
+      position: 運営スタッフ兼講師
+      startDate: Apr 1, 2022
+      summary: |
+        - 初学者向けPythonデータ分析ハンズオンの講師を担当
+        - 参加者のコードレビューやLT会の企画運営を通じて、コミュニティの活性化に貢献
+
 locale:
   language: ja
-layouts:
-  - engine: latex
-    page:
-      showPageNumbers: true
-      paperSize: a4
-      margins:
-        top: 2.5cm
-        bottom: 2.5cm
-        left: 1.5cm
-        right: 1.5cm
-    template: moderncv-banking
-    typography:
-      fontSize: 11pt
-  - engine: docx
-    page:
-      showPageNumbers: true
-      paperSize: a4
-      margins:
-        top: 2.5cm
-        bottom: 2.5cm
-        left: 1.5cm
-        right: 1.5cm
-    typography:
-      fontSize: 11pt
-      lineSpacing: normal
-  - engine: markdown
-  - engine: html
-    template: calm
-    typography:
-      fontSize: 16px

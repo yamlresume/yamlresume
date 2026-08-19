@@ -1,282 +1,228 @@
 content:
   basics:
-    name: Camille Lefèvre
-    email: camille.lefevre@email.fr
-    headline: Product Manager senior – SaaS & logiciels d'entreprise
-    phone: +33 6 12 34 56 78
-    summary: >
-      Product Manager senior avec plus de 6 ans d'expérience dans la conception,
-      le lancement et l'amélioration continue de produits SaaS.
+    name: Camille Rousseau
+    headline: Product Manager Senior — SaaS & Fintech
+    phone: "+33 6 12 34 56 78"
+    email: camille.rousseau@protonmail.com
+    url: https://www.camillerousseau.fr
+    summary: |
+      Product Manager expérimentée avec **plus de 8 ans d'expérience** dans le développement de produits SaaS et fintech, de l'idéation au lancement à grande échelle.
 
+      - Vision produit, feuille de route et priorisation fondées sur la data et les besoins utilisateurs
+      - Encadrement d'équipes pluridisciplinaires (design, ingénierie, marketing) en méthode Agile/Scrum
+      - Forte expertise en discovery, tests utilisateurs, OKR et analytics produit
+      - Passionnée par la création de solutions simples et impactantes pour résoudre des problèmes complexes
 
-      - Pilote la stratégie produit de la plateforme Lumina, de la découverte à
-      la mise sur le marché
+  location:
+    address: 12 rue Oberkampf
+    city: Paris
+    region: Île-de-France
+    country: France
+    postalCode: "75011"
 
-      - Construit des feuilles de route orientées données, en collaboration avec
-      les équipes design, tech et commerciales
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/camille-rousseau
+      username: camille-rousseau
+    - network: Medium
+      url: https://medium.com/@camille.rousseau
+      username: camille.rousseau
 
-      - Experte en méthodes agiles, tests A/B et analyse de l'engagement
-      utilisateur
-
-      - Recherche en permanence l'équilibre entre objectifs business,
-      faisabilité technique et satisfaction client
-    url: https://www.camillelefevre.fr
   education:
-    - area: Management de l'innovation numérique
-      institution: HEC Paris
+    - institution: HEC Paris
+      url: https://www.hec.edu
       degree: Master
+      area: Management de l'Innovation — Spécialisation Product Management
+      score: "3.8"
+      startDate: Sep 1, 2012
+      endDate: Jun 1, 2015
       courses:
-        - Stratégie numérique et transformation digitale
-        - Marketing digital
-        - Gestion de projet informatique
-        - Data science pour la décision
-        - Comportement du consommateur
-        - Gestion de l'innovation
-        - Économie numérique
-        - Droit du numérique
-      endDate: Jun 1, 2016
-      startDate: Sep 1, 2014
-      summary: >
-        - Formation généraliste en management avec une spécialisation en
-        innovation numérique
+        - Stratégie marketing et innovation
+        - Gestion de projet et méthodes agiles
+        - Analyse de données pour la décision
+        - Expérience client et design thinking
+        - Entrepreneuriat et business model
+      summary: |
+        - Développement d'une double compétence stratégie et digital
+        - Projet de fin d'études : création d'un prototype d'application mobile remarqué par un comité d'entrepreneurs
+        - Échange universitaire à l'Université de Montréal (HEC Montréal) orienté vers le commerce électronique
 
-        - Réalisation d'un mémoire sur la transformation digitale des PME
+  work:
+    - name: Alto
+      url: https://www.alto.io
+      position: Lead Product Manager
+      startDate: Jan 1, 2022
+      summary: |
+        - Définition et exécution de la feuille de route produit d'une plateforme SaaS B2B dédiée aux paiements internationaux
+        - Animation d'une équipe produit de 4 PM et coordination avec 6 équipes de développement
+        - Mise en place d'un cadre de priorisation basé sur l'impact business et la valeur client, réduisant les délais de mise sur le marché de 30 %
+        - Conduite de plus de 50 entretiens utilisateurs et tests d'utilisabilité par trimestre pour éclairer les décisions produit
+        - Pilotage des OKR produit et présentation des résultats à la direction générale et au conseil d'administration
+      keywords:
+        - SaaS
+        - Fintech
+        - Leadership
+        - Feuille de route
+        - OKR
+        - Data driven
+    - name: Numera
+      url: https://www.numera.fr
+      position: Product Manager
+      startDate: Jan 1, 2020
+      endDate: Dec 31, 2021
+      summary: |
+        - Gestion du cycle de vie complet de l'application mobile de gestion de finances personnelles (2,5 M d'utilisateurs)
+        - Collaboration étroite avec le design et l'ingénierie pour livrer des fonctionnalités majeures : agrégation bancaire, scores financiers, notifications prédictives
+        - Optimisation du parcours d'onboarding, avec une augmentation de +18 % de l'activation à 7 jours
+        - Expérimentations A/B en continu et analyse des entonnoirs de conversion via Amplitude et SQL
+      keywords:
+        - Mobile
+        - Tests A/B
+        - Amplitude
+        - SQL
+        - Recherche utilisateur
+    - name: Lifya
+      url: https://www.lifya.com
+      position: Product Owner
+      startDate: Mar 1, 2018
+      endDate: Dec 31, 2019
+      summary: |
+        - Conduite de la refonte du parcours d'achat du site e-commerce Lifya (CA annuel de 40 M€)
+        - Rédaction des user stories, priorisation du backlog et animation des cérémonies Agile pour 3 équipes de développement
+        - Coordination avec les équipes marketing, logistique et support pour améliorer la satisfaction client (NPS +24 points)
+        - Mise en place des premiers indicateurs produit et des tableaux de bord de suivi de performance
+      keywords:
+        - E-commerce
+        - Scrum
+        - Backlog
+        - NPS
+        - KPIs
 
-        - Projet de fin d'études : conception et prototypage d'une application
-        mobile de suivi de santé
-      score: 3.7/4.0
-      url: https://www.hec.edu/fr
+  languages:
+    - language: French
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - Langue maternelle
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - TOEIC 985
+        - Travail quotidien en anglais
+    - language: Spanish
+      fluency: Limited Working Proficiency
+      keywords:
+        - Niveau opérationnel
+
+  skills:
+    - name: Gestion de produit
+      level: Expert
+      keywords:
+        - Découverte produit
+        - Feuille de route
+        - Priorisation
+        - OKR
+        - Spécifications fonctionnelles
+    - name: Méthodes agiles
+      level: Expert
+      keywords:
+        - Scrum
+        - Kanban
+        - Lean Startup
+        - Agilité à l'échelle
+    - name: Analyse de données
+      level: Advanced
+      keywords:
+        - SQL
+        - Amplitude
+        - Mixpanel
+        - Tableau de bord
+        - Tests A/B
+    - name: Design et recherche utilisateur
+      level: Advanced
+      keywords:
+        - Recherche utilisateur
+        - Entretiens terrain
+        - Personas
+        - Figma
+        - Tests utilisateurs
+
   awards:
-    - awarder: Talents du Digital
-      title: Prix Product Manager de l'année 2023
-      date: Oct 1, 2023
-      summary: >
-        Distinction remise aux jeunes product managers pour la qualité de la
-        stratégie produit et l'impact mesuré sur la croissance de l'entreprise.
+    - title: Prix du meilleur produit SaaS
+      date: Nov 1, 2023
+      awarder: Grand Prix Innovation - Bpifrance
+      summary: |
+        Récompense attribuée à la refonte de la plateforme Alto, saluée pour son expérience utilisateur et son impact sur la satisfaction client.
+
   certificates:
-    - issuer: Scrum.org
-      name: Professional Scrum Product Owner I (PSPO I)
+    - name: Certificat Product Management - Niveau avancé
+      issuer: Pragmatic Institute
       date: Mar 1, 2021
-      url: https://www.scrum.org/certifications
-    - issuer: Amplitude
-      name: Product Analytics Micro-Certification
-      date: Jun 1, 2022
-      url: https://amplitude.com/learn/micro-certifications
-  interests:
-    - name: Technologie
+      url: https://www.pragmaticinstitute.com
+    - name: Certified Scrum Product Owner (CSPO)
+      issuer: Scrum Alliance
+      date: Aug 1, 2017
+      url: https://www.scrumalliance.org/certifications/cspo
+
+  publications:
+    - name: 'Priorisation produit : méthodes RICE et WSJF comparées'
+      publisher: Le Product Blog
+      releaseDate: Jun 1, 2023
+      url: https://www.productblog.fr/priorisation-rice-wsjf
+      summary: |
+        Article de synthèse sur les méthodes de priorisation produit, illustré par des cas pratiques issus du secteur fintech. Partage des critères d'impact, d'effort et de confiance pour aider les équipes à arbitrer efficacement.
+
+  projects:
+    - name: BudgetFlow
+      url: https://www.budgetflow.fr
+      description: Application personnelle de gestion budgétaire utilisée par plus de
+        500 personnes.
+      startDate: Jan 1, 2023
+      endDate: Dec 1, 2023
+      summary: |
+        - Conception et développement d'un MVP de suivi budgétaire en no-code (Bubble, Airtable)
+        - Réalisation d'entretiens utilisateurs et de tests d'empathie pour définir les fonctionnalités clés
+        - Déploiement d'une première version publique et itérations basées sur les retours de la communauté
       keywords:
-        - IA générative
         - No-code
-        - Produits durables
-    - name: Design & créativité
-      keywords:
-        - UX design
-        - Illustration
-        - Design thinking
-    - name: Sport & bien-être
+        - MVP
+        - Bubble
+        - Airtable
+        - Retours utilisateurs
+
+  interests:
+    - name: Sport
       keywords:
         - Course à pied
         - Yoga
         - Randonnée
-  languages:
-    - fluency: Native or Bilingual Proficiency
-      language: French
+    - name: Technologie
       keywords:
-        - Langue maternelle
-    - fluency: Full Professional Proficiency
-      language: English
+        - Intelligence artificielle
+        - No-code
+        - Veille technologique
+    - name: Lecture
       keywords:
-        - TOEIC 940
-        - Réunions clients
-        - Documentation produit
-    - fluency: Limited Working Proficiency
-      language: Spanish
-  location:
-    city: Paris
-    address: 12 rue de la Paix
-    country: France
-    postalCode: "75002"
-    region: Île-de-France
-  profiles:
-    - network: LinkedIn
-      username: camille-lefevre
-      url: https://www.linkedin.com/in/camille-lefevre
-    - network: Medium
-      username: camillelefevre
-      url: https://medium.com/@camillelefevre
-  projects:
-    - name: Sérénité
-      startDate: Jun 1, 2023
-      summary: >
-        - Concevoir un produit personnel pour explorer les usages de l'IA
-        générative
+        - Essais économiques
+        - Science-fiction
 
-        - Réaliser des tests utilisateurs auprès de 15 participants
-
-        - Développer un prototype interactif sur Figma
-      description: Prototype d'application mobile de méditation conçu pour explorer
-        l'IA générative et le design émotionnel.
-      endDate: Aug 1, 2023
-      keywords:
-        - IA générative
-        - Figma
-        - Prototype
-        - Tests utilisateurs
-      url: https://medium.com/@camillelefevre/serenite-app
-  publications:
-    - name: Comment mener une discovery produit efficace en 4 étapes
-      publisher: Medium
-      releaseDate: Mar 1, 2023
-      summary: >
-        - Partage de méthode pour cadrer la découverte produit en environnement
-        SaaS
-
-        - Retour d'expérience sur les entretiens utilisateurs et la priorisation
-        des apprentissages
-      url: https://medium.com/@camillelefevre/discovery-produit-4-etapes
-  skills:
-    - level: Expert
-      name: Gestion de produit
-      keywords:
-        - Découverte produit
-        - Roadmap
-        - User stories
-        - Priorisation
-        - OKR
-        - Méthodes agiles
-    - level: Advanced
-      name: Analyse de données
-      keywords:
-        - SQL
-        - Mixpanel
-        - Amplitude
-        - Tableau
-        - Excel
-    - level: Intermediate
-      name: Design & collaboration
-      keywords:
-        - Figma
-        - Design thinking
-        - Tests utilisateurs
-        - Miro
-        - Accessibilité
   volunteer:
-    - organization: Femmes du Digital
+    - organization: Paris Product Club
+      url: https://www.parisproductclub.fr
       position: Mentor produit
-      startDate: Jan 1, 2022
-      summary: >
-        - Accompagner les femmes souhaitant débuter une carrière dans le product
-        management
-
-        - Animer des ateliers de rédaction de CV et de préparation aux
-        entretiens
-
-        - Co-organiser le meetup mensuel « Product Chat » à Paris
-      endDate: null
-      url: https://femmesdudigital.fr
-  work:
-    - name: Lumina
-      position: Product Manager Senior
       startDate: Jan 1, 2021
-      summary: >
-        - Définir et piloter la stratégie produit de la plateforme web et
-        mobile, représentant 120 000 utilisateurs actifs
+      endDate: Dec 1, 2023
+      summary: |
+        - Accompagnement de startups en phase d'amorçage sur leur stratégie produit
+        - Animation d'ateliers de découverte et de priorisation pour des équipes fondatrices
+        - Participation à des sessions de coaching collectif sur les méthodes Lean et Agile
 
-        - Mettre en place un processus de découverte continue : entretiens
-        utilisateurs, tests d'usage et analyse quantitative
+  references:
+    - name: Claire Dubois
+      phone: "+33 1 45 67 89 10"
+      relationship: Directrice produit chez Alto
+      email: claire.dubois@alto.io
+      summary: |
+        Camille est une product manager exceptionnelle : elle sait combiner vision stratégique, rigueur d'exécution et intelligence relationnelle. Elle a considérablement élevé le niveau de notre organisation produit.
 
-        - Prioriser la roadmap en collaboration avec les équipes tech, design,
-        marketing et commerciales
-
-        - Lancer 8 fonctionnalités majeures et améliorer la rétention de 15 % en
-        18 mois
-
-        - Piloter les OKR trimestriels et présenter les résultats au comité de
-        direction
-      endDate: null
-      keywords:
-        - Roadmap
-        - Découverte produit
-        - Continuous discovery
-        - OKR
-        - A/B testing
-        - Leadership transverse
-      url: https://www.lumina.fr
-    - name: Dataventis
-      position: Product Owner
-      startDate: Mar 1, 2019
-      summary: >
-        - Gérer le backlog produit de la solution d'analyse de données destinée
-        aux PME
-
-        - Rédiger les user stories et les spécifications fonctionnelles en
-        collaboration avec les développeurs
-
-        - Organiser les sprints agiles et animer les cérémonies Scrum : daily,
-        sprint review et rétrospective
-
-        - Accompagner les clients pilotes pour recueillir les retours et
-        améliorer l'expérience utilisateur
-
-        - Contribuer à l'augmentation du taux de déploiement de la solution de
-        20 %
-      endDate: Dec 1, 2020
-      keywords:
-        - Scrum
-        - Backlog
-        - User stories
-        - UX
-        - Pilotage clients
-      url: https://www.dataventis.com
-    - name: Webigo
-      position: Product Manager Junior
-      startDate: Jan 1, 2018
-      summary: >
-        - Participer à la refonte du site e-commerce d'un client majeur du
-        secteur de la mode
-
-        - Réaliser des benchmarkings concurrentiels et analyser les parcours
-        utilisateurs
-
-        - Aider à la rédaction des cahiers des charges et au suivi des recettes
-
-        - Présenter les maquettes aux clients et recueillir leurs retours
-      endDate: Feb 1, 2019
-      keywords:
-        - E-commerce
-        - Parcours utilisateur
-        - Cahier des charges
-        - Recette
-      url: https://www.webigo.fr
 locale:
   language: fr
-layouts:
-  - engine: latex
-    page:
-      showPageNumbers: true
-      paperSize: a4
-      margins:
-        top: 2.5cm
-        bottom: 2.5cm
-        left: 1.5cm
-        right: 1.5cm
-    template: moderncv-banking
-    typography:
-      fontSize: 11pt
-  - engine: docx
-    page:
-      showPageNumbers: true
-      paperSize: a4
-      margins:
-        top: 2.5cm
-        bottom: 2.5cm
-        left: 1.5cm
-        right: 1.5cm
-    typography:
-      fontSize: 11pt
-      lineSpacing: normal
-  - engine: markdown
-  - engine: html
-    template: calm
-    typography:
-      fontSize: 16px

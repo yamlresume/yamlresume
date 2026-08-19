@@ -1,303 +1,250 @@
 content:
   basics:
-    name: Sanne van den Berg
-    email: sanne.vandenberg@datascope.nl
-    headline: Data Scientist
-    phone: +31 6 12345678
-    summary: >
-      - Data Scientist met ruim drie jaar ervaring in het ontwikkelen van
-      voorspellende modellen en het ontsluiten van data
+    name: Sophie Bakker
+    headline: Data Scientist met passie voor voorspellende modellen
+    phone: "+31 6 12345678"
+    email: sophie.bakker@datavak.nl
+    url: https://www.sophiebakker.nl
+    summary: |
+      Data Scientist met ruim 6 jaar ervaring in het ontwikkelen en implementeren van
+      datagedreven oplossingen voor complexe vraagstukken.
 
-      - Sterk in het vertalen van businessvraagstukken naar datagedreven
-      oplossingen
-
-      - Ervaren met Python, SQL en cloudplatforms zoals Azure en AWS
-
-      - Gedreven om complexe problemen op te lossen met machine learning en
-      statistische methoden
-
-      - Communicatief vaardig en in staat om resultaten helder te presenteren
-      aan niet-technische stakeholders
-    url: https://www.datascope.nl
-  education:
-    - area: Data Science
-      institution: Universiteit van Amsterdam
-      degree: Master
-      courses:
-        - Machine Learning
-        - Statistisch Leren
-        - Big Data Technologieën
-        - Datavisualisatie
-        - Experimenteel Ontwerp
-      endDate: Jul 1, 2020
-      startDate: Sep 1, 2018
-      summary: >
-        - Afstudeerrichting Data Science met specialisatie in toegepast machine
-        learning
-
-        - Scriptie over voorspellende modellen voor klantverloop met behulp van
-        gradient boosting
-
-        - Vakken gevolgd op het gebied van statistiek, datamining en
-        software-engineering
-      score: "8.5"
-      url: https://www.uva.nl
-    - area: Informatica
-      institution: Hogeschool Rotterdam
-      degree: Bachelor
-      courses:
-        - Programmeren in Java
-        - Databases
-        - Software Engineering
-        - Web Development
-      endDate: Jul 1, 2018
-      startDate: Sep 1, 2014
-      summary: >
-        - Bachelor Informatica met minor Data Science
-
-        - Afstudeerproject over een dashboard voor real-time monitoring van
-        logistieke processen
-      score: "8.0"
-      url: https://www.hogeschoolrotterdam.nl
-  awards:
-    - awarder: ACM SIGKDD
-      title: "KDD Cup 2021 Einduitslag: Top 10"
-      date: Aug 2021
-      summary: >
-        Internationaal team van vier data scientists behaalde een top 10-positie
-        in de KDD Cup 2021-competitie voor tijdreeksvoorspelling.
-    - awarder: Universiteit van Amsterdam
-      title: Afstudeerprijs beste data-scriptie
-      date: Jun 2020
-      summary: >
-        Prijs voor de beste masterthesis op het gebied van toegepaste data
-        science.
-  certificates:
-    - issuer: Microsoft
-      name: "Microsoft Certified: Azure Data Scientist Associate"
-      date: May 2022
-      url: https://learn.microsoft.com/certifications/azure-data-scientist
-    - issuer: Coursera
-      name: Deep Learning Specialization
-      date: Nov 2020
-      url: https://www.coursera.org/specializations/deep-learning
-  interests:
-    - name: Datavisualisatie
-      keywords:
-        - D3.js
-        - Storytelling met data
-    - name: Hardlopen
-      keywords:
-        - 10 kilometer
-        - Estafetteloop
-    - name: Schaakspel
-      keywords:
-        - Correspondentieschaak
-        - Tactiek
-  languages:
-    - fluency: Native or Bilingual Proficiency
-      language: Dutch
-      keywords:
-        - Moedertaal
-    - fluency: Full Professional Proficiency
-      language: English
-      keywords:
-        - Cambridge CPE
-    - fluency: Limited Working Proficiency
-      language: German
-      keywords:
-        - Zakelijke communicatie
+      - Ontwerpt en implementeert voorspellende modellen voor klantverloop, vraagvoorspelling en fraudedetectie.
+      - Combineert sterke analytische vaardigheden met een pragmatische, bedrijfsgerichte aanpak.
+      - Ervaren met Python, R, SQL en cloudplatformen zoals AWS en Google Cloud.
+      - Begeleidt junior datascientists en draagt bij aan de datastrategie van de organisatie.
   location:
+    address: Herengracht 123
     city: Amsterdam
-    address: Keizersgracht 456
-    country: Netherlands
-    postalCode: 1016 EG
     region: Noord-Holland
+    country: Netherlands
+    postalCode: "1011 AB"
   profiles:
     - network: LinkedIn
-      username: sannevandenberg
-      url: https://www.linkedin.com/in/sannevandenberg
+      url: https://www.linkedin.com/in/sophiebakker
+      username: sophiebakker
     - network: GitHub
-      username: sannevdb
-      url: https://github.com/sannevdb
-  projects:
-    - name: Churnpredictie voor telecomklanten
-      startDate: Jan 1, 2023
-      summary: >
-        - Ontwikkelde een geautomatiseerde pipeline voor het trainen en
-        evalueren van churnmodellen
-
-        - Gebruikte SHAP-values om modeluitkomsten te visualiseren en te
-        communiceren naar niet-technische stakeholders
-      description: Een machine learning-project dat klantverloop voorspelt op basis
-        van historische klantdata.
-      endDate: Apr 1, 2023
+      url: https://github.com/sophiebakker
+      username: sophiebakker
+  education:
+    - institution: Universiteit van Amsterdam
+      url: https://www.uva.nl
+      degree: Master
+      area: Data Science
+      score: "8.2"
+      startDate: Sep 1, 2017
+      endDate: Jul 1, 2019
+      courses:
+        - Machine Learning
+        - Statistical Learning
+        - Big Data Technologies
+        - Deep Learning
+        - Data Visualisatie
+        - Ethiek en Databeleid
+      summary: |
+        - Afstudeeronderzoek naar causale inferentie in observationele studies, beoordeeld met een 9.
+        - Specialisatie in voorspellende modellen en datagedreven besluitvorming.
+    - institution: Universiteit Utrecht
+      url: https://www.uu.nl
+      degree: Bachelor
+      area: Kunstmatige Intelligentie
+      score: "7.6"
+      startDate: Sep 1, 2014
+      endDate: Jul 1, 2017
+      courses:
+        - Logica en Redeneren
+        - Algoritmiek
+        - Datastructuren
+        - Probabilistische Modellen
+        - Mens-Machine Interactie
+        - Cognitiewetenschap
+      summary: |
+        - Brede basis in AI-technieken, statistiek en softwareontwikkeling.
+        - Minor Ondernemerschap gevolgd aan de Universiteit Utrecht.
+  work:
+    - name: Nova Analytics B.V.
+      url: https://www.nova-analytics.nl
+      position: Senior Data Scientist
+      startDate: Jan 1, 2022
+      summary: |
+        - Geeft leiding aan de ontwikkeling van schaalbare machine-learning-pipelines voor klanten in de financiële sector.
+        - Verbeterde het churnmodel met 15% nauwkeurigheid door feature-engineering en modeloptimalisatie.
+        - Implementeerde MLOps-praktijken zoals CI/CD en modelmonitoring, wat de time-to-market van modellen met 40% verkortte.
+        - Adviseert het management over datastrategie en bouwt aan een sterk data science-team.
       keywords:
         - Python
-        - SHAP
         - Machine Learning
-      url: https://github.com/sannevdb/churn-prediction
-    - name: Dashboard voor energieverbruik
-      startDate: Sep 1, 2021
-      summary: >
-        - Bouwde een interactief dashboard met Plotly Dash
-
-        - Integreerde een voorspellingsmodel op basis van historische
-        verbruiksdata
-      description: Interactief dashboard voor het monitoren en voorspellen van
-        energieverbruik in woningen.
+        - MLOps
+        - Strategie
+        - Teamlead
+    - name: Zicht Data BV
+      url: https://www.zichtdata.nl
+      position: Data Scientist
+      startDate: Sep 1, 2019
       endDate: Dec 1, 2021
+      summary: |
+        - Analyseerde grote datasets om logistieke processen efficiënter te maken.
+        - Ontwikkelde realtime dashboards met Python, Streamlit en Tableau voor het monitoren van KPI's.
+        - Werkte nauw samen met productowners en domeinexperts om databehoeften te vertalen naar analyses.
+        - Voerde A/B-testen en statistische analyses uit ter ondersteuning van productbeslissingen.
       keywords:
-        - Plotly
-        - Dash
-        - Voorspelling
-      url: https://github.com/sannevdb/energy-dashboard
-  publications:
-    - name: Predicting Customer Churn with Explainable AI
-      publisher: Data & Inzichten
-      releaseDate: Mar 1, 2023
-      summary: >
-        Praktijkgericht artikel over het voorspellen van klantverloop met
-        machine learning en de waarde van uitlegbare modellen voor bedrijven.
-      url: https://www.datainzicht.nl/churn
-  references:
-    - name: Dr. Anneke de Vries
-      summary: >
-        Sanne is een gedreven en analytische data scientist. Ze combineert een
-        sterke technische basis met uitstekende communicatieve vaardigheden en
-        brengt daardoor ideeën effectief in de praktijk.
-      email: anneke.devries@uva.nl
-      phone: +31 20 1234567
-      relationship: Hoogleraar Data Science aan de Universiteit van Amsterdam
+        - Python
+        - SQL
+        - Data-analyse
+        - Tableau
+        - A/B-testen
+    - name: Datazicht Labs
+      url: https://www.datazichtlabs.nl
+      position: Data Analyst (stage)
+      startDate: Feb 1, 2019
+      endDate: Jul 1, 2019
+      summary: |
+        - Ondersteunde het team bij het opschonen, samenvoegen en analyseren van data voor beleidsonderzoek.
+        - Realiseerde interactieve visualisaties met R en R Shiny.
+        - Droeg bij aan datakwaliteitsrapportages en verbeterde de metadata van datasets.
+      keywords:
+        - R
+        - Data Cleaning
+        - Visualisatie
+        - Rapportage
   skills:
-    - level: Expert
-      name: Machine Learning
+    - name: Machine Learning
+      level: Expert
       keywords:
         - Python
         - scikit-learn
         - TensorFlow
-        - XGBoost
         - PyTorch
-    - level: Expert
-      name: Data-analyse
+        - XGBoost
+        - LightGBM
+    - name: Statistiek
+      level: Advanced
+      keywords:
+        - R
+        - Hypothesetoetsing
+        - Tijdreeksen
+        - A/B-testen
+        - Causale Inferentie
+    - name: Data Engineering
+      level: Intermediate
       keywords:
         - SQL
-        - Pandas
-        - Spark
-        - Excel
-    - level: Advanced
-      name: Datavisualisatie
+        - Apache Spark
+        - Airflow
+        - Docker
+        - dbt
+        - AWS
+    - name: Data Visualisatie
+      level: Advanced
       keywords:
         - Tableau
         - Power BI
-        - Matplotlib
-    - level: Intermediate
-      name: Big Data
+        - matplotlib
+        - seaborn
+        - ggplot2
+        - Plotly
+        - D3.js
+    - name: Datamanagement
+      level: Intermediate
       keywords:
-        - Hadoop
-        - Spark
-        - Kafka
-    - level: Advanced
-      name: Communicatie
+        - Data governance
+        - Datakwaliteit
+        - Metadata
+        - AVG/GDPR
+  languages:
+    - language: Dutch
+      fluency: Native or Bilingual Proficiency
       keywords:
-        - Presentaties
-        - Stakeholder management
-        - Rapportage
-  volunteer:
-    - organization: Stichting Data voor Goed
-      position: Vrijwilliger Data Science
-      startDate: Jan 1, 2021
-      summary: >
-        - Ondersteun non-profitorganisaties met data-analyse en het bouwen van
-        dashboards
-
-        - Geef workshops over datageletterdheid aan maatschappelijke
-        organisaties
-      url: https://www.datavoorgoed.nl
-    - organization: Vrouwen in Tech
-      position: Tech Mentor
-      startDate: Feb 1, 2022
-      summary: >
-        - Begeleid beginnende data scientists bij hun carrière in de
-        technologiesector
-
-        - Draag bij aan een inclusieve werkcultuur door het organiseren van
-        netwerkevents
-      url: https://www.vrouwenintech.nl
-  work:
-    - name: Nova Analytics
-      position: Data Scientist
-      startDate: Jan 1, 2022
-      summary: >
-        - Ontwikkel en implementeer machine learning-modellen voor
-        klantvoorspelling en churnanalyse
-
-        - Werk samen met data-ingenieurs om datapijplijnen te optimaliseren in
-        Azure Data Factory
-
-        - Presenteer resultaten aan stakeholders en adviseer over datagedreven
-        strategieën
-
-        - Begeleid junior data scientists en stagiaires bij hun projecten
-
-        - Initieer experimenten om de impact van modellen op bedrijfsprocessen
-        te meten
+        - Moedertaal
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - Cambridge C2
+        - Zakelijk Engels
+    - language: German
+      fluency: Limited Working Proficiency
+      keywords:
+        - Basisvaardigheden
+  awards:
+    - title: Master Scriptieprijs Data Science
+      date: Nov 1, 2019
+      awarder: Nederlandse Vereniging voor Data Science
+      summary: |
+        Bekroond voor de beste afstudeerscriptie op het gebied van causale inferentie met observationele data.
+    - title: KLM Datathon - Best Model
+      date: Jun 1, 2021
+      awarder: KLM
+      summary: |
+        Team behaalde de eerste plaats met een voorspellingsmodel voor bagageafhandelingsvertragingen.
+  certificates:
+    - name: AWS Certified Machine Learning - Specialty
+      issuer: Amazon Web Services
+      date: May 15, 2022
+      url: https://aws.amazon.com/certification/
+    - name: Google Professional Data Engineer
+      issuer: Google
+      date: Nov 10, 2020
+      url: https://cloud.google.com/certification/data-engineer
+  publications:
+    - name: Een vergelijking van gradient boosting technieken voor vraagvoorspelling
+        in de retailsector
+      publisher: Tijdschrift voor Toegepaste Data Science
+      releaseDate: Feb 15, 2022
+      url: https://www.tijdschriftdata.nl/artikel/vergelijking-gradient-boosting
+      summary: |
+        Onderzoekt de prestaties van XGBoost, LightGBM en CatBoost op retaildata en geeft praktische aanbevelingen voor het toepassen van deze technieken.
+  projects:
+    - name: Energieprognose voor slimme wijken
+      url: https://github.com/sophiebakker/energy-forecast
+      startDate: Mar 1, 2020
+      endDate: Jul 1, 2020
+      summary: |
+        Open-source project dat energieverbruik op buurtniveau voorspelt op basis van historische data en weersvoorspellingen.
+      description: |
+        Het project combineert tijdreeksanalyse met deep learning-modellen (LSTM) en biedt een API voor het ontsluiten van de voorspellingen. De resultaten worden gevalideerd aan de hand van publieke data van het Centraal Bureau voor de Statistiek.
       keywords:
         - Python
-        - Azure
-        - Machine Learning
-        - Stakeholder Management
-      url: https://www.nova-analytics.nl
-    - name: FinTech Nederland
-      position: Junior Data Scientist
-      startDate: Jul 1, 2020
-      summary: >
-        - Bouwde dashboards met Power BI voor het monitoren van betalingsgedrag
-
-        - Analyseerde transactiedata om fraudegevallen te detecteren met behulp
-        van anomaliedetectie
-
-        - Verbeterde datakwaliteit door het opschonen en structureren van
-        datasets in SQL
-
-        - Werkte in een Agile team en leverde wekelijks inzichten aan product
-        owners
-      endDate: Dec 1, 2021
+        - Tijdreeksen
+        - LSTM
+        - Energietransitie
+    - name: Fraudedetectiesysteem voor betaalverkeer
+      url: https://github.com/sophiebakker/fraud-detection
+      startDate: Feb 1, 2019
+      endDate: Jun 1, 2019
+      summary: |
+        Eindproject van de masteropleiding: realtime fraudedetectiesysteem voor transacties.
+      description: |
+        Implementeerde een realtime fraudedetectiepijplijn met Apache Kafka voor streaming en scikit-learn voor de detectiemodellen. Evalueerde het systeem op een gesimuleerde transactiedataset en behaalde een F1-score van 0,91.
       keywords:
-        - Power BI
-        - SQL
-        - Anomaliedetectie
-        - Agile
-      url: https://www.fintech-nederland.nl
+        - Fraudedetectie
+        - Kafka
+        - scikit-learn
+        - Realtime
+  interests:
+    - name: Wielrennen
+      keywords:
+        - Toertochten
+        - Amstel Gold Race
+    - name: Schaken
+      keywords:
+        - Clubcompetitie
+        - Strategie
+    - name: Lezen
+      keywords:
+        - Sciencefiction
+        - Vakliteratuur
+    - name: Koken
+      keywords:
+        - Vegetarisch
+        - Wereldkeuken
+  volunteer:
+    - organization: Data for Good Nederland
+      url: https://www.dataforgoodnl.nl
+      position: Data Scientist (vrijwilliger)
+      startDate: Jan 1, 2020
+      summary: |
+        - Verzorgt data-analyses voor non-profitorganisaties, waaronder de optimalisatie van voedselbankdistributie.
+        - Ondersteunt vrijwilligers met het uitvoeren van dataprojecten.
+
 locale:
   language: nl
-layouts:
-  - engine: latex
-    page:
-      showPageNumbers: true
-      paperSize: a4
-      margins:
-        top: 2.5cm
-        bottom: 2.5cm
-        left: 1.5cm
-        right: 1.5cm
-    template: moderncv-banking
-    typography:
-      fontSize: 11pt
-  - engine: docx
-    page:
-      showPageNumbers: true
-      paperSize: a4
-      margins:
-        top: 2.5cm
-        bottom: 2.5cm
-        left: 1.5cm
-        right: 1.5cm
-    typography:
-      fontSize: 11pt
-      lineSpacing: normal
-  - engine: markdown
-  - engine: html
-    template: calm
-    typography:
-      fontSize: 16px

@@ -1,92 +1,99 @@
 content:
   basics:
-    name: Sarah Chen
-    headline: Senior Data Scientist
-    phone: "(415) 555-0123"
-    email: sarah.chen@example.com
-    url: https://sarahchen.dev
+    name: Adrian Cole
+    headline: Data Scientist Specializing in Machine Learning and Predictive Analytics
+    phone: "(415) 555-0142"
+    email: adrian.cole@example.com
+    url: https://adriancole.dev
     summary: |
-      - Ph.D. in Statistics with 6+ years of experience building machine learning models at scale
-      - Specialized in predictive modeling, NLP, and recommendation systems
-      - Strong communicator who bridges the gap between research and production engineering
-      - Passionate about ethical AI and reproducible data science
+      Data scientist with 6+ years of experience building machine learning systems that turn messy data into measurable business impact. Strong background in statistics, causal inference, and natural language processing, with deep expertise across the full model lifecycle—from problem framing and data pipelines to deployment and monitoring. Passionate about creating interpretable, reliable models and translating data insights into clear recommendations for product and leadership teams.
   location:
-    address: 456 Market Street
+    address: 456 Mission Street
     city: San Francisco
     region: California
     country: United States
-    postalCode: "94105"
+    postalCode: "94110"
   profiles:
     - network: GitHub
-      url: https://github.com/sarahchen
-      username: sarahchen
+      url: https://github.com/adriancole
+      username: adriancole
     - network: LinkedIn
-      url: https://linkedin.com/in/sarahchen
-      username: sarahchen
+      url: https://www.linkedin.com/in/adriancole-data
+      username: adriancole-data
   education:
-    - institution: Stanford University
-      url: https://statistics.stanford.edu/
-      degree: Doctor
-      area: Statistics
-      score: "3.9"
-      startDate: Sep 1, 2014
-      endDate: Jun 1, 2019
-      courses:
-        - Statistical Learning Theory
-        - Bayesian Methods
-        - Deep Learning
-        - Causal Inference
-        - Large-Scale Optimization
-      summary: |
-        - Conducted research on probabilistic graphical models and variational inference
-        - Published 4 peer-reviewed papers at NeurIPS and ICML
-        - Taught graduate courses in statistical computing and machine learning
     - institution: University of California, Berkeley
-      url: https://www.berkeley.edu/
+      url: https://www.ischool.berkeley.edu/
+      degree: Master
+      area: Information and Data Science
+      score: "3.9"
+      startDate: Aug 2016
+      endDate: May 2018
+      courses:
+        - Applied Machine Learning
+        - Statistics for Data Science
+        - Natural Language Processing
+        - Big Data Systems
+        - Experimentation and Causal Inference
+        - Data Visualization
+      summary: |
+        - Concentrated on machine learning, causal inference, and large-scale data systems
+        - Capstone project: built a real-time churn prediction pipeline for a telecommunications partner
+        - Graduate research assistant supporting a study on algorithmic fairness in lending decisions
+    - institution: University of Washington
+      url: https://www.stat.washington.edu/
       degree: Bachelor
-      area: Applied Mathematics
+      area: Statistics
       score: "3.8"
-      startDate: Sep 1, 2010
-      endDate: May 1, 2014
+      startDate: Sep 2012
+      endDate: Jun 2016
+      courses:
+        - Statistical Inference
+        - Regression Models
+        - Probability Theory
+        - Computational Statistics
+        - Data Mining
       summary: |
-        - Graduated with honors
-        - Completed coursework in linear algebra, probability, and numerical methods
+        - Built strong foundations in statistical theory and computational methods
+        - Undergraduate research assistant in the Statistical Learning Lab
   work:
-    - name: DataCorp
-      url: https://datacorp.example.com
-      startDate: Jul 1, 2021
-      endDate:
+    - name: Lumina Analytics
+      url: https://www.lumina-analytics.com/
       position: Senior Data Scientist
+      startDate: Mar 2021
       summary: |
-        - Lead a team of 4 data scientists building real-time fraud detection models
-        - Reduced false positives by 32% through improved feature engineering and model ensembling
-        - Deployed models to production using Kubernetes and MLflow
-        - Partnered with product and engineering to define KPIs and A/B testing frameworks
+        - Lead development of predictive models for customer lifetime value across a portfolio of SaaS clients, improving average revenue forecast accuracy by 18%
+        - Architect feature store and model monitoring pipelines using Python and MLflow, reducing model retraining time from days to hours
+        - Partner with product and engineering teams to design A/B tests and causal inference studies for new feature adoption initiatives
+        - Mentor a team of four data scientists and establish best practices for code review, reproducibility, and documentation
       keywords:
-        - Fraud Detection
-        - Kubernetes
+        - Python
         - MLflow
-        - A/B Testing
-    - name: Insight Analytics
-      url: https://insightanalytics.example.com
-      startDate: Aug 1, 2019
-      endDate: Jun 1, 2021
+        - Feature Store
+        - Causal Inference
+        - Mentorship
+    - name: HealthInsight
+      url: https://www.healthinsight.com/
       position: Data Scientist
+      startDate: Jul 2018
+      endDate: Feb 2021
       summary: |
-        - Built recommendation engines that increased user engagement by 18%
-        - Developed NLP pipelines for sentiment analysis and topic modeling
-        - Created dashboards and self-service analytics tools for stakeholders
+        - Built risk stratification models using electronic health records and claims data, enabling early intervention for high-risk patients
+        - Designed and implemented an NLP pipeline to extract clinical concepts from unstructured notes, achieving 87% F1 score
+        - Created interactive Tableau dashboards used by clinical leadership to track quality metrics and reduce hospital readmission rates by 12%
       keywords:
-        - Recommendation Systems
+        - Healthcare
         - NLP
-        - Topic Modeling
+        - Tableau
+        - Electronic Health Records
   languages:
     - language: English
       fluency: Native or Bilingual Proficiency
-      keywords: []
-    - language: Chinese
+      keywords:
+        - IELTS 8.5
+    - language: Spanish
       fluency: Full Professional Proficiency
-      keywords: []
+      keywords:
+        - DELE C1
   skills:
     - name: Machine Learning
       level: Expert
@@ -94,111 +101,116 @@ content:
         - Python
         - scikit-learn
         - XGBoost
-        - PyTorch
         - TensorFlow
+        - PyTorch
+    - name: Statistical Modeling
+      level: Advanced
+      keywords:
+        - R
+        - Bayesian Methods
+        - Time Series
+        - Survival Analysis
+        - Experiment Design
     - name: Data Engineering
-      level: Intermediate
+      level: Advanced
       keywords:
         - SQL
         - Spark
-        - Airflow
         - dbt
-    - name: Statistics
-      level: Expert
+        - Airflow
+        - AWS
+        - Snowflake
+    - name: Natural Language Processing
+      level: Advanced
       keywords:
-        - Bayesian Inference
-        - Causal Inference
-        - Experimental Design
+        - Hugging Face
+        - spaCy
+        - Transformers
+        - NER
+        - Topic Modeling
+    - name: Data Visualization
+      level: Intermediate
+      keywords:
+        - Tableau
+        - matplotlib
+        - Plotly
+        - ggplot2
   awards:
-    - title: Best Applied Paper Award
-      awarder: ACM SIGKDD
-      date: Aug 2022
+    - title: Outstanding Contribution in Data Science
+      date: Dec 2023
+      awarder: Lumina Analytics
       summary: |
-        Recognized for outstanding applied research in large-scale recommender systems.
+        Recognized for leading the development of a company-wide model monitoring platform that reduced unplanned model retraining incidents by 40%.
   certificates:
     - name: AWS Certified Machine Learning - Specialty
-      url: https://aws.amazon.com/certification/
-      issuer: AWS
-      date: Nov 2020
+      url: https://aws.amazon.com/certification/certified-machine-learning-specialty/
+      issuer: Amazon Web Services
+      date: Nov 2021
+    - name: TensorFlow Developer Certificate
+      url: https://www.tensorflow.org/certificate
+      issuer: Google
+      date: Apr 2020
   publications:
-    - publisher: Journal of Machine Learning Research
-      url: https://jmlr.org/
-      name: Scalable Variational Inference for Structured Prediction
-      releaseDate: Mar 2020
+    - name: A Scalable Framework for Real-Time Customer Churn Prediction
+      publisher: Proceedings of the ACM SIGKDD Conference on Knowledge Discovery and
+        Data Mining
+      releaseDate: Aug 2022
+      url: https://doi.org/10.1145/3523227.3547400
       summary: |
-        - Proposes a scalable variational inference algorithm for structured prediction tasks
-        - Demonstrates state-of-the-art results on several benchmark datasets
-  references:
-    - name: Dr. Michael Ross
-      phone: "(555) 987-6543"
-      relationship: Ph.D. Advisor
-      email: michael.ross@stanford.edu
-      summary: |
-        Sarah is one of the most capable applied researchers I have worked with; her work consistently bridges theory and practice.
+        - Presented a production-ready churn prediction framework combining gradient-boosted trees with online feature stores
+        - Demonstrated a 23% relative improvement in AUC versus batch baselines across three industrial datasets
   projects:
-    - name: Churn Predictor
-      url: https://github.com/sarahchen/churn-predictor
-      description: End-to-end customer churn prediction system
-      startDate: Jan 2022
-      endDate: Jun 2022
+    - name: DocQuery
+      url: https://github.com/adriancole/docquery
+      description: An NLP-powered search and question-answering tool for unstructured
+        clinical documents.
+      startDate: Jan 2023
+      endDate: Jun 2023
       summary: |
-        - Built a gradient boosting classifier to predict customer churn
-        - Implemented SHAP-based explainability for model predictions
-        - Deployed the model as a REST API with FastAPI
+        - Developed a retrieval-augmented system using sentence embeddings and a fine-tuned transformer model to answer clinician questions from EHR notes
+        - Deployed as a REST API with Docker, reducing average answer lookup time from 20 minutes to under 5 seconds
       keywords:
-        - Classification
-        - SHAP
+        - NLP
+        - Transformers
+        - Q&A
+        - Docker
         - FastAPI
-  interests:
-    - name: Outdoor Activities
-      keywords:
-        - Hiking
-        - Cycling
-        - Kayaking
-    - name: Reading
-      keywords:
-        - Science Fiction
-        - History
-  volunteer:
-    - organization: Women in Data Science
-      url: https://www.widsconference.org/
-      position: Workshop Lead
-      startDate: Jan 2020
-      endDate:
+    - name: AdScore
+      url: https://github.com/adriancole/adscore
+      description: Click-through rate prediction model for online advertising campaigns.
+      startDate: Aug 2020
+      endDate: Dec 2020
       summary: |
-        - Lead technical workshops on introductory machine learning for underrepresented groups
-        - Mentor early-career data scientists transitioning into the field
+        - Engineered features from impression logs and built a distributed training pipeline in PySpark
+        - Achieved a 15% lift in offline AUC and enabled real-time bidding through model export to ONNX
+      keywords:
+        - CTR
+        - PySpark
+        - Feature Engineering
+        - ONNX
+  interests:
+    - name: Open Source
+      keywords:
+        - Contributing to scikit-learn
+        - Jupyter
+        - Streamlit
+    - name: Hiking
+      keywords:
+        - Yosemite
+        - Pacific Crest Trail
+    - name: Chess
+      keywords:
+        - Tournament Play
+        - Puzzle Solving
+  volunteer:
+    - organization: Bay Area Data Corps
+      url: https://www.bayareadatacorps.org/
+      position: Data Science Volunteer
+      startDate: Mar 2022
+      endDate: Dec 2023
+      summary: |
+        - Partnered with local nonprofits to analyze service utilization data and guide resource allocation decisions
+        - Built reusable notebook templates to standardize weekly reporting and make findings accessible to nontechnical staff
 
 locale:
   language: en
-
-layouts:
-  - engine: latex
-    page:
-      margins:
-        top: 2.5cm
-        left: 1.5cm
-        right: 1.5cm
-        bottom: 2.5cm
-      paperSize: a4
-      showPageNumbers: true
-    template: moderncv-banking
-    typography:
-      fontSize: 11pt
-  - engine: docx
-    page:
-      margins:
-        top: 2.5cm
-        left: 1.5cm
-        right: 1.5cm
-        bottom: 2.5cm
-      paperSize: a4
-      showPageNumbers: true
-    typography:
-      fontSize: 11pt
-      lineSpacing: normal
-  - engine: markdown
-  - engine: html
-    template: calm
-    typography:
-      fontSize: 16px
