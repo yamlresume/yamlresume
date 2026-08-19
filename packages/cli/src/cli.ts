@@ -23,7 +23,7 @@
  * IN THE SOFTWARE.
  */
 
-import './suppress-warnings'
+import '@yamlresume/core/suppress-warnings'
 
 const { createProgram } = await import('./program')
 

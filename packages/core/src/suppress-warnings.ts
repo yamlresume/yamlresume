@@ -22,6 +22,8 @@
  * IN THE SOFTWARE.
  */
 
+/// <reference types="node" />
+
 /**
  * Suppress the ExperimentalWarning about localStorage that is emitted by
  * Node.js v22+ when bundled libraries check `global.localStorage` without
@@ -70,3 +72,5 @@ process.emitWarning = ((...args: unknown[]) => {
 
   return originalEmitWarning.apply(process, args as [string | Error])
 }) as typeof process.emitWarning
+
+export {}

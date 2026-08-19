@@ -25,6 +25,10 @@
     ".": {
       "types": "./dist/index.d.ts",
       "default": "./dist/index.js"
+    },
+    "./suppress-warnings": {
+      "types": "./dist/suppress-warnings.d.ts",
+      "default": "./dist/suppress-warnings.js"
     }
   },
   "files": [
@@ -55,7 +59,8 @@
     "zod": "^4.4.3"
   },
   "devDependencies": {
-    "@types/mdast": "^4.0.4"
+    "@types/mdast": "^4.0.4",
+    "@types/node": "^26.1.1"
   },
   "publishConfig": {
     "access": "public"

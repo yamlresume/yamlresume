@@ -188,6 +188,9 @@ importers:
       '@types/mdast':
         specifier: ^4.0.4
         version: 4.0.4
+      '@types/node':
+        specifier: ^26.1.1
+        version: 26.1.1
 
   packages/create-yamlresume:
     dependencies:
