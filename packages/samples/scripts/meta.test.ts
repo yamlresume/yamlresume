@@ -35,6 +35,7 @@ import {
   ensurePositionMeta,
   generateSampleMeta,
   generateSampleMetaI18n,
+  generateWithRetry,
   isValidBaseMeta,
   isValidI18nMeta,
   positionToId,
@@ -519,7 +520,7 @@ description: A test description for the sample resume.
 
 describe(generateSampleMeta, () => {
   beforeEach(() => {
-    vi.clearAllMocks()
+    vi.resetAllMocks()
   })
 
   it('returns parsed base metadata for a valid response', async () => {
@@ -569,13 +570,38 @@ describe(generateSampleMeta, () => {
 
     await expect(
       generateSampleMeta('software engineer', mockModel)
-    ).rejects.toThrow('Failed to parse generated metadata YAML')
+    ).rejects.toThrow('Failed to parse generated base metadata YAML')
+  })
+
+  it('retries when the first response is invalid and succeeds on the second', async () => {
+    vi.mocked(generateText)
+      .mockResolvedValueOnce({
+        text: 'not valid yaml: [',
+      } as Awaited<ReturnType<typeof generateText>>)
+      .mockResolvedValueOnce({
+        text: buildValidBaseYaml(),
+      } as Awaited<ReturnType<typeof generateText>>)
+
+    const result = await generateSampleMeta('software engineer', mockModel)
+
+    expect(result.title).toBe('Software Engineer')
+    expect(generateText).toHaveBeenCalledTimes(2)
+  })
+
+  it('throws GENERATION_FAILED after all retries are exhausted', async () => {
+    vi.mocked(generateText).mockResolvedValue({
+      text: 'not valid yaml: [',
+    } as Awaited<ReturnType<typeof generateText>>)
+
+    await expect(
+      generateSampleMeta('software engineer', mockModel)
+    ).rejects.toThrow('Failed to generate base metadata after 3 attempt(s)')
   })
 })
 
 describe(translateSampleMetaI18n, () => {
   beforeEach(() => {
-    vi.clearAllMocks()
+    vi.resetAllMocks()
   })
 
   it('returns translated metadata for all requested locales', async () => {
@@ -637,6 +663,26 @@ describe(translateSampleMetaI18n, () => {
     ).rejects.toThrow('Translated metadata must be a YAML object.')
   })
 
+  it('throws when a locale entry fails schema validation', async () => {
+    vi.mocked(generateText).mockResolvedValueOnce({
+      text: `
+zh-hans:
+  title: 软件工程师
+`,
+    } as Awaited<ReturnType<typeof generateText>>)
+
+    await expect(
+      translateSampleMetaI18n(
+        'Software Engineer',
+        'A senior software engineer resume showcasing education and experience.',
+        ['zh-hans'],
+        mockModel
+      )
+    ).rejects.toThrow(
+      'Translated metadata for locale "zh-hans" failed validation'
+    )
+  })
+
   it('throws when translated metadata YAML cannot be parsed', async () => {
     vi.mocked(generateText).mockResolvedValueOnce({
       text: 'not valid yaml: [',
@@ -649,13 +695,76 @@ describe(translateSampleMetaI18n, () => {
         ['zh-hans'],
         mockModel
       )
-    ).rejects.toThrow('Failed to parse generated metadata YAML')
+    ).rejects.toThrow('Failed to parse generated i18n metadata YAML')
+  })
+
+  it('retries when the first translation is not a YAML object and succeeds on the second', async () => {
+    vi.mocked(generateText)
+      .mockResolvedValueOnce({
+        text: 'just a string',
+      } as Awaited<ReturnType<typeof generateText>>)
+      .mockResolvedValueOnce({
+        text: buildValidTranslationYaml(),
+      } as Awaited<ReturnType<typeof generateText>>)
+
+    const result = await translateSampleMetaI18n(
+      'Software Engineer',
+      'A senior software engineer resume showcasing education and experience.',
+      ['zh-hans', 'zh-hant-tw'],
+      mockModel
+    )
+
+    expect(result['zh-hans'].title).toBe('软件工程师')
+    expect(generateText).toHaveBeenCalledTimes(2)
+  })
+
+  it('throws GENERATION_FAILED after all translation retries are exhausted', async () => {
+    vi.mocked(generateText).mockResolvedValue({
+      text: 'just a string',
+    } as Awaited<ReturnType<typeof generateText>>)
+
+    await expect(
+      translateSampleMetaI18n(
+        'Software Engineer',
+        'A senior software engineer resume showcasing education and experience.',
+        ['zh-hans'],
+        mockModel
+      )
+    ).rejects.toThrow('Failed to translate metadata after 3 attempt(s)')
+  })
+})
+
+describe(generateWithRetry, () => {
+  beforeEach(() => {
+    vi.resetAllMocks()
+  })
+
+  it('should propagate non-AIResumeErrors without retrying', async () => {
+    vi.mocked(generateText).mockResolvedValue({
+      text: 'irrelevant',
+    } as Awaited<ReturnType<typeof generateText>>)
+
+    await expect(
+      generateWithRetry(
+        () => ({
+          system: 'system',
+          prompt: 'prompt',
+        }),
+        () => {
+          throw new Error('unexpected validation error')
+        },
+        mockModel,
+        'test operation'
+      )
+    ).rejects.toThrow('unexpected validation error')
+
+    expect(generateText).toHaveBeenCalledTimes(1)
   })
 })
 
 describe(generateSampleMetaI18n, () => {
   beforeEach(() => {
-    vi.clearAllMocks()
+    vi.resetAllMocks()
   })
 
   it('generates base metadata and translations', async () => {

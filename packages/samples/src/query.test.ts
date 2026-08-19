@@ -50,7 +50,7 @@ describe(getSampleResume, () => {
     const yaml = getSampleResume('software-engineer', 'en')
 
     expect(yaml).toContain('content:')
-    expect(yaml).toContain('Andy Dufresne')
+    expect(yaml).toContain('Jordan Mitchell')
   })
 
   it('throws for an unknown sample', () => {

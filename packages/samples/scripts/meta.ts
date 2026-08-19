@@ -49,6 +49,8 @@ import {
   type SampleResumeI18nMeta,
 } from '../src/types'
 
+const MAX_RETRIES = 2
+
 function buildGenerateMetaPrompt(position: string): {
   system: string
   prompt: string
@@ -144,58 +146,42 @@ async function callModel(
   }
 }
 
-function parseYaml(text: string): unknown {
+function parseYaml(text: string, context: string): unknown {
+  const extracted = extractYamlFromLLM(text)
+
   try {
-    return yaml.parse(extractYamlFromLLM(text))
+    return yaml.parse(extracted)
   } catch (error) {
     throw new AIResumeError(
       'VALIDATION_FAILED',
-      `Failed to parse generated metadata YAML: ${getErrorMessage(error)}`
+      joinNonEmptyString(
+        [
+          `Failed to parse generated ${context} YAML:`,
+          getErrorMessage(error),
+          'Raw response:',
+          text,
+        ],
+        '\n'
+      )
     )
   }
 }
 
-/**
- * Generate English base metadata for a sample resume.
- *
- * @param position - The target position or job title.
- * @param model - The language model to use.
- * @returns Validated base metadata.
- * @throws {AIResumeError} When generation or validation fails.
- */
-export async function generateSampleMeta(
-  position: string,
-  model: LanguageModel
-): Promise<SampleMeta> {
-  const { system, prompt } = buildGenerateMetaPrompt(position)
-  const parsed = parseYaml(await callModel(model, system, prompt))
-
-  return SampleMetaSchema.parse({ ...parsed, position })
+function validateSampleMeta(parsed: unknown, position: string): SampleMeta {
+  try {
+    return SampleMetaSchema.parse({ ...parsed, position })
+  } catch (error) {
+    throw new AIResumeError(
+      'VALIDATION_FAILED',
+      `Generated base metadata failed validation: ${getErrorMessage(error)}`
+    )
+  }
 }
 
-/**
- * Translate an English title and description into multiple locale languages.
- *
- * @param title - The English title.
- * @param description - The English description.
- * @param languages - The target locale languages.
- * @param model - The language model to use.
- * @returns Localized titles and descriptions indexed by locale language.
- * @throws {AIResumeError} When generation or validation fails.
- */
-export async function translateSampleMetaI18n(
-  title: string,
-  description: string,
-  languages: readonly LocaleLanguage[],
-  model: LanguageModel
-): Promise<Record<LocaleLanguage, SampleResumeI18nMeta>> {
-  const { system, prompt } = buildTranslateMetaPrompt(
-    title,
-    description,
-    languages
-  )
-  const parsed = parseYaml(await callModel(model, system, prompt))
-
+function validateSampleMetaI18n(
+  parsed: unknown,
+  languages: readonly LocaleLanguage[]
+): Record<LocaleLanguage, SampleResumeI18nMeta> {
   if (!parsed || typeof parsed !== 'object') {
     throw new AIResumeError(
       'VALIDATION_FAILED',
@@ -216,10 +202,122 @@ export async function translateSampleMetaI18n(
       )
     }
 
-    i18n[language] = SampleMetaI18nSchema.parse(entry)
+    try {
+      i18n[language] = SampleMetaI18nSchema.parse(entry)
+    } catch (error) {
+      throw new AIResumeError(
+        'VALIDATION_FAILED',
+        `Translated metadata for locale "${language}" failed validation: ${getErrorMessage(error)}`
+      )
+    }
   }
 
   return i18n as Record<LocaleLanguage, SampleResumeI18nMeta>
+}
+
+type PromptBuilder = () => { system: string; prompt: string }
+
+export async function generateWithRetry<T>(
+  buildPrompt: PromptBuilder,
+  validate: (text: string) => T,
+  model: LanguageModel,
+  label: string,
+  maxTokens = 4096
+): Promise<T> {
+  let lastError: AIResumeError | undefined
+  let lastText: string | undefined
+  const errors: AIResumeError[] = []
+
+  for (let attempt = 0; attempt <= MAX_RETRIES; attempt++) {
+    const { system, prompt: basePrompt } = buildPrompt()
+    const prompt =
+      attempt > 0 && lastText && lastError
+        ? joinNonEmptyString(
+            [
+              basePrompt,
+              'Your previous response failed validation with the following errors:',
+              lastError.message,
+              'Here is your previous response:',
+              lastText,
+              'Please fix all validation errors and try again.',
+            ],
+            '\n'
+          )
+        : basePrompt
+
+    try {
+      const text = await callModel(model, system, prompt, maxTokens)
+      lastText = text
+      return validate(text)
+    } catch (error) {
+      if (error instanceof AIResumeError) {
+        consola.debug(`${label} attempt ${attempt + 1} failed:`, error.message)
+        lastError = error
+        errors.push(error)
+        continue
+      }
+
+      throw error
+    }
+  }
+
+  throw new AIResumeError(
+    'GENERATION_FAILED',
+    joinNonEmptyString(
+      [
+        `Failed to ${label} after ${MAX_RETRIES + 1} attempt(s).`,
+        ...errors.map(
+          (error, index) => `Attempt ${index + 1}: ${error.message}`
+        ),
+      ],
+      '\n'
+    )
+  )
+}
+
+/**
+ * Generate English base metadata for a sample resume.
+ *
+ * @param position - The target position or job title.
+ * @param model - The language model to use.
+ * @returns Validated base metadata.
+ * @throws {AIResumeError} When generation or validation fails.
+ */
+export async function generateSampleMeta(
+  position: string,
+  model: LanguageModel
+): Promise<SampleMeta> {
+  return generateWithRetry(
+    () => buildGenerateMetaPrompt(position),
+    (text) => validateSampleMeta(parseYaml(text, 'base metadata'), position),
+    model,
+    'generate base metadata'
+  )
+}
+
+/**
+ * Translate an English title and description into multiple locale languages.
+ *
+ * @param title - The English title.
+ * @param description - The English description.
+ * @param languages - The target locale languages.
+ * @param model - The language model to use.
+ * @returns Localized titles and descriptions indexed by locale language.
+ * @throws {AIResumeError} When generation or validation fails.
+ */
+export async function translateSampleMetaI18n(
+  title: string,
+  description: string,
+  languages: readonly LocaleLanguage[],
+  model: LanguageModel
+): Promise<Record<LocaleLanguage, SampleResumeI18nMeta>> {
+  return generateWithRetry(
+    () => buildTranslateMetaPrompt(title, description, languages),
+    (text) =>
+      validateSampleMetaI18n(parseYaml(text, 'i18n metadata'), languages),
+    model,
+    'translate metadata'
+  )
 }
 
 /**
