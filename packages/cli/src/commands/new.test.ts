@@ -47,9 +47,7 @@ describe(newResume, () => {
   beforeEach(() => {
     consolaDebugSpy = vi.spyOn(consola, 'debug').mockImplementation(vi.fn())
 
-    // @ts-expect-error
     existsSync = vi.spyOn(fs, 'existsSync').mockReturnValue(false)
-    // @ts-expect-error
     readFileSync = vi
       .spyOn(fs, 'readFileSync')
       .mockImplementation(() => resumeContent)
@@ -159,7 +157,9 @@ describe(createSampleResume, () => {
 
     expect(writeFileSync).toBeCalledTimes(1)
     const writtenContent = writeFileSync.mock.calls[0][1] as string
-    expect(writtenContent).toContain('Andy Dufresne')
+    expect(writtenContent).toContain('name: ')
+    expect(writtenContent).toContain('yaml-language-server')
+    expect(writtenContent).toContain('layouts:')
   })
 
   it('should support a custom language', () => {
@@ -168,6 +168,8 @@ describe(createSampleResume, () => {
     expect(writeFileSync).toBeCalledTimes(1)
     const writtenContent = writeFileSync.mock.calls[0][1] as string
     expect(writtenContent).toContain('zh-hans')
+    expect(writtenContent).toContain('yaml-language-server')
+    expect(writtenContent).toContain('layouts:')
   })
 
   it('should not create a resume if file already exists', () => {

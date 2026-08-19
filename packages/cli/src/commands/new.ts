@@ -26,15 +26,17 @@ import fs from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 import {
+  appendResumeLayouts,
+  injectResumeComments,
   joinNonEmptyString,
   type LocaleLanguage,
   toCodeBlock,
   YAMLResumeError,
 } from '@yamlresume/core'
 import { getSampleResume, listSampleResumes } from '@yamlresume/samples'
-
 import { Command } from 'commander'
 import consola from 'consola'
+import yaml from 'yaml'
 
 /**
  * Creates a new resume file with the given filename
@@ -104,9 +106,12 @@ export function createSampleResume(
   }
 
   const sampleContent = getSampleResume(sampleId, language)
+  const doc = yaml.parseDocument(sampleContent)
+  appendResumeLayouts(doc)
+  const contentWithLayoutsAndComments = injectResumeComments(doc)
 
   try {
-    fs.writeFileSync(filename, sampleContent)
+    fs.writeFileSync(filename, contentWithLayoutsAndComments)
     consola.success(
       `Created ${filename} from sample "${sampleId}" successfully.`
     )
