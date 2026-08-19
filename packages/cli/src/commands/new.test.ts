@@ -373,4 +373,16 @@ describe(createNewCommand, () => {
     expect(processExitSpy).toHaveBeenCalledTimes(1)
     expect(processExitSpy).toHaveBeenCalledWith(1)
   })
+
+  it('should reject --language without --sample', () => {
+    newCommand.parse(['yamlresume', 'new', '--language', 'zh-hans'])
+
+    expect(consolaSuccessSpy).not.toBeCalled()
+    expect(consolaErrorSpy).toHaveBeenCalledTimes(1)
+    expect(consolaErrorSpy).toHaveBeenCalledWith(
+      'The --language flag can only be used together with --sample.'
+    )
+    expect(processExitSpy).toHaveBeenCalledTimes(1)
+    expect(processExitSpy).toHaveBeenCalledWith(1)
+  })
 })

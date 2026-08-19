@@ -132,11 +132,20 @@ export function createNewCommand() {
     .description('create a new resume')
     .argument('[filename]', 'output filename', 'resume.yml')
     .option('--sample <id>', 'create from a curated sample resume')
-    .option('--language <language>', 'locale language for the sample', 'en')
+    .option(
+      '--language <language>',
+      'locale language for the sample (requires --sample)'
+    )
     .action((filename, options) => {
       try {
+        if (options.language && !options.sample) {
+          throw new Error(
+            'The --language flag can only be used together with --sample.'
+          )
+        }
+
         if (options.sample) {
-          createSampleResume(filename, options.sample, options.language)
+          createSampleResume(filename, options.sample, options.language ?? 'en')
         } else {
           newResume(filename)
         }
