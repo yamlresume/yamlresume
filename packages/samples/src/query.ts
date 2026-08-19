@@ -25,20 +25,85 @@
 import { joinNonEmptyString, type LocaleLanguage } from '@yamlresume/core'
 
 import catalogData from './catalog.json'
-import type { SampleCatalog, SampleResumeMeta } from './types'
+import type { SampleCatalog, SampleResumeEntry } from './types'
 
 const catalog = catalogData as unknown as SampleCatalog
 
 /**
- * List metadata for all available sample resumes.
+ * List all available sample resumes.
  *
- * @returns An array of sample metadata.
+ * @returns An array of sample resume entries.
  */
-export function listSampleResumes(): SampleResumeMeta[] {
-  return catalog.resumes.map((entry) => {
-    const { contents: _contents, ...meta } = entry
-    return meta
-  })
+export function listSampleResumes(): SampleResumeEntry[] {
+  return catalog.resumes
+}
+
+/**
+ * List sample resumes that support a given locale language.
+ *
+ * @param language - The locale language to filter by.
+ * @returns An array of sample resume entries supporting the language.
+ */
+export function listSampleResumesByLanguage(
+  language: LocaleLanguage
+): SampleResumeEntry[] {
+  return catalog.resumes.filter((entry) => entry.languages.includes(language))
+}
+
+/**
+ * List sample resumes in a given category.
+ *
+ * Matching is case-insensitive.
+ *
+ * @param category - The category to filter by.
+ * @returns An array of sample resume entries in the category.
+ */
+export function listSampleResumesByCategory(
+  category: string
+): SampleResumeEntry[] {
+  const normalizedCategory = category.toLowerCase()
+
+  return catalog.resumes.filter(
+    (entry) => entry.category.toLowerCase() === normalizedCategory
+  )
+}
+
+/**
+ * List sample resumes that have a given tag.
+ *
+ * Matching is case-insensitive.
+ *
+ * @param tag - The tag to filter by.
+ * @returns An array of sample resume entries with the tag.
+ */
+export function listSampleResumesByTag(tag: string): SampleResumeEntry[] {
+  const normalizedTag = tag.toLowerCase()
+
+  return catalog.resumes.filter((entry) =>
+    entry.tags.some((entryTag) => entryTag.toLowerCase() === normalizedTag)
+  )
+}
+
+/**
+ * List all unique categories available across sample resumes.
+ *
+ * @returns A sorted array of category names.
+ */
+export function listSampleResumeCategories(): string[] {
+  return Array.from(
+    new Set(catalog.resumes.map((entry) => entry.category))
+  ).sort((a, b) => a.localeCompare(b))
+}
+
+/**
+ * List all unique tags available across sample resumes.
+ *
+ * @returns A sorted array of tag names.
+ */
+export function listSampleResumeTags(): string[] {
+  return Array.from(
+    new Set(catalog.resumes.flatMap((entry) => entry.tags))
+  ).sort((a, b) => a.localeCompare(b))
 }
 
 /**

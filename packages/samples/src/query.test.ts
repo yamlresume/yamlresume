@@ -24,10 +24,18 @@
 
 import { describe, expect, it } from 'vitest'
 
-import { getSampleResume, listSampleResumes } from './query'
+import {
+  getSampleResume,
+  listSampleResumeCategories,
+  listSampleResumes,
+  listSampleResumesByCategory,
+  listSampleResumesByLanguage,
+  listSampleResumesByTag,
+  listSampleResumeTags,
+} from './query'
 
 describe(listSampleResumes, () => {
-  it('returns metadata for all sample resumes without contents', () => {
+  it('returns all sample resumes with contents', () => {
     const resumes = listSampleResumes()
 
     expect(resumes.length).toBeGreaterThan(0)
@@ -40,8 +48,100 @@ describe(listSampleResumes, () => {
       expect(resume).toHaveProperty('description')
       expect(resume).toHaveProperty('languages')
       expect(resume).toHaveProperty('i18n')
-      expect(resume).not.toHaveProperty('contents')
+      expect(resume).toHaveProperty('contents')
     }
+  })
+})
+
+describe(listSampleResumesByCategory, () => {
+  it('returns samples in the requested category', () => {
+    const resumes = listSampleResumesByCategory('Engineering')
+
+    expect(resumes.length).toBeGreaterThan(0)
+    for (const resume of resumes) {
+      expect(resume.category.toLowerCase()).toBe('engineering')
+      expect(resume).toHaveProperty('contents')
+    }
+  })
+
+  it('matches category case-insensitively', () => {
+    const lowerCase = listSampleResumesByCategory('engineering')
+    const upperCase = listSampleResumesByCategory('ENGINEERING')
+
+    expect(lowerCase).toEqual(upperCase)
+  })
+
+  it('returns an empty array when no sample is in the category', () => {
+    const resumes = listSampleResumesByCategory('not-a-category')
+
+    expect(resumes).toEqual([])
+  })
+})
+
+describe(listSampleResumesByTag, () => {
+  it('returns samples that have the requested tag', () => {
+    const resumes = listSampleResumesByTag('python')
+
+    expect(resumes.length).toBeGreaterThan(0)
+    for (const resume of resumes) {
+      expect(resume.tags.map((tag) => tag.toLowerCase())).toContain('python')
+      expect(resume).toHaveProperty('contents')
+    }
+  })
+
+  it('matches tag case-insensitively', () => {
+    const lowerCase = listSampleResumesByTag('python')
+    const upperCase = listSampleResumesByTag('PYTHON')
+
+    expect(lowerCase).toEqual(upperCase)
+  })
+
+  it('returns an empty array when no sample has the tag', () => {
+    const resumes = listSampleResumesByTag('not-a-tag')
+
+    expect(resumes).toEqual([])
+  })
+})
+
+describe(listSampleResumeCategories, () => {
+  it('returns unique categories from all sample resumes', () => {
+    const categories = listSampleResumeCategories()
+
+    expect(categories.length).toBeGreaterThan(0)
+    expect(categories).toContain('Engineering')
+    expect(new Set(categories).size).toBe(categories.length)
+    expect(categories).toEqual(
+      [...categories].sort((a, b) => a.localeCompare(b))
+    )
+  })
+})
+
+describe(listSampleResumeTags, () => {
+  it('returns unique tags from all sample resumes', () => {
+    const tags = listSampleResumeTags()
+
+    expect(tags.length).toBeGreaterThan(0)
+    expect(tags).toContain('python')
+    expect(new Set(tags).size).toBe(tags.length)
+    expect(tags).toEqual([...tags].sort((a, b) => a.localeCompare(b)))
+  })
+})
+
+describe(listSampleResumesByLanguage, () => {
+  it('returns samples that support the requested language', () => {
+    const resumes = listSampleResumesByLanguage('en')
+
+    expect(resumes.length).toBeGreaterThan(0)
+    for (const resume of resumes) {
+      expect(resume.languages).toContain('en')
+      expect(resume).toHaveProperty('contents')
+    }
+  })
+
+  it('returns an empty array when no sample supports the language', () => {
+    const resumes = listSampleResumesByLanguage('xx' as 'en')
+
+    expect(resumes).toEqual([])
   })
 })
 

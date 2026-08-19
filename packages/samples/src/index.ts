@@ -22,7 +22,19 @@
  * IN THE SOFTWARE.
  */
 
-export type { LocaleLanguage } from '@yamlresume/core'
-export { getSampleResume, listSampleResumes } from './query'
-export type { SampleResumeMeta } from './types'
-export { POSITIONS, type Position } from './types'
+export {
+  getSampleResume,
+  listSampleResumeCategories,
+  listSampleResumes,
+  listSampleResumesByCategory,
+  listSampleResumesByLanguage,
+  listSampleResumesByTag,
+  listSampleResumeTags,
+} from './query'
+export {
+  POSITIONS,
+  type Position,
+  type SampleCatalog,
+  type SampleResumeEntry,
+  type SampleResumeMeta,
+} from './types'

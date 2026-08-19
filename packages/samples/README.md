@@ -18,13 +18,32 @@ import { getSampleResume } from '@yamlresume/samples'
 const yaml = getSampleResume('software-engineer', 'en')
 ```
 
-### List sample metadata
+### List sample resumes
 
 ```ts
 import { listSampleResumes } from '@yamlresume/samples'
 
 const samples = listSampleResumes()
-// [{ id: 'software-engineer', title: 'Software Engineer', ... }]
+// full sample entries including metadata and localized YAML contents
+```
+
+### Query sample resumes
+
+```ts
+import {
+  listSampleResumesByCategory,
+  listSampleResumesByLanguage,
+  listSampleResumesByTag,
+  listSampleResumeCategories,
+  listSampleResumeTags,
+} from '@yamlresume/samples'
+
+const engineering = listSampleResumesByCategory('Engineering')
+const english = listSampleResumesByLanguage('en')
+const python = listSampleResumesByTag('python')
+
+const categories = listSampleResumeCategories()
+const tags = listSampleResumeTags()
 ```
 
 ## CLI
