@@ -22,12 +22,12 @@
  * IN THE SOFTWARE.
  */
 
-import type { LocaleLanguage } from '@yamlresume/core'
+import { joinNonEmptyString, type LocaleLanguage } from '@yamlresume/core'
 
-import registryData from './registry.json'
-import type { SampleRegistry, SampleResumeMeta } from './types'
+import catalogData from './catalog.json'
+import type { SampleCatalog, SampleResumeMeta } from './types'
 
-const registry = registryData as unknown as SampleRegistry
+const catalog = catalogData as unknown as SampleCatalog
 
 /**
  * List metadata for all available sample resumes.
@@ -35,7 +35,7 @@ const registry = registryData as unknown as SampleRegistry
  * @returns An array of sample metadata.
  */
 export function listSampleResumes(): SampleResumeMeta[] {
-  return registry.resumes.map((entry) => {
+  return catalog.resumes.map((entry) => {
     const { contents: _contents, ...meta } = entry
     return meta
   })
@@ -50,7 +50,7 @@ export function listSampleResumes(): SampleResumeMeta[] {
  * @throws {Error} When the sample or language does not exist.
  */
 export function getSampleResume(id: string, language: LocaleLanguage): string {
-  const entry = registry.resumes.find((resume) => resume.id === id)
+  const entry = catalog.resumes.find((resume) => resume.id === id)
 
   if (!entry) {
     throw new Error(`Sample resume not found: ${id}`)
@@ -58,7 +58,13 @@ export function getSampleResume(id: string, language: LocaleLanguage): string {
 
   if (!entry.languages.includes(language)) {
     throw new Error(
-      `Language "${language}" is not available for sample "${id}". Available languages: ${entry.languages.join(', ')}`
+      joinNonEmptyString(
+        [
+          `Language "${language}" is not available for sample "${id}".`,
+          `Available languages: ${entry.languages.join(', ')}`,
+        ],
+        ' '
+      )
     )
   }
 

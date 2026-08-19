@@ -30,6 +30,7 @@ import { fileURLToPath } from 'node:url'
 import { generateResume, getModelFromEnv } from '@yamlresume/ai'
 import {
   getErrorMessage,
+  joinNonEmptyString,
   LOCALE_LANGUAGE_OPTIONS,
   type LocaleLanguage,
   ResumeSchema,
@@ -39,31 +40,31 @@ import yaml from 'yaml'
 
 import {
   POSITIONS,
+  type SampleCatalog,
   type SampleMeta,
   SampleMetaI18nSchema,
   SampleMetaSchema,
-  type SampleRegistry,
   type SampleResumeI18nMeta,
 } from '../src/types'
 import { generateSampleMetaI18n } from './meta'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const resumesDir = path.resolve(__dirname, '../resources')
-const outputPath = path.resolve(__dirname, '../src/registry.json')
+const outputPath = path.resolve(__dirname, '../src/catalog.json')
 
 export function positionToId(position: string): string {
   return position.replace(/\s+/g, '-')
 }
 
 interface CliArgs {
-  registryOnly: boolean
+  catalogOnly: boolean
   force: boolean
 }
 
 function parseArgs(): CliArgs {
   const args = process.argv.slice(2)
   return {
-    registryOnly: args.includes('--registry-only'),
+    catalogOnly: args.includes('--catalog-only'),
     force: args.includes('--force'),
   }
 }
@@ -150,7 +151,13 @@ async function ensurePositionMeta(
 
   if (meta.id !== id) {
     throw new Error(
-      `Generated metadata id "${meta.id}" does not match expected id "${id}" for position "${position}"`
+      joinNonEmptyString(
+        [
+          `Generated metadata id "${meta.id}"`,
+          `does not match expected id "${id}" for position "${position}"`,
+        ],
+        ' '
+      )
     )
   }
 
@@ -171,7 +178,13 @@ async function ensurePositionMeta(
     if (baseChanged) {
       shouldWriteAllI18n = true
       consola.warn(
-        `    generated base metadata differs from existing; overwriting all i18n meta files for consistency`
+        joinNonEmptyString(
+          [
+            '    generated base metadata differs from existing;',
+            'overwriting all i18n meta files for consistency',
+          ],
+          ' '
+        )
       )
     }
   }
@@ -308,7 +321,7 @@ function readLocaleFiles(resumeDir: string): Record<LocaleLanguage, string> {
   return contents as Record<LocaleLanguage, string>
 }
 
-function buildRegistry(): SampleRegistry {
+function buildCatalog(): SampleCatalog {
   if (!fs.existsSync(resumesDir)) {
     return { resumes: [] }
   }
@@ -319,7 +332,10 @@ function buildRegistry(): SampleRegistry {
 
     if (!fs.existsSync(resumeDir)) {
       throw new Error(
-        `Missing sample directory for position "${position}": ${resumeDir}`
+        joinNonEmptyString(
+          [`Missing sample directory for position "${position}":`, resumeDir],
+          ' '
+        )
       )
     }
 
@@ -327,7 +343,13 @@ function buildRegistry(): SampleRegistry {
 
     if (meta.position !== position) {
       throw new Error(
-        `Position mismatch in ${path.join(resumeDir, 'meta.yml')}: expected "${position}", got "${meta.position}"`
+        joinNonEmptyString(
+          [
+            `Position mismatch in ${path.join(resumeDir, 'meta.yml')}:`,
+            `expected "${position}", got "${meta.position}"`,
+          ],
+          ' '
+        )
       )
     }
 
@@ -359,10 +381,10 @@ function buildRegistry(): SampleRegistry {
 }
 
 async function main(): Promise<void> {
-  const { registryOnly, force } = parseArgs()
+  const { catalogOnly, force } = parseArgs()
 
-  if (registryOnly) {
-    consola.info('Registry-only mode: skipping resume and meta generation.')
+  if (catalogOnly) {
+    consola.info('Catalog-only mode: skipping resume and meta generation.')
   } else {
     const getModel = createModelResolver()
 
@@ -373,13 +395,13 @@ async function main(): Promise<void> {
     }
   }
 
-  const registry = buildRegistry()
+  const catalog = buildCatalog()
   fs.mkdirSync(path.dirname(outputPath), { recursive: true })
-  fs.writeFileSync(outputPath, `${JSON.stringify(registry, null, 2)}\n`)
+  fs.writeFileSync(outputPath, `${JSON.stringify(catalog, null, 2)}\n`)
 
   consola.success(
-    `Built registry with ${registry.resumes.length} sample resume(s):`,
-    registry.resumes.map((r) => r.id).join(', ')
+    `Built catalog with ${catalog.resumes.length} sample resume(s):`,
+    catalog.resumes.map((r) => r.id).join(', ')
   )
 }
 

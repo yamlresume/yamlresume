@@ -81,7 +81,7 @@ Rules:
 function buildTranslateMetaPrompt(
   title: string,
   description: string,
-  languages: LocaleLanguage[]
+  languages: readonly LocaleLanguage[]
 ): { system: string; prompt: string } {
   return {
     system: `You are a professional translator.
@@ -176,7 +176,7 @@ export async function generateSampleMeta(
 export async function translateSampleMetaI18n(
   title: string,
   description: string,
-  languages: LocaleLanguage[],
+  languages: readonly LocaleLanguage[],
   model: LanguageModel
 ): Promise<Record<LocaleLanguage, SampleResumeI18nMeta>> {
   const { system, prompt } = buildTranslateMetaPrompt(
@@ -226,7 +226,7 @@ export async function translateSampleMetaI18n(
  */
 export async function generateSampleMetaI18n(
   position: string,
-  languages: LocaleLanguage[],
+  languages: readonly LocaleLanguage[],
   model: LanguageModel
 ): Promise<SampleMetaI18n> {
   const meta = await generateSampleMeta(position, model)

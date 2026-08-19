@@ -173,15 +173,15 @@ export const SampleMetaSchema = z.object({
 export type LanguageContents = Record<LocaleLanguage, string>
 
 /**
- * Internal registry entry that includes both metadata and contents.
+ * Internal catalog entry that includes both metadata and contents.
  */
 export interface SampleResumeEntry extends SampleResumeMeta {
   contents: LanguageContents
 }
 
 /**
- * Shape of the generated registry JSON file.
+ * Shape of the generated catalog JSON file.
  */
-export interface SampleRegistry {
+export interface SampleCatalog {
   resumes: SampleResumeEntry[]
 }

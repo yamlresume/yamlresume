@@ -30,11 +30,11 @@
     "LICENSE"
   ],
   "scripts": {
-    "build": "pnpm build:registry && tsup",
-    "build:registry": "tsx scripts/build-registry.ts",
+    "build": "pnpm build:catalog && tsup",
+    "build:catalog": "tsx scripts/build-catalog.ts",
     "build:watch": "tsup --watch",
     "build:clean": "rm -rf dist",
-    "build:prod": "pnpm build:registry && tsup --dts --minify --sourcemap",
+    "build:prod": "pnpm build:catalog && tsup --dts --minify --sourcemap",
     "prepublishOnly": "pnpm test",
     "test": "vitest --run",
     "test:cov": "vitest --coverage --run",
