@@ -22,13 +22,23 @@
  * IN THE SOFTWARE.
  */
 
+import { createHash } from 'node:crypto'
+import fs from 'node:fs'
+import path from 'node:path'
 import {
   AIResumeError,
   extractYamlFromLLM,
   generateText,
+  type getModelFromEnv,
   type LanguageModel,
 } from '@yamlresume/ai'
-import { getErrorMessage, type LocaleLanguage } from '@yamlresume/core'
+import {
+  getErrorMessage,
+  joinNonEmptyString,
+  LOCALE_LANGUAGE_OPTIONS,
+  type LocaleLanguage,
+} from '@yamlresume/core'
+import consola from 'consola'
 import yaml from 'yaml'
 
 import {
@@ -238,4 +248,201 @@ export async function generateSampleMetaI18n(
   )
 
   return { meta, i18n }
+}
+
+export function positionToId(position: string): string {
+  return position.replace(/\s+/g, '-')
+}
+
+const I18N_SOURCE_HASH_FILE = 'meta.hash.txt'
+
+export function computeI18nSourceHash(meta: {
+  title: string
+  description: string
+}): string {
+  return createHash('sha256')
+    .update(`${meta.title}\n${meta.description}`)
+    .digest('hex')
+}
+
+function readI18nSourceHash(resumeDir: string): string | undefined {
+  const hashPath = path.join(resumeDir, I18N_SOURCE_HASH_FILE)
+
+  if (!fs.existsSync(hashPath)) {
+    return undefined
+  }
+
+  return fs.readFileSync(hashPath, 'utf8').trim()
+}
+
+function writeI18nSourceHash(resumeDir: string, hash: string): void {
+  const hashPath = path.join(resumeDir, I18N_SOURCE_HASH_FILE)
+  fs.writeFileSync(hashPath, `${hash}\n`)
+}
+
+export function readMeta(resumeDir: string): SampleMeta {
+  const metaPath = path.join(resumeDir, 'meta.yml')
+  const content = fs.readFileSync(metaPath, 'utf8')
+  const parsed = yaml.parse(content)
+
+  return SampleMetaSchema.parse(parsed)
+}
+
+export function readMetaI18n(
+  resumeDir: string,
+  languages: LocaleLanguage[]
+): Record<LocaleLanguage, SampleResumeI18nMeta> {
+  const i18n: Record<string, SampleResumeI18nMeta> = {}
+
+  for (const language of languages) {
+    const metaPath = path.join(resumeDir, `meta.${language}.yml`)
+
+    if (!fs.existsSync(metaPath)) {
+      continue
+    }
+
+    const content = fs.readFileSync(metaPath, 'utf8')
+    const parsed = yaml.parse(content)
+
+    i18n[language] = SampleMetaI18nSchema.parse(parsed)
+  }
+
+  return i18n as Record<LocaleLanguage, SampleResumeI18nMeta>
+}
+
+export function isValidBaseMeta(filePath: string): boolean {
+  try {
+    const content = fs.readFileSync(filePath, 'utf8')
+    const parsed = yaml.parse(content)
+    SampleMetaSchema.parse(parsed)
+    return true
+  } catch {
+    return false
+  }
+}
+
+export function isValidI18nMeta(filePath: string): boolean {
+  try {
+    const content = fs.readFileSync(filePath, 'utf8')
+    const parsed = yaml.parse(content)
+    SampleMetaI18nSchema.parse(parsed)
+    return true
+  } catch {
+    return false
+  }
+}
+
+export async function ensurePositionMeta(
+  position: string,
+  getModel: () => ReturnType<typeof getModelFromEnv>,
+  force: boolean,
+  resumesDir: string
+): Promise<void> {
+  const id = positionToId(position)
+  const resumeDir = path.join(resumesDir, id)
+  fs.mkdirSync(resumeDir, { recursive: true })
+
+  const baseMetaPath = path.join(resumeDir, 'meta.yml')
+  const baseValid = isValidBaseMeta(baseMetaPath)
+
+  if (force || !baseValid) {
+    consola.info('  generating meta files')
+    const { meta, i18n } = await generateSampleMetaI18n(
+      position,
+      LOCALE_LANGUAGE_OPTIONS,
+      getModel()
+    )
+
+    if (meta.id !== id) {
+      throw new Error(
+        joinNonEmptyString(
+          [
+            `Generated metadata id "${meta.id}"`,
+            `does not match expected id "${id}" for position "${position}"`,
+          ],
+          ' '
+        )
+      )
+    }
+
+    fs.writeFileSync(
+      baseMetaPath,
+      yaml.stringify({
+        id: meta.id,
+        title: meta.title,
+        position: meta.position,
+        category: meta.category,
+        tags: meta.tags,
+        description: meta.description,
+      })
+    )
+
+    for (const language of LOCALE_LANGUAGE_OPTIONS) {
+      const filePath = path.join(resumeDir, `meta.${language}.yml`)
+      fs.writeFileSync(filePath, yaml.stringify(i18n[language]))
+    }
+
+    writeI18nSourceHash(resumeDir, computeI18nSourceHash(meta))
+    return
+  }
+
+  const existingBase = yaml.parse(
+    fs.readFileSync(baseMetaPath, 'utf8')
+  ) as SampleMeta
+
+  if (existingBase.id !== id) {
+    throw new Error(
+      joinNonEmptyString(
+        [
+          `Base metadata id "${existingBase.id}"`,
+          `does not match expected id "${id}" for position "${position}"`,
+        ],
+        ' '
+      )
+    )
+  }
+
+  const missingI18n = LOCALE_LANGUAGE_OPTIONS.filter((language) => {
+    const filePath = path.join(resumeDir, `meta.${language}.yml`)
+    return !isValidI18nMeta(filePath)
+  })
+
+  const currentHash = computeI18nSourceHash(existingBase)
+  const storedHash = readI18nSourceHash(resumeDir)
+  const sourceChanged = !storedHash || storedHash !== currentHash
+
+  if (!sourceChanged && missingI18n.length === 0) {
+    consola.success('  meta files (valid, skipped)')
+    return
+  }
+
+  consola.info('  generating meta files')
+
+  if (sourceChanged) {
+    const i18n = await translateSampleMetaI18n(
+      existingBase.title,
+      existingBase.description,
+      LOCALE_LANGUAGE_OPTIONS,
+      getModel()
+    )
+
+    for (const language of LOCALE_LANGUAGE_OPTIONS) {
+      const filePath = path.join(resumeDir, `meta.${language}.yml`)
+      fs.writeFileSync(filePath, yaml.stringify(i18n[language]))
+    }
+
+    writeI18nSourceHash(resumeDir, currentHash)
+  } else {
+    const i18n = await translateSampleMetaI18n(
+      existingBase.title,
+      existingBase.description,
+      missingI18n,
+      getModel()
+    )
+
+    for (const language of missingI18n) {
+      const filePath = path.join(resumeDir, `meta.${language}.yml`)
+      fs.writeFileSync(filePath, yaml.stringify(i18n[language]))
+    }
+  }
 }

@@ -31,7 +31,7 @@
   ],
   "scripts": {
     "build": "pnpm build:catalog && tsup",
-    "build:catalog": "tsx scripts/build-catalog.ts",
+    "build:catalog": "tsx scripts/build.ts",
     "build:watch": "tsup --watch",
     "build:clean": "rm -rf dist",
     "build:prod": "pnpm build:catalog && tsup --dts --minify --sourcemap",

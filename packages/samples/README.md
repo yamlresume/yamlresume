@@ -59,6 +59,14 @@ generating anything, use the `--catalog-only` flag:
 pnpm build:catalog --catalog-only
 ```
 
+If you only want to generate metadata files (`meta.yml` and `meta.<locale>.yml`)
+without generating resumes or building `src/catalog.json`, use the `--meta-only`
+flag:
+
+```bash
+OPENAI_API_KEY=sk-... pnpm build:catalog --meta-only
+```
+
 To force regeneration of all metadata and resumes, use the `--force` flag:
 
 ```bash

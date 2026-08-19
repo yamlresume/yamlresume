@@ -22,13 +22,13 @@
         "zh-hant-tw"
       ],
       "i18n": {
-        "en": {
-          "title": "Data Scientist",
-          "description": "This sample resume demonstrates a data scientist profile highlighting education, work experience, technical skills, projects, and certifications in machine learning and analytics."
-        },
         "de": {
           "title": "Datenwissenschaftler",
           "description": "Dieses Beispiel-Lebenslauf zeigt ein Profil eines Datenwissenschaftlers mit Schwerpunkt auf Ausbildung, Berufserfahrung, technischen Fähigkeiten, Projekten sowie Zertifizierungen in maschinellem Lernen und Analytik."
+        },
+        "en": {
+          "title": "Data Scientist",
+          "description": "This sample resume demonstrates a data scientist profile highlighting education, work experience, technical skills, projects, and certifications in machine learning and analytics."
         },
         "es": {
           "title": "Científico de datos",
@@ -108,13 +108,13 @@
         "zh-hant-tw"
       ],
       "i18n": {
-        "en": {
-          "title": "Product Manager",
-          "description": "A product manager resume showcasing education, work experience, product strategy, skills, projects, and certifications."
-        },
         "de": {
           "title": "Produktmanager",
           "description": "Ein Lebenslauf für Produktmanager, der Ausbildung, Berufserfahrung, Produktstrategie, Fähigkeiten, Projekte und Zertifizierungen zeigt."
+        },
+        "en": {
+          "title": "Product Manager",
+          "description": "A product manager resume showcasing education, work experience, product strategy, skills, projects, and certifications."
         },
         "es": {
           "title": "Gerente de Producto",
@@ -194,13 +194,13 @@
         "zh-hant-tw"
       ],
       "i18n": {
-        "en": {
-          "title": "Software Engineer",
-          "description": "Sample resume showcasing education in computer science, work experience in software engineering, technical skills in multiple languages, key projects, and relevant certifications."
-        },
         "de": {
           "title": "Softwareentwickler",
           "description": "Beispiel-Lebenslauf mit Studium der Informatik, Berufserfahrung als Softwareentwickler, technischen Kenntnissen in mehreren Sprachen, wichtigen Projekten und relevanten Zertifizierungen."
+        },
+        "en": {
+          "title": "Software Engineer",
+          "description": "Sample resume showcasing education in computer science, work experience in software engineering, technical skills in multiple languages, key projects, and relevant certifications."
         },
         "es": {
           "title": "Ingeniero de software",
@@ -280,13 +280,13 @@
         "zh-hant-tw"
       ],
       "i18n": {
-        "en": {
-          "title": "UX Designer",
-          "description": "Sample UX designer resume showcasing education, work experience, skills in user research, wireframing, prototyping, plus relevant projects and certifications."
-        },
         "de": {
           "title": "UX-Designer",
           "description": "Beispiel-Lebenslauf für UX-Designer mit Ausbildung, Berufserfahrung, Fähigkeiten in Benutzerforschung, Wireframing, Prototyping sowie relevanten Projekten und Zertifizierungen."
+        },
+        "en": {
+          "title": "UX Designer",
+          "description": "Sample UX designer resume showcasing education, work experience, skills in user research, wireframing, prototyping, plus relevant projects and certifications."
         },
         "es": {
           "title": "Diseñador UX",

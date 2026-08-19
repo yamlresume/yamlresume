@@ -327,6 +327,9 @@ importers:
       '@yamlresume/ai':
         specifier: workspace:*
         version: link:../ai
+      commander:
+        specifier: ^15.0.0
+        version: 15.0.0
       consola:
         specifier: ^3.4.2
         version: 3.4.2
