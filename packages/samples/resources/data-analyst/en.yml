@@ -1,0 +1,204 @@
+content:
+  basics:
+    name: Maya Rodriguez
+    headline: 'Data Analyst | Turning Raw Data into Strategic Decisions'
+    phone: "(512) 555-0147"
+    email: maya.rodriguez@datavista.io
+    url: https://www.datavista.io
+    summary: |
+      Data analyst with 5+ years of experience turning complex datasets into clear, actionable insights for healthcare and retail organizations. Strong command of SQL, Python, and BI tools such as Tableau and Power BI, with a proven record of building dashboards, automating reporting, and enabling data-driven decision-making.
+
+      - Specialties include statistical analysis, A/B testing, data visualization, and predictive modeling.
+      - Experienced partnering with cross-functional stakeholders to define KPIs and translate business questions into analytical solutions.
+      - Recognized for improving reporting efficiency, reducing readmission rates, and mentoring peers in analytics best practices.
+  location:
+    city: Austin
+    region: Texas
+    country: United States
+    postalCode: "78701"
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/mayarodriguez
+      username: mayarodriguez
+    - network: GitHub
+      url: https://github.com/maya-r-data
+      username: maya-r-data
+  education:
+    - institution: The University of Texas at Austin
+      url: https://www.utexas.edu/
+      degree: Bachelor
+      area: Statistics and Data Science
+      score: "3.7"
+      startDate: Aug 25, 2015
+      endDate: May 18, 2019
+      courses:
+        - Introduction to Data Science
+        - Statistical Methods and Inference
+        - Regression Analysis
+        - Database Management Systems
+        - Machine Learning Fundamentals
+        - Data Visualization
+        - Probability and Stochastic Processes
+        - Time Series Analysis
+      summary: |
+        - Developed a strong foundation in statistics, data modeling, and computing through project-based coursework.
+        - Senior capstone project used logistic regression and random forests to predict student retention with 80% accuracy.
+        - Served as Vice President of the Data Science Society, organizing workshops, guest lectures, and hackathons.
+  work:
+    - name: Meridian Health Analytics
+      url: https://www.meridianhealthanalytics.com
+      position: Data Analyst
+      startDate: Aug 1, 2021
+      summary: |
+        - Partner with clinical and operations teams to define KPIs and design interactive Tableau dashboards, cutting monthly reporting time by 40%.
+        - Write optimized SQL queries to extract, clean, and aggregate patient data from electronic health records and claims databases.
+        - Develop Python and Pandas pipelines to analyze readmission rates, supporting interventions that reduced hospital readmissions by 12%.
+        - Design and evaluate A/B tests to measure the impact of care management changes, presenting findings to hospital leadership.
+        - Maintain reporting documentation and train analysts on self-service analytics tools.
+      keywords:
+        - SQL
+        - Python
+        - Tableau
+        - Healthcare Analytics
+        - A/B Testing
+        - Data Pipelines
+    - name: BluePeak Retail Group
+      url: https://www.bluepeakretail.com
+      position: Junior Data Analyst
+      startDate: Jun 3, 2019
+      endDate: Jul 30, 2021
+      summary: |
+        - Built daily sales and inventory dashboards in Power BI, providing real-time performance visibility across 120 store locations.
+        - Automated recurring Excel reports using VBA and SQL stored procedures, saving an estimated 250 hours of manual work annually.
+        - Performed data cleaning and QA on CRM data to improve accuracy in customer segmentation and campaign targeting.
+        - Collaborated with the marketing team to analyze promotional campaigns and optimize spend by 15%.
+      keywords:
+        - Power BI
+        - Excel
+        - SQL
+        - Retail Analytics
+        - Data Cleaning
+  skills:
+    - name: 'Data Analysis & Statistics'
+      level: Expert
+      keywords:
+        - SQL
+        - Python
+        - Pandas
+        - NumPy
+        - R
+        - A/B Testing
+        - Regression Analysis
+        - Hypothesis Testing
+    - name: Data Visualization
+      level: Advanced
+      keywords:
+        - Tableau
+        - Power BI
+        - Looker
+        - Matplotlib
+        - Seaborn
+        - Dashboard Design
+    - name: 'Data Engineering & Tools'
+      level: Intermediate
+      keywords:
+        - dbt
+        - Airflow
+        - AWS Redshift
+        - Snowflake
+        - Git
+        - Spark
+  languages:
+    - language: English
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - Native Speaker
+        - Technical Writing
+    - language: Spanish
+      fluency: Limited Working Proficiency
+      keywords:
+        - DELE B1
+        - Basic Business Spanish
+  awards:
+    - title: Excellence in Healthcare Analytics Award
+      awarder: Meridian Health Analytics
+      date: Jan 15, 2024
+      summary: |
+        Recognized for leading the design of a hospital-wide readmission risk dashboard adopted by care coordination teams to prioritize high-risk patients.
+  certificates:
+    - name: Google Data Analytics Professional Certificate
+      issuer: Google
+      date: Aug 20, 2020
+      url: https://www.coursera.org/professional-certificates/google-data-analytics
+    - name: Tableau Desktop Specialist
+      issuer: Tableau
+      date: Feb 10, 2022
+      url: https://www.tableau.com/learn/certification
+  publications:
+    - name: How Healthcare Organizations Can Leverage Predictive Analytics
+      publisher: 'Data & Insights Quarterly'
+      releaseDate: Mar 5, 2023
+      url: https://www.datainsightsquarterly.org/articles/healthcare-predictive-analytics
+      summary: |
+        Published article exploring practical applications of machine learning in reducing hospital readmissions and improving patient outcomes, based on case studies from my work in healthcare analytics.
+  projects:
+    - name: Customer Churn Prediction Engine
+      url: https://github.com/maya-r-data/churn-prediction
+      startDate: Jan 1, 2023
+      endDate: May 1, 2023
+      summary: |
+        - Built an end-to-end churn prediction model for a subscription retail service using Python and scikit-learn.
+        - Engineered features from transactions, web sessions, and support tickets, achieving 85% ROC-AUC.
+        - Deployed a Streamlit dashboard for business users to explore at-risk customer segments and retention levers.
+      description: |
+        This project applies supervised machine learning to identify customers likely to churn and recommend targeted retention strategies. It includes data preprocessing, feature engineering, model selection, and an interactive dashboard for stakeholders.
+      keywords:
+        - Python
+        - scikit-learn
+        - Tableau
+        - Churn Prediction
+        - Feature Engineering
+        - Streamlit
+    - name: Sales Forecasting Dashboard
+      url: https://github.com/maya-r-data/sales-forecast
+      startDate: Sep 1, 2022
+      endDate: Dec 1, 2022
+      summary: |
+        - Created a real-time Tableau dashboard for sales forecasting using time series models and historical transaction data.
+        - Connected Snowflake data warehouse to Tableau to provide daily store-level predictions for regional managers.
+        - Improved inventory allocation and reduced stockouts by 10% across pilot stores.
+      description: |
+        Interactive forecasting dashboard used by retail operations teams to monitor demand, adjust inventory, and plan promotions based on predicted sales.
+      keywords:
+        - Tableau
+        - Snowflake
+        - Time Series
+        - Forecasting
+        - Inventory Management
+  interests:
+    - name: Data Storytelling
+      keywords:
+        - Tableau Public
+        - Technical Blogging
+        - Visualization Design
+    - name: Hiking
+      keywords:
+        - National Parks
+        - Trail Running
+        - Outdoor Photography
+    - name: Jazz Music
+      keywords:
+        - Piano
+        - Live Concerts
+  volunteer:
+    - organization: Code for Austin
+      url: https://www.codeforaustin.org
+      position: Data Mentor
+      startDate: Jan 1, 2022
+      summary: |
+        - Mentor volunteer developers on data cleaning, analysis, and visualization for community-focused projects.
+        - Lead monthly workshops on Python, SQL, and storytelling with data.
+        - Support local nonprofits in building dashboards that communicate impact to funders.
+
+locale:
+  language: en

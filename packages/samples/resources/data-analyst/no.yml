@@ -1,0 +1,222 @@
+content:
+  basics:
+    name: Ingrid Eriksen
+    headline: Dataanalytiker med fokus på innsikt og visualisering
+    phone: "+47 412 34 567"
+    email: ingrid.eriksen@gmail.com
+    url: https://ingrid-eriksen.no
+    summary: |
+      - Analytisk og nysgjerrig dataanalytiker med erfaring fra offentlig sektor og konsulentbransjen
+      - Sterk kompetanse innen dataanalyse, statistikk og maskinlæring, med verktøy som Python, SQL, R og Power BI
+      - God til å formidle komplekse sammenhenger til ulike målgrupper og skape beslutningsgrunnlag
+      - Erfaring med datavask, visualisering og utvikling av automatiserte analyser
+
+  location:
+    address: Kirkegata 12
+    city: Oslo
+    region: Oslo
+    country: Norway
+    postalCode: "0153"
+
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/ingrid-eriksen
+      username: ingrid-eriksen
+    - network: GitHub
+      url: https://github.com/ingeriksen
+      username: ingeriksen
+
+  education:
+    - institution: Universitetet i Oslo
+      url: https://www.uio.no/
+      degree: Master
+      area: Samfunnsøkonomi
+      score: "A / 5,0"
+      startDate: Aug 15, 2016
+      endDate: Jun 30, 2021
+      courses:
+        - Statistikk for samfunnsvitere
+        - Økonometri med Python
+        - Maskinlæring for samfunnsvitere
+        - Datavask og datahåndtering
+        - Avansert kvantitativ metode
+        - Samfunnsvitenskapelig dataanalyse
+      summary: |
+        - Fordypet meg i kvantitative metoder, statistikk og programmering
+        - Skrev masteroppgave om sammenhengen mellom kollektivtilbud og boligpriser i Oslo
+        - Erfaring med analyse av store datasett i R, Python og Stata
+
+  work:
+    - name: Statistisk sentralbyrå
+      url: https://www.ssb.no
+      position: Dataanalytiker
+      startDate: Sep 1, 2022
+      summary: |
+        - Utvikler og vedlikeholder analyser av norsk økonomi og befolkning
+        - Bygger dashbord og rapporter for interne og eksterne brukere med Power BI og R Markdown
+        - Bearbeider og validerer store datasett fra ulike kilder med Python og SQL
+        - Presenterer resultater for ledergruppen og bidrar til datadrevne beslutninger
+      keywords:
+        - SQL
+        - Python
+        - Power BI
+        - Statistisk analyse
+        - Datavask
+    - name: Tietoevry
+      url: https://www.tietoevry.com
+      position: Analysekonsulent
+      startDate: Sep 1, 2021
+      endDate: Aug 31, 2022
+      summary: |
+        - Gjennomførte kundeanalyser og ad-hoc-rapporter for privat og offentlig sektor
+        - Automatiserte gjentakende analyser med Python, noe som reduserte manuelt arbeid med om lag 40 prosent
+        - Samarbeidet med prosjektteam for å avklare kundens behov og levere skreddersydde analyseløsninger
+      keywords:
+        - Python
+        - SQL
+        - Excel
+        - Kunderapporter
+        - Automatisering
+    - name: Universitetet i Oslo
+      url: https://www.uio.no
+      position: Studentassistent i statistikk
+      startDate: Aug 1, 2018
+      endDate: Jun 30, 2020
+      summary: |
+        - Holdt øvingstimer i statistikk og veiledet studenter i bruk av R
+        - Bidro til utvikling av oppgaver og eksamenssett i samarbeid med faglærer
+      keywords:
+        - R
+        - Undervisning
+        - Statistikk
+
+  languages:
+    - language: Norwegian
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - Morsmål
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - IELTS 7.5
+        - Akademisk og profesjonell
+
+  skills:
+    - name: Dataanalyse
+      level: Expert
+      keywords:
+        - Python
+        - SQL
+        - R
+        - Excel
+        - Stata
+        - Pandas
+        - NumPy
+    - name: Datavisualisering
+      level: Advanced
+      keywords:
+        - Power BI
+        - Tableau
+        - R Markdown
+        - ggplot2
+        - Matplotlib
+    - name: Maskinlæring
+      level: Intermediate
+      keywords:
+        - scikit-learn
+        - TensorFlow
+        - Keras
+        - NLP
+        - Klassifisering
+    - name: Statistiske metoder
+      level: Expert
+      keywords:
+        - Regresjonsanalyse
+        - Hypotesetesting
+        - Tidsserieanalyse
+        - Bayesiansk statistikk
+        - Signifikanstesting
+
+  awards:
+    - title: Masteroppgaveprisen
+      date: Sep 1, 2021
+      awarder: Norsk statistisk forening
+      summary: |
+        Fikk pris for masteroppgaven 'Kollektivtilbud og boligpriser i Oslo' – en empirisk analyse med fokus på kausale sammenhenger.
+
+  certificates:
+    - name: 'Microsoft Certified: Data Analyst Associate'
+      issuer: Microsoft
+      date: Mar 15, 2023
+      url: https://learn.microsoft.com/en-us/certifications/data-analyst-associate/
+    - name: Google Data Analytics Professional Certificate
+      issuer: Google
+      date: Jun 1, 2021
+      url: https://www.coursera.org/professional-certificates/google-data-analytics
+
+  publications:
+    - name: 'Sammenhengen mellom kollektivtilbud og boligpriser: En kvantitativ
+        analyse av Oslo'
+      publisher: Samfunnsøkonomen
+      releaseDate: Mar 1, 2022
+      url: https://www.samfunnsokonomen.no/
+      summary: |
+        - Analyserer hvordan økt frekvens i kollektivtransporten påvirker boligprisene i Oslo
+        - Bruker faste effekter og instrumentvariabler for å identifisere kausale sammenhenger
+        - Funnene viser en signifikant, men moderat, positiv effekt på boligpriser i nærheten av holdeplasser
+
+  projects:
+    - name: Oslos kollektivsystem – åpen data-analyse
+      url: https://github.com/ingeriksen/kollektiv-analyse
+      description: Analyseprosjekt som kombinerer åpne data fra Ruter og SSB for å
+        utforske bruksmønstre og tilgjengelighet.
+      startDate: Jan 15, 2023
+      endDate: Apr 30, 2023
+      summary: |
+        - Utviklet en interaktiv rapport som visualiserer hvordan kollektivtilbudet varierer mellom bydeler
+        - Benyttet Python for datavask og geografisk analyse, og bygget dashbord i Plotly Dash
+        - Publisert på GitHub med åpen kildekode for gjenbruk
+      keywords:
+        - Python
+        - Plotly
+        - API
+        - Dataanalyse
+    - name: Valgresultater – prediksjonsmodell
+      url: https://github.com/ingeriksen/valgresultater
+      description: En modell for å predikere valgdeltakelse i norske kommuner basert
+        på demografi og tidligere valg.
+      startDate: May 1, 2021
+      endDate: Aug 15, 2021
+      summary: |
+        - Bygget en regresjonsmodell med scikit-learn basert på data fra 356 kommuner
+        - Identifiserte utdanningsnivå og alderssammensetning som viktigste prediktorer
+        - Dokumenterte prosessen i en Jupyter Notebook med tilhørende forklaringer
+      keywords:
+        - scikit-learn
+        - Jupyter
+        - Regresjon
+        - Valg
+
+  interests:
+    - name: Friluftsliv
+      keywords:
+        - Fjellturer
+        - Ski
+        - Kajakk
+    - name: Teknologi
+      keywords:
+        - Datavisualisering
+        - Åpne data
+        - Kunstig intelligens
+
+  volunteer:
+    - organization: Røde Kors Oslo
+      url: https://www.rodekors.no
+      position: Frivillig datahjelper
+      startDate: Jan 1, 2023
+      summary: |
+        - Hjelper frivillige med å strukturere og analysere medlemsdata
+        - Utvikler en enkel oversikt over aktivitetsnivå og rekruttering i Excel og Power BI
+
+locale:
+  language: no

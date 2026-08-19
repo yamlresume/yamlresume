@@ -1,0 +1,190 @@
+content:
+  basics:
+    name: 林怡君
+    headline: 數據分析師｜商業智慧與資料視覺化
+    phone: "+886 912 345 678"
+    email: yichun.lin@datainsight.tw
+    url: https://github.com/yichunlin-data
+    summary: |
+      具 5 年資料分析實務經驗，擅長從龐雜數據中挖掘商業洞見，並以視覺化工具協助決策。熟悉 SQL、Python 與 Tableau，曾主導客戶分群、流失預測與行銷成效分析專案，為企業提升營收與營運效率。具備跨部門溝通能力，能將分析結果轉化為具體行動方案。
+  location:
+    address: 台北市中山區南京東路三段100號
+    city: 台北市
+    region: 台北市
+    country: Taiwan
+    postalCode: "104"
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/yichunlin-data
+      username: yichunlin-data
+    - network: GitHub
+      url: https://github.com/yichunlin-data
+      username: yichunlin-data
+    - network: Medium
+      url: https://medium.com/@yichunlin-data
+      username: yichunlin-data
+  education:
+    - institution: 國立台灣大學
+      url: https://www.ntu.edu.tw/
+      degree: Bachelor
+      area: 資訊管理學系
+      score: '3.9/4.0'
+      startDate: 2015-09-01
+      endDate: 2019-06-30
+      courses:
+        - 統計學（一）（二）
+        - 資料庫管理
+        - 資料探勘
+        - 作業研究
+        - 程式設計與演算法
+        - 資訊管理導論
+      summary: |
+        - 主修資訊管理，副修統計學，奠定資料分析與程式開發基礎
+        - 畢業專題以社群媒體文字探勘分析消費者情緒，獲得系上優良專題獎
+        - 修習多門資料科學相關課程，並以 Python 完成實作專案
+  work:
+    - name: 台新國際商業銀行
+      url: https://www.taishinbank.com.tw/
+      position: 數據分析師
+      startDate: 2022-03-01
+      summary: |
+        - 主導信用卡顧客分群與行為預測模型，協助行銷團隊設計個人化優惠方案，提升點擊率 25%
+        - 建立自動化 ETL 流程，整合跨部門交易與會員資料，縮短報表產出時間 40%
+        - 使用 SQL 與 Python 進行 A/B 測試成效分析，提供產品迭代具體建議
+        - 開發 Tableau 經營儀表板，供高階主管即時掌握關鍵績效指標
+      keywords:
+        - SQL
+        - Python
+        - Tableau
+        - A/B Testing
+        - ETL
+        - Data Modeling
+    - name: 台灣大哥大股份有限公司
+      url: https://www.taiwanmobile.com/
+      position: 商業數據分析助理
+      startDate: 2020-07-01
+      endDate: 2022-02-28
+      summary: |
+        - 協助分析 4G/5G 用戶使用行為，定期產出月報與專題分析簡報
+        - 整理與清理客戶服務歷程資料，建立流失預警規則，降低客戶流失率 12%
+        - 支援行銷活動成效評估，透過迴歸分析找出影響續約率的關鍵因素
+      keywords:
+        - Excel
+        - SAS
+        - 資料清理
+        - 迴歸分析
+        - 簡報製作
+  skills:
+    - name: 資料分析
+      level: Expert
+      keywords:
+        - SQL
+        - Python
+        - Pandas
+        - NumPy
+        - 統計檢定
+    - name: 資料視覺化
+      level: Advanced
+      keywords:
+        - Tableau
+        - Power BI
+        - Google Data Studio
+        - matplotlib
+    - name: 程式語言
+      level: Advanced
+      keywords:
+        - Python
+        - R
+        - SQL
+    - name: 機器學習
+      level: Intermediate
+      keywords:
+        - Scikit-learn
+        - XGBoost
+        - 分類模型
+        - 分群分析
+    - name: 工具與平台
+      level: Advanced
+      keywords:
+        - Git
+        - Airflow
+        - dbt
+        - Snowflake
+        - BigQuery
+  languages:
+    - language: Chinese
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - 母語
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - TOEIC 950
+        - TOEFL iBT 105
+  certificates:
+    - name: Google Data Analytics Professional Certificate
+      issuer: Google
+      date: 2021-06-30
+      url: https://coursera.org/verify/professional-cert/google-data-analytics
+    - name: Tableau Desktop Specialist
+      issuer: Tableau
+      date: 2022-08-15
+      url: https://www.tableau.com/learn/certification
+  awards:
+    - title: 第 10 屆台灣資料科學競賽 亞軍
+      awarder: 台灣資料科學協會
+      date: 2021-12-10
+      summary: |
+        與團隊以電商客戶流失預測模型參賽，在 200 餘隊中獲得第二名，並於成果發表會展示分析流程。
+  projects:
+    - name: 客戶流失預測模型
+      url: https://github.com/yichunlin-data/churn-prediction
+      description: 以電商訂單與會員互動資料建立流失預測模型，提供行銷團隊精準名單
+      startDate: 2021-03-01
+      endDate: 2021-08-31
+      summary: |
+        - 清理並整合 50 萬筆會員交易資料，設計 30 餘個特徵
+        - 比較 Logistic Regression、Random Forest 與 XGBoost 模型，最終 AUC 達 0.87
+        - 以 SHAP 解釋模型重要變數，並轉換為行動建議供行銷團隊使用
+      keywords:
+        - Python
+        - Scikit-learn
+        - XGBoost
+        - SHAP
+        - Feature Engineering
+    - name: 即時銷售儀表板
+      url: https://public.tableau.com/app/profile/yichunlin-data
+      description: 串接 POS 系統資料，建立零售銷售即時監控儀表板
+      startDate: 2022-10-01
+      endDate: 2023-01-31
+      summary: |
+        - 使用 Tableau Prep 清理每日銷售資料，並以 Tableau 建立互動式儀表板
+        - 提供店鋪、商品、時段等多維度分析視圖，協助營運團隊掌握銷售趨勢
+      keywords:
+        - Tableau
+        - Tableau Prep
+        - POS
+        - 即時監控
+  interests:
+    - name: 資料科學社群
+      keywords:
+        - Kaggle
+        - 資料松
+        - 讀書會
+    - name: 戶外運動
+      keywords:
+        - 登山
+        - 瑜珈
+        - 自行車
+  volunteer:
+    - organization: Code for Tomorrow（資料科學教育志工）
+      url: https://codefortomorrow.org/
+      position: 講師
+      startDate: 2022-02-01
+      endDate: 2023-12-31
+      summary: |
+        - 至偏鄉國中教授基礎程式設計與資料分析概念，啟發學生對科技的興趣
+        - 協助設計互動式教材與小型實作專案，累計服務超過 100 名學生
+
+locale:
+  language: zh-hant-tw

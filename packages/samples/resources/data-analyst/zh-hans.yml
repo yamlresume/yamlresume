@@ -1,0 +1,239 @@
+content:
+  basics:
+    name: 林晓雨
+    headline: 资深数据分析师 | 商业智能与数据驱动决策专家
+    phone: "+86 138 1234 5678"
+    email: xiaoyu.lin@dataview.cn
+    url: https://dataview.cn/xiaoyu
+    summary: |
+      拥有 7 年数据分析与商业智能经验，擅长将海量数据转化为可落地的业务洞察。
+
+      - 精通 SQL、Python 和 R，熟悉数据仓库建模、ETL 流程与 A/B 测试设计
+      - 熟练使用 Tableau、Power BI 等可视化工具，主导多个经营分析看板体系建设
+      - 善于与产品、运营、技术团队协作，推动数据驱动文化落地
+      - 曾通过用户画像与行为分析项目为业务带来 18% 的转化率提升
+
+  location:
+    address: 北京市朝阳区建国路88号
+    city: 北京
+    region: 北京市
+    country: China
+    postalCode: "100022"
+
+  profiles:
+    - network: GitHub
+      url: https://github.com/linxiaoyu
+      username: linxiaoyu
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/linxiaoyu
+      username: linxiaoyu
+
+  education:
+    - institution: 北京大学
+      url: https://www.pku.edu.cn
+      degree: Master
+      area: 统计学
+      score: "3.9"
+      startDate: 2015-09-01
+      endDate: 2018-07-01
+      courses:
+        - 高等数理统计
+        - 回归分析
+        - 时间序列分析
+        - 数据挖掘
+        - 机器学习
+        - 抽样调查
+        - 多元统计分析
+        - 数据库系统原理
+      summary: |
+        - 研究方向为统计学习与商业数据分析，毕业论文《基于机器学习的用户流失预测模型研究》获评优秀
+        - 参与导师课题“消费者行为建模”，负责数据清洗、特征工程与模型评估
+
+    - institution: 武汉大学
+      url: https://www.whu.edu.cn
+      degree: Bachelor
+      area: 应用数学
+      score: "3.7"
+      startDate: 2011-09-01
+      endDate: 2015-07-01
+      courses:
+        - 数学分析
+        - 高等代数
+        - 概率论
+        - 数理统计
+        - 常微分方程
+        - 编程语言基础
+      summary: |
+        - 打下扎实的数学与统计基础，多次获得校级奖学金
+        - 担任数学建模社团负责人，组织校内建模比赛与培训
+
+  work:
+    - name: 上海云图信息科技有限公司
+      url: https://www.cloudmap.example.com
+      position: 高级数据分析师
+      startDate: 2021-09-01
+      summary: |
+        - 负责公司核心业务指标体系搭建，设计并落地用户增长、留存与转化分析框架
+        - 搭建自动化报表平台，将周报、月报产出时间从 6 小时缩短至 40 分钟
+        - 主导商品推荐策略 A/B 实验，结合用户行为序列建模，使推荐点击率提升 15%
+        - 与数据工程团队协作优化数据仓库分层架构，提升核心表查询效率近 50%
+        - 定期向管理层输出经营分析报告，支持年度业务目标制定与资源分配决策
+      keywords:
+        - 指标体系
+        - 用户增长
+        - A/B测试
+        - 数据仓库
+        - Tableau
+        - 经营分析
+
+    - name: 北京启明互联网有限公司
+      url: https://www.qiming.example.com
+      position: 数据分析师
+      startDate: 2018-07-01
+      endDate: 2021-08-31
+      summary: |
+        - 负责资讯类 App 的用户行为分析，完成埋点方案梳理与核心事件定义
+        - 基于漏斗分析定位用户流失关键节点，协同产品优化注册流程，转化率提升 12%
+        - 使用 Python 构建自动化数据质量检查脚本，减少人工核对工作量 70%
+        - 独立完成多份专题分析报告，覆盖推送策略、内容消费偏好与用户画像
+      keywords:
+        - 漏斗分析
+        - 埋点方案
+        - Python
+        - 用户画像
+        - SQL
+        - 数据质量
+
+  languages:
+    - language: Chinese
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - 母语
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - CET-6
+        - 技术文档阅读
+        - 商务沟通
+
+  skills:
+    - name: 数据分析
+      level: Expert
+      keywords:
+        - Python
+        - SQL
+        - R
+        - Pandas
+        - NumPy
+    - name: 数据可视化
+      level: Advanced
+      keywords:
+        - Tableau
+        - Power BI
+        - Matplotlib
+        - ECharts
+    - name: 机器学习
+      level: Intermediate
+      keywords:
+        - Scikit-learn
+        - XGBoost
+        - 特征工程
+        - 模型评估
+    - name: 数据库与数据仓库
+      level: Advanced
+      keywords:
+        - MySQL
+        - PostgreSQL
+        - Hive
+        - 数据建模
+    - name: 商业智能
+      level: Advanced
+      keywords:
+        - 指标体系设计
+        - 经营分析
+        - A/B测试
+        - 数据产品
+
+  awards:
+    - title: 年度数据创新奖
+      awarder: 上海云图信息科技有限公司
+      date: Jan 2023
+      summary: |
+        因主导搭建自动化经营分析平台并显著提升数据使用效率，获评公司年度数据创新奖。
+    - title: 优秀毕业论文
+      awarder: 北京大学
+      date: Jun 2018
+      summary: |
+        毕业论文《基于机器学习的用户流失预测模型研究》被评为北京大学统计学系优秀毕业论文。
+
+  certificates:
+    - name: CDA 数据分析师认证
+      issuer: CDA 数据分析研究院
+      date: 2020-06-15
+      url: https://www.cda.cn/verification
+    - name: Google Data Analytics Professional Certificate
+      issuer: Google
+      date: 2019-12-01
+      url: https://www.coursera.org/professional-certificates/google-data-analytics
+
+  publications:
+    - name: 基于用户行为序列的电商购买意向预测
+      publisher: 数据分析与知识发现
+      releaseDate: 2021-03-01
+      url: https://www.example.com/publication
+      summary: |
+        提出融合时间注意力机制的用户行为序列模型，并在真实电商数据集上验证了模型在购买意向预测任务中的有效性。
+
+  projects:
+    - name: 全渠道用户增长分析平台
+      url: https://www.cloudmap.example.com/growth
+      description: 支撑市场、运营、产品团队的日常数据查询与增长实验分析
+      startDate: 2022-03-01
+      endDate: 2022-12-31
+      summary: |
+        - 负责需求梳理、指标口径定义与前端看板原型设计
+        - 搭建数据中间层，统一用户、订单、商品等核心实体
+        - 设计“对比分析—下钻—归因”的自助分析流程，赋能 30+ 业务人员
+      keywords:
+        - 数据产品
+        - 看板设计
+        - 数据中台
+        - 用户增长
+
+    - name: 电商用户流失预警系统
+      description: 基于用户行为与交易数据构建流失风险模型
+      startDate: 2020-05-01
+      endDate: 2020-12-31
+      summary: |
+        - 清洗并整合 3 亿条用户行为日志，完成 60+ 特征衍生
+        - 使用 XGBoost 与 LightGBM 构建流失预测模型，AUC 达到 0.87
+        - 输出高风险用户名单与挽回建议，支撑运营制定精准触达策略
+      keywords:
+        - 用户流失
+        - 机器学习
+        - XGBoost
+        - 特征工程
+
+  interests:
+    - name: 阅读
+      keywords:
+        - 商业分析
+        - 数据科学
+    - name: 篮球
+      keywords:
+        - 团队运动
+    - name: 围棋
+      keywords:
+        - 策略思考
+
+  volunteer:
+    - organization: 数据科学公益社区
+      url: https://www.datacommunity.example.com
+      position: 志愿者讲师
+      startDate: 2022-01-01
+      summary: |
+        - 面向非营利组织与职场新人开展数据分析公益讲座
+        - 设计并讲授“Excel 到 Python 的数据分析入门”系列课程，累计服务 500+ 人次
+
+locale:
+  language: zh-hans

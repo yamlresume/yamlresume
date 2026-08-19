@@ -1,0 +1,249 @@
+content:
+  basics:
+    name: Beatriz Carvalho
+    headline: 'Analista de Dados | SQL, Python e Power BI'
+    phone: "+55 11 98888-7766"
+    email: beatriz.carvalho.dados@gmail.com
+    url: https://www.beatrizcarvalho.dev.br
+    summary: |
+      Analista de Dados com mais de 5 anos de experiência nos setores de varejo,
+      finanças e tecnologia. Atuo na transformação de dados brutos em insights
+      acionáveis, apoiando decisões estratégicas com análises descritivas,
+      dashboards executivos e automação de relatórios.
+
+      - Especialista em SQL, Python, Power BI e estatística descritiva.
+      - Experiência em ETL, modelagem dimensional e storytelling com dados.
+      - Histórico de redução de 30% no tempo de elaboração de relatórios e
+        aumento de 12% na conversão de campanhas analisadas.
+      - Perfil colaborativo, com forte comunicação entre áreas de negócio e
+        tecnologia.
+
+  location:
+    city: São Paulo
+    region: SP
+    country: Brazil
+    postalCode: "01310-100"
+
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/beatriz-carvalho-dados
+      username: beatriz-carvalho-dados
+    - network: GitHub
+      url: https://github.com/beatrizcarvalho
+      username: beatrizcarvalho
+
+  education:
+    - institution: Universidade de São Paulo
+      url: https://www.ime.usp.br
+      degree: Bachelor
+      area: Estatística e Ciência de Dados
+      score: "8.7"
+      startDate: Feb 2015
+      endDate: Dec 2018
+      courses:
+        - Estatística Descritiva
+        - Probabilidade I e II
+        - Inferência Estatística
+        - Modelos Lineares
+        - Introdução à Programação
+        - Banco de Dados
+        - Aprendizado de Máquina
+        - Séries Temporais
+      summary: |
+        - Formação sólida em estatística, probabilidade e análise de dados.
+        - Projetos acadêmicos com modelagem preditiva, testes de hipóteses e
+          visualização de dados.
+        - Iniciação científica em análise de séries temporais aplicada a dados
+          econômicos.
+
+  work:
+    - name: TechRetail Brasil
+      url: https://www.techretail.com.br
+      position: Analista de Dados Pleno
+      startDate: Jan 2023
+      summary: |
+        - Lidero a construção de dashboards executivos em Power BI para as áreas
+          de vendas, marketing e operações.
+        - Desenvolvo pipelines de ETL em Python e SQL integrando dados de ERP,
+          CRM e Google Analytics.
+        - Realizo análises de desempenho de campanhas e comportamento de
+          clientes, com recomendações que aumentaram a conversão em 12% no
+          último ano.
+        - Automatizo relatórios semanais e mensais, reduzindo em 30% o tempo de
+          elaboração.
+        - Atuo como ponte entre as áreas de negócio e tecnologia para definição
+          de métricas e indicadores.
+      keywords:
+        - Power BI
+        - SQL
+        - Python
+        - ETL
+        - Storytelling
+
+    - name: CrediZap Financeira
+      url: https://www.credizap.com.br
+      position: Analista de Dados Júnior
+      startDate: Mar 2021
+      endDate: Dec 2022
+      summary: |
+        - Criei relatórios gerenciais de crédito e inadimplência no Tableau e
+          Excel.
+        - Modelei dados da carteira de clientes em SQL Server para subsidiar
+          análises de risco.
+        - Automatizei extrações e tratamento de dados com Python, reduzindo
+          retrabalho operacional.
+        - Colaborei com cientistas de dados em projetos de score de crédito e
+          segmentação de clientes.
+      keywords:
+        - Tableau
+        - SQL Server
+        - Excel
+        - Análise de Crédito
+        - Python
+
+    - name: DataSeg Consultoria
+      url: https://www.dataseg.com.br
+      position: Estagiária de Inteligência de Mercado
+      startDate: Jun 2019
+      endDate: Feb 2021
+      summary: |
+        - Suportei consultores em projetos de pesquisa de mercado e análise de
+          concorrência.
+        - Estruturei bases de dados em Excel e Access para consolidação de
+          indicadores.
+        - Produzi materiais de apoio com análises descritivas e gráficos para
+          apresentações a clientes.
+      keywords:
+        - Pesquisa de Mercado
+        - Excel
+        - Análise Descritiva
+        - Relatórios
+
+  languages:
+    - language: Portuguese
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - Português do Brasil
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - TOEFL ITP 587
+        - Leitura e conversação técnica
+    - language: Spanish
+      fluency: Limited Working Proficiency
+      keywords:
+        - Espanhol intermediário
+
+  skills:
+    - name: Análise de Dados
+      level: Expert
+      keywords:
+        - SQL
+        - Python
+        - Pandas
+        - Estatística
+        - Excel
+    - name: Visualização de Dados
+      level: Advanced
+      keywords:
+        - Power BI
+        - Tableau
+        - DAX
+        - Looker Studio
+        - Storytelling com Dados
+    - name: Bancos de Dados
+      level: Advanced
+      keywords:
+        - PostgreSQL
+        - MySQL
+        - SQL Server
+        - BigQuery
+        - NoSQL
+    - name: Estatística e Machine Learning
+      level: Intermediate
+      keywords:
+        - Regressão
+        - Testes A/B
+        - Séries Temporais
+        - scikit-learn
+
+  awards:
+    - title: Prêmio Excelência em Dados
+      date: Dec 2023
+      awarder: TechRetail Brasil
+      summary: |
+        Reconhecimento interno pela liderança no projeto de painel de
+        indicadores estratégicos, que impactou positivamente as decisões da
+        diretoria de varejo.
+
+  certificates:
+    - name: Certificação Microsoft PL-300 - Power BI Data Analyst
+      issuer: Microsoft
+      date: Mar 2023
+      url: https://learn.microsoft.com/pt-br/credentials/certifications/data-analyst-associate/
+    - name: Google Data Analytics Professional Certificate
+      issuer: Google
+      date: Jul 2021
+      url: https://www.coursera.org/professional-certificates/google-data-analytics
+
+  projects:
+    - name: Dashboard de Vendas Interativo
+      url: https://github.com/beatrizcarvalho/dashboard-vendas
+      description: Desenvolvimento de um dashboard em Power BI para acompanhamento de
+        metas comerciais.
+      startDate: Feb 2023
+      endDate: Mar 2023
+      summary: |
+        - Modelei dados de vendas no Power Query e DAX.
+        - Criei indicadores de receita, ticket médio e margem por região e
+          categoria.
+        - Publiquei o dashboard como portfólio de análise de dados.
+      keywords:
+        - Power BI
+        - DAX
+        - SQL
+        - Vendas
+
+    - name: Análise de Churn de Clientes
+      url: https://github.com/beatrizcarvalho/churn-analysis
+      description: Projeto de análise exploratória e predição de churn para uma base
+        de clientes de telecomunicações.
+      startDate: Nov 2022
+      endDate: Dec 2022
+      summary: |
+        - Apliquei técnicas de análise exploratória e testes de hipóteses.
+        - Construí modelo de regressão logística com scikit-learn.
+        - Apresentei os principais fatores associados ao cancelamento de clientes.
+      keywords:
+        - Python
+        - Pandas
+        - scikit-learn
+        - Churn
+
+  volunteer:
+    - organization: Programa Meninas na Computação
+      url: https://www.meninasnacomputacao.org.br
+      position: Mentora de Dados
+      startDate: Mar 2022
+      endDate: Dec 2023
+      summary: |
+        - Atuei como mentora voluntária em oficinas de introdução à análise de
+          dados.
+        - Auxiliei na elaboração de material didático em Python e Power BI.
+        - Incentivei a participação de mulheres em carreiras de tecnologia e
+          dados.
+
+  interests:
+    - name: Tecnologia
+      keywords:
+        - Ciência de Dados
+        - Open Source
+        - Visualização de Dados
+    - name: Esportes
+      keywords:
+        - Corrida
+        - Vôlei
+        - Natação
+
+locale:
+  language: pt-br

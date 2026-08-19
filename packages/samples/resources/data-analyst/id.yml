@@ -1,0 +1,181 @@
+content:
+  basics:
+    name: Rizky Pratama
+    headline: Data Analyst Berpengalaman dalam SQL, Python, dan Visualisasi Data
+    phone: "+62 812-3456-7890"
+    email: rizky.pratama@email.com
+    url: https://rizkypratama.id
+    summary: |
+      Data Analyst dengan lebih dari 4 tahun pengalaman mengolah data menjadi insight strategis untuk mendukung pengambilan keputusan bisnis.
+
+      - Mahir menggunakan SQL, Python, dan Excel untuk ekstraksi, pembersihan, dan analisis data
+      - Berpengalaman membangun dashboard interaktif dengan Tableau dan Power BI untuk memantau performa bisnis secara real-time
+      - Mampu menerapkan metode statistik dan A/B testing untuk mengukur dampak inisiatif bisnis
+      - Berorientasi pada detail, komunikatif, dan terbiasa bekerja sama dengan tim lintas fungsi
+  location:
+    address: Jl. Senopati No. 45
+    city: Jakarta Selatan
+    region: DKI Jakarta
+    country: Indonesia
+    postalCode: "12190"
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/rizkypratama
+      username: rizkypratama
+    - network: GitHub
+      url: https://github.com/rizkypratama
+      username: rizkypratama
+  education:
+    - institution: Universitas Indonesia
+      url: https://www.ui.ac.id
+      degree: Bachelor
+      area: Statistika
+      score: "3.72"
+      startDate: "Aug 1, 2016"
+      endDate: "Jul 1, 2020"
+      courses:
+        - Statistika Matematika
+        - Analisis Data Eksploratif
+        - Regresi Linear
+        - Desain Eksperimen
+        - Basis Data dan SQL
+        - Pengantar Machine Learning
+      summary: |
+        - Lulus dengan predikat cum laude dan IPK 3.72/4.00
+        - Menyelesaikan tugas akhir berjudul "Analisis Faktor yang Mempengaruhi Kepuasan Pelanggan E-commerce Menggunakan Regresi Logistik"
+        - Aktif sebagai asisten praktikum mata kuliah Statistika dan Analisis Data
+  work:
+    - name: PT Data Nusantara
+      url: https://www.datanusantara.co.id
+      position: Data Analyst
+      startDate: "Mar 1, 2022"
+      summary: |
+        - Mengembangkan dan memelihara dashboard kinerja perusahaan menggunakan Tableau dan Power BI untuk 5 departemen
+        - Menganalisis data penjualan dan perilaku pelanggan dari database SQL dengan volume jutaan baris
+        - Menyusun laporan bulanan dan presentasi insight untuk manajemen, mendukung keputusan strategis
+        - Berkolaborasi dengan tim produk untuk merancang A/B testing yang meningkatkan konversi sebesar 12%
+      keywords:
+        - SQL
+        - Python
+        - Tableau
+        - Power BI
+        - A/B Testing
+    - name: PT Karya Digital Solusi
+      url: https://www.karyadigital.co.id
+      position: Junior Data Analyst
+      startDate: "Aug 1, 2020"
+      endDate: "Feb 1, 2022"
+      summary: |
+        - Membantu proses ETL data penjualan dan stok dari berbagai sumber menggunakan Python dan Google Sheets
+        - Membuat visualisasi data untuk kebutuhan laporan mingguan tim marketing dan operasional
+        - Melakukan validasi kualitas data serta mendokumentasikan standar pengolahan data
+        - Mendukung analisis campaign marketing dan menghitung ROI setiap kanal digital
+      keywords:
+        - Python
+        - ETL
+        - Google Sheets
+        - Visualisasi Data
+        - Marketing Analytics
+  skills:
+    - name: Analisis Data
+      level: Expert
+      keywords:
+        - SQL
+        - Python
+        - Pandas
+        - NumPy
+        - Excel
+        - Google Sheets
+    - name: Statistika
+      level: Advanced
+      keywords:
+        - Regresi
+        - Uji Hipotesis
+        - A/B Testing
+        - Forecasting
+        - R
+    - name: Visualisasi Data
+      level: Advanced
+      keywords:
+        - Tableau
+        - Power BI
+        - Looker Studio
+        - Matplotlib
+        - Seaborn
+  languages:
+    - language: Indonesian
+      fluency: Native or Bilingual Proficiency
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - TOEFL ITP 600
+        - IELTS 7.0
+  awards:
+    - title: Data Analyst Terbaik Tahun 2023
+      date: "Dec 1, 2023"
+      awarder: PT Data Nusantara
+      summary: |
+        Penghargaan internal atas kontribusi dalam membangun sistem pelaporan data yang menghemat waktu analisis hingga 30%.
+  certificates:
+    - name: Google Data Analytics Professional Certificate
+      issuer: Google
+      date: "Mar 1, 2021"
+      url: https://www.coursera.org/professional-certificates/google-data-analytics
+    - name: SQL Advanced Certificate
+      issuer: HackerRank
+      date: "Jun 1, 2022"
+      url: https://www.hackerrank.com/certificates/sql-advanced
+  projects:
+    - name: Dashboard Penjualan E-commerce
+      url: https://public.tableau.com/app/profile/rizky.pratama
+      description: Dashboard interaktif untuk menganalisis tren penjualan dan perilaku
+        pelanggan.
+      startDate: "Mar 1, 2023"
+      endDate: "Jun 1, 2023"
+      summary: |
+        - Dirancang menggunakan Tableau dengan koneksi langsung ke Google BigQuery
+        - Menampilkan metrik utama seperti GMV, conversion rate, dan retention rate secara real-time
+        - Memungkinkan manajemen memantau performa harian per kategori produk dan wilayah
+      keywords:
+        - Tableau
+        - BigQuery
+        - E-commerce
+        - KPI
+    - name: Analisis Sentimen Ulasan Pelanggan
+      url: https://github.com/rizkypratama/sentiment-analysis
+      description: Proyek analisis sentimen ulasan pelanggan menggunakan Python dan
+        machine learning.
+      startDate: "Sep 1, 2022"
+      endDate: "Dec 1, 2022"
+      summary: |
+        - Melakukan scraping data ulasan dari platform e-commerce dan membersihkan teks dengan Python
+        - Membangun model klasifikasi sentimen menggunakan scikit-learn dengan akurasi 87%
+        - Menyajikan insight utama mengenai faktor kepuasan dan keluhan pelanggan
+      keywords:
+        - Python
+        - Machine Learning
+        - NLP
+        - scikit-learn
+  interests:
+    - name: Data Science
+      keywords:
+        - Machine Learning
+        - Statistika
+        - Data Storytelling
+    - name: Olahraga
+      keywords:
+        - Lari
+        - Badminton
+        - Hiking
+  volunteer:
+    - organization: Yayasan Pustaka Cerdas
+      position: Relawan Analisis Data
+      startDate: "Jan 1, 2021"
+      endDate: "Dec 1, 2021"
+      summary: |
+        - Membantu yayasan mengelola data donatur dan penerima bantuan menggunakan spreadsheet
+        - Menyusun laporan tahunan dengan visualisasi yang mudah dipahami oleh pengurus yayasan
+      url: https://pustakacerdas.or.id
+
+locale:
+  language: id

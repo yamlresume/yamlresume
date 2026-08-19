@@ -30,6 +30,7 @@ import { z } from 'zod'
  */
 export const POSITIONS = [
   'software engineer',
+  'data analyst',
   'data scientist',
   'product manager',
   'ux designer',

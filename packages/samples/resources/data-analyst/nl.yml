@@ -1,0 +1,208 @@
+content:
+  basics:
+    name: Sanne van den Berg
+    headline: Data-analist met passie voor datagedreven besluitvorming
+    phone: "+31 6 12345678"
+    email: sanne.vandenberg@voorbeeld.nl
+    url: https://www.linkedin.com/in/sannevandenberg
+    summary: |
+      Data-analist met ruim 9 jaar ervaring in het omzetten van ruwe data naar
+      concrete inzichten voor financiële en commerciële teams. Ik combineer
+      sterke technische vaardigheden in SQL, Python en Power BI met een
+      gestructureerde, adviserende werkwijze.
+
+      - Ontwikkel en beheer dashboards en datapijplijnen voor diverse stakeholders
+      - Ervaren in A/B-testen, statistische analyses en datamodellering
+      - Sterke focus op datakwaliteit, reproduceerbaarheid en heldere rapportage
+      - Werk graag op het snijvlak van data, business en technologie
+  location:
+    address: Keizersgracht 123
+    city: Amsterdam
+    region: Noord-Holland
+    country: Netherlands
+    postalCode: "1016 CJ"
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/sannevandenberg
+      username: sannevandenberg
+    - network: GitHub
+      url: https://github.com/sannevandenberg
+      username: sannevandenberg
+  education:
+    - institution: Vrije Universiteit Amsterdam
+      url: https://www.vu.nl
+      degree: Bachelor
+      area: Econometrie en Operationele Research
+      score: "7.8"
+      startDate: Sep 1, 2011
+      endDate: Jul 1, 2014
+      courses:
+        - Statistiek
+        - Wiskundige economie
+        - Operationele research
+        - Econometrie
+      summary: |
+        - Afstudeerrichting toegepaste econometrie met nadruk op data-analyse en modellering
+        - Scriptie over de voorspellende waarde van consumentenvertrouwen voor de detailhandel
+    - institution: Universiteit van Amsterdam
+      url: https://www.uva.nl
+      degree: Master
+      area: Data Science and Business Analytics
+      score: "8.2"
+      startDate: Sep 1, 2014
+      endDate: Jul 1, 2016
+      courses:
+        - Machine Learning
+        - Big Data Analytics
+        - Datavisualisatie
+        - Statistisch leren
+      summary: |
+        - Afgestudeerd met een 8,2 voor de scriptie over churnvoorspelling in de telecomsector
+        - Specialisatie in voorspellende modellen en datagedreven besluitvorming
+  work:
+    - name: "Finlytics B.V."
+      url: https://www.finlytics.nl
+      position: Data-analist
+      startDate: Jan 1, 2020
+      summary: |
+        - Ontwikkel en beheer financiële dashboards in Power BI voor directie en businesscontrollers
+        - Automatiseer data-extracties en transformaties met Python en dbt, waardoor rapportagetijd met 40% afnam
+        - Voer ad-hocanalyses uit en adviseer over kostenbesparende maatregelen
+        - Begeleid junior analisten en stel richtlijnen op voor datakwaliteit en visualisaties
+      keywords:
+        - Power BI
+        - SQL
+        - Python
+        - dbt
+        - Financiële rapportages
+    - name: RetailIQ
+      url: https://www.retailiq.nl
+      position: Data-analist
+      startDate: Oct 1, 2017
+      endDate: Dec 31, 2019
+      summary: |
+        - Droeg bij aan de ontwikkeling van een klantsegmentatiemodel op basis van RFM-analyse
+        - Analyseerde klantgedrag en conversiepaden in Google Analytics en BigQuery
+        - Voerde A/B-tests uit op de webshop en rapporteerde over statistische significantie
+        - Bouwde automatische datapijplijnen in Python voor dagelijkse verkooprapportages
+      keywords:
+        - BigQuery
+        - Google Analytics
+        - Klantsegmentatie
+        - A/B-testen
+    - name: Zorgdata Nederland
+      url: https://www.zorgdata.nl
+      position: Junior data-analist
+      startDate: Sep 1, 2016
+      endDate: Sep 1, 2017
+      summary: |
+        - Verwerkte en controleerde zorgdatasets met SQL en SPSS
+        - Maakte rapportages en grafieken voor interne en externe stakeholders
+        - Ondersteunde senior onderzoekers bij datakwaliteitscontroles
+      keywords:
+        - SQL
+        - SPSS
+        - Datakwaliteit
+        - Rapportage
+  skills:
+    - name: Data-analyse
+      level: Expert
+      keywords:
+        - SQL
+        - Python
+        - Excel
+        - A/B-testen
+        - Statistiek
+    - name: Datavisualisatie
+      level: Advanced
+      keywords:
+        - Power BI
+        - Tableau
+        - Looker Studio
+        - Dashboarding
+    - name: Data-engineering
+      level: Intermediate
+      keywords:
+        - dbt
+        - BigQuery
+        - Airflow
+        - Git
+    - name: Machine Learning
+      level: Intermediate
+      keywords:
+        - scikit-learn
+        - Regressieanalyse
+        - Beslissingsbomen
+        - Clustering
+  languages:
+    - language: Dutch
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - Professioneel schrijven
+        - Presenteren
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - Dagelijkse samenwerking
+        - Rapporteren
+    - language: German
+      fluency: Limited Working Proficiency
+      keywords:
+        - Leesvaardigheid
+        - Basisgesprekken
+  awards:
+    - title: Topscoorder Klanttevredenheid
+      awarder: "Finlytics B.V."
+      date: Dec 1, 2023
+      summary: |
+        Uitgeroepen tot medewerker met de hoogste stakeholderscore vanwege heldere communicatie en bruikbare analyses.
+  certificates:
+    - name: Microsoft Certified Power BI Data Analyst Associate
+      issuer: Microsoft
+      date: Jun 1, 2022
+      url: https://learn.microsoft.com/certifications/power-bi-data-analyst-associate
+    - name: Google Data Analytics Certificate
+      issuer: Google via Coursera
+      date: May 1, 2020
+      url: https://www.coursera.org/professional-certificates/google-data-analytics
+  projects:
+    - name: Churnvoorspelling telecomklanten
+      url: https://github.com/sannevandenberg/churn-voorspelling
+      description: Machine learning-model om klantverloop in de telecomsector te
+        voorspellen en de belangrijkste risicofactoren te identificeren.
+      startDate: Jan 1, 2023
+      endDate: Apr 1, 2023
+      summary: |
+        - Bouwde een Random Forest-classificatiemodel in Python met scikit-learn
+        - Verbeterde de voorspellingskracht met 18 procent ten opzichte van het bestaande model
+        - Leverde een interactief Power BI-dashboard op met de belangrijkste KPI's en risicofactoren
+      keywords:
+        - Python
+        - scikit-learn
+        - Churn
+        - Power BI
+  interests:
+    - name: Hardlopen
+      keywords:
+        - Halve marathon
+        - Intervaltraining
+    - name: Koken
+      keywords:
+        - Vegetarisch
+        - Wereldkeuken
+    - name: Duurzaamheid
+      keywords:
+        - Energietransitie
+        - Circulaire economie
+  volunteer:
+    - organization: Stichting Data voor Goed
+      url: https://www.datavoorgoed.nl
+      position: Vrijwillige data-analist
+      startDate: Mar 1, 2021
+      summary: |
+        - Help non-profitorganisaties met datagedreven besluitvorming
+        - Bouw laagdrempelige dashboards in Power BI
+        - Geef workshops over datakwaliteit en privacyvriendelijk datagebruik
+
+locale:
+  language: nl

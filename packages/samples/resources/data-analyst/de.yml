@@ -1,0 +1,205 @@
+content:
+  basics:
+    name: Lena Hoffmann
+    headline: Data Analystin für Business Intelligence und Datenvisualisierung
+    phone: "+49 30 12345678"
+    email: lena.hoffmann@posteo.de
+    url: https://lena-hoffmann.dev
+    summary: |
+      Data Analystin mit mehr als vier Jahren Erfahrung in der Analyse von Umsatz-, Kunden- und Produktdaten. Ich entwickle verständliche Dashboards, automatisiere Auswertungen und übersetze Ergebnisse in konkrete Handlungsempfehlungen für Fachbereiche und Management.
+
+      - Schwerpunkt: Business Intelligence, Datenvisualisierung und statistische Analyse
+      - Werkzeuge: SQL, Python, Power BI, Tableau, dbt
+      - Methoden: A/B-Tests, Kohortenanalysen, Regressionsmodelle
+      - Stärken: strukturierte Arbeitsweise, Kommunikation auf Augenhöhe und hohe Zahlenaffinität
+  location:
+    city: Berlin
+    region: Berlin
+    country: Germany
+    postalCode: "10115"
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/lena-hoffmann
+      username: lena-hoffmann
+    - network: GitHub
+      url: https://github.com/lena-hoffmann
+      username: lena-hoffmann
+  education:
+    - institution: Humboldt-Universität zu Berlin
+      url: https://www.hu-berlin.de
+      degree: Bachelor
+      area: Statistik und Wirtschaftsinformatik
+      score: '1.7'
+      startDate: Oct 1, 2016
+      endDate: Sep 30, 2020
+      courses:
+        - Einführung in die Statistik
+        - Datenbankmanagementsysteme
+        - Betriebswirtschaftslehre
+        - Data Mining
+        - Multivariate Verfahren
+        - Informationsvisualisierung
+      summary: |
+        - Schwerpunkt auf statistischer Datenanalyse und praktischer Anwendung von BI-Methoden
+        - Bachelorarbeit zum Thema „Prognosemodelle für Umsatzdaten im E-Commerce“ mit Note 1,3
+        - Wahlpflichtmodule in Data Mining und multivariater Statistik
+  work:
+    - name: Nordlicht Analytics GmbH
+      url: https://www.nordlicht-analytics.de
+      position: Data Analystin
+      startDate: Mar 1, 2022
+      summary: |
+        - Entwicklung und Pflege interaktiver Dashboards und standardisierter Reportings in Power BI für Geschäftsführung und Fachabteilungen
+        - Aufbau und Optimierung eines relationalen Datenmodells in PostgreSQL sowie Automatisierung von ETL-Prozessen mit Python und dbt
+        - Durchführung von A/B-Tests und Kundensegmentanalysen zur Bewertung von Marketingkampagnen; Identifikation konkreter Optimierungspotenziale
+        - Reduzierung manueller Reporting-Tätigkeiten um rund 40 % durch automatisierte Datenpipelines
+        - Enge Zusammenarbeit mit Produktmanagement, Vertrieb und Marketing zur Ableitung datenbasierter Handlungsempfehlungen
+      keywords:
+        - Power BI
+        - SQL
+        - Python
+        - dbt
+        - ETL
+        - A/B-Tests
+    - name: Datenwerk Solutions AG
+      url: https://www.datenwerk-solutions.de
+      position: Junior Data Analystin
+      startDate: Sep 1, 2020
+      endDate: Feb 28, 2022
+      summary: |
+        - Erstellung wöchentlicher Absatz-, Bestands- und Umsatzberichte für das Controlling
+        - Bereinigung und Konsolidierung von Stamm- und Bewegungsdaten in Excel und SQL
+        - Unterstützung bei der Einführung von Tableau und der Migration bestehender Reports
+        - Automatisierung von Routineauswertungen mit Python-Skripten
+        - Beantwortung von Ad-hoc-Analysen für Fachbereiche mit präzisen und nachvollziehbaren Ergebnissen
+      keywords:
+        - Excel
+        - SQL
+        - Tableau
+        - Python
+        - Berichtswesen
+    - name: Humboldt-Universität zu Berlin
+      url: https://www.hu-berlin.de
+      position: Studentische Hilfskraft für Datenanalyse
+      startDate: Apr 1, 2019
+      endDate: Aug 31, 2020
+      summary: |
+        - Unterstützung von Forschungsprojekten bei Datenaufbereitung und statistischer Auswertung mit R
+        - Durchführung von Regressions- und Varianzanalysen inklusive Dokumentation der Ergebnisse
+        - Betreuung des Statistiklabors und Durchführung von Tutorien für Studierende
+      keywords:
+        - R
+        - Statistik
+        - SPSS
+  skills:
+    - name: Datenanalyse und Statistik
+      level: Expert
+      keywords:
+        - Python
+        - R
+        - SQL
+        - A/B-Tests
+        - Regressionsanalyse
+        - Statistik
+    - name: Business Intelligence
+      level: Advanced
+      keywords:
+        - Power BI
+        - Tableau
+        - Looker Studio
+        - ETL
+        - KPI-Reporting
+    - name: Datenbanken und Data Engineering
+      level: Advanced
+      keywords:
+        - PostgreSQL
+        - dbt
+        - Datenmodellierung
+        - SQL
+        - Data Warehousing
+    - name: Kommunikation und Präsentation
+      level: Advanced
+      keywords:
+        - Stakeholder-Management
+        - Storytelling
+        - Workshops
+        - Dokumentation
+  languages:
+    - language: German
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - Muttersprache
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - TOEFL 105
+        - Fachliche Kommunikation
+  awards:
+    - title: Best Data Visualization Award
+      date: Jun 2023
+      awarder: DataViz Berlin Meetup
+      summary: |
+        Auszeichnung für ein interaktives Dashboard zur Analyse von Kundenbindung im Einzelhandel, das auf dem jährlichen Community-Event präsentiert wurde.
+  certificates:
+    - name: Google Data Analytics Professional Certificate
+      url: https://www.coursera.org/professional-certificates/google-data-analytics
+      issuer: Google
+      date: Jan 2021
+    - name: 'Microsoft Certified: Power BI Data Analyst Associate'
+      url: https://learn.microsoft.com/en-us/credentials/certifications/data-analyst-associate/
+      issuer: Microsoft
+      date: Aug 2022
+  projects:
+    - name: Kundensegmentierungs-Dashboard
+      url: https://github.com/lena-hoffmann/kundensegmentierung
+      description: Interaktives Dashboard zur automatisierten Kundensegmentierung auf
+        Basis von RFM-Analysen.
+      startDate: Jan 2023
+      endDate: Mar 2023
+      summary: |
+        - Entwicklung eines Power-BI-Dashboards zur Visualisierung von Kundensegmenten und Kaufverhalten
+        - Automatisierte Datenaufbereitung mit Python und dbt für ein skalierbares Datenmodell
+        - Identifikation von vier profitablen Kundensegmenten, die direkt in Marketingkampagnen überführt wurden
+      keywords:
+        - Power BI
+        - Python
+        - RFM-Analyse
+        - Segmentierung
+    - name: Absatzprognose für E-Commerce
+      url: https://github.com/lena-hoffmann/absatzprognose
+      description: Prognosemodell für wöchentliche Absatzzahlen eines Online-Shops.
+      startDate: Apr 2020
+      endDate: Jul 2020
+      summary: |
+        - Bachelorarbeit zur Erstellung von Zeitreihenprognosen mit ARIMA- und linearen Regressionsmodellen
+        - Datenbereinigung und Feature-Engineering mit Python und Pandas
+        - Vergleich der Modellgüte anhand von MAPE und Visualisierung der Ergebnisse in Tableau
+      keywords:
+        - Python
+        - Pandas
+        - Zeitreihenanalyse
+        - ARIMA
+        - Tableau
+  interests:
+    - name: Datenvisualisierung
+      keywords:
+        - Dashboard-Design
+        - Storytelling mit Daten
+        - Tableau Public
+    - name: Sport
+      keywords:
+        - Laufen
+        - Bouldern
+        - Radfahren
+  volunteer:
+    - organization: Data for Good Berlin
+      url: https://www.dataforgood.berlin
+      position: Ehrenamtliche Datenanalystin
+      startDate: Jan 1, 2023
+      summary: |
+        - Unterstützung gemeinnütziger Organisationen bei der Auswertung von Umfragedaten
+        - Erstellung eines Excel-basierten Dashboards zur Ressourcenplanung für eine Beratungsstelle
+        - Durchführung von Workshops zu Datenqualität und einfacher Visualisierung
+
+locale:
+  language: de

@@ -1,0 +1,185 @@
+content:
+  basics:
+    name: 佐藤美咲
+    headline: データアナリスト | データ可視化・ビジネスインサイト
+    phone: "080-1234-5678"
+    email: misaki.sato@example.com
+    url: https://misaki-sato.dev
+    summary: |
+      データに基づく意思決定を支援するデータアナリスト。小売・EC業界でSQL・Python・Tableauを駆使し、売上分析、顧客セグメンテーション、予測モデル構築などに従事。ビジネス課題を数値で可視化し、チームのKPI改善に貢献。統計・機械学習の知識を活かした実践的な分析に強みを持つ。
+  location:
+    address: 東京都渋谷区神南1-2-3
+    city: 東京都
+    region: 渋谷区
+    country: Japan
+    postalCode: "150-0001"
+  profiles:
+    - network: GitHub
+      url: https://github.com/misaki-sato
+      username: misaki-sato
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/misaki-sato
+      username: misaki-sato
+  education:
+    - institution: 東京大学
+      url: https://www.u-tokyo.ac.jp/
+      degree: Bachelor
+      area: 経済学部 経済学科
+      score: "3.7"
+      startDate: Apr 1, 2017
+      endDate: Mar 1, 2021
+      courses:
+        - 統計学
+        - 計量経済学
+        - データ解析基礎
+        - プログラミング入門 (Python)
+        - マーケティングリサーチ
+      summary: |
+        - 統計学・計量経済学を中心に、データ分析の基礎を学ぶ
+        - 卒業論文では、POSデータを用いた購買行動分析を実施
+        - 学外のデータ分析コンテストに参加し、可視化とプレゼンテーションを経験
+  work:
+    - name: 株式会社インサイト
+      url: https://www.insight-example.co.jp
+      position: データアナリスト
+      startDate: Apr 1, 2021
+      summary: |
+        - 小売・EC事業の売上・在庫・顧客データを統合し、ダッシュボードを構築
+        - SQL・Pythonによるデータ抽出・加工・分析を行い、週次・月次レポートを自動作成
+        - 顧客セグメンテーション分析を実施し、マーケティング施策の効果検証を支援
+        - Tableauを用いて経営陣向けのKPIダッシュボードを開発し、意思決定を支援
+      keywords:
+        - SQL
+        - Python
+        - Tableau
+        - KPI分析
+        - ダッシュボード
+    - name: 株式会社ブライトリサーチ
+      url: https://www.bright-research-example.co.jp
+      position: リサーチアシスタント
+      startDate: Jul 1, 2020
+      endDate: Mar 1, 2021
+      summary: |
+        - 市場調査データのクリーニング・集計を担当
+        - Excel・Rを用いた統計解析と結果の可視化を支援
+        - 調査レポートの作成に協力し、クライアントへの提案を補助
+      keywords:
+        - Excel
+        - R
+        - 統計解析
+        - 市場調査
+  skills:
+    - name: データ分析
+      level: Expert
+      keywords:
+        - Python
+        - R
+        - SQL
+        - 統計解析
+        - 予測モデル
+    - name: データ可視化
+      level: Advanced
+      keywords:
+        - Tableau
+        - Power BI
+        - Looker Studio
+        - matplotlib
+        - ggplot2
+    - name: ビジネスインテリジェンス
+      level: Advanced
+      keywords:
+        - KPI管理
+        - マーケティング分析
+        - 顧客セグメンテーション
+        - A/Bテスト
+    - name: 機械学習
+      level: Intermediate
+      keywords:
+        - scikit-learn
+        - 回帰分析
+        - クラスタリング
+        - 意思決定木
+  languages:
+    - language: Japanese
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - 母国語
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - TOEIC 920
+        - ビジネス文書作成
+  awards:
+    - title: 社内データ分析コンテスト 最優秀賞
+      date: Dec 2022
+      awarder: 株式会社インサイト
+      summary: |
+        購買データを用いた顧客離反予測モデルを提案し、社内のビジネスコンテストで最優秀賞を受賞。
+  certificates:
+    - name: 統計検定2級
+      issuer: 日本統計学会
+      date: Jun 2022
+      url: https://www.toukei-kentei.jp/
+    - name: Google Data Analytics Professional Certificate
+      issuer: Google
+      date: Mar 2021
+      url: https://www.coursera.org/professional-certificates/google-data-analytics
+  publications:
+    - name: 'データドリブンマーケティングの実践: 小売業における顧客セグメント分析'
+      publisher: 社内テクニカルレポート
+      releaseDate: Nov 2023
+      url: https://misaki-sato.dev/articles/data-driven-marketing
+      summary: |
+        小売業の購買データを活用した顧客セグメンテーションの実践手法をまとめた。RFM分析とクラスタリングを組み合わせたアプローチを紹介。
+  projects:
+    - name: EC売上予測ダッシュボード
+      url: https://misaki-sato.dev/projects/ec-sales-forecast
+      startDate: Jan 2023
+      endDate: Jun 2023
+      description: ECサイトの売上予測モデルと可視化ダッシュボードを開発。
+      summary: |
+        - 過去3年分の売上データを基に、季節性を考慮した予測モデルを構築
+        - StreamlitとPlotlyを用いて、担当者が簡単に予測を確認できるダッシュボードを提供
+        - 在庫計画やプロモーション効果の事前検証に貢献
+      keywords:
+        - Python
+        - Streamlit
+        - Plotly
+        - 時系列分析
+    - name: 顧客セグメンテーション分析
+      url: https://misaki-sato.dev/projects/segmentation
+      startDate: Apr 2022
+      endDate: Sep 2022
+      description: 購買履歴を基にした顧客セグメンテーションの分析プロジェクト。
+      summary: |
+        - RFM分析とk-meansクラスタリングを組み合わせて顧客を分類
+        - セグメントごとの特徴を分析し、マーケティング施策の提案につなげた
+        - リピート率向上に向けた施策の優先順位付けを支援
+      keywords:
+        - RFM分析
+        - k-means
+        - Tableau
+        - マーケティング
+  interests:
+    - name: ランニング
+      keywords:
+        - マラソン
+        - トレーニング
+    - name: 読書
+      keywords:
+        - データサイエンス
+        - ビジネス書
+    - name: データ可視化コミュニティ
+      keywords:
+        - 勉強会
+        - ハンズオン
+  volunteer:
+    - organization: NPO法人 データ支援ネット
+      url: https://www.data-support-npo.example.org
+      position: データ分析ボランティア
+      startDate: Apr 2022
+      summary: |
+        - 非営利団体向けに、アンケート集計や業務改善のためのデータ分析を支援
+        - 事務局メンバー向けにExcelや可視化ツールの使い方研修を実施
+locale:
+  language: ja

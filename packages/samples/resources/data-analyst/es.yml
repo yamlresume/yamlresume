@@ -1,0 +1,176 @@
+content:
+  basics:
+    name: Carlos Méndez
+    headline: Analista de datos con experiencia en business intelligence, SQL y
+      visualización
+    phone: "+34 612 345 678"
+    email: carlos.mendez@email.com
+    url: https://carlosmendez.dev
+    summary: |
+      Analista de datos con más de 5 años de experiencia ayudando a empresas del sector financiero y de telecomunicaciones a convertir datos en decisiones estratégicas.
+
+      Especializado en extracción, limpieza y modelado de datos con SQL y Python, así como en diseño de cuadros de mando interactivos con Power BI y Tableau. Apasionado por encontrar historias dentro de los datos y comunicarlas de forma clara a audiencias no técnicas.
+  location:
+    address: Calle de Alcalá 123
+    city: Madrid
+    region: Comunidad de Madrid
+    country: Spain
+    postalCode: "28001"
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/carlosmendez
+      username: carlosmendez
+    - network: GitHub
+      url: https://github.com/carlosmendez
+      username: carlosmendez
+  education:
+    - institution: Universidad Carlos III de Madrid
+      url: https://www.uc3m.es
+      degree: Bachelor
+      area: Ciencia de Datos e Inteligencia Artificial
+      score: "8.7"
+      startDate: Sep 1, 2015
+      endDate: Jul 1, 2019
+      courses:
+        - Estadística avanzada
+        - Análisis multivariante
+        - Machine Learning
+        - Visualización de datos
+        - Bases de datos
+        - Big Data
+      summary: |
+        - Formación sólida en estadística, programación y análisis de datos.
+        - Desarrollo de proyectos académicos de machine learning y visualización.
+        - Trabajo en equipo y comunicación de resultados técnicos.
+  work:
+    - name: Banco Santander
+      url: https://www.santander.com
+      position: Analista de datos
+      startDate: Mar 1, 2022
+      summary: |
+        - Diseñé e implementé modelos de segmentación de clientes para campañas de marketing, mejorando la tasa de conversión en un 18 %.
+        - Elaboré informes y cuadros de mando en Power BI para la dirección de banca minorista.
+        - Optimicé consultas SQL en bases de datos de más de 50 millones de registros, reduciendo el tiempo de ejecución en un 40 %.
+        - Colaboré con equipos de riesgo para automatizar la detección de transacciones sospechosas.
+      keywords:
+        - SQL
+        - Python
+        - Power BI
+        - Segmentación
+        - Detección de fraude
+    - name: Telefónica
+      url: https://www.telefonica.com
+      position: Analista de inteligencia de negocio
+      startDate: Jul 1, 2019
+      endDate: Feb 1, 2022
+      summary: |
+        - Desarrollé el repositorio central de indicadores de negocio, unificando fuentes de datos heterogéneas.
+        - Automatizé la generación de informes semanales con Python y SQL, ahorrando más de 10 horas semanales al equipo.
+        - Presenté análisis de abandono y satisfacción de clientes ante comités de dirección.
+        - Formé a 15 personas del equipo en el uso de Tableau y buenas prácticas de analítica.
+      keywords:
+        - Tableau
+        - Análisis de abandono
+        - Automatización
+        - Python
+        - Liderazgo
+  languages:
+    - language: Spanish
+      fluency: Native or Bilingual Proficiency
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - IELTS 7.5
+    - language: French
+      fluency: Elementary Proficiency
+  skills:
+    - name: Análisis de datos
+      level: Expert
+      keywords:
+        - Excel
+        - SQL
+        - Python
+        - Pandas
+        - NumPy
+    - name: Visualización de datos
+      level: Advanced
+      keywords:
+        - Power BI
+        - Tableau
+        - Looker Studio
+        - Matplotlib
+        - ggplot2
+    - name: Bases de datos
+      level: Advanced
+      keywords:
+        - PostgreSQL
+        - MySQL
+        - BigQuery
+        - MongoDB
+    - name: Machine Learning
+      level: Intermediate
+      keywords:
+        - Scikit-learn
+        - Regresión
+        - Clasificación
+        - Clustering
+  awards:
+    - title: Premio al mejor trabajo fin de grado en análisis de datos
+      awarder: Universidad Carlos III de Madrid
+      date: Oct 2019
+      summary: |
+        Reconocimiento al TFG titulado "Predicción de abandono de clientes mediante técnicas de machine learning", galardonado por su aplicación práctica y rigor metodológico.
+  certificates:
+    - name: Google Data Analytics Professional Certificate
+      issuer: Google
+      date: Mar 2022
+      url: https://www.coursera.org/professional-certificates/google-data-analytics
+    - name: 'Microsoft Certified: Power BI Data Analyst Associate'
+      issuer: Microsoft
+      date: Sep 2023
+      url: https://learn.microsoft.com/en-us/certifications/data-analyst-associate/
+  projects:
+    - name: Modelo de detección de fraude en transacciones
+      url: https://github.com/carlosmendez/fraud-detection
+      description: Proyecto de machine learning para identificar transacciones
+        fraudulentas en tiempo real utilizando datos sintéticos y técnicas de
+        aprendizaje supervisado.
+      startDate: Jan 2023
+      endDate: May 2023
+      summary: |
+        - Implementé un pipeline completo de limpieza, ingeniería de características y entrenamiento con XGBoost.
+        - Alcancé una precisión del 96 % y un AUC-ROC de 0,98 en el conjunto de prueba.
+        - Desarrollé una API sencilla con FastAPI para servir las predicciones.
+      keywords:
+        - Python
+        - XGBoost
+        - FastAPI
+        - Machine Learning
+        - Fraude financiero
+  interests:
+    - name: Visualización de datos
+      keywords:
+        - Storytelling con datos
+        - Infografía
+    - name: Deportes
+      keywords:
+        - Fútbol
+        - Running
+        - Ciclismo
+    - name: Lectura
+      keywords:
+        - Ciencia ficción
+        - Ensayos
+  volunteer:
+    - organization: Fundación Ayuda en Acción
+      url: https://ayudaenaccion.org
+      position: Analista de datos voluntario
+      startDate: Jan 2020
+      endDate: Dec 2023
+      summary: |
+        - Creé cuadros de mando para el seguimiento de proyectos educativos en zonas rurales.
+        - Analicé encuestas de satisfacción de beneficiarios para orientar la toma de decisiones.
+        - Formé a personal local en el uso básico de Excel y Google Sheets.
+
+locale:
+  language: es

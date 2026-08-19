@@ -1,0 +1,193 @@
+content:
+  basics:
+    name: 陳慧敏
+    headline: '數據分析師 / 商業智能分析'
+    phone: "+852 9123 4567"
+    email: waimanch.chan@outlook.com
+    url: https://wmchan-data.github.io
+    summary: |
+      - 具 5 年商業數據分析經驗，擅長從龐大數據中發掘業務洞察，支援管理層決策
+      - 精通 SQL、Python 及 Power BI，熟悉 ETL 流程、數據倉庫及 A/B 測試設計
+      - 曾主導多個跨部門數據項目，包括客戶流失預測、銷售預測及風險監察儀表板
+      - 善於以視覺化方式向非技術持分者清晰傳遞分析結果，推動數據驅動文化
+  location:
+    address: 香港中環金融街8號
+    city: 香港
+    region: 香港島
+    country: Hong Kong
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/wmchan-data
+      username: wmchan-data
+    - network: GitHub
+      url: https://github.com/wmchan-data
+      username: wmchan-data
+  education:
+    - institution: 香港科技大學
+      url: https://www.hkust.edu.hk
+      degree: Bachelor
+      area: 數據科學及商業智能
+      score: "3.6 / 4.0"
+      startDate: Sep 1, 2017
+      endDate: Jul 1, 2021
+      courses:
+        - 數據庫管理系統
+        - 統計推斷
+        - 機器學習
+        - 商業分析
+        - 資料視覺化
+        - 時間序列分析
+        - 風險管理與金融科技
+        - 大數據計算
+      summary: |
+        - 主修課程涵蓋統計模型、機器學習、數據庫管理及商業智能
+        - 畢業專題為「香港中小企客戶流失預測模型」，獲學系最佳專題獎
+        - 副修計算機科學，具備扎實的程式設計及數據處理基礎
+  work:
+    - name: 香港金融管理局
+      url: https://www.hkma.gov.hk
+      position: 數據分析師
+      startDate: Jul 1, 2023
+      summary: |
+        - 為貨幣穩定及金融體系監察團隊建立自動化數據儀表板，每日處理超過 500 萬筆交易數據
+        - 利用 Python 及 SQL 整合內部數據倉庫，縮短報表編製時間約 40%
+        - 與經濟研究部門合作，以時間序列模型分析銀行體系流動性風險
+        - 定期向高級管理層提交數據分析報告，協助制訂監管政策
+      keywords:
+        - Python
+        - SQL
+        - Tableau
+        - 時間序列分析
+        - 風險監察
+    - name: 恒生銀行
+      url: https://www.hangseng.com
+      position: 商業數據分析助理
+      startDate: Aug 1, 2021
+      endDate: Jun 30, 2023
+      summary: |
+        - 協助零售銀行部門設計客戶消費行為分析框架，支援信用卡及貸款產品策略
+        - 建立 Power BI 儀表板追蹤客戶忠誠度及產品滲透率，每月節省約 20 工時
+        - 進行 A/B 測試評估數碼推廣活動成效，並提出具體優化建議
+        - 整理及清洗來自多個來源的客戶數據，確保數據品質及合規
+      keywords:
+        - Power BI
+        - 'A/B 測試'
+        - 數據清洗
+        - 客戶分析
+  skills:
+    - name: 數據分析
+      level: Expert
+      keywords:
+        - Python
+        - Pandas
+        - NumPy
+        - Jupyter Notebook
+        - 統計分析
+    - name: 資料庫及 SQL
+      level: Expert
+      keywords:
+        - PostgreSQL
+        - MySQL
+        - BigQuery
+        - SQL Server
+        - 資料倉庫
+    - name: 商業智能及視覺化
+      level: Advanced
+      keywords:
+        - Power BI
+        - Tableau
+        - Looker Studio
+        - Excel
+        - 儀表板設計
+    - name: 機器學習基礎
+      level: Intermediate
+      keywords:
+        - Scikit-learn
+        - 迴歸分析
+        - 分類模型
+        - 集群分析
+    - name: 數據工程
+      level: Intermediate
+      keywords:
+        - ETL
+        - Apache Airflow
+        - dbt
+        - 資料建模
+  languages:
+    - language: Chinese
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - 粵語
+        - 普通話
+        - 繁體中文
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - IELTS 7.5
+        - 職場英語
+        - 技術簡報
+  awards:
+    - title: 香港科技大學院長嘉許名單
+      awarder: 香港科技大學
+      date: Jun 1, 2021
+      summary: |
+        連續三個學期入選院長嘉許名單，表揚學業成績優異及對大學社區的貢獻。
+  certificates:
+    - name: 'Microsoft 認證：Power BI 數據分析師助理（PL-300）'
+      issuer: Microsoft
+      date: Jan 1, 2024
+      url: https://learn.microsoft.com/en-us/certifications/power-bi-data-analyst-associate/
+    - name: Tableau Desktop 專家認證
+      issuer: Tableau
+      date: Mar 1, 2023
+      url: https://www.tableau.com/learn/certification/desktop-specialist
+    - name: Google 數據分析專業證書
+      issuer: Google
+      date: Aug 1, 2022
+      url: https://www.coursera.org/professional-certificates/google-data-analytics
+  publications:
+    - name: 香港虛擬銀行用戶行為研究報告
+      publisher: 香港金融科技協會
+      releaseDate: Oct 1, 2023
+      url: https://www.hkfta.org/research/virtual-bank-users-2023
+      summary: |
+        - 以 1,200 名受訪者數據分析虛擬銀行用戶的採用障礙及使用習慣
+        - 提出改善用戶體驗及數碼營銷策略的具體建議
+  projects:
+    - name: 香港零售銷售預測儀表板
+      url: https://github.com/wmchan-data/retail-forecast-dashboard
+      description: 一個以 Python 及 Power BI 開發的互動式零售銷售預測平台，整合公開數據與 API，為管理層提供決策支援。
+      startDate: Mar 1, 2023
+      endDate: Jun 30, 2023
+      summary: |
+        - 利用 Python 及 Prophet 建立月度銷售預測模型，平均絕對百分比誤差低於 12%
+        - 以 Power BI 建立互動儀表板，讓管理層掌握不同店舖及產品類別的銷售趨勢
+        - 設計自動化數據更新流程，每日從 API 抽取數據並重新訓練模型
+      keywords:
+        - Python
+        - Prophet
+        - Power BI
+        - 時間序列
+        - API
+  interests:
+    - name: 開放資料
+      keywords:
+        - 香港政府資料一線通
+        - 資料新聞學
+        - 開放街圖
+    - name: 運動
+      keywords:
+        - 跑步
+        - 行山
+        - 瑜伽
+  volunteer:
+    - organization: 香港紅十字會
+      url: https://www.redcross.org.hk
+      position: 數據分析義工
+      startDate: Jan 1, 2023
+      summary: |
+        - 為籌款活動整理及分析歷年捐贈者數據，識別高潛在捐款群組
+        - 建立活動成效儀表板，協助團隊更有效地分配宣傳資源
+
+locale:
+  language: zh-hant-hk
