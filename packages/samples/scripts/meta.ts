@@ -336,16 +336,25 @@ export async function ensurePositionMeta(
   position: string,
   getModel: () => ReturnType<typeof getModelFromEnv>,
   force: boolean,
-  resumesDir: string
+  resumesDir: string,
+  dryRun = false
 ): Promise<void> {
   const id = positionToId(position)
   const resumeDir = path.join(resumesDir, id)
-  fs.mkdirSync(resumeDir, { recursive: true })
+
+  if (!dryRun) {
+    fs.mkdirSync(resumeDir, { recursive: true })
+  }
 
   const baseMetaPath = path.join(resumeDir, 'meta.yml')
   const baseValid = isValidBaseMeta(baseMetaPath)
 
   if (force || !baseValid) {
+    if (dryRun) {
+      consola.info(`  would generate meta files for "${position}"`)
+      return
+    }
+
     consola.info('  generating meta files')
     const { meta, i18n } = await generateSampleMetaI18n(
       position,
@@ -412,7 +421,25 @@ export async function ensurePositionMeta(
   const sourceChanged = !storedHash || storedHash !== currentHash
 
   if (!sourceChanged && missingI18n.length === 0) {
+    if (dryRun) {
+      consola.success(`  meta files for "${position}" valid (would skip)`)
+      return
+    }
+
     consola.success('  meta files (valid, skipped)')
+    return
+  }
+
+  if (dryRun) {
+    if (sourceChanged) {
+      consola.info(
+        `  would regenerate all i18n meta files for "${position}" (title/description changed)`
+      )
+    } else {
+      consola.info(
+        `  would regenerate missing i18n meta files for "${position}": ${missingI18n.join(', ')}`
+      )
+    }
     return
   }
 

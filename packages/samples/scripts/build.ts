@@ -46,6 +46,7 @@ const OUTPUT_PATH = path.resolve(__dirname, '../src/catalog.json')
 
 export interface CatalogCliOptions {
   catalogOnly: boolean
+  dryRun: boolean
   force: boolean
   metaOnly: boolean
 }
@@ -60,6 +61,11 @@ export function createCatalogCommand(): Command {
       'only rebuild catalog.json from existing files',
       false
     )
+    .option(
+      '--dry-run',
+      'preview changes without writing files or calling AI',
+      false
+    )
     .option('--meta-only', 'only generate metadata files', false)
     .option('--force', 'force regeneration of all metadata and resumes', false)
 }
@@ -70,6 +76,7 @@ export function parseArgs(argv: string[] = process.argv): CatalogCliOptions {
   const opts = program.opts()
   return {
     catalogOnly: opts.catalogOnly,
+    dryRun: opts.dryRun,
     force: opts.force,
     metaOnly: opts.metaOnly,
   }
@@ -89,7 +96,11 @@ export function createModelResolver(): () => ReturnType<
 }
 
 export async function main(argv: string[] = process.argv): Promise<void> {
-  const { catalogOnly, force, metaOnly } = parseArgs(argv)
+  const { catalogOnly, dryRun, force, metaOnly } = parseArgs(argv)
+
+  if (dryRun) {
+    consola.info('Dry-run mode: no files will be written.')
+  }
 
   if (catalogOnly) {
     consola.info('Catalog-only mode: skipping resume and meta generation.')
@@ -101,27 +112,51 @@ export async function main(argv: string[] = process.argv): Promise<void> {
 
     for (const position of POSITIONS) {
       consola.info(`Processing ${position}...`)
-      await ensurePositionMeta(position, getModel, force, DEFAULT_RESUMES_DIR)
+      await ensurePositionMeta(
+        position,
+        getModel,
+        force,
+        DEFAULT_RESUMES_DIR,
+        dryRun
+      )
     }
 
-    consola.success('Built meta files for all sample positions.')
+    if (!dryRun) {
+      consola.success('Built meta files for all sample positions.')
+    }
     return
   } else {
     const getModel = createModelResolver()
 
     for (const position of POSITIONS) {
       consola.info(`Processing ${position}...`)
-      await ensurePositionMeta(position, getModel, force, DEFAULT_RESUMES_DIR)
+      await ensurePositionMeta(
+        position,
+        getModel,
+        force,
+        DEFAULT_RESUMES_DIR,
+        dryRun
+      )
       await ensurePositionResumes(
         position,
         getModel,
         force,
-        DEFAULT_RESUMES_DIR
+        DEFAULT_RESUMES_DIR,
+        dryRun
       )
     }
   }
 
   const catalog = buildCatalog(DEFAULT_RESUMES_DIR)
+
+  if (dryRun) {
+    consola.info(
+      `Would write catalog with ${catalog.resumes.length} sample resume(s):`,
+      catalog.resumes.map((r) => r.id).join(', ')
+    )
+    return
+  }
+
   fs.mkdirSync(path.dirname(OUTPUT_PATH), { recursive: true })
   fs.writeFileSync(OUTPUT_PATH, `${JSON.stringify(catalog, null, 2)}\n`)
 

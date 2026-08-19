@@ -265,6 +265,38 @@ describe('catalog', () => {
 
       expect(generateResume).not.toHaveBeenCalled()
     })
+
+    it('should not generate or write in dry-run mode', async () => {
+      const position = 'software engineer'
+      const id = positionToId(position)
+      tmpDir = fs.mkdtempSync(path.join(os.tmpdir(), 'yamlresume-samples-'))
+      fs.mkdirSync(path.join(tmpDir, id), { recursive: true })
+
+      await ensureResume(position, 'en', () => fakeModel, true, tmpDir, true)
+
+      expect(generateResume).not.toHaveBeenCalled()
+      expect(fs.existsSync(path.join(tmpDir, id, 'en.yml'))).toBe(false)
+    })
+
+    it('should not generate or write valid existing resumes in dry-run mode', async () => {
+      const id = positionToId('software engineer')
+      tmpDir = fs.mkdtempSync(path.join(os.tmpdir(), 'yamlresume-samples-'))
+      const sampleDir = path.join(tmpDir, id)
+      fs.cpSync(path.resolve(__dirname, '../resources', id), sampleDir, {
+        recursive: true,
+      })
+
+      await ensureResume(
+        'software engineer',
+        'en',
+        () => fakeModel,
+        false,
+        tmpDir,
+        true
+      )
+
+      expect(generateResume).not.toHaveBeenCalled()
+    })
   })
 
   describe('ensurePositionResumes', () => {
@@ -300,6 +332,17 @@ describe('catalog', () => {
       await expect(
         ensurePositionResumes(position, () => fakeModel, true, tmpDir)
       ).rejects.toThrow('Failed to generate resumes')
+    })
+
+    it('should not create directories or generate resumes in dry-run mode', async () => {
+      const position = 'software engineer'
+      const id = positionToId(position)
+      tmpDir = fs.mkdtempSync(path.join(os.tmpdir(), 'yamlresume-samples-'))
+
+      await ensurePositionResumes(position, () => fakeModel, true, tmpDir, true)
+
+      expect(fs.existsSync(path.join(tmpDir, id))).toBe(false)
+      expect(generateResume).not.toHaveBeenCalled()
     })
   })
 })

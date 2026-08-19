@@ -101,6 +101,7 @@ describe('build', () => {
       }).toThrow()
 
       expect(output).toContain('--catalog-only')
+      expect(output).toContain('--dry-run')
       expect(output).toContain('--meta-only')
       expect(output).toContain('--force')
       expect(output).toContain('--help')
@@ -137,6 +138,7 @@ describe('build', () => {
     it('should return defaults when no flags are passed', () => {
       expect(parseArgs(['node', 'build'])).toEqual({
         catalogOnly: false,
+        dryRun: false,
         force: false,
         metaOnly: false,
       })
@@ -145,6 +147,16 @@ describe('build', () => {
     it('should parse --catalog-only', () => {
       expect(parseArgs(['node', 'build', '--catalog-only'])).toEqual({
         catalogOnly: true,
+        dryRun: false,
+        force: false,
+        metaOnly: false,
+      })
+    })
+
+    it('should parse --dry-run', () => {
+      expect(parseArgs(['node', 'build', '--dry-run'])).toEqual({
+        catalogOnly: false,
+        dryRun: true,
         force: false,
         metaOnly: false,
       })
@@ -153,26 +165,29 @@ describe('build', () => {
     it('should parse --force', () => {
       expect(parseArgs(['node', 'build', '--force'])).toEqual({
         catalogOnly: false,
+        dryRun: false,
         force: true,
         metaOnly: false,
       })
     })
 
-    it('should parse both flags together', () => {
-      expect(parseArgs(['node', 'build', '--catalog-only', '--force'])).toEqual(
-        {
-          catalogOnly: true,
-          force: true,
-          metaOnly: false,
-        }
-      )
-    })
-
     it('should parse --meta-only', () => {
       expect(parseArgs(['node', 'build', '--meta-only'])).toEqual({
         catalogOnly: false,
+        dryRun: false,
         force: false,
         metaOnly: true,
+      })
+    })
+
+    it('should parse multiple flags together', () => {
+      expect(
+        parseArgs(['node', 'build', '--catalog-only', '--dry-run', '--force'])
+      ).toEqual({
+        catalogOnly: true,
+        dryRun: true,
+        force: true,
+        metaOnly: false,
       })
     })
   })
@@ -242,14 +257,70 @@ describe('build', () => {
         expect.any(String),
         expect.any(Function),
         true,
-        '/mocked/resources'
+        '/mocked/resources',
+        false
       )
       expect(ensurePositionResumes).toHaveBeenCalledWith(
         expect.any(String),
         expect.any(Function),
         true,
-        '/mocked/resources'
+        '/mocked/resources',
+        false
       )
+    })
+
+    it('should not write catalog.json in --dry-run mode', async () => {
+      vi.mocked(buildCatalog).mockReturnValue({
+        resumes: [{ id: 'software-engineer' }],
+      })
+
+      await main(['node', 'build', '--dry-run'])
+
+      expect(ensurePositionMeta).toHaveBeenCalledWith(
+        expect.any(String),
+        expect.any(Function),
+        false,
+        '/mocked/resources',
+        true
+      )
+      expect(ensurePositionResumes).toHaveBeenCalledWith(
+        expect.any(String),
+        expect.any(Function),
+        false,
+        '/mocked/resources',
+        true
+      )
+      expect(writeFileSyncSpy).not.toHaveBeenCalled()
+      expect(mkdirSyncSpy).not.toHaveBeenCalled()
+    })
+
+    it('should not call meta or resume helpers in --dry-run --catalog-only mode', async () => {
+      vi.mocked(buildCatalog).mockReturnValue({
+        resumes: [{ id: 'software-engineer' }],
+      })
+
+      await main(['node', 'build', '--dry-run', '--catalog-only'])
+
+      expect(ensurePositionMeta).not.toHaveBeenCalled()
+      expect(ensurePositionResumes).not.toHaveBeenCalled()
+      expect(buildCatalog).toHaveBeenCalledWith('/mocked/resources')
+      expect(writeFileSyncSpy).not.toHaveBeenCalled()
+      expect(mkdirSyncSpy).not.toHaveBeenCalled()
+    })
+
+    it('should not write files in --dry-run --meta-only mode', async () => {
+      await main(['node', 'build', '--dry-run', '--meta-only'])
+
+      expect(ensurePositionMeta).toHaveBeenCalledWith(
+        expect.any(String),
+        expect.any(Function),
+        false,
+        '/mocked/resources',
+        true
+      )
+      expect(ensurePositionResumes).not.toHaveBeenCalled()
+      expect(buildCatalog).not.toHaveBeenCalled()
+      expect(writeFileSyncSpy).not.toHaveBeenCalled()
     })
 
     it('should run as a CLI entry point and exit on error', async () => {

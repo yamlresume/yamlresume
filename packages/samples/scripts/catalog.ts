@@ -58,14 +58,24 @@ export async function ensureResume(
   language: LocaleLanguage,
   getModel: () => ReturnType<typeof getModelFromEnv>,
   force: boolean,
-  resumesDir: string = DEFAULT_RESUMES_DIR
+  resumesDir: string = DEFAULT_RESUMES_DIR,
+  dryRun = false
 ): Promise<void> {
   const id = positionToId(position)
   const resumeDir = path.join(resumesDir, id)
   const filePath = path.join(resumeDir, `${language}.yml`)
 
   if (!force && fs.existsSync(filePath) && isValidResume(filePath)) {
-    consola.success(`  ${language} (valid, skipped)`)
+    if (dryRun) {
+      consola.success(`  ${language} (valid, would skip)`)
+    } else {
+      consola.success(`  ${language} (valid, skipped)`)
+    }
+    return
+  }
+
+  if (dryRun) {
+    consola.info(`  would generate ${language}`)
     return
   }
 
@@ -87,18 +97,23 @@ export async function ensurePositionResumes(
   position: string,
   getModel: () => ReturnType<typeof getModelFromEnv>,
   force: boolean,
-  resumesDir: string = DEFAULT_RESUMES_DIR
+  resumesDir: string = DEFAULT_RESUMES_DIR,
+  dryRun = false
 ): Promise<void> {
   const id = positionToId(position)
   const resumeDir = path.join(resumesDir, id)
 
   if (!fs.existsSync(resumeDir)) {
-    fs.mkdirSync(resumeDir, { recursive: true })
+    if (dryRun) {
+      consola.info(`  would create directory ${resumeDir}`)
+    } else {
+      fs.mkdirSync(resumeDir, { recursive: true })
+    }
   }
 
   const results = await Promise.allSettled(
     LOCALE_LANGUAGE_OPTIONS.map((language) =>
-      ensureResume(position, language, getModel, force, resumesDir)
+      ensureResume(position, language, getModel, force, resumesDir, dryRun)
     )
   )
 

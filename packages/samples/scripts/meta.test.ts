@@ -439,6 +439,82 @@ description: A test description for the sample resume.
       ensurePositionMeta(position, () => mockModel, false, tmpDir)
     ).rejects.toThrow('does not match expected id')
   })
+
+  it('should not write or call the model in dry-run + force mode', async () => {
+    const position = 'software engineer'
+    const id = positionToId(position)
+    tmpDir = fs.mkdtempSync(path.join(os.tmpdir(), 'yamlresume-samples-'))
+
+    await ensurePositionMeta(position, () => mockModel, true, tmpDir, true)
+
+    expect(generateText).not.toHaveBeenCalled()
+    expect(fs.existsSync(path.join(tmpDir, id, 'meta.yml'))).toBe(false)
+    expect(fs.existsSync(path.join(tmpDir, id, 'meta.hash.txt'))).toBe(false)
+  })
+
+  it('should not write or call the model in dry-run when meta is valid', async () => {
+    const position = 'software engineer'
+    const id = positionToId(position)
+    tmpDir = fs.mkdtempSync(path.join(os.tmpdir(), 'yamlresume-samples-'))
+    const sampleDir = path.join(tmpDir, id)
+    fs.cpSync(path.resolve(__dirname, '../resources', id), sampleDir, {
+      recursive: true,
+    })
+    writeHash(sampleDir)
+
+    await ensurePositionMeta(position, () => mockModel, false, tmpDir, true)
+
+    expect(generateText).not.toHaveBeenCalled()
+  })
+
+  it('should not write or call the model in dry-run when source changed', async () => {
+    const position = 'software engineer'
+    const id = positionToId(position)
+    tmpDir = fs.mkdtempSync(path.join(os.tmpdir(), 'yamlresume-samples-'))
+    const sampleDir = path.join(tmpDir, id)
+    fs.cpSync(path.resolve(__dirname, '../resources', id), sampleDir, {
+      recursive: true,
+    })
+    fs.rmSync(path.join(sampleDir, 'meta.hash.txt'), { force: true })
+    fs.writeFileSync(
+      path.join(sampleDir, 'meta.yml'),
+      yaml.stringify({
+        id,
+        title: 'Changed Title',
+        position,
+        category: 'Engineering',
+        tags: ['test'],
+        description: 'A changed description for the sample resume.',
+      })
+    )
+
+    await ensurePositionMeta(position, () => mockModel, false, tmpDir, true)
+
+    expect(generateText).not.toHaveBeenCalled()
+    expect(fs.readFileSync(path.join(sampleDir, 'meta.en.yml'), 'utf8')).toBe(
+      fs.readFileSync(
+        path.resolve(__dirname, '../resources', id, 'meta.en.yml'),
+        'utf8'
+      )
+    )
+  })
+
+  it('should not write or call the model in dry-run when i18n files are missing', async () => {
+    const position = 'software engineer'
+    const id = positionToId(position)
+    tmpDir = fs.mkdtempSync(path.join(os.tmpdir(), 'yamlresume-samples-'))
+    const sampleDir = path.join(tmpDir, id)
+    fs.cpSync(path.resolve(__dirname, '../resources', id), sampleDir, {
+      recursive: true,
+    })
+    fs.rmSync(path.join(sampleDir, 'meta.de.yml'))
+    writeHash(sampleDir)
+
+    await ensurePositionMeta(position, () => mockModel, false, tmpDir, true)
+
+    expect(generateText).not.toHaveBeenCalled()
+    expect(fs.existsSync(path.join(sampleDir, 'meta.de.yml'))).toBe(false)
+  })
 })
 
 describe(generateSampleMeta, () => {
