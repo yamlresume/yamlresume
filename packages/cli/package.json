@@ -33,8 +33,7 @@
   "files": [
     "dist",
     "README.md",
-    "LICENSE",
-    "resources/resume.yml"
+    "LICENSE"
   ],
   "scripts": {
     "build": "tsup",

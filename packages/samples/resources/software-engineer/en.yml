@@ -1,241 +1,179 @@
 content:
   basics:
-    name: Jordan Mitchell
-    headline: Senior Software Engineer | Full-Stack, Cloud, and Web Platforms
-    phone: "(415) 555-2345"
-    email: jordan.mitchell@example.com
-    url: https://jordanmitchell.dev
+    name: Andy Dufresne
+    headline: Headed for the Pacific
+    phone: "(213) 555-9876"
+    email: hi@ppresume.com
+    url: https://ppresume.com/gallery
     summary: |
-      Senior software engineer with 8+ years of experience designing, building, and scaling web applications for startups and growth-stage technology companies. I care about clean architecture, pragmatic testing, and delivering measurable business value through reliable software.
-
-      - Expert in TypeScript, Node.js, React, and modern DevOps practices such as Docker, Kubernetes, and CI/CD
-      - Strong track record of leading cross-functional delivery, mentoring engineers, and reducing incidents
-      - Passionate about developer experience, API design, and building inclusive engineering cultures
+      - Computer Science major with strong foundation in data structures, algorithms, and software development
+      - Pixel perfect full stack web developer, specialised in creating high-quality, visually appealing websites
+      - Experiened in databases (SQL, NoSQL), familiar with server-side technologies (Node.js, Express, etc.)
+      - Team player, with detail-oriented mindset and a keen eye for design and user experiences
   location:
-    city: San Francisco
+    address: 123 Main Street
+    city: Sacramento
     region: California
     country: United States
-    postalCode: "94105"
+    postalCode: "95814"
   profiles:
-    - network: GitHub
-      url: https://github.com/jordanmitchell
-      username: jordanmitchell
-    - network: LinkedIn
-      url: https://linkedin.com/in/jordanmitchell
-      username: jordanmitchell
-    - network: Stack Overflow
-      url: https://stackoverflow.com/users/5123456/jordan-mitchell
-      username: jordanmitchell
+    - network: Line
+      url: https://line.com/PPResumeX
+      username: PPResumeX
+    - network: Twitter
+      url: https://twitter.com/PPResumeX
+      username: PPResumeX
   education:
-    - institution: University of Washington
-      url: https://www.cs.washington.edu/
+    - institution: University of Southern California
+      url: https://www.cs.usc.edu/
       degree: Bachelor
-      area: Computer Science
-      score: "3.7"
-      startDate: Sep 1, 2012
-      endDate: Jun 1, 2016
+      area: Computer Engineering and Computer Science
+      score: "3.8"
+      startDate: Sep 1, 2016
+      endDate: Jul 1, 2020
       courses:
-        - Data Structures and Algorithms
+        - Discrete Methods in Computer Science
+        - Programming Language Concepts
+        - Data Structures and Object-Oriented Design
         - Operating Systems
-        - Distributed Systems
-        - Database Management Systems
+        - Computer Architecture
+        - Database Systems
         - Computer Networking
-        - Machine Learning
-        - Software Engineering
-        - Human-Computer Interaction
+        - Introduction to the Theory of Computing
       summary: |
-        - Graduated with Departmental Honors and a focus on systems and human-centered computing
-        - Served as teaching assistant for introductory programming and data structures courses
-        - Led a senior capstone project using React Native and Firebase, delivered to a campus nonprofit
+        - Developed proficiency in programming languages such as Java, C++, and Python
+        - Gained hands-on experience in software development through various projects and assignments
+        - Strong communication and teamwork skills acquired through group projects and presentations
   work:
-    - name: CloudShift Technologies
-      url: https://cloudshift.io
+    - name: PPResume
+      url: https://ppresume.com
+      startDate: Dec 1, 2022
+      endDate:
       position: Senior Software Engineer
-      startDate: Mar 1, 2020
       summary: |
-        - Led a platform team responsible for a multi-tenant SaaS infrastructure serving over 2M monthly users
-        - Redesigned the core event-ingestion pipeline using Node.js, Kafka, and AWS Lambda, reducing infrastructure costs by 38%
-        - Introduced GraphQL federation across 6 services, enabling product teams to ship features 40% faster
-        - Championed reliability engineering practices including SLOs, error budgets, and chaos experiments
-        - Mentored 5 engineers, led interview loops, and contributed to a 95% employee retention rate on the team
+        - Developed and implemented efficient and scalable code, ensuring high-quality and maintainable web applications
+        - Collaborated with cross-functional teams to gather project requirements and translate them into technical solutions
+        - Conducted thorough testing and debugging to identify and resolve any issues or bugs in the software
+        - Actively participated in code reviews, providing valuable feedback to improve code quality and adherence to best practices
+        - Mentored and guided junior developers, fostering a collaborative and growth-oriented team environment
       keywords:
-        - TypeScript
-        - 'Node.js'
-        - GraphQL
-        - AWS
-        - Kafka
-        - Kubernetes
-        - SLOs
+        - Scalability
+        - Growth
+        - Quality
         - Mentorship
-    - name: FinScale Analytics
-      url: https://finscale.io
+    - name: PPResume
+      url: https://ppresume.com
+      startDate: Sep 1, 2020
+      endDate: Dec 1, 2022
       position: Software Engineer
-      startDate: Jun 1, 2016
-      endDate: Feb 1, 2020
       summary: |
-        - Built a real-time financial reporting dashboard using React, Redux, and WebSockets for institutional clients
-        - Developed a Python and Django service that aggregated data from 15+ sources and cut report generation time by 70%
-        - Implemented resumable file uploads and background job processing for large CSV and Excel datasets
-        - Worked in an agile pod of 6 engineers and collaborated closely with product and design teams
-        - Automated CI/CD pipelines with GitHub Actions, increasing release frequency from biweekly to daily
+        - Created reusable React components to ensure code efficiency and maintainability
+        - Integrated with RESTful APIs to fetch and display dynamic data on the frontend
+        - Implemented client-side routing using React Router for smooth navigation between pages
+        - Actively participated in Agile development methodologies, attending daily stand-up meetings and sprint planning sessions
       keywords:
+        - RESTful
         - React
-        - Redux
-        - Python
-        - Django
-        - PostgreSQL
-        - Docker
-        - CI/CD
+        - Agile
   languages:
     - language: English
       fluency: Native or Bilingual Proficiency
       keywords:
-        - Technical writing
-    - language: Spanish
-      fluency: Full Professional Proficiency
-      keywords:
-        - Client communication
-        - UX copy review
+        - TOEFL 110
+        - IELTS 7.5
+    - language: Chinese
+      fluency: Elementary Proficiency
+      keywords: []
   skills:
-    - name: Programming Languages
+    - name: Web Development
       level: Expert
       keywords:
-        - TypeScript
-        - JavaScript
         - Python
-        - Java
-        - Go
-        - SQL
-    - name: Frontend Development
-      level: Advanced
-      keywords:
-        - React
-        - 'Next.js'
-        - Tailwind CSS
-        - Redux
-        - HTML5
+        - Ruby
         - CSS
-    - name: Backend Development
-      level: Expert
-      keywords:
-        - 'Node.js'
-        - NestJS
-        - Express
-        - GraphQL
-        - REST APIs
-        - WebSockets
-    - name: 'Cloud & DevOps'
-      level: Advanced
-      keywords:
-        - AWS
-        - Docker
-        - Kubernetes
-        - Terraform
-        - GitHub Actions
-        - Observability
-    - name: 'Databases & Data Stores'
-      level: Advanced
-      keywords:
-        - PostgreSQL
-        - MongoDB
-        - Redis
-        - DynamoDB
-        - Elasticsearch
-    - name: 'Testing & Quality'
-      level: Advanced
-      keywords:
-        - Jest
-        - Playwright
-        - Cypress
-        - Testing Library
-        - ESLint
-        - SonarQube
-  awards:
-    - title: Engineering Excellence Award
-      date: Jan 1, 2023
-      awarder: CloudShift Technologies
-      summary: |
-        Recognized for leading the infrastructure migration that improved platform reliability from 99.5% to 99.95% uptime.
-    - title: Dean's List
-      date: Jun 1, 2015
-      awarder: University of Washington
-      summary: |
-        Awarded to undergraduate students in the top 10% of their college for academic performance.
-  certificates:
-    - name: AWS Certified Solutions Architect – Associate
-      url: https://aws.amazon.com/certification/
-      issuer: Amazon Web Services
-      date: Feb 1, 2021
-    - name: Certified Kubernetes Application Developer
-      url: https://training.linuxfoundation.org/certification/ckad/
-      issuer: Cloud Native Computing Foundation
-      date: Aug 1, 2022
-  publications:
-    - name: "Scaling GraphQL: Practical Patterns for High-Traffic Federated APIs"
-      publisher: ACM Queue
-      releaseDate: Jun 1, 2022
-      url: https://queue.acm.org/detail.cfm?id=3565952
-      summary: |
-        - Co-authored a practitioner-oriented article on scaling GraphQL federated APIs in production
-        - Covers schema design, gateway caching, and observability strategies used by platform teams
-        - Includes real-world performance data from a multi-tenant SaaS deployment
-  projects:
-    - name: ResqueGrid
-      url: https://github.com/jordanmitchell/resquegrid
-      description: Open-source background job processing dashboard with real-time metrics.
-      startDate: Nov 1, 2019
-      endDate: Jun 1, 2021
-      summary: |
-        - Created an open-source dashboard for monitoring background job queues across Redis and RabbitMQ
-        - Built with React, TypeScript, and Express; visualizes throughput, failure rates, and job latency
-        - Adopted by 300+ developers and featured in several Node.js newsletters
-      keywords:
-        - Open Source
         - React
-        - TypeScript
-        - Redis
-        - RabbitMQ
-    - name: PulseBoard
-      url: https://github.com/jordanmitchell/pulseboard
-      description: Real-time privacy-friendly analytics dashboard for marketing teams.
-      startDate: Jan 1, 2023
+        - JavaScript
+    - name: DevOps
+      level: Intermediate
+      keywords:
+        - Python
+        - Kubernetes
+        - Docker
+        - Shell
+        - Ansible
+    - name: Design
+      level: Intermediate
+      keywords:
+        - Sketch
+        - Figma
+        - Photoshop
+  awards:
+    - title: Dean's List
+      awarder: University of Southern California
+      date: Oct 2016
       summary: |
-        - Designed and built a real-time analytics dashboard focused on event tracking without cookie banners
-        - Uses ClickHouse for storage and streaming WebSockets for live chart updates
-        - Currently in public beta with 50+ weekly active installations
-      keywords:
-        - Real-time
-        - ClickHouse
-        - WebSockets
-        - Privacy
-  interests:
-    - name: Open Source
-      keywords:
-        - OSS contribution
-        - Hackathons
-        - Infra tooling
-    - name: Trail Running
-      keywords:
-        - Ultrarunning
-        - Bay Area trails
-        - Race volunteering
-  volunteer:
-    - organization: Code for Good
-      url: https://codeforgood.io
-      position: Technical Mentor
-      startDate: Jan 1, 2018
-      endDate: Dec 1, 2022
+        Awarded to students who achieve a high academic standing by maintaining
+        a specified grade point average (GPA) during a semester.
+  certificates:
+    - name: AWS Certified Developer - Associate
+      url: https://aws.amazon.com/certification/
+      issuer: AWS
+      date: Mar 2021
+  publications:
+    - publisher: ACM Transactions on Interactive Intelligent Systems
+      url: https://dl.acm.org/journal/tiis
+      name: Enhancing Human-Computer Interaction through Augmented Reality
+      releaseDate: Dec 2017
       summary: |
-        - Mentored early-career developers through a nonprofit software apprenticeship program
-        - Led weekly office hours focused on TypeScript, React, and engineering interview preparation
-        - Helped 20+ mentees land their first software development roles
+        - Explores the potential of augmented reality (AR) in improving interaction between humans and computers
+        - Highlights benefits of AR in various areas such as gaming, education, healthcare, and design
+        - Discusses challenges and future directions of AR technology in enhancing user experience
   references:
-    - name: Dr. Priya Sharma
-      email: priya.sharma@example.net
-      phone: "(206) 555-4712"
-      relationship: Former Manager, CloudShift Technologies
+    - name: Dr. Amanda Reynolds
+      phone: "(555) 123-4567"
+      relationship: Computer Science Professor
+      email: amanda.reynolds@usc.edu
       summary: |
-        Jordan is one of the most dependable engineers I have managed, combining deep technical skill with a clear focus on team health and user impact.
+        Andy Dufresne shows exceptional problem-solving skills and a solid
+        understanding of programming concepts, he would bring immense value to
+        any team or organization he becomes a part of.
+  projects:
+    - name: EduWeb
+      url: https://www.eduweb.xyz/
+      description: A web-based educational platform for interactive learning
+      startDate: Sep 2016
+      endDate: Dec 2016
+      summary: |
+        - Designed to enhance online learning experiences
+        - Facilitates students' engagement and collaboration through interactive features and user-friendly interface
+        - Offers a wide range of courses across various subjects
+        - Aims to improve the way students learn through the power of the web
+      keywords:
+        - Education
+        - Online Learning
+        - HCI
+  interests:
+    - name: Sports
+      keywords:
+        - Soccer
+        - Swimming
+        - Bicycling
+        - Hiking
+    - name: Music
+      keywords:
+        - Piano
+        - Guitar
+  volunteer:
+    - organization: USC Computer Science and Engineering Society
+      url: https://www.usccsesociety.org/
+      position: Tech Mentor
+      startDate: Sep 2015
+      endDate: Jul 2023
+      summary: |
+        - Volunteered as a Tech Mentor at USC Computer Science and Engineering Society
+        - Provided guidance and assistance to fellow students in their technical projects and coursework
+        - Assisted in organizing workshops, coding competitions, and networking events for the society members
+        - Contributed to fostering a collaborative and supportive environment within the student community
 
 locale:
   language: en

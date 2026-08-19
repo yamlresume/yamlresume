@@ -23,8 +23,6 @@
  */
 
 import fs from 'node:fs'
-import path from 'node:path'
-import { fileURLToPath } from 'node:url'
 import {
   appendResumeLayouts,
   injectResumeComments,
@@ -38,52 +36,7 @@ import { Command } from 'commander'
 import consola from 'consola'
 import yaml from 'yaml'
 
-/**
- * Creates a new resume file with the given filename
- *
- * @param filename - The name of the resume file to create
- * @throws {YAMLResumeError} When there are file-related errors:
- * - FILE_CONFLICT: When the file already exists
- * - FILE_READ_ERROR: When there's an error reading the template
- * - FILE_WRITE_ERROR: When there's an error writing the file
- */
-export function newResume(filename: string) {
-  if (fs.existsSync(filename)) {
-    throw new YAMLResumeError('FILE_CONFLICT', { path: filename })
-  }
-
-  const templatePath = path.join(
-    path.dirname(fileURLToPath(import.meta.url)),
-    /* v8 ignore start */
-    // I din't find a way to mock `import.meta.url` in tests so we have to
-    // ignore the following lines for coverage calculation
-    import.meta.url.includes('dist')
-      ? '../resources/resume.yml'
-      : '../../resources/resume.yml'
-    /* v8 ignore stop */
-  )
-
-  let templateContent: string
-
-  try {
-    templateContent = fs.readFileSync(templatePath, 'utf8')
-  } catch (error) {
-    consola.debug(
-      joinNonEmptyString(['Error reading template: ', toCodeBlock(error.stack)])
-    )
-    throw new YAMLResumeError('FILE_READ_ERROR', { path: templatePath })
-  }
-
-  try {
-    fs.writeFileSync(filename, templateContent)
-    consola.success(`Created ${filename} successfully.`)
-  } catch (error) {
-    consola.debug(
-      joinNonEmptyString(['Error creating resume: ', toCodeBlock(error.stack)])
-    )
-    throw new YAMLResumeError('FILE_WRITE_ERROR', { path: filename })
-  }
-}
+const DEFAULT_SAMPLE_ID = 'software-engineer'
 
 /**
  * Creates a new resume file from a curated sample resume.
@@ -91,15 +44,19 @@ export function newResume(filename: string) {
  * @param filename - The name of the resume file to create.
  * @param sampleId - The identifier of the sample resume to use.
  * @param language - The locale language of the sample resume.
+ * @param options - Optional settings.
+ * @param options.showSampleSource - Whether to mention the sample id in the
+ *   success message.
  * @throws {YAMLResumeError} When there are file-related errors:
  * - FILE_CONFLICT: When the file already exists
- * - FILE_WRITE_ERROR: When there's an error writing the file
+ * - FILE_WRITE_ERROR: When there is an error writing the file
  * @throws {Error} When the sample or language does not exist.
  */
 export function createSampleResume(
   filename: string,
   sampleId: string,
-  language: LocaleLanguage
+  language: LocaleLanguage,
+  options: { showSampleSource?: boolean } = {}
 ) {
   if (fs.existsSync(filename)) {
     throw new YAMLResumeError('FILE_CONFLICT', { path: filename })
@@ -112,9 +69,12 @@ export function createSampleResume(
 
   try {
     fs.writeFileSync(filename, contentWithLayoutsAndComments)
-    consola.success(
-      `Created ${filename} from sample "${sampleId}" successfully.`
-    )
+
+    const successMessage = options.showSampleSource
+      ? `Created ${filename} from sample "${sampleId}" successfully.`
+      : `Created ${filename} successfully.`
+
+    consola.success(successMessage)
   } catch (error) {
     consola.debug(
       joinNonEmptyString(['Error creating resume: ', toCodeBlock(error.stack)])
@@ -132,23 +92,15 @@ export function createNewCommand() {
     .description('create a new resume')
     .argument('[filename]', 'output filename', 'resume.yml')
     .option('--sample <id>', 'create from a curated sample resume')
-    .option(
-      '--language <language>',
-      'locale language for the sample (requires --sample)'
-    )
+    .option('--language <language>', 'locale language for the sample', 'en')
     .action((filename, options) => {
       try {
-        if (options.language && !options.sample) {
-          throw new Error(
-            'The --language flag can only be used together with --sample.'
-          )
-        }
-
-        if (options.sample) {
-          createSampleResume(filename, options.sample, options.language ?? 'en')
-        } else {
-          newResume(filename)
-        }
+        createSampleResume(
+          filename,
+          options.sample ?? DEFAULT_SAMPLE_ID,
+          options.language,
+          { showSampleSource: Boolean(options.sample) }
+        )
       } catch (error) {
         if (error instanceof YAMLResumeError) {
           consola.error(error.message)
