@@ -63,7 +63,7 @@ describe('git', () => {
       const result = await isGitAvailable()
 
       expect(result).toBe(true)
-      expect(mockedExeca).toBeCalledWith('git', ['--version'], {
+      expect(mockedExeca).toHaveBeenCalledWith('git', ['--version'], {
         timeout: 5000,
       })
     })
@@ -74,7 +74,7 @@ describe('git', () => {
       const result = await isGitAvailable()
 
       expect(result).toBe(false)
-      expect(mockedExeca).toBeCalledWith('git', ['--version'], {
+      expect(mockedExeca).toHaveBeenCalledWith('git', ['--version'], {
         timeout: 5000,
       })
     })
@@ -110,13 +110,15 @@ describe('git', () => {
           stdio: 'inherit',
         }
       )
-      expect(mockedConsola.start).toBeCalledWith(
+      expect(mockedConsola.start).toHaveBeenCalledWith(
         'Initializing git repository...'
       )
-      expect(mockedConsola.success).toBeCalledWith(
+      expect(mockedConsola.success).toHaveBeenCalledWith(
         'Git repository initialized!'
       )
-      expect(mockedConsola.success).toBeCalledWith('Initial commit created!')
+      expect(mockedConsola.success).toHaveBeenCalledWith(
+        'Initial commit created!'
+      )
     })
 
     it('should skip git initialization when git is not available', async () => {
@@ -125,10 +127,10 @@ describe('git', () => {
       await initializeGitRepository('/test/path')
 
       expect(mockedExeca).toHaveBeenCalledTimes(1)
-      expect(mockedConsola.warn).toBeCalledWith(
+      expect(mockedConsola.warn).toHaveBeenCalledWith(
         'Git is not available on your system. Skipping git initialization.'
       )
-      expect(mockedConsola.info).toBeCalledWith(
+      expect(mockedConsola.info).toHaveBeenCalledWith(
         'You can initialize git manually later by running: git init'
       )
     })
@@ -140,10 +142,10 @@ describe('git', () => {
 
       await initializeGitRepository('/test/path')
 
-      expect(mockedConsola.start).toBeCalledWith(
+      expect(mockedConsola.start).toHaveBeenCalledWith(
         'Initializing git repository...'
       )
-      expect(mockedConsola.warn).toBeCalledWith(
+      expect(mockedConsola.warn).toHaveBeenCalledWith(
         joinNonEmptyString(
           [
             'Failed to initialize git repository.',
@@ -162,10 +164,10 @@ describe('git', () => {
 
       await initializeGitRepository('/test/path')
 
-      expect(mockedConsola.success).toBeCalledWith(
+      expect(mockedConsola.success).toHaveBeenCalledWith(
         'Git repository initialized!'
       )
-      expect(mockedConsola.warn).toBeCalledWith(
+      expect(mockedConsola.warn).toHaveBeenCalledWith(
         joinNonEmptyString(
           [
             'Failed to initialize git repository.',
@@ -185,10 +187,10 @@ describe('git', () => {
 
       await initializeGitRepository('/test/path')
 
-      expect(mockedConsola.success).toBeCalledWith(
+      expect(mockedConsola.success).toHaveBeenCalledWith(
         'Git repository initialized!'
       )
-      expect(mockedConsola.warn).toBeCalledWith(
+      expect(mockedConsola.warn).toHaveBeenCalledWith(
         joinNonEmptyString(
           [
             'Failed to initialize git repository.',

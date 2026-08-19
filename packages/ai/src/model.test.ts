@@ -184,7 +184,7 @@ describe(getModelFromEnv, () => {
 
     const model = getModelFromEnv()
 
-    expect(createOpenAI).toBeCalledWith({
+    expect(createOpenAI).toHaveBeenCalledWith({
       apiKey: 'test-moonshot-key',
       baseURL: 'https://api.moonshot.cn/v1',
     })
@@ -205,7 +205,7 @@ describe(getModelFromEnv, () => {
 
     const model = getModelFromEnv()
 
-    expect(createOpenAI).toBeCalledWith({ apiKey: 'test-openai-key' })
+    expect(createOpenAI).toHaveBeenCalledWith({ apiKey: 'test-openai-key' })
     expect(model).toEqual({ id: 'gpt-5' })
   })
 
@@ -223,7 +223,7 @@ describe(getModelFromEnv, () => {
 
     const model = getModelFromEnv()
 
-    expect(createOpenAI).toBeCalledWith({
+    expect(createOpenAI).toHaveBeenCalledWith({
       apiKey: 'test-deepseek-key',
       baseURL: 'https://api.deepseek.com',
     })
@@ -244,7 +244,7 @@ describe(getModelFromEnv, () => {
 
     const model = getModelFromEnv()
 
-    expect(createOpenAI).toBeCalledWith({
+    expect(createOpenAI).toHaveBeenCalledWith({
       apiKey: 'dummy',
       baseURL: 'http://localhost:11434/v1',
     })
@@ -266,7 +266,7 @@ describe(getModelFromEnv, () => {
 
     const model = getModelFromEnv()
 
-    expect(createOpenAI).toBeCalledWith({
+    expect(createOpenAI).toHaveBeenCalledWith({
       apiKey: 'dummy',
       baseURL: 'http://192.168.1.100:11434/v1',
     })
@@ -288,7 +288,7 @@ describe(getModelFromEnv, () => {
 
     getModelFromEnv({ baseURL: 'https://cli.openai.example.com/v1' })
 
-    expect(createOpenAI).toBeCalledWith({
+    expect(createOpenAI).toHaveBeenCalledWith({
       apiKey: 'test-openai-key',
       baseURL: 'https://cli.openai.example.com/v1',
     })
@@ -304,7 +304,7 @@ describe(getModelFromEnv, () => {
       baseURL: 'https://cli.deepseek.com',
     })
 
-    expect(createOpenAI).toBeCalledWith({
+    expect(createOpenAI).toHaveBeenCalledWith({
       apiKey: 'test-deepseek-key',
       baseURL: 'https://cli.deepseek.com',
     })

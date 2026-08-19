@@ -113,7 +113,7 @@ describe(createTemplatesCommand, () => {
 
     templatesCommand.parse(['yamlresume', 'templates', 'list'])
 
-    expect(consolaSpy).toBeCalledWith(listTemplates())
+    expect(consolaSpy).toHaveBeenCalledWith(listTemplates())
   })
 
   it('should show help for templates list command', () => {

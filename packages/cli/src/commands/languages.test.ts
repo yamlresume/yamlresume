@@ -80,7 +80,7 @@ describe(createLanguagesCommand, () => {
 
     languagesCommand.parse(['yamlresume', 'languages', 'list'])
 
-    expect(consolaSpy).toBeCalledWith(listLanguages())
+    expect(consolaSpy).toHaveBeenCalledWith(listLanguages())
   })
 
   describe('languages command', () => {

@@ -64,12 +64,12 @@ describe(copyTemplateFiles, () => {
       resumeFile: 'test.yml',
     })
 
-    expect(mockReadDirSync).toBeCalledWith('/templates')
-    expect(mockWriteFileSync).toBeCalledWith(
+    expect(mockReadDirSync).toHaveBeenCalledWith('/templates')
+    expect(mockWriteFileSync).toHaveBeenCalledWith(
       path.join('/target', 'file1.txt'),
       'Hello TestProject!'
     )
-    expect(mockWriteFileSync).toBeCalledWith(
+    expect(mockWriteFileSync).toHaveBeenCalledWith(
       path.join('/target', 'file2.yml'),
       'Resume: test.yml'
     )
@@ -98,14 +98,14 @@ describe(copyTemplateFiles, () => {
       resumeFile: 'test.yml',
     })
 
-    expect(mockMkdirSync).toBeCalledWith(path.join('/target', 'subdir'), {
+    expect(mockMkdirSync).toHaveBeenCalledWith(path.join('/target', 'subdir'), {
       recursive: true,
     })
-    expect(mockWriteFileSync).toBeCalledWith(
+    expect(mockWriteFileSync).toHaveBeenCalledWith(
       path.join('/target', 'subdir', 'nested1.txt'),
       'Nested content'
     )
-    expect(mockWriteFileSync).toBeCalledWith(
+    expect(mockWriteFileSync).toHaveBeenCalledWith(
       path.join('/target', 'subdir', 'nested2.txt'),
       'Nested content'
     )
@@ -126,7 +126,7 @@ describe(copyTemplateFiles, () => {
       resumeFile: 'test.yml',
     })
 
-    expect(mockWriteFileSync).toBeCalledWith(
+    expect(mockWriteFileSync).toHaveBeenCalledWith(
       path.join('/target', 'template.txt'),
       'Hello TestProject! Welcome to TestProject project.'
     )
@@ -147,7 +147,7 @@ describe(copyTemplateFiles, () => {
       resumeFile: 'my-resume.yml',
     })
 
-    expect(mockWriteFileSync).toBeCalledWith(
+    expect(mockWriteFileSync).toHaveBeenCalledWith(
       path.join('/target', 'resume.yml'),
       'Project: MyProject, Resume: my-resume.yml'
     )
@@ -163,7 +163,7 @@ describe(copyTemplateFiles, () => {
 
     copyTemplateFiles('/templates', '/target', {})
 
-    expect(mockWriteFileSync).toBeCalledWith(
+    expect(mockWriteFileSync).toHaveBeenCalledWith(
       path.join('/target', 'file.txt'),
       'Plain text content'
     )

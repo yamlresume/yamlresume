@@ -126,14 +126,18 @@ describe('package-manager', () => {
 
         await installDependencies(packageManager, '/test/path')
 
-        expect(mockedConsola.start).toBeCalledWith(
+        expect(mockedConsola.start).toHaveBeenCalledWith(
           `Installing dependencies with ${packageManager.name}...`
         )
-        expect(mockedExeca).toBeCalledWith(packageManager.name, ['install'], {
-          cwd: '/test/path',
-          stdio: 'inherit',
-        })
-        expect(mockedConsola.success).toBeCalledWith(
+        expect(mockedExeca).toHaveBeenCalledWith(
+          packageManager.name,
+          ['install'],
+          {
+            cwd: '/test/path',
+            stdio: 'inherit',
+          }
+        )
+        expect(mockedConsola.success).toHaveBeenCalledWith(
           'Dependencies installed successfully!'
         )
       }
@@ -146,10 +150,10 @@ describe('package-manager', () => {
 
       await installDependencies(packageManager, '/test/path')
 
-      expect(mockedConsola.start).toBeCalledWith(
+      expect(mockedConsola.start).toHaveBeenCalledWith(
         'Installing dependencies with npm...'
       )
-      expect(mockedConsola.warn).toBeCalledWith(
+      expect(mockedConsola.warn).toHaveBeenCalledWith(
         joinNonEmptyString(
           [
             'Failed to install dependencies automatically.',
@@ -181,10 +185,10 @@ describe('package-manager', () => {
 
       await createResumeFile('my-resume.yml', '/test/path')
 
-      expect(mockedConsola.start).toBeCalledWith(
+      expect(mockedConsola.start).toHaveBeenCalledWith(
         'Creating resume file my-resume.yml...'
       )
-      expect(mockedExeca).toBeCalledWith(
+      expect(mockedExeca).toHaveBeenCalledWith(
         'npx',
         ['yamlresume', 'new', 'my-resume.yml'],
         {
@@ -200,10 +204,10 @@ describe('package-manager', () => {
 
       await createResumeFile(resumeFile, '/test/path')
 
-      expect(mockedConsola.start).toBeCalledWith(
+      expect(mockedConsola.start).toHaveBeenCalledWith(
         `Creating resume file ${resumeFile}...`
       )
-      expect(mockedConsola.warn).toBeCalledWith(
+      expect(mockedConsola.warn).toHaveBeenCalledWith(
         joinNonEmptyString(
           [
             'Failed to create resume file automatically.',

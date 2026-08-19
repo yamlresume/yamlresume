@@ -275,7 +275,9 @@ describe(readResume, () => {
       expect(error).toBeInstanceOf(YAMLResumeError)
       expect(error.code).toBe('INVALID_YAML')
       expect(error.message).toContain('Invalid YAML format: ')
-      expect(consoleLogSpy).toBeCalledWith(expect.stringContaining('error'))
+      expect(consoleLogSpy).toHaveBeenCalledWith(
+        expect.stringContaining('error')
+      )
     }
   })
 
@@ -303,7 +305,7 @@ describe(readResume, () => {
     expect(result).toEqual({ resume: invalidResume, validated: 'failed' })
 
     // Use resumePath directly since it's already resolved with OS-specific separators
-    expect(consoleSpy).toBeCalledWith(
+    expect(consoleSpy).toHaveBeenCalledWith(
       joinNonEmptyString(
         [
           `${resumePath}:26:11: warning: name should be 2 characters or more.`,
@@ -364,7 +366,7 @@ describe(createValidateCommand, () => {
     validateCommand.parse(['yamlresume', 'validate', resumePath])
 
     expect(consolaSuccessSpy).toHaveBeenCalledTimes(1)
-    expect(consolaSuccessSpy).toBeCalledWith('Resume validation passed.')
+    expect(consolaSuccessSpy).toHaveBeenCalledWith('Resume validation passed.')
     expect(consolaFailSpy).not.toBeCalled()
     expect(consolaErrorSpy).not.toBeCalled()
     expect(consoleLogSpy).not.toBeCalled()
@@ -376,7 +378,7 @@ describe(createValidateCommand, () => {
     validateCommand.parse(['yamlresume', 'validate', resumePath])
 
     expect(consolaFailSpy).toHaveBeenCalledTimes(1)
-    expect(consolaFailSpy).toBeCalledWith('Resume validation failed.')
+    expect(consolaFailSpy).toHaveBeenCalledWith('Resume validation failed.')
     expect(consolaSuccessSpy).not.toBeCalled()
     expect(consolaErrorSpy).not.toBeCalled()
     expect(consoleLogSpy).toBeCalled()
@@ -391,11 +393,11 @@ describe(createValidateCommand, () => {
     validateCommand.parse(['yamlresume', 'validate', resumePath])
 
     expect(consolaErrorSpy).toHaveBeenCalledTimes(1)
-    expect(consolaErrorSpy).toBeCalledWith(
+    expect(consolaErrorSpy).toHaveBeenCalledWith(
       'Failed to read resume file: non-existent-file.yml'
     )
     expect(processExitSpy).toHaveBeenCalledTimes(1)
-    expect(processExitSpy).toBeCalledWith(ErrorType.FILE_READ_ERROR.errno)
+    expect(processExitSpy).toHaveBeenCalledWith(ErrorType.FILE_READ_ERROR.errno)
   })
 
   it('should handle invalid YAML error', () => {
@@ -407,11 +409,11 @@ describe(createValidateCommand, () => {
     validateCommand.parse(['yamlresume', 'validate', resumePath])
 
     expect(consolaErrorSpy).toHaveBeenCalledTimes(1)
-    expect(consolaErrorSpy).toBeCalledWith(
+    expect(consolaErrorSpy).toHaveBeenCalledWith(
       expect.stringContaining('Invalid YAML format:')
     )
     expect(consoleLogSpy).toHaveBeenCalledTimes(1)
     expect(processExitSpy).toHaveBeenCalledTimes(1)
-    expect(processExitSpy).toBeCalledWith(ErrorType.INVALID_YAML.errno)
+    expect(processExitSpy).toHaveBeenCalledWith(ErrorType.INVALID_YAML.errno)
   })
 })

@@ -205,7 +205,7 @@ describe(inferLaTeXEnvironment, () => {
     })
 
     expect(inferLaTeXEnvironment()).toBe('xelatex')
-    expect(whichSpy).toBeCalledWith('xelatex')
+    expect(whichSpy).toHaveBeenCalledWith('xelatex')
   })
 
   it('should infer the LaTeX environment with tectonic', () => {
@@ -218,7 +218,7 @@ describe(inferLaTeXEnvironment, () => {
     })
 
     expect(inferLaTeXEnvironment()).toBe('tectonic')
-    expect(whichSpy).toBeCalledWith('tectonic')
+    expect(whichSpy).toHaveBeenCalledWith('tectonic')
   })
 
   it('should throw an error if neither xelatex nor tectonic is installed', () => {
@@ -442,7 +442,7 @@ describe(buildResume, () => {
     await buildResume(resumePath)
 
     expect(execSpy).toHaveBeenCalledTimes(1)
-    expect(execSpy).toBeCalledWith(
+    expect(execSpy).toHaveBeenCalledWith(
       'xelatex',
       ['-halt-on-error', path.basename(texFile)],
       {
@@ -452,7 +452,7 @@ describe(buildResume, () => {
       }
     )
 
-    expect(whichSpy).toBeCalledWith('xelatex')
+    expect(whichSpy).toHaveBeenCalledWith('xelatex')
 
     expect(outputStr).toEqual([
       `Generated resume tex file successfully: ${texFile}`,
@@ -484,7 +484,7 @@ describe(buildResume, () => {
     }
 
     expect(execSpy).toHaveBeenCalledTimes(1)
-    expect(execSpy).toBeCalledWith(
+    expect(execSpy).toHaveBeenCalledWith(
       'xelatex',
       ['-halt-on-error', path.basename(texFile)],
       {
@@ -494,7 +494,7 @@ describe(buildResume, () => {
       }
     )
 
-    expect(whichSpy).toBeCalledWith('xelatex')
+    expect(whichSpy).toHaveBeenCalledWith('xelatex')
 
     expect(outputStr).toEqual([
       `Generated resume tex file successfully: ${texFile}`,
@@ -532,10 +532,12 @@ describe(buildResume, () => {
 
     expect(execSpy).toHaveBeenCalledTimes(1)
     expect(consolaInfoSpy).toHaveBeenCalledTimes(2)
-    expect(consolaInfoSpy).toBeCalledWith('LaTeX output before timeout:')
-    expect(consolaInfoSpy).toBeCalledWith('LaTeX error output:')
-    expect(consolaLogSpy).toBeCalledWith('Partial LaTeX output before timeout')
-    expect(consolaLogSpy).toBeCalledWith('Some error output')
+    expect(consolaInfoSpy).toHaveBeenCalledWith('LaTeX output before timeout:')
+    expect(consolaInfoSpy).toHaveBeenCalledWith('LaTeX error output:')
+    expect(consolaLogSpy).toHaveBeenCalledWith(
+      'Partial LaTeX output before timeout'
+    )
+    expect(consolaLogSpy).toHaveBeenCalledWith('Some error output')
   })
 
   it('should handle timeout with only stdout', async () => {
@@ -559,9 +561,11 @@ describe(buildResume, () => {
     }
 
     expect(consolaInfoSpy).toHaveBeenCalledTimes(1)
-    expect(consolaInfoSpy).toBeCalledWith('LaTeX output before timeout:')
+    expect(consolaInfoSpy).toHaveBeenCalledWith('LaTeX output before timeout:')
     expect(consolaLogSpy).toHaveBeenCalledTimes(1)
-    expect(consolaLogSpy).toBeCalledWith('Partial LaTeX output before timeout')
+    expect(consolaLogSpy).toHaveBeenCalledWith(
+      'Partial LaTeX output before timeout'
+    )
   })
 
   it('should handle timeout with only stderr', async () => {
@@ -585,9 +589,9 @@ describe(buildResume, () => {
     }
 
     expect(consolaInfoSpy).toHaveBeenCalledTimes(1)
-    expect(consolaInfoSpy).toBeCalledWith('LaTeX error output:')
+    expect(consolaInfoSpy).toHaveBeenCalledWith('LaTeX error output:')
     expect(consolaLogSpy).toHaveBeenCalledTimes(1)
-    expect(consolaLogSpy).toBeCalledWith('Some error output')
+    expect(consolaLogSpy).toHaveBeenCalledWith('Some error output')
   })
 
   it('should generate tex file in output directory when pdf is false', async () => {
@@ -623,7 +627,7 @@ describe(buildResume, () => {
     await buildResume(resumePath, { pdf: true, output: outputDir })
 
     expect(execSpy).toHaveBeenCalledTimes(1)
-    expect(execSpy).toBeCalledWith(
+    expect(execSpy).toHaveBeenCalledWith(
       'xelatex',
       ['-halt-on-error', path.basename(texFile)],
       {
@@ -632,7 +636,7 @@ describe(buildResume, () => {
         timeout: LATEX_COMPILE_TIMEOUT_MS,
       }
     )
-    expect(whichSpy).toBeCalledWith('xelatex')
+    expect(whichSpy).toHaveBeenCalledWith('xelatex')
     expect(consolaStartSpy).toHaveBeenCalledTimes(1)
     expect(consolaSuccessSpy).toHaveBeenCalledTimes(4)
     expect(consolaDebugSpy).toHaveBeenCalledTimes(1)
@@ -810,7 +814,7 @@ describe(parseTimeout, () => {
     const result = parseTimeout('abc')
     expect(result).toBe(LATEX_COMPILE_TIMEOUT_MS)
     expect(consolaWarnSpy).toHaveBeenCalledTimes(1)
-    expect(consolaWarnSpy).toBeCalledWith(
+    expect(consolaWarnSpy).toHaveBeenCalledWith(
       expect.stringContaining('Invalid timeout value: "abc"')
     )
   })
@@ -819,7 +823,7 @@ describe(parseTimeout, () => {
     const result = parseTimeout('-5')
     expect(result).toBe(LATEX_COMPILE_TIMEOUT_MS)
     expect(consolaWarnSpy).toHaveBeenCalledTimes(1)
-    expect(consolaWarnSpy).toBeCalledWith(
+    expect(consolaWarnSpy).toHaveBeenCalledWith(
       expect.stringContaining('Invalid timeout value: "-5"')
     )
   })
@@ -900,8 +904,8 @@ describe(createBuildCommand, () => {
 
     await buildCommand.parseAsync(['yamlresume', 'build', resumePath])
 
-    expect(whichSpy).toBeCalledWith('xelatex')
-    expect(execSpy).toBeCalledWith(
+    expect(whichSpy).toHaveBeenCalledWith('xelatex')
+    expect(execSpy).toHaveBeenCalledWith(
       'xelatex',
       ['-halt-on-error', path.basename(inferOutput(resumePath))],
       {
@@ -939,7 +943,9 @@ describe(createBuildCommand, () => {
     await buildCommand.parseAsync(['yamlresume', 'build', resumePath])
 
     expect(processExitSpy).toHaveBeenCalledTimes(1)
-    expect(processExitSpy).toBeCalledWith(ErrorType.LATEX_COMPILE_ERROR.errno)
+    expect(processExitSpy).toHaveBeenCalledWith(
+      ErrorType.LATEX_COMPILE_ERROR.errno
+    )
     expect(consolaErrorSpy).toHaveBeenCalledTimes(1)
   })
 
@@ -980,7 +986,7 @@ describe(createBuildCommand, () => {
       resumePath,
     ])
 
-    expect(execSpy).toBeCalledWith(
+    expect(execSpy).toHaveBeenCalledWith(
       'xelatex',
       ['-halt-on-error', path.basename(texFile)],
       {
@@ -1003,7 +1009,7 @@ describe(createBuildCommand, () => {
       resumePath,
     ])
 
-    expect(execSpy).toBeCalledWith(
+    expect(execSpy).toHaveBeenCalledWith(
       'xelatex',
       ['-halt-on-error', path.basename(texFile)],
       {
@@ -1028,14 +1034,14 @@ describe(createBuildCommand, () => {
     ])
 
     expect(consolaWarnSpy).toHaveBeenCalledTimes(1)
-    expect(consolaWarnSpy).toBeCalledWith(
+    expect(consolaWarnSpy).toHaveBeenCalledWith(
       expect.stringContaining('Invalid timeout value: "abc"')
     )
-    expect(consolaWarnSpy).toBeCalledWith(
+    expect(consolaWarnSpy).toHaveBeenCalledWith(
       expect.stringContaining('non-negative number')
     )
     // Should use default timeout
-    expect(execSpy).toBeCalledWith(
+    expect(execSpy).toHaveBeenCalledWith(
       'xelatex',
       ['-halt-on-error', path.basename(texFile)],
       {
@@ -1060,14 +1066,14 @@ describe(createBuildCommand, () => {
     ])
 
     expect(consolaWarnSpy).toHaveBeenCalledTimes(1)
-    expect(consolaWarnSpy).toBeCalledWith(
+    expect(consolaWarnSpy).toHaveBeenCalledWith(
       expect.stringContaining('Invalid timeout value: "-5"')
     )
-    expect(consolaWarnSpy).toBeCalledWith(
+    expect(consolaWarnSpy).toHaveBeenCalledWith(
       expect.stringContaining('non-negative number')
     )
     // Should use default timeout
-    expect(execSpy).toBeCalledWith(
+    expect(execSpy).toHaveBeenCalledWith(
       'xelatex',
       ['-halt-on-error', path.basename(texFile)],
       {
@@ -1091,7 +1097,7 @@ describe(createBuildCommand, () => {
     ])
 
     // 10.5 seconds = 10500 milliseconds
-    expect(execSpy).toBeCalledWith(
+    expect(execSpy).toHaveBeenCalledWith(
       'xelatex',
       ['-halt-on-error', path.basename(texFile)],
       {

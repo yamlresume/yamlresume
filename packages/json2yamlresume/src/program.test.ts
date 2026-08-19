@@ -90,19 +90,19 @@ describe('program', () => {
     const program = createProgram()
 
     expect(program).toBeDefined()
-    expect(program.name).toBeCalledWith('json2yamlresume')
-    expect(program.description).toBeCalledWith(
+    expect(program.name).toHaveBeenCalledWith('json2yamlresume')
+    expect(program.description).toHaveBeenCalledWith(
       'Convert JSON Resume to YAMLResume format'
     )
-    expect(program.argument).toBeCalledWith(
+    expect(program.argument).toHaveBeenCalledWith(
       '<input-file>',
       'Input JSON Resume file path'
     )
-    expect(program.argument).toBeCalledWith(
+    expect(program.argument).toHaveBeenCalledWith(
       '[output-file]',
       'Output YAMLResume file path'
     )
-    expect(program.action).toBeCalledWith(convertResumeAction)
+    expect(program.action).toHaveBeenCalledWith(convertResumeAction)
   })
 })
 
@@ -150,7 +150,9 @@ describe(convertResumeAction, () => {
 
     await convertResumeAction(inputPath, outputPath)
 
-    expect(consola.success).toBeCalledWith('Conversion completed successfully!')
+    expect(consola.success).toHaveBeenCalledWith(
+      'Conversion completed successfully!'
+    )
     expect(fs.existsSync(outputPath)).toBe(true)
   })
 
@@ -177,7 +179,9 @@ describe(convertResumeAction, () => {
     await convertResumeAction(inputPath, outputPath)
 
     expect(fs.existsSync(outputPath)).toBe(true)
-    expect(consola.success).toBeCalledWith('Conversion completed successfully!')
+    expect(consola.success).toHaveBeenCalledWith(
+      'Conversion completed successfully!'
+    )
   })
 
   it('should handle input file not found', async () => {
@@ -185,10 +189,10 @@ describe(convertResumeAction, () => {
 
     await convertResumeAction(nonExistentPath)
 
-    expect(consola.error).toBeCalledWith(
+    expect(consola.error).toHaveBeenCalledWith(
       `Input file not found: ${nonExistentPath}`
     )
-    expect(mockProcessExit).toBeCalledWith(1)
+    expect(mockProcessExit).toHaveBeenCalledWith(1)
   })
 
   it('should handle JSON parsing errors', async () => {
@@ -201,10 +205,10 @@ describe(convertResumeAction, () => {
 
     await convertResumeAction(inputPath)
 
-    expect(consola.error).toBeCalledWith(
+    expect(consola.error).toHaveBeenCalledWith(
       expect.stringContaining('Failed to parse JSON file:')
     )
-    expect(mockProcessExit).toBeCalledWith(1)
+    expect(mockProcessExit).toHaveBeenCalledWith(1)
   })
 
   it('should handle conversion errors with a message', async () => {
@@ -219,8 +223,11 @@ describe(convertResumeAction, () => {
 
     await convertResumeAction(inputPath)
 
-    expect(consola.error).toBeCalledWith('Conversion failed:', error.message)
-    expect(mockProcessExit).toBeCalledWith(1)
+    expect(consola.error).toHaveBeenCalledWith(
+      'Conversion failed:',
+      error.message
+    )
+    expect(mockProcessExit).toHaveBeenCalledWith(1)
   })
 
   it('should handle conversion errors without a message', async () => {
@@ -235,8 +242,8 @@ describe(convertResumeAction, () => {
 
     await convertResumeAction(inputPath)
 
-    expect(consola.error).toBeCalledWith('Conversion failed:', error)
-    expect(mockProcessExit).toBeCalledWith(1)
+    expect(consola.error).toHaveBeenCalledWith('Conversion failed:', error)
+    expect(mockProcessExit).toHaveBeenCalledWith(1)
   })
 
   it('should handle unknown conversion errors', async () => {
@@ -250,7 +257,10 @@ describe(convertResumeAction, () => {
 
     await convertResumeAction(inputPath)
 
-    expect(consola.error).toBeCalledWith('Conversion failed:', 'Unknown error')
-    expect(mockProcessExit).toBeCalledWith(1)
+    expect(consola.error).toHaveBeenCalledWith(
+      'Conversion failed:',
+      'Unknown error'
+    )
+    expect(mockProcessExit).toHaveBeenCalledWith(1)
   })
 })

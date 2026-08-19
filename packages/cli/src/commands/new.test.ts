@@ -69,7 +69,7 @@ describe(newResume, () => {
     expect(readFileSync.mock.calls[0][1]).toBe('utf8')
 
     expect(writeFileSync).toHaveBeenCalledTimes(1)
-    expect(writeFileSync).toBeCalledWith(resumeFilename, resumeContent)
+    expect(writeFileSync).toHaveBeenCalledWith(resumeFilename, resumeContent)
   })
 
   it('should create a resume template with custom filename', () => {
@@ -82,7 +82,7 @@ describe(newResume, () => {
     expect(readFileSync.mock.calls[0][1]).toBe('utf8')
 
     expect(writeFileSync).toHaveBeenCalledTimes(1)
-    expect(writeFileSync).toBeCalledWith(resumeFilename, resumeContent)
+    expect(writeFileSync).toHaveBeenCalledWith(resumeFilename, resumeContent)
   })
 
   it('should not create a resume if file already exists', () => {
@@ -286,14 +286,16 @@ describe(createNewCommand, () => {
     newCommand.parse(['yamlresume', 'new'])
 
     expect(consolaSuccessSpy).toHaveBeenCalledTimes(1)
-    expect(consolaSuccessSpy).toBeCalledWith('Created resume.yml successfully.')
+    expect(consolaSuccessSpy).toHaveBeenCalledWith(
+      'Created resume.yml successfully.'
+    )
   })
 
   it('should create a new resume with custom filename', () => {
     newCommand.parse(['yamlresume', 'new', 'my-resume.yml'])
 
     expect(consolaSuccessSpy).toHaveBeenCalledTimes(1)
-    expect(consolaSuccessSpy).toBeCalledWith(
+    expect(consolaSuccessSpy).toHaveBeenCalledWith(
       'Created my-resume.yml successfully.'
     )
   })
@@ -306,7 +308,7 @@ describe(createNewCommand, () => {
     expect(consolaSuccessSpy).not.toBeCalled()
     expect(consolaErrorSpy).toHaveBeenCalledTimes(1)
     expect(processExitSpy).toHaveBeenCalledTimes(1)
-    expect(processExitSpy).toBeCalledWith(ErrorType.FILE_CONFLICT.errno)
+    expect(processExitSpy).toHaveBeenCalledWith(ErrorType.FILE_CONFLICT.errno)
   })
 
   it('should handle file read error with errno', () => {
@@ -319,7 +321,7 @@ describe(createNewCommand, () => {
     expect(consolaSuccessSpy).not.toBeCalled()
     expect(consolaErrorSpy).toHaveBeenCalledTimes(1)
     expect(processExitSpy).toHaveBeenCalledTimes(1)
-    expect(processExitSpy).toBeCalledWith(ErrorType.FILE_READ_ERROR.errno)
+    expect(processExitSpy).toHaveBeenCalledWith(ErrorType.FILE_READ_ERROR.errno)
   })
 
   it('should handle file write error with errno', () => {
@@ -332,14 +334,16 @@ describe(createNewCommand, () => {
     expect(consolaSuccessSpy).not.toBeCalled()
     expect(consolaErrorSpy).toHaveBeenCalledTimes(1)
     expect(processExitSpy).toHaveBeenCalledTimes(1)
-    expect(processExitSpy).toBeCalledWith(ErrorType.FILE_WRITE_ERROR.errno)
+    expect(processExitSpy).toHaveBeenCalledWith(
+      ErrorType.FILE_WRITE_ERROR.errno
+    )
   })
 
   it('should create a resume from a sample with --sample', () => {
     newCommand.parse(['yamlresume', 'new', '--sample', 'software-engineer'])
 
     expect(consolaSuccessSpy).toHaveBeenCalledTimes(1)
-    expect(consolaSuccessSpy).toBeCalledWith(
+    expect(consolaSuccessSpy).toHaveBeenCalledWith(
       'Created resume.yml from sample "software-engineer" successfully.'
     )
   })
@@ -356,7 +360,7 @@ describe(createNewCommand, () => {
     ])
 
     expect(consolaSuccessSpy).toHaveBeenCalledTimes(1)
-    expect(consolaSuccessSpy).toBeCalledWith(
+    expect(consolaSuccessSpy).toHaveBeenCalledWith(
       'Created my-resume.yml from sample "software-engineer" successfully.'
     )
   })
@@ -367,6 +371,6 @@ describe(createNewCommand, () => {
     expect(consolaSuccessSpy).not.toBeCalled()
     expect(consolaErrorSpy).toHaveBeenCalledTimes(1)
     expect(processExitSpy).toHaveBeenCalledTimes(1)
-    expect(processExitSpy).toBeCalledWith(1)
+    expect(processExitSpy).toHaveBeenCalledWith(1)
   })
 })

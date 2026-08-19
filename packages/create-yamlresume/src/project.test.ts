@@ -139,14 +139,14 @@ describe('create-project', () => {
 
       await createYamlResumeProject('test-project')
 
-      expect(consola.default.info).toBeCalledWith(
+      expect(consola.default.info).toHaveBeenCalledWith(
         expect.stringContaining('Using npm.')
       )
-      expect(fs.default.mkdirSync).toBeCalledWith(
+      expect(fs.default.mkdirSync).toHaveBeenCalledWith(
         expect.stringContaining('test-project'),
         { recursive: true }
       )
-      expect(copyTemplateFiles).toBeCalledWith(
+      expect(copyTemplateFiles).toHaveBeenCalledWith(
         '/templates',
         expect.any(String),
         {
@@ -154,15 +154,18 @@ describe('create-project', () => {
           resumeFile: 'resume.yml',
         }
       )
-      expect(installDependencies).toBeCalledWith(
+      expect(installDependencies).toHaveBeenCalledWith(
         { name: 'npm', lockFile: 'package-lock.json' },
         expect.any(String)
       )
-      expect(createResumeFile).toBeCalledWith('resume.yml', expect.any(String))
-      expect(initializeGitRepository).toBeCalledWith(expect.any(String))
+      expect(createResumeFile).toHaveBeenCalledWith(
+        'resume.yml',
+        expect.any(String)
+      )
+      expect(initializeGitRepository).toHaveBeenCalledWith(expect.any(String))
 
       // showProjectHelp
-      expect(consola.default.info).toBeCalledWith(
+      expect(consola.default.info).toHaveBeenCalledWith(
         `\n${chalk.green('✨ Project created successfully!')}`
       )
     })
@@ -193,19 +196,19 @@ describe('create-project', () => {
 
       await createYamlResumeProject()
 
-      expect(prompts.default).toBeCalledWith({
+      expect(prompts.default).toHaveBeenCalledWith({
         type: 'text',
         name: 'projectName',
         message: 'What is your project name?',
         initial: 'yamlresume',
         validate: expect.any(Function),
       })
-      expect(fs.default.mkdirSync).toBeCalledWith(
+      expect(fs.default.mkdirSync).toHaveBeenCalledWith(
         expect.stringContaining('prompted-project'),
         { recursive: true }
       )
 
-      expect(copyTemplateFiles).toBeCalledWith(
+      expect(copyTemplateFiles).toHaveBeenCalledWith(
         '/templates',
         expect.any(String),
         {
@@ -213,15 +216,18 @@ describe('create-project', () => {
           resumeFile: 'resume.yml',
         }
       )
-      expect(installDependencies).toBeCalledWith(
+      expect(installDependencies).toHaveBeenCalledWith(
         { name: 'npm', lockFile: 'package-lock.json' },
         expect.any(String)
       )
-      expect(createResumeFile).toBeCalledWith('resume.yml', expect.any(String))
-      expect(initializeGitRepository).toBeCalledWith(expect.any(String))
+      expect(createResumeFile).toHaveBeenCalledWith(
+        'resume.yml',
+        expect.any(String)
+      )
+      expect(initializeGitRepository).toHaveBeenCalledWith(expect.any(String))
 
       // showProjectHelp
-      expect(consola.default.info).toBeCalledWith(
+      expect(consola.default.info).toHaveBeenCalledWith(
         `\n${chalk.green('✨ Project created successfully!')}`
       )
     })
@@ -252,11 +258,11 @@ describe('create-project', () => {
 
       await createYamlResumeProject(projectName)
 
-      expect(fs.default.mkdirSync).toBeCalledWith(
+      expect(fs.default.mkdirSync).toHaveBeenCalledWith(
         expect.stringContaining(projectName),
         { recursive: true }
       )
-      expect(copyTemplateFiles).toBeCalledWith(
+      expect(copyTemplateFiles).toHaveBeenCalledWith(
         '/templates',
         expect.any(String),
         {
@@ -264,15 +270,18 @@ describe('create-project', () => {
           resumeFile: 'resume.yml',
         }
       )
-      expect(installDependencies).toBeCalledWith(
+      expect(installDependencies).toHaveBeenCalledWith(
         { name: 'npm', lockFile: 'package-lock.json' },
         expect.any(String)
       )
-      expect(createResumeFile).toBeCalledWith('resume.yml', expect.any(String))
-      expect(initializeGitRepository).toBeCalledWith(expect.any(String))
+      expect(createResumeFile).toHaveBeenCalledWith(
+        'resume.yml',
+        expect.any(String)
+      )
+      expect(initializeGitRepository).toHaveBeenCalledWith(expect.any(String))
 
       // showProjectHelp
-      expect(consola.default.info).toBeCalledWith(
+      expect(consola.default.info).toHaveBeenCalledWith(
         `\n${chalk.green('✨ Project created successfully!')}`
       )
     })
@@ -290,7 +299,7 @@ describe('create-project', () => {
 
       await createYamlResumeProject(projectName)
 
-      expect(consola.default.warn).toBeCalledWith(
+      expect(consola.default.warn).toHaveBeenCalledWith(
         `Target directory ${chalk.cyan(projectName)} exists and is not empty.`
       )
 
@@ -313,7 +322,7 @@ describe('create-project', () => {
 
       await createYamlResumeProject(projectName)
 
-      expect(consola.default.warn).toBeCalledWith(
+      expect(consola.default.warn).toHaveBeenCalledWith(
         `Target path ${chalk.cyan(projectName)} exists and cannot be accessed.`
       )
 
@@ -336,7 +345,7 @@ describe('create-project', () => {
       const projectName = 'test-project'
       await createYamlResumeProject(projectName)
 
-      expect(consola.default.info).toBeCalledWith('Operation cancelled.')
+      expect(consola.default.info).toHaveBeenCalledWith('Operation cancelled.')
     })
   })
 
@@ -350,13 +359,13 @@ describe('create-project', () => {
       const projectName = 'test-project'
       showProjectHelp(projectName, mockPackageManager, 'resume.yml')
 
-      expect(consola.default.info).toBeCalledWith(
+      expect(consola.default.info).toHaveBeenCalledWith(
         expect.stringContaining('✨ Project created successfully!')
       )
-      expect(consola.default.info).toBeCalledWith(
+      expect(consola.default.info).toHaveBeenCalledWith(
         expect.stringContaining('Next steps:')
       )
-      expect(consola.default.info).toBeCalledWith(
+      expect(consola.default.info).toHaveBeenCalledWith(
         expect.stringContaining('Learn more:')
       )
     })
@@ -369,13 +378,13 @@ describe('create-project', () => {
 
         showProjectHelp(projectName, pm, 'resume.yml')
 
-        expect(consola.default.info).toBeCalledWith(
+        expect(consola.default.info).toHaveBeenCalledWith(
           expect.stringContaining(`${pm.name} run build`)
         )
-        expect(consola.default.info).toBeCalledWith(
+        expect(consola.default.info).toHaveBeenCalledWith(
           expect.stringContaining(`${pm.name} run dev`)
         )
-        expect(consola.default.info).toBeCalledWith(
+        expect(consola.default.info).toHaveBeenCalledWith(
           expect.stringContaining(`${pm.name} run yamlresume help`)
         )
       })

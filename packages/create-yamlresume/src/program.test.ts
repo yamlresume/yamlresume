@@ -42,15 +42,15 @@ describe('program', () => {
     const program = createProgram()
 
     expect(program).toBeDefined()
-    expect(program.name).toBeCalledWith('create-yamlresume')
-    expect(program.description).toBeCalledWith(
+    expect(program.name).toHaveBeenCalledWith('create-yamlresume')
+    expect(program.description).toHaveBeenCalledWith(
       'Create a new YAMLResume project'
     )
-    expect(program.argument).toBeCalledWith(
+    expect(program.argument).toHaveBeenCalledWith(
       '[project-name]',
       'name of the project directory'
     )
-    expect(program.action).toBeCalledWith(createProjectAction)
+    expect(program.action).toHaveBeenCalledWith(createProjectAction)
   })
 })
 
@@ -64,7 +64,7 @@ describe(createProjectAction, () => {
     await createProjectAction('test-project')
 
     // Verify createYamlResumeProject was called
-    expect(createYamlResumeProject).toBeCalledWith('test-project')
+    expect(createYamlResumeProject).toHaveBeenCalledWith('test-project')
   })
 
   it('should handle errors when creating project', async () => {
@@ -84,11 +84,11 @@ describe(createProjectAction, () => {
     // Call the action function
     await createProjectAction('test-project')
 
-    expect(mockConsoleError).toBeCalledWith(
+    expect(mockConsoleError).toHaveBeenCalledWith(
       'Error creating project:',
       'Test error'
     )
-    expect(mockProcessExit).toBeCalledWith(1)
+    expect(mockProcessExit).toHaveBeenCalledWith(1)
   })
 
   it('should handle errors with undefined message property', async () => {
@@ -107,11 +107,11 @@ describe(createProjectAction, () => {
     // Call the action function
     await createProjectAction('test-project')
 
-    expect(mockConsoleError).toBeCalledWith(
+    expect(mockConsoleError).toHaveBeenCalledWith(
       'Error creating project:',
       errorWithoutMessage
     )
-    expect(mockProcessExit).toBeCalledWith(1)
+    expect(mockProcessExit).toHaveBeenCalledWith(1)
   })
 
   it('should handle errors when createYamlResumeProject throws an exception', async () => {
@@ -131,11 +131,11 @@ describe(createProjectAction, () => {
     // Call the action function
     await createProjectAction('test-project')
 
-    expect(mockConsoleError).toBeCalledWith(
+    expect(mockConsoleError).toHaveBeenCalledWith(
       'Error creating project:',
       'Project creation failed'
     )
-    expect(mockProcessExit).toBeCalledWith(1)
+    expect(mockProcessExit).toHaveBeenCalledWith(1)
   })
 
   it('should handle errors with no message or toString properties', async () => {
@@ -153,10 +153,10 @@ describe(createProjectAction, () => {
     // Call the action function
     await createProjectAction('test-project')
 
-    expect(mockConsoleError).toBeCalledWith(
+    expect(mockConsoleError).toHaveBeenCalledWith(
       'Error creating project:',
       'Unknown error'
     )
-    expect(mockProcessExit).toBeCalledWith(1)
+    expect(mockProcessExit).toHaveBeenCalledWith(1)
   })
 })
