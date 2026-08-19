@@ -236,7 +236,7 @@ describe(inferLaTeXEnvironment, () => {
       )
     }
 
-    expect(whichSpy).toBeCalledTimes(2)
+    expect(whichSpy).toHaveBeenCalledTimes(2)
   })
 })
 
@@ -418,7 +418,7 @@ describe(buildResume, () => {
     const htmlFile = resumePath.replace('.yml', '.html')
     await buildResume(resumePath, { pdf: false })
 
-    expect(execSpy).toBeCalledTimes(0)
+    expect(execSpy).toHaveBeenCalledTimes(0)
 
     expect(whichSpy).not.toBeCalled()
 
@@ -427,7 +427,7 @@ describe(buildResume, () => {
       `Generated resume markdown file successfully: ${mdFile}`,
       `Generated resume html file successfully: ${htmlFile}`,
     ])
-    expect(consolaSuccessSpy).toBeCalledTimes(3)
+    expect(consolaSuccessSpy).toHaveBeenCalledTimes(3)
   })
 
   it('should generate a pdf file', async () => {
@@ -441,7 +441,7 @@ describe(buildResume, () => {
 
     await buildResume(resumePath)
 
-    expect(execSpy).toBeCalledTimes(1)
+    expect(execSpy).toHaveBeenCalledTimes(1)
     expect(execSpy).toBeCalledWith(
       'xelatex',
       ['-halt-on-error', path.basename(texFile)],
@@ -462,9 +462,9 @@ describe(buildResume, () => {
       `Generated resume html file successfully: ${htmlFile}`,
     ])
 
-    expect(consolaStartSpy).toBeCalledTimes(1)
-    expect(consolaSuccessSpy).toBeCalledTimes(4)
-    expect(consolaDebugSpy).toBeCalledTimes(1)
+    expect(consolaStartSpy).toHaveBeenCalledTimes(1)
+    expect(consolaSuccessSpy).toHaveBeenCalledTimes(4)
+    expect(consolaDebugSpy).toHaveBeenCalledTimes(1)
   })
 
   it('should handle error when generating pdf', async () => {
@@ -483,7 +483,7 @@ describe(buildResume, () => {
       expect(error.message).toContain('aTeX compilation failed: ')
     }
 
-    expect(execSpy).toBeCalledTimes(1)
+    expect(execSpy).toHaveBeenCalledTimes(1)
     expect(execSpy).toBeCalledWith(
       'xelatex',
       ['-halt-on-error', path.basename(texFile)],
@@ -501,9 +501,9 @@ describe(buildResume, () => {
       `Generating resume pdf file with command: \`${command} ${args.join(' ')}\`...`,
     ])
 
-    expect(consolaStartSpy).toBeCalledTimes(1)
-    expect(consolaSuccessSpy).toBeCalledTimes(1)
-    expect(consolaDebugSpy).toBeCalledTimes(2)
+    expect(consolaStartSpy).toHaveBeenCalledTimes(1)
+    expect(consolaSuccessSpy).toHaveBeenCalledTimes(1)
+    expect(consolaDebugSpy).toHaveBeenCalledTimes(2)
   })
 
   it('should handle timeout when generating pdf', async () => {
@@ -530,8 +530,8 @@ describe(buildResume, () => {
       expect(error.message).toContain('timed out after 30 seconds')
     }
 
-    expect(execSpy).toBeCalledTimes(1)
-    expect(consolaInfoSpy).toBeCalledTimes(2)
+    expect(execSpy).toHaveBeenCalledTimes(1)
+    expect(consolaInfoSpy).toHaveBeenCalledTimes(2)
     expect(consolaInfoSpy).toBeCalledWith('LaTeX output before timeout:')
     expect(consolaInfoSpy).toBeCalledWith('LaTeX error output:')
     expect(consolaLogSpy).toBeCalledWith('Partial LaTeX output before timeout')
@@ -558,9 +558,9 @@ describe(buildResume, () => {
       expect(error.code).toBe('LATEX_COMPILE_TIMEOUT')
     }
 
-    expect(consolaInfoSpy).toBeCalledTimes(1)
+    expect(consolaInfoSpy).toHaveBeenCalledTimes(1)
     expect(consolaInfoSpy).toBeCalledWith('LaTeX output before timeout:')
-    expect(consolaLogSpy).toBeCalledTimes(1)
+    expect(consolaLogSpy).toHaveBeenCalledTimes(1)
     expect(consolaLogSpy).toBeCalledWith('Partial LaTeX output before timeout')
   })
 
@@ -584,9 +584,9 @@ describe(buildResume, () => {
       expect(error.code).toBe('LATEX_COMPILE_TIMEOUT')
     }
 
-    expect(consolaInfoSpy).toBeCalledTimes(1)
+    expect(consolaInfoSpy).toHaveBeenCalledTimes(1)
     expect(consolaInfoSpy).toBeCalledWith('LaTeX error output:')
-    expect(consolaLogSpy).toBeCalledTimes(1)
+    expect(consolaLogSpy).toHaveBeenCalledTimes(1)
     expect(consolaLogSpy).toBeCalledWith('Some error output')
   })
 
@@ -599,7 +599,7 @@ describe(buildResume, () => {
 
     await buildResume(resumePath, { pdf: false, output: outputDir })
 
-    expect(execSpy).toBeCalledTimes(0)
+    expect(execSpy).toHaveBeenCalledTimes(0)
     expect(whichSpy).not.toBeCalled()
     expect(outputStr).toEqual([
       `Generated resume tex file successfully: ${texFile}`,
@@ -608,7 +608,7 @@ describe(buildResume, () => {
     ])
     // Check that output contains the directory (normalize for cross-platform)
     expect(outputStr[0]).toContain(path.normalize(outputDir))
-    expect(consolaSuccessSpy).toBeCalledTimes(3)
+    expect(consolaSuccessSpy).toHaveBeenCalledTimes(3)
   })
 
   it('should generate pdf file in output directory', async () => {
@@ -622,7 +622,7 @@ describe(buildResume, () => {
 
     await buildResume(resumePath, { pdf: true, output: outputDir })
 
-    expect(execSpy).toBeCalledTimes(1)
+    expect(execSpy).toHaveBeenCalledTimes(1)
     expect(execSpy).toBeCalledWith(
       'xelatex',
       ['-halt-on-error', path.basename(texFile)],
@@ -633,9 +633,9 @@ describe(buildResume, () => {
       }
     )
     expect(whichSpy).toBeCalledWith('xelatex')
-    expect(consolaStartSpy).toBeCalledTimes(1)
-    expect(consolaSuccessSpy).toBeCalledTimes(4)
-    expect(consolaDebugSpy).toBeCalledTimes(1)
+    expect(consolaStartSpy).toHaveBeenCalledTimes(1)
+    expect(consolaSuccessSpy).toHaveBeenCalledTimes(4)
+    expect(consolaDebugSpy).toHaveBeenCalledTimes(1)
 
     expect(outputStr).toEqual([
       `Generated resume tex file successfully: ${texFile}`,
@@ -723,7 +723,7 @@ describe(buildResume, () => {
     await buildResume(resumePath)
 
     // Should generate two outputs
-    expect(execSpy).toBeCalledTimes(2)
+    expect(execSpy).toHaveBeenCalledTimes(2)
 
     // First call for index 0
     expect(execSpy.mock.calls[0][1]).toContain('software-engineer.0.tex')
@@ -764,7 +764,7 @@ describe(buildResume, () => {
     await buildResume(resumePath)
 
     // Should generate outputs for all default layouts
-    expect(execSpy).toBeCalledTimes(1)
+    expect(execSpy).toHaveBeenCalledTimes(1)
     expect(execSpy.mock.calls[0][1]).toContain('software-engineer.tex')
 
     expect(outputStr).toEqual([
@@ -809,7 +809,7 @@ describe(parseTimeout, () => {
   it('should return default timeout for non-numeric values and log warning', () => {
     const result = parseTimeout('abc')
     expect(result).toBe(LATEX_COMPILE_TIMEOUT_MS)
-    expect(consolaWarnSpy).toBeCalledTimes(1)
+    expect(consolaWarnSpy).toHaveBeenCalledTimes(1)
     expect(consolaWarnSpy).toBeCalledWith(
       expect.stringContaining('Invalid timeout value: "abc"')
     )
@@ -818,7 +818,7 @@ describe(parseTimeout, () => {
   it('should return default timeout for negative values and log warning', () => {
     const result = parseTimeout('-5')
     expect(result).toBe(LATEX_COMPILE_TIMEOUT_MS)
-    expect(consolaWarnSpy).toBeCalledTimes(1)
+    expect(consolaWarnSpy).toHaveBeenCalledTimes(1)
     expect(consolaWarnSpy).toBeCalledWith(
       expect.stringContaining('Invalid timeout value: "-5"')
     )
@@ -910,8 +910,8 @@ describe(createBuildCommand, () => {
         timeout: LATEX_COMPILE_TIMEOUT_MS,
       }
     )
-    expect(consolaStartSpy).toBeCalledTimes(1)
-    expect(consolaSuccessSpy).toBeCalledTimes(4)
+    expect(consolaStartSpy).toHaveBeenCalledTimes(1)
+    expect(consolaSuccessSpy).toHaveBeenCalledTimes(4)
   })
 
   it('should not build resume to PDF if no-pdf option is provided', async () => {
@@ -925,7 +925,7 @@ describe(createBuildCommand, () => {
     ])
 
     expect(whichSpy).not.toBeCalled()
-    expect(consolaSuccessSpy).toBeCalledTimes(3)
+    expect(consolaSuccessSpy).toHaveBeenCalledTimes(3)
   })
 
   it('should handle error when building resume to PDF', async () => {
@@ -938,9 +938,9 @@ describe(createBuildCommand, () => {
 
     await buildCommand.parseAsync(['yamlresume', 'build', resumePath])
 
-    expect(processExitSpy).toBeCalledTimes(1)
+    expect(processExitSpy).toHaveBeenCalledTimes(1)
     expect(processExitSpy).toBeCalledWith(ErrorType.LATEX_COMPILE_ERROR.errno)
-    expect(consolaErrorSpy).toBeCalledTimes(1)
+    expect(consolaErrorSpy).toHaveBeenCalledTimes(1)
   })
 
   it('should accept output option', () => {
@@ -1027,7 +1027,7 @@ describe(createBuildCommand, () => {
       resumePath,
     ])
 
-    expect(consolaWarnSpy).toBeCalledTimes(1)
+    expect(consolaWarnSpy).toHaveBeenCalledTimes(1)
     expect(consolaWarnSpy).toBeCalledWith(
       expect.stringContaining('Invalid timeout value: "abc"')
     )
@@ -1059,7 +1059,7 @@ describe(createBuildCommand, () => {
       resumePath,
     ])
 
-    expect(consolaWarnSpy).toBeCalledTimes(1)
+    expect(consolaWarnSpy).toHaveBeenCalledTimes(1)
     expect(consolaWarnSpy).toBeCalledWith(
       expect.stringContaining('Invalid timeout value: "-5"')
     )

@@ -124,15 +124,15 @@ describe(watchResume, () => {
     })
 
     // initial build
-    expect(buildResumeSpy).toBeCalledTimes(1)
-    expect(consolaStartSpy).toBeCalledTimes(1)
-    expect(chokidarWatchSpy).toBeCalledTimes(1)
+    expect(buildResumeSpy).toHaveBeenCalledTimes(1)
+    expect(consolaStartSpy).toHaveBeenCalledTimes(1)
+    expect(chokidarWatchSpy).toHaveBeenCalledTimes(1)
 
     // trigger one change via registered handler
     for (const h of handlers.change) {
       h('software-engineer.yml')
     }
-    expect(buildResumeSpy).toBeCalledTimes(2)
+    expect(buildResumeSpy).toHaveBeenCalledTimes(2)
 
     // cleanup
     watcher.close()
@@ -141,13 +141,13 @@ describe(watchResume, () => {
   it('should trigger on rename events (atomic saves)', () => {
     watchResume(resumePath, { pdf: true, validate: true })
 
-    expect(buildResumeSpy).toBeCalledTimes(1) // initial build
+    expect(buildResumeSpy).toHaveBeenCalledTimes(1) // initial build
 
     // Simulate add event to reflect atomic save behavior with chokidar
     for (const h of handlers.add) {
       h('software-engineer.yml')
     }
-    expect(buildResumeSpy).toBeCalledTimes(2) // triggered by rename
+    expect(buildResumeSpy).toHaveBeenCalledTimes(2) // triggered by rename
   })
 
   it('should coalesce events during a build into a single follow-up build', () => {
@@ -175,7 +175,7 @@ describe(watchResume, () => {
     }
 
     // Calls: 1 (initial) + 1 (triggered) + 1 (coalesced follow-up) = 3
-    expect(buildResumeSpy).toBeCalledTimes(3)
+    expect(buildResumeSpy).toHaveBeenCalledTimes(3)
   })
 
   it('should log error when initial build fails (no throw)', () => {
@@ -231,7 +231,7 @@ describe(createDevCommand, () => {
     const resumePath = getFixture('software-engineer.yml')
     devCommand.parse(['yamlresume', 'dev', resumePath, '--output', '/tmp/foo'])
 
-    expect(chokidarWatchSpy).toBeCalledTimes(1)
-    expect(buildResumeSpy).toBeCalledTimes(1)
+    expect(chokidarWatchSpy).toHaveBeenCalledTimes(1)
+    expect(buildResumeSpy).toHaveBeenCalledTimes(1)
   })
 })

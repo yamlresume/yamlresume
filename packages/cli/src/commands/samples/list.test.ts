@@ -54,7 +54,7 @@ describe(createSamplesCommand, () => {
   it('should list all sample resumes', () => {
     samplesCommand.parse(['yamlresume', 'samples', 'list'])
 
-    expect(consolaLogSpy).toBeCalledTimes(1)
+    expect(consolaLogSpy).toHaveBeenCalledTimes(1)
 
     const output = consolaLogSpy.mock.calls[0][0] as string
     expect(output).toContain('software-engineer')

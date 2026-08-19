@@ -62,13 +62,13 @@ describe(newResume, () => {
   it('should create a resume template with default filename', () => {
     newResume(resumeFilename)
 
-    expect(readFileSync).toBeCalledTimes(1)
+    expect(readFileSync).toHaveBeenCalledTimes(1)
 
     // Check for path with either forward or back slashes (cross-platform)
     expect(readFileSync.mock.calls[0][0]).toMatch(/resources[\\/]resume\.yml$/)
     expect(readFileSync.mock.calls[0][1]).toBe('utf8')
 
-    expect(writeFileSync).toBeCalledTimes(1)
+    expect(writeFileSync).toHaveBeenCalledTimes(1)
     expect(writeFileSync).toBeCalledWith(resumeFilename, resumeContent)
   })
 
@@ -76,12 +76,12 @@ describe(newResume, () => {
     const resumeFilename = 'my-resume.yml'
     newResume(resumeFilename)
 
-    expect(readFileSync).toBeCalledTimes(1)
+    expect(readFileSync).toHaveBeenCalledTimes(1)
     // Check for path with either forward or back slashes (cross-platform)
     expect(readFileSync.mock.calls[0][0]).toMatch(/resources[\\/]resume\.yml$/)
     expect(readFileSync.mock.calls[0][1]).toBe('utf8')
 
-    expect(writeFileSync).toBeCalledTimes(1)
+    expect(writeFileSync).toHaveBeenCalledTimes(1)
     expect(writeFileSync).toBeCalledWith(resumeFilename, resumeContent)
   })
 
@@ -115,8 +115,8 @@ describe(newResume, () => {
       expect(error.message).toMatch(/resources[\\/]resume\.yml/)
     }
 
-    expect(consolaDebugSpy).toBeCalledTimes(1)
-    expect(readFileSync).toBeCalledTimes(1)
+    expect(consolaDebugSpy).toHaveBeenCalledTimes(1)
+    expect(readFileSync).toHaveBeenCalledTimes(1)
     expect(writeFileSync).not.toBeCalled()
   })
 
@@ -133,9 +133,9 @@ describe(newResume, () => {
       expect(error.message).toContain('Failed to write file: ')
     }
 
-    expect(consolaDebugSpy).toBeCalledTimes(1)
-    expect(readFileSync).toBeCalledTimes(1)
-    expect(writeFileSync).toBeCalledTimes(1)
+    expect(consolaDebugSpy).toHaveBeenCalledTimes(1)
+    expect(readFileSync).toHaveBeenCalledTimes(1)
+    expect(writeFileSync).toHaveBeenCalledTimes(1)
   })
 })
 
@@ -155,7 +155,7 @@ describe(createSampleResume, () => {
   it('should create a resume from a sample', () => {
     createSampleResume('resume.yml', 'software-engineer', 'en')
 
-    expect(writeFileSync).toBeCalledTimes(1)
+    expect(writeFileSync).toHaveBeenCalledTimes(1)
     const writtenContent = writeFileSync.mock.calls[0][1] as string
     expect(writtenContent).toContain('name: ')
     expect(writtenContent).toContain('yaml-language-server')
@@ -165,7 +165,7 @@ describe(createSampleResume, () => {
   it('should support a custom language', () => {
     createSampleResume('resume.yml', 'software-engineer', 'zh-hans')
 
-    expect(writeFileSync).toBeCalledTimes(1)
+    expect(writeFileSync).toHaveBeenCalledTimes(1)
     const writtenContent = writeFileSync.mock.calls[0][1] as string
     expect(writtenContent).toContain('zh-hans')
     expect(writtenContent).toContain('yaml-language-server')
@@ -211,7 +211,7 @@ describe(createSampleResume, () => {
       expect(error.code).toBe('FILE_WRITE_ERROR')
     }
 
-    expect(writeFileSync).toBeCalledTimes(1)
+    expect(writeFileSync).toHaveBeenCalledTimes(1)
   })
 })
 
@@ -285,14 +285,14 @@ describe(createNewCommand, () => {
   it('should create a new resume with default filename', () => {
     newCommand.parse(['yamlresume', 'new'])
 
-    expect(consolaSuccessSpy).toBeCalledTimes(1)
+    expect(consolaSuccessSpy).toHaveBeenCalledTimes(1)
     expect(consolaSuccessSpy).toBeCalledWith('Created resume.yml successfully.')
   })
 
   it('should create a new resume with custom filename', () => {
     newCommand.parse(['yamlresume', 'new', 'my-resume.yml'])
 
-    expect(consolaSuccessSpy).toBeCalledTimes(1)
+    expect(consolaSuccessSpy).toHaveBeenCalledTimes(1)
     expect(consolaSuccessSpy).toBeCalledWith(
       'Created my-resume.yml successfully.'
     )
@@ -304,8 +304,8 @@ describe(createNewCommand, () => {
     newCommand.parse(['yamlresume', 'new'])
 
     expect(consolaSuccessSpy).not.toBeCalled()
-    expect(consolaErrorSpy).toBeCalledTimes(1)
-    expect(processExitSpy).toBeCalledTimes(1)
+    expect(consolaErrorSpy).toHaveBeenCalledTimes(1)
+    expect(processExitSpy).toHaveBeenCalledTimes(1)
     expect(processExitSpy).toBeCalledWith(ErrorType.FILE_CONFLICT.errno)
   })
 
@@ -317,8 +317,8 @@ describe(createNewCommand, () => {
     newCommand.parse(['yamlresume', 'new'])
 
     expect(consolaSuccessSpy).not.toBeCalled()
-    expect(consolaErrorSpy).toBeCalledTimes(1)
-    expect(processExitSpy).toBeCalledTimes(1)
+    expect(consolaErrorSpy).toHaveBeenCalledTimes(1)
+    expect(processExitSpy).toHaveBeenCalledTimes(1)
     expect(processExitSpy).toBeCalledWith(ErrorType.FILE_READ_ERROR.errno)
   })
 
@@ -330,15 +330,15 @@ describe(createNewCommand, () => {
     newCommand.parse(['yamlresume', 'new'])
 
     expect(consolaSuccessSpy).not.toBeCalled()
-    expect(consolaErrorSpy).toBeCalledTimes(1)
-    expect(processExitSpy).toBeCalledTimes(1)
+    expect(consolaErrorSpy).toHaveBeenCalledTimes(1)
+    expect(processExitSpy).toHaveBeenCalledTimes(1)
     expect(processExitSpy).toBeCalledWith(ErrorType.FILE_WRITE_ERROR.errno)
   })
 
   it('should create a resume from a sample with --sample', () => {
     newCommand.parse(['yamlresume', 'new', '--sample', 'software-engineer'])
 
-    expect(consolaSuccessSpy).toBeCalledTimes(1)
+    expect(consolaSuccessSpy).toHaveBeenCalledTimes(1)
     expect(consolaSuccessSpy).toBeCalledWith(
       'Created resume.yml from sample "software-engineer" successfully.'
     )
@@ -355,7 +355,7 @@ describe(createNewCommand, () => {
       'zh-hans',
     ])
 
-    expect(consolaSuccessSpy).toBeCalledTimes(1)
+    expect(consolaSuccessSpy).toHaveBeenCalledTimes(1)
     expect(consolaSuccessSpy).toBeCalledWith(
       'Created my-resume.yml from sample "software-engineer" successfully.'
     )
@@ -365,8 +365,8 @@ describe(createNewCommand, () => {
     newCommand.parse(['yamlresume', 'new', '--sample', 'not-a-sample'])
 
     expect(consolaSuccessSpy).not.toBeCalled()
-    expect(consolaErrorSpy).toBeCalledTimes(1)
-    expect(processExitSpy).toBeCalledTimes(1)
+    expect(consolaErrorSpy).toHaveBeenCalledTimes(1)
+    expect(processExitSpy).toHaveBeenCalledTimes(1)
     expect(processExitSpy).toBeCalledWith(1)
   })
 })

@@ -124,7 +124,7 @@ describe('git', () => {
 
       await initializeGitRepository('/test/path')
 
-      expect(mockedExeca).toBeCalledTimes(1)
+      expect(mockedExeca).toHaveBeenCalledTimes(1)
       expect(mockedConsola.warn).toBeCalledWith(
         'Git is not available on your system. Skipping git initialization.'
       )

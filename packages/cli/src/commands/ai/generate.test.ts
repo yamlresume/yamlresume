@@ -97,11 +97,11 @@ describe(generateResumeFile, () => {
     await generateResumeFile('my-resume.yml', 'Nurse', 'en')
 
     expect(oraMock).toBeCalledWith('Generating resume...')
-    expect(mockSpinner.start).toBeCalledTimes(1)
+    expect(mockSpinner.start).toHaveBeenCalledTimes(1)
     expect(mockSpinner.succeed).toBeCalledWith('Resume generated successfully')
     expect(mockSpinner.fail).not.toBeCalled()
     expect(mockSpinner.text).toBe('Generating resume...\nHello world')
-    expect(getModelFromEnv).toBeCalledTimes(1)
+    expect(getModelFromEnv).toHaveBeenCalledTimes(1)
     expect(getModelFromEnv).toBeCalledWith({})
     expect(generateResume).toBeCalledWith({
       position: 'Nurse',
@@ -109,7 +109,7 @@ describe(generateResumeFile, () => {
       model: { id: 'mock-model' },
       onChunk: expect.any(Function),
     })
-    expect(writeFileSync).toBeCalledTimes(1)
+    expect(writeFileSync).toHaveBeenCalledTimes(1)
     expect(writeFileSync).toBeCalledWith('my-resume.yml', 'generated yaml')
     expect(consolaSuccessSpy).toBeCalledWith(
       'Generated my-resume.yml successfully.'
@@ -122,7 +122,7 @@ describe(generateResumeFile, () => {
       baseURL: 'https://custom.example.com/v1',
     })
 
-    expect(getModelFromEnv).toBeCalledTimes(1)
+    expect(getModelFromEnv).toHaveBeenCalledTimes(1)
     expect(getModelFromEnv).toBeCalledWith({
       model: 'gpt-5',
       baseURL: 'https://custom.example.com/v1',
@@ -354,7 +354,7 @@ describe(createAIGenerateCommand, () => {
       'my-resume.yml',
     ])
 
-    expect(consolaSuccessSpy).toBeCalledTimes(1)
+    expect(consolaSuccessSpy).toHaveBeenCalledTimes(1)
     expect(consolaSuccessSpy).toBeCalledWith(
       'Generated my-resume.yml successfully.'
     )
@@ -375,12 +375,12 @@ describe(createAIGenerateCommand, () => {
       'my-resume.yml',
     ])
 
-    expect(getModelFromEnv).toBeCalledTimes(1)
+    expect(getModelFromEnv).toHaveBeenCalledTimes(1)
     expect(getModelFromEnv).toBeCalledWith({
       model: 'gpt-5',
       baseURL: 'https://custom.example.com/v1',
     })
-    expect(consolaSuccessSpy).toBeCalledTimes(1)
+    expect(consolaSuccessSpy).toHaveBeenCalledTimes(1)
   })
 
   it('should pass --retry flag to generateResume', async () => {
@@ -401,7 +401,7 @@ describe(createAIGenerateCommand, () => {
         maxRetries: 5,
       })
     )
-    expect(consolaSuccessSpy).toBeCalledTimes(1)
+    expect(consolaSuccessSpy).toHaveBeenCalledTimes(1)
   })
 
   it('should reject a negative --retry value', async () => {
@@ -454,8 +454,8 @@ describe(createAIGenerateCommand, () => {
     ])
 
     expect(consolaSuccessSpy).not.toBeCalled()
-    expect(consolaErrorSpy).toBeCalledTimes(1)
-    expect(processExitSpy).toBeCalledTimes(1)
+    expect(consolaErrorSpy).toHaveBeenCalledTimes(1)
+    expect(processExitSpy).toHaveBeenCalledTimes(1)
     expect(processExitSpy).toBeCalledWith(ErrorType.FILE_CONFLICT.errno)
   })
 
@@ -471,8 +471,8 @@ describe(createAIGenerateCommand, () => {
     ])
 
     expect(consolaSuccessSpy).not.toBeCalled()
-    expect(consolaErrorSpy).toBeCalledTimes(1)
-    expect(processExitSpy).toBeCalledTimes(1)
+    expect(consolaErrorSpy).toHaveBeenCalledTimes(1)
+    expect(processExitSpy).toHaveBeenCalledTimes(1)
     expect(processExitSpy).toBeCalledWith(ErrorType.INVALID_LANGUAGE.errno)
   })
 
@@ -492,8 +492,8 @@ describe(createAIGenerateCommand, () => {
     ])
 
     expect(consolaSuccessSpy).not.toBeCalled()
-    expect(consolaErrorSpy).toBeCalledTimes(1)
-    expect(processExitSpy).toBeCalledTimes(1)
+    expect(consolaErrorSpy).toHaveBeenCalledTimes(1)
+    expect(processExitSpy).toHaveBeenCalledTimes(1)
     expect(processExitSpy).toBeCalledWith(ErrorType.FILE_WRITE_ERROR.errno)
   })
 
@@ -513,8 +513,8 @@ describe(createAIGenerateCommand, () => {
     ])
 
     expect(consolaSuccessSpy).not.toBeCalled()
-    expect(consolaErrorSpy).toBeCalledTimes(1)
-    expect(processExitSpy).toBeCalledTimes(1)
+    expect(consolaErrorSpy).toHaveBeenCalledTimes(1)
+    expect(processExitSpy).toHaveBeenCalledTimes(1)
     expect(processExitSpy).toBeCalledWith(1)
   })
 
@@ -532,9 +532,9 @@ describe(createAIGenerateCommand, () => {
     ])
 
     expect(consolaSuccessSpy).not.toBeCalled()
-    expect(consolaErrorSpy).toBeCalledTimes(1)
+    expect(consolaErrorSpy).toHaveBeenCalledTimes(1)
     expect(consolaErrorSpy).toBeCalledWith('AI failed')
-    expect(processExitSpy).toBeCalledTimes(1)
+    expect(processExitSpy).toHaveBeenCalledTimes(1)
     expect(processExitSpy).toBeCalledWith(1)
   })
 
@@ -556,10 +556,10 @@ describe(createAIGenerateCommand, () => {
     ])
 
     expect(consolaSuccessSpy).not.toBeCalled()
-    expect(consolaErrorSpy).toBeCalledTimes(2)
+    expect(consolaErrorSpy).toHaveBeenCalledTimes(2)
     expect(consolaErrorSpy).toHaveBeenNthCalledWith(1, error.message)
     expect(consolaErrorSpy).toHaveBeenNthCalledWith(2, error.stack)
-    expect(processExitSpy).toBeCalledTimes(1)
+    expect(processExitSpy).toHaveBeenCalledTimes(1)
     expect(processExitSpy).toBeCalledWith(1)
 
     consola.level = originalLevel

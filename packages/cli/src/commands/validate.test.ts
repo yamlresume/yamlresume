@@ -363,7 +363,7 @@ describe(createValidateCommand, () => {
 
     validateCommand.parse(['yamlresume', 'validate', resumePath])
 
-    expect(consolaSuccessSpy).toBeCalledTimes(1)
+    expect(consolaSuccessSpy).toHaveBeenCalledTimes(1)
     expect(consolaSuccessSpy).toBeCalledWith('Resume validation passed.')
     expect(consolaFailSpy).not.toBeCalled()
     expect(consolaErrorSpy).not.toBeCalled()
@@ -375,7 +375,7 @@ describe(createValidateCommand, () => {
 
     validateCommand.parse(['yamlresume', 'validate', resumePath])
 
-    expect(consolaFailSpy).toBeCalledTimes(1)
+    expect(consolaFailSpy).toHaveBeenCalledTimes(1)
     expect(consolaFailSpy).toBeCalledWith('Resume validation failed.')
     expect(consolaSuccessSpy).not.toBeCalled()
     expect(consolaErrorSpy).not.toBeCalled()
@@ -390,11 +390,11 @@ describe(createValidateCommand, () => {
 
     validateCommand.parse(['yamlresume', 'validate', resumePath])
 
-    expect(consolaErrorSpy).toBeCalledTimes(1)
+    expect(consolaErrorSpy).toHaveBeenCalledTimes(1)
     expect(consolaErrorSpy).toBeCalledWith(
       'Failed to read resume file: non-existent-file.yml'
     )
-    expect(processExitSpy).toBeCalledTimes(1)
+    expect(processExitSpy).toHaveBeenCalledTimes(1)
     expect(processExitSpy).toBeCalledWith(ErrorType.FILE_READ_ERROR.errno)
   })
 
@@ -406,12 +406,12 @@ describe(createValidateCommand, () => {
 
     validateCommand.parse(['yamlresume', 'validate', resumePath])
 
-    expect(consolaErrorSpy).toBeCalledTimes(1)
+    expect(consolaErrorSpy).toHaveBeenCalledTimes(1)
     expect(consolaErrorSpy).toBeCalledWith(
       expect.stringContaining('Invalid YAML format:')
     )
-    expect(consoleLogSpy).toBeCalledTimes(1)
-    expect(processExitSpy).toBeCalledTimes(1)
+    expect(consoleLogSpy).toHaveBeenCalledTimes(1)
+    expect(processExitSpy).toHaveBeenCalledTimes(1)
     expect(processExitSpy).toBeCalledWith(ErrorType.INVALID_YAML.errno)
   })
 })
