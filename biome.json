@@ -18,7 +18,8 @@
       "!**/dist",
       "!**/coverage",
       "!**/node_modules",
-      "!**/schema.json"
+      "!**/schema.json",
+      "!**/catalog.json"
     ]
   },
   "assist": { "actions": { "source": { "organizeImports": "on" } } },
