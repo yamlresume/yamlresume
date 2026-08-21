@@ -1,6 +1,6 @@
 {
   "name": "@yamlresume/core",
-  "version": "0.14.3",
+  "version": "0.15.0",
   "description": "The typesetting and layout core for YAMLResume",
   "license": "MIT",
   "author": {

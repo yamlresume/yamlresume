@@ -2,6 +2,29 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.15.0](https://github.com/yamlresume/yamlresume/compare/v0.14.3...v0.15.0) (2026-08-21)
+
+
+### Features
+
+* **cli:** add new --language flag for new subcommand ([1330755](https://github.com/yamlresume/yamlresume/commit/13307550211031f64b0289bddda1f7c821ba648e))
+* **cli:** add samples list command ([f8874a9](https://github.com/yamlresume/yamlresume/commit/f8874a9efc7a67660510037e4c6ff6595b1f74f2))
+* **cli:** injects comments and layout for new --sample <resume> ([ce25273](https://github.com/yamlresume/yamlresume/commit/ce25273ec6c0c96880ce8b46ac77fc9808680a41))
+* **cli:** support creating resumes from samples via --sample ([534ec22](https://github.com/yamlresume/yamlresume/commit/534ec2236ddb40a1029a5ac8f7408b222fde11c8))
+* **cli:** use default en sample resume for new command without flags ([51311f7](https://github.com/yamlresume/yamlresume/commit/51311f7d4d03b395f35a07adb49259410a5e88a7))
+* **samples:** add a new --dry-run mode for catalog build ([318a50e](https://github.com/yamlresume/yamlresume/commit/318a50eb635ecf27e55ef0c203defc840aadbaad))
+* **samples:** add curated sample resumes for four positions ([37bac12](https://github.com/yamlresume/yamlresume/commit/37bac12e0634184695696699e4ecdd91347ae9ed))
+* **samples:** add some new query APIs for samples ([520ddff](https://github.com/yamlresume/yamlresume/commit/520ddff8d049384d16430cad0e7a18607d17abe9))
+* **samples:** new data analyst resume, perfect generation ([b99b8c0](https://github.com/yamlresume/yamlresume/commit/b99b8c0832a5e8e56a69e49c03abb427ac95e290))
+* **samples:** re-generate all sample resumes ([741a160](https://github.com/yamlresume/yamlresume/commit/741a16058efad73849cc5a152e7b667854b191b7))
+* **samples:** split build-catalog into meta, catalog and build scripts ([c607024](https://github.com/yamlresume/yamlresume/commit/c607024c5ef8734474dc0167cd53281996e53ee5))
+* suppress warnings for node.js localStorage for both cli and samples ([26e1336](https://github.com/yamlresume/yamlresume/commit/26e133620511eac4eaaf229a5360aa4704c178d8))
+
+
+### Bug Fixes
+
+* build samples package before cli package in github action ([6a457d4](https://github.com/yamlresume/yamlresume/commit/6a457d400a97dace2e387db73b7b3100717132dd))
+
 ## [0.14.3](https://github.com/yamlresume/yamlresume/compare/v0.14.2...v0.14.3) (2026-08-17)
 
 
