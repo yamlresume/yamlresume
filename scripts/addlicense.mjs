@@ -11,6 +11,7 @@ const options = {
     'packages/core/src',
     'packages/create-yamlresume/src',
     'packages/json2yamlresume/src',
+    'packages/node/src',
     'packages/playground/src',
   ],
   holder: 'PPResume (https://ppresume.com)',

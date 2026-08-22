@@ -22,16 +22,47 @@
  * IN THE SOFTWARE.
  */
 
+import { listSampleResumes } from '@yamlresume/samples'
 import { Command } from 'commander'
-
-import { createAIGenerateCommand } from './generate'
+import consola from 'consola'
+import { markdownTable } from 'markdown-table'
 
 /**
- * Create the AI command group.
+ * Generates a markdown table listing all available sample resumes.
+ *
+ * The table includes columns for the sample id, position, title, and category.
+ *
+ * @returns A string containing the formatted markdown table.
  */
-export function createAICommand() {
+export function listSamples() {
+  const samples = listSampleResumes()
+
+  return markdownTable([
+    ['ID', 'Position', 'Title', 'Category'],
+    ...samples.map((sample) => [
+      sample.id,
+      sample.position,
+      sample.title,
+      sample.category,
+    ]),
+  ])
+}
+
+/**
+ * Create a command instance to list sample resumes.
+ */
+export function createSamplesListCommand() {
   return new Command()
-    .name('ai')
-    .description('AI-powered resume generation')
-    .addCommand(createAIGenerateCommand())
+    .name('list')
+    .description('list all sample resumes')
+    .action(() => {
+      consola.log(listSamples())
+    })
+}
+
+export function createSamplesCommand() {
+  return new Command()
+    .name('samples')
+    .description('manage sample resumes')
+    .addCommand(createSamplesListCommand())
 }

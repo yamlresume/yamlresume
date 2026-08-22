@@ -22,79 +22,9 @@
  * IN THE SOFTWARE.
  */
 
-import chokidar from 'chokidar'
-
-import { coalesce } from 'coalescifn'
+import { watchResume } from '@yamlresume/node'
 import { Command } from 'commander'
 import { consola } from 'consola'
-
-import { buildResume } from './build'
-
-/**
- * Options for the watchResume function
- *
- * @param pdf - Whether to generate PDF
- * @param validate - Whether to validate the resume
- */
-type WatchOptions = {
-  pdf?: boolean
-  validate?: boolean
-  output?: string
-}
-
-/**
- * Watch a resume source file and rebuild on changes.
- *
- * - Only one build runs at a time.
- * - If multiple events arrive during a build, run exactly one more build after
- *   it finishes (coalesce bursts).
- * - Uses chokidar for robust file watching that handles editor operations.
- *
- * @param resumePath - The resume file to watch
- * @param options - Build and watch options
- * @returns Chokidar watcher instance
- */
-export function watchResume(
-  resumePath: string,
-  options: WatchOptions = { pdf: true, validate: true }
-) {
-  const { pdf, validate, output } = options
-
-  // there should be only one build running at a time
-  const exclusiveBuild = coalesce(() =>
-    buildResume(resumePath, { pdf, validate, output })
-  )
-
-  // initial build
-  exclusiveBuild()
-
-  consola.start(`Watching file changes: ${resumePath}...`)
-
-  // use chokidar for robust file watching that handles vim and other editors
-  // properly.
-  //
-  // vim will save the file in a single atomic operation, that being said, it
-  // will first create a temporary file (the '.swp' file), then rename it to the
-  // final file.
-  //
-  // Node.js `fs.watch` has trouble with this, so we use chokidar instead.
-  const watcher = chokidar.watch(resumePath, {
-    awaitWriteFinish: {
-      stabilityThreshold: 200, // wait 200ms after file stops changing
-      pollInterval: 200, // check every 200ms
-    },
-    ignoreInitial: true, // don't trigger on initial file discovery
-  })
-
-  // handle file changes - chokidar's awaitWriteFinish already handles
-  // debouncing
-  watcher.on('change', () => exclusiveBuild())
-
-  // handle file additions (in case file gets recreated)
-  watcher.on('add', () => exclusiveBuild())
-
-  return watcher
-}
 
 /**
  * Create a command instance to run in watch mode
@@ -112,7 +42,7 @@ export function createDevCommand() {
         resumePath: string,
         options: { pdf: boolean; validate: boolean; output?: string }
       ) => {
-        watchResume(resumePath, options)
+        watchResume(resumePath, { ...options, logger: consola })
       }
     )
 }

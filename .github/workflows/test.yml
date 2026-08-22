@@ -56,6 +56,9 @@ jobs:
       - name: Build samples package
         run: pnpm samples build:prod
 
+      - name: Build node package
+        run: pnpm node build:prod
+
       - name: Build cli package
         run: pnpm cli build:prod
 

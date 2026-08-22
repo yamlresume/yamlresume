@@ -22,23 +22,7 @@
  * IN THE SOFTWARE.
  */
 
-import type { Command } from 'commander'
-import { describe, expect, it } from 'vitest'
+import { defineConfig, mergeConfig } from 'vitest/config'
+import { baseConfig } from '../../vitest.config.base.mts'
 
-import { createAICommand } from './index'
-
-describe(createAICommand, () => {
-  it('should have correct name and description', () => {
-    const command: Command = createAICommand()
-
-    expect(command.name()).toBe('ai')
-    expect(command.description()).toBe('AI-powered resume generation')
-  })
-
-  it('should register generate subcommand', () => {
-    const command: Command = createAICommand()
-    const names = command.commands.map((cmd) => cmd.name())
-
-    expect(names).toContain('generate')
-  })
-})
+export default defineConfig(mergeConfig(baseConfig, {}))

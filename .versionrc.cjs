@@ -9,6 +9,10 @@ module.exports = {
       type: 'json',
     },
     {
+      filename: 'packages/node/package.json',
+      type: 'json',
+    },
+    {
       filename: 'packages/ai/package.json',
       type: 'json',
     },

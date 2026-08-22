@@ -22,26 +22,15 @@
  * IN THE SOFTWARE.
  */
 
-import {
-  LOCALE_LANGUAGE_OPTIONS,
-  type LocaleLanguage,
-  YAMLResumeError,
-} from '@yamlresume/core'
-
 /**
- * Validate that a locale language is supported by YAMLResume.
- *
- * @param language - The language code to validate.
- * @throws {YAMLResumeError} When the language is not supported.
+ * Logger interface for programmatic control of output messages.
  */
-export function validateLocaleLanguage(
-  language: string
-): asserts language is LocaleLanguage {
-  if (
-    !LOCALE_LANGUAGE_OPTIONS.includes(
-      language as (typeof LOCALE_LANGUAGE_OPTIONS)[number]
-    )
-  ) {
-    throw new YAMLResumeError('INVALID_LANGUAGE', { language })
-  }
+export interface Logger {
+  start: (message: string) => void
+  success: (message: string) => void
+  debug: (message: string) => void
+  info: (message: string) => void
+  log: (message: string) => void
+  warn: (message: string) => void
+  error: (message: string) => void
 }

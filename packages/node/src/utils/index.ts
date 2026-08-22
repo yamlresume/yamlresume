@@ -20,29 +20,13 @@
  * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
  * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
  * IN THE SOFTWARE.
+ *
  */
 
-import { ErrorType, YAMLResumeError } from '@yamlresume/core'
-import { describe, expect, it } from 'vitest'
-
-import { validateLocaleLanguage } from './validate'
-
-describe(validateLocaleLanguage, () => {
-  it('does not throw for supported locale languages', () => {
-    expect(() => validateLocaleLanguage('en')).not.toThrow()
-    expect(() => validateLocaleLanguage('es')).not.toThrow()
-    expect(() => validateLocaleLanguage('zh-hans')).not.toThrow()
-  })
-
-  it('throws INVALID_LANGUAGE for unsupported locale languages', () => {
-    expect(() => validateLocaleLanguage('klingon')).toThrow(YAMLResumeError)
-
-    try {
-      validateLocaleLanguage('klingon')
-    } catch (error) {
-      expect(error).toBeInstanceOf(YAMLResumeError)
-      expect(error.code).toBe('INVALID_LANGUAGE')
-      expect(error.errno).toBe(ErrorType.INVALID_LANGUAGE.errno)
-    }
-  })
-})
+export {
+  compileLaTeX,
+  getAuxPath,
+  getPdfPath,
+  inferOutput,
+  LATEX_COMPILE_TIMEOUT,
+} from './latex'

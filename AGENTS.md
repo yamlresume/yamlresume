@@ -9,18 +9,18 @@ Copilot, Cursor, or OpenCode) to maintain consistency and quality across the
 Use `pnpm` for all operations.
 
 - **Build all:** `pnpm build`
-- **Build specific package:** `pnpm core build` (or `json2yamlresume`, `cli`,
-  `create-yamlresume`)
+- **Build specific package:** `pnpm core build` (or `node`, `json2yamlresume`,
+  `cli`, `create-yamlresume`)
 - **Lint & Format (Biome):** `pnpm check` (runs `biome check --write` and
   `tsc --noEmit`)
 - **Test all:** `pnpm test`
-- **Test with coverage for a package:** `pnpm core test:cov` (or
+- **Test with coverage for a package:** `pnpm core test:cov` (or `node`,
   `json2yamlresume`, `cli`, `create-yamlresume`)
 - **Run a single test file for a package:**
-  `pnpm core test path/to/file.test.ts` (or `json2yamlresume`, `cli`,
+  `pnpm core test path/to/file.test.ts` (or `node`, `json2yamlresume`, `cli`,
   `create-yamlresume`)
-- **Watch mode for a package:** `pnpm core test:watch` (or `json2yamlresume`,
-  `cli`, `create-yamlresume`)
+- **Watch mode for a package:** `pnpm core test:watch` (or `node`,
+  `json2yamlresume`, `cli`, `create-yamlresume`)
 
 ## 🎨 Code Style
 

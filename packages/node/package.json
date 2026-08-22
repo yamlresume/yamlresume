@@ -1,7 +1,7 @@
 {
-  "name": "yamlresume",
+  "name": "@yamlresume/node",
   "version": "0.15.0",
-  "description": "The CLI interface for YAMLResume's engine",
+  "description": "Node.js runtime support for YAMLResume",
   "license": "MIT",
   "author": {
     "name": "YAMLResume",
@@ -16,7 +16,8 @@
     "Typesetting",
     "PDF",
     "YAML",
-    "JSON"
+    "JSON",
+    "Node.js"
   ],
   "type": "module",
   "main": "./dist/index.js",
@@ -26,9 +27,6 @@
       "types": "./dist/index.d.ts",
       "default": "./dist/index.js"
     }
-  },
-  "bin": {
-    "yamlresume": "./dist/cli.js"
   },
   "files": [
     "dist",
@@ -41,7 +39,6 @@
     "build:clean": "rm -rf dist",
     "build:prod": "tsup --dts --minify --sourcemap",
     "prepublishOnly": "pnpm test",
-    "dev": "tsx src/cli.ts",
     "test": "vitest --run",
     "test:cov": "vitest --coverage --run",
     "test:watch": "vitest",
@@ -50,24 +47,14 @@
   "dependencies": {
     "@yamlresume/ai": "workspace:*",
     "@yamlresume/core": "workspace:*",
-    "@yamlresume/node": "workspace:*",
     "@yamlresume/samples": "workspace:*",
-    "chalk": "^5.6.2",
-    "commander": "^15.0.0",
-    "consola": "^3.4.2",
-    "envinfo": "^7.21.0",
+    "chokidar": "^5.0.0",
+    "coalescifn": "^1.0.0",
     "execa": "^10.0.0",
-    "extensionless": "^2.0.6",
-    "font-list": "^2.1.0",
-    "lodash-es": "^4.18.1",
-    "markdown-table": "^3.0.4",
-    "ora": "^8.0.0",
-    "tslib": "^2.8.1",
     "which": "^7.0.0",
     "yaml": "^2.9.0"
   },
   "devDependencies": {
-    "@types/envinfo": "^7.8.4",
     "@types/node": "^26.1.1",
     "@types/which": "^3.0.4"
   },
@@ -77,12 +64,12 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/yamlresume/yamlresume.git",
-    "directory": "packages/cli"
+    "directory": "packages/node"
   },
   "bugs": {
     "url": "https://github.com/yamlresume/yamlresume/issues"
   },
-  "homepage": "https://yamlresume.dev/docs/cli",
+  "homepage": "https://yamlresume.dev/docs/node",
   "engines": {
     "node": ">=20.0.0"
   }

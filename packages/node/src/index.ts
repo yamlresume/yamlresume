@@ -22,40 +22,23 @@
  * IN THE SOFTWARE.
  */
 
-import { listSampleResumes } from '@yamlresume/samples'
-import { Command } from 'commander'
-import consola from 'consola'
-import { markdownTable } from 'markdown-table'
-
-/**
- * Generates a markdown table listing all available sample resumes.
- *
- * The table includes columns for the sample id, position, title, and category.
- *
- * @returns A string containing the formatted markdown table.
- */
-export function listSamples() {
-  const samples = listSampleResumes()
-
-  return markdownTable([
-    ['ID', 'Position', 'Title', 'Category'],
-    ...samples.map((sample) => [
-      sample.id,
-      sample.position,
-      sample.title,
-      sample.category,
-    ]),
-  ])
-}
-
-/**
- * Create a command instance to list sample resumes.
- */
-export function createSamplesListCommand() {
-  return new Command()
-    .name('list')
-    .description('list all sample resumes')
-    .action(() => {
-      consola.log(listSamples())
-    })
-}
+export {
+  type BuildResumeOptions,
+  type BuildResumeResult,
+  buildResume,
+} from './build'
+export { type GenerateResumeOptions, generateResume } from './generate'
+export {
+  type NewResumeOptions,
+  newResume,
+} from './new'
+export {
+  type PositionalError,
+  type ReadResumeOptions,
+  type ReadResumeResult,
+  readResume,
+  validateResume,
+} from './read'
+export type { Logger } from './types'
+export { LATEX_COMPILE_TIMEOUT } from './utils'
+export { watchResume } from './watch'

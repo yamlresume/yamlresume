@@ -22,133 +22,40 @@
  * IN THE SOFTWARE.
  */
 
-import fs from 'node:fs'
 import { ErrorType, YAMLResumeError } from '@yamlresume/core'
+import { newResume } from '@yamlresume/node'
 import type { Command } from 'commander'
 import { consola } from 'consola'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
-import { createNewCommand, createSampleResume } from './new'
 
-describe(createSampleResume, () => {
-  let existsSync: ReturnType<typeof vi.spyOn>
-  let writeFileSync: ReturnType<typeof vi.spyOn>
+import { createNewCommand } from './new'
 
-  beforeEach(() => {
-    existsSync = vi.spyOn(fs, 'existsSync').mockReturnValue(false)
-    writeFileSync = vi.spyOn(fs, 'writeFileSync').mockImplementation(vi.fn())
-  })
-
-  afterEach(() => {
-    vi.resetAllMocks()
-  })
-
-  it('should create a resume from a sample', () => {
-    createSampleResume('resume.yml', 'software-engineer', 'en')
-
-    expect(writeFileSync).toHaveBeenCalledTimes(1)
-    const writtenContent = writeFileSync.mock.calls[0][1] as string
-    expect(writtenContent).toContain('name: ')
-    expect(writtenContent).toContain('yaml-language-server')
-    expect(writtenContent).toContain('layouts:')
-  })
-
-  it('should support a custom language', () => {
-    createSampleResume('resume.yml', 'software-engineer', 'zh-hans')
-
-    expect(writeFileSync).toHaveBeenCalledTimes(1)
-    const writtenContent = writeFileSync.mock.calls[0][1] as string
-    expect(writtenContent).toContain('zh-hans')
-    expect(writtenContent).toContain('yaml-language-server')
-    expect(writtenContent).toContain('layouts:')
-  })
-
-  it('should show the sample source when requested', () => {
-    const successSpy = vi.spyOn(consola, 'success').mockImplementation(() => {})
-
-    createSampleResume('resume.yml', 'software-engineer', 'en', {
-      showSampleSource: true,
-    })
-
-    expect(successSpy).toHaveBeenCalledWith(
-      'Created resume.yml from sample "software-engineer" successfully.'
-    )
-  })
-
-  it('should not create a resume if file already exists', () => {
-    existsSync.mockReturnValue(true)
-
-    try {
-      createSampleResume('resume.yml', 'software-engineer', 'en')
-    } catch (error) {
-      expect(error).toBeInstanceOf(YAMLResumeError)
-      expect(error.code).toBe('FILE_CONFLICT')
-    }
-
-    expect(writeFileSync).not.toBeCalled()
-  })
-
-  it('should throw for an invalid sample', () => {
-    expect(() =>
-      createSampleResume('resume.yml', 'not-a-sample', 'en')
-    ).toThrow('Sample resume not found: not-a-sample')
-    expect(writeFileSync).not.toBeCalled()
-  })
-
-  it('should throw for an unsupported language', () => {
-    expect(() =>
-      createSampleResume('resume.yml', 'software-engineer', 'ko' as 'en')
-    ).toThrow('Language "ko" is not available for sample "software-engineer"')
-    expect(writeFileSync).not.toBeCalled()
-  })
-
-  it('should handle errors during file write', () => {
-    writeFileSync.mockImplementation(() => {
-      throw new Error()
-    })
-
-    try {
-      createSampleResume('resume.yml', 'software-engineer', 'en')
-    } catch (error) {
-      expect(error).toBeInstanceOf(YAMLResumeError)
-      expect(error.code).toBe('FILE_WRITE_ERROR')
-    }
-
-    expect(writeFileSync).toHaveBeenCalledTimes(1)
-  })
+vi.mock('@yamlresume/node', async () => {
+  const actual = await vi.importActual('@yamlresume/node')
+  return {
+    ...actual,
+    newResume: vi.fn(),
+  }
 })
 
 describe(createNewCommand, () => {
   let newCommand: Command
-  let consolaSuccessSpy: ReturnType<typeof vi.spyOn>
+  let newResumeSpy: ReturnType<typeof vi.mocked<typeof newResume>>
   let consolaErrorSpy: ReturnType<typeof vi.spyOn>
   let processExitSpy: ReturnType<typeof vi.spyOn>
-  let writeFileSync: ReturnType<typeof vi.spyOn>
-  let existsSync: ReturnType<typeof vi.spyOn>
 
   beforeEach(() => {
     newCommand = createNewCommand()
-
-    consolaSuccessSpy = vi
-      .spyOn(consola, 'success')
-      .mockImplementation(() => {})
+    newResumeSpy = vi.mocked(newResume).mockImplementation(vi.fn())
     consolaErrorSpy = vi.spyOn(consola, 'error').mockImplementation(() => {})
 
-    // @ts-expect-error
     processExitSpy = vi
       .spyOn(process, 'exit')
       .mockImplementation((() => {}) as NodeJS.Process['exit'])
-
-    writeFileSync = vi
-      // biome-ignore lint/suspicious/noExplicitAny: ignore
-      .spyOn(fs, 'writeFileSync' as any)
-      .mockImplementation(vi.fn())
-
-    // @ts-expect-error - Type mismatch with fs.existsSync mock signature
-    existsSync = vi.spyOn(fs, 'existsSync').mockReturnValue(false)
   })
 
   afterEach(() => {
-    vi.resetAllMocks()
+    vi.restoreAllMocks()
   })
 
   it('should have correct name and description', () => {
@@ -176,97 +83,68 @@ describe(createNewCommand, () => {
   it('should create a new resume with default filename', () => {
     newCommand.parse(['yamlresume', 'new'])
 
-    expect(consolaSuccessSpy).toHaveBeenCalledTimes(1)
-    expect(consolaSuccessSpy).toHaveBeenCalledWith(
-      'Created resume.yml successfully.'
+    expect(newResumeSpy).toHaveBeenCalledWith(
+      'resume.yml',
+      'software-engineer',
+      'en',
+      { showSampleSource: false, logger: consola }
     )
   })
 
   it('should create a new resume with custom filename', () => {
     newCommand.parse(['yamlresume', 'new', 'my-resume.yml'])
 
-    expect(consolaSuccessSpy).toHaveBeenCalledTimes(1)
-    expect(consolaSuccessSpy).toHaveBeenCalledWith(
-      'Created my-resume.yml successfully.'
+    expect(newResumeSpy).toHaveBeenCalledWith(
+      'my-resume.yml',
+      'software-engineer',
+      'en',
+      { showSampleSource: false, logger: consola }
     )
   })
 
-  it('should create a new resume with a custom language', () => {
+  it('should create a new resume from a sample', () => {
+    newCommand.parse(['yamlresume', 'new', '--sample', 'software-engineer'])
+
+    expect(newResumeSpy).toHaveBeenCalledWith(
+      'resume.yml',
+      'software-engineer',
+      'en',
+      { showSampleSource: true, logger: consola }
+    )
+  })
+
+  it('should pass custom language', () => {
     newCommand.parse(['yamlresume', 'new', '--language', 'zh-hans'])
 
-    expect(consolaSuccessSpy).toHaveBeenCalledTimes(1)
-    expect(consolaSuccessSpy).toHaveBeenCalledWith(
-      'Created resume.yml successfully.'
+    expect(newResumeSpy).toHaveBeenCalledWith(
+      'resume.yml',
+      'software-engineer',
+      'zh-hans',
+      { showSampleSource: false, logger: consola }
     )
   })
 
-  it('should handle file conflict error with errno', () => {
-    existsSync.mockReturnValue(true)
-
-    newCommand.parse(['yamlresume', 'new'])
-
-    expect(consolaSuccessSpy).not.toBeCalled()
-    expect(consolaErrorSpy).toHaveBeenCalledTimes(1)
-    expect(processExitSpy).toHaveBeenCalledTimes(1)
-    expect(processExitSpy).toHaveBeenCalledWith(ErrorType.FILE_CONFLICT.errno)
-  })
-
-  it('should handle file write error with errno', () => {
-    writeFileSync.mockImplementation(() => {
-      throw new Error()
+  it('should handle YAMLResumeError with errno', () => {
+    const error = new YAMLResumeError('FILE_CONFLICT', { path: 'resume.yml' })
+    newResumeSpy.mockImplementation(() => {
+      throw error
     })
 
     newCommand.parse(['yamlresume', 'new'])
 
-    expect(consolaSuccessSpy).not.toBeCalled()
-    expect(consolaErrorSpy).toHaveBeenCalledTimes(1)
-    expect(processExitSpy).toHaveBeenCalledTimes(1)
-    expect(processExitSpy).toHaveBeenCalledWith(
-      ErrorType.FILE_WRITE_ERROR.errno
-    )
+    expect(consolaErrorSpy).toHaveBeenCalledWith(error.message)
+    expect(processExitSpy).toHaveBeenCalledWith(ErrorType.FILE_CONFLICT.errno)
   })
 
-  it('should create a resume from a sample with --sample', () => {
-    newCommand.parse(['yamlresume', 'new', '--sample', 'software-engineer'])
+  it('should handle non-YAMLResumeError with exit code 1', () => {
+    const error = new Error('Invalid sample')
+    newResumeSpy.mockImplementation(() => {
+      throw error
+    })
 
-    expect(consolaSuccessSpy).toHaveBeenCalledTimes(1)
-    expect(consolaSuccessSpy).toHaveBeenCalledWith(
-      'Created resume.yml from sample "software-engineer" successfully.'
-    )
-  })
+    newCommand.parse(['yamlresume', 'new'])
 
-  it('should create a resume from a sample with custom filename and language', () => {
-    newCommand.parse([
-      'yamlresume',
-      'new',
-      'my-resume.yml',
-      '--sample',
-      'software-engineer',
-      '--language',
-      'zh-hans',
-    ])
-
-    expect(consolaSuccessSpy).toHaveBeenCalledTimes(1)
-    expect(consolaSuccessSpy).toHaveBeenCalledWith(
-      'Created my-resume.yml from sample "software-engineer" successfully.'
-    )
-  })
-
-  it('should handle an invalid sample id', () => {
-    newCommand.parse(['yamlresume', 'new', '--sample', 'not-a-sample'])
-
-    expect(consolaSuccessSpy).not.toBeCalled()
-    expect(consolaErrorSpy).toHaveBeenCalledTimes(1)
-    expect(processExitSpy).toHaveBeenCalledTimes(1)
-    expect(processExitSpy).toHaveBeenCalledWith(1)
-  })
-
-  it('should handle an unsupported language for the default sample', () => {
-    newCommand.parse(['yamlresume', 'new', '--language', 'ko'])
-
-    expect(consolaSuccessSpy).not.toBeCalled()
-    expect(consolaErrorSpy).toHaveBeenCalledTimes(1)
-    expect(processExitSpy).toHaveBeenCalledTimes(1)
+    expect(consolaErrorSpy).toHaveBeenCalledWith(error.message)
     expect(processExitSpy).toHaveBeenCalledWith(1)
   })
 })

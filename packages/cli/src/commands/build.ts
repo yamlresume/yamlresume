@@ -23,350 +23,19 @@
  */
 
 import fs from 'node:fs'
-import path from 'node:path'
+import { joinNonEmptyString, YAMLResumeError } from '@yamlresume/core'
 import {
-  DEFAULT_RESUME_LAYOUTS,
-  getResumeRenderer,
-  joinNonEmptyString,
-  type Resume,
-  toCodeBlock,
-  YAMLResumeError,
-} from '@yamlresume/core'
+  buildResume,
+  LATEX_COMPILE_TIMEOUT,
+  readResume,
+} from '@yamlresume/node'
 import { Command } from 'commander'
 import { consola } from 'consola'
-import { execa } from 'execa'
-import which from 'which'
 
-import { readResume } from './validate'
-
-/**
- * Infer the output file name from the source file name
- *
- * For now we support yaml, yml and json file extensions, and the output file
- * will have a `.docx`, `.html`, `.md` or `.tex` extension based on the
- * `layouts` config in the resume. The output file will be placed in the same
- * directory as the source file, or in the specified output directory if
- * provided.
- *
- * @param resumePath - The source resume file
- * @param outputDir - Optional output directory to place the file in
- * @returns The output file name
- * @throws {Error} If the source file has an unsupported extension.
- */
-export function inferOutput(resumePath: string, outputDir?: string): string {
-  const extname = path.extname(resumePath)
-
-  if (
-    resumePath.endsWith('.yaml') ||
-    resumePath.endsWith('.yml') ||
-    resumePath.endsWith('.json')
-  ) {
-    const baseName = path.basename(
-      resumePath.replace(/\.yaml|\.yml|\.json$/, '.tex')
-    )
-    if (outputDir) {
-      return path.join(outputDir, baseName)
-    }
-    return resumePath.replace(/\.yaml|\.yml|\.json$/, '.tex')
-  }
-
-  throw new YAMLResumeError('INVALID_EXTNAME', { extname })
-}
-
-/**
- * Get the output file path with support for multiple outputs and custom extension
- *
- * @param resumePath - The source resume file path
- * @param extension - The target file extension (e.g., '.tex', '.md')
- * @param index - The index of the current layout
- * @param total - The total number of layouts for this engine
- * @param outputDir - Optional output directory
- * @returns The determined output file path
- */
-function getOutputPath(
-  resumePath: string,
-  extension: string,
-  index: number,
-  total: number,
-  outputDir?: string
-): string {
-  const baseName = path.basename(resumePath.replace(/\.yaml|\.yml|\.json$/, ''))
-
-  // If there are multiple layouts, append the index to the filename
-  // e.g., resume.0.tex, resume.1.tex
-  // Otherwise, use the base filename
-  // e.g., resume.tex
-  const fileName =
-    total > 1 ? `${baseName}.${index}${extension}` : `${baseName}${extension}`
-
-  if (outputDir) {
-    return path.join(outputDir, fileName)
-  }
-  return path.join(path.dirname(resumePath), fileName)
-}
-
-/**
- * Get the PDF output path from a tex file path
- *
- * @param texPath - The tex file path
- * @returns The PDF file path
- */
-export function getPdfPath(texPath: string): string {
-  return texPath.replace(/\.tex$/, '.pdf')
-}
-
-type LaTeXEnvironment = 'xelatex' | 'tectonic'
-
-/**
- * Check if a command is available
- *
- * @param command - The command to check
- * @returns True if the command is available, false otherwise
- */
-export function isCommandAvailable(command: string): boolean {
-  try {
-    return !!which.sync(command)
-  } catch {
-    return false
-  }
-}
-
-/**
- * Infer the LaTeX environment to use
- *
- * We support xelatex and tectonic, if both are installed we will prioritize
- * xelatex.
- *
- * @returns The LaTeX environment PATH.
- * @throws {Error} If neither 'xelatex' nor 'tectonic' is found in system PATH.
- */
-export function inferLaTeXEnvironment(): LaTeXEnvironment {
-  if (isCommandAvailable('xelatex')) {
-    return 'xelatex'
-  }
-
-  if (isCommandAvailable('tectonic')) {
-    return 'tectonic'
-  }
-
-  throw new YAMLResumeError('LATEX_NOT_FOUND', {})
-}
-
-/**
- * Infer the LaTeX command to use based on the LaTeX environment
- *
- * @param resumePathOrTexFile - The source resume file OR the target .tex file
- * @param outputDir - Optional output directory
- * @returns The LaTeX command
- * @throws {Error} If the LaTeX environment cannot be inferred or the source
- * file extension is unsupported.
- */
-export function inferLaTeXCommand(
-  resumePathOrTexFile: string,
-  outputDir?: string
-): { command: string; args: string[]; cwd: string } {
-  const environment = inferLaTeXEnvironment()
-
-  // If the input is already a .tex file, use it directly; otherwise infer from .yaml/.json
-  const texFile = resumePathOrTexFile.endsWith('.tex')
-    ? resumePathOrTexFile
-    : inferOutput(resumePathOrTexFile, outputDir)
-
-  let command = ''
-  let args: string[] = []
-
-  switch (environment) {
-    case 'xelatex':
-      command = 'xelatex'
-      args = ['-halt-on-error', path.basename(texFile)]
-      break
-    case 'tectonic':
-      command = 'tectonic'
-      args = [path.basename(texFile)]
-      break
-  }
-
-  const cwd = outputDir
-    ? path.resolve(outputDir)
-    : path.dirname(path.resolve(texFile))
-
-  return { command, args, cwd }
-}
-
-/**
- * Normalize the file extension that can be used in the output file name
- *
- * @param extension - file extension
- * @returns
- */
-export function normalizeExtension(extension: string): string {
-  switch (extension) {
-    case '.docx':
-      return 'docx'
-    case '.html':
-      return 'html'
-    case '.md':
-      return 'markdown'
-    case '.tex':
-      return 'tex'
-    default:
-      return extension.replace('.', '')
-  }
-}
-
-/**
- * Shared helper to generate output file from a layout
- */
-async function generateOutput(
-  resumePath: string,
-  resume: Resume,
-  index: number,
-  total: number,
-  outputDir: string | undefined,
-  extension: string,
-  layoutIndex: number
-): Promise<string> {
-  const outputFile = getOutputPath(
-    resumePath,
-    extension,
-    index,
-    total,
-    outputDir
-  )
-
-  const dir = path.dirname(outputFile)
-  if (!fs.existsSync(dir)) {
-    fs.mkdirSync(dir, { recursive: true })
-  }
-
-  const renderer = getResumeRenderer(resume, layoutIndex)
-  const content = await renderer.render()
-
-  try {
-    fs.writeFileSync(outputFile, content)
-    consola.success(
-      joinNonEmptyString(
-        [
-          `Generated resume ${normalizeExtension(extension)} file successfully:`,
-          outputFile,
-        ],
-        ' '
-      )
-    )
-  } catch (_error) {
-    throw new YAMLResumeError('FILE_WRITE_ERROR', { path: outputFile })
-  }
-
-  return outputFile
-}
-
-/**
- * Default timeout for LaTeX compilation in milliseconds (30 seconds)
- */
-export const LATEX_COMPILE_TIMEOUT_MS = 30000
-
-/**
- * Get the auxiliary file path for a tex file
- *
- * @param texFile - The TeX file path
- * @param outputDir - Optional output directory
- * @returns The auxiliary file path
- */
-export function getAuxPath(texFile: string, outputDir?: string): string {
-  const { cwd } = inferLaTeXCommand(texFile, outputDir)
-  return path.join(cwd, `${path.basename(texFile, '.tex')}.aux`)
-}
-
-/**
- * Read the content of an auxiliary file
- *
- * @param auxPath - The auxiliary file path
- * @returns The file content, or null if the file does not exist
- */
-function readAuxFile(auxPath: string): string | null {
-  try {
-    return fs.readFileSync(auxPath, 'utf8')
-  } catch {
-    return null
-  }
-}
-
-/**
- * Compile a TeX file to PDF
- *
- * Runs the LaTeX compiler repeatedly until auxiliary files stabilize, ensuring
- * correct page numbers and cross-references.
- *
- * @param texFile - The TeX file to compile.
- * @param outputDir - Optional output directory.
- * @param timeout - Timeout in milliseconds. 0 means no timeout.
- */
-async function compileLaTeX(
-  texFile: string,
-  outputDir?: string,
-  timeout: number = LATEX_COMPILE_TIMEOUT_MS
-) {
-  const { command, args, cwd } = inferLaTeXCommand(texFile, outputDir)
-  const auxPath = getAuxPath(texFile, outputDir)
-
-  consola.start(
-    `Generating resume pdf file with command: \`${command} ${args.join(' ')}\`...`
-  )
-
-  // When timeout is 0, disable timeout by setting it to undefined
-  const execaTimeout = timeout === 0 ? undefined : timeout
-
-  let previousAux = readAuxFile(auxPath)
-  const maxRuns = 2
-
-  for (let run = 0; run < maxRuns; run++) {
-    consola.debug(`Running LaTeX pass ${run + 1}/${maxRuns}`)
-
-    try {
-      const result = await execa(command, args, {
-        cwd,
-        encoding: 'utf8',
-        timeout: execaTimeout,
-      })
-      consola.debug(
-        joinNonEmptyString(['stdout: ', toCodeBlock(result.stdout)])
-      )
-    } catch (error) {
-      // Check if it's a timeout error
-      if (error.timedOut) {
-        // Show raw logs to help users diagnose the issue
-        if (error.stdout) {
-          consola.info('LaTeX output before timeout:')
-          consola.log(error.stdout)
-        }
-        if (error.stderr) {
-          consola.info('LaTeX error output:')
-          consola.log(error.stderr)
-        }
-        throw new YAMLResumeError('LATEX_COMPILE_TIMEOUT', {
-          timeout: String(timeout / 1000),
-        })
-      }
-
-      consola.debug(joinNonEmptyString(['stdout: ', toCodeBlock(error.stdout)]))
-      consola.debug(joinNonEmptyString(['stderr: ', toCodeBlock(error.stderr)]))
-      throw new YAMLResumeError('LATEX_COMPILE_ERROR', { error: error.message })
-    }
-
-    const currentAux = readAuxFile(auxPath)
-    if (previousAux === currentAux) {
-      consola.debug(`LaTeX compilation stabilized after ${run + 1} pass(es)`)
-      break
-    }
-
-    consola.debug('Auxiliary file changed, running LaTeX again...')
-    previousAux = currentAux
-  }
-
-  consola.success(
-    `Generated resume pdf file successfully: ${getPdfPath(texFile)}`
-  )
-}
+import {
+  prettifySchemaValidationError,
+  prettifyYamlParseError,
+} from '../utils/format'
 
 /**
  * Parse and validate the timeout option.
@@ -374,7 +43,7 @@ async function compileLaTeX(
  * If the value is invalid, logs a warning and returns the default timeout.
  *
  * @param value - The timeout value in seconds as a string.
- * @returns The parsed timeout in milliseconds.
+ * @returns The parsed timeout in seconds.
  */
 export function parseTimeout(value: string): number {
   const num = Number(value)
@@ -384,126 +53,16 @@ export function parseTimeout(value: string): number {
       joinNonEmptyString(
         [
           `Invalid timeout value: "${value}".`,
-          `Using default timeout: ${LATEX_COMPILE_TIMEOUT_MS / 1000}s.`,
+          `Using default timeout: ${LATEX_COMPILE_TIMEOUT}s.`,
           'Timeout must be a non-negative number in seconds (0 to disable).',
         ],
         ' '
       )
     )
-    return LATEX_COMPILE_TIMEOUT_MS
+    return LATEX_COMPILE_TIMEOUT
   }
 
-  // Convert seconds to milliseconds (supports fractional seconds like curl)
-  return num * 1000
-}
-
-/**
- * Build a YAML resume to LaTeX & PDF and/or Markdown
- *
- * It first validates the resume against the schema (unless `--no-validate` flag
- * is used), then iterates through configured layouts to generate outputs.
- *
- * @param resumePath - The source resume file path (YAML, YML, or JSON).
- * @param options - Build options including validation, PDF generation flags,
- * output directory, and LaTeX compilation timeout.
- */
-export async function buildResume(
-  resumePath: string,
-  options: {
-    pdf?: boolean
-    validate?: boolean
-    output?: string
-    timeout?: number
-  } = {
-    pdf: true,
-    validate: true,
-    timeout: LATEX_COMPILE_TIMEOUT_MS,
-  }
-) {
-  const { resume } = readResume(resumePath, options.validate)
-
-  // Fallback to default layout if none provided
-  const allLayouts = resume.layouts ?? DEFAULT_RESUME_LAYOUTS
-  // Ensure resume has layouts for the renderer to use
-  if (!resume.layouts) {
-    resume.layouts = allLayouts
-  }
-
-  // Count totals for each engine to determine file naming strategy
-  // (e.g. resume.0.tex vs resume.tex)
-  const totals = {
-    docx: allLayouts.filter((l) => l.engine === 'docx').length,
-    html: allLayouts.filter((l) => l.engine === 'html').length,
-    latex: allLayouts.filter((l) => l.engine === 'latex').length,
-    markdown: allLayouts.filter((l) => l.engine === 'markdown').length,
-  }
-
-  // Track current index for each engine
-  const indices = {
-    docx: 0,
-    html: 0,
-    latex: 0,
-    markdown: 0,
-  }
-
-  for (let layoutIndex = 0; layoutIndex < allLayouts.length; layoutIndex++) {
-    const layout = allLayouts[layoutIndex]
-
-    switch (layout.engine) {
-      case 'docx': {
-        await generateOutput(
-          resumePath,
-          resume,
-          indices.docx++,
-          totals.docx,
-          options.output,
-          '.docx',
-          layoutIndex
-        )
-        break
-      }
-      case 'html': {
-        await generateOutput(
-          resumePath,
-          resume,
-          indices.html++,
-          totals.html,
-          options.output,
-          '.html',
-          layoutIndex
-        )
-        break
-      }
-      case 'latex': {
-        const texFile = await generateOutput(
-          resumePath,
-          resume,
-          indices.latex++,
-          totals.latex,
-          options.output,
-          '.tex',
-          layoutIndex
-        )
-
-        if (options.pdf === true) {
-          await compileLaTeX(texFile, options.output, options.timeout)
-        }
-        break
-      }
-      case 'markdown': {
-        await generateOutput(
-          resumePath,
-          resume,
-          indices.markdown++,
-          totals.markdown,
-          options.output,
-          '.md',
-          layoutIndex
-        )
-        break
-      }
-    }
-  }
+  return num
 }
 
 /**
@@ -525,7 +84,7 @@ export function createBuildCommand() {
       joinNonEmptyString(
         [
           'timeout for LaTeX compilation in seconds',
-          `(default: ${LATEX_COMPILE_TIMEOUT_MS / 1000}, 0 to disable)`,
+          `(default: ${LATEX_COMPILE_TIMEOUT}, 0 to disable)`,
         ],
         ' '
       ),
@@ -542,10 +101,40 @@ export function createBuildCommand() {
         }
       ) => {
         try {
-          await buildResume(resumePath, options)
+          const { validated, errors } = readResume(resumePath, {
+            validate: options.validate,
+          })
+
+          if (validated === 'failed' && errors) {
+            const resumeStr = fs.readFileSync(resumePath, 'utf8')
+            for (const error of errors) {
+              consola.log(
+                prettifySchemaValidationError(error, resumePath, resumeStr)
+              )
+            }
+          }
+
+          await buildResume(resumePath, {
+            ...options,
+            validate: false,
+            logger: consola,
+          })
         } catch (error) {
+          if (error instanceof YAMLResumeError) {
+            if (error.code === 'INVALID_YAML') {
+              const resumeStr = fs.readFileSync(resumePath, 'utf8')
+              consola.log(
+                prettifyYamlParseError(error.message, resumePath, resumeStr)
+              )
+            }
+            consola.error(error.message)
+            process.exit(error.errno)
+            return
+          }
+
           consola.error(error.message)
-          process.exit(error.errno)
+          process.exit(1)
+          return
         }
       }
     )

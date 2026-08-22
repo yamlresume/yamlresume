@@ -106,6 +106,12 @@ export const ErrorType = {
     message: 'Invalid JSON format: {error}',
     error: '',
   },
+  SCHEMA_VALIDATION_FAILED: {
+    code: 'SCHEMA_VALIDATION_FAILED',
+    errno: ErrorCategory.FORMAT | 0x03,
+    message: 'Resume schema validation failed for {path}',
+    path: '',
+  },
 
   // LaTeX related errors (0x40 - 0x5F)
   LATEX_NOT_FOUND: {

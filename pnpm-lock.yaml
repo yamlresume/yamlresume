@@ -96,18 +96,15 @@ importers:
       '@yamlresume/core':
         specifier: workspace:*
         version: link:../core
+      '@yamlresume/node':
+        specifier: workspace:*
+        version: link:../node
       '@yamlresume/samples':
         specifier: workspace:*
         version: link:../samples
       chalk:
         specifier: ^5.6.2
         version: 5.6.2
-      chokidar:
-        specifier: ^5.0.0
-        version: 5.0.0
-      coalescifn:
-        specifier: ^1.0.0
-        version: 1.0.0
       commander:
         specifier: ^15.0.0
         version: 15.0.0
@@ -250,6 +247,40 @@ importers:
       '@types/node':
         specifier: ^26.1.1
         version: 26.1.1
+
+  packages/node:
+    dependencies:
+      '@yamlresume/ai':
+        specifier: workspace:*
+        version: link:../ai
+      '@yamlresume/core':
+        specifier: workspace:*
+        version: link:../core
+      '@yamlresume/samples':
+        specifier: workspace:*
+        version: link:../samples
+      chokidar:
+        specifier: ^5.0.0
+        version: 5.0.0
+      coalescifn:
+        specifier: ^1.0.0
+        version: 1.0.0
+      execa:
+        specifier: ^10.0.0
+        version: 10.0.0
+      which:
+        specifier: ^7.0.0
+        version: 7.0.0
+      yaml:
+        specifier: ^2.9.0
+        version: 2.9.0
+    devDependencies:
+      '@types/node':
+        specifier: ^26.1.1
+        version: 26.1.1
+      '@types/which':
+        specifier: ^3.0.4
+        version: 3.0.4
 
   packages/playground:
     dependencies:

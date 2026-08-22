@@ -22,9 +22,8 @@
  * IN THE SOFTWARE.
  */
 
-import chokidar, { type ChokidarOptions, type FSWatcher } from 'chokidar'
+import { watchResume } from '@yamlresume/node'
 import type { Command } from 'commander'
-import { consola } from 'consola'
 import {
   afterEach,
   beforeEach,
@@ -35,181 +34,28 @@ import {
   vi,
 } from 'vitest'
 
-import * as build from './build'
-import { createDevCommand, watchResume } from './dev'
+import { createDevCommand } from './dev'
 import { getFixture } from './utils'
 
-// Shared helpers to reduce duplication across suites
-type Handlers = Record<string, Array<(path?: string) => void>>
-
-function installBuildResumeSpy() {
-  return vi
-    .spyOn(build, 'buildResume')
-    .mockImplementation(vi.fn() as unknown as typeof build.buildResume)
-}
-
-function installChokidarWatchSpy(handlers: Handlers) {
-  return vi
-    .spyOn(chokidar, 'watch')
-    .mockImplementation(
-      (_paths: string | string[], _options?: ChokidarOptions): FSWatcher => {
-        const watcher = {
-          on: vi.fn((event: string, handler: (path?: string) => void) => {
-            if (!handlers[event]) {
-              handlers[event] = []
-            }
-
-            handlers[event].push(handler)
-          }),
-          close: vi.fn(),
-        }
-
-        return watcher as unknown as FSWatcher
-      }
-    )
-}
-
-describe(watchResume, () => {
-  const resumePath = getFixture('software-engineer.yml')
-  let buildResumeSpy: MockInstance<typeof build.buildResume>
-  let consolaStartSpy: ReturnType<typeof vi.spyOn>
-  let chokidarWatchSpy: MockInstance<typeof chokidar.watch>
-  let handlers: Handlers
-
-  const installBuildResumeSpy = () =>
-    vi
-      .spyOn(build, 'buildResume')
-      .mockImplementation(vi.fn() as unknown as typeof build.buildResume)
-
-  const installChokidarWatchSpy = (h: Handlers) =>
-    vi
-      .spyOn(chokidar, 'watch')
-      .mockImplementation(
-        (_paths: string | string[], _options?: ChokidarOptions): FSWatcher => {
-          const watcher = {
-            on: vi.fn((event: string, handler: (path?: string) => void) => {
-              if (!h[event]) {
-                h[event] = []
-              }
-
-              h[event].push(handler)
-            }),
-            close: vi.fn(),
-          }
-
-          return watcher as unknown as FSWatcher
-        }
-      )
-
-  beforeEach(async () => {
-    consolaStartSpy = vi.spyOn(consola, 'start').mockImplementation(vi.fn())
-    buildResumeSpy = installBuildResumeSpy()
-
-    handlers = {
-      change: [],
-      add: [],
-    }
-    chokidarWatchSpy = installChokidarWatchSpy(handlers)
-  })
-
-  afterEach(() => {
-    vi.clearAllMocks()
-  })
-
-  it('should perform initial build and start watching', async () => {
-    const watcher = watchResume(resumePath, {
-      pdf: false,
-      validate: true,
-      output: '/tmp/foo',
-    })
-
-    // initial build
-    expect(buildResumeSpy).toHaveBeenCalledTimes(1)
-    expect(consolaStartSpy).toHaveBeenCalledTimes(1)
-    expect(chokidarWatchSpy).toHaveBeenCalledTimes(1)
-
-    // trigger one change via registered handler
-    for (const h of handlers.change) {
-      h('software-engineer.yml')
-    }
-    expect(buildResumeSpy).toHaveBeenCalledTimes(2)
-
-    // cleanup
-    watcher.close()
-  })
-
-  it('should trigger on rename events (atomic saves)', () => {
-    watchResume(resumePath, { pdf: true, validate: true })
-
-    expect(buildResumeSpy).toHaveBeenCalledTimes(1) // initial build
-
-    // Simulate add event to reflect atomic save behavior with chokidar
-    for (const h of handlers.add) {
-      h('software-engineer.yml')
-    }
-    expect(buildResumeSpy).toHaveBeenCalledTimes(2) // triggered by rename
-  })
-
-  it('should coalesce events during a build into a single follow-up build', () => {
-    // initial build (no events since watcher not yet registered)
-    buildResumeSpy.mockImplementationOnce(() => {})
-
-    // second call: during active build, emit multiple events → one follow-up
-    buildResumeSpy.mockImplementationOnce(() => {
-      for (const h of handlers.change) {
-        h('software-engineer.yml')
-      }
-      for (const h of handlers.add) {
-        h('software-engineer.yml')
-      }
-      for (const h of handlers.change) {
-        h('software-engineer.yml')
-      }
-    })
-
-    watchResume(resumePath, { pdf: true, validate: true })
-
-    // trigger the second build
-    for (const h of handlers.change) {
-      h('software-engineer.yml')
-    }
-
-    // Calls: 1 (initial) + 1 (triggered) + 1 (coalesced follow-up) = 3
-    expect(buildResumeSpy).toHaveBeenCalledTimes(3)
-  })
-
-  it('should log error when initial build fails (no throw)', () => {
-    buildResumeSpy.mockImplementationOnce(() => {
-      throw new Error('boom')
-    })
-
-    expect(() =>
-      watchResume(resumePath, { pdf: true, validate: true })
-    ).toThrow('boom')
-
-    expect(consolaStartSpy).not.toBeCalled()
-  })
+vi.mock('@yamlresume/node', async () => {
+  const actual = await vi.importActual('@yamlresume/node')
+  return {
+    ...actual,
+    watchResume: vi.fn(),
+  }
 })
 
 describe(createDevCommand, () => {
   let devCommand: Command
-  let chokidarWatchSpy: MockInstance<typeof chokidar.watch>
-  let handlers: Handlers
-  let buildResumeSpy: MockInstance<typeof build.buildResume>
+  let watchSpy: MockInstance<typeof watchResume>
 
-  beforeEach(async () => {
+  beforeEach(() => {
     devCommand = createDevCommand()
-    buildResumeSpy = installBuildResumeSpy()
-
-    handlers = {
-      change: [],
-      add: [],
-    }
-    chokidarWatchSpy = installChokidarWatchSpy(handlers)
+    watchSpy = vi.mocked(watchResume)
   })
 
   afterEach(() => {
-    vi.clearAllMocks()
+    vi.restoreAllMocks()
   })
 
   it('should have correct name and description', () => {
@@ -227,11 +73,31 @@ describe(createDevCommand, () => {
     expect(args[0].description).toBe('the resume file path')
   })
 
-  it('should start watching and build initially', () => {
+  it('should start watching with default options', () => {
     const resumePath = getFixture('software-engineer.yml')
-    devCommand.parse(['yamlresume', 'dev', resumePath, '--output', '/tmp/foo'])
+    devCommand.parse(['yamlresume', 'dev', resumePath])
 
-    expect(chokidarWatchSpy).toHaveBeenCalledTimes(1)
-    expect(buildResumeSpy).toHaveBeenCalledTimes(1)
+    expect(watchSpy).toHaveBeenCalledTimes(1)
+    expect(watchSpy).toHaveBeenCalledWith(
+      resumePath,
+      expect.objectContaining({ pdf: true, validate: true })
+    )
+  })
+
+  it('should pass --no-pdf and --output options', () => {
+    const resumePath = getFixture('software-engineer.yml')
+    devCommand.parse([
+      'yamlresume',
+      'dev',
+      '--no-pdf',
+      '--output',
+      '/tmp/foo',
+      resumePath,
+    ])
+
+    expect(watchSpy).toHaveBeenCalledWith(
+      resumePath,
+      expect.objectContaining({ pdf: false, output: '/tmp/foo' })
+    )
   })
 })

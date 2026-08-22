@@ -22,16 +22,14 @@
  * IN THE SOFTWARE.
  */
 
-import { Command } from 'commander'
-
-import { createSamplesListCommand } from './list'
+import path from 'node:path'
 
 /**
- * Create the samples command group.
+ * Get the path to a fixture file
+ *
+ * @param resumePath - The resume file path relative to the fixtures directory
+ * @returns The full, absolute path to the fixture file
  */
-export function createSamplesCommand() {
-  return new Command()
-    .name('samples')
-    .description('manage sample resumes')
-    .addCommand(createSamplesListCommand())
+export function getFixture(resumePath: string) {
+  return path.join(__dirname, 'fixtures', resumePath)
 }

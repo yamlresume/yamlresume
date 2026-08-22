@@ -22,10 +22,10 @@
  * IN THE SOFTWARE.
  */
 
-export { createAICommand } from './ai'
 export { createBuildCommand } from './build'
 export { createDevCommand } from './dev'
 export { createDoctorCommand } from './doctor'
+export { createGenerateCommand } from './generate'
 export { createLanguagesCommand } from './languages'
 export { createNewCommand } from './new'
 export { createSamplesCommand } from './samples'

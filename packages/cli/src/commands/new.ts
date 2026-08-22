@@ -22,66 +22,13 @@
  * IN THE SOFTWARE.
  */
 
-import fs from 'node:fs'
-import {
-  appendResumeLayouts,
-  injectResumeComments,
-  joinNonEmptyString,
-  type LocaleLanguage,
-  toCodeBlock,
-  YAMLResumeError,
-} from '@yamlresume/core'
-import { getSampleResume, listSampleResumes } from '@yamlresume/samples'
+import { YAMLResumeError } from '@yamlresume/core'
+import { newResume } from '@yamlresume/node'
+import { listSampleResumes } from '@yamlresume/samples'
 import { Command } from 'commander'
-import consola from 'consola'
-import yaml from 'yaml'
+import { consola } from 'consola'
 
 const DEFAULT_SAMPLE_ID = 'software-engineer'
-
-/**
- * Creates a new resume file from a curated sample resume.
- *
- * @param filename - The name of the resume file to create.
- * @param sampleId - The identifier of the sample resume to use.
- * @param language - The locale language of the sample resume.
- * @param options - Optional settings.
- * @param options.showSampleSource - Whether to mention the sample id in the
- *   success message.
- * @throws {YAMLResumeError} When there are file-related errors:
- * - FILE_CONFLICT: When the file already exists
- * - FILE_WRITE_ERROR: When there is an error writing the file
- * @throws {Error} When the sample or language does not exist.
- */
-export function createSampleResume(
-  filename: string,
-  sampleId: string,
-  language: LocaleLanguage,
-  options: { showSampleSource?: boolean } = {}
-) {
-  if (fs.existsSync(filename)) {
-    throw new YAMLResumeError('FILE_CONFLICT', { path: filename })
-  }
-
-  const sampleContent = getSampleResume(sampleId, language)
-  const doc = yaml.parseDocument(sampleContent)
-  appendResumeLayouts(doc)
-  const contentWithLayoutsAndComments = injectResumeComments(doc)
-
-  try {
-    fs.writeFileSync(filename, contentWithLayoutsAndComments)
-
-    const successMessage = options.showSampleSource
-      ? `Created ${filename} from sample "${sampleId}" successfully.`
-      : `Created ${filename} successfully.`
-
-    consola.success(successMessage)
-  } catch (error) {
-    consola.debug(
-      joinNonEmptyString(['Error creating resume: ', toCodeBlock(error.stack)])
-    )
-    throw new YAMLResumeError('FILE_WRITE_ERROR', { path: filename })
-  }
-}
 
 /**
  * Create a command instance to create a new YAML resume
@@ -95,11 +42,11 @@ export function createNewCommand() {
     .option('--language <language>', 'locale language for the sample', 'en')
     .action((filename, options) => {
       try {
-        createSampleResume(
+        newResume(
           filename,
           options.sample ?? DEFAULT_SAMPLE_ID,
           options.language,
-          { showSampleSource: Boolean(options.sample) }
+          { showSampleSource: Boolean(options.sample), logger: consola }
         )
       } catch (error) {
         if (error instanceof YAMLResumeError) {

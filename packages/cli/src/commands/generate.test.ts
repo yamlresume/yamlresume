@@ -22,28 +22,30 @@
  * IN THE SOFTWARE.
  */
 
-import fs from 'node:fs'
-
-import { AIResumeError, getModelFromEnv } from '@yamlresume/ai'
+import { AIResumeError } from '@yamlresume/ai'
 import { ErrorType, YAMLResumeError } from '@yamlresume/core'
+import { generateResume } from '@yamlresume/node'
 import type { Command } from 'commander'
 import { consola } from 'consola'
-import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
+import {
+  afterEach,
+  beforeEach,
+  describe,
+  expect,
+  it,
+  type MockedFunction,
+  vi,
+} from 'vitest'
 
-import { createAIGenerateCommand, generateResumeFile } from './generate'
+import { createGenerateCommand } from './generate'
 
-vi.mock('@yamlresume/ai', () => ({
-  generateResume: vi.fn(),
-  getModelFromEnv: vi.fn(() => ({ id: 'mock-model' })),
-  AIResumeError: class AIResumeError extends Error {
-    code: string
-    constructor(code: string, message: string) {
-      super(message)
-      this.name = 'AIResumeError'
-      this.code = code
-    }
-  },
-}))
+vi.mock('@yamlresume/node', async () => {
+  const actual = await vi.importActual('@yamlresume/node')
+  return {
+    ...actual,
+    generateResume: vi.fn(),
+  }
+})
 
 const { mockSpinner, oraMock } = vi.hoisted(() => {
   const mockSpinner = {
@@ -64,191 +66,17 @@ vi.mock('ora', () => ({
   default: oraMock,
 }))
 
-import { generateResume } from '@yamlresume/ai'
-
 function resetMockSpinner() {
   mockSpinner.start.mockReturnValue(mockSpinner)
   mockSpinner.text = ''
+  mockSpinner.succeed.mockClear()
+  mockSpinner.fail.mockClear()
   oraMock.mockReturnValue(mockSpinner)
 }
 
-describe(generateResumeFile, () => {
-  let existsSync: ReturnType<typeof vi.spyOn>
-  let writeFileSync: ReturnType<typeof vi.spyOn>
-  let consolaSuccessSpy: ReturnType<typeof vi.spyOn>
-
-  beforeEach(() => {
-    resetMockSpinner()
-    consolaSuccessSpy = vi.spyOn(consola, 'success').mockImplementation(vi.fn())
-    existsSync = vi.spyOn(fs, 'existsSync').mockReturnValue(false)
-    writeFileSync = vi.spyOn(fs, 'writeFileSync').mockImplementation(vi.fn())
-    vi.mocked(generateResume).mockImplementation(async (options) => {
-      options.onChunk?.('Hello')
-      options.onChunk?.(' world')
-      return 'generated yaml'
-    })
-  })
-
-  afterEach(() => {
-    vi.resetAllMocks()
-  })
-
-  it('should generate a resume file', async () => {
-    await generateResumeFile('my-resume.yml', 'Nurse', 'en')
-
-    expect(oraMock).toHaveBeenCalledWith('Generating resume...')
-    expect(mockSpinner.start).toHaveBeenCalledTimes(1)
-    expect(mockSpinner.succeed).toHaveBeenCalledWith(
-      'Resume generated successfully'
-    )
-    expect(mockSpinner.fail).not.toBeCalled()
-    expect(mockSpinner.text).toBe('Generating resume...\nHello world')
-    expect(getModelFromEnv).toHaveBeenCalledTimes(1)
-    expect(getModelFromEnv).toHaveBeenCalledWith({})
-    expect(generateResume).toHaveBeenCalledWith({
-      position: 'Nurse',
-      language: 'en',
-      model: { id: 'mock-model' },
-      onChunk: expect.any(Function),
-    })
-    expect(writeFileSync).toHaveBeenCalledTimes(1)
-    expect(writeFileSync).toHaveBeenCalledWith(
-      'my-resume.yml',
-      'generated yaml'
-    )
-    expect(consolaSuccessSpy).toHaveBeenCalledWith(
-      'Generated my-resume.yml successfully.'
-    )
-  })
-
-  it('should pass model and base URL overrides to getModelFromEnv', async () => {
-    await generateResumeFile('my-resume.yml', 'Nurse', 'en', {
-      model: 'gpt-5',
-      baseURL: 'https://custom.example.com/v1',
-    })
-
-    expect(getModelFromEnv).toHaveBeenCalledTimes(1)
-    expect(getModelFromEnv).toHaveBeenCalledWith({
-      model: 'gpt-5',
-      baseURL: 'https://custom.example.com/v1',
-    })
-  })
-
-  it('should pass maxRetries override to generateResume', async () => {
-    await generateResumeFile('my-resume.yml', 'Nurse', 'en', {
-      maxRetries: 5,
-    })
-
-    expect(generateResume).toHaveBeenCalledWith({
-      position: 'Nurse',
-      language: 'en',
-      model: { id: 'mock-model' },
-      maxRetries: 5,
-      onChunk: expect.any(Function),
-    })
-  })
-
-  it('should not pass maxRetries to generateResume when omitted', async () => {
-    await generateResumeFile('my-resume.yml', 'Nurse', 'en')
-
-    expect(generateResume).toHaveBeenCalledWith({
-      position: 'Nurse',
-      language: 'en',
-      model: { id: 'mock-model' },
-      onChunk: expect.any(Function),
-    })
-  })
-
-  it('should throw a file conflict error if the file exists', async () => {
-    existsSync.mockReturnValue(true)
-
-    await expect(
-      generateResumeFile('my-resume.yml', 'Nurse', 'en')
-    ).rejects.toThrow(YAMLResumeError)
-
-    try {
-      await generateResumeFile('my-resume.yml', 'Nurse', 'en')
-    } catch (error) {
-      expect(error).toBeInstanceOf(YAMLResumeError)
-      expect(error.code).toBe('FILE_CONFLICT')
-      expect(error.errno).toBe(ErrorType.FILE_CONFLICT.errno)
-    }
-
-    expect(generateResume).not.toBeCalled()
-    expect(writeFileSync).not.toBeCalled()
-  })
-
-  it('should throw an invalid language error for unsupported locales', async () => {
-    await expect(
-      generateResumeFile('my-resume.yml', 'Nurse', 'klingon')
-    ).rejects.toThrow(YAMLResumeError)
-
-    try {
-      await generateResumeFile('my-resume.yml', 'Nurse', 'klingon')
-    } catch (error) {
-      expect(error).toBeInstanceOf(YAMLResumeError)
-      expect(error.code).toBe('INVALID_LANGUAGE')
-      expect(error.errno).toBe(ErrorType.INVALID_LANGUAGE.errno)
-    }
-
-    expect(generateResume).not.toBeCalled()
-    expect(writeFileSync).not.toBeCalled()
-  })
-
-  it('should throw a file write error when writing fails', async () => {
-    writeFileSync.mockImplementation(() => {
-      throw new Error('write failed')
-    })
-
-    await expect(
-      generateResumeFile('my-resume.yml', 'Nurse', 'en')
-    ).rejects.toThrow(YAMLResumeError)
-
-    try {
-      await generateResumeFile('my-resume.yml', 'Nurse', 'en')
-    } catch (error) {
-      expect(error).toBeInstanceOf(YAMLResumeError)
-      expect(error.code).toBe('FILE_WRITE_ERROR')
-      expect(error.errno).toBe(ErrorType.FILE_WRITE_ERROR.errno)
-    }
-  })
-
-  it('should handle non-Error values thrown while writing', async () => {
-    writeFileSync.mockImplementation(() => {
-      throw 'write failed'
-    })
-
-    await expect(
-      generateResumeFile('my-resume.yml', 'Nurse', 'en')
-    ).rejects.toThrow(YAMLResumeError)
-  })
-
-  it('should surface AI generation errors', async () => {
-    vi.mocked(generateResume).mockRejectedValue(
-      new AIResumeError('GENERATION_FAILED', 'AI failed')
-    )
-
-    await expect(
-      generateResumeFile('my-resume.yml', 'Nurse', 'en')
-    ).rejects.toThrow(AIResumeError)
-  })
-
-  it('should stop the spinner on generation failure', async () => {
-    vi.mocked(generateResume).mockRejectedValue(
-      new AIResumeError('GENERATION_FAILED', 'AI failed')
-    )
-
-    await expect(
-      generateResumeFile('my-resume.yml', 'Nurse', 'en')
-    ).rejects.toThrow(AIResumeError)
-
-    expect(mockSpinner.fail).toHaveBeenCalledWith('Failed to generate resume')
-    expect(mockSpinner.succeed).not.toBeCalled()
-  })
-})
-
-describe(createAIGenerateCommand, () => {
+describe(createGenerateCommand, () => {
   let generateCommand: Command
+  let generateSpy: MockedFunction<typeof generateResume>
   let consolaSuccessSpy: ReturnType<typeof vi.spyOn>
   let consolaErrorSpy: ReturnType<typeof vi.spyOn>
   let processExitSpy: ReturnType<typeof vi.spyOn>
@@ -256,8 +84,12 @@ describe(createAIGenerateCommand, () => {
 
   beforeEach(() => {
     resetMockSpinner()
-    generateCommand = createAIGenerateCommand()
-
+    generateCommand = createGenerateCommand()
+    generateSpy = vi
+      .mocked(generateResume)
+      .mockImplementation(async (filename, _position, _language, options) => {
+        options?.logger?.success(`Generated ${filename} successfully.`)
+      })
     consolaSuccessSpy = vi.spyOn(consola, 'success').mockImplementation(vi.fn())
     consolaErrorSpy = vi.spyOn(consola, 'error').mockImplementation(vi.fn())
     processExitSpy = vi
@@ -265,15 +97,7 @@ describe(createAIGenerateCommand, () => {
       .mockImplementation((() => {}) as NodeJS.Process['exit'])
     _stderrWriteSpy = vi
       .spyOn(process.stderr, 'write')
-      .mockImplementation(vi.fn())
-
-    vi.mocked(generateResume).mockImplementation(async (options) => {
-      options.onChunk?.('Hello')
-      options.onChunk?.(' world')
-      return 'generated yaml'
-    })
-    vi.spyOn(fs, 'existsSync').mockReturnValue(false)
-    vi.spyOn(fs, 'writeFileSync').mockImplementation(vi.fn())
+      .mockImplementation((() => true) as typeof process.stderr.write)
   })
 
   afterEach(() => {
@@ -359,13 +183,25 @@ describe(createAIGenerateCommand, () => {
       'my-resume.yml',
     ])
 
+    expect(generateSpy).toHaveBeenCalledWith(
+      'my-resume.yml',
+      'Nurse',
+      'en',
+      expect.objectContaining({
+        model: undefined,
+        baseURL: undefined,
+        maxRetries: undefined,
+        onChunk: expect.any(Function),
+        logger: expect.any(Object),
+      })
+    )
     expect(consolaSuccessSpy).toHaveBeenCalledTimes(1)
     expect(consolaSuccessSpy).toHaveBeenCalledWith(
       'Generated my-resume.yml successfully.'
     )
   })
 
-  it('should pass --model and --base-url flags to getModelFromEnv', async () => {
+  it('should pass --model and --base-url flags to generateResume', async () => {
     await generateCommand.parseAsync([
       'yamlresume',
       'generate',
@@ -380,11 +216,15 @@ describe(createAIGenerateCommand, () => {
       'my-resume.yml',
     ])
 
-    expect(getModelFromEnv).toHaveBeenCalledTimes(1)
-    expect(getModelFromEnv).toHaveBeenCalledWith({
-      model: 'gpt-5',
-      baseURL: 'https://custom.example.com/v1',
-    })
+    expect(generateSpy).toHaveBeenCalledWith(
+      'my-resume.yml',
+      'Nurse',
+      'en',
+      expect.objectContaining({
+        model: 'gpt-5',
+        baseURL: 'https://custom.example.com/v1',
+      })
+    )
     expect(consolaSuccessSpy).toHaveBeenCalledTimes(1)
   })
 
@@ -401,7 +241,10 @@ describe(createAIGenerateCommand, () => {
       'my-resume.yml',
     ])
 
-    expect(generateResume).toHaveBeenCalledWith(
+    expect(generateSpy).toHaveBeenCalledWith(
+      'my-resume.yml',
+      'Nurse',
+      'en',
       expect.objectContaining({
         maxRetries: 5,
       })
@@ -446,7 +289,9 @@ describe(createAIGenerateCommand, () => {
   })
 
   it('should exit with file conflict errno on conflict', async () => {
-    vi.spyOn(fs, 'existsSync').mockReturnValue(true)
+    generateSpy.mockRejectedValue(
+      new YAMLResumeError('FILE_CONFLICT', { path: 'my-resume.yml' })
+    )
 
     await generateCommand.parseAsync([
       'yamlresume',
@@ -465,6 +310,10 @@ describe(createAIGenerateCommand, () => {
   })
 
   it('should exit with invalid language errno for unsupported locales', async () => {
+    generateSpy.mockRejectedValue(
+      new YAMLResumeError('INVALID_LANGUAGE', { language: 'klingon' })
+    )
+
     await generateCommand.parseAsync([
       'yamlresume',
       'generate',
@@ -484,9 +333,9 @@ describe(createAIGenerateCommand, () => {
   })
 
   it('should exit with file write errno when writing fails', async () => {
-    vi.spyOn(fs, 'writeFileSync').mockImplementation(() => {
-      throw new Error('write failed')
-    })
+    generateSpy.mockRejectedValue(
+      new YAMLResumeError('FILE_WRITE_ERROR', { path: 'my-resume.yml' })
+    )
 
     await generateCommand.parseAsync([
       'yamlresume',
@@ -507,7 +356,7 @@ describe(createAIGenerateCommand, () => {
   })
 
   it('should exit with code 1 on AI errors', async () => {
-    vi.mocked(generateResume).mockRejectedValue(
+    generateSpy.mockRejectedValue(
       new AIResumeError('GENERATION_FAILED', 'AI failed')
     )
 
@@ -528,7 +377,7 @@ describe(createAIGenerateCommand, () => {
   })
 
   it('should exit with code 1 on non-Error generation failures', async () => {
-    vi.mocked(generateResume).mockRejectedValue('AI failed')
+    generateSpy.mockRejectedValue('AI failed')
 
     await generateCommand.parseAsync([
       'yamlresume',
@@ -552,7 +401,7 @@ describe(createAIGenerateCommand, () => {
     consola.level = 4
 
     const error = new Error('generation failed')
-    vi.mocked(generateResume).mockRejectedValue(error)
+    generateSpy.mockRejectedValue(error)
 
     await generateCommand.parseAsync([
       'yamlresume',
@@ -572,5 +421,81 @@ describe(createAIGenerateCommand, () => {
     expect(processExitSpy).toHaveBeenCalledWith(1)
 
     consola.level = originalLevel
+  })
+
+  it('should start a spinner and update its text on chunks', async () => {
+    generateSpy.mockImplementation(
+      async (_filename, _position, _language, options) => {
+        options?.logger?.start('Generating resume...')
+        options?.onChunk?.('chunk one ')
+        options?.onChunk?.('chunk two')
+        options?.logger?.success('Done')
+      }
+    )
+
+    await generateCommand.parseAsync([
+      'yamlresume',
+      'generate',
+      '--position',
+      'Nurse',
+      '--language',
+      'en',
+      'my-resume.yml',
+    ])
+
+    expect(oraMock).toHaveBeenCalledWith('Generating resume...')
+    expect(mockSpinner.start).toHaveBeenCalled()
+    expect(mockSpinner.text).toContain('chunk two')
+    expect(consolaSuccessSpy).toHaveBeenCalledWith(
+      'Generated my-resume.yml successfully.'
+    )
+  })
+
+  it('should append chunks without a spinner', async () => {
+    generateSpy.mockImplementation(
+      async (_filename, _position, _language, options) => {
+        options?.onChunk?.('chunk one ')
+        options?.logger?.success('Done')
+      }
+    )
+
+    await generateCommand.parseAsync([
+      'yamlresume',
+      'generate',
+      '--position',
+      'Nurse',
+      '--language',
+      'en',
+      'my-resume.yml',
+    ])
+
+    expect(oraMock).not.toHaveBeenCalled()
+    expect(consolaSuccessSpy).toHaveBeenCalledWith(
+      'Generated my-resume.yml successfully.'
+    )
+  })
+
+  it('should not duplicate errors through the logger', async () => {
+    generateSpy.mockImplementation(
+      async (_filename, _position, _language, options) => {
+        options?.logger?.error('ignored error')
+        options?.logger?.success('Done')
+      }
+    )
+
+    await generateCommand.parseAsync([
+      'yamlresume',
+      'generate',
+      '--position',
+      'Nurse',
+      '--language',
+      'en',
+      'my-resume.yml',
+    ])
+
+    expect(consolaErrorSpy).not.toHaveBeenCalled()
+    expect(consolaSuccessSpy).toHaveBeenCalledWith(
+      'Generated my-resume.yml successfully.'
+    )
   })
 })
