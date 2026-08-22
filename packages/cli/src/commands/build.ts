@@ -266,7 +266,36 @@ async function generateOutput(
 export const LATEX_COMPILE_TIMEOUT_MS = 30000
 
 /**
+ * Get the auxiliary file path for a tex file
+ *
+ * @param texFile - The TeX file path
+ * @param outputDir - Optional output directory
+ * @returns The auxiliary file path
+ */
+export function getAuxPath(texFile: string, outputDir?: string): string {
+  const { cwd } = inferLaTeXCommand(texFile, outputDir)
+  return path.join(cwd, `${path.basename(texFile, '.tex')}.aux`)
+}
+
+/**
+ * Read the content of an auxiliary file
+ *
+ * @param auxPath - The auxiliary file path
+ * @returns The file content, or null if the file does not exist
+ */
+function readAuxFile(auxPath: string): string | null {
+  try {
+    return fs.readFileSync(auxPath, 'utf8')
+  } catch {
+    return null
+  }
+}
+
+/**
  * Compile a TeX file to PDF
+ *
+ * Runs the LaTeX compiler repeatedly until auxiliary files stabilize, ensuring
+ * correct page numbers and cross-references.
  *
  * @param texFile - The TeX file to compile.
  * @param outputDir - Optional output directory.
@@ -278,6 +307,7 @@ async function compileLaTeX(
   timeout: number = LATEX_COMPILE_TIMEOUT_MS
 ) {
   const { command, args, cwd } = inferLaTeXCommand(texFile, outputDir)
+  const auxPath = getAuxPath(texFile, outputDir)
 
   consola.start(
     `Generating resume pdf file with command: \`${command} ${args.join(' ')}\`...`
@@ -286,37 +316,56 @@ async function compileLaTeX(
   // When timeout is 0, disable timeout by setting it to undefined
   const execaTimeout = timeout === 0 ? undefined : timeout
 
-  try {
-    const result = await execa(command, args, {
-      cwd,
-      encoding: 'utf8',
-      timeout: execaTimeout,
-    })
-    consola.success(
-      `Generated resume pdf file successfully: ${getPdfPath(texFile)}`
-    )
-    consola.debug(joinNonEmptyString(['stdout: ', toCodeBlock(result.stdout)]))
-  } catch (error) {
-    // Check if it's a timeout error
-    if (error.timedOut) {
-      // Show raw logs to help users diagnose the issue
-      if (error.stdout) {
-        consola.info('LaTeX output before timeout:')
-        consola.log(error.stdout)
-      }
-      if (error.stderr) {
-        consola.info('LaTeX error output:')
-        consola.log(error.stderr)
-      }
-      throw new YAMLResumeError('LATEX_COMPILE_TIMEOUT', {
-        timeout: String(timeout / 1000),
+  let previousAux = readAuxFile(auxPath)
+  const maxRuns = 2
+
+  for (let run = 0; run < maxRuns; run++) {
+    consola.debug(`Running LaTeX pass ${run + 1}/${maxRuns}`)
+
+    try {
+      const result = await execa(command, args, {
+        cwd,
+        encoding: 'utf8',
+        timeout: execaTimeout,
       })
+      consola.debug(
+        joinNonEmptyString(['stdout: ', toCodeBlock(result.stdout)])
+      )
+    } catch (error) {
+      // Check if it's a timeout error
+      if (error.timedOut) {
+        // Show raw logs to help users diagnose the issue
+        if (error.stdout) {
+          consola.info('LaTeX output before timeout:')
+          consola.log(error.stdout)
+        }
+        if (error.stderr) {
+          consola.info('LaTeX error output:')
+          consola.log(error.stderr)
+        }
+        throw new YAMLResumeError('LATEX_COMPILE_TIMEOUT', {
+          timeout: String(timeout / 1000),
+        })
+      }
+
+      consola.debug(joinNonEmptyString(['stdout: ', toCodeBlock(error.stdout)]))
+      consola.debug(joinNonEmptyString(['stderr: ', toCodeBlock(error.stderr)]))
+      throw new YAMLResumeError('LATEX_COMPILE_ERROR', { error: error.message })
     }
 
-    consola.debug(joinNonEmptyString(['stdout: ', toCodeBlock(error.stdout)]))
-    consola.debug(joinNonEmptyString(['stderr: ', toCodeBlock(error.stderr)]))
-    throw new YAMLResumeError('LATEX_COMPILE_ERROR', { error: error.message })
+    const currentAux = readAuxFile(auxPath)
+    if (previousAux === currentAux) {
+      consola.debug(`LaTeX compilation stabilized after ${run + 1} pass(es)`)
+      break
+    }
+
+    consola.debug('Auxiliary file changed, running LaTeX again...')
+    previousAux = currentAux
   }
+
+  consola.success(
+    `Generated resume pdf file successfully: ${getPdfPath(texFile)}`
+  )
 }
 
 /**

@@ -47,6 +47,7 @@ import which from 'which'
 import {
   buildResume,
   createBuildCommand,
+  getAuxPath,
   getPdfPath,
   inferLaTeXCommand,
   inferLaTeXEnvironment,
@@ -464,7 +465,65 @@ describe(buildResume, () => {
 
     expect(consolaStartSpy).toHaveBeenCalledTimes(1)
     expect(consolaSuccessSpy).toHaveBeenCalledTimes(4)
-    expect(consolaDebugSpy).toHaveBeenCalledTimes(1)
+    expect(consolaDebugSpy).toHaveBeenCalledTimes(3)
+  })
+
+  it('should rerun LaTeX when auxiliary file changes', async () => {
+    const resumePath = getFixture('software-engineer.yml')
+    const texFile = inferOutput(resumePath)
+    const auxPath = getAuxPath(texFile)
+
+    // Create an initial .aux file to simulate a previous build
+    fs.writeFileSync(auxPath, 'initial')
+
+    // Mock execa to write a stable .aux file on every run
+    execSpy.mockImplementation(async () => {
+      fs.writeFileSync(auxPath, 'stable')
+      return {
+        stdout: 'mocked output',
+        stderr: '',
+        exitCode: 0,
+        command: '',
+        escapedCommand: '',
+        failed: false,
+        killed: false,
+        signal: undefined,
+        signalDescription: undefined,
+        timedOut: false,
+        isCanceled: false,
+        cwd: '',
+        durationMs: 0,
+        pipedFrom: [],
+        all: undefined,
+      }
+    })
+
+    await buildResume(resumePath)
+
+    // First run changes .aux from 'initial' to 'stable'.
+    // Second run keeps it 'stable', so the loop exits.
+    expect(execSpy).toHaveBeenCalledTimes(2)
+    expect(consolaDebugSpy).toHaveBeenCalledTimes(6)
+
+    // cleanup
+    if (fs.existsSync(auxPath)) fs.unlinkSync(auxPath)
+  })
+
+  it('should not rerun LaTeX when auxiliary file is stable', async () => {
+    const resumePath = getFixture('software-engineer.yml')
+    const texFile = inferOutput(resumePath)
+    const auxPath = getAuxPath(texFile)
+
+    // Create a stable .aux file
+    fs.writeFileSync(auxPath, 'stable')
+
+    await buildResume(resumePath)
+
+    expect(execSpy).toHaveBeenCalledTimes(1)
+    expect(consolaDebugSpy).toHaveBeenCalledTimes(3)
+
+    // cleanup
+    if (fs.existsSync(auxPath)) fs.unlinkSync(auxPath)
   })
 
   it('should handle error when generating pdf', async () => {
@@ -503,7 +562,7 @@ describe(buildResume, () => {
 
     expect(consolaStartSpy).toHaveBeenCalledTimes(1)
     expect(consolaSuccessSpy).toHaveBeenCalledTimes(1)
-    expect(consolaDebugSpy).toHaveBeenCalledTimes(2)
+    expect(consolaDebugSpy).toHaveBeenCalledTimes(3)
   })
 
   it('should handle timeout when generating pdf', async () => {
@@ -639,7 +698,7 @@ describe(buildResume, () => {
     expect(whichSpy).toHaveBeenCalledWith('xelatex')
     expect(consolaStartSpy).toHaveBeenCalledTimes(1)
     expect(consolaSuccessSpy).toHaveBeenCalledTimes(4)
-    expect(consolaDebugSpy).toHaveBeenCalledTimes(1)
+    expect(consolaDebugSpy).toHaveBeenCalledTimes(3)
 
     expect(outputStr).toEqual([
       `Generated resume tex file successfully: ${texFile}`,
