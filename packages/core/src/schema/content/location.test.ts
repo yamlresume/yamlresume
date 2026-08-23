@@ -124,7 +124,7 @@ describe('LocationSchema', () => {
               errors: [],
               properties: {
                 city: {
-                  errors: ['city is required.'],
+                  errors: ['city is required and must be a string.'],
                 },
               },
             },

@@ -127,7 +127,7 @@ describe('ProjectsSchema', () => {
                   errors: [],
                   properties: {
                     name: {
-                      errors: ['name is required.'],
+                      errors: ['name is required and must be a string.'],
                     },
                   },
                 },
@@ -160,7 +160,7 @@ describe('ProjectsSchema', () => {
                   errors: [],
                   properties: {
                     startDate: {
-                      errors: ['startDate is required.'],
+                      errors: ['startDate is required and must be a string.'],
                     },
                   },
                 },
@@ -193,7 +193,7 @@ describe('ProjectsSchema', () => {
                   errors: [],
                   properties: {
                     summary: {
-                      errors: ['summary is required.'],
+                      errors: ['summary is required and must be a string.'],
                     },
                   },
                 },
@@ -225,10 +225,10 @@ describe('ProjectsSchema', () => {
                   errors: [],
                   properties: {
                     name: {
-                      errors: ['name is required.'],
+                      errors: ['name is required and must be a string.'],
                     },
                     startDate: {
-                      errors: ['startDate is required.'],
+                      errors: ['startDate is required and must be a string.'],
                     },
                   },
                 },

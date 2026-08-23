@@ -102,7 +102,7 @@ describe('InterestsSchema', () => {
                   errors: [],
                   properties: {
                     name: {
-                      errors: ['name is required.'],
+                      errors: ['name is required and must be a string.'],
                     },
                   },
                 },

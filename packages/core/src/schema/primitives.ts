@@ -128,7 +128,7 @@ export function optionSchema<T extends Options>(
  */
 export const SizedStringSchema = (name: string, min: number, max: number) => {
   return z
-    .string({ message: `${name} is required.` })
+    .string({ message: `${name} is required and must be a string.` })
     .min(min, { message: `${name} should be ${min} characters or more.` })
     .max(max, { message: `${name} should be ${max} characters or less.` })
 }

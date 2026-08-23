@@ -124,7 +124,9 @@ describe('VolunteerSchema', () => {
                   errors: [],
                   properties: {
                     organization: {
-                      errors: ['organization is required.'],
+                      errors: [
+                        'organization is required and must be a string.',
+                      ],
                     },
                   },
                 },
@@ -156,7 +158,7 @@ describe('VolunteerSchema', () => {
                   errors: [],
                   properties: {
                     position: {
-                      errors: ['position is required.'],
+                      errors: ['position is required and must be a string.'],
                     },
                   },
                 },
@@ -188,7 +190,7 @@ describe('VolunteerSchema', () => {
                   errors: [],
                   properties: {
                     startDate: {
-                      errors: ['startDate is required.'],
+                      errors: ['startDate is required and must be a string.'],
                     },
                   },
                 },
@@ -220,7 +222,7 @@ describe('VolunteerSchema', () => {
                   errors: [],
                   properties: {
                     summary: {
-                      errors: ['summary is required.'],
+                      errors: ['summary is required and must be a string.'],
                     },
                   },
                 },
@@ -250,13 +252,15 @@ describe('VolunteerSchema', () => {
                   errors: [],
                   properties: {
                     organization: {
-                      errors: ['organization is required.'],
+                      errors: [
+                        'organization is required and must be a string.',
+                      ],
                     },
                     position: {
-                      errors: ['position is required.'],
+                      errors: ['position is required and must be a string.'],
                     },
                     startDate: {
-                      errors: ['startDate is required.'],
+                      errors: ['startDate is required and must be a string.'],
                     },
                   },
                 },

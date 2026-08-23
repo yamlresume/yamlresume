@@ -129,7 +129,7 @@ describe('ProfilesSchema', () => {
                   errors: [],
                   properties: {
                     username: {
-                      errors: ['username is required.'],
+                      errors: ['username is required and must be a string.'],
                     },
                   },
                 },
@@ -160,7 +160,7 @@ describe('ProfilesSchema', () => {
                       errors: ['network option is required.'],
                     },
                     username: {
-                      errors: ['username is required.'],
+                      errors: ['username is required and must be a string.'],
                     },
                   },
                 },

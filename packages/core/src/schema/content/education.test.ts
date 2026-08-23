@@ -178,7 +178,7 @@ describe('EducationSchema', () => {
                   errors: [],
                   properties: {
                     area: {
-                      errors: ['area is required.'],
+                      errors: ['area is required and must be a string.'],
                     },
                   },
                 },
@@ -248,7 +248,7 @@ describe('EducationSchema', () => {
                   errors: [],
                   properties: {
                     institution: {
-                      errors: ['institution is required.'],
+                      errors: ['institution is required and must be a string.'],
                     },
                   },
                 },
@@ -281,13 +281,13 @@ describe('EducationSchema', () => {
                   errors: [],
                   properties: {
                     area: {
-                      errors: ['area is required.'],
+                      errors: ['area is required and must be a string.'],
                     },
                     degree: {
                       errors: ['degree option is required.'],
                     },
                     institution: {
-                      errors: ['institution is required.'],
+                      errors: ['institution is required and must be a string.'],
                     },
                   },
                 },

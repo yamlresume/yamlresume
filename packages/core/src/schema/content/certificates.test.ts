@@ -112,7 +112,7 @@ describe('CertificatesSchema', () => {
                   errors: [],
                   properties: {
                     issuer: {
-                      errors: ['issuer is required.'],
+                      errors: ['issuer is required and must be a string.'],
                     },
                   },
                 },
@@ -142,7 +142,7 @@ describe('CertificatesSchema', () => {
                   errors: [],
                   properties: {
                     name: {
-                      errors: ['name is required.'],
+                      errors: ['name is required and must be a string.'],
                     },
                   },
                 },
@@ -231,10 +231,10 @@ describe('CertificatesSchema', () => {
                   errors: [],
                   properties: {
                     issuer: {
-                      errors: ['issuer is required.'],
+                      errors: ['issuer is required and must be a string.'],
                     },
                     name: {
-                      errors: ['name is required.'],
+                      errors: ['name is required and must be a string.'],
                     },
                   },
                 },

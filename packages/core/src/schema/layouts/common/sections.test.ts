@@ -63,7 +63,7 @@ describe('AliasNameSchema', () => {
       {
         string: undefined,
         error: {
-          errors: ['section alias is required.'],
+          errors: ['section alias is required and must be a string.'],
         },
       },
     ]

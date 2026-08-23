@@ -94,7 +94,7 @@ describe('SizedStringSchema', () => {
       {
         string: undefined,
         error: {
-          errors: ['string is required.'],
+          errors: ['string is required and must be a string.'],
         },
       },
     ]
@@ -178,7 +178,7 @@ describe('DateSchema', () => {
       {
         date: undefined,
         error: {
-          errors: ['date is required.'],
+          errors: ['date is required and must be a string.'],
         },
       },
       {
@@ -750,7 +750,7 @@ describe('NameSchema', () => {
       {
         name: undefined,
         error: {
-          errors: ['name is required.'],
+          errors: ['name is required and must be a string.'],
         },
       },
     ]
@@ -794,7 +794,7 @@ describe('OrganizationSchema', () => {
       {
         organization: undefined,
         error: {
-          errors: ['Organization is required.'],
+          errors: ['Organization is required and must be a string.'],
         },
       },
     ]
@@ -894,7 +894,7 @@ describe('SummarySchema', () => {
       {
         summary: undefined,
         error: {
-          errors: ['summary is required.'],
+          errors: ['summary is required and must be a string.'],
         },
       },
     ]

@@ -150,7 +150,7 @@ describe('MarginSizeSchema', () => {
       {
         top: undefined,
         error: {
-          errors: ['top margin is required.'],
+          errors: ['top margin is required and must be a string.'],
         },
       },
     ]

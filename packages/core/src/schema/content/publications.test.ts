@@ -121,7 +121,7 @@ describe('PublicationsSchema', () => {
                   errors: [],
                   properties: {
                     name: {
-                      errors: ['name is required.'],
+                      errors: ['name is required and must be a string.'],
                     },
                   },
                 },
@@ -152,7 +152,7 @@ describe('PublicationsSchema', () => {
                   errors: [],
                   properties: {
                     publisher: {
-                      errors: ['publisher is required.'],
+                      errors: ['publisher is required and must be a string.'],
                     },
                   },
                 },
@@ -182,10 +182,10 @@ describe('PublicationsSchema', () => {
                   errors: [],
                   properties: {
                     name: {
-                      errors: ['name is required.'],
+                      errors: ['name is required and must be a string.'],
                     },
                     publisher: {
-                      errors: ['publisher is required.'],
+                      errors: ['publisher is required and must be a string.'],
                     },
                   },
                 },

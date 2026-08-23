@@ -113,7 +113,7 @@ describe('AwardsSchema', () => {
                   errors: [],
                   properties: {
                     awarder: {
-                      errors: ['awarder is required.'],
+                      errors: ['awarder is required and must be a string.'],
                     },
                   },
                 },
@@ -143,7 +143,7 @@ describe('AwardsSchema', () => {
                   errors: [],
                   properties: {
                     title: {
-                      errors: ['title is required.'],
+                      errors: ['title is required and must be a string.'],
                     },
                   },
                 },
@@ -232,10 +232,10 @@ describe('AwardsSchema', () => {
                   errors: [],
                   properties: {
                     awarder: {
-                      errors: ['awarder is required.'],
+                      errors: ['awarder is required and must be a string.'],
                     },
                     title: {
-                      errors: ['title is required.'],
+                      errors: ['title is required and must be a string.'],
                     },
                   },
                 },

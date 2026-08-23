@@ -121,7 +121,7 @@ describe('ReferencesSchema', () => {
                   errors: [],
                   properties: {
                     name: {
-                      errors: ['name is required.'],
+                      errors: ['name is required and must be a string.'],
                     },
                   },
                 },
@@ -152,7 +152,7 @@ describe('ReferencesSchema', () => {
                   errors: [],
                   properties: {
                     summary: {
-                      errors: ['summary is required.'],
+                      errors: ['summary is required and must be a string.'],
                     },
                   },
                 },
@@ -272,10 +272,10 @@ describe('ReferencesSchema', () => {
                   errors: [],
                   properties: {
                     name: {
-                      errors: ['name is required.'],
+                      errors: ['name is required and must be a string.'],
                     },
                     summary: {
-                      errors: ['summary is required.'],
+                      errors: ['summary is required and must be a string.'],
                     },
                     relationship: {
                       errors: ['relationship should be 2 characters or more.'],

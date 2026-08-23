@@ -123,7 +123,7 @@ describe('ContentSchema', () => {
                       errors: [],
                       properties: {
                         awarder: {
-                          errors: ['awarder is required.'],
+                          errors: ['awarder is required and must be a string.'],
                         },
                       },
                     },
@@ -159,7 +159,7 @@ describe('ContentSchema', () => {
                       errors: [],
                       properties: {
                         issuer: {
-                          errors: ['issuer is required.'],
+                          errors: ['issuer is required and must be a string.'],
                         },
                       },
                     },
@@ -191,7 +191,7 @@ describe('ContentSchema', () => {
                       errors: [],
                       properties: {
                         name: {
-                          errors: ['name is required.'],
+                          errors: ['name is required and must be a string.'],
                         },
                       },
                     },
@@ -254,7 +254,7 @@ describe('ContentSchema', () => {
                   errors: [],
                   properties: {
                     city: {
-                      errors: ['city is required.'],
+                      errors: ['city is required and must be a string.'],
                     },
                   },
                 },
@@ -284,7 +284,9 @@ describe('ContentSchema', () => {
                       errors: [],
                       properties: {
                         username: {
-                          errors: ['username is required.'],
+                          errors: [
+                            'username is required and must be a string.',
+                          ],
                         },
                       },
                     },
@@ -316,7 +318,7 @@ describe('ContentSchema', () => {
                       errors: [],
                       properties: {
                         summary: {
-                          errors: ['summary is required.'],
+                          errors: ['summary is required and must be a string.'],
                         },
                       },
                     },
@@ -348,7 +350,7 @@ describe('ContentSchema', () => {
                       errors: [],
                       properties: {
                         name: {
-                          errors: ['name is required.'],
+                          errors: ['name is required and must be a string.'],
                         },
                       },
                     },
@@ -380,7 +382,7 @@ describe('ContentSchema', () => {
                       errors: [],
                       properties: {
                         summary: {
-                          errors: ['summary is required.'],
+                          errors: ['summary is required and must be a string.'],
                         },
                       },
                     },
@@ -450,7 +452,9 @@ describe('ContentSchema', () => {
                       errors: [],
                       properties: {
                         organization: {
-                          errors: ['organization is required.'],
+                          errors: [
+                            'organization is required and must be a string.',
+                          ],
                         },
                         summary: {
                           errors: ['summary should be 16 characters or more.'],
@@ -491,7 +495,7 @@ describe('ContentSchema', () => {
                       errors: [],
                       properties: {
                         name: {
-                          errors: ['name is required.'],
+                          errors: ['name is required and must be a string.'],
                         },
                         summary: {
                           errors: ['summary should be 16 characters or more.'],
