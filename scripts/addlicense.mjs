@@ -1,7 +1,7 @@
-import { addLicense } from 'addlicense-ts';
-import process from 'node:process';
+import process from 'node:process'
+import { addLicense } from 'addlicense-ts'
 
-const check = process.argv.includes('-c');
+const check = process.argv.includes('-c')
 
 /** @type {import('addlicense-ts').AddLicenseOptions} */
 const options = {
@@ -13,6 +13,7 @@ const options = {
     'packages/json2yamlresume/src',
     'packages/node/src',
     'packages/playground/src',
+    'packages/samples/src',
   ],
   holder: 'PPResume (https://ppresume.com)',
   license: 'mit',
@@ -20,18 +21,16 @@ const options = {
   verbose: false,
   check,
   spdx: 0, // SpdxMode.Off
-  ignore: [
-    'packages/ai/src/resources/resume.yml',
-  ],
+  ignore: ['packages/ai/src/resources/resume.yml'],
   skip: [],
   licenseFile: 'LICENSE',
-};
+}
 
 try {
-  await addLicense(options);
+  await addLicense(options)
 } catch (error) {
   if (error instanceof Error) {
-    console.error(error.message);
+    console.error(error.message)
   }
-  process.exit(1);
+  process.exit(1)
 }
