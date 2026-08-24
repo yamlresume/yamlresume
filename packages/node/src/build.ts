@@ -28,12 +28,11 @@ import {
   DEFAULT_RESUME_LAYOUTS,
   getResumeRenderer,
   joinNonEmptyString,
+  type Logger,
   type Resume,
   YAMLResumeError,
 } from '@yamlresume/core'
-
 import { readResume } from './read'
-import type { Logger } from './types'
 import { compileLaTeX, getPdfPath, LATEX_COMPILE_TIMEOUT } from './utils'
 
 /**

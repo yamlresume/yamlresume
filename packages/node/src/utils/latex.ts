@@ -26,13 +26,12 @@ import fs from 'node:fs'
 import path from 'node:path'
 import {
   joinNonEmptyString,
+  type Logger,
   toCodeBlock,
   YAMLResumeError,
 } from '@yamlresume/core'
 import { execa } from 'execa'
 import which from 'which'
-
-import type { Logger } from '../types'
 
 type LaTeXEnvironment = 'xelatex' | 'tectonic'
 

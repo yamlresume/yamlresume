@@ -22,8 +22,7 @@
  * IN THE SOFTWARE.
  */
 
-import { getErrorMessage, YAMLResumeError } from '@yamlresume/core'
-import type { Logger } from '@yamlresume/node'
+import { getErrorMessage, type Logger, YAMLResumeError } from '@yamlresume/core'
 import { generateResume } from '@yamlresume/node'
 import { Command, InvalidArgumentError } from 'commander'
 import { consola } from 'consola'

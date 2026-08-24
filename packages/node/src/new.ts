@@ -29,13 +29,12 @@ import {
   injectResumeComments,
   joinNonEmptyString,
   type LocaleLanguage,
+  type Logger,
   toCodeBlock,
   YAMLResumeError,
 } from '@yamlresume/core'
 import { getSampleResume } from '@yamlresume/samples'
 import yaml from 'yaml'
-
-import type { Logger } from './types'
 
 /**
  * Options for creating a new resume from a sample.

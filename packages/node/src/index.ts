@@ -39,6 +39,5 @@ export {
   readResume,
   validateResume,
 } from './read'
-export type { Logger } from './types'
 export { LATEX_COMPILE_TIMEOUT } from './utils'
 export { watchResume } from './watch'

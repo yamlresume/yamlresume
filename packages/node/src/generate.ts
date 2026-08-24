@@ -32,11 +32,10 @@ import {
   joinNonEmptyString,
   LOCALE_LANGUAGE_OPTIONS,
   type LocaleLanguage,
+  type Logger,
   toCodeBlock,
   YAMLResumeError,
 } from '@yamlresume/core'
-
-import type { Logger } from './types'
 
 /**
  * Options for generating a resume with AI.
