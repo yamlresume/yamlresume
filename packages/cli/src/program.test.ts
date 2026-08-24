@@ -45,6 +45,9 @@ describe('program', () => {
     writeSpy.mockClear()
   })
 
+  const getOutput = (): string =>
+    writeSpy.mock.calls.map((call) => call[0]?.toString()).join('')
+
   describe('help flag', () => {
     it('should support help message', () => {
       expect(() => program.help()).toThrow('(outputHelp)')
@@ -57,6 +60,13 @@ describe('program', () => {
       expect(() => program.parse(['node', 'cli.js', '--help'])).toThrow(
         '(outputHelp)'
       )
+    })
+
+    it('should show the banner in root help output', () => {
+      expect(() => program.parse(['node', 'cli.js', '-h'])).toThrow(
+        '(outputHelp)'
+      )
+      expect(getOutput()).toContain('New in v0.15.0')
     })
   })
 
@@ -79,6 +89,25 @@ describe('program', () => {
       expect(outputStr).toEqual([version, version])
 
       writeSpy.mockClear()
+    })
+  })
+
+  describe('banner', () => {
+    it('should not show the banner when a command runs', () => {
+      // mock fs functions to run a fake `new` command
+      vi.spyOn(fs, 'existsSync').mockReturnValue(false)
+      vi.spyOn(fs, 'readFileSync').mockImplementation(vi.fn())
+      vi.spyOn(fs, 'writeFileSync').mockImplementation(vi.fn())
+
+      expect(() => program.parse(['node', 'cli.js', 'new'])).not.toThrow()
+      expect(getOutput()).not.toContain('New in v0.15.0')
+    })
+
+    it('should not show the banner for version flag', () => {
+      expect(() => program.parse(['node', 'cli.js', '--version'])).toThrow(
+        packageJson.version
+      )
+      expect(getOutput()).not.toContain('New in v0.15.0')
     })
   })
 

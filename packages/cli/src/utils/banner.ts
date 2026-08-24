@@ -22,5 +22,25 @@
  * IN THE SOFTWARE.
  */
 
-export { showBanner } from './banner'
-export { setVerboseLog } from './consola'
+import { box } from 'consola/utils'
+
+/**
+ * Announcement shown in the root help output.
+ *
+ * Update this constant when there is something new to announce and clear it
+ * when the announcement becomes stale.
+ */
+const ANNOUNCEMENT = [
+  'New in v0.15.0: sample resumes!',
+  'Create one: yamlresume new --sample <sample-id>',
+  'Browse all: yamlresume samples list',
+].join('\n')
+
+/**
+ * Get the announcement banner for the current release.
+ *
+ * @returns The boxed announcement banner.
+ */
+export function showBanner(): string {
+  return box(ANNOUNCEMENT)
+}

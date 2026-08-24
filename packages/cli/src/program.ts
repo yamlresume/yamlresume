@@ -36,7 +36,7 @@ import {
   createTemplatesCommand,
   createValidateCommand,
 } from './commands'
-import { setVerboseLog } from './utils'
+import { setVerboseLog, showBanner } from './utils'
 
 /**
  * Create the CLI program.
@@ -59,6 +59,7 @@ export function createProgram(): Command {
     .description(['YAMLResume — Resume as Code in YAML', banner].join('\n'))
     .version(packageJson.version)
     .option('-v, --verbose', 'verbose output')
+    .addHelpText('before', showBanner())
     .hook('preAction', (thisCommand) => {
       setVerboseLog(thisCommand.opts().verbose)
     })

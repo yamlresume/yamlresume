@@ -22,5 +22,25 @@
  * IN THE SOFTWARE.
  */
 
-export { showBanner } from './banner'
-export { setVerboseLog } from './consola'
+import consola from 'consola'
+import { describe, expect, it, vi } from 'vitest'
+import { showBanner } from './banner'
+
+describe('showBanner', () => {
+  it('should return the announcement banner', () => {
+    const banner = showBanner()
+
+    expect(banner).toContain('New in v0.15.0')
+    expect(banner).toContain('samples')
+  })
+
+  it('should not print anything', () => {
+    const logSpy = vi.spyOn(consola, 'log').mockImplementation(() => {})
+
+    showBanner()
+
+    expect(logSpy).not.toHaveBeenCalled()
+
+    logSpy.mockRestore()
+  })
+})
