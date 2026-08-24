@@ -41,7 +41,7 @@ export const ResumeSchema = z
     $id: 'https://yamlresume.dev/schema.json',
     title: 'YAMLResume Schema',
     description: 'JSON Schema for YAMLResume resume format.',
-    version: '0.15.0',
+    version: '0.15.1',
     license: 'MIT',
     keywords: [
       'Resume',

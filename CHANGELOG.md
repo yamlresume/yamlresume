@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.15.1](https://github.com/yamlresume/yamlresume/compare/v0.15.0...v0.15.1) (2026-08-24)
+
+
+### Features
+
+* **cli:** add a small banner for v0.15.0 feature ([acb14cb](https://github.com/yamlresume/yamlresume/commit/acb14cb14bee63e3d456ef5827917f5cb4c46df0))
+* init a new @yamlresume/node package ([e046d41](https://github.com/yamlresume/yamlresume/commit/e046d41ee6ae28097352488fa30ceb4c2857aa52))
+
+
+### Bug Fixes
+
+* call latex compiler multiple times when necessary ([992e73b](https://github.com/yamlresume/yamlresume/commit/992e73b3705f28f0d14bc9a4f1f2d1eaf3433d1d))
+* **core:** more explicit for string type schema ([13f553f](https://github.com/yamlresume/yamlresume/commit/13f553f40674a7b192164a1e0bfc5585ca11eb98))
+
 ## [0.15.0](https://github.com/yamlresume/yamlresume/compare/v0.14.3...v0.15.0) (2026-08-21)
 
 
