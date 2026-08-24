@@ -1,5 +1,6 @@
 packages:
   - 'packages/*'
+  - 'packages/playground/web'
 
 overrides:
   form-data: ^4.0.4

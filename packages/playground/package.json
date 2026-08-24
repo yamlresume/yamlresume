@@ -37,6 +37,8 @@
     "build:watch": "tsup --watch",
     "build:clean": "rm -rf dist",
     "test": "vitest --run",
+    "web:dev": "pnpm -C web dev",
+    "web:build": "pnpm -C web build",
     "test:cov": "vitest --coverage --run",
     "test:watch": "vitest",
     "lint": "biome check src",

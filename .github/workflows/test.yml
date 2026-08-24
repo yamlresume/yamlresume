@@ -65,6 +65,9 @@ jobs:
       - name: Build cli package
         run: pnpm cli build:prod
 
+      - name: Build playground package
+        run: pnpm playground build:prod
+
       - name: Run check
         if: runner.os == 'Linux' || runner.os == 'macOS'
         run: pnpm check:ci

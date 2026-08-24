@@ -1,7 +1,10 @@
 {
   "$schema": "https://biomejs.dev/schemas/2.4.16/schema.json",
   "vcs": { "enabled": false, "clientKind": "git", "useIgnoreFile": false },
-  "files": { "ignoreUnknown": true, "includes": ["**"] },
+  "files": {
+    "ignoreUnknown": true,
+    "includes": ["**"]
+  },
   "formatter": {
     "enabled": true,
     "useEditorconfig": true,
