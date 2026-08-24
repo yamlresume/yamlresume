@@ -35,6 +35,18 @@ jobs:
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
+      
+      - name: Build core package
+        run: pnpm core build:prod
+
+      - name: Build ai package
+        run: pnpm ai build:prod
+
+      - name: Build samples package
+        run: pnpm samples build:prod
+
+      - name: Build node package
+        run: pnpm node build:prod
 
       - name: Build packages
         run: pnpm build:prod
