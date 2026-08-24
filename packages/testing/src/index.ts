@@ -31,5 +31,5 @@ export {
   createExecaResult,
   type ExecaResultOverrides,
 } from './execa'
-export { getFixture } from './fixture'
+export { getFixture, loadFixture } from './fixture'
 export { createMockLogger, type MockLogger } from './logger'

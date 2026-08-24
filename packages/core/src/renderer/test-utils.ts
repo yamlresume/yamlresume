@@ -21,24 +21,7 @@
  * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
  * IN THE SOFTWARE.
  */
-import fs from 'node:fs'
-import path from 'node:path'
-import yaml from 'yaml'
-
 import { type LayoutEngine, type Resume, SECTION_IDS } from '@/models'
-
-/**
- * Load a resume fixture from the fixtures directory.
- *
- * @param resume - The name of the resume fixture file
- * @param baseDir - The base directory to resolve from (typically __dirname from the caller)
- * @returns The parsed resume object
- */
-export function getFixture(resume: string, baseDir: string): Resume {
-  const resumePath = path.join(baseDir, '..', 'fixtures', resume)
-  const resumeContent = fs.readFileSync(resumePath, 'utf8')
-  return yaml.parse(resumeContent) as Resume
-}
 
 /**
  * All section IDs except 'basics' (which is required).

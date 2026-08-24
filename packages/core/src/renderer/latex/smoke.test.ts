@@ -21,17 +21,14 @@
  * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
  * IN THE SOFTWARE.
  */
+
+import { join } from 'node:path'
+import { loadFixture } from '@yamlresume/testing'
 import { cloneDeep } from 'lodash-es'
 import { beforeEach, describe, expect, it } from 'vitest'
-
 import { DEFAULT_RESUME_LAYOUTS, type Resume } from '@/models'
 import { collectAllKeys, removeKeysFromObject } from '@/utils'
-import {
-  findLayoutIndex,
-  getFixture,
-  getRandomSections,
-  sections,
-} from '../test-utils'
+import { findLayoutIndex, getRandomSections, sections } from '../test-utils'
 import { JakeRenderer } from './jake'
 import {
   ModerncvBankingRenderer,
@@ -58,7 +55,7 @@ describe('smoke test for all renderers', () => {
   }
 
   beforeEach(() => {
-    resume = getFixture('full-resume.yml', __dirname)
+    resume = loadFixture(join(__dirname, '..'), 'full-resume.yml')
   })
 
   describe('should handle optional sections', () => {

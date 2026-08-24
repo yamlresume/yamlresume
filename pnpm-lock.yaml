@@ -191,6 +191,9 @@ importers:
       '@types/node':
         specifier: ^26.1.1
         version: 26.1.1
+      '@yamlresume/testing':
+        specifier: workspace:*
+        version: link:../testing
 
   packages/create-yamlresume:
     dependencies:
@@ -385,6 +388,9 @@ importers:
       '@yamlresume/core':
         specifier: workspace:*
         version: link:../core
+      yaml:
+        specifier: ^2.9.0
+        version: 2.9.0
     devDependencies:
       consola:
         specifier: ^3.4.2

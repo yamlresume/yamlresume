@@ -38,7 +38,8 @@
     "test:watch": "vitest"
   },
   "dependencies": {
-    "@yamlresume/core": "workspace:*"
+    "@yamlresume/core": "workspace:*",
+    "yaml": "^2.9.0"
   },
   "devDependencies": {
     "consola": "^3.4.2",

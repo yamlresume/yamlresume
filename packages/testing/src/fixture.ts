@@ -22,7 +22,11 @@
  * IN THE SOFTWARE.
  */
 
+import fs from 'node:fs'
 import path from 'node:path'
+
+import type { Resume } from '@yamlresume/core'
+import yaml from 'yaml'
 
 /**
  * Get the path to a fixture file within a `fixtures` directory next to the
@@ -35,4 +39,19 @@ import path from 'node:path'
  */
 export function getFixture(baseDir: string, resumePath: string) {
   return path.join(baseDir, 'fixtures', resumePath)
+}
+
+/**
+ * Load and parse a resume fixture from the `fixtures` directory next to the
+ * calling module.
+ *
+ * @param baseDir - The directory containing the `fixtures` directory (typically
+ * `__dirname` from the caller)
+ * @param resumePath - The file path relative to the fixtures directory
+ * @returns The parsed resume object
+ */
+export function loadFixture(baseDir: string, resumePath: string): Resume {
+  const fixturePath = getFixture(baseDir, resumePath)
+  const content = fs.readFileSync(fixturePath, 'utf8')
+  return yaml.parse(content) as Resume
 }

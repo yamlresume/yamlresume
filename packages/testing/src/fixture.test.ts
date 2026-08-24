@@ -27,7 +27,7 @@ import path from 'node:path'
 
 import { describe, expect, it } from 'vitest'
 
-import { getFixture } from './fixture'
+import { getFixture, loadFixture } from './fixture'
 
 describe(getFixture, () => {
   it('should join baseDir with fixtures directory and file path', () => {
@@ -41,5 +41,18 @@ describe(getFixture, () => {
 
     expect(fs.existsSync(fixturePath)).toBe(true)
     expect(fs.readFileSync(fixturePath, 'utf8')).toContain('name:')
+  })
+})
+
+describe(loadFixture, () => {
+  it('should load and parse a YAML resume fixture', () => {
+    const resume = loadFixture(__dirname, 'sample-resume.yml')
+
+    expect(resume).toBeTruthy()
+    expect(resume.content?.basics?.name).toBe('Andy Dufresne')
+  })
+
+  it('should throw when the fixture file does not exist', () => {
+    expect(() => loadFixture(__dirname, 'non-existent.yml')).toThrow()
   })
 })

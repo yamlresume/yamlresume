@@ -22,30 +22,12 @@
  * IN THE SOFTWARE.
  */
 
-import path from 'node:path'
-
 import { describe, expect, it } from 'vitest'
 
 import type { Resume } from '@/models'
 import { SECTION_IDS } from '@/models'
 
-import {
-  findLayoutIndex,
-  getFixture,
-  getRandomSections,
-  sections,
-} from './test-utils'
-
-describe(getFixture, () => {
-  it('loads a resume fixture from the fixtures directory', () => {
-    // Use a sibling renderer directory so path.join(baseDir, '..', 'fixtures')
-    // resolves to packages/core/src/renderer/fixtures.
-    const baseDir = path.join(__dirname, 'latex')
-    const resume = getFixture('full-resume.yml', baseDir)
-
-    expect(resume.content?.basics?.name).toBe('Andy Dufresne')
-  })
-})
+import { findLayoutIndex, getRandomSections, sections } from './test-utils'
 
 describe('sections', () => {
   it('contains all section IDs except basics', () => {

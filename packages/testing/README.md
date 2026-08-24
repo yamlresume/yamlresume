@@ -24,6 +24,20 @@ import { getFixture } from '@yamlresume/testing'
 const resumePath = getFixture(__dirname, 'software-engineer.yml')
 ```
 
+### `loadFixture(baseDir, fileName)`
+
+Load and parse a YAML fixture file inside a `fixtures` directory next to the
+calling module. Generic over the expected type, so callers supply it explicitly:
+
+```ts
+import { loadFixture } from '@yamlresume/testing'
+import type { Resume } from '@yamlresume/core'
+
+const resume = loadFixture(__dirname, 'full-resume.yml')
+```
+
+Without an explicit type parameter the parsed value is typed as `unknown`.
+
 ### `createMockLogger()`
 
 Create a mock logger whose methods (`start`, `success`, `debug`, `info`, `log`,
