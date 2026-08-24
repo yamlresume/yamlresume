@@ -25,6 +25,7 @@
 import { AIResumeError } from '@yamlresume/ai'
 import { ErrorType, YAMLResumeError } from '@yamlresume/core'
 import { generateResume } from '@yamlresume/node'
+import { spyOnConsola } from '@yamlresume/testing'
 import type { Command } from 'commander'
 import { consola } from 'consola'
 import {
@@ -77,10 +78,10 @@ function resetMockSpinner() {
 describe(createGenerateCommand, () => {
   let generateCommand: Command
   let generateSpy: MockedFunction<typeof generateResume>
-  let consolaSuccessSpy: ReturnType<typeof vi.spyOn>
-  let consolaErrorSpy: ReturnType<typeof vi.spyOn>
   let processExitSpy: ReturnType<typeof vi.spyOn>
   let _stderrWriteSpy: ReturnType<typeof vi.spyOn>
+
+  let consolaSpies: ReturnType<typeof spyOnConsola<'success', 'error'>>
 
   beforeEach(() => {
     resetMockSpinner()
@@ -90,8 +91,7 @@ describe(createGenerateCommand, () => {
       .mockImplementation(async (filename, _position, _language, options) => {
         options?.logger?.success(`Generated ${filename} successfully.`)
       })
-    consolaSuccessSpy = vi.spyOn(consola, 'success').mockImplementation(vi.fn())
-    consolaErrorSpy = vi.spyOn(consola, 'error').mockImplementation(vi.fn())
+    consolaSpies = spyOnConsola('success', 'error')
     processExitSpy = vi
       .spyOn(process, 'exit')
       .mockImplementation((() => {}) as NodeJS.Process['exit'])
@@ -195,8 +195,8 @@ describe(createGenerateCommand, () => {
         logger: expect.any(Object),
       })
     )
-    expect(consolaSuccessSpy).toHaveBeenCalledTimes(1)
-    expect(consolaSuccessSpy).toHaveBeenCalledWith(
+    expect(consolaSpies.success).toHaveBeenCalledTimes(1)
+    expect(consolaSpies.success).toHaveBeenCalledWith(
       'Generated my-resume.yml successfully.'
     )
   })
@@ -225,7 +225,7 @@ describe(createGenerateCommand, () => {
         baseURL: 'https://custom.example.com/v1',
       })
     )
-    expect(consolaSuccessSpy).toHaveBeenCalledTimes(1)
+    expect(consolaSpies.success).toHaveBeenCalledTimes(1)
   })
 
   it('should pass --retry flag to generateResume', async () => {
@@ -249,7 +249,7 @@ describe(createGenerateCommand, () => {
         maxRetries: 5,
       })
     )
-    expect(consolaSuccessSpy).toHaveBeenCalledTimes(1)
+    expect(consolaSpies.success).toHaveBeenCalledTimes(1)
   })
 
   it('should reject a negative --retry value', async () => {
@@ -267,7 +267,7 @@ describe(createGenerateCommand, () => {
       ])
     ).rejects.toThrow('Retry count must be a non-negative integer.')
 
-    expect(consolaSuccessSpy).not.toBeCalled()
+    expect(consolaSpies.success).not.toBeCalled()
   })
 
   it('should reject a non-numeric --retry value', async () => {
@@ -285,7 +285,7 @@ describe(createGenerateCommand, () => {
       ])
     ).rejects.toThrow('Retry count must be a non-negative integer.')
 
-    expect(consolaSuccessSpy).not.toBeCalled()
+    expect(consolaSpies.success).not.toBeCalled()
   })
 
   it('should exit with file conflict errno on conflict', async () => {
@@ -303,8 +303,8 @@ describe(createGenerateCommand, () => {
       'my-resume.yml',
     ])
 
-    expect(consolaSuccessSpy).not.toBeCalled()
-    expect(consolaErrorSpy).toHaveBeenCalledTimes(1)
+    expect(consolaSpies.success).not.toBeCalled()
+    expect(consolaSpies.error).toHaveBeenCalledTimes(1)
     expect(processExitSpy).toHaveBeenCalledTimes(1)
     expect(processExitSpy).toHaveBeenCalledWith(ErrorType.FILE_CONFLICT.errno)
   })
@@ -324,8 +324,8 @@ describe(createGenerateCommand, () => {
       'my-resume.yml',
     ])
 
-    expect(consolaSuccessSpy).not.toBeCalled()
-    expect(consolaErrorSpy).toHaveBeenCalledTimes(1)
+    expect(consolaSpies.success).not.toBeCalled()
+    expect(consolaSpies.error).toHaveBeenCalledTimes(1)
     expect(processExitSpy).toHaveBeenCalledTimes(1)
     expect(processExitSpy).toHaveBeenCalledWith(
       ErrorType.INVALID_LANGUAGE.errno
@@ -347,8 +347,8 @@ describe(createGenerateCommand, () => {
       'my-resume.yml',
     ])
 
-    expect(consolaSuccessSpy).not.toBeCalled()
-    expect(consolaErrorSpy).toHaveBeenCalledTimes(1)
+    expect(consolaSpies.success).not.toBeCalled()
+    expect(consolaSpies.error).toHaveBeenCalledTimes(1)
     expect(processExitSpy).toHaveBeenCalledTimes(1)
     expect(processExitSpy).toHaveBeenCalledWith(
       ErrorType.FILE_WRITE_ERROR.errno
@@ -370,8 +370,8 @@ describe(createGenerateCommand, () => {
       'my-resume.yml',
     ])
 
-    expect(consolaSuccessSpy).not.toBeCalled()
-    expect(consolaErrorSpy).toHaveBeenCalledTimes(1)
+    expect(consolaSpies.success).not.toBeCalled()
+    expect(consolaSpies.error).toHaveBeenCalledTimes(1)
     expect(processExitSpy).toHaveBeenCalledTimes(1)
     expect(processExitSpy).toHaveBeenCalledWith(1)
   })
@@ -389,9 +389,9 @@ describe(createGenerateCommand, () => {
       'my-resume.yml',
     ])
 
-    expect(consolaSuccessSpy).not.toBeCalled()
-    expect(consolaErrorSpy).toHaveBeenCalledTimes(1)
-    expect(consolaErrorSpy).toHaveBeenCalledWith('AI failed')
+    expect(consolaSpies.success).not.toBeCalled()
+    expect(consolaSpies.error).toHaveBeenCalledTimes(1)
+    expect(consolaSpies.error).toHaveBeenCalledWith('AI failed')
     expect(processExitSpy).toHaveBeenCalledTimes(1)
     expect(processExitSpy).toHaveBeenCalledWith(1)
   })
@@ -413,10 +413,10 @@ describe(createGenerateCommand, () => {
       'my-resume.yml',
     ])
 
-    expect(consolaSuccessSpy).not.toBeCalled()
-    expect(consolaErrorSpy).toHaveBeenCalledTimes(2)
-    expect(consolaErrorSpy).toHaveBeenNthCalledWith(1, error.message)
-    expect(consolaErrorSpy).toHaveBeenNthCalledWith(2, error.stack)
+    expect(consolaSpies.success).not.toBeCalled()
+    expect(consolaSpies.error).toHaveBeenCalledTimes(2)
+    expect(consolaSpies.error).toHaveBeenNthCalledWith(1, error.message)
+    expect(consolaSpies.error).toHaveBeenNthCalledWith(2, error.stack)
     expect(processExitSpy).toHaveBeenCalledTimes(1)
     expect(processExitSpy).toHaveBeenCalledWith(1)
 
@@ -446,7 +446,7 @@ describe(createGenerateCommand, () => {
     expect(oraMock).toHaveBeenCalledWith('Generating resume...')
     expect(mockSpinner.start).toHaveBeenCalled()
     expect(mockSpinner.text).toContain('chunk two')
-    expect(consolaSuccessSpy).toHaveBeenCalledWith(
+    expect(consolaSpies.success).toHaveBeenCalledWith(
       'Generated my-resume.yml successfully.'
     )
   })
@@ -470,7 +470,7 @@ describe(createGenerateCommand, () => {
     ])
 
     expect(oraMock).not.toHaveBeenCalled()
-    expect(consolaSuccessSpy).toHaveBeenCalledWith(
+    expect(consolaSpies.success).toHaveBeenCalledWith(
       'Generated my-resume.yml successfully.'
     )
   })
@@ -493,8 +493,8 @@ describe(createGenerateCommand, () => {
       'my-resume.yml',
     ])
 
-    expect(consolaErrorSpy).not.toHaveBeenCalled()
-    expect(consolaSuccessSpy).toHaveBeenCalledWith(
+    expect(consolaSpies.error).not.toHaveBeenCalled()
+    expect(consolaSpies.success).toHaveBeenCalledWith(
       'Generated my-resume.yml successfully.'
     )
   })

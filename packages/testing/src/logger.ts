@@ -22,15 +22,29 @@
  * IN THE SOFTWARE.
  */
 
-import path from 'node:path'
-import { describe, expect, it } from 'vitest'
-import { getFixture } from './utils'
+import type { Logger } from '@yamlresume/core'
+import { type MockedFunction, vi } from 'vitest'
 
-describe('getFixture', () => {
-  it('should return the correct path', () => {
-    for (const resumePath of ['software-engineer.yml', 'accountant.yml']) {
-      const fixturePath = getFixture(resumePath)
-      expect(fixturePath).toBe(path.join(__dirname, 'fixtures', resumePath))
-    }
-  })
-})
+/**
+ * A logger whose methods are all vitest mocks.
+ */
+export type MockLogger = {
+  [K in keyof Logger]: MockedFunction<Logger[K]>
+}
+
+/**
+ * Create a mock logger with all methods mocked as vitest mocks.
+ *
+ * @returns A mock logger object matching the `Logger` interface
+ */
+export function createMockLogger(): MockLogger {
+  return {
+    start: vi.fn(),
+    success: vi.fn(),
+    debug: vi.fn(),
+    info: vi.fn(),
+    log: vi.fn(),
+    warn: vi.fn(),
+    error: vi.fn(),
+  }
+}

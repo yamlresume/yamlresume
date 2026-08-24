@@ -24,10 +24,10 @@
 
 import fs from 'node:fs'
 import { DEFAULT_RESUME_LAYOUTS, DEFAULT_RESUME_LOCALE } from '@yamlresume/core'
+import { getFixture } from '@yamlresume/testing'
 import { mapKeys, omit } from 'lodash-es'
 import { describe, expect, it } from 'vitest'
 import yaml from 'yaml'
-
 import {
   convertBasics,
   convertEducation,
@@ -40,11 +40,10 @@ import {
   mergeHighlightsIntoSummary,
 } from './converter'
 import type { JSONResume } from './types'
-import { getFixture } from './utils'
 
 describe(convertBasics, () => {
   const jsonResume = yaml.parse(
-    fs.readFileSync(getFixture('thomasdavis.yml'), 'utf8')
+    fs.readFileSync(getFixture(__dirname, 'thomasdavis.yml'), 'utf8')
   )
 
   it('should convert the basics section to YAMLResume format', () => {
@@ -68,7 +67,7 @@ describe(convertBasics, () => {
 
 describe(convertEducation, () => {
   const jsonResume = yaml.parse(
-    fs.readFileSync(getFixture('thomasdavis.yml'), 'utf8')
+    fs.readFileSync(getFixture(__dirname, 'thomasdavis.yml'), 'utf8')
   )
 
   it('should handle empty education array', () => {
@@ -142,7 +141,7 @@ describe(convertEducation, () => {
 
 describe(convertLocation, () => {
   const jsonResume = yaml.parse(
-    fs.readFileSync(getFixture('thomasdavis.yml'), 'utf8')
+    fs.readFileSync(getFixture(__dirname, 'thomasdavis.yml'), 'utf8')
   )
 
   it('should convert all location fields and only rename countryCode', () => {
@@ -385,7 +384,7 @@ describe(convertReferences, () => {
 
 describe(convertVolunteer, () => {
   const jsonResume = yaml.parse(
-    fs.readFileSync(getFixture('thomasdavis.yml'), 'utf8')
+    fs.readFileSync(getFixture(__dirname, 'thomasdavis.yml'), 'utf8')
   )
 
   it('should handle empty volunteer array', () => {
@@ -503,7 +502,7 @@ describe(convertVolunteer, () => {
 
 describe(convertWork, () => {
   const jsonResume = yaml.parse(
-    fs.readFileSync(getFixture('thomasdavis.yml'), 'utf8')
+    fs.readFileSync(getFixture(__dirname, 'thomasdavis.yml'), 'utf8')
   )
 
   it('should handle empty work array', () => {
@@ -725,7 +724,7 @@ describe(mergeHighlightsIntoSummary, () => {
 
 describe(convertJSONResumeToYAMLResume, () => {
   const jsonResume = yaml.parse(
-    fs.readFileSync(getFixture('thomasdavis.yml'), 'utf8')
+    fs.readFileSync(getFixture(__dirname, 'thomasdavis.yml'), 'utf8')
   )
 
   it('should handle empty jsonResume object', () => {

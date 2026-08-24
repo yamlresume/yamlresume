@@ -29,6 +29,7 @@ import {
   LATEX_COMPILE_TIMEOUT,
   readResume,
 } from '@yamlresume/node'
+import { getFixture, spyOnConsola } from '@yamlresume/testing'
 import type { Command } from 'commander'
 import { consola } from 'consola'
 import {
@@ -40,9 +41,7 @@ import {
   type MockedFunction,
   vi,
 } from 'vitest'
-
 import { createBuildCommand, parseTimeout } from './build'
-import { getFixture } from './utils'
 
 vi.mock('@yamlresume/node', async (importOriginal) => {
   const actual = await importOriginal<typeof import('@yamlresume/node')>()
@@ -57,8 +56,7 @@ describe(createBuildCommand, () => {
   let buildCommand: Command
   let buildSpy: MockedFunction<typeof buildResume>
   let readSpy: MockedFunction<typeof readResume>
-  let consolaErrorSpy: ReturnType<typeof vi.spyOn>
-  let consolaLogSpy: ReturnType<typeof vi.spyOn>
+  let consolaSpies: ReturnType<typeof spyOnConsola<'error' | 'log'>>
 
   beforeEach(() => {
     vi.clearAllMocks()
@@ -69,8 +67,7 @@ describe(createBuildCommand, () => {
       resume: {},
       validated: 'success',
     })
-    consolaErrorSpy = vi.spyOn(consola, 'error').mockImplementation(vi.fn())
-    consolaLogSpy = vi.spyOn(consola, 'log').mockImplementation(vi.fn())
+    consolaSpies = spyOnConsola('error', 'log')
   })
 
   afterEach(() => {
@@ -92,7 +89,7 @@ describe(createBuildCommand, () => {
   })
 
   it('should build resume with default options', async () => {
-    const resumePath = getFixture('software-engineer.yml')
+    const resumePath = getFixture(__dirname, 'software-engineer.yml')
 
     await buildCommand.parseAsync(['yamlresume', 'build', resumePath])
 
@@ -105,7 +102,7 @@ describe(createBuildCommand, () => {
   })
 
   it('should pass --no-pdf option', async () => {
-    const resumePath = getFixture('software-engineer.yml')
+    const resumePath = getFixture(__dirname, 'software-engineer.yml')
 
     await buildCommand.parseAsync([
       'yamlresume',
@@ -121,7 +118,7 @@ describe(createBuildCommand, () => {
   })
 
   it('should pass --no-validate option', async () => {
-    const resumePath = getFixture('software-engineer.yml')
+    const resumePath = getFixture(__dirname, 'software-engineer.yml')
 
     await buildCommand.parseAsync([
       'yamlresume',
@@ -138,7 +135,7 @@ describe(createBuildCommand, () => {
   })
 
   it('should pass --output option', async () => {
-    const resumePath = getFixture('software-engineer.yml')
+    const resumePath = getFixture(__dirname, 'software-engineer.yml')
     const outputDir = '/tmp/output'
 
     await buildCommand.parseAsync([
@@ -156,7 +153,7 @@ describe(createBuildCommand, () => {
   })
 
   it('should pass --timeout option', async () => {
-    const resumePath = getFixture('software-engineer.yml')
+    const resumePath = getFixture(__dirname, 'software-engineer.yml')
 
     await buildCommand.parseAsync([
       'yamlresume',
@@ -173,7 +170,7 @@ describe(createBuildCommand, () => {
   })
 
   it('should handle validation failure and continue building', async () => {
-    const resumePath = getFixture('software-engineer.yml')
+    const resumePath = getFixture(__dirname, 'software-engineer.yml')
     const resumeStr = 'content:\n  basics:\n    name: 123'
 
     vi.spyOn(fs, 'readFileSync').mockReturnValue(resumeStr)
@@ -197,7 +194,7 @@ describe(createBuildCommand, () => {
 
     await buildCommand.parseAsync(['yamlresume', 'build', resumePath])
 
-    expect(consolaLogSpy).toHaveBeenCalled()
+    expect(consolaSpies.log).toHaveBeenCalled()
     expect(buildSpy).toHaveBeenCalledWith(
       resumePath,
       expect.objectContaining({ validate: false })
@@ -214,7 +211,7 @@ describe(createBuildCommand, () => {
     // @ts-expect-error
     const processExitSpy = vi.spyOn(process, 'exit').mockImplementation(vi.fn())
 
-    const resumePath = getFixture('software-engineer.yml')
+    const resumePath = getFixture(__dirname, 'software-engineer.yml')
 
     await buildCommand.parseAsync(['yamlresume', 'build', resumePath])
 
@@ -222,12 +219,12 @@ describe(createBuildCommand, () => {
     expect(processExitSpy).toHaveBeenCalledWith(
       ErrorType.LATEX_COMPILE_ERROR.errno
     )
-    expect(consolaErrorSpy).toHaveBeenCalledTimes(1)
-    expect(consolaErrorSpy).toHaveBeenCalledWith(error.message)
+    expect(consolaSpies.error).toHaveBeenCalledTimes(1)
+    expect(consolaSpies.error).toHaveBeenCalledWith(error.message)
   })
 
   it('should handle invalid YAML error', async () => {
-    const resumePath = getFixture('software-engineer.yml')
+    const resumePath = getFixture(__dirname, 'software-engineer.yml')
     const resumeStr = 'content: {'
 
     vi.spyOn(fs, 'readFileSync').mockReturnValue(resumeStr)
@@ -242,7 +239,7 @@ describe(createBuildCommand, () => {
 
     await buildCommand.parseAsync(['yamlresume', 'build', resumePath])
 
-    expect(consolaLogSpy).toHaveBeenCalled()
+    expect(consolaSpies.log).toHaveBeenCalled()
     expect(processExitSpy).toHaveBeenCalledWith(ErrorType.INVALID_YAML.errno)
   })
 
@@ -253,22 +250,22 @@ describe(createBuildCommand, () => {
     // @ts-expect-error
     const processExitSpy = vi.spyOn(process, 'exit').mockImplementation(vi.fn())
 
-    const resumePath = getFixture('software-engineer.yml')
+    const resumePath = getFixture(__dirname, 'software-engineer.yml')
 
     await buildCommand.parseAsync(['yamlresume', 'build', resumePath])
 
     expect(processExitSpy).toHaveBeenCalledTimes(1)
     expect(processExitSpy).toHaveBeenCalledWith(1)
-    expect(consolaErrorSpy).toHaveBeenCalledTimes(1)
-    expect(consolaErrorSpy).toHaveBeenCalledWith(error.message)
+    expect(consolaSpies.error).toHaveBeenCalledTimes(1)
+    expect(consolaSpies.error).toHaveBeenCalledWith(error.message)
   })
 })
 
 describe(parseTimeout, () => {
-  let consolaWarnSpy: ReturnType<typeof vi.spyOn>
+  let consolaSpies: ReturnType<typeof spyOnConsola<'warn'>>
 
   beforeEach(() => {
-    consolaWarnSpy = vi.spyOn(consola, 'warn').mockImplementation(vi.fn())
+    consolaSpies = spyOnConsola('warn')
   })
 
   afterEach(() => {
@@ -291,8 +288,8 @@ describe(parseTimeout, () => {
   it('should return default timeout for non-numeric values and log warning', () => {
     const result = parseTimeout('abc')
     expect(result).toBe(LATEX_COMPILE_TIMEOUT)
-    expect(consolaWarnSpy).toHaveBeenCalledTimes(1)
-    expect(consolaWarnSpy).toHaveBeenCalledWith(
+    expect(consolaSpies.warn).toHaveBeenCalledTimes(1)
+    expect(consolaSpies.warn).toHaveBeenCalledWith(
       expect.stringContaining('Invalid timeout value: "abc"')
     )
   })
@@ -300,8 +297,8 @@ describe(parseTimeout, () => {
   it('should return default timeout for negative values and log warning', () => {
     const result = parseTimeout('-5')
     expect(result).toBe(LATEX_COMPILE_TIMEOUT)
-    expect(consolaWarnSpy).toHaveBeenCalledTimes(1)
-    expect(consolaWarnSpy).toHaveBeenCalledWith(
+    expect(consolaSpies.warn).toHaveBeenCalledTimes(1)
+    expect(consolaSpies.warn).toHaveBeenCalledWith(
       expect.stringContaining('Invalid timeout value: "-5"')
     )
   })

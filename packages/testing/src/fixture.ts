@@ -25,11 +25,14 @@
 import path from 'node:path'
 
 /**
- * Get the path to a fixture file
+ * Get the path to a fixture file within a `fixtures` directory next to the
+ * calling module.
  *
- * @param resumePath - The resume file path relative to the fixtures directory
- * @returns The full, absolute path to the fixture file
+ * @param baseDir - The directory containing the `fixtures` directory (typically
+ * `__dirname` from the caller)
+ * @param resumePath - The file path relative to the fixtures directory
+ * @returns The full path to the fixture file
  */
-export function getFixture(resumePath: string) {
-  return path.join(__dirname, 'fixtures', resumePath)
+export function getFixture(baseDir: string, resumePath: string) {
+  return path.join(baseDir, 'fixtures', resumePath)
 }

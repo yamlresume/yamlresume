@@ -22,20 +22,21 @@
  * IN THE SOFTWARE.
  */
 
+import { spyOnConsola } from '@yamlresume/testing'
 import type { Command } from 'commander'
-import { consola } from 'consola'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import { createSamplesCommand } from './index'
 
 describe(createSamplesCommand, () => {
   let samplesCommand: Command
-  let consolaLogSpy: ReturnType<typeof vi.spyOn>
   let processExitSpy: ReturnType<typeof vi.spyOn>
+
+  let consolaSpies: ReturnType<typeof spyOnConsola<'log'>>
 
   beforeEach(() => {
     samplesCommand = createSamplesCommand()
 
-    consolaLogSpy = vi.spyOn(consola, 'log').mockImplementation(vi.fn())
+    consolaSpies = spyOnConsola('log')
 
     processExitSpy = vi
       .spyOn(process, 'exit')
@@ -54,9 +55,9 @@ describe(createSamplesCommand, () => {
   it('should list all sample resumes', () => {
     samplesCommand.parse(['yamlresume', 'samples', 'list'])
 
-    expect(consolaLogSpy).toHaveBeenCalledTimes(1)
+    expect(consolaSpies.log).toHaveBeenCalledTimes(1)
 
-    const output = consolaLogSpy.mock.calls[0][0] as string
+    const output = consolaSpies.log.mock.calls[0][0] as string
     expect(output).toContain('software-engineer')
     expect(output).toContain('Software Engineer')
     expect(output).toContain('software engineer')

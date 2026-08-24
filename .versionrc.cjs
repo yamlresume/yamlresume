@@ -37,6 +37,10 @@ module.exports = {
       type: 'json',
     },
     {
+      filename: 'packages/testing/package.json',
+      type: 'json',
+    },
+    {
       filename: 'packages/core/src/schema/schema.json',
       type: 'json'
     },

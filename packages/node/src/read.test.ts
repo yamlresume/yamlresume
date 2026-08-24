@@ -25,11 +25,10 @@
 import fs from 'node:fs'
 import path from 'node:path'
 import { ResumeSchema, YAMLResumeError } from '@yamlresume/core'
+import { getFixture } from '@yamlresume/testing'
 import { describe, expect, it } from 'vitest'
 import yaml from 'yaml'
-
 import { readResume, validateResume } from './read'
-import { getFixture } from './test-utils'
 
 describe(validateResume, () => {
   it('should return empty array for valid resume', () => {
@@ -94,7 +93,7 @@ describe(validateResume, () => {
 
 describe(readResume, () => {
   it('should read and validate a valid resume', () => {
-    const resumePath = getFixture('software-engineer.yml')
+    const resumePath = getFixture(__dirname, 'software-engineer.yml')
 
     const { resume, validated } = readResume(resumePath)
 
@@ -104,7 +103,7 @@ describe(readResume, () => {
   })
 
   it('should skip validation when validate is false', () => {
-    const resumePath = getFixture('software-engineer.yml')
+    const resumePath = getFixture(__dirname, 'software-engineer.yml')
 
     const { validated } = readResume(resumePath, {
       validate: false,

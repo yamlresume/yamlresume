@@ -24,6 +24,7 @@
 
 import { ErrorType, YAMLResumeError } from '@yamlresume/core'
 import { newResume } from '@yamlresume/node'
+import { spyOnConsola } from '@yamlresume/testing'
 import type { Command } from 'commander'
 import { consola } from 'consola'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
@@ -41,13 +42,14 @@ vi.mock('@yamlresume/node', async () => {
 describe(createNewCommand, () => {
   let newCommand: Command
   let newResumeSpy: ReturnType<typeof vi.mocked<typeof newResume>>
-  let consolaErrorSpy: ReturnType<typeof vi.spyOn>
   let processExitSpy: ReturnType<typeof vi.spyOn>
+
+  let consolaSpies: ReturnType<typeof spyOnConsola<'error'>>
 
   beforeEach(() => {
     newCommand = createNewCommand()
     newResumeSpy = vi.mocked(newResume).mockImplementation(vi.fn())
-    consolaErrorSpy = vi.spyOn(consola, 'error').mockImplementation(() => {})
+    consolaSpies = spyOnConsola('error')
 
     processExitSpy = vi
       .spyOn(process, 'exit')
@@ -132,7 +134,7 @@ describe(createNewCommand, () => {
 
     newCommand.parse(['yamlresume', 'new'])
 
-    expect(consolaErrorSpy).toHaveBeenCalledWith(error.message)
+    expect(consolaSpies.error).toHaveBeenCalledWith(error.message)
     expect(processExitSpy).toHaveBeenCalledWith(ErrorType.FILE_CONFLICT.errno)
   })
 
@@ -144,7 +146,7 @@ describe(createNewCommand, () => {
 
     newCommand.parse(['yamlresume', 'new'])
 
-    expect(consolaErrorSpy).toHaveBeenCalledWith(error.message)
+    expect(consolaSpies.error).toHaveBeenCalledWith(error.message)
     expect(processExitSpy).toHaveBeenCalledWith(1)
   })
 })

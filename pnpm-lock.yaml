@@ -151,6 +151,9 @@ importers:
       '@types/which':
         specifier: ^3.0.4
         version: 3.0.4
+      '@yamlresume/testing':
+        specifier: workspace:*
+        version: link:../testing
 
   packages/core:
     dependencies:
@@ -247,6 +250,9 @@ importers:
       '@types/node':
         specifier: ^26.1.1
         version: 26.1.1
+      '@yamlresume/testing':
+        specifier: workspace:*
+        version: link:../testing
 
   packages/node:
     dependencies:
@@ -281,6 +287,9 @@ importers:
       '@types/which':
         specifier: ^3.0.4
         version: 3.0.4
+      '@yamlresume/testing':
+        specifier: workspace:*
+        version: link:../testing
 
   packages/playground:
     dependencies:
@@ -370,6 +379,19 @@ importers:
       yaml:
         specifier: ^2.9.0
         version: 2.9.0
+
+  packages/testing:
+    dependencies:
+      '@yamlresume/core':
+        specifier: workspace:*
+        version: link:../core
+    devDependencies:
+      consola:
+        specifier: ^3.4.2
+        version: 3.4.2
+      execa:
+        specifier: ^10.0.0
+        version: 10.0.0
 
 packages:
 

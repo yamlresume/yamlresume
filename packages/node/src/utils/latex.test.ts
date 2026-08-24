@@ -26,6 +26,7 @@ import fs from 'node:fs'
 import os from 'node:os'
 import path from 'node:path'
 import { YAMLResumeError } from '@yamlresume/core'
+import { createExecaResult, createMockLogger } from '@yamlresume/testing'
 import { execa } from 'execa'
 import {
   afterEach,
@@ -52,38 +53,6 @@ import {
 vi.mock('execa', () => ({
   execa: vi.fn(),
 }))
-
-function createMockLogger() {
-  return {
-    start: vi.fn(),
-    success: vi.fn(),
-    debug: vi.fn(),
-    info: vi.fn(),
-    log: vi.fn(),
-    warn: vi.fn(),
-    error: vi.fn(),
-  }
-}
-
-function createSuccessfulExecaResult() {
-  return {
-    stdout: 'mocked output',
-    stderr: '',
-    exitCode: 0,
-    command: '',
-    escapedCommand: '',
-    failed: false,
-    killed: false,
-    signal: undefined,
-    signalDescription: undefined,
-    timedOut: false,
-    isCanceled: false,
-    cwd: '',
-    durationMs: 0,
-    pipedFrom: [],
-    all: undefined,
-  }
-}
 
 describe(isCommandAvailable, () => {
   afterEach(vi.resetAllMocks)
@@ -303,7 +272,7 @@ describe(compileLaTeX, () => {
   let logger: ReturnType<typeof createMockLogger>
 
   beforeEach(() => {
-    execSpy = vi.mocked(execa).mockResolvedValue(createSuccessfulExecaResult())
+    execSpy = vi.mocked(execa).mockResolvedValue(createExecaResult())
     vi.spyOn(which, 'sync').mockReturnValue('/usr/bin/xelatex')
     tempDir = fs.mkdtempSync(path.join(os.tmpdir(), 'latex-test-'))
     logger = createMockLogger()
@@ -343,7 +312,7 @@ describe(compileLaTeX, () => {
 
     execSpy.mockImplementation(async () => {
       fs.writeFileSync(auxPath, 'stable')
-      return createSuccessfulExecaResult()
+      return createExecaResult()
     })
 
     await compileLaTeX(texFile, tempDir, LATEX_COMPILE_TIMEOUT, logger)

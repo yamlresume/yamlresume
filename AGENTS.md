@@ -10,17 +10,17 @@ Use `pnpm` for all operations.
 
 - **Build all:** `pnpm build`
 - **Build specific package:** `pnpm core build` (or `node`, `json2yamlresume`,
-  `cli`, `create-yamlresume`)
+  `cli`, `create-yamlresume`, `testing`)
 - **Lint & Format (Biome):** `pnpm check` (runs `biome check --write` and
   `tsc --noEmit`)
 - **Test all:** `pnpm test`
 - **Test with coverage for a package:** `pnpm core test:cov` (or `node`,
-  `json2yamlresume`, `cli`, `create-yamlresume`)
+  `json2yamlresume`, `cli`, `create-yamlresume`, `testing`)
 - **Run a single test file for a package:**
-  `pnpm core test path/to/file.test.ts` (or `node`, `json2yamlresume`, `cli`,
-  `create-yamlresume`)
+  `pnpm core test path/to/file.test.ts` (or `node`, `json2yamlresume`,
+  `cli`, `create-yamlresume`, `testing`)
 - **Watch mode for a package:** `pnpm core test:watch` (or `node`,
-  `json2yamlresume`, `cli`, `create-yamlresume`)
+  `json2yamlresume`, `cli`, `create-yamlresume`, `testing`)
 
 ## 🎨 Code Style
 

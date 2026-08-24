@@ -26,8 +26,8 @@ import fs from 'node:fs'
 
 import { AIResumeError, getModelFromEnv } from '@yamlresume/ai'
 import { ErrorType, YAMLResumeError } from '@yamlresume/core'
+import { createMockLogger } from '@yamlresume/testing'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
-
 import { generateResume } from './generate'
 
 vi.mock('@yamlresume/ai', () => ({
@@ -44,18 +44,6 @@ vi.mock('@yamlresume/ai', () => ({
 }))
 
 import { generateResume as generateResumeWithAI } from '@yamlresume/ai'
-
-function createMockLogger() {
-  return {
-    start: vi.fn(),
-    success: vi.fn(),
-    debug: vi.fn(),
-    info: vi.fn(),
-    log: vi.fn(),
-    warn: vi.fn(),
-    error: vi.fn(),
-  }
-}
 
 describe(generateResume, () => {
   let existsSync: ReturnType<typeof vi.spyOn>

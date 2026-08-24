@@ -25,6 +25,11 @@
 import fs from 'node:fs'
 import path from 'node:path'
 import { YAMLResumeError } from '@yamlresume/core'
+import {
+  createExecaResult,
+  createMockLogger,
+  getFixture,
+} from '@yamlresume/testing'
 import { execa } from 'execa'
 import {
   afterAll,
@@ -37,10 +42,8 @@ import {
   vi,
 } from 'vitest'
 import which from 'which'
-
 import { buildResume, normalizeExtension } from './build'
 import { readResume } from './read'
-import { getFixture } from './test-utils'
 import {
   getAuxPath,
   getPdfPath,
@@ -73,18 +76,6 @@ function cleanupFiles() {
   }
 }
 
-function createMockLogger() {
-  return {
-    start: vi.fn(),
-    success: vi.fn(),
-    debug: vi.fn(),
-    info: vi.fn(),
-    log: vi.fn(),
-    warn: vi.fn(),
-    error: vi.fn(),
-  }
-}
-
 describe(normalizeExtension, () => {
   it('should normalize file extension', () => {
     const tests = [
@@ -106,23 +97,7 @@ describe(buildResume, () => {
   let logger: ReturnType<typeof createMockLogger>
 
   beforeEach(() => {
-    execSpy = vi.mocked(execa).mockResolvedValue({
-      stdout: 'mocked output',
-      stderr: '',
-      exitCode: 0,
-      command: '',
-      escapedCommand: '',
-      failed: false,
-      killed: false,
-      signal: undefined,
-      signalDescription: undefined,
-      timedOut: false,
-      isCanceled: false,
-      cwd: '',
-      durationMs: 0,
-      pipedFrom: [],
-      all: undefined,
-    })
+    execSpy = vi.mocked(execa).mockResolvedValue(createExecaResult())
     _whichSpy = vi
       // biome-ignore lint/suspicious/noExplicitAny: ignore
       .spyOn(which, 'sync' as any)
@@ -137,7 +112,7 @@ describe(buildResume, () => {
   afterAll(cleanupFiles)
 
   it('should generate docx file', async () => {
-    const resumePath = getFixture('software-engineer.yml')
+    const resumePath = getFixture(__dirname, 'software-engineer.yml')
 
     vi.mocked(readResume).mockReturnValue({
       resume: {
@@ -156,7 +131,7 @@ describe(buildResume, () => {
   })
 
   it('should generate a tex file if pdf option is false', async () => {
-    const resumePath = getFixture('software-engineer.yml')
+    const resumePath = getFixture(__dirname, 'software-engineer.yml')
     const texFile = inferOutput(resumePath)
 
     const result = await buildResume(resumePath, { pdf: false, logger })
@@ -166,7 +141,7 @@ describe(buildResume, () => {
   })
 
   it('should generate a pdf file', async () => {
-    const resumePath = getFixture('software-engineer.yml')
+    const resumePath = getFixture(__dirname, 'software-engineer.yml')
     const texFile = inferOutput(resumePath)
     const pdfFile = getPdfPath(texFile)
 
@@ -190,7 +165,7 @@ describe(buildResume, () => {
   })
 
   it('should rerun LaTeX when auxiliary file changes', async () => {
-    const resumePath = getFixture('software-engineer.yml')
+    const resumePath = getFixture(__dirname, 'software-engineer.yml')
     const texFile = inferOutput(resumePath)
     const auxPath = getAuxPath(texFile)
 
@@ -225,7 +200,7 @@ describe(buildResume, () => {
   })
 
   it('should not rerun LaTeX when auxiliary file is stable', async () => {
-    const resumePath = getFixture('software-engineer.yml')
+    const resumePath = getFixture(__dirname, 'software-engineer.yml')
     const texFile = inferOutput(resumePath)
     const auxPath = getAuxPath(texFile)
 
@@ -241,7 +216,7 @@ describe(buildResume, () => {
   it('should handle error when generating pdf', async () => {
     execSpy.mockRejectedValue(new Error('Mock error'))
 
-    const resumePath = getFixture('software-engineer.yml')
+    const resumePath = getFixture(__dirname, 'software-engineer.yml')
 
     await expect(buildResume(resumePath, { logger })).rejects.toThrow(
       YAMLResumeError
@@ -258,7 +233,7 @@ describe(buildResume, () => {
     })
     execSpy.mockRejectedValue(timeoutError)
 
-    const resumePath = getFixture('software-engineer.yml')
+    const resumePath = getFixture(__dirname, 'software-engineer.yml')
 
     await expect(buildResume(resumePath, { logger })).rejects.toThrow(
       YAMLResumeError
@@ -273,7 +248,7 @@ describe(buildResume, () => {
     })
     execSpy.mockRejectedValue(timeoutError)
 
-    const resumePath = getFixture('software-engineer.yml')
+    const resumePath = getFixture(__dirname, 'software-engineer.yml')
 
     await expect(buildResume(resumePath, { logger })).rejects.toThrow(
       YAMLResumeError
@@ -283,7 +258,7 @@ describe(buildResume, () => {
   })
 
   it('should disable timeout when set to 0', async () => {
-    const resumePath = getFixture('software-engineer.yml')
+    const resumePath = getFixture(__dirname, 'software-engineer.yml')
     const texFile = inferOutput(resumePath)
 
     await buildResume(resumePath, { timeout: 0, logger })
@@ -301,7 +276,7 @@ describe(buildResume, () => {
 
   it('should generate pdf file in output directory', async () => {
     const outputDir = '/tmp/test-output'
-    const resumePath = getFixture('software-engineer.yml')
+    const resumePath = getFixture(__dirname, 'software-engineer.yml')
     const texFile = inferOutput(resumePath, outputDir)
 
     const result = await buildResume(resumePath, {
@@ -325,7 +300,7 @@ describe(buildResume, () => {
   })
 
   it('should use multiple layouts when provided', async () => {
-    const resumePath = getFixture('software-engineer.yml')
+    const resumePath = getFixture(__dirname, 'software-engineer.yml')
 
     vi.mocked(readResume).mockReturnValue({
       resume: {
@@ -346,7 +321,7 @@ describe(buildResume, () => {
   })
 
   it('should fallback to default layout if resume has no layouts', async () => {
-    const resumePath = getFixture('software-engineer.yml')
+    const resumePath = getFixture(__dirname, 'software-engineer.yml')
 
     vi.mocked(readResume).mockReturnValue({
       resume: {
@@ -364,7 +339,7 @@ describe(buildResume, () => {
   })
 
   it('should handle file write error', async () => {
-    const resumePath = getFixture('software-engineer.yml')
+    const resumePath = getFixture(__dirname, 'software-engineer.yml')
     const writeSpy = vi.spyOn(fs, 'writeFileSync').mockImplementation(() => {
       throw new Error('Write error')
     })
@@ -377,7 +352,7 @@ describe(buildResume, () => {
   })
 
   it('should create output directory if it does not exist', async () => {
-    const resumePath = getFixture('software-engineer.yml')
+    const resumePath = getFixture(__dirname, 'software-engineer.yml')
     const outputDir = path.join(__dirname, 'fixtures', 'non-existent-dir')
 
     if (fs.existsSync(outputDir)) {
@@ -392,7 +367,7 @@ describe(buildResume, () => {
   })
 
   it('should continue building when schema validation fails', async () => {
-    const resumePath = getFixture('software-engineer.yml')
+    const resumePath = getFixture(__dirname, 'software-engineer.yml')
 
     vi.mocked(readResume).mockReturnValue({
       // @ts-expect-error

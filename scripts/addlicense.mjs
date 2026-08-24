@@ -14,6 +14,7 @@ const options = {
     'packages/node/src',
     'packages/playground/src',
     'packages/samples/src',
+    'packages/testing/src',
   ],
   holder: 'PPResume (https://ppresume.com)',
   license: 'mit',

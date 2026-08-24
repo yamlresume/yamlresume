@@ -23,6 +23,7 @@
  */
 
 import { watchResume } from '@yamlresume/node'
+import { getFixture } from '@yamlresume/testing'
 import type { Command } from 'commander'
 import {
   afterEach,
@@ -33,9 +34,7 @@ import {
   type MockInstance,
   vi,
 } from 'vitest'
-
 import { createDevCommand } from './dev'
-import { getFixture } from './utils'
 
 vi.mock('@yamlresume/node', async () => {
   const actual = await vi.importActual('@yamlresume/node')
@@ -74,7 +73,7 @@ describe(createDevCommand, () => {
   })
 
   it('should start watching with default options', () => {
-    const resumePath = getFixture('software-engineer.yml')
+    const resumePath = getFixture(__dirname, 'software-engineer.yml')
     devCommand.parse(['yamlresume', 'dev', resumePath])
 
     expect(watchSpy).toHaveBeenCalledTimes(1)
@@ -85,7 +84,7 @@ describe(createDevCommand, () => {
   })
 
   it('should pass --no-pdf and --output options', () => {
-    const resumePath = getFixture('software-engineer.yml')
+    const resumePath = getFixture(__dirname, 'software-engineer.yml')
     devCommand.parse([
       'yamlresume',
       'dev',

@@ -25,7 +25,7 @@
 import fs from 'node:fs'
 import { ErrorType, YAMLResumeError } from '@yamlresume/core'
 import { readResume } from '@yamlresume/node'
-import { consola } from 'consola'
+import { getFixture, spyOnConsola } from '@yamlresume/testing'
 import {
   afterEach,
   beforeEach,
@@ -35,7 +35,6 @@ import {
   type MockedFunction,
   vi,
 } from 'vitest'
-import { getFixture } from './utils'
 import { createValidateCommand } from './validate'
 
 vi.mock('@yamlresume/node', async () => {
@@ -48,10 +47,9 @@ vi.mock('@yamlresume/node', async () => {
 
 describe(createValidateCommand, () => {
   let readSpy: MockedFunction<typeof readResume>
-  let consolaSuccessSpy: ReturnType<typeof vi.spyOn>
-  let consolaFailSpy: ReturnType<typeof vi.spyOn>
-  let consolaErrorSpy: ReturnType<typeof vi.spyOn>
-  let consolaLogSpy: ReturnType<typeof vi.spyOn>
+  let consolaSpies: ReturnType<
+    typeof spyOnConsola<'success' | 'fail' | 'error' | 'log'>
+  >
 
   beforeEach(() => {
     vi.clearAllMocks()
@@ -60,10 +58,7 @@ describe(createValidateCommand, () => {
       resume: {},
       validated: 'success',
     })
-    consolaSuccessSpy = vi.spyOn(consola, 'success').mockImplementation(vi.fn())
-    consolaFailSpy = vi.spyOn(consola, 'fail').mockImplementation(vi.fn())
-    consolaErrorSpy = vi.spyOn(consola, 'error').mockImplementation(vi.fn())
-    consolaLogSpy = vi.spyOn(consola, 'log').mockImplementation(vi.fn())
+    consolaSpies = spyOnConsola('success', 'fail', 'error', 'log')
   })
 
   afterEach(() => {
@@ -72,7 +67,7 @@ describe(createValidateCommand, () => {
 
   it('should validate a resume successfully', async () => {
     const validateCommand = createValidateCommand()
-    const resumePath = getFixture('software-engineer.yml')
+    const resumePath = getFixture(__dirname, 'software-engineer.yml')
 
     await validateCommand.parseAsync(['yamlresume', 'validate', resumePath])
 
@@ -80,11 +75,13 @@ describe(createValidateCommand, () => {
       resumePath,
       expect.objectContaining({ validate: true })
     )
-    expect(consolaSuccessSpy).toHaveBeenCalledWith('Resume validation passed.')
+    expect(consolaSpies.success).toHaveBeenCalledWith(
+      'Resume validation passed.'
+    )
   })
 
   it('should report validation failure with formatted errors', async () => {
-    const resumePath = getFixture('software-engineer.yml')
+    const resumePath = getFixture(__dirname, 'software-engineer.yml')
     const resumeStr = 'content:\n  basics:\n    name: 123'
 
     vi.spyOn(fs, 'readFileSync').mockReturnValue(resumeStr)
@@ -112,12 +109,12 @@ describe(createValidateCommand, () => {
 
     await validateCommand.parseAsync(['yamlresume', 'validate', resumePath])
 
-    expect(consolaLogSpy).toHaveBeenCalled()
-    expect(consolaFailSpy).toHaveBeenCalledWith('Resume validation failed.')
+    expect(consolaSpies.log).toHaveBeenCalled()
+    expect(consolaSpies.fail).toHaveBeenCalledWith('Resume validation failed.')
   })
 
   it('should handle YAML parse errors', async () => {
-    const resumePath = getFixture('software-engineer.yml')
+    const resumePath = getFixture(__dirname, 'software-engineer.yml')
     const resumeStr = 'content: {\n  basics: {'
 
     vi.spyOn(fs, 'readFileSync').mockReturnValue(resumeStr)
@@ -135,8 +132,8 @@ describe(createValidateCommand, () => {
 
     await validateCommand.parseAsync(['yamlresume', 'validate', resumePath])
 
-    expect(consolaLogSpy).toHaveBeenCalled()
-    expect(consolaErrorSpy).toHaveBeenCalled()
+    expect(consolaSpies.log).toHaveBeenCalled()
+    expect(consolaSpies.error).toHaveBeenCalled()
     expect(processExitSpy).toHaveBeenCalled()
   })
 
@@ -150,11 +147,11 @@ describe(createValidateCommand, () => {
     const processExitSpy = vi.spyOn(process, 'exit').mockImplementation(vi.fn())
 
     const validateCommand = createValidateCommand()
-    const resumePath = getFixture('software-engineer.yml')
+    const resumePath = getFixture(__dirname, 'software-engineer.yml')
 
     await validateCommand.parseAsync(['yamlresume', 'validate', resumePath])
 
-    expect(consolaErrorSpy).toHaveBeenCalledWith(error.message)
+    expect(consolaSpies.error).toHaveBeenCalledWith(error.message)
     expect(processExitSpy).toHaveBeenCalled()
   })
 
@@ -166,16 +163,16 @@ describe(createValidateCommand, () => {
     })
 
     const validateCommand = createValidateCommand()
-    const resumePath = getFixture('software-engineer.yml')
+    const resumePath = getFixture(__dirname, 'software-engineer.yml')
 
     await validateCommand.parseAsync(['yamlresume', 'validate', resumePath])
 
-    expect(consolaFailSpy).not.toHaveBeenCalled()
-    expect(consolaSuccessSpy).not.toHaveBeenCalled()
+    expect(consolaSpies.fail).not.toHaveBeenCalled()
+    expect(consolaSpies.success).not.toHaveBeenCalled()
   })
 
   it('should handle invalid YAML error', async () => {
-    const resumePath = getFixture('software-engineer.yml')
+    const resumePath = getFixture(__dirname, 'software-engineer.yml')
     const resumeStr = 'content: {'
 
     vi.spyOn(fs, 'readFileSync').mockReturnValue(resumeStr)
@@ -193,8 +190,8 @@ describe(createValidateCommand, () => {
 
     await validateCommand.parseAsync(['yamlresume', 'validate', resumePath])
 
-    expect(consolaLogSpy).toHaveBeenCalled()
-    expect(consolaErrorSpy).toHaveBeenCalled()
+    expect(consolaSpies.log).toHaveBeenCalled()
+    expect(consolaSpies.error).toHaveBeenCalled()
     expect(processExitSpy).toHaveBeenCalledWith(ErrorType.INVALID_YAML.errno)
   })
 
@@ -207,12 +204,12 @@ describe(createValidateCommand, () => {
     const processExitSpy = vi.spyOn(process, 'exit').mockImplementation(vi.fn())
 
     const validateCommand = createValidateCommand()
-    const resumePath = getFixture('software-engineer.yml')
+    const resumePath = getFixture(__dirname, 'software-engineer.yml')
 
     await validateCommand.parseAsync(['yamlresume', 'validate', resumePath])
 
-    expect(consolaLogSpy).not.toHaveBeenCalled()
-    expect(consolaErrorSpy).toHaveBeenCalled()
+    expect(consolaSpies.log).not.toHaveBeenCalled()
+    expect(consolaSpies.error).toHaveBeenCalled()
     expect(processExitSpy).toHaveBeenCalledWith(ErrorType.FILE_NOT_FOUND.errno)
   })
 })

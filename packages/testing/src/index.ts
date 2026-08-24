@@ -22,15 +22,14 @@
  * IN THE SOFTWARE.
  */
 
-import path from 'node:path'
-import { describe, expect, it } from 'vitest'
-import { getFixture } from './utils'
-
-describe('getFixture', () => {
-  it('should return the correct path', () => {
-    for (const resumePath of ['software-engineer.yml', 'accountant.yml']) {
-      const fixturePath = getFixture(resumePath)
-      expect(fixturePath).toBe(path.join(__dirname, 'fixtures', resumePath))
-    }
-  })
-})
+export {
+  CONSOLA_METHODS,
+  type ConsolaMethod,
+  spyOnConsola,
+} from './console'
+export {
+  createExecaResult,
+  type ExecaResultOverrides,
+} from './execa'
+export { getFixture } from './fixture'
+export { createMockLogger, type MockLogger } from './logger'

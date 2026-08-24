@@ -22,14 +22,45 @@
  * IN THE SOFTWARE.
  */
 
-import path from 'node:path'
+import { consola } from 'consola'
+import { afterEach, describe, expect, it, vi } from 'vitest'
 
-/**
- * Get the path to a fixture file
- *
- * @param resumePath - The resume file path relative to the fixtures directory
- * @returns The full, absolute path to the fixture file
- */
-export function getFixture(resumePath: string) {
-  return path.join(__dirname, 'fixtures', resumePath)
-}
+import { spyOnConsola } from './console'
+
+describe(spyOnConsola, () => {
+  afterEach(() => {
+    vi.restoreAllMocks()
+  })
+
+  it('should spy on the requested methods', () => {
+    const spies = spyOnConsola('log', 'error')
+
+    consola.log('hello')
+    consola.error('oops')
+
+    expect(spies.log).toHaveBeenCalledWith('hello')
+    expect(spies.error).toHaveBeenCalledWith('oops')
+    // mocked implementations should not print anything
+    expect(spies.log.mock.results).toHaveLength(1)
+  })
+
+  it('should mock implementations so nothing is printed', () => {
+    const spies = spyOnConsola('success')
+
+    const logged = consola.success('done')
+
+    expect(spies.success).toHaveBeenCalledWith('done')
+    expect(logged).toBeUndefined()
+  })
+
+  it('should restore original behavior after vi.restoreAllMocks', () => {
+    const spies = spyOnConsola('warn')
+
+    expect(vi.isMockFunction(consola.warn)).toBe(true)
+
+    vi.restoreAllMocks()
+
+    expect(vi.isMockFunction(consola.warn)).toBe(false)
+    expect(spies.warn).toBeDefined()
+  })
+})

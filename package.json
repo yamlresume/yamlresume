@@ -27,6 +27,7 @@
     "node": "pnpm --filter @yamlresume/node",
     "playground": "pnpm --filter @yamlresume/playground",
     "samples": "pnpm --filter @yamlresume/samples",
+    "testing": "pnpm --filter @yamlresume/testing",
     "typedoc": "pnpm -r typedoc"
   },
   "lint-staged": {

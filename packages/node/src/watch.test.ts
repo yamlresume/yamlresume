@@ -22,6 +22,7 @@
  * IN THE SOFTWARE.
  */
 
+import { createMockLogger, getFixture } from '@yamlresume/testing'
 import chokidar, { type ChokidarOptions, type FSWatcher } from 'chokidar'
 import {
   afterEach,
@@ -32,25 +33,11 @@ import {
   type MockInstance,
   vi,
 } from 'vitest'
-
 import * as build from './build'
-import { getFixture } from './test-utils'
 import { watchResume } from './watch'
 
 // Shared helpers to reduce duplication across suites
 type Handlers = Record<string, Array<(path?: string) => void>>
-
-function createMockLogger() {
-  return {
-    start: vi.fn(),
-    success: vi.fn(),
-    debug: vi.fn(),
-    info: vi.fn(),
-    log: vi.fn(),
-    warn: vi.fn(),
-    error: vi.fn(),
-  }
-}
 
 function installChokidarWatchSpy(handlers: Handlers) {
   return vi
@@ -74,7 +61,7 @@ function installChokidarWatchSpy(handlers: Handlers) {
 }
 
 describe(watchResume, () => {
-  const resumePath = getFixture('software-engineer.yml')
+  const resumePath = getFixture(__dirname, 'software-engineer.yml')
   let buildResumeSpy: MockInstance<typeof build.buildResume>
   let logger: ReturnType<typeof createMockLogger>
   let chokidarWatchSpy: MockInstance<typeof chokidar.watch>

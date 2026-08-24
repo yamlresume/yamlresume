@@ -1,7 +1,8 @@
 {
-  "name": "@yamlresume/node",
+  "name": "@yamlresume/testing",
   "version": "0.15.0",
-  "description": "Node.js runtime support for YAMLResume",
+  "private": true,
+  "description": "Shared testing utilities for YAMLResume packages",
   "license": "MIT",
   "author": {
     "name": "YAMLResume",
@@ -10,14 +11,8 @@
   },
   "keywords": [
     "YAMLResume",
-    "CV",
-    "Resume",
-    "LaTeX",
-    "Typesetting",
-    "PDF",
-    "YAML",
-    "JSON",
-    "Node.js"
+    "Testing",
+    "Test Utils"
   ],
   "type": "module",
   "main": "./dist/index.js",
@@ -38,39 +33,26 @@
     "build:watch": "tsup --watch",
     "build:clean": "rm -rf dist",
     "build:prod": "tsup --dts --minify --sourcemap",
-    "prepublishOnly": "pnpm test",
     "test": "vitest --run",
     "test:cov": "vitest --coverage --run",
-    "test:watch": "vitest",
-    "typedoc": "typedoc"
+    "test:watch": "vitest"
   },
   "dependencies": {
-    "@yamlresume/ai": "workspace:*",
-    "@yamlresume/core": "workspace:*",
-    "@yamlresume/samples": "workspace:*",
-    "chokidar": "^5.0.0",
-    "coalescifn": "^1.0.0",
-    "execa": "^10.0.0",
-    "which": "^7.0.0",
-    "yaml": "^2.9.0"
+    "@yamlresume/core": "workspace:*"
   },
   "devDependencies": {
-    "@types/node": "^26.1.1",
-    "@types/which": "^3.0.4",
-    "@yamlresume/testing": "workspace:*"
-  },
-  "publishConfig": {
-    "access": "public"
+    "consola": "^3.4.2",
+    "execa": "^10.0.0"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/yamlresume/yamlresume.git",
-    "directory": "packages/node"
+    "directory": "packages/testing"
   },
   "bugs": {
     "url": "https://github.com/yamlresume/yamlresume/issues"
   },
-  "homepage": "https://yamlresume.dev/docs/node",
+  "homepage": "https://yamlresume.dev",
   "engines": {
     "node": ">=20.0.0"
   }

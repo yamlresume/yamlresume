@@ -22,14 +22,41 @@
  * IN THE SOFTWARE.
  */
 
-import path from 'node:path'
+import type { Logger } from '@yamlresume/core'
+import { afterEach, describe, expect, it, vi } from 'vitest'
+import { createMockLogger } from './logger'
 
-/**
- * Get the path to a fixture file
- *
- * @param resumePath - The resume file path relative to the fixtures directory
- * @returns The full, absolute path to the fixture file
- */
-export function getFixture(resumePath: string) {
-  return path.join(__dirname, 'fixtures', resumePath)
-}
+describe(createMockLogger, () => {
+  afterEach(() => {
+    vi.restoreAllMocks()
+  })
+
+  it('should return a logger with all methods mocked', () => {
+    const logger = createMockLogger()
+    const methods: (keyof Logger)[] = [
+      'start',
+      'success',
+      'debug',
+      'info',
+      'log',
+      'warn',
+      'error',
+    ]
+
+    for (const method of methods) {
+      expect(logger[method]).toBeTypeOf('function')
+      expect(vi.isMockFunction(logger[method])).toBe(true)
+    }
+  })
+
+  it('should return mocks that record calls', () => {
+    const logger = createMockLogger()
+
+    logger.success('done')
+    logger.error('oops')
+
+    expect(logger.success).toHaveBeenCalledWith('done')
+    expect(logger.error).toHaveBeenCalledWith('oops')
+    expect(logger.start).not.toHaveBeenCalled()
+  })
+})

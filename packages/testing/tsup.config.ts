@@ -1,0 +1,12 @@
+import { defineConfig } from 'tsup'
+
+import { baseConfig } from '../../tsup.config.base'
+
+export default defineConfig({
+  ...baseConfig,
+  dts: true,
+  tsconfig: 'tsconfig.build.json',
+  entry: ['src/index.ts'],
+  // consola, execa and vitest are provided by the packages under test
+  external: ['consola', 'execa', 'vitest'],
+})
