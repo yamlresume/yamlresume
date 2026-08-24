@@ -28,6 +28,7 @@ import MonacoEditor, { type Monaco, type OnMount } from '@monaco-editor/react'
 import type { languages } from 'monaco-editor'
 
 import { EDITOR_FONT_SIZE } from '@/constants'
+import { configureYamlSupport } from '@/monaco/yaml'
 
 /**
  * Registers the LaTeX language support in Monaco.
@@ -406,7 +407,13 @@ export function Editor({
       onChange={onChange}
       theme="vs-dark"
       onMount={onMount}
-      beforeMount={registerLatexLanguage}
+      beforeMount={(monaco) => {
+        registerLatexLanguage(monaco)
+
+        if (language === 'yaml') {
+          configureYamlSupport(monaco)
+        }
+      }}
       options={{
         readOnly,
         domReadOnly: readOnly,

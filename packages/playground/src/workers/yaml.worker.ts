@@ -22,18 +22,6 @@
  * IN THE SOFTWARE.
  */
 
-// Components
-export * from './components'
-
-// Constants
-export * from './constants'
-
-// Hooks
-export * from './hooks'
-// Messages
-export * from './messages'
-// Monaco configuration
-export * from './monaco'
-
-// Utils
-export * from './utils'
+// Wrapper entry so bundlers can create a Web Worker from a local module,
+// see https://github.com/remcohaszing/monaco-yaml#why-doesnt-it-work-with-vite
+import 'monaco-yaml/yaml.worker.js'

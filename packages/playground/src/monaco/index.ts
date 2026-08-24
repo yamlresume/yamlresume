@@ -22,18 +22,4 @@
  * IN THE SOFTWARE.
  */
 
-// Components
-export * from './components'
-
-// Constants
-export * from './constants'
-
-// Hooks
-export * from './hooks'
-// Messages
-export * from './messages'
-// Monaco configuration
-export * from './monaco'
-
-// Utils
-export * from './utils'
+export { configureYamlSupport } from './yaml'

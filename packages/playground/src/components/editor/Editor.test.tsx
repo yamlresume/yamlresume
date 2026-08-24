@@ -47,6 +47,12 @@ Object.defineProperty(window, 'matchMedia', {
   })),
 })
 
+// Mock monaco-yaml: the real implementation requires a fully featured
+// monaco instance which is out of scope for these component tests.
+vi.mock('monaco-yaml', () => ({
+  configureMonacoYaml: vi.fn(),
+}))
+
 // Mock @monaco-editor/react
 // Define props for the mock Editor component
 interface MockEditorProps {
@@ -64,6 +70,8 @@ interface MockEditorProps {
 
 vi.mock('@monaco-editor/react', () => {
   return {
+    // Mock the loader used by src/monaco/yaml.ts to configure local monaco
+    loader: { config: vi.fn() },
     default: ({
       value,
       language,

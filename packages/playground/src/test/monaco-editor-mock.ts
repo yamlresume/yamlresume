@@ -22,18 +22,8 @@
  * IN THE SOFTWARE.
  */
 
-// Components
-export * from './components'
-
-// Constants
-export * from './constants'
-
-// Hooks
-export * from './hooks'
-// Messages
-export * from './messages'
-// Monaco configuration
-export * from './monaco'
-
-// Utils
-export * from './utils'
+// Vitest alias target: a minimal stub for the monaco-editor module. The real
+// main entry imports browser-only contributions which break under jsdom.
+export const editor = {}
+export const languages = {}
+export default { editor, languages }

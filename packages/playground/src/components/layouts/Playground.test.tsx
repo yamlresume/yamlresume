@@ -25,6 +25,7 @@
 import { fireEvent, render, screen } from '@testing-library/react'
 import type { Resume } from '@yamlresume/core'
 import { describe, expect, it, vi } from 'vitest'
+import { z } from 'zod'
 
 import { Playground } from './Playground'
 
@@ -109,6 +110,7 @@ vi.mock('react-resizable-panels', () => ({
 
 // Mock @yamlresume/core
 vi.mock('@yamlresume/core', () => ({
+  ResumeSchema: z.object({}),
   getResumeRenderer: vi.fn(() => ({
     render: () => 'rendered content',
   })),

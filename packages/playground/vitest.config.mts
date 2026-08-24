@@ -23,6 +23,12 @@ export default mergeConfig(
     resolve: {
       alias: {
         '@': path.resolve(__dirname, './src'),
+        // Stub the real monaco-editor module in unit tests: importing the
+        // full main entry requires browser APIs missing from jsdom.
+        'monaco-editor': path.resolve(
+          __dirname,
+          './src/test/monaco-editor-mock.ts',
+        ),
       },
     },
     test: {

@@ -9,6 +9,11 @@ The official playground is at https://yamlresume.dev/playground.
 ## Features
 
 - 📝 **Live YAML Editor**: Monaco-based editor with syntax highlighting for AML.
+- ✨ **YAML Language Support**: Schema-driven completion, validation, and hover
+  documentation powered by
+  [`monaco-yaml`](https://github.com/remcohaszing/monaco-yaml) running the YAML
+  language server in a Web Worker against the
+  [YAMLResume JSON schema](https://yamlresume.dev/docs/compiler/schema/json).
 - 👁️ **Real-time Preview**: Instant preview of your resume in HTML, Markdown, or
   LaTeX.
 - 📱 **Responsive Design**: Split-pane layout on desktop, tabbed interface on
@@ -181,6 +186,36 @@ pnpm -C packages/playground/web dev
 ```
 
 Then open http://localhost:5173.
+
+### YAML language support
+
+The resume editor provides completion, validation, and hover documentation via
+`monaco-yaml`, which runs the YAML language server in a Web Worker bundled from
+`src/workers/`. The worker wiring uses the standard
+`new Worker(new URL(...), import.meta.url)` pattern, which Vite and webpack
+understand natively when building from source.
+
+If you consume the pre-built `dist` bundle in an app whose bundler cannot emit
+workers from it, install your own `globalThis.MonacoEnvironment.getWorker`
+**before** importing this package (a host-provided `getWorker` takes
+precedence), pointing the `yaml` label at `monaco-yaml/yaml.worker` and
+`editorWorkerService` at Monaco's editor worker:
+
+```js
+import EditorWorker from 'monaco-editor/esm/vs/editor/editor.worker?worker'
+import YamlWorker from 'monaco-yaml/yaml.worker?worker'
+
+globalThis.MonacoEnvironment = {
+  getWorker(moduleId, label) {
+    if (label === 'yaml') return new YamlWorker()
+    return new EditorWorker()
+  },
+}
+```
+
+Note that `monaco-yaml` currently requires `monaco-editor` <= 0.54.x (support
+for the 0.55 worker API is pending upstream, see
+[remcohaszing/monaco-yaml#282](https://github.com/remcohaszing/monaco-yaml/pull/282)).
 
 ## License
 
