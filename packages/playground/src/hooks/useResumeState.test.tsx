@@ -27,12 +27,16 @@ import { describe, expect, it, vi } from 'vitest'
 
 import { useResumeState } from './useResumeState'
 
-vi.mock('yaml', () => ({
-  parse: vi.fn((str) => {
-    if (str === 'invalid') throw new Error('parse error')
-    return { layouts: [{ engine: 'html' }] }
-  }),
-}))
+vi.mock('yaml', async (importOriginal) => {
+  const actual = await importOriginal<typeof import('yaml')>()
+  return {
+    ...actual,
+    parse: vi.fn((str) => {
+      if (str === 'invalid') throw new Error('parse error')
+      return { layouts: [{ engine: 'html' }] }
+    }),
+  }
+})
 
 describe('useResumeState', () => {
   it('initializes with default values', () => {

@@ -53,6 +53,7 @@
     "@monaco-editor/react": "^4.7.0",
     "@tabler/icons-react": "^3.45.0",
     "@yamlresume/core": "workspace:*",
+    "@yamlresume/samples": "workspace:*",
     "clsx": "^2.1.1",
     "docx-preview": "^0.4.0",
     "jszip": "^3.10.1",

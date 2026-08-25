@@ -24,7 +24,7 @@
 
 import clsx from 'clsx'
 
-import logo from '@/resources/logo.png'
+import logo from '@/assets/logo.png'
 
 /**
  * A placeholder component shown when no resume layouts are defined.

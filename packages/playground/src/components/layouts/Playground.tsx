@@ -38,7 +38,6 @@ import {
   DEFAULT_PLAYGROUND_MESSAGES,
   type PlaygroundMessageOverrides,
 } from '@/messages'
-import DEFAULT_RESUME_YAML from '@/resources/default-resume.yml'
 
 /**
  * Props for the Playground component.
@@ -65,19 +64,19 @@ export interface PlaygroundProps {
  * @returns The rendered Playground component.
  */
 export function Playground({
-  yaml: yamlStr = DEFAULT_RESUME_YAML,
+  yaml,
   onChange,
   filename,
   messages,
 }: PlaygroundProps) {
   const {
-    yaml,
+    yaml: currentYaml,
     handleYamlChange,
     activeLayoutIndex,
     setActiveLayoutIndex,
     resume,
   } = useResumeState({
-    yaml: yamlStr,
+    yaml,
     onChange,
   })
 
@@ -89,7 +88,7 @@ export function Playground({
   // Create editor panel element
   const editorPanel = (
     <EditorPanel
-      value={yaml}
+      value={currentYaml}
       onChange={(v) => handleYamlChange(v || '')}
       filename={filename}
       tooltips={tooltips}

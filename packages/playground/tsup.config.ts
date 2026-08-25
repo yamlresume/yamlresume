@@ -8,6 +8,5 @@ export default defineConfig({
   external: ['react', 'react-dom'],
   loader: {
     '.png': 'dataurl',
-    '.yml': 'text',
   },
 })

@@ -22,11 +22,19 @@
  * IN THE SOFTWARE.
  */
 
-import type { Resume } from '@yamlresume/core'
+import {
+  appendResumeLayouts,
+  injectResumeComments,
+  type Resume,
+} from '@yamlresume/core'
+import { getSampleResume } from '@yamlresume/samples'
 import { useEffect, useMemo, useState } from 'react'
-import { parse } from 'yaml'
+import { parse, parseDocument } from 'yaml'
 
-import DEFAULT_RESUME_YAML from '@/resources/default-resume.yml'
+const doc = parseDocument(getSampleResume('software-engineer', 'en'))
+appendResumeLayouts(doc)
+
+const DEFAULT_RESUME_YAML = injectResumeComments(doc)
 
 /**
  * Props for the `useResumeState` hook.

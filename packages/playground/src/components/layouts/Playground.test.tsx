@@ -108,8 +108,10 @@ vi.mock('react-resizable-panels', () => ({
   ),
 }))
 
-// Mock @yamlresume/core
-vi.mock('@yamlresume/core', () => ({
+// Mock @yamlresume/core, keeping the real utils used to load the default
+// sample resume at module scope.
+vi.mock('@yamlresume/core', async (importOriginal) => ({
+  ...(await importOriginal<typeof import('@yamlresume/core')>()),
   ResumeSchema: z.object({}),
   getResumeRenderer: vi.fn(() => ({
     render: () => 'rendered content',

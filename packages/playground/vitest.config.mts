@@ -6,20 +6,7 @@ import { defineConfig, mergeConfig } from 'vitest/config'
 export default mergeConfig(
   baseConfig,
   defineConfig({
-    plugins: [
-      react(),
-      {
-        name: 'yaml-loader',
-        transform(code, id) {
-          if (id.endsWith('.yml')) {
-            return {
-              code: `export default ${JSON.stringify(code)}`,
-              map: null,
-            }
-          }
-        },
-      },
-    ],
+    plugins: [react()],
     resolve: {
       alias: {
         '@': path.resolve(__dirname, './src'),
@@ -34,9 +21,6 @@ export default mergeConfig(
     test: {
       environment: 'jsdom',
       include: ['src/**/*.{test,spec}.{ts,tsx}'],
-      coverage: {
-        exclude: ['src/resources/**'],
-      },
     },
   })
 )

@@ -305,6 +305,9 @@ importers:
       '@yamlresume/core':
         specifier: workspace:*
         version: link:../core
+      '@yamlresume/samples':
+        specifier: workspace:*
+        version: link:../samples
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
