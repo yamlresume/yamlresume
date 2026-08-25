@@ -114,18 +114,16 @@ export async function generateResume(
       lastText = text
       const { doc } = parseGeneratedResume(text)
 
-      if (withLayouts) {
-        appendResumeLayouts(doc)
-      }
+      const finalDoc = withLayouts ? appendResumeLayouts(doc) : doc
 
       if (withComments) {
-        return injectResumeComments(doc)
+        return injectResumeComments(finalDoc)
       }
 
-      clearComments(doc)
-      clearComments(doc.contents)
-      doc.directives.docStart = null
-      return doc.toString()
+      clearComments(finalDoc)
+      clearComments(finalDoc.contents)
+      finalDoc.directives.docStart = null
+      return finalDoc.toString()
     } catch (error) {
       if (error instanceof AIResumeError) {
         consola.debug(`Attempt ${attempt + 1} validation error:`, error.message)

@@ -164,4 +164,44 @@ describe(getSampleResume, () => {
       'Language "ko" is not available for sample "software-engineer"'
     )
   })
+
+  it('returns raw YAML without layouts or comments by default', () => {
+    const yaml = getSampleResume('software-engineer', 'en')
+
+    expect(yaml).toContain('content:')
+    expect(yaml).not.toContain('layouts:')
+    expect(yaml).not.toContain('# yaml-language-server')
+  })
+
+  it('appends default layouts when withLayouts is true', () => {
+    const yaml = getSampleResume('software-engineer', 'en', {
+      withLayouts: true,
+      withComments: false,
+    })
+
+    expect(yaml).toContain('layouts:')
+    expect(yaml).toContain('engine: latex')
+    expect(yaml).not.toContain('# yaml-language-server')
+  })
+
+  it('injects deterministic comments when withComments is true', () => {
+    const yaml = getSampleResume('software-engineer', 'en', {
+      withLayouts: false,
+      withComments: true,
+    })
+
+    expect(yaml).toContain('# yaml-language-server')
+    expect(yaml).not.toContain('layouts:')
+  })
+
+  it('appends layouts and injects comments when both options are true', () => {
+    const yaml = getSampleResume('software-engineer', 'en', {
+      withLayouts: true,
+      withComments: true,
+    })
+
+    expect(yaml).toContain('layouts:')
+    expect(yaml).toContain('# yaml-language-server')
+    expect(yaml).toContain('Use `yamlresume templates list`')
+  })
 })

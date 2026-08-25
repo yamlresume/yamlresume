@@ -23,6 +23,7 @@
  */
 
 export {
+  type GetSampleResumeOptions,
   getSampleResume,
   listSampleResumeCategories,
   listSampleResumes,

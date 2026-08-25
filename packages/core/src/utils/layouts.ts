@@ -33,15 +33,16 @@ import { DEFAULT_RESUME_LAYOUTS } from '@/models'
  * default configuration without requiring another parse pass.
  *
  * @param doc - The parsed resume YAML document.
+ * @returns The same document with the layouts block appended.
  */
-export function appendResumeLayouts(doc: Document): void {
+export function appendResumeLayouts(doc: Document): Document {
   const layoutsDoc = new Document({ layouts: DEFAULT_RESUME_LAYOUTS })
   const layoutsMap = layoutsDoc.contents as YAMLMap
   const layoutsNode = layoutsMap.get('layouts', true)
 
   if (!isMap(doc.contents)) {
     doc.contents = layoutsMap
-    return
+    return doc
   }
 
   doc.contents.delete('layouts')
@@ -53,4 +54,6 @@ export function appendResumeLayouts(doc: Document): void {
 
   const layoutsPair = new Pair(layoutsKey, layoutsNode)
   doc.contents.add(layoutsPair)
+
+  return doc
 }

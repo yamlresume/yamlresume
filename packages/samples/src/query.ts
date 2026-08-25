@@ -22,7 +22,13 @@
  * IN THE SOFTWARE.
  */
 
-import { joinNonEmptyString, type LocaleLanguage } from '@yamlresume/core'
+import {
+  appendResumeLayouts,
+  injectResumeComments,
+  joinNonEmptyString,
+  type LocaleLanguage,
+} from '@yamlresume/core'
+import { parseDocument } from 'yaml'
 
 import catalogData from './catalog.json'
 import type { SampleCatalog, SampleResumeEntry } from './types'
@@ -107,14 +113,35 @@ export function listSampleResumeTags(): string[] {
 }
 
 /**
+ * Options for loading a sample resume.
+ */
+export interface GetSampleResumeOptions {
+  /**
+   * Whether to inject deterministic YAML comments into the sample resume.
+   */
+  withComments: boolean
+
+  /**
+   * Whether to append the default layouts block to the sample resume.
+   */
+  withLayouts: boolean
+}
+
+/**
  * Load a sample resume YAML string.
  *
  * @param id - The sample identifier.
  * @param language - The desired locale language.
+ * @param options - Optional flags to append layouts and/or inject comments.
  * @returns The raw YAML resume.
  * @throws {Error} When the sample or language does not exist.
  */
-export function getSampleResume(id: string, language: LocaleLanguage): string {
+export function getSampleResume(
+  id: string,
+  language: LocaleLanguage,
+  options: GetSampleResumeOptions = { withComments: false, withLayouts: false }
+): string {
+  const { withComments, withLayouts } = options
   const entry = catalog.resumes.find((resume) => resume.id === id)
 
   if (!entry) {
@@ -133,5 +160,21 @@ export function getSampleResume(id: string, language: LocaleLanguage): string {
     )
   }
 
-  return entry.contents[language]
+  const content = entry.contents[language]
+
+  if (!withComments && !withLayouts) {
+    return content
+  }
+
+  const doc = parseDocument(content)
+
+  if (withComments && withLayouts) {
+    return injectResumeComments(appendResumeLayouts(doc))
+  }
+
+  if (withLayouts) {
+    return appendResumeLayouts(doc).toString()
+  }
+
+  return injectResumeComments(doc)
 }

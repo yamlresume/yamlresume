@@ -93,4 +93,11 @@ describe(appendResumeLayouts, () => {
     expect(result.startsWith('layouts:')).toBe(true)
     expect(result).not.toContain('locale:')
   })
+
+  it('returns the provided document', () => {
+    const doc = yaml.parseDocument('locale:\n  language: en\n')
+    const result = appendResumeLayouts(doc)
+
+    expect(result).toBe(doc)
+  })
 })

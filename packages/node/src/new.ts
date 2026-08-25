@@ -24,9 +24,7 @@
 
 import fs from 'node:fs'
 import {
-  appendResumeLayouts,
   getErrorMessage,
-  injectResumeComments,
   joinNonEmptyString,
   type LocaleLanguage,
   type Logger,
@@ -34,7 +32,6 @@ import {
   YAMLResumeError,
 } from '@yamlresume/core'
 import { getSampleResume } from '@yamlresume/samples'
-import yaml from 'yaml'
 
 /**
  * Options for creating a new resume from a sample.
@@ -71,13 +68,13 @@ export function newResume(
     throw new YAMLResumeError('FILE_CONFLICT', { path: filename })
   }
 
-  const sampleContent = getSampleResume(sampleId, language)
-  const doc = yaml.parseDocument(sampleContent)
-  appendResumeLayouts(doc)
-  const contentWithLayoutsAndComments = injectResumeComments(doc)
+  const sampleContent = getSampleResume(sampleId, language, {
+    withLayouts: true,
+    withComments: true,
+  })
 
   try {
-    fs.writeFileSync(filename, contentWithLayoutsAndComments)
+    fs.writeFileSync(filename, sampleContent)
 
     const successMessage = showSampleSource
       ? `Created ${filename} from sample "${sampleId}" successfully.`

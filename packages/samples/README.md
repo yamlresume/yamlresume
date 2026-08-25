@@ -16,6 +16,12 @@ pnpm add @yamlresume/samples
 import { getSampleResume } from '@yamlresume/samples'
 
 const yaml = getSampleResume('software-engineer', 'en')
+
+// with default layouts and deterministic YAML comments injected
+const yamlWithLayoutsAndComments = getSampleResume('software-engineer', 'en', {
+  withLayouts: true,
+  withComments: true,
+})
 ```
 
 ### List sample resumes
