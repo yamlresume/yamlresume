@@ -45,7 +45,6 @@ export interface UseResumeStateProps {
 /**
  * A React hook for managing resume state derived from YAML content.
  *
- * @description
  * This hook encapsulates the logic for:
  * - Parsing YAML into a `Resume` object with memoization
  * - Tracking the active layout index with bounds checking

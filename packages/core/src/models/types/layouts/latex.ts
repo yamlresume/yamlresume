@@ -33,7 +33,7 @@ import type { Margins, PaperSize, Sections } from './common'
 /**
  * Defines latex link styling settings for typography.
  */
-type Links = {
+export type Links = {
   /** Whether to underline links in the document. */
   underline?: boolean
 }
@@ -41,7 +41,7 @@ type Links = {
 /**
  * Defines latex typography settings for document formatting.
  */
-type LatexTypography = {
+export type LatexTypography = {
   /** Base font size for the document (e.g., "10pt", "11pt"). */
   fontSize?: LatexFontSize
   /** A comma-separated list of font families to use. */
@@ -55,7 +55,7 @@ type LatexTypography = {
 /**
  * Defines advanced latex configuration options.
  */
-type LatexAdvanced = {
+export type LatexAdvanced = {
   /** LaTeX fontspec package configurations. */
   fontspec?: {
     /** Style for rendering numbers (Lining or OldStyle). */
@@ -70,7 +70,7 @@ type LatexAdvanced = {
 /**
  * Defines latex page-level settings for document presentation.
  */
-type LatexPage = {
+export type LatexPage = {
   /** Whether to display page numbers. */
   showPageNumbers?: boolean
   /** Defines page margin settings for document layout. */

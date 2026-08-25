@@ -38,7 +38,7 @@ export const TERMS = ['courses', 'keywords', 'score'] as const
 export type Term = (typeof TERMS)[number]
 
 /** The structure for template-specific translations (punctuations and terms) */
-type TemplateTranslationValue = {
+export type TemplateTranslationValue = {
   /** Translations for punctuation types defined in `Punctuation`. */
   punctuations: Record<Punctuation, string>
   /** Translations for template terms defined in `Term`. */
@@ -47,7 +47,10 @@ type TemplateTranslationValue = {
 
 /** The overall structure containing template-specific translations for all
  * supported languages. */
-type TemplateTranslation = Record<LocaleLanguage, TemplateTranslationValue>
+export type TemplateTranslation = Record<
+  LocaleLanguage,
+  TemplateTranslationValue
+>
 
 /**
  * Retrieves template-specific translations (punctuations and terms) for a given

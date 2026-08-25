@@ -28,7 +28,7 @@ import type { Sections } from './common'
 /**
  * Defines HTML typography settings for document formatting.
  */
-type HtmlTypography = {
+export type HtmlTypography = {
   /** Base font size for the document (e.g., "small", "medium", "large"). */
   fontSize?: HtmlFontSize
   /** A comma-separated list of font families to use. */
@@ -40,7 +40,7 @@ type HtmlTypography = {
 /**
  * Defines advanced HTML configuration options.
  */
-type HtmlAdvanced = {
+export type HtmlAdvanced = {
   /** Whether to show icons for links and profiles. */
   showIcons?: boolean
   /** Custom title for the HTML document. */

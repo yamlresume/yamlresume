@@ -23,21 +23,36 @@
  */
 
 import type { LayoutEngine } from './common'
-import type { DocxLayout } from './docx'
-import type { HtmlLayout } from './html'
-import type { LatexLayout } from './latex'
-import type { MarkdownLayout } from './markdown'
-
-export type {
-  DocxLayout,
-  HtmlLayout,
+import type { DocxAdvanced, DocxLayout, DocxPage, DocxTypography } from './docx'
+import type { HtmlAdvanced, HtmlLayout, HtmlTypography } from './html'
+import type {
+  LatexAdvanced,
   LatexLayout,
-  LayoutEngine,
-  MarkdownLayout,
-}
+  LatexPage,
+  LatexTypography,
+  Links,
+} from './latex'
+import type { MarkdownLayout } from './markdown'
 
 /**
  * Array of layout items supporting multiple output formats.
  */
+export type { Margins, Sections } from './common'
+export type {
+  DocxAdvanced,
+  DocxLayout,
+  DocxPage,
+  DocxTypography,
+  HtmlAdvanced,
+  HtmlLayout,
+  HtmlTypography,
+  LatexAdvanced,
+  LatexLayout,
+  LatexPage,
+  LatexTypography,
+  LayoutEngine,
+  Links,
+  MarkdownLayout,
+}
 export type Layout = DocxLayout | HtmlLayout | LatexLayout | MarkdownLayout
 export type Layouts = Layout[]

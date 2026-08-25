@@ -35,9 +35,9 @@ import type {
 /**
  * Represents a single award, honor, or recognition received.
  *
- * @see {@link awardItemSchema} for its schema constraints.
+ * @see AwardItemSchema for its schema constraints.
  */
-type AwardItem = {
+export type AwardItem = {
   /** The organization or entity that gave the award. */
   awarder: string
   /** The name or title of the award. */
@@ -60,7 +60,7 @@ type AwardItem = {
 /**
  * Contains a collection of awards and recognitions.
  *
- * @see {@link awardsSchema} for its schema constraints.
+ * @see AwardsSchema for its schema constraints.
  */
 export type Awards = {
   /** A list of awards. */
@@ -70,9 +70,9 @@ export type Awards = {
 /**
  * Represents the core personal and contact information.
  *
- * @see {@link basicsItemSchema} for its schema constraints.
+ * @see BasicsItemSchema for its schema constraints.
  */
-type BasicsItem = {
+export type BasicsItem = {
   /** Full name. */
   name: string
 
@@ -99,7 +99,7 @@ type BasicsItem = {
 /**
  * Contains the core personal and contact information.
  *
- * @see {@link basicsSchema} for its schema constraints.
+ * @see BasicsSchema for its schema constraints.
  */
 export type Basics = {
   /** The basic personal information item. */
@@ -109,9 +109,9 @@ export type Basics = {
 /**
  * Represents a single certification, credential, or professional qualification.
  *
- * @see {@link certificateItemSchema} for its schema constraints.
+ * @see CertificateItemSchema for its schema constraints.
  */
-type CertificateItem = {
+export type CertificateItem = {
   /** The organization that issued the certificate. */
   issuer: string
   /** The name of the certificate. */
@@ -132,7 +132,7 @@ type CertificateItem = {
 /**
  * Contains a collection of certifications and credentials.
  *
- * @see {@link certificatesSchema} for its schema constraints.
+ * @see CertificatesSchema for its schema constraints.
  */
 export type Certificates = {
   /** A list of certificates. */
@@ -142,9 +142,9 @@ export type Certificates = {
 /**
  * Represents a single educational experience or degree program.
  *
- * @see {@link educationItemSchema} for its schema constraints.
+ * @see EducationItemSchema for its schema constraints.
  */
-type EducationItem = {
+export type EducationItem = {
   /** Area of study (e.g., "Computer Science"). */
   area: string
   /** The type of degree obtained. */
@@ -185,7 +185,7 @@ type EducationItem = {
 /**
  * Contains a collection of educational experiences.
  *
- * @see {@link educationSchema} for its schema constraints.
+ * @see EducationSchema for its schema constraints.
  */
 export type Education = {
   /** A list of education experiences. */
@@ -195,9 +195,9 @@ export type Education = {
 /**
  * Represents a single interest, hobby, or personal activity.
  *
- * @see {@link interestItemSchema} for its schema constraints.
+ * @see InterestItemSchema for its schema constraints.
  */
-type InterestItem = {
+export type InterestItem = {
   /** Name of the interest category (e.g., "Reading", "Photography"). */
   name: string
 
@@ -214,7 +214,7 @@ type InterestItem = {
 /**
  * Contains a collection of personal interests and hobbies.
  *
- * @see {@link interestsSchema} for its schema constraints.
+ * @see InterestsSchema for its schema constraints.
  */
 export type Interests = {
   /** A list of interests. */
@@ -224,7 +224,7 @@ export type Interests = {
 /**
  * Represents a single language proficiency or skill level.
  *
- * @see {@link languageItemSchema} for its schema constraints.
+ * @see LanguageItemSchema for its schema constraints.
  */
 export type LanguageItem = {
   /** The level of proficiency of the language. */
@@ -249,7 +249,7 @@ export type LanguageItem = {
 /**
  * Contains a collection of language proficiencies.
  *
- * @see {@link languagesSchema} for its schema constraints.
+ * @see LanguagesSchema for its schema constraints.
  */
 export type Languages = {
   /** A list of languages. */
@@ -259,9 +259,9 @@ export type Languages = {
 /**
  * Represents location and address information.
  *
- * @see {@link locationItemSchema} for its schema constraints.
+ * @see LocationItemSchema for its schema constraints.
  */
-type LocationItem = {
+export type LocationItem = {
   /** City name. */
   city: string
 
@@ -284,7 +284,7 @@ type LocationItem = {
 /**
  * Contains location and address information.
  *
- * @see {@link locationSchema} for its schema constraints.
+ * @see LocationSchema for its schema constraints.
  */
 export type Location = {
   /** The location information item. */
@@ -294,7 +294,7 @@ export type Location = {
 /**
  * Represents a single online profile or social media presence.
  *
- * @see {@link profileItemSchema} for its schema constraints.
+ * @see ProfileItemSchema for its schema constraints.
  */
 export type ProfileItem = {
   /** The name of the network or platform. */
@@ -315,7 +315,7 @@ export type ProfileItem = {
 /**
  * Contains a collection of online profiles and social media presence.
  *
- * @see {@link profilesSchema} for its schema constraints.
+ * @see ProfilesSchema for its schema constraints.
  */
 export type Profiles = {
   /** A list of online profiles. */
@@ -325,9 +325,9 @@ export type Profiles = {
 /**
  * Represents a single project, portfolio piece, or technical work.
  *
- * @see {@link projectItemSchema} for its schema constraints.
+ * @see ProjectItemSchema for its schema constraints.
  */
-type ProjectItem = {
+export type ProjectItem = {
   /** Name of the project. */
   name: string
   /** Start date of the project (e.g., "2021", "Jan 2021"). */
@@ -362,7 +362,7 @@ type ProjectItem = {
 /**
  * Contains a collection of projects and portfolio pieces.
  *
- * @see {@link projectsSchema} for its schema constraints.
+ * @see ProjectsSchema for its schema constraints.
  */
 export type Projects = {
   /** A list of projects. */
@@ -372,9 +372,9 @@ export type Projects = {
 /**
  * Represents a single publication, research work, or academic paper.
  *
- * @see {@link publicationItemSchema} for its schema constraints.
+ * @see PublicationItemSchema for its schema constraints.
  */
-type PublicationItem = {
+export type PublicationItem = {
   /** Name or title of the publication. */
   name: string
   /** Publisher of the work. */
@@ -399,7 +399,7 @@ type PublicationItem = {
 /**
  * Contains a collection of publications and research works.
  *
- * @see {@link publicationsSchema} for its schema constraints.
+ * @see PublicationsSchema for its schema constraints.
  */
 export type Publications = {
   /** A list of publications. */
@@ -409,9 +409,9 @@ export type Publications = {
 /**
  * Represents a single professional reference or recommendation.
  *
- * @see {@link referenceItemSchema} for its schema constraints.
+ * @see ReferenceItemSchema for its schema constraints.
  */
-type ReferenceItem = {
+export type ReferenceItem = {
   /** Name of the reference. */
   name: string
   /** A brief note about the reference. */
@@ -434,7 +434,7 @@ type ReferenceItem = {
 /**
  * Contains a collection of professional references and recommendations.
  *
- * @see {@link referencesSchema} for its schema constraints.
+ * @see ReferencesSchema for its schema constraints.
  */
 export type References = {
   /** A list of references. */
@@ -444,9 +444,9 @@ export type References = {
 /**
  * Represents a single skill, competency, or technical ability.
  *
- * @see {@link skillItemSchema} for its schema constraints.
+ * @see SkillItemSchema for its schema constraints.
  */
-type SkillItem = {
+export type SkillItem = {
   /** Proficiency level in the skill. */
   level: Level
   /** Name of the skill. */
@@ -467,7 +467,7 @@ type SkillItem = {
 /**
  * Contains a collection of skills and competencies.
  *
- * @see {@link skillsSchema} for its schema constraints.
+ * @see SkillsSchema for its schema constraints.
  */
 export type Skills = {
   /** A list of skills. */
@@ -477,9 +477,9 @@ export type Skills = {
 /**
  * Represents a single volunteer experience or community service.
  *
- * @see {@link volunteerItemSchema} for its schema constraints.
+ * @see VolunteerItemSchema for its schema constraints.
  */
-type VolunteerItem = {
+export type VolunteerItem = {
   /** Name of the organization. */
   organization: string
   /** Role or position held. */
@@ -510,7 +510,7 @@ type VolunteerItem = {
 /**
  * Contains a collection of volunteer experiences and community service.
  *
- * @see {@link volunteerSchema} for its schema constraints.
+ * @see VolunteerSchema for its schema constraints.
  */
 export type Volunteer = {
   /** A list of volunteer experiences. */
@@ -520,9 +520,9 @@ export type Volunteer = {
 /**
  * Represents a single work experience or employment position.
  *
- * @see {@link workItemSchema} for its schema constraints.
+ * @see WorkItemSchema for its schema constraints.
  */
-type WorkItem = {
+export type WorkItem = {
   /** Name of the company or employer. */
   name: string
   /** Job title or position held. */
@@ -557,7 +557,7 @@ type WorkItem = {
 /**
  * Contains a collection of work experiences and employment history.
  *
- * @see {@link workSchema} for its schema constraints.
+ * @see WorkSchema for its schema constraints.
  */
 export type Work = {
   /** A list of work experiences. */

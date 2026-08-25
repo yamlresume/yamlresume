@@ -23,6 +23,8 @@
  */
 
 export {
+  type ErrorCodeType,
+  type ErrorMessageParams,
   ErrorType,
   YAMLResumeError,
 } from './error'

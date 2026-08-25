@@ -33,7 +33,7 @@ import type { Margins, Sections } from './common'
 /**
  * Typography settings for DOCX layout.
  */
-type DocxTypography = {
+export type DocxTypography = {
   /** Font size option (e.g., '10pt', '11pt', '12pt'). */
   fontSize?: DocxFontSize
   /** Font family name (e.g., 'Arial', 'Times New Roman'). */
@@ -45,7 +45,7 @@ type DocxTypography = {
 /**
  * Defines advanced DOCX configuration options.
  */
-type DocxAdvanced = {
+export type DocxAdvanced = {
   /** Whether to show raw URLs or hide them behind reasonable text. */
   showUrls?: boolean
   /**
@@ -64,7 +64,7 @@ type DocxAdvanced = {
 /**
  * Defines DOCX page-level settings for document presentation.
  */
-type DocxPage = {
+export type DocxPage = {
   /** Whether to display page numbers. */
   showPageNumbers?: boolean
   /** Defines page margin settings for document layout. */

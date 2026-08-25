@@ -50,7 +50,7 @@ import {
 } from '@/models'
 
 /** Defines the structure for translated terms for a single language. */
-type OptionTranslation = {
+export type OptionTranslation = {
   /** Translations for country names. */
   countries: Record<Country, string>
   /** Translations for degree types. */

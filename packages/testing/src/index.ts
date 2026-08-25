@@ -30,6 +30,7 @@ export {
 export {
   createExecaResult,
   type ExecaResultOverrides,
+  type MockExecaResult,
 } from './execa'
 export { getFixture, loadFixture } from './fixture'
 export { createMockLogger, type MockLogger } from './logger'

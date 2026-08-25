@@ -207,7 +207,7 @@ The converter supports all standard JSON Resume sections:
 
 ## License
 
-MIT License - see [LICENSE](LICENSE) for details.
+MIT License - see [LICENSE](https://github.com/yamlresume/yamlresume/blob/main/LICENSE) for details.
 
 ## Contributing
 

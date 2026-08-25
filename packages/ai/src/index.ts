@@ -24,7 +24,7 @@
 
 export type { LanguageModel } from 'ai'
 export { generateText } from 'ai'
-export { AIResumeError } from './errors'
+export { AIResumeError, type AIResumeErrorCode } from './errors'
 export { generateResume } from './generate'
 export {
   type AIProvider,

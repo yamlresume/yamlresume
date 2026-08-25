@@ -24,4 +24,5 @@
 
 export { DocxCodeGenerator } from './docx'
 export { HtmlCodeGenerator } from './html'
+export type { CodeGenerationContext, CodeGenerator } from './interface'
 export { LatexCodeGenerator } from './latex'

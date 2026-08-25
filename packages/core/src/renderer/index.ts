@@ -22,7 +22,7 @@
  * IN THE SOFTWARE.
  */
 
-export { DocxRenderer } from './docx'
+export { CalmDocxRenderer, DocxRenderer } from './docx'
 export { HtmlRenderer } from './html'
 export {
   JakeRenderer,

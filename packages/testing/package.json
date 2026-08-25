@@ -35,7 +35,8 @@
     "build:prod": "tsup --dts --minify --sourcemap",
     "test": "vitest --run",
     "test:cov": "vitest --coverage --run",
-    "test:watch": "vitest"
+    "test:watch": "vitest",
+    "typedoc": "typedoc"
   },
   "dependencies": {
     "@yamlresume/core": "workspace:*",

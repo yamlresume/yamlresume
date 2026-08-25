@@ -36,6 +36,10 @@ export type {
   ParagraphNode,
   TextNode,
 } from './ast'
+export type {
+  CodeGenerationContext,
+  CodeGenerator,
+} from './codegen'
 export {
   DocxCodeGenerator,
   HtmlCodeGenerator,

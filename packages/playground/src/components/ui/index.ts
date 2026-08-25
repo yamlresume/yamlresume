@@ -26,7 +26,13 @@ export { Panel } from './Panel'
 export { PanelContent } from './PanelContent'
 export { PanelSeparator } from './PanelSeparator'
 export { PanelToolbar } from './PanelToolbar'
-export { ToolbarButton } from './ToolbarButton'
+export {
+  ToolbarButton,
+  type ToolbarButtonProps,
+} from './ToolbarButton'
 
-export { ToolbarCopyButton } from './ToolbarCopyButton'
+export {
+  ToolbarCopyButton,
+  type ToolbarCopyButtonProps,
+} from './ToolbarCopyButton'
 export { ToolbarSeparator } from './ToolbarSeparator'

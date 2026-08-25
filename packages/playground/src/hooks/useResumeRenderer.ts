@@ -45,7 +45,6 @@ export interface UseResumeRendererProps {
 /**
  * A React hook for rendering a resume using a specified layout.
  *
- * @description
  * This hook encapsulates the logic for:
  * - Selecting the appropriate layout from the resume's layouts array
  * - Determining the rendering engine (html, markdown, or latex)

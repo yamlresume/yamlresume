@@ -32,9 +32,11 @@ export {
   listSampleResumeTags,
 } from './query'
 export {
+  type LanguageContents,
   POSITIONS,
   type Position,
   type SampleCatalog,
   type SampleResumeEntry,
+  type SampleResumeI18nMeta,
   type SampleResumeMeta,
 } from './types'
