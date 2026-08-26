@@ -191,7 +191,7 @@ Then open http://localhost:5173.
 
 The resume editor provides completion, validation, and hover documentation via
 `monaco-yaml`, which runs the YAML language server in a Web Worker bundled from
-`src/workers/`. The worker wiring uses the standard
+`src/monaco/workers/`. The worker wiring uses the standard
 `new Worker(new URL(...), import.meta.url)` pattern, which Vite and webpack
 understand natively when building from source.
 

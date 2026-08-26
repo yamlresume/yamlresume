@@ -22,4 +22,9 @@
  * IN THE SOFTWARE.
  */
 
+// Import the loader setup for its side effect: it configures
+// @monaco-editor/react to use the locally bundled monaco-editor instead of the
+// CDN whenever this module is loaded.
+import './loader'
+
 export { configureYamlSupport } from './yaml'

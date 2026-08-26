@@ -24,18 +24,19 @@
 
 import { beforeEach, describe, expect, it, vi } from 'vitest'
 
-const loaderConfigMock = vi.fn()
-
-vi.mock('@monaco-editor/react', () => ({
-  loader: { config: loaderConfigMock },
-}))
-
 const configureMonacoYamlMock = vi.fn()
 
 vi.mock('monaco-yaml', () => ({
   configureMonacoYaml: (...args: unknown[]) => configureMonacoYamlMock(...args),
 }))
 
+/**
+ * Minimal Worker stand-in for unit tests.
+ *
+ * `setupMonacoWorkers()` constructs `new Worker(url, { type: 'module' })`. In
+ * jsdom `Worker` is undefined, so we substitute a fake class that captures the
+ * URL so tests can assert on it.
+ */
 class FakeWorker {
   url: URL | string
 
@@ -55,17 +56,9 @@ describe('yaml', async () => {
   const { configureYamlSupport } = await import('./yaml')
 
   beforeEach(() => {
-    // Only reset the configureMonacoYaml mock: the loader.config call happens
-    // once at module scope and must not be cleared.
     configureMonacoYamlMock.mockClear()
     host.Worker = FakeWorker
     delete host.MonacoEnvironment
-  })
-
-  it('configures the monaco loader to use the locally bundled monaco', () => {
-    expect(loaderConfigMock).toHaveBeenCalledWith(
-      expect.objectContaining({ monaco: expect.anything() })
-    )
   })
 
   it('configures completion, validation and hover against the resume schema', () => {

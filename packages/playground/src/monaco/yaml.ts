@@ -22,20 +22,11 @@
  * IN THE SOFTWARE.
  */
 
-import { loader, type Monaco } from '@monaco-editor/react'
+import type { Monaco } from '@monaco-editor/react'
 import { ResumeSchema } from '@yamlresume/core'
 import type { Environment } from 'monaco-editor'
-// Import the full monaco-editor main entry: it patches
-// `editor.createWebWorker` with support for `{ label, moduleId }` worker
-// descriptors, which monaco-yaml relies on.
-import * as monacoModule from 'monaco-editor'
 import { configureMonacoYaml } from 'monaco-yaml'
 import { z } from 'zod'
-
-// Use the locally bundled monaco-editor instead of loading it from a CDN, so
-// that the editor instance and the YAML language workers always share the
-// exact same version.
-loader.config({ monaco: monacoModule })
 
 const RESUME_SCHEMA_URI = 'https://yamlresume.dev/schema.json'
 
@@ -44,8 +35,18 @@ const resumeJsonSchema = z.toJSONSchema(ResumeSchema)
 let yamlConfigured = false
 
 /**
- * Provides Web Workers for Monaco: the YAML language worker backed by
- * `monaco-yaml`, and Monaco's default editor worker for everything else.
+ * Installs the Monaco environment worker provider.
+ *
+ * Monaco asks for workers through `self.MonacoEnvironment.getWorker(label)`.
+ * We return ES-module Web Workers created from local files. The URLs are
+ * relative to `import.meta.url`, which at runtime is the URL of the module
+ * containing this code.
+ *
+ * After tsup builds the package, this module becomes `dist/index.js`, so
+ * `./workers/editor.worker.js` resolves to `dist/workers/editor.worker.js`.
+ * The source files live under `src/monaco/workers/`, but tsup emits the
+ * compiled bundles at `dist/workers/` via the object-entry keys in
+ * `tsup.config.ts`.
  *
  * A host application can still install its own `MonacoEnvironment` before
  * importing this package; in that case its configuration takes precedence.
@@ -64,12 +65,12 @@ function setupMonacoWorkers(): void {
       switch (label) {
         case 'editorWorkerService':
           return new Worker(
-            new URL('../workers/editor.worker.ts', import.meta.url),
+            new URL('./workers/editor.worker.js', import.meta.url),
             { type: 'module' }
           )
         case 'yaml':
           return new Worker(
-            new URL('../workers/yaml.worker.ts', import.meta.url),
+            new URL('./workers/yaml.worker.js', import.meta.url),
             { type: 'module' }
           )
         default:
