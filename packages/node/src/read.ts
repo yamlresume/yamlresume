@@ -48,7 +48,7 @@ export interface PositionalError {
 /**
  * Options for reading a resume file.
  */
-export interface ReadResumeOptions {
+export interface ReadResumeFileOptions {
   // Optional flag to validate the resume against the schema. Defaults to true.
   validate?: boolean
 }
@@ -135,9 +135,9 @@ export function validateResume(
  * @returns The resume object.
  * @throws {Error} If the source file cannot be read or is invalid.
  */
-export function readResume(
+export function readResumeFile(
   resumePath: string,
-  options: ReadResumeOptions = {}
+  options: ReadResumeFileOptions = {}
 ): ReadResumeResult {
   const { validate = true } = options
 

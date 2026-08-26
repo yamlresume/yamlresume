@@ -25,7 +25,7 @@
 import chokidar from 'chokidar'
 import { coalesce } from 'coalescifn'
 
-import { type BuildResumeOptions, buildResume } from './build'
+import { type BuildResumeFileOptions, buildResumeFile } from './build'
 
 /**
  * Watch a resume source file and rebuild on changes.
@@ -39,15 +39,15 @@ import { type BuildResumeOptions, buildResume } from './build'
  * @param options - Build and watch options
  * @returns Chokidar watcher instance
  */
-export function watchResume(
+export function watchResumeFile(
   resumePath: string,
-  options: BuildResumeOptions = { pdf: true, validate: true }
+  options: BuildResumeFileOptions = { pdf: true, validate: true }
 ) {
   const { pdf, validate, output, logger } = options
 
   // there should be only one build running at a time
   const exclusiveBuild = coalesce(() =>
-    buildResume(resumePath, { pdf, validate, output, logger })
+    buildResumeFile(resumePath, { pdf, validate, output, logger })
   )
 
   // initial build

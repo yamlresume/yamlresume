@@ -22,7 +22,7 @@
  * IN THE SOFTWARE.
  */
 
-import { watchResume } from '@yamlresume/node'
+import { watchResumeFile } from '@yamlresume/node'
 import { getFixture } from '@yamlresume/testing'
 import type { Command } from 'commander'
 import {
@@ -40,17 +40,17 @@ vi.mock('@yamlresume/node', async () => {
   const actual = await vi.importActual('@yamlresume/node')
   return {
     ...actual,
-    watchResume: vi.fn(),
+    watchResumeFile: vi.fn(),
   }
 })
 
 describe(createDevCommand, () => {
   let devCommand: Command
-  let watchSpy: MockInstance<typeof watchResume>
+  let watchSpy: MockInstance<typeof watchResumeFile>
 
   beforeEach(() => {
     devCommand = createDevCommand()
-    watchSpy = vi.mocked(watchResume)
+    watchSpy = vi.mocked(watchResumeFile)
   })
 
   afterEach(() => {

@@ -42,8 +42,8 @@ import {
   vi,
 } from 'vitest'
 import which from 'which'
-import { buildResume, normalizeExtension } from './build'
-import { readResume } from './read'
+import { buildResumeFile, normalizeExtension } from './build'
+import { readResumeFile } from './read'
 import {
   getAuxPath,
   getPdfPath,
@@ -56,12 +56,12 @@ vi.mock('execa', () => ({
   execa: vi.fn(),
 }))
 
-// Mock readResume
+// Mock readResumeFile
 vi.mock('./read', async () => {
   const actual = await vi.importActual('./read')
   return {
     ...actual,
-    readResume: vi.fn((...args) => actual.readResume(...args)),
+    readResumeFile: vi.fn((...args) => actual.readResumeFile(...args)),
   }
 })
 
@@ -91,7 +91,7 @@ describe(normalizeExtension, () => {
   })
 })
 
-describe(buildResume, () => {
+describe(buildResumeFile, () => {
   let execSpy: MockedFunction<typeof execa>
   let _whichSpy: ReturnType<typeof vi.spyOn>
   let logger: ReturnType<typeof createMockLogger>
@@ -114,7 +114,7 @@ describe(buildResume, () => {
   it('should generate docx file', async () => {
     const resumePath = getFixture(__dirname, 'software-engineer.yml')
 
-    vi.mocked(readResume).mockReturnValue({
+    vi.mocked(readResumeFile).mockReturnValue({
       resume: {
         // @ts-expect-error
         content: {},
@@ -123,7 +123,7 @@ describe(buildResume, () => {
       validated: 'success',
     })
 
-    const result = await buildResume(resumePath, { logger })
+    const result = await buildResumeFile(resumePath, { logger })
 
     expect(execSpy).not.toBeCalled()
     expect(result.outputs).toHaveLength(1)
@@ -134,7 +134,7 @@ describe(buildResume, () => {
     const resumePath = getFixture(__dirname, 'software-engineer.yml')
     const texFile = inferOutput(resumePath)
 
-    const result = await buildResume(resumePath, { pdf: false, logger })
+    const result = await buildResumeFile(resumePath, { pdf: false, logger })
 
     expect(execSpy).toHaveBeenCalledTimes(0)
     expect(result.outputs).toContain(texFile)
@@ -145,7 +145,7 @@ describe(buildResume, () => {
     const texFile = inferOutput(resumePath)
     const pdfFile = getPdfPath(texFile)
 
-    const result = await buildResume(resumePath, { logger })
+    const result = await buildResumeFile(resumePath, { logger })
 
     expect(execSpy).toHaveBeenCalledTimes(1)
     expect(execSpy).toHaveBeenCalledWith(
@@ -192,7 +192,7 @@ describe(buildResume, () => {
       }
     })
 
-    await buildResume(resumePath, { logger })
+    await buildResumeFile(resumePath, { logger })
 
     expect(execSpy).toHaveBeenCalledTimes(2)
 
@@ -206,7 +206,7 @@ describe(buildResume, () => {
 
     fs.writeFileSync(auxPath, 'stable')
 
-    await buildResume(resumePath, { logger })
+    await buildResumeFile(resumePath, { logger })
 
     expect(execSpy).toHaveBeenCalledTimes(1)
 
@@ -218,7 +218,7 @@ describe(buildResume, () => {
 
     const resumePath = getFixture(__dirname, 'software-engineer.yml')
 
-    await expect(buildResume(resumePath, { logger })).rejects.toThrow(
+    await expect(buildResumeFile(resumePath, { logger })).rejects.toThrow(
       YAMLResumeError
     )
 
@@ -235,7 +235,7 @@ describe(buildResume, () => {
 
     const resumePath = getFixture(__dirname, 'software-engineer.yml')
 
-    await expect(buildResume(resumePath, { logger })).rejects.toThrow(
+    await expect(buildResumeFile(resumePath, { logger })).rejects.toThrow(
       YAMLResumeError
     )
 
@@ -250,7 +250,7 @@ describe(buildResume, () => {
 
     const resumePath = getFixture(__dirname, 'software-engineer.yml')
 
-    await expect(buildResume(resumePath, { logger })).rejects.toThrow(
+    await expect(buildResumeFile(resumePath, { logger })).rejects.toThrow(
       YAMLResumeError
     )
 
@@ -261,7 +261,7 @@ describe(buildResume, () => {
     const resumePath = getFixture(__dirname, 'software-engineer.yml')
     const texFile = inferOutput(resumePath)
 
-    await buildResume(resumePath, { timeout: 0, logger })
+    await buildResumeFile(resumePath, { timeout: 0, logger })
 
     expect(execSpy).toHaveBeenCalledWith(
       'xelatex',
@@ -279,7 +279,7 @@ describe(buildResume, () => {
     const resumePath = getFixture(__dirname, 'software-engineer.yml')
     const texFile = inferOutput(resumePath, outputDir)
 
-    const result = await buildResume(resumePath, {
+    const result = await buildResumeFile(resumePath, {
       pdf: true,
       output: outputDir,
       logger,
@@ -302,7 +302,7 @@ describe(buildResume, () => {
   it('should use multiple layouts when provided', async () => {
     const resumePath = getFixture(__dirname, 'software-engineer.yml')
 
-    vi.mocked(readResume).mockReturnValue({
+    vi.mocked(readResumeFile).mockReturnValue({
       resume: {
         // @ts-expect-error
         content: {},
@@ -314,7 +314,7 @@ describe(buildResume, () => {
       validated: 'success',
     })
 
-    const result = await buildResume(resumePath, { logger })
+    const result = await buildResumeFile(resumePath, { logger })
 
     expect(execSpy).toHaveBeenCalledTimes(2)
     expect(result.outputs).toHaveLength(4) // 2 tex + 2 pdf
@@ -323,7 +323,7 @@ describe(buildResume, () => {
   it('should fallback to default layout if resume has no layouts', async () => {
     const resumePath = getFixture(__dirname, 'software-engineer.yml')
 
-    vi.mocked(readResume).mockReturnValue({
+    vi.mocked(readResumeFile).mockReturnValue({
       resume: {
         // @ts-expect-error
         content: {},
@@ -332,7 +332,7 @@ describe(buildResume, () => {
       validated: 'success',
     })
 
-    const result = await buildResume(resumePath, { logger })
+    const result = await buildResumeFile(resumePath, { logger })
 
     expect(execSpy).toHaveBeenCalledTimes(1)
     expect(result.outputs.length).toBeGreaterThan(0)
@@ -344,7 +344,7 @@ describe(buildResume, () => {
       throw new Error('Write error')
     })
 
-    await expect(buildResume(resumePath, { logger })).rejects.toThrow(
+    await expect(buildResumeFile(resumePath, { logger })).rejects.toThrow(
       YAMLResumeError
     )
 
@@ -359,7 +359,7 @@ describe(buildResume, () => {
       fs.rmSync(outputDir, { recursive: true })
     }
 
-    await buildResume(resumePath, { pdf: false, output: outputDir, logger })
+    await buildResumeFile(resumePath, { pdf: false, output: outputDir, logger })
 
     expect(fs.existsSync(outputDir)).toBe(true)
 
@@ -369,7 +369,7 @@ describe(buildResume, () => {
   it('should continue building when schema validation fails', async () => {
     const resumePath = getFixture(__dirname, 'software-engineer.yml')
 
-    vi.mocked(readResume).mockReturnValue({
+    vi.mocked(readResumeFile).mockReturnValue({
       // @ts-expect-error
       resume: {
         content: {
@@ -388,7 +388,7 @@ describe(buildResume, () => {
       ],
     })
 
-    const result = await buildResume(resumePath, { logger })
+    const result = await buildResumeFile(resumePath, { logger })
 
     expect(result.outputs).toHaveLength(1)
     expect(logger.warn).toHaveBeenCalled()

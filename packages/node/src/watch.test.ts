@@ -34,7 +34,7 @@ import {
   vi,
 } from 'vitest'
 import * as build from './build'
-import { watchResume } from './watch'
+import { watchResumeFile } from './watch'
 
 // Shared helpers to reduce duplication across suites
 type Handlers = Record<string, Array<(path?: string) => void>>
@@ -60,18 +60,18 @@ function installChokidarWatchSpy(handlers: Handlers) {
     )
 }
 
-describe(watchResume, () => {
+describe(watchResumeFile, () => {
   const resumePath = getFixture(__dirname, 'software-engineer.yml')
-  let buildResumeSpy: MockInstance<typeof build.buildResume>
+  let buildResumeFileSpy: MockInstance<typeof build.buildResumeFile>
   let logger: ReturnType<typeof createMockLogger>
   let chokidarWatchSpy: MockInstance<typeof chokidar.watch>
   let handlers: Handlers
 
   beforeEach(() => {
     logger = createMockLogger()
-    buildResumeSpy = vi
-      .spyOn(build, 'buildResume')
-      .mockImplementation(vi.fn() as unknown as typeof build.buildResume)
+    buildResumeFileSpy = vi
+      .spyOn(build, 'buildResumeFile')
+      .mockImplementation(vi.fn() as unknown as typeof build.buildResumeFile)
 
     handlers = {
       change: [],
@@ -85,7 +85,7 @@ describe(watchResume, () => {
   })
 
   it('should perform initial build and start watching', () => {
-    const watcher = watchResume(resumePath, {
+    const watcher = watchResumeFile(resumePath, {
       pdf: false,
       validate: true,
       output: '/tmp/foo',
@@ -93,8 +93,8 @@ describe(watchResume, () => {
     })
 
     // initial build
-    expect(buildResumeSpy).toHaveBeenCalledTimes(1)
-    expect(buildResumeSpy).toHaveBeenCalledWith(resumePath, {
+    expect(buildResumeFileSpy).toHaveBeenCalledTimes(1)
+    expect(buildResumeFileSpy).toHaveBeenCalledWith(resumePath, {
       pdf: false,
       validate: true,
       output: '/tmp/foo',
@@ -107,30 +107,30 @@ describe(watchResume, () => {
     for (const h of handlers.change) {
       h('software-engineer.yml')
     }
-    expect(buildResumeSpy).toHaveBeenCalledTimes(2)
+    expect(buildResumeFileSpy).toHaveBeenCalledTimes(2)
 
     // cleanup
     watcher.close()
   })
 
   it('should trigger on add events (atomic saves)', () => {
-    watchResume(resumePath, { pdf: true, validate: true, logger })
+    watchResumeFile(resumePath, { pdf: true, validate: true, logger })
 
-    expect(buildResumeSpy).toHaveBeenCalledTimes(1) // initial build
+    expect(buildResumeFileSpy).toHaveBeenCalledTimes(1) // initial build
 
     // Simulate add event to reflect atomic save behavior with chokidar
     for (const h of handlers.add) {
       h('software-engineer.yml')
     }
-    expect(buildResumeSpy).toHaveBeenCalledTimes(2) // triggered by add
+    expect(buildResumeFileSpy).toHaveBeenCalledTimes(2) // triggered by add
   })
 
   it('should coalesce events during a build into a single follow-up build', () => {
     // initial build (no events since watcher not yet registered)
-    buildResumeSpy.mockImplementationOnce(() => {})
+    buildResumeFileSpy.mockImplementationOnce(() => {})
 
     // second call: during active build, emit multiple events → one follow-up
-    buildResumeSpy.mockImplementationOnce(() => {
+    buildResumeFileSpy.mockImplementationOnce(() => {
       for (const h of handlers.change) {
         h('software-engineer.yml')
       }
@@ -142,7 +142,7 @@ describe(watchResume, () => {
       }
     })
 
-    watchResume(resumePath, { pdf: true, validate: true, logger })
+    watchResumeFile(resumePath, { pdf: true, validate: true, logger })
 
     // trigger the second build
     for (const h of handlers.change) {
@@ -150,16 +150,16 @@ describe(watchResume, () => {
     }
 
     // Calls: 1 (initial) + 1 (triggered) + 1 (coalesced follow-up) = 3
-    expect(buildResumeSpy).toHaveBeenCalledTimes(3)
+    expect(buildResumeFileSpy).toHaveBeenCalledTimes(3)
   })
 
   it('should throw when initial build fails', () => {
-    buildResumeSpy.mockImplementationOnce(() => {
+    buildResumeFileSpy.mockImplementationOnce(() => {
       throw new Error('boom')
     })
 
     expect(() =>
-      watchResume(resumePath, { pdf: true, validate: true, logger })
+      watchResumeFile(resumePath, { pdf: true, validate: true, logger })
     ).toThrow('boom')
 
     expect(logger.start).not.toBeCalled()

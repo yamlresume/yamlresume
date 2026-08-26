@@ -24,7 +24,7 @@
 
 import { AIResumeError } from '@yamlresume/ai'
 import { ErrorType, YAMLResumeError } from '@yamlresume/core'
-import { generateResume } from '@yamlresume/node'
+import { generateResumeFile } from '@yamlresume/node'
 import { spyOnConsola } from '@yamlresume/testing'
 import type { Command } from 'commander'
 import { consola } from 'consola'
@@ -44,7 +44,7 @@ vi.mock('@yamlresume/node', async () => {
   const actual = await vi.importActual('@yamlresume/node')
   return {
     ...actual,
-    generateResume: vi.fn(),
+    generateResumeFile: vi.fn(),
   }
 })
 
@@ -77,7 +77,7 @@ function resetMockSpinner() {
 
 describe(createGenerateCommand, () => {
   let generateCommand: Command
-  let generateSpy: MockedFunction<typeof generateResume>
+  let generateSpy: MockedFunction<typeof generateResumeFile>
   let processExitSpy: ReturnType<typeof vi.spyOn>
   let _stderrWriteSpy: ReturnType<typeof vi.spyOn>
 
@@ -87,7 +87,7 @@ describe(createGenerateCommand, () => {
     resetMockSpinner()
     generateCommand = createGenerateCommand()
     generateSpy = vi
-      .mocked(generateResume)
+      .mocked(generateResumeFile)
       .mockImplementation(async (filename, _position, _language, options) => {
         options?.logger?.success(`Generated ${filename} successfully.`)
       })
@@ -201,7 +201,7 @@ describe(createGenerateCommand, () => {
     )
   })
 
-  it('should pass --model and --base-url flags to generateResume', async () => {
+  it('should pass --model and --base-url flags to generateResumeFile', async () => {
     await generateCommand.parseAsync([
       'yamlresume',
       'generate',
@@ -228,7 +228,7 @@ describe(createGenerateCommand, () => {
     expect(consolaSpies.success).toHaveBeenCalledTimes(1)
   })
 
-  it('should pass --retry flag to generateResume', async () => {
+  it('should pass --retry flag to generateResumeFile', async () => {
     await generateCommand.parseAsync([
       'yamlresume',
       'generate',

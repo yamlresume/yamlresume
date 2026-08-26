@@ -24,7 +24,7 @@
 
 import fs from 'node:fs'
 import { ErrorType, YAMLResumeError } from '@yamlresume/core'
-import { readResume } from '@yamlresume/node'
+import { readResumeFile } from '@yamlresume/node'
 import { getFixture, spyOnConsola } from '@yamlresume/testing'
 import {
   afterEach,
@@ -41,19 +41,19 @@ vi.mock('@yamlresume/node', async () => {
   const actual = await vi.importActual('@yamlresume/node')
   return {
     ...actual,
-    readResume: vi.fn(),
+    readResumeFile: vi.fn(),
   }
 })
 
 describe(createValidateCommand, () => {
-  let readSpy: MockedFunction<typeof readResume>
+  let readSpy: MockedFunction<typeof readResumeFile>
   let consolaSpies: ReturnType<
     typeof spyOnConsola<'success' | 'fail' | 'error' | 'log'>
   >
 
   beforeEach(() => {
     vi.clearAllMocks()
-    readSpy = vi.mocked(readResume).mockReturnValue({
+    readSpy = vi.mocked(readResumeFile).mockReturnValue({
       // @ts-expect-error
       resume: {},
       validated: 'success',

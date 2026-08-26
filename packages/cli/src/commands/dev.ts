@@ -22,7 +22,7 @@
  * IN THE SOFTWARE.
  */
 
-import { watchResume } from '@yamlresume/node'
+import { watchResumeFile } from '@yamlresume/node'
 import { Command } from 'commander'
 import { consola } from 'consola'
 
@@ -42,7 +42,7 @@ export function createDevCommand() {
         resumePath: string,
         options: { pdf: boolean; validate: boolean; output?: string }
       ) => {
-        watchResume(resumePath, { ...options, logger: consola })
+        watchResumeFile(resumePath, { ...options, logger: consola })
       }
     )
 }

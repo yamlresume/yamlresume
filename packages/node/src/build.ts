@@ -32,13 +32,13 @@ import {
   type Resume,
   YAMLResumeError,
 } from '@yamlresume/core'
-import { readResume } from './read'
+import { readResumeFile } from './read'
 import { compileLaTeX, getPdfPath, LATEX_COMPILE_TIMEOUT } from './utils'
 
 /**
  * Options for building resume outputs.
  */
-export interface BuildResumeOptions {
+export interface BuildResumeFileOptions {
   // Whether to generate PDF output from LaTeX. Defaults to true.
   pdf?: boolean
   // Whether to validate the resume against the schema before building. Defaults
@@ -173,9 +173,9 @@ async function generateOutput(
  * output directory, and LaTeX compilation timeout.
  * @returns The list of generated output file paths.
  */
-export async function buildResume(
+export async function buildResumeFile(
   resumePath: string,
-  options: BuildResumeOptions = {}
+  options: BuildResumeFileOptions = {}
 ): Promise<BuildResumeResult> {
   const {
     pdf = true,
@@ -184,7 +184,7 @@ export async function buildResume(
     logger,
   } = options
 
-  const { resume, validated, errors } = readResume(resumePath, { validate })
+  const { resume, validated, errors } = readResumeFile(resumePath, { validate })
 
   if (validated === 'failed' && errors) {
     logger?.warn(

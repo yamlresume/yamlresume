@@ -23,10 +23,7 @@
  */
 
 import fs from 'node:fs'
-import {
-  generateResume as generateResumeWithAI,
-  getModelFromEnv,
-} from '@yamlresume/ai'
+import { generateResume, getModelFromEnv } from '@yamlresume/ai'
 import {
   getErrorMessage,
   joinNonEmptyString,
@@ -40,7 +37,7 @@ import {
 /**
  * Options for generating a resume with AI.
  */
-export interface GenerateResumeOptions {
+export interface GenerateResumeFileOptions {
   // Optional settings for generating a resume with AI.
   model?: string
   // Optional base URL for the AI service.
@@ -75,20 +72,20 @@ export function validateLocaleLanguage(
 /**
  * Generate a new resume file with AI for a given position and language.
  *
- * @param filename - The output resume file path.
+ * @param resumePath - The output resume file path.
  * @param position - The target position or job title.
  * @param language - The target locale language.
  * @param options - Optional model, base URL, retry and callback settings.
  * @throws {YAMLResumeError} When the file already exists or writing fails.
  */
-export async function generateResume(
-  filename: string,
+export async function generateResumeFile(
+  resumePath: string,
   position: string,
   language: string,
-  options: GenerateResumeOptions = {}
+  options: GenerateResumeFileOptions = {}
 ): Promise<void> {
-  if (fs.existsSync(filename)) {
-    throw new YAMLResumeError('FILE_CONFLICT', { path: filename })
+  if (fs.existsSync(resumePath)) {
+    throw new YAMLResumeError('FILE_CONFLICT', { path: resumePath })
   }
 
   validateLocaleLanguage(language)
@@ -99,7 +96,7 @@ export async function generateResume(
 
   let content: string
   try {
-    content = await generateResumeWithAI({
+    content = await generateResume({
       position,
       language,
       model: getModelFromEnv({
@@ -120,8 +117,8 @@ export async function generateResume(
   }
 
   try {
-    fs.writeFileSync(filename, content)
-    logger?.success(`Generated ${filename} successfully.`)
+    fs.writeFileSync(resumePath, content)
+    logger?.success(`Generated ${resumePath} successfully.`)
   } catch (error) {
     logger?.debug(
       joinNonEmptyString([
@@ -129,6 +126,6 @@ export async function generateResume(
         toCodeBlock(getErrorMessage(error)),
       ])
     )
-    throw new YAMLResumeError('FILE_WRITE_ERROR', { path: filename })
+    throw new YAMLResumeError('FILE_WRITE_ERROR', { path: resumePath })
   }
 }

@@ -26,9 +26,9 @@ import fs from 'node:fs'
 import { YAMLResumeError } from '@yamlresume/core'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 
-import { newResume } from './new'
+import { newResumeFile } from './new'
 
-describe(newResume, () => {
+describe(newResumeFile, () => {
   let existsSyncSpy: ReturnType<typeof vi.spyOn>
   let writeFileSyncSpy: ReturnType<typeof vi.spyOn>
 
@@ -42,7 +42,7 @@ describe(newResume, () => {
   })
 
   it('should create a resume from a sample', () => {
-    newResume('resume.yml', 'software-engineer', 'en')
+    newResumeFile('resume.yml', 'software-engineer', 'en')
 
     expect(writeFileSyncSpy).toHaveBeenCalledTimes(1)
     const writtenContent = writeFileSyncSpy.mock.calls[0][1] as string
@@ -52,7 +52,7 @@ describe(newResume, () => {
   })
 
   it('should support a custom language', () => {
-    newResume('resume.yml', 'software-engineer', 'zh-hans')
+    newResumeFile('resume.yml', 'software-engineer', 'zh-hans')
 
     expect(writeFileSyncSpy).toHaveBeenCalledTimes(1)
     const writtenContent = writeFileSyncSpy.mock.calls[0][1] as string
@@ -64,7 +64,7 @@ describe(newResume, () => {
   it('should show the sample source when requested', () => {
     const logger = { success: vi.fn() }
 
-    newResume('resume.yml', 'software-engineer', 'en', {
+    newResumeFile('resume.yml', 'software-engineer', 'en', {
       showSampleSource: true,
       logger,
     })
@@ -77,15 +77,15 @@ describe(newResume, () => {
   it('should not create a resume if file already exists', () => {
     existsSyncSpy.mockReturnValue(true)
 
-    expect(() => newResume('resume.yml', 'software-engineer', 'en')).toThrow(
-      YAMLResumeError
-    )
+    expect(() =>
+      newResumeFile('resume.yml', 'software-engineer', 'en')
+    ).toThrow(YAMLResumeError)
 
     expect(writeFileSyncSpy).not.toBeCalled()
   })
 
   it('should throw for an invalid sample', () => {
-    expect(() => newResume('resume.yml', 'not-a-sample', 'en')).toThrow(
+    expect(() => newResumeFile('resume.yml', 'not-a-sample', 'en')).toThrow(
       'Sample resume not found: not-a-sample'
     )
     expect(writeFileSyncSpy).not.toBeCalled()
@@ -93,7 +93,7 @@ describe(newResume, () => {
 
   it('should throw for an unsupported language', () => {
     expect(() =>
-      newResume('resume.yml', 'software-engineer', 'ko' as 'en')
+      newResumeFile('resume.yml', 'software-engineer', 'ko' as 'en')
     ).toThrow('Language "ko" is not available for sample "software-engineer"')
     expect(writeFileSyncSpy).not.toBeCalled()
   })
@@ -106,7 +106,7 @@ describe(newResume, () => {
     const logger = { debug: vi.fn() }
 
     expect(() =>
-      newResume('resume.yml', 'software-engineer', 'en', { logger })
+      newResumeFile('resume.yml', 'software-engineer', 'en', { logger })
     ).toThrow(YAMLResumeError)
 
     expect(writeFileSyncSpy).toHaveBeenCalledTimes(1)
@@ -121,7 +121,7 @@ describe(newResume, () => {
     const logger = { debug: vi.fn() }
 
     expect(() =>
-      newResume('resume.yml', 'software-engineer', 'en', { logger })
+      newResumeFile('resume.yml', 'software-engineer', 'en', { logger })
     ).toThrow(YAMLResumeError)
 
     expect(writeFileSyncSpy).toHaveBeenCalledTimes(1)

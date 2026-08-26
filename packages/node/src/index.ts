@@ -23,21 +23,21 @@
  */
 
 export {
-  type BuildResumeOptions,
+  type BuildResumeFileOptions,
   type BuildResumeResult,
-  buildResume,
+  buildResumeFile,
 } from './build'
-export { type GenerateResumeOptions, generateResume } from './generate'
+export { type GenerateResumeFileOptions, generateResumeFile } from './generate'
 export {
-  type NewResumeOptions,
-  newResume,
+  type NewResumeFileOptions,
+  newResumeFile,
 } from './new'
 export {
   type PositionalError,
-  type ReadResumeOptions,
+  type ReadResumeFileOptions,
   type ReadResumeResult,
-  readResume,
+  readResumeFile,
   validateResume,
 } from './read'
 export { LATEX_COMPILE_TIMEOUT } from './utils'
-export { watchResume } from './watch'
+export { watchResumeFile } from './watch'

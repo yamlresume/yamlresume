@@ -25,9 +25,9 @@
 import fs from 'node:fs'
 import { joinNonEmptyString, YAMLResumeError } from '@yamlresume/core'
 import {
-  buildResume,
+  buildResumeFile,
   LATEX_COMPILE_TIMEOUT,
-  readResume,
+  readResumeFile,
 } from '@yamlresume/node'
 import { Command } from 'commander'
 import { consola } from 'consola'
@@ -101,7 +101,7 @@ export function createBuildCommand() {
         }
       ) => {
         try {
-          const { validated, errors } = readResume(resumePath, {
+          const { validated, errors } = readResumeFile(resumePath, {
             validate: options.validate,
           })
 
@@ -114,7 +114,7 @@ export function createBuildCommand() {
             }
           }
 
-          await buildResume(resumePath, {
+          await buildResumeFile(resumePath, {
             ...options,
             validate: false,
             logger: consola,

@@ -16,10 +16,10 @@ npm install @yamlresume/node
 ## Usage
 
 ```typescript
-import { buildResume, readResume } from '@yamlresume/node'
+import { buildResumeFile, readResumeFile } from '@yamlresume/node'
 
-const { resume, validated } = readResume('resume.yaml')
-const { outputs } = await buildResume('resume.yaml')
+const { resume, validated } = readResumeFile('resume.yaml')
+const { outputs } = await buildResumeFile('resume.yaml')
 ```
 
 For command-line usage, see the
@@ -27,12 +27,12 @@ For command-line usage, see the
 
 ## API
 
-### `readResume`
+### `readResumeFile`
 
 ```typescript
-function readResume(
+function readResumeFile(
   resumePath: string,
-  options?: ReadResumeOptions
+  options?: ReadResumeFileOptions
 ): ReadResumeResult
 ```
 
@@ -42,7 +42,7 @@ validation status (`'success' | 'failed' | 'unknown'`), and positional errors
 with line and column numbers if validation failed.
 
 ```typescript
-const { resume, validated, errors } = readResume('resume.yaml')
+const { resume, validated, errors } = readResumeFile('resume.yaml')
 
 if (validated === 'failed') {
   for (const error of errors ?? []) {
@@ -63,12 +63,12 @@ function validateResume(
 Validate a raw YAML string against the resume schema. Returns positional
 errors sorted by line number, or an empty array if validation succeeds.
 
-### `buildResume`
+### `buildResumeFile`
 
 ```typescript
-function buildResume(
+function buildResumeFile(
   resumePath: string,
-  options?: BuildResumeOptions
+  options?: BuildResumeFileOptions
 ): Promise<BuildResumeResult>
 ```
 
@@ -79,37 +79,37 @@ LaTeX compilation timeout, and an optional logger. Returns the list of
 generated file paths.
 
 ```typescript
-const { outputs } = await buildResume('resume.yaml', {
+const { outputs } = await buildResumeFile('resume.yaml', {
   pdf: true,
   output: 'dist',
 })
 ```
 
-### `newResume`
+### `newResumeFile`
 
 ```typescript
-function newResume(
-  filename: string,
+function newResumeFile(
+  resumePath: string,
   sampleId: string,
   language: LocaleLanguage,
-  options?: NewResumeOptions
+  options?: NewResumeFileOptions
 ): void
 ```
 
 Create a new resume file from a curated sample resume.
 
 ```typescript
-newResume('resume.yaml', 'software-engineer', 'en')
+newResumeFile('resume.yaml', 'software-engineer', 'en')
 ```
 
-### `generateResume`
+### `generateResumeFile`
 
 ```typescript
-async function generateResume(
-  filename: string,
+async function generateResumeFile(
+  resumePath: string,
   position: string,
   language: string,
-  options?: GenerateResumeOptions
+  options?: GenerateResumeFileOptions
 ): Promise<void>
 ```
 
@@ -117,12 +117,12 @@ Generate a new resume file with AI for a given position and language.
 Supports model selection, retries, streaming chunks via callback, and an
 optional logger.
 
-### `watchResume`
+### `watchResumeFile`
 
 ```typescript
-function watchResume(
+function watchResumeFile(
   resumePath: string,
-  options?: BuildResumeOptions
+  options?: BuildResumeFileOptions
 ): chokidar.Watcher
 ```
 
@@ -138,7 +138,7 @@ so you can catch and inspect them uniformly:
 import { YAMLResumeError } from '@yamlresume/core'
 
 try {
-  await buildResume('missing.yaml')
+  await buildResumeFile('missing.yaml')
 } catch (error) {
   if (error instanceof YAMLResumeError) {
     console.error(error.code, error.message)

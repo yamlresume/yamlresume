@@ -23,7 +23,7 @@
  */
 
 import { ErrorType, YAMLResumeError } from '@yamlresume/core'
-import { newResume } from '@yamlresume/node'
+import { newResumeFile } from '@yamlresume/node'
 import { spyOnConsola } from '@yamlresume/testing'
 import type { Command } from 'commander'
 import { consola } from 'consola'
@@ -35,20 +35,20 @@ vi.mock('@yamlresume/node', async () => {
   const actual = await vi.importActual('@yamlresume/node')
   return {
     ...actual,
-    newResume: vi.fn(),
+    newResumeFile: vi.fn(),
   }
 })
 
 describe(createNewCommand, () => {
   let newCommand: Command
-  let newResumeSpy: ReturnType<typeof vi.mocked<typeof newResume>>
+  let newResumeSpy: ReturnType<typeof vi.mocked<typeof newResumeFile>>
   let processExitSpy: ReturnType<typeof vi.spyOn>
 
   let consolaSpies: ReturnType<typeof spyOnConsola<'error'>>
 
   beforeEach(() => {
     newCommand = createNewCommand()
-    newResumeSpy = vi.mocked(newResume).mockImplementation(vi.fn())
+    newResumeSpy = vi.mocked(newResumeFile).mockImplementation(vi.fn())
     consolaSpies = spyOnConsola('error')
 
     processExitSpy = vi

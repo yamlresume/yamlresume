@@ -25,9 +25,9 @@
 import fs from 'node:fs'
 import { ErrorType, YAMLResumeError } from '@yamlresume/core'
 import {
-  buildResume,
+  buildResumeFile,
   LATEX_COMPILE_TIMEOUT,
-  readResume,
+  readResumeFile,
 } from '@yamlresume/node'
 import { getFixture, spyOnConsola } from '@yamlresume/testing'
 import type { Command } from 'commander'
@@ -47,22 +47,22 @@ vi.mock('@yamlresume/node', async (importOriginal) => {
   const actual = await importOriginal<typeof import('@yamlresume/node')>()
   return {
     ...actual,
-    buildResume: vi.fn(),
-    readResume: vi.fn(),
+    buildResumeFile: vi.fn(),
+    readResumeFile: vi.fn(),
   }
 })
 
 describe(createBuildCommand, () => {
   let buildCommand: Command
-  let buildSpy: MockedFunction<typeof buildResume>
-  let readSpy: MockedFunction<typeof readResume>
+  let buildSpy: MockedFunction<typeof buildResumeFile>
+  let readSpy: MockedFunction<typeof readResumeFile>
   let consolaSpies: ReturnType<typeof spyOnConsola<'error' | 'log'>>
 
   beforeEach(() => {
     vi.clearAllMocks()
     buildCommand = createBuildCommand()
-    buildSpy = vi.mocked(buildResume).mockResolvedValue({ outputs: [] })
-    readSpy = vi.mocked(readResume).mockReturnValue({
+    buildSpy = vi.mocked(buildResumeFile).mockResolvedValue({ outputs: [] })
+    readSpy = vi.mocked(readResumeFile).mockReturnValue({
       // @ts-expect-error
       resume: {},
       validated: 'success',
@@ -175,7 +175,7 @@ describe(createBuildCommand, () => {
 
     vi.spyOn(fs, 'readFileSync').mockReturnValue(resumeStr)
 
-    vi.mocked(readResume).mockReturnValue({
+    vi.mocked(readResumeFile).mockReturnValue({
       // @ts-expect-error
       resume: {},
       validated: 'failed',

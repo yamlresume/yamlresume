@@ -28,7 +28,7 @@ import { AIResumeError, getModelFromEnv } from '@yamlresume/ai'
 import { ErrorType, YAMLResumeError } from '@yamlresume/core'
 import { createMockLogger } from '@yamlresume/testing'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
-import { generateResume } from './generate'
+import { generateResumeFile } from './generate'
 
 vi.mock('@yamlresume/ai', () => ({
   generateResume: vi.fn(),
@@ -45,7 +45,7 @@ vi.mock('@yamlresume/ai', () => ({
 
 import { generateResume as generateResumeWithAI } from '@yamlresume/ai'
 
-describe(generateResume, () => {
+describe(generateResumeFile, () => {
   let existsSync: ReturnType<typeof vi.spyOn>
   let writeFileSync: ReturnType<typeof vi.spyOn>
   let logger: ReturnType<typeof createMockLogger>
@@ -66,7 +66,7 @@ describe(generateResume, () => {
   })
 
   it('should generate a resume file', async () => {
-    await generateResume('my-resume.yml', 'Nurse', 'en', { logger })
+    await generateResumeFile('my-resume.yml', 'Nurse', 'en', { logger })
 
     expect(logger.start).toHaveBeenCalledWith('Generating resume...')
     expect(getModelFromEnv).toHaveBeenCalledTimes(1)
@@ -89,7 +89,7 @@ describe(generateResume, () => {
   })
 
   it('should pass model and base URL overrides to getModelFromEnv', async () => {
-    await generateResume('my-resume.yml', 'Nurse', 'en', {
+    await generateResumeFile('my-resume.yml', 'Nurse', 'en', {
       model: 'gpt-5',
       baseURL: 'https://custom.example.com/v1',
       logger,
@@ -102,8 +102,8 @@ describe(generateResume, () => {
     })
   })
 
-  it('should pass maxRetries override to generateResume', async () => {
-    await generateResume('my-resume.yml', 'Nurse', 'en', {
+  it('should pass maxRetries override to generateResumeFile', async () => {
+    await generateResumeFile('my-resume.yml', 'Nurse', 'en', {
       maxRetries: 5,
       logger,
     })
@@ -118,8 +118,8 @@ describe(generateResume, () => {
     )
   })
 
-  it('should not pass maxRetries to generateResume when omitted', async () => {
-    await generateResume('my-resume.yml', 'Nurse', 'en', { logger })
+  it('should not pass maxRetries to generateResumeFile when omitted', async () => {
+    await generateResumeFile('my-resume.yml', 'Nurse', 'en', { logger })
 
     expect(generateResumeWithAI).toHaveBeenCalledWith(
       expect.objectContaining({
@@ -134,11 +134,11 @@ describe(generateResume, () => {
     existsSync.mockReturnValue(true)
 
     await expect(
-      generateResume('my-resume.yml', 'Nurse', 'en', { logger })
+      generateResumeFile('my-resume.yml', 'Nurse', 'en', { logger })
     ).rejects.toThrow(YAMLResumeError)
 
     try {
-      await generateResume('my-resume.yml', 'Nurse', 'en', { logger })
+      await generateResumeFile('my-resume.yml', 'Nurse', 'en', { logger })
     } catch (error) {
       expect(error).toBeInstanceOf(YAMLResumeError)
       expect(error.code).toBe('FILE_CONFLICT')
@@ -152,11 +152,11 @@ describe(generateResume, () => {
 
   it('should throw an invalid language error for unsupported locales', async () => {
     await expect(
-      generateResume('my-resume.yml', 'Nurse', 'klingon', { logger })
+      generateResumeFile('my-resume.yml', 'Nurse', 'klingon', { logger })
     ).rejects.toThrow(YAMLResumeError)
 
     try {
-      await generateResume('my-resume.yml', 'Nurse', 'klingon', { logger })
+      await generateResumeFile('my-resume.yml', 'Nurse', 'klingon', { logger })
     } catch (error) {
       expect(error).toBeInstanceOf(YAMLResumeError)
       expect(error.code).toBe('INVALID_LANGUAGE')
@@ -174,11 +174,11 @@ describe(generateResume, () => {
     })
 
     await expect(
-      generateResume('my-resume.yml', 'Nurse', 'en', { logger })
+      generateResumeFile('my-resume.yml', 'Nurse', 'en', { logger })
     ).rejects.toThrow(YAMLResumeError)
 
     try {
-      await generateResume('my-resume.yml', 'Nurse', 'en', { logger })
+      await generateResumeFile('my-resume.yml', 'Nurse', 'en', { logger })
     } catch (error) {
       expect(error).toBeInstanceOf(YAMLResumeError)
       expect(error.code).toBe('FILE_WRITE_ERROR')
@@ -192,7 +192,7 @@ describe(generateResume, () => {
     })
 
     await expect(
-      generateResume('my-resume.yml', 'Nurse', 'en', { logger })
+      generateResumeFile('my-resume.yml', 'Nurse', 'en', { logger })
     ).rejects.toThrow(YAMLResumeError)
   })
 
@@ -202,7 +202,7 @@ describe(generateResume, () => {
     )
 
     await expect(
-      generateResume('my-resume.yml', 'Nurse', 'en', { logger })
+      generateResumeFile('my-resume.yml', 'Nurse', 'en', { logger })
     ).rejects.toThrow(AIResumeError)
   })
 
@@ -210,14 +210,17 @@ describe(generateResume, () => {
     vi.mocked(generateResumeWithAI).mockRejectedValue('AI failed')
 
     await expect(
-      generateResume('my-resume.yml', 'Nurse', 'en', { logger })
+      generateResumeFile('my-resume.yml', 'Nurse', 'en', { logger })
     ).rejects.toBe('AI failed')
   })
 
   it('should call onChunk for streamed text', async () => {
     const onChunk = vi.fn()
 
-    await generateResume('my-resume.yml', 'Nurse', 'en', { onChunk, logger })
+    await generateResumeFile('my-resume.yml', 'Nurse', 'en', {
+      onChunk,
+      logger,
+    })
 
     expect(onChunk).toHaveBeenCalledTimes(2)
     expect(onChunk).toHaveBeenNthCalledWith(1, 'Hello')

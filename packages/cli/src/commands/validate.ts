@@ -24,7 +24,7 @@
 
 import fs from 'node:fs'
 import { YAMLResumeError } from '@yamlresume/core'
-import { readResume } from '@yamlresume/node'
+import { readResumeFile } from '@yamlresume/node'
 import { Command } from 'commander'
 import { consola } from 'consola'
 
@@ -43,7 +43,7 @@ export function createValidateCommand() {
     .argument('<resume-path>', 'the resume file path')
     .action(async (resumePath: string) => {
       try {
-        const { validated, errors } = readResume(resumePath, {
+        const { validated, errors } = readResumeFile(resumePath, {
           validate: true,
         })
 

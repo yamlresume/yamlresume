@@ -36,7 +36,7 @@ import { getSampleResume } from '@yamlresume/samples'
 /**
  * Options for creating a new resume from a sample.
  */
-export interface NewResumeOptions {
+export interface NewResumeFileOptions {
   // Optional flag to show the source of the sample resume in the success
   // message.
   showSampleSource?: boolean
@@ -48,7 +48,7 @@ export interface NewResumeOptions {
 /**
  * Creates a new resume file from a curated sample resume.
  *
- * @param filename - The name of the resume file to create.
+ * @param resumePath - The path of the resume file to create.
  * @param sampleId - The identifier of the sample resume to use.
  * @param language - The locale language of the sample resume.
  * @param options - Optional settings.
@@ -56,16 +56,16 @@ export interface NewResumeOptions {
  * - FILE_CONFLICT: When the file already exists
  * - FILE_WRITE_ERROR: When there is an error writing the file
  */
-export function newResume(
-  filename: string,
+export function newResumeFile(
+  resumePath: string,
   sampleId: string,
   language: LocaleLanguage,
-  options: NewResumeOptions = {}
+  options: NewResumeFileOptions = {}
 ) {
   const { showSampleSource = false, logger } = options
 
-  if (fs.existsSync(filename)) {
-    throw new YAMLResumeError('FILE_CONFLICT', { path: filename })
+  if (fs.existsSync(resumePath)) {
+    throw new YAMLResumeError('FILE_CONFLICT', { path: resumePath })
   }
 
   const sampleContent = getSampleResume(sampleId, language, {
@@ -74,11 +74,11 @@ export function newResume(
   })
 
   try {
-    fs.writeFileSync(filename, sampleContent)
+    fs.writeFileSync(resumePath, sampleContent)
 
     const successMessage = showSampleSource
-      ? `Created ${filename} from sample "${sampleId}" successfully.`
-      : `Created ${filename} successfully.`
+      ? `Created ${resumePath} from sample "${sampleId}" successfully.`
+      : `Created ${resumePath} successfully.`
 
     logger?.success(successMessage)
   } catch (error) {
@@ -88,6 +88,6 @@ export function newResume(
         toCodeBlock(getErrorMessage(error)),
       ])
     )
-    throw new YAMLResumeError('FILE_WRITE_ERROR', { path: filename })
+    throw new YAMLResumeError('FILE_WRITE_ERROR', { path: resumePath })
   }
 }

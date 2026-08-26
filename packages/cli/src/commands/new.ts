@@ -23,7 +23,7 @@
  */
 
 import { YAMLResumeError } from '@yamlresume/core'
-import { newResume } from '@yamlresume/node'
+import { newResumeFile } from '@yamlresume/node'
 import { listSampleResumes } from '@yamlresume/samples'
 import { Command } from 'commander'
 import { consola } from 'consola'
@@ -42,7 +42,7 @@ export function createNewCommand() {
     .option('--language <language>', 'locale language for the sample', 'en')
     .action((filename, options) => {
       try {
-        newResume(
+        newResumeFile(
           filename,
           options.sample ?? DEFAULT_SAMPLE_ID,
           options.language,

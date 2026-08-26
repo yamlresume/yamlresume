@@ -28,7 +28,7 @@ import { ResumeSchema, YAMLResumeError } from '@yamlresume/core'
 import { getFixture } from '@yamlresume/testing'
 import { describe, expect, it } from 'vitest'
 import yaml from 'yaml'
-import { readResume, validateResume } from './read'
+import { readResumeFile, validateResume } from './read'
 
 describe(validateResume, () => {
   it('should return empty array for valid resume', () => {
@@ -91,11 +91,11 @@ describe(validateResume, () => {
   })
 })
 
-describe(readResume, () => {
+describe(readResumeFile, () => {
   it('should read and validate a valid resume', () => {
     const resumePath = getFixture(__dirname, 'software-engineer.yml')
 
-    const { resume, validated } = readResume(resumePath)
+    const { resume, validated } = readResumeFile(resumePath)
 
     expect(resume).toBeDefined()
     expect(resume.content).toBeDefined()
@@ -105,7 +105,7 @@ describe(readResume, () => {
   it('should skip validation when validate is false', () => {
     const resumePath = getFixture(__dirname, 'software-engineer.yml')
 
-    const { validated } = readResume(resumePath, {
+    const { validated } = readResumeFile(resumePath, {
       validate: false,
     })
 
@@ -113,7 +113,9 @@ describe(readResume, () => {
   })
 
   it('should throw error when file does not exist', () => {
-    expect(() => readResume('non-existent-file.yml')).toThrow(YAMLResumeError)
+    expect(() => readResumeFile('non-existent-file.yml')).toThrow(
+      YAMLResumeError
+    )
   })
 
   it('should return failed validation with errors for invalid resume', () => {
@@ -121,7 +123,7 @@ describe(readResume, () => {
     const invalidPath = path.join(fixturesDir, 'invalid-resume.yml')
     fs.writeFileSync(invalidPath, 'content:\n  basics:\n    name: 123')
 
-    const { validated, errors } = readResume(invalidPath)
+    const { validated, errors } = readResumeFile(invalidPath)
 
     expect(validated).toBe('failed')
     expect(errors).toBeDefined()
@@ -135,7 +137,7 @@ describe(readResume, () => {
     const invalidYamlPath = path.join(fixturesDir, 'invalid-yaml.yml')
     fs.writeFileSync(invalidYamlPath, 'content: {\n  basics: {')
 
-    expect(() => readResume(invalidYamlPath)).toThrow(YAMLResumeError)
+    expect(() => readResumeFile(invalidYamlPath)).toThrow(YAMLResumeError)
 
     fs.unlinkSync(invalidYamlPath)
   })
@@ -149,7 +151,7 @@ describe(readResume, () => {
     const invalidYamlPath = path.join(fixturesDir, 'invalid-yaml.yml')
     fs.writeFileSync(invalidYamlPath, 'content: {}')
 
-    expect(() => readResume(invalidYamlPath)).toThrow(YAMLResumeError)
+    expect(() => readResumeFile(invalidYamlPath)).toThrow(YAMLResumeError)
 
     fs.unlinkSync(invalidYamlPath)
     parseSpy.mockRestore()

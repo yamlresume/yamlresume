@@ -23,7 +23,7 @@
  */
 
 import { getErrorMessage, type Logger, YAMLResumeError } from '@yamlresume/core'
-import { generateResume } from '@yamlresume/node'
+import { generateResumeFile } from '@yamlresume/node'
 import { Command, InvalidArgumentError } from 'commander'
 import { consola } from 'consola'
 import type { Ora } from 'ora'
@@ -100,7 +100,7 @@ Environment variables:
       }
 
       try {
-        await generateResume(filename, options.position, options.language, {
+        await generateResumeFile(filename, options.position, options.language, {
           model: options.model,
           baseURL: options.baseUrl,
           maxRetries: options.retry,
