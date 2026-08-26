@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.15.2](https://github.com/yamlresume/yamlresume/compare/v0.15.1...v0.15.2) (2026-08-26)
+
+
+### Features
+
+* **playground:** add vite web harness for local development ([05b7393](https://github.com/yamlresume/yamlresume/commit/05b7393601e460f46b67f32ed7195d501acfc711))
+* **playground:** add yaml completion, validation and hover via monaco-yaml ([fd39594](https://github.com/yamlresume/yamlresume/commit/fd39594dba67e93fa3ef3d49c00e5447e4f57615))
+* rename @yamlresume/node APIs ([248a4de](https://github.com/yamlresume/yamlresume/commit/248a4de49147428a3d81b3f5c48beec68cddb936))
+
 ## [0.15.1](https://github.com/yamlresume/yamlresume/compare/v0.15.0...v0.15.1) (2026-08-24)
 
 
