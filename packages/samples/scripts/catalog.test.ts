@@ -237,9 +237,7 @@ describe('catalog', () => {
 
       await ensureResume(position, 'en', () => fakeModel, true, tmpDir)
 
-      expect(generateResume).toHaveBeenCalledWith({
-        position,
-        language: 'en',
+      expect(generateResume).toHaveBeenCalledWith(position, 'en', {
         model: fakeModel,
         withLayouts: false,
         withComments: false,

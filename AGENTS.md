@@ -73,6 +73,17 @@ Use `pnpm` for all operations.
   ```
 - Use `pnpm license:add` to automatically prepend the header to new files.
 
+## 📐 API Design
+
+- **Prominent inputs should be explicit positional parameters.** When an
+  operation is defined by a small set of primary inputs (e.g., a target position
+  and a locale language), declare them as fixed positional arguments rather
+  than burying them in an options object. Keep secondary or optional settings
+  in a trailing `*Options` config map. This mirrors existing APIs such as
+  `getSampleResume(id, language, options)`, `newResumeFile(path, sampleId,
+  language, options)`, and `generateResumeFile(path, position, language,
+  options)`.
+
 ## 🧪 Testing Guidelines
 
 - Use **Vitest** for testing.

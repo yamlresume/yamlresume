@@ -80,9 +80,7 @@ export async function ensureResume(
   }
 
   consola.info(`  generating ${language}`)
-  const yamlContent = await generateResume({
-    position,
-    language,
+  const yamlContent = await generateResume(position, language, {
     model: getModel(),
     // no need to use comments or append layouts here, we can always enrich the
     // resume with comments and layouts later if needed, this can help save some

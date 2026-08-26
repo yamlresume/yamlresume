@@ -73,16 +73,6 @@ export interface AIOptions {
  */
 export interface GenerateResumeOptions extends AIOptions {
   /**
-   * The target position or job title for the resume.
-   */
-  position: string
-
-  /**
-   * The target locale language for the resume.
-   */
-  language: LocaleLanguage
-
-  /**
    * Whether to append the default layouts block to the generated resume.
    *
    * @default true

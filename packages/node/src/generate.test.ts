@@ -43,7 +43,7 @@ vi.mock('@yamlresume/ai', () => ({
   },
 }))
 
-import { generateResume as generateResumeWithAI } from '@yamlresume/ai'
+import { generateResume } from '@yamlresume/ai'
 
 describe(generateResumeFile, () => {
   let existsSync: ReturnType<typeof vi.spyOn>
@@ -54,11 +54,13 @@ describe(generateResumeFile, () => {
     logger = createMockLogger()
     existsSync = vi.spyOn(fs, 'existsSync').mockReturnValue(false)
     writeFileSync = vi.spyOn(fs, 'writeFileSync').mockImplementation(vi.fn())
-    vi.mocked(generateResumeWithAI).mockImplementation(async (options) => {
-      options.onChunk?.('Hello')
-      options.onChunk?.(' world')
-      return 'generated yaml'
-    })
+    vi.mocked(generateResume).mockImplementation(
+      async (_position, _language, options) => {
+        options.onChunk?.('Hello')
+        options.onChunk?.(' world')
+        return 'generated yaml'
+      }
+    )
   })
 
   afterEach(() => {
@@ -71,10 +73,10 @@ describe(generateResumeFile, () => {
     expect(logger.start).toHaveBeenCalledWith('Generating resume...')
     expect(getModelFromEnv).toHaveBeenCalledTimes(1)
     expect(getModelFromEnv).toHaveBeenCalledWith({})
-    expect(generateResumeWithAI).toHaveBeenCalledWith(
+    expect(generateResume).toHaveBeenCalledWith(
+      'Nurse',
+      'en',
       expect.objectContaining({
-        position: 'Nurse',
-        language: 'en',
         model: { id: 'mock-model' },
       })
     )
@@ -108,10 +110,10 @@ describe(generateResumeFile, () => {
       logger,
     })
 
-    expect(generateResumeWithAI).toHaveBeenCalledWith(
+    expect(generateResume).toHaveBeenCalledWith(
+      'Nurse',
+      'en',
       expect.objectContaining({
-        position: 'Nurse',
-        language: 'en',
         model: { id: 'mock-model' },
         maxRetries: 5,
       })
@@ -121,10 +123,10 @@ describe(generateResumeFile, () => {
   it('should not pass maxRetries to generateResumeFile when omitted', async () => {
     await generateResumeFile('my-resume.yml', 'Nurse', 'en', { logger })
 
-    expect(generateResumeWithAI).toHaveBeenCalledWith(
+    expect(generateResume).toHaveBeenCalledWith(
+      'Nurse',
+      'en',
       expect.objectContaining({
-        position: 'Nurse',
-        language: 'en',
         model: { id: 'mock-model' },
       })
     )
@@ -145,7 +147,7 @@ describe(generateResumeFile, () => {
       expect(error.errno).toBe(ErrorType.FILE_CONFLICT.errno)
     }
 
-    expect(generateResumeWithAI).not.toBeCalled()
+    expect(generateResume).not.toBeCalled()
     expect(writeFileSync).not.toBeCalled()
     expect(logger.start).not.toBeCalled()
   })
@@ -163,7 +165,7 @@ describe(generateResumeFile, () => {
       expect(error.errno).toBe(ErrorType.INVALID_LANGUAGE.errno)
     }
 
-    expect(generateResumeWithAI).not.toBeCalled()
+    expect(generateResume).not.toBeCalled()
     expect(writeFileSync).not.toBeCalled()
     expect(logger.start).not.toBeCalled()
   })
@@ -197,7 +199,7 @@ describe(generateResumeFile, () => {
   })
 
   it('should surface AI generation errors', async () => {
-    vi.mocked(generateResumeWithAI).mockRejectedValue(
+    vi.mocked(generateResume).mockRejectedValue(
       new AIResumeError('GENERATION_FAILED', 'AI failed')
     )
 
@@ -207,7 +209,7 @@ describe(generateResumeFile, () => {
   })
 
   it('should handle non-Error values thrown while generating', async () => {
-    vi.mocked(generateResumeWithAI).mockRejectedValue('AI failed')
+    vi.mocked(generateResume).mockRejectedValue('AI failed')
 
     await expect(
       generateResumeFile('my-resume.yml', 'Nurse', 'en', { logger })

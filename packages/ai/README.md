@@ -57,9 +57,7 @@ import { openai } from "@ai-sdk/openai";
 
 const model = openai("gpt-5");
 
-const yaml = await generateResume({
-  position: "Registered Nurse",
-  language: "en",
+const yaml = await generateResume("Registered Nurse", "en", {
   model,
 });
 ```
@@ -76,9 +74,7 @@ const kimi = openai({
   baseURL: "https://api.moonshot.cn/v1",
 });
 
-const yaml = await generateResume({
-  position: "Registered Nurse",
-  language: "zh-hans",
+const yaml = await generateResume("Registered Nurse", "zh-hans", {
   model: kimi("moonshot-v1-8k"),
 });
 ```
@@ -90,9 +86,7 @@ Both functions parse the LLM output and validate it against `ResumeSchema` from
 `maxRetries` times (default: 2).
 
 ```ts
-const yaml = await generateResume({
-  position: "Software Engineer",
-  language: "en",
+const yaml = await generateResume("Software Engineer", "en", {
   model,
   maxRetries: 3,
 });

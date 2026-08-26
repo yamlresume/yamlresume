@@ -96,9 +96,7 @@ export async function generateResumeFile(
 
   let content: string
   try {
-    content = await generateResume({
-      position,
-      language,
+    content = await generateResume(position, language as LocaleLanguage, {
       model: getModelFromEnv({
         ...(model && { model }),
         ...(baseURL && { baseURL }),

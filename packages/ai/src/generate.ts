@@ -28,6 +28,7 @@ import {
   getErrorMessage,
   injectResumeComments,
   joinNonEmptyString,
+  type LocaleLanguage,
 } from '@yamlresume/core'
 import { generateText, streamText } from 'ai'
 import consola from 'consola'
@@ -42,16 +43,18 @@ import type { GenerateResumeOptions } from './types'
  * The generated text is parsed and validated against the YAMLResume schema. If
  * validation fails, the request is retried up to `maxRetries` times.
  *
+ * @param position - The target position or job title for the resume.
+ * @param language - The target locale language for the resume.
  * @param options - Generation options.
  * @returns A raw YAML string representing the generated resume.
  * @throws {AIResumeError} When generation or validation ultimately fails.
  */
 export async function generateResume(
+  position: string,
+  language: LocaleLanguage,
   options: GenerateResumeOptions
 ): Promise<string> {
   const {
-    position,
-    language,
     model,
     temperature = 1,
     maxTokens = 16384,

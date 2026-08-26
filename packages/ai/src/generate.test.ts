@@ -101,9 +101,7 @@ locale:
       text: validYaml,
     } as Awaited<ReturnType<typeof generateText>>)
 
-    const result = await generateResume({
-      position: 'Software Engineer',
-      language: 'en',
+    const result = await generateResume('Software Engineer', 'en', {
       model: mockModel,
     })
 
@@ -128,9 +126,7 @@ locale:
 
     const onChunk = vi.fn()
 
-    const result = await generateResume({
-      position: 'Software Engineer',
-      language: 'en',
+    const result = await generateResume('Software Engineer', 'en', {
       model: mockModel,
       onChunk,
     })
@@ -149,9 +145,7 @@ locale:
       text: validYaml,
     } as Awaited<ReturnType<typeof generateText>>)
 
-    const result = await generateResume({
-      position: 'Software Engineer',
-      language: 'en',
+    const result = await generateResume('Software Engineer', 'en', {
       model: mockModel,
     })
 
@@ -164,9 +158,7 @@ locale:
       text: validYaml,
     } as Awaited<ReturnType<typeof generateText>>)
 
-    const result = await generateResume({
-      position: 'Software Engineer',
-      language: 'en',
+    const result = await generateResume('Software Engineer', 'en', {
       model: mockModel,
       withLayouts: false,
     })
@@ -179,9 +171,7 @@ locale:
       text: validYaml,
     } as Awaited<ReturnType<typeof generateText>>)
 
-    const result = await generateResume({
-      position: 'Software Engineer',
-      language: 'en',
+    const result = await generateResume('Software Engineer', 'en', {
       model: mockModel,
     })
 
@@ -198,9 +188,7 @@ locale:
       text: plainYaml,
     } as Awaited<ReturnType<typeof generateText>>)
 
-    const result = await generateResume({
-      position: 'Software Engineer',
-      language: 'en',
+    const result = await generateResume('Software Engineer', 'en', {
       model: mockModel,
       withComments: false,
       withLayouts: false,
@@ -216,9 +204,7 @@ locale:
       text: `---\n${plainYaml}`,
     } as Awaited<ReturnType<typeof generateText>>)
 
-    const result = await generateResume({
-      position: 'Software Engineer',
-      language: 'en',
+    const result = await generateResume('Software Engineer', 'en', {
       model: mockModel,
       withComments: false,
       withLayouts: false,
@@ -264,9 +250,7 @@ locale:
       text: yamlWithComments,
     } as Awaited<ReturnType<typeof generateText>>)
 
-    const result = await generateResume({
-      position: 'Software Engineer',
-      language: 'en',
+    const result = await generateResume('Software Engineer', 'en', {
       model: mockModel,
       withComments: false,
       withLayouts: false,
@@ -311,9 +295,7 @@ locale:
       text: yamlWithLiteralBlock,
     } as Awaited<ReturnType<typeof generateText>>)
 
-    const result = await generateResume({
-      position: 'Software Engineer',
-      language: 'en',
+    const result = await generateResume('Software Engineer', 'en', {
       model: mockModel,
       withComments: false,
       withLayouts: false,
@@ -332,9 +314,7 @@ locale:
         text: validYaml,
       } as Awaited<ReturnType<typeof generateText>>)
 
-    const result = await generateResume({
-      position: 'Software Engineer',
-      language: 'en',
+    const result = await generateResume('Software Engineer', 'en', {
       model: mockModel,
       maxRetries: 2,
     })
@@ -354,9 +334,7 @@ locale:
         text: validYaml,
       } as Awaited<ReturnType<typeof generateText>>)
 
-    await generateResume({
-      position: 'Software Engineer',
-      language: 'en',
+    await generateResume('Software Engineer', 'en', {
       model: mockModel,
       maxRetries: 2,
     })
@@ -374,9 +352,7 @@ locale:
     } as Awaited<ReturnType<typeof generateText>>)
 
     await expect(
-      generateResume({
-        position: 'Software Engineer',
-        language: 'en',
+      generateResume('Software Engineer', 'en', {
         model: mockModel,
         maxRetries: 1,
       })
@@ -395,9 +371,7 @@ locale:
       } as Awaited<ReturnType<typeof generateText>>)
 
     await expect(
-      generateResume({
-        position: 'Software Engineer',
-        language: 'en',
+      generateResume('Software Engineer', 'en', {
         model: mockModel,
         maxRetries: 1,
       })
@@ -410,9 +384,7 @@ locale:
     vi.mocked(generateText).mockRejectedValue(new Error('network error'))
 
     await expect(
-      generateResume({
-        position: 'Software Engineer',
-        language: 'en',
+      generateResume('Software Engineer', 'en', {
         model: mockModel,
       })
     ).rejects.toThrow(AIResumeError)
@@ -422,9 +394,7 @@ locale:
     vi.mocked(generateText).mockRejectedValue('raw failure')
 
     await expect(
-      generateResume({
-        position: 'Software Engineer',
-        language: 'en',
+      generateResume('Software Engineer', 'en', {
         model: mockModel,
       })
     ).rejects.toThrow(AIResumeError)
@@ -432,9 +402,7 @@ locale:
 
   it('reports generation failure when retries are disabled', async () => {
     await expect(
-      generateResume({
-        position: 'Software Engineer',
-        language: 'en',
+      generateResume('Software Engineer', 'en', {
         model: mockModel,
         maxRetries: -1,
       })
