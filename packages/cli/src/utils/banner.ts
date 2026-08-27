@@ -31,7 +31,7 @@ import { box } from 'consola/utils'
  * when the announcement becomes stale.
  */
 const ANNOUNCEMENT = [
-  'New in v0.15.0: sample resumes!',
+  'New from v0.15: sample resumes!',
   'Create one: yamlresume new --sample <sample-id>',
   'Browse all: yamlresume samples list',
 ].join('\n')

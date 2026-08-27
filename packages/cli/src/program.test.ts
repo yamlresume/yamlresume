@@ -66,7 +66,7 @@ describe('program', () => {
       expect(() => program.parse(['node', 'cli.js', '-h'])).toThrow(
         '(outputHelp)'
       )
-      expect(getOutput()).toContain('New in v0.15.0')
+      expect(getOutput()).toContain('New from v0.15: sample resumes!')
     })
   })
 
@@ -100,14 +100,14 @@ describe('program', () => {
       vi.spyOn(fs, 'writeFileSync').mockImplementation(vi.fn())
 
       expect(() => program.parse(['node', 'cli.js', 'new'])).not.toThrow()
-      expect(getOutput()).not.toContain('New in v0.15.0')
+      expect(getOutput()).not.toContain('New from v0.15: sample resumes!')
     })
 
     it('should not show the banner for version flag', () => {
       expect(() => program.parse(['node', 'cli.js', '--version'])).toThrow(
         packageJson.version
       )
-      expect(getOutput()).not.toContain('New in v0.15.0')
+      expect(getOutput()).not.toContain('New from v0.15: sample resumes!')
     })
   })
 

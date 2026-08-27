@@ -30,7 +30,7 @@ describe('showBanner', () => {
   it('should return the announcement banner', () => {
     const banner = showBanner()
 
-    expect(banner).toContain('New in v0.15.0')
+    expect(banner).toContain('New from v0.15: sample resumes!')
     expect(banner).toContain('samples')
   })
 
