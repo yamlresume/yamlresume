@@ -118,13 +118,17 @@ export function listSampleResumeTags(): string[] {
 export interface GetSampleResumeOptions {
   /**
    * Whether to inject deterministic YAML comments into the sample resume.
+   *
+   * @default false
    */
-  withComments: boolean
+  withComments?: boolean
 
   /**
    * Whether to append the default layouts block to the sample resume.
+   *
+   * @default false
    */
-  withLayouts: boolean
+  withLayouts?: boolean
 }
 
 /**
