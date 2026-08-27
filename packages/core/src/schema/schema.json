@@ -2715,8 +2715,7 @@
                           }
                         },
                         "required": [
-                          "showIcons",
-                          "footer"
+                          "showIcons"
                         ],
                         "additionalProperties": false
                       },
