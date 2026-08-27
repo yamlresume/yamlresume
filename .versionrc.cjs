@@ -29,6 +29,10 @@ module.exports = {
       type: 'json',
     },
     {
+      filename: 'packages/playground/web/package.json',
+      type: 'json',
+    },
+    {
       filename: 'packages/create-yamlresume/package.json',
       type: 'json',
     },
