@@ -79,7 +79,7 @@ export const downloadResume = async (
 ) => {
   try {
     const layouts = resume?.layouts
-    if (!resume || !layouts[layoutIndex]) {
+    if (!resume || !layouts?.[layoutIndex]) {
       console.warn('No resume or layout found for download')
       return
     }
@@ -123,7 +123,7 @@ export const copyResumeToClipboard = (
 ): Promise<void> => {
   try {
     const layouts = resume?.layouts
-    if (!resume || !layouts[layoutIndex]) {
+    if (!resume || !layouts?.[layoutIndex]) {
       console.warn('No resume or layout found for copy')
       return Promise.resolve()
     }
@@ -151,7 +151,7 @@ export const copyResumeToClipboard = (
 export const printResume = (resume: Resume | null, layoutIndex: number) => {
   try {
     const layouts = resume?.layouts
-    if (!resume || !layouts[layoutIndex]) {
+    if (!resume || !layouts?.[layoutIndex]) {
       console.warn('No resume or layout found for print')
       return
     }
@@ -206,7 +206,7 @@ export const openResumeInNewTab = (
 ) => {
   try {
     const layouts = resume?.layouts
-    if (!resume || !layouts[layoutIndex]) {
+    if (!resume || !layouts?.[layoutIndex]) {
       console.warn('No resume or layout found for new tab')
       return
     }
