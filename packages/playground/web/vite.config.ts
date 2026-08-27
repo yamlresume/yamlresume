@@ -1,3 +1,4 @@
+import { fileURLToPath } from 'node:url'
 import react from '@vitejs/plugin-react'
 import { defineConfig } from 'vite'
 
@@ -7,9 +8,10 @@ export default defineConfig({
   plugins: [react()],
   resolve: {
     alias: {
-      '@': new URL('../src', import.meta.url).pathname,
-      '@yamlresume/playground': new URL('../src/index.ts', import.meta.url)
-        .pathname,
+      '@': fileURLToPath(new URL('../src', import.meta.url)),
+      '@yamlresume/playground': fileURLToPath(
+        new URL('../src/index.ts', import.meta.url)
+      ),
     },
   },
 })
