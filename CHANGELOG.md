@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.15.3](https://github.com/yamlresume/yamlresume/compare/v0.15.2...v0.15.3) (2026-08-27)
+
+
+### Features
+
+* **core:** make html layout advanced.footer optional ([8ced759](https://github.com/yamlresume/yamlresume/commit/8ced75933cb516f90c1748895b4c7ce01808bb35))
+
+
+### Bug Fixes
+
+* **cli,create-yamlresume:** use getErrorMessage for unknown errors ([ca85f1a](https://github.com/yamlresume/yamlresume/commit/ca85f1a5c8328e37dc94c4446ebeb5bf2ef9a5be))
+* **cli:** update stale banner version ([df1b278](https://github.com/yamlresume/yamlresume/commit/df1b27862f711915fac5ac76718986c9ecd26f62))
+* **playground:** guard layout access when resume has no layouts ([091c248](https://github.com/yamlresume/yamlresume/commit/091c2487a04662f0c16daa4363e40627b51e8b90))
+* **playground:** include web harness in version bump and biome checks ([f1974fa](https://github.com/yamlresume/yamlresume/commit/f1974fa4f02b8f183fb24d0983ae4a4431756190))
+* **playground:** ship Monaco workers and make Monaco loading SSR-safe ([e3bb327](https://github.com/yamlresume/yamlresume/commit/e3bb327dd5d46f9e1198b6ffe8c567dbd8aaba03))
+* **playground:** use fileURLToPath for cross-platform alias paths ([0904750](https://github.com/yamlresume/yamlresume/commit/0904750a1f11d42ce828510ebda81e56329f69a7))
+
 ## [0.15.2](https://github.com/yamlresume/yamlresume/compare/v0.15.1...v0.15.2) (2026-08-26)
 
 
