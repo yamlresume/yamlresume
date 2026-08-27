@@ -48,14 +48,12 @@ type CancelablePromise<T> = Promise<T> & {
 }
 
 /**
- * Cached resolved module and in-flight promise for `loadMonacoModule()`.
+ * Cached resolved monaco-editor module for `loadMonacoModule()`.
  *
- * Keeping a singleton promise avoids fetching/bundling monaco-editor multiple
- * times if `loader.init()` is called more than once, which happens with React
- * Strict Mode and with multiple editor instances on the same page.
+ * The browser's ES module loader already deduplicates multiple dynamic imports
+ * of the same specifier, so we only need to cache the resolved module value.
  */
 let monacoModule: MonacoModule | undefined
-let monacoModulePromise: Promise<MonacoModule> | undefined
 
 /**
  * Lazily imports the locally bundled monaco-editor module.
@@ -64,17 +62,11 @@ let monacoModulePromise: Promise<MonacoModule> | undefined
  * site is inside the `loader.init()` wrapper guarded by
  * `typeof window !== 'undefined'`, the module is never evaluated during SSR.
  */
-function loadMonacoModule(): Promise<MonacoModule> {
-  if (monacoModule) {
-    return Promise.resolve(monacoModule)
+async function loadMonacoModule(): Promise<MonacoModule> {
+  if (!monacoModule) {
+    monacoModule = await import('monaco-editor')
   }
-  if (!monacoModulePromise) {
-    monacoModulePromise = import('monaco-editor').then((module) => {
-      monacoModule = module
-      return module
-    })
-  }
-  return monacoModulePromise
+  return monacoModule
 }
 
 /**
@@ -119,7 +111,7 @@ if (typeof window !== 'undefined' && loader.init) {
      * The reject function of the outer wrapper promise. Used by `.cancel()`
      * when cancellation happens before `initPromise` exists.
      */
-    let rejectWrapper: (reason?: unknown) => void = () => {}
+    let rejectWrapper: (reason?: unknown) => void
 
     /** True once `.cancel()` has been called. */
     let canceled = false

@@ -22,6 +22,8 @@ export const baseConfig: UserConfig = {
         '**/*/index.ts',
         'vitest.config.mts',
         'tsup.config.ts',
+        'src/assets/**',
+        '**/*.{png,jpg,jpeg,gif,svg,ico,woff,woff2,ttf,eot}',
       ],
     },
   },

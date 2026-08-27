@@ -22,19 +22,110 @@
  * IN THE SOFTWARE.
  */
 
+import { IconChevronLeft, IconChevronRight } from '@tabler/icons-react'
 import clsx from 'clsx'
-import type { PropsWithChildren } from 'react'
+import {
+  type PropsWithChildren,
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+} from 'react'
+
+import { ICON_SIZES, ICON_STROKES } from '@/constants'
 
 /**
- * A scrollable container for preview tabs.
+ * A scrollable container for preview tabs with optional overflow chevrons.
  *
  * @param props - The component props.
  * @returns The rendered tabs container.
  */
 export function PreviewTabs({ children }: PropsWithChildren) {
+  const scrollRef = useRef<HTMLDivElement>(null)
+  const [canScrollLeft, setCanScrollLeft] = useState(false)
+  const [canScrollRight, setCanScrollRight] = useState(false)
+
+  const checkOverflow = useCallback(() => {
+    const element = scrollRef.current as HTMLDivElement
+    const { scrollLeft, clientWidth, scrollWidth } = element
+    setCanScrollLeft(scrollLeft > 0)
+    setCanScrollRight(scrollLeft + clientWidth < scrollWidth - 1)
+  }, [])
+
+  useEffect(() => {
+    checkOverflow()
+
+    const element = scrollRef.current as HTMLDivElement
+    element.addEventListener('scroll', checkOverflow)
+    window.addEventListener('resize', checkOverflow)
+
+    return () => {
+      element.removeEventListener('scroll', checkOverflow)
+      window.removeEventListener('resize', checkOverflow)
+    }
+  }, [checkOverflow])
+
+  const scroll = useCallback((direction: 'left' | 'right') => {
+    const element = scrollRef.current as HTMLDivElement
+    const distance = element.clientWidth * 0.8
+    element.scrollBy({
+      left: direction === 'left' ? -distance : distance,
+      behavior: 'smooth',
+    })
+  }, [])
+
   return (
-    <div role="tablist" className={clsx('flex h-full overflow-x-auto')}>
-      {children}
+    <div className="relative flex h-full min-w-0 items-center">
+      <style>{`
+        .preview-tabs-scroll::-webkit-scrollbar {
+          display: none;
+        }
+      `}</style>
+      <div
+        ref={scrollRef}
+        role="tablist"
+        className={clsx(
+          'preview-tabs-scroll flex h-full min-w-0 overflow-x-auto overflow-y-hidden',
+          // Reserve space for the overflow chevrons so the active tab does not
+          // scroll underneath them.
+          canScrollLeft && 'scroll-pl-6',
+          canScrollRight && 'scroll-pr-6'
+        )}
+        style={{
+          msOverflowStyle: 'none',
+          scrollbarWidth: 'none',
+        }}
+      >
+        {children}
+      </div>
+      {canScrollLeft && (
+        <button
+          type="button"
+          aria-label="Scroll tabs left"
+          onClick={() => scroll('left')}
+          className={clsx(
+            'absolute left-0 top-0 z-10 flex h-full w-6 items-center justify-center',
+            'border-r border-neutral-600 bg-neutral-800 text-neutral-300',
+            'hover:bg-neutral-700 focus:outline-none'
+          )}
+        >
+          <IconChevronLeft size={ICON_SIZES.sm} stroke={ICON_STROKES.sm} />
+        </button>
+      )}
+      {canScrollRight && (
+        <button
+          type="button"
+          aria-label="Scroll tabs right"
+          onClick={() => scroll('right')}
+          className={clsx(
+            'absolute right-0 top-0 z-10 flex h-full w-6 items-center justify-center',
+            'border-l border-neutral-600 bg-neutral-800 text-neutral-300',
+            'hover:bg-neutral-700 focus:outline-none'
+          )}
+        >
+          <IconChevronRight size={ICON_SIZES.sm} stroke={ICON_STROKES.sm} />
+        </button>
+      )}
     </div>
   )
 }

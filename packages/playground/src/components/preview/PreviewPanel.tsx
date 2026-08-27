@@ -141,7 +141,7 @@ export function PreviewPanel({
           ))}
         </PreviewTabs>
         <div className="flex-1" />
-        <div className="flex items-center gap-0.5 pr-2">
+        <div className="flex min-w-fit items-center gap-0.5 pr-2">
           <ToolbarCopyButton onClick={handleCopy} title={tooltips.copy} />
           <ToolbarSeparator />
           {resume?.layouts?.[activeLayoutIndex]?.engine === 'html' && (

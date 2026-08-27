@@ -110,4 +110,16 @@ describe('loader', async () => {
       msg: 'operation is manually canceled',
     })
   })
+
+  it('reuses the cached monaco module across multiple init calls', async () => {
+    const monaco = { editor: {} }
+    loaderInitMock.mockReturnValue(makeCancelable(monaco))
+
+    const first = await loader.init()
+    const second = await loader.init()
+
+    expect(first).toBe(monaco)
+    expect(second).toBe(monaco)
+    expect(loaderInitMock).toHaveBeenCalledTimes(2)
+  })
 })
