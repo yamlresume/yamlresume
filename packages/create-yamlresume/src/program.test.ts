@@ -109,7 +109,7 @@ describe(createProjectAction, () => {
 
     expect(mockConsoleError).toHaveBeenCalledWith(
       'Error creating project:',
-      errorWithoutMessage
+      'Custom error string'
     )
     expect(mockProcessExit).toHaveBeenCalledWith(1)
   })

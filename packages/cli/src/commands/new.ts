@@ -22,7 +22,7 @@
  * IN THE SOFTWARE.
  */
 
-import { YAMLResumeError } from '@yamlresume/core'
+import { getErrorMessage, YAMLResumeError } from '@yamlresume/core'
 import { newResumeFile } from '@yamlresume/node'
 import { listSampleResumes } from '@yamlresume/samples'
 import { Command } from 'commander'
@@ -50,12 +50,12 @@ export function createNewCommand() {
         )
       } catch (error) {
         if (error instanceof YAMLResumeError) {
-          consola.error(error.message)
+          consola.error(getErrorMessage(error))
           process.exit(error.errno)
           return
         }
 
-        consola.error(error.message)
+        consola.error(getErrorMessage(error))
         consola.info(
           `Available samples:\n${listSampleResumes()
             .map((sample) => `  - ${sample.id}: ${sample.title}`)

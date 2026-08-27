@@ -22,6 +22,7 @@
  * IN THE SOFTWARE.
  */
 
+import { getErrorMessage } from '@yamlresume/core'
 import { Command } from 'commander'
 import packageJson from '../package.json' with { type: 'json' }
 import { createYamlResumeProject } from './project'
@@ -37,7 +38,7 @@ export async function createProjectAction(projectName: string) {
   } catch (error) {
     console.error(
       'Error creating project:',
-      error?.message || error || 'Unknown error'
+      error ? getErrorMessage(error) : 'Unknown error'
     )
     process.exit(1)
   }

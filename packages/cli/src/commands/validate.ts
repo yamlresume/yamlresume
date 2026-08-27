@@ -23,7 +23,7 @@
  */
 
 import fs from 'node:fs'
-import { YAMLResumeError } from '@yamlresume/core'
+import { getErrorMessage, YAMLResumeError } from '@yamlresume/core'
 import { readResumeFile } from '@yamlresume/node'
 import { Command } from 'commander'
 import { consola } from 'consola'
@@ -69,12 +69,12 @@ export function createValidateCommand() {
               prettifyYamlParseError(error.message, resumePath, resumeStr)
             )
           }
-          consola.error(error.message)
+          consola.error(getErrorMessage(error))
           process.exit(error.errno)
           return
         }
 
-        consola.error(error.message)
+        consola.error(getErrorMessage(error))
         process.exit(1)
         return
       }

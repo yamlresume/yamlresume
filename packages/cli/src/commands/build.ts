@@ -23,7 +23,11 @@
  */
 
 import fs from 'node:fs'
-import { joinNonEmptyString, YAMLResumeError } from '@yamlresume/core'
+import {
+  getErrorMessage,
+  joinNonEmptyString,
+  YAMLResumeError,
+} from '@yamlresume/core'
 import {
   buildResumeFile,
   LATEX_COMPILE_TIMEOUT,
@@ -127,12 +131,12 @@ export function createBuildCommand() {
                 prettifyYamlParseError(error.message, resumePath, resumeStr)
               )
             }
-            consola.error(error.message)
+            consola.error(getErrorMessage(error))
             process.exit(error.errno)
             return
           }
 
-          consola.error(error.message)
+          consola.error(getErrorMessage(error))
           process.exit(1)
           return
         }
