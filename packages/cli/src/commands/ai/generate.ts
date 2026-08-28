@@ -32,6 +32,76 @@ import ora from 'ora'
 import { AI_ENVIRONMENT_VARIABLES_HELP_TEXT } from './const'
 
 /**
+ * Options passed to the generate command action.
+ */
+export interface GenerateCommandOptions {
+  position: string
+  language: string
+  model?: string
+  baseUrl?: string
+  retry?: number
+}
+
+/**
+ * Handle the `ai generate` command.
+ *
+ * @param this - The Commander command instance.
+ * @param filename - The output resume filename.
+ * @param options - The command options.
+ */
+export async function handleGenerateCommand(
+  this: Command,
+  filename: string,
+  options: GenerateCommandOptions
+): Promise<void> {
+  let spinner: Ora | undefined
+  let streamedText = ''
+
+  const logger: Logger = {
+    start: (message) => {
+      spinner = ora(message).start()
+    },
+    success: (message) => {
+      spinner?.succeed(message)
+      consola.success(`Generated ${filename} successfully.`)
+    },
+    debug: consola.debug,
+    info: consola.info,
+    log: consola.log,
+    warn: consola.warn,
+    error: () => {},
+  }
+
+  try {
+    await generateResumeFile(filename, options.position, options.language, {
+      model: options.model,
+      baseURL: options.baseUrl,
+      maxRetries: options.retry,
+      onChunk: (chunk) => {
+        streamedText += chunk
+        if (spinner) {
+          spinner.text = `Generating resume...\n${streamedText.slice(-200)}`
+        }
+      },
+      logger,
+    })
+  } catch (error) {
+    spinner?.fail('Failed to generate resume')
+
+    const message = getErrorMessage(error)
+    consola.error(message)
+
+    if (consola.level >= 4 && error instanceof Error && error.stack) {
+      consola.error(error.stack)
+    }
+
+    this.error(message, {
+      exitCode: error instanceof YAMLResumeError ? error.errno : 1,
+    })
+  }
+}
+
+/**
  * Create a command instance to generate a resume with AI.
  */
 export function createAIGenerateCommand() {
@@ -57,61 +127,5 @@ export function createAIGenerateCommand() {
     )
     .argument('<filename>', 'output filename')
     .addHelpText('after', AI_ENVIRONMENT_VARIABLES_HELP_TEXT)
-    .action(async function (
-      this: Command,
-      filename: string,
-      options: {
-        position: string
-        language: string
-        model?: string
-        baseUrl?: string
-        retry?: number
-      }
-    ) {
-      let spinner: Ora | undefined
-      let streamedText = ''
-
-      const logger: Logger = {
-        start: (message) => {
-          spinner = ora(message).start()
-        },
-        success: (message) => {
-          spinner?.succeed(message)
-          consola.success(`Generated ${filename} successfully.`)
-        },
-        debug: consola.debug,
-        info: consola.info,
-        log: consola.log,
-        warn: consola.warn,
-        error: () => {},
-      }
-
-      try {
-        await generateResumeFile(filename, options.position, options.language, {
-          model: options.model,
-          baseURL: options.baseUrl,
-          maxRetries: options.retry,
-          onChunk: (chunk) => {
-            streamedText += chunk
-            if (spinner) {
-              spinner.text = `Generating resume...\n${streamedText.slice(-200)}`
-            }
-          },
-          logger,
-        })
-      } catch (error) {
-        spinner?.fail('Failed to generate resume')
-
-        const message = getErrorMessage(error)
-        consola.error(message)
-
-        if (consola.level >= 4 && error instanceof Error && error.stack) {
-          consola.error(error.stack)
-        }
-
-        this.error(message, {
-          exitCode: error instanceof YAMLResumeError ? error.errno : 1,
-        })
-      }
-    })
+    .action(handleGenerateCommand)
 }

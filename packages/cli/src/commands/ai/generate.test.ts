@@ -38,7 +38,7 @@ import {
   vi,
 } from 'vitest'
 
-import { createAIGenerateCommand } from './generate'
+import { createAIGenerateCommand, handleGenerateCommand } from './generate'
 
 vi.mock('@yamlresume/node', async () => {
   const actual = await vi.importActual('@yamlresume/node')
@@ -497,5 +497,78 @@ describe(createAIGenerateCommand, () => {
     expect(consolaSpies.success).toHaveBeenCalledWith(
       'Generated my-resume.yml successfully.'
     )
+  })
+})
+
+describe(handleGenerateCommand, () => {
+  let generateSpy: MockedFunction<typeof generateResumeFile>
+  let commandErrorSpy: ReturnType<typeof vi.fn>
+  let fakeCommand: Command
+
+  beforeEach(() => {
+    resetMockSpinner()
+    generateSpy = vi
+      .mocked(generateResumeFile)
+      .mockImplementation(async (filename, _position, _language, options) => {
+        options?.logger?.success(`Generated ${filename} successfully.`)
+      })
+    commandErrorSpy = vi.fn()
+    fakeCommand = { error: commandErrorSpy } as unknown as Command
+  })
+
+  afterEach(() => {
+    vi.resetAllMocks()
+  })
+
+  it('should call generateResumeFile with parsed options', async () => {
+    await handleGenerateCommand.call(fakeCommand, 'my-resume.yml', {
+      position: 'Nurse',
+      language: 'en',
+      model: 'gpt-5',
+      baseUrl: 'https://custom.example.com/v1',
+      retry: 3,
+    })
+
+    expect(generateSpy).toHaveBeenCalledWith(
+      'my-resume.yml',
+      'Nurse',
+      'en',
+      expect.objectContaining({
+        model: 'gpt-5',
+        baseURL: 'https://custom.example.com/v1',
+        maxRetries: 3,
+      })
+    )
+  })
+
+  it('should report YAMLResumeError via command.error', async () => {
+    generateSpy.mockRejectedValue(
+      new YAMLResumeError('FILE_CONFLICT', { path: 'my-resume.yml' })
+    )
+
+    await handleGenerateCommand.call(fakeCommand, 'my-resume.yml', {
+      position: 'Nurse',
+      language: 'en',
+    })
+
+    expect(commandErrorSpy).toHaveBeenCalledWith(
+      expect.stringContaining('my-resume.yml'),
+      {
+        exitCode: ErrorType.FILE_CONFLICT.errno,
+      }
+    )
+  })
+
+  it('should report non-YAMLResumeError with exit code 1', async () => {
+    generateSpy.mockRejectedValue('AI failed')
+
+    await handleGenerateCommand.call(fakeCommand, 'my-resume.yml', {
+      position: 'Nurse',
+      language: 'en',
+    })
+
+    expect(commandErrorSpy).toHaveBeenCalledWith('AI failed', {
+      exitCode: 1,
+    })
   })
 })

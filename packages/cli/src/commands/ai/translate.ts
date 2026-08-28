@@ -32,6 +32,77 @@ import ora from 'ora'
 import { AI_ENVIRONMENT_VARIABLES_HELP_TEXT } from './const'
 
 /**
+ * Options passed to the translate command action.
+ */
+export interface TranslateCommandOptions {
+  to: string
+  model?: string
+  baseUrl?: string
+  retry?: number
+}
+
+/**
+ * Handle the `ai translate` command.
+ *
+ * @param this - The Commander command instance.
+ * @param input - The source resume filename.
+ * @param output - The output resume filename.
+ * @param options - The command options.
+ */
+export async function handleTranslateCommand(
+  this: Command,
+  input: string,
+  output: string,
+  options: TranslateCommandOptions
+): Promise<void> {
+  let spinner: Ora | undefined
+  let streamedText = ''
+
+  const logger: Logger = {
+    start: (message) => {
+      spinner = ora(message).start()
+    },
+    success: (message) => {
+      spinner?.succeed(message)
+      consola.success(`Translated ${output} successfully.`)
+    },
+    debug: consola.debug,
+    info: consola.info,
+    log: consola.log,
+    warn: consola.warn,
+    error: () => {},
+  }
+
+  try {
+    await translateResumeFile(input, output, options.to, {
+      model: options.model,
+      baseURL: options.baseUrl,
+      maxRetries: options.retry,
+      onChunk: (chunk) => {
+        streamedText += chunk
+        if (spinner) {
+          spinner.text = `Translating resume...\n${streamedText.slice(-200)}`
+        }
+      },
+      logger,
+    })
+  } catch (error) {
+    spinner?.fail('Failed to translate resume')
+
+    const message = getErrorMessage(error)
+    consola.error(message)
+
+    if (consola.level >= 4 && error instanceof Error && error.stack) {
+      consola.error(error.stack)
+    }
+
+    this.error(message, {
+      exitCode: error instanceof YAMLResumeError ? error.errno : 1,
+    })
+  }
+}
+
+/**
  * Create a command instance to translate a resume with AI.
  */
 export function createAITranslateCommand() {
@@ -59,61 +130,5 @@ export function createAITranslateCommand() {
     .argument('<input>', 'source resume filename')
     .argument('<output>', 'output resume filename')
     .addHelpText('after', AI_ENVIRONMENT_VARIABLES_HELP_TEXT)
-    .action(async function (
-      this: Command,
-      input: string,
-      output: string,
-      options: {
-        to: string
-        model?: string
-        baseUrl?: string
-        retry?: number
-      }
-    ) {
-      let spinner: Ora | undefined
-      let streamedText = ''
-
-      const logger: Logger = {
-        start: (message) => {
-          spinner = ora(message).start()
-        },
-        success: (message) => {
-          spinner?.succeed(message)
-          consola.success(`Translated ${output} successfully.`)
-        },
-        debug: consola.debug,
-        info: consola.info,
-        log: consola.log,
-        warn: consola.warn,
-        error: () => {},
-      }
-
-      try {
-        await translateResumeFile(input, output, options.to, {
-          model: options.model,
-          baseURL: options.baseUrl,
-          maxRetries: options.retry,
-          onChunk: (chunk) => {
-            streamedText += chunk
-            if (spinner) {
-              spinner.text = `Translating resume...\n${streamedText.slice(-200)}`
-            }
-          },
-          logger,
-        })
-      } catch (error) {
-        spinner?.fail('Failed to translate resume')
-
-        const message = getErrorMessage(error)
-        consola.error(message)
-
-        if (consola.level >= 4 && error instanceof Error && error.stack) {
-          consola.error(error.stack)
-        }
-
-        this.error(message, {
-          exitCode: error instanceof YAMLResumeError ? error.errno : 1,
-        })
-      }
-    })
+    .action(handleTranslateCommand)
 }

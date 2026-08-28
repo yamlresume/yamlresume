@@ -41,7 +41,7 @@ import {
   type MockedFunction,
   vi,
 } from 'vitest'
-import { createBuildCommand, parseTimeout } from './build'
+import { createBuildCommand, handleBuildCommand, parseTimeout } from './build'
 
 vi.mock('@yamlresume/node', async (importOriginal) => {
   const actual = await importOriginal<typeof import('@yamlresume/node')>()
@@ -258,6 +258,106 @@ describe(createBuildCommand, () => {
     expect(processExitSpy).toHaveBeenCalledWith(1)
     expect(consolaSpies.error).toHaveBeenCalledTimes(1)
     expect(consolaSpies.error).toHaveBeenCalledWith(error.message)
+  })
+})
+
+describe(handleBuildCommand, () => {
+  let buildSpy: MockedFunction<typeof buildResumeFile>
+  let readSpy: MockedFunction<typeof readResumeFile>
+
+  beforeEach(() => {
+    vi.clearAllMocks()
+    buildSpy = vi.mocked(buildResumeFile).mockResolvedValue({ outputs: [] })
+    readSpy = vi.mocked(readResumeFile).mockReturnValue({
+      // @ts-expect-error
+      resume: {},
+      validated: 'success',
+    })
+  })
+
+  afterEach(() => {
+    vi.restoreAllMocks()
+  })
+
+  it('should read and build the resume with default options', async () => {
+    const resumePath = getFixture(__dirname, 'software-engineer.yml')
+
+    await handleBuildCommand(resumePath, {
+      pdf: true,
+      validate: true,
+      timeout: LATEX_COMPILE_TIMEOUT,
+    })
+
+    expect(readSpy).toHaveBeenCalledWith(resumePath, { validate: true })
+    expect(buildSpy).toHaveBeenCalledWith(resumePath, {
+      pdf: true,
+      validate: false,
+      timeout: LATEX_COMPILE_TIMEOUT,
+      logger: consola,
+    })
+  })
+
+  it('should pass options to buildResumeFile', async () => {
+    const resumePath = getFixture(__dirname, 'software-engineer.yml')
+
+    await handleBuildCommand(resumePath, {
+      pdf: false,
+      validate: false,
+      output: '/tmp/output',
+      timeout: 60,
+    })
+
+    expect(buildSpy).toHaveBeenCalledWith(
+      resumePath,
+      expect.objectContaining({
+        pdf: false,
+        validate: false,
+        output: '/tmp/output',
+        timeout: 60,
+      })
+    )
+  })
+
+  it('should exit with YAMLResumeError errno on failure', async () => {
+    const resumePath = getFixture(__dirname, 'software-engineer.yml')
+    const error = new YAMLResumeError('LATEX_COMPILE_ERROR', {
+      error: 'Mock error',
+    })
+    buildSpy.mockRejectedValue(error)
+
+    const processExitSpy = vi
+      .spyOn(process, 'exit')
+      // @ts-expect-error
+      .mockImplementation(vi.fn())
+
+    await handleBuildCommand(resumePath, {
+      pdf: true,
+      validate: true,
+      timeout: LATEX_COMPILE_TIMEOUT,
+    })
+
+    expect(processExitSpy).toHaveBeenCalledWith(
+      ErrorType.LATEX_COMPILE_ERROR.errno
+    )
+  })
+
+  it('should exit with code 1 on non-YAMLResumeError errors', async () => {
+    const resumePath = getFixture(__dirname, 'software-engineer.yml')
+    const error = new Error('Unexpected error')
+    buildSpy.mockRejectedValue(error)
+
+    const processExitSpy = vi
+      .spyOn(process, 'exit')
+      // @ts-expect-error
+      .mockImplementation(vi.fn())
+
+    await handleBuildCommand(resumePath, {
+      pdf: true,
+      validate: true,
+      timeout: LATEX_COMPILE_TIMEOUT,
+    })
+
+    expect(processExitSpy).toHaveBeenCalledWith(1)
   })
 })
 

@@ -34,6 +34,48 @@ import {
 } from '../utils/format'
 
 /**
+ * Handle the `validate` command.
+ *
+ * @param resumePath - The resume file path.
+ */
+export async function handleValidateCommand(resumePath: string): Promise<void> {
+  try {
+    const { validated, errors } = readResumeFile(resumePath, {
+      validate: true,
+    })
+
+    if (validated === 'success') {
+      consola.success('Resume validation passed.')
+      return
+    }
+
+    if (validated === 'failed' && errors) {
+      const resumeStr = fs.readFileSync(resumePath, 'utf8')
+      for (const error of errors) {
+        consola.log(prettifySchemaValidationError(error, resumePath, resumeStr))
+      }
+      consola.fail('Resume validation failed.')
+    }
+  } catch (error) {
+    if (error instanceof YAMLResumeError) {
+      if (error.code === 'INVALID_YAML') {
+        const resumeStr = fs.readFileSync(resumePath, 'utf8')
+        consola.log(
+          prettifyYamlParseError(error.message, resumePath, resumeStr)
+        )
+      }
+      consola.error(getErrorMessage(error))
+      process.exit(error.errno)
+      return
+    }
+
+    consola.error(getErrorMessage(error))
+    process.exit(1)
+    return
+  }
+}
+
+/**
  * Create a command instance to validate a YAML resume
  */
 export function createValidateCommand() {
@@ -41,42 +83,5 @@ export function createValidateCommand() {
     .name('validate')
     .description('validate a resume against the YAMLResume schema')
     .argument('<resume-path>', 'the resume file path')
-    .action(async (resumePath: string) => {
-      try {
-        const { validated, errors } = readResumeFile(resumePath, {
-          validate: true,
-        })
-
-        if (validated === 'success') {
-          consola.success('Resume validation passed.')
-          return
-        }
-
-        if (validated === 'failed' && errors) {
-          const resumeStr = fs.readFileSync(resumePath, 'utf8')
-          for (const error of errors) {
-            consola.log(
-              prettifySchemaValidationError(error, resumePath, resumeStr)
-            )
-          }
-          consola.fail('Resume validation failed.')
-        }
-      } catch (error) {
-        if (error instanceof YAMLResumeError) {
-          if (error.code === 'INVALID_YAML') {
-            const resumeStr = fs.readFileSync(resumePath, 'utf8')
-            consola.log(
-              prettifyYamlParseError(error.message, resumePath, resumeStr)
-            )
-          }
-          consola.error(getErrorMessage(error))
-          process.exit(error.errno)
-          return
-        }
-
-        consola.error(getErrorMessage(error))
-        process.exit(1)
-        return
-      }
-    })
+    .action(handleValidateCommand)
 }

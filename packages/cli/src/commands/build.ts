@@ -70,6 +70,62 @@ export function parseTimeout(value: string): number {
 }
 
 /**
+ * Options passed to the build command action.
+ */
+export interface BuildCommandOptions {
+  pdf: boolean
+  validate: boolean
+  output?: string
+  timeout: number
+}
+
+/**
+ * Handle the `build` command.
+ *
+ * @param resumePath - The resume file path.
+ * @param options - The command options.
+ */
+export async function handleBuildCommand(
+  resumePath: string,
+  options: BuildCommandOptions
+): Promise<void> {
+  try {
+    const { validated, errors } = readResumeFile(resumePath, {
+      validate: options.validate,
+    })
+
+    if (validated === 'failed' && errors) {
+      const resumeStr = fs.readFileSync(resumePath, 'utf8')
+      for (const error of errors) {
+        consola.log(prettifySchemaValidationError(error, resumePath, resumeStr))
+      }
+    }
+
+    await buildResumeFile(resumePath, {
+      ...options,
+      validate: false,
+      logger: consola,
+    })
+  } catch (error) {
+    if (error instanceof YAMLResumeError) {
+      if (error.code === 'INVALID_YAML') {
+        const resumeStr = fs.readFileSync(resumePath, 'utf8')
+        consola.log(
+          prettifyYamlParseError(error.message, resumePath, resumeStr)
+        )
+      }
+      consola.error(getErrorMessage(error))
+      process.exit(error.errno)
+      return
+    }
+
+    consola.error(getErrorMessage(error))
+    process.exit(1)
+    return
+  }
+}
+
+/**
  * Create a command instance to build a YAML resume to LaTeX and PDF
  */
 export function createBuildCommand() {
@@ -94,52 +150,5 @@ export function createBuildCommand() {
       ),
       (value) => parseTimeout(value)
     )
-    .action(
-      async (
-        resumePath: string,
-        options: {
-          pdf: boolean
-          validate: boolean
-          output?: string
-          timeout: number
-        }
-      ) => {
-        try {
-          const { validated, errors } = readResumeFile(resumePath, {
-            validate: options.validate,
-          })
-
-          if (validated === 'failed' && errors) {
-            const resumeStr = fs.readFileSync(resumePath, 'utf8')
-            for (const error of errors) {
-              consola.log(
-                prettifySchemaValidationError(error, resumePath, resumeStr)
-              )
-            }
-          }
-
-          await buildResumeFile(resumePath, {
-            ...options,
-            validate: false,
-            logger: consola,
-          })
-        } catch (error) {
-          if (error instanceof YAMLResumeError) {
-            if (error.code === 'INVALID_YAML') {
-              const resumeStr = fs.readFileSync(resumePath, 'utf8')
-              consola.log(
-                prettifyYamlParseError(error.message, resumePath, resumeStr)
-              )
-            }
-            consola.error(getErrorMessage(error))
-            process.exit(error.errno)
-            return
-          }
-
-          consola.error(getErrorMessage(error))
-          process.exit(1)
-          return
-        }
-      }
-    )
+    .action(handleBuildCommand)
 }

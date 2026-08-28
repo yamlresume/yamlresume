@@ -29,7 +29,7 @@ import type { Command } from 'commander'
 import { consola } from 'consola'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 
-import { createNewCommand } from './new'
+import { createNewCommand, handleNewCommand } from './new'
 
 vi.mock('@yamlresume/node', async () => {
   const actual = await vi.importActual('@yamlresume/node')
@@ -147,6 +147,68 @@ describe(createNewCommand, () => {
     newCommand.parse(['yamlresume', 'new'])
 
     expect(consolaSpies.error).toHaveBeenCalledWith(error.message)
+    expect(processExitSpy).toHaveBeenCalledWith(1)
+  })
+})
+
+describe(handleNewCommand, () => {
+  let newResumeSpy: ReturnType<typeof vi.mocked<typeof newResumeFile>>
+
+  beforeEach(() => {
+    newResumeSpy = vi.mocked(newResumeFile).mockImplementation(vi.fn())
+  })
+
+  afterEach(() => {
+    vi.restoreAllMocks()
+  })
+
+  it('should create a new resume with default sample and language', () => {
+    handleNewCommand('resume.yml', { language: 'en' })
+
+    expect(newResumeSpy).toHaveBeenCalledWith(
+      'resume.yml',
+      'software-engineer',
+      'en',
+      { showSampleSource: false, logger: consola }
+    )
+  })
+
+  it('should create a new resume from a custom sample', () => {
+    handleNewCommand('resume.yml', { sample: 'nurse', language: 'en' })
+
+    expect(newResumeSpy).toHaveBeenCalledWith('resume.yml', 'nurse', 'en', {
+      showSampleSource: true,
+      logger: consola,
+    })
+  })
+
+  it('should exit with YAMLResumeError errno', () => {
+    const error = new YAMLResumeError('FILE_CONFLICT', { path: 'resume.yml' })
+    newResumeSpy.mockImplementation(() => {
+      throw error
+    })
+
+    const processExitSpy = vi
+      .spyOn(process, 'exit')
+      .mockImplementation((() => {}) as NodeJS.Process['exit'])
+
+    handleNewCommand('resume.yml', { language: 'en' })
+
+    expect(processExitSpy).toHaveBeenCalledWith(ErrorType.FILE_CONFLICT.errno)
+  })
+
+  it('should exit with code 1 on non-YAMLResumeError errors', () => {
+    const error = new Error('Invalid sample')
+    newResumeSpy.mockImplementation(() => {
+      throw error
+    })
+
+    const processExitSpy = vi
+      .spyOn(process, 'exit')
+      .mockImplementation((() => {}) as NodeJS.Process['exit'])
+
+    handleNewCommand('resume.yml', { language: 'en' })
+
     expect(processExitSpy).toHaveBeenCalledWith(1)
   })
 })

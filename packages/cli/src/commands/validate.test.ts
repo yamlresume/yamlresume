@@ -35,7 +35,7 @@ import {
   type MockedFunction,
   vi,
 } from 'vitest'
-import { createValidateCommand } from './validate'
+import { createValidateCommand, handleValidateCommand } from './validate'
 
 vi.mock('@yamlresume/node', async () => {
   const actual = await vi.importActual('@yamlresume/node')
@@ -211,5 +211,105 @@ describe(createValidateCommand, () => {
     expect(consolaSpies.log).not.toHaveBeenCalled()
     expect(consolaSpies.error).toHaveBeenCalled()
     expect(processExitSpy).toHaveBeenCalledWith(ErrorType.FILE_NOT_FOUND.errno)
+  })
+})
+
+describe(handleValidateCommand, () => {
+  let readSpy: MockedFunction<typeof readResumeFile>
+  let consolaSpies: ReturnType<
+    typeof spyOnConsola<'success' | 'fail' | 'error' | 'log'>
+  >
+
+  beforeEach(() => {
+    vi.clearAllMocks()
+    readSpy = vi.mocked(readResumeFile).mockReturnValue({
+      // @ts-expect-error
+      resume: {},
+      validated: 'success',
+    })
+    consolaSpies = spyOnConsola('success', 'fail', 'error', 'log')
+  })
+
+  afterEach(() => {
+    vi.restoreAllMocks()
+  })
+
+  it('should report validation success', async () => {
+    const resumePath = getFixture(__dirname, 'software-engineer.yml')
+
+    await handleValidateCommand(resumePath)
+
+    expect(readSpy).toHaveBeenCalledWith(
+      resumePath,
+      expect.objectContaining({ validate: true })
+    )
+    expect(consolaSpies.success).toHaveBeenCalledWith(
+      'Resume validation passed.'
+    )
+  })
+
+  it('should report validation failure with formatted errors', async () => {
+    const resumePath = getFixture(__dirname, 'software-engineer.yml')
+    const resumeStr = 'content:\n  basics:\n    name: 123'
+
+    vi.spyOn(fs, 'readFileSync').mockReturnValue(resumeStr)
+
+    readSpy.mockReturnValue({
+      // @ts-expect-error
+      resume: {},
+      validated: 'failed',
+      errors: [
+        {
+          message: 'Expected string, received number',
+          line: 3,
+          column: 11,
+          path: ['content', 'basics', 'name'],
+        },
+      ],
+    })
+
+    await handleValidateCommand(resumePath)
+
+    expect(consolaSpies.log).toHaveBeenCalled()
+    expect(consolaSpies.fail).toHaveBeenCalledWith('Resume validation failed.')
+  })
+
+  it('should exit with YAMLResumeError errno on failure', async () => {
+    const resumePath = getFixture(__dirname, 'software-engineer.yml')
+    const resumeStr = 'content: {'
+
+    vi.spyOn(fs, 'readFileSync').mockReturnValue(resumeStr)
+
+    readSpy.mockImplementation(() => {
+      throw new YAMLResumeError('INVALID_YAML', {
+        error: 'Unexpected end of flow mapping at line 1, column 11',
+      })
+    })
+
+    const processExitSpy = vi
+      .spyOn(process, 'exit')
+      // @ts-expect-error
+      .mockImplementation(vi.fn())
+
+    await handleValidateCommand(resumePath)
+
+    expect(processExitSpy).toHaveBeenCalledWith(ErrorType.INVALID_YAML.errno)
+  })
+
+  it('should exit with code 1 on non-YAMLResumeError errors', async () => {
+    const resumePath = getFixture(__dirname, 'software-engineer.yml')
+    const error = new Error('Mock error')
+    readSpy.mockImplementation(() => {
+      throw error
+    })
+
+    const processExitSpy = vi
+      .spyOn(process, 'exit')
+      // @ts-expect-error
+      .mockImplementation(vi.fn())
+
+    await handleValidateCommand(resumePath)
+
+    expect(processExitSpy).toHaveBeenCalledWith(1)
   })
 })

@@ -22,13 +22,59 @@
  * IN THE SOFTWARE.
  */
 
-import { getErrorMessage, YAMLResumeError } from '@yamlresume/core'
+import {
+  getErrorMessage,
+  type LocaleLanguage,
+  YAMLResumeError,
+} from '@yamlresume/core'
 import { newResumeFile } from '@yamlresume/node'
 import { listSampleResumes } from '@yamlresume/samples'
 import { Command } from 'commander'
 import { consola } from 'consola'
 
 const DEFAULT_SAMPLE_ID = 'software-engineer'
+
+/**
+ * Options passed to the new command action.
+ */
+export interface NewCommandOptions {
+  sample?: string
+  language: string
+}
+
+/**
+ * Handle the `new` command.
+ *
+ * @param filename - The output filename.
+ * @param options - The command options.
+ */
+export function handleNewCommand(
+  filename: string,
+  options: NewCommandOptions
+): void {
+  try {
+    newResumeFile(
+      filename,
+      options.sample ?? DEFAULT_SAMPLE_ID,
+      options.language as LocaleLanguage,
+      { showSampleSource: Boolean(options.sample), logger: consola }
+    )
+  } catch (error) {
+    if (error instanceof YAMLResumeError) {
+      consola.error(getErrorMessage(error))
+      process.exit(error.errno)
+      return
+    }
+
+    consola.error(getErrorMessage(error))
+    consola.info(
+      `Available samples:\n${listSampleResumes()
+        .map((sample) => `  - ${sample.id}: ${sample.title}`)
+        .join('\n')}`
+    )
+    process.exit(1)
+  }
+}
 
 /**
  * Create a command instance to create a new YAML resume
@@ -40,28 +86,5 @@ export function createNewCommand() {
     .argument('[filename]', 'output filename', 'resume.yml')
     .option('--sample <id>', 'create from a curated sample resume')
     .option('--language <language>', 'locale language for the sample', 'en')
-    .action((filename, options) => {
-      try {
-        newResumeFile(
-          filename,
-          options.sample ?? DEFAULT_SAMPLE_ID,
-          options.language,
-          { showSampleSource: Boolean(options.sample), logger: consola }
-        )
-      } catch (error) {
-        if (error instanceof YAMLResumeError) {
-          consola.error(getErrorMessage(error))
-          process.exit(error.errno)
-          return
-        }
-
-        consola.error(getErrorMessage(error))
-        consola.info(
-          `Available samples:\n${listSampleResumes()
-            .map((sample) => `  - ${sample.id}: ${sample.title}`)
-            .join('\n')}`
-        )
-        process.exit(1)
-      }
-    })
+    .action(handleNewCommand)
 }

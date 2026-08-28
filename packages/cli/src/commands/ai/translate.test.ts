@@ -38,7 +38,7 @@ import {
   vi,
 } from 'vitest'
 
-import { createAITranslateCommand } from './translate'
+import { createAITranslateCommand, handleTranslateCommand } from './translate'
 
 vi.mock('@yamlresume/node', async () => {
   const actual = await vi.importActual('@yamlresume/node')
@@ -483,5 +483,86 @@ describe(createAITranslateCommand, () => {
     expect(consolaSpies.success).toHaveBeenCalledWith(
       'Translated resume.zh-hans.yml successfully.'
     )
+  })
+})
+
+describe(handleTranslateCommand, () => {
+  let translateSpy: MockedFunction<typeof translateResumeFile>
+  let commandErrorSpy: ReturnType<typeof vi.fn>
+  let fakeCommand: Command
+
+  beforeEach(() => {
+    resetMockSpinner()
+    translateSpy = vi
+      .mocked(translateResumeFile)
+      .mockImplementation(async (_input, output, _language, options) => {
+        options?.logger?.success(`Translated ${output} successfully.`)
+      })
+    commandErrorSpy = vi.fn()
+    fakeCommand = { error: commandErrorSpy } as unknown as Command
+  })
+
+  afterEach(() => {
+    vi.resetAllMocks()
+  })
+
+  it('should call translateResumeFile with parsed options', async () => {
+    await handleTranslateCommand.call(
+      fakeCommand,
+      'resume.en.yml',
+      'resume.zh-hans.yml',
+      {
+        to: 'zh-hans',
+        model: 'gpt-5',
+        baseUrl: 'https://custom.example.com/v1',
+        retry: 3,
+      }
+    )
+
+    expect(translateSpy).toHaveBeenCalledWith(
+      'resume.en.yml',
+      'resume.zh-hans.yml',
+      'zh-hans',
+      expect.objectContaining({
+        model: 'gpt-5',
+        baseURL: 'https://custom.example.com/v1',
+        maxRetries: 3,
+      })
+    )
+  })
+
+  it('should report YAMLResumeError via command.error', async () => {
+    translateSpy.mockRejectedValue(
+      new YAMLResumeError('FILE_CONFLICT', { path: 'resume.zh-hans.yml' })
+    )
+
+    await handleTranslateCommand.call(
+      fakeCommand,
+      'resume.en.yml',
+      'resume.zh-hans.yml',
+      { to: 'zh-hans' }
+    )
+
+    expect(commandErrorSpy).toHaveBeenCalledWith(
+      expect.stringContaining('resume.zh-hans.yml'),
+      {
+        exitCode: ErrorType.FILE_CONFLICT.errno,
+      }
+    )
+  })
+
+  it('should report non-YAMLResumeError with exit code 1', async () => {
+    translateSpy.mockRejectedValue('AI failed')
+
+    await handleTranslateCommand.call(
+      fakeCommand,
+      'resume.en.yml',
+      'resume.zh-hans.yml',
+      { to: 'zh-hans' }
+    )
+
+    expect(commandErrorSpy).toHaveBeenCalledWith('AI failed', {
+      exitCode: 1,
+    })
   })
 })
