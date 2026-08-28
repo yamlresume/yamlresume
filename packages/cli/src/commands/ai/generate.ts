@@ -29,6 +29,8 @@ import { consola } from 'consola'
 import type { Ora } from 'ora'
 import ora from 'ora'
 
+import { AI_ENVIRONMENT_VARIABLES_HELP_TEXT } from './const'
+
 /**
  * Create a command instance to generate a resume with AI.
  */
@@ -54,22 +56,7 @@ export function createAIGenerateCommand() {
       }
     )
     .argument('<filename>', 'output filename')
-    .addHelpText(
-      'after',
-      `
-Environment variables:
-
-  Required (one API key for the selected cloud provider):
-    DEEPSEEK_API_KEY          DeepSeek API key
-    OPENAI_API_KEY            OpenAI API key
-    MOONSHOT_API_KEY          Kimi (Moonshot AI) API key
-
-  Optional:
-    OLLAMA_HOST               Ollama host for local models
-    YAMLRESUME_AI_MODEL       model override (overridden by --model)
-    YAMLRESUME_AI_BASE_URL    API base URL override (overridden by --base-url)
-`
-    )
+    .addHelpText('after', AI_ENVIRONMENT_VARIABLES_HELP_TEXT)
     .action(async function (
       this: Command,
       filename: string,
