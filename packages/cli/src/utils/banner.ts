@@ -31,9 +31,9 @@ import { box } from 'consola/utils'
  * when the announcement becomes stale.
  */
 const ANNOUNCEMENT = [
-  'New from v0.15: sample resumes!',
-  'Create one: yamlresume new --sample <sample-id>',
-  'Browse all: yamlresume samples list',
+  'New from v0.16: translate resume with AI.',
+  'Example: yamlresume ai translate --to <language> <input> <output>',
+  'Learn more: yamlresume ai translate --help',
 ].join('\n')
 
 /**
