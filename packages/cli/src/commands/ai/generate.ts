@@ -32,7 +32,7 @@ import ora from 'ora'
 /**
  * Create a command instance to generate a resume with AI.
  */
-export function createGenerateCommand() {
+export function createAIGenerateCommand() {
   return new Command()
     .name('generate')
     .description('generate a new resume with AI')

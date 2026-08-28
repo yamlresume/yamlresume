@@ -38,7 +38,7 @@ import {
   vi,
 } from 'vitest'
 
-import { createGenerateCommand } from './generate'
+import { createAIGenerateCommand } from './generate'
 
 vi.mock('@yamlresume/node', async () => {
   const actual = await vi.importActual('@yamlresume/node')
@@ -75,7 +75,7 @@ function resetMockSpinner() {
   oraMock.mockReturnValue(mockSpinner)
 }
 
-describe(createGenerateCommand, () => {
+describe(createAIGenerateCommand, () => {
   let generateCommand: Command
   let generateSpy: MockedFunction<typeof generateResumeFile>
   let processExitSpy: ReturnType<typeof vi.spyOn>
@@ -85,7 +85,7 @@ describe(createGenerateCommand, () => {
 
   beforeEach(() => {
     resetMockSpinner()
-    generateCommand = createGenerateCommand()
+    generateCommand = createAIGenerateCommand()
     generateSpy = vi
       .mocked(generateResumeFile)
       .mockImplementation(async (filename, _position, _language, options) => {
