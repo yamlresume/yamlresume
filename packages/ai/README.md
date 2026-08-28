@@ -49,6 +49,14 @@ export YAMLRESUME_AI_BASE_URL=https://custom.openai.endpoint/v1
 yamlresume ai generate --position "Registered Nurse" --language en resume.yml
 ```
 
+Translate an existing resume to another locale language:
+
+```bash
+# Translate a resume from its current locale.language to Simplified Chinese
+export OPENAI_API_KEY=sk-...
+yamlresume ai translate --to zh-hans resume.en.yml resume.zh-hans.yml
+```
+
 ## Generate a resume
 
 ```ts
@@ -58,6 +66,17 @@ import { openai } from "@ai-sdk/openai";
 const model = openai("gpt-5");
 
 const yaml = await generateResume("Registered Nurse", "en", {
+  model,
+});
+```
+
+## Translate a resume
+
+```ts
+import { translateResume } from "@yamlresume/ai";
+
+const sourceYaml = "..."; // existing YAMLResume content
+const yaml = await translateResume(sourceYaml, "en", "zh-hans", {
   model,
 });
 ```

@@ -39,5 +39,9 @@ export {
   readResumeFile,
   validateResume,
 } from './read'
+export {
+  type TranslateResumeFileOptions,
+  translateResumeFile,
+} from './translate'
 export { LATEX_COMPILE_TIMEOUT } from './utils'
 export { watchResumeFile } from './watch'

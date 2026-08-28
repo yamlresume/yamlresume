@@ -87,3 +87,8 @@ export interface GenerateResumeOptions extends AIOptions {
    */
   withComments?: boolean
 }
+
+/**
+ * Options for translating an existing resume.
+ */
+export interface TranslateResumeOptions extends AIOptions {}

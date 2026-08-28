@@ -25,13 +25,17 @@
 import { Command } from 'commander'
 
 import { createAIGenerateCommand } from './generate'
+import { createAITranslateCommand } from './translate'
 
 /**
- * Create the AI command group.
+ * Create the AI parent command.
+ *
+ * Exposes `ai generate` and `ai translate` subcommands.
  */
 export function createAICommand() {
   return new Command()
     .name('ai')
-    .description('AI-powered resume generation')
+    .description('AI-powered resume commands')
     .addCommand(createAIGenerateCommand())
+    .addCommand(createAITranslateCommand())
 }

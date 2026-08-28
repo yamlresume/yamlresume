@@ -22,20 +22,42 @@
  * IN THE SOFTWARE.
  */
 
-export type { LanguageModel } from 'ai'
-export { generateText } from 'ai'
-export { AIResumeError, type AIResumeErrorCode } from './errors'
-export { generateResume } from './generate'
-export {
-  type AIProvider,
-  getAIProvider,
-  getModelFromEnv,
-} from './model'
-export { extractYamlFromLLM, parseGeneratedResume } from './parse'
-export { translateResume } from './translate'
-export type {
-  AIOptions,
-  GenerateResumeOptions,
-  LocaleLanguage,
-  TranslateResumeOptions,
-} from './types'
+import { Command } from 'commander'
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
+
+import { createAICommand } from './index'
+
+vi.mock('./generate', () => ({
+  createAIGenerateCommand: vi.fn(() => new Command().name('generate')),
+}))
+
+vi.mock('./translate', () => ({
+  createAITranslateCommand: vi.fn(() => new Command().name('translate')),
+}))
+
+describe(createAICommand, () => {
+  beforeEach(() => {
+    vi.clearAllMocks()
+  })
+
+  afterEach(() => {
+    vi.resetAllMocks()
+  })
+
+  it('should have correct name and description', () => {
+    const aiCommand = createAICommand()
+
+    expect(aiCommand.name()).toBe('ai')
+    expect(aiCommand.description()).toBe('AI-powered resume commands')
+  })
+
+  it('should register generate and translate subcommands', () => {
+    const aiCommand = createAICommand()
+    const commands = aiCommand.commands
+    const names = commands.map((cmd) => cmd.name())
+
+    expect(names).toContain('generate')
+    expect(names).toContain('translate')
+    expect(commands).toHaveLength(2)
+  })
+})
