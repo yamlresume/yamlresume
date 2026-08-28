@@ -25,17 +25,13 @@
 import {
   appendResumeLayouts,
   clearComments,
-  getErrorMessage,
   injectResumeComments,
-  joinNonEmptyString,
   type LocaleLanguage,
 } from '@yamlresume/core'
-import { generateText, streamText } from 'ai'
-import consola from 'consola'
-import { AIResumeError } from './errors'
-import { parseGeneratedResume } from './parse'
+
 import { buildGeneratePrompt } from './prompts/generate'
 import type { GenerateResumeOptions } from './types'
+import { generateWithValidation } from './utils/generate-with-validation'
 
 /**
  * Generate a YAMLResume for a given position and language using an LLM.
@@ -54,69 +50,18 @@ export async function generateResume(
   language: LocaleLanguage,
   options: GenerateResumeOptions
 ): Promise<string> {
-  const {
-    model,
-    temperature = 1,
-    maxTokens = 16384,
-    maxRetries = 2,
-    onChunk,
-    withLayouts = true,
-    withComments = true,
-  } = options
+  const { withLayouts = true, withComments = true, ...aiOptions } = options
 
   const { system, prompt } = buildGeneratePrompt(position, language)
-  let lastError: AIResumeError | undefined
-  let lastText: string | undefined
-  const errors: AIResumeError[] = []
 
-  for (let attempt = 0; attempt <= maxRetries; attempt++) {
-    const currentPrompt =
-      attempt > 0 && lastText && lastError
-        ? joinNonEmptyString([
-            prompt,
-            'Your previous response failed validation with the following errors: ',
-            lastError.message,
-            'Here is your previous response: ',
-            lastText,
-            'Please fix all validation errors and try again.',
-          ])
-        : prompt
-
-    consola.debug(`Attempt ${attempt + 1} prompt:`, currentPrompt)
-
-    try {
-      let text: string
-
-      if (onChunk) {
-        const result = streamText({
-          model,
-          system,
-          prompt: currentPrompt,
-          temperature,
-          maxTokens,
-        })
-
-        text = ''
-        for await (const chunk of result.textStream) {
-          text += chunk
-          onChunk(chunk)
-        }
-      } else {
-        const result = await generateText({
-          model,
-          system,
-          prompt: currentPrompt,
-          temperature,
-          maxTokens,
-        })
-        text = result.text
-      }
-
-      consola.debug(`Attempt ${attempt + 1} model output:`, text)
-
-      lastText = text
-      const { doc } = parseGeneratedResume(text)
-
+  return generateWithValidation(
+    {
+      ...aiOptions,
+      system,
+      prompt,
+      task: 'generate a valid resume',
+    },
+    (_text, doc) => {
       const finalDoc = withLayouts ? appendResumeLayouts(doc) : doc
 
       if (withComments) {
@@ -127,32 +72,6 @@ export async function generateResume(
       clearComments(finalDoc.contents)
       finalDoc.directives.docStart = null
       return finalDoc.toString()
-    } catch (error) {
-      if (error instanceof AIResumeError) {
-        consola.debug(`Attempt ${attempt + 1} validation error:`, error.message)
-        lastError = error
-        errors.push(error)
-        continue
-      }
-
-      throw new AIResumeError(
-        'PROVIDER_ERROR',
-        `LLM provider failed: ${getErrorMessage(error)}`,
-        error instanceof Error ? error : undefined
-      )
     }
-  }
-
-  throw new AIResumeError(
-    'GENERATION_FAILED',
-    joinNonEmptyString(
-      [
-        `Failed to generate a valid resume after ${maxRetries + 1} attempt(s).`,
-        ...errors.map(
-          (error, index) => `Attempt ${index + 1}: ${error.message}`
-        ),
-      ],
-      '\n'
-    )
   )
 }

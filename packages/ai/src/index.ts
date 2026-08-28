@@ -39,3 +39,7 @@ export type {
   LocaleLanguage,
   TranslateResumeOptions,
 } from './types'
+export {
+  type GenerateWithValidationOptions,
+  generateWithValidation,
+} from './utils/generate-with-validation'

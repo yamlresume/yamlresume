@@ -22,17 +22,11 @@
  * IN THE SOFTWARE.
  */
 
-import {
-  getErrorMessage,
-  joinNonEmptyString,
-  type LocaleLanguage,
-} from '@yamlresume/core'
-import { generateText, streamText } from 'ai'
-import consola from 'consola'
-import { AIResumeError } from './errors'
-import { parseGeneratedResume } from './parse'
+import type { LocaleLanguage } from '@yamlresume/core'
+
 import { buildTranslatePrompt } from './prompts/translate'
 import type { TranslateResumeOptions } from './types'
+import { generateWithValidation } from './utils/generate-with-validation'
 
 /**
  * Translate a YAMLResume from one locale language to another using an LLM.
@@ -53,98 +47,19 @@ export async function translateResume(
   toLanguage: LocaleLanguage,
   options: TranslateResumeOptions
 ): Promise<string> {
-  const {
-    model,
-    temperature = 1,
-    maxTokens = 16384,
-    maxRetries = 2,
-    onChunk,
-  } = options
-
   const { system, prompt } = buildTranslatePrompt(
     sourceYaml,
     fromLanguage,
     toLanguage
   )
-  let lastError: AIResumeError | undefined
-  let lastText: string | undefined
-  const errors: AIResumeError[] = []
 
-  for (let attempt = 0; attempt <= maxRetries; attempt++) {
-    const currentPrompt =
-      attempt > 0 && lastText && lastError
-        ? joinNonEmptyString([
-            prompt,
-            'Your previous response failed validation with the following errors: ',
-            lastError.message,
-            'Here is your previous response: ',
-            lastText,
-            'Please fix all validation errors and try again.',
-          ])
-        : prompt
-
-    consola.debug(`Attempt ${attempt + 1} prompt:`, currentPrompt)
-
-    try {
-      let text: string
-
-      if (onChunk) {
-        const result = streamText({
-          model,
-          system,
-          prompt: currentPrompt,
-          temperature,
-          maxTokens,
-        })
-
-        text = ''
-        for await (const chunk of result.textStream) {
-          text += chunk
-          onChunk(chunk)
-        }
-      } else {
-        const result = await generateText({
-          model,
-          system,
-          prompt: currentPrompt,
-          temperature,
-          maxTokens,
-        })
-        text = result.text
-      }
-
-      consola.debug(`Attempt ${attempt + 1} model output:`, text)
-
-      lastText = text
-      const { doc } = parseGeneratedResume(text)
-
-      return doc.toString()
-    } catch (error) {
-      if (error instanceof AIResumeError) {
-        consola.debug(`Attempt ${attempt + 1} validation error:`, error.message)
-        lastError = error
-        errors.push(error)
-        continue
-      }
-
-      throw new AIResumeError(
-        'PROVIDER_ERROR',
-        `LLM provider failed: ${getErrorMessage(error)}`,
-        error instanceof Error ? error : undefined
-      )
-    }
-  }
-
-  throw new AIResumeError(
-    'GENERATION_FAILED',
-    joinNonEmptyString(
-      [
-        `Failed to translate a valid resume after ${maxRetries + 1} attempt(s).`,
-        ...errors.map(
-          (error, index) => `Attempt ${index + 1}: ${error.message}`
-        ),
-      ],
-      '\n'
-    )
+  return generateWithValidation(
+    {
+      ...options,
+      system,
+      prompt,
+      task: 'translate a valid resume',
+    },
+    (_text, doc) => doc.toString()
   )
 }
