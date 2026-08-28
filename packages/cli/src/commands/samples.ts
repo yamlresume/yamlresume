@@ -49,20 +49,17 @@ export function listSamples() {
 }
 
 /**
- * Create a command instance to list sample resumes.
+ * Create a command instance to manage sample resumes.
  */
-export function createSamplesListCommand() {
-  return new Command()
-    .name('list')
+export function createSamplesCommand() {
+  const cmd = new Command().name('samples').description('manage sample resumes')
+
+  cmd
+    .command('list')
     .description('list all sample resumes')
     .action(() => {
       consola.log(listSamples())
     })
-}
 
-export function createSamplesCommand() {
-  return new Command()
-    .name('samples')
-    .description('manage sample resumes')
-    .addCommand(createSamplesListCommand())
+  return cmd
 }
