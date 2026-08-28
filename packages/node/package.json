@@ -1,6 +1,6 @@
 {
   "name": "@yamlresume/node",
-  "version": "0.15.3",
+  "version": "0.16.0",
   "description": "Node.js runtime support for YAMLResume",
   "license": "MIT",
   "author": {

@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.16.0](https://github.com/yamlresume/yamlresume/compare/v0.15.3...v0.16.0) (2026-08-28)
+
+
+### Features
+
+* **ai:** init a ai translate command ([dbab2bd](https://github.com/yamlresume/yamlresume/commit/dbab2bde2b6da2e4778fdcc45be54c1368061ee3))
+
+
+### Bug Fixes
+
+* **cli:** restore the ai command ([42497e0](https://github.com/yamlresume/yamlresume/commit/42497e091e0020ef6271f62c07d4f0cb09a1a482))
+* **playground:** hide tablist scrollbar while keeping horizontal scroll ([ee48200](https://github.com/yamlresume/yamlresume/commit/ee48200f62673d40ab653129132e62e2867ef73e))
+* **samples:** making withComments and withLayouts optional for getSampleResume ([e411592](https://github.com/yamlresume/yamlresume/commit/e4115923457f3dc0f733f6834379cca36f0ad6a6))
+
 ## [0.15.3](https://github.com/yamlresume/yamlresume/compare/v0.15.2...v0.15.3) (2026-08-27)
 
 
