@@ -37,6 +37,13 @@ export interface HtmlViewerProps {
  * @returns The rendered iframe element.
  */
 export function HtmlViewer({ content }: HtmlViewerProps) {
+  // Mounting an iframe with an empty srcDoc and updating it immediately can
+  // leave the initial blank document displayed in some browsers. Wait until
+  // the renderer has produced HTML so the iframe's first document is valid.
+  if (!content) {
+    return null
+  }
+
   return (
     <iframe
       title="Resume HTML Preview"

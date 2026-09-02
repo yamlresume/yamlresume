@@ -27,6 +27,12 @@ import { describe, expect, it } from 'vitest'
 import { HtmlViewer } from './HtmlViewer'
 
 describe(HtmlViewer, () => {
+  it('does not mount an iframe before content is available', () => {
+    render(<HtmlViewer content="" />)
+
+    expect(screen.queryByTitle('Resume HTML Preview')).toBeNull()
+  })
+
   it('renders iframe with correct srcDoc', () => {
     const content = '<html><body>Test Content</body></html>'
 
