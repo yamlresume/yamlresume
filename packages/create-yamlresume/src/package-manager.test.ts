@@ -57,19 +57,19 @@ describe('package-manager', () => {
     it('should detect known package managers from user agent', () => {
       const tests = [
         {
-          userAgent: 'npm/10.0 node/v20.0.0',
+          userAgent: 'npm/11.0 node/v22.0.0',
           expected: 'npm',
         },
         {
-          userAgent: 'pnpm/9.0.0 npm/? node/v20.0.0',
+          userAgent: 'pnpm/10.0.0 npm/? node/v22.0.0',
           expected: 'pnpm',
         },
         {
-          userAgent: 'yarn/1.22.22 node/v20',
+          userAgent: 'yarn/1.22.22 node/v22',
           expected: 'yarn',
         },
         {
-          userAgent: 'bun/1.0.0 node/v20',
+          userAgent: 'bun/1.0.0 node/v22',
           expected: 'bun',
         },
       ]
@@ -95,7 +95,7 @@ describe('package-manager', () => {
     })
 
     it('should use env user agent when available', () => {
-      process.env.npm_config_user_agent = 'pnpm/9.0.0 npm/? node/v20'
+      process.env.npm_config_user_agent = 'pnpm/10.0.0 npm/? node/v22'
       expect(detectPackageManager().name).toBe('pnpm')
     })
 

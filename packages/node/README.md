@@ -2,12 +2,18 @@
 
 Node.js runtime support for [YAMLResume](https://yamlresume.dev).
 
-This package provides programmatic APIs for reading resume files and building
-outputs (PDF, TeX, HTML, Markdown, Docx) from YAML/JSON resumes. It wraps
-`@yamlresume/core` with Node.js-specific capabilities such as file system
-access and LaTeX compilation.
+This package provides programmatic APIs for reading, validating, building,
+watching, generating, and translating YAML/JSON resume files. It wraps
+`@yamlresume/core` with Node.js-specific capabilities such as filesystem access
+and LaTeX and Typst PDF compilation.
+
+See the [practical integration
+guide](https://yamlresume.dev/docs/ecosystem/node) for build options, AI file
+workflows, error handling, and complete examples.
 
 ## Installation
+
+Node.js 22 or newer is required.
 
 ```sh
 npm install @yamlresume/node
@@ -72,11 +78,11 @@ function buildResumeFile(
 ): Promise<BuildResumeResult>
 ```
 
-Build a YAML resume into one or more outputs (`docx`, `html`, `tex`/`pdf`,
-`markdown`) by iterating through the layouts configured in the resume's
-`layouts` field. Options include PDF generation, validation, output directory,
-LaTeX compilation timeout, and an optional logger. Returns the list of
-generated file paths.
+Build a YAML resume into one or more outputs (`docx`, `html`, `markdown`,
+`tex`/`pdf`, or `typ`/`pdf`) by iterating through the layouts configured in the
+resume's `layouts` field. Options include PDF generation, validation, output
+directory, LaTeX and Typst compilation timeout, and an optional logger. Returns
+the list of generated file paths.
 
 ```typescript
 const { outputs } = await buildResumeFile('resume.yaml', {
@@ -117,13 +123,28 @@ Generate a new resume file with AI for a given position and language.
 Supports model selection, retries, streaming chunks via callback, and an
 optional logger.
 
+### `translateResumeFile`
+
+```typescript
+async function translateResumeFile(
+  inputPath: string,
+  outputPath: string,
+  toLanguage: string,
+  options?: TranslateResumeFileOptions
+): Promise<void>
+```
+
+Translate an existing resume to another supported locale language. The source
+language is read from `locale.language`; model selection, retries, streaming,
+and logging use the same options as AI generation.
+
 ### `watchResumeFile`
 
 ```typescript
 function watchResumeFile(
   resumePath: string,
   options?: BuildResumeFileOptions
-): chokidar.Watcher
+): chokidar.FSWatcher
 ```
 
 Watch a resume source file and rebuild outputs on changes. Uses `chokidar`

@@ -15,6 +15,9 @@
   ],
   "author": "",
   "license": "MIT",
+  "engines": {
+    "node": ">=22.0.0"
+  },
   "dependencies": {
     "yamlresume": "latest"
   }

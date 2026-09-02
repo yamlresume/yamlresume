@@ -70,8 +70,8 @@
   "bugs": {
     "url": "https://github.com/yamlresume/yamlresume/issues"
   },
-  "homepage": "https://yamlresume.dev/docs/node",
+  "homepage": "https://yamlresume.dev/docs/ecosystem/node",
   "engines": {
-    "node": ">=20.0.0"
+    "node": ">=22.0.0"
   }
 }

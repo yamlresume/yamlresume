@@ -1,21 +1,24 @@
 # @yamlresume/playground
 
 A powerful, feature-rich React component for editing and previewing YAML
-resumes. This package powers the [YAMLResume](https://yamlresume.dev) playground
-and can be integrated into other applications.
+resumes. This package powers the [official YAMLResume
+playground](https://yamlresume.dev/playground) and can be integrated into other
+applications.
 
-The official playground is at https://yamlresume.dev/playground.
+See the [practical integration
+guide](https://yamlresume.dev/docs/ecosystem/playground) for Tailwind CSS setup,
+framework integration, Monaco worker configuration, and troubleshooting.
 
 ## Features
 
-- 📝 **Live YAML Editor**: Monaco-based editor with syntax highlighting for AML.
+- 📝 **Live YAML Editor**: Monaco-based editor with YAML syntax highlighting.
 - ✨ **YAML Language Support**: Schema-driven completion, validation, and hover
   documentation powered by
   [`monaco-yaml`](https://github.com/remcohaszing/monaco-yaml) running the YAML
   language server in a Web Worker against the
   [YAMLResume JSON schema](https://yamlresume.dev/docs/compiler/schema/json).
-- 👁️ **Real-time Preview**: Instant preview of your resume in HTML, Markdown, or
-  LaTeX.
+- 👁️ **Real-time Preview**: Rendered DOCX and HTML previews, plus source previews
+  for Markdown, LaTeX, and Typst.
 - 📱 **Responsive Design**: Split-pane layout on desktop, tabbed interface on
   mobile.
 - 🌗 **Dark Mode Support**: Built-in dark mode compatibility.
@@ -24,59 +27,50 @@ The official playground is at https://yamlresume.dev/playground.
 
 ## Installation
 
-```bash
-npm install @yamlresume/playground @yamlresume/core
-# or
-pnpm add @yamlresume/playground @yamlresume/core
-# or
-yarn add @yamlresume/playground @yamlresume/core
-```
-
-### Peer Dependencies
-
-Ensure you have the following peer dependencies installed:
+Node.js 22 or newer is required for installing and building the package.
+Install the package with its React and Tailwind CSS peer dependencies:
 
 ```bash
-npm install react react-dom tailwindcss
+npm install @yamlresume/playground react react-dom tailwindcss
+# or
+pnpm add @yamlresume/playground react react-dom tailwindcss
+# or
+yarn add @yamlresume/playground react react-dom tailwindcss
 ```
 
 ## Usage
 
 ### Basic Usage
 
-The `Playground` component is the main entry point. It manages the state between
-the editor and the previewer.
+The `Playground` component fills its parent. Keep the YAML in React state so
+editor changes update the live preview:
 
 ```tsx
-import { Playground } from "@yamlresume/playground";
+import { Playground } from '@yamlresume/playground'
+import { useState } from 'react'
+
+const initialYaml = `
+content:
+  basics:
+    name: Andy Dufresne
+layouts:
+  - engine: html
+    template: calm
+`
 
 function App() {
+  const [yaml, setYaml] = useState(initialYaml)
+
   return (
-    <div style={{ height: "100vh" }}>
-      <Playground />
+    <div style={{ height: '100vh' }}>
+      <Playground yaml={yaml} onChange={setYaml} />
     </div>
-  );
+  )
 }
 ```
 
-### Controlled Component
-
-You can control the YAML content from a parent component:
-
-```tsx
-import { useState } from "react";
-import { Playground } from "@yamlresume/playground";
-
-function App() {
-  const [yaml, setYaml] = useState("layouts: []")
-
-  return (
-    <div style={{ height: "100vh" }}>
-      <Playground yaml={yaml} onChange={(newYaml) => setYaml(newYaml)} />
-    </div>
-  );
-}
-```
+Rendering `<Playground />` without props displays the bundled sample as a
+static demo. Provide both `yaml` and `onChange` for an editable integration.
 
 ## API Reference
 
@@ -86,21 +80,22 @@ function App() {
 
 The main split-view component.
 
-| Prop       | Type                      | Default     | Description                                                    |
-| ---------- | ------------------------- | ----------- | -------------------------------------------------------------- |
-| `yaml`     | `string`                  | `undefined` | The YAML content to display/edit. Defaults to a sample resume. |
-| `onChange` | `(value: string) => void` | `undefined` | Callback fired when editor content changes.                    |
-| `filename` | `string`                  | `undefined` | The filename to display in the editor.                         |
-| `messages` | `PlaygroundMessageOverrides` | `undefined` | Optional localized tooltip messages for toolbar actions.       |
+| Prop       | Type                         | Default       | Description                                              |
+| ---------- | ---------------------------- | ------------- | -------------------------------------------------------- |
+| `yaml`     | `string`                     | Bundled sample | YAML content displayed by the editor and preview         |
+| `onChange` | `(value: string) => void`    | `undefined`   | Callback fired when editor content changes               |
+| `filename` | `string`                     | `resume.yaml` | Filename shown in the editor and preview tab labels      |
+| `messages` | `PlaygroundMessageOverrides` | English labels | Partial localized tooltip overrides                    |
 
 #### `<ResumeEditor />`
 
 A standalone Monaco editor wrapper configured for YAML resumes.
 
-| Prop       | Type                      | Default     | Description      |
-| ---------- | ------------------------- | ----------- | ---------------- |
-| `value`    | `string`                  | `''`        | Editor content.  |
-| `onChange` | `(value: string) => void` | `undefined` | Change callback. |
+| Prop       | Type                                    | Required | Description      |
+| ---------- | --------------------------------------- | -------- | ---------------- |
+| `value`    | `string`                                | Yes      | Editor content   |
+| `onChange` | `(value: string \| undefined) => void` | Yes      | Change callback  |
+| `onMount`  | `OnMount`                               | No       | Mount callback   |
 
 #### `<ResumeViewer />`
 
@@ -115,7 +110,7 @@ Renders the resume based on the parsed object and selected layout.
 
 #### `useResumeState`
 
-Manages the parsing and validation state of the resume.
+Parses YAML into resume state and manages the active layout index.
 
 ```tsx
 const {
@@ -129,7 +124,7 @@ const {
 
 #### `useResumeRenderer`
 
-Handles the actual rendering logic based on the engine (HTML, Markdown, LaTeX).
+Handles rendering for DOCX, HTML, Markdown, LaTeX, and Typst layouts.
 
 ```tsx
 const { renderedContent, engine, error } = useResumeRenderer({
@@ -151,7 +146,7 @@ The package exports several utility functions:
 
 ### `downloadResume(resume: Resume | null, layoutIndex: number)`
 
-Downloads the resume for the specified layout index (HTML, Markdown, or LaTeX).
+Renders and downloads the resume output for the specified layout index.
 
 ### `copyResumeToClipboard(resume: Resume | null, layoutIndex: number): Promise<void>`
 

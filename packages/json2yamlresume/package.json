@@ -72,6 +72,6 @@
   },
   "homepage": "https://yamlresume.dev/docs/ecosystem/json2yamlresume",
   "engines": {
-    "node": ">=20.0.0"
+    "node": ">=22.0.0"
   }
 }

@@ -85,6 +85,6 @@
   },
   "homepage": "https://yamlresume.dev/docs/cli",
   "engines": {
-    "node": ">=20.0.0"
+    "node": ">=22.0.0"
   }
 }

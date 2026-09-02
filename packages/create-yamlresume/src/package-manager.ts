@@ -48,7 +48,7 @@ export const packageManagers: PackageManager[] = [
 /**
  * Detect a package manager from an npm-style user agent string.
  *
- * @param userAgent - The user agent string (e.g. "pnpm/9.0.0 npm/? node/v20").
+ * @param userAgent - The user agent string (e.g. "pnpm/10.0.0 npm/? node/v22").
  * @returns The detected package manager, or undefined if not recognized.
  */
 export function detectPackageManagerFromUserAgent(
