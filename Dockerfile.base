@@ -12,4 +12,11 @@ RUN apt update && \
     && rm -rf /usr/share/texlive/texmf-dist/source \
     && rm -rf /usr/share/texlive/texmf-dist/fonts/type1
 
+# Expose TeX Live's font trees to fontconfig: fontspec resolves
+# typography.fontFamily by family name, but texmf-dist is only kpathsea-indexed.
+RUN ln -s /usr/share/texlive/texmf-dist/fonts/opentype /usr/share/fonts/opentype/texlive \
+    && ln -s /usr/share/texlive/texmf-dist/fonts/truetype /usr/share/fonts/truetype/texlive \
+    && fc-cache -f \
+    && fc-match "IBM Plex Sans" # plex ships only in these trees, so this fails the build on stale symlinks
+
 LABEL maintainer="YAMLResume <https://yamlresume.dev>"
