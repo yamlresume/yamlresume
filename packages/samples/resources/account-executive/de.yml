@@ -1,0 +1,225 @@
+content:
+  basics:
+    name: Lukas Weber
+    headline: Account Executive | B2B SaaS Vertrieb
+    phone: "+49 30 12345678"
+    email: lukas.weber@example.com
+    url: https://www.lukasweber.de
+    summary: |
+      - Account Executive mit über 6 Jahren Erfahrung im B2B-SaaS-Vertrieb und einer Leidenschaft für consultative Selling
+      - Nachgewiesene Erfolge bei der Gewinnung von Neukunden, der Steigerung von Bestandsumsätzen und dem Aufbau langfristiger Kundenbeziehungen
+      - Stärken in der Verhandlungsführung, im Stakeholder-Management und in der Entwicklung maßgeschneiderter Lösungen für Enterprise-Kunden
+      - Sicher im Umgang mit CRM-Systemen (Salesforce, HubSpot) und datengetriebenen Vertriebsstrategien
+      - Deutsch als Muttersprache, Englisch verhandlungssicher, Französisch Grundkenntnisse
+  location:
+    address: Friedrichstraße 123
+    city: Berlin
+    region: Berlin
+    country: Germany
+    postalCode: "10117"
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/lukasweber
+      username: lukasweber
+    - network: Twitter
+      url: https://twitter.com/lukasweber
+      username: lukasweber
+  education:
+    - institution: Humboldt-Universität zu Berlin
+      url: https://www.hu-berlin.de
+      degree: Master
+      area: Wirtschaftswissenschaften
+      score: "1,6"
+      startDate: 'Oct 1, 2017'
+      endDate: 'Sep 30, 2019'
+      courses:
+        - Strategisches Vertriebsmanagement
+        - Marketing und Marktforschung
+        - Verhandlungsführung
+        - Business Analytics
+        - Internationales Management
+        - Unternehmensführung
+      summary: |
+        - Schwerpunkt auf B2B-Vertrieb und strategischem Kundenmanagement
+        - Masterarbeit über consultative Selling im SaaS-Umfeld
+        - Praktische Projekte mit CRM-Systemen und Vertriebsanalysen
+    - institution: Technische Universität Berlin
+      url: https://www.tu.berlin
+      degree: Bachelor
+      area: Betriebswirtschaftslehre
+      score: "1,8"
+      startDate: 'Oct 1, 2014'
+      endDate: 'Sep 30, 2017'
+      courses:
+        - Grundlagen der Betriebswirtschaftslehre
+        - Mikroökonomie
+        - Makroökonomie
+        - Statistik
+        - Marketing
+        - Vertriebsmanagement
+      summary: |
+        - Fundierte betriebswirtschaftliche Ausbildung mit Vertiefung in Marketing und Vertrieb
+        - Teilnahme an Praxisprojekten mit regionalen Unternehmen
+        - Erste Erfahrungen im Kundenkontakt und in der Präsentation von Lösungen
+  work:
+    - name: CloudForge GmbH
+      url: https://www.cloudforge.de
+      position: Senior Account Executive
+      startDate: 'Jan 1, 2022'
+      summary: |
+        - Verantwortung für den gesamten Vertriebszyklus von der Leadqualifizierung bis zum Abschluss im Enterprise-Segment
+        - Erzielung von 125 % der Jahresumsatzvorgabe in 2023 durch consultative Selling und strategische Account-Pläne
+        - Aufbau und Pflege von C-Level-Beziehungen bei mittelständischen und großen Unternehmen
+        - Enge Zusammenarbeit mit Marketing, Produktmanagement und Customer Success zur Steigerung der Kundenbindung
+        - Mentoring von zwei Junior Account Executives und Einführung eines Sales-Playbooks
+      keywords:
+        - B2B SaaS
+        - Enterprise Sales
+        - Consultative Selling
+        - Account Management
+        - Verhandlung
+        - CRM
+    - name: DataPulse AG
+      url: https://www.datapulse.de
+      position: Account Executive
+      startDate: 'Mar 1, 2019'
+      endDate: 'Dec 31, 2021'
+      summary: |
+        - Betreuung eines Portfolios von 80+ Bestandskunden im Bereich Datenanalyse-Software
+        - Steigerung des Netto-Umsatzes um 35 % durch Upselling- und Cross-Selling-Maßnahmen
+        - Durchführung von Produktdemos und Präsentationen für technische und kaufmännische Entscheider
+        - Erstellung von Angeboten, Verträgen und Forecasts in Salesforce
+        - Aktive Mitgestaltung von Vertriebsprozessen und Preisstrategien
+      keywords:
+        - SaaS
+        - Upselling
+        - Cross-Selling
+        - Salesforce
+        - Forecasting
+    - name: SoftwareHaus GmbH
+      url: https://www.softwarehaus.de
+      position: Sales Development Representative
+      startDate: 'Aug 1, 2017'
+      endDate: 'Feb 28, 2019'
+      summary: |
+        - Identifikation und Qualifizierung von Leads durch Kaltakquise, E-Mail-Kampagnen und LinkedIn
+        - Terminierung von 15+ qualifizierten Erstgesprächen pro Monat für das Account-Executive-Team
+        - Pflege und Aktualisierung des CRM-Systems sowie Erstellung von Vertriebsreports
+        - Unterstützung bei der Entwicklung von Outbound-Kampagnen und Messaging
+      keywords:
+        - Leadgenerierung
+        - Kaltakquise
+        - Outbound
+        - CRM
+        - Qualifizierung
+  skills:
+    - name: Vertrieb und Account Management
+      level: Expert
+      keywords:
+        - B2B-Vertrieb
+        - Enterprise Sales
+        - Consultative Selling
+        - Verhandlungsführung
+        - Account Planning
+        - Forecasting
+    - name: CRM und Tools
+      level: Advanced
+      keywords:
+        - Salesforce
+        - HubSpot
+        - LinkedIn Sales Navigator
+        - Outreach
+        - ZoomInfo
+        - Excel
+    - name: Kommunikation
+      level: Expert
+      keywords:
+        - Präsentation
+        - Verhandlung
+        - Stakeholder-Management
+        - Interkulturelle Kommunikation
+  languages:
+    - language: German
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - Muttersprache
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - TOEFL iBT 112
+        - Business English
+    - language: French
+      fluency: Limited Working Proficiency
+      keywords:
+        - DELF B2
+  awards:
+    - title: Sales Excellence Award
+      date: 'Mar 2023'
+      awarder: CloudForge GmbH
+      summary: |
+        - Auszeichnung für die höchste Abschlussquote im Enterprise-Segment
+        - Erzielung des größten Neukundenabschlusses im Jahr 2022
+    - title: Top Performer 2021
+      date: 'Jan 2022'
+      awarder: DataPulse AG
+      summary: |
+        - Anerkennung für 135 % Zielerreichung und herausragendes Kundenfeedback
+  certificates:
+    - name: HubSpot Sales Software Certified
+      issuer: HubSpot
+      date: 'Jun 2021'
+      url: https://academy.hubspot.com/certification
+    - name: Salesforce Certified Sales Cloud Consultant
+      issuer: Salesforce
+      date: 'Sep 2022'
+      url: https://trailhead.salesforce.com/credentials/salescloudconsultant
+  publications:
+    - name: Consultative Selling im B2B-SaaS
+      publisher: Vertriebsmanagement Magazin
+      releaseDate: 'May 2023'
+      url: https://www.vertriebsmanagement-magazin.de/consultative-selling
+      summary: |
+        - Praxisleitfaden zur Steigerung der Abschlussquote durch bedarfsorientierte Verkaufsgespräche
+        - Analyse von Fallbeispielen aus dem Enterprise-Software-Vertrieb
+  projects:
+    - name: CRM-Migration und Sales-Playbook
+      startDate: 'Jan 2023'
+      endDate: 'Jun 2023'
+      description: Einführung eines neuen CRM-Systems und Standardisierung des
+        Vertriebsprozesses
+      summary: |
+        - Leitung der Migration von Salesforce zu HubSpot für ein 25-köpfiges Vertriebsteam
+        - Entwicklung eines Sales-Playbooks mit Gesprächsleitfäden, Qualifizierungskriterien und KPIs
+        - Schulung der Teammitglieder und Sicherstellung der Akzeptanz
+      keywords:
+        - CRM
+        - HubSpot
+        - Sales Playbook
+        - Prozessoptimierung
+      url: https://www.cloudforge.de/crm-migration
+  interests:
+    - name: Sport
+      keywords:
+        - Laufen
+        - Radfahren
+        - Schwimmen
+    - name: Musik
+      keywords:
+        - Gitarre
+        - Konzerte
+    - name: Reisen
+      keywords:
+        - Städtereisen
+        - Wandern
+  volunteer:
+    - organization: Startup Nachwuchs e.V.
+      position: Mentor für Vertriebsnachwuchs
+      startDate: 'Jan 2021'
+      url: https://www.startup-nachwuchs.de
+      summary: |
+        - Ehrenamtliche Betreuung von Berufseinsteigern im Bereich B2B-Vertrieb
+        - Durchführung von Workshops zu Kaltakquise, CRM-Nutzung und Verhandlungsführung
+        - Unterstützung bei der Vorbereitung auf Bewerbungsgespräche und Assessment-Center
+
+locale:
+  language: de

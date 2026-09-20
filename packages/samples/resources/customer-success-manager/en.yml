@@ -1,0 +1,246 @@
+content:
+  basics:
+    name: Maya Chen
+    headline: Strategic Customer Success Manager | SaaS Retention & Expansion
+    phone: "(415) 555-0132"
+    email: maya.chen@example.com
+    url: https://www.mayachen.com
+    summary: |
+      Customer Success Manager with 6+ years of experience driving retention, product adoption, and expansion revenue for B2B SaaS companies. Skilled at building trusted relationships with executive stakeholders and translating customer goals into measurable business outcomes.
+
+      - Manage a $4.2M book of business across 45 mid-market and enterprise accounts, consistently exceeding net revenue retention targets.
+      - Designed a customer health scoring model that reduced churn by 18% and increased expansion pipeline by 32%.
+      - Lead cross-functional initiatives with Product, Sales, and Support to improve onboarding, QBRs, and customer advocacy.
+      - Known for data-informed storytelling, empathetic communication, and a proactive, solution-oriented approach.
+  location:
+    address: 450 Mission Street, Suite 1200
+    city: San Francisco
+    region: California
+    country: United States
+    postalCode: "94107"
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/maya-chen-csm
+      username: maya-chen-csm
+    - network: Medium
+      url: https://medium.com/@maya.chen
+      username: maya.chen
+  education:
+    - institution: University of Washington
+      url: https://www.washington.edu
+      degree: Bachelor
+      area: Business Administration and Marketing
+      score: "3.7"
+      startDate: Sep 1, 2014
+      endDate: Jun 1, 2018
+      courses:
+        - Customer Relationship Management
+        - Organizational Behavior
+        - Data Analytics for Business
+        - Negotiation and Conflict Resolution
+        - Marketing Analytics
+        - Project Management
+        - Business Communication
+        - Consumer Behavior
+      summary: |
+        - Graduated cum laude with a focus on customer strategy and B2B marketing
+        - Completed capstone project on reducing churn in subscription-based businesses
+        - Served as vice president of the undergraduate marketing association
+  work:
+    - name: CloudLoop
+      url: https://www.cloudloop.com
+      position: Senior Customer Success Manager
+      startDate: Mar 1, 2021
+      summary: |
+        - Own strategic relationships with 45 enterprise and mid-market accounts representing $4.2M in ARR
+        - Achieved 118% net revenue retention in FY2023 through proactive renewals, upsells, and multi-threading
+        - Built a customer health score model using product usage, support tickets, and NPS to prioritize risk and growth
+        - Facilitate executive business reviews and quarterly success plans with C-level stakeholders
+        - Partner with Product to relay customer feedback, influencing roadmap decisions for three major releases
+        - Mentor two customer success associates and lead onboarding for new CSM hires
+      keywords:
+        - Customer Health Scoring
+        - QBR Facilitation
+        - Churn Reduction
+        - Upsell & Cross-sell
+        - Executive Business Reviews
+        - Renewal Management
+        - Team Leadership
+    - name: BrightDesk
+      url: https://www.brightdesk.com
+      position: Customer Success Associate
+      startDate: Jun 1, 2018
+      endDate: Feb 28, 2021
+      summary: |
+        - Managed a portfolio of 80 SMB accounts with a combined ARR of $1.1M
+        - Improved onboarding completion rate from 62% to 89% by redesigning the welcome journey
+        - Reduced average first-response time from 8 hours to 45 minutes by implementing triage workflows
+        - Conducted quarterly business reviews and identified expansion opportunities totaling $240K
+        - Documented 30+ help center articles and led customer webinars on best practices
+      keywords:
+        - Onboarding
+        - SMB Accounts
+        - Customer Journey Mapping
+        - Support Triage
+        - Webinars
+        - Expansion Revenue
+        - Product Adoption
+  skills:
+    - name: Customer Success Management
+      level: Expert
+      keywords:
+        - Customer Health Scoring
+        - QBR Facilitation
+        - Churn Reduction
+        - Renewal Management
+        - Executive Business Reviews
+        - Customer Journey Mapping
+    - name: Account Growth
+      level: Advanced
+      keywords:
+        - Upsell & Cross-sell
+        - Expansion Revenue
+        - Account Planning
+        - Negotiation
+        - Stakeholder Management
+        - Customer Advocacy
+    - name: Data & Analytics
+      level: Advanced
+      keywords:
+        - Salesforce
+        - Gainsight
+        - Looker
+        - SQL
+        - NPS
+        - CSAT
+        - SaaS Metrics
+    - name: Leadership & Collaboration
+      level: Advanced
+      keywords:
+        - Team Leadership
+        - Mentoring
+        - Cross-functional Collaboration
+        - Process Improvement
+        - Project Management
+        - Communication
+    - name: Tools
+      level: Intermediate
+      keywords:
+        - Zendesk
+        - Jira
+        - Slack
+        - HubSpot
+        - Google Workspace
+        - Notion
+  languages:
+    - language: English
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - Native speaker
+    - language: Spanish
+      fluency: Full Professional Proficiency
+      keywords:
+        - DELE B2
+    - language: Mandarin
+      fluency: Limited Working Proficiency
+      keywords:
+        - Conversational
+  awards:
+    - title: Customer Success Leader of the Quarter
+      date: Jun 2023
+      awarder: CloudLoop
+      summary: |
+        Recognized for achieving the highest net revenue retention and expansion attainment across the customer success team in Q2 2023.
+    - title: President's Award for Service Excellence
+      date: May 2019
+      awarder: BrightDesk
+      summary: |
+        Awarded for outstanding customer satisfaction scores and for leading a cross-team initiative that improved onboarding efficiency.
+  certificates:
+    - name: Certified Customer Success Manager (CCSM)
+      issuer: SuccessCOACHING
+      date: Feb 2022
+      url: https://www.successcoaching.com/certified-customer-success-manager
+    - name: Customer Success Certification
+      issuer: HubSpot Academy
+      date: Sep 2021
+      url: https://academy.hubspot.com/courses/customer-success
+    - name: Salesforce Certified Administrator
+      issuer: Salesforce
+      date: Nov 2020
+      url: https://trailhead.salesforce.com/credentials/administrator
+  publications:
+    - name: The Retention Playbook for Mid-Market SaaS
+      publisher: Customer Success Collective
+      releaseDate: Mar 2023
+      url: https://www.customersuccesscollective.com/retention-playbook
+      summary: |
+        - Practical framework for diagnosing churn risk using product usage, support signals, and stakeholder maps
+        - Includes templates for health scores, executive business reviews, and renewal negotiations
+        - Featured in the Customer Success Collective weekly newsletter
+  projects:
+    - name: Customer Health Score 2.0
+      startDate: Jan 2023
+      endDate: Aug 2023
+      description: Redesigned the customer health scoring model to predict churn and
+        expansion more accurately.
+      summary: |
+        - Consolidated data from Salesforce, Gainsight, Zendesk, and product analytics into a single health score
+        - Built a weighted model with 12 signals, including login frequency, support sentiment, and executive engagement
+        - Reduced false-positive risk alerts by 40% and increased CSM efficiency by 15%
+      keywords:
+        - Health Score
+        - Churn Prediction
+        - Salesforce
+        - Gainsight
+        - Data Modeling
+      url: https://www.cloudloop.com/customer-health-score
+    - name: CSM Onboarding Portal
+      startDate: Apr 2022
+      endDate: Oct 2022
+      description: Internal portal that centralizes onboarding resources, playbooks,
+        and certification paths for new CSMs.
+      summary: |
+        - Reduced new CSM ramp time from 12 weeks to 7 weeks
+        - Standardized onboarding checklists, call frameworks, and product certification milestones
+        - Adopted by the entire customer success organization across three regions
+      keywords:
+        - Onboarding
+        - Enablement
+        - Documentation
+        - Process Design
+      url: https://www.cloudloop.com/csm-onboarding
+  interests:
+    - name: Community Building
+      keywords:
+        - Customer Success Meetups
+        - Mentorship
+        - Networking
+    - name: Content Creation
+      keywords:
+        - Podcasting
+        - Writing
+        - Video Editing
+    - name: Wellbeing
+      keywords:
+        - Yoga
+        - Hiking
+        - Meditation
+    - name: Travel
+      keywords:
+        - Cultural Exploration
+        - Food
+        - Photography
+  volunteer:
+    - organization: Women in Customer Success
+      url: https://www.womenincustomersuccess.org
+      position: Mentor
+      startDate: Jan 2022
+      endDate: Dec 2023
+      summary: |
+        - Mentor early-career customer success professionals through monthly 1:1 sessions and resume reviews
+        - Lead quarterly workshops on executive communication, negotiation, and career development
+        - Helped 12 mentees secure promotions or new roles in customer success
+
+locale:
+  language: en

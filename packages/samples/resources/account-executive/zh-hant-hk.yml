@@ -1,0 +1,214 @@
+content:
+  basics:
+    name: 陳嘉豪
+    headline: 資深客戶經理 | 企業軟件及科技解決方案
+    phone: "+852 9123 4567"
+    email: kaho.chan@example.com
+    url: https://www.kahochan.com
+    summary: |
+      - 擁有 8 年 B2B 軟件及科技解決方案銷售經驗，專注於企業客戶開發與關係管理
+      - 擅長從需求分析、方案演示到合約談判的完整銷售週期，連續超額完成配額
+      - 熟悉 SaaS、雲端服務及數碼轉型方案，能與技術團隊緊密協作
+      - 具備優秀的粵語、英語及普通話溝通能力，善於建立高層客戶信任
+
+  location:
+    address: 中環皇后大道中99號
+    city: 香港
+    region: 香港島
+    country: Hong Kong
+
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/kahochan
+      username: kahochan
+    - network: WhatsApp
+      url: https://wa.me/85291234567
+      username: kahochan
+
+  education:
+    - institution: 香港大學
+      url: https://www.hku.hk
+      degree: Bachelor
+      area: 市場學及管理學
+      score: "3.5"
+      startDate: Sep 1, 2013
+      endDate: Jul 1, 2017
+      courses:
+        - 市場營銷原理
+        - 消費者行為
+        - 企業財務
+        - 商業統計
+        - 談判技巧
+        - 策略管理
+      summary: |
+        - 主修市場學及管理學，副修商業分析
+        - 曾獲院長嘉許名單
+        - 積極參與商業個案比賽，獲得亞軍
+
+  work:
+    - name: 雲端科技解決方案有限公司
+      url: https://www.cloudtech.hk
+      position: 高級客戶經理
+      startDate: Jan 1, 2021
+      summary: |
+        - 負責香港及華南地區企業客戶的軟件即服務（SaaS）銷售，年度配額達港幣 800 萬元
+        - 開發超過 50 個新企業客戶，包括金融、零售及物流行業，客戶續約率達 95%
+        - 與產品及技術團隊合作，為客戶設計度身訂造的雲端轉型方案
+        - 主導銷售週期管理，從潛在客戶開發、方案演示、報價到合約談判
+        - 連續三年超額完成年度銷售目標，2023 年達到 125% 配額
+      keywords:
+        - 企業銷售
+        - 客戶關係
+        - 雲端服務
+        - 合約談判
+
+    - name: 亞洲數碼方案公司
+      url: https://www.asiadigital.com.hk
+      position: 客戶經理
+      startDate: Aug 1, 2018
+      endDate: Dec 31, 2020
+      summary: |
+        - 管理超過 80 個中小企業客戶，提供數碼營銷及電子商務解決方案
+        - 透過冷電話及網絡研討會開發新客戶，季度銷售增長平均達 15%
+        - 協調內部團隊以確保項目按時交付，客戶滿意度評分達 4.8/5
+        - 準備銷售報告及預測，協助區域總監制定業務策略
+      keywords:
+        - 數碼營銷
+        - 電子商務
+        - 銷售預測
+        - 客戶滿意度
+
+    - name: 環球軟件服務
+      url: https://www.globsoft.com.hk
+      position: 企業銷售代表
+      startDate: Jul 1, 2017
+      endDate: Jul 31, 2018
+      summary: |
+        - 負責企業資源規劃（ERP）系統的銷售，達成 110% 年度配額
+        - 建立並維護客戶關係管理系統中的銷售管道，每月新增 20 個潛在客戶
+        - 協助高級客戶經理準備提案及產品示範
+        - 獲得季度最佳新人獎
+      keywords:
+        - 企業資源規劃
+        - 銷售管道
+        - 潛在客戶開發
+        - 產品示範
+
+  skills:
+    - name: 銷售管理
+      level: Expert
+      keywords:
+        - 企業銷售
+        - 客戶開發
+        - 銷售預測
+        - 渠道管理
+    - name: 客戶關係
+      level: Advanced
+      keywords:
+        - 客戶留存
+        - 續約談判
+        - 高層溝通
+        - 客戶滿意度
+    - name: 技術知識
+      level: Intermediate
+      keywords:
+        - 軟件即服務
+        - 雲端運算
+        - 客戶關係管理
+        - 數據分析
+    - name: 簡報技巧
+      level: Advanced
+      keywords:
+        - 方案演示
+        - 公開演講
+        - 提案撰寫
+
+  languages:
+    - language: Chinese
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - 粵語
+        - 母語
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - IELTS 7.5
+    - language: Mandarin
+      fluency: Full Professional Proficiency
+      keywords:
+        - 流利
+        - 普通話
+
+  awards:
+    - title: 年度頂尖銷售獎
+      awarder: 雲端科技解決方案有限公司
+      date: Dec 2023
+      summary: |
+        表揚全年銷售額最高及客戶滿意度最佳的客戶經理。
+    - title: 最佳客戶關係管理獎
+      awarder: 亞洲數碼方案公司
+      date: Dec 2020
+      summary: |
+        表彰在客戶留存及續約方面表現卓越的團隊成員。
+
+  certificates:
+    - name: Salesforce 銷售雲顧問認證
+      issuer: Salesforce
+      date: Mar 2022
+      url: https://trailhead.salesforce.com/credentials/salescloudconsultant
+    - name: HubSpot 入站銷售認證
+      issuer: HubSpot Academy
+      date: Jun 2021
+      url: https://academy.hubspot.com/courses/inbound-sales
+
+  projects:
+    - name: 企業客戶 CRM 系統導入專案
+      startDate: Mar 2022
+      endDate: Nov 2022
+      description: 為一家金融機構導入 Salesforce CRM 系統，優化銷售流程及客戶數據管理。
+      summary: |
+        - 負責需求收集、供應商協調及用戶培訓
+        - 系統上線後，銷售週期縮短 20%，數據準確性提升至 98%
+        - 專案獲得客戶高層高度評價
+      keywords:
+        - 客戶關係管理
+        - 流程優化
+        - 用戶培訓
+    - name: 亞太區 SaaS 銷售流程優化
+      startDate: Jan 2023
+      endDate: Aug 2023
+      description: 重新設計亞太區銷售團隊的客戶開發及跟進流程。
+      summary: |
+        - 分析現有銷售管道，識別瓶頸並提出改善方案
+        - 導入自動化工具，減少 30% 行政工作時間
+        - 銷售轉換率提升 15%
+      keywords:
+        - 銷售流程
+        - 自動化
+        - 轉換率
+
+  interests:
+    - name: 商業閱讀
+      keywords:
+        - 銷售策略
+        - 商業傳記
+        - 市場趨勢
+    - name: 戶外活動
+      keywords:
+        - 遠足
+        - 跑步
+        - 攝影
+
+  volunteer:
+    - organization: 香港青年商會
+      url: https://www.jcihk.org
+      position: 銷售導師
+      startDate: Sep 2020
+      endDate: Jun 2023
+      summary: |
+        - 為初創企業及年輕創業者提供銷售技巧培訓
+        - 主持超過 10 場工作坊，分享 B2B 銷售經驗
+        - 協助籌辦年度商業個案比賽
+
+locale:
+  language: zh-hant-hk

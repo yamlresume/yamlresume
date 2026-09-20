@@ -1,0 +1,237 @@
+content:
+  basics:
+    name: Maarten van der Meer
+    headline: Senior Projectmanager met 10+ jaar ervaring in digitale transformatie
+    phone: '+31 6 12345678'
+    email: m.vandermeer@example.com
+    url: https://www.maartenvandermeer.nl
+    summary: |
+      Ervaren projectmanager met meer dan 10 jaar ervaring in het leiden van complexe, multidisciplinaire projecten. Gespecialiseerd in digitale transformatie, agile methodieken en belanghebbendenmanagement.
+
+      - Leidt projecten van initiatie tot oplevering, binnen scope, budget en tijd.
+      - Sterk in het verbinden van business en IT, met oog voor mens en resultaat.
+      - Gecertificeerd in PRINCE2, PMP en Scrum, en bedreven in Jira, Confluence en MS Project.
+      - Coacht en motiveert teams om gezamenlijke doelen te behalen.
+  location:
+    address: Keizersgracht 123
+    city: Amsterdam
+    region: Noord-Holland
+    country: Netherlands
+    postalCode: '1015 CJ'
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/maarten-van-der-meer
+      username: maarten-van-der-meer
+    - network: Medium
+      url: https://medium.com/@maartenvandermeer
+      username: maartenvandermeer
+  education:
+    - institution: Technische Universiteit Delft
+      url: https://www.tudelft.nl
+      degree: Master
+      area: Technische Bestuurskunde
+      score: "8.2"
+      startDate: Sep 1, 2008
+      endDate: Jul 1, 2014
+      courses:
+        - Projectmanagement
+        - Risicomanagement
+        - Operations Research
+        - Financieel Management
+        - Verandermanagement
+        - Systeemkunde
+      summary: |
+        - Afgestudeerd met specialisatie in project- en programmamanagement.
+        - Ontwikkelde vaardigheden in kwantitatieve analyse, besluitvorming en procesverbetering.
+        - Thesis over de invloed van agile werken op publieke projecten.
+    - institution: Universiteit van Amsterdam
+      url: https://www.uva.nl
+      degree: Bachelor
+      area: Bestuurskunde
+      score: "7.8"
+      startDate: Sep 1, 2004
+      endDate: Jun 30, 2008
+      courses:
+        - Bestuur en Politiek
+        - Organisatietheorie
+        - Methoden van Onderzoek
+        - Economie
+      summary: |
+        - Basis gelegd in bestuurskunde, organisatiekunde en beleidsanalyse.
+        - Actief in studievereniging en organisatie van congressen.
+  work:
+    - name: ING
+      url: https://www.ing.com
+      position: Senior Projectmanager
+      startDate: Mar 1, 2020
+      summary: |
+        - Verantwoordelijk voor een portfolio van digitale transformatieprojecten met een totale waarde van EUR 8 miljoen.
+        - Leidt multidisciplinaire teams van 15+ professionals, waaronder ontwikkelaars, data-analisten en zakelijke consultants.
+        - Implementeerde een agile manier van werken, wat leidde tot 30% snellere oplevering en hogere klanttevredenheid.
+        - Beheert risico's, budgetten en planningen, en rapporteert aan de stuurgroep.
+        - Zorgt voor heldere communicatie en afstemming tussen business, IT en externe leveranciers.
+      keywords:
+        - Agile
+        - Scrum
+        - Digitaal
+        - Belanghebbenden
+        - Risicobeheer
+    - name: Philips
+      url: https://www.philips.com
+      position: Projectmanager
+      startDate: Jan 1, 2016
+      endDate: Feb 28, 2020
+      summary: |
+        - Leidde productontwikkelingsprojecten in de gezondheidszorgtechnologie, van concept tot marktlancering.
+        - Werkte samen met R&D, marketing en regelgevende zaken om naleving en tijdige oplevering te waarborgen.
+        - Introduceerde Scrum en verbeterde de voorspelbaarheid van opleveringen met 25%.
+        - Beheerde een projectbudget van EUR 3 miljoen en een team van 10 projectleden.
+      keywords:
+        - Productontwikkeling
+        - Gezondheidszorg
+        - Scrum
+        - Budgetbeheer
+    - name: KPN
+      url: https://www.kpn.com
+      position: Junior Projectmanager
+      startDate: Sep 1, 2014
+      endDate: Dec 31, 2015
+      summary: |
+        - Ondersteunde senior projectmanagers bij telecom-infrastructuurprojecten.
+        - Coördineerde planningen, vergaderingen en rapportages voor interne en externe belanghebbenden.
+        - Droeg bij aan de uitrol van glasvezelnetwerken in Noord-Holland.
+      keywords:
+        - Telecom
+        - Planning
+        - Rapportage
+        - Glasvezel
+  skills:
+    - name: Projectmanagement
+      level: Expert
+      keywords:
+        - Agile
+        - Scrum
+        - PRINCE2
+        - Waterval
+        - Jira
+        - MS Project
+    - name: Belanghebbendenmanagement
+      level: Advanced
+      keywords:
+        - Communicatie
+        - Onderhandelen
+        - Rapportage
+        - Workshops
+        - Verandermanagement
+    - name: Technisch
+      level: Advanced
+      keywords:
+        - SQL
+        - Python
+        - Power BI
+        - Confluence
+        - Azure DevOps
+    - name: Leiderschap
+      level: Expert
+      keywords:
+        - Coaching
+        - Teambuilding
+        - Motiveren
+        - Conflicthantering
+  languages:
+    - language: Dutch
+      fluency: Native or Bilingual Proficiency
+      keywords: []
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - IELTS 8.0
+        - Zakelijk vloeiend
+    - language: German
+      fluency: Limited Working Proficiency
+      keywords:
+        - Goethe B1
+        - Basiskennis
+  awards:
+    - title: Projectmanager van het Jaar
+      date: Nov 2022
+      awarder: PMI Netherlands Chapter
+      summary: |
+        - Erkend voor uitmuntend leiderschap en innovatie in projectmanagement.
+        - Bijzondere vermelding voor het succesvol opleveren van een complex digitaal transformatieprogramma.
+    - title: Beste Innovatieproject
+      date: Jun 2021
+      awarder: ING
+      summary: |
+        - Toegekend voor de ontwikkeling van een realtime klantdashboard dat de Net Promoter Score met 15 punten verhoogde.
+  certificates:
+    - name: PRINCE2 Practitioner
+      issuer: AXELOS
+      date: May 2018
+      url: https://www.axelos.com/certifications/prince2
+    - name: Projectmanagement Professional (PMP)
+      issuer: Project Management Institute
+      date: Sep 2020
+      url: https://www.pmi.org/certifications/project-management-pmp
+    - name: Gecertificeerd ScrumMaster
+      issuer: Scrum Alliance
+      date: Mar 2017
+      url: https://www.scrumalliance.org/get-certified/scrum-master-track/certified-scrummaster
+  publications:
+    - name: Agile projectmatig werken in de publieke sector
+      publisher: 'Management & Organisatie'
+      releaseDate: Apr 2021
+      url: https://www.managementenorganisatie.nl/agile-publieke-sector
+      summary: |
+        - Onderzoek naar de toepassing van agile methodieken binnen overheidsprojecten.
+        - Biedt praktische handvatten voor projectmanagers in een politiek-bestuurlijke context.
+  projects:
+    - name: Digitale Transformatie ING
+      startDate: Feb 1, 2021
+      endDate: Dec 31, 2022
+      summary: |
+        - Leidde de implementatie van een nieuw digitaal klantplatform voor 2 miljoen klanten.
+        - Verantwoordelijk voor planning, budget, risicobeheer en afstemming met belanghebbenden.
+        - Resultaat: 30% snellere klantinteracties en 20% lagere operationele kosten.
+      description: Een organisatiebreed programma om de digitale dienstverlening van
+        ING te moderniseren en te versnellen.
+      keywords:
+        - Digitale Transformatie
+        - Klantplatform
+        - Agile
+    - name: Duurzaamheidsmonitor Philips
+      startDate: May 1, 2019
+      endDate: Nov 30, 2019
+      summary: |
+        - Ontwikkelde een monitor om de CO2-uitstoot van productielocaties direct te volgen.
+        - Werkte samen met duurzaamheidsteam en data-ingenieurs.
+        - Resultaat: inzicht in 15% reductie van energieverbruik.
+      description: Een data-gedreven dashboard voor het meten en rapporteren van
+        duurzaamheidsprestaties.
+      keywords:
+        - Duurzaamheid
+        - Data
+        - Dashboard
+  interests:
+    - name: Sport
+      keywords:
+        - Hardlopen
+        - Wielrennen
+        - Zwemmen
+    - name: Cultuur
+      keywords:
+        - Musea
+        - Literatuur
+        - Reizen
+  volunteer:
+    - organization: PMI Netherlands Chapter
+      url: https://www.pmi-netherlands-chapter.org
+      position: Mentor
+      startDate: Sep 1, 2017
+      summary: |
+        - Begeleidt startende projectmanagers bij hun professionele ontwikkeling.
+        - Organiseert maandelijkse netwerkbijeenkomsten en workshops over projectmanagement.
+        - Geeft presentaties over agile leiderschap en belanghebbendenmanagement.
+
+locale:
+  language: nl

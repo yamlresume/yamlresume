@@ -1,0 +1,225 @@
+content:
+  basics:
+    name: Ingrid Solberg
+    headline: Kundesuksessansvarlig
+    phone: "+47 22 33 44 55"
+    email: ingrid.solberg@example.com
+    url: https://www.ingridsolberg.no
+    summary: |
+      Resultatorientert kundesuksessansvarlig med over 6 års erfaring fra SaaS- og teknologibransjen. Jeg brenner for å bygge sterke kundeforhold, øke kundetilfredshet og redusere churn gjennom proaktiv oppfølging og datadrevne innsikter.
+
+      - Dokumentert suksess med å øke netto opprettholdelse (NRR) og kundelivstidsverdi (LTV)
+      - Sterk kompetanse innen onboarding, opplæring og strategisk rådgivning
+      - Erfaren med CRM-verktøy som Salesforce, HubSpot og Gainsight
+      - Flytende i norsk og engelsk, med gode kommunikasjons- og presentasjonsevner
+  location:
+    address: Storgata 45
+    city: Oslo
+    region: Oslo
+    country: Norway
+    postalCode: "0182"
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/ingridsolberg
+      username: ingridsolberg
+    - network: GitHub
+      url: https://github.com/ingridsolberg
+      username: ingridsolberg
+  education:
+    - institution: Universitetet i Oslo
+      url: https://www.uio.no
+      degree: Master
+      area: Økonomi og administrasjon
+      score: "4.6"
+      startDate: '2016-08-01'
+      endDate: '2018-06-15'
+      courses:
+        - Strategisk markedsføring
+        - Organisasjonspsykologi
+        - Forretningsutvikling
+        - Dataanalyse for beslutningstaking
+        - Prosjektledelse
+        - Kundeadferd og relasjonsledelse
+      summary: |
+        - Spesialisering innen strategi, markedsføring og organisasjonsutvikling
+        - Gjennomførte flere prosjekter med fokus på kundeinnsikt og forretningsvekst
+        - Utviklet sterke analytiske ferdigheter og evne til å formidle komplekse sammenhenger
+    - institution: Handelshøyskolen BI
+      url: https://www.bi.no
+      degree: Bachelor
+      area: Markedsføring og merkevareledelse
+      score: "4.2"
+      startDate: '2013-08-15'
+      endDate: '2016-06-20'
+      courses:
+        - Markedsføringsledelse
+        - Forbrukeratferd
+        - Salgsledelse
+        - Statistikk
+        - Kommunikasjon og presentasjonsteknikk
+      summary: |
+        - Grunnleggende forståelse for markedsføring, salg og kundeadferd
+        - Deltok i studentorganisasjoner og arrangerte karrieredager
+  work:
+    - name: Visma
+      url: https://www.visma.no
+      position: Kundesuksessansvarlig
+      startDate: '2021-03-01'
+      summary: |
+        - Ansvarlig for en portefølje på over 40 B2B-kunder innen SaaS-løsninger for HR og lønn
+        - Økte netto opprettholdelse (NRR) fra 92 % til 108 % gjennom proaktiv rådgivning og verdiskapende oppfølging
+        - Ledet onboarding av nye kunder, inkludert opplæring, implementering og milepælsplaner
+        - Reduserte churn med 25 % ved å etablere tidlige varslingssystemer og regelmessige helsesjekker
+        - Fungerte som bindeledd mellom kunder og produktteam for å sikre kundedrevet produktutvikling
+      keywords:
+        - Kundeoppfølging
+        - Onboarding
+        - SaaS
+        - Churn
+        - Salesforce
+    - name: Kahoot!
+      url: https://kahoot.com
+      position: Kundesuksessspesialist
+      startDate: '2019-01-10'
+      endDate: '2021-02-28'
+      summary: |
+        - Håndterte kundehenvendelser og support for over 200 skoler og bedrifter i Norden
+        - Utviklet og gjennomførte opplæringswebinarer som økte produktadopsjonen med 35 %
+        - Bidro til å bygge opp en kundesuksessavdeling fra grunnen av, med fokus på skalerbare prosesser
+        - Brukte HubSpot til å spore kundeinteraksjoner og identifisere oppsalgspotensial
+      keywords:
+        - Kundestøtte
+        - Webinarer
+        - HubSpot
+        - Adopsjon
+        - Norden
+    - name: Telenor
+      url: https://www.telenor.no
+      position: Kundebehandler
+      startDate: '2017-06-01'
+      endDate: '2019-01-05'
+      summary: |
+        - Betjente bedriftskunder i telefon og e-post, med fokus på rask og profesjonell problemløsning
+        - Oppnådde en kundetilfredshetscore (CSAT) på 4,8 av 5 i snitt
+        - Identifiserte behov for tilleggstjenester og videreformidlet salgsmuligheter til selgerteamet
+      keywords:
+        - Kundeservice
+        - CSAT
+        - Bedriftsmarked
+        - Problemløsning
+  skills:
+    - name: Kundesuksess
+      level: Expert
+      keywords:
+        - Onboarding
+        - Kundereiser
+        - Churn-analyse
+        - Oppsalg
+        - Helseundersøkelser
+    - name: CRM og verktøy
+      level: Advanced
+      keywords:
+        - Salesforce
+        - HubSpot
+        - Gainsight
+        - Zendesk
+        - Looker
+    - name: Kommunikasjon
+      level: Expert
+      keywords:
+        - Presentasjoner
+        - Forhandlinger
+        - Workshop
+        - Relasjonsbygging
+    - name: Dataanalyse
+      level: Advanced
+      keywords:
+        - Excel
+        - SQL
+        - Dashboard
+        - KPI-oppfølging
+        - Segmentering
+  languages:
+    - language: Norwegian
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - Morsmål
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - Forretningsflyt
+        - TOEFL 105
+  awards:
+    - title: Årets Kundesuksessansatt
+      awarder: Visma
+      date: '2023-12-15'
+      summary: |
+        Tildelt for eksepsjonell innsats med å øke kundetilfredshet og opprettholdelse i et krevende marked.
+  certificates:
+    - name: Certified Customer Success Manager (CCSM)
+      url: https://www.successcoaching.com/certification
+      issuer: SuccessCoaching
+      date: '2022-05-20'
+    - name: Salesforce Certified Administrator
+      url: https://trailhead.salesforce.com
+      issuer: Salesforce
+      date: '2021-10-10'
+  publications:
+    - publisher: Magma – Tidsskrift for økonomi og ledelse
+      url: https://www.magma.no
+      name: Hvordan bruke kundedata til å drive lønnsom vekst
+      releaseDate: '2023-04-15'
+      summary: |
+        - Artikkelen utforsker hvordan SaaS-selskaper kan bruke kundedata for å forbedre opprettholdelse og øke omsetning.
+        - Presenterer en modell for proaktiv kundeoppfølging basert på helsescore og bruksmønstre.
+  projects:
+    - name: Kundehelse-dashboard
+      url: https://www.ingridsolberg.no/prosjekter/kundehelse
+      description: Utviklet et dashboard for å visualisere kundehelse og identifisere
+        churn-risiko i sanntid.
+      startDate: '2022-09-01'
+      endDate: '2023-02-28'
+      summary: |
+        - Integrerte data fra Salesforce og produktbruk for å lage en helhetlig kundehelsescore
+        - Automatiserte varsler til kundesuksessansvarlige ved fall i engasjement
+        - Reduserte tiden brukt på manuell rapportering med 60 %
+      keywords:
+        - Dashboard
+        - Kundehelse
+        - Automatisering
+    - name: Onboarding 2.0
+      url: https://www.ingridsolberg.no/prosjekter/onboarding
+      description: Redesignet onboardingprogrammet for nye kunder for å øke tid-til-verdi.
+      startDate: '2021-06-01'
+      endDate: '2022-01-31'
+      summary: |
+        - Kartla kundereisen og identifiserte flaskehalser i implementeringsfasen
+        - Utviklet nye maler, sjekklister og opplæringsvideoer
+        - Kortet ned gjennomsnittlig onboardingtid fra 45 til 28 dager
+      keywords:
+        - Onboarding
+        - Prosessforbedring
+        - Tid-til-verdi
+  interests:
+    - name: Friluftsliv
+      keywords:
+        - Fjellturer
+        - Ski
+        - Kajakk
+    - name: Samfunn
+      keywords:
+        - Mentorskap
+        - Bærekraft
+        - Teknologi
+  volunteer:
+    - organization: Ungt Entreprenørskap Norge
+      url: https://www.ue.no
+      position: Mentor
+      startDate: '2020-09-01'
+      summary: |
+        - Veiledet unge gründere i utvikling av forretningsideer og kundeforståelse
+        - Holdt workshops i kundesegmentering og verdivurdering
+        - Bidro til å styrke studenters presentasjons- og samarbeidsevner
+
+locale:
+  language: no

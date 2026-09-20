@@ -1,0 +1,200 @@
+content:
+  basics:
+    name: Carolina Mendes
+    headline: Executiva de Contas | Vendas B2B SaaS
+    phone: '+55 11 98765-4321'
+    email: carolina.mendes@vendaspro.com.br
+    url: https://www.carolinamendes.com.br
+    summary: |
+      Executiva de Contas com mais de 8 anos de experiência em vendas B2B de soluções SaaS, especializada em gestão do ciclo completo de vendas, prospecção estratégica e fechamento de contratos de alto valor. Histórico comprovado de superação de metas trimestrais e anuais, com forte habilidade em construir relacionamentos de confiança com clientes C-level. Experiência em CRM (Salesforce, HubSpot), metodologias de vendas (SPIN, MEDDIC) e análise de dados para tomada de decisão. Proficiente em português, inglês e espanhol.
+  location:
+    address: Av. Paulista, 1000, Bela Vista
+    city: São Paulo
+    region: SP
+    country: Brazil
+    postalCode: '01310-100'
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/carolinamendes
+      username: carolinamendes
+    - network: Instagram
+      url: https://www.instagram.com/carolmendes.vendas
+      username: carolmendes.vendas
+  education:
+    - institution: Universidade de São Paulo
+      url: https://www.usp.br
+      degree: Bachelor
+      area: Administração de Empresas
+      score: '8.7'
+      startDate: Feb 1, 2010
+      endDate: Dec 15, 2014
+      courses:
+        - Gestão de Vendas
+        - Marketing Estratégico
+        - Negociação Comercial
+        - Comportamento Organizacional
+        - Análise Financeira
+        - Gestão de Projetos
+      summary: |
+        - Formação sólida em administração, com foco em estratégias comerciais e gestão de equipes de vendas.
+        - Desenvolvimento de habilidades analíticas e de comunicação por meio de projetos práticos e apresentações.
+        - Participação em empresa júnior, atuando em prospecção de clientes e elaboração de propostas comerciais.
+  work:
+    - name: VendaMais Tecnologia
+      url: https://www.vendamais.com.br
+      position: Executiva de Contas Sênior
+      startDate: Mar 1, 2019
+      summary: |
+        - Gerenciei um portfólio de mais de 50 contas estratégicas, com foco em soluções SaaS de gestão de vendas e automação de marketing.
+        - Superei a meta anual em 145% em 2023, gerando mais de R$ 4 milhões em receita nova e recorrente.
+        - Conduzi negociações complexas com diretores e C-levels, reduzindo o ciclo de vendas em 20% por meio de propostas de valor personalizadas.
+        - Implementei cadências de prospecção outbound e inbound, aumentando em 35% a taxa de conversão de leads em oportunidades.
+        - Colaborei com as equipes de Customer Success e Produto para garantir a adoção e a expansão das contas.
+      keywords:
+        - Vendas B2B
+        - SaaS
+        - CRM
+        - Negociação
+        - Metas
+    - name: Soluções Cloud Brasil
+      url: https://www.solucoescloud.com.br
+      position: Executiva de Contas
+      startDate: Jan 15, 2016
+      endDate: Feb 28, 2019
+      summary: |
+        - Responsável pelo ciclo completo de vendas de serviços de infraestrutura em nuvem para médias e grandes empresas.
+        - Alcancei 130% da meta anual em 2017 e 2018, com ticket médio de R$ 80 mil.
+        - Desenvolvi relacionamentos com parceiros de canal, gerando 25% do pipeline qualificado.
+        - Realizei análises de necessidades técnicas e apresentações de ROI para áreas de TI e Finanças.
+      keywords:
+        - Cloud
+        - Infraestrutura
+        - Pipeline
+        - ROI
+    - name: InovaTech Sistemas
+      url: https://www.inovatech.com.br
+      position: Representante de Desenvolvimento de Vendas
+      startDate: Jul 1, 2014
+      endDate: Dec 31, 2015
+      summary: |
+        - Prospecção ativa de novos clientes por telefone, e-mail e LinkedIn, com média de 60 ligações diárias.
+        - Qualificação de leads e agendamento de reuniões para o time de executivos de contas.
+        - Manutenção do CRM com dados precisos e relatórios semanais de atividades.
+      keywords:
+        - Prospecção
+        - Qualificação
+        - LinkedIn
+        - CRM
+  skills:
+    - name: Vendas B2B
+      level: Expert
+      keywords:
+        - Prospecção
+        - Qualificação de Leads
+        - Fechamento de Contratos
+        - Gestão de Pipeline
+        - Negociação
+    - name: Ferramentas de CRM
+      level: Advanced
+      keywords:
+        - Salesforce
+        - HubSpot
+        - Pipedrive
+        - LinkedIn Sales Navigator
+    - name: Análise de Dados
+      level: Advanced
+      keywords:
+        - Excel Avançado
+        - Power BI
+        - Tableau
+        - Metas e KPIs
+    - name: Comunicação
+      level: Expert
+      keywords:
+        - Apresentações C-level
+        - Storytelling
+        - Escuta Ativa
+  languages:
+    - language: Portuguese
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - Nativo
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - TOEFL iBT 105
+        - Reuniões internacionais
+    - language: Spanish
+      fluency: Limited Working Proficiency
+      keywords:
+        - DELE B1
+        - Negociação básica
+  awards:
+    - title: Vendedora do Ano
+      date: Dec 2023
+      awarder: VendaMais Tecnologia
+      summary: |
+        Reconhecimento por superar 150% da meta anual e liderar o ranking de vendas da região Sudeste.
+    - title: Prêmio Excelência em Atendimento
+      date: Nov 2018
+      awarder: Soluções Cloud Brasil
+      summary: |
+        Concedido por manter índice de satisfação de clientes acima de 95% e retenção de contratos.
+  certificates:
+    - name: Certificação em Vendas Consultivas
+      issuer: Fundação Getulio Vargas
+      date: Jun 2021
+      url: https://www.fgv.br
+    - name: Consultor Certificado Salesforce Sales Cloud
+      issuer: Salesforce
+      date: Sep 2020
+      url: https://trailhead.salesforce.com
+    - name: Metodologia de Vendas MEDDIC
+      issuer: MEDDIC Academy
+      date: Mar 2019
+      url: https://meddic.academy
+  publications:
+    - name: Estratégias de Prospecção para Vendas SaaS
+      publisher: Revista Vendas & Negócios
+      releaseDate: Aug 2022
+      url: https://www.revistavendasenegocios.com.br/artigo/prospeccao-saas
+      summary: |
+        Artigo sobre técnicas de prospecção outbound e inbound para empresas de software como serviço, com foco em personalização e uso de dados.
+  projects:
+    - name: Programa de Expansão de Receita
+      startDate: Jan 2022
+      endDate: Dec 2023
+      description: Iniciativa para aumentar receita recorrente em clientes existentes
+        por meio de upsell e cross-sell.
+      summary: |
+        - Liderança de um programa de expansão que gerou R$ 2,5 milhões em receita adicional em 12 meses.
+        - Desenvolvimento de playbooks de upsell e cross-sell para equipe de account management.
+        - Implementação de cadência de contato e monitoramento de indicadores no Salesforce.
+      keywords:
+        - Upsell
+        - Cross-sell
+        - Receita Recorrente
+        - Customer Success
+      url: https://www.vendamais.com.br/programa-expansao
+  interests:
+    - name: Corrida
+      keywords:
+        - Maratonas
+        - Corrida de rua
+    - name: Leitura
+      keywords:
+        - Biografias
+        - Negócios
+        - Psicologia
+  volunteer:
+    - organization: Instituto Vendas para o Bem
+      url: https://www.vendasparaobem.org.br
+      position: Mentora de Vendas
+      startDate: Feb 2020
+      summary: |
+        - Mentoria para jovens em início de carreira comercial, com foco em comunicação, prospecção e ética profissional.
+        - Organização de workshops sobre técnicas de vendas e preparação para entrevistas.
+        - Apoio na captação de recursos e parcerias com empresas locais.
+
+locale:
+  language: pt-br

@@ -1,0 +1,177 @@
+content:
+  basics:
+    name: 李明
+    headline: 高级项目经理 | 8年互联网产品与项目交付经验
+    phone: "+86 138 0013 8000"
+    email: liming.pm@example.com
+    url: https://liming-pm.example.com
+    summary: |
+      - 拥有8年互联网行业项目管理经验，擅长从0到1推动复杂产品交付。
+      - 精通敏捷开发与瀑布模型，能够根据业务场景灵活选择项目管理方法。
+      - 具备出色的跨部门沟通与资源协调能力，曾同时管理5个以上并行项目。
+      - 注重数据驱动决策，通过量化指标持续优化项目流程与团队效率。
+  location:
+    address: 北京市朝阳区建国路88号
+    city: 北京
+    region: 北京市
+    country: China
+    postalCode: "100022"
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/liming-pm
+      username: liming-pm
+    - network: GitHub
+      url: https://github.com/liming-pm
+      username: liming-pm
+    - network: Zhihu
+      url: https://www.zhihu.com/people/liming-pm
+      username: liming-pm
+  education:
+    - institution: 清华大学
+      url: https://www.tsinghua.edu.cn
+      degree: Master
+      area: 管理科学与工程
+      score: "3.8/4.0"
+      startDate: Sep 1, 2013
+      endDate: Jul 1, 2016
+      courses:
+        - 项目管理
+        - 运筹学
+        - 系统工程
+        - 数据分析
+        - 组织行为学
+      summary: |
+        - 主修管理科学与工程，研究方向为复杂项目调度与优化
+        - 参与多项企业合作课题，具备扎实的理论基础与实践能力
+        - 获得清华大学优秀研究生干部称号
+  work:
+    - name: 字节跳动
+      url: https://www.bytedance.com
+      position: 高级项目经理
+      startDate: Aug 1, 2020
+      endDate: Mar 1, 2024
+      summary: |
+        - 负责抖音电商中台项目的整体规划与交付，管理30人跨职能团队
+        - 建立敏捷迭代机制，将版本发布周期从6周缩短至2周
+        - 主导跨部门资源协调，推动产品、研发、测试、运营高效协同
+        - 建立项目风险预警体系，重大风险发生率降低40%
+        - 培养初级项目经理5名，提升团队整体项目管理能力
+      keywords:
+        - 敏捷开发
+        - 跨部门协作
+        - 风险管理
+        - 电商中台
+    - name: 阿里巴巴
+      url: https://www.alibaba.com
+      position: 项目经理
+      startDate: Jul 1, 2016
+      endDate: Jul 1, 2020
+      summary: |
+        - 负责天猫营销活动项目的全生命周期管理，年均交付项目20+
+        - 协调设计、开发、测试与运营团队，确保活动按时上线
+        - 引入Jira与Confluence进行项目跟踪与文档管理，提升协作效率
+        - 通过数据分析优化活动转化率，平均提升15%
+      keywords:
+        - 项目全生命周期
+        - 营销活动
+        - Jira
+        - 数据分析
+  skills:
+    - name: 项目管理
+      level: Expert
+      keywords:
+        - PMP
+        - 敏捷
+        - Scrum
+        - 瀑布模型
+        - 风险管理
+    - name: 工具与方法
+      level: Advanced
+      keywords:
+        - Jira
+        - Confluence
+        - MS Project
+        - Visio
+        - Axure
+    - name: 数据分析
+      level: Advanced
+      keywords:
+        - SQL
+        - Tableau
+        - Excel
+        - Python
+  languages:
+    - language: Chinese
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - 普通话一级甲等
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - CET-6
+        - TOEFL 105
+  awards:
+    - title: 年度优秀项目经理
+      awarder: 字节跳动
+      date: Dec 2022
+      summary: |
+        表彰在抖音电商中台项目中展现出的卓越项目管理能力与跨部门协调能力。
+    - title: 最佳项目交付奖
+      awarder: 阿里巴巴
+      date: Jan 2019
+      summary: |
+        因双11营销活动项目按时高质量交付，获得团队最高荣誉。
+  certificates:
+    - name: PMP认证
+      issuer: PMI
+      date: Jun 2021
+      url: https://www.pmi.org/certifications/project-management-pmp
+    - name: 敏捷认证Scrum Master
+      issuer: Scrum Alliance
+      date: Mar 2020
+      url: https://www.scrumalliance.org
+  publications:
+    - name: 基于敏捷方法的互联网项目管理实践
+      publisher: 项目管理技术
+      releaseDate: Sep 2021
+      url: https://www.example.com/publications/agile-pm
+      summary: |
+        探讨敏捷方法在互联网产品交付中的落地策略，结合实际案例分析如何提升项目成功率。
+  projects:
+    - name: 抖音电商中台重构
+      url: https://www.bytedance.com
+      description: 对抖音电商中台进行架构升级，支撑日均千万级订单
+      startDate: Mar 2021
+      endDate: Dec 2022
+      summary: |
+        - 主导项目范围定义、里程碑规划与资源分配
+        - 协调8个技术团队完成微服务拆分与数据迁移
+        - 项目上线后系统稳定性提升至99.99%，订单处理效率提升50%
+      keywords:
+        - 中台
+        - 微服务
+        - 架构升级
+  interests:
+    - name: 运动
+      keywords:
+        - 马拉松
+        - 游泳
+        - 羽毛球
+    - name: 阅读
+      keywords:
+        - 管理学
+        - 心理学
+        - 历史
+  volunteer:
+    - organization: 中国扶贫基金会
+      url: https://www.cfpa.org.cn
+      position: 志愿者
+      startDate: Sep 2018
+      endDate: Dec 2019
+      summary: |
+        - 参与乡村儿童教育支持项目，组织募捐与物资发放
+        - 担任项目协调人，管理10人志愿者团队
+        - 累计志愿服务超过200小时
+
+locale:
+  language: zh-hans

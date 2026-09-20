@@ -1,0 +1,234 @@
+content:
+  basics:
+    name: Dewi Anggraini
+    headline: Manajer Keberhasilan Pelanggan
+    phone: "+62 812-3456-7890"
+    email: dewi.anggraini@example.com
+    url: https://dewanggraini.id
+    summary: |
+      - Manajer Keberhasilan Pelanggan dengan pengalaman 7+ tahun dalam membangun hubungan pelanggan jangka panjang dan meningkatkan retensi.
+      - Terampil dalam onboarding pelanggan, analisis data, dan strategi pengurangan churn untuk klien enterprise.
+      - Berpengalaman memimpin tim lintas fungsi dan menggunakan CRM seperti Salesforce dan Zendesk.
+      - Bersemangat menciptakan pengalaman pelanggan yang positif dan mendorong pertumbuhan pendapatan melalui adopsi produk.
+  location:
+    address: Jl. Sudirman No. 45
+    city: Jakarta
+    region: DKI Jakarta
+    country: Indonesia
+    postalCode: "12190"
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/dewianggraini
+      username: dewianggraini
+    - network: Twitter
+      url: https://twitter.com/dewianggraini
+      username: dewianggraini
+    - network: Instagram
+      url: https://www.instagram.com/dewianggraini
+      username: dewianggraini
+  education:
+    - institution: Universitas Indonesia
+      url: https://www.ui.ac.id
+      degree: Bachelor
+      area: Ilmu Komunikasi
+      score: "3.75"
+      startDate: Sep 1, 2014
+      endDate: Jul 1, 2018
+      courses:
+        - Komunikasi Interpersonal
+        - Manajemen Hubungan Pelanggan
+        - Psikologi Konsumen
+        - Riset Pemasaran
+        - Komunikasi Organisasi
+        - Strategi Komunikasi Digital
+      summary: |
+        - Lulus dengan predikat cum laude dan fokus pada komunikasi bisnis serta perilaku konsumen.
+        - Aktif dalam organisasi kemahasiswaan sebagai koordinator hubungan alumni.
+        - Menyelesaikan skripsi tentang pengaruh layanan pelanggan terhadap loyalitas.
+  work:
+    - name: PT Solusi Digital Nusantara
+      url: https://www.solusidigital.co.id
+      position: Manajer Keberhasilan Pelanggan
+      startDate: Jan 1, 2021
+      summary: |
+        - Memimpin tim 8 Customer Success Manager untuk portofolio 120+ klien enterprise dengan nilai ARR Rp 50 miliar.
+        - Meningkatkan retensi pelanggan dari 82% menjadi 94% dalam 18 bulan melalui program onboarding terstruktur dan business review triwulanan.
+        - Mengembangkan playbook keberhasilan pelanggan yang menurunkan waktu onboarding rata-rata dari 45 hari menjadi 21 hari.
+        - Berkolaborasi dengan tim produk dan penjualan untuk mengidentifikasi peluang upsell, menghasilkan pertumbuhan pendapatan 27% YoY.
+        - Menganalisis data NPS dan CSAT untuk mengidentifikasi area perbaikan, meningkatkan skor NPS dari 32 menjadi 58.
+      keywords:
+        - Retensi Pelanggan
+        - Onboarding
+        - CRM
+        - Analisis Data
+        - Kepemimpinan Tim
+    - name: PT Karya Inovasi Bangsa
+      url: https://www.karyainovasi.co.id
+      position: Spesialis Keberhasilan Pelanggan
+      startDate: Aug 1, 2018
+      endDate: Dec 31, 2020
+      summary: |
+        - Mengelola 60+ akun pelanggan UMKM dan menengah, memastikan adopsi produk dan kepuasan pelanggan.
+        - Merancang kampanye edukasi pelanggan yang meningkatkan penggunaan fitur utama sebesar 40%.
+        - Menangani eskalasi pelanggan dengan resolusi 95% dalam waktu kurang dari 24 jam.
+        - Membuat laporan kinerja pelanggan bulanan dan merekomendasikan strategi perbaikan.
+      keywords:
+        - Akun Pelanggan
+        - Adopsi Produk
+        - Edukasi
+        - Eskalasi
+    - name: PT Media Cipta Global
+      url: https://www.mediacipta.co.id
+      position: Staf Dukungan Pelanggan
+      startDate: Jul 1, 2016
+      endDate: Jul 31, 2018
+      summary: |
+        - Menjawab pertanyaan pelanggan melalui telepon, email, dan obrolan langsung dengan tingkat kepuasan 90%.
+        - Mendokumentasikan masalah pelanggan dan bekerja sama dengan tim teknis untuk penyelesaian.
+        - Membantu dalam pelatihan karyawan baru mengenai prosedur dukungan pelanggan.
+      keywords:
+        - Dukungan Pelanggan
+        - Komunikasi
+        - Dokumentasi
+  skills:
+    - name: Manajemen Hubungan Pelanggan
+      level: Expert
+      keywords:
+        - CRM
+        - Salesforce
+        - Zendesk
+        - HubSpot
+        - Retensi
+    - name: Analisis Data
+      level: Advanced
+      keywords:
+        - Excel
+        - SQL
+        - Tableau
+        - Metrik CS
+        - NPS
+    - name: Komunikasi
+      level: Expert
+      keywords:
+        - Presentasi
+        - Negosiasi
+        - Bahasa Indonesia
+        - Bahasa Inggris
+    - name: Kepemimpinan
+      level: Advanced
+      keywords:
+        - Manajemen Tim
+        - Mentoring
+        - Kolaborasi Lintas Fungsi
+  languages:
+    - language: Indonesian
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - Bahasa Ibu
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - TOEFL 105
+        - IELTS 7.5
+    - language: Mandarin
+      fluency: Limited Working Proficiency
+      keywords:
+        - HSK 3
+  awards:
+    - title: Karyawan Terbaik Tahun 2022
+      awarder: PT Solusi Digital Nusantara
+      date: Dec 2022
+      summary: |
+        Diberikan kepada manajer yang menunjukkan kinerja luar biasa dalam meningkatkan retensi pelanggan dan kepemimpinan tim.
+    - title: Penghargaan Inovasi Layanan Pelanggan
+      awarder: PT Karya Inovasi Bangsa
+      date: Nov 2020
+      summary: |
+        Mengakui kontribusi dalam merancang program edukasi pelanggan yang meningkatkan adopsi produk secara signifikan.
+  certificates:
+    - name: Certified Customer Success Manager (CCSM)
+      issuer: SuccessCOACHING
+      date: Mar 2022
+      url: https://www.successcoaching.com/certification
+    - name: Salesforce Certified Administrator
+      issuer: Salesforce
+      date: Jan 2021
+      url: https://trailhead.salesforce.com/certification
+  publications:
+    - name: Meningkatkan Loyalitas Pelanggan di Era Digital
+      publisher: Jurnal Manajemen Indonesia
+      releaseDate: Jun 2021
+      url: https://jurnalmanajemen.id/artikel/loyalitas-digital
+      summary: |
+        - Artikel ini membahas strategi keberhasilan pelanggan untuk mempertahankan loyalitas di pasar digital yang kompetitif.
+        - Menekankan pentingnya personalisasi dan komunikasi proaktif.
+  references:
+    - name: Dr. Ratna Sari
+      relationship: Dosen Pembimbing Akademik
+      email: ratna.sari@ui.ac.id
+      phone: "+62 811-2233-4455"
+      summary: |
+        Dewi adalah pribadi yang berdedikasi dan memiliki kemampuan komunikasi yang sangat baik. Ia mampu memimpin tim dan menyelesaikan masalah pelanggan dengan efektif.
+  projects:
+    - name: Program Onboarding Pelanggan Enterprise
+      url: https://www.solusidigital.co.id/onboarding
+      description: Program onboarding terstruktur untuk klien enterprise
+      startDate: Feb 1, 2021
+      endDate: Aug 31, 2021
+      summary: |
+        - Merancang dan meluncurkan program onboarding 30-60-90 hari yang meningkatkan waktu adopsi.
+        - Mengintegrasikan modul pelatihan dan sesi konsultasi.
+        - Mencapai skor kepuasan pelanggan 4.8/5.
+      keywords:
+        - Onboarding
+        - Enterprise
+        - Pelatihan
+    - name: Dashboard Kesehatan Pelanggan
+      url: https://www.solusidigital.co.id/dashboard
+      description: Dashboard analitik untuk memantau kesehatan pelanggan secara real-time
+      startDate: Mar 1, 2022
+      endDate: Nov 30, 2022
+      summary: |
+        - Mengembangkan dashboard dengan metrik penggunaan produk, tiket dukungan, dan NPS.
+        - Membantu tim CS mengidentifikasi risiko churn lebih awal.
+        - Meningkatkan efisiensi tim sebesar 30%.
+      keywords:
+        - Dashboard
+        - Analitik
+        - Churn
+  interests:
+    - name: Membaca
+      keywords:
+        - Buku Bisnis
+        - Psikologi
+        - Pengembangan Diri
+    - name: Menulis
+      keywords:
+        - Blog
+        - Artikel
+        - Jurnal
+    - name: Traveling
+      keywords:
+        - Kuliner
+        - Budaya
+        - Alam
+  volunteer:
+    - organization: Komunitas Pelanggan Indonesia
+      url: https://www.komunitaspelanggan.id
+      position: Mentor Keberhasilan Pelanggan
+      startDate: Jan 1, 2022
+      summary: |
+        - Memberikan mentoring kepada profesional muda yang ingin berkarir di bidang keberhasilan pelanggan.
+        - Mengadakan workshop tentang strategi retensi dan komunikasi pelanggan.
+        - Membantu mengorganisir acara networking tahunan.
+    - organization: Yayasan Pendidikan Anak Bangsa
+      url: https://www.yayasanpendidikan.org
+      position: Relawan Pengajar
+      startDate: Aug 1, 2019
+      endDate: Dec 31, 2020
+      summary: |
+        - Mengajar keterampilan komunikasi dan literasi digital untuk siswa sekolah menengah.
+        - Merancang kurikulum sederhana untuk pengembangan soft skills.
+
+locale:
+  language: id

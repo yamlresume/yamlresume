@@ -1,0 +1,254 @@
+content:
+  basics:
+    name: Budi Santoso
+    headline: Insinyur DevOps | Otomasi Infrastruktur & Cloud
+    phone: "+62 812-3456-7890"
+    email: budi.santoso.devops@example.com
+    url: https://budisantoso.dev
+    summary: |
+      - Insinyur DevOps dengan lebih dari 6 tahun pengalaman dalam merancang, mengotomasi, dan mengoperasikan infrastruktur cloud yang andal.
+      - Terampil dalam Kubernetes, Terraform, CI/CD, dan praktik Site Reliability Engineering untuk meningkatkan kecepatan rilis serta ketersediaan layanan.
+      - Berpengalaman membangun platform observabilitas, mengelola multi-cloud, dan menerapkan keamanan pada pipeline DevOps.
+      - Kolaboratif, berorientasi pada otomasi, dan terbiasa memimpin transformasi budaya DevOps di tim lintas fungsi.
+  location:
+    address: Jl. Jenderal Sudirman No. 52, Jakarta Pusat
+    city: Jakarta
+    region: DKI Jakarta
+    country: Indonesia
+    postalCode: "10220"
+  profiles:
+    - network: GitHub
+      url: https://github.com/budisantoso-devops
+      username: budisantoso-devops
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/budisantoso-devops
+      username: budisantoso-devops
+  education:
+    - institution: Universitas Indonesia
+      url: https://www.ui.ac.id
+      degree: Bachelor
+      area: Teknik Informatika
+      score: "3.72"
+      startDate: Aug 1, 2015
+      endDate: Jul 1, 2019
+      courses:
+        - Algoritma dan Struktur Data
+        - Sistem Operasi
+        - Jaringan Komputer
+        - Basis Data
+        - Arsitektur Perangkat Lunak
+        - Keamanan Informasi
+        - Komputasi Awan
+        - Otomasi Infrastruktur
+      summary: |
+        - Lulus dengan predikat cum laude dan fokus pada rekayasa perangkat lunak serta infrastruktur.
+        - Mengembangkan proyek akhir tentang orkestrasi kontainer untuk aplikasi berbasis mikroservis.
+        - Aktif dalam organisasi kemahasiswaan yang bergerak di bidang teknologi dan open source.
+  work:
+    - name: PT Solusi Digital Nusantara
+      url: https://www.solusidigitalnusantara.co.id
+      position: Insinyur DevOps Senior
+      startDate: Jan 1, 2022
+      summary: |
+        - Memimpin adopsi GitOps dan pipeline CI/CD untuk lebih dari 40 layanan mikro, menurunkan waktu deployment dari 2 jam menjadi 15 menit.
+        - Mengelola cluster Kubernetes multi-tenant di AWS dengan Terraform, Helm, dan Argo CD untuk menjaga konsistensi lingkungan.
+        - Membangun platform observabilitas terpusat menggunakan Prometheus, Grafana, Loki, dan OpenTelemetry.
+        - Menerapkan kebijakan keamanan supply chain, pemindaian kerentanan, dan manajemen rahasia dengan Vault.
+        - Menjadi mentor bagi 4 insinyur junior dan memimpin forum praktik terbaik DevOps internal.
+      keywords:
+        - Kubernetes
+        - Terraform
+        - AWS
+        - GitLab CI
+        - Observabilitas
+    - name: PT Teknologi Cakra
+      url: https://www.teknologicakra.co.id
+      position: Insinyur DevOps
+      startDate: Mar 1, 2020
+      endDate: Dec 1, 2021
+      summary: |
+        - Mengotomasi provisioning infrastruktur dengan Ansible dan Terraform, mengurangi kesalahan konfigurasi manual hingga 70%.
+        - Membangun pipeline Jenkins untuk build, test, dan deployment aplikasi Java dan Node.js.
+        - Mengimplementasikan monitoring dan alerting dengan Prometheus, Alertmanager, dan Grafana.
+        - Melakukan tuning Linux, Docker, dan Nginx untuk meningkatkan performa serta stabilitas layanan.
+      keywords:
+        - Docker
+        - Jenkins
+        - Ansible
+        - Prometheus
+        - Linux
+    - name: PT Data Prima
+      url: https://www.dataprima.co.id
+      position: Site Reliability Engineer
+      startDate: Jun 1, 2019
+      endDate: Feb 1, 2020
+      summary: |
+        - Menjaga ketersediaan layanan data dengan pemantauan proaktif dan respons insiden.
+        - Menulis skrip otomasi Python dan Bash untuk tugas operasional berulang.
+        - Mendokumentasikan runbook, prosedur pemulihan bencana, dan praktik on-call.
+      keywords:
+        - Python
+        - Bash
+        - Nagios
+        - MySQL
+        - Jaringan
+  skills:
+    - name: Orkestrasi Kontainer
+      level: Expert
+      keywords:
+        - Docker
+        - Kubernetes
+        - Helm
+        - OpenShift
+    - name: Infrastruktur sebagai Kode
+      level: Advanced
+      keywords:
+        - Terraform
+        - Ansible
+        - Pulumi
+        - CloudFormation
+    - name: CI/CD
+      level: Expert
+      keywords:
+        - GitLab CI
+        - Jenkins
+        - GitHub Actions
+        - Argo CD
+    - name: Cloud
+      level: Advanced
+      keywords:
+        - AWS
+        - Google Cloud
+        - Azure
+        - Alibaba Cloud
+    - name: Observabilitas
+      level: Advanced
+      keywords:
+        - Prometheus
+        - Grafana
+        - ELK Stack
+        - Datadog
+    - name: Bahasa Pemrograman
+      level: Advanced
+      keywords:
+        - Python
+        - Go
+        - Bash
+        - SQL
+    - name: Keamanan DevOps
+      level: Intermediate
+      keywords:
+        - Vault
+        - Trivy
+        - SonarQube
+        - IAM
+  languages:
+    - language: Malay
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - Bahasa Indonesia
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - IELTS 7.0
+        - TOEFL 600
+  awards:
+    - title: Penghargaan Inovasi Otomasi Infrastruktur
+      date: Dec 2023
+      awarder: PT Solusi Digital Nusantara
+      summary: |
+        Diberikan atas kontribusi dalam membangun pipeline CI/CD terpusat yang meningkatkan kecepatan rilis dan keandalan layanan.
+    - title: Juara 2 Kompetisi Cloud Native
+      date: Aug 2021
+      awarder: Cloud Native Indonesia
+      summary: |
+        Meraih juara kedua dalam kompetisi desain arsitektur cloud native untuk studi kasus layanan logistik.
+  certificates:
+    - name: AWS Certified DevOps Engineer - Professional
+      issuer: Amazon Web Services
+      date: Mar 2022
+      url: https://aws.amazon.com/certification/certified-devops-engineer-professional/
+    - name: Certified Kubernetes Administrator
+      issuer: Cloud Native Computing Foundation
+      date: Nov 2021
+      url: https://training.linuxfoundation.org/certification/certified-kubernetes-administrator-cka/
+    - name: 'HashiCorp Certified: Terraform Associate'
+      issuer: HashiCorp
+      date: Jun 2023
+      url: https://www.hashicorp.com/certification/terraform-associate
+  publications:
+    - name: Otomasi Infrastruktur Multi-Cloud dengan Terraform dan GitLab CI
+      publisher: Jurnal Teknologi Cloud Indonesia
+      releaseDate: Aug 2023
+      url: https://jurnalcloud.id/artikel/otomasi-infrastruktur-multi-cloud
+      summary: |
+        - Membahas pola modular Terraform untuk mengelola sumber daya di AWS, GCP, dan Azure.
+        - Menjelaskan integrasi pipeline GitLab CI untuk deployment yang aman dan dapat diaudit.
+    - name: Observabilitas Modern untuk Arsitektur Microservices
+      publisher: Konferensi DevOps Indonesia
+      releaseDate: Oct 2022
+      url: https://devops.id/prosiding/observabilitas-microservices
+      summary: |
+        - Mengulas penerapan metrik, log, dan trace terdistribusi pada layanan mikro.
+        - Memberikan rekomendasi praktis untuk alerting dan penanganan insiden.
+  projects:
+    - name: Platform Observabilitas Terpusat
+      startDate: Jan 2023
+      endDate: Jun 2023
+      description: Implementasi observabilitas terpusat untuk 50+ layanan mikro.
+      summary: |
+        - Menggabungkan metrik, log, dan trace menggunakan Prometheus, Loki, dan OpenTelemetry.
+        - Membuat dasbor Grafana dan alerting yang mengurangi mean time to recovery sebesar 40%.
+      keywords:
+        - Prometheus
+        - Grafana
+        - Loki
+        - OpenTelemetry
+      url: https://github.com/budisantoso-devops/observability-platform
+    - name: Pipeline CI/CD Multi-Cloud
+      startDate: Mar 2022
+      endDate: Nov 2022
+      description: Pipeline otomatis untuk deployment ke AWS, GCP, dan Azure.
+      summary: |
+        - Membangun pipeline reusable dengan GitLab CI, Terraform, dan Argo CD.
+        - Menerapkan quality gate, pemindaian keamanan, dan strategi canary release.
+      keywords:
+        - GitLab CI
+        - Terraform
+        - Argo CD
+        - Kubernetes
+      url: https://github.com/budisantoso-devops/multi-cloud-cicd
+  interests:
+    - name: Olahraga
+      keywords:
+        - Lari
+        - Bersepeda
+        - Renang
+    - name: Musik
+      keywords:
+        - Gitar
+        - Piano
+    - name: Open Source
+      keywords:
+        - Kubernetes
+        - Terraform
+        - Prometheus
+  volunteer:
+    - organization: Komunitas DevOps Indonesia
+      position: Mentor
+      startDate: Jan 2022
+      summary: |
+        - Menjadi mentor bagi anggota komunitas dalam mempelajari Kubernetes, Terraform, dan praktik CI/CD.
+        - Membantu menyelenggarakan workshop dan sesi diskusi teknis rutin.
+      url: https://devops.id
+    - organization: Universitas Indonesia Programming Club
+      position: Pengajar
+      startDate: Sep 2017
+      endDate: Jul 2019
+      summary: |
+        - Mengajarkan dasar pemrograman dan penggunaan Git kepada mahasiswa baru.
+        - Mendampingi peserta dalam kompetisi pemrograman tingkat universitas.
+      url: https://ui.ac.id/programming-club
+
+locale:
+  language: id

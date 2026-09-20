@@ -1,0 +1,198 @@
+content:
+  basics:
+    name: Camille Laurent
+    headline: Responsable de la réussite client
+    phone: "+33 1 44 55 66 77"
+    email: camille.laurent@example.fr
+    url: https://www.camille-laurent.fr
+    summary: |
+      Responsable de la réussite client avec plus de 6 ans d'expérience dans le secteur SaaS, spécialisée dans l'accompagnement des clients grands comptes.
+      - Expertise en gestion de portefeuille client, onboarding, et fidélisation.
+      - Forte capacité à établir des relations de confiance et à identifier les opportunités de croissance.
+      - Solide compréhension des enjeux techniques et métier, permettant de traduire les besoins clients en solutions concrètes.
+  location:
+    address: 12 Rue de la Paix
+    city: Paris
+    region: Île-de-France
+    country: France
+    postalCode: "75002"
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/camillelaurent
+      username: camillelaurent
+    - network: Twitter
+      url: https://twitter.com/camillelaurent
+      username: camillelaurent
+  education:
+    - institution: Université Paris-Dauphine
+      url: https://www.dauphine.psl.eu/
+      degree: Master
+      area: Management et Stratégie d'Entreprise
+      score: Mention Bien
+      startDate: Sep 1, 2014
+      endDate: Jun 30, 2016
+      courses:
+        - Stratégie d'entreprise
+        - Marketing B2B
+        - Négociation commerciale
+        - Gestion de la relation client
+        - Analyse financière
+      summary: |
+        - Formation spécialisée en management et stratégie, avec un focus sur la relation client et le développement commercial.
+        - Projet de fin d'études sur l'optimisation de l'expérience client dans le secteur SaaS.
+    - institution: Université Paris 1 Panthéon-Sorbonne
+      url: https://www.pantheonsorbonne.fr/
+      degree: Bachelor
+      area: Économie et Gestion
+      score: Mention Assez Bien
+      startDate: Sep 1, 2011
+      endDate: Jun 30, 2014
+      courses:
+        - Microéconomie
+        - Macroéconomie
+        - Comptabilité
+        - Statistiques
+        - Marketing
+      summary: |
+        - Solide base en économie et gestion, avec une introduction aux techniques de vente et de négociation.
+  work:
+    - name: SaaSify
+      url: https://www.saasify.fr
+      position: Responsable de la réussite client
+      startDate: Jan 1, 2021
+      summary: |
+        - Gestion d'un portefeuille de 50 clients grands comptes, représentant un revenu annuel récurrent de 5M€.
+        - Élaboration et mise en œuvre de plans de réussite client personnalisés, augmentant le taux de rétention de 15%.
+        - Collaboration étroite avec les équipes produit et ventes pour identifier les opportunités d'upsell et de cross-sell.
+        - Animation de revues trimestrielles avec les clients pour suivre les indicateurs de performance et aligner les objectifs.
+      keywords:
+        - Gestion de portefeuille
+        - Onboarding
+        - Fidélisation
+        - SaaS
+        - Négociation
+    - name: CloudNext
+      url: https://www.cloudnext.com
+      position: Responsable de la réussite client
+      startDate: Mar 1, 2019
+      endDate: Dec 31, 2020
+      summary: |
+        - Suivi de 30 clients PME/ETI, avec un focus sur l'adoption produit et la satisfaction client.
+        - Mise en place d'un programme d'onboarding structuré, réduisant le time-to-value de 30%.
+        - Analyse des données d'utilisation pour anticiper les risques de churn et proposer des actions correctives.
+      keywords:
+        - Adoption produit
+        - Satisfaction client
+        - Analyse de données
+        - Onboarding
+    - name: TechSolutions
+      url: https://www.techsolutions.fr
+      position: Chargé de clientèle
+      startDate: Sep 1, 2016
+      endDate: Feb 28, 2019
+      summary: |
+        - Gestion d'un portefeuille de 100 clients TPE/PME dans le secteur des logiciels.
+        - Développement des ventes additionnelles et suivi de la satisfaction client.
+        - Collaboration avec l'équipe support pour résoudre les problèmes clients dans les délais impartis.
+      keywords:
+        - Vente
+        - Relation client
+        - Support
+  skills:
+    - name: Gestion de la relation client
+      level: Expert
+      keywords:
+        - Salesforce
+        - HubSpot
+        - Zendesk
+        - Gainsight
+    - name: Analyse de données
+      level: Advanced
+      keywords:
+        - Excel
+        - SQL
+        - Tableau
+        - Google Analytics
+    - name: Gestion de projet
+      level: Advanced
+      keywords:
+        - Jira
+        - Asana
+        - Méthodologies Agile
+    - name: Communication
+      level: Expert
+      keywords:
+        - Présentations
+        - Négociation
+        - Rédaction
+  languages:
+    - language: French
+      fluency: Native or Bilingual Proficiency
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - TOEIC 950
+        - TOEFL 110
+    - language: Spanish
+      fluency: Elementary Proficiency
+  awards:
+    - title: Prix de l'Excellence Client
+      date: Dec 2022
+      awarder: SaaSify
+      summary: |
+        Récompense décernée pour la meilleure performance en matière de satisfaction client et de rétention sur l'année 2022.
+  certificates:
+    - name: Certification Customer Success Manager
+      issuer: SuccessCo
+      date: Mar 2020
+      url: https://www.successco.com/certification
+  publications:
+    - name: L'importance de l'onboarding client dans le SaaS
+      publisher: Revue du SaaS
+      releaseDate: Jun 2021
+      url: https://www.revuedusaas.fr/onboarding-client
+      summary: |
+        Article analysant les meilleures pratiques pour structurer un programme d'onboarding efficace et améliorer la rétention client.
+  projects:
+    - name: Programme d'onboarding client
+      startDate: Jan 2022
+      endDate: Jun 2022
+      description: Mise en place d'un parcours d'onboarding standardisé pour les
+        nouveaux clients de SaaSify.
+      summary: |
+        - Conception et déploiement d'un programme d'onboarding en 4 étapes.
+        - Réduction du time-to-value de 40% et augmentation de la satisfaction client de 20 points.
+        - Formation des équipes internes à la nouvelle méthodologie.
+      keywords:
+        - Onboarding
+        - Expérience client
+        - SaaS
+      url: https://www.saasify.fr/onboarding
+  interests:
+    - name: Sports
+      keywords:
+        - Course à pied
+        - Natation
+        - Yoga
+    - name: Voyages
+      keywords:
+        - Asie
+        - Europe
+        - Amérique du Sud
+    - name: Lecture
+      keywords:
+        - Romans
+        - Biographies
+        - Essais
+  volunteer:
+    - organization: Association des Anciens de Dauphine
+      position: Mentor
+      startDate: Sep 2017
+      endDate: Jun 2023
+      summary: |
+        - Accompagnement de jeunes diplômés dans leur insertion professionnelle.
+        - Organisation d'ateliers de préparation aux entretiens et de développement du réseau.
+      url: https://www.dauphine-alumni.org
+
+locale:
+  language: fr

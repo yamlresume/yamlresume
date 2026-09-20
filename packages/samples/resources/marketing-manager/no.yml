@@ -1,0 +1,275 @@
+content:
+  basics:
+    name: Marianne Strand
+    headline: Markedssjef | Merkevarebygging, digital vekst og datadrevet markedsføring
+    phone: '+47 913 45 782'
+    email: marianne.strand@nordmark.no
+    url: https://www.mariannestrand.no
+    summary: |
+      Markedssjef med ni års erfaring fra varehandel, teknologi og forbruksvarer. Jeg bygger merkevarer som vokser både i markedet og på bunnlinjen, og jeg trives best i skjæringspunktet mellom kommersiell strategi, kreativt håndverk og tall.
+
+      - Leder tverrfaglige team på 8-12 personer innen merkevare, innhold, SoMe, SEO/SEA og markedskommunikasjon
+      - Dokumenterte resultater: 63 % vekst i organiske besøk, 41 % lavere kundeanskaffelseskost og 2,4x ROAS på betalte kanaler
+      - Datadrevet arbeidsmetodikk med GA4, Looker Studio, A/B-testing og budsjettallokering basert på markedsmiksmodeller
+      - Budsjettansvar opp mot 28 MNOK, med tett samarbeid med salg, produkt, kundeservice og konsernledelse
+  location:
+    address: Drammensveien 112
+    city: Oslo
+    region: Oslo
+    country: Norway
+    postalCode: '0273'
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/mariannestrand
+      username: mariannestrand
+    - network: Medium
+      url: https://medium.com/@mariannestrand
+      username: mariannestrand
+    - network: Instagram
+      url: https://www.instagram.com/marianne.strand
+      username: marianne.strand
+  education:
+    - institution: Norges Handelshøyskole
+      url: https://www.nhh.no
+      degree: Master
+      area: Strategi og ledelse
+      score: 'A+'
+      startDate: Aug 15, 2013
+      endDate: Jun 20, 2015
+      courses:
+        - Markedsføringsledelse
+        - Merkevarestrategi
+        - Forbrukeratferd og beslutningspsykologi
+        - Kvantitativ metode og markedsanalyse
+        - Digital forretningsmodellering
+      summary: |
+        - Fordypning i merkevarestrategi og kommersiell styring, med masteroppgave om kanalmiks i norsk varehandel
+        - Gjennomførte tre praksisbaserte casestudier for nordiske virksomheter i samarbeid med næringslivet
+        - Ble valgt til studenttillitsvalgt og koordinerte karrieredagen for 40 arbeidsgivere
+    - institution: Handelshøyskolen BI
+      url: https://www.bi.no
+      degree: Bachelor
+      area: Markedsføring og internasjonalisering
+      score: 'B+'
+      startDate: Aug 12, 2010
+      endDate: Jun 15, 2013
+      courses:
+        - Markedsføringsledelse
+        - Salgsledelse og forhandlingsteknikk
+        - Statistikk og økonomistyring
+        - Internasjonal markedsføring
+      summary: |
+        - Utvekslingsopphold ett semester ved Universitetet i Amsterdam innen digital markedsføring
+        - Prosjektleder for studentforeningens sponsorprogram, med ansvar for 1,2 MNOK i sponsorinntekter
+  work:
+    - name: Nordmark Retail AS
+      url: https://www.nordmark.no
+      position: Markedssjef
+      startDate: Mar 1, 2021
+      summary: |
+        - Leder markedsavdelingen med 11 medarbeidere og budsjettansvar på 28 MNOK fordelt på merkevare, ytelsesmarkedsføring og CRM
+        - Omdefinerte merkevareplattformen og lanserte ny visuell identitet, noe som løftet uhjulpet kjennskap fra 24 % til 39 % på to år
+        - Bygget opp et datadrevet kanalhierarki som reduserte kundeanskaffelseskost med 41 % og økte ROAS fra 1,6x til 2,4x
+        - Etablerte et lojalitetsprogram med 145 000 medlemmer og 18 % høyere kjøpsfrekvens blant aktive medlemmer
+        - Innførte månedlig markedscockpit i Looker Studio som beslutningsgrunnlag for ledergruppen
+        - Fungerer som nærmeste leder for fire spesialister og driver kompetanseutvikling og rekruttering i avdelingen
+      keywords:
+        - Merkevarestrategi
+        - Budsjettansvar
+        - Teamledelse
+        - Datadrevet markedsføring
+        - CRM og lojalitet
+    - name: Fjordlys Teknologi AS
+      url: https://www.fjordlys.no
+      position: Senior digital markedssjef
+      startDate: Sep 1, 2018
+      endDate: Feb 26, 2021
+      summary: |
+        - Ansvarlig for betalte og organiske kanaler for et abonnementsprodukt med 220 000 aktive brukere
+        - Skalerte innholdsmarkedsføring fra 4 til 30 publiserte artikler i måneden, med 63 % vekst i organisk trafikk
+        - Ledet konverteringsoptimalisering på tvers av landingssider og onboarding, med 27 % høyere trial-til-betalt-rate
+        - Satte opp attribusjonsmodell i GA360 og flyttet budsjett fra display til søk og video basert på inkrementelle tester
+        - Jobbet smidig i tverrfaglige produktteam med ukentlig eksperimentering og delt resultatansvar med produkt og salg
+      keywords:
+        - SEO og SEA
+        - Konverteringsoptimalisering
+        - Innholdsmarkedsføring
+        - GA4 og attribusjon
+        - Vekststrategi
+    - name: Bygg og Bo Norge AS
+      url: https://www.byggogbo.no
+      position: Markedskonsulent
+      startDate: Aug 1, 2015
+      endDate: Aug 31, 2018
+      summary: |
+        - Planla og gjennomførte 14 kampanjer i året på tvers av butikk, netthandel og lokale medier
+        - Forvaltet mediebyrårelasjonen og budsjetter på 6 MNOK med månedlig resultatrapportering
+        - Bygget opp selskapets første e-postprogram med segmentering, som økte gjenkjøp med 12 %
+      keywords:
+        - Kampanjeplanlegging
+        - Mediebyrå
+        - E-postmarkedsføring
+  skills:
+    - name: Merkevare og strategi
+      level: Expert
+      keywords:
+        - Merkevareposisjonering
+        - Markedsstrategi
+        - Kundeinnsikt
+        - Budsjettstyring
+    - name: Digital markedsføring
+      level: Advanced
+      keywords:
+        - SEO og SEA
+        - Meta Ads
+        - Programmatisk kjøp
+        - Marketing automation
+    - name: Analyse og innsikt
+      level: Advanced
+      keywords:
+        - GA4
+        - Looker Studio
+        - A/B-testing
+        - Attribusjonsmodeller
+    - name: Ledelse og samarbeid
+      level: Expert
+      keywords:
+        - Teamledelse
+        - Prosjektledelse
+        - Tverrfaglig arbeid
+        - Leverandørstyring
+  languages:
+    - language: Norwegian
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - Morsmål
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - TOEFL 112
+        - Forretningsforhandlinger
+    - language: German
+      fluency: Limited Working Proficiency
+      keywords:
+        - Daglig kommunikasjon
+    - language: Spanish
+      fluency: Elementary Proficiency
+      keywords:
+        - Grunnleggende
+  awards:
+    - title: Årets markedssjef
+      awarder: Norsk Markedsføringsforening
+      date: Nov 8, 2023
+      summary: |
+        Tildelt for dokumentert vekst i merkevarekjennskap og lønnsomhet hos Nordmark Retail AS, samt for sterk utvikling av eget markedsteam.
+    - title: Gullblyanten - sølv i kategorien kampanje
+      awarder: Anfo
+      date: Apr 22, 2022
+      summary: |
+        Priset for kampanjen "Hjem for enhver sesong", som økte netthandelsomsetningen med 22 % i løpet av kampanjeperioden.
+  certificates:
+    - name: Google Analytics 4 Certification
+      issuer: Google Skillshop
+      date: Mar 14, 2023
+      url: https://skillshop.exceedlms.com/
+    - name: HubSpot Content Marketing Certification
+      issuer: HubSpot Academy
+      date: Jan 20, 2022
+      url: https://academy.hubspot.com/
+    - name: Meta Blueprint - Media Buying Professional
+      issuer: Meta
+      date: Sep 3, 2021
+      url: https://www.facebook.com/business/learn
+  publications:
+    - name: Derfor vinner datadrevet merkevarebygging
+      publisher: Kampanje
+      releaseDate: Feb 16, 2023
+      url: https://kampanje.com/
+      summary: |
+        - Kronikk om hvordan norske merkevarer kan kombinere merkevarebygging og ytelsesmarkedsføring i samme budsjettramme
+        - Presenterer en enkel modell for å måle inkrementell effekt av merkevareinvesteringer
+    - name: Lojalitet i norsk varehandel - fra poeng til relasjon
+      publisher: Magma - Econas tidsskrift for økonomi og ledelse
+      releaseDate: Jun 10, 2021
+      url: https://www.magma.no/
+      summary: |
+        - Fagartikkel basert på egne data fra 145 000 medlemmer i et lojalitetsprogram
+        - Viser sammenhengen mellom personalisert kommunikasjon og kjøpsfrekvens
+  references:
+    - name: Henrik Aalborg
+      relationship: Kommersiell direktør, Nordmark Retail AS
+      email: henrik.aalborg@nordmark.no
+      phone: '+47 901 22 348'
+      summary: |
+        Marianne er en av de mest komplette markedssjefene jeg har jobbet med. Hun kombinerer kreativ tyngde med kommersiell forståelse, og hun har bygget et team som leverer jevnt på høyt nivå.
+    - name: Ingvild Krogh
+      relationship: Tidligere markedsdirektør, Fjordlys Teknologi AS
+      email: ingvild.krogh@fjordlystek.no
+      phone: '+47 926 78 019'
+      summary: |
+        I tre år drev Marianne vår betalte og organiske vekststrategi. Hun er analytisk sterk, tar beslutninger på kort varsel og følger alltid opp med tydelige resultater.
+  projects:
+    - name: Nordmark Lojalitetsprogram
+      url: https://www.nordmark.no/lojal
+      description: Lojalitetsprogram med 145 000 medlemmer for en norsk varehandelskjede
+      startDate: Jan 10, 2022
+      endDate: Sep 30, 2023
+      summary: |
+        - Definerte medlemsnivåer, opptjeningslogikk og personalisert kommunikasjon i samarbeid med CRM-leverandør
+        - Økte andelen aktive medlemmer fra 38 % til 61 % gjennom onboarding- og reaktiveringsflyter
+        - Løftet kjøpsfrekvensen blant medlemmer med 18 % sammenlignet med ikke-medlemmer
+      keywords:
+        - Lojalitetsprogram
+        - CRM
+        - Segmentering
+        - Personalisering
+    - name: Fjordlys Merkevareløft
+      url: https://www.fjordlys.no/om-oss
+      description: Reposisjonering og ny visuell identitet for en nordisk
+        teknologivirksomhet
+      startDate: Mar 4, 2019
+      endDate: Nov 27, 2020
+      summary: |
+        - Ledet prosessen fra innsiktsarbeid og posisjonering til ny visuell identitet og tonality
+        - Rullet ut nytt brand på tvers av produkt, nettside, SoMe og annonsering i tre markeder
+        - Resulterte i 29 % høyere merkevarepreferanse i målgruppen 25-45 år
+      keywords:
+        - Reposisjonering
+        - Visuell identitet
+        - Merkevareinnsikt
+  interests:
+    - name: Friluftsliv
+      keywords:
+        - Fjellturer
+        - Langrenn
+        - Padling
+    - name: Mat og matkultur
+      keywords:
+        - Matlaging
+        - Vin
+        - Reise
+    - name: Litteratur
+      keywords:
+        - Sakprosa
+        - Romaner
+  volunteer:
+    - organization: Norsk Markedsføringsforening
+      url: https://www.markedsforing.no
+      position: Mentor i mentorprogrammet
+      startDate: Sep 1, 2019
+      summary: |
+        - Veileder yngre markedsførere i karrierevalg, posisjonering og faglig utvikling
+        - Foredrar på årskonferansen om datadrevet merkevarebygging og kanalmiks
+        - Bidrar i faggruppen for merkevare og innsikt med arrangementer fire ganger i året
+    - organization: Oslo Røde Kors
+      url: https://www.rodekors.no
+      position: Frivillig markedsfører
+      startDate: Feb 1, 2018
+      endDate: Dec 15, 2021
+      summary: |
+        - Utviklet lokalforeningens kommunikasjonsplan og sosiale medier-strategi på frivillig basis
+        - Rekrutterte 46 nye frivillige gjennom kampanjen "En time er nok"
+        - Prosjektleder for den årlige innsamlingsaksjonen, med 780 000 kroner innsamlet i 2020
+
+locale:
+  language: 'no'

@@ -1,0 +1,266 @@
+content:
+  basics:
+    name: Camille Dubois
+    headline: Ingénieur DevOps / SRE
+    phone: "+33 6 12 34 56 78"
+    email: camille.dubois@protonmail.com
+    url: https://camilledubois.dev
+    summary: |
+      Ingénieur DevOps avec plus de 5 ans d'expérience dans la conception, l'automatisation et l'exploitation de plateformes cloud natives. Passionné par la fiabilité, l'observabilité et l'amélioration continue.
+
+      - Expertise en Kubernetes, Terraform et CI/CD sur AWS et Azure
+      - Réduction des coûts cloud de 30 % grâce à l'optimisation des ressources et au rightsizing
+      - Mise en place de pipelines de déploiement sans interruption pour plus de 200 microservices
+      - Solide culture SRE : SLO, gestion des incidents, post-mortems et ingénierie du chaos
+  location:
+    address: 12 rue de la Roquette
+    city: Paris
+    region: Île-de-France
+    country: France
+    postalCode: "75011"
+  profiles:
+    - network: GitHub
+      url: https://github.com/camilledubois
+      username: camilledubois
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/camille-dubois-devops
+      username: camille-dubois-devops
+
+  education:
+    - institution: Université Paris-Saclay
+      url: https://www.universite-paris-saclay.fr
+      degree: Master
+      area: Informatique - Systèmes distribués et cloud
+      score: "Mention Très Bien"
+      startDate: Sep 1, 2019
+      endDate: Jul 1, 2021
+      courses:
+        - Architectures cloud et virtualisation
+        - Systèmes distribués et tolérance aux pannes
+        - Sécurité des infrastructures
+        - Automatisation et Infrastructure as Code
+        - Observabilité et performance
+      summary: |
+        - Spécialisation en systèmes distribués, cloud computing et automatisation
+        - Projet de fin d'études : orchestration Kubernetes multi-cloud avec Terraform
+        - Major de promotion en architecture cloud et sécurité
+    - institution: Université de Lille
+      url: https://www.univ-lille.fr
+      degree: Bachelor
+      area: Informatique
+      score: "Mention Bien"
+      startDate: Sep 1, 2016
+      endDate: Jun 1, 2019
+      courses:
+        - Algorithmique et structures de données
+        - Réseaux et protocoles
+        - Administration système Linux
+        - Programmation Python et Bash
+      summary: |
+        - Acquisition des fondamentaux en développement, réseaux et systèmes d'exploitation
+        - Premier contact avec les pratiques DevOps lors de projets universitaires
+
+  work:
+    - name: CloudNova
+      url: https://www.cloudnova.fr
+      position: Ingénieur DevOps Senior
+      startDate: Jan 1, 2023
+      summary: |
+        - Conception et maintien d'une plateforme Kubernetes multi-tenant sur AWS (EKS) pour 200+ microservices
+        - Automatisation complète du provisionnement avec Terraform et Ansible, réduisant le time-to-market de 40 %
+        - Mise en place de pipelines GitLab CI/CD avec tests automatisés, scans de sécurité et déploiements canary
+        - Définition et suivi des SLO/SLI, animation des astreintes et des post-mortems
+        - Optimisation des coûts cloud de 30 % via rightsizing, spot instances et politiques de rétention
+      keywords:
+        - Kubernetes
+        - Terraform
+        - AWS
+        - GitLab CI
+        - SRE
+        - Observabilité
+    - name: PayFlow
+      url: https://www.payflow.fr
+      position: Ingénieur DevOps
+      startDate: Sep 1, 2021
+      endDate: Dec 31, 2022
+      summary: |
+        - Migration d'une application monolithique vers une architecture de microservices conteneurisés
+        - Création de charts Helm et de pipelines Jenkins pour des déploiements reproductibles
+        - Mise en place de la supervision avec Prometheus, Grafana et Alertmanager
+        - Participation à la rotation d'astreinte et à la réduction du MTTR de 50 %
+      keywords:
+        - Docker
+        - Helm
+        - Jenkins
+        - Prometheus
+        - Grafana
+    - name: Startup Factory
+      url: https://www.startupfactory.fr
+      position: Administrateur Systèmes et Réseaux
+      startDate: Jul 1, 2019
+      endDate: Aug 31, 2021
+      summary: |
+        - Administration de serveurs Linux (Debian/Ubuntu) et gestion des sauvegardes
+        - Automatisation des tâches récurrentes avec Bash et Python
+        - Mise en place de la supervision Nagios et du référencement des incidents
+        - Support technique aux équipes de développement et participation aux revues d'architecture
+      keywords:
+        - Linux
+        - Bash
+        - Python
+        - Nagios
+        - Réseaux
+
+  skills:
+    - name: Cloud & Infrastructure
+      level: Expert
+      keywords:
+        - AWS
+        - Azure
+        - GCP
+        - Terraform
+        - Ansible
+        - Pulumi
+    - name: Conteneurs & Orchestration
+      level: Expert
+      keywords:
+        - Kubernetes
+        - Docker
+        - Helm
+        - Istio
+        - EKS
+        - Kustomize
+    - name: CI/CD & Automatisation
+      level: Advanced
+      keywords:
+        - GitLab CI
+        - GitHub Actions
+        - Jenkins
+        - ArgoCD
+        - Python
+        - Go
+    - name: Observabilité & SRE
+      level: Advanced
+      keywords:
+        - Prometheus
+        - Grafana
+        - ELK
+        - Datadog
+        - SLO/SLI
+        - Ingénierie du chaos
+    - name: Sécurité & Conformité
+      level: Intermediate
+      keywords:
+        - Vault
+        - Trivy
+        - OPA
+        - RBAC
+        - SOC2
+        - RGPD
+
+  languages:
+    - language: French
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - Langue maternelle
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - TOEIC 950
+        - Anglais technique
+    - language: Spanish
+      fluency: Limited Working Proficiency
+      keywords:
+        - Conversation courante
+
+  awards:
+    - title: Prix de l'innovation DevOps
+      date: Jun 2023
+      awarder: CloudNova
+      summary: |
+        Récompense interne pour la conception d'une plateforme d'auto-scaling prédictif ayant permis une réduction de 25 % des coûts d'infrastructure.
+
+  certificates:
+    - name: AWS Certified DevOps Engineer – Professional
+      issuer: Amazon Web Services
+      date: Mar 2023
+      url: https://aws.amazon.com/certification/
+    - name: Certified Kubernetes Administrator (CKA)
+      issuer: Cloud Native Computing Foundation
+      date: Nov 2022
+      url: https://www.cncf.io/certification/cka/
+    - name: "HashiCorp Certified: Terraform Associate"
+      issuer: HashiCorp
+      date: May 2022
+      url: https://www.hashicorp.com/certification
+
+  publications:
+    - name: "Retour d'expérience : migration de 200 microservices vers Kubernetes"
+      publisher: Blog technique de CloudNova
+      releaseDate: Apr 2024
+      url: https://www.cloudnova.fr/blog/migration-kubernetes
+      summary: |
+        - Présentation des défis rencontrés lors de la migration d'un monolithe vers Kubernetes
+        - Bonnes pratiques pour la gestion des secrets, des ressources et des déploiements progressifs
+        - Analyse des gains de performance et de fiabilité après migration
+
+  projects:
+    - name: Plateforme d'observabilité interne
+      startDate: Feb 2023
+      endDate: Aug 2023
+      description: Mise en place d'une stack d'observabilité centralisée pour 200+
+        microservices
+      summary: |
+        - Déploiement de Prometheus, Grafana et Loki sur Kubernetes
+        - Création de tableaux de bord SLO et d'alertes basées sur les symptômes
+        - Réduction du MTTR de 50 % et amélioration de la visibilité sur les incidents
+      keywords:
+        - Observabilité
+        - Prometheus
+        - Grafana
+        - Loki
+        - SLO
+      url: https://github.com/camilledubois/observability-platform
+    - name: Automatisation multi-cloud
+      startDate: Mar 2022
+      endDate: Nov 2022
+      description: Provisionnement automatisé d'environnements éphémères sur AWS et Azure
+      summary: |
+        - Développement de modules Terraform réutilisables et de pipelines GitLab CI
+        - Intégration de politiques OPA et de scans de sécurité Trivy
+        - Réduction du temps de création d'un environnement de 2 jours à 30 minutes
+      keywords:
+        - Terraform
+        - AWS
+        - Azure
+        - OPA
+        - GitLab CI
+      url: https://github.com/camilledubois/multi-cloud-automation
+
+  interests:
+    - name: Open Source
+      keywords:
+        - Kubernetes
+        - Terraform
+        - Prometheus
+    - name: Sport
+      keywords:
+        - Course à pied
+        - Escalade
+    - name: Lecture
+      keywords:
+        - Essais techniques
+        - Science-fiction
+
+  volunteer:
+    - organization: DevOps Paris
+      url: https://www.meetup.com/devops-paris/
+      position: Mentor
+      startDate: Sep 2022
+      summary: |
+        - Accompagnement de développeurs et d'administrateurs dans leur transition vers les pratiques DevOps
+        - Animation d'ateliers pratiques sur Kubernetes, Terraform et CI/CD
+        - Organisation de rencontres mensuelles et de retours d'expérience
+
+locale:
+  language: fr

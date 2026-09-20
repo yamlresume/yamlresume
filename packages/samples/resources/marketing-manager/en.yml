@@ -1,0 +1,277 @@
+content:
+  basics:
+    name: Jordan Ellis
+    headline: Senior Marketing Manager | Brand Strategist | Growth Marketing
+    phone: "(415) 555-0138"
+    email: jordan.ellis@marketingpro.com
+    url: https://www.jordanellis.com
+    summary: |
+      - Integrated marketing leader with 8+ years of experience developing and executing data-driven campaigns across digital, social, and traditional channels.
+      - Proven track record of increasing brand awareness, generating qualified leads, and driving revenue growth for B2B and B2C companies.
+      - Skilled in building and mentoring high-performing marketing teams, managing budgets up to $2M, and collaborating with cross-functional stakeholders.
+      - Adept at leveraging analytics, CRM, and marketing automation tools to optimize performance and inform strategic decisions.
+
+  location:
+    address: 482 Market Street, Suite 900
+    city: San Francisco
+    region: California
+    country: United States
+    postalCode: "94105"
+
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/jordanellis
+      username: jordanellis
+    - network: Twitter
+      url: https://twitter.com/jordanellis
+      username: jordanellis
+    - network: Medium
+      url: https://medium.com/@jordanellis
+      username: jordanellis
+
+  education:
+    - institution: Northwestern University
+      url: https://www.northwestern.edu/
+      degree: Master
+      area: Integrated Marketing Communications
+      score: "3.95"
+      startDate: Sep 2016
+      endDate: Jun 2018
+      courses:
+        - Consumer Insight and Analytics
+        - Brand Communication
+        - Digital Marketing Strategy
+        - Marketing Finance
+        - Strategic Communications
+        - Media Planning
+      summary: |
+        - Graduated with distinction and received the Dean's Scholarship for academic excellence.
+        - Completed capstone project on omnichannel customer journey mapping for a national retail brand.
+    - institution: University of California, Berkeley
+      url: https://www.berkeley.edu/
+      degree: Bachelor
+      area: Marketing and Business Administration
+      score: "3.8"
+      startDate: Aug 2012
+      endDate: May 2016
+      courses:
+        - Principles of Marketing
+        - Consumer Behavior
+        - Business Analytics
+        - Microeconomics
+        - Statistics
+        - Organizational Behavior
+      summary: |
+        - Served as Marketing Director for the student business association, growing membership by 30%.
+        - Completed internship with a local startup, developing social media and content marketing playbooks.
+
+  work:
+    - name: Brightwave Digital
+      url: https://www.brightwavedigital.com
+      position: Senior Marketing Manager
+      startDate: Jan 2022
+      summary: |
+        - Lead a team of 6 marketing professionals to plan and execute integrated campaigns for 12+ B2B and B2C clients.
+        - Developed and managed annual marketing budgets exceeding $2M, consistently delivering ROI above 300%.
+        - Spearheaded a brand refresh and website redesign that increased organic traffic by 65% and lead conversion by 28%.
+        - Implemented marketing automation workflows in HubSpot, reducing manual tasks by 40% and improving lead nurturing.
+        - Built a reporting framework using Google Analytics, Tableau, and Salesforce to track KPIs and present insights to C-suite.
+      keywords:
+        - Integrated Marketing
+        - Budget Management
+        - Marketing Automation
+        - Team Leadership
+        - ROI Optimization
+    - name: Northstar Consumer Goods
+      url: https://www.northstarconsumer.com
+      position: Marketing Manager
+      startDate: Mar 2019
+      endDate: Dec 2021
+      summary: |
+        - Managed product marketing for a portfolio of 15+ consumer packaged goods, generating $18M in annual revenue.
+        - Launched 8 new products from concept to market, achieving average first-year sales targets of 115%.
+        - Led consumer research and segmentation studies to inform positioning, messaging, and media mix.
+        - Partnered with sales and e-commerce teams to develop promotional calendars and retail activation programs.
+        - Grew social media following by 120% through influencer partnerships and user-generated content campaigns.
+      keywords:
+        - Product Marketing
+        - Consumer Research
+        - Go-to-Market
+        - E-commerce
+        - Influencer Marketing
+    - name: Spark & Co.
+      url: https://www.sparkandco.com
+      position: Marketing Specialist
+      startDate: Jun 2018
+      endDate: Feb 2019
+      summary: |
+        - Executed email marketing campaigns with open rates 22% above industry benchmarks.
+        - Assisted in the development of content marketing strategy, producing blog posts, whitepapers, and case studies.
+        - Coordinated trade show and event marketing logistics, generating 500+ qualified leads.
+        - Analyzed campaign performance and prepared monthly reports for senior management.
+      keywords:
+        - Email Marketing
+        - Content Marketing
+        - Event Marketing
+        - Analytics
+
+  skills:
+    - name: Marketing Strategy
+      level: Expert
+      keywords:
+        - Brand Positioning
+        - Go-to-Market
+        - Competitive Analysis
+        - Customer Segmentation
+    - name: Digital Marketing
+      level: Advanced
+      keywords:
+        - SEO
+        - SEM
+        - PPC
+        - Email Marketing
+        - Content Marketing
+    - name: Analytics & CRM
+      level: Advanced
+      keywords:
+        - Google Analytics
+        - HubSpot
+        - Salesforce
+        - Tableau
+        - A/B Testing
+    - name: Social Media
+      level: Expert
+      keywords:
+        - LinkedIn
+        - Instagram
+        - TikTok
+        - Hootsuite
+        - Sprout Social
+    - name: Project Management
+      level: Advanced
+      keywords:
+        - Agile
+        - Asana
+        - Jira
+        - Budgeting
+        - Cross-functional
+
+  languages:
+    - language: English
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - TOEFL 115
+        - Business Writing
+    - language: Spanish
+      fluency: Full Professional Proficiency
+      keywords:
+        - DELE B2
+    - language: French
+      fluency: Limited Working Proficiency
+      keywords:
+        - Conversational
+
+  awards:
+    - title: Marketer of the Year
+      date: Nov 2023
+      awarder: Brightwave Digital
+      summary: |
+        Recognized for leading an integrated campaign that increased lead generation by 42% and exceeded revenue targets by 18%.
+    - title: Excellence in Brand Strategy
+      date: Apr 2021
+      awarder: Northstar Consumer Goods
+      summary: |
+        Awarded for successful rebranding initiative across 5 product lines, resulting in a 25% increase in brand recall.
+
+  certificates:
+    - name: Google Analytics Certified Professional
+      issuer: Google
+      date: Jan 2023
+      url: https://skillshop.exceedlms.com/student/catalog
+    - name: HubSpot Inbound Marketing Certification
+      issuer: HubSpot Academy
+      date: Mar 2022
+      url: https://academy.hubspot.com/courses/inbound-marketing
+    - name: Certified Digital Marketing Professional
+      issuer: Digital Marketing Institute
+      date: Jul 2021
+      url: https://digitalmarketinginstitute.com/certifications
+
+  publications:
+    - name: The Future of Omnichannel Retail Marketing
+      publisher: Journal of Digital Marketing
+      releaseDate: Sep 2022
+      url: https://www.journalofdigitalmarketing.com/articles/omnichannel-retail
+      summary: |
+        - Examines how brands can create seamless customer experiences across online and offline channels.
+        - Provides a framework for measuring omnichannel campaign effectiveness and attribution.
+    - name: Data-Driven Personalization in B2B Marketing
+      publisher: MarketingProfs
+      releaseDate: Feb 2021
+      url: https://www.marketingprofs.com/articles/data-driven-personalization-b2b
+      summary: |
+        - Explores practical applications of predictive analytics for lead scoring and segmentation.
+        - Includes a case study on increasing conversion rates through personalized content.
+
+  projects:
+    - name: GreenLeaf Product Launch
+      url: https://www.brightwavedigital.com/case-studies/greenleaf
+      description: Integrated launch campaign for an eco-friendly home care line.
+      startDate: Mar 2023
+      endDate: Sep 2023
+      summary: |
+        - Led a cross-functional team of 8 to plan and execute a multi-channel launch.
+        - Achieved 150% of first-quarter sales target and a 25% increase in brand awareness.
+      keywords:
+        - Product Launch
+        - Integrated Campaign
+        - Sustainability
+    - name: Customer Loyalty Revamp
+      url: https://www.northstarconsumer.com/case-studies/loyalty
+      description: Redesigned loyalty program to improve retention and engagement.
+      startDate: Jun 2020
+      endDate: Nov 2020
+      summary: |
+        - Implemented tiered rewards and personalized offers based on purchase history.
+        - Increased repeat purchase rate by 18% and member engagement by 32%.
+      keywords:
+        - Retention
+        - CRM
+        - Personalization
+
+  interests:
+    - name: Professional Development
+      keywords:
+        - Marketing Podcasts
+        - Industry Conferences
+        - Case Studies
+    - name: Outdoor Activities
+      keywords:
+        - Hiking
+        - Cycling
+        - Photography
+    - name: Community
+      keywords:
+        - Mentoring
+        - Nonprofit Marketing
+        - Volunteering
+
+  volunteer:
+    - organization: San Francisco Food Bank
+      url: https://www.sffoodbank.org/
+      position: Marketing Volunteer
+      startDate: Jan 2019
+      endDate: Dec 2023
+      summary: |
+        - Developed a social media content calendar to raise awareness for hunger relief.
+        - Helped organize the annual fundraising gala that exceeded the donation goal by 20%.
+    - organization: Girls Who Code
+      url: https://girlswhocode.com/
+      position: Workshop Mentor
+      startDate: Sep 2020
+      summary: |
+        - Mentored high school students in digital marketing and personal branding workshops.
+        - Coordinated guest speaker sessions with local marketing professionals.
+
+locale:
+  language: en

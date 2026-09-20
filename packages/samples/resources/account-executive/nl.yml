@@ -1,0 +1,210 @@
+content:
+  basics:
+    name: Lars van den Berg
+    headline: Account Executive met 7+ jaar ervaring in B2B SaaS
+    phone: "+31 6 12345678"
+    email: lars.vandenberg@example.nl
+    url: https://www.larsvandenberg.nl
+    summary: |
+      - Ervaren Account Executive met een bewezen trackrecord in het sluiten van complexe B2B-deals binnen de SaaS- en technologiesector.
+      - Sterk in het opbouwen van langdurige klantrelaties, van leadgeneratie tot contractonderhandeling en accountmanagement.
+      - Data-gedreven en resultaatgericht, met expertise in CRM-systemen (Salesforce, HubSpot) en verkoopmethodologieën zoals MEDDIC en SPIN Selling.
+      - Teamspeler die nauw samenwerkt met marketing, product en customer success om omzetdoelen te overtreffen.
+
+  location:
+    address: Keizersgracht 123
+    city: Amsterdam
+    region: Noord-Holland
+    country: Netherlands
+    postalCode: "1015 CJ"
+
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/larsvandenberg
+      username: larsvandenberg
+    - network: Twitter
+      url: https://twitter.com/larsvdb
+      username: larsvdb
+
+  education:
+    - institution: Universiteit van Amsterdam
+      url: https://www.uva.nl
+      degree: Master
+      area: Bedrijfskunde
+      score: "8.5"
+      startDate: Sep 1, 2014
+      endDate: Jul 1, 2016
+      courses:
+        - Strategisch Management
+        - Marketingmanagement
+        - Salesmanagement
+        - Bedrijfsanalytiek
+        - Organisatiegedrag
+        - Financiële Administratie
+      summary: |
+        - Afgestudeerd met specialisatie in Strategic Sales & Account Management.
+        - Thesis over datagedreven verkoopstrategieën in de SaaS-sector.
+    - institution: Hogeschool van Amsterdam
+      url: https://www.hva.nl
+      degree: Bachelor
+      area: Commerciële Economie
+      score: "8.0"
+      startDate: Sep 1, 2010
+      endDate: Jul 1, 2014
+      courses:
+        - Sales & Marketing
+        - Onderhandelen
+        - Marktonderzoek
+        - Projectmanagement
+        - Bedrijfseconomie
+      summary: |
+        - Actieve deelname aan commerciële projecten en stages.
+        - Minor in International Business aan de Universiteit van Barcelona.
+
+  work:
+    - name: CloudSales B.V.
+      url: https://www.cloudsales.nl
+      position: Senior Account Executive
+      startDate: Mar 1, 2021
+      summary: |
+        - Verantwoordelijk voor het volledige verkoopproces van enterprise SaaS-oplossingen voor klanten in de Benelux.
+        - Jaarlijks gemiddeld 135% van het persoonlijke omzetdoel behaald, met deals tot €500.000.
+        - Opgebouwd en onderhouden van een pijplijn van €2,5 miljoen aan gekwalificeerde kansen.
+        - Samengewerkt met SDR's, marketing en productteams om proposities te verfijnen en klantbehoeften te vertalen naar oplossingen.
+        - Onderhandeld over meerjarige contracten en SLA's, met focus op wederzijdse waarde en klantbehoud.
+      keywords:
+        - Enterprise Sales
+        - SaaS
+        - Onderhandelen
+        - MEDDIC
+        - Accountmanagement
+    - name: TechConnect Nederland
+      url: https://www.techconnect.nl
+      position: Account Executive
+      startDate: Jan 1, 2018
+      endDate: Feb 28, 2021
+      summary: |
+        - Beheerde een portfolio van 50+ MKB- en enterprise-accounts in de technologiesector.
+        - Genereerde nieuwe business via outbound prospecting, netwerkevenementen en partnerkanalen.
+        - Realiseerde een omzetgroei van 40% in twee jaar door cross- en upselling.
+        - Voerde onderhandelingen over raamcontracten en verlengingen, met een klanttevredenheidsscore van 9,2.
+      keywords:
+        - B2B Sales
+        - Leadgeneratie
+        - CRM
+        - Salesforce
+        - Groei
+    - name: SalesPro Solutions
+      url: https://www.salespro.nl
+      position: Junior Account Executive
+      startDate: Sep 1, 2016
+      endDate: Dec 31, 2017
+      summary: |
+        - Ondersteunde senior accountmanagers bij het opstellen van voorstellen en offertes.
+        - Verzorgde de eerste klantcontacten en kwalificatie van inkomende leads.
+        - Droeg bij aan de implementatie van een nieuw CRM-systeem (HubSpot) en het optimaliseren van verkoopprocessen.
+      keywords:
+        - HubSpot
+        - Sales Support
+        - Prospectie
+        - Klantrelaties
+
+  skills:
+    - name: 'Sales & Bedrijfsontwikkeling'
+      level: Expert
+      keywords:
+        - Enterprise Sales
+        - B2B
+        - SaaS
+        - Leadgeneratie
+        - Pipeline Management
+    - name: 'Onderhandelen & Accountmanagement'
+      level: Advanced
+      keywords:
+        - Contractonderhandeling
+        - MEDDIC
+        - SPIN Selling
+        - Klantbehoud
+        - Upselling
+    - name: 'CRM & Systemen'
+      level: Advanced
+      keywords:
+        - Salesforce
+        - HubSpot
+        - LinkedIn Sales Navigator
+        - Outreach
+        - ZoomInfo
+
+  languages:
+    - language: Dutch
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - Moedertaal
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - C1
+        - TOEFL 110
+    - language: German
+      fluency: Limited Working Proficiency
+      keywords:
+        - B1
+        - Zakelijk Duits
+
+  awards:
+    - title: Salespersoon van het Jaar
+      date: Dec 2022
+      awarder: CloudSales B.V.
+      summary: |
+        Uitgereikt aan de account executive met de hoogste omzetgroei en beste klanttevredenheid in 2022.
+
+  certificates:
+    - name: Salesforce Certified Administrator
+      issuer: Salesforce
+      date: Jun 2021
+      url: https://www.salesforce.com/certification
+    - name: MEDDIC Sales Certification
+      issuer: MEDDIC Academy
+      date: Mar 2020
+      url: https://www.meddicacademy.com
+
+  projects:
+    - name: Implementatie nieuw CRM-systeem
+      startDate: Jan 2022
+      endDate: Jun 2022
+      description: Implementatie van Salesforce voor het volledige salesteam.
+      summary: |
+        - Leidde de migratie van HubSpot naar Salesforce voor 25 gebruikers.
+        - Ontwierp verkoopprocessen en rapportages voor pipeline- en omzetanalyse.
+        - Verzorgde training en adoptie, wat leidde tot 30% efficiëntiewinst.
+      keywords:
+        - Salesforce
+        - CRM
+        - Procesoptimalisatie
+      url: https://www.cloudsales.nl/projecten/crm
+
+  interests:
+    - name: Sport
+      keywords:
+        - Hardlopen
+        - Padel
+        - Zeilen
+    - name: Reizen
+      keywords:
+        - Azië
+        - Zuid-Amerika
+        - Stedentrips
+
+  volunteer:
+    - organization: Stichting Sales Talent
+      url: https://www.salestalent.nl
+      position: Mentor
+      startDate: Sep 2019
+      endDate: Jun 2023
+      summary: |
+        - Begeleidde jonge professionals bij het opbouwen van een carrière in sales.
+        - Verzorgde workshops over netwerken, personal branding en onderhandelen.
+        - Droeg bij aan het vergroten van diversiteit in het salesvakgebied.
+
+locale:
+  language: nl

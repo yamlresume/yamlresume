@@ -1,0 +1,212 @@
+content:
+  basics:
+    name: Aditya Pratama
+    headline: Account Executive Senior | Spesialis Solusi SaaS B2B
+    phone: '+62 812-3456-7890'
+    email: aditya.pratama@email.com
+    url: https://www.adityapratama.id
+    summary: |
+      Account Executive dengan pengalaman 7+ tahun di industri SaaS B2B dan teknologi enterprise. Terbukti secara konsisten mencapai 120% kuota tahunan melalui konsultatif selling, manajemen pipeline, dan negosiasi kontrak bernilai tinggi.
+      - Mengelola siklus penjualan end-to-end dari prospek hingga closing untuk klien enterprise di Indonesia dan Asia Tenggara.
+      - Kuat dalam membangun hubungan C-level, memahami kebutuhan bisnis, dan menerjemahkan solusi teknis menjadi nilai bisnis.
+      - Berpengalaman dengan Salesforce, HubSpot, MEDDIC, dan metodologi Challenger Sale.
+      - Memimpin tim lintas fungsi untuk memastikan onboarding dan retensi klien berjalan lancar.
+
+  location:
+    address: Jl. Jenderal Sudirman No. 52
+    city: Jakarta
+    region: DKI Jakarta
+    country: Indonesia
+    postalCode: "12190"
+
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/adityapratama
+      username: adityapratama
+    - network: WhatsApp
+      url: https://wa.me/6281234567890
+      username: adityapratama
+
+  education:
+    - institution: Universitas Indonesia
+      url: https://www.ui.ac.id
+      degree: Bachelor
+      area: Ilmu Administrasi Niaga
+      score: "3.65"
+      startDate: Sep 1, 2012
+      endDate: Jul 1, 2016
+      courses:
+        - Manajemen Pemasaran
+        - Perilaku Konsumen
+        - Negosiasi Bisnis
+        - Manajemen Penjualan
+        - Analisis Laporan Keuangan
+        - Strategi Bisnis
+      summary: |
+        - Lulus dengan predikat cum laude dan fokus pada strategi penjualan enterprise.
+        - Aktif di organisasi kemahasiswaan sebagai ketua divisi hubungan perusahaan.
+        - Meraih juara 2 kompetisi business case tingkat nasional.
+
+  work:
+    - name: SolusiNusa Teknologi
+      url: https://www.solusinusa.co.id
+      position: Senior Account Executive
+      startDate: Jan 1, 2021
+      summary: |
+        - Memimpin penjualan solusi cloud ERP untuk klien enterprise, dengan nilai kontrak tahunan rata-rata Rp2 miliar.
+        - Mencapai 128% kuota pada 2023 dan 115% pada 2022 melalui pipeline yang sehat dan disiplin CRM.
+        - Membangun hubungan strategis dengan CIO, CFO, dan COO untuk memahami prioritas transformasi digital.
+        - Berkolaborasi dengan tim product, legal, dan customer success untuk mempercepat siklus closing dan retensi.
+        - Melatih 4 Account Executive junior dalam prospecting, discovery, dan presentasi solusi.
+      keywords:
+        - Cloud ERP
+        - Enterprise Sales
+        - Negosiasi
+        - Pipeline
+        - MEDDIC
+    - name: Teknologi Cerdas Asia
+      url: https://www.teknologicerdas.co.id
+      position: Account Executive
+      startDate: Mar 1, 2018
+      endDate: Dec 31, 2020
+      summary: |
+        - Mengelola portofolio 40+ klien UMKM dan mid-market untuk solusi CRM dan otomasi pemasaran.
+        - Mencapai 110% kuota tahunan dan meraih penghargaan Top Sales Q3 2019.
+        - Melakukan demo produk, trial, dan negosiasi harga untuk meningkatkan konversi dari 18% menjadi 27%.
+        - Menjaga akurasi forecast melalui pembaruan Salesforce dan HubSpot secara mingguan.
+      keywords:
+        - CRM
+        - SaaS
+        - Prospecting
+        - Demo
+        - Forecast
+    - name: PT Maju Bersama Distribusi
+      url: https://www.majubersama.co.id
+      position: Sales Representative
+      startDate: Aug 1, 2016
+      endDate: Feb 28, 2018
+      summary: |
+        - Bertanggung jawab atas penjualan produk consumer goods di wilayah Jabodetabek.
+        - Menambah 25 toko ritel baru dan meningkatkan pendapatan wilayah sebesar 32% YoY.
+        - Membina hubungan dengan pemilik toko dan distributor untuk memastikan ketersediaan stok.
+      keywords:
+        - FMCG
+        - Ritel
+        - Distribusi
+        - Penjualan
+
+  skills:
+    - name: Penjualan Enterprise
+      level: Expert
+      keywords:
+        - Konsultatif Selling
+        - Negosiasi Kontrak
+        - Manajemen Pipeline
+        - Forecast
+    - name: CRM & Tools
+      level: Advanced
+      keywords:
+        - Salesforce
+        - HubSpot
+        - LinkedIn Sales Nav
+        - ZoomInfo
+    - name: Presentasi & Komunikasi
+      level: Expert
+      keywords:
+        - Demo Produk
+        - Storytelling
+        - Public Speaking
+        - Proposal
+    - name: Bahasa
+      level: Advanced
+      keywords:
+        - Inggris Bisnis
+        - Indonesia
+
+  languages:
+    - language: Indonesian
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - Bahasa Ibu
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - TOEFL 110
+        - IELTS 8.0
+
+  awards:
+    - title: Top Sales Enterprise 2023
+      date: Dec 15, 2023
+      awarder: SolusiNusa Teknologi
+      summary: |
+        Diberikan kepada Account Executive dengan pencapaian kuota tertinggi dan kontribusi pendapatan terbesar di segmen enterprise.
+    - title: Best Account Executive Q3 2019
+      date: Sep 30, 2019
+      awarder: Teknologi Cerdas Asia
+      summary: |
+        Penghargaan atas pencapaian 135% kuota kuartal dan retensi klien 98%.
+
+  certificates:
+    - name: Certified Sales Professional
+      issuer: Indonesian Sales Association
+      date: May 2021
+      url: https://www.salesassociation.id/certification
+    - name: HubSpot Sales Software Certified
+      issuer: HubSpot
+      date: Feb 2022
+      url: https://academy.hubspot.com/certification
+
+  publications:
+    - name: Strategi Consultative Selling untuk Pasar Enterprise Indonesia
+      publisher: Majalah Bisnis Digital
+      releaseDate: Apr 2023
+      url: https://www.bisnisdigital.id/artikel/consultative-selling-enterprise
+      summary: |
+        - Membahas pentingnya discovery mendalam dan pemetaan stakeholder dalam penjualan enterprise.
+        - Memberikan kerangka praktis untuk meningkatkan win rate di pasar B2B Indonesia.
+
+  projects:
+    - name: Program Akselerasi Onboarding Klien Enterprise
+      url: https://www.solusinusa.co.id/program-onboarding
+      startDate: Jan 2023
+      endDate: Jun 2023
+      description: Program kolaboratif untuk mempercepat waktu onboarding klien
+        enterprise dari 90 hari menjadi 45 hari.
+      summary: |
+        - Memimpin inisiatif lintas fungsi antara sales, product, dan customer success.
+        - Menganalisis hambatan proses dan merancang playbook onboarding baru.
+        - Hasil: waktu onboarding turun 50% dan skor kepuasan klien naik menjadi 4.8/5.
+      keywords:
+        - Onboarding
+        - Customer Success
+        - Playbook
+        - Enterprise
+
+  interests:
+    - name: Olahraga
+      keywords:
+        - Lari
+        - Sepak Bola
+        - Bersepeda
+    - name: Musik
+      keywords:
+        - Gitar
+        - Konser
+    - name: Membaca
+      keywords:
+        - Buku Bisnis
+        - Biografi
+
+  volunteer:
+    - organization: Yayasan Literasi Digital Indonesia
+      url: https://www.literasidigital.id
+      position: Mentor Penjualan UMKM
+      startDate: Mar 2020
+      endDate: Dec 2022
+      summary: |
+        - Melatih 50+ pelaku UMKM dalam teknik penjualan digital dan negosiasi.
+        - Mengembangkan modul pelatihan dasar CRM dan pemasaran media sosial.
+        - Membantu peserta meningkatkan penjualan online rata-rata 40% dalam 6 bulan.
+
+locale:
+  language: id

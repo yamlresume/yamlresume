@@ -1,0 +1,217 @@
+content:
+  basics:
+    name: 张伟
+    headline: 资深客户经理 | 企业级 SaaS 销售专家
+    phone: '+86 138 1234 5678'
+    email: zhangwei.sales@example.com
+    url: https://www.linkedin.com/in/zhangwei-sales
+    summary: |
+      - 拥有8年以上企业级软件与云计算销售经验，擅长从0到1开拓大客户并实现规模化收入增长
+      - 精通顾问式销售和复杂解决方案销售，能够深入理解客户业务痛点并制定定制化方案
+      - 具备出色的商务谈判和跨部门协作能力，多次主导千万级项目的投标与合同签署
+      - 熟悉销售漏斗管理、客户分层和销售预测，善于利用数据驱动销售决策
+  location:
+    address: 上海市浦东新区世纪大道100号
+    city: 上海
+    region: 上海
+    country: China
+    postalCode: '200120'
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/zhangwei-sales
+      username: zhangwei-sales
+    - network: Zhihu
+      url: https://www.zhihu.com/people/zhangwei-sales
+      username: zhangwei-sales
+  education:
+    - institution: 上海财经大学
+      url: https://www.shufe.edu.cn/
+      degree: Bachelor
+      area: 市场营销
+      score: '3.8/4.0'
+      startDate: Sep 1, 2011
+      endDate: Jul 1, 2015
+      courses:
+        - 市场营销学
+        - 消费者行为学
+        - 商务谈判
+        - 销售管理
+        - 经济学原理
+        - 统计学
+        - 广告学
+        - 数字营销
+      summary: |
+        - 系统学习市场营销理论与实务，多次获得校级奖学金
+        - 担任市场营销协会副会长，组织校园营销大赛和名企参访活动
+        - 毕业论文《社交媒体对消费者购买决策的影响》获评优秀毕业论文
+  work:
+    - name: 阿里云计算有限公司
+      url: https://www.aliyun.com
+      position: 高级客户经理
+      startDate: Jan 1, 2021
+      summary: |
+        - 负责华东区制造、零售行业大客户的云计算与数字化解决方案销售，年度销售目标1.2亿元
+        - 开拓并维护20余家头部企业客户，包括3家世界500强，实现新客户收入占比超过40%
+        - 主导多个千万级云平台迁移和数据中台项目，协调售前、产品和交付团队确保项目落地
+        - 建立客户分层和销售漏斗管理体系，通过数据分析优化商机转化率，商机转化率提升25%
+        - 指导并培养2名初级客户经理，帮助团队整体业绩达成率提升至120%
+      keywords:
+        - 大客户销售
+        - 云计算
+        - 解决方案销售
+        - 商务谈判
+        - 销售管理
+    - name: 腾讯云计算（北京）有限责任公司
+      url: https://cloud.tencent.com
+      position: 客户经理
+      startDate: Jul 1, 2017
+      endDate: Dec 31, 2020
+      summary: |
+        - 负责华东区互联网和金融行业客户的云产品销售，累计完成合同额超过8000万元
+        - 从0到1开拓新客户52家，其中千万级客户6家，连续三年超额完成销售指标
+        - 深入理解客户业务场景，提供包括云服务器、数据库、CDN和安全产品的组合方案
+        - 与渠道合作伙伴建立紧密合作，通过生态渠道贡献了30%以上的新增收入
+        - 参与制定行业销售策略和标准化销售工具包，提升团队整体销售效率
+      keywords:
+        - 云销售
+        - 互联网客户
+        - 渠道合作
+        - 客户开拓
+    - name: 用友网络科技股份有限公司
+      url: https://www.yonyou.com
+      position: 销售代表
+      startDate: Jul 1, 2015
+      endDate: Jun 30, 2017
+      summary: |
+        - 负责中小企业ERP软件的销售工作，完成从线索挖掘、需求调研到合同签署的全流程
+        - 累计签约客户120余家，年度销售额从入职第一年的80万元增长至第二年的200万元
+        - 通过电话营销、行业展会和客户转介绍等方式开拓新客户，建立稳定的销售管道
+        - 协助实施团队完成客户上线和售后维护，客户满意度保持在95%以上
+      keywords:
+        - ERP
+        - 中小企业
+        - 电话销售
+        - 客户维护
+  skills:
+    - name: 企业级销售
+      level: Expert
+      keywords:
+        - 顾问式销售
+        - 大客户管理
+        - 销售预测
+        - 合同谈判
+        - 客户关系管理
+    - name: 云计算与SaaS
+      level: Advanced
+      keywords:
+        - IaaS
+        - PaaS
+        - SaaS
+        - 混合云
+        - 数字化转型
+    - name: 销售工具
+      level: Advanced
+      keywords:
+        - Salesforce
+        - CRM
+        - Excel
+        - PowerPoint
+        - 数据分析
+    - name: 商务沟通
+      level: Expert
+      keywords:
+        - 演讲
+        - 谈判
+        - 跨部门协作
+        - 项目管理
+        - 方案展示
+  languages:
+    - language: Chinese
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - 普通话
+        - 商务写作
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - 商务谈判
+        - 英文邮件
+        - 演示汇报
+  awards:
+    - title: 年度销售冠军
+      awarder: 阿里云计算有限公司
+      date: Dec 2023
+      summary: |
+        在2023年度实现个人销售业绩1.2亿元，完成率150%，位列全国销售团队第一。
+    - title: 最佳新客户开拓奖
+      awarder: 腾讯云计算（北京）有限责任公司
+      date: Dec 2019
+      summary: |
+        全年开拓新客户48家，其中千万级客户5家，新客户收入贡献占比超过60%。
+  certificates:
+    - name: 阿里云云计算销售专家认证
+      issuer: 阿里云
+      date: Mar 2022
+      url: https://www.aliyun.com/certification
+    - name: Salesforce Certified Sales Cloud Consultant
+      issuer: Salesforce
+      date: Jun 2021
+      url: https://trailhead.salesforce.com/credentials/salescloudconsultant
+  publications:
+    - name: 数字化转型下的企业级销售策略
+      publisher: 销售与管理
+      releaseDate: Aug 2023
+      url: https://www.salesmanagement.com.cn/article/123
+      summary: |
+        本文探讨了云计算与SaaS企业在数字化转型浪潮中的销售策略，包括客户分层、顾问式销售和生态渠道建设，并结合实际案例分析了如何提升大客户销售转化率。
+  projects:
+    - name: 某大型制造企业云平台迁移项目
+      startDate: Mar 1, 2022
+      endDate: Sep 30, 2022
+      description: 为某大型制造企业提供云平台迁移与数字化解决方案，合同金额超过2000万元。
+      summary: |
+        - 负责客户需求调研、方案制定和商务谈判
+        - 协调售前、交付和产品团队，确保项目按时上线
+        - 项目上线后客户续约率100%，并追加采购数据中台产品
+      keywords:
+        - 云计算
+        - 制造业
+        - 数字化转型
+        - 大客户销售
+      url: https://www.aliyun.com/solutions/manufacturing
+  interests:
+    - name: 运动
+      keywords:
+        - 跑步
+        - 游泳
+        - 篮球
+    - name: 阅读
+      keywords:
+        - 商业
+        - 历史
+        - 科技
+    - name: 旅行
+      keywords:
+        - 自驾
+        - 摄影
+        - 美食
+  volunteer:
+    - organization: 上海青年企业家协会
+      url: https://www.shyes.org/
+      position: 志愿者导师
+      startDate: Sep 1, 2019
+      endDate: Dec 31, 2023
+      summary: |
+        - 为大学生和初创企业提供销售与职业发展指导
+        - 参与组织行业分享会和招聘活动
+        - 帮助5名学员获得知名企业销售岗位offer
+  references:
+    - name: 李强
+      relationship: 阿里云华东区销售总监
+      email: liqiang@example.com
+      phone: '+86 139 8765 4321'
+      summary: |
+        张伟在阿里云工作期间表现出色，具备极强的客户洞察力和商务谈判能力，是团队中不可或缺的销售骨干。
+
+locale:
+  language: zh-hans

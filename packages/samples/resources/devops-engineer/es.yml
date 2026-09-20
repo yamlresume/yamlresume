@@ -1,0 +1,280 @@
+content:
+  basics:
+    name: Lucía Fernández Gómez
+    headline: 'Ingeniera DevOps Senior | Cloud, Kubernetes y Automatización'
+    phone: "+34 612 345 678"
+    email: lucia.fernandez.devops@example.com
+    url: https://www.luciafernandez.dev
+    summary: |
+      Ingeniera DevOps con más de 8 años de experiencia diseñando, automatizando y operando plataformas cloud críticas. Especialista en infraestructura como código, contenedores y pipelines CI/CD para equipos de alto rendimiento.
+
+      - Reduje el tiempo de despliegue en un 70 % mediante pipelines automatizados y estrategias GitOps.
+      - Diseñé arquitecturas multinube (AWS, Azure y GCP) altamente disponibles, seguras y orientadas al coste.
+      - Lideré la migración de cargas de trabajo monolíticas a Kubernetes, mejorando la escalabilidad y la resiliencia.
+      - Promoví cultura DevOps, observabilidad y respuesta ante incidentes con equipos de desarrollo y SRE.
+
+  location:
+    address: Calle de Serrano 45
+    city: Madrid
+    region: Comunidad de Madrid
+    country: Spain
+    postalCode: "28001"
+
+  profiles:
+    - network: GitHub
+      url: https://github.com/luciaferdevops
+      username: luciaferdevops
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/lucia-fernandez-devops
+      username: lucia-fernandez-devops
+    - network: Gitlab
+      url: https://gitlab.com/luciaferdevops
+      username: luciaferdevops
+
+  education:
+    - institution: Universidad Politécnica de Madrid
+      url: https://www.upm.es
+      degree: Bachelor
+      area: Ingeniería Informática
+      score: "8,7/10"
+      startDate: Sep 1, 2012
+      endDate: Jul 1, 2016
+      courses:
+        - Sistemas Operativos
+        - Redes de Computadores
+        - Arquitectura de Software
+        - Bases de Datos
+        - Seguridad Informática
+        - Computación en la Nube
+      summary: |
+        - Formación sólida en fundamentos de computación, redes y sistemas distribuidos.
+        - Proyecto fin de grado sobre automatización de despliegues en entornos virtualizados.
+        - Participación activa en asociaciones tecnológicas y talleres de software libre.
+    - institution: Universidad Nacional de Educación a Distancia
+      url: https://www.uned.es
+      degree: Master
+      area: Ingeniería de Sistemas y Computación
+      score: "9,1/10"
+      startDate: Sep 1, 2016
+      endDate: Jun 30, 2018
+      courses:
+        - Virtualización y Contenedores
+        - Computación Distribuida
+        - Gestión de Infraestructuras Cloud
+        - Metodologías Ágiles y DevOps
+      summary: |
+        - Especialización en plataformas cloud, orquestación de contenedores y automatización operativa.
+        - Trabajo fin de máster sobre optimización de costes en clústeres Kubernetes.
+
+  work:
+    - name: Telefónica Tech
+      url: https://www.telefonicatech.com
+      position: Ingeniera DevOps Senior
+      startDate: Mar 1, 2021
+      summary: |
+        - Diseñé y mantuve plataformas Kubernetes multirregión para más de 200 microservicios en producción.
+        - Implementé infraestructura como código con Terraform y Ansible, reduciendo la deriva de configuración en un 85 %.
+        - Construí pipelines CI/CD con GitLab CI y Argo CD, logrando despliegues progresivos con canary releases.
+        - Definí SLOs, alertas y cuadros de mando con Prometheus, Grafana y OpenTelemetry.
+        - Automaticé la gestión de secretos con HashiCorp Vault y políticas de mínimo privilegio.
+      keywords:
+        - Kubernetes
+        - Terraform
+        - GitOps
+        - Prometheus
+        - AWS
+    - name: BBVA
+      url: https://www.bbva.com
+      position: Ingeniera de Plataforma Cloud
+      startDate: Jul 1, 2018
+      endDate: Feb 28, 2021
+      summary: |
+        - Migré servicios críticos a AWS con arquitecturas sin servidor y basadas en contenedores.
+        - Desarrollé módulos reutilizables de Terraform para equipos de desarrollo, acelerando el aprovisionamiento.
+        - Implanté monitorización centralizada con ELK Stack y alertas proactivas para reducir el MTTR.
+        - Participé en guardias 24x7 y en análisis post-mortem de incidentes en producción.
+      keywords:
+        - AWS
+        - Docker
+        - Jenkins
+        - ELK
+        - Python
+    - name: Indra Sistemas
+      url: https://www.indracompany.com
+      position: Administradora de Sistemas
+      startDate: Sep 1, 2016
+      endDate: Jun 30, 2018
+      summary: |
+        - Administré entornos Linux y Windows Server en infraestructuras de alta disponibilidad.
+        - Automaticé tareas de despliegue y mantenimiento con scripts Bash y Python.
+        - Configuré balanceadores, firewalls y monitorización con Nagios y Zabbix.
+      keywords:
+        - Linux
+        - Bash
+        - Nagios
+        - Zabbix
+        - Redes
+
+  skills:
+    - name: Computación en la nube
+      level: Expert
+      keywords:
+        - AWS
+        - Azure
+        - GCP
+        - Terraform
+    - name: Contenedores y orquestación
+      level: Expert
+      keywords:
+        - Kubernetes
+        - Docker
+        - Helm
+        - Istio
+    - name: Automatización y CI/CD
+      level: Advanced
+      keywords:
+        - GitLab CI
+        - Jenkins
+        - Argo CD
+        - Ansible
+    - name: Observabilidad
+      level: Advanced
+      keywords:
+        - Prometheus
+        - Grafana
+        - OpenTelemetry
+        - ELK
+    - name: Seguridad y cumplimiento
+      level: Advanced
+      keywords:
+        - Vault
+        - Trivy
+        - OPA
+        - IAM
+    - name: Programación y scripting
+      level: Advanced
+      keywords:
+        - Python
+        - Bash
+        - Go
+        - YAML
+
+  languages:
+    - language: Spanish
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - Español nativo
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - C1
+        - TOEFL 110
+    - language: Catalan
+      fluency: Limited Working Proficiency
+      keywords:
+        - Conversación básica
+
+  awards:
+    - title: Premio a la Excelencia Técnica
+      date: Dec 2022
+      awarder: Telefónica Tech
+      summary: |
+        Reconocimiento por liderar la plataforma Kubernetes multirregión y reducir los incidentes críticos en un 40 % durante 2022.
+    - title: Mención de Honor en Innovación Cloud
+      date: Jun 2019
+      awarder: BBVA
+      summary: |
+        Distinción por el diseño de módulos Terraform reutilizables que aceleraron la migración de servicios críticos a AWS.
+
+  certificates:
+    - name: AWS Certified DevOps Engineer – Professional
+      issuer: Amazon Web Services
+      date: May 2022
+      url: https://aws.amazon.com/certification/
+    - name: Certified Kubernetes Administrator (CKA)
+      issuer: Cloud Native Computing Foundation
+      date: Nov 2021
+      url: https://www.cncf.io/certification/cka/
+    - name: HashiCorp Certified Terraform Associate
+      issuer: HashiCorp
+      date: Mar 2023
+      url: https://www.hashicorp.com/certification/terraform-associate
+
+  publications:
+    - name: Automatización GitOps para plataformas multinube
+      publisher: 'Revista Cloud & DevOps'
+      releaseDate: Oct 2023
+      url: https://www.clouddevops.example.com/articulos/gitops-multinube
+      summary: |
+        - Artículo técnico sobre patrones GitOps para desplegar aplicaciones en AWS, Azure y GCP.
+        - Incluye ejemplos con Argo CD, Terraform y políticas de promoción entre entornos.
+        - Analiza métricas de adopción, seguridad y reducción del tiempo de despliegue.
+
+  projects:
+    - name: Plataforma GitOps Multinube
+      url: https://github.com/luciaferdevops/gitops-multinube
+      description: Plataforma interna para desplegar microservicios en varios
+        proveedores cloud mediante GitOps.
+      startDate: Jan 2022
+      endDate: Dec 2023
+      summary: |
+        - Implementé flujos de promoción automática entre desarrollo, preproducción y producción.
+        - Integré validaciones de seguridad y coste en los pipelines antes del despliegue.
+        - Reduje el tiempo medio de despliegue de 45 a 12 minutos por servicio.
+      keywords:
+        - GitOps
+        - Argo CD
+        - Terraform
+        - Kubernetes
+    - name: Observabilidad Unificada
+      url: https://github.com/luciaferdevops/observabilidad-unificada
+      description: Solución de observabilidad centralizada para equipos de desarrollo y SRE.
+      startDate: Mar 2020
+      endDate: Nov 2021
+      summary: |
+        - Desplegué Prometheus, Grafana y OpenTelemetry en clústeres Kubernetes de alta disponibilidad.
+        - Definí SLOs y alertas accionables, reduciendo el ruido de alertas en un 60 %.
+        - Documenté runbooks y formé a equipos en investigación de incidentes.
+      keywords:
+        - Prometheus
+        - Grafana
+        - OpenTelemetry
+        - SRE
+
+  interests:
+    - name: Deportes
+      keywords:
+        - Senderismo
+        - Ciclismo
+        - Natación
+    - name: Música
+      keywords:
+        - Guitarra
+        - Piano
+    - name: Comunidad tech
+      keywords:
+        - Meetups
+        - Mentoría
+        - Open Source
+
+  volunteer:
+    - organization: Mujeres en DevOps Madrid
+      url: https://www.mujeresendevops.example.com
+      position: Mentora Técnica
+      startDate: Sep 1, 2019
+      summary: |
+        - Mentoricé a profesionales que inician carrera en DevOps y cloud.
+        - Impartí talleres prácticos de Docker, Kubernetes y CI/CD.
+        - Ayudé a organizar encuentros mensuales con charlas técnicas.
+    - organization: Cáritas Madrid
+      url: https://www.caritasmadrid.org
+      position: Voluntaria en Digitalización
+      startDate: Jan 1, 2018
+      endDate: Dec 1, 2019
+      summary: |
+        - Automaticé la gestión de inventario y donaciones con hojas de cálculo y scripts.
+        - Formé al personal en herramientas digitales básicas y buenas prácticas de seguridad.
+        - Colaboré en la migración de datos a una plataforma en la nube.
+
+locale:
+  language: es

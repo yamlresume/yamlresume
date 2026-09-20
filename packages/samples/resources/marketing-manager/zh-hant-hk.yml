@@ -1,0 +1,234 @@
+content:
+  basics:
+    name: 陳嘉欣
+    headline: 市場營銷經理 | 數碼品牌策略及增長專家
+    phone: '+852 9123 4567'
+    email: ka-yan.chan@example.com
+    url: https://www.kayanchan.com
+    summary: |
+      擁有超過 8 年市場營銷經驗的專業經理，專注於數碼品牌策略、內容營銷及數據驅動增長。擅長策劃跨渠道營銷活動，提升品牌知名度與客戶轉化率，並善於以數據驗證營銷投資回報。
+
+      - 成功領導多個大型營銷項目，平均提升網站流量 120%，社交媒體互動率 85%
+      - 精通搜尋引擎優化、關鍵字廣告、社交媒體廣告、內容營銷及營銷自動化工具
+      - 具備團隊管理經驗，曾帶領 10 人跨職能團隊，協調設計、內容及數據分析工作
+      - 熟悉香港及大灣區市場，能制定本地化營銷策略並達成業務目標
+  location:
+    address: 香港中環德輔道中 88 號
+    city: 香港
+    region: 香港島
+    country: Hong Kong
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/kayanchan
+      username: kayanchan
+    - network: Medium
+      url: https://medium.com/@kayanchan
+      username: kayanchan
+    - network: Instagram
+      url: https://www.instagram.com/kayan.marketing
+      username: kayan.marketing
+  education:
+    - institution: 香港中文大學
+      url: https://www.cuhk.edu.hk
+      degree: Bachelor
+      area: 市場學
+      score: '3.6'
+      startDate: 'Sep 1, 2013'
+      endDate: 'Jul 1, 2017'
+      courses:
+        - 消費者行為
+        - 市場研究
+        - 品牌管理
+        - 數碼營銷
+        - 整合營銷傳播
+        - 策略管理
+      summary: |
+        - 主修市場學，副修心理學，深入理解消費者決策過程
+        - 曾參與大學品牌策劃比賽，獲得亞軍
+        - 活躍於市場學系學會，協助籌辦業界講座及企業參觀
+  work:
+    - name: 星創科技有限公司
+      url: https://www.starcreativetech.hk
+      position: 高級市場營銷經理
+      startDate: 'Mar 1, 2021'
+      summary: |
+        - 制定並執行集團整體數碼營銷策略，管理年度營銷預算逾港幣 1,200 萬元
+        - 帶領 10 人跨職能團隊，涵蓋內容創作、社交媒體、搜尋引擎優化及數據分析
+        - 重新設計品牌網站及內容架構，令自然搜尋流量於 12 個月內增長 120%
+        - 建立營銷自動化流程，將潛在客戶轉化率由 3.1% 提升至 7.4%
+        - 與產品及銷售團隊緊密協作，主導每季度市場推廣活動的定位與執行
+      keywords:
+        - 品牌策略
+        - 數碼營銷
+        - 團隊管理
+        - 營銷預算
+    - name: 匯達廣告有限公司
+      url: https://www.huidaglobal.com.hk
+      position: 市場營銷主任
+      startDate: 'Aug 1, 2017'
+      endDate: 'Feb 1, 2021'
+      summary: |
+        - 為零售及金融行業客戶策劃整合營銷活動，平均提升客戶品牌知名度 45%
+        - 負責關鍵字廣告及社交媒體廣告投放，控制每次獲取成本並優化廣告回報率
+        - 撰寫中英文營銷文案、新聞稿及社交媒體內容，每月產出超過 30 篇素材
+        - 定期製作營銷成效報告，向客戶管理層匯報數據洞察及優化建議
+        - 協助培訓新入職同事，建立團隊內部內容審核及品質標準流程
+      keywords:
+        - 整合營銷
+        - 廣告投放
+        - 內容創作
+        - 數據分析
+    - name: 藍海市場顧問有限公司
+      url: https://www.blueoceanmarketing.hk
+      position: 市場推廣助理
+      startDate: 'Jul 1, 2016'
+      endDate: 'Jul 1, 2017'
+      summary: |
+        - 支援各類線下推廣活動的籌備與執行，包括展覽、路演及產品發佈會
+        - 協助管理社交媒體帳號，維護品牌形象並回覆客戶查詢
+        - 收集市場及競爭對手資料，整理成月報供團隊參考
+        - 與供應商及場地單位協調，確保活動物資及預算符合計劃
+      keywords:
+        - 活動策劃
+        - 社交媒體
+        - 市場研究
+  skills:
+    - name: 數碼營銷
+      level: Expert
+      keywords:
+        - 搜尋引擎優化
+        - 關鍵字廣告
+        - 社交媒體廣告
+        - 內容營銷
+    - name: 數據與分析
+      level: Advanced
+      keywords:
+        - Google Analytics 4
+        - Looker Studio
+        - A/B 測試
+        - 數據視覺化
+    - name: 營銷工具
+      level: Advanced
+      keywords:
+        - HubSpot
+        - Mailchimp
+        - Salesforce
+        - Meta Business Suite
+    - name: 品牌與傳訊
+      level: Advanced
+      keywords:
+        - 品牌定位
+        - 公關傳訊
+        - 文案撰寫
+        - 危機處理
+    - name: 管理與協作
+      level: Advanced
+      keywords:
+        - 團隊領導
+        - 預算管理
+        - 跨部門協作
+        - 供應商談判
+  languages:
+    - language: Cantonese
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - 母語
+    - language: Mandarin
+      fluency: Full Professional Proficiency
+      keywords:
+        - 普通話水平測試二級甲等
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - IELTS 7.5
+  awards:
+    - title: 年度最佳營銷團隊大獎
+      awarder: 香港廣告客戶協會
+      date: Nov 2023
+      summary: |
+        帶領團隊為旗下金融科技產品策劃的整合營銷活動，於年度評選中擊敗逾 60 個參賽項目獲得金獎。
+    - title: 亞太數碼營銷卓越獎（銅獎）
+      awarder: 亞太營銷傳播協會
+      date: Sep 2022
+      summary: |
+        憑藉以數據驅動的社交媒體內容策略，成功提升品牌互動率及客戶留存，獲評審團肯定。
+  certificates:
+    - name: Google Analytics 4 Certification
+      issuer: Google
+      date: Feb 2023
+      url: https://skillshop.exceedlms.com/student/catalog
+    - name: HubSpot Inbound Marketing Certification
+      issuer: HubSpot Academy
+      date: Jun 2021
+      url: https://academy.hubspot.com/courses
+    - name: Meta Certified Digital Marketing Associate
+      issuer: Meta
+      date: Oct 2022
+      url: https://www.facebook.com/business/learn/certification
+  publications:
+    - name: 香港零售品牌的內容營銷突圍策略
+      publisher: 亞洲營銷評論
+      releaseDate: May 2023
+      url: https://www.asiamarketingreview.com
+      summary: |
+        - 分析本地零售品牌如何在內容飽和的環境中建立差異化敘事
+        - 提出以客戶旅程為本的內容矩陣框架，並附上實際數據案例
+        - 探討人工智能工具在內容生產流程中的應用與限制
+  projects:
+    - name: 「城巿綠行」品牌重塑計劃
+      url: https://www.citygreenwalk.hk
+      description: 為本地環保生活品牌進行的全面品牌重塑及數碼推廣項目
+      startDate: 'Jan 2023'
+      endDate: 'Aug 2023'
+      summary: |
+        - 重新定義品牌定位與視覺識別，統一線上線下傳訊語言
+        - 策劃為期六個月的內容營銷日曆，涵蓋社交媒體、電子報及短片
+        - 項目結束時品牌網站流量增長 140%，社交媒體追蹤人數增加 2.3 倍
+      keywords:
+        - 品牌重塑
+        - 內容營銷
+        - 可持續發展
+    - name: 會員再營銷自動化系統
+      url: https://www.example.com/crm-automation
+      description: 針對電商客戶設計的分層自動化再營銷流程與成效追蹤系統
+      startDate: 'Mar 2022'
+      endDate: 'Nov 2022'
+      summary: |
+        - 依據購買行為及互動紀錄將會員劃分為五個生命週期階段
+        - 設計對應的電郵及短訊觸發流程，並持續以 A/B 測試優化文案
+        - 帶動回購率上升 28%，並將每次轉化成本降低 19%
+      keywords:
+        - 營銷自動化
+        - 客戶分層
+        - 成效追蹤
+  interests:
+    - name: 內容創作
+      keywords:
+        - 專欄寫作
+        - 攝影
+        - 短片剪輯
+    - name: 運動與生活
+      keywords:
+        - 越野跑
+        - 瑜伽
+        - 咖啡沖煮
+  volunteer:
+    - organization: 香港青年營銷協會
+      url: https://www.hkyma.org.hk
+      position: 義務導師
+      startDate: 'Sep 2019'
+      summary: |
+        - 為大專院校學生提供營銷職涯指導，分享行業趨勢及求職準備經驗
+        - 協助籌辦年度數碼營銷工作坊，累計服務超過 400 名青年參加者
+        - 擔任模擬廣告企劃比賽評審，向參賽隊伍提供專業回饋
+    - organization: 綠惜地球
+      url: https://www.greenearth.org.hk
+      position: 社區推廣義工
+      startDate: 'Mar 2021'
+      endDate: 'Dec 2022'
+      summary: |
+        - 策劃社區環保推廣活動的社交媒體宣傳，提升公眾參與度
+        - 協助撰寫活動新聞稿及宣傳文案，並協調媒體採訪安排
+
+locale:
+  language: zh-hant-hk

@@ -1,0 +1,266 @@
+content:
+  basics:
+    name: Mariana Alves de Souza
+    headline: Gerente de Marketing Digital e Estratégia de Marca
+    phone: '+55 11 98765-4321'
+    email: mariana.souza@marketing.com.br
+    url: https://www.marianasouza.com.br
+    summary: |
+      Gerente de marketing com mais de 8 anos de experiência em estratégias digitais, branding e growth para empresas de tecnologia e varejo. Especialista em planejamento de campanhas multicanal, análise de dados e liderança de equipes de alta performance.
+
+      - Aumento de 45% no ROI de campanhas pagas em 12 meses.
+      - Gestão de orçamentos anuais superiores a R$ 5 milhões.
+      - Implementação de cultura data-driven com CRM e automação de marketing.
+      - Liderança de equipes multidisciplinares de até 12 pessoas.
+
+      Busco novos desafios para conectar marcas a públicos estratégicos e gerar crescimento sustentável.
+
+  location:
+    address: Av. Paulista, 1000 - Bela Vista
+    city: São Paulo
+    region: SP
+    country: Brazil
+    postalCode: '01310-100'
+
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/marianasouza
+      username: marianasouza
+    - network: Medium
+      url: https://medium.com/@marianasouza
+      username: marianasouza
+
+  education:
+    - institution: Universidade de São Paulo
+      url: https://www5.usp.br/
+      degree: Master
+      area: Marketing
+      score: '9.1'
+      startDate: Mar 1, 2016
+      endDate: Dec 15, 2017
+      courses:
+        - Comportamento do Consumidor
+        - Pesquisa de Mercado
+        - Marketing Digital
+        - Branding e Gestão de Marca
+        - Análise Estatística para Marketing
+        - Estratégia de Preços
+        - Comunicação Integrada
+      summary: |
+        - Dissertação sobre personalização de campanhas digitais em e-commerce.
+        - Publicação de artigo em congresso nacional de marketing.
+        - Média geral 9.1, com destaque em projetos aplicados.
+    - institution: Fundação Getulio Vargas
+      url: https://fgv.br/
+      degree: Bachelor
+      area: Administração de Empresas
+      score: '8.7'
+      startDate: Feb 1, 2010
+      endDate: Dec 10, 2014
+      courses:
+        - Teoria Geral da Administração
+        - Marketing
+        - Finanças Corporativas
+        - Estatística
+        - Gestão de Pessoas
+      summary: |
+        - Formação sólida em administração com foco em marketing.
+        - Participação em empresa júnior na área de consultoria de marketing.
+
+  work:
+    - name: TechNova Brasil
+      url: https://www.technova.com.br
+      position: Gerente de Marketing
+      startDate: Jan 1, 2020
+      summary: |
+        - Lidero equipe de 12 profissionais de marketing, design e conteúdo.
+        - Responsável por estratégia de marca, campanhas digitais e geração de demanda.
+        - Implementei modelo de atribuição multicanal que aumentou em 45% a eficiência do investimento.
+        - Geri orçamento anual de R$ 5,2 milhões com ROI médio de 3,8x.
+        - Desenvolvi parcerias com influenciadores e mídia para expansão de mercado.
+      keywords:
+        - Branding
+        - Growth
+        - Liderança
+        - Data-driven
+        - Performance
+    - name: VarejoMais
+      url: https://www.varejomais.com.br
+      position: Analista de Marketing Sênior
+      startDate: Jun 1, 2017
+      endDate: Dec 31, 2019
+      summary: |
+        - Planejei e executei campanhas de mídia paga em Google Ads, Meta Ads e LinkedIn Ads.
+        - Reduzi o custo por aquisição em 30% em 8 meses.
+        - Criei estratégias de CRM e automação que elevaram a retenção em 22%.
+        - Analisei métricas e apresentei relatórios executivos mensais.
+      keywords:
+        - Mídia Paga
+        - CRM
+        - SEO
+        - Analytics
+        - E-commerce
+    - name: Agência CriativaZ
+      url: https://www.criativaz.com.br
+      position: Analista de Marketing
+      startDate: Aug 1, 2015
+      endDate: May 31, 2017
+      summary: |
+        - Atendi contas de varejo e tecnologia, desenvolvendo planos de comunicação.
+        - Gerenciei redes sociais e produzi conteúdo para blogs e newsletters.
+        - Auxiliei no planejamento de eventos e lançamentos de produtos.
+      keywords:
+        - Social Media
+        - Conteúdo
+        - Eventos
+        - Planejamento
+
+  skills:
+    - name: Estratégia de Marketing
+      level: Expert
+      keywords:
+        - Planejamento
+        - Branding
+        - Posicionamento
+        - Go-to-market
+    - name: Marketing Digital
+      level: Advanced
+      keywords:
+        - Google Ads
+        - Meta Ads
+        - LinkedIn Ads
+        - SEO
+        - SEM
+    - name: Análise de Dados
+      level: Advanced
+      keywords:
+        - Google Analytics 4
+        - Power BI
+        - SQL
+        - Testes A/B
+        - CRM
+    - name: Liderança
+      level: Advanced
+      keywords:
+        - Gestão de Equipes
+        - Mentoria
+        - Agile Marketing
+        - Comunicação
+
+  languages:
+    - language: Portuguese
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - Nativo
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - TOEIC 950
+        - Reuniões internacionais
+    - language: Spanish
+      fluency: Limited Working Proficiency
+      keywords:
+        - Conversação básica
+
+  awards:
+    - title: Profissional de Marketing do Ano
+      date: Nov 15, 2023
+      awarder: Associação Brasileira de Marketing
+      summary: |
+        Reconhecimento pelo impacto estratégico em campanhas de growth e liderança de equipe de alta performance.
+
+  certificates:
+    - name: Google Analytics 4 Certification
+      issuer: Google
+      date: Mar 1, 2023
+      url: https://skillshop.exceedlms.com/student/catalog
+    - name: HubSpot Marketing Hub Certificate
+      issuer: HubSpot Academy
+      date: Jun 1, 2022
+      url: https://academy.hubspot.com/courses
+    - name: Meta Certified Digital Marketing Associate
+      issuer: Meta
+      date: Sep 1, 2021
+      url: https://www.facebook.com/business/learn/certification
+
+  publications:
+    - name: Personalização de Campanhas Digitais no E-commerce Brasileiro
+      publisher: Revista Brasileira de Marketing
+      releaseDate: Oct 1, 2018
+      url: https://www.revistabrasileirademarketing.com.br
+      summary: |
+        - Estudo sobre o impacto da personalização em taxas de conversão.
+        - Análise de dados de mais de 50 mil sessões em lojas virtuais.
+        - Recomendações práticas para gestores de marketing.
+
+  references:
+    - name: Dr. Ricardo Menezes
+      summary: |
+        Mariana demonstra excelência estratégica e capacidade de liderança. Sua visão analítica e criatividade geram resultados consistentes.
+      email: ricardo.menezes@usp.br
+      phone: '+55 11 91234-5678'
+      relationship: Professor Orientador de Mestrado
+    - name: Camila Torres
+      summary: |
+        Trabalhei diretamente com Mariana por 4 anos. É uma líder inspiradora, focada em dados e resultados.
+      email: camila.torres@technova.com.br
+      phone: '+55 11 99876-5432'
+      relationship: Diretora de Vendas
+
+  projects:
+    - name: 'Campanha "Viva Mais"'
+      url: https://www.technova.com.br/vivamais
+      description: Campanha integrada de branding e performance para lançamento de
+        linha de produtos.
+      startDate: Mar 1, 2023
+      endDate: Jun 30, 2023
+      summary: |
+        - Coordenei criação, mídia, influenciadores e assessoria de imprensa.
+        - Resultado: 120% da meta de leads em 3 meses.
+        - Aumento de 35% no reconhecimento de marca na região Sudeste.
+      keywords:
+        - Lançamento
+        - Branding
+        - Leads
+    - name: Programa de Fidelidade VarejoMais+
+      url: https://www.varejomais.com.br/fidelidade
+      description: Reestruturação do programa de fidelidade com foco em personalização.
+      startDate: Jan 1, 2018
+      endDate: Dec 31, 2019
+      summary: |
+        - Implementei segmentação comportamental e automação de e-mail marketing.
+        - Aumento de 22% na retenção de clientes.
+        - Crescimento de 18% no ticket médio dos participantes.
+      keywords:
+        - CRM
+        - Fidelidade
+        - Automação
+
+  interests:
+    - name: Voluntariado
+      keywords:
+        - Mentoria
+        - Educação
+    - name: Bem-estar
+      keywords:
+        - Corrida
+        - Yoga
+        - Meditação
+    - name: Cultura
+      keywords:
+        - Literatura
+        - Cinema
+        - Música
+
+  volunteer:
+    - organization: Instituto Mentes Brilhantes
+      url: https://www.mentesbrilhantes.org.br
+      position: Mentora de Marketing
+      startDate: Feb 1, 2021
+      summary: |
+        - Oriento jovens empreendedores na criação de estratégias de marketing.
+        - Conduzo workshops sobre redes sociais e posicionamento de marca.
+        - Ajudo na captação de recursos e divulgação de projetos sociais.
+
+locale:
+  language: pt-br

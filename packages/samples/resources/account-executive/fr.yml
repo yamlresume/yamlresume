@@ -1,0 +1,232 @@
+content:
+  basics:
+    name: Camille Laurent
+    headline: Account Executive | Spécialiste de la vente SaaS B2B
+    phone: "+33 6 12 34 56 78"
+    email: camille.laurent@example.fr
+    url: https://www.camillelaurent.fr
+    summary: |
+      - Account Executive avec plus de 5 ans d'expérience dans la vente de solutions SaaS B2B.
+      - Expertise dans la gestion du cycle de vente complet, de la prospection à la signature.
+      - Capacité à dépasser les objectifs : 150 % du quota atteint en 2023.
+      - Passionné par la relation client et la construction de partenariats durables.
+      - Maîtrise des outils CRM (Salesforce, HubSpot) et des méthodologies de vente (MEDDIC, SPIN).
+  location:
+    address: 45 rue de la Boétie
+    city: Paris
+    region: Île-de-France
+    country: France
+    postalCode: "75008"
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/camillelaurent
+      username: camillelaurent
+    - network: Twitter
+      url: https://twitter.com/camille_laurent
+      username: camille_laurent
+  education:
+    - institution: Université Paris-Dauphine
+      url: https://www.dauphine.psl.eu/
+      degree: Master
+      area: Management Commercial et Négociation
+      score: Mention Très Bien
+      startDate: Sep 1, 2017
+      endDate: Jul 1, 2019
+      courses:
+        - Négociation commerciale avancée
+        - Stratégie d'entreprise
+        - Marketing B2B
+        - Gestion de la relation client
+        - Analyse financière
+        - Droit des affaires
+      summary: |
+        - Formation d'excellence orientée vers la vente et la négociation.
+        - Projets pratiques en partenariat avec des entreprises du CAC 40.
+        - Mémoire sur l'optimisation du cycle de vente SaaS.
+    - institution: Université Paris 1 Panthéon-Sorbonne
+      url: https://www.pantheonsorbonne.fr/
+      degree: Bachelor
+      area: Économie et Gestion
+      score: Mention Bien
+      startDate: Sep 1, 2014
+      endDate: Jun 1, 2017
+      courses:
+        - Microéconomie
+        - Macroéconomie
+        - Comptabilité
+        - Statistiques
+        - Marketing
+        - Management
+      summary: |
+        - Solides bases en économie et gestion d'entreprise.
+        - Engagement associatif au sein du bureau des étudiants.
+        - Semestre d'échange à l'Université de Montréal.
+  work:
+    - name: Leaflow
+      url: https://www.leaflow.fr
+      position: Account Executive
+      startDate: Jan 2, 2023
+      summary: |
+        - Gestion d'un portefeuille de 80 comptes PME/ETI avec un quota annuel de 1,2 M€.
+        - Développement du territoire français par la prospection ciblée et les partenariats.
+        - Négociation et closing de contrats SaaS complexes (cycle de vente de 3 à 6 mois).
+        - Collaboration étroite avec les équipes marketing, produit et customer success.
+        - Dépassement du quota à 150 % en 2023 et 120 % en 2024.
+      keywords:
+        - Prospection
+        - Négociation
+        - SaaS
+        - CRM
+        - Closing
+    - name: Datavance
+      url: https://www.datavance.fr
+      position: Account Executive
+      startDate: Mar 1, 2020
+      endDate: Dec 31, 2022
+      summary: |
+        - Vente de solutions de data intelligence auprès de grands comptes (CAC 40).
+        - Élaboration de stratégies de compte et gestion de cycles de vente longs (6 à 12 mois).
+        - Atteinte de 110 % du quota en 2021 et 130 % en 2022.
+        - Participation à la refonte du playbook commercial et formation des nouveaux arrivants.
+      keywords:
+        - Grands Comptes
+        - Data
+        - Méddic
+        - Négociation
+        - Prévisions
+    - name: CloudNova
+      url: https://www.cloudnova.fr
+      position: Business Developer
+      startDate: Sep 2, 2019
+      endDate: Feb 28, 2020
+      summary: |
+        - Prospection téléphonique et digitale pour générer des opportunités qualifiées.
+        - Organisation de démonstrations produit et suivi des leads jusqu'à la signature.
+        - Contribution à l'augmentation de 40 % du pipeline commercial en 6 mois.
+      keywords:
+        - Prospection
+        - Leads
+        - Qualification
+        - Salesforce
+  skills:
+    - name: Vente et Négociation
+      level: Expert
+      keywords:
+        - Prospection
+        - Closing
+        - Négociation
+        - Gestion de portefeuille
+        - Upsell
+    - name: Outils CRM
+      level: Advanced
+      keywords:
+        - Salesforce
+        - HubSpot
+        - Pipedrive
+        - LinkedIn Sales Navigator
+    - name: Analyse Commerciale
+      level: Advanced
+      keywords:
+        - Prévisions
+        - KPI
+        - Reporting
+        - Tableaux de bord
+    - name: Communication
+      level: Expert
+      keywords:
+        - Présentations
+        - Relation client
+        - Écoute active
+        - Négociation
+  languages:
+    - language: French
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - Langue maternelle
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - TOEIC 950
+        - Négociation internationale
+    - language: Spanish
+      fluency: Limited Working Proficiency
+      keywords:
+        - Conversationnel
+  awards:
+    - title: "Président's Club 2023"
+      awarder: Leaflow
+      date: Jan 2024
+      summary: |
+        - Récompense pour avoir dépassé 150 % du quota annuel.
+        - Génération de plus de 1,2 M€ de revenus nouveaux.
+    - title: "Meilleur Vendeur de l'Année"
+      awarder: Datavance
+      date: Dec 2022
+      summary: |
+        - Classé n°1 sur 25 commerciaux.
+        - Taux de satisfaction client de 98 %.
+  certificates:
+    - name: Salesforce Certified Sales Cloud Consultant
+      issuer: Salesforce
+      date: Mar 2021
+      url: https://trailhead.salesforce.com/
+    - name: HubSpot Inbound Sales Certification
+      issuer: HubSpot
+      date: Jun 2020
+      url: https://academy.hubspot.com/
+  publications:
+    - name: "Optimiser la prospection B2B à l'ère du numérique"
+      publisher: Revue Française du Marketing
+      releaseDate: Oct 2022
+      url: https://www.revue-marketing.fr/
+      summary: |
+        - Article sur les stratégies de prospection multicanale.
+        - Analyse de l'utilisation de l'IA pour qualifier les leads.
+  projects:
+    - name: Refonte du processus de vente
+      description: Projet d'optimisation du cycle de vente pour réduire le temps de
+        closing de 30 %.
+      startDate: Jan 2023
+      endDate: Jun 2023
+      summary: |
+        - Mise en place d'un nouveau playbook commercial.
+        - Formation des équipes et intégration d'outils d'automatisation.
+      keywords:
+        - Processus
+        - Vente
+        - Automatisation
+    - name: Programme de fidélisation client
+      description: Lancement d'un programme d'upsell et de cross-sell pour les comptes
+        stratégiques.
+      startDate: Sep 2021
+      endDate: Dec 2022
+      summary: |
+        - Augmentation du chiffre d'affaires de 25 % sur le portefeuille existant.
+        - Déploiement d'une campagne de réengagement personnalisée.
+      keywords:
+        - Fidélisation
+        - Upsell
+        - Stratégie
+  interests:
+    - name: Sports
+      keywords:
+        - Course à pied
+        - Tennis
+        - Randonnée
+    - name: Culture
+      keywords:
+        - Lecture
+        - Cinéma
+        - Voyages
+  volunteer:
+    - organization: Association Vente Solidaire
+      url: https://www.ventesolidaire.fr/
+      position: Mentor commercial
+      startDate: Sep 2021
+      endDate: Jun 2023
+      summary: |
+        - Accompagnement de jeunes entrepreneurs dans la structuration de leur stratégie commerciale.
+        - Préparation aux pitchs et aide à la prospection.
+
+locale:
+  language: fr

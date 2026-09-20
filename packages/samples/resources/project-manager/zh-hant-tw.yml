@@ -1,0 +1,229 @@
+content:
+  basics:
+    name: 陳昱翰
+    headline: 資深專案經理 | 敏捷開發與跨部門協作
+    phone: "+886 912 345 678"
+    email: yuhan.chen@example.com
+    url: https://www.yuhanchen-pm.com
+    summary: |
+      - 擁有 8 年以上軟體與數位產品專案管理經驗，擅長從需求訪談、範疇定義到交付驗收的完整生命週期。
+      - 精通 Agile/Scrum 與 Waterfall 方法論，能依專案特性調整整體節奏與資源配置。
+      - 具備跨部門溝通與利害關係人管理能力，成功協調工程、設計、行銷與營運團隊達成目標。
+      - 數據驅動決策，熟悉 Jira、Confluence、Asana 與 Tableau，持續優化流程與交付品質。
+  location:
+    address: 台北市信義區松高路 1 號
+    city: 台北市
+    region: 台北市
+    country: Taiwan
+    postalCode: "110"
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/yuhan-chen-pm
+      username: yuhan-chen-pm
+    - network: GitHub
+      url: https://github.com/yuhanchen-pm
+      username: yuhanchen-pm
+  education:
+    - institution: 國立臺灣大學
+      url: https://www.ntu.edu.tw
+      degree: Master
+      area: 資訊管理學系
+      score: "4.0"
+      startDate: 2014-09-01
+      endDate: 2016-06-30
+      courses:
+        - 專案管理
+        - 資訊系統分析與設計
+        - 資料庫管理
+        - 企業流程再造
+        - 敏捷軟體開發
+      summary: |
+        - 碩士論文以「敏捷式專案管理在台灣軟體產業之應用」為題，訪談 12 家企業。
+        - 擔任資訊管理研究所學會會長，籌辦產學講座與企業參訪。
+        - 獲選為管理學院優秀研究生，並取得斐陶斐榮譽會員資格。
+  work:
+    - name: 智邦科技股份有限公司
+      url: https://www.accton.com.tw
+      position: 資深專案經理
+      startDate: 2021-03-01
+      summary: |
+        - 負責企業級網通軟體專案，管理 5 個跨功能團隊、共 40 位成員，年度專案預算達新台幣 8,000 萬元。
+        - 導入 Scrum 與 Kanban 混合式管理，將版本交付週期由 12 週縮短至 8 週，提升 33% 交付效率。
+        - 建立標準化風險管理流程，提前識別關鍵風險並制定緩解計畫，降低 25% 專案延遲率。
+        - 主導與歐美客戶的季度業務審查，協調需求優先級與範疇變更，維持客戶滿意度 95% 以上。
+        - 輔導 3 位初階專案經理取得 PMP 證照，建立內部專案管理知識庫。
+      keywords:
+        - 敏捷開發
+        - 跨部門協作
+        - 風險管理
+        - 利害關係人溝通
+        - 預算控管
+    - name: 趨勢科技股份有限公司
+      url: https://www.trendmicro.com
+      position: 專案經理
+      startDate: 2017-07-01
+      endDate: 2021-02-28
+      summary: |
+        - 管理雲端安全產品專案，從需求確認、開發排程到全球發布，年均完成 6 個主要版本。
+        - 與產品經理合作定義產品路線圖，將客戶回饋轉化為可執行的使用者故事與驗收條件。
+        - 協調 QA、DevOps 與技術支援團隊，建立自動化測試與持續整合流程，減少 40% 回歸測試時間。
+        - 每月向高階管理層彙報專案健康度、資源使用與里程碑達成率。
+      keywords:
+        - 雲端安全
+        - 產品交付
+        - 持續整合
+        - 資源規劃
+    - name: 資拓宏宇國際股份有限公司
+      url: https://www.iisigroup.com
+      position: 專案管理師
+      startDate: 2016-07-01
+      endDate: 2017-06-30
+      summary: |
+        - 參與政府資訊系統標案，負責需求訪談、規格書撰寫與專案進度追蹤。
+        - 協助導入 Jira 與 Confluence，統一專案文件與問題追蹤流程。
+        - 支援驗收測試與教育訓練，確保系統順利上線並移交維運團隊。
+      keywords:
+        - 政府標案
+        - 需求分析
+        - 文件管理
+        - 驗收測試
+  skills:
+    - name: 專案管理
+      level: Expert
+      keywords:
+        - Agile
+        - Scrum
+        - Waterfall
+        - 風險管理
+        - 範疇管理
+        - 預算控管
+    - name: 工具與平台
+      level: Advanced
+      keywords:
+        - Jira
+        - Confluence
+        - Asana
+        - Trello
+        - Tableau
+        - MS Project
+    - name: 溝通與領導
+      level: Expert
+      keywords:
+        - 跨部門協調
+        - 利害關係人管理
+        - 團隊激勵
+        - 簡報技巧
+        - 衝突解決
+    - name: 技術知識
+      level: Intermediate
+      keywords:
+        - SQL
+        - API
+        - CI/CD
+        - 雲端服務
+        - 資料分析
+  languages:
+    - language: Chinese
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - 母語
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - TOEIC 950
+        - 商業談判
+        - 跨國團隊協作
+    - language: Japanese
+      fluency: Limited Working Proficiency
+      keywords:
+        - JLPT N3
+        - 日常會話
+  awards:
+    - title: 年度最佳專案經理
+      date: 2023-12-15
+      awarder: 智邦科技股份有限公司
+      summary: |
+        表彰在企業級網通軟體專案中展現卓越領導力、風險管理與跨部門協調能力，並成功將交付週期縮短 33%。
+    - title: 專案管理卓越獎
+      date: 2020-11-20
+      awarder: 趨勢科技股份有限公司
+      summary: |
+        肯定在雲端安全產品全球發布專案中的傑出表現，達成 100% 里程碑並維持客戶滿意度 95% 以上。
+  certificates:
+    - name: Project Management Professional (PMP)
+      issuer: Project Management Institute
+      date: 2018-06-15
+      url: https://www.pmi.org/certifications/project-management-pmp
+    - name: Certified ScrumMaster (CSM)
+      issuer: Scrum Alliance
+      date: 2019-09-10
+      url: https://www.scrumalliance.org/certifications/csm
+    - name: PMI Agile Certified Practitioner (PMI-ACP)
+      issuer: Project Management Institute
+      date: 2021-04-22
+      url: https://www.pmi.org/certifications/agile-acp
+  publications:
+    - name: 敏捷式專案管理在台灣軟體產業之應用
+      publisher: 國立臺灣大學資訊管理學系碩士論文
+      releaseDate: 2016-06-30
+      url: https://hdl.handle.net/11296/example
+      summary: |
+        - 探討敏捷式方法在台灣軟體公司的導入現況與挑戰。
+        - 訪談 12 家企業、回收 180 份問卷，提出混合式管理框架。
+        - 研究結果獲得多家受訪企業採用於內部流程改善。
+  projects:
+    - name: 企業級網通軟體交付平台
+      url: https://www.accton.com.tw
+      startDate: 2022-01-10
+      endDate: 2023-08-31
+      description: 整合需求管理、測試追蹤與版本發布的內部專案管理平台
+      summary: |
+        - 主導平台導入，涵蓋 5 個產品線、超過 40 位使用者。
+        - 建立自動化儀表板，即時呈現專案健康度與資源負載。
+        - 縮短 30% 專案狀態彙報時間，並提升資料透明度。
+      keywords:
+        - 專案管理平台
+        - 數據視覺化
+        - 流程自動化
+    - name: 雲端安全產品全球發布專案
+      url: https://www.trendmicro.com
+      startDate: 2019-03-01
+      endDate: 2020-12-31
+      description: 面向全球企業客戶的雲端安全解決方案發布計畫
+      summary: |
+        - 協調台灣、美國、日本與印度團隊，完成 6 個主要版本發布。
+        - 建立跨時區溝通機制，將決策週期縮短 20%。
+        - 專案達成率 100%，客戶滿意度維持 95% 以上。
+      keywords:
+        - 全球發布
+        - 跨時區協作
+        - 雲端安全
+  interests:
+    - name: 戶外活動
+      keywords:
+        - 登山
+        - 馬拉松
+        - 單車環島
+    - name: 閱讀與學習
+      keywords:
+        - 商業策略
+        - 專案管理
+        - 人工智慧
+    - name: 社群參與
+      keywords:
+        - 敏捷社群
+        - 專案管理協會
+        - 技術講座
+  volunteer:
+    - organization: 台灣專案管理學會
+      url: https://www.pmi.org.tw
+      position: 志工講師
+      startDate: 2019-01-01
+      endDate: 2023-12-31
+      summary: |
+        - 擔任敏捷與專案管理課程志工講師，累計授課 30 場、學員超過 600 人。
+        - 協助籌辦年度專案管理論壇，負責議程規劃與講者邀請。
+        - 參與偏鄉資訊教育志工活動，指導高中生專題製作與簡報技巧。
+
+locale:
+  language: zh-hant-tw

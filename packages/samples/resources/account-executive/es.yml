@@ -1,0 +1,223 @@
+content:
+  basics:
+    name: Carlos Mendoza Ruiz
+    headline: Ejecutivo de Cuentas Senior | Ventas B2B SaaS
+    phone: "+34 612 345 678"
+    email: carlos.mendoza@ventaspro.es
+    url: https://www.carlosmendoza.es
+    summary: |
+      Ejecutivo de cuentas con más de 7 años de experiencia en ventas B2B y SaaS, especializado en la gestión del ciclo completo de ventas y en la construcción de relaciones duraderas con grandes cuentas.
+
+      - Historial comprobado de superación de cuotas anuales superiores a 1,2 M€.
+      - Experto en prospección, negociación y cierre de acuerdos con responsables de decisión de alto nivel.
+      - Dominio de Salesforce, HubSpot y LinkedIn Sales Navigator para la gestión del embudo de ventas y la previsión comercial.
+      - Apasionado por las ventas consultivas y el desarrollo de equipos comerciales de alto rendimiento.
+  location:
+    address: Calle de Serrano 45
+    city: Madrid
+    region: Comunidad de Madrid
+    country: Spain
+    postalCode: "28001"
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/carlosmendozaruiz
+      username: carlosmendozaruiz
+    - network: Twitter
+      url: https://twitter.com/carlosmendoza_es
+      username: carlosmendoza_es
+  education:
+    - institution: Universidad Complutense de Madrid
+      url: https://www.ucm.es
+      degree: Bachelor
+      area: Administración y Dirección de Empresas
+      score: "8.7"
+      startDate: Sep 1, 2012
+      endDate: Jun 30, 2016
+      courses:
+        - Dirección Comercial
+        - Marketing Estratégico
+        - Negociación Comercial
+        - Análisis Financiero
+        - Gestión de Recursos Humanos
+        - Comportamiento Organizacional
+        - Estadística Aplicada a la Empresa
+      summary: |
+        - Formación sólida en estrategias de ventas, análisis de mercados y gestión de equipos comerciales.
+        - Participación en el programa de prácticas en el departamento comercial de una consultora tecnológica.
+        - Trabajo de fin de grado sobre optimización de embudos de ventas B2B, calificado con matrícula de honor.
+  work:
+    - name: Soluciones CloudSales
+      url: https://www.solucionescloudsales.es
+      position: Ejecutivo de Cuentas Senior
+      startDate: Jan 10, 2021
+      summary: |
+        - Gestioné una cartera de más de 40 grandes cuentas del sector tecnológico, con un valor medio anual de 180.000 €.
+        - Superé la cuota anual en un 145%, 132% y 158% durante los últimos tres ejercicios fiscales.
+        - Lideré la estrategia de ventas consultivas, coordinando equipos de preventa, producto y legal para cerrar acuerdos complejos.
+        - Implementé un manual de ventas que redujo el ciclo de venta en un 22% y aumentó la tasa de cierre en un 18%.
+        - Fui mentor de dos ejecutivos junior, ambos alcanzaron el 100% de su cuota en el primer año.
+      keywords:
+        - Ventas B2B
+        - SaaS
+        - Gestión de cuentas
+        - Negociación
+        - CRM
+    - name: Innova Software Ibérica
+      url: https://www.innovasoftware.es
+      position: Ejecutivo de Cuentas
+      startDate: Feb 1, 2018
+      endDate: Dec 20, 2020
+      summary: |
+        - Responsable del ciclo completo de ventas para pymes y medianas empresas, desde la prospección hasta el cierre y la renovación.
+        - Generé más de 2,5 M€ en ingresos recurrentes anuales (ARR) mediante la venta de licencias y servicios de implantación.
+        - Aumenté la retención de clientes en un 30% gracias a un seguimiento proactivo y a la identificación de oportunidades de venta adicional.
+        - Colaboré con el equipo de mercadotecnia en la creación de campañas de generación de oportunidades que duplicaron las oportunidades cualificadas.
+      keywords:
+        - Prospección
+        - Salesforce
+        - Cierre de ventas
+        - Métricas
+        - Venta adicional
+    - name: Grupo Comercial Mediterráneo
+      url: https://www.grupomediterraneo.es
+      position: Representante de Ventas
+      startDate: Jul 1, 2016
+      endDate: Jan 31, 2018
+      summary: |
+        - Atendí una cartera de más de 200 clientes minoristas, realizando visitas comerciales y gestión telefónica.
+        - Incrementé las ventas de la zona asignada en un 25% durante el primer año mediante técnicas de venta cruzada.
+        - Negocié condiciones comerciales, descuentos y plazos de entrega, mejorando el margen bruto en un 12%.
+        - Utilicé el CRM corporativo para registrar oportunidades, previsión de ventas y seguimiento postventa.
+      keywords:
+        - Ventas directas
+        - CRM
+        - Atención al cliente
+        - Ventas cruzadas
+  skills:
+    - name: Ventas B2B
+      level: Expert
+      keywords:
+        - Negociación
+        - Prospección
+        - Cierre de ventas
+        - Cuentas clave
+        - Venta adicional
+    - name: CRM y Herramientas
+      level: Advanced
+      keywords:
+        - Salesforce
+        - HubSpot
+        - LinkedIn Sales Navigator
+        - Excel avanzado
+    - name: Habilidades Comerciales
+      level: Expert
+      keywords:
+        - Presentaciones
+        - Comunicación
+        - Gestión del tiempo
+        - Trabajo en equipo
+        - Liderazgo
+  languages:
+    - language: Spanish
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - Nativo
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - C1
+        - Negociación
+        - Presentaciones
+    - language: French
+      fluency: Limited Working Proficiency
+      keywords:
+        - A2
+        - Conversación básica
+  awards:
+    - title: Mejor Ejecutivo de Cuentas del Año
+      date: Dec 2023
+      awarder: Soluciones CloudSales
+      summary: |
+        Reconocimiento por superar el 150% de la cuota anual y por liderar la mayor operación de grandes cuentas del año, valorada en 450.000 €.
+    - title: Premio a la Excelencia en Ventas
+      date: Nov 2019
+      awarder: Innova Software Ibérica
+      summary: |
+        Otorgado por alcanzar el primer puesto en el ranking de ventas durante tres trimestres consecutivos y por mejorar la satisfacción del cliente.
+  certificates:
+    - name: Consultor Certificado en Salesforce Sales Cloud
+      issuer: Salesforce
+      date: Mar 2021
+      url: https://trailhead.salesforce.com/es/certification
+    - name: Certificación en Software de Ventas de HubSpot
+      issuer: HubSpot Academy
+      date: Jun 2020
+      url: https://academy.hubspot.com/courses/sales-software
+    - name: Certificación en Negociación Avanzada
+      issuer: ESADE
+      date: Sep 2019
+      url: https://www.esade.edu
+  publications:
+    - name: Cómo construir relaciones comerciales duraderas en SaaS
+      publisher: Revista Ventas & Marketing
+      releaseDate: Feb 2023
+      url: https://www.ventasymarketing.es/articulos/relaciones-comerciales-saas
+      summary: |
+        - Artículo sobre estrategias de retención y expansión de cuentas en empresas de software.
+        - Incluye tácticas de venta consultiva y ejemplos de éxito en el mercado ibérico.
+  projects:
+    - name: Manual de Ventas Consultivas
+      startDate: Mar 2022
+      endDate: Aug 2022
+      description: Diseño e implementación de un manual de ventas consultivas para el
+        equipo comercial de Soluciones CloudSales.
+      summary: |
+        - Documenté el proceso de venta, desde la prospección hasta el cierre, con metodologías MEDDIC y SPIN Selling.
+        - Formé a 12 comerciales en la nueva metodología, logrando un aumento del 18% en la tasa de cierre.
+        - Integré el manual en Salesforce, automatizando tareas de seguimiento y generación de informes.
+      keywords:
+        - Ventas consultivas
+        - Manual de ventas
+        - Formación
+        - MEDDIC
+    - name: Campaña de Reactivación de Clientes Inactivos
+      startDate: Jan 2020
+      endDate: Jun 2020
+      description: Campaña para recuperar clientes inactivos de Innova Software
+        Ibérica mediante segmentación y ofertas personalizadas.
+      summary: |
+        - Analicé la base de datos de clientes y segmenté por sector, tamaño y motivo de baja.
+        - Diseñé una secuencia de contacto multicanal (correo electrónico, teléfono y LinkedIn) con mensajes personalizados.
+        - Recuperé 38 cuentas, generando 320.000 € en ingresos adicionales en seis meses.
+      keywords:
+        - Reactivación
+        - Segmentación
+        - Multicanal
+        - Marketing por correo
+  interests:
+    - name: Deportes
+      keywords:
+        - Carrera
+        - Pádel
+        - Senderismo
+    - name: Música
+      keywords:
+        - Guitarra
+        - Conciertos
+    - name: Viajes
+      keywords:
+        - Europa
+        - Latinoamérica
+        - Gastronomía
+  volunteer:
+    - organization: Fundación Emprende Joven
+      url: https://www.emprendejoven.es
+      position: Mentor de Ventas
+      startDate: Sep 2019
+      summary: |
+        - Ejercí como mentor de jóvenes emprendedores en la validación comercial de sus ideas de negocio.
+        - Impartí talleres sobre prospección, propuesta de valor y técnicas de negociación.
+        - Ayudé a más de 15 proyectos a conseguir sus primeros clientes y validar su modelo de negocio.
+
+locale:
+  language: es

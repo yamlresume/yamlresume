@@ -1,0 +1,224 @@
+content:
+  basics:
+    name: Ingrid Solberg
+    headline: Erfaren prosjektleder med lidenskap for smidig metodikk og verdiskapning
+    phone: "+47 123 45 678"
+    email: ingrid.solberg@example.no
+    url: https://www.ingridsolberg.no
+    summary: |
+      - Prosjektleder med over 8 års erfaring fra teknologi- og energibransjen
+      - Dokumentert suksess med å lede tverrfaglige team og levere prosjekter innen tid og budsjett
+      - Sterk kompetanse innen smidige metoder (Scrum, Kanban) og tradisjonell prosjektstyring (PMBOK)
+      - Strategisk tenker med fokus på kontinuerlig forbedring og bærekraftige løsninger
+      - Gode kommunikasjons- og lederegenskaper, vant til å samarbeide med interessenter på alle nivåer
+  location:
+    address: Karl Johans gate 15
+    city: Oslo
+    region: Oslo
+    country: Norway
+    postalCode: "0150"
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/ingridsolberg
+      username: ingridsolberg
+    - network: GitHub
+      url: https://github.com/ingridsolberg
+      username: ingridsolberg
+    - network: Twitter
+      url: https://twitter.com/ingridsolberg
+      username: ingridsolberg
+  education:
+    - institution: Norges teknisk-naturvitenskapelige universitet (NTNU)
+      url: https://www.ntnu.no/
+      degree: Master
+      area: Industriell økonomi og teknologiledelse
+      score: "3.8"
+      startDate: Aug 1, 2015
+      endDate: Jun 30, 2017
+      courses:
+        - Prosjektledelse
+        - Risikostyring
+        - Smidig utvikling
+        - Strategisk ledelse
+        - Finansstyring
+        - Forhandlingsteknikk
+      summary: |
+        - Spesialisering i prosjektledelse og innovasjonsledelse
+        - Gjennomførte masteroppgave om smidig prosjektstyring i energisektoren
+        - Verv som leder for studentorganisasjonen Prosjektforum
+    - institution: Handelshøyskolen BI
+      url: https://www.bi.no/
+      degree: Bachelor
+      area: Økonomi og administrasjon
+      score: "3.5"
+      startDate: Aug 1, 2012
+      endDate: Jun 30, 2015
+      courses:
+        - Bedriftsøkonomi
+        - Markedsføring
+        - Organisasjonspsykologi
+        - Statistikk
+      summary: |
+        - Grunnleggende forståelse for forretningsdrift og økonomistyring
+        - Deltok i case-konkurranser og studentprosjekter
+  work:
+    - name: Equinor
+      url: https://www.equinor.com/
+      position: Senior Prosjektleder
+      startDate: Jan 1, 2021
+      summary: |
+        - Leder komplekse tverrfaglige prosjekter innen fornybar energi og digitalisering
+        - Ansvarlig for prosjektbudsjetter på opptil 200 MNOK og team på 20+ medlemmer
+        - Implementerte smidige arbeidsmetoder som reduserte leveringstiden med 25%
+        - Bygget sterke relasjoner med interessenter og leverandører for å sikre fremdrift
+        - Veileder og mentor for junior prosjektledere i organisasjonen
+      keywords:
+        - Prosjektledelse
+        - Smidig
+        - Fornybar energi
+        - Digitalisering
+        - Risikostyring
+    - name: Telenor
+      url: https://www.telenor.no/
+      position: Prosjektleder
+      startDate: Sep 1, 2017
+      endDate: Dec 31, 2020
+      summary: |
+        - Ledet flere IT-utviklingsprosjekter fra konsept til produksjon
+        - Koordinerte interne team og eksterne leverandører for å levere på tid og budsjett
+        - Innførte Kanban for bedre flyt og oversikt i utviklingsteamene
+        - Gjennomførte risikovurderinger og utarbeidet beredskapsplaner
+      keywords:
+        - IT-prosjekter
+        - Kanban
+        - Leverandørstyring
+        - Agile
+    - name: DNV
+      url: https://www.dnv.no/
+      position: Prosjektkoordinator
+      startDate: Jul 1, 2016
+      endDate: Aug 31, 2017
+      summary: |
+        - Støttet prosjektledere i planlegging, oppfølging og rapportering
+        - Utviklet maler og verktøy for prosjektstyring som ble brukt på tvers av avdelingen
+        - Bidro til å etablere et prosjektkontor (PMO) for bedre styring og kontroll
+      keywords:
+        - Prosjektstøtte
+        - PMO
+        - Rapportering
+  skills:
+    - name: Prosjektledelse
+      level: Expert
+      keywords:
+        - PMBOK
+        - PRINCE2
+        - Risikostyring
+        - Budsjettering
+        - Interessentanalyse
+    - name: Smidig metodikk
+      level: Advanced
+      keywords:
+        - Scrum
+        - Kanban
+        - Lean
+        - SAFe
+    - name: Verktøy
+      level: Advanced
+      keywords:
+        - Jira
+        - Microsoft Project
+        - Trello
+        - Asana
+        - Miro
+    - name: Ledelse
+      level: Expert
+      keywords:
+        - Teamledelse
+        - Mentoring
+        - Kommunikasjon
+        - Forhandling
+  languages:
+    - language: Norwegian
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - Morsmål
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - TOEFL 110
+        - Forretningsflyt
+  awards:
+    - title: Årets Prosjektleder
+      date: Nov 2022
+      awarder: Norsk Prosjektlederforening
+      summary: |
+        - Tildelt for fremragende ledelse av digitaliseringsprosjektet "Fremtidens Energi"
+        - Anerkjent for innovativ bruk av smidige metoder og sterk resultatorientering
+    - title: Beste Masteroppgave
+      date: Jun 2017
+      awarder: NTNU
+      summary: |
+        - Tildelt for masteroppgaven "Smidig prosjektstyring i energisektoren"
+        - Karakter A og ros for praktisk relevans
+  certificates:
+    - name: Project Management Professional (PMP)
+      issuer: Project Management Institute
+      date: Mar 2019
+      url: https://www.pmi.org/certifications/project-management-pmp
+    - name: PRINCE2 Foundation
+      issuer: AXELOS
+      date: Jun 2016
+      url: https://www.axelos.com/certifications/prince2
+  publications:
+    - name: Smidig prosjektstyring i energisektoren
+      publisher: Magma - Econa
+      releaseDate: Sep 2017
+      url: https://www.magma.no/smidig-prosjektstyring
+      summary: |
+        - Artikkel basert på masteroppgave om hvordan smidige metoder kan forbedre prosjektgjennomføring i energibransjen
+        - Presenterer case-studier og anbefalinger for ledere
+  projects:
+    - name: Fremtidens Energi
+      url: https://www.equinor.com/fremtidens-energi
+      description: Digital plattform for sanntidsstyring av fornybare energikilder
+      startDate: Feb 2021
+      endDate: Dec 2022
+      summary: |
+        - Ledet et team på 15 utviklere, designere og data scientists
+        - Leverte plattformen 2 måneder før planlagt og 10% under budsjett
+        - Implementerte smidige metoder og automatisert rapportering
+      keywords:
+        - Fornybar energi
+        - Digitalisering
+        - Smidig
+        - Prosjektledelse
+  interests:
+    - name: Friluftsliv
+      keywords:
+        - Fjellturer
+        - Ski
+        - Kajakk
+    - name: Teknologi
+      keywords:
+        - Kunstig intelligens
+        - Bærekraft
+        - Åpen kildekode
+  volunteer:
+    - organization: Norsk Prosjektlederforening
+      url: https://www.prosjektlederforeningen.no/
+      position: Mentor
+      startDate: Jan 2020
+      summary: |
+        - Mentorer unge prosjektledere og studenter innen prosjektfaget
+        - Holder foredrag og workshops om smidig prosjektledelse
+    - organization: StartUp Norge
+      url: https://www.startupnorge.no/
+      position: Rådgiver
+      startDate: Mar 2018
+      endDate: Dec 2019
+      summary: |
+        - Rådgav oppstartsbedrifter om prosjektplanlegging og finansiering
+        - Bidro til å utvikle strukturerte prosjektplaner for tidligfase-selskaper
+
+locale:
+  language: no

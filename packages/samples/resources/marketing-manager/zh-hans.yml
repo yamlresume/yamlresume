@@ -1,0 +1,222 @@
+content:
+  basics:
+    name: 张雅琳
+    headline: 市场营销经理 | 品牌增长与数字营销专家
+    phone: +86 138 1234 5678
+    email: yalin.zhang@example.com
+    url: https://www.zhangyalin.com
+    summary: |
+      - 8 年市场营销经验，专注于企业级与快消行业的品牌增长、数字营销与整合传播
+      - 擅长制定市场策略、管理千万级预算，并通过数据驱动优化获客与转化
+      - 具备跨部门协作与团队管理能力，曾带领 6 人团队实现有效线索增长 180%
+      - 熟悉国内外主流营销平台与工具，能够快速适应不同市场环境
+  location:
+    address: 浦东新区世纪大道 100 号
+    city: 上海
+    region: 上海市
+    country: China
+    postalCode: "200120"
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/yalinzhang
+      username: yalinzhang
+    - network: Medium
+      url: https://medium.com/@yalinzhang
+      username: yalinzhang
+  education:
+    - institution: 复旦大学
+      url: https://www.fudan.edu.cn
+      degree: Master
+      area: 市场营销
+      score: "3.8/4.0"
+      startDate: 'Sep 1, 2014'
+      endDate: 'Jun 30, 2017'
+      courses:
+        - 消费者行为学
+        - 市场调研与数据分析
+        - 品牌管理
+        - 数字营销策略
+        - 整合营销传播
+        - 商业统计学
+      summary: |
+        - 主修市场营销，系统学习消费者洞察、品牌战略与数据驱动决策
+        - 毕业论文聚焦社交媒体对年轻消费者购买意愿的影响
+        - 获得校级优秀研究生奖学金
+    - institution: 上海外国语大学
+      url: https://www.shisu.edu.cn
+      degree: Bachelor
+      area: 国际商务
+      score: "3.6/4.0"
+      startDate: 'Sep 1, 2010'
+      endDate: 'Jun 30, 2014'
+      courses:
+        - 国际市场营销
+        - 商务英语
+        - 跨文化沟通
+        - 经济学原理
+      summary: |
+        - 辅修英语，具备良好的跨文化沟通能力
+        - 参与校园国际文化节市场推广工作
+  work:
+    - name: 云图科技
+      url: https://www.yuntu-tech.com
+      position: 高级市场营销经理
+      startDate: 'Mar 1, 2021'
+      summary: |
+        - 负责企业级软件服务产品线整体市场策略，管理年度预算 1200 万元
+        - 带领 6 人团队执行内容营销、搜索引擎优化与营销、行业活动与渠道合作
+        - 将有效线索数量提升 180%，客户获取成本降低 25%，投资回报率提升至 4.2
+        - 搭建营销自动化与归因体系，实现线索到收入的闭环追踪
+      keywords:
+        - 企业级营销
+        - 增长策略
+        - 营销自动化
+        - 团队管理
+    - name: 星潮互动
+      url: https://www.xingchao.com
+      position: 市场营销经理
+      startDate: 'Jul 1, 2017'
+      endDate: 'Feb 28, 2021'
+      summary: |
+        - 负责快消品牌社交媒体与关键意见领袖营销，运营粉丝超 300 万
+        - 策划多个爆款话题，单次活动曝光量超 8000 万
+        - 与产品、销售团队协作，推动新品上市首月销售额破千万
+        - 管理代理商与媒体采购，优化投放效率
+      keywords:
+        - 社交媒体
+        - 关键意见领袖营销
+        - 品牌传播
+        - 预算管理
+  skills:
+    - name: 市场营销
+      level: Expert
+      keywords:
+        - 品牌战略
+        - 市场调研
+        - 整合营销
+        - 内容营销
+        - 活动策划
+    - name: 数字营销
+      level: Advanced
+      keywords:
+        - 搜索引擎优化
+        - 搜索引擎营销
+        - 信息流广告
+        - 社交媒体营销
+        - 营销自动化
+        - 数据分析
+    - name: 工具与平台
+      level: Advanced
+      keywords:
+        - 谷歌分析
+        - HubSpot
+        - 百度统计
+        - 巨量引擎
+        - Salesforce
+    - name: 管理与协作
+      level: Advanced
+      keywords:
+        - 团队领导
+        - 跨部门协作
+        - 项目管理
+        - 预算控制
+        - 供应商管理
+  languages:
+    - language: Chinese
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - 普通话
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - 雅思 7.5
+        - 商务谈判
+  awards:
+    - title: 年度最佳营销团队奖
+      awarder: 云图科技
+      date: Jan 2023
+      summary: |
+        表彰在企业级增长营销与品牌建设方面的突出贡献，带领团队实现年度业绩目标 130%。
+    - title: 数字营销创新金奖
+      awarder: 中国数字营销协会
+      date: Nov 2020
+      summary: |
+        凭借“城市夜跑计划”整合营销案例获得行业金奖，活动覆盖 20 个城市，参与人数超 5 万。
+  certificates:
+    - name: 谷歌分析 4 认证
+      issuer: 谷歌
+      date: May 2022
+      url: https://skillshop.exceedlms.com/student/catalog
+    - name: 内容营销认证
+      issuer: HubSpot 学院
+      date: Aug 2021
+      url: https://academy.hubspot.com/courses/content-marketing
+    - name: 百度营销认证
+      issuer: 百度
+      date: Mar 2020
+      url: https://yingxiao.baidu.com
+  publications:
+    - name: 社交媒体时代企业级品牌内容营销策略研究
+      publisher: 中国市场学会
+      releaseDate: Oct 2022
+      url: https://www.example.com/publication
+      summary: |
+        - 分析企业级品牌如何通过内容营销建立思想领导力
+        - 提出基于客户旅程的内容矩阵模型
+        - 被多家行业媒体转载引用
+  projects:
+    - name: 云图科技品牌焕新项目
+      url: https://www.yuntu-tech.com/brand
+      startDate: Jan 2022
+      endDate: Sep 2022
+      summary: |
+        - 主导品牌定位、视觉识别与官网改版
+        - 统一全球市场传播口径，提升品牌认知度 45%
+      description: 为企业级软件服务企业完成品牌升级与官网重构，覆盖 6 个国际市场
+      keywords:
+        - 品牌升级
+        - 官网改版
+        - 全球化
+    - name: 双十一整合营销战役
+      url: https://www.xingchao.com/campaign
+      startDate: Oct 2020
+      endDate: Nov 2020
+      summary: |
+        - 统筹社交媒体、直播与电商站内投放
+        - 实现成交总额 3200 万元，同比增长 90%
+      description: 快消品牌双十一全渠道整合营销活动
+      keywords:
+        - 电商营销
+        - 直播
+        - 整合传播
+  interests:
+    - name: 内容创作
+      keywords:
+        - 写作
+        - 播客
+        - 摄影
+    - name: 运动
+      keywords:
+        - 跑步
+        - 瑜伽
+        - 徒步
+  volunteer:
+    - organization: 上海青年营销人协会
+      url: https://www.shyoungmarketers.org
+      position: 志愿者导师
+      startDate: Sep 2019
+      endDate: Jun 2023
+      summary: |
+        - 为大学生提供市场营销职业规划与技能辅导
+        - 组织行业分享会与公益讲座 20 余场
+    - organization: 乡村教育发展基金会
+      url: https://www.ruraledu.org
+      position: 品牌传播志愿者
+      startDate: Mar 2018
+      endDate: Dec 2020
+      summary: |
+        - 协助策划公益募捐活动，累计筹款 80 万元
+        - 负责社交媒体内容撰写与传播
+
+locale:
+  language: zh-hans

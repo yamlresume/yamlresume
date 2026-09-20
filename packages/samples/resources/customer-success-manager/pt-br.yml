@@ -1,0 +1,232 @@
+content:
+  basics:
+    name: Mariana Costa Almeida
+    headline: Gerente de Sucesso do Cliente | Customer Success Manager
+    phone: "+55 11 98765-4321"
+    email: mariana.almeida@email.com
+    url: https://marianaalmeida.com.br
+    summary: |
+      - Gerente de Sucesso do Cliente com mais de 8 anos de experiência em SaaS B2B, focada em retenção, expansão de receita e satisfação de clientes.
+      - Especialista em construir relacionamentos de confiança com stakeholders, liderar equipes multidisciplinares e implementar estratégias de customer success baseadas em dados.
+      - Experiência comprovada na redução de churn, aumento de NPS e identificação de oportunidades de upsell e cross-sell.
+      - Fortes habilidades em análise de métricas, gestão de projetos, comunicação e resolução de problemas.
+      - Inglês avançado e espanhol intermediário, com vivência em ambientes internacionais.
+  location:
+    address: Avenida Paulista, 1578, Bela Vista
+    city: São Paulo
+    region: São Paulo
+    country: Brazil
+    postalCode: "01310-200"
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/marianacalmeida
+      username: marianacalmeida
+    - network: Medium
+      url: https://medium.com/@marianaalmeida
+      username: marianaalmeida
+  education:
+    - institution: Universidade de São Paulo
+      url: https://www.usp.br
+      degree: Bachelor
+      area: Administração de Empresas
+      score: "8.7"
+      startDate: Feb 1, 2012
+      endDate: Dec 15, 2016
+      courses:
+        - Gestão de Clientes e CRM
+        - Marketing de Serviços
+        - Análise de Dados para Negócios
+        - Gestão de Projetos
+        - Comportamento Organizacional
+        - Negociação e Comunicação
+      summary: |
+        - Formação sólida em gestão empresarial, com ênfase em relacionamento com clientes e estratégias de retenção.
+        - Desenvolvimento de projetos práticos de consultoria para pequenas e médias empresas.
+        - Participação ativa em empresa júnior, liderando projetos de customer success.
+  work:
+    - name: NuvemTech
+      url: https://www.nuvemtech.com.br
+      position: Senior Customer Success Manager
+      startDate: Mar 1, 2021
+      summary: |
+        - Gerencia uma carteira de 45 clientes enterprise, representando R$ 12 milhões em receita recorrente anual (ARR).
+        - Lidera uma equipe de 6 CSMs, responsável por onboarding, adoção, retenção e expansão.
+        - Implementou um programa de QBRs estratégicos que aumentou o NPS de 42 para 68 em 12 meses.
+        - Desenvolveu playbooks de sucesso do cliente que reduziram o churn em 22% no primeiro ano.
+        - Colabora com Produto, Vendas e Marketing para alinhar a voz do cliente à estratégia corporativa.
+      keywords:
+        - Retenção
+        - Upsell
+        - NPS
+        - Gestão de Equipes
+        - Onboarding
+    - name: DataFlow Sistemas
+      url: https://www.dataflowsistemas.com.br
+      position: Customer Success Manager
+      startDate: Jan 10, 2018
+      endDate: Feb 28, 2021
+      summary: |
+        - Gerenciou uma carteira de 120 clientes B2B, com foco em retenção e crescimento.
+        - Conduziu análises de health score e implementou ações proativas para prevenir churn.
+        - Aumentou a receita de upsell em 30% por meio de identificação de oportunidades e negociação.
+        - Realizou treinamentos e webinars para promover a adoção do produto.
+        - Atuou como ponto de contato principal para escalonamentos e resolução de problemas.
+      keywords:
+        - CRM
+        - Customer Success
+        - Análise de Churn
+        - QBR
+    - name: ConectaCRM
+      url: https://www.conectacrm.com.br
+      position: Analista de Sucesso do Cliente
+      startDate: Jul 1, 2016
+      endDate: Dec 20, 2017
+      summary: |
+        - Prestou suporte a clientes na implementação e uso do software de CRM.
+        - Monitorou métricas de satisfação e elaborou relatórios para a liderança.
+        - Participou da criação de materiais de autoatendimento e base de conhecimento.
+        - Contribuiu para a redução do tempo médio de resposta em 35%.
+      keywords:
+        - Atendimento
+        - Suporte
+        - Salesforce
+        - Métricas
+  skills:
+    - name: Customer Success
+      level: Expert
+      keywords:
+        - Onboarding
+        - Retenção
+        - Expansão
+        - QBR
+        - NPS
+    - name: Ferramentas de CRM
+      level: Advanced
+      keywords:
+        - Salesforce
+        - HubSpot
+        - Gainsight
+        - Totango
+    - name: Análise de Dados
+      level: Advanced
+      keywords:
+        - Power BI
+        - Tableau
+        - Excel Avançado
+        - SQL
+    - name: Gestão de Projetos
+      level: Advanced
+      keywords:
+        - Agile
+        - Scrum
+        - Jira
+        - Trello
+    - name: Comunicação
+      level: Expert
+      keywords:
+        - Apresentações
+        - Negociação
+        - Escuta Ativa
+        - Feedback
+  languages:
+    - language: Portuguese
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - Nativo
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - TOEFL 105
+        - IELTS 7.5
+    - language: Spanish
+      fluency: Limited Working Proficiency
+      keywords:
+        - DELE B1
+  awards:
+    - title: Prêmio Excelência em Customer Success
+      date: Dec 2022
+      awarder: NuvemTech
+      summary: |
+        Reconhecimento anual concedido aos profissionais com melhor desempenho em retenção e satisfação de clientes.
+    - title: Top Performer Q3
+      date: Oct 2020
+      awarder: DataFlow Sistemas
+      summary: |
+        Destaque por superar metas de NPS e reduzir churn em 15% no trimestre.
+  certificates:
+    - name: Certified Customer Success Manager (CCSM)
+      issuer: SuccessCOACHING
+      date: Jun 2021
+      url: https://www.successcoaching.com/certifications
+    - name: Scrum Fundamentals Certified
+      issuer: SCRUMstudy
+      date: Aug 2019
+      url: https://www.scrumstudy.com/certifications
+  publications:
+    - name: Como reduzir churn com uma jornada de onboarding eficiente
+      publisher: Blog Customer Success Brasil
+      releaseDate: Mar 2023
+      url: https://www.customersuccessbrasil.com.br/blog/onboarding-eficiente
+      summary: |
+        Artigo sobre melhores práticas para estruturar o onboarding de clientes SaaS, aumentando a retenção e o tempo de vida útil.
+  projects:
+    - name: Programa de Customer Success Escalável
+      startDate: Jan 2022
+      endDate: Dec 2022
+      description: Implantação de um modelo escalável de CS para clientes de baixo touch.
+      summary: |
+        - Estruturou playbooks e automações para atendimento de mais de 1.000 clientes.
+        - Reduziu o tempo de resposta em 40% e aumentou o NPS em 12 pontos.
+        - Utilizou Gainsight para monitorar saúde do cliente e disparar ações proativas.
+      keywords:
+        - Escalabilidade
+        - Automação
+        - Gainsight
+      url: https://www.nuvemtech.com.br/cases/cs-escalavel
+    - name: Portal do Cliente 2.0
+      startDate: Mar 2019
+      endDate: Nov 2019
+      description: Redesenho do portal de autoatendimento para clientes B2B.
+      summary: |
+        - Conduziu pesquisa com usuários e priorizou funcionalidades com base em dados.
+        - Aumentou em 25% a adoção do portal e reduziu tickets de suporte em 18%.
+      keywords:
+        - UX
+        - Autoatendimento
+        - Feedback
+      url: https://www.dataflowsistemas.com.br/portal
+  interests:
+    - name: Voluntariado
+      keywords:
+        - Mentoria
+        - Educação
+        - ONGs
+    - name: Esportes
+      keywords:
+        - Corrida
+        - Ciclismo
+        - Natação
+    - name: Leitura
+      keywords:
+        - Negócios
+        - Biografias
+        - Tecnologia
+  volunteer:
+    - organization: Instituto Mente Ativa
+      url: https://www.institutomenteativa.org.br
+      position: Mentora de Carreira
+      startDate: Feb 2020
+      endDate: Dec 2023
+      summary: |
+        - Mentoria voluntária para jovens em início de carreira na área de negócios e tecnologia.
+        - Realização de workshops sobre comunicação, currículo e preparação para entrevistas.
+    - organization: Associação Brasileira de Customer Success
+      url: https://www.abcs.com.br
+      position: Membro do Comitê de Conteúdo
+      startDate: Jan 2023
+      summary: |
+        - Colaboração na curadoria de conteúdos e eventos para a comunidade de Customer Success.
+        - Participação em painéis e discussões sobre tendências do mercado.
+
+locale:
+  language: pt-br

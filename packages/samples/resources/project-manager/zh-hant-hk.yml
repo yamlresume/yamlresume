@@ -1,0 +1,230 @@
+content:
+  basics:
+    name: 陳嘉敏
+    headline: '資深項目經理 | 數碼轉型與產品交付'
+    phone: '+852 9123 4567'
+    email: chan.ka.man.pm@gmail.com
+    url: https://www.chan-ka-man.com
+    summary: |
+      資深項目經理，擁有超過 10 年資訊科技及數碼轉型項目管理經驗。擅長領導跨部門團隊，從需求分析、資源規劃到交付上線，確保項目按時、按預算及符合質量標準完成。
+
+      持有 PMP 及 PMI-ACP 專業認證，精通敏捷與傳統項目管理方法。曾成功交付多個超過港幣 2,000 萬的大型項目，涵蓋金融科技、電訊及客戶服務平台。
+
+      - 卓越的持份者管理及溝通能力
+      - 數據驅動的決策與風險管理
+      - 擅長推動變更管理及團隊賦能
+  location:
+    address: 香港九龍旺角彌敦道700號
+    city: 香港
+    region: 九龍
+    country: Hong Kong
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/chan-ka-man-pm
+      username: chan-ka-man-pm
+    - network: GitHub
+      url: https://github.com/chanpmhk
+      username: chanpmhk
+  education:
+    - institution: 香港科技大學
+      url: https://www.ust.hk
+      degree: Bachelor
+      area: 資訊系統與管理
+      score: '3.6'
+      startDate: '2010-09-01'
+      endDate: '2014-06-30'
+      courses:
+        - 資料庫管理系統
+        - 系統分析與設計
+        - 專案管理
+        - 企業資源規劃
+        - 商業智能
+        - 軟件工程
+      summary: |
+        - 主修資訊系統與管理，副修商業分析
+        - 曾獲院長嘉許名單
+        - 畢業專題為智慧城市交通管理系統
+  work:
+    - name: 香港電訊數碼有限公司
+      url: https://www.hkt.com
+      position: 高級項目經理
+      startDate: '2021-04-01'
+      summary: |
+        - 領導跨部門團隊交付多個大型數碼轉型項目，總預算超過港幣 2,000 萬
+        - 制定項目路線圖、資源分配及風險管理計劃，確保按時按預算交付
+        - 與產品、工程及業務團隊協作，推動敏捷開發流程及持續改進
+        - 建立項目績效指標及匯報機制，定期向管理層匯報進度
+        - 指導初級項目經理及項目協調員，提升團隊整體交付能力
+      keywords:
+        - 數碼轉型
+        - 敏捷開發
+        - 風險管理
+        - 持份者管理
+    - name: 新鴻基金融集團
+      url: https://www.shkf.com
+      position: 項目經理
+      startDate: '2018-07-01'
+      endDate: '2021-03-31'
+      summary: |
+        - 管理金融科技項目，包括網上銀行平台及流動支付系統
+        - 協調內部開發團隊與外部供應商，確保系統整合順利
+        - 主持需求收集工作坊，將業務需求轉化為技術規格
+        - 實施項目治理框架，降低項目延誤及超支風險
+      keywords:
+        - 金融科技
+        - 網上銀行
+        - 供應商管理
+        - 需求分析
+    - name: 電訊盈科有限公司
+      url: https://www.pccw.com
+      position: 助理項目經理
+      startDate: '2014-08-01'
+      endDate: '2018-06-30'
+      summary: |
+        - 協助管理客戶關係管理系統升級項目，涵蓋 10 個業務部門
+        - 負責項目文件、會議記錄及進度追蹤
+        - 參與用戶驗收測試及培訓安排
+        - 協調跨部門溝通，確保項目里程碑達成
+      keywords:
+        - CRM
+        - 用戶驗收測試
+        - 項目協調
+        - 培訓
+  skills:
+    - name: 項目管理
+      level: Expert
+      keywords:
+        - 敏捷開發
+        - Scrum
+        - 瀑布模型
+        - 風險管理
+        - 持份者管理
+        - 預算控制
+    - name: 數碼轉型
+      level: Advanced
+      keywords:
+        - 流程自動化
+        - 雲端遷移
+        - 數據分析
+        - 變更管理
+    - name: 工具
+      level: Advanced
+      keywords:
+        - Jira
+        - Confluence
+        - MS Project
+        - Trello
+        - Asana
+        - Power BI
+  languages:
+    - language: Cantonese
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - 母語
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - IELTS 7.5
+        - HKDSE English 5*
+    - language: Mandarin
+      fluency: Full Professional Proficiency
+      keywords:
+        - 普通話水平測試二級甲等
+    - language: Japanese
+      fluency: Elementary Proficiency
+      keywords:
+        - JLPT N4
+  awards:
+    - title: 年度傑出項目經理
+      awarder: 香港電訊數碼有限公司
+      date: '2023-12-01'
+      summary: |
+        表揚在數碼轉型項目中的卓越領導及交付表現，成功為公司節省 15% 營運成本。
+    - title: 最佳創新項目獎
+      awarder: 新鴻基金融集團
+      date: '2020-11-01'
+      summary: |
+        領導的流動支付項目獲得集團年度創新獎，用戶採用率超過 80%。
+  certificates:
+    - name: 專業項目管理師 (PMP)
+      issuer: Project Management Institute
+      date: '2019-06-01'
+      url: https://www.pmi.org/certifications/project-management-pmp
+    - name: 敏捷認證從業者 (PMI-ACP)
+      issuer: Project Management Institute
+      date: '2021-09-01'
+      url: https://www.pmi.org/certifications/agile-acp
+    - name: AWS Certified Cloud Practitioner
+      issuer: Amazon Web Services
+      date: '2022-03-01'
+      url: https://aws.amazon.com/certification/certified-cloud-practitioner/
+  publications:
+    - name: 香港企業數碼轉型的關鍵成功因素
+      publisher: 香港資訊科技期刊
+      releaseDate: '2023-05-01'
+      url: https://www.hkitjournal.com/digital-transformation-hk
+      summary: |
+        - 探討香港企業在數碼轉型過程中常見的挑戰與機遇
+        - 提出項目管理在轉型中的關鍵角色及最佳實踐
+        - 分析敏捷方法與傳統項目管理的混合應用
+  references:
+    - name: 李文傑博士
+      summary: |
+        陳嘉敏在任職期間展現卓越的項目領導能力，能有效協調跨部門團隊，並在多個關鍵項目中達成超預期成果。
+      email: mankit.lee@ust.hk
+      phone: '+852 9876 5432'
+      relationship: 香港科技大學資訊系統學系教授
+  projects:
+    - name: 智慧客戶服務平台
+      startDate: '2022-01-01'
+      endDate: '2022-12-31'
+      description: 為大型電訊商建立整合式客戶服務平台
+      summary: |
+        - 整合多渠道客服系統，包括電話、電郵、社交媒體及即時聊天
+        - 導入 AI 聊天機械人，處理 60% 常見查詢
+        - 項目提前兩週上線，客戶滿意度提升 25%
+      keywords:
+        - 客戶服務
+        - AI
+        - 系統整合
+      url: https://www.chan-ka-man.com/projects/smart-cs-platform
+    - name: 金融數據儀表板
+      startDate: '2019-03-01'
+      endDate: '2019-11-30'
+      description: 為金融集團管理層開發實時業務數據儀表板
+      summary: |
+        - 整合多個內部系統數據，提供即時關鍵績效指標
+        - 與業務分析師合作定義指標及可視化需求
+        - 採用敏捷疊代方式交付，每兩週發布新功能
+      keywords:
+        - 數據可視化
+        - Power BI
+        - KPI
+      url: https://www.chan-ka-man.com/projects/finance-dashboard
+  interests:
+    - name: 運動
+      keywords:
+        - 跑步
+        - 游泳
+        - 遠足
+    - name: 音樂
+      keywords:
+        - 鋼琴
+        - 爵士樂
+    - name: 志願服務
+      keywords:
+        - 青年 mentorship
+        - 社區服務
+  volunteer:
+    - organization: 香港青年協會
+      url: https://www.hkfyg.org.hk
+      position: 項目顧問
+      startDate: '2020-01-01'
+      endDate: '2023-12-31'
+      summary: |
+        - 為青年創業項目提供項目管理及商業策劃指導
+        - 協助舉辦創新創業比賽及工作坊
+        - 分享數碼轉型及職涯發展經驗
+
+locale:
+  language: zh-hant-hk

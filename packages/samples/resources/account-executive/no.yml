@@ -1,0 +1,192 @@
+content:
+  basics:
+    name: Ingrid Solberg
+    headline: Kundeansvarlig (Account Executive) med spesialisering i B2B-salg og
+      kundevekst
+    phone: "+47 912 34 567"
+    email: ingrid.solberg@example.no
+    url: https://www.ingridsolberg.no
+    summary: |
+      - Erfaren kundeansvarlig med dokumenterte resultater innen B2B-salg, SaaS og kundeutvikling
+      - Sterk på hele salgssyklusen fra prospecting og behovsanalyse til forhandling og kontrakt
+      - Systematisk og datadrevet tilnærming, med god forståelse for CRM, pipeline og prognoser
+      - Relasjonsbygger som skaper tillit hos beslutningstakere og samarbeider godt på tvers av fagmiljøer
+
+  location:
+    address: Karl Johans gate 15
+    city: Oslo
+    region: Oslo
+    country: Norway
+    postalCode: "0150"
+
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/ingridsolberg
+      username: ingridsolberg
+    - network: Twitter
+      url: https://twitter.com/ingridsolberg
+      username: ingridsolberg
+
+  education:
+    - institution: Handelshøyskolen BI
+      url: https://www.bi.no
+      degree: Bachelor
+      area: Markedsføring og salgsledelse
+      score: "3.9"
+      startDate: Aug 1, 2015
+      endDate: Jun 1, 2018
+      courses:
+        - Strategisk markedsføring
+        - Salgsledelse og forhandling
+        - Forretningsforståelse
+        - Digital markedsføring
+        - Kundeinnsikt og analyse
+        - Prosjektledelse
+      summary: |
+        - Fordypning i B2B-salg, kundeadferd og kommersiell strategi
+        - Gjennomførte flere caseoppgaver med fokus på vekst og lønnsomhet
+        - Utviklet sterke ferdigheter i presentasjonsteknikk og forhandling
+
+  work:
+    - name: Nordisk Sky AS
+      url: https://www.nordisksky.no
+      position: Senior kundeansvarlig (Account Executive)
+      startDate: Jan 1, 2022
+      summary: |
+        - Forvalter og utvikler en portefølje av mellomstore og store kunder innen SaaS
+        - Leder komplekse salgsprosesser fra første kontakt til signert avtale
+        - Oppnådde 132 % av kvartalsvis salgsmål i 2023 og 118 % i 2024
+        - Bygger og vedlikeholder en sunn pipeline med høy prognosenøyaktighet
+        - Samarbeider tett med customer success, produkt og marked for å sikre verdi
+      keywords:
+        - B2B SaaS
+        - Salgsstrategi
+        - Forhandling
+        - Pipeline
+    - name: Vekstpartner AS
+      url: https://www.vekstpartner.no
+      position: Kundeansvarlig (Account Executive)
+      startDate: Aug 1, 2018
+      endDate: Dec 1, 2021
+      summary: |
+        - Ansvarlig for nykundesalg og videreutvikling av eksisterende kunder
+        - Gjennomførte behovsanalyser og presenterte skreddersydde løsninger
+        - Bygde opp et nettverk av beslutningstakere i norsk næringsliv
+        - Bidro til å øke omsetningen i segmentet med 27 % over tre år
+      keywords:
+        - Nykundesalg
+        - Kundeutvikling
+        - Behovsanalyse
+        - CRM
+
+  skills:
+    - name: Salg og forretningsutvikling
+      level: Expert
+      keywords:
+        - B2B-salg
+        - Salgsstrategi
+        - Forhandling
+        - Pipeline
+        - Prognoser
+    - name: CRM og verktøy
+      level: Advanced
+      keywords:
+        - Salesforce
+        - HubSpot
+        - LinkedIn Sales Nav
+        - Excel
+        - Power BI
+    - name: Kommunikasjon og relasjoner
+      level: Expert
+      keywords:
+        - Presentasjon
+        - Kundeinnsikt
+        - Relasjonsbygging
+        - Tverrfaglig
+    - name: Språk
+      level: Advanced
+      keywords:
+        - Norsk
+        - Engelsk
+        - Skandinavisk
+
+  languages:
+    - language: Norwegian
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - Morsmål
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - Forretningsflyt
+    - language: German
+      fluency: Limited Working Proficiency
+      keywords:
+        - Grunnleggende
+
+  awards:
+    - title: Årets Salgstalent
+      date: Nov 1, 2020
+      awarder: Vekstpartner AS
+      summary: |
+        - Tildelt for fremragende resultater og evne til å bygge varige kunderelasjoner
+        - Anerkjent for høy aktivitet og systematisk oppfølging av salgsmuligheter
+
+  certificates:
+    - name: Sertifisert salgsprofesjonell
+      issuer: Norsk Salgsforening
+      date: Mar 1, 2021
+      url: https://www.salgsforeningen.no/sertifisering
+    - name: HubSpot-sertifisering for salg
+      issuer: HubSpot
+      date: Sep 1, 2022
+      url: https://academy.hubspot.com/courses/sales-software
+
+  publications:
+    - name: Slik lykkes du med datadrevet B2B-salg
+      publisher: Salgsmagasinet
+      releaseDate: Apr 1, 2023
+      url: https://www.salgsmagasinet.no/artikler/datadrevet-b2b-salg
+      summary: |
+        - Praktiske råd om bruk av CRM-data for å prioritere riktige kunder
+        - Hvordan bygge en forutsigbar salgspipeline i SaaS-selskaper
+
+  projects:
+    - name: Salgspipeline 2.0
+      url: https://www.nordisksky.no/pipeline
+      startDate: Feb 1, 2023
+      endDate: Aug 1, 2023
+      description: Prosjekt for å forbedre salgsprosessen og øke konverteringsraten
+      summary: |
+        - Kartla og forenklet salgsfasene i CRM
+        - Innførte nye kvalifiseringskriterier og oppfølgingsrutiner
+        - Økte konverteringsraten fra kvalifisert lead til møte med 18 %
+      keywords:
+        - Salgsprosess
+        - CRM
+        - Konvertering
+
+  interests:
+    - name: Friluftsliv
+      keywords:
+        - Fjellturer
+        - Ski
+        - Kajakk
+    - name: Samfunn
+      keywords:
+        - Entreprenørskap
+        - Bærekraft
+
+  volunteer:
+    - organization: Ungt Entreprenørskap Oslo
+      url: https://www.ue.no
+      position: Mentor
+      startDate: Sep 1, 2019
+      endDate: Jun 1, 2023
+      summary: |
+        - Veiledet elever i videregående skole gjennom ungdomsbedrift
+        - Bidro med råd om salg, markedsføring og forretningsmodell
+        - Inspirerte unge til å utforske entreprenørskap og næringsliv
+
+locale:
+  language: no

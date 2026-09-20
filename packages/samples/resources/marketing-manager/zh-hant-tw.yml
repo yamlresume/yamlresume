@@ -1,0 +1,249 @@
+content:
+  basics:
+    name: 林雅婷
+    headline: 資深行銷經理 | 品牌策略與數位成長
+    phone: '+886 912 345 678'
+    email: yating.lin@example.com
+    url: https://www.yatinglin.com
+    summary: |
+      - 超過 8 年行銷經驗，專注品牌策略、數位成長與全通路行銷，擅長以數據驅動決策。
+      - 曾帶領 6 人團隊管理新台幣 8,000 萬元年度預算，帶動電商營收年增 35%。
+      - 熟悉 Google Analytics 4、Meta Ads、CRM 與行銷自動化，具備跨部門協作與專案管理能力。
+      - 擁有國際交換與跨文化溝通經驗，能以中、英、日語與不同市場團隊合作。
+  location:
+    address: 臺北市信義區松高路 88 號 12 樓
+    city: 臺北市
+    region: 臺北市
+    country: Taiwan
+    postalCode: "110"
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/yating-lin-marketing
+      username: yating-lin-marketing
+    - network: Medium
+      url: https://medium.com/@yating.marketing
+      username: yating.marketing
+    - network: Instagram
+      url: https://www.instagram.com/yating.marketing
+      username: yating.marketing
+  education:
+    - institution: 國立臺灣大學
+      url: https://www.ntu.edu.tw/
+      degree: Master
+      area: 企業管理研究所
+      score: "4.1/4.3"
+      startDate: Sep 1, 2016
+      endDate: Jun 30, 2018
+      courses:
+        - 行銷管理
+        - 消費者行為
+        - 品牌策略
+        - 數位行銷分析
+        - 市場研究
+        - 策略管理
+      summary: |
+        - 專攻品牌管理與數位行銷，論文探討社群媒體對消費者購買意願的影響
+        - 擔任行銷研究助理，協助企業進行市場調查與數據分析
+        - 獲選為商學院國際交換學生，赴荷蘭鹿特丹管理學院進修一學期
+    - institution: 國立政治大學
+      url: https://www.nccu.edu.tw/
+      degree: Bachelor
+      area: 廣告學系
+      score: "3.9/4.0"
+      startDate: Sep 1, 2012
+      endDate: Jun 30, 2016
+      courses:
+        - 廣告理論
+        - 公關策略
+        - 媒體規劃
+        - 行銷學
+        - 統計學
+        - 創意策略
+      summary: |
+        - 奠定廣告、公關與整合行銷傳播的理論基礎
+        - 畢業專題以「行動支付品牌年輕化策略」獲得系上最佳專題獎
+        - 主辦校園行銷營，吸引超過 200 位學生參與
+  work:
+    - name: 富邦媒體科技股份有限公司
+      url: https://www.momoshop.com.tw/
+      position: 資深行銷經理
+      startDate: Mar 1, 2021
+      summary: |
+        - 負責台灣與東南亞市場的品牌策略、數位廣告與會員成長，管理年度行銷預算新台幣 8,000 萬元
+        - 帶領 6 人行銷團隊，規劃並執行全通路 campaign，帶動電商營收年增 35%
+        - 建立數據驅動的行銷決策流程，整合 Google Analytics、Meta Ads 與 CRM，提升 ROAS 至 4.8
+        - 主導品牌重塑專案，重新定位品牌訊息與視覺識別，使品牌好感度提升 22%
+        - 與產品、業務及數據團隊跨部門協作，推動個人化推薦與自動化行銷
+      keywords:
+        - 品牌策略
+        - 數位廣告
+        - 會員成長
+        - 數據分析
+        - 團隊領導
+        - 全通路行銷
+    - name: 奧美整合行銷傳播集團
+      url: https://www.ogilvy.com/tw
+      position: 行銷經理
+      startDate: Jul 1, 2018
+      endDate: Feb 28, 2021
+      summary: |
+        - 服務科技、金融與快速消費品客戶，負責整合行銷傳播策略與專案管理
+        - 規劃社群媒體內容與 KOL 合作，單一 campaign 觸及超過 500 萬人次
+        - 管理客戶關係與提案簡報，成功爭取 3 個新客戶，年度合約金額成長 40%
+        - 分析市場趨勢與競品動態，提供客戶即時的策略建議
+      keywords:
+        - 整合行銷
+        - 社群媒體
+        - KOL 合作
+        - 客戶管理
+        - 提案簡報
+    - name: 台灣樂天市場股份有限公司
+      url: https://www.rakuten.com.tw/
+      position: 行銷專員
+      startDate: Jul 1, 2016
+      endDate: Jun 30, 2018
+      summary: |
+        - 執行電子報、EDM 與站內促銷活動，提升活躍會員數 18%
+        - 協助規劃年度檔期活動，包含雙 11、週年慶與品牌日
+        - 運用 Google Analytics 追蹤流量與轉換，優化 landing page 成效
+      keywords:
+        - 電商行銷
+        - EDM
+        - 促銷活動
+        - Google Analytics
+  skills:
+    - name: 數位行銷
+      level: Expert
+      keywords:
+        - SEO
+        - SEM
+        - Google Ads
+        - Meta Ads
+        - Google Analytics 4
+        - LINE 官方帳號
+    - name: 品牌與內容策略
+      level: Advanced
+      keywords:
+        - 品牌定位
+        - 內容行銷
+        - 社群經營
+        - 公關溝通
+        - 文案撰寫
+    - name: 數據分析與 CRM
+      level: Advanced
+      keywords:
+        - Looker Studio
+        - SQL
+        - CRM
+        - A/B Testing
+        - 行銷自動化
+    - name: 專案與團隊管理
+      level: Expert
+      keywords:
+        - 跨部門協作
+        - 預算管理
+        - 敏捷開發
+        - 領導激勵
+        - 供應商管理
+  languages:
+    - language: Mandarin
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - 母語
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - TOEIC 950
+        - 國際交換經驗
+    - language: Japanese
+      fluency: Limited Working Proficiency
+      keywords:
+        - JLPT N3
+  awards:
+    - title: 年度最佳行銷專案獎
+      date: Dec 2023
+      awarder: 台灣數位行銷協會
+      summary: |
+        以「全通路會員成長計畫」榮獲年度最佳行銷專案獎，該專案在 12 個月內提升會員回購率 28%。
+    - title: 傑出學生論文獎
+      date: Jun 2018
+      awarder: 國立臺灣大學管理學院
+      summary: |
+        碩士論文《社群媒體內容對消費者購買意願之影響》獲選為傑出學生論文。
+  certificates:
+    - name: Google Analytics 4 Certification
+      issuer: Google
+      date: Mar 2023
+      url: https://skillshop.exceedlms.com/student/catalog
+    - name: Meta Certified Digital Marketing Associate
+      issuer: Meta
+      date: Aug 2022
+      url: https://www.facebook.com/business/learn/certification
+    - name: 行銷自動化專家認證
+      issuer: HubSpot Academy
+      date: Jan 2021
+      url: https://academy.hubspot.com/
+  publications:
+    - name: 從數據到決策：零售品牌的全通路行銷實踐
+      publisher: 商業周刊
+      releaseDate: Nov 2023
+      url: https://www.businessweekly.com.tw/
+      summary: |
+        分享如何整合線上與線下數據，建立可衡量的全通路行銷策略，並以實際案例說明會員成長與營收提升的關鍵。
+  projects:
+    - name: 品牌年輕化再造計畫
+      url: https://www.yatinglin.com/projects/brand-revamp
+      description: 為台灣知名零售品牌重新定位，吸引 18-35 歲年輕客群。
+      startDate: Jan 2022
+      endDate: Dec 2022
+      summary: |
+        - 進行消費者洞察與競品分析，重新定義品牌核心訊息與視覺風格
+        - 規劃社群挑戰賽、KOL 合作與線下快閃店，創造 1,200 萬次社群曝光
+        - 專案結束後，品牌在目標客群中的知名度提升 30%
+      keywords:
+        - 品牌定位
+        - 年輕化
+        - 社群行銷
+        - 消費者洞察
+    - name: 會員忠誠度提升計畫
+      url: https://www.yatinglin.com/projects/loyalty-program
+      description: 運用 CRM 數據與自動化行銷，提升會員回購率與終身價值。
+      startDate: Mar 2023
+      endDate: Nov 2023
+      summary: |
+        - 建立分群模型，針對不同消費週期設計個人化優惠與內容
+        - 導入自動化 Email 與 LINE 訊息，開信率提升 45%
+        - 會員回購率在 9 個月內成長 28%，帶動營收增加新台幣 3,200 萬元
+      keywords:
+        - CRM
+        - 自動化行銷
+        - 會員經營
+        - 數據分析
+  interests:
+    - name: 藝文與設計
+      keywords:
+        - 當代藝術
+        - 平面設計
+        - 攝影
+    - name: 戶外活動
+      keywords:
+        - 登山
+        - 馬拉松
+        - 單車
+    - name: 閱讀與寫作
+      keywords:
+        - 商業書寫
+        - 行銷趨勢
+        - 專欄投稿
+  volunteer:
+    - organization: 台灣行銷傳播專業認證協會
+      position: 志工講師
+      startDate: Mar 2020
+      endDate: Dec 2023
+      summary: |
+        - 擔任行銷認證課程志工講師，分享數位行銷與品牌策略實務
+        - 協助協會舉辦產業論壇與學生工作坊，累計參與者超過 500 人
+        - 參與偏鄉數位行銷教育計畫，協助在地小農建立社群媒體行銷能力
+
+locale:
+  language: zh-hant-tw

@@ -1,0 +1,227 @@
+content:
+  basics:
+    name: Lucía Fernández Gómez
+    headline: Customer Success Manager | Especialista en Retención y Crecimiento de
+      Clientes
+    phone: "+34 612 345 678"
+    email: lucia.fernandez@example.com
+    url: https://www.luciafernandez.es
+    summary: |
+      Customer Success Manager con más de 8 años de experiencia en empresas SaaS y tecnología, enfocada en la retención, adopción y crecimiento de clientes estratégicos.
+
+      - Gestión de carteras de clientes B2B con un NPS superior a 70 y una tasa de retención del 95%.
+      - Implementación de programas de onboarding que reducen el time-to-value en un 30%.
+      - Colaboración estrecha con Ventas, Producto y Soporte para identificar oportunidades de upselling y cross-selling.
+      - Comunicación bilingüe (español nativo, inglés profesional) y orientación a resultados.
+  location:
+    address: Calle de Serrano 45
+    city: Madrid
+    region: Comunidad de Madrid
+    country: Spain
+    postalCode: "28001"
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/lucia-fernandez-csm
+      username: lucia-fernandez-csm
+    - network: Twitter
+      url: https://twitter.com/lucia_csm
+      username: lucia_csm
+  education:
+    - institution: Universidad Complutense de Madrid
+      url: https://www.ucm.es
+      degree: Bachelor
+      area: Administración y Dirección de Empresas
+      score: "8.5"
+      startDate: Sep 1, 2012
+      endDate: Jul 1, 2016
+      courses:
+        - Fundamentos de Marketing
+        - Comportamiento Organizacional
+        - Gestión de Recursos Humanos
+        - Contabilidad Financiera
+        - Estadística Aplicada a la Empresa
+        - Sistemas de Información para la Gestión
+        - Negociación y Habilidades Directivas
+        - Estrategia Empresarial
+      summary: |
+        - Formación sólida en gestión empresarial, análisis financiero y estrategia comercial.
+        - Participación en programas de intercambio y proyectos de consultoría para pymes.
+        - Desarrollo de habilidades de comunicación, liderazgo y trabajo en equipo.
+  work:
+    - name: Nexo Cloud Solutions
+      url: https://www.nexocloud.es
+      position: Senior Customer Success Manager
+      startDate: Jan 1, 2021
+      summary: |
+        - Responsable de una cartera de 45 clientes enterprise con un valor anual contratado (ACV) de 4,5 M€.
+        - Diseñé y ejecuté el plan de éxito del cliente, logrando un aumento del 25% en la adopción de producto y una reducción del churn del 18%.
+        - Lideré revisiones trimestrales (QBR) con directivos, alineando métricas de negocio con el valor entregado.
+        - Identifiqué oportunidades de expansión por 1,2 M€ mediante análisis de uso y colaboración con el equipo de Ventas.
+        - Mentoría a dos Customer Success Managers junior, mejorando sus índices de satisfacción y retención.
+      keywords:
+        - Retención de clientes
+        - Onboarding
+        - QBR
+        - Upselling
+        - SaaS
+        - CRM
+    - name: DataVista Analytics
+      url: https://www.datavista.es
+      position: Customer Success Manager
+      startDate: Mar 1, 2018
+      endDate: Dec 1, 2020
+      summary: |
+        - Gestioné una cartera de 80 clientes pyme y mid-market en el sector de analítica de datos.
+        - Implementé un programa de onboarding automatizado que redujo el tiempo de activación de 30 a 21 días.
+        - Aumenté el NPS de 45 a 68 en 18 meses mediante seguimiento proactivo y resolución de incidencias.
+        - Colaboré con Producto en la priorización de funcionalidades solicitadas por clientes clave.
+        - Realicé formaciones periódicas y webinars para fomentar la adopción de nuevas funcionalidades.
+      keywords:
+        - Analítica de datos
+        - NPS
+        - Onboarding
+        - Formación
+        - Pyme
+    - name: Soluciones Ágiles
+      url: https://www.solucionesagiles.com
+      position: Customer Support Specialist
+      startDate: Sep 1, 2016
+      endDate: Feb 1, 2018
+      summary: |
+        - Atendí solicitudes de soporte técnico y funcional de más de 200 clientes corporativos.
+        - Resolví incidencias con un índice de satisfacción del 92% y un tiempo medio de respuesta inferior a 2 horas.
+        - Documenté procedimientos y creé una base de conocimiento que redujo las consultas repetitivas en un 35%.
+        - Coordiné escalados con los equipos de Ingeniería y Producto para la resolución de bugs críticos.
+      keywords:
+        - Soporte técnico
+        - Base de conocimiento
+        - SLA
+        - Escalado
+  skills:
+    - name: Gestión de Customer Success
+      level: Expert
+      keywords:
+        - Retención
+        - Onboarding
+        - QBR
+        - Planes de éxito
+        - Renovaciones
+    - name: Herramientas CRM
+      level: Advanced
+      keywords:
+        - Salesforce
+        - HubSpot
+        - Gainsight
+        - Zendesk
+    - name: Análisis de Datos
+      level: Advanced
+      keywords:
+        - Excel
+        - SQL
+        - Tableau
+        - KPIs
+    - name: Comunicación y Liderazgo
+      level: Expert
+      keywords:
+        - Presentaciones
+        - Negociación
+        - Mentoría
+        - Trabajo en equipo
+  languages:
+    - language: Spanish
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - Español nativo
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - C1
+        - TOEIC 950
+    - language: French
+      fluency: Elementary Proficiency
+      keywords:
+        - A2
+  awards:
+    - title: Premio a la Excelencia en Customer Success
+      awarder: Nexo Cloud Solutions
+      date: Dec 2023
+      summary: |
+        Reconocimiento anual por lograr la mayor tasa de retención y satisfacción de clientes en la compañía.
+    - title: Innovación en Procesos de Onboarding
+      awarder: DataVista Analytics
+      date: Jun 2020
+      summary: |
+        Galardón por el diseño e implementación de un programa de onboarding que mejoró el time-to-value en un 30%.
+  certificates:
+    - name: Certified Customer Success Manager (CCSM)
+      issuer: SuccessCOACHING
+      date: Mar 2021
+      url: https://www.successcoaching.com/certifications
+    - name: Salesforce Certified Administrator
+      issuer: Salesforce
+      date: Sep 2019
+      url: https://trailhead.salesforce.com/certifications
+  publications:
+    - name: Estrategias de retención en SaaS B2B
+      publisher: Revista Customer Success España
+      releaseDate: May 2022
+      url: https://www.revistacustomersuccess.es/articulos/retencion-saas-b2b
+      summary: |
+        - Artículo sobre las mejores prácticas para reducir el churn en empresas de software como servicio.
+        - Incluye casos de éxito y métricas clave para medir el impacto de Customer Success.
+  projects:
+    - name: Programa de Onboarding 2.0
+      startDate: Jan 2022
+      endDate: Jun 2022
+      url: https://www.nexocloud.es/onboarding
+      description: Rediseño del proceso de incorporación de clientes para acelerar la
+        adopción y el valor.
+      summary: |
+        - Reestructuré las fases de onboarding con hitos medibles y materiales personalizados por sector.
+        - Integré el programa con el CRM para automatizar seguimientos y alertas tempranas.
+        - Resultado: reducción del tiempo de activación en un 30% y aumento del 20% en la adopción de funciones clave.
+      keywords:
+        - Onboarding
+        - Automatización
+        - Adopción
+    - name: Dashboard de Salud del Cliente
+      startDate: Mar 2021
+      endDate: Sep 2021
+      url: https://www.nexocloud.es/dashboard-salud
+      description: Panel interno para monitorizar el riesgo de churn y las
+        oportunidades de expansión.
+      summary: |
+        - Definí métricas de salud del cliente (uso, tickets, NPS, facturación) y umbrales de alerta.
+        - Desarrollé informes automatizados en Tableau para el equipo de Customer Success.
+        - Permitiió priorizar acciones proactivas y evitar renovaciones en riesgo.
+      keywords:
+        - Churn
+        - KPIs
+        - Tableau
+  interests:
+    - name: Tecnología
+      keywords:
+        - SaaS
+        - Inteligencia artificial
+        - No-code
+    - name: Sostenibilidad
+      keywords:
+        - Economía circular
+        - Voluntariado ambiental
+    - name: Bienestar
+      keywords:
+        - Yoga
+        - Meditación
+        - Running
+  volunteer:
+    - organization: Asociación Española de Customer Success
+      url: https://www.aecs.es
+      position: Mentor de Customer Success
+      startDate: Sep 2021
+      summary: |
+        - Ejercí como mentora de profesionales junior en la definición de planes de carrera y mejora de habilidades de gestión de clientes.
+        - Participé en jornadas y talleres sobre retención, onboarding y métricas de éxito del cliente.
+        - Colaboré en la creación de una guía de buenas prácticas para equipos de Customer Success en España.
+
+locale:
+  language: es

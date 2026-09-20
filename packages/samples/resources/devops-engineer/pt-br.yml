@@ -1,0 +1,281 @@
+content:
+  basics:
+    name: Rafael Nogueira Almeida
+    headline: Engenheiro DevOps Sênior | Cloud, Kubernetes e Platform Engineering
+    phone: '+55 11 98765-4321'
+    email: rafael.nogueira.almeida@outlook.com
+    url: https://www.rafaelalmeida.dev
+    summary: |
+      Engenheiro DevOps com mais de 8 anos de experiência em nuvem, automação de infraestrutura e plataformas de entrega contínua.
+
+      - Especialista em Kubernetes, Terraform e AWS, com foco em confiabilidade, escalabilidade e eficiência de custos
+      - Reduzi em 70% o tempo de provisionamento de ambientes e em 60% o lead time de deploy em times de produto
+      - Vivência em práticas SRE, definição de SLOs, resposta a incidentes e cultura de pós-mortem sem culpa
+      - Atuação em mentoria, documentação técnica e disseminação de boas práticas de Platform Engineering
+
+  location:
+    address: Rua Tabapuã, 1234, Apto 82 - Itaim Bibi
+    city: São Paulo
+    region: São Paulo
+    country: Brazil
+    postalCode: '04533-003'
+
+  profiles:
+    - network: GitHub
+      url: https://github.com/rafaelnalmeida
+      username: rafaelnalmeida
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/rafael-almeida-devops
+      username: rafael-almeida-devops
+    - network: Gitlab
+      url: https://gitlab.com/rafaelnalmeida
+      username: rafaelnalmeida
+
+  education:
+    - institution: Universidade Estadual de Campinas
+      url: https://www.unicamp.br
+      degree: Bachelor
+      area: Engenharia de Computação
+      score: '8.4/10'
+      startDate: Mar 1, 2013
+      endDate: Dec 15, 2017
+      courses:
+        - Sistemas Operacionais
+        - Redes de Computadores
+        - Sistemas Distribuídos
+        - Banco de Dados
+        - Engenharia de Software
+        - Segurança da Informação
+        - Computação em Nuvem
+      summary: |
+        - Base sólida em sistemas distribuídos, redes e administração de sistemas Linux
+        - Projeto de conclusão sobre orquestração de contêineres e escalabilidade horizontal de serviços
+        - Monitoria voluntária na disciplina de Sistemas Operacionais
+    - institution: FIAP - Faculdade de Informática e Administração Paulista
+      url: https://www.fiap.com.br
+      degree: Diploma
+      area: Arquitetura de Soluções em Cloud Computing
+      startDate: Feb 1, 2021
+      endDate: Nov 30, 2022
+      summary: |
+        - Pós-graduação lato sensu com foco em arquitetura de nuvem, multi-cloud e governança
+        - Trabalho final sobre plataformas internas de autoatendimento para times de engenharia
+
+  work:
+    - name: Nuvem Viva Tecnologia
+      url: https://www.nuvemviva.com.br
+      position: Engenheiro DevOps Sênior
+      startDate: Mar 1, 2022
+      summary: |
+        - Lidero a modernização da plataforma de microsserviços em Kubernetes (Amazon EKS), atendendo mais de 40 squads de produto
+        - Estruturei a infraestrutura como código com Terraform e Terragrunt, reduzindo em 70% o tempo de provisionamento de novos ambientes
+        - Implementei pipelines de entrega contínua com GitLab CI e Argo CD, diminuindo o lead time de deploy de 2 dias para 40 minutos
+        - Defini SLOs, alertas e runbooks em Prometheus e Grafana, reduzindo o MTTR de incidentes críticos em 55%
+        - Conduzi iniciativas de FinOps que geraram economia anual de R$ 1,2 milhão em custos de nuvem
+        - Mentorei 5 engenheiros e engenheiras em práticas SRE, segurança de contêineres e análise de incidentes
+      keywords:
+        - Kubernetes
+        - Terraform
+        - AWS
+        - SRE
+        - FinOps
+    - name: PagFácil Pagamentos
+      url: https://www.pagfacil.com.br
+      position: Engenheiro DevOps
+      startDate: Jan 6, 2020
+      endDate: Feb 25, 2022
+      summary: |
+        - Migrei cargas monolíticas para contêineres Docker orquestrados em Kubernetes, elevando a disponibilidade de 99,5% para 99,95%
+        - Automatizei o provisionamento de servidores com Ansible e Packer, eliminando tarefas manuais repetitivas de operação
+        - Implementei a stack de observabilidade com ELK e Datadog, cobrindo 100% dos serviços críticos de pagamento
+        - Introduzi gestão de segredos com Vault e políticas de menor privilégio alinhadas ao PCI DSS
+        - Atuei em plantões on-call e na resposta a incidentes em ambiente de alto volume transacional
+      keywords:
+        - CI/CD
+        - Docker
+        - Jenkins
+        - Observabilidade
+        - Vault
+    - name: Sistemas Origem Consultoria
+      position: Analista de Infraestrutura e Automação
+      startDate: Jul 1, 2017
+      endDate: Dec 20, 2019
+      summary: |
+        - Administrei ambientes Linux (Debian e RHEL) e clusters de virtualização VMware para clientes de médio porte
+        - Desenvolvi scripts em Python e Bash para automação de backups, monitoramento e deploys
+        - Configurei balanceadores Nginx, certificados TLS e VPNs site-to-site entre unidades dos clientes
+        - Documentei procedimentos operacionais e treinei equipes de suporte de primeiro e segundo nível
+      keywords:
+        - Linux
+        - Ansible
+        - Virtualização
+        - Scripts
+        - Nginx
+
+  languages:
+    - language: Portuguese
+      fluency: Native or Bilingual Proficiency
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - TOEFL iBT 108
+        - Reuniões técnicas diárias
+    - language: Spanish
+      fluency: Limited Working Proficiency
+      keywords:
+        - Leitura de documentação
+
+  skills:
+    - name: Cloud & Infraestrutura como Código
+      level: Expert
+      keywords:
+        - AWS
+        - Azure
+        - Terraform
+        - Terragrunt
+        - Ansible
+        - Packer
+    - name: Contêineres & Orquestração
+      level: Expert
+      keywords:
+        - Docker
+        - Kubernetes
+        - Helm
+        - Argo CD
+        - Istio
+    - name: CI/CD & Automação
+      level: Advanced
+      keywords:
+        - GitLab CI
+        - GitHub Actions
+        - Jenkins
+        - Python
+        - Bash
+    - name: Observabilidade & SRE
+      level: Advanced
+      keywords:
+        - Prometheus
+        - Grafana
+        - Datadog
+        - OpenTelemetry
+        - ELK
+    - name: Segurança & Conformidade
+      level: Intermediate
+      keywords:
+        - Vault
+        - IAM
+        - Trivy
+        - PCI DSS
+        - LGPD
+
+  awards:
+    - title: Prêmio Inovação Interna - Plataforma de Autoatendimento
+      date: Dec 2023
+      awarder: Nuvem Viva Tecnologia
+      summary: |
+        Reconhecimento pelo desenvolvimento da plataforma interna de provisionamento de ambientes, que reduziu em 70% o tempo de entrega de infraestrutura para as squads de produto.
+    - title: Destaque Técnico do Ano
+      date: Jan 2021
+      awarder: PagFácil Pagamentos
+      summary: |
+        Premiação anual concedida aos profissionais de maior impacto técnico, pela liderança da migração para contêineres e pela melhoria dos indicadores de disponibilidade da plataforma de pagamentos.
+
+  certificates:
+    - name: AWS Certified Solutions Architect - Professional
+      issuer: Amazon Web Services
+      date: Mar 10, 2023
+      url: https://aws.amazon.com/certification/
+    - name: Certified Kubernetes Administrator (CKA)
+      issuer: Cloud Native Computing Foundation
+      date: Jul 22, 2022
+      url: https://www.cncf.io/certifications/cka/
+    - name: 'HashiCorp Certified: Terraform Associate'
+      issuer: HashiCorp
+      date: Nov 15, 2021
+      url: https://www.hashicorp.com/certifications/terraform-associate
+
+  publications:
+    - name: Escalando clusters Kubernetes com Karpenter no Amazon EKS
+      publisher: Blog Técnico Nuvem Viva
+      releaseDate: Aug 14, 2023
+      url: https://medium.com/@rafaelnalmeida/escalando-clusters-kubernetes-com-karpenter-no-amazon-eks-9f1c2b7a4d13
+      summary: |
+        - Artigo técnico sobre provisionamento dinâmico de nós e redução de custos em clusters EKS
+        - Comparativo entre Cluster Autoscaler e Karpenter em cargas de trabalho variáveis
+        - Apresenta resultados reais com economia de 30% em custos de computação
+
+  projects:
+    - name: Plataforma de Autoatendimento de Infraestrutura
+      url: https://github.com/rafaelnalmeida/plataforma-autoatendimento
+      description: Plataforma interna que permite às squads provisionar ambientes
+        completos por meio de pull requests.
+      startDate: Mar 1, 2023
+      endDate: Nov 30, 2023
+      summary: |
+        - Construída com Backstage, Terraform, Argo CD e Kubernetes em modelo GitOps
+        - Reduziu de 3 dias para 25 minutos o tempo de criação de ambientes de homologação
+        - Adotada por 32 squads, com mais de 400 ambientes provisionados no primeiro semestre
+      keywords:
+        - Backstage
+        - Terraform
+        - Argo CD
+        - Kubernetes
+        - GitOps
+    - name: Observabilidade para Pagamentos em Tempo Real
+      description: Stack de métricas, logs e traces para monitorar transações críticas
+        24 horas por dia.
+      startDate: Feb 1, 2021
+      endDate: Oct 15, 2021
+      summary: |
+        - Instrumentação de serviços com OpenTelemetry e correlação de traces ponta a ponta
+        - Dashboards e alertas baseados em SLOs de latência e taxa de erro
+        - Redução de 55% no tempo médio de diagnóstico de falhas em produção
+      keywords:
+        - OpenTelemetry
+        - Grafana
+        - Datadog
+        - SLO
+
+  interests:
+    - name: Esportes
+      keywords:
+        - Corrida de rua
+        - Ciclismo
+        - Natação
+    - name: Comunidade Técnica
+      keywords:
+        - Palestras
+        - Open Source
+        - Mentoria
+    - name: Música
+      keywords:
+        - Guitarra
+        - Vinis
+
+  volunteer:
+    - organization: DevOpsDays São Paulo
+      url: https://devopsdays.org/sao-paulo
+      position: Voluntário na Organização
+      startDate: Mar 1, 2019
+      endDate: Nov 30, 2023
+      summary: |
+        - Participei da organização de edições do DevOpsDays São Paulo, apoiando curadoria de palestras e logística do evento
+        - Ministrei workshops introdutórios de Kubernetes e Terraform para mais de 200 participantes
+        - Atuei como mentor em programas de entrada de novos profissionais nas áreas de DevOps e SRE
+
+  references:
+    - name: Camila Ferreira dos Santos
+      relationship: Gerente de Plataforma na Nuvem Viva Tecnologia
+      email: camila.santos@nuvemviva.com.br
+      phone: '+55 11 97654-3210'
+      summary: |
+        Rafael é referência técnica em Kubernetes e Terraform no time. Conduz iniciativas complexas com autonomia, comunica-se bem com áreas de produto e eleva o nível técnico de quem trabalha ao seu lado.
+    - name: Eduardo Nakamura
+      relationship: Diretor de Engenharia na PagFácil Pagamentos
+      email: eduardo.nakamura@pagfacil.com.br
+      phone: '+55 11 96543-2109'
+      summary: |
+        Durante dois anos, Rafael foi responsável por nossa plataforma de entrega contínua. Sua atuação reduziu drasticamente o tempo de deploy e trouxe uma cultura de confiabilidade que permanece até hoje.
+
+locale:
+  language: pt-br

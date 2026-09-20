@@ -1,0 +1,260 @@
+content:
+  basics:
+    name: Sanne de Vries
+    headline: Customer Success Manager | SaaS | Klantgerichte strategie
+    phone: "+31 6 1234 5678"
+    email: sanne.devries@example.com
+    url: https://www.sannedevries.nl
+    summary: |
+      Customer Success Manager met 6+ jaar ervaring in SaaS en technologie. Ik help klanten hun doelen te bereiken door middel van datagedreven onboarding, proactieve relatiebeheer en continue waardecreatie.
+
+      - Verantwoordelijk voor een portfolio van 40+ zakelijke klanten met een jaarlijkse omzet van €2,5 miljoen
+      - Gerealiseerd klantbehoud van 95% en Net Promoter Score (NPS) van 72
+      - Sterk in het vertalen van klantbehoeften naar concrete oplossingen en het opschalen van succesprocessen
+      - Ervaren in het samenwerken met Sales, Product en Support om churn te verlagen en upsell-kansen te benutten
+
+  location:
+    address: Keizersgracht 123
+    city: Amsterdam
+    region: Noord-Holland
+    country: Netherlands
+    postalCode: "1015 CJ"
+
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/sannedevries
+      username: sannedevries
+    - network: Twitter
+      url: https://twitter.com/sannedevries
+      username: sannedevries
+
+  education:
+    - institution: Universiteit van Amsterdam
+      url: https://www.uva.nl
+      degree: Master
+      area: Bedrijfskunde
+      score: "8.2"
+      startDate: Sep 1, 2016
+      endDate: Jul 1, 2018
+      courses:
+        - Strategisch Management
+        - Marketingmanagement
+        - Organisatiegedrag
+        - Business Analytics
+        - Duurzaam Ondernemen
+        - Innovatiemanagement
+      summary: |
+        - Afstudeerrichting: Strategie en Innovatie
+        - Thesis over klantretentie in SaaS-organisaties
+        - Actief in studievereniging en organisatie van carrière-evenementen
+
+    - institution: Hogeschool van Amsterdam
+      url: https://www.hva.nl
+      degree: Bachelor
+      area: Commerciële Economie
+      score: "7.8"
+      startDate: Sep 1, 2012
+      endDate: Jul 1, 2016
+      courses:
+        - Marketingcommunicatie
+        - Salesmanagement
+        - Marktonderzoek
+        - Bedrijfseconomie
+        - Projectmanagement
+        - Internationale Handel
+      summary: |
+        - Minor in International Business aan de Universiteit van Valencia
+        - Stage bij een marketingbureau in Amsterdam
+        - Ontwikkelde basis in commerciële vaardigheden en klantgericht werken
+
+  work:
+    - name: CloudWise B.V.
+      url: https://www.cloudwise.nl
+      position: Senior Customer Success Manager
+      startDate: Mar 1, 2021
+      summary: |
+        - Verantwoordelijk voor strategisch klantbeheer van enterprise-klanten in de Benelux
+        - Ontwikkelde en implementeerde een proactief succesplan dat leidde tot 20% minder churn
+        - Leidde kwartaalgesprekken met klanten om waarde te tonen en upsell-kansen te identificeren
+        - Samenwerking met Product om klantfeedback om te zetten in roadmap-prioriteiten
+        - Mentor voor twee junior Customer Success Managers
+      keywords:
+        - Klantbehoud
+        - Onboarding
+        - SaaS
+        - Upsell
+        - Enterprise
+
+    - name: Nexus Software
+      url: https://www.nexussoftware.nl
+      position: Customer Success Manager
+      startDate: Jan 1, 2019
+      endDate: Feb 28, 2021
+      summary: |
+        - Beheerde een portfolio van 60+ MKB-klanten in diverse sectoren
+        - Verantwoordelijk voor onboarding, training en adoptie van het SaaS-platform
+        - Realiseerde een gemiddelde klanttevredenheid van 4,7/5 en een retentie van 92%
+        - Ontwikkelde selfservice-onboardingmateriaal dat de time-to-value met 30% verkortte
+        - Signaleerde en escaleerde technische issues naar Support en Engineering
+      keywords:
+        - Relatiebeheer
+        - CRM
+        - Retentie
+        - Onboarding
+        - MKB
+
+    - name: DataFlow Solutions
+      url: https://www.dataflowsolutions.nl
+      position: Account Manager
+      startDate: Jun 1, 2018
+      endDate: Dec 31, 2018
+      summary: |
+        - Onderhield contact met bestaande klanten en identificeerde commerciële kansen
+        - Verzorgde contractverlengingen en onderhandelde over tarieven
+        - Werkte samen met het Customer Success-team om klantvragen snel op te lossen
+        - Droeg bij aan een omzetgroei van 12% binnen het toegewezen portfolio
+      keywords:
+        - Accountbeheer
+        - Contractverlenging
+        - Commercie
+        - Klantcontact
+
+  skills:
+    - name: Klantrelatiebeheer
+      level: Expert
+      keywords:
+        - CRM
+        - Salesforce
+        - Klantreis
+        - Retentie
+        - Klantbehoud
+    - name: Data-analyse
+      level: Advanced
+      keywords:
+        - Excel
+        - Tableau
+        - SQL
+        - KPI-rapportages
+        - Datavisualisatie
+    - name: Projectmanagement
+      level: Advanced
+      keywords:
+        - Agile
+        - Scrum
+        - Jira
+        - Stakeholdermanagement
+    - name: Communicatie
+      level: Expert
+      keywords:
+        - Presenteren
+        - Onderhandelen
+        - Feedback
+        - Luisteren
+    - name: SaaS-platformen
+      level: Expert
+      keywords:
+        - Onboarding
+        - Adoptie
+        - Klantgezondheid
+        - Churnpreventie
+    - name: Leiderschap
+      level: Advanced
+      keywords:
+        - Mentoring
+        - Teamcoaching
+        - Kennisoverdracht
+
+  languages:
+    - language: Dutch
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - Moedertaal
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - C1
+    - language: German
+      fluency: Limited Working Proficiency
+      keywords:
+        - B1
+
+  awards:
+    - title: Beste Klanttevredenheidsscore
+      awarder: CloudWise B.V.
+      date: Dec 2023
+      summary: |
+        Toegekend vanwege de hoogste Net Promoter Score en klanttevredenheid binnen het Customer Success-team in 2023.
+    - title: Toppresteerder 2020
+      awarder: Nexus Software
+      date: Dec 2020
+      summary: |
+        Jaarlijkse prijs voor buitengewone bijdrage aan klantbehoud en omzetgroei.
+
+  certificates:
+    - name: Certified Customer Success Manager (CCSM)
+      issuer: SuccessCOACHING
+      date: May 2022
+      url: https://www.successcoaching.com
+    - name: Salesforce Certified Administrator
+      issuer: Salesforce
+      date: Jan 2021
+      url: https://trailhead.salesforce.com
+
+  publications:
+    - name: De impact van customer success op SaaS-retentie
+      publisher: Tijdschrift voor Marketing
+      releaseDate: Oct 2022
+      url: https://www.tijdschriftvoormarketing.nl/artikelen/customer-success-retentie
+      summary: |
+        - Onderzoek naar de relatie tussen proactief klantcontact en retentie in SaaS
+        - Bespreekt best practices voor onboarding en customer health scoring
+        - Gepresenteerd tijdens het SaaS Congres Amsterdam
+
+  projects:
+    - name: Klantonboarding 2.0
+      url: https://www.cloudwise.nl/onboarding
+      description: Herontwerp van het onboardingtraject voor nieuwe SaaS-klanten
+      startDate: Jan 2023
+      endDate: Jun 2023
+      summary: |
+        - Analyse van bestaande onboardingflow en klantfeedback
+        - Implementatie van geautomatiseerde welkomstserie en interactieve handleidingen
+        - Verkorting van time-to-value met 35% en verhoging van eerste-maands adoptie
+      keywords:
+        - Onboarding
+        - SaaS
+        - Automatisering
+        - Klantreis
+
+  interests:
+    - name: Sport
+      keywords:
+        - Hardlopen
+        - Yoga
+        - Wielrennen
+    - name: Muziek
+      keywords:
+        - Piano
+        - Concerten
+    - name: Reizen
+      keywords:
+        - Azië
+        - Zuid-Amerika
+        - Stedentrips
+    - name: Vrijwilligerswerk
+      keywords:
+        - Mentoring
+        - Buurtinitiatieven
+
+  volunteer:
+    - organization: Stichting Amsterdam Cares
+      url: https://www.amsterdamcares.nl
+      position: Mentor
+      startDate: Sep 2019
+      summary: |
+        - Begeleid jongeren bij het ontwikkelen van professionele vaardigheden
+        - Verzorgd workshops over solliciteren en netwerken
+        - Draagt bij aan een inclusieve arbeidsmarkt in Amsterdam
+
+locale:
+  language: nl

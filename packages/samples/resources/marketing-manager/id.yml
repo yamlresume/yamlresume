@@ -1,0 +1,231 @@
+content:
+  basics:
+    name: Dewi Anggraini
+    headline: Manajer Pemasaran dengan pengalaman 8+ tahun dalam strategi digital
+      dan manajemen merek.
+    phone: "+62 812-3456-7890"
+    email: dewi.anggraini@email.com
+    url: https://www.dewianggraini.com
+    summary: |
+      - Manajer Pemasaran dengan pengalaman lebih dari 8 tahun di industri ritel dan teknologi, terbukti meningkatkan pendapatan melalui strategi omni-channel.
+      - Ahli dalam pemasaran digital, riset pasar, dan manajemen merek; memimpin tim lintas fungsi untuk kampanye yang berdampak.
+      - Terbiasa bekerja dengan data untuk mengoptimalkan ROI, serta membangun hubungan kuat dengan mitra dan pelanggan.
+  location:
+    address: Jl. Jenderal Sudirman No. 45, SCBD
+    city: Jakarta
+    region: DKI Jakarta
+    country: Indonesia
+    postalCode: "12190"
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/dewianggraini
+      username: dewianggraini
+    - network: Twitter
+      url: https://twitter.com/dewianggraini
+      username: dewianggraini
+    - network: Instagram
+      url: https://www.instagram.com/dewianggraini
+      username: dewianggraini
+  education:
+    - institution: Universitas Indonesia
+      url: https://www.ui.ac.id
+      degree: Bachelor
+      area: Ilmu Komunikasi
+      score: "3.75"
+      startDate: Sep 1, 2010
+      endDate: Jul 1, 2014
+      courses:
+        - Manajemen Pemasaran
+        - Perilaku Konsumen
+        - Riset Pemasaran
+        - Komunikasi Massa
+        - Public Relations
+        - Strategi Branding
+        - Periklanan
+        - Statistik Sosial
+      summary: |
+        - Lulus dengan predikat cum laude, aktif dalam organisasi kemahasiswaan dan kompetisi pemasaran.
+        - Mengembangkan keterampilan analitis dan kreatif melalui proyek kampanye sosial dan bisnis.
+        - Menjadi asisten dosen untuk mata kuliah Riset Pemasaran selama satu semester.
+  work:
+    - name: PT Maju Bersama
+      url: https://www.majubersama.co.id
+      position: Manajer Pemasaran
+      startDate: Jan 1, 2020
+      summary: |
+        - Memimpin tim pemasaran 12 orang, mengelola anggaran tahunan Rp15 miliar, dan meningkatkan pendapatan 35% YoY.
+        - Merancang dan mengeksekusi strategi omni-channel (digital, offline, CRM) yang meningkatkan akuisisi pelanggan 40%.
+        - Mengembangkan kampanye brand awareness yang meraih 3 penghargaan industri dan meningkatkan brand recall 25%.
+        - Menganalisis data pasar dan kompetitor untuk mengidentifikasi peluang baru serta mengoptimalkan bauran pemasaran.
+        - Membangun kemitraan strategis dengan influencer dan media, menghasilkan liputan senilai Rp2 miliar.
+      keywords:
+        - Strategi Pemasaran
+        - Omni-channel
+        - Manajemen Anggaran
+        - Brand Awareness
+        - CRM
+        - Analitik Pemasaran
+        - Kepemimpinan Tim
+    - name: PT Kreatif Digital
+      url: https://www.kreatifdigital.com
+      position: Asisten Manajer Pemasaran
+      startDate: Mar 1, 2016
+      endDate: Dec 1, 2019
+      summary: |
+        - Mengelola kampanye digital untuk 20+ klien, dengan rata-rata peningkatan ROI 150%.
+        - Mengoptimalkan SEO/SEM dan media sosial, meningkatkan traffic organik 200% dalam 18 bulan.
+        - Menyusun laporan kinerja bulanan dan memberikan rekomendasi berbasis data kepada manajemen.
+        - Berkolaborasi dengan tim kreatif dan teknologi untuk meluncurkan situs web dan aplikasi mobile.
+      keywords:
+        - Digital Marketing
+        - SEO
+        - SEM
+        - Media Sosial
+        - Google Analytics
+        - Content Marketing
+        - ROI
+  skills:
+    - name: Pemasaran Digital
+      level: Expert
+      keywords:
+        - SEO/SEM
+        - Media Sosial
+        - Email Marketing
+        - Content Strategy
+        - Google Ads
+        - Meta Ads
+        - Analytics
+    - name: Manajemen Merek
+      level: Advanced
+      keywords:
+        - Brand Strategy
+        - Positioning
+        - Consumer Insight
+        - Kampanye Integratif
+        - Public Relations
+    - name: Analitik & Riset
+      level: Advanced
+      keywords:
+        - Google Analytics
+        - Tableau
+        - SPSS
+        - A/B Testing
+        - Riset Pasar
+        - Segmentasi
+    - name: Kepemimpinan
+      level: Expert
+      keywords:
+        - Manajemen Tim
+        - Mentoring
+        - Presentasi
+        - Negosiasi
+        - Manajemen Proyek
+  languages:
+    - language: Indonesian
+      fluency: Native or Bilingual Proficiency
+      keywords: []
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - TOEFL 110
+        - IELTS 8.0
+  awards:
+    - title: Marketer of the Year 2022
+      date: Dec 2022
+      awarder: Asosiasi Pemasaran Indonesia
+      summary: |
+        Diberikan kepada manajer pemasaran yang menunjukkan inovasi luar biasa dalam kampanye digital dan kontribusi signifikan terhadap pertumbuhan industri.
+    - title: Best Digital Campaign
+      date: Nov 2021
+      awarder: Digital Marketing Awards
+      summary: |
+        Menghargai kampanye #BanggaLokal yang berhasil meningkatkan keterlibatan pelanggan sebesar 300% dan penjualan 50% dalam 6 bulan.
+  certificates:
+    - name: Google Digital Marketing & E-commerce Professional Certificate
+      issuer: Google
+      date: May 2022
+      url: https://www.coursera.org/professional-certificates/google-digital-marketing-ecommerce
+    - name: HubSpot Content Marketing Certification
+      issuer: HubSpot Academy
+      date: Aug 2021
+      url: https://academy.hubspot.com/courses/content-marketing
+    - name: Meta Certified Digital Marketing Associate
+      issuer: Meta
+      date: Feb 2023
+      url: https://www.facebook.com/business/learn/certification
+  publications:
+    - name: "Tren Pemasaran Digital di Indonesia 2023: Strategi Omni-channel untuk
+        UMKM"
+      publisher: Jurnal Pemasaran Indonesia
+      releaseDate: Jun 2023
+      url: https://www.jurnalpemasaran.id/artikel/tren-2023
+      summary: |
+        - Menganalisis adopsi strategi omni-channel oleh UMKM di Indonesia.
+        - Menyajikan studi kasus dari 50 bisnis yang berhasil meningkatkan pendapatan melalui integrasi digital dan offline.
+        - Merekomendasikan kerangka kerja untuk pemasaran yang berkelanjutan dan berbasis data.
+  projects:
+    - name: 'Kampanye #BanggaLokal'
+      startDate: Jan 2022
+      endDate: Dec 2022
+      url: https://www.banggalokal.id
+      description: Kampanye pemasaran terintegrasi untuk mendorong konsumsi produk lokal.
+      summary: |
+        - Merancang dan memimpin kampanye multi-channel yang melibatkan 100+ influencer dan 50 media nasional.
+        - Meningkatkan penjualan produk lokal sebesar 50% dan engagement media sosial 300%.
+        - Meraih penghargaan Best Digital Campaign 2021 dan menjadi studi kasus di universitas.
+      keywords:
+        - Kampanye Integratif
+        - Influencer Marketing
+        - Media Sosial
+        - Brand Lokal
+    - name: Peluncuran Aplikasi Mobile BelanjaMudah
+      startDate: Mar 2021
+      endDate: Sep 2021
+      url: https://www.belanjamudah.id
+      description: Peluncuran aplikasi belanja online untuk pasar Indonesia.
+      summary: |
+        - Mengoordinasikan tim pemasaran, produk, dan teknologi untuk peluncuran aplikasi.
+        - Mencapai 100.000 unduhan dalam 3 bulan pertama melalui strategi user acquisition.
+        - Mengelola anggaran peluncuran Rp5 miliar dengan ROI 200%.
+      keywords:
+        - Product Launch
+        - User Acquisition
+        - Mobile Marketing
+        - ROI
+  interests:
+    - name: Fotografi
+      keywords:
+        - Street Photography
+        - Portrait
+        - Landscape
+    - name: Membaca
+      keywords:
+        - Buku Bisnis
+        - Fiksi
+        - Sejarah
+    - name: Olahraga
+      keywords:
+        - Yoga
+        - Berlari
+        - Bersepeda
+  volunteer:
+    - organization: Yayasan Pendidikan Anak Indonesia
+      url: https://www.ypai.org
+      position: Relawan Pemasaran
+      startDate: Feb 2019
+      endDate: Dec 2021
+      summary: |
+        - Membantu mengembangkan strategi pemasaran digital untuk meningkatkan donasi dan kesadaran publik.
+        - Mengelola kampanye media sosial yang berhasil mengumpulkan dana Rp500 juta untuk beasiswa anak kurang mampu.
+        - Melatih staf yayasan dalam penggunaan alat digital untuk komunikasi dan penggalangan dana.
+    - organization: Komunitas Pemasaran Jakarta
+      url: https://www.marketingjakarta.org
+      position: Koordinator Acara
+      startDate: Jan 2018
+      endDate: Jan 2020
+      summary: |
+        - Mengorganisir seminar dan workshop bulanan untuk 200+ profesional pemasaran.
+        - Menghubungkan pembicara ahli dan sponsor untuk mendukung pengembangan karier anggota.
+
+locale:
+  language: id

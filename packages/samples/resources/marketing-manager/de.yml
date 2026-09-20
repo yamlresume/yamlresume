@@ -1,0 +1,221 @@
+content:
+  basics:
+    name: Julia Schneider
+    headline: Marketing Manager | Digitale Kampagnen & Markenstrategie
+    phone: "+49 30 12345678"
+    email: julia.schneider@example.de
+    url: https://www.juliaschneider-marketing.de
+    summary: |
+      Marketing Manager mit über 8 Jahren Erfahrung in der Entwicklung und Umsetzung datengetriebener Marketingstrategien. Spezialisiert auf digitale Kampagnen, Markenführung und Lead-Generierung im B2B- und B2C-Umfeld.
+
+      - Erfolgreiche Steuerung von Marketingbudgets bis 1,5 Mio. €
+      - Führung interdisziplinärer Teams von bis zu 8 Mitarbeitenden
+      - Ausgeprägte analytische Fähigkeiten und Erfahrung mit CRM- und Marketing-Automation-Tools
+      - Kreative Denkweise mit starkem Fokus auf messbare Ergebnisse und ROI
+  location:
+    address: Friedrichstraße 123
+    city: Berlin
+    region: Berlin
+    country: Germany
+    postalCode: "10117"
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/julia-schneider-marketing
+      username: julia-schneider-marketing
+    - network: Twitter
+      url: https://twitter.com/julia_marketing
+      username: julia_marketing
+  education:
+    - institution: Freie Universität Berlin
+      url: https://www.fu-berlin.de
+      degree: Master
+      area: Betriebswirtschaftslehre mit Schwerpunkt Marketing
+      score: "1,7"
+      startDate: Oct 1, 2014
+      endDate: Sep 30, 2016
+      courses:
+        - Strategisches Marketing
+        - Konsumentenverhalten
+        - Marktforschung
+        - Digitales Marketing
+        - Internationales Management
+        - Kommunikationspolitik
+      summary: |
+        - Vertiefung in marktorientierter Unternehmensführung und digitalen Geschäftsmodellen
+        - Masterarbeit zum Thema "Einfluss von Social Media auf die Markenloyalität"
+        - Praktika bei einer Werbeagentur und einem E-Commerce-Unternehmen
+  work:
+    - name: TechNova GmbH
+      url: https://www.technova.de
+      position: Marketing Manager
+      startDate: Jan 1, 2020
+      summary: |
+        - Entwicklung und Umsetzung der ganzheitlichen Marketingstrategie für den DACH-Raum
+        - Steuerung eines jährlichen Budgets von 1,5 Mio. € über alle digitalen und Offline-Kanäle
+        - Führung eines Teams von 6 Marketing-Spezialisten (Content, Performance, Design)
+        - Einführung eines Marketing-Automation-Systems (HubSpot) und Steigerung der qualifizierten Leads um 45 %
+        - Enge Zusammenarbeit mit Produktmanagement und Vertrieb zur Markteinführung neuer Produkte
+      keywords:
+        - Digitale Kampagnen
+        - Markenstrategie
+        - Lead-Generierung
+        - Budgetplanung
+        - Teamführung
+        - Marketing-Automation
+    - name: GreenWave AG
+      url: https://www.greenwave.de
+      position: Senior Marketing Specialist
+      startDate: Mar 1, 2017
+      endDate: Dec 31, 2019
+      summary: |
+        - Konzeption und Durchführung von Multi-Channel-Kampagnen zur Steigerung der Markenbekanntheit
+        - Verantwortung für SEO/SEM-Maßnahmen und Steigerung des organischen Traffics um 60 %
+        - Aufbau und Betreuung des Content-Marketings inkl. Blog, Whitepaper und Social Media
+        - Analyse von Kampagnenkennzahlen und Ableitung von Optimierungsmaßnahmen
+      keywords:
+        - SEO
+        - SEM
+        - Content-Marketing
+        - Social Media
+        - Kampagnenmanagement
+    - name: StartUp Labs
+      url: https://www.startuplabs.de
+      position: Marketing Assistant
+      startDate: Jul 1, 2016
+      endDate: Feb 28, 2017
+      summary: |
+        - Unterstützung bei der Erstellung von Marketingmaterialien und Präsentationen
+        - Pflege der Social-Media-Kanäle und Erstellung von Grafiken mit Canva
+        - Mithilfe bei der Organisation von Events und Messen
+        - Erste Erfahrungen in der Auswertung von Google Analytics
+      keywords:
+        - Social Media
+        - Event-Marketing
+        - Content-Erstellung
+  skills:
+    - name: Marketingstrategie
+      level: Expert
+      keywords:
+        - Markenpositionierung
+        - Zielgruppenanalyse
+        - Wettbewerbsanalyse
+        - Marketingplanung
+    - name: Digitale Kanäle
+      level: Advanced
+      keywords:
+        - Google Ads
+        - Meta Ads
+        - LinkedIn Ads
+        - SEO
+        - E-Mail-Marketing
+    - name: Analytik & Tools
+      level: Advanced
+      keywords:
+        - Google Analytics 4
+        - HubSpot
+        - Salesforce
+        - Tableau
+        - A/B-Testing
+    - name: Führung & Kommunikation
+      level: Advanced
+      keywords:
+        - Teamleitung
+        - Projektmanagement
+        - Stakeholder
+        - Präsentation
+  languages:
+    - language: German
+      fluency: Native or Bilingual Proficiency
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - C1
+        - Business English
+    - language: French
+      fluency: Limited Working Proficiency
+      keywords:
+        - A2
+  awards:
+    - title: Marketing Manager des Jahres
+      awarder: Deutscher Marketing Verband
+      date: Nov 2022
+      summary: |
+        Auszeichnung für herausragende Leistungen in der strategischen Marketingführung und nachweisbare Steigerung der Markenbekanntheit.
+    - title: Best Digital Campaign
+      awarder: European Marketing Awards
+      date: May 2021
+      summary: |
+        Prämierung der Kampagne "TechNova Future" für Kreativität, Innovation und messbaren ROI.
+  certificates:
+    - name: Google Ads Zertifizierung
+      issuer: Google
+      date: Mar 2021
+      url: https://ads.google.com/certification
+    - name: HubSpot Inbound Marketing Zertifizierung
+      issuer: HubSpot Academy
+      date: Jun 2020
+      url: https://academy.hubspot.com
+  publications:
+    - name: Die Zukunft des datengetriebenen Marketings
+      publisher: Marketing Journal
+      releaseDate: Apr 2023
+      url: https://www.marketingjournal.de
+      summary: |
+        Fachartikel über die Bedeutung von Datenanalyse und KI für personalisierte Marketingstrategien.
+    - name: Nachhaltige Markenführung
+      publisher: Springer Gabler
+      releaseDate: Sep 2022
+      url: https://www.springer.com
+      summary: |
+        Buchkapitel über die Integration von Nachhaltigkeit in die Markenpositionierung.
+  projects:
+    - name: Markenrelaunch TechNova
+      url: https://www.technova.de/markenrelaunch
+      description: Neupositionierung der Marke TechNova für den europäischen Markt
+      startDate: Jan 2021
+      endDate: Dec 2021
+      summary: |
+        - Entwicklung eines neuen Markenleitbilds und visuellen Erscheinungsbilds
+        - Umsetzung einer integrierten Kampagne über Social Media, PR und Events
+        - Steigerung der Markenbekanntheit um 35 % innerhalb von 12 Monaten
+      keywords:
+        - Markenrelaunch
+        - Positionierung
+        - Integrierte Kampagne
+    - name: B2B Lead-Funnel
+      url: https://www.technova.de/lead-funnel
+      description: Aufbau eines automatisierten B2B-Lead-Funnels
+      startDate: Mar 2022
+      endDate: Nov 2022
+      summary: |
+        - Konzeption und Implementierung von Content-Angeboten für jede Funnel-Phase
+        - Nutzung von LinkedIn Ads und E-Mail-Nurturing zur Lead-Qualifizierung
+        - Erhöhung der Conversion-Rate um 28 %
+      keywords:
+        - Lead-Generierung
+        - B2B
+        - Marketing-Automation
+  interests:
+    - name: Sport
+      keywords:
+        - Laufen
+        - Yoga
+        - Radfahren
+    - name: Kultur
+      keywords:
+        - Fotografie
+        - Reisen
+        - Literatur
+  volunteer:
+    - organization: Marketing für Non-Profit e.V.
+      url: https://www.marketing-nonprofit.de
+      position: Ehrenamtliche Marketingleitung
+      startDate: Jan 2018
+      endDate: Dec 2020
+      summary: |
+        - Entwicklung und Umsetzung der Online-Marketingstrategie für ein soziales Projekt
+        - Betreuung der Website und Social-Media-Kanäle
+        - Organisation von Spendenkampagnen mit einem Spendenvolumen von über 50.000 €
+
+locale:
+  language: de

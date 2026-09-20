@@ -1,0 +1,197 @@
+content:
+  basics:
+    name: 佐藤 美咲
+    headline: 法人SaaS営業のアカウントエグゼクティブ
+    phone: '+81 90-1234-5678'
+    email: misaki.sato@example.co.jp
+    url: https://misaki-sato.example.com
+    summary: |
+      - 法人向けSaaS営業で7年以上の経験を持つアカウントエグゼクティブ
+      - エンタープライズ企業を中心に、新規開拓からクロージング、顧客成功まで一貫して担当
+      - 年間売上目標を120%達成し、複数回の最優秀営業賞を受賞
+      - データに基づく商談設計と、経営層との関係構築を得意とする
+  location:
+    address: 東京都千代田区丸の内1-1-1
+    city: 千代田区
+    region: 東京都
+    country: Japan
+    postalCode: "100-0005"
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/misaki-sato
+      username: misaki-sato
+    - network: Twitter
+      url: https://twitter.com/misaki_sato_sales
+      username: misaki_sato_sales
+  education:
+    - institution: 慶應義塾大学
+      url: https://www.keio.ac.jp/
+      degree: Bachelor
+      area: 経済学部経済学科
+      score: "3.7"
+      startDate: Apr 1, 2014
+      endDate: Mar 31, 2018
+      courses:
+        - マーケティング論
+        - 消費者行動論
+        - 企業戦略論
+        - 会計学
+        - 統計学
+        - 交渉学
+        - ビジネス英語
+        - 組織行動論
+      summary: |
+        - 経済学と経営学を中心に、市場分析と企業戦略の基礎を修得
+        - ゼミではB2Bマーケティングを研究し、企業への提案を実施
+        - 交換留学で英語によるディスカッションとプレゼンテーションを経験
+  work:
+    - name: 株式会社クラウドセールス
+      url: https://www.cloudsales.example.co.jp
+      position: シニアアカウントエグゼクティブ
+      startDate: Apr 1, 2021
+      summary: |
+        - エンタープライズ向けSaaSの新規開拓営業を担当し、年間売上目標を120%達成
+        - 経営層への提案からPoC、契約交渉までをリードし、大型案件を複数成約
+        - 顧客成功チームと連携し、オンボーディングとアップセルを推進
+        - 若手営業のメンターとして商談スキル向上を支援
+      keywords:
+        - SaaS
+        - 法人営業
+        - エンタープライズ
+        - 新規開拓
+        - クロージング
+        - 顧客成功
+    - name: 株式会社データブリッジ
+      url: https://www.databridge.example.co.jp
+      position: アカウントエグゼクティブ
+      startDate: Apr 1, 2018
+      endDate: Mar 31, 2021
+      summary: |
+        - 中堅・中小企業向けにデータ分析ツールの営業を担当
+        - インサイドセールスとフィールドセールスを兼任し、商談数を3倍に拡大
+        - CRMを活用したパイプライン管理と営業プロセスの改善を推進
+        - 顧客の課題ヒアリングに基づく提案で、解約率を15%削減
+      keywords:
+        - データ分析
+        - CRM
+        - パイプライン管理
+        - 提案営業
+        - 課題解決
+  skills:
+    - name: 法人営業
+      level: Expert
+      keywords:
+        - 新規開拓
+        - 商談設計
+        - クロージング
+        - 顧客関係構築
+        - アップセル
+    - name: SaaSソリューション
+      level: Advanced
+      keywords:
+        - Salesforce
+        - HubSpot
+        - KPI管理
+        - データ分析
+        - 提案資料作成
+    - name: プレゼンテーション
+      level: Advanced
+      keywords:
+        - 経営層向け提案
+        - デモ
+        - 交渉
+        - ファシリテーション
+    - name: プロジェクトマネジメント
+      level: Intermediate
+      keywords:
+        - ステークホルダー管理
+        - スケジュール管理
+        - リスク管理
+  languages:
+    - language: Japanese
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - ビジネス日本語
+        - 母国語
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - TOEIC 950
+        - ビジネス交渉
+    - language: Chinese
+      fluency: Limited Working Proficiency
+      keywords:
+        - HSK 4級
+        - 日常会話
+  awards:
+    - title: 年間最優秀営業賞
+      date: Dec 2023
+      awarder: 株式会社クラウドセールス
+      summary: |
+        年間売上目標を120%達成し、新規顧客獲得数が全社1位。エンタープライズ案件の成約額でも最高記録を更新。
+    - title: 四半期MVP
+      date: Jun 2022
+      awarder: 株式会社クラウドセールス
+      summary: |
+        第2四半期において、パイプライン創出額と成約率が全営業部門でトップ。
+  certificates:
+    - name: Salesforce認定アドミニストレーター
+      issuer: Salesforce
+      date: Jun 2022
+      url: https://trailhead.salesforce.com/credentials/administrator
+    - name: 'TOEIC Listening & Reading 950'
+      issuer: IIBC
+      date: Nov 2020
+      url: https://www.iibc-global.org/english/toeic.html
+  publications:
+    - name: 法人SaaS営業における顧客成功指標の設計
+      publisher: 日本セールス研究ジャーナル
+      releaseDate: Aug 2022
+      url: https://example.com/journal/sales-cs
+      summary: |
+        - 顧客成功指標と営業KPIの連携方法を提案
+        - 解約率低下とアップセル率向上の実践事例を分析
+  references:
+    - name: 田中 一郎
+      phone: '+81 3-1234-5678'
+      relationship: 株式会社クラウドセールス 営業部長
+      email: ichiro.tanaka@cloudsales.example.co.jp
+      summary: |
+        佐藤美咲は卓越した営業スキルと顧客志向を持ち、組織に大きな貢献をもたらしました。どんなチームでも即戦力として活躍できる人材です。
+  projects:
+    - name: エンタープライズ向けCRM導入プロジェクト
+      url: https://www.cloudsales.example.co.jp/projects/crm
+      description: 大手製造業向けにCRMを導入し、営業プロセスを標準化するプロジェクト
+      startDate: Jan 2023
+      endDate: Aug 2023
+      summary: |
+        - 顧客の営業部門と連携し、要件定義から運用定着までをリード
+        - 導入後に商談サイクルを30%短縮し、受注率を15%向上
+        - チェンジマネジメントを推進し、現場の利用率を90%以上に向上
+      keywords:
+        - CRM
+        - 要件定義
+        - チェンジマネジメント
+        - 営業プロセス
+  interests:
+    - name: スポーツ
+      keywords:
+        - テニス
+        - ランニング
+        - 登山
+    - name: 読書
+      keywords:
+        - ビジネス書
+        - 歴史小説
+        - 経済学
+  volunteer:
+    - organization: 一般社団法人次世代リーダー育成協会
+      url: https://example.org/next-leaders
+      position: メンター
+      startDate: Apr 1, 2022
+      summary: |
+        - 大学生向けに営業スキルとキャリア形成のワークショップを開催
+        - 年間10回のメンタリングセッションを担当
+
+locale:
+  language: ja

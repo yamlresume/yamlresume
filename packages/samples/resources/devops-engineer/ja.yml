@@ -1,0 +1,286 @@
+content:
+  basics:
+    name: 佐藤 健太
+    headline: 'シニアDevOpsエンジニア | クラウドインフラストラクチャスペシャリスト'
+    phone: "+81 90-1234-5678"
+    email: kenta.sato@example.jp
+    url: https://kenta-sato.dev/
+    summary: |
+      - クラウドインフラとDevOpsの設計・運用で8年以上の経験を持つエンジニア
+      - AWS、Kubernetes、Terraformを活用したスケーラブルなシステム構築が得意
+      - CI/CD、監視、セキュリティ、SREプラクティスを通じて開発生産性と信頼性を向上
+      - チームリーダーとして後進の指導と組織横断的な自動化推進を経験
+      - 海外チームとの連携や技術コミュニティでの登壇・執筆活動も積極的
+
+  location:
+    address: 東京都渋谷区神南1-2-3
+    city: 渋谷区
+    region: 東京都
+    country: Japan
+    postalCode: "150-0041"
+
+  profiles:
+    - network: GitHub
+      url: https://github.com/kenta-sato-devops
+      username: kenta-sato-devops
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/kenta-sato-devops
+      username: kenta-sato-devops
+    - network: Twitter
+      url: https://twitter.com/kenta_devops
+      username: kenta_devops
+
+  education:
+    - institution: 東京工業大学
+      url: https://www.titech.ac.jp/
+      degree: Bachelor
+      area: 情報工学
+      score: '3.7/4.0'
+      startDate: 2012-04-01
+      endDate: 2016-03-31
+      courses:
+        - オペレーティングシステム
+        - コンピュータネットワーク
+        - データベースシステム
+        - 分散システム
+        - クラウドコンピューティング
+        - 情報セキュリティ
+        - アルゴリズムとデータ構造
+      summary: |
+        - 情報工学を専攻し、システム開発とネットワークの基礎を習得
+        - 分散システムとクラウドコンピューティングの研究に従事
+        - 卒業研究ではKubernetesを用いたマイクロサービス基盤の性能評価を実施
+
+  work:
+    - name: 株式会社クラウドネクサス
+      url: https://www.cloudnexus.co.jp/
+      position: シニアDevOpsエンジニア
+      startDate: 2021-04-01
+      summary: |
+        - AWSとKubernetesを中心としたクラウドインフラの設計・運用を主導
+        - TerraformによるIaCを推進し、インフラ構築時間を70%削減
+        - GitHub ActionsとArgo CDを用いたCI/CDパイプラインを構築
+        - PrometheusとGrafanaによる監視体制を整備し、MTTRを40%改善
+        - SREプラクティスを導入し、サービス信頼性と開発者体験を向上
+      keywords:
+        - AWS
+        - Kubernetes
+        - Terraform
+        - CI/CD
+        - SRE
+        - 自動化
+        - 可観測性
+        - インシデント対応
+    - name: 株式会社デジタルフォージ
+      url: https://www.digitalforge.co.jp/
+      position: DevOpsエンジニア
+      startDate: 2018-04-01
+      endDate: 2021-03-31
+      summary: |
+        - オンプレミス環境からAWSへの移行プロジェクトを担当
+        - DockerとKubernetesを用いたコンテナ基盤の構築・運用
+        - JenkinsからGitLab CIへのCI/CD移行を主導
+        - Ansibleによる構成管理の自動化と運用手順の標準化
+        - 開発チームと協力し、リリースサイクルを月次から週次へ短縮
+      keywords:
+        - Docker
+        - Kubernetes
+        - AWS
+        - GitLab CI
+        - Ansible
+        - マイグレーション
+    - name: 日本テクノソリューションズ株式会社
+      url: https://www.ntsolutions.co.jp/
+      position: システムエンジニア
+      startDate: 2016-04-01
+      endDate: 2018-03-31
+      summary: |
+        - 金融系システムの運用・保守を担当
+        - ShellスクリプトとPythonによる運用自動化ツールを開発
+        - 監視ツールの導入とアラート設計を実施
+        - 障害対応と原因分析を通じてシステム安定性に貢献
+      keywords:
+        - 運用保守
+        - Python
+        - Shell
+        - 監視
+        - 障害対応
+
+  skills:
+    - name: クラウドプラットフォーム
+      level: Expert
+      keywords:
+        - AWS
+        - Azure
+        - GCP
+        - EKS
+        - Lambda
+        - CloudFormation
+    - name: コンテナとオーケストレーション
+      level: Expert
+      keywords:
+        - Docker
+        - Kubernetes
+        - Helm
+        - Istio
+        - Argo CD
+    - name: IaCと自動化
+      level: Advanced
+      keywords:
+        - Terraform
+        - Ansible
+        - Pulumi
+        - Packer
+        - Shell
+        - Python
+    - name: CI/CD
+      level: Advanced
+      keywords:
+        - Jenkins
+        - GitHub Actions
+        - GitLab CI
+        - CircleCI
+        - Argo Workflows
+    - name: 監視と可観測性
+      level: Advanced
+      keywords:
+        - Prometheus
+        - Grafana
+        - Datadog
+        - ELK
+        - OpenTelemetry
+    - name: セキュリティとコンプライアンス
+      level: Intermediate
+      keywords:
+        - IAM
+        - Vault
+        - Trivy
+        - OPA
+        - SOC2
+        - ISO 27001
+    - name: プログラミング
+      level: Advanced
+      keywords:
+        - Python
+        - Go
+        - Bash
+        - Ruby
+        - SQL
+
+  languages:
+    - language: Japanese
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - 日本語ネイティブ
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - TOEIC 900
+        - 技術文書読解
+        - 海外チームとの連携
+
+  awards:
+    - title: 社内イノベーションアワード
+      date: 2022-12-01
+      awarder: 株式会社クラウドネクサス
+      summary: |
+        - Kubernetes基盤の標準化と自動化により、開発者のデプロイ時間を大幅に短縮
+        - 全社的なDevOps文化の推進に貢献
+    - title: AWS Summit Japan Hackathon 優秀賞
+      date: 2019-06-15
+      awarder: Amazon Web Services
+      summary: |
+        - サーバーレスアーキテクチャを用いた災害情報共有アプリを開発
+        - チームリーダーとして設計とデプロイを担当
+
+  certificates:
+    - name: AWS Certified DevOps Engineer – Professional
+      issuer: Amazon Web Services
+      date: 2022-06-01
+      url: https://aws.amazon.com/certification/certified-devops-engineer-professional/
+    - name: Certified Kubernetes Administrator (CKA)
+      issuer: Cloud Native Computing Foundation
+      date: 2021-09-01
+      url: https://www.cncf.io/certification/cka/
+    - name: 'HashiCorp Certified: Terraform Associate'
+      issuer: HashiCorp
+      date: 2021-03-01
+      url: https://www.hashicorp.com/certification/terraform-associate
+
+  publications:
+    - name: クラウドネイティブ時代のKubernetes運用
+      publisher: 技術評論社
+      releaseDate: 2023-09-15
+      url: https://gihyo.jp/book/2023/978-4-297-13612-3
+      summary: |
+        - Kubernetesクラスタの運用ノウハウとベストプラクティスを解説
+        - 監視、ログ、セキュリティ、CI/CDの実践的手法を紹介
+        - 共著者として第5章「可観測性とSRE」を担当
+
+  projects:
+    - name: 社内Kubernetesプラットフォーム移行プロジェクト
+      startDate: 2022-04-01
+      endDate: 2023-03-31
+      description: オンプレミスからEKSへの移行を主導し、内製プラットフォームを構築
+      summary: |
+        - マルチテナントEKSクラスタを設計し、20以上のマイクロサービスを移行
+        - TerraformとArgo CDによるGitOpsを導入
+        - 移行後の運用コストを30%削減
+      keywords:
+        - Kubernetes
+        - EKS
+        - Terraform
+        - GitOps
+        - マイクロサービス
+      url: https://github.com/kenta-sato-devops/eks-platform
+    - name: 統合監視ダッシュボード
+      startDate: 2021-10-01
+      endDate: 2022-03-31
+      description: PrometheusとGrafanaを用いた全社統合監視システムの構築
+      summary: |
+        - 複数チームの監視データを一元化し、障害検知を迅速化
+        - SLOダッシュボードを整備し、サービス品質の可視化を実現
+      keywords:
+        - Prometheus
+        - Grafana
+        - SLO
+        - 可観測性
+      url: https://github.com/kenta-sato-devops/observability-dashboard
+
+  interests:
+    - name: オープンソース
+      keywords:
+        - Kubernetes
+        - Terraform
+        - CNCF
+    - name: アウトドア
+      keywords:
+        - 登山
+        - キャンプ
+        - ランニング
+    - name: 技術コミュニティ
+      keywords:
+        - 登壇
+        - 執筆
+        - 勉強会運営
+
+  volunteer:
+    - organization: Cloud Native Community Japan
+      url: https://community.cncf.io/cloud-native-community-japan/
+      position: 運営メンバー
+      startDate: 2020-01-01
+      summary: |
+        - Kubernetes勉強会の企画・運営を担当
+        - 初心者向けハンズオン資料を作成し、登壇者として発表
+        - コミュニティイベントを通じてDevOps人材の育成に貢献
+
+  references:
+    - name: 田中 誠一
+      relationship: 前職の技術部長
+      email: seiichi.tanaka@example.jp
+      phone: "+81 80-2345-6789"
+      summary: |
+        佐藤健太氏は、クラウドインフラと自動化に関する深い知識を持ち、チームをリードしながら信頼性の高いシステムを構築できる優秀なエンジニアです。
+
+locale:
+  language: ja

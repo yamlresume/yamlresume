@@ -1,0 +1,240 @@
+content:
+  basics:
+    name: 林思远
+    headline: '客户成功经理 | SaaS 客户增长与续约专家'
+    phone: "+86 138 0013 8000"
+    email: siyuan.lin@example.com
+    url: https://siyuanlin.example.com
+    summary: |
+      深耕 SaaS 与科技行业 7 年，专注客户成功、续约增购与客户体验管理。擅长通过数据驱动的客户健康度模型识别风险与机会，推动跨部门协作，提升客户生命周期价值。
+
+      - 负责 30+ 家中大型企业客户，管理年合同金额超 3000 万元，续约率连续两年保持在 95% 以上
+      - 主导客户 onboarding、QBR 与成功计划，客户 NPS 从 32 提升至 68
+      - 熟练使用 Salesforce、Gainsight、Jira 等工具，具备优秀的中英文沟通与谈判能力
+      - 以客户价值为导向，善于将客户反馈转化为产品改进与增购机会
+
+  location:
+    address: 北京市朝阳区建国路88号
+    city: 北京
+    region: 北京市
+    country: China
+    postalCode: "100022"
+
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/siyuanlin-csm
+      username: siyuanlin-csm
+    - network: WeChat
+      url: https://wechat.com/siyuanlin_csm
+      username: siyuanlin_csm
+    - network: Zhihu
+      url: https://www.zhihu.com/people/siyuanlin-csm
+      username: siyuanlin-csm
+
+  education:
+    - institution: 上海交通大学
+      url: https://www.sjtu.edu.cn
+      degree: Bachelor
+      area: 工商管理
+      score: "3.7/4.0"
+      startDate: '2012-09-01'
+      endDate: '2016-06-30'
+      courses:
+        - 管理学原理
+        - 市场营销
+        - 组织行为学
+        - 消费者行为
+        - 商务统计分析
+        - 运营管理
+        - 企业战略管理
+        - 商务沟通
+      summary: |
+        - 系统学习管理学、市场营销与数据分析，为客户成功与商业洞察打下坚实基础
+        - 担任商学院职业发展协会外联负责人，组织 10+ 场企业参访与求职分享活动
+        - 获校级优秀学生奖学金两次，GPA 3.7/4.0
+
+  work:
+    - name: 云启科技
+      url: https://www.yunqi-tech.com
+      position: 高级客户成功经理
+      startDate: '2021-07-01'
+      summary: |
+        - 负责 30+ 家中大型企业客户，涵盖制造、零售与互联网行业，管理年合同金额超 3000 万元
+        - 建立客户健康度评分体系，结合产品使用率、工单趋势与关键联系人活跃度，提前识别续约风险
+        - 主导季度业务回顾（QBR）与成功计划，推动续约率连续两年保持在 95% 以上
+        - 挖掘客户增购与交叉销售机会，年度增购收入贡献超过 800 万元
+        - 与产品、研发、销售团队紧密协作，将高频客户反馈转化为产品需求，推动 5 项核心功能上线
+        - 带领 3 名客户成功专员，制定 onboarding 标准流程与客户培训体系
+      keywords:
+        - SaaS客户成功
+        - 续约管理
+        - 客户增购
+        - NPS提升
+        - 跨部门协作
+    - name: 智联数据
+      url: https://www.zhilian-data.com
+      position: 客户成功专员
+      startDate: '2018-08-01'
+      endDate: '2021-06-30'
+      summary: |
+        - 负责 60+ 家中小型企业客户的日常运营与关系维护，客户满意度保持在 90% 以上
+        - 搭建客户培训与知识库体系，制作 20+ 份产品操作指南与最佳实践文档
+        - 通过定期回访与使用数据分析，成功挽回 15 家高风险续约客户
+        - 协同销售团队完成新客户交接，平均缩短 onboarding 周期 30%
+      keywords:
+        - 客户关系维护
+        - 客户培训
+        - 风险预警
+        - 数据分析
+    - name: 恒信咨询
+      url: https://www.hengxin-consulting.com
+      position: 客户支持顾问
+      startDate: '2016-07-01'
+      endDate: '2018-07-31'
+      summary: |
+        - 为金融与零售客户提供系统上线支持与业务咨询服务，累计服务 100+ 家企业用户
+        - 处理客户疑难问题与投诉，协调内部资源，平均问题解决时长缩短至 4 小时以内
+        - 参与客户需求调研与方案撰写，协助销售团队完成 20+ 个项目的售前支持
+      keywords:
+        - 客户支持
+        - 售前咨询
+        - 问题解决
+        - CRM
+
+  skills:
+    - name: 客户成功管理
+      level: Expert
+      keywords:
+        - 客户生命周期管理
+        - 续约与增购
+        - QBR与成功计划
+        - 客户健康度模型
+        - onboarding流程
+    - name: 数据分析与洞察
+      level: Advanced
+      keywords:
+        - SQL
+        - Excel
+        - Tableau
+        - 客户分群
+        - 流失预警
+    - name: CRM与协作工具
+      level: Advanced
+      keywords:
+        - Salesforce
+        - Gainsight
+        - Jira
+        - Confluence
+        - 企业微信
+    - name: 沟通与谈判
+      level: Expert
+      keywords:
+        - 商务谈判
+        - 高层沟通
+        - 冲突处理
+        - 中英文演示
+    - name: 项目管理
+      level: Intermediate
+      keywords:
+        - 跨部门协作
+        - 敏捷方法
+        - 需求管理
+        - 项目排期
+
+  languages:
+    - language: Chinese
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - 普通话
+        - 商务写作
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - CET-6
+        - 商务谈判
+        - 英文演示
+
+  awards:
+    - title: 年度客户成功之星
+      date: '2023-12'
+      awarder: 云启科技
+      summary: |
+        因主导客户健康度体系与续约专项，年度续约率与增购收入均超额完成目标，获公司年度客户成功团队最高个人荣誉。
+    - title: 优秀员工
+      date: '2020-01'
+      awarder: 智联数据
+      summary: |
+        连续两个季度客户满意度排名第一，并成功挽回多家高价值客户续约。
+
+  certificates:
+    - name: 客户成功经理认证（CCSM）
+      issuer: 客户成功协会
+      date: '2020-05'
+      url: https://www.customersuccessassociation.com/certification
+    - name: 项目管理专业人士（PMP）
+      issuer: 项目管理协会（PMI）
+      date: '2019-09'
+      url: https://www.pmi.org/certifications/project-management-pmp
+
+  publications:
+    - name: SaaS 客户健康度模型实践指南
+      publisher: 人人都是产品经理
+      releaseDate: '2022-04'
+      url: https://www.woshipm.com/practice/example.html
+      summary: |
+        系统介绍如何从产品使用、服务交互、关键联系人活跃度与商业价值四个维度构建客户健康度评分，并结合实际案例说明如何驱动续约与增购。
+
+  projects:
+    - name: 客户健康度评分体系
+      startDate: '2022-03'
+      endDate: '2022-10'
+      description: 面向 SaaS 客户成功团队的客户风险识别与增购机会挖掘系统。
+      summary: |
+        - 设计 4 大维度、18 项指标的客户健康度模型，覆盖产品使用、服务体验、关系强度与商业价值
+        - 联合数据团队搭建自动化看板，每日更新客户评分与预警名单
+        - 上线后帮助团队提前 60 天识别 80% 的续约风险客户，续约率提升 8%
+      keywords:
+        - 客户健康度
+        - 数据看板
+        - 续约预警
+        - SaaS
+      url: https://www.yunqi-tech.com/customer-health
+    - name: 客户培训与赋能计划
+      startDate: '2019-05'
+      endDate: '2020-12'
+      description: 为中小企业客户设计的线上培训与知识库赋能项目。
+      summary: |
+        - 梳理客户高频问题与使用场景，制作 20+ 份操作指南与视频课程
+        - 搭建自助知识库，客户自助解决率从 35% 提升至 65%
+        - 组织月度线上培训，累计参与客户超过 500 人次
+      keywords:
+        - 客户培训
+        - 知识库
+        - 自助服务
+      url: https://www.zhilian-data.com/customer-training
+
+  interests:
+    - name: 阅读
+      keywords:
+        - 商业管理
+        - 心理学
+        - 科技趋势
+    - name: 运动
+      keywords:
+        - 徒步
+        - 羽毛球
+        - 游泳
+
+  volunteer:
+    - organization: 北京市朝阳区社区服务中心
+      position: 职业发展导师
+      startDate: '2019-03-01'
+      endDate: '2021-12-31'
+      url: https://www.example-community.org
+      summary: |
+        - 为社区青年提供职业规划与求职辅导，累计服务 200+ 人次
+        - 组织 SaaS 行业分享会，帮助求职者了解客户成功岗位技能要求
+        - 协助社区开展公益培训活动，获评年度优秀志愿者
+
+locale:
+  language: zh-hans

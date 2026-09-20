@@ -1,0 +1,259 @@
+content:
+  basics:
+    name: Thomas de Vries
+    headline: DevOps Engineer | Cloudinfrastructuur & Automatisering
+    phone: "+31 20 123 4567"
+    email: thomas.devries@example.com
+    url: https://thomasdevries.dev
+    summary: |
+      - Ervaren DevOps Engineer met meer dan 8 jaar ervaring in het automatiseren van cloudinfrastructuur en het bouwen van betrouwbare CI/CD-pipelines.
+      - Diepgaande kennis van AWS, Azure, Kubernetes, Terraform en GitOps.
+      - Gepassioneerd door platform engineering, observability en het verhogen van de ontwikkelsnelheid van teams.
+      - Sterke communicatieve vaardigheden en ervaring met het begeleiden van multidisciplinaire teams.
+
+      Ik werk graag aan de snijlijn van infrastructuur en softwareontwikkeling, waarbij ik processen continu verbeter en operationele kosten verlaag zonder in te leveren op betrouwbaarheid.
+  location:
+    address: Keizersgracht 123
+    city: Amsterdam
+    region: Noord-Holland
+    country: Netherlands
+    postalCode: "1015 CJ"
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/thomasdevries
+      username: thomasdevries
+    - network: GitHub
+      url: https://github.com/thomasdevries
+      username: thomasdevries
+    - network: Stack Overflow
+      url: https://stackoverflow.com/users/12345678/thomasdevries
+      username: thomasdevries
+  education:
+    - institution: Technische Universiteit Delft
+      url: https://www.tudelft.nl/
+      degree: Master
+      area: Computerwetenschappen
+      score: "8.5"
+      startDate: Sep 1, 2016
+      endDate: Jul 31, 2018
+      courses:
+        - Gedistribueerde systemen
+        - Cloud computing
+        - Netwerktechnologie
+        - Operationele systemen
+        - Softwarearchitectuur
+        - Beveiliging van informatiesystemen
+      summary: |
+        - Afstudeerrichting Cloud & Distributed Systems
+        - Thesis over automatische schaalvergroting van containerplatforms in hybride clouds
+        - Cum laude afgestudeerd
+    - institution: Hogeschool van Amsterdam
+      url: https://www.hva.nl/
+      degree: Bachelor
+      area: Informatica
+      score: "8.0"
+      startDate: Sep 1, 2012
+      endDate: Jun 30, 2016
+      courses:
+        - Programmeren in Python
+        - Linux systeembeheer
+        - Databases
+        - Netwerken
+        - IT-beveiliging
+      summary: |
+        - Minor in Cloud & Virtualisatie
+        - Stage bij een hostingprovider voor geautomatiseerde deployments
+  work:
+    - name: Rabobank
+      url: https://www.rabobank.nl/
+      position: Senior DevOps Engineer
+      startDate: Jan 1, 2022
+      summary: |
+        - Verantwoordelijk voor het ontwerpen en beheren van een multi-cloud platform op AWS en Azure.
+        - Geautomatiseerde CI/CD-pipelines met GitLab CI en Argo CD, waardoor releases van dagen naar minuten gingen.
+        - Infrastructure as Code met Terraform en Ansible voor meer dan 200 applicaties.
+        - Implementatie van observability met Prometheus, Grafana en Loki.
+        - Begeleiden van een team van 6 DevOps engineers en bevorderen van kennisdeling.
+      keywords:
+        - AWS
+        - Azure
+        - Terraform
+        - Kubernetes
+        - GitLab CI
+        - Observability
+    - name: KPN
+      url: https://www.kpn.com/
+      position: DevOps Engineer
+      startDate: Aug 1, 2018
+      endDate: Dec 31, 2021
+      summary: |
+        - Beheerde Kubernetes-clusters en ontwikkelde Helm-charts voor interne microservices.
+        - Bouwde CI/CD-pipelines met Jenkins en later GitHub Actions.
+        - Automatiseerde serverprovisioning met Ansible en Packer.
+        - Verhoogde beschikbaarheid van diensten naar 99,95% door monitoring en alerting.
+        - Samenwerking met ontwikkelteams om security en compliance te integreren in de pipeline.
+      keywords:
+        - Kubernetes
+        - Jenkins
+        - Ansible
+        - Packer
+        - Prometheus
+    - name: Info Support
+      url: https://www.infosupport.com/
+      position: Systeembeheerder / DevOps
+      startDate: Sep 1, 2015
+      endDate: Jul 31, 2018
+      summary: |
+        - Beheer van Linux- en Windows-servers voor zakelijke klanten.
+        - Introductie van geautomatiseerde configuratie met Puppet.
+        - Migratie van on-premises workloads naar AWS.
+        - Opzetten van basis monitoring met Nagios en later Zabbix.
+      keywords:
+        - Linux
+        - Windows Server
+        - Puppet
+        - AWS
+        - Nagios
+  skills:
+    - name: Cloudplatformen
+      level: Expert
+      keywords:
+        - AWS
+        - Azure
+        - Google Cloud
+    - name: Containers & Orchestratie
+      level: Expert
+      keywords:
+        - Kubernetes
+        - Docker
+        - Helm
+        - OpenShift
+    - name: Infrastructure as Code
+      level: Advanced
+      keywords:
+        - Terraform
+        - Ansible
+        - Pulumi
+        - CloudFormation
+    - name: CI/CD & Automatisering
+      level: Expert
+      keywords:
+        - GitLab CI
+        - Jenkins
+        - GitHub Actions
+        - Argo CD
+    - name: Monitoring & Observability
+      level: Advanced
+      keywords:
+        - Prometheus
+        - Grafana
+        - Loki
+        - ELK Stack
+    - name: Programmeertalen & Scripting
+      level: Advanced
+      keywords:
+        - Python
+        - Bash
+        - Go
+        - PowerShell
+  languages:
+    - language: Dutch
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - Moedertaal
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - Professioneel werkzaam
+        - TOEIC 950
+    - language: German
+      fluency: Limited Working Proficiency
+      keywords:
+        - Basiskennis
+        - A2
+  awards:
+    - title: DevOps Team van het Jaar
+      awarder: Rabobank
+      date: Nov 15, 2023
+      summary: |
+        - Toegekend voor het succesvol migreren van kritische applicaties naar een geautomatiseerd multi-cloud platform.
+    - title: Beste Afstudeerproject
+      awarder: Technische Universiteit Delft
+      date: Jul 1, 2018
+      summary: |
+        - Prijs voor onderzoek naar automatische schaalvergroting van containerplatforms.
+  certificates:
+    - name: AWS Certified DevOps Engineer - Professional
+      issuer: AWS
+      date: Mar 1, 2023
+      url: https://aws.amazon.com/certification/certified-devops-engineer-professional/
+    - name: Certified Kubernetes Administrator (CKA)
+      issuer: CNCF
+      date: Jun 1, 2021
+      url: https://www.cncf.io/certification/cka/
+    - name: 'HashiCorp Certified: Terraform Associate'
+      issuer: HashiCorp
+      date: Sep 1, 2022
+      url: https://www.hashicorp.com/certification/terraform-associate
+  publications:
+    - name: Zero Trust in cloud-native omgevingen
+      publisher: Dutch DevOps Journal
+      releaseDate: May 1, 2023
+      url: https://www.dutchdevopsjournal.nl/zero-trust-cloud-native
+      summary: |
+        - Artikel over het implementeren van een Zero Trust-architectuur in Kubernetes-omgevingen.
+        - Gepubliceerd in het vaktijdschrift Dutch DevOps Journal.
+  projects:
+    - name: Platform Engine
+      url: https://github.com/thomasdevries/platform-engine
+      description: Inner source platform voor self-service cloudinfrastructuur
+      startDate: Mar 1, 2022
+      endDate: Oct 31, 2023
+      summary: |
+        - Ontwikkelde een self-service platform waarmee ontwikkelteams binnen 10 minuten een productieklare omgeving konden aanvragen.
+        - Gebruikt Terraform, Kubernetes en Crossplane voor infrastructure provisioning.
+        - Verlaagde de doorlooptijd van omgevingen met 70%.
+      keywords:
+        - Platform Engineering
+        - Self-service
+        - Crossplane
+        - Kubernetes
+    - name: GitOps-migratie
+      url: https://github.com/thomasdevries/gitops-migratie
+      description: Migratie van push-based naar pull-based deployments
+      startDate: Jan 1, 2021
+      endDate: Dec 31, 2021
+      summary: |
+        - Introduceerde Argo CD voor declaratieve deployments.
+        - Verhoogde de deployment-frequentie en verlaagde de foutmarge.
+      keywords:
+        - GitOps
+        - Argo CD
+        - Kubernetes
+  interests:
+    - name: Sport
+      keywords:
+        - Hardlopen
+        - Wielrennen
+        - Zwemmen
+    - name: Muziek
+      keywords:
+        - Gitaar
+        - Piano
+    - name: Open source
+      keywords:
+        - Kubernetes
+        - Terraform
+        - CNCF
+  volunteer:
+    - organization: DevOps Nederland
+      url: https://www.devopsnederland.nl/
+      position: Community Organizer
+      startDate: Jan 1, 2019
+      summary: |
+        - Organiseer maandelijkse meetups en workshops over DevOps, cloud en Kubernetes.
+        - Verantwoordelijk voor sprekers, locatie en community-opbouw.
+        - Groei van de community van 300 naar 1200 leden.
+
+locale:
+  language: nl

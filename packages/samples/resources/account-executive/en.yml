@@ -1,0 +1,200 @@
+content:
+  basics:
+    name: Jordan A. Ellis
+    headline: Senior Account Executive | Enterprise SaaS & Strategic Partnerships
+    phone: "(415) 555-0138"
+    email: jordan.ellis@example.com
+    url: https://www.jordanellis.com
+    summary: |
+      - Results-driven Senior Account Executive with 8+ years of experience driving revenue growth in enterprise SaaS and technology solutions.
+      - Consistently exceeded annual quotas by 120%+ through consultative selling, strategic account planning, and C-level relationship building.
+      - Skilled in full-cycle sales from prospecting to close, with expertise in contract negotiation, pipeline management, and cross-functional collaboration.
+      - Adept at identifying customer pain points, delivering tailored solutions, and expanding accounts through upsell and cross-sell strategies.
+  location:
+    address: 450 Mission Street, Suite 1200
+    city: San Francisco
+    region: California
+    country: United States
+    postalCode: "94105"
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/jordanellis
+      username: jordanellis
+    - network: Twitter
+      url: https://twitter.com/jordanellis_sales
+      username: jordanellis_sales
+  education:
+    - institution: University of Washington
+      url: https://www.washington.edu
+      degree: Bachelor
+      area: Business Administration
+      score: "3.7"
+      startDate: Sep 1, 2009
+      endDate: Jun 1, 2013
+      courses:
+        - Principles of Marketing
+        - Organizational Behavior
+        - Financial Accounting
+        - Business Negotiation
+        - Strategic Management
+        - Consumer Behavior
+      summary: |
+        - Graduated with honors and a concentration in sales and marketing.
+        - Led a sales case competition team that placed first among 20 teams.
+        - Completed an internship with a local tech startup, supporting lead generation and market research.
+  work:
+    - name: CloudPeak Solutions
+      url: https://www.cloudpeaksolutions.com
+      position: Senior Account Executive
+      startDate: Jan 1, 2021
+      summary: |
+        - Own full-cycle sales process for enterprise accounts, from prospecting to close, generating $3.5M+ in annual recurring revenue.
+        - Exceeded annual quota by 125% in 2022 and 118% in 2023, consistently ranking in the top 5% of sales performers.
+        - Built and maintained strong relationships with C-level executives, resulting in a 40% increase in account expansion.
+        - Negotiated complex multi-year contracts, improving average deal size by 30% and reducing sales cycle by 15%.
+      keywords:
+        - Enterprise Sales
+        - SaaS
+        - Quota Attainment
+        - C-Level Relationships
+    - name: BrightWave Analytics
+      url: https://www.brightwaveanalytics.com
+      position: Account Executive
+      startDate: Mar 1, 2017
+      endDate: Dec 1, 2020
+      summary: |
+        - Managed a portfolio of 50+ mid-market accounts, achieving 110% of quota in 2018 and 2019.
+        - Developed and executed strategic account plans, resulting in $1.2M in new business revenue.
+        - Collaborated with marketing and product teams to align solutions with customer needs and drive retention.
+      keywords:
+        - Mid-Market Sales
+        - Pipeline Management
+        - Salesforce
+        - Consultative Selling
+    - name: Nimbus Software
+      url: https://www.nimbussoftware.com
+      position: Business Development Representative
+      startDate: Jul 1, 2014
+      endDate: Feb 1, 2017
+      summary: |
+        - Prospected and qualified 100+ leads per month through outbound calls, emails, and social selling.
+        - Generated $800K in qualified pipeline within first year, exceeding target by 130%.
+        - Supported account executives with research, call preparation, and CRM data management.
+      keywords:
+        - Lead Generation
+        - Outbound Sales
+        - CRM
+        - Cold Calling
+  skills:
+    - name: Enterprise Sales
+      level: Expert
+      keywords:
+        - Full-Cycle Sales
+        - Quota Attainment
+        - Contract Negotiation
+        - Revenue Growth
+    - name: Sales Tools & CRM
+      level: Advanced
+      keywords:
+        - Salesforce
+        - HubSpot
+        - Outreach.io
+        - LinkedIn Sales Navigator
+    - name: Communication & Leadership
+      level: Expert
+      keywords:
+        - C-Level Presentations
+        - Cross-Functional Collaboration
+        - Team Mentoring
+        - Strategic Planning
+  languages:
+    - language: English
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - TOEFL 115
+    - language: Spanish
+      fluency: Full Professional Proficiency
+      keywords:
+        - DELE C1
+    - language: Mandarin
+      fluency: Limited Working Proficiency
+      keywords:
+        - HSK 3
+  awards:
+    - title: Presidents Club
+      date: Jan 2023
+      awarder: CloudPeak Solutions
+      summary: |
+        Recognized as top 5% of sales performers for exceeding annual quota and driving enterprise revenue growth.
+    - title: Rookie of the Year
+      date: Dec 2018
+      awarder: BrightWave Analytics
+      summary: |
+        Awarded for highest new logo acquisition and fastest ramp-up to full quota among new account executives.
+  certificates:
+    - name: Certified Sales Professional (CSP)
+      issuer: Sales Management Association
+      date: May 2019
+      url: https://www.salesmanagement.org/csp
+    - name: Salesforce Certified Administrator
+      issuer: Salesforce
+      date: Aug 2020
+      url: https://trailhead.salesforce.com/en/credentials/administrator
+  publications:
+    - name: The Consultative SaaS Sales Playbook
+      publisher: SalesHacker
+      releaseDate: Mar 2022
+      url: https://www.saleshacker.com/consultative-saas-sales-playbook
+      summary: |
+        - Article outlining a repeatable framework for consultative selling in SaaS.
+        - Covers discovery, solution mapping, objection handling, and closing strategies.
+        - Featured in SalesHacker's top 10 sales articles of 2022.
+  projects:
+    - name: Enterprise CRM Migration
+      url: https://www.cloudpeaksolutions.com/case-studies/crm-migration
+      description: Led the migration of legacy CRM to Salesforce for enterprise clients.
+      startDate: Feb 2021
+      endDate: Aug 2021
+      summary: |
+        - Managed cross-functional team of 6 to ensure seamless data migration and user adoption.
+        - Reduced reporting time by 40% and improved pipeline visibility for sales leadership.
+        - Delivered training sessions to 200+ users across three business units.
+      keywords:
+        - CRM Migration
+        - Salesforce
+        - Change Management
+    - name: Sales Playbook Development
+      description: Created a repeatable sales playbook for mid-market segment.
+      startDate: Jan 2019
+      endDate: Jun 2019
+      summary: |
+        - Documented best practices for prospecting, discovery, and objection handling.
+        - Rolled out playbook to 25 account executives, contributing to a 15% increase in win rate.
+        - Standardized CRM stages and reporting for improved forecasting accuracy.
+      keywords:
+        - Sales Playbook
+        - Process Improvement
+        - Training
+  interests:
+    - name: Sports
+      keywords:
+        - Golf
+        - Tennis
+        - Running
+    - name: Personal Development
+      keywords:
+        - Podcasts
+        - Reading
+        - Public Speaking
+  volunteer:
+    - organization: Bay Area Sales Mentorship Program
+      url: https://www.bayareasalesmentors.org
+      position: Mentor
+      startDate: Sep 1, 2019
+      summary: |
+        - Mentored junior sales professionals on prospecting, negotiation, and career development.
+        - Conducted monthly workshops on consultative selling and account management.
+        - Helped mentees achieve an average 20% increase in quota attainment.
+
+locale:
+  language: en

@@ -1,0 +1,208 @@
+content:
+  basics:
+    name: Budi Santoso
+    headline: Project Manager Berpengalaman di Bidang Teknologi Informasi
+    phone: "+62 812-3456-7890"
+    email: budi.santoso@email.com
+    url: https://www.budisantoso.id
+    summary: |
+      - Project Manager dengan pengalaman lebih dari 8 tahun dalam memimpin proyek teknologi informasi dari perencanaan hingga penyelesaian.
+      - Terampil dalam metodologi Agile, Scrum, dan Waterfall, serta memiliki rekam jejak sukses dalam mengelola tim lintas fungsi.
+      - Mampu mengelola anggaran, jadwal, dan risiko proyek secara efektif untuk memastikan hasil yang sesuai dengan tujuan bisnis.
+      - Berkomitmen pada pengembangan berkelanjutan dan komunikasi yang transparan dengan para pemangku kepentingan.
+  location:
+    address: Jl. Jenderal Sudirman No. 52
+    city: Jakarta
+    region: DKI Jakarta
+    country: Indonesia
+    postalCode: "12190"
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/budisantoso
+      username: budisantoso
+    - network: GitHub
+      url: https://github.com/budisantoso
+      username: budisantoso
+  education:
+    - institution: Universitas Indonesia
+      url: https://www.ui.ac.id
+      degree: Bachelor
+      area: Ilmu Komputer
+      score: "3.65"
+      startDate: Sep 1, 2010
+      endDate: Jul 1, 2014
+      courses:
+        - Manajemen Proyek Perangkat Lunak
+        - Rekayasa Perangkat Lunak
+        - Sistem Basis Data
+        - Jaringan Komputer
+        - Algoritma dan Struktur Data
+      summary: |
+        - Memperoleh pemahaman mendalam tentang siklus hidup pengembangan perangkat lunak dan manajemen proyek.
+        - Aktif dalam organisasi kemahasiswaan dan memimpin proyek akhir berbasis tim.
+  work:
+    - name: PT Teknologi Maju
+      url: https://www.teknologimaju.co.id
+      position: Senior Project Manager
+      startDate: Jan 1, 2020
+      summary: |
+        - Memimpin proyek pengembangan platform digital berskala enterprise dengan anggaran lebih dari 10 miliar rupiah.
+        - Mengelola tim berisi 20+ anggota lintas fungsi, termasuk developer, desainer, dan QA.
+        - Menerapkan kerangka kerja Agile dan Scrum untuk meningkatkan kecepatan rilis produk hingga 30%.
+        - Berhasil menyelesaikan 15+ proyek tepat waktu dengan tingkat kepuasan pelanggan 95%.
+      keywords:
+        - Agile
+        - Scrum
+        - Manajemen Proyek
+        - Kepemimpinan
+        - Enterprise
+    - name: PT Digital Solusi
+      url: https://www.digitalsolusi.co.id
+      position: Project Manager
+      startDate: Mar 1, 2017
+      endDate: Dec 31, 2019
+      summary: |
+        - Mengelola proyek pengembangan aplikasi mobile dan web untuk klien di sektor perbankan dan ritel.
+        - Menyusun rencana proyek, jadwal, dan anggaran, serta memantau kemajuan melalui tools seperti JIRA dan Trello.
+        - Berkoordinasi dengan tim internal dan eksternal untuk memastikan kebutuhan klien terpenuhi.
+        - Meningkatkan efisiensi proses kerja tim melalui adopsi Kanban dan otomatisasi pelaporan.
+      keywords:
+        - Manajemen Proyek
+        - JIRA
+        - Trello
+        - Mobile
+        - Web
+    - name: PT Inovasi Kreatif
+      url: https://www.inovasikreatif.co.id
+      position: Junior Project Manager
+      startDate: Aug 1, 2014
+      endDate: Feb 28, 2017
+      summary: |
+        - Membantu manajer proyek senior dalam perencanaan dan eksekusi proyek teknologi.
+        - Mengelola dokumentasi proyek, laporan status, dan komunikasi dengan pemangku kepentingan.
+        - Berkontribusi pada pengembangan metodologi internal untuk manajemen proyek yang lebih terstruktur.
+      keywords:
+        - Dokumentasi
+        - Laporan
+        - Komunikasi
+        - Waterfall
+  skills:
+    - name: Manajemen Proyek
+      level: Expert
+      keywords:
+        - Agile
+        - Scrum
+        - Kanban
+        - Waterfall
+        - Manajemen Risiko
+        - Anggaran
+    - name: Tools
+      level: Advanced
+      keywords:
+        - JIRA
+        - Trello
+        - MS Project
+        - Asana
+        - Confluence
+        - Slack
+    - name: Kepemimpinan
+      level: Advanced
+      keywords:
+        - Motivasi Tim
+        - Delegasi
+        - Negosiasi
+        - Komunikasi
+        - Problem Solving
+  languages:
+    - language: Indonesian
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - Bahasa Ibu
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - TOEFL 110
+        - IELTS 7.5
+  awards:
+    - title: Project Manager Terbaik
+      awarder: PT Teknologi Maju
+      date: Dec 2022
+      summary: |
+        Diberikan sebagai pengakuan atas kepemimpinan luar biasa dalam menyelesaikan proyek strategis perusahaan dengan hasil melebihi target.
+    - title: Inovasi Proses Bisnis
+      awarder: PT Digital Solusi
+      date: Nov 2019
+      summary: |
+        Penghargaan atas kontribusi dalam merancang ulang proses manajemen proyek yang meningkatkan efisiensi tim sebesar 25%.
+  certificates:
+    - name: Project Management Professional (PMP)
+      issuer: Project Management Institute
+      date: Jun 2021
+      url: https://www.pmi.org/certifications/project-management-pmp
+    - name: Certified ScrumMaster (CSM)
+      issuer: Scrum Alliance
+      date: Mar 2019
+      url: https://www.scrumalliance.org/certifications
+  publications:
+    - name: "Meningkatkan Keberhasilan Proyek TI melalui Kombinasi Agile dan
+        Waterfall"
+      publisher: Jurnal Manajemen Proyek Indonesia
+      releaseDate: Aug 2020
+      url: https://www.jmpi.id/artikel/agile-waterfall
+      summary: |
+        - Artikel ini membahas pendekatan hybrid dalam manajemen proyek teknologi informasi.
+        - Menyajikan studi kasus dari beberapa proyek enterprise di Indonesia.
+        - Memberikan rekomendasi praktis untuk manajer proyek dalam memilih metodologi yang tepat.
+  projects:
+    - name: Platform E-Commerce Terintegrasi
+      url: https://www.teknologimaju.co.id/proyek/ecommerce
+      description: Pengembangan platform e-commerce untuk perusahaan ritel besar di
+        Indonesia
+      startDate: Jan 2021
+      endDate: Dec 2021
+      summary: |
+        - Memimpin tim berisi 15 orang dalam membangun platform e-commerce dari awal.
+        - Mengimplementasikan arsitektur microservices dan integrasi dengan sistem pembayaran.
+        - Mencapai waktu muat halaman di bawah 2 detik dan meningkatkan konversi penjualan sebesar 40%.
+      keywords:
+        - E-Commerce
+        - Microservices
+        - Agile
+    - name: Sistem Informasi Rumah Sakit
+      url: https://www.digitalsolusi.co.id/proyek/simrs
+      description: Sistem manajemen rumah sakit untuk digitalisasi rekam medis dan
+        operasional
+      startDate: Mar 2018
+      endDate: Nov 2019
+      summary: |
+        - Mengelola proyek pengembangan SIMRS untuk tiga rumah sakit di Jakarta.
+        - Berkoordinasi dengan tenaga medis dan staf administrasi untuk mengumpulkan kebutuhan.
+        - Sistem berhasil mengurangi waktu pemrosesan rekam medis hingga 50%.
+      keywords:
+        - Kesehatan
+        - SIMRS
+        - Waterfall
+  interests:
+    - name: Olahraga
+      keywords:
+        - Lari
+        - Renang
+        - Bersepeda
+    - name: Teknologi
+      keywords:
+        - AI
+        - Blockchain
+        - IoT
+  volunteer:
+    - organization: Yayasan Pendidikan Teknologi
+      url: https://www.ypt.or.id
+      position: Mentor Manajemen Proyek
+      startDate: Jan 2018
+      endDate: Dec 2022
+      summary: |
+        - Menjadi mentor bagi mahasiswa dan profesional muda dalam bidang manajemen proyek teknologi.
+        - Mengadakan workshop tentang Agile, Scrum, dan tools manajemen proyek.
+        - Membantu peserta mengembangkan keterampilan kepemimpinan dan komunikasi.
+
+locale:
+  language: id

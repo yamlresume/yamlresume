@@ -1,0 +1,232 @@
+content:
+  basics:
+    name: 佐藤 美咲
+    headline: 'カスタマーサクセスマネージャー | SaaS導入支援と顧客成長の推進'
+    phone: "+81 90-1234-5678"
+    email: misaki.sato@example.com
+    url: https://example.com/misaki-sato
+    summary: |
+      - SaaS企業で5年以上のカスタマーサクセス経験を持ち、導入支援から定着支援、更新・アップセルまで一貫して担当
+      - 顧客のビジネス目標を理解し、プロダクト活用を通じた成果創出を支援
+      - データ分析に基づくヘルススコア設計とチャーン防止施策の立案・実行が強み
+      - クロスファンクショナルなチームと連携し、顧客の声をプロダクト改善に還元
+      - 日本語と英語でのコミュニケーションが可能で、グローバル顧客にも対応
+  location:
+    address: 東京都渋谷区神南1-2-3
+    city: 渋谷区
+    region: 東京都
+    country: Japan
+    postalCode: "150-0001"
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/misaki-sato-csm
+      username: misaki-sato-csm
+    - network: Twitter
+      url: https://twitter.com/misaki_csm
+      username: misaki_csm
+  education:
+    - institution: 早稲田大学
+      url: https://www.waseda.jp
+      degree: Bachelor
+      area: 経営学
+      score: "3.7/4.0"
+      startDate: Apr 1, 2014
+      endDate: Mar 31, 2018
+      courses:
+        - マーケティング戦略
+        - 経営組織論
+        - 消費者行動論
+        - データ分析入門
+        - ビジネスコミュニケーション
+        - 国際経営
+      summary: |
+        - 経営学を専攻し、マーケティングと組織マネジメントを中心に学習
+        - データ分析や消費者行動の授業を通じて、顧客理解の基礎を習得
+        - グループワークやプレゼンテーションで協働と発信力を養成
+  work:
+    - name: 株式会社クラウドコネクト
+      url: https://cloudconnect.example.jp
+      position: シニアカスタマーサクセスマネージャー
+      startDate: Apr 1, 2021
+      summary: |
+        - エンタープライズ顧客30社以上を担当し、導入支援から定着、更新、アップセルまで一貫して推進
+        - 顧客のKPIに基づく成功計画を策定し、四半期ビジネスレビュー（QBR）を主導
+        - ヘルススコアを再設計し、チャーンリスクの早期検知と proactive な支援を実現
+        - プロダクトチームと連携し、顧客要望を機能改善に反映
+        - 年間契約更新率を92%から96%へ改善し、アップセル収益を前年比130%に拡大
+      keywords:
+        - カスタマーサクセス
+        - 導入支援
+        - 更新管理
+        - アップセル
+        - QBR
+        - チャーン防止
+    - name: 株式会社サポートテック
+      url: https://supporttech.example.jp
+      position: カスタマーサクセスマネージャー
+      startDate: Apr 1, 2018
+      endDate: Mar 31, 2021
+      summary: |
+        - 中小規模顧客100社以上を担当し、オンボーディングと活用支援を実施
+        - 顧客向けトレーニングやウェビナーを企画・運営し、プロダクト利用率を向上
+        - 顧客満足度調査を分析し、サポート品質改善とナレッジベース整備に貢献
+        - 解約予兆のある顧客へのリテンション施策を立案し、更新率を88%から93%へ改善
+      keywords:
+        - オンボーディング
+        - 活用支援
+        - リテンション
+        - トレーニング
+        - 顧客満足度
+    - name: 株式会社グローバルソリューションズ
+      url: https://globalsolutions.example.jp
+      position: カスタマーサポート担当
+      startDate: Apr 1, 2016
+      endDate: Mar 31, 2018
+      summary: |
+        - 法人顧客からの問い合わせ対応を通じて、プロダクトの機能理解と課題解決を支援
+        - 問い合わせデータを分析し、FAQやマニュアルの改善を提案
+        - サポートチーム内のナレッジ共有を促進し、対応時間の短縮に貢献
+      keywords:
+        - カスタマーサポート
+        - 問い合わせ対応
+        - ナレッジ管理
+        - 課題解決
+  skills:
+    - name: カスタマーサクセス
+      level: Expert
+      keywords:
+        - オンボーディング
+        - 導入支援
+        - 顧客関係構築
+        - チャーン防止
+        - アップセル
+        - 更新管理
+    - name: データ分析
+      level: Advanced
+      keywords:
+        - Salesforce
+        - Tableau
+        - SQL
+        - Excel
+        - KPI設計
+        - ヘルススコア
+    - name: プロジェクト管理
+      level: Advanced
+      keywords:
+        - Asana
+        - Jira
+        - Notion
+        - Slack
+        - 進行管理
+    - name: コミュニケーション
+      level: Expert
+      keywords:
+        - プレゼンテーション
+        - 折衝
+        - ファシリテーション
+        - 英語
+        - 日本語
+  languages:
+    - language: Japanese
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - 母国語
+        - ビジネス文書
+        - プレゼンテーション
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - TOEIC 920
+        - ビジネス会話
+        - 英文メール
+        - 海外顧客対応
+  awards:
+    - title: 年間最優秀カスタマーサクセスマネージャー
+      awarder: 株式会社クラウドコネクト
+      date: Dec 2023
+      summary: |
+        顧客満足度と更新率の向上、およびアップセル収益の拡大に貢献した功績により表彰。
+    - title: 社長賞
+      awarder: 株式会社サポートテック
+      date: Dec 2020
+      summary: |
+        大手顧客のチャーン防止プロジェクトをリードし、年間契約更新率を93%まで改善した功績により受賞。
+  certificates:
+    - name: Salesforce 認定アドミニストレーター
+      issuer: Salesforce
+      date: Jun 2022
+      url: https://trailhead.salesforce.com/credentials/administrator
+    - name: HubSpot インバウンドセールス認定
+      issuer: HubSpot
+      date: Sep 2021
+      url: https://academy.hubspot.com/certification
+    - name: ITIL 4 Foundation
+      issuer: AXELOS
+      date: Mar 2020
+      url: https://www.axelos.com/certifications/itil-certifications
+  publications:
+    - name: SaaSにおけるカスタマーサクセス指標の設計
+      publisher: テックビジネスジャーナル
+      releaseDate: Aug 2023
+      url: https://example.com/articles/customer-success-kpi
+      summary: |
+        - カスタマーサクセスにおけるKPI設計の考え方とヘルススコア活用事例を解説
+        - チャーン予測とアップセル機会の可視化による収益貢献の可能性を提示
+        - 顧客セグメント別の成功指標の違いと運用上の注意点を整理
+  projects:
+    - name: 顧客ヘルススコア改善プロジェクト
+      url: https://example.com/projects/health-score
+      startDate: Jan 2023
+      endDate: Dec 2023
+      description: 顧客データを活用したヘルススコアモデルの再設計
+      summary: |
+        - 利用頻度、サポート問い合わせ、NPSなどのデータを統合し、チャーン予測精度を向上
+        - リスク顧客に対する自動アラートと担当者アクションの標準化を実施
+        - プロジェクト完了後、解約率を前年比20%削減
+      keywords:
+        - ヘルススコア
+        - データ分析
+        - チャーン予測
+        - 顧客セグメント
+    - name: オンボーディング自動化プロジェクト
+      url: https://example.com/projects/onboarding-automation
+      startDate: Apr 2022
+      endDate: Sep 2022
+      description: 新規顧客向けオンボーディングプロセスの自動化
+      summary: |
+        - 契約後から初回価値実感までのステップを整理し、自動化ツールを導入
+        - テンプレート化により、担当者ごとのばらつきを削減
+        - オンボーディング完了までの期間を平均14日から7日へ短縮
+      keywords:
+        - オンボーディング
+        - 自動化
+        - プロセス改善
+        - 顧客導入
+  interests:
+    - name: 読書
+      keywords:
+        - ビジネス書
+        - 心理学
+        - テクノロジー
+    - name: 旅行
+      keywords:
+        - 国内旅行
+        - 海外旅行
+        - 温泉
+    - name: 料理
+      keywords:
+        - イタリア料理
+        - 和食
+        - パン作り
+  volunteer:
+    - organization: 一般社団法人 キャリア支援ネットワーク
+      url: https://example.com/volunteer
+      position: メンター
+      startDate: Sep 2019
+      summary: |
+        - 若手社会人や学生向けに、キャリア相談とビジネススキル向上のメンタリングを実施
+        - 月1回のワークショップを企画し、コミュニケーションや顧客対応の基礎を指導
+        - メンティーの成長を支援し、延べ50名以上を担当
+
+locale:
+  language: ja

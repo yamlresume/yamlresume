@@ -1,0 +1,259 @@
+content:
+  basics:
+    name: Jordan Avery Mitchell
+    headline: Senior Project Manager | PMP | Agile Delivery Leader
+    phone: "(512) 555-0147"
+    email: jordan.mitchell@example.com
+    url: https://www.jordanmitchellpm.com
+    summary: |
+      - Certified Project Manager (PMP) with 8+ years of experience leading cross-functional teams to deliver software, infrastructure, and business transformation projects on time and within budget.
+      - Proven expertise in Agile, Scrum, and Waterfall methodologies, with a track record of improving delivery velocity by up to 35% and reducing project risk through proactive stakeholder engagement.
+      - Skilled in budget management, resource allocation, vendor negotiation, and executive reporting for portfolios ranging from $500K to $8M.
+      - Adept at bridging technical and business conversations, translating complex requirements into actionable roadmaps and measurable outcomes.
+  location:
+    address: 600 Congress Avenue, Suite 1400
+    city: Austin
+    region: Texas
+    country: United States
+    postalCode: "78701"
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/jordanmitchellpm
+      username: jordanmitchellpm
+    - network: Twitter
+      url: https://twitter.com/jordanm_pm
+      username: jordanm_pm
+    - network: Medium
+      url: https://medium.com/@jordanmitchellpm
+      username: jordanmitchellpm
+  education:
+    - institution: University of Texas at Austin
+      url: https://www.utexas.edu
+      degree: Master
+      area: Business Administration
+      score: "3.9"
+      startDate: Aug 2016
+      endDate: May 2018
+      courses:
+        - Project Management
+        - Operations Management
+        - Financial Accounting
+        - Organizational Behavior
+        - Data Analytics for Business
+        - Strategic Management
+      summary: |
+        - Graduated with distinction from the McCombs School of Business
+        - Led a capstone project to redesign the delivery workflow for a local nonprofit, reducing average project cycle time by 22%
+        - Served as vice president of the Graduate Project Management Club, organizing workshops with industry leaders
+    - institution: Texas A&M University
+      url: https://www.tamu.edu
+      degree: Bachelor
+      area: Industrial Engineering
+      score: "3.7"
+      startDate: Aug 2012
+      endDate: May 2016
+      courses:
+        - Engineering Economics
+        - Probability and Statistics
+        - Production Planning
+        - Quality Control
+        - Engineering Project Management
+        - Systems Simulation
+      summary: |
+        - Built a strong foundation in process optimization, statistical analysis, and systems thinking
+        - Completed a senior design project on lean manufacturing for a regional aerospace supplier
+        - Interned with a logistics firm, supporting schedule tracking and resource planning
+  work:
+    - name: Brightline Solutions Group
+      url: https://www.brightlinesolutions.com
+      position: Senior Project Manager
+      startDate: Jan 2022
+      summary: |
+        - Lead a portfolio of 6 concurrent software delivery projects with a combined budget of $8M, consistently achieving 95%+ on-time milestone completion.
+        - Established a hybrid Agile-Waterfall delivery framework that reduced scope creep by 28% and improved stakeholder satisfaction scores from 3.8 to 4.6 out of 5.
+        - Coach and mentor 4 project managers and 12 cross-functional team members, introducing capacity planning and risk burndown practices.
+        - Partner with product, engineering, and compliance teams to align roadmaps, manage dependencies, and ensure regulatory readiness for fintech clients.
+        - Present monthly executive dashboards covering schedule, cost, risk, and benefits realization to C-level sponsors.
+      keywords:
+        - Agile Delivery
+        - Portfolio Management
+        - Budget Management
+        - Stakeholder Engagement
+        - Risk Management
+    - name: Cedar Point Digital
+      url: https://www.cedarpointdigital.com
+      position: Project Manager
+      startDate: Jun 2019
+      endDate: Dec 2021
+      summary: |
+        - Managed 15+ web and mobile application projects from initiation through launch, with budgets up to $1.2M and teams of 10-18 people.
+        - Implemented Scrum ceremonies and Jira workflows, increasing sprint predictability by 30% and reducing average defect escape rate by 18%.
+        - Negotiated vendor contracts and managed external partners, saving $220K over two years through consolidated licensing and improved payment terms.
+        - Built project charters, WBS, RAID logs, and change control processes adopted as standard templates across the PMO.
+      keywords:
+        - Scrum
+        - Jira
+        - Vendor Management
+        - Change Control
+        - PMO
+    - name: Lone Star Infrastructure Partners
+      url: https://www.lonestarinfra.com
+      position: Associate Project Manager
+      startDate: Jul 2018
+      endDate: May 2019
+      summary: |
+        - Supported the delivery of municipal infrastructure and IT modernization projects with budgets totaling $3.5M.
+        - Coordinated schedules, permits, and vendor deliverables across 8 workstreams, ensuring compliance with city and state requirements.
+        - Prepared weekly status reports, meeting minutes, and risk registers for project sponsors and steering committees.
+        - Assisted in the transition from waterfall to agile for the internal tools team, facilitating retrospectives and backlog grooming.
+      keywords:
+        - Infrastructure
+        - Compliance
+        - Scheduling
+        - Reporting
+        - Agile Transition
+  skills:
+    - name: Project Management
+      level: Expert
+      keywords:
+        - Agile & Scrum
+        - Waterfall
+        - Hybrid Delivery
+        - Portfolio Management
+        - Risk Management
+        - Budgeting
+        - Resource Planning
+    - name: Tools & Platforms
+      level: Advanced
+      keywords:
+        - Jira
+        - Confluence
+        - MS Project
+        - Asana
+        - Trello
+        - Smartsheet
+        - Miro
+    - name: Leadership & Communication
+      level: Expert
+      keywords:
+        - Stakeholder Engagement
+        - Executive Reporting
+        - Team Mentoring
+        - Conflict Resolution
+        - Vendor Negotiation
+    - name: Technical Acumen
+      level: Intermediate
+      keywords:
+        - SQL
+        - API Integration
+        - Cloud Fundamentals
+        - Data Analysis
+        - CI/CD Concepts
+  languages:
+    - language: English
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - TOEFL 115
+    - language: Spanish
+      fluency: Full Professional Proficiency
+      keywords:
+        - DELE C1
+    - language: French
+      fluency: Elementary Proficiency
+  awards:
+    - title: Project Management Excellence Award
+      awarder: Brightline Solutions Group
+      date: Nov 2023
+      summary: |
+        Recognized for leading the highest-performing delivery portfolio in the company, achieving 98% on-time delivery and a 4.7/5 stakeholder satisfaction rating.
+    - title: Dean's List
+      awarder: University of Texas at Austin
+      date: May 2017
+      summary: |
+        Awarded for academic excellence in the McCombs School of Business MBA program.
+  certificates:
+    - name: Project Management Professional (PMP)
+      issuer: Project Management Institute
+      date: Mar 2020
+      url: https://www.pmi.org/certifications/project-management-pmp
+    - name: Certified ScrumMaster (CSM)
+      issuer: Scrum Alliance
+      date: Sep 2019
+      url: https://www.scrumalliance.org/certifications
+    - name: Certified Agile Leader (CAL)
+      issuer: Scrum Alliance
+      date: Jun 2022
+      url: https://www.scrumalliance.org/certifications
+  publications:
+    - name: Agile Portfolio Management in Regulated Industries
+      publisher: PMI Global Congress Proceedings
+      releaseDate: Oct 2022
+      url: https://www.pmi.org/learning/library/agile-portfolio-management-regulated-industries
+      summary: |
+        - Examines how hybrid delivery models can satisfy regulatory requirements while preserving Agile flexibility.
+        - Presents a case study from fintech and healthcare projects with measurable improvements in compliance and speed.
+        - Offers practical templates for RAID logs, stage gates, and executive dashboards.
+  projects:
+    - name: Global ERP Rollout
+      url: https://www.brightlinesolutions.com/projects/global-erp
+      description: A multi-site ERP implementation for a manufacturing client across 6
+        countries.
+      startDate: Feb 2022
+      endDate: Nov 2023
+      summary: |
+        - Led a 25-person cross-functional team through discovery, design, build, test, and deployment phases.
+        - Managed a $4.2M budget and coordinated 5 external vendors, delivering all 6 country rollouts within 3% of budget.
+        - Reduced order-to-cash cycle time by 19% through process standardization and automation.
+      keywords:
+        - ERP
+        - Change Management
+        - Vendor Coordination
+        - Global Rollout
+    - name: Customer Data Platform Migration
+      url: https://www.cedarpointdigital.com/projects/cdp-migration
+      description: Migrated legacy customer data into a unified cloud platform for a
+        retail client.
+      startDate: Jan 2021
+      endDate: Aug 2021
+      summary: |
+        - Directed a 12-person team to migrate 40M+ customer records with zero critical data loss.
+        - Established data quality gates and rollback plans that reduced post-launch incidents by 40%.
+        - Facilitated weekly steering committee meetings and delivered executive dashboards on progress and risks.
+      keywords:
+        - Data Migration
+        - Cloud
+        - Data Quality
+        - Stakeholder Management
+  interests:
+    - name: Professional Development
+      keywords:
+        - Agile Coaching
+        - Leadership
+        - Public Speaking
+        - Mentoring
+    - name: Personal
+      keywords:
+        - Trail Running
+        - Cooking
+        - Travel
+        - Photography
+  volunteer:
+    - organization: PMI Austin Chapter
+      url: https://pmi-austin.org
+      position: Volunteer Program Coordinator
+      startDate: Jan 2021
+      endDate: Dec 2023
+      summary: |
+        - Coordinated monthly professional development events for 300+ chapter members, increasing attendance by 25%.
+        - Recruited and managed 15 volunteers, creating onboarding materials and recognition programs.
+        - Facilitated a mentoring circle for aspiring project managers, supporting 20 mentees over two years.
+  references:
+    - name: Dr. Evelyn Hart
+      relationship: Former MBA Capstone Advisor
+      email: evelyn.hart@utexas.edu
+      phone: "(512) 555-0198"
+      summary: |
+        Jordan consistently demonstrated exceptional leadership and analytical rigor. Their ability to align diverse stakeholders and drive projects to completion makes them an invaluable asset to any organization.
+
+locale:
+  language: en

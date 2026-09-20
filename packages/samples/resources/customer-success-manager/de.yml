@@ -1,0 +1,243 @@
+content:
+  basics:
+    name: Julia Becker
+    headline: Customer Success Manager mit Fokus auf Kundenbindung und SaaS-Wachstum
+    phone: "+49 30 12345678"
+    email: julia.becker@example.de
+    url: https://www.juliabecker.de
+    summary: |
+      Customer Success Manager mit über sechs Jahren Erfahrung in der Betreuung von B2B-Kunden im SaaS-Umfeld. Ich verbinde Datenanalyse mit empathischer Kommunikation, um Kundenziele zu erreichen und nachhaltige Geschäftsbeziehungen aufzubauen.
+
+      - Verantwortung für ein Portfolio mit einem jährlichen Umsatzvolumen von über 4 Mio. EUR
+      - Erfolgreiche Steigerung der Kundenbindung um 18 % durch proaktives Onboarding und QBRs
+      - Ausgeprägte Stärke in Eskalationsmanagement, Stakeholder-Kommunikation und vertraglichen Verhandlungen
+      - Technische Affinität zu CRM-, Ticketing- und Customer-Success-Plattformen wie Salesforce, Gainsight und Zendesk
+  location:
+    address: Friedrichstraße 123
+    city: Berlin
+    region: Berlin
+    country: Germany
+    postalCode: "10117"
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/julia-becker-csm
+      username: julia-becker-csm
+    - network: GitHub
+      url: https://github.com/juliabecker
+      username: juliabecker
+  education:
+    - institution: Technische Universität Berlin
+      url: https://www.tu.berlin
+      degree: Master
+      area: Wirtschaftsingenieurwesen
+      score: "1,7"
+      startDate: Oct 1, 2014
+      endDate: Sep 30, 2016
+      courses:
+        - Strategisches Management
+        - Marketing und Vertrieb
+        - Datenanalyse für Entscheider
+        - Projektmanagement
+        - Verhandlungsführung
+        - Service Design
+        - Business Process Management
+        - Customer Relationship Management
+      summary: |
+        - Schwerpunkt auf digitalen Geschäftsmodellen und kundenorientierter Unternehmensführung
+        - Masterarbeit über Erfolgsfaktoren von Customer-Success-Organisationen im B2B-SaaS
+    - institution: Humboldt-Universität zu Berlin
+      url: https://www.hu-berlin.de
+      degree: Bachelor
+      area: Betriebswirtschaftslehre
+      score: "2,0"
+      startDate: Oct 1, 2011
+      endDate: Sep 30, 2014
+      courses:
+        - Allgemeine Betriebswirtschaftslehre
+        - Mikroökonomie
+        - Statistik
+        - Marketing
+        - Personal und Organisation
+        - Wirtschaftsinformatik
+      summary: |
+        - Fundierte betriebswirtschaftliche Grundlagen mit Fokus auf Marketing und Organisation
+        - Praxisprojekt zur Kundenbindung im Einzelhandel
+  work:
+    - name: CloudBridge GmbH
+      url: https://www.cloudbridge.de
+      position: Senior Customer Success Manager
+      startDate: Jan 1, 2022
+      summary: |
+        - Betreuung eines Portfolios von 25 strategischen Enterprise-Kunden mit einem ARR von 5,2 Mio. EUR
+        - Entwicklung und Umsetzung von Customer-Success-Plänen zur Steigerung der Produktadoption und Kundenzufriedenheit (NPS +22)
+        - Durchführung von vierteljährlichen Business Reviews (QBRs) mit C-Level-Stakeholdern
+        - Identifikation von Upsell- und Cross-Sell-Potenzialen in enger Zusammenarbeit mit dem Vertrieb
+        - Proaktives Churn-Management durch Risikoanalyse und Eskalationspläne
+      keywords:
+        - Kundenbindung
+        - Onboarding
+        - QBR
+        - Upselling
+        - Churn-Management
+        - Salesforce
+        - Gainsight
+    - name: DataFlow AG
+      url: https://www.dataflow.de
+      position: Customer Success Manager
+      startDate: Mar 1, 2019
+      endDate: Dec 31, 2021
+      summary: |
+        - Verantwortung für 60 mittelständische Kunden im DACH-Raum
+        - Aufbau eines standardisierten Onboarding-Prozesses, der die Time-to-Value um 30 % verkürzte
+        - Analyse von Nutzungsdaten zur Ableitung konkreter Handlungsempfehlungen
+        - Enge Zusammenarbeit mit Product und Support zur Weitergabe von Kundenfeedback
+        - Erstellung von Health-Score-Modellen zur Früherkennung von Abwanderungsrisiken
+      keywords:
+        - SaaS
+        - Onboarding
+        - Health Score
+        - Datenanalyse
+        - Zendesk
+    - name: Nordwind Solutions
+      url: https://www.nordwind-solutions.de
+      position: Junior Customer Success Manager
+      startDate: Jul 1, 2017
+      endDate: Feb 28, 2019
+      summary: |
+        - First-Level-Support für 120 Geschäftskunden per Telefon, E-Mail und Chat
+        - Dokumentation von Kundenanfragen und Pflege der Wissensdatenbank
+        - Vorbereitung von Reports und Präsentationen für das Customer-Success-Team
+        - Mitwirkung an Retentionskampagnen und Kundenzufriedenheitsumfragen
+      keywords:
+        - Kundenservice
+        - CRM
+        - Reporting
+        - Retention
+        - Kommunikation
+  skills:
+    - name: Customer Success Management
+      level: Expert
+      keywords:
+        - Kundenbindung
+        - Onboarding
+        - QBR
+        - Churn-Management
+        - Upselling
+    - name: CRM und Tools
+      level: Advanced
+      keywords:
+        - Salesforce
+        - Gainsight
+        - Zendesk
+        - Jira
+        - Confluence
+        - Tableau
+    - name: Kommunikation und Führung
+      level: Advanced
+      keywords:
+        - Stakeholder-Management
+        - Eskalationsmanagement
+        - Verhandlung
+        - Präsentation
+        - Mentoring
+  languages:
+    - language: German
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - Muttersprache
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - TOEFL 110
+        - Verhandlungssicher
+    - language: Spanish
+      fluency: Limited Working Proficiency
+      keywords:
+        - Grundkenntnisse
+  awards:
+    - title: Customer-Success-Manager des Jahres
+      date: Nov 2023
+      awarder: CloudBridge GmbH
+      summary: |
+        Auszeichnung für herausragende Leistungen bei der Steigerung der Kundenbindung und der Entwicklung innovativer Success-Programme.
+    - title: Beste Teamleistung
+      date: Dec 2020
+      awarder: DataFlow AG
+      summary: |
+        Anerkennung für kollaborative Zusammenarbeit und Unterstützung kollegenübergreifender Projekte.
+  certificates:
+    - name: Certified Customer Success Manager (CCSM)
+      issuer: SuccessCOACHING
+      date: Jun 2021
+      url: https://www.successcoaching.com/certification
+    - name: Salesforce Certified Administrator
+      issuer: Salesforce
+      date: Feb 2020
+      url: https://trailhead.salesforce.com/credentials/administrator
+    - name: Professional Scrum Master I
+      issuer: Scrum.org
+      date: Sep 2022
+      url: https://www.scrum.org/professional-scrum-master-i-certification
+  publications:
+    - name: Kundenbindung im digitalen Zeitalter - Strategien für SaaS-Unternehmen
+      publisher: Journal für Customer Management
+      releaseDate: Mar 2022
+      url: https://www.example.com/publikation/kundenbindung-saas
+      summary: |
+        - Analyse proaktiver Customer-Success-Ansätze zur Reduzierung von Churn
+        - Fallstudien aus dem B2B-SaaS-Markt
+        - Handlungsempfehlungen für Onboarding und QBRs
+  projects:
+    - name: Kundenportal Relaunch
+      startDate: Jan 2023
+      endDate: Jun 2023
+      description: Neugestaltung eines Self-Service-Portals zur Verbesserung der
+        Kundenerfahrung
+      summary: |
+        - Leitung eines cross-funktionalen Teams aus Product, Design und Support
+        - Durchführung von Kundeninterviews und Usability-Tests
+        - Steigerung der Portalnutzung um 45 % innerhalb von drei Monaten
+      keywords:
+        - Customer Experience
+        - Self-Service
+        - Produktmanagement
+      url: https://www.cloudbridge.de/kundenportal
+    - name: Health-Score-Modell
+      startDate: Mar 2020
+      endDate: Nov 2020
+      description: Entwicklung eines datenbasierten Frühwarnsystems zur Churn-Prävention
+      summary: |
+        - Integration von Nutzungs-, Support- und Umfragedaten
+        - Definition von Schwellenwerten und automatisierten Warnmeldungen
+        - Reduzierung der Churn-Rate um 12 % im ersten Jahr
+      keywords:
+        - Datenanalyse
+        - Churn
+        - Tableau
+      url: https://www.dataflow.de/health-score
+  interests:
+    - name: Sport
+      keywords:
+        - Laufen
+        - Yoga
+        - Radfahren
+    - name: Musik
+      keywords:
+        - Klavier
+        - Konzerte
+    - name: Ehrenamt
+      keywords:
+        - Mentoring
+        - Bildung
+  volunteer:
+    - organization: Berliner Mentoring Netzwerk
+      url: https://www.berliner-mentoring.de
+      position: Mentorin für Berufseinsteiger
+      startDate: Sep 2020
+      summary: |
+        - Unterstützung von Berufseinsteigern bei der Karriereplanung und Bewerbungsstrategie
+        - Durchführung monatlicher Coaching-Gespräche und Workshops
+        - Aufbau eines Netzwerks für junge Fachkräfte im Bereich Customer Success
+
+locale:
+  language: de

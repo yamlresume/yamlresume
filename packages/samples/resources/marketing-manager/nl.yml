@@ -1,0 +1,267 @@
+content:
+  basics:
+    name: Sanne de Vries
+    headline: Senior Marketing Manager | Digitale Strategie & Merkopbouw
+    phone: "+31 6 12345678"
+    email: sanne.devries@example.com
+    url: https://www.sannedevries.nl
+    summary: |
+      Ervaren marketingmanager met meer dan 8 jaar ervaring in B2B- en B2C-marketing, digitale strategie en merkopbouw. Ik combineer data-gedreven inzichten met creatieve campagnes om duurzame groei te realiseren.
+
+      - Leidinggeven aan multidisciplinaire teams van marketeers, contentspecialisten en bureaus
+      - Ontwikkelen en uitvoeren van omnichannel-marketingstrategieën met aantoonbare ROI
+      - Sterk in marketingautomatisering, SEO/SEA, contentmarketing en merkpositionering
+      - Ervaren in het beheren van budgetten tot EUR 1,5 miljoen en het rapporteren aan directie
+  location:
+    address: Herengracht 182
+    city: Amsterdam
+    region: Noord-Holland
+    country: Netherlands
+    postalCode: "1016 BR"
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/sannedevries
+      username: sannedevries
+    - network: Twitter
+      url: https://twitter.com/sannedevries
+      username: sannedevries
+  education:
+    - institution: Universiteit van Amsterdam
+      url: https://www.uva.nl
+      degree: Master
+      area: Bedrijfskunde, specialisatie Marketing
+      score: "8.4"
+      startDate: Sep 1, 2014
+      endDate: Jul 1, 2016
+      courses:
+        - Strategisch Marketingmanagement
+        - Consumentengedrag
+        - Marktonderzoek en Data-analyse
+        - Digitale Marketing en Social Media
+        - Brand Management
+        - Marketingcommunicatie
+      summary: |
+        - Afgestudeerd met specialisatie in digitale marketing en consumentenpsychologie
+        - Thesis over de invloed van social proof op online aankoopbeslissingen (cijfer 9,0)
+        - Bestuurslid van de studievereniging en organisator van marketingcarrièredag
+    - institution: Hogeschool van Amsterdam
+      url: https://www.hva.nl
+      degree: Bachelor
+      area: Commerciële Economie
+      score: "7.9"
+      startDate: Sep 1, 2010
+      endDate: Jul 1, 2014
+      courses:
+        - Marketingmanagement
+        - Marktonderzoek
+        - Verkoop en Accountmanagement
+        - Communicatie
+        - Bedrijfseconomie
+      summary: |
+        - Brede basis in commercie, marketing en bedrijfsvoering
+        - Stage bij een reclamebureau in Amsterdam
+        - Minor in International Business aan de Universiteit van Barcelona
+  work:
+    - name: GroenMarkt BV
+      url: https://www.groenmarkt.nl
+      position: Senior Marketing Manager
+      startDate: Mar 1, 2021
+      summary: |
+        - Leiding aan een team van 6 marketingprofessionals en verantwoordelijk voor de jaarlijkse marketingstrategie
+        - Ontwikkelde en implementeerde een omnichannel-aanpak die het aantal gekwalificeerde leads met 45% verhoogde
+        - Beheerde een marketingbudget van EUR 1,2 miljoen en verlaagde de kosten per lead met 22% door middel van data-analyse
+        - Richtte een contentmarketingafdeling op die maandelijks 80.000 organische bezoekers genereert
+        - Werkt nauw samen met sales, product en directie om merkpositionering en klantwaarde te versterken
+      keywords:
+        - Digitale strategie
+        - Contentmarketing
+        - Leadgeneratie
+        - Teamleiding
+        - Budgetbeheer
+    - name: De Digitale Werkplaats
+      url: https://www.dedigitalewerkplaats.nl
+      position: Marketing Manager
+      startDate: Jun 1, 2017
+      endDate: Feb 28, 2021
+      summary: |
+        - Verantwoordelijk voor de marketingstrategie van een SaaS-platform voor MKB-ondernemers
+        - Realiseerde 60% groei in websiteconversies door A/B-testen, landingspagina-optimalisatie en SEO
+        - Zette marketingautomatisering op met HubSpot, waardoor 30% minder handmatig werk nodig was
+        - Coördineerde externe bureaus voor branding, PR en evenementen
+        - Rapporteerde maandelijks aan de directie over KPI's, ROI en markttrends
+      keywords:
+        - SaaS
+        - Marketingautomatisering
+        - SEO
+        - A/B-testen
+        - HubSpot
+    - name: Bureau Vlam
+      url: https://www.bureauvlam.nl
+      position: Online Marketing Specialist
+      startDate: Aug 1, 2014
+      endDate: May 31, 2017
+      summary: |
+        - Beheerde Google Ads- en socialmediacampagnes voor uiteenlopende klanten in retail en horeca
+        - Analyseerde campagneprestaties en optimaliseerde advertenties voor maximaal rendement
+        - Schreef SEO-vriendelijke webcontent en beheerde socialmediakanalen
+        - Ondersteunde bij de ontwikkeling van merkstrategieën en klantpresentaties
+      keywords:
+        - Google Ads
+        - Social Media
+        - SEO
+        - Web analytics
+        - Klantpresentaties
+  skills:
+    - name: Marketingstrategie
+      level: Expert
+      keywords:
+        - Merkpositionering
+        - Marktanalyse
+        - Go-to-market
+        - Campagnemanagement
+        - Budgettering
+    - name: Digitale Marketing
+      level: Expert
+      keywords:
+        - SEO
+        - SEA
+        - Contentmarketing
+        - E-mailmarketing
+        - Social media
+    - name: Data en Analytics
+      level: Advanced
+      keywords:
+        - Google Analytics 4
+        - Data Studio
+        - A/B-testen
+        - CRM
+        - KPI-rapportages
+    - name: Leiderschap en Samenwerking
+      level: Advanced
+      keywords:
+        - Teamleiding
+        - Agile werken
+        - Stakeholdermanagement
+        - Coaching
+        - Projectmanagement
+    - name: Tools
+      level: Advanced
+      keywords:
+        - HubSpot
+        - Salesforce
+        - Google Ads
+        - Meta Ads
+        - Mailchimp
+  languages:
+    - language: Dutch
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - Moedertaal
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - Zakelijk vloeiend
+        - TOEFL 110
+    - language: German
+      fluency: Limited Working Proficiency
+      keywords:
+        - Basiskennis
+  awards:
+    - title: Marketing Excellence Award
+      date: Nov 15, 2023
+      awarder: Nederlandse Vereniging voor Marketing
+      summary: |
+        - Gewonnen voor de succesvolle omnichannel-campagne "Duurzaam Doen" met een ROI van 340%
+        - Beoordeeld door een vakjury van senior marketeers en hoogleraren
+    - title: Beste Werkgeverscampagne
+      date: Apr 10, 2020
+      awarder: Stichting Marketing Impact
+      summary: |
+        - Erkend voor een employer branding-campagne die het aantal sollicitaties met 55% verhoogde
+  certificates:
+    - name: Google Analytics 4 Certificering
+      issuer: Google
+      date: Feb 2023
+      url: https://skillshop.exceedlms.com/student/path/508256-google-analytics-4
+    - name: HubSpot Marketing Automation Certificering
+      issuer: HubSpot Academy
+      date: Sep 2022
+      url: https://academy.hubspot.com/courses/marketing-automation
+    - name: Scrum Master PSM I
+      issuer: Scrum.org
+      date: Jan 2021
+      url: https://www.scrum.org/assessments/professional-scrum-master-i-certification
+  publications:
+    - name: De kracht van datagedreven merkstrategie
+      publisher: Tijdschrift voor Marketing
+      releaseDate: Jun 2023
+      url: https://www.tijdschriftvoormarketing.nl/
+      summary: |
+        - Artikel over hoe merken data kunnen inzetten voor authentieke positionering
+        - Gepubliceerd in het vakblad voor senior marketingprofessionals
+    - name: 'AI in marketing: hype of hefboom?'
+      publisher: MarketingTribune
+      releaseDate: Oct 2022
+      url: https://www.marketingtribune.nl/
+      summary: |
+        - Verkennend artikel over praktische toepassingen van AI in marketingteams
+        - Inclusief interviews met drie marketingdirecteuren
+  projects:
+    - name: Duurzaam Doen campagne
+      url: https://www.groenmarkt.nl/duurzaam-doen
+      startDate: Jan 2023
+      endDate: Dec 2023
+      description: Omnichannel-campagne om duurzame productlijnen onder de aandacht te
+        brengen bij zakelijke klanten.
+      summary: |
+        - Ontwikkelde de strategie, merkpositionering en contentkalender
+        - Behaalde 2,4 miljoen vertoningen en 18.000 nieuwe leads
+        - Verhoogde de merkbekendheid met 32% in de doelgroep
+      keywords:
+        - Omnichannel
+        - Duurzaamheid
+        - B2B
+        - Contentmarketing
+    - name: Klantverhalenplatform
+      url: https://www.dedigitalewerkplaats.nl/klantverhalen
+      startDate: Mar 2019
+      endDate: Nov 2020
+      description: Online platform met klantcases en video's om de salesfunnel te
+        ondersteunen.
+      summary: |
+        - Initieerde en beheerde het platform van concept tot lancering
+        - Zorgde voor 25% meer marketinggekwalificeerde leads
+        - Werd bekroond met een interne innovatieprijs
+      keywords:
+        - Content
+        - Video
+        - Leadgeneratie
+        - Sales enablement
+  interests:
+    - name: Sport
+      keywords:
+        - Hardlopen
+        - Yoga
+        - Wielrennen
+    - name: Cultuur
+      keywords:
+        - Literatuur
+        - Musea
+        - Reizen
+    - name: Maatschappij
+      keywords:
+        - Duurzaamheid
+        - Vrijwilligerswerk
+        - Mentoring
+  volunteer:
+    - organization: Marketing aan Zee
+      url: https://www.marketingaanzee.nl
+      position: Mentor voor jonge marketeers
+      startDate: Sep 2019
+      summary: |
+        - Begeleidt jaarlijks drie jonge marketingprofessionals bij hun carrièreontwikkeling
+        - Organiseert workshops over persoonlijk leiderschap en digitale vaardigheden
+        - Draagt bij aan een inclusiever netwerk binnen de marketingbranche
+
+locale:
+  language: nl

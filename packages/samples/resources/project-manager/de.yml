@@ -1,0 +1,237 @@
+content:
+  basics:
+    name: Dr. Anna Schmidt
+    headline: Senior Projektmanagerin | Agile Transformation & Digitalisierung
+    phone: "+49 30 9876543"
+    email: anna.schmidt@example.de
+    url: https://www.annaschmidt-pm.de
+    summary: |
+      Senior Projektmanagerin mit über 8 Jahren Erfahrung in der Leitung komplexer IT- und Digitalisierungsprojekte. Nachweisliche Erfolge in der agilen Transformation, im Stakeholder-Management und in der Budgetverantwortung von bis zu 5 Mio. EUR.
+
+      - Führung interdisziplinärer Teams von bis zu 25 Mitarbeitenden
+      - Zertifizierte Scrum Masterin und PMP mit fundierten Kenntnissen in SAFe und Kanban
+      - Starke Kommunikationsfähigkeiten in Deutsch und Englisch, verhandlungssicher in Französisch
+      - Leidenschaft für nachhaltige Prozessoptimierung und datengetriebene Entscheidungen
+  location:
+    address: Friedrichstraße 123
+    city: Berlin
+    region: Berlin
+    country: Germany
+    postalCode: "10117"
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/annaschmidtpm
+      username: annaschmidtpm
+    - network: GitHub
+      url: https://github.com/annaschmidt
+      username: annaschmidt
+    - network: Twitter
+      url: https://twitter.com/annaschmidt_pm
+      username: annaschmidt_pm
+  education:
+    - institution: Technische Universität München
+      url: https://www.tum.de
+      degree: Master
+      area: Wirtschaftsinformatik
+      score: "1.7"
+      startDate: Oct 1, 2013
+      endDate: Sep 30, 2015
+      courses:
+        - Projektmanagement
+        - Agile Softwareentwicklung
+        - Datenbanken
+        - Unternehmensführung
+        - IT-Controlling
+      summary: |
+        - Schwerpunkt auf IT-Projektmanagement und agile Methoden
+        - Masterarbeit: "Erfolgsfaktoren agiler Transformationsprojekte in mittelständischen Unternehmen"
+    - institution: Universität Mannheim
+      url: https://www.uni-mannheim.de
+      degree: Bachelor
+      area: Betriebswirtschaftslehre
+      score: "1.9"
+      startDate: Oct 1, 2010
+      endDate: Sep 30, 2013
+      courses:
+        - Betriebswirtschaftslehre
+        - Statistik
+        - Informatik
+      summary: |
+        - Grundlagen in BWL, VWL und Informatik
+        - Auslandssemester an der Universität St. Gallen
+  work:
+    - name: Digital Pioneers GmbH
+      url: https://www.digital-pioneers.de
+      position: Senior Projektmanagerin
+      startDate: Jan 1, 2021
+      summary: |
+        - Leitung eines portfolioweiten agilen Transformationsprogramms mit 12 Projekten und einem Budget von 5 Mio. EUR
+        - Einführung eines skalierbaren SAFe-Frameworks, Steigerung der Liefergeschwindigkeit um 30%
+        - Coaching von 5 Scrum-Teams und Aufbau eines internen PMO
+        - Berichterstattung an den Vorstand und Steuerung externer Dienstleister
+      keywords:
+        - Agile Transformation
+        - SAFe
+        - PMO
+        - Budgetverantwortung
+        - Stakeholder-Management
+    - name: TechSolutions AG
+      url: https://www.techsolutions.de
+      position: Projektmanager
+      startDate: Jul 1, 2017
+      endDate: Dec 31, 2020
+      summary: |
+        - Erfolgreiche Leitung von 15+ IT-Projekten in den Bereichen Cloud-Migration und SAP-Einführung
+        - Verantwortung für Projektplanung, Risikomanagement und Qualitätssicherung
+        - Enge Zusammenarbeit mit Product Ownern und Entwicklungsteams
+        - Einführung von Kanban in der Softwareentwicklung, Reduzierung der Durchlaufzeit um 25%
+      keywords:
+        - Cloud-Migration
+        - SAP
+        - Kanban
+        - Risikomanagement
+        - Jira
+    - name: StartUp Innovations GmbH
+      url: https://www.startup-innovations.de
+      position: Junior Projektmanager
+      startDate: Aug 1, 2015
+      endDate: Jun 30, 2017
+      summary: |
+        - Unterstützung bei der Planung und Umsetzung von Digitalisierungsprojekten
+        - Erstellung von Projektplänen, Statusberichten und Präsentationen
+        - Koordination von Meetings und Workshops
+      keywords:
+        - Digitalisierung
+        - Projektplanung
+        - Reporting
+  skills:
+    - name: Projektmanagement
+      level: Expert
+      keywords:
+        - Agiles Projektmanagement
+        - Wasserfall
+        - Hybrid
+        - PMI
+        - PRINCE2
+    - name: Agile Methoden
+      level: Expert
+      keywords:
+        - Scrum
+        - Kanban
+        - SAFe
+        - Lean
+        - OKR
+    - name: Tools
+      level: Advanced
+      keywords:
+        - Jira
+        - Confluence
+        - MS Project
+        - Trello
+        - Miro
+    - name: Führung & Kommunikation
+      level: Advanced
+      keywords:
+        - Teamentwicklung
+        - Moderation
+        - Konfliktmanagement
+        - Stakeholder-Management
+  languages:
+    - language: German
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - Muttersprache
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - Verhandlungssicher
+        - TOEFL 110
+    - language: French
+      fluency: Limited Working Proficiency
+      keywords:
+        - Grundkenntnisse
+  awards:
+    - title: Projektmanagerin des Jahres 2023
+      awarder: Digital Pioneers GmbH
+      date: Dec 2023
+      summary: |
+        Auszeichnung für die herausragende Leitung des agilen Transformationsprogramms und die erfolgreiche Einführung des PMO.
+    - title: Best Master Thesis Award
+      awarder: Technische Universität München
+      date: Oct 2015
+      summary: |
+        Auszeichnung für die beste Masterarbeit im Bereich Wirtschaftsinformatik.
+  certificates:
+    - name: Project Management Professional (PMP)
+      issuer: Project Management Institute
+      date: Mar 2020
+      url: https://www.pmi.org/certifications/project-management-pmp
+    - name: Professional Scrum Master I
+      issuer: Scrum.org
+      date: Jun 2019
+      url: https://www.scrum.org/professional-scrum-master-i-certification
+    - name: SAFe 5 Agilist
+      issuer: Scaled Agile
+      date: Sep 2021
+      url: https://www.scaledagile.com/certification/safe-agilist/
+  publications:
+    - name: Erfolgsfaktoren agiler Transformationsprojekte
+      publisher: Projektmanagement aktuell
+      releaseDate: May 2018
+      url: https://www.pm-aktuell.de/artikel/erfolgsfaktoren-agiler-transformation
+      summary: |
+        - Analyse von 20 agilen Transformationsprojekten in mittelständischen Unternehmen
+        - Identifikation von kritischen Erfolgsfaktoren wie Führung, Kommunikation und Kultur
+        - Handlungsempfehlungen für Projektmanager und Führungskräfte
+  projects:
+    - name: Einführung eines agilen PMO
+      url: https://www.digital-pioneers.de/projekte/agiles-pmo
+      description: Aufbau eines zentralen PMO zur Steuerung von 12 agilen Projekten
+      startDate: Mar 2021
+      endDate: Nov 2022
+      summary: |
+        - Etablierung von standardisierten Prozessen und Reporting
+        - Einführung von Jira und Confluence als zentrale Plattformen
+        - Schulung von 50 Mitarbeitenden in agilen Methoden
+        - Reduzierung der Projektdurchlaufzeit um 20%
+      keywords:
+        - PMO
+        - Agile
+        - Jira
+        - Confluence
+    - name: Cloud-Migration für einen DAX-Konzern
+      url: https://www.techsolutions.de/projekte/cloud-migration
+      description: Migration von 200+ Anwendungen in die AWS-Cloud
+      startDate: Jan 2019
+      endDate: Dec 2020
+      summary: |
+        - Leitung eines Teams von 15 Entwicklern und Architekten
+        - Sicherstellung der Termin- und Budgettreue
+        - Erfolgreiche Abnahme durch den Kunden
+      keywords:
+        - AWS
+        - Cloud
+        - Migration
+  interests:
+    - name: Sport
+      keywords:
+        - Marathon
+        - Skifahren
+        - Wandern
+    - name: Musik
+      keywords:
+        - Klavier
+        - Gitarre
+  volunteer:
+    - organization: PMI Germany Chapter
+      url: https://www.pmi-germany.de
+      position: Mentorin
+      startDate: Jan 2020
+      endDate: Dec 2023
+      summary: |
+        - Mentoring von Nachwuchsprojektmanagern
+        - Organisation von Netzwerkveranstaltungen und Workshops
+        - Vorträge zu agilen Methoden und Karriereentwicklung
+
+locale:
+  language: de

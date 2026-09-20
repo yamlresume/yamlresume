@@ -1,0 +1,269 @@
+content:
+  basics:
+    name: Ingrid Nordby
+    headline: DevOps-ingeniør med spesialisering i skyplattformer, automatisering og
+      pålitelighet
+    phone: "+47 918 45 273"
+    email: ingrid.nordby@nordbydrift.no
+    url: https://www.ingridnordby.no
+    summary: |
+      DevOps-ingeniør med ni års erfaring fra skyleveranser, plattformarbeid og automatisering i **høyt tilgjengelige** produksjonsmiljøer.
+
+      - Bygget og driftet Kubernetes-plattformer som betjener over 200 tjenester og 40 produktteam
+      - Automatisert infrastruktur med Terraform, GitOps og policy-som-kode
+      - Redusert nedetid og skykostnader gjennom SLO-arbeid, observabilitet og FinOps
+
+  location:
+    address: Thorvald Meyers gate 42
+    city: Oslo
+    region: Oslo
+    country: Norway
+    postalCode: "0555"
+  profiles:
+    - network: GitHub
+      url: https://github.com/ingridnordby
+      username: ingridnordby
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/ingridnordby
+      username: ingridnordby
+
+  education:
+    - institution: Norges teknisk-naturvitenskapelige universitet (NTNU)
+      url: https://www.ntnu.no
+      degree: Master
+      area: Informatikk
+      score: "3,8"
+      startDate: Aug 2013
+      endDate: Jun 2018
+      courses:
+        - Operativsystemer
+        - Distribuerte systemer
+        - Algoritmer og datastrukturer
+        - Databasemodellering
+        - Nettverkssikkerhet
+        - Skyarkitektur og skalerbarhet
+      summary: |
+        - Fordypning i distribuerte systemer og skalerbar infrastruktur
+        - Masteroppgave om automatisk kapasitetsstyring i containerplattformer
+        - Gruppeleder i studentforeningen for systemdrift gjennom tre semestre
+    - institution: Bergen tekniske fagskole
+      url: https://www.btf.no
+      degree: High School
+      area: Informasjonsteknologi
+      score: "5,4"
+      startDate: Aug 2010
+      endDate: Jun 2013
+      courses:
+        - Nettverksteknologi
+        - Linux-administrasjon
+        - Programmering i Python
+
+  work:
+    - name: Nordlys Digital AS
+      url: https://www.nordlysdigtal.no
+      position: Lead DevOps-ingeniør
+      startDate: Mar 2022
+      summary: |
+        - Leder et plattformteam på seks ingeniører med ansvar for Kubernetes-plattformen til alle produktteam
+        - Innførte GitOps med Argo CD og Terraform, og kuttet ledetiden for infrastrukturleveranser fra dager til under én time
+        - Etablerte SLO-er og feilbudsjetter som løftet tilgjengeligheten fra 99,5 % til 99,95 %
+        - Reduserte skykostnadene med 31 % gjennom rettighetsizing, spot-instanser og faste FinOps-rutiner
+        - Fungerer som teknisk mentor og driver interne fagdager og onboarding av nye ingeniører
+      keywords:
+        - Kubernetes
+        - Terraform
+        - Argo CD
+        - SRE
+        - FinOps
+    - name: Skybasert AS
+      url: https://www.skybasert.no
+      position: Senior DevOps-ingeniør
+      startDate: Jan 2020
+      endDate: Mar 2022
+      summary: |
+        - Designet og bygget multi-region AWS-arkitektur med Terraform for en SaaS-plattform med 120 000 aktive brukere
+        - Automatiserte CI/CD i GitHub Actions og Jenkins med blågrønne utrullinger og automatisk rollback
+        - Bygget observabilitetsstack med Prometheus, Grafana og OpenTelemetry som reduserte MTTR fra 90 til 22 minutter
+        - Hardet opp containerbilder med Trivy og OPA-policyer integrert i leveringskjeden
+      keywords:
+        - AWS
+        - GitHub Actions
+        - Prometheus
+        - OpenTelemetry
+        - Sikkerhet
+    - name: Fjordkraft Teknologi
+      url: https://www.fjordkraftsikt.no
+      position: Driftsingeniør
+      startDate: Aug 2018
+      endDate: Dec 2019
+      summary: |
+        - Driftet Linux-baserte produksjonsmiljøer med Ansible og Puppet for over 60 virtuelle tjenere
+        - Migrerte on-prem-tjenester til Azure og automatiserte provisjonering med ARM-maler
+        - Etablerte vaktrutiner, runbooks og hendelseshåndtering etter ITIL-prinsipper
+      keywords:
+        - Linux
+        - Ansible
+        - Azure
+        - ITIL
+
+  skills:
+    - name: Skyplattformer
+      level: Expert
+      keywords:
+        - AWS
+        - Azure
+        - Kubernetes
+        - EKS
+        - AKS
+    - name: Infrastruktur som kode
+      level: Advanced
+      keywords:
+        - Terraform
+        - Ansible
+        - Pulumi
+        - Helm
+        - CloudFormation
+    - name: CI/CD og automatisering
+      level: Advanced
+      keywords:
+        - GitHub Actions
+        - GitLab CI
+        - Argo CD
+        - Jenkins
+        - Tekton
+    - name: Observabilitet
+      level: Advanced
+      keywords:
+        - Prometheus
+        - Grafana
+        - OpenTelemetry
+        - Loki
+        - Datadog
+    - name: Programmering
+      level: Advanced
+      keywords:
+        - Python
+        - Go
+        - Bash
+        - TypeScript
+        - SQL
+    - name: Sikkerhet og compliance
+      level: Intermediate
+      keywords:
+        - Vault
+        - Trivy
+        - OPA
+        - ISO 27001
+        - Zero Trust
+
+  languages:
+    - language: Norwegian
+      fluency: Native or Bilingual Proficiency
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - Arbeidsspråk i 9 år
+        - TOEFL 108
+
+  awards:
+    - title: Årets teknologipris
+      awarder: Nordlys Digital AS
+      date: Nov 2023
+      summary: |
+        Tildelt for arbeidet med selvbetjeningsplattformen som gjorde at produktteamene kunne
+        provisjonere egne miljøer uten manuell driftsoppfølging.
+    - title: Beste fagartikkel
+      awarder: Nordic DevOps Community
+      date: Mai 2023
+      summary: |
+        Prisen ble gitt for artikkelen om plattformteam som produkt og hvordan man måler
+        verdien av intern utviklererfaring.
+
+  certificates:
+    - name: AWS Certified DevOps Engineer – Professional
+      url: https://aws.amazon.com/certification/
+      issuer: AWS
+      date: Feb 2023
+    - name: 'HashiCorp Certified: Terraform Associate'
+      url: https://www.hashicorp.com/certification/terraform-associate
+      issuer: HashiCorp
+      date: Sep 2022
+    - name: Certified Kubernetes Administrator (CKA)
+      url: https://www.cncf.io/certification/cka/
+      issuer: CNCF
+      date: Jun 2021
+
+  publications:
+    - publisher: Kode24
+      url: https://www.kode24.no
+      name: Plattformteamet som produkt – erfaringer fra norsk næringsliv
+      releaseDate: Apr 2023
+      summary: |
+        - Fagartikkel om hvordan plattformteam kan måle og synliggjøre verdien de skaper for produktteam
+        - Beskriver konkrete måltall for ledetid, endringsfrekvens og utviklererfaring
+        - Deler erfaringer fra innføring av GitOps og selvbetjening i tre nordiske selskaper
+
+  projects:
+    - name: Selvbetjeningsportal for utviklere
+      url: https://github.com/ingridnordby/selfservice-portal
+      description: Åpen kildekode-portal som lar utviklere provisjonere miljøer og
+        tjenester selv, med innebygd policykontroll.
+      startDate: Feb 2023
+      endDate: Nov 2023
+      summary: |
+        - Bygget med Backstage og Crossplane på toppen av Kubernetes
+        - Reduserte manuelle driftsoppgaver med omtrent 70 % i pilotteamene
+        - Brukes i dag av 25 team i tre nordiske selskaper
+      keywords:
+        - Backstage
+        - Crossplane
+        - Platform Engineering
+    - name: Terraform-moduler for offentlig sky
+      url: https://github.com/ingridnordby/tf-ggv
+      description: Gjenbrukbare Terraform-moduler for sikre og kostnadseffektive
+        landinger i AWS og Azure.
+      startDate: Sep 2021
+      endDate: Aug 2022
+      summary: |
+        - Moduler for nettverk, tilgangsstyring, logging og budsjettvarsler
+        - Innebygde policyer for kryptering, tagging og nettverkssegmentering
+        - Tatt i bruk av ni virksomheter i offentlig sektor
+      keywords:
+        - Terraform
+        - AWS
+        - Azure
+        - Policy as Code
+
+  references:
+    - name: Marit Solheim
+      relationship: Faglig leder, Nordlys Digital AS
+      email: marit.solheim@nordlysdigtal.no
+      phone: "+47 900 12 345"
+      summary: |
+        Ingrid er en av de mest systematiske ingeniørene jeg har jobbet med. Hun kombinerer
+        dyp teknisk forståelse med evnen til å bygge team og skape varige forbedringer i driften.
+
+  interests:
+    - name: Friluftsliv
+      keywords:
+        - Fjellturer
+        - Langrenn
+        - Padling
+    - name: Musikk
+      keywords:
+        - Gitar
+        - Kor
+
+  volunteer:
+    - organization: Nordic DevOps Community
+      url: https://www.nordicdevops.no
+      position: Foredragsholder og fagansvarlig
+      startDate: Jan 2021
+      summary: |
+        - Holder foredrag om plattformarbeid, GitOps og observabilitet på møter og konferanser
+        - Er med på å organisere den årlige DevOps-dagen for over 400 deltakere
+        - Fungerer som mentor for tre junioringeniører gjennom foreningens mentorprogram
+      endDate: Des 2024
+
+locale:
+  language: no

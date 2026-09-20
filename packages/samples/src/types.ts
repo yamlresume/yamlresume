@@ -29,10 +29,15 @@ import { z } from 'zod'
  * Supported job positions for curated sample resumes.
  */
 export const POSITIONS = [
-  'software engineer',
+  'account executive',
+  'customer success manager',
   'data analyst',
   'data scientist',
+  'devops engineer',
+  'marketing manager',
   'product manager',
+  'project manager',
+  'software engineer',
   'ux designer',
 ] as const
 

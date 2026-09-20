@@ -1,0 +1,201 @@
+content:
+  basics:
+    name: Ana Beatriz Silva
+    headline: Gerente de Projetos Ágeis | PMP | Scrum Master
+    phone: "+55 11 98765-4321"
+    email: ana.silva@email.com
+    url: https://www.linkedin.com/in/anabeatrizsilva
+    summary: |
+      - Gerente de Projetos com mais de 8 anos de experiência liderando equipes multidisciplinares em projetos de tecnologia e transformação digital.
+      - Especialista em metodologias ágeis (Scrum, Kanban) e tradicionais (PMBOK), com certificação PMP e Scrum Master.
+      - Histórico comprovado de entregas dentro do prazo e orçamento, com foco em qualidade e satisfação do cliente.
+      - Habilidade em gestão de stakeholders, mitigação de riscos e otimização de processos.
+  location:
+    address: Rua das Flores, 123
+    city: São Paulo
+    region: SP
+    country: Brazil
+    postalCode: "01234-567"
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/anabeatrizsilva
+      username: anabeatrizsilva
+  education:
+    - institution: Universidade de São Paulo
+      url: https://www.usp.br
+      degree: Bachelor
+      area: Administração de Empresas
+      score: "8.5"
+      startDate: Mar 1, 2010
+      endDate: Dec 15, 2014
+      courses:
+        - Gestão de Projetos
+        - Planejamento Estratégico
+        - Gestão de Pessoas
+        - Finanças Corporativas
+        - Marketing
+        - Estatística
+      summary: |
+        - Formação sólida em administração com ênfase em gestão de projetos.
+        - Desenvolvimento de habilidades em liderança, comunicação e análise de dados.
+    - institution: Fundação Getulio Vargas
+      url: https://www.fgv.br
+      degree: Master
+      area: Gestão de Projetos
+      score: "9.0"
+      startDate: Feb 1, 2016
+      endDate: Dec 10, 2017
+      courses:
+        - Gerenciamento de Projetos Complexos
+        - Métodos Ágeis
+        - Liderança de Equipes
+      summary: |
+        - Especialização em gestão de projetos com foco em metodologias ágeis e tradicionais.
+        - Trabalho de conclusão sobre transformação ágil em empresas brasileiras.
+  work:
+    - name: Tech Solutions Ltda
+      url: https://www.techsolutions.com.br
+      position: Gerente de Projetos Sênior
+      startDate: Jan 6, 2020
+      summary: |
+        - Liderança de uma equipe de 15 pessoas no desenvolvimento de uma plataforma SaaS, resultando em um aumento de 30% na receita anual.
+        - Implementação de metodologia Scrum, reduzindo o time-to-market em 25%.
+        - Gestão de orçamento de R$ 5 milhões, com entrega dentro do prazo e custo.
+        - Interface com stakeholders de alto nível, incluindo C-level, para alinhamento estratégico.
+      keywords:
+        - Scrum
+        - SaaS
+        - Gestão de Orçamento
+        - Liderança
+    - name: Inova Consultoria
+      url: https://www.inovaconsultoria.com.br
+      position: Gerente de Projetos
+      startDate: Mar 1, 2017
+      endDate: Dec 20, 2019
+      summary: |
+        - Gerenciamento de projetos de consultoria em transformação digital para clientes dos setores financeiro e varejo.
+        - Coordenação de equipes remotas e presenciais, garantindo a entrega de soluções personalizadas.
+        - Desenvolvimento de cronogramas, planos de comunicação e análise de riscos.
+        - Aumento da satisfação do cliente em 20% através de melhorias nos processos de entrega.
+      keywords:
+        - Transformação Digital
+        - Consultoria
+        - Gestão de Riscos
+        - Comunicação
+    - name: Startup XYZ
+      url: https://www.startupxyz.com.br
+      position: Analista de Projetos
+      startDate: Jan 5, 2015
+      endDate: Feb 28, 2017
+      summary: |
+        - Suporte ao gerente de projetos na elaboração de cronogramas e acompanhamento de tarefas.
+        - Utilização de ferramentas como Jira e Trello para monitoramento de sprints.
+        - Participação em reuniões diárias e retrospectivas, contribuindo para a melhoria contínua.
+        - Auxílio na documentação de projetos e relatórios de status.
+      keywords:
+        - Jira
+        - Trello
+        - Ágil
+        - Documentação
+  skills:
+    - name: Gestão de Projetos
+      level: Expert
+      keywords:
+        - PMBOK
+        - Agile
+        - Scrum
+        - Kanban
+        - Waterfall
+    - name: Liderança
+      level: Advanced
+      keywords:
+        - Team Management
+        - Mentoring
+        - Negotiation
+        - Conflict Resolution
+    - name: Ferramentas
+      level: Advanced
+      keywords:
+        - Jira
+        - Trello
+        - MS Project
+        - Asana
+        - Slack
+    - name: Metodologias Ágeis
+      level: Expert
+      keywords:
+        - Scrum
+        - Kanban
+        - SAFe
+        - Lean
+  languages:
+    - language: Portuguese
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - Língua materna
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - TOEFL 105
+    - language: Spanish
+      fluency: Limited Working Proficiency
+      keywords: []
+  awards:
+    - title: Prêmio de Excelência em Gestão de Projetos
+      date: Nov 2022
+      awarder: PMI São Paulo
+      summary: |
+        Reconhecimento pelo sucesso na entrega de um projeto crítico de transformação digital, superando as metas estabelecidas.
+  certificates:
+    - name: Project Management Professional (PMP)
+      issuer: Project Management Institute (PMI)
+      date: Mar 2018
+      url: https://www.pmi.org/certifications/project-management-pmp
+    - name: Certified Scrum Master (CSM)
+      issuer: Scrum Alliance
+      date: Jun 2016
+      url: https://www.scrumalliance.org/get-certified/scrum-master-track/certified-scrummaster
+  publications:
+    - name: Transformação Ágil em Empresas Brasileiras
+      publisher: Revista Mundo PM
+      releaseDate: Aug 2021
+      url: https://www.mundopm.com.br/artigo/transformacao-agil
+      summary: |
+        - Artigo sobre os desafios e benefícios da adoção de metodologias ágeis em grandes empresas no Brasil.
+        - Análise de casos de sucesso e lições aprendidas.
+  projects:
+    - name: Implementação de Sistema ERP
+      url: https://www.techsolutions.com.br/projetos/erp
+      startDate: Jan 2021
+      endDate: Dec 2021
+      description: Projeto de implementação de ERP para uma indústria de médio porte.
+      summary: |
+        - Liderança da equipe de 10 pessoas na migração de sistemas legados para uma solução ERP integrada.
+        - Entrega dentro do prazo e orçamento, com treinamento de 200 usuários.
+      keywords:
+        - ERP
+        - Gestão de Mudanças
+        - Treinamento
+  interests:
+    - name: Corrida
+      keywords:
+        - Maratona
+        - Meia Maratona
+    - name: Leitura
+      keywords:
+        - Literatura Brasileira
+        - Gestão
+        - Tecnologia
+  volunteer:
+    - organization: Projeto Crescer
+      url: https://www.projetocrescer.org.br
+      position: Gerente de Projetos Voluntária
+      startDate: Jan 2018
+      endDate: Dec 2020
+      summary: |
+        - Coordenação de projetos sociais voltados para educação de jovens em comunidades carentes.
+        - Gestão de equipe de 5 voluntários e captação de recursos.
+        - Implementação de metodologias ágeis para otimizar as entregas.
+
+locale:
+  language: pt-br

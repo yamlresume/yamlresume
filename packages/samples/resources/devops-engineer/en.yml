@@ -1,0 +1,241 @@
+content:
+  basics:
+    name: Morgan Casey
+    headline: DevOps Engineer | Cloud Infrastructure & Automation
+    phone: "(512) 555-0147"
+    email: morgan.casey@example.com
+    url: https://morgancasey.dev
+    summary: |
+      DevOps engineer with 6+ years of experience designing, automating, and operating cloud-native infrastructure on AWS and Azure. Skilled in building CI/CD pipelines, implementing infrastructure as code, and orchestrating containerized workloads with Kubernetes. Proven record of cutting deployment times, improving system reliability, and building strong collaboration between development and operations teams.
+
+      - Reduced average deployment time from 45 minutes to 8 minutes by migrating legacy Jenkins pipelines to GitLab CI/CD.
+      - Managed 200+ microservices across multiple Kubernetes clusters using Helm, Argo CD, and Terraform.
+      - Implemented an observability stack with Prometheus, Grafana, and the ELK Stack, cutting mean time to detection by 40%.
+  location:
+    address: 2400 Nueces Street
+    city: Austin
+    region: Texas
+    country: United States
+    postalCode: "78705"
+  profiles:
+    - network: GitHub
+      url: https://github.com/morgancasey
+      username: morgancasey
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/morgancasey
+      username: morgancasey
+  education:
+    - institution: University of Texas at Austin
+      url: https://www.utexas.edu/
+      degree: Bachelor
+      area: Computer Science
+      score: "3.7"
+      startDate: Aug 1, 2014
+      endDate: May 1, 2018
+      courses:
+        - Operating Systems
+        - Computer Networks
+        - Distributed Systems
+        - Database Systems
+        - Cloud Computing
+        - Algorithms and Data Structures
+      summary: |
+        - Focused on distributed systems, networking, and cloud computing
+        - Completed a capstone project on container orchestration and cluster scheduling
+        - Served as a teaching assistant for the Operating Systems course for two semesters
+  work:
+    - name: CloudForge Systems
+      url: https://www.cloudforgesystems.com
+      position: Senior DevOps Engineer
+      startDate: Jan 3, 2022
+      summary: |
+        - Lead a team of 4 DevOps engineers managing multi-region AWS infrastructure for a SaaS platform serving 500K+ users
+        - Architected GitOps workflows with Argo CD and Terraform, enabling self-service deployments for 12 product teams
+        - Reduced cloud spend by 28% through right-sizing, reserved instances, and automated scheduling of non-production environments
+        - Designed a disaster recovery strategy with cross-region backups and automated failover, achieving an RTO of 15 minutes and an RPO of 5 minutes
+        - Mentored junior engineers and established on-call best practices, decreasing escalations by 35%
+      keywords:
+        - AWS
+        - Terraform
+        - Kubernetes
+        - Argo CD
+        - GitOps
+        - Cost Optimization
+    - name: NimbusStack
+      url: https://www.nimbusstack.io
+      position: DevOps Engineer
+      startDate: Jun 1, 2019
+      endDate: Dec 15, 2021
+      summary: |
+        - Built and maintained CI/CD pipelines in GitLab CI for 80+ microservices, integrating automated testing and security scans
+        - Migrated a monolithic application to Kubernetes, improving scalability and reducing infrastructure costs by 20%
+        - Implemented infrastructure as code with Terraform and Ansible across 300+ EC2 instances and RDS databases
+        - Set up centralized logging and monitoring with the ELK Stack and Prometheus, enabling proactive alerting
+        - Partnered with developers to containerize applications and optimize Docker images for faster cold starts
+      keywords:
+        - GitLab CI
+        - Kubernetes
+        - Terraform
+        - Ansible
+        - Prometheus
+        - Docker
+    - name: DataHarbor
+      url: https://www.dataharbor.com
+      position: Cloud Operations Engineer
+      startDate: Jul 1, 2018
+      endDate: May 30, 2019
+      summary: |
+        - Managed AWS EC2, S3, and RDS resources for an internal data analytics platform
+        - Automated routine operational tasks with Python and Bash, saving roughly 15 hours of manual effort per week
+        - Assisted in implementing backup and recovery procedures for critical production databases
+        - Participated in the on-call rotation and incident response for production systems
+      keywords:
+        - AWS
+        - Python
+        - Bash
+        - Linux
+        - Backup
+  skills:
+    - name: Cloud Platforms
+      level: Expert
+      keywords:
+        - AWS
+        - Azure
+        - GCP
+        - EC2
+        - S3
+        - Lambda
+    - name: CI/CD
+      level: Advanced
+      keywords:
+        - GitLab CI
+        - Jenkins
+        - GitHub Actions
+        - Argo CD
+        - CircleCI
+    - name: Containers & Orchestration
+      level: Expert
+      keywords:
+        - Kubernetes
+        - Docker
+        - Helm
+        - Istio
+        - OpenShift
+    - name: Infrastructure as Code
+      level: Advanced
+      keywords:
+        - Terraform
+        - Ansible
+        - CloudFormation
+        - Pulumi
+    - name: Monitoring & Logging
+      level: Advanced
+      keywords:
+        - Prometheus
+        - Grafana
+        - ELK Stack
+        - Datadog
+        - CloudWatch
+    - name: Scripting & Automation
+      level: Expert
+      keywords:
+        - Python
+        - Bash
+        - Go
+        - PowerShell
+    - name: Security & Compliance
+      level: Intermediate
+      keywords:
+        - IAM
+        - Vault
+        - SOC 2
+        - CIS Benchmarks
+        - Trivy
+  languages:
+    - language: English
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - TOEFL 115
+    - language: Spanish
+      fluency: Limited Working Proficiency
+      keywords:
+        - DELE B2
+  awards:
+    - title: Cloud Innovator Award
+      awarder: CloudForge Systems
+      date: Nov 2023
+      summary: |
+        Recognized for designing and implementing a cost optimization program that saved more than $500K annually.
+  certificates:
+    - name: AWS Certified DevOps Engineer - Professional
+      issuer: Amazon Web Services
+      date: Mar 2022
+      url: https://aws.amazon.com/certification/certified-devops-engineer-professional/
+    - name: Certified Kubernetes Administrator (CKA)
+      issuer: Cloud Native Computing Foundation
+      date: Aug 2021
+      url: https://www.cncf.io/certification/cka/
+    - name: 'HashiCorp Certified: Terraform Associate'
+      issuer: HashiCorp
+      date: Jan 2021
+      url: https://www.hashicorp.com/certification/terraform-associate
+  publications:
+    - name: Implementing GitOps for Multi-Cluster Kubernetes
+      publisher: DevOps Today
+      releaseDate: Sep 2023
+      url: https://www.devopstoday.com/gitops-multi-cluster-kubernetes
+      summary: |
+        - Discusses patterns for managing multiple Kubernetes clusters with Argo CD and Terraform
+        - Covers security, drift detection, and progressive delivery strategies
+  projects:
+    - name: KubeWatch
+      url: https://github.com/morgancasey/kubewatch
+      description: Open-source Kubernetes monitoring and alerting toolkit
+      startDate: Feb 2022
+      endDate: Nov 2023
+      summary: |
+        - Built a lightweight operator that watches cluster events and routes alerts to Slack and PagerDuty
+        - Integrated with Prometheus Alertmanager for advanced routing and silencing
+        - Reached 500+ stars on GitHub and is used by more than 30 organizations
+      keywords:
+        - Kubernetes
+        - Go
+        - Prometheus
+        - Operator
+    - name: Terraform AWS Landing Zone
+      url: https://github.com/morgancasey/terraform-aws-landing-zone
+      description: Reusable Terraform modules for secure AWS multi-account setups
+      startDate: Mar 2021
+      endDate: Aug 2022
+      summary: |
+        - Published a set of Terraform modules implementing AWS Control Tower best practices
+        - Automated account provisioning, guardrails, and centralized logging
+        - Reduced new account setup time from days to under an hour
+      keywords:
+        - Terraform
+        - AWS
+        - Landing Zone
+        - Security
+  interests:
+    - name: Open Source
+      keywords:
+        - CNCF
+        - Kubernetes
+        - Terraform
+    - name: Outdoor Activities
+      keywords:
+        - Hiking
+        - Running
+        - Cycling
+  volunteer:
+    - organization: Austin DevOps Community
+      url: https://www.meetup.com/austin-devops/
+      position: Workshop Organizer
+      startDate: Mar 2020
+      summary: |
+        - Organize monthly workshops on cloud-native technologies and DevOps practices
+        - Coordinate with speakers and sponsors to deliver free technical education
+        - Mentor newcomers transitioning into DevOps roles
+
+locale:
+  language: en

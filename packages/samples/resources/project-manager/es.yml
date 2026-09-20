@@ -1,0 +1,281 @@
+content:
+  basics:
+    name: Lucía Fernández Gómez
+    headline: 'Gerente de Proyectos Senior | PMP | Transformación Digital'
+    phone: "+34 612 345 678"
+    email: lucia.fernandez@email.com
+    url: https://www.luciafernandez-pm.com
+    summary: |
+      Gerente de Proyectos con más de 8 años de experiencia liderando proyectos tecnológicos y de transformación digital en sectores como banca, retail y salud. Especializada en metodologías ágiles (Scrum, Kanban) y en la gestión integral del ciclo de vida del proyecto, desde la definición de requisitos hasta la entrega y el cierre.
+
+      - Lideré equipos multidisciplinares de hasta 25 personas, alcanzando una tasa de entrega del 95% dentro del plazo y presupuesto.
+      - Gestioné presupuestos de hasta 2,5 M€, optimizando costes en un 18% mediante la renegociación con proveedores y la mejora de procesos.
+      - Certificada PMP, Scrum Master y ITIL Foundation, con sólida experiencia en gestión de stakeholders y comunicación ejecutiva.
+      - Apasionada por la mejora continua y la adopción de herramientas digitales para la gestión de proyectos (Jira, Asana, MS Project).
+  location:
+    address: Calle de Alcalá 123, 4º B
+    city: Madrid
+    region: Comunidad de Madrid
+    country: Spain
+    postalCode: "28010"
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/luciafernandez-pm
+      username: luciafernandez-pm
+    - network: GitHub
+      url: https://github.com/luciafernandez
+      username: luciafernandez
+    - network: Twitter
+      url: https://twitter.com/lucia_pm
+      username: lucia_pm
+  education:
+    - institution: Universidad Politécnica de Madrid
+      url: https://www.upm.es
+      degree: Master
+      area: Dirección de Proyectos
+      score: "9.2"
+      startDate: '2017-09-01'
+      endDate: '2019-07-15'
+      courses:
+        - Gestión de Proyectos Ágiles
+        - Planificación y Control de Proyectos
+        - Gestión de Riesgos
+        - Liderazgo de Equipos
+        - Finanzas para Gerentes de Proyecto
+        - Metodologías PMBOK
+      summary: |
+        - Formación avanzada en dirección y gestión de proyectos complejos
+        - Proyecto fin de máster: implantación de PMO en una empresa del sector retail
+    - institution: Universidad de Sevilla
+      url: https://www.us.es
+      degree: Bachelor
+      area: Administración y Dirección de Empresas
+      score: "8.7"
+      startDate: '2011-09-01'
+      endDate: '2015-06-30'
+      courses:
+        - Contabilidad Financiera
+        - Dirección Estratégica
+        - Gestión de Operaciones
+        - Comportamiento Organizacional
+        - Marketing
+      summary: |
+        - Base sólida en administración, finanzas y gestión empresarial
+        - Participación en programas de intercambio internacional
+  work:
+    - name: Telefónica Tech
+      url: https://telefonicatech.com
+      position: Gerente de Proyectos Senior
+      startDate: '2021-03-01'
+      summary: |
+        - Lideré un portfolio de 12 proyectos de transformación digital con un presupuesto total de 2,5 M€.
+        - Implementé marcos ágiles híbridos (Scrum + Kanban) que redujeron el time-to-market en un 30%.
+        - Coordiné equipos multidisciplinares de hasta 25 personas distribuidas en 4 países.
+        - Gestioné la relación con stakeholders ejecutivos, presentando informes de progreso y métricas KPI.
+        - Implanté una PMO que estandarizó procesos y mejoró la trazabilidad de los proyectos.
+      keywords:
+        - Scrum
+        - Kanban
+        - Gestión de riesgos
+        - Presupuestos
+        - PMO
+        - Stakeholders
+    - name: Banco Santander
+      url: https://www.santander.com
+      position: Gerente de Proyectos
+      startDate: '2019-09-01'
+      endDate: '2021-02-28'
+      summary: |
+        - Dirigí proyectos de desarrollo de software bancario bajo metodología Agile, con equipos de 10-15 personas.
+        - Gestioné el ciclo completo de vida de los proyectos: análisis, planificación, ejecución, seguimiento y cierre.
+        - Elaboré planes de proyecto, cronogramas y matrices de riesgos, asegurando el cumplimiento de plazos y presupuestos.
+        - Facilité ceremonias ágiles (daily stand-ups, sprint planning, retrospectivas) y eliminé impedimentos.
+        - Colaboré con product owners y equipos técnicos para priorizar el backlog y entregar valor de forma continua.
+      keywords:
+        - Agile
+        - Scrum
+        - Jira
+        - Backlog
+        - Banca
+        - Gestión de proyectos
+    - name: Accenture
+      url: https://www.accenture.com
+      position: Analista de Proyectos
+      startDate: '2015-09-01'
+      endDate: '2017-08-31'
+      summary: |
+        - Apoyé la gestión de proyectos de consultoría tecnológica para clientes del sector público y privado.
+        - Realicé seguimiento de hitos, elaboración de informes de estado y coordinación de reuniones con clientes.
+        - Participé en la definición de alcance, estimación de esfuerzos y control de cambios.
+        - Contribuí a la implantación de herramientas de gestión como MS Project y Confluence.
+      keywords:
+        - MS Project
+        - Confluence
+        - Consultoría
+        - Informes
+        - Control de cambios
+  skills:
+    - name: Gestión de Proyectos
+      level: Expert
+      keywords:
+        - PMBOK
+        - Planificación
+        - Presupuestos
+        - Gestión de riesgos
+        - Cronogramas
+    - name: Metodologías Ágiles
+      level: Advanced
+      keywords:
+        - Scrum
+        - Kanban
+        - Lean
+        - SAFe
+        - Design Thinking
+    - name: Herramientas
+      level: Advanced
+      keywords:
+        - Jira
+        - Confluence
+        - MS Project
+        - Asana
+        - Trello
+        - Monday.com
+    - name: Liderazgo y Comunicación
+      level: Expert
+      keywords:
+        - Liderazgo de equipos
+        - Negociación
+        - Comunicación ejecutiva
+        - Gestión de stakeholders
+    - name: Análisis y Datos
+      level: Intermediate
+      keywords:
+        - Power BI
+        - Excel avanzado
+        - SQL
+        - Métricas KPI
+  languages:
+    - language: Spanish
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - Español nativo
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - TOEFL 105
+        - Certificado C1
+    - language: French
+      fluency: Limited Working Proficiency
+      keywords:
+        - DELF B1
+  awards:
+    - title: Premio a la Excelencia en Gestión de Proyectos
+      awarder: PMI Madrid
+      date: '2023-11-15'
+      summary: |
+        Reconocimiento por la dirección del proyecto de transformación digital con mayor impacto en el sector bancario.
+    - title: Empleada del Año
+      awarder: Telefónica Tech
+      date: '2022-12-20'
+      summary: |
+        Distinción por liderazgo excepcional y resultados sobresalientes en la gestión de proyectos estratégicos.
+  certificates:
+    - name: Project Management Professional (PMP)
+      issuer: Project Management Institute
+      date: '2020-06-15'
+      url: https://www.pmi.org/certifications/project-management-pmp
+    - name: Professional Scrum Master I (PSM I)
+      issuer: Scrum.org
+      date: '2021-02-10'
+      url: https://www.scrum.org/professional-scrum-master-i-certification
+    - name: ITIL Foundation
+      issuer: AXELOS
+      date: '2019-09-01'
+      url: https://www.axelos.com/certifications/itil-certifications
+  publications:
+    - name: Guía práctica para la implantación de una PMO ágil
+      publisher: Revista de Dirección de Proyectos
+      releaseDate: '2022-05-01'
+      url: https://www.revistadeproyectos.es/guia-pmo-agil
+      summary: |
+        Artículo que describe un marco práctico para implantar una oficina de proyectos ágil en organizaciones medianas.
+    - name: Métricas de valor en proyectos de transformación digital
+      publisher: Congreso Internacional de Gestión de Proyectos
+      releaseDate: '2021-10-15'
+      url: https://www.congresoproyectos.org/metricas-valor
+      summary: |
+        Ponencia sobre indicadores clave para medir el retorno de inversión en iniciativas de transformación digital.
+  projects:
+    - name: Plataforma de Gestión de Proyectos Interna
+      url: https://www.telefonicatech.com/proyectos/pm-tool
+      startDate: '2022-01-10'
+      endDate: '2022-12-20'
+      description: Desarrollo de una herramienta interna para centralizar la gestión
+        de proyectos y recursos.
+      summary: |
+        - Lideré el proyecto desde la definición de requisitos hasta el despliegue en producción.
+        - Coordiné un equipo de 8 desarrolladores, 2 diseñadores y 1 analista de negocio.
+        - Implementé integraciones con Jira y Power BI para la automatización de informes.
+        - Reduje el tiempo de reporting semanal en un 60%.
+      keywords:
+        - Jira
+        - Power BI
+        - Gestión de proyectos
+        - Automatización
+    - name: Transformación Digital del Proceso de Onboarding
+      url: https://www.santander.com/onboarding-digital
+      startDate: '2020-03-01'
+      endDate: '2021-01-31'
+      description: Digitalización del proceso de incorporación de clientes para una
+        entidad bancaria.
+      summary: |
+        - Dirigí la implementación de un flujo digital de onboarding con firma electrónica.
+        - Reduje el tiempo de alta de clientes de 5 días a 2 horas.
+        - Gestioné la coordinación entre equipos de negocio, IT, legal y cumplimiento normativo.
+        - Aseguré el cumplimiento de la normativa KYC y GDPR.
+      keywords:
+        - Transformación digital
+        - Banca
+        - KYC
+        - GDPR
+        - Onboarding
+  interests:
+    - name: Deporte
+      keywords:
+        - Senderismo
+        - Natación
+        - Yoga
+    - name: Voluntariado
+      keywords:
+        - Mentoría
+        - Formación
+    - name: Lectura
+      keywords:
+        - Novela histórica
+        - Ensayo
+    - name: Viajes
+      keywords:
+        - Asia
+        - Europa
+  volunteer:
+    - organization: Fundación Integra
+      url: https://www.fundacionintegra.org
+      position: Mentora de Proyectos Sociales
+      startDate: '2021-09-01'
+      endDate: '2023-06-30'
+      summary: |
+        - Acompaño a organizaciones sin ánimo de lucro en la planificación y ejecución de proyectos sociales.
+        - Facilito talleres de gestión de proyectos y metodologías ágiles adaptadas al tercer sector.
+        - Ayudo a definir indicadores de impacto y a mejorar la sostenibilidad de las iniciativas.
+    - organization: PMI Madrid Chapter
+      url: https://pmi-madrid.es
+      position: Voluntaria en Comité de Eventos
+      startDate: '2018-01-01'
+      endDate: '2020-12-31'
+      summary: |
+        - Colaboré en la organización de congresos y jornadas de gestión de proyectos.
+        - Gestioné la logística y coordinación de ponentes para eventos con más de 300 asistentes.
+        - Apoyé la comunicación y difusión en redes sociales.
+
+locale:
+  language: es

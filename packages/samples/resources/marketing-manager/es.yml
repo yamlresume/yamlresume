@@ -1,0 +1,203 @@
+content:
+  basics:
+    name: Laura Jiménez Morales
+    headline: Gerente de Marketing Digital y Estrategia de Marca
+    phone: "+34 612 345 678"
+    email: laura.jimenez@example.com
+    url: https://www.laurajimenezmarketing.com
+    summary: |
+      - Gerente de Marketing con más de 8 años de experiencia en desarrollo de estrategias digitales y campañas omnicanal.
+      - Especializada en posicionamiento de marca, generación de leads y análisis de métricas para optimizar el ROI.
+      - Liderazgo de equipos multidisciplinares y gestión de presupuestos superiores a 1M€.
+      - Apasionada por la innovación, el marketing basado en datos y la experiencia del cliente.
+  location:
+    address: Calle Gran Vía 45
+    city: Madrid
+    region: Comunidad de Madrid
+    country: Spain
+    postalCode: "28013"
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/laurajimenez
+      username: laurajimenez
+    - network: Twitter
+      url: https://twitter.com/laurajimenez
+      username: laurajimenez
+  education:
+    - institution: Universidad Complutense de Madrid
+      url: https://www.ucm.es
+      degree: Bachelor
+      area: Marketing y Comunicación
+      score: "8.5"
+      startDate: Sep 1, 2010
+      endDate: Jul 1, 2014
+      courses:
+        - Fundamentos de Marketing
+        - Comportamiento del Consumidor
+        - Marketing Digital
+        - Gestión de Marca
+        - Análisis de Datos para Marketing
+        - Comunicación Corporativa
+      summary: |
+        - Formación sólida en estrategias de marketing y comunicación empresarial.
+        - Participación en proyectos reales con empresas locales.
+        - Miembro activo de la asociación de estudiantes de marketing.
+  work:
+    - name: Innova Retail Group
+      url: https://www.innovaretail.com
+      position: Gerente de Marketing
+      startDate: Jan 15, 2020
+      summary: |
+        - Lidero el equipo de marketing digital y tradicional, gestionando un presupuesto anual de 1.2M€.
+        - Desarrollé e implementé la estrategia de marca que aumentó el reconocimiento en un 35% en dos años.
+        - Coordiné campañas omnicanal que generaron un incremento del 25% en leads cualificados.
+        - Implementé herramientas de automatización y análisis (HubSpot, Google Analytics) para optimizar el ROI.
+      keywords:
+        - Estrategia de Marca
+        - Marketing Digital
+        - Liderazgo
+        - ROI
+        - Omnicanalidad
+    - name: Soluciones Digitales S.L.
+      url: https://www.solucionesdigitales.es
+      position: Especialista en Marketing Digital
+      startDate: Sep 1, 2016
+      endDate: Dec 31, 2019
+      summary: |
+        - Diseñé y ejecuté campañas de SEM y redes sociales, logrando un CTR un 20% superior a la media del sector.
+        - Gestioné el contenido del blog corporativo, aumentando el tráfico orgánico en un 150% en 18 meses.
+        - Realicé informes mensuales de rendimiento y presenté recomendaciones a la dirección.
+      keywords:
+        - SEM
+        - SEO
+        - Redes Sociales
+        - Contenidos
+        - Analytics
+    - name: Agencia Creativa Barcelona
+      url: https://www.agenciacreativabcn.com
+      position: Asistente de Marketing
+      startDate: Sep 1, 2014
+      endDate: Aug 31, 2016
+      summary: |
+        - Apoyé en la creación de campañas publicitarias para clientes de diversos sectores.
+        - Colaboré en la organización de eventos y ferias comerciales.
+        - Realicé estudios de mercado y análisis de la competencia.
+      keywords:
+        - Publicidad
+        - Eventos
+        - Investigación de Mercado
+  skills:
+    - name: Marketing Digital
+      level: Expert
+      keywords:
+        - SEO/SEM
+        - Google Analytics
+        - HubSpot
+        - Email Marketing
+        - Redes Sociales
+    - name: Gestión de Proyectos
+      level: Advanced
+      keywords:
+        - Agile
+        - Scrum
+        - Jira
+        - Presupuestos
+    - name: Análisis de Datos
+      level: Advanced
+      keywords:
+        - Google Data Studio
+        - SQL
+        - Excel Avanzado
+        - Tableau
+  languages:
+    - language: Spanish
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - DELE C2
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - TOEIC 950
+    - language: French
+      fluency: Limited Working Proficiency
+  awards:
+    - title: Premio a la Mejor Campaña Digital
+      awarder: Asociación Española de Marketing
+      date: Nov 2022
+      summary: |
+        Reconocimiento por la campaña "Navidad Sostenible" que incrementó las ventas online en un 40%.
+    - title: Employee of the Year
+      awarder: Innova Retail Group
+      date: Dec 2021
+      summary: |
+        Otorgado por liderazgo excepcional y resultados sobresalientes en marketing.
+  certificates:
+    - name: Google Analytics Certified Professional
+      issuer: Google
+      date: Mar 2021
+      url: https://skillshop.exceedlms.com/student/path/2939-google-analytics-certification
+    - name: HubSpot Inbound Marketing Certification
+      issuer: HubSpot Academy
+      date: Jun 2020
+      url: https://academy.hubspot.com/courses/inbound-marketing
+  publications:
+    - name: Tendencias del Marketing de Influencers en España
+      publisher: Revista Marketing News
+      releaseDate: Oct 2022
+      url: https://www.marketingnews.es/articulo/tendencias
+      summary: |
+        - Análisis del impacto de los influencers en las decisiones de compra de los millennials.
+        - Estudio de caso de campañas exitosas en el sector retail.
+  projects:
+    - name: Campaña "Madrid Sostenible"
+      startDate: Mar 2021
+      endDate: Sep 2021
+      description: Campaña integral de marketing para promover el consumo responsable
+        en Madrid.
+      summary: |
+        - Diseñé la estrategia creativa y coordiné la producción de contenidos.
+        - Gestioné alianzas con influencers locales y medios de comunicación.
+        - La campaña alcanzó 2 millones de impresiones y un 15% de aumento en la intención de compra.
+      keywords:
+        - Sostenibilidad
+        - Campaña
+        - Influencers
+      url: https://www.madridsostenible.es
+    - name: Rediseño del Sitio Web Corporativo
+      startDate: Jan 2019
+      endDate: Jun 2019
+      description: Proyecto de renovación completa del sitio web de Soluciones
+        Digitales S.L.
+      summary: |
+        - Lideré la definición de la arquitectura de información y la experiencia de usuario.
+        - Coordiné el equipo de diseño y desarrollo.
+        - El nuevo sitio mejoró la tasa de conversión en un 30%.
+      keywords:
+        - UX
+        - Web
+        - Conversión
+      url: https://www.solucionesdigitales.es
+  interests:
+    - name: Deportes
+      keywords:
+        - Running
+        - Yoga
+        - Senderismo
+    - name: Cultura
+      keywords:
+        - Lectura
+        - Cine
+        - Fotografía
+  volunteer:
+    - organization: Fundación Integra
+      url: https://www.fundacionintegra.org
+      position: Mentora de Marketing
+      startDate: Feb 2020
+      endDate: Dec 2022
+      summary: |
+        - Asesoré a emprendedores sociales en la creación de estrategias de marketing digital.
+        - Impartí talleres sobre redes sociales y posicionamiento de marca.
+        - Ayudé a varias startups a definir su propuesta de valor.
+
+locale:
+  language: es

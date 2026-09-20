@@ -1,0 +1,211 @@
+content:
+  basics:
+    name: Camille Laurent
+    headline: Chef de projet senior | Transformation digitale et Agile
+    phone: "+33 6 12 34 56 78"
+    email: camille.laurent@example.fr
+    url: https://www.camillelaurent.fr
+    summary: |
+      Chef de projet senior avec plus de 8 ans d'expérience dans le pilotage de projets de transformation digitale, principalement dans les secteurs bancaire, assurance et santé.
+
+      - Expertise en méthodologies agiles (Scrum, Kanban, SAFe) et gestion de projets complexes
+      - Solide expérience en management d'équipes pluridisciplinaires et coordination de parties prenantes
+      - Maîtrise du budget, des risques, de la qualité et du reporting
+      - Certifié PMP, PRINCE2 et Scrum Master
+  location:
+    address: 12 rue de la Paix
+    city: Paris
+    region: Île-de-France
+    country: France
+    postalCode: "75002"
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/camillelaurent
+      username: camillelaurent
+    - network: GitHub
+      url: https://github.com/camillelaurent
+      username: camillelaurent
+  education:
+    - institution: Université Paris-Dauphine
+      url: https://www.dauphine.psl.eu/
+      degree: Master
+      area: Management de projets et systèmes d'information
+      score: Mention Bien
+      startDate: Sep 1, 2014
+      endDate: Jul 1, 2016
+      courses:
+        - Gestion de projet avancée
+        - Méthodes agiles et Scrum
+        - Analyse des risques
+        - Management d'équipe
+        - Budget et contrôle de gestion
+        - Systèmes d'information
+      summary: |
+        - Formation spécialisée en pilotage de projets complexes et transformation digitale
+        - Projets académiques en collaboration avec des entreprises partenaires
+        - Développement de compétences en leadership et communication
+  work:
+    - name: Atos
+      url: https://atos.net/fr
+      position: Chef de projet senior
+      startDate: Jan 1, 2021
+      summary: |
+        - Pilote de projets de transformation digitale pour des clients grands comptes (banque, assurance, santé)
+        - Management d'équipes pluridisciplinaires de 10 à 15 personnes (développeurs, business analysts, UX)
+        - Mise en place de méthodologies agiles (Scrum, Kanban) et animation des rituels
+        - Gestion du budget, des risques et des délais ; reporting auprès du comité de direction
+        - Coordination des parties prenantes internes et externes, en France et à l'international
+      keywords:
+        - Gestion de projet
+        - Agile
+        - Scrum
+        - Budget
+        - Risques
+    - name: Capgemini
+      url: https://www.capgemini.com/fr-fr/
+      position: Chef de projet
+      startDate: Sep 1, 2016
+      endDate: Dec 31, 2020
+      summary: |
+        - Gestion de projets web et mobiles pour des clients du secteur public et privé
+        - Rédaction des cahiers des charges, planification et suivi de l'avancement
+        - Animation d'ateliers de cadrage et de recettes fonctionnelles
+        - Encadrement d'une équipe de 5 à 8 personnes
+        - Contribution à l'amélioration continue des processus internes
+      keywords:
+        - Web
+        - Mobile
+        - Cadrage
+        - Planification
+        - Recette
+  skills:
+    - name: Gestion de projet
+      level: Expert
+      keywords:
+        - Planification
+        - Budget
+        - Risques
+        - Qualité
+        - Reporting
+    - name: Méthodes agiles
+      level: Advanced
+      keywords:
+        - Scrum
+        - Kanban
+        - SAFe
+        - Jira
+        - Confluence
+    - name: Outils
+      level: Advanced
+      keywords:
+        - MS Project
+        - Jira
+        - Trello
+        - Power BI
+        - Excel avancé
+    - name: Management
+      level: Advanced
+      keywords:
+        - Leadership
+        - Communication
+        - Négociation
+        - Coaching
+  languages:
+    - language: French
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - Langue maternelle
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - TOEIC 950
+        - Affaires
+    - language: Spanish
+      fluency: Limited Working Proficiency
+      keywords:
+        - Conversation
+  awards:
+    - title: Prix de l'Innovation Project Management
+      date: Jun 2022
+      awarder: Atos
+      summary: |
+        Récompense pour la mise en place d'un tableau de bord prédictif de suivi des risques projet, adopté par 5 équipes.
+  certificates:
+    - name: PMP (Project Management Professional)
+      issuer: PMI
+      date: Mar 2020
+      url: https://www.pmi.org/certifications/project-management-pmp
+    - name: PRINCE2 Practitioner
+      issuer: AXELOS
+      date: Nov 2019
+      url: https://www.axelos.com/certifications/prince2
+    - name: Professional Scrum Master I
+      issuer: Scrum.org
+      date: May 2021
+      url: https://www.scrum.org/professional-scrum-master-i-certification
+  publications:
+    - name: Pilotage agile des projets de transformation digitale
+      publisher: Revue Française de Gestion
+      releaseDate: Oct 2023
+      url: https://www.revues.org/rfg
+      summary: |
+        - Article sur les bonnes pratiques de gouvernance agile dans les grands projets
+        - Analyse de cas concrets et retours d'expérience
+  references:
+    - name: Sophie Martin
+      phone: "+33 6 98 76 54 32"
+      relationship: Directrice de programme, Atos
+      email: sophie.martin@atos.net
+      summary: |
+        Camille a démontré une excellente capacité à fédérer les équipes et à livrer des projets complexes dans les délais. Sa rigueur et son leadership sont remarquables.
+  projects:
+    - name: Refonte du portail client
+      url: https://www.example.com/portail-client
+      description: Refonte complète du portail client d'un grand groupe bancaire
+      startDate: Jan 2022
+      endDate: Dec 2022
+      summary: |
+        - Pilotage du projet de A à Z, de la phase de cadrage à la mise en production
+        - Coordination de 3 équipes réparties entre Paris et Casablanca
+        - Livraison dans les délais avec un budget de 1,2 M€
+      keywords:
+        - Transformation digitale
+        - Banque
+        - Agile
+    - name: Application mobile santé
+      url: https://www.example.com/app-sante
+      description: Développement d'une application mobile pour le suivi des patients
+      startDate: Mar 2019
+      endDate: Nov 2019
+      summary: |
+        - Gestion du projet en méthode Scrum avec des sprints de 2 semaines
+        - Collaboration étroite avec les équipes médicales et techniques
+        - Obtention d'un taux de satisfaction utilisateur de 4,7/5
+      keywords:
+        - Santé
+        - Mobile
+        - Scrum
+  interests:
+    - name: Sports
+      keywords:
+        - Course à pied
+        - Natation
+        - Randonnée
+    - name: Culture
+      keywords:
+        - Lecture
+        - Cinéma
+        - Voyages
+  volunteer:
+    - organization: Les Restos du Cœur
+      url: https://www.restosducoeur.org/
+      position: Bénévole logistique
+      startDate: Sep 2018
+      endDate: Dec 2020
+      summary: |
+        - Participation à la collecte alimentaire et à la distribution des repas
+        - Organisation des plannings des bénévoles
+        - Contribution à la coordination locale
+
+locale:
+  language: fr

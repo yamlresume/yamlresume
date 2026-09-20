@@ -1,0 +1,276 @@
+content:
+  basics:
+    name: 陳嘉欣
+    headline: '客戶成功經理 | SaaS 客戶體驗專家'
+    phone: "+852 9123 4567"
+    email: ka-yan.chan@example.com
+    url: https://www.linkedin.com/in/kayanchan-csm
+    summary: |
+      - 擁有超過 8 年客戶成功及客戶關係管理經驗，專注於 SaaS 及金融科技行業
+      - 擅長制定客戶成功策略，提升客戶留存率及終身價值
+      - 具備優秀的跨部門協作能力，能與產品、銷售及技術團隊緊密合作
+      - 熟悉數據分析，能以數據驅動客戶健康度管理及主動服務
+      - 精通粵語、英語及普通話，能服務香港及大中華區客戶
+  location:
+    address: 香港中環皇后大道中 99 號
+    city: 香港
+    region: 香港島
+    country: Hong Kong
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/kayanchan-csm
+      username: kayanchan-csm
+    - network: Medium
+      url: https://medium.com/@kayanchan
+      username: kayanchan
+  education:
+    - institution: 香港大學
+      url: https://www.hku.hk
+      degree: Bachelor
+      area: 工商管理學學士（市場學）
+      score: "3.6"
+      startDate: Sep 1, 2011
+      endDate: Jul 1, 2015
+      courses:
+        - 市場營銷原理
+        - 消費者行為
+        - 商業統計
+        - 組織行為學
+        - 財務管理
+        - 策略管理
+      summary: |
+        - 主修市場學，副修資訊系統
+        - 曾獲院長榮譽榜及多項獎學金
+        - 積極參與商業個案比賽，獲得校際亞軍
+    - institution: 香港科技大學
+      url: https://www.ust.hk
+      degree: Master
+      area: 資訊系統管理碩士
+      score: "3.8"
+      startDate: Sep 1, 2018
+      endDate: Jun 1, 2020
+      courses:
+        - 企業資源規劃
+        - 數據庫管理
+        - 商業智能與分析
+        - 項目管理
+        - 數位轉型策略
+      summary: |
+        - 在職進修，專注於企業資訊系統與數據分析
+        - 畢業論文探討客戶成功管理系統對 B2B 企業績效的影響
+  work:
+    - name: 香港雲端方案有限公司
+      url: https://www.hkcloudsolutions.example.com
+      position: 高級客戶成功經理
+      startDate: Mar 1, 2021
+      summary: |
+        - 管理超過 50 間企業客戶，年度經常性收入（ARR）超過 2,000 萬港元
+        - 制定並執行客戶成功計劃，將客戶留存率由 85% 提升至 94%
+        - 建立客戶健康度評分模型，主動識別流失風險並制定挽留策略
+        - 領導 5 人客戶成功團隊，負責招聘、培訓及績效管理
+        - 與產品團隊合作，將客戶反饋轉化為產品路線圖優先事項
+        - 推動客戶追加銷售及交叉銷售，年度擴展收入增長 30%
+      keywords:
+        - 客戶留存
+        - 客戶健康度
+        - 團隊領導
+        - 追加銷售
+        - SaaS
+        - 數據分析
+    - name: 亞洲金融科技集團
+      url: https://www.asiafintech.example.com
+      position: 客戶成功經理
+      startDate: Jun 1, 2017
+      endDate: Feb 28, 2021
+      summary: |
+        - 負責金融科技產品之客戶導入、培訓及續約管理
+        - 為超過 200 間中小企業客戶提供技術支援及最佳實踐建議
+        - 設計客戶入門流程，將價值實現時間由 45 天縮短至 20 天
+        - 分析客戶使用數據，制定個人化服務方案，提升客戶滿意度至 92%
+        - 與銷售團隊緊密合作，識別升級銷售機會，達成 120% 配額
+      keywords:
+        - 客戶導入
+        - 續約管理
+        - 金融科技
+        - 客戶滿意度
+        - 數據驅動
+    - name: 香港電訊數碼
+      url: https://www.hkt.example.com
+      position: 客戶服務主任
+      startDate: Aug 1, 2015
+      endDate: May 31, 2017
+      summary: |
+        - 處理企業客戶的服務查詢及技術問題，確保快速有效解決
+        - 協調內部技術團隊，跟進個案至完全解決，客戶滿意度達 90%
+        - 編寫客戶服務指南及常見問題，提升團隊效率 25%
+        - 識別客戶痛點並向產品團隊提出改善建議
+      keywords:
+        - 客戶服務
+        - 問題解決
+        - 電訊
+        - 跨部門協作
+  skills:
+    - name: 客戶成功管理
+      level: Expert
+      keywords:
+        - 客戶留存
+        - 客戶滿意度
+        - 客戶健康度
+        - 客戶旅程
+        - 續約管理
+        - 追加銷售
+    - name: 數據分析
+      level: Advanced
+      keywords:
+        - Salesforce
+        - Tableau
+        - SQL
+        - Excel
+        - Power BI
+        - Google Analytics
+    - name: 項目管理
+      level: Advanced
+      keywords:
+        - Jira
+        - Asana
+        - Agile
+        - Scrum
+        - 跨部門協作
+    - name: 溝通與談判
+      level: Expert
+      keywords:
+        - 粵語
+        - 英語
+        - 普通話
+        - 簡報技巧
+        - 衝突處理
+  languages:
+    - language: Cantonese
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - 母語
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - IELTS 8.0
+        - 商業寫作
+    - language: Mandarin
+      fluency: Full Professional Proficiency
+      keywords:
+        - 普通話水平測試二級甲等
+  awards:
+    - title: 年度最佳客戶成功經理
+      date: Dec 2023
+      awarder: 香港雲端方案有限公司
+      summary: |
+        表揚在客戶留存、滿意度及團隊領導方面的卓越表現，帶領團隊達成 94% 客戶留存率。
+    - title: 總裁卓越獎
+      date: Jan 2020
+      awarder: 亞洲金融科技集團
+      summary: |
+        因成功提升客戶滿意度至 92% 及超額完成銷售配額而獲頒總裁卓越獎。
+  certificates:
+    - name: Certified Customer Success Manager (CCSM)
+      issuer: SuccessCOACHING
+      date: Mar 2022
+      url: https://www.successcoaching.com/certification
+    - name: Salesforce Certified Administrator
+      issuer: Salesforce
+      date: Aug 2021
+      url: https://trailhead.salesforce.com/credentials/administrator
+    - name: 項目管理專業人士 (PMP)
+      issuer: PMI
+      date: Nov 2019
+      url: https://www.pmi.org/certifications/project-management-pmp
+  publications:
+    - name: 以數據驅動客戶成功：香港 SaaS 市場的實踐指南
+      publisher: 香港客戶成功協會
+      releaseDate: Jun 2023
+      url: https://www.hkcsa.example.com/publications/data-driven-customer-success
+      summary: |
+        - 探討如何利用客戶健康度指標預測流失風險
+        - 分享香港 SaaS 企業的客戶成功案例與最佳實踐
+        - 提供建立客戶成功團隊的框架與關鍵績效指標
+    - name: 提升 B2B 客戶留存率的五大策略
+      publisher: 亞洲商業評論
+      releaseDate: Sep 2022
+      url: https://www.asianbusinessreview.example.com/retention-strategies
+      summary: |
+        - 分析 B2B 客戶留存的核心驅動因素
+        - 提出從入門到續約的五大實用策略
+        - 引用亞太區企業數據支持論點
+  projects:
+    - name: 客戶健康度儀表板
+      url: https://www.hkcloudsolutions.example.com/projects/health-dashboard
+      description: 為企業客戶開發的實時客戶健康度監控平台
+      startDate: Jan 2022
+      endDate: Aug 2022
+      summary: |
+        - 整合 Salesforce、產品使用數據及支援工單，建立 360 度客戶視圖
+        - 設計健康度評分演算法，準確預測 90% 的流失風險客戶
+        - 儀表板上線後，客戶成功團隊主動跟進效率提升 40%
+      keywords:
+        - 客戶健康度
+        - Tableau
+        - Salesforce
+        - 數據可視化
+    - name: 客戶成功入門計劃
+      url: https://www.hkcloudsolutions.example.com/projects/onboarding
+      description: 標準化新客戶入門流程，縮短價值實現時間
+      startDate: Mar 2021
+      endDate: Dec 2021
+      summary: |
+        - 設計 30-60-90 天入門框架，涵蓋培訓、設定及成功指標
+        - 自動化入門溝通郵件及任務提醒，減少人手 50%
+        - 新客戶首 90 天滿意度由 80% 提升至 93%
+      keywords:
+        - 入門流程
+        - 客戶旅程
+        - 自動化
+        - 滿意度
+  interests:
+    - name: 專業發展
+      keywords:
+        - 客戶成功
+        - SaaS
+        - 數據分析
+        - 人工智能
+    - name: 社區服務
+      keywords:
+        - 青年導師
+        - 義工
+        - 環保
+    - name: 個人興趣
+      keywords:
+        - 遠足
+        - 攝影
+        - 閱讀
+        - 咖啡
+  volunteer:
+    - organization: 香港青年創業家協會
+      url: https://www.hkyea.example.com
+      position: 客戶成功導師
+      startDate: Sep 2021
+      summary: |
+        - 為青年創業者提供客戶成功及客戶關係管理指導
+        - 協助制定客戶獲取及留存策略，參與每月導師聚會
+        - 分享 SaaS 行業經驗，幫助初創企業建立可持續增長模式
+    - organization: 香港客戶成功協會
+      url: https://www.hkcsa.example.com
+      position: 活動籌委
+      startDate: Jan 2020
+      endDate: Dec 2021
+      summary: |
+        - 籌辦年度客戶成功研討會及工作坊，吸引超過 300 名參與者
+        - 負責講者邀請、議程設計及場地協調
+        - 促進香港客戶成功專業社群交流與知識分享
+  references:
+    - name: 黃志明
+      relationship: 香港雲端方案有限公司 營運總監
+      email: chi-ming.wong@hkcloudsolutions.example.com
+      phone: "+852 9876 5432"
+      summary: |
+        陳嘉欣在客戶成功領域表現卓越，具備出色的策略思維及團隊領導能力，能有效提升客戶留存及滿意度，是任何企業都不可多得的人才。
+
+locale:
+  language: zh-hant-hk

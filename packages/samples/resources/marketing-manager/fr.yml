@@ -1,0 +1,136 @@
+content:
+  basics:
+    name: Camille Moreau
+    headline: Responsable Marketing Digital
+    phone: "+33 6 12 34 56 78"
+    email: camille.moreau@example.fr
+    url: https://www.camillemoreau-marketing.fr
+    summary: |
+      Responsable marketing avec plus de 8 ans d'expérience dans l'élaboration de stratégies digitales et de campagnes omnicanales pour des entreprises B2B et B2C.
+
+      - Pilotage de budgets marketing jusqu'à 1,2 M€ et management d'équipes pluridisciplinaires de 6 personnes
+      - Expertise en SEO/SEA, marketing de contenu, automatisation et analyse de performance
+      - Capacité à aligner les objectifs marketing avec les enjeux commerciaux et à générer une croissance mesurable
+      - Maîtrise de HubSpot, Google Analytics 4, Semrush, Meta Ads et Salesforce
+  location:
+    address: 24 rue de la Paix
+    city: Paris
+    region: Île-de-France
+    country: France
+    postalCode: "75002"
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/camillemoreau-marketing
+      username: camillemoreau-marketing
+    - network: Twitter
+      url: https://twitter.com/camille_mkt
+      username: camille_mkt
+    - network: Medium
+      url: https://medium.com/@camillemoreau
+      username: camillemoreau
+  education:
+    - institution: Université Paris-Dauphine
+      url: https://www.dauphine.psl.eu/
+      degree: Master
+      area: Marketing et Stratégie
+      score: Mention Très Bien
+      startDate: Sep 1, 2014
+      endDate: Jul 1, 2016
+      courses:
+        - Stratégie de marque
+        - Comportement du consommateur
+        - Marketing digital
+        - Études de marché
+        - Gestion de la relation client
+        - Data analyse marketing
+      summary: |
+        - Spécialisation en stratégie marketing et transformation digitale
+        - Projet de fin d'études sur l'omnicanalité dans le secteur du luxe
+        - Major de promotion avec une moyenne générale de 16,5/20
+    - institution: IAE Paris Sorbonne
+      url: https://www.iae-paris.com/
+      degree: Bachelor
+      area: Sciences de Gestion
+      score: Mention Bien
+      startDate: Sep 1, 2011
+      endDate: Jun 1, 2014
+      courses:
+        - Principes de marketing
+        - Comptabilité analytique
+        - Statistiques appliquées
+        - Économie d'entreprise
+        - Droit des affaires
+      summary: |
+        - Acquisition des fondamentaux en gestion, marketing et finance
+        - Participation active à l'association marketing de l'IAE
+  work:
+    - name: NovaTech Solutions
+      url: https://www.novatech-solutions.fr
+      position: Responsable Marketing
+      startDate: Mar 1, 2021
+      summary: |
+        - Définition et déploiement de la stratégie marketing globale sur les marchés français et européens
+        - Management d'une équipe de 6 personnes en charge du contenu, du SEO/SEA, de l'automatisation et des médias sociaux
+        - Gestion d'un budget annuel de 1,2 M€ avec un retour sur investissement moyen de 4,5
+        - Lancement de 12 campagnes omnicanales générant plus de 3 500 leads qualifiés par an
+        - Mise en place d'un tableau de bord de pilotage avec Google Analytics 4 et Salesforce
+      keywords:
+        - Stratégie digitale
+        - SEO/SEA
+        - Marketing de contenu
+        - Automatisation
+        - Analyse de données
+    - name: GreenLeaf Cosmetics
+      url: https://www.greenleaf-cosmetics.fr
+      position: Chef de Projet Marketing Digital
+      startDate: Jan 1, 2018
+      endDate: Feb 1, 2021
+      summary: |
+        - Pilotage de campagnes d'acquisition multicanales (email, social ads, influence) pour une marque cosmétique éco-responsable
+        - Augmentation du trafic organique de 65 % en deux ans grâce à une stratégie de contenu et de SEO technique
+        - Coordination de la refonte du site e-commerce avec les équipes design, développement et produit
+        - Analyse des performances et optimisation continue du taux de conversion (de 1,8 % à 3,1 %)
+        - Gestion des relations avec les agences médias et les partenaires influenceurs
+      keywords:
+        - E-commerce
+        - Acquisition
+        - Influence
+        - Conversion
+        - SEO
+    - name: MediaPlus Agency
+      url: https://www.mediaplus.fr
+      position: Chargée de Marketing Digital
+      startDate: Sep 1, 2016
+      endDate: Dec 1, 2017
+      summary: |
+        - Gestion de comptes clients dans les secteurs de la tech et de la retail
+        - Création et optimisation de campagnes Google Ads et Facebook Ads
+        - Rédaction de contenus web et animation des réseaux sociaux
+        - Suivi des KPI et reporting mensuel auprès des clients
+      keywords:
+        - Google Ads
+        - Facebook Ads
+        - Animation de communauté
+        - Reporting
+  skills:
+    - name: Marketing Digital
+      level: Expert
+      keywords:
+        - SEO
+        - SEA
+        - SMO
+        - Marketing par email
+        - Automatisation marketing
+    - name: Analyse et Données
+      level: Advanced
+      keywords:
+        - Google Analytics 4
+        - Tableau
+        - SQL
+        - Excel avancé
+    - name: Gestion de Projet
+      level: Advanced
+      keywords:
+        - Agile
+        - Scrum
+        - Jira

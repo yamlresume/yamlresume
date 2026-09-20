@@ -1,0 +1,248 @@
+content:
+  basics:
+    name: 佐藤 健一
+    headline: シニアプロジェクトマネージャー | ITシステム開発・DX推進
+    phone: "+81 90-1234-5678"
+    email: kenichi.sato@example.com
+    url: https://kenichi-sato.example.com
+    summary: |
+      IT業界で12年以上の実務経験を持ち、そのうち7年間はプロジェクトマネージャーとして基幹系システムの企画・開発・刷新をリードしてきました。
+
+      - ウォーターフォールとアジャイルの両手法に精通し、案件特性に応じたハイブリッド型マネジメントを実践
+      - 最大50名規模の多国籍チームを統括し、予算・スケジュール・品質・リスクを一貫してマネジメント
+      - 経営層と開発現場をつなぐ橋渡し役として、ステークホルダー間の合意形成と意思決定の迅速化を推進
+      - PMBOKおよびスクラムのベストプラクティスを組み合わせ、継続的なプロセス改善とPM人材育成を主導
+  location:
+    address: 東京都渋谷区渋谷2-14-5 ネクサスビル8F
+    city: 渋谷区
+    region: 東京都
+    country: Japan
+    postalCode: "150-0002"
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/kenichi-sato-pm
+      username: kenichi-sato-pm
+    - network: GitHub
+      url: https://github.com/kenichisato-pm
+      username: kenichisato-pm
+    - network: Twitter
+      url: https://twitter.com/kenichi_pm
+      username: kenichi_pm
+  education:
+    - institution: 慶應義塾大学大学院
+      url: https://www.keio.ac.jp/
+      degree: Master
+      area: 経営管理研究科 経営管理専攻（MBA）
+      score: "3.8"
+      startDate: Apr 1, 2010
+      endDate: Mar 31, 2012
+      courses:
+        - プロジェクトマネジメント特論
+        - オペレーションズ・マネジメント
+        - 企業財務と投資評価
+        - 組織行動論
+        - 情報システム戦略
+        - データ分析と意思決定
+      summary: |
+        - プロジェクトの ROI 評価とポートフォリオマネジメントを中心に研究
+        - 修了研究では「IT投資プロジェクトの成功率を高めるガバナンス設計」をテーマに事例分析を実施
+        - 社会人学生とのグループワークを通じ、部門横断のリーダーシップとファシリテーション力を習得
+    - institution: 東京理科大学
+      url: https://www.tus.ac.jp/
+      degree: Bachelor
+      area: 工学部 情報工学科
+      score: "3.6"
+      startDate: Apr 1, 2006
+      endDate: Mar 31, 2010
+      courses:
+        - ソフトウェア工学
+        - データベースシステム
+        - アルゴリズムとデータ構造
+        - オペレーティングシステム
+        - ネットワーク工学
+        - 経営情報システム
+      summary: |
+        - ソフトウェア開発の基礎とシステム設計の考え方を体系的に習得
+        - 卒業研究として業務プロセス可視化ツールの設計・開発に取り組む
+  work:
+    - name: 株式会社ネクストソリューションズ
+      url: https://www.next-solutions.example.com
+      position: シニアプロジェクトマネージャー
+      startDate: Apr 1, 2021
+      summary: |
+        - 金融・製造業向けの基幹システム刷新プロジェクトを同時に6件統括し、総額18億円の予算を管理
+        - 見積り・WBS策定・進捗管理・課題管理のプロセスを標準化し、納期遵守率を82%から96%へ改善
+        - 経営層向けの月次レポートとステアリングコミッティを運営し、意思決定のリードタイムを平均2週間短縮
+        - 若手PM5名のメンタリングを担当し、社内PMOの育成プログラムを設計・運用
+        - ベンダー選定と契約交渉を主導し、外部委託コストを年間約12%削減
+      keywords:
+        - プロジェクトマネジメント
+        - 予算管理
+        - ステークホルダー管理
+        - PMO
+        - リスク管理
+    - name: 株式会社メディアクリエイト
+      url: https://www.mediacreate.example.co.jp
+      position: プロジェクトマネージャー
+      startDate: Apr 1, 2017
+      endDate: Mar 31, 2021
+      summary: |
+        - ECサイトのリニューアル案件を年間3〜4件、20名規模のチームで完遂
+        - スクラムを導入し、スプリントレビューとレトロスペクティブを定着させてリリース頻度を月1回から隔週へ向上
+        - 要件定義から受入テストまでを一貫して管理し、本番障害件数を前期比60%削減
+        - 海外拠点のエンジニアと協働し、時差を考慮した開発プロセスとドキュメント運用を整備
+        - 顧客満足度アンケートで3年連続「非常に満足」評価を獲得
+      keywords:
+        - スクラム
+        - 要件定義
+        - 品質保証
+        - ベンダーマネジメント
+    - name: 株式会社メディアクリエイト
+      url: https://www.mediacreate.example.co.jp
+      position: システムエンジニア / サブリーダー
+      startDate: Apr 1, 2012
+      endDate: Mar 31, 2017
+      summary: |
+        - 業務系Webアプリケーションの設計・開発・保守を担当し、Java と Oracle を用いた基盤構築を経験
+        - 5名の開発チームのサブリーダーとして、タスク割当とコードレビューを実施
+        - 運用保守フェーズの問い合わせ対応フローを整備し、一次対応時間を平均40%短縮
+        - 新人エンジニア3名のOJTトレーナーを担当
+      keywords:
+        - Java
+        - Oracle
+        - 詳細設計
+        - 保守運用
+  languages:
+    - language: Japanese
+      fluency: Native or Bilingual Proficiency
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - TOEIC 935
+        - 海外ベンダー折衝
+    - language: Chinese
+      fluency: Limited Working Proficiency
+      keywords:
+        - HSK 4級
+  skills:
+    - name: プロジェクトマネジメント
+      level: Expert
+      keywords:
+        - 計画策定
+        - 予算管理
+        - リスク管理
+        - 品質管理
+        - 変更管理
+    - name: 開発手法
+      level: Advanced
+      keywords:
+        - スクラム
+        - ウォーターフォール
+        - カンバン
+        - DevOps
+        - CI/CD
+    - name: ツール
+      level: Advanced
+      keywords:
+        - Jira
+        - Confluence
+        - MS Project
+        - Tableau
+        - Slack
+    - name: 技術リテラシー
+      level: Intermediate
+      keywords:
+        - SQL
+        - Python
+        - AWS
+        - Git
+        - REST API
+  awards:
+    - title: 年間最優秀プロジェクト賞
+      awarder: 株式会社ネクストソリューションズ
+      date: Dec 2022
+      summary: |
+        基幹システム刷新プロジェクトにおいて、予算内・予定通りでの完遂と顧客満足度の大幅な向上が評価され受賞。
+    - title: 社長表彰（業務改善貢献）
+      awarder: 株式会社メディアクリエイト
+      date: Dec 2019
+      summary: |
+        アジャイル開発プロセスの全社展開を主導し、リリース頻度の向上と障害件数の削減に貢献した功績により受賞。
+  certificates:
+    - name: Project Management Professional (PMP)
+      issuer: Project Management Institute
+      date: Jun 2018
+      url: https://www.pmi.org/certifications/project-management-pmp
+    - name: PMI Agile Certified Practitioner (PMI-ACP)
+      issuer: Project Management Institute
+      date: Nov 2020
+      url: https://www.pmi.org/certifications/agile-acp
+    - name: 応用情報技術者試験
+      issuer: 情報処理推進機構（IPA）
+      date: Dec 2013
+      url: https://www.ipa.go.jp/shiken/
+  publications:
+    - name: ハイブリッド型プロジェクトマネジメントの実践と教訓
+      publisher: PMI日本支部 機関誌
+      releaseDate: Sep 2023
+      url: https://www.pmi-japan.example.org/journal
+      summary: |
+        - ウォーターフォールとアジャイルを組み合わせた運用手法について、実案件のデータを基に考察
+        - 大規模組織におけるガバナンス設計とステークホルダー合意形成の要点を整理
+        - プロジェクト成功率を高めるための実践的なチェックリストを提示
+  projects:
+    - name: 基幹業務システムのクラウド移行プロジェクト
+      url: https://www.next-solutions.example.com/cases/cloud-migration
+      description: オンプレミスで運用していた基幹業務システムをAWSへ段階的に移行するプロジェクト
+      startDate: May 1, 2022
+      endDate: Oct 31, 2023
+      summary: |
+        - 総額6億円・関係者80名規模のプロジェクトを統括し、計画通りに本番稼働を完了
+        - 移行リスクを洗い出して段階的なカットオーバー計画を策定し、本番障害ゼロを達成
+        - 運用保守体制の内製化を推進し、インフラ運用コストを年間25%削減
+      keywords:
+        - クラウド移行
+        - AWS
+        - カットオーバー
+        - コスト最適化
+    - name: 全社アジャイル導入支援プロジェクト
+      url: https://www.mediacreate.example.co.jp/cases/agile
+      description: 開発部門全体へスクラムを導入し、開発プロセスを刷新する社内変革プロジェクト
+      startDate: Jan 1, 2019
+      endDate: Dec 31, 2020
+      summary: |
+        - 5チーム・約40名を対象にスクラムの研修とコーチングを実施
+        - リリース頻度を月1回から隔週へ、本番障害件数を60%削減
+        - 導入効果を定量指標で可視化し、経営層への定期報告を実施
+      keywords:
+        - スクラム
+        - 組織変革
+        - コーチング
+        - KPI設計
+  interests:
+    - name: スポーツ
+      keywords:
+        - フルマラソン
+        - 水泳
+        - サイクリング
+    - name: 読書
+      keywords:
+        - 経営戦略
+        - 組織論
+        - テクノロジー
+    - name: 写真
+      keywords:
+        - 街歩きスナップ
+        - 旅行記録
+  volunteer:
+    - organization: NPO法人IT教育支援協会
+      url: https://www.it-education-support.example.org
+      position: キャリアメンター
+      startDate: Sep 1, 2019
+      summary: |
+        - 就職・転職を目指す若年層に対して、IT業界のキャリア相談と面接対策を月2回実施
+        - プロジェクトマネジメント入門講座の講師を年4回担当し、延べ120名以上が受講
+        - 協会の運営ボランティアとして、講座カリキュラムの見直しと改善提案を担当
+
+locale:
+  language: ja

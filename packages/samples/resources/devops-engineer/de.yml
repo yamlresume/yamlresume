@@ -1,0 +1,253 @@
+content:
+  basics:
+    name: Lena Hoffmann
+    headline: DevOps Engineer | Cloud-Infrastruktur & Automatisierung
+    phone: "+49 30 98765432"
+    email: lena.hoffmann@example.de
+    url: https://www.lena-hoffmann.dev
+    summary: |
+      - DevOps Engineer mit 7+ Jahren Erfahrung in der Automatisierung, Bereitstellung und dem Betrieb skalierbarer Cloud-Infrastrukturen.
+      - Spezialisiert auf Kubernetes, Terraform, AWS und CI/CD-Pipelines; starke Kenntnisse in Infrastructure as Code und Monitoring.
+      - Erfolgreiche Zusammenarbeit mit Entwicklungsteams zur Steigerung der Deployment-Frequenz und Reduzierung von Ausfallzeiten.
+      - Analytisches Denken, Teamfähigkeit und Leidenschaft für Open-Source-Technologien.
+  location:
+    address: Musterstraße 12
+    city: Berlin
+    region: Berlin
+    country: Germany
+    postalCode: "10115"
+  profiles:
+    - network: GitHub
+      url: https://github.com/lhoffmann-devops
+      username: lhoffmann-devops
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/lena-hoffmann-devops
+      username: lena-hoffmann-devops
+  education:
+    - institution: Technische Universität Berlin
+      url: https://www.tu.berlin
+      degree: Master
+      area: Informatik
+      score: "1,5"
+      startDate: Oct 2015
+      endDate: Sep 2017
+      courses:
+        - Verteilte Systeme
+        - Cloud Computing
+        - Betriebssysteme
+        - Netzwerksicherheit
+        - Datenbanktechnologie
+        - Software-Architektur
+      summary: |
+        - Schwerpunkt auf verteilten Systemen und Cloud-Infrastrukturen
+        - Masterarbeit über automatisierte Skalierung von Microservices in Kubernetes
+    - institution: Hochschule für Technik und Wirtschaft Berlin
+      url: https://www.htw-berlin.de
+      degree: Bachelor
+      area: Angewandte Informatik
+      score: "1,8"
+      startDate: Oct 2012
+      endDate: Sep 2015
+      courses:
+        - Programmierung
+        - Algorithmen und Datenstrukturen
+        - Rechnernetze
+        - Linux-Systemadministration
+      summary: |
+        - Grundlagen in Softwareentwicklung und Systemadministration
+        - Praktische Projekte zu Automatisierung und Scripting
+  work:
+    - name: CloudOps GmbH
+      url: https://www.cloudops.example
+      position: Senior DevOps Engineer
+      startDate: Apr 2022
+      summary: |
+        - Konzeption und Betrieb einer Multi-Account-AWS-Landschaft mit Terraform und Terragrunt für über 40 Teams
+        - Aufbau und Weiterentwicklung von GitOps-Pipelines mit Argo CD, Helm und Kubernetes zur automatisierten Bereitstellung
+        - Einführung von OpenTelemetry und Prometheus/Grafana zur ganzheitlichen Observability, Reduzierung der MTTR um 35 %
+        - Mentoring von vier Junior-Engineers und Etablierung von Best Practices für Infrastructure as Code
+        - Durchführung von Kostenoptimierungen durch Reserved Instances, Spot-Nutzung und Rechte-Zusammenfassung
+      keywords:
+        - AWS
+        - Terraform
+        - Kubernetes
+        - GitOps
+        - Observability
+    - name: DataForge AG
+      url: https://www.dataforge.example
+      position: DevOps Engineer
+      startDate: Jul 2019
+      endDate: Mar 2022
+      summary: |
+        - Automatisierung von Build-, Test- und Deployment-Prozessen mit Jenkins, GitLab CI und Docker
+        - Migration von monolithischen Anwendungen in containerisierte Microservices auf Kubernetes
+        - Implementierung von Security-Scans und Policy-as-Code mit OPA/Gatekeeper und Trivy
+        - Aufbau von Infrastructure as Code mit Terraform und Ansible für AWS und On-Premises-Systeme
+        - Sicherstellung der Einhaltung von SLAs durch proaktives Monitoring und Incident-Response
+      keywords:
+        - Jenkins
+        - Docker
+        - Kubernetes
+        - Terraform
+        - Ansible
+    - name: WebWerk Solutions
+      url: https://www.webwerk.example
+      position: Junior DevOps Engineer
+      startDate: Sep 2017
+      endDate: Jun 2019
+      summary: |
+        - Betreuung von Linux-Servern (Debian, Ubuntu) und Automatisierung wiederkehrender Aufgaben mit Bash und Python
+        - Aufbau zentraler Logging-Lösung mit ELK Stack für über 50 Anwendungen
+        - Unterstützung bei der Einführung von CI/CD mit GitLab und automatisierten Tests
+        - Erstellung von Monitoring-Dashboards und Alarmen mit Nagios und Icinga
+      keywords:
+        - Linux
+        - Bash
+        - Python
+        - ELK
+        - CI/CD
+  skills:
+    - name: Cloud & Infrastruktur
+      level: Expert
+      keywords:
+        - AWS
+        - Azure
+        - Terraform
+        - CloudFormation
+        - Pulumi
+    - name: Container & Orchestrierung
+      level: Expert
+      keywords:
+        - Kubernetes
+        - Docker
+        - Helm
+        - Argo CD
+        - Istio
+    - name: CI/CD & Automatisierung
+      level: Advanced
+      keywords:
+        - GitLab CI
+        - Jenkins
+        - GitHub Actions
+        - Ansible
+        - Argo Workflows
+    - name: Monitoring & Observability
+      level: Advanced
+      keywords:
+        - Prometheus
+        - Grafana
+        - OpenTelemetry
+        - ELK Stack
+        - Datadog
+    - name: Programmierung & Scripting
+      level: Advanced
+      keywords:
+        - Python
+        - Go
+        - Bash
+        - YAML
+        - SQL
+  languages:
+    - language: German
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - Muttersprache
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - TOEFL iBT 110
+        - Technisches Englisch
+    - language: French
+      fluency: Limited Working Proficiency
+      keywords:
+        - Grundkenntnisse
+  awards:
+    - title: DevOps Excellence Award
+      awarder: CloudOps GmbH
+      date: Dec 2023
+      summary: |
+        Auszeichnung für die herausragende Automatisierung der Cloud-Infrastruktur und die Reduzierung der Betriebskosten um 25 %.
+    - title: Beste Masterarbeit
+      awarder: Technische Universität Berlin
+      date: Oct 2017
+      summary: |
+        Prämierung der Masterarbeit zur automatisierten Skalierung von Microservices in Kubernetes.
+  certificates:
+    - name: AWS Certified DevOps Engineer – Professional
+      issuer: Amazon Web Services
+      date: May 2023
+      url: https://aws.amazon.com/certification/
+    - name: Certified Kubernetes Administrator (CKA)
+      issuer: Cloud Native Computing Foundation
+      date: Feb 2022
+      url: https://www.cncf.io/certification/cka/
+    - name: 'HashiCorp Certified: Terraform Associate'
+      issuer: HashiCorp
+      date: Nov 2021
+      url: https://www.hashicorp.com/certification/terraform-associate
+  publications:
+    - name: Effiziente Kubernetes-Skalierung durch adaptive Metriken
+      publisher: DevOps-Konferenz Berlin 2023
+      releaseDate: Sep 2023
+      url: https://www.devops-konferenz-berlin.example/vortraege
+      summary: |
+        - Vortrag über die Nutzung von Custom Metrics und KEDA zur automatisierten Skalierung von Workloads
+        - Praxisbericht zur Reduzierung von Overprovisioning und Steigerung der Ressourceneffizienz
+  projects:
+    - name: Self-Service-Infrastrukturplattform
+      url: https://github.com/lhoffmann-devops/self-service-infra
+      description: Eine interne Plattform zur Bereitstellung standardisierter
+        Cloud-Umgebungen via Terraform und Kubernetes.
+      startDate: Jan 2023
+      endDate: Dec 2023
+      summary: |
+        - Entwicklung eines Backstage-Plugins für Self-Service-Deployments
+        - Integration von Terraform-Modulen und GitOps-Workflows
+        - Reduzierung der Bereitstellungszeit neuer Umgebungen von Tagen auf unter 30 Minuten
+      keywords:
+        - Terraform
+        - Backstage
+        - Kubernetes
+        - GitOps
+    - name: Cluster-Autoscaler-Optimierung
+      url: https://github.com/lhoffmann-devops/cluster-autoscaler-benchmark
+      description: Benchmark und Optimierung des Kubernetes Cluster-Autoscalers für
+        gemischte Workloads.
+      startDate: Mar 2022
+      endDate: Aug 2022
+      summary: |
+        - Analyse von Skalierungsverhalten unter Last und Implementierung von PriorityClasses
+        - Senkung der AWS-Kosten um 18 % bei gleichbleibender Performance
+      keywords:
+        - Kubernetes
+        - AWS
+        - Autoscaling
+        - Kostenoptimierung
+  interests:
+    - name: Open Source
+      keywords:
+        - Kubernetes
+        - Terraform
+        - Prometheus
+    - name: Sport
+      keywords:
+        - Laufen
+        - Klettern
+        - Radfahren
+    - name: Musik
+      keywords:
+        - Klavier
+        - Konzerte
+  volunteer:
+    - organization: Open Source Helpdesk Berlin
+      url: https://www.oss-helpdesk-berlin.example
+      position: Mentorin für DevOps
+      startDate: Jan 2021
+      endDate: Dec 2023
+      summary: |
+        - Unterstützung von Einsteigern bei der Einrichtung von CI/CD-Pipelines und Kubernetes-Clustern
+        - Organisation monatlicher Workshops zu Infrastructure as Code und Cloud-Sicherheit
+        - Beratung von gemeinnützigen Organisationen bei der Migration in die Cloud
+
+locale:
+  language: de
