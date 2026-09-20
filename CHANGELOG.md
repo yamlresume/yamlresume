@@ -2,6 +2,28 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.16.1](https://github.com/yamlresume/yamlresume/compare/v0.16.0...v0.16.1) (2026-09-20)
+
+
+### ⚠ BREAKING CHANGES
+
+* YAMLResume packages now require Node.js 22.0.0 or
+newer; Node.js 20 is no longer supported.
+
+* require Node.js 22 ([b6f1e97](https://github.com/yamlresume/yamlresume/commit/b6f1e9771e9177720eba5c966446ef3645d0626f))
+
+
+### Features
+
+* add 5 new samples ([da3350f](https://github.com/yamlresume/yamlresume/commit/da3350f085e2c9979b9479ddb1892f9705bb50cc))
+* **html:** add showAnchors for section and entry fragment ids ([d820a29](https://github.com/yamlresume/yamlresume/commit/d820a29a520ac15bd5e0706e2e61d0f8d0dd0f69)), closes [#239](https://github.com/yamlresume/yamlresume/issues/239)
+
+
+### Bug Fixes
+
+* **docker:** register TeX Live's font trees with fontconfig ([f1caa23](https://github.com/yamlresume/yamlresume/commit/f1caa23334988b9f1a279b3f96ab6ab0860d3ed4))
+* **playground:** avoid blank HTML previews ([b299bbf](https://github.com/yamlresume/yamlresume/commit/b299bbf6d3958fdb8671d03948d2b7e5cd24ad9d))
+
 ## [0.16.0](https://github.com/yamlresume/yamlresume/compare/v0.15.3...v0.16.0) (2026-08-28)
 
 
