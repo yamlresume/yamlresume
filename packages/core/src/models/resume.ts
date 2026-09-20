@@ -433,6 +433,7 @@ export const DEFAULT_HTML_LAYOUT: HtmlLayout = {
     fontSize: '16px',
   },
   advanced: {
+    showAnchors: true,
     showIcons: true,
   },
 }

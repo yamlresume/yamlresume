@@ -40,11 +40,13 @@ describe('HtmlAdvancedSchema', () => {
       },
       {
         advanced: {
+          showAnchors: true,
           showIcons: true,
         },
       },
       {
         advanced: {
+          showAnchors: false,
           showIcons: false,
         },
       },
@@ -53,6 +55,11 @@ describe('HtmlAdvancedSchema', () => {
     for (const html of tests) {
       const parsed = HtmlAdvancedSchema.parse(html)
       if (html.advanced) {
+        expect(parsed.advanced.showAnchors).toBe(
+          html.advanced.showAnchors !== undefined
+            ? html.advanced.showAnchors
+            : true
+        )
         expect(parsed.advanced.showIcons).toBe(
           html.advanced.showIcons !== undefined ? html.advanced.showIcons : true
         )

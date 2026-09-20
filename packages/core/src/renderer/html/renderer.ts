@@ -75,6 +75,31 @@ export class HtmlRenderer extends Renderer {
   }
 
   /**
+   * Get whether to emit fragment id attributes for anchor navigation.
+   */
+  private get showAnchors(): boolean {
+    const layout = this.resume.layouts?.[this.layoutIndex] as HtmlLayout
+    return layout?.advanced?.showAnchors ?? true
+  }
+
+  /**
+   * Fragment id attribute for a section element when showAnchors is enabled.
+   */
+  private sectionIdAttr(sectionId: string): string {
+    return this.showAnchors ? ` id="${sectionId}"` : ''
+  }
+
+  /**
+   * Opening tag for a resume entry with an optional fragment id.
+   */
+  private resumeEntryOpen(sectionId: string, entryIndex: number): string {
+    if (!this.showAnchors) {
+      return '<div class="resume-entry">'
+    }
+    return `<div class="resume-entry" id="${sectionId}-${entryIndex + 1}">`
+  }
+
+  /**
    * Get the CSS styles for the HTML document.
    *
    * @returns {string} The CSS styles
@@ -231,7 +256,7 @@ ${this.getStyles()}
       return ''
     }
 
-    return `<section class="resume-section" id="summary" data-section="summary">
+    return `<section class="resume-section"${this.sectionIdAttr('summary')} data-section="summary">
       <h2 class="resume-section-title">${sectionNames.basics}</h2>
       <div class="resume-section-content">
         <div class="resume-summary-content">${summary}</div>
@@ -351,18 +376,21 @@ ${this.getStyles()}
     }
 
     const educationEntries = education.map(
-      ({
-        url,
-        institution,
-        computed: { dateRange, summary, courses, degreeAreaAndScore },
-      }) => {
+      (
+        {
+          url,
+          institution,
+          computed: { dateRange, summary, courses, degreeAreaAndScore },
+        },
+        entryIndex
+      ) => {
         const institutionTitle = url
           ? `<a href="${url}">${institution}</a>`
           : institution
 
         return joinNonEmptyString(
           [
-            '<div class="resume-entry">',
+            this.resumeEntryOpen('education', entryIndex),
             '<div class="resume-entry-header">',
             '<div>',
             showIfNotEmpty(
@@ -396,7 +424,7 @@ ${this.getStyles()}
       }
     )
 
-    return `<section class="resume-section" id="education" data-section="education">
+    return `<section class="resume-section"${this.sectionIdAttr('education')} data-section="education">
       <h2 class="resume-section-title">${sectionNames.education}</h2>
       <div class="resume-section-content">
         ${educationEntries.join('\n')}
@@ -428,17 +456,20 @@ ${this.getStyles()}
     }
 
     const workEntries = work.map(
-      ({
-        name,
-        position,
-        url,
-        computed: { dateRange, summary, keywords } = {},
-      }) => {
+      (
+        {
+          name,
+          position,
+          url,
+          computed: { dateRange, summary, keywords } = {},
+        },
+        entryIndex
+      ) => {
         const organizationTitle = url ? `<a href="${url}">${name}</a>` : name
 
         return joinNonEmptyString(
           [
-            '<div class="resume-entry">',
+            this.resumeEntryOpen('work', entryIndex),
             '<div class="resume-entry-header">',
             '<div>',
             showIfNotEmpty(
@@ -472,7 +503,7 @@ ${this.getStyles()}
       }
     )
 
-    return `<section class="resume-section" id="work" data-section="work">
+    return `<section class="resume-section"${this.sectionIdAttr('work')} data-section="work">
       <h2 class="resume-section-title">${sectionNames.work}</h2>
       <div class="resume-section-content">
         ${workEntries.join('\n')}
@@ -524,7 +555,7 @@ ${this.getStyles()}
         )
     )
 
-    return `<section class="resume-section" id="languages" data-section="languages">
+    return `<section class="resume-section"${this.sectionIdAttr('languages')} data-section="languages">
       <h2 class="resume-section-title">${sectionNames.languages}</h2>
       <div class="resume-section-content">
         <div class="resume-languages-list">
@@ -581,7 +612,7 @@ ${this.getStyles()}
       )
     )
 
-    return `<section class="resume-section" id="skills" data-section="skills">
+    return `<section class="resume-section"${this.sectionIdAttr('skills')} data-section="skills">
       <h2 class="resume-section-title">${sectionNames.skills}</h2>
       <div class="resume-section-content">
         ${skillItems.join('\n')}
@@ -607,10 +638,10 @@ ${this.getStyles()}
     }
 
     const awardEntries = awards.map(
-      ({ awarder, title, computed: { date, summary } }) => {
+      ({ awarder, title, computed: { date, summary } }, entryIndex) => {
         return joinNonEmptyString(
           [
-            '<div class="resume-entry">',
+            this.resumeEntryOpen('awards', entryIndex),
             '<div class="resume-entry-header">',
             '<div>',
             showIfNotEmpty(
@@ -638,7 +669,7 @@ ${this.getStyles()}
       }
     )
 
-    return `<section class="resume-section" id="awards" data-section="awards">
+    return `<section class="resume-section"${this.sectionIdAttr('awards')} data-section="awards">
       <h2 class="resume-section-title">${sectionNames.awards}</h2>
       <div class="resume-section-content">
         ${awardEntries.join('\n')}
@@ -664,10 +695,10 @@ ${this.getStyles()}
     }
 
     const certificateEntries = certificates.map(
-      ({ name, url, issuer, computed: { date } }) => {
+      ({ name, url, issuer, computed: { date } }, entryIndex) => {
         return joinNonEmptyString(
           [
-            '<div class="resume-entry">',
+            this.resumeEntryOpen('certificates', entryIndex),
             '<div class="resume-entry-header">',
             '<div>',
             showIfNotEmpty(
@@ -693,7 +724,7 @@ ${this.getStyles()}
       }
     )
 
-    return `<section class="resume-section" id="certificates" data-section="certificates">
+    return `<section class="resume-section"${this.sectionIdAttr('certificates')} data-section="certificates">
       <h2 class="resume-section-title">${sectionNames.certificates}</h2>
       <div class="resume-section-content">
         ${certificateEntries.join('\n')}
@@ -719,12 +750,15 @@ ${this.getStyles()}
     }
 
     const publicationEntries = publications.map(
-      ({ name, publisher, url, computed: { releaseDate, summary } = {} }) => {
+      (
+        { name, publisher, url, computed: { releaseDate, summary } = {} },
+        entryIndex
+      ) => {
         const publicationTitle = url ? `<a href="${url}">${name}</a>` : name
 
         return joinNonEmptyString(
           [
-            '<div class="resume-entry">',
+            this.resumeEntryOpen('publications', entryIndex),
             '<div class="resume-entry-header">',
             '<div>',
             showIfNotEmpty(
@@ -752,7 +786,7 @@ ${this.getStyles()}
       }
     )
 
-    return `<section class="resume-section" id="publications" data-section="publications">
+    return `<section class="resume-section"${this.sectionIdAttr('publications')} data-section="publications">
       <h2 class="resume-section-title">${sectionNames.publications}</h2>
       <div class="resume-section-content">
         ${publicationEntries.join('\n')}
@@ -778,14 +812,17 @@ ${this.getStyles()}
     }
 
     const referenceEntries = references.map(
-      ({ name, relationship, phone, email, computed: { summary } = {} }) => {
+      (
+        { name, relationship, phone, email, computed: { summary } = {} },
+        entryIndex
+      ) => {
         const referenceTitle = email
           ? `<a href="mailto:${email}">${name}</a>`
           : name
 
         return joinNonEmptyString(
           [
-            '<div class="resume-entry">',
+            this.resumeEntryOpen('references', entryIndex),
             '<div class="resume-entry-header">',
             '<div>',
             showIfNotEmpty(
@@ -810,7 +847,7 @@ ${this.getStyles()}
       }
     )
 
-    return `<section class="resume-section" id="references" data-section="references">
+    return `<section class="resume-section"${this.sectionIdAttr('references')} data-section="references">
       <h2 class="resume-section-title">${sectionNames.references}</h2>
       <div class="resume-section-content">
         ${referenceEntries.join('\n')}
@@ -842,17 +879,20 @@ ${this.getStyles()}
     }
 
     const projectEntries = projects.map(
-      ({
-        name,
-        description,
-        url,
-        computed: { dateRange, summary, keywords } = {},
-      }) => {
+      (
+        {
+          name,
+          description,
+          url,
+          computed: { dateRange, summary, keywords } = {},
+        },
+        entryIndex
+      ) => {
         const projectTitle = url ? `<a href="${url}">${name}</a>` : name
 
         return joinNonEmptyString(
           [
-            '<div class="resume-entry">',
+            this.resumeEntryOpen('projects', entryIndex),
             '<div class="resume-entry-header">',
             '<div>',
             showIfNotEmpty(
@@ -886,7 +926,7 @@ ${this.getStyles()}
       }
     )
 
-    return `<section class="resume-section" id="projects" data-section="projects">
+    return `<section class="resume-section"${this.sectionIdAttr('projects')} data-section="projects">
       <h2 class="resume-section-title">${sectionNames.projects}</h2>
       <div class="resume-section-content">
         ${projectEntries.join('\n')}
@@ -928,7 +968,7 @@ ${this.getStyles()}
       )
     )
 
-    return `<section class="resume-section" id="interests" data-section="interests">
+    return `<section class="resume-section"${this.sectionIdAttr('interests')} data-section="interests">
       <h2 class="resume-section-title">${sectionNames.interests}</h2>
       <div class="resume-section-content">
         ${interestItems.join('\n')}
@@ -954,19 +994,17 @@ ${this.getStyles()}
     }
 
     const volunteerEntries = volunteer.map(
-      ({
-        organization,
-        position,
-        url,
-        computed: { dateRange, summary } = {},
-      }) => {
+      (
+        { organization, position, url, computed: { dateRange, summary } = {} },
+        entryIndex
+      ) => {
         const organizationTitle = url
           ? `<a href="${url}">${organization}</a>`
           : organization
 
         return joinNonEmptyString(
           [
-            '<div class="resume-entry">',
+            this.resumeEntryOpen('volunteer', entryIndex),
             '<div class="resume-entry-header">',
             '<div>',
             showIfNotEmpty(
@@ -994,7 +1032,7 @@ ${this.getStyles()}
       }
     )
 
-    return `<section class="resume-section" id="volunteer" data-section="volunteer">
+    return `<section class="resume-section"${this.sectionIdAttr('volunteer')} data-section="volunteer">
       <h2 class="resume-section-title">${sectionNames.volunteer}</h2>
       <div class="resume-section-content">
         ${volunteerEntries.join('\n')}

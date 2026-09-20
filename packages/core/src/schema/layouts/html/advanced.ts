@@ -35,6 +35,7 @@ import { joinNonEmptyString } from '@/utils'
 export const HtmlAdvancedSchema = z.object({
   advanced: z
     .object({
+      showAnchors: z.boolean().default(true),
       showIcons: z.boolean().default(true),
       title: z.string().optional(),
       footer: z
@@ -50,7 +51,7 @@ export const HtmlAdvancedSchema = z.object({
       description: joinNonEmptyString(
         [
           'The Advanced section contains advanced HTML settings,',
-          'including options to show raw URLs and icons.',
+          'including options to emit fragment ids for anchor navigation and to show icons.',
         ],
         ' '
       ),

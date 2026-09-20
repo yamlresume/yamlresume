@@ -41,6 +41,9 @@ export type HtmlTypography = {
  * Defines advanced HTML configuration options.
  */
 export type HtmlAdvanced = {
+  /** Whether to emit fragment `id` attributes on sections and entries for
+   * anchor navigation. */
+  showAnchors?: boolean
   /** Whether to show icons for links and profiles. */
   showIcons?: boolean
   /** Custom title for the HTML document. */

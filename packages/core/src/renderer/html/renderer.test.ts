@@ -100,6 +100,78 @@ describe('HtmlRenderer', () => {
       })
     })
 
+    describe('advanced.showAnchors', () => {
+      it('should default showAnchors to true and render section and entry ids', () => {
+        resume.content.work = [
+          {
+            name: 'Tech Corp',
+            position: 'Engineer',
+            summary: '',
+            startDate: '2020-01-01',
+          },
+        ]
+        const renderer = new HtmlRenderer(
+          resume,
+          findLayoutIndex(resume, 'html')
+        )
+        const result = renderer.renderWork()
+
+        expect(result).toContain('id="work"')
+        expect(result).toContain('id="work-1"')
+      })
+
+      it('should omit section and entry ids when showAnchors is false', () => {
+        resume.content.work = [
+          {
+            name: 'Tech Corp',
+            position: 'Engineer',
+            summary: '',
+            startDate: '2020-01-01',
+          },
+        ]
+        const htmlLayout = resume.layouts[
+          findLayoutIndex(resume, 'html')
+        ] as HtmlLayout
+        htmlLayout.advanced = { ...htmlLayout.advanced, showAnchors: false }
+
+        const renderer = new HtmlRenderer(
+          resume,
+          findLayoutIndex(resume, 'html')
+        )
+        const result = renderer.renderWork()
+
+        expect(result).not.toContain('id="work"')
+        expect(result).not.toContain('id="work-1"')
+        expect(result).toContain('data-section="work"')
+        expect(result).toContain('<div class="resume-entry">')
+      })
+
+      it('should use 1-based entry index for multiple entries', () => {
+        resume.content.work = [
+          {
+            name: 'First',
+            position: 'A',
+            summary: '',
+            startDate: '2020-01-01',
+          },
+          {
+            name: 'Second',
+            position: 'B',
+            summary: '',
+            startDate: '2021-01-01',
+          },
+        ]
+        const renderer = new HtmlRenderer(
+          resume,
+          findLayoutIndex(resume, 'html')
+        )
+        const result = renderer.renderWork()
+
+        expect(result).toContain('id="work-1"')
+        expect(result).toContain('id="work-2"')
+      })
+    })
+
     describe('advanced.title', () => {
       it('should use custom title when provided', () => {
         const htmlLayout = resume.layouts[
@@ -855,6 +927,7 @@ describe('HtmlRenderer', () => {
       const result = renderer.renderWork()
 
       expect(result).toContain('id="work"')
+      expect(result).toContain('id="work-1"')
       expect(result).toContain(`<a href="${url}">${name}</a>`)
       expect(result).toContain(
         `<div class="resume-entry-title"><a href="${url}">${name}</a></div>`

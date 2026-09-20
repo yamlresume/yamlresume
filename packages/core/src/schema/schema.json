@@ -2691,11 +2691,15 @@
                   },
                   "advanced": {
                     "title": "Advanced",
-                    "description": "The Advanced section contains advanced HTML settings, including options to show raw URLs and icons.",
+                    "description": "The Advanced section contains advanced HTML settings, including options to emit fragment ids for anchor navigation and to show icons.",
                     "anyOf": [
                       {
                         "type": "object",
                         "properties": {
+                          "showAnchors": {
+                            "default": true,
+                            "type": "boolean"
+                          },
                           "showIcons": {
                             "default": true,
                             "type": "boolean"
@@ -2715,6 +2719,7 @@
                           }
                         },
                         "required": [
+                          "showAnchors",
                           "showIcons"
                         ],
                         "additionalProperties": false
