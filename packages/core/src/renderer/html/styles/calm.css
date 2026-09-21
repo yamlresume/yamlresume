@@ -109,7 +109,7 @@ body {
 
 /* links: modern typographic style */
 a {
-  color: var(--text-color-primary);
+  color: var(--accent-color, var(--text-color-primary));
   text-decoration: underline;
   text-decoration-color: var(--border-color);
   text-underline-offset: 3px;
@@ -119,7 +119,7 @@ a {
 }
 
 a:hover {
-  text-decoration-color: var(--text-color-primary);
+  text-decoration-color: var(--accent-color, var(--text-color-primary));
 }
 
 /* sections */
@@ -130,8 +130,9 @@ a:hover {
 .resume-section-title {
   font-size: var(--font-size-xl);
   font-weight: 500;
+  color: var(--accent-color, var(--text-color-primary));
   margin-bottom: var(--spacing-md);
-  border-bottom: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--accent-color, var(--border-color));
   padding-bottom: var(--spacing-xs);
 }
 

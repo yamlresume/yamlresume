@@ -146,6 +146,55 @@ describe('JakeRenderer', () => {
       expect(result).toContain('\\titlerule')
     })
 
+    it('should load xcolor instead of color for the HTML color model', () => {
+      const result = renderer.renderPreamble()
+
+      expect(result).toContain('\\usepackage[usenames,dvipsnames]{xcolor}')
+      expect(result).not.toContain('\\usepackage[usenames,dvipsnames]{color}')
+    })
+
+    it('should render default black titlerule when color is unset', () => {
+      const result = renderer.renderPreamble()
+
+      expect(result).toContain('[\\color{black}\\titlerule')
+      expect(result).not.toContain('\\definecolor{accentcolor}')
+      expect(result).not.toContain('accentcolor')
+    })
+
+    it('should render an accent color when a named color preset is set', () => {
+      const coloredResume = cloneDeep(resume)
+      coloredResume.layouts = [
+        {
+          engine: 'latex',
+          theme: { colors: { accent: 'blue' } },
+        },
+      ]
+
+      const renderer = new JakeRenderer(coloredResume, 0)
+      const result = renderer.renderPreamble()
+
+      expect(result).toContain('\\definecolor{accentcolor}{HTML}{3873B3}')
+      expect(result).toContain('[\\color{accentcolor}\\titlerule')
+      // the section title text should be colored as well
+      expect(result).toContain('\\raggedright\\large\\color{accentcolor}')
+    })
+
+    it('should render an accent color when an arbitrary hex color is set', () => {
+      const coloredResume = cloneDeep(resume)
+      coloredResume.layouts = [
+        {
+          engine: 'latex',
+          theme: { colors: { accent: '#a1B2c3' } },
+        },
+      ]
+
+      const renderer = new JakeRenderer(coloredResume, 0)
+      const result = renderer.renderPreamble()
+
+      expect(result).toContain('\\definecolor{accentcolor}{HTML}{A1B2C3}')
+      expect(result).toContain('[\\color{accentcolor}\\titlerule')
+    })
+
     it('should use DEFAULT_LATEX_LAYOUT margins when no margins specified', () => {
       const result = renderer.renderPreamble()
 

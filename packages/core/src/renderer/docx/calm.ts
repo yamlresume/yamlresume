@@ -22,7 +22,7 @@
  * IN THE SOFTWARE.
  */
 
-import { AlignmentType, ExternalHyperlink, Paragraph, TextRun } from 'docx'
+import { AlignmentType, type ExternalHyperlink, Paragraph, TextRun } from 'docx'
 import { MarkdownParser, type Parser } from '@/compiler'
 import type { Resume } from '@/models'
 import { getTemplateTranslations } from '@/translations'
@@ -62,15 +62,9 @@ export class CalmDocxRenderer extends DocxRenderer {
     if (!url || !this.showUrls) return undefined
 
     return [
-      new ExternalHyperlink({
-        children: [
-          new TextRun({
-            text: url,
-            size: smallSize,
-            font: fontFamily,
-          }),
-        ],
-        link: url,
+      this.createExternalHyperlink(url, url, {
+        size: smallSize,
+        font: fontFamily,
       }),
     ]
   }
@@ -228,15 +222,9 @@ export class CalmDocxRenderer extends DocxRenderer {
         )
       }
       contactParts.push(
-        new ExternalHyperlink({
-          children: [
-            new TextRun({
-              text: email,
-              size: smallSize,
-              font: fontFamily,
-            }),
-          ],
-          link: `mailto:${email}`,
+        this.createExternalHyperlink(`mailto:${email}`, email, {
+          size: smallSize,
+          font: fontFamily,
         })
       )
     }
@@ -252,15 +240,9 @@ export class CalmDocxRenderer extends DocxRenderer {
         )
       }
       contactParts.push(
-        new ExternalHyperlink({
-          children: [
-            new TextRun({
-              text: url,
-              size: smallSize,
-              font: fontFamily,
-            }),
-          ],
-          link: url,
+        this.createExternalHyperlink(url, url, {
+          size: smallSize,
+          font: fontFamily,
         })
       )
     }
@@ -353,15 +335,9 @@ export class CalmDocxRenderer extends DocxRenderer {
       }
       if (url) {
         profileParts.push(
-          new ExternalHyperlink({
-            children: [
-              new TextRun({
-                text: `@${username}`,
-                size: smallSize,
-                font: fontFamily,
-              }),
-            ],
-            link: url,
+          this.createExternalHyperlink(url, `@${username}`, {
+            size: smallSize,
+            font: fontFamily,
           })
         )
       } else {

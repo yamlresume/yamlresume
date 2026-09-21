@@ -50,6 +50,8 @@ interface DocxGenerationOptions {
   fontSize: number
   /** Line spacing value in twips. */
   lineSpacing: number
+  /** Hyperlink text color as hex without `#`. */
+  hyperlinkColor?: string
 }
 
 /**
@@ -85,6 +87,7 @@ function getOptionsFromContext(
     fontSize,
     fontFamily: typography?.fontFamily,
     lineSpacing,
+    hyperlinkColor: context?.hyperlinkColor,
   }
 }
 
@@ -331,6 +334,7 @@ function convertTextNode(
     font: options.fontFamily,
     bold: isBold || undefined,
     italics: isItalic || undefined,
+    color: linkHref ? options.hyperlinkColor : undefined,
   }
 
   if (linkHref) {

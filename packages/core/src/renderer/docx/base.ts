@@ -25,7 +25,7 @@
 import {
   BorderStyle,
   Document,
-  type ExternalHyperlink,
+  ExternalHyperlink,
   Footer,
   HeadingLevel,
   Packer,
@@ -39,7 +39,7 @@ import { DocxCodeGenerator, MarkdownParser } from '@/compiler'
 import type { CodeGenerationContext } from '@/compiler/codegen/interface'
 import type { DocxLayout, LineSpacing, Resume } from '@/models'
 import { transformResume } from '@/preprocess'
-import { parseFontSizeToHalfPoints } from '@/utils'
+import { parseFontSizeToHalfPoints, resolveLayoutAccentHex } from '@/utils'
 import { Renderer } from '../base'
 import {
   DEFAULT_FONT_SIZE,
@@ -119,6 +119,47 @@ export abstract class DocxRenderer extends Renderer<Paragraph[]> {
 
     const fontSize = layout.typography?.fontSize
     return parseFontSizeToHalfPoints(fontSize, DEFAULT_FONT_SIZE)
+  }
+
+  /**
+   * Get the accent color hex code (without `#`) for section headings.
+   *
+   * @returns {string} Accent color hex code, defaults to black
+   */
+  protected getAccentColor(): string {
+    const layout = this.resume.layouts?.[this.layoutIndex]
+
+    if (layout?.engine !== 'docx') return BLACK
+
+    return resolveLayoutAccentHex(layout) ?? BLACK
+  }
+
+  /**
+   * Create an external hyperlink with accent-colored link text.
+   */
+  protected createExternalHyperlink(
+    link: string,
+    displayText: string,
+    options: {
+      size: number
+      font?: string
+      bold?: boolean
+      italics?: boolean
+    }
+  ): ExternalHyperlink {
+    return new ExternalHyperlink({
+      children: [
+        new TextRun({
+          text: displayText,
+          size: options.size,
+          font: options.font,
+          bold: options.bold,
+          italics: options.italics,
+          color: this.getAccentColor(),
+        }),
+      ],
+      link,
+    })
   }
 
   /**
@@ -323,6 +364,7 @@ export abstract class DocxRenderer extends Renderer<Paragraph[]> {
     const fontFamily = this.getFontFamily()
     const lineSpacing = this.getLineSpacing()
     const headingSize = this.getScaledFontSize(FONT_SCALE.heading) // ~14pt at 11pt base
+    const accentColor = this.getAccentColor()
 
     return new Paragraph({
       children: [
@@ -331,14 +373,14 @@ export abstract class DocxRenderer extends Renderer<Paragraph[]> {
           bold: true,
           size: headingSize,
           font: fontFamily,
-          color: BLACK,
+          color: accentColor,
         }),
       ],
       heading: HeadingLevel.HEADING_2,
       spacing: { before: 400, after: 200, line: lineSpacing },
       border: {
         bottom: {
-          color: BLACK,
+          color: accentColor,
           space: 1,
           style: BorderStyle.SINGLE,
           size: 6,
@@ -365,7 +407,7 @@ export abstract class DocxRenderer extends Renderer<Paragraph[]> {
           bold: true,
           size: subheadingSize,
           font: fontFamily,
-          color: BLACK,
+          color: this.getAccentColor(),
         }),
       ],
       heading: HeadingLevel.HEADING_3,
@@ -510,6 +552,7 @@ export abstract class DocxRenderer extends Renderer<Paragraph[]> {
         fontSize: `${this.getBaseFontSize() / 2}pt`,
         lineSpacing: this.getLineSpacingName(),
       } as DocxLayout['typography'],
+      hyperlinkColor: this.getAccentColor(),
     }
     return this.codeGenerator.generate(ast, context)
   }

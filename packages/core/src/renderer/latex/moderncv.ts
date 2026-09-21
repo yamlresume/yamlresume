@@ -29,6 +29,7 @@ import { transformResume } from '@/preprocess'
 import { getTemplateTranslations } from '@/translations'
 import {
   escapeLatex,
+  isColorPreset,
   isEmptyValue,
   joinNonEmptyString,
   showIf,
@@ -123,11 +124,38 @@ class ModerncvBase extends LatexRenderer {
    * Render the moderncv configuration.
    */
   private renderModerncvConfig(): string {
+    const color = this.getThemeAccentColor()
+    const colorHex = this.resolveThemeAccentHex()
+
+    // moderncv's `\moderncvcolor` only accepts its built-in scheme names, so
+    // named presets map to `\moderncvcolor{<name>}` directly for best
+    // fidelity, while arbitrary hex colors keep the black scheme and
+    // redefine `color1` (the accent) plus the band-style header colors
+    // `headTL`/`headBR` manually.
+    //
+    // IMPORTANT: the color configuration must come BEFORE `\moderncvstyle`.
+    // Since moderncv v2.4, style files snapshot `color1`/`color2` into named
+    // style colors (`sectioncolor`, `lastnamecolor`, `bodyrulecolor`, ...)
+    // via `\colorlet` at style-load time, so a color scheme loaded after the
+    // style has no effect.
+    const moderncvColor = color && isColorPreset(color) ? color : 'black'
+    const colorOverride =
+      colorHex && color && !isColorPreset(color)
+        ? joinNonEmptyString(
+            [
+              `\\definecolor{color1}{HTML}{${colorHex}}`,
+              '\\colorlet{headTL}{color1}',
+              '\\colorlet{headBR}{color1}',
+            ],
+            '\n'
+          )
+        : ''
+
     return joinNonEmptyString([
       `%% moderncv
-% style and color
-\\moderncvstyle{${this.style}}
-\\moderncvcolor{black}`,
+% color and style
+${joinNonEmptyString([`\\moderncvcolor{${moderncvColor}}`, colorOverride], '\n')}
+\\moderncvstyle{${this.style}}`,
       this.showIcons
         ? ''
         : `% disable icons

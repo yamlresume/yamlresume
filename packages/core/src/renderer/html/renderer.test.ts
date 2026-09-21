@@ -519,6 +519,48 @@ describe('HtmlRenderer', () => {
         expect(result).not.toContain('MOCK_CALM_CSS')
       })
     })
+
+    describe('color', () => {
+      it('should not inject --accent-color when color is unset', () => {
+        const renderer = new HtmlRenderer(
+          resume,
+          findLayoutIndex(resume, 'html')
+        )
+        const result = renderer.renderPreamble()
+
+        expect(result).not.toContain('--accent-color')
+      })
+
+      it('should inject --accent-color when a named color preset is set', () => {
+        const htmlLayout = resume.layouts[
+          findLayoutIndex(resume, 'html')
+        ] as HtmlLayout
+        htmlLayout.theme = { colors: { accent: 'blue' } }
+
+        const renderer = new HtmlRenderer(
+          resume,
+          findLayoutIndex(resume, 'html')
+        )
+        const result = renderer.renderPreamble()
+
+        expect(result).toContain('--accent-color: #3873B3;')
+      })
+
+      it('should inject --accent-color when an arbitrary hex color is set', () => {
+        const htmlLayout = resume.layouts[
+          findLayoutIndex(resume, 'html')
+        ] as HtmlLayout
+        htmlLayout.theme = { colors: { accent: '#980000' } }
+
+        const renderer = new HtmlRenderer(
+          resume,
+          findLayoutIndex(resume, 'html')
+        )
+        const result = renderer.renderPreamble()
+
+        expect(result).toContain('--accent-color: #980000;')
+      })
+    })
   })
 
   describe('renderPreamble', () => {

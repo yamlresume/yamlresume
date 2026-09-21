@@ -112,6 +112,7 @@ export class HtmlRenderer extends Renderer {
     const fontFamily = layout?.typography?.fontFamily
     const lineSpacing = layout?.typography?.lineSpacing || DEFAULT_LINE_SPACING
     const lineHeight = LINE_SPACING_MAP[lineSpacing]
+    const accentHex = this.resolveThemeAccentHex()
 
     const templates = {
       calm: calm,
@@ -127,7 +128,10 @@ export class HtmlRenderer extends Renderer {
     fontFamily,
     `${fontFamily}, `
   )}var(--text-default-font-family);
-  --line-height: ${lineHeight};
+  --line-height: ${lineHeight};${showIfNotEmpty(
+    accentHex,
+    `\n  --accent-color: #${accentHex};`
+  )}
 }
 ${trimCss(reset)}
 ${trimCss(templateCss)}

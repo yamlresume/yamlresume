@@ -182,6 +182,65 @@ describe('ModerncvBase', () => {
 
       expect(result).toContain('\\moderncvstyle{banking}')
       expect(result).toContain('\\moderncvcolor{black}')
+
+      // the color scheme must come before `\moderncvstyle`: moderncv style
+      // files snapshot `color1`/`color2` into named style colors via
+      // `\colorlet` at style-load time
+      expect(result.indexOf('\\moderncvcolor')).toBeLessThan(
+        result.indexOf('\\moderncvstyle')
+      )
+    })
+
+    it('should render a named color preset with \\moderncvcolor', () => {
+      const coloredResume = cloneDeep(resume)
+      coloredResume.layouts = [
+        {
+          engine: 'latex',
+          theme: { colors: { accent: 'blue' } },
+        },
+      ]
+
+      const renderer = new ModerncvBankingRenderer(coloredResume, 0)
+      const result = renderer.renderPreamble()
+
+      expect(result).toContain('\\moderncvcolor{blue}')
+      expect(result).not.toContain('\\definecolor{color1}')
+    })
+
+    it('should render an arbitrary hex color by redefining color1', () => {
+      const coloredResume = cloneDeep(resume)
+      coloredResume.layouts = [
+        {
+          engine: 'latex',
+          theme: { colors: { accent: '#a1b2c3' } },
+        },
+      ]
+
+      const renderer = new ModerncvBankingRenderer(coloredResume, 0)
+      const result = renderer.renderPreamble()
+
+      expect(result).toContain('\\moderncvcolor{black}')
+      expect(result).toContain('\\definecolor{color1}{HTML}{A1B2C3}')
+      expect(result).toContain('\\colorlet{headTL}{color1}')
+      expect(result).toContain('\\colorlet{headBR}{color1}')
+    })
+
+    it('should keep default black scheme when accent color is unset', () => {
+      for (const accent of [undefined, null]) {
+        const coloredResume = cloneDeep(resume)
+        coloredResume.layouts = [
+          {
+            engine: 'latex',
+            theme: { colors: { accent } },
+          },
+        ]
+
+        const renderer = new ModerncvBankingRenderer(coloredResume, 0)
+        const result = renderer.renderPreamble()
+
+        expect(result).toContain('\\moderncvcolor{black}')
+        expect(result).not.toContain('\\definecolor{color1}')
+      }
     })
 
     it('should include CJK override for banking style when language is CJK', () => {

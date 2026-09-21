@@ -25,6 +25,7 @@
 import { describe, expect, it } from 'vitest'
 
 import {
+  ACCENT_COLOR_OPTIONS,
   COUNTRY_OPTIONS,
   DEGREE_OPTIONS,
   FLUENCY_OPTIONS,
@@ -39,6 +40,7 @@ import {
 } from '@/models'
 
 import {
+  AccentColorOptionSchema,
   CountryOptionSchema,
   DateSchema,
   DegreeOptionSchema,
@@ -61,6 +63,7 @@ import {
   PhoneSchema,
   SizedStringSchema,
   SummarySchema,
+  ThemeSchema,
   UrlSchema,
 } from './primitives'
 
@@ -102,6 +105,59 @@ describe('SizedStringSchema', () => {
     for (const { string, error } of tests) {
       validateZodErrors(schema, string, error)
     }
+  })
+})
+
+describe('AccentColorOptionSchema', () => {
+  it('should return an accent color if it is valid', () => {
+    for (const color of ACCENT_COLOR_OPTIONS) {
+      expect(AccentColorOptionSchema.parse(color)).toBe(color)
+    }
+
+    expect(AccentColorOptionSchema.parse('#3873B3')).toBe('#3873B3')
+  })
+
+  it('should throw an error if the accent color is invalid', () => {
+    const tests = ['#12345', 'red1', '#GGGGGG', 'blue ', 'not-a-color']
+
+    for (const color of tests) {
+      expect(AccentColorOptionSchema.safeParse(color).success).toBe(false)
+    }
+  })
+
+  it('should report a union error message for non-string input', () => {
+    const result = AccentColorOptionSchema.safeParse(123)
+
+    expect(result.success).toBe(false)
+    expect(result.error?.issues[0]?.message).toContain(
+      'or a `#RRGGBB` hex color string.'
+    )
+  })
+
+  it('should have correct metadata', () => {
+    expectSchemaMetadata(AccentColorOptionSchema)
+  })
+})
+
+describe('ThemeSchema', () => {
+  it('should parse an empty theme', () => {
+    expect(ThemeSchema.parse({})).toStrictEqual({})
+  })
+
+  it('should parse theme accent colors', () => {
+    const tests = [
+      { colors: { accent: 'blue' } },
+      { colors: { accent: '#a1B2c3' } },
+      { colors: { accent: null } },
+    ]
+
+    for (const test of tests) {
+      expect(ThemeSchema.parse(test)).toStrictEqual(test)
+    }
+  })
+
+  it('should have correct metadata', () => {
+    expectSchemaMetadata(ThemeSchema)
   })
 })
 

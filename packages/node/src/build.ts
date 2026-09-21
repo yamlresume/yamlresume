@@ -25,11 +25,15 @@
 import fs from 'node:fs'
 import path from 'node:path'
 import {
+  ACCENT_LOW_CONTRAST_THRESHOLD,
   DEFAULT_RESUME_LAYOUTS,
+  getLayoutAccentColor,
   getResumeRenderer,
+  isLowContrastOnWhite,
   joinNonEmptyString,
   type Logger,
   type Resume,
+  resolveLayoutAccentHex,
   YAMLResumeError,
 } from '@yamlresume/core'
 import { readResumeFile } from './read'
@@ -207,6 +211,29 @@ export async function buildResumeFile(
   // Ensure resume has layouts for the renderer to use
   if (!resume.layouts) {
     resume.layouts = allLayouts
+  }
+
+  // Warn (never error) when a layout's accent color may be hard to read on a
+  // white background. The vscode HTML template has a dark background, so the
+  // check is skipped for it.
+  for (const layout of allLayouts) {
+    if (layout.engine === 'markdown') continue
+    if (layout.engine === 'html' && layout.template === 'vscode') continue
+
+    const accentColor = getLayoutAccentColor(layout)
+    const accentHex = resolveLayoutAccentHex(layout)
+    if (accentHex && isLowContrastOnWhite(accentHex)) {
+      logger?.warn(
+        joinNonEmptyString(
+          [
+            `The accent color "${accentColor}" for the ${layout.engine} layout`,
+            `has low contrast (< ${ACCENT_LOW_CONTRAST_THRESHOLD}:1) on a white background,`,
+            'the output may be hard to read.',
+          ],
+          ' '
+        )
+      )
+    }
   }
 
   // Count totals for each engine to determine file naming strategy

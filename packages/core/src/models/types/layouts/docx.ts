@@ -27,6 +27,7 @@ import type {
   DocxPaperSize,
   DocxTemplate,
   LineSpacing,
+  Theme,
 } from '../options'
 import type { Margins, Sections } from './common'
 
@@ -82,6 +83,8 @@ export type DocxLayout = {
   page?: DocxPage
   /** The template to use for DOCX output. */
   template?: DocxTemplate
+  /** Defines visual theme settings for the resume. */
+  theme?: Theme
   /** Defines section customization settings. */
   sections?: Sections
   /** Typography settings for DOCX output. */
