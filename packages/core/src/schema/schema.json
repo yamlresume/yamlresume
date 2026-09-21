@@ -2484,6 +2484,74 @@
                       }
                     ]
                   },
+                  "theme": {
+                    "title": "Theme",
+                    "description": "Visual theme settings for the resume, such as accent colors and future style options.",
+                    "anyOf": [
+                      {
+                        "type": "object",
+                        "properties": {
+                          "colors": {
+                            "type": "object",
+                            "properties": {
+                              "accent": {
+                                "title": "Accent color",
+                                "description": "The accent color for the resume, either a named color preset or an arbitrary `#RRGGBB` hex color string. The markdown engine ignores this option.",
+                                "examples": [
+                                  "blue",
+                                  "#3873B3"
+                                ],
+                                "anyOf": [
+                                  {
+                                    "anyOf": [
+                                      {
+                                        "type": "string",
+                                        "enum": [
+                                          "black",
+                                          "blue",
+                                          "burgundy",
+                                          "cerulean",
+                                          "green",
+                                          "grey",
+                                          "orange",
+                                          "purple",
+                                          "red"
+                                        ],
+                                        "title": "Accent color option",
+                                        "description": "A predefined option from the available accent color choices."
+                                      },
+                                      {
+                                        "type": "string",
+                                        "pattern": "^#[0-9a-fA-F]{6}$"
+                                      }
+                                    ],
+                                    "title": "[optional] Accent color option",
+                                    "description": "The accent color for the resume, either a named color preset (\"black\", \"blue\", \"burgundy\", \"cerulean\", \"green\", \"grey\", \"orange\", \"purple\", \"red\") or an arbitrary `#RRGGBB` hex color string. The markdown engine ignores this option or `null`.",
+                                    "examples": [
+                                      "blue",
+                                      "#3873B3"
+                                    ]
+                                  },
+                                  {
+                                    "type": "null"
+                                  }
+                                ]
+                              }
+                            },
+                            "additionalProperties": false,
+                            "title": "Theme colors",
+                            "description": "Color settings for the resume theme."
+                          }
+                        },
+                        "additionalProperties": false,
+                        "title": "[optional] Theme",
+                        "description": "Visual theme settings for the resume, such as accent colors and future style options or `null`."
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  },
                   "typography": {
                     "title": "Typography",
                     "description": "The typography section contains font settings, including font size, font family, and line spacing options, etc.",
@@ -2609,6 +2677,74 @@
                         ],
                         "title": "[optional] Html template option",
                         "description": "A predefined option from the available HTML template choices or `null`."
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  },
+                  "theme": {
+                    "title": "Theme",
+                    "description": "Visual theme settings for the resume, such as accent colors and future style options.",
+                    "anyOf": [
+                      {
+                        "type": "object",
+                        "properties": {
+                          "colors": {
+                            "type": "object",
+                            "properties": {
+                              "accent": {
+                                "title": "Accent color",
+                                "description": "The accent color for the resume, either a named color preset or an arbitrary `#RRGGBB` hex color string. The markdown engine ignores this option.",
+                                "examples": [
+                                  "blue",
+                                  "#3873B3"
+                                ],
+                                "anyOf": [
+                                  {
+                                    "anyOf": [
+                                      {
+                                        "type": "string",
+                                        "enum": [
+                                          "black",
+                                          "blue",
+                                          "burgundy",
+                                          "cerulean",
+                                          "green",
+                                          "grey",
+                                          "orange",
+                                          "purple",
+                                          "red"
+                                        ],
+                                        "title": "Accent color option",
+                                        "description": "A predefined option from the available accent color choices."
+                                      },
+                                      {
+                                        "type": "string",
+                                        "pattern": "^#[0-9a-fA-F]{6}$"
+                                      }
+                                    ],
+                                    "title": "[optional] Accent color option",
+                                    "description": "The accent color for the resume, either a named color preset (\"black\", \"blue\", \"burgundy\", \"cerulean\", \"green\", \"grey\", \"orange\", \"purple\", \"red\") or an arbitrary `#RRGGBB` hex color string. The markdown engine ignores this option or `null`.",
+                                    "examples": [
+                                      "blue",
+                                      "#3873B3"
+                                    ]
+                                  },
+                                  {
+                                    "type": "null"
+                                  }
+                                ]
+                              }
+                            },
+                            "additionalProperties": false,
+                            "title": "Theme colors",
+                            "description": "Color settings for the resume theme."
+                          }
+                        },
+                        "additionalProperties": false,
+                        "title": "[optional] Theme",
+                        "description": "Visual theme settings for the resume, such as accent colors and future style options or `null`."
                       },
                       {
                         "type": "null"
@@ -3192,6 +3328,74 @@
                         ],
                         "title": "[optional] Latex template option",
                         "description": "A predefined option from the available LaTeX template choices or `null`."
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  },
+                  "theme": {
+                    "title": "Theme",
+                    "description": "Visual theme settings for the resume, such as accent colors and future style options.",
+                    "anyOf": [
+                      {
+                        "type": "object",
+                        "properties": {
+                          "colors": {
+                            "type": "object",
+                            "properties": {
+                              "accent": {
+                                "title": "Accent color",
+                                "description": "The accent color for the resume, either a named color preset or an arbitrary `#RRGGBB` hex color string. The markdown engine ignores this option.",
+                                "examples": [
+                                  "blue",
+                                  "#3873B3"
+                                ],
+                                "anyOf": [
+                                  {
+                                    "anyOf": [
+                                      {
+                                        "type": "string",
+                                        "enum": [
+                                          "black",
+                                          "blue",
+                                          "burgundy",
+                                          "cerulean",
+                                          "green",
+                                          "grey",
+                                          "orange",
+                                          "purple",
+                                          "red"
+                                        ],
+                                        "title": "Accent color option",
+                                        "description": "A predefined option from the available accent color choices."
+                                      },
+                                      {
+                                        "type": "string",
+                                        "pattern": "^#[0-9a-fA-F]{6}$"
+                                      }
+                                    ],
+                                    "title": "[optional] Accent color option",
+                                    "description": "The accent color for the resume, either a named color preset (\"black\", \"blue\", \"burgundy\", \"cerulean\", \"green\", \"grey\", \"orange\", \"purple\", \"red\") or an arbitrary `#RRGGBB` hex color string. The markdown engine ignores this option or `null`.",
+                                    "examples": [
+                                      "blue",
+                                      "#3873B3"
+                                    ]
+                                  },
+                                  {
+                                    "type": "null"
+                                  }
+                                ]
+                              }
+                            },
+                            "additionalProperties": false,
+                            "title": "Theme colors",
+                            "description": "Color settings for the resume theme."
+                          }
+                        },
+                        "additionalProperties": false,
+                        "title": "[optional] Theme",
+                        "description": "Visual theme settings for the resume, such as accent colors and future style options or `null`."
                       },
                       {
                         "type": "null"

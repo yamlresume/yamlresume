@@ -23,6 +23,7 @@
  */
 
 export * from './array'
+export * from './color'
 export * from './comments'
 export * from './date'
 export * from './font'

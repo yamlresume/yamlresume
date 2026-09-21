@@ -23,6 +23,45 @@
  */
 
 /**
+ * Defines accent color options for layouts.
+ *
+ * These named presets follow the moderncv color scheme palette.
+ *
+ * @see {@link https://github.com/moderncv/moderncv}
+ */
+export const ACCENT_COLOR_OPTIONS = [
+  'black',
+  'blue',
+  'burgundy',
+  'cerulean',
+  'green',
+  'grey',
+  'orange',
+  'purple',
+  'red',
+] as const
+
+/**
+ * Maps named color presets to their hex values (uppercase, without `#`).
+ *
+ * The hex values follow the moderncv color scheme definitions.
+ */
+export const ACCENT_COLOR_PRESET_HEX_MAP: Record<
+  (typeof ACCENT_COLOR_OPTIONS)[number],
+  string
+> = {
+  black: '000000',
+  blue: '3873B3',
+  burgundy: '980000',
+  cerulean: '0081A7',
+  green: '59B24D',
+  grey: '737373',
+  orange: 'F28C26',
+  purple: '8054CC',
+  red: 'F23333',
+}
+
+/**
  * Defines all possible degrees.
  */
 export const DEGREE_OPTIONS = [

@@ -138,7 +138,9 @@ class JakeRenderer extends LatexRenderer {
     return joinNonEmptyString(
       [
         '\\usepackage{changepage}',
-        '\\usepackage[usenames,dvipsnames]{color}',
+        // xcolor is needed for the HTML color model used by
+        // `\definecolor{accentcolor}{HTML}{...}`
+        '\\usepackage[usenames,dvipsnames]{xcolor}',
         '\\usepackage{enumitem}',
         this.renderFontawesome(),
         '\\usepackage[hidelinks]{hyperref}',
@@ -166,14 +168,23 @@ class JakeRenderer extends LatexRenderer {
    * Render the section formatting configuration.
    */
   private renderSectionFormatting(): string {
-    return `% global itemize spacing
+    const accentHex = this.resolveThemeAccentHex()
+    const accentColor = accentHex ? 'accentcolor' : 'black'
+
+    return joinNonEmptyString([
+      showIfNotEmpty(
+        accentHex,
+        `\\definecolor{accentcolor}{HTML}{${accentHex}}`
+      ),
+      `% global itemize spacing
 \\setlist[itemize]{nosep}
 \\setlength{\\parindent}{0pt}
 
 % Sections formatting
 \\titleformat{\\section}{
-  \\vspace{-4pt}\\scshape\\raggedright\\large
-}{}{0em}{}[\\color{black}\\titlerule \\vspace{-5pt}]`
+  \\vspace{-4pt}\\scshape\\raggedright\\large${accentHex ? '\\color{accentcolor}' : ''}
+}{}{0em}{}[\\color{${accentColor}}\\titlerule \\vspace{-5pt}]`,
+    ])
   }
 
   /**

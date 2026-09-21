@@ -358,4 +358,77 @@ describe(buildResumeFile, () => {
     expect(result.outputs).toHaveLength(1)
     expect(logger.warn).toHaveBeenCalled()
   })
+
+  it('should warn when a layout accent color has low contrast on white', async () => {
+    const resumePath = getFixture(__dirname, 'software-engineer.yml')
+
+    vi.mocked(readResumeFile).mockReturnValue({
+      resume: {
+        // @ts-expect-error
+        content: {},
+        layouts: [
+          {
+            engine: 'latex',
+            template: 'moderncv-banking',
+            theme: { colors: { accent: '#FFFF00' } },
+          },
+        ],
+      },
+      validated: 'success',
+    })
+
+    await buildResumeFile(resumePath, { pdf: false, logger })
+
+    expect(logger.warn).toHaveBeenCalledWith(
+      expect.stringContaining('low contrast')
+    )
+  })
+
+  it('should not warn when accent colors have enough contrast', async () => {
+    const resumePath = getFixture(__dirname, 'software-engineer.yml')
+
+    vi.mocked(readResumeFile).mockReturnValue({
+      resume: {
+        // @ts-expect-error
+        content: {},
+        layouts: [
+          {
+            engine: 'latex',
+            template: 'moderncv-banking',
+            theme: { colors: { accent: 'blue' } },
+          },
+          { engine: 'docx', theme: { colors: { accent: '#000000' } } },
+          { engine: 'markdown' },
+        ],
+      },
+      validated: 'success',
+    })
+
+    await buildResumeFile(resumePath, { pdf: false, logger })
+
+    expect(logger.warn).not.toHaveBeenCalled()
+  })
+
+  it('should skip the contrast warning for the dark vscode html template', async () => {
+    const resumePath = getFixture(__dirname, 'software-engineer.yml')
+
+    vi.mocked(readResumeFile).mockReturnValue({
+      resume: {
+        // @ts-expect-error
+        content: {},
+        layouts: [
+          {
+            engine: 'html',
+            template: 'vscode',
+            theme: { colors: { accent: 'orange' } },
+          },
+        ],
+      },
+      validated: 'success',
+    })
+
+    await buildResumeFile(resumePath, { pdf: false, logger })
+
+    expect(logger.warn).not.toHaveBeenCalled()
+  })
 })

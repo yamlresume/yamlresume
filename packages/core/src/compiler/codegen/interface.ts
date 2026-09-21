@@ -34,6 +34,8 @@ export interface CodeGenerationContext {
     | LatexLayout['typography']
     | HtmlLayout['typography']
     | DocxLayout['typography']
+  /** Hyperlink text color as hex without `#` (DOCX). */
+  hyperlinkColor?: string
 }
 
 /**

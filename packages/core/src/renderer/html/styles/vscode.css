@@ -144,7 +144,7 @@ body {
 
 /* links: vscode style */
 a {
-  color: var(--link-color);
+  color: var(--accent-color, var(--link-color));
   text-decoration: none;
 }
 
@@ -163,7 +163,10 @@ a:hover {
   font-size: var(--font-size-xl);
   font-weight: 700;
   margin-bottom: var(--spacing-md);
-  color: var(--function-color); /* Treat section like a Function */
+  color: var(
+    --accent-color,
+    var(--function-color)
+  ); /* Treat section like a Function */
   margin-left: calc(-1 * var(--spacing-lg)); /* Pull title back */
   padding-left: var(--spacing-lg); /* Add padding to match indentation */
 }

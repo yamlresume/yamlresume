@@ -24,14 +24,17 @@
 
 import { describe, expect, it } from 'vitest'
 
-import { DOCX_TEMPLATE_OPTIONS } from '@/models'
+import { ACCENT_COLOR_OPTIONS, DOCX_TEMPLATE_OPTIONS } from '@/models'
 import { optionSchemaMessage } from '../../primitives'
 import { expectSchemaMetadata, validateZodErrors } from '../../zod'
 import { DocxTemplateSchema } from './template'
 
+const theme = (accent: unknown) => ({ theme: { colors: { accent } } })
+
 describe('DocxTemplateSchema', () => {
   it('should have correct metadata', () => {
     expectSchemaMetadata(DocxTemplateSchema.shape.template)
+    expectSchemaMetadata(DocxTemplateSchema.shape.theme)
   })
 
   it('should validate a template if it is valid', () => {
@@ -66,6 +69,28 @@ describe('DocxTemplateSchema', () => {
     for (const { template, error } of tests) {
       // @ts-expect-error Testing invalid template
       validateZodErrors(DocxTemplateSchema, { template }, error)
+    }
+  })
+
+  it('should validate a theme accent color if it is valid', () => {
+    const tests = [
+      {},
+      theme(null),
+      theme(undefined),
+      theme('#a1B2c3'),
+      ...ACCENT_COLOR_OPTIONS.map((color) => theme(color)),
+    ]
+
+    for (const test of tests) {
+      expect(DocxTemplateSchema.parse(test)).toStrictEqual(test)
+    }
+  })
+
+  it('should throw an error if the theme accent color is invalid', () => {
+    const tests = ['#12345', 'red1', '#GGGGGG', 'blue ']
+
+    for (const color of tests) {
+      expect(DocxTemplateSchema.safeParse(theme(color)).success).toBe(false)
     }
   })
 })

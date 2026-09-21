@@ -45,6 +45,10 @@ class TestableDocxRenderer extends DocxRenderer {
     return this.getBaseFontSize()
   }
 
+  public testGetAccentColor() {
+    return this.getAccentColor()
+  }
+
   public testGetFontFamily() {
     return this.getFontFamily()
   }
@@ -223,6 +227,45 @@ describe('DocxRenderer', () => {
         findLayoutIndex(resume, 'docx')
       )
       expect(renderer.testGetBaseFontSize()).toBe(DEFAULT_FONT_SIZE)
+    })
+  })
+
+  describe('getAccentColor', () => {
+    it('should return black when layout is not docx', () => {
+      resume.layouts = [{ engine: 'html' }] as unknown as DocxLayout[]
+      renderer = new TestableDocxRenderer(resume, 0)
+
+      expect(renderer.testGetAccentColor()).toBe('000000')
+    })
+
+    it('should return black when color is not set', () => {
+      expect(renderer.testGetAccentColor()).toBe('000000')
+    })
+
+    it('should resolve a named color preset to its hex value', () => {
+      const docxLayout = resume.layouts[
+        findLayoutIndex(resume, 'docx')
+      ] as DocxLayout
+      docxLayout.theme = { colors: { accent: 'blue' } }
+
+      renderer = new TestableDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
+      expect(renderer.testGetAccentColor()).toBe('3873B3')
+    })
+
+    it('should normalize an arbitrary hex color', () => {
+      const docxLayout = resume.layouts[
+        findLayoutIndex(resume, 'docx')
+      ] as DocxLayout
+      docxLayout.theme = { colors: { accent: '#a1b2c3' } }
+
+      renderer = new TestableDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
+      expect(renderer.testGetAccentColor()).toBe('A1B2C3')
     })
   })
 
@@ -754,6 +797,23 @@ describe('DocxRenderer', () => {
 
       expect(heading).toBeInstanceOf(Paragraph)
     })
+
+    it('should use black by default and the accent color when theme color is set', () => {
+      const defaultHeading = renderer.testCreateSectionHeading('Education')
+      expect(JSON.stringify(defaultHeading)).toContain('"000000"')
+
+      const docxLayout = resume.layouts[
+        findLayoutIndex(resume, 'docx')
+      ] as DocxLayout
+      docxLayout.theme = { colors: { accent: 'blue' } }
+      renderer = new TestableDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
+
+      const coloredHeading = renderer.testCreateSectionHeading('Education')
+      expect(JSON.stringify(coloredHeading)).toContain('"3873B3"')
+    })
   })
 
   describe('createSubsectionHeading', () => {
@@ -761,6 +821,20 @@ describe('DocxRenderer', () => {
       const heading = renderer.testCreateSubsectionHeading('University')
 
       expect(heading).toBeInstanceOf(Paragraph)
+    })
+
+    it('should use the accent color when theme color is set', () => {
+      const docxLayout = resume.layouts[
+        findLayoutIndex(resume, 'docx')
+      ] as DocxLayout
+      docxLayout.theme = { colors: { accent: '#a1b2c3' } }
+      renderer = new TestableDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
+
+      const heading = renderer.testCreateSubsectionHeading('University')
+      expect(JSON.stringify(heading)).toContain('"A1B2C3"')
     })
   })
 

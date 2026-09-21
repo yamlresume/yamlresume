@@ -27,6 +27,7 @@ import type {
   LatexFontspecNumbers,
   LatexTemplate,
   LineSpacing,
+  Theme,
 } from '../options'
 import type { Margins, PaperSize, Sections } from './common'
 
@@ -90,6 +91,8 @@ export type LatexLayout = {
   sections?: Sections
   /** Defines the selected template. */
   template?: LatexTemplate
+  /** Defines visual theme settings for the resume. */
+  theme?: Theme
   /** Defines typography settings for document formatting. */
   typography?: LatexTypography
   /** Defines advanced configuration options. */

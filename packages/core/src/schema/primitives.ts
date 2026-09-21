@@ -25,6 +25,7 @@ import { capitalize, startCase } from 'lodash-es'
 import { z } from 'zod'
 
 import {
+  ACCENT_COLOR_OPTIONS,
   COUNTRY_OPTIONS,
   DEGREE_OPTIONS,
   DOCX_FONT_SIZE_OPTIONS,
@@ -45,11 +46,13 @@ import {
   type ORDERABLE_SECTION_IDS,
 } from '@/models'
 import { joinNonEmptyString } from '@/utils'
+import { nullifySchema } from './utils'
 
 /**
  * A type for all options.
  */
 type Options =
+  | typeof ACCENT_COLOR_OPTIONS
   | typeof COUNTRY_OPTIONS
   | typeof DEGREE_OPTIONS
   | typeof DOCX_FONT_SIZE_OPTIONS
@@ -137,6 +140,90 @@ export const SizedStringSchema = (name: string, min: number, max: number) => {
  * A zod schema for a country option.
  */
 export const CountryOptionSchema = optionSchema(COUNTRY_OPTIONS, 'country')
+
+/**
+ * A zod schema for an accent color option.
+ *
+ * Accepts either one of the named color presets or an arbitrary `#RRGGBB`
+ * hex string (matching `/^#[0-9a-fA-F]{6}$/`).
+ */
+export const AccentColorOptionSchema = z
+  .union(
+    [
+      optionSchema(ACCENT_COLOR_OPTIONS, 'accent color'),
+      // `z.templateLiteral` is used instead of a plain regex string so the
+      // inferred type stays `\`#${string}\`` (matching `HexColor`)
+      z.templateLiteral([
+        '#',
+        z.string().regex(/^[0-9a-fA-F]{6}$/, {
+          message:
+            'accent color option is invalid, it must be a `#RRGGBB` hex color string.',
+        }),
+      ]),
+    ],
+    {
+      // give the union itself a clear message, otherwise zod reports a
+      // generic "Invalid input" when neither branch matches
+      error: () => ({
+        message: joinNonEmptyString(
+          [
+            'accent color option is invalid, it must be one of the following:',
+            `[${ACCENT_COLOR_OPTIONS.map((option) => `"${option}"`).join(', ')}],`,
+            'or a `#RRGGBB` hex color string.',
+          ],
+          ' '
+        ),
+      }),
+    }
+  )
+  .meta({
+    title: 'Accent color option',
+    description: joinNonEmptyString(
+      [
+        'The accent color for the resume, either a named color preset',
+        `(${ACCENT_COLOR_OPTIONS.map((option) => `"${option}"`).join(', ')})`,
+        'or an arbitrary `#RRGGBB` hex color string.',
+        'The markdown engine ignores this option.',
+      ],
+      ' '
+    ),
+    examples: ['blue', '#3873B3'],
+  })
+
+/**
+ * A zod schema for visual theme settings.
+ *
+ * Theme settings control visual appearance without affecting layout geometry
+ * or section structure. The `colors.accent` field is the current accent color
+ * option, mapped from the named color presets or a `#RRGGBB` hex string.
+ */
+export const ThemeSchema = z
+  .object({
+    colors: z
+      .object({
+        accent: nullifySchema(AccentColorOptionSchema).meta({
+          title: 'Accent color',
+          description: joinNonEmptyString(
+            [
+              'The accent color for the resume, either a named color preset',
+              'or an arbitrary `#RRGGBB` hex color string.',
+              'The markdown engine ignores this option.',
+            ],
+            ' '
+          ),
+        }),
+      })
+      .meta({
+        title: 'Theme colors',
+        description: 'Color settings for the resume theme.',
+      })
+      .optional(),
+  })
+  .meta({
+    title: 'Theme',
+    description:
+      'Visual theme settings for the resume, such as accent colors and future style options.',
+  })
 
 /**
  * Creates a zod schema for a date string.

@@ -22,9 +22,18 @@
  * IN THE SOFTWARE.
  */
 
-import type { OrderableSectionID, Resume } from '@/models'
+import type {
+  AccentColor,
+  HexColor,
+  OrderableSectionID,
+  Resume,
+} from '@/models'
 import { DEFAULT_SECTIONS_ORDER } from '@/models'
-import { mergeArrayWithOrder } from '@/utils'
+import {
+  getLayoutAccentColor,
+  mergeArrayWithOrder,
+  resolveLayoutAccentHex,
+} from '@/utils'
 
 /**
  * Abstract class for rendering resumes to various format.
@@ -57,6 +66,20 @@ abstract class Renderer<T = string> {
   constructor(resume: Resume, layoutIndex: number) {
     this.resume = resume
     this.layoutIndex = layoutIndex
+  }
+
+  /**
+   * Accent color from the current layout's theme, if configured.
+   */
+  protected getThemeAccentColor(): AccentColor | HexColor | null | undefined {
+    return getLayoutAccentColor(this.resume.layouts?.[this.layoutIndex])
+  }
+
+  /**
+   * Resolved accent hex (without `#`) for the current layout, or `null`.
+   */
+  protected resolveThemeAccentHex(): string | null {
+    return resolveLayoutAccentHex(this.resume.layouts?.[this.layoutIndex])
   }
 
   /**

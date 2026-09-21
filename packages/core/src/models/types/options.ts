@@ -23,6 +23,7 @@
  */
 
 import type {
+  ACCENT_COLOR_OPTIONS,
   COUNTRY_OPTIONS,
   DEGREE_OPTIONS,
   DOCX_FONT_SIZE_OPTIONS,
@@ -41,6 +42,11 @@ import type {
   LOCALE_LANGUAGE_OPTIONS,
   NETWORK_OPTIONS,
 } from '@/models'
+
+/**
+ * A union type for all possible accent color options.
+ */
+export type AccentColor = (typeof ACCENT_COLOR_OPTIONS)[number]
 
 /**
  * A union type for all possible countries and regions in the world.
@@ -73,6 +79,11 @@ export type DocxFontSize = (typeof DOCX_FONT_SIZE_OPTIONS)[number]
  * A union type for all possible language fluency levels.
  */
 export type Fluency = (typeof FLUENCY_OPTIONS)[number]
+
+/**
+ * An arbitrary `#RRGGBB` hex color string.
+ */
+export type HexColor = `#${string}`
 
 /**
  * A union type for all possible HTML font size options.
@@ -125,6 +136,24 @@ export type LatexFontSize = (typeof LATEX_FONT_SIZE_OPTIONS)[number]
  * @see {@link https://yamlresume.dev/docs/layouts/latex/templates}
  */
 export type LatexTemplate = (typeof LATEX_TEMPLATE_OPTIONS)[number]
+
+/**
+ * Visual theme settings shared across layout engines.
+ *
+ * Theme options control the visual appearance of the resume without affecting
+ * measurable layout geometry (page size, margins, font sizes) or section
+ * structure. Currently this is limited to accent colors, but it provides a
+ * namespace for future visual customizations such as header styles, link
+ * treatments, and section title variants.
+ */
+export type Theme = {
+  /** Theme color settings. */
+  colors?: {
+    /** The accent color for the resume, either a named color preset (e.g.,
+     * "blue") or an arbitrary `#RRGGBB` hex color string. */
+    accent?: AccentColor | HexColor
+  }
+}
 
 /**
  * A union type for all possible skill proficiency levels.

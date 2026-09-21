@@ -25,7 +25,7 @@
 import { z } from 'zod'
 
 import { joinNonEmptyString } from '@/utils'
-import { LatexTemplateOptionSchema } from '../../primitives'
+import { LatexTemplateOptionSchema, ThemeSchema } from '../../primitives'
 import { nullifySchema } from '../../utils'
 
 /**
@@ -40,6 +40,16 @@ export const LatexTemplateSchema = z.object({
       [
         'The template section contains the resume template selection,',
         'determining the overall visual style and layout.',
+      ],
+      ' '
+    ),
+  }),
+  theme: nullifySchema(ThemeSchema).meta({
+    title: 'Theme',
+    description: joinNonEmptyString(
+      [
+        'Visual theme settings for the resume, such as accent colors and',
+        'future style options.',
       ],
       ' '
     ),

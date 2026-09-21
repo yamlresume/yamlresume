@@ -95,6 +95,20 @@ describe('DocxCodeGenerator', () => {
   })
 
   describe('links', () => {
+    it('should apply hyperlink color from context', () => {
+      const ast = parser.parse('[my site](https://example.com)')
+      const paragraphs = generator.generate(ast, {
+        typography: {
+          fontSize: '11pt',
+          lineSpacing: 'normal',
+        },
+        hyperlinkColor: 'FF0011',
+      })
+
+      expect(paragraphs).toHaveLength(1)
+      expect(JSON.stringify(paragraphs[0])).toContain('"FF0011"')
+    })
+
     it('should convert links without throwing', () => {
       const ast = parser.parse('Check out [my website](https://example.com)')
       const paragraphs = generator.generate(ast, defaultContext)

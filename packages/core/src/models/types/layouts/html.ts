@@ -22,7 +22,7 @@
  * IN THE SOFTWARE.
  */
 
-import type { HtmlFontSize, HtmlTemplate, LineSpacing } from '../options'
+import type { HtmlFontSize, HtmlTemplate, LineSpacing, Theme } from '../options'
 import type { Sections } from './common'
 
 /**
@@ -66,6 +66,8 @@ export type HtmlLayout = {
   engine: 'html'
   /** Defines the selected template. */
   template?: HtmlTemplate
+  /** Defines visual theme settings for the resume. */
+  theme?: Theme
   /** Defines typography settings for document formatting. */
   typography?: HtmlTypography
   /** Defines section customization settings. */
