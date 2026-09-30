@@ -153,3 +153,4 @@ packages/cli/resources/*.pdf
 packages/cli/my-resume.*
 
 .vscode
+.commandcode
