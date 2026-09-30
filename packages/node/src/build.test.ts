@@ -23,6 +23,7 @@
  */
 
 import fs from 'node:fs'
+import os from 'node:os'
 import path from 'node:path'
 import { YAMLResumeError } from '@yamlresume/core'
 import {
@@ -275,28 +276,34 @@ describe(buildResumeFile, () => {
   })
 
   it('should generate pdf file in output directory', async () => {
-    const outputDir = '/tmp/test-output'
+    const outputDir = fs.mkdtempSync(
+      path.join(os.tmpdir(), 'yamlresume-build-')
+    )
     const resumePath = getFixture(__dirname, 'software-engineer.yml')
     const texFile = inferOutput(resumePath, outputDir)
 
-    const result = await buildResumeFile(resumePath, {
-      pdf: true,
-      output: outputDir,
-      logger,
-    })
+    try {
+      const result = await buildResumeFile(resumePath, {
+        pdf: true,
+        output: outputDir,
+        logger,
+      })
 
-    expect(execSpy).toHaveBeenCalledTimes(1)
-    expect(execSpy).toHaveBeenCalledWith(
-      'xelatex',
-      ['-halt-on-error', path.basename(texFile)],
-      {
-        cwd: path.resolve(outputDir),
-        encoding: 'utf8',
-        timeout: LATEX_COMPILE_TIMEOUT * 1000,
-      }
-    )
+      expect(execSpy).toHaveBeenCalledTimes(1)
+      expect(execSpy).toHaveBeenCalledWith(
+        'xelatex',
+        ['-halt-on-error', path.basename(texFile)],
+        {
+          cwd: path.resolve(outputDir),
+          encoding: 'utf8',
+          timeout: LATEX_COMPILE_TIMEOUT * 1000,
+        }
+      )
 
-    expect(result.outputs).toContain(texFile)
+      expect(result.outputs).toContain(texFile)
+    } finally {
+      fs.rmSync(outputDir, { recursive: true, force: true })
+    }
   })
 
   it('should use multiple layouts when provided', async () => {
