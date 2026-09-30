@@ -14,6 +14,10 @@ Use `pnpm` for all operations.
 - **Lint & Format (Biome):** `pnpm check` (runs `biome check --write` and
   `tsc --noEmit`)
 - **Test all:** `pnpm test`
+- **Build before testing:** tests import workspace packages (`@yamlresume/*`)
+  from their built `dist`, so run `pnpm build` (or `pnpm build:prod`) before
+  `pnpm test` locally. CI builds every package before running tests; skipping
+  the build locally can silently test a stale `dist`.
 - **Test with coverage for a package:** `pnpm core test:cov` (or `node`,
   `json2yamlresume`, `cli`, `create-yamlresume`, `testing`)
 - **Run a single test file for a package:**
