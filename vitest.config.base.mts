@@ -14,6 +14,13 @@ export const baseConfig: UserConfig = {
     coverage: {
       provider: 'v8',
       reporter: ['text', 'json', 'html'],
+      reportOnFailure: true,
+      thresholds: {
+        lines: 100,
+        functions: 100,
+        branches: 100,
+        statements: 100,
+      },
       exclude: [
         'commitlint.config.mjs',
         'node_modules/**',
