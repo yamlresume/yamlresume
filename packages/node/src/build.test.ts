@@ -33,7 +33,6 @@ import {
 } from '@yamlresume/testing'
 import { execa } from 'execa'
 import {
-  afterAll,
   afterEach,
   beforeEach,
   describe,
@@ -66,17 +65,6 @@ vi.mock('./read', async () => {
   }
 })
 
-function cleanupFiles() {
-  const fixturesDir = path.join(__dirname, 'fixtures')
-  const files = fs.readdirSync(fixturesDir)
-
-  for (const file of files) {
-    if (!file.endsWith('.yml')) {
-      fs.unlinkSync(path.join(fixturesDir, file))
-    }
-  }
-}
-
 describe(normalizeExtension, () => {
   it('should normalize file extension', () => {
     const tests = [
@@ -96,6 +84,8 @@ describe(buildResumeFile, () => {
   let execSpy: MockedFunction<typeof execa>
   let _whichSpy: ReturnType<typeof vi.spyOn>
   let logger: ReturnType<typeof createMockLogger>
+  let tempDir: string
+  let resumePath: string
 
   beforeEach(() => {
     execSpy = vi.mocked(execa).mockResolvedValue(createExecaResult())
@@ -104,17 +94,21 @@ describe(buildResumeFile, () => {
       .spyOn(which, 'sync' as any)
       .mockReturnValue('/usr/bin/xelatex')
     logger = createMockLogger()
+
+    // Work on a throwaway copy of the fixture so the generated outputs never
+    // touch the checked-in `fixtures` directory (which would race with other
+    // test files running in parallel and leave artifacts behind).
+    tempDir = fs.mkdtempSync(path.join(os.tmpdir(), 'yamlresume-build-'))
+    resumePath = path.join(tempDir, 'resume.yml')
+    fs.copyFileSync(getFixture(__dirname, 'software-engineer.yml'), resumePath)
   })
 
   afterEach(() => {
     vi.resetAllMocks()
+    fs.rmSync(tempDir, { recursive: true, force: true })
   })
 
-  afterAll(cleanupFiles)
-
   it('should generate docx file', async () => {
-    const resumePath = getFixture(__dirname, 'software-engineer.yml')
-
     vi.mocked(readResumeFile).mockReturnValue({
       resume: {
         // @ts-expect-error
@@ -132,7 +126,6 @@ describe(buildResumeFile, () => {
   })
 
   it('should generate a tex file if pdf option is false', async () => {
-    const resumePath = getFixture(__dirname, 'software-engineer.yml')
     const texFile = inferOutput(resumePath)
 
     const result = await buildResumeFile(resumePath, { pdf: false, logger })
@@ -142,7 +135,6 @@ describe(buildResumeFile, () => {
   })
 
   it('should generate a pdf file', async () => {
-    const resumePath = getFixture(__dirname, 'software-engineer.yml')
     const texFile = inferOutput(resumePath)
     const pdfFile = getPdfPath(texFile)
 
@@ -166,7 +158,6 @@ describe(buildResumeFile, () => {
   })
 
   it('should rerun LaTeX when auxiliary file changes', async () => {
-    const resumePath = getFixture(__dirname, 'software-engineer.yml')
     const texFile = inferOutput(resumePath)
     const auxPath = getAuxPath(texFile)
 
@@ -196,12 +187,9 @@ describe(buildResumeFile, () => {
     await buildResumeFile(resumePath, { logger })
 
     expect(execSpy).toHaveBeenCalledTimes(2)
-
-    if (fs.existsSync(auxPath)) fs.unlinkSync(auxPath)
   })
 
   it('should not rerun LaTeX when auxiliary file is stable', async () => {
-    const resumePath = getFixture(__dirname, 'software-engineer.yml')
     const texFile = inferOutput(resumePath)
     const auxPath = getAuxPath(texFile)
 
@@ -210,14 +198,10 @@ describe(buildResumeFile, () => {
     await buildResumeFile(resumePath, { logger })
 
     expect(execSpy).toHaveBeenCalledTimes(1)
-
-    if (fs.existsSync(auxPath)) fs.unlinkSync(auxPath)
   })
 
   it('should handle error when generating pdf', async () => {
     execSpy.mockRejectedValue(new Error('Mock error'))
-
-    const resumePath = getFixture(__dirname, 'software-engineer.yml')
 
     await expect(buildResumeFile(resumePath, { logger })).rejects.toThrow(
       YAMLResumeError
@@ -234,8 +218,6 @@ describe(buildResumeFile, () => {
     })
     execSpy.mockRejectedValue(timeoutError)
 
-    const resumePath = getFixture(__dirname, 'software-engineer.yml')
-
     await expect(buildResumeFile(resumePath, { logger })).rejects.toThrow(
       YAMLResumeError
     )
@@ -249,8 +231,6 @@ describe(buildResumeFile, () => {
     })
     execSpy.mockRejectedValue(timeoutError)
 
-    const resumePath = getFixture(__dirname, 'software-engineer.yml')
-
     await expect(buildResumeFile(resumePath, { logger })).rejects.toThrow(
       YAMLResumeError
     )
@@ -259,7 +239,6 @@ describe(buildResumeFile, () => {
   })
 
   it('should disable timeout when set to 0', async () => {
-    const resumePath = getFixture(__dirname, 'software-engineer.yml')
     const texFile = inferOutput(resumePath)
 
     await buildResumeFile(resumePath, { timeout: 0, logger })
@@ -276,39 +255,30 @@ describe(buildResumeFile, () => {
   })
 
   it('should generate pdf file in output directory', async () => {
-    const outputDir = fs.mkdtempSync(
-      path.join(os.tmpdir(), 'yamlresume-build-')
-    )
-    const resumePath = getFixture(__dirname, 'software-engineer.yml')
+    const outputDir = path.join(tempDir, 'output')
     const texFile = inferOutput(resumePath, outputDir)
 
-    try {
-      const result = await buildResumeFile(resumePath, {
-        pdf: true,
-        output: outputDir,
-        logger,
-      })
+    const result = await buildResumeFile(resumePath, {
+      pdf: true,
+      output: outputDir,
+      logger,
+    })
 
-      expect(execSpy).toHaveBeenCalledTimes(1)
-      expect(execSpy).toHaveBeenCalledWith(
-        'xelatex',
-        ['-halt-on-error', path.basename(texFile)],
-        {
-          cwd: path.resolve(outputDir),
-          encoding: 'utf8',
-          timeout: LATEX_COMPILE_TIMEOUT * 1000,
-        }
-      )
+    expect(execSpy).toHaveBeenCalledTimes(1)
+    expect(execSpy).toHaveBeenCalledWith(
+      'xelatex',
+      ['-halt-on-error', path.basename(texFile)],
+      {
+        cwd: path.resolve(outputDir),
+        encoding: 'utf8',
+        timeout: LATEX_COMPILE_TIMEOUT * 1000,
+      }
+    )
 
-      expect(result.outputs).toContain(texFile)
-    } finally {
-      fs.rmSync(outputDir, { recursive: true, force: true })
-    }
+    expect(result.outputs).toContain(texFile)
   })
 
   it('should use multiple layouts when provided', async () => {
-    const resumePath = getFixture(__dirname, 'software-engineer.yml')
-
     vi.mocked(readResumeFile).mockReturnValue({
       resume: {
         // @ts-expect-error
@@ -328,8 +298,6 @@ describe(buildResumeFile, () => {
   })
 
   it('should fallback to default layout if resume has no layouts', async () => {
-    const resumePath = getFixture(__dirname, 'software-engineer.yml')
-
     vi.mocked(readResumeFile).mockReturnValue({
       resume: {
         // @ts-expect-error
@@ -346,7 +314,6 @@ describe(buildResumeFile, () => {
   })
 
   it('should handle file write error', async () => {
-    const resumePath = getFixture(__dirname, 'software-engineer.yml')
     const writeSpy = vi.spyOn(fs, 'writeFileSync').mockImplementation(() => {
       throw new Error('Write error')
     })
@@ -359,23 +326,14 @@ describe(buildResumeFile, () => {
   })
 
   it('should create output directory if it does not exist', async () => {
-    const resumePath = getFixture(__dirname, 'software-engineer.yml')
-    const outputDir = path.join(__dirname, 'fixtures', 'non-existent-dir')
-
-    if (fs.existsSync(outputDir)) {
-      fs.rmSync(outputDir, { recursive: true })
-    }
+    const outputDir = path.join(tempDir, 'nested', 'non-existent-dir')
 
     await buildResumeFile(resumePath, { pdf: false, output: outputDir, logger })
 
     expect(fs.existsSync(outputDir)).toBe(true)
-
-    fs.rmSync(outputDir, { recursive: true })
   })
 
   it('should continue building when schema validation fails', async () => {
-    const resumePath = getFixture(__dirname, 'software-engineer.yml')
-
     vi.mocked(readResumeFile).mockReturnValue({
       // @ts-expect-error
       resume: {

@@ -23,6 +23,7 @@
  */
 
 import fs from 'node:fs'
+import os from 'node:os'
 import path from 'node:path'
 import { ResumeSchema, YAMLResumeError } from '@yamlresume/core'
 import { getFixture } from '@yamlresume/testing'
@@ -119,27 +120,31 @@ describe(readResumeFile, () => {
   })
 
   it('should return failed validation with errors for invalid resume', () => {
-    const fixturesDir = path.join(__dirname, 'fixtures')
-    const invalidPath = path.join(fixturesDir, 'invalid-resume.yml')
+    const tempDir = fs.mkdtempSync(path.join(os.tmpdir(), 'yamlresume-read-'))
+    const invalidPath = path.join(tempDir, 'invalid-resume.yml')
     fs.writeFileSync(invalidPath, 'content:\n  basics:\n    name: 123')
 
-    const { validated, errors } = readResumeFile(invalidPath)
+    try {
+      const { validated, errors } = readResumeFile(invalidPath)
 
-    expect(validated).toBe('failed')
-    expect(errors).toBeDefined()
-    expect(errors?.length).toBeGreaterThan(0)
-
-    fs.unlinkSync(invalidPath)
+      expect(validated).toBe('failed')
+      expect(errors).toBeDefined()
+      expect(errors?.length).toBeGreaterThan(0)
+    } finally {
+      fs.rmSync(tempDir, { recursive: true, force: true })
+    }
   })
 
   it('should throw error for invalid YAML', () => {
-    const fixturesDir = path.join(__dirname, 'fixtures')
-    const invalidYamlPath = path.join(fixturesDir, 'invalid-yaml.yml')
+    const tempDir = fs.mkdtempSync(path.join(os.tmpdir(), 'yamlresume-read-'))
+    const invalidYamlPath = path.join(tempDir, 'invalid-yaml.yml')
     fs.writeFileSync(invalidYamlPath, 'content: {\n  basics: {')
 
-    expect(() => readResumeFile(invalidYamlPath)).toThrow(YAMLResumeError)
-
-    fs.unlinkSync(invalidYamlPath)
+    try {
+      expect(() => readResumeFile(invalidYamlPath)).toThrow(YAMLResumeError)
+    } finally {
+      fs.rmSync(tempDir, { recursive: true, force: true })
+    }
   })
 
   it('should throw error for non-Error YAML parse failures', () => {
@@ -147,13 +152,15 @@ describe(readResumeFile, () => {
       throw 'parse failed'
     })
 
-    const fixturesDir = path.join(__dirname, 'fixtures')
-    const invalidYamlPath = path.join(fixturesDir, 'invalid-yaml.yml')
+    const tempDir = fs.mkdtempSync(path.join(os.tmpdir(), 'yamlresume-read-'))
+    const invalidYamlPath = path.join(tempDir, 'invalid-yaml.yml')
     fs.writeFileSync(invalidYamlPath, 'content: {}')
 
-    expect(() => readResumeFile(invalidYamlPath)).toThrow(YAMLResumeError)
-
-    fs.unlinkSync(invalidYamlPath)
-    parseSpy.mockRestore()
+    try {
+      expect(() => readResumeFile(invalidYamlPath)).toThrow(YAMLResumeError)
+    } finally {
+      fs.rmSync(tempDir, { recursive: true, force: true })
+      parseSpy.mockRestore()
+    }
   })
 })
