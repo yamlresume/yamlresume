@@ -469,7 +469,14 @@ describe(getDateRange, () => {
 
 describe(nowInUTCSeconds, () => {
   it('should return the current time in UTC seconds', () => {
-    expect(nowInUTCSeconds()).toBe(Math.floor(Date.now() / 1000))
+    vi.useFakeTimers()
+    vi.setSystemTime(new Date('2021-04-01T00:00:00.000Z'))
+
+    try {
+      expect(nowInUTCSeconds()).toBe(1617235200)
+    } finally {
+      vi.useRealTimers()
+    }
   })
 })
 
