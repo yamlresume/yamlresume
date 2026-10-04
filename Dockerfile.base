@@ -1,22 +1,135 @@
 FROM node:24-slim
 
-RUN apt update && \
-    apt install -y \
-    texlive-xetex \
-    texlive-fonts-extra \
-    texlive-lang-all \
-    fonts-noto-cjk \
-    fonts-noto-cjk-extra \
-    && rm -rf /var/lib/apt/lists/* \
-    && rm -rf /usr/share/texlive/texmf-dist/doc \
-    && rm -rf /usr/share/texlive/texmf-dist/source \
-    && rm -rf /usr/share/texlive/texmf-dist/fonts/type1
+LABEL maintainer="YAMLResume <https://yamlresume.dev>"
+
+# - perl: required by tlmgr/TeX Live tooling at build time
+# - fontconfig: required by fontspec family name lookups at runtime
+# - wget/xz-utils: build-time only, purged below
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends \
+    ca-certificates \
+    fontconfig \
+    perl \
+    wget \
+    xz-utils \
+    && rm -rf /var/lib/apt/lists/*
+
+# Install TinyTeX (https://yihui.org/tinytex/) instead of full texlive.
+# HOME=/opt installs to /opt/.TinyTeX so non-root users (the yamlresume user
+# in the final image) can execute xelatex.
+RUN wget -qO /tmp/install-tinytex.sh "https://yihui.org/tinytex/install-bin-unix.sh" && \
+    HOME=/opt sh /tmp/install-tinytex.sh && \
+    rm /tmp/install-tinytex.sh && \
+    /opt/bin/tlmgr option docfiles 0 && \
+    /opt/bin/tlmgr option srcfiles 0
+
+# Install only the LaTeX packages yamlresume templates need (see
+# packages/core/src/renderer/latex), instead of full texlive collections:
+# - moderncv, article-based jake template deps (enumitem, titlesec, ...)
+# - ctex for CJK support (xelatex + fontset=none, system Noto CJK fonts)
+# - libertine/plex: default template fonts (Linux Libertine O, IBM Plex)
+# - fontawesome5/7: network icons
+# - babel + hyphenation for supported locale languages
+RUN /opt/bin/tlmgr install \
+    xetex \
+    moderncv \
+    ctex \
+    fontawesome5 \
+    fontawesome6 \
+    fontawesome7 \
+    libertine \
+    plex \
+    enumitem \
+    titlesec \
+    changepage \
+    setspace \
+    adjustbox \
+    tcolorbox \
+    environ \
+    trimspaces \
+    titling \
+    rsfs \
+    ucs \
+    microtype \
+    multirow \
+    colortbl \
+    babel-english \
+    babel-spanish \
+    babel-french \
+    babel-german \
+    babel-dutch \
+    babel-norsk \
+    babel-portuges \
+    babel-indonesian \
+    hyphen-spanish \
+    hyphen-french \
+    hyphen-german \
+    hyphen-dutch \
+    hyphen-norwegian \
+    hyphen-portuguese \
+    hyphen-indonesian \
+    # prune pdfTeX-era CJK font trees pulled in as ctex dependencies; xelatex
+    # uses system Noto CJK fonts via fontspec/xeCJK instead
+    && rm -rf \
+    /opt/.TinyTeX/texmf-dist/fonts/type1/arphic \
+    /opt/.TinyTeX/texmf-dist/fonts/type1/wadalab \
+    /opt/.TinyTeX/texmf-dist/fonts/type1/uhc \
+    /opt/.TinyTeX/texmf-dist/fonts/tfm/uhc \
+    /opt/.TinyTeX/texmf-dist/fonts/tfm/zhmetrics \
+    /opt/.TinyTeX/texmf-dist/fonts/vf/zhmetrics \
+    /opt/.TinyTeX/texmf-dist/fonts/vf/zhmetrics-uptex \
+    /opt/.TinyTeX/texmf-dist/fonts/vf/uhc \
+    /opt/.TinyTeX/texmf-dist/fonts/vf/uptex-fonts \
+    /opt/.TinyTeX/texmf-dist/fonts/vf/ptex-fonts \
+    /opt/.TinyTeX/texmf-dist/fonts/tfm/uptex-fonts \
+    /opt/.TinyTeX/texmf-dist/fonts/tfm/ptex-fonts \
+    # prune pTeX-era/Thai/linguistic fonts and legacy type1+tfm variants of
+    # libertine/plex (fontspec uses the opentype versions)
+    /opt/.TinyTeX/texmf-dist/fonts/type1/public/tipa \
+    /opt/.TinyTeX/texmf-dist/fonts/type1/public/fonts-tlwg \
+    /opt/.TinyTeX/texmf-dist/fonts/opentype/public/fonts-tlwg \
+    /opt/.TinyTeX/texmf-dist/fonts/type1/ibm \
+    /opt/.TinyTeX/texmf-dist/fonts/tfm/ibm \
+    /opt/.TinyTeX/texmf-dist/fonts/type1/public/libertine \
+    /opt/.TinyTeX/texmf-dist/fonts/tfm/public/libertine \
+    # only the xelatex format is needed at runtime
+    && find /opt/.TinyTeX/texmf-var/web2c -name '*.fmt' ! -name 'xelatex.fmt' -delete \
+    # installer artifacts
+    && rm -rf \
+    /opt/.TinyTeX/tlpkg/backups \
+    /opt/.TinyTeX/tlpkg/texlive.tlpdb.main.* \
+    && chmod -R a+rX /opt/.TinyTeX /opt/bin
+
+# xelatex and friends live in an arch-specific bin dir; list both supported
+# arches (only one exists per image, the other is a harmless dead path entry)
+ENV PATH="/opt/.TinyTeX/bin/aarch64-linux:/opt/.TinyTeX/bin/x86_64-linux:${PATH}"
+
+# CJK fonts: ship only the 4 SC weights the templates reference
+# (Noto Serif/Sans CJK SC regular+bold, see renderCTeXConfig in
+# packages/core/src/renderer/latex/base.ts) instead of the full
+# fonts-noto-cjk(-extra) packages which cover all CJK languages and weights.
+RUN mkdir -p /usr/share/fonts/opentype/noto-cjk && \
+    cd /usr/share/fonts/opentype/noto-cjk && \
+    wget -q "https://raw.githubusercontent.com/notofonts/noto-cjk/main/Sans/OTF/SimplifiedChinese/NotoSansCJKsc-Regular.otf" && \
+    wget -q "https://raw.githubusercontent.com/notofonts/noto-cjk/main/Sans/OTF/SimplifiedChinese/NotoSansCJKsc-Bold.otf" && \
+    wget -q "https://raw.githubusercontent.com/notofonts/noto-cjk/main/Serif/OTF/SimplifiedChinese/NotoSerifCJKsc-Regular.otf" && \
+    wget -q "https://raw.githubusercontent.com/notofonts/noto-cjk/main/Serif/OTF/SimplifiedChinese/NotoSerifCJKsc-Bold.otf"
 
 # Expose TeX Live's font trees to fontconfig: fontspec resolves
-# typography.fontFamily by family name, but texmf-dist is only kpathsea-indexed.
-RUN ln -s /usr/share/texlive/texmf-dist/fonts/opentype /usr/share/fonts/opentype/texlive \
-    && ln -s /usr/share/texlive/texmf-dist/fonts/truetype /usr/share/fonts/truetype/texlive \
-    && fc-cache -f \
-    && fc-match "IBM Plex Sans" # plex ships only in these trees, so this fails the build on stale symlinks
+# typography.fontFamily by family name, but texmf-dist is only
+# kpathsea-indexed.
+RUN ln -s /opt/.TinyTeX/texmf-dist/fonts/opentype /usr/share/fonts/opentype/texlive && \
+    ln -s /opt/.TinyTeX/texmf-dist/fonts/truetype /usr/share/fonts/truetype/texlive && \
+    fc-cache -f
 
-LABEL maintainer="YAMLResume <https://yamlresume.dev>"
+# sanity checks: fonts and xelatex must be resolvable, fails the build otherwise
+RUN fc-match "Linux Libertine O" && \
+    fc-match "IBM Plex Sans" && \
+    fc-match "Noto Serif CJK SC" && \
+    which xelatex && \
+    xelatex --version
+
+# purge build-time-only tooling
+RUN apt-get purge -y wget xz-utils && \
+    apt-get autoremove -y && \
+    rm -rf /var/lib/apt/lists/*
