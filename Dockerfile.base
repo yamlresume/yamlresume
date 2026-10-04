@@ -26,9 +26,9 @@ RUN wget -qO /tmp/install-tinytex.sh "https://yihui.org/tinytex/install-bin-unix
 # Install only the LaTeX packages yamlresume templates need (see
 # packages/core/src/renderer/latex), instead of full texlive collections:
 # - moderncv, article-based jake template deps (enumitem, titlesec, ...)
-# - ctex for CJK support (xelatex + fontset=none, system Noto CJK fonts)
+# - ctex for CJK support (fandol fontset, overridden by system Noto CJK fonts)
 # - libertine/plex: default template fonts (Linux Libertine O, IBM Plex)
-# - fontawesome5/7: network icons
+# - fontawesome5/6/7: network icons
 # - babel + hyphenation for supported locale languages
 RUN /opt/bin/tlmgr install \
     xetex \
@@ -92,10 +92,20 @@ RUN /opt/bin/tlmgr install \
     /opt/.TinyTeX/texmf-dist/fonts/tfm/ibm \
     /opt/.TinyTeX/texmf-dist/fonts/type1/public/libertine \
     /opt/.TinyTeX/texmf-dist/fonts/tfm/public/libertine \
+    /opt/.TinyTeX/texmf-dist/fonts/type1/public/lm \
+    /opt/.TinyTeX/texmf-dist/fonts/misc/cns \
+    # prune font artifacts xelatex never reads: afm metrics, metafont sources
+    /opt/.TinyTeX/texmf-dist/fonts/afm \
+    /opt/.TinyTeX/texmf-dist/fonts/source \
     # only the xelatex format is needed at runtime
     && find /opt/.TinyTeX/texmf-var/web2c -name '*.fmt' ! -name 'xelatex.fmt' -delete \
+    # only the xetex engine and its companions are needed at runtime
+    && TEXBIN=$(echo /opt/.TinyTeX/bin/*-linux) && \
+    find "$TEXBIN" -maxdepth 1 -type f \
+    ! -name xetex ! -name xdvipdfmx ! -name kpsewhich -delete && \
+    find "$TEXBIN" -maxdepth 1 -type l ! -name xelatex -delete && \
     # installer artifacts
-    && rm -rf \
+    rm -rf \
     /opt/.TinyTeX/tlpkg/backups \
     /opt/.TinyTeX/tlpkg/texlive.tlpdb.main.* \
     && chmod -R a+rX /opt/.TinyTeX /opt/bin
@@ -129,7 +139,8 @@ RUN fc-match "Linux Libertine O" && \
     which xelatex && \
     xelatex --version
 
-# purge build-time-only tooling
-RUN apt-get purge -y wget xz-utils && \
+# purge build-time-only tooling (perl is only needed by tlmgr/installer,
+# xelatex does not invoke it at runtime)
+RUN apt-get purge -y wget xz-utils perl perl-modules-5.36 libperl5.36 && \
     apt-get autoremove -y && \
     rm -rf /var/lib/apt/lists/*
