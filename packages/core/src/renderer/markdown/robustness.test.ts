@@ -26,32 +26,26 @@ import { join } from 'node:path'
 import { loadFixture } from '@yamlresume/testing'
 import { cloneDeep } from 'lodash-es'
 import { beforeEach, describe, expect, it } from 'vitest'
-import type { Resume } from '@/models'
+import { DEFAULT_RESUME_LAYOUTS, type Resume } from '@/models'
 import { collectAllKeys, removeKeysFromObject } from '@/utils'
-import { findLayoutIndex, getRandomSections, sections } from '../test-utils'
-import { HtmlRenderer } from './renderer'
+import { findLayoutIndex, sections } from '../test-utils'
+import { MarkdownRenderer } from './renderer'
 
-describe('smoke test for HTML renderer', () => {
+describe('smoke test for markdown renderer', () => {
   let resume: Resume
 
-  function expectValidHtmlDocument(result: string) {
+  function expectValidMarkdownDocument(result: string) {
     // Check that result is a non-empty string
     expect(result).toBeTruthy()
     expect(typeof result).toBe('string')
     expect(result.length).toBeGreaterThan(0)
 
-    // Check for basic HTML5 structure
-    expect(result).toMatch(/<!DOCTYPE html>/i)
-    expect(result).toMatch(/<html/i)
-    expect(result).toMatch(/<\/html>/i)
-    expect(result).toMatch(/<head/i)
-    expect(result).toMatch(/<\/head>/i)
-    expect(result).toMatch(/<body/i)
-    expect(result).toMatch(/<\/body>/i)
-
     // Check that result doesn't contain null or undefined as strings
     expect(result).not.toContain('null')
     expect(result).not.toContain('undefined')
+
+    // Check for basic markdown structure (at least one heading of any level)
+    expect(result).toMatch(/^#{1,6}\s+/m)
   }
 
   beforeEach(() => {
@@ -60,32 +54,31 @@ describe('smoke test for HTML renderer', () => {
 
   describe('should handle optional sections', () => {
     it('should render resume with all sections', () => {
-      const result = new HtmlRenderer(
+      const result = new MarkdownRenderer(
         resume,
-        findLayoutIndex(resume, 'html')
+        findLayoutIndex(resume, 'markdown')
       ).render()
-      expectValidHtmlDocument(result)
+      expectValidMarkdownDocument(result)
     })
 
     it('should render resume with one absent sections', () => {
       for (const section of sections) {
-        const result = new HtmlRenderer(
+        const result = new MarkdownRenderer(
           removeKeysFromObject(resume, [section]),
-          findLayoutIndex(resume, 'html')
+          findLayoutIndex(resume, 'markdown')
         ).render()
-        expectValidHtmlDocument(result)
+        expectValidMarkdownDocument(result)
       }
     })
 
     it('should render resume with some absent sections', () => {
-      // randomly select 1-10 sections to remove
-      const sectionsToRemove = getRandomSections(Math.ceil(10 * Math.random()))
+      const sectionsToRemove = sections.slice(0, 2)
 
-      const result = new HtmlRenderer(
+      const result = new MarkdownRenderer(
         removeKeysFromObject(resume, sectionsToRemove),
-        findLayoutIndex(resume, 'html')
+        findLayoutIndex(resume, 'markdown')
       ).render()
-      expectValidHtmlDocument(result)
+      expectValidMarkdownDocument(result)
     })
   })
 
@@ -93,8 +86,11 @@ describe('smoke test for HTML renderer', () => {
     it('should render resume with no layout', () => {
       resume.layouts = undefined
 
-      const result = new HtmlRenderer(resume, 2).render()
-      expectValidHtmlDocument(result)
+      const defaultLayoutIndex = DEFAULT_RESUME_LAYOUTS.findIndex(
+        (layout) => layout.engine === 'markdown'
+      )
+      const result = new MarkdownRenderer(resume, defaultLayoutIndex).render()
+      expectValidMarkdownDocument(result)
     })
   })
 
@@ -102,36 +98,27 @@ describe('smoke test for HTML renderer', () => {
     it('should handle any single missing field gracefully', () => {
       const allKeys = collectAllKeys(resume)
 
-      let testCount = 0
-      const maxTests = 200 // Limit to prevent extremely long test runs
+      const keys = Array.from(allKeys)
+        .filter(
+          (key) => !['content', 'layouts', 'engine'].includes(key as string)
+        )
+        .sort((a, b) => String(a).localeCompare(String(b)))
 
-      for (const key of Array.from(allKeys)) {
-        if (testCount >= maxTests) {
-          console.log(`Reached maximum test limit of ${maxTests} tests`)
-          break
-        }
-
-        // skip certain keys that might be critical for basic functionality
-        if (['content', 'layouts', 'engine'].includes(key as string)) {
-          continue
-        }
-
-        testCount++
-
+      for (const key of keys) {
         try {
           const modifiedResume = removeKeysFromObject(cloneDeep(resume), [key])
 
-          const result = new HtmlRenderer(
+          const result = new MarkdownRenderer(
             modifiedResume,
-            findLayoutIndex(modifiedResume, 'html')
+            findLayoutIndex(modifiedResume, 'markdown')
           ).render()
 
-          expectValidHtmlDocument(result)
+          expectValidMarkdownDocument(result)
         } catch (error) {
           // provide detailed information about for failed test
           throw new Error(
             [
-              'HtmlRenderer failed when key was removed:',
+              'MarkdownRenderer failed when key was removed:',
               `Key: "${String(key)}"`,
               `Error: ${error.message}`,
             ].join(' ')
@@ -143,34 +130,31 @@ describe('smoke test for HTML renderer', () => {
     it('should handle multiple missing fields gracefully', () => {
       const allKeys = Array.from(collectAllKeys(resume))
 
-      const testCases = 10
+      const removableKeys = allKeys
+        .filter(
+          (key) => !['content', 'layouts', 'engine'].includes(key as string)
+        )
+        .sort((a, b) => String(a).localeCompare(String(b)))
+      const testCases = [removableKeys.slice(0, 5), removableKeys.slice(-5)]
 
-      for (let i = 0; i < testCases; i++) {
-        // randomly select 5-15 keys to remove (but not critical ones)
-        const keysToRemove = allKeys
-          .filter(
-            (key) => !['content', 'layouts', 'engine'].includes(key as string)
-          )
-          .sort(() => 0.5 - Math.random())
-          .slice(0, Math.floor(Math.random() * 10) + 5)
-
+      for (const keysToRemove of testCases) {
         try {
           const modifiedResume = removeKeysFromObject(
             cloneDeep(resume),
             keysToRemove
           )
 
-          const result = new HtmlRenderer(
+          const result = new MarkdownRenderer(
             modifiedResume,
-            findLayoutIndex(modifiedResume, 'html')
+            findLayoutIndex(modifiedResume, 'markdown')
           ).render()
 
-          expectValidHtmlDocument(result)
+          expectValidMarkdownDocument(result)
         } catch (error) {
           // provide detailed information about for failed test
           throw new Error(
             [
-              'HtmlRenderer failed when keys were removed:',
+              'MarkdownRenderer failed when keys were removed:',
               `Keys: [${keysToRemove.map((k) => String(k)).join(', ')}]`,
               `Error: ${error.message}`,
             ].join(' ')

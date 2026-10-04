@@ -21,20 +21,34 @@
  * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
  * IN THE SOFTWARE.
  */
-import { type LayoutEngine, type Resume, SECTION_IDS } from '@/models'
 
-/**
- * All section IDs except 'basics' (which is required).
- */
-export const sections = SECTION_IDS.filter((section) => section !== 'basics')
+import { join } from 'node:path'
+import { loadFixture } from '@yamlresume/testing'
+import { cloneDeep } from 'lodash-es'
+import { describe, expect, it } from 'vitest'
+import { removeKeysFromObject } from '@/utils'
+import { findLayoutIndex, sections } from '../test-utils'
+import { ModerncvBankingRenderer } from './moderncv'
 
-/**
- * Find the index of the first layout with the given engine in the resume.
- *
- * @param resume - The resume object to search
- * @param engine - The layout engine to find
- * @returns The index of the first matching layout, or -1 if not found
- */
-export function findLayoutIndex(resume: Resume, engine: LayoutEngine): number {
-  return resume.layouts?.findIndex((layout) => layout.engine === engine) ?? -1
-}
+describe('LaTeX renderer smoke test', () => {
+  const resume = loadFixture(join(__dirname, '..'), 'full-resume.yml')
+  const layoutIndex = findLayoutIndex(resume, 'latex')
+
+  function expectValidLaTeXDocument(result: string) {
+    expect(result).toContain('\\documentclass')
+    expect(result).toContain('\\begin{document}')
+    expect(result).toContain('\\end{document}')
+    expect(result).not.toContain('undefined')
+  }
+
+  it.each([
+    ['complete resume', resume],
+    [
+      'resume with optional sections removed',
+      removeKeysFromObject(cloneDeep(resume), sections),
+    ],
+  ])('renders %s', (_description, input) => {
+    const result = new ModerncvBankingRenderer(input, layoutIndex).render()
+    expectValidLaTeXDocument(result)
+  })
+})

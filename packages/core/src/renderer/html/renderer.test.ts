@@ -120,6 +120,30 @@ describe('HtmlRenderer', () => {
         expect(result).toContain('id="work-1"')
       })
 
+      it('should default showAnchors to true when advanced is missing', () => {
+        resume.content.work = [
+          {
+            name: 'Tech Corp',
+            position: 'Engineer',
+            summary: '',
+            startDate: '2020-01-01',
+          },
+        ]
+        const renderer = new HtmlRenderer(
+          resume,
+          findLayoutIndex(resume, 'html')
+        )
+        ;(
+          renderer.resume.layouts[
+            findLayoutIndex(renderer.resume, 'html')
+          ] as HtmlLayout
+        ).advanced = undefined
+        const result = renderer.renderWork()
+
+        expect(result).toContain('id="work"')
+        expect(result).toContain('id="work-1"')
+      })
+
       it('should omit section and entry ids when showAnchors is false', () => {
         resume.content.work = [
           {

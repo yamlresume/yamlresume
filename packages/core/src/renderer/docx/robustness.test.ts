@@ -26,26 +26,23 @@ import { join } from 'node:path'
 import { loadFixture } from '@yamlresume/testing'
 import { cloneDeep } from 'lodash-es'
 import { beforeEach, describe, expect, it } from 'vitest'
-import type { Resume } from '@/models'
+import { DEFAULT_RESUME_LAYOUTS, type Resume } from '@/models'
 import { collectAllKeys, removeKeysFromObject } from '@/utils'
-import { findLayoutIndex, getRandomSections, sections } from '../test-utils'
-import { MarkdownRenderer } from './renderer'
+import { findLayoutIndex, sections } from '../test-utils'
+import { CalmDocxRenderer } from './calm'
 
-describe('smoke test for markdown renderer', () => {
+describe('smoke test for DOCX renderer', () => {
   let resume: Resume
 
-  function expectValidMarkdownDocument(result: string) {
-    // Check that result is a non-empty string
-    expect(result).toBeTruthy()
-    expect(typeof result).toBe('string')
+  function expectValidDocxDocument(result: Uint8Array) {
+    // Check that result is a non-empty binary buffer
+    expect(result).toBeInstanceOf(Uint8Array)
     expect(result.length).toBeGreaterThan(0)
 
-    // Check that result doesn't contain null or undefined as strings
-    expect(result).not.toContain('null')
-    expect(result).not.toContain('undefined')
-
-    // Check for basic markdown structure (at least one heading of any level)
-    expect(result).toMatch(/^#{1,6}\s+/m)
+    // Check for the ZIP magic number ("PK\x03\x04") since a DOCX file is a
+    // ZIP archive
+    expect(result[0]).toBe(0x50)
+    expect(result[1]).toBe(0x4b)
   }
 
   beforeEach(() => {
@@ -53,79 +50,76 @@ describe('smoke test for markdown renderer', () => {
   })
 
   describe('should handle optional sections', () => {
-    it('should render resume with all sections', () => {
-      const result = new MarkdownRenderer(
+    it('should render resume with all sections', async () => {
+      const result = await new CalmDocxRenderer(
         resume,
-        findLayoutIndex(resume, 'markdown')
+        findLayoutIndex(resume, 'docx')
       ).render()
-      expectValidMarkdownDocument(result)
+      expectValidDocxDocument(result)
     })
 
-    it('should render resume with one absent sections', () => {
+    it('should render resume with one absent sections', async () => {
       for (const section of sections) {
-        const result = new MarkdownRenderer(
+        const result = await new CalmDocxRenderer(
           removeKeysFromObject(resume, [section]),
-          findLayoutIndex(resume, 'markdown')
+          findLayoutIndex(resume, 'docx')
         ).render()
-        expectValidMarkdownDocument(result)
+        expectValidDocxDocument(result)
       }
     })
 
-    it('should render resume with some absent sections', () => {
-      // randomly select 1-10 sections to remove
-      const sectionsToRemove = getRandomSections(Math.ceil(10 * Math.random()))
+    it('should render resume with some absent sections', async () => {
+      const sectionsToRemove = sections.slice(0, 2)
 
-      const result = new MarkdownRenderer(
+      const result = await new CalmDocxRenderer(
         removeKeysFromObject(resume, sectionsToRemove),
-        findLayoutIndex(resume, 'markdown')
+        findLayoutIndex(resume, 'docx')
       ).render()
-      expectValidMarkdownDocument(result)
+      expectValidDocxDocument(result)
     })
   })
 
   describe('should handle optional layout', () => {
-    it('should render resume with no layout', () => {
+    it('should render resume with no layout', async () => {
       resume.layouts = undefined
 
-      const result = new MarkdownRenderer(resume, 1).render()
-      expectValidMarkdownDocument(result)
+      const defaultLayoutIndex = DEFAULT_RESUME_LAYOUTS.findIndex(
+        (l) => l.engine === 'docx'
+      )
+
+      const result = await new CalmDocxRenderer(
+        resume,
+        defaultLayoutIndex
+      ).render()
+      expectValidDocxDocument(result)
     })
   })
 
   describe('should handle absent fields', () => {
-    it('should handle any single missing field gracefully', () => {
+    it('should handle any single missing field gracefully', async () => {
       const allKeys = collectAllKeys(resume)
 
-      let testCount = 0
-      const maxTests = 200 // Limit to prevent extremely long test runs
+      const keys = Array.from(allKeys)
+        .filter(
+          (key) => !['content', 'layouts', 'engine'].includes(key as string)
+        )
+        .sort((a, b) => String(a).localeCompare(String(b)))
 
-      for (const key of Array.from(allKeys)) {
-        if (testCount >= maxTests) {
-          console.log(`Reached maximum test limit of ${maxTests} tests`)
-          break
-        }
-
-        // skip certain keys that might be critical for basic functionality
-        if (['content', 'layouts', 'engine'].includes(key as string)) {
-          continue
-        }
-
-        testCount++
-
+      for (const key of keys) {
         try {
           const modifiedResume = removeKeysFromObject(cloneDeep(resume), [key])
 
-          const result = new MarkdownRenderer(
+          const result = await new CalmDocxRenderer(
             modifiedResume,
-            findLayoutIndex(modifiedResume, 'markdown')
+            findLayoutIndex(modifiedResume, 'docx')
           ).render()
 
-          expectValidMarkdownDocument(result)
+          expectValidDocxDocument(result)
         } catch (error) {
           // provide detailed information about for failed test
           throw new Error(
             [
-              'MarkdownRenderer failed when key was removed:',
+              'CalmDocxRenderer failed when key was removed:',
               `Key: "${String(key)}"`,
               `Error: ${error.message}`,
             ].join(' ')
@@ -134,37 +128,34 @@ describe('smoke test for markdown renderer', () => {
       }
     })
 
-    it('should handle multiple missing fields gracefully', () => {
+    it('should handle multiple missing fields gracefully', async () => {
       const allKeys = Array.from(collectAllKeys(resume))
 
-      const testCases = 10
+      const removableKeys = allKeys
+        .filter(
+          (key) => !['content', 'layouts', 'engine'].includes(key as string)
+        )
+        .sort((a, b) => String(a).localeCompare(String(b)))
+      const testCases = [removableKeys.slice(0, 5), removableKeys.slice(-5)]
 
-      for (let i = 0; i < testCases; i++) {
-        // randomly select 5-15 keys to remove (but not critical ones)
-        const keysToRemove = allKeys
-          .filter(
-            (key) => !['content', 'layouts', 'engine'].includes(key as string)
-          )
-          .sort(() => 0.5 - Math.random())
-          .slice(0, Math.floor(Math.random() * 10) + 5)
-
+      for (const keysToRemove of testCases) {
         try {
           const modifiedResume = removeKeysFromObject(
             cloneDeep(resume),
             keysToRemove
           )
 
-          const result = new MarkdownRenderer(
+          const result = await new CalmDocxRenderer(
             modifiedResume,
-            findLayoutIndex(modifiedResume, 'markdown')
+            findLayoutIndex(modifiedResume, 'docx')
           ).render()
 
-          expectValidMarkdownDocument(result)
+          expectValidDocxDocument(result)
         } catch (error) {
           // provide detailed information about for failed test
           throw new Error(
             [
-              'MarkdownRenderer failed when keys were removed:',
+              'CalmDocxRenderer failed when keys were removed:',
               `Keys: [${keysToRemove.map((k) => String(k)).join(', ')}]`,
               `Error: ${error.message}`,
             ].join(' ')

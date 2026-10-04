@@ -21,20 +21,36 @@
  * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
  * IN THE SOFTWARE.
  */
-import { type LayoutEngine, type Resume, SECTION_IDS } from '@/models'
 
-/**
- * All section IDs except 'basics' (which is required).
- */
-export const sections = SECTION_IDS.filter((section) => section !== 'basics')
+import { join } from 'node:path'
+import { loadFixture } from '@yamlresume/testing'
+import { cloneDeep } from 'lodash-es'
+import { describe, expect, it } from 'vitest'
+import { removeKeysFromObject } from '@/utils'
+import { findLayoutIndex, sections } from '../test-utils'
+import { HtmlRenderer } from './renderer'
 
-/**
- * Find the index of the first layout with the given engine in the resume.
- *
- * @param resume - The resume object to search
- * @param engine - The layout engine to find
- * @returns The index of the first matching layout, or -1 if not found
- */
-export function findLayoutIndex(resume: Resume, engine: LayoutEngine): number {
-  return resume.layouts?.findIndex((layout) => layout.engine === engine) ?? -1
-}
+describe('HTML renderer smoke test', () => {
+  const resume = loadFixture(join(__dirname, '..'), 'full-resume.yml')
+  const layoutIndex = findLayoutIndex(resume, 'html')
+
+  function expectValidHtmlDocument(result: string) {
+    expect(result).toMatch(/<!DOCTYPE html>/i)
+    expect(result).toMatch(/<html/i)
+    expect(result).toMatch(/<\/html>/i)
+    expect(result).toMatch(/<head/i)
+    expect(result).toMatch(/<body/i)
+    expect(result).not.toContain('undefined')
+  }
+
+  it.each([
+    ['complete resume', resume],
+    [
+      'resume with optional sections removed',
+      removeKeysFromObject(cloneDeep(resume), sections),
+    ],
+  ])('renders %s', (_description, input) => {
+    const result = new HtmlRenderer(input, layoutIndex).render()
+    expectValidHtmlDocument(result)
+  })
+})

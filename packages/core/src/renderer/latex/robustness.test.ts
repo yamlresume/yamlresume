@@ -28,7 +28,7 @@ import { cloneDeep } from 'lodash-es'
 import { beforeEach, describe, expect, it } from 'vitest'
 import { DEFAULT_RESUME_LAYOUTS, type Resume } from '@/models'
 import { collectAllKeys, removeKeysFromObject } from '@/utils'
-import { findLayoutIndex, getRandomSections, sections } from '../test-utils'
+import { findLayoutIndex, sections } from '../test-utils'
 import { JakeRenderer } from './jake'
 import {
   ModerncvBankingRenderer,
@@ -83,10 +83,7 @@ describe('smoke test for all renderers', () => {
 
     it('should render resume with some absent sections', () => {
       for (const renderer of renderers) {
-        // randomly select 1-10 sections to remove
-        const sectionsToRemove = getRandomSections(
-          Math.ceil(10 * Math.random())
-        )
+        const sectionsToRemove = sections.slice(0, 2)
 
         const result = new renderer(
           removeKeysFromObject(resume, sectionsToRemove),
@@ -118,22 +115,13 @@ describe('smoke test for all renderers', () => {
     it('should handle any single missing field gracefully', () => {
       const allKeys = collectAllKeys(resume)
 
-      let testCount = 0
-      const maxTests = 200 // Limit to prevent extremely long test runs
+      const keys = Array.from(allKeys)
+        .filter(
+          (key) => !['content', 'layouts', 'engine'].includes(key as string)
+        )
+        .sort((a, b) => String(a).localeCompare(String(b)))
 
-      for (const key of Array.from(allKeys)) {
-        if (testCount >= maxTests) {
-          console.log(`Reached maximum test limit of ${maxTests} tests`)
-          break
-        }
-
-        // skip certain keys that might be critical for basic functionality
-        if (['content', 'layouts', 'engine'].includes(key as string)) {
-          continue
-        }
-
-        testCount++
-
+      for (const key of keys) {
         for (const renderer of renderers) {
           try {
             const modifiedResume = removeKeysFromObject(cloneDeep(resume), [
@@ -163,17 +151,14 @@ describe('smoke test for all renderers', () => {
     it('should handle multiple missing fields gracefully', () => {
       const allKeys = Array.from(collectAllKeys(resume))
 
-      const testCases = 10
+      const removableKeys = allKeys
+        .filter(
+          (key) => !['content', 'layouts', 'engine'].includes(key as string)
+        )
+        .sort((a, b) => String(a).localeCompare(String(b)))
+      const testCases = [removableKeys.slice(0, 5), removableKeys.slice(-5)]
 
-      for (let i = 0; i < testCases; i++) {
-        // randomly select 5-15 keys to remove (but not critical ones)
-        const keysToRemove = allKeys
-          .filter(
-            (key) => !['content', 'layouts', 'engine'].includes(key as string)
-          )
-          .sort(() => 0.5 - Math.random())
-          .slice(0, Math.floor(Math.random() * 10) + 5)
-
+      for (const keysToRemove of testCases) {
         for (const renderer of renderers) {
           try {
             const modifiedResume = removeKeysFromObject(

@@ -27,7 +27,7 @@ import { describe, expect, it } from 'vitest'
 import type { Resume } from '@/models'
 import { SECTION_IDS } from '@/models'
 
-import { findLayoutIndex, getRandomSections, sections } from './test-utils'
+import { findLayoutIndex, sections } from './test-utils'
 
 describe('sections', () => {
   it('contains all section IDs except basics', () => {
@@ -35,29 +35,6 @@ describe('sections', () => {
       SECTION_IDS.filter((section) => section !== 'basics')
     )
     expect(sections).not.toContain('basics')
-  })
-})
-
-describe(getRandomSections, () => {
-  it('returns the requested number of sections', () => {
-    const result = getRandomSections(3)
-
-    expect(result).toHaveLength(3)
-  })
-
-  it('returns only valid sections', () => {
-    const result = getRandomSections(5)
-
-    for (const section of result) {
-      expect(sections).toContain(section)
-    }
-  })
-
-  it('returns different sections across calls', () => {
-    const first = getRandomSections(sections.length)
-    const second = getRandomSections(sections.length)
-
-    expect(first).not.toEqual(second)
   })
 })
 
