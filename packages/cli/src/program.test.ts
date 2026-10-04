@@ -130,26 +130,4 @@ describe('program', () => {
       expect(consola.level).toBe(4)
     })
   })
-
-  describe('ai command umbrella', () => {
-    it('should register generate and translate under the ai command', () => {
-      const topLevelNames = program.commands.map((command) => command.name())
-
-      expect(topLevelNames).toContain('ai')
-      expect(topLevelNames).not.toContain('generate')
-      expect(topLevelNames).not.toContain('translate')
-
-      const aiCommand = program.commands.find(
-        (command) => command.name() === 'ai'
-      )
-      expect(aiCommand).toBeDefined()
-
-      const aiSubcommandNames = aiCommand?.commands.map((command) =>
-        command.name()
-      )
-      expect(aiSubcommandNames).toContain('generate')
-      expect(aiSubcommandNames).toContain('translate')
-      expect(aiSubcommandNames).toHaveLength(2)
-    })
-  })
 })

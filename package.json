@@ -7,6 +7,8 @@
     "build:clean": "pnpm -r build:clean",
     "build:prod": "pnpm -r build:prod",
     "test": "pnpm -r test",
+    "test:smoke": "pnpm -r test:smoke",
+    "test:e2e": "pnpm build:prod && pnpm cli test:e2e",
     "test:cov": "pnpm -r test:cov",
     "test:watch": "pnpm -r test:watch",
     "check": "pnpm check:biome --write && pnpm check:tsc && pnpm license:add",

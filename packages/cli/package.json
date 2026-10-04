@@ -43,6 +43,8 @@
     "prepublishOnly": "pnpm test",
     "dev": "tsx src/cli.ts",
     "test": "vitest --run",
+    "test:smoke": "vitest --run --config vitest.smoke.config.mts",
+    "test:e2e": "vitest --run --config vitest.e2e.config.mts",
     "test:cov": "vitest --coverage --run",
     "test:watch": "vitest",
     "typedoc": "typedoc"

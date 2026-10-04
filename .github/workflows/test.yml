@@ -71,6 +71,12 @@ jobs:
       - name: Run check
         run: pnpm check:ci
 
+      - name: Run smoke tests
+        run: pnpm test:smoke
+
+      - name: Run CLI e2e tests
+        run: pnpm cli test:e2e
+
       - name: Run tests
         run: pnpm test:cov
 
@@ -86,7 +92,7 @@ jobs:
           node packages/cli/dist/cli.js new
           node packages/cli/dist/cli.js build --no-pdf resume.yml
 
-      - name: Smoke test LaTeX build
+      - name: Smoke test LaTeX to PDF build
         if: runner.os == 'Linux'
         run: |
           docker run --rm -v $(pwd):/tmp -w /tmp yamlresume/yamlresume-base:v1.0.0 xelatex resume.tex

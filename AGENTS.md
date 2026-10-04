@@ -13,7 +13,14 @@ Use `pnpm` for all operations.
   `cli`, `create-yamlresume`, `testing`)
 - **Lint & Format (Biome):** `pnpm check` (runs `biome check --write` and
   `tsc --noEmit`)
-- **Test all:** `pnpm test`
+- **Full source test suite:** `pnpm test` (unit and in-process integration/
+  robustness tests; smoke and subprocess e2e are separate collections).
+- **Fast agent smoke tests:** `pnpm test:smoke` (renderer critical path and CLI
+  command tree only).
+- **Built CLI e2e:** `pnpm test:e2e` (builds packages, then runs `new` and
+  `build --no-pdf` through the compiled CLI in a temporary directory). Running
+  `pnpm cli test:e2e` directly requires a prior build that creates
+  `packages/cli/dist/cli.js`; prefer the root command for local runs.
 - **Build before testing:** tests import workspace packages (`@yamlresume/*`)
   from their built `dist`, so run `pnpm build` (or `pnpm build:prod`) before
   `pnpm test` locally. CI builds every package before running tests; skipping

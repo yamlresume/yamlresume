@@ -1,5 +1,5 @@
 import path from 'path'
-import type { UserConfig } from 'vitest/config'
+import { configDefaults, type UserConfig } from 'vitest/config'
 
 export const baseConfig: UserConfig = {
   resolve: {
@@ -7,6 +7,7 @@ export const baseConfig: UserConfig = {
   },
   test: {
     include: ['src/**/*.{test,spec}.ts'],
+    exclude: [...configDefaults.exclude, 'src/**/*.smoke.test.ts'],
     environment: 'node',
     globals: true,
     testTimeout: 10000,
