@@ -22,151 +22,30 @@
  * IN THE SOFTWARE.
  */
 
-import { join } from 'node:path'
-import { loadFixture } from '@yamlresume/testing'
-import { cloneDeep } from 'lodash-es'
-import { beforeEach, describe, expect, it } from 'vitest'
-import { DEFAULT_RESUME_LAYOUTS, type Resume } from '@/models'
-import { collectAllKeys, removeKeysFromObject } from '@/utils'
-import { findLayoutIndex, sections } from '../test-utils'
+import { expect } from 'vitest'
+import type { Resume } from '@/models'
+import { defineRendererRobustnessSuite } from '../test-utils'
 import { HtmlRenderer } from './renderer'
 
-describe('smoke test for HTML renderer', () => {
-  let resume: Resume
+defineRendererRobustnessSuite({
+  name: 'HTML renderer robustness',
+  engine: 'html',
+  renderers: [
+    {
+      name: 'HtmlRenderer',
+      create: (resume: Resume, layoutIndex: number) =>
+        new HtmlRenderer(resume, layoutIndex),
+    },
+  ],
+  expectValidOutput(output) {
+    const html = String(output)
 
-  function expectValidHtmlDocument(result: string) {
-    // Check that result is a non-empty string
-    expect(result).toBeTruthy()
-    expect(typeof result).toBe('string')
-    expect(result.length).toBeGreaterThan(0)
-
-    // Check for basic HTML5 structure
-    expect(result).toMatch(/<!DOCTYPE html>/i)
-    expect(result).toMatch(/<html/i)
-    expect(result).toMatch(/<\/html>/i)
-    expect(result).toMatch(/<head/i)
-    expect(result).toMatch(/<\/head>/i)
-    expect(result).toMatch(/<body/i)
-    expect(result).toMatch(/<\/body>/i)
-
-    // Check that result doesn't contain null or undefined as strings
-    expect(result).not.toContain('null')
-    expect(result).not.toContain('undefined')
-  }
-
-  beforeEach(() => {
-    resume = loadFixture(join(__dirname, '..'), 'full-resume.yml')
-  })
-
-  describe('should handle optional sections', () => {
-    it('should render resume with all sections', () => {
-      const result = new HtmlRenderer(
-        resume,
-        findLayoutIndex(resume, 'html')
-      ).render()
-      expectValidHtmlDocument(result)
-    })
-
-    it('should render resume with one absent sections', () => {
-      for (const section of sections) {
-        const result = new HtmlRenderer(
-          removeKeysFromObject(resume, [section]),
-          findLayoutIndex(resume, 'html')
-        ).render()
-        expectValidHtmlDocument(result)
-      }
-    })
-
-    it('should render resume with some absent sections', () => {
-      const sectionsToRemove = sections.slice(0, 2)
-
-      const result = new HtmlRenderer(
-        removeKeysFromObject(resume, sectionsToRemove),
-        findLayoutIndex(resume, 'html')
-      ).render()
-      expectValidHtmlDocument(result)
-    })
-  })
-
-  describe('should handle optional layout', () => {
-    it('should render resume with no layout', () => {
-      resume.layouts = undefined
-
-      const defaultLayoutIndex = DEFAULT_RESUME_LAYOUTS.findIndex(
-        (layout) => layout.engine === 'html'
-      )
-      const result = new HtmlRenderer(resume, defaultLayoutIndex).render()
-      expectValidHtmlDocument(result)
-    })
-  })
-
-  describe('should handle absent fields', () => {
-    it('should handle any single missing field gracefully', () => {
-      const allKeys = collectAllKeys(resume)
-
-      const keys = Array.from(allKeys)
-        .filter(
-          (key) => !['content', 'layouts', 'engine'].includes(key as string)
-        )
-        .sort((a, b) => String(a).localeCompare(String(b)))
-
-      for (const key of keys) {
-        try {
-          const modifiedResume = removeKeysFromObject(cloneDeep(resume), [key])
-
-          const result = new HtmlRenderer(
-            modifiedResume,
-            findLayoutIndex(modifiedResume, 'html')
-          ).render()
-
-          expectValidHtmlDocument(result)
-        } catch (error) {
-          // provide detailed information about for failed test
-          throw new Error(
-            [
-              'HtmlRenderer failed when key was removed:',
-              `Key: "${String(key)}"`,
-              `Error: ${error.message}`,
-            ].join(' ')
-          )
-        }
-      }
-    })
-
-    it('should handle multiple missing fields gracefully', () => {
-      const allKeys = Array.from(collectAllKeys(resume))
-
-      const removableKeys = allKeys
-        .filter(
-          (key) => !['content', 'layouts', 'engine'].includes(key as string)
-        )
-        .sort((a, b) => String(a).localeCompare(String(b)))
-      const testCases = [removableKeys.slice(0, 5), removableKeys.slice(-5)]
-
-      for (const keysToRemove of testCases) {
-        try {
-          const modifiedResume = removeKeysFromObject(
-            cloneDeep(resume),
-            keysToRemove
-          )
-
-          const result = new HtmlRenderer(
-            modifiedResume,
-            findLayoutIndex(modifiedResume, 'html')
-          ).render()
-
-          expectValidHtmlDocument(result)
-        } catch (error) {
-          // provide detailed information about for failed test
-          throw new Error(
-            [
-              'HtmlRenderer failed when keys were removed:',
-              `Keys: [${keysToRemove.map((k) => String(k)).join(', ')}]`,
-              `Error: ${error.message}`,
-            ].join(' ')
-          )
-        }
-      }
-    })
-  })
+    expect(html).toMatch(/<!DOCTYPE html>/i)
+    expect(html).toMatch(/<html/i)
+    expect(html).toMatch(/<\/html>/i)
+    expect(html).toMatch(/<head/i)
+    expect(html).toMatch(/<body/i)
+    expect(html).not.toContain('null')
+    expect(html).not.toContain('undefined')
+  },
 })

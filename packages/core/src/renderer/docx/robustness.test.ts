@@ -22,146 +22,27 @@
  * IN THE SOFTWARE.
  */
 
-import { join } from 'node:path'
-import { loadFixture } from '@yamlresume/testing'
-import { cloneDeep } from 'lodash-es'
-import { beforeEach, describe, expect, it } from 'vitest'
-import { DEFAULT_RESUME_LAYOUTS, type Resume } from '@/models'
-import { collectAllKeys, removeKeysFromObject } from '@/utils'
-import { findLayoutIndex, sections } from '../test-utils'
+import { expect } from 'vitest'
+import type { Resume } from '@/models'
+import { defineRendererRobustnessSuite } from '../test-utils'
 import { CalmDocxRenderer } from './calm'
 
-describe('smoke test for DOCX renderer', () => {
-  let resume: Resume
+defineRendererRobustnessSuite({
+  name: 'DOCX renderer robustness',
+  engine: 'docx',
+  renderers: [
+    {
+      name: 'CalmDocxRenderer',
+      create: (resume: Resume, layoutIndex: number) =>
+        new CalmDocxRenderer(resume, layoutIndex),
+    },
+  ],
+  expectValidOutput(output) {
+    expect(output).toBeInstanceOf(Uint8Array)
 
-  function expectValidDocxDocument(result: Uint8Array) {
-    // Check that result is a non-empty binary buffer
-    expect(result).toBeInstanceOf(Uint8Array)
-    expect(result.length).toBeGreaterThan(0)
-
-    // Check for the ZIP magic number ("PK\x03\x04") since a DOCX file is a
-    // ZIP archive
-    expect(result[0]).toBe(0x50)
-    expect(result[1]).toBe(0x4b)
-  }
-
-  beforeEach(() => {
-    resume = loadFixture(join(__dirname, '..'), 'full-resume.yml')
-  })
-
-  describe('should handle optional sections', () => {
-    it('should render resume with all sections', async () => {
-      const result = await new CalmDocxRenderer(
-        resume,
-        findLayoutIndex(resume, 'docx')
-      ).render()
-      expectValidDocxDocument(result)
-    })
-
-    it('should render resume with one absent sections', async () => {
-      for (const section of sections) {
-        const result = await new CalmDocxRenderer(
-          removeKeysFromObject(resume, [section]),
-          findLayoutIndex(resume, 'docx')
-        ).render()
-        expectValidDocxDocument(result)
-      }
-    })
-
-    it('should render resume with some absent sections', async () => {
-      const sectionsToRemove = sections.slice(0, 2)
-
-      const result = await new CalmDocxRenderer(
-        removeKeysFromObject(resume, sectionsToRemove),
-        findLayoutIndex(resume, 'docx')
-      ).render()
-      expectValidDocxDocument(result)
-    })
-  })
-
-  describe('should handle optional layout', () => {
-    it('should render resume with no layout', async () => {
-      resume.layouts = undefined
-
-      const defaultLayoutIndex = DEFAULT_RESUME_LAYOUTS.findIndex(
-        (l) => l.engine === 'docx'
-      )
-
-      const result = await new CalmDocxRenderer(
-        resume,
-        defaultLayoutIndex
-      ).render()
-      expectValidDocxDocument(result)
-    })
-  })
-
-  describe('should handle absent fields', () => {
-    it('should handle any single missing field gracefully', async () => {
-      const allKeys = collectAllKeys(resume)
-
-      const keys = Array.from(allKeys)
-        .filter(
-          (key) => !['content', 'layouts', 'engine'].includes(key as string)
-        )
-        .sort((a, b) => String(a).localeCompare(String(b)))
-
-      for (const key of keys) {
-        try {
-          const modifiedResume = removeKeysFromObject(cloneDeep(resume), [key])
-
-          const result = await new CalmDocxRenderer(
-            modifiedResume,
-            findLayoutIndex(modifiedResume, 'docx')
-          ).render()
-
-          expectValidDocxDocument(result)
-        } catch (error) {
-          // provide detailed information about for failed test
-          throw new Error(
-            [
-              'CalmDocxRenderer failed when key was removed:',
-              `Key: "${String(key)}"`,
-              `Error: ${error.message}`,
-            ].join(' ')
-          )
-        }
-      }
-    })
-
-    it('should handle multiple missing fields gracefully', async () => {
-      const allKeys = Array.from(collectAllKeys(resume))
-
-      const removableKeys = allKeys
-        .filter(
-          (key) => !['content', 'layouts', 'engine'].includes(key as string)
-        )
-        .sort((a, b) => String(a).localeCompare(String(b)))
-      const testCases = [removableKeys.slice(0, 5), removableKeys.slice(-5)]
-
-      for (const keysToRemove of testCases) {
-        try {
-          const modifiedResume = removeKeysFromObject(
-            cloneDeep(resume),
-            keysToRemove
-          )
-
-          const result = await new CalmDocxRenderer(
-            modifiedResume,
-            findLayoutIndex(modifiedResume, 'docx')
-          ).render()
-
-          expectValidDocxDocument(result)
-        } catch (error) {
-          // provide detailed information about for failed test
-          throw new Error(
-            [
-              'CalmDocxRenderer failed when keys were removed:',
-              `Keys: [${keysToRemove.map((k) => String(k)).join(', ')}]`,
-              `Error: ${error.message}`,
-            ].join(' ')
-          )
-        }
-      }
-    })
-  })
+    const docx = output as Uint8Array
+    expect(docx.length).toBeGreaterThan(0)
+    expect(docx[0]).toBe(0x50)
+    expect(docx[1]).toBe(0x4b)
+  },
 })

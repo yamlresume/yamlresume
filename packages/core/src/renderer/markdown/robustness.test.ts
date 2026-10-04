@@ -22,145 +22,27 @@
  * IN THE SOFTWARE.
  */
 
-import { join } from 'node:path'
-import { loadFixture } from '@yamlresume/testing'
-import { cloneDeep } from 'lodash-es'
-import { beforeEach, describe, expect, it } from 'vitest'
-import { DEFAULT_RESUME_LAYOUTS, type Resume } from '@/models'
-import { collectAllKeys, removeKeysFromObject } from '@/utils'
-import { findLayoutIndex, sections } from '../test-utils'
+import { expect } from 'vitest'
+import type { Resume } from '@/models'
+import { defineRendererRobustnessSuite } from '../test-utils'
 import { MarkdownRenderer } from './renderer'
 
-describe('smoke test for markdown renderer', () => {
-  let resume: Resume
+defineRendererRobustnessSuite({
+  name: 'Markdown renderer robustness',
+  engine: 'markdown',
+  renderers: [
+    {
+      name: 'MarkdownRenderer',
+      create: (resume: Resume, layoutIndex: number) =>
+        new MarkdownRenderer(resume, layoutIndex),
+    },
+  ],
+  expectValidOutput(output) {
+    const markdown = String(output)
 
-  function expectValidMarkdownDocument(result: string) {
-    // Check that result is a non-empty string
-    expect(result).toBeTruthy()
-    expect(typeof result).toBe('string')
-    expect(result.length).toBeGreaterThan(0)
-
-    // Check that result doesn't contain null or undefined as strings
-    expect(result).not.toContain('null')
-    expect(result).not.toContain('undefined')
-
-    // Check for basic markdown structure (at least one heading of any level)
-    expect(result).toMatch(/^#{1,6}\s+/m)
-  }
-
-  beforeEach(() => {
-    resume = loadFixture(join(__dirname, '..'), 'full-resume.yml')
-  })
-
-  describe('should handle optional sections', () => {
-    it('should render resume with all sections', () => {
-      const result = new MarkdownRenderer(
-        resume,
-        findLayoutIndex(resume, 'markdown')
-      ).render()
-      expectValidMarkdownDocument(result)
-    })
-
-    it('should render resume with one absent sections', () => {
-      for (const section of sections) {
-        const result = new MarkdownRenderer(
-          removeKeysFromObject(resume, [section]),
-          findLayoutIndex(resume, 'markdown')
-        ).render()
-        expectValidMarkdownDocument(result)
-      }
-    })
-
-    it('should render resume with some absent sections', () => {
-      const sectionsToRemove = sections.slice(0, 2)
-
-      const result = new MarkdownRenderer(
-        removeKeysFromObject(resume, sectionsToRemove),
-        findLayoutIndex(resume, 'markdown')
-      ).render()
-      expectValidMarkdownDocument(result)
-    })
-  })
-
-  describe('should handle optional layout', () => {
-    it('should render resume with no layout', () => {
-      resume.layouts = undefined
-
-      const defaultLayoutIndex = DEFAULT_RESUME_LAYOUTS.findIndex(
-        (layout) => layout.engine === 'markdown'
-      )
-      const result = new MarkdownRenderer(resume, defaultLayoutIndex).render()
-      expectValidMarkdownDocument(result)
-    })
-  })
-
-  describe('should handle absent fields', () => {
-    it('should handle any single missing field gracefully', () => {
-      const allKeys = collectAllKeys(resume)
-
-      const keys = Array.from(allKeys)
-        .filter(
-          (key) => !['content', 'layouts', 'engine'].includes(key as string)
-        )
-        .sort((a, b) => String(a).localeCompare(String(b)))
-
-      for (const key of keys) {
-        try {
-          const modifiedResume = removeKeysFromObject(cloneDeep(resume), [key])
-
-          const result = new MarkdownRenderer(
-            modifiedResume,
-            findLayoutIndex(modifiedResume, 'markdown')
-          ).render()
-
-          expectValidMarkdownDocument(result)
-        } catch (error) {
-          // provide detailed information about for failed test
-          throw new Error(
-            [
-              'MarkdownRenderer failed when key was removed:',
-              `Key: "${String(key)}"`,
-              `Error: ${error.message}`,
-            ].join(' ')
-          )
-        }
-      }
-    })
-
-    it('should handle multiple missing fields gracefully', () => {
-      const allKeys = Array.from(collectAllKeys(resume))
-
-      const removableKeys = allKeys
-        .filter(
-          (key) => !['content', 'layouts', 'engine'].includes(key as string)
-        )
-        .sort((a, b) => String(a).localeCompare(String(b)))
-      const testCases = [removableKeys.slice(0, 5), removableKeys.slice(-5)]
-
-      for (const keysToRemove of testCases) {
-        try {
-          const modifiedResume = removeKeysFromObject(
-            cloneDeep(resume),
-            keysToRemove
-          )
-
-          const result = new MarkdownRenderer(
-            modifiedResume,
-            findLayoutIndex(modifiedResume, 'markdown')
-          ).render()
-
-          expectValidMarkdownDocument(result)
-        } catch (error) {
-          // provide detailed information about for failed test
-          throw new Error(
-            [
-              'MarkdownRenderer failed when keys were removed:',
-              `Keys: [${keysToRemove.map((k) => String(k)).join(', ')}]`,
-              `Error: ${error.message}`,
-            ].join(' ')
-          )
-        }
-      }
-    })
-  })
+    expect(markdown).toBeTruthy()
+    expect(markdown).not.toContain('null')
+    expect(markdown).not.toContain('undefined')
+    expect(markdown).toMatch(/^#{1,6}\s+/m)
+  },
 })

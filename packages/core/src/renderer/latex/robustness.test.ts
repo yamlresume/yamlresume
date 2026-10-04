@@ -22,13 +22,9 @@
  * IN THE SOFTWARE.
  */
 
-import { join } from 'node:path'
-import { loadFixture } from '@yamlresume/testing'
-import { cloneDeep } from 'lodash-es'
-import { beforeEach, describe, expect, it } from 'vitest'
-import { DEFAULT_RESUME_LAYOUTS, type Resume } from '@/models'
-import { collectAllKeys, removeKeysFromObject } from '@/utils'
-import { findLayoutIndex, sections } from '../test-utils'
+import { expect } from 'vitest'
+import type { Resume } from '@/models'
+import { defineRendererRobustnessSuite } from '../test-utils'
 import { JakeRenderer } from './jake'
 import {
   ModerncvBankingRenderer,
@@ -36,154 +32,38 @@ import {
   ModerncvClassicRenderer,
 } from './moderncv'
 
-describe('smoke test for all renderers', () => {
-  let resume: Resume
+defineRendererRobustnessSuite({
+  name: 'LaTeX renderer robustness',
+  engine: 'latex',
+  renderers: [
+    {
+      name: 'JakeRenderer',
+      create: (resume: Resume, layoutIndex: number) =>
+        new JakeRenderer(resume, layoutIndex),
+    },
+    {
+      name: 'ModerncvBankingRenderer',
+      create: (resume: Resume, layoutIndex: number) =>
+        new ModerncvBankingRenderer(resume, layoutIndex),
+    },
+    {
+      name: 'ModerncvClassicRenderer',
+      create: (resume: Resume, layoutIndex: number) =>
+        new ModerncvClassicRenderer(resume, layoutIndex),
+    },
+    {
+      name: 'ModerncvCasualRenderer',
+      create: (resume: Resume, layoutIndex: number) =>
+        new ModerncvCasualRenderer(resume, layoutIndex),
+    },
+  ],
+  expectValidOutput(output) {
+    const latex = String(output)
 
-  const renderers = [
-    JakeRenderer,
-    ModerncvBankingRenderer,
-    ModerncvClassicRenderer,
-    ModerncvCasualRenderer,
-  ]
-
-  function expectValidLaTeXDocument(result: string) {
-    expect(result).toContain('\\documentclass')
-    expect(result).toContain('\\begin{document}')
-    expect(result).toContain('\\end{document}')
-    expect(result).not.toContain('null')
-    expect(result).not.toContain('undefined')
-  }
-
-  beforeEach(() => {
-    resume = loadFixture(join(__dirname, '..'), 'full-resume.yml')
-  })
-
-  describe('should handle optional sections', () => {
-    it('should render resume with all sections', () => {
-      for (const renderer of renderers) {
-        const result = new renderer(
-          resume,
-          findLayoutIndex(resume, 'latex')
-        ).render()
-        expectValidLaTeXDocument(result)
-      }
-    })
-
-    it('should render resume with one absent sections', () => {
-      for (const renderer of renderers) {
-        for (const section of sections) {
-          const result = new renderer(
-            removeKeysFromObject(resume, [section]),
-            findLayoutIndex(removeKeysFromObject(resume, [section]), 'latex')
-          ).render()
-          expectValidLaTeXDocument(result)
-        }
-      }
-    })
-
-    it('should render resume with some absent sections', () => {
-      for (const renderer of renderers) {
-        const sectionsToRemove = sections.slice(0, 2)
-
-        const result = new renderer(
-          removeKeysFromObject(resume, sectionsToRemove),
-          findLayoutIndex(
-            removeKeysFromObject(resume, sectionsToRemove),
-            'latex'
-          )
-        ).render()
-        expectValidLaTeXDocument(result)
-      }
-    })
-  })
-
-  describe('should handle optional layout', () => {
-    it('should render resume with no layout', () => {
-      for (const renderer of renderers) {
-        resume.layouts = undefined
-        const defaultLayoutIndex = DEFAULT_RESUME_LAYOUTS.findIndex(
-          (l) => l.engine === 'latex'
-        )
-
-        const result = new renderer(resume, defaultLayoutIndex).render()
-        expectValidLaTeXDocument(result)
-      }
-    })
-  })
-
-  describe('should handle absent fields', () => {
-    it('should handle any single missing field gracefully', () => {
-      const allKeys = collectAllKeys(resume)
-
-      const keys = Array.from(allKeys)
-        .filter(
-          (key) => !['content', 'layouts', 'engine'].includes(key as string)
-        )
-        .sort((a, b) => String(a).localeCompare(String(b)))
-
-      for (const key of keys) {
-        for (const renderer of renderers) {
-          try {
-            const modifiedResume = removeKeysFromObject(cloneDeep(resume), [
-              key,
-            ])
-
-            const result = new renderer(
-              modifiedResume,
-              findLayoutIndex(modifiedResume, 'latex')
-            ).render()
-
-            expectValidLaTeXDocument(result)
-          } catch (error) {
-            // provide detailed information about for failed test
-            throw new Error(
-              [
-                `Renderer ${renderer.name} failed when key was removed:`,
-                `Key: "${String(key)}"`,
-                `Error: ${error.message}`,
-              ].join(' ')
-            )
-          }
-        }
-      }
-    })
-
-    it('should handle multiple missing fields gracefully', () => {
-      const allKeys = Array.from(collectAllKeys(resume))
-
-      const removableKeys = allKeys
-        .filter(
-          (key) => !['content', 'layouts', 'engine'].includes(key as string)
-        )
-        .sort((a, b) => String(a).localeCompare(String(b)))
-      const testCases = [removableKeys.slice(0, 5), removableKeys.slice(-5)]
-
-      for (const keysToRemove of testCases) {
-        for (const renderer of renderers) {
-          try {
-            const modifiedResume = removeKeysFromObject(
-              cloneDeep(resume),
-              keysToRemove
-            )
-
-            const result = new renderer(
-              modifiedResume,
-              findLayoutIndex(modifiedResume, 'latex')
-            ).render()
-
-            expectValidLaTeXDocument(result)
-          } catch (error) {
-            // provide detailed information about for failed test
-            throw new Error(
-              [
-                `Renderer ${renderer.name} failed when keys were removed:`,
-                `Keys: [${keysToRemove.map((k) => String(k)).join(', ')}]`,
-                `Error: ${error.message}`,
-              ].join(' ')
-            )
-          }
-        }
-      }
-    })
-  })
+    expect(latex).toContain('\\documentclass')
+    expect(latex).toContain('\\begin{document}')
+    expect(latex).toContain('\\end{document}')
+    expect(latex).not.toContain('null')
+    expect(latex).not.toContain('undefined')
+  },
 })
