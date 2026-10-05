@@ -50,12 +50,12 @@
     "@yamlresume/samples": "workspace:*",
     "chokidar": "^5.0.0",
     "coalescifn": "^1.0.0",
-    "execa": "^10.0.0",
+    "execa": "^10.0.1",
     "which": "^7.0.0",
-    "yaml": "^2.9.0"
+    "yaml": "^2.9.1"
   },
   "devDependencies": {
-    "@types/node": "^26.1.1",
+    "@types/node": "^26.6.4",
     "@types/which": "^3.0.4",
     "@yamlresume/testing": "workspace:*"
   },

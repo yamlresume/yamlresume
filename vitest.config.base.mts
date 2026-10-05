@@ -11,7 +11,7 @@ export const baseConfig: UserConfig = {
     environment: 'node',
     globals: true,
     testTimeout: 10000,
-    setupFiles: [path.resolve(__dirname, './vitest.setup.ts')],
+    setupFiles: [path.resolve(import.meta.dirname, './vitest.setup.ts')],
     coverage: {
       provider: 'v8',
       reporter: ['text', 'json', 'html'],

@@ -1,9 +1,7 @@
-/* biome-ignore lint/suspicious/noUnknownAtRules: Tailwind directives */
-@tailwind base;
-/* biome-ignore lint/suspicious/noUnknownAtRules: Tailwind directives */
-@tailwind components;
-/* biome-ignore lint/suspicious/noUnknownAtRules: Tailwind directives */
-@tailwind utilities;
+@import "tailwindcss";
+
+/* Scan the playground package sources for utility classes. */
+@source "../../src";
 
 html,
 body,

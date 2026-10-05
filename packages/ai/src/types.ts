@@ -50,7 +50,7 @@ export interface AIOptions {
    *
    * @default 16384
    */
-  maxTokens?: number
+  maxOutputTokens?: number
 
   /**
    * Maximum number of retries when the generated output fails validation.

@@ -93,7 +93,7 @@ describe(generateWithValidation, () => {
     )
   })
 
-  it('passes temperature, maxTokens, system, and prompt to generateText', async () => {
+  it('passes temperature, maxOutputTokens, system, and prompt to generateText', async () => {
     vi.mocked(generateText).mockResolvedValue({
       text: validYaml,
     } as Awaited<ReturnType<typeof generateText>>)
@@ -102,7 +102,7 @@ describe(generateWithValidation, () => {
       {
         ...baseOptions,
         temperature: 0.5,
-        maxTokens: 2048,
+        maxOutputTokens: 2048,
       },
       (_text, doc) => doc.toString()
     )
@@ -112,7 +112,7 @@ describe(generateWithValidation, () => {
       system: baseOptions.system,
       prompt: baseOptions.prompt,
       temperature: 0.5,
-      maxTokens: 2048,
+      maxOutputTokens: 2048,
     })
   })
 
@@ -137,7 +137,7 @@ describe(generateWithValidation, () => {
     expect(onChunk).toHaveBeenNthCalledWith(2, chunks[1])
   })
 
-  it('uses default temperature, maxTokens, and maxRetries', async () => {
+  it('uses default temperature, maxOutputTokens, and maxRetries', async () => {
     vi.mocked(generateText).mockResolvedValue({
       text: validYaml,
     } as Awaited<ReturnType<typeof generateText>>)
@@ -147,7 +147,7 @@ describe(generateWithValidation, () => {
     expect(generateText).toHaveBeenCalledWith(
       expect.objectContaining({
         temperature: 1,
-        maxTokens: 16384,
+        maxOutputTokens: 16384,
       })
     )
   })

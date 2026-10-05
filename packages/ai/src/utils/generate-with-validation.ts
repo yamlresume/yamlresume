@@ -78,7 +78,7 @@ export async function generateWithValidation<T>(
     prompt,
     task,
     temperature = 1,
-    maxTokens = 16384,
+    maxOutputTokens = 16384,
     maxRetries = 2,
     onChunk,
   } = options
@@ -111,7 +111,7 @@ export async function generateWithValidation<T>(
           system,
           prompt: currentPrompt,
           temperature,
-          maxTokens,
+          maxOutputTokens,
         })
 
         text = ''
@@ -125,7 +125,7 @@ export async function generateWithValidation<T>(
           system,
           prompt: currentPrompt,
           temperature,
-          maxTokens,
+          maxOutputTokens,
         })
         text = result.text
       }

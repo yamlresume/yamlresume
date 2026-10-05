@@ -125,7 +125,7 @@ async function callModel(
   model: LanguageModel,
   system: string,
   prompt: string,
-  maxTokens = 4096
+  maxOutputTokens = 4096
 ): Promise<string> {
   try {
     const result = await generateText({
@@ -133,7 +133,7 @@ async function callModel(
       system,
       prompt,
       temperature: 1,
-      maxTokens,
+      maxOutputTokens,
     })
 
     return result.text
@@ -222,7 +222,7 @@ export async function generateWithRetry<T>(
   validate: (text: string) => T,
   model: LanguageModel,
   label: string,
-  maxTokens = 4096
+  maxOutputTokens = 4096
 ): Promise<T> {
   let lastError: AIResumeError | undefined
   let lastText: string | undefined
@@ -246,7 +246,7 @@ export async function generateWithRetry<T>(
         : basePrompt
 
     try {
-      const text = await callModel(model, system, prompt, maxTokens)
+      const text = await callModel(model, system, prompt, maxOutputTokens)
       lastText = text
       return validate(text)
     } catch (error) {
