@@ -40,6 +40,7 @@ import {
 import { Renderer } from '../base'
 import { DEFAULT_LINE_SPACING, LINE_SPACING_MAP } from './constants'
 import calm from './styles/calm.css'
+import kami from './styles/kami.css'
 import reset from './styles/reset.css'
 import vscode from './styles/vscode.css'
 
@@ -116,6 +117,7 @@ export class HtmlRenderer extends Renderer {
 
     const templates = {
       calm: calm,
+      kami: kami,
       vscode: vscode,
     }
     // default to calm css if template is not found

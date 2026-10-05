@@ -103,7 +103,7 @@ export const FLUENCY_OPTIONS = [
 ] as const
 
 /** Defines identifiers for the available HTML layout templates. */
-export const HTML_TEMPLATE_OPTIONS = ['calm', 'vscode'] as const
+export const HTML_TEMPLATE_OPTIONS = ['calm', 'kami', 'vscode'] as const
 
 /** The options for the HTML layout font size. */
 export const HTML_FONT_SIZE_OPTIONS = [

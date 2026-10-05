@@ -35,6 +35,7 @@ import { LINE_SPACING_MAP } from './constants'
 import { HtmlRenderer } from './renderer'
 
 vi.mock('./styles/calm.css', () => ({ default: 'MOCK_CALM_CSS' }))
+vi.mock('./styles/kami.css', () => ({ default: 'MOCK_KAMI_CSS' }))
 vi.mock('./styles/vscode.css', () => ({ default: 'MOCK_VSCODE_CSS' }))
 
 describe('HtmlRenderer', () => {
@@ -518,6 +519,22 @@ describe('HtmlRenderer', () => {
         expect(result).toContain('MOCK_VSCODE_CSS')
         expect(result).not.toContain('MOCK_CALM_CSS')
       })
+
+      it('should use kami css when template is kami', () => {
+        const htmlLayout = resume.layouts[
+          findLayoutIndex(resume, 'html')
+        ] as HtmlLayout
+        htmlLayout.template = 'kami'
+
+        const renderer = new HtmlRenderer(
+          resume,
+          findLayoutIndex(resume, 'html')
+        )
+        const result = renderer.renderPreamble()
+
+        expect(result).toContain('MOCK_KAMI_CSS')
+        expect(result).not.toContain('MOCK_CALM_CSS')
+      })
     })
 
     describe('color', () => {
@@ -559,6 +576,23 @@ describe('HtmlRenderer', () => {
         const result = renderer.renderPreamble()
 
         expect(result).toContain('--accent-color: #980000;')
+      })
+
+      it('should inject --accent-color when template is kami', () => {
+        const htmlLayout = resume.layouts[
+          findLayoutIndex(resume, 'html')
+        ] as HtmlLayout
+        htmlLayout.template = 'kami'
+        htmlLayout.theme = { colors: { accent: 'blue' } }
+
+        const renderer = new HtmlRenderer(
+          resume,
+          findLayoutIndex(resume, 'html')
+        )
+        const result = renderer.renderPreamble()
+
+        expect(result).toContain('MOCK_KAMI_CSS')
+        expect(result).toContain('--accent-color: #3873B3;')
       })
     })
   })

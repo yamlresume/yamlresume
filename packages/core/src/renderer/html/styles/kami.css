@@ -1,0 +1,287 @@
+/**
+ * MIT License
+ *
+ * Copyright (c) 2023–Present PPResume (https://ppresume.com)
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to
+ * deal in the Software without restriction, including without limitation the
+ * rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+ * sell copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+ * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+ * IN THE SOFTWARE.
+ */
+
+/**
+ * Kami Theme for YAMLResume HTML Renderer
+ * Inspired by tw93/kami (https://github.com/tw93/kami): warm parchment
+ * background a single serif voice, composed like a well-typeset report.
+ */
+
+:root {
+  --background-color: #f5f4ed;
+  --border-color: #ddd8c7;
+  --ink-color: #1b365d;
+
+  /* text colors */
+  --text-color-primary: #2b2a26;
+  --text-color-secondary: #6f6b5d;
+
+  /* spacing */
+  --spacing-xss: 2px;
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 12px;
+  --spacing-lg: 16px;
+  --spacing-xl: 24px;
+  --spacing-xxl: 40px;
+  --spacing-xxxl: 72px;
+
+  /* font sizes */
+  --font-size-xs: 0.8rem;
+  --font-size-sm: 0.9rem;
+  --font-size-md: 1rem;
+  --font-size-lg: 1.1rem;
+  --font-size-xl: 1.4rem;
+  --font-size-xxl: 2.6rem;
+
+  /* layout */
+  --page-max-width: 820px;
+
+  /* typography */
+  --text-default-font-family:
+    "Charter", "Bitstream Charter", "Cambria", "Georgia", "Songti SC",
+    "Noto Serif CJK SC", "Times New Roman", serif;
+}
+
+html {
+  font-size: var(--text-font-size);
+  background-color: var(--background-color);
+}
+
+body {
+  /* font & text */
+  color: var(--text-color-primary);
+  background-color: var(--background-color);
+  font-family: var(--text-font-family);
+  /* this variable is defined by `typography.fontSize` in resume html layout */
+  text-autospace: normal;
+
+  /* layout */
+  line-height: var(--line-height);
+  max-width: var(--page-max-width);
+  margin: 0 auto;
+  padding: var(--spacing-xxxl) var(--spacing-xxl) var(--spacing-xxl);
+}
+
+/* header: name on the left, headline and contact on the right */
+.resume-header {
+  margin-bottom: var(--spacing-xxl);
+  padding-bottom: var(--spacing-lg);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.resume-name {
+  font-size: var(--font-size-xxl);
+  font-weight: 500;
+  line-height: 1.1;
+  margin-bottom: var(--spacing-md);
+}
+
+.resume-headline {
+  font-size: var(--font-size-md);
+  color: var(--accent-color, var(--ink-color));
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+  text-align: right;
+  margin-bottom: var(--spacing-sm);
+}
+
+/* contact info */
+.resume-contact-info {
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  column-gap: var(--spacing-lg);
+  row-gap: var(--spacing-xs);
+  margin-top: var(--spacing-sm);
+  font-size: var(--font-size-sm);
+  color: var(--text-color-secondary);
+}
+
+.resume-contact-icon,
+.resume-contact-label {
+  margin-right: var(--spacing-xs);
+  vertical-align: middle;
+}
+
+/* links: quiet ink underline */
+a {
+  color: var(--accent-color, var(--ink-color));
+  text-decoration: underline;
+  text-decoration-color: var(--border-color);
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+  text-decoration-skip-ink: auto;
+  transition: text-decoration-color 0.2s;
+}
+
+a:hover {
+  text-decoration-color: var(--accent-color, var(--ink-color));
+}
+
+/* sections */
+.resume-section {
+  margin-bottom: var(--spacing-xxl);
+}
+
+.resume-section-title {
+  font-size: var(--font-size-xl);
+  font-weight: 500;
+  color: var(--accent-color, var(--text-color-primary));
+  margin-bottom: var(--spacing-lg);
+  border-bottom: 1px solid var(--accent-color, var(--border-color));
+  padding-bottom: var(--spacing-xs);
+}
+
+/* entries */
+.resume-entry {
+  margin-bottom: var(--spacing-xl);
+}
+
+.resume-entry:last-child {
+  margin-bottom: 0;
+}
+
+.resume-entry-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: var(--spacing-sm);
+}
+
+.resume-entry-title {
+  font-weight: 600;
+  margin-bottom: var(--spacing-xss);
+}
+
+.resume-entry-organization {
+  color: var(--text-color-secondary);
+}
+
+.resume-entry-date {
+  color: var(--text-color-secondary);
+  font-size: var(--font-size-sm);
+  font-variant: small-caps;
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+}
+
+.resume-entry-summary p,
+.resume-summary-content p {
+  margin-bottom: var(--spacing-xs);
+}
+
+/* lists */
+.resume-entry-summary ul,
+.resume-entry-summary ol,
+.resume-summary-content ul,
+.resume-summary-content ol {
+  padding-left: var(--spacing-lg);
+  list-style-type: circle;
+}
+
+.resume-entry-summary li::marker,
+.resume-summary-content li::marker {
+  color: var(--accent-color, var(--ink-color));
+}
+
+/* labeled lists (courses, keywords, etc.): small-caps label column */
+.resume-labeled-list span {
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+  color: var(--text-color-secondary);
+}
+
+/* skills grid */
+.resume-skill-item,
+.resume-language-item {
+  display: flex;
+  align-items: baseline;
+  gap: var(--spacing-lg);
+  margin-bottom: var(--spacing-sm);
+}
+
+.resume-skill-name,
+.resume-language-name {
+  flex: 0 0 240px;
+  font-weight: 500;
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+  color: var(--accent-color, var(--ink-color));
+}
+
+/* level/fluency is nested inside the name element, so undo the label style */
+.resume-skill-level,
+.resume-language-fluency {
+  font-weight: 400;
+  font-variant: normal;
+  letter-spacing: normal;
+  font-size: var(--font-size-sm);
+  color: var(--text-color-secondary);
+}
+
+/* mobile */
+@media (max-width: 768px) {
+  body {
+    padding: var(--spacing-xl);
+  }
+
+  .resume-header {
+    margin-bottom: var(--spacing-xl);
+  }
+
+  .resume-headline {
+    text-align: left;
+  }
+
+  .resume-contact-info {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .resume-entry-header {
+    flex-wrap: wrap;
+  }
+
+  .resume-skill-item,
+  .resume-language-item {
+    flex-direction: column;
+    gap: var(--spacing-xss);
+  }
+}
+
+/* footer */
+.resume-footer {
+  margin-top: var(--spacing-xxl);
+  padding-top: var(--spacing-xl);
+  border-top: 1px solid var(--border-color);
+  font-size: var(--font-size-sm);
+  color: var(--text-color-secondary);
+}
+
+@media print {
+  .resume-footer {
+    display: none;
+  }
+}

@@ -360,8 +360,6 @@ describe(buildResumeFile, () => {
   })
 
   it('should warn when a layout accent color has low contrast on white', async () => {
-    const resumePath = getFixture(__dirname, 'software-engineer.yml')
-
     vi.mocked(readResumeFile).mockReturnValue({
       resume: {
         // @ts-expect-error
@@ -385,8 +383,6 @@ describe(buildResumeFile, () => {
   })
 
   it('should not warn when accent colors have enough contrast', async () => {
-    const resumePath = getFixture(__dirname, 'software-engineer.yml')
-
     vi.mocked(readResumeFile).mockReturnValue({
       resume: {
         // @ts-expect-error
@@ -410,8 +406,6 @@ describe(buildResumeFile, () => {
   })
 
   it('should skip the contrast warning for the dark vscode html template', async () => {
-    const resumePath = getFixture(__dirname, 'software-engineer.yml')
-
     vi.mocked(readResumeFile).mockReturnValue({
       resume: {
         // @ts-expect-error

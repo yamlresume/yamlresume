@@ -164,6 +164,11 @@ export function getHtmlTemplateDetail(template: HtmlTemplate) {
       description:
         'Clean and minimalist design suitable for all professionals.',
     },
+    kami: {
+      engine: 'html',
+      name: 'Kami',
+      description: 'Warm parchment and serif typography inspired by tw93/kami.',
+    },
     vscode: {
       engine: 'html',
       name: 'VS Code',
