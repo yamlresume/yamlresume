@@ -115,8 +115,8 @@ importers:
         specifier: ^7.21.0
         version: 7.21.0
       execa:
-        specifier: ^10.0.1
-        version: 10.0.1
+        specifier: ^10.1.0
+        version: 10.1.0
       extensionless:
         specifier: ^2.0.6
         version: 2.0.6
@@ -210,8 +210,8 @@ importers:
         specifier: ^3.4.2
         version: 3.4.2
       execa:
-        specifier: ^10.0.1
-        version: 10.0.1
+        specifier: ^10.1.0
+        version: 10.1.0
       prompts:
         specifier: ^2.4.2
         version: 2.4.2
@@ -275,8 +275,8 @@ importers:
         specifier: ^1.0.0
         version: 1.0.0
       execa:
-        specifier: ^10.0.1
-        version: 10.0.1
+        specifier: ^10.1.0
+        version: 10.1.0
       which:
         specifier: ^7.0.0
         version: 7.0.0
@@ -439,8 +439,8 @@ importers:
         specifier: ^3.4.2
         version: 3.4.2
       execa:
-        specifier: ^10.0.1
-        version: 10.0.1
+        specifier: ^10.1.0
+        version: 10.1.0
 
 packages:
 
@@ -490,6 +490,10 @@ packages:
     resolution: {integrity: sha512-CjXrNHTnvqBVqHgdBysY3vk2T8tpJHb5/RMeHJBTyVa9xgugCB0CJTx/3oO8RV2QRQP391RWpB7D6hLjm8V9uA==}
     engines: {node: '>=6.0.0'}
     hasBin: true
+
+  '@babel/runtime@7.29.10':
+    resolution: {integrity: sha512-NpugTzbKgGrNe45Ui32cN8vCFFMxVtP/9rtfwv0nP5FRDAjvYBxJcLVpYA9mr1jxP6cnIT7x9LUzuDTbWYYNRA==}
+    engines: {node: '>=6.9.0'}
 
   '@babel/runtime@7.29.7':
     resolution: {integrity: sha512-Nq8OhGWiZIZGV6hLHoyAKLLcJihP/xFeBMGJoUrxTX2psI8dCifzLhZISFb+VWS3wFMRDmCGw5R+dOySCqPLhw==}
@@ -1930,8 +1934,8 @@ packages:
     resolution: {integrity: sha512-EKN1vKAMcZ8MlYMpaNuxN6R9yakzH6uajHcHVTqWJzvu5pWw9DyhbP35HH8MVBQ+dZjAfDxk+A8NiR9KWaXiyQ==}
     engines: {node: '>=18.0.0'}
 
-  execa@10.0.1:
-    resolution: {integrity: sha512-ge98qjkRK4IB7tL7Ju/6qmm5LHoH1eEMt5FNZrz3f4UIYhF28lggX20z3FaX1sgc67msLEn0N0BscOs29iuwyw==}
+  execa@10.1.0:
+    resolution: {integrity: sha512-5HT/600HqXEtmkb9mK/PkTWw+bQSCzPnWiZ4/87wD3Hi0wFzCapOuNT9p4M08PDd+KLHdHvFhKjOWmNx/npRNQ==}
     engines: {node: '>=22'}
 
   expect-type@1.4.0:
@@ -3198,6 +3202,8 @@ snapshots:
     dependencies:
       '@babel/types': 7.29.8
 
+  '@babel/runtime@7.29.10': {}
+
   '@babel/runtime@7.29.7': {}
 
   '@babel/types@7.29.8':
@@ -3848,7 +3854,7 @@ snapshots:
   '@testing-library/dom@10.4.1':
     dependencies:
       '@babel/code-frame': 7.29.7
-      '@babel/runtime': 7.29.7
+      '@babel/runtime': 7.29.10
       '@types/aria-query': 5.0.4
       aria-query: 5.3.0
       dom-accessibility-api: 0.5.16
@@ -4358,7 +4364,7 @@ snapshots:
 
   eventsource-parser@3.1.1: {}
 
-  execa@10.0.1:
+  execa@10.1.0:
     dependencies:
       '@sindresorhus/merge-streams': 4.0.0
       figures: 6.1.0
