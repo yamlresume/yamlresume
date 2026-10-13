@@ -51,7 +51,7 @@
   },
   "dependencies": {
     "@monaco-editor/react": "^4.7.0",
-    "@tabler/icons-react": "^3.48.0",
+    "@tabler/icons-react": "^3.49.0",
     "@yamlresume/core": "workspace:*",
     "@yamlresume/samples": "workspace:*",
     "clsx": "^2.1.1",
