@@ -41,7 +41,7 @@
     "@commitlint/cli": "^21.2.3",
     "@commitlint/config-conventional": "^21.2.3",
     "@types/lodash-es": "^4.17.12",
-    "@types/node": "^26.6.4",
+    "@types/node": "^26.6.5",
     "@vitest/coverage-v8": "^5.0.3",
     "addlicense-ts": "^2.0.0",
     "commit-and-tag-version": "^13.2.1",
