@@ -432,6 +432,46 @@ describe('LatexRenderer', () => {
       expect(result).toContain('\\setCJKmainfont{Noto Serif CJK SC}')
       expect(result).toContain('\\setCJKsansfont{Noto Sans CJK SC}')
     })
+
+    it('should render locale-specific Noto CJK fonts', () => {
+      const fontCases = [
+        { language: 'zh-hans', region: 'SC' },
+        { language: 'zh-hant-tw', region: 'TC' },
+        { language: 'ja', region: 'JP' },
+      ] as const
+
+      for (const { language, region } of fontCases) {
+        resume.locale = { ...resume.locale, language }
+        renderer = new TestableLatexRenderer(
+          resume,
+          findLayoutIndex(resume, 'latex')
+        )
+
+        const result = renderer.testRenderCTeXConfig()
+
+        expect(result).toContain(`\\setCJKmainfont{Noto Serif CJK ${region}}`)
+        expect(result).toContain(`\\setCJKsansfont{Noto Sans CJK ${region}}`)
+      }
+    })
+
+    it('should fall back from HK to TC when HK fonts are unavailable', () => {
+      resume.locale = { ...resume.locale, language: 'zh-hant-hk' }
+      renderer = new TestableLatexRenderer(
+        resume,
+        findLayoutIndex(resume, 'latex')
+      )
+
+      const result = renderer.testRenderCTeXConfig()
+
+      expect(result).toContain('\\IfFontExistsTF{Noto Serif CJK HK}')
+      expect(result).toContain('\\setCJKmainfont{Noto Serif CJK HK}')
+      expect(result).toContain('\\IfFontExistsTF{Noto Serif CJK TC}')
+      expect(result).toContain('\\setCJKmainfont{Noto Serif CJK TC}')
+      expect(result).toContain('\\IfFontExistsTF{Noto Sans CJK HK}')
+      expect(result).toContain('\\setCJKsansfont{Noto Sans CJK HK}')
+      expect(result).toContain('\\IfFontExistsTF{Noto Sans CJK TC}')
+      expect(result).toContain('\\setCJKsansfont{Noto Sans CJK TC}')
+    })
   })
 
   describe('renderGeometry', () => {

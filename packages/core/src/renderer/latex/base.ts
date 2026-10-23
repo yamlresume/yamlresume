@@ -134,28 +134,67 @@ ${fontList
   }
 
   /**
+   * Get the preferred Noto CJK font regions for the resume language, in
+   * order of preference. CJK characters get the wrong glyph variants when
+   * rendered with the wrong regional font (e.g. Japanese kanji with an SC
+   * font), so pick the region matching the locale, falling back to the
+   * next region via \\IfFontExistsTF when the font is not installed.
+   */
+  protected getCJKFontRegions(): string[] {
+    switch (this.resume.locale?.language) {
+      case 'ja':
+        return ['JP']
+      case 'zh-hant-hk':
+        // HK faces are only shipped by newer Noto CJK releases
+        return ['HK', 'TC']
+      case 'zh-hant-tw':
+        return ['TC']
+      default:
+        return ['SC']
+    }
+  }
+
+  /**
    * Render the LaTeX packages for CJK support
    */
   protected renderCTeXConfig(): string {
+    const regions = this.getCJKFontRegions()
+
+    const renderCJKFont = (
+      style: string,
+      command: string,
+      candidates: string[]
+    ): string => {
+      if (candidates.length === 0) {
+        return ''
+      }
+
+      const [region, ...rest] = candidates
+      const font = `Noto ${style} CJK ${region}`
+      const fallback = renderCJKFont(style, command, rest)
+
+      return `\\IfFontExistsTF{${font}}{
+  \\setCJK${command}font{${font}}
+}{${fallback ? `\n${fallback}` : ''}}`
+    }
+
     return `%% CTeX
 % CJK support, used to show CJK characters in the resume
 %
-% - fontset=none: disable builtin fontset but instead set the CJK font manually
 % - heading=false: disable ctex heading
 % - punct=kaiming: use kaiming punctuations styles for CJK
 % - scheme=plain: use plain scheme, do not override \\normalsize font size
 % - space=auto: space settings for CJK characters
 %
+% CJK fonts are resolved per locale language, e.g. Noto Serif/Sans CJK JP
+% for Japanese resumes, with fallback to the next region if not installed
+%
 % ref:
 % - http://ctan.mirrorcatalogs.com/language/chinese/ctex/ctex.pdf
 \\usepackage[UTF8, heading=false, punct=kaiming, scheme=plain, space=auto]{ctex}
 
-\\IfFontExistsTF{Noto Serif CJK SC}{
-  \\setCJKmainfont{Noto Serif CJK SC}
-}{}
-\\IfFontExistsTF{Noto Sans CJK SC}{
-  \\setCJKsansfont{Noto Sans CJK SC}
-}{}`
+${renderCJKFont('Serif', 'main', regions)}
+${renderCJKFont('Sans', 'sans', regions)}`
   }
 
   /**

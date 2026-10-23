@@ -4,11 +4,16 @@ LABEL maintainer="YAMLResume <https://yamlresume.dev>"
 
 # - perl: required by tlmgr/TeX Live tooling at build time
 # - fontconfig: required by fontspec family name lookups at runtime
+# - fonts-noto-cjk: Noto CJK fonts for CJK resumes; each TTC ships the
+#   SC/TC/HK/JP/KR faces (Regular+Bold only), and renderCTeXConfig in
+#   packages/core/src/renderer/latex/base.ts resolves the right face per
+#   locale language (see getCJKFontRegions)
 # - wget/xz-utils: build-time only, purged below
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
     ca-certificates \
     fontconfig \
+    fonts-noto-cjk \
     perl \
     wget \
     xz-utils \
@@ -114,17 +119,6 @@ RUN /opt/bin/tlmgr install \
 # arches (only one exists per image, the other is a harmless dead path entry)
 ENV PATH="/opt/.TinyTeX/bin/aarch64-linux:/opt/.TinyTeX/bin/x86_64-linux:${PATH}"
 
-# CJK fonts: ship only the 4 SC weights the templates reference
-# (Noto Serif/Sans CJK SC regular+bold, see renderCTeXConfig in
-# packages/core/src/renderer/latex/base.ts) instead of the full
-# fonts-noto-cjk(-extra) packages which cover all CJK languages and weights.
-RUN mkdir -p /usr/share/fonts/opentype/noto-cjk && \
-    cd /usr/share/fonts/opentype/noto-cjk && \
-    wget -q "https://raw.githubusercontent.com/notofonts/noto-cjk/main/Sans/OTF/SimplifiedChinese/NotoSansCJKsc-Regular.otf" && \
-    wget -q "https://raw.githubusercontent.com/notofonts/noto-cjk/main/Sans/OTF/SimplifiedChinese/NotoSansCJKsc-Bold.otf" && \
-    wget -q "https://raw.githubusercontent.com/notofonts/noto-cjk/main/Serif/OTF/SimplifiedChinese/NotoSerifCJKsc-Regular.otf" && \
-    wget -q "https://raw.githubusercontent.com/notofonts/noto-cjk/main/Serif/OTF/SimplifiedChinese/NotoSerifCJKsc-Bold.otf"
-
 # Expose TeX Live's font trees to fontconfig: fontspec resolves
 # typography.fontFamily by family name, but texmf-dist is only
 # kpathsea-indexed.
@@ -136,6 +130,7 @@ RUN ln -s /opt/.TinyTeX/texmf-dist/fonts/opentype /usr/share/fonts/opentype/texl
 RUN fc-match "Linux Libertine O" && \
     fc-match "IBM Plex Sans" && \
     fc-match "Noto Serif CJK SC" && \
+    fc-match "Noto Sans CJK JP" && \
     which xelatex && \
     xelatex --version
 
