@@ -95,7 +95,8 @@ jobs:
       - name: Smoke test LaTeX to PDF build
         if: runner.os == 'Linux'
         run: |
-          docker run --rm -v $(pwd):/tmp -w /tmp yamlresume/yamlresume-base:v2.0.0 xelatex resume.tex
+          docker run --rm yamlresume/yamlresume-base:v2.1.0 typst --version
+          docker run --rm -v $(pwd):/tmp -w /tmp yamlresume/yamlresume-base:v2.1.0 xelatex resume.tex
 
       - name: Check files
         if: always()

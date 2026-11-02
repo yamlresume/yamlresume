@@ -1,4 +1,4 @@
-FROM yamlresume/yamlresume-base:v2.0.0
+FROM yamlresume/yamlresume-base:v2.1.0
 
 LABEL maintainer="YAMLResume <https://yamlresume.dev>"
 

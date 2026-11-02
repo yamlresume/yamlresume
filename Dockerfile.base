@@ -1,3 +1,7 @@
+# Official Typst image, used to copy the statically linked compiler below.
+ARG TYPST_VERSION=0.15.1
+FROM ghcr.io/typst/typst:${TYPST_VERSION} AS typst
+
 FROM node:24-slim
 
 LABEL maintainer="YAMLResume <https://yamlresume.dev>"
@@ -19,6 +23,10 @@ RUN apt-get update && \
     xz-utils \
     && rm -rf /var/lib/apt/lists/*
 
+# Copy the Typst compiler from the official image. It is a statically linked
+# musl binary, so it runs on the Debian base without extra libraries.
+COPY --from=typst /bin/typst /usr/local/bin/typst
+
 # Install TinyTeX (https://yihui.org/tinytex/) instead of full texlive.
 # HOME=/opt installs to /opt/.TinyTeX so non-root users (the yamlresume user
 # in the final image) can execute xelatex.
@@ -27,6 +35,10 @@ RUN wget -qO /tmp/install-tinytex.sh "https://yihui.org/tinytex/install-bin-unix
     rm /tmp/install-tinytex.sh && \
     /opt/bin/tlmgr option docfiles 0 && \
     /opt/bin/tlmgr option srcfiles 0
+
+# the daily TinyTeX bundle can ship a tlmgr older than the tlnet mirror
+# requires; self-update before installing packages
+RUN /opt/bin/tlmgr update --self
 
 # Install only the LaTeX packages yamlresume templates need (see
 # packages/core/src/renderer/latex), instead of full texlive collections:
@@ -126,11 +138,14 @@ RUN ln -s /opt/.TinyTeX/texmf-dist/fonts/opentype /usr/share/fonts/opentype/texl
     ln -s /opt/.TinyTeX/texmf-dist/fonts/truetype /usr/share/fonts/truetype/texlive && \
     fc-cache -f
 
-# sanity checks: fonts and xelatex must be resolvable, fails the build otherwise
+# sanity checks: fonts, typst and xelatex must be resolvable; fails the build
+# otherwise
 RUN fc-match "Linux Libertine O" && \
     fc-match "IBM Plex Sans" && \
     fc-match "Noto Serif CJK SC" && \
     fc-match "Noto Sans CJK JP" && \
+    which typst && \
+    typst --version && \
     which xelatex && \
     xelatex --version
 
