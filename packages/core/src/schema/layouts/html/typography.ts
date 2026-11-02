@@ -31,6 +31,7 @@ import {
   LineSpacingOptionSchema,
 } from '../../primitives'
 import { nullifySchema } from '../../utils'
+import { LinksSchema } from '../common'
 
 /**
  * A zod schema for typography settings.
@@ -41,6 +42,7 @@ export const HtmlTypographySchema = z.object({
       fontSize: nullifySchema(HtmlFontSizeOptionSchema),
       fontFamily: nullifySchema(HtmlFontFamilySchema),
       lineSpacing: nullifySchema(LineSpacingOptionSchema),
+      ...LinksSchema().shape,
     })
     .nullish()
     .meta({
@@ -48,7 +50,8 @@ export const HtmlTypographySchema = z.object({
       description: joinNonEmptyString(
         [
           'The typography section contains font settings,',
-          'including font size and line spacing options for HTML output.',
+          'including font size, line spacing and link styling options for',
+          'HTML output.',
         ],
         ' '
       ),

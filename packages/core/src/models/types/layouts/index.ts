@@ -30,7 +30,6 @@ import type {
   LatexLayout,
   LatexPage,
   LatexTypography,
-  Links,
 } from './latex'
 import type { MarkdownLayout } from './markdown'
 import type {
@@ -43,7 +42,7 @@ import type {
 /**
  * Array of layout items supporting multiple output formats.
  */
-export type { Margins, Sections } from './common'
+export type { Links, Margins, Sections } from './common'
 export type {
   DocxAdvanced,
   DocxLayout,
@@ -57,7 +56,6 @@ export type {
   LatexPage,
   LatexTypography,
   LayoutEngine,
-  Links,
   MarkdownLayout,
   TypstAdvanced,
   TypstLayout,

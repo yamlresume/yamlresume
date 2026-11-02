@@ -22,7 +22,8 @@
  * IN THE SOFTWARE.
  */
 
+import { LinksSchema } from './links'
 import { MarginsSchema } from './margins'
 import { SectionsSchema } from './sections'
 
-export { MarginsSchema, SectionsSchema }
+export { LinksSchema, MarginsSchema, SectionsSchema }

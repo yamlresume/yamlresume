@@ -31,28 +31,7 @@ import {
   TypstFontSizeOptionSchema,
 } from '../../primitives'
 import { nullifySchema } from '../../utils'
-
-/**
- * A zod schema for link styling settings.
- */
-const LinksSchema = z.object({
-  links: z
-    .object({
-      underline: z
-        .boolean()
-        .default(false)
-        .meta({
-          title: 'Underline Links',
-          description: 'Whether to underline links in the document.',
-          examples: [false, true],
-        }),
-    })
-    .nullish()
-    .meta({
-      title: 'Typography Links',
-      description: 'Link styling settings for typography.',
-    }),
-})
+import { LinksSchema } from '../common'
 
 /**
  * A zod schema for typography settings.
@@ -63,7 +42,7 @@ export const TypstTypographySchema = z.object({
       fontSize: nullifySchema(TypstFontSizeOptionSchema),
       fontFamily: nullifySchema(TypstFontFamilySchema),
       lineSpacing: nullifySchema(LineSpacingOptionSchema),
-      ...LinksSchema.shape,
+      ...LinksSchema(false).shape,
     })
     .nullish()
     .meta({

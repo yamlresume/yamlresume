@@ -22,7 +22,7 @@
  * IN THE SOFTWARE.
  */
 
-import { ExternalHyperlink, Paragraph, TextRun } from 'docx'
+import { ExternalHyperlink, Paragraph, TextRun, UnderlineType } from 'docx'
 import type {
   BulletListNode,
   DocNode,
@@ -52,6 +52,8 @@ interface DocxGenerationOptions {
   lineSpacing: number
   /** Hyperlink text color as hex without `#`. */
   hyperlinkColor?: string
+  /** Whether hyperlinks should be underlined. */
+  underlineLinks?: boolean
 }
 
 /**
@@ -68,6 +70,7 @@ function getOptionsFromContext(
         fontSize?: string
         fontFamily?: string
         lineSpacing?: string
+        links?: { underline?: boolean }
       }
     | undefined
 
@@ -88,6 +91,7 @@ function getOptionsFromContext(
     fontFamily: typography?.fontFamily,
     lineSpacing,
     hyperlinkColor: context?.hyperlinkColor,
+    underlineLinks: typography?.links?.underline ?? false,
   }
 }
 
@@ -335,6 +339,10 @@ function convertTextNode(
     bold: isBold || undefined,
     italics: isItalic || undefined,
     color: linkHref ? options.hyperlinkColor : undefined,
+    underline:
+      linkHref && options.underlineLinks
+        ? { type: UnderlineType.SINGLE }
+        : undefined,
   }
 
   if (linkHref) {

@@ -49,6 +49,14 @@ class TestableDocxRenderer extends DocxRenderer {
     return this.getAccentColor()
   }
 
+  public get testShowUnderlinedLinks() {
+    return this.showUnderlinedLinks
+  }
+
+  public testCreateExternalHyperlink(link: string, text: string) {
+    return this.createExternalHyperlink(link, text, { size: 22 })
+  }
+
   public testGetFontFamily() {
     return this.getFontFamily()
   }
@@ -227,6 +235,74 @@ describe('DocxRenderer', () => {
         findLayoutIndex(resume, 'docx')
       )
       expect(renderer.testGetBaseFontSize()).toBe(DEFAULT_FONT_SIZE)
+    })
+  })
+
+  describe('showUnderlinedLinks', () => {
+    it('should default to false', () => {
+      expect(renderer.testShowUnderlinedLinks).toBe(false)
+    })
+
+    it('should return false when layout is not docx', () => {
+      resume.layouts = [{ engine: 'html' }] as unknown as DocxLayout[]
+      renderer = new TestableDocxRenderer(resume, 0)
+
+      expect(renderer.testShowUnderlinedLinks).toBe(false)
+    })
+
+    it('should return true when enabled', () => {
+      const docxLayout = resume.layouts[
+        findLayoutIndex(resume, 'docx')
+      ] as DocxLayout
+      docxLayout.typography = { links: { underline: true } }
+
+      renderer = new TestableDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
+      expect(renderer.testShowUnderlinedLinks).toBe(true)
+    })
+
+    it('should return false when disabled', () => {
+      const docxLayout = resume.layouts[
+        findLayoutIndex(resume, 'docx')
+      ] as DocxLayout
+      docxLayout.typography = { links: { underline: false } }
+
+      renderer = new TestableDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
+      expect(renderer.testShowUnderlinedLinks).toBe(false)
+    })
+  })
+
+  describe('createExternalHyperlink', () => {
+    it('should not underline links by default', () => {
+      const link = renderer.testCreateExternalHyperlink(
+        'https://example.com',
+        'example'
+      )
+
+      expect(JSON.stringify(link)).not.toContain('"single"')
+    })
+
+    it('should underline links when enabled', () => {
+      const docxLayout = resume.layouts[
+        findLayoutIndex(resume, 'docx')
+      ] as DocxLayout
+      docxLayout.typography = { links: { underline: true } }
+
+      renderer = new TestableDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
+      const link = renderer.testCreateExternalHyperlink(
+        'https://example.com',
+        'example'
+      )
+
+      expect(JSON.stringify(link)).toContain('"single"')
     })
   })
 

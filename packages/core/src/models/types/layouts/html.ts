@@ -23,7 +23,7 @@
  */
 
 import type { HtmlFontSize, HtmlTemplate, LineSpacing, Theme } from '../options'
-import type { Sections } from './common'
+import type { Links, Sections } from './common'
 
 /**
  * Defines HTML typography settings for document formatting.
@@ -35,6 +35,8 @@ export type HtmlTypography = {
   fontFamily?: string
   /** Line spacing for the document (e.g., "tight", "normal", "relaxed"). */
   lineSpacing?: LineSpacing
+  /** Link styling settings. */
+  links?: Links
 }
 
 /**

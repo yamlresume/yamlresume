@@ -67,6 +67,20 @@ describe('DocxTypographySchema', () => {
           lineSpacing: 'loose',
         },
       },
+      {
+        typography: {
+          links: {
+            underline: true,
+          },
+        },
+      },
+      {
+        typography: {
+          links: {
+            underline: false,
+          },
+        },
+      },
     ]
 
     for (const typography of tests) {

@@ -109,6 +109,28 @@ describe('DocxCodeGenerator', () => {
       expect(JSON.stringify(paragraphs[0])).toContain('"FF0011"')
     })
 
+    it('should underline hyperlink text when enabled', () => {
+      const ast = parser.parse('[my site](https://example.com)')
+      const paragraphs = generator.generate(ast, {
+        typography: {
+          fontSize: '11pt',
+          lineSpacing: 'normal',
+          links: { underline: true },
+        },
+      })
+
+      expect(paragraphs).toHaveLength(1)
+      expect(JSON.stringify(paragraphs[0])).toContain('"single"')
+    })
+
+    it('should not underline hyperlink text by default', () => {
+      const ast = parser.parse('[my site](https://example.com)')
+      const paragraphs = generator.generate(ast, defaultContext)
+
+      expect(paragraphs).toHaveLength(1)
+      expect(JSON.stringify(paragraphs[0])).not.toContain('"single"')
+    })
+
     it('should convert links without throwing', () => {
       const ast = parser.parse('Check out [my website](https://example.com)')
       const paragraphs = generator.generate(ast, defaultContext)

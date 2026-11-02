@@ -29,7 +29,7 @@ import type {
   LineSpacing,
   Theme,
 } from '../options'
-import type { Margins, Sections } from './common'
+import type { Links, Margins, Sections } from './common'
 
 /**
  * Typography settings for DOCX layout.
@@ -41,6 +41,8 @@ export type DocxTypography = {
   fontFamily?: string
   /** Line spacing option. */
   lineSpacing?: LineSpacing
+  /** Link styling settings. */
+  links?: Links
 }
 
 /**

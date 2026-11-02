@@ -31,6 +31,7 @@ import {
   LineSpacingOptionSchema,
 } from '../../primitives'
 import { nullifySchema } from '../../utils'
+import { LinksSchema } from '../common'
 
 /**
  * A zod schema for DOCX typography settings.
@@ -41,6 +42,7 @@ export const DocxTypographySchema = z.object({
       fontSize: nullifySchema(DocxFontSizeOptionSchema),
       fontFamily: nullifySchema(DocxFontFamilySchema),
       lineSpacing: nullifySchema(LineSpacingOptionSchema),
+      ...LinksSchema(false).shape,
     })
     .nullish()
     .meta({
@@ -48,7 +50,8 @@ export const DocxTypographySchema = z.object({
       description: joinNonEmptyString(
         [
           'The typography section contains font settings,',
-          'including font size, font family, and line spacing options, etc.',
+          'including font size, font family, line spacing and link styling',
+          'options, etc.',
         ],
         ' '
       ),

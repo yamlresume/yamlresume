@@ -2554,7 +2554,7 @@
                   },
                   "typography": {
                     "title": "Typography",
-                    "description": "The typography section contains font settings, including font size, font family, and line spacing options, etc.",
+                    "description": "The typography section contains font settings, including font size, font family, line spacing and link styling options, etc.",
                     "anyOf": [
                       {
                         "type": "object",
@@ -2610,6 +2610,34 @@
                                 ],
                                 "title": "[optional] Line spacing option",
                                 "description": "A predefined option from the available line spacing choices or `null`."
+                              },
+                              {
+                                "type": "null"
+                              }
+                            ]
+                          },
+                          "links": {
+                            "title": "Typography Links",
+                            "description": "Link styling settings for typography.",
+                            "anyOf": [
+                              {
+                                "type": "object",
+                                "properties": {
+                                  "underline": {
+                                    "default": false,
+                                    "title": "Underline Links",
+                                    "description": "Whether to underline links in the document.",
+                                    "examples": [
+                                      false,
+                                      true
+                                    ],
+                                    "type": "boolean"
+                                  }
+                                },
+                                "required": [
+                                  "underline"
+                                ],
+                                "additionalProperties": false
                               },
                               {
                                 "type": "null"
@@ -2754,7 +2782,7 @@
                   },
                   "typography": {
                     "title": "Typography",
-                    "description": "The typography section contains font settings, including font size and line spacing options for HTML output.",
+                    "description": "The typography section contains font settings, including font size, line spacing and link styling options for HTML output.",
                     "anyOf": [
                       {
                         "type": "object",
@@ -2812,6 +2840,33 @@
                                 ],
                                 "title": "[optional] Line spacing option",
                                 "description": "A predefined option from the available line spacing choices or `null`."
+                              },
+                              {
+                                "type": "null"
+                              }
+                            ]
+                          },
+                          "links": {
+                            "title": "Typography Links",
+                            "description": "Link styling settings for typography.",
+                            "anyOf": [
+                              {
+                                "type": "object",
+                                "properties": {
+                                  "underline": {
+                                    "type": "boolean",
+                                    "title": "Underline Links",
+                                    "description": "Whether to underline links in the document.",
+                                    "examples": [
+                                      false,
+                                      true
+                                    ]
+                                  }
+                                },
+                                "required": [
+                                  "underline"
+                                ],
+                                "additionalProperties": false
                               },
                               {
                                 "type": "null"

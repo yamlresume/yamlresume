@@ -451,6 +451,9 @@ export const DEFAULT_DOCX_LAYOUT: DocxLayout = {
   typography: {
     fontSize: DOCX_FONT_SIZE_OPTIONS[0],
     lineSpacing: 'normal',
+    links: {
+      underline: false,
+    },
   },
   advanced: {
     showUrls: true,

@@ -29,15 +29,7 @@ import type {
   LineSpacing,
   Theme,
 } from '../options'
-import type { Margins, PaperSize, Sections } from './common'
-
-/**
- * Defines latex link styling settings for typography.
- */
-export type Links = {
-  /** Whether to underline links in the document. */
-  underline?: boolean
-}
+import type { Links, Margins, PaperSize, Sections } from './common'
 
 /**
  * Defines latex typography settings for document formatting.

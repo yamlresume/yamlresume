@@ -29,12 +29,7 @@ import type {
   TypstPaperSize,
   TypstTemplate,
 } from '../options'
-import type { Margins, Sections } from './common'
-
-export type Links = {
-  /** Whether to underline links in the document. */
-  underline?: boolean
-}
+import type { Links, Margins, Sections } from './common'
 
 export type TypstTypography = {
   /** Base font size for the document (e.g., "10pt", "11pt"). */

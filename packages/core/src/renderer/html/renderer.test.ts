@@ -595,6 +595,56 @@ describe('HtmlRenderer', () => {
         expect(result).toContain('--accent-color: #3873B3;')
       })
     })
+
+    describe('typography.links.underline', () => {
+      it('should keep the template link styling when undefined', () => {
+        const htmlLayout = resume.layouts[
+          findLayoutIndex(resume, 'html')
+        ] as HtmlLayout
+        htmlLayout.typography.links = undefined
+        const renderer = new HtmlRenderer(
+          resume,
+          findLayoutIndex(resume, 'html')
+        )
+
+        const result = renderer.renderPreamble()
+
+        expect(result).not.toContain('typography.links.underline =')
+      })
+
+      it('should force underline when enabled', () => {
+        const htmlLayout = resume.layouts[
+          findLayoutIndex(resume, 'html')
+        ] as HtmlLayout
+        htmlLayout.typography.links = { underline: true }
+        const renderer = new HtmlRenderer(
+          resume,
+          findLayoutIndex(resume, 'html')
+        )
+
+        const result = renderer.renderPreamble()
+
+        expect(result).toContain('typography.links.underline = true')
+        expect(result).toContain('text-decoration: underline;')
+      })
+
+      it('should remove underline when disabled', () => {
+        const htmlLayout = resume.layouts[
+          findLayoutIndex(resume, 'html')
+        ] as HtmlLayout
+        htmlLayout.typography.links = { underline: false }
+        const renderer = new HtmlRenderer(
+          resume,
+          findLayoutIndex(resume, 'html')
+        )
+
+        const result = renderer.renderPreamble()
+
+        expect(result).toContain('typography.links.underline = false')
+        expect(result).toContain('text-decoration: none;')
+        expect(result).toContain('a:hover')
+      })
+    })
   })
 
   describe('renderPreamble', () => {

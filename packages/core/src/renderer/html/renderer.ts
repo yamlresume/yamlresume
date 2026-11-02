@@ -84,6 +84,16 @@ export class HtmlRenderer extends Renderer {
   }
 
   /**
+   * Link underline override from typography settings.
+   *
+   * `undefined` keeps the selected template's built-in link styling.
+   */
+  private get linkUnderline(): boolean | undefined {
+    const layout = this.resume.layouts?.[this.layoutIndex] as HtmlLayout
+    return layout?.typography?.links?.underline
+  }
+
+  /**
    * Fragment id attribute for a section element when showAnchors is enabled.
    */
   private sectionIdAttr(sectionId: string): string {
@@ -123,6 +133,23 @@ export class HtmlRenderer extends Renderer {
     // default to calm css if template is not found
     const templateCss = templates[layout?.template] || calm
 
+    const linkUnderline = this.linkUnderline
+    const linkStyle =
+      linkUnderline === undefined
+        ? ''
+        : linkUnderline
+          ? `
+/* typography.links.underline = true */
+a {
+  text-decoration: underline;
+}`
+          : `
+/* typography.links.underline = false */
+a,
+a:hover {
+  text-decoration: none;
+}`
+
     return `<style>
 :root {
   --text-font-size: ${fontSize};
@@ -136,7 +163,7 @@ export class HtmlRenderer extends Renderer {
   )}
 }
 ${trimCss(reset)}
-${trimCss(templateCss)}
+${trimCss(templateCss)}${linkStyle}
 </style>`
   }
 

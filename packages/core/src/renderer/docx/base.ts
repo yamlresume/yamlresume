@@ -33,6 +33,7 @@ import {
   Paragraph,
   TabStopType,
   TextRun,
+  UnderlineType,
 } from 'docx'
 import type { Parser } from '@/compiler'
 import { DocxCodeGenerator, MarkdownParser } from '@/compiler'
@@ -135,6 +136,17 @@ export abstract class DocxRenderer extends Renderer<Paragraph[]> {
   }
 
   /**
+   * Whether links should be underlined in the document.
+   */
+  protected get showUnderlinedLinks(): boolean {
+    const layout = this.resume.layouts?.[this.layoutIndex]
+
+    if (layout?.engine !== 'docx') return false
+
+    return layout.typography?.links?.underline ?? false
+  }
+
+  /**
    * Create an external hyperlink with accent-colored link text.
    */
   protected createExternalHyperlink(
@@ -156,6 +168,9 @@ export abstract class DocxRenderer extends Renderer<Paragraph[]> {
           bold: options.bold,
           italics: options.italics,
           color: this.getAccentColor(),
+          underline: this.showUnderlinedLinks
+            ? { type: UnderlineType.SINGLE }
+            : undefined,
         }),
       ],
       link,
@@ -551,6 +566,7 @@ export abstract class DocxRenderer extends Renderer<Paragraph[]> {
         fontFamily: this.getFontFamily(),
         fontSize: `${this.getBaseFontSize() / 2}pt`,
         lineSpacing: this.getLineSpacingName(),
+        links: { underline: this.showUnderlinedLinks },
       } as DocxLayout['typography'],
       hyperlinkColor: this.getAccentColor(),
     }

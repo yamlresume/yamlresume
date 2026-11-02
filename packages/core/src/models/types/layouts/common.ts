@@ -45,6 +45,14 @@ export type Margins = {
 export type LayoutEngine = 'docx' | 'html' | 'latex' | 'markdown' | 'typst'
 
 /**
+ * Defines link styling settings for typography.
+ */
+export type Links = {
+  /** Whether to underline links in the document. */
+  underline?: boolean
+}
+
+/**
  * Defines section alias settings for customizing section names.
  */
 export type Sections = {

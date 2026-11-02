@@ -50,6 +50,25 @@ describe('HtmlTypographySchema', () => {
           fontSize: null,
         },
       },
+      {
+        typography: {
+          links: {
+            underline: true,
+          },
+        },
+      },
+      {
+        typography: {
+          links: {
+            underline: false,
+          },
+        },
+      },
+      {
+        typography: {
+          links: null,
+        },
+      },
     ]
 
     for (const typography of tests) {
