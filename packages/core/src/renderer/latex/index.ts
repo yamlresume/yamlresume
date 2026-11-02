@@ -23,10 +23,10 @@
  */
 
 export { LatexRenderer } from './base'
-export { JakeRenderer } from './jake'
+export { JakeLatexRenderer } from './jake'
 export {
-  ModerncvBankingRenderer,
+  ModerncvBankingLatexRenderer,
   ModerncvBase,
-  ModerncvCasualRenderer,
-  ModerncvClassicRenderer,
+  ModerncvCasualLatexRenderer,
+  ModerncvClassicLatexRenderer,
 } from './moderncv'

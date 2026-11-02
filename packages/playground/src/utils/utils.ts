@@ -49,7 +49,7 @@ export const getBasename = (
 /**
  * Gets the file extension for a given rendering engine.
  *
- * @param engine - The rendering engine (html, latex, markdown).
+ * @param engine - The rendering engine (html, latex, markdown, typst).
  * @returns The associated file extension.
  */
 export const getExtension = (engine: LayoutEngine): string => {
@@ -60,6 +60,8 @@ export const getExtension = (engine: LayoutEngine): string => {
       return '.tex'
     case 'markdown':
       return '.md'
+    case 'typst':
+      return '.typ'
     case 'docx':
       return '.docx'
     default:

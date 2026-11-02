@@ -29,12 +29,13 @@ import { DEFAULT_RESUME } from '@/models'
 import { DocxRenderer } from './docx'
 import { HtmlRenderer } from './html'
 import {
-  ModerncvBankingRenderer,
-  ModerncvCasualRenderer,
-  ModerncvClassicRenderer,
+  ModerncvBankingLatexRenderer,
+  ModerncvCasualLatexRenderer,
+  ModerncvClassicLatexRenderer,
 } from './latex/moderncv'
 import { MarkdownRenderer } from './markdown'
 import { getResumeRenderer } from './resume'
+import { JakeTypstRenderer } from './typst'
 
 describe(getResumeRenderer, () => {
   const mockResume: Resume = DEFAULT_RESUME
@@ -46,15 +47,15 @@ describe(getResumeRenderer, () => {
     const tests = [
       {
         template: 'moderncv-banking',
-        expected: ModerncvBankingRenderer,
+        expected: ModerncvBankingLatexRenderer,
       },
       {
         template: 'moderncv-casual',
-        expected: ModerncvCasualRenderer,
+        expected: ModerncvCasualLatexRenderer,
       },
       {
         template: 'moderncv-classic',
-        expected: ModerncvClassicRenderer,
+        expected: ModerncvClassicLatexRenderer,
       },
     ] as const
 
@@ -80,7 +81,7 @@ describe(getResumeRenderer, () => {
     resume.layouts = [layoutWithNoTemplate]
 
     const renderer = getResumeRenderer(resume, 0)
-    expect(renderer).toBeInstanceOf(ModerncvBankingRenderer)
+    expect(renderer).toBeInstanceOf(ModerncvBankingLatexRenderer)
   })
 
   it('should return default renderer when template id is not valid', () => {
@@ -92,7 +93,7 @@ describe(getResumeRenderer, () => {
     resume.layouts = [layout]
 
     const renderer = getResumeRenderer(resume, 0)
-    expect(renderer).toBeInstanceOf(ModerncvBankingRenderer)
+    expect(renderer).toBeInstanceOf(ModerncvBankingLatexRenderer)
   })
 
   it('should return markdown renderer when engine is markdown', () => {
@@ -115,6 +116,29 @@ describe(getResumeRenderer, () => {
 
     const renderer = getResumeRenderer(resume, 0)
     expect(renderer).toBeInstanceOf(HtmlRenderer)
+  })
+
+  it('should return typst renderer when engine is typst', () => {
+    const resume = cloneDeep(mockResume)
+    const layout = {
+      engine: 'typst' as const,
+    }
+    resume.layouts = [layout]
+
+    const renderer = getResumeRenderer(resume, 0)
+    expect(renderer).toBeInstanceOf(JakeTypstRenderer)
+  })
+
+  it('should return default typst renderer when template id is not valid', () => {
+    const resume = cloneDeep(mockResume)
+    const layout = {
+      engine: 'typst' as const,
+      template: 'invalid-template',
+    } as never
+    resume.layouts = [layout]
+
+    const renderer = getResumeRenderer(resume, 0)
+    expect(renderer).toBeInstanceOf(JakeTypstRenderer)
   })
 
   it('should return docx renderer when engine is docx', () => {

@@ -25,11 +25,11 @@
 export { CalmDocxRenderer, DocxRenderer } from './docx'
 export { HtmlRenderer } from './html'
 export {
-  JakeRenderer,
-  ModerncvBankingRenderer,
-  ModerncvCasualRenderer,
-  ModerncvClassicRenderer,
+  JakeLatexRenderer,
+  ModerncvBankingLatexRenderer,
+  ModerncvCasualLatexRenderer,
+  ModerncvClassicLatexRenderer,
 } from './latex'
 export { MarkdownRenderer } from './markdown'
-
 export { getResumeRenderer } from './resume'
+export { JakeTypstRenderer, TypstRenderer } from './typst'

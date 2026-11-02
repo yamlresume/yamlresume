@@ -137,6 +137,15 @@ export const LATEX_TEMPLATE_OPTIONS = [
   'moderncv-classic',
 ] as const
 
+/** The options for the typst layout font size. */
+export const TYPST_FONT_SIZE_OPTIONS = ['10pt', '11pt', '12pt'] as const
+
+/** The options for the paper size. */
+export const TYPST_PAPER_SIZE_OPTIONS = ['a4', 'letter'] as const
+
+/** Defines identifiers for the available typst layout templates. */
+export const TYPST_TEMPLATE_OPTIONS = ['jake'] as const
+
 /**
  * Defines common world languages.
  *

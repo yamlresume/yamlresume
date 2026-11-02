@@ -54,14 +54,14 @@ import { normalizeUnit } from './preamble'
  * @see {@link https://www.overleaf.com/latex/templates/jakes-resume/syzfjbzwjncs}
  * @see {@link https://github.com/jakeryang/resume}
  */
-class JakeRenderer extends LatexRenderer {
+class JakeLatexRenderer extends LatexRenderer {
   // the left and right padding for the section content
   private padding: string
   // separator for contact info
   private separator: string
 
   /**
-   * Constructor for the JakeRenderer class.
+   * Constructor for the JakeLatexRenderer class.
    *
    * @param resume - The resume object
    * @param layoutIndex - The index of the selected layout to use.
@@ -873,4 +873,4 @@ ${this.renderOrderedSections()}
   }
 }
 
-export { JakeRenderer }
+export { JakeLatexRenderer }

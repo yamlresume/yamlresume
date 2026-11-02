@@ -29,12 +29,14 @@ import {
   HtmlCodeGenerator,
   LatexCodeGenerator,
   MarkdownParser,
+  TypstCodeGenerator,
 } from '@/compiler'
 import {
   DEFAULT_LATEX_LAYOUT,
   DEFAULT_RESUME,
   DEFAULT_RESUME_LAYOUTS,
   DEFAULT_RESUME_LOCALE,
+  DEFAULT_TYPST_LAYOUT,
   FILLED_RESUME,
   type LatexLayout,
   LOCALE_LANGUAGE_OPTIONS,
@@ -43,6 +45,7 @@ import {
   type OrderableSectionID,
   RESUME_SECTION_ITEMS,
   type Resume,
+  type TypstLayout,
 } from '@/models'
 import { findLayoutIndex } from '@/renderer/test-utils'
 import { getOptionTranslation, getTemplateTranslations } from '@/translations'
@@ -1035,6 +1038,31 @@ describe(transformSummary, () => {
     expect(resume.content.basics.computed?.summary).toEqual(expected)
   })
 
+  it('should handle typst layout with typography', () => {
+    const resume = cloneDeep(FILLED_RESUME)
+    const summary = 'Test summary'
+
+    resume.content.basics.summary = summary
+    resume.layouts = [
+      {
+        engine: 'typst' as const,
+        typography: {
+          fontSize: '11pt',
+        },
+      },
+    ]
+
+    const summaryParser = new MarkdownParser()
+
+    transformSummary(resume, findLayoutIndex(resume, 'typst'), summaryParser)
+
+    const expected = new TypstCodeGenerator()
+      .generate(summaryParser.parse(summary))
+      .trim()
+
+    expect(resume.content.basics.computed?.summary).toEqual(expected)
+  })
+
   it('should handle layout without engine property', () => {
     const resume = cloneDeep(FILLED_RESUME)
     const summary = 'Test summary'
@@ -1486,6 +1514,28 @@ describe(transformResumeLayoutsWithDefaultValues, () => {
     expect(layout.page?.margins?.top).toEqual('1cm')
     expect(layout.page?.margins?.bottom).toEqual(
       DEFAULT_LATEX_LAYOUT.page?.margins?.bottom
+    )
+  })
+
+  it('should merge typst layout with defaults', () => {
+    const resume = cloneDeep(DEFAULT_RESUME)
+    resume.layouts = [
+      {
+        engine: 'typst',
+        page: {
+          margins: {
+            top: '1cm',
+          },
+        },
+      } as TypstLayout,
+    ]
+
+    const transformed = transformResumeLayoutsWithDefaultValues(resume)
+    const layout = transformed.layouts?.[0] as TypstLayout
+    expect(layout.template).toEqual(DEFAULT_TYPST_LAYOUT.template)
+    expect(layout.page?.margins?.top).toEqual('1cm')
+    expect(layout.page?.margins?.bottom).toEqual(
+      DEFAULT_TYPST_LAYOUT.page?.margins?.bottom
     )
   })
 

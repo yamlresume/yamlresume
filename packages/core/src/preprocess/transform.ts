@@ -24,7 +24,12 @@
 
 import { cloneDeep, isArray, merge } from 'lodash-es'
 
-import { HtmlCodeGenerator, LatexCodeGenerator, type Parser } from '@/compiler'
+import {
+  HtmlCodeGenerator,
+  LatexCodeGenerator,
+  type Parser,
+  TypstCodeGenerator,
+} from '@/compiler'
 import {
   DEFAULT_DOCX_LAYOUT,
   DEFAULT_HTML_LAYOUT,
@@ -32,6 +37,7 @@ import {
   DEFAULT_MARKDOWN_LAYOUT,
   DEFAULT_RESUME_LAYOUTS,
   DEFAULT_RESUME_LOCALE,
+  DEFAULT_TYPST_LAYOUT,
   FILLED_RESUME_CONTENT,
   type Resume,
   type SectionID,
@@ -688,7 +694,7 @@ export function transformSummary(
   }
 
   // Choose the appropriate code generator based on the layout engine
-  let codeGenerator: LatexCodeGenerator | HtmlCodeGenerator
+  let codeGenerator: HtmlCodeGenerator | LatexCodeGenerator | TypstCodeGenerator
   let processOutput = (output: string) => output.trim()
 
   switch (layout?.engine) {
@@ -699,6 +705,9 @@ export function transformSummary(
       codeGenerator = new LatexCodeGenerator()
       processOutput = (output: string) =>
         replaceBlankLinesWithPercent(output.trim())
+      break
+    case 'typst':
+      codeGenerator = new TypstCodeGenerator()
       break
   }
 
@@ -827,6 +836,8 @@ export function transformResumeLayoutsWithDefaultValues(
           return merge(cloneDeep(DEFAULT_LATEX_LAYOUT), layout)
         case 'html':
           return merge(cloneDeep(DEFAULT_HTML_LAYOUT), layout)
+        case 'typst':
+          return merge(cloneDeep(DEFAULT_TYPST_LAYOUT), layout)
         default:
           return layout
       }

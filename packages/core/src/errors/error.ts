@@ -25,21 +25,28 @@
 import { joinNonEmptyString } from '@/utils'
 
 /**
- * Error categories using bitwise flags
+ * Error categories
  *
- * First 3 bits for category, last 5 bits for specific errors, total range:
- * 0-255 (8 bits), that is also the range of errno accepted by `process.exit`
+ * An errno is an 8-bit field: the top 3 bits hold the category, the low 5 bits
+ * hold the specific error. That keeps every errno in the 0-255 range accepted
+ * by `process.exit`.
  *
- * For now we have 3 categories of errors:
+ * Categories are distinct 3-bit field values, not bit flags: each value is the
+ * category index shifted left by 5 (`n << 5`). They are not pairwise disjoint
+ * as bitmasks (e.g. 0x60 overlaps 0x40 and 0x20) and do not need to be, since
+ * `ErrorUtils` reads the field with `errno & 0xe0` and compares by equality.
  *
- * - File related errors
- * - Format parsing errors
- * - LaTeX related errors
+ * - File related errors (0x00 - 0x1F)
+ * - Format parsing errors (0x20 - 0x3F)
+ * - LaTeX related errors (0x40 - 0x5F)
+ * - Typst related errors (0x60 - 0x7F)
+ * - AI related errors (0x80 - 0x9F)
  */
 export const ErrorCategory = {
   FILE: 0x00, // 00000000
   FORMAT: 0x20, // 00100000
   LATEX: 0x40, // 01000000
+  TYPST: 0x60, // 01100000
   AI: 0x80, // 10000000
 } as const
 
@@ -134,6 +141,32 @@ export const ErrorType = {
       [
         'LaTeX compilation timed out after {timeout} seconds.',
         'This may indicate missing LaTeX packages (e.g., fontawesome5).',
+        'Check docs for installation guide: https://yamlresume.dev/docs/installation',
+      ],
+      '\n'
+    ),
+    timeout: '',
+  },
+
+  // Typst related errors (0x60 - 0x7F)
+  TYPST_NOT_FOUND: {
+    code: 'TYPST_NOT_FOUND',
+    errno: ErrorCategory.TYPST | 0x01,
+    message: 'Typst compiler not found. Please install typst',
+  },
+
+  TYPST_COMPILE_ERROR: {
+    code: 'TYPST_COMPILE_ERROR',
+    errno: ErrorCategory.TYPST | 0x02,
+    message: 'Typst compilation failed: {error}',
+    error: '',
+  },
+  TYPST_COMPILE_TIMEOUT: {
+    code: 'TYPST_COMPILE_TIMEOUT',
+    errno: ErrorCategory.TYPST | 0x03,
+    message: joinNonEmptyString(
+      [
+        'Typst compilation timed out after {timeout} seconds.',
         'Check docs for installation guide: https://yamlresume.dev/docs/installation',
       ],
       '\n'

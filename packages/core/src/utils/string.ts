@@ -58,6 +58,40 @@ export function escapeLatex(value: string | null | undefined) {
 }
 
 /**
+ * Escape special characters in Typst markup mode.
+ *
+ * Typst treats characters like `#`, `$`, `*`, `_` as markup directives, so
+ * they must be prefixed with a backslash to render literally.
+ *
+ * @param value - value to be escaped
+ * @returns escaped value
+ */
+export function escapeTypst(value: string | null | undefined) {
+  if (isEmptyValue(value)) {
+    return value
+  }
+
+  return value.replace(/[\\#$*_~@<>[\]`]/g, (char) => `\\${char}`)
+}
+
+/**
+ * Unescape special characters in Typst markup mode.
+ *
+ * Reverts {@link escapeTypst}, e.g. when an escaped value is needed verbatim
+ * inside a Typst string literal, as link destinations and PDF metadata are.
+ *
+ * @param value - value to be unescaped
+ * @returns unescaped value
+ */
+export function unescapeTypst(value: string | null | undefined) {
+  if (isEmptyValue(value)) {
+    return value
+  }
+
+  return value.replace(/\\([\\#$*_~@<>[\]`])/g, '$1')
+}
+
+/**
  * Check if a string is empty or only contains whitespace
  *
  * @param value - string to check

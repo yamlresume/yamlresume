@@ -28,10 +28,10 @@ import { beforeEach, describe, expect, it } from 'vitest'
 import { FILLED_RESUME, type Resume } from '@/models'
 import { findLayoutIndex } from '../test-utils'
 import {
-  ModerncvBankingRenderer,
+  ModerncvBankingLatexRenderer,
   ModerncvBase,
-  ModerncvCasualRenderer,
-  ModerncvClassicRenderer,
+  ModerncvCasualLatexRenderer,
+  ModerncvClassicLatexRenderer,
 } from './moderncv'
 
 describe('ModerncvBase', () => {
@@ -40,7 +40,7 @@ describe('ModerncvBase', () => {
 
   beforeEach(() => {
     resume = cloneDeep(FILLED_RESUME)
-    renderer = new ModerncvBankingRenderer(
+    renderer = new ModerncvBankingLatexRenderer(
       resume,
       findLayoutIndex(resume, 'latex')
     )
@@ -58,7 +58,7 @@ describe('ModerncvBase', () => {
   describe('layouts', () => {
     describe('advanced.showIcons', () => {
       it('should default showIcons to true when layout is missing', () => {
-        const renderer = new ModerncvBankingRenderer(
+        const renderer = new ModerncvBankingLatexRenderer(
           resume,
           findLayoutIndex(resume, 'latex')
         )
@@ -73,7 +73,7 @@ describe('ModerncvBase', () => {
         // @ts-expect-error
         resume.layouts[idx].advanced = undefined
 
-        const renderer = new ModerncvBankingRenderer(
+        const renderer = new ModerncvBankingLatexRenderer(
           resume,
           findLayoutIndex(resume, 'latex')
         )
@@ -87,7 +87,7 @@ describe('ModerncvBase', () => {
           const idx = findLayoutIndex(resume, 'latex')
           // @ts-expect-error
           resume.layouts[idx].advanced.showIcons = test
-          const renderer = new ModerncvBankingRenderer(
+          const renderer = new ModerncvBankingLatexRenderer(
             resume,
             findLayoutIndex(resume, 'latex')
           )
@@ -106,7 +106,7 @@ describe('ModerncvBase', () => {
           },
         }
 
-        const renderer = new ModerncvBankingRenderer(
+        const renderer = new ModerncvBankingLatexRenderer(
           resume,
           findLayoutIndex(resume, 'latex')
         )
@@ -126,7 +126,7 @@ describe('ModerncvBase', () => {
   describe('renderPreamble', () => {
     it('should return empty preamble when layout engine is not latex', () => {
       resume.layouts = [{ engine: 'markdown', sections: {} }]
-      renderer = new ModerncvBankingRenderer(resume, 0)
+      renderer = new ModerncvBankingLatexRenderer(resume, 0)
       const result = renderer.renderPreamble()
       expect(result).toBe('')
     })
@@ -150,7 +150,7 @@ describe('ModerncvBase', () => {
         },
       ]
 
-      const renderer = new ModerncvBankingRenderer(a4PaperSizeResume, 0)
+      const renderer = new ModerncvBankingLatexRenderer(a4PaperSizeResume, 0)
       const result = renderer.renderPreamble()
 
       expect(result).toContain(
@@ -169,7 +169,10 @@ describe('ModerncvBase', () => {
         },
       ]
 
-      const renderer = new ModerncvBankingRenderer(letterPaperSizeResume, 0)
+      const renderer = new ModerncvBankingLatexRenderer(
+        letterPaperSizeResume,
+        0
+      )
       const result = renderer.renderPreamble()
 
       expect(result).toContain(
@@ -200,7 +203,7 @@ describe('ModerncvBase', () => {
         },
       ]
 
-      const renderer = new ModerncvBankingRenderer(coloredResume, 0)
+      const renderer = new ModerncvBankingLatexRenderer(coloredResume, 0)
       const result = renderer.renderPreamble()
 
       expect(result).toContain('\\moderncvcolor{blue}')
@@ -216,7 +219,7 @@ describe('ModerncvBase', () => {
         },
       ]
 
-      const renderer = new ModerncvBankingRenderer(coloredResume, 0)
+      const renderer = new ModerncvBankingLatexRenderer(coloredResume, 0)
       const result = renderer.renderPreamble()
 
       expect(result).toContain('\\moderncvcolor{black}')
@@ -235,7 +238,7 @@ describe('ModerncvBase', () => {
           },
         ]
 
-        const renderer = new ModerncvBankingRenderer(coloredResume, 0)
+        const renderer = new ModerncvBankingLatexRenderer(coloredResume, 0)
         const result = renderer.renderPreamble()
 
         expect(result).toContain('\\moderncvcolor{black}')
@@ -247,7 +250,7 @@ describe('ModerncvBase', () => {
       const cjkResume = cloneDeep(resume)
       cjkResume.locale = { ...cjkResume.locale, language: 'zh-hans' }
 
-      const renderer = new ModerncvBankingRenderer(
+      const renderer = new ModerncvBankingLatexRenderer(
         cjkResume,
         findLayoutIndex(cjkResume, 'latex')
       )
@@ -282,14 +285,14 @@ describe('ModerncvBase', () => {
         },
       ]
 
-      const renderer = new ModerncvBankingRenderer(noPageNumbersResume, 0)
+      const renderer = new ModerncvBankingLatexRenderer(noPageNumbersResume, 0)
       const result = renderer.renderPreamble()
 
       expect(result).toContain('\\nopagenumbers{}')
     })
 
     it('should use default font size when layout is undefined', () => {
-      renderer = new ModerncvBankingRenderer(
+      renderer = new ModerncvBankingLatexRenderer(
         resume,
         findLayoutIndex(resume, 'latex')
       )
@@ -302,7 +305,7 @@ describe('ModerncvBase', () => {
 
     it('should use default font size when typography is missing', () => {
       resume.layouts = [{ engine: 'latex', typography: undefined }]
-      renderer = new ModerncvBankingRenderer(
+      renderer = new ModerncvBankingLatexRenderer(
         resume,
         findLayoutIndex(resume, 'latex')
       )
@@ -322,7 +325,7 @@ describe('ModerncvBase', () => {
           },
         },
       ]
-      renderer = new ModerncvBankingRenderer(
+      renderer = new ModerncvBankingLatexRenderer(
         resume,
         findLayoutIndex(resume, 'latex')
       )
@@ -334,7 +337,7 @@ describe('ModerncvBase', () => {
 
     it('should use default numbers style when advanced config is missing', () => {
       resume.layouts = [{ engine: 'latex', advanced: undefined }]
-      renderer = new ModerncvBankingRenderer(
+      renderer = new ModerncvBankingLatexRenderer(
         resume,
         findLayoutIndex(resume, 'latex')
       )
@@ -378,9 +381,9 @@ describe('ModerncvBase', () => {
   describe('ModerncvStyle', () => {
     it('should render moderncv style', () => {
       const tests = [
-        { style: 'banking', renderer: ModerncvBankingRenderer },
-        { style: 'classic', renderer: ModerncvClassicRenderer },
-        { style: 'casual', renderer: ModerncvCasualRenderer },
+        { style: 'banking', renderer: ModerncvBankingLatexRenderer },
+        { style: 'classic', renderer: ModerncvClassicLatexRenderer },
+        { style: 'casual', renderer: ModerncvCasualLatexRenderer },
       ]
 
       for (const test of tests) {
@@ -403,7 +406,7 @@ describe('ModerncvBase', () => {
       const cjkResume = cloneDeep(resume)
       cjkResume.locale = { ...cjkResume.locale, language: 'zh-hans' }
 
-      let renderer = new ModerncvBankingRenderer(
+      let renderer = new ModerncvBankingLatexRenderer(
         cjkResume,
         findLayoutIndex(cjkResume, 'latex')
       )
@@ -412,14 +415,14 @@ describe('ModerncvBase', () => {
         '\\renewcommand*{\\cvitem}[3][.25em]{%'
       )
 
-      renderer = new ModerncvClassicRenderer(
+      renderer = new ModerncvClassicLatexRenderer(
         cjkResume,
         findLayoutIndex(cjkResume, 'latex')
       )
       expect(renderer.render()).not.toContain(
         '\\\\renewcommand*{\\\\cvitem}[3][.25em]{%'
       )
-      renderer = new ModerncvCasualRenderer(
+      renderer = new ModerncvCasualLatexRenderer(
         cjkResume,
         findLayoutIndex(cjkResume, 'latex')
       )
@@ -443,7 +446,7 @@ describe('ModerncvBase', () => {
       resume.content.basics.phone = phone
       resume.content.basics.url = url
 
-      renderer = new ModerncvBankingRenderer(
+      renderer = new ModerncvBankingLatexRenderer(
         resume,
         findLayoutIndex(resume, 'latex')
       )
@@ -461,7 +464,7 @@ describe('ModerncvBase', () => {
 
       resume.content.basics.name = name
 
-      renderer = new ModerncvBankingRenderer(
+      renderer = new ModerncvBankingLatexRenderer(
         resume,
         findLayoutIndex(resume, 'latex')
       )
@@ -483,7 +486,7 @@ describe('ModerncvBase', () => {
       resume.content.basics.phone = phone
       resume.content.basics.url = url
 
-      renderer = new ModerncvBankingRenderer(
+      renderer = new ModerncvBankingLatexRenderer(
         resume,
         findLayoutIndex(resume, 'latex')
       )
@@ -509,7 +512,7 @@ describe('ModerncvBase', () => {
       resume.content.basics.phone = phone
       resume.content.basics.url = url
 
-      renderer = new ModerncvBankingRenderer(
+      renderer = new ModerncvBankingLatexRenderer(
         resume,
         findLayoutIndex(resume, 'latex')
       )
@@ -535,7 +538,7 @@ describe('ModerncvBase', () => {
         country,
       }
 
-      renderer = new ModerncvBankingRenderer(
+      renderer = new ModerncvBankingLatexRenderer(
         resume,
         findLayoutIndex(resume, 'latex')
       )
@@ -558,7 +561,7 @@ describe('ModerncvBase', () => {
         },
       ]
 
-      renderer = new ModerncvBankingRenderer(
+      renderer = new ModerncvBankingLatexRenderer(
         resume,
         findLayoutIndex(resume, 'latex')
       )
@@ -589,7 +592,7 @@ describe('ModerncvBase', () => {
         },
       }
 
-      renderer = new ModerncvBankingRenderer(
+      renderer = new ModerncvBankingLatexRenderer(
         resume,
         findLayoutIndex(resume, 'latex')
       )
@@ -633,7 +636,7 @@ describe('ModerncvBase', () => {
         },
       ]
 
-      renderer = new ModerncvBankingRenderer(
+      renderer = new ModerncvBankingLatexRenderer(
         resume,
         findLayoutIndex(resume, 'latex')
       )
@@ -673,7 +676,7 @@ describe('ModerncvBase', () => {
         },
       ]
 
-      renderer = new ModerncvBankingRenderer(
+      renderer = new ModerncvBankingLatexRenderer(
         resume,
         findLayoutIndex(resume, 'latex')
       )
@@ -709,7 +712,7 @@ describe('ModerncvBase', () => {
         },
       ]
 
-      renderer = new ModerncvBankingRenderer(
+      renderer = new ModerncvBankingLatexRenderer(
         resume,
         findLayoutIndex(resume, 'latex')
       )
@@ -734,7 +737,7 @@ describe('ModerncvBase', () => {
         },
       ]
 
-      renderer = new ModerncvBankingRenderer(
+      renderer = new ModerncvBankingLatexRenderer(
         resume,
         findLayoutIndex(resume, 'latex')
       )
@@ -754,7 +757,7 @@ describe('ModerncvBase', () => {
         },
       ]
 
-      renderer = new ModerncvBankingRenderer(
+      renderer = new ModerncvBankingLatexRenderer(
         resume,
         findLayoutIndex(resume, 'latex')
       )
@@ -777,7 +780,7 @@ describe('ModerncvBase', () => {
         },
       ]
 
-      renderer = new ModerncvBankingRenderer(
+      renderer = new ModerncvBankingLatexRenderer(
         resume,
         findLayoutIndex(resume, 'latex')
       )
@@ -797,7 +800,7 @@ describe('ModerncvBase', () => {
         },
       ]
 
-      renderer = new ModerncvBankingRenderer(
+      renderer = new ModerncvBankingLatexRenderer(
         resume,
         findLayoutIndex(resume, 'latex')
       )
@@ -824,7 +827,7 @@ describe('ModerncvBase', () => {
         },
       ]
 
-      renderer = new ModerncvBankingRenderer(
+      renderer = new ModerncvBankingLatexRenderer(
         resume,
         findLayoutIndex(resume, 'latex')
       )
@@ -853,7 +856,7 @@ describe('ModerncvBase', () => {
         },
       ]
 
-      renderer = new ModerncvBankingRenderer(
+      renderer = new ModerncvBankingLatexRenderer(
         resume,
         findLayoutIndex(resume, 'latex')
       )
@@ -885,7 +888,7 @@ describe('ModerncvBase', () => {
         },
       ]
 
-      renderer = new ModerncvBankingRenderer(
+      renderer = new ModerncvBankingLatexRenderer(
         resume,
         findLayoutIndex(resume, 'latex')
       )
@@ -920,7 +923,7 @@ describe('ModerncvBase', () => {
         },
       ]
 
-      renderer = new ModerncvBankingRenderer(
+      renderer = new ModerncvBankingLatexRenderer(
         resume,
         findLayoutIndex(resume, 'latex')
       )
@@ -956,7 +959,7 @@ describe('ModerncvBase', () => {
         },
       ]
 
-      renderer = new ModerncvBankingRenderer(
+      renderer = new ModerncvBankingLatexRenderer(
         resume,
         findLayoutIndex(resume, 'latex')
       )
@@ -983,7 +986,7 @@ describe('ModerncvBase', () => {
         },
       ]
 
-      renderer = new ModerncvBankingRenderer(
+      renderer = new ModerncvBankingLatexRenderer(
         resume,
         findLayoutIndex(resume, 'latex')
       )
@@ -1014,7 +1017,7 @@ describe('ModerncvBase', () => {
         },
       ]
 
-      renderer = new ModerncvBankingRenderer(
+      renderer = new ModerncvBankingLatexRenderer(
         resume,
         findLayoutIndex(resume, 'latex')
       )

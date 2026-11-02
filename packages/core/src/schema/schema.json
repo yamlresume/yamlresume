@@ -2019,7 +2019,7 @@
     },
     "layouts": {
       "title": "Layouts",
-      "description": "Multiple output layouts configuration as a discriminated union array, supporting engines like \"docx\", \"html\", \"latex\" and \"markdown\".",
+      "description": "Multiple output layouts configuration as a discriminated union array, supporting engines like \"docx\", \"html\", \"latex\", \"markdown\" and \"typst\".",
       "anyOf": [
         {
           "type": "array",
@@ -4086,6 +4086,665 @@
                 ],
                 "additionalProperties": false,
                 "title": "Markdown Engine Layout"
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "engine": {
+                    "type": "string",
+                    "const": "typst"
+                  },
+                  "page": {
+                    "title": "Page",
+                    "description": "The page section contains page display settings, including whether to show page numbers and margins.",
+                    "anyOf": [
+                      {
+                        "type": "object",
+                        "properties": {
+                          "showPageNumbers": {
+                            "title": "[optional] Show Page Numbers",
+                            "description": "Whether to show page numbers on the page or `null`.",
+                            "anyOf": [
+                              {
+                                "type": "boolean",
+                                "title": "[optional] Show Page Numbers",
+                                "description": "Whether to show page numbers on the page or `null`."
+                              },
+                              {
+                                "type": "null"
+                              }
+                            ]
+                          },
+                          "paperSize": {
+                            "title": "[optional] Typst paper size option",
+                            "description": "A predefined option from the available Typst paper size choices or `null`.",
+                            "anyOf": [
+                              {
+                                "type": "string",
+                                "enum": [
+                                  "a4",
+                                  "letter"
+                                ],
+                                "title": "[optional] Typst paper size option",
+                                "description": "A predefined option from the available Typst paper size choices or `null`."
+                              },
+                              {
+                                "type": "null"
+                              }
+                            ]
+                          },
+                          "margins": {
+                            "title": "Margins",
+                            "description": "The margins section contains page margin settings, including top, bottom, left, and right margins.",
+                            "anyOf": [
+                              {
+                                "type": "object",
+                                "properties": {
+                                  "top": {
+                                    "title": "[optional] Top margin size",
+                                    "description": "A positive number followed by valid units: cm, pt, or in. Examples: \"2.5cm\", \"1in\", \"72pt\" or `null`.",
+                                    "examples": [
+                                      "2.5cm",
+                                      "1in",
+                                      "72pt",
+                                      "0.5cm",
+                                      "12pt"
+                                    ],
+                                    "anyOf": [
+                                      {
+                                        "type": "string",
+                                        "minLength": 2,
+                                        "maxLength": 32,
+                                        "title": "[optional] Top margin size",
+                                        "description": "A positive number followed by valid units: cm, pt, or in. Examples: \"2.5cm\", \"1in\", \"72pt\" or `null`.",
+                                        "examples": [
+                                          "2.5cm",
+                                          "1in",
+                                          "72pt",
+                                          "0.5cm",
+                                          "12pt"
+                                        ]
+                                      },
+                                      {
+                                        "type": "null"
+                                      }
+                                    ]
+                                  },
+                                  "bottom": {
+                                    "title": "[optional] Bottom margin size",
+                                    "description": "A positive number followed by valid units: cm, pt, or in. Examples: \"2.5cm\", \"1in\", \"72pt\" or `null`.",
+                                    "examples": [
+                                      "2.5cm",
+                                      "1in",
+                                      "72pt",
+                                      "0.5cm",
+                                      "12pt"
+                                    ],
+                                    "anyOf": [
+                                      {
+                                        "type": "string",
+                                        "minLength": 2,
+                                        "maxLength": 32,
+                                        "title": "[optional] Bottom margin size",
+                                        "description": "A positive number followed by valid units: cm, pt, or in. Examples: \"2.5cm\", \"1in\", \"72pt\" or `null`.",
+                                        "examples": [
+                                          "2.5cm",
+                                          "1in",
+                                          "72pt",
+                                          "0.5cm",
+                                          "12pt"
+                                        ]
+                                      },
+                                      {
+                                        "type": "null"
+                                      }
+                                    ]
+                                  },
+                                  "left": {
+                                    "title": "[optional] Left margin size",
+                                    "description": "A positive number followed by valid units: cm, pt, or in. Examples: \"2.5cm\", \"1in\", \"72pt\" or `null`.",
+                                    "examples": [
+                                      "2.5cm",
+                                      "1in",
+                                      "72pt",
+                                      "0.5cm",
+                                      "12pt"
+                                    ],
+                                    "anyOf": [
+                                      {
+                                        "type": "string",
+                                        "minLength": 2,
+                                        "maxLength": 32,
+                                        "title": "[optional] Left margin size",
+                                        "description": "A positive number followed by valid units: cm, pt, or in. Examples: \"2.5cm\", \"1in\", \"72pt\" or `null`.",
+                                        "examples": [
+                                          "2.5cm",
+                                          "1in",
+                                          "72pt",
+                                          "0.5cm",
+                                          "12pt"
+                                        ]
+                                      },
+                                      {
+                                        "type": "null"
+                                      }
+                                    ]
+                                  },
+                                  "right": {
+                                    "title": "[optional] Right margin size",
+                                    "description": "A positive number followed by valid units: cm, pt, or in. Examples: \"2.5cm\", \"1in\", \"72pt\" or `null`.",
+                                    "examples": [
+                                      "2.5cm",
+                                      "1in",
+                                      "72pt",
+                                      "0.5cm",
+                                      "12pt"
+                                    ],
+                                    "anyOf": [
+                                      {
+                                        "type": "string",
+                                        "minLength": 2,
+                                        "maxLength": 32,
+                                        "title": "[optional] Right margin size",
+                                        "description": "A positive number followed by valid units: cm, pt, or in. Examples: \"2.5cm\", \"1in\", \"72pt\" or `null`.",
+                                        "examples": [
+                                          "2.5cm",
+                                          "1in",
+                                          "72pt",
+                                          "0.5cm",
+                                          "12pt"
+                                        ]
+                                      },
+                                      {
+                                        "type": "null"
+                                      }
+                                    ]
+                                  }
+                                },
+                                "additionalProperties": false
+                              },
+                              {
+                                "type": "null"
+                              }
+                            ]
+                          }
+                        },
+                        "additionalProperties": false
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  },
+                  "template": {
+                    "title": "Template",
+                    "description": "The template section contains the resume template selection, determining the overall visual style and layout.",
+                    "anyOf": [
+                      {
+                        "type": "string",
+                        "enum": [
+                          "jake"
+                        ],
+                        "title": "[optional] Typst template option",
+                        "description": "A predefined option from the available Typst template choices or `null`."
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  },
+                  "theme": {
+                    "title": "Theme",
+                    "description": "Visual theme settings for the resume, such as accent colors and future style options.",
+                    "anyOf": [
+                      {
+                        "type": "object",
+                        "properties": {
+                          "colors": {
+                            "type": "object",
+                            "properties": {
+                              "accent": {
+                                "title": "Accent color",
+                                "description": "The accent color for the resume, either a named color preset or an arbitrary `#RRGGBB` hex color string. The markdown engine ignores this option.",
+                                "examples": [
+                                  "blue",
+                                  "#3873B3"
+                                ],
+                                "anyOf": [
+                                  {
+                                    "anyOf": [
+                                      {
+                                        "type": "string",
+                                        "enum": [
+                                          "black",
+                                          "blue",
+                                          "burgundy",
+                                          "cerulean",
+                                          "green",
+                                          "grey",
+                                          "orange",
+                                          "purple",
+                                          "red"
+                                        ],
+                                        "title": "Accent color option",
+                                        "description": "A predefined option from the available accent color choices."
+                                      },
+                                      {
+                                        "type": "string",
+                                        "pattern": "^#[0-9a-fA-F]{6}$"
+                                      }
+                                    ],
+                                    "title": "[optional] Accent color option",
+                                    "description": "The accent color for the resume, either a named color preset (\"black\", \"blue\", \"burgundy\", \"cerulean\", \"green\", \"grey\", \"orange\", \"purple\", \"red\") or an arbitrary `#RRGGBB` hex color string. The markdown engine ignores this option or `null`.",
+                                    "examples": [
+                                      "blue",
+                                      "#3873B3"
+                                    ]
+                                  },
+                                  {
+                                    "type": "null"
+                                  }
+                                ]
+                              }
+                            },
+                            "additionalProperties": false,
+                            "title": "Theme colors",
+                            "description": "Color settings for the resume theme."
+                          }
+                        },
+                        "additionalProperties": false,
+                        "title": "[optional] Theme",
+                        "description": "Visual theme settings for the resume, such as accent colors and future style options or `null`."
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  },
+                  "typography": {
+                    "title": "Typography",
+                    "description": "The typography section contains font settings, including font size options and link styling.",
+                    "anyOf": [
+                      {
+                        "type": "object",
+                        "properties": {
+                          "fontSize": {
+                            "title": "[optional] Typst font size option",
+                            "description": "A predefined option from the available Typst font size choices or `null`.",
+                            "anyOf": [
+                              {
+                                "type": "string",
+                                "enum": [
+                                  "10pt",
+                                  "11pt",
+                                  "12pt"
+                                ],
+                                "title": "[optional] Typst font size option",
+                                "description": "A predefined option from the available Typst font size choices or `null`."
+                              },
+                              {
+                                "type": "null"
+                              }
+                            ]
+                          },
+                          "fontFamily": {
+                            "title": "[optional] Font Family",
+                            "description": "A comma-separated list of font families to use. The first available font will be used or `null`.",
+                            "anyOf": [
+                              {
+                                "type": "string",
+                                "title": "[optional] Font Family",
+                                "description": "A comma-separated list of font families to use. The first available font will be used or `null`.",
+                                "example": "Libertinus Serif, Helvetica"
+                              },
+                              {
+                                "type": "null"
+                              }
+                            ]
+                          },
+                          "lineSpacing": {
+                            "title": "[optional] Line spacing option",
+                            "description": "A predefined option from the available line spacing choices or `null`.",
+                            "anyOf": [
+                              {
+                                "type": "string",
+                                "enum": [
+                                  "tight",
+                                  "snug",
+                                  "normal",
+                                  "relaxed",
+                                  "loose"
+                                ],
+                                "title": "[optional] Line spacing option",
+                                "description": "A predefined option from the available line spacing choices or `null`."
+                              },
+                              {
+                                "type": "null"
+                              }
+                            ]
+                          },
+                          "links": {
+                            "title": "Typography Links",
+                            "description": "Link styling settings for typography.",
+                            "anyOf": [
+                              {
+                                "type": "object",
+                                "properties": {
+                                  "underline": {
+                                    "default": false,
+                                    "title": "Underline Links",
+                                    "description": "Whether to underline links in the document.",
+                                    "examples": [
+                                      false,
+                                      true
+                                    ],
+                                    "type": "boolean"
+                                  }
+                                },
+                                "required": [
+                                  "underline"
+                                ],
+                                "additionalProperties": false
+                              },
+                              {
+                                "type": "null"
+                              }
+                            ]
+                          }
+                        },
+                        "additionalProperties": false
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  },
+                  "advanced": {
+                    "title": "Advanced",
+                    "description": "The Advanced section contains advanced typst settings, such as icon and URL visibility.",
+                    "anyOf": [
+                      {
+                        "type": "object",
+                        "properties": {
+                          "showIcons": {
+                            "default": true,
+                            "type": "boolean"
+                          },
+                          "showUrls": {
+                            "default": true,
+                            "type": "boolean"
+                          }
+                        },
+                        "required": [
+                          "showIcons",
+                          "showUrls"
+                        ],
+                        "additionalProperties": false
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  },
+                  "sections": {
+                    "title": "Sections",
+                    "description": "Section customization settings.",
+                    "anyOf": [
+                      {
+                        "type": "object",
+                        "properties": {
+                          "aliases": {
+                            "title": "Aliases",
+                            "description": "Section alias customization settings.",
+                            "anyOf": [
+                              {
+                                "type": "object",
+                                "properties": {
+                                  "basics": {
+                                    "title": "[optional] basics",
+                                    "description": "The name of the alias for basics section or `null`.",
+                                    "anyOf": [
+                                      {
+                                        "type": "string",
+                                        "minLength": 2,
+                                        "maxLength": 128,
+                                        "title": "[optional] basics",
+                                        "description": "The name of the alias for basics section or `null`."
+                                      },
+                                      {
+                                        "type": "null"
+                                      }
+                                    ]
+                                  },
+                                  "education": {
+                                    "title": "[optional] education",
+                                    "description": "The name of the alias for education section or `null`.",
+                                    "anyOf": [
+                                      {
+                                        "type": "string",
+                                        "minLength": 2,
+                                        "maxLength": 128,
+                                        "title": "[optional] education",
+                                        "description": "The name of the alias for education section or `null`."
+                                      },
+                                      {
+                                        "type": "null"
+                                      }
+                                    ]
+                                  },
+                                  "work": {
+                                    "title": "[optional] work",
+                                    "description": "The name of the alias for work section or `null`.",
+                                    "anyOf": [
+                                      {
+                                        "type": "string",
+                                        "minLength": 2,
+                                        "maxLength": 128,
+                                        "title": "[optional] work",
+                                        "description": "The name of the alias for work section or `null`."
+                                      },
+                                      {
+                                        "type": "null"
+                                      }
+                                    ]
+                                  },
+                                  "volunteer": {
+                                    "title": "[optional] volunteer",
+                                    "description": "The name of the alias for volunteer section or `null`.",
+                                    "anyOf": [
+                                      {
+                                        "type": "string",
+                                        "minLength": 2,
+                                        "maxLength": 128,
+                                        "title": "[optional] volunteer",
+                                        "description": "The name of the alias for volunteer section or `null`."
+                                      },
+                                      {
+                                        "type": "null"
+                                      }
+                                    ]
+                                  },
+                                  "awards": {
+                                    "title": "[optional] awards",
+                                    "description": "The name of the alias for awards section or `null`.",
+                                    "anyOf": [
+                                      {
+                                        "type": "string",
+                                        "minLength": 2,
+                                        "maxLength": 128,
+                                        "title": "[optional] awards",
+                                        "description": "The name of the alias for awards section or `null`."
+                                      },
+                                      {
+                                        "type": "null"
+                                      }
+                                    ]
+                                  },
+                                  "certificates": {
+                                    "title": "[optional] certificates",
+                                    "description": "The name of the alias for certificates section or `null`.",
+                                    "anyOf": [
+                                      {
+                                        "type": "string",
+                                        "minLength": 2,
+                                        "maxLength": 128,
+                                        "title": "[optional] certificates",
+                                        "description": "The name of the alias for certificates section or `null`."
+                                      },
+                                      {
+                                        "type": "null"
+                                      }
+                                    ]
+                                  },
+                                  "publications": {
+                                    "title": "[optional] publications",
+                                    "description": "The name of the alias for publications section or `null`.",
+                                    "anyOf": [
+                                      {
+                                        "type": "string",
+                                        "minLength": 2,
+                                        "maxLength": 128,
+                                        "title": "[optional] publications",
+                                        "description": "The name of the alias for publications section or `null`."
+                                      },
+                                      {
+                                        "type": "null"
+                                      }
+                                    ]
+                                  },
+                                  "skills": {
+                                    "title": "[optional] skills",
+                                    "description": "The name of the alias for skills section or `null`.",
+                                    "anyOf": [
+                                      {
+                                        "type": "string",
+                                        "minLength": 2,
+                                        "maxLength": 128,
+                                        "title": "[optional] skills",
+                                        "description": "The name of the alias for skills section or `null`."
+                                      },
+                                      {
+                                        "type": "null"
+                                      }
+                                    ]
+                                  },
+                                  "languages": {
+                                    "title": "[optional] languages",
+                                    "description": "The name of the alias for languages section or `null`.",
+                                    "anyOf": [
+                                      {
+                                        "type": "string",
+                                        "minLength": 2,
+                                        "maxLength": 128,
+                                        "title": "[optional] languages",
+                                        "description": "The name of the alias for languages section or `null`."
+                                      },
+                                      {
+                                        "type": "null"
+                                      }
+                                    ]
+                                  },
+                                  "interests": {
+                                    "title": "[optional] interests",
+                                    "description": "The name of the alias for interests section or `null`.",
+                                    "anyOf": [
+                                      {
+                                        "type": "string",
+                                        "minLength": 2,
+                                        "maxLength": 128,
+                                        "title": "[optional] interests",
+                                        "description": "The name of the alias for interests section or `null`."
+                                      },
+                                      {
+                                        "type": "null"
+                                      }
+                                    ]
+                                  },
+                                  "references": {
+                                    "title": "[optional] references",
+                                    "description": "The name of the alias for references section or `null`.",
+                                    "anyOf": [
+                                      {
+                                        "type": "string",
+                                        "minLength": 2,
+                                        "maxLength": 128,
+                                        "title": "[optional] references",
+                                        "description": "The name of the alias for references section or `null`."
+                                      },
+                                      {
+                                        "type": "null"
+                                      }
+                                    ]
+                                  },
+                                  "projects": {
+                                    "title": "[optional] projects",
+                                    "description": "The name of the alias for projects section or `null`.",
+                                    "anyOf": [
+                                      {
+                                        "type": "string",
+                                        "minLength": 2,
+                                        "maxLength": 128,
+                                        "title": "[optional] projects",
+                                        "description": "The name of the alias for projects section or `null`."
+                                      },
+                                      {
+                                        "type": "null"
+                                      }
+                                    ]
+                                  }
+                                },
+                                "additionalProperties": false
+                              },
+                              {
+                                "type": "null"
+                              }
+                            ]
+                          },
+                          "order": {
+                            "title": "Order",
+                            "description": "Custom order for sections in the final output.",
+                            "anyOf": [
+                              {
+                                "type": "array",
+                                "items": {
+                                  "type": "string",
+                                  "enum": [
+                                    "basics",
+                                    "education",
+                                    "work",
+                                    "volunteer",
+                                    "awards",
+                                    "certificates",
+                                    "publications",
+                                    "skills",
+                                    "languages",
+                                    "interests",
+                                    "references",
+                                    "projects"
+                                  ],
+                                  "title": "Section option",
+                                  "description": "A predefined option from the available section choices."
+                                }
+                              },
+                              {
+                                "type": "null"
+                              }
+                            ]
+                          }
+                        },
+                        "additionalProperties": false
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  }
+                },
+                "required": [
+                  "engine"
+                ],
+                "additionalProperties": false,
+                "title": "Typst Engine Layout"
               }
             ]
           }

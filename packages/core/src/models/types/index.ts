@@ -74,6 +74,10 @@ export type {
   Margins,
   MarkdownLayout,
   Sections,
+  TypstAdvanced,
+  TypstLayout,
+  TypstPage,
+  TypstTypography,
 } from './layouts'
 export type { Locale } from './locale'
 export * from './options'

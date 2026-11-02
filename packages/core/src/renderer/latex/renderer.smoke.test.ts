@@ -28,7 +28,7 @@ import { cloneDeep } from 'lodash-es'
 import { describe, expect, it } from 'vitest'
 import { removeKeysFromObject } from '@/utils'
 import { findLayoutIndex, sections } from '../test-utils'
-import { ModerncvBankingRenderer } from './moderncv'
+import { ModerncvBankingLatexRenderer } from './moderncv'
 
 describe('LaTeX renderer smoke test', () => {
   const resume = loadFixture(join(__dirname, '..'), 'full-resume.yml')
@@ -48,7 +48,7 @@ describe('LaTeX renderer smoke test', () => {
       removeKeysFromObject(cloneDeep(resume), sections),
     ],
   ])('renders %s', (_description, input) => {
-    const result = new ModerncvBankingRenderer(input, layoutIndex).render()
+    const result = new ModerncvBankingLatexRenderer(input, layoutIndex).render()
     expectValidLaTeXDocument(result)
   })
 })

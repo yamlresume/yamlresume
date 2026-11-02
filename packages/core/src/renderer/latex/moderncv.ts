@@ -861,7 +861,7 @@ ${this.renderOrderedSections()}
 /**
  * Renderer for the banking style of moderncv.
  */
-class ModerncvBankingRenderer extends ModerncvBase {
+class ModerncvBankingLatexRenderer extends ModerncvBase {
   /**
    * Create moderncv renderer with banking style.
    *
@@ -881,7 +881,7 @@ class ModerncvBankingRenderer extends ModerncvBase {
 /**
  * Renderer for the casual style of moderncv.
  */
-class ModerncvCasualRenderer extends ModerncvBase {
+class ModerncvCasualLatexRenderer extends ModerncvBase {
   /**
    * Create a moderncv renderer with casual style.
    *
@@ -901,7 +901,7 @@ class ModerncvCasualRenderer extends ModerncvBase {
 /**
  * Renderer for the classic style of moderncv.
  */
-class ModerncvClassicRenderer extends ModerncvBase {
+class ModerncvClassicLatexRenderer extends ModerncvBase {
   /**
    * Create moderncv renderer with classic style.
    *
@@ -919,8 +919,8 @@ class ModerncvClassicRenderer extends ModerncvBase {
 }
 
 export {
-  ModerncvBankingRenderer,
+  ModerncvBankingLatexRenderer,
   ModerncvBase,
-  ModerncvCasualRenderer,
-  ModerncvClassicRenderer,
+  ModerncvCasualLatexRenderer,
+  ModerncvClassicLatexRenderer,
 }

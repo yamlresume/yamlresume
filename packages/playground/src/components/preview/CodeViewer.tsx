@@ -30,8 +30,8 @@ import { Editor } from '@/components'
 export interface CodeViewerProps {
   /** The code content to display. */
   content: string
-  /** The language of the code (markdown or latex). */
-  language: 'markdown' | 'latex' | 'yaml'
+  /** The language of the code (markdown, latex, or typst). */
+  language: 'markdown' | 'latex' | 'typst' | 'yaml'
 }
 
 /**

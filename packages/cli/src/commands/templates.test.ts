@@ -27,8 +27,10 @@ import {
   getDocxTemplateDetail,
   getHtmlTemplateDetail,
   getLatexTemplateDetail,
+  getTypstTemplateDetail,
   HTML_TEMPLATE_OPTIONS,
   LATEX_TEMPLATE_OPTIONS,
+  TYPST_TEMPLATE_OPTIONS,
 } from '@yamlresume/core'
 import type { Command } from 'commander'
 import { consola } from 'consola'
@@ -73,6 +75,15 @@ describe(listTemplates, () => {
       expect(result).toContain(details.description) // Description
     })
 
+    // Check if all Typst templates are included
+    TYPST_TEMPLATE_OPTIONS.forEach((value) => {
+      const details = getTypstTemplateDetail(value)
+      expect(result).toContain(value) // Template ID
+      expect(result).toContain(details.engine) // Engine
+      expect(result).toContain(details.name) // Template Name
+      expect(result).toContain(details.description) // Description
+    })
+
     // Check if the table has the correct number of rows
     const rows = result.trim().split('\n')
     // +2 for header and separator
@@ -80,6 +91,7 @@ describe(listTemplates, () => {
       LATEX_TEMPLATE_OPTIONS.length +
         HTML_TEMPLATE_OPTIONS.length +
         DOCX_TEMPLATE_OPTIONS.length +
+        TYPST_TEMPLATE_OPTIONS.length +
         2
     )
   })

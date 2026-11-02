@@ -27,8 +27,10 @@ import {
   getDocxTemplateDetail,
   getHtmlTemplateDetail,
   getLatexTemplateDetail,
+  getTypstTemplateDetail,
   HTML_TEMPLATE_OPTIONS,
   LATEX_TEMPLATE_OPTIONS,
+  TYPST_TEMPLATE_OPTIONS,
 } from '@yamlresume/core'
 import { Command } from 'commander'
 import consola from 'consola'
@@ -53,6 +55,10 @@ export function listTemplates() {
     }),
     ...DOCX_TEMPLATE_OPTIONS.map((value) => {
       const details = getDocxTemplateDetail(value)
+      return [value, details.engine, details.name, details.description]
+    }),
+    ...TYPST_TEMPLATE_OPTIONS.map((value) => {
+      const details = getTypstTemplateDetail(value)
       return [value, details.engine, details.name, details.description]
     }),
   ]

@@ -29,6 +29,7 @@ import { DocxLayoutSchema } from './docx/'
 import { HtmlLayoutSchema } from './html/'
 import { LatexLayoutSchema } from './latex/'
 import { MarkdownLayoutSchema } from './markdown/'
+import { TypstLayoutSchema } from './typst/'
 
 /**
  * A zod schema that combines all layout-related configurations.
@@ -41,6 +42,7 @@ export const LayoutsSchema = z.object({
         HtmlLayoutSchema,
         LatexLayoutSchema,
         MarkdownLayoutSchema,
+        TypstLayoutSchema,
       ])
     )
     .nullish()
@@ -49,7 +51,7 @@ export const LayoutsSchema = z.object({
       description: joinNonEmptyString(
         [
           'Multiple output layouts configuration as a discriminated union array,',
-          'supporting engines like "docx", "html", "latex" and "markdown".',
+          'supporting engines like "docx", "html", "latex", "markdown" and "typst".',
         ],
         ' '
       ),

@@ -44,5 +44,6 @@ export {
   DocxCodeGenerator,
   HtmlCodeGenerator,
   LatexCodeGenerator,
+  TypstCodeGenerator,
 } from './codegen'
 export { MarkdownParser, type Parser } from './parser'

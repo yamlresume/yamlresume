@@ -28,18 +28,21 @@ import type {
   HtmlTemplate,
   LatexTemplate,
   LocaleLanguage,
+  TypstTemplate,
 } from '@/models'
 import {
   DOCX_TEMPLATE_OPTIONS,
   HTML_TEMPLATE_OPTIONS,
   LATEX_TEMPLATE_OPTIONS,
   LOCALE_LANGUAGE_OPTIONS,
+  TYPST_TEMPLATE_OPTIONS,
 } from './options'
 import {
   getDocxTemplateDetail,
   getHtmlTemplateDetail,
   getLatexTemplateDetail,
   getLocaleLanguageDetail,
+  getTypstTemplateDetail,
 } from './resume'
 
 describe(getLocaleLanguageDetail, () => {
@@ -93,6 +96,25 @@ describe(getDocxTemplateDetail, () => {
 
   it('should throw an error for invalid template option', () => {
     expect(() => getDocxTemplateDetail('invalid' as DocxTemplate)).toThrow(
+      'Invalid template option: invalid'
+    )
+  })
+})
+
+describe(getTypstTemplateDetail, () => {
+  it('should return the template option code and name', () => {
+    for (const template of TYPST_TEMPLATE_OPTIONS) {
+      const result = getTypstTemplateDetail(template)
+
+      expect(result).toEqual({
+        id: template,
+        ...getTypstTemplateDetail(template),
+      })
+    }
+  })
+
+  it('should throw an error for invalid template option', () => {
+    expect(() => getTypstTemplateDetail('invalid' as TypstTemplate)).toThrow(
       'Invalid template option: invalid'
     )
   })

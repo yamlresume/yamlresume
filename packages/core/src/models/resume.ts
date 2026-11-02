@@ -22,7 +22,11 @@
  * IN THE SOFTWARE.
  */
 
-import { DOCX_FONT_SIZE_OPTIONS, LATEX_FONT_SIZE_OPTIONS } from './options'
+import {
+  DOCX_FONT_SIZE_OPTIONS,
+  LATEX_FONT_SIZE_OPTIONS,
+  TYPST_FONT_SIZE_OPTIONS,
+} from './options'
 import type {
   Content,
   DocxLayout,
@@ -39,6 +43,8 @@ import type {
   OrderableSectionID,
   Resume,
   ResumeItem,
+  TypstLayout,
+  TypstTemplate,
 } from './types'
 
 /**
@@ -148,11 +154,33 @@ export function getLatexTemplateDetail(template: LatexTemplate) {
 }
 
 /**
- * Get the detail of the given HTML template.
+ * Get the detail of the given Typst template.
  *
  * @param template - The template to get the detail for.
  * @returns The detail of the template.
  */
+export function getTypstTemplateDetail(template: TypstTemplate) {
+  const templateDetails: Record<
+    TypstTemplate,
+    { engine: LayoutEngine; name: string; description: string }
+  > = {
+    jake: {
+      engine: 'typst',
+      name: "Jake's Resume",
+      description:
+        "A simple, straight-forward resume template based on Jake's Resume",
+    },
+  }
+
+  if (template in templateDetails) {
+    return {
+      id: template,
+      ...templateDetails[template],
+    }
+  }
+
+  throw new Error(`Invalid template option: ${template}`)
+}
 export function getHtmlTemplateDetail(template: HtmlTemplate) {
   const templateDetails: Record<
     HtmlTemplate,
@@ -471,6 +499,29 @@ export const DEFAULT_LATEX_LAYOUT: LatexLayout = {
   },
   typography: {
     fontSize: LATEX_FONT_SIZE_OPTIONS[0],
+  },
+}
+
+/** Default Typst layout configuration for the new layouts array. */
+export const DEFAULT_TYPST_LAYOUT: TypstLayout = {
+  engine: 'typst',
+  template: 'jake',
+  advanced: {
+    showIcons: true,
+    showUrls: true,
+  },
+  page: {
+    margins: {
+      top: DEFAULT_TOP_BOTTOM_MARGIN,
+      bottom: DEFAULT_TOP_BOTTOM_MARGIN,
+      left: DEFAULT_LEFT_RIGHT_MARGIN,
+      right: DEFAULT_LEFT_RIGHT_MARGIN,
+    },
+    showPageNumbers: false,
+    paperSize: 'a4',
+  },
+  typography: {
+    fontSize: TYPST_FONT_SIZE_OPTIONS[0],
   },
 }
 

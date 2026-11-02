@@ -42,7 +42,7 @@ export type Margins = {
 /**
  * A union type for all possible layout engines.
  */
-export type LayoutEngine = 'docx' | 'html' | 'latex' | 'markdown'
+export type LayoutEngine = 'docx' | 'html' | 'latex' | 'markdown' | 'typst'
 
 /**
  * Defines section alias settings for customizing section names.

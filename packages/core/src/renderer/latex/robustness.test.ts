@@ -25,11 +25,11 @@
 import { expect } from 'vitest'
 import type { Resume } from '@/models'
 import { defineRendererRobustnessSuite } from '../test-utils'
-import { JakeRenderer } from './jake'
+import { JakeLatexRenderer } from './jake'
 import {
-  ModerncvBankingRenderer,
-  ModerncvCasualRenderer,
-  ModerncvClassicRenderer,
+  ModerncvBankingLatexRenderer,
+  ModerncvCasualLatexRenderer,
+  ModerncvClassicLatexRenderer,
 } from './moderncv'
 
 defineRendererRobustnessSuite({
@@ -37,24 +37,24 @@ defineRendererRobustnessSuite({
   engine: 'latex',
   renderers: [
     {
-      name: 'JakeRenderer',
+      name: 'JakeLatexRenderer',
       create: (resume: Resume, layoutIndex: number) =>
-        new JakeRenderer(resume, layoutIndex),
+        new JakeLatexRenderer(resume, layoutIndex),
     },
     {
-      name: 'ModerncvBankingRenderer',
+      name: 'ModerncvBankingLatexRenderer',
       create: (resume: Resume, layoutIndex: number) =>
-        new ModerncvBankingRenderer(resume, layoutIndex),
+        new ModerncvBankingLatexRenderer(resume, layoutIndex),
     },
     {
-      name: 'ModerncvClassicRenderer',
+      name: 'ModerncvClassicLatexRenderer',
       create: (resume: Resume, layoutIndex: number) =>
-        new ModerncvClassicRenderer(resume, layoutIndex),
+        new ModerncvClassicLatexRenderer(resume, layoutIndex),
     },
     {
-      name: 'ModerncvCasualRenderer',
+      name: 'ModerncvCasualLatexRenderer',
       create: (resume: Resume, layoutIndex: number) =>
-        new ModerncvCasualRenderer(resume, layoutIndex),
+        new ModerncvCasualLatexRenderer(resume, layoutIndex),
     },
   ],
   expectValidOutput(output) {

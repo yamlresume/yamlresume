@@ -49,12 +49,22 @@ describe('ErrorCategory', () => {
     expect(values.length).toBe(new Set(values).size)
   })
 
-  it('should have non-overlapping ranges', () => {
+  it('should keep each category inside the category bits', () => {
     const categories = Object.values(ErrorCategory)
-    for (let i = 0; i < categories.length; i++) {
-      for (let j = i + 1; j < categories.length; j++) {
-        expect(categories[i] & categories[j]).toBe(0)
-      }
+    for (const category of categories) {
+      // the category must fit in the top 3 bits, leaving the low 5 bits to
+      // the subcategory, otherwise `ErrorUtils.getCategory` would resolve it
+      // to a different category
+      expect(category & 0xe0).toBe(category)
+      expect(category & 0x1f).toBe(0)
+    }
+    expect(new Set(categories).size).toBe(categories.length)
+  })
+
+  it('should resolve every error number back to its category', () => {
+    for (const error of Object.values(ErrorType)) {
+      expect(ErrorUtils.getCategory(error.errno)).toBeDefined()
+      expect(ErrorUtils.getSubcategory(error.errno)).toBeGreaterThan(0)
     }
   })
 })
@@ -67,6 +77,10 @@ describe('ErrorUtils', () => {
     expect(ErrorUtils.getCategory(ErrorType.LATEX_NOT_FOUND.errno)).toBe(
       'LATEX'
     )
+    expect(ErrorUtils.getCategory(ErrorType.TYPST_COMPILE_ERROR.errno)).toBe(
+      'TYPST'
+    )
+    expect(ErrorUtils.getCategory(ErrorType.INVALID_LANGUAGE.errno)).toBe('AI')
   })
 
   it('should get the correct subcategory for an error number', () => {
@@ -77,6 +91,9 @@ describe('ErrorUtils', () => {
     expect(ErrorUtils.getSubcategory(ErrorType.INVALID_YAML.errno)).toBe(0x01)
     expect(ErrorUtils.getSubcategory(ErrorType.INVALID_JSON.errno)).toBe(0x02)
     expect(ErrorUtils.getSubcategory(ErrorType.LATEX_COMPILE_ERROR.errno)).toBe(
+      0x02
+    )
+    expect(ErrorUtils.getSubcategory(ErrorType.TYPST_COMPILE_ERROR.errno)).toBe(
       0x02
     )
   })
@@ -95,7 +112,13 @@ describe('ErrorUtils', () => {
       ErrorUtils.isCategory(ErrorType.LATEX_NOT_FOUND.errno, 'LATEX')
     ).toBe(true)
     expect(
+      ErrorUtils.isCategory(ErrorType.TYPST_COMPILE_ERROR.errno, 'TYPST')
+    ).toBe(true)
+    expect(
       ErrorUtils.isCategory(ErrorType.FILE_NOT_FOUND.errno, 'FORMAT')
+    ).toBe(false)
+    expect(
+      ErrorUtils.isCategory(ErrorType.TYPST_COMPILE_ERROR.errno, 'FILE')
     ).toBe(false)
   })
 })

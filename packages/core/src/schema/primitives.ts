@@ -44,6 +44,9 @@ import {
   LOCALE_LANGUAGE_OPTIONS,
   NETWORK_OPTIONS,
   type ORDERABLE_SECTION_IDS,
+  TYPST_FONT_SIZE_OPTIONS,
+  TYPST_PAPER_SIZE_OPTIONS,
+  TYPST_TEMPLATE_OPTIONS,
 } from '@/models'
 import { joinNonEmptyString } from '@/utils'
 import { nullifySchema } from './utils'
@@ -71,6 +74,9 @@ type Options =
   | typeof NETWORK_OPTIONS
   | typeof LATEX_PAPER_SIZE_OPTIONS
   | typeof ORDERABLE_SECTION_IDS
+  | typeof TYPST_FONT_SIZE_OPTIONS
+  | typeof TYPST_PAPER_SIZE_OPTIONS
+  | typeof TYPST_TEMPLATE_OPTIONS
 
 /**
  * Creates an error message for an optionSchema
@@ -426,6 +432,40 @@ export const LatexFontspecNumbersOptionSchema = optionSchema(
 export const LatexTemplateOptionSchema = optionSchema(
   LATEX_TEMPLATE_OPTIONS,
   'LaTeX template'
+)
+
+/**
+ * A zod schema for Typst fontFamily option in layout.
+ */
+export const TypstFontFamilySchema = z.string().meta({
+  title: 'Font Family',
+  description:
+    'A comma-separated list of font families to use. The first available font will be used.',
+  example: 'Libertinus Serif, Helvetica',
+})
+
+/**
+ * A zod schema for Typst fontSize option in layout.
+ */
+export const TypstFontSizeOptionSchema = optionSchema(
+  TYPST_FONT_SIZE_OPTIONS,
+  'Typst font size'
+)
+
+/**
+ * A zod schema for a Typst paper size option.
+ */
+export const TypstPaperSizeOptionSchema = optionSchema(
+  TYPST_PAPER_SIZE_OPTIONS,
+  'Typst paper size'
+)
+
+/**
+ * A zod schema for a Typst template option.
+ */
+export const TypstTemplateOptionSchema = optionSchema(
+  TYPST_TEMPLATE_OPTIONS,
+  'Typst template'
 )
 
 /**

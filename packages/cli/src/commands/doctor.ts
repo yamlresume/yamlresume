@@ -69,6 +69,19 @@ export async function checkTectonic() {
 }
 
 /**
+ * Check if Typst is installed
+ */
+export async function checkTypst() {
+  consola.info('Checking Typst...')
+  try {
+    const { stdout } = await execa('typst', ['--version'])
+    console.log(`  Typst: ${stdout.split('\n')[0]}\n`)
+  } catch {
+    console.log('  Typst: Not Found\n')
+  }
+}
+
+/**
  * Check if required fonts are installed
  */
 export async function checkFonts() {
@@ -104,6 +117,7 @@ export function createDoctorCommand() {
       await checkSystem()
       await checkXeTeX()
       await checkTectonic()
+      await checkTypst()
       await checkFonts()
     })
 }

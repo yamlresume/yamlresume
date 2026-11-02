@@ -23,7 +23,7 @@
  */
 
 import type { Node } from '@/compiler'
-import type { DocxLayout, HtmlLayout, LatexLayout } from '@/models'
+import type { DocxLayout, HtmlLayout, LatexLayout, TypstLayout } from '@/models'
 
 /**
  * Context for code generation containing layout settings.
@@ -34,6 +34,7 @@ export interface CodeGenerationContext {
     | LatexLayout['typography']
     | HtmlLayout['typography']
     | DocxLayout['typography']
+    | TypstLayout['typography']
   /** Hyperlink text color as hex without `#` (DOCX). */
   hyperlinkColor?: string
 }

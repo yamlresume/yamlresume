@@ -30,22 +30,27 @@ import type { Resume } from '@/models'
 import { CalmDocxRenderer } from './docx'
 import { HtmlRenderer } from './html'
 import {
-  JakeRenderer,
-  ModerncvBankingRenderer,
-  ModerncvCasualRenderer,
-  ModerncvClassicRenderer,
+  JakeLatexRenderer,
+  ModerncvBankingLatexRenderer,
+  ModerncvCasualLatexRenderer,
+  ModerncvClassicLatexRenderer,
 } from './latex'
 import { MarkdownRenderer } from './markdown'
+import { JakeTypstRenderer } from './typst'
 
 const DOCX_RESUME_RENDERER_MAP = {
   calm: CalmDocxRenderer,
 }
 
 const LATEX_RESUME_RENDERER_MAP = {
-  jake: JakeRenderer,
-  'moderncv-banking': ModerncvBankingRenderer,
-  'moderncv-classic': ModerncvClassicRenderer,
-  'moderncv-casual': ModerncvCasualRenderer,
+  jake: JakeLatexRenderer,
+  'moderncv-banking': ModerncvBankingLatexRenderer,
+  'moderncv-classic': ModerncvClassicLatexRenderer,
+  'moderncv-casual': ModerncvCasualLatexRenderer,
+}
+
+const TYPST_RESUME_RENDERER_MAP = {
+  jake: JakeTypstRenderer,
 }
 
 /**
@@ -97,7 +102,7 @@ export function getResumeRenderer(
 
       // default to use moderncv banking style if template is not specified
       if (!template) {
-        return new ModerncvBankingRenderer(
+        return new ModerncvBankingLatexRenderer(
           resume as Resume,
           layoutIndex,
           summaryParser
@@ -107,8 +112,22 @@ export function getResumeRenderer(
       return new (get(
         LATEX_RESUME_RENDERER_MAP,
         template,
-        ModerncvBankingRenderer
+        ModerncvBankingLatexRenderer
       ))(resume as Resume, layoutIndex, summaryParser)
+    }
+    case 'typst': {
+      const template = layout.template
+
+      // default to use jake style if template is not specified
+      if (!template) {
+        return new JakeTypstRenderer(resume, layoutIndex, summaryParser)
+      }
+
+      return new (get(TYPST_RESUME_RENDERER_MAP, template, JakeTypstRenderer))(
+        resume,
+        layoutIndex,
+        summaryParser
+      )
     }
     default:
       // @ts-expect-error

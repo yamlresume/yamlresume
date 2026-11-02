@@ -33,6 +33,12 @@ import type {
   Links,
 } from './latex'
 import type { MarkdownLayout } from './markdown'
+import type {
+  TypstAdvanced,
+  TypstLayout,
+  TypstPage,
+  TypstTypography,
+} from './typst'
 
 /**
  * Array of layout items supporting multiple output formats.
@@ -53,6 +59,15 @@ export type {
   LayoutEngine,
   Links,
   MarkdownLayout,
+  TypstAdvanced,
+  TypstLayout,
+  TypstPage,
+  TypstTypography,
 }
-export type Layout = DocxLayout | HtmlLayout | LatexLayout | MarkdownLayout
+export type Layout =
+  | DocxLayout
+  | HtmlLayout
+  | LatexLayout
+  | MarkdownLayout
+  | TypstLayout
 export type Layouts = Layout[]

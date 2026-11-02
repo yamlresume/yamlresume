@@ -39,6 +39,7 @@ import {
   checkFonts,
   checkSystem,
   checkTectonic,
+  checkTypst,
   checkXeTeX,
   createDoctorCommand,
 } from './doctor'
@@ -141,6 +142,33 @@ describe('doctor', () => {
     })
   })
 
+  describe('checkTypst', () => {
+    it('should log version when Typst is installed', async () => {
+      vi.mocked(execa).mockResolvedValueOnce({
+        stdout: 'typst 0.15.0',
+        // biome-ignore lint/suspicious/noExplicitAny: ignore
+      } as any)
+
+      await checkTypst()
+
+      expect(execa).toHaveBeenCalledWith('typst', ['--version'])
+      expect(logSpy).toHaveBeenCalledWith(
+        expect.stringContaining('Typst: typst 0.15.0')
+      )
+    })
+
+    it('should log Not Found when Typst is not installed', async () => {
+      vi.mocked(execa).mockRejectedValueOnce(new Error('Not found'))
+
+      await checkTypst()
+
+      expect(execa).toHaveBeenCalledWith('typst', ['--version'])
+      expect(logSpy).toHaveBeenCalledWith(
+        expect.stringContaining('Typst: Not Found')
+      )
+    })
+  })
+
   describe('checkFonts', () => {
     it('should check for required fonts and log status', async () => {
       vi.mocked(getFonts).mockResolvedValue(['Linux Libertine O', 'Arial'])
@@ -183,7 +211,7 @@ describe('doctor', () => {
 
       // Verify things were called (integration verification)
       expect(envinfo.run).toHaveBeenCalled()
-      expect(execa).toHaveBeenCalledTimes(2) // XeTeX + Tectonic
+      expect(execa).toHaveBeenCalledTimes(3) // XeTeX + Tectonic + Typst
       expect(getFonts).toHaveBeenCalled()
     })
   })

@@ -41,6 +41,9 @@ import type {
   LINE_SPACING_OPTIONS,
   LOCALE_LANGUAGE_OPTIONS,
   NETWORK_OPTIONS,
+  TYPST_FONT_SIZE_OPTIONS,
+  TYPST_PAPER_SIZE_OPTIONS,
+  TYPST_TEMPLATE_OPTIONS,
 } from '@/models'
 
 /**
@@ -164,6 +167,29 @@ export type Level = (typeof LEVEL_OPTIONS)[number]
  * A union type for all possible latex paper size options.
  */
 export type LatexPaperSize = (typeof LATEX_PAPER_SIZE_OPTIONS)[number]
+
+/**
+ * A union type for all possible typst font size options.
+ *
+ * For now only 3 options are supported:
+ *
+ * - `10pt` - 10pt font size (default)
+ * - `11pt` - 11pt font size
+ * - `12pt` - 12pt font size
+ */
+export type TypstFontSize = (typeof TYPST_FONT_SIZE_OPTIONS)[number]
+
+/**
+ * A union type for all possible template options.
+ *
+ * @see {@link https://yamlresume.dev/docs/layouts/typst/templates}
+ */
+export type TypstTemplate = (typeof TYPST_TEMPLATE_OPTIONS)[number]
+
+/**
+ * A union type for all possible typst paper size options.
+ */
+export type TypstPaperSize = (typeof TYPST_PAPER_SIZE_OPTIONS)[number]
 
 /**
  * A union type for all possible line spacing options.

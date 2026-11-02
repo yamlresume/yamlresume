@@ -37,7 +37,13 @@ import {
   YAMLResumeError,
 } from '@yamlresume/core'
 import { readResumeFile } from './read'
-import { compileLaTeX, getPdfPath, LATEX_COMPILE_TIMEOUT } from './utils'
+import {
+  compileLaTeX,
+  compileTypst,
+  getPdfPath,
+  getTypstPdfPath,
+  LATEX_COMPILE_TIMEOUT,
+} from './utils'
 
 /**
  * Options for building resume outputs.
@@ -114,6 +120,8 @@ export function normalizeExtension(extension: string): string {
       return 'markdown'
     case '.tex':
       return 'tex'
+    case '.typ':
+      return 'typ'
     default:
       return extension.replace('.', '')
   }
@@ -243,6 +251,7 @@ export async function buildResumeFile(
     html: allLayouts.filter((l) => l.engine === 'html').length,
     latex: allLayouts.filter((l) => l.engine === 'latex').length,
     markdown: allLayouts.filter((l) => l.engine === 'markdown').length,
+    typst: allLayouts.filter((l) => l.engine === 'typst').length,
   }
 
   // Track current index for each engine
@@ -251,6 +260,7 @@ export async function buildResumeFile(
     html: 0,
     latex: 0,
     markdown: 0,
+    typst: 0,
   }
 
   const outputs: string[] = []
@@ -321,6 +331,25 @@ export async function buildResumeFile(
             logger
           )
         )
+        break
+      }
+      case 'typst': {
+        const typFile = await generateOutput(
+          resumePath,
+          resume,
+          indices.typst++,
+          totals.typst,
+          options.output,
+          '.typ',
+          layoutIndex,
+          logger
+        )
+        outputs.push(typFile)
+
+        if (pdf === true) {
+          await compileTypst(typFile, options.output, timeout, logger)
+          outputs.push(getTypstPdfPath(typFile))
+        }
         break
       }
     }

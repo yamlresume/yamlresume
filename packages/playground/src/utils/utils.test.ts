@@ -80,6 +80,10 @@ describe(getExtension, () => {
         extension: '.tex',
       },
       {
+        engine: 'typst',
+        extension: '.typ',
+      },
+      {
         engine: 'docx',
         extension: '.docx',
       },

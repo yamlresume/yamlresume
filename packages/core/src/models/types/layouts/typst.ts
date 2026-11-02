@@ -1,0 +1,80 @@
+/**
+ * MIT License
+ *
+ * Copyright (c) 2023–Present PPResume (https://ppresume.com)
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to
+ * deal in the Software without restriction, including without limitation the
+ * rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+ * sell copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+ * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+ * IN THE SOFTWARE.
+ */
+
+import type {
+  LineSpacing,
+  Theme,
+  TypstFontSize,
+  TypstPaperSize,
+  TypstTemplate,
+} from '../options'
+import type { Margins, Sections } from './common'
+
+export type Links = {
+  /** Whether to underline links in the document. */
+  underline?: boolean
+}
+
+export type TypstTypography = {
+  /** Base font size for the document (e.g., "10pt", "11pt"). */
+  fontSize?: TypstFontSize
+  /** A comma-separated list of font families to use. */
+  fontFamily?: string
+  /** Line spacing for the document (e.g., "tight", "normal", "relaxed"). */
+  lineSpacing?: LineSpacing
+  /** Link styling settings. */
+  links?: Links
+}
+
+export type TypstAdvanced = {
+  /** Whether to show icons for links and profiles. */
+  showIcons?: boolean
+  /** Whether to show raw URLs or hide them behind reasonable text. */
+  showUrls?: boolean
+}
+
+export type TypstPage = {
+  /** Whether to display page numbers. */
+  showPageNumbers?: boolean
+  /** Defines page margin settings for document layout. */
+  margins?: Margins
+  /** Defines the paper size for the document. */
+  paperSize?: TypstPaperSize
+}
+
+export type TypstLayout = {
+  engine: 'typst'
+  /** Defines page-level settings for document presentation. */
+  page?: TypstPage
+  /** Defines section customization settings. */
+  sections?: Sections
+  /** Defines the selected template. */
+  template?: TypstTemplate
+  /** Defines visual theme settings for the resume. */
+  theme?: Theme
+  /** Defines typography settings for document formatting. */
+  typography?: TypstTypography
+  /** Defines advanced configuration options. */
+  advanced?: TypstAdvanced
+}

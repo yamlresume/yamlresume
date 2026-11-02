@@ -1,0 +1,96 @@
+/**
+ * MIT License
+ *
+ * Copyright (c) 2023–Present PPResume (https://ppresume.com)
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to
+ * deal in the Software without restriction, including without limitation the
+ * rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+ * sell copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+ * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+ * IN THE SOFTWARE.
+ */
+
+import { describe, expect, it } from 'vitest'
+
+import { ACCENT_COLOR_OPTIONS, TYPST_TEMPLATE_OPTIONS } from '@/models'
+import { optionSchemaMessage } from '../../primitives'
+import { expectSchemaMetadata, validateZodErrors } from '../../zod'
+import { TypstTemplateSchema } from './template'
+
+const theme = (accent: unknown) => ({ theme: { colors: { accent } } })
+
+describe('TypstTemplateSchema', () => {
+  it('should have correct metadata', () => {
+    expectSchemaMetadata(TypstTemplateSchema.shape.template)
+    expectSchemaMetadata(TypstTemplateSchema.shape.theme)
+  })
+
+  it('should validate a template if it is valid', () => {
+    const tests = [
+      {},
+      { template: TYPST_TEMPLATE_OPTIONS[0] },
+      { template: null },
+    ]
+
+    for (const template of tests) {
+      expect(TypstTemplateSchema.parse(template)).toStrictEqual(template)
+    }
+  })
+
+  it('should throw an error if the template is invalid', () => {
+    const tests = [
+      {
+        template: 'invalid-template',
+        error: {
+          errors: [],
+          properties: {
+            template: {
+              errors: [
+                optionSchemaMessage(TYPST_TEMPLATE_OPTIONS, 'Typst template'),
+              ],
+            },
+          },
+        },
+      },
+    ]
+
+    for (const { template, error } of tests) {
+      // @ts-expect-error Testing invalid template
+      validateZodErrors(TypstTemplateSchema, { template }, error)
+    }
+  })
+
+  it('should validate a theme accent color if it is valid', () => {
+    const tests = [
+      {},
+      theme(null),
+      theme(undefined),
+      theme('#a1B2c3'),
+      ...ACCENT_COLOR_OPTIONS.map((color) => theme(color)),
+    ]
+
+    for (const test of tests) {
+      expect(TypstTemplateSchema.parse(test)).toStrictEqual(test)
+    }
+  })
+
+  it('should throw an error if the theme accent color is invalid', () => {
+    const tests = ['#12345', 'red1', '#GGGGGG', 'blue ']
+
+    for (const color of tests) {
+      expect(TypstTemplateSchema.safeParse(theme(color)).success).toBe(false)
+    }
+  })
+})

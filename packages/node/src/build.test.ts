@@ -47,8 +47,11 @@ import { readResumeFile } from './read'
 import {
   getAuxPath,
   getPdfPath,
+  getTypstPdfPath,
   inferOutput,
+  inferTypstOutput,
   LATEX_COMPILE_TIMEOUT,
+  TYPST_COMPILE_TIMEOUT,
 } from './utils'
 
 // Mock execa
@@ -154,6 +157,48 @@ describe(buildResumeFile, () => {
     )
 
     expect(result.outputs).toContain(texFile)
+    expect(result.outputs).toContain(pdfFile)
+  })
+
+  it('should generate a typ file if pdf option is false', async () => {
+    const { resume } = readResumeFile(resumePath)
+    vi.mocked(readResumeFile).mockReturnValue({
+      resume: { ...resume, layouts: [{ engine: 'typst' as const }] },
+      validated: 'success',
+    })
+
+    const typFile = inferTypstOutput(resumePath)
+
+    const result = await buildResumeFile(resumePath, { pdf: false, logger })
+
+    expect(execSpy).not.toBeCalled()
+    expect(result.outputs).toContain(typFile)
+  })
+
+  it('should generate a pdf file with typst engine', async () => {
+    const { resume } = readResumeFile(resumePath)
+    vi.mocked(readResumeFile).mockReturnValue({
+      resume: { ...resume, layouts: [{ engine: 'typst' as const }] },
+      validated: 'success',
+    })
+
+    const typFile = inferTypstOutput(resumePath)
+    const pdfFile = getTypstPdfPath(typFile)
+
+    const result = await buildResumeFile(resumePath, { logger })
+
+    expect(execSpy).toHaveBeenCalledTimes(1)
+    expect(execSpy).toHaveBeenCalledWith(
+      'typst',
+      ['compile', path.basename(typFile)],
+      {
+        cwd: path.dirname(path.resolve(typFile)),
+        encoding: 'utf8',
+        timeout: TYPST_COMPILE_TIMEOUT * 1000,
+      }
+    )
+
+    expect(result.outputs).toContain(typFile)
     expect(result.outputs).toContain(pdfFile)
   })
 
