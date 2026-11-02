@@ -33,7 +33,6 @@ import type {
   ParagraphNode,
   TextNode,
 } from '@/compiler'
-import type { LatexLayout } from '@/models'
 import { escapeLatex } from '@/utils'
 import type { CodeGenerationContext, CodeGenerator } from './interface'
 
@@ -50,11 +49,12 @@ export class LatexCodeGenerator implements CodeGenerator {
    * Generate LaTeX code from an AST node.
    *
    * @param node - The AST node to generate LaTeX code from.
-   * @param context - Optional context containing layout settings.
+   * @param _context - Accepted for the `CodeGenerator` interface; document
+   *   level link styling is applied by the renderer, not the code generator.
    * @returns The generated LaTeX code.
    */
-  generate(node: Node, context?: CodeGenerationContext): string {
-    return nodeToTeX(node, context)
+  generate(node: Node, _context?: CodeGenerationContext): string {
+    return nodeToTeX(node)
   }
 }
 
@@ -62,23 +62,27 @@ export class LatexCodeGenerator implements CodeGenerator {
  * Convert an AST node to its corresponding LaTeX code.
  *
  * @param node - The AST node to convert.
- * @param context - Optional context containing layout settings.
+ * @param _context - Accepted for backwards compatibility; ignored because
+ *   document level link styling is applied by the renderer.
  * @returns The generated LaTeX code.
  */
-export function nodeToTeX(node: Node, context?: CodeGenerationContext): string {
+export function nodeToTeX(
+  node: Node,
+  _context?: CodeGenerationContext
+): string {
   switch (node.type) {
     case 'bulletList':
-      return bulletListNodeToTeX(node, context)
+      return bulletListNodeToTeX(node)
     case 'doc':
-      return docNodeToTeX(node, context)
+      return docNodeToTeX(node)
     case 'listItem':
-      return listItemNodeToTeX(node, context)
+      return listItemNodeToTeX(node)
     case 'orderedList':
-      return orderedListNodeToTeX(node, context)
+      return orderedListNodeToTeX(node)
     case 'paragraph':
-      return paragraphNodeToTeX(node, context)
+      return paragraphNodeToTeX(node)
     case 'text':
-      return textNodeToTeX(node, context)
+      return textNodeToTeX(node)
   }
 }
 
@@ -86,39 +90,30 @@ export function nodeToTeX(node: Node, context?: CodeGenerationContext): string {
  * Convert a bullet list node to its corresponding LaTeX code.
  *
  * @param node - The bullet list node to convert.
- * @param context - Optional context containing layout settings.
  * @returns The generated LaTeX code.
  */
-function bulletListNodeToTeX(
-  node: BulletListNode,
-  context?: CodeGenerationContext
-): string {
-  return `\\begin{itemize}\n${fragmentToTeX(node.content, context)}\\end{itemize}\n`
+function bulletListNodeToTeX(node: BulletListNode): string {
+  return `\\begin{itemize}\n${fragmentToTeX(node.content)}\\end{itemize}\n`
 }
 
 /**
  * Convert a document node to its corresponding LaTeX code.
  *
  * @param node - The document node to convert.
- * @param context - Optional context containing layout settings.
  * @returns The generated LaTeX code.
  */
-function docNodeToTeX(node: DocNode, context?: CodeGenerationContext): string {
-  return fragmentToTeX(node.content, context)
+function docNodeToTeX(node: DocNode): string {
+  return fragmentToTeX(node.content)
 }
 
 /**
  * Convert a list item node to its corresponding LaTeX code.
  *
  * @param node - The list item node to convert.
- * @param context - Optional context containing layout settings.
  * @returns The generated LaTeX code.
  */
-function listItemNodeToTeX(
-  node: ListItemNode,
-  context?: CodeGenerationContext
-): string {
-  const itemContent = fragmentToTeX(node.content, context)
+function listItemNodeToTeX(node: ListItemNode): string {
+  const itemContent = fragmentToTeX(node.content)
   // Here we made some special handling to make the output with more prettier
   if (itemContent.includes('\n\n')) {
     return `\\item ${itemContent.replace('\n\n', '\n')}`
@@ -130,27 +125,19 @@ function listItemNodeToTeX(
  * Convert an ordered list node to its corresponding LaTeX code.
  *
  * @param node - The ordered list node to convert.
- * @param context - Optional context containing layout settings.
  * @returns The generated LaTeX code.
  */
-function orderedListNodeToTeX(
-  node: OrderedListNode,
-  context?: CodeGenerationContext
-): string {
-  return `\\begin{enumerate}\n${fragmentToTeX(node.content, context)}\\end{enumerate}\n`
+function orderedListNodeToTeX(node: OrderedListNode): string {
+  return `\\begin{enumerate}\n${fragmentToTeX(node.content)}\\end{enumerate}\n`
 }
 
 /**
  * Convert a paragraph node to its corresponding LaTeX code.
  *
  * @param node - The paragraph node to convert.
- * @param context - Optional context containing layout settings.
  * @returns The generated LaTeX code.
  */
-function paragraphNodeToTeX(
-  node: ParagraphNode,
-  context?: CodeGenerationContext
-): string {
+function paragraphNodeToTeX(node: ParagraphNode): string {
   if (node.content === undefined || node.content.length === 0) {
     return '\n'
   }
@@ -158,20 +145,16 @@ function paragraphNodeToTeX(
   // We need to output two new lines to make the paragraph a real paagraph in
   // LaTeX. However if the paragraph is empty, we just output one new line,
   // check the `if` above.
-  return `${fragmentToTeX(node.content, context)}\n\n`
+  return `${fragmentToTeX(node.content)}\n\n`
 }
 
 /**
  * Convert a text node to its corresponding LaTeX code.
  *
  * @param node - The text node to convert.
- * @param context - Optional context containing layout settings.
  * @returns The generated LaTeX code.
  */
-function textNodeToTeX(
-  node: TextNode,
-  context?: CodeGenerationContext
-): string {
+function textNodeToTeX(node: TextNode): string {
   const escapedText = escapeLatex(node.text)
 
   if (node.marks === undefined) {
@@ -179,7 +162,7 @@ function textNodeToTeX(
   }
 
   return node.marks.reduce(
-    (text, mark) => applyMarkToText(text, mark, context),
+    (text, mark) => applyMarkToText(text, mark),
     escapedText
   )
 }
@@ -189,27 +172,15 @@ function textNodeToTeX(
  *
  * @param text - The text to apply the mark to.
  * @param mark - The mark to apply.
- * @param context - Optional context containing layout settings.
  */
-function applyMarkToText(
-  text: string,
-  mark: Mark,
-  context?: CodeGenerationContext
-) {
+function applyMarkToText(text: string, mark: Mark) {
   switch (mark.type) {
     case 'bold':
       return `\\textbf{${text}}`
     case 'italic':
       return `\\textit{${text}}`
-    case 'link': {
-      const shouldUnderline =
-        (context?.typography as LatexLayout['typography'])?.links?.underline ??
-        false
-      if (shouldUnderline) {
-        return `\\href{${mark.attrs.href}}{\\underline{${text}}}`
-      }
+    case 'link':
       return `\\href{${mark.attrs.href}}{${text}}`
-    }
   }
 }
 
@@ -217,15 +188,11 @@ function applyMarkToText(
  * Convert a fragment to its corresponding LaTeX code.
  *
  * @param fragment - The fragment to convert.
- * @param context - Optional context containing layout settings.
  * @returns The generated LaTeX code.
  */
-function fragmentToTeX(
-  fragment: Fragment,
-  context?: CodeGenerationContext
-): string {
+function fragmentToTeX(fragment: Fragment): string {
   if (fragment === undefined) {
     return ''
   }
-  return fragment.map((node) => nodeToTeX(node, context)).join('')
+  return fragment.map((node) => nodeToTeX(node)).join('')
 }

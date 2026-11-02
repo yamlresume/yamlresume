@@ -399,7 +399,7 @@ describe(nodeToTeX, () => {
       }
     })
 
-    it('should handle link underline based on typography context', () => {
+    it('should render links without document-level underline styling', () => {
       const linkMark: Mark = {
         type: 'link',
         attrs: { href: url, class: '', target: '' },
@@ -411,30 +411,17 @@ describe(nodeToTeX, () => {
         type: 'text',
       }
 
-      // Test without context (default behavior - no underline)
+      // Link styling is applied by the renderer, not the code generator
       expect(nodeToTeX(node)).toBe(`\\href{${url}}{${text}}`)
 
-      // Test with underline disabled
-      const contextDisabled = {
-        typography: {
-          links: {
-            underline: false,
-          },
-        },
-      }
-      expect(nodeToTeX(node, contextDisabled)).toBe(`\\href{${url}}{${text}}`)
-
-      // Test with underline enabled
-      const contextEnabled = {
+      const context = {
         typography: {
           links: {
             underline: true,
           },
         },
       }
-      expect(nodeToTeX(node, contextEnabled)).toBe(
-        `\\href{${url}}{\\underline{${text}}}`
-      )
+      expect(nodeToTeX(node, context)).toBe(`\\href{${url}}{${text}}`)
     })
 
     it('should return plain text with multiple marks', () => {

@@ -55,6 +55,32 @@ describe('ModerncvBase', () => {
     expect(result).toContain('\\end{document}')
   })
 
+  describe('typography.links.underline', () => {
+    it.each([
+      ['ModerncvBankingLatexRenderer', ModerncvBankingLatexRenderer],
+      ['ModerncvCasualLatexRenderer', ModerncvCasualLatexRenderer],
+      ['ModerncvClassicLatexRenderer', ModerncvClassicLatexRenderer],
+    ] as const)(
+      'should honor the underline setting for %s',
+      (_name, Renderer) => {
+        const underlineResume = cloneDeep(FILLED_RESUME)
+        underlineResume.layouts = [
+          { engine: 'latex', typography: { links: { underline: true } } },
+        ]
+        const enabled = new Renderer(underlineResume, 0).renderPreamble()
+        expect(enabled).toContain('Auto-underline all links')
+        expect(enabled).toContain('\\renewcommand{\\url}[1]')
+
+        const plainResume = cloneDeep(FILLED_RESUME)
+        plainResume.layouts = [
+          { engine: 'latex', typography: { links: { underline: false } } },
+        ]
+        const disabled = new Renderer(plainResume, 0).renderPreamble()
+        expect(disabled).not.toContain('Auto-underline all links')
+      }
+    )
+  })
+
   describe('layouts', () => {
     describe('advanced.showIcons', () => {
       it('should default showIcons to true when layout is missing', () => {

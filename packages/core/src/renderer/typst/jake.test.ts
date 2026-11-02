@@ -176,8 +176,30 @@ describe('JakeTypstRenderer', () => {
       expect(customRenderer.renderPreamble()).toContain('size: 12pt')
     })
 
-    it('should underline all links', () => {
+    it('should not underline links by default', () => {
+      expect(renderer.renderPreamble()).not.toContain(
+        '#show link: it => underline(it)'
+      )
+    })
+
+    it('should underline links when typography.links.underline is enabled', () => {
+      resume.layouts = [
+        { engine: 'typst', typography: { links: { underline: true } } },
+      ]
+      renderer = new JakeTypstRenderer(resume, 0)
+
       expect(renderer.renderPreamble()).toContain(
+        '#show link: it => underline(it)'
+      )
+    })
+
+    it('should not underline links when typography.links.underline is disabled', () => {
+      resume.layouts = [
+        { engine: 'typst', typography: { links: { underline: false } } },
+      ]
+      renderer = new JakeTypstRenderer(resume, 0)
+
+      expect(renderer.renderPreamble()).not.toContain(
         '#show link: it => underline(it)'
       )
     })

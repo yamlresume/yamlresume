@@ -499,6 +499,9 @@ export const DEFAULT_LATEX_LAYOUT: LatexLayout = {
   },
   typography: {
     fontSize: LATEX_FONT_SIZE_OPTIONS[0],
+    links: {
+      underline: false,
+    },
   },
 }
 
@@ -522,6 +525,9 @@ export const DEFAULT_TYPST_LAYOUT: TypstLayout = {
   },
   typography: {
     fontSize: TYPST_FONT_SIZE_OPTIONS[0],
+    links: {
+      underline: false,
+    },
   },
 }
 

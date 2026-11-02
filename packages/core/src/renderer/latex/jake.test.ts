@@ -71,6 +71,40 @@ describe('JakeLatexRenderer', () => {
       expect(result).toContain('\\documentclass[a4paper,10pt]{article}')
     })
 
+    it('should not underline links by default', () => {
+      const result = renderer.renderPreamble()
+
+      expect(result).not.toContain('Auto-underline all links')
+    })
+
+    it('should underline links when typography.links.underline is enabled', () => {
+      resume.layouts = [
+        { engine: 'latex', typography: { links: { underline: true } } },
+      ]
+      renderer = new JakeLatexRenderer(resume, 0)
+
+      const result = renderer.renderPreamble()
+
+      expect(result).toContain('Auto-underline all links')
+      expect(result).toContain(
+        '\\renewcommand{\\href}[2]{\\oldhref{#1}{\\underline{#2}}}%'
+      )
+      expect(result).toContain(
+        '\\renewcommand{\\url}[1]{\\underline{\\oldurl{#1}}}%'
+      )
+    })
+
+    it('should not underline links when typography.links.underline is disabled', () => {
+      resume.layouts = [
+        { engine: 'latex', typography: { links: { underline: false } } },
+      ]
+      renderer = new JakeLatexRenderer(resume, 0)
+
+      expect(renderer.renderPreamble()).not.toContain(
+        'Auto-underline all links'
+      )
+    })
+
     it('should use Jake defaults (letterpaper, 10pt) when layout has no page/typography', () => {
       // After transformResume, the default layout fills in a4/10pt from
       // DEFAULT_LATEX_LAYOUT, so Jake's own defaults only apply when the

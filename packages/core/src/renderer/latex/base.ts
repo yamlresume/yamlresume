@@ -244,18 +244,33 @@ ${renderCJKFont('Sans', 'sans', regions)}`
   }
 
   /**
+   * Whether links should be underlined in the document.
+   */
+  protected get showUnderlinedLinks(): boolean {
+    const layout = this.resume.layouts?.[this.layoutIndex] as LatexLayout
+    return layout?.typography?.links?.underline ?? false
+  }
+
+  /**
    * Render auto-underline configuration for all hyperref links.
    *
-   * Redefines \\href to automatically underline link text.
+   * Redefines \\href to automatically underline link text when the layout
+   * enables it.
    *
-   * @returns The LaTeX code for auto-underlining links
+   * @returns The LaTeX code for auto-underlining links, or empty string
    */
   protected renderHrefUnderlineConfig(): string {
+    if (!this.showUnderlinedLinks) {
+      return ''
+    }
+
     return `% Auto-underline all links
 % Defer until \\begin{document} so hyperref is already loaded
 \\AtBeginDocument{%
   \\let\\oldhref\\href
   \\renewcommand{\\href}[2]{\\oldhref{#1}{\\underline{#2}}}%
+  \\let\\oldurl\\url
+  \\renewcommand{\\url}[1]{\\underline{\\oldurl{#1}}}%
 }`
   }
 

@@ -1603,6 +1603,12 @@ describe(transformResumeLayout, () => {
         showIcons: true,
         showUrls: true,
       },
+      typography: {
+        ...providedLayout.typography,
+        links: {
+          underline: false,
+        },
+      },
     })
   })
 })

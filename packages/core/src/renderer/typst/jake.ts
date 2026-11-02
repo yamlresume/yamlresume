@@ -220,10 +220,14 @@ class JakeTypstRenderer extends TypstRenderer {
   /**
    * Render the link styling configuration.
    *
-   * Underline all links, matching the LaTeX template's `hidelinks` option
-   * combined with its auto-underline `\\href` redefinition.
+   * Underline all links when the layout enables it, matching the LaTeX
+   * template's auto-underline `\\href` redefinition.
    */
   private renderLinkConfig(): string {
+    if (!this.showUnderlinedLinks) {
+      return ''
+    }
+
     return `// Underline all links, keeps parity with the LaTeX template
 #show link: it => underline(it)`
   }

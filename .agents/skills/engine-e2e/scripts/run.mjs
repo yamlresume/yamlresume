@@ -143,6 +143,9 @@ const ENGINES = {
       variant('12-section-order', 'work/projects/skills before education', sectionOrder, {
         textOrder: ['Work', 'Projects', 'Skills', 'Education'],
       }),
+      variant('13-links-underline', 'typography.links.underline = true', {
+        typography: { links: { underline: true } },
+      }),
     ],
   },
   html: {
@@ -299,6 +302,9 @@ const ENGINES = {
       }),
       variant('15-section-order', 'work/projects/skills before education', sectionOrder, {
         textOrder: ['Work', 'Projects', 'Skills', 'Education'],
+      }),
+      variant('16-links-underline', 'typography.links.underline = true', {
+        typography: { links: { underline: true } },
       }),
     ],
   },

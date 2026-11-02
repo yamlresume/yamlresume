@@ -118,8 +118,8 @@ directory unless investigating a failure.
 - DOCX source checks use `word/document.xml`; `unzip` is required.
 - Locale coverage assumes the chosen sample supports the locale. If `new` fails
   for a locale, that fixture fails and the README shows why.
-- `typography.links.underline` is currently a no-op for the Jake LaTeX/Typst
-  templates (they always underline links), so it is not in the default matrix.
+- `typography.links.underline` is covered by a dedicated variant for the
+  LaTeX and Typst engines.
 - Alias fixtures use "Education and Training" to avoid engine-specific special
   characters. Use a custom alias manually if you want to probe escaping.
 - The runner only enables the selected engine, so output is isolated to one

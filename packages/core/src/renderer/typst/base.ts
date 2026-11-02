@@ -32,6 +32,14 @@ import { FA_ICONS } from './icons'
  */
 export abstract class TypstRenderer extends Renderer {
   /**
+   * Whether links should be underlined in the document.
+   */
+  protected get showUnderlinedLinks(): boolean {
+    const layout = this.resume.layouts?.[this.layoutIndex] as TypstLayout
+    return layout?.typography?.links?.underline ?? false
+  }
+
+  /**
    * Check if the resume is a CJK resume.
    */
   protected isCJKResume(): boolean {
