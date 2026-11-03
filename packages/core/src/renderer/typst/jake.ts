@@ -40,6 +40,8 @@ import {
   DEFAULT_FONT_SIZE,
   DEFAULT_LINE_SPACING,
   LINE_SPACING_MAP,
+  LINK_UNDERLINE_GAP,
+  LINK_UNDERLINE_STROKE,
 } from './constants'
 
 /**
@@ -220,16 +222,22 @@ class JakeTypstRenderer extends TypstRenderer {
   /**
    * Render the link styling configuration.
    *
-   * Underline all links when the layout enables it, matching the LaTeX
-   * template's auto-underline `\\href` redefinition.
+   * Underline all links when the layout enables it. Measuring the link
+   * with `bottom-edge: "bounds"` yields its real descender depth, so the
+   * rule can sit below the deepest glyph like the LaTeX template's
+   * auto-underline `\\href` redefinition.
    */
   private renderLinkConfig(): string {
     if (!this.showUnderlinedLinks) {
       return ''
     }
 
-    return `// Underline all links, keeps parity with the LaTeX template
-#show link: it => underline(it)`
+    return `// Underline all links, matching the LaTeX template's depth-aware rule
+#show link: it => context {
+  let base = measure(text(it, bottom-edge: "baseline")).height
+  let bounds = measure(text(it, bottom-edge: "bounds")).height
+  underline(it, offset: (bounds - base) + ${LINK_UNDERLINE_GAP}, stroke: ${LINK_UNDERLINE_STROKE} + black)
+}`
   }
 
   /**

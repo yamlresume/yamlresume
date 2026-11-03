@@ -38,6 +38,32 @@ export const DEFAULT_FONT_SIZE = '10pt'
 export const DEFAULT_LINE_SPACING: LineSpacing = 'normal'
 
 /**
+ * Thickness of the link underline.
+ *
+ * Matches the thickness of LaTeX's `\underline` rule (~0.5pt, verified
+ * against rasterized PDFs at 600dpi).
+ */
+export const LINK_UNDERLINE_STROKE = '0.5pt'
+
+/**
+ * Distance between the deepest glyph in a link and its underline.
+ *
+ * LaTeX's `\underline` draws the rule below the text's deepest descender,
+ * so the visual gap is independent of whether the text has descenders.
+ * Typst's `underline` offset is measured from the baseline, and its auto
+ * value either touches descenders or leaves too much space for
+ * descender-free text.
+ *
+ * The show rule measures each link twice with `text(bottom-edge: ...)`:
+ * `"baseline"` gives the height above the baseline, while `"bounds"`
+ * includes the actual descender depth. Adding this gap places the rule
+ * below the deepest glyph. Verified against rasterized LaTeX/Typst PDFs at
+ * 600dpi: both engines then show a ~1.08pt gap at 10/11/12pt for
+ * descender and descender-free text.
+ */
+export const LINK_UNDERLINE_GAP = '1.3pt'
+
+/**
  * Mapping of semantic line spacing options to Typst `par.leading` values.
  *
  * LaTeX's `\setstretch{s}` scales the baselineskip (1.2em for the LaTeX

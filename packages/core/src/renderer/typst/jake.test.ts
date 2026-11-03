@@ -177,19 +177,26 @@ describe('JakeTypstRenderer', () => {
     })
 
     it('should not underline links by default', () => {
-      expect(renderer.renderPreamble()).not.toContain(
-        '#show link: it => underline(it)'
-      )
+      expect(renderer.renderPreamble()).not.toContain('#show link')
     })
 
-    it('should underline links when typography.links.underline is enabled', () => {
+    it('should underline links depth-aware when typography.links.underline is enabled', () => {
       resume.layouts = [
         { engine: 'typst', typography: { links: { underline: true } } },
       ]
       renderer = new JakeTypstRenderer(resume, 0)
 
-      expect(renderer.renderPreamble()).toContain(
-        '#show link: it => underline(it)'
+      const result = renderer.renderPreamble()
+
+      expect(result).toContain('#show link: it => context {')
+      expect(result).toContain(
+        'measure(text(it, bottom-edge: "baseline")).height'
+      )
+      expect(result).toContain(
+        'measure(text(it, bottom-edge: "bounds")).height'
+      )
+      expect(result).toContain(
+        'underline(it, offset: (bounds - base) + 1.3pt, stroke: 0.5pt + black)'
       )
     })
 
@@ -199,9 +206,7 @@ describe('JakeTypstRenderer', () => {
       ]
       renderer = new JakeTypstRenderer(resume, 0)
 
-      expect(renderer.renderPreamble()).not.toContain(
-        '#show link: it => underline(it)'
-      )
+      expect(renderer.renderPreamble()).not.toContain('#show link')
     })
 
     it('should scale list spacing with the configured line spacing', () => {
