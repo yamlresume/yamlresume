@@ -304,6 +304,44 @@ describe(compileLaTeX, () => {
     )
   })
 
+  it('should move the generated pdf to a custom output path', async () => {
+    const texFile = path.join(tempDir, 'resume.tex')
+    const defaultPdfPath = path.join(tempDir, 'resume.pdf')
+    const customPdfPath = path.join(tempDir, 'resume.tex.pdf')
+    fs.writeFileSync(texFile, '')
+    fs.writeFileSync(defaultPdfPath, 'pdf')
+
+    await compileLaTeX(
+      texFile,
+      tempDir,
+      LATEX_COMPILE_TIMEOUT,
+      logger,
+      customPdfPath
+    )
+
+    expect(fs.existsSync(defaultPdfPath)).toBe(false)
+    expect(fs.readFileSync(customPdfPath, 'utf8')).toBe('pdf')
+    expect(logger.success).toHaveBeenCalledWith(
+      expect.stringContaining(customPdfPath)
+    )
+  })
+
+  it('should throw when the compiler does not produce the default pdf', async () => {
+    const texFile = path.join(tempDir, 'resume.tex')
+    const customPdfPath = path.join(tempDir, 'resume.tex.pdf')
+    fs.writeFileSync(texFile, '')
+
+    await expect(
+      compileLaTeX(
+        texFile,
+        tempDir,
+        LATEX_COMPILE_TIMEOUT,
+        logger,
+        customPdfPath
+      )
+    ).rejects.toThrow(YAMLResumeError)
+  })
+
   it('should rerun LaTeX when auxiliary file changes', async () => {
     const texFile = path.join(tempDir, 'resume.tex')
     const auxPath = path.join(tempDir, 'resume.aux')

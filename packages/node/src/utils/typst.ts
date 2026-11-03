@@ -131,14 +131,23 @@ export const TYPST_COMPILE_TIMEOUT = 30
  * @param outputDir - Optional output directory.
  * @param timeout - Timeout in seconds. 0 means no timeout.
  * @param logger - Optional logger for progress messages.
+ * @param pdfPath - Optional desired PDF path passed to `typst compile`.
  */
 export async function compileTypst(
   typFile: string,
   outputDir?: string,
   timeout: number = TYPST_COMPILE_TIMEOUT,
-  logger?: Logger
+  logger?: Logger,
+  pdfPath?: string
 ) {
   const { command, args, cwd } = inferTypstCommand(typFile, outputDir)
+  const defaultPdfPath = getTypstPdfPath(typFile)
+  const finalPdfPath = pdfPath ?? defaultPdfPath
+
+  if (path.resolve(finalPdfPath) !== path.resolve(defaultPdfPath)) {
+    const relativeOutput = path.relative(cwd, path.resolve(finalPdfPath))
+    args.push(relativeOutput || path.basename(finalPdfPath))
+  }
 
   logger?.start(
     `Generating resume pdf file with command: \`${command} ${args.join(' ')}\`...`
@@ -176,7 +185,5 @@ export async function compileTypst(
     throw new YAMLResumeError('TYPST_COMPILE_ERROR', { error: error.message })
   }
 
-  logger?.success(
-    `Generated resume pdf file successfully: ${getTypstPdfPath(typFile)}`
-  )
+  logger?.success(`Generated resume pdf file successfully: ${finalPdfPath}`)
 }

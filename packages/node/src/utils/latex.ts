@@ -197,12 +197,15 @@ function readAuxFile(auxPath: string): string | null {
  * @param outputDir - Optional output directory.
  * @param timeout - Timeout in seconds. 0 means no timeout.
  * @param logger - Optional logger for progress messages.
+ * @param pdfPath - Optional desired PDF path. When it differs from the
+ *   compiler's default (`<tex base>.pdf`), the generated PDF is moved there.
  */
 export async function compileLaTeX(
   texFile: string,
   outputDir?: string,
   timeout: number = LATEX_COMPILE_TIMEOUT,
-  logger?: Logger
+  logger?: Logger,
+  pdfPath?: string
 ) {
   const { command, args, cwd } = inferLaTeXCommand(texFile, outputDir)
   const auxPath = getAuxPath(texFile, outputDir)
@@ -261,7 +264,17 @@ export async function compileLaTeX(
     previousAux = currentAux
   }
 
-  logger?.success(
-    `Generated resume pdf file successfully: ${getPdfPath(texFile)}`
-  )
+  const defaultPdfPath = getPdfPath(texFile)
+  const finalPdfPath = pdfPath ?? defaultPdfPath
+
+  if (path.resolve(finalPdfPath) !== path.resolve(defaultPdfPath)) {
+    try {
+      fs.rmSync(finalPdfPath, { force: true })
+      fs.renameSync(defaultPdfPath, finalPdfPath)
+    } catch (_error) {
+      throw new YAMLResumeError('FILE_WRITE_ERROR', { path: finalPdfPath })
+    }
+  }
+
+  logger?.success(`Generated resume pdf file successfully: ${finalPdfPath}`)
 }

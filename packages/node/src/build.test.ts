@@ -111,6 +111,31 @@ describe(buildResumeFile, () => {
     fs.rmSync(tempDir, { recursive: true, force: true })
   })
 
+  /**
+   * Simulate the LaTeX compiler writing its default `<base>.pdf` output so the
+   * build can move it to the source-mirrored name.
+   */
+  function mockPdfCompiler() {
+    execSpy.mockImplementation((async (...callArgs: unknown[]) => {
+      const [command, args, options] = callArgs as [
+        string,
+        string[],
+        { cwd?: string } | undefined,
+      ]
+
+      if (command === 'xelatex') {
+        const input = args[args.length - 1] ?? ''
+        const cwd = String(options?.cwd ?? tempDir)
+        fs.writeFileSync(
+          path.join(cwd, `${path.basename(input, '.tex')}.pdf`),
+          'pdf'
+        )
+      }
+
+      return createExecaResult()
+    }) as never)
+  }
+
   it('should generate docx file', async () => {
     vi.mocked(readResumeFile).mockReturnValue({
       resume: {
@@ -339,7 +364,159 @@ describe(buildResumeFile, () => {
     const result = await buildResumeFile(resumePath, { logger })
 
     expect(execSpy).toHaveBeenCalledTimes(2)
-    expect(result.outputs).toHaveLength(4) // 2 tex + 2 pdf
+    expect(result.outputs).toEqual([
+      path.join(tempDir, 'resume.0.tex'),
+      path.join(tempDir, 'resume.0.pdf'),
+      path.join(tempDir, 'resume.1.tex'),
+      path.join(tempDir, 'resume.1.pdf'),
+    ])
+  })
+
+  it('should disambiguate LaTeX and Typst PDFs when both engines are enabled', async () => {
+    vi.mocked(readResumeFile).mockReturnValue({
+      resume: {
+        // @ts-expect-error
+        content: {},
+        layouts: [
+          { engine: 'latex', template: 'jake' },
+          { engine: 'typst', template: 'jake' },
+        ],
+      },
+      validated: 'success',
+    })
+    mockPdfCompiler()
+
+    const result = await buildResumeFile(resumePath, { logger })
+
+    expect(result.outputs).toEqual([
+      path.join(tempDir, 'resume.tex'),
+      path.join(tempDir, 'resume.tex.pdf'),
+      path.join(tempDir, 'resume.typ'),
+      path.join(tempDir, 'resume.typ.pdf'),
+    ])
+    expect(new Set(result.outputs).size).toBe(result.outputs.length)
+    expect(fs.existsSync(path.join(tempDir, 'resume.tex.pdf'))).toBe(true)
+    expect(fs.existsSync(path.join(tempDir, 'resume.pdf'))).toBe(false)
+
+    expect(execSpy).toHaveBeenNthCalledWith(
+      1,
+      'xelatex',
+      ['-halt-on-error', 'resume.tex'],
+      {
+        cwd: tempDir,
+        encoding: 'utf8',
+        timeout: LATEX_COMPILE_TIMEOUT * 1000,
+      }
+    )
+    expect(execSpy).toHaveBeenNthCalledWith(
+      2,
+      'typst',
+      ['compile', 'resume.typ', 'resume.typ.pdf'],
+      {
+        cwd: tempDir,
+        encoding: 'utf8',
+        timeout: TYPST_COMPILE_TIMEOUT * 1000,
+      }
+    )
+  })
+
+  it('should keep source names stable when pdf is disabled', async () => {
+    vi.mocked(readResumeFile).mockReturnValue({
+      resume: {
+        // @ts-expect-error
+        content: {},
+        layouts: [
+          { engine: 'latex', template: 'jake' },
+          { engine: 'typst', template: 'jake' },
+        ],
+      },
+      validated: 'success',
+    })
+
+    const result = await buildResumeFile(resumePath, { pdf: false, logger })
+
+    expect(execSpy).not.toBeCalled()
+    expect(result.outputs).toEqual([
+      path.join(tempDir, 'resume.tex'),
+      path.join(tempDir, 'resume.typ'),
+    ])
+  })
+
+  it('should index multiple layouts of the same PDF engine alongside another engine', async () => {
+    vi.mocked(readResumeFile).mockReturnValue({
+      resume: {
+        // @ts-expect-error
+        content: {},
+        layouts: [
+          { engine: 'latex', template: 'jake' },
+          { engine: 'latex', template: 'moderncv-banking' },
+          { engine: 'typst', template: 'jake' },
+        ],
+      },
+      validated: 'success',
+    })
+    mockPdfCompiler()
+
+    const result = await buildResumeFile(resumePath, { logger })
+
+    expect(result.outputs).toEqual([
+      path.join(tempDir, 'resume.0.tex'),
+      path.join(tempDir, 'resume.0.tex.pdf'),
+      path.join(tempDir, 'resume.1.tex'),
+      path.join(tempDir, 'resume.1.tex.pdf'),
+      path.join(tempDir, 'resume.typ'),
+      path.join(tempDir, 'resume.typ.pdf'),
+    ])
+    expect(new Set(result.outputs).size).toBe(result.outputs.length)
+    expect(execSpy).toHaveBeenCalledTimes(3)
+  })
+
+  it('should apply the source-mirrored pdf names in the output directory', async () => {
+    vi.mocked(readResumeFile).mockReturnValue({
+      resume: {
+        // @ts-expect-error
+        content: {},
+        layouts: [
+          { engine: 'latex', template: 'jake' },
+          { engine: 'typst', template: 'jake' },
+        ],
+      },
+      validated: 'success',
+    })
+    mockPdfCompiler()
+
+    const outputDir = path.join(tempDir, 'output')
+    const result = await buildResumeFile(resumePath, {
+      output: outputDir,
+      logger,
+    })
+
+    expect(result.outputs).toEqual([
+      path.join(outputDir, 'resume.tex'),
+      path.join(outputDir, 'resume.tex.pdf'),
+      path.join(outputDir, 'resume.typ'),
+      path.join(outputDir, 'resume.typ.pdf'),
+    ])
+    expect(execSpy).toHaveBeenNthCalledWith(
+      1,
+      'xelatex',
+      ['-halt-on-error', 'resume.tex'],
+      {
+        cwd: path.resolve(outputDir),
+        encoding: 'utf8',
+        timeout: LATEX_COMPILE_TIMEOUT * 1000,
+      }
+    )
+    expect(execSpy).toHaveBeenNthCalledWith(
+      2,
+      'typst',
+      ['compile', 'resume.typ', 'resume.typ.pdf'],
+      {
+        cwd: path.resolve(outputDir),
+        encoding: 'utf8',
+        timeout: TYPST_COMPILE_TIMEOUT * 1000,
+      }
+    )
   })
 
   it('should fallback to default layout if resume has no layouts', async () => {

@@ -72,36 +72,142 @@ export interface BuildResumeResult {
   outputs: string[]
 }
 
+const BUILD_ENGINES = ['docx', 'html', 'latex', 'markdown', 'typst'] as const
+
+type BuildEngine = (typeof BUILD_ENGINES)[number]
+
+type BuildLayout = NonNullable<Resume['layouts']>[number]
+
+interface PlannedOutput {
+  layoutIndex: number
+  engine: BuildEngine
+  sourceExtension: string
+  sourcePath: string
+  pdfPath?: string
+}
+
+const SOURCE_EXTENSIONS: Record<BuildEngine, string> = {
+  docx: '.docx',
+  html: '.html',
+  latex: '.tex',
+  markdown: '.md',
+  typst: '.typ',
+}
+
+function isBuildEngine(engine: string): engine is BuildEngine {
+  return (BUILD_ENGINES as readonly string[]).includes(engine)
+}
+
 /**
- * Get the output file path with support for multiple outputs and custom extension
+ * Get the base name (without extension) for a layout output.
  *
- * @param resumePath - The source resume file path
- * @param extension - The target file extension (e.g., '.tex', '.md')
- * @param index - The index of the current layout
- * @param total - The total number of layouts for this engine
- * @param outputDir - Optional output directory
- * @returns The determined output file path
+ * Multiple layouts of the same engine get an index, e.g. `resume.0.tex` and
+ * `resume.1.typ`. Single-layout engines keep the historic `<resume>.<ext>`
+ * names.
  */
-function getOutputPath(
+function getOutputBaseName(
   resumePath: string,
-  extension: string,
   index: number,
-  total: number,
-  outputDir?: string
+  total: number
 ): string {
-  const baseName = path.basename(resumePath.replace(/\.(yaml|yml|json)$/, ''))
+  const parts = [path.basename(resumePath.replace(/\.(yaml|yml|json)$/, ''))]
 
-  // If there are multiple layouts, append the index to the filename
-  // e.g., resume.0.tex, resume.1.tex
-  // Otherwise, use the base filename
-  // e.g., resume.tex
-  const fileName =
-    total > 1 ? `${baseName}.${index}${extension}` : `${baseName}${extension}`
-
-  if (outputDir) {
-    return path.join(outputDir, fileName)
+  if (total > 1) {
+    parts.push(String(index))
   }
-  return path.join(path.dirname(resumePath), fileName)
+
+  return parts.join('.')
+}
+
+/**
+ * Plan every file this build will write.
+ *
+ * Names are derived up front so we can assert uniqueness before touching the
+ * filesystem. This prevents one engine's PDF from silently overwriting
+ * another's, now and for any future engine that emits an existing extension.
+ */
+function planOutputs(
+  resumePath: string,
+  layouts: BuildLayout[],
+  outputDir?: string
+): PlannedOutput[] {
+  const totals: Record<BuildEngine, number> = {
+    docx: 0,
+    html: 0,
+    latex: 0,
+    markdown: 0,
+    typst: 0,
+  }
+  const indices: Record<BuildEngine, number> = {
+    docx: 0,
+    html: 0,
+    latex: 0,
+    markdown: 0,
+    typst: 0,
+  }
+  const pdfEngines = new Set<BuildEngine>()
+
+  for (const layout of layouts) {
+    if (!isBuildEngine(layout.engine)) continue
+    totals[layout.engine]++
+    if (layout.engine === 'latex' || layout.engine === 'typst') {
+      pdfEngines.add(layout.engine)
+    }
+  }
+
+  const multiplePdfEngines = pdfEngines.size > 1
+  const outputBaseDir = outputDir ?? path.dirname(resumePath)
+  const planned: PlannedOutput[] = []
+
+  for (let layoutIndex = 0; layoutIndex < layouts.length; layoutIndex++) {
+    const layout = layouts[layoutIndex]
+    if (!layout || !isBuildEngine(layout.engine)) continue
+
+    const engine = layout.engine
+    const index = indices[engine]++
+    const baseName = getOutputBaseName(resumePath, index, totals[engine])
+    const sourceExtension = SOURCE_EXTENSIONS[engine]
+    const sourcePath = path.join(outputBaseDir, `${baseName}${sourceExtension}`)
+    const defaultPdfPath =
+      engine === 'latex'
+        ? getPdfPath(sourcePath)
+        : engine === 'typst'
+          ? getTypstPdfPath(sourcePath)
+          : undefined
+    // Multiple PDF engines would otherwise both write `<resume>.pdf`. Mirror
+    // the source extension instead: `resume.tex` -> `resume.tex.pdf` and
+    // `resume.typ` -> `resume.typ.pdf`. Single-engine output keeps the
+    // historic `<resume>.pdf` name.
+    const pdfPath =
+      defaultPdfPath && multiplePdfEngines
+        ? `${sourcePath}.pdf`
+        : defaultPdfPath
+
+    planned.push({
+      layoutIndex,
+      engine,
+      sourceExtension,
+      sourcePath,
+      pdfPath,
+    })
+  }
+
+  const seen = new Set<string>()
+  for (const output of planned) {
+    const files = [
+      output.sourcePath,
+      ...(output.pdfPath ? [output.pdfPath] : []),
+    ]
+    for (const file of files) {
+      const normalized = path.resolve(file)
+      if (seen.has(normalized)) {
+        throw new YAMLResumeError('FILE_CONFLICT', { path: file })
+      }
+      seen.add(normalized)
+    }
+  }
+
+  return planned
 }
 
 /**
@@ -131,23 +237,12 @@ export function normalizeExtension(extension: string): string {
  * Shared helper to generate output file from a layout
  */
 async function generateOutput(
-  resumePath: string,
   resume: Resume,
-  index: number,
-  total: number,
-  outputDir: string | undefined,
-  extension: string,
   layoutIndex: number,
+  outputFile: string,
+  extension: string,
   logger?: Logger
 ): Promise<string> {
-  const outputFile = getOutputPath(
-    resumePath,
-    extension,
-    index,
-    total,
-    outputDir
-  )
-
   const dir = path.dirname(outputFile)
   if (!fs.existsSync(dir)) {
     fs.mkdirSync(dir, { recursive: true })
@@ -244,115 +339,45 @@ export async function buildResumeFile(
     }
   }
 
-  // Count totals for each engine to determine file naming strategy
-  // (e.g. resume.0.tex vs resume.tex)
-  const totals = {
-    docx: allLayouts.filter((l) => l.engine === 'docx').length,
-    html: allLayouts.filter((l) => l.engine === 'html').length,
-    latex: allLayouts.filter((l) => l.engine === 'latex').length,
-    markdown: allLayouts.filter((l) => l.engine === 'markdown').length,
-    typst: allLayouts.filter((l) => l.engine === 'typst').length,
-  }
-
-  // Track current index for each engine
-  const indices = {
-    docx: 0,
-    html: 0,
-    latex: 0,
-    markdown: 0,
-    typst: 0,
-  }
-
+  // Plan all output paths up front so cross-engine collisions (notably the
+  // LaTeX and Typst PDFs) are resolved before anything is written.
+  const plannedOutputs = planOutputs(resumePath, allLayouts, options.output)
   const outputs: string[] = []
 
-  for (let layoutIndex = 0; layoutIndex < allLayouts.length; layoutIndex++) {
-    const layout = allLayouts[layoutIndex]
+  for (const output of plannedOutputs) {
+    outputs.push(
+      await generateOutput(
+        resume,
+        output.layoutIndex,
+        output.sourcePath,
+        output.sourceExtension,
+        logger
+      )
+    )
 
-    switch (layout.engine) {
-      case 'docx': {
-        outputs.push(
-          await generateOutput(
-            resumePath,
-            resume,
-            indices.docx++,
-            totals.docx,
-            options.output,
-            '.docx',
-            layoutIndex,
-            logger
-          )
-        )
-        break
-      }
-      case 'html': {
-        outputs.push(
-          await generateOutput(
-            resumePath,
-            resume,
-            indices.html++,
-            totals.html,
-            options.output,
-            '.html',
-            layoutIndex,
-            logger
-          )
-        )
-        break
-      }
-      case 'latex': {
-        const texFile = await generateOutput(
-          resumePath,
-          resume,
-          indices.latex++,
-          totals.latex,
-          options.output,
-          '.tex',
-          layoutIndex,
-          logger
-        )
-        outputs.push(texFile)
-
-        if (pdf === true) {
-          await compileLaTeX(texFile, options.output, timeout, logger)
-          outputs.push(getPdfPath(texFile))
-        }
-        break
-      }
-      case 'markdown': {
-        outputs.push(
-          await generateOutput(
-            resumePath,
-            resume,
-            indices.markdown++,
-            totals.markdown,
-            options.output,
-            '.md',
-            layoutIndex,
-            logger
-          )
-        )
-        break
-      }
-      case 'typst': {
-        const typFile = await generateOutput(
-          resumePath,
-          resume,
-          indices.typst++,
-          totals.typst,
-          options.output,
-          '.typ',
-          layoutIndex,
-          logger
-        )
-        outputs.push(typFile)
-
-        if (pdf === true) {
-          await compileTypst(typFile, options.output, timeout, logger)
-          outputs.push(getTypstPdfPath(typFile))
-        }
-        break
-      }
+    if (pdf !== true || !output.pdfPath) {
+      continue
     }
+
+    if (output.engine === 'latex') {
+      await compileLaTeX(
+        output.sourcePath,
+        options.output,
+        timeout,
+        logger,
+        output.pdfPath
+      )
+    } else if (output.engine === 'typst') {
+      await compileTypst(
+        output.sourcePath,
+        options.output,
+        timeout,
+        logger,
+        output.pdfPath
+      )
+    }
+
+    outputs.push(output.pdfPath)
   }
 
   return { outputs }

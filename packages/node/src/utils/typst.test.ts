@@ -228,6 +228,33 @@ describe(compileTypst, () => {
     )
   })
 
+  it('should pass a custom output path to typst', async () => {
+    const typFile = path.join(tempDir, 'resume.typ')
+    const customPdfPath = path.join(tempDir, 'resume.typ.pdf')
+    fs.writeFileSync(typFile, '')
+
+    await compileTypst(
+      typFile,
+      tempDir,
+      TYPST_COMPILE_TIMEOUT,
+      logger,
+      customPdfPath
+    )
+
+    expect(execSpy).toHaveBeenCalledWith(
+      'typst',
+      ['compile', 'resume.typ', 'resume.typ.pdf'],
+      {
+        cwd: tempDir,
+        encoding: 'utf8',
+        timeout: TYPST_COMPILE_TIMEOUT * 1000,
+      }
+    )
+    expect(logger.success).toHaveBeenCalledWith(
+      expect.stringContaining(customPdfPath)
+    )
+  })
+
   it('should handle compile error', async () => {
     const typFile = path.join(tempDir, 'resume.typ')
     fs.writeFileSync(typFile, '')
