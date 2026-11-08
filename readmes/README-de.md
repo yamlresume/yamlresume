@@ -56,7 +56,7 @@ YAMLResume folgt dem Prinzip der
 - **Inhalt** wird in Klartext-YAML gespeichert.
 - **Struktur und Validierung** werden vom Compiler und einem strengen Schema
   erzwungen.
-- **Darstellung** wird durch austauschbare Layout-Engines (LaTeX, HTML,
+- **Darstellung** wird durch austauschbare Layout-Engines (LaTeX, Typst, HTML,
   Markdown, DOCX) übernommen.
 
 Sie bearbeiten das Was; YAMLResume kümmert sich um das Wie.
@@ -64,7 +64,7 @@ Sie bearbeiten das Was; YAMLResume kümmert sich um das Wie.
 ## Funktionen auf einen Blick
 
 - **Eine Quelle, mehrere Ausgaben.** Aus einer einzigen `resume.yml` lassen sich
-  pixelgenaue PDFs (über LaTeX), sauberes Markdown, responsives HTML und
+  pixelgenaue PDFs (über LaTeX oder Typst), sauberes Markdown, responsives HTML und
   Microsoft Word DOCX-Dateien generieren.
 - **Ein echter Lebenslauf-Compiler.** Parsen, validieren, transformieren und
   rendern. Fehler frühzeitig erkennen dank Zod-Laufzeitvalidierung und
@@ -85,7 +85,7 @@ Sie bearbeiten das Was; YAMLResume kümmert sich um das Wie.
 ## Schnellstart
 
 Der schnellste Weg, YAMLResume auszuprobieren, ist mit Docker. Das Image bringt
-die CLI, XeTeX und empfohlene Schriftarten mit:
+die CLI, XeTeX, Typst und empfohlene Schriftarten mit:
 
 ```sh
 docker run --rm -v $(pwd):/home/yamlresume yamlresume/yamlresume new my-resume.yml
@@ -181,6 +181,8 @@ layouts:
     template: moderncv-banking
     typography:
       fontSize: 11pt
+  - engine: typst
+    template: jake
   - engine: markdown
   - engine: html
     template: calm
@@ -191,6 +193,7 @@ layouts:
 Erfahren Sie mehr über jede Engine:
 
 - [LaTeX / PDF](https://yamlresume.dev/docs/layouts/latex)
+- [Typst / PDF](https://yamlresume.dev/docs/layouts/typst)
 - [HTML](https://yamlresume.dev/docs/layouts/html)
 - [Markdown](https://yamlresume.dev/docs/layouts/markdown)
 - [DOCX](https://yamlresume.dev/docs/layouts/docx)
@@ -248,6 +251,7 @@ Engines ausgeliefert:
 | Engine | Vorlagen                                                          |
 | ------ | ----------------------------------------------------------------- |
 | LaTeX  | `moderncv-banking`, `moderncv-casual`, `moderncv-classic`, `jake` |
+| Typst  | `jake`                                                            |
 | HTML   | `calm`, `vscode`                                                  |
 | DOCX   | `calm`                                                            |
 
@@ -312,7 +316,6 @@ durch.
 ## Roadmap
 
 - [ ] mehr Lebenslauf-Vorlagen
-- [ ] mehr Layout-Engines (Typst und andere)
 - [ ] mehr Sprachen und Gebietsschemata
 - [ ] ATS-Optimierungsfunktionen
 

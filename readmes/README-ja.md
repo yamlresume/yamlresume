@@ -56,14 +56,14 @@ YAMLResume は
 
 - **コンテンツ** はプレーンテキストの YAML に保存されます。
 - **構造と検証** はコンパイラーと厳格なスキーマによって強制されます。
-- **表示** は交換可能なレイアウトエンジン (LaTeX、HTML、Markdown、DOCX) が担います。
+- **表示** は交換可能なレイアウトエンジン (LaTeX、Typst、HTML、Markdown、DOCX) が担います。
 
 あなたは「何」を編集し、YAMLResume が「どう」を処理します。
 
 ## 機能の概要
 
 - **1 つのソース、複数の出力。** 単一の `resume.yml` から、ピクセル単位で正確な PDF
-  (LaTeX 経由)、クリーンな Markdown、レスポンシブな HTML、Microsoft Word DOCX
+  (LaTeX または Typst 経由)、クリーンな Markdown、レスポンシブな HTML、Microsoft Word DOCX
   ファイルを生成できます。
 - **本物の履歴書コンパイラー。** 解析・検証・変換・レンダリングを行います。
   Zod ランタイム検証とエディターの JSON Schema 統合により、エラーを早期に発見できます。
@@ -78,7 +78,7 @@ YAMLResume は
 
 ## クイックスタート
 
-YAMLResume を試す最も速い方法は Docker です。イメージには CLI、XeTeX、推奨フォントが
+YAMLResume を試す最も速い方法は Docker です。イメージには CLI、XeTeX、Typst、推奨フォントが
 同梱されています：
 
 ```sh
@@ -170,6 +170,8 @@ layouts:
     template: moderncv-banking
     typography:
       fontSize: 11pt
+  - engine: typst
+    template: jake
   - engine: markdown
   - engine: html
     template: calm
@@ -180,6 +182,7 @@ layouts:
 各エンジンの詳細：
 
 - [LaTeX / PDF](https://yamlresume.dev/ja/docs/layouts/latex)
+- [Typst / PDF](https://yamlresume.dev/ja/docs/layouts/typst)
 - [HTML](https://yamlresume.dev/ja/docs/layouts/html)
 - [Markdown](https://yamlresume.dev/ja/docs/layouts/markdown)
 - [DOCX](https://yamlresume.dev/ja/docs/layouts/docx)
@@ -229,6 +232,7 @@ YAMLResume は各エンジン向けに拡充中のテンプレートを同梱し
 | エンジン | テンプレート                                                    |
 | -------- | --------------------------------------------------------------- |
 | LaTeX    | `moderncv-banking`、`moderncv-casual`、`moderncv-classic`、`jake` |
+| Typst    | `jake`                                                          |
 | HTML     | `calm`、`vscode`                                                |
 | DOCX     | `calm`                                                          |
 
@@ -285,7 +289,6 @@ YAMLResume は活発に開発されており、新機能が定期的に追加さ
 ## ロードマップ
 
 - [ ] さらに多くの履歴書テンプレート
-- [ ] さらに多くのレイアウトエンジン (typst など)
 - [ ] さらに多くの言語とロケール
 - [ ] ATS 最適化機能
 

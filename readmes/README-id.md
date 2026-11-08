@@ -57,7 +57,7 @@ YAMLResume mengikuti prinsip
 
 - **Konten** disimpan dalam YAML teks biasa.
 - **Struktur dan validasi** ditegakkan oleh kompiler dan skema yang ketat.
-- **Tampilan** ditangani oleh mesin tata letak yang dapat dipertukarkan (LaTeX,
+- **Tampilan** ditangani oleh mesin tata letak yang dapat dipertukarkan (LaTeX, Typst,
   HTML, Markdown, DOCX).
 
 Anda mengedit isinya; YAMLResume yang mengurus cara penyajiannya.
@@ -65,7 +65,7 @@ Anda mengedit isinya; YAMLResume yang mengurus cara penyajiannya.
 ## Fitur Sekilas
 
 - **Satu sumber, banyak keluaran.** Dari satu `resume.yml`, hasilkan PDF yang
-  presisi piksel (via LaTeX), Markdown yang rapi, HTML responsif, dan file
+  presisi piksel (via LaTeX atau Typst), Markdown yang rapi, HTML responsif, dan file
   Microsoft Word DOCX.
 - **Kompiler resume sesungguhnya.** Parsing, validasi, transformasi, dan render.
   Deteksi kesalahan sejak dini berkat validasi runtime Zod dan integrasi skema
@@ -84,7 +84,7 @@ Anda mengedit isinya; YAMLResume yang mengurus cara penyajiannya.
 ## Mulai Cepat
 
 Cara tercepat mencoba YAMLResume adalah dengan Docker. Image sudah menyertakan
-CLI, XeTeX, dan font yang direkomendasikan:
+CLI, XeTeX, Typst, dan font yang direkomendasikan:
 
 ```sh
 docker run --rm -v $(pwd):/home/yamlresume yamlresume/yamlresume new my-resume.yml
@@ -177,6 +177,8 @@ layouts:
     template: moderncv-banking
     typography:
       fontSize: 11pt
+  - engine: typst
+    template: jake
   - engine: markdown
   - engine: html
     template: calm
@@ -187,6 +189,7 @@ layouts:
 Pelajari lebih lanjut tiap mesin:
 
 - [LaTeX / PDF](https://yamlresume.dev/docs/layouts/latex)
+- [Typst / PDF](https://yamlresume.dev/docs/layouts/typst)
 - [HTML](https://yamlresume.dev/docs/layouts/html)
 - [Markdown](https://yamlresume.dev/docs/layouts/markdown)
 - [DOCX](https://yamlresume.dev/docs/layouts/docx)
@@ -241,6 +244,7 @@ mesin:
 | Mesin  | Templat                                                          |
 | ------ | ---------------------------------------------------------------- |
 | LaTeX  | `moderncv-banking`, `moderncv-casual`, `moderncv-classic`, `jake` |
+| Typst  | `jake`                                                            |
 | HTML   | `calm`, `vscode`                                                 |
 | DOCX   | `calm`                                                           |
 
@@ -300,7 +304,6 @@ berkala. Kontribusi sangat dihargai. Silakan baca
 ## Peta Jalan
 
 - [ ] lebih banyak templat resume
-- [ ] lebih banyak mesin tata letak (typst, dan lainnya)
 - [ ] lebih banyak bahasa dan locale
 - [ ] fitur optimasi ATS
 

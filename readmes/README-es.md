@@ -57,7 +57,7 @@ YAMLResume sigue el principio de
 
 - **Contenido** se almacena en YAML de texto plano.
 - **Estructura y validación** son impuestas por el compilador y un esquema estricto.
-- **Presentación** es manejada por motores de diseño intercambiables (LaTeX, HTML,
+- **Presentación** es manejada por motores de diseño intercambiables (LaTeX, Typst, HTML,
   Markdown, DOCX).
 
 Usted edita el qué; YAMLResume se encarga del cómo.
@@ -65,7 +65,7 @@ Usted edita el qué; YAMLResume se encarga del cómo.
 ## Características en Resumen
 
 - **Una fuente, múltiples salidas.** A partir de un único `resume.yml`, genere PDFs
-  con precisión de píxel (vía LaTeX), Markdown limpio, HTML responsivo y archivos
+  con precisión de píxel (vía LaTeX o Typst), Markdown limpio, HTML responsivo y archivos
   Microsoft Word DOCX.
 - **Un compilador de currículos real.** Análisis, validación, transformación y
   renderizado. Detecte errores temprano gracias a la validación en tiempo de
@@ -85,7 +85,7 @@ Usted edita el qué; YAMLResume se encarga del cómo.
 ## Inicio Rápido
 
 La forma más rápida de probar YAMLResume es con Docker. La imagen incluye la
-CLI, XeTeX y las fuentes recomendadas:
+CLI, XeTeX, Typst y las fuentes recomendadas:
 
 ```sh
 docker run --rm -v $(pwd):/home/yamlresume yamlresume/yamlresume new my-resume.yml
@@ -179,6 +179,8 @@ layouts:
     template: moderncv-banking
     typography:
       fontSize: 11pt
+  - engine: typst
+    template: jake
   - engine: markdown
   - engine: html
     template: calm
@@ -189,6 +191,7 @@ layouts:
 Obtenga más información sobre cada motor:
 
 - [LaTeX / PDF](https://yamlresume.dev/docs/layouts/latex)
+- [Typst / PDF](https://yamlresume.dev/docs/layouts/typst)
 - [HTML](https://yamlresume.dev/docs/layouts/html)
 - [Markdown](https://yamlresume.dev/docs/layouts/markdown)
 - [DOCX](https://yamlresume.dev/docs/layouts/docx)
@@ -243,6 +246,7 @@ YAMLResume viene con una colección creciente de plantillas para varios motores:
 | Motor  | Plantillas                                                       |
 | ------ | ---------------------------------------------------------------- |
 | LaTeX  | `moderncv-banking`, `moderncv-casual`, `moderncv-classic`, `jake` |
+| Typst  | `jake`                                                            |
 | HTML   | `calm`, `vscode`                                                 |
 | DOCX   | `calm`                                                           |
 
@@ -304,7 +308,6 @@ regularmente. ¡Las contribuciones son muy bienvenidas! Por favor, lea las
 ## Hoja de Ruta
 
 - [ ] más plantillas de currículos
-- [ ] más motores de diseño (typst, y otros)
 - [ ] más idiomas y localizaciones
 - [ ] características de optimización para ATS
 

@@ -55,13 +55,13 @@ YAMLResume 遵循
 
 - **內容** 儲存在純文字 YAML 中。
 - **結構和驗證** 由編譯器和嚴格的模式強制執行。
-- **呈現方式** 由可互換的佈局引擎（LaTeX、HTML、Markdown、DOCX）處理。
+- **呈現方式** 由可互換的佈局引擎（LaTeX、Typst、HTML、Markdown、DOCX）處理。
 
 您編輯「什麼」；YAMLResume 負責「如何」呈現。
 
 ## 功能概覽
 
-- **一個來源，多種輸出。** 從單個 `resume.yml` 生成像素級精確的 PDF（透過 LaTeX）、
+- **一個來源，多種輸出。** 從單個 `resume.yml` 生成像素級精確的 PDF（透過 LaTeX 或 Typst）、
   乾淨的 Markdown、響應式 HTML 和 Microsoft Word DOCX 檔案。
 - **真正的履歷編譯器。** 解析、驗證、轉換和渲染。借助 Zod 執行時驗證和編輯器中的
   JSON Schema 整合，及早發現錯誤。
@@ -77,7 +77,7 @@ YAMLResume 遵循
 
 ## 快速開始
 
-試用 YAMLResume 最快的方式是使用 Docker。映像包含 CLI、XeTeX 和推薦字體：
+試用 YAMLResume 最快的方式是使用 Docker。映像包含 CLI、XeTeX、Typst 和推薦字體：
 
 ```sh
 docker run --rm -v $(pwd):/home/yamlresume yamlresume/yamlresume new my-resume.yml
@@ -165,6 +165,8 @@ layouts:
     template: moderncv-banking
     typography:
       fontSize: 11pt
+  - engine: typst
+    template: jake
   - engine: markdown
   - engine: html
     template: calm
@@ -175,6 +177,7 @@ layouts:
 瞭解每種引擎的更多資訊：
 
 - [LaTeX / PDF](https://yamlresume.dev/zh-tw/docs/layouts/latex)
+- [Typst / PDF](https://yamlresume.dev/zh-tw/docs/layouts/typst)
 - [HTML](https://yamlresume.dev/zh-tw/docs/layouts/html)
 - [Markdown](https://yamlresume.dev/zh-tw/docs/layouts/markdown)
 - [DOCX](https://yamlresume.dev/zh-tw/docs/layouts/docx)
@@ -223,6 +226,7 @@ YAMLResume 為各種引擎提供不斷增長的範本集合：
 | 引擎   | 範本                                                             |
 | ------ | ---------------------------------------------------------------- |
 | LaTeX  | `moderncv-banking`、`moderncv-casual`、`moderncv-classic`、`jake` |
+| Typst  | `jake`                                                            |
 | HTML   | `calm`、`vscode`                                                 |
 | DOCX   | `calm`                                                           |
 
@@ -277,7 +281,6 @@ YAMLResume 正在積極開發中，新功能定期新增。非常歡迎貢獻！
 ## 路線圖
 
 - [ ] 更多履歷範本
-- [ ] 更多佈局引擎（typst 及其他）
 - [ ] 更多語言和語言環境
 - [ ] ATS 優化功能
 

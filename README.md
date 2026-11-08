@@ -60,7 +60,7 @@ YAMLResume follows
 
 - **Content** lives in plain-text YAML.
 - **Structure and validation** are enforced by the compiler and a strict schema.
-- **Presentation** is handled by pluggable layout engines (LaTeX, HTML,
+- **Presentation** is handled by pluggable layout engines (LaTeX, Typst, HTML,
   Markdown, DOCX).
 
 You edit the what; YAMLResume handles the how.
@@ -68,8 +68,8 @@ You edit the what; YAMLResume handles the how.
 ## Features at a Glance
 
 - **One source, multiple outputs.** From a single `resume.yml` generate
-  pixel-perfect PDFs (via LaTeX), clean Markdown, responsive HTML, and Microsoft
-  Word DOCX files.
+  pixel-perfect PDFs (via LaTeX or Typst), clean Markdown, responsive HTML, and
+  Microsoft Word DOCX files.
 - **A real resume compiler.** Parse, validate, transform, and render. Catch
   errors early with Zod runtime validation and JSON Schema editor integration.
 - **Great developer experience.** Watch mode with `yamlresume dev`, environment
@@ -85,7 +85,7 @@ You edit the what; YAMLResume handles the how.
 ## Quick Start
 
 The fastest way to try YAMLResume is with Docker. The image ships with the CLI,
-XeTeX, and recommended fonts:
+XeTeX, Typst, and recommended fonts:
 
 ```sh
 docker run --rm -v $(pwd):/home/yamlresume yamlresume/yamlresume new my-resume.yml
@@ -177,6 +177,8 @@ layouts:
     template: moderncv-banking
     typography:
       fontSize: 11pt
+  - engine: typst
+    template: jake
   - engine: markdown
   - engine: html
     template: calm
@@ -187,6 +189,7 @@ layouts:
 Learn more about each engine:
 
 - [LaTeX / PDF](https://yamlresume.dev/docs/layouts/latex)
+- [Typst / PDF](https://yamlresume.dev/docs/layouts/typst)
 - [HTML](https://yamlresume.dev/docs/layouts/html)
 - [Markdown](https://yamlresume.dev/docs/layouts/markdown)
 - [DOCX](https://yamlresume.dev/docs/layouts/docx)
@@ -239,6 +242,7 @@ YAMLResume ships with a growing set of templates across engines:
 | Engine | Templates                                                         |
 | ------ | ----------------------------------------------------------------- |
 | LaTeX  | `moderncv-banking`, `moderncv-casual`, `moderncv-classic`, `jake` |
+| Typst  | `jake`                                                            |
 | HTML   | `calm`, `vscode`                                                  |
 | DOCX   | `calm`                                                            |
 
@@ -298,7 +302,6 @@ Contributions are deeply appreciated. Please read the
 ## Roadmap
 
 - [ ] more resume templates
-- [ ] more layout engines (typst, and others)
 - [ ] more languages and locales
 - [ ] ATS optimization features
 
