@@ -86,10 +86,15 @@ describe('JakeLatexRenderer', () => {
       const result = renderer.renderPreamble()
 
       expect(result).toContain('Auto-underline all links')
+      expect(result).toContain('\\newsavebox{\\yamlresumeUnderlineBox}')
       expect(result).toContain(
         '\\DeclareRobustCommand{\\yamlresumeFixedUnderline}[1]{%'
       )
-      expect(result).toContain('\\vphantom{#1}\\underline{\\smash{#1}}%')
+      expect(result).toContain('\\sbox{\\yamlresumeUnderlineBox}{#1}%')
+      expect(result).toContain(
+        '\\rlap{\\smash{\\rule[-1.5pt]{\\wd\\yamlresumeUnderlineBox}{0.5pt}}}%'
+      )
+      expect(result).toContain('\\usebox{\\yamlresumeUnderlineBox}%')
       expect(result).toContain(
         '\\renewcommand{\\href}[2]{\\oldhref{#1}{\\yamlresumeFixedUnderline{#2}}}%'
       )

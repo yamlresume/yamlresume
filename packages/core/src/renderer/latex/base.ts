@@ -256,9 +256,12 @@ ${renderCJKFont('Sans', 'sans', regions)}`
    *
    * Redefines \\href to automatically underline link text when the layout
    * enables it. LaTeX's \\underline follows the box depth, so a link
-   * containing descenders would sit lower than one without them. Smash the
-   * text for rule placement and restore the line box with \\vphantom so
-   * every underline uses the same fixed baseline offset.
+   * containing descenders would sit lower than one without them, and it
+   * draws the rule over the glyphs.
+   *
+   * Draw a fixed-baseline rule first and the text on top instead. The text
+   * is measured into a savebox so the rule can match its width, while
+   * \\smash keeps the rule from affecting line spacing.
    *
    * @returns The LaTeX code for auto-underlining links, or empty string
    */
@@ -268,8 +271,11 @@ ${renderCJKFont('Sans', 'sans', regions)}`
     }
 
     return `% Auto-underline all links
+\\newsavebox{\\yamlresumeUnderlineBox}
 \\DeclareRobustCommand{\\yamlresumeFixedUnderline}[1]{%
-  \\vphantom{#1}\\underline{\\smash{#1}}%
+  \\sbox{\\yamlresumeUnderlineBox}{#1}%
+  \\rlap{\\smash{\\rule[-1.5pt]{\\wd\\yamlresumeUnderlineBox}{0.5pt}}}%
+  \\usebox{\\yamlresumeUnderlineBox}%
 }%
 % Defer until \\begin{document} so hyperref is already loaded
 \\AtBeginDocument{%
