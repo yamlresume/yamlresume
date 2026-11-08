@@ -49,7 +49,7 @@ import {
  * Options for building resume outputs.
  */
 export interface BuildResumeFileOptions {
-  // Whether to generate PDF output from LaTeX. Defaults to true.
+  // Whether to generate PDF output from LaTeX/Typst. Defaults to true.
   pdf?: boolean
   // Whether to validate the resume against the schema before building. Defaults
   // to true.
@@ -57,8 +57,8 @@ export interface BuildResumeFileOptions {
   // Optional output directory for generated files. If not specified, outputs to
   // current working directory.
   output?: string
-  // Timeout in seconds for LaTeX compilation. Defaults to 30 seconds. Set to 0
-  // to disable timeout.
+  // Timeout in seconds for LaTeX/Typst compilation. Defaults to 30 seconds.
+  // Set to 0 to disable timeout.
   timeout?: number
   // Optional logger for progress messages. If not provided, no logs will be
   // shown.

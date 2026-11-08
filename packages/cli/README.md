@@ -12,11 +12,11 @@ beautifully typeset, professional PDF.
 
 ![YAMLResume YAML and PDF](https://yamlresume.dev/static/assets/images/yamlresume-yaml-and-pdf.webp)
 
-**Important:** PDF generation requires a LaTeX installation. For detailed
-instructions, please see the
+**Important:** PDF generation requires a LaTeX or Typst installation, depending
+on the layout engines you enable. For detailed instructions, please see the
 [Installation Guide](https://yamlresume.dev/docs/installation).
 
-If you don't have LaTeX installed, you can use Docker to run YAMLResume:
+If you don't have a PDF engine installed, you can use Docker to run YAMLResume:
 
 [![YAMLResume Docker Demo](https://asciinema.org/a/722057.svg)](https://asciinema.org/a/722057)
 
@@ -85,7 +85,7 @@ For more detailed information, please visit our official documentation:
   resume schema reference.
 - **[Multi Language Support](https://yamlresume.dev/docs/locale)**:
   Learn how to write resumes in multiple languages.
-- **[Templates](https://yamlresume.dev/docs/layouts/latex/templates)**: Learn how to
+- **[Templates](https://yamlresume.dev/docs/layouts)**: Learn how to
   use and create templates.
 
 ## Support the Project

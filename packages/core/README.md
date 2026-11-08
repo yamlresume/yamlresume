@@ -18,9 +18,9 @@ command-line tool. See the
 
 The core design principle of YAMLResume is
 [Separation of Concerns](https://en.wikipedia.org/wiki/Separation_of_concerns).
-The resume content (YAML) is decoupled from its presentation (LaTeX), allowing
-the core engine to focus on one thing: compiling a structured document into a
-beautifully typeset PDF.
+The resume content (YAML) is decoupled from its presentation (LaTeX, Typst,
+HTML, Markdown, DOCX), allowing the core engine to focus on one thing: compiling
+a structured document into a beautifully typeset PDF.
 
 ## Documentation
 

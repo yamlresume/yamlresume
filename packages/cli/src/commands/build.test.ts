@@ -77,7 +77,7 @@ describe(createBuildCommand, () => {
   it('should have correct name and description', () => {
     expect(buildCommand.name()).toBe('build')
     expect(buildCommand.description()).toBe(
-      'build a resume to Docx, HTML, Markdown or LaTeX/PDF'
+      'build a resume to Docx, HTML, Markdown, LaTeX/PDF or Typst/PDF'
     )
   })
 

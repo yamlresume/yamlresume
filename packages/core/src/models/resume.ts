@@ -537,8 +537,9 @@ export const DEFAULT_TYPST_LAYOUT: TypstLayout = {
 /**
  * Default layouts configuration.
  *
- * We only include LaTeX, Markdown, and HTML layouts by default, which should be
- * good enough for most people.
+ * We include HTML, LaTeX, DOCX, and Markdown layouts by default, which should
+ * be good enough for most people. Typst is opt-in because it requires a
+ * separate compiler.
  */
 
 export const DEFAULT_RESUME_LAYOUTS: Layouts = [

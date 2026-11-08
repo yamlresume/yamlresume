@@ -126,24 +126,23 @@ export async function handleBuildCommand(
 }
 
 /**
- * Create a command instance to build a YAML resume to LaTeX and PDF
+ * Create a command instance to build a YAML resume to its configured layouts
  */
 export function createBuildCommand() {
   return new Command()
     .name('build')
-    .description('build a resume to Docx, HTML, Markdown or LaTeX/PDF')
-    .argument('<resume-path>', 'the resume file path')
-    .option(
-      '--no-pdf',
-      'only generate TeX file without PDF (for LaTeX layouts)'
+    .description(
+      'build a resume to Docx, HTML, Markdown, LaTeX/PDF or Typst/PDF'
     )
+    .argument('<resume-path>', 'the resume file path')
+    .option('--no-pdf', 'only generate source files (TeX/Typst) without PDF')
     .option('--no-validate', 'skip resume schema validation')
     .option('-o, --output <dir>', 'output directory for generated files')
     .option(
       '-t, --timeout <seconds>',
       joinNonEmptyString(
         [
-          'timeout for LaTeX compilation in seconds',
+          'timeout for LaTeX/Typst compilation in seconds',
           `(default: ${LATEX_COMPILE_TIMEOUT}, 0 to disable)`,
         ],
         ' '
