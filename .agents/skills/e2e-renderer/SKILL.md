@@ -1,5 +1,5 @@
 ---
-name: engine-e2e
+name: e2e-renderer
 description: Run a heuristic end-to-end test for a YAMLResume engine and template — generate baseline, option and locale fixtures, build them, validate outputs, and produce reviewable PDFs/previews plus a pass/fail report. Use when the user asks to e2e test an engine, template, layout option, or locale support (e.g. "e2e test typst jake", "smoke test html calm", "check moderncv locales").
 argument-hint: "<engine> <template> [--locales all|en,...] [--variants all|id,...] [--out DIR]"
 ---
@@ -19,7 +19,7 @@ generated output, and page sizes match. Visual quality still needs a human look.
 Run the helper's listing if needed:
 
 ```sh
-node .agents/skills/engine-e2e/scripts/run.mjs --list
+node .agents/skills/e2e-renderer/scripts/run.mjs --list
 ```
 
 | Engine | Templates | Output |
@@ -49,7 +49,7 @@ optional tools produce warnings, not failures.
 ## 3. Run
 
 ```sh
-node .agents/skills/engine-e2e/scripts/run.mjs <engine> <template>
+node .agents/skills/e2e-renderer/scripts/run.mjs <engine> <template>
 ```
 
 Useful options:
@@ -64,10 +64,10 @@ Useful options:
 Examples:
 
 ```sh
-node .agents/skills/engine-e2e/scripts/run.mjs typst jake
-node .agents/skills/engine-e2e/scripts/run.mjs latex jake --locales en
-node .agents/skills/engine-e2e/scripts/run.mjs html kami --locales all
-node .agents/skills/engine-e2e/scripts/run.mjs docx calm --variants all
+node .agents/skills/e2e-renderer/scripts/run.mjs typst jake
+node .agents/skills/e2e-renderer/scripts/run.mjs latex jake --locales en
+node .agents/skills/e2e-renderer/scripts/run.mjs html kami --locales all
+node .agents/skills/e2e-renderer/scripts/run.mjs docx calm --variants all
 ```
 
 The runner writes to `e2e/<engine>-<template>/` by default and adds that path
