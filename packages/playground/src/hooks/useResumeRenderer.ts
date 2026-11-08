@@ -47,7 +47,7 @@ export interface UseResumeRendererProps {
  *
  * This hook encapsulates the logic for:
  * - Selecting the appropriate layout from the resume's layouts array
- * - Determining the rendering engine (html, markdown, or latex)
+ * - Determining the rendering engine (html, markdown, latex, typst, or docx)
  * - Generating the rendered output content
  * - Handling errors gracefully during rendering
  *
@@ -57,7 +57,8 @@ export interface UseResumeRendererProps {
  * @param {UseResumeRendererProps} props - Configuration options for the hook.
  * @returns An object containing:
  *   - `renderedContent` - The rendered resume content as a string
- *   - `engine` - The rendering engine used ('html', 'markdown', or 'latex')
+ *   - `engine` - The rendering engine used ('html', 'markdown', 'latex',
+ *     'typst', or 'docx')
  *   - `error` - Error message if rendering failed, or `null` if successful
  *
  * @example

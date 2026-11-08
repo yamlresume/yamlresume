@@ -22,15 +22,11 @@
  * IN THE SOFTWARE.
  */
 
-import {
-  IconFileText,
-  IconHtml,
-  IconMarkdown,
-  IconTex,
-} from '@tabler/icons-react'
+import { IconFileText, IconFileTypeDocx } from '@tabler/icons-react'
 import type { LayoutEngine } from '@yamlresume/core'
 import clsx from 'clsx'
 
+import { EngineIcon } from '@/components/icons/EngineIcons'
 import { EDITOR_BG_COLOR, ICON_SIZES, ICON_STROKES } from '@/constants'
 import { getExtension } from '@/utils'
 
@@ -42,7 +38,7 @@ interface PreviewTabProps {
   active: boolean
   /** Callback triggered when the tab is clicked. */
   onClick: () => void
-  /** The layout engine (e.g., 'html', 'markdown') used for this tab. */
+  /** The layout engine (e.g., 'html', 'typst') used for this tab. */
   engine: LayoutEngine
   /** The index of this layout in the resume configuration. */
   index: number
@@ -59,12 +55,13 @@ interface PreviewTabProps {
  */
 export function getTabIcon(engine: LayoutEngine) {
   switch (engine) {
+    case 'docx':
+      return <IconFileTypeDocx size={ICON_SIZES.sm} stroke={ICON_STROKES.sm} />
     case 'html':
-      return <IconHtml size={ICON_SIZES.sm} stroke={ICON_STROKES.sm} />
     case 'markdown':
-      return <IconMarkdown size={ICON_SIZES.sm} stroke={ICON_STROKES.sm} />
     case 'latex':
-      return <IconTex size={ICON_SIZES.sm} stroke={ICON_STROKES.sm} />
+    case 'typst':
+      return <EngineIcon engine={engine} size={ICON_SIZES.sm} />
     default:
       return <IconFileText size={ICON_SIZES.sm} stroke={ICON_STROKES.sm} />
   }

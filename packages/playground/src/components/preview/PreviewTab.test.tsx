@@ -30,17 +30,35 @@ import { getTabIcon, PreviewTab } from './PreviewTab'
 describe(getTabIcon, () => {
   it('renders correct icon for html', () => {
     const { container } = render(getTabIcon('html'))
-    expect(container.querySelector('.tabler-icon-html')).toBeDefined()
+    expect(
+      container.querySelector('[data-testid="html-engine-icon"]')
+    ).toBeDefined()
   })
 
   it('renders correct icon for markdown', () => {
     const { container } = render(getTabIcon('markdown'))
-    expect(container.querySelector('.tabler-icon-markdown')).toBeDefined()
+    expect(
+      container.querySelector('[data-testid="markdown-engine-icon"]')
+    ).toBeDefined()
   })
 
   it('renders correct icon for latex', () => {
     const { container } = render(getTabIcon('latex'))
-    expect(container.querySelector('.tabler-icon-tex')).toBeDefined()
+    expect(
+      container.querySelector('[data-testid="latex-engine-icon"]')
+    ).toBeDefined()
+  })
+
+  it('renders the typst mark', () => {
+    const { container } = render(getTabIcon('typst'))
+    expect(
+      container.querySelector('[data-testid="typst-engine-icon"]')
+    ).toBeDefined()
+  })
+
+  it('renders the docx file icon', () => {
+    const { container } = render(getTabIcon('docx'))
+    expect(container.querySelector('.tabler-icon-file-type-docx')).toBeDefined()
   })
 
   it('renders default icon for unknown engine', () => {
