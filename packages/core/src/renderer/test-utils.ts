@@ -113,14 +113,18 @@ export function defineRendererRobustnessSuite({
           expectValidOutput(output)
         })
 
-        it('renders with the default layout when layouts are absent', async () => {
-          const input = cloneDeep(resume)
-          input.layouts = undefined
-          const output = await renderer
-            .create(input, defaultLayoutIndex)
-            .render()
-          expectValidOutput(output)
-        })
+        // Not every engine is part of DEFAULT_RESUME_LAYOUTS (Typst is
+        // opt-in), so only exercise the default-layout path when applicable.
+        if (defaultLayoutIndex >= 0) {
+          it('renders with the default layout when layouts are absent', async () => {
+            const input = cloneDeep(resume)
+            input.layouts = undefined
+            const output = await renderer
+              .create(input, defaultLayoutIndex)
+              .render()
+            expectValidOutput(output)
+          })
+        }
 
         it.each(removableKeys)('renders with field %s removed', async (key) => {
           const input = removeKeysFromObject(cloneDeep(resume), [key])
