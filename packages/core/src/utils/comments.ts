@@ -32,6 +32,8 @@ import {
   LATEX_FONT_SIZE_OPTIONS,
   LATEX_PAPER_SIZE_OPTIONS,
   LEVEL_OPTIONS,
+  TYPST_FONT_SIZE_OPTIONS,
+  TYPST_PAPER_SIZE_OPTIONS,
 } from '@/models'
 import { joinNonEmptyString } from './string'
 import { clearComments, getPair } from './yaml'
@@ -222,6 +224,23 @@ export function injectResumeComments(doc: Document): string {
         const fontSizePair = getPair(layout, ['typography', 'fontSize'])
         if (fontSizePair) {
           fontSizePair.key.commentBefore = HTML_FONT_SIZE_COMMENT
+        }
+      }
+
+      if (engine === 'typst') {
+        const paperSizePair = getPair(layout, ['page', 'paperSize'])
+        if (paperSizePair) {
+          paperSizePair.key.commentBefore = buildPaperSizeComment(
+            TYPST_PAPER_SIZE_OPTIONS
+          )
+        }
+
+        const fontSizePair = getPair(layout, ['typography', 'fontSize'])
+        if (fontSizePair) {
+          fontSizePair.key.commentBefore = buildFontSizeComment(
+            'Typst',
+            TYPST_FONT_SIZE_OPTIONS
+          )
         }
       }
     }

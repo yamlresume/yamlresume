@@ -192,6 +192,12 @@ locale:
     template: calm
     typography:
       fontSize: 16px
+  - engine: typst
+    template: jake
+    page:
+      paperSize: a4
+    typography:
+      fontSize: 11pt
 `
 
     const result = injectResumeComments(resumeWithLayouts)
@@ -204,6 +210,7 @@ locale:
     expect(result).toContain(
       'HTML engine only supports font size in px unit, from 14px to 20px'
     )
+    expect(result).toContain('Typst engine only supports 10pt, 11pt, 12pt')
     expect(result).toContain('a4 or letter')
   })
 
