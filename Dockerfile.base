@@ -59,6 +59,7 @@ RUN /opt/bin/tlmgr install \
     enumitem \
     titlesec \
     changepage \
+    contour \
     setspace \
     adjustbox \
     tcolorbox \

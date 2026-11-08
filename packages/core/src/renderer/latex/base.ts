@@ -261,7 +261,11 @@ ${renderCJKFont('Sans', 'sans', regions)}`
    *
    * Draw a fixed-baseline rule first and the text on top instead. The text
    * is measured into a savebox so the rule can match its width, while
-   * \\smash keeps the rule from affecting line spacing.
+   * \\smash keeps the rule from affecting line spacing. The rule's center
+   * sits 1.3pt below the baseline, matching the Typst underline.
+   *
+   * The text is drawn with a white contour so descenders clear a gap in the
+   * rule instead of crossing it, matching Typst's underline behavior.
    *
    * @returns The LaTeX code for auto-underlining links, or empty string
    */
@@ -271,11 +275,13 @@ ${renderCJKFont('Sans', 'sans', regions)}`
     }
 
     return `% Auto-underline all links
+\\usepackage{contour}
+\\contourlength{0.2pt}
 \\newsavebox{\\yamlresumeUnderlineBox}
 \\DeclareRobustCommand{\\yamlresumeFixedUnderline}[1]{%
   \\sbox{\\yamlresumeUnderlineBox}{#1}%
-  \\rlap{\\smash{\\rule[-1.5pt]{\\wd\\yamlresumeUnderlineBox}{0.5pt}}}%
-  \\usebox{\\yamlresumeUnderlineBox}%
+  \\rlap{\\smash{\\rule[-1.55pt]{\\wd\\yamlresumeUnderlineBox}{0.5pt}}}%
+  \\contour{white}{#1}%
 }%
 % Defer until \\begin{document} so hyperref is already loaded
 \\AtBeginDocument{%
