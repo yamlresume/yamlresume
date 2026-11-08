@@ -255,7 +255,10 @@ ${renderCJKFont('Sans', 'sans', regions)}`
    * Render auto-underline configuration for all hyperref links.
    *
    * Redefines \\href to automatically underline link text when the layout
-   * enables it.
+   * enables it. LaTeX's \\underline follows the box depth, so a link
+   * containing descenders would sit lower than one without them. Smash the
+   * text for rule placement and restore the line box with \\vphantom so
+   * every underline uses the same fixed baseline offset.
    *
    * @returns The LaTeX code for auto-underlining links, or empty string
    */
@@ -265,12 +268,15 @@ ${renderCJKFont('Sans', 'sans', regions)}`
     }
 
     return `% Auto-underline all links
+\\DeclareRobustCommand{\\yamlresumeFixedUnderline}[1]{%
+  \\vphantom{#1}\\underline{\\smash{#1}}%
+}%
 % Defer until \\begin{document} so hyperref is already loaded
 \\AtBeginDocument{%
   \\let\\oldhref\\href
-  \\renewcommand{\\href}[2]{\\oldhref{#1}{\\underline{#2}}}%
+  \\renewcommand{\\href}[2]{\\oldhref{#1}{\\yamlresumeFixedUnderline{#2}}}%
   \\let\\oldurl\\url
-  \\renewcommand{\\url}[1]{\\underline{\\oldurl{#1}}}%
+  \\renewcommand{\\url}[1]{\\yamlresumeFixedUnderline{\\oldurl{#1}}}%
 }`
   }
 

@@ -87,10 +87,14 @@ describe('JakeLatexRenderer', () => {
 
       expect(result).toContain('Auto-underline all links')
       expect(result).toContain(
-        '\\renewcommand{\\href}[2]{\\oldhref{#1}{\\underline{#2}}}%'
+        '\\DeclareRobustCommand{\\yamlresumeFixedUnderline}[1]{%'
+      )
+      expect(result).toContain('\\vphantom{#1}\\underline{\\smash{#1}}%')
+      expect(result).toContain(
+        '\\renewcommand{\\href}[2]{\\oldhref{#1}{\\yamlresumeFixedUnderline{#2}}}%'
       )
       expect(result).toContain(
-        '\\renewcommand{\\url}[1]{\\underline{\\oldurl{#1}}}%'
+        '\\renewcommand{\\url}[1]{\\yamlresumeFixedUnderline{\\oldurl{#1}}}%'
       )
     })
 
