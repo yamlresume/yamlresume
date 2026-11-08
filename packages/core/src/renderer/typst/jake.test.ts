@@ -238,6 +238,15 @@ describe('JakeTypstRenderer', () => {
       )
     })
 
+    it('should separate preamble blocks with a single blank line', () => {
+      const result = renderer.renderPreamble()
+
+      expect(result).not.toMatch(/\n{3,}/)
+      expect(result).toContain(
+        '#set enum(indent: 1em, spacing: 0.57em)\n\n// A two-row subheading'
+      )
+    })
+
     it('should not require a Font Awesome font helper', () => {
       expect(renderer.renderPreamble()).not.toContain('#let fa-icon')
     })

@@ -187,9 +187,7 @@ class JakeTypstRenderer extends TypstRenderer {
 #let accent-color = rgb("#${accentHex}")`
     )
 
-    return `${accentDef}
-
-// A two-row subheading with left/right aligned columns, analogous to the
+    const helpers = `// A two-row subheading with left/right aligned columns, analogous to the
 // \\resumeSubheading command in the LaTeX template (a tabular* whose rows are
 // one baselineskip (~13.5pt) apart; Typst grid rows size tightly to the text
 // metrics (~7.8pt), hence the calibrated row gutter)
@@ -217,6 +215,8 @@ class JakeTypstRenderer extends TypstRenderer {
     #line(length: 100%, stroke: 0.4pt + ${accentColor})
   ]
 }`
+
+    return joinNonEmptyString([accentDef, helpers], '\n\n')
   }
 
   /**
