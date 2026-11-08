@@ -180,7 +180,7 @@ describe('JakeTypstRenderer', () => {
       expect(renderer.renderPreamble()).not.toContain('#show link')
     })
 
-    it('should underline links depth-aware when typography.links.underline is enabled', () => {
+    it('should underline links at a fixed baseline offset when typography.links.underline is enabled', () => {
       resume.layouts = [
         { engine: 'typst', typography: { links: { underline: true } } },
       ]
@@ -188,16 +188,10 @@ describe('JakeTypstRenderer', () => {
 
       const result = renderer.renderPreamble()
 
-      expect(result).toContain('#show link: it => context {')
       expect(result).toContain(
-        'measure(text(it, bottom-edge: "baseline")).height'
+        '#show link: it => underline(it, offset: 1.3pt, stroke: 0.5pt + black)'
       )
-      expect(result).toContain(
-        'measure(text(it, bottom-edge: "bounds")).height'
-      )
-      expect(result).toContain(
-        'underline(it, offset: (bounds - base) + 1.3pt, stroke: 0.5pt + black)'
-      )
+      expect(result).not.toContain('measure(text(')
     })
 
     it('should not underline links when typography.links.underline is disabled', () => {

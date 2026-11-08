@@ -222,22 +222,19 @@ class JakeTypstRenderer extends TypstRenderer {
   /**
    * Render the link styling configuration.
    *
-   * Underline all links when the layout enables it. Measuring the link
-   * with `bottom-edge: "bounds"` yields its real descender depth, so the
-   * rule can sit below the deepest glyph like the LaTeX template's
-   * auto-underline `\\href` redefinition.
+   * Underline all links when the layout enables it. LaTeX's `\underline`
+   * places its rule at a fixed offset below the baseline, so descenders can
+   * cross the rule. Use the same fixed baseline offset here instead of
+   * measuring glyph depth, which would push links containing `g`/`p` lower
+   * and make the gap vary between contact fields.
    */
   private renderLinkConfig(): string {
     if (!this.showUnderlinedLinks) {
       return ''
     }
 
-    return `// Underline all links, matching the LaTeX template's depth-aware rule
-#show link: it => context {
-  let base = measure(text(it, bottom-edge: "baseline")).height
-  let bounds = measure(text(it, bottom-edge: "bounds")).height
-  underline(it, offset: (bounds - base) + ${LINK_UNDERLINE_GAP}, stroke: ${LINK_UNDERLINE_STROKE} + black)
-}`
+    return `// Underline all links, matching the LaTeX template's fixed baseline rule
+#show link: it => underline(it, offset: ${LINK_UNDERLINE_GAP}, stroke: ${LINK_UNDERLINE_STROKE} + black)`
   }
 
   /**
