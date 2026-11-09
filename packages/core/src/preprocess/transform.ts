@@ -601,13 +601,15 @@ export function transformSkills(resume: Resume): Resume {
  * @param layoutIndex - The index of the selected layout to pull section aliases
  * from.
  * @param _summaryParser - Unused parser kept for API consistency.
+ * @param escapeFunc - Engine-specific escape function for section names.
  * @returns The transformed resume object.
  * @remarks Modifies `resume.content.computed`.
  */
 export function transformSectionNames(
   resume: Resume,
   layoutIndex: number,
-  _summaryParser: Parser
+  _summaryParser: Parser,
+  escapeFunc: (input: string) => string = (input) => input
 ): Resume {
   resume.content.computed = {
     ...resume.content.computed,
@@ -624,9 +626,11 @@ export function transformSectionNames(
           resume.layouts?.[layoutIndex]?.sections?.aliases?.[sectionId]
 
         // Use the alias if provided, otherwise use default translation
-        translations[sectionName] =
+        const sectionNameValue =
           sectionAlias ||
           getOptionTranslation(resume.locale?.language, 'sections', sectionId)
+
+        translations[sectionName] = escapeFunc(sectionNameValue)
 
         return translations
       },
@@ -775,7 +779,7 @@ export function transformResumeContent(
   summaryParser: Parser,
   escapeFunc: (input: string) => string
 ): Resume {
-  return [
+  const transformedResume = [
     normalizedResumeContent,
     // The order of the following functions matters, `transformResumeValues`
     // should be called as the first transformXXX function to process all leaf
@@ -790,10 +794,16 @@ export function transformResumeContent(
     transformLocation,
     transformSkills,
     transformSummary,
-    transformSectionNames,
   ].reduce(
     (resume, tranformFunc) => tranformFunc(resume, layoutIndex, summaryParser),
     resume
+  )
+
+  return transformSectionNames(
+    transformedResume,
+    layoutIndex,
+    summaryParser,
+    escapeFunc
   )
 }
 

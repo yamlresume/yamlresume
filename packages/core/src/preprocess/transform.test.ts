@@ -49,7 +49,7 @@ import {
 } from '@/models'
 import { findLayoutIndex } from '@/renderer/test-utils'
 import { getOptionTranslation, getTemplateTranslations } from '@/translations'
-import { escapeLatex } from '@/utils'
+import { escapeHtml, escapeLatex, escapeTypst } from '@/utils'
 import {
   normalizedResumeContent,
   normalizeResumeContentSections,
@@ -1195,6 +1195,56 @@ describe(transformSectionNames, () => {
         getOptionTranslation('en', 'sections', section)
       )
     })
+  })
+
+  const escapeCases: Array<[string, (input: string) => string]> = [
+    ['LaTeX', escapeLatex],
+    ['HTML', escapeHtml],
+    ['Typst', escapeTypst],
+  ]
+
+  it.each(escapeCases)(
+    'should escape section aliases for %s',
+    (_engine, escapeFunc) => {
+      const resume = cloneDeep(DEFAULT_RESUME)
+      resume.locale = { language: 'en' }
+      const alias = 'C# / .NET $100 _Work_ [Projects] & More'
+
+      if (resume.layouts?.[layoutIndex]) {
+        resume.layouts[layoutIndex].sections = {
+          aliases: { work: alias },
+        }
+      }
+
+      transformSectionNames(resume, layoutIndex, summaryParser, escapeFunc)
+
+      expect(resume.content.computed?.sectionNames?.work).toEqual(
+        escapeFunc(alias)
+      )
+    }
+  )
+
+  it('should escape section aliases in the full transform pipeline', () => {
+    const resume = cloneDeep(DEFAULT_RESUME)
+    resume.locale = { language: 'en' }
+    const alias = 'C# / .NET'
+
+    if (resume.layouts?.[layoutIndex]) {
+      resume.layouts[layoutIndex].sections = {
+        aliases: { work: alias },
+      }
+    }
+
+    const transformedResume = transformResumeContent(
+      resume,
+      layoutIndex,
+      summaryParser,
+      escapeTypst
+    )
+
+    expect(transformedResume.content.computed?.sectionNames?.work).toEqual(
+      escapeTypst(alias)
+    )
   })
 
   it('should work correctly in the full transform pipeline', () => {
