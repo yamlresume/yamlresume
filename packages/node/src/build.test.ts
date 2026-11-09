@@ -145,6 +145,12 @@ describe(buildResumeFile, () => {
         )
       }
 
+      if (command === 'typst') {
+        const cwd = String(options?.cwd ?? tempDir)
+        const output = args[2] ?? path.basename(getTypstPdfPath(args[1] ?? ''))
+        fs.writeFileSync(path.resolve(cwd, output), 'pdf')
+      }
+
       return createExecaResult()
     }) as never)
   }
@@ -178,6 +184,8 @@ describe(buildResumeFile, () => {
   it('should generate a pdf file', async () => {
     const texFile = inferOutput(resumePath)
     const pdfFile = getPdfPath(texFile)
+
+    mockPdfCompiler()
 
     const result = await buildResumeFile(resumePath, { logger })
 
@@ -223,6 +231,8 @@ describe(buildResumeFile, () => {
     const typFile = inferTypstOutput(resumePath)
     const pdfFile = getTypstPdfPath(typFile)
 
+    mockPdfCompiler()
+
     const result = await buildResumeFile(resumePath, { logger })
 
     expect(execSpy).toHaveBeenCalledTimes(2)
@@ -252,6 +262,7 @@ describe(buildResumeFile, () => {
 
     execSpy.mockImplementation(async () => {
       fs.writeFileSync(auxPath, 'stable')
+      fs.writeFileSync(path.join(path.dirname(auxPath), 'resume.pdf'), 'pdf')
       return {
         stdout: 'mocked output',
         stderr: '',
@@ -281,6 +292,7 @@ describe(buildResumeFile, () => {
     const auxPath = getAuxPath(texFile)
 
     fs.writeFileSync(auxPath, 'stable')
+    mockPdfCompiler()
 
     await buildResumeFile(resumePath, { logger })
 
@@ -328,6 +340,8 @@ describe(buildResumeFile, () => {
   it('should disable timeout when set to 0', async () => {
     const texFile = inferOutput(resumePath)
 
+    mockPdfCompiler()
+
     await buildResumeFile(resumePath, { timeout: 0, logger })
 
     expect(execSpy).toHaveBeenCalledWith(
@@ -344,6 +358,8 @@ describe(buildResumeFile, () => {
   it('should generate pdf file in output directory', async () => {
     const outputDir = path.join(tempDir, 'output')
     const texFile = inferOutput(resumePath, outputDir)
+
+    mockPdfCompiler()
 
     const result = await buildResumeFile(resumePath, {
       pdf: true,
@@ -377,6 +393,8 @@ describe(buildResumeFile, () => {
       },
       validated: 'success',
     })
+
+    mockPdfCompiler()
 
     const result = await buildResumeFile(resumePath, { logger })
 

@@ -31,6 +31,7 @@ import {
 } from '@yamlresume/core'
 import { execa } from 'execa'
 import which from 'which'
+import { assertPdfGenerated } from './pdf'
 
 /**
  * Check if a command is available
@@ -236,6 +237,10 @@ export async function compileTypst(
       timeout: execaTimeout,
     })
     logger?.debug(joinNonEmptyString(['stdout: ', toCodeBlock(result.stdout)]))
+    const stderr = result.stderr.trim()
+    if (stderr) {
+      logger?.warn(`Typst compiler warnings:\n${stderr}`)
+    }
   } catch (error) {
     // Check if it's a timeout error
     if (error.timedOut) {
@@ -257,6 +262,8 @@ export async function compileTypst(
     logger?.debug(joinNonEmptyString(['stderr: ', toCodeBlock(error.stderr)]))
     throw new YAMLResumeError('TYPST_COMPILE_ERROR', { error: error.message })
   }
+
+  assertPdfGenerated(path.resolve(cwd, finalPdfPath), 'typst')
 
   logger?.success(`Generated resume pdf file successfully: ${finalPdfPath}`)
 }

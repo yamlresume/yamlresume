@@ -286,6 +286,7 @@ describe(compileLaTeX, () => {
   it('should compile a tex file to pdf', async () => {
     const texFile = path.join(tempDir, 'resume.tex')
     fs.writeFileSync(texFile, '')
+    fs.writeFileSync(path.join(tempDir, 'resume.pdf'), 'pdf')
 
     await compileLaTeX(texFile, tempDir, LATEX_COMPILE_TIMEOUT, logger)
 
@@ -302,6 +303,30 @@ describe(compileLaTeX, () => {
     expect(logger.success).toHaveBeenCalledWith(
       expect.stringContaining('Generated resume pdf file successfully')
     )
+  })
+
+  it('should surface compiler warnings', async () => {
+    const texFile = path.join(tempDir, 'resume.tex')
+    fs.writeFileSync(texFile, '')
+    fs.writeFileSync(path.join(tempDir, 'resume.pdf'), 'pdf')
+    execSpy.mockResolvedValue(
+      createExecaResult({ stderr: 'warning: missing font' })
+    )
+
+    await compileLaTeX(texFile, tempDir, LATEX_COMPILE_TIMEOUT, logger)
+
+    expect(logger.warn).toHaveBeenCalledWith(
+      expect.stringContaining('warning: missing font')
+    )
+  })
+
+  it('should reject when the compiler succeeds without a pdf', async () => {
+    const texFile = path.join(tempDir, 'resume.tex')
+    fs.writeFileSync(texFile, '')
+
+    await expect(
+      compileLaTeX(texFile, tempDir, LATEX_COMPILE_TIMEOUT, logger)
+    ).rejects.toMatchObject({ code: 'LATEX_COMPILE_ERROR' })
   })
 
   it('should move the generated pdf to a custom output path', async () => {
@@ -350,6 +375,7 @@ describe(compileLaTeX, () => {
 
     execSpy.mockImplementation(async () => {
       fs.writeFileSync(auxPath, 'stable')
+      fs.writeFileSync(path.join(tempDir, 'resume.pdf'), 'pdf')
       return createExecaResult()
     })
 
@@ -363,6 +389,7 @@ describe(compileLaTeX, () => {
     const auxPath = path.join(tempDir, 'resume.aux')
     fs.writeFileSync(texFile, '')
     fs.writeFileSync(auxPath, 'stable')
+    fs.writeFileSync(path.join(tempDir, 'resume.pdf'), 'pdf')
 
     await compileLaTeX(texFile, tempDir, LATEX_COMPILE_TIMEOUT, logger)
 
@@ -401,6 +428,7 @@ describe(compileLaTeX, () => {
   it('should disable timeout when set to 0', async () => {
     const texFile = path.join(tempDir, 'resume.tex')
     fs.writeFileSync(texFile, '')
+    fs.writeFileSync(path.join(tempDir, 'resume.pdf'), 'pdf')
 
     await compileLaTeX(texFile, tempDir, 0, logger)
 

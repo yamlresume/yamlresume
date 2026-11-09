@@ -250,6 +250,7 @@ describe(compileTypst, () => {
   it('should compile a typ file to pdf', async () => {
     const typFile = path.join(tempDir, 'resume.typ')
     fs.writeFileSync(typFile, '')
+    fs.writeFileSync(path.join(tempDir, 'resume.pdf'), 'pdf')
 
     await compileTypst(typFile, tempDir, TYPST_COMPILE_TIMEOUT, logger)
 
@@ -268,6 +269,7 @@ describe(compileTypst, () => {
     const typFile = path.join(tempDir, 'resume.typ')
     const customPdfPath = path.join(tempDir, 'resume.typ.pdf')
     fs.writeFileSync(typFile, '')
+    fs.writeFileSync(customPdfPath, 'pdf')
 
     await compileTypst(
       typFile,
@@ -295,7 +297,9 @@ describe(compileTypst, () => {
     const typFile = path.join(tempDir, 'resume.typ')
     fs.writeFileSync(typFile, '')
 
-    await compileTypst(typFile, tempDir, TYPST_COMPILE_TIMEOUT, logger, tempDir)
+    await expect(
+      compileTypst(typFile, tempDir, TYPST_COMPILE_TIMEOUT, logger, tempDir)
+    ).rejects.toMatchObject({ code: 'TYPST_COMPILE_ERROR' })
 
     expect(execSpy).toHaveBeenCalledWith(
       'typst',
@@ -306,6 +310,34 @@ describe(compileTypst, () => {
         timeout: TYPST_COMPILE_TIMEOUT * 1000,
       }
     )
+  })
+
+  it('should surface compiler warnings', async () => {
+    const typFile = path.join(tempDir, 'resume.typ')
+    fs.writeFileSync(typFile, '')
+    fs.writeFileSync(path.join(tempDir, 'resume.pdf'), 'pdf')
+    execSpy.mockReset()
+    execSpy.mockResolvedValueOnce(
+      createExecaResult({ stdout: `typst ${MIN_TYPST_VERSION}` })
+    )
+    execSpy.mockResolvedValue(
+      createExecaResult({ stderr: 'warning: missing font' })
+    )
+
+    await compileTypst(typFile, tempDir, TYPST_COMPILE_TIMEOUT, logger)
+
+    expect(logger.warn).toHaveBeenCalledWith(
+      expect.stringContaining('warning: missing font')
+    )
+  })
+
+  it('should reject when the compiler succeeds without a pdf', async () => {
+    const typFile = path.join(tempDir, 'resume.typ')
+    fs.writeFileSync(typFile, '')
+
+    await expect(
+      compileTypst(typFile, tempDir, TYPST_COMPILE_TIMEOUT, logger)
+    ).rejects.toMatchObject({ code: 'TYPST_COMPILE_ERROR' })
   })
 
   it('should reject when the Typst version cannot be read', async () => {
@@ -388,6 +420,7 @@ describe(compileTypst, () => {
   it('should disable timeout when set to 0', async () => {
     const typFile = path.join(tempDir, 'resume.typ')
     fs.writeFileSync(typFile, '')
+    fs.writeFileSync(path.join(tempDir, 'resume.pdf'), 'pdf')
 
     await compileTypst(typFile, tempDir, 0, logger)
 

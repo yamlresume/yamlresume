@@ -32,6 +32,7 @@ import {
 } from '@yamlresume/core'
 import { execa } from 'execa'
 import which from 'which'
+import { assertPdfGenerated } from './pdf'
 
 type LaTeXEnvironment = 'xelatex' | 'tectonic'
 
@@ -232,6 +233,10 @@ export async function compileLaTeX(
       logger?.debug(
         joinNonEmptyString(['stdout: ', toCodeBlock(result.stdout)])
       )
+      const stderr = result.stderr.trim()
+      if (stderr) {
+        logger?.warn(`LaTeX compiler warnings:\n${stderr}`)
+      }
     } catch (error) {
       // Check if it's a timeout error
       if (error.timedOut) {
@@ -275,6 +280,8 @@ export async function compileLaTeX(
       throw new YAMLResumeError('FILE_WRITE_ERROR', { path: finalPdfPath })
     }
   }
+
+  assertPdfGenerated(path.resolve(cwd, finalPdfPath), 'latex')
 
   logger?.success(`Generated resume pdf file successfully: ${finalPdfPath}`)
 }
