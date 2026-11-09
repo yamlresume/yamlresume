@@ -198,6 +198,12 @@ locale:
       paperSize: a4
     typography:
       fontSize: 11pt
+      lineSpacing: normal
+      links:
+        underline: true
+    advanced:
+      showIcons: true
+      showUrls: true
 `
 
     const result = injectResumeComments(resumeWithLayouts)
@@ -212,6 +218,19 @@ locale:
     )
     expect(result).toContain('Typst engine only supports 10pt, 11pt, 12pt')
     expect(result).toContain('a4 or letter')
+    expect(result).toContain('Valid line spacing options:')
+    expect(result).toContain(
+      'Whether to underline links in the rendered document'
+    )
+    expect(result).toContain(
+      'Whether to show network icons in the rendered document'
+    )
+    expect(result).toContain(
+      'Whether to show raw URLs instead of hiding them behind linked text'
+    )
+    expect(result.indexOf('Valid line spacing options:')).toBeLessThan(
+      result.indexOf('lineSpacing: normal')
+    )
   })
 
   it('skips layout items that are not mappings', () => {
@@ -244,6 +263,7 @@ locale:
   - engine: latex
   - engine: docx
   - engine: html
+  - engine: typst
 `
 
     const result = injectResumeComments(resumeWithMinimalLayouts)
@@ -251,10 +271,12 @@ locale:
     expect(result).toContain('engine: latex')
     expect(result).toContain('engine: docx')
     expect(result).toContain('engine: html')
+    expect(result).toContain('engine: typst')
     expect(result).not.toContain('a4 or letter')
     expect(result).not.toContain('LaTeX engine only supports')
     expect(result).not.toContain('docx engine only supports')
     expect(result).not.toContain('HTML engine only supports')
+    expect(result).not.toContain('Typst engine only supports')
   })
 
   it('replaces existing comments instead of duplicating them', () => {

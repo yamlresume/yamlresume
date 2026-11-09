@@ -32,6 +32,7 @@ import {
   LATEX_FONT_SIZE_OPTIONS,
   LATEX_PAPER_SIZE_OPTIONS,
   LEVEL_OPTIONS,
+  LINE_SPACING_OPTIONS,
   TYPST_FONT_SIZE_OPTIONS,
   TYPST_PAPER_SIZE_OPTIONS,
 } from '@/models'
@@ -84,6 +85,20 @@ const FLUENCY_COMMENT = buildEnumComment(
 )
 
 const LEVEL_COMMENT = buildEnumComment('Valid level options', LEVEL_OPTIONS)
+
+const LINE_SPACING_COMMENT = buildEnumComment(
+  'Valid line spacing options',
+  LINE_SPACING_OPTIONS
+)
+
+const LINKS_UNDERLINE_COMMENT =
+  ' Whether to underline links in the rendered document'
+
+const SHOW_ICONS_COMMENT =
+  ' Whether to show network icons in the rendered document'
+
+const SHOW_URLS_COMMENT =
+  ' Whether to show raw URLs instead of hiding them behind linked text'
 
 const LOCALE_LANGUAGE_COMMENT =
   ' Use `yamlresume languages list` to get the list of supported languages'
@@ -242,6 +257,30 @@ export function injectResumeComments(doc: Document): string {
             TYPST_FONT_SIZE_OPTIONS
           )
         }
+      }
+
+      const lineSpacingPair = getPair(layout, ['typography', 'lineSpacing'])
+      if (lineSpacingPair) {
+        lineSpacingPair.key.commentBefore = LINE_SPACING_COMMENT
+      }
+
+      const underlinePair = getPair(layout, [
+        'typography',
+        'links',
+        'underline',
+      ])
+      if (underlinePair) {
+        underlinePair.key.commentBefore = LINKS_UNDERLINE_COMMENT
+      }
+
+      const showIconsPair = getPair(layout, ['advanced', 'showIcons'])
+      if (showIconsPair) {
+        showIconsPair.key.commentBefore = SHOW_ICONS_COMMENT
+      }
+
+      const showUrlsPair = getPair(layout, ['advanced', 'showUrls'])
+      if (showUrlsPair) {
+        showUrlsPair.key.commentBefore = SHOW_URLS_COMMENT
       }
     }
   }
