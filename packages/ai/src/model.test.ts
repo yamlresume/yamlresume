@@ -29,7 +29,9 @@ import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import { getAIProvider, getModelFromEnv, getOllamaBaseURL } from './model'
 
 vi.mock('@ai-sdk/openai', () => ({
-  createOpenAI: vi.fn(() => vi.fn((modelId: string) => ({ id: modelId }))),
+  createOpenAI: vi.fn(() => ({
+    chat: vi.fn((modelId: string) => ({ id: modelId })),
+  })),
 }))
 
 describe(getAIProvider, () => {
