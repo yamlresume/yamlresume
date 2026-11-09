@@ -100,7 +100,12 @@ Use `pnpm` for all operations.
 - Use **Vitest** for testing.
 - Test files must be colocated with the source code (e.g., `src/utils/date.ts`
   -> `src/utils/date.test.ts`).
-- Aim for 100% coverage for all packages.
+- **Coverage is a hard gate:** every commit must leave every package at 100%
+  statements, branches, functions, and lines. Before committing, run
+  `test:cov` for each affected package (for example `pnpm core test:cov` or
+  `pnpm node test:cov`). If coverage drops, add the missing tests or remove
+  unreachable code before creating the commit. Do not rely on a later commit
+  to restore coverage.
 - Use descriptive `describe` and `it`/`test` blocks.
 
 ## 🚀 Deployment
