@@ -260,7 +260,10 @@ describe('JakeTypstRenderer', () => {
 
       expect(result).not.toMatch(/\n{3,}/)
       expect(result).toContain(
-        '#set enum(indent: 1em, spacing: 0.57em)\n\n// A two-row subheading'
+        '#set enum(indent: 1em, spacing: 0.57em)\n\n// accent color'
+      )
+      expect(result).toContain(
+        '#let accent-color = black\n\n// A two-row subheading'
       )
     })
 
@@ -285,7 +288,9 @@ describe('JakeTypstRenderer', () => {
     it('should render default black accent when no theme color is set', () => {
       const result = renderer.renderPreamble()
 
-      expect(result).toContain('set text(size: 12pt, fill: black)')
+      expect(result).toContain('#let accent-color = black')
+      expect(result).toContain('set text(size: 12pt, fill: accent-color)')
+      expect(result).toContain('stroke: 0.4pt + accent-color')
       expect(result).not.toContain('rgb("#')
     })
 
@@ -298,8 +303,8 @@ describe('JakeTypstRenderer', () => {
       const result = coloredRenderer.renderPreamble()
 
       expect(result).toContain('#let accent-color = rgb("#1A2B3C")')
-      expect(result).toContain('set text(size: 12pt, fill: rgb("#1A2B3C"))')
-      expect(result).toContain('stroke: 0.4pt + rgb("#1A2B3C")')
+      expect(result).toContain('set text(size: 12pt, fill: accent-color)')
+      expect(result).toContain('stroke: 0.4pt + accent-color')
     })
 
     it('should fall back to all page defaults when the page config is missing', () => {

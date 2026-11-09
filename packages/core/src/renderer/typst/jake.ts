@@ -196,11 +196,8 @@ class JakeTypstRenderer extends TypstRenderer {
       ] ?? SECTION_HEADING_FONT_SIZE_MAP['10pt']
     const accentHex = this.resolveThemeAccentHex()
     const accentColor = accentHex ? `rgb("#${accentHex}")` : 'black'
-    const accentDef = showIfNotEmpty(
-      accentHex,
-      `// accent color
-#let accent-color = rgb("#${accentHex}")`
-    )
+    const accentDef = `// accent color
+#let accent-color = ${accentColor}`
 
     const helpers = `// A two-row subheading with left/right aligned columns, analogous to the
 // \\resumeSubheading command in the LaTeX template (a tabular* whose rows are
@@ -220,14 +217,14 @@ class JakeTypstRenderer extends TypstRenderer {
 // Sections formatting: small caps headings with a full-width rule below,
 // analogous to \\titleformat{\\section} in the LaTeX template
 #show heading.where(level: 1): it => {
-  set text(size: ${sectionHeadingFontSize}, fill: ${accentColor})
+  set text(size: ${sectionHeadingFontSize}, fill: accent-color)
   block(above: 1.75em, below: 0.8em, width: 100%)[
     #v(${SECTION_HEADING_TOP_GAP})
     #smallcaps(it.body)
     // pull the rule up to tighten the title-to-rule gap, matching the LaTeX
     // template's \titlerule placement
     #v(${SECTION_HEADING_RULE_GAP})
-    #line(length: 100%, stroke: 0.4pt + ${accentColor})
+    #line(length: 100%, stroke: 0.4pt + accent-color)
   ]
 }`
 
