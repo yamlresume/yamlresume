@@ -1,0 +1,268 @@
+content:
+  basics:
+    name: Priya Raman
+    headline: 'Senior Data Engineer | Cloud Data Platforms & Real-Time Pipelines'
+    phone: "(206) 555-0182"
+    email: priya.raman@outlook.com
+    url: https://www.priyaraman.dev
+    summary: |
+      Data engineer with 7+ years of experience designing, building, and operating batch and streaming data pipelines. Skilled in cloud-native data platforms, data modeling, and data quality. Proven track record of translating business requirements into reliable, scalable data products.
+  location:
+    address: 2210 Fremont Avenue N
+    city: Seattle
+    region: Washington
+    country: United States
+    postalCode: "98103"
+  profiles:
+    - network: GitHub
+      url: https://github.com/priyaraman
+      username: priyaraman
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/priyaraman
+      username: priyaraman
+    - network: Stack Overflow
+      url: https://stackoverflow.com/users/1234567/priya-raman
+      username: priya-raman
+  education:
+    - institution: Seattle Polytechnic Institute
+      url: https://www.seattlepoly.edu
+      degree: Master
+      area: Data Engineering
+      score: "3.9"
+      startDate: Sep 1, 2015
+      endDate: Jun 15, 2017
+      courses:
+        - Distributed Systems
+        - Database Systems
+        - Data Warehousing
+        - Cloud Computing
+        - Machine Learning for Data
+        - Data Modeling
+        - Stream Processing
+        - Information Retrieval
+      summary: |
+        - Focused on distributed data processing, storage systems, and cloud-native architectures
+        - Completed a capstone on real-time streaming pipelines for urban mobility data
+        - Built hands-on experience with Spark, Kafka, and columnar data warehouses
+    - institution: Cascade State University
+      url: https://www.cascadestate.edu
+      degree: Bachelor
+      area: Computer Science
+      score: "3.7"
+      startDate: Sep 1, 2011
+      endDate: Jun 15, 2015
+      courses:
+        - Data Structures
+        - Algorithms
+        - Operating Systems
+        - Computer Networks
+        - Software Engineering
+        - Statistics
+      summary: |
+        - Developed a strong foundation in algorithms, databases, and software engineering
+        - Completed coursework in statistics and data analysis
+        - Served as a teaching assistant for an introductory database course
+  work:
+    - name: Aurora Data Labs
+      url: https://www.auroradatalabs.com
+      position: Senior Data Engineer
+      startDate: Jan 10, 2021
+      summary: |
+        - Designed and maintained batch and streaming pipelines using Apache Spark, Kafka, Airflow, and dbt
+        - Led migration of legacy ETL workflows to a cloud-native lakehouse on Snowflake and Databricks
+        - Built data quality checks and lineage metadata to improve incident detection and root-cause analysis
+        - Partnered with analytics and product teams to define data models, SLAs, and delivery timelines
+        - Mentored junior engineers on pipeline design, testing, and operational best practices
+      keywords:
+        - Apache Spark
+        - Apache Kafka
+        - Apache Airflow
+        - dbt
+        - Snowflake
+        - Data Modeling
+        - Data Quality
+        - ETL/ELT
+    - name: Pulse Retail Group
+      url: https://www.pulseretail.com
+      position: Data Engineer
+      startDate: Jul 1, 2017
+      endDate: Dec 15, 2020
+      summary: |
+        - Built and operated ELT pipelines for retail sales, inventory, and customer analytics
+        - Modeled warehouse layers in Amazon Redshift and automated transformations with Airflow
+        - Integrated third-party marketing and POS data into a unified reporting environment
+        - Improved pipeline reliability through monitoring, alerting, and automated data validation
+        - Supported Tableau dashboards used by merchandising and finance teams
+      keywords:
+        - Python
+        - SQL
+        - AWS Glue
+        - Amazon Redshift
+        - Apache Airflow
+        - Tableau
+        - Data Warehousing
+    - name: Cascade Health Systems
+      url: https://www.cascadehealth.org
+      position: Data Engineering Intern
+      startDate: Jun 1, 2016
+      endDate: Aug 20, 2016
+      summary: |
+        - Assisted with building SQL-based ETL jobs for clinical and operational reporting
+        - Profiled source data and documented data quality issues for remediation
+        - Automated recurring data extracts and validation checks with Python
+      keywords:
+        - SQL
+        - Python
+        - ETL
+        - Data Profiling
+  skills:
+    - name: Data Engineering
+      level: Expert
+      keywords:
+        - Apache Spark
+        - Apache Kafka
+        - Apache Airflow
+        - dbt
+        - Snowflake
+        - Databricks
+        - Data Modeling
+    - name: Cloud Platforms
+      level: Advanced
+      keywords:
+        - AWS
+        - Azure
+        - Google Cloud
+        - AWS Glue
+        - Azure Data Factory
+        - Google BigQuery
+    - name: Programming
+      level: Advanced
+      keywords:
+        - Python
+        - SQL
+        - Scala
+        - Java
+        - Bash
+    - name: Databases
+      level: Advanced
+      keywords:
+        - PostgreSQL
+        - Amazon Redshift
+        - Snowflake
+        - MongoDB
+        - Apache Cassandra
+    - name: Streaming & Messaging
+      level: Intermediate
+      keywords:
+        - Apache Kafka
+        - Spark Structured Streaming
+        - RabbitMQ
+        - Avro
+        - Schema Registry
+    - name: Analytics & BI
+      level: Intermediate
+      keywords:
+        - Tableau
+        - Power BI
+        - Looker
+        - dbt
+        - Data Quality
+  languages:
+    - language: English
+      fluency: Native or Bilingual Proficiency
+    - language: Tamil
+      fluency: Native or Bilingual Proficiency
+    - language: Spanish
+      fluency: Limited Working Proficiency
+      keywords:
+        - DELE B2
+  awards:
+    - title: Data Engineering Excellence Award
+      date: Mar 2023
+      awarder: Aurora Data Labs
+      summary: |
+        Recognized for leading the migration of legacy ETL workflows to a cloud-native lakehouse, reducing batch processing time by 40%.
+    - title: Outstanding Graduate Capstone
+      date: Jun 2017
+      awarder: Seattle Polytechnic Institute
+      summary: |
+        Awarded for a capstone project on real-time streaming pipelines for urban mobility data.
+  certificates:
+    - name: Google Cloud Professional Data Engineer
+      issuer: Google Cloud
+      date: Apr 2022
+      url: https://cloud.google.com/certification/data-engineer
+    - name: AWS Certified Data Analytics - Specialty
+      issuer: Amazon Web Services
+      date: Nov 2021
+      url: https://aws.amazon.com/certification/certified-data-analytics-specialty/
+    - name: Databricks Certified Data Engineer Professional
+      issuer: Databricks
+      date: Mar 2023
+      url: https://www.databricks.com/learn/certification/data-engineer-professional
+  publications:
+    - name: Scalable Real-Time Ingestion Pipelines for Retail Analytics
+      publisher: International Journal of Data Engineering and Analytics
+      releaseDate: Oct 2020
+      url: https://www.ijdea.org/articles/scalable-real-time-ingestion-pipelines
+      summary: |
+        - Presents a reference architecture for low-latency ingestion using Kafka and Spark Structured Streaming
+        - Discusses schema evolution, exactly-once semantics, and operational monitoring
+        - Includes benchmarks from a production retail deployment
+  projects:
+    - name: OpenLineage Data Quality Toolkit
+      url: https://github.com/priyaraman/openlineage-dq
+      description: An open-source toolkit for automated data lineage and quality
+        checks across cloud data warehouses.
+      startDate: Jan 2023
+      summary: |
+        - Built a Python library that integrates with Airflow and dbt to capture lineage metadata
+        - Added configurable data quality rules for freshness, volume, and schema drift
+        - Used by multiple internal teams to reduce incident detection time
+      keywords:
+        - Data Quality
+        - Data Lineage
+        - Python
+        - Airflow
+    - name: Retail Sales Lakehouse
+      url: https://github.com/priyaraman/retail-lakehouse
+      description: A reference lakehouse implementation for retail sales analytics
+        using Delta Lake and Spark.
+      startDate: May 2022
+      endDate: Sep 2022
+      summary: |
+        - Designed bronze, silver, and gold layers for ingestion, cleansing, and business aggregates
+        - Implemented incremental processing and partition pruning for large fact tables
+        - Published dashboards in Power BI for sales and inventory KPIs
+      keywords:
+        - Delta Lake
+        - Spark
+        - Lakehouse
+        - Analytics
+  interests:
+    - name: Open Source
+      keywords:
+        - Apache Airflow
+        - dbt
+        - Data Engineering
+    - name: Outdoor Activities
+      keywords:
+        - Hiking
+        - Cycling
+        - Photography
+    - name: Music
+      keywords:
+        - Jazz
+        - Guitar
+  volunteer:
+    - organization: Civic Data Alliance
+      url: https://www.civicdataalliance.org
+      position: Volunteer Data Engineer
+      startDate: Jan 2022
+      summary: |
+        - Maintain data pipelines for a public transit open-data portal
+        - Collaborate with analysts to publish monthly ridership and accessibility datasets
+        - Mentor volunteers on SQL, Python, and data modeling best practices
+
+locale:
+  language: en

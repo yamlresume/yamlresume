@@ -1,0 +1,284 @@
+content:
+  basics:
+    name: Mariana Costa Almeida
+    headline: 'Engenheira de IA Sênior | LLMs, MLOps e Visão Computacional'
+    phone: '+55 11 98765-4321'
+    email: mariana.almeida.ai@example.com
+    url: https://marianacosta-ai.dev
+    summary: |
+      Engenheira de IA com mais de 7 anos de experiência no desenvolvimento e implantação de soluções de aprendizado de máquina em produção. Especializada em modelos de linguagem, visão computacional e pipelines de MLOps, com forte atuação em arquiteturas escaláveis e liderança técnica.
+
+      - Projetou e implantou sistemas de recomendação e busca semântica com LLMs, reduzindo o tempo de resposta em 40%.
+      - Experiência sólida em Python, PyTorch, TensorFlow, AWS e Kubernetes, com foco em reprodutibilidade e monitoramento contínuo.
+      - Liderou equipes multidisciplinares e programas de mentoria, promovendo boas práticas de IA responsável e experimentação ágil.
+  location:
+    address: Rua dos Pinheiros, 1234, Apto 56
+    city: São Paulo
+    region: São Paulo
+    country: Brazil
+    postalCode: '05422-001'
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/marianacostaai
+      username: marianacostaai
+    - network: GitHub
+      url: https://github.com/marianacostaai
+      username: marianacostaai
+    - network: Medium
+      url: https://medium.com/@marianacostaai
+      username: marianacostaai
+  education:
+    - institution: Universidade de São Paulo
+      url: https://www.usp.br
+      degree: Master
+      area: Ciência da Computação com ênfase em Inteligência Artificial
+      score: '3.9/4.0'
+      startDate: Mar 2018
+      endDate: Dec 2020
+      courses:
+        - Aprendizado de Máquina Avançado
+        - Processamento de Linguagem Natural
+        - Visão Computacional
+        - Aprendizado por Reforço
+        - Otimização Convexa
+      summary: |
+        - Dissertação sobre modelos de linguagem aplicados à sumarização de documentos jurídicos.
+        - Publicação em simpósio nacional e colaboração com laboratório de IA da universidade.
+        - Monitoria em disciplina de aprendizado profundo por dois semestres.
+    - institution: Universidade Estadual de Campinas
+      url: https://www.unicamp.br
+      degree: Bachelor
+      area: Engenharia de Computação
+      score: '3.7/4.0'
+      startDate: Mar 2014
+      endDate: Dec 2017
+      courses:
+        - Algoritmos e Estruturas de Dados
+        - Sistemas Operacionais
+        - Banco de Dados
+        - Redes de Computadores
+        - Estatística e Probabilidade
+        - Inteligência Artificial
+      summary: |
+        - Formação com foco em sistemas distribuídos, computação em nuvem e fundamentos de IA.
+        - Trabalho de conclusão de curso sobre detecção de anomalias em séries temporais.
+        - Participação em grupo de estudos de aprendizado de máquina e maratonas de programação.
+  work:
+    - name: Lumina AI Brasil
+      url: https://www.luminaai.com.br
+      position: Engenheira de IA Sênior
+      startDate: Jan 2022
+      summary: |
+        - Liderou a construção de uma plataforma de busca semântica e geração aumentada por recuperação (RAG) para o setor jurídico, atendendo mais de 50 mil usuários.
+        - Desenvolveu pipelines de ingestão, indexação e avaliação de LLMs com LangChain, FAISS e métricas de qualidade automatizadas.
+        - Implantou monitoramento de modelos em produção com Prometheus, Grafana e Evidently, reduzindo incidentes em 35%.
+        - Coordenou equipe de 6 engenheiros e cientistas de dados, definindo arquitetura, padrões de código e roadmap técnico.
+        - Promoveu práticas de IA responsável, incluindo revisão de vieses e documentação de modelos.
+      keywords:
+        - LLMs
+        - RAG
+        - MLOps
+        - Liderança
+        - Arquitetura
+    - name: DataSemente Analytics
+      url: https://www.datasemente.com.br
+      position: Engenheira de Machine Learning
+      startDate: Feb 2020
+      endDate: Dec 2021
+      summary: |
+        - Desenvolveu modelos de propensão de compra e churn para clientes de varejo, com ganho de 18% em precisão sobre a linha de base.
+        - Criou features e pipelines de treinamento em Spark e scikit-learn, processando mais de 2 TB de dados diariamente.
+        - Automatizou o deploy de modelos com Docker, Airflow e AWS SageMaker, reduzindo o tempo de entrega de 2 semanas para 3 dias.
+        - Colaborou com times de produto e negócio para traduzir requisitos em soluções de IA mensuráveis.
+      keywords:
+        - Machine Learning
+        - Spark
+        - SageMaker
+        - Churn
+        - Varejo
+    - name: Inova Analytics
+      url: https://www.inovaanalytics.com.br
+      position: Cientista de Dados Júnior
+      startDate: Jan 2018
+      endDate: Jan 2020
+      summary: |
+        - Construiu dashboards e modelos estatísticos para apoiar decisões de marketing e operações.
+        - Realizou análises exploratórias e testes A/B em campanhas digitais, identificando oportunidades de otimização.
+        - Desenvolveu scripts em Python e SQL para automatizar relatórios recorrentes e reduzir trabalho manual.
+        - Participou da migração de dados para ambiente cloud, garantindo qualidade e governança.
+      keywords:
+        - Python
+        - SQL
+        - A/B Testing
+        - Estatística
+        - Cloud
+  skills:
+    - name: Aprendizado de Máquina
+      level: Expert
+      keywords:
+        - Python
+        - PyTorch
+        - TensorFlow
+        - scikit-learn
+        - XGBoost
+    - name: Processamento de Linguagem Natural
+      level: Advanced
+      keywords:
+        - Transformers
+        - LLMs
+        - RAG
+        - LangChain
+        - Hugging Face
+    - name: Visão Computacional
+      level: Advanced
+      keywords:
+        - OpenCV
+        - YOLO
+        - Detectron2
+        - Segment Anything
+    - name: MLOps e Cloud
+      level: Advanced
+      keywords:
+        - AWS SageMaker
+        - Docker
+        - Kubernetes
+        - MLflow
+        - Airflow
+    - name: Engenharia de Dados
+      level: Intermediate
+      keywords:
+        - Spark
+        - SQL
+        - Kafka
+        - dbt
+        - Snowflake
+    - name: Liderança Técnica
+      level: Advanced
+      keywords:
+        - Mentoria
+        - Arquitetura de IA
+        - Agile
+        - IA responsável
+  languages:
+    - language: Portuguese
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - Nativo
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - TOEFL iBT 112
+        - Inglês técnico
+    - language: Spanish
+      fluency: Limited Working Proficiency
+      keywords:
+        - Espanhol intermediário
+  awards:
+    - title: Prêmio de Inovação em IA
+      awarder: Lumina AI Brasil
+      date: Nov 2023
+      summary: |
+        Reconhecimento pelo desenvolvimento da plataforma de busca semântica com LLMs, que gerou economia estimada de R$ 2 milhões ao ano.
+    - title: Melhor Artigo Científico
+      awarder: Simpósio Brasileiro de Inteligência Artificial
+      date: Oct 2021
+      summary: |
+        Premiação pelo artigo sobre aprendizado por reforço aplicado à otimização de recursos em nuvem.
+  certificates:
+    - name: 'AWS Certified Machine Learning – Specialty'
+      issuer: AWS
+      date: Mar 2022
+      url: https://aws.amazon.com/certification/certified-machine-learning-specialty/
+    - name: Google Cloud Professional Machine Learning Engineer
+      issuer: Google Cloud
+      date: Jun 2023
+      url: https://cloud.google.com/certification/machine-learning-engineer
+    - name: TensorFlow Developer Certificate
+      issuer: TensorFlow
+      date: Sep 2021
+      url: https://www.tensorflow.org/certificate
+  publications:
+    - name: Aprendizado por Reforço para Otimização de Recursos em Nuvem
+      publisher: Simpósio Brasileiro de Inteligência Artificial (SBIA)
+      releaseDate: Oct 2021
+      url: https://sol.sbc.org.br/index.php/sbia
+      summary: |
+        - Propõe um agente de aprendizado por reforço para alocação dinâmica de recursos computacionais.
+        - Demonstra redução de custos operacionais em ambientes de nuvem com manutenção de SLA.
+        - Discute desafios de escalabilidade e reprodutibilidade em experimentos de longa duração.
+  projects:
+    - name: Assistente Jurídico com RAG
+      url: https://github.com/marianacostaai/assistente-juridico-rag
+      description: Assistente virtual que combina busca semântica e LLMs para
+        responder dúvidas jurídicas com citações.
+      startDate: Jan 2024
+      endDate: Jun 2024
+      summary: |
+        - Construiu pipeline de ingestão e chunking de documentos jurídicos com LangChain e FAISS.
+        - Implementou avaliação automatizada de respostas com métricas de fidelidade e cobertura.
+        - Desenvolveu API em FastAPI e interface web para demonstração do produto.
+      keywords:
+        - RAG
+        - LLMs
+        - LangChain
+        - FAISS
+        - FastAPI
+    - name: Classificador de Imagens Médicas
+      url: https://github.com/marianacostaai/classificador-imagens-medicas
+      description: Modelo de visão computacional para triagem de exames de imagem com
+        foco em transparência.
+      startDate: Mar 2022
+      endDate: Dec 2022
+      summary: |
+        - Treinou e avaliou redes neurais convolucionais para classificação de exames de raios-X.
+        - Aplicou técnicas de aumento de dados e explicabilidade com Grad-CAM.
+        - Publicou resultados em workshop de IA aplicada à saúde.
+      keywords:
+        - Visão Computacional
+        - PyTorch
+        - Grad-CAM
+        - Saúde
+        - CNN
+    - name: Pipeline de MLOps para Recomendação
+      url: https://github.com/marianacostaai/pipeline-mlops-recomendacao
+      description: Infraestrutura reprodutível para treinamento, versionamento e
+        deploy de modelos de recomendação.
+      startDate: Aug 2021
+      endDate: Feb 2022
+      summary: |
+        - Orquestrou treinamentos com Airflow e versionamento de dados e modelos com MLflow.
+        - Configurou deploy em Kubernetes com monitoramento de deriva de dados.
+        - Reduziu o tempo de treinamento e validação de modelos em 30%.
+      keywords:
+        - MLOps
+        - Airflow
+        - MLflow
+        - Kubernetes
+        - Recomendação
+  interests:
+    - name: Pesquisa em IA
+      keywords:
+        - LLMs
+        - Aprendizado por Reforço
+        - Ética em IA
+    - name: Esportes
+      keywords:
+        - Corrida
+        - Ciclismo
+        - Natação
+    - name: Música
+      keywords:
+        - Violão
+        - Piano
+  volunteer:
+    - organization: PyLadies São Paulo
+      url: https://www.pyladies.com
+      position: Mentora Técnica
+      startDate: Mar 2022
+      summary: |
+        - Mentora mulheres em transição de carreira para tecnologia, com foco em Python e fundamentos de IA.
+        - Organiza workshops de introdução a machine learning e boas práticas de projetos.
+        - Apoia a revisão de currículos e a preparação para entrevistas técnicas.
+
+locale:
+  language: pt-br

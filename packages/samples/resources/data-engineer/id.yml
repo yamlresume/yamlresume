@@ -1,0 +1,265 @@
+content:
+  basics:
+    name: Rizky Pratama Nugroho
+    headline: Insinyur Data Senior yang membangun platform data modern dan andal
+    phone: "+62 812-3456-7890"
+    email: rizky.pratama@example.com
+    url: https://rizkypratama.dev
+    summary: |
+      - Insinyur Data dengan pengalaman lebih dari 7 tahun dalam merancang, membangun, dan mengoperasikan platform data modern.
+      - Ahli dalam pipeline ETL/ELT, pemodelan data dimensional, tata kelola data, dan optimasi performa kueri.
+      - Terbiasa bekerja dengan Apache Airflow, dbt, Spark, Kafka, Snowflake, BigQuery, dan ekosistem cloud.
+      - Pemimpin teknis yang kolaboratif, berorientasi dampak bisnis, dan berpengalaman membimbing engineer junior.
+
+  location:
+    address: Jl. Gatot Subroto No. 88, Kuningan Barat
+    city: Jakarta Selatan
+    region: DKI Jakarta
+    country: Indonesia
+    postalCode: "12710"
+
+  profiles:
+    - network: GitHub
+      url: https://github.com/rizkypnugroho
+      username: rizkypnugroho
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/rizkypnugroho
+      username: rizkypnugroho
+    - network: Stack Overflow
+      url: https://stackoverflow.com/users/9876543/rizky-nugroho
+      username: rizky-nugroho
+
+  education:
+    - institution: Institut Teknologi Bandung
+      url: https://www.itb.ac.id
+      degree: Bachelor
+      area: Teknik Informatika
+      score: "3.72"
+      startDate: Aug 1, 2014
+      endDate: Jul 31, 2018
+      courses:
+        - Struktur Data dan Algoritma
+        - Basis Data
+        - Sistem Terdistribusi
+        - Rekayasa Perangkat Lunak
+        - Statistika Terapan
+        - Pembelajaran Mesin
+        - Komputasi Awan
+        - Pemrograman Fungsional
+      summary: |
+        - Fokus pada basis data, sistem terdistribusi, dan rekayasa perangkat lunak.
+        - Menyelesaikan tugas akhir tentang optimasi kueri pada gudang data kolumnar.
+        - Aktif dalam organisasi mahasiswa dan kompetisi analitik data.
+
+  work:
+    - name: PT Cakrawala Data Nusantara
+      url: https://cakrawaladata.co.id
+      position: Insinyur Data Senior
+      startDate: Feb 1, 2022
+      summary: |
+        - Merancang dan memelihara arsitektur data lakehouse untuk mendukung analitik dan pelaporan lintas divisi.
+        - Membangun pipeline ETL/ELT dengan Apache Airflow, dbt, dan Spark untuk memproses lebih dari 2 TB data harian.
+        - Mengoptimalkan model data di Snowflake dan BigQuery sehingga waktu kueri analitik turun 40 persen.
+        - Menerapkan praktik tata kelola data, katalog data, dan kontrol kualitas data bersama tim platform.
+        - Memimpin tiga insinyur data junior dan melakukan code review untuk menjaga standar rekayasa data.
+      keywords:
+        - Data Lakehouse
+        - Apache Airflow
+        - dbt
+        - Apache Spark
+        - Snowflake
+        - BigQuery
+        - Tata Kelola Data
+        - Kualitas Data
+    - name: PT Solusi Analitik Prima
+      url: https://solusianalitik.co.id
+      position: Insinyur Data
+      startDate: Mar 1, 2019
+      endDate: Jan 31, 2022
+      summary: |
+        - Mengembangkan data warehouse dan pipeline batch untuk kebutuhan business intelligence klien ritel dan keuangan.
+        - Membangun integrasi data dari PostgreSQL, MySQL, dan API pihak ketiga menggunakan Python dan Apache Airflow.
+        - Membuat model dbt dan dokumentasi data untuk meningkatkan konsistensi metrik bisnis.
+        - Berkolaborasi dengan analis data dan manajer produk dalam perancangan KPI serta dashboard operasional.
+        - Menurunkan biaya pemrosesan data 25 persen melalui optimasi job dan partisi tabel.
+      keywords:
+        - Data Warehouse
+        - Apache Airflow
+        - Python
+        - dbt
+        - PostgreSQL
+        - Business Intelligence
+        - ETL
+        - Optimasi Kueri
+    - name: PT Insight Digital Indonesia
+      url: https://insightdigital.co.id
+      position: Analis Data
+      startDate: Aug 1, 2018
+      endDate: Feb 28, 2019
+      summary: |
+        - Mengumpulkan, membersihkan, dan menganalisis data penjualan untuk mendukung pengambilan keputusan manajemen.
+        - Membuat dashboard Tableau dan laporan otomatis dengan SQL untuk tim pemasaran dan operasional.
+        - Menyusun dokumentasi metrik dan membantu validasi data sebelum dipublikasikan ke pemangku kepentingan.
+      keywords:
+        - SQL
+        - Tableau
+        - Analisis Data
+        - Dashboard
+        - Pelaporan
+
+  skills:
+    - name: Rekayasa Data
+      level: Expert
+      keywords:
+        - Apache Airflow
+        - Apache Spark
+        - dbt
+        - Apache Kafka
+        - Python
+        - SQL
+    - name: Basis Data dan Pemodelan
+      level: Advanced
+      keywords:
+        - Snowflake
+        - Google BigQuery
+        - PostgreSQL
+        - Data Warehouse
+        - Data Modeling
+        - Kualitas Data
+    - name: Cloud dan Infrastruktur
+      level: Advanced
+      keywords:
+        - Google Cloud Platform
+        - AWS
+        - Terraform
+        - Docker
+        - Kubernetes
+        - CI/CD
+    - name: Analitik dan Visualisasi
+      level: Intermediate
+      keywords:
+        - Power BI
+        - Tableau
+        - Metabase
+        - Pandas
+        - PySpark
+        - Looker
+
+  languages:
+    - language: Indonesian
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - Bahasa ibu
+        - Komunikasi profesional
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - IELTS 7.5
+        - Presentasi teknis
+
+  awards:
+    - title: Karyawan Terbaik Tahun 2023
+      date: Dec 2023
+      awarder: PT Cakrawala Data Nusantara
+      summary: |
+        Diberikan atas kontribusi dalam modernisasi platform data perusahaan dan kepemimpinan teknis tim rekayasa data.
+    - title: Juara 2 Hackathon Data Nasional
+      date: Oct 2019
+      awarder: Asosiasi Data Indonesia
+      summary: |
+        Diberikan atas pencapaian tim dalam membangun solusi analitik prediktif untuk optimasi rantai pasok.
+
+  certificates:
+    - name: Google Cloud Professional Data Engineer
+      issuer: Google Cloud
+      date: May 2023
+      url: https://cloud.google.com/certification/data-engineer
+    - name: AWS Certified Data Analytics - Specialty
+      issuer: Amazon Web Services
+      date: Sep 2022
+      url: https://aws.amazon.com/certification/certified-data-analytics-specialty/
+    - name: dbt Analytics Engineering Certification
+      issuer: dbt Labs
+      date: Jan 2024
+      url: https://www.getdbt.com/certifications/analytics-engineering-certification
+
+  publications:
+    - name: Arsitektur Data Lakehouse untuk Analitik Real-Time di Perusahaan Digital
+      publisher: Jurnal Sistem Informasi Indonesia
+      releaseDate: Nov 2021
+      url: https://doi.org/10.1234/jsii.2021.0123
+      summary: |
+        - Membahas rancangan data lakehouse untuk kebutuhan analitik real-time.
+        - Menguraikan strategi ingestion, pemodelan, tata kelola, dan kualitas data.
+        - Memberikan studi kasus penerapan pada perusahaan digital di Indonesia.
+
+  references:
+    - name: Dewi Anggraini
+      email: dewi.anggraini@cakrawaladata.co.id
+      phone: "+62 811-9876-5432"
+      relationship: Head of Data Engineering, PT Cakrawala Data Nusantara
+      summary: |
+        Dewi Anggraini memimpin tim Data Engineering di PT Cakrawala Data Nusantara dan dapat memberikan keterangan mengenai kinerja teknis, kepemimpinan, serta kontribusi Rizky selama bekerja.
+
+  projects:
+    - name: Pipeline Data Real-Time untuk Dashboard Operasional
+      url: https://github.com/rizkypnugroho/realtime-ops-pipeline
+      description: Membangun pipeline streaming untuk menyediakan metrik operasional
+        near real-time bagi tim gudang dan logistik.
+      startDate: Mar 1, 2023
+      endDate: Sep 30, 2023
+      summary: |
+        - Mengintegrasikan Apache Kafka, Spark Structured Streaming, dan BigQuery untuk aliran data berlatensi rendah.
+        - Menerapkan monitoring, alerting, dan idempotensi pipeline agar kualitas data tetap terjaga.
+        - Menyusun runbook dan dokumentasi arsitektur untuk tim operasi data.
+      keywords:
+        - Apache Kafka
+        - Spark Streaming
+        - BigQuery
+        - Observability
+        - Kualitas Data
+    - name: Modernisasi Data Warehouse Perusahaan Ritel
+      url: https://github.com/rizkypnugroho/retail-dw-modernization
+      description: Memodernisasi gudang data legacy menjadi model dimensional yang
+        lebih skalabel dan mudah dipelihara.
+      startDate: Jun 1, 2021
+      endDate: Dec 31, 2021
+      summary: |
+        - Memigrasikan tabel legacy ke Snowflake dengan strategi cutover bertahap.
+        - Membangun model dbt dan test kualitas data untuk dimensi pelanggan, produk, dan penjualan.
+        - Mendokumentasikan lineage data dan metrik bisnis bersama tim analitik.
+      keywords:
+        - Snowflake
+        - dbt
+        - Data Warehouse
+        - Data Modeling
+        - Migrasi Data
+
+  interests:
+    - name: Open Source
+      keywords:
+        - Apache Airflow
+        - dbt
+        - Apache Kafka
+    - name: Olahraga
+      keywords:
+        - Lari
+        - Bersepeda
+        - Bulu Tangkis
+    - name: Musik
+      keywords:
+        - Gitar
+        - Piano
+
+  volunteer:
+    - organization: Komunitas Data Jakarta
+      url: https://datakomunitas.id
+      position: Mentor Data Engineering
+      startDate: Jan 1, 2021
+      summary: |
+        - Menjadi mentor dalam program belajar data engineering untuk pemula dan profesional yang beralih karier.
+        - Membantu peserta membangun proyek portofolio pipeline data dan memberikan umpan balik teknis.
+        - Turut menyelenggarakan lokakarya tentang Airflow, dbt, dan praktik terbaik kualitas data.
+
+locale:
+  language: id

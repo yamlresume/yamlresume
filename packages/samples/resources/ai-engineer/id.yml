@@ -1,0 +1,265 @@
+content:
+  basics:
+    name: Aditya Pratama Nugroho
+    headline: 'Insinyur AI | Pembelajaran Mesin & MLOps'
+    phone: '+62 812-3456-7890'
+    email: aditya.pratama.ai@gmail.com
+    url: https://adityapratama.id
+    summary: |
+      Insinyur AI dengan pengalaman 6+ tahun merancang, membangun, dan menerapkan solusi machine learning serta deep learning untuk skala produksi. Terbiasa menangani siklus penuh mulai dari eksplorasi data, feature engineering, pelatihan model, evaluasi, hingga deployment dan monitoring di cloud.
+
+      - Menguasai Python, PyTorch, TensorFlow, dan scikit-learn untuk pengembangan model prediktif, NLP, dan computer vision.
+      - Berpengalaman membangun pipeline MLOps menggunakan Docker, Kubernetes, MLflow, dan Airflow.
+      - Kolaboratif, berorientasi hasil, dan mampu menerjemahkan kebutuhan bisnis menjadi solusi AI yang terukur.
+
+  location:
+    address: Jl. Gatot Subroto No. 88
+    city: Jakarta Selatan
+    region: DKI Jakarta
+    country: Indonesia
+    postalCode: "12930"
+
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/adityapratamanugroho
+      username: adityapratamanugroho
+    - network: GitHub
+      url: https://github.com/adityapratama
+      username: adityapratama
+    - network: Stack Overflow
+      url: https://stackoverflow.com/users/1234567/aditya-pratama
+      username: aditya-pratama
+
+  education:
+    - institution: Universitas Indonesia
+      url: https://www.ui.ac.id
+      degree: Bachelor
+      area: Ilmu Komputer
+      score: "3.72"
+      startDate: Aug 1, 2014
+      endDate: Jul 1, 2018
+      courses:
+        - Struktur Data dan Algoritma
+        - Pembelajaran Mesin
+        - Pengolahan Bahasa Alami
+        - Visi Komputer
+        - Basis Data
+        - Sistem Terdistribusi
+        - Statistika Komputasi
+        - Kecerdasan Buatan
+      summary: |
+        - Lulus dengan predikat cum laude dan fokus pada bidang kecerdasan buatan serta pembelajaran mesin.
+        - Menjadi asisten dosen untuk mata kuliah Pembelajaran Mesin dan Struktur Data.
+        - Menyelesaikan skripsi tentang klasifikasi teks berita berbahasa Indonesia menggunakan model transformer.
+
+  work:
+    - name: PT Nusantara AI Solutions
+      url: https://www.nusantara-ai.co.id
+      position: Insinyur AI Senior
+      startDate: Jan 1, 2022
+      summary: |
+        - Memimpin tim 5 engineer dalam pengembangan platform rekomendasi berbasis deep learning yang melayani 2 juta pengguna aktif.
+        - Merancang arsitektur model NLP untuk analisis sentimen dan ekstraksi entitas dengan akurasi F1 di atas 0,92.
+        - Membangun pipeline MLOps end-to-end menggunakan MLflow, Airflow, Docker, dan Kubernetes untuk 30+ model produksi.
+        - Mengoptimalkan biaya inferensi sebesar 35% melalui model quantization, caching, dan autoscaling.
+        - Berkolaborasi dengan product manager dan data analyst untuk menerjemahkan kebutuhan bisnis menjadi roadmap AI.
+      keywords:
+        - Deep Learning
+        - NLP
+        - MLOps
+        - Kubernetes
+        - Leadership
+    - name: PT Data Cerdas Indonesia
+      url: https://www.datacerdas.co.id
+      position: Insinyur Pembelajaran Mesin
+      startDate: Mar 1, 2019
+      endDate: Dec 1, 2021
+      summary: |
+        - Mengembangkan model prediksi churn dan credit scoring untuk industri finansial dengan AUC 0,88.
+        - Membangun fitur dan pipeline data menggunakan Python, Spark, dan SQL untuk dataset 50 juta transaksi.
+        - Menerapkan model ke layanan API menggunakan FastAPI dan Docker dengan latensi rata-rata di bawah 80 ms.
+        - Melakukan A/B testing dan monitoring model untuk memastikan performa dan stabilitas di lingkungan produksi.
+      keywords:
+        - Machine Learning
+        - Spark
+        - Python
+        - FastAPI
+        - Credit Scoring
+    - name: PT Solusi Analitik Global
+      url: https://www.solusi-analitik.co.id
+      position: Ilmuwan Data
+      startDate: Aug 1, 2018
+      endDate: Feb 1, 2019
+      summary: |
+        - Menganalisis data pelanggan untuk mengidentifikasi peluang cross-selling dan segmentasi pasar.
+        - Membuat dashboard interaktif dan laporan insight menggunakan Tableau dan Python.
+        - Berkolaborasi dengan tim penjualan untuk merancang kampanye berbasis data yang meningkatkan konversi 12%.
+      keywords:
+        - Data Analysis
+        - Tableau
+        - Segmentation
+        - Python
+
+  skills:
+    - name: Pembelajaran Mesin
+      level: Expert
+      keywords:
+        - Python
+        - PyTorch
+        - TensorFlow
+        - scikit-learn
+        - XGBoost
+    - name: Pembelajaran Mendalam
+      level: Advanced
+      keywords:
+        - NLP
+        - Computer Vision
+        - Transformers
+        - CNN
+        - RNN
+    - name: MLOps
+      level: Advanced
+      keywords:
+        - MLflow
+        - Airflow
+        - Docker
+        - Kubernetes
+        - CI/CD
+    - name: Rekayasa Data
+      level: Advanced
+      keywords:
+        - SQL
+        - Spark
+        - Kafka
+        - PostgreSQL
+        - BigQuery
+    - name: Komputasi Awan
+      level: Intermediate
+      keywords:
+        - AWS
+        - GCP
+        - SageMaker
+        - Vertex AI
+        - Terraform
+
+  languages:
+    - language: Indonesian
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - Bahasa ibu
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - TOEFL iBT 105
+        - IELTS 7.5
+
+  awards:
+    - title: Penghargaan Inovasi AI Terbaik
+      date: Nov 2023
+      awarder: PT Nusantara AI Solutions
+      summary: |
+        Diberikan atas keberhasilan memimpin pengembangan platform rekomendasi berbasis AI yang meningkatkan engagement pengguna sebesar 28%.
+    - title: Dean's List
+      date: Jun 2017
+      awarder: Universitas Indonesia
+      summary: |
+        Diberikan kepada mahasiswa dengan prestasi akademik tinggi dan konsisten selama dua semester berturut-turut.
+
+  certificates:
+    - name: AWS Certified Machine Learning - Specialty
+      issuer: Amazon Web Services
+      date: Mar 2023
+      url: https://aws.amazon.com/certification/certified-machine-learning-specialty/
+    - name: TensorFlow Developer Certificate
+      issuer: Google
+      date: Sep 2021
+      url: https://www.tensorflow.org/certificate
+    - name: Professional Data Engineer
+      issuer: Google Cloud
+      date: Feb 2022
+      url: https://cloud.google.com/certification/data-engineer
+
+  publications:
+    - name: Klasifikasi Teks Berita Berbahasa Indonesia Menggunakan IndoBERT
+      publisher: Jurnal Ilmu Komputer dan Informasi
+      releaseDate: Oct 2021
+      url: https://jiki.cs.ui.ac.id/index.php/jiki
+      summary: |
+        - Menerapkan model IndoBERT untuk klasifikasi topik berita berbahasa Indonesia.
+        - Mencapai akurasi 94,2% pada dataset 20.000 berita dari berbagai portal daring.
+        - Menganalisis pengaruh fine-tuning dan ukuran data terhadap performa model.
+    - name: Deteksi Anomali Transaksi Keuangan dengan Autoencoder
+      publisher: Seminar Nasional Artificial Intelligence
+      releaseDate: Aug 2020
+      url: https://semnas-ai.id/prosiding
+      summary: |
+        - Mengembangkan model autoencoder untuk mendeteksi anomali pada data transaksi keuangan.
+        - Membandingkan performa dengan Isolation Forest dan One-Class SVM.
+        - Menunjukkan peningkatan recall sebesar 15% pada data yang tidak seimbang.
+
+  projects:
+    - name: Asisten Virtual Berbahasa Indonesia
+      url: https://github.com/adityapratama/asisten-virtual-id
+      description: Chatbot berbasis LLM untuk layanan pelanggan berbahasa Indonesia.
+      startDate: Jan 2023
+      endDate: Jun 2023
+      summary: |
+        - Membangun chatbot dengan arsitektur RAG menggunakan LangChain, vector database, dan model open-source.
+        - Mengintegrasikan API ke kanal WhatsApp dan web dengan latensi respons di bawah 2 detik.
+        - Menerapkan evaluasi otomatis untuk kualitas jawaban dan deteksi halusinasi.
+      keywords:
+        - LLM
+        - RAG
+        - LangChain
+        - Chatbot
+    - name: Sistem Deteksi Kerusakan Jalan
+      url: https://github.com/adityapratama/deteksi-jalan
+      description: Deteksi kerusakan jalan berbasis computer vision dari citra kendaraan.
+      startDate: Mar 2020
+      endDate: Nov 2020
+      summary: |
+        - Melatih model YOLOv5 untuk mendeteksi retak dan lubang jalan pada citra dashcam.
+        - Mencapai mAP 0,81 pada dataset 5.000 gambar yang dianotasi secara manual.
+        - Mengemas model sebagai layanan inferensi menggunakan FastAPI dan Docker.
+      keywords:
+        - Computer Vision
+        - YOLOv5
+        - FastAPI
+
+  interests:
+    - name: Teknologi
+      keywords:
+        - Open Source
+        - LLM
+        - Edge AI
+    - name: Olahraga
+      keywords:
+        - Lari
+        - Bersepeda
+        - Bulu Tangkis
+    - name: Musik
+      keywords:
+        - Gitar
+        - Jazz
+
+  volunteer:
+    - organization: Komunitas AI Indonesia
+      url: https://www.aiindonesia.org
+      position: Mentor Machine Learning
+      startDate: Feb 2021
+      summary: |
+        - Menjadi mentor untuk program bootcamp machine learning bagi mahasiswa dan profesional muda.
+        - Membantu peserta mengembangkan proyek akhir dan mempersiapkan portofolio AI.
+        - Menyelenggarakan workshop tentang MLOps dan deployment model.
+    - organization: Universitas Indonesia
+      url: https://www.ui.ac.id
+      position: Asisten Dosen
+      startDate: Sep 2016
+      endDate: Jun 2018
+      summary: |
+        - Membantu dosen dalam menyusun materi dan soal untuk mata kuliah Pembelajaran Mesin.
+        - Membimbing mahasiswa dalam tugas pemrograman dan proyek kelompok.
+        - Memberikan sesi konsultasi mingguan tentang konsep algoritma dan statistika.
+
+locale:
+  language: id

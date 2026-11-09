@@ -1,0 +1,241 @@
+content:
+  basics:
+    name: Elena Marquez
+    headline: 'Senior AI Engineer | LLM Systems & Machine Learning'
+    phone: "(415) 555-0148"
+    email: elena.marquez.ai@gmail.com
+    url: https://elenamarquez.dev
+    summary: |
+      AI Engineer with 6+ years of experience designing, evaluating, and deploying production machine learning and large language model systems. I turn ambiguous product goals into measurable models, reliable inference services, and evaluation frameworks that teams can trust.
+
+      - Built retrieval-augmented generation and agentic workflows for healthcare and enterprise search, improving answer quality while reducing latency and cost.
+      - Led model evaluation, prompt optimization, and guardrail design across multiple product teams, with a focus on safety, observability, and reproducibility.
+      - Partnered with product, data, and platform engineers to ship ML features from prototype to production with clear ownership and monitoring.
+  location:
+    address: 500 Terry A Francois Blvd
+    city: San Francisco
+    region: California
+    country: United States
+    postalCode: "94158"
+  profiles:
+    - network: GitHub
+      url: https://github.com/elena-marquez
+      username: elena-marquez
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/elena-marquez-ai
+      username: elena-marquez-ai
+    - network: Medium
+      url: https://medium.com/@elena-marquez-ai
+      username: elena-marquez-ai
+  education:
+    - institution: University of Washington
+      url: https://www.washington.edu/
+      degree: Master
+      area: Computer Science and Artificial Intelligence
+      score: "3.9"
+      startDate: Sep 1, 2017
+      endDate: Jun 15, 2019
+      courses:
+        - Machine Learning
+        - Deep Learning
+        - Natural Language Processing
+        - Probabilistic Graphical Models
+        - Distributed Systems
+        - Statistical Inference
+        - Human-Computer Interaction
+      summary: |
+        - Completed graduate coursework and research at the intersection of machine learning, NLP, and human-centered AI.
+        - Built reproducible experiments for text classification and retrieval, including error analysis and ablation studies.
+        - Presented research findings to academic and industry audiences and collaborated across disciplines.
+  work:
+    - name: Aether Labs
+      url: https://www.aetherlabs.ai
+      position: Senior AI Engineer
+      startDate: Mar 6, 2023
+      summary: |
+        - Lead the design and deployment of LLM-powered search and assistant features used by enterprise customers.
+        - Built a retrieval-augmented generation pipeline with hybrid search, reranking, and citation-aware responses, reducing unsupported claims by 38%.
+        - Created an offline and online evaluation stack covering relevance, groundedness, latency, and cost, enabling weekly model and prompt releases.
+        - Partnered with platform engineers to productionize inference services with batching, caching, and observability on Kubernetes.
+        - Mentored two AI engineers and established review practices for prompt changes, data contracts, and model risk assessments.
+      keywords:
+        - LLM Systems
+        - RAG
+        - Evaluation
+        - Inference
+        - Mentorship
+    - name: BrightPulse Health
+      url: https://www.brightpulsehealth.com
+      position: Machine Learning Engineer
+      startDate: Jul 15, 2019
+      endDate: Feb 24, 2023
+      summary: |
+        - Developed clinical risk and triage models using structured EHR data, improving recall for high-risk patients by 17% in prospective validation.
+        - Built NLP pipelines to extract signals from unstructured notes, with de-identification, labeling, and active learning workflows.
+        - Deployed batch and real-time inference services on AWS, with data quality checks, model monitoring, and rollback procedures.
+        - Worked with clinicians and compliance teams to document model limitations, intended use, and bias mitigation steps.
+        - Automated feature pipelines in Airflow and Spark, cutting weekly model refresh time from two days to four hours.
+      keywords:
+        - Healthcare
+        - NLP
+        - Risk Models
+        - AWS
+        - Monitoring
+    - name: VectorForge AI
+      url: https://www.vectorforge.ai
+      position: AI Research Intern
+      startDate: Jun 4, 2018
+      endDate: Sep 14, 2018
+      summary: |
+        - Prototyped sentence embeddings and retrieval baselines for semantic search over technical documentation.
+        - Ran ablation studies on negative sampling and reranking, documenting findings in an internal research report.
+        - Contributed reusable evaluation scripts and data preparation notebooks to the research team.
+      keywords:
+        - Embeddings
+        - Semantic Search
+        - Research
+  languages:
+    - language: English
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - Technical writing
+        - Conference talks
+    - language: Spanish
+      fluency: Full Professional Proficiency
+      keywords:
+        - Bilingual collaboration
+    - language: French
+      fluency: Elementary Proficiency
+      keywords:
+        - DELF A2
+  skills:
+    - name: Machine Learning
+      level: Expert
+      keywords:
+        - PyTorch
+        - TensorFlow
+        - scikit-learn
+        - XGBoost
+        - Statistical Modeling
+    - name: 'LLM & Generative AI'
+      level: Advanced
+      keywords:
+        - Transformers
+        - LangChain
+        - RAG
+        - Prompt Engineering
+        - Fine-tuning
+        - Agents
+    - name: Data Engineering
+      level: Advanced
+      keywords:
+        - Python
+        - SQL
+        - Apache Airflow
+        - Apache Spark
+        - dbt
+        - Snowflake
+    - name: 'Cloud & MLOps'
+      level: Advanced
+      keywords:
+        - AWS
+        - GCP
+        - Docker
+        - Kubernetes
+        - MLflow
+        - Terraform
+    - name: Software Engineering
+      level: Advanced
+      keywords:
+        - FastAPI
+        - TypeScript
+        - REST APIs
+        - CI/CD
+        - Testing
+        - System Design
+  awards:
+    - title: AI Platform Innovation Award
+      date: Nov 2022
+      awarder: BrightPulse Health
+      summary: |
+        Recognized for leading the design of a clinical NLP platform that reduced manual chart review time by 30% while maintaining auditability and clinician trust.
+    - title: Graduate Research Excellence Award
+      date: May 2019
+      awarder: University of Washington
+      summary: |
+        Awarded for research on retrieval and evaluation methods for domain-specific language models, including a published workshop paper and reproducible benchmark.
+  certificates:
+    - name: AWS Certified Machine Learning - Specialty
+      issuer: Amazon Web Services
+      date: Aug 2022
+      url: https://aws.amazon.com/certification/certified-machine-learning-specialty/
+    - name: Google Cloud Professional Machine Learning Engineer
+      issuer: Google Cloud
+      date: Jan 2023
+      url: https://cloud.google.com/certification/machine-learning-engineer
+  publications:
+    - name: Evaluation-Driven Development for Retrieval-Augmented Generation
+      publisher: Proceedings of the Conference on Applied Machine Learning
+      releaseDate: Oct 2023
+      url: https://dl.acm.org/doi/10.1145/3612345.3612399
+      summary: |
+        - Proposes a practical evaluation loop for RAG systems that combines retrieval diagnostics, groundedness checks, and human review.
+        - Shares lessons from deploying the framework across customer support and healthcare search use cases.
+    - name: Calibrating Clinical Risk Models Under Distribution Shift
+      publisher: Journal of Healthcare AI
+      releaseDate: Mar 2021
+      url: https://doi.org/10.1016/j.jhai.2021.03.004
+      summary: |
+        - Studies calibration drift in clinical risk prediction models when patient populations and care pathways change.
+        - Introduces monitoring signals and retraining triggers that helped maintain model reliability in production.
+  projects:
+    - name: RAG Evaluation Harness
+      url: https://github.com/elena-marquez/rag-eval-harness
+      description: Open-source toolkit for reproducible evaluation of
+        retrieval-augmented generation pipelines
+      startDate: Jan 2024
+      summary: |
+        - Provides pluggable retrievers, rerankers, and judges for measuring relevance, groundedness, and answer completeness.
+        - Includes synthetic query generation, regression tests, and dashboards for comparing prompt and model changes.
+      keywords:
+        - RAG
+        - Evaluation
+        - LLM
+    - name: Clinical Note Summarizer
+      url: https://github.com/elena-marquez/clinical-note-summarizer
+      description: Privacy-preserving summarization service for clinician-authored notes
+      startDate: Feb 2022
+      endDate: Nov 2022
+      summary: |
+        - Built a de-identification and summarization pipeline with human-in-the-loop review and audit logging.
+        - Evaluated summaries for factual consistency, coverage, and clinician acceptance before a limited pilot.
+      keywords:
+        - Healthcare
+        - NLP
+        - Summarization
+  interests:
+    - name: Open-Source AI
+      keywords:
+        - Evaluation
+        - Reproducibility
+        - Agents
+    - name: Outdoors
+      keywords:
+        - Trail Running
+        - Climbing
+        - Cycling
+    - name: Music
+      keywords:
+        - Jazz Piano
+        - Music Production
+  volunteer:
+    - organization: Women in Machine Learning
+      url: https://wiml.org
+      position: Mentor
+      startDate: Jan 10, 2021
+      summary: |
+        - Mentor early-career engineers and researchers on ML project scoping, interview preparation, and career growth.
+        - Review workshop submissions and support community events focused on inclusive AI research and practice.
+
+locale:
+  language: en

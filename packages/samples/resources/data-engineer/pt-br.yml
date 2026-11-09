@@ -1,0 +1,251 @@
+content:
+  basics:
+    name: Mariana Costa Almeida
+    headline: 'Engenheira de Dados Sênior | Plataformas de Dados e Analytics'
+    phone: '+55 11 98765-4321'
+    email: mariana.costa.almeida@example.com
+    url: https://marianaalmeida.dev
+    summary: |
+      - Engenheira de dados com mais de 6 anos de experiência na construção de plataformas de dados escaláveis, confiáveis e orientadas a impacto de negócio
+      - Especialista em pipelines batch e streaming, modelagem analítica, qualidade de dados e governança em ambientes de nuvem
+      - Experiência com Apache Spark, Airflow, dbt, Kafka, AWS, Databricks e ferramentas modernas de lakehouse
+      - Atuação colaborativa com times de produto, ciência de dados, BI e engenharia para traduzir necessidades analíticas em soluções robustas
+      - Forte compromisso com boas práticas de engenharia, observabilidade, automação e mentoria técnica
+
+  location:
+    address: Rua dos Pinheiros, 450, Apto 82
+    city: São Paulo
+    region: SP
+    country: Brazil
+    postalCode: '05422-000'
+
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/mariana-costa-almeida
+      username: mariana-costa-almeida
+    - network: GitHub
+      url: https://github.com/mariana-costa-data
+      username: mariana-costa-data
+
+  education:
+    - institution: Universidade de São Paulo
+      url: https://www.usp.br
+      degree: Bachelor
+      area: Ciência da Computação
+      score: '8.7/10'
+      startDate: Mar 1, 2014
+      endDate: Dec 15, 2018
+      courses:
+        - Estruturas de Dados
+        - Algoritmos e Complexidade
+        - Bancos de Dados
+        - Engenharia de Software
+        - Sistemas Distribuídos
+        - Estatística Aplicada
+        - Aprendizado de Máquina
+        - Computação em Nuvem
+      summary: |
+        - Formação sólida em fundamentos de computação, bancos de dados e engenharia de software
+        - Desenvolvimento de projetos acadêmicos com foco em processamento e análise de grandes volumes de dados
+        - Participação em grupos de estudo de ciência de dados e computação distribuída
+    - institution: Insper
+      url: https://www.insper.edu.br
+      degree: Master
+      area: Ciência de Dados
+      score: '9.1/10'
+      startDate: Mar 1, 2019
+      endDate: Dec 10, 2020
+      courses:
+        - Engenharia de Dados
+        - Estatística para Ciência de Dados
+        - Aprendizado de Máquina
+        - Visualização de Dados
+        - Governança de Dados
+      summary: |
+        - Especialização em arquitetura de dados, modelagem analítica e pipelines escaláveis
+        - Projeto de conclusão sobre qualidade de dados em plataformas de analytics em tempo real
+        - Desenvolvimento de soluções com foco em impacto de negócio e boas práticas de engenharia
+
+  work:
+    - name: Nubank
+      url: https://nubank.com.br
+      position: Engenheira de Dados Sênior
+      startDate: Feb 1, 2022
+      summary: |
+        - Liderança técnica na construção e evolução de pipelines de dados batch e streaming para produtos de crédito e risco
+        - Modelagem de dados analíticos em lakehouse com Apache Iceberg, Spark e dbt, apoiando times de analytics e ciência de dados
+        - Implementação de contratos de dados, testes automatizados e monitoramento de qualidade com foco em confiabilidade
+        - Otimização de custos e performance em AWS, reduzindo tempo de processamento e consumo de recursos
+        - Mentoria de engenheiras e engenheiros de dados júnior e colaboração com produto, engenharia e negócio
+      keywords:
+        - Apache Spark
+        - Apache Airflow
+        - dbt
+        - Kafka
+        - AWS
+        - Data Quality
+        - Lakehouse
+    - name: iFood
+      url: https://www.ifood.com.br
+      position: Engenheira de Dados
+      startDate: Jan 6, 2020
+      endDate: Jan 28, 2022
+      summary: |
+        - Desenvolvimento de pipelines ETL e ELT para ingestão de dados de pedidos, entregadores e restaurantes
+        - Construção de modelos dimensionais e tabelas analíticas para dashboards de operações e growth
+        - Automação de orquestração com Airflow e padronização de transformações com SQL e Python
+        - Atuação em iniciativas de observabilidade de dados, catálogo e linhagem para maior confiabilidade
+        - Parceria com times de BI e produto para traduzir necessidades analíticas em soluções escaláveis
+      keywords:
+        - ETL
+        - ELT
+        - SQL
+        - Python
+        - Airflow
+        - Data Warehouse
+    - name: Itaú Unibanco
+      url: https://www.itau.com.br
+      position: Analista de Dados Júnior
+      startDate: Mar 4, 2019
+      endDate: Dec 20, 2019
+      summary: |
+        - Manutenção e evolução de rotinas de carga de dados para relatórios regulatórios e gerenciais
+        - Criação de consultas SQL e scripts Python para tratamento, validação e consolidação de dados
+        - Apoio à documentação de processos, regras de negócio e dicionários de dados
+        - Colaboração com áreas de risco e finanças para garantir consistência das informações
+      keywords:
+        - SQL
+        - Python
+        - Dados Financeiros
+        - Relatórios
+        - Qualidade de Dados
+
+  languages:
+    - language: Portuguese
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - Comunicação técnica
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - TOEFL iBT 108
+        - Inglês para negócios
+    - language: Spanish
+      fluency: Limited Working Proficiency
+      keywords:
+        - Leitura técnica
+
+  skills:
+    - name: Engenharia de Dados
+      level: Expert
+      keywords:
+        - Apache Spark
+        - Apache Airflow
+        - dbt
+        - Apache Kafka
+        - Databricks
+        - Apache Iceberg
+        - Modelagem de Dados
+        - Data Quality
+    - name: Nuvem e Infraestrutura
+      level: Advanced
+      keywords:
+        - AWS
+        - Terraform
+        - Docker
+        - Kubernetes
+        - Amazon S3
+        - AWS Glue
+        - Snowflake
+    - name: Programação e Analytics
+      level: Advanced
+      keywords:
+        - Python
+        - SQL
+        - Scala
+        - PySpark
+        - Git
+        - Power BI
+        - Looker
+
+  awards:
+    - title: Prêmio de Excelência em Engenharia de Dados
+      date: Nov 2023
+      awarder: Nubank
+      summary: |
+        Reconhecimento por liderança técnica na modernização da plataforma de dados de risco, com ganhos de confiabilidade e redução de custos operacionais.
+
+  certificates:
+    - name: AWS Certified Data Analytics - Specialty
+      issuer: Amazon Web Services
+      date: Mar 2023
+      url: https://aws.amazon.com/certification/certified-data-analytics-specialty/
+    - name: Google Cloud Professional Data Engineer
+      issuer: Google Cloud
+      date: Aug 2022
+      url: https://cloud.google.com/learn/certification/data-engineer
+
+  publications:
+    - name: Construindo uma Plataforma de Dados Confiável em Escala
+      publisher: Blog de Engenharia do Nubank
+      releaseDate: Aug 2023
+      url: https://medium.com/@mariana.costa.almeida/plataforma-de-dados-confiavel
+      summary: |
+        - Artigo sobre práticas de contratos de dados, testes automatizados e observabilidade em pipelines críticos
+        - Discussão de arquitetura lakehouse, governança e métricas de confiabilidade para times de engenharia
+
+  references:
+    - name: Prof. Ricardo Menezes
+      phone: '+55 11 91234-5678'
+      relationship: Professor de Ciência de Dados
+      email: ricardo.menezes@insper.edu.br
+      summary: |
+        Mariana combina rigor técnico, visão de negócio e capacidade de liderança. Seu trabalho em plataformas de dados trouxe ganhos concretos de confiabilidade e eficiência para equipes multidisciplinares.
+
+  projects:
+    - name: Pipeline em Tempo Real para Detecção de Fraudes
+      url: https://github.com/mariana-costa-data/fraud-streaming-pipeline
+      description: Plataforma de streaming para ingestão, enriquecimento e scoring de
+        eventos transacionais
+      startDate: May 2023
+      endDate: Nov 2023
+      summary: |
+        - Arquitetura com Kafka, Spark Structured Streaming e armazenamento em lakehouse para análise de eventos em near real time
+        - Implementação de regras de qualidade, alertas e monitoramento de latência e throughput
+        - Integração com modelos de machine learning para apoio à decisão em risco e prevenção a fraudes
+      keywords:
+        - Kafka
+        - Spark Streaming
+        - Lakehouse
+        - Fraude
+        - Data Quality
+
+  interests:
+    - name: Corrida
+      keywords:
+        - Corrida de rua
+        - Meia maratona
+        - Trilhas
+    - name: Comunidade
+      keywords:
+        - Mentoria
+        - Palestras
+        - Open Source
+    - name: Música
+      keywords:
+        - Violão
+        - MPB
+        - Jazz
+
+  volunteer:
+    - organization: Data Girls Brasil
+      url: https://www.datagirlsbrasil.org.br
+      position: Mentora Voluntária
+      startDate: Mar 2021
+      summary: |
+        - Mentoria de mulheres em transição de carreira para dados, com foco em SQL, Python e projetos práticos
+        - Participação em eventos e rodas de conversa sobre carreira em engenharia de dados
+        - Apoio na revisão de currículos e preparação para entrevistas técnicas
+
+locale:
+  language: pt-br

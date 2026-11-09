@@ -1,0 +1,238 @@
+content:
+  basics:
+    name: 陳家豪
+    headline: '資深網絡安全工程師 | 雲端安全與滲透測試'
+    phone: '+852 9123 4567'
+    email: ka.ho.chan@example.com
+    url: https://www.chanhk-security.com
+    summary: |
+      具 8 年網絡安全工程經驗，專注雲端安全架構、滲透測試與事故應變。
+
+      - 熟悉零信任架構、SIEM、EDR 與 IAM，曾為金融及零售企業降低風險
+      - 持有 CISSP、OSCP 及 CKS，擅長跨部門協作與合規審計
+      - 以務實態度和清晰溝通推動安全左移，提升開發團隊安全意識
+  location:
+    address: 香港九龍旺角彌敦道 700 號
+    city: 香港
+    region: 九龍
+    country: Hong Kong
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/chankaho-cyber
+      username: chankaho-cyber
+    - network: GitHub
+      url: https://github.com/chankaho-sec
+      username: chankaho-sec
+  education:
+    - institution: 香港科技大學
+      url: https://www.ust.hk
+      degree: Bachelor
+      area: 電腦科學
+      score: '3.7'
+      startDate: Sep 1, 2012
+      endDate: Jun 30, 2016
+      courses:
+        - 資料結構與演算法
+        - 作業系統
+        - 電腦網絡
+        - 資料庫系統
+        - 資訊安全導論
+        - 密碼學基礎
+        - 雲端運算
+      summary: |
+        - 主修電腦科學，專注網絡與資訊安全
+        - 畢業專題研究入侵偵測系統與機器學習應用
+        - 曾獲院長嘉許名單
+  work:
+    - name: 恒信金融科技有限公司
+      url: https://www.hengxin-fintech.com
+      position: 高級網絡安全工程師
+      startDate: Jun 1, 2021
+      summary: |
+        - 設計及推行雲端安全架構，覆蓋 AWS 與 Azure，落實零信任存取及最少權限原則
+        - 主導 SIEM 與 EDR 規則優化，將告警誤報率降低 35%，平均事故回應時間縮短至 20 分鐘
+        - 執行內部滲透測試與紅隊演練，協助修補高風險漏洞並建立修復追蹤流程
+        - 與合規團隊完成 ISO 27001 與 PCI DSS 審計，維持零重大不符合項
+        - 培訓開發團隊推行安全左移，將 SAST/DAST 納入 CI/CD 流程
+      keywords:
+        - 雲端安全
+        - 零信任
+        - 事故應變
+        - SIEM
+        - 安全左移
+    - name: 駿達零售集團
+      url: https://www.chundaretail.com
+      position: 網絡安全工程師
+      startDate: Mar 1, 2018
+      endDate: May 31, 2021
+      summary: |
+        - 負責零售支付系統的安全評估與監控，保護每日逾 50 萬筆交易
+        - 部署及管理防火牆、WAF 與 IDS/IPS，定期進行規則檢視與調整
+        - 主導弱點管理計劃，協調跨部門修補漏洞，季度高風險漏洞清零
+        - 參與 ISO 27001 認證準備，撰寫風險評估與安全政策文件
+      keywords:
+        - 滲透測試
+        - 弱點管理
+        - ISO 27001
+        - 防火牆
+        - WAF
+    - name: 安網顧問有限公司
+      url: https://www.anwang-consulting.com
+      position: 資訊安全分析師
+      startDate: Jul 1, 2016
+      endDate: Feb 28, 2018
+      summary: |
+        - 於 SOC 監控安全事件，進行初步分析、升級與事故記錄
+        - 使用 Nessus、Burp Suite 等工具執行弱點掃描及滲透測試
+        - 協助客戶完成安全基線檢查與合規差距分析
+        - 撰寫事故報告與修復建議，向管理層匯報風險狀況
+      keywords:
+        - SOC
+        - 弱點掃描
+        - 風險評估
+        - 合規審計
+  languages:
+    - language: Cantonese
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - 母語
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - IELTS 7.5
+        - 商務溝通
+    - language: Mandarin
+      fluency: Limited Working Proficiency
+      keywords:
+        - 日常會話
+  skills:
+    - name: 網絡安全
+      level: Expert
+      keywords:
+        - 滲透測試
+        - 紅隊演練
+        - 事故應變
+        - 弱點管理
+        - 風險評估
+    - name: 雲端與基礎架構
+      level: Advanced
+      keywords:
+        - AWS
+        - Azure
+        - Kubernetes
+        - Docker
+        - Terraform
+    - name: 安全工具
+      level: Advanced
+      keywords:
+        - Splunk
+        - CrowdStrike
+        - Burp Suite
+        - Nessus
+        - Wireshark
+    - name: 程式與自動化
+      level: Intermediate
+      keywords:
+        - Python
+        - Bash
+        - PowerShell
+        - Git
+        - Ansible
+    - name: 合規與治理
+      level: Advanced
+      keywords:
+        - ISO 27001
+        - PCI DSS
+        - NIST CSF
+        - 零信任
+        - 安全政策
+  awards:
+    - title: 網絡安全卓越獎
+      date: Mar 2023
+      awarder: 香港金融科技協會
+      summary: |
+        表揚在金融雲端安全轉型及事故應變流程優化上的突出貢獻。
+    - title: 年度最佳安全項目
+      date: Nov 2020
+      awarder: 駿達零售集團
+      summary: |
+        表彰在支付系統弱點管理及 ISO 27001 認證準備中的卓越表現。
+  certificates:
+    - name: CISSP
+      issuer: ISC2
+      date: Aug 2022
+      url: https://www.isc2.org/certifications/cissp
+    - name: OSCP
+      issuer: Offensive Security
+      date: Jan 2021
+      url: https://www.offsec.com/courses/pen-200/
+    - name: CKS
+      issuer: Linux Foundation
+      date: May 2023
+      url: https://training.linuxfoundation.org/certification/certified-kubernetes-security-specialist/
+    - name: AWS Certified Security – Specialty
+      issuer: Amazon Web Services
+      date: Sep 2021
+      url: https://aws.amazon.com/certification/certified-security-specialty/
+  publications:
+    - name: 雲端原生環境的零信任存取實踐
+      publisher: 香港資訊安全期刊
+      releaseDate: Jun 2023
+      url: https://www.hksecurityjournal.com/articles/zero-trust-cloud
+      summary: |
+        - 探討零信任架構在混合雲環境的落地方法
+        - 分享身份治理、微分段與持續驗證的實務經驗
+  projects:
+    - name: 企業零信任轉型計劃
+      url: https://www.chanhk-security.com/projects/zero-trust
+      description: 為跨國金融機構設計及實施零信任安全架構
+      startDate: Jan 2022
+      endDate: Dec 2023
+      summary: |
+        - 重新設計身份驗證與存取控制流程，覆蓋 3,000 名員工及 200 個應用系統
+        - 導入微分段及持續風險評估，降低橫向移動風險
+        - 與 IT 及合規團隊協作，確保符合監管要求
+      keywords:
+        - 零信任
+        - 身份治理
+        - 微分段
+        - 合規
+    - name: 自動化弱點管理平台
+      url: https://www.chanhk-security.com/projects/vuln-management
+      description: 整合掃描、風險評分與修復追蹤的自動化平台
+      startDate: Mar 2021
+      endDate: Oct 2021
+      summary: |
+        - 以 Python 串接 Nessus 與 Jira，自動建立修復工單
+        - 建立風險導向評分模型，協助團隊優先處理高風險漏洞
+        - 將平均修復週期由 45 天縮短至 18 天
+      keywords:
+        - Python
+        - Nessus
+        - Jira
+        - 自動化
+        - 風險評分
+  interests:
+    - name: 網絡安全研究
+      keywords:
+        - 漏洞分析
+        - 威脅情報
+        - CTF
+    - name: 戶外活動
+      keywords:
+        - 行山
+        - 單車
+        - 攝影
+  volunteer:
+    - organization: 香港網絡安全意識協會
+      url: https://www.hkcyberawareness.org
+      position: 社區導師
+      startDate: Sep 2019
+      endDate: Jul 2023
+      summary: |
+        - 為中學生及長者舉辦網絡安全講座，提升防騙意識
+        - 協助設計釣魚郵件辨識工作坊教材
+        - 參與年度網絡安全嘉年華的義工統籌
+
+locale:
+  language: zh-hant-hk

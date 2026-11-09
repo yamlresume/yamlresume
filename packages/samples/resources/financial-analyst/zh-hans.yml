@@ -1,0 +1,204 @@
+content:
+  basics:
+    name: 陈浩
+    headline: 资深财务分析师
+    phone: "+86 138 0013 8000"
+    email: chenhao@example.com
+    url: https://www.chenhao-finance.com
+    summary: |
+      - 拥有6年金融行业经验，专注于财务分析、估值建模和投资研究
+      - 精通财务报表分析、现金流折现模型和可比公司分析
+      - 熟练使用Excel、Python和SQL进行数据处理和自动化报告
+      - 具备出色的沟通能力和团队协作精神，能够高效地向管理层汇报分析结果
+  location:
+    address: 北京市朝阳区建国路88号
+    city: 北京
+    region: 北京市
+    country: China
+    postalCode: "100022"
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/chenhao-finance
+      username: chenhao-finance
+    - network: Zhihu
+      url: https://www.zhihu.com/people/chenhao-finance
+      username: chenhao-finance
+  education:
+    - institution: 清华大学五道口金融学院
+      url: https://www.pbcsf.tsinghua.edu.cn/
+      degree: Master
+      area: 金融学
+      score: "3.9/4.0"
+      startDate: Sep 1, 2018
+      endDate: Jul 1, 2020
+      courses:
+        - 高级公司金融
+        - 投资组合管理
+        - 金融计量经济学
+        - 衍生品定价
+        - 固定收益证券
+        - 财务报表分析
+      summary: |
+        - 深入研究公司金融与资产定价理论，参与多项实证研究项目
+        - 担任金融分析协会副会长，组织行业讲座和案例竞赛
+        - 毕业论文获评优秀，主题为“基于机器学习的信用风险预测模型”
+    - institution: 北京大学光华管理学院
+      url: https://www.gsm.pku.edu.cn/
+      degree: Bachelor
+      area: 金融学
+      score: "3.8/4.0"
+      startDate: Sep 1, 2014
+      endDate: Jul 1, 2018
+      courses:
+        - 微观经济学
+        - 宏观经济学
+        - 会计学原理
+        - 公司财务
+        - 投资学
+        - 统计学
+        - 计量经济学
+      summary: |
+        - 连续三年获得校级奖学金，GPA排名前10%
+        - 参与全国大学生金融建模大赛，获得团体二等奖
+        - 担任学生会学术部部长，组织多场职业发展活动
+  work:
+    - name: 中信证券股份有限公司
+      url: https://www.citics.com
+      position: 高级财务分析师
+      startDate: Aug 1, 2020
+      summary: |
+        - 负责覆盖科技和消费行业的股票研究，撰写深度研究报告，为机构投资者提供投资建议
+        - 构建和维护财务模型（DCF、可比公司分析、敏感性分析），预测公司未来3-5年财务表现
+        - 主导季度财报电话会议，分析财务数据并回答投资者提问
+        - 与内部销售团队合作，进行路演和客户拜访，提升研究产品的市场影响力
+        - 指导初级分析师，审核其财务模型和报告，确保分析质量
+      keywords:
+        - 财务建模
+        - 股票研究
+        - 估值分析
+        - 行业研究
+    - name: 普华永道中天会计师事务所
+      url: https://www.pwccn.com
+      position: 财务分析师
+      startDate: Jul 1, 2018
+      endDate: Jul 31, 2020
+      summary: |
+        - 参与多个大型企业的年度审计项目，负责财务报表分析和内部控制测试
+        - 协助客户完成IPO前的财务尽职调查，识别关键风险并提出改进建议
+        - 使用数据分析工具（Alteryx、Tableau）对财务数据进行可视化，提高审计效率
+        - 与团队成员协作，按时交付高质量的审计工作底稿和报告
+      keywords:
+        - 财务审计
+        - 尽职调查
+        - 数据分析
+        - 内部控制
+  skills:
+    - name: 财务分析
+      level: Expert
+      keywords:
+        - 财务报表分析
+        - 估值建模
+        - 现金流折现
+        - 可比公司分析
+        - 敏感性分析
+    - name: 数据分析
+      level: Advanced
+      keywords:
+        - Excel VBA
+        - Python
+        - SQL
+        - Tableau
+        - Bloomberg Terminal
+    - name: 行业研究
+      level: Advanced
+      keywords:
+        - 科技行业
+        - 消费行业
+        - 宏观经济
+        - 竞争分析
+    - name: 沟通与领导
+      level: Advanced
+      keywords:
+        - 报告撰写
+        - 团队管理
+        - 客户演示
+  languages:
+    - language: Chinese
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - 普通话
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - CET-6
+        - TOEFL 105
+        - 商务英语
+  awards:
+    - title: 国家奖学金
+      date: Oct 2016
+      awarder: 北京大学
+      summary: |
+        因学业成绩优异和综合素质突出，获得国家奖学金（全校前5%）。
+    - title: 优秀毕业生
+      date: Jul 2018
+      awarder: 北京大学光华管理学院
+      summary: |
+        因学业成绩和课外活动表现突出，被评为优秀毕业生。
+  certificates:
+    - name: CFA Level II
+      issuer: CFA Institute
+      date: Jun 2021
+      url: https://www.cfainstitute.org
+    - name: 注册会计师（CPA）
+      issuer: 中国注册会计师协会
+      date: Dec 2019
+      url: https://www.cicpa.org.cn
+  publications:
+    - name: 基于机器学习的信用风险预测模型研究
+      publisher: 金融研究
+      releaseDate: May 2020
+      url: https://www.jryj.org.cn
+      summary: |
+        - 本文构建了基于随机森林和XGBoost的信用风险预测模型，并使用中国上市公司数据进行实证检验
+        - 研究发现机器学习模型在预测准确率和稳定性上优于传统Logistic回归模型
+        - 论文被引用超过50次，并获得清华大学优秀硕士论文奖
+  projects:
+    - name: 科技行业财务分析平台
+      url: https://github.com/chenhao-finance/tech-finance-analysis
+      description: 一个基于Python的自动化财务分析工具，用于批量处理科技公司财报数据
+      startDate: Mar 2021
+      endDate: Sep 2021
+      summary: |
+        - 使用Python和pandas从SEC EDGAR和Wind数据库抓取财务数据
+        - 自动计算关键财务指标（ROE、ROIC、毛利率、自由现金流等）并生成可视化报告
+        - 支持自定义估值模型，可一键生成DCF和可比公司分析
+        - 项目开源后获得200+ GitHub stars，被多家机构分析师使用
+      keywords:
+        - Python
+        - 财务分析
+        - 自动化
+        - 数据可视化
+  interests:
+    - name: 运动
+      keywords:
+        - 网球
+        - 游泳
+        - 徒步
+    - name: 阅读
+      keywords:
+        - 金融史
+        - 传记
+        - 科技趋势
+  volunteer:
+    - organization: 中国金融教育发展基金会
+      url: https://www.cfdf.org.cn
+      position: 金融素养志愿者
+      startDate: Sep 2019
+      endDate: Dec 2021
+      summary: |
+        - 参与“金融知识进社区”公益活动，为老年人讲解理财知识和防诈骗技巧
+        - 编写通俗易懂的金融知识手册，累计发放500余份
+        - 组织大学生志愿者培训，提升团队的金融素养和服务能力
+
+locale:
+  language: zh-hans

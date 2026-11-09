@@ -1,0 +1,229 @@
+content:
+  basics:
+    name: Claire Moreau
+    headline: 'Ingénieur en Intelligence Artificielle | Apprentissage profond et MLOps'
+    phone: '+33 6 45 78 12 34'
+    email: claire.moreau@example.com
+    url: https://clairemoreau.ai
+    summary: |
+      Ingénieur en intelligence artificielle avec plus de 7 ans d'expérience dans la conception, l'entraînement et le déploiement de modèles d'apprentissage automatique à grande échelle. Spécialisée en vision par ordinateur et traitement du langage naturel, avec une expertise solide en MLOps et en industrialisation de solutions IA.
+
+      - Conception de pipelines de données et d'entraînement reproductibles avec Python, PyTorch et TensorFlow
+      - Déploiement de modèles en production sur AWS et GCP avec Docker, Kubernetes et MLflow
+      - Encadrement d'équipes pluridisciplinaires et vulgarisation des concepts IA auprès des parties prenantes
+      - Veille technologique active et contribution à des projets open source
+  location:
+    address: 24 rue de l'Innovation
+    city: Paris
+    region: Île-de-France
+    country: France
+    postalCode: '75011'
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/clairemoreau-ai
+      username: clairemoreau-ai
+    - network: GitHub
+      url: https://github.com/clairemoreau
+      username: clairemoreau
+    - network: Medium
+      url: https://medium.com/@clairemoreau
+      username: clairemoreau
+  education:
+    - institution: Université Paris-Saclay
+      url: https://www.universite-paris-saclay.fr
+      degree: Master
+      area: Intelligence Artificielle et Science des Données
+      score: '16.5/20'
+      startDate: Sep 1, 2017
+      endDate: Jul 1, 2019
+      courses:
+        - Apprentissage automatique
+        - Vision par ordinateur
+        - Traitement du langage naturel
+        - Optimisation convexe
+        - Statistiques bayésiennes
+        - Systèmes distribués
+        - MLOps et cloud computing
+      summary: |
+        - Formation spécialisée en apprentissage profond, vision artificielle et traitement du langage
+        - Projet de fin d'études sur la détection d'anomalies industrielles par autoencodeurs
+        - Stage de recherche au sein de l'équipe IA de l'université
+    - institution: Université de Bordeaux
+      url: https://www.u-bordeaux.fr
+      degree: Bachelor
+      area: Mathématiques et Informatique
+      score: '15.8/20'
+      startDate: Sep 1, 2014
+      endDate: Jun 1, 2017
+      summary: |
+        - Solide base en algorithmique, probabilités et statistiques
+        - Initiation à la programmation scientifique et aux bases de données
+  work:
+    - name: NovaMind AI
+      url: https://www.novamind.ai
+      position: Ingénieur IA Senior
+      startDate: Jan 15, 2022
+      summary: |
+        - Direction technique de la plateforme de vision par ordinateur pour le contrôle qualité industriel
+        - Conception et entraînement de modèles de détection d'anomalies avec PyTorch et TensorFlow
+        - Mise en place de pipelines MLOps reproductibles sur AWS SageMaker et Kubernetes
+        - Encadrement de trois ingénieurs juniors et animation de revues de code
+        - Collaboration avec les équipes produit et métier pour prioriser les cas d'usage à fort impact
+      keywords:
+        - Apprentissage profond
+        - Vision par ordinateur
+        - MLOps
+        - Python
+    - name: DataForge Conseil
+      url: https://www.dataforge-conseil.fr
+      position: Ingénieur en Apprentissage Automatique
+      startDate: Sep 1, 2019
+      endDate: Dec 31, 2021
+      summary: |
+        - Développement de modèles de traitement du langage naturel pour l'analyse de documents clients
+        - Industrialisation de solutions de scoring et de recommandation avec Scikit-learn et Docker
+        - Automatisation des workflows de données avec Airflow et Spark sur Google Cloud Platform
+        - Rédaction de documentation technique et accompagnement des équipes métier dans l'adoption des modèles
+      keywords:
+        - NLP
+        - Scikit-learn
+        - Cloud
+        - Docker
+  skills:
+    - name: Apprentissage automatique
+      level: Expert
+      keywords:
+        - Python
+        - PyTorch
+        - TensorFlow
+        - Scikit-learn
+        - XGBoost
+    - name: Traitement du langage naturel
+      level: Advanced
+      keywords:
+        - Transformers
+        - Hugging Face
+        - spaCy
+        - RAG
+        - LangChain
+    - name: MLOps et Cloud
+      level: Advanced
+      keywords:
+        - Docker
+        - Kubernetes
+        - AWS SageMaker
+        - MLflow
+        - CI/CD
+    - name: Science des données
+      level: Advanced
+      keywords:
+        - Pandas
+        - NumPy
+        - SQL
+        - Spark
+        - Airflow
+  languages:
+    - language: French
+      fluency: Native or Bilingual Proficiency
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - TOEIC 950
+        - Présentations techniques
+    - language: Spanish
+      fluency: Limited Working Proficiency
+      keywords:
+        - Espagnol des affaires
+  awards:
+    - title: Prix de l'innovation en IA
+      date: Nov 2023
+      awarder: NovaMind AI
+      summary: |
+        Récompense décernée pour la conception d'un système de détection d'anomalies industrielles réduisant les faux positifs de 35 %.
+    - title: Meilleur mémoire de Master
+      date: Jul 2019
+      awarder: Université Paris-Saclay
+      summary: |
+        Distinction attribuée pour un mémoire sur les autoencodeurs variationnels appliqués à la maintenance prédictive.
+  certificates:
+    - name: AWS Certified Machine Learning – Specialty
+      issuer: AWS
+      date: Mar 2022
+      url: https://aws.amazon.com/certification/certified-machine-learning-specialty/
+    - name: TensorFlow Developer Certificate
+      issuer: Google
+      date: Jun 2021
+      url: https://www.tensorflow.org/certificate
+  publications:
+    - name: Vers des modèles de vision robustes pour la détection d'anomalies
+        industrielles
+      publisher: Revue Française d'Intelligence Artificielle
+      releaseDate: Oct 2023
+      url: https://www.rfia.fr/article/modeles-vision-robustes
+      summary: |
+        - Étude de la robustesse des modèles de vision face aux variations d'éclairage et de capteurs
+        - Évaluation comparative de plusieurs architectures convolutives sur des jeux de données industriels
+        - Proposition d'une stratégie d'augmentation de données adaptée aux environnements de production
+  projects:
+    - name: Assistant documentaire RAG
+      url: https://github.com/clairemoreau/rag-assistant
+      description: Plateforme de recherche augmentée par génération pour documents
+        techniques
+      startDate: Feb 2023
+      endDate: Aug 2023
+      summary: |
+        - Indexation vectorielle de documents techniques avec FAISS et embeddings spécialisés
+        - Chaîne de génération augmentée avec LangChain et un modèle LLM open source
+        - Interface de question-réponse avec citations des sources et gestion des droits d'accès
+      keywords:
+        - RAG
+        - LangChain
+        - LLM
+        - FAISS
+    - name: Détection d'anomalies sur chaîne de production
+      url: https://github.com/clairemoreau/anomaly-detection
+      description: Système de vision industrielle pour la détection précoce de défauts
+      startDate: Mar 2021
+      endDate: Nov 2021
+      summary: |
+        - Entraînement d'autoencodeurs convolutifs sur des images de pièces industrielles
+        - Mise en place d'un tableau de bord de suivi des alertes et des performances du modèle
+        - Réduction du taux de rebut de 12 % lors du pilote sur une ligne de production
+      keywords:
+        - Vision
+        - Autoencodeurs
+        - Industrie 4.0
+  interests:
+    - name: Sport
+      keywords:
+        - Escalade
+        - Course à pied
+        - Yoga
+    - name: Culture
+      keywords:
+        - Photographie
+        - Lecture
+        - Musique classique
+    - name: Communauté
+      keywords:
+        - Éthique de l'IA
+        - Open Source
+  volunteer:
+    - organization: Women in AI France
+      url: https://www.womeninai.co/fr
+      position: Mentore
+      startDate: Sep 2021
+      summary: |
+        - Accompagnement de femmes en reconversion vers les métiers de l'IA
+        - Animation d'ateliers pratiques sur Python, la science des données et les entretiens techniques
+        - Participation à des actions de sensibilisation dans des écoles et universités
+  references:
+    - name: Sophie Bernard
+      email: sophie.bernard@novamind.ai
+      phone: '+33 1 23 45 67 89'
+      relationship: Directrice de l'ingénierie IA
+      summary: |
+        Claire allie une excellente maîtrise technique à une vraie capacité de leadership. Elle a su structurer notre plateforme MLOps et faire monter en compétence toute l'équipe.
+
+locale:
+  language: fr

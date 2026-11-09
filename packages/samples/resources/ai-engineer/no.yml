@@ -1,0 +1,226 @@
+content:
+  basics:
+    name: Ingrid Solberg
+    headline: AI-ingeniør med spesialisering i maskinlæring og MLOps
+    phone: "+47 912 34 567"
+    email: ingrid.solberg@example.no
+    url: https://ingridsolberg.no
+    summary: |
+      AI-ingeniør med seks års erfaring fra utvikling og produksjonssetting av maskinlæringsløsninger. Jeg kombinerer solid teoretisk bakgrunn med praktisk erfaring innen dyp læring, naturlig språkbehandling og skybasert MLOps.
+
+      - Utvikler skalerbare AI-tjenester fra idé til produksjon, med fokus på robusthet, ytelse og kostnadseffektivitet
+      - Erfaren med å lede tekniske prosjekter og veilede utviklere i tverrfaglige team
+      - Brenner for ansvarlig AI, åpen kildekode og formidling av komplekse fagområder på en forståelig måte
+  location:
+    address: Storgata 45
+    city: Oslo
+    region: Oslo
+    country: Norway
+    postalCode: "0182"
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/ingridsolberg
+      username: ingridsolberg
+    - network: GitHub
+      url: https://github.com/ingridsolberg
+      username: ingridsolberg
+  education:
+    - institution: Norges teknisk-naturvitenskapelige universitet (NTNU)
+      url: https://www.ntnu.no
+      degree: Master
+      area: Kunstig intelligens
+      score: "3,9/4,0"
+      startDate: Aug 2016
+      endDate: Jun 2018
+      courses:
+        - Maskinlæring
+        - Dyp læring
+        - Sannsynlighetsmodeller
+        - Naturlig språkbehandling
+        - Forsterket læring
+        - Datavitenskap
+        - Optimalisering
+        - Statistikk
+      summary: |
+        - Fordypning i maskinlæring, dyp læring og sannsynlige modeller
+        - Masteroppgave om effektiv trening av nevrale nettverk for norsk tekst
+        - Gjennomførte flere tverrfaglige prosjekter med industripartnere
+    - institution: Universitetet i Oslo
+      url: https://www.uio.no
+      degree: Bachelor
+      area: Informatikk
+      score: "3,8/4,0"
+      startDate: Aug 2013
+      endDate: Jun 2016
+      courses:
+        - Algoritmer og datastrukturer
+        - Programmering
+        - Databaser
+        - Operativsystemer
+        - Statistikk
+        - Lineær algebra
+      summary: |
+        - Grunnleggende utdanning i informatikk med sterk vekt på algoritmer og programmering
+        - Tidlig erfaring med dataanalyse og vitenskapelig metode
+        - Aktiv i studentforeningen for teknologi og samfunn
+  work:
+    - name: Fjord AI AS
+      url: https://fjord.ai
+      position: Senior AI-ingeniør
+      startDate: Mar 2022
+      summary: |
+        - Leder utviklingen av en norsk språkmodell for kundeservice, fra datainnsamling til produksjonssetting
+        - Designet MLOps-pipeline med automatisk trening, evaluering og utrulling på Kubernetes
+        - Reduserte inferenskostnadene med 35 prosent gjennom modellkomprimering og caching
+        - Veileder tre utviklere og bidrar til teknisk strategi for AI-plattformen
+      keywords:
+        - Maskinlæring
+        - MLOps
+        - LLM
+        - Kubernetes
+    - name: Schibsted
+      url: https://www.schibsted.no
+      position: AI-ingeniør
+      startDate: Aug 2018
+      endDate: Feb 2022
+      summary: |
+        - Utviklet anbefalingssystemer for nyhetsinnhold med fokus på relevans og mangfold
+        - Bygget datapipelines i Spark og Airflow for daglig prosessering av store datasett
+        - Samarbeidet med produktteam om A/B-testing og evaluering av modellkvalitet
+        - Bidro til å etablere selskapets retningslinjer for ansvarlig AI
+      keywords:
+        - Anbefalingssystemer
+        - Spark
+        - Airflow
+        - A/B-testing
+  languages:
+    - language: Norwegian
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - Morsmål
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - TOEFL 105
+    - language: German
+      fluency: Limited Working Proficiency
+      keywords:
+        - Grunnleggende
+  skills:
+    - name: Maskinlæring
+      level: Expert
+      keywords:
+        - Python
+        - PyTorch
+        - TensorFlow
+        - Scikit-learn
+        - Statistikk
+    - name: Dyp læring og NLP
+      level: Advanced
+      keywords:
+        - Transformers
+        - LLM
+        - Hugging Face
+        - SpaCy
+        - Embeddinger
+    - name: MLOps og sky
+      level: Advanced
+      keywords:
+        - Docker
+        - Kubernetes
+        - MLflow
+        - Azure
+        - AWS
+    - name: Dataengineering
+      level: Intermediate
+      keywords:
+        - SQL
+        - Spark
+        - Kafka
+        - Airflow
+    - name: Ledelse og formidling
+      level: Advanced
+      keywords:
+        - Prosjektledelse
+        - Teknisk veiledning
+        - Agile
+        - Presentasjon
+  awards:
+    - title: Beste masteroppgave i kunstig intelligens
+      date: Jun 2018
+      awarder: NTNU
+      summary: |
+        Tildelt for masteroppgaven «Effektiv trening av nevrale nettverk for norsk tekst» ved Institutt for datateknologi og informatikk.
+  certificates:
+    - name: 'Microsoft Certified: Azure AI Engineer Associate'
+      issuer: Microsoft
+      date: Sep 2022
+      url: https://learn.microsoft.com/en-us/credentials/certifications/azure-ai-engineer/
+    - name: AWS Certified Machine Learning – Specialty
+      issuer: Amazon Web Services
+      date: May 2021
+      url: https://aws.amazon.com/certification/certified-machine-learning-specialty/
+  publications:
+    - name: Norsk språkmodell for kundedialog – erfaringer fra produksjon
+      publisher: NIKT 2023
+      releaseDate: Nov 2023
+      url: https://www.nikt.no
+      summary: |
+        - Deler erfaringer fra utvikling og drift av en produksjonssatt norsk språkmodell
+        - Beskriver evalueringsmetoder for relevans, trygghet og språkkvalitet
+        - Oppsummerer arkitekturvalg og kostnadsoptimalisering i sky
+  projects:
+    - name: Norsk LLM for kundeservice
+      url: https://github.com/ingridsolberg/norsk-llm
+      description: Åpen kildekode-basert språkmodell tilpasset norsk kundedialog
+      startDate: Jan 2023
+      endDate: Oct 2023
+      summary: |
+        - Finjusterte en åpen språkmodell på norsk kundedialog med personvernhensyn
+        - Bygget evalueringssett og automatiske tester for hallusinasjon og tone
+        - Implementerte sikkerhetsfiltre og menneskelig gjennomgang før produksjon
+      keywords:
+        - LLM
+        - Norsk
+        - Kundeservice
+        - Personvern
+    - name: Prediktivt vedlikehold for maritim sektor
+      url: https://github.com/ingridsolberg/prediktivt-vedlikehold
+      description: Modell for å forutsi vedlikeholdsbehov på maritimt utstyr
+      startDate: Sep 2020
+      endDate: Jun 2021
+      summary: |
+        - Bearbeidet sensordata fra skip og bygget tidsseriemodeller for feilprediksjon
+        - Utviklet dashboards for vedlikeholdsteam og tekniske fagpersoner
+        - Reduserte antall uplanlagte stopp i piloten med 18 prosent
+      keywords:
+        - Tidsserier
+        - Prediktivt vedlikehold
+        - Sensorer
+        - Maritim
+  interests:
+    - name: Friluftsliv
+      keywords:
+        - Fjellturer
+        - Skiløping
+        - Kajakk
+    - name: Musikk
+      keywords:
+        - Piano
+        - Jazz
+    - name: Samfunn
+      keywords:
+        - Åpen kildekode
+        - Teknologiformidling
+  volunteer:
+    - organization: AI Norge
+      url: https://www.ainorge.no
+      position: Frivillig mentor
+      startDate: Jan 2020
+      summary: |
+        - Veileder studenter og nyutdannede som ønsker å bygge erfaring med maskinlæring
+        - Holder workshops om praktisk AI-utvikling og ansvarlig bruk av data
+        - Bidrar til å arrangere månedlige fagkvelder og nettverksmøter
+
+locale:
+  language: 'no'

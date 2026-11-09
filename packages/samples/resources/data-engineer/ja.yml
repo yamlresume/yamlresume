@@ -1,0 +1,202 @@
+content:
+  basics:
+    name: 佐藤 健太
+    headline: データエンジニア / データ基盤アーキテクト
+    phone: "+81 90-1234-5678"
+    email: kenta.sato@example.jp
+    url: https://kenta-sato.dev
+    summary: |
+      データエンジニアとして8年以上の経験を持ち、大規模データ基盤の設計・構築・運用を一貫して担当してきました。ビジネス要件を深く理解し、信頼性と拡張性の高いデータパイプラインを提供することで、データドリブンな意思決定を支援します。
+
+      - クラウド（AWS/GCP）を活用したデータレイク・データウェアハウスの構築と運用
+      - Apache Spark、Airflow、dbt を用いたバッチ/ストリーム処理の設計・実装
+      - データガバナンス、品質管理、コスト最適化の推進
+      - クロスファンクショナルなチームでのリードとメンタリング
+  location:
+    address: 東京都渋谷区神南1-2-3
+    city: 東京
+    region: 東京都
+    country: Japan
+    postalCode: "150-0041"
+  profiles:
+    - network: GitHub
+      url: https://github.com/kenta-data
+      username: kenta-data
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/kenta-sato-data
+      username: kenta-sato-data
+  education:
+    - institution: 東京大学
+      url: https://www.u-tokyo.ac.jp
+      degree: Bachelor
+      area: 情報理工学
+      score: "3.7"
+      startDate: 2011-04-01
+      endDate: 2015-03-31
+      courses:
+        - データ構造とアルゴリズム
+        - データベースシステム
+        - 分散システム
+        - 機械学習
+        - 統計学
+        - 情報理論
+      summary: |
+        - 情報理工学を専攻し、データベース、分散システム、機械学習の基礎を習得
+        - 卒業研究では大規模データ処理の効率化をテーマに研究を実施
+        - チーム開発やプレゼンテーションを通じて協働スキルを向上
+  work:
+    - name: 株式会社データフォージ
+      url: https://www.dataforge.example.jp
+      position: シニアデータエンジニア
+      startDate: 2021-04-01
+      summary: |
+        - データ基盤のアーキテクチャ設計をリードし、Snowflake と dbt を中心とした分析基盤を構築
+        - Airflow による数百本のデータパイプラインのオーケストレーションを設計・運用
+        - データ品質監視の仕組みを導入し、重要指標の信頼性を向上
+        - ジュニアエンジニアのメンタリングとコードレビューを実施
+      keywords:
+        - データ基盤
+        - Snowflake
+        - dbt
+        - Airflow
+        - データ品質
+    - name: 株式会社ネクストリテイル
+      url: https://www.nextretail.example.jp
+      position: データエンジニア
+      startDate: 2018-04-01
+      endDate: 2021-03-31
+      summary: |
+        - AWS 上にデータレイクを構築し、POS や EC サイトのデータを統合
+        - Apache Spark を用いた大規模バッチ処理の設計・実装を担当
+        - データカタログを整備し、社内のデータ探索と利用を促進
+        - コスト最適化のため、S3 ライフサイクルポリシーと EMR の実行計画を改善
+      keywords:
+        - AWS
+        - Apache Spark
+        - データレイク
+        - データカタログ
+        - コスト最適化
+    - name: 株式会社インフォメトリクス
+      url: https://www.infometrics.example.jp
+      position: データ分析エンジニア
+      startDate: 2015-04-01
+      endDate: 2018-03-31
+      summary: |
+        - 受託分析プロジェクトにて、データ抽出・加工・可視化を担当
+        - SQL と Python を用いた分析基盤の構築とレポーティングの自動化
+        - 顧客向けの KPI ダッシュボードを Tableau で設計・開発
+        - 要件定義から運用までを一貫して経験
+      keywords:
+        - Python
+        - SQL
+        - Tableau
+        - 自動化
+        - KPI
+  skills:
+    - name: データエンジニアリング
+      level: Expert
+      keywords:
+        - Python
+        - SQL
+        - Apache Spark
+        - Airflow
+        - dbt
+        - Kafka
+    - name: クラウド & インフラ
+      level: Advanced
+      keywords:
+        - AWS
+        - GCP
+        - Terraform
+        - Docker
+        - Kubernetes
+    - name: データウェアハウス
+      level: Advanced
+      keywords:
+        - Snowflake
+        - BigQuery
+        - Redshift
+        - PostgreSQL
+    - name: 分析 & 可視化
+      level: Intermediate
+      keywords:
+        - Tableau
+        - Looker
+        - Pandas
+        - Jupyter
+  languages:
+    - language: Japanese
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - 日本語ネイティブ
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - TOEIC 900
+        - 技術文書読解
+    - language: Chinese
+      fluency: Limited Working Proficiency
+      keywords:
+        - HSK 4級
+  awards:
+    - title: 技術表彰 最優秀賞
+      date: 2023-10-01
+      awarder: 株式会社データフォージ
+      summary: |
+        データ基盤の刷新プロジェクトにおいて、設計・実装・運用面で顕著な成果を上げたとして表彰。
+  certificates:
+    - name: AWS Certified Data Analytics - Specialty
+      issuer: Amazon Web Services
+      date: 2022-03-01
+      url: https://aws.amazon.com/certification/certified-data-analytics-specialty/
+    - name: Google Cloud Professional Data Engineer
+      issuer: Google Cloud
+      date: 2020-06-01
+      url: https://cloud.google.com/certification/data-engineer
+  publications:
+    - name: データ基盤の内製化におけるAirflow活用事例
+      publisher: 技術評論社
+      releaseDate: 2022-11-01
+      url: https://gihyo.jp/article/data-platform-airflow
+      summary: |
+        - データ基盤の内製化を進める際のAirflow活用方法を解説
+        - パイプライン設計、運用監視、チーム体制づくりに焦点
+        - 実案件での課題と解決策を紹介
+  projects:
+    - name: 顧客360度データ基盤の構築
+      url: https://www.dataforge.example.jp/case/customer360
+      description: 顧客データを統合し、マーケティングとサービス改善を支援するデータ基盤
+      startDate: 2022-01-01
+      endDate: 2022-12-31
+      summary: |
+        - 複数システムの顧客データをSnowflakeに統合
+        - dbtによるデータモデル整備と品質テストの自動化
+        - BIツール向けのセマンティックレイヤーを設計
+        - マーケティング部門と連携し、施策立案のリードタイムを短縮
+      keywords:
+        - 顧客データ
+        - Snowflake
+        - dbt
+        - データモデリング
+  interests:
+    - name: オープンソース
+      keywords:
+        - Airflow
+        - dbt
+        - コミュニティ活動
+    - name: 読書
+      keywords:
+        - 技術書
+        - データアーキテクチャ
+  volunteer:
+    - organization: データエンジニア勉強会コミュニティ
+      url: https://data-engineer-community.example.jp
+      position: メンター
+      startDate: 2020-01-01
+      summary: |
+        - データエンジニアを目指す参加者向けに勉強会やハンズオンを実施
+        - キャリア相談や技術的な質問への回答を通じて成長を支援
+        - コミュニティ運営にも携わり、継続的な学びの場を提供
+
+locale:
+  language: ja

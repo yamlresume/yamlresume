@@ -1,0 +1,224 @@
+content:
+  basics:
+    name: Marius Ødegård
+    headline: Dataingeniør med erfaring innen skyplattformer og datapipelines
+    phone: "+47 912 34 567"
+    email: marius.odegard@example.no
+    url: https://mariusodegard.no
+    summary: |
+      Dataingeniør med seks års erfaring fra å bygge skalerbare datapipelines, datavarehus og sanntidsløsninger. Sterk bakgrunn i Python, SQL, dbt, Airflow og skytjenester, med fokus på datakvalitet, automatisering og kostnadseffektivitet.
+
+      - Utvikler og drifter satsvise og strømmende datapipelines for analyse og maskinlæring
+      - Erfaren med modellering av datavarehus og datakontrakter i tverrfaglige team
+      - Opptatt av robust dataobserverbarhet, dokumentasjon og kontinuerlig forbedring
+  location:
+    address: Storgata 12
+    city: Oslo
+    region: Oslo
+    country: Norway
+    postalCode: "0150"
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/marius-odegard
+      username: marius-odegard
+    - network: GitHub
+      url: https://github.com/mariusodegard
+      username: mariusodegard
+  education:
+    - institution: Universitetet i Oslo
+      url: https://www.uio.no
+      degree: Master
+      area: Informatikk
+      score: "3,8/4,0"
+      startDate: Aug 2015
+      endDate: Jun 2017
+      courses:
+        - Distribuerte systemer
+        - Databaser og datamodellering
+        - Maskinlæring
+        - Statistisk analyse
+        - Skyarkitektur
+      summary: |
+        - Spesialisering i datahåndtering og distribuerte systemer
+        - Masteroppgave om strømmebehandling og datakvalitet i sanntid
+    - institution: Norges teknisk-naturvitenskapelige universitet
+      url: https://www.ntnu.no
+      degree: Bachelor
+      area: Informatikk
+      score: "3,6/4,0"
+      startDate: Aug 2012
+      endDate: Jun 2015
+      courses:
+        - Programmering i Python
+        - Algoritmer og datastrukturer
+        - Operativsystemer
+        - Nettverk
+        - Databasesystemer
+      summary: |
+        - Grunnleggende og avansert programmering
+        - Prosjektarbeid i tverrfaglige team med fokus på data og systemutvikling
+  work:
+    - name: Nordlys Data AS
+      url: https://www.nordlysdata.no
+      position: Senior dataingeniør
+      startDate: Mar 2021
+      summary: |
+        - Ledet utviklingen av en skybasert dataplattform på Azure for 40+ interne brukere
+        - Designet og implementert satsvise og strømmende datapipelines med Python, Databricks og Airflow
+        - Etablerte datakontrakter, datakvalitetstester og overvåking som reduserte dataincidenter med 45 %
+        - Veiledet juniorutviklere og innførte kodestandarder og CI/CD for datajobber
+      keywords:
+        - Azure
+        - Databricks
+        - Airflow
+        - Python
+        - Datakvalitet
+    - name: Fjord Analyse AS
+      url: https://www.fjordanalyse.no
+      position: Dataingeniør
+      startDate: Aug 2018
+      endDate: Feb 2021
+      summary: |
+        - Bygget datavarehus i Snowflake med dbt-modeller for salg, kunde og produkt
+        - Automatiserte daglige ETL-jobber med Airflow og Python, noe som sparte 15 timer per uke
+        - Samarbeidet med analyse- og produktteam om datakrav og selvbetjeningsløsninger
+        - Forbedret dokumentasjon og datakatalog for kritiske datakilder
+      keywords:
+        - Snowflake
+        - dbt
+        - ETL
+        - SQL
+        - Python
+    - name: Havblikk Energi AS
+      url: https://www.havblikkenergi.no
+      position: Dataanalytiker
+      startDate: Aug 2017
+      endDate: Jul 2018
+      summary: |
+        - Utviklet rapporter og dashbord for produksjon og vedlikehold
+        - Renset og modellerte sensordata fra vindturbiner
+        - Støttet datadrevne beslutninger med SQL, Python og Power BI
+      keywords:
+        - Power BI
+        - SQL
+        - Sensordata
+        - Rapportering
+  skills:
+    - name: Datapipelines
+      level: Expert
+      keywords:
+        - Python
+        - SQL
+        - Airflow
+        - dbt
+        - Spark
+    - name: Skyløsninger
+      level: Advanced
+      keywords:
+        - Azure
+        - AWS
+        - Snowflake
+        - Databricks
+        - Docker
+    - name: Datamodellering
+      level: Advanced
+      keywords:
+        - Dimensjonsmodellering
+        - Datavarehus
+        - Datakontrakter
+        - Datakatalog
+    - name: Dataobserverbarhet
+      level: Intermediate
+      keywords:
+        - Great Expectations
+        - Overvåking
+        - Datakvalitet
+        - Logging
+  languages:
+    - language: Norwegian
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - Norsk
+        - Bokmål
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - C1
+        - Teknisk dokumentasjon
+  awards:
+    - title: Årets dataprosjekt
+      awarder: Nordlys Data AS
+      date: Nov 2023
+      summary: |
+        Tildelt for dataplattformen som ga betydelig raskere innsikt og lavere driftskostnader.
+    - title: Beste masteroppgave i datahåndtering
+      awarder: Universitetet i Oslo
+      date: Jun 2017
+      summary: |
+        Anerkjennelse for masteroppgaven om strømmebehandling og datakvalitet i sanntid.
+  certificates:
+    - name: 'Microsoft Certified: Azure Data Engineer Associate'
+      issuer: Microsoft
+      date: Sep 2022
+      url: https://learn.microsoft.com/en-us/certifications/azure-data-engineer/
+    - name: dbt Analytics Engineering Certification
+      issuer: dbt Labs
+      date: May 2023
+      url: https://www.getdbt.com/certifications/
+  publications:
+    - name: Strømmebehandling med fokus på datakvalitet i sanntid
+      publisher: Norsk informatikkonferanse
+      releaseDate: Nov 2017
+      url: https://www.nik.no
+      summary: |
+        - Presenterer en arkitektur for sanntidsdatakvalitet i strømmepipelines
+        - Diskuterer praktiske erfaringer fra energisektoren
+  projects:
+    - name: Sanntids datakvalitetsplattform
+      url: https://github.com/mariusodegard/realtime-dq
+      description: Åpen kildekode-prosjekt for datakvalitet i strømmepipelines
+      startDate: Jan 2022
+      endDate: Dec 2023
+      summary: |
+        - Bygget med Python, Kafka og Great Expectations
+        - Automatiserte tester og varsling for kritiske datastrømmer
+        - Dokumenterte mønstre for datakontrakter og overvåking
+      keywords:
+        - Kafka
+        - Python
+        - Datakvalitet
+        - Observerbarhet
+    - name: Selvbetjent analyseportal
+      url: https://www.nordlysdata.no/cases/analyseportal
+      description: Intern portal for kuraterte datasett og dashbord
+      startDate: Apr 2021
+      endDate: Oct 2021
+      summary: |
+        - Utviklet metadata-API og søk i datakatalog
+        - Integrerte Power BI og Snowflake for enklere selvbetjening
+      keywords:
+        - Datakatalog
+        - Power BI
+        - API
+  interests:
+    - name: Friluftsliv
+      keywords:
+        - Fjellturer
+        - Langrenn
+        - Kajakk
+    - name: Teknologi
+      keywords:
+        - Åpen kildekode
+        - Dataplattformer
+        - Skyarkitektur
+  volunteer:
+    - organization: Dataforeningen Oslo
+      url: https://www.dataforeningen.no
+      position: Fagansvarlig for dataplattform
+      startDate: Jan 2022
+      summary: |
+        - Arrangerer fagkvelder og workshops om datapipelines og skyarkitektur
+        - Bidrar til nettverksbygging mellom datafaglige miljøer i Oslo
+
+locale:
+  language: no

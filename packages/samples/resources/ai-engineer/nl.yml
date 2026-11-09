@@ -1,0 +1,275 @@
+content:
+  basics:
+    name: Sanne de Vries
+    headline: 'AI-engineer | Machine Learning & MLOps'
+    phone: "+31 6 1234 5678"
+    email: sanne@sannedevries.nl
+    url: https://www.sannedevries.nl
+    summary: |
+      AI-engineer met 6+ jaar ervaring in het ontwerpen, bouwen en opschalen van machine learning-oplossingen van prototype tot productie. Sterk in het vertalen van businessvragen naar meetbare modellen en het neerzetten van betrouwbare MLOps-pipelines.
+
+      - Ervaren in Python, PyTorch, TensorFlow en cloudplatformen (AWS, Azure, GCP)
+      - Combineert kennis van natuurlijke taalverwerking en computer vision met pragmatische software-engineering
+      - Gedreven teamspeler die graag kennis deelt en multidisciplinaire teams meeneemt in verantwoorde AI
+  location:
+    address: Keizersgracht 123
+    city: Amsterdam
+    region: Noord-Holland
+    country: Netherlands
+    postalCode: "1015 CJ"
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/sannedevries-ai
+      username: sannedevries-ai
+    - network: GitHub
+      url: https://github.com/sannedevries
+      username: sannedevries
+    - network: Stack Overflow
+      url: https://stackoverflow.com/users/18422031/sanne-de-vries
+      username: sanne-de-vries
+  education:
+    - institution: Technische Universiteit Delft
+      url: https://www.tudelft.nl
+      degree: Master
+      area: Computerwetenschappen - Kunstmatige Intelligentie
+      score: "8.2/10"
+      startDate: Sep 1, 2017
+      endDate: Jul 1, 2019
+      courses:
+        - Machine Learning
+        - Deep Learning
+        - Natuurlijke taalverwerking
+        - Computer Vision
+        - Reinforcement Learning
+        - MLOps en Cloud Computing
+        - Ethiek van AI
+        - Data Engineering
+      summary: |
+        - Gespecialiseerd in machine learning, natuurlijke taalverwerking en uitlegbaarheid van modellen
+        - Afstudeerproject over transparante deep learning-modellen voor klinische besluitvorming, beoordeeld met een 9,0
+        - Praktijkervaring opgedaan via onderzoekssamenwerkingen met twee industriële partners
+        - Vakken op het snijvlak van algoritmiek, statistiek en verantwoorde AI
+    - institution: Universiteit Utrecht
+      url: https://www.uu.nl
+      degree: Bachelor
+      area: Informatiekunde
+      score: "7.8/10"
+      startDate: Sep 1, 2014
+      endDate: Jun 30, 2017
+      courses:
+        - Programmeren in Python
+        - Databases en SQL
+        - Statistiek en Kansrekening
+        - Algoritmen en Datastructuren
+        - Informatiesystemen
+        - Inleiding Machine Learning
+      summary: |
+        - Brede basis in informatiesystemen, data-analyse en softwareontwikkeling
+        - Minor gevolgd in toegepaste statistiek en datawetenschap
+        - Scriptie over predictive analytics voor openbare voorzieningen, afgerond met een 8,5
+  work:
+    - name: Aiden Analytics
+      url: https://www.aidenanalytics.nl
+      position: Senior AI-engineer
+      startDate: Mar 1, 2022
+      summary: |
+        - Leidt een team van vier engineers dat generatieve AI-toepassingen bouwt voor klanten in de financiële sector en de zorg
+        - Ontwierp een retrieval-augmented generatiearchitectuur die de responstijd met 45% verlaagde en de feitelijke nauwkeurigheid meetbaar verbeterde
+        - Zette een MLOps-platform op met CI/CD, modelregistratie, monitoring en drift-detectie, waardoor releases van weken naar dagen gingen
+        - Stelde interne richtlijnen op voor verantwoorde AI, inclusief bias-testen, modelkaarten en menselijke controle bij hoog-risico beslissingen
+        - Coacht junior engineers en verzorgt kennissessies over LLM-evaluatie en prompt-engineering
+      keywords:
+        - MLOps
+        - Generatieve AI
+        - LLM-evaluatie
+        - Kubernetes
+        - Verantwoorde AI
+    - name: MediQ Data
+      url: https://www.mediqdata.nl
+      position: Machine Learning Engineer
+      startDate: Sep 1, 2019
+      endDate: Feb 28, 2022
+      summary: |
+        - Ontwikkelde en productiseerde voorspelmodellen voor patiëntstromen, met een reductie van 18% in gemiste afspraken
+        - Bouwde NLP-pipelines voor het anonimiseren en structureren van vrije tekst uit elektronische patiëntendossiers
+        - Automatiseerde het trainingsproces met PyTorch en Airflow, inclusief reproduceerbare experimenten en versiebeheer van datasets
+        - Werkte samen met data-ethici en juristen om te voldoen aan de AVG en medische richtlijnen
+        - Presenteerde resultaten aan niet-technische stakeholders en vertaalde die naar concrete productkeuzes
+      keywords:
+        - PyTorch
+        - NLP
+        - Airflow
+        - AVG
+        - Voorspelmodellen
+    - name: Blauwdruk Digital
+      url: https://www.blauwdrukdigital.nl
+      position: Data Scientist
+      startDate: Aug 1, 2018
+      endDate: Aug 31, 2019
+      summary: |
+        - Analyseerde klantgedrag voor e-commerceklanten en bouwde aanbevelingsmodellen die de conversie met 12% verhoogden
+        - Ontwikkelde herbruikbare feature-engineering-bibliotheek in Python die door drie teams werd gebruikt
+        - Realiseerde dashboards en rapportages in samenwerking met marketing- en productteams
+        - Verkende en vergeleek modellen met A/B-testen en statistische validatie
+      keywords:
+        - Python
+        - Aanbevelingssystemen
+        - A/B-testen
+        - SQL
+        - Feature Engineering
+  languages:
+    - language: Dutch
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - Moedertaal
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - Dagelijks gebruikt op het werk
+        - Technische documentatie
+    - language: German
+      fluency: Limited Working Proficiency
+      keywords:
+        - Basale gesprekken
+  skills:
+    - name: Machine Learning
+      level: Expert
+      keywords:
+        - PyTorch
+        - TensorFlow
+        - Scikit-learn
+        - XGBoost
+        - Hugging Face
+    - name: MLOps en Infrastructuur
+      level: Advanced
+      keywords:
+        - Docker
+        - Kubernetes
+        - MLflow
+        - Airflow
+        - Terraform
+    - name: Data Engineering
+      level: Advanced
+      keywords:
+        - Python
+        - SQL
+        - Spark
+        - dbt
+        - Kafka
+    - name: Cloud
+      level: Advanced
+      keywords:
+        - AWS SageMaker
+        - Azure ML
+        - Google Vertex AI
+    - name: AI-ethiek en Governance
+      level: Intermediate
+      keywords:
+        - Modelkaarten
+        - Bias-detectie
+        - Uitlegbaarheid
+        - AVG
+  awards:
+    - title: Beste AI-project van het jaar
+      awarder: Dutch Data Science Awards
+      date: Nov 2023
+      summary: |
+        Toegekend voor een retrieval-augmented generatieoplossing die klantmedewerkers ondersteunt bij complexe vragen, met aantoonbaar hogere nauwkeurigheid en kortere afhandeltijd.
+    - title: Cum laude afstudeerproject
+      awarder: Technische Universiteit Delft
+      date: Jul 2019
+      summary: |
+        Scriptie over uitlegbaarheid van deep learning in de zorg beoordeeld met een 9,0 en genomineerd voor de facultaire scriptieprijs.
+  certificates:
+    - name: AWS Certified Machine Learning - Specialty
+      url: https://aws.amazon.com/certification/
+      issuer: Amazon Web Services
+      date: Apr 2023
+    - name: Professional Machine Learning Engineer
+      url: https://cloud.google.com/learn/certification
+      issuer: Google Cloud
+      date: Jun 2022
+    - name: Deep Learning Specialization
+      url: https://www.coursera.org/specializations/deep-learning
+      issuer: DeepLearning.AI
+      date: Feb 2021
+  publications:
+    - publisher: Journal of Biomedical Informatics
+      url: https://www.sciencedirect.com/journal/journal-of-biomedical-informatics
+      name: 'Uitlegbare voorspelmodellen voor klinische besluitvorming: een
+        praktijkstudie'
+      releaseDate: Mar 2020
+      summary: |
+        - Onderzoekt hoe attention-visualisaties en counterfactual explanations clinici ondersteunen bij het interpreteren van modeluitkomsten
+        - Beschrijft een evaluatie met 42 clinici in twee ziekenhuizen
+        - Geeft praktische richtlijnen voor het documenteren en valideren van klinische modellen
+  references:
+    - name: Dr. Marijke van den Berg
+      phone: "+31 15 278 1234"
+      relationship: Hoogleraar Kunstmatige Intelligentie
+      email: m.vandenberg@tudelft.nl
+      summary: |
+        Sanne combineert sterke technische vaardigheden met een scherp oog voor de maatschappelijke impact van AI. Ze is zelfstandig, communiceert helder met niet-technische stakeholders en tilt teams naar een hoger niveau.
+  projects:
+    - name: Vraagbaak
+      url: https://github.com/sannedevries/vraagbaak
+      description: Open-source assistent die interne documentatie doorzoekbaar maakt
+        met retrieval-augmented generatie
+      startDate: Jan 2023
+      summary: |
+        - Combineert een vector-database met een taalmodel voor betrouwbare antwoorden met bronverwijzingen
+        - Inclusief evaluatieharness voor hallucinatiedetectie en antwoordkwaliteit
+        - Wordt door drie organisaties in productie gebruikt
+      keywords:
+        - RAG
+        - Vector Database
+        - LLM
+        - Open Source
+    - name: Beeldscan
+      url: https://github.com/sannedevries/beeldscan
+      description: Computer vision-pipeline voor het automatisch classificeren van
+        inspectiefoto's in de maakindustrie
+      startDate: May 2021
+      endDate: Dec 2022
+      summary: |
+        - Transfer learning met een CNN backbone, getraind op een gelabelde dataset van 120.000 afbeeldingen
+        - Bereikte een gemiddelde precisie van 96% bij vier schadecategorieën
+        - Geïmplementeerd als containerized inference-service met monitoring op datadrift
+      keywords:
+        - Computer Vision
+        - Transfer Learning
+        - Docker
+  interests:
+    - name: Sport
+      keywords:
+        - Hardlopen
+        - Wielrennen
+        - Zwemmen
+    - name: Muziek
+      keywords:
+        - Piano
+        - Jazz
+    - name: Overig
+      keywords:
+        - Schaken
+        - Open Source
+        - Filosofie van AI
+  volunteer:
+    - organization: Stichting AI voor Iedereen
+      url: https://www.aivooriedereen.nl
+      position: Mentor datawetenschap
+      startDate: Sep 2020
+      summary: |
+        - Begeleidt jaarlijks vier carrièreswitchers bij hun eerste stappen in machine learning
+        - Verzorgt gastlessen over AI-geletterdheid op middelbare scholen
+        - Organiseert maandelijkse bijeenkomsten voor de open-source community
+    - organization: NL AI Coalitie
+      url: https://www.nlaic.nl
+      position: Vrijwilliger werkgroep Ethiek
+      startDate: Feb 2022
+      summary: |
+        - Draagt bij aan publieke richtlijnen voor transparante en uitlegbare AI-toepassingen
+        - Reviewt praktijkcases van organisaties die hun AI-systemen willen documenteren
+
+locale:
+  language: nl

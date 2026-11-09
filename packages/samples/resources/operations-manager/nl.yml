@@ -1,0 +1,253 @@
+content:
+  basics:
+    name: Sanne de Vries
+    headline: Operations Manager met focus op logistiek en procesverbetering
+    phone: "+31 6 1234 5678"
+    email: sanne.devries@example.nl
+    url: https://www.sannedevries.nl
+    summary: |
+      Operations Manager met meer dan acht jaar ervaring in logistiek, productie en distributie. Ik combineer analytisch inzicht met daadkrachtig leiderschap en weet operationele prestaties duurzaam te verbeteren.
+
+      - Stuurt multidisciplinaire teams aan van 10 tot 50 medewerkers en creëert een cultuur van eigenaarschap en continue verbetering.
+      - Realiseert aantoonbare resultaten op het gebied van doorlooptijd, kwaliteit, kosten en klanttevredenheid.
+      - Werkt datagedreven met KPI's, Lean-principes en moderne plannings- en magazijnsystemen.
+      - Communiceert helder met stakeholders van werkvloer tot directie en vertaalt strategie naar uitvoerbare plannen.
+  location:
+    address: Keizersgracht 123
+    city: Amsterdam
+    region: Noord-Holland
+    country: Netherlands
+    postalCode: "1015 CJ"
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/sannedevries
+      username: sannedevries
+  education:
+    - institution: Hogeschool van Amsterdam
+      url: https://www.hva.nl
+      degree: Bachelor
+      area: Logistiek en Economie
+      score: "8.1"
+      startDate: Sep 1, 2010
+      endDate: Jul 1, 2014
+      courses:
+        - Supply Chain Management
+        - Operationeel Management
+        - Statistiek voor Logistiek
+        - Projectmanagement
+        - Financieel Management
+        - Transporteconomie
+      summary: |
+        - Opgedaan in operationeel management, logistieke processen en financiële sturing.
+        - Afstudeeronderzoek naar voorraadoptimalisatie bij een regionale distributeur.
+    - institution: Technische Universiteit Delft
+      url: https://www.tudelft.nl
+      degree: Master
+      area: Transport, Infrastructuur en Logistiek
+      score: "8.4"
+      startDate: Sep 1, 2014
+      endDate: Jul 1, 2016
+      courses:
+        - Transportnetwerken
+        - Simulatie van Logistieke Systemen
+        - Ketenregie
+        - Operationeel Onderzoek
+        - Duurzame Mobiliteit
+      summary: |
+        - Verdieping in transportnetwerken, simulatie en ketenregie.
+        - Scriptie over datagedreven capaciteitsplanning in de foodsector.
+  work:
+    - name: FreshFlow Distributie
+      url: https://www.freshflowdistributie.nl
+      position: Operations Manager
+      startDate: Jan 1, 2021
+      summary: |
+        - Leidt een operationeel team van 45 medewerkers verdeeld over planning, magazijn en transport.
+        - Verantwoordelijk voor dagelijkse aansturing, veiligheid, kwaliteit en leverbetrouwbaarheid.
+        - Realiseerde een daling van 18% in orderdoorlooptijd door herinrichting van pickroutes en planning.
+        - Stuurde op KPI's zoals OTIF, productiviteit, voorraadnauwkeurigheid en medewerkerstevredenheid.
+        - Beheerde een operationeel budget van EUR 6,5 miljoen en realiseerde 7% kostenbesparing.
+      keywords:
+        - Operationele excellentie
+        - Teamontwikkeling
+        - KPI-sturing
+        - Budgetverantwoordelijkheid
+    - name: Nexus Logistiek
+      url: https://www.nexuslogistiek.nl
+      position: Teamleider Logistiek
+      startDate: Mar 1, 2017
+      endDate: Dec 31, 2020
+      summary: |
+        - Gaf leiding aan drie teamleiders en 30 logistieke medewerkers in een 24/7 distributiecentrum.
+        - Introduceerde dagelijkse huddle- en visual management-rituelen voor snellere bijsturing.
+        - Verhoogde de forecastnauwkeurigheid met 12% door samenwerking met sales en planning.
+        - Begeleidde een verhuizing naar een nieuw magazijn zonder verstoring van klantleveringen.
+      keywords:
+        - Procesverbetering
+        - Verandermanagement
+        - Leveranciersmanagement
+        - Capaciteitsplanning
+    - name: Bureau Proceskracht
+      url: https://www.bureauproceskracht.nl
+      position: Procesanalist Operations
+      startDate: Sep 1, 2016
+      endDate: Feb 28, 2017
+      summary: |
+        - Analyseerde order-, voorraad- en transportprocessen voor middelgrote productie- en retailklanten.
+        - Vertaalde data naar concrete verbeterplannen en begeleidde teams bij de implementatie.
+        - Ontwikkelde KPI-rapportages en standaardwerkwijzen voor operations en planning.
+      keywords:
+        - Data-analyse
+        - Procesoptimalisatie
+        - Rapportages
+        - Standaardisatie
+  languages:
+    - language: Dutch
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - Moedertaal
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - C1
+        - IELTS 7.5
+    - language: German
+      fluency: Limited Working Proficiency
+      keywords:
+        - B1
+  skills:
+    - name: Operationeel Management
+      level: Expert
+      keywords:
+        - Procesoptimalisatie
+        - KPI-dashboards
+        - Capaciteitsplanning
+        - Budgetbeheer
+    - name: Supply Chain
+      level: Advanced
+      keywords:
+        - Voorraadbeheer
+        - Vraagvoorspelling
+        - Leveranciersmanagement
+        - Magazijnbeheersysteem
+    - name: 'Lean & Six Sigma'
+      level: Advanced
+      keywords:
+        - Waardestroomanalyse
+        - Kaizen
+        - Oorzaakanalyse
+        - DMAIC
+    - name: 'Data & Rapportage'
+      level: Advanced
+      keywords:
+        - Excel
+        - Power BI
+        - SQL
+        - Tableau
+    - name: Leiderschap
+      level: Expert
+      keywords:
+        - Coaching
+        - Verandermanagement
+        - Stakeholdermanagement
+        - Teamontwikkeling
+  awards:
+    - title: Lean Six Sigma Green Belt Project Award
+      date: Nov 2022
+      awarder: FreshFlow Distributie
+      summary: |
+        - Erkend voor een project dat de orderdoorlooptijd met 18% verlaagde.
+        - Beoordeeld op meetbare impact, duurzaamheid van de oplossing en betrokkenheid van het team.
+    - title: Beste Teamprestatie van het Jaar
+      date: Dec 2019
+      awarder: Nexus Logistiek
+      summary: |
+        - Toegekend aan het logistieke team voor uitstekende leverbetrouwbaarheid tijdens piekperiodes.
+        - Gerealiseerd door strakke planning, heldere communicatie en sterke samenwerking.
+  certificates:
+    - name: Lean Six Sigma Green Belt
+      issuer: ASQ
+      date: Jun 2020
+      url: https://asq.org/cert/lean-six-sigma-green-belt
+    - name: PRINCE2 Foundation
+      issuer: AXELOS
+      date: Feb 2019
+      url: https://www.axelos.com/certifications/prince2
+    - name: Certified Supply Chain Professional (CSCP)
+      issuer: ASCM
+      date: Oct 2021
+      url: https://www.ascm.org/credentials/cscp/
+  publications:
+    - name: 'Van voorraadkosten naar klantwaarde: datagedreven operations in de
+        foodsector'
+      publisher: Logistiek Magazine
+      releaseDate: Mar 2023
+      url: https://www.logistiekmagazine.nl/artikelen/datagedreven-operations
+      summary: |
+        - Praktijkartikel over het verbinden van voorraadsturing aan klantwaarde en servicegraden.
+        - Gaat in op KPI-keuzes, forecastverbetering en samenwerking tussen operations en commercie.
+  projects:
+    - name: Implementatie nieuw WMS
+      url: https://www.freshflowdistributie.nl/projecten/wms
+      description: Uitrol van een warehouse management systeem voor magazijn, planning
+        en transport.
+      startDate: Mar 2022
+      endDate: Nov 2022
+      summary: |
+        - Leidde de operationele implementatie van een nieuw WMS binnen een live omgeving.
+        - Betrok teamleiders en key users bij procesontwerp, testen en training.
+        - Realiseerde een hogere voorraadnauwkeurigheid en kortere inwerktijd voor nieuwe medewerkers.
+      keywords:
+        - WMS
+        - Implementatie
+        - Procesontwerp
+        - Training
+    - name: Procesoptimalisatie orderpicking
+      url: https://www.freshflowdistributie.nl/projecten/orderpicking
+      description: Herinrichting van pickroutes en pickmethoden om doorlooptijd en
+        kwaliteit te verbeteren.
+      startDate: Jan 2023
+      endDate: Jun 2023
+      summary: |
+        - Analyseerde pickdata en observeerde werkprocessen op de werkvloer.
+        - Testte nieuwe routeplanning en artikelplaatsing in een pilot.
+        - Verlaagde de gemiddelde picktijd met 14% en verminderde orderfouten.
+      keywords:
+        - Orderpicking
+        - Lean
+        - Data-analyse
+        - Kwaliteit
+  interests:
+    - name: Duurzaamheid
+      keywords:
+        - Circulaire logistiek
+        - Energiebesparing
+    - name: Sport
+      keywords:
+        - Hardlopen
+        - Roeien
+        - Wielrennen
+    - name: Maatschappelijke impact
+      keywords:
+        - Voedselbank
+        - Kennisoverdracht
+  volunteer:
+    - organization: Voedselbank Amsterdam
+      url: https://www.voedselbankamsterdam.nl
+      position: Logistiek Coördinator
+      startDate: Feb 1, 2018
+      summary: |
+        - Coördineert wekelijks de aanvoer, sortering en verdeling van voedingsmiddelen.
+        - Stemt planning af met vrijwilligers, winkels en partnerorganisaties.
+        - Verbeterde de sorteerprocessen en zorgde voor betrouwbare leveringen aan lokale uitgiftepunten.
+    - organization: Stichting Duurzame Stad
+      url: https://www.duurzamestad.nl
+      position: Projectvrijwilliger
+      startDate: Sep 1, 2019
+      endDate: Jun 30, 2021
+      summary: |
+        - Ondersteunde een project voor efficiëntere stadsdistributie en minder lege kilometers.
+        - Verzamelde data, maakte analyses en hielp bij de vertaling naar aanbevelingen voor de gemeente.
+
+locale:
+  language: nl

@@ -1,0 +1,233 @@
+content:
+  basics:
+    name: Camille Moreau
+    headline: Analyste financière senior spécialisée en valorisation et pilotage
+      budgétaire
+    phone: '+33 1 44 55 66 77'
+    email: camille.moreau@example.fr
+    url: https://www.camille-moreau.fr
+    summary: |
+      Analyste financière senior avec plus de 8 ans d'expérience en analyse de performance, modélisation financière et pilotage budgétaire. Solide expertise en valorisation d'entreprises, reporting consolidé et accompagnement des décisions d'investissement.
+
+      - Élaboration de modèles financiers robustes (DCF, comparables, scénarios)
+      - Analyse de rentabilité, de trésorerie et des risques financiers
+      - Préparation de reportings destinés à la direction générale et aux investisseurs
+      - Maîtrise d'Excel, Power BI, SQL et Python pour l'automatisation des analyses
+  location:
+    address: 24 rue de la Banque
+    city: Paris
+    region: Île-de-France
+    country: France
+    postalCode: '75002'
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/camille-moreau-finance
+      username: camille-moreau-finance
+    - network: Twitter
+      url: https://twitter.com/camillem_finance
+      username: camillem_finance
+  education:
+    - institution: Université Paris-Dauphine
+      url: https://dauphine.psl.eu/
+      degree: Master
+      area: Finance
+      score: Mention Très Bien
+      startDate: 'Sep 1, 2015'
+      endDate: 'Jun 30, 2017'
+      courses:
+        - Finance de marché
+        - Évaluation d'entreprise
+        - Analyse financière approfondie
+        - Gestion de portefeuille
+        - Modélisation stochastique
+        - Audit financier
+        - Fiscalité des entreprises
+        - Contrôle de gestion
+      summary: |
+        - Formation axée sur la valorisation, les marchés financiers et la décision d'investissement
+        - Réalisation d'un mémoire sur l'impact des taux bas sur les stratégies de financement
+        - Projet de fin d'études : valorisation d'une entreprise cotée du secteur industriel
+    - institution: Université de Bordeaux
+      url: https://www.u-bordeaux.fr/
+      degree: Bachelor
+      area: Économie
+      score: Mention Bien
+      startDate: 'Sep 1, 2012'
+      endDate: 'Jun 30, 2015'
+      courses:
+        - Microéconomie
+        - Macroéconomie
+        - Statistiques appliquées
+        - Comptabilité générale
+        - Mathématiques financières
+        - Économie internationale
+      summary: |
+        - Acquisition des fondamentaux en économie, statistiques et comptabilité
+        - Premier projet d'analyse financière sur une entreprise locale
+  work:
+    - name: Groupe Axium
+      url: https://www.axium-finance.fr
+      position: Analyste Financier Senior
+      startDate: 'Mar 1, 2021'
+      summary: |
+        - Pilote la modélisation financière et le processus budgétaire annuel pour un périmètre de 120 M€ de chiffre d'affaires
+        - Réalise les analyses de variance, les prévisions de trésorerie et les scénarios de performance trimestriels
+        - Prépare les supports de comité d'audit et les reportings mensuels à destination du comité exécutif
+        - Coordonne les échanges avec les auditeurs externes et les équipes contrôle de gestion
+        - Contribue à l'amélioration continue des outils de pilotage et à l'automatisation des reportings
+      keywords:
+        - Modélisation financière
+        - Prévisions
+        - Reporting
+        - Audit
+    - name: Société Financière Bellecour
+      url: https://www.bellecour-finance.fr
+      position: Analyste Financier
+      startDate: 'Sep 1, 2017'
+      endDate: 'Feb 28, 2021'
+      summary: |
+        - Construit des modèles de valorisation pour des opérations de croissance externe et des revues stratégiques
+        - Analyse les états financiers, la rentabilité par activité et les indicateurs clés de performance
+        - Participe à la due diligence financière de trois acquisitions et à la préparation des mémorandums d'investissement
+        - Automatise la production de tableaux de bord mensuels sous Excel et Power BI
+      keywords:
+        - Valorisation
+        - Due diligence
+        - Capital-investissement
+        - Analyse financière
+        - Tableaux de bord
+  skills:
+    - name: Modélisation financière
+      level: Expert
+      keywords:
+        - Valorisation DCF
+        - Modèles trois états
+        - Scénarios
+        - Analyse de sensibilité
+    - name: Analyse financière
+      level: Advanced
+      keywords:
+        - Analyse de rentabilité
+        - Ratios financiers
+        - Analyse de risques
+        - Due diligence
+    - name: Outils bureautiques
+      level: Expert
+      keywords:
+        - Excel avancé
+        - Power BI
+        - VBA
+        - SQL
+    - name: Data et automatisation
+      level: Advanced
+      keywords:
+        - Python
+        - Pandas
+        - Power Query
+        - Tableau
+  languages:
+    - language: French
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - Langue maternelle
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - TOEIC 950
+        - CFA Level II
+    - language: Spanish
+      fluency: Limited Working Proficiency
+      keywords:
+        - Conversation professionnelle
+  awards:
+    - title: Prix d'excellence en finance
+      date: 'Jun 2017'
+      awarder: Université Paris-Dauphine
+      summary: |
+        Distinction remise pour les résultats académiques et la qualité du mémoire de Master en finance.
+    - title: Bourse d'études au mérite
+      date: 'Sep 2014'
+      awarder: Université de Bordeaux
+      summary: |
+        Bourse attribuée aux étudiants ayant obtenu les meilleurs résultats de leur promotion.
+  certificates:
+    - name: CFA Niveau II
+      issuer: CFA Institute
+      date: 'Sep 2023'
+      url: https://www.cfainstitute.org/
+    - name: Certification AMF
+      issuer: Autorité des marchés financiers
+      date: 'Mar 2019'
+      url: https://www.amf-france.org/
+    - name: Certification Excel Expert
+      issuer: Microsoft
+      date: 'Jan 2020'
+      url: https://learn.microsoft.com/fr-fr/certifications/
+  publications:
+    - name: L'impact des taux bas sur la valorisation des entreprises
+      publisher: 'Revue Finance & Stratégie'
+      releaseDate: 'Nov 2022'
+      url: https://www.finance-strategie.fr/publications/taux-bas-valorisation
+      summary: |
+        - Analyse des effets persistants des taux d'intérêt bas sur les primes de risque et les multiples de valorisation
+        - Étude de cas sur des entreprises européennes du secteur industriel
+  projects:
+    - name: Tableau de bord de pilotage budgétaire
+      startDate: 'Jan 2022'
+      endDate: 'Jun 2022'
+      description: Conception d'un tableau de bord consolidé pour suivre le budget,
+        les écarts et les prévisions de trésorerie.
+      summary: |
+        - Centralisation des données de trois entités dans un modèle unique
+        - Automatisation des actualisations mensuelles avec Power Query et Power BI
+        - Réduction du temps de préparation du reporting de 40 %
+      keywords:
+        - Pilotage budgétaire
+        - Power BI
+        - Automatisation
+        - Prévisions
+      url: https://www.axium-finance.fr/projets/tableau-bord
+    - name: Modèle de valorisation d'une PME industrielle
+      startDate: 'Mar 2021'
+      endDate: 'Sep 2021'
+      description: Construction d'un modèle DCF et d'une analyse par comparables pour
+        préparer une opération de cession.
+      summary: |
+        - Élaboration de scénarios de croissance et de marges sur cinq ans
+        - Analyse de sensibilité au coût du capital et au taux de croissance perpétuelle
+        - Présentation des conclusions au comité d'investissement
+      keywords:
+        - Valorisation
+        - DCF
+        - Analyse de sensibilité
+        - PME
+      url: https://www.axium-finance.fr/projets/valorisation-pme
+  interests:
+    - name: Finance durable
+      keywords:
+        - Investissement ESG
+        - Obligations vertes
+        - Transition énergétique
+    - name: Sports
+      keywords:
+        - Course à pied
+        - Tennis
+        - Randonnée
+    - name: Lecture
+      keywords:
+        - Économie
+        - Histoire financière
+        - Essais
+  volunteer:
+    - organization: Association Éducation Financière Citoyenne
+      url: https://www.education-financiere-citoyenne.fr/
+      position: Bénévole formatrice
+      startDate: 'Sep 2019'
+      endDate: 'Jun 2023'
+      summary: |
+        - Animation d'ateliers de sensibilisation à la gestion budgétaire auprès de jeunes adultes
+        - Conception de supports pédagogiques sur l'épargne, le crédit et les choix d'investissement
+        - Participation à l'organisation d'une journée annuelle dédiée à l'éducation financière
+
+locale:
+  language: fr

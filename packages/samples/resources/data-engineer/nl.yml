@@ -1,0 +1,237 @@
+content:
+  basics:
+    name: Sanne de Vries
+    headline: Data Engineer met focus op schaalbare dataplatformen
+    phone: "+31 6 12345678"
+    email: sanne.devries@example.com
+    url: https://sanne-devries.nl
+    summary: |
+      Data Engineer met 6+ jaar ervaring in het ontwerpen en bouwen van betrouwbare, schaalbare dataplatformen. Sterk in het vertalen van bedrijfsbehoeften naar robuuste ETL/ELT-pipelines en datamodellen.
+
+      - Ervaren met cloud-native oplossingen (AWS, Azure) en moderne data stacks zoals Spark, dbt en Airflow
+      - Focus op datakwaliteit, governance en het leveren van betrouwbare analyses voor BI- en ML-teams
+      - Teamspeler die graag kennis deelt en junior collega's begeleidt
+
+  location:
+    address: Keizersgracht 123
+    city: Amsterdam
+    region: Noord-Holland
+    country: Netherlands
+    postalCode: "1015 CJ"
+
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/sannedevries
+      username: sannedevries
+    - network: GitHub
+      url: https://github.com/sannedevries
+      username: sannedevries
+
+  education:
+    - institution: Technische Universiteit Delft
+      url: https://www.tudelft.nl
+      degree: Master
+      area: Data Science en Technologie
+      score: "8.2"
+      startDate: Sep 1, 2015
+      endDate: Jul 1, 2017
+      courses:
+        - Gedistribueerde systemen
+        - Databasetechnologie
+        - Machine Learning
+        - Big Data Architectuur
+        - Cloud Computing
+        - Data-ethiek en Privacy
+      summary: |
+        - Specialisatie in grootschalige dataverwerking en datamodellering
+        - Afstudeeronderzoek naar schaalbare streaming-pipelines voor sensordata
+        - Ervaring opgedaan met Python, Spark, Kafka en cloudplatformen
+
+  work:
+    - name: Rabobank
+      url: https://www.rabobank.nl
+      position: Senior Data Engineer
+      startDate: Jan 1, 2021
+      summary: |
+        - Ontwierp en implementeerde een cloud-native dataplatform op AWS voor de afdeling Risk & Compliance
+        - Bouwde schaalbare ETL-pipelines met Python, Spark en Airflow, goed voor circa 2 TB dagelijkse data
+        - Introduceerde dbt voor datamodellering en verbeterde de datakwaliteit met geautomatiseerde tests
+        - Werkt samen met data scientists en BI-analisten om dataproducten van idee tot productie te brengen
+        - Bewaakt governance en privacy (AVG) en begeleidt junior data engineers
+      keywords:
+        - AWS
+        - Spark
+        - Airflow
+        - dbt
+        - Data Governance
+
+    - name: KPN
+      url: https://www.kpn.com
+      position: Data Engineer
+      startDate: Mar 1, 2018
+      endDate: Dec 1, 2020
+      summary: |
+        - Ontwikkelde batch- en streaming-pipelines met Kafka, Spark en Python voor netwerk- en klantdata
+        - Migreerde een on-premise datawarehouse naar Azure Data Lake en Synapse
+        - Automatiseerde datakwaliteitscontroles en monitoring, waardoor incidenten met 30% daalden
+        - Werkte in een agile team en droeg bij aan architectuurkeuzes en code reviews
+      keywords:
+        - Kafka
+        - Azure
+        - Python
+        - Streaming
+        - Datakwaliteit
+
+    - name: Achmea
+      url: https://www.achmea.nl
+      position: Junior Data Analist
+      startDate: Sep 1, 2017
+      endDate: Feb 1, 2018
+      summary: |
+        - Bouwde rapportages en dashboards in Power BI voor schade- en klantdata
+        - Schreef SQL-queries en automatiseerde rapportages met Python
+        - Ondersteunde data-engineering bij het opschonen en modelleren van brondata
+      keywords:
+        - SQL
+        - Power BI
+        - Python
+        - Rapportage
+
+  skills:
+    - name: Data Engineering
+      level: Expert
+      keywords:
+        - Python
+        - SQL
+        - Spark
+        - Airflow
+        - dbt
+    - name: Cloudplatformen
+      level: Advanced
+      keywords:
+        - AWS
+        - Azure
+        - Databricks
+        - Snowflake
+    - name: Datawarehousing
+      level: Advanced
+      keywords:
+        - Redshift
+        - Synapse
+        - BigQuery
+        - Kimball
+    - name: Streaming en messaging
+      level: Advanced
+      keywords:
+        - Kafka
+        - Kinesis
+        - Event Hubs
+    - name: Datagovernance
+      level: Intermediate
+      keywords:
+        - Datakwaliteit
+        - Lineage
+        - AVG
+        - Metadata
+    - name: Programmeren
+      level: Advanced
+      keywords:
+        - Python
+        - Scala
+        - Bash
+        - Git
+
+  languages:
+    - language: Dutch
+      fluency: Native or Bilingual Proficiency
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - Cambridge C1
+        - Werktaal
+    - language: German
+      fluency: Limited Working Proficiency
+      keywords:
+        - Goethe B1
+        - Leesvaardig
+
+  awards:
+    - title: Data Engineer of the Year
+      awarder: Rabobank
+      date: Dec 2023
+      summary: |
+        Erkend voor het ontwerpen van een schaalbaar en kostenefficiënt dataplatform dat meerdere teams binnen Risk & Compliance ondersteunt.
+
+  certificates:
+    - name: AWS Certified Data Analytics - Specialty
+      issuer: Amazon Web Services
+      date: Jun 2022
+      url: https://aws.amazon.com/certification/
+    - name: 'Microsoft Certified: Azure Data Engineer Associate'
+      issuer: Microsoft
+      date: Nov 2020
+      url: https://learn.microsoft.com/en-us/certifications/azure-data-engineer/
+
+  publications:
+    - name: Schaalbare datapipelines in de cloud
+      publisher: Data Magazine NL
+      releaseDate: Mar 2022
+      url: https://www.datamagazine.nl/artikelen/schaalbare-datapipelines
+      summary: |
+        - Praktijkartikel over het ontwerpen van betrouwbare en schaalbare datapipelines
+        - Gaat in op orchestratie, datakwaliteit en kostenbeheersing in cloudomgevingen
+        - Gebaseerd op ervaringen met AWS, Spark, Airflow en dbt
+
+  projects:
+    - name: EnergieDashboard
+      url: https://github.com/sannedevries/energiedashboard
+      description: Open-source dashboard voor het inzichtelijk maken van
+        energieverbruik in Nederlandse wijken
+      startDate: Jan 2023
+      endDate: Jun 2023
+      summary: |
+        - Verzamelt en verwerkt openbare energie- en weerdata via API's
+        - Pipeline gebouwd met Python, dbt en DuckDB, georkestreerd met Airflow
+        - Dashboard in Streamlit voor bewoners en beleidsmakers
+      keywords:
+        - Open Data
+        - Duurzaamheid
+        - Python
+        - Streamlit
+
+  interests:
+    - name: Duurzaamheid
+      keywords:
+        - Energie
+        - Circulaire economie
+        - Open data
+    - name: Sport
+      keywords:
+        - Hardlopen
+        - Wielrennen
+        - Klimmen
+    - name: Muziek
+      keywords:
+        - Gitaar
+        - Festivals
+
+  volunteer:
+    - organization: Stichting Code voor Nederland
+      url: https://www.codevoornederland.nl
+      position: Vrijwilliger Data Mentor
+      startDate: Sep 2021
+      summary: |
+        - Begeleidt jongeren en zij-instromers bij hun eerste stappen in data-analyse en Python
+        - Organiseert maandelijkse workshops over datakwaliteit en open data
+        - Droeg bij aan een open-source datapipeline voor het verwerken van gemeentelijke open data
+
+  references:
+    - name: Dr. Marleen Jansen
+      relationship: Hoogleraar Data Science
+      email: m.jansen@tudelft.nl
+      phone: "+31 15 278 1234"
+      summary: |
+        Sanne combineert sterke technische vaardigheden met een scherp oog voor datakwaliteit en governance. Zij is een betrouwbare teamspeler die complexe dataproblemen gestructureerd aanpakt.
+
+locale:
+  language: nl

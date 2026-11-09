@@ -1,0 +1,250 @@
+content:
+  basics:
+    name: Jordan A. Mitchell
+    headline: 'Operations Manager | Process Improvement & Supply Chain Strategy'
+    phone: '(312) 555-0148'
+    email: jordan.mitchell.ops@gmail.com
+    url: https://www.jordanmitchellops.com
+    summary: |
+      - Operations leader with 10+ years of experience across fulfillment, distribution, and retail supply chain operations
+      - Proven record of improving safety, quality, delivery, and cost through Lean tools, data-driven labor planning, and frontline coaching
+      - Managed teams of 100+ associates and 6 supervisors in high-volume, multi-shift environments
+      - Strong business partner to transportation, inventory, customer service, and sales teams; comfortable owning P&L and KPI targets
+      - Known for building accountable teams, stabilizing peak-season execution, and turning operational metrics into action
+
+  location:
+    address: 415 West Randolph Street
+    city: Chicago
+    region: Illinois
+    country: United States
+    postalCode: '60607'
+
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/jordan-a-mitchell-ops
+      username: jordan-a-mitchell-ops
+    - network: Medium
+      url: https://medium.com/@jordan.mitchell.ops
+      username: jordan.mitchell.ops
+
+  education:
+    - institution: University of Illinois Urbana-Champaign
+      url: https://illinois.edu
+      degree: Bachelor
+      area: Business Administration
+      score: '3.7'
+      startDate: 'Aug 20, 2011'
+      endDate: 'May 15, 2015'
+      courses:
+        - Operations Management
+        - Supply Chain Management
+        - Statistics for Business
+        - Managerial Accounting
+        - Organizational Behavior
+        - Business Analytics
+        - Project Management
+        - Logistics and Transportation
+      summary: |
+        - Graduated with honors and a concentration in operations and supply chain management
+        - Completed a capstone project on distribution network design for a regional retailer
+        - Served as vice president of the supply chain student association
+
+  work:
+    - name: Meridian Fulfillment Partners
+      url: https://www.meridianfulfillment.com
+      position: Operations Manager
+      startDate: 'Mar 1, 2021'
+      summary: |
+        - Lead daily operations for a 180,000-square-foot fulfillment center with 120+ associates across receiving, inventory, picking, packing, and shipping
+        - Reduced order cycle time by 18% and overtime spend by 22% through labor scheduling, cross-training, and daily tiered huddles
+        - Own labor, supplies, and equipment budgets; delivered $1.4M in annual savings through vendor consolidation and process controls
+        - Partner with transportation, customer service, and sales to achieve 99.2% on-time shipment and 99.8% inventory accuracy
+        - Coach six supervisors and build a safety-first culture with standardized work, root-cause analysis, and visible KPI boards
+      keywords:
+        - Fulfillment Operations
+        - P&L Management
+        - Labor Planning
+        - Lean Six Sigma
+        - Inventory Control
+        - Safety Compliance
+    - name: Lakeshore Distribution Co.
+      url: https://www.lakeshoredistribution.com
+      position: Operations Supervisor
+      startDate: 'Jun 1, 2017'
+      endDate: 'Feb 28, 2021'
+      summary: |
+        - Supervised 35 associates across two shifts in a high-volume distribution center serving retail and e-commerce customers
+        - Improved picking accuracy from 98.6% to 99.7% by redesigning zone assignments and implementing daily quality audits
+        - Led a WMS wave-planning rollout that increased cases shipped per labor hour by 14%
+        - Maintained OSHA compliance and reduced recordable incidents by 30% through training, ergonomic improvements, and safety observations
+        - Coordinated peak-season staffing plans and temporary labor onboarding for 60+ seasonal associates
+      keywords:
+        - Distribution Operations
+        - Warehouse Management
+        - Quality Audits
+        - Continuous Improvement
+        - Team Leadership
+    - name: Cobalt Retail Supply
+      url: https://www.cobaltretailsupply.com
+      position: Operations Analyst
+      startDate: 'Aug 1, 2015'
+      endDate: 'May 31, 2017'
+      summary: |
+        - Analyzed demand forecasts, inventory turns, and transportation costs to support weekly operations planning
+        - Built Excel and SQL dashboards that gave managers real-time visibility into fill rate, backorders, and labor productivity
+        - Supported RFQ and carrier scorecard processes, helping reduce inbound freight cost by 9%
+        - Documented standard operating procedures and trained associates on new inventory-control workflows
+      keywords:
+        - Data Analysis
+        - Inventory Planning
+        - SQL
+        - Excel
+        - Freight Optimization
+
+  languages:
+    - language: English
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - Business communication
+        - Public speaking
+    - language: Spanish
+      fluency: Limited Working Proficiency
+      keywords:
+        - Team support
+        - Operational instructions
+
+  skills:
+    - name: Operations Leadership
+      level: Expert
+      keywords:
+        - Team Development
+        - P&L Ownership
+        - Labor Planning
+        - KPI Management
+        - Change Management
+    - name: Process Improvement
+      level: Advanced
+      keywords:
+        - Lean Six Sigma
+        - 5S
+        - Root Cause Analysis
+        - Standard Work
+        - Value Stream Mapping
+    - name: Supply Chain & Inventory
+      level: Advanced
+      keywords:
+        - Demand Planning
+        - Inventory Accuracy
+        - Warehouse Management
+        - Cross-Docking
+        - Supplier Management
+    - name: Data & Systems
+      level: Intermediate
+      keywords:
+        - SQL
+        - Excel
+        - Tableau
+        - WMS
+        - ERP
+    - name: Safety & Compliance
+      level: Advanced
+      keywords:
+        - OSHA
+        - Workers Compensation
+        - Audit Readiness
+        - Risk Mitigation
+
+  awards:
+    - title: Operational Excellence Award
+      date: 'Nov 2023'
+      awarder: Meridian Fulfillment Partners
+      summary: |
+        Recognized for leading a cross-functional initiative that reduced fulfillment cycle time by 18% while improving on-time shipment performance during peak season.
+    - title: Leadership Impact Award
+      date: 'Jun 2020'
+      awarder: Lakeshore Distribution Co.
+      summary: |
+        Awarded for developing frontline supervisors and improving associate engagement scores by 15 points across two shifts.
+
+  certificates:
+    - name: Certified Supply Chain Professional (CSCP)
+      issuer: Association for Supply Chain Management
+      date: 'Sep 2022'
+      url: https://www.ascm.org/certification-credentials/cscp/
+    - name: Lean Six Sigma Green Belt
+      issuer: Institute of Industrial and Systems Engineers
+      date: 'Apr 2019'
+      url: https://www.iise.org/lean-six-sigma/
+    - name: OSHA 30-Hour General Industry
+      issuer: National Safety Council
+      date: 'Jan 2018'
+      url: https://www.nsc.org/workplace/training-and-courses/oshacourses
+
+  publications:
+    - name: Five Levers for a More Resilient Fulfillment Operation
+      publisher: Supply Chain Management Review
+      releaseDate: 'Oct 2024'
+      url: https://www.scmr.com/
+      summary: |
+        - Outlines practical operating routines for stabilizing peak-season throughput
+        - Covers labor modeling, inventory accuracy, cross-training, and daily management systems
+
+  projects:
+    - name: Warehouse Layout Optimization
+      startDate: 'Feb 1, 2022'
+      endDate: 'Jul 31, 2022'
+      description: Redesigned pick paths, storage zones, and staging areas to improve
+        flow and reduce travel time in a 180,000-square-foot facility.
+      summary: |
+        - Reduced average pick travel distance by 21% and improved lines picked per hour by 12%
+        - Collaborated with safety, inventory control, and frontline teams to phase changes without service disruption
+        - Documented new slotting rules and trained supervisors on sustained execution
+      keywords:
+        - Facility Layout
+        - Slotting
+        - Lean
+        - Productivity
+    - name: Peak Season Labor Model
+      startDate: 'Aug 1, 2023'
+      endDate: 'Dec 31, 2023'
+      description: Built a flexible staffing and cross-training model for a 40% volume
+        surge across receiving, picking, and packing.
+      summary: |
+        - Forecasted labor demand by function and shift using historical volume, productivity, and absenteeism data
+        - Reduced agency labor spend by 16% while maintaining 99%+ on-time shipment
+        - Created daily staffing dashboards adopted by operations and finance partners
+      keywords:
+        - Labor Modeling
+        - Peak Planning
+        - Cross-Training
+        - Forecasting
+
+  interests:
+    - name: Supply Chain Innovation
+      keywords:
+        - Warehouse Automation
+        - Robotics
+        - Sustainability
+    - name: Community & Mentoring
+      keywords:
+        - Career Coaching
+        - Food Security
+        - Youth Sports
+    - name: Personal Wellbeing
+      keywords:
+        - Cycling
+        - Hiking
+        - Cooking
+
+  volunteer:
+    - organization: Greater Chicago Food Depository
+      url: https://www.chicagofoodbank.org/
+      position: Operations Volunteer
+      startDate: 'Mar 1, 2018'
+      summary: |
+        - Support weekly food sorting, inventory checks, and distribution events for partner agencies
+        - Help train new volunteers on safe material handling and warehouse flow
+        - Contributed to a repacking initiative that increased volunteer throughput by 20%
+
+locale:
+  language: en

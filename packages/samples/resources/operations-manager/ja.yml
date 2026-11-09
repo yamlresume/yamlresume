@@ -1,0 +1,212 @@
+content:
+  basics:
+    name: 高橋 美咲
+    headline: オペレーションズマネージャー / 業務改善・組織運営スペシャリスト
+    phone: '+81 90-1234-5678'
+    email: misaki.takahashi@crest-ops.co.jp
+    url: https://www.misaki-takahashi.jp
+    summary: |
+      - オペレーションズマネージャーとして8年以上、業務プロセス設計・KPI管理・チームマネジメントに従事。
+      - 物流・サービス業界で、受注処理、在庫管理、顧客対応、予算管理の改善を主導。
+      - データに基づく意思決定と部門横断の合意形成を得意とし、生産性向上と組織定着の両立を実現。
+      - 変化の激しい環境でも、現場と経営をつなぐ橋渡し役として成果を創出。
+
+  location:
+    address: 神宮前1-2-3 グリーンヒルズビル 8F
+    city: 渋谷区
+    region: 東京都
+    country: Japan
+    postalCode: '150-0001'
+
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/misaki-takahashi-ops
+      username: misaki-takahashi-ops
+    - network: Twitter
+      url: https://twitter.com/misaki_ops
+      username: misaki_ops
+
+  education:
+    - institution: 中央大学
+      url: https://www.chuo-u.ac.jp/
+      degree: Bachelor
+      area: 経営学部 経営学科
+      score: '3.6/4.0'
+      startDate: '2013-04-01'
+      endDate: '2017-03-31'
+      courses:
+        - 経営組織論
+        - マーケティング論
+        - 生産管理論
+        - 財務会計論
+        - ビジネス統計学
+        - 情報システム論
+        - ロジスティクス概論
+        - プロジェクトマネジメント
+      summary: |
+        - 経営学を基盤に、組織運営・業務改善・データ分析を横断的に学びました。
+        - ゼミでは小売業の店舗オペレーション改善をテーマに現地調査と提案を行いました。
+        - グループワークを通じて、関係者調整と合意形成の実践経験を積みました。
+
+  work:
+    - name: 株式会社クレスト・オペレーションズ
+      url: https://www.crest-ops.co.jp
+      position: オペレーションズマネージャー
+      startDate: '2021-04-01'
+      summary: |
+        - 全社の業務運用を統括し、8名のチームをマネジメント。月次KPIの設計・運用により、問い合わせ対応時間を前年比32%短縮。
+        - 受注処理・請求・在庫管理のプロセスを再設計し、手作業工数を月120時間削減。
+        - 部門横断の定例会議を再編し、施策の意思決定スピードを約1.5倍に改善。
+        - 予算策定から執行管理までを担当し、年間約4.2億円の運営予算を適正化。
+        - 採用・育成・評価制度の運用に携わり、チーム定着率を15ポイント向上。
+      keywords:
+        - 業務改善
+        - KPI管理
+        - チームマネジメント
+        - 予算管理
+        - プロセス設計
+        - 採用・育成
+    - name: 株式会社ノヴァ・ロジスティクス
+      url: https://www.nova-logistics.co.jp
+      position: シニアオペレーションスペシャリスト
+      startDate: '2017-04-01'
+      endDate: '2021-03-31'
+      summary: |
+        - 物流センターの日次オペレーションを担当し、出荷精度99.7%を安定的に維持。
+        - 需要予測とシフト最適化を導入し、繁忙期の残業時間を前年比25%削減。
+        - 顧客問い合わせの一次対応フローを標準化し、平均解決時間を40分から18分に短縮。
+        - 新規顧客オンボーディングを年間12社担当し、立ち上げ遅延ゼロを達成。
+      keywords:
+        - 物流オペレーション
+        - 需要予測
+        - シフト最適化
+        - 品質管理
+        - 顧客対応
+        - 標準化
+
+  languages:
+    - language: Japanese
+      fluency: Native or Bilingual Proficiency
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - TOEIC 920
+        - ビジネス英会話
+        - 英文メール作成
+
+  skills:
+    - name: オペレーション管理
+      level: Expert
+      keywords:
+        - 業務プロセス設計
+        - KPI設計・運用
+        - 予算管理
+        - 在庫管理
+        - 品質管理
+        - リスク管理
+    - name: プロジェクトマネジメント
+      level: Advanced
+      keywords:
+        - 要件定義
+        - スケジュール管理
+        - ステークホルダー調整
+        - 変更管理
+        - ドキュメント作成
+    - name: データ分析・ツール活用
+      level: Advanced
+      keywords:
+        - Excel
+        - Google Workspace
+        - Salesforce
+        - Tableau
+        - Power BI
+        - Slack
+    - name: リーダーシップ
+      level: Expert
+      keywords:
+        - チームビルディング
+        - 採用・面接
+        - 育成・評価
+        - 組織設計
+        - 1on1
+
+  awards:
+    - title: 年間最優秀マネージャー賞
+      date: '2023-03-01'
+      awarder: 株式会社クレスト・オペレーションズ
+      summary: |
+        全社の業務改善とチーム運営の成果が評価され、年間最優秀マネージャー賞を受賞。問い合わせ対応時間の短縮と運営予算の適正化に貢献しました。
+    - title: 業務改善表彰 最優秀賞
+      date: '2020-12-01'
+      awarder: 株式会社ノヴァ・ロジスティクス
+      summary: |
+        物流センターのシフト最適化と需要予測精度向上の取り組みが評価され、業務改善表彰の最優秀賞を受賞しました。
+
+  certificates:
+    - name: PMP（プロジェクトマネジメント・プロフェッショナル）
+      issuer: プロジェクトマネジメント協会（PMI）
+      date: '2022-06-01'
+      url: https://www.pmi.org/certifications/project-management-pmp
+    - name: 日商簿記2級
+      issuer: 日本商工会議所
+      date: '2019-11-01'
+      url: https://www.kentei.ne.jp/bookkeeping
+    - name: Microsoft Office Specialist Excel エキスパート
+      issuer: マイクロソフト
+      date: '2016-08-01'
+      url: https://learn.microsoft.com/ja-jp/certifications/mos-excel-expert/
+
+  publications:
+    - name: 物流オペレーションにおける需要予測精度向上の実践
+      publisher: 日本ロジスティクスシステム学会
+      releaseDate: '2022-09-01'
+      url: https://www.jlsa.jp/
+      summary: |
+        物流センターでの需要予測とシフト最適化の実践事例をまとめ、繁忙期の労務負荷削減と出荷精度向上の手法を解説しました。
+
+  projects:
+    - name: 社内問い合わせ対応の自動化プロジェクト
+      startDate: '2022-01-01'
+      endDate: '2022-08-31'
+      url: https://www.crest-ops.co.jp/case/automation
+      description: 社内問い合わせの分類・一次回答を自動化し、運用チームの対応負荷を軽減するプロジェクト。
+      summary: |
+        - 問い合わせログの分析から頻出カテゴリを特定し、FAQと自動応答フローを設計
+        - ノーコードツールとチャットボットを組み合わせ、一次回答率を68%まで向上
+        - 運用定着のための社内研修とマニュアル整備を実施
+      keywords:
+        - 業務自動化
+        - チャットボット
+        - FAQ設計
+        - プロセス改善
+
+  interests:
+    - name: 業務改善
+      keywords:
+        - プロセス可視化
+        - 生産性向上
+    - name: 読書
+      keywords:
+        - 経営書
+        - 歴史小説
+    - name: ランニング
+      keywords:
+        - フルマラソン
+        - 週末ジョギング
+    - name: 旅行
+      keywords:
+        - 国内旅行
+        - 温泉巡り
+
+  volunteer:
+    - organization: NPO法人 地域キャリア支援ネットワーク
+      url: https://www.career-support-network.jp/
+      position: 運営ボランティア
+      startDate: '2019-06-01'
+      summary: |
+        - 若年層向けキャリア相談会の企画・運営を担当
+        - 企業ボランティアの募集と日程調整、当日の進行を担当
+        - 参加者アンケートの分析をもとに、相談会のプログラムを改善
+
+locale:
+  language: ja

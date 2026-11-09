@@ -1,0 +1,239 @@
+content:
+  basics:
+    name: Rizky Pratama
+    headline: Manajer Operasional Berpengalaman di Ritel dan Logistik
+    phone: '+62 812 3456 7890'
+    email: rizky.pratama@example.co.id
+    url: https://www.rizkypratama.id
+    summary: |
+      Manajer operasional dengan pengalaman lebih dari 8 tahun dalam mengelola proses ritel, distribusi, dan logistik. Terbukti mampu meningkatkan efisiensi operasional, menurunkan biaya, dan memimpin tim lintas fungsi untuk mencapai target KPI.
+
+      - Ahli dalam perencanaan kapasitas, pengendalian persediaan, dan perbaikan proses berkelanjutan.
+      - Berpengalaman memimpin tim hingga 60 orang di beberapa lokasi operasional.
+      - Kuat dalam analisis data operasional, penyusunan anggaran, dan manajemen pemasok.
+  location:
+    address: Jl. Jenderal Sudirman No. 45
+    city: Jakarta Selatan
+    region: DKI Jakarta
+    country: Indonesia
+    postalCode: '12190'
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/rizkypratama
+      username: rizkypratama
+    - network: Twitter
+      url: https://twitter.com/rizkypratama
+      username: rizkypratama
+  education:
+    - institution: Universitas Indonesia
+      url: https://www.ui.ac.id
+      degree: Bachelor
+      area: Manajemen Operasional
+      score: '3.65'
+      startDate: '2011-09-01'
+      endDate: '2015-07-01'
+      courses:
+        - Manajemen Rantai Pasok
+        - Perencanaan dan Pengendalian Produksi
+        - Analisis Proses Bisnis
+        - Manajemen Kualitas
+        - Manajemen Proyek
+        - Riset Operasi
+      summary: |
+        - Menempuh studi dengan fokus pada efisiensi proses, pengendalian persediaan, dan manajemen rantai pasok.
+        - Menyelesaikan proyek akhir tentang optimasi rute distribusi untuk menurunkan biaya logistik.
+        - Aktif dalam organisasi kemahasiswaan sebagai koordinator acara operasional.
+  work:
+    - name: PT Nusantara Retail Mandiri
+      url: https://www.nusantararetail.co.id
+      position: Manajer Operasional Regional
+      startDate: '2021-03-01'
+      summary: |
+        - Memimpin operasional 18 gerai dan 3 gudang regional dengan total 60 staf.
+        - Menyusun rencana operasional bulanan dan tahunan, termasuk anggaran, target KPI, dan alokasi sumber daya.
+        - Meningkatkan produktivitas tim sebesar 22% melalui standarisasi proses dan program pelatihan berkelanjutan.
+        - Menurunkan biaya logistik regional sebesar 15% melalui negosiasi vendor dan optimasi rute pengiriman.
+        - Berkolaborasi dengan tim penjualan, keuangan, dan rantai pasok untuk memastikan ketersediaan produk dan kepatuhan SOP.
+      keywords:
+        - Perencanaan Operasional
+        - Efisiensi Proses
+        - Manajemen Tim
+        - KPI
+        - Logistik
+    - name: PT Sentra Logistik Cepat
+      url: https://www.sentralogistik.co.id
+      position: Asisten Manajer Operasional
+      startDate: '2017-06-01'
+      endDate: '2021-02-28'
+      summary: |
+        - Mengelola operasional harian pergudangan dan distribusi untuk wilayah Jabodetabek.
+        - Mengawasi tim 25 orang dan memastikan pencapaian target pengiriman tepat waktu di atas 98%.
+        - Mengembangkan dashboard KPI untuk memantau produktivitas, biaya per pengiriman, dan tingkat kerusakan barang.
+        - Memimpin inisiatif perbaikan proses yang mengurangi waktu bongkar muat sebesar 30%.
+      keywords:
+        - Pergudangan
+        - Distribusi
+        - Dashboard KPI
+        - Perbaikan Proses
+        - Manajemen Tim
+    - name: PT Karya Distribusi Utama
+      url: https://www.karyadistribusi.co.id
+      position: Supervisor Operasional
+      startDate: '2015-08-01'
+      endDate: '2017-05-31'
+      summary: |
+        - Mengawasi kegiatan inventaris, penerimaan barang, dan pengiriman ke pelanggan ritel.
+        - Menyusun jadwal kerja harian untuk 15 staf operasional dan memastikan kepatuhan terhadap prosedur keselamatan.
+        - Melakukan analisis ABC untuk mengoptimalkan persediaan dan mengurangi stok mati sebesar 18%.
+      keywords:
+        - Pengendalian Persediaan
+        - Jadwal Kerja
+        - Keselamatan Kerja
+        - Analisis ABC
+        - Ritel
+  languages:
+    - language: Indonesian
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - Bahasa ibu
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - TOEFL 580
+        - Presentasi Bisnis
+  skills:
+    - name: Manajemen Operasional
+      level: Expert
+      keywords:
+        - Perencanaan Kapasitas
+        - Pengendalian Persediaan
+        - Analisis Proses
+        - Manajemen Kualitas
+    - name: Kepemimpinan
+      level: Advanced
+      keywords:
+        - Manajemen Tim
+        - Coaching
+        - Delegasi
+        - Komunikasi Lintas Fungsi
+    - name: Analisis Data
+      level: Advanced
+      keywords:
+        - Excel
+        - Power BI
+        - SQL
+        - Dashboard KPI
+    - name: Manajemen Rantai Pasok
+      level: Advanced
+      keywords:
+        - Logistik
+        - Pengadaan
+        - Distribusi
+        - Pergudangan
+    - name: Manajemen Proyek
+      level: Intermediate
+      keywords:
+        - Agile
+        - Scrum
+        - Perencanaan Proyek
+        - Manajemen Risiko
+  awards:
+    - title: Penghargaan Kinerja Terbaik
+      date: '2022-12-01'
+      awarder: PT Nusantara Retail Mandiri
+      summary: |
+        Diberikan kepada manajer operasional dengan pencapaian KPI tertinggi dan kontribusi signifikan terhadap efisiensi biaya regional.
+    - title: Inisiatif Efisiensi Biaya
+      date: '2019-08-01'
+      awarder: PT Sentra Logistik Cepat
+      summary: |
+        Mengakui keberhasilan program pengurangan biaya distribusi melalui optimasi rute dan negosiasi vendor.
+  certificates:
+    - name: Sertifikasi Manajemen Rantai Pasok Profesional
+      issuer: Asosiasi Logistik Indonesia
+      date: '2020-03-01'
+      url: https://www.asosiasilogistik.id/sertifikasi
+    - name: Lean Six Sigma Green Belt
+      issuer: Lembaga Produktivitas Nasional
+      date: '2021-11-01'
+      url: https://www.lpn.go.id/lean-six-sigma
+    - name: Ahli K3 Umum
+      issuer: Kementerian Ketenagakerjaan RI
+      date: '2018-02-01'
+      url: https://www.kemnaker.go.id
+  publications:
+    - name: Optimalisasi Persediaan dengan Analisis ABC dan Forecast Permintaan
+      publisher: Majalah Logistik Indonesia
+      releaseDate: '2023-04-01'
+      url: https://www.majalahlogistik.id/artikel/optimalisasi-persediaan
+      summary: |
+        - Membahas pendekatan praktis untuk mengklasifikasikan persediaan berdasarkan nilai dan tingkat perputaran.
+        - Menjelaskan integrasi forecast permintaan dengan analisis ABC untuk mengurangi biaya penyimpanan.
+        - Studi kasus pada jaringan ritel regional dengan lebih dari 500 SKU.
+  references:
+    - name: Dewi Lestari
+      email: dewi.lestari@nusantararetail.co.id
+      phone: '+62 811 2233 4455'
+      relationship: Atasan Langsung di PT Nusantara Retail Mandiri
+      summary: |
+        Rizky adalah manajer operasional yang berorientasi pada hasil dan mampu memimpin tim besar dengan jelas. Ia konsisten dalam mencapai target dan membangun proses yang lebih efisien.
+    - name: Budi Santoso
+      email: budi.santoso@sentralogistik.co.id
+      phone: '+62 813 9988 7766'
+      relationship: Mantan Atasan di PT Sentra Logistik Cepat
+      summary: |
+        Selama bekerja bersama, Rizky menunjukkan kemampuan analitis yang kuat dan komitmen tinggi terhadap perbaikan berkelanjutan. Ia layak dipercaya untuk peran kepemimpinan operasional.
+  projects:
+    - name: Transformasi Digital Operasional Gudang
+      url: https://www.nusantararetail.co.id/proyek/digital-gudang
+      description: Implementasi sistem WMS dan otomasi pelaporan KPI di 12 gudang regional.
+      startDate: '2022-01-01'
+      endDate: '2023-11-01'
+      summary: |
+        - Memimpin implementasi WMS untuk meningkatkan akurasi stok dan visibilitas persediaan.
+        - Mengotomasi pelaporan KPI harian sehingga waktu pelaporan berkurang dari 4 jam menjadi 30 menit.
+        - Melatih 80 staf gudang dan supervisor dalam penggunaan sistem baru.
+      keywords:
+        - WMS
+        - Otomasi
+        - KPI
+        - Manajemen Perubahan
+    - name: Program Pengurangan Biaya Logistik
+      url: https://www.sentralogistik.co.id/program/efisiensi-biaya
+      description: Inisiatif lintas fungsi untuk menurunkan biaya distribusi tanpa
+        mengurangi kualitas layanan.
+      startDate: '2019-03-01'
+      endDate: '2020-12-01'
+      summary: |
+        - Menganalisis data pengiriman dan mengidentifikasi peluang konsolidasi rute.
+        - Bernegosiasi dengan vendor transportasi untuk mendapatkan tarif yang lebih kompetitif.
+        - Mencapai penghematan biaya logistik sebesar 12% dalam 18 bulan.
+      keywords:
+        - Efisiensi Biaya
+        - Rute Distribusi
+        - Negosiasi
+        - Analisis Data
+  interests:
+    - name: Olahraga
+      keywords:
+        - Lari
+        - Bersepeda
+        - Bulu Tangkis
+    - name: Pengembangan Diri
+      keywords:
+        - Membaca
+        - Public Speaking
+        - Mentoring
+  volunteer:
+    - organization: Yayasan Peduli Logistik Indonesia
+      url: https://www.pedulilogistik.org
+      position: Koordinator Relawan Distribusi Bantuan
+      startDate: '2020-01-01'
+      endDate: '2023-12-01'
+      summary: |
+        - Mengoordinasikan distribusi bantuan logistik ke daerah terdampak bencana di Jawa Barat.
+        - Mengelola 30 relawan dan berkoordinasi dengan pemerintah daerah serta mitra donor.
+        - Menyusun prosedur penerimaan, penyimpanan, dan penyaluran barang agar transparan dan akuntabel.
+
+locale:
+  language: id

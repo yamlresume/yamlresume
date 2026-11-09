@@ -1,0 +1,261 @@
+content:
+  basics:
+    name: Lorenzo Bianchi
+    headline: Ingegnere della cybersicurezza
+    phone: "+39 02 8765 4321"
+    email: lorenzo.bianchi@lorenzobianchi.it
+    url: https://www.lorenzobianchi.it
+    summary: |
+      Professionista della sicurezza informatica con oltre otto anni di esperienza nella protezione di infrastrutture critiche e dati sensibili. Specializzato in monitoraggio, risposta agli incidenti e architetture Zero Trust, unisco competenze tecniche e visione del rischio per sostenere gli obiettivi aziendali.
+      - Guido progetti di adeguamento a NIS2, GDPR e ISO 27001.
+      - Coordino team di analisti e collaboro con sviluppo, reparti operativi e ufficio legale.
+      - Progetto controlli preventivi e promuovo una cultura della sicurezza misurabile.
+
+  location:
+    address: Via Torino 45
+    city: Milano
+    region: Lombardia
+    country: Italy
+    postalCode: "20123"
+
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/lorenzo-bianchi-cyber
+      username: lorenzo-bianchi-cyber
+    - network: GitHub
+      url: https://github.com/lorenzobianchi
+      username: lorenzobianchi
+
+  education:
+    - institution: Politecnico di Milano
+      url: https://www.polimi.it
+      degree: Master
+      area: Ingegneria Informatica
+      score: "110/110 con lode"
+      startDate: '2014-09-01'
+      endDate: '2016-07-15'
+      courses:
+        - Sicurezza dei sistemi informativi
+        - Crittografia applicata
+        - Architetture di rete e protocolli
+        - Sistemi operativi e virtualizzazione
+        - Gestione dei rischi informatici
+        - Diritto delle nuove tecnologie
+      summary: |
+        - Tesi magistrale sulla rilevazione di intrusioni in ambienti cloud tramite tecniche di apprendimento automatico.
+        - Approfondimento su crittografia applicata, sicurezza delle reti e gestione del rischio.
+        - Partecipazione a laboratori di hacking etico e progetti con aziende del territorio.
+
+    - institution: Università degli Studi di Bologna
+      url: https://www.unibo.it
+      degree: Bachelor
+      area: Ingegneria Informatica
+      score: "108/110"
+      startDate: '2011-09-01'
+      endDate: '2014-07-15'
+      courses:
+        - Fondamenti di programmazione
+        - Algoritmi e strutture dati
+        - Reti di calcolatori
+        - Basi di dati
+        - Sistemi operativi
+      summary: |
+        - Basi solide di programmazione, algoritmi, reti e basi di dati.
+        - Progetto finale su un sistema di autenticazione a due fattori per applicazioni web.
+        - Esperienza in gruppi di lavoro e presentazioni tecniche.
+
+  work:
+    - name: Finanza Sicura S.p.A.
+      url: https://www.finanzasicura.it
+      position: Ingegnere della cybersicurezza senior
+      startDate: '2020-03-01'
+      summary: |
+        - Guido un gruppo di sei analisti nella gestione di incidenti di sicurezza su scala nazionale.
+        - Ho progettato e implementato un modello di difesa Zero Trust per 4.000 dipendenti e 120 applicazioni.
+        - Ho ridotto del 35% il tempo medio di rilevamento e contenimento delle minacce tramite regole SIEM e automazione SOAR.
+        - Coordino verifiche ISO 27001 e attività di adeguamento alla direttiva NIS2.
+        - Collaboro con i team di sviluppo per integrare controlli di sicurezza nella catena CI/CD.
+      keywords:
+        - Gestione del rischio
+        - SIEM
+        - Zero Trust
+        - Conformità
+        - Risposta agli incidenti
+
+    - name: CloudNova S.r.l.
+      url: https://www.cloudnova.it
+      position: Cybersecurity Analyst
+      startDate: '2016-09-01'
+      endDate: '2020-02-28'
+      summary: |
+        - Monitoraggio continuo di eventi di sicurezza con SIEM, IDS/IPS e piattaforme EDR.
+        - Analisi di malware, phishing e tentativi di accesso anomalo, con redazione di rapporti tecnici.
+        - Gestione delle vulnerabilità e coordinamento delle correzioni con i gruppi infrastrutturali.
+        - Supporto nella definizione delle politiche di accesso e nella formazione del personale.
+      keywords:
+        - Monitoraggio
+        - Analisi delle minacce
+        - Firewall
+        - VPN
+        - Vulnerabilità
+
+    - name: TecnoReti S.p.A.
+      url: https://www.tecnoreti.it
+      position: Specialista di rete junior
+      startDate: '2014-10-01'
+      endDate: '2016-08-31'
+      summary: |
+        - Configurazione e manutenzione di apparati di rete, firewall e VPN tra sedi.
+        - Diagnosi e risoluzione di problemi di connettività e sicurezza per sedi distribuite.
+        - Collaborazione alla migrazione verso un'infrastruttura di rete segmentata.
+      keywords:
+        - Networking
+        - Troubleshooting
+        - Cisco
+        - Segmentazione
+
+  languages:
+    - language: Italian
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - Madrelingua
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - IELTS 7.5
+        - Livello C1
+    - language: French
+      fluency: Limited Working Proficiency
+      keywords:
+        - DELF B1
+
+  skills:
+    - name: Sicurezza informatica
+      level: Expert
+      keywords:
+        - SIEM
+        - IDS/IPS
+        - Penetration testing
+        - Threat hunting
+        - Risposta agli incidenti
+    - name: Sicurezza cloud
+      level: Advanced
+      keywords:
+        - AWS
+        - Azure
+        - Kubernetes
+        - IAM
+        - Terraform
+    - name: Governance e conformità
+      level: Advanced
+      keywords:
+        - ISO 27001
+        - NIS2
+        - GDPR
+        - Valutazione del rischio
+        - Verifiche di conformità
+    - name: Programmazione e automazione
+      level: Advanced
+      keywords:
+        - Python
+        - Bash
+        - PowerShell
+        - SQL
+
+  awards:
+    - title: Premio Innovazione in Cybersecurity
+      date: '2022-11-10'
+      awarder: Associazione Italiana per la Sicurezza Informatica
+      summary: |
+        Riconoscimento per il progetto di una piattaforma di condivisione di indicatori di compromissione tra piccole e medie imprese italiane, con impatto misurabile sulla riduzione degli incidenti.
+
+  certificates:
+    - name: Certified Information Systems Security Professional (CISSP)
+      issuer: ISC2
+      date: '2021-06-15'
+      url: https://www.isc2.org/certifications/cissp
+    - name: AWS Certified Security - Specialty
+      issuer: Amazon Web Services
+      date: '2022-10-10'
+      url: https://aws.amazon.com/certification/certified-security-specialty/
+    - name: ISO/IEC 27001 Lead Auditor
+      issuer: TÜV Italia
+      date: '2023-04-20'
+      url: https://www.tuv.com/italy/it/
+
+  publications:
+    - name: "Difendere la supply chain software: modelli e pratiche"
+      publisher: Rivista Italiana di Cybersecurity
+      releaseDate: '2023-09-15'
+      url: https://www.rivistaitalianacybersecurity.it/articoli/supply-chain
+      summary: |
+        - Analisi dei rischi legati a dipendenze software, fornitori e componenti open source.
+        - Proposta di un modello di valutazione e monitoraggio continuo della catena di fornitura.
+        - Casi di studio tratti da incidenti reali e indicazioni operative per le PMI.
+
+  projects:
+    - name: Piattaforma condivisa di threat intelligence
+      url: https://github.com/lorenzobianchi/threat-intel-condivisa
+      description: Progetto open source per la condivisione di indicatori di
+        compromissione tra piccole e medie imprese italiane.
+      startDate: '2021-01-10'
+      endDate: '2021-12-20'
+      summary: |
+        - Raccolta e normalizzazione di indicatori di compromissione da fonti eterogenee.
+        - API per l'integrazione con SIEM e piattaforme di ticketing.
+        - Documentazione e laboratori per l'adozione da parte di organizzazioni con risorse limitate.
+      keywords:
+        - Threat intelligence
+        - STIX/TAXII
+        - Open source
+    - name: Laboratorio di penetration testing
+      url: https://github.com/lorenzobianchi/pentest-lab
+      description: Ambiente virtualizzato per esercitazioni su vulnerabilità web e di rete.
+      startDate: '2019-02-01'
+      endDate: '2019-07-30'
+      summary: |
+        - Configurazione di macchine vulnerabili e scenari di attacco controllati.
+        - Sperimentazione di tecniche di enumerazione, sfruttamento e post-sfruttamento.
+        - Redazione di report con raccomandazioni di correzione.
+      keywords:
+        - Penetration testing
+        - OWASP
+        - Virtualizzazione
+
+  interests:
+    - name: Sicurezza informatica
+      keywords:
+        - CTF
+        - Ingegneria inversa
+        - OSINT
+    - name: Sport
+      keywords:
+        - Corsa
+        - Nuoto
+        - Ciclismo
+    - name: Lettura
+      keywords:
+        - Saggistica
+        - Fantascienza
+
+  volunteer:
+    - organization: Security Without Borders Italia
+      url: https://www.securitywithoutborders.it
+      position: Volontario e mentore
+      startDate: '2019-03-01'
+      summary: |
+        - Mentoring per giovani professionisti e studenti che si avvicinano alla sicurezza informatica.
+        - Organizzazione di laboratori pratici su phishing, igiene digitale e protezione dei dati.
+        - Supporto alla community nella gestione responsabile delle vulnerabilità.
+    - organization: Associazione Informatica Solidale
+      url: https://www.informaticasolidale.it
+      position: Formatore digitale
+      startDate: '2017-10-01'
+      endDate: '2018-12-15'
+      summary: |
+        - Corsi di alfabetizzazione digitale e sicurezza online per persone over 60.
+        - Creazione di materiali divulgativi semplici e accessibili.
+        - Collaborazione con biblioteche e centri civici del territorio.
+
+locale:
+  language: it

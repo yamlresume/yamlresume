@@ -30,11 +30,16 @@ import { z } from 'zod'
  */
 export const POSITIONS = [
   'account executive',
+  'ai engineer',
   'customer success manager',
+  'cybersecurity engineer',
   'data analyst',
+  'data engineer',
   'data scientist',
   'devops engineer',
+  'financial analyst',
   'marketing manager',
+  'operations manager',
   'product manager',
   'project manager',
   'software engineer',

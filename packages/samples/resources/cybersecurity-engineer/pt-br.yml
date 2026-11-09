@@ -1,0 +1,231 @@
+content:
+  basics:
+    name: Lucas Martins Oliveira
+    headline: Engenheiro de Segurança Cibernética | OSCP | Cloud Security
+    phone: "+55 11 98765-4321"
+    email: lucas.oliveira@cybersec.dev
+    url: https://lucasoliveira.dev
+    summary: |
+      - Engenheiro de segurança cibernética com mais de 8 anos de experiência em proteção de ambientes corporativos e cloud.
+      - Especialista em segurança ofensiva, resposta a incidentes e arquitetura de segurança em AWS e Azure.
+      - Certificado OSCP, CISSP e AWS Security Specialty, com forte atuação em conformidade (ISO 27001, LGPD, PCI DSS).
+      - Liderança técnica de equipes e implementação de programas de segurança desde a concepção até a operação.
+  location:
+    address: Av. Paulista, 1578, Bela Vista
+    city: São Paulo
+    region: SP
+    country: Brazil
+    postalCode: "01310-200"
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/lucas-martins-oliveira
+      username: lucas-martins-oliveira
+    - network: GitHub
+      url: https://github.com/lucas-moliveira
+      username: lucas-moliveira
+  education:
+    - institution: Universidade de São Paulo
+      url: https://www.usp.br
+      degree: Bachelor
+      area: Engenharia de Computação
+      score: "8.7/10"
+      startDate: Mar 2014
+      endDate: Dec 2018
+      courses:
+        - Segurança de Sistemas
+        - Criptografia
+        - Redes de Computadores
+        - Sistemas Operacionais
+        - Banco de Dados
+        - Engenharia de Software
+        - Computação em Nuvem
+        - Inteligência Artificial
+      summary: |
+        - Formação sólida em fundamentos de computação, redes e segurança da informação.
+        - Desenvolvimento de projetos práticos em segurança de aplicações e análise de vulnerabilidades.
+        - Participação em grupo de estudos de cibersegurança e competições de CTF.
+  work:
+    - name: Banco Digital Aurora
+      url: https://www.bancaurora.com.br
+      startDate: Jan 2022
+      position: Engenheiro de Segurança Cibernética Sênior
+      summary: |
+        - Liderança técnica na definição de arquitetura de segurança para serviços em cloud (AWS e Azure).
+        - Implementação de programa de threat modeling e revisão de segurança de aplicações.
+        - Condução de resposta a incidentes críticos e análise forense.
+        - Desenvolvimento de automação de controles de segurança com Terraform e Python.
+        - Mentoria de engenheiros júniores e disseminação da cultura de segurança.
+      keywords:
+        - Threat Modeling
+        - Cloud Security
+        - SIEM
+        - Incident Response
+        - Terraform
+    - name: Consultoria RiskTech
+      url: https://www.risktech.com.br
+      startDate: Feb 2019
+      endDate: Dec 2021
+      position: Engenheiro de Segurança da Informação
+      summary: |
+        - Realização de testes de intrusão em aplicações web, APIs e infraestrutura.
+        - Avaliação de conformidade com ISO 27001, PCI DSS e LGPD.
+        - Implementação de soluções SIEM e correlação de eventos.
+        - Elaboração de relatórios técnicos e planos de remediação.
+        - Atuação em projetos de resposta a incidentes para clientes dos setores financeiro e saúde.
+      keywords:
+        - Penetration Testing
+        - ISO 27001
+        - SIEM
+        - LGPD
+        - Risk Assessment
+    - name: TechSecure Soluções
+      url: https://www.techsecure.com.br
+      startDate: Aug 2017
+      endDate: Dec 2018
+      position: Estagiário de Segurança da Informação
+      summary: |
+        - Monitoramento de alertas de segurança e triagem inicial de incidentes.
+        - Apoio na configuração de firewalls e sistemas de detecção de intrusão.
+        - Documentação de procedimentos operacionais de segurança.
+        - Participação em simulações de phishing e conscientização de usuários.
+      keywords:
+        - Firewalls
+        - IDS/IPS
+        - Phishing
+        - Monitoring
+  languages:
+    - language: Portuguese
+      fluency: Native or Bilingual Proficiency
+      keywords: []
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - TOEFL 105
+        - Cambridge C1
+    - language: Spanish
+      fluency: Limited Working Proficiency
+      keywords: []
+  skills:
+    - name: Segurança Ofensiva
+      level: Advanced
+      keywords:
+        - Penetration Testing
+        - Metasploit
+        - Burp Suite
+        - OSCP
+        - Nmap
+    - name: Segurança em Cloud
+      level: Advanced
+      keywords:
+        - AWS Security
+        - Azure Security
+        - IAM
+        - Terraform
+        - Kubernetes Security
+    - name: Resposta a Incidentes
+      level: Expert
+      keywords:
+        - SIEM
+        - Splunk
+        - Forensics
+        - SOAR
+        - Threat Hunting
+    - name: Redes e Infraestrutura
+      level: Advanced
+      keywords:
+        - Firewalls
+        - VPN
+        - IDS/IPS
+        - TCP/IP
+        - Zero Trust
+    - name: Governança e Conformidade
+      level: Intermediate
+      keywords:
+        - ISO 27001
+        - LGPD
+        - NIST
+        - PCI DSS
+        - Risk Assessment
+  awards:
+    - title: Profissional de Segurança do Ano
+      date: Nov 2023
+      awarder: Banco Digital Aurora
+      summary: |
+        Reconhecimento pela liderança na implementação do programa de segurança em cloud e redução de 40% nos incidentes críticos.
+  certificates:
+    - name: OSCP - Offensive Security Certified Professional
+      issuer: Offensive Security
+      date: Jun 2021
+      url: https://www.offsec.com/certifications/oscp/
+    - name: CISSP - Certified Information Systems Security Professional
+      issuer: ISC2
+      date: Sep 2022
+      url: https://www.isc2.org/certifications/cissp
+    - name: AWS Certified Security - Specialty
+      issuer: Amazon Web Services
+      date: Mar 2023
+      url: https://aws.amazon.com/certification/certified-security-specialty/
+    - name: 'CompTIA Security+'
+      issuer: CompTIA
+      date: Feb 2020
+      url: https://www.comptia.org/certifications/security
+  publications:
+    - name: Detecção de Intrusão em Ambientes Cloud-Native
+      publisher: Revista Brasileira de Segurança Cibernética
+      releaseDate: Oct 2023
+      url: https://www.revistabsc.com.br/artigos/deteccao-intrusao-cloud-native
+      summary: |
+        Artigo sobre abordagens de detecção de intrusão em ambientes de contêineres e Kubernetes, com foco em machine learning e correlação de eventos.
+  projects:
+    - name: ThreatIntel BR
+      startDate: Jan 2023
+      endDate: Dec 2023
+      description: Plataforma open-source para agregação e correlação de indicadores
+        de ameaça.
+      summary: |
+        Desenvolvimento de plataforma para coleta de feeds de threat intelligence e correlação com eventos de segurança; integração com SIEM e geração de alertas contextualizados.
+      keywords:
+        - Threat Intelligence
+        - Python
+        - SIEM
+        - Open Source
+      url: https://github.com/lucas-moliveira/threatintel-br
+    - name: LogHunter
+      startDate: Apr 2022
+      endDate: Oct 2022
+      description: Ferramenta de análise forense de logs para ambientes Linux.
+      summary: |
+        Criação de ferramenta em Python para análise de logs de autenticação e detecção de comportamentos anômalos; redução do tempo de triagem em 30%.
+      keywords:
+        - Python
+        - Forensics
+        - Log Analysis
+        - Linux
+      url: https://github.com/lucas-moliveira/loghunter
+  interests:
+    - name: Cibersegurança
+      keywords:
+        - CTFs
+        - Bug Bounty
+        - Malware Analysis
+    - name: Esportes
+      keywords:
+        - Corrida
+        - Natação
+        - Ciclismo
+    - name: Leitura
+      keywords:
+        - Ficção Científica
+        - Biografias
+  volunteer:
+    - organization: OWASP São Paulo Chapter
+      url: https://owasp.org/www-chapter-sao-paulo/
+      position: Mentor e Palestrante
+      startDate: Mar 2020
+      summary: |
+        - Atuação como mentor em programas de capacitação em segurança de aplicações.
+        - Palestras sobre OWASP Top 10 e boas práticas de desenvolvimento seguro.
+        - Organização de encontros técnicos e workshops para a comunidade.
+
+locale:
+  language: pt-br

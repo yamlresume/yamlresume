@@ -1,0 +1,209 @@
+content:
+  basics:
+    name: Camille Moreau
+    headline: Responsable des opérations
+    phone: '+33 6 12 34 56 78'
+    email: camille.moreau@example.fr
+    url: https://www.camille-moreau.fr
+    summary: |
+      - Responsable des opérations avec plus de 10 ans d'expérience dans la logistique, la supply chain et le pilotage de sites.
+      - Solide expertise en management d'équipes pluridisciplinaires, en amélioration continue et en optimisation des processus.
+      - Capacité démontrée à piloter des budgets, des indicateurs de performance et des projets transverses.
+      - Anglais professionnel et pratique courante des outils de reporting et d'analyse de données.
+  location:
+    address: 24 rue des Archives
+    city: Paris
+    region: Île-de-France
+    country: France
+    postalCode: '75004'
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/camille-moreau-ops
+      username: camille-moreau-ops
+    - network: Twitter
+      url: https://twitter.com/camille_ops
+      username: camille_ops
+  education:
+    - institution: Université Paris-Dauphine
+      url: https://www.dauphine.psl.eu
+      degree: Master
+      area: Management des opérations et de la supply chain
+      score: Mention Bien
+      startDate: 'Sep 1, 2012'
+      endDate: 'Jun 30, 2014'
+      courses:
+        - Gestion des opérations
+        - Supply Chain Management
+        - Contrôle de gestion
+        - Gestion de projet
+        - Analyse de données
+        - Management d'équipe
+      summary: |
+        - Formation solide en pilotage des opérations et en gestion des flux.
+        - Projets académiques consacrés à l'optimisation logistique et à la performance industrielle.
+        - Développement de compétences en analyse quantitative et en management d'équipe.
+  work:
+    - name: Groupe Horizon
+      url: https://www.groupehorizon.fr
+      position: Responsable des opérations
+      startDate: 'Jan 6, 2020'
+      summary: |
+        - Pilotage quotidien des opérations d'un site logistique de 120 collaborateurs.
+        - Management direct de 18 personnes et animation d'une équipe transverse de 6 responsables.
+        - Déploiement d'indicateurs de performance et de tableaux de bord hebdomadaires.
+        - Réduction des coûts opérationnels de 12 % en deux ans grâce à la refonte des processus.
+        - Coordination des relations avec les transporteurs, fournisseurs et clients grands comptes.
+      keywords:
+        - Pilotage opérationnel
+        - Management d'équipe
+        - Amélioration continue
+        - KPI
+        - Budget
+    - name: LogiFret Solutions
+      url: https://www.logifret-solutions.fr
+      position: Chef d'équipe logistique
+      startDate: 'Mar 1, 2017'
+      endDate: 'Dec 31, 2019'
+      summary: |
+        - Encadrement d'une équipe de 25 préparateurs et caristes sur deux shifts.
+        - Mise en place d'un plan de formation et de polyvalence pour réduire les ruptures de service.
+        - Suivi des stocks, des expéditions et de la qualité de service client.
+        - Participation active à la certification ISO 9001 du site.
+      keywords:
+        - Logistique
+        - Planification
+        - Sécurité
+        - Performance
+        - Qualité
+    - name: Maison Delcourt
+      url: https://www.maison-delcourt.fr
+      position: Coordinateur des opérations
+      startDate: 'Sep 1, 2014'
+      endDate: 'Feb 28, 2017'
+      summary: |
+        - Coordination des approvisionnements et des livraisons pour trois sites régionaux.
+        - Optimisation des tournées de transport et réduction des délais de livraison.
+        - Suivi budgétaire des achats et négociation avec les fournisseurs.
+        - Amélioration de la satisfaction client par la mise en place d'un suivi des réclamations.
+      keywords:
+        - Coordination
+        - Approvisionnement
+        - Stocks
+        - Transport
+        - Relation fournisseurs
+  languages:
+    - language: French
+      fluency: Native or Bilingual Proficiency
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - TOEIC 920
+    - language: Spanish
+      fluency: Limited Working Proficiency
+      keywords:
+        - Niveau B1
+  skills:
+    - name: Gestion des opérations
+      level: Expert
+      keywords:
+        - Planification
+        - Organisation
+        - Processus
+        - Qualité
+    - name: Management d'équipe
+      level: Expert
+      keywords:
+        - Recrutement
+        - Coaching
+        - Animation
+        - Évaluation
+    - name: Amélioration continue
+      level: Advanced
+      keywords:
+        - Lean
+        - Six Sigma
+        - Kaizen
+        - PDCA
+    - name: Supply chain
+      level: Advanced
+      keywords:
+        - Approvisionnement
+        - Stocks
+        - Transport
+        - Logistique
+    - name: Analyse et pilotage
+      level: Intermediate
+      keywords:
+        - KPI
+        - Tableaux de bord
+        - Excel
+        - Power BI
+  awards:
+    - title: Prix de l'innovation opérationnelle
+      date: 'Mar 2023'
+      awarder: Groupe Horizon
+      summary: |
+        Distinction attribuée pour la refonte d'un processus logistique ayant permis de réduire les coûts et les délais de traitement.
+  certificates:
+    - name: Ceinture Verte Lean Six Sigma
+      issuer: IASSC
+      date: 'Jun 2021'
+      url: https://www.iassc.org
+    - name: Certification en gestion de la supply chain
+      issuer: ASCM
+      date: 'Jan 2022'
+      url: https://www.ascm.org
+  projects:
+    - name: Déploiement ERP
+      url: https://www.groupehorizon.fr/projets/erp
+      startDate: 'Jan 15, 2021'
+      endDate: 'Nov 30, 2021'
+      description: Migration et déploiement d'un ERP pour les opérations logistiques
+        et achats.
+      summary: |
+        - Coordination des équipes métiers, informatiques et fournisseurs.
+        - Cartographie et simplification des processus avant migration.
+        - Plan de formation des utilisateurs et accompagnement du changement.
+      keywords:
+        - ERP
+        - Conduite du changement
+        - Processus
+        - Formation
+    - name: Optimisation des tournées
+      url: https://www.logifret-solutions.fr/projets/tournees
+      startDate: 'Apr 1, 2018'
+      endDate: 'Oct 31, 2018'
+      description: Refonte des tournées de livraison pour améliorer la ponctualité et
+        réduire les coûts.
+      summary: |
+        - Analyse des données de transport et des contraintes clients.
+        - Nouveau découpage des zones et ajustement des fréquences de livraison.
+        - Réduction des kilomètres parcourus et amélioration du taux de service.
+      keywords:
+        - Optimisation
+        - Tournées
+        - Coûts
+        - Délais
+  interests:
+    - name: Randonnée
+      keywords:
+        - Sentiers
+        - Nature
+        - Photographie
+    - name: Cuisine
+      keywords:
+        - Cuisine française
+        - Pâtisserie
+        - Œnologie
+  volunteer:
+    - organization: Les Restos du Cœur
+      url: https://www.restosducoeur.org
+      position: Bénévole logistique
+      startDate: 'Oct 1, 2019'
+      summary: |
+        - Participation à la collecte et à la distribution de denrées alimentaires.
+        - Aide à l'organisation des stocks et à la préparation des campagnes hivernales.
+        - Sensibilisation des équipes bénévoles aux bonnes pratiques logistiques.
+
+locale:
+  language: fr

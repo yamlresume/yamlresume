@@ -1,0 +1,255 @@
+content:
+  basics:
+    name: 李伟
+    headline: '运营经理 | 供应链与流程优化'
+    phone: '+86 138 0013 8000'
+    email: liwei.ops@example.com
+    url: https://www.liwei-ops.com
+    summary: |
+      - 8 年运营管理经验，覆盖订单履约、仓储配送、供应链协同与客户服务
+      - 擅长搭建 KPI 体系、推动流程标准化，并通过数据分析持续改善运营效率
+      - 具备跨部门项目管理经验，能够协调销售、采购、财务、IT 与第三方物流
+      - 注重团队建设与人才培养，善于在快节奏环境中推动目标落地
+  location:
+    address: 浦东新区世纪大道100号
+    city: 上海
+    region: 上海市
+    country: China
+    postalCode: '200120'
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/liwei-ops
+      username: liwei-ops
+    - network: WeChat
+      url: https://weixin.qq.com
+      username: liwei_ops
+  education:
+    - institution: 复旦大学
+      url: https://www.fudan.edu.cn
+      degree: Master
+      area: 工商管理
+      score: '3.7'
+      startDate: Sep 1, 2014
+      endDate: Jun 30, 2016
+      courses:
+        - 运营管理
+        - 供应链管理
+        - 财务管理
+        - 组织行为学
+        - 数据分析与决策
+        - 项目管理
+      summary: |
+        - 系统学习运营管理、供应链协同与财务分析，建立从业务到经营的全局视角
+        - 参与企业运营诊断项目，围绕库存周转、履约时效与成本结构提出改善方案
+        - 毕业论文聚焦区域配送网络优化，结合数据模型评估线路整合与承运商管理策略
+    - institution: 上海财经大学
+      url: https://www.sufe.edu.cn
+      degree: Bachelor
+      area: 物流管理
+      score: '3.6'
+      startDate: Sep 1, 2010
+      endDate: Jun 30, 2014
+      courses:
+        - 物流系统规划
+        - 仓储与库存管理
+        - 运输管理
+        - 采购管理
+        - 管理信息系统
+        - 统计学
+      summary: |
+        - 夯实物流与供应链基础理论，熟悉仓储、运输、采购与库存管理流程
+        - 通过课程项目完成区域配送中心选址与库存策略分析
+        - 担任班级项目负责人，锻炼团队协作与沟通表达能力
+  work:
+    - name: 星澜科技（上海）有限公司
+      url: https://www.xinglan-tech.com
+      position: 运营经理
+      startDate: Jan 4, 2021
+      summary: |
+        - 统筹华东区运营团队，制定年度运营计划与预算，管理 35 人跨职能团队，覆盖订单、仓储、配送与客户服务
+        - 建立以履约时效、库存周转和运营成本为核心的 KPI 体系，推动月度经营分析，季度运营成本降低 12%
+        - 主导仓储数字化升级与配送网络优化项目，将订单平均履约周期由 48 小时缩短至 30 小时
+        - 协调销售、采购、财务与第三方物流，完善供应商准入和考核机制，提升跨部门协同效率
+        - 搭建运营人才梯队，制定培训与轮岗计划，核心岗位留存率提升至 92%
+      keywords:
+        - 运营管理
+        - 流程优化
+        - 供应链协同
+        - 数据驱动
+        - 团队建设
+    - name: 恒远供应链管理有限公司
+      url: https://www.hengyuan-supply.com
+      position: 高级运营专员
+      startDate: Jul 1, 2016
+      endDate: Dec 31, 2020
+      summary: |
+        - 负责华东区日常运营执行，管理订单处理、库存盘点、运输调度与异常客诉
+        - 优化库存补货模型与安全库存规则，库存周转天数下降 18%，缺货率控制在 2% 以内
+        - 参与承运商招标与绩效考核，整合区域配送线路，单票运输成本下降 9%
+        - 使用 Excel、SQL 与 Tableau 搭建运营报表，推动数据驱动的日/周/月复盘机制
+        - 协同 IT 团队上线 WMS 与 TMS 模块，完成流程梳理、用户培训与上线支持
+      keywords:
+        - 库存管理
+        - 运输调度
+        - 承运商管理
+        - 运营分析
+        - WMS
+    - name: 博越商贸有限公司
+      url: https://www.boyue-trade.com
+      position: 运营助理
+      startDate: Jan 6, 2014
+      endDate: Jun 27, 2014
+      summary: |
+        - 协助运营主管处理日常订单、发票与库存数据，确保系统记录准确
+        - 跟进客户订单交付进度，协调仓储与物流解决发货异常
+        - 参与月度库存盘点，整理差异报告并提出改进建议
+      keywords:
+        - 订单处理
+        - 库存盘点
+        - 客户沟通
+  skills:
+    - name: 运营管理
+      level: Expert
+      keywords:
+        - 流程优化
+        - 成本控制
+        - KPI体系
+        - 运营分析
+        - 跨部门协作
+    - name: 供应链与仓储
+      level: Advanced
+      keywords:
+        - 库存管理
+        - 采购协同
+        - 物流配送
+        - 供应商管理
+    - name: 数据分析
+      level: Advanced
+      keywords:
+        - Excel
+        - SQL
+        - Tableau
+        - Power BI
+    - name: 项目管理
+      level: Advanced
+      keywords:
+        - PMP
+        - 敏捷管理
+        - 风险管理
+        - 里程碑管理
+    - name: 系统工具
+      level: Intermediate
+      keywords:
+        - SAP S/4HANA
+        - WMS
+        - TMS
+        - Jira
+        - Confluence
+  languages:
+    - language: Chinese
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - 普通话二级甲等
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - CET-6
+        - 商务谈判
+    - language: Japanese
+      fluency: Elementary Proficiency
+      keywords:
+        - JLPT N4
+  awards:
+    - title: 年度优秀管理者
+      date: Dec 2023
+      awarder: 星澜科技（上海）有限公司
+      summary: |
+        - 因在华东区运营效率提升、成本优化与团队建设方面表现突出而获奖
+        - 主导的仓储数字化项目实现履约周期显著缩短，并形成可复制的运营标准
+    - title: 流程优化金奖
+      date: Nov 2019
+      awarder: 恒远供应链管理有限公司
+      summary: |
+        - 通过重构库存补货规则与配送线路，降低库存周转天数与单票运输成本
+        - 项目成果在华东区多个业务单元推广，带来持续的成本与时效改善
+  certificates:
+    - name: PMP项目管理专业人士认证
+      issuer: 项目管理协会 PMI
+      date: Jun 2019
+      url: https://www.pmi.org/certifications/project-management-pmp
+    - name: 六西格玛绿带认证
+      issuer: 美国质量学会 ASQ
+      date: Mar 2018
+      url: https://asq.org/cert/six-sigma-green-belt
+  publications:
+    - name: 区域运营中的数字化仓储实践
+      publisher: 现代物流管理
+      releaseDate: Aug 2022
+      url: https://www.logistics-review.com/articles/digital-warehouse
+      summary: |
+        - 分析 WMS 与自动化分拣设备在区域仓储场景中的落地路径
+        - 总结库位优化、波次拣选与库存准确性提升的实践经验
+        - 提出以数据看板驱动仓储持续改善的管理建议
+  projects:
+    - name: 华东区仓储数字化升级项目
+      url: https://www.xinglan-tech.com/projects/warehouse-digitalization
+      description: 通过 WMS 与自动化分拣设备提升仓储作业效率
+      startDate: Mar 2021
+      endDate: Nov 2022
+      summary: |
+        - 主导需求调研、流程设计与供应商选型，分三期完成 WMS 与自动化分拣设备上线
+        - 设计库位优化与波次拣选规则，拣货效率提升 35%，库存准确率达到 99.5%
+        - 建立项目里程碑与风险清单，协调 IT、仓储、财务与外部供应商按期交付
+      keywords:
+        - 数字化仓储
+        - WMS
+        - 自动化分拣
+        - 效率提升
+    - name: 城市配送网络优化项目
+      url: https://www.hengyuan-supply.com/projects/delivery-network
+      description: 重构华东区城市配送路线与承运商组合
+      startDate: Apr 2019
+      endDate: Dec 2020
+      summary: |
+        - 基于历史订单与地理数据重构华东区配送分区，优化线路与波次安排
+        - 引入承运商月度评分机制，结合时效、破损率与成本进行动态分配
+        - 推动配送时效达成率由 88% 提升至 96%，单票成本下降 9%
+      keywords:
+        - 配送网络
+        - 路线优化
+        - 承运商管理
+        - 成本控制
+  interests:
+    - name: 运动健康
+      keywords:
+        - 马拉松
+        - 骑行
+        - 游泳
+    - name: 阅读与研究
+      keywords:
+        - 运营管理
+        - 供应链创新
+        - 商业传记
+    - name: 摄影
+      keywords:
+        - 城市风光
+        - 人文纪实
+  volunteer:
+    - organization: 上海青年企业家协会
+      url: https://www.shyouth.org
+      position: 运营志愿者
+      startDate: Mar 2022
+      summary: |
+        - 参与协会月度沙龙与行业交流活动的策划、报名管理和现场执行
+        - 协助整理会员企业运营案例，形成可复用的活动运营手册
+    - organization: 社区公益服务中心
+      url: https://www.community-service.org
+      position: 活动组织志愿者
+      startDate: Sep 2018
+      endDate: Jun 2021
+      summary: |
+        - 组织社区便民活动与物资捐赠，协调场地、物资与志愿者排班
+        - 建立活动复盘表，持续优化报名、签到与现场服务流程
+
+locale:
+  language: zh-hans

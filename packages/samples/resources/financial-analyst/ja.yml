@@ -1,0 +1,202 @@
+content:
+  basics:
+    name: 高橋 健司
+    headline: '財務分析 / FP&A / 企業価値評価'
+    phone: "+81 90-1234-5678"
+    email: kenji.takahashi.finance@example.jp
+    url: https://www.linkedin.com/in/kenji-takahashi-finance
+    summary: |
+      - 企業価値評価とFP&Aを専門とする財務アナリスト。7年以上の実務経験を通じ、予算策定、業績管理、M&Aデューデリジェンス、経営層向け報告資料の作成に従事。
+      - 財務モデリングとデータ分析を組み合わせ、経営判断に資する示唆を提供。Excel、SQL、Power BI、Pythonを活用した分析基盤の改善に強み。
+      - 銀行および事業会社での経験を活かし、会計・財務・事業部門の橋渡しを推進。日本語と英語でのコミュニケーションが可能。
+  location:
+    address: 東京都千代田区丸の内1-2-3
+    city: 千代田区
+    region: 東京都
+    country: Japan
+    postalCode: "100-0005"
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/kenji-takahashi-finance
+      username: kenji-takahashi-finance
+    - network: Twitter
+      url: https://twitter.com/kenji_fpna
+      username: kenji_fpna
+  education:
+    - institution: 一橋大学
+      url: https://www.hit-u.ac.jp/
+      degree: Bachelor
+      area: 商学部金融学科
+      score: "3.7/4.0"
+      startDate: Apr 1, 2014
+      endDate: Mar 31, 2018
+      courses:
+        - 財務会計
+        - 管理会計
+        - コーポレートファイナンス
+        - 投資理論
+        - 統計学
+        - 計量経済学
+        - 企業価値評価
+        - 資本市場論
+      summary: |
+        - 財務会計、コーポレートファイナンス、統計学を中心に履修
+        - ゼミナールで企業価値評価と資本市場の研究に従事
+        - グループワークを通じて財務分析とプレゼンテーション能力を養成
+  work:
+    - name: みらいキャピタル株式会社
+      position: シニア・ファイナンシャル・アナリスト
+      startDate: Apr 1, 2021
+      summary: |
+        - 中期経営計画の策定支援として、部門別予算と5カ年財務モデルを構築し、経営会議向けのシナリオ分析を実施
+        - M&A案件において対象企業の財務デューデリジェンス、バリュエーション、PMI初期計画の策定を担当
+        - 月次・四半期の業績管理を高度化し、KPIダッシュボードと差異分析レポートを経営層へ提供
+        - 事業部門と連携して収益改善施策の定量評価を行い、原価低減と価格最適化の意思決定を支援
+        - 若手アナリスト2名の育成を担当し、財務モデリングの品質基準とレビュー体制を整備
+      keywords:
+        - 財務モデリング
+        - 'M&A'
+        - 予算管理
+        - 'FP&A'
+        - 経営報告
+    - name: 東都銀行
+      position: ファイナンシャル・アナリスト
+      startDate: Jan 1, 2019
+      endDate: Mar 31, 2021
+      summary: |
+        - 法人融資案件の信用分析、財務諸表分析、返済能力評価を担当
+        - 業種別のリスク要因を整理し、与信判断に必要な分析レポートを作成
+        - 融資先の月次モニタリングを設計し、早期警戒指標の可視化を推進
+        - Excel VBAとSQLを用いた集計業務の自動化により、月次作業時間を約40%削減
+      keywords:
+        - 信用分析
+        - 融資審査
+        - Excel
+        - SQL
+        - Power BI
+    - name: サクラ会計事務所
+      position: アナリスト
+      startDate: Apr 1, 2018
+      endDate: Dec 31, 2018
+      summary: |
+        - 上場企業および中小企業の財務諸表分析、監査支援、税務申告補助を担当
+        - 経理担当者へのヒアリングを通じて、改善提案と内部統制の整備を支援
+        - 決算整理仕訳の確認と分析資料の作成を実施
+      keywords:
+        - 財務諸表分析
+        - 監査支援
+        - IFRS
+        - 税務
+  languages:
+    - language: Japanese
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - 日本語
+        - ビジネス文書
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - TOEIC 920
+        - 英語財務報告
+        - 海外ステークホルダー対応
+  skills:
+    - name: 財務分析
+      level: Expert
+      keywords:
+        - 財務モデリング
+        - DCF法
+        - 企業価値評価
+        - 予算策定
+        - 差異分析
+    - name: データ分析
+      level: Advanced
+      keywords:
+        - Excel
+        - SQL
+        - Power BI
+        - Python
+        - Tableau
+    - name: 会計・報告
+      level: Advanced
+      keywords:
+        - IFRS
+        - JGAAP
+        - 連結決算
+        - 管理会計
+    - name: コミュニケーション
+      level: Advanced
+      keywords:
+        - 経営層向け報告資料作成
+        - ステークホルダー調整
+        - 英語プレゼンテーション
+        - チーム育成
+  awards:
+    - title: 優秀プロジェクト賞
+      awarder: みらいキャピタル株式会社
+      date: Dec 2023
+      summary: |
+        M&Aデューデリジェンスと買収後統合計画の定量分析が高く評価され、経営企画部門より表彰。
+  certificates:
+    - name: CFAレベル2合格
+      issuer: CFA協会
+      date: Feb 2022
+      url: https://www.cfainstitute.org/
+    - name: 日商簿記1級
+      issuer: 日本商工会議所
+      date: Nov 2017
+    - name: FMVA（財務モデリング・バリュエーション・アナリスト）
+      issuer: コーポレート・ファイナンス・インスティテュート
+      date: Jun 2020
+      url: https://corporatefinanceinstitute.com/
+  publications:
+    - name: '国内製薬業界のM&A動向と企業価値評価'
+      publisher: みらいキャピタル調査部
+      releaseDate: Oct 2023
+      url: https://www.example.com/research/pharma-ma-valuation
+      summary: |
+        - 国内製薬企業のM&A事例を対象に、シナジー評価とバリュエーション手法を比較分析
+        - 創薬パイプラインの価値評価におけるリスク調整アプローチを整理
+        - 経営企画・事業開発部門向けに、案件検討時の実務示唆を提供
+  projects:
+    - name: 'FP&Aダッシュボード刷新プロジェクト'
+      startDate: Jan 2023
+      endDate: Jun 2023
+      description: '経営層と事業部門向けに、予算・実績・予測を一元管理するFP&Aダッシュボードを再構築'
+      summary: |
+        - 部門別の予算消化率、売上・利益の差異要因、キャッシュフロー予測を可視化
+        - SQLによるデータ整備とPower BIによるレポート自動更新を設計
+        - 経営会議の意思決定に必要な分析リードタイムを従来比で約50%短縮
+      keywords:
+        - 'FP&A'
+        - Power BI
+        - SQL
+        - 予算管理
+        - 可視化
+      url: https://www.example.com/projects/fpa-dashboard
+  interests:
+    - name: 読書
+      keywords:
+        - 企業価値評価
+        - 経済史
+        - 英語ビジネス書
+    - name: スポーツ
+      keywords:
+        - テニス
+        - ランニング
+        - 登山
+    - name: 金融教育
+      keywords:
+        - 金融リテラシー
+        - コミュニティ活動
+  volunteer:
+    - organization: NPO法人金融教育推進ネットワーク
+      position: 金融リテラシー講師
+      startDate: Sep 1, 2022
+      summary: |
+        - 高校生・大学生向けに、家計管理、資産形成、投資の基礎をテーマとしたワークショップを実施
+        - 教材作成とグループディスカッションのファシリテーションを担当
+        - 参加者アンケートの分析をもとに、講座内容の改善を継続
+      url: https://www.example.com/volunteer/financial-literacy
+
+locale:
+  language: ja

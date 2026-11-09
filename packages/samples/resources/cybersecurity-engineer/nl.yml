@@ -1,0 +1,252 @@
+content:
+  basics:
+    name: Sanne van Dijk
+    headline: Senior beveiligingsingenieur met focus op zero trust en incidentrespons
+    phone: '+31 6 184 27 395'
+    email: sanne.vandijk@vandijk-security.nl
+    url: https://www.vandijk-security.nl
+    summary: |
+      - Ervaren beveiligingsingenieur met meer dan 8 jaar ervaring in het ontwerpen, implementeren en beheren van weerbare IT-omgevingen.
+      - Gespecialiseerd in zero-trustarchitectuur, dreigingsdetectie, cloudbeveiliging en incidentrespons voor financiële en zorgorganisaties.
+      - Combineert technische diepgang met heldere communicatie richting CISO, auditors en niet-technische stakeholders.
+      - Aantoonbaar resultaatgericht in het verlagen van cyberrisico's en het verhogen van de volwassenheid van securityprocessen.
+  location:
+    address: Maliebaan 45
+    city: Utrecht
+    region: Utrecht
+    country: Netherlands
+    postalCode: '3581 CD'
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/sannevandijk-cyber
+      username: sannevandijk-cyber
+    - network: GitHub
+      url: https://github.com/sannevandijk
+      username: sannevandijk
+  education:
+    - institution: Technische Universiteit Delft
+      url: https://www.tudelft.nl
+      degree: Master
+      area: Cybersecurity
+      score: '8.1'
+      startDate: '2014-09-01'
+      endDate: '2017-07-01'
+      courses:
+        - Cryptografie
+        - Netwerkbeveiliging
+        - Beveiligingsgovernance
+        - Penetratietesten
+        - Forensische Analyse
+        - Privacy en Gegevensbescherming
+        - Cloudbeveiliging
+        - Risicomanagement
+      summary: |
+        - Afstudeeronderzoek naar detectie van supply-chainaanvallen in CI/CD-pipelines.
+        - Organiseerde Capture the Flag-evenementen en begeleidde eerstejaars bij securityvakken.
+        - Ontwikkelde een prototype voor geautomatiseerde kwetsbaarheidsanalyse in containeromgevingen.
+    - institution: Hogeschool Utrecht
+      url: https://www.hu.nl
+      degree: Bachelor
+      area: 'ICT & Security'
+      score: '8.4'
+      startDate: '2010-09-01'
+      endDate: '2014-07-01'
+      courses:
+        - Netwerkarchitectuur
+        - Besturingssystemen
+        - Ethisch Hacken
+        - Digitale Forensica
+        - Informatiebeveiliging
+        - Programmeerprincipes
+      summary: |
+        - Minor gevolgd in digitale forensica en incidentonderzoek.
+        - Stage gelopen bij een regionale zorginstelling en daar een basis-SOC ingericht.
+  work:
+    - name: Veiligedomeinen B.V.
+      url: https://www.veiligedomeinen.nl
+      position: Senior beveiligingsingenieur
+      startDate: '2023-04-01'
+      summary: |
+        - Leidt het zero-trustprogramma voor twaalf bedrijfsonderdelen en adviseert de CISO over risicogebaseerde prioritering.
+        - Ontwerpt en implementeert SIEM-detectieregels, SOAR-playbooks en EDR-beleid voor een 24/7 SOC.
+        - Voert dreigingsmodellering volgens STRIDE en MITRE ATT&CK uit voor cloudmigraties naar Azure.
+        - Coördineert incidentrespons bij ernstige incidenten, inclusief forensisch onderzoek, crisiscommunicatie en herstelvalidatie.
+        - Beheert ISO 27001- en NIS2-compliance en begeleidt interne en externe audits.
+      keywords:
+        - Zero Trust
+        - SIEM
+        - SOAR
+        - Azure-beveiliging
+        - ISO 27001
+        - NIS2
+        - Dreigingsmodellering
+    - name: Noordzee Fintech
+      url: https://www.noordzeefintech.nl
+      position: Beveiligingsanalist
+      startDate: '2019-06-01'
+      endDate: '2023-03-31'
+      summary: |
+        - Bouwde en beheerde detectiecontent in Splunk en Microsoft Sentinel voor betalings- en klantprocessen.
+        - Leidde phishing-, malware- en fraudeonderzoeken en vertaalde bevindingen naar concrete maatregelen.
+        - Automatiseerde vulnerability management en verkortte de gemiddelde hersteltijd van kritieke kwetsbaarheden met 38%.
+        - Droeg bij aan GDPR- en PSD2-audits en het opstellen van securityrapportages voor het bestuur.
+      keywords:
+        - SOC
+        - Splunk
+        - Microsoft Sentinel
+        - Phishing
+        - Malwareanalyse
+        - GDPR
+    - name: Utrecht Zorgsystemen
+      url: https://www.utrechtzorgsystemen.nl
+      position: IT-beveiligingsspecialist
+      startDate: '2017-09-01'
+      endDate: '2019-05-31'
+      summary: |
+        - Beveiligde zorgapplicaties en medische netwerken volgens NEN 7510 en interne beveiligingsrichtlijnen.
+        - Implementeerde meerfactorauthenticatie, patchmanagement en netwerksegmentatie voor 3.500 werkplekken.
+        - Voerde risicoanalyses uit en ondersteunde teams bij het herstellen van geconstateerde kwetsbaarheden.
+      keywords:
+        - MFA
+        - Patchmanagement
+        - Risicoanalyse
+        - NEN 7510
+        - Firewalls
+  languages:
+    - language: Dutch
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - Moedertaal
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - TOEFL iBT 112
+        - C1
+    - language: German
+      fluency: Limited Working Proficiency
+      keywords:
+        - Goethe B1
+  skills:
+    - name: Beveiligingsarchitectuur
+      level: Expert
+      keywords:
+        - Zero Trust
+        - Netwerksegmentatie
+        - Firewalls
+        - VPN
+        - IDS/IPS
+    - name: Dreigingsdetectie
+      level: Advanced
+      keywords:
+        - SIEM
+        - Splunk
+        - Microsoft Sentinel
+        - EDR
+        - Dreigingsjacht
+    - name: Cloudbeveiliging
+      level: Advanced
+      keywords:
+        - Azure
+        - AWS
+        - IAM
+        - Kubernetes
+        - Terraform
+    - name: Compliance en Risicobeheer
+      level: Advanced
+      keywords:
+        - ISO 27001
+        - NIST CSF
+        - GDPR
+        - Risicobeoordeling
+        - Audits
+    - name: Incidentrespons
+      level: Expert
+      keywords:
+        - Incidentrespons
+        - Digitale Forensica
+        - Malwareanalyse
+        - SOAR
+        - Crisisbeheersing
+  certificates:
+    - name: Certified Information Systems Security Professional (CISSP)
+      issuer: '(ISC)²'
+      date: '2022-05-15'
+      url: https://www.isc2.org/certifications/cissp
+    - name: Azure Security Engineer Associate (AZ-500)
+      issuer: Microsoft
+      date: '2021-11-20'
+      url: https://learn.microsoft.com/en-us/certifications/azure-security-engineer/
+    - name: Certified Ethical Hacker (CEH)
+      issuer: EC-Council
+      date: '2020-03-10'
+      url: https://www.eccouncil.org/programs/certified-ethical-hacker-ceh/
+  awards:
+    - title: Prijs voor Cybersecurity-Excellentie
+      date: '2023-10-12'
+      awarder: Nederlandse Vereniging voor Cybersecurity
+      summary: |
+        Uitgereikt voor het succesvol opzetten van een organisatiebreed zero-trustprogramma en het meetbaar verlagen van het aantal kritieke security-incidenten.
+  publications:
+    - name: 'Zero Trust in de Praktijk: een blauwdruk voor middelgrote organisaties'
+      publisher: Cybersecurity Magazine NL
+      releaseDate: '2024-04-15'
+      url: https://www.cybersecuritymagazine.nl/zero-trust-praktijk
+      summary: |
+        - Beschrijft een gefaseerde aanpak voor zero-trustarchitectuur binnen middelgrote organisaties.
+        - Gaat in op identiteitsbeheer, netwerksegmentatie, detectie en het meten van securityvolwassenheid.
+  projects:
+    - name: Zero Trust Referentiearchitectuur
+      startDate: '2023-06-01'
+      endDate: '2024-02-28'
+      url: https://github.com/sannevandijk/zero-trust-blueprint
+      description: Openbare referentiearchitectuur met beleidsregels,
+        dreigingsmodellen en implementatiechecklisten voor zero trust.
+      summary: |
+        - Ontwikkelde een herbruikbare blauwdruk met identity-first principes, microsegmentatie en continue verificatie.
+        - Valideerde de architectuur in een Azure-testomgeving met automatische compliancecontroles.
+      keywords:
+        - Zero Trust
+        - Azure
+        - Microsegmentatie
+        - Compliance
+    - name: Phishingdetectieplatform
+      startDate: '2021-02-01'
+      endDate: '2021-12-31'
+      url: https://github.com/sannevandijk/phishing-detection-platform
+      description: Platform dat e-mailheaders, URL-reputatie en gebruikersmeldingen
+        combineert om phishing sneller te detecteren.
+      summary: |
+        - Verwerkte dagelijks meer dan 50.000 e-mails en reduceerde valse positieven met 27%.
+        - Integreerde automatische verrijking met dreigingsinformatie en SOAR-playbooks.
+      keywords:
+        - Phishing
+        - Dreigingsinformatie
+        - SOAR
+        - Python
+  interests:
+    - name: Duursport
+      keywords:
+        - Hardlopen
+        - Wielrennen
+        - Wandelen
+    - name: Muziek
+      keywords:
+        - Gitaar
+        - Piano
+    - name: Kennis delen
+      keywords:
+        - Meetups
+        - Mentoring
+        - Capture the Flag
+  volunteer:
+    - organization: Veilig Online Utrecht
+      url: https://www.veiligonlineutrecht.nl
+      position: Vrijwilliger Digitale Weerbaarheid
+      startDate: '2021-09-01'
+      endDate: '2024-12-31'
+      summary: |
+        - Gaf voorlichting aan ouderen en kleine ondernemers over phishing, wachtwoordbeheer en online veiligheid.
+        - Organiseerde kwartaalworkshops en stelde laagdrempelig voorlichtingsmateriaal op.
+
+locale:
+  language: nl

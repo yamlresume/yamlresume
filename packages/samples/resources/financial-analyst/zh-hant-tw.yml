@@ -1,0 +1,217 @@
+content:
+  basics:
+    name: 林冠宇
+    headline: 資深財務分析師｜企業財務、投資評價與風險分析
+    phone: "+886 912 345 678"
+    email: "kuanyu.lin@finmail.tw"
+    url: https://www.kuanyulin.finance
+    summary: |
+      - 具備 6 年以上企業財務、投資分析與預算管理經驗，熟悉三表模型、DCF 評價與情境分析。
+      - 曾協助管理層完成年度預算、滾動預測與月度經營分析，支援定價、投資與資源配置決策。
+      - 擅長以 SQL、Python 與 Power BI 自動化財務資料流程，將報表編製時間縮短並提升資料品質。
+      - 具備跨部門溝通與簡報能力，能以財務數據轉譯營運洞察，推動成本優化與績效改善。
+
+  location:
+    address: 台北市信義區松高路 88 號 12 樓
+    city: 台北市
+    region: 信義區
+    country: Taiwan
+    postalCode: "110"
+
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/kuanyu-lin-finance
+      username: kuanyu-lin-finance
+    - network: Medium
+      url: https://medium.com/@kuanyu.finance
+      username: kuanyu.finance
+
+  education:
+    - institution: 國立政治大學
+      url: https://www.nccu.edu.tw/
+      degree: Master
+      area: 財務管理學系
+      score: "3.9/4.0"
+      startDate: Sep 1, 2018
+      endDate: Jun 30, 2020
+      courses:
+        - 高等財務管理
+        - 投資學專題
+        - 財務計量方法
+        - 企業評價與併購
+        - 衍生性金融商品
+      summary: |
+        - 碩士論文聚焦企業現金流量預測與資本結構，獲指導教授推薦投稿財務管理學刊。
+        - 擔任財務計量助教，協助批改作業與帶領個案討論，培養數據分析與溝通能力。
+    - institution: 國立臺北大學
+      url: https://www.ntpu.edu.tw/
+      degree: Bachelor
+      area: 會計學系
+      score: "3.8/4.0"
+      startDate: Sep 1, 2014
+      endDate: Jun 30, 2018
+      courses:
+        - 中級會計學
+        - 成本會計
+        - 審計學
+        - 財務報表分析
+        - 稅務法規
+      summary: |
+        - 建立會計與財務報表分析基礎，熟悉 IFRS 與企業財務揭露規範。
+        - 參與校內投資研究社，負責產業研究與財務模型簡報。
+
+  work:
+    - name: 宏遠資本管理顧問股份有限公司
+      url: https://www.hongyuancapital.com.tw
+      position: 資深財務分析師
+      startDate: Mar 1, 2023
+      summary: |
+        - 負責消費與科技產業投資案之財務盡職調查、估值建模與投資備忘錄撰寫，累積評估案件金額逾新台幣 20 億元。
+        - 建立三表整合模型與敏感度分析，協助投資委員會評估成長情境、資本支出與退出報酬。
+        - 主導月度經營分析與滾動預測，追蹤營收、毛利率、現金流量與關鍵營運指標，提出改善建議。
+        - 與會計、法務及業務團隊協作，優化預算編製流程並將報表彙整時間縮短約 30%。
+      keywords:
+        - 財務建模
+        - 投資評價
+        - 盡職調查
+        - 預算管理
+        - 經營分析
+    - name: 台灣數位金融科技股份有限公司
+      url: https://www.twd-fintech.com.tw
+      position: 財務分析師
+      startDate: Jul 1, 2020
+      endDate: Feb 28, 2023
+      summary: |
+        - 編製年度預算與季度滾動預測，涵蓋損益表、資產負債表與現金流量表，支援管理層資源配置決策。
+        - 建立產品別獲利分析與客戶終身價值模型，協助定價策略與行銷預算優化。
+        - 使用 SQL 與 Power BI 建置財務儀表板，整合 ERP 與 CRM 資料，提升月度結帳分析效率。
+        - 參與融資規劃與銀行關係維護，準備授信文件、財務預測與還款能力分析。
+      keywords:
+        - 財務報表分析
+        - 現金流量預測
+        - SQL
+        - Power BI
+        - 融資規劃
+
+  skills:
+    - name: 財務分析與評價
+      level: Expert
+      keywords:
+        - 三表模型
+        - DCF 評價
+        - 情境分析
+        - 預算編製
+        - 管理層報告
+    - name: 資料分析與自動化
+      level: Advanced
+      keywords:
+        - Excel VBA
+        - SQL
+        - Python
+        - Power BI
+        - Tableau
+    - name: 風險管理與法遵
+      level: Advanced
+      keywords:
+        - 信用風險
+        - 市場風險
+        - 內部控制
+        - IFRS
+        - 法規遵循
+
+  languages:
+    - language: Chinese
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - 繁體中文
+        - 商務寫作
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - TOEIC 950
+        - 英文簡報
+        - 財務報告撰寫
+
+  awards:
+    - title: 年度卓越分析獎
+      date: Jan 2024
+      awarder: 宏遠資本管理顧問股份有限公司
+      summary: |
+        - 表彰在投資案評估、財務建模與跨部門協作上的傑出表現。
+        - 協助團隊完成年度重點投資案，提升投資委員會決策效率。
+    - title: 書卷獎
+      date: Jun 2017
+      awarder: 國立臺北大學
+      summary: |
+        - 學期成績名列系上前 5%，獲頒書卷獎。
+
+  certificates:
+    - name: 特許金融分析師（CFA）第二級通過
+      issuer: CFA 協會
+      date: Aug 2022
+      url: https://www.cfainstitute.org/programs/cfa
+    - name: 金融風險管理師（FRM）第一部分通過
+      issuer: 全球風險管理專業協會
+      date: Nov 2021
+      url: https://www.garp.org/frm
+
+  publications:
+    - name: 台灣中小企業現金流量管理與財務韌性之實證研究
+      publisher: 財務管理學刊
+      releaseDate: Dec 2020
+      url: https://www.twnfinancejournal.org/articles/2020-sme-cashflow
+      summary: |
+        - 探討中小企業現金流量管理對財務韌性與融資成本的影響。
+        - 使用台灣上市櫃與中小企業資料進行迴歸分析，提出營運資金管理建議。
+
+  projects:
+    - name: 智慧預算編製平台
+      startDate: Jan 2024
+      endDate: Nov 2024
+      url: https://www.hongyuancapital.com.tw/projects/budget-platform
+      description: 整合預算編製、版本控管與差異分析的內部平台，協助財務團隊提升預測效率與資料透明度。
+      summary: |
+        - 設計預算資料模型與權限流程，支援多部門協作與版本追蹤。
+        - 以 Power BI 建置預算執行儀表板，讓管理層即時掌握預算差異與現金流量狀況。
+        - 將人工彙整流程自動化，降低重複作業與人為錯誤。
+      keywords:
+        - 預算自動化
+        - 資料視覺化
+        - 流程改善
+    - name: 零售業信用風險儀表板
+      startDate: Mar 2022
+      endDate: Dec 2022
+      url: https://www.twd-fintech.com.tw/projects/credit-dashboard
+      description: 針對零售客戶建立信用風險監控儀表板，整合還款行為、額度使用與逾期指標。
+      summary: |
+        - 以 SQL 清理與整合客戶交易及還款資料，建立風險分群指標。
+        - 設計逾期預警規則與視覺化報表，協助風險團隊優先處理高風險帳戶。
+        - 與風險管理部門合作定義 KPI，提升監控頻率與決策反應速度。
+      keywords:
+        - 信用風險
+        - SQL
+        - 風險儀表板
+
+  interests:
+    - name: 投資研究
+      keywords:
+        - 價值投資
+        - 總體經濟
+        - 產業分析
+    - name: 戶外活動
+      keywords:
+        - 登山
+        - 馬拉松
+        - 攝影
+
+  volunteer:
+    - organization: 台灣財務分析師協會
+      url: https://www.tfaa.org.tw/
+      position: 財務教育志工
+      startDate: Sep 2021
+      summary: |
+        - 參與偏鄉金融素養課程，設計預算管理與儲蓄規劃教材。
+        - 協助協會舉辦財務分析工作坊，擔任小組討論引導與簡報講師。
+
+locale:
+  language: zh-hant-tw

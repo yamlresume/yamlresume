@@ -1,0 +1,272 @@
+content:
+  basics:
+    name: Luca Bianchi
+    headline: 'Data Engineer | Piattaforme Dati e Analytics Cloud'
+    phone: '+39 346 123 4567'
+    email: luca.bianchi.data@gmail.com
+    url: https://lucabianchi.dev
+    summary: |
+      Data Engineer con oltre 9 anni di esperienza nella progettazione e nello sviluppo di piattaforme dati scalabili su cloud.
+      Specializzato in pipeline ETL/ELT, modellazione dei dati e orchestrazione con Apache Airflow e dbt.
+      Esperienza consolidata con AWS, Snowflake e BigQuery, maturata in contesti Agile e team interfunzionali.
+      Orientato alla qualità del dato, all'automazione e al monitoraggio delle pipeline.
+      Appassionato di open source e della diffusione della cultura data-driven.
+  location:
+    address: Via Tortona 31
+    city: Milano
+    region: Lombardia
+    country: Italy
+    postalCode: "20144"
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/luca-bianchi-data
+      username: luca-bianchi-data
+    - network: GitHub
+      url: https://github.com/lucabianchi-data
+      username: lucabianchi-data
+  education:
+    - institution: Politecnico di Milano
+      url: https://www.polimi.it
+      degree: Master
+      area: Ingegneria Informatica
+      score: "110/110 e lode"
+      startDate: Sep 1, 2014
+      endDate: Jul 15, 2016
+      courses:
+        - Basi di Dati e Sistemi Informativi
+        - Ingegneria del Software
+        - Sistemi Distribuiti
+        - Machine Learning
+        - Cloud Computing
+        - Architetture dei Sistemi di Elaborazione
+        - Sicurezza dei Sistemi Informatici
+      summary: |
+        - Tesi magistrale su architetture dati distribuite per l'analisi di grandi volumi di dati
+        - Approfondimento di basi di dati relazionali e NoSQL, modellazione dimensionale e processi ETL
+        - Partecipazione a progetti di gruppo con metodologie Agile e presentazioni tecniche
+    - institution: Università degli Studi di Milano
+      url: https://www.unimi.it
+      degree: Bachelor
+      area: Ingegneria Informatica
+      score: "108/110"
+      startDate: Sep 1, 2011
+      endDate: Jul 20, 2014
+      courses:
+        - Fondamenti di Programmazione
+        - Algoritmi e Strutture Dati
+        - Basi di Dati
+        - Reti di Calcolatori
+        - Sistemi Operativi
+        - Analisi Matematica
+      summary: |
+        - Solida preparazione in programmazione, algoritmi e basi di dati
+        - Esperienza pratica con Java, Python e SQL in progetti universitari
+        - Sviluppo di competenze di analisi e problem solving
+  work:
+    - name: FintechLab Italia
+      url: https://www.fintechlabitalia.it
+      position: Data Engineer Senior
+      startDate: Jan 10, 2022
+      summary: |
+        - Progettazione e implementazione di una piattaforma dati cloud-native su AWS con Snowflake e dbt
+        - Orchestrazione di oltre 120 pipeline giornaliere con Apache Airflow, riducendo i tempi di elaborazione del 35%
+        - Definizione di standard di qualità del dato e osservabilità con Great Expectations e monitoraggio su Grafana
+        - Collaborazione con team prodotto e compliance per la modellazione di dati finanziari e reportistica regolamentare
+        - Mentoring di due data engineer junior e revisione delle pull request
+      keywords:
+        - Data Platform
+        - Apache Airflow
+        - dbt
+        - Snowflake
+        - AWS
+        - Data Quality
+    - name: Retail Analytics S.p.A.
+      url: https://www.retailanalytics.it
+      position: Data Engineer
+      startDate: Feb 1, 2019
+      endDate: Dec 31, 2021
+      summary: |
+        - Sviluppo di pipeline ETL/ELT per l'integrazione di dati da CRM, ERP e piattaforme e-commerce
+        - Modellazione di un data warehouse su Google BigQuery con viste materializzate e partizionamento
+        - Automazione dei flussi con Airflow e Python, con test automatici e deploy tramite CI/CD
+        - Ottimizzazione delle query SQL e riduzione dei costi di elaborazione del 20%
+        - Realizzazione di dashboard self-service in Looker per i team commerciale e marketing
+      keywords:
+        - ETL/ELT
+        - Google BigQuery
+        - Python
+        - Apache Airflow
+        - Looker
+        - Data Warehouse
+    - name: Consulenza Dati Milano
+      url: https://www.consulenzadatimilano.it
+      position: Business Intelligence Analyst
+      startDate: Sep 1, 2016
+      endDate: Jan 31, 2019
+      summary: |
+        - Raccolta dei requisiti e sviluppo di report e dashboard in Power BI per clienti del settore manifatturiero
+        - Scrittura di query SQL complesse su SQL Server e PostgreSQL per analisi operative e direzionali
+        - Supporto alla definizione di KPI e modelli dati con i referenti business
+        - Documentazione dei processi di reporting e formazione degli utenti finali
+      keywords:
+        - Power BI
+        - SQL Server
+        - PostgreSQL
+        - KPI
+        - Data Visualization
+  languages:
+    - language: Italian
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - Madrelingua
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - IELTS 7.5
+        - C1 Business English
+    - language: French
+      fluency: Limited Working Proficiency
+      keywords:
+        - DELF B1
+  skills:
+    - name: Data Engineering
+      level: Expert
+      keywords:
+        - Python
+        - SQL
+        - Apache Spark
+        - PySpark
+        - Apache Airflow
+        - dbt
+        - Kafka
+        - ETL/ELT
+    - name: Cloud & Data Warehouse
+      level: Advanced
+      keywords:
+        - AWS
+        - Snowflake
+        - Google BigQuery
+        - Azure
+        - PostgreSQL
+        - Docker
+        - Kubernetes
+        - Terraform
+    - name: Analytics & BI
+      level: Advanced
+      keywords:
+        - Power BI
+        - Tableau
+        - Looker
+        - Data Modeling
+        - Data Quality
+        - Data Governance
+    - name: Linguaggi e Strumenti
+      level: Advanced
+      keywords:
+        - Scala
+        - Java
+        - Bash
+        - Git
+        - Jira
+        - Confluence
+        - Agile/Scrum
+  awards:
+    - title: Premio Data Innovation
+      awarder: Data Summit Italia
+      date: Nov 2023
+      summary: |
+        Riconoscimento per il progetto di osservabilità delle pipeline dati che ha ridotto del 40% il tempo medio di risoluzione degli incidenti.
+    - title: "Miglior Progetto Dati dell'Anno"
+      awarder: Retail Analytics S.p.A.
+      date: Dec 2020
+      summary: |
+        Premio interno per la realizzazione del data warehouse su BigQuery e delle dashboard self-service per il team commerciale.
+  certificates:
+    - name: AWS Certified Data Engineer - Associate
+      issuer: Amazon Web Services
+      date: Mar 2024
+      url: https://aws.amazon.com/certification/certified-data-engineer-associate/
+    - name: Google Professional Data Engineer
+      issuer: Google Cloud
+      date: Jun 2022
+      url: https://cloud.google.com/learn/certification/data-engineer
+    - name: dbt Analytics Engineering Certification
+      issuer: dbt Labs
+      date: Sep 2023
+      url: https://www.getdbt.com/certifications/analytics-engineer/
+  publications:
+    - name: 'Pipeline dati affidabili: pattern di osservabilità per team analytics'
+      publisher: Rivista Italiana di Data Engineering
+      releaseDate: Apr 2023
+      url: https://www.ridata.it/articoli/osservabilita-pipeline-dati
+      summary: |
+        - Articolo tecnico su metriche di qualità, monitoraggio e gestione degli incidenti nelle pipeline dati
+        - Condivisione di pattern applicabili con Airflow, dbt e Great Expectations
+        - Casi pratici tratti da contesti fintech e retail
+  projects:
+    - name: Data Quality Radar
+      startDate: Jan 2023
+      endDate: Jun 2023
+      description: Framework open source per il monitoraggio della qualità dei dati
+        nelle pipeline Airflow.
+      url: https://github.com/lucabianchi-data/data-quality-radar
+      summary: |
+        - Progettazione di controlli di qualità riutilizzabili per tabelle Snowflake e BigQuery
+        - Integrazione con Airflow per l'esecuzione schedulata e la notifica degli alert
+        - Documentazione e rilascio su PyPI con oltre 300 download mensili
+      keywords:
+        - Data Quality
+        - Great Expectations
+        - Apache Airflow
+        - Python
+    - name: Self-Service Analytics Hub
+      startDate: Mar 2021
+      endDate: Nov 2022
+      description: Piattaforma interna per l'accesso governato ai dati e la creazione
+        di dashboard self-service.
+      url: https://github.com/lucabianchi-data/analytics-hub
+      summary: |
+        - Modellazione di dataset certificati in dbt e Snowflake per i team business
+        - Definizione di ruoli e permessi per l'accesso ai dati sensibili
+        - Formazione di oltre 60 utenti su Looker e sulle best practice di analytics
+      keywords:
+        - Analytics
+        - Looker
+        - Snowflake
+        - dbt
+  interests:
+    - name: Open Source
+      keywords:
+        - Apache Airflow
+        - dbt
+        - Great Expectations
+    - name: Sport
+      keywords:
+        - Ciclismo
+        - Nuoto
+        - Trekking
+    - name: Fotografia
+      keywords:
+        - Paesaggio
+        - Street photography
+  volunteer:
+    - organization: Women in Tech Italia
+      url: https://www.womenintechitalia.it
+      position: Mentore Data Engineering
+      startDate: Sep 1, 2021
+      summary: |
+        - Mentoring per donne che intraprendono percorsi di carriera nel data engineering
+        - Supporto nella preparazione di colloqui tecnici e nella definizione di piani di crescita
+        - Partecipazione a incontri di community e workshop su SQL e pipeline dati
+    - organization: Data Science Milano
+      url: https://www.datasciencemilano.it
+      position: Volontario e speaker
+      startDate: Jan 1, 2020
+      endDate: Dec 31, 2023
+      summary: |
+        - Organizzazione di meetup mensili su data engineering, analytics e machine learning
+        - Interventi su orchestrazione di pipeline e data quality
+        - Coordinamento di volontari e relazioni con speaker e sponsor
+
+locale:
+  language: it

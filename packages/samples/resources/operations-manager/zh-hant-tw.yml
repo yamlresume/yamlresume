@@ -1,0 +1,250 @@
+content:
+  basics:
+    name: 林雅婷
+    headline: 營運經理｜跨部門流程優化與供應鏈管理
+    phone: '+886 2 8765 4321'
+    email: yating.lin@example.com
+    url: https://yatinglin-ops.tw
+    summary: |
+      - 8 年以上零售與電商營運管理經驗，擅長從數據中找出流程瓶頸並推動跨部門改善。
+      - 曾帶領 30 人以上營運團隊，負責門市、倉儲、客服與物流的日常管理與關鍵指標達成。
+      - 熟悉預算規劃、供應鏈協調、標準作業流程建置與專案管理，能在快速變動環境中穩定交付成果。
+      - 具備良好溝通與問題解決能力，致力於提升客戶滿意度與營運效率。
+
+  location:
+    address: 台北市信義區松高路 88 號 12 樓
+    city: 台北市
+    region: 信義區
+    country: Taiwan
+    postalCode: "110"
+
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/yatinglin-ops
+      username: yatinglin-ops
+    - network: Medium
+      url: https://medium.com/@yatinglin-ops
+      username: yatinglin-ops
+
+  education:
+    - institution: 國立臺灣大學
+      url: https://www.ntu.edu.tw/
+      degree: Master
+      area: 企業管理研究所
+      score: '3.9/4.0'
+      startDate: '2012-09-01'
+      endDate: '2014-06-30'
+      courses:
+        - 營運管理
+        - 供應鏈管理
+        - 資料分析與決策
+        - 專案管理
+        - 財務管理
+      summary: |
+        - 專注於營運策略、供應鏈協調與數據驅動決策，完成多項企業實務專案。
+        - 擔任管理學院個案研究助教，協助整理零售與服務業營運案例。
+        - 畢業論文探討零售通路存貨管理與門市績效之關聯。
+    - institution: 國立政治大學
+      url: https://www.nccu.edu.tw/
+      degree: Bachelor
+      area: 國際經營與貿易學系
+      score: '3.7/4.0'
+      startDate: '2008-09-01'
+      endDate: '2012-06-30'
+      courses:
+        - 國際企業管理
+        - 行銷管理
+        - 統計學
+        - 作業管理
+        - 經濟學
+      summary: |
+        - 建立國際企業、行銷與作業管理基礎，並選修供應鏈相關課程。
+        - 參與商業個案競賽，負責營運流程與成本結構分析。
+        - 透過團隊專案培養跨領域溝通與簡報能力。
+
+  work:
+    - name: 誠品生活股份有限公司
+      url: https://www.eslite.com/
+      position: 營運經理
+      startDate: '2021-03-01'
+      summary: |
+        - 負責全台 12 間門市與電商倉儲的營運管理，帶領 35 人團隊，年度營業額約新台幣 8 億元。
+        - 建立門市營運儀表板與每日關鍵指標檢視機制，將缺貨率降低 18%，訂單準時出貨率提升至 97%。
+        - 主導跨部門流程改善專案，整合採購、物流與客服作業，縮短新品上架時間 25%。
+        - 規劃年度營運預算與人力配置，控制人事與物流成本，連續兩年達成部門獲利目標。
+      keywords:
+        - 零售營運
+        - 供應鏈管理
+        - 關鍵指標管理
+        - 流程改善
+        - 預算規劃
+    - name: 富邦媒體科技股份有限公司
+      url: https://www.momoshop.com.tw/
+      position: 營運副理
+      startDate: '2017-07-01'
+      endDate: '2021-02-28'
+      summary: |
+        - 管理電商倉儲與配送作業，協調第三方物流夥伴，處理每日超過 5,000 筆訂單。
+        - 導入標準作業流程與教育訓練制度，降低新人上手時間 30%，提升包裝與出貨準確率。
+        - 分析客訴與退換貨數據，推動包裝與配送流程優化，使客訴率下降 22%。
+        - 與行銷、採購及客服團隊協作，支援雙 11、週年慶等大型促銷活動的營運準備。
+      keywords:
+        - 電商營運
+        - 物流管理
+        - 標準作業流程
+        - 客訴分析
+        - 活動支援
+    - name: 統一超商股份有限公司
+      url: https://www.7-11.com.tw/
+      position: 門市營運督導
+      startDate: '2014-08-01'
+      endDate: '2017-06-30'
+      summary: |
+        - 督導大台北地區 18 間門市，協助店長達成營業額、毛利與服務品質指標。
+        - 執行門市稽核與輔導，改善商品陳列、庫存盤點與食品安全作業。
+        - 規劃區域教育訓練與招募活動，提升門市人員留任率與服務標準一致性。
+      keywords:
+        - 門市管理
+        - 營運督導
+        - 庫存管理
+        - 教育訓練
+        - 食品安全
+
+  skills:
+    - name: 營運管理
+      level: Expert
+      keywords:
+        - 流程改善
+        - 關鍵指標設定
+        - 標準作業流程
+        - 預算規劃
+        - 績效管理
+    - name: 供應鏈與物流
+      level: Advanced
+      keywords:
+        - 供應鏈協調
+        - 倉儲管理
+        - 物流配送
+        - 庫存控管
+        - 第三方物流管理
+    - name: 數據分析
+      level: Advanced
+      keywords:
+        - 試算表分析
+        - 商業智慧儀表板
+        - 資料庫查詢
+        - 營運報表
+        - 數據洞察
+    - name: 專案與跨部門協作
+      level: Advanced
+      keywords:
+        - 專案管理
+        - 跨部門溝通
+        - 變革管理
+        - 風險控管
+        - 敏捷思維
+    - name: 顧客服務
+      level: Advanced
+      keywords:
+        - 客訴處理
+        - 服務流程設計
+        - 滿意度調查
+        - 客戶關係管理
+        - 教育訓練
+
+  languages:
+    - language: Chinese
+      fluency: Native or Bilingual Proficiency
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - 多益 950 分
+        - 商業簡報
+    - language: Japanese
+      fluency: Limited Working Proficiency
+      keywords:
+        - 日文檢定 N2
+
+  awards:
+    - title: 年度卓越營運獎
+      date: '2023-12-15'
+      awarder: 誠品生活股份有限公司
+      summary: 表彰在門市營運效率與跨部門流程改善上的卓越貢獻，帶領團隊達成年度關鍵指標目標。
+    - title: 最佳流程改善提案獎
+      date: '2019-11-20'
+      awarder: 富邦媒體科技股份有限公司
+      summary: 針對倉儲出貨流程提出改善方案，降低出貨錯誤率並提升作業效率。
+
+  certificates:
+    - name: 國際專案管理師認證
+      issuer: 國際專案管理學會
+      date: '2020-08-15'
+      url: https://www.pmi.org/certifications/project-management-pmp
+    - name: 精實六標準差綠帶認證
+      issuer: 中華民國品質學會
+      date: '2018-05-10'
+      url: https://www.csq.org.tw/
+
+  publications:
+    - name: 零售門市營運指標化管理實務
+      publisher: 經理人月刊
+      releaseDate: '2023-06-01'
+      url: https://www.managertoday.com.tw/
+      summary: |
+        - 分享如何透過關鍵指標與每日檢視機制，提升門市營運透明度與問題反應速度。
+        - 以零售與電商案例說明跨部門流程改善的推動方法與常見挑戰。
+
+  projects:
+    - name: 門市營運數位儀表板
+      url: https://yatinglin-ops.tw/projects/ops-dashboard
+      description: 整合門市銷售、庫存與客訴資料的營運管理儀表板。
+      startDate: '2022-01-10'
+      endDate: '2022-09-30'
+      summary: |
+        - 與資訊及資料團隊合作，定義營運關鍵指標與資料來源。
+        - 建立每日自動更新機制，讓門市主管即時掌握來客數、客單價與缺貨率。
+        - 上線後協助區域主管每週進行數據檢討，提升營運問題的反應速度。
+      keywords:
+        - 營運儀表板
+        - 數據視覺化
+        - 關鍵指標管理
+        - 零售分析
+    - name: 電商倉儲出貨流程優化
+      url: https://yatinglin-ops.tw/projects/warehouse-flow
+      description: 針對促銷期間出貨瓶頸進行流程重設與人力調度優化。
+      startDate: '2019-03-01'
+      endDate: '2019-12-31'
+      summary: |
+        - 分析訂單波動與揀貨動線，重新規劃尖峰時段的人力配置。
+        - 建立出貨檢查清單與異常回報機制，降低出貨錯誤率。
+        - 與物流夥伴協調配送時段，提升促銷期間訂單準時出貨比例。
+      keywords:
+        - 電商營運
+        - 倉儲流程
+        - 人力調度
+        - 物流協調
+
+  interests:
+    - name: 專業社群
+      keywords:
+        - 零售營運
+        - 供應鏈管理
+        - 數據分析
+    - name: 個人興趣
+      keywords:
+        - 登山
+        - 閱讀
+        - 攝影
+        - 馬拉松
+
+  volunteer:
+    - organization: 台灣連鎖暨加盟協會
+      url: https://www.tcfa.org.tw/
+      position: 營運管理志工講師
+      startDate: '2021-03-01'
+      summary: |
+        - 參與中小企業營運診斷志工服務，協助在地店家建立營運指標與庫存管理流程。
+        - 定期分享門市管理、客訴處理與流程改善實務，協助學員提升營運管理能力。
+
+locale:
+  language: zh-hant-tw

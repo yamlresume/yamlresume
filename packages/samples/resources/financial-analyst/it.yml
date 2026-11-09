@@ -1,0 +1,209 @@
+content:
+  basics:
+    name: Marco Bianchi
+    headline: Analista Finanziario Senior
+    phone: "+39 345 678 9012"
+    email: marco.bianchi@finanza.it
+    url: https://www.marcobianchi.it
+    summary: |
+      - Analista finanziario con oltre 7 anni di esperienza nella valutazione d'azienda, modellizzazione finanziaria e analisi di bilancio.
+      - Specializzato in settore bancario e assicurativo, con una solida conoscenza degli standard IFRS e dei mercati finanziari.
+      - Esperto nell'uso di Excel, VBA, Python e SQL per l'analisi dati e l'automazione di processi di reporting.
+      - Capacità di comunicare efficacemente risultati complessi a stakeholder senior e team cross-funzionali.
+  location:
+    address: Via della Moscova, 18
+    city: Milano
+    region: Lombardia
+    country: Italy
+    postalCode: "20121"
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/marcobianchi
+      username: marcobianchi
+  education:
+    - institution: Università Commerciale Luigi Bocconi
+      url: https://www.unibocconi.it
+      degree: Master
+      area: Finanza
+      score: "110/110 con lode"
+      startDate: Sep 1, 2014
+      endDate: Jul 1, 2016
+      courses:
+        - Finanza Aziendale
+        - Mercati e Strumenti Finanziari
+        - Analisi degli Investimenti
+        - Risk Management
+        - Economia dei Mercati Mobiliari
+        - Bilancio e Analisi di Bilancio
+        - Finanza Internazionale
+        - Metodi Quantitativi per la Finanza
+      summary: |
+        - Approfondita conoscenza della teoria finanziaria e delle applicazioni pratiche.
+        - Sviluppo di competenze analitiche attraverso progetti di gruppo e casi di studio reali.
+        - Partecipazione a competizioni di finanza e seminari con professionisti del settore.
+  work:
+    - name: Banca Intesa Sanpaolo
+      url: https://www.intesasanpaolo.com
+      position: Analista Finanziario Senior
+      startDate: Jan 1, 2021
+      summary: |
+        - Responsabile della modellizzazione finanziaria per operazioni di M&A e valutazioni strategiche.
+        - Coordinamento di un team di 3 analisti junior nella preparazione di report per il Consiglio di Amministrazione.
+        - Sviluppo di modelli DCF e analisi di comparabili per aziende del settore bancario e assicurativo.
+        - Automazione dei processi di reporting mensile tramite Python e SQL, riducendo i tempi del 40%.
+      keywords:
+        - M&A
+        - Modelli DCF
+        - Analisi comparabili
+        - Reporting
+        - Python
+    - name: Generali Assicurazioni
+      url: https://www.generali.com
+      position: Analista Finanziario
+      startDate: Sep 1, 2018
+      endDate: Dec 31, 2020
+      summary: |
+        - Analisi di bilancio e monitoraggio dei KPI finanziari per il segmento assicurativo.
+        - Preparazione di previsioni finanziarie e scenari di stress test per il risk management.
+        - Collaborazione con il team di controllo di gestione per l'ottimizzazione dei costi.
+        - Redazione di report trimestrali per il top management e gli investitori.
+      keywords:
+        - Analisi di bilancio
+        - KPI
+        - Previsioni
+        - Stress test
+        - IFRS
+    - name: Deloitte Italia
+      url: https://www2.deloitte.com/it/it.html
+      position: Analista Finanziario Junior
+      startDate: Sep 1, 2016
+      endDate: Aug 31, 2018
+      summary: |
+        - Supporto a progetti di due diligence finanziaria per acquisizioni nel settore industriale.
+        - Costruzione di modelli finanziari e analisi di sensitività per valutazioni d'azienda.
+        - Preparazione di presentazioni e report per clienti e team interni.
+        - Utilizzo avanzato di Excel e PowerPoint per l'analisi e la comunicazione dei risultati.
+      keywords:
+        - Due diligence
+        - Valutazione
+        - Excel
+        - PowerPoint
+        - Analisi di sensitività
+  skills:
+    - name: Modellizzazione Finanziaria
+      level: Expert
+      keywords:
+        - Excel
+        - VBA
+        - Python
+        - SQL
+        - Power BI
+    - name: Analisi di Bilancio
+      level: Advanced
+      keywords:
+        - IFRS
+        - Contabilità
+        - KPI
+        - Rendicontazione
+    - name: Valutazione d'Azienda
+      level: Advanced
+      keywords:
+        - DCF
+        - Comparabili
+        - M&A
+        - LBO
+    - name: Gestione del Rischio
+      level: Intermediate
+      keywords:
+        - VaR
+        - Stress test
+        - Basilea III
+        - Risk management
+    - name: Strumenti Software
+      level: Advanced
+      keywords:
+        - Bloomberg
+        - Reuters
+        - SAP
+        - Tableau
+  languages:
+    - language: Italian
+      fluency: Native or Bilingual Proficiency
+      keywords: []
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - IELTS 8.0
+        - Business English
+    - language: French
+      fluency: Limited Working Proficiency
+      keywords:
+        - DELF B2
+  awards:
+    - title: Premio Eccellenza Accademica
+      date: Jul 2016
+      awarder: Università Bocconi
+      summary: |
+        Riconoscimento per il miglior rendimento accademico del corso di laurea magistrale in Finanza.
+    - title: Top Performer dell'anno
+      date: Dec 2022
+      awarder: Banca Intesa Sanpaolo
+      summary: |
+        Premio assegnato per il contributo eccezionale al progetto di analisi finanziaria strategica.
+  certificates:
+    - name: CFA Livello I
+      issuer: CFA Institute
+      date: Jun 2019
+      url: https://www.cfainstitute.org
+    - name: Financial Modeling & Valuation Analyst (FMVA)
+      issuer: Corporate Finance Institute
+      date: Mar 2020
+      url: https://corporatefinanceinstitute.com
+  publications:
+    - name: L'impatto della digitalizzazione sul settore bancario italiano
+      publisher: Rivista di Finanza
+      releaseDate: Nov 2021
+      url: https://www.rivistadifinanza.it/articolo
+      summary: |
+        Analisi delle trasformazioni digitali e dei nuovi modelli di business nel settore bancario.
+  projects:
+    - name: Analisi di valutazione per acquisizione
+      description: Progetto di valutazione di un'azienda target nel settore energetico
+      startDate: Jan 2022
+      endDate: Apr 2022
+      summary: |
+        - Costruzione di un modello DCF, analisi comparabili e redazione di un report per il management.
+        - Presentazione dei risultati al comitato investimenti.
+      keywords:
+        - DCF
+        - M&A
+        - Energia
+      url: https://www.marcobianchi.it/progetti/valutazione-energia
+  interests:
+    - name: Investimenti
+      keywords:
+        - Azioni
+        - Obbligazioni
+        - ETF
+    - name: Lettura
+      keywords:
+        - Economia
+        - Storia
+        - Biografie
+    - name: Sport
+      keywords:
+        - Tennis
+        - Corsa
+        - Sci
+  volunteer:
+    - organization: Insegnanti per l'Italia
+      url: https://www.insegnantiperitalia.it
+      position: Volontario
+      startDate: Sep 2019
+      endDate: Jun 2020
+      summary: |
+        - Insegnamento di educazione finanziaria a studenti delle scuole superiori.
+        - Sviluppo di materiali didattici interattivi per la comprensione dei concetti base di finanza.
+
+locale:
+  language: it
