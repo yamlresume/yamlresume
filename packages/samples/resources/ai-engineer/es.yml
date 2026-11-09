@@ -1,0 +1,249 @@
+content:
+  basics:
+    name: Alejandro Vega Moreno
+    headline: Ingeniero de IA especializado en visión por computador, NLP y MLOps
+    phone: "+34 612 345 678"
+    email: alejandro.vega.moreno@gmail.com
+    url: https://alejandrovega.dev
+    summary: |
+      Ingeniero de IA con más de 6 años de experiencia diseñando, desplegando y monitorizando sistemas de aprendizaje automático en producción. Especializado en visión por computador, procesamiento de lenguaje natural y MLOps, con impacto medible en eficiencia operativa y experiencias de cliente.
+
+      - Lideré el ciclo completo de modelos de IA, desde la exploración de datos hasta el despliegue en cloud y la monitorización continua.
+      - Experiencia con Python, PyTorch, TensorFlow, Kubernetes y plataformas de datos en AWS y Azure.
+      - Colaborador técnico y mentor, con comunicación clara entre equipos de negocio, producto e ingeniería.
+  location:
+    address: Calle de Serrano 45, 4º B
+    city: Madrid
+    region: Comunidad de Madrid
+    country: Spain
+    postalCode: "28001"
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/alejandrovega-ai
+      username: alejandrovega-ai
+    - network: GitHub
+      url: https://github.com/alejandrovega-ai
+      username: alejandrovega-ai
+    - network: Stack Overflow
+      url: https://stackoverflow.com/users/1234567/alejandro-vega
+      username: alejandro-vega
+  education:
+    - institution: Universidad Politécnica de Madrid
+      url: https://www.upm.es
+      degree: Master
+      area: Inteligencia Artificial
+      score: "9,2/10"
+      startDate: '2017-09-01'
+      endDate: '2019-07-01'
+      courses:
+        - Aprendizaje Automático Avanzado
+        - Visión por Computador
+        - Procesamiento de Lenguaje Natural
+        - Sistemas de Recomendación
+        - Computación Distribuida
+        - Ética y Gobernanza de la IA
+      summary: |
+        - Formación orientada a la investigación aplicada y al desarrollo de sistemas inteligentes en entornos reales.
+        - Trabajo final centrado en detección de anomalías con modelos híbridos y despliegue en cloud.
+    - institution: Universidad de Sevilla
+      url: https://www.us.es
+      degree: Bachelor
+      area: Ingeniería Informática
+      score: "8,7/10"
+      startDate: '2013-09-01'
+      endDate: '2017-06-30'
+      courses:
+        - Algoritmos y Estructuras de Datos
+        - Bases de Datos
+        - Ingeniería del Software
+        - Estadística
+        - Sistemas Operativos
+        - Redes de Computadores
+      summary: |
+        - Base sólida en programación, bases de datos, estadística y desarrollo de software.
+        - Participación en proyectos académicos de análisis de datos y automatización de procesos.
+  work:
+    - name: Nexo IA Labs
+      url: https://www.nexoia.es
+      position: Ingeniero de IA Senior
+      startDate: '2022-03-01'
+      summary: |
+        - Diseñé y desplegué modelos de visión por computador y NLP para productos de análisis documental y atención al cliente.
+        - Lideré la implantación de pipelines MLOps con MLflow, Docker y Kubernetes, reduciendo el tiempo de puesta en producción de modelos en un 40%.
+        - Definí métricas de calidad, deriva de datos y monitorización de modelos, mejorando la fiabilidad de los sistemas en producción.
+        - Colaboré con producto y negocio para priorizar casos de uso de IA según impacto y viabilidad técnica.
+        - Mentoricé a ingenieros junior y promoví buenas prácticas de experimentación, revisión de código y documentación.
+      keywords:
+        - Visión por computador
+        - MLOps
+        - PyTorch
+        - AWS
+        - Liderazgo técnico
+    - name: DataMente Soluciones
+      url: https://www.datamente.es
+      position: Ingeniero de Aprendizaje Automático
+      startDate: '2019-09-01'
+      endDate: '2022-02-28'
+      summary: |
+        - Desarrollé modelos predictivos para segmentación de clientes, previsión de demanda y detección de fraude.
+        - Construí APIs con FastAPI y servicios de inferencia escalables sobre AWS, integrados con plataformas internas de datos.
+        - Automaticé procesos de entrenamiento y validación con Airflow, reduciendo tareas manuales repetitivas.
+        - Realicé análisis exploratorios y presentaciones ejecutivas para equipos no técnicos, traduciendo resultados en decisiones de negocio.
+      keywords:
+        - Machine Learning
+        - FastAPI
+        - AWS
+        - Airflow
+        - Analítica predictiva
+  languages:
+    - language: Spanish
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - Nativo
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - TOEIC 940
+        - C1 acreditado
+    - language: Catalan
+      fluency: Full Professional Proficiency
+      keywords:
+        - Nivel C2
+        - Uso profesional
+  skills:
+    - name: Aprendizaje automático
+      level: Expert
+      keywords:
+        - Python
+        - PyTorch
+        - TensorFlow
+        - scikit-learn
+        - XGBoost
+    - name: Procesamiento de lenguaje
+      level: Advanced
+      keywords:
+        - Transformers
+        - BERT
+        - LLMs
+        - spaCy
+        - RAG
+    - name: Visión por computador
+      level: Advanced
+      keywords:
+        - OpenCV
+        - YOLO
+        - Segmentación
+        - CNN
+        - TensorRT
+    - name: MLOps e infraestructura
+      level: Advanced
+      keywords:
+        - Docker
+        - Kubernetes
+        - MLflow
+        - Airflow
+        - CI/CD
+    - name: Datos y cloud
+      level: Advanced
+      keywords:
+        - AWS SageMaker
+        - Azure ML
+        - Spark
+        - SQL
+        - Snowflake
+    - name: Desarrollo de software
+      level: Advanced
+      keywords:
+        - Python
+        - FastAPI
+        - Git
+        - 'C++'
+        - Pruebas unitarias
+  awards:
+    - title: Premio a la Innovación en IA
+      date: '2024-05-16'
+      awarder: Nexo IA Labs
+      summary: |
+        Reconocimiento interno por el diseño de un sistema de visión artificial que redujo los errores de clasificación documental en un 35%.
+    - title: Mejor proyecto de fin de máster
+      date: '2019-07-10'
+      awarder: Universidad Politécnica de Madrid
+      summary: |
+        Galardón al proyecto de detección temprana de anomalías en series temporales mediante modelos híbridos y despliegue en cloud.
+  certificates:
+    - name: AWS Certified Machine Learning - Specialty
+      issuer: Amazon Web Services
+      date: '2023-04-12'
+      url: https://aws.amazon.com/certification/certified-machine-learning-specialty/
+    - name: Professional Scrum Master I
+      issuer: Scrum.org
+      date: '2021-11-03'
+      url: https://www.scrum.org/professional-scrum-certifications/professional-scrum-master-i-certification
+  publications:
+    - name: Detección temprana de anomalías en series temporales con modelos híbridos
+      publisher: Revista Iberoamericana de Inteligencia Artificial
+      releaseDate: '2022-10-01'
+      url: https://revista.iberoai.org/articulos/deteccion-anomalias-series-temporales
+      summary: |
+        - Propone una combinación de modelos estadísticos y redes neuronales para detectar anomalías en datos industriales.
+        - Evalúa el enfoque en conjuntos de datos reales y analiza su robustez ante ruido y cambios de distribución.
+  projects:
+    - name: Asistente clínico con RAG
+      url: https://github.com/alejandrovega-ai/asistente-clinico-rag
+      description: Asistente conversacional para consultas sobre documentación clínica
+        mediante recuperación aumentada.
+      startDate: '2023-02-01'
+      endDate: '2023-11-30'
+      summary: |
+        - Implementé un pipeline de ingestión, indexación vectorial y recuperación de documentos médicos.
+        - Añadí evaluación de respuestas y trazas para reducir alucinaciones y mejorar la trazabilidad.
+        - Desplegué el servicio con FastAPI, Docker y una base vectorial gestionada en cloud.
+      keywords:
+        - RAG
+        - LLMs
+        - FastAPI
+        - Búsqueda vectorial
+    - name: Visión artificial para control de calidad
+      url: https://github.com/alejandrovega-ai/vision-calidad
+      description: Sistema de inspección visual automática para detectar defectos en
+        línea de producción.
+      startDate: '2021-05-01'
+      endDate: '2022-01-31'
+      summary: |
+        - Entrené modelos de detección y segmentación con imágenes industriales etiquetadas por expertos.
+        - Optimicé la inferencia con TensorRT para cumplir requisitos de latencia en planta.
+        - Diseñé un panel de revisión humana para validar casos ambiguos y retroalimentar el modelo.
+      keywords:
+        - Visión por computador
+        - YOLO
+        - TensorRT
+        - Control de calidad
+  interests:
+    - name: Deporte
+      keywords:
+        - Escalada
+        - Ciclismo
+        - Senderismo
+    - name: Música
+      keywords:
+        - Guitarra
+        - Jazz
+        - Producción musical
+    - name: Divulgación tecnológica
+      keywords:
+        - Meetups
+        - Mentoría
+        - Artículos técnicos
+  volunteer:
+    - organization: Comunidad IA España
+      url: https://www.comunidadia.es
+      position: Mentor y ponente
+      startDate: '2021-01-01'
+      endDate: '2024-12-31'
+      summary: |
+        - Mentoricé a profesionales en transición hacia roles de IA y aprendizaje automático.
+        - Impartí charlas sobre MLOps, evaluación de modelos y despliegue responsable de IA.
+        - Colaboré en la organización de encuentros técnicos y talleres prácticos para la comunidad.
+
+locale:
+  language: es

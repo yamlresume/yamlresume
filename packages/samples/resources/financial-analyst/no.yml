@@ -1,0 +1,250 @@
+content:
+  basics:
+    name: Kristoffer A. Løken
+    headline: Senior finansanalytiker med fokus på verdsettelse, risiko og
+      kapitalmarkeder
+    phone: "+47 912 34 567"
+    email: kristoffer.loken@fjordkapital.no
+    url: https://www.kristofferloken.no
+    summary: |
+      - Finansanalytiker med mastergrad i finansiell økonomi og flere års erfaring fra bank og kapitalforvaltning
+      - Sterk kompetanse i verdsettelse, kredittanalyse, makroøkonomi og risikostyring
+      - Erfaren med å bygge modeller og automatiserte rapporter i Excel, SQL, Python og Power BI
+      - Opptatt av å omsette analyse til tydelige anbefalinger for beslutningstakere
+  location:
+    address: Storgata 45
+    city: Oslo
+    region: Oslo
+    country: Norway
+    postalCode: "0182"
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/kristoffer-loken
+      username: kristoffer-loken
+    - network: GitHub
+      url: https://github.com/kloken-finance
+      username: kloken-finance
+  education:
+    - institution: Norges Handelshøyskole
+      url: https://www.nhh.no
+      degree: Master
+      area: Finansiell økonomi
+      score: "3,9/4,0"
+      startDate: Aug 15, 2015
+      endDate: Jun 20, 2017
+      courses:
+        - Selskapsfinans
+        - Verdsettelse og investeringsanalyse
+        - Risikostyring og derivater
+        - Regnskapsanalyse
+        - Makroøkonomi
+        - Porteføljeteori
+        - Kvantitative metoder
+        - ESG og bærekraftig finans
+      summary: |
+        - Fordypning i verdsettelse, kapitalmarkeder og kvantitativ analyse
+        - Masteroppgave om kredittrisiko i nordiske obligasjonsfond
+        - Gjennomsnittskarakter 3,9 av 4,0
+    - institution: Universitetet i Oslo
+      url: https://www.uio.no
+      degree: Bachelor
+      area: Samfunnsøkonomi
+      score: "3,7/4,0"
+      startDate: Aug 12, 2012
+      endDate: Jun 15, 2015
+      courses:
+        - Mikroøkonomi
+        - Makroøkonomi
+        - Statistikk
+        - Økonometri
+        - Finansmarkeder
+        - Regnskap og budsjettering
+      summary: |
+        - Grunnleggende fordypning i samfunnsøkonomi og statistikk
+        - Prosjektoppgave om renteutvikling og boligmarkedet i Norge
+  work:
+    - name: Fjordkapital Forvaltning
+      url: https://www.fjordkapital.no
+      position: Senior finansanalytiker
+      startDate: Jan 10, 2021
+      summary: |
+        - Ansvarlig for verdsettelsesmodeller (DCF, DDM) for nordiske aksjer og obligasjoner
+        - Utarbeider kvartalsvise investeringsanbefalinger til porteføljeforvaltere og risikokomité
+        - Bygger automatiserte rapporter i Power BI og Python som reduserer manuell rapportering med 30 %
+        - Overvåker makro-, rente- og kredittmarkeder og bidrar i ESG-analyse
+        - Mentorerer to junioranalytikere og kvalitetssikrer modeller og investeringsnotater
+      keywords:
+        - Verdsettelse
+        - DCF
+        - ESG
+        - Porteføljestyring
+        - Power BI
+        - Risikoanalyse
+    - name: Nordlys Bank
+      url: https://www.nordlysbank.no
+      position: Finansanalytiker
+      startDate: Sep 1, 2017
+      endDate: Dec 31, 2020
+      summary: |
+        - Analyserte kredittporteføljer og laget månedlige risikorapporter til ledelsen
+        - Utviklet stresscenarier og makroøkonomiske prognoser for kapitalplanlegging
+        - Forbedret datakvalitet i SQL-baserte rapporteringsløsninger
+        - Presenterte funn for kredittkomité og bidro til beslutningsgrunnlag
+      keywords:
+        - Kredittanalyse
+        - Stresscenarier
+        - SQL
+        - Rapportutvikling
+        - Kapitalplanlegging
+    - name: Oslo Analytics Partners
+      url: https://www.osloanalytics.no
+      position: Sommeranalytiker
+      startDate: Jun 1, 2016
+      endDate: Aug 15, 2016
+      summary: |
+        - Bygget markedspaneler og scenarioanalyser for energisektoren
+        - Støttet senioranalytikere med datainnsamling og kvalitetssikring
+        - Laget Excel-modeller for kostnads- og inntektsprognoser
+      keywords:
+        - Excel
+        - Markedsanalyse
+        - Energi
+        - Modellering
+  languages:
+    - language: Norwegian
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - Morsmål
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - C1
+        - Forretningsengelsk
+    - language: German
+      fluency: Limited Working Proficiency
+      keywords:
+        - A2
+        - Grunnleggende
+  skills:
+    - name: Finansiell modellering
+      level: Expert
+      keywords:
+        - DCF
+        - DDM
+        - LBO
+        - Scenarioanalyse
+        - Excel
+        - VBA
+    - name: Dataanalyse og visualisering
+      level: Advanced
+      keywords:
+        - SQL
+        - Python
+        - Pandas
+        - Power BI
+        - Tableau
+        - R
+    - name: Risiko og kapitalstyring
+      level: Advanced
+      keywords:
+        - Kredittrisiko
+        - Markedsrisiko
+        - Stresscenarier
+        - Basel III
+        - ICAAP
+    - name: Investeringsanalyse
+      level: Advanced
+      keywords:
+        - Aksjeanalyse
+        - Obligasjoner
+        - Makroøkonomi
+        - Porteføljeteori
+        - ESG
+    - name: Kommunikasjon og rådgivning
+      level: Expert
+      keywords:
+        - Investeringsnotater
+        - Presentasjoner
+        - Interessentstyring
+        - Mentoring
+  awards:
+    - title: Årets analytiker
+      date: Dec 2023
+      awarder: Fjordkapital Forvaltning
+      summary: |
+        Tildelt for fremragende analysearbeid og bidrag til forbedret investeringsprosess i nordiske aksjer.
+    - title: Beste masteroppgave i finansiell økonomi
+      date: Jun 2017
+      awarder: Norges Handelshøyskole
+      summary: |
+        Pris for masteroppgave om kredittrisiko og likviditet i nordiske obligasjonsfond.
+  certificates:
+    - name: CFA nivå II
+      issuer: CFA Institute
+      date: Aug 2020
+      url: https://www.cfainstitute.org/programs/cfa
+    - name: 'FMVA – finansiell modellering og verdsettelse'
+      issuer: Corporate Finance Institute
+      date: Mar 2019
+      url: https://corporatefinanceinstitute.com/certifications/fmva/
+  publications:
+    - name: Kredittrisiko i nordiske obligasjonsfond
+      publisher: Nordisk tidsskrift for finans
+      releaseDate: Nov 2018
+      url: https://www.nordiskfinans.no/artikler/kredittrisiko-i-nordiske-obligasjonsfond
+      summary: |
+        - Analyserer hvordan likviditet og kredittspreader påvirker avkastning i nordiske obligasjonsfond
+        - Funn tyder på at stresstester bør inkludere likviditetspremier i større grad
+  projects:
+    - name: ESG-risikomodell for nordiske aksjer
+      url: https://www.fjordkapital.no/innsikt/esg-risikomodell
+      description: Modell for å integrere ESG-indikatorer i verdsettelse og risikovurdering
+      startDate: Jan 2022
+      endDate: Oct 2023
+      summary: |
+        - Utviklet scoringsrammeverk for klimarisiko, styring og sosiale forhold
+        - Integrerte modellen i kvartalsvis investeringsprosess
+        - Presenterte resultater for investeringskomité og kunder
+      keywords:
+        - ESG
+        - Klimarisiko
+        - Verdsettelse
+        - Power BI
+    - name: Automatisert månedsrapport for kredittportefølje
+      url: https://www.nordlysbank.no/om-oss/rapportering
+      description: Python-basert rapportløsning som samler kredittdata og nøkkeltall
+      startDate: Feb 2019
+      endDate: Nov 2020
+      summary: |
+        - Reduserte manuell rapporttid fra tre dager til fire timer
+        - Sikret konsistent datakvalitet og sporbarhet i rapporteringen
+        - Bygget dashboards for ledelsen i Power BI
+      keywords:
+        - Python
+        - SQL
+        - Power BI
+        - Automatisering
+  interests:
+    - name: Friluftsliv
+      keywords:
+        - Fjellturer
+        - Langrenn
+        - Kajakk
+    - name: Samfunn og økonomi
+      keywords:
+        - Makroøkonomi
+        - Bærekraft
+        - Litteratur
+  volunteer:
+    - organization: Norsk Forum for Finansanalyse
+      url: https://www.norskfinansanalyse.no
+      position: Mentor og fagansvarlig
+      startDate: Jan 2022
+      endDate: Dec 2024
+      summary: |
+        - Mentorerer studenter og nyutdannede innen finansiell analyse
+        - Bidrar til fagkvelder om verdsettelse, makro og ESG
+        - Koordinerer case-konkurranse for studenter
+
+locale:
+  language: 'no'

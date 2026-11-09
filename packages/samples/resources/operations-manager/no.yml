@@ -1,0 +1,285 @@
+content:
+  basics:
+    name: Marte Solberg
+    headline: Operasjonssjef med erfaring fra logistikk, HMS og forbedringsarbeid
+    phone: "+47 928 45 112"
+    email: marte.solberg@example.no
+    url: https://www.martesolberg.no
+    summary: |
+      - Erfaren operasjonssjef med over 10 års ledererfaring fra logistikk, service og industri.
+      - Dokumentert resultat med å øke driftsregularitet, redusere kostnader og bygge velfungerende tverrfaglige team.
+      - Sterk i KPI-oppfølging, budsjettansvar, HMS, kontinuerlig forbedring og samarbeid med leverandører og kunder.
+      - Strukturert og løsningsorientert leder som trives med å gjøre komplekse driftsprosesser enkle, målbare og skalerbare.
+
+  location:
+    address: Storgata 18
+    city: Oslo
+    region: Oslo
+    country: Norway
+    postalCode: "0155"
+
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/marte-solberg
+      username: marte-solberg
+
+  education:
+    - institution: Handelshøyskolen BI
+      url: https://www.bi.no
+      degree: Master
+      area: Strategisk ledelse
+      score: "4,3/5"
+      startDate: 'Aug 15, 2014'
+      endDate: 'Jun 20, 2016'
+      courses:
+        - Strategisk økonomistyring
+        - Operasjons- og kvalitetsledelse
+        - Prosjektledelse
+        - Organisasjon og ledelse
+        - Forhandlinger og beslutninger
+        - Bærekraftig verdikjedestyring
+      summary: |
+        - Fordypning i strategisk styring, operativ excellence og endringsledelse.
+        - Gjennomførte casebaserte prosjekter med fokus på kostnadsstyring og prosessforbedring.
+        - Utviklet analyse- og beslutningsgrunnlag for ledergrupper i praksisnære prosjekter.
+
+    - institution: Universitetet i Oslo
+      url: https://www.uio.no
+      degree: Bachelor
+      area: Økonomi og administrasjon
+      score: "4,1/5"
+      startDate: 'Aug 15, 2011'
+      endDate: 'Jun 20, 2014'
+      courses:
+        - Mikroøkonomi
+        - Bedriftsøkonomi
+        - Statistikk og analyse
+        - Markedsføring
+        - Regnskap og budsjettering
+      summary: |
+        - Solid grunnlag i økonomi, analyse og bedriftsadministrasjon.
+        - Arbeidet med kvantitative analyser og presentasjon av beslutningsgrunnlag.
+        - Deltok aktivt i studentprosjekter om effektiv ressursbruk og organisasjonsutvikling.
+
+  work:
+    - name: Nordvik Logistikk AS
+      url: https://www.nordviklogistikk.no
+      position: Operasjonssjef
+      startDate: 'Jan 10, 2021'
+      summary: |
+        - Leder den daglige driften for et terminal- og distribusjonsnett med 85 ansatte og årlig omsetning på 420 MNOK.
+        - Ansvar for produksjonsplanlegging, bemanning, HMS, kvalitet og leverandøroppfølging på tvers av fem lokasjoner.
+        - Reduserte avvikskostnader med 18 prosent og økte leveringspresisjonen fra 92 til 97 prosent på 18 måneder.
+        - Innførte ukentlig driftsdialog med KPI-er for sikkerhet, kvalitet, kostnad og trivsel.
+        - Bygget lederteam og innførte kompetanseplan som reduserte gjennomtrekk blant operativt personell med 25 prosent.
+      keywords:
+        - Driftsledelse
+        - Logistikk
+        - HMS
+        - KPI-oppfølging
+        - Bemanningsplanlegging
+        - Kontinuerlig forbedring
+        - Budsjettansvar
+        - Leverandøroppfølging
+
+    - name: Fjordservice Gruppen AS
+      url: https://www.fjordservice.no
+      position: Driftsleder
+      startDate: 'Mar 1, 2017'
+      endDate: 'Dec 31, 2020'
+      summary: |
+        - Ledet drift av kundeservice og feltoperasjoner med 45 ansatte og ansvar for døgnkontinuerlig bemanning.
+        - Utviklet bemanningsmodell som reduserte overtidsbruk med 22 prosent og forbedret responstid med 15 prosent.
+        - Drev systematisk HMS-arbeid, gjennomførte risikovurderinger og fulgte opp avvik og læringstiltak.
+        - Forhandlet rammeavtaler med underleverandører og oppnådde årlige besparelser på 6,5 MNOK.
+      keywords:
+        - Driftsstyring
+        - Kundeservice
+        - Bemanning
+        - HMS
+        - Risikostyring
+        - Rammeavtaler
+        - Responstid
+
+    - name: Oslo Industriservice AS
+      url: https://www.osloindustriservice.no
+      position: Produksjonsleder
+      startDate: 'Aug 15, 2013'
+      endDate: 'Feb 28, 2017'
+      summary: |
+        - Ledet produksjon og vedlikehold for en fabrikk med 30 ansatte og to skift.
+        - Implementerte Lean-prinsipper og standardiserte arbeidsprosesser, noe som økte OEE fra 71 til 82 prosent.
+        - Hadde budsjettansvar for drift, vedlikehold og innkjøp på 55 MNOK.
+        - Samarbeidet med fagforeninger og verneombud for å sikre god medvirkning og lavt sykefravær.
+      keywords:
+        - Produksjonsledelse
+        - Lean
+        - Vedlikehold
+        - OEE
+        - Budsjett
+        - Arbeidsmiljø
+
+  languages:
+    - language: Norwegian
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - Morsmål
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - C1
+        - Forretningsengelsk
+    - language: German
+      fluency: Limited Working Proficiency
+      keywords:
+        - Grunnleggende
+
+  skills:
+    - name: Operasjonsledelse
+      level: Expert
+      keywords:
+        - Driftsstyring
+        - Bemanningsplanlegging
+        - KPI-oppfølging
+        - HMS
+        - Målstyring
+        - Lederutvikling
+    - name: Logistikk og verdikjede
+      level: Advanced
+      keywords:
+        - Lagerstyring
+        - Transportplanlegging
+        - Innkjøp
+        - Leverandøroppfølging
+        - Leveringspresisjon
+        - Varelagerstyring
+    - name: Forbedringsarbeid
+      level: Advanced
+      keywords:
+        - Lean
+        - Six Sigma
+        - Prosesskartlegging
+        - Rotårsaksanalyse
+        - Standardisering
+        - Kontinuerlig forbedring
+    - name: Økonomi og styring
+      level: Advanced
+      keywords:
+        - Budsjettering
+        - Kostnadskontroll
+        - Avviksanalyse
+        - Investeringskalkyler
+        - Rapportering
+    - name: Prosjektledelse
+      level: Advanced
+      keywords:
+        - Prosjektstyring
+        - Endringsledelse
+        - Interessentanalyse
+        - Risikostyring
+        - Gevinstrealisering
+    - name: Systemer og verktøy
+      level: Intermediate
+      keywords:
+        - SAP
+        - Power BI
+        - Excel
+        - Microsoft Dynamics 365
+        - Jira
+        - SharePoint
+
+  awards:
+    - title: Årets operasjonsleder
+      date: 'Nov 2023'
+      awarder: Nordvik Logistikk AS
+      summary: |
+        - Tildelt for dokumenterte resultater innen driftsforbedring, lederutvikling og HMS.
+        - Anerkjent for å ha bygget et sterkt tverrfaglig lederteam og økt medarbeidertilfredsheten.
+
+    - title: Forbedringsprisen
+      date: 'May 2019'
+      awarder: Fjordservice Gruppen AS
+      summary: |
+        - Tildelt for et vellykket forbedringsprosjekt som reduserte responstid og overtidsbruk.
+        - Prosjektet ble trukket frem som beste praksis for tverrfaglig driftsutvikling.
+
+  certificates:
+    - name: Lean Six Sigma Green Belt
+      issuer: Norsk Lean Senter
+      date: 'May 2022'
+      url: https://www.norskleansenter.no
+    - name: PRINCE2 Foundation
+      issuer: PeopleCert
+      date: 'Sep 2021'
+      url: https://www.peoplecert.org
+    - name: HMS-kurs for ledere
+      issuer: Arbeidsmiljøsenteret
+      date: 'Feb 2020'
+      url: https://www.arbeidsmiljosenteret.no
+
+  projects:
+    - name: Digital bemanningsplanlegging
+      startDate: 'Feb 1, 2022'
+      endDate: 'Aug 30, 2022'
+      url: https://www.nordviklogistikk.no/prosjekter/digital-bemanning
+      description: Innføring av digitalt bemanningsverktøy for fem terminaler med mål
+        om bedre ressursutnyttelse og lavere overtid.
+      summary: |
+        - Kartla bemanningsbehov og etablerte felles planleggingsprosess på tvers av lokasjoner.
+        - Innførte verktøy og opplærte 40 ledere og planleggere i nye rutiner.
+        - Oppnådde 14 prosent lavere overtidsbruk og 9 prosent høyere produktivitet i pilotperioden.
+      keywords:
+        - Bemanningsplanlegging
+        - Digitalisering
+        - Prosessforbedring
+        - Endringsledelse
+
+    - name: Lean-program for lageravdeling
+      startDate: 'Mar 1, 2018'
+      endDate: 'Nov 30, 2018'
+      url: https://www.fjordservice.no/prosjekter/lean-lager
+      description: Forbedringsprogram for lager og utlasteri med fokus på flyt,
+        standardisering og sikkerhet.
+      summary: |
+        - Gjennomførte verdistrømsanalyse og identifiserte flaskehalser i vareflyten.
+        - Standardiserte arbeidsinstrukser og innførte tavlemøter for daglig styring.
+        - Reduserte gjennomsnittlig ordrebehandlingstid med 19 prosent og HMS-avvik med 30 prosent.
+      keywords:
+        - Lean
+        - Verdistrømsanalyse
+        - Standardisering
+        - HMS
+        - Lagerstyring
+
+  interests:
+    - name: Friluftsliv
+      keywords:
+        - Fjellturer
+        - Padling
+        - Langrenn
+        - Sykkel
+    - name: Styrearbeid og mentorering
+      keywords:
+        - Mentorordning
+        - Næringslivsforum
+        - Foreldreutvalg
+
+  volunteer:
+    - organization: Oslo Næringsforening
+      url: https://www.oslonaring.no
+      position: Mentor for unge ledere
+      startDate: 'Sep 1, 2019'
+      summary: |
+        - Mentorerer unge ledere i operativ drift, prioritering og lederutvikling.
+        - Bidrar i fagforum for bærekraftig logistikk og kompetanseutvikling.
+    - organization: Norsk Folkehjelp
+      url: https://www.folkehjelp.no
+      position: Operativ frivillig
+      startDate: 'Apr 1, 2015'
+      endDate: 'Dec 31, 2021'
+      summary: |
+        - Deltok i beredskapsøvelser og støtteoppdrag ved større arrangementer i Oslo.
+        - Gjennomførte førstehjelpskurs og bidro til trygg gjennomføring av lokale arrangementer.
+
+locale:
+  language: no

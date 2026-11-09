@@ -1,0 +1,214 @@
+content:
+  basics:
+    name: Marcus T. Ellington
+    headline: 'Financial Analyst | FP&A, Valuation, and Data-Driven Forecasting'
+    phone: "(415) 555-0182"
+    email: marcus.ellington@finmail.com
+    url: https://www.marcusellington.com
+    summary: |
+      - Financial analyst with 6+ years of experience in FP&A, investment research, and financial modeling across technology and consumer sectors
+      - Skilled at building driver-based forecasts, analyzing variances, and translating complex data into clear recommendations for senior leadership
+      - Proven record of improving forecast accuracy, automating recurring reporting, and partnering with cross-functional teams to support strategic decisions
+      - Comfortable working across the full analytics stack, from SQL and Python analysis to executive-ready dashboards and investment memos
+  location:
+    address: '1200 Market Street, Suite 400'
+    city: San Francisco
+    region: California
+    country: United States
+    postalCode: "94102"
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/marcus-ellington
+      username: marcus-ellington
+    - network: GitHub
+      url: https://github.com/marcus-ellington
+      username: marcus-ellington
+  education:
+    - institution: University of California, Berkeley
+      url: https://www.berkeley.edu
+      degree: Bachelor
+      area: Economics
+      score: "3.9/4.0"
+      startDate: Aug 2014
+      endDate: May 2018
+      courses:
+        - Corporate Finance
+        - Financial Accounting
+        - Econometrics
+        - Investments
+        - Microeconomic Theory
+        - Data Analysis with Python
+        - Business Valuation
+        - Risk Management
+      summary: |
+        - Built a strong foundation in valuation, accounting, and quantitative analysis
+        - Completed capstone research on capital structure decisions in technology firms
+        - Developed proficiency in Excel, Python, and statistical modeling through coursework and projects
+    - institution: Boston College
+      url: https://www.bc.edu
+      degree: Master
+      area: Finance
+      score: "3.8/4.0"
+      startDate: Aug 2018
+      endDate: May 2019
+      courses:
+        - Financial Modeling
+        - Investment Analysis
+        - Corporate Valuation
+        - Econometrics
+        - Portfolio Management
+      summary: |
+        - Focused on corporate finance, valuation, and investment analysis
+        - Completed a practicum valuing a mid-cap SaaS company using DCF and comparable company analysis
+        - Collaborated with a five-person team to present investment recommendations to faculty and industry judges
+  work:
+    - name: Alder Ridge Capital
+      url: https://www.alderridgecapital.com
+      position: Senior Financial Analyst
+      startDate: Jun 2021
+      summary: |
+        - Lead FP&A for a $180M revenue portfolio, owning monthly forecasts, annual budgets, and long-range plans for three business units
+        - Build and maintain three-statement models, scenario analyses, and KPI dashboards used by the CFO and investment committee
+        - Improved forecast accuracy from ±12% to ±4% by redesigning driver-based revenue and headcount models
+        - Automate recurring reporting with SQL, Python, and Power BI, reducing close-cycle reporting time by 10 hours per month
+        - Partner with sales, product, and accounting teams to explain variances and support pricing, hiring, and investment decisions
+      keywords:
+        - 'FP&A'
+        - Forecasting
+        - Three-Statement Modeling
+        - Variance Analysis
+        - Power BI
+    - name: Northstar Equity Research
+      url: https://www.northstarequityresearch.com
+      position: Financial Analyst
+      startDate: Jul 2019
+      endDate: May 2021
+      summary: |
+        - Conducted equity research and valuation for mid-cap technology and consumer companies, supporting a $2.4B AUM portfolio
+        - Built DCF, comparable company, and precedent transaction models; prepared investment memos and quarterly earnings reviews
+        - Analyzed results, updated estimates, and communicated risks and catalysts to portfolio managers and research leadership
+        - Maintained sector databases and automated data pulls using Python and Excel VBA
+      keywords:
+        - Equity Research
+        - Valuation
+        - DCF Modeling
+        - Earnings Analysis
+        - Excel VBA
+  skills:
+    - name: Financial Modeling
+      level: Expert
+      keywords:
+        - Three-Statement Modeling
+        - DCF
+        - Comparable Companies
+        - Scenario Analysis
+        - Budgeting
+    - name: Data Analysis
+      level: Advanced
+      keywords:
+        - SQL
+        - Python
+        - Pandas
+        - Power BI
+        - Tableau
+        - Excel VBA
+    - name: 'FP&A'
+      level: Advanced
+      keywords:
+        - Forecasting
+        - Variance Analysis
+        - KPI Reporting
+        - Headcount Planning
+        - Long-Range Planning
+    - name: Communication
+      level: Expert
+      keywords:
+        - Executive Presentations
+        - Cross-Functional Collaboration
+        - Investment Memos
+        - Stakeholder Management
+  languages:
+    - language: English
+      fluency: Native or Bilingual Proficiency
+    - language: Spanish
+      fluency: Full Professional Proficiency
+      keywords:
+        - Financial reporting
+        - Client presentations
+  awards:
+    - title: Outstanding Graduate Student Award
+      date: May 2019
+      awarder: Boston College
+      summary: |
+        Awarded to the top graduating student in the Master of Finance program for academic excellence and leadership in collaborative coursework.
+  certificates:
+    - name: 'Financial Modeling & Valuation Analyst (FMVA)'
+      issuer: Corporate Finance Institute
+      date: Mar 2022
+      url: https://corporatefinanceinstitute.com/certifications/fmva/
+    - name: 'Microsoft Certified: Data Analyst Associate'
+      issuer: Microsoft
+      date: Jan 2023
+      url: https://learn.microsoft.com/en-us/credentials/certifications/data-analyst-associate/
+  publications:
+    - name: Improving Forecast Accuracy with Driver-Based Planning
+      publisher: Finance Leadership Journal
+      releaseDate: Oct 2023
+      url: https://www.financeleadershipjournal.com/articles/driver-based-planning
+      summary: |
+        - Article covering practical approaches to driver-based forecasting, variance analysis, and forecast governance
+        - Draws on experience redesigning revenue and headcount models for a multi-business-unit portfolio
+  projects:
+    - name: Revenue Forecasting Dashboard
+      url: https://github.com/marcus-ellington/revenue-forecast-dashboard
+      description: Interactive dashboard for monitoring revenue drivers, forecast
+        accuracy, and variance explanations.
+      startDate: Jan 2023
+      endDate: Apr 2023
+      summary: |
+        - Built a Power BI dashboard connected to SQL models to track bookings, pipeline, and revenue by segment
+        - Added variance views that let finance and sales leaders drill into forecast misses by region and product
+        - Reduced manual variance commentary preparation from two days to under four hours
+      keywords:
+        - Power BI
+        - SQL
+        - Forecasting
+        - Variance Analysis
+    - name: SaaS Benchmarking Model
+      url: https://github.com/marcus-ellington/saas-benchmarking-model
+      description: Python and Excel model for benchmarking SaaS growth, retention, and
+        margin metrics across public companies.
+      startDate: Mar 2022
+      endDate: Jun 2022
+      summary: |
+        - Collected and normalized public-company data for 40+ SaaS businesses
+        - Calculated growth, gross margin, net revenue retention, and rule-of-40 metrics for comparative analysis
+        - Presented findings on operating efficiency and growth durability to an internal research team
+      keywords:
+        - SaaS Metrics
+        - Python
+        - Excel
+        - Benchmarking
+  interests:
+    - name: Investing
+      keywords:
+        - Value Investing
+        - ETF Research
+        - Personal Finance
+    - name: Outdoors
+      keywords:
+        - Trail Running
+        - Cycling
+        - Photography
+  volunteer:
+    - organization: Bay Area Financial Literacy Coalition
+      url: https://www.bayareafinancialliteracy.org
+      position: Volunteer Financial Coach
+      startDate: Sep 2020
+      summary: |
+        - Coach low-income households on budgeting, debt reduction, and savings strategies through monthly one-on-one sessions
+        - Develop plain-language workshop materials on credit, banking, and retirement basics
+        - Track participant progress and adapt coaching plans to individual financial goals
+
+locale:
+  language: en

@@ -1,0 +1,219 @@
+content:
+  basics:
+    name: Lukas Hoffmann
+    headline: Senior Data Engineer – Cloud & Big Data
+    phone: "+49 30 12345678"
+    email: lukas.hoffmann@example.de
+    url: https://www.lukashoffmann.de
+    summary: |
+      - Data Engineer mit über 6 Jahren Erfahrung in der Konzeption, Entwicklung und dem Betrieb skalierbarer Datenpipelines
+      - Spezialisiert auf Cloud-Datenplattformen (AWS, GCP), ETL-Prozesse und die Modellierung von Data-Warehouse-Strukturen
+      - Fundierte Kenntnisse in Python, SQL, Apache Spark, Kafka und Airflow sowie in der Automatisierung von Datenqualitätsprüfungen
+      - Teamorientiert, analytisch denkend und leidenschaftlich für saubere, wartbare und performante Datenarchitekturen
+  location:
+    address: Friedrichstraße 123
+    city: Berlin
+    region: Berlin
+    country: Germany
+    postalCode: "10117"
+  profiles:
+    - network: GitHub
+      url: https://github.com/lukashoffmann
+      username: lukashoffmann
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/lukashoffmann
+      username: lukashoffmann
+  education:
+    - institution: Technische Universität München
+      url: https://www.tum.de
+      degree: Master
+      area: Informatik
+      score: "1.3"
+      startDate: 2014-10-01
+      endDate: 2017-09-30
+      courses:
+        - Datenbanksysteme
+        - Verteilte Systeme
+        - Maschinelles Lernen
+        - Big Data Analytics
+        - Datenstromverarbeitung
+        - Cloud Computing
+        - Software Engineering
+      summary: |
+        - Schwerpunkt auf Datenbanken, verteilten Systemen und Big-Data-Technologien
+        - Masterarbeit: „Entwurf einer skalierbaren Echtzeit-Datenpipeline für IoT-Anwendungen“
+        - Praktische Erfahrung durch Projekte in Kooperation mit Industriepartnern
+    - institution: Universität Hamburg
+      url: https://www.uni-hamburg.de
+      degree: Bachelor
+      area: Wirtschaftsinformatik
+      score: "1.7"
+      startDate: 2011-10-01
+      endDate: 2014-09-30
+      courses:
+        - Programmierung
+        - Datenbanken
+        - Betriebswirtschaftslehre
+        - Statistik
+        - Informationssysteme
+      summary: |
+        - Grundlagen in Programmierung, Datenbanken und betriebswirtschaftlicher Informatik
+        - Bachelorarbeit: „Vergleich von ETL-Werkzeugen für heterogene Datenquellen“
+        - Mitglied der Fachschaft Informatik und Organisation von Workshops zu SQL
+  work:
+    - name: DataCraft GmbH
+      url: https://www.datacraft.de
+      position: Senior Data Engineer
+      startDate: 2020-01-01
+      summary: |
+        - Leitung eines Teams von vier Data Engineers bei der Migration einer monolithischen Datenplattform in eine Cloud-native Architektur auf AWS
+        - Konzeption und Implementierung von ETL-Pipelines mit Apache Airflow, Spark und dbt zur Verarbeitung von über 5 TB täglich
+        - Einführung automatisierter Datenqualitätsprüfungen und Monitoring-Dashboards zur Sicherstellung der Datenintegrität
+        - Enge Zusammenarbeit mit Data Scientists, Analytics-Teams und Stakeholdern zur Ableitung datengetriebener Entscheidungen
+        - Mentoring von Junior-Engineers und Förderung von Best Practices in den Bereichen Code-Qualität und Dokumentation
+      keywords:
+        - Datenpipelines
+        - ETL
+        - AWS
+        - Apache Spark
+        - Airflow
+        - Data Warehouse
+    - name: CloudMetrics AG
+      url: https://www.cloudmetrics.de
+      position: Data Engineer
+      startDate: 2017-10-01
+      endDate: 2019-12-31
+      summary: |
+        - Entwicklung und Wartung von Batch- und Streaming-Pipelines mit Python, SQL und Apache Kafka
+        - Aufbau eines Data Warehouse auf Google BigQuery inklusive Datenmodellierung und Performance-Optimierung
+        - Automatisierung von Deployments mit Docker, Kubernetes und Terraform
+        - Durchführung von Datenanalysen und Erstellung von Reports für das Management
+      keywords:
+        - Python
+        - SQL
+        - Kafka
+        - BigQuery
+        - GCP
+        - Terraform
+  languages:
+    - language: German
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - Muttersprache
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - C1
+        - Business fluent
+  skills:
+    - name: Programmierung & Datenbanken
+      level: Expert
+      keywords:
+        - Python
+        - SQL
+        - Scala
+        - PostgreSQL
+        - MongoDB
+        - Redis
+    - name: Big Data & Streaming
+      level: Advanced
+      keywords:
+        - Apache Spark
+        - Apache Kafka
+        - Apache Flink
+        - Hadoop
+        - Pandas
+    - name: Cloud & DevOps
+      level: Advanced
+      keywords:
+        - AWS
+        - GCP
+        - Docker
+        - Kubernetes
+        - Terraform
+        - Airflow
+    - name: Data Warehousing & BI
+      level: Advanced
+      keywords:
+        - Snowflake
+        - BigQuery
+        - Redshift
+        - dbt
+        - Tableau
+        - Power BI
+  awards:
+    - title: Mitarbeiter des Jahres – Data Engineering
+      date: 2023-12-01
+      awarder: DataCraft GmbH
+      summary: |
+        Ausgezeichnet für die erfolgreiche Migration der Datenplattform in die AWS-Cloud und die Einführung automatisierter Datenqualitätsprüfungen.
+  certificates:
+    - name: AWS Certified Data Analytics – Specialty
+      issuer: Amazon Web Services
+      date: 2022-05-01
+      url: https://aws.amazon.com/certification/
+    - name: Google Cloud Professional Data Engineer
+      issuer: Google Cloud
+      date: 2021-08-01
+      url: https://cloud.google.com/certification/data-engineer
+  publications:
+    - name: Skalierbare Echtzeit-Datenpipelines mit Kafka und Spark
+      publisher: Datenbank-Spektrum
+      releaseDate: 2021-11-01
+      url: https://link.springer.com/journal/13222
+      summary: |
+        Fachartikel über Architekturmuster und Betriebserfahrungen mit Streaming-Datenpipelines in der Cloud.
+  projects:
+    - name: Echtzeit-Analyseplattform für IoT-Daten
+      url: https://github.com/lukashoffmann/iot-analytics
+      description: Aufbau einer skalierbaren Streaming-Plattform zur Verarbeitung von
+        Sensordaten in Echtzeit.
+      startDate: 2022-03-01
+      endDate: 2023-06-30
+      summary: |
+        - Architektur und Implementierung einer Echtzeit-Pipeline mit Kafka, Spark Structured Streaming und AWS Kinesis
+        - Verarbeitung von ca. 10.000 Ereignissen pro Sekunde mit Sub-Sekunden-Latenz
+        - Aufbau eines Dashboards zur Visualisierung von Anomalien und Betriebskennzahlen
+      keywords:
+        - IoT
+        - Kafka
+        - Spark
+        - AWS
+        - Echtzeit
+    - name: Open-Source Data Quality Framework
+      url: https://github.com/lukashoffmann/dq-framework
+      description: Entwicklung eines Python-Frameworks zur automatisierten
+        Datenqualitätsprüfung in ETL-Pipelines.
+      startDate: 2021-01-01
+      summary: |
+        - Open-Source-Bibliothek zur Definition und Ausführung von Datenqualitätsregeln in Python
+        - Integration in Airflow und dbt zur automatischen Validierung von Pipeline-Ergebnissen
+        - Über 200 Sterne auf GitHub und Nutzung durch mehrere Unternehmen
+      keywords:
+        - Python
+        - Data Quality
+        - Open Source
+        - Airflow
+  interests:
+    - name: Open Source
+      keywords:
+        - Apache Spark
+        - Airflow
+        - dbt
+    - name: Sport
+      keywords:
+        - Laufen
+        - Radfahren
+        - Wandern
+  volunteer:
+    - organization: Data Literacy e.V.
+      url: https://www.data-literacy.de
+      position: Dozent für Datenanalyse
+      startDate: 2020-09-01
+      summary: |
+        - Durchführung von Workshops zu SQL und Python für Mitarbeitende von Non-Profit-Organisationen
+        - Entwicklung von Lehrmaterialien und Übungsprojekten zur Datenanalyse
+        - Beratung von Vereinen bei der Auswahl und Einrichtung von Datenbanken
+
+locale:
+  language: de

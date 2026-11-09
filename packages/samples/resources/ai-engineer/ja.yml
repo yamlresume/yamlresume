@@ -1,0 +1,252 @@
+content:
+  basics:
+    name: 佐藤 健太
+    headline: AIエンジニア / 機械学習スペシャリスト
+    phone: '+81 90-1234-5678'
+    email: kenta.sato.ai@example.com
+    url: https://kentasato-ai.dev
+    summary: |
+      - 機械学習と深層学習を活用したAIソリューションの設計・開発に7年以上従事
+      - 自然言語処理（NLP）とコンピュータビジョン分野の実務経験が豊富
+      - Python、PyTorch、TensorFlowを用いたモデル構築からMLOpsによる運用まで一貫して対応
+      - ビジネス課題を技術要件に落とし込み、クロスファンクショナルチームをリードした実績
+      - 論文執筆や技術コミュニティでの登壇を通じた知識共有に積極的
+  location:
+    address: 東京都渋谷区神南1-2-3
+    city: 渋谷区
+    region: 東京都
+    country: Japan
+    postalCode: '150-0041'
+  profiles:
+    - network: GitHub
+      url: https://github.com/kenta-sato-ai
+      username: kenta-sato-ai
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/kenta-sato-ai
+      username: kenta-sato-ai
+    - network: Twitter
+      url: https://twitter.com/kenta_sato_ai
+      username: kenta_sato_ai
+  education:
+    - institution: 東京大学
+      url: https://www.u-tokyo.ac.jp
+      degree: Master
+      area: 情報理工学系研究科 コンピュータ科学専攻
+      score: '3.9/4.0'
+      startDate: '2016-04-01'
+      endDate: '2018-03-31'
+      courses:
+        - 機械学習
+        - 深層学習
+        - 自然言語処理
+        - コンピュータビジョン
+        - データマイニング
+        - アルゴリズム論
+        - 統計的学習理論
+      summary: |
+        - 機械学習とデータサイエンスを専攻し、理論と実践の両面を習得
+        - 修士論文では深層学習を用いた文書分類モデルに関する研究に従事
+        - 学内のAI研究プロジェクトに参加し、実データを用いたモデル開発を経験
+  work:
+    - name: 株式会社ニューロテック
+      url: https://www.neurotech.co.jp
+      position: シニアAIエンジニア
+      startDate: '2021-04-01'
+      summary: |
+        - 大規模言語モデル（LLM）を活用した社内ナレッジ検索システムの企画・開発をリード
+        - 自然言語処理チームを率いて、顧客問い合わせの自動分類モデルを本番環境に導入
+        - MLOps基盤を構築し、モデルの継続的トレーニングとデプロイメントを自動化
+        - ジュニアエンジニアの育成とコードレビューを通じた品質向上に貢献
+      keywords:
+        - LLM
+        - 自然言語処理
+        - MLOps
+        - Python
+        - PyTorch
+        - AWS
+        - チームリード
+    - name: 株式会社データサイエンスラボ
+      url: https://www.dslab.co.jp
+      position: AIエンジニア
+      startDate: '2018-04-01'
+      endDate: '2021-03-31'
+      summary: |
+        - 製造業向けの画像検査AIシステムを開発し、検査工程の自動化を実現
+        - 需要予測モデルを構築し、在庫最適化によるコスト削減に貢献
+        - 顧客向けのレコメンデーションエンジンを設計・実装
+        - データ前処理からモデル評価までのパイプラインを整備
+      keywords:
+        - コンピュータビジョン
+        - 需要予測
+        - レコメンデーション
+        - TensorFlow
+        - scikit-learn
+        - SQL
+  skills:
+    - name: 機械学習
+      level: Expert
+      keywords:
+        - Python
+        - PyTorch
+        - TensorFlow
+        - scikit-learn
+        - pandas
+        - NumPy
+    - name: 自然言語処理
+      level: Advanced
+      keywords:
+        - Transformers
+        - BERT
+        - GPT
+        - Hugging Face
+        - spaCy
+        - 固有表現抽出
+    - name: コンピュータビジョン
+      level: Advanced
+      keywords:
+        - OpenCV
+        - YOLO
+        - ResNet
+        - 画像分類
+        - 物体検出
+    - name: MLOps
+      level: Advanced
+      keywords:
+        - Docker
+        - Kubernetes
+        - MLflow
+        - AWS SageMaker
+        - GCP Vertex AI
+        - CI/CD
+    - name: データエンジニアリング
+      level: Intermediate
+      keywords:
+        - SQL
+        - Spark
+        - Airflow
+        - BigQuery
+        - ETL
+    - name: ソフトウェア開発
+      level: Advanced
+      keywords:
+        - Python
+        - Go
+        - Git
+        - REST API
+        - マイクロサービス
+  languages:
+    - language: Japanese
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - 日本語ネイティブ
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - TOEIC 950
+        - 技術文書読解
+    - language: Chinese
+      fluency: Limited Working Proficiency
+      keywords:
+        - HSK 4級
+  awards:
+    - title: 人工知能学会 優秀論文賞
+      date: '2022-06'
+      awarder: 人工知能学会
+      summary: |
+        - 深層学習を用いた顧客行動予測に関する論文が評価され受賞
+    - title: 社内技術革新賞
+      date: '2020-12'
+      awarder: 株式会社データサイエンスラボ
+      summary: |
+        - 画像検査AIシステムの開発と事業貢献が認められ受賞
+  certificates:
+    - name: AWS認定機械学習 - スペシャリスト
+      issuer: アマゾン ウェブ サービス
+      date: '2021-03'
+      url: https://aws.amazon.com/certification/
+    - name: グーグル クラウド プロフェッショナル 機械学習エンジニア
+      issuer: グーグル クラウド
+      date: '2022-09'
+      url: https://cloud.google.com/certification/machine-learning-engineer
+  publications:
+    - name: 深層学習を用いた顧客行動予測モデルの構築
+      publisher: 人工知能学会全国大会
+      releaseDate: '2021-06'
+      url: https://www.ai-gakkai.or.jp/
+      summary: |
+        - 顧客の購買履歴と行動ログを活用した予測モデルを提案
+        - 従来手法と比較して予測精度が12%向上したことを示した
+    - name: 大規模言語モデルによる社内文書検索の高度化
+      publisher: 言語処理学会年次大会
+      releaseDate: '2023-03'
+      url: https://www.anlp.jp/
+      summary: |
+        - LLMを活用したセマンティック検索の実装と評価
+        - 検索精度とユーザビリティの両面で改善を確認
+  projects:
+    - name: 社内ナレッジ検索システム
+      startDate: '2022-01'
+      endDate: '2023-06'
+      description: LLMを活用した社内文書のセマンティック検索システム
+      summary: |
+        - 自然言語による問い合わせに対して関連文書を返す検索基盤を構築
+        - ベクトルデータベースと埋め込みモデルを組み合わせたアーキテクチャを設計
+        - 社内の問い合わせ対応時間を約30%削減
+      keywords:
+        - LLM
+        - セマンティック検索
+        - ベクトルDB
+        - RAG
+      url: https://www.neurotech.co.jp/projects/knowledge-search
+    - name: 需要予測AIプラットフォーム
+      startDate: '2019-04'
+      endDate: '2020-12'
+      description: 小売業向けの需要予測と在庫最適化を支援するAIプラットフォーム
+      summary: |
+        - 時系列データを用いた需要予測モデルを開発
+        - ダッシュボードによる可視化とアラート機能を実装
+        - 導入企業の在庫コストを平均15%削減
+      keywords:
+        - 需要予測
+        - 時系列分析
+        - 在庫最適化
+        - ダッシュボード
+      url: https://www.dslab.co.jp/projects/demand-forecast
+    - name: 画像検査AIシステム
+      startDate: '2018-06'
+      endDate: '2019-03'
+      description: 製造業の生産ライン向け画像検査自動化システム
+      summary: |
+        - 畳み込みニューラルネットワークによる不良品検出モデルを構築
+        - エッジデバイス上でのリアルタイム推論を実現
+        - 検査員の作業負荷を軽減し、検出精度を95%以上に向上
+      keywords:
+        - 画像認識
+        - CNN
+        - エッジAI
+        - 品質管理
+      url: https://www.dslab.co.jp/projects/vision-inspection
+  interests:
+    - name: 技術
+      keywords:
+        - 機械学習
+        - オープンソース
+        - 論文読解
+    - name: 趣味
+      keywords:
+        - ランニング
+        - 写真撮影
+        - 旅行
+  volunteer:
+    - organization: AI開発者コミュニティ「AI-Japan」
+      position: メンター
+      startDate: '2020-04'
+      endDate: '2023-03'
+      url: https://www.ai-japan.dev
+      summary: |
+        - 機械学習を学ぶ学生や社会人に対してメンタリングを実施
+        - ハンズオン勉強会の企画・運営に参画
+        - コミュニティ内の技術相談やコードレビューを担当
+
+locale:
+  language: ja

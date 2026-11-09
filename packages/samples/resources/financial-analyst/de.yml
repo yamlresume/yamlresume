@@ -1,0 +1,221 @@
+content:
+  basics:
+    name: Katharina Vogel
+    headline: Finanzanalystin für Unternehmensbewertung und Risikomanagement
+    phone: '+49 30 5557 2814'
+    email: katharina.vogel@finanzanalyse-vogel.de
+    url: https://www.katharina-vogel-finance.de
+    summary: |
+      Finanzanalystin mit über sechs Jahren Erfahrung in der Bewertung börsennotierter Unternehmen, der Erstellung integrierter Finanzmodelle und der fundierten Entscheidungsunterstützung für Investmentteams.
+
+      - Spezialisiert auf DCF-Bewertungen, Kennzahlenanalyse und Szenarioplanung
+      - Sicher im Umgang mit Bloomberg Terminal, Capital IQ und Power BI
+      - Starke Kommunikationsfähigkeiten bei der Aufbereitung komplexer Finanzdaten für Management und Investoren
+  location:
+    address: Friedrichstraße 112
+    city: Berlin
+    region: Berlin
+    country: Germany
+    postalCode: '10117'
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/katharina-vogel-finance
+      username: katharina-vogel-finance
+    - network: Twitter
+      url: https://twitter.com/katharinavogel
+      username: katharinavogel
+  education:
+    - institution: Humboldt-Universität zu Berlin
+      url: https://www.hu-berlin.de/
+      degree: Master
+      area: Betriebswirtschaftslehre
+      score: '1,7'
+      startDate: Oct 1, 2015
+      endDate: Sep 30, 2017
+      courses:
+        - Unternehmensfinanzierung
+        - Investitionsrechnung
+        - Statistik und Ökonometrie
+        - Kapitalmarkttheorie
+        - Rechnungslegung nach IFRS
+        - Risikomanagement
+      summary: |
+        - Schwerpunkt Finanzierung und Kapitalmärkte
+        - Masterarbeit zur Bewertung von Wachstumsunternehmen mittels Multiplikatorverfahren
+    - institution: Universität Mannheim
+      url: https://www.uni-mannheim.de/
+      degree: Bachelor
+      area: Volkswirtschaftslehre
+      score: '2,1'
+      startDate: Oct 1, 2012
+      endDate: Sep 30, 2015
+      courses:
+        - Mikroökonomie
+        - Makroökonomie
+        - Finanzwissenschaft
+        - Mathematik für Wirtschaftswissenschaften
+      summary: |
+        - Grundlagen in Volkswirtschaftslehre, Statistik und Finanzmathematik
+        - Teilnahme am Börsenseminar der Fakultät
+  work:
+    - name: Nordstern Capital GmbH
+      url: https://www.nordstern-capital.de
+      position: Senior Finanzanalystin
+      startDate: Mar 1, 2021
+      summary: |
+        - Erstellung integrierter Finanzmodelle für europäische mittelgroße Unternehmen zur Unterstützung von Investmententscheidungen
+        - Durchführung von DCF-, Multiplikator- und Sum-of-the-Parts-Bewertungen
+        - Analyse von Quartalsberichten, Geschäftsberichten und Kapitalmarktkommunikation
+        - Präsentation von Anlageempfehlungen im Anlageausschuss
+        - Betreuung von zwei Junior-Analystinnen
+      keywords:
+        - Unternehmensbewertung
+        - Finanzmodellierung
+        - DCF-Analyse
+        - Anlageausschuss
+    - name: Hanseatic Asset Management AG
+      url: https://www.hanseatic-am.de
+      position: Finanzanalystin
+      startDate: Jan 1, 2018
+      endDate: Feb 28, 2021
+      summary: |
+        - Erstellung monatlicher Portfolioreports und Performanceanalysen für institutionelle Kunden
+        - Pflege und Weiterentwicklung von Bewertungsmodellen für Aktien und Anleihen
+        - Durchführung von Branchen- und Wettbewerbsanalysen
+        - Unterstützung des Risikocontrollings bei der Überwachung von Markt- und Kreditrisiken
+        - Automatisierung wiederkehrender Auswertungen mit Excel VBA und Python
+      keywords:
+        - Portfolioanalyse
+        - Performancemessung
+        - Risikocontrolling
+        - Excel VBA
+  languages:
+    - language: German
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - Muttersprache
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - Verhandlungssicher
+        - TOEFL 112
+    - language: French
+      fluency: Limited Working Proficiency
+      keywords:
+        - Grundkenntnisse
+  skills:
+    - name: Finanzanalyse
+      level: Expert
+      keywords:
+        - Unternehmensbewertung
+        - DCF-Modellierung
+        - Kennzahlenanalyse
+        - Szenarioanalyse
+    - name: Datenanalyse und Tools
+      level: Advanced
+      keywords:
+        - Excel
+        - Python
+        - Power BI
+        - Bloomberg Terminal
+        - Capital IQ
+    - name: Risikomanagement
+      level: Advanced
+      keywords:
+        - Marktrisiko
+        - Kreditrisiko
+        - Stresstests
+        - Limitkontrolle
+    - name: Kommunikation
+      level: Advanced
+      keywords:
+        - Anlageempfehlungen
+        - Berichtswesen
+        - Präsentationen
+  awards:
+    - title: CFA Institute Research Challenge
+      date: Apr 2017
+      awarder: CFA Society Germany
+      summary: |
+        - Regionaler Finalist mit einer Anlageempfehlung für ein deutsches Industrieunternehmen
+    - title: Preis für herausragende Studienleistungen
+      date: Jul 2016
+      awarder: Humboldt-Universität zu Berlin
+      summary: |
+        - Auszeichnung für herausragende akademische Leistungen im Masterstudium
+  certificates:
+    - name: CFA Level II Candidate
+      issuer: CFA Institute
+      date: Feb 2025
+      url: https://www.cfainstitute.org/programs/cfa-program
+    - name: Financial Risk Manager (FRM) Part I
+      issuer: Global Association of Risk Professionals
+      date: Nov 2022
+      url: https://www.garp.org/frm
+    - name: 'Microsoft Certified: Power BI Data Analyst Associate'
+      issuer: Microsoft
+      date: Jun 2023
+      url: https://learn.microsoft.com/credentials/certifications/power-bi-data-analyst-associate/
+  publications:
+    - name: Bewertung von Wachstumsunternehmen in Niedrigzinsphasen
+      publisher: Humboldt-Universität zu Berlin
+      releaseDate: Sep 2017
+      url: https://www.hu-berlin.de/forschung/publikationen
+      summary: |
+        - Masterarbeit zur Anwendung von Multiplikator- und DCF-Verfahren auf Technologieunternehmen
+        - Analyse der Sensitivität von Bewertungsergebnissen gegenüber Zins- und Wachstumsannahmen
+  projects:
+    - name: Finanzkennzahlen-Dashboard
+      url: https://github.com/katharinavogel/finanz-dashboard
+      startDate: Jan 2023
+      endDate: Jun 2023
+      description: Interaktives Power-BI-Dashboard zur Analyse von Kennzahlen und
+        Zahlungsströmen europäischer Aktien
+      summary: |
+        - Automatisierte Aufbereitung von Finanzdaten aus öffentlichen Geschäftsberichten
+        - Visualisierung von Umsatzwachstum, Margen, Verschuldung und freiem Cashflow
+        - Entwicklung eines Bewertungsmodells zur schnellen Vergleichbarkeit von Unternehmen
+      keywords:
+        - Power BI
+        - Datenvisualisierung
+        - Finanzkennzahlen
+    - name: Risikomodell für Aktienportfolios
+      startDate: Feb 2022
+      endDate: Nov 2022
+      description: Python-basiertes Modell zur Berechnung von Value-at-Risk und
+        Stressszenarien
+      summary: |
+        - Simulation historischer und hypothetischer Marktschocks
+        - Berechnung von Value-at-Risk, Expected Shortfall und Portfolio-Rückgängen
+        - Erstellung eines automatisierten Berichts für das Risikocontrolling
+      keywords:
+        - Python
+        - Value-at-Risk
+        - Stresstests
+  interests:
+    - name: Kapitalmärkte
+      keywords:
+        - Aktienanalyse
+        - Makroökonomie
+        - Nachhaltige Geldanlagen
+    - name: Ehrenamt
+      keywords:
+        - Finanzbildung
+        - Mentoring
+    - name: Sport
+      keywords:
+        - Laufen
+        - Rudern
+        - Wandern
+  volunteer:
+    - organization: Finanzbildung für Alle e.V.
+      url: https://www.finanzbildung-fuer-alle.de
+      position: Ehrenamtliche Finanzbildungsreferentin
+      startDate: Sep 2019
+      summary: |
+        - Durchführung von Schulungen zu Budgetplanung, Altersvorsorge und Geldanlage für junge Erwachsene
+        - Entwicklung von leicht verständlichen Lernmaterialien in deutscher Sprache
+        - Unterstützung bei der Organisation regionaler Finanzbildungsveranstaltungen
+
+locale:
+  language: de

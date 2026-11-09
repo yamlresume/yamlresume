@@ -1,0 +1,92 @@
+content:
+  basics:
+    name: Laura Mendoza Ríos
+    headline: 'Analista Financiera Senior | Planificación y Análisis Financiero'
+    phone: '+34 612 345 678'
+    email: laura.mendoza@finanzas.es
+    url: https://www.lauramendoza.es
+    summary: |
+      - Analista financiera con más de seis años de experiencia en planificación, análisis de desviaciones y valoración de empresas.
+      - Especializada en modelos financieros en Excel, SQL y Power BI para apoyar decisiones estratégicas y mejorar la rentabilidad.
+      - Experiencia en entornos de banca, inversión y consultoría, colaborando con equipos multidisciplinares y comités de dirección.
+      - Orientada a resultados, con sólida base contable y capacidad para comunicar información compleja de forma clara.
+  location:
+    address: 'Calle de Alcalá 120, 4º B'
+    city: Madrid
+    region: Comunidad de Madrid
+    country: Spain
+    postalCode: "28009"
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/laura-mendoza-finanzas
+      username: laura-mendoza-finanzas
+    - network: Medium
+      url: https://medium.com/@lauramendoza
+      username: lauramendoza
+  education:
+    - institution: Universidad de Alcalá
+      url: https://www.uah.es
+      degree: Master
+      area: Finanzas Cuantitativas
+      score: "9.1/10"
+      startDate: Sep 1, 2018
+      endDate: Jul 15, 2019
+      courses:
+        - Derivados Financieros
+        - Econometría Avanzada
+        - Gestión de Carteras
+        - Riesgos Financieros
+        - Finanzas Corporativas
+      summary: |
+        - Formación avanzada en valoración de activos, gestión de riesgos y modelización financiera.
+        - Trabajo de fin de máster sobre la prima de riesgo en empresas cotizadas del IBEX 35.
+    - institution: Universidad Carlos III de Madrid
+      url: https://www.uc3m.es
+      degree: Bachelor
+      area: Finanzas y Contabilidad
+      score: "8.7/10"
+      startDate: Sep 1, 2014
+      endDate: Jun 30, 2018
+      courses:
+        - Análisis Financiero
+        - Valoración de Empresas
+        - Mercados de Capitales
+        - Econometría Financiera
+        - Contabilidad de Gestión
+        - Gestión de Riesgos
+        - Fiscalidad Empresarial
+      summary: |
+        - Sólida base en contabilidad, finanzas corporativas y análisis de estados financieros.
+        - Participación en el CFA Research Challenge y en proyectos de análisis sectorial.
+  work:
+    - name: Banco Meridiano
+      url: https://www.bancomeridiano.es
+      position: Analista Financiera Senior
+      startDate: Jan 1, 2022
+      summary: |
+        - Lidero el proceso de planificación financiera anual y la elaboración de presupuestos para tres unidades de negocio.
+        - Desarrollo modelos financieros en Excel y Power BI para evaluar escenarios de inversión, rentabilidad y sensibilidad.
+        - Realizo análisis de desviaciones mensuales frente a presupuesto y presento recomendaciones al comité de dirección.
+        - Colaboro con Contabilidad, Riesgos y Inteligencia de Negocio para automatizar la consolidación de datos y reducir el tiempo de elaboración de informes en un 30%.
+      keywords:
+        - Planificación financiera
+        - Modelado financiero
+        - Power BI
+        - Análisis de desviaciones
+        - Presupuestos
+    - name: Inversiones Atlantic
+      url: https://www.inversionesatlantic.com
+      position: Analista Financiera
+      startDate: Sep 1, 2019
+      endDate: Dec 31, 2021
+      summary: |
+        - Elaboré informes mensuales de rentabilidad y liquidez para una cartera de inversión de 120 millones de euros.
+        - Automaticé la extracción y validación de datos con SQL y Python, reduciendo errores manuales y tiempos de cierre.
+        - Apoyé la valoración de empresas mediante DCF, múltiplos comparables y análisis de sensibilidad.
+        - Participé en la diligencia debida financiera de dos operaciones de adquisición en el sector servicios.
+      keywords:
+        - Valoración de empresas
+        - DCF
+        - SQL
+        - Python
+        - Diligencia debida

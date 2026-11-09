@@ -1,0 +1,248 @@
+content:
+  basics:
+    name: Lucía Fernández Moreno
+    headline: Ingeniera de Datos Senior
+    phone: '+34 612 345 678'
+    email: lucia.fernandez@example.com
+    url: https://luciafernandez.dev
+    summary: |
+      - Ingeniera de Datos con más de 10 años de experiencia diseñando y construyendo plataformas de datos escalables.
+      - Especializada en arquitecturas de datos modernas, pipelines ETL/ELT y soluciones analíticas en la nube.
+      - Sólida experiencia en modelado dimensional, optimización de consultas y gobierno del dato.
+      - Colaboradora habitual con equipos de negocio, analítica y ciencia de datos para convertir requisitos en soluciones medibles.
+  location:
+    address: Calle de Alcalá 123
+    city: Madrid
+    region: Comunidad de Madrid
+    country: Spain
+    postalCode: '28009'
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/lucia-fernandez-data
+      username: lucia-fernandez-data
+    - network: GitHub
+      url: https://github.com/luciafdez
+      username: luciafdez
+  education:
+    - institution: Universidad Politécnica de Madrid
+      url: https://www.upm.es
+      degree: Master
+      area: Ciencia de Datos e Ingeniería de Datos
+      score: '9.1'
+      startDate: 'Sep 1, 2012'
+      endDate: 'Jul 1, 2014'
+      courses:
+        - Arquitecturas de Datos Escalables
+        - Procesamiento Distribuido
+        - Minería de Datos
+        - Bases de Datos Avanzadas
+        - Aprendizaje Automático
+      summary: |
+        - Formación avanzada en diseño de sistemas de datos, analítica y aprendizaje automático.
+        - Proyecto fin de máster centrado en la optimización de pipelines de ingestión en tiempo real.
+    - institution: Universidad de Sevilla
+      url: https://www.us.es
+      degree: Bachelor
+      area: Ingeniería Informática
+      score: '8.7'
+      startDate: 'Sep 1, 2008'
+      endDate: 'Jun 1, 2012'
+      courses:
+        - Estructuras de Datos
+        - Algoritmos
+        - Sistemas Operativos
+        - Redes de Computadores
+        - Bases de Datos
+      summary: |
+        - Base sólida en programación, sistemas distribuidos y fundamentos de bases de datos.
+  work:
+    - name: Iberia Data Solutions
+      url: https://www.iberiadata.example.com
+      position: Ingeniera de Datos Senior
+      startDate: 'Mar 1, 2021'
+      summary: |
+        - Lideré el diseño de una plataforma de datos en Google Cloud Platform para centralizar información de 12 áreas de negocio.
+        - Implementé pipelines ELT con dbt, BigQuery y Airflow, reduciendo el tiempo de publicación de datos en un 60 %.
+        - Definí estándares de modelado dimensional y gobierno del dato, mejorando la calidad y trazabilidad de los datasets.
+        - Mentoré a tres ingenieros junior y coordiné revisiones técnicas de código y arquitectura.
+      keywords:
+        - Google Cloud Platform
+        - BigQuery
+        - dbt
+        - Airflow
+        - Gobierno del dato
+    - name: Telefónica Tech
+      url: https://www.telefonicatech.com
+      position: Ingeniera de Datos
+      startDate: 'Jan 1, 2017'
+      endDate: 'Feb 1, 2021'
+      summary: |
+        - Desarrollé pipelines ETL en Python y Spark para procesar más de 2 TB diarios de datos de red y negocio.
+        - Modelé datos en Amazon Redshift y optimicé consultas analíticas para equipos de BI y marketing.
+        - Automaticé validaciones de calidad con Great Expectations y monitoreo de jobs con Grafana y Prometheus.
+        - Participé en la migración de un almacén de datos on-premise a AWS con enfoque en mínima interrupción.
+      keywords:
+        - Python
+        - Apache Spark
+        - AWS
+        - Redshift
+        - ETL
+    - name: Accenture España
+      url: https://www.accenture.com/es-es
+      position: Analista de Datos
+      startDate: 'Sep 1, 2014'
+      endDate: 'Dec 1, 2016'
+      summary: |
+        - Construí informes y cuadros de mando en Power BI para clientes de banca y seguros.
+        - Escribí consultas SQL complejas y procedimientos almacenados para extraer y transformar datos.
+        - Documenté requisitos funcionales y colaboré con equipos de negocio en la definición de KPIs.
+      keywords:
+        - SQL
+        - Power BI
+        - Análisis de Datos
+        - Banca
+  skills:
+    - name: Ingeniería de Datos
+      level: Expert
+      keywords:
+        - ETL/ELT
+        - Modelado dimensional
+        - Almacén de datos
+        - Calidad del dato
+        - Gobierno del dato
+    - name: Computación en la Nube
+      level: Advanced
+      keywords:
+        - Google Cloud Platform
+        - AWS
+        - BigQuery
+        - Redshift
+        - Azure Data Factory
+    - name: Big Data y Procesamiento
+      level: Advanced
+      keywords:
+        - Apache Spark
+        - Apache Airflow
+        - Apache Kafka
+        - dbt
+        - Databricks
+    - name: Lenguajes y Bases de Datos
+      level: Advanced
+      keywords:
+        - Python
+        - SQL
+        - Scala
+        - PostgreSQL
+        - MongoDB
+  languages:
+    - language: Spanish
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - Español nativo
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - C1
+        - Uso profesional
+    - language: Catalan
+      fluency: Limited Working Proficiency
+      keywords:
+        - Conversación básica
+  awards:
+    - title: Premio a la Innovación en Datos
+      awarder: Iberia Data Solutions
+      date: 'Nov 2023'
+      summary: |
+        - Reconocimiento por el diseño de una plataforma de datos que redujo el time-to-insight en un 45 %.
+    - title: Matrícula de Honor en Proyecto Fin de Máster
+      awarder: Universidad Politécnica de Madrid
+      date: 'Jul 2014'
+      summary: |
+        - Galardón al mejor proyecto de la promoción en el área de procesamiento distribuido.
+  certificates:
+    - name: Google Cloud Professional Data Engineer
+      issuer: Google Cloud
+      date: 'Mar 2022'
+      url: https://cloud.google.com/certification/data-engineer
+    - name: AWS Certified Data Analytics - Specialty
+      issuer: Amazon Web Services
+      date: 'Sep 2021'
+      url: https://aws.amazon.com/certification/certified-data-analytics-specialty/
+    - name: dbt Analytics Engineering Certification
+      issuer: dbt Labs
+      date: 'May 2023'
+      url: https://www.getdbt.com/certifications/
+  publications:
+    - name: Diseño de pipelines de datos en tiempo real para analítica operativa
+      publisher: Revista Española de Ingeniería de Datos
+      releaseDate: 'Oct 2022'
+      url: https://www.revista-ingenieria-datos.example.com/articulos/pipelines-tiempo-real
+      summary: |
+        - Artículo técnico sobre patrones de ingestión y procesamiento continuo con Kafka y Spark Structured Streaming.
+        - Analiza estrategias de particionado, exactly-once y monitorización de latencia.
+  projects:
+    - name: Observatorio de Datos Abiertos
+      url: https://github.com/luciafdez/observatorio-datos-abiertos
+      description: Plataforma reproducible para ingerir, validar y publicar datasets
+        abiertos de administraciones públicas.
+      startDate: 'Jan 1, 2023'
+      endDate: 'Jun 1, 2023'
+      summary: |
+        - Diseñé un pipeline con Airflow y dbt que ingesta datos de portales open data y genera tablas analíticas listas para consulta.
+        - Implementé tests de calidad y documentación automática del linaje de datos.
+        - Desplegué la solución en Google Cloud Run y BigQuery con costes controlados.
+      keywords:
+        - Open Data
+        - Airflow
+        - dbt
+        - BigQuery
+    - name: Motor de Recomendación para Retail
+      url: https://github.com/luciafdez/retail-recommender
+      description: Prototipo de motor de recomendación basado en datos transaccionales
+        anonimizados.
+      startDate: 'Mar 1, 2020'
+      endDate: 'Nov 1, 2020'
+      summary: |
+        - Construí un pipeline de features con Spark y un modelo de filtrado colaborativo en Python.
+        - Evalué el rendimiento con métricas de precisión y recall sobre un conjunto de validación temporal.
+        - Documenté la arquitectura y los resultados en un informe técnico reproducible.
+      keywords:
+        - Spark
+        - Python
+        - Recomendación
+        - Retail
+  interests:
+    - name: Datos y Tecnología
+      keywords:
+        - Open Source
+        - Arquitecturas de Datos
+        - Automatización
+    - name: Actividad Física
+      keywords:
+        - Senderismo
+        - Natación
+        - Ciclismo
+    - name: Cultura
+      keywords:
+        - Lectura
+        - Fotografía
+        - Podcasts
+  volunteer:
+    - organization: Data Girls Madrid
+      url: https://www.datagirlsmadrid.example.com
+      position: Mentora Técnica
+      startDate: 'Sep 1, 2022'
+      summary: |
+        - Acompaño a mujeres que inician su carrera en datos en la definición de objetivos y desarrollo de habilidades técnicas.
+        - Participo en talleres de SQL, Python y visualización de datos para la comunidad.
+    - organization: Cáritas Madrid
+      url: https://www.caritasmadrid.org
+      position: Voluntaria de Análisis de Datos
+      startDate: 'Jan 1, 2020'
+      endDate: 'Aug 1, 2022'
+      summary: |
+        - Apoyé al equipo social en la limpieza y análisis de datos de programas de asistencia.
+        - Automaticé informes mensuales en Power BI para facilitar la toma de decisiones.
+
+locale:
+  language: es

@@ -1,0 +1,229 @@
+content:
+  basics:
+    name: Silje Bakken
+    headline: Cybersikkerhetsingeniør | SOC, hendelseshåndtering og skysikkerhet
+    phone: "+47 123 45 678"
+    email: silje.bakken@protonmail.com
+    url: https://siljebakken.no
+    summary: |
+      - Erfaren cybersikkerhetsingeniør med mastergrad i informasjonssikkerhet og 8 års erfaring fra SOC, hendelseshåndtering og sikkerhetsarkitektur.
+      - Spesialisert i trusseldeteksjon, logganalyse og automatisering av sikkerhetsprosesser i Microsoft Sentinel, Splunk og QRadar.
+      - Har ledet hendelsesrespons for kritisk infrastruktur og redusert responstid gjennom SOAR-playbooks og KQL-baserte deteksjoner.
+      - Sterk på risikovurdering, MITRE ATT&CK, sikkerhetsrevisjoner og samarbeid på tvers av teknologi-, drift- og ledelsesmiljøer.
+      - Opptatt av å bygge en proaktiv sikkerhetskultur gjennom opplæring, mentorvirksomhet og tydelig dokumentasjon.
+
+  location:
+    address: Storgata 12
+    city: Oslo
+    region: Oslo
+    country: Norway
+    postalCode: "0155"
+
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/siljebakken
+      username: siljebakken
+    - network: GitHub
+      url: https://github.com/siljebakken
+      username: siljebakken
+
+  education:
+    - institution: Norges teknisk-naturvitenskapelige universitet
+      url: https://www.ntnu.no
+      degree: Master
+      area: Informasjonssikkerhet
+      score: "A (5)"
+      startDate: Aug 15, 2014
+      endDate: Jun 10, 2016
+      courses:
+        - Kryptografi og sikkerhetsprotokoller
+        - Nettsikkerhet
+        - Systemering av sikre systemer
+        - Risikostyring og personvern
+        - Digital etterforskning
+        - Sikkerhetsarkitektur
+      summary: |
+        - Fordypning i kryptografi, nettverkssikkerhet og sikker systemutvikling
+        - Gjennomførte masterprosjekt om trusseldeteksjon i kritisk infrastruktur
+        - Utviklet praktisk erfaring med risikovurdering, sikkerhetsrevisjon og hendelseshåndtering
+    - institution: Universitetet i Oslo
+      url: https://www.uio.no
+      degree: Bachelor
+      area: Informatikk
+      score: "B (4)"
+      startDate: Aug 15, 2011
+      endDate: Jun 10, 2014
+      courses:
+        - Algoritmer og datastrukturer
+        - Operativsystemer
+        - Databaser
+        - Nettverk
+        - Programmering i Java
+        - Diskret matematikk
+      summary: |
+        - Solid grunnlag i programmering, systemforståelse og datanettverk
+        - Arbeidet i prosjektgrupper med sikker utvikling og testing av programvare
+        - Skrev bacheloroppgave om autentisering og tilgangskontroll i webløsninger
+
+  work:
+    - name: Nordisk Energisikkerhet AS
+      url: https://www.nordiskenergisikkerhet.no
+      position: Senior cybersikkerhetsingeniør
+      startDate: Mar 1, 2021
+      summary: |
+        - Leder daglig SOC-drift for et energiselskap med kritisk infrastruktur og 24/7-overvåking
+        - Utvikler og forvalter deteksjonsregler i Microsoft Sentinel og Splunk med fokus på OT- og IT-konvergens
+        - Gjennomfører hendelsesrespons for komplekse hendelser, inkludert analyse, isolering og rapportering
+        - Bygget SOAR-playbooks som reduserte manuell prioritering med 35 % og forkortet gjennomsnittlig responsstid
+        - Fungerer som teknisk rådgiver i sikkerhetsarkitektur, risikovurderinger og leverandørrevisjoner
+      keywords:
+        - SOC
+        - Microsoft Sentinel
+        - Splunk
+        - SOAR
+        - OT-sikkerhet
+        - Hendelseshåndtering
+    - name: Bergen Sikkerhetsrådgivning AS
+      url: https://www.bergensikkerhet.no
+      position: Cybersikkerhetsingeniør
+      startDate: Aug 1, 2016
+      endDate: Feb 28, 2021
+      summary: |
+        - Overvåket og analyserte sikkerhetshendelser for kunder i finans- og helsesektoren
+        - Implementerte og vedlikeholdt SIEM-løsninger (QRadar, ArcSight) og utviklet egne korrelasjonsregler
+        - Deltok i hendelsesrespons og digital etterforskning, inkludert innsamling av bevis og rapportering
+        - Gjennomførte sårbarhetsanalyser og penetrasjonstester i samarbeid med eksterne konsulenter
+        - Bidro til utvikling av sikkerhetspolicyer og opplæring av ansatte i sikker bevissthet
+      keywords:
+        - SIEM
+        - QRadar
+        - ArcSight
+        - Sårbarhetsanalyse
+        - Penetrasjonstesting
+        - Digital etterforskning
+
+  languages:
+    - language: Norwegian
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - Morsmål
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - TOEFL 110
+        - IELTS 7.5
+    - language: German
+      fluency: Limited Working Proficiency
+      keywords:
+        - Grunnleggende
+
+  skills:
+    - name: Sikkerhetsovervåking (SOC)
+      level: Expert
+      keywords:
+        - Microsoft Sentinel
+        - Splunk
+        - QRadar
+        - ArcSight
+        - Logganalyse
+    - name: Trusseldeteksjon og hendelseshåndtering
+      level: Expert
+      keywords:
+        - MITRE ATT&CK
+        - KQL
+        - SOAR
+        - Playbooks
+        - Digital etterforskning
+    - name: Skysikkerhet
+      level: Advanced
+      keywords:
+        - Azure Security
+        - AWS Security
+        - Zero Trust
+        - Identity Management
+    - name: Risiko og samsvar
+      level: Advanced
+      keywords:
+        - ISO 27001
+        - GDPR
+        - Risikovurdering
+        - Sikkerhetsrevisjon
+    - name: Programmering og automatisering
+      level: Intermediate
+      keywords:
+        - Python
+        - PowerShell
+        - Bash
+        - KQL
+        - REST API
+
+  awards:
+    - title: Årets sikkerhetsprosjekt
+      date: Nov 2022
+      awarder: Nordisk Energisikkerhet AS
+      summary: |
+        - Anerkjent for utvikling av en automatisert hendelsesresponsplattform som reduserte responstiden med 40 %.
+
+  certificates:
+    - name: CISSP
+      issuer: (ISC)²
+      date: Jun 2020
+      url: https://www.isc2.org/certifications/cissp
+    - name: Azure Security Engineer Associate
+      issuer: Microsoft
+      date: Sep 2021
+      url: https://learn.microsoft.com/en-us/certifications/azure-security-engineer/
+    - name: CISM
+      issuer: ISACA
+      date: Mar 2019
+      url: https://www.isaca.org/credentialing/cism
+
+  publications:
+    - name: Detecting Advanced Persistent Threats in Critical Infrastructure
+      publisher: Norsk Informasjonssikkerhetskonferanse
+      releaseDate: Oct 2018
+      url: https://www.nisk.no/paper/2018
+      summary: |
+        - Presenterer en metode for å oppdage APT-angrep i OT-miljøer ved hjelp av maskinlæring og nettverksanalyse.
+
+  projects:
+    - name: Sanntids trusseldeteksjon for OT-nettverk
+      url: https://github.com/siljebakken/ot-threat-detection
+      description: Et åpent kildekode-prosjekt for å detektere unormal aktivitet i
+        industrielle kontrollsystemer.
+      startDate: Jan 2020
+      endDate: Dec 2020
+      summary: |
+        - Utviklet en deteksjonsmotor basert på Python og Scapy for å analysere Modbus- og DNP3-trafikk.
+        - Implementerte varsling til Slack og Microsoft Teams ved mistenkelig aktivitet.
+        - Testet løsningen i et simulert OT-miljø med gode resultater.
+      keywords:
+        - OT-sikkerhet
+        - Python
+        - Scapy
+        - Modbus
+        - DNP3
+
+  interests:
+    - name: Sport
+      keywords:
+        - Fjellturer
+        - Langrenn
+        - Klatring
+    - name: Musikk
+      keywords:
+        - Piano
+        - Gitar
+
+  volunteer:
+    - organization: Women in Cybersecurity Norge
+      url: https://www.wics.no
+      position: Mentor
+      startDate: Jan 2019
+      summary: |
+        - Mentorer unge kvinner som ønsker å starte karriere innen cybersikkerhet.
+        - Holder workshopserier om SOC-drift og hendelseshåndtering.
+        - Bidrar til å øke mangfoldet i sikkerhetsmiljøet.
+
+locale:
+  language: no

@@ -1,0 +1,261 @@
+content:
+  basics:
+    name: Luca Moretti
+    headline: Ingegnere AI senior specializzato in apprendimento automatico e MLOps
+    phone: "+39 347 892 1456"
+    email: luca.moretti.ai@gmail.com
+    url: https://www.lucamoretti.ai
+    summary: |
+      Ingegnere AI con oltre 7 anni di esperienza nella progettazione e nel deployment di sistemi di apprendimento automatico scalabili. Specializzato in modelli di linguaggio, visione artificiale e pipeline MLOps in ambienti cloud.
+
+      - Guida tecnica di team distribuiti e mentorship di giovani ingegneri.
+      - Forte orientamento ai risultati, alla qualità del codice e all'impatto di business.
+      - Esperienza end-to-end: dalla raccolta dati alla messa in produzione e monitoraggio.
+
+  location:
+    address: Via Alessandro Volta 42
+    city: Milano
+    region: Lombardia
+    country: Italy
+    postalCode: "20154"
+
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/lucamoretti-ai
+      username: lucamoretti-ai
+    - network: GitHub
+      url: https://github.com/lucamoretti
+      username: lucamoretti
+
+  education:
+    - institution: Politecnico di Milano
+      url: https://www.polimi.it
+      degree: Master
+      area: Ingegneria Informatica
+      score: "110/110 con lode"
+      startDate: Sep 1, 2017
+      endDate: Jul 15, 2019
+      courses:
+        - Apprendimento automatico e riconoscimento di pattern
+        - Elaborazione del linguaggio naturale
+        - Visione artificiale
+        - Sistemi distribuiti e cloud computing
+        - Ottimizzazione e ricerca operativa
+        - Architetture dei calcolatori
+      summary: |
+        - Tesi magistrale su modelli transformer per il rilevamento di anomalie in serie temporali industriali.
+        - Progetto di gruppo con azienda manifatturiera per la manutenzione predittiva.
+        - Media ponderata elevata e attività di tutoraggio per corsi di programmazione.
+
+    - institution: Università di Bologna
+      url: https://www.unibo.it
+      degree: Bachelor
+      area: Ingegneria Informatica
+      score: "108/110"
+      startDate: Sep 1, 2014
+      endDate: Jul 15, 2017
+      courses:
+        - Algoritmi e strutture dati
+        - Basi di dati
+        - Reti di calcolatori
+        - Probabilità e statistica
+        - Programmazione orientata agli oggetti
+      summary: |
+        - Solida base in matematica applicata, algoritmi e sviluppo software.
+        - Progetto finale su sistemi di raccomandazione basati su filtraggio collaborativo.
+
+  work:
+    - name: Neuralis Labs
+      url: https://www.neuralislabs.it
+      position: Ingegnere AI Senior
+      startDate: Jan 2022
+      summary: |
+        - Progettazione e implementazione di una piattaforma di modelli di linguaggio per l'assistenza clienti, con riduzione del 35% dei tempi di risposta.
+        - Responsabile tecnico di un team di 6 ingegneri AI e data scientist, con mentorship e revisione del codice.
+        - Definizione di architetture MLOps su Kubernetes e AWS per training, deployment e monitoraggio continuo.
+        - Collaborazione con product manager e stakeholder per tradurre requisiti di business in soluzioni AI misurabili.
+      keywords:
+        - LLM
+        - MLOps
+        - Kubernetes
+        - AWS
+        - NLP
+
+    - name: DataMind Italia
+      url: https://www.datamind.it
+      position: Ingegnere Machine Learning
+      startDate: Mar 2020
+      endDate: Dec 2021
+      summary: |
+        - Sviluppo di modelli di visione artificiale per il controllo qualità in linea di produzione, con accuratezza superiore al 96%.
+        - Creazione di pipeline di dati automatiche con Python, Airflow e Spark su Azure.
+        - Implementazione di test A/B e monitoraggio delle performance dei modelli in produzione.
+        - Documentazione tecnica e trasferimento di conoscenza ai team operativi.
+      keywords:
+        - Computer Vision
+        - Python
+        - Apache Airflow
+        - Azure
+        - Test A/B
+
+    - name: Aurora Robotics
+      url: https://www.aurorarobotics.it
+      position: Scienziato dei Dati
+      startDate: Sep 2019
+      endDate: Feb 2020
+      summary: |
+        - Analisi di dati sensoriali per robot collaborativi e sviluppo di modelli predittivi per la manutenzione.
+        - Prototipazione di algoritmi di rilevamento anomalie con scikit-learn e PyTorch.
+        - Presentazione dei risultati a team tecnici e non tecnici.
+      keywords:
+        - Data Science
+        - PyTorch
+        - Scikit-learn
+        - Anomaly Detection
+
+  skills:
+    - name: Apprendimento automatico
+      level: Expert
+      keywords:
+        - PyTorch
+        - TensorFlow
+        - Scikit-learn
+        - XGBoost
+        - Reti neurali
+    - name: MLOps
+      level: Advanced
+      keywords:
+        - Docker
+        - Kubernetes
+        - MLflow
+        - Kubeflow
+        - CI/CD
+    - name: Elaborazione del linguaggio naturale
+      level: Advanced
+      keywords:
+        - Transformer
+        - LLM
+        - Hugging Face
+        - RAG
+        - Fine-tuning
+    - name: Cloud e infrastrutture
+      level: Advanced
+      keywords:
+        - AWS
+        - Azure
+        - GCP
+        - Terraform
+        - Serverless
+    - name: Data Engineering
+      level: Intermediate
+      keywords:
+        - SQL
+        - Spark
+        - Airflow
+        - Kafka
+        - Snowflake
+
+  languages:
+    - language: Italian
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - Madrelingua
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - IELTS 8.0
+        - C1
+    - language: French
+      fluency: Limited Working Proficiency
+      keywords:
+        - DELF B1
+
+  awards:
+    - title: Premio Innovazione AI
+      date: Nov 2023
+      awarder: Associazione Italiana per l'Intelligenza Artificiale
+      summary: |
+        Riconoscimento per il progetto di assistenza clienti basato su modelli linguistici, selezionato tra oltre 120 candidature nazionali.
+
+  certificates:
+    - name: AWS Certified Machine Learning - Specialty
+      issuer: Amazon Web Services
+      date: Feb 2023
+      url: https://aws.amazon.com/certification/
+    - name: TensorFlow Developer Certificate
+      issuer: Google
+      date: Jun 2021
+      url: https://www.tensorflow.org/certificate
+
+  publications:
+    - name: Modelli transformer per il rilevamento di anomalie industriali
+      publisher: Atti del Congresso Italiano di Intelligenza Artificiale
+      releaseDate: Sep 2022
+      url: https://doi.org/10.1000/aiia.2022.042
+      summary: |
+        - Studio su architetture transformer applicate a serie temporali multivariate per la manutenzione predittiva.
+        - Confronto con modelli tradizionali e analisi dell'impatto della qualità dei dati.
+        - Dataset e codice resi disponibili alla comunità scientifica.
+
+  projects:
+    - name: VisionQC
+      url: https://github.com/lucamoretti/visionqc
+      description: Sistema di controllo qualità visivo basato su deep learning per
+        linee di produzione industriali
+      startDate: Apr 2021
+      endDate: Nov 2021
+      summary: |
+        - Rilevamento automatico di difetti superficiali con reti convoluzionali e segmentazione semantica.
+        - Integrazione con telecamere industriali e dashboard di monitoraggio in tempo reale.
+        - Riduzione dei falsi negativi del 28% rispetto al sistema precedente.
+      keywords:
+        - Computer Vision
+        - Deep Learning
+        - PyTorch
+        - FastAPI
+
+    - name: Assistente Documentale
+      url: https://github.com/lucamoretti/doc-assistant
+      description: Assistente conversazionale con RAG per la ricerca semantica su
+        documenti aziendali
+      startDate: Feb 2023
+      endDate: Aug 2023
+      summary: |
+        - Pipeline di ingestion, chunking e indicizzazione vettoriale di documenti PDF e testuali.
+        - Integrazione di modelli LLM con controllo delle citazioni e mitigazione delle allucinazioni.
+        - Interfaccia web e API per l'uso da parte dei team interni.
+      keywords:
+        - RAG
+        - LLM
+        - Vector Database
+        - LangChain
+        - Python
+
+  interests:
+    - name: Tecnologia
+      keywords:
+        - Open source
+        - Robotica
+        - Intelligenza artificiale
+    - name: Sport
+      keywords:
+        - Corsa
+        - Ciclismo
+        - Arrampicata
+    - name: Musica
+      keywords:
+        - Chitarra
+        - Jazz
+
+  volunteer:
+    - organization: PoliAi
+      url: https://www.poliai.it
+      position: Mentore AI
+      startDate: Oct 2021
+      summary: |
+        - Mentorship per studenti universitari su progetti di machine learning e carriera nel settore AI.
+        - Organizzazione di workshop su Python, PyTorch e buone pratiche MLOps.
+        - Supporto alla community con revisione di progetti open source.
+
+locale:
+  language: it

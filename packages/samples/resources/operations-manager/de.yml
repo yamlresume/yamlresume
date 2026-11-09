@@ -1,0 +1,197 @@
+content:
+  basics:
+    name: Dr. Julia Schneider
+    headline: 'Operations Manager | Prozessoptimierung & Supply Chain'
+    phone: "+49 89 12345678"
+    email: julia.schneider@example.com
+    url: https://www.julia-schneider.de
+    summary: |
+      - Operations Manager mit über 10 Jahren Erfahrung in der Optimierung von Produktions- und Logistikprozessen
+      - Nachweisliche Erfolge bei der Steigerung der Effizienz und Senkung der Betriebskosten durch Lean-Management und Six Sigma
+      - Expertise in der Führung interdisziplinärer Teams und der Umsetzung strategischer Projekte
+      - Fundierte Kenntnisse in SAP ERP, Supply Chain Management und kontinuierlicher Verbesserung (KVP)
+  location:
+    address: Maximilianstraße 12
+    city: München
+    region: Bayern
+    country: Germany
+    postalCode: "80333"
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/julia-schneider-ops
+      username: julia-schneider-ops
+    - network: Twitter
+      url: https://twitter.com/j_schneider_ops
+      username: j_schneider_ops
+  education:
+    - institution: Technische Universität München
+      url: https://www.tum.de
+      degree: Master
+      area: Wirtschaftsingenieurwesen
+      score: "1,8"
+      startDate: Oct 1, 2010
+      endDate: Sep 30, 2012
+      courses:
+        - Produktionsmanagement
+        - Logistik und Supply Chain Management
+        - Operations Research
+        - Qualitätsmanagement
+        - Projektmanagement
+        - Controlling und Finanzen
+      summary: |
+        - Schwerpunkt auf der Optimierung von Wertschöpfungsketten und betrieblichen Prozessen
+        - Praktische Erfahrung durch Projekte mit Industriepartnern, z. B. zur Lagerhaltungsoptimierung
+        - Ausgezeichnet mit dem Preis der Fakultät für herausragende Masterarbeit
+  work:
+    - name: Nordlicht Logistik GmbH
+      url: https://www.nordlicht-logistik.de
+      startDate: Jan 1, 2020
+      position: Senior Operations Manager
+      summary: |
+        - Leitung der Betriebsabteilung mit 45 Mitarbeitern und Verantwortung für ein Budget von 8 Mio. EUR
+        - Einführung eines neuen Lagerverwaltungssystems (WMS) zur Steigerung der Lagerumschlagsgeschwindigkeit um 25 %
+        - Implementierung von Lean-Management-Prinzipien, wodurch die Durchlaufzeiten um 15 % reduziert wurden
+        - Aufbau eines KPI-Dashboards zur Echtzeitüberwachung der operativen Leistung
+      keywords:
+        - Lagerverwaltung
+        - Lean Management
+        - Budgetverantwortung
+        - KPI-Reporting
+    - name: TechFlow Solutions AG
+      url: https://www.techflow-solutions.de
+      startDate: Mar 1, 2017
+      endDate: Dec 31, 2019
+      position: Operations Manager
+      summary: |
+        - Verantwortung für die Auftragsabwicklung und Produktionsplanung in einem internationalen Umfeld
+        - Optimierung der Lieferkette durch Einführung von S&OP-Prozessen, Reduzierung der Lieferzeiten um 20 %
+        - Führung eines Teams von 20 Mitarbeitern und Einführung regelmäßiger Schulungen zu Qualitätsstandards
+        - Zusammenarbeit mit Zulieferern zur Sicherstellung der Materialverfügbarkeit und Kostensenkung
+      keywords:
+        - Produktionsplanung
+        - 'S&OP'
+        - Lieferkettenoptimierung
+        - Qualitätsmanagement
+    - name: Rhein-Main Produktion GmbH
+      url: https://www.rhein-main-produktion.de
+      startDate: Jul 1, 2014
+      endDate: Feb 28, 2017
+      position: Operations Manager
+      summary: |
+        - Steuerung der täglichen Betriebsabläufe in einem Produktionswerk mit 120 Mitarbeitern
+        - Einführung von Kanban-Systemen zur Bestandsreduzierung um 30 %
+        - Durchführung von Wertstromanalysen und Ableitung von Maßnahmen zur Effizienzsteigerung
+        - Enge Zusammenarbeit mit der Geschäftsleitung zur Entwicklung langfristiger Betriebsstrategien
+      keywords:
+        - Kanban
+        - Wertstromanalyse
+        - Betriebssteuerung
+        - Effizienzsteigerung
+  languages:
+    - language: German
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - Muttersprache
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - TOEFL iBT 110
+        - Verhandlungsführung
+  skills:
+    - name: Prozessoptimierung
+      level: Expert
+      keywords:
+        - Lean Management
+        - Six Sigma
+        - Wertstromanalyse
+        - KVP
+        - Kanban
+    - name: Supply Chain Management
+      level: Advanced
+      keywords:
+        - 'S&OP'
+        - Lieferkettenoptimierung
+        - Lagerverwaltung
+        - Beschaffung
+    - name: Teamführung
+      level: Advanced
+      keywords:
+        - Mitarbeiterentwicklung
+        - Konfliktmanagement
+        - Changemanagement
+        - Coaching
+    - name: SAP ERP
+      level: Advanced
+      keywords:
+        - SAP MM
+        - SAP PP
+        - SAP WM
+    - name: Projektmanagement
+      level: Advanced
+      keywords:
+        - PMP
+        - Agile Methoden
+        - Stakeholder-Management
+        - Risikomanagement
+  awards:
+    - title: Best Operations Excellence Award
+      date: Nov 2022
+      awarder: Nordlicht Logistik GmbH
+      summary: |
+        Auszeichnung für die erfolgreiche Implementierung eines ganzheitlichen Lean-Management-Programms, das zu einer jährlichen Kosteneinsparung von 1,2 Mio. EUR führte.
+    - title: Preis der Fakultät für herausragende Masterarbeit
+      date: Oct 2012
+      awarder: Technische Universität München
+      summary: |
+        Für die Masterarbeit zum Thema "Optimierung von Lagerhaltungsstrategien mittels simulationsbasierter Analyse".
+  certificates:
+    - name: Lean Six Sigma Green Belt
+      issuer: TÜV Rheinland
+      date: Jun 2016
+      url: https://www.tuv.com/lean-six-sigma
+    - name: Project Management Professional (PMP)
+      issuer: Project Management Institute
+      date: Sep 2018
+      url: https://www.pmi.org/certifications/project-management-pmp
+    - name: SAP Certified Application Associate - Supply Chain
+      issuer: SAP SE
+      date: Mar 2015
+      url: https://www.sap.com/certification
+  projects:
+    - name: Einführung eines WMS
+      startDate: Mar 2021
+      endDate: Nov 2021
+      description: Implementierung eines modernen WMS zur Optimierung der Lagerprozesse
+      summary: |
+        - Auswahl und Einführung eines neuen Warehouse-Management-Systems bei Nordlicht Logistik
+        - Analyse der bestehenden Prozesse und Definition von Anforderungen
+        - Schulung der Mitarbeiter und Begleitung der Inbetriebnahme
+        - Erzielung einer 25%igen Steigerung der Lagerumschlagsgeschwindigkeit
+      keywords:
+        - WMS
+        - Logistik
+        - Prozessoptimierung
+      url: https://www.nordlicht-logistik.de/projekte/wms
+  interests:
+    - name: Sport
+      keywords:
+        - Laufen
+        - Radfahren
+        - Wandern
+    - name: Logistik und Technologie
+      keywords:
+        - Industrie 4.0
+        - Automatisierung
+        - Nachhaltigkeit
+  volunteer:
+    - organization: Bundesverband Materialwirtschaft, Einkauf und Logistik e.V. (BME)
+      url: https://www.bme.de
+      position: Ehrenamtlicher Fachgruppenleiter
+      startDate: Jan 2019
+      summary: |
+        - Leitung der regionalen Fachgruppe München zum Thema "Digitale Supply Chain"
+        - Organisation von Fachvorträgen und Networking-Events für über 100 Mitglieder
+        - Förderung des Wissensaustauschs zwischen Industrie und Wissenschaft
+
+locale:
+  language: de

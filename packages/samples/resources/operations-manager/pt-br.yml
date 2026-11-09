@@ -1,0 +1,251 @@
+content:
+  basics:
+    name: Mariana Costa Almeida
+    headline: Gerente de Operações | Logística, S&OP e Melhoria Contínua
+    phone: "+55 11 98765-4321"
+    email: mariana.almeida@example.com
+    url: https://www.marianaalmeida.com.br
+    summary: |
+      Gerente de Operações com mais de 10 anos de experiência em logística, planejamento e melhoria contínua. Histórico comprovado na liderança de equipes multidisciplinares, otimização de processos e redução de custos operacionais em empresas de médio e grande porte.
+
+      - Especialista em S&OP, gestão de estoques e indicadores de desempenho (KPIs)
+      - Experiência com Lean Six Sigma, mapeamento de processos e gestão de mudanças
+      - Forte atuação em negociação com fornecedores, transportadoras e parceiros estratégicos
+      - Perfil analítico, orientado a dados e focado em resultados sustentáveis
+  location:
+    address: Rua das Acácias, 245
+    city: São Paulo
+    region: São Paulo
+    country: Brazil
+    postalCode: "04567-000"
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/mariana-almeida-ops
+      username: mariana-almeida-ops
+    - network: Medium
+      url: https://medium.com/@marianaalmeida-ops
+      username: marianaalmeida-ops
+  education:
+    - institution: Universidade de São Paulo
+      url: https://www.usp.br
+      degree: Bachelor
+      area: Engenharia de Produção
+      score: "8.7/10"
+      startDate: 'Feb 2010'
+      endDate: 'Dec 2014'
+      courses:
+        - Gestão de Operações
+        - Logística e Cadeia de Suprimentos
+        - Planejamento e Controle da Produção
+        - Pesquisa Operacional
+        - Gestão da Qualidade
+        - Engenharia Econômica
+        - Simulação de Sistemas
+        - Gestão de Projetos
+      summary: |
+        - Formação com foco em engenharia de operações, logística e melhoria de processos
+        - Projeto de conclusão sobre otimização de rotas de distribuição
+        - Participação em empresa júnior e projetos de consultoria operacional
+    - institution: Fundação Getulio Vargas
+      url: https://www.fgv.br
+      degree: Master
+      area: Gestão de Operações e Cadeia de Suprimentos
+      score: "9.2/10"
+      startDate: 'Jan 2016'
+      endDate: 'Dec 2017'
+      summary: |
+        - Especialização em gestão estratégica de operações e cadeia de suprimentos
+        - Desenvolvimento de projeto aplicado à redução de custos logísticos
+        - Ênfase em liderança, negociação e transformação digital
+  work:
+    - name: LogiRota Soluções Logísticas
+      url: https://www.logirota.com.br
+      position: Gerente de Operações
+      startDate: 'Mar 2021'
+      summary: |
+        - Lidero equipe de 45 pessoas nas áreas de transporte, armazenagem e planejamento operacional
+        - Reduzi o custo logístico em 18% por meio de renegociação de contratos e otimização de rotas
+        - Implementei rotina de S&OP integrada às áreas comercial, compras e produção
+        - Estruturei painéis de KPIs para acompanhamento diário de nível de serviço, custo por entrega e produtividade
+        - Conduzi projeto de automação de processos com integração entre WMS e TMS
+      keywords:
+        - Gestão de operações
+        - Logística
+        - 'S&OP'
+        - Lean
+        - KPIs
+        - Liderança
+    - name: Distribuidora Nova Era
+      url: https://www.distribuidoranovaera.com.br
+      position: Coordenadora de Operações
+      startDate: 'Jan 2018'
+      endDate: 'Feb 2021'
+      summary: |
+        - Coordenei operações de distribuição em três centros de distribuição regionais
+        - Reduzi o lead time médio de entrega em 22% com revisão de processos e roteirização
+        - Implantei programa 5S e rotinas de auditoria operacional nas unidades
+        - Gerenciei orçamento anual de R$ 12 milhões, com acompanhamento mensal de desvios
+        - Desenvolvi indicadores de acuracidade de estoque e nível de atendimento ao cliente
+      keywords:
+        - Distribuição
+        - Estoques
+        - 5S
+        - Melhoria contínua
+        - Gestão de equipes
+    - name: Transportes Bandeirante
+      url: https://www.transportesbandeirante.com.br
+      position: Analista de Operações Sênior
+      startDate: 'Jul 2014'
+      endDate: 'Dec 2017'
+      summary: |
+        - Analisei indicadores operacionais e elaborei relatórios gerenciais para a diretoria
+        - Desenvolvi previsões de demanda e apoiei o planejamento de capacidade da frota
+        - Apoiei a implantação do sistema WMS e treinamento das equipes operacionais
+        - Participei de projetos de redução de custos com transporte e consolidação de cargas
+        - Realizei negociações com fornecedores e transportadoras parceiras
+      keywords:
+        - Análise de dados
+        - Previsão de demanda
+        - WMS
+        - Transporte
+  languages:
+    - language: Portuguese
+      fluency: Native or Bilingual Proficiency
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - TOEFL 108
+        - Reuniões internacionais
+    - language: Spanish
+      fluency: Limited Working Proficiency
+      keywords:
+        - DELE B2
+  skills:
+    - name: Gestão de Operações
+      level: Expert
+      keywords:
+        - Planejamento de demanda
+        - 'S&OP'
+        - Lean Six Sigma
+        - Gestão de indicadores
+        - Redução de custos
+    - name: Logística e Distribuição
+      level: Advanced
+      keywords:
+        - Roteirização
+        - WMS
+        - TMS
+        - Armazenagem
+        - Gestão de estoques
+    - name: Análise de Dados
+      level: Advanced
+      keywords:
+        - Excel avançado
+        - Power BI
+        - SQL
+        - Dashboards
+        - Análise de indicadores
+    - name: Liderança e Pessoas
+      level: Expert
+      keywords:
+        - Gestão de equipes
+        - Coaching
+        - Cultura de segurança
+        - Desenvolvimento de talentos
+    - name: Gestão de Projetos
+      level: Advanced
+      keywords:
+        - PMBOK
+        - Scrum
+        - Melhoria contínua
+        - Gestão de mudanças
+  awards:
+    - title: Prêmio de Excelência Operacional
+      date: 'Nov 2023'
+      awarder: LogiRota Soluções Logísticas
+      summary: |
+        Reconhecimento pela liderança do projeto de centralização do controle logístico, com ganho de 15% em produtividade e melhoria consistente no nível de serviço ao cliente.
+    - title: Reconhecimento por Redução de Custos
+      date: 'Dec 2020'
+      awarder: Distribuidora Nova Era
+      summary: |
+        Premiação pelo resultado de redução de 22% no lead time de entrega e melhoria da acuracidade de estoque nas operações regionais.
+  certificates:
+    - name: Lean Six Sigma Green Belt
+      issuer: ASQ
+      date: 'Jun 2019'
+      url: https://asq.org/cert/lean-six-sigma-green-belt
+    - name: Certified Supply Chain Professional (CSCP)
+      issuer: ASCM
+      date: 'Sep 2020'
+      url: https://www.ascm.org/credentials-certifications/ascm-certifications/cscp/
+    - name: Scrum Master Certified
+      issuer: Scrum Alliance
+      date: 'Mar 2022'
+      url: https://www.scrumalliance.org/get-certified/scrum-master-track/certified-scrummaster
+  publications:
+    - name: Análise preditiva aplicada à gestão de estoques no varejo
+      publisher: Revista Brasileira de Logística
+      releaseDate: 'Aug 2022'
+      url: https://www.revistabrasileiradelogistica.com.br/artigos/analise-preditiva-estoques
+      summary: |
+        - Estudo sobre o uso de modelos preditivos para melhorar a acuracidade de estoque
+        - Discussão de impactos na redução de rupturas e no capital de giro
+        - Apresentação de casos práticos em operações de distribuição
+  projects:
+    - name: Centro de Controle Logístico
+      startDate: 'Jan 2022'
+      endDate: 'Jul 2022'
+      description: Projeto de centralização do monitoramento de entregas e indicadores
+        operacionais.
+      summary: |
+        - Implantação de sala de controle com acompanhamento em tempo real das operações
+        - Integração de dados de WMS, TMS e atendimento ao cliente
+        - Redução de 12% no tempo de resposta a ocorrências logísticas
+      keywords:
+        - Logística
+        - Controle operacional
+        - KPIs
+        - Integração de sistemas
+    - name: Programa Lean na Distribuição
+      startDate: 'Mar 2019'
+      endDate: 'Nov 2019'
+      description: Programa de melhoria contínua aplicado aos processos de separação e
+        expedição.
+      summary: |
+        - Mapeamento de fluxo de valor e identificação de desperdícios
+        - Implantação de padrões operacionais e rotinas de gestão à vista
+        - Ganho de 20% em produtividade nas equipes de separação
+      keywords:
+        - Lean
+        - Melhoria contínua
+        - Produtividade
+        - Gestão à vista
+  interests:
+    - name: Esportes
+      keywords:
+        - Corrida
+        - Ciclismo
+        - Vôlei
+    - name: Leitura
+      keywords:
+        - Gestão
+        - Biografias
+        - Economia
+    - name: Culinária
+      keywords:
+        - Cozinha italiana
+        - Panificação
+  volunteer:
+    - organization: Instituto Rede Solidária
+      url: https://www.institutoredesolidaria.org.br
+      position: Mentora de Jovens em Logística
+      startDate: 'Feb 2020'
+      summary: |
+        - Mentoria para jovens em início de carreira nas áreas de logística e operações
+        - Apoio na elaboração de currículos e preparação para entrevistas
+        - Participação em workshops sobre planejamento de carreira e competências técnicas
+        - Colaboração com a organização de feiras de empregabilidade comunitárias
+
+locale:
+  language: pt-br

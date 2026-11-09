@@ -1,0 +1,223 @@
+content:
+  basics:
+    name: Sanne de Vries
+    headline: Senior Financieel Analist
+    phone: +31 6 12345678
+    email: sanne.de.vries@example.com
+    url: https://www.sannedevries.nl
+    summary: |
+      - Ervaren financieel analist met meer dan 6 jaar ervaring in de bancaire sector.
+      - Sterk in financiële modellering, budgettering en rapportage.
+      - Bewezen trackrecord in het verbeteren van financiële processen en het ondersteunen van strategische besluitvorming.
+      - Analytisch sterk, detailgericht en communicatief vaardig.
+  location:
+    address: Keizersgracht 123
+    city: Amsterdam
+    region: Noord-Holland
+    country: Netherlands
+    postalCode: "1015 CJ"
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/sannedevries
+      username: sannedevries
+    - network: Twitter
+      url: https://twitter.com/sannedevries
+      username: sannedevries
+  education:
+    - institution: Universiteit van Amsterdam
+      url: https://www.uva.nl
+      degree: Master
+      area: Finance
+      score: "8.5"
+      startDate: Sep 1, 2015
+      endDate: Jul 1, 2017
+      courses:
+        - Corporate Finance
+        - Investeringsanalyse
+        - Financiële Modellering
+        - Risk Management
+        - Econometrie
+        - Fusies en Overnames
+      summary: |
+        - Gespecialiseerd in corporate finance en investeringsstrategieën
+        - Afstudeerscriptie over de impact van rentebeleid op bankprestaties
+        - Cum laude afgestudeerd
+    - institution: Erasmus Universiteit Rotterdam
+      url: https://www.eur.nl
+      degree: Bachelor
+      area: Economie
+      score: "8.0"
+      startDate: Sep 1, 2012
+      endDate: Jul 1, 2015
+      courses:
+        - Micro-economie
+        - Macro-economie
+        - Statistiek
+        - Financiële Rekenkunde
+        - Boekhouden
+      summary: |
+        - Basis gelegd voor financiële analyse en economisch denken
+        - Actief lid van de studievereniging
+  work:
+    - name: Rabobank
+      url: https://www.rabobank.nl
+      position: Senior Financieel Analist
+      startDate: Jan 1, 2021
+      summary: |
+        - Verantwoordelijk voor financiële analyse en rapportage van de zakelijke bankdivisie
+        - Ontwikkelen en onderhouden van financiële modellen voor budgettering en forecasting
+        - Adviseren van senior management over kostenbesparingen en investeringsbeslissingen
+        - Leiden van een team van 3 junior analisten
+        - Geautomatiseerd rapporteringsproces, resulterend in 30% tijdswinst
+      keywords:
+        - Financiële analyse
+        - Budgettering
+        - Forecasting
+        - Teamleiding
+    - name: ING Bank
+      url: https://www.ing.com
+      position: Financieel Analist
+      startDate: Sep 1, 2018
+      endDate: Dec 31, 2020
+      summary: |
+        - Analyseerde financiële prestaties van retail banking producten
+        - Opgesteld van maandelijkse managementrapportages en variance analyses
+        - Samengewerkt met productteams om winstgevendheid te verbeteren
+        - Bouwde SQL-queries en Excel-modellen voor data-analyse
+        - Bijgedragen aan digitalisering van financiële processen
+      keywords:
+        - Rapportage
+        - Variance analyse
+        - SQL
+        - Excel
+    - name: Deloitte
+      url: https://www.deloitte.nl
+      position: Junior Financieel Analist
+      startDate: Sep 1, 2017
+      endDate: Aug 31, 2018
+      summary: |
+        - Ondersteunde audit- en adviesteams bij financiële analyses
+        - Voerde data-analyse uit voor cliënten in de financiële sector
+        - Bereidde financiële rapportages en presentaties voor
+        - Leerde werken met geavanceerde Excel- en BI-tools
+      keywords:
+        - Audit
+        - Data-analyse
+        - Financiële rapportage
+  skills:
+    - name: Financiële Analyse
+      level: Expert
+      keywords:
+        - Financiële modellering
+        - Budgettering
+        - Forecasting
+        - Waardering
+    - name: Data Analyse
+      level: Advanced
+      keywords:
+        - SQL
+        - Excel
+        - Power BI
+        - Python
+    - name: Risk Management
+      level: Advanced
+      keywords:
+        - Risicoanalyse
+        - Compliance
+        - Internal Controls
+    - name: Communicatie
+      level: Expert
+      keywords:
+        - Rapportage
+        - Presentatie
+        - Stakeholdermanagement
+  languages:
+    - language: Dutch
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - Moedertaal
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - C1
+    - language: German
+      fluency: Limited Working Proficiency
+      keywords:
+        - B1
+  awards:
+    - title: Dean's List
+      date: Jul 2016
+      awarder: Universiteit van Amsterdam
+      summary: |
+        Toegekend aan studenten met uitstekende academische prestaties.
+    - title: Beste Afstudeerscriptie
+      date: Dec 2017
+      awarder: Erasmus Universiteit Rotterdam
+      summary: |
+        Prijs voor de beste masterscriptie binnen de faculteit Economie.
+  certificates:
+    - name: CFA Level II
+      issuer: CFA Institute
+      date: Jun 2020
+      url: https://www.cfainstitute.org
+    - name: Financial Modeling & Valuation Analyst (FMVA)
+      issuer: Corporate Finance Institute
+      date: Mar 2019
+      url: https://corporatefinanceinstitute.com
+  publications:
+    - name: De impact van rentebeleid op bankprestaties
+      publisher: Tijdschrift voor Financieel Management
+      releaseDate: Dec 2017
+      url: https://www.tijdschriftfinancieelmanagement.nl
+      summary: |
+        - Onderzoek naar de relatie tussen rentebeleid en winstgevendheid van banken
+        - Gepresenteerd op de jaarlijkse conferentie van de European Finance Association
+  projects:
+    - name: Financieel Model voor Kostenoptimalisatie
+      startDate: Jan 2022
+      endDate: Jun 2022
+      description: Een geïntegreerd financieel model voor kostenoptimalisatie binnen
+        de zakelijke bankdivisie.
+      summary: |
+        - Ontwikkelde een geïntegreerd financieel model om kostenbesparingen te identificeren
+        - Model gebruikte data van 10 afdelingen en resulteerde in 15% kostenreductie
+      keywords:
+        - Financieel model
+        - Kostenanalyse
+        - Excel
+      url: https://www.rabobank.nl/projecten/kostenoptimalisatie
+    - name: Dashboard voor Managementrapportage
+      startDate: Mar 2021
+      endDate: Sep 2021
+      description: Een Power BI-dashboard voor real-time financiële rapportage aan het
+        management.
+      summary: |
+        - Bouwde een Power BI-dashboard voor real-time financiële rapportage
+        - Dashboard werd gebruikt door het managementteam voor maandelijkse reviews
+      keywords:
+        - Power BI
+        - Dashboard
+        - Rapportage
+  interests:
+    - name: Beleggen
+      keywords:
+        - Aandelen
+        - Obligaties
+        - ETF-fondsen
+    - name: Hardlopen
+      keywords:
+        - Marathons
+        - Trailrunning
+  volunteer:
+    - organization: Stichting Financiële Coaching
+      url: https://www.financielecoaching.nl
+      position: Vrijwillig Financieel Coach
+      startDate: Jan 2019
+      endDate: Dec 2022
+      summary: |
+        - Bieden van financiële coaching aan gezinnen met schulden
+        - Helpen bij het opstellen van budgetten en aflossingsplannen
+        - Organiseren van workshops over financiële geletterdheid
+
+locale:
+  language: nl

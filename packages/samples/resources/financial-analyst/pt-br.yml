@@ -1,0 +1,220 @@
+content:
+  basics:
+    name: Mariana Costa Almeida
+    headline: Analista Financeiro Sênior em Planejamento e Análise
+    phone: "+55 11 98765-4321"
+    email: mariana.almeida@financaspro.com.br
+    url: https://www.marianaalmeida.com.br
+    summary: |
+      - Analista financeiro com mais de 6 anos de experiência em planejamento, orçamento, valuation e análise de performance.
+      - Forte atuação em modelos financeiros, projeções de fluxo de caixa e relatórios gerenciais para tomada de decisão.
+      - Experiência com Power BI, Excel avançado, SQL e SAP em ambientes corporativos de alta complexidade.
+      - Perfil analítico, colaborativo e orientado a resultados, com comunicação clara para públicos executivos.
+  location:
+    address: Av. Brigadeiro Faria Lima, 1234
+    city: São Paulo
+    region: São Paulo
+    country: Brazil
+    postalCode: "01451-001"
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/mariana-almeida-financas
+      username: mariana-almeida-financas
+    - network: Medium
+      url: https://medium.com/@mariana.almeida
+      username: mariana.almeida
+  education:
+    - institution: Universidade de São Paulo
+      url: https://www.usp.br
+      degree: Bachelor
+      area: Administração com ênfase em Finanças
+      score: "8.7/10"
+      startDate: Mar 1, 2014
+      endDate: Dec 1, 2018
+      courses:
+        - Finanças Corporativas
+        - Contabilidade Gerencial
+        - Análise de Investimentos
+        - Mercado de Capitais
+        - Estatística Aplicada
+        - Economia Brasileira
+        - Gestão de Custos
+        - Modelagem Financeira
+      summary: |
+        - Formação sólida em finanças corporativas, análise de investimentos e controle gerencial.
+        - Desenvolvimento de projetos acadêmicos com foco em valuation, orçamento e indicadores de desempenho.
+        - Participação em grupos de estudo e competições de finanças, com destaque para análise de empresas.
+  work:
+    - name: Banco Horizonte S.A.
+      url: https://www.bancohorizonte.com.br
+      position: Analista Financeiro Sênior
+      startDate: Jan 1, 2022
+      summary: |
+        - Liderança do ciclo de planejamento financeiro anual, com consolidação de orçamento e projeções de longo prazo.
+        - Construção e revisão de modelos de valuation e análise de viabilidade para novas linhas de negócio.
+        - Elaboração de relatórios gerenciais mensais para diretoria, com análise de variações e recomendações.
+        - Automatização de rotinas de FP&A com Power BI e SQL, reduzindo tempo de fechamento em 25%.
+        - Parceria com áreas comerciais e controladoria para monitorar KPIs e apoiar decisões estratégicas.
+      keywords:
+        - Modelagem financeira
+        - Valuation
+        - Planejamento e Análise
+        - Power BI
+        - FP&A
+    - name: Gestora Atlas Investimentos
+      url: https://www.atlasinvestimentos.com.br
+      position: Analista Financeiro Pleno
+      startDate: Feb 1, 2019
+      endDate: Dec 1, 2021
+      summary: |
+        - Análise de performance de fundos e acompanhamento de indicadores de rentabilidade e risco.
+        - Preparação de relatórios mensais para investidores e comitê de investimentos.
+        - Desenvolvimento de modelos de fluxo de caixa e cenários macroeconômicos para suporte à alocação.
+        - Colaboração com equipe de riscos na revisão de premissas e consistência de dados.
+        - Apoio à due diligence financeira de ativos e empresas-alvo.
+      keywords:
+        - Análise de investimentos
+        - Gestão de riscos
+        - Fluxo de caixa
+        - Relatórios gerenciais
+        - Excel avançado
+    - name: Consultoria Vértice
+      url: https://www.consultoriavertice.com.br
+      position: Analista Financeiro Júnior
+      startDate: Jan 1, 2018
+      endDate: Jan 1, 2019
+      summary: |
+        - Estruturação de planilhas financeiras e apoio à elaboração de business plans para clientes.
+        - Análise de demonstrativos financeiros e construção de indicadores de desempenho.
+        - Participação em projetos de reestruturação financeira e revisão de processos orçamentários.
+        - Elaboração de apresentações executivas com conclusões e recomendações para sócios.
+      keywords:
+        - Business plan
+        - Análise financeira
+        - Orçamento
+        - Contabilidade
+        - SAP
+  languages:
+    - language: Portuguese
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - Língua materna
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - TOEFL 105
+        - Reuniões internacionais
+    - language: Spanish
+      fluency: Limited Working Proficiency
+      keywords:
+        - Leitura técnica
+  skills:
+    - name: Planejamento e Análise Financeira
+      level: Expert
+      keywords:
+        - Orçamento
+        - Forecast
+        - FP&A
+        - Análise de variações
+    - name: Modelagem e Valuation
+      level: Advanced
+      keywords:
+        - DCF
+        - Valuation
+        - Cenários
+        - Fluxo de caixa
+    - name: Business Intelligence
+      level: Advanced
+      keywords:
+        - Power BI
+        - SQL
+        - Excel avançado
+        - Tableau
+    - name: Gestão de Riscos
+      level: Intermediate
+      keywords:
+        - Indicadores
+        - Compliance
+        - Controles internos
+  awards:
+    - title: Destaque em Planejamento Financeiro
+      awarder: Banco Horizonte S.A.
+      date: Mar 2023
+      summary: |
+        - Reconhecimento pela liderança do ciclo orçamentário anual e pela melhoria dos relatórios gerenciais para a diretoria.
+    - title: Prêmio de Excelência Acadêmica
+      awarder: Universidade de São Paulo
+      date: Dec 2018
+      summary: |
+        - Premiação concedida aos alunos com melhor desempenho acadêmico no curso de Administração com ênfase em Finanças.
+  certificates:
+    - name: Certificação CVA - Certified Valuation Analyst
+      issuer: Instituto Brasileiro de Valuation
+      date: Apr 2021
+      url: https://www.ibv.com.br/certificacao-cva
+    - name: 'Microsoft Certified: Power BI Data Analyst Associate'
+      issuer: Microsoft
+      date: Sep 2022
+      url: https://learn.microsoft.com/credentials/power-bi-data-analyst-associate
+  publications:
+    - name: Relatório de Cenário Macroeconômico 2024
+      publisher: Banco Horizonte S.A.
+      releaseDate: Jan 2024
+      url: https://www.bancohorizonte.com.br/relatorios/cenario-macroeconomico-2024
+      summary: |
+        - Análise de perspectivas econômicas, juros, inflação e impactos no planejamento financeiro corporativo.
+        - Relatório utilizado por áreas de negócio e diretoria para revisão de premissas orçamentárias.
+  projects:
+    - name: Dashboard de Performance Financeira
+      url: https://www.bancohorizonte.com.br/projetos/dashboard-financeiro
+      description: Painel gerencial para acompanhamento de receitas, despesas e KPIs
+        financeiros.
+      startDate: Feb 2023
+      endDate: Sep 2023
+      summary: |
+        - Desenvolvimento de dashboard em Power BI com indicadores de margem, custos e produtividade.
+        - Integração de bases SQL e SAP para atualização automatizada dos dados.
+        - Redução do tempo de preparação de relatórios mensais e maior confiabilidade das informações.
+      keywords:
+        - Power BI
+        - KPIs
+        - SQL
+        - Automação
+    - name: Modelo Preditivo de Fluxo de Caixa
+      url: https://github.com/mariana-almeida-financas/modelo-fluxo-caixa
+      description: Modelo financeiro para projeção de fluxo de caixa em diferentes
+        cenários econômicos.
+      startDate: Mar 2022
+      endDate: Nov 2022
+      summary: |
+        - Estruturação de premissas de receita, custos e capital de giro para projeções de 12 a 36 meses.
+        - Criação de cenários base, otimista e pessimista para apoio ao comitê financeiro.
+        - Documentação do modelo e treinamento de usuários para manutenção autônoma.
+      keywords:
+        - Fluxo de caixa
+        - Cenários
+        - Modelagem
+        - Excel
+  interests:
+    - name: Mercado Financeiro
+      keywords:
+        - Investimentos
+        - Macroeconomia
+        - Fintechs
+    - name: Esportes
+      keywords:
+        - Corrida
+        - Ciclismo
+        - Natação
+  volunteer:
+    - organization: Instituto Finanças para Todos
+      url: https://www.financasparatodos.org.br
+      position: Mentora Voluntária de Educação Financeira
+      startDate: Mar 2021
+      summary: |
+        - Condução de oficinas de educação financeira para jovens e adultos em comunidades vulneráveis.
+        - Apoio na criação de materiais didáticos sobre orçamento pessoal, poupança e crédito consciente.
+        - Mentoria de projetos de planejamento financeiro familiar em parceria com organizações locais.
+
+locale:
+  language: pt-br

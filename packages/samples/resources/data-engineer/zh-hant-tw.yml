@@ -1,0 +1,244 @@
+content:
+  basics:
+    name: 林彥廷
+    headline: 資深資料工程師｜資料平台與即時資料管線
+    phone: "+886 912 345 678"
+    email: yanting.lin@dataops.tw
+    url: https://www.yantinglin.dev
+    summary: |
+      - 具備 10 年以上資料與軟體工程經驗，其中 8 年專注於資料平台、ETL/ELT 與即時串流管線設計。
+      - 熟悉 Python、SQL、Spark、Airflow、Kafka 與 dbt，能將複雜業務需求轉化為可維運的資料產品。
+      - 具備雲端資料倉儲與湖倉架構實戰經驗，曾協助企業降低 40% 資料處理成本並提升資料交付效率。
+      - 重視資料品質、可觀測性與跨團隊協作，樂於推動資料治理與工程最佳實踐。
+  location:
+    address: 信義區松仁路 88 號
+    city: 臺北市
+    region: 臺北市
+    country: Taiwan
+    postalCode: "110"
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/yanting-lin-data
+      username: yanting-lin-data
+    - network: GitHub
+      url: https://github.com/yantinglin
+      username: yantinglin
+  education:
+    - institution: 國立臺灣大學
+      url: https://www.ntu.edu.tw/
+      degree: Master
+      area: 資訊工程學系
+      score: "3.9/4.0"
+      startDate: Sep 2012
+      endDate: Jul 2014
+      courses:
+        - 資料庫系統
+        - 分散式系統
+        - 資料探勘
+        - 雲端計算
+        - 大數據分析
+        - 機器學習
+      summary: |
+        - 專注於分散式資料處理與資料庫系統研究，畢業論文探討即時串流查詢最佳化。
+        - 擔任資料庫課程助教，協助學生理解關聯式與 NoSQL 資料模型。
+        - 參與產學合作專案，建置校內研究資料交換平台。
+    - institution: 國立清華大學
+      url: https://www.nthu.edu.tw/
+      degree: Bachelor
+      area: 資訊工程學系
+      score: "3.7/4.0"
+      startDate: Sep 2008
+      endDate: Jun 2012
+      courses:
+        - 資料結構
+        - 演算法
+        - 作業系統
+        - 計算機網路
+        - 軟體工程
+      summary: |
+        - 奠定程式設計、演算法與系統設計基礎。
+        - 參與系學會資訊組，維護活動報名與資料統計系統。
+  work:
+    - name: 瀚宇金融科技股份有限公司
+      position: 資深資料工程師
+      startDate: Mar 2020
+      summary: |
+        - 主導企業級資料湖倉平台建置，整合 20+ 業務系統，支援每日 5 TB 以上批次與串流資料。
+        - 設計以 Airflow、dbt 與 Spark 為核心的 ELT 流程，將資料交付週期由 3 天縮短至 4 小時。
+        - 建立資料品質監控與告警機制，涵蓋完整性、即時性與一致性檢查，降低線上資料事故 60%。
+        - 推動資料治理規範與指標字典，與資料分析、風控及產品團隊協作定義核心資料資產。
+        - 帶領 4 人資料工程小組，負責技術選型、程式碼審查與初階工程師培育。
+      keywords:
+        - 資料湖倉
+        - Apache Spark
+        - Airflow
+        - dbt
+        - Kafka
+        - 資料治理
+    - name: 遠景電信數據股份有限公司
+      position: 資料工程師
+      startDate: Aug 2016
+      endDate: Feb 2020
+      summary: |
+        - 建置電信用戶行為資料管線，處理每日百萬級事件資料並匯入雲端資料倉儲。
+        - 使用 Python 與 SQL 開發批次 ETL 作業，支援行銷名單、流失預測與個人化推薦。
+        - 導入 Kafka 與 Spark Streaming 處理即時流量資料，提供近即時營運儀表板。
+        - 優化資料分割與查詢策略，降低 BigQuery 掃描量與月結成本約 35%。
+        - 與資料科學家合作特徵工程流程，提升模型訓練資料準備效率。
+      keywords:
+        - Python
+        - SQL
+        - Kafka
+        - Spark Streaming
+        - BigQuery
+        - ETL
+    - name: 凌雲資訊服務股份有限公司
+      position: 軟體工程師
+      startDate: Jul 2014
+      endDate: Jul 2016
+      summary: |
+        - 開發政府與企業資料交換系統，負責資料轉檔、排程與監控模組。
+        - 使用 Java 與 Oracle 資料庫實作批次匯入流程，確保跨系統資料一致性。
+        - 協助建立系統監控與錯誤重試機制，提升批次作業穩定度。
+      keywords:
+        - Java
+        - Oracle
+        - ETL
+        - Shell
+  skills:
+    - name: 資料工程
+      level: Expert
+      keywords:
+        - Python
+        - SQL
+        - Apache Spark
+        - Airflow
+        - dbt
+        - Kafka
+    - name: 雲端與基礎設施
+      level: Advanced
+      keywords:
+        - AWS
+        - GCP
+        - Terraform
+        - Docker
+        - Kubernetes
+    - name: 資料倉儲與湖倉
+      level: Advanced
+      keywords:
+        - Snowflake
+        - BigQuery
+        - Databricks
+        - Redshift
+    - name: 程式設計
+      level: Advanced
+      keywords:
+        - Python
+        - Scala
+        - Java
+        - Bash
+    - name: 資料治理與可觀測性
+      level: Advanced
+      keywords:
+        - Data Quality
+        - Lineage
+        - Metadata
+        - Monitoring
+  languages:
+    - language: Chinese
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - 母語
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - TOEIC 950
+        - 技術文件閱讀與撰寫
+    - language: Japanese
+      fluency: Limited Working Proficiency
+      keywords:
+        - JLPT N3
+  awards:
+    - title: 年度資料創新獎
+      awarder: 瀚宇金融科技股份有限公司
+      date: Dec 2023
+      summary: |
+        表彰在資料湖倉平台與即時風控資料管線專案中的卓越貢獻，專案協助降低資料延遲並提升決策效率。
+    - title: 最佳跨團隊協作獎
+      awarder: 遠景電信數據股份有限公司
+      date: Nov 2019
+      summary: |
+        肯定在即時流量分析專案中整合資料工程、資料科學與行銷團隊的協作表現。
+  certificates:
+    - name: AWS Certified Data Analytics - Specialty
+      url: https://aws.amazon.com/certification/certified-data-analytics-specialty/
+      issuer: Amazon Web Services
+      date: Jun 2022
+    - name: Google Cloud Professional Data Engineer
+      url: https://cloud.google.com/learn/certification/data-engineer
+      issuer: Google Cloud
+      date: Sep 2021
+    - name: Databricks Certified Data Engineer Professional
+      url: https://www.databricks.com/learn/certification/data-engineer-professional
+      issuer: Databricks
+      date: Mar 2024
+  publications:
+    - name: 以 Lakehouse 架構打造可觀測資料平台
+      publisher: iThome 技術專欄
+      releaseDate: May 2023
+      url: https://www.ithome.com.tw/
+      summary: |
+        - 探討湖倉架構在金融業資料整合與治理上的實務經驗。
+        - 分享資料品質監控、血緣追蹤與成本優化策略。
+  projects:
+    - name: 即時風控資料管線
+      url: https://github.com/yantinglin/realtime-risk-pipeline
+      description: 支援金融交易風控的即時事件處理與特徵計算平台
+      startDate: Jan 2022
+      endDate: Dec 2023
+      summary: |
+        - 使用 Kafka、Spark Structured Streaming 與 Redis 建置毫秒級事件處理流程。
+        - 設計可回溯的特徵版本管理與延遲監控，支援風控模型即時推論。
+        - 將規則更新到上線的週期由兩週縮短至兩天。
+      keywords:
+        - Kafka
+        - Spark
+        - Redis
+        - 風控
+    - name: 資料品質監控平台
+      url: https://github.com/yantinglin/data-quality-hub
+      description: 集中管理資料品質規則、告警與健康度儀表板
+      startDate: Mar 2021
+      endDate: Oct 2022
+      summary: |
+        - 建立可配置的資料品質規則引擎，支援空值、重複、分布偏移與時效檢查。
+        - 整合 Airflow 與 Prometheus，提供自動告警與 SLA 報表。
+        - 覆蓋 150+ 核心資料表，協助團隊提前發現重大資料異常。
+      keywords:
+        - Data Quality
+        - Airflow
+        - Prometheus
+        - Observability
+  interests:
+    - name: 開源社群
+      keywords:
+        - Apache Airflow
+        - dbt
+        - 技術寫作
+    - name: 戶外活動
+      keywords:
+        - 登山
+        - 慢跑
+        - 攝影
+  volunteer:
+    - organization: 臺灣資料工程社群
+      url: https://www.meetup.com/taiwan-data-engineering/
+      position: 志工講者與工作坊導師
+      startDate: Jan 2021
+      summary: |
+        - 定期分享資料管線設計、資料品質與雲端成本優化主題。
+        - 協助規劃初學者資料工程工作坊，指導學員完成端到端專案。
+        - 參與社群年會籌備，推動產學交流與知識分享。
+
+locale:
+  language: zh-hant-tw

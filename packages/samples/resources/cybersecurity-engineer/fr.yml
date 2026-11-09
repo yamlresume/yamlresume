@@ -1,0 +1,255 @@
+content:
+  basics:
+    name: Camille Laurent
+    headline: Ingénieur en cybersécurité – Sécurité cloud et réponse à incident
+    phone: "+33 6 45 78 12 96"
+    email: camille.laurent@protonmail.com
+    url: https://www.camille-laurent.fr
+    summary: |
+      Ingénieur en cybersécurité avec plus de huit ans d'expérience dans la protection des infrastructures critiques, la sécurité cloud et la réponse à incident. Reconnu pour concevoir des architectures Zero Trust, automatiser les opérations de sécurité et accompagner les équipes dans une démarche de conformité durable.
+
+      - Expertise en sécurité cloud AWS/Azure, architecture Zero Trust et DevSecOps
+      - Pilotage d'opérations SOC, réponse à incident et analyse forensique
+      - Maîtrise des référentiels ISO 27001, NIST CSF, RGPD et EBIOS RM
+      - Encadrement technique, mentorat et communication auprès des parties prenantes
+
+  location:
+    address: 14 rue de la Paix
+    city: Paris
+    region: Île-de-France
+    country: France
+    postalCode: "75002"
+
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/camille-laurent-cyber
+      username: camille-laurent-cyber
+    - network: GitHub
+      url: https://github.com/camille-laurent
+      username: camille-laurent
+
+  education:
+    - institution: École Supérieure d'Ingénierie Numérique de Paris
+      url: https://www.esin-paris.fr
+      degree: Master
+      area: Cybersécurité et systèmes d'information
+      score: Mention Bien
+      startDate: '2014-09-01'
+      endDate: '2016-06-30'
+      courses:
+        - Sécurité des réseaux et protocoles
+        - Cryptographie appliquée
+        - Analyse forensique
+        - Gestion des risques et conformité
+        - Sécurité des systèmes d'exploitation
+        - Développement sécurisé
+        - Virtualisation et sécurité cloud
+        - Droit du numérique et protection des données
+      summary: |
+        - Formation solide en sécurité des systèmes, cryptographie et gestion des risques
+        - Projets pratiques sur la détection d'intrusion et la sécurisation d'applications web
+        - Mémoire de fin d'études consacré à la sécurité des environnements cloud multi-tenant
+
+  work:
+    - name: FinSecure Paris
+      url: https://www.finsecure-paris.fr
+      position: Ingénieur en cybersécurité senior – Sécurité cloud
+      startDate: '2022-03-01'
+      summary: |
+        - Pilotage de la stratégie de sécurité cloud pour un groupe bancaire de 4 000 collaborateurs
+        - Conception d'architectures Zero Trust sur AWS et Azure, avec automatisation des contrôles par IaC
+        - Réduction de 35 % des incidents critiques grâce au déploiement d'une plateforme SOAR et à la chasse aux menaces
+        - Encadrement d'une équipe de quatre ingénieurs et animation du comité de sécurité applicative
+        - Mise en conformité RGPD, ISO 27001 et NIST CSF, en lien avec les auditeurs externes
+      keywords:
+        - Sécurité cloud
+        - Zero Trust
+        - SOAR
+        - RGPD
+        - ISO 27001
+        - Mentorat
+    - name: CloudNova
+      url: https://www.cloudnova.fr
+      position: Analyste SOC et réponse à incident
+      startDate: '2019-01-14'
+      endDate: '2022-02-28'
+      summary: |
+        - Surveillance 24/7 des infrastructures cloud et qualification des alertes SIEM pour 60 clients
+        - Investigation et réponse aux incidents de sécurité, de la détection à la remédiation
+        - Mise en place de playbooks SOAR et enrichissement des alertes via le renseignement sur les menaces
+        - Réalisation d'analyses forensiques et rédaction de rapports post-incident
+        - Participation à des tests d'intrusion internes et à des revues de configuration
+      keywords:
+        - SOC
+        - SIEM
+        - SOAR
+        - Forensique
+        - Réponse à incident
+        - Tests d'intrusion
+    - name: Groupe SantéAxe
+      url: https://www.santeaxe.fr
+      position: Administrateur sécurité réseaux
+      startDate: '2016-09-05'
+      endDate: '2018-12-21'
+      summary: |
+        - Administration des équipements de sécurité réseau : pare-feu, proxy, IDS/IPS et VPN
+        - Durcissement des systèmes et application des politiques de contrôle d'accès
+        - Supervision des vulnérabilités et coordination des campagnes de correctifs
+        - Sensibilisation des utilisateurs à l'hygiène numérique et aux risques de phishing
+      keywords:
+        - Pare-feu
+        - IDS/IPS
+        - VPN
+        - Durcissement
+        - Vulnérabilités
+        - Sensibilisation
+
+  skills:
+    - name: Sécurité des réseaux
+      level: Advanced
+      keywords:
+        - Pare-feu
+        - IDS/IPS
+        - VPN
+        - Segmentation
+        - 802.1X
+    - name: Sécurité cloud
+      level: Expert
+      keywords:
+        - AWS
+        - Azure
+        - GCP
+        - Zero Trust
+        - CASB
+        - CSPM
+    - name: Opérations de sécurité
+      level: Advanced
+      keywords:
+        - SIEM
+        - SOAR
+        - EDR
+        - XDR
+        - MITRE ATT&CK
+        - Renseignement sur les menaces
+    - name: Gouvernance et conformité
+      level: Advanced
+      keywords:
+        - ISO 27001
+        - NIST CSF
+        - RGPD
+        - EBIOS RM
+        - SOC 2
+    - name: Sécurité applicative
+      level: Advanced
+      keywords:
+        - OWASP Top 10
+        - SAST
+        - DAST
+        - DevSecOps
+        - IaC
+    - name: Programmation et automatisation
+      level: Advanced
+      keywords:
+        - Python
+        - Bash
+        - PowerShell
+        - Terraform
+        - Ansible
+        - Docker
+        - Kubernetes
+
+  languages:
+    - language: French
+      fluency: Native or Bilingual Proficiency
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - TOEIC 940
+    - language: Spanish
+      fluency: Limited Working Proficiency
+      keywords:
+        - Niveau B1
+
+  awards:
+    - title: Prix d'excellence en cybersécurité
+      date: '2023-11-15'
+      awarder: École Supérieure d'Ingénierie Numérique de Paris
+      summary: |
+        - Récompense décernée pour un projet de détection automatisée des menaces dans les environnements cloud
+        - Distinction attribuée parmi 120 candidats pour l'impact opérationnel et la qualité de la recherche
+
+  certificates:
+    - name: CISSP – Professionnel certifié en sécurité des systèmes d'information
+      issuer: ISC2
+      date: '2024-03-20'
+      url: https://www.isc2.org/Certifications/CISSP
+    - name: Certification AWS Security – Spécialité sécurité cloud
+      issuer: Amazon Web Services
+      date: '2023-06-12'
+      url: https://aws.amazon.com/certification/certified-security-specialty/
+    - name: CompTIA Security+ – Certification en cybersécurité
+      issuer: CompTIA
+      date: '2021-09-08'
+      url: https://www.comptia.org/certifications/security
+    - name: ISO/IEC 27001 Lead Implementer – Mise en œuvre d'un SMSI
+      issuer: PECB
+      date: '2022-04-25'
+      url: https://pecb.com/en/education-and-certification-for-individuals/iso-iec-27001/iso-iec-27001-lead-implementer
+
+  publications:
+    - publisher: Revue Française de Cybersécurité
+      url: https://www.rfcyber.fr/articles/detection-intrusions-apprentissage-automatique
+      name: Détection des intrusions par apprentissage automatique en environnement
+        cloud
+      releaseDate: '2024-02-10'
+      summary: |
+        - Étude comparative de modèles supervisés pour la détection d'anomalies réseau dans des environnements multi-cloud
+        - Proposition d'un pipeline de réduction du bruit et d'enrichissement des alertes pour les équipes SOC
+        - Retours d'expérience sur le déploiement en production et mesure du taux de faux positifs
+
+  projects:
+    - name: Plateforme SOAR de réponse à incident
+      url: https://github.com/camille-laurent/soar-incident-response
+      description: Plateforme open source d'automatisation de la qualification des
+        alertes et de la réponse aux incidents.
+      startDate: '2023-01-10'
+      endDate: '2023-12-15'
+      summary: |
+        - Développement de playbooks Python pour l'enrichissement et la remédiation automatique
+        - Intégration avec SIEM, EDR et solutions de ticketing via API REST
+        - Réduction du temps moyen de réponse de 40 % sur un périmètre de 200 serveurs
+      keywords:
+        - SOAR
+        - Python
+        - Automatisation
+        - API REST
+        - SIEM
+
+  interests:
+    - name: Cybersécurité offensive
+      keywords:
+        - CTF
+        - Chasse aux vulnérabilités
+        - Rétro-ingénierie
+    - name: Sport
+      keywords:
+        - Escalade
+        - Course à pied
+    - name: Musique
+      keywords:
+        - Guitare
+        - MAO
+
+  volunteer:
+    - organization: Association CyberSensibilisation France
+      url: https://www.cybersensibilisation.fr
+      position: Mentor et formateur en cybersécurité
+      startDate: '2019-09-01'
+      endDate: '2024-06-30'
+      summary: |
+        - Animation d'ateliers de sensibilisation auprès de collégiens, lycéens et demandeurs d'emploi
+        - Conception de supports pédagogiques sur le phishing, les mots de passe et la protection des données
+        - Accompagnement de jeunes professionnels dans leur préparation aux métiers de la cybersécurité
+
+locale:
+  language: fr

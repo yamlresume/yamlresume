@@ -1,0 +1,187 @@
+content:
+  basics:
+    name: 佐藤 健一
+    headline: サイバーセキュリティエンジニア
+    phone: "+81 90-1234-5678"
+    email: kenichi.sato@example.com
+    url: https://kenichi-sato.dev
+    summary: |
+      セキュリティエンジニアとして5年以上の経験を持ち、ネットワークセキュリティ、脆弱性診断、インシデント対応に精通しています。
+      特にペネトレーションテストとセキュリティアーキテクチャの設計に強みを持ち、金融機関やEコマース企業のセキュリティ強化に貢献してきました。
+      チームをリードし、セキュリティ意識向上のためのトレーニングを実施した経験もあります。
+      常に最新の脅威情報を追い、プロアクティブな防御策を提案することを心がけています。
+  location:
+    address: 東京都千代田区丸の内1-2-3
+    city: 千代田区
+    region: 東京都
+    country: Japan
+    postalCode: "100-0001"
+  profiles:
+    - network: GitHub
+      url: https://github.com/kenichi-sato
+      username: kenichi-sato
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/kenichi-sato
+      username: kenichi-sato
+    - network: Twitter
+      url: https://twitter.com/kenichi_sato
+      username: kenichi_sato
+  education:
+    - institution: 東京大学
+      url: https://www.u-tokyo.ac.jp
+      degree: Master
+      area: 情報理工学系研究科 コンピュータ科学専攻
+      score: "3.8/4.0"
+      startDate: Apr 1, 2013
+      endDate: Mar 31, 2015
+      courses:
+        - 情報セキュリティ
+        - 暗号理論
+        - ネットワーク工学
+        - オペレーティングシステム
+        - データベースシステム
+      summary: |
+        情報セキュリティを専攻し、暗号プロトコルとネットワーク防御に関する研究に従事。
+        修士論文では「機械学習を用いた異常検知による侵入検知システムの改善」をテーマに研究。
+  work:
+    - name: 株式会社サイバーディフェンス
+      url: https://www.cyberdefense.co.jp
+      position: シニアセキュリティエンジニア
+      startDate: Apr 1, 2019
+      summary: |
+        - 金融機関向けのセキュリティアーキテクチャ設計と実装をリード
+        - 脆弱性診断およびペネトレーションテストを実施し、重大な脆弱性を複数発見・修正
+        - インシデント対応チームのリーダーとして、セキュリティインシデントの調査と復旧を指揮
+        - セキュリティポリシーの策定と従業員向けセキュリティトレーニングを実施
+        - 最新の脅威情報を収集し、プロアクティブな防御策を提案
+      keywords:
+        - ネットワークセキュリティ
+        - ペネトレーションテスト
+        - インシデント対応
+        - セキュリティアーキテクチャ
+    - name: 株式会社セキュアテック
+      url: https://www.securetech.co.jp
+      position: セキュリティエンジニア
+      startDate: Apr 1, 2015
+      endDate: Mar 31, 2019
+      summary: |
+        - Webアプリケーションの脆弱性診断を担当し、SQLインジェクションやXSSなどの脆弱性を特定
+        - セキュリティ監視システムの運用と改善を実施
+        - セキュリティインシデントの一次対応と報告書作成
+        - 社内セキュリティガイドラインの整備に貢献
+      keywords:
+        - 脆弱性診断
+        - Webセキュリティ
+        - セキュリティ監視
+  skills:
+    - name: ネットワークセキュリティ
+      level: Expert
+      keywords:
+        - ファイアウォール
+        - IDS/IPS
+        - VPN
+        - パケット解析
+        - ネットワーク設計
+    - name: ペネトレーションテスト
+      level: Advanced
+      keywords:
+        - Metasploit
+        - Burp Suite
+        - Nmap
+        - Wireshark
+        - Kali Linux
+    - name: クラウドセキュリティ
+      level: Intermediate
+      keywords:
+        - AWS
+        - Azure
+        - GCP
+        - IAM
+        - セキュリティグループ
+    - name: 暗号技術
+      level: Advanced
+      keywords:
+        - PKI
+        - TLS/SSL
+        - 暗号化アルゴリズム
+        - 鍵管理
+  languages:
+    - language: Japanese
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - 日本語ネイティブ
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - TOEIC 900点
+        - 技術文書読解
+  awards:
+    - title: 年間最優秀セキュリティエンジニア賞
+      date: Dec 2022
+      awarder: 株式会社サイバーディフェンス
+      summary: |
+        金融機関向けのセキュリティプロジェクトにおける卓越したリーダーシップと技術的貢献に対して授与。
+    - title: セキュリティ研究優秀賞
+      date: Mar 2015
+      awarder: 東京大学
+      summary: |
+        修士論文「機械学習を用いた異常検知による侵入検知システムの改善」が高く評価され授与。
+  certificates:
+    - name: CISSP（情報システムセキュリティ専門家）
+      issuer: (ISC)²
+      date: Jun 2020
+      url: https://www.isc2.org/Certifications/CISSP
+    - name: OSCP（Offensive Security Certified Professional）
+      issuer: Offensive Security
+      date: Nov 2018
+      url: https://www.offensive-security.com/pwk-oscp/
+    - name: 情報処理安全確保支援士
+      issuer: 情報処理推進機構
+      date: Apr 2017
+      url: https://www.ipa.go.jp/shiken/kubun/sc.html
+  publications:
+    - name: 機械学習を用いた異常検知による侵入検知システムの改善
+      publisher: 情報処理学会 論文誌
+      releaseDate: Mar 2015
+      url: https://www.ipsj.or.jp
+      summary: |
+        侵入検知システムの精度向上を目的として、機械学習アルゴリズムを適用した異常検知手法を提案。
+        従来手法と比較して検知率が15%向上し、誤検知率が20%低減することを示した。
+  projects:
+    - name: セキュリティ監視ダッシュボード
+      url: https://github.com/kenichi-sato/security-dashboard
+      description: 複数のセキュリティログを統合し、リアルタイムで可視化するダッシュボード
+      startDate: Jan 2021
+      endDate: Jun 2021
+      summary: |
+        - Elasticsearch、Logstash、Kibana (ELKスタック) を使用してセキュリティログを収集・分析
+        - 異常検知アラートをSlackに通知する機能を実装
+        - セキュリティ運用チームの効率を30%向上
+      keywords:
+        - セキュリティ監視
+        - ELK
+        - ログ分析
+        - 可視化
+  interests:
+    - name: CTF (Capture The Flag)
+      keywords:
+        - Web
+        - 暗号
+        - フォレンジック
+    - name: 読書
+      keywords:
+        - セキュリティ関連書籍
+        - 技術書
+  volunteer:
+    - organization: 日本サイバーセキュリティコミュニティ
+      url: https://www.jcsc.org
+      position: セキュリティトレーナー
+      startDate: Apr 2018
+      endDate: Mar 2023
+      summary: |
+        - 初心者向けのセキュリティワークショップを定期的に開催
+        - CTF大会の運営スタッフとして参加
+        - セキュリティ意識向上のための講演を実施
+
+locale:
+  language: ja

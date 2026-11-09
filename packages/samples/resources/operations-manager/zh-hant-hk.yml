@@ -1,0 +1,265 @@
+content:
+  basics:
+    name: 陳嘉雯
+    headline: '資深營運經理 | 零售及供應鏈轉型'
+    phone: "+852 9123 4567"
+    email: ka.man.chan@example.com
+    url: https://www.kamanchan.com
+    summary: |
+      具備超過十年零售及供應鏈營運管理經驗，專注以數據驅動流程改善、成本控制及團隊效能提升。
+
+      - 曾管理逾80人跨區域團隊，負責年度營業額港幣2.5億元業務之損益管理
+      - 擅長將營運指標可視化，透過Power BI及SAP推動補貨、庫存及門店流程優化
+      - 主導六西格瑪及精實項目，三年內累計節省營運成本逾港幣1,200萬元
+      - 具備跨部門協作與變革管理經驗，能協調採購、物流、銷售及客服團隊達成目標
+
+  location:
+    address: 香港九龍尖沙咀彌敦道100號
+    city: 香港
+    region: 九龍
+    country: Hong Kong
+
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/chan-ka-man-ops
+      username: chan-ka-man-ops
+    - network: Medium
+      url: https://medium.com/@kamanchan-ops
+      username: kamanchan-ops
+
+  education:
+    - institution: 香港中文大學
+      url: https://www.cuhk.edu.hk
+      degree: Master
+      area: 供應鏈與物流管理
+      score: "3.8"
+      startDate: '2018-09-01'
+      endDate: '2020-06-30'
+      courses:
+        - 策略採購
+        - 物流網絡設計
+        - 營運分析
+        - 供應鏈風險管理
+        - 服務營運管理
+      summary: |
+        - 以系統動力學及數據模型研究零售補貨策略，畢業項目獲教授推薦作教學案例
+        - 協助本地物流企業分析最後一公里配送成本，提出路線整合建議
+
+    - institution: 香港理工大學
+      url: https://www.polyu.edu.hk
+      degree: Bachelor
+      area: 工商管理（營運管理）
+      score: "3.6"
+      startDate: '2010-09-01'
+      endDate: '2014-06-30'
+      courses:
+        - 管理會計
+        - 作業管理
+        - 統計學
+        - 商業流程分析
+        - 項目管理
+      summary: |
+        - 主修營運管理，建立流程分析、品質管理及成本控制基礎
+        - 曾代表學系參與企業個案比賽，負責營運改善方案設計
+
+  work:
+    - name: 恒匯零售集團有限公司
+      url: https://www.hanwui-retail.com.hk
+      position: 營運經理
+      startDate: '2021-03-01'
+      summary: |
+        - 管理3個區域、12間門店及80人團隊，負責年度營業額港幣2.5億元之營運及損益
+        - 建立每週營運儀表板，追蹤銷售、客流、庫存周轉及人力成本，帶動門店生產力提升18%
+        - 主導智能補貨及中央庫存調撥項目，將缺貨率由9%降至3.5%，庫存周轉天數縮短22%
+        - 與採購、物流及市場部協作推出季節性推廣，連續兩年超額完成營業額目標
+        - 制定標準作業程序及培訓計劃，將前線員工流失率降低15%
+      keywords:
+        - 零售營運
+        - 損益管理
+        - 流程改善
+        - 團隊領導
+        - 數據分析
+
+    - name: 華駿物流有限公司
+      url: https://www.wahchun-logistics.com.hk
+      position: 高級營運主任
+      startDate: '2017-07-01'
+      endDate: '2021-02-28'
+      summary: |
+        - 負責香港及華南地區第三方物流營運，管理倉儲面積逾10萬平方呎及60人團隊
+        - 優化倉庫布局與揀貨路線，將訂單履行時間縮短25%，準時交付率提升至98.5%
+        - 導入ISO 9001品質管理流程，完成內部審核及糾正預防措施，年度審核零重大缺失
+        - 分析運輸及人力成本，重新議定承運商合約，每年節省港幣約380萬元
+      keywords:
+        - 第三方物流
+        - 倉儲管理
+        - ISO 9001
+        - 成本控制
+        - 準時交付
+
+    - name: 駿達供應鏈管理有限公司
+      url: https://www.chuntat-scm.com.hk
+      position: 營運分析師
+      startDate: '2014-07-01'
+      endDate: '2017-06-30'
+      summary: |
+        - 為零售客戶建立需求預測及補貨模型，將預測準確度提升12%
+        - 編製營運月報及管理層簡報，追蹤KPI、成本差異及改善措施進度
+        - 參與供應商績效評核及訂單履行流程重組，縮短採購前置時間8%
+      keywords:
+        - 需求預測
+        - 供應商管理
+        - KPI
+        - 報表分析
+
+  skills:
+    - name: 營運管理
+      level: Expert
+      keywords:
+        - 策略規劃
+        - 流程改善
+        - 損益分析
+        - 資源配置
+        - 風險管理
+
+    - name: 供應鏈與物流
+      level: Advanced
+      keywords:
+        - 採購
+        - 庫存控制
+        - 倉儲管理
+        - 第三方物流
+        - 需求預測
+
+    - name: 數據分析與工具
+      level: Advanced
+      keywords:
+        - Excel
+        - Power BI
+        - Tableau
+        - SQL
+        - SAP
+
+    - name: 領導與溝通
+      level: Expert
+      keywords:
+        - 團隊培訓
+        - 跨部門協作
+        - 變革管理
+        - 績效管理
+
+  languages:
+    - language: Cantonese
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - 母語
+        - 粵語
+
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - HKDSE English Level 5
+        - 商務書信
+
+    - language: Mandarin
+      fluency: Full Professional Proficiency
+      keywords:
+        - 普通話水平測試二級甲等
+        - 跨地區溝通
+
+  awards:
+    - title: 傑出營運改善大獎
+      date: '2023-11-15'
+      awarder: 香港零售管理協會
+      summary: |
+        表揚智能補貨與跨店庫存調撥項目，成功降低缺貨率並提升門店銷售表現。
+
+    - title: 年度優秀團隊領袖
+      date: '2022-03-10'
+      awarder: 恒匯零售集團有限公司
+      summary: |
+        帶領營運團隊連續兩年超額完成營業額及成本控制目標，獲管理層嘉許。
+
+  certificates:
+    - name: 六西格瑪綠帶認證
+      issuer: 美國品質學會（ASQ）
+      date: '2019-05-20'
+      url: https://asq.org/cert/six-sigma-green-belt
+
+    - name: 'ISO 9001:2015 內部稽核員證書'
+      issuer: 香港品質保證局
+      date: '2020-09-12'
+      url: https://www.hkqaa.org
+
+    - name: 精實供應鏈管理證書
+      issuer: 香港生產力促進局
+      date: '2021-06-18'
+      url: https://www.hkpc.org
+
+  publications:
+    - name: 零售營運數碼轉型實務指南
+      publisher: 香港物流協會月刊
+      releaseDate: '2022-08-01'
+      url: https://www.hkla.org.hk/publications/retail-ops-digital-guide
+      summary: |
+        - 分析零售企業如何以數據儀表板、需求預測及自動補貨提升營運效率
+        - 提出由試點到規模化的數碼轉型路線圖，並列舉成本與效益評估方法
+
+  projects:
+    - name: 智能補貨與庫存優化計劃
+      startDate: '2022-01-01'
+      endDate: '2022-12-31'
+      description: 為12間門店建立自動補貨建議及跨店庫存調撥機制。
+      summary: |
+        - 整合POS、庫存及客流數據，建立每週補貨建議模型
+        - 與採購及物流團隊制定跨店調撥規則，減少滯銷及缺貨
+        - 項目完成後缺貨率由9%降至3.5%，庫存周轉天數縮短22%
+      keywords:
+        - 自動補貨
+        - 庫存優化
+        - 數據儀表板
+      url: https://www.hanwui-retail.com.hk/projects/smart-replenishment
+
+    - name: 倉庫流程精實改善項目
+      startDate: '2019-03-01'
+      endDate: '2019-12-31'
+      description: 以精實方法重整揀貨及包裝流程，提升第三方物流倉庫效率。
+      summary: |
+        - 進行時間研究及流程盤點，識別揀貨路線重複與包裝瓶頸
+        - 重新劃分倉儲區域並導入標準作業程序，訂單履行時間縮短25%
+        - 建立每日改善會議及視覺化管理看板，前線參與度顯著提升
+      keywords:
+        - 精實管理
+        - 倉儲流程
+        - 標準作業
+      url: https://www.wahchun-logistics.com.hk/projects/lean-warehouse
+
+  interests:
+    - name: 戶外運動
+      keywords:
+        - 行山
+        - 跑步
+        - 單車
+
+    - name: 閱讀
+      keywords:
+        - 營運管理
+        - 供應鏈
+        - 歷史
+
+    - name: 義工服務
+      keywords:
+        - 職涯指導
+        - 社區活動
+
+  volunteer:
+    - organization: 香港青年協會
+      url: https://www.hkfyg.org.hk
+      position: 職涯導師
+      startDate: '2019-01-01'
+      summary: |
+        - 為準備投入職場的青年提供履歷撰寫、面試技巧及職涯規劃指導
+        - 協助舉辦模擬面試及行業分享會，累計服務超過120名青年
+
+locale:
+  language: zh-hant-hk

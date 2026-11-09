@@ -1,0 +1,234 @@
+content:
+  basics:
+    name: Lena Hartmann
+    headline: Senior IT-Sicherheitsingenieurin
+    phone: "+49 30 12345678"
+    email: lena.hartmann@security-mail.de
+    url: https://www.lhartmann.dev
+    summary: |
+      - Mehr als 7 Jahre Erfahrung in der IT-Sicherheit mit Fokus auf Angriffserkennung, Incident Response und Sicherheitsarchitekturen
+      - Fundierte Kenntnisse in Penetrationstests, Schwachstellenmanagement und der Absicherung von Cloud-Infrastrukturen
+      - Erfahrung mit SIEM-Systemen (Splunk, Wazuh), Firewalls und IDS/IPS sowie der Automatisierung von Sicherheitsprozessen
+      - Teamorientiert, analytisch und kommunikationsstark; gewohnt, komplexe Sicherheitsrisiken verständlich zu erklären
+  location:
+    address: Friedrichstraße 123
+    city: Berlin
+    region: Berlin
+    country: Germany
+    postalCode: "10117"
+  profiles:
+    - network: GitHub
+      url: https://github.com/lhartmann
+      username: lhartmann
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/lhartmann
+      username: lhartmann
+  education:
+    - institution: Technische Universität Berlin
+      url: https://www.tu.berlin
+      degree: Master
+      area: IT-Sicherheit
+      score: "1.3"
+      startDate: '2016-10-01'
+      endDate: '2018-09-30'
+      courses:
+        - Kryptographie und Sicherheitsprotokolle
+        - Netzwerksicherheit und Firewalls
+        - Secure Software Engineering
+        - Incident Response und Forensik
+        - Datenschutz und Compliance
+        - Cloud Security und Virtualisierung
+      summary: |
+        - Schwerpunkt auf angewandter Kryptographie und der Absicherung verteilter Systeme
+        - Masterarbeit zum Thema "Erkennung von Advanced Persistent Threats mittels Machine Learning"
+        - Praktische Erfahrung durch Laborprojekte zu Penetrationstests und Sicherheitsarchitekturen
+    - institution: Hochschule für Technik und Wirtschaft Berlin
+      url: https://www.htw-berlin.de
+      degree: Bachelor
+      area: Informatik
+      score: "1.7"
+      startDate: '2012-10-01'
+      endDate: '2016-09-30'
+      summary: |
+        - Grundlagen in Programmierung, Datenbanken und Netzwerktechnik
+        - Wahlpflichtmodule zu IT-Sicherheit und Systemadministration
+  work:
+    - name: SAP SE
+      url: https://www.sap.com
+      position: Senior IT-Sicherheitsingenieurin
+      startDate: '2020-04-01'
+      summary: |
+        - Leitung von Penetrationstests und Sicherheitsaudits für cloudbasierte Unternehmensanwendungen
+        - Entwicklung und Betrieb von SIEM-Regeln zur Erkennung von Angriffsmustern und Anomalien
+        - Durchführung von Incident-Response-Maßnahmen und forensischen Analysen bei Sicherheitsvorfällen
+        - Mitwirkung bei der Implementierung und Zertifizierung nach ISO 27001 und BSI-Grundschutz
+        - Automatisierung von Sicherheitsprüfungen mit Python und Terraform
+      keywords:
+        - Penetration Testing
+        - SIEM
+        - Incident Response
+        - ISO 27001
+        - Cloud Security
+    - name: Deutsche Telekom AG
+      url: https://www.telekom.com
+      position: IT-Sicherheitsanalystin
+      startDate: '2018-10-01'
+      endDate: '2020-03-31'
+      summary: |
+        - Überwachung und Analyse von Sicherheitsereignissen im 24/7-Security-Operations-Center
+        - Bearbeitung von Sicherheitsvorfällen nach definierten Playbooks und Eskalationsprozessen
+        - Durchführung von Schwachstellenanalysen und Bewertung von Risiken in Netzwerk- und Systemumgebungen
+        - Erstellung von Sicherheitsreports und Präsentationen für technische und nicht-technische Stakeholder
+      keywords:
+        - SOC
+        - SIEM
+        - Schwachstellenanalyse
+        - Netzwerksicherheit
+        - Incident Response
+  skills:
+    - name: Netzwerksicherheit
+      level: Expert
+      keywords:
+        - Firewalls
+        - VPN
+        - IDS/IPS
+        - Wireshark
+        - Netzwerksegmentierung
+    - name: Penetration Testing
+      level: Advanced
+      keywords:
+        - Metasploit
+        - Burp Suite
+        - Nmap
+        - OpenVAS
+        - Nessus
+    - name: Incident Response
+      level: Advanced
+      keywords:
+        - SIEM (Splunk, Wazuh)
+        - Forensik
+        - Threat Hunting
+        - Playbook-Entwicklung
+    - name: Cloud Security
+      level: Intermediate
+      keywords:
+        - AWS
+        - Azure
+        - IAM
+        - Kubernetes
+        - Terraform
+    - name: Compliance und Datenschutz
+      level: Advanced
+      keywords:
+        - ISO 27001
+        - BSI-Grundschutz
+        - DSGVO
+        - Risikomanagement
+    - name: Programmierung und Automatisierung
+      level: Advanced
+      keywords:
+        - Python
+        - Bash
+        - PowerShell
+        - Git
+        - CI/CD
+  languages:
+    - language: German
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - Muttersprache
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - Verhandlungssicher
+        - TOEFL 110
+    - language: French
+      fluency: Limited Working Proficiency
+      keywords:
+        - Grundkenntnisse
+  awards:
+    - title: Cybersecurity Excellence Award
+      date: '2022-11-01'
+      awarder: Bundesverband IT-Sicherheit e.V.
+      summary: |
+        - Auszeichnung für die erfolgreiche Einführung eines unternehmensweiten Threat-Intelligence-Programms
+        - Anerkennung für besonderes Engagement in der Nachwuchsförderung im Bereich IT-Sicherheit
+  certificates:
+    - name: Certified Information Systems Security Professional (CISSP)
+      issuer: ISC2
+      date: '2021-06-01'
+      url: https://www.isc2.org
+    - name: Offensive Security Certified Professional (OSCP)
+      issuer: Offensive Security
+      date: '2019-11-01'
+      url: https://www.offsec.com
+    - name: ISO/IEC 27001 Lead Auditor
+      issuer: TÜV Rheinland
+      date: '2020-03-01'
+      url: https://www.tuv.com
+  publications:
+    - name: Erkennung von Advanced Persistent Threats mittels Machine Learning
+      publisher: Zeitschrift für IT-Sicherheit
+      releaseDate: '2019-12-01'
+      url: https://www.zeitschrift-it-sicherheit.de/artikel/apt-ml
+      summary: |
+        - Analyse von Netzwerk- und Hostdaten zur frühzeitigen Erkennung komplexer Angriffsmuster
+        - Vergleich verschiedener Machine-Learning-Verfahren hinsichtlich Genauigkeit und False-Positive-Rate
+        - Praxisnahe Evaluation in einer virtualisierten Unternehmensumgebung
+  projects:
+    - name: Aufbau eines Security Operations Center (SOC)
+      startDate: '2021-01-01'
+      endDate: '2021-12-31'
+      description: Zentraler Aufbau eines SOC zur Erkennung und Reaktion auf
+        Sicherheitsvorfälle in einer hybriden Cloud-Umgebung.
+      summary: |
+        - Konzeption und Implementierung eines SOC für die zentrale Überwachung von Sicherheitsereignissen
+        - Integration von SIEM-, Ticketing- und Threat-Intelligence-Systemen
+        - Definition von Alarmierungs- und Eskalationsprozessen
+      keywords:
+        - SOC
+        - SIEM
+        - Threat Intelligence
+        - Incident Response
+    - name: Threat-Intelligence-Plattform
+      startDate: '2019-03-01'
+      endDate: '2020-02-28'
+      description: Eine Plattform zur Sammlung, Normalisierung und Priorisierung von
+        Threat-Intelligence-Daten aus verschiedenen Quellen.
+      summary: |
+        - Entwicklung einer Plattform zur Aggregation und Auswertung von Threat-Intelligence-Feeds
+        - Automatisierte Anreicherung von Sicherheitsereignissen mit Kontextdaten
+        - Bereitstellung von Dashboards für das Sicherheitsteam
+      keywords:
+        - Threat Intelligence
+        - Python
+        - APIs
+        - Elasticsearch
+  interests:
+    - name: Capture the Flag (CTF)
+      keywords:
+        - HackTheBox
+        - TryHackMe
+        - CTF-Wettbewerbe
+    - name: Open Source
+      keywords:
+        - Security-Tools
+        - GitHub
+        - Community
+    - name: Sport
+      keywords:
+        - Laufen
+        - Klettern
+        - Radfahren
+  volunteer:
+    - organization: Bundesverband IT-Sicherheit e.V.
+      url: https://www.bv-it-sicherheit.de
+      position: Mentorin für Nachwuchskräfte
+      startDate: '2021-01-01'
+      summary: |
+        - Betreuung von Studierenden und Berufseinsteigern bei CTF-Wettbewerben und Sicherheitsprojekten
+        - Durchführung von Workshops zu Themen wie Penetration Testing und Incident Response
+        - Förderung des Austauschs zwischen Hochschulen und Industrie
+
+locale:
+  language: de

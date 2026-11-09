@@ -1,0 +1,275 @@
+content:
+  basics:
+    name: Lorenzo Bianchi
+    headline: Responsabile Operativo | Logistica e Miglioramento Continuo
+    phone: '+39 347 123 4567'
+    email: lorenzo.bianchi@example.com
+    url: https://www.lorenzobianchi.it
+    summary: |
+      - Responsabile Operativo con oltre 8 anni di esperienza nella gestione di processi logistici, produzione e filiera logistica in contesti industriali e retail.
+      - Comprovata capacità di guidare team multidisciplinari, ridurre i costi operativi e migliorare l'efficienza attraverso metodologie Lean Six Sigma e decisioni basate sui dati.
+      - Esperienza nella pianificazione della domanda, gestione dei fornitori, ottimizzazione delle scorte e implementazione di sistemi ERP e WMS.
+      - Orientato ai risultati, con solide competenze nella gestione del cambiamento, nella negoziazione e nel miglioramento continuo.
+
+  location:
+    address: Via Torino 45
+    city: Milano
+    region: Lombardia
+    country: Italy
+    postalCode: '20123'
+
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/lorenzo-bianchi-ops
+      username: lorenzo-bianchi-ops
+    - network: Medium
+      url: https://medium.com/@lorenzobianchi
+      username: lorenzobianchi
+
+  education:
+    - institution: Politecnico di Milano
+      url: https://www.polimi.it/
+      degree: Master
+      area: Ingegneria Gestionale
+      score: '108/110'
+      startDate: 'Sep 2011'
+      endDate: 'Jul 2013'
+      courses:
+        - Gestione della Produzione e dei Servizi
+        - Logistica e Supply Chain Management
+        - Sistemi Informativi Aziendali
+        - Ricerca Operativa
+        - Economia e Organizzazione Aziendale
+        - Gestione dei Progetti
+      summary: |
+        - Approfondimento di modelli di pianificazione, controllo di gestione e operations management
+        - Progetto di tesi sull'ottimizzazione dei flussi logistici in un'azienda manifatturiera
+        - Partecipazione a laboratori su Lean Six Sigma e simulazione di processi produttivi
+    - institution: Università di Bologna
+      url: https://www.unibo.it/
+      degree: Bachelor
+      area: Ingegneria Industriale
+      score: '105/110'
+      startDate: 'Sep 2008'
+      endDate: 'Jul 2011'
+      courses:
+        - Statistica
+        - Ricerca Operativa
+        - Tecnologie Meccaniche
+        - Sistemi di Produzione
+        - Economia Aziendale
+      summary: |
+        - Basi solide di analisi quantitativa e gestione industriale
+        - Esperienza di tirocinio in un reparto di pianificazione della produzione
+        - Sviluppo di competenze nella risoluzione di problemi e nel lavoro di squadra
+
+  work:
+    - name: Logistica Adriatica S.p.A.
+      url: https://www.logisticaadriatica.it
+      position: Responsabile Operativo
+      startDate: 'Jan 2020'
+      summary: |
+        - Direzione di 4 responsabili di area e 45 operatori distribuiti su 3 magazzini, con gestione di un budget operativo annuo di 8 milioni di euro.
+        - Riduzione del 18% dei costi di movimentazione e del 12% degli scarti tramite progetti Lean Six Sigma e riorganizzazione dei flussi.
+        - Implementazione di un nuovo WMS integrato con SAP, con miglioramento della precisione delle scorte dal 92% al 98,5%.
+        - Definizione di KPI settimanali su produttività, puntualità delle consegne e sicurezza, con reportistica Power BI per il management.
+        - Coordinamento di fornitori di trasporto e logistica, con rinegoziazione dei contratti e riduzione del 9% delle tariffe.
+      keywords:
+        - Filiera logistica
+        - Lean Six Sigma
+        - WMS
+        - SAP
+        - KPI
+        - Budget
+        - Sicurezza
+        - Negoziazione
+    - name: Gruppo Meccanica Verona S.r.l.
+      url: https://www.gruppomeccanicaverona.it
+      position: Responsabile di Produzione
+      startDate: 'Mar 2016'
+      endDate: 'Dec 2019'
+      summary: |
+        - Gestione di 2 linee produttive e di un team di 28 persone, con pianificazione della domanda e della capacità produttiva.
+        - Introduzione di cicli di pianificazione settimanale e strumenti di visual management, con aumento dell'OEE dal 68% al 78%.
+        - Riduzione dei fermi macchina del 15% attraverso manutenzione preventiva e analisi delle cause profonde.
+        - Collaborazione con ufficio acquisti e qualità per ridurre i reclami clienti del 20%.
+      keywords:
+        - Produzione
+        - OEE
+        - Manutenzione
+        - Pianificazione
+        - Qualità
+        - Visual Management
+        - Team
+    - name: Retail Italia S.r.l.
+      url: https://www.retailitalia.it
+      position: Coordinatore Logistico
+      startDate: 'Jun 2013'
+      endDate: 'Feb 2016'
+      summary: |
+        - Gestione della distribuzione verso 120 punti vendita, con pianificazione delle rotte e ottimizzazione dei carichi.
+        - Riduzione del 14% dei costi di trasporto tramite consolidamento delle spedizioni e accordi con vettori.
+        - Implementazione di procedure di controllo inventariale e riduzione delle differenze di stock dal 3,2% all'1,1%.
+      keywords:
+        - Distribuzione
+        - Trasporti
+        - Inventario
+        - Ottimizzazione
+        - Retail
+
+  skills:
+    - name: Gestione Operativa
+      level: Expert
+      keywords:
+        - Pianificazione operativa
+        - Gestione budget
+        - KPI
+        - Miglioramento continuo
+        - Gestione fornitori
+    - name: Filiera Logistica
+      level: Advanced
+      keywords:
+        - Logistica
+        - Gestione scorte
+        - Pianificazione domanda
+        - Trasporti
+        - Magazzino
+    - name: Lean Six Sigma
+      level: Advanced
+      keywords:
+        - DMAIC
+        - Kaizen
+        - 5S
+        - Mappatura flusso valore
+        - Analisi cause profonde
+    - name: Sistemi e Strumenti
+      level: Advanced
+      keywords:
+        - SAP
+        - WMS
+        - Power BI
+        - Excel avanzato
+        - Tableau
+    - name: Leadership
+      level: Advanced
+      keywords:
+        - Gestione team
+        - Negoziazione
+        - Gestione del cambiamento
+        - Comunicazione
+
+  languages:
+    - language: Italian
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - Madrelingua
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - IELTS 8.0
+        - Inglese commerciale
+    - language: French
+      fluency: Limited Working Proficiency
+      keywords:
+        - DELF B1
+        - Conversazione
+
+  awards:
+    - title: Premio Eccellenza Operativa
+      date: 'Nov 2023'
+      awarder: Logistica Adriatica S.p.A.
+      summary: |
+        Riconoscimento per aver guidato il progetto di riorganizzazione del magazzino centrale, con riduzione dei costi del 18% e miglioramento della puntualità delle consegne al 97%.
+    - title: Premio Miglior Progetto di Miglioramento
+      date: 'Jun 2019'
+      awarder: Gruppo Meccanica Verona S.r.l.
+      summary: |
+        Premio per il progetto di manutenzione preventiva che ha ridotto i fermi macchina del 15% e aumentato l'OEE dal 68% al 78%.
+
+  certificates:
+    - name: Lean Six Sigma Green Belt
+      issuer: IASSC
+      date: 'Mar 2018'
+      url: https://www.iassc.org/
+    - name: Certified Supply Chain Professional (CSCP)
+      issuer: ASCM
+      date: 'Jun 2020'
+      url: https://www.ascm.org/
+    - name: SAP S/4HANA Supply Chain
+      issuer: SAP
+      date: 'Sep 2022'
+      url: https://www.sap.com/training-certification.html
+
+  publications:
+    - name: 'Digitalizzare la filiera logistica: un modello operativo per le PMI
+        italiane'
+      publisher: Logistica Management
+      releaseDate: 'Apr 2022'
+      url: https://www.logisticamanagement.it/
+      summary: |
+        - Articolo sull'adozione di WMS e analytics nelle PMI manifatturiere
+        - Modello di governance per progetti di digitalizzazione logistica
+        - Casi studio di tre aziende del Nord Italia
+
+  projects:
+    - name: Progetto Zero Scorte
+      url: https://www.logisticaadriatica.it/progetti/zero-scorte
+      description: Riorganizzazione dei flussi di approvvigionamento e delle scorte di
+        sicurezza per una rete di tre magazzini.
+      startDate: 'Jan 2022'
+      endDate: 'Dec 2022'
+      summary: |
+        - Analisi ABC/XYZ e ridefinizione dei punti di riordino
+        - Riduzione del 22% del capitale immobilizzato in scorte
+        - Miglioramento del livello di servizio dal 94% al 98%
+      keywords:
+        - Scorte
+        - ABC/XYZ
+        - Livello di servizio
+        - WMS
+    - name: Rete Distributiva Nord Italia
+      url: https://www.logisticaadriatica.it/progetti/rete-nord
+      description: Ottimizzazione della rete di distribuzione e dei contratti con i
+        vettori per il canale retail.
+      startDate: 'Feb 2021'
+      endDate: 'Nov 2021'
+      summary: |
+        - Mappatura dei flussi e ridefinizione delle rotte
+        - Riduzione del 12% dei costi di trasporto
+        - Miglioramento della puntualità delle consegne al 96%
+      keywords:
+        - Distribuzione
+        - Trasporti
+        - Retail
+        - Ottimizzazione
+
+  interests:
+    - name: Corsa
+      keywords:
+        - Maratona
+        - Trail
+        - Mezza maratona
+    - name: Vela
+      keywords:
+        - Regate
+        - Costiera
+        - Equipaggio
+    - name: Lettura
+      keywords:
+        - Saggistica
+        - Economia
+        - Storia
+
+  volunteer:
+    - organization: Fondazione Banco Alimentare Lombardia
+      url: https://www.bancoalimentare.it/
+      position: Coordinatore Volontari
+      startDate: 'Sep 2018'
+      endDate: 'Jul 2024'
+      summary: |
+        - Coordinamento di 20 volontari durante le raccolte alimentari
+        - Pianificazione turni e gestione delle relazioni con i punti vendita
+        - Supporto nella logistica di stoccaggio e distribuzione delle derrate
+
+locale:
+  language: it

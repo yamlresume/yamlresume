@@ -1,0 +1,235 @@
+content:
+  basics:
+    name: Rizky Pratama Nugraha
+    headline: 'Analis Keuangan Senior | Pemodelan Finansial & Valuasi'
+    phone: "+62 812 3456 7890"
+    email: rizky.pratama@keuangannusantara.co.id
+    url: https://www.rizkypratama.id
+    summary: |
+      Analis keuangan dengan pengalaman lebih dari 8 tahun dalam analisis investasi, pemodelan finansial, dan manajemen risiko di sektor perbankan dan pasar modal.
+      - Terampil membangun model valuasi DCF, komparasi perusahaan, dan analisis sensitivitas untuk mendukung keputusan investasi.
+      - Berpengalaman menyusun laporan keuangan manajemen, proyeksi kas, dan rekomendasi portofolio bagi manajemen senior.
+      - Kuat dalam analisis data menggunakan Excel lanjutan, SQL, Python, dan Tableau; memahami regulasi OJK dan standar PSAK.
+      - Terbiasa bekerja lintas fungsi, memimpin riset industri, serta menyampaikan insight kepada pemangku kepentingan.
+  location:
+    address: Jl. Jenderal Sudirman Kav. 52-53
+    city: Jakarta Selatan
+    region: DKI Jakarta
+    country: Indonesia
+    postalCode: "12190"
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/rizky-pratama-keuangan
+      username: rizky-pratama-keuangan
+    - network: Medium
+      url: https://medium.com/@rizkypratama.finance
+      username: rizkypratama.finance
+  education:
+    - institution: Universitas Cakrawala Bisnis
+      url: https://www.ucb.ac.id
+      degree: Master
+      area: Manajemen Keuangan
+      score: "3.85"
+      startDate: Sep 1, 2014
+      endDate: Jul 1, 2016
+      courses:
+        - Analisis Investasi
+        - Manajemen Risiko Keuangan
+        - Pasar Modal dan Portofolio
+        - Akuntansi Manajemen Lanjutan
+        - Ekonomi Moneter
+      summary: |
+        - Memperdalam teknik valuasi perusahaan, analisis risiko, dan strategi portofolio.
+        - Menyelesaikan tesis tentang dampak suku bunga terhadap kinerja sektor perbankan.
+    - institution: Universitas Nusantara Ekonomi
+      url: https://www.une.ac.id
+      degree: Bachelor
+      area: Akuntansi
+      score: "3.72"
+      startDate: Sep 1, 2010
+      endDate: Jul 1, 2014
+      courses:
+        - Akuntansi Keuangan
+        - Manajemen Keuangan
+        - Statistik Bisnis
+        - Ekonomi Mikro dan Makro
+        - Audit Internal
+      summary: |
+        - Membangun dasar kuat dalam laporan keuangan, penganggaran, dan analisis rasio.
+        - Aktif dalam organisasi kemahasiswaan bidang pasar modal.
+  work:
+    - name: PT Sentosa Kapital Investama
+      url: https://www.sentosa-kapital.co.id
+      position: Analis Keuangan Senior
+      startDate: Mar 1, 2021
+      summary: |
+        - Memimpin analisis investasi untuk portofolio ekuitas dan obligasi senilai Rp2,4 triliun.
+        - Membangun model DCF, LBO, dan komparasi perusahaan untuk mendukung uji tuntas.
+        - Menyusun laporan kinerja bulanan dan rekomendasi alokasi aset kepada direksi.
+        - Mengawasi dua analis junior dan mengembangkan template pemodelan standar.
+      keywords:
+        - Analisis Investasi
+        - Pemodelan DCF
+        - Uji Tuntas
+        - Valuasi Perusahaan
+        - Riset Industri
+    - name: Bank Nusantara Mandiri
+      url: https://www.banknusantaramandiri.co.id
+      position: Analis Keuangan
+      startDate: Jun 1, 2017
+      endDate: Feb 28, 2021
+      summary: |
+        - Menganalisis kinerja kredit korporasi dan menyusun proyeksi arus kas debitur.
+        - Menilai kelayakan pembiayaan dengan analisis rasio, sensitivitas, dan uji stres.
+        - Menyiapkan paket laporan manajemen untuk komite kredit dan regulator.
+        - Berkolaborasi dengan tim risiko dan kepatuhan untuk memastikan kesesuaian regulasi OJK.
+      keywords:
+        - Analisis Kredit
+        - Proyeksi Kas
+        - Manajemen Risiko
+        - Regulasi OJK
+        - Pelaporan Manajemen
+    - name: PT Analitika Pasar Modal
+      url: https://www.analitikapasarmodal.co.id
+      position: Analis Keuangan Junior
+      startDate: Aug 1, 2016
+      endDate: May 31, 2017
+      summary: |
+        - Mengumpulkan dan membersihkan data pasar untuk riset sektor konsumen dan perbankan.
+        - Menyusun ringkasan harian pasar modal dan catatan analis untuk tim investasi.
+        - Membantu pembuatan model keuangan dasar serta presentasi internal.
+      keywords:
+        - Riset Pasar
+        - Data Pasar
+        - Model Keuangan
+        - Pasar Modal
+        - Analisis Sektor
+  languages:
+    - language: Indonesian
+      fluency: Native or Bilingual Proficiency
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - IELTS 7.5
+        - Presentasi Bisnis
+  skills:
+    - name: Analisis Keuangan
+      level: Expert
+      keywords:
+        - Laporan Keuangan
+        - Analisis Rasio
+        - Proyeksi Kas
+        - Anggaran
+        - Valuasi
+    - name: Pemodelan Finansial
+      level: Advanced
+      keywords:
+        - DCF
+        - LBO
+        - Excel Lanjutan
+        - Analisis Sensitivitas
+        - Komparasi Perusahaan
+    - name: Analitik Data
+      level: Advanced
+      keywords:
+        - SQL
+        - Python
+        - Tableau
+        - Power BI
+        - Bloomberg Terminal
+    - name: Manajemen Risiko
+      level: Intermediate
+      keywords:
+        - Uji Stres
+        - Analisis Kredit
+        - Regulasi OJK
+        - PSAK
+        - Kepatuhan
+    - name: Komunikasi Bisnis
+      level: Advanced
+      keywords:
+        - Presentasi Manajemen
+        - Penulisan Laporan
+        - Kolaborasi Lintas Fungsi
+  awards:
+    - title: Analis Keuangan Terbaik
+      date: Dec 2023
+      awarder: PT Sentosa Kapital Investama
+      summary: |
+        Diberikan atas kontribusi dalam penyusunan model valuasi portofolio dan rekomendasi investasi yang meningkatkan imbal hasil portofolio inti sebesar 12% secara tahunan.
+  certificates:
+    - name: 'Financial Modeling & Valuation Analyst (FMVA)'
+      issuer: Corporate Finance Institute
+      date: Nov 2022
+      url: https://corporatefinanceinstitute.com/certifications/fmva/
+    - name: Certified Financial Analyst (CFA) Level I
+      issuer: CFA Institute
+      date: Aug 2020
+      url: https://www.cfainstitute.org/programs/cfa-program
+  publications:
+    - name: Dampak Suku Bunga terhadap Kinerja Sektor Perbankan Indonesia
+      publisher: Jurnal Riset Keuangan Nusantara
+      releaseDate: Jun 2022
+      url: https://www.jrkn.ac.id/artikel/dampak-suku-bunga-perbankan
+      summary: |
+        - Menganalisis hubungan antara perubahan suku bunga acuan dan profitabilitas bank umum.
+        - Menemukan bahwa kualitas kredit dan likuiditas memoderasi dampak suku bunga terhadap margin bunga bersih.
+        - Memberikan rekomendasi kebijakan bagi manajemen risiko perbankan.
+  projects:
+    - name: Dasbor Pemantauan Kinerja Keuangan
+      url: https://www.sentosa-kapital.co.id/proyek/dashboard-keuangan
+      description: Dasbor internal untuk memantau KPI keuangan, arus kas, dan eksposur
+        risiko portofolio.
+      startDate: Jan 2023
+      endDate: Aug 2023
+      summary: |
+        - Merancang metrik utama dan tata kelola data untuk dasbor manajemen.
+        - Mengotomatiskan laporan bulanan menggunakan SQL, Python, dan Power BI.
+        - Memangkas waktu penyusunan laporan dari 5 hari menjadi 1 hari.
+      keywords:
+        - Dasbor
+        - Power BI
+        - Otomasi Laporan
+        - KPI Keuangan
+        - Tata Kelola Data
+    - name: Model Valuasi Sektor Energi Terbarukan
+      url: https://www.sentosa-kapital.co.id/proyek/valuasi-energi
+      description: Model valuasi untuk menilai peluang investasi di sektor energi
+        terbarukan.
+      startDate: Mar 2022
+      endDate: Dec 2022
+      summary: |
+        - Membangun model DCF dan skenario sensitivitas harga listrik serta biaya modal.
+        - Menyusun komparasi perusahaan dan analisis risiko regulasi.
+        - Menyajikan rekomendasi investasi kepada komite investasi.
+      keywords:
+        - DCF
+        - Energi Terbarukan
+        - Analisis Skenario
+        - Risiko Regulasi
+        - Komite Investasi
+  interests:
+    - name: Pasar Modal
+      keywords:
+        - Analisis Saham
+        - Obligasi
+        - Reksa Dana
+        - Makroekonomi
+    - name: Pengembangan Diri
+      keywords:
+        - Berbicara Publik
+        - Menulis
+        - Visualisasi Data
+  volunteer:
+    - organization: Yayasan Literasi Keuangan Indonesia
+      url: https://www.ylki.or.id
+      position: Relawan Edukasi Keuangan
+      startDate: Jan 2018
+      endDate: Dec 2024
+      summary: |
+        - Memberikan pelatihan literasi keuangan kepada pelajar dan pelaku UMKM.
+        - Menyusun modul sederhana tentang anggaran, tabungan, dan investasi aman.
+        - Membantu kampanye pencegahan investasi ilegal bersama komunitas lokal.
+
+locale:
+  language: id

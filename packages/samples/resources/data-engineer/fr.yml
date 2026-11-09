@@ -1,0 +1,247 @@
+content:
+  basics:
+    name: Camille Morel
+    headline: Ingénieur Données et Plateformes
+    phone: '+33 6 12 34 56 78'
+    email: camille.morel@dataforge.fr
+    url: https://camillemorel-data.fr
+    summary: |
+      Ingénieur données avec plus de 5 ans d'expérience dans la conception et l'exploitation de plateformes data à grande échelle. J'accompagne les équipes métier et produit dans la valorisation de leurs données, de l'ingestion à la mise à disposition dans des outils décisionnels.
+
+      - Conception de pipelines ETL/ELT robustes et orchestrés avec Airflow et dbt
+      - Modélisation d'entrepôts de données et de lacs de données sur Snowflake, BigQuery et AWS
+      - Mise en place de pratiques DataOps : tests automatisés, CI/CD, observabilité et gouvernance
+      - Collaboration étroite avec les scientifiques des données, analystes et équipes plateforme
+      - Encadrement et mentorat de développeurs juniors
+  location:
+    address: 24 rue des Lilas
+    city: Lyon
+    region: Auvergne-Rhône-Alpes
+    country: France
+    postalCode: '69003'
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/camille-morel-data
+      username: camille-morel-data
+    - network: GitHub
+      url: https://github.com/camillemorel-data
+      username: camillemorel-data
+  education:
+    - institution: INSA Lyon
+      url: https://www.insa-lyon.fr
+      degree: Master
+      area: Informatique et Science des Données
+      score: Mention Bien
+      startDate: 2016-09-01
+      endDate: 2021-07-01
+      courses:
+        - Bases de données avancées
+        - Algorithmique distribuée
+        - Apprentissage automatique
+        - Entrepôts de données
+        - Cloud computing
+        - Statistiques appliquées
+        - Architecture logicielle
+        - Sécurité des données
+      summary: |
+        - Formation d'ingénieur orientée ingénierie des données, statistiques et systèmes distribués
+        - Projet de fin d'études sur l'optimisation de requêtes dans un entrepôt de données cloud
+        - Stage de 6 mois en équipe plateforme data chez un éditeur logiciel lyonnais
+  work:
+    - name: DataForge
+      url: https://www.dataforge.fr
+      position: Ingénieur Données Senior
+      startDate: 2023-03-01
+      summary: |
+        - Conception et maintien de pipelines ELT orchestrés avec Airflow et dbt pour 12 sources hétérogènes
+        - Modélisation d'un entrepôt Snowflake et mise en place de tests de qualité automatisés
+        - Réduction de 35 % du temps de traitement des flux critiques grâce à l'optimisation SQL et au parallélisme
+        - Contribution à la gouvernance des données : catalogage, documentation et gestion des accès
+        - Mentorat de deux ingénieurs données juniors et animation de revues de code hebdomadaires
+      keywords:
+        - Airflow
+        - dbt
+        - Snowflake
+        - DataOps
+        - Gouvernance
+    - name: Groupe Voltaire
+      url: https://www.groupe-voltaire.fr
+      position: Ingénieur Données
+      startDate: 2021-09-01
+      endDate: 2023-02-28
+      summary: |
+        - Développement de flux d'ingestion temps réel avec Kafka et traitement batch avec Spark
+        - Migration d'un entrepôt PostgreSQL vers BigQuery avec réduction des coûts de 20 %
+        - Industrialisation des déploiements via GitLab CI et conteneurs Docker
+        - Participation à la définition du modèle de données et des indicateurs métier avec les analystes
+      keywords:
+        - Python
+        - SQL
+        - Kafka
+        - BigQuery
+        - CI/CD
+    - name: Lumière Analytics
+      url: https://www.lumiere-analytics.fr
+      position: Ingénieur Données Junior
+      startDate: 2021-02-01
+      endDate: 2021-08-31
+      summary: |
+        - Création de jobs ETL Python pour alimenter un entrepôt PostgreSQL à partir de sources CRM et ERP
+        - Automatisation de contrôles de cohérence et de rapports de qualité des données
+        - Développement de tableaux de bord Power BI pour les équipes commerciales
+        - Rédaction de la documentation technique et des procédures d'exploitation
+      keywords:
+        - ETL
+        - PostgreSQL
+        - Docker
+        - Power BI
+  skills:
+    - name: Ingénierie des données
+      level: Expert
+      keywords:
+        - Python
+        - SQL
+        - dbt
+        - Apache Airflow
+        - Apache Spark
+        - Kafka
+        - Snowflake
+        - BigQuery
+    - name: 'Cloud & DevOps'
+      level: Advanced
+      keywords:
+        - AWS
+        - GCP
+        - Docker
+        - Kubernetes
+        - Terraform
+        - GitLab CI
+        - GitHub Actions
+    - name: Bases de données
+      level: Advanced
+      keywords:
+        - PostgreSQL
+        - Snowflake
+        - BigQuery
+        - MongoDB
+        - Redis
+        - Elasticsearch
+    - name: Visualisation et BI
+      level: Intermediate
+      keywords:
+        - Power BI
+        - Tableau
+        - Looker
+        - Metabase
+  languages:
+    - language: French
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - Langue maternelle
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - TOEIC 950
+        - Travail en équipe internationale
+    - language: Spanish
+      fluency: Limited Working Proficiency
+      keywords:
+        - Conversation professionnelle
+  awards:
+    - title: Prix de l'impact data
+      date: 2024-06-15
+      awarder: DataForge
+      summary: |
+        Récompense interne attribuée pour la refonte de la plateforme d'ingestion et l'amélioration significative de la fiabilité des données.
+    - title: Meilleur projet de fin d'études
+      date: 2021-07-01
+      awarder: INSA Lyon
+      summary: |
+        Projet sur l'optimisation de requêtes analytiques dans un entrepôt cloud, distingué pour sa rigueur technique et son impact pédagogique.
+  certificates:
+    - name: AWS Certified Data Engineer - Associate
+      issuer: Amazon Web Services
+      date: 2024-04-20
+      url: https://aws.amazon.com/certification/certified-data-engineer-associate/
+    - name: dbt Certified Developer
+      issuer: dbt Labs
+      date: 2023-11-10
+      url: https://www.getdbt.com/certifications/
+    - name: Google Cloud Professional Data Engineer
+      issuer: Google Cloud
+      date: 2022-09-15
+      url: https://cloud.google.com/certification/data-engineer
+  publications:
+    - name: "Modernisation d'un entrepôt de données : retour d'expérience"
+      publisher: 'Revue Data & Systèmes'
+      releaseDate: 2024-02-01
+      url: https://www.revue-data-systemes.fr/articles/modernisation-entrepot
+      summary: |
+        - Présentation d'une démarche de migration vers Snowflake menée en équipe
+        - Retour sur les choix d'architecture, la qualité des données et la conduite du changement
+        - Bonnes pratiques pour industrialiser les pipelines avec dbt et Airflow
+  projects:
+    - name: OpenData Lyon
+      url: https://github.com/camillemorel-data/opendata-lyon
+      description: Pipeline libre de valorisation des données publiques de la
+        métropole lyonnaise
+      startDate: 2023-01-01
+      endDate: 2023-06-30
+      summary: |
+        - Collecte automatisée de jeux de données ouvertes et stockage dans PostgreSQL
+        - Transformations dbt et documentation du lignage des données
+        - Tableau de bord public pour explorer les indicateurs de mobilité et de qualité de l'air
+      keywords:
+        - Open Data
+        - Airflow
+        - dbt
+        - PostgreSQL
+    - name: Moniteur Qualité des Données
+      url: https://github.com/camillemorel-data/data-quality-monitor
+      description: Outil de surveillance de la qualité des données pour pipelines
+        analytiques
+      startDate: 2022-03-01
+      endDate: 2022-12-31
+      summary: |
+        - Définition de règles de validation configurables et génération de rapports quotidiens
+        - Intégration dans une chaîne CI/CD pour bloquer les déploiements en cas d'anomalie critique
+        - Réduction du temps de détection des incidents de données de plusieurs heures à quelques minutes
+      keywords:
+        - Qualité des données
+        - Python
+        - Great Expectations
+        - Docker
+  interests:
+    - name: Sport
+      keywords:
+        - Course à pied
+        - Escalade
+        - Randonnée
+    - name: Musique
+      keywords:
+        - Guitare
+        - Jazz
+    - name: Communauté
+      keywords:
+        - Rencontres professionnelles
+        - Mentorat
+  volunteer:
+    - organization: Data for Good Lyon
+      url: https://dataforgood.fr
+      position: Bénévole en ingénierie des données
+      startDate: 2022-01-01
+      endDate: 2024-12-31
+      summary: |
+        - Participation à des projets data à impact social avec des associations locales
+        - Conception de pipelines de collecte et de nettoyage de données ouvertes
+        - Animation d'ateliers d'initiation à la donnée pour des bénévoles non techniques
+    - organization: Elles bougent
+      url: https://www.ellesbougent.com
+      position: Marraine
+      startDate: 2023-09-01
+      summary: |
+        - Intervention dans des collèges et lycées pour promouvoir les carrières scientifiques et techniques auprès des jeunes filles
+        - Organisation d'ateliers de découverte des métiers de la donnée et de l'ingénierie
+
+locale:
+  language: fr

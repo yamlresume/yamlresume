@@ -1,0 +1,221 @@
+content:
+  basics:
+    name: 陳家豪
+    headline: '高級財務分析師 | CFA 特許金融分析師'
+    phone: '+852 9123 4567'
+    email: ka.ho.chan@example.com
+    url: https://www.chan-kaho-finance.com
+    summary: |
+      具備 7 年投資銀行與資產管理經驗的高級財務分析師，專注於財務建模、估值分析、預算預測及管理層決策支援。
+
+      - 精通三表模型、DCF、可比公司分析及情境分析，能將複雜數據轉化為可執行洞察
+      - 熟悉香港上市公司財務披露、IFRS 及 ESG 報告要求
+      - 擅長以 Excel、SQL、Python 及 Power BI 建立自動化儀表板，提升月度結算與差異分析效率
+      - 持有 CFA 特許資格，具備優秀的中英文溝通及跨部門協作能力
+
+  location:
+    address: 香港中環皇后大道中99號
+    city: 香港
+    region: 香港島
+    country: Hong Kong
+
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/chan-ka-ho-finance
+      username: chan-ka-ho-finance
+    - network: Medium
+      url: https://medium.com/@chan.kaho.finance
+      username: chan.kaho.finance
+
+  education:
+    - institution: 香港中文大學
+      url: https://www.cuhk.edu.hk
+      degree: Bachelor
+      area: 計量金融學
+      score: '3.7/4.0'
+      startDate: Sep 1, 2014
+      endDate: Jun 30, 2018
+      courses:
+        - 財務管理
+        - 投資分析與資產定價
+        - 衍生工具與風險管理
+        - 計量方法與統計推論
+        - 會計學原理
+        - 企業估值
+        - 金融市場與機構
+        - 程式設計與數據分析
+      summary: |
+        - 主修計量金融，成績排名前 10%，連續兩年獲院長榮譽錄
+        - 完成企業估值、投資組合管理及固定收益證券等專題研究
+        - 擔任金融學會學術幹事，組織行業分享會及模擬投資比賽
+
+  work:
+    - name: 香港交易所
+      url: https://www.hkex.com.hk
+      position: 高級財務分析師
+      startDate: Mar 1, 2021
+      summary: |
+        - 負責集團月度及季度財務分析，涵蓋收入、成本、資本開支及現金流，支援管理層制定年度預算
+        - 建立並維護三表財務模型、DCF 及可比公司估值模型，用於新業務投資及策略評估
+        - 主導差異分析與滾動預測，將預測週期由 4 週縮短至 10 個工作天
+        - 與業務、風險及合規部門協作，編製董事會及監管機構匯報材料
+        - 指導初級分析師，制定財務建模及數據視覺化最佳實務
+      keywords:
+        - 財務建模
+        - 估值分析
+        - 預算預測
+        - 差異分析
+        - 管理層匯報
+        - 團隊指導
+    - name: 恒生銀行
+      url: https://www.hangseng.com
+      position: 財務分析師
+      startDate: Jul 1, 2018
+      endDate: Feb 28, 2021
+      summary: |
+        - 支援零售銀行業務的預算編製、月度結算及績效追蹤，管理年度預算逾 8 億港元
+        - 分析產品盈利能力及客戶分群表現，提出定價及資源配置建議
+        - 開發 Excel VBA 及 Power BI 自動化報表，減少每月手動處理時間約 60%
+        - 參與 IFRS 9 撥備模型校驗及監管報表準備工作
+      keywords:
+        - 預算管理
+        - 績效分析
+        - 產品盈利
+        - 監管報表
+        - Power BI
+        - Excel VBA
+
+  languages:
+    - language: Cantonese
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - 母語
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - IELTS 7.5
+        - 商務簡報
+    - language: Mandarin
+      fluency: Full Professional Proficiency
+      keywords:
+        - 普通話水平測試二級甲等
+        - 跨區業務溝通
+
+  skills:
+    - name: 財務分析與建模
+      level: Expert
+      keywords:
+        - 三表財務模型
+        - DCF 估值
+        - 可比公司分析
+        - 情境與敏感度分析
+    - name: 數據分析與視覺化
+      level: Advanced
+      keywords:
+        - Excel VBA
+        - SQL
+        - Python
+        - Power BI
+        - Tableau
+    - name: 會計與報告
+      level: Advanced
+      keywords:
+        - IFRS
+        - 管理層報告
+        - 預算與預測
+        - 差異分析
+    - name: 金融工具
+      level: Advanced
+      keywords:
+        - Bloomberg Terminal
+        - Capital IQ
+        - FactSet
+        - SAP ERP
+
+  awards:
+    - title: 最佳財務分析項目獎
+      awarder: 香港交易所
+      date: Dec 2022
+      summary: |
+        表揚在集團新業務投資評估中建立自動化估值模型，將分析週期縮短 35%，並提升董事會決策資料的準確性。
+    - title: 院長榮譽錄
+      awarder: 香港中文大學
+      date: May 2017
+      summary: |
+        因學術成績優異而獲頒，連續兩年位列商學院前 10%。
+
+  certificates:
+    - name: CFA 特許金融分析師資格
+      issuer: CFA 協會
+      date: Aug 2022
+      url: https://www.cfainstitute.org
+    - name: 金融風險管理師（FRM）
+      issuer: 全球風險管理專業人員協會
+      date: Nov 2020
+      url: https://www.garp.org
+
+  publications:
+    - name: 香港上市公司 ESG 披露與估值相關性研究
+      publisher: 香港財務分析師學會期刊
+      releaseDate: Jun 2023
+      url: https://www.hksfa.org/publications/esg-valuation
+      summary: |
+        - 分析 2018 至 2022 年香港上市公司 ESG 評分與市盈率、資金成本的關係
+        - 發現高 ESG 評分企業在市場波動期間展現較低資金成本
+        - 提出適用於本地市場的 ESG 整合估值框架
+
+  projects:
+    - name: 港股 ESG 估值整合模型
+      startDate: Jan 2023
+      endDate: Jun 2023
+      description: 結合 ESG 評分、財務預測及情境分析的可配置估值模型，供投資研究團隊使用。
+      summary: |
+        - 以 Python 串接公開 ESG 數據及財務報表，自動計算調整後資金成本
+        - 建立行業中性評分及敏感度分析，支援投資委員會討論
+        - 模型獲研究部門採用於 20 間恒生指數成分股之初步篩選
+      keywords:
+        - ESG
+        - 估值模型
+        - Python
+        - 情境分析
+      url: https://github.com/chan-ka-ho-finance/esg-valuation-model
+    - name: 零售銀行預算自動化儀表板
+      startDate: Feb 2020
+      endDate: Nov 2020
+      description: 為零售銀行業務設計的預算監控與差異分析儀表板，整合多個資料來源並自動更新。
+      summary: |
+        - 使用 SQL 及 Power BI 建立產品、渠道及客戶分群維度的預算追蹤
+        - 將每月管理報表編製時間由 3 天縮短至半天
+        - 增設異常警示及下鑽分析，協助業務主管快速定位偏差原因
+      keywords:
+        - Power BI
+        - SQL
+        - 預算管理
+        - 差異分析
+      url: https://github.com/chan-ka-ho-finance/budget-dashboard
+
+  interests:
+    - name: 金融科技
+      keywords:
+        - 區塊鏈
+        - 量化交易
+        - 數據視覺化
+    - name: 運動
+      keywords:
+        - 跑步
+        - 羽毛球
+        - 遠足
+
+  volunteer:
+    - organization: 香港財務策劃師學會
+      url: https://www.ifphk.org
+      position: 社區理財教育義工
+      startDate: Sep 2019
+      endDate: Dec 2023
+      summary: |
+        - 為中學生及基層家庭主持理財教育工作坊，主題包括預算管理、儲蓄及風險保障
+        - 協助設計互動教材及案例，累計服務超過 300 名參加者
+        - 與社區中心合作統籌年度理財同樂日，協調義工及活動流程
+
+locale:
+  language: zh-hant-hk

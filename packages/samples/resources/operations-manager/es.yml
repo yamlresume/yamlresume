@@ -1,0 +1,233 @@
+content:
+  basics:
+    name: Lucía Fernández Moreno
+    headline: Gerente de Operaciones | Eficiencia, personas y mejora continua
+    phone: "+34 612 345 678"
+    email: lucia.fernandez@example.com
+    url: https://www.luciafernandez.es
+    summary: |
+      - Gerente de Operaciones con más de 10 años de experiencia en logística, retail y servicios, liderando equipos multidisciplinares de hasta 45 personas.
+      - Especializada en optimización de procesos, control de costes, planificación de la demanda y mejora continua mediante metodologías Lean Six Sigma.
+      - Historial demostrado en la reducción de tiempos de entrega, aumento de la productividad y despliegue de indicadores operativos alineados con objetivos estratégicos.
+      - Profesional orientada a resultados, con sólida capacidad de negociación, gestión de proveedores y coordinación entre áreas comerciales, financieras y de atención al cliente.
+  location:
+    address: 'Calle de Alcalá 120, 4º B'
+    city: Madrid
+    region: Comunidad de Madrid
+    country: Spain
+    postalCode: "28009"
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/lucia-fernandez-ops
+      username: lucia-fernandez-ops
+    - network: Medium
+      url: https://medium.com/@luciafernandezops
+      username: luciafernandezops
+  education:
+    - institution: Universidad Carlos III de Madrid
+      url: https://www.uc3m.es
+      degree: Master
+      area: Dirección de Operaciones
+      score: '8,9/10'
+      startDate: '2013-09-01'
+      endDate: '2014-07-01'
+      courses:
+        - Gestión de la Cadena de Suministro
+        - Dirección de Producción
+        - Análisis de Datos para Operaciones
+        - Gestión de Calidad
+        - Negociación y Gestión de Proveedores
+      summary: |
+        - Formación avanzada en diseño, planificación y control de operaciones.
+        - Trabajo de fin de máster sobre optimización de inventarios en retail.
+    - institution: Universidad de Valladolid
+      url: https://www.uva.es
+      degree: Bachelor
+      area: Administración y Dirección de Empresas
+      score: '8,2/10'
+      startDate: '2009-09-01'
+      endDate: '2013-06-30'
+      courses:
+        - Economía de la Empresa
+        - Contabilidad Financiera
+        - Estadística Aplicada
+        - Dirección de Recursos Humanos
+        - Logística Empresarial
+      summary: |
+        - Base sólida en gestión empresarial, finanzas y análisis cuantitativo.
+        - Participación en proyectos de consultoría para pymes locales.
+  work:
+    - name: Distribuciones NovaRetail S.L.
+      url: https://www.novaretail.es
+      position: Gerente de Operaciones
+      startDate: '2019-03-01'
+      summary: |
+        - Dirección de las operaciones de una red de 18 tiendas y un centro de distribución, con un equipo de 45 personas.
+        - Rediseño de los procesos de reposición y planificación de la demanda, reduciendo el stock obsoleto un 23 % y mejorando el nivel de servicio al 97 %.
+        - Implantación de un cuadro de mando con indicadores de productividad, costes logísticos y satisfacción del cliente.
+        - Negociación de contratos con proveedores y operadores logísticos, con un ahorro anual superior a 180.000 EUR.
+        - Impulso de programas de formación y desarrollo del equipo, disminuyendo la rotación un 15 %.
+      keywords:
+        - Lean Six Sigma
+        - Planificación S&OP
+        - Control de costes
+        - Gestión de equipos
+        - Indicadores
+    - name: Logística Ibérica Express
+      url: https://www.logistica-iberica.com
+      position: Coordinadora de Operaciones
+      startDate: '2015-06-01'
+      endDate: '2019-02-28'
+      summary: |
+        - Coordinación de una flota de 60 vehículos y de las operaciones diarias de reparto en la zona centro.
+        - Optimización de rutas y planificación de turnos, logrando una reducción del 12 % en kilómetros recorridos.
+        - Seguimiento de acuerdos de nivel de servicio con clientes clave y resolución de incidencias operativas.
+        - Colaboración con el área de sistemas en la digitalización de albaranes y pruebas de entrega.
+      keywords:
+        - Gestión de flotas
+        - Optimización de rutas
+        - Atención al cliente
+        - Nivel de servicio
+    - name: Grupo Mercado Central
+      url: https://www.grupomercadocentral.es
+      position: Supervisora de Tienda
+      startDate: '2014-09-01'
+      endDate: '2015-05-31'
+      summary: |
+        - Supervisión de un equipo de 12 personas en una tienda de gran superficie.
+        - Gestión de inventarios, reposición y control de mermas.
+        - Formación en atención al cliente y cumplimiento de estándares de calidad y seguridad.
+      keywords:
+        - Gestión de inventario
+        - Atención al cliente
+        - Control de mermas
+        - Seguridad
+  skills:
+    - name: Gestión de Operaciones
+      level: Expert
+      keywords:
+        - Planificación de demanda
+        - Mejora continua
+        - Lean Six Sigma
+        - Gestión de inventario
+        - Planificación S&OP
+    - name: Liderazgo y Equipos
+      level: Advanced
+      keywords:
+        - Gestión de equipos
+        - Mentoría
+        - Negociación
+        - Gestión del cambio
+        - Comunicación
+    - name: Análisis y Herramientas
+      level: Advanced
+      keywords:
+        - Excel avanzado
+        - Power BI
+        - SAP
+        - Tableau
+        - SQL
+    - name: Logística y Cadena de Suministro
+      level: Expert
+      keywords:
+        - Aprovisionamiento
+        - Gestión de proveedores
+        - Almacenamiento
+        - Transporte
+        - Última milla
+  languages:
+    - language: Spanish
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - Español nativo
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - C1
+        - Uso profesional
+    - language: French
+      fluency: Limited Working Proficiency
+      keywords:
+        - A2
+  awards:
+    - title: Premio a la Excelencia Operativa
+      date: '2022-11-15'
+      awarder: Distribuciones NovaRetail S.L.
+      summary: |
+        Reconocimiento por la mejora del nivel de servicio y la reducción de costes logísticos durante el ejercicio 2022.
+    - title: Reconocimiento por Mejora Continua
+      date: '2018-06-20'
+      awarder: Logística Ibérica Express
+      summary: |
+        Distinción por la optimización de rutas y la disminución de incidencias en la zona centro.
+  certificates:
+    - name: Lean Six Sigma Green Belt
+      issuer: ASQ
+      date: '2020-02-10'
+      url: https://asq.org/cert/lean-six-sigma-green-belt
+    - name: Certificación en Gestión de Cadena de Suministro
+      issuer: APICS
+      date: '2019-09-05'
+      url: https://www.ascm.org/credentials/cscp/
+  publications:
+    - name: Optimización de inventarios en redes de retail
+      publisher: Revista de Dirección y Operaciones
+      releaseDate: '2021-04-12'
+      url: https://www.revistadireccionoperaciones.com/articulos/optimizacion-inventarios-retail
+      summary: |
+        - Artículo sobre modelos de reposición y planificación de la demanda en entornos multitienda.
+        - Análisis de indicadores clave para reducir roturas de stock sin aumentar el capital inmovilizado.
+  projects:
+    - name: Automatización del Inventario
+      startDate: '2021-01-15'
+      endDate: '2021-10-30'
+      description: Implantación de un sistema de inventario automatizado en el centro
+        de distribución.
+      summary: |
+        - Definición de requisitos junto con sistemas y operaciones.
+        - Pruebas piloto, formación de usuarios y despliegue en 18 tiendas.
+        - Reducción del tiempo de recuento en un 40 % y mejora de la exactitud del stock.
+      keywords:
+        - Automatización
+        - Inventario
+        - Formación
+        - Procesos
+      url: https://www.novaretail.es/proyectos/inventario-automatizado
+    - name: Programa de Reducción de Mermas
+      startDate: '2018-03-01'
+      endDate: '2018-12-20'
+      description: Programa para reducir mermas en tienda y almacén mediante análisis
+        de causas y acciones correctivas.
+      summary: |
+        - Análisis de datos de mermas por categoría y tienda.
+        - Implantación de controles de recepción y formación al personal.
+        - Disminución de la merma un 18 % en nueve meses.
+      keywords:
+        - Mejora continua
+        - Control de mermas
+        - Análisis de datos
+      url: https://www.logistica-iberica.com/casos/mermas
+  interests:
+    - name: Deporte
+      keywords:
+        - Carrera
+        - Senderismo
+        - Ciclismo
+    - name: Lectura
+      keywords:
+        - Novela histórica
+        - Ensayo
+        - Economía
+  volunteer:
+    - organization: Fundación Banco de Alimentos de Madrid
+      url: https://www.bamadrid.org
+      position: Voluntaria de Logística
+      startDate: '2017-01-10'
+      endDate: '2020-12-15'
+      summary: |
+        - Apoyo en la coordinación de la recepción y clasificación de alimentos.
+        - Colaboración en la planificación de rutas de reparto a entidades sociales.
+        - Participación en campañas de recogida y formación de nuevos voluntarios.
+
+locale:
+  language: es

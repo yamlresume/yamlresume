@@ -1,0 +1,268 @@
+content:
+  basics:
+    name: Dr. Lena Hartmann
+    headline: Senior KI-Ingenieur – Maschinelles Lernen & Generative KI
+    phone: "+49 30 12345678"
+    email: lena.hartmann@example.com
+    url: https://lena-hartmann.ai
+    summary: |
+      - Senior KI-Ingenieur mit über 8 Jahren Erfahrung in der Entwicklung und produktiven Skalierung von Systemen für Maschinelles Lernen und Generative KI.
+      - Spezialisiert auf Deep Learning, Sprachverarbeitung und MLOps; verantwortlich für End-to-End-Pipelines von der Datenaufbereitung bis zum Monitoring im Betrieb.
+      - Nachweisliche Erfolge bei der Führung interdisziplinärer Teams und der Übersetzung komplexer Geschäftsanforderungen in robuste, ethisch verantwortungsvolle KI-Lösungen.
+      - Leidenschaft für innovative Forschungsansätze, reproduzierbare Experimente und die kontinuierliche Verbesserung von Modellqualität und -performance.
+  location:
+    address: Friedrichstraße 123
+    city: Berlin
+    region: Berlin
+    country: Germany
+    postalCode: "10117"
+  profiles:
+    - network: GitHub
+      url: https://github.com/lena-hartmann
+      username: lena-hartmann
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/lena-hartmann
+      username: lena-hartmann
+    - network: Stack Overflow
+      url: https://stackoverflow.com/users/1234567/lena-hartmann
+      username: lena-hartmann
+  education:
+    - institution: Technische Universität Berlin
+      url: https://www.tu.berlin
+      degree: Doctor
+      area: Künstliche Intelligenz und Maschinelles Lernen
+      score: "summa cum laude"
+      startDate: '2012-10-01'
+      endDate: '2016-09-30'
+      courses:
+        - Deep Learning
+        - Probabilistische Graphenmodelle
+        - Natural Language Processing
+        - Reinforcement Learning
+        - Bayesianische Inferenz
+      summary: |
+        - Promotion über selbstüberwachtes Lernen für die Sprachverarbeitung mit Fokus auf ressourcenarme Domänen.
+        - Entwicklung neuartiger Architekturen, die auf mehreren Benchmarks state-of-the-art Ergebnisse erzielten.
+        - Publikationen auf führenden Konferenzen wie NeurIPS, ICML und ACL.
+    - institution: RWTH Aachen University
+      url: https://www.rwth-aachen.de
+      degree: Master
+      area: Informatik
+      score: "1,2"
+      startDate: '2010-10-01'
+      endDate: '2012-09-30'
+      courses:
+        - Maschinelles Lernen
+        - Statistische Mustererkennung
+        - Datenbanken und Datenanalyse
+        - Algorithmen und Datenstrukturen
+        - Computer Vision
+      summary: |
+        - Schwerpunkt auf statistischem Lernen und algorithmischer Datenanalyse.
+        - Masterarbeit zur effizienten Inferenz in tiefen neuronalen Netzen.
+  work:
+    - name: Siemens KI-Labor
+      url: https://www.siemens.com/ai
+      position: Senior KI-Ingenieur
+      startDate: '2021-04-01'
+      summary: |
+        - Leitung eines Teams von 6 ML-Ingenieur:innen zur Entwicklung generativer KI-Assistenten für industrielle Anwendungen.
+        - Konzeption und Umsetzung einer skalierbaren LLM-Plattform mit Retrieval-Augmented Generation und strengen Governance-Vorgaben.
+        - Verantwortlich für Modellauswahl, Fine-Tuning, Evaluation und kontinuierliches Monitoring in der Cloud.
+        - Enge Zusammenarbeit mit Produktmanagement und Compliance zur Einhaltung des EU AI Act.
+      keywords:
+        - Generative KI
+        - LLM
+        - RAG
+        - MLOps
+        - Teamführung
+    - name: Bosch Center for Artificial Intelligence
+      url: https://www.bosch-ai.com
+      position: Ingenieur für Maschinelles Lernen
+      startDate: '2018-10-01'
+      endDate: '2021-03-31'
+      summary: |
+        - Entwicklung und Deployment von Deep-Learning-Modellen für Qualitätskontrolle und Predictive Maintenance.
+        - Aufbau einer unternehmensweiten Feature-Store-Infrastruktur zur reproduzierbaren Modellierung.
+        - Automatisierung von Trainingspipelines mit Kubernetes, Kubeflow und MLflow.
+        - Durchführung von A/B-Tests und Modellüberwachung im Produktivbetrieb.
+      keywords:
+        - Deep Learning
+        - Predictive Maintenance
+        - Kubeflow
+        - Feature Store
+        - Computer Vision
+    - name: Zalando SE
+      url: https://www.zalando.de
+      position: KI-Ingenieur
+      startDate: '2016-10-01'
+      endDate: '2018-09-30'
+      summary: |
+        - Entwicklung von Empfehlungssystemen zur Personalisierung des Online-Shops.
+        - Implementierung von NLP-Pipelines zur automatischen Produktklassifikation.
+        - Optimierung von Modellen für Latenz und Skalierbarkeit im Hochlastbetrieb.
+        - Zusammenarbeit mit Data Engineering und Product Analytics.
+      keywords:
+        - Recommender Systems
+        - NLP
+        - Python
+        - Spark
+        - Personalisierung
+  skills:
+    - name: Maschinelles Lernen
+      level: Expert
+      keywords:
+        - Deep Learning
+        - NLP
+        - Computer Vision
+        - Generative KI
+        - Reinforcement Learning
+    - name: Programmierung
+      level: Expert
+      keywords:
+        - Python
+        - PyTorch
+        - TensorFlow
+        - SQL
+        - Bash
+    - name: MLOps & Cloud
+      level: Advanced
+      keywords:
+        - Kubernetes
+        - Docker
+        - MLflow
+        - Kubeflow
+        - AWS SageMaker
+        - Azure ML
+    - name: Datenverarbeitung
+      level: Advanced
+      keywords:
+        - Spark
+        - Pandas
+        - Airflow
+        - dbt
+        - Kafka
+    - name: Führung & Kommunikation
+      level: Advanced
+      keywords:
+        - Teamführung
+        - Agile Methoden
+        - Stakeholder-Management
+        - Technische Dokumentation
+        - Mentoring
+  languages:
+    - language: German
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - Muttersprache
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - C2
+        - Verhandlungssicher
+    - language: French
+      fluency: Limited Working Proficiency
+      keywords:
+        - B1
+  awards:
+    - title: Preis für den besten Beitrag
+      date: '2023-12-05'
+      awarder: NeurIPS 2023
+      summary: |
+        - Auszeichnung für die Publikation „Effiziente Selbstüberwachung für domänenspezifische Sprachmodelle“.
+        - Anerkennung für herausragende Beiträge zu ressourceneffizientem Training großer Sprachmodelle.
+    - title: Innovationspreis KI
+      date: '2022-06-15'
+      awarder: Siemens AG
+      summary: |
+        - Preis für die Entwicklung einer skalierbaren RAG-Plattform mit messbarer Reduktion von Halluzinationen.
+        - Würdigung der interdisziplinären Zusammenarbeit und des produktiven Einsatzes im industriellen Umfeld.
+  certificates:
+    - name: AWS Certified Machine Learning – Specialty
+      issuer: Amazon Web Services
+      date: '2022-03-10'
+      url: https://aws.amazon.com/certification/certified-machine-learning-specialty/
+    - name: Google Cloud Professional Machine Learning Engineer
+      issuer: Google Cloud
+      date: '2023-05-22'
+      url: https://cloud.google.com/learn/certification/machine-learning-engineer
+    - name: TensorFlow Developer Certificate
+      issuer: Google
+      date: '2020-11-30'
+      url: https://www.tensorflow.org/certificate
+  publications:
+    - name: Effiziente Selbstüberwachung für domänenspezifische Sprachmodelle
+      publisher: NeurIPS 2023
+      releaseDate: '2023-12-05'
+      url: https://proceedings.neurips.cc/paper/2023
+      summary: |
+        - Vorstellung eines selbstüberwachten Verfahrens, das ohne große Mengen annotierter Daten wettbewerbsfähige Ergebnisse erzielt.
+        - Analyse der Übertragbarkeit auf ressourcenarme Sprachen und Fachdomänen.
+    - name: Skalierbare Inferenz für Generative Modelle in der Industrie
+      publisher: KI-Fachzeitschrift
+      releaseDate: '2022-09-15'
+      url: https://www.ki-fachzeitschrift.de/artikel/2022-09
+      summary: |
+        - Diskussion architektonischer Muster für latenzarme Inferenz großer Sprachmodelle.
+        - Praxisbericht zur Integration von RAG und Vektordatenbanken in bestehende Unternehmenslandschaften.
+  projects:
+    - name: DocuMind – Intelligenter Dokumentenassistent
+      url: https://github.com/lena-hartmann/documind
+      description: RAG-basierter Assistent zur semantischen Suche und Zusammenfassung
+        technischer Dokumente.
+      startDate: '2023-01-15'
+      endDate: '2023-10-30'
+      summary: |
+        - Entwicklung einer Ende-zu-Ende-Plattform mit Ingestion, Chunking, Embedding und Vektordatenbank.
+        - Evaluation von LLMs hinsichtlich Genauigkeit, Latenz und Kosten.
+        - Bereitstellung einer REST-API und eines Web-Frontends für interne Nutzer:innen.
+      keywords:
+        - RAG
+        - LLM
+        - Vektordatenbank
+        - FastAPI
+        - Evaluation
+    - name: VisionQC – Qualitätskontrolle mit Computer Vision
+      url: https://github.com/lena-hartmann/visionqc
+      description: Deep-Learning-System zur automatischen Fehlererkennung in der Fertigung.
+      startDate: '2019-03-01'
+      endDate: '2020-08-31'
+      summary: |
+        - Training von Convolutional Neural Networks auf hochauflösenden Industriebildern.
+        - Implementierung einer aktiven Lernschleife zur Reduktion des Annotationsaufwands.
+        - Deployment auf Edge-Geräten mit TensorRT und Überwachung der Modell-Drift.
+      keywords:
+        - Computer Vision
+        - Edge AI
+        - TensorRT
+        - Active Learning
+        - Fertigung
+  interests:
+    - name: Open Source
+      keywords:
+        - PyTorch
+        - Hugging Face
+        - MLflow
+    - name: Wissenschaft & Forschung
+      keywords:
+        - NeurIPS
+        - ICML
+        - ACL
+    - name: Freizeit
+      keywords:
+        - Wandern
+        - Klettern
+        - Fotografie
+        - Lesen
+  volunteer:
+    - organization: AI Ethics Initiative Berlin
+      url: https://www.ai-ethics-berlin.de
+      position: Mentorin für Maschinelles Lernen
+      startDate: '2021-09-01'
+      summary: |
+        - Mentoring von Nachwuchswissenschaftler:innen und Berufseinsteiger:innen im Bereich KI.
+        - Organisation von Workshops zu verantwortungsvoller KI und reproduzierbarer Forschung.
+        - Beitrag zur Entwicklung eines Leitfadens für ethische Evaluierung von Sprachmodellen.
+
+locale:
+  language: de

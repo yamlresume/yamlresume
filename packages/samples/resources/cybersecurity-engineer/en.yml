@@ -1,0 +1,275 @@
+content:
+  basics:
+    name: Elena M. Vasquez
+    headline: Senior Cybersecurity Engineer | Cloud Security & Threat Detection
+    phone: (415) 555-0198
+    email: elena.vasquez@example.com
+    url: https://elenavasquez.dev
+    summary: |
+      - Cybersecurity engineer with 8+ years of experience securing cloud-native applications, enterprise networks, and high-traffic SaaS platforms.
+      - Specialized in threat detection, incident response, vulnerability management, and secure architecture across AWS and Azure environments.
+      - Adept at building automation with Python, Terraform, and SIEM tooling to reduce response time and strengthen security posture.
+      - Collaborates with engineering, compliance, and product teams to translate risk requirements into practical controls and measurable outcomes.
+
+  location:
+    address: 475 Brannan Street, Suite 300
+    city: San Francisco
+    region: California
+    country: United States
+    postalCode: '94107'
+
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/elena-vasquez-sec
+      username: elena-vasquez-sec
+    - network: GitHub
+      url: https://github.com/elenavasquez
+      username: elenavasquez
+    - network: Stack Overflow
+      url: https://stackoverflow.com/users/1234567/elena-vasquez
+      username: elena-vasquez
+
+  education:
+    - institution: Georgia Institute of Technology
+      url: https://www.gatech.edu
+      degree: Master
+      area: Cybersecurity
+      score: '3.9'
+      startDate: Aug 2013
+      endDate: May 2015
+      courses:
+        - Advanced Network Security
+        - Applied Cryptography
+        - Cloud Security Architecture
+        - Incident Response and Forensics
+        - Secure Software Development
+        - Risk Management and Compliance
+      summary: |
+        - Completed graduate coursework in secure systems, network defense, and applied cryptography.
+        - Built a cloud incident response lab and evaluated detection coverage for common attack paths.
+        - Collaborated on a capstone project focused on identity-based threat detection in hybrid environments.
+    - institution: University of Illinois Urbana-Champaign
+      url: https://illinois.edu
+      degree: Bachelor
+      area: Computer Science
+      score: '3.8'
+      startDate: Aug 2009
+      endDate: May 2013
+      courses:
+        - Data Structures
+        - Operating Systems
+        - Computer Networks
+        - Database Systems
+        - Algorithms
+        - Software Engineering
+      summary: |
+        - Developed a strong foundation in operating systems, networking, and software engineering.
+        - Completed coursework projects in network protocol analysis and secure application development.
+        - Served as a teaching assistant for an introductory computer security course.
+
+  work:
+    - name: Northstar Cloud Systems
+      url: https://www.northstarcloud.io
+      position: Staff Cybersecurity Engineer
+      startDate: Jan 2021
+      summary: |
+        - Lead threat detection and incident response for a multi-tenant cloud platform serving enterprise customers.
+        - Designed detection-as-code pipelines and tuned SIEM/EDR alerts to cut mean time to investigate by 35%.
+        - Partnered with platform engineering to implement zero trust controls, least-privilege IAM, and secure-by-default services.
+        - Coordinated tabletop exercises and post-incident reviews with legal, compliance, and product stakeholders.
+        - Mentored security engineers and established reusable playbooks for cloud forensics and containment.
+      keywords:
+        - Threat Detection
+        - Incident Response
+        - AWS Security
+        - SIEM
+        - Zero Trust
+    - name: Apex Financial Technologies
+      url: https://www.apexfintech.com
+      position: Senior Security Engineer
+      startDate: Mar 2017
+      endDate: Dec 2020
+      summary: |
+        - Owned vulnerability management and secure SDLC programs for payment and lending applications.
+        - Led PCI DSS remediation efforts across distributed teams and reduced critical findings by 42% year over year.
+        - Built Python and Splunk automations to correlate vulnerability data with asset ownership and patch status.
+        - Performed threat modeling, security reviews, and penetration test coordination for new product launches.
+      keywords:
+        - Vulnerability Management
+        - PCI DSS
+        - Python
+        - Splunk
+        - Penetration Testing
+    - name: BlueRiver Health Systems
+      url: https://www.blueriverhealth.org
+      position: Security Analyst
+      startDate: Jun 2015
+      endDate: Feb 2017
+      summary: |
+        - Monitored and triaged security events in a 24x7 SOC supporting clinical and corporate environments.
+        - Investigated phishing, malware, and unauthorized access incidents and documented response actions.
+        - Improved endpoint detection coverage and reduced false positives through rule tuning and asset baselining.
+        - Assisted with HIPAA security assessments and NIST CSF gap analysis across infrastructure teams.
+      keywords:
+        - SOC Operations
+        - NIST CSF
+        - Endpoint Security
+        - Log Analysis
+        - Phishing Response
+
+  languages:
+    - language: English
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - Native speaker
+        - Technical writing
+    - language: Spanish
+      fluency: Full Professional Proficiency
+      keywords:
+        - Professional working
+        - Cross-team liaison
+
+  skills:
+    - name: Cloud Security
+      level: Expert
+      keywords:
+        - AWS
+        - Azure
+        - GCP
+        - Terraform
+        - IAM
+    - name: Threat Detection and Response
+      level: Expert
+      keywords:
+        - SIEM
+        - EDR
+        - SOAR
+        - Splunk
+        - CrowdStrike
+    - name: Application Security
+      level: Advanced
+      keywords:
+        - OWASP Top 10
+        - SAST
+        - DAST
+        - Threat Modeling
+        - Secure SDLC
+    - name: Network Security
+      level: Advanced
+      keywords:
+        - Firewalls
+        - IDS/IPS
+        - VPN
+        - Zero Trust
+        - Wireshark
+    - name: Programming and Automation
+      level: Advanced
+      keywords:
+        - Python
+        - Bash
+        - PowerShell
+        - Go
+        - Ansible
+    - name: Governance Risk and Compliance
+      level: Advanced
+      keywords:
+        - SOC 2
+        - ISO 27001
+        - NIST CSF
+        - PCI DSS
+        - HIPAA
+
+  awards:
+    - title: Outstanding Security Engineer Award
+      awarder: Northstar Cloud Systems
+      date: Nov 2023
+      summary: |
+        Recognized for leading the response to a high-severity cloud incident and improving detection coverage across critical services.
+    - title: Capture the Flag Champion
+      awarder: BSides San Francisco
+      date: Sep 2019
+      summary: |
+        Placed first in a team-based enterprise security competition focused on cloud exploitation, forensics, and incident response.
+
+  certificates:
+    - name: Certified Information Systems Security Professional (CISSP)
+      url: https://www.isc2.org/certifications/cissp
+      issuer: ISC2
+      date: Jun 2018
+    - name: AWS Certified Security - Specialty
+      url: https://aws.amazon.com/certification/certified-security-specialty/
+      issuer: Amazon Web Services
+      date: Feb 2022
+    - name: Offensive Security Certified Professional (OSCP)
+      url: https://www.offsec.com/courses/pen-200/
+      issuer: Offensive Security
+      date: Oct 2016
+    - name: GIAC Certified Incident Handler (GCIH)
+      url: https://www.giac.org/certifications/certified-incident-handler-gcih/
+      issuer: SANS Institute
+      date: Mar 2020
+
+  publications:
+    - publisher: IEEE Security & Privacy
+      url: https://ieeexplore.ieee.org/document/9876543
+      name: Detecting Lateral Movement in Cloud Environments
+      releaseDate: Aug 2022
+      summary: |
+        - Presents a practical detection model for identifying lateral movement across hybrid cloud workloads.
+        - Combines identity telemetry, network flow logs, and endpoint signals to reduce false positives.
+        - Includes open-source detection rules and evaluation results from a simulated enterprise environment.
+
+  projects:
+    - name: PhishGuard
+      url: https://github.com/elenavasquez/phishguard
+      description: Open-source phishing triage platform for SOC teams
+      startDate: Jan 2020
+      endDate: Jun 2021
+      summary: |
+        - Automates phishing report ingestion, enrichment, and analyst triage workflows.
+        - Integrates with email security APIs and ticketing systems to reduce manual effort.
+        - Provides dashboards for tracking recurring sender patterns and campaign trends.
+      keywords:
+        - Phishing
+        - Python
+        - SOAR
+        - Email Security
+    - name: Cloud IAM Posture Scanner
+      url: https://github.com/elenavasquez/iam-posture-scanner
+      description: Automated scanner for identifying risky IAM permissions in AWS
+      startDate: Mar 2022
+      endDate: Nov 2022
+      summary: |
+        - Inventories IAM roles, policies, and trust relationships across multiple AWS accounts.
+        - Flags excessive permissions, unused credentials, and risky cross-account access paths.
+        - Generates remediation guidance and exports findings to security dashboards.
+      keywords:
+        - AWS
+        - IAM
+        - Python
+        - Security Automation
+
+  interests:
+    - name: Security Research
+      keywords:
+        - CTF competitions
+        - Malware analysis
+        - Cloud forensics
+    - name: Outdoors
+      keywords:
+        - Trail running
+        - Rock climbing
+        - Backpacking
+
+  volunteer:
+    - organization: Bay Area Women in Cybersecurity
+      url: https://www.bawic.org
+      position: Mentor and Workshop Instructor
+      startDate: Sep 2019
+      summary: |
+        - Mentor early-career security professionals on cloud security fundamentals and career development.
+        - Deliver hands-on workshops covering detection engineering, log analysis, and incident response.
+        - Help organize community meetups and an annual conference track for local practitioners.
+
+locale:
+  language: en
