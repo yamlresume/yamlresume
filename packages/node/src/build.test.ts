@@ -440,6 +440,41 @@ describe(buildResumeFile, () => {
     )
   })
 
+  it('should skip layouts with unknown engines', async () => {
+    vi.mocked(readResumeFile).mockReturnValue({
+      resume: {
+        // @ts-expect-error
+        content: {},
+        layouts: [
+          { engine: 'unknown', template: 'jake' },
+          { engine: 'latex', template: 'jake' },
+        ],
+      },
+      validated: 'success',
+    })
+
+    const result = await buildResumeFile(resumePath, { pdf: false, logger })
+
+    expect(result.outputs).toEqual([path.join(tempDir, 'resume.tex')])
+  })
+
+  it('should reject conflicting output paths', async () => {
+    vi.mocked(readResumeFile).mockReturnValue({
+      resume: {
+        // @ts-expect-error
+        content: {},
+        layouts: [{ engine: 'latex', template: 'jake' }],
+      },
+      validated: 'success',
+    })
+    const utils = await import('./utils')
+    vi.spyOn(utils, 'getPdfPath').mockImplementation((texPath) => texPath)
+
+    await expect(
+      buildResumeFile(resumePath, { pdf: false, logger })
+    ).rejects.toMatchObject({ code: 'FILE_CONFLICT' })
+  })
+
   it('should keep source names stable when pdf is disabled', async () => {
     vi.mocked(readResumeFile).mockReturnValue({
       resume: {

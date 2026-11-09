@@ -367,7 +367,7 @@ export async function buildResumeFile(
         logger,
         output.pdfPath
       )
-    } else if (output.engine === 'typst') {
+    } else {
       await compileTypst(
         output.sourcePath,
         options.output,
