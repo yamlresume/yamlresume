@@ -73,6 +73,15 @@ export function parseGeneratedResume(text: string): {
     )
   }
 
+  if (doc.errors.length > 0) {
+    throw new AIResumeError(
+      'VALIDATION_FAILED',
+      `Failed to parse generated YAML: ${doc.errors
+        .map((error) => getErrorMessage(error))
+        .join('; ')}`
+    )
+  }
+
   let resume: unknown
   try {
     resume = doc.toJS()

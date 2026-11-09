@@ -167,5 +167,5 @@ export function getModelFromEnv(
     config.baseURL = baseURL
   }
 
-  return createOpenAI(config)(modelId)
+  return createOpenAI(config).chat(modelId)
 }
