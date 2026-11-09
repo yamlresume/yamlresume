@@ -86,17 +86,28 @@ jobs:
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
 
-      - name: Build resume
+      - name: Build resume sources
         run: |
           node packages/cli/dist/cli.js -V
           node packages/cli/dist/cli.js new
           node packages/cli/dist/cli.js build --no-pdf resume.yml
+          node packages/cli/dist/cli.js new --language zh-hans resume-zh.yml
+          node packages/cli/dist/cli.js build --no-pdf resume-zh.yml
 
-      - name: Smoke test LaTeX to PDF build
+      - name: Smoke test PDF builds
         if: runner.os == 'Linux'
         run: |
-          docker run --rm yamlresume/yamlresume-base:v2.2.0 typst --version
-          docker run --rm -v $(pwd):/tmp -w /tmp yamlresume/yamlresume-base:v2.2.0 xelatex resume.tex
+          docker run --rm -v "$PWD":/tmp -w /tmp yamlresume/yamlresume-base:v2.2.0 sh -c '
+            set -eu
+            typst --version
+            xelatex --version
+            for resume in resume resume-zh; do
+              typst compile "$resume.typ" "$resume.typ.pdf"
+              xelatex -halt-on-error -jobname="$resume.tex" "$resume.tex"
+              test -s "$resume.typ.pdf"
+              test -s "$resume.tex.pdf"
+            done
+          '
 
       - name: Check files
         if: always()
@@ -108,12 +119,13 @@ jobs:
             ls -lah
           fi
 
-      - name: Upload PDF file
+      - name: Upload resume artifacts
         if: matrix.os == 'ubuntu-latest' && matrix.node-version == 22
         uses: actions/upload-artifact@v4
         with:
-          name: yamlresume-sample
+          name: yamlresume-samples
           path: |
-            resume.yml
-            resume.tex
-            resume.pdf
+            resume*.yml
+            resume*.tex
+            resume*.typ
+            resume*.pdf
