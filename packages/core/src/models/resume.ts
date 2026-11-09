@@ -528,6 +528,7 @@ export const DEFAULT_TYPST_LAYOUT: TypstLayout = {
   },
   typography: {
     fontSize: TYPST_FONT_SIZE_OPTIONS[0],
+    lineSpacing: 'normal',
     links: {
       underline: false,
     },
@@ -537,9 +538,9 @@ export const DEFAULT_TYPST_LAYOUT: TypstLayout = {
 /**
  * Default layouts configuration.
  *
- * We include HTML, LaTeX, DOCX, and Markdown layouts by default, which should
- * be good enough for most people. Typst is opt-in because it requires a
- * separate compiler.
+ * We include HTML, LaTeX, DOCX, Markdown, and Typst layouts by default.
+ * Typst is included even though it requires a separate compiler; install it
+ * to build the default Typst output.
  */
 
 export const DEFAULT_RESUME_LAYOUTS: Layouts = [
@@ -547,6 +548,7 @@ export const DEFAULT_RESUME_LAYOUTS: Layouts = [
   DEFAULT_LATEX_LAYOUT,
   DEFAULT_DOCX_LAYOUT,
   DEFAULT_MARKDOWN_LAYOUT,
+  DEFAULT_TYPST_LAYOUT,
 ]
 
 /** Default locale configuration. */

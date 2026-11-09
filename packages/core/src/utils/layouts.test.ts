@@ -52,13 +52,15 @@ describe(appendResumeLayouts, () => {
     expect(result).toContain('engine: docx')
     expect(result).toContain('engine: markdown')
     expect(result).toContain('engine: html')
+    expect(result).toContain('engine: typst')
   })
 
-  it('includes the default templates for latex and html engines', () => {
+  it('includes the default templates for latex, html, and typst engines', () => {
     const result = appendLayoutsTo('locale:\n  language: en\n')
 
     expect(result).toContain('template: moderncv-banking')
     expect(result).toContain('template: calm')
+    expect(result).toContain('template: jake')
   })
 
   it('produces valid YAML that parses into a layouts array', () => {
@@ -67,12 +69,13 @@ describe(appendResumeLayouts, () => {
       layouts: Array<{ engine: string }>
     }
 
-    expect(parsed.layouts).toHaveLength(4)
+    expect(parsed.layouts).toHaveLength(5)
     expect(parsed.layouts.map((layout) => layout.engine)).toEqual([
       'html',
       'latex',
       'docx',
       'markdown',
+      'typst',
     ])
   })
 

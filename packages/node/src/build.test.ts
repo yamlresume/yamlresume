@@ -91,7 +91,16 @@ describe(buildResumeFile, () => {
   let resumePath: string
 
   beforeEach(() => {
-    execSpy = vi.mocked(execa).mockResolvedValue(createExecaResult())
+    execSpy = vi.mocked(execa).mockImplementation((async (
+      command: string,
+      args: string[]
+    ) => {
+      if (command === 'typst' && args[0] === '--version') {
+        return createExecaResult({ stdout: 'typst 0.13.0 (test)' })
+      }
+
+      return createExecaResult()
+    }) as never)
     _whichSpy = vi
       // biome-ignore lint/suspicious/noExplicitAny: ignore
       .spyOn(which, 'sync' as any)
@@ -122,6 +131,10 @@ describe(buildResumeFile, () => {
         string[],
         { cwd?: string } | undefined,
       ]
+
+      if (command === 'typst' && args[0] === '--version') {
+        return createExecaResult({ stdout: 'typst 0.13.0 (test)' })
+      }
 
       if (command === 'xelatex') {
         const input = args[args.length - 1] ?? ''
@@ -212,8 +225,12 @@ describe(buildResumeFile, () => {
 
     const result = await buildResumeFile(resumePath, { logger })
 
-    expect(execSpy).toHaveBeenCalledTimes(1)
-    expect(execSpy).toHaveBeenCalledWith(
+    expect(execSpy).toHaveBeenCalledTimes(2)
+    expect(execSpy).toHaveBeenNthCalledWith(1, 'typst', ['--version'], {
+      encoding: 'utf8',
+    })
+    expect(execSpy).toHaveBeenNthCalledWith(
+      2,
       'typst',
       ['compile', path.basename(typFile)],
       {
@@ -408,8 +425,11 @@ describe(buildResumeFile, () => {
         timeout: LATEX_COMPILE_TIMEOUT * 1000,
       }
     )
+    expect(execSpy).toHaveBeenNthCalledWith(2, 'typst', ['--version'], {
+      encoding: 'utf8',
+    })
     expect(execSpy).toHaveBeenNthCalledWith(
-      2,
+      3,
       'typst',
       ['compile', 'resume.typ', 'resume.typ.pdf'],
       {
@@ -468,7 +488,7 @@ describe(buildResumeFile, () => {
       path.join(tempDir, 'resume.typ.pdf'),
     ])
     expect(new Set(result.outputs).size).toBe(result.outputs.length)
-    expect(execSpy).toHaveBeenCalledTimes(3)
+    expect(execSpy).toHaveBeenCalledTimes(4)
   })
 
   it('should apply the source-mirrored pdf names in the output directory', async () => {
@@ -507,8 +527,11 @@ describe(buildResumeFile, () => {
         timeout: LATEX_COMPILE_TIMEOUT * 1000,
       }
     )
+    expect(execSpy).toHaveBeenNthCalledWith(2, 'typst', ['--version'], {
+      encoding: 'utf8',
+    })
     expect(execSpy).toHaveBeenNthCalledWith(
-      2,
+      3,
       'typst',
       ['compile', 'resume.typ', 'resume.typ.pdf'],
       {
@@ -529,9 +552,11 @@ describe(buildResumeFile, () => {
       validated: 'success',
     })
 
+    mockPdfCompiler()
+
     const result = await buildResumeFile(resumePath, { logger })
 
-    expect(execSpy).toHaveBeenCalledTimes(1)
+    expect(execSpy).toHaveBeenCalledTimes(3)
     expect(result.outputs.length).toBeGreaterThan(0)
   })
 

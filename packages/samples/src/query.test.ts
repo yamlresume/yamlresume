@@ -181,6 +181,7 @@ describe(getSampleResume, () => {
 
     expect(yaml).toContain('layouts:')
     expect(yaml).toContain('engine: latex')
+    expect(yaml).toContain('engine: typst')
     expect(yaml).not.toContain('# yaml-language-server')
   })
 

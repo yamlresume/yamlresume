@@ -113,8 +113,8 @@ export function defineRendererRobustnessSuite({
           expectValidOutput(output)
         })
 
-        // Not every engine is part of DEFAULT_RESUME_LAYOUTS (Typst is
-        // opt-in), so only exercise the default-layout path when applicable.
+        // Every engine is part of DEFAULT_RESUME_LAYOUTS, so exercise the
+        // default-layout path as well.
         if (defaultLayoutIndex >= 0) {
           it('renders with the default layout when layouts are absent', async () => {
             const input = cloneDeep(resume)
