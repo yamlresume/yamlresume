@@ -80,6 +80,10 @@ class TestableLatexRenderer extends LatexRenderer {
     return this.showUrls
   }
 
+  public get testShowUnderlinedLinks() {
+    return this.showUnderlinedLinks
+  }
+
   public testRenderUrl(url: string) {
     return this.renderUrl(url)
   }
@@ -743,6 +747,20 @@ describe('LatexRenderer', () => {
       resume.layouts = undefined
 
       expect(renderer.testShowUrls).toBe(true)
+    })
+  })
+
+  describe('showUnderlinedLinks', () => {
+    it('should default to false when underline is not configured', () => {
+      resume.layouts[findLayoutIndex(resume, 'latex')] = {
+        engine: 'latex',
+      } as LatexLayout
+      renderer = new TestableLatexRenderer(
+        resume,
+        findLayoutIndex(resume, 'latex')
+      )
+
+      expect(renderer.testShowUnderlinedLinks).toBe(false)
     })
   })
 
