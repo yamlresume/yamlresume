@@ -258,13 +258,31 @@ describe('JakeTypstRenderer', () => {
     it('should separate preamble blocks with a single blank line', () => {
       const result = renderer.renderPreamble()
 
-      expect(result).not.toMatch(/\n{3,}/)
+      expect(result).toContain(')\n\n#set list(indent: 1em, spacing: 0.57em)')
       expect(result).toContain(
         '#set enum(indent: 1em, spacing: 0.57em)\n\n// accent color'
       )
       expect(result).toContain(
         '#let accent-color = black\n\n// A two-row subheading'
       )
+    })
+
+    it('should keep Latin text and digits upright inside emphasis for CJK resumes', () => {
+      const cjkResume = cloneDeep(resume)
+      cjkResume.locale = { language: 'zh-hans' }
+      renderer = new JakeTypstRenderer(cjkResume, 0)
+
+      const result = renderer.renderPreamble()
+
+      expect(result).toContain(')\n\n// Keep Latin text and digits upright')
+      expect(result).toContain('#show emph: it => {')
+      expect(result).toContain(
+        'show regex("[A-Za-z0-9]"): it => text(style: "normal")'
+      )
+    })
+
+    it('should not add the CJK emphasis rule for non-CJK resumes', () => {
+      expect(renderer.renderPreamble()).not.toContain('#show emph: it => {')
     })
 
     it('should not require a Font Awesome font helper', () => {

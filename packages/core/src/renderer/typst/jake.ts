@@ -165,8 +165,19 @@ class JakeTypstRenderer extends TypstRenderer {
       layout?.typography?.fontSize || DEFAULT_FONT_SIZE
     )
     const lineSpacing = layout?.typography?.lineSpacing || DEFAULT_LINE_SPACING
+    const cjkEmphasisConfig = this.isCJKResume()
+      ? `// Keep Latin text and digits upright inside emphasis for CJK resumes.
+// LaTeX's CJK setup maps the Latin italic face to the regular font, so
+// dates, scores, and URLs stay upright instead of being slanted.
+#show emph: it => {
+  show regex("[A-Za-z0-9]"): it => text(style: "normal")[#it]
+  text(style: "italic")[#it.body]
+}`
+      : ''
 
-    return `#set text(
+    return joinNonEmptyString(
+      [
+        `#set text(
   font: ${this.renderFontList()},
   size: ${fontSize},
   ${this.renderLocaleConfig()},
@@ -178,7 +189,11 @@ class JakeTypstRenderer extends TypstRenderer {
 #set par(
   leading: ${LINE_SPACING_MAP[lineSpacing]},
   spacing: ${LINE_SPACING_MAP[lineSpacing]},
-)`
+)`,
+        cjkEmphasisConfig,
+      ],
+      '\n\n'
+    )
   }
 
   /**
