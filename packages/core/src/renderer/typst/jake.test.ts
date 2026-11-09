@@ -22,6 +22,7 @@
  * IN THE SOFTWARE.
  */
 
+import { escapeTypst } from 'escape-typst'
 import { cloneDeep } from 'lodash-es'
 import { beforeEach, describe, expect, it } from 'vitest'
 
@@ -510,7 +511,7 @@ describe('JakeTypstRenderer', () => {
       expect(result).toContain('#resume-subheading[')
       expect(result).toContain(institution)
       // when showUrls is true, the raw url is rendered in the url position
-      expect(result).toContain(`#link("${url}")[${url}]`)
+      expect(result).toContain(`#link("${url}")[${escapeTypst(url)}]`)
     })
 
     it('should render courses when provided', () => {
@@ -594,7 +595,7 @@ describe('JakeTypstRenderer', () => {
       expect(result).toContain('#resume-pad[\n#resume-subheading[')
       expect(result).toContain(`#resume-subheading[${position}]`)
       expect(result).toContain(
-        `#resume-subheading[${position}][#link("${url}")[${url}]][${name}][`
+        `#resume-subheading[${position}][#link("${url}")[${escapeTypst(url)}]][${name}][`
       )
       expect(result).toContain(name)
       expect(result).toContain('#strong[Keywords]: JavaScript, TypeScript')
@@ -742,7 +743,7 @@ describe('JakeTypstRenderer', () => {
       expect(result).toMatch(/^= Certificates/)
       expect(result).toContain('#resume-subheading[')
       expect(result).toContain(
-        '#resume-subheading[AWS Certified Developer][#link("https://aws.amazon.com/certification/")[https://aws.amazon.com/certification/]][AWS][Mar 2021]'
+        `#resume-subheading[AWS Certified Developer][#link("https://aws.amazon.com/certification/")[${escapeTypst('https://aws.amazon.com/certification/')}]][AWS][Mar 2021]`
       )
       expect(result).toContain('AWS Certified Developer')
       expect(result).toContain('#link("https://aws.amazon.com/certification/")')
@@ -766,7 +767,7 @@ describe('JakeTypstRenderer', () => {
       expect(result).toMatch(/^= Publications/)
       expect(result).toContain('#resume-subheading[')
       expect(result).toContain(
-        '#resume-subheading[A Paper][#link("https://dl.acm.org")[https://dl.acm.org]][ACM][Dec 2017]'
+        `#resume-subheading[A Paper][#link("https://dl.acm.org")[${escapeTypst('https://dl.acm.org')}]][ACM][Dec 2017]`
       )
       expect(result).toContain('A Paper')
     })
@@ -789,7 +790,7 @@ describe('JakeTypstRenderer', () => {
       expect(result).toMatch(/^= References/)
       // the email is escaped via escapeTypst in transformResume
       expect(result).toContain(
-        '#resume-subheading[Dr. Amanda Reynolds][Professor][amanda\\@usc.edu][(555) 123-4567]'
+        `#resume-subheading[${escapeTypst('Dr. Amanda Reynolds')}][Professor][${escapeTypst('amanda@usc.edu')}][${escapeTypst('(555) 123-4567')}]`
       )
     })
   })
@@ -813,7 +814,7 @@ describe('JakeTypstRenderer', () => {
       expect(result).toMatch(/^= Projects/)
       expect(result).toContain('#resume-subheading[')
       expect(result).toContain(
-        '#resume-subheading[EduWeb][#link("https://eduweb.xyz")[https://eduweb.xyz]][A web platform]['
+        `#resume-subheading[EduWeb][#link("https://eduweb.xyz")[${escapeTypst('https://eduweb.xyz')}]][A web platform][`
       )
       expect(result).toContain('EduWeb')
       expect(result).toContain('#strong[Keywords]: Education')
@@ -855,7 +856,7 @@ describe('JakeTypstRenderer', () => {
       expect(result).toMatch(/^= Volunteer/)
       expect(result).toContain('#resume-subheading[Tech Mentor]')
       expect(result).toContain(
-        '#resume-subheading[Tech Mentor][#link("https://usc.org")[https://usc.org]][USC Society]['
+        `#resume-subheading[Tech Mentor][#link("https://usc.org")[${escapeTypst('https://usc.org')}]][USC Society][`
       )
       expect(result).toContain('USC Society')
     })

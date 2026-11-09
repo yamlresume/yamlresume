@@ -22,6 +22,7 @@
  * IN THE SOFTWARE.
  */
 
+import { escapeTypst } from 'escape-typst'
 import { cloneDeep } from 'lodash-es'
 import { describe, expect, it } from 'vitest'
 
@@ -49,7 +50,7 @@ import {
 } from '@/models'
 import { findLayoutIndex } from '@/renderer/test-utils'
 import { getOptionTranslation, getTemplateTranslations } from '@/translations'
-import { escapeHtml, escapeLatex, escapeTypst } from '@/utils'
+import { escapeHtml, escapeLatex } from '@/utils'
 import {
   normalizedResumeContent,
   normalizeResumeContentSections,

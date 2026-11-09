@@ -1,6 +1,6 @@
-Here are some #strong[bold] text, #emph[italic] text, #emph[#strong[bold italic]] text, and a #link("https://example.com")[link].
+Here are some #strong[bold] text, #emph[italic] text, #emph[#strong[bold italic]] text, and a #link("https://example.com")[link]\.
 
-Now comes with bullet list:
+Now comes with bullet list\:
 
 - item one with #strong[bold] text
 - item two with plain text
@@ -10,7 +10,7 @@ Now comes with ordered list
 + item one with plain text
 + item two with #emph[#strong[bold italic]] text
 
-Now comes with nested list:
+Now comes with nested list\:
 
 - bullet list item
   - nested bullet list item one

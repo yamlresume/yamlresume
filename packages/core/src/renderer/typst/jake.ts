@@ -22,18 +22,14 @@
  * IN THE SOFTWARE.
  */
 
+import { escapeTypst, unescapeTypst } from 'escape-typst'
+
 import type { Parser } from '@/compiler'
 import { MarkdownParser } from '@/compiler'
 import type { Resume, TypstLayout } from '@/models'
 import { transformResume } from '@/preprocess'
 import { getTemplateTranslations } from '@/translations'
-import {
-  escapeTypst,
-  isEmptyValue,
-  joinNonEmptyString,
-  showIfNotEmpty,
-  unescapeTypst,
-} from '@/utils'
+import { isEmptyValue, joinNonEmptyString, showIfNotEmpty } from '@/utils'
 import { normalizeUnit } from '../latex/preamble'
 import { TypstRenderer } from './base'
 import {
@@ -110,7 +106,7 @@ class JakeTypstRenderer extends TypstRenderer {
    * @returns The value as a Typst string literal, quotes included
    */
   private toStringLiteral(value: string): string {
-    const raw = unescapeTypst(value) ?? ''
+    const raw = unescapeTypst(value ?? '')
     return `"${raw.replace(/(["\\])/g, '\\$1')}"`
   }
 

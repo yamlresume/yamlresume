@@ -163,6 +163,9 @@ importers:
       escape-latex:
         specifier: ^1.2.0
         version: 1.2.0
+      escape-typst:
+        specifier: ^0.2.0
+        version: 0.2.0
       js-beautify:
         specifier: ^2.0.3
         version: 2.0.3
@@ -1922,6 +1925,10 @@ packages:
   escape-string-regexp@1.0.5:
     resolution: {integrity: sha512-vbRorB5FUQWvla16U8R/qgaFIya2qGzwDrNmCZuYKrbdSUMG6I1ZCGQRefkRVhuOkIGVne7BQ35DSfo1qvJqFg==}
     engines: {node: '>=0.8.0'}
+
+  escape-typst@0.2.0:
+    resolution: {integrity: sha512-YrWDUFod7SQNWS1dO970cqcXEfnAwQIlR/SOOwNU7ajQXX3cAcvaojgdj2FnVzhseGIoJdOHCtk9VIoxqBUOFw==}
+    engines: {node: '>=20'}
 
   estree-walker@3.0.3:
     resolution: {integrity: sha512-7RUKfXgSMMkzt6ZuXmqapOurLGPPfgj6l9uRZ7lRGolvk0y2yocc35LdcxKC5PQZdn2DMqioAQ2NoWcrTKmm6g==}
@@ -4351,6 +4358,8 @@ snapshots:
   escape-latex@1.2.0: {}
 
   escape-string-regexp@1.0.5: {}
+
+  escape-typst@0.2.0: {}
 
   estree-walker@3.0.3:
     dependencies:

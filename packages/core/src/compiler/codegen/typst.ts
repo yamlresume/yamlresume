@@ -22,6 +22,8 @@
  * IN THE SOFTWARE.
  */
 
+import { escapeTypst } from 'escape-typst'
+
 import type {
   BulletListNode,
   DocNode,
@@ -33,7 +35,6 @@ import type {
   ParagraphNode,
   TextNode,
 } from '@/compiler'
-import { escapeTypst } from '@/utils'
 import type { CodeGenerator } from './interface'
 
 /**

@@ -22,8 +22,10 @@
  * IN THE SOFTWARE.
  */
 
+import { unescapeTypst } from 'escape-typst'
+
 import type { TypstLayout } from '@/models'
-import { joinNonEmptyString, unescapeTypst } from '@/utils'
+import { joinNonEmptyString } from '@/utils'
 import { Renderer } from '../base'
 import { FA_ICONS } from './icons'
 
@@ -269,7 +271,7 @@ export abstract class TypstRenderer extends Renderer {
     // Typst string literal is not markup: embedding the escapes verbatim
     // would leave a literal backslash in the link destination, e.g.
     // `mailto:hi\@ppresume.com`. Unescape first, then escape for the literal.
-    const rawUrl = unescapeTypst(url) ?? ''
+    const rawUrl = unescapeTypst(url ?? '')
     const escapedUrl = rawUrl.replace(/(["\\])/g, '\\$1')
     return `#link("${escapedUrl}")[${text}]`
   }
