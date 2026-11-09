@@ -1,0 +1,218 @@
+content:
+  basics:
+    name: Marco Bianchi
+    headline: Analista Dati Senior specializzato in Business Intelligence e Data
+      Visualization
+    phone: "+39 333 123 4567"
+    email: marco.bianchi@email.it
+    url: https://www.marcobianchi.it
+    summary: |
+      - Analista dati con oltre 6 anni di esperienza nell'analisi di grandi dataset, modellazione statistica e creazione di dashboard interattive.
+      - Esperto in Python, SQL e strumenti di BI come Power BI e Tableau, con solida conoscenza dei database relazionali e cloud (BigQuery, Snowflake).
+      - Capacità dimostrata di tradurre requisiti aziendali in soluzioni data-driven, collaborando con team multidisciplinari.
+      - Forte orientamento ai risultati, attenzione ai dettagli e passione per la comunicazione efficace degli insight.
+
+  location:
+    address: Via Torino 15
+    city: Milano
+    region: Lombardia
+    country: Italy
+    postalCode: "20121"
+
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/marcobianchi
+      username: marcobianchi
+    - network: GitHub
+      url: https://github.com/marcobianchi
+      username: marcobianchi
+
+  education:
+    - institution: Politecnico di Milano
+      url: https://www.polimi.it
+      degree: Master
+      area: Statistica e Data Science
+      score: "110/110 e lode"
+      startDate: Sep 1, 2016
+      endDate: Jul 1, 2018
+      courses:
+        - Analisi Statistica Multivariata
+        - Machine Learning
+        - Big Data Analytics
+        - Database e Sistemi Informativi
+        - Data Visualization
+        - Serie Temporali
+      summary: |
+        - Tesi sperimentale su modelli predittivi per la customer churn analysis.
+        - Progetto di gruppo per la creazione di una piattaforma di analisi dati in tempo reale.
+    - institution: Università degli Studi di Bologna
+      url: https://www.unibo.it
+      degree: Bachelor
+      area: Economia e Statistica
+      score: "108/110"
+      startDate: Sep 1, 2013
+      endDate: Jul 1, 2016
+      courses:
+        - Statistica Descrittiva
+        - Probabilità
+        - Econometria
+        - Analisi dei Dati
+      summary: |
+        - Fondamenti di statistica e analisi economica.
+        - Introduzione alla programmazione in R.
+
+  work:
+    - name: DataMind S.r.l.
+      url: https://www.datamind.it
+      position: Data Analyst Senior
+      startDate: Jan 1, 2021
+      endDate:
+      summary: |
+        - Responsabile dell'analisi dati per il reparto marketing, con focus su segmentazione clienti e ottimizzazione campagne.
+        - Sviluppo di dashboard interattive in Power BI per il monitoraggio KPI aziendali, utilizzate da oltre 50 utenti.
+        - Automazione di reportistica settimanale tramite Python e SQL, riducendo il tempo di produzione del 60%.
+        - Collaborazione con data engineer per la definizione di pipeline ETL e data quality.
+      keywords:
+        - Power BI
+        - Python
+        - SQL
+        - ETL
+        - Marketing Analytics
+    - name: Banca Nazionale del Lavoro
+      url: https://www.bnl.it
+      position: Data Analyst
+      startDate: Sep 1, 2018
+      endDate: Dec 31, 2020
+      summary: |
+        - Analisi di portafoglio crediti e monitoraggio rischi tramite modelli statistici in R e SQL.
+        - Creazione di report mensili per la direzione, con visualizzazione di metriche di performance e anomalie.
+        - Supporto alla migrazione dei dati verso un data warehouse cloud (BigQuery).
+        - Partecipazione a progetti di data governance e definizione di KPI.
+      keywords:
+        - R
+        - SQL
+        - Risk Analysis
+        - BigQuery
+        - Reporting
+
+  skills:
+    - name: Analisi Dati e Statistica
+      level: Expert
+      keywords:
+        - Python
+        - R
+        - SQL
+        - Statistica inferenziale
+        - A/B testing
+    - name: Business Intelligence
+      level: Advanced
+      keywords:
+        - Power BI
+        - Tableau
+        - Looker
+        - Excel avanzato
+    - name: Database e Cloud
+      level: Advanced
+      keywords:
+        - PostgreSQL
+        - MySQL
+        - BigQuery
+        - Snowflake
+    - name: Machine Learning
+      level: Intermediate
+      keywords:
+        - scikit-learn
+        - TensorFlow
+        - Modelli predittivi
+    - name: Data Engineering
+      level: Intermediate
+      keywords:
+        - ETL
+        - Apache Airflow
+        - dbt
+
+  languages:
+    - language: Italian
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - Madrelingua
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - IELTS 8.0
+        - Business English
+    - language: French
+      fluency: Limited Working Proficiency
+      keywords:
+        - DELF B1
+
+  awards:
+    - title: Premio Innovazione Dati
+      date: Nov 2022
+      awarder: DataMind S.r.l.
+      summary: |
+        Riconoscimento per lo sviluppo di una soluzione di analytics predittiva che ha aumentato il tasso di conversione del 15%.
+
+  certificates:
+    - name: Google Data Analytics Professional Certificate
+      issuer: Google
+      date: Mar 2021
+      url: https://www.coursera.org/professional-certificates/google-data-analytics
+    - name: 'Microsoft Certified: Data Analyst Associate'
+      issuer: Microsoft
+      date: Jun 2022
+      url: https://learn.microsoft.com/en-us/certifications/data-analyst-associate/
+
+  projects:
+    - name: Dashboard Vendite Interattiva
+      url: https://github.com/marcobianchi/sales-dashboard
+      description: Dashboard interattiva per l'analisi delle vendite retail.
+      startDate: Jan 2022
+      endDate: Mar 2022
+      summary: |
+        - Sviluppata con Power BI e dataset pubblico di vendite.
+        - Include filtri dinamici, KPI e analisi trend.
+        - Pubblicata su Power BI Service per la condivisione.
+      keywords:
+        - Power BI
+        - Data Visualization
+        - Retail
+    - name: Analisi Churn Clienti
+      url: https://github.com/marcobianchi/churn-analysis
+      description: Modello predittivo per la previsione del churn.
+      startDate: Sep 2021
+      endDate: Dec 2021
+      summary: |
+        - Utilizzo di Python e scikit-learn per la modellazione.
+        - Feature engineering e valutazione con cross-validation.
+        - Comunicazione dei risultati tramite report e presentazione.
+      keywords:
+        - Python
+        - Machine Learning
+        - Churn
+
+  interests:
+    - name: Tecnologia
+      keywords:
+        - Intelligenza Artificiale
+        - Open Data
+        - Cloud Computing
+    - name: Sport
+      keywords:
+        - Corsa
+        - Nuoto
+        - Ciclismo
+
+  volunteer:
+    - organization: Data Science Milano
+      url: https://www.datasciencemilano.it
+      position: Mentor
+      startDate: Jan 2022
+      endDate:
+      summary: |
+        - Mentor per aspiranti data analyst, con sessioni mensili su Python e SQL.
+        - Organizzazione di workshop su data visualization e carriera nel settore dati.
+        - Supporto alla community nella risoluzione di problemi pratici.
+
+locale:
+  language: it

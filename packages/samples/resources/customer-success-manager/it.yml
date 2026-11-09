@@ -1,0 +1,263 @@
+content:
+  basics:
+    name: Giulia Bianchi
+    headline: 'Customer Success Manager | SaaS e trasformazione digitale'
+    phone: '+39 345 678 9012'
+    email: giulia.bianchi.csm@email.it
+    url: https://www.giuliabianchi-csm.it
+    summary: |
+      Customer Success Manager con oltre 8 anni di esperienza nella gestione di portafogli clienti B2B SaaS, con una solida propensione alla fidelizzazione, all'adozione del prodotto e alla crescita del valore del cliente.
+
+      - Responsabile di un portafoglio da 2,5 milioni di euro di ARR, con una riduzione del churn del 18% in due anni.
+      - Esperta nella costruzione di processi di onboarding scalabili, piani di successo del cliente e business review trimestrali.
+      - Forte orientamento ai dati, alla collaborazione cross-funzionale e alla comunicazione con stakeholder senior.
+      - Abituata a lavorare in contesti internazionali e a tradurre le esigenze del cliente in roadmap di prodotto.
+
+  location:
+    address: Via della Moscova 18
+    city: Milano
+    region: Lombardia
+    country: Italy
+    postalCode: '20121'
+
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/giulia-bianchi-csm
+      username: giulia-bianchi-csm
+    - network: Medium
+      url: https://medium.com/@giuliabianchi_csm
+      username: giuliabianchi_csm
+
+  education:
+    - institution: Università Commerciale Luigi Bocconi
+      url: https://www.unibocconi.it
+      degree: Master
+      area: Marketing e Comunicazione d'Impresa
+      score: '110/110 con lode'
+      startDate: 'Oct 1, 2012'
+      endDate: 'Jul 15, 2014'
+      courses:
+        - Marketing strategico
+        - Comportamento del consumatore
+        - Ricerche di mercato
+        - Gestione della relazione con il cliente
+        - Business analytics
+        - Comunicazione d'impresa
+      summary: |
+        - Percorso specialistico focalizzato sulla gestione della relazione con il cliente e sulla misurazione della soddisfazione.
+        - Tesi sperimentale sull'impatto della customer experience sulla fidelizzazione nei servizi digitali.
+        - Progetti di gruppo con aziende del settore tecnologico e retail.
+    - institution: Università degli Studi di Milano
+      url: https://www.unimi.it
+      degree: Bachelor
+      area: Scienze della Comunicazione
+      score: '108/110'
+      startDate: 'Sep 1, 2009'
+      endDate: 'Jul 20, 2012'
+      courses:
+        - Sociologia della comunicazione
+        - Psicologia del consumatore
+        - Statistica
+        - Linguaggi digitali
+        - Public speaking
+      summary: |
+        - Solida base in comunicazione interpersonale, analisi dei bisogni e tecniche di negoziazione.
+        - Attività di laboratorio su customer journey e ricerca qualitativa.
+
+  work:
+    - name: NexaCloud Italia
+      url: https://www.nexacloud.it
+      position: Senior Customer Success Manager
+      startDate: 'Jan 1, 2021'
+      summary: |
+        - Gestione di un portafoglio di 45 clienti enterprise e mid-market, per un ARR complessivo di 2,5 milioni di euro.
+        - Definizione e implementazione di piani di successo del cliente con obiettivi misurabili su adozione, valore e rinnovo.
+        - Riduzione del churn del 18% e aumento del tasso di rinnovo al 94% in due anni.
+        - Conduzione di business review trimestrali con C-level, HR e responsabili IT per allineare le priorità e dimostrare il ROI.
+        - Collaborazione con Product e Sales per raccogliere feedback, identificare opportunità di upselling e migliorare la roadmap.
+        - Mentoring di due Customer Success Manager junior e definizione delle best practice di onboarding.
+      keywords:
+        - Customer Success
+        - SaaS
+        - Churn reduction
+        - QBR
+        - Onboarding
+        - Upselling
+    - name: SaaSNow S.r.l.
+      url: https://www.saasnow.it
+      position: Customer Success Manager
+      startDate: 'Mar 1, 2018'
+      endDate: 'Dec 31, 2020'
+      summary: |
+        - Responsabile di un portafoglio di 80 clienti SMB nel settore software gestionale, con focus su adozione e soddisfazione.
+        - Progettazione di un percorso di onboarding strutturato che ha ridotto il time-to-value medio da 60 a 35 giorni.
+        - Monitoraggio di KPI di salute del cliente tramite CRM e dashboard, con interventi proattivi sui clienti a rischio.
+        - Gestione delle escalation e coordinamento tra supporto tecnico, prodotto e sales.
+        - Contributo alla creazione del team Customer Success e alla definizione dei processi interni.
+      keywords:
+        - Onboarding
+        - Time-to-value
+        - KPI
+        - CRM
+        - Escalation
+    - name: Digitalia Consulting
+      url: https://www.digitaliaconsulting.it
+      position: Account Manager
+      startDate: 'Sep 1, 2014'
+      endDate: 'Feb 28, 2018'
+      summary: |
+        - Gestione della relazione commerciale con clienti nei settori manifatturiero e servizi, per un portafoglio da 1,2 milioni di euro.
+        - Analisi dei bisogni, presentazione di soluzioni digitali e negoziazione dei contratti.
+        - Coordinamento di progetti di trasformazione digitale con team interni e partner esterni.
+        - Raggiungimento del 115% degli obiettivi di vendita annuali nel 2017.
+      keywords:
+        - Account Management
+        - Negotiation
+        - Digital Transformation
+        - Sales
+
+  skills:
+    - name: Customer Success Management
+      level: Expert
+      keywords:
+        - Onboarding
+        - Fidelizzazione
+        - Customer Journey
+        - QBR
+        - Churn prevention
+        - Upselling
+    - name: CRM e Analisi Dati
+      level: Advanced
+      keywords:
+        - Salesforce
+        - HubSpot
+        - Gainsight
+        - Power BI
+        - Tableau
+        - Excel avanzato
+    - name: Comunicazione e Negoziazione
+      level: Advanced
+      keywords:
+        - Presentazioni executive
+        - Gestione escalation
+        - Mediazione
+        - Storytelling
+    - name: Project Management
+      level: Advanced
+      keywords:
+        - Agile
+        - Jira
+        - Asana
+        - Gestione stakeholder
+
+  languages:
+    - language: Italian
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - Madrelingua
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - C1
+        - Business English
+    - language: French
+      fluency: Limited Working Proficiency
+      keywords:
+        - A2
+        - Conversazione di base
+
+  awards:
+    - title: Customer Success Leader of the Year
+      date: 'Nov 2023'
+      awarder: NexaCloud Italia
+      summary: |
+        Riconoscimento interno per i risultati ottenuti nella riduzione del churn e nella costruzione di un modello di customer success scalabile per il segmento enterprise.
+    - title: Excellence in Customer Retention
+      date: 'Feb 2020'
+      awarder: SaaSNow S.r.l.
+      summary: |
+        Premio assegnato per il miglior tasso di rinnovo del portafoglio SMB e per l'implementazione di un programma di adozione proattiva.
+
+  certificates:
+    - name: Certified Customer Success Manager (CCSM)
+      issuer: SuccessCOACHING
+      date: 'Mar 2022'
+      url: https://www.successcoaching.com/certified-customer-success-manager
+    - name: Salesforce Certified Administrator
+      issuer: Salesforce
+      date: 'Jun 2021'
+      url: https://trailhead.salesforce.com/credentials/administrator
+    - name: HubSpot Sales Software Certification
+      issuer: HubSpot Academy
+      date: 'Sep 2020'
+      url: https://academy.hubspot.com/courses/sales-software
+
+  publications:
+    - name: Ridurre il churn con l'adozione proattiva
+      publisher: Customer Success Italia
+      releaseDate: 'Jun 2023'
+      url: https://www.customersuccessitalia.it/whitepaper/churn-adozione-proattiva
+      summary: |
+        - Analisi delle principali cause di abbandono nei SaaS B2B e delle metriche di early warning.
+        - Modello operativo per segmentare i clienti in base al rischio e attivare interventi mirati.
+        - Casi studio su onboarding, health score e business review.
+
+  projects:
+    - name: Programma di onboarding scale-up
+      url: https://www.nexacloud.it/customer-success
+      description: Percorso di onboarding standardizzato per clienti enterprise e
+        mid-market.
+      startDate: 'Jan 2022'
+      endDate: 'Dec 2022'
+      summary: |
+        - Ridisegno del percorso di onboarding con template, milestone e responsabilità chiare.
+        - Riduzione del time-to-first-value del 30% e aumento del CSAT post-onboarding da 4,2 a 4,7.
+        - Creazione di una libreria di contenuti self-service e formazione per i clienti.
+      keywords:
+        - Onboarding
+        - Time-to-value
+        - CSAT
+        - Self-service
+    - name: Health score per il portafoglio clienti
+      url: https://www.nexacloud.it/insights/health-score
+      description: Modello predittivo per identificare i clienti a rischio di abbandono.
+      startDate: 'Mar 2023'
+      endDate: 'Sep 2023'
+      summary: |
+        - Definizione di indicatori di adozione, engagement e soddisfazione ponderati per segmento.
+        - Integrazione del modello con CRM e dashboard operative per i Customer Success Manager.
+        - Aumento del 25% degli interventi proattivi sui clienti a rischio.
+      keywords:
+        - Health score
+        - Analytics
+        - Churn
+        - CRM
+
+  interests:
+    - name: Innovazione digitale
+      keywords:
+        - AI generativa
+        - Product-led growth
+        - Design thinking
+    - name: Sport e benessere
+      keywords:
+        - Running
+        - Yoga
+        - Trekking
+    - name: Comunità e formazione
+      keywords:
+        - Mentoring
+        - Public speaking
+
+  volunteer:
+    - organization: Women in Tech Italia
+      url: https://www.womenintechitalia.it
+      position: Mentor
+      startDate: 'Sep 2021'
+      summary: |
+        - Mentoring individuale per giovani professioniste che desiderano intraprendere carriere nel customer success e nelle vendite SaaS.
+        - Partecipazione a incontri di orientamento e workshop su comunicazione, negoziazione e crescita professionale.
+        - Supporto alla community nella creazione di percorsi di sviluppo e networking.
+
+locale:
+  language: it

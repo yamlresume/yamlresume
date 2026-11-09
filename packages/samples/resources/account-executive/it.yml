@@ -1,0 +1,260 @@
+content:
+  basics:
+    name: Marco Bianchi
+    headline: Account Executive | Vendite B2B | Soluzioni SaaS
+    phone: "+39 333 123 4567"
+    email: marco.bianchi@example.it
+    url: https://www.marcobianchi.it
+    summary: |
+      Account Executive con oltre 8 anni di esperienza nelle vendite B2B e nella gestione di clienti enterprise. Specializzato in soluzioni SaaS e trasformazione digitale, con una comprovata capacità di superare gli obiettivi di fatturato e di costruire relazioni solide e durature con i decision maker.
+
+      Esperto nella gestione dell'intero ciclo di vendita, dalla prospezione alla negoziazione e chiusura, con un forte orientamento al cliente e all'analisi dei dati. Abituato a lavorare in team cross-funzionali e a utilizzare CRM avanzati per monitorare pipeline e performance.
+  location:
+    address: Via Roma 45
+    city: Milano
+    region: Lombardia
+    country: Italy
+    postalCode: "20121"
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/marcobianchi
+      username: marcobianchi
+    - network: Twitter
+      url: https://twitter.com/marcobianchi
+      username: marcobianchi
+  education:
+    - institution: Università Bocconi
+      url: https://www.unibocconi.it
+      degree: Master
+      area: Economia e Management
+      score: "110/110 e lode"
+      startDate: Sep 1, 2014
+      endDate: Jul 1, 2016
+      courses:
+        - Marketing Strategico
+        - Comportamento Organizzativo
+        - Finanza Aziendale
+        - Business Analytics
+        - Gestione delle Vendite
+        - Negoziazione Commerciale
+      summary: |
+        - Approfondimento delle tecniche di vendita complesse e della gestione di team commerciali.
+        - Sviluppo di competenze analitiche per l'interpretazione dei dati di mercato e delle performance di vendita.
+        - Partecipazione a project work con aziende del settore tecnologico per l'ottimizzazione dei processi di vendita.
+    - institution: Università di Bologna
+      url: https://www.unibo.it
+      degree: Bachelor
+      area: Economia Aziendale
+      score: "108/110"
+      startDate: Sep 1, 2011
+      endDate: Jul 1, 2014
+      courses:
+        - Economia Aziendale
+        - Diritto Commerciale
+        - Statistica
+        - Marketing
+        - Ragioneria Generale
+      summary: |
+        - Formazione di base solida in economia e gestione aziendale.
+        - Primo approccio alle dinamiche commerciali e alle tecniche di analisi di mercato.
+        - Tesi sperimentale sulle strategie di pricing nel settore B2B.
+  work:
+    - name: TechSales S.p.A.
+      url: https://www.techsales.it
+      position: Senior Account Executive
+      startDate: Jan 1, 2021
+      summary: |
+        - Gestione di un portafoglio clienti enterprise nel settore manifatturiero e logistico, con un fatturato annuo gestito di oltre 2,5 milioni di euro.
+        - Sviluppo di nuove opportunità di business attraverso attività di prospezione mirata e networking, con un tasso di conversione del 35%.
+        - Conduzione di negoziazioni complesse con C-level, garantendo margini elevati e contratti pluriennali.
+        - Collaborazione con i team di marketing e product per allineare l'offerta alle esigenze del mercato.
+        - Mentoring di due Account Executive junior, con conseguente miglioramento delle loro performance.
+      keywords:
+        - Vendite enterprise
+        - Negoziazione
+        - Gestione portafoglio
+        - Salesforce
+        - SaaS
+        - Mentoring
+    - name: CloudSolutions Srl
+      url: https://www.cloudsolutions.it
+      position: Account Executive
+      startDate: Mar 1, 2018
+      endDate: Dec 31, 2020
+      summary: |
+        - Responsabile dello sviluppo del mercato italiano per soluzioni cloud, con focus su PMI e medie imprese.
+        - Gestione dell'intero ciclo di vendita: dalla qualifica del lead alla chiusura del contratto.
+        - Raggiungimento e superamento degli obiettivi di vendita trimestrali per 11 trimestri consecutivi.
+        - Utilizzo di HubSpot CRM per la gestione della pipeline e il monitoraggio delle attività.
+        - Partecipazione a fiere di settore e eventi di networking per la generazione di contatti qualificati.
+      keywords:
+        - Cloud
+        - Vendite B2B
+        - HubSpot
+        - Pipeline management
+        - Fiere
+    - name: InnovaRetail S.p.A.
+      url: https://www.innovaretail.it
+      position: Sales Development Representative
+      startDate: Jun 1, 2016
+      endDate: Feb 28, 2018
+      summary: |
+        - Prospezione telefonica e via email per conto del team vendite, con generazione di oltre 150 lead qualificati al mese.
+        - Qualifica dei contatti in base al budget, all'autorità decisionale, alla necessità e alla tempistica (BANT).
+        - Organizzazione di appuntamenti per gli Account Executive e supporto nella preparazione di demo commerciali.
+        - Utilizzo di Salesforce per la registrazione delle attività e il tracciamento delle opportunità.
+      keywords:
+        - Prospezione
+        - Lead generation
+        - Salesforce
+        - BANT
+        - Appuntamenti
+  languages:
+    - language: Italian
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - Madrelingua
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - C1
+        - Business English
+    - language: French
+      fluency: Limited Working Proficiency
+      keywords:
+        - B2
+        - Conversazione
+  skills:
+    - name: Vendite e sviluppo business
+      level: Expert
+      keywords:
+        - Vendite B2B
+        - Sviluppo business
+        - Gestione territoriale
+        - Upselling
+        - Cross-selling
+    - name: Gestione CRM
+      level: Advanced
+      keywords:
+        - Salesforce
+        - HubSpot
+        - Microsoft Dynamics
+        - SAP CRM
+        - Analisi pipeline
+    - name: Negoziazione
+      level: Expert
+      keywords:
+        - Negoziazione complessa
+        - Gestione obiezioni
+        - Contratti enterprise
+        - Pricing strategy
+    - name: Analisi di mercato
+      level: Intermediate
+      keywords:
+        - Ricerche di mercato
+        - Analisi competitor
+        - Data analysis
+        - Reporting
+    - name: Comunicazione e presentazioni
+      level: Advanced
+      keywords:
+        - Public speaking
+        - Presentazioni efficaci
+        - Comunicazione interpersonale
+        - Storytelling
+  awards:
+    - title: Sales Excellence Award
+      date: Dec 2022
+      awarder: TechSales S.p.A.
+      summary: |
+        Riconoscimento assegnato per aver superato l'obiettivo annuale di fatturato del 120% e per l'eccellenza nella gestione delle relazioni con i clienti enterprise.
+    - title: Top Performer Q4
+      date: Jan 2021
+      awarder: CloudSolutions Srl
+      summary: |
+        Premio per il miglior risultato trimestrale del team vendite, con un incremento del 40% rispetto al trimestre precedente.
+  certificates:
+    - name: Salesforce Certified Administrator
+      issuer: Salesforce
+      date: Mar 2021
+      url: https://trailhead.salesforce.com/certification
+    - name: HubSpot Inbound Sales Certification
+      issuer: HubSpot Academy
+      date: Sep 2019
+      url: https://academy.hubspot.com/courses/inbound-sales
+  publications:
+    - name: Strategie di vendita B2B nell'era digitale
+      publisher: Sales Magazine Italia
+      releaseDate: Jun 2023
+      url: https://www.salesmagazine.it/strategie-vendita-b2b
+      summary: |
+        - Analisi delle principali tendenze nelle vendite B2B e dell'impatto della trasformazione digitale.
+        - Approfondimento sulle tecniche di social selling e sull'utilizzo dei dati per personalizzare l'offerta.
+        - Case study di aziende italiane che hanno ottenuto risultati significativi attraverso l'innovazione commerciale.
+  projects:
+    - name: Implementazione CRM Salesforce
+      startDate: Feb 2021
+      endDate: Sep 2021
+      url: https://www.techsales.it/progetti/crm-salesforce
+      description: Progetto di migrazione e ottimizzazione del CRM Salesforce per il
+        team vendite.
+      summary: |
+        - Coordinamento delle attività di migrazione dei dati e configurazione di pipeline personalizzate.
+        - Formazione dei colleghi sull'utilizzo delle nuove funzionalità e delle best practice.
+        - Riduzione del 30% del tempo dedicato alle attività amministrative e miglioramento della reportistica.
+      keywords:
+        - Salesforce
+        - Migrazione dati
+        - Formazione
+        - Ottimizzazione processi
+    - name: Programma di mentoring vendite
+      startDate: Jan 2023
+      endDate: Dec 2023
+      description: Programma di mentoring per nuovi Account Executive.
+      summary: |
+        - Definizione di un percorso di affiancamento strutturato per i nuovi assunti.
+        - Organizzazione di sessioni settimanali su tecniche di vendita, gestione delle obiezioni e utilizzo del CRM.
+        - Miglioramento del time-to-productivity dei nuovi venditori del 25%.
+      keywords:
+        - Mentoring
+        - Formazione
+        - Sviluppo talenti
+        - Vendite
+  interests:
+    - name: Sport
+      keywords:
+        - Corsa
+        - Calcio
+        - Sci
+        - Pallavolo
+    - name: Lettura
+      keywords:
+        - Romanzi
+        - Biografie
+        - Saggi di economia
+    - name: Viaggi
+      keywords:
+        - Europa
+        - Asia
+        - Fotografia
+  volunteer:
+    - organization: Fondazione Salesiani
+      url: https://www.fondazionesalesiani.it
+      position: Mentore
+      startDate: Sep 2019
+      endDate: Jun 2023
+      summary: |
+        - Affiancamento di giovani in cerca di occupazione nel percorso di orientamento al lavoro.
+        - Organizzazione di laboratori su competenze trasversali e tecniche di colloquio.
+        - Supporto nella redazione di CV e nella preparazione ai colloqui di lavoro.
+    - organization: Associazione Italiana Sclerosi Multipla
+      url: https://www.aism.it
+      position: Volontario
+      startDate: Apr 2017
+      endDate: Dec 2018
+      summary: |
+        - Partecipazione a eventi di raccolta fondi e attività di sensibilizzazione.
+        - Supporto logistico durante le manifestazioni organizzate dall'associazione.
+
+locale:
+  language: it

@@ -1,0 +1,235 @@
+content:
+  basics:
+    name: Marco Bianchi
+    headline: Ingegnere DevOps specializzato in cloud e automazione
+    phone: "+39 333 123 4567"
+    email: marco.bianchi@example.com
+    url: https://www.marcobianchi.dev
+    summary: |
+      Ingegnere DevOps con oltre 7 anni di esperienza nella progettazione e gestione di infrastrutture cloud scalabili e sicure.
+      - Esperto in automazione dei processi di build, deploy e monitoraggio su AWS e Kubernetes
+      - Forte orientamento alla cultura DevOps, al miglioramento continuo e all'affidabilità dei sistemi
+      - Competenze consolidate in Infrastructure as Code, CI/CD e osservabilità
+      - Abituato a collaborare in team Agile e a mentorare sviluppatori su pratiche SRE
+  location:
+    address: Via Alessandro Manzoni 15
+    city: Milano
+    region: Lombardia
+    country: Italy
+    postalCode: "20121"
+  profiles:
+    - network: GitHub
+      url: https://github.com/marcobianchi-devops
+      username: marcobianchi-devops
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/marco-bianchi-devops
+      username: marco-bianchi-devops
+    - network: Stack Overflow
+      url: https://stackoverflow.com/users/12345678/marco-bianchi
+      username: marco-bianchi
+  education:
+    - institution: Politecnico di Milano
+      url: https://www.polimi.it
+      degree: Master
+      area: Ingegneria Informatica
+      score: "108/110"
+      startDate: Sep 1, 2010
+      endDate: Jul 15, 2012
+      courses:
+        - Sistemi Distribuiti
+        - Cloud Computing
+        - Sicurezza Informatica
+        - Ingegneria del Software
+        - Basi di Dati
+        - Reti di Calcolatori
+        - Architetture dei Sistemi Software
+      summary: |
+        - Specializzazione in sistemi distribuiti e architetture cloud
+        - Tesi sperimentale su orchestrazione di container e scalabilità automatica
+        - Partecipazione a progetti di ricerca su affidabilità dei sistemi
+    - institution: Università degli Studi di Bologna
+      url: https://www.unibo.it
+      degree: Bachelor
+      area: Ingegneria Informatica
+      score: "105/110"
+      startDate: Sep 1, 2007
+      endDate: Jul 15, 2010
+      courses:
+        - Programmazione
+        - Algoritmi e Strutture Dati
+        - Sistemi Operativi
+        - Basi di Dati
+        - Reti di Calcolatori
+        - Ingegneria del Software
+      summary: |
+        - Solida preparazione di base in informatica e ingegneria del software
+        - Progetti di gruppo su sviluppo di applicazioni web e basi di dati
+  work:
+    - name: TechNova S.p.A.
+      url: https://www.technova.it
+      position: DevOps Engineer
+      startDate: Mar 1, 2019
+      summary: |
+        - Progettazione e gestione di infrastrutture cloud su AWS con Terraform e Ansible
+        - Implementazione di pipeline CI/CD con Jenkins, GitLab CI e Argo CD per oltre 40 microservizi
+        - Migrazione di workload on-premise a Kubernetes (EKS) riducendo i costi operativi del 30%
+        - Definizione di metriche SLO/SLI e dashboard di monitoraggio con Prometheus e Grafana
+        - Automazione di processi di sicurezza e compliance con Vault e OPA
+      keywords:
+        - AWS
+        - Terraform
+        - Kubernetes
+        - CI/CD
+        - Prometheus
+    - name: CloudSphere Italia
+      url: https://www.cloudsphere.it
+      position: Site Reliability Engineer
+      startDate: Jun 1, 2016
+      endDate: Feb 28, 2019
+      summary: |
+        - Gestione di piattaforme Kubernetes multi-tenant su GCP e Azure
+        - Riduzione del MTTR attraverso alerting proattivo e runbook automatizzati
+        - Sviluppo di operatori Kubernetes in Go per il self-service dei team di sviluppo
+        - Implementazione di policy di autoscaling e capacity planning
+      keywords:
+        - GCP
+        - Azure
+        - Kubernetes
+        - Go
+        - SRE
+    - name: FinData Solutions S.r.l.
+      url: https://www.findata.it
+      position: Junior System Administrator
+      startDate: Sep 1, 2012
+      endDate: May 31, 2016
+      summary: |
+        - Amministrazione di sistemi Linux e Windows in ambienti ad alta disponibilità
+        - Automazione di attività ripetitive con script Bash e Python
+        - Gestione di backup, disaster recovery e monitoraggio con Nagios e Zabbix
+        - Supporto alla migrazione verso infrastrutture virtualizzate VMware
+      keywords:
+        - Linux
+        - Bash
+        - Python
+        - VMware
+        - Nagios
+  skills:
+    - name: Cloud & Infrastructure
+      level: Expert
+      keywords:
+        - AWS
+        - GCP
+        - Azure
+        - Terraform
+        - Ansible
+    - name: Container & Orchestration
+      level: Expert
+      keywords:
+        - Kubernetes
+        - Docker
+        - Helm
+        - Argo CD
+        - EKS
+    - name: CI/CD & Automation
+      level: Advanced
+      keywords:
+        - Jenkins
+        - GitLab CI
+        - GitHub Actions
+        - Bash
+        - Python
+    - name: Monitoring & Observability
+      level: Advanced
+      keywords:
+        - Prometheus
+        - Grafana
+        - ELK Stack
+        - Datadog
+        - OpenTelemetry
+    - name: Security & Compliance
+      level: Intermediate
+      keywords:
+        - Vault
+        - OPA
+        - IAM
+        - SOC 2
+        - GDPR
+  languages:
+    - language: Italian
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - Madrelingua
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - IELTS 8.0
+        - TOEFL 115
+    - language: German
+      fluency: Limited Working Proficiency
+      keywords:
+        - B1
+  awards:
+    - title: Premio Innovazione Tecnologica
+      date: Nov 2021
+      awarder: TechNova S.p.A.
+      summary: |
+        Riconoscimento per il progetto di migrazione cloud che ha ridotto i costi infrastrutturali del 30% e migliorato l'affidabilità dei servizi.
+  certificates:
+    - name: AWS Certified DevOps Engineer – Professional
+      issuer: Amazon Web Services
+      date: Mar 2022
+      url: https://aws.amazon.com/certification/certified-devops-engineer-professional/
+    - name: Certified Kubernetes Administrator (CKA)
+      issuer: Cloud Native Computing Foundation
+      date: Jul 2020
+      url: https://www.cncf.io/certification/cka/
+    - name: 'HashiCorp Certified: Terraform Associate'
+      issuer: HashiCorp
+      date: Feb 2021
+      url: https://www.hashicorp.com/certification/terraform-associate
+  publications:
+    - name: Pratiche SRE per piattaforme Kubernetes multi-tenant
+      publisher: DevOps Italia Magazine
+      releaseDate: Apr 2020
+      url: https://www.devopsitalia.it/articoli/sre-kubernetes
+      summary: |
+        - Analisi delle strategie di osservabilità e gestione degli incidenti
+        - Case study su riduzione del MTTR e automazione dei runbook
+  projects:
+    - name: Piattaforma di self-service per team di sviluppo
+      url: https://github.com/marcobianchi-devops/devportal
+      description: Portale interno per il provisioning automatizzato di ambienti cloud
+      startDate: Jan 2021
+      endDate: Dec 2022
+      summary: |
+        - Progettazione di un portale basato su Backstage per l'accesso self-service a risorse cloud
+        - Integrazione con Terraform e Argo CD per il deploy automatico degli ambienti
+        - Riduzione del time-to-market dei team di sviluppo del 40%
+      keywords:
+        - Backstage
+        - Terraform
+        - Argo CD
+        - Self-service
+  interests:
+    - name: Open Source
+      keywords:
+        - Kubernetes
+        - Terraform
+        - Prometheus
+    - name: Sport
+      keywords:
+        - Corsa
+        - Ciclismo
+        - Nuoto
+  volunteer:
+    - organization: DevOps Milano
+      url: https://www.devopsmilano.it
+      position: Mentor e relatore
+      startDate: Jan 2018
+      summary: |
+        - Mentoring per professionisti junior su pratiche DevOps e cloud
+        - Organizzazione di meetup tecnici e workshop su Kubernetes e Infrastructure as Code
+        - Relatore su temi di osservabilità e SRE
+
+locale:
+  language: it

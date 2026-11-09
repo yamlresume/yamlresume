@@ -1,0 +1,259 @@
+content:
+  basics:
+    name: Marco Bianchi
+    headline: 'Project Manager Senior | Trasformazione digitale e metodologie agili'
+    phone: "+39 347 123 4567"
+    email: marco.bianchi@example.it
+    url: https://www.marcobianchi-pm.it
+    summary: |
+      - Project manager con oltre 8 anni di esperienza nella conduzione di progetti digitali e di trasformazione organizzativa in contesti complessi.
+      - Specializzato in metodologie ibride (Agile, Scrum, Waterfall) e nella gestione del ciclo di vita del progetto, dall'analisi dei requisiti al rilascio.
+      - Capacità comprovata di coordinare team cross-funzionali, gestire stakeholder e garantire il rispetto di tempi, budget e qualità.
+      - Orientato ai risultati, con forte attenzione alla comunicazione, alla gestione del rischio e al miglioramento continuo.
+  location:
+    address: Via Torino 45
+    city: Milano
+    region: Lombardia
+    country: Italy
+    postalCode: "20123"
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/marcobianchi-pm
+      username: marcobianchi-pm
+    - network: Twitter
+      url: https://twitter.com/marcobianchi_pm
+      username: marcobianchi_pm
+    - network: Medium
+      url: https://medium.com/@marcobianchi
+      username: marcobianchi
+  education:
+    - institution: Politecnico di Milano
+      url: https://www.polimi.it
+      degree: Master
+      area: Ingegneria Gestionale
+      score: "110/110 e lode"
+      startDate: '2013-09-01'
+      endDate: '2015-07-15'
+      courses:
+        - Gestione dei progetti
+        - Economia e organizzazione aziendale
+        - Analisi dei sistemi complessi
+        - Gestione dell'innovazione
+        - Gestione operativa
+      summary: |
+        - Formazione avanzata nella pianificazione, esecuzione e controllo di progetti complessi.
+        - Approfondimento di metodologie quantitative per il supporto alle decisioni e la gestione delle risorse.
+    - institution: Università degli Studi di Bologna
+      url: https://www.unibo.it
+      degree: Bachelor
+      area: Economia Aziendale
+      score: "108/110"
+      startDate: '2010-09-01'
+      endDate: '2013-07-10'
+      courses:
+        - Economia aziendale
+        - Ragioneria generale
+        - Statistica
+        - Diritto privato
+      summary: |
+        - Solida base economica e aziendale per la comprensione dei processi organizzativi.
+        - Sviluppo di competenze analitiche e di rendicontazione.
+  work:
+    - name: Fintech Solutions Italia
+      url: https://www.fintechsolutionsitalia.it
+      position: Senior Project Manager
+      startDate: '2022-03-01'
+      summary: |
+        - Responsabile del portafoglio di progetti digitali per il lancio di nuovi prodotti di pagamento.
+        - Coordinamento di team cross-funzionali composti da responsabili di prodotto, sviluppatori, designer e compliance.
+        - Definizione di piani di rilascio, budget e piani di mitigazione dei rischi, con rendicontazione periodica al comitato esecutivo.
+        - Introduzione di pratiche agili e metriche di produttività, con riduzione del 25% del tempo di immissione sul mercato.
+      keywords:
+        - Gestione del portafoglio
+        - Metodologie agili
+        - Trasformazione digitale
+        - Gestione del rischio
+    - name: Digital Retail Group
+      url: https://www.digitalretailgroup.it
+      position: Project Manager
+      startDate: '2019-01-15'
+      endDate: '2022-02-28'
+      summary: |
+        - Gestione di progetti e-commerce e CRM per marchi del gruppo, con team distribuiti in Italia e all'estero.
+        - Pianificazione delle attività, allocazione delle risorse e monitoraggio dei KPI di progetto.
+        - Facilitazione di laboratori con stakeholder interni ed esterni per la definizione dei requisiti.
+        - Implementazione di un modello di governance basato su Scrum e Kanban.
+      keywords:
+        - E-commerce
+        - CRM
+        - Scrum
+        - Kanban
+        - Governance
+    - name: Consulenza Innovazione S.p.A.
+      url: https://www.consulenzainnovazione.it
+      position: Junior Project Manager
+      startDate: '2015-09-01'
+      endDate: '2018-12-31'
+      summary: |
+        - Supporto alla direzione progetti per clienti nei settori manifatturiero e servizi.
+        - Redazione di piani di progetto, analisi dei requisiti e documentazione di avanzamento.
+        - Monitoraggio di tempi, costi e qualità, con aggiornamento del registro dei rischi.
+        - Partecipazione a gare e presentazioni commerciali per nuovi incarichi.
+      keywords:
+        - Pianificazione
+        - Registro dei rischi
+        - Documentazione
+        - Rendicontazione
+  languages:
+    - language: Italian
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - Madrelingua
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - IELTS 7.5
+        - Business English
+    - language: Spanish
+      fluency: Limited Working Proficiency
+      keywords:
+        - DELE B1
+  skills:
+    - name: Gestione del progetto
+      level: Expert
+      keywords:
+        - Agile
+        - Scrum
+        - Kanban
+        - Waterfall
+        - PRINCE2
+    - name: Pianificazione e controllo
+      level: Advanced
+      keywords:
+        - Microsoft Project
+        - Jira
+        - Asana
+        - Trello
+        - Smartsheet
+    - name: Analisi dei dati
+      level: Advanced
+      keywords:
+        - Excel avanzato
+        - Power BI
+        - SQL
+        - Tableau
+    - name: Comunicazione e leadership
+      level: Expert
+      keywords:
+        - Negoziazione
+        - Facilitazione
+        - Mentoraggio
+        - Presentazioni efficaci
+    - name: Gestione del rischio
+      level: Advanced
+      keywords:
+        - Registro dei rischi
+        - Mitigazione
+        - Audit
+        - Conformità
+  awards:
+    - title: Premio Eccellenza PMI 2023
+      date: '2023-11-15'
+      awarder: Associazione Italiana Project Management
+      summary: |
+        Riconoscimento per la gestione esemplare di un programma di trasformazione digitale con impatto misurabile su efficienza e soddisfazione del cliente.
+    - title: Miglior leader di team agile
+      date: '2021-06-30'
+      awarder: Digital Retail Group
+      summary: |
+        Premio interno per la capacità di guidare team distribuiti e raggiungere gli obiettivi di progetto con elevati standard di qualità.
+  certificates:
+    - name: Project Management Professional (PMP)
+      issuer: Project Management Institute
+      date: '2021-05-20'
+      url: https://www.pmi.org/certifications/project-management-pmp
+    - name: Certified ScrumMaster (CSM)
+      issuer: Scrum Alliance
+      date: '2019-10-10'
+      url: https://www.scrumalliance.org/get-certified/scrum-master-track/certified-scrummaster
+    - name: ITIL 4 Foundation
+      issuer: PeopleCert
+      date: '2020-02-15'
+      url: https://www.peoplecert.org/browse-certifications/it-governance-and-service-management/ITIL-1/itil-4-foundation
+  publications:
+    - name: 'Gestione agile dei progetti complessi: un modello ibrido'
+      publisher: Rivista Italiana di Project Management
+      releaseDate: '2022-09-01'
+      url: https://www.rivistaitalianapm.it/articoli/modello-ibrido
+      summary: |
+        - Articolo dedicato all'integrazione tra framework agili e approcci tradizionali.
+        - Analisi di casi studio in ambito finanziario e retail.
+        - Proposta di un modello di governance per programmi multi-progetto.
+  projects:
+    - name: Piattaforma di onboarding digitale
+      url: https://www.fintechsolutionsitalia.it/progetti/onboarding-digitale
+      description: Progetto di digitalizzazione del processo di onboarding clienti per
+        ridurre i tempi di attivazione e migliorare l'esperienza utente.
+      startDate: '2022-04-01'
+      endDate: '2023-05-31'
+      summary: |
+        - Coordinamento di un team di 12 persone tra prodotto, sviluppo, design e compliance.
+        - Definizione di requisiti funzionali e flussi utente in collaborazione con il business.
+        - Rilascio della piattaforma con riduzione del 40% dei tempi di onboarding.
+        - Gestione del budget di 600.000 euro e rendicontazione mensile agli stakeholder.
+      keywords:
+        - Onboarding digitale
+        - UX
+        - Conformità
+        - Gestione del budget
+    - name: Programma di trasformazione ERP
+      url: https://www.digitalretailgroup.it/progetti/trasformazione-erp
+      description: Programma pluriennale di migrazione dei sistemi ERP e integrazione
+        dei processi amministrativi, della catena di fornitura e delle vendite.
+      startDate: '2019-03-01'
+      endDate: '2021-12-31'
+      summary: |
+        - Pianificazione e coordinamento di 5 flussi di lavoro con team interni e fornitori esterni.
+        - Gestione del cambiamento organizzativo e formazione di oltre 200 utenti.
+        - Raggiungimento degli obiettivi di avvio operativo entro tempi e budget previsti.
+        - Implementazione di un cruscotto di monitoraggio dei KPI dopo l'avvio.
+      keywords:
+        - ERP
+        - Gestione del cambiamento
+        - Formazione
+        - KPI
+  interests:
+    - name: Sport
+      keywords:
+        - Corsa
+        - Ciclismo
+        - Nuoto
+    - name: Lettura
+      keywords:
+        - Saggistica
+        - Romanzi storici
+    - name: Volontariato
+      keywords:
+        - Mentoraggio
+        - Formazione
+  volunteer:
+    - organization: Associazione Italiana Project Management
+      url: https://www.aipm.it
+      position: Mentore volontario
+      startDate: '2021-01-01'
+      summary: |
+        - Attività di mentore per giovani professionisti e studenti che si avvicinano alla gestione dei progetti.
+        - Organizzazione di laboratori su metodologie agili e pianificazione.
+        - Contributo alla comunità con articoli e incontri tematici.
+    - organization: Fondazione Formazione e Lavoro
+      url: https://www.fondazioneformazionelavoro.it
+      position: Formatore volontario
+      startDate: '2018-09-01'
+      endDate: '2020-12-31'
+      summary: |
+        - Docenza in corsi base di gestione del progetto per persone in cerca di occupazione.
+        - Preparazione di materiali didattici e simulazioni pratiche.
+        - Tutoraggio individuale per l'inserimento lavorativo.
+
+locale:
+  language: it

@@ -1,0 +1,262 @@
+content:
+  basics:
+    name: Luca Moretti
+    headline: Ingegnere del Software Senior | Architetto Cloud
+    phone: '+39 333 123 4567'
+    email: luca.moretti@email.it
+    url: https://lucamoretti.dev
+    summary: |
+      - Ingegnere del software con oltre 8 anni di esperienza nella progettazione e sviluppo di applicazioni web scalabili e sistemi distribuiti.
+      - Specializzato in architetture cloud-native, microservizi e sviluppo full-stack con particolare attenzione alla qualità del codice e alle best practice.
+      - Esperienza consolidata nella leadership tecnica di team di sviluppo, nella mentorship e nella collaborazione con stakeholder di prodotto.
+      - Appassionato di innovazione, automazione e miglioramento continuo dei processi di ingegneria del software.
+
+  location:
+    address: Via Roma 42
+    city: Milano
+    region: Lombardia
+    country: Italy
+    postalCode: '20121'
+
+  profiles:
+    - network: GitHub
+      url: https://github.com/lucamoretti
+      username: lucamoretti
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/lucamoretti
+      username: lucamoretti
+
+  education:
+    - institution: Politecnico di Milano
+      url: https://www.polimi.it
+      degree: Master
+      area: Ingegneria Informatica
+      score: '110/110 e lode'
+      startDate: Sep 2013
+      endDate: Jul 2015
+      courses:
+        - Architetture Software
+        - Sistemi Distribuiti
+        - Basi di Dati Avanzate
+        - Ingegneria del Software
+        - Sicurezza Informatica
+        - Machine Learning
+      summary: |
+        - Percorso di eccellenza focalizzato su architetture software, sistemi distribuiti e ingegneria del software.
+        - Tesi sperimentale su microservizi e orchestrazione di container in ambienti cloud.
+        - Partecipazione a progetti di ricerca applicata con aziende partner.
+    - institution: Università degli Studi di Bologna
+      url: https://www.unibo.it
+      degree: Bachelor
+      area: Informatica
+      score: '108/110'
+      startDate: Sep 2010
+      endDate: Jul 2013
+      courses:
+        - Programmazione
+        - Algoritmi e Strutture Dati
+        - Reti di Calcolatori
+        - Sistemi Operativi
+        - Basi di Dati
+      summary: |
+        - Solida formazione di base in informatica, algoritmi e programmazione.
+        - Progetto di laurea su applicazioni web dinamiche.
+
+  work:
+    - name: TechNova S.p.A.
+      url: https://www.technova.it
+      position: Ingegnere del Software Senior
+      startDate: Mar 2020
+      summary: |
+        - Guida tecnica di un team di 6 sviluppatori nella progettazione di una piattaforma SaaS per la gestione documentale.
+        - Definizione dell'architettura a microservizi su Kubernetes con deployment automatizzati tramite GitOps.
+        - Riduzione del 40% del time-to-market grazie all'introduzione di pipeline CI/CD e test automatizzati.
+        - Collaborazione con product manager e designer per tradurre i requisiti in soluzioni tecniche scalabili.
+        - Mentorship di sviluppatori junior e definizione di standard di codice e code review.
+      keywords:
+        - Microservizi
+        - Kubernetes
+        - CI/CD
+        - Leadership
+        - Architettura
+    - name: Digitalia Labs
+      url: https://www.digitalialabs.com
+      position: Ingegnere del Software
+      startDate: Jan 2017
+      endDate: Feb 2020
+      summary: |
+        - Sviluppo di applicazioni web full-stack con React, Node.js e PostgreSQL.
+        - Implementazione di API RESTful e integrazione con servizi di terze parti.
+        - Ottimizzazione delle performance del frontend riducendo i tempi di caricamento del 30%.
+        - Adozione di pratiche Agile e partecipazione attiva a sprint planning e retrospettive.
+      keywords:
+        - React
+        - Node.js
+        - PostgreSQL
+        - Agile
+        - REST
+    - name: WebSolutions Italia
+      url: https://www.websolutions.it
+      position: Sviluppatore Backend
+      startDate: Sep 2015
+      endDate: Dec 2016
+      summary: |
+        - Sviluppo di backend in Java e Spring Boot per piattaforme e-commerce.
+        - Progettazione e ottimizzazione di query SQL su database Oracle.
+        - Implementazione di test unitari e di integrazione con JUnit e Mockito.
+      keywords:
+        - Java
+        - Spring Boot
+        - SQL
+        - Oracle
+        - Testing
+
+  skills:
+    - name: Sviluppo Backend
+      level: Expert
+      keywords:
+        - Java
+        - Python
+        - Node.js
+        - Spring Boot
+        - RESTful API
+        - Microservizi
+    - name: Cloud e DevOps
+      level: Advanced
+      keywords:
+        - AWS
+        - Kubernetes
+        - Docker
+        - Terraform
+        - CI/CD
+        - GitLab CI
+    - name: Frontend
+      level: Advanced
+      keywords:
+        - React
+        - TypeScript
+        - JavaScript
+        - HTML5
+        - CSS3
+        - Redux
+    - name: Database
+      level: Advanced
+      keywords:
+        - PostgreSQL
+        - MySQL
+        - MongoDB
+        - Redis
+    - name: Metodologie
+      level: Expert
+      keywords:
+        - Agile
+        - Scrum
+        - TDD
+        - Code Review
+        - Mentorship
+
+  languages:
+    - language: Italian
+      fluency: Native or Bilingual Proficiency
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - IELTS 8.0
+        - Business English
+    - language: French
+      fluency: Limited Working Proficiency
+
+  awards:
+    - title: Premio Innovazione Tecnologica
+      date: Nov 2021
+      awarder: TechNova S.p.A.
+      summary: |
+        Riconoscimento per il contributo alla modernizzazione dell'architettura della piattaforma aziendale e per la riduzione dei costi operativi del 25%.
+    - title: Premio Miglior Articolo
+      date: Jun 2015
+      awarder: Politecnico di Milano
+      summary: |
+        Premio assegnato alla tesi magistrale su orchestrazione di microservizi in ambienti cloud.
+
+  certificates:
+    - name: AWS Certified Solutions Architect – Professional
+      issuer: Amazon Web Services
+      date: Mar 2022
+      url: https://aws.amazon.com/certification/certified-solutions-architect-professional/
+    - name: Certified Kubernetes Administrator (CKA)
+      issuer: Cloud Native Computing Foundation
+      date: Sep 2021
+      url: https://www.cncf.io/certification/cka/
+    - name: Professional Scrum Master I
+      issuer: Scrum.org
+      date: May 2020
+      url: https://www.scrum.org/professional-scrum-certifications
+
+  publications:
+    - name: Architetture a Microservizi per Applicazioni Enterprise
+      publisher: Rivista Italiana di Ingegneria del Software
+      releaseDate: Oct 2020
+      url: https://www.risi.it/articoli/microservizi-enterprise
+      summary: |
+        - Analisi delle principali sfide nella migrazione da monoliti a microservizi.
+        - Presentazione di un caso di studio reale con benefici e lezioni apprese.
+        - Linee guida per l'adozione di Kubernetes e pratiche DevOps.
+
+  projects:
+    - name: CloudNotes
+      url: https://github.com/lucamoretti/cloudnotes
+      description: Applicazione open-source per la gestione di note collaborative in
+        tempo reale.
+      startDate: Jan 2021
+      summary: |
+        - Sviluppata con React, Node.js e WebSocket per la sincronizzazione in tempo reale.
+        - Deployment su AWS EKS con pipeline CI/CD automatizzata.
+        - Oltre 500 stelle su GitHub e utilizzata da team di sviluppo in tutto il mondo.
+      keywords:
+        - React
+        - Node.js
+        - WebSocket
+        - AWS
+    - name: DevMetrics
+      url: https://github.com/lucamoretti/devmetrics
+      description: Dashboard per il monitoraggio delle metriche di sviluppo software.
+      startDate: Mar 2019
+      endDate: Dec 2019
+      summary: |
+        - Integrazione con API di GitHub e GitLab per raccogliere metriche su commit, PR e issue.
+        - Visualizzazione interattiva con React e Chart.js.
+        - Utilizzata internamente da Digitalia Labs per migliorare i processi Agile.
+      keywords:
+        - React
+        - Chart.js
+        - GitHub API
+        - Agile
+
+  interests:
+    - name: Tecnologia
+      keywords:
+        - Intelligenza Artificiale
+        - Open Source
+        - Cloud Computing
+    - name: Sport
+      keywords:
+        - Corsa
+        - Ciclismo
+        - Nuoto
+    - name: Musica
+      keywords:
+        - Chitarra
+        - Jazz
+
+  volunteer:
+    - organization: Coding Girls Italia
+      url: https://www.codinggirlsitalia.it
+      position: Mentor Tecnico
+      startDate: Sep 2018
+      summary: |
+        - Mentor volontario in programmi di coding per ragazze delle scuole superiori.
+        - Organizzazione di workshop su sviluppo web e carriere nel settore tecnologico.
+        - Supporto alla creazione di progetti finali e orientamento professionale.
+
+locale:
+  language: it

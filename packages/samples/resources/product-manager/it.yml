@@ -1,0 +1,264 @@
+content:
+  basics:
+    name: Giulia Bianchi
+    headline: Product Manager senior per SaaS B2B e trasformazione digitale
+    phone: "+39 347 892 4510"
+    email: giulia.bianchi@giuliabianchi.it
+    url: https://www.giuliabianchi.it
+    summary: |
+      Product Manager con oltre otto anni di esperienza nella definizione, nello sviluppo e nella crescita di prodotti digitali SaaS B2B. Lavoro a stretto contatto con team cross-funzionali di prodotto, design, engineering e go-to-market, combinando ascolto del cliente, analisi dei dati e una solida capacità di prioritizzazione.
+
+      - Definisco visione, roadmap e OKR allineati agli obiettivi di business
+      - Guido discovery, user research, sperimentazione e analisi dei KPI di prodotto
+      - Traduco bisogni complessi in requisiti chiari, user story e prototipi validati
+      - Coordino stakeholder internazionali in contesti agile, regolamentati e in rapida evoluzione
+
+  location:
+    address: Via Alessandro Volta 42
+    city: Milano
+    region: Lombardia
+    country: Italy
+    postalCode: "20154"
+
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/giuliabianchi-pm
+      username: giuliabianchi-pm
+    - network: Medium
+      url: https://medium.com/@giulia.bianchi
+      username: giulia.bianchi
+
+  education:
+    - institution: Politecnico di Milano
+      url: https://www.polimi.it/
+      degree: Master
+      area: Ingegneria Gestionale
+      score: "110/110 e lode"
+      startDate: Sep 1, 2014
+      endDate: Jul 1, 2016
+      courses:
+        - Strategia e innovazione tecnologica
+        - Marketing industriale
+        - Gestione dei progetti
+        - Economia digitale
+        - Analytics per il business
+      summary: |
+        - Percorso focalizzato su product management, innovazione e gestione di progetti complessi
+        - Tesi sperimentale sull'adozione di piattaforme SaaS nelle PMI italiane
+    - institution: Università Bocconi
+      url: https://www.unibocconi.it/
+      degree: Bachelor
+      area: Economia e Management
+      score: "108/110"
+      startDate: Sep 1, 2011
+      endDate: Jul 1, 2014
+      courses:
+        - Economia aziendale
+        - Statistica
+        - Sistemi informativi
+        - Ricerche di mercato
+
+  work:
+    - name: NexaCloud S.p.A.
+      url: https://www.nexacloud.it
+      position: Senior Product Manager
+      startDate: Mar 1, 2021
+      summary: |
+        - Guido la strategia di prodotto per una piattaforma SaaS B2B di automazione documentale, con un portafoglio da 6 milioni di euro di ricavi annuali.
+        - Definisco roadmap trimestrale e OKR in collaborazione con sales, customer success, design e engineering.
+        - Ho ridotto del 32% il time-to-value per i nuovi clienti tramite onboarding guidato e semplificazione dei flussi.
+        - Ho introdotto un processo di discovery continuo con oltre 120 interviste a clienti e stakeholder in due anni.
+        - Ho coordinato il lancio di tre moduli chiave, contribuendo a un aumento del 18% nell'adozione della piattaforma.
+      keywords:
+        - Roadmap
+        - OKR
+        - SaaS B2B
+        - Discovery
+        - Go-to-market
+        - Data-driven
+    - name: FinLab Digital S.r.l.
+      url: https://www.finlabdigital.it
+      position: Product Manager
+      startDate: Jan 1, 2018
+      endDate: Feb 28, 2021
+      summary: |
+        - Ho gestito il ciclo di vita di un prodotto di pagamenti digitali per PMI, dalla discovery al go-to-market.
+        - Ho aumentato del 27% l'attivazione mensile grazie a un redesign del flusso di onboarding e a campagne in-app.
+        - Ho introdotto metriche di prodotto condivise tra business e technology, riducendo i tempi decisionali del 20%.
+        - Ho coordinato un team distribuito di 12 persone tra prodotto, design, engineering e operations.
+      keywords:
+        - Pagamenti digitali
+        - Onboarding
+        - Metriche di prodotto
+        - Go-to-market
+        - PMI
+    - name: RetailHub Italia
+      url: https://www.retailhubitalia.it
+      position: Product Owner
+      startDate: Sep 1, 2016
+      endDate: Dec 31, 2017
+      summary: |
+        - Ho gestito il backlog e le priorità di una piattaforma e-commerce B2C con oltre 1 milione di visitatori mensili.
+        - Ho collaborato con marketing e UX per lanciare un programma di personalizzazione dell'esperienza di acquisto.
+        - Ho contribuito a un incremento del 12% nel tasso di conversione attraverso test A/B e ottimizzazione del funnel.
+      keywords:
+        - E-commerce
+        - Backlog
+        - A/B testing
+        - UX
+        - Conversione
+
+  skills:
+    - name: Strategia di prodotto
+      level: Expert
+      keywords:
+        - Roadmap
+        - OKR
+        - Visione di prodotto
+        - Prioritizzazione
+        - Jobs-to-be-Done
+    - name: Discovery e ricerca
+      level: Advanced
+      keywords:
+        - Interviste utente
+        - User testing
+        - Prototipazione
+        - Design thinking
+    - name: Analytics di prodotto
+      level: Advanced
+      keywords:
+        - SQL
+        - Mixpanel
+        - Amplitude
+        - Looker
+        - A/B testing
+    - name: Metodologie Agile
+      level: Expert
+      keywords:
+        - Scrum
+        - Kanban
+        - SAFe
+        - Backlog management
+    - name: Leadership e stakeholder
+      level: Advanced
+      keywords:
+        - Stakeholder management
+        - Mentoring
+        - Comunicazione
+        - Negoziazione
+    - name: Strumenti
+      level: Advanced
+      keywords:
+        - Jira
+        - Confluence
+        - Figma
+        - Miro
+        - Notion
+
+  languages:
+    - language: Italian
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - Madrelingua
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - IELTS 8.0
+        - C1 certificato
+    - language: French
+      fluency: Limited Working Proficiency
+      keywords:
+        - DELF B1
+
+  awards:
+    - title: Premio Innovazione Digitale
+      date: Nov 2022
+      awarder: Osservatorio Innovazione Digitale
+      summary: |
+        Riconoscimento assegnato per il progetto di onboarding intelligente della piattaforma NexaCloud, con un impatto misurabile sulla riduzione del time-to-value e sull'adozione dei clienti.
+
+  certificates:
+    - name: Certificazione Scrum Product Owner (CSPO)
+      issuer: Scrum Alliance
+      date: Jun 2019
+      url: https://www.scrumalliance.org/community/profile/gbianchi
+    - name: Certificazione Google Analytics 4
+      issuer: Google
+      date: Sep 2023
+      url: https://skillshop.withgoogle.com/
+
+  publications:
+    - name: 'Product discovery nelle PMI italiane: un modello operativo'
+      publisher: 'Economia & Management'
+      releaseDate: Oct 2021
+      url: https://www.economiaemanagement.it/articoli/product-discovery-pmi
+      summary: |
+        Articolo che presenta un modello di discovery leggero e misurabile per team di prodotto in aziende PMI, basato su casi studio e interviste sul campo.
+
+  projects:
+    - name: Programma Beta Aperta
+      url: https://www.nexacloud.it/beta-aperta
+      description: Iniziativa di co-creazione con clienti selezionati per validare
+        nuovi moduli della piattaforma.
+      startDate: Feb 2022
+      endDate: Sep 2022
+      summary: |
+        - Ho reclutato e coordinato 25 clienti beta in tre segmenti di mercato
+        - Ho strutturato un ciclo di feedback bisettimanale con product design e engineering
+        - Il programma ha generato 14 miglioramenti prioritizzati e due nuove funzionalità candidate
+      keywords:
+        - Co-creazione
+        - Beta testing
+        - Customer feedback
+        - Validazione
+    - name: Evoluzione del modello di pricing
+      description: Progetto di revisione del packaging e del modello di prezzo per il
+        segmento mid-market.
+      startDate: Apr 2023
+      endDate: Dec 2023
+      summary: |
+        - Ho condotto analisi di valore percepito e benchmark competitivo su cinque mercati
+        - Ho definito tre nuovi pacchetti con il supporto di sales, finance e customer success
+        - Il nuovo modello ha contribuito a un aumento del 9% nel valore medio del contratto
+      keywords:
+        - Pricing
+        - Packaging
+        - Value-based pricing
+        - Mid-market
+
+  interests:
+    - name: Tecnologia e innovazione
+      keywords:
+        - Intelligenza artificiale
+        - Prodotti no-code
+        - Open data
+    - name: Sport e benessere
+      keywords:
+        - Running
+        - Yoga
+        - Trekking
+    - name: Musica
+      keywords:
+        - Pianoforte
+        - Concerti
+
+  volunteer:
+    - organization: Digital Women Italia
+      url: https://www.digitalwomen.it/
+      position: Mentor di prodotto
+      startDate: Jan 2020
+      summary: |
+        - Affianco giovani professioniste nella definizione del portfolio e nella preparazione ai colloqui per ruoli di product management
+        - Partecipo a incontri mensili e workshop su discovery, priorizzazione e comunicazione con gli stakeholder
+        - Ho contribuito a organizzare due edizioni del programma di mentorship
+
+  references:
+    - name: Marco Ferri
+      email: marco.ferri@nexacloud.it
+      phone: "+39 02 9475 6321"
+      relationship: 'Vicepresidente Prodotto, NexaCloud S.p.A.'
+      summary: |
+        Giulia ha guidato con grande equilibrio la trasformazione del nostro processo di prodotto, combinando visione strategica, ascolto del cliente e attenzione ai risultati misurabili.
+
+locale:
+  language: it
