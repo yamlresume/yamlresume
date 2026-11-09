@@ -19,12 +19,12 @@ npm install @ai-sdk/openai
 All providers expose an OpenAI-compatible endpoint and are configured through
 environment variables.
 
-| Provider                                       | Required env variable | Default model       | Optional overrides                              |
-| ---------------------------------------------- | --------------------- | ------------------- | ----------------------------------------------- |
-| [DeepSeek](https://www.deepseek.com/)          | `DEEPSEEK_API_KEY`    | `deepseek-v4-flash` | `YAMLRESUME_AI_MODEL`, `YAMLRESUME_AI_BASE_URL` |
-| [Kimi](https://www.moonshot.cn/) (Moonshot AI) | `MOONSHOT_API_KEY`    | `kimi-k2.6`         | `YAMLRESUME_AI_MODEL`, `YAMLRESUME_AI_BASE_URL` |
-| [Ollama](https://ollama.com/) (local)          | `OLLAMA_HOST`         | `llama3.2`          | `YAMLRESUME_AI_MODEL`, `YAMLRESUME_AI_BASE_URL` |
-| [OpenAI](https://openai.com/)                  | `OPENAI_API_KEY`      | `gpt-5`             | `YAMLRESUME_AI_MODEL`, `YAMLRESUME_AI_BASE_URL` |
+| Provider                                       | Required env variable | Default model    | Optional overrides                              |
+| ---------------------------------------------- | --------------------- | ---------------- | ----------------------------------------------- |
+| [DeepSeek](https://www.deepseek.com/)          | `DEEPSEEK_API_KEY`    | `deepseek-flash` | `YAMLRESUME_AI_MODEL`, `YAMLRESUME_AI_BASE_URL` |
+| [Kimi](https://www.moonshot.cn/) (Moonshot AI) | `MOONSHOT_API_KEY`    | `kimi-k3.1-pro`  | `YAMLRESUME_AI_MODEL`, `YAMLRESUME_AI_BASE_URL` |
+| [Ollama](https://ollama.com/) (local)          | `OLLAMA_HOST`         | `llama3.2`       | `YAMLRESUME_AI_MODEL`, `YAMLRESUME_AI_BASE_URL` |
+| [OpenAI](https://openai.com/)                  | `OPENAI_API_KEY`      | `gpt-5.6-luna`    | `YAMLRESUME_AI_MODEL`, `YAMLRESUME_AI_BASE_URL` |
 
 The provider is inferred from the env variables in the order shown above. When
 no provider is detected, Kimi is used as the default so that a missing API key
@@ -44,7 +44,7 @@ yamlresume ai generate --position "Software Engineer" --language en resume.yml
 Override the model or endpoint when needed:
 
 ```bash
-export YAMLRESUME_AI_MODEL=gpt-5
+export YAMLRESUME_AI_MODEL=gpt-5.6-luna
 export YAMLRESUME_AI_BASE_URL=https://custom.openai.endpoint/v1
 yamlresume ai generate --position "Registered Nurse" --language en resume.yml
 ```
@@ -63,7 +63,7 @@ yamlresume ai translate --to zh-hans resume.en.yml resume.zh-hans.yml
 import { generateResume } from "@yamlresume/ai";
 import { openai } from "@ai-sdk/openai";
 
-const model = openai("gpt-5");
+const model = openai("gpt-5.6-luna");
 
 const yaml = await generateResume("Registered Nurse", "en", {
   model,
@@ -94,7 +94,7 @@ const kimi = openai({
 });
 
 const yaml = await generateResume("Registered Nurse", "zh-hans", {
-  model: kimi("moonshot-v1-8k"),
+  model: kimi("kimi-k3.1-pro"),
 });
 ```
 

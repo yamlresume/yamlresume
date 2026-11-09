@@ -39,7 +39,7 @@ export interface AIOptions {
   /**
    * Sampling temperature. Lower values produce more deterministic output.
    *
-   * Some models (kimi-k2.6 with my test) only accept a temperature of 1.0.
+   * Some models only accept a temperature of 1.0.
    *
    * @default 1
    */

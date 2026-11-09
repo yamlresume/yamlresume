@@ -35,10 +35,10 @@ export type AIProvider = 'deepseek' | 'kimi' | 'ollama' | 'openai'
  * Default model per provider.
  */
 const DEFAULT_MODELS: Record<AIProvider, string> = {
-  deepseek: 'deepseek-v4-flash',
-  kimi: 'kimi-k2.6',
+  deepseek: 'deepseek-flash',
+  kimi: 'kimi-k3.1-pro',
   ollama: 'llama3.2',
-  openai: 'gpt-5',
+  openai: 'gpt-5.6-luna',
 }
 
 /**

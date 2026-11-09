@@ -188,7 +188,7 @@ describe(getModelFromEnv, () => {
       apiKey: 'test-moonshot-key',
       baseURL: 'https://api.moonshot.cn/v1',
     })
-    expect(model).toEqual({ id: 'kimi-k2.6' })
+    expect(model).toEqual({ id: 'kimi-k3.1-pro' })
   })
 
   it('should create a Kimi model with a custom model id', () => {
@@ -206,7 +206,7 @@ describe(getModelFromEnv, () => {
     const model = getModelFromEnv()
 
     expect(createOpenAI).toHaveBeenCalledWith({ apiKey: 'test-openai-key' })
-    expect(model).toEqual({ id: 'gpt-5' })
+    expect(model).toEqual({ id: 'gpt-5.6-luna' })
   })
 
   it('should create an OpenAI model with a custom model id', () => {
@@ -227,7 +227,7 @@ describe(getModelFromEnv, () => {
       apiKey: 'test-deepseek-key',
       baseURL: 'https://api.deepseek.com',
     })
-    expect(model).toEqual({ id: 'deepseek-v4-flash' })
+    expect(model).toEqual({ id: 'deepseek-flash' })
   })
 
   it('should create a DeepSeek model with a custom model id', () => {
