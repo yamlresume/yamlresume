@@ -169,11 +169,31 @@ describe('JakeTypstRenderer', () => {
     it('should render a custom font size when configured', () => {
       const customResume = cloneDeep(resume)
       customResume.layouts = [
-        { engine: 'typst', typography: { fontSize: '12pt' } },
+        {
+          engine: 'typst',
+          typography: { fontSize: '12pt', lineSpacing: 'loose' },
+        },
       ]
       const customRenderer = new JakeTypstRenderer(customResume, 0)
 
-      expect(customRenderer.renderPreamble()).toContain('size: 12pt')
+      const preamble = customRenderer.renderPreamble()
+      const basics = customRenderer.renderBasics()
+
+      expect(preamble).toContain('size: 12pt')
+      expect(preamble).toContain('set text(size: 14.4pt')
+      expect(preamble).toContain('row-gutter: 0.96em')
+      expect(basics).toContain('#text(size: 2.488em')
+      expect(basics).toContain('#text(size: 1.44em')
+    })
+
+    it('should match LaTeX large heading size for 11pt', () => {
+      const customResume = cloneDeep(resume)
+      customResume.layouts = [
+        { engine: 'typst', typography: { fontSize: '11pt' } },
+      ]
+      const customRenderer = new JakeTypstRenderer(customResume, 0)
+
+      expect(customRenderer.renderPreamble()).toContain('set text(size: 12pt')
     })
 
     it('should not underline links by default', () => {
@@ -210,6 +230,7 @@ describe('JakeTypstRenderer', () => {
       expect(renderer.renderPreamble()).toContain(
         '#set enum(indent: 1em, spacing: 0.57em)'
       )
+      expect(renderer.renderPreamble()).toContain('row-gutter: 0.57em')
 
       const tightResume = cloneDeep(resume)
       tightResume.layouts = [
@@ -220,6 +241,7 @@ describe('JakeTypstRenderer', () => {
       expect(tightRenderer.renderPreamble()).toContain(
         '#set list(indent: 1em, spacing: 0.36em)'
       )
+      expect(tightRenderer.renderPreamble()).toContain('row-gutter: 0.36em')
 
       const looseResume = cloneDeep(resume)
       looseResume.layouts = [
@@ -230,6 +252,7 @@ describe('JakeTypstRenderer', () => {
       expect(looseRenderer.renderPreamble()).toContain(
         '#set list(indent: 1em, spacing: 0.96em)'
       )
+      expect(looseRenderer.renderPreamble()).toContain('row-gutter: 0.96em')
     })
 
     it('should separate preamble blocks with a single blank line', () => {
@@ -256,7 +279,7 @@ describe('JakeTypstRenderer', () => {
     it('should keep the section rule tight below the title', () => {
       // the negative vspace pulls the rule up so the gap matches the LaTeX
       // template's ~5pt
-      expect(renderer.renderPreamble()).toContain('#v(-10.3pt)')
+      expect(renderer.renderPreamble()).toContain('#v(-0.858em)')
     })
 
     it('should render default black accent when no theme color is set', () => {
@@ -317,8 +340,9 @@ describe('JakeTypstRenderer', () => {
       const result = renderer.renderBasics()
 
       expect(result).toContain('#smallcaps[')
-      expect(result).toContain('#text(size: 24.88pt, weight: "bold")')
-      expect(result).toContain('#text(size: 14.4pt)[')
+      expect(result).toContain('#text(size: 2.488em, weight: "bold")')
+      expect(result).toContain('#text(size: 1.44em)[')
+      expect(result).toContain('#v(-0.2em)')
       expect(result).toContain('#link("tel:')
       expect(result).toContain('#link("mailto:hi@ppresume.com")')
       expect(result).toContain(' | ')
@@ -348,7 +372,7 @@ describe('JakeTypstRenderer', () => {
 
       expect(result).not.toContain('#link("tel:')
       expect(result).not.toContain('#link("mailto:')
-      expect(result).not.toContain('#text(size: 14.4pt)')
+      expect(result).not.toContain('#text(size: 1.44em)')
     })
   })
 

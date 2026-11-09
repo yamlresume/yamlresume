@@ -22,7 +22,7 @@
  * IN THE SOFTWARE.
  */
 
-import type { LineSpacing } from '@/models'
+import type { LineSpacing, TypstFontSize } from '@/models'
 
 /**
  * Default font size for Typst output.
@@ -36,6 +36,38 @@ export const DEFAULT_FONT_SIZE = '10pt'
  * Default line spacing for Typst output.
  */
 export const DEFAULT_LINE_SPACING: LineSpacing = 'normal'
+
+/**
+ * Header and section-heading sizes, relative to the configured body size.
+ *
+ * The ratios match the LaTeX article classes used by the templates:
+ * 2.488x for the name, 1.44x for the headline, and 1.2x for section
+ * headings. Using `em` keeps the hierarchy intact when
+ * `typography.fontSize` changes.
+ */
+export const NAME_FONT_SIZE = '2.488em'
+export const HEADLINE_FONT_SIZE = '1.44em'
+
+/**
+ * Section heading sizes matching LaTeX's `\large` in `article`.
+ *
+ * `size10.clo` and `size11.clo` define `\large` as 12pt, while
+ * `size12.clo` defines it as 14.4pt. This is intentionally not a fixed
+ * scale: using `em` inside the heading show rule compounds with Typst's
+ * default heading size and produces oversized section titles.
+ */
+export const SECTION_HEADING_FONT_SIZE_MAP: Record<TypstFontSize, string> = {
+  '10pt': '12pt',
+  '11pt': '12pt',
+  '12pt': '14.4pt',
+}
+
+/** Gap below the name, relative to the body size (was -2pt at 10pt). */
+export const NAME_BOTTOM_GAP = '-0.2em'
+
+/** Vertical pulls for section headings, relative to the heading size. */
+export const SECTION_HEADING_TOP_GAP = '-0.333em'
+export const SECTION_HEADING_RULE_GAP = '-0.858em'
 
 /**
  * Thickness of the link underline.

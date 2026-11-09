@@ -39,9 +39,15 @@ import { TypstRenderer } from './base'
 import {
   DEFAULT_FONT_SIZE,
   DEFAULT_LINE_SPACING,
+  HEADLINE_FONT_SIZE,
   LINE_SPACING_MAP,
   LINK_UNDERLINE_GAP,
   LINK_UNDERLINE_STROKE,
+  NAME_BOTTOM_GAP,
+  NAME_FONT_SIZE,
+  SECTION_HEADING_FONT_SIZE_MAP,
+  SECTION_HEADING_RULE_GAP,
+  SECTION_HEADING_TOP_GAP,
 } from './constants'
 
 /**
@@ -179,6 +185,15 @@ class JakeTypstRenderer extends TypstRenderer {
    * Render the custom resume helpers used by Jake's template.
    */
   private renderCustomHelpers(): string {
+    const layout = this.resume.layouts?.[this.layoutIndex] as TypstLayout
+    const fontSize = normalizeUnit(
+      layout?.typography?.fontSize || DEFAULT_FONT_SIZE
+    )
+    const lineSpacing = layout?.typography?.lineSpacing || DEFAULT_LINE_SPACING
+    const sectionHeadingFontSize =
+      SECTION_HEADING_FONT_SIZE_MAP[
+        fontSize as keyof typeof SECTION_HEADING_FONT_SIZE_MAP
+      ] ?? SECTION_HEADING_FONT_SIZE_MAP['10pt']
     const accentHex = this.resolveThemeAccentHex()
     const accentColor = accentHex ? `rgb("#${accentHex}")` : 'black'
     const accentDef = showIfNotEmpty(
@@ -194,7 +209,7 @@ class JakeTypstRenderer extends TypstRenderer {
 #let resume-subheading(left-top, right-top, left-bottom, right-bottom) = grid(
   columns: (1fr, auto),
   align: (left, right),
-  row-gutter: 5.7pt,
+  row-gutter: ${LINE_SPACING_MAP[lineSpacing]},
   strong(left-top), right-top,
   emph(left-bottom), emph(right-bottom),
 )
@@ -205,13 +220,13 @@ class JakeTypstRenderer extends TypstRenderer {
 // Sections formatting: small caps headings with a full-width rule below,
 // analogous to \\titleformat{\\section} in the LaTeX template
 #show heading.where(level: 1): it => {
-  set text(size: 12pt, fill: ${accentColor})
+  set text(size: ${sectionHeadingFontSize}, fill: ${accentColor})
   block(above: 1.75em, below: 0.8em, width: 100%)[
-    #v(-4pt)
+    #v(${SECTION_HEADING_TOP_GAP})
     #smallcaps(it.body)
     // pull the rule up to tighten the title-to-rule gap, matching the LaTeX
     // template's \titlerule placement
-    #v(-10.3pt)
+    #v(${SECTION_HEADING_RULE_GAP})
     #line(length: 100%, stroke: 0.4pt + ${accentColor})
   ]
 }`
@@ -295,8 +310,11 @@ class JakeTypstRenderer extends TypstRenderer {
 
     return joinNonEmptyString(
       [
-        `#text(size: 24.88pt, weight: "bold")[#smallcaps[${name}]] #v(-2pt)`,
-        showIfNotEmpty(headline, `#text(size: 14.4pt)[${headline}]`),
+        `#text(size: ${NAME_FONT_SIZE}, weight: "bold")[#smallcaps[${name}]] #v(${NAME_BOTTOM_GAP})`,
+        showIfNotEmpty(
+          headline,
+          `#text(size: ${HEADLINE_FONT_SIZE})[${headline}]`
+        ),
         joinNonEmptyString(
           [
             showIfNotEmpty(
