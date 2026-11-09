@@ -26,6 +26,7 @@ import { cloneDeep } from 'lodash-es'
 import { beforeEach, describe, expect, it } from 'vitest'
 
 import { FILLED_RESUME, type Resume } from '@/models'
+import { SECTION_HEADING_FONT_SIZE_MAP } from './constants'
 import { JakeTypstRenderer } from './jake'
 
 describe('JakeTypstRenderer', () => {
@@ -194,6 +195,24 @@ describe('JakeTypstRenderer', () => {
       const customRenderer = new JakeTypstRenderer(customResume, 0)
 
       expect(customRenderer.renderPreamble()).toContain('set text(size: 12pt')
+    })
+
+    it('should use the default heading size for unsupported font sizes', () => {
+      const customResume = cloneDeep(resume)
+      customResume.layouts = [
+        {
+          engine: 'typst',
+          typography: { fontSize: '13pt' },
+        },
+      ] as unknown as Resume['layouts']
+      const customRenderer = new JakeTypstRenderer(customResume, 0)
+
+      const preamble = customRenderer.renderPreamble()
+
+      expect(preamble).toContain('size: 13pt')
+      expect(preamble).toContain(
+        `set text(size: ${SECTION_HEADING_FONT_SIZE_MAP['10pt']}, fill: accent-color)`
+      )
     })
 
     it('should not underline links by default', () => {
