@@ -527,7 +527,7 @@ ${work
 
       return joinNonEmptyString(
         [
-          `#resume-subheading[${position}][${showIfNotEmpty(startDate, dateRange)}][${this.renderLinkedText(name, url)}][${this.renderUrl(url)}]`,
+          `#resume-subheading[${position}][${this.renderUrl(url)}][${this.renderLinkedText(name, url)}][${showIfNotEmpty(startDate, dateRange)}]`,
           content,
         ],
         '\n'
@@ -646,7 +646,7 @@ ${content}
 ${awards
   .map(({ computed: { date, summary }, awarder, title }) =>
     joinNonEmptyString(
-      [`#resume-subheading[${title}][${date}][${awarder}][]`, summary],
+      [`#resume-subheading[${title}][][${awarder}][${date}]`, summary],
       '\n'
     )
   )
@@ -676,7 +676,7 @@ ${awards
 ${certificates
   .map(
     ({ computed: { date }, issuer, name, url }) =>
-      `#resume-subheading[${this.renderLinkedText(name, url)}][${date}][${issuer}][${this.renderUrl(url)}]`
+      `#resume-subheading[${this.renderLinkedText(name, url)}][${this.renderUrl(url)}][${issuer}][${date}]`
   )
   .join('\n\n')}
 ]`
@@ -705,7 +705,7 @@ ${publications
   .map(({ computed: { releaseDate, summary }, name, publisher, url }) =>
     joinNonEmptyString(
       [
-        `#resume-subheading[${this.renderLinkedText(name, url)}][${releaseDate}][${publisher}][${this.renderUrl(url)}]`,
+        `#resume-subheading[${this.renderLinkedText(name, url)}][${this.renderUrl(url)}][${publisher}][${releaseDate}]`,
         summary,
       ],
       '\n'
@@ -793,7 +793,7 @@ ${projects
 
       return joinNonEmptyString(
         [
-          `#resume-subheading[${this.renderLinkedText(name, url)}][${showIfNotEmpty(startDate, dateRange)}][${description}][${this.renderUrl(url)}]`,
+          `#resume-subheading[${this.renderLinkedText(name, url)}][${this.renderUrl(url)}][${description}][${showIfNotEmpty(startDate, dateRange)}]`,
           content,
         ],
         '\n'
@@ -864,7 +864,7 @@ ${volunteer
     }) =>
       joinNonEmptyString(
         [
-          `#resume-subheading[${position}][${showIfNotEmpty(startDate, dateRange)}][${this.renderLinkedText(organization, url)}][${this.renderUrl(url)}]`,
+          `#resume-subheading[${position}][${this.renderUrl(url)}][${this.renderLinkedText(organization, url)}][${showIfNotEmpty(startDate, dateRange)}]`,
           summary,
         ],
         '\n'

@@ -462,8 +462,8 @@ ${work
       return joinNonEmptyString(
         [
           `\\resumeSubheading
-{${position}}{${showIfNotEmpty(startDate, dateRange)}}
-{${this.renderLinkedText(name, url)}}{${this.renderUrl(url)}}`,
+{${position}}{${this.renderUrl(url)}}
+{${this.renderLinkedText(name, url)}}{${showIfNotEmpty(startDate, dateRange)}}`,
           showIf(
             !isEmptyValue(summary) || !isEmptyValue(keywords),
             `\\begin{adjustwidth}{${this.padding}}{${this.padding}}
@@ -591,8 +591,8 @@ ${awards
     joinNonEmptyString(
       [
         `\\resumeSubheading
-{${title}}{${date}}
-{${awarder}}{}`,
+{${title}}{}
+{${awarder}}{${date}}`,
         showIfNotEmpty(
           summary,
           `\\begin{adjustwidth}{${this.padding}}{${this.padding}}
@@ -628,8 +628,8 @@ ${certificates
   .map(
     ({ computed: { date }, issuer, name, url }) =>
       `\\resumeSubheading
-{${this.renderLinkedText(name, url)}}{${date}}
-{${issuer}}{${this.renderUrl(url)}}`
+{${this.renderLinkedText(name, url)}}{${this.renderUrl(url)}}
+{${issuer}}{${date}}`
   )
   .join('\n\n')}`
   }
@@ -657,8 +657,8 @@ ${publications
     joinNonEmptyString(
       [
         `\\resumeSubheading
-{${this.renderLinkedText(name, url)}}{${releaseDate}}
-{${publisher}}{${this.renderUrl(url)}}`,
+{${this.renderLinkedText(name, url)}}{${this.renderUrl(url)}}
+{${publisher}}{${releaseDate}}`,
         showIfNotEmpty(
           summary,
           `\\begin{adjustwidth}{${this.padding}}{${this.padding}}
@@ -744,8 +744,8 @@ ${projects
       joinNonEmptyString(
         [
           `\\resumeSubheading
-{${this.renderLinkedText(name, url)}}{${showIfNotEmpty(startDate, dateRange)}}
-{${description}}{${this.renderUrl(url)}}`,
+{${this.renderLinkedText(name, url)}}{${this.renderUrl(url)}}
+{${description}}{${showIfNotEmpty(startDate, dateRange)}}`,
           showIf(
             !isEmptyValue(summary) || !isEmptyValue(keywords),
             `\\begin{adjustwidth}{${this.padding}}{${this.padding}}
@@ -823,8 +823,8 @@ ${volunteer
       joinNonEmptyString(
         [
           `\\resumeSubheading
-{${position}}{${showIfNotEmpty(startDate, dateRange)}}
-{${this.renderLinkedText(organization, url)}}{${this.renderUrl(url)}}`,
+{${position}}{${this.renderUrl(url)}}
+{${this.renderLinkedText(organization, url)}}{${showIfNotEmpty(startDate, dateRange)}}`,
           showIfNotEmpty(
             summary,
             `\\begin{adjustwidth}{${this.padding}}{${this.padding}}

@@ -584,6 +584,8 @@ describe('JakeLatexRenderer', () => {
 
       expect(result).toMatch(/^\\section{Work}/)
       expect(result).toContain('\\resumeSubheading')
+      expect(result).toContain(`{${position}}{\\url{${url}}}`)
+      expect(result).toContain(`{${name}}{`)
       expect(result).toContain(`{${position}}`)
       expect(result).toContain(`{${name}}`)
       expect(result).toContain(`\\url{${url}}`)
@@ -662,6 +664,7 @@ describe('JakeLatexRenderer', () => {
 
       expect(result).toMatch(/^\\section{Awards}/)
       expect(result).toContain('\\resumeSubheading')
+      expect(result).toContain(`{${title}}{}\n{${awarder}}{Jan 2023}`)
       expect(result).toContain(`{${title}}`)
       expect(result).toContain(`{${awarder}}`)
     })
@@ -688,6 +691,8 @@ describe('JakeLatexRenderer', () => {
 
       expect(result).toMatch(/^\\section{Certificates}/)
       expect(result).toContain('\\resumeSubheading')
+      expect(result).toContain(`{${name}}{\\url{${url}}}`)
+      expect(result).toContain(`{${issuer}}{`)
       expect(result).toContain(`{${name}}`)
       expect(result).toContain(`{${issuer}}`)
       expect(result).toContain(`\\url{${url}}`)
@@ -717,6 +722,8 @@ describe('JakeLatexRenderer', () => {
 
       expect(result).toMatch(/^\\section{Publications}/)
       expect(result).toContain('\\resumeSubheading')
+      expect(result).toContain(`{${name}}{\\url{${url}}}`)
+      expect(result).toContain(`{${publisher}}{`)
       expect(result).toContain(`{${name}}`)
       expect(result).toContain(`{${publisher}}`)
       expect(result).toContain(`\\url{${url}}`)
@@ -781,6 +788,8 @@ describe('JakeLatexRenderer', () => {
 
       expect(result).toMatch(/^\\section{Projects}/)
       expect(result).toContain('\\resumeSubheading')
+      expect(result).toContain(`{${name}}{\\url{${url}}}`)
+      expect(result).toContain(`{${description}}{`)
       expect(result).toContain(name)
       expect(result).toContain('Keywords')
       expect(result).toContain('React, TypeScript')
@@ -832,6 +841,8 @@ describe('JakeLatexRenderer', () => {
 
       expect(result).toMatch(/^\\section{Volunteer}/)
       expect(result).toContain('\\resumeSubheading')
+      expect(result).toContain(`{${position}}{\\url{${url}}}`)
+      expect(result).toContain(`{${organization}}{`)
       expect(result).toContain(`{${position}}`)
       expect(result).toContain(`{${organization}}`)
       expect(result).toContain(`\\url{${url}}`)

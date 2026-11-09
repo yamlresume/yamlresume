@@ -574,6 +574,9 @@ describe('JakeTypstRenderer', () => {
       expect(result).toMatch(/^= Work/)
       expect(result).toContain('#resume-pad[\n#resume-subheading[')
       expect(result).toContain(`#resume-subheading[${position}]`)
+      expect(result).toContain(
+        `#resume-subheading[${position}][#link("${url}")[${url}]][${name}][`
+      )
       expect(result).toContain(name)
       expect(result).toContain('#strong[Keywords]: JavaScript, TypeScript')
     })
@@ -697,7 +700,7 @@ describe('JakeTypstRenderer', () => {
       expect(result).toMatch(/^= Awards/)
       // dates are normalized to a month-year format by transformResume
       expect(result).toContain(
-        '#resume-subheading[Best Developer Award][Jan 2023][Tech Company][]'
+        '#resume-subheading[Best Developer Award][][Tech Company][Jan 2023]'
       )
       expect(result).toContain('#resume-pad[')
       expect(result).toContain('Award summary')
@@ -719,6 +722,9 @@ describe('JakeTypstRenderer', () => {
 
       expect(result).toMatch(/^= Certificates/)
       expect(result).toContain('#resume-subheading[')
+      expect(result).toContain(
+        '#resume-subheading[AWS Certified Developer][#link("https://aws.amazon.com/certification/")[https://aws.amazon.com/certification/]][AWS][Mar 2021]'
+      )
       expect(result).toContain('AWS Certified Developer')
       expect(result).toContain('#link("https://aws.amazon.com/certification/")')
     })
@@ -740,6 +746,9 @@ describe('JakeTypstRenderer', () => {
 
       expect(result).toMatch(/^= Publications/)
       expect(result).toContain('#resume-subheading[')
+      expect(result).toContain(
+        '#resume-subheading[A Paper][#link("https://dl.acm.org")[https://dl.acm.org]][ACM][Dec 2017]'
+      )
       expect(result).toContain('A Paper')
     })
   })
@@ -784,6 +793,9 @@ describe('JakeTypstRenderer', () => {
 
       expect(result).toMatch(/^= Projects/)
       expect(result).toContain('#resume-subheading[')
+      expect(result).toContain(
+        '#resume-subheading[EduWeb][#link("https://eduweb.xyz")[https://eduweb.xyz]][A web platform]['
+      )
       expect(result).toContain('EduWeb')
       expect(result).toContain('#strong[Keywords]: Education')
     })
@@ -823,6 +835,9 @@ describe('JakeTypstRenderer', () => {
 
       expect(result).toMatch(/^= Volunteer/)
       expect(result).toContain('#resume-subheading[Tech Mentor]')
+      expect(result).toContain(
+        '#resume-subheading[Tech Mentor][#link("https://usc.org")[https://usc.org]][USC Society]['
+      )
       expect(result).toContain('USC Society')
     })
   })
