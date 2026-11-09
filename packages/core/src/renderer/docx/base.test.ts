@@ -243,6 +243,19 @@ describe('DocxRenderer', () => {
       expect(renderer.testShowUnderlinedLinks).toBe(false)
     })
 
+    it('should default to false when underline is not configured', () => {
+      renderer = new TestableDocxRenderer(
+        resume,
+        findLayoutIndex(resume, 'docx')
+      )
+      const docxLayout = renderer.resume.layouts[
+        findLayoutIndex(renderer.resume, 'docx')
+      ] as DocxLayout
+      docxLayout.typography = {}
+
+      expect(renderer.testShowUnderlinedLinks).toBe(false)
+    })
+
     it('should return false when layout is not docx', () => {
       resume.layouts = [{ engine: 'html' }] as unknown as DocxLayout[]
       renderer = new TestableDocxRenderer(resume, 0)
