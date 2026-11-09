@@ -416,6 +416,7 @@ export function getLocaleLanguageDetail(localeLanguage: LocaleLanguage) {
     'zh-hant-tw': 'Traditional Chinese (Taiwan)',
     es: 'Spanish',
     fr: 'French',
+    it: 'Italian',
     no: 'Norwegian',
     nl: 'Dutch',
     ja: 'Japanese',

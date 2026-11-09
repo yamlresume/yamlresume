@@ -162,6 +162,17 @@ describe(getTemplateTranslations, () => {
           },
         },
       },
+      {
+        language: 'it',
+        expected: {
+          punctuations: {
+            colon: ': ',
+          },
+          terms: {
+            keywords: 'Parole chiave',
+          },
+        },
+      },
     ]
 
     tests.forEach((test) => {

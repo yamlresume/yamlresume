@@ -61,6 +61,11 @@ export abstract class LatexRenderer extends Renderer {
 % ref:
 % - https://latex3.github.io/babel/guides/locale-french.html
 \\usepackage[french]{babel}`
+      case 'it':
+        return `%% Babel config for Italian language
+% ref:
+% - https://latex3.github.io/babel/guides/locale-italian.html
+\\usepackage[italian]{babel}`
       case 'no':
         return `%% Babel config for Norwegian language
 % ref:

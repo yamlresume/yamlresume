@@ -299,6 +299,7 @@ describe('TypstRenderer', () => {
       ['zh-hant-hk', 'lang: "zh", region: "hk", number-type: "lining"'],
       ['zh-hant-tw', 'lang: "zh", region: "tw", number-type: "lining"'],
       ['pt-br', 'lang: "pt", region: "br", number-type: "old-style"'],
+      ['it', 'lang: "it", number-type: "old-style"'],
       ['en', 'lang: "en", number-type: "old-style"'],
     ] as const)('should render locale config for %s', (language, expected) => {
       const renderer = createRenderer({ locale: { language } })
