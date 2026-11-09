@@ -26,7 +26,6 @@ import { cloneDeep } from 'lodash-es'
 import { describe, expect, it } from 'vitest'
 
 import { DEFAULT_TYPST_LAYOUT, FILLED_RESUME, type Resume } from '@/models'
-import { joinNonEmptyString } from '@/utils'
 
 import { TypstRenderer } from './base'
 
@@ -219,19 +218,21 @@ describe('TypstRenderer', () => {
   })
 
   describe('renderFontList', () => {
-    it('should render default fonts when no fontFamily is configured', () => {
+    it('should render only Latin fallbacks for English-only content', () => {
       const renderer = createRenderer()
 
       expect(renderer.testRenderFontList()).toBe(
-        joinNonEmptyString(
-          [
-            '("Libertinus Serif", "Linux Libertine", "Noto Serif CJK SC"',
-            '"Noto Sans CJK SC", "Songti SC", "SimSun"',
-            '"PingFang SC", "Microsoft YaHei")',
-          ],
-          ', '
-        )
+        '("Libertinus Serif", "Linux Libertine")'
       )
+    })
+
+    it('should include CJK fallbacks for mixed-language content', () => {
+      const resume = cloneDeep(FILLED_RESUME)
+      resume.content.basics.name = '张伟'
+      const renderer = new TestTypstRenderer(resume, 0)
+
+      expect(renderer.testRenderFontList()).toContain('"Noto Serif CJK SC"')
+      expect(renderer.testRenderFontList()).toContain('"Songti SC"')
     })
 
     it('should prepend user-configured font families', () => {
@@ -249,14 +250,7 @@ describe('TypstRenderer', () => {
 
       // user fonts come first in the fallback chain, duplicates are dropped
       expect(renderer.testRenderFontList()).toBe(
-        joinNonEmptyString(
-          [
-            '("New Computer Modern", "Libertinus Serif", "Linux Libertine"',
-            '"Noto Serif CJK SC", "Noto Sans CJK SC", "Songti SC", "SimSun"',
-            '"PingFang SC", "Microsoft YaHei")',
-          ],
-          ', '
-        )
+        '("New Computer Modern", "Libertinus Serif", "Linux Libertine")'
       )
     })
 

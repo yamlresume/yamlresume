@@ -41,6 +41,7 @@ import which from 'which'
 
 import {
   compileTypst,
+  filterTypstWarnings,
   getTypstPdfPath,
   inferTypstCommand,
   inferTypstOutput,
@@ -221,6 +222,35 @@ describe(isTypstVersionSupported, () => {
     expect(isTypstVersionSupported('')).toBe(false)
     expect(isTypstVersionSupported('0.13')).toBe(false)
     expect(isTypstVersionSupported('unknown')).toBe(false)
+  })
+})
+
+describe(filterTypstWarnings, () => {
+  it('filters optional CJK fallback font warnings', () => {
+    const stderr = `warning: unknown font family: Noto Serif CJK SC
+   ┌─ resume.typ:1:1
+   │
+ 1 │   font: ("Noto Serif CJK SC")
+
+warning: unknown font family: Songti SC
+   ┌─ resume.typ:1:1
+
+warning: missing font`
+
+    expect(filterTypstWarnings(stderr)).toBe('warning: missing font')
+  })
+
+  it('returns an empty string when all warnings are optional fonts', () => {
+    expect(
+      filterTypstWarnings(`warning: unknown font family: Microsoft YaHei
+   ┌─ resume.typ:1:1`)
+    ).toBe('')
+  })
+
+  it('preserves unrelated warnings', () => {
+    expect(filterTypstWarnings('warning: something else')).toBe(
+      'warning: something else'
+    )
   })
 })
 

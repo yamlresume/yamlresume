@@ -107,6 +107,15 @@ export abstract class TypstRenderer extends Renderer {
   }
 
   /**
+   * Check whether the resume content contains CJK characters.
+   */
+  protected hasCJKCharacters(): boolean {
+    return /[\p{Script=Han}\p{Script=Hiragana}\p{Script=Katakana}\p{Script=Hangul}]/u.test(
+      JSON.stringify(this.resume.content)
+    )
+  }
+
+  /**
    * Render the font fallback list for `#set text(font: ...)`.
    *
    * Typst picks the first available font in the list, so user-configured font
@@ -128,7 +137,10 @@ export abstract class TypstRenderer extends Renderer {
       new Set([...(fonts ?? []), 'Libertinus Serif', 'Linux Libertine'])
     )
 
-    const cjkRegions = this.getCJKFontRegions()
+    const cjkRegions =
+      this.isCJKResume() || this.hasCJKCharacters()
+        ? this.getCJKFontRegions()
+        : []
 
     const cjkFonts = cjkRegions.flatMap((region) => [
       `Noto Serif CJK ${region}`,

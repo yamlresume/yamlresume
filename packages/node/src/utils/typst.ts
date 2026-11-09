@@ -190,6 +190,34 @@ export function inferTypstCommand(
 export const TYPST_COMPILE_TIMEOUT = 30
 
 /**
+ * Optional CJK fallback families emitted by the renderer. Missing members are
+ * expected on systems that use another regional font, so their "unknown font"
+ * warnings are noise rather than actionable build failures.
+ */
+const OPTIONAL_CJK_FONT_PATTERN =
+  /^(?:noto (?:serif|sans) cjk (?:sc|tc|hk|jp|kr)|songti (?:sc|tc)|simsun|pingfang (?:sc|tc|hk|mo)|microsoft (?:yahei|jhenghei)|hiragino (?:mincho pron|sans)|yu (?:mincho|gothic)|ms mincho|meiryo|pmingliu)$/i
+
+/**
+ * Remove Typst warnings for optional CJK fallback fonts.
+ *
+ * Other diagnostics, including missing user-configured fonts, are preserved.
+ *
+ * @param stderr - The compiler's standard error output.
+ * @returns The remaining diagnostics.
+ */
+export function filterTypstWarnings(stderr: string): string {
+  return stderr
+    .trim()
+    .split(/\n\n+/)
+    .filter((block) => {
+      const match = block.match(/^warning: unknown font family:\s*(.+)$/m)
+      return !match || !OPTIONAL_CJK_FONT_PATTERN.test(match[1].trim())
+    })
+    .join('\n\n')
+    .trim()
+}
+
+/**
  * Compile a Typst file to PDF
  *
  * @param typFile - The Typst file to compile.
@@ -237,7 +265,7 @@ export async function compileTypst(
       timeout: execaTimeout,
     })
     logger?.debug(joinNonEmptyString(['stdout: ', toCodeBlock(result.stdout)]))
-    const stderr = result.stderr.trim()
+    const stderr = filterTypstWarnings(result.stderr)
     if (stderr) {
       logger?.warn(`Typst compiler warnings:\n${stderr}`)
     }
