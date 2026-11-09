@@ -417,6 +417,16 @@ describe('JakeTypstRenderer', () => {
       expect(result).not.toContain('#link("mailto:')
       expect(result).not.toContain('#text(size: 1.44em)')
     })
+
+    it('should always render the homepage URL when showUrls is false', () => {
+      const url = resume.content.basics.url
+      resume.layouts = [{ engine: 'typst', advanced: { showUrls: false } }]
+      renderer = new JakeTypstRenderer(resume, 0)
+
+      expect(renderer.renderBasics()).toContain(
+        `#link("${url}")[${escapeTypst(url)}]`
+      )
+    })
   })
 
   describe('renderLocation', () => {

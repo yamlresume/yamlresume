@@ -341,7 +341,10 @@ class JakeTypstRenderer extends TypstRenderer {
             ),
             showIfNotEmpty(
               url,
-              this.iconedString(this.getFaIcon('Globe'), this.renderUrl(url))
+              this.iconedString(
+                this.getFaIcon('Globe'),
+                this.renderLink(url, url)
+              )
             ),
           ],
           this.separator
