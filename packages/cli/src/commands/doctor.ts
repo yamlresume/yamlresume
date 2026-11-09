@@ -22,6 +22,11 @@
  * IN THE SOFTWARE.
  */
 
+import {
+  isTypstVersionSupported,
+  MIN_TYPST_VERSION,
+  parseTypstVersion,
+} from '@yamlresume/node'
 import { Command } from 'commander'
 import consola from 'consola'
 import envinfo from 'envinfo'
@@ -75,7 +80,17 @@ export async function checkTypst() {
   consola.info('Checking Typst...')
   try {
     const { stdout } = await execa('typst', ['--version'])
-    console.log(`  Typst: ${stdout.split('\n')[0]}\n`)
+    const versionLine = stdout.split('\n')[0]
+    const version = parseTypstVersion(stdout)
+
+    if (!version || !isTypstVersionSupported(version)) {
+      console.log(
+        `  Typst: ${versionLine} (requires Typst ${MIN_TYPST_VERSION}+)\n`
+      )
+      return
+    }
+
+    console.log(`  Typst: ${versionLine}\n`)
   } catch {
     console.log('  Typst: Not Found\n')
   }

@@ -88,6 +88,70 @@ export function inferTypstOutput(resumePath: string, outputDir?: string) {
 }
 
 /**
+ * Minimum supported Typst compiler version.
+ *
+ * `document.description` was added in Typst 0.13.0 and is emitted by the
+ * renderer. Empirically, 0.11.1 and 0.12.0 reject the generated source with
+ * "unexpected argument: description", while 0.13.0, 0.13.1, 0.14.0, and
+ * 0.15.1 compile the full sample successfully.
+ */
+export const MIN_TYPST_VERSION = '0.13.0'
+
+/**
+ * Parse the version from `typst --version`.
+ *
+ * @param output - The raw `typst --version` output, e.g. `typst 0.15.1 (...)`.
+ * @returns The semantic version, or `null` if it cannot be parsed.
+ */
+export function parseTypstVersion(output: string): string | null {
+  const match = output.match(/\b(\d+)\.(\d+)\.(\d+)\b/)
+  return match ? `${match[1]}.${match[2]}.${match[3]}` : null
+}
+
+/**
+ * Check whether a Typst version meets the minimum requirement.
+ *
+ * @param version - The installed Typst version.
+ * @param minimum - The minimum supported version.
+ * @returns True when `version` is at least `minimum`.
+ */
+export function isTypstVersionSupported(
+  version: string,
+  minimum = MIN_TYPST_VERSION
+): boolean {
+  const parse = (value: string) => {
+    const match = value.trim().match(/^(\d+)\.(\d+)\.(\d+)/)
+    return match ? [Number(match[1]), Number(match[2]), Number(match[3])] : null
+  }
+
+  const actual = parse(version)
+  const required = parse(minimum)
+
+  if (!actual || !required) {
+    return false
+  }
+
+  for (let index = 0; index < required.length; index++) {
+    if (actual[index] > required[index]) return true
+    if (actual[index] < required[index]) return false
+  }
+
+  return true
+}
+
+/**
+ * Get the installed Typst version.
+ *
+ * @returns The semantic version, or `null` if it cannot be parsed.
+ */
+export async function getTypstVersion(): Promise<string | null> {
+  const { stdout } = await execa('typst', ['--version'], {
+    encoding: 'utf8',
+  })
+  return parseTypstVersion(stdout)
+}
+
+/**
  * Infer the Typst command to compile a typ file
  *
  * @param resumePathOrTypFile - The source resume file OR the target .typ file
@@ -141,6 +205,15 @@ export async function compileTypst(
   pdfPath?: string
 ) {
   const { command, args, cwd } = inferTypstCommand(typFile, outputDir)
+  const typstVersion = await getTypstVersion().catch(() => null)
+
+  if (!typstVersion || !isTypstVersionSupported(typstVersion)) {
+    throw new YAMLResumeError('TYPST_VERSION_UNSUPPORTED', {
+      minimum: MIN_TYPST_VERSION,
+      actual: typstVersion ?? 'unknown',
+    })
+  }
+
   const defaultPdfPath = getTypstPdfPath(typFile)
   const finalPdfPath = pdfPath ?? defaultPdfPath
 

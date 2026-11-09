@@ -157,6 +157,19 @@ describe('doctor', () => {
       )
     })
 
+    it('should flag Typst versions below the minimum', async () => {
+      vi.mocked(execa).mockResolvedValueOnce({
+        stdout: 'typst 0.12.0',
+        // biome-ignore lint/suspicious/noExplicitAny: ignore
+      } as any)
+
+      await checkTypst()
+
+      expect(logSpy).toHaveBeenCalledWith(
+        expect.stringContaining('requires Typst 0.13.0+')
+      )
+    })
+
     it('should log Not Found when Typst is not installed', async () => {
       vi.mocked(execa).mockRejectedValueOnce(new Error('Not found'))
 

@@ -45,6 +45,9 @@ import {
   inferTypstCommand,
   inferTypstOutput,
   isCommandAvailable,
+  isTypstVersionSupported,
+  MIN_TYPST_VERSION,
+  parseTypstVersion,
   TYPST_COMPILE_TIMEOUT,
 } from './typst'
 
@@ -193,13 +196,46 @@ describe(inferTypstCommand, () => {
   })
 })
 
+describe(parseTypstVersion, () => {
+  it('should parse the version from typst --version', () => {
+    expect(parseTypstVersion('typst 0.15.1 (unknown commit)')).toBe('0.15.1')
+    expect(parseTypstVersion('typst 0.13.0 (8dce676d)')).toBe('0.13.0')
+  })
+
+  it('should return null for unparseable output', () => {
+    expect(parseTypstVersion('typst unknown')).toBeNull()
+    expect(parseTypstVersion('')).toBeNull()
+  })
+})
+
+describe(isTypstVersionSupported, () => {
+  it('should require the minimum version', () => {
+    expect(isTypstVersionSupported('0.12.0')).toBe(false)
+    expect(isTypstVersionSupported('0.13.0')).toBe(true)
+    expect(isTypstVersionSupported('0.13.1')).toBe(true)
+    expect(isTypstVersionSupported('0.14.0')).toBe(true)
+    expect(isTypstVersionSupported('1.0.0')).toBe(true)
+  })
+
+  it('should reject malformed versions', () => {
+    expect(isTypstVersionSupported('')).toBe(false)
+    expect(isTypstVersionSupported('0.13')).toBe(false)
+    expect(isTypstVersionSupported('unknown')).toBe(false)
+  })
+})
+
 describe(compileTypst, () => {
   let execSpy: MockedFunction<typeof execa>
   let tempDir: string
   let logger: ReturnType<typeof createMockLogger>
 
   beforeEach(() => {
-    execSpy = vi.mocked(execa).mockResolvedValue(createExecaResult())
+    execSpy = vi
+      .mocked(execa)
+      .mockResolvedValueOnce(
+        createExecaResult({ stdout: `typst ${MIN_TYPST_VERSION}` })
+      )
+      .mockResolvedValue(createExecaResult())
     vi.spyOn(which, 'sync').mockReturnValue('/usr/bin/typst')
     vi.spyOn(fs, 'existsSync').mockReturnValue(false)
     tempDir = fs.mkdtempSync(path.join(os.tmpdir(), 'typst-test-'))
@@ -217,7 +253,7 @@ describe(compileTypst, () => {
 
     await compileTypst(typFile, tempDir, TYPST_COMPILE_TIMEOUT, logger)
 
-    expect(execSpy).toHaveBeenCalledTimes(1)
+    expect(execSpy).toHaveBeenCalledTimes(2)
     expect(execSpy).toHaveBeenCalledWith('typst', ['compile', 'resume.typ'], {
       cwd: tempDir,
       encoding: 'utf8',
@@ -255,6 +291,36 @@ describe(compileTypst, () => {
     )
   })
 
+  it('should use the output basename when the relative path is empty', async () => {
+    const typFile = path.join(tempDir, 'resume.typ')
+    fs.writeFileSync(typFile, '')
+
+    await compileTypst(typFile, tempDir, TYPST_COMPILE_TIMEOUT, logger, tempDir)
+
+    expect(execSpy).toHaveBeenCalledWith(
+      'typst',
+      ['compile', 'resume.typ', path.basename(tempDir)],
+      {
+        cwd: tempDir,
+        encoding: 'utf8',
+        timeout: TYPST_COMPILE_TIMEOUT * 1000,
+      }
+    )
+  })
+
+  it('should reject when the Typst version cannot be read', async () => {
+    const typFile = path.join(tempDir, 'resume.typ')
+    fs.writeFileSync(typFile, '')
+    execSpy.mockReset()
+    execSpy.mockRejectedValue(new Error('typst unavailable'))
+
+    await expect(
+      compileTypst(typFile, tempDir, TYPST_COMPILE_TIMEOUT, logger)
+    ).rejects.toMatchObject({ code: 'TYPST_VERSION_UNSUPPORTED' })
+
+    expect(execSpy).toHaveBeenCalledTimes(1)
+  })
+
   it('should handle compile error', async () => {
     const typFile = path.join(tempDir, 'resume.typ')
     fs.writeFileSync(typFile, '')
@@ -263,6 +329,21 @@ describe(compileTypst, () => {
     await expect(
       compileTypst(typFile, tempDir, TYPST_COMPILE_TIMEOUT, logger)
     ).rejects.toThrow(YAMLResumeError)
+
+    expect(execSpy).toHaveBeenCalledTimes(2)
+  })
+
+  it('should reject an unsupported Typst version', async () => {
+    const typFile = path.join(tempDir, 'resume.typ')
+    fs.writeFileSync(typFile, '')
+    execSpy.mockReset()
+    execSpy.mockResolvedValueOnce(
+      createExecaResult({ stdout: 'typst 0.12.0 (abc)' })
+    )
+
+    await expect(
+      compileTypst(typFile, tempDir, TYPST_COMPILE_TIMEOUT, logger)
+    ).rejects.toMatchObject({ code: 'TYPST_VERSION_UNSUPPORTED' })
 
     expect(execSpy).toHaveBeenCalledTimes(1)
   })
@@ -284,7 +365,7 @@ describe(compileTypst, () => {
     expect(logger.log).toHaveBeenCalledWith(
       'Partial typst output before timeout'
     )
-    expect(execSpy).toHaveBeenCalledTimes(1)
+    expect(execSpy).toHaveBeenCalledTimes(2)
   })
 
   it('should handle timeout without stdout or stderr', async () => {

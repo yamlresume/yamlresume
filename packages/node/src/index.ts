@@ -43,5 +43,10 @@ export {
   type TranslateResumeFileOptions,
   translateResumeFile,
 } from './translate'
-export { LATEX_COMPILE_TIMEOUT } from './utils'
+export {
+  isTypstVersionSupported,
+  LATEX_COMPILE_TIMEOUT,
+  MIN_TYPST_VERSION,
+  parseTypstVersion,
+} from './utils'
 export { watchResumeFile } from './watch'

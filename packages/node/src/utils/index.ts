@@ -32,7 +32,11 @@ export {
 export {
   compileTypst,
   getTypstPdfPath,
+  getTypstVersion,
   inferTypstCommand,
   inferTypstOutput,
+  isTypstVersionSupported,
+  MIN_TYPST_VERSION,
+  parseTypstVersion,
   TYPST_COMPILE_TIMEOUT,
 } from './typst'

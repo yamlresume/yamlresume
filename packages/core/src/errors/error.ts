@@ -161,6 +161,20 @@ export const ErrorType = {
     message: 'Typst compilation failed: {error}',
     error: '',
   },
+  TYPST_VERSION_UNSUPPORTED: {
+    code: 'TYPST_VERSION_UNSUPPORTED',
+    errno: ErrorCategory.TYPST | 0x04,
+    message: joinNonEmptyString(
+      [
+        'Typst {actual} is not supported.',
+        'YAMLResume requires Typst {minimum} or newer.',
+        'Please upgrade Typst: https://github.com/typst/typst/releases',
+      ],
+      ' '
+    ),
+    minimum: '',
+    actual: '',
+  },
   TYPST_COMPILE_TIMEOUT: {
     code: 'TYPST_COMPILE_TIMEOUT',
     errno: ErrorCategory.TYPST | 0x03,
