@@ -1,0 +1,203 @@
+content:
+  basics:
+    name: Mariana Almeida Costa
+    headline: Enfermeira Registrada | Terapia Intensiva e Segurança do Paciente
+    phone: '+55 11 98765-4321'
+    email: mariana.costa@enfermagem.com.br
+    url: https://marianacosta-enfermagem.com.br
+    summary: |
+      - Enfermeira registrada com mais de 6 anos de experiência em assistência hospitalar, atuando em unidades de terapia intensiva e clínica médica.
+      - Sólida formação em enfermagem clínica, com foco em segurança do paciente, prevenção de infecções e aplicação da Sistematização da Assistência de Enfermagem (SAE).
+      - Experiência na liderança de equipes de técnicos e auxiliares de enfermagem, elaboração de escalas, educação continuada e monitoramento de indicadores assistenciais.
+      - Comunicação clara e empática no cuidado ao paciente e à família, com atuação colaborativa em equipes multiprofissionais.
+      - Registro profissional ativo no COREN-SP, com prática alinhada às boas práticas de enfermagem e às normas de biossegurança.
+  location:
+    address: Rua Cardoso de Almeida, 1234, Apto 56
+    city: São Paulo
+    region: SP
+    country: Brazil
+    postalCode: '01215-000'
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/mariana-almeida-costa-rn
+      username: mariana-almeida-costa-rn
+    - network: Instagram
+      url: https://www.instagram.com/enf.marianacosta
+      username: enf.marianacosta
+  education:
+    - institution: Universidade de São Paulo
+      url: https://www.usp.br
+      degree: Bachelor
+      area: Enfermagem
+      score: '8.7/10'
+      startDate: '2014-02-01'
+      endDate: '2017-12-15'
+      courses:
+        - Anatomia Humana
+        - Fisiologia
+        - Farmacologia
+        - Semiologia e Semiotécnica
+        - Enfermagem em Terapia Intensiva
+        - Saúde Coletiva
+        - Gestão em Enfermagem
+        - Bioética
+      summary: |
+        - Formação generalista com ênfase em enfermagem clínica, saúde coletiva e gestão do cuidado.
+        - Desenvolvimento de competências para avaliação integral do paciente, raciocínio clínico e tomada de decisão baseada em evidências.
+        - Participação em projetos de extensão e atividades práticas em hospitais universitários.
+  work:
+    - name: Hospital Israelita Albert Einstein
+      url: https://www.einstein.br
+      position: Enfermeira Assistencial
+      startDate: '2022-01-10'
+      summary: |
+        - Presto assistência de enfermagem a pacientes adultos em unidade de terapia intensiva, realizando avaliação clínica, administração de medicamentos, curativos complexos e monitorização hemodinâmica.
+        - Aplico protocolos institucionais de segurança do paciente, prevenção de infecção relacionada à assistência à saúde e notificação de eventos adversos.
+        - Lidero equipe de técnicos de enfermagem durante o turno, organizando escalas, distribuindo atividades e apoiando a tomada de decisão clínica.
+        - Participo de rondas multiprofissionais, discussões de casos e treinamentos de educação continuada voltados à qualidade do cuidado.
+        - Utilizo prontuário eletrônico e sistemas assistenciais para registro, auditoria e acompanhamento de indicadores.
+      keywords:
+        - Terapia Intensiva
+        - Segurança do Paciente
+        - SAE
+        - Liderança de Equipe
+        - Prontuário Eletrônico
+    - name: Hospital das Clínicas da FMUSP
+      url: https://www.hc.fm.usp.br
+      position: Enfermeira Assistencial
+      startDate: '2018-03-01'
+      endDate: '2021-12-20'
+      summary: |
+        - Prestei cuidados de enfermagem a pacientes adultos e idosos em unidades de clínica médica e cuidados paliativos, com foco em conforto, dignidade e continuidade do cuidado.
+        - Realizei triagem, acolhimento, avaliação inicial, administração de medicamentos e orientação de alta hospitalar.
+        - Desenvolvi ações de educação em saúde para pacientes e familiares sobre prevenção de complicações, adesão ao tratamento e autocuidado.
+        - Colaborei com equipe multiprofissional na elaboração de planos de cuidado individualizados e na comunicação de intercorrências.
+        - Apoiei a supervisão de estagiários e novos colaboradores, contribuindo para a integração e capacitação da equipe.
+      keywords:
+        - Clínica Médica
+        - Cuidados Paliativos
+        - Educação em Saúde
+        - Triagem
+  languages:
+    - language: Portuguese
+      fluency: Native or Bilingual Proficiency
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - TOEFL iBT 105
+        - Leitura de artigos científicos
+    - language: Spanish
+      fluency: Limited Working Proficiency
+      keywords:
+        - DELE B1
+  skills:
+    - name: Enfermagem Clínica
+      level: Expert
+      keywords:
+        - Avaliação de Enfermagem
+        - Administração de Medicamentos
+        - Curativos Complexos
+        - Cateterismo Vesical
+        - Coleta de Exames
+    - name: Terapia Intensiva
+      level: Advanced
+      keywords:
+        - Ventilação Mecânica
+        - Monitorização Hemodinâmica
+        - Gasometria Arterial
+        - Protocolos de Sepse
+        - Suporte Avançado de Vida
+    - name: Segurança do Paciente
+      level: Advanced
+      keywords:
+        - Prevenção de Infecção
+        - Higienização das Mãos
+        - Notificação de Eventos
+        - Auditoria de Prontuários
+    - name: Gestão e Liderança
+      level: Advanced
+      keywords:
+        - Escalas de Trabalho
+        - Educação Continuada
+        - Indicadores Assistenciais
+        - Gestão de Conflitos
+    - name: Sistemas de Saúde
+      level: Intermediate
+      keywords:
+        - Prontuário Eletrônico
+        - TASY
+        - MV Soul
+  awards:
+    - title: Prêmio de Excelência em Cuidado ao Paciente
+      date: '2023-11-20'
+      awarder: Hospital Israelita Albert Einstein
+      summary: |
+        Reconhecimento por desempenho consistente na assistência de enfermagem, comunicação empática com pacientes e familiares e compromisso com a segurança do paciente.
+    - title: Destaque Acadêmico em Enfermagem
+      date: '2017-12-10'
+      awarder: Escola de Enfermagem da USP
+      summary: |
+        Concedido a estudantes com alto desempenho acadêmico e envolvimento em atividades de extensão universitária.
+  certificates:
+    - name: Certificação em Suporte Básico de Vida (BLS)
+      issuer: American Heart Association
+      date: '2024-02-15'
+      url: https://www.heart.org/en/courses/bls
+    - name: Especialização em Enfermagem em Terapia Intensiva
+      issuer: Sociedade Brasileira de Terapia Intensiva
+      date: '2021-12-10'
+      url: https://www.sbti.org.br
+    - name: Curso de Interpretação de Gasometria Arterial
+      issuer: Associação Brasileira de Enfermagem
+      date: '2020-08-05'
+      url: https://www.abennacional.org.br
+  publications:
+    - name: Cuidados de Enfermagem na Prevenção de Lesões por Pressão em Pacientes
+        Críticos
+      publisher: Revista Brasileira de Enfermagem
+      releaseDate: '2021-06-30'
+      url: https://www.scielo.br/j/reben/
+      summary: |
+        - Revisão integrativa sobre estratégias de prevenção de lesões por pressão em unidades de terapia intensiva.
+        - Discussão de protocolos assistenciais, avaliação de risco e indicadores de qualidade do cuidado.
+  projects:
+    - name: Programa de Educação Continuada em Segurança do Paciente
+      startDate: '2022-03-01'
+      endDate: '2023-12-15'
+      description: Projeto multiprofissional para reduzir eventos adversos e
+        fortalecer a cultura de segurança em unidades de internação.
+      summary: |
+        - Desenvolvi materiais educativos e treinamentos sobre higienização das mãos, identificação segura do paciente e prevenção de quedas.
+        - Acompanhei indicadores assistenciais e apresentei resultados em reuniões de qualidade.
+        - Contribuí para a integração de novos colaboradores e para a padronização de condutas de enfermagem.
+      keywords:
+        - Segurança do Paciente
+        - Educação Continuada
+        - Indicadores de Qualidade
+      url: https://www.einstein.br/ensino-e-pesquisa
+  interests:
+    - name: Corrida de Rua
+      keywords:
+        - Meia maratona
+        - Treino funcional
+    - name: Leitura
+      keywords:
+        - Literatura brasileira
+        - Saúde pública
+    - name: Voluntariado
+      keywords:
+        - Ações comunitárias
+        - Educação em saúde
+  volunteer:
+    - organization: Associação Brasileira de Enfermagem
+      url: https://www.abennacional.org.br
+      position: Enfermeira Voluntária
+      startDate: '2019-05-01'
+      endDate: '2023-11-30'
+      summary: |
+        - Participei de ações comunitárias de promoção da saúde, prevenção de doenças e educação em saúde.
+        - Apoiei campanhas de vacinação, orientação sobre higiene e cuidados básicos com a saúde da família.
+        - Colaborei na organização de eventos científicos e atividades de atualização profissional.
+
+locale:
+  language: pt-br

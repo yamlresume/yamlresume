@@ -1,0 +1,254 @@
+content:
+  basics:
+    name: Mariana Almeida Campos
+    headline: 'Gerente de Recursos Humanos Sênior | Estratégia de Pessoas e Cultura'
+    phone: '+55 11 98765-4321'
+    email: mariana.campos@exemplo.com.br
+    url: https://www.marianacampos.com.br
+    summary: |
+      - Gerente de Recursos Humanos com mais de 10 anos de experiência em empresas de tecnologia e serviços, liderando times de RH e projetos de transformação organizacional.
+      - Especialista em desenvolvimento de lideranças, gestão de talentos, cultura organizacional e indicadores de pessoas, com forte atuação em parceria com a alta liderança.
+      - Experiência consolidada em legislação trabalhista brasileira, negociação sindical, diversidade e inclusão, além de implantação de políticas de bem-estar e retenção.
+      - Perfil analítico e orientado a resultados, com domínio de ferramentas de análise de dados de pessoas e comunicação clara entre áreas.
+
+  location:
+    address: Rua das Acácias, 128, apto 72
+    city: São Paulo
+    region: São Paulo
+    country: Brazil
+    postalCode: '04567-000'
+
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/marianacamposrh
+      username: marianacamposrh
+    - network: Medium
+      url: https://medium.com/@marianacamposrh
+      username: marianacamposrh
+
+  education:
+    - institution: Universidade de São Paulo
+      url: https://www5.usp.br/
+      degree: Master
+      area: Psicologia Organizacional e do Trabalho
+      score: '3.9'
+      startDate: '2011-03-01'
+      endDate: '2013-12-15'
+      courses:
+        - Comportamento Organizacional
+        - Gestão de Pessoas e Equipes
+        - Métodos de Pesquisa em Psicologia
+        - Saúde Mental no Trabalho
+        - Liderança e Desenvolvimento
+      summary: |
+        - Pesquisa aplicada sobre engajamento e clima organizacional em empresas de médio porte.
+        - Desenvolvimento de competências em diagnóstico organizacional e intervenção em grupos.
+    - institution: Universidade Presbiteriana Mackenzie
+      url: https://www.mackenzie.br/
+      degree: Bachelor
+      area: Psicologia
+      score: '3.7'
+      startDate: '2006-02-01'
+      endDate: '2010-12-10'
+      courses:
+        - Psicologia Social
+        - Psicologia do Trabalho
+        - Recrutamento e Seleção
+        - Treinamento e Desenvolvimento
+      summary: |
+        - Formação generalista com ênfase em psicologia aplicada às organizações.
+        - Participação em projetos de extensão voltados à orientação profissional.
+
+  work:
+    - name: NovaTech Soluções Digitais
+      url: https://www.novatech.com.br
+      position: Gerente de Recursos Humanos
+      startDate: '2020-01-15'
+      summary: |
+        - Liderança de um time de 12 profissionais de RH, responsável por recrutamento, desenvolvimento, remuneração, benefícios e relações trabalhistas para 850 colaboradores.
+        - Implantação do programa de liderança "Trilha de Gestores", com redução de 18% na rotatividade de posições-chave em dois anos.
+        - Redesenho da avaliação de desempenho e do plano de carreira, integrando metas de negócio e competências comportamentais.
+        - Parceria com a diretoria para definição de estratégias de cultura, diversidade e inclusão, alcançando 42% de mulheres em cargos de liderança.
+        - Gestão de indicadores de pessoas e relatórios mensais para o comitê executivo.
+      keywords:
+        - Gestão de Talentos
+        - Cultura Organizacional
+        - Análise de Dados de Pessoas
+        - Liderança
+        - Diversidade e Inclusão
+    - name: Grupo Verde Vida
+      url: https://www.grupoverdevida.com.br
+      position: Coordenadora de Recursos Humanos
+      startDate: '2016-05-02'
+      endDate: '2019-12-20'
+      summary: |
+        - Coordenação das áreas de recrutamento, treinamento e administração de pessoal para unidades em três estados.
+        - Estruturação do programa de integração de novos colaboradores, com melhoria de 25% na retenção nos primeiros seis meses.
+        - Condução de negociações coletivas e interface com sindicatos, garantindo conformidade com a legislação trabalhista.
+        - Desenvolvimento de trilhas de capacitação para equipes operacionais e administrativas.
+      keywords:
+        - Recrutamento e Seleção
+        - Treinamento
+        - Relações Trabalhistas
+        - Integração
+    - name: Consultoria Talentos & Cia
+      url: https://www.talentosecia.com.br
+      position: Analista de Recursos Humanos Sênior
+      startDate: '2012-01-10'
+      endDate: '2016-04-29'
+      summary: |
+        - Atendimento a clientes de diferentes setores em projetos de recrutamento especializado e mapeamento de competências.
+        - Elaboração de descrições de cargos, matrizes de competências e relatórios de diagnóstico organizacional.
+        - Apoio à implantação de políticas de RH e à estruturação de áreas de gestão de pessoas.
+      keywords:
+        - Recrutamento Especializado
+        - Mapeamento de Competências
+        - Diagnóstico Organizacional
+        - Consultoria
+
+  skills:
+    - name: Gestão de Pessoas
+      level: Expert
+      keywords:
+        - Gestão de Talentos
+        - Desenvolvimento de Lideranças
+        - Avaliação de Desempenho
+        - Plano de Carreira
+        - Cultura Organizacional
+    - name: Legislação e Relações Trabalhistas
+      level: Advanced
+      keywords:
+        - Legislação Trabalhista
+        - Negociação Sindical
+        - Conformidade Trabalhista
+        - Auditoria de Pessoal
+    - name: Análise de Dados de Pessoas
+      level: Advanced
+      keywords:
+        - Indicadores de RH
+        - Power BI
+        - Excel Avançado
+        - Relatórios Gerenciais
+    - name: Diversidade e Inclusão
+      level: Advanced
+      keywords:
+        - Programas de Diversidade
+        - Inclusão de PCDs
+        - Equidade de Gênero
+    - name: Liderança e Comunicação
+      level: Expert
+      keywords:
+        - Gestão de Equipes
+        - Feedback
+        - Comunicação Não Violenta
+        - Mediação de Conflitos
+
+  languages:
+    - language: Portuguese
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - Fluente
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - TOEIC 950
+    - language: Spanish
+      fluency: Limited Working Proficiency
+      keywords:
+        - DELE B1
+
+  awards:
+    - title: Prêmio RH Inovador
+      date: '2023-09-20'
+      awarder: Associação Brasileira de Recursos Humanos
+      summary: |
+        Reconhecimento pelo projeto de trilha de liderança e redução de rotatividade em posições-chave.
+    - title: Melhores Empresas para Trabalhar
+      date: '2022-11-10'
+      awarder: Great Place to Work
+      summary: |
+        Participação na conquista do selo para a NovaTech Soluções Digitais, com foco em bem-estar e desenvolvimento.
+
+  certificates:
+    - name: Certificação Profissional em Gestão Estratégica de Pessoas
+      issuer: SHRM
+      date: '2018-06-15'
+      url: https://www.shrm.org/certification
+    - name: Análise de Dados de Pessoas para Gestores
+      issuer: Fundação Getulio Vargas
+      date: '2021-10-05'
+      url: https://educacao-executiva.fgv.br/
+
+  publications:
+    - name: Engajamento e Retenção de Talentos em Empresas de Tecnologia
+      publisher: Revista Brasileira de Gestão de Pessoas
+      releaseDate: '2019-08-01'
+      url: https://www.rbgp.org.br/artigos/engajamento-retencao
+      summary: |
+        Artigo sobre práticas de gestão de pessoas e seus impactos na retenção de profissionais de tecnologia.
+    - name: O Papel da Liderança na Construção de Culturas Inclusivas
+      publisher: Cadernos de Psicologia Organizacional
+      releaseDate: '2021-04-12'
+      url: https://www.cadernospsicologia.org.br/artigos/lideranca-inclusiva
+      summary: |
+        Estudo qualitativo com líderes sobre comportamentos que favorecem ambientes de trabalho diversos e inclusivos.
+
+  projects:
+    - name: Programa Bem-Estar Corporativo
+      startDate: '2022-02-01'
+      endDate: '2023-11-30'
+      description: Programa integrado de saúde mental, qualidade de vida e prevenção
+        ao esgotamento profissional.
+      summary: |
+        - Estruturação de ações de saúde mental, ginástica laboral e apoio psicológico.
+        - Redução de 22% nos afastamentos por transtornos mentais no período.
+      keywords:
+        - Bem-Estar
+        - Saúde Mental
+        - Prevenção ao Esgotamento
+      url: https://www.novatech.com.br/programa-bem-estar
+    - name: Trilha de Liderança para Gestores
+      startDate: '2021-03-01'
+      endDate: '2022-12-15'
+      description: Programa de desenvolvimento de competências de liderança e gestão
+        de equipes.
+      summary: |
+        - Desenho de trilha com oficinas, mentoria e avaliações de comportamento.
+        - Capacitação de 48 gestores em práticas de retorno e gestão de desempenho.
+      keywords:
+        - Liderança
+        - Desenvolvimento
+        - Mentoria
+      url: https://www.novatech.com.br/trilha-lideranca
+
+  interests:
+    - name: Desenvolvimento de Pessoas
+      keywords:
+        - Mentoria
+        - Carreira
+        - Aprendizagem
+    - name: Qualidade de Vida
+      keywords:
+        - Corrida
+        - Ioga
+        - Leitura
+
+  volunteer:
+    - organization: Instituto Capacitar
+      url: https://www.institutocapacitar.org.br
+      position: Mentora Voluntária de Carreira
+      startDate: '2018-04-01'
+      summary: |
+        - Mentoria para jovens em início de carreira e pessoas em transição profissional.
+        - Apoio na elaboração de currículos, preparação para entrevistas e definição de objetivos profissionais.
+    - organization: Rede Mulher Empreendedora
+      url: https://www.redemulherempreendedora.com.br
+      position: Facilitadora de Oficinas
+      startDate: '2019-08-01'
+      endDate: '2023-06-30'
+      summary: |
+        - Condução de oficinas sobre comunicação, liderança e gestão de conflitos.
+        - Colaboração com a comunidade em ações de empoderamento profissional.
+
+locale:
+  language: pt-br

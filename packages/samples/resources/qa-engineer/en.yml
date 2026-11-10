@@ -1,0 +1,234 @@
+content:
+  basics:
+    name: Jordan Ellis
+    headline: 'QA Engineer | Test Automation & Quality Assurance'
+    phone: "(415) 555-0132"
+    email: jordan.ellis@example.com
+    url: https://jordanellis.dev
+    summary: |
+      - Detail-oriented QA Engineer with 6+ years of experience designing and executing comprehensive test strategies for web and mobile applications.
+      - Skilled in test automation using Selenium, Cypress, Playwright, and REST Assured, with a strong focus on reducing release cycles and improving defect detection.
+      - Proven ability to collaborate with cross-functional teams, translate requirements into test cases, and drive quality improvements throughout the SDLC.
+      - Experienced in manual testing, API testing, performance testing, and CI/CD integration, with a commitment to continuous learning and process optimization.
+
+  location:
+    address: 4521 Innovation Way
+    city: San Jose
+    region: California
+    country: United States
+    postalCode: "95112"
+
+  profiles:
+    - network: GitHub
+      url: https://github.com/jordanellis-qa
+      username: jordanellis-qa
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/jordanellisqa
+      username: jordanellisqa
+    - network: Stack Overflow
+      url: https://stackoverflow.com/users/12345678/jordan-ellis
+      username: jordan-ellis
+
+  education:
+    - institution: 'University of California, Davis'
+      url: https://www.ucdavis.edu
+      degree: Bachelor
+      area: Computer Science
+      score: "3.7"
+      startDate: Sep 1, 2014
+      endDate: Jun 15, 2018
+      courses:
+        - Data Structures and Algorithms
+        - Software Engineering
+        - Database Systems
+        - Web Development
+        - Operating Systems
+        - Computer Networks
+        - Introduction to Software Testing
+      summary: |
+        - Graduated with honors and a strong foundation in software engineering principles.
+        - Completed coursework focused on testing methodologies, quality assurance, and software development life cycles.
+        - Led a capstone project on automated regression testing for a campus web portal.
+
+  work:
+    - name: BrightWave Technologies
+      url: https://www.brightwave-tech.com
+      position: Senior QA Engineer
+      startDate: Jan 10, 2022
+      summary: |
+        - Lead QA efforts for a suite of SaaS products, defining test strategies and ensuring high-quality releases.
+        - Built and maintained automated test suites using Cypress and Playwright, increasing regression coverage by 45%.
+        - Integrated automated tests into CI/CD pipelines with GitHub Actions, reducing release validation time from 3 days to 8 hours.
+        - Mentored junior QA engineers, conducted code reviews, and established testing best practices across the team.
+        - Collaborated with product managers and developers to review requirements and identify risks early in the development cycle.
+      keywords:
+        - Test Automation
+        - Cypress
+        - Playwright
+        - CI/CD
+        - Mentoring
+    - name: Nova Retail Systems
+      url: https://www.novaretailsystems.com
+      position: QA Engineer
+      startDate: Mar 5, 2019
+      endDate: Dec 20, 2021
+      summary: |
+        - Designed and executed manual and automated test cases for web and mobile retail applications.
+        - Developed API test suites using Postman and REST Assured, validating microservices and third-party integrations.
+        - Reduced production defects by 30% through improved regression testing and defect triage processes.
+        - Participated in Agile ceremonies and contributed to sprint planning, estimation, and continuous improvement.
+        - Maintained test documentation and reported quality metrics to stakeholders using Jira and Confluence.
+      keywords:
+        - Manual Testing
+        - API Testing
+        - Postman
+        - Jira
+        - Regression Testing
+    - name: CloudSprint Inc.
+      url: https://www.cloudsprint.io
+      position: Junior QA Analyst
+      startDate: Jul 1, 2018
+      endDate: Feb 28, 2019
+      summary: |
+        - Executed test cases for cloud-based applications and documented defects with clear reproduction steps.
+        - Assisted in the creation of test plans and test scripts based on business requirements.
+        - Performed smoke, functional, and regression testing during release cycles.
+        - Worked closely with senior QA engineers to learn automation frameworks and testing tools.
+      keywords:
+        - Test Cases
+        - Bug Tracking
+        - SQL
+        - Agile
+
+  skills:
+    - name: Test Automation
+      level: Expert
+      keywords:
+        - Selenium
+        - Cypress
+        - Playwright
+        - Appium
+        - REST Assured
+    - name: Manual Testing
+      level: Advanced
+      keywords:
+        - Test Planning
+        - Regression Testing
+        - Exploratory Testing
+        - User Acceptance Testing
+    - name: Performance Testing
+      level: Intermediate
+      keywords:
+        - JMeter
+        - LoadRunner
+        - Gatling
+    - name: 'DevOps & Tools'
+      level: Advanced
+      keywords:
+        - Jenkins
+        - GitHub Actions
+        - Docker
+        - Git
+        - Jira
+    - name: Programming
+      level: Advanced
+      keywords:
+        - Python
+        - JavaScript
+        - Java
+        - SQL
+        - Bash
+
+  languages:
+    - language: English
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - Technical Writing
+        - Public Speaking
+    - language: Spanish
+      fluency: Limited Working Proficiency
+      keywords:
+        - DELE B2
+        - Conversational
+
+  awards:
+    - title: Quality Champion Award
+      date: Nov 2023
+      awarder: BrightWave Technologies
+      summary: |
+        Recognized for outstanding contributions to test automation and quality process improvements, leading to a 40% reduction in escaped defects.
+
+  certificates:
+    - name: ISTQB Certified Tester Foundation Level
+      issuer: ISTQB
+      date: Aug 2019
+      url: https://www.istqb.org/certifications
+    - name: Certified Selenium Professional
+      issuer: Selenium Academy
+      date: Feb 2021
+      url: https://www.seleniumacademy.com
+
+  publications:
+    - name: Automating Accessibility Checks in CI Pipelines
+      publisher: Ministry of Testing
+      releaseDate: Apr 2023
+      url: https://www.ministryoftesting.com/articles/automating-accessibility-checks
+      summary: |
+        - Discusses strategies for integrating accessibility testing into automated CI/CD workflows.
+        - Covers tools such as axe-core, Pa11y, and Lighthouse.
+        - Provides practical examples for reducing accessibility defects in web applications.
+
+  projects:
+    - name: OpenCart QA Test Suite
+      url: https://github.com/jordanellis-qa/opencart-qa-suite
+      description: Open-source test suite for e-commerce checkout flows
+      startDate: Jan 2021
+      endDate: May 2021
+      summary: |
+        - Developed a Selenium-based test suite covering cart, checkout, and payment workflows.
+        - Implemented Page Object Model and data-driven testing with Pytest.
+        - Configured GitHub Actions to run tests on every pull request.
+      keywords:
+        - Selenium
+        - Python
+        - Pytest
+        - Page Object Model
+    - name: API Contract Testing Framework
+      url: https://github.com/jordanellis-qa/api-contract-testing
+      description: Lightweight framework for validating API contracts across microservices
+      startDate: Sep 2022
+      endDate: Feb 2023
+      summary: |
+        - Built a reusable framework using Python and JSON Schema to validate API request/response contracts.
+        - Integrated with Postman and Newman for CI execution.
+        - Reduced integration defects by catching schema mismatches early.
+      keywords:
+        - API Testing
+        - JSON Schema
+        - Python
+        - Postman
+
+  interests:
+    - name: Open Source
+      keywords:
+        - Testing
+        - Automation
+        - Community
+    - name: Outdoor Activities
+      keywords:
+        - Hiking
+        - Cycling
+        - Photography
+
+  volunteer:
+    - organization: Bay Area Quality Assurance Association
+      url: https://www.baqaa.org
+      position: Workshop Volunteer
+      startDate: Feb 2020
+      summary: |
+        - Volunteer workshop facilitator for introductory test automation sessions.
+        - Helped organize quarterly meetups and mentored attendees new to QA.
+        - Contributed to the association's knowledge-sharing initiatives.
+
+locale:
+  language: en

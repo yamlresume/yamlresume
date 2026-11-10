@@ -1,0 +1,297 @@
+content:
+  basics:
+    name: Daniel R. Whitaker
+    headline: 'Senior Mechanical Engineer | Product Design & Manufacturing'
+    phone: "(512) 555-0147"
+    email: daniel.whitaker@example.com
+    url: https://www.danielwhitaker-engineering.com
+    summary: |
+      - Senior mechanical engineer with 10+ years of experience in product design, analysis, and manufacturing for automotive and industrial systems
+      - Proven record of taking concepts from requirements through CAD, prototype validation, and production launch
+      - Strong background in GD&T, FEA, DFM, and root-cause analysis; comfortable leading cross-functional teams and suppliers
+      - Committed to designing reliable, cost-effective, and sustainable mechanical solutions for demanding operating environments
+
+  location:
+    address: 4821 Cedar Ridge Drive
+    city: Austin
+    region: Texas
+    country: United States
+    postalCode: "78731"
+
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/daniel-whitaker-me
+      username: daniel-whitaker-me
+    - network: GitHub
+      url: https://github.com/dwhitaker-eng
+      username: dwhitaker-eng
+
+  education:
+    - institution: University of Texas at Austin
+      url: https://www.utexas.edu
+      degree: Master
+      area: Mechanical Engineering
+      score: "3.9"
+      startDate: Aug 1, 2012
+      endDate: May 15, 2014
+      courses:
+        - Advanced Thermodynamics
+        - Finite Element Methods
+        - Mechanical Vibrations
+        - Design for Manufacturing
+        - Robotics and Automation
+        - Computational Fluid Dynamics
+      summary: |
+        - Focused on design optimization, simulation, and advanced manufacturing methods
+        - Completed thesis on lightweight structural mounts for electric vehicle powertrains
+        - Served as graduate teaching assistant for the senior capstone design course
+    - institution: Texas A&M University
+      url: https://www.tamu.edu
+      degree: Bachelor
+      area: Mechanical Engineering
+      score: "3.8"
+      startDate: Aug 1, 2008
+      endDate: May 15, 2012
+      courses:
+        - Statics and Dynamics
+        - Materials Science
+        - Machine Design
+        - Manufacturing Processes
+        - Heat Transfer
+        - Instrumentation and Measurement
+      summary: |
+        - Built a strong foundation in mechanics, materials, and product design
+        - Led a Formula SAE team project focused on chassis and suspension improvements
+        - Graduated with honors and completed an industry internship in automotive manufacturing
+
+  work:
+    - name: Apex Mechanical Systems
+      url: https://www.apexmechsystems.com
+      position: Senior Mechanical Engineer
+      startDate: Jan 6, 2020
+      summary: |
+        - Lead mechanical design for industrial actuation and enclosure platforms, owning requirements, architecture, detailed CAD, and production release
+        - Drive FEA, thermal, and tolerance stack-up analyses to validate performance, reliability, and safety margins before prototype builds
+        - Partner with electrical, software, manufacturing, and supply-chain teams to launch cost-effective designs into low- and high-volume production
+        - Mentor junior engineers and standardize design-review, DFMEA, and drawing-check processes across the mechanical team
+      keywords:
+        - Product Development
+        - GD&T
+        - FEA
+        - DFM
+        - Supplier Qualification
+    - name: NovaDrive Powertrain
+      url: https://www.novadrivepowertrain.com
+      position: Mechanical Design Engineer
+      startDate: Jun 1, 2016
+      endDate: Dec 20, 2019
+      summary: |
+        - Designed aluminum and steel powertrain components for hybrid and electric drivetrains, from concept through validation and launch
+        - Created 3D CAD models, detailed drawings, and tolerance analyses using SolidWorks and Creo in a PLM-controlled environment
+        - Led root-cause investigations for durability and NVH issues, implementing design and process corrective actions with suppliers
+        - Supported prototype builds, dyno testing, and production trials, reducing component mass by 12% without compromising strength
+      keywords:
+        - Powertrain
+        - SolidWorks
+        - Tolerance Analysis
+        - NVH
+        - Validation Testing
+    - name: Cascade Robotics
+      url: https://www.cascaderobotics.com
+      position: Manufacturing Engineer
+      startDate: Jul 1, 2014
+      endDate: May 25, 2016
+      summary: |
+        - Owned manufacturing processes for precision-machined and sheet-metal assemblies used in collaborative robot systems
+        - Developed work instructions, fixtures, and inspection plans; improved first-pass yield from 88% to 96% on a key assembly line
+        - Applied Lean and Six Sigma methods to reduce cycle time, scrap, and variability while maintaining tight dimensional tolerances
+        - Collaborated with design engineering on DFM reviews and ECO implementation for new product introductions
+      keywords:
+        - Lean Manufacturing
+        - Six Sigma
+        - CNC Machining
+        - Fixture Design
+        - Process Improvement
+
+  languages:
+    - language: English
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - Technical writing
+        - Public speaking
+    - language: Spanish
+      fluency: Limited Working Proficiency
+      keywords:
+        - Conversational Spanish
+        - Supplier communication
+    - language: German
+      fluency: Elementary Proficiency
+      keywords:
+        - Basic conversation
+
+  skills:
+    - name: Mechanical Design
+      level: Expert
+      keywords:
+        - SolidWorks
+        - Creo
+        - AutoCAD
+        - 'GD&T'
+        - DFM
+        - Tolerance Analysis
+    - name: 'Analysis & Simulation'
+      level: Advanced
+      keywords:
+        - ANSYS
+        - Abaqus
+        - FEA
+        - CFD
+        - Thermal Analysis
+        - MATLAB
+    - name: 'Manufacturing & Quality'
+      level: Advanced
+      keywords:
+        - Lean Manufacturing
+        - Six Sigma
+        - CNC Machining
+        - Injection Molding
+        - SPC
+        - Root Cause Analysis
+    - name: Project Leadership
+      level: Advanced
+      keywords:
+        - Cross-functional Teams
+        - Agile
+        - Vendor Management
+        - Budgeting
+        - Risk Mitigation
+    - name: 'Software & Automation'
+      level: Intermediate
+      keywords:
+        - Python
+        - LabVIEW
+        - PLC Programming
+        - Minitab
+        - Jira
+
+  awards:
+    - title: Engineering Excellence Award
+      date: Nov 2023
+      awarder: Apex Mechanical Systems
+      summary: |
+        Recognized for leading the redesign of a high-volume actuation platform that reduced field failures by 35% and lowered manufacturing cost by 18%.
+    - title: Innovation Patent Award
+      date: Mar 2019
+      awarder: NovaDrive Powertrain
+      summary: |
+        Awarded for a lightweight mounting concept that improved durability and simplified assembly for an electric-drive module.
+
+  certificates:
+    - name: Professional Engineer (PE) License
+      issuer: Texas Board of Professional Engineers
+      date: Jun 2019
+      url: https://engineers.texas.gov
+    - name: Certified SolidWorks Professional (CSWP)
+      issuer: Dassault Systèmes
+      date: Feb 2015
+      url: https://www.solidworks.com/certification
+    - name: Six Sigma Green Belt
+      issuer: ASQ
+      date: Sep 2017
+      url: https://asq.org/certification
+
+  publications:
+    - name: Design Optimization of Lightweight Powertrain Mounts for Electric Vehicles
+      publisher: Journal of Mechanical Design
+      releaseDate: Apr 2021
+      url: https://asmedigitalcollection.asme.org/mechanicaldesign
+      summary: |
+        - Presents a topology-optimization workflow for aluminum-intensive mounts that balances stiffness, durability, and mass
+        - Validates simulation results with physical testing and discusses implications for NVH and assembly
+        - Provides practical guidance for engineers designing lightweight structural components in electrified powertrains
+
+  projects:
+    - name: Lightweight EV Powertrain Mount
+      url: https://www.apexmechsystems.com/projects/ev-mount
+      description: Aluminum-intensive mount designed to reduce mass while meeting
+        durability and NVH targets.
+      startDate: Jan 2022
+      endDate: Aug 2022
+      summary: |
+        - Led concept generation, CAD, FEA, and prototype validation for a next-generation powertrain mount
+        - Reduced mass by 22% versus the incumbent design while improving stiffness and fatigue life
+        - Worked with casting and machining suppliers to transition the design into production
+      keywords:
+        - Lightweighting
+        - Topology Optimization
+        - Fatigue
+        - Casting
+    - name: Automated Assembly Cell Retrofit
+      url: https://www.novadrivepowertrain.com/projects/assembly-cell
+      description: Retrofit of a manual powertrain assembly cell with semi-automated
+        fixtures and error-proofing.
+      startDate: Mar 2018
+      endDate: Nov 2018
+      summary: |
+        - Specified fixtures, sensors, and PLC logic to reduce operator error and improve cycle time
+        - Collaborated with controls and safety teams to commission the cell and validate capability
+        - Achieved a 20% throughput gain and a 30% reduction in rework during the first quarter after launch
+      keywords:
+        - Automation
+        - Fixture Design
+        - PLC
+        - Process Validation
+    - name: Solar Thermal Collector Test Stand
+      url: https://www.utexas.edu
+      description: Laboratory test stand for evaluating solar thermal collector
+        efficiency under controlled conditions.
+      startDate: Sep 2013
+      endDate: May 2014
+      summary: |
+        - Designed and built instrumentation, plumbing, and data-acquisition hardware for a graduate research project
+        - Calibrated sensors and analyzed thermal performance across varying flow rates and irradiance levels
+        - Documented results in a thesis chapter and presented findings to the research group
+      keywords:
+        - Thermal Systems
+        - Instrumentation
+        - Data Acquisition
+        - Testing
+
+  interests:
+    - name: Mountain Biking
+      keywords:
+        - Trail Riding
+        - Bike Maintenance
+        - Endurance Training
+    - name: Woodworking
+      keywords:
+        - Furniture Design
+        - Hand Tools
+        - Joinery
+    - name: Robotics
+      keywords:
+        - FIRST Mentoring
+        - Arduino
+        - ROS
+
+  volunteer:
+    - organization: FIRST Robotics Competition
+      url: https://www.firstinspires.org/robotics/frc
+      position: Engineering Mentor
+      startDate: Sep 2017
+      summary: |
+        - Mentor a high-school robotics team on mechanical design, fabrication, and competition strategy
+        - Guide students through CAD, prototyping, and design reviews, reinforcing safe and iterative engineering practices
+        - Help organize shop training and regional event preparation for a team of 30+ students
+    - organization: Engineers Without Borders USA
+      url: https://www.ewb-usa.org
+      position: Project Volunteer
+      startDate: Jan 2015
+      endDate: Dec 2016
+      summary: |
+        - Supported a clean-water project by helping design and test a small-scale pumping and filtration system
+        - Assisted with technical documentation, supplier coordination, and community feedback sessions
+        - Participated in fundraising and outreach activities to sustain the chapter's project pipeline
+
+locale:
+  language: en

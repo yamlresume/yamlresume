@@ -1,0 +1,217 @@
+content:
+  basics:
+    name: 陳嘉怡
+    headline: 註冊護士｜內科及老人科護理
+    phone: "+852 9123 4567"
+    email: chankayi.rn@gmail.com
+    url: https://www.linkedin.com/in/chankayi-rn
+    summary: |
+      具備五年內科及老人科臨床經驗的註冊護士，專注於病人評估、藥物管理、感染控制及出院規劃。能在高壓環境中保持細心、冷靜，並與跨專業團隊緊密合作。
+
+      - 熟悉香港公立醫院臨床流程及電子健康紀錄系統
+      - 擅長與長者、家屬及照顧者溝通，提供適切健康教育
+      - 曾參與病房質素改善項目，提升跌倒預防及壓瘡護理成效
+      - 持有 BLS、ACLS 及感染控制相關證書
+  location:
+    address: 九龍旺角彌敦道 700 號
+    city: 香港
+    region: 九龍
+    country: Hong Kong
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/chankayi-rn
+      username: chankayi-rn
+    - network: Medium
+      url: https://medium.com/@chankayi.rn
+      username: chankayi.rn
+  education:
+    - institution: 香港大學護理學院
+      url: https://nursing.hku.hk/
+      degree: Bachelor
+      area: 護理學
+      score: "3.6/4.0"
+      startDate: Sep 1, 2016
+      endDate: Jun 30, 2020
+      courses:
+        - 基礎護理學
+        - 內科護理學
+        - 外科護理學
+        - 老人科護理
+        - 急症及創傷護理
+        - 藥理學
+        - 感染控制
+        - 社區健康護理
+      summary: |
+        - 完成超過 1,000 小時臨床實習，涵蓋內科、外科、急症室及社區護理
+        - 畢業論文探討長者跌倒風險評估工具在病房中的應用
+        - 獲選為護理學院臨床傑出表現學生
+  work:
+    - name: 瑪麗醫院
+      url: https://www.ha.org.hk/qmh
+      position: 註冊護士（內科及老人科）
+      startDate: Jan 3, 2022
+      summary: |
+        - 負責內科及老人科病房約 30 名病人的日常護理，包括生命表徵監測、藥物管理及傷口護理
+        - 進行入院評估、跌倒風險及壓瘡風險篩查，制定個人化護理計劃
+        - 與醫生、物理治療師、職業治療師及社工協作，安排出院規劃及社區支援
+        - 指導新入職護士及護士學生，提供臨床技巧及感染控制培訓
+        - 參與病房質素改善小組，推行跌倒預防及手部衛生依從性提升計劃
+      keywords:
+        - 內科護理
+        - 老人科護理
+        - 出院規劃
+        - 臨床評估
+        - 感染控制
+    - name: 伊利沙伯醫院
+      url: https://www.ha.org.hk/qeh
+      position: 註冊護士（急症室）
+      startDate: Jul 1, 2020
+      endDate: Dec 31, 2021
+      summary: |
+        - 於急症室分流站進行初步評估及生命表徵監測，按病情優先次序安排診治
+        - 協助醫生進行急救、縫合、石膏固定及小型手術程序
+        - 處理靜脈輸液、藥物注射、血液樣本採集及化驗安排
+        - 向病人及家屬解釋治療流程，提供離院護理指示及社區資源轉介
+        - 參與急症室感染控制及災難應變演練
+      keywords:
+        - 急症護理
+        - 病人分流
+        - 急救護理
+        - 靜脈治療
+        - 災難應變
+  skills:
+    - name: 臨床護理
+      level: Expert
+      keywords:
+        - 病人評估
+        - 藥物管理
+        - 傷口護理
+        - 靜脈治療
+        - 生命表徵監測
+    - name: 老人科及復康護理
+      level: Advanced
+      keywords:
+        - 跌倒風險評估
+        - 壓瘡預防
+        - 失智症護理
+        - 出院規劃
+        - 照顧者支援
+    - name: 感染控制
+      level: Advanced
+      keywords:
+        - 手部衛生
+        - 隔離措施
+        - 醫療廢物處理
+        - 個人防護裝備
+    - name: 醫療資訊系統
+      level: Intermediate
+      keywords:
+        - 電子健康紀錄
+        - 臨床資訊系統
+        - 病歷管理
+        - 數據記錄
+    - name: 溝通與團隊協作
+      level: Advanced
+      keywords:
+        - 跨專業合作
+        - 病人教育
+        - 家屬溝通
+        - 臨床指導
+  languages:
+    - language: Cantonese
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - 母語
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - IELTS 7.5
+        - 臨床英語溝通
+    - language: Mandarin
+      fluency: Limited Working Proficiency
+      keywords:
+        - 基本會話
+  awards:
+    - title: 護理學院臨床傑出表現獎
+      date: Jun 2020
+      awarder: 香港大學護理學院
+      summary: |
+        表揚在臨床實習中展現卓越護理技巧、專業態度及病人溝通的畢業生。
+    - title: 優秀護士獎
+      date: Nov 2023
+      awarder: 瑪麗醫院內科及老人科
+      summary: |
+        表揚在跌倒預防及病人安全教育方面的積極貢獻。
+  certificates:
+    - name: 註冊護士執業證明書
+      issuer: 香港護士管理局
+      date: Aug 2020
+      url: https://www.nchk.org.hk/
+    - name: 基本生命支援（BLS）證書
+      issuer: 美國心臟協會
+      date: Mar 2024
+      url: https://cpr.heart.org/
+    - name: 高級心血管生命支援（ACLS）證書
+      issuer: 美國心臟協會
+      date: May 2024
+      url: https://cpr.heart.org/
+    - name: 感染控制基礎課程證書
+      issuer: 醫院管理局
+      date: Jan 2023
+      url: https://www.ha.org.hk/
+  publications:
+    - name: 長者跌倒風險評估工具於內科病房的應用
+      publisher: 香港護理雜誌
+      releaseDate: Dec 2023
+      url: https://www.hkna.org.hk/
+      summary: |
+        - 回顧常用跌倒風險評估工具在本地內科及老人科病房的適用性
+        - 分析護理人員執行評估時的常見困難及改善建議
+        - 提出結合電子健康紀錄提示的可行方案
+  projects:
+    - name: 病房跌倒預防質素改善計劃
+      url: https://www.ha.org.hk/qmh
+      description: 針對內科及老人科病房設計的跌倒預防改善項目
+      startDate: Mar 2023
+      endDate: Nov 2023
+      summary: |
+        - 分析病房跌倒事件數據及環境風險因素
+        - 設計床邊提示卡、家屬教育單張及夜間巡房流程
+        - 與物理治療師合作推行長者平衡訓練
+        - 計劃推行後病房跌倒率下降約 18%
+      keywords:
+        - 跌倒預防
+        - 質素改善
+        - 病人安全
+        - 長者護理
+  interests:
+    - name: 身心健康
+      keywords:
+        - 瑜伽
+        - 遠足
+        - 跑步
+    - name: 社區服務
+      keywords:
+        - 長者探訪
+        - 健康講座
+        - 急救教育
+  volunteer:
+    - organization: 香港紅十字會
+      url: https://www.redcross.org.hk/
+      position: 急救義工
+      startDate: Jun 2019
+      summary: |
+        - 為大型社區活動提供急救支援及健康諮詢
+        - 協助舉辦心肺復甦法及基本急救訓練
+        - 向長者及照顧者推廣家居安全及跌倒預防
+    - organization: 基督教靈實協會
+      url: https://www.hohcs.org.hk/
+      position: 長者探訪義工
+      startDate: Jan 2021
+      endDate: Dec 2023
+      summary: |
+        - 定期探訪獨居長者，提供情緒支援及健康監測
+        - 協助轉介社區資源及安排覆診交通
+
+locale:
+  language: zh-hant-hk

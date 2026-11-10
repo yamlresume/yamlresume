@@ -1,0 +1,240 @@
+content:
+  basics:
+    name: Sanne de Vries
+    headline: Senior HR-manager met focus op mens en cultuur
+    phone: "+31 6 1234 5678"
+    email: sanne.devries@example.nl
+    url: https://www.sannedevries.nl
+    summary: |
+      - Senior HR-manager met meer dan tien jaar ervaring in strategisch HRM, talentmanagement en organisatieontwikkeling.
+      - Bewezen trackrecord in het vertalen van bedrijfsdoelen naar personeelsagenda's met meetbare impact op verloop, betrokkenheid en productiviteit.
+      - Sterk in stakeholdermanagement, arbeidsrecht en verandermanagement binnen complexe, internationale organisaties.
+      - Datagedreven en mensgericht; coacht leidinggevenden en bouwt HR-teams die proactief bijdragen aan de bedrijfsresultaten.
+  location:
+    address: Prinsengracht 456
+    city: Amsterdam
+    region: Noord-Holland
+    country: Netherlands
+    postalCode: "1016 HK"
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/sannedevries
+      username: sannedevries
+    - network: Medium
+      url: https://medium.com/@sannedevries
+      username: sannedevries
+  education:
+    - institution: Universiteit van Amsterdam
+      url: https://www.uva.nl
+      degree: Master
+      area: Arbeids- en Organisatiepsychologie
+      score: "8,2"
+      startDate: '2011-09-01'
+      endDate: '2013-06-30'
+      courses:
+        - Arbeids- en organisatiepsychologie
+        - Strategisch HRM
+        - Onderzoeksmethoden
+        - Verandermanagement
+        - Arbeidsrecht
+      summary: |
+        - Afgestudeerd op de relatie tussen leiderschapsstijl en betrokkenheid in hybride teams.
+        - Verdieping in arbeids- en organisatiepsychologie, onderzoeksmethoden en HR-analytics.
+        - Scriptie beoordeeld met een 8,7.
+    - institution: Hogeschool van Amsterdam
+      url: https://www.hva.nl
+      degree: Bachelor
+      area: Human Resource Management
+      score: "8,5"
+      startDate: '2007-09-01'
+      endDate: '2011-06-30'
+      courses:
+        - Human Resource Management
+        - Arbeidsrecht
+        - Organisatiekunde
+        - Communicatie
+        - Personeelsplanning
+      summary: |
+        - Breed fundament in HRM, arbeidsrecht en organisatiekunde.
+        - Stage bij een regionale zorgorganisatie op het gebied van werving en selectie.
+  work:
+    - name: PeopleHub Nederland
+      url: https://www.peoplehub.nl
+      position: Senior HR-manager
+      startDate: '2021-03-01'
+      summary: |
+        - Ontwikkelt en implementeert de HR-strategie voor een organisatie van 750 medewerkers.
+        - Stuurt een team van vijf HR-professionals aan en realiseert een jaarlijkse daling van 18% in verloop.
+        - Adviseert directie en MT over organisatieontwikkeling, talentmanagement en arbeidsrechtelijke vraagstukken.
+        - Trekt het HR-analytics-programma en vertaalt data naar concrete interventies voor behoud en ontwikkeling.
+      keywords:
+        - HR-strategie
+        - Talentmanagement
+        - HR-analytics
+        - Leiderschapsontwikkeling
+        - Arbeidsrecht
+    - name: Van Dijk Retail Groep
+      url: https://www.vandijkretail.nl
+      position: HR-manager
+      startDate: '2016-09-01'
+      endDate: '2021-02-28'
+      summary: |
+        - Verantwoordelijk voor HR-beleid, werving en selectie, onboarding en prestatiemanagement voor 12 vestigingen.
+        - Begeleidde een reorganisatie met behoud van 95% van kritische functies.
+        - Introduceerde een medewerkersonderzoek met een respons van 89% en koppelde resultaten aan verbeterplannen.
+        - Onderhandelde met vakbonden over CAO-afspraken en sociale plannen.
+      keywords:
+        - Reorganisatie
+        - Werving en selectie
+        - Medezeggenschap
+        - CAO
+        - Prestatiemanagement
+    - name: TalentWerk Advies
+      url: https://www.talentwerkadvies.nl
+      position: HR-adviseur
+      startDate: '2013-09-01'
+      endDate: '2016-08-31'
+      summary: |
+        - Adviseerde operationele managers in logistiek en customer service over HR-vraagstukken.
+        - Ontwikkelde een onboardingprogramma dat de time-to-productivity met drie weken verkortte.
+        - Behandelde verzuim- en reintegratietrajecten in samenwerking met bedrijfsarts en leidinggevenden.
+        - Voerde HR-analyses uit en rapporteerde maandelijks over verzuim, verloop en bezetting.
+      keywords:
+        - Onboarding
+        - Verzuimbegeleiding
+        - HR-administratie
+        - Adviesvaardigheden
+  languages:
+    - language: Dutch
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - Moedertaal
+        - Zakelijk schrijven
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - TOEFL iBT 108
+        - Zakelijke communicatie
+    - language: German
+      fluency: Limited Working Proficiency
+      keywords:
+        - Goethe-Zertifikat B1
+  skills:
+    - name: Strategisch HRM
+      level: Expert
+      keywords:
+        - HR-strategie
+        - Organisatieontwikkeling
+        - Personeelsplanning
+    - name: Talentmanagement
+      level: Advanced
+      keywords:
+        - Werving en selectie
+        - Onboarding
+        - Successieplanning
+        - Prestatiemanagement
+    - name: Arbeidsrecht en compliance
+      level: Advanced
+      keywords:
+        - CAO
+        - Arbeidsomstandigheden
+        - Medezeggenschap
+        - Privacy (AVG)
+    - name: Verandermanagement
+      level: Advanced
+      keywords:
+        - Cultuurverandering
+        - Stakeholdermanagement
+        - Lean
+    - name: HR-analytics
+      level: Intermediate
+      keywords:
+        - Power BI
+        - Excel
+        - HR-dashboards
+        - Data-gedreven besluitvorming
+    - name: Communicatie
+      level: Expert
+      keywords:
+        - Coaching
+        - Onderhandelen
+        - Presenteren
+        - Adviesvaardigheden
+  awards:
+    - title: HR Professional van het Jaar 2023
+      date: '2023-11-16'
+      awarder: Nederlandse Vereniging voor Personeelsmanagement
+      summary: |
+        - Prijswinnaar in de categorie strategisch HRM vanwege het programma Duurzame Inzetbaarheid.
+        - Jury prees de datagedreven aanpak en meetbare impact op verloop en betrokkenheid.
+  certificates:
+    - name: SHRM-SCP
+      issuer: SHRM
+      date: '2020-05-01'
+      url: https://www.shrm.org/certification
+    - name: Gecertificeerd Medezeggenschapsadviseur
+      issuer: FNV
+      date: '2019-10-01'
+      url: https://www.fnv.nl
+    - name: HR Analytics Fundamentals
+      issuer: Coursera
+      date: '2022-03-01'
+      url: https://www.coursera.org
+  publications:
+    - name: "Wendbaar werken: van ambitie naar routines"
+      publisher: Kluwer HRM
+      releaseDate: '2022-04-15'
+      url: https://www.kluwer.nl/hrm
+      summary: |
+        - Praktijkboek over het vertalen van strategische HR-doelen naar dagelijkse routines.
+        - Met casuïstiek uit retail, zorg en technologie.
+  references:
+    - name: Marieke Jansen
+      phone: "+31 20 123 4567"
+      relationship: Directeur HR bij PeopleHub Nederland
+      email: m.jansen@peoplehub.nl
+      summary: |
+        Sanne is een strategische en daadkrachtige HR-manager die complexe HR-vraagstukken vertaalt naar heldere plannen en meetbare resultaten. Zij combineert scherpe analyse met oprechte aandacht voor mensen en is een waardevolle sparringpartner voor elk managementteam.
+  projects:
+    - name: Programma Duurzame Inzetbaarheid
+      url: https://www.peoplehub.nl/projecten/duurzame-inzetbaarheid
+      description: Organisatiebreed programma om werkplezier, vitaliteit en blijvende
+        inzetbaarheid van medewerkers te versterken.
+      startDate: '2022-01-01'
+      endDate: '2022-12-31'
+      summary: |
+        - Ontwikkelde een meetbaar interventieportfolio voor 750 medewerkers.
+        - Realiseerde een daling van het verzuim met 1,8 procentpunt en een stijging van de betrokkenheidsscore met 12 punten.
+        - Werkte samen met bedrijfsarts, OR en lijnmanagement aan preventie en reintegratie.
+      keywords:
+        - Vitaliteit
+        - Verzuimpreventie
+        - Betrokkenheid
+        - HR-analytics
+  interests:
+    - name: Vrijwilligerswerk
+      keywords:
+        - Loopbaancoaching
+        - Mentoring
+    - name: Sport
+      keywords:
+        - Hardlopen
+        - Wielrennen
+        - Yoga
+    - name: Cultuur
+      keywords:
+        - Literatuur
+        - Musea
+        - Toneel
+  volunteer:
+    - organization: Stichting LoopbaanLab
+      url: https://www.loopbaanlab.nl
+      position: Loopbaanmentor
+      startDate: '2018-09-01'
+      summary: |
+        - Begeleidt jaarlijks vijf professionals bij loopbaanvragen en re-integratie.
+        - Verzorgt workshops over personal branding en solliciteren.
+        - Draagt bij aan de ontwikkeling van laagdrempelige loopbaantools.
+
+locale:
+  language: nl

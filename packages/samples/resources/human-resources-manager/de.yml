@@ -1,0 +1,266 @@
+content:
+  basics:
+    name: Dr. Katharina Vogel
+    headline: 'Senior HR Managerin – Personalentwicklung, Arbeitsrecht & Change'
+    phone: "+49 30 5487 2190"
+    email: katharina.vogel@hr-vogel.de
+    url: https://www.katharina-vogel-hr.de
+    summary: |
+      Senior HR Managerin mit über zehn Jahren Erfahrung in der Personalarbeit mittelständischer und wachsender Technologieunternehmen. Schwerpunkte: strategische Personalentwicklung, Arbeitsrecht, Employer Branding und die Begleitung von Veränderungsprozessen.
+
+      - Erfolgreiche Leitung eines HR-Teams von bis zu acht Personen und Verantwortung für rund 450 Mitarbeitende
+      - Aufbau datenbasierter HR-Prozesse, Einführung von SAP SuccessFactors und Personio
+      - Enge Zusammenarbeit mit Geschäftsführung, Betriebsrat und Führungskräften zur Stärkung einer werteorientierten Unternehmenskultur
+      - Ausgeprägte Kommunikationsstärke, diplomatisches Geschick und hohe Umsetzungsorientierung
+  location:
+    address: Friedrichstraße 112
+    city: Berlin
+    region: Berlin
+    country: Germany
+    postalCode: "10117"
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/katharina-vogel-hr
+      username: katharina-vogel-hr
+    - network: Medium
+      url: https://medium.com/@katharina.vogel.hr
+      username: katharina.vogel.hr
+  education:
+    - institution: Humboldt-Universität zu Berlin
+      url: https://www.hu-berlin.de
+      degree: Master
+      area: Personalmanagement und Arbeitsrecht
+      score: "1,7"
+      startDate: "2010-10-01"
+      endDate: "2013-09-30"
+      courses:
+        - Arbeitsrecht im Personalwesen
+        - Strategisches Personalmanagement
+        - Organisationspsychologie
+        - Vergütungsmanagement
+        - Change Management
+        - Arbeitsmarktpolitik
+      summary: |
+        - Schwerpunkt auf strategischer Personalarbeit und arbeitsrechtlichen Fragestellungen
+        - Praxisprojekte zu Talentmanagement und Mitarbeiterbindung
+        - Ausgezeichnete Studienleistungen und stipendierte Forschungsarbeit
+    - institution: Universität Hamburg
+      url: https://www.uni-hamburg.de
+      degree: Bachelor
+      area: Betriebswirtschaftslehre
+      score: "1,9"
+      startDate: "2007-10-01"
+      endDate: "2010-09-30"
+      courses:
+        - Personalwirtschaft
+        - Organisation und Führung
+        - Wirtschaftsrecht
+        - Statistik
+        - Kosten- und Leistungsrechnung
+      summary: |
+        - Fundierte betriebswirtschaftliche Grundlagen mit personalwirtschaftlichem Schwerpunkt
+        - Teilnahme an Fallstudien zu Personalstrategie und Organisationsentwicklung
+  work:
+    - name: Nordlicht Technologies GmbH
+      url: https://www.nordlicht-technologies.de
+      startDate: "2021-04-01"
+      position: Senior HR Managerin / Personalleiterin
+      summary: |
+        - Strategische und operative Leitung der Personalabteilung für rund 450 Mitarbeitende an drei Standorten
+        - Weiterentwicklung der Personalstrategie entlang von Unternehmenswachstum, Internationalisierung und hybriden Arbeitsmodellen
+        - Führung und Entwicklung eines Teams aus HR Business Partnern, Recruiting und Personaladministration
+        - Verantwortung für arbeitsrechtliche Fragestellungen, Betriebsratszusammenarbeit und Compliance im Personalbereich
+        - Einführung von SAP SuccessFactors und Personio zur Professionalisierung von Personalprozessen und HR-Reporting
+        - Aufbau eines Employer-Branding-Programms zur Stärkung der Arbeitgeberattraktivität im Technologieumfeld
+      keywords:
+        - Personalstrategie
+        - Arbeitsrecht
+        - Change Management
+        - Employer Branding
+        - Führungskräfteentwicklung
+    - name: Berlin Digital Services AG
+      url: https://www.berlin-digital-services.de
+      startDate: "2017-08-01"
+      endDate: "2021-03-31"
+      position: HR Managerin
+      summary: |
+        - Betreuung von Führungskräften und Mitarbeitenden in allen personalrelevanten Themen über den gesamten Employee Lifecycle
+        - Verantwortung für Recruiting, Onboarding und Personalentwicklung in einem dynamischen Digitalumfeld
+        - Mitwirkung an der Neuausrichtung von Vergütungsstrukturen und Leistungsbeurteilungsprozessen
+        - Zusammenarbeit mit dem Betriebsrat bei organisatorischen Veränderungen und personellen Einzelmaßnahmen
+        - Einführung standardisierter HR-Kennzahlen und regelmäßiger Personalberichte für die Geschäftsführung
+      keywords:
+        - Recruiting
+        - Onboarding
+        - Personalentwicklung
+        - Betriebsrat
+        - HR-Reporting
+    - name: Hanseatic Consulting GmbH
+      url: https://www.hanseatic-consulting.de
+      startDate: "2014-06-01"
+      endDate: "2017-07-31"
+      position: HR Business Partner
+      summary: |
+        - Beratung von Fachbereichen zu Personalplanung, Talentmanagement und organisatorischen Fragestellungen
+        - Begleitung von Reorganisationsprojekten und Entwicklung passender Personalmaßnahmen
+        - Unterstützung bei Arbeitsvertragsgestaltung, Zielvereinbarungen und Konfliktlösungen
+        - Mitaufbau eines strukturierten Onboarding- und Mentoring-Programms
+      keywords:
+        - Talentmanagement
+        - Vergütung
+        - Arbeitsverträge
+        - Konfliktmanagement
+        - Projektarbeit
+  languages:
+    - language: German
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - Muttersprache
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - Business English
+        - C1
+    - language: French
+      fluency: Limited Working Proficiency
+      keywords:
+        - B1
+        - DELF
+  skills:
+    - name: 'Recruiting & Employer Branding'
+      level: Expert
+      keywords:
+        - Talent Acquisition
+        - Active Sourcing
+        - Interviewführung
+        - Candidate Experience
+        - Onboarding
+    - name: 'Arbeitsrecht & Compliance'
+      level: Advanced
+      keywords:
+        - Betriebsverfassungsrecht
+        - Arbeitsvertragsgestaltung
+        - Kündigungsrecht
+        - Personalaktenführung
+        - Datenschutz
+    - name: 'Personalentwicklung & Führung'
+      level: Advanced
+      keywords:
+        - Führungskräftecoaching
+        - Mitarbeitergespräche
+        - Talentmanagement
+        - Nachfolgeplanung
+        - Weiterbildungsplanung
+    - name: 'HR-Systeme & Analytics'
+      level: Advanced
+      keywords:
+        - SAP SuccessFactors
+        - Personio
+        - HR-Kennzahlen
+        - Power BI
+        - Reporting
+    - name: 'Change Management & Kommunikation'
+      level: Advanced
+      keywords:
+        - Change-Kommunikation
+        - Workshop-Moderation
+        - Stakeholder-Management
+        - Konfliktmanagement
+        - Betriebsratskommunikation
+  awards:
+    - title: HR Excellence Award
+      date: "2020-11-01"
+      awarder: Berlin Digital Services AG
+      summary: |
+        - Auszeichnung für die erfolgreiche Einführung eines integrierten Onboarding-Programms
+        - Würdigung der messbaren Verbesserung von Time-to-Hire und Mitarbeiterbindung
+    - title: Top-Arbeitgeber-Zertifizierung
+      date: "2022-05-01"
+      awarder: Nordlicht Technologies GmbH
+      summary: |
+        - Mitverantwortung für die Zertifizierung als attraktiver Arbeitgeber im Technologieumfeld
+        - Besondere Anerkennung für Diversität, Entwicklungsperspektiven und flexible Arbeitsmodelle
+  certificates:
+    - name: SHRM Certified Professional (SHRM-CP)
+      issuer: Society for Human Resource Management
+      date: "2019-06-01"
+      url: https://www.shrm.org/certification
+    - name: Fachzertifikat Arbeitsrecht im Personalwesen
+      issuer: Haufe Akademie
+      date: "2021-09-01"
+      url: https://www.haufe-akademie.de
+    - name: Design Thinking Facilitator
+      issuer: Hasso-Plattner-Institut
+      date: "2022-03-01"
+      url: https://hpi.de
+  publications:
+    - name: "Hybrides Arbeiten: Leitfaden für moderne Personalarbeit"
+      publisher: Personalwirtschaft Verlag
+      releaseDate: "2022-09-01"
+      url: https://www.personalwirtschaft.de
+      summary: |
+        - Praxisnaher Leitfaden zur Gestaltung hybrider Arbeitsmodelle
+        - Handlungsempfehlungen für Führung, Zusammenarbeit und Mitarbeiterbindung
+        - Fallbeispiele aus mittelständischen Technologieunternehmen
+  references:
+    - name: Dr. Martin Seidel
+      phone: "+49 30 5487 2100"
+      relationship: Geschäftsführer, Nordlicht Technologies GmbH
+      email: martin.seidel@nordlicht-technologies.de
+      summary: |
+        Frau Dr. Vogel hat unsere Personalarbeit strategisch neu ausgerichtet und durch klare Prozesse, transparente Kommunikation und eine starke Führungskräfteentwicklung nachhaltig geprägt. Sie verbindet arbeitsrechtliche Sicherheit mit unternehmerischem Denken.
+  projects:
+    - name: Mentoring-Programm Female Leaders
+      url: https://www.nordlicht-technologies.de/karriere/female-leaders
+      description: Ein unternehmensweites Mentoring-Programm zur gezielten Förderung
+        von Frauen in Führungspositionen.
+      startDate: "2019-03-01"
+      endDate: "2023-12-01"
+      summary: |
+        - Konzeption und Steuerung eines strukturierten Mentoring-Programms mit externen Coachings
+        - Aufbau von Tandempartnerschaften zwischen Nachwuchsführungskräften und erfahrenen Führungspersönlichkeiten
+        - Regelmäßige Erfolgsmessung über Teilnehmerfeedback, Beförderungsquoten und Retention
+        - Aktive Einbindung der Geschäftsführung und des Betriebsrats
+      keywords:
+        - Mentoring
+        - Diversity
+        - Führungskräfteentwicklung
+    - name: HR-Analytics-Dashboard
+      description: Aufbau eines Dashboards zur Visualisierung zentraler HR-Kennzahlen
+        für Geschäftsführung und Führungskräfte.
+      startDate: "2022-01-01"
+      endDate: "2022-12-01"
+      summary: |
+        - Definition relevanter Kennzahlen zu Fluktuation, Recruiting, Krankheit und Personalentwicklung
+        - Entwicklung standardisierter Reports in Power BI auf Basis bereinigter Personaldaten
+        - Schulung von Führungskräften zur datenbasierten Personalsteuerung
+        - Verbesserung der Entscheidungsgrundlagen im monatlichen Management-Review
+      keywords:
+        - HR-Kennzahlen
+        - Power BI
+        - Reporting
+        - Datenqualität
+  interests:
+    - name: Berufliches Engagement
+      keywords:
+        - 'Diversity & Inclusion'
+        - Mentoring
+        - Bildungsgerechtigkeit
+    - name: Ausgleich
+      keywords:
+        - Laufen
+        - Yoga
+        - Wandern
+  volunteer:
+    - organization: Berliner Netzwerk für berufliche Integration e.V.
+      url: https://www.berufliche-integration-berlin.de
+      position: Mentorin für Geflüchtete
+      startDate: "2019-01-01"
+      summary: |
+        - Unterstützung von Geflüchteten bei der beruflichen Orientierung und Bewerbung
+        - Durchführung von Bewerbungstrainings und Einzelcoachings
+        - Vernetzung mit Unternehmen und Bildungsträgern
+        - Mitwirkung an Veranstaltungen zur interkulturellen Öffnung des Arbeitsmarkts
+
+locale:
+  language: de

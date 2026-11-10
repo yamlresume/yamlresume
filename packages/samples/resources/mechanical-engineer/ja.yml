@@ -1,0 +1,205 @@
+content:
+  basics:
+    name: 山田 太郎
+    headline: シニア機械設計エンジニア
+    phone: +81 90-1234-5678
+    email: taro.yamada@example.com
+    url: https://www.taro-yamada.com
+    summary: |
+      - 機械工学の学士・修士号を取得し、10年以上の機械設計経験を持つ
+      - 産業用機器から自動車まで幅広い分野で、3D CAD/CAEを活用した設計を担当
+      - 熱解析・構造解析・トポロジー最適化などのCAE技術に精通
+      - グローバルチームでのプロジェクトリード経験があり、QCD達成に貢献
+      - 特許出願2件、技術論文発表1件
+  location:
+    address: 東京都渋谷区渋谷1-2-3
+    city: 渋谷区
+    region: 東京都
+    country: Japan
+    postalCode: "150-0002"
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/taro-yamada
+      username: taro-yamada
+    - network: GitHub
+      url: https://github.com/taroyamada
+      username: taroyamada
+    - network: Twitter
+      url: https://twitter.com/taro_yamada
+      username: taro_yamada
+  education:
+    - institution: 東京大学
+      url: https://www.u-tokyo.ac.jp/
+      degree: Bachelor
+      area: 機械工学
+      score: "3.8"
+      startDate: Apr 1, 2008
+      endDate: Mar 31, 2012
+      courses:
+        - 材料力学
+        - 熱力学
+        - 流体力学
+        - 機械設計
+        - 制御工学
+        - 生産加工学
+      summary: |
+        - 機械工学の基礎を幅広く学び、特に設計・製造分野に興味を持つ
+        - 卒業研究ではロボットアームの設計と制御をテーマに取り組む
+    - institution: 東京大学大学院
+      url: https://www.u-tokyo.ac.jp/
+      degree: Master
+      area: 機械工学
+      score: "3.9"
+      startDate: Apr 1, 2012
+      endDate: Mar 31, 2014
+      courses:
+        - 先端機械設計
+        - 計算力学
+        - ロボティクス
+      summary: |
+        - 修士課程では計算力学を用いた構造最適化の研究に従事
+        - 国際学会で研究成果を発表
+  work:
+    - name: 株式会社日立製作所
+      url: https://www.hitachi.co.jp/
+      position: 機械設計エンジニア
+      startDate: Apr 1, 2014
+      endDate: Mar 31, 2019
+      summary: |
+        - 産業用機器の機械設計を担当し、3D CAD (SolidWorks) を用いた部品設計から装配図まで作成
+        - 熱解析・構造解析 (ANSYS) を実施し、設計の妥当性を検証
+        - 生産部門と連携し、設計から製造までのプロセス改善に貢献
+        - 若手エンジニアの指導を担当
+      keywords:
+        - 機械設計
+        - SolidWorks
+        - ANSYS
+        - 熱解析
+        - 構造解析
+    - name: トヨタ自動車株式会社
+      url: https://www.toyota.co.jp/
+      position: シニア機械設計エンジニア
+      startDate: Apr 1, 2019
+      summary: |
+        - 次世代パワートレインの機械設計をリードし、軽量化と高効率化を実現
+        - グローバルチームと協働し、設計仕様の標準化を推進
+        - プロジェクトマネージャーとして、QCDを達成
+        - 特許出願2件
+      keywords:
+        - パワートレイン
+        - 軽量化
+        - プロジェクト管理
+        - CATIA
+        - 特許
+  languages:
+    - language: Japanese
+      fluency: Native or Bilingual Proficiency
+      keywords: []
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - TOEIC 900
+        - 技術文書読解
+  skills:
+    - name: 機械設計
+      level: Expert
+      keywords:
+        - SolidWorks
+        - CATIA
+        - AutoCAD
+        - 公差解析
+    - name: CAE
+      level: Advanced
+      keywords:
+        - ANSYS
+        - Abaqus
+        - 熱解析
+        - 構造解析
+    - name: プロジェクト管理
+      level: Advanced
+      keywords:
+        - PMBOK
+        - アジャイル
+        - リスク管理
+    - name: プログラミング
+      level: Intermediate
+      keywords:
+        - Python
+        - MATLAB
+        - VBA
+  awards:
+    - title: 優秀設計賞
+      date: Dec 2018
+      awarder: 株式会社日立製作所
+      summary: |
+        - 産業用機器の設計において、コスト削減と性能向上を両立させた功績により表彰
+    - title: 技術開発賞
+      date: Mar 2022
+      awarder: トヨタ自動車株式会社
+      summary: |
+        - 次世代パワートレインの設計開発における革新的な貢献に対して授与
+  certificates:
+    - name: 機械設計技術者1級
+      issuer: 日本機械設計工業会
+      date: Nov 2016
+      url: https://www.jsmdi.or.jp/
+    - name: TOEIC 900
+      issuer: IIBC
+      date: Jan 2020
+      url: https://www.iibc-global.org/
+  publications:
+    - name: 計算力学を用いた機械構造物の最適設計に関する研究
+      publisher: 日本機械学会論文集
+      releaseDate: Sep 2016
+      url: https://www.jsme.or.jp/
+      summary: |
+        - 計算力学的手法を用いて機械構造物の最適設計手法を提案
+        - 従来手法と比較して設計時間を30%短縮
+  projects:
+    - name: ロボットアームの設計と制御
+      startDate: Apr 2013
+      endDate: Mar 2014
+      description: 修士研究プロジェクト
+      summary: |
+        - 6自由度ロボットアームの機械設計から制御系実装まで担当
+        - 3D CADとMATLAB/Simulinkを用いて設計・シミュレーションを実施
+        - 試作機を製作し、位置決め精度を検証
+      keywords:
+        - ロボット
+        - 制御
+        - MATLAB
+        - 3D CAD
+      url: https://www.example.com/robot-arm
+    - name: 次世代パワートレイン軽量化プロジェクト
+      startDate: Apr 2020
+      endDate: Mar 2023
+      description: トヨタ自動車における社内プロジェクト
+      summary: |
+        - 次世代パワートレインの軽量化を目的とした設計プロジェクトをリード
+        - 新材料の適用とトポロジー最適化により、重量を15%削減
+        - 部門間連携を強化し、開発期間を20%短縮
+      keywords:
+        - 軽量化
+        - トポロジー最適化
+        - 新材料
+        - プロジェクトリード
+      url: https://www.toyota.co.jp/
+  interests:
+    - name: 趣味
+      keywords:
+        - 登山
+        - 写真撮影
+        - 3Dプリンティング
+        - 読書
+  volunteer:
+    - organization: 日本機械学会 若手技術者育成委員会
+      url: https://www.jsme.or.jp/
+      position: 委員
+      startDate: Apr 2018
+      endDate: Mar 2022
+      summary: |
+        - 若手技術者向けの設計コンテストやワークショップを企画・運営
+        - 学生や若手エンジニアへの技術指導を実施
+
+locale:
+  language: ja

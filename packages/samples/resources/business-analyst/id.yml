@@ -1,0 +1,238 @@
+content:
+  basics:
+    name: Rina Kartika Sari
+    headline: Analis Bisnis Senior
+    phone: '+62 812-3456-7890'
+    email: rina.kartikasari@example.com
+    url: https://www.rinakartika.id
+    summary: |
+      Analis Bisnis dengan pengalaman lebih dari 7 tahun dalam memetakan kebutuhan bisnis, merancang proses, dan menerjemahkannya menjadi solusi digital yang terukur. Terbiasa memimpin diskusi dengan pemangku kepentingan lintas fungsi, menyusun dokumentasi kebutuhan, serta mendukung tim teknologi dan operasional agar solusi tepat waktu dan sesuai tujuan bisnis.
+      - Berpengalaman dalam analisis proses, gap analysis, user story, dan pengujian penerimaan pengguna.
+      - Kuat dalam pengolahan data dengan SQL, Excel lanjutan, Power BI, dan Tableau untuk menghasilkan insight.
+      - Terampil memfasilitasi workshop, presentasi manajemen, dan manajemen perubahan di lingkungan Agile.
+  location:
+    address: Jl. Jenderal Sudirman Kav. 52-53, SCBD
+    city: Jakarta Selatan
+    region: DKI Jakarta
+    country: Indonesia
+    postalCode: '12190'
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/rinakartikasari
+      username: rinakartikasari
+    - network: Medium
+      url: https://medium.com/@rinakartikasari
+      username: rinakartikasari
+  education:
+    - institution: Universitas Indonesia
+      url: https://www.ui.ac.id
+      degree: Bachelor
+      area: Manajemen Bisnis
+      score: '3.72'
+      startDate: Aug 1, 2012
+      endDate: Jul 31, 2016
+      courses:
+        - Analisis Proses Bisnis
+        - Manajemen Proyek
+        - Sistem Informasi Manajemen
+        - Statistik Bisnis
+        - Riset Operasi
+        - Manajemen Keuangan
+        - Perilaku Organisasi
+      summary: |
+        - Memperoleh pemahaman kuat tentang strategi bisnis, proses operasional, dan pengelolaan proyek.
+        - Aktif dalam organisasi kemahasiswaan dan kompetisi studi kasus bisnis.
+        - Menyelesaikan tugas akhir tentang efisiensi proses layanan pelanggan di industri ritel.
+  work:
+    - name: PT Bank Nusantara Digital
+      url: https://www.banknusantaradigital.co.id
+      position: Analis Bisnis Senior
+      startDate: Mar 1, 2021
+      summary: |
+        - Memimpin analisis kebutuhan untuk inisiatif transformasi kredit digital dengan nilai manfaat proses hingga 30% lebih cepat.
+        - Menyusun BRD, FRD, user story, dan kriteria penerimaan yang digunakan oleh tim produk, teknologi, dan kepatuhan.
+        - Memfasilitasi workshop lintas fungsi dengan 20+ pemangku kepentingan untuk menyelaraskan prioritas dan ruang lingkup.
+        - Melakukan gap analysis terhadap proses onboarding nasabah dan merekomendasikan perbaikan alur yang menurunkan waktu tunggu.
+        - Mendukung pengujian penerimaan pengguna dan peluncuran fitur perbankan digital dengan tingkat adopsi yang terukur.
+      keywords:
+        - Analisis Proses Bisnis
+        - Manajemen Pemangku Kepentingan
+        - BRD dan FRD
+        - Agile
+        - SQL
+    - name: PT Solusi Retail Indonesia
+      url: https://www.solusiretail.co.id
+      position: Analis Bisnis
+      startDate: Jan 8, 2018
+      endDate: Feb 28, 2021
+      summary: |
+        - Mengumpulkan dan mendokumentasikan kebutuhan bisnis untuk sistem inventori dan point of sale di 120+ gerai.
+        - Menganalisis data penjualan dan stok untuk mengidentifikasi peluang efisiensi serta mengurangi selisih stok.
+        - Menjadi penghubung antara tim operasional, vendor teknologi, dan manajemen dalam siklus pengembangan.
+        - Menyusun laporan kinerja bulanan dan dashboard KPI untuk mendukung pengambilan keputusan.
+        - Melakukan pelatihan pengguna dan pendampingan UAT pada setiap rilis fitur utama.
+      keywords:
+        - Inventori
+        - Point of Sale
+        - Dashboard KPI
+        - UAT
+        - Pelatihan Pengguna
+    - name: PT Karya Data Analitika
+      url: https://www.karyadata.co.id
+      position: Analis Data Junior
+      startDate: Aug 1, 2016
+      endDate: Dec 31, 2017
+      summary: |
+        - Mengolah dan membersihkan data operasional untuk kebutuhan pelaporan mingguan dan bulanan.
+        - Membuat kueri SQL untuk mengekstrak data dari basis data transaksi dan mendukung analisis kinerja.
+        - Menyusun visualisasi data sederhana untuk membantu tim manajemen memahami tren pelanggan.
+        - Berkolaborasi dengan analis senior dalam menyiapkan studi kelayakan dan rekomendasi proses.
+      keywords:
+        - SQL
+        - Pembersihan Data
+        - Visualisasi Data
+        - Pelaporan
+  languages:
+    - language: Indonesian
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - Bahasa ibu
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - IELTS 7.0
+        - Presentasi bisnis
+  skills:
+    - name: Analisis Bisnis
+      level: Expert
+      keywords:
+        - BPMN
+        - User Story
+        - Gap Analysis
+        - BRD
+        - FRD
+        - Process Mapping
+    - name: Data dan Pelaporan
+      level: Advanced
+      keywords:
+        - SQL
+        - Power BI
+        - Tableau
+        - Excel Lanjutan
+        - Metrik KPI
+    - name: Manajemen Proyek
+      level: Advanced
+      keywords:
+        - Agile
+        - Scrum
+        - Jira
+        - Confluence
+        - Manajemen Risiko
+    - name: Komunikasi dan Kolaborasi
+      level: Expert
+      keywords:
+        - Workshop
+        - Presentasi
+        - Negosiasi
+        - Manajemen Perubahan
+        - Fasilitasi
+  awards:
+    - title: Analis Bisnis Terbaik
+      date: Dec 2023
+      awarder: PT Bank Nusantara Digital
+      summary: |
+        Diberikan atas kontribusi dalam mempercepat peluncuran fitur kredit digital dan meningkatkan kolaborasi lintas fungsi.
+    - title: Penghargaan Inovasi Proses
+      date: Nov 2020
+      awarder: PT Solusi Retail Indonesia
+      summary: |
+        Diakui karena merancang perbaikan alur inventori yang menurunkan waktu rekonsiliasi stok.
+  certificates:
+    - name: Certified Business Analysis Professional (CBAP)
+      issuer: IIBA
+      date: Nov 2022
+      url: https://www.iiba.org/certification/cbap/
+    - name: Professional Scrum Master I
+      issuer: Scrum.org
+      date: Jun 2021
+      url: https://www.scrum.org/professional-scrum-certifications/psm-i
+    - name: Microsoft Power BI Data Analyst
+      issuer: Microsoft
+      date: Sep 2023
+      url: https://learn.microsoft.com/en-us/certifications/power-bi-data-analyst-associate/
+  publications:
+    - name: Meningkatkan Efisiensi Proses Onboarding Nasabah Digital
+      publisher: Jurnal Sistem Informasi Indonesia
+      releaseDate: Apr 2023
+      url: https://jurnal-sii.example.id/artikel/onboarding-digital
+      summary: |
+        - Membahas pemetaan proses dan identifikasi titik hambatan pada onboarding nasabah digital.
+        - Menyoroti peran analis bisnis dalam menyelaraskan kebutuhan pengguna, kepatuhan, dan teknologi.
+        - Memberikan rekomendasi prioritas perbaikan berbasis data operasional.
+  projects:
+    - name: Transformasi Proses Kredit Digital
+      url: https://www.banknusantaradigital.co.id/proyek/kredit-digital
+      description: Inisiatif untuk mempercepat proses pengajuan hingga persetujuan
+        kredit nasabah digital.
+      startDate: Jan 2022
+      endDate: Nov 2022
+      summary: |
+        - Memetakan proses as-is dan to-be bersama tim produk, risiko, dan kepatuhan.
+        - Menyusun user story dan kriteria penerimaan untuk fitur pengajuan kredit.
+        - Mendukung UAT dan peluncuran bertahap dengan pemantauan metrik waktu proses.
+      keywords:
+        - Kredit Digital
+        - BPMN
+        - User Story
+        - UAT
+    - name: Dashboard Retensi Pelanggan
+      url: https://www.solusiretail.co.id/proyek/dashboard-retensi
+      description: Dashboard untuk memantau retensi pelanggan dan efektivitas program
+        loyalitas.
+      startDate: Mar 2020
+      endDate: Oct 2020
+      summary: |
+        - Mendefinisikan KPI retensi dan segmentasi pelanggan bersama tim pemasaran.
+        - Merancang kebutuhan data dan tata letak dashboard untuk pengguna manajerial.
+        - Memvalidasi hasil analisis dengan tim operasional dan pemasaran.
+      keywords:
+        - Retensi
+        - KPI
+        - Power BI
+        - Segmentasi
+  interests:
+    - name: Pengembangan Diri
+      keywords:
+        - Membaca
+        - Public Speaking
+        - Penulisan
+    - name: Olahraga
+      keywords:
+        - Lari
+        - Yoga
+        - Bersepeda
+    - name: Komunitas
+      keywords:
+        - Relawan
+        - Mentoring
+  volunteer:
+    - organization: Ikatan Analis Bisnis Indonesia
+      url: https://www.iabi.or.id
+      position: Mentor Relawan
+      startDate: Feb 2022
+      summary: |
+        - Mendampingi analis bisnis junior dalam menyusun portofolio dan studi kasus.
+        - Menjadi pembicara pada sesi sharing tentang dokumentasi kebutuhan dan komunikasi pemangku kepentingan.
+        - Membantu penyelenggaraan workshop tahunan untuk anggota komunitas.
+    - organization: Yayasan Literasi Digital Nusantara
+      url: https://www.literasidigitalnusantara.org
+      position: Fasilitator Relawan
+      startDate: Jul 2019
+      endDate: Dec 2020
+      summary: |
+        - Memfasilitasi pelatihan literasi data dasar untuk pelajar dan guru di Jakarta.
+        - Menyusun materi sederhana tentang pembacaan data dan visualisasi.
+        - Mengoordinasikan jadwal relawan dan evaluasi peserta.
+
+locale:
+  language: id

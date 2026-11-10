@@ -1,0 +1,233 @@
+content:
+  basics:
+    name: Mariana Costa Almeida
+    headline: 'Analista de Negócios Sênior | Transformação Digital e Dados'
+    phone: "+55 11 98765-4321"
+    email: mariana.almeida@exemplo.com.br
+    url: https://www.marianaalmeida.com.br
+    summary: |
+      Analista de negócios sênior com mais de 8 anos de experiência em projetos de transformação digital, melhoria de processos e produtos digitais nos setores financeiro e de serviços.
+
+      - Especialista em levantamento e priorização de requisitos, modelagem de processos (BPMN) e tradução de necessidades de negócio em soluções técnica e comercialmente viáveis.
+      - Experiência com análise de dados, definição de indicadores-chave e painéis executivos em SQL e Power BI para apoiar decisões e acompanhar resultados.
+      - Forte atuação com partes interessadas multidisciplinares, facilitação de oficinas, gestão de backlog e metodologias ágeis (Scrum e Kanban).
+  location:
+    address: Av. Paulista, 1578, Bela Vista
+    city: São Paulo
+    region: SP
+    country: Brazil
+    postalCode: "01310-200"
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/mariana-costa-almeida
+      username: mariana-costa-almeida
+    - network: Medium
+      url: 'https://medium.com/@marianacalmeida'
+      username: marianacalmeida
+  education:
+    - institution: Universidade de São Paulo
+      url: https://www.usp.br
+      degree: Bachelor
+      area: Administração de Empresas
+      score: "8.7/10"
+      startDate: Feb 1, 2012
+      endDate: Dec 15, 2016
+      courses:
+        - Economia de Empresas
+        - Estatística Aplicada
+        - Gestão de Processos
+        - Sistemas de Informação
+        - Finanças Corporativas
+        - Pesquisa Operacional
+      summary: |
+        - Formação sólida em gestão, processos e tecnologia, com ênfase em análise de negócios e melhoria contínua.
+        - Desenvolvimento de projetos acadêmicos de mapeamento de processos e avaliação de indicadores de desempenho.
+    - institution: Fundação Getulio Vargas
+      url: https://www.fgv.br
+      degree: Master
+      area: Gestão de Projetos e Inteligência de Negócios
+      score: "9.1/10"
+      startDate: Jan 15, 2018
+      endDate: Dec 10, 2019
+      courses:
+        - Gestão de Projetos
+        - Governança de Dados
+        - Inteligência de Negócios
+        - Análise de Decisão
+        - Metodologias Ágeis
+      summary: |
+        - Aprofundamento em gestão de projetos, governança de dados e inteligência de negócios aplicados à tomada de decisão.
+  work:
+    - name: Nexo Soluções Digitais
+      url: https://www.nexosolucoes.com.br
+      position: Analista de Negócios Sênior
+      startDate: Mar 1, 2021
+      summary: |
+        - Liderança de iniciativas de transformação digital para áreas de crédito, cobrança e atendimento, com foco em eficiência operacional e experiência do cliente.
+        - Condução de oficinas de descoberta, entrevistas com usuários e análise de dados para priorizar requisitos e construir roteiros alinhados aos objetivos de negócio.
+        - Especificação de histórias de usuário, critérios de aceite e fluxos BPMN, apoiando times de desenvolvimento e QA durante todo o ciclo de entrega.
+        - Acompanhamento de indicadores-chave e elaboração de painéis em Power BI para reporte executivo e identificação de oportunidades de melhoria.
+      keywords:
+        - Levantamento de requisitos
+        - Modelagem de processos
+        - BPMN
+        - Power BI
+        - SQL
+        - Gestão de partes interessadas
+    - name: Banco Horizonte
+      url: https://www.bancohorizonte.com.br
+      position: Analista de Negócios
+      startDate: Jan 15, 2018
+      endDate: Feb 26, 2021
+      summary: |
+        - Atuação na análise e melhoria de processos de entrada de clientes, reduzindo o tempo médio de abertura de conta e retrabalho operacional.
+        - Levantamento de requisitos funcionais e não funcionais junto às áreas de negócio, conformidade e tecnologia.
+        - Apoio na implantação de práticas ágeis, gestão de backlog e documentação de regras de negócio em Confluence.
+        - Realização de testes de aceitação e acompanhamento de indicadores de qualidade das entregas.
+      keywords:
+        - Análise de dados
+        - Metodologias ágeis
+        - Melhoria contínua
+        - Documentação funcional
+        - Testes de aceitação
+    - name: Consultoria Ponte Sul
+      url: https://www.consultoriapontesul.com.br
+      position: Analista de Processos Júnior
+      startDate: Jan 10, 2017
+      endDate: Dec 29, 2017
+      summary: |
+        - Mapeamento de processos AS-IS e proposição de fluxos TO-BE para rotinas administrativas e financeiras.
+        - Elaboração de documentação funcional, casos de uso e relatórios de acompanhamento para clientes do setor de serviços.
+        - Suporte à implantação de melhorias e treinamento de usuários em novas rotinas e ferramentas.
+      keywords:
+        - AS-IS/TO-BE
+        - Casos de uso
+        - Processos
+        - Treinamento
+  languages:
+    - language: Portuguese
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - Nativo
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - TOEIC 920
+    - language: Spanish
+      fluency: Limited Working Proficiency
+      keywords:
+        - Leitura técnica
+  skills:
+    - name: Análise de Negócios
+      level: Expert
+      keywords:
+        - BPMN
+        - Histórias de usuário
+        - Casos de uso
+        - AS-IS/TO-BE
+        - Gestão de partes interessadas
+    - name: Dados e BI
+      level: Advanced
+      keywords:
+        - SQL
+        - Power BI
+        - Excel avançado
+        - Tableau
+        - Indicadores
+    - name: Metodologias Ágeis
+      level: Advanced
+      keywords:
+        - Scrum
+        - Kanban
+        - Backlog
+        - Jira
+    - name: Ferramentas
+      level: Advanced
+      keywords:
+        - Jira
+        - Confluence
+        - Visio
+        - Figma
+        - Google Workspace
+  awards:
+    - title: Prêmio de Excelência em Projetos
+      date: Nov 2022
+      awarder: Nexo Soluções Digitais
+      summary: |
+        Reconhecimento pelo desempenho na condução de projetos estratégicos de transformação digital, com destaque para a redução de custos operacionais e a melhoria da satisfação dos clientes.
+    - title: Destaque Acadêmico
+      date: Dec 2016
+      awarder: Universidade de São Paulo
+      summary: |
+        Reconhecimento acadêmico por desempenho de destaque no curso de Administração de Empresas.
+  certificates:
+    - name: Certified Business Analysis Professional (CBAP)
+      issuer: IIBA
+      date: Aug 2023
+      url: https://www.iiba.org/certification/cbap/
+    - name: Professional Scrum Product Owner I
+      issuer: Scrum.org
+      date: May 2022
+      url: https://www.scrum.org/professional-scrum-product-owner-certifications
+    - name: 'Microsoft Certified: Power BI Data Analyst Associate'
+      issuer: Microsoft
+      date: Sep 2021
+      url: https://learn.microsoft.com/en-us/certifications/power-bi-data-analyst-associate/
+  publications:
+    - name: Gestão de requisitos em projetos de transformação digital
+      publisher: Revista Brasileira de Gestão e Inovação
+      releaseDate: Jun 2023
+      url: https://www.revistabgi.com.br/artigos/gestao-de-requisitos-em-projetos-de-transformacao-digital
+      summary: |
+        - Artigo sobre práticas de levantamento, priorização e rastreabilidade de requisitos em iniciativas de transformação digital.
+        - Discussão de indicadores de sucesso e lições aprendidas em projetos dos setores financeiro e de serviços.
+  projects:
+    - name: Mapeamento da Jornada do Cliente
+      startDate: Apr 1, 2022
+      endDate: Oct 30, 2022
+      description: Redesenho da jornada de entrada de clientes, com pesquisa
+        qualitativa, mapeamento de pontos de dor e priorização de melhorias.
+      summary: |
+        - Condução de entrevistas e oficinas com áreas de negócio, atendimento e tecnologia.
+        - Mapeamento da jornada atual e proposição de melhorias com foco em autoatendimento e redução de etapas manuais.
+        - Definição de indicadores de sucesso e acompanhamento dos resultados após a implantação.
+      keywords:
+        - Jornada do cliente
+        - Desenho de serviços
+        - BPMN
+    - name: Painel Executivo de Indicadores
+      startDate: Feb 1, 2023
+      endDate: Jul 20, 2023
+      description: Painel gerencial para acompanhamento de indicadores operacionais e
+        financeiros, utilizado pela diretoria na tomada de decisão.
+      summary: |
+        - Levantamento de requisitos e definição de indicadores-chave junto às áreas de negócio.
+        - Modelagem de dados em SQL e construção de visualizações no Power BI.
+        - Documentação de regras de negócio e treinamento de usuários-chave.
+      keywords:
+        - Power BI
+        - Indicadores-chave
+        - SQL
+        - Governança de dados
+  interests:
+    - name: Educação e Mentoria
+      keywords:
+        - Mentoria
+        - Palestras
+        - Cursos
+    - name: Bem-estar
+      keywords:
+        - Corrida
+        - Yoga
+        - Culinária
+  volunteer:
+    - organization: Instituto Ponte para o Futuro
+      url: https://www.ponteparaofuturo.org.br
+      position: Mentora de Jovens Analistas
+      startDate: Mar 1, 2022
+      summary: |
+        - Mentoria de jovens em início de carreira em análise de negócios, com orientação sobre requisitos, processos e comunicação com partes interessadas.
+        - Participação em encontros de carreira e revisão de currículos para candidatos de baixa renda.
+
+locale:
+  language: pt-br

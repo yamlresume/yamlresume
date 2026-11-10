@@ -1,0 +1,246 @@
+content:
+  basics:
+    name: Giulia Ferrari
+    headline: Business Analyst Senior | Trasformazione Digitale
+    phone: "+39 02 9475 3281"
+    email: giulia.ferrari@analisibusiness.it
+    url: https://www.giuliaferrari.it
+    summary: |
+      Business analyst con oltre 7 anni di esperienza nella raccolta requisiti, modellazione dei processi e delivery di soluzioni digitali in ambito bancario e retail.
+      - Esperta nella traduzione delle esigenze di business in user story, specifiche funzionali e flussi AS-IS/TO-BE, collaborando con stakeholder, product owner e team di sviluppo.
+      - Solida conoscenza di metodologie Agile/Scrum, analisi dei dati, SQL e strumenti di visualizzazione come Power BI e Tableau.
+      - Orientata ai risultati, con eccellenti capacità di comunicazione, facilitazione di workshop e gestione del cambiamento.
+
+  location:
+    address: Via Alessandro Volta 18
+    city: Milano
+    region: Lombardia
+    country: Italy
+    postalCode: "20154"
+
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/giuliaferrari-ba
+      username: giuliaferrari-ba
+    - network: GitHub
+      url: https://github.com/giuliaferrari-ba
+      username: giuliaferrari-ba
+
+  education:
+    - institution: Università Bocconi
+      url: https://www.unibocconi.it
+      degree: Master
+      area: Economia e Management
+      score: "110/110 con lode"
+      startDate: Sep 1, 2014
+      endDate: Jul 15, 2016
+      courses:
+        - Analisi dei dati per il business
+        - Sistemi informativi aziendali
+        - Gestione dei processi aziendali
+        - Ricerca operativa
+        - Marketing analytics
+      summary: |
+        - Percorso focalizzato sulla gestione dei processi, analisi dei dati e trasformazione digitale.
+        - Tesi finale su modelli predittivi per l'ottimizzazione della customer experience nel retail.
+    - institution: Politecnico di Milano
+      url: https://www.polimi.it
+      degree: Bachelor
+      area: Ingegneria Gestionale
+      score: "105/110"
+      startDate: Sep 1, 2011
+      endDate: Jul 10, 2014
+      courses:
+        - Economia aziendale
+        - Statistica
+        - Sistemi informativi
+        - Ricerca operativa
+        - Gestione della produzione
+
+  work:
+    - name: Nexa Retail Italia
+      url: https://www.nexaretail.it
+      position: Senior Business Analyst
+      startDate: Jan 10, 2021
+      summary: |
+        - Raccolta e prioritizzazione dei requisiti con stakeholder di business, operations e IT.
+        - Modellazione dei processi AS-IS/TO-BE e definizione dei requisiti funzionali per piattaforme retail.
+        - Coordinamento del backlog con product owner e team di sviluppo in ambiente Agile/Scrum.
+        - Definizione di KPI e dashboard Power BI per il monitoraggio delle performance operative.
+      keywords:
+        - Raccolta requisiti
+        - Agile/Scrum
+        - Modellazione processi
+        - Power BI
+        - Stakeholder management
+    - name: Banca Aurora
+      url: https://www.bancaaurora.it
+      position: Business Analyst
+      startDate: Mar 1, 2018
+      endDate: Dec 31, 2020
+      summary: |
+        - Analisi funzionale e redazione di specifiche per servizi di digital banking e portali self-service.
+        - Scrittura di user story, criteri di accettazione e documentazione di supporto al rilascio.
+        - Pianificazione ed esecuzione di test UAT con key user e supporto al team di sviluppo.
+        - Monitoraggio dei difetti e coordinamento delle attività di remediation con il business.
+      keywords:
+        - Analisi funzionale
+        - SQL
+        - User story
+        - Test UAT
+        - Digital banking
+    - name: Consulenza Sigma
+      url: https://www.consulenzasigma.it
+      position: Junior Business Analyst
+      startDate: Sep 1, 2016
+      endDate: Feb 28, 2018
+      summary: |
+        - Supporto alla mappatura dei processi aziendali e alla produzione di documentazione funzionale.
+        - Creazione di report e analisi Excel per il monitoraggio delle attività progettuali.
+        - Partecipazione a workshop con il cliente per la raccolta e la validazione dei requisiti.
+      keywords:
+        - Documentazione
+        - BPMN
+        - Excel avanzato
+        - Reporting
+
+  skills:
+    - name: Business Analysis
+      level: Expert
+      keywords:
+        - Raccolta requisiti
+        - User story
+        - BPMN
+        - Analisi AS-IS/TO-BE
+        - UAT
+    - name: Metodologie
+      level: Advanced
+      keywords:
+        - Agile
+        - Scrum
+        - Kanban
+        - Waterfall
+        - Design thinking
+    - name: Dati e Strumenti
+      level: Advanced
+      keywords:
+        - SQL
+        - Power BI
+        - Tableau
+        - Jira
+        - Confluence
+    - name: Soft Skills
+      level: Expert
+      keywords:
+        - Comunicazione
+        - Facilitazione
+        - Negoziazione
+        - Problem solving
+        - Leadership
+
+  languages:
+    - language: Italian
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - Madrelingua
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - IELTS 7.5
+        - Business English
+    - language: French
+      fluency: Limited Working Proficiency
+      keywords:
+        - DELF B1
+
+  awards:
+    - title: Premio Innovazione Digitale
+      date: Nov 2022
+      awarder: Nexa Retail Italia
+      summary: |
+        Riconoscimento per il contributo alla riduzione del 20% dei tempi di onboarding dei nuovi fornitori tramite la digitalizzazione dei processi.
+    - title: Best Team Project
+      date: Jun 2019
+      awarder: Banca Aurora
+      summary: |
+        Premio assegnato al team per il lancio di un portale self-service per oltre 150.000 clienti retail.
+
+  certificates:
+    - name: Certified Business Analysis Professional (CBAP)
+      issuer: IIBA
+      date: Mar 2023
+      url: https://www.iiba.org/certification/cbap/
+    - name: Professional Scrum Product Owner I
+      issuer: Scrum.org
+      date: Sep 2021
+      url: https://www.scrum.org/professional-scrum-product-owner-certifications
+    - name: 'Microsoft Certified: Power BI Data Analyst Associate'
+      issuer: Microsoft
+      date: May 2022
+      url: https://learn.microsoft.com/en-us/certifications/power-bi-data-analyst-associate/
+
+  publications:
+    - name: Modelli predittivi per la personalizzazione dell'offerta retail
+      publisher: FrancoAngeli Editore
+      releaseDate: Oct 2021
+      url: https://www.francoangeli.it/
+      summary: |
+        - Articolo tecnico sulla segmentazione della clientela e sull'uso di modelli predittivi per migliorare la customer experience.
+        - Analisi di casi di studio nel settore retail italiano.
+
+  projects:
+    - name: Portale Self-Service Clienti
+      url: https://www.bancaaurora.it/self-service
+      description: Piattaforma web per la gestione in autonomia di operazioni bancarie
+        quotidiane.
+      startDate: Feb 2019
+      endDate: Nov 2020
+      summary: |
+        - Definizione dei requisiti funzionali e dei flussi utente per oltre 30 funzionalità.
+        - Coordinamento delle attività di UAT con 12 key user e supporto al team di sviluppo.
+        - Riduzione del 25% delle chiamate al contact center nei primi sei mesi post-lancio.
+      keywords:
+        - Digital banking
+        - User experience
+        - UAT
+        - Self-service
+    - name: Dashboard Decisionale Retail
+      url: https://www.nexaretail.it/progetti/dashboard-retail
+      description: Sistema di reporting direzionale per monitorare vendite, margini e
+        rotazione delle scorte.
+      startDate: Mar 2021
+      endDate: Sep 2021
+      summary: |
+        - Raccolta dei KPI con i responsabili di area e definizione del modello dati.
+        - Realizzazione di dashboard Power BI con aggiornamento giornaliero e controlli di qualità.
+        - Adozione da parte di 45 store manager e riduzione del tempo di reporting settimanale del 60%.
+      keywords:
+        - Power BI
+        - KPI
+        - Retail
+        - Data visualization
+
+  interests:
+    - name: Sport
+      keywords:
+        - Running
+        - Yoga
+        - Trekking
+    - name: Cultura
+      keywords:
+        - Lettura
+        - Fotografia
+        - Viaggi
+
+  volunteer:
+    - organization: Associazione Digital Skills Italia
+      url: https://www.digitalskills.it
+      position: Mentor di analisi dati
+      startDate: Jan 2022
+      summary: |
+        - Mentoraggio di studenti e giovani professionisti su analisi dei dati e strumenti di business intelligence.
+        - Organizzazione di workshop su Power BI, SQL e storytelling con i dati.
+        - Supporto alla definizione di percorsi formativi orientati alle esigenze del mercato.
+
+locale:
+  language: it

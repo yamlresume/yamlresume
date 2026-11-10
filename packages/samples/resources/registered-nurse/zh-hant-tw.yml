@@ -1,0 +1,201 @@
+content:
+  basics:
+    name: 林雅婷
+    headline: 註冊護理師｜急重症與急診照護
+    phone: +886 912 345 678
+    email: yating.lin.rn@example.com
+    url: https://www.linkedin.com/in/yating-lin-rn
+    summary: |
+      具備六年以上急診與重症加護臨床經驗的註冊護理師，熟悉檢傷分類、生命徵象監測、靜脈注射、傷口照護及病患衛教。擅長在高壓環境中進行快速評估與跨團隊溝通，致力於提供以病人為中心的高品質照護。
+
+      曾參與急診流程優化與譫妄預防專案，具備臨床教學與品質改善經驗。持續進修進階護理與實證照護知能，期望於急重症單位發揮專業，提升病人安全與照護品質。
+  location:
+    address: 台北市大安區仁愛路四段123號
+    city: 台北市
+    country: Taiwan
+    postalCode: "106"
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/yating-lin-rn
+      username: yating-lin-rn
+    - network: Facebook
+      url: https://www.facebook.com/yating.lin.rn
+      username: yating.lin.rn
+  education:
+    - institution: 國立臺灣大學醫學院護理學系
+      url: https://www.mc.ntu.edu.tw/nursing
+      degree: Bachelor
+      area: 護理學
+      score: "3.9/4.0"
+      startDate: Sep 1, 2014
+      endDate: Jun 30, 2018
+      courses:
+        - 基本護理學
+        - 內外科護理學
+        - 急重症護理學
+        - 產科護理學
+        - 兒科護理學
+        - 精神科護理學
+        - 社區護理學
+        - 護理倫理與法律
+      summary: |
+        - 以優異成績完成護理學學士學位，並通過全國護理師高考
+        - 於臺大醫院完成臨床實習，累積內外科、急診與加護病房照護經驗
+        - 擔任護理系學會幹部，協助推動校內外健康促進活動
+  work:
+    - name: 臺大醫院急診部
+      url: https://www.ntuh.gov.tw
+      position: 註冊護理師
+      startDate: Jul 1, 2018
+      endDate: Jun 30, 2022
+      summary: |
+        - 負責急診病患檢傷分類、生命徵象監測與初步處置，每日平均照護 20 至 30 位病患
+        - 執行靜脈注射、抽血、傷口換藥、導尿及心電圖監測等護理技術
+        - 與急診醫師、專科護理師及社工師協作，執行跨團隊照護與轉院/住院安排
+        - 提供病患及家屬疾病衛教、出院準備與社區資源轉介
+        - 參與急診壅塞改善專案，協助優化檢傷流程與縮短候診時間
+      keywords:
+        - 急診護理
+        - 檢傷分類
+        - 靜脈注射
+        - 病患衛教
+        - 跨團隊照護
+    - name: 臺北榮民總醫院重症加護病房
+      url: https://www.vghtpe.gov.tw
+      position: 資深註冊護理師
+      startDate: Jul 1, 2022
+      summary: |
+        - 照護呼吸衰竭、敗血症、急性腎損傷及術後重症病患，熟悉呼吸器、血液透析與葉克膜輔助照護
+        - 執行重症病患之持續性生命徵象監測、給藥、輸液與侵入性管路照護
+        - 帶領新進護理師與實習生，規劃臨床教學與技術考核
+        - 參與加護病房譫妄評估與預防流程改善，降低譫妄發生率
+        - 與醫師、藥師、營養師及復健師合作，執行每日跨團隊查房與照護計畫
+      keywords:
+        - 重症照護
+        - 呼吸器
+        - 血液透析
+        - 臨床教學
+        - 品質改善
+  languages:
+    - language: Chinese
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - 母語
+        - 國語
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - TOEIC 850
+        - 護理英語
+  skills:
+    - name: 臨床護理
+      level: Expert
+      keywords:
+        - 檢傷分類
+        - 生命徵象監測
+        - 靜脈注射
+        - 傷口照護
+        - 管路照護
+    - name: 急重症照護
+      level: Advanced
+      keywords:
+        - 呼吸器照護
+        - 血液透析
+        - 葉克膜輔助
+        - 敗血症照護
+        - 急救處置
+    - name: 病患溝通與衛教
+      level: Advanced
+      keywords:
+        - 醫病溝通
+        - 出院準備
+        - 家屬支持
+        - 健康促進
+    - name: 醫療資訊系統
+      level: Intermediate
+      keywords:
+        - HIS
+        - 電子病歷
+        - 醫囑系統
+    - name: 品質管理與教學
+      level: Advanced
+      keywords:
+        - 品質改善
+        - 臨床教學
+        - 實證護理
+        - 專案管理
+  awards:
+    - title: 優良護理人員獎
+      awarder: 臺大醫院
+      date: Dec 2021
+      summary: |
+        表揚在急診照護、病人安全及團隊合作上表現優異之護理人員。
+    - title: 臨床教學優良獎
+      awarder: 臺北榮民總醫院
+      date: Nov 2023
+      summary: |
+        肯定於新進護理師臨床教學與技能指導之卓越貢獻。
+  certificates:
+    - name: 高考護理師證書
+      issuer: 考選部
+      date: Sep 2018
+      url: https://www.moex.gov.tw
+    - name: 進階護理師 N2 證書
+      issuer: 台灣護理學會
+      date: Dec 2020
+      url: https://www.twna.org.tw
+    - name: 高級心臟救命術 ACLS
+      issuer: 台灣急救加護醫學會
+      date: Mar 2022
+      url: https://www.seccm.org.tw
+    - name: 基本生命支持 BLS
+      issuer: 台灣急救加護醫學會
+      date: Jan 2024
+      url: https://www.seccm.org.tw
+  publications:
+    - name: 運用跨團隊照護改善急診檢傷分類流程之專案
+      publisher: 台灣急診醫學會雜誌
+      releaseDate: Jun 2022
+      url: https://www.sem.org.tw
+      summary: |
+        - 探討急診檢傷流程瓶頸並提出改善策略
+        - 透過跨團隊合作與資訊系統優化，縮短病患候診時間
+        - 提升檢傷分類正確率與病人滿意度
+  projects:
+    - name: 加護病房譫妄評估與預防流程改善
+      startDate: Jan 2023
+      endDate: Dec 2023
+      summary: |
+        - 導入 CAM-ICU 評估工具，建立標準化譫妄篩檢流程
+        - 規劃護理人員教育訓練與稽核機制
+        - 結合早期活動與睡眠促進措施，降低譫妄發生率
+      description: 針對加護病房重症病患推動譫妄評估與預防專案，透過標準化流程、教育訓練及跨團隊合作，提升護理人員對譫妄的識別與處置能力，進而改善病患預後。
+      keywords:
+        - 譫妄
+        - 加護病房
+        - 品質改善
+        - 病人安全
+      url: https://www.vghtpe.gov.tw
+  interests:
+    - name: 專業進修
+      keywords:
+        - 實證護理
+        - 急重症醫學
+        - 護理教育
+    - name: 休閒活動
+      keywords:
+        - 馬拉松
+        - 閱讀
+        - 登山
+  volunteer:
+    - organization: 台灣紅十字會
+      url: https://www.redcross.org.tw
+      position: 急救教育志工
+      startDate: Mar 2019
+      summary: |
+        - 協助推廣社區急救教育，教授 CPR 與 AED 使用
+        - 參與偏鄉義診與健康篩檢活動
+        - 協助大型活動醫護站輪值與緊急處置
+
+locale:
+  language: zh-hant-tw

@@ -1,0 +1,223 @@
+content:
+  basics:
+    name: Anna Schneider
+    headline: Gesundheits- und Krankenpflegerin mit Schwerpunkt Intensivpflege
+    phone: "+49 221 9876543"
+    email: anna.schneider@pflege-rheinland.de
+    url: https://pflege-anna-schneider.de
+    summary: |
+      Examierte Gesundheits- und Krankenpflegerin mit über sechs Jahren Erfahrung in der stationären Akut- und Intensivpflege. Ich verbinde fachliche Sicherheit mit einer empathischen, patientenorientierten Haltung und arbeite strukturiert, auch in belastenden Situationen.
+
+      - Eigenständige Versorgung und Überwachung intensivpflichtiger Patientinnen und Patienten inklusive Beatmungs- und Medikamentenmanagement
+      - Erfahrung in der Anleitung von Auszubildenden sowie in der Umsetzung von Qualitäts- und Hygienestandards
+      - Sicher im Umgang mit digitaler Pflegedokumentation und interprofessioneller Zusammenarbeit
+
+  location:
+    address: Venloer Straße 42
+    city: Köln
+    region: Nordrhein-Westfalen
+    country: Germany
+    postalCode: "50672"
+
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/anna-schneider-pflege
+      username: anna-schneider-pflege
+    - network: Instagram
+      url: https://www.instagram.com/annapflegt
+      username: annapflegt
+
+  education:
+    - institution: Hochschule für Gesundheit Bochum
+      url: https://www.hsg-bochum.de
+      degree: Bachelor
+      area: Pflegewissenschaft
+      score: "1,7"
+      startDate: Sep 2015
+      endDate: Aug 2019
+      courses:
+        - Pflegewissenschaftliche Grundlagen
+        - Anatomie und Physiologie
+        - Klinische Pflege
+        - Pflegemanagement
+        - Qualitätsmanagement
+        - Ethik in der Pflege
+        - Gesundheitsförderung
+      summary: |
+        - Duales Studium mit integrierten Praxisphasen in Akut- und Langzeitpflege
+        - Schwerpunkt auf evidenzbasierter Pflege und Patientenorientierung
+        - Bachelorarbeit zum Thema Delirprävention in der Intensivpflege
+
+  work:
+    - name: Universitätsklinikum Rheinbach
+      url: https://www.uniklinikum-rheinbach.de
+      position: Gesundheits- und Krankenpflegerin – Intensivstation
+      startDate: Mar 2021
+      summary: |
+        - Überwachung und Versorgung von Patientinnen und Patienten mit respiratorischer Insuffizienz, Sepsis und postoperativen Komplikationen
+        - Bedienung und Überwachung von Beatmungsgeräten, Perfusoren und invasivem Monitoring
+        - Anleitung neuer Kolleginnen und Kollegen sowie Auszubildender im Stationsalltag
+        - Mitwirkung bei der Weiterentwicklung des Pflegekonzepts und der digitalen Dokumentation
+      keywords:
+        - Intensivpflege
+        - Beatmung
+        - Monitoring
+        - Notfallmanagement
+        - Anleitung
+
+    - name: Klinikum St. Elisabeth Köln
+      url: https://www.klinikum-st-elisabeth-koeln.de
+      position: Gesundheits- und Krankenpflegerin
+      startDate: Sep 2019
+      endDate: Feb 2021
+      summary: |
+        - Ganzheitliche Pflege und Betreuung internistischer und chirurgischer Patientinnen und Patienten
+        - Vorbereitung und Nachsorge bei diagnostischen und therapeutischen Eingriffen
+        - Durchführung der Pflegedokumentation und Mitwirkung bei der Pflegevisite
+        - Beratung von Angehörigen und Patienten zu Nachsorge und Hilfsmitteln
+      keywords:
+        - Akutpflege
+        - Patientenaufklärung
+        - Pflegedokumentation
+        - Angehörigenberatung
+
+  languages:
+    - language: German
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - Muttersprache
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - C1
+        - Fachliteratur
+        - Internationale Kommunikation
+    - language: Spanish
+      fluency: Limited Working Proficiency
+      keywords:
+        - Grundkenntnisse
+
+  skills:
+    - name: Intensivpflege
+      level: Expert
+      keywords:
+        - Beatmung
+        - Invasives Monitoring
+        - Sepsisversorgung
+        - Delirprävention
+    - name: Pflegeprozess
+      level: Advanced
+      keywords:
+        - Pflegedokumentation
+        - Pflegevisite
+        - Case Management
+        - Entlassmanagement
+    - name: Notfallmanagement
+      level: Advanced
+      keywords:
+        - ACLS
+        - Reanimation
+        - Notfallmedikation
+        - Teamkommunikation
+    - name: Kommunikation
+      level: Advanced
+      keywords:
+        - Angehörigengespräche
+        - Interprofessionell
+        - Patientenedukation
+        - Konfliktlösung
+    - name: Qualität und Hygiene
+      level: Intermediate
+      keywords:
+        - Hygienestandards
+        - Qualitätssicherung
+        - Audits
+        - CIRS
+
+  awards:
+    - title: Mitarbeiterin des Jahres 2023
+      date: Dec 2023
+      awarder: Universitätsklinikum Rheinbach
+      summary: |
+        Auszeichnung für herausragendes Engagement in der Intensivpflege und in der Anleitung neuer Mitarbeitender.
+
+  certificates:
+    - name: Fachweiterbildung Intensiv- und Anästhesiepflege
+      issuer: Deutsche Krankenhausakademie
+      date: Jun 2023
+      url: https://www.dka.de/fachweiterbildung
+    - name: Advanced Cardiac Life Support (ACLS)
+      issuer: European Resuscitation Council
+      date: Sep 2022
+      url: https://www.erc.edu/courses/acls
+    - name: Hygienebeauftragte in der Pflege
+      issuer: Universitätsklinikum Rheinbach
+      date: Mar 2022
+
+  publications:
+    - name: Delirprävention in der Intensivpflege – Eine Bestandsaufnahme
+      publisher: Pflegezeitschrift
+      releaseDate: May 2024
+      url: https://www.pflegezeitschrift.de/artikel/delirpraevention
+      summary: |
+        - Überblick über aktuelle Studien und Leitlinien zur Delirprävention
+        - Praxisnahe Empfehlungen für die pflegerische Versorgung auf Intensivstationen
+        - Diskussion der Rolle von Angehörigen und interprofessionellen Teams
+
+  projects:
+    - name: Einführung der digitalen Pflegedokumentation
+      startDate: Jan 2023
+      endDate: Nov 2023
+      description: Projekt zur Umstellung der papierbasierten Pflegedokumentation auf
+        ein digitales System
+      summary: |
+        - Analyse bestehender Dokumentationsabläufe und Erstellung eines Anforderungskatalogs
+        - Schulung von über 40 Pflegekräften im Umgang mit der neuen Software
+        - Begleitung der Pilotphase und Auswertung von Anwenderfeedback
+      keywords:
+        - Digitalisierung
+        - Pflegedokumentation
+        - Schulung
+    - name: Delirpräventionsprogramm Station 4B
+      startDate: Apr 2022
+      endDate: Dec 2022
+      description: Multiprofessionelles Programm zur Früherkennung und Prävention von
+        Delirien
+      summary: |
+        - Einführung eines standardisierten Screenings bei allen über 65-jährigen Patienten
+        - Entwicklung von Schulungsmaterialien für Pflege und Medizin
+        - Reduktion der Delirinzidenz um 18 Prozent im Projektzeitraum
+      keywords:
+        - Delirprävention
+        - Screening
+        - Multiprofessionell
+
+  interests:
+    - name: Sport
+      keywords:
+        - Klettern
+        - Laufen
+        - Yoga
+    - name: Lesen
+      keywords:
+        - Fachliteratur
+        - Romane
+
+  volunteer:
+    - organization: Deutsches Rotes Kreuz Köln
+      url: https://www.drk-koeln.de
+      position: Ehrenamtliche Sanitätshelferin
+      startDate: Jan 2020
+      endDate: Dec 2023
+      summary: |
+        - Absicherung von Veranstaltungen und Unterstützung bei der Ersten Hilfe
+        - Betreuung von Verletzten und Koordination der Übergabe an den Rettungsdienst
+    - organization: Pflegekammer Nordrhein-Westfalen
+      position: Mitglied im Ausschuss Pflegequalität
+      startDate: May 2022
+      summary: |
+        - Mitwirkung an Stellungnahmen zu pflegefachlichen Standards
+        - Austausch mit Kolleginnen und Kollegen aus Klinik, Pflegeheim und ambulantem Dienst
+
+locale:
+  language: de

@@ -1,0 +1,206 @@
+content:
+  basics:
+    name: Lucía Fernández Morales
+    headline: 'Enfermera Registrada | Urgencias y Cuidados Críticos'
+    phone: "+34 612 345 678"
+    email: lucia.fernandez@enfermeria.es
+    url: https://www.luciafernandez-enfermeria.es
+    summary: |
+      Enfermera registrada con más de siete años de experiencia en hospitales de alta complejidad, especializada en urgencias, cuidados críticos y atención centrada en la persona.
+
+      - Valoración integral del paciente y ejecución de cuidados de enfermería basados en evidencia.
+      - Experiencia en triaje, monitorización hemodinámica, soporte vital avanzado y administración segura de medicamentos.
+      - Coordinación con equipos multidisciplinares y comunicación clara con pacientes y familias.
+      - Compromiso con la seguridad del paciente, la formación continua y la mejora de protocolos asistenciales.
+  location:
+    address: Calle de la Salud 45, 3.º B
+    city: Madrid
+    region: Comunidad de Madrid
+    country: Spain
+    postalCode: "28012"
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/lucia-fernandez-enfermeria
+      username: lucia-fernandez-enfermeria
+    - network: Twitter
+      url: https://twitter.com/lucia_enfermera
+      username: lucia_enfermera
+  education:
+    - institution: Universidad Complutense de Madrid
+      url: https://www.ucm.es
+      degree: Bachelor
+      area: Enfermería
+      score: "8,7/10"
+      startDate: Sep 1, 2014
+      endDate: Jun 30, 2018
+      courses:
+        - Fundamentos de Enfermería
+        - Fisiología Humana
+        - Farmacología Clínica
+        - Cuidados Intensivos
+        - Salud Pública
+        - Ética y Legislación Sanitaria
+        - Enfermería Materno-Infantil
+        - Urgencias y Emergencias
+      summary: |
+        - Formación generalista con prácticas clínicas en hospitalización, urgencias y atención primaria.
+        - Trabajo de fin de grado sobre la prevención de infecciones asociadas a la atención sanitaria.
+        - Participación en simulacros de soporte vital y en programas de educación para la salud.
+  work:
+    - name: Hospital Universitario La Paz
+      url: https://www.comunidad.madrid/hospital/lapaz
+      position: Enfermera de Urgencias
+      startDate: Jan 11, 2021
+      summary: |
+        - Realización de triaje inicial y clasificación de pacientes según prioridad asistencial en un servicio con más de 300 urgencias diarias.
+        - Ejecución de cuidados de enfermería en pacientes críticos: monitorización, canalización de vías, administración de fármacos y apoyo en soporte vital avanzado.
+        - Coordinación con médicos, técnicos y auxiliares para garantizar una atención rápida, segura y humanizada.
+        - Registro riguroso de datos clínicos y educación al paciente y a la familia sobre el plan de cuidados y los signos de alarma.
+      keywords:
+        - Triaje
+        - Urgencias
+        - RCP avanzada
+        - Monitorización
+        - Registro clínico
+    - name: Hospital Clínico San Carlos
+      url: https://www.comunidad.madrid/hospital/clinicosancarlos
+      position: Enfermera de Hospitalización
+      startDate: Sep 17, 2018
+      endDate: Dec 31, 2020
+      summary: |
+        - Atención integral a pacientes adultos en unidades de medicina interna y cirugía, con una media de 12 pacientes por turno.
+        - Administración segura de medicamentos, curas, sondajes y control de signos vitales conforme a los protocolos del centro.
+        - Colaboración en la preparación del paciente para pruebas diagnósticas e intervenciones quirúrgicas.
+        - Educación sanitaria a pacientes y cuidadores para favorecer la continuidad de cuidados y la adherencia al tratamiento.
+      keywords:
+        - Cuidados postoperatorios
+        - Administración de medicamentos
+        - Educación al paciente
+        - Seguridad del paciente
+        - Trabajo en equipo
+  skills:
+    - name: Cuidados de Enfermería
+      level: Expert
+      keywords:
+        - Valoración del paciente
+        - Cuidados básicos
+        - Curas y vendajes
+        - Sondajes
+        - Control de signos vitales
+    - name: Urgencias y Emergencias
+      level: Advanced
+      keywords:
+        - Triaje Manchester
+        - RCP avanzada
+        - Manejo de vías
+        - Monitorización
+    - name: Gestión Clínica
+      level: Intermediate
+      keywords:
+        - Historia clínica electrónica
+        - Registro de datos
+        - Coordinación de equipos
+        - Mejora de protocolos
+    - name: Educación Sanitaria
+      level: Advanced
+      keywords:
+        - Educación al paciente
+        - Promoción de la salud
+        - Adherencia al tratamiento
+        - Comunicación clínica
+  languages:
+    - language: Spanish
+      fluency: Native or Bilingual Proficiency
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - B2-C1
+        - Inglés sanitario
+    - language: French
+      fluency: Limited Working Proficiency
+      keywords:
+        - A2
+  awards:
+    - title: Premio a la Excelencia Asistencial
+      date: Dec 2023
+      awarder: Hospital Universitario La Paz
+      summary: |
+        Reconocimiento por la mejora del protocolo de comunicación en el triaje de urgencias y por la formación de nuevos profesionales.
+    - title: Mejor Expediente de Enfermería
+      date: Jun 2018
+      awarder: Universidad Complutense de Madrid
+      summary: |
+        Distinción otorgada al expediente académico con mayor calificación de la promoción en el Grado en Enfermería.
+  certificates:
+    - name: Soporte Vital Avanzado (SVA)
+      issuer: Sociedad Española de Medicina de Urgencias y Emergencias
+      date: Mar 2022
+      url: https://www.semes.org
+    - name: Curso de Triaje Manchester
+      issuer: Grupo Español de Triaje
+      date: May 2021
+      url: https://www.triajemanchester.es
+    - name: Enfermería de Urgencias y Emergencias
+      issuer: Hospital Universitario La Paz
+      date: Oct 2020
+      url: https://www.comunidad.madrid/hospital/lapaz
+  publications:
+    - name: Protocolo de actuación en triaje de urgencias pediátricas
+      publisher: Revista Española de Enfermería de Urgencias
+      releaseDate: Nov 2023
+      url: https://www.enfermeriaurgencias.es/articulos/triaje-pediatrico
+      summary: |
+        - Artículo basado en la experiencia del servicio de urgencias del Hospital Universitario La Paz.
+        - Propone criterios de valoración rápida y comunicación estructurada entre enfermería y pediatría.
+        - Incluye indicadores de calidad para evaluar la adherencia al protocolo.
+  projects:
+    - name: Programa de educación para la salud en diabetes
+      url: https://www.madrid.es/salud/diabetes
+      description: Programa comunitario para mejorar el autocuidado de personas con
+        diabetes tipo 2.
+      startDate: Feb 2022
+      endDate: Nov 2022
+      summary: |
+        - Diseño de talleres sobre alimentación, ejercicio y control de la glucemia.
+        - Coordinación con atención primaria y asociaciones de pacientes.
+        - Evaluación de la satisfacción y de la adherencia a las recomendaciones.
+      keywords:
+        - Educación sanitaria
+        - Diabetes
+        - Atención primaria
+        - Autocuidado
+  interests:
+    - name: Voluntariado sanitario
+      keywords:
+        - Cruz Roja
+        - Primeros auxilios
+        - Formación
+    - name: Deporte
+      keywords:
+        - Natación
+        - Carrera
+        - Yoga
+    - name: Lectura
+      keywords:
+        - Divulgación científica
+        - Novela histórica
+  volunteer:
+    - organization: Cruz Roja Española
+      url: https://www.cruzroja.es
+      position: Voluntaria de Socorros y Emergencias
+      startDate: Jun 2016
+      endDate: Sep 2019
+      summary: |
+        - Participación en dispositivos preventivos y atención de primeros auxilios en eventos públicos.
+        - Formación a nuevos voluntarios en soporte vital básico y manejo inicial de emergencias.
+        - Colaboración en campañas de promoción de la salud y donación de sangre.
+  references:
+    - name: Dra. Marta Ruiz Salgado
+      phone: "+34 915 123 456"
+      relationship: Supervisora de Urgencias
+      email: marta.ruiz@salud.madrid.org
+      summary: |
+        Lucía destaca por su criterio clínico, su capacidad de priorización y su trato cercano con pacientes y familias. Es una profesional fiable y comprometida con la mejora continua.
+
+locale:
+  language: es

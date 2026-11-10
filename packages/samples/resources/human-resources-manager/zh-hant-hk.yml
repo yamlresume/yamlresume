@@ -1,0 +1,268 @@
+content:
+  basics:
+    name: 陳嘉欣
+    headline: 人力資源經理｜人才發展與組織效能
+    phone: '+852 9123 4567'
+    email: ka.yan.chan@example.com
+    url: https://www.chan-kayan-hr.com
+    summary: |
+      具備超過十年香港及大中華區人力資源管理經驗，專注人才策略、組織發展與員工體驗。擅長在快速變化的零售及科技環境中，將業務目標轉化為可執行的人才方案。
+
+      - 曾領導 8 人人力資源團隊，支持逾 1,200 名員工，並將年度流失率降低 18%。
+      - 主導薪酬架構重整及績效管理制度優化，提升員工投入度分數 12 個百分點。
+      - 熟悉香港僱傭條例、強積金、稅務及跨境用工合規，並具備勞資協商經驗。
+      - 以數據驅動人力規劃，建立招聘漏斗、離職分析及人才盤點儀表板。
+
+  location:
+    address: 香港中環皇后大道中99號
+    city: 香港
+    region: 香港島
+    country: Hong Kong
+
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/chan-kayan-hr
+      username: chan-kayan-hr
+    - network: Medium
+      url: https://medium.com/@chan-kayan-hr
+      username: chan-kayan-hr
+
+  education:
+    - institution: 香港中文大學
+      url: https://www.cuhk.edu.hk
+      degree: Master
+      area: 人力資源管理
+      score: '3.8'
+      startDate: '2012-09-01'
+      endDate: '2014-06-30'
+      courses:
+        - 策略人力資源管理
+        - 組織行為學
+        - 薪酬與績效管理
+        - 招聘與選才
+        - 培訓與發展
+        - 勞動法規與僱傭實務
+      summary: |
+        - 深入研究人才策略與組織效能，並以零售業個案完成畢業論文
+        - 透過小組項目建立薪酬設計、人才盤點及變革管理實務能力
+        - 獲選參與學院與企業合辦的人力資源顧問項目
+    - institution: 香港城市大學
+      url: https://www.cityu.edu.hk
+      degree: Bachelor
+      area: 心理學
+      score: '3.6'
+      startDate: '2008-09-01'
+      endDate: '2012-06-30'
+      courses:
+        - 工業與組織心理學
+        - 研究方法與統計
+        - 消費者行為
+        - 社會心理學
+        - 溝通與人際關係
+      summary: |
+        - 以心理學角度理解員工行為、團隊動力與組織文化
+        - 完成關於工作動機與員工投入度的專題研究
+        - 培養數據分析、訪談及問卷設計的基礎能力
+
+  work:
+    - name: 宏基零售集團有限公司
+      url: https://www.hongkei-retail.com
+      position: 人力資源經理
+      startDate: '2021-04-01'
+      summary: |
+        - 帶領 8 人人力資源團隊，負責招聘、薪酬、員工關係、培訓及人力資源資訊系統
+        - 與管理層制定三年人才策略，支持 12 間門店及逾 1,200 名員工的業務擴展
+        - 重整薪酬架構與年度調薪機制，將薪酬預算準確度提升至 98%
+        - 建立月度人力數據儀表板，追蹤流失率、招聘周期及員工投入度
+        - 處理複雜勞資個案及紀律調查，確保符合香港僱傭條例及公司政策
+      keywords:
+        - 人才策略
+        - 組織發展
+        - 員工關係
+        - 績效管理
+        - 薪酬架構
+    - name: 卓越科技顧問有限公司
+      url: https://www.excellence-tech.com.hk
+      position: 高級人力資源主任
+      startDate: '2017-07-01'
+      endDate: '2021-03-31'
+      summary: |
+        - 負責香港及深圳兩地辦公室的全流程招聘，每年處理逾 150 個職位
+        - 設計校園招聘及實習生計劃，將應屆畢業生留任率提升 20%
+        - 協助推行績效管理制度，培訓 30 位部門主管進行目標設定與回饋面談
+        - 與財務部門合作優化薪酬預算及福利方案，控制年度人力成本增長
+        - 建立員工手冊及入職流程，提升新員工首 90 天體驗
+      keywords:
+        - 全流程招聘
+        - 校園招聘
+        - 績效管理
+        - 員工手冊
+        - 跨境用工
+    - name: 香港人力資源服務有限公司
+      url: https://www.hkhrservices.com
+      position: 人力資源主任
+      startDate: '2014-07-01'
+      endDate: '2017-06-30'
+      summary: |
+        - 為中小企客戶提供招聘、薪酬計算及僱傭合規支援
+        - 處理每月薪酬、強積金、報稅及假期管理，確保準時及準確
+        - 協助客戶編寫職位說明書及設計面試評分表
+        - 回應員工查詢並支援勞資糾紛初步調解
+        - 定期更新香港僱傭條例及市場薪酬資訊予客戶
+      keywords:
+        - 薪酬計算
+        - 強積金
+        - 僱傭合規
+        - 職位說明書
+        - 客戶支援
+
+  skills:
+    - name: 人力資源策略
+      level: Expert
+      keywords:
+        - 人才規劃
+        - 組織設計
+        - 繼任計劃
+        - 變革管理
+    - name: 招聘與僱主品牌
+      level: Advanced
+      keywords:
+        - 全流程招聘
+        - 校園招聘
+        - 僱主品牌
+        - 面試評估
+    - name: 薪酬與福利
+      level: Advanced
+      keywords:
+        - 薪酬架構
+        - 市場薪酬調研
+        - 福利設計
+        - 薪酬預算
+    - name: 員工關係與合規
+      level: Advanced
+      keywords:
+        - 勞資協商
+        - 香港僱傭條例
+        - 員工手冊
+        - 紀律調查
+    - name: 學習與發展
+      level: Advanced
+      keywords:
+        - 培訓需求分析
+        - 課程設計
+        - 領導力發展
+        - 學習成效評估
+    - name: 人力資源資訊系統
+      level: Intermediate
+      keywords:
+        - 人力數據分析
+        - 儀表板設計
+        - 報表自動化
+        - 流程數碼化
+
+  languages:
+    - language: Cantonese
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - 母語
+        - 香港粵語
+        - 商務溝通
+    - language: Mandarin
+      fluency: Full Professional Proficiency
+      keywords:
+        - 普通話水平測試二級甲等
+        - 跨部門溝通
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - 雅思 7.5
+        - 商務書寫
+        - 簡報匯報
+
+  awards:
+    - title: 年度卓越人力資源領袖獎
+      date: '2023-11-15'
+      awarder: 香港人力資源管理學會
+      summary: |
+        表揚在人才策略、員工體驗及組織變革方面具傑出表現的人力資源領袖。
+    - title: 最佳僱主品牌項目金獎
+      date: '2022-09-01'
+      awarder: 亞洲人力資源大獎
+      summary: |
+        憑校園招聘品牌重塑及員工推薦計劃，提升僱主知名度及年輕人才申請量。
+
+  certificates:
+    - name: 全球人力資源專業人士認證（GPHR）
+      issuer: 人力資源認證協會
+      date: '2019-06-01'
+      url: https://www.hrci.org
+    - name: 認可調解員
+      issuer: 香港和解中心
+      date: '2020-11-01'
+      url: https://www.mediationcentre.org.hk
+
+  publications:
+    - name: 以員工體驗驅動人才保留：香港零售業實證研究
+      publisher: 香港人力資源管理學會月刊
+      releaseDate: '2023-08-01'
+      url: https://www.hkihrm.org
+      summary: |
+        - 分析零售業前線員工流失的關鍵因素
+        - 提出結合入職體驗、前線主管培訓及彈性排班的留才方案
+        - 以三家香港零售企業的試點數據說明員工投入度與留任率的關係
+
+  projects:
+    - name: 員工體驗數碼轉型計劃
+      startDate: '2022-02-01'
+      endDate: '2023-05-31'
+      description: 整合入職、學習、績效與離職數據，建立員工體驗儀表板。
+      summary: |
+        - 與資訊科技及營運部門合作，將五個人力資源流程數碼化
+        - 建立離職風險指標，協助主管提前介入關鍵人才保留
+        - 將入職文件處理時間由 3 天縮短至 1 天
+        - 為 50 位主管提供數據解讀及員工關懷培訓
+      keywords:
+        - 員工體驗
+        - 流程數碼化
+        - 人力數據
+        - 留才
+    - name: 校園招聘品牌重塑
+      startDate: '2019-09-01'
+      endDate: '2020-02-29'
+      description: 重新設計校園招聘宣傳、面試流程及實習生體驗。
+      summary: |
+        - 與市場部合作製作僱主品牌內容，提升社交媒體互動率 35%
+        - 設計結構化面試評分表，統一不同部門的選才標準
+        - 舉辦線上職業講座，吸引逾 600 名應屆畢業生參加
+        - 實習生轉正率由 45% 提升至 62%
+      keywords:
+        - 僱主品牌
+        - 校園招聘
+        - 結構化面試
+        - 實習生計劃
+
+  interests:
+    - name: 運動
+      keywords:
+        - 馬拉松
+        - 瑜伽
+        - 行山
+    - name: 文化
+      keywords:
+        - 閱讀
+        - 攝影
+        - 旅行
+
+  volunteer:
+    - organization: 香港青年協會
+      url: https://www.hkfyg.org.hk
+      position: 職涯規劃義務顧問
+      startDate: '2018-09-01'
+      summary: |
+        - 為應屆畢業生提供履歷指導及模擬面試
+        - 主持職涯探索工作坊，協助青年了解人力資源及零售行業
+        - 協助設計求職技巧教材，供中心義工重複使用
+        - 每年服務超過 80 名青年
+
+locale:
+  language: zh-hant-hk

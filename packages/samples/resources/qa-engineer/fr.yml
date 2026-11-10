@@ -1,0 +1,246 @@
+content:
+  basics:
+    name: Camille Moreau
+    headline: Ingénieur QA senior spécialisé en automatisation des tests
+    phone: "+33 6 12 34 56 78"
+    email: camille.moreau@example.fr
+    url: https://www.camille-moreau-qa.fr
+    summary: |
+      Ingénieur QA senior avec plus de 8 ans d'expérience dans la conception, l'automatisation et le pilotage de stratégies de test pour des applications web et des API critiques.
+
+      - Expertise en tests fonctionnels, d'intégration, de régression et de performance
+      - Maîtrise de Cypress, Playwright, Selenium, Postman, JMeter et des pipelines CI/CD
+      - Solide culture qualité : ISTQB, métriques, gestion des risques et amélioration continue
+      - Leadership technique, mentorat et collaboration étroite avec les équipes produit et développement
+  location:
+    address: 24 rue des Ateliers
+    city: Paris
+    region: Île-de-France
+    country: France
+    postalCode: "75011"
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/camille-moreau-qa
+      username: camille-moreau-qa
+    - network: GitHub
+      url: https://github.com/camillemoreau-qa
+      username: camillemoreau-qa
+    - network: Gitlab
+      url: https://gitlab.com/camillemoreau-qa
+      username: camillemoreau-qa
+  education:
+    - institution: Université Paris-Dauphine
+      url: https://www.dauphine.psl.eu/
+      degree: Master
+      area: Ingénierie logicielle et qualité
+      score: "16/20"
+      startDate: Sep 1, 2015
+      endDate: Jul 1, 2017
+      courses:
+        - Fondamentaux des tests logiciels
+        - Automatisation des tests fonctionnels
+        - Gestion de la qualité et métriques
+        - Architecture des systèmes d'information
+        - Méthodes agiles et Scrum
+        - Tests de performance et charge
+      summary: |
+        - Formation solide en assurance qualité logicielle et en conduite de projets de test
+        - Projets universitaires centrés sur l'automatisation, la non-régression et la mesure de la qualité
+        - Pratique des méthodes agiles et de la collaboration avec les équipes de développement
+  work:
+    - name: HexaFinance
+      url: https://www.hexafinance.fr
+      position: Ingénieur QA senior
+      startDate: Mar 1, 2021
+      summary: |
+        - Pilotage de la stratégie de test multi-produits sur des applications web et des API bancaires critiques
+        - Conception et maintenance de suites automatisées avec Cypress, Playwright et REST Assured
+        - Réduction de 35 % des défauts détectés en production grâce à une meilleure couverture des scénarios à risque
+        - Mise en place de tests d'API contractuels et de contrôles de régression intégrés aux pipelines GitLab CI
+        - Animation de revues de qualité, définition des métriques et accompagnement des équipes produit
+        - Mentorat de deux ingénieurs QA juniors et diffusion des bonnes pratiques d'automatisation
+      keywords:
+        - Automatisation
+        - Cypress
+        - API REST
+        - CI/CD
+        - Qualité logicielle
+        - Mentorat
+    - name: Novatech Santé
+      url: https://www.novatech-sante.fr
+      position: Ingénieur QA
+      startDate: Jan 1, 2018
+      endDate: Feb 1, 2021
+      summary: |
+        - Rédaction des plans de test, des cas de test et des jeux de données pour des applications de santé réglementées
+        - Exécution de campagnes de tests fonctionnels, de non-régression et d'intégration
+        - Développement de tests automatisés avec Selenium WebDriver et Robot Framework
+        - Suivi rigoureux des anomalies dans Jira et coordination des corrections avec les développeurs
+        - Participation active aux cérémonies Scrum et aux revues de sprint
+        - Contribution à la traçabilité des exigences et à la préparation des livraisons
+      keywords:
+        - Tests manuels
+        - Selenium
+        - Jira
+        - Zephyr
+        - SQL
+        - Agile
+    - name: Atelier Logiciel
+      url: https://www.atelier-logiciel.fr
+      position: Analyste QA junior
+      startDate: Sep 1, 2017
+      endDate: Dec 1, 2017
+      summary: |
+        - Analyse des exigences fonctionnelles et traduction en scénarios de test vérifiables
+        - Création et exécution de tests fonctionnels sur une application de gestion interne
+        - Documentation des résultats, des anomalies et des écarts par rapport aux spécifications
+        - Collaboration avec les équipes support et développement pour qualifier les incidents
+      keywords:
+        - Tests fonctionnels
+        - Postman
+        - Documentation
+        - Reporting
+  languages:
+    - language: French
+      fluency: Native or Bilingual Proficiency
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - TOEIC 920
+        - Documentation technique
+    - language: Spanish
+      fluency: Limited Working Proficiency
+      keywords:
+        - Conversation professionnelle
+  skills:
+    - name: Tests automatisés
+      level: Expert
+      keywords:
+        - Cypress
+        - Playwright
+        - Selenium WebDriver
+        - Robot Framework
+        - Cucumber
+    - name: Tests d'API et intégration
+      level: Advanced
+      keywords:
+        - Postman
+        - REST Assured
+        - Swagger
+        - SoapUI
+    - name: Tests de performance
+      level: Advanced
+      keywords:
+        - JMeter
+        - Gatling
+        - k6
+        - Analyse de charge
+    - name: Gestion de la qualité
+      level: Expert
+      keywords:
+        - Stratégie de test
+        - Plans de test
+        - Gestion des anomalies
+        - Métriques qualité
+        - ISTQB
+    - name: Outils et DevOps
+      level: Advanced
+      keywords:
+        - Jira
+        - Xray
+        - GitLab CI
+        - Docker
+        - Jenkins
+    - name: Méthodes
+      level: Advanced
+      keywords:
+        - Agile
+        - Scrum
+        - BDD
+        - TDD
+        - Revues de code
+  awards:
+    - title: Prix de l'excellence qualité
+      date: Jun 2023
+      awarder: HexaFinance
+      summary: |
+        Récompense attribuée pour la refonte de la stratégie de test et la réduction significative des défauts en production.
+  certificates:
+    - name: Certification ISTQB niveau fondation
+      issuer: ISTQB
+      date: Apr 2018
+      url: https://www.istqb.org/certifications/foundation-level
+    - name: Testeur agile certifié
+      issuer: iSQI
+      date: Nov 2020
+      url: https://www.isqi.org/certified-agile-tester
+    - name: ISTQB ingénieur automatisation des tests
+      issuer: ISTQB
+      date: Sep 2022
+      url: https://www.istqb.org/certifications/test-automation-engineer
+  publications:
+    - name: "Automatiser les tests sans sacrifier la maintenabilité"
+      publisher: Blog Qualité & Logiciel
+      releaseDate: Feb 2023
+      url: https://www.qualite-logiciel.fr/articles/automatiser-tests-maintenabilite
+      summary: |
+        Article pratique sur les bonnes pratiques d'automatisation des tests, la conception de suites robustes et la réduction de la dette de test.
+  projects:
+    - name: QualiDash
+      url: https://github.com/camillemoreau-qa/qualidash
+      description: Tableau de bord de pilotage de la qualité logicielle pour les
+        équipes produit.
+      startDate: Jan 2022
+      endDate: Jun 2023
+      summary: |
+        - Centralisation des métriques de test, des anomalies et des tendances de qualité
+        - Visualisation des risques par fonctionnalité et suivi de la couverture automatisée
+        - Réduction du temps de préparation des bilans qualité hebdomadaires
+      keywords:
+        - Qualité
+        - Métriques
+        - Automatisation
+        - Reporting
+    - name: TestAPIFactory
+      description: Bibliothèque interne de scénarios réutilisables pour les tests
+        d'API REST.
+      startDate: Mar 2023
+      endDate: Dec 2023
+      summary: |
+        - Factorisation des appels, assertions et jeux de données pour accélérer l'écriture des tests
+        - Intégration dans plusieurs pipelines CI avec exécution parallèle
+        - Documentation et formation des équipes à l'utilisation de la bibliothèque
+      keywords:
+        - API REST
+        - Tests automatisés
+        - CI/CD
+        - Documentation
+  interests:
+    - name: Technologie
+      keywords:
+        - Automatisation
+        - Logiciel libre
+        - Veille technologique
+    - name: Sport
+      keywords:
+        - Escalade
+        - Running
+        - Yoga
+    - name: Culture
+      keywords:
+        - Lecture
+        - Photographie
+        - Cuisine
+  volunteer:
+    - organization: Testeurs Solidaires
+      url: https://www.testeurs-solidaires.fr
+      position: Bénévole formateur en tests logiciels
+      startDate: Sep 2020
+      endDate: Jun 2023
+      summary: |
+        - Animation d'ateliers d'initiation aux tests logiciels pour des personnes en reconversion
+        - Accompagnement méthodologique sur la rédaction de cas de test et la gestion des anomalies
+        - Création de supports pédagogiques accessibles et adaptés aux débutants
+
+locale:
+  language: fr

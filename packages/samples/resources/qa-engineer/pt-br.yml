@@ -1,0 +1,212 @@
+content:
+  basics:
+    name: Mariana Costa Almeida
+    headline: 'Engenheira de QA | Automação de Testes | Qualidade de Software'
+    phone: "+55 11 98765-4321"
+    email: mariana.almeida@example.com
+    url: https://marianaalmeida.dev
+    summary: |
+      Engenheira de QA com mais de 8 anos de experiência em garantia de qualidade de software, especializada em automação de testes e melhoria contínua de processos. Atuação em ambientes ágeis, colaborando com equipes multidisciplinares para entregar produtos com alta qualidade e confiabilidade.
+
+      - Experiência sólida em testes manuais e automatizados (web, API e mobile)
+      - Domínio de ferramentas como Selenium, Cypress, Playwright, Appium e REST Assured
+      - Conhecimento em CI/CD, Docker e boas práticas de DevOps
+      - Forte habilidade em análise de requisitos, criação de casos de teste e documentação
+      - Mentalidade analítica, proativa e orientada a resultados
+  location:
+    address: Rua das Palmeiras, 123
+    city: São Paulo
+    region: SP
+    country: Brazil
+    postalCode: "01234-567"
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/marianacalmeida
+      username: marianacalmeida
+    - network: GitHub
+      url: https://github.com/marianaalmeida
+      username: marianaalmeida
+  education:
+    - institution: Universidade de São Paulo
+      url: https://www.usp.br
+      degree: Bachelor
+      area: Engenharia de Computação
+      score: "8.7"
+      startDate: Feb 1, 2015
+      endDate: Dec 15, 2019
+      courses:
+        - Engenharia de Software
+        - Banco de Dados
+        - Redes de Computadores
+        - Sistemas Operacionais
+        - Algoritmos e Estruturas de Dados
+        - Qualidade de Software
+        - Testes de Software
+      summary: |
+        - Formação sólida em engenharia de software, com ênfase em qualidade e testes
+        - Participação em projetos de extensão voltados à inclusão digital
+  work:
+    - name: InovaTech Solutions
+      url: https://www.inovatechsolutions.com.br
+      position: Engenheira de QA Sênior
+      startDate: Mar 1, 2022
+      summary: |
+        - Liderança técnica da equipe de QA, com 4 pessoas sob minha orientação
+        - Definição e implementação da estratégia de testes automatizados para aplicações web e APIs
+        - Criação de frameworks de automação com Cypress e Playwright, reduzindo o tempo de regressão em 60%
+        - Integração dos testes automatizados ao pipeline de CI/CD (GitLab CI), garantindo feedback rápido
+        - Colaboração com squads de desenvolvimento e produto para garantir critérios de aceite claros e testáveis
+        - Condução de análises de causa raiz e proposição de melhorias contínuas no processo de qualidade
+      keywords:
+        - Cypress
+        - Playwright
+        - CI/CD
+        - Liderança
+        - Qualidade
+    - name: DataTrust Systems
+      url: https://www.datatrustsystems.com
+      position: Engenheira de QA Pleno
+      startDate: Jan 2, 2020
+      endDate: Feb 28, 2022
+      summary: |
+        - Responsável pela garantia de qualidade de uma plataforma SaaS de gestão de dados
+        - Desenvolvimento de testes automatizados de API utilizando REST Assured e Postman
+        - Execução de testes manuais exploratórios e funcionais em ambientes web e mobile
+        - Criação e manutenção de planos de teste, casos de teste e relatórios de bugs no Jira
+        - Participação ativa em cerimônias ágeis (Scrum) e revisões de sprint
+        - Apoio na implementação de testes de performance com JMeter
+      keywords:
+        - REST Assured
+        - Postman
+        - Jira
+        - Scrum
+        - JMeter
+    - name: QualiSoft Consultoria
+      url: https://www.qualisoft.com.br
+      position: Analista de QA Júnior
+      startDate: Mar 1, 2018
+      endDate: Dec 20, 2019
+      summary: |
+        - Execução de testes manuais em sistemas web e mobile para clientes de diversos setores
+        - Elaboração de casos de teste e documentação de evidências
+        - Reporte e acompanhamento de defeitos até a resolução
+        - Suporte à automação de testes com Selenium WebDriver
+        - Participação em treinamentos internos sobre boas práticas de qualidade
+      keywords:
+        - Selenium
+        - Testes manuais
+        - Documentação
+        - Bug tracking
+  skills:
+    - name: Automação de Testes
+      level: Expert
+      keywords:
+        - Selenium
+        - Cypress
+        - Playwright
+        - Appium
+        - REST Assured
+    - name: Testes Manuais
+      level: Advanced
+      keywords:
+        - Testes exploratórios
+        - Casos de teste
+        - Testes de regressão
+        - Testes de aceitação
+    - name: Ferramentas de Gestão
+      level: Advanced
+      keywords:
+        - Jira
+        - TestRail
+        - Azure DevOps
+        - Confluence
+    - name: CI/CD e DevOps
+      level: Intermediate
+      keywords:
+        - GitLab CI
+        - Jenkins
+        - GitHub Actions
+        - Docker
+    - name: Programação
+      level: Advanced
+      keywords:
+        - Python
+        - JavaScript
+        - Java
+        - SQL
+    - name: Metodologias Ágeis
+      level: Advanced
+      keywords:
+        - Scrum
+        - Kanban
+        - BDD
+        - TDD
+  languages:
+    - language: Portuguese
+      fluency: Native or Bilingual Proficiency
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - TOEFL 105
+        - Leitura e escrita técnica
+    - language: Spanish
+      fluency: Limited Working Proficiency
+  certificates:
+    - name: ISTQB Certified Tester Foundation Level
+      url: https://www.istqb.org
+      issuer: ISTQB
+      date: Jun 2020
+    - name: Certified Agile Tester
+      url: https://www.istqb.org
+      issuer: ISTQB
+      date: Nov 2021
+  awards:
+    - title: Prêmio de Excelência em Qualidade
+      awarder: InovaTech Solutions
+      date: Dec 2023
+      summary: |
+        Reconhecimento por liderar a iniciativa de automação de testes que reduziu em 60% o tempo de regressão e aumentou a cobertura de testes para 85%.
+  projects:
+    - name: Framework de Automação Open Source
+      url: https://github.com/marianaalmeida/qa-automation-framework
+      description: Framework modular para automação de testes web e API com Cypress e
+        REST Assured
+      startDate: Jan 2023
+      summary: |
+        - Projeto open source para compartilhar boas práticas de automação de testes
+        - Suporte a testes data-driven e geração de relatórios
+        - Documentação completa e exemplos de uso
+      keywords:
+        - Cypress
+        - REST Assured
+        - Open Source
+        - Automação
+  publications:
+    - name: 'Automação de Testes com Cypress: Boas Práticas'
+      publisher: Comunidade QA Brasil
+      releaseDate: Aug 2023
+      url: https://medium.com/@marianaalmeida/automacao-de-testes-com-cypress
+      summary: |
+        Artigo técnico abordando estratégias para criação de testes automatizados robustos e maintíveis com Cypress, incluindo organização de pastas, uso de fixtures e integração com CI/CD.
+  interests:
+    - name: Música
+      keywords:
+        - Violão
+        - Canto
+    - name: Esportes
+      keywords:
+        - Corrida
+        - Yoga
+        - Trilhas
+  volunteer:
+    - organization: Comunidade QA Brasil
+      url: https://www.comunidadeqabrasil.com.br
+      position: Mentora
+      startDate: Jan 2022
+      summary: |
+        - Mentoria para profissionais iniciantes em QA, com foco em automação de testes e boas práticas
+        - Participação em eventos e workshops da comunidade
+        - Apoio na organização de meetups sobre qualidade de software
+
+locale:
+  language: pt-br

@@ -1,0 +1,267 @@
+content:
+  basics:
+    name: Mariana Costa Albuquerque
+    headline: 'Engenheira Mecânica Sênior | Projetos, Simulação e Manufatura'
+    phone: '+55 11 98765-4321'
+    email: mariana.albuquerque@engmail.com.br
+    url: https://www.marianaalbuquerque.eng.br
+    summary: |
+      Engenheira mecânica com mais de 10 anos de experiência em projeto, simulação e industrialização de sistemas mecânicos para os setores automotivo, energético e de bens de capital.
+      - Especialista em CAD 3D, análise estrutural por elementos finitos e otimização de componentes.
+      - Histórico comprovado na redução de custos, melhoria de desempenho e transferência de produtos para a manufatura.
+      - Experiência em gestão de projetos multidisciplinares, normas ISO 9001 e metodologias Lean Six Sigma.
+      - Perfil colaborativo, com forte comunicação técnica e mentoria de equipes de engenharia.
+  location:
+    address: Av. Paulista, 1578, Bela Vista
+    city: São Paulo
+    region: São Paulo
+    country: Brazil
+    postalCode: '01310-100'
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/mariana-albuquerque
+      username: mariana-albuquerque
+    - network: GitHub
+      url: https://github.com/mariana-albuquerque
+      username: mariana-albuquerque
+    - network: Stack Overflow
+      url: https://stackoverflow.com/users/12345678/mariana-albuquerque
+      username: mariana-albuquerque
+  education:
+    - institution: Universidade Estadual de Campinas
+      url: https://www.unicamp.br
+      degree: Master
+      area: Engenharia Mecânica
+      score: '3.9/4.0'
+      startDate: Mar 1, 2012
+      endDate: Feb 28, 2014
+      courses:
+        - Mecânica dos Sólidos Computacional
+        - Dinâmica de Sistemas Mecânicos
+        - Tribologia e Lubrificação
+        - Materiais Compósitos
+        - Metodologia de Pesquisa Experimental
+        - Otimização Estrutural
+      summary: |
+        - Dissertação voltada à otimização topológica de suportes estruturais, com validação experimental e simulação numérica.
+        - Desenvolvimento de métodos para reduzir massa mantendo rigidez e confiabilidade em aplicações automotivas.
+        - Publicação de resultados em congresso nacional de engenharia mecânica.
+    - institution: Universidade Federal de Santa Catarina
+      url: https://www.ufsc.br
+      degree: Bachelor
+      area: Engenharia Mecânica
+      score: '3.7/4.0'
+      startDate: Mar 1, 2006
+      endDate: Dec 15, 2010
+      courses:
+        - Cálculo Diferencial e Integral
+        - Resistência dos Materiais
+        - Termodinâmica Aplicada
+        - Mecânica dos Fluidos
+        - Processos de Fabricação
+        - Desenho Técnico Mecânico
+        - Controle de Sistemas Dinâmicos
+      summary: |
+        - Formação sólida em projeto mecânico, materiais e processos de fabricação.
+        - Participação em equipe de competição universitária com foco em eficiência energética.
+        - Experiência prática em laboratórios de ensaios mecânicos e metrologia.
+  work:
+    - name: AeroTech Engenharia de Sistemas
+      url: https://www.aerotech-engenharia.com.br
+      position: Engenheira Mecânica Sênior
+      startDate: Jan 10, 2021
+      summary: |
+        - Liderança técnica de uma equipe de 8 engenheiros e projetistas no desenvolvimento de sistemas térmicos e estruturais.
+        - Responsável pela especificação, cálculo e validação de componentes críticos, atendendo requisitos de desempenho e segurança.
+        - Implantação de fluxo de simulação CAE integrado ao CAD, reduzindo o ciclo de prototipagem em 30%.
+        - Gestão de fornecedores e transferência de projetos para a produção, com foco em qualidade e custo.
+        - Aplicação de FMEA, análise de causa raiz e planos de ação para melhoria contínua.
+      keywords:
+        - Projeto mecânico
+        - Simulação estrutural
+        - ISO 9001
+        - Manufatura enxuta
+        - Gestão de equipes
+    - name: Metalúrgica Nova Era S.A.
+      url: https://www.metalurgicanovaera.com.br
+      position: Engenheira de Projetos
+      startDate: Apr 2, 2018
+      endDate: Dec 18, 2020
+      summary: |
+        - Desenvolvimento de produtos metálicos sob medida, desde o conceito até a liberação para fabricação.
+        - Criação de modelos 3D, desenhos 2D e memoriais de cálculo com foco em manufaturabilidade.
+        - Análise de falhas em campo e proposição de melhorias em projetos e processos.
+        - Negociação com fornecedores e apoio à engenharia de processos na definição de tolerâncias.
+        - Redução de 12% no custo de matéria-prima por meio de revisão de projetos e padronização de componentes.
+      keywords:
+        - Desenvolvimento de produto
+        - CAD 3D
+        - Análise de falhas
+        - Fornecedores
+        - Redução de custos
+    - name: Hidráulica Vale Bombas e Sistemas
+      url: https://www.hidraulicavale.com.br
+      position: Engenheira Mecânica Júnior
+      startDate: Jan 5, 2016
+      endDate: Mar 30, 2018
+      summary: |
+        - Suporte ao projeto e à melhoria de bombas centrífugas e sistemas hidráulicos industriais.
+        - Execução de ensaios de desempenho, análise de dados e elaboração de relatórios técnicos.
+        - Atualização de desenhos e documentação técnica conforme normas internas e ABNT.
+        - Apoio à manutenção e à equipe de campo na solução de problemas de instalação.
+      keywords:
+        - Bombas centrífugas
+        - Ensaios de desempenho
+        - Manutenção
+        - Normas técnicas
+        - CAD 2D
+  languages:
+    - language: Portuguese
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - Nativo
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - TOEFL iBT 105
+        - Inglês técnico
+    - language: Spanish
+      fluency: Limited Working Proficiency
+      keywords:
+        - Comunicação técnica
+  skills:
+    - name: Projeto Mecânico e CAD
+      level: Expert
+      keywords:
+        - SolidWorks
+        - Siemens NX
+        - CATIA V5
+        - AutoCAD
+        - 'GD&T'
+        - Desenho técnico
+    - name: Simulação e Análise Estrutural
+      level: Advanced
+      keywords:
+        - ANSYS Mechanical
+        - Abaqus
+        - FEA
+        - CFD
+        - MATLAB
+        - Otimização topológica
+    - name: Manufatura e Processos
+      level: Advanced
+      keywords:
+        - Usinagem CNC
+        - Soldagem
+        - Conformação de metais
+        - Lean Manufacturing
+        - Six Sigma
+        - Metrologia
+    - name: Gestão de Projetos e Qualidade
+      level: Advanced
+      keywords:
+        - PMBOK
+        - FMEA
+        - ISO 9001
+        - APQP
+        - SAP ERP
+        - Minitab
+    - name: Programação e Automação
+      level: Intermediate
+      keywords:
+        - Python
+        - VBA
+        - MATLAB/Simulink
+        - Arduino
+        - CLP Siemens
+        - Git
+  awards:
+    - title: Prêmio de Inovação em Engenharia
+      date: Nov 2022
+      awarder: AeroTech Engenharia de Sistemas
+      summary: |
+        - Reconhecimento pelo desenvolvimento de um sistema de resfriamento modular com redução de 18% no consumo energético.
+        - Projeto conduzido em parceria com as áreas de manufatura, qualidade e suprimentos.
+    - title: Menção Honrosa em Dissertação de Mestrado
+      date: Mar 2015
+      awarder: Universidade Estadual de Campinas
+      summary: |
+        - Distinção pela qualidade técnica e aplicabilidade industrial da pesquisa em otimização topológica.
+  certificates:
+    - name: Certificação Lean Six Sigma Green Belt
+      issuer: ASQ
+      date: Aug 2019
+      url: https://asq.org/cert/lean-six-sigma-green-belt
+    - name: SolidWorks Professional
+      issuer: Dassault Systèmes
+      date: Jun 2017
+      url: https://www.solidworks.com/certification
+    - name: Curso de Gestão de Projetos - PMBOK
+      issuer: PMI
+      date: Sep 2020
+      url: https://www.pmi.org/certifications/project-management-pmp
+  publications:
+    - name: Otimização Topológica de Componentes Estruturais para Veículos Comerciais
+      publisher: Revista Brasileira de Engenharia Mecânica
+      releaseDate: Jul 2018
+      url: https://www.rbem.org.br/artigo/otimizacao-topologica-veiculos
+      summary: |
+        - Estudo comparativo entre métodos de otimização topológica aplicados a suportes estruturais.
+        - Validação por elementos finitos e ensaios experimentais em protótipos metálicos.
+        - Discussão sobre ganhos de massa, rigidez e custo de fabricação.
+  projects:
+    - name: Sistema de Resfriamento Modular para Equipamentos Industriais
+      url: https://www.aerotech-engenharia.com.br/projetos/resfriamento-modular
+      description: Projeto de trocador de calor compacto para reduzir consumo
+        energético em linhas de produção.
+      startDate: Feb 2022
+      endDate: Nov 2023
+      summary: |
+        - Coordenação do projeto desde a concepção até a validação em campo.
+        - Simulação CFD para dimensionamento térmico e otimização do fluxo de ar.
+        - Uso de manufatura aditiva na produção de componentes de teste.
+      keywords:
+        - Trocador de calor
+        - CFD
+        - Sustentabilidade
+        - Manufatura aditiva
+    - name: Plataforma de Ensaio de Bombas Centrífugas
+      url: https://www.hidraulicavale.com.br/projetos/plataforma-ensaio
+      description: Bancada automatizada para medição de vazão, pressão e eficiência de
+        bombas.
+      startDate: May 2017
+      endDate: Dec 2018
+      summary: |
+        - Especificação de instrumentação, aquisição de dados e painel de controle.
+        - Padronização de ensaios conforme a norma ISO 9906.
+        - Treinamento da equipe técnica para operação e manutenção da bancada.
+      keywords:
+        - Instrumentação
+        - Aquisição de dados
+        - Norma ISO 9906
+        - Automação
+  interests:
+    - name: Esportes
+      keywords:
+        - Corrida de rua
+        - Ciclismo
+        - Natação
+        - Trilhas
+    - name: Cultura e Tecnologia
+      keywords:
+        - Leitura
+        - Impressão 3D
+        - Fotografia
+        - Astronomia
+  volunteer:
+    - organization: Instituto Engenheiros do Amanhã
+      url: https://www.engenheirosdoamanha.org.br
+      position: Mentora de Projetos
+      startDate: Aug 2019
+      summary: |
+        - Mentoria de estudantes de engenharia em projetos de mobilidade e eficiência energética.
+        - Apoio na estruturação de cronogramas, orçamentos e apresentações técnicas.
+        - Organização de workshops sobre CAD, simulação e boas práticas de projeto.
+
+locale:
+  language: pt-br

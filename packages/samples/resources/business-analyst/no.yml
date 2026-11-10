@@ -1,0 +1,236 @@
+content:
+  basics:
+    name: Ingrid Kvamme
+    headline: Forretningsanalytiker med lidenskap for datadrevet beslutningstaking
+    phone: "+47 401 23 456"
+    email: ingrid.kvamme@example.no
+    url: https://www.ingridkvamme.no
+    summary: |
+      - Forretningsanalytiker med over 6 års erfaring fra finans- og energibransjen
+      - Sterk kompetanse innen kravanalyse, prosesskartlegging og datadrevet beslutningsstøtte
+      - Erfaren med å lede interessentworkshops og oversette forretningsbehov til tekniske løsninger
+      - Dokumentert evne til å levere innsikter som reduserer kostnader og øker kundetilfredsheten
+      - Trives i tverrfaglige team og jobber strukturert med både strategi og detaljer
+  location:
+    address: Storgata 12
+    city: Oslo
+    region: Oslo
+    country: Norway
+    postalCode: "0155"
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/ingridkvamme
+      username: ingridkvamme
+    - network: Medium
+      url: https://medium.com/@ingridkvamme
+      username: ingridkvamme
+  education:
+    - institution: Norges Handelshøyskole
+      url: https://www.nhh.no
+      degree: Master
+      area: Økonomi og administrasjon
+      score: "3.8"
+      startDate: Aug 1, 2014
+      endDate: Jun 15, 2016
+      courses:
+        - Strategisk analyse
+        - Finansregnskap
+        - Markedsanalyse
+        - Statistikk for økonomer
+        - Prosjektledelse
+        - Forretningsanalyse
+        - Datamodellering
+        - Beslutningsstøtte
+      summary: |
+        - Fordypet meg i strategisk analyse og datadrevet beslutningstaking
+        - Gjennomførte masteroppgave om digitalisering i finanssektoren
+        - Oppnådde toppkarakterer i fagene forretningsanalyse og prosjektledelse
+    - institution: Universitetet i Bergen
+      url: https://www.uib.no
+      degree: Bachelor
+      area: Samfunnsøkonomi
+      score: "3.6"
+      startDate: Aug 1, 2011
+      endDate: Jun 15, 2014
+      courses:
+        - Mikroøkonomi
+        - Makroøkonomi
+        - Statistikk
+        - Matematikk for økonomer
+        - Bedriftsøkonomi
+        - Samfunnsanalyse
+      summary: |
+        - Bygget et solid fundament i økonomisk teori og statistisk metode
+        - Deltok i studentprosjekt om bærekraftig forretningsmodellering
+  work:
+    - name: Equinor ASA
+      url: https://www.equinor.com
+      position: Senior forretningsanalytiker
+      startDate: Mar 1, 2022
+      summary: |
+        - Leder kravanalyse for digitale løsninger i fornybar divisjon
+        - Kartlegger og forbedrer forretningsprosesser på tvers av forretningsområder
+        - Utvikler dashboards i Power BI som gir ledelsen sanntidsinnsikt
+        - Fasiliterer workshops med interessenter for å prioritere krav og gevinster
+        - Samarbeider tett med utviklingsteam i smidige leveranser
+      keywords:
+        - Kravanalyse
+        - Prosessforbedring
+        - Power BI
+        - Agile
+        - Interessenthåndtering
+    - name: DNB Bank ASA
+      url: https://www.dnb.no
+      position: Forretningsanalytiker
+      startDate: Aug 1, 2019
+      endDate: Feb 28, 2022
+      summary: |
+        - Analyserte kunde- og transaksjonsdata for å identifisere forbedringsområder
+        - Utarbeidet kravspesifikasjoner for digitale banktjenester
+        - Gjennomførte brukerintervjuer og kartla kundereiser
+        - Bygget SQL-spørringer og rapporter for produktteam
+        - Bidro til å redusere manuelt arbeid med 30 % i kredittprosessen
+      keywords:
+        - SQL
+        - Kundereise
+        - Kravspesifikasjon
+        - Dataanalyse
+        - Bank
+    - name: Statkraft AS
+      url: https://www.statkraft.no
+      position: Junior forretningsanalytiker
+      startDate: Aug 1, 2016
+      endDate: Jul 31, 2019
+      summary: |
+        - Støttet analyse av markedsdata og energipriser
+        - Laget rapporter og presentasjoner for ledelsen
+        - Deltok i prosjekt med implementering av ny innkjøpsløsning
+        - Dokumenterte forretningsprosesser og identifiserte flaskehalser
+      keywords:
+        - Markedsanalyse
+        - Rapportering
+        - Prosesskartlegging
+        - Excel
+  skills:
+    - name: Forretningsanalyse
+      level: Advanced
+      keywords:
+        - Kravanalyse
+        - Prosesskartlegging
+        - Interessentanalyse
+        - Gap-analyse
+        - Gevinstrealisering
+    - name: Dataanalyse
+      level: Advanced
+      keywords:
+        - SQL
+        - Power BI
+        - Tableau
+        - Excel
+        - Python
+    - name: Prosjektledelse
+      level: Intermediate
+      keywords:
+        - Agile
+        - Scrum
+        - Kanban
+        - Jira
+        - Confluence
+    - name: Kommunikasjon
+      level: Advanced
+      keywords:
+        - Workshopfasilitering
+        - Presentasjoner
+        - Dokumentasjon
+        - Forretningsnorsk
+        - Engelsk
+  languages:
+    - language: Norwegian
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - Morsmål
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - TOEFL 105
+    - language: German
+      fluency: Limited Working Proficiency
+      keywords:
+        - Goethe B1
+  awards:
+    - title: Årets analytiker
+      date: Nov 2023
+      awarder: Den norske dataforening
+      summary: |
+        - Tildelt for fremragende arbeid med datadrevet prosessforbedring i Equinor
+        - Anerkjent for å ha ledet et tverrfaglig prosjekt som reduserte rapporteringstiden med 40 %
+  certificates:
+    - name: Certified Business Analysis Professional (CBAP)
+      issuer: IIBA
+      date: Sep 2021
+      url: https://www.iiba.org/certification/cbap/
+    - name: 'Microsoft Certified: Power BI Data Analyst Associate'
+      issuer: Microsoft
+      date: Jan 2023
+      url: https://learn.microsoft.com/en-us/certifications/power-bi-data-analyst-associate/
+  publications:
+    - name: Datadrevet forretningsutvikling i norske banker
+      publisher: Magma – Econas tidsskrift for økonomi og ledelse
+      releaseDate: Jun 2021
+      url: https://www.magma.no/datadrevet-forretningsutvikling-i-norske-banker
+      summary: |
+        - Artikkelen utforsker hvordan banker kan bruke dataanalyse til å forbedre kundeopplevelsen
+        - Presenterer funn fra et samarbeidsprosjekt mellom DNB og NHH
+        - Diskuterer utfordringer og muligheter ved datadrevet forretningsutvikling
+  projects:
+    - name: Kundeinnsikt 360
+      startDate: Jan 2023
+      endDate: Dec 2023
+      description: Et analyseprosjekt for å samle kundeinnsikt på tvers av
+        forretningsområder
+      summary: |
+        - Ledet kartlegging av datakilder og definerte nøkkeltall for kundeopplevelse
+        - Utviklet et Power BI-dashboard som samlet innsikt fra fem forretningsområder
+        - Fasiliterte workshoper med ledelsen for å prioritere tiltak basert på innsikten
+      keywords:
+        - Kundereise
+        - Dataplattform
+        - Power BI
+        - Innsikt
+    - name: Prosesskartlegging av kredittflyt
+      startDate: Feb 2020
+      endDate: Oct 2020
+      description: Kartlegging og forenkling av kredittprosessen i DNB
+      summary: |
+        - Dokumenterte nåværende prosess og identifiserte flaskehalser og manuelle trinn
+        - Foreslo automatiseringstiltak som reduserte behandlingstiden med 25 %
+        - Presenterte anbefalinger for ledelsen og fulgte opp implementering
+      keywords:
+        - Prosessforbedring
+        - Lean
+        - Kreditt
+        - Automatisering
+  interests:
+    - name: Friluftsliv
+      keywords:
+        - Fjellturer
+        - Ski
+        - Fiske
+        - Padling
+    - name: Musikk
+      keywords:
+        - Gitar
+        - Konserter
+        - Jazz
+  volunteer:
+    - organization: Ungt Entreprenørskap Norge
+      url: https://www.ue.no
+      position: Mentor
+      startDate: Sep 2020
+      summary: |
+        - Veileder unge gründere i forretningsmodellering og markedsanalyse
+        - Deltar i dommerpanel for lokale konkurranser
+        - Bidrar til å styrke entreprenørskapskompetansen blant ungdom
+
+locale:
+  language: no

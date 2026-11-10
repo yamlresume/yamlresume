@@ -1,0 +1,212 @@
+content:
+  basics:
+    name: 王雅婷
+    headline: 注册护士 | 心血管内科护理 | 8年临床经验
+    phone: '+86 138 1234 5678'
+    email: wangyating.rn@outlook.com
+    url: https://www.linkedin.com/in/wangyating-rn
+    summary: |
+      - 注册护士，护理学学士，8年三级综合医院心血管内科及重症护理经验
+      - 熟练掌握心电监护、静脉治疗、急救复苏、危重患者病情观察与护理文书书写
+      - 具备护理组长经验，擅长排班协调、低年资护士带教及护理质量持续改进
+      - 熟悉电子病历与护理信息系统，注重患者安全、健康宣教及多学科协作
+      - 持有护士执业证书、BLS及ACLS证书，英语可阅读医学文献并进行日常沟通
+  location:
+    address: 北京市朝阳区建国路88号院2号楼
+    city: 北京
+    region: 北京市
+    country: China
+    postalCode: '100022'
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/wangyating-rn
+      username: wangyating-rn
+    - network: WeChat
+      url: https://weixin.qq.com/
+      username: WangYaTingRN
+  education:
+    - institution: 北京协和医学院护理学院
+      url: https://www.pumc.edu.cn
+      degree: Bachelor
+      area: 护理学
+      score: '3.8/4.0'
+      startDate: '2012-09-01'
+      endDate: '2016-06-30'
+      courses:
+        - 基础护理学
+        - 内科护理学
+        - 外科护理学
+        - 急危重症护理学
+        - 护理管理学
+        - 护理心理学
+        - 健康评估
+        - 护理伦理学
+      summary: |
+        - 系统学习临床护理、急危重症护理及护理管理核心课程
+        - 在附属医院完成内科、外科、急诊及ICU轮转实习
+        - 获校级护理技能竞赛二等奖，毕业成绩位列专业前15%
+  work:
+    - name: 北京安和医院
+      url: https://www.anhehospital.cn
+      position: 心血管内科护理组长
+      startDate: '2021-03-01'
+      summary: |
+        - 负责心血管内科病区护理小组日常管理，协调床位、排班及危重患者护理资源
+        - 参与制定并落实跌倒、压疮、静脉血栓等风险评估与闭环管理流程
+        - 带教新入职护士及实习护生，完成护理操作示范与考核
+        - 组织科室业务学习和应急演练，提升团队急救配合与突发事件处置能力
+        - 参与护理质量指标监测与PDCA持续改进，推动护理文书规范化
+      keywords:
+        - 护理管理
+        - 心血管护理
+        - 患者安全
+        - 临床带教
+        - 质量改进
+    - name: 北京仁济心血管病医院
+      url: https://www.renjiheart.cn
+      position: 注册护士
+      startDate: '2018-07-01'
+      endDate: '2021-02-28'
+      summary: |
+        - 负责心血管内科患者入院评估、生命体征监测、用药观察及健康宣教
+        - 熟练执行心电监护、静脉穿刺、输液泵和微量泵使用及危重患者护理
+        - 配合医生完成介入术后护理、胸痛中心流程及抢救工作
+        - 规范书写护理记录，参与交接班和不良事件上报
+      keywords:
+        - 心电监护
+        - 静脉治疗
+        - 介入护理
+        - 健康宣教
+        - 急救配合
+    - name: 北京康泰综合医院
+      url: https://www.kangtai-hospital.cn
+      position: 注册护士
+      startDate: '2016-07-01'
+      endDate: '2018-06-30'
+      summary: |
+        - 在内科病区完成基础护理、生命体征监测、给药及护理记录书写
+        - 参与夜班轮值与患者安全巡查，熟悉住院患者全流程护理
+        - 接受急救技能培训并参与科室应急演练
+      keywords:
+        - 基础护理
+        - 内科护理
+        - 患者安全
+        - 护理记录
+  languages:
+    - language: Chinese
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - 普通话二级甲等
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - CET-6
+        - 医学英语阅读
+  skills:
+    - name: 临床护理
+      level: Expert
+      keywords:
+        - 护理评估
+        - 静脉穿刺
+        - 心电监护
+        - 给药管理
+        - 伤口护理
+    - name: 急危重症护理
+      level: Advanced
+      keywords:
+        - BLS
+        - ACLS
+        - 除颤仪
+        - 抢救配合
+        - 病情观察
+    - name: 护理管理
+      level: Advanced
+      keywords:
+        - 排班协调
+        - 临床带教
+        - 质量改进
+        - PDCA
+        - 不良事件分析
+    - name: 护理信息系统
+      level: Intermediate
+      keywords:
+        - 电子病历
+        - 护理文书
+        - 数据统计
+        - 办公软件
+  awards:
+    - title: 年度优秀护士
+      date: '2023-05-12'
+      awarder: 北京安和医院
+      summary: |
+        - 因在心血管内科临床护理、患者安全及团队协作方面表现突出获奖
+        - 年度护理质量考核优秀，患者满意度位于科室前列
+    - title: 护理技能竞赛二等奖
+      date: '2015-11-20'
+      awarder: 北京协和医学院护理学院
+      summary: |
+        在无菌操作、静脉输液及心肺复苏项目中表现优异。
+  certificates:
+    - name: 中华人民共和国护士执业证书
+      issuer: 北京市卫生健康委员会
+      date: '2016-08-15'
+    - name: 基础生命支持（BLS）证书
+      issuer: 美国心脏协会
+      date: '2024-03-10'
+      url: https://www.heart.org/en/cpr
+    - name: 高级心血管生命支持（ACLS）证书
+      issuer: 美国心脏协会
+      date: '2024-04-20'
+      url: https://www.heart.org/en/cpr
+    - name: 心血管专科护士培训证书
+      issuer: 北京护理学会
+      date: '2022-09-30'
+  publications:
+    - name: 心血管内科老年患者跌倒风险分级护理实践
+      publisher: 中华护理杂志
+      releaseDate: '2021-06-01'
+      url: https://www.zhhlzzs.com
+      summary: |
+        - 总结老年心血管疾病患者跌倒风险评估与分级护理经验
+        - 通过多学科协作和健康教育降低住院期间跌倒发生率
+        - 为病区护理质量改进提供实践参考
+  projects:
+    - name: 心血管内科跌倒风险闭环管理项目
+      url: https://www.anhehospital.cn/nursing-quality
+      description: 针对心血管内科住院患者跌倒风险开展评估、干预、追踪和复盘的护理质量改进项目。
+      startDate: '2022-01-01'
+      endDate: '2022-12-31'
+      summary: |
+        - 建立入院、转科、出院前动态跌倒风险评估流程
+        - 设计高风险患者标识、床旁宣教和环境改造清单
+        - 通过月度数据分析和PDCA循环持续优化护理措施
+        - 项目实施后病区跌倒发生率较上一年度下降
+      keywords:
+        - 患者安全
+        - 跌倒预防
+        - PDCA
+        - 护理质量
+  interests:
+    - name: 专业学习
+      keywords:
+        - 护理文献阅读
+        - 急救培训
+        - 循证护理
+    - name: 生活爱好
+      keywords:
+        - 游泳
+        - 瑜伽
+        - 旅行
+  volunteer:
+    - organization: 朝阳区社区健康服务中心
+      url: https://www.cyqhealth.org
+      position: 健康宣教志愿者
+      startDate: '2019-03-01'
+      endDate: '2023-12-31'
+      summary: |
+        - 参与社区高血压、冠心病患者健康宣教和用药指导
+        - 协助开展心肺复苏公众培训与义诊活动
+        - 为老年居民提供血压监测、饮食及运动建议
+
+locale:
+  language: zh-hans

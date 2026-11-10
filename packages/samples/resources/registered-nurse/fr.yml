@@ -1,0 +1,180 @@
+content:
+  basics:
+    name: Camille Lefèvre
+    headline: Infirmière diplômée d'État
+    phone: +33 6 12 34 56 78
+    email: camille.lefevre@example.fr
+    url: https://www.camille-lefevre-infirmiere.fr
+    summary: |
+      - Infirmière diplômée d'État avec 5 ans d'expérience en milieu hospitalier, spécialisée en soins généraux et urgences
+      - Excellente capacité à travailler en équipe pluridisciplinaire et à communiquer avec les patients et leurs familles
+      - Maîtrise des protocoles de soins, de l'hygiène hospitalière et de la gestion des dossiers patients informatisés
+      - Reconnue pour son sens de l'écoute, sa rigueur et sa réactivité face aux situations d'urgence
+  location:
+    address: 45 Rue de la République
+    city: Lyon
+    region: Auvergne-Rhône-Alpes
+    country: France
+    postalCode: "69003"
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/camille-lefevre
+      username: camille-lefevre
+    - network: Instagram
+      url: https://www.instagram.com/camille.infirmiere
+      username: camille.infirmiere
+  education:
+    - institution: Institut de Formation en Soins Infirmiers (IFSI) de Lyon
+      url: https://www.ifsi-lyon.fr
+      degree: Bachelor
+      area: Soins Infirmiers
+      score: Mention Bien
+      startDate: Sep 1, 2017
+      endDate: Jul 1, 2020
+      courses:
+        - Sciences infirmières
+        - Anatomie et physiologie
+        - Pharmacologie
+        - Soins d'urgence
+        - Hygiène hospitalière
+        - Relation d'aide
+        - Santé publique
+        - Stages cliniques
+      summary: |
+        - Formation complète aux soins infirmiers, incluant stages en hôpital, EHPAD et soins à domicile
+        - Acquisition de compétences techniques et relationnelles pour la prise en charge globale du patient
+        - Participation à des projets de recherche en soins infirmiers
+  work:
+    - name: CHU de Lyon - Hôpital Édouard Herriot
+      url: https://www.chu-lyon.fr
+      position: Infirmière diplômée d'État
+      startDate: Mar 1, 2023
+      summary: |
+        - Prise en charge de patients en service de médecine polyvalente (30 lits)
+        - Réalisation des soins techniques : prises de sang, injections, pansements, sondages
+        - Gestion des dossiers patients informatisés et coordination avec les médecins et aides-soignants
+        - Éducation thérapeutique des patients et de leurs familles
+        - Participation à la démarche qualité et à la lutte contre les infections nosocomiales
+      keywords:
+        - Soins généraux
+        - Médecine polyvalente
+        - Éducation thérapeutique
+        - Dossier patient informatisé
+    - name: Clinique de la Sauvegarde
+      url: https://www.clinique-sauvegarde.fr
+      position: Infirmière diplômée d'État
+      startDate: Sep 1, 2020
+      endDate: Feb 28, 2023
+      summary: |
+        - Soins infirmiers en service de chirurgie orthopédique (25 lits)
+        - Préparation et suivi des patients avant et après opération
+        - Administration des traitements antalgiques et surveillance post-opératoire
+        - Collaboration avec les chirurgiens, kinésithérapeutes et équipes de rééducation
+        - Accompagnement des patients dans leur parcours de soins et de rééducation
+      keywords:
+        - Chirurgie orthopédique
+        - Soins post-opératoires
+        - Gestion de la douleur
+        - Rééducation
+  languages:
+    - language: French
+      fluency: Native or Bilingual Proficiency
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - TOEIC 850
+        - Communication médicale
+    - language: Spanish
+      fluency: Elementary Proficiency
+  skills:
+    - name: Soins infirmiers
+      level: Expert
+      keywords:
+        - Prise de constantes
+        - Injections
+        - Pansements
+        - Sondages
+        - Prélèvements sanguins
+    - name: Urgences
+      level: Advanced
+      keywords:
+        - Gestion du stress
+        - Protocoles d'urgence
+        - AFGSU 2
+    - name: Relation d'aide
+      level: Advanced
+      keywords:
+        - Écoute active
+        - Communication
+        - Éducation thérapeutique
+    - name: Informatique médicale
+      level: Intermediate
+      keywords:
+        - DPI
+        - Logiciel Hôpital
+        - Microsoft Office
+  awards:
+    - title: Prix d'excellence en soins infirmiers
+      date: Jul 2020
+      awarder: IFSI de Lyon
+      summary: |
+        Récompense décernée pour la qualité des soins prodigués lors des stages et l'implication dans la formation.
+  certificates:
+    - name: AFGSU 2 - Attestation de Formation aux Gestes et Soins d'Urgence
+      issuer: CESU de Lyon
+      date: Sep 2021
+      url: https://www.cesu-lyon.fr
+    - name: Formation aux bonnes pratiques d'hygiène
+      issuer: Hospices Civils de Lyon
+      date: Jan 2022
+      url: https://www.chu-lyon.fr/formation-hygiene
+    - name: Certification en éducation thérapeutique du patient
+      issuer: Université Claude Bernard Lyon 1
+      date: Jun 2023
+      url: https://www.univ-lyon1.fr
+  publications:
+    - name: "Prise en charge infirmière de la douleur post-opératoire : une revue de
+        la littérature"
+      publisher: Congrès National des Infirmiers
+      releaseDate: Oct 2022
+      url: https://www.congres-infirmiers.fr
+      summary: |
+        - Poster présenté lors du congrès annuel
+        - Analyse des pratiques et recommandations pour l'amélioration de la prise en charge
+  projects:
+    - name: Projet d'amélioration de la prise en charge des patients douloureux
+      startDate: Jan 2023
+      endDate: Jun 2023
+      description: Mise en place d'un protocole d'évaluation systématique de la
+        douleur en service de chirurgie orthopédique
+      summary: |
+        - Élaboration d'un outil d'évaluation de la douleur (EVA) et formation des équipes
+        - Réduction de 30% des douleurs non contrôlées signalées
+      keywords:
+        - Douleur
+        - Qualité
+        - Protocole
+      url: https://www.chu-lyon.fr/projet-douleur
+  interests:
+    - name: Sports
+      keywords:
+        - Randonnée
+        - Yoga
+        - Natation
+    - name: Culture
+      keywords:
+        - Lecture
+        - Cinéma
+        - Musique
+  volunteer:
+    - organization: Croix-Rouge française - Unité locale de Lyon
+      url: https://www.croix-rouge.fr
+      position: Infirmière bénévole
+      startDate: Jan 2021
+      summary: |
+        - Participation à des maraudes et à des consultations infirmières pour personnes précaires
+        - Réalisation de soins de base, prévention et orientation vers les structures de soins
+        - Sensibilisation aux gestes de premiers secours
+
+locale:
+  language: fr

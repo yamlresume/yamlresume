@@ -1,0 +1,190 @@
+content:
+  basics:
+    name: Ingrid Johansen
+    headline: Registrert sykepleier med erfaring fra akuttmottak
+    phone: "+47 912 34 567"
+    email: ingrid.johansen@example.no
+    url: https://www.ingridjohansen.no
+    summary: |
+      - Registrert sykepleier med bachelor i sykepleie og åtte års erfaring fra akuttmottak og medisinsk sengepost
+      - Trygg på systematisk pasientvurdering, triage, medikamenthåndtering og tverrfaglig samarbeid
+      - Erfaren med journalsystemene DIPS og Epic, og med å dokumentere i henhold til gjeldende rutiner
+      - Opptatt av pasientsikkerhet, faglig utvikling og gode pasientforløp
+  location:
+    address: Storgata 42
+    city: Oslo
+    region: Oslo
+    country: Norway
+    postalCode: "0182"
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/ingrid-johansen-rn
+      username: ingrid-johansen-rn
+  education:
+    - institution: 'OsloMet – storbyuniversitetet'
+      url: https://www.oslomet.no
+      degree: Bachelor
+      area: Sykepleie
+      score: "3,8"
+      startDate: 'Aug 15, 2014'
+      endDate: 'Jun 20, 2017'
+      courses:
+        - Anatomi og fysiologi
+        - Farmakologi og legemiddelhåndtering
+        - Akuttmedisin og intensivsykepleie
+        - Psykisk helse og rus
+        - Klinisk praksis i medisinsk sengepost
+        - Klinisk praksis i kirurgisk sengepost
+        - Sykepleieteori og etikk
+        - Helseinformatikk og dokumentasjon
+      summary: |
+        - Utviklet klinisk vurderingsevne gjennom praksis i medisinsk og kirurgisk sengepost
+        - Fikk grunnleggende opplæring i legemiddelhåndtering, prosedyrer og pasientobservasjon
+        - Arbeidet i tverrfaglige grupper med pasientsikkerhet og etiske problemstillinger som tema
+        - Skrev bacheloroppgave om tidlig identifisering av sepsis i akuttmottak
+  work:
+    - name: Oslo universitetssykehus HF
+      url: https://www.oslouniversitetssykehus.no
+      position: Registrert sykepleier, akuttmottak
+      startDate: 'Sep 1, 2020'
+      summary: |
+        - Utfører systematisk triage og initiell pasientvurdering etter ABCDE-prinsippet
+        - Observerer og behandler pasienter med akutte medisinske og kirurgiske tilstander
+        - Administrerer og dokumenterer legemidler i DIPS i henhold til gjeldende prosedyrer
+        - Samarbeider tett med leger, spesialsykepleiere og andre faggrupper i akutte forløp
+        - Bidrar til simuleringstrening og opplæring av nyansatte og studenter
+      keywords:
+        - Akuttmedisin
+        - Triage
+        - Pasientsikkerhet
+        - Tverrfaglig samarbeid
+    - name: Diakonhjemmet sykehus
+      url: https://www.diakonhjemmet.no
+      position: Sykepleier, medisinsk sengepost
+      startDate: 'Aug 1, 2017'
+      endDate: 'Aug 31, 2020'
+      summary: |
+        - Hadde ansvar for pasientobservasjon, medikamenthåndtering og dokumentasjon på medisinsk sengepost
+        - Utførte prosedyrer som blodprøvetaking, kateterisering og sårbehandling
+        - Deltok i tverrfaglige visittrunder og oppfølging av individuelle pasientforløp
+        - Veiledet studenter og nyansatte i kliniske prosedyrer og journalsystem
+        - Bidro til forbedringsarbeid knyttet til fallforebygging og ernæringskartlegging
+      keywords:
+        - Medisinsk sykepleie
+        - Pasientobservasjon
+        - Medikamenthåndtering
+        - Dokumentasjon
+  skills:
+    - name: Klinisk sykepleie
+      level: Expert
+      keywords:
+        - Pasientvurdering
+        - Medikamenthåndtering
+        - Sårbehandling
+        - Kateterisering
+        - Blodprøvetaking
+    - name: Akuttmedisin
+      level: Advanced
+      keywords:
+        - Triage
+        - HLR
+        - ABCDE-vurdering
+        - Akuttmottak
+        - Trauma
+    - name: Kommunikasjon og samarbeid
+      level: Advanced
+      keywords:
+        - Pasientkommunikasjon
+        - Tverrfaglig samarbeid
+        - Dokumentasjon
+        - Veiledning
+        - Konflikthåndtering
+    - name: Teknologi og journalsystemer
+      level: Intermediate
+      keywords:
+        - DIPS
+        - Epic
+        - Helsenorge.no
+        - Medikamentmodul
+        - Pasientadministrasjon
+  languages:
+    - language: Norwegian
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - Morsmål
+        - Skriftlig
+        - Muntlig
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - Faglig kommunikasjon
+        - Dokumentasjon
+        - Presentasjoner
+    - language: Spanish
+      fluency: Limited Working Proficiency
+      keywords:
+        - Pasientkommunikasjon
+        - Grunnleggende
+  awards:
+    - title: Årets sykepleier 2023
+      awarder: Oslo universitetssykehus HF
+      date: 'Dec 2023'
+      summary: |
+        - Tildelt for fremragende klinisk vurderingsevne og tydelig pasientfokus i akuttmottak
+        - Anerkjent for å ha bidratt til tryggere pasientforløp og godt tverrfaglig samarbeid
+  certificates:
+    - name: HLR for helsepersonell
+      issuer: Norsk Resuscitasjonsråd
+      date: 'Mar 2023'
+      url: https://www.nrr.org
+    - name: Sertifisering i DIPS Arena
+      issuer: DIPS AS
+      date: 'Jan 2022'
+      url: https://www.dips.com
+  publications:
+    - name: Tidlig identifisering av sepsis i akuttmottak
+      publisher: Sykepleien Fag
+      releaseDate: 'May 2023'
+      url: https://sykepleien.no/fag/artikkel/sepsis-akuttmottak
+      summary: |
+        - Fagartikkel om systematisk screening og tidlig behandling av sepsis i akuttmottak
+        - Oppsummerer erfaringer fra eget forbedringsarbeid og relevante faglige anbefalinger
+  projects:
+    - name: 'Forbedringsprosjekt: Reduksjon av liggesår'
+      startDate: 'Jan 2022'
+      endDate: 'Dec 2022'
+      description: Et kvalitetsforbedringsprosjekt ved medisinsk sengepost for å
+        redusere forekomsten av liggesår.
+      summary: |
+        - Kartla risiko og igangsatte systematiske hudvurderinger ved innleggelse
+        - Innførte sjekklister og opplæring i trykkavlastning for pleiepersonell
+        - Resultatene viste en tydelig reduksjon i antall registrerte liggesår
+      keywords:
+        - Kvalitetsforbedring
+        - Pasientsikkerhet
+        - Trykkavlastning
+        - Hudvurdering
+      url: https://www.oslouniversitetssykehus.no/forbedringsprosjekt-liggesar
+  interests:
+    - name: Friluftsliv
+      keywords:
+        - Fjellturer
+        - Langrenn
+        - Kajakk
+    - name: Faglig utvikling
+      keywords:
+        - Simuleringstrening
+        - Fagartikler
+        - Kurs
+  volunteer:
+    - organization: Norsk Røde Kors
+      url: https://www.rodekors.no
+      position: Førstehjelpsinstruktør
+      startDate: 'Jan 2018'
+      summary: |
+        - Holder førstehjelpskurs for frivillige og lokalsamfunn
+        - Underviser i HLR, skadestedsledelse og praktisk førstehjelp
+        - Bidrar til å styrke beredskapen og tryggheten i nærmiljøet
+
+locale:
+  language: no

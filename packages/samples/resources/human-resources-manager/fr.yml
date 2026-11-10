@@ -1,0 +1,177 @@
+content:
+  basics:
+    name: Sophie Martin
+    headline: Responsable des Ressources Humaines
+    phone: +33 1 44 55 66 77
+    email: sophie.martin@example.fr
+    url: https://www.sophiemartin-rh.fr
+    summary: |
+      - Responsable RH avec plus de 10 ans d'expérience dans la gestion des talents, le développement organisationnel et les relations sociales.
+      - Expertise en recrutement, gestion de la paie, formation et droit du travail.
+      - Capacité à aligner les stratégies RH sur les objectifs business et à accompagner le changement.
+      - Leader collaboratif, reconnu pour son écoute et sa capacité à fédérer les équipes.
+  location:
+    address: 12 Rue de Rivoli
+    city: Paris
+    region: Île-de-France
+    country: France
+    postalCode: "75001"
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/sophiemartin
+      username: sophiemartin
+    - network: Twitter
+      url: https://twitter.com/sophiemartin_rh
+      username: sophiemartin_rh
+  education:
+    - institution: Université Paris 1 Panthéon-Sorbonne
+      url: https://www.pantheonsorbonne.fr
+      degree: Master
+      area: Gestion des Ressources Humaines
+      score: Mention Bien
+      startDate: Sep 1, 2008
+      endDate: Jun 30, 2010
+      courses:
+        - Droit du travail
+        - Gestion de la paie
+        - Psychologie du travail
+        - Management des équipes
+        - Stratégie RH
+      summary: |
+        - Formation approfondie en gestion des ressources humaines, droit social et développement organisationnel.
+        - Projet de fin d'études sur la fidélisation des talents dans le secteur technologique.
+  work:
+    - name: TechInnov SA
+      url: https://www.techinnov.fr
+      position: Responsable des Ressources Humaines
+      startDate: Jan 1, 2018
+      summary: |
+        - Diriger une équipe de 5 personnes en charge du recrutement, de la formation et de la gestion administrative.
+        - Élaborer et mettre en œuvre la politique RH en cohérence avec la stratégie de l'entreprise.
+        - Gérer les relations sociales et les négociations avec les partenaires sociaux.
+        - Piloter la transformation digitale des processus RH (SIRH).
+      keywords:
+        - Recrutement
+        - Relations sociales
+        - SIRH
+        - Management
+    - name: Groupe Alpha
+      url: https://www.groupe-alpha.fr
+      position: Chargée de Recrutement
+      startDate: Mar 1, 2012
+      endDate: Dec 31, 2017
+      summary: |
+        - Gérer le processus de recrutement de A à Z pour des profils variés (ingénieurs, commerciaux, fonctions support).
+        - Développer des partenariats avec les écoles et les universités.
+        - Mettre en place des indicateurs de performance pour le suivi des recrutements.
+      keywords:
+        - Recrutement
+        - Sourcing
+        - Entretiens
+    - name: Cabinet RH Conseil
+      url: https://www.cabinet-rh-conseil.fr
+      position: Consultante RH Junior
+      startDate: Sep 1, 2010
+      endDate: Feb 28, 2012
+      summary: |
+        - Accompagner les PME dans la structuration de leur fonction RH.
+        - Réaliser des audits sociaux et proposer des plans d'action.
+        - Animer des formations sur le droit du travail et la gestion des talents.
+      keywords:
+        - Conseil
+        - Audit social
+        - Formation
+  skills:
+    - name: Recrutement et Gestion des Talents
+      level: Expert
+      keywords:
+        - Sourcing
+        - Entretiens
+        - Onboarding
+        - Évaluation
+    - name: Droit du Travail et Relations Sociales
+      level: Expert
+      keywords:
+        - Négociation
+        - Conventions collectives
+        - CSE
+    - name: Gestion de la Paie et Administration RH
+      level: Advanced
+      keywords:
+        - Paie
+        - SIRH
+        - Reporting
+    - name: Formation et Développement
+      level: Advanced
+      keywords:
+        - Plan de formation
+        - E-learning
+        - Compétences
+  languages:
+    - language: French
+      fluency: Native or Bilingual Proficiency
+      keywords: []
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - TOEIC 950
+    - language: Spanish
+      fluency: Limited Working Proficiency
+      keywords:
+        - DELF B1
+  awards:
+    - title: Prix de l'Innovation RH
+      date: "2021"
+      awarder: Association Nationale des DRH
+      summary: |
+        Récompense pour la mise en place d'un programme innovant de gestion des talents.
+  certificates:
+    - name: Certification SHRM-CP
+      issuer: SHRM
+      date: "2019"
+      url: https://www.shrm.org/certification
+    - name: Certificat en Droit du Travail
+      issuer: Université Paris 1
+      date: "2015"
+      url: https://www.pantheonsorbonne.fr/formation/certificat-droit-travail
+  publications:
+    - name: L'impact de la digitalisation sur la fonction RH
+      publisher: Revue Française de Gestion
+      releaseDate: "2020"
+      url: https://www.revues.org/rfg
+      summary: |
+        Article sur les transformations digitales des processus RH et leurs effets sur l'organisation du travail.
+  projects:
+    - name: Déploiement d'un SIRH
+      startDate: Jan 2020
+      endDate: Dec 2020
+      description: Mise en place d'un système d'information RH pour 500 collaborateurs.
+      summary: |
+        - Pilotage du projet de bout en bout.
+        - Coordination avec les éditeurs et les équipes internes.
+        - Formation des utilisateurs et accompagnement au changement.
+      keywords:
+        - SIRH
+        - Gestion de projet
+        - Conduite du changement
+      url: https://www.techinnov.fr/projets/sirh
+  interests:
+    - name: Sports
+      keywords:
+        - Yoga
+        - Randonnée
+    - name: Lecture
+      keywords:
+        - Romans
+        - Essais
+  volunteer:
+    - organization: Association RH Solidarité
+      position: Bénévole
+      startDate: Sep 2015
+      summary: |
+        - Accompagner des personnes en réinsertion professionnelle dans la rédaction de leur CV et la préparation d'entretiens.
+        - Animer des ateliers sur les compétences clés en RH.
+      url: https://www.rh-solidarite.fr
+
+locale:
+  language: fr

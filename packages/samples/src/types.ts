@@ -31,6 +31,7 @@ import { z } from 'zod'
 export const POSITIONS = [
   'account executive',
   'ai engineer',
+  'business analyst',
   'customer success manager',
   'cybersecurity engineer',
   'data analyst',
@@ -38,10 +39,14 @@ export const POSITIONS = [
   'data scientist',
   'devops engineer',
   'financial analyst',
+  'human resources manager',
   'marketing manager',
+  'mechanical engineer',
   'operations manager',
   'product manager',
   'project manager',
+  'qa engineer',
+  'registered nurse',
   'software engineer',
   'ux designer',
 ] as const

@@ -1,0 +1,201 @@
+content:
+  basics:
+    name: Jordan Alexis Rivera
+    headline: 'Registered Nurse | BSN, RN | Medical-Surgical & Telemetry'
+    phone: "(512) 555-0184"
+    email: jordan.rivera.rn@outlook.com
+    url: https://www.jordanrivera-rn.com
+    summary: |
+      Compassionate and detail-oriented Registered Nurse with over six years of experience in medical-surgical and telemetry units. Skilled in comprehensive patient assessment, medication administration, wound care, and patient education. Proven ability to collaborate with interdisciplinary teams to deliver safe, high-quality care in fast-paced hospital environments. Strong advocate for patient safety and evidence-based practice. Committed to continuous professional development and mentoring new nurses.
+  location:
+    address: 4821 Cedar Springs Road
+    city: Austin
+    region: Texas
+    country: United States
+    postalCode: "78731"
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/jordanrivera-rn
+      username: jordanrivera-rn
+    - network: Twitter
+      url: https://twitter.com/jordanrivera_rn
+      username: jordanrivera_rn
+  education:
+    - institution: University of Texas at Austin
+      url: https://www.utexas.edu/
+      degree: Bachelor
+      area: Nursing
+      score: "3.7"
+      startDate: Aug 2012
+      endDate: May 2016
+      courses:
+        - Health Assessment
+        - Pharmacology
+        - Medical-Surgical Nursing
+        - Maternal-Child Nursing
+        - Critical Care Nursing
+        - Community Health Nursing
+        - Nursing Leadership and Management
+      summary: |
+        - Graduated cum laude with a BSN
+        - Completed 800+ clinical hours in acute care, community, and pediatric settings
+        - Served as student nurse association treasurer
+  work:
+    - name: St. David's Medical Center
+      url: https://www.stdavids.com/
+      position: Registered Nurse, Medical-Surgical/Telemetry
+      startDate: Jun 2019
+      summary: |
+        - Provide direct nursing care to 5-6 patients per shift on a 36-bed medical-surgical/telemetry unit
+        - Conduct comprehensive assessments, monitor vital signs, and interpret cardiac telemetry rhythms
+        - Administer medications, IV therapies, and blood products per physician orders and hospital protocols
+        - Collaborate with interdisciplinary team to develop and implement individualized care plans
+        - Educate patients and families on disease management, medication adherence, and discharge planning
+        - Precept new graduate nurses and serve as a charge nurse relief
+      keywords:
+        - Medical-Surgical
+        - Telemetry
+        - Patient Assessment
+        - Medication Administration
+        - Care Planning
+    - name: Ascension Seton Northwest
+      url: https://healthcare.ascension.org/
+      position: Registered Nurse, Medical-Surgical
+      startDate: Jul 2016
+      endDate: May 2019
+      summary: |
+        - Delivered compassionate care to diverse patient populations with acute and chronic conditions
+        - Performed wound care, catheterizations, and ostomy management
+        - Monitored patients for changes in condition and escalated concerns to physicians promptly
+        - Documented assessments and interventions accurately in EPIC EHR
+        - Participated in unit-based quality improvement initiatives to reduce fall rates
+      keywords:
+        - Wound Care
+        - EPIC
+        - Quality Improvement
+        - Patient Education
+        - Acute Care
+  languages:
+    - language: English
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - Native speaker
+    - language: Spanish
+      fluency: Full Professional Proficiency
+      keywords:
+        - Medical Spanish
+        - Bilingual patient education
+  skills:
+    - name: Clinical Skills
+      level: Expert
+      keywords:
+        - Patient Assessment
+        - Medication Administration
+        - IV Therapy
+        - Wound Care
+        - Telemetry Monitoring
+        - Catheterization
+        - Ostomy Care
+        - Blood Transfusion
+    - name: Patient Care
+      level: Expert
+      keywords:
+        - Care Planning
+        - Patient Education
+        - Discharge Planning
+        - Pain Management
+        - Fall Prevention
+        - Infection Control
+    - name: Technology
+      level: Advanced
+      keywords:
+        - EPIC EHR
+        - Cerner
+        - Pyxis
+        - Telemetry Systems
+        - Microsoft Office
+    - name: Leadership
+      level: Advanced
+      keywords:
+        - Charge Nurse
+        - Preceptorship
+        - Interdisciplinary Collaboration
+        - Quality Improvement
+        - Mentoring
+  awards:
+    - title: DAISY Award for Extraordinary Nurses
+      date: Nov 2022
+      awarder: St. David's Medical Center
+      summary: |
+        Recognized for compassionate care and exceptional clinical skills by patients and colleagues.
+    - title: Dean's List
+      date: May 2015
+      awarder: University of Texas at Austin
+      summary: |
+        Achieved academic excellence for multiple semesters.
+  certificates:
+    - name: Registered Nurse (RN) License
+      issuer: Texas Board of Nursing
+      date: Jun 2016
+      url: https://www.bon.texas.gov/
+    - name: Basic Life Support (BLS)
+      issuer: American Heart Association
+      date: Jan 2024
+      url: https://www.heart.org/
+    - name: Advanced Cardiovascular Life Support (ACLS)
+      issuer: American Heart Association
+      date: Feb 2024
+      url: https://www.heart.org/
+    - name: Certified Medical-Surgical Registered Nurse (CMSRN)
+      issuer: Medical-Surgical Nursing Certification Board
+      date: Sep 2021
+      url: https://www.msncb.org/
+  publications:
+    - name: Reducing Hospital-Acquired Pressure Injuries Through Nurse-Led Turn Team
+      publisher: Journal of Wound, Ostomy and Continence Nursing
+      releaseDate: Mar 2022
+      url: https://journals.lww.com/jwocnonline/
+      summary: |
+        - Quality improvement project demonstrating a 40% reduction in pressure injuries
+        - Implemented standardized turning protocol and staff education
+  projects:
+    - name: Nurse-Led Fall Prevention Initiative
+      url: https://www.stdavids.com/quality
+      description: Unit-based quality improvement project to reduce inpatient falls
+      startDate: Jan 2021
+      endDate: Dec 2021
+      summary: |
+        - Conducted fall risk assessments and implemented personalized prevention plans
+        - Educated staff on evidence-based fall prevention strategies
+        - Reduced fall rate by 25% on the unit
+      keywords:
+        - Fall Prevention
+        - Quality Improvement
+        - Patient Safety
+  interests:
+    - name: 'Health & Wellness'
+      keywords:
+        - Yoga
+        - Running
+        - Nutrition
+    - name: Community
+      keywords:
+        - Volunteering
+        - Health Education
+    - name: Hobbies
+      keywords:
+        - Reading
+        - Travel
+        - Cooking
+  volunteer:
+    - organization: Austin Community Health Clinic
+      url: https://www.austincommunityhealth.org/
+      position: Volunteer Registered Nurse
+      startDate: Jan 2018
+      summary: |
+        - Provide health screenings and patient education at monthly community health fairs
+        - Assist with vaccination clinics and chronic disease management workshops
+        - Mentor nursing students during volunteer shifts
+
+locale:
+  language: en

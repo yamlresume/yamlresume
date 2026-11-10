@@ -1,0 +1,173 @@
+content:
+  basics:
+    name: 佐藤 美咲
+    headline: 人事マネージャー | 組織開発・人材育成の専門家
+    phone: "+81 90-1234-5678"
+    email: misaki.sato@example.com
+    url: https://www.misaki-sato-hr.com
+    summary: |
+      - 人事歴10年以上の経験を持つ人事マネージャー。採用から育成、評価制度の設計・運用まで幅広く担当。
+      - 組織開発とエンゲージメント向上に注力し、データドリブンな人事施策を推進。
+      - グローバル環境での人事業務経験あり。英語でのコミュニケーションも可能。
+      - 労働法や社会保険に関する深い知識を持ち、労務リスク管理にも強み。
+  location:
+    address: 千代田区千代田1-1
+    city: 東京都
+    region: 東京
+    country: Japan
+    postalCode: "100-0001"
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/misaki-sato-hr
+      username: misaki-sato-hr
+    - network: Twitter
+      url: https://twitter.com/misaki_hr
+      username: misaki_hr
+  education:
+    - institution: 青山学院大学
+      url: https://www.aoyama.ac.jp
+      degree: Bachelor
+      area: 経営学部 マネジメント学科
+      score: "3.8/4.0"
+      startDate: Apr 1, 2010
+      endDate: Mar 31, 2014
+      courses:
+        - 人事管理論
+        - 組織行動学
+        - 労働法
+        - 産業心理学
+        - 統計学
+        - マーケティング
+      summary: |
+        - 人事管理や組織行動学を中心に履修し、理論と実践の両面から人材マネジメントを学ぶ
+        - ゼミでは企業の人事制度に関する研究を行い、卒業論文を執筆
+        - 学内のキャリア支援ボランティアに参加し、学生の就職活動をサポート
+  work:
+    - name: 株式会社テクノロジーソリューションズ
+      url: https://www.tech-sol.co.jp
+      position: 人事マネージャー
+      startDate: Jan 1, 2020
+      summary: |
+        - 人事部門のマネージャーとして、採用・育成・評価・労務の全般を統括
+        - 年間50名以上の採用をリードし、採用プロセスの効率化と候補者体験の向上を実現
+        - 新評価制度（OKR＋360度評価）を設計・導入し、組織のパフォーマンスを向上
+        - 従業員エンゲージメント調査を実施し、離職率を15%低減
+        - 労務管理のデジタル化を推進し、業務効率を30%改善
+      keywords:
+        - 採用
+        - 育成
+        - 評価制度
+        - 労務管理
+        - 組織開発
+    - name: 株式会社グローバル商事
+      url: https://www.global-shoji.co.jp
+      position: 人事スペシャリスト
+      startDate: Apr 1, 2014
+      endDate: Dec 31, 2019
+      summary: |
+        - 新卒・中途採用を担当し、年間30名以上の採用を実現
+        - 研修プログラムの企画・運営を行い、新入社員の早期戦力化を支援
+        - 給与計算・社会保険手続きなどの労務業務を正確かつ迅速に処理
+        - 人事データの分析を行い、経営層へのレポーティングを実施
+      keywords:
+        - 採用
+        - 研修
+        - 給与計算
+        - 社会保険
+  skills:
+    - name: 人事戦略
+      level: Expert
+      keywords:
+        - 採用計画
+        - 人材育成
+        - 組織設計
+        - パフォーマンス管理
+    - name: 労務管理
+      level: Advanced
+      keywords:
+        - 労働法
+        - 社会保険
+        - 給与計算
+        - 就業規則
+    - name: データ分析
+      level: Intermediate
+      keywords:
+        - Excel
+        - HR分析
+        - 統計
+    - name: コミュニケーション
+      level: Expert
+      keywords:
+        - 交渉
+        - プレゼンテーション
+        - ファシリテーション
+  languages:
+    - language: Japanese
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - 漢字検定1級
+        - 日本語教育能力検定
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - TOEIC 950
+        - 英検1級
+  awards:
+    - title: 年間最優秀人事賞
+      date: Dec 2022
+      awarder: 株式会社テクノロジーソリューションズ
+      summary: |
+        人事改革プロジェクトのリーダーとして、採用・育成・評価制度の刷新に貢献し、組織のエンゲージメントスコアを20%向上させた。
+  certificates:
+    - name: 社会保険労務士
+      issuer: 厚生労働省
+      date: Aug 2018
+      url: https://www.mhlw.go.jp
+    - name: キャリアコンサルタント
+      issuer: 厚生労働省
+      date: Nov 2019
+      url: https://www.mhlw.go.jp
+  publications:
+    - name: 次世代人事戦略：データドリブンな人材マネジメント
+      publisher: 日本の人事部
+      releaseDate: Jun 2023
+      url: https://www.jinji-bu.jp
+      summary: |
+        人事データ分析を活用した採用・育成の最適化について寄稿。データに基づく意思決定の重要性と具体的な手法を解説。
+  projects:
+    - name: 人事評価システム刷新プロジェクト
+      startDate: Apr 2022
+      endDate: Mar 2023
+      summary: |
+        評価制度の見直しとシステム導入をリード。360度評価とOKRを組み合わせた新評価制度を設計し、クラウド人事システムを導入。
+      description: プロジェクトの詳細説明。評価制度の設計からシステム選定、運用開始までを一貫して担当。
+      keywords:
+        - 評価制度
+        - 人事システム
+        - プロジェクトマネジメント
+      url: https://www.tech-sol.co.jp/projects/hr-system
+  interests:
+    - name: 読書
+      keywords:
+        - ビジネス書
+        - 心理学
+        - 歴史小説
+    - name: 旅行
+      keywords:
+        - 国内旅行
+        - 海外旅行
+        - 温泉
+    - name: ヨガ
+      keywords:
+        - ヨガインストラクター資格
+        - 瞑想
+  volunteer:
+    - organization: NPO法人 若者キャリア支援協会
+      position: キャリアアドバイザー
+      startDate: Apr 2019
+      summary: |
+        大学生や若年求職者向けのキャリア相談を実施。履歴書添削や面接対策を通じて、就職活動を支援。
+      url: https://www.example-npo.org
+
+locale:
+  language: ja

@@ -1,0 +1,210 @@
+content:
+  basics:
+    name: Anindya Pratiwi
+    headline: Perawat Terdaftar dengan Pengalaman Rawat Inap dan Kegawatdaruratan
+    phone: '+62 812 3456 7890'
+    email: anindya.pratiwi@email.com
+    url: 'https://www.anindyapratiwi.id'
+    summary: |
+      - Perawat terdaftar dengan pengalaman lebih dari enam tahun di rumah sakit dan klinik.
+      - Terampil dalam asuhan keperawatan rawat inap, triage, manajemen obat, dan dokumentasi rekam medis elektronik.
+      - Berkomitmen pada keselamatan pasien, pencegahan infeksi, dan komunikasi terapeutik.
+      - Mampu bekerja dalam tim multidisiplin serta membimbing perawat baru dan mahasiswa keperawatan.
+  location:
+    address: 'Jl. Dharmahusada Indah No. 45'
+    city: Surabaya
+    region: Jawa Timur
+    country: Indonesia
+    postalCode: '60115'
+  profiles:
+    - network: LinkedIn
+      url: 'https://www.linkedin.com/in/anindya-pratiwi'
+      username: anindya-pratiwi
+    - network: Instagram
+      url: 'https://www.instagram.com/anindya.pratiwi'
+      username: anindya.pratiwi
+  education:
+    - institution: Universitas Kesehatan Nusantara
+      url: 'https://www.ukn.ac.id'
+      degree: Bachelor
+      area: Ilmu Keperawatan
+      score: '3.72'
+      startDate: '2013-09-01'
+      endDate: '2017-08-31'
+      courses:
+        - Asuhan Keperawatan Dewasa
+        - Keperawatan Gawat Darurat
+        - Farmakologi Klinik
+        - Keperawatan Anak
+        - Keperawatan Maternitas
+        - Manajemen Keperawatan
+        - Promosi Kesehatan
+        - Biostatistika
+      summary: |
+        - Menyelesaikan pendidikan sarjana keperawatan dengan predikat cum laude.
+        - Menjalani praktik klinik di rumah sakit pendidikan dan puskesmas.
+        - Aktif dalam organisasi kemahasiswaan bidang kesehatan masyarakat.
+  work:
+    - name: RS Prima Sehat Surabaya
+      url: 'https://www.rsprimasehat.co.id'
+      position: Perawat Terdaftar Rawat Inap
+      startDate: '2021-01-11'
+      summary: |
+        - Memberikan asuhan keperawatan komprehensif kepada 20-25 pasien rawat inap per shift.
+        - Melakukan pengkajian awal, pemantauan tanda vital, dan dokumentasi pada sistem rekam medis elektronik.
+        - Mengelola pemberian obat, cairan infus, dan tindakan keperawatan sesuai standar prosedur.
+        - Berkolaborasi dengan dokter, apoteker, dan tim multidisiplin dalam perencanaan pulang pasien.
+        - Menjadi preceptor bagi perawat baru dan mahasiswa keperawatan.
+      keywords:
+        - Rawat inap
+        - Asuhan keperawatan
+        - Rekam medis elektronik
+        - Keselamatan pasien
+        - Pembimbing klinik
+    - name: Klinik Utama Cahaya Medika
+      url: 'https://www.klinikcahayamedika.co.id'
+      position: Perawat Pelaksana
+      startDate: '2017-09-01'
+      endDate: '2020-12-31'
+      summary: |
+        - Memberikan pelayanan keperawatan rawat jalan dan tindakan minor.
+        - Melakukan triage awal, pengambilan sampel darah, dan pemeriksaan penunjang dasar.
+        - Mengedukasi pasien dan keluarga tentang pengelolaan penyakit kronis dan obat.
+        - Menjaga kebersihan dan sterilisasi alat sesuai prinsip pencegahan infeksi.
+        - Mendukung program vaksinasi dan pemeriksaan kesehatan berkala.
+      keywords:
+        - Rawat jalan
+        - Triage
+        - Edukasi pasien
+        - Pencegahan infeksi
+        - Vaksinasi
+  languages:
+    - language: Indonesian
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - Bahasa ibu
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - TOEFL 580
+        - Komunikasi klinis
+  skills:
+    - name: Keperawatan Klinis
+      level: Expert
+      keywords:
+        - Asuhan keperawatan
+        - Pemantauan tanda vital
+        - Manajemen obat
+        - Perawatan luka
+        - Infus dan kateter
+    - name: Kegawatdaruratan
+      level: Advanced
+      keywords:
+        - BLS
+        - ACLS
+        - Triage
+        - Resusitasi
+    - name: Manajemen Pasien
+      level: Advanced
+      keywords:
+        - Perencanaan pulang
+        - Koordinasi tim
+        - Edukasi pasien
+    - name: Sistem Informasi Kesehatan
+      level: Intermediate
+      keywords:
+        - Rekam medis elektronik
+        - SIMRS
+        - Dokumentasi
+    - name: Keselamatan Pasien
+      level: Advanced
+      keywords:
+        - Pencegahan infeksi
+        - Hand hygiene
+        - Identifikasi pasien
+        - Pelaporan insiden
+  awards:
+    - title: Perawat Teladan Tahun 2023
+      date: '2023-12-18'
+      awarder: RS Prima Sehat Surabaya
+      summary: |
+        - Diberikan atas dedikasi tinggi dalam asuhan keperawatan dan kolaborasi tim.
+        - Diakui karena inisiatif peningkatan kepatuhan hand hygiene di ruang rawat inap.
+    - title: Cum Laude
+      date: '2017-08-31'
+      awarder: Universitas Kesehatan Nusantara
+      summary: |
+        - Meraih predikat cum laude dengan IPK 3,72.
+  certificates:
+    - name: 'Surat Tanda Registrasi (STR) Perawat'
+      issuer: Kementerian Kesehatan Republik Indonesia
+      date: '2018-02-15'
+      url: 'https://www.kemkes.go.id'
+    - name: 'Sertifikat Bantuan Hidup Dasar (BLS)'
+      issuer: American Heart Association
+      date: '2023-05-10'
+      url: 'https://www.heart.org'
+    - name: 'Sertifikat Advanced Cardiovascular Life Support (ACLS)'
+      issuer: American Heart Association
+      date: '2023-06-15'
+      url: 'https://www.heart.org'
+    - name: Pelatihan Pencegahan dan Pengendalian Infeksi
+      issuer: RS Prima Sehat Surabaya
+      date: '2022-09-20'
+  publications:
+    - name: Hubungan Beban Kerja Perawat dengan Kualitas Asuhan Keperawatan di Ruang
+        Rawat Inap
+      publisher: Jurnal Keperawatan Nusantara
+      releaseDate: '2022-11-01'
+      url: 'https://jurnal.keperawatannusantara.id/index.php/jkn/article/view/123'
+      summary: |
+        - Studi cross-sectional terhadap 84 perawat di dua rumah sakit swasta di Surabaya.
+        - Menemukan korelasi signifikan antara beban kerja dan kepatuhan dokumentasi asuhan.
+  projects:
+    - name: Peningkatan Kepatuhan Hand Hygiene
+      startDate: '2023-02-01'
+      endDate: '2023-08-31'
+      summary: |
+        - Memimpin proyek perbaikan mutu untuk meningkatkan kepatuhan hand hygiene di ruang rawat inap.
+        - Melakukan audit kepatuhan, pelatihan singkat, dan penyediaan pengingat visual.
+        - Meningkatkan kepatuhan dari 68% menjadi 89% dalam enam bulan.
+      description: Proyek perbaikan mutu keperawatan berbasis data untuk menurunkan
+        risiko infeksi nosokomial.
+      keywords:
+        - Keselamatan pasien
+        - Hand hygiene
+        - Perbaikan mutu
+        - Pencegahan infeksi
+      url: 'https://www.rsprimasehat.co.id/mutu-hand-hygiene'
+  interests:
+    - name: Kesehatan Masyarakat
+      keywords:
+        - Posyandu
+        - Edukasi gizi
+        - Donor darah
+    - name: Pengembangan Diri
+      keywords:
+        - Membaca jurnal
+        - Pelatihan klinis
+        - Musik
+  volunteer:
+    - organization: Posyandu Melati Surabaya
+      position: Perawat Sukarelawan
+      startDate: '2019-01-01'
+      endDate: '2023-12-31'
+      summary: |
+        - Membantu pemeriksaan kesehatan ibu dan anak serta imunisasi dasar.
+        - Memberikan edukasi gizi dan pencegahan stunting kepada keluarga.
+        - Mendukung pencatatan tumbuh kembang anak secara berkala.
+      url: 'https://www.posyandu-melati.id'
+    - organization: Palang Merah Indonesia Kota Surabaya
+      position: Relawan Kesehatan
+      startDate: '2018-03-01'
+      endDate: '2021-12-31'
+      summary: |
+        - Terlibat dalam kegiatan donor darah dan pemeriksaan kesehatan gratis.
+        - Memberikan pertolongan pertama pada kegiatan komunitas.
+      url: 'https://www.pmi.or.id'
+
+locale:
+  language: id

@@ -1,0 +1,177 @@
+content:
+  basics:
+    name: Marco Bianchi
+    headline: Ingegnere Meccanico Senior specializzato in progettazione e produzione
+    phone: "+39 02 1234 5678"
+    email: marco.bianchi@example.it
+    url: https://www.marcobianchi-ingegnere.it
+    summary: |
+      - Ingegnere meccanico con oltre 8 anni di esperienza nella progettazione e nello sviluppo di componenti e sistemi meccanici.
+      - Specializzato in progettazione CAD 3D, analisi FEM e ottimizzazione di prodotti per i settori automotive e industriale.
+      - Esperienza nella gestione di progetti dalla fase di concept fino alla produzione, collaborando con team multifunzionali.
+      - Forte orientamento al problem solving, alla qualità e al miglioramento continuo, con conoscenza delle metodologie Lean e Six Sigma.
+  location:
+    address: Via Roma 45
+    city: Milano
+    region: Lombardia
+    country: Italy
+    postalCode: "20121"
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/marcobianchi-mech
+      username: marcobianchi-mech
+  education:
+    - institution: Politecnico di Milano
+      url: https://www.polimi.it
+      degree: Master
+      area: Ingegneria Meccanica
+      score: "110/110 e lode"
+      startDate: Sep 1, 2012
+      endDate: Jul 15, 2017
+      courses:
+        - Progettazione Meccanica Assistita dal Calcolo
+        - Analisi agli Elementi Finiti
+        - Tecnologie di Produzione
+        - Dinamica dei Sistemi Meccanici
+        - Materiali per l'Ingegneria
+        - Gestione della Produzione Industriale
+      summary: |
+        - Formazione solida in progettazione meccanica, con focus su calcolo strutturale e simulazione numerica.
+        - Tesi sperimentale sulla ottimizzazione topologica di componenti per riduzione di peso.
+  work:
+    - name: Meccanica Avanzata S.p.A.
+      url: https://www.meccanicaavanzata.it
+      position: Ingegnere Meccanico Senior
+      startDate: Mar 1, 2020
+      summary: |
+        - Responsabile della progettazione e dello sviluppo di nuovi componenti meccanici per macchine industriali.
+        - Coordinamento di un team di 5 ingegneri e disegnatori, con gestione delle attività di progettazione e validazione.
+        - Implementazione di metodologie di analisi FEM per la verifica strutturale e termica dei componenti.
+        - Collaborazione con il reparto produzione per ottimizzare i processi di fabbricazione e ridurre i costi.
+        - Gestione di progetti chiave, rispettando tempi e budget, con reportistica periodica alla direzione tecnica.
+      keywords:
+        - Progettazione meccanica
+        - Analisi FEM
+        - Gestione progetti
+        - Produzione snella
+        - SolidWorks
+    - name: Ingegneria Dinamica S.r.l.
+      url: https://www.ingegneriadinamica.it
+      position: Ingegnere di Progettazione
+      startDate: Sep 1, 2017
+      endDate: Feb 28, 2020
+      summary: |
+        - Progettazione di componenti meccanici e assiemi utilizzando CAD 3D (SolidWorks e CATIA).
+        - Esecuzione di analisi strutturali e termiche con software FEM per validare i progetti.
+        - Redazione di documentazione tecnica, disegni costruttivi e specifiche di prodotto.
+        - Supporto al reparto qualità per l'analisi dei difetti e l'implementazione di azioni correttive.
+        - Partecipazione a progetti di miglioramento continuo e riduzione dei costi.
+      keywords:
+        - CAD 3D
+        - CATIA
+        - Analisi strutturale
+        - Disegno tecnico
+        - Qualità
+  skills:
+    - name: Progettazione Meccanica
+      level: Expert
+      keywords:
+        - SolidWorks
+        - CATIA
+        - AutoCAD
+        - Disegno tecnico
+        - Tolleranze
+    - name: Analisi e Simulazione
+      level: Advanced
+      keywords:
+        - Analisi FEM
+        - ANSYS
+        - Calcolo strutturale
+        - Termica
+    - name: Gestione Progetti
+      level: Advanced
+      keywords:
+        - Pianificazione
+        - Coordinamento team
+        - Metodologie Lean
+        - Six Sigma
+    - name: Produzione e Materiali
+      level: Intermediate
+      keywords:
+        - Tecnologie di produzione
+        - Metallurgia
+        - Controllo qualità
+        - Manifattura additiva
+  languages:
+    - language: Italian
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - Madrelingua
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - Certificazione C1
+        - Inglese tecnico
+  awards:
+    - title: Premio Innovazione Tecnica
+      date: Nov 2022
+      awarder: Associazione Italiana di Meccanica
+      summary: |
+        Riconoscimento per il contributo allo sviluppo di un componente meccanico innovativo che ha ridotto i costi di produzione del 15%.
+  certificates:
+    - name: Certified SolidWorks Professional
+      issuer: Dassault Systèmes
+      date: Jun 2019
+      url: https://www.solidworks.com/certification
+    - name: Project Management Professional (PMP)
+      issuer: Project Management Institute
+      date: Oct 2023
+      url: https://www.pmi.org/certifications/project-management-pmp
+  publications:
+    - name: Ottimizzazione topologica di componenti meccanici per la riduzione di peso
+      publisher: Rivista Italiana di Ingegneria Meccanica
+      releaseDate: Apr 2021
+      url: https://www.riim.it/articoli/ottimizzazione-topologica
+      summary: |
+        - Studio sull'applicazione dell'ottimizzazione topologica per la progettazione di componenti leggeri e resistenti.
+        - Analisi dei risultati ottenuti tramite simulazioni FEM e validazione sperimentale.
+  projects:
+    - name: Sviluppo di un nuovo sistema di trasmissione
+      url: https://www.meccanicaavanzata.it/progetti/trasmissione
+      description: Progettazione e prototipazione di un sistema di trasmissione ad
+        alta efficienza per macchine industriali.
+      startDate: Jan 2021
+      endDate: Dec 2022
+      summary: |
+        - Progettazione meccanica del sistema, inclusi ingranaggi, alberi e supporti.
+        - Analisi FEM per la verifica delle sollecitazioni e della durata.
+        - Realizzazione di prototipi e test di validazione.
+        - Riduzione del 20% delle perdite energetiche rispetto al sistema precedente.
+      keywords:
+        - Trasmissione
+        - Ingranaggi
+        - Prototipazione
+        - Analisi FEM
+  interests:
+    - name: Motori e Veicoli
+      keywords:
+        - Formula 1
+        - Restauro auto d'epoca
+        - Meccatronica
+    - name: Tecnologie Emergenti
+      keywords:
+        - Stampa 3D
+        - Materiali compositi
+        - Automazione industriale
+  volunteer:
+    - organization: Associazione Ingegneri Meccanici Italiani
+      url: https://www.aimi.it
+      position: Mentor Tecnico
+      startDate: Sep 2018
+      summary: |
+        - Supporto a studenti e giovani ingegneri nello sviluppo di competenze pratiche di progettazione meccanica.
+        - Organizzazione di workshop su CAD, FEM e metodologie di progettazione.
+        - Partecipazione a eventi di orientamento e divulgazione tecnica.
+
+locale:
+  language: it

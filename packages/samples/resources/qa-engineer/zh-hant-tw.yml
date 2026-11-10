@@ -1,0 +1,223 @@
+content:
+  basics:
+    name: 林冠宇
+    headline: 資深軟體測試工程師
+    phone: "+886 912 345 678"
+    email: kuanyu.lin@example.com
+    url: https://kuanyulin.dev
+    summary: |
+      - 擁有 8 年軟體測試經驗，專精於自動化測試框架設計與導入
+      - 熟悉 Web、API 與行動裝置應用程式測試，具備紮實的程式開發能力
+      - 擅長建立測試流程與品質指標，推動 CI/CD 與測試左移
+      - 具備跨團隊溝通與專案管理能力，能有效提升產品品質與交付效率
+  location:
+    address: 台北市信義區松仁路 100 號
+    city: 台北市
+    region: 台北市
+    country: Taiwan
+    postalCode: "110"
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/kuanyulin
+      username: kuanyulin
+    - network: GitHub
+      url: https://github.com/kuanyulin
+      username: kuanyulin
+  education:
+    - institution: 國立臺灣大學
+      url: https://www.ntu.edu.tw
+      degree: Bachelor
+      area: 資訊工程學系
+      score: "3.9/4.0"
+      startDate: Sep 1, 2012
+      endDate: Jun 30, 2016
+      courses:
+        - 資料結構
+        - 演算法
+        - 作業系統
+        - 資料庫系統
+        - 軟體工程
+        - 計算機網路
+        - 程式設計
+        - 離散數學
+      summary: |
+        - 主修資訊工程，奠定紮實的程式設計與系統分析基礎
+        - 專題研究聚焦於軟體測試與品質保證，獲得系上專題競賽優等
+        - 擔任系學會資訊組組長，負責系網維護與活動系統開發
+  work:
+    - name: 趨勢科技
+      url: https://www.trendmicro.com
+      position: 資深品質保證工程師
+      startDate: Jan 6, 2020
+      summary: |
+        - 負責雲端安全產品（CWPP）的整體測試策略規劃與執行，涵蓋功能、效能、安全性與相容性測試
+        - 主導建置以 Pytest 與 Selenium 為基礎的端到端自動化測試框架，將回歸測試時間從 3 天縮短至 4 小時
+        - 導入測試左移流程，與開發團隊協作於 CI/CD 管道中執行單元測試與整合測試，提升版本交付品質
+        - 建立品質指標與測試覆蓋率報告，定期向產品與工程團隊彙報，推動持續改善
+        - 指導 3 位初階測試工程師，協助其熟悉自動化測試與缺陷管理流程
+      keywords:
+        - 自動化測試
+        - 雲端安全
+        - Pytest
+        - Selenium
+        - CI/CD
+        - 測試策略
+    - name: 聯發科技
+      url: https://www.mediatek.com
+      position: 品質保證工程師
+      startDate: Jul 1, 2016
+      endDate: Dec 31, 2019
+      summary: |
+        - 負責行動晶片平台之相容性與效能測試，確保產品符合業界標準與客戶需求
+        - 設計並執行測試計畫，涵蓋 Android 相容性測試（CTS）、效能基準測試與功耗測試
+        - 開發自動化測試腳本（Java、Python），整合 Jenkins 以實現每日建置與測試
+        - 分析測試結果並追蹤缺陷，與硬體、軟體及客戶團隊協作解決問題
+        - 撰寫測試報告與技術文件，協助提升團隊測試效率與知識分享
+      keywords:
+        - 嵌入式測試
+        - 效能測試
+        - Android CTS
+        - Java
+        - Jenkins
+        - 缺陷追蹤
+  skills:
+    - name: 測試自動化
+      level: Expert
+      keywords:
+        - Selenium
+        - Cypress
+        - Appium
+        - Pytest
+        - Python
+    - name: 效能與負載測試
+      level: Advanced
+      keywords:
+        - JMeter
+        - Locust
+        - Gatling
+        - k6
+    - name: API 測試
+      level: Advanced
+      keywords:
+        - Postman
+        - REST Assured
+        - Swagger
+        - GraphQL
+    - name: 測試管理與流程
+      level: Advanced
+      keywords:
+        - JIRA
+        - TestRail
+        - Agile
+        - Scrum
+        - CI/CD
+    - name: 程式與資料庫
+      level: Intermediate
+      keywords:
+        - Python
+        - Java
+        - SQL
+        - Git
+        - Docker
+  languages:
+    - language: Chinese
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - 母語
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - TOEIC 950
+        - 技術文件撰寫
+        - 跨國團隊溝通
+  certificates:
+    - name: ISTQB 進階測試經理認證
+      issuer: ISTQB
+      date: Mar 2021
+      url: https://www.istqb.org/certifications/advanced-level-test-manager
+    - name: AWS 雲端從業人員認證
+      issuer: AWS
+      date: Aug 2022
+      url: https://aws.amazon.com/certification/certified-cloud-practitioner/
+    - name: 認證 ScrumMaster
+      issuer: Scrum Alliance
+      date: Jun 2020
+      url: https://www.scrumalliance.org/get-certified/scrum-master-track/certified-scrummaster
+  awards:
+    - title: 年度卓越員工獎
+      awarder: 趨勢科技
+      date: Dec 2023
+      summary: |
+        表揚在雲端安全產品測試自動化與品質流程改善上的傑出貢獻，成功將回歸測試時間縮短 90%。
+    - title: 黑客松最佳測試創新獎
+      awarder: 台灣軟體測試社群
+      date: Nov 2021
+      summary: |
+        以「智慧型測試案例生成器」為題，運用機器學習分析使用者行為並自動產生高覆蓋率測試案例，獲得評審青睞。
+  projects:
+    - name: 雲端安全產品自動化測試框架
+      url: https://github.com/kuanyulin/cloud-security-test-framework
+      description: 為雲端安全產品設計與實作端到端自動化測試框架
+      startDate: Jan 4, 2021
+      endDate: Dec 30, 2022
+      summary: |
+        - 採用 Pytest 與 Selenium 建構模組化測試框架，支援多環境與多瀏覽器執行
+        - 整合 Docker 與 Jenkins，實現每日自動化回歸測試與報告產出
+        - 測試覆蓋率提升至 85%，缺陷漏檢率降低 40%
+      keywords:
+        - 自動化測試
+        - Pytest
+        - Selenium
+        - Docker
+        - Jenkins
+    - name: 行動裝置效能測試工具
+      url: https://github.com/kuanyulin/mobile-perf-tool
+      description: 開發輕量級行動裝置效能測試工具，用於監控 CPU、記憶體與電量消耗
+      startDate: Mar 1, 2019
+      endDate: Nov 30, 2019
+      summary: |
+        - 使用 Python 與 ADB 開發效能資料收集與視覺化工具
+        - 支援多款 Android 裝置，協助團隊快速定位效能瓶頸
+        - 工具導入後，效能問題平均修復時間縮短 30%
+      keywords:
+        - 效能測試
+        - Python
+        - ADB
+        - Android
+        - 資料視覺化
+  publications:
+    - name: 建構高覆蓋率自動化測試框架的實務指南
+      publisher: 軟體測試技術月刊
+      releaseDate: May 2022
+      url: https://www.softwaretesting.tw/articles/automation-framework-guide
+      summary: |
+        - 探討如何從零開始建構可維護、可擴展的自動化測試框架
+        - 分享實際案例與程式碼範例，涵蓋 Page Object Model 與資料驅動測試
+        - 提供測試覆蓋率與品質指標的衡量方法
+  interests:
+    - name: 登山
+      keywords:
+        - 百岳
+        - 健行
+        - 露營
+    - name: 攝影
+      keywords:
+        - 風景攝影
+        - 街拍
+    - name: 閱讀
+      keywords:
+        - 技術書籍
+        - 科幻小說
+  volunteer:
+    - organization: 台灣軟體測試社群
+      url: https://www.softwaretesting.tw
+      position: 志工講者
+      startDate: Jan 1, 2021
+      endDate: Dec 31, 2023
+      summary: |
+        - 定期於社群 meetup 分享自動化測試實務經驗與最佳實踐
+        - 協助籌辦年度軟體測試研討會，吸引超過 300 位參與者
+        - 參與開源測試工具推廣，翻譯技術文件並貢獻測試案例
+
+locale:
+  language: zh-hant-tw

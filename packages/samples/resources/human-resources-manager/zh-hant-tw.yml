@@ -1,0 +1,289 @@
+content:
+  basics:
+    name: 林雅婷
+    headline: 人力資源經理｜人才策略與組織發展
+    phone: "+886 912 345 678"
+    email: yating.lin@example.com
+    url: https://www.linkedin.com/in/yating-lin-hr
+    summary: |
+      資深人力資源經理，擁有 10 年以上科技與顧問產業經驗，專長於人才策略、組織發展、績效管理與員工關係。
+      - 曾領導 8 人人力資源團隊，服務超過 1,200 名員工，成功將年度離職率降低 18%。
+      - 主導人才盤點與接班計畫，建立關鍵職位發展藍圖，提升內部晉升比例至 65%。
+      - 熟悉勞動法令與薪酬架構設計，能平衡員工體驗與組織營運目標。
+      - 具跨國顧問與校園招募經驗，擅長與高階管理層溝通並推動變革。
+  location:
+    address: 臺北市信義區松高路 88 號 12 樓
+    city: 臺北市
+    region: 臺灣
+    country: Taiwan
+    postalCode: "110"
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/yating-lin-hr
+      username: yating-lin-hr
+    - network: Medium
+      url: https://medium.com/@yatinglinhr
+      username: yatinglinhr
+  education:
+    - institution: 國立臺灣大學
+      url: https://www.ntu.edu.tw
+      degree: Master
+      area: 人力資源管理研究所
+      score: "4.1/4.3"
+      startDate: Sep 1, 2012
+      endDate: Jun 30, 2014
+      courses:
+        - 策略性人力資源管理
+        - 組織行為
+        - 薪酬管理
+        - 績效管理
+        - 訓練與發展
+        - 勞動法令
+        - 研究方法
+        - 人力資源分析
+      summary: |
+        - 主修人力資源管理，專注於策略性人力資源、組織行為與薪酬制度設計。
+        - 完成碩士論文《高科技產業人才留任因素之研究》，以問卷調查分析 300 位工程師樣本。
+        - 擔任人力資源管理研究所學會幹部，籌辦企業參訪與專題講座。
+    - institution: 國立政治大學
+      url: https://www.nccu.edu.tw
+      degree: Bachelor
+      area: 企業管理學系
+      score: "3.8/4.0"
+      startDate: Sep 1, 2008
+      endDate: Jun 30, 2012
+      courses:
+        - 管理學
+        - 經濟學
+        - 會計學
+        - 行銷管理
+        - 財務管理
+        - 作業管理
+        - 人力資源管理
+        - 商業分析
+      summary: |
+        - 建立企業管理基礎，涵蓋行銷、財務、作業管理與人力資源等領域。
+        - 參與企業實習與個案競賽，培養商業分析與團隊協作能力。
+  work:
+    - name: 雲暉科技股份有限公司
+      url: https://www.yunhui-tech.com
+      position: 人力資源經理
+      startDate: Mar 1, 2021
+      summary: |
+        - 負責 1,200 人規模科技公司之全方位人力資源策略，涵蓋招募、薪酬、績效、培訓與員工關係。
+        - 領導 8 人人力資源團隊，建立部門 OKR 與月度營運檢視機制，提升專案交付效率 25%。
+        - 重新設計職等職級與薪酬架構，完成市場薪資對標，關鍵人才留任率提升至 92%。
+        - 推動年度人才盤點與接班梯隊計畫，辨識 45 位高潛力人才並規劃個人發展藍圖。
+        - 建立雇主品牌與校園招募策略，年度招募週期縮短 20%，並提升新人到職率 15%。
+        - 處理勞資爭議與勞動檢查，確保公司遵循勞基法及相關法令，達成零重大裁罰紀錄。
+      keywords:
+        - 人才策略
+        - 組織發展
+        - 績效管理
+        - 薪酬設計
+        - 員工關係
+        - 招募甄選
+        - 勞動法令
+        - HRIS
+    - name: 智聯國際顧問股份有限公司
+      url: https://www.zhilian-consulting.com
+      position: 資深人力資源顧問
+      startDate: Jul 1, 2016
+      endDate: Feb 28, 2021
+      summary: |
+        - 提供科技、製造與零售客戶組織設計、職等職級與薪酬制度顧問服務，累積 30 個以上專案。
+        - 主導人才盤點與接班計畫，協助客戶建立關鍵職位勝任力模型與發展路徑。
+        - 設計訓練發展藍圖與講師培育制度，協助客戶將內部訓練時數提升 40%。
+        - 協助企業因應勞動法令修法，進行風險盤點、制度修訂與主管培訓。
+        - 管理 3 人專案團隊，負責提案簡報、專案時程、預算控制與客戶關係維護。
+      keywords:
+        - 人力資源顧問
+        - 組織設計
+        - 職等職級
+        - 人才盤點
+        - 訓練發展
+        - 勞動法令
+        - 專案管理
+    - name: 宏亞零售集團
+      url: https://www.hongya-retail.com
+      position: 人力資源專員
+      startDate: Aug 1, 2014
+      endDate: Jun 30, 2016
+      summary: |
+        - 負責零售門市人員招募、考勤薪酬、教育訓練與員工活動規劃。
+        - 建立招募漏斗與面試評分表，將門市人員平均招募天數由 35 天降至 24 天。
+        - 執行新人訓練與在職訓練，協助 200 位以上員工完成年度必修課程。
+        - 規劃員工關懷與家庭日活動，提升員工滿意度 12%。
+      keywords:
+        - 招募
+        - 考勤薪酬
+        - 教育訓練
+        - 員工活動
+        - 零售業
+  languages:
+    - language: Chinese
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - 母語
+        - 商務書寫
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - TOEIC 950
+        - IELTS 7.5
+        - 跨國會議
+    - language: Japanese
+      fluency: Elementary Proficiency
+      keywords:
+        - JLPT N4
+  skills:
+    - name: 人力資源策略
+      level: Expert
+      keywords:
+        - 組織設計
+        - 人才盤點
+        - 接班計畫
+        - 人力預算
+        - 變革管理
+    - name: 招募與雇主品牌
+      level: Advanced
+      keywords:
+        - 校園招募
+        - 面試技巧
+        - 雇主品牌
+        - 招募漏斗
+        - ATS
+    - name: 薪酬與績效管理
+      level: Advanced
+      keywords:
+        - 薪酬架構
+        - 職等職級
+        - KPI
+        - OKR
+        - 獎酬設計
+    - name: 勞動法令與員工關係
+      level: Advanced
+      keywords:
+        - 勞基法
+        - 勞資爭議
+        - 員工關係
+        - 合規管理
+    - name: 人力資源資訊系統
+      level: Intermediate
+      keywords:
+        - SAP SuccessFactors
+        - Workday
+        - Power BI
+        - Excel
+    - name: 教育訓練與發展
+      level: Intermediate
+      keywords:
+        - TNA
+        - 訓練藍圖
+        - 講師培育
+        - 學習平台
+  awards:
+    - title: 年度最佳人力資源團隊獎
+      date: Nov 2023
+      awarder: 中華人力資源管理協會
+      summary: |
+        - 表揚在人才策略、員工體驗與組織變革具卓越成效之人資團隊。
+        - 帶領團隊完成薪酬架構改革與雇主品牌計畫，獲得評審一致肯定。
+    - title: 卓越雇主品牌獎
+      date: Sep 2022
+      awarder: 亞太人力資源評論
+      summary: |
+        - 肯定公司在校園招募、員工價值主張與多元共融政策之表現。
+        - 成功提升品牌知名度與新人到職率，並降低招募成本。
+  certificates:
+    - name: 全方位人力資源管理師
+      issuer: 中華人力資源管理協會
+      date: Mar 2018
+      url: https://www.chrma.org.tw/certification/hr-manager
+    - name: 國際專案管理師 PMP
+      issuer: 國際專案管理學會
+      date: Jun 2019
+      url: https://www.pmi.org/certifications/project-management-pmp
+    - name: 勞動法令遵循專家
+      issuer: 台灣勞動法學會
+      date: Oct 2020
+      url: https://www.taiwanlaborlaw.org/certification/compliance
+  publications:
+    - name: 數位轉型下的人才策略：以台灣科技業為例
+      publisher: 人力資源管理學報
+      releaseDate: Dec 2022
+      url: https://doi.org/10.1234/hrmj.2022.001
+      summary: |
+        - 探討數位轉型對科技業人才策略、組織設計與關鍵職能之影響。
+        - 以三家台灣上市科技公司為個案，提出人才培育與接班規劃建議。
+    - name: 從員工體驗出發的留才策略
+      publisher: 亞太人力資源評論
+      releaseDate: May 2021
+      url: https://www.aphrreview.com/articles/employee-experience-retention
+      summary: |
+        - 分析員工體驗對留任意願之影響，提出五大員工旅程改善方向。
+        - 提供人資主管可執行之留才措施與衡量指標。
+  projects:
+    - name: 人才發展與接班計畫
+      startDate: Jan 2022
+      endDate: Dec 2023
+      description: 為關鍵職位建立人才盤點、發展藍圖與接班梯隊，確保組織中長期人才供給。
+      summary: |
+        - 盤點 12 個關鍵職位與 45 位高潛力人才，建立九宮格人才地圖。
+        - 設計個人發展計畫與導師制度，兩年內內部晉升比例提升至 65%。
+        - 建立接班梯隊檢視機制，每季向高階管理層報告人才準備度。
+      keywords:
+        - 人才盤點
+        - 接班梯隊
+        - 發展藍圖
+        - 關鍵職位
+      url: https://www.yunhui-tech.com/esg/talent-development
+    - name: 員工體驗平台導入
+      startDate: Mar 2021
+      endDate: Nov 2021
+      description: 導入一站式員工服務平台，整合入離職、考勤、薪酬查詢與意見回饋流程。
+      summary: |
+        - 與 IT 及外部供應商協作，完成需求訪談、流程設計與系統上線。
+        - 將常見人資問題處理時間縮短 40%，員工服務滿意度提升至 88%。
+        - 建立人資數據儀表板，追蹤服務量、處理時效與員工回饋趨勢。
+      keywords:
+        - 員工體驗
+        - 流程自動化
+        - HRIS
+        - 服務中心
+      url: https://www.yunhui-tech.com/hr/employee-experience
+  interests:
+    - name: 人力資源社群
+      keywords:
+        - 專業分享
+        - 講座
+        - 讀書會
+    - name: 運動
+      keywords:
+        - 瑜伽
+        - 慢跑
+        - 登山
+    - name: 閱讀
+      keywords:
+        - 管理學
+        - 心理學
+        - 人物傳記
+  volunteer:
+    - organization: 中華人力資源管理協會
+      url: https://www.chrma.org.tw
+      position: 志工講師
+      startDate: Jan 2019
+      summary: |
+        - 擔任人力資源管理師認證課程講師，分享薪酬設計與員工關係實務。
+        - 協助協會辦理年度論壇與企業參訪，促進人資專業交流。
+    - organization: 台灣青年職涯發展協會
+      url: https://www.twyouthcareer.org.tw
+      position: 職涯導師
+      startDate: Mar 2020
+      endDate: Dec 2023
+      summary: |
+        - 提供青年一對一職涯諮詢，協助履歷健檢、面試準備與職涯規劃。
+        - 參與校園職涯講座，分享人資產業趨勢與求職技巧。
+
+locale:
+  language: zh-hant-tw
