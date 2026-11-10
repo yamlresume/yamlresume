@@ -1,0 +1,233 @@
+content:
+  basics:
+    name: 李思远
+    headline: '高级质量保证工程师 | 测试自动化与质量工程'
+    phone: '+86 139 1234 5678'
+    email: siyuan.li.qa@example.com
+    url: https://www.siyuanli.dev
+    summary: |
+      - 8 年以上互联网产品测试经验，专注电商、支付与中台系统的质量保障
+      - 擅长测试策略设计、接口自动化、性能测试与 CI/CD 质量门禁建设
+      - 熟练使用 Python、Pytest、Selenium、Postman、JMeter、SQL 等工具
+      - 具备跨团队协作与质量度量经验，善于推动缺陷左移和发布效率提升
+  location:
+    address: 上海市浦东新区张江路 88 号
+    city: 上海
+    region: 上海
+    country: China
+    postalCode: '201203'
+  profiles:
+    - network: GitHub
+      url: https://github.com/lisiyuan-qa
+      username: lisiyuan-qa
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/lisiyuan-qa
+      username: lisiyuan-qa
+  education:
+    - institution: 华东理工大学
+      url: https://www.ecust.edu.cn
+      degree: Bachelor
+      area: 软件工程
+      score: '3.7/4.0'
+      startDate: '2013-09-01'
+      endDate: '2017-06-30'
+      courses:
+        - 软件测试技术
+        - 数据结构与算法
+        - 数据库原理
+        - 操作系统
+        - 计算机网络
+        - 面向对象程序设计
+        - 软件工程
+        - Web 应用开发
+      summary: |
+        - 系统学习软件测试、软件工程与数据库等核心课程，成绩排名专业前 15%
+        - 参与校内软件质量实践项目，完成测试用例设计、缺陷跟踪与测试报告编写
+        - 毕业设计聚焦 Web 应用自动化测试，使用 Selenium 完成核心流程回归验证
+  work:
+    - name: 云帆科技
+      url: https://www.yunfan-tech.com
+      position: 高级质量保证工程师
+      startDate: '2022-03-01'
+      summary: |
+        - 负责电商中台与支付链路的质量保障，制定测试策略和发布准入标准，覆盖 Web、API 与移动端场景
+        - 搭建基于 Pytest、Requests 与 Allure 的接口自动化测试体系，核心接口覆盖率从 45% 提升至 85%，回归测试耗时降低 60%
+        - 主导性能测试与容量评估，使用 JMeter 和 Grafana 定位瓶颈，支撑大促期间峰值 QPS 3 万以上稳定运行
+        - 推动 CI/CD 质量门禁落地，将静态检查、单元测试、接口测试和冒烟测试接入 Jenkins 与 GitLab CI
+        - 参与缺陷复盘与质量度量，建立缺陷收敛率、逃逸率、自动化覆盖率等指标看板
+      keywords:
+        - 自动化测试
+        - 接口测试
+        - 性能测试
+        - CI/CD
+        - 质量度量
+        - 电商中台
+    - name: 星链电商
+      url: https://www.xinglian-mall.com
+      position: 质量保证工程师
+      startDate: '2019-07-01'
+      endDate: '2022-02-28'
+      summary: |
+        - 负责订单、库存、优惠券等核心模块的功能测试与回归测试，编写并维护 1200+ 测试用例
+        - 使用 Postman、Charles 和 SQL 完成接口验证与数据核对，协助开发定位复杂业务缺陷
+        - 参与需求评审与测试设计，推动可测性改进，减少需求歧义和后期返工
+        - 编写自动化脚本，使用 Selenium WebDriver 覆盖核心 UI 流程，提升回归效率
+      keywords:
+        - 功能测试
+        - 测试用例
+        - Selenium
+        - Postman
+        - SQL
+        - 缺陷管理
+    - name: 智联软件
+      url: https://www.zhilian-software.com
+      position: 初级测试工程师
+      startDate: '2017-07-01'
+      endDate: '2019-06-30'
+      summary: |
+        - 执行 Web 与移动端产品测试，完成兼容性、边界值和异常场景验证
+        - 维护缺陷跟踪流程，使用 Jira 记录和跟进缺陷，推动问题闭环
+        - 参与测试环境搭建与测试数据准备，保障迭代版本按时交付
+        - 编写测试报告和质量周报，为项目决策提供数据支持
+      keywords:
+        - Web 测试
+        - 移动端测试
+        - Jira
+        - 兼容性测试
+        - 测试报告
+  skills:
+    - name: 测试自动化
+      level: Advanced
+      keywords:
+        - Pytest
+        - Selenium
+        - Playwright
+        - Requests
+        - Allure
+    - name: 接口与性能测试
+      level: Advanced
+      keywords:
+        - Postman
+        - JMeter
+        - REST Assured
+        - Grafana
+        - SQL
+    - name: 质量工程
+      level: Expert
+      keywords:
+        - 测试策略
+        - 测试用例设计
+        - 缺陷管理
+        - 质量度量
+        - 发布准入
+    - name: 持续集成与工具
+      level: Advanced
+      keywords:
+        - Jenkins
+        - GitLab CI
+        - Docker
+        - Git
+        - Jira
+    - name: 编程语言
+      level: Intermediate
+      keywords:
+        - Python
+        - Java
+        - JavaScript
+        - Shell
+        - SQL
+  languages:
+    - language: Chinese
+      fluency: Native or Bilingual Proficiency
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - CET-6
+        - 技术文档阅读
+        - 英文邮件沟通
+  certificates:
+    - name: ISTQB 高级认证测试工程师
+      issuer: ISTQB
+      date: '2021-05-15'
+      url: https://www.istqb.org/certifications
+    - name: 软件评测师（中级）
+      issuer: 中国计算机技术职业资格认证中心
+      date: '2019-11-09'
+      url: https://www.ruankao.org.cn
+  awards:
+    - title: 年度质量之星
+      date: '2023-12-20'
+      awarder: 云帆科技
+      summary: |
+        表彰在支付链路稳定性治理和大促质量保障中的突出贡献，主导的自动化回归方案使发布效率提升 40%。
+    - title: 优秀项目奖
+      date: '2021-01-15'
+      awarder: 星链电商
+      summary: |
+        在订单中台重构项目中负责测试设计与回归保障，推动核心链路缺陷逃逸率下降 35%。
+  publications:
+    - name: 基于持续集成的接口自动化测试实践
+      publisher: 软件质量与测试
+      releaseDate: '2023-10-01'
+      summary: |
+        总结在电商项目中落地接口自动化与 CI 质量门禁的实践经验，涵盖框架设计、用例治理、稳定性提升和度量体系。
+  projects:
+    - name: 电商支付链路自动化测试平台
+      url: https://github.com/lisiyuan-qa/payment-qa-platform
+      description: 面向支付与订单链路的自动化测试平台，覆盖接口回归、数据校验和持续集成质量门禁。
+      startDate: '2022-08-01'
+      endDate: '2023-06-30'
+      summary: |
+        - 基于 Pytest 与 Requests 设计分层测试框架，支持用例参数化、环境切换和 Allure 报告
+        - 接入 GitLab CI，实现合并请求触发冒烟测试与接口回归，平均反馈时间缩短至 15 分钟
+        - 建立支付场景测试数据工厂，降低脏数据导致的误报率，提升用例稳定性
+      keywords:
+        - 自动化测试
+        - 支付链路
+        - Pytest
+        - CI/CD
+        - Allure
+    - name: 大促全链路压测与容量评估
+      description: 针对大促峰值流量开展全链路压测，识别系统瓶颈并输出容量规划建议。
+      startDate: '2023-09-01'
+      endDate: '2023-11-30'
+      summary: |
+        - 使用 JMeter 编排订单、库存、支付等核心链路压测场景，模拟峰值 QPS 3 万
+        - 结合 Grafana、Prometheus 和日志分析定位慢查询与线程池瓶颈
+        - 推动缓存优化、限流降级和数据库索引调整，保障大促期间核心接口可用性达到 99.99%
+      keywords:
+        - 性能测试
+        - JMeter
+        - 容量评估
+        - 全链路压测
+        - 稳定性
+  interests:
+    - name: 技术社区
+      keywords:
+        - 测试开发
+        - 自动化测试
+        - 质量工程
+        - 技术分享
+    - name: 运动
+      keywords:
+        - 跑步
+        - 羽毛球
+        - 骑行
+    - name: 阅读
+      keywords:
+        - 软件工程
+        - 产品思维
+        - 历史
+  volunteer:
+    - organization: TesterHome 测试社区
+      url: https://testerhome.com
+      position: 技术分享志愿者
+      startDate: '2021-03-01'
+      endDate: '2024-12-31'
+      summary: |
+        - 参与测试技术主题的线上线下分享，累计分享接口自动化与质量度量实践 6 次
+        - 协助组织测试开发沙龙，负责议题筛选、讲师沟通和活动资料整理
+        - 在社区解答自动化测试与 CI/CD 相关问题，持续输出测试工程实践经验
+
+locale:
+  language: zh-hans

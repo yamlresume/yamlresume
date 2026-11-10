@@ -1,0 +1,200 @@
+content:
+  basics:
+    name: Giulia Bianchi
+    headline: Responsabile Risorse Umane e Sviluppo del Talento
+    phone: "+39 02 555 0182"
+    email: giulia.bianchi@giuliabianchi-hr.it
+    url: https://www.giuliabianchi-hr.it
+    summary: |
+      Responsabile Risorse Umane con oltre dieci anni di esperienza nella guida di gruppi di lavoro e nella definizione di strategie orientate alle persone.
+
+      - Gestione completa del ciclo del talento: selezione, inserimento, formazione, valutazione delle prestazioni e sviluppo delle carriere.
+      - Esperienza consolidata nelle relazioni sindacali, nella contrattazione collettiva e nella conformità normativa.
+      - Capacità di tradurre gli obiettivi aziendali in politiche e strumenti concreti per le Risorse Umane.
+      - Orientamento ai risultati, alla qualità delle relazioni interne e al benessere organizzativo.
+
+  location:
+    address: Via Alessandro Manzoni 12
+    city: Milano
+    region: Lombardia
+    country: Italy
+    postalCode: "20121"
+
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/giulia-bianchi-hr
+      username: giulia-bianchi-hr
+
+  education:
+    - institution: Università Commerciale Luigi Bocconi
+      url: https://www.unibocconi.it
+      degree: Master
+      area: Economia e Gestione delle Risorse Umane
+      score: "110/110 con lode"
+      startDate: Sep 1, 2009
+      endDate: Jul 15, 2011
+      courses:
+        - Gestione Strategica delle Risorse Umane
+        - Diritto del Lavoro e Relazioni Industriali
+        - Comportamento Organizzativo
+        - Economia del Personale
+        - Sistemi di Valutazione delle Prestazioni
+        - Statistica per le Scienze Sociali
+      summary: |
+        - Formazione avanzata nella gestione strategica delle Risorse Umane e nelle relazioni industriali.
+        - Partecipazione a laboratori e progetti con aziende del territorio su selezione, valutazione e sviluppo del personale.
+        - Tesi sperimentale sui modelli di valutazione delle prestazioni nelle imprese di servizi.
+    - institution: Università degli Studi di Milano
+      url: https://www.unimi.it
+      degree: Bachelor
+      area: Scienze dell'Organizzazione e del Lavoro
+      score: "108/110"
+      startDate: Sep 1, 2006
+      endDate: Jul 10, 2009
+      courses:
+        - Sociologia del Lavoro
+        - Psicologia delle Organizzazioni
+        - Diritto Sindacale
+        - Economia Aziendale
+        - Metodologia della Ricerca Sociale
+      summary: |
+        - Acquisizione di solide basi in sociologia del lavoro, psicologia delle organizzazioni e diritto sindacale.
+        - Sviluppo di competenze analitiche attraverso ricerche sul campo e analisi dei dati organizzativi.
+
+  work:
+    - name: Lombardia Energia S.p.A.
+      url: https://www.lombardiaenergia.it
+      position: Responsabile Risorse Umane
+      startDate: Jan 1, 2020
+      summary: |
+        - Guida di un gruppo di 6 professionisti delle Risorse Umane, con responsabilità su selezione, formazione, sviluppo e amministrazione del personale.
+        - Definizione e attuazione della strategia delle Risorse Umane in linea con gli obiettivi aziendali e con il piano industriale.
+        - Gestione delle relazioni sindacali e della contrattazione collettiva, con riduzione del contenzioso del 30% in tre anni.
+        - Introduzione di un modello di valutazione delle prestazioni e dei percorsi di carriera, aumentando la mobilità interna del 25%.
+        - Progettazione di programmi di benessere aziendale e di diversità e inclusione, con un incremento del coinvolgimento dei dipendenti di 18 punti percentuali.
+        - Monitoraggio degli indicatori chiave di prestazione delle Risorse Umane e predisposizione della reportistica per la direzione.
+      keywords:
+        - Strategia delle Risorse Umane
+        - Relazioni sindacali
+        - Sviluppo del talento
+        - Benessere aziendale
+        - Diversità e inclusione
+        - Budget del personale
+    - name: TechNova Italia S.r.l.
+      url: https://www.technovaitalia.it
+      position: Referente Risorse Umane per le Funzioni Aziendali
+      startDate: Mar 1, 2016
+      endDate: Dec 31, 2019
+      summary: |
+        - Partner di riferimento per le funzioni commerciale e operativa nella gestione delle tematiche delle Risorse Umane.
+        - Gestione completa dei processi di selezione per profili tecnici e manageriali.
+        - Supporto ai responsabili di funzione nella valutazione delle prestazioni, nella definizione degli obiettivi e nei piani di sviluppo individuali.
+        - Progettazione ed erogazione di percorsi formativi, con oltre 1.200 ore di formazione erogate in tre anni.
+        - Implementazione di un nuovo sistema informativo del personale e digitalizzazione dei processi di inserimento e valutazione.
+        - Partecipazione a progetti di riorganizzazione aziendale e gestione del cambiamento.
+      keywords:
+        - Selezione del personale
+        - Valutazione delle prestazioni
+        - Formazione
+        - Sistemi del personale
+        - Gestione del cambiamento
+    - name: Gruppo Editoriale Aurora S.p.A.
+      url: https://www.gruppoeditorialeaurora.it
+      position: Specialista Sviluppo Organizzativo
+      startDate: Sep 1, 2011
+      endDate: Feb 29, 2016
+      summary: |
+        - Analisi dei fabbisogni organizzativi e progettazione di percorsi di sviluppo e carriera per circa 400 dipendenti.
+        - Realizzazione di indagini sul clima aziendale e definizione di piani di azione per migliorare il benessere organizzativo.
+        - Mappatura delle competenze e supporto alla revisione del modello organizzativo.
+        - Coordinamento di attività formative e gestione dei rapporti con enti di formazione esterni.
+        - Contributo alla redazione di policy interne in materia di gestione delle Risorse Umane.
+      keywords:
+        - Analisi dei fabbisogni
+        - Percorsi di carriera
+        - Clima aziendale
+        - Formazione
+        - Mappatura delle competenze
+
+  skills:
+    - name: Gestione delle Risorse Umane
+      level: Expert
+      keywords:
+        - Selezione del personale
+        - Valutazione delle prestazioni
+        - Sviluppo del talento
+        - Pianificazione della successione
+        - Benessere aziendale
+    - name: Diritto del Lavoro e Relazioni Sindacali
+      level: Advanced
+      keywords:
+        - Contrattazione collettiva
+        - Relazioni sindacali
+        - Gestione delle controversie
+        - Conformità normativa
+    - name: Sistemi Informativi del Personale
+      level: Advanced
+      keywords:
+        - SAP SuccessFactors
+        - Zucchetti
+        - Excel avanzato
+        - Power BI
+        - Sistemi del personale
+    - name: Sviluppo Organizzativo
+      level: Advanced
+      keywords:
+        - Analisi dei fabbisogni
+        - Mappatura delle competenze
+        - Gestione del cambiamento
+        - Clima aziendale
+        - Diversità e inclusione
+    - name: Competenze Trasversali
+      level: Expert
+      keywords:
+        - Comunicazione efficace
+        - Negoziazione
+        - Capacità di guida
+        - Risoluzione dei problemi
+        - Pensiero analitico
+
+  languages:
+    - language: Italian
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - Madrelingua
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - Certificazione C1
+        - Inglese commerciale
+    - language: French
+      fluency: Limited Working Proficiency
+      keywords:
+        - B1
+        - Conversazione professionale
+
+  awards:
+    - title: Premio Eccellenza Risorse Umane
+      date: Nov 2022
+      awarder: Associazione Italiana per la Direzione del Personale
+      summary: |
+        Riconoscimento assegnato a professionisti che si sono distinti per innovazione nella gestione delle Risorse Umane e per l'impatto misurabile sui risultati aziendali.
+
+  certificates:
+    - name: Certificazione Professionista Senior Risorse Umane
+      issuer: Istituto Italiano di Certificazione delle Risorse Umane
+      date: Mar 2021
+      url: https://www.iicru.it/certificazioni
+    - name: Esperto in Diritto del Lavoro
+      issuer: Ordine dei Consulenti del Lavoro di Milano
+      date: Jun 2018
+      url: https://www.consulentidellavoro.mi.it
+
+  publications:
+    - name: Gestione del talento nell'era del lavoro ibrido
+      publisher: Rivista Italiana di Direzione del Personale
+      releaseDate: Apr 2023
+      url: https://www.rivistaitalianadirigenzapersonale.it/articoli/talento-lavoro-ibrido
+      summary: |
+        - Analisi delle principali tendenze del lavoro ibrido e delle implicazioni per la gestione del talento.
+        - Proposta

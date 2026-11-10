@@ -1,0 +1,219 @@
+content:
+  basics:
+    name: Ingrid Solberg
+    headline: Maskiningeniør med fokus på produktutvikling og bærekraft
+    phone: "+47 987 65 432"
+    email: ingrid.solberg@example.no
+    url: https://www.ingridsolberg.no
+    summary: |
+      - Maskiningeniør med mastergrad fra NTNU og fem års erfaring fra produktutvikling, konstruksjon og teknisk prosjektledelse
+      - Erfaren med CAD, FEM-analyse og materialvalg for komponenter i krevende industrielle miljøer
+      - Dokumentert evne til å lede tverrfaglige team fra konsept til produksjon, med vekt på kvalitet, kostnad og bærekraft
+      - Sterk interesse for energieffektivisering, sirkulærøkonomi og digitale verktøy i ingeniørfaglig arbeid
+  location:
+    address: Storgata 42
+    city: Oslo
+    region: Oslo
+    country: Norway
+    postalCode: "0182"
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/ingridsolberg
+      username: ingridsolberg
+    - network: GitHub
+      url: https://github.com/ingridsolberg
+      username: ingridsolberg
+  education:
+    - institution: Norges teknisk-naturvitenskapelige universitet
+      url: https://www.ntnu.no
+      degree: Master
+      area: Maskinteknikk
+      score: 'A+'
+      startDate: Aug 15, 2017
+      endDate: Jun 20, 2022
+      courses:
+        - Konstruksjonsteknikk
+        - Fasthetslære
+        - Strømningslære
+        - Termodynamikk
+        - Materialteknologi
+        - Produktutvikling
+        - FEM-analyse
+        - Prosjektledelse
+      summary: |
+        - Fordypning i produktutvikling og beregningsmekanikk
+        - Masteroppgave om lette konstruksjoner i aluminium for offshore-applikasjoner
+        - Gjennomførte tverrfaglige prosjekter med fokus på bærekraftige materialvalg
+  work:
+    - name: Hydro Extrusion Norge AS
+      url: https://www.hydro.com/no-NO/
+      position: Senior maskiningeniør
+      startDate: Jan 9, 2023
+      summary: |
+        - Leder teknisk utvikling av ekstruderte aluminiumsprofiler for transport- og byggsektoren
+        - Ansvarlig for konstruksjonsberegninger, toleranseanalyser og validering av nye produkter
+        - Koordinerer tverrfaglige prosjekter mellom produksjon, kvalitet og leverandører
+        - Driver kontinuerlig forbedring av produksjonsprosesser med vekt på energibesparelse
+      keywords:
+        - Aluminium
+        - Produktutvikling
+        - FEM
+        - Kvalitetssikring
+        - Lean
+    - name: Aker Solutions AS
+      url: https://www.akersolutions.com
+      position: Maskiningeniør
+      startDate: Aug 1, 2020
+      endDate: Dec 31, 2022
+      summary: |
+        - Konstruerte og dimensjonerte mekaniske komponenter for undervannsinstallasjoner
+        - Utførte FEM- og utmattingsanalyser i samsvar med NORSOK-standarder
+        - Utarbeidet tekniske tegninger, spesifikasjoner og endringsnotater
+        - Deltok i verifikasjon, testing og oppfølging av leverandører
+      keywords:
+        - Undervannsteknologi
+        - FEM-analyse
+        - NORSOK
+        - SolidWorks
+        - Teknisk dokumentasjon
+    - name: SINTEF Energi AS
+      url: https://www.sintef.no/energi
+      position: Prosjektingeniør (sommerjobb)
+      startDate: Jun 3, 2019
+      endDate: Aug 16, 2019
+      summary: |
+        - Analyserte energibruk i industrielle prosesser og foreslo forbedringstiltak
+        - Utarbeidet simuleringsmodeller for varmegjenvinning i pilotanlegg
+        - Presenterte resultater for prosjektteam og eksterne samarbeidspartnere
+      keywords:
+        - Energiøkonomi
+        - Varmegjenvinning
+        - Simulering
+  languages:
+    - language: Norwegian
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - Morsmål
+        - Bokmål
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - C1
+        - Teknisk engelsk
+    - language: German
+      fluency: Elementary Proficiency
+      keywords:
+        - A2
+  skills:
+    - name: Mekanisk konstruksjon
+      level: Expert
+      keywords:
+        - SolidWorks
+        - Siemens NX
+        - AutoCAD
+        - Teknisk tegning
+        - Toleranseanalyse
+    - name: Beregning og analyse
+      level: Advanced
+      keywords:
+        - ANSYS Mechanical
+        - Abaqus
+        - FEM-analyse
+        - Utmattingsanalyse
+        - CFD
+    - name: Materialer og produksjon
+      level: Advanced
+      keywords:
+        - Aluminium
+        - Stål
+        - Kompositter
+        - Additiv tilvirkning
+        - Lean produksjon
+    - name: Prosjektledelse
+      level: Advanced
+      keywords:
+        - Tverrfaglig samarbeid
+        - Teknisk dokumentasjon
+        - Kvalitetssikring
+        - Risikostyring
+        - Bærekraftig design
+  awards:
+    - title: Beste masteroppgave i maskinteknikk
+      date: Jun 2022
+      awarder: NTNU
+      summary: |
+        Tildelt for masteroppgaven om lette aluminiumskonstruksjoner for offshore-applikasjoner.
+  certificates:
+    - name: Certified SolidWorks Professional
+      issuer: Dassault Systèmes
+      date: Mar 2021
+      url: https://www.solidworks.com/certification
+    - name: PMP – Project Management Professional
+      issuer: Project Management Institute
+      date: Nov 2023
+      url: https://www.pmi.org/certifications/project-management-pmp
+  publications:
+    - name: Energieffektivisering av varmepumper i norske næringsbygg
+      publisher: Norsk Energi
+      releaseDate: Sep 2021
+      url: https://www.norskenergi.no/
+      summary: |
+        - Undersøker hvordan varmepumper kan redusere energibehovet i næringsbygg
+        - Presenterer beregningsmodeller og anbefalte tiltak for eksisterende bygningsmasse
+        - Diskuterer lønnsomhet og bærekraftige installasjonsløsninger
+  projects:
+    - name: Bærekraftig lettvektramme for offshore
+      url: https://www.ntnu.no/prosjekter/lettvektramme
+      description: Utvikling av en lettvektsramme i aluminium for offshore-applikasjoner.
+      startDate: Jan 10, 2021
+      endDate: Jun 20, 2022
+      summary: |
+        - Designet og optimaliserte rammekonstruksjonen med hensyn til styrke og vekt
+        - Gjennomførte FEM-analyse og utmattingsvurdering av kritiske knutepunkter
+        - Validerte konstruksjonen gjennom laboratorietester og dokumenterte resultatene
+      keywords:
+        - Lettvektsdesign
+        - Aluminium
+        - FEM-analyse
+        - Offshore
+        - Bærekraft
+    - name: Energioppgradering av pilotanlegg
+      url: https://www.sintef.no/prosjekter/energioppgradering
+      description: Analyse og forbedring av varmegjenvinning i et industrielt pilotanlegg.
+      startDate: Jun 3, 2019
+      endDate: Aug 16, 2019
+      summary: |
+        - Kartla energistrømmer og identifiserte tapskilder i prosessen
+        - Modellerte varmegjenvinning og foreslo tiltak med god lønnsomhet
+        - Bidro til teknisk rapport og anbefalinger for videre drift
+      keywords:
+        - Varmegjenvinning
+        - Energianalyse
+        - Simulering
+  interests:
+    - name: Friluftsliv
+      keywords:
+        - Fjellturer
+        - Langrenn
+        - Kajakk
+    - name: Teknologi
+      keywords:
+        - 3D-printing
+        - Arduino
+        - Bærekraftig energi
+    - name: Musikk
+      keywords:
+        - Gitar
+        - Kor
+  volunteer:
+    - organization: Tekna – Teknisk-naturvitenskapelig forening
+      url: https://www.tekna.no
+      position: Fagansvarlig for bærekraft
+      startDate: Sep 1, 2021
+      summary: |
+        - Arrangerer faglige møter og workshops om bærekraftig ingeniørpraksis
+        - Bidrar med faglige innspill til studenter og nyutdannede ingeniører
+        - Koordinerer samarbeid mellom lokale bedrifter og foreningen
+
+locale:
+  language: 'no'

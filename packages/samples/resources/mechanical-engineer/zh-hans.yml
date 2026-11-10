@@ -1,0 +1,254 @@
+content:
+  basics:
+    name: 张伟
+    headline: 高级机械工程师 | 汽车行业 | 10年经验
+    phone: +86 138 1234 5678
+    email: zhangwei.mech@qq.com
+    url: https://www.linkedin.com/in/zhangwei-mech
+    summary: |
+      - 机械工程硕士，10年汽车行业机械设计与开发经验，熟悉从概念设计到量产的全流程。
+      - 精通SolidWorks、CATIA、AutoCAD等CAD软件，熟练使用ANSYS、Abaqus进行有限元分析。
+      - 擅长汽车零部件结构设计、轻量化优化、公差分析及GD&T，具备丰富的项目管理经验。
+      - 具备良好的团队协作和沟通能力，曾领导5人团队完成多个重点项目，获得上海市科技进步二等奖。
+      - 持续学习新技术，关注新能源汽车和智能制造领域，致力于推动机械设计的创新与优化。
+
+  location:
+    address: 上海市浦东新区世纪大道100号
+    city: 上海
+    region: 上海市
+    country: China
+    postalCode: "200120"
+
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/zhangwei-mech
+      username: zhangwei-mech
+    - network: GitHub
+      url: https://github.com/zhangwei-mech
+      username: zhangwei-mech
+
+  education:
+    - institution: 上海交通大学
+      url: https://www.sjtu.edu.cn
+      degree: Master
+      area: 机械工程
+      score: "3.8/4.0"
+      startDate: 2010-09-01
+      endDate: 2013-06-30
+      courses:
+        - 高等机械设计
+        - 有限元分析
+        - 热力学与流体力学
+        - 机器人学
+        - 控制工程
+        - 材料科学与工程
+        - 先进制造技术
+        - 汽车系统动力学
+      summary: |
+        - 研究方向为汽车轻量化设计与结构优化，参与国家自然科学基金项目。
+        - 发表2篇EI论文，获得校级优秀硕士论文。
+        - 担任助教，辅导本科生机械设计课程。
+    - institution: 华中科技大学
+      url: https://www.hust.edu.cn
+      degree: Bachelor
+      area: 机械设计制造及其自动化
+      score: "3.6/4.0"
+      startDate: 2006-09-01
+      endDate: 2010-06-30
+      courses:
+        - 机械原理
+        - 机械设计
+        - 工程力学
+        - 电工电子技术
+        - 微机原理与接口技术
+        - 工程材料
+        - 互换性与技术测量
+        - 机械制造技术基础
+      summary: |
+        - 连续三年获得校级奖学金，担任机械创新协会会长。
+        - 参加全国大学生机械创新设计大赛，获湖北省一等奖。
+        - 毕业设计为“小型机器人机械臂设计”，获优秀毕业设计。
+
+  work:
+    - name: 上海汽车集团股份有限公司
+      url: https://www.saicmotor.com
+      position: 高级机械工程师
+      startDate: 2018-07-01
+      summary: |
+        - 负责新能源汽车电池包结构设计与优化，主导完成3款车型的电池包开发，实现减重15%并满足碰撞安全要求。
+        - 使用CATIA进行3D建模和2D图纸绘制，运用ANSYS进行静力学、模态和疲劳分析，优化结构设计。
+        - 制定GD&T方案，与供应商进行技术沟通，确保零部件制造质量，降低生产成本10%。
+        - 领导5人跨部门团队，协调设计、仿真、工艺和采购，确保项目按时交付。
+        - 编写技术文档和设计规范，培训新员工，提升团队整体设计能力。
+      keywords:
+        - 电池包设计
+        - 轻量化
+        - CATIA
+        - ANSYS
+        - GD&T
+        - 项目管理
+    - name: 博世汽车部件（苏州）有限公司
+      url: https://www.bosch.com.cn
+      position: 机械工程师
+      startDate: 2013-07-01
+      endDate: 2018-06-30
+      summary: |
+        - 负责动力总成零部件的机械设计，包括变速箱壳体、支架和连接件，年产量超50万件。
+        - 使用SolidWorks进行详细设计，完成公差分析和尺寸链计算，确保装配精度。
+        - 参与DFMEA和PFMEA分析，识别设计风险并制定改进措施，产品不良率降低20%。
+        - 与德国总部团队协作，引入新设计标准，优化产品结构，缩短开发周期15%。
+        - 获得博世全球创新奖提名，连续两年被评为优秀员工。
+      keywords:
+        - 动力总成
+        - SolidWorks
+        - 公差分析
+        - DFMEA
+        - 制造工艺
+
+  skills:
+    - name: CAD软件
+      level: Expert
+      keywords:
+        - SolidWorks
+        - CATIA
+        - AutoCAD
+        - Creo
+        - NX
+    - name: 仿真分析
+      level: Advanced
+      keywords:
+        - ANSYS
+        - Abaqus
+        - HyperMesh
+        - MATLAB
+        - Simulink
+    - name: 机械设计
+      level: Expert
+      keywords:
+        - 结构设计
+        - 轻量化
+        - 公差分析
+        - GD&T
+        - 材料选型
+    - name: 项目管理
+      level: Intermediate
+      keywords:
+        - PMP
+        - Agile
+        - 跨部门协作
+        - 风险管理
+    - name: 编程与工具
+      level: Intermediate
+      keywords:
+        - Python
+        - C++
+        - MATLAB
+        - Git
+
+  languages:
+    - language: Chinese
+      fluency: Native or Bilingual Proficiency
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - CET-6
+        - TOEFL 105
+        - 技术文档写作
+
+  awards:
+    - title: 上海市科技进步二等奖
+      date: 2020-12
+      awarder: 上海市人民政府
+      summary: |
+        因在新能源汽车电池包轻量化设计方面的突出贡献，作为主要完成人获奖。
+    - title: 上汽集团优秀员工
+      date: 2019-12
+      awarder: 上海汽车集团股份有限公司
+      summary: |
+        年度绩效排名前5%，表彰在电池包开发项目中的卓越领导和团队协作。
+
+  certificates:
+    - name: 高级机械工程师职称
+      issuer: 上海市人力资源和社会保障局
+      date: 2021-06
+    - name: PMP认证
+      issuer: 项目管理协会（PMI）
+      date: 2018-09
+    - name: SolidWorks认证专家
+      issuer: Dassault Systèmes
+      date: 2015-03
+
+  publications:
+    - name: 基于有限元分析的汽车悬架结构优化设计
+      publisher: 机械工程学报
+      releaseDate: 2019-05
+      url: https://doi.org/10.3901/JME.2019.05.001
+      summary: |
+        - 提出一种基于响应面法的悬架结构优化方法，实现减重12%并提高疲劳寿命。
+        - 通过ANSYS仿真和台架试验验证，结果误差小于5%。
+        - 被引次数超过30次，获期刊年度优秀论文。
+    - name: 轻量化材料在汽车车身中的应用研究
+      publisher: 汽车工程
+      releaseDate: 2017-11
+      url: https://doi.org/10.19562/j.chinasae.qcgc.2017.11.001
+      summary: |
+        - 对比分析高强钢、铝合金和碳纤维复合材料在车身中的应用效果。
+        - 提出多材料混合车身设计方案，实现减重20%的同时满足碰撞安全法规。
+        - 为后续车型开发提供材料选型依据。
+
+  projects:
+    - name: 新能源汽车电池包结构设计与优化
+      startDate: 2020-01-01
+      endDate: 2021-12-31
+      description: 针对纯电动车型的电池包进行结构设计、轻量化和安全优化。
+      summary: |
+        - 设计电池包上下壳体、模组支架和冷却板，满足IP67防护等级和振动疲劳要求。
+        - 采用拓扑优化和尺寸优化方法，实现电池包减重15%，能量密度提升8%。
+        - 通过CAE仿真和物理试验验证，顺利通过国标GB 38031碰撞安全测试。
+        - 项目投产后，年产量达10万台，新增产值超5亿元。
+      keywords:
+        - 电池包
+        - 轻量化
+        - 拓扑优化
+        - 碰撞安全
+      url: https://www.saicmotor.com/tech/battery
+    - name: 某车型底盘轻量化项目
+      startDate: 2018-03-01
+      endDate: 2019-12-31
+      description: 对某轿车底盘进行轻量化设计，采用铝合金和液压成型技术。
+      summary: |
+        - 重新设计前副车架和后扭力梁，采用铝合金材料，减重25%。
+        - 使用HyperMesh进行网格划分和优化，通过Abaqus进行强度刚度分析。
+        - 协调供应商完成样件制造和台架试验，满足耐久性要求。
+        - 项目成果应用于两款车型，年节约成本约2000万元。
+      keywords:
+        - 底盘
+        - 铝合金
+        - 液压成型
+        - 轻量化
+
+  interests:
+    - name: 技术
+      keywords:
+        - 3D打印
+        - 机器人技术
+        - 智能制造
+    - name: 户外
+      keywords:
+        - 徒步
+        - 摄影
+        - 骑行
+
+  volunteer:
+    - organization: 中国机械工程学会
+      url: https://www.cmes.org
+      position: 技术讲师
+      startDate: 2016-01-01
+      endDate: 2020-12-31
+      summary: |
+        - 作为志愿者讲师，为高校学生和初入职场工程师讲授机械设计实践课程。
+        - 组织“机械创新设计”工作坊，累计培训学员超过500人。
+        - 参与学会年度学术会议的组织工作，负责分会场协调。
+
+locale:
+  language: zh-hans

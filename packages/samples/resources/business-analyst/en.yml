@@ -1,0 +1,228 @@
+content:
+  basics:
+    name: Jordan Ellis
+    headline: 'Business Analyst | Process Improvement & Data Insights'
+    phone: "(415) 555-2387"
+    email: jordan.ellis@example.com
+    url: https://www.jordanellisba.com
+    summary: |
+      - Business analyst with 6+ years of experience translating complex business needs into actionable technical requirements
+      - Skilled in process mapping, stakeholder facilitation, and data-driven decision support across finance and SaaS domains
+      - Proficient in SQL, Tableau, and Agile delivery, with a track record of improving operational efficiency and user adoption
+      - Strong communicator who bridges gaps between business leaders, product teams, and engineering stakeholders
+  location:
+    address: 456 Market Street, Suite 900
+    city: San Francisco
+    region: California
+    country: United States
+    postalCode: "94105"
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/jordanellisba
+      username: jordanellisba
+    - network: GitHub
+      url: https://github.com/jordanellisba
+      username: jordanellisba
+  education:
+    - institution: University of California, Berkeley
+      url: https://www.berkeley.edu/
+      degree: Bachelor
+      area: Business Administration
+      score: "3.8"
+      startDate: Sep 1, 2014
+      endDate: Jun 1, 2018
+      courses:
+        - Business Analytics
+        - Financial Accounting
+        - Operations Management
+        - Statistics for Business
+        - Information Systems
+        - Marketing Research
+        - Corporate Finance
+        - Managerial Economics
+      summary: |
+        - Graduated with honors and a concentration in business analytics and information systems
+        - Completed capstone project on optimizing customer onboarding workflows for a regional financial services firm
+        - Developed strong foundations in quantitative analysis, process design, and cross-functional collaboration
+  work:
+    - name: Northwind Analytics
+      url: https://www.northwindanalytics.com
+      position: Senior Business Analyst
+      startDate: Jan 2022
+      summary: |
+        - Lead requirements elicitation and process discovery for a portfolio of data platform and reporting initiatives
+        - Facilitate workshops with product, finance, and operations stakeholders to define scope, acceptance criteria, and success metrics
+        - Translate business rules into user stories, data mappings, and functional specifications for engineering teams
+        - Partner with QA and business owners to coordinate UAT, defect triage, and post-launch adoption tracking
+        - Mentor junior analysts and contribute to the BA community of practice through templates, coaching, and peer reviews
+      keywords:
+        - Requirements Elicitation
+        - Process Improvement
+        - Stakeholder Management
+        - Agile Delivery
+        - UAT Coordination
+        - Data Mapping
+    - name: BlueRiver Financial
+      url: https://www.blueriverfinancial.com
+      position: Business Analyst
+      startDate: Jun 2019
+      endDate: Dec 2021
+      summary: |
+        - Supported digital transformation projects across lending, servicing, and member experience teams
+        - Documented current-state and future-state processes, identifying automation opportunities that reduced manual effort by 25%
+        - Built SQL queries and Tableau dashboards to track KPIs, operational bottlenecks, and customer behavior trends
+        - Coordinated requirement reviews, sprint demos, and change requests with product owners and technical leads
+        - Created test scenarios and assisted business users during UAT cycles for new workflow and reporting releases
+      keywords:
+        - Business Process Mapping
+        - SQL
+        - Tableau
+        - Agile Scrum
+        - UAT
+        - Financial Services
+    - name: Cedar Point Consulting
+      url: https://www.cedarpointconsulting.com
+      position: Junior Business Analyst
+      startDate: Jul 2018
+      endDate: May 2019
+      summary: |
+        - Gathered and documented business requirements for small-business technology and operations projects
+        - Prepared meeting notes, process flows, and requirement traceability matrices to support project delivery
+        - Conducted data validation and basic reporting to help clients monitor project outcomes and service levels
+        - Collaborated with senior consultants to prepare client presentations and implementation roadmaps
+      keywords:
+        - Requirements Documentation
+        - Process Flows
+        - Data Validation
+        - Client Presentations
+  languages:
+    - language: English
+      fluency: Native or Bilingual Proficiency
+    - language: Spanish
+      fluency: Limited Working Proficiency
+      keywords:
+        - Business conversations
+        - Client support
+    - language: Mandarin
+      fluency: Elementary Proficiency
+      keywords:
+        - Basic conversation
+  skills:
+    - name: Business Analysis
+      level: Expert
+      keywords:
+        - Requirements Elicitation
+        - Process Mapping
+        - Stakeholder Management
+        - Gap Analysis
+        - User Stories
+    - name: Data Analysis
+      level: Advanced
+      keywords:
+        - SQL
+        - Tableau
+        - Excel
+        - Power BI
+        - Data Visualization
+    - name: Project Delivery
+      level: Advanced
+      keywords:
+        - Agile Scrum
+        - UAT Coordination
+        - Change Management
+        - Risk Management
+    - name: Tools
+      level: Intermediate
+      keywords:
+        - Jira
+        - Confluence
+        - Visio
+        - Lucidchart
+        - Smartsheet
+  awards:
+    - title: Excellence in Business Analysis Award
+      date: Nov 2023
+      awarder: Northwind Analytics
+      summary: |
+        Recognized for leading a cross-functional requirements program that improved delivery predictability and stakeholder satisfaction across three product teams.
+    - title: Dean's List
+      date: May 2017
+      awarder: University of California, Berkeley
+      summary: |
+        Awarded for sustained academic achievement in the Business Administration program.
+  certificates:
+    - name: Certified Business Analysis Professional (CBAP)
+      issuer: International Institute of Business Analysis
+      date: Mar 2021
+      url: https://www.iiba.org/certification/cbap/
+    - name: Professional Scrum Master I
+      issuer: Scrum.org
+      date: Aug 2022
+      url: https://www.scrum.org/professional-scrum-certifications/professional-scrum-master-i-certification
+    - name: Tableau Desktop Specialist
+      issuer: Tableau
+      date: Jan 2023
+      url: https://www.tableau.com/learn/certification/desktop-specialist
+  publications:
+    - name: 'Bridging the Gap Between IT and Business: A Practical Framework'
+      publisher: Northwind Analytics Insights
+      releaseDate: Sep 2023
+      url: https://www.northwindanalytics.com/insights/bridging-it-business
+      summary: |
+        - Presents a repeatable framework for aligning business stakeholders and technical teams during discovery
+        - Outlines techniques for requirement prioritization, process documentation, and measurable acceptance criteria
+        - Includes practical templates and lessons learned from data platform and reporting initiatives
+  projects:
+    - name: Customer Onboarding Process Redesign
+      startDate: Jan 2023
+      endDate: Jun 2023
+      description: A cross-functional initiative to simplify customer onboarding and
+        reduce time to first value.
+      summary: |
+        - Mapped current-state onboarding journeys across sales, operations, and support teams
+        - Facilitated stakeholder workshops to prioritize pain points and define future-state workflow requirements
+        - Partnered with engineering and QA to deliver phased improvements, including automated document collection and status tracking
+        - Established KPIs and a post-launch dashboard to monitor cycle time, handoffs, and customer satisfaction
+      keywords:
+        - Process Redesign
+        - Customer Onboarding
+        - Workshop Facilitation
+        - KPI Reporting
+    - name: Sales Forecasting Dashboard
+      startDate: Mar 2021
+      endDate: Aug 2021
+      description: A Tableau dashboard that consolidated pipeline, bookings, and
+        renewal data for sales leadership.
+      summary: |
+        - Defined dashboard requirements and metric definitions with sales operations and finance stakeholders
+        - Wrote SQL queries to combine data from CRM, billing, and contract systems
+        - Built interactive Tableau views for pipeline health, forecast variance, and segment performance
+        - Delivered training and documentation to support weekly forecasting reviews and executive reporting
+      keywords:
+        - Tableau
+        - SQL
+        - Sales Operations
+        - Forecasting
+  interests:
+    - name: Data Storytelling
+      keywords:
+        - Tableau
+        - Power BI
+        - Narrative Visualization
+    - name: Community
+      keywords:
+        - Mentoring
+        - Volunteering
+        - Professional Development
+  volunteer:
+    - organization: Bay Area Business Analysts Association
+      url: https://www.babaa.org
+      position: Volunteer Mentor
+      startDate: Jan 2022
+      summary: |
+        - Mentor early-career business analysts on requirements gathering, stakeholder communication, and career development
+        - Review portfolio artifacts and provide feedback on process mapping, user stories, and data analysis approaches
+        - Support association events and workshops focused on business analysis best practices
+
+locale:
+  language: en

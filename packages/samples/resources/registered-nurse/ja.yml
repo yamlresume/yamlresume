@@ -1,0 +1,199 @@
+content:
+  basics:
+    name: 佐藤 美咲
+    headline: 急性期・救急外来で患者支援を行う看護師
+    phone: "+81 90-1234-5678"
+    email: misaki.sato@example.jp
+    url: https://misaki-sato.jp/
+    summary: |
+      患者の安全と尊厳を第一に考え、急性期病棟および救急外来で8年以上の臨床経験を持つ看護師です。
+
+      - 救急外来ではトリアージ、初期対応、モニタリングを担当し、年間約1,200件の救急受診に対応
+      - 急性期病棟では術後管理、化学療法、感染対策、退院支援を多職種と連携して実施
+      - 後輩看護師の指導や院内研修の企画を通じ、チーム全体の看護品質向上に貢献
+      - 患者・家族への説明と意思決定支援を重視し、満足度向上に取り組む
+  location:
+    address: 芝公園4-2-8
+    city: 港区
+    region: 東京都
+    country: Japan
+    postalCode: "105-0011"
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/misaki-sato-rn
+      username: misaki-sato-rn
+    - network: Twitter
+      url: https://twitter.com/misaki_rn
+      username: misaki_rn
+  education:
+    - institution: 東都看護大学
+      url: https://www.toto-nursing.example.jp
+      degree: Bachelor
+      area: 看護学
+      score: "3.7"
+      startDate: Apr 1, 2012
+      endDate: Mar 31, 2016
+      courses:
+        - 基礎看護学
+        - 成人看護学
+        - 救急看護学
+        - 母性看護学
+        - 小児看護学
+        - 精神看護学
+        - 地域看護学
+        - 看護倫理
+      summary: |
+        看護学の基礎から臨床実習まで幅広く履修し、患者中心の看護実践に必要な知識と技術を習得。
+        卒業研究では急性期患者の疼痛管理をテーマに、看護記録の分析を行った。
+  work:
+    - name: 東京ベイサイド総合病院
+      url: https://www.tokyo-bayside-hp.example.jp
+      position: 看護師（救急外来）
+      startDate: Apr 1, 2020
+      summary: |
+        救急外来において、来院患者のトリアージから初期治療、経過観察までを担当。
+
+        - 主訴とバイタルサインに基づく緊急度判定を実施し、重症患者の治療開始時間を短縮
+        - 心電図モニタリング、酸素療法、静脈路確保、採血などの処置を医師と連携して実施
+        - 患者・家族への病状説明補助と不安軽減に努め、院内の接遇改善に貢献
+        - 新人看護師のプリセプターとして、救急看護手技の指導と振り返りを実施
+      keywords:
+        - 救急看護
+        - トリアージ
+        - BLS
+        - ACLS
+        - 患者教育
+    - name: 東京ベイサイド総合病院
+      url: https://www.tokyo-bayside-hp.example.jp
+      position: 看護師（急性期病棟）
+      startDate: Apr 1, 2016
+      endDate: Mar 31, 2020
+      summary: |
+        整形外科・消化器外科病棟で、周術期看護から退院支援までを担当。
+
+        - 術前オリエンテーション、術後疼痛管理、創部観察、離床支援を実施
+        - 化学療法を受ける患者の副作用管理とセルフケア指導を担当
+        - 感染対策リンクナースとして、手指衛生監査と院内研修を企画
+        - 退院調整カンファレンスに参加し、訪問看護・介護サービスとの連携を推進
+      keywords:
+        - 周術期看護
+        - 疼痛管理
+        - 感染対策
+        - 退院支援
+        - 多職種連携
+  skills:
+    - name: 臨床看護
+      level: Expert
+      keywords:
+        - バイタルサイン管理
+        - 静脈注射
+        - 創傷処置
+        - 服薬管理
+        - 感染対策
+    - name: 救急・急変対応
+      level: Advanced
+      keywords:
+        - トリアージ
+        - BLS
+        - ACLS
+        - 心電図モニタリング
+        - 急変時対応
+    - name: 看護記録・IT
+      level: Advanced
+      keywords:
+        - 電子カルテ
+        - 看護記録
+        - Microsoft Office
+        - データ入力
+    - name: コミュニケーション
+      level: Advanced
+      keywords:
+        - 患者・家族対応
+        - 多職種連携
+        - 指導・育成
+        - カンファレンス
+  languages:
+    - language: Japanese
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - 日本語母語
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - TOEIC 860
+        - 医療英語
+        - 英文文献読解
+  awards:
+    - title: 優秀看護師賞
+      awarder: 東京ベイサイド総合病院
+      date: Dec 2023
+      summary: |
+        救急外来での迅速なトリアージと多職種連携、後輩指導への貢献が評価され受賞。
+    - title: 患者満足度向上表彰
+      awarder: 東京ベイサイド総合病院
+      date: Mar 2019
+      summary: |
+        入院患者および家族への説明とケア改善に取り組み、病棟の患者満足度向上に貢献した。
+  certificates:
+    - name: 看護師免許
+      issuer: 厚生労働省
+      date: Mar 2016
+      url: https://www.mhlw.go.jp/
+    - name: BLSプロバイダー
+      issuer: 日本蘇生協議会
+      date: Apr 2024
+      url: https://www.jrc-cpr.org/
+    - name: ACLSプロバイダー
+      issuer: 日本ACLS協会
+      date: Nov 2023
+      url: https://www.acls.jp/
+  publications:
+    - name: 急性期病棟における転倒予防ラウンドの効果検証
+      publisher: 日本看護品質管理学会誌
+      releaseDate: Sep 2021
+      url: https://www.jnqi.org/journal/example
+      summary: |
+        - 転倒リスクの高い患者に対する多職種ラウンドの導入効果を後方視的に分析
+        - 転倒発生率の低下とスタッフのリスク認識向上を確認し、病棟内で事例共有を実施
+  projects:
+    - name: 救急外来トリアージ迅速化プロジェクト
+      startDate: Jun 2022
+      endDate: Mar 2023
+      description: 救急外来のトリアージ待ち時間を短縮し、重症患者の早期治療開始を目指す多職種改善プロジェクト。
+      summary: |
+        - 来院からトリアージまでの動線を分析し、受付・看護・医師の役割分担を再設計
+        - トリアージ記録の標準化と院内研修を実施し、判断のばらつきを低減
+        - プロジェクト開始前後で重症患者の治療開始までの時間を平均12分短縮
+      keywords:
+        - トリアージ
+        - 品質改善
+        - 多職種連携
+        - 業務効率化
+  interests:
+    - name: ウェルネス
+      keywords:
+        - ヨガ
+        - ランニング
+        - 栄養学
+    - name: 専門学習
+      keywords:
+        - 症例検討
+        - 医療英語
+        - 感染対策
+    - name: 地域活動
+      keywords:
+        - 健康講座
+        - 防災訓練
+  volunteer:
+    - organization: 港区地域健康サポートセンター
+      url: https://www.minato-health.example.jp
+      position: 健康相談ボランティア
+      startDate: Jun 2017
+      endDate: Dec 2019
+      summary: |
+        - 地域住民向けの健康相談、血圧測定、生活習慣改善の助言を実施
+        - 健康講座の企画・運営を支援し、参加者アンケートの分析を担当
+        - 医療機関への受診が必要な高齢者を適切な支援機関につなぐ活動に従事
+
+locale:
+  language: ja

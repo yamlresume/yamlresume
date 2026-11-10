@@ -1,0 +1,244 @@
+content:
+  basics:
+    name: Sanne de Vries
+    headline: QA Engineer met passie voor kwaliteit en testautomatisering
+    phone: "+31 6 12345678"
+    email: sanne.devries@example.com
+    url: https://sannedevries.nl
+    summary: |
+      - Ervaren QA Engineer met een sterke focus op testautomatisering en kwaliteitsborging binnen Agile teams
+      - Expert in het opzetten van schaalbare testframeworks en het integreren van testen in CI/CD-pipelines
+      - Analytisch en detailgericht, met ruime ervaring in API-testen, performance testing en testmanagement
+      - Teamspeler die bruggen slaat tussen development, operations en productmanagement om kwaliteit continu te verbeteren
+  location:
+    address: Keizersgracht 123
+    city: Amsterdam
+    region: Noord-Holland
+    country: Netherlands
+    postalCode: "1015 CJ"
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/sannedevries
+      username: sannedevries
+    - network: GitHub
+      url: https://github.com/sannedevries
+      username: sannedevries
+  education:
+    - institution: Technische Universiteit Delft
+      url: https://www.tudelft.nl
+      degree: Bachelor
+      area: Informatica
+      score: "7.8"
+      startDate: Sep 1, 2014
+      endDate: Jul 1, 2018
+      courses:
+        - Datastructuren en Algoritmen
+        - Software Engineering
+        - Databases
+        - Netwerken
+        - Besturingssystemen
+        - Testen van Software
+        - Projectmanagement
+        - Webtechnologie
+      summary: |
+        - Sterke basis gelegd in softwareontwikkeling, algoritmen en kwaliteitszorg
+        - Praktijkervaring opgedaan met testmethodieken en geautomatiseerde tests
+        - Samenwerkingsvaardigheden ontwikkeld via groepsprojecten en presentaties
+  work:
+    - name: ING
+      url: https://www.ing.com
+      position: Senior QA Engineer
+      startDate: Mar 1, 2022
+      summary: |
+        - Verantwoordelijk voor de kwaliteitsstrategie van de mobiele bankieren-app en online bankieren
+        - Opgezet en onderhouden van een schaalbaar testautomatiseringsframework met Cypress en TypeScript
+        - Geïntegreerd van geautomatiseerde tests in CI/CD-pipelines, wat leidde tot 40% snellere releases
+        - Begeleiden van junior QA-engineers en het verzorgen van kennissessies over testautomatisering
+        - Samenwerken met productowners en ontwikkelaars om acceptatiecriteria en testscenario's te definiëren
+      keywords:
+        - Testautomatisering
+        - Selenium
+        - Cypress
+        - API-testen
+        - CI/CD
+        - Agile
+        - Scrum
+        - Kwaliteitszorg
+    - name: Adyen
+      url: https://www.adyen.com
+      position: QA Engineer
+      startDate: Jun 1, 2019
+      endDate: Feb 28, 2022
+      summary: |
+        - Ontworpen en uitgevoerd van teststrategieën voor de checkout-omgeving en betaaloplossingen
+        - Geautomatiseerd van regressietests met Postman, Java en Python, resulterend in 60% minder handmatig testwerk
+        - Uitgevoerd van performance tests met JMeter en Gatling om schaalbaarheid en betrouwbaarheid te waarborgen
+        - Actief bijgedragen aan Agile ceremonies en continue verbetering van het testproces
+        - Gerapporteerd van kwaliteitsrisico's en testresultaten aan stakeholders
+      keywords:
+        - Teststrategie
+        - Postman
+        - Java
+        - Python
+        - Prestatietesten
+        - Regressietesten
+    - name: Coolblue
+      url: https://www.coolblue.nl
+      position: Junior QA Engineer
+      startDate: Sep 1, 2018
+      endDate: May 31, 2019
+      summary: |
+        - Uitgevoerd van handmatige en geautomatiseerde testcases voor de webshop en mobiele app
+        - Vastleggen en opvolgen van bugs in JIRA, in nauwe samenwerking met ontwikkelaars
+        - Deelgenomen aan Scrum-sprints en bijgedragen aan het verbeteren van de Definition of Done
+        - Opgesteld van testdocumentatie en testrapportages
+      keywords:
+        - Handmatig testen
+        - Testcases
+        - Bugtracking
+        - JIRA
+        - Scrum
+  languages:
+    - language: Dutch
+      fluency: Native or Bilingual Proficiency
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - Cambridge C1
+        - IELTS 7.5
+    - language: German
+      fluency: Limited Working Proficiency
+      keywords:
+        - Goethe B1
+  skills:
+    - name: Testautomatisering
+      level: Expert
+      keywords:
+        - Selenium
+        - Cypress
+        - Playwright
+        - Cucumber
+        - Robot Framework
+    - name: API-testen
+      level: Advanced
+      keywords:
+        - Postman
+        - REST Assured
+        - Swagger
+        - GraphQL
+        - SoapUI
+    - name: Prestatietesten
+      level: Intermediate
+      keywords:
+        - JMeter
+        - Gatling
+        - LoadRunner
+        - K6
+    - name: Testmanagement
+      level: Advanced
+      keywords:
+        - Teststrategie
+        - Testplanning
+        - Risicobeheer
+        - ISTQB
+        - TMMi
+    - name: Programmeertalen
+      level: Advanced
+      keywords:
+        - Java
+        - Python
+        - JavaScript
+        - SQL
+        - Bash
+    - name: DevOps
+      level: Intermediate
+      keywords:
+        - Jenkins
+        - GitLab CI
+        - Docker
+        - Kubernetes
+        - Azure DevOps
+  awards:
+    - title: QA Innovatie Award
+      date: Nov 2023
+      awarder: ING
+      summary: |
+        Uitgereikt voor het ontwikkelen van een innovatief testautomatiseringsframework dat de release-snelheid en kwaliteit van de mobiele bankieren-app aanzienlijk verbeterde.
+  certificates:
+    - name: ISTQB Certified Tester Advanced Level
+      issuer: ISTQB
+      date: Mar 2021
+      url: https://www.istqb.org
+    - name: Certified ScrumMaster
+      issuer: Scrum Alliance
+      date: Sep 2020
+      url: https://www.scrumalliance.org
+  publications:
+    - name: "Testautomatisering in Agile teams: van strategie naar uitvoering"
+      publisher: ING Tech Blog
+      releaseDate: Jan 2023
+      url: https://www.ing.com/techblog/testautomatisering
+      summary: |
+        - Beschrijft een praktische aanpak voor het opzetten van testautomatisering binnen Agile teams
+        - Deelt lessen uit de praktijk over tooling, samenwerking en continue verbetering
+        - Geeft concrete handvatten voor het integreren van tests in CI/CD-pipelines
+  projects:
+    - name: Testautomatiseringsframework voor ING Bankieren
+      startDate: Jan 2022
+      endDate: Dec 2022
+      description: Een schaalbaar testautomatiseringsframework voor de mobiele
+        bankieren-app.
+      summary: |
+        - Ontworpen van een modulair framework met Cypress en TypeScript voor end-to-end tests
+        - Geïntegreerd van tests in de CI/CD-pipeline met automatische rapportage
+        - Gerealiseerd van een onderhoudbare testsuite die de regressietijd met 50% verkortte
+      keywords:
+        - Cypress
+        - TypeScript
+        - CI/CD
+        - Appium
+        - API-testen
+      url: https://github.com/ing/test-framework
+    - name: Performance teststraat voor Adyen Checkout
+      startDate: Mar 2020
+      endDate: Nov 2021
+      description: Een geautomatiseerde performance teststraat voor de checkout-omgeving.
+      summary: |
+        - Opgezet van gedistribueerde load tests met JMeter en Gatling
+        - Geautomatiseerd van testuitvoering en rapportage in Kubernetes
+        - Gevisualiseerd van resultaten in Grafana voor snelle analyse en bijsturing
+      keywords:
+        - JMeter
+        - Gatling
+        - Kubernetes
+        - Grafana
+      url: https://github.com/adyen/performance-suite
+  interests:
+    - name: Hardlopen
+      keywords:
+        - Marathon
+        - Trailrunning
+        - Intervaltraining
+    - name: Fotografie
+      keywords:
+        - Portretfotografie
+        - Landschapsfotografie
+        - Lightroom
+    - name: Reizen
+      keywords:
+        - Azië
+        - Europa
+        - Wandelen
+  volunteer:
+    - organization: CodeUur
+      url: https://www.codeuur.nl
+      position: Vrijwilliger Programmeerles
+      startDate: Sep 2019
+      endDate: Jun 2023
+      summary: |
+        - Verzorgd van programmeerlessen aan basisschoolkinderen om hen kennis te laten maken met technologie
+        - Begeleid van leerlingen bij het bouwen van eenvoudige games en websites
+        - Bijgedragen aan het enthousiasmeren van kinderen voor STEM-onderwijs
+
+locale:
+  language: nl

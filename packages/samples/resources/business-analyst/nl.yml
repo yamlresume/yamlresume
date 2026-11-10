@@ -1,0 +1,265 @@
+content:
+  basics:
+    name: Jeroen van Leeuwen
+    headline: Business Analist met focus op datagedreven procesverbetering
+    phone: +31 6 12345678
+    email: jeroen.vanleeuwen@analytiq.nl
+    url: https://jeroenvanleeuwen.nl
+    summary: |
+      - Business analist met 7+ jaar ervaring in de financiële dienstverlening, retail en publieke sector
+      - Sterk in het vertalen van bedrijfsdoelen naar heldere requirements, procesmodellen en data-oplossingen
+      - Ervaren in agile teams, stakeholder management en het begeleiden van multidisciplinaire workshops
+      - Combineert analytisch vermogen met communicatieve vaardigheden om draagvlak te creëren voor verandering
+  location:
+    address: Keizersgracht 123
+    city: Amsterdam
+    region: Noord-Holland
+    country: Netherlands
+    postalCode: "1015 CJ"
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/jeroenvanleeuwen
+      username: jeroenvanleeuwen
+    - network: Medium
+      url: https://medium.com/@jeroenvanleeuwen
+      username: jeroenvanleeuwen
+  education:
+    - institution: Universiteit van Amsterdam
+      url: https://www.uva.nl
+      degree: Master
+      area: Bedrijfskunde
+      score: "8.2"
+      startDate: Sep 1, 2014
+      endDate: Aug 31, 2016
+      courses:
+        - Strategisch Management
+        - Business Process Management
+        - Data-analyse voor Bedrijfskunde
+        - Informatiesystemen
+        - Financieel Management
+        - Operationeel Onderzoek
+      summary: |
+        - Afgestudeerd met specialisatie in digitaal transformatiemanagement
+        - Scriptie over datagedreven procesverbetering in de financiële sector
+        - Actief lid van de studievereniging en organisator van carrière-evenementen
+    - institution: Universiteit Utrecht
+      url: https://www.uu.nl
+      degree: Bachelor
+      area: Informatiekunde
+      score: "7.8"
+      startDate: Sep 1, 2011
+      endDate: Jun 30, 2014
+      courses:
+        - Informatiesystemen
+        - Databases
+        - Systeemontwikkeling
+        - Organisatiekunde
+        - Statistiek
+        - Projectmanagement
+      summary: |
+        - Basis gelegd in informatiesystemen, data modellering en organisatieprocessen
+        - Minor gevolgd in Bedrijfseconomie aan de Universiteit van Amsterdam
+        - Stage gelopen bij een gemeentelijke afdeling voor digitale dienstverlening
+  work:
+    - name: NN Group
+      url: https://www.nn-group.com
+      position: Senior Business Analist
+      startDate: Jan 1, 2022
+      summary: |
+        - Verantwoordelijk voor requirements engineering en impactanalyse voor digitale claimprocessen
+        - Samenwerken met product owners, architecten en compliance om wet- en regelgeving te vertalen naar oplossingen
+        - Opstellen van user stories, acceptatiecriteria en procesmodellen (BPMN) voor agile teams
+        - Sturen op datakwaliteit en het definiëren van KPI's voor continue procesverbetering
+        - Begeleiden van twee junior business analisten en verzorgen van interne trainingen
+      keywords:
+        - Requirements Engineering
+        - Procesoptimalisatie
+        - Data-analyse
+        - Agile
+        - Verzekeringen
+    - name: Coolblue
+      url: https://www.coolblue.nl
+      position: Business Analist
+      startDate: Mar 1, 2018
+      endDate: Dec 31, 2021
+      summary: |
+        - Analyseerde klant- en orderprocessen en vertaalde knelpunten naar concrete verbetervoorstellen
+        - Werkte nauw samen met e-commerce, logistiek en klantenservice om end-to-end processen te optimaliseren
+        - Stelde dashboards op in Power BI voor het monitoren van operationele prestaties
+        - Faciliteerde workshops met stakeholders om requirements en prioriteiten te bepalen
+        - Droeg bij aan de invoering van een nieuwe order management systeem
+      keywords:
+        - eCommerce
+        - Procesanalyse
+        - Power BI
+        - Stakeholdermanagement
+        - Scrum
+    - name: Capgemini
+      url: https://www.capgemini.com
+      position: Junior Business Analist
+      startDate: Sep 1, 2016
+      endDate: Feb 28, 2018
+      summary: |
+        - Ondersteunde senior analisten bij het in kaart brengen van bedrijfsprocessen en informatiesystemen
+        - Maakte procesbeschrijvingen, datastroomdiagrammen en testscenario's
+        - Participeerde in klantworkshops en vertaalde bevindingen naar heldere rapportages
+        - Leerde werken volgens de Waterval- en Agile-methodiek binnen overheidsprojecten
+      keywords:
+        - Business Analyse
+        - Procesmodellering
+        - Testscenario's
+        - Overheid
+        - Agile
+  languages:
+    - language: Dutch
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - Moedertaal
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - TOEFL iBT 108
+        - Zakelijk Engels
+    - language: German
+      fluency: Limited Working Proficiency
+      keywords:
+        - Goethe B1
+  skills:
+    - name: Business Analyse
+      level: Expert
+      keywords:
+        - Requirements Engineering
+        - Procesmodellering
+        - Stakeholdermanagement
+        - User Stories
+        - BPMN
+    - name: Data & Analytics
+      level: Advanced
+      keywords:
+        - SQL
+        - Power BI
+        - Tableau
+        - Excel
+        - Python
+    - name: Agile & Scrum
+      level: Advanced
+      keywords:
+        - Scrum
+        - Kanban
+        - SAFe
+        - Jira
+        - Confluence
+    - name: Domeinkennis
+      level: Advanced
+      keywords:
+        - Verzekeringen
+        - Retail
+        - Financiële dienstverlening
+        - eCommerce
+    - name: Tools
+      level: Intermediate
+      keywords:
+        - Visio
+        - Azure DevOps
+        - Miro
+        - Figma
+        - SAP
+  awards:
+    - title: Beste Afstudeerscriptie Bedrijfskunde
+      date: Jun 2016
+      awarder: Universiteit van Amsterdam
+      summary: |
+        Toegekend voor een scriptie over datagedreven procesverbetering in de financiële sector, met een beoordeling van 9,0.
+    - title: Coolblue Innovation Award
+      date: Nov 2020
+      awarder: Coolblue
+      summary: |
+        Erkend voor het ontwikkelen van een nieuw KPI-dashboard dat de orderdoorlooptijd met 15% verkortte.
+  certificates:
+    - name: Professional Scrum Master I
+      issuer: Scrum.org
+      date: Mar 2021
+      url: https://www.scrum.org/professional-scrum-certifications/professional-scrum-master-i-assessment
+    - name: CBAP
+      issuer: IIBA
+      date: Sep 2022
+      url: https://www.iiba.org/certifications/certified-business-analysis-professional/
+    - name: PRINCE2 Foundation
+      issuer: PeopleCert
+      date: Feb 2019
+      url: https://www.peoplecert.org
+  publications:
+    - name: Datagedreven procesverbetering in de verzekeringssector
+      publisher: Tijdschrift voor Business Analyse
+      releaseDate: Nov 2021
+      url: https://www.tijdschriftbusinessanalyse.nl/artikel/datagedreven-procesverbetering
+      summary: |
+        - Beschrijft een praktijkgerichte aanpak voor het combineren van procesanalyse en data-analyse
+        - Gaat in op KPI-gedreven sturing en stakeholdermanagement in verzekeringsprocessen
+        - Inclusief checklist voor business analisten die datagedreven verbeteringen willen doorvoeren
+  projects:
+    - name: Klantreisoptimalisatie NN Group
+      startDate: Jan 2023
+      endDate: Oct 2023
+      description: Herontwerp van de klantreis voor schadeclaims van eerste melding
+        tot uitbetaling.
+      summary: |
+        - Voerde klantinterviews en journey mapping-workshops uit met vertegenwoordigers van klantenservice, schade en IT
+        - Identificeerde vijf kritieke knelpunten en vertaalde deze naar een prioriteitenlijst met quick wins
+        - Realiseerde een verkorting van de gemiddelde doorlooptijd met 20% door processtappen te elimineren
+      keywords:
+        - Klantreis
+        - Procesoptimalisatie
+        - Design Thinking
+        - Data-analyse
+      url: https://www.nn-group.com/innovatie/klantreis
+    - name: Datawarehouse migratie Coolblue
+      startDate: Feb 2020
+      endDate: Nov 2021
+      description: Migratie van een verouderd datawarehouse naar een cloudgebaseerde
+        analytics-omgeving.
+      summary: |
+        - Vertaalde rapportagebehoeften van finance, logistiek en marketing naar datamodellen
+        - Schreef functionele specificaties en testcases voor ETL-processen
+        - Begeleidde gebruikers bij de acceptatie en adoptie van nieuwe Power BI-rapporten
+      keywords:
+        - Datawarehouse
+        - ETL
+        - Power BI
+        - Requirements
+      url: https://www.coolblue.nl/tech/datawarehouse
+  interests:
+    - name: Hardlopen
+      keywords:
+        - Halve marathon
+        - Trailrunning
+    - name: Culinair
+      keywords:
+        - Koken
+        - Wijnproeven
+    - name: Technologie
+      keywords:
+        - AI
+        - Python
+        - Open data
+  volunteer:
+    - organization: Stichting Business Analyse Nederland
+      url: https://www.businessanalyse.nl
+      position: Mentor
+      startDate: Sep 1, 2020
+      summary: |
+        - Begeleidt startende business analisten bij hun professionele ontwikkeling
+        - Geeft workshops over requirements engineering en stakeholdercommunicatie
+        - Draagt bij aan de jaarlijkse kennisdag voor de beroepsvereniging
+    - organization: Amsterdam Data Collective
+      url: https://www.amsterdamdatacollective.nl
+      position: Vrijwilliger Data Coach
+      startDate: Jan 1, 2019
+      endDate: Dec 31, 2021
+      summary: |
+        - Ondersteunde non-profitorganisaties bij het opzetten van eenvoudige data-analyses
+        - Hielp bij het vertalen van maatschappelijke vraagstukken naar meetbare indicatoren
+        - Verzorgde trainingen in Excel en Power BI voor vrijwilligers
+
+locale:
+  language: nl

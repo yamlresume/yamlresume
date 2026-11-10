@@ -1,0 +1,203 @@
+content:
+  basics:
+    name: 佐藤 健太
+    headline: QAエンジニア / テスト自動化スペシャリスト
+    phone: +81 90-1234-5678
+    email: kenta.sato@example.com
+    url: https://kenta-sato.dev
+    summary: |
+      - 5年以上のWebアプリケーションおよびモバイルアプリの品質保証経験を持つQAエンジニア
+      - テスト自動化フレームワークの設計・構築・運用に精通し、テスト実行時間を50%削減
+      - テスト計画、テスト設計、テスト実行、不具合管理まで一連のテストプロセスをリード
+      - アジャイル開発環境でのテスト戦略立案と品質指標の可視化を推進
+      - チームメンバーの育成とテスト文化の醸成に貢献
+
+  location:
+    address: 東京都渋谷区神宮前1-2-3
+    city: 渋谷区
+    region: 東京都
+    country: Japan
+    postalCode: 150-0001
+
+  profiles:
+    - network: GitHub
+      url: https://github.com/kenta-sato
+      username: kenta-sato
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/kenta-sato
+      username: kenta-sato
+    - network: Twitter
+      url: https://twitter.com/kenta_sato_qa
+      username: kenta_sato_qa
+
+  education:
+    - institution: 東京工業大学
+      url: https://www.titech.ac.jp/
+      degree: Bachelor
+      area: 情報工学
+      score: 3.7/4.0
+      startDate: Apr 1, 2014
+      endDate: Mar 31, 2018
+      courses:
+        - ソフトウェア工学
+        - データ構造とアルゴリズム
+        - データベースシステム
+        - コンピュータネットワーク
+        - オペレーティングシステム
+        - ソフトウェアテスト論
+      summary: |
+        - ソフトウェア開発の基礎からテスト手法まで幅広く学習
+        - 卒業研究ではWebアプリケーションの自動テストに関する研究に従事
+        - グループワークを通じてチーム開発とコミュニケーション能力を向上
+
+  work:
+    - name: 株式会社サンプルテック
+      url: https://www.sampletech.co.jp
+      position: シニアQAエンジニア
+      startDate: Apr 1, 2021
+      summary: |
+        - 大規模ECサイトの品質保証をリードし、テスト自動化率を80%まで向上
+        - SeleniumとCypressを用いたE2Eテストフレームワークを設計・構築
+        - CI/CDパイプラインに自動テストを組み込み、リグレッション時間を60%短縮
+        - テスト計画の策定からリリース判定まで品質管理プロセスを統括
+        - ジュニアQAエンジニア3名のメンタリングと育成を担当
+      keywords:
+        - テスト自動化
+        - Selenium
+        - Cypress
+        - CI/CD
+        - 品質管理
+    - name: 株式会社テストシステム
+      url: https://www.test-system.co.jp
+      position: QAエンジニア
+      startDate: Apr 1, 2018
+      endDate: Mar 31, 2021
+      summary: |
+        - 受託開発プロジェクトにてWebアプリケーションのテスト設計・実行を担当
+        - テストケース作成と不具合管理をJIRA/TestRailを用いて効率化
+        - APIテスト自動化をPostmanとRestAssuredで実装
+        - テスト観点の整理とレビューを通じてテスト品質を向上
+        - 顧客向けの品質レポート作成と品質説明を実施
+      keywords:
+        - テスト設計
+        - JIRA
+        - TestRail
+        - APIテスト
+        - Postman
+
+  skills:
+    - name: テスト自動化
+      level: Expert
+      keywords:
+        - Selenium
+        - Cypress
+        - Playwright
+        - Appium
+        - Jest
+    - name: プログラミング
+      level: Advanced
+      keywords:
+        - Python
+        - Java
+        - JavaScript
+        - TypeScript
+        - SQL
+    - name: テスト管理
+      level: Advanced
+      keywords:
+        - JIRA
+        - TestRail
+        - Zephyr
+        - qTest
+    - name: パフォーマンステスト
+      level: Intermediate
+      keywords:
+        - JMeter
+        - Gatling
+        - Locust
+    - name: クラウド・DevOps
+      level: Intermediate
+      keywords:
+        - AWS
+        - Azure
+        - Docker
+        - Kubernetes
+        - GitHub Actions
+
+  languages:
+    - language: Japanese
+      fluency: Native or Bilingual Proficiency
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - TOEIC 900
+        - 技術文書読解
+
+  awards:
+    - title: 品質改善賞
+      date: Dec 2022
+      awarder: 株式会社サンプルテック
+      summary: |
+        テスト自動化の推進とリグレッション時間の大幅削減により、開発生産性の向上に貢献したとして表彰。
+
+  certificates:
+    - name: ISTQB Certified Tester Advanced Level
+      issuer: ISTQB
+      date: Jun 2021
+      url: https://www.istqb.org/certifications/advanced-level-test-automation-engineering
+    - name: AWS Certified Developer - Associate
+      issuer: AWS
+      date: Mar 2022
+      url: https://aws.amazon.com/certification/certified-developer-associate/
+
+  publications:
+    - name: テスト自動化における保守性向上の取り組み
+      publisher: テスト自動化研究会 技術ブログ
+      releaseDate: Sep 2023
+      url: https://example.com/blog/test-automation-maintainability
+      summary: |
+        - テストコードの保守性を高めるための設計原則と実践手法を解説
+        - Page Object Modelの活用とテストデータ管理のベストプラクティスを紹介
+        - 自動テストの持続的な運用に向けたチーム体制の重要性を論じる
+
+  projects:
+    - name: E2Eテスト自動化フレームワーク構築
+      url: https://github.com/kenta-sato/e2e-framework
+      description: Playwrightを用いたE2Eテスト自動化フレームワーク
+      startDate: Jan 2022
+      endDate: Aug 2022
+      summary: |
+        - 複数ブラウザ対応のE2Eテストフレームワークを設計・実装
+        - テスト実行の並列化とレポート自動生成を実現
+        - CI/CDとの連携によりリグレッション時間を60%削減
+      keywords:
+        - Playwright
+        - TypeScript
+        - CI/CD
+        - 自動テスト
+
+  interests:
+    - name: 技術コミュニティ
+      keywords:
+        - テスト自動化研究会
+        - 勉強会登壇
+        - OSS貢献
+    - name: 趣味
+      keywords:
+        - 旅行
+        - 読書
+        - 写真撮影
+
+  volunteer:
+    - organization: テスト自動化研究会
+      url: https://example.com/test-automation-community
+      position: メンター
+      startDate: Apr 2020
+      endDate: Mar 2023
+      summary: |
+        - テスト自動化に興味を持つエンジニア向けの勉強会を企画・運営
+        - メンタリングを通じて実践的なテスト自動化スキルの向上を支援
+        - コミュニティ全体のテスト技術向上に貢献
+
+locale:
+  language: ja

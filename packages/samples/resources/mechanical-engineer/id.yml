@@ -1,0 +1,224 @@
+content:
+  basics:
+    name: Arif Prasetyo
+    headline: Insinyur Mesin Senior | Spesialis Manufaktur & Otomasi
+    phone: "+62 812-3456-7890"
+    email: arif.prasetyo.engineer@gmail.com
+    url: https://www.arifprasetyo.id
+    summary: |
+      Insinyur mesin dengan pengalaman lebih dari 8 tahun di industri manufaktur otomotif dan kedirgantaraan, berfokus pada perancangan mesin, optimasi proses produksi, dan implementasi otomasi.
+
+      - Menguasai CAD/CAE, analisis struktural, dan metodologi Lean Six Sigma untuk meningkatkan efisiensi lini produksi.
+      - Berpengalaman memimpin proyek perbaikan proses lintas fungsi dengan penghematan biaya terukur dan peningkatan kualitas produk.
+      - Terbiasa bekerja dengan standar ISO 9001, APQP, PPAP, serta keselamatan kerja K3 di lingkungan manufaktur.
+  location:
+    address: Jl. Cikini Raya No. 42, Menteng
+    city: Jakarta Pusat
+    region: DKI Jakarta
+    country: Indonesia
+    postalCode: "10330"
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/arif-prasetyo-me
+      username: arif-prasetyo-me
+    - network: GitHub
+      url: https://github.com/arifprasetyo-me
+      username: arifprasetyo-me
+  education:
+    - institution: Institut Teknologi Bandung
+      url: https://www.itb.ac.id
+      degree: Bachelor
+      area: Teknik Mesin
+      score: "3.72"
+      startDate: '2013-08-01'
+      endDate: '2017-08-31'
+      courses:
+        - Mekanika Fluida
+        - Termodinamika
+        - Perpindahan Panas
+        - Kinematika dan Dinamika
+        - Perancangan Mesin
+        - Proses Manufaktur
+        - Material Teknik
+        - Getaran Mekanis
+      summary: |
+        - Menyelesaikan tugas akhir tentang optimasi desain rangka mesin press menggunakan analisis elemen hingga.
+        - Aktif dalam tim robotika kampus dan kompetisi perancangan mesin tingkat nasional.
+        - Memperoleh pemahaman kuat dalam perancangan komponen, pemilihan material, dan proses produksi.
+  work:
+    - name: PT Astra Otoparts Tbk
+      url: https://www.astra-otoparts.com
+      position: Insinyur Mesin Senior
+      startDate: '2021-03-01'
+      summary: |
+        - Memimpin perancangan dan perbaikan fixture serta tooling untuk lini produksi komponen rem dengan target efisiensi 12%.
+        - Mengimplementasikan proyek otomasi berbasis PLC dan robotik untuk mengurangi waktu siklus dan kesalahan operator.
+        - Melakukan analisis kegagalan komponen menggunakan metode root cause analysis dan finite element analysis.
+        - Mengoordinasikan tim lintas fungsi dalam validasi proses, APQP, PPAP, dan audit standar ISO 9001.
+        - Membimbing tiga insinyur junior dalam praktik desain untuk manufaktur dan keselamatan kerja.
+      keywords:
+        - Desain Manufaktur
+        - Otomasi Produksi
+        - Lean Manufacturing
+        - CAD/CAE
+        - ISO 9001
+    - name: PT Komatsu Indonesia
+      url: https://www.komatsu.com
+      position: Insinyur Proses Produksi
+      startDate: '2018-06-01'
+      endDate: '2021-02-28'
+      summary: |
+        - Menganalisis dan mengoptimalkan proses permesinan komponen alat berat untuk meningkatkan throughput sebesar 15%.
+        - Mengembangkan program CNC dan standar operasional untuk mengurangi scrap rate pada komponen kritis.
+        - Memimpin kaizen mingguan bersama tim produksi dan maintenance untuk mengurangi downtime mesin.
+        - Menyusun laporan analisis kapasitas, time study, dan rekomendasi investasi peralatan produksi.
+      keywords:
+        - CNC Programming
+        - Lean Manufacturing
+        - Six Sigma
+        - Time Study
+        - Perbaikan Berkelanjutan
+    - name: PT Dirgantara Indonesia
+      url: https://www.indonesian-aerospace.com
+      position: Insinyur Muda Perawatan
+      startDate: '2017-09-01'
+      endDate: '2018-05-31'
+      summary: |
+        - Mendukung perawatan preventif dan korektif komponen struktur pesawat sesuai manual dan standar keselamatan.
+        - Melakukan inspeksi dimensional dan dokumentasi hasil perawatan untuk audit kualitas internal.
+        - Berkolaborasi dengan teknisi senior dalam analisis kerusakan dan penyusunan prosedur perbaikan.
+      keywords:
+        - Maintenance
+        - Inspeksi Kualitas
+        - Struktur Pesawat
+        - K3
+  skills:
+    - name: Desain Mekanik
+      level: Expert
+      keywords:
+        - SolidWorks
+        - CATIA
+        - AutoCAD
+        - GD&T
+        - Finite Element Analysis
+    - name: Manufaktur & Produksi
+      level: Advanced
+      keywords:
+        - Lean Manufacturing
+        - Six Sigma
+        - CNC Programming
+        - APQP
+        - PPAP
+    - name: Analisis Teknik
+      level: Advanced
+      keywords:
+        - ANSYS
+        - MATLAB
+        - Thermofluids
+        - Root Cause Analysis
+        - DOE
+    - name: Manajemen Proyek
+      level: Intermediate
+      keywords:
+        - MS Project
+        - Scrum
+        - Budgeting
+        - Vendor Management
+  languages:
+    - language: Indonesian
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - Bahasa ibu
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - TOEFL iBT 105
+        - IELTS 7.0
+  awards:
+    - title: Penghargaan Inovasi Manufaktur Terbaik
+      date: '2023-11-01'
+      awarder: PT Astra Otoparts Tbk
+      summary: |
+        Diberikan atas keberhasilan memimpin proyek otomasi lini perakitan komponen rem yang meningkatkan produktivitas dan menurunkan biaya operasional.
+    - title: Karyawan Terbaik Tahun 2020
+      date: '2020-12-01'
+      awarder: PT Komatsu Indonesia
+      summary: |
+        Diakui karena kontribusi dalam optimasi proses permesinan dan penurunan scrap rate pada komponen kritis.
+  certificates:
+    - name: Certified SolidWorks Professional
+      issuer: Dassault Systèmes
+      date: '2019-05-01'
+      url: https://www.solidworks.com/certification
+    - name: Six Sigma Green Belt
+      issuer: ASQ
+      date: '2020-10-01'
+      url: https://asq.org/cert/six-sigma-green-belt
+    - name: Ahli K3 Umum
+      issuer: Kementerian Ketenagakerjaan Republik Indonesia
+      date: '2018-02-01'
+      url: https://kemnaker.go.id
+  publications:
+    - name: Analisis Pengurangan Waktu Setup Mesin CNC pada Produksi Komponen Otomotif
+      publisher: Jurnal Teknik Mesin Indonesia
+      releaseDate: '2022-04-01'
+      url: https://doi.org/10.1234/jtmi.2022.012
+      summary: |
+        - Membahas pendekatan lean manufacturing dan standardisasi tooling untuk mengurangi waktu setup mesin CNC.
+        - Menyajikan data time study dan dampak pengurangan waktu setup terhadap kapasitas produksi.
+        - Merekomendasikan praktik terbaik untuk implementasi perbaikan berkelanjutan di lantai produksi.
+  projects:
+    - name: Sistem Otomasi Lini Perakitan Komponen Rem
+      startDate: '2022-01-01'
+      endDate: '2023-06-30'
+      description: |
+        Proyek otomasi lini perakitan komponen rem yang mencakup desain fixture, integrasi PLC, dan validasi proses produksi.
+      summary: |
+        - Merancang fixture dan mekanisme feeding untuk mengurangi waktu siklus perakitan.
+        - Mengintegrasikan sistem PLC dan sensor untuk meningkatkan konsistensi kualitas produk.
+        - Menghasilkan penghematan biaya tahunan dan penurunan cacat produk.
+      keywords:
+        - Otomasi Lini Produksi
+        - PLC
+        - Fixture Design
+        - Validasi Proses
+    - name: Optimasi Desain Rangka Mesin Press 120 Ton
+      startDate: '2020-02-01'
+      endDate: '2020-12-31'
+      description: |
+        Proyek rekayasa ulang rangka mesin press untuk meningkatkan kekakuan struktur dan mengurangi berat material.
+      summary: |
+        - Melakukan analisis elemen hingga untuk mengevaluasi tegangan dan deformasi rangka.
+        - Mengusulkan perubahan geometri dan material yang menurunkan berat tanpa mengorbankan kekuatan.
+        - Memvalidasi desain melalui pengujian prototipe dan simulasi beban kerja.
+      keywords:
+        - Desain Rangka
+        - Optimasi Struktur
+        - Finite Element Analysis
+        - Pengurangan Biaya
+  interests:
+    - name: Olahraga
+      keywords:
+        - Futsal
+        - Bersepeda
+        - Panjat Tebing
+    - name: Musik
+      keywords:
+        - Gitar
+        - Keyboard
+    - name: Otomotif
+      keywords:
+        - Restorasi Motor Klasik
+        - Touring
+  volunteer:
+    - organization: Persatuan Insinyur Indonesia Komisariat Jakarta
+      url: https://pii.or.id
+      position: Mentor Teknis
+      startDate: '2021-01-01'
+      summary: |
+        - Membimbing mahasiswa teknik mesin dalam perancangan proyek akhir dan persiapan karier industri.
+        - Menjadi narasumber lokakarya tentang CAD, manufaktur lean, dan keselamatan kerja.
+        - Mendukung kegiatan komunitas insinyur muda untuk meningkatkan kompetensi teknis dan profesionalisme.
+
+locale:
+  language: id

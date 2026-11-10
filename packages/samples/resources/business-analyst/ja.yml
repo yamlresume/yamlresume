@@ -1,0 +1,231 @@
+content:
+  basics:
+    name: 佐藤 健太
+    headline: シニアビジネスアナリスト
+    phone: '+81 90-1234-5678'
+    email: kenta.sato@example.jp
+    url: https://www.kenta-sato.jp
+    summary: |
+      6年以上の経験を持つビジネスアナリストとして、金融・製薬・小売業界の業務改革を支援。
+      業務要件定義、現行業務の可視化、課題分析、改善施策の立案から実行までを一貫して担当。
+      ステークホルダー間の合意形成を重視し、業務プロセス改善とシステム導入を橋渡しする。
+      - 要件定義・業務設計・データ分析・プロジェクト推進を横断的に経験
+      - エグゼクティブから現場担当者まで、多様な関係者との円滑なコミュニケーションを強みとする
+      - データドリブンな意思決定を支援し、業務効率化と売上貢献に寄与
+  location:
+    address: 東京都港区虎ノ門1-2-3
+    city: 港区
+    region: 東京都
+    country: Japan
+    postalCode: '105-0001'
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/kenta-sato-ba
+      username: kenta-sato-ba
+    - network: GitHub
+      url: https://github.com/kentasato-ba
+      username: kentasato-ba
+  education:
+    - institution: 早稲田大学
+      url: https://www.waseda.jp/
+      degree: Bachelor
+      area: 経済学
+      score: '3.7/4.0'
+      startDate: Apr 1, 2012
+      endDate: Mar 31, 2016
+      courses:
+        - ミクロ経済学
+        - マクロ経済学
+        - 計量経済学
+        - 統計学
+        - 経営情報システム
+        - 業務分析入門
+      summary: |
+        経済学と統計学を中心に、データに基づく意思決定と業務分析の基礎を習得。
+        ゼミでは地域経済のデータ分析プロジェクトに参加し、調査設計から発表までを担当。
+        学内外のプロジェクトで、関係者との調整や論点整理の実践経験を積む。
+  work:
+    - name: 株式会社ネクストソリューションズ
+      url: https://www.next-solutions.co.jp
+      position: シニアビジネスアナリスト
+      startDate: Apr 1, 2021
+      summary: |
+        - 金融機関向けの勘定系周辺システム刷新プロジェクトで、業務要件定義から受入テストまでをリード
+        - 現行業務フローの可視化と課題整理を行い、約30の改善施策を立案、うち20件を実現
+        - 業務部門・IT部門・外部ベンダー間の調整役として、要件の合意形成と変更管理を推進
+        - データ分析に基づくKPI設計を支援し、問い合わせ対応時間を前年比25%削減
+        - ジュニアメンバー2名の育成を担当し、要件定義書や業務マニュアルの品質標準化を推進
+      keywords:
+        - 要件定義
+        - 業務プロセス改善
+        - ステークホルダー調整
+        - 金融システム
+        - データ分析
+    - name: 株式会社デジタルブリッジ
+      url: https://www.digitalbridge.co.jp
+      position: ビジネスアナリスト
+      startDate: Apr 1, 2018
+      endDate: Mar 31, 2021
+      summary: |
+        - 製薬業界向けの販売管理システム導入で、業務ヒアリング、要件定義、テスト設計を担当
+        - 全社横断の業務プロセス標準化プロジェクトに参画し、部門間の業務ルール統一を支援
+        - 営業データを活用したダッシュボードを設計し、月次報告の作成工数を約40%削減
+        - 海外拠点との要件調整に参加し、英語での会議運営とドキュメント作成を担当
+      keywords:
+        - 販売管理
+        - 業務標準化
+        - ダッシュボード
+        - 海外拠点調整
+        - テスト設計
+    - name: グローバル製薬株式会社
+      url: https://www.global-pharma.co.jp
+      position: システム企画担当
+      startDate: Apr 1, 2016
+      endDate: Mar 31, 2018
+      summary: |
+        - 社内システムの企画・運用担当として、現場の課題ヒアリングと改善提案を実施
+        - 基幹システム更新プロジェクトで、業務要件の整理とベンダー選定資料の作成を支援
+        - 社内問い合わせ窓口の運営を通じ、業務マニュアルの整備と教育資料の作成を推進
+      keywords:
+        - システム企画
+        - 運用改善
+        - ベンダー管理
+        - 業務マニュアル
+  languages:
+    - language: Japanese
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - 日本語ネイティブ
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - TOEIC 910
+        - 海外拠点との会議運営
+  skills:
+    - name: ビジネス分析
+      level: Expert
+      keywords:
+        - 要件定義
+        - 業務プロセス改善
+        - 課題分析
+        - 合意形成
+        - 業務設計
+    - name: データ分析
+      level: Advanced
+      keywords:
+        - SQL
+        - Excel
+        - Tableau
+        - Python
+        - 統計分析
+    - name: プロジェクトマネジメント
+      level: Advanced
+      keywords:
+        - 進捗管理
+        - リスク管理
+        - ステークホルダー管理
+        - 変更管理
+    - name: ツール
+      level: Advanced
+      keywords:
+        - JIRA
+        - Confluence
+        - Visio
+        - Figma
+        - Power BI
+  awards:
+    - title: 社内優秀プロジェクト賞
+      date: Dec 2023
+      awarder: 株式会社ネクストソリューションズ
+      summary: |
+        金融機関向けシステム刷新プロジェクトにおいて、要件定義の品質と関係者調整の貢献が評価され受賞。
+    - title: 業務改善提案優秀賞
+      date: Mar 2020
+      awarder: 株式会社デジタルブリッジ
+      summary: |
+        営業報告業務の自動化提案が全社表彰され、部門横断の改善活動に発展。
+  certificates:
+    - name: ビジネス分析士（CBAP）
+      issuer: 国際ビジネス分析協会（IIBA）
+      date: Jun 2022
+      url: https://www.iiba.org/certification/cbap
+    - name: 基本情報技術者試験
+      issuer: 情報処理推進機構
+      date: Nov 2017
+      url: https://www.ipa.go.jp/shiken
+    - name: PMP（プロジェクトマネジメント・プロフェッショナル）
+      issuer: プロジェクトマネジメント協会（PMI）
+      date: Sep 2021
+      url: https://www.pmi.org/certifications/project-management-pmp
+  publications:
+    - name: 業務要件定義における合意形成の実践
+      publisher: 日本ビジネスアナリシス協会
+      releaseDate: Oct 2022
+      url: https://www.jbaa.or.jp/
+      summary: |
+        - 複数部門が関与するシステム刷新プロジェクトにおける合意形成プロセスを整理
+        - 要件の優先順位付けと意思決定の可視化手法を実践事例として紹介
+  projects:
+    - name: 顧客管理システム刷新プロジェクト
+      url: https://www.next-solutions.co.jp/projects/crm-renewal
+      startDate: May 2021
+      endDate: Oct 2023
+      description: 金融機関向け顧客管理システムの刷新プロジェクト
+      summary: |
+        - 現行業務の可視化、要件定義、テスト設計、受入テストを担当
+        - 業務部門とIT部門の合意形成を支援し、リリース後の問い合わせ対応時間を25%削減
+      keywords:
+        - 顧客管理
+        - 要件定義
+        - 業務改善
+    - name: 全社データ基盤構築プロジェクト
+      url: https://www.digitalbridge.co.jp/projects/data-platform
+      startDate: Jan 2020
+      endDate: Dec 2020
+      description: 製薬業界向けの全社データ基盤構築プロジェクト
+      summary: |
+        - データ活用要件の整理とKPI設計を支援
+        - 営業データの可視化により、月次報告の作成工数を40%削減
+      keywords:
+        - データ基盤
+        - KPI設計
+        - 可視化
+    - name: 営業プロセス改善プロジェクト
+      url: https://www.global-pharma.co.jp/projects/sales-process
+      startDate: Jun 2017
+      endDate: Feb 2018
+      description: 営業部門の業務プロセス改善プロジェクト
+      summary: |
+        - 営業担当者の業務ヒアリングと現場観察を通じ、非効率な作業を特定
+        - 業務マニュアルと教育資料を整備し、新入社員の立ち上がり期間を短縮
+      keywords:
+        - 営業プロセス
+        - 業務マニュアル
+        - 現場改善
+  interests:
+    - name: 読書
+      keywords:
+        - ビジネス書
+        - 経済小説
+        - データ分析
+    - name: スポーツ
+      keywords:
+        - ランニング
+        - フットサル
+        - 登山
+    - name: 旅行
+      keywords:
+        - 国内旅行
+        - 海外旅行
+        - 地域文化
+  volunteer:
+    - organization: 日本ビジネスアナリシス協会 学生支援委員会
+      url: https://www.jbaa.or.jp/
+      position: メンター
+      startDate: Apr 2022
+      summary: |
+        - ビジネスアナリストを目指す学生向けに、要件定義や業務分析の基礎を指導
+        - 勉強会やキャリア相談を企画・運営し、参加者の実践スキル向上を支援
+
+locale:
+  language: ja

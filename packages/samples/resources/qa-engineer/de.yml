@@ -1,0 +1,170 @@
+content:
+  basics:
+    name: Lena Müller
+    headline: QA Engineer
+    phone: "+49 30 12345678"
+    email: lena.mueller@posteo.de
+    url: https://www.lena-mueller-qa.de
+    summary: |
+      QA Engineer mit über 8 Jahren Erfahrung in der Qualitätssicherung von Web- und Cloud-Anwendungen. Spezialisiert auf Testautomatisierung, Testmanagement und agile Entwicklungsmethoden.
+
+      - Entwicklung und Umsetzung von Teststrategien für komplexe Systeme
+      - Automatisierung von Regressionstests mit Python, Selenium und Cypress
+      - Enge Zusammenarbeit mit Entwicklungsteams zur Sicherstellung hoher Softwarequalität
+      - Zertifiziert nach ISTQB Advanced Level und Certified Scrum Master
+  location:
+    address: Musterstraße 12
+    city: Berlin
+    region: Berlin
+    country: Germany
+    postalCode: "10115"
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/lena-mueller-qa
+      username: lena-mueller-qa
+    - network: GitHub
+      url: https://github.com/lena-mueller
+      username: lena-mueller
+  education:
+    - institution: Technische Universität Berlin
+      url: https://www.tu.berlin.de/
+      degree: Master
+      area: Informatik
+      score: "1.7"
+      startDate: Oct 1, 2014
+      endDate: Sep 30, 2016
+      courses:
+        - Softwarequalität
+        - Testmanagement
+        - Automatisiertes Testen
+        - Programmierparadigmen
+        - Datenbanksysteme
+      summary: |
+        - Schwerpunkt auf Softwaretechnik und Qualitätssicherung
+        - Masterarbeit über modellbasiertes Testen
+  work:
+    - name: SAP SE
+      url: https://www.sap.com/
+      position: Senior QA Engineer
+      startDate: Jan 1, 2020
+      summary: |
+        - Leitung des QA-Teams für die SAP S/4HANA Cloud
+        - Entwicklung und Implementierung von Teststrategien für komplexe Microservices
+        - Automatisierung von Regressionstests mit Python und Selenium
+        - Zusammenarbeit mit Entwicklern und Product Ownern in agilen Sprints
+      keywords:
+        - Testautomatisierung
+        - Selenium
+        - Python
+        - Agile
+        - Microservices
+    - name: Zalando SE
+      url: https://www.zalando.de/
+      position: QA Engineer
+      startDate: Jul 1, 2016
+      endDate: Dec 31, 2019
+      summary: |
+        - Manuelles und automatisiertes Testen von Webanwendungen und APIs
+        - Erstellung von Testplänen und Testfällen basierend auf Anforderungen
+        - Durchführung von Performance- und Lasttests mit JMeter
+        - Fehlerverfolgung und -management mit JIRA
+      keywords:
+        - Manuelles Testen
+        - API-Testing
+        - JMeter
+        - JIRA
+        - Agile
+  skills:
+    - name: Testautomatisierung
+      level: Expert
+      keywords:
+        - Selenium
+        - Cypress
+        - Playwright
+        - Robot Framework
+    - name: Programmiersprachen
+      level: Advanced
+      keywords:
+        - Python
+        - Java
+        - JavaScript
+        - SQL
+    - name: Testmanagement
+      level: Advanced
+      keywords:
+        - ISTQB
+        - Teststrategie
+        - Risikobasiertes Testen
+        - Testplanung
+    - name: Agile Methoden
+      level: Expert
+      keywords:
+        - Scrum
+        - Kanban
+        - SAFe
+        - Continuous Integration
+  languages:
+    - language: German
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - Muttersprache
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - C1
+        - Business Fluent
+  certificates:
+    - name: ISTQB Certified Tester Foundation Level
+      issuer: ISTQB
+      date: Mar 2017
+      url: https://www.istqb.org/certifications/certified-tester-foundation-level
+    - name: ISTQB Advanced Level Test Manager
+      issuer: ISTQB
+      date: Jun 2019
+      url: https://www.istqb.org/certifications/advanced-level-test-manager
+    - name: Certified Scrum Master
+      issuer: Scrum Alliance
+      date: Nov 2020
+      url: https://www.scrumalliance.org/certifications
+  awards:
+    - title: QA Team of the Year
+      awarder: SAP SE
+      date: Dec 2021
+      summary: |
+        Auszeichnung für herausragende Leistungen bei der Einführung einer automatisierten Testsuite, die die Testabdeckung um 40% erhöhte.
+  projects:
+    - name: Open-Source Testframework
+      url: https://github.com/lena-mueller/testframework
+      description: Ein leichtgewichtiges Python-Framework für API-Tests
+      startDate: Jan 2021
+      summary: |
+        - Entwicklung eines Open-Source-Tools zur Vereinfachung von API-Tests
+        - Integration mit pytest und Unterstützung von Datengetriebenen Tests
+        - Über 500 Sterne auf GitHub
+      keywords:
+        - Python
+        - API
+        - Testing
+  interests:
+    - name: Technologie
+      keywords:
+        - Open Source
+        - Künstliche Intelligenz
+        - Cloud Computing
+    - name: Sport
+      keywords:
+        - Laufen
+        - Yoga
+        - Wandern
+  volunteer:
+    - organization: Women in Tech Berlin
+      url: https://www.women-in-tech-berlin.de/
+      position: Mentorin für Softwaretesting
+      startDate: Mar 2018
+      summary: |
+        - Mentoring von Frauen, die in den Bereich Softwaretesting einsteigen möchten
+        - Organisation von Workshops zu Testautomatisierung und ISTQB-Zertifizierung
+        - Unterstützung bei der Karriereentwicklung
+
+locale:
+  language: de

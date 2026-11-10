@@ -1,0 +1,186 @@
+content:
+  basics:
+    name: Giulia Rossi
+    headline: Infermiera Professionale con 8 anni di esperienza
+    phone: "+39 333 123 4567"
+    email: giulia.rossi@email.it
+    url: https://www.linkedin.com/in/giuliarossi
+    summary: |
+      - Infermiera con solida esperienza in reparti di medicina interna e chirurgia, con particolare attenzione alla cura del paziente e alla sicurezza clinica.
+      - Competenze avanzate nella gestione del dolore, medicazioni complesse e supporto psicologico ai pazienti e alle famiglie.
+      - Esperta nella somministrazione di terapie endovenose, gestione di cateteri venosi centrali e periferici e monitoraggio dei parametri vitali.
+      - Forte capacità di lavorare in équipe multidisciplinari, con ottime doti comunicative e organizzative.
+      - Impegnata nella formazione continua e nell'aggiornamento delle pratiche cliniche basate su evidenze scientifiche.
+  location:
+    address: Via Roma 15
+    city: Milano
+    region: Lombardia
+    country: Italy
+    postalCode: "20121"
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/giuliarossi
+      username: giuliarossi
+    - network: Twitter
+      url: https://twitter.com/giuliarossi_inf
+      username: giuliarossi_inf
+  education:
+    - institution: Università degli Studi di Milano
+      url: https://www.unimi.it
+      degree: Bachelor
+      area: Infermieristica
+      score: "110/110 e lode"
+      startDate: Sep 1, 2010
+      endDate: Jul 1, 2013
+      courses:
+        - Anatomia Umana
+        - Fisiologia
+        - Patologia Generale
+        - Infermieristica Clinica
+        - Farmacologia
+        - Scienze Infermieristiche
+        - Medicina Interna
+        - Chirurgia Generale
+      summary: |
+        - Formazione teorica e pratica completa in ambito infermieristico
+        - Tirocinio clinico presso l'Ospedale Maggiore di Milano
+        - Approfondimento delle tecniche di comunicazione terapeutica
+        - Partecipazione a progetti di ricerca infermieristica
+  work:
+    - name: Ospedale Niguarda Ca' Granda
+      url: https://www.ospedaleniguarda.it
+      position: Infermiera Strumentista
+      startDate: Jan 1, 2018
+      summary: |
+        - Gestione del paziente in sala operatoria, assistenza al chirurgo e all'équipe anestesiologica
+        - Preparazione e sterilizzazione degli strumenti chirurgici
+        - Monitoraggio dei parametri vitali e assistenza post-operatoria
+        - Collaborazione nella gestione delle emergenze e delle complicanze intraoperatorie
+        - Formazione di nuovi infermieri e studenti
+      keywords:
+        - Sala operatoria
+        - Sterilizzazione
+        - Monitoraggio
+        - Assistenza chirurgica
+        - Formazione
+    - name: Ospedale San Raffaele
+      url: https://www.hsr.it
+      position: Infermiera di Reparto
+      startDate: Sep 1, 2013
+      endDate: Dec 31, 2017
+      summary: |
+        - Assistenza infermieristica a pazienti affetti da patologie croniche e acute in reparto di medicina interna
+        - Somministrazione di terapie farmacologiche e gestione di accessi venosi
+        - Educazione sanitaria ai pazienti e ai familiari
+        - Gestione della documentazione clinica e collaborazione con l'équipe multidisciplinare
+        - Partecipazione a progetti di miglioramento della qualità delle cure
+      keywords:
+        - Medicina interna
+        - Terapia farmacologica
+        - Educazione sanitaria
+        - Gestione documentale
+        - Qualità delle cure
+  languages:
+    - language: Italian
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - Madrelingua
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - IELTS 7.5
+        - Certificazione C1
+    - language: French
+      fluency: Limited Working Proficiency
+      keywords:
+        - DELF B1
+  skills:
+    - name: Assistenza Infermieristica
+      level: Expert
+      keywords:
+        - Gestione del paziente
+        - Medicazioni complesse
+        - Terapia endovenosa
+        - Monitoraggio parametri vitali
+        - Cateterismo vescicale
+    - name: Area Chirurgica
+      level: Advanced
+      keywords:
+        - Strumentazione chirurgica
+        - Sterilizzazione
+        - Assistenza intraoperatoria
+        - Gestione sala operatoria
+    - name: Competenze Trasversali
+      level: Advanced
+      keywords:
+        - Comunicazione terapeutica
+        - Lavoro di squadra
+        - Problem solving
+        - Gestione dello stress
+        - Formazione
+  certificates:
+    - name: Certificazione BLS-D
+      issuer: Italian Resuscitation Council
+      date: Mar 2021
+      url: https://www.ircouncil.it
+    - name: Corso di Specializzazione in Wound Care
+      issuer: Università di Milano
+      date: Jun 2019
+      url: https://www.unimi.it
+  awards:
+    - title: Infermiere dell'Anno
+      awarder: Ospedale Niguarda Ca' Granda
+      date: Dec 2020
+      summary: |
+        Riconoscimento per l'eccellenza nell'assistenza infermieristica e per l'impegno nella formazione del personale.
+  publications:
+    - name: 'La gestione del dolore post-operatorio: nuove frontiere'
+      publisher: Rivista Italiana di Infermieristica
+      releaseDate: Apr 2022
+      url: https://www.rii.it/articolo
+      summary: |
+        - Articolo di ricerca sulla gestione del dolore post-operatorio
+        - Analisi delle migliori pratiche basate su evidenze
+        - Proposta di un protocollo innovativo
+  projects:
+    - name: 'Progetto Patient Education'
+      url: https://www.hsr.it/progetti/patient-education
+      description: Programma di educazione sanitaria per pazienti con patologie croniche
+      startDate: Jan 2020
+      endDate: Dec 2021
+      summary: |
+        - Sviluppo di materiale informativo multilingue
+        - Organizzazione di incontri formativi per pazienti e familiari
+        - Valutazione dell'impatto del progetto sull'aderenza terapeutica
+      keywords:
+        - Educazione sanitaria
+        - Patologie croniche
+        - Multilingua
+        - Aderenza terapeutica
+  interests:
+    - name: Volontariato
+      keywords:
+        - Croce Rossa Italiana
+        - Assistenza anziani
+    - name: Sport
+      keywords:
+        - Nuoto
+        - Yoga
+        - Corsa
+    - name: Lettura
+      keywords:
+        - Narrativa
+        - Saggi scientifici
+  volunteer:
+    - organization: Croce Rossa Italiana
+      url: https://www.cri.it
+      position: Infermiera Volontaria
+      startDate: Jan 2015
+      summary: |
+        - Assistenza sanitaria durante eventi pubblici e manifestazioni
+        - Supporto nelle campagne di vaccinazione e screening
+        - Formazione della popolazione sulle manovre di primo soccorso
+        - Partecipazione a missioni di emergenza
+
+locale:
+  language: it

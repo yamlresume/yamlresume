@@ -1,0 +1,245 @@
+content:
+  basics:
+    name: Maximilian Brandt
+    headline: Senior Business Analyst mit Fokus auf Prozessoptimierung, Datenanalyse
+      und Anforderungsmanagement
+    phone: "+49 30 12345678"
+    email: maximilian.brandt@example.de
+    url: https://www.maximilian-brandt.de
+    summary: |
+      Senior Business Analyst mit über fünf Jahren Erfahrung in der Analyse, Gestaltung und Optimierung von Geschäftsprozessen. Schwerpunkt auf der Übersetzung fachlicher Anforderungen in umsetzbare IT-Lösungen sowie auf datengetriebener Entscheidungsunterstützung.
+
+      - Erhebung, Priorisierung und Dokumentation von Anforderungen mit Stakeholdern aus Fach- und IT-Bereichen
+      - Modellierung von Ist- und Soll-Prozessen mit BPMN und UML
+      - Entwicklung von Kennzahlensystemen und Dashboards mit SQL, Power BI und Tableau
+      - Moderation von Workshops, agilem Requirements Engineering und professioneller Stakeholder-Kommunikation
+  location:
+    address: Friedrichstraße 123
+    city: Berlin
+    region: Berlin
+    country: Germany
+    postalCode: '10115'
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/maximilian-brandt-ba
+      username: maximilian-brandt-ba
+    - network: GitHub
+      url: https://github.com/mbrandt-analytics
+      username: mbrandt-analytics
+  education:
+    - institution: Humboldt-Universität zu Berlin
+      url: https://www.hu-berlin.de
+      degree: Master
+      area: Wirtschaftsinformatik
+      score: '1,7'
+      startDate: '2018-10-01'
+      endDate: '2020-09-30'
+      courses:
+        - Geschäftsprozessmodellierung
+        - Datenbanken und Datenmanagement
+        - Business Intelligence
+        - Anforderungsmanagement
+        - Projektmanagement
+        - Wirtschaftsrecht
+      summary: |
+        - Fokus auf der Verbindung von betriebswirtschaftlichen Fragestellungen und IT-Lösungen
+        - Praxisprojekte zu Process Mining, Reporting und Anforderungsanalyse
+        - Masterarbeit zu datengetriebener Prozessoptimierung im Finanzdienstleistungssektor
+    - institution: Technische Universität München
+      url: https://www.tum.de
+      degree: Bachelor
+      area: Betriebswirtschaftslehre
+      score: '1,9'
+      startDate: '2014-10-01'
+      endDate: '2018-09-30'
+      courses:
+        - Statistik
+        - Finanzwirtschaft
+        - Marketing
+        - Operations Management
+        - Wirtschaftsinformatik
+        - Controlling
+      summary: |
+        - Grundlagen in Betriebswirtschaft, Statistik und quantitativer Analyse
+        - Erste Projekte zu Kennzahlenanalyse und Prozessdokumentation
+  work:
+    - name: Nordstern Consulting GmbH
+      url: https://www.nordstern-consulting.de
+      position: Senior Business Analyst
+      startDate: '2022-03-01'
+      summary: |
+        - Leitung der Anforderungsanalyse für digitale Transformationsprojekte in den Bereichen Finanzdienstleistungen und E-Commerce
+        - Übersetzung komplexer Fachanforderungen in User Stories, Prozessmodelle und Akzeptanzkriterien
+        - Moderation von Workshops mit Stakeholdern aus Fachbereichen, IT und Management
+        - Steuerung von Backlog-Priorisierung und fachlicher Qualitätssicherung in agilen Projektteams
+        - Mentoring von zwei Junior Business Analysts und Etablierung einheitlicher Dokumentationsstandards
+      keywords:
+        - Anforderungsmanagement
+        - Prozessoptimierung
+        - Stakeholder-Management
+        - Agile Methoden
+        - Datenanalyse
+    - name: FinTech Solutions AG
+      url: https://www.fintech-solutions.de
+      position: Business Analyst
+      startDate: '2020-07-01'
+      endDate: '2022-02-28'
+      summary: |
+        - Analyse und Dokumentation von Geschäftsprozessen im Online-Kreditgeschäft
+        - Erstellung von Lasten- und Pflichtenheften sowie Pflege von Anforderungsspezifikationen
+        - Entwicklung von SQL-Auswertungen und Power-BI-Reports für das Produktmanagement
+        - Unterstützung bei Testfällen, Abnahmetests und der Einführung neuer Softwarefunktionen
+        - Zusammenarbeit mit Compliance und Revision zur Sicherstellung regulatorischer Anforderungen
+      keywords:
+        - Anforderungsanalyse
+        - SQL
+        - Power BI
+        - Testmanagement
+        - Scrum
+    - name: Handelshaus Weber GmbH
+      url: https://www.handelshaus-weber.de
+      position: Junior Business Analyst
+      startDate: '2018-10-01'
+      endDate: '2020-06-30'
+      summary: |
+        - Erstellung von Prozessdokumentationen und Auswertungen für Einkauf und Logistik
+        - Pflege von Excel-basierten Reports und Vorbereitung von Management-Präsentationen
+        - Unterstützung bei der Einführung eines neuen Warenwirtschaftssystems
+        - Aufnahme von Anwenderfeedback und Ableitung von Verbesserungsmaßnahmen
+      keywords:
+        - Excel
+        - BPMN
+        - Prozessdokumentation
+        - Reporting
+  languages:
+    - language: German
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - Muttersprache
+        - Verhandlungssicher
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - C1
+        - Business English
+    - language: French
+      fluency: Limited Working Proficiency
+      keywords:
+        - B1
+        - Grundkenntnisse
+  skills:
+    - name: Business Analyse
+      level: Expert
+      keywords:
+        - Anforderungsmanagement
+        - Prozessmodellierung
+        - BPMN
+        - UML
+        - User Stories
+    - name: 'Datenanalyse & Reporting'
+      level: Advanced
+      keywords:
+        - SQL
+        - Power BI
+        - Tableau
+        - Excel
+        - Python (Pandas)
+    - name: 'Projektmanagement & Agile'
+      level: Advanced
+      keywords:
+        - Scrum
+        - Kanban
+        - Jira
+        - Confluence
+        - Stakeholder-Kommunikation
+    - name: Domänenwissen
+      level: Advanced
+      keywords:
+        - Finanzdienstleistungen
+        - E-Commerce
+        - Regulatorik
+        - SAP ERP
+  awards:
+    - title: Preis für das beste Praxisprojekt
+      awarder: Humboldt-Universität zu Berlin
+      date: '2020-07-01'
+      summary: |
+        Ausgezeichnet für die Entwicklung eines datengetriebenen Dashboard-Konzepts zur Steuerung von Vertriebsprozessen im Rahmen des Masterstudiums.
+  certificates:
+    - name: Certified Business Analysis Professional (CBAP)
+      issuer: IIBA
+      date: '2023-02-01'
+      url: https://www.iiba.org/certification/cbap
+    - name: Professional Scrum Master I
+      issuer: Scrum.org
+      date: '2021-11-01'
+      url: https://www.scrum.org/professional-scrum-certifications/professional-scrum-master-i
+    - name: 'Microsoft Certified: Power BI Data Analyst Associate'
+      issuer: Microsoft
+      date: '2022-04-01'
+      url: https://learn.microsoft.com/en-us/certifications/power-bi-data-analyst-associate/
+  publications:
+    - name: Anforderungsmanagement in regulierten Märkten
+      publisher: Business Analysis Journal
+      releaseDate: '2023-03-01'
+      url: https://www.business-analysis-journal.de/anforderungsmanagement-regulierte-maerkte
+      summary: |
+        - Praxisorientierter Beitrag zu Methoden der Anforderungserhebung in regulierten Finanzmärkten
+        - Fokus auf Traceability, Stakeholder-Alignment und dokumentierte Entscheidungswege
+  projects:
+    - name: CRM-Prozessanalyse und Reporting
+      startDate: '2023-01-01'
+      endDate: '2023-08-31'
+      url: https://www.nordstern-consulting.de/projekte/crm-prozessanalyse
+      description: Analyse und Neugestaltung eines CRM-Prozesses für einen
+        Finanzdienstleister
+      summary: |
+        - Aufnahme und Priorisierung von Anforderungen mit Fach- und IT-Abteilungen
+        - Modellierung des Soll-Prozesses in BPMN und Ableitung von User Stories
+        - Entwicklung eines Power-BI-Dashboards zur Steuerung von Leads und Abschlüssen
+      keywords:
+        - CRM
+        - BPMN
+        - Power BI
+        - Anforderungsmanagement
+    - name: Datengetriebene Vertriebssteuerung
+      startDate: '2022-03-01'
+      endDate: '2022-12-31'
+      url: https://www.nordstern-consulting.de/projekte/vertriebssteuerung
+      description: Konzeption eines Kennzahlensystems für Vertrieb und Kundenservice
+      summary: |
+        - Definition von KPIs und Datenanforderungen gemeinsam mit dem Controlling
+        - Erstellung von Auswertungen und Self-Service-Reports in Tableau
+        - Schulung von Fachanwendern im Umgang mit den neuen Reporting-Standards
+      keywords:
+        - KPI
+        - Tableau
+        - Datenmodellierung
+        - Reporting
+  interests:
+    - name: Datenvisualisierung
+      keywords:
+        - Tableau
+        - Power BI
+        - Infografiken
+    - name: Sport
+      keywords:
+        - Laufen
+        - Radsport
+        - Wandern
+    - name: Musik
+      keywords:
+        - Klavier
+        - Jazz
+  volunteer:
+    - organization: Business Analysts Berlin e.V.
+      url: https://www.ba-berlin.de
+      position: Mentor für Nachwuchs-Business-Analysten
+      startDate: '2022-01-01'
+      summary: |
+        - Begleitung von Berufseinsteigern bei der Entwicklung praktischer Analysefähigkeiten
+        - Organisation von Workshops zu Anforderungsmanagement und Stakeholder-Kommunikation
+        - Mitwirkung an Netzwerkveranstaltungen für die Berliner Business-Analyse-Community
+
+locale:
+  language: de

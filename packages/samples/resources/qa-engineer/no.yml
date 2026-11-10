@@ -1,0 +1,210 @@
+content:
+  basics:
+    name: Ingrid Solberg
+    headline: QA-ingeniør med fokus på testautomatisering og kvalitetssikring
+    phone: '+47 912 34 567'
+    email: ingrid.solberg@example.no
+    url: https://www.ingridsolberg.no
+    summary: |
+      - Erfaren QA-ingeniør med seks års bakgrunn fra test av web- og API-baserte helseløsninger
+      - Sterk på testautomatisering med Playwright, Cypress og Postman, og på å bygge robuste regresjonssuiter
+      - Systematisk og kvalitetsbevisst, med erfaring fra Scrum, CI/CD og tverrfaglig produktutvikling
+      - Opptatt av tydelig teststrategi, gode feilrapporter og kontinuerlig forbedring av kvalitetsprosesser
+
+  location:
+    address: Storgata 42
+    city: Oslo
+    region: Oslo
+    country: Norway
+    postalCode: '0182'
+
+  profiles:
+    - network: GitHub
+      url: https://github.com/ingridsolbergqa
+      username: ingridsolbergqa
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/ingrid-solberg-qa
+      username: ingrid-solberg-qa
+
+  education:
+    - institution: Universitetet i Oslo
+      url: https://www.uio.no
+      degree: Bachelor
+      area: 'Informatikk: design, bruk og interaksjon'
+      score: '4.2'
+      startDate: 'Aug 15, 2015'
+      endDate: 'Jun 20, 2018'
+      courses:
+        - Programmering og systemutvikling
+        - Algoritmer og datastrukturer
+        - Databaser
+        - Testing av programvare
+        - Webutvikling
+        - Prosjektstyring
+      summary: |
+        - Bygget solid grunnlag i systemutvikling, databaser og brukersentrert design
+        - Gjennomførte testprosjekter med både manuell og automatisert testing
+        - Arbeidet i tverrfaglige studentteam med kravanalyse, utvikling og kvalitetssikring
+
+  work:
+    - name: Nordisk HelseTech AS
+      url: https://www.nordiskhelsetech.no
+      position: QA-ingeniør
+      startDate: 'Mar 1, 2021'
+      summary: |
+        - Ansvarlig for teststrategi og kvalitetssikring av pasientrettet webplattform og tilhørende API-er
+        - Bygget og vedlikeholdt automatiserte regresjonssuiter i Playwright og Cypress, med daglig kjøring i CI/CD
+        - Utførte API-testing med Postman og REST-assured, inkludert validering av autentisering, datakvalitet og feilhåndtering
+        - Ledet testgjennomganger og triage av feil i tett samarbeid med utviklere, produktleder og designere
+        - Forbedret feilrapporteringsmaler og testdokumentasjon, noe som reduserte gjennomsnittlig tid til retting
+      keywords:
+        - Teststrategi
+        - Testautomatisering
+        - Playwright
+        - Cypress
+        - API-testing
+        - CI/CD
+        - Regresjonstesting
+        - Kvalitetssikring
+    - name: Oslo Digital AS
+      url: https://www.oslodigital.no
+      position: Testautomatiseringsutvikler
+      startDate: 'Aug 1, 2018'
+      endDate: 'Feb 28, 2021'
+      summary: |
+        - Utviklet automatiserte tester for nettbaserte tjenester innen offentlig sektor
+        - Skrev testkode i JavaScript og Python, og integrerte testene i Azure DevOps-pipelines
+        - Gjennomførte manuell utforskende testing og sikret god dekning av kritiske brukerreiser
+        - Bidro til å innføre BDD med Cucumber og tydeligere akseptansekriterier i Scrum-teamet
+        - Dokumenterte testresultater og presenterte kvalitetsstatus i sprintgjennomganger
+      keywords:
+        - JavaScript
+        - Python
+        - Azure DevOps
+        - BDD
+        - Cucumber
+        - Utforskende testing
+        - Scrum
+
+  languages:
+    - language: Norwegian
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - Morsmål
+        - Fagtekster
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - TOEFL 105
+        - Teknisk dokumentasjon
+
+  skills:
+    - name: Testing og kvalitet
+      level: Expert
+      keywords:
+        - Teststrategi
+        - Testautomatisering
+        - Regresjonstesting
+        - API-testing
+        - Ytelsestesting
+        - Utforskende testing
+    - name: Verktøy
+      level: Advanced
+      keywords:
+        - Playwright
+        - Cypress
+        - Postman
+        - JMeter
+        - Git
+        - Jira
+        - Azure DevOps
+    - name: Programmering
+      level: Intermediate
+      keywords:
+        - JavaScript
+        - TypeScript
+        - Python
+        - SQL
+        - Bash
+    - name: Metodikk
+      level: Advanced
+      keywords:
+        - Scrum
+        - Agile
+        - CI/CD
+        - TDD
+        - BDD
+        - Risikobasert testing
+
+  awards:
+    - title: Årets kvalitetspris
+      date: 'Nov 2023'
+      awarder: Nordisk HelseTech AS
+      summary: |
+        Tildelt for arbeidet med å redusere produksjonsfeil og øke testdekningen på pasientplattformen gjennom automatisering og tydeligere kvalitetsrutiner.
+
+  certificates:
+    - name: ISTQB-sertifisert tester, grunnleggende nivå
+      issuer: ISTQB
+      date: 'May 2019'
+      url: https://www.istqb.org/certifications/certified-tester-foundation-level
+    - name: ISTQB Agile Tester Extension
+      issuer: ISTQB
+      date: 'Sep 2020'
+      url: https://www.istqb.org/certifications/agile-tester-extension
+
+  projects:
+    - name: Automatisert regresjonssuite for pasientplattform
+      url: https://www.nordiskhelsetech.no
+      description: Regresjonssuite som verifiserer kritiske pasientreiser og
+        API-kontrakter ved hver utrulling
+      startDate: 'Jan 2022'
+      endDate: 'Dec 2023'
+      summary: |
+        - Designet testpyramide og prioriterte kritiske brukerreiser for automatisering
+        - Reduserte manuell regresjonstid fra tre dager til under fire timer
+        - Etablerte rapportering av testresultater og sporbarhet mot krav i Jira
+      keywords:
+        - Playwright
+        - API-testing
+        - Regresjonstesting
+        - CI/CD
+    - name: Kvalitetsdashboard for tverrfaglige team
+      description: Dashboard som samler testresultater, feiltrender og dekningsgrad
+        for produktteam
+      startDate: 'Apr 2020'
+      endDate: 'Oct 2020'
+      summary: |
+        - Bygget en enkel løsning for å visualisere teststatus fra Azure DevOps
+        - Ga teamene raskere innsikt i flaky tester og gjentakende feil
+        - Forbedret beslutningsgrunnlaget i sprintplanlegging og release-møter
+      keywords:
+        - Azure DevOps
+        - JavaScript
+        - Testmetrikk
+        - Rapportering
+
+  interests:
+    - name: Friluftsliv
+      keywords:
+        - Fjellturer
+        - Langrenn
+        - Kajakk
+    - name: Teknologi
+      keywords:
+        - Åpen kildekode
+        - Testmiljøer
+        - Podkaster
+
+  volunteer:
+    - organization: Oslo QA-community
+      url: https://www.meetup.com/oslo-qa-community/
+      position: Frivillig arrangør
+      startDate: 'Jan 2022'
+      summary: |
+        - Arrangerer månedlige fagmøter om testautomatisering, kvalitet og sikkerhet
+        - Koordinerer foredragsholdere og fasiliterer erfaringsutveksling mellom QA-miljøer i Oslo
+        - Bidrar til et inkluderende fagmiljø for juniorer og erfarne testere
+
+locale:
+  language: 'no'

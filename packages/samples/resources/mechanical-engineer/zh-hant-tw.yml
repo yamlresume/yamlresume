@@ -1,0 +1,226 @@
+content:
+  basics:
+    name: 林冠宇
+    headline: '資深機械工程師 | 產品開發與精密製造'
+    phone: '+886 912 345 678'
+    email: guanyu.lin.engineer@gmail.com
+    url: https://www.linkedin.com/in/guanyu-lin-me
+    summary: |
+      資深機械工程師，具備十年以上產品開發、精密製造與熱管理系統整合經驗，熟悉從概念設計、工程分析、原型驗證到量產導入的完整流程。
+
+      - 專精機構設計、電腦輔助工程分析與可製造性設計，能有效平衡性能、成本與量產需求
+      - 具備跨部門專案領導經驗，曾主導電動車電池模組與工業設備散熱方案開發
+      - 熟悉 ISO 9001、幾何尺寸與公差、FMEA 與供應商技術管理，擅長以數據驅動設計決策
+      - 重視團隊協作與技術傳承，能將複雜工程問題轉化為可執行方案
+  location:
+    address: 台北市內湖區瑞光路 168 號
+    city: 台北市
+    region: 台北市
+    country: Taiwan
+    postalCode: "114"
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/guanyu-lin-me
+      username: guanyu-lin-me
+    - network: GitHub
+      url: https://github.com/guanyulin-me
+      username: guanyulin-me
+  education:
+    - institution: 國立臺灣大學
+      url: https://www.ntu.edu.tw/
+      degree: Master
+      area: 機械工程學系
+      score: "3.92/4.0"
+      startDate: Sep 1, 2014
+      endDate: Jun 30, 2016
+      courses:
+        - 熱傳學
+        - 流體力學
+        - 有限元素分析
+        - 機械設計
+        - 精密製造
+        - 控制系統
+      summary: |
+        - 專攻熱流與精密機械設計，完成多項電腦輔助工程分析專題
+        - 碩士論文聚焦多孔介質散熱器性能優化，獲學院論文獎肯定
+        - 擔任研究助理，協助實驗設備建置與量測數據分析
+    - institution: 國立清華大學
+      url: https://www.nthu.edu.tw/
+      degree: Bachelor
+      area: 動力機械工程學系
+      score: "3.78/4.0"
+      startDate: Sep 1, 2010
+      endDate: Jun 30, 2014
+      courses:
+        - 機械製造
+        - 材料力學
+        - 熱力學
+        - 機構學
+        - 自動控制
+      summary: |
+        - 建立紮實的機械工程基礎，並選修機電整合與產品設計課程
+        - 參與太陽能車隊，負責傳動系統設計與測試
+  work:
+    - name: 台灣精密動力科技股份有限公司
+      url: https://www.tppowertech.com.tw
+      position: 資深機械工程師
+      startDate: Mar 1, 2021
+      summary: |
+        - 主導電動車電池模組熱管理系統開發，從概念設計到量產導入，降低模組最高溫度約 12%
+        - 建立機構設計審查流程與可製造性檢核表，縮短設計迭代時間並降低模具修改成本
+        - 與電子、韌體、製造及供應商品質團隊協作，完成多項跨國客戶專案
+        - 指導 3 位初階工程師，負責技術文件、圖面審核與實驗計畫規劃
+      keywords:
+        - 熱管理系統
+        - 電池模組
+        - 機構設計
+        - 可製造性設計
+        - 專案領導
+    - name: 鴻銳精密機械股份有限公司
+      url: https://www.hongrui-precision.com.tw
+      position: 機械工程師
+      startDate: Jul 1, 2016
+      endDate: Feb 28, 2021
+      summary: |
+        - 負責線性滑軌與傳動元件機構設計，完成多項客製化規格開發
+        - 執行有限元素分析與振動測試，改善產品剛性與使用壽命
+        - 協助新產品試產、治具設計與製程異常分析，提升良率約 8%
+        - 撰寫設計規範與技術報告，支援業務與客戶技術討論
+      keywords:
+        - 傳動元件
+        - 有限元素分析
+        - 振動測試
+        - 治具設計
+        - 良率改善
+  languages:
+    - language: Mandarin
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - 母語
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - TOEIC 950
+        - 技術簡報
+        - 跨國專案溝通
+  skills:
+    - name: 機構設計與產品開發
+      level: Expert
+      keywords:
+        - 產品結構設計
+        - 傳動系統設計
+        - 散熱設計
+        - 組裝性設計
+        - 工程圖繪製
+    - name: 電腦輔助工程
+      level: Advanced
+      keywords:
+        - SolidWorks
+        - Creo
+        - ANSYS
+        - 有限元素分析
+        - 熱流模擬
+    - name: 製造與品質工程
+      level: Advanced
+      keywords:
+        - 精密加工
+        - 射出成型
+        - 幾何尺寸與公差
+        - 失效模式分析
+        - 統計製程管制
+    - name: 專案與團隊管理
+      level: Advanced
+      keywords:
+        - 跨部門協作
+        - 供應商管理
+        - 設計審查
+        - 技術文件
+        - 時程規劃
+  awards:
+    - title: 年度優秀工程師獎
+      date: Nov 2023
+      awarder: 台灣精密動力科技股份有限公司
+      summary: |
+        - 表彰在電動車電池模組熱管理專案中的技術領導與跨部門協作貢獻
+        - 專案成功導入量產，並取得客戶年度品質評鑑優等
+    - title: 碩士論文獎
+      date: Jun 2016
+      awarder: 國立臺灣大學機械工程學系
+      summary: |
+        - 以多孔介質散熱器性能優化為主題，獲系上所頒發之學術研究獎
+  certificates:
+    - name: 機械工程技師證書
+      issuer: 考試院
+      date: Jul 2016
+      url: https://www.moex.gov.tw
+    - name: SolidWorks 專業認證
+      issuer: Dassault Systèmes
+      date: Mar 2019
+      url: https://www.solidworks.com/certification
+    - name: ISO 9001 內部稽核員
+      issuer: SGS Taiwan
+      date: Aug 2021
+      url: https://www.sgs.com.tw
+  publications:
+    - name: 多孔介質散熱器之熱傳性能數值與實驗分析
+      publisher: 中國機械工程學刊
+      releaseDate: Jun 2020
+      url: https://doi.org/10.1234/jcme.2020.5678
+      summary: |
+        - 建立多孔介質散熱器之三維熱流模型，並以實驗驗證模擬結果
+        - 探討孔徑、孔隙率與流量對熱阻與壓降的影響
+        - 提出兼顧散熱效能與泵浦功耗之設計參數建議
+  projects:
+    - name: 電動車電池模組熱管理系統
+      url: https://www.tppowertech.com.tw/projects/ev-battery-thermal
+      startDate: Jan 2022
+      endDate: Dec 2023
+      description: 針對高能量密度電池模組開發液冷式熱管理系統，整合流道設計、結構強度與量產製造需求。
+      summary: |
+        - 設計液冷板流道與導熱結構，改善電芯溫差與高溫熱點問題
+        - 使用 ANSYS Fluent 進行熱流模擬，並以環境測試驗證散熱性能
+        - 與供應商合作完成鋁擠型與摩擦攪拌銲接製程開發
+        - 建立 DFMEA 與關鍵尺寸管制計畫，支援量產品質監控
+      keywords:
+        - 電動車
+        - 液冷散熱
+        - 電池模組
+        - 熱流模擬
+        - 量產導入
+    - name: 工業機器人關節減速機測試平台
+      startDate: Mar 2018
+      endDate: Nov 2019
+      description: 建置機器人關節減速機之性能與耐久測試平台，用於評估背隙、效率與溫升特性。
+      summary: |
+        - 規劃測試機台機構、治具與感測器配置
+        - 撰寫測試程序並分析背隙、傳動效率與溫升數據
+        - 依據測試結果提出減速機結構與潤滑改善建議
+      keywords:
+        - 機器人
+        - 減速機
+        - 測試平台
+        - 機構設計
+  interests:
+    - name: 戶外活動
+      keywords:
+        - 登山
+        - 自行車
+        - 露營
+    - name: 音樂與閱讀
+      keywords:
+        - 吉他
+        - 爵士樂
+        - 工程史
+  volunteer:
+    - organization: 台灣機械工程學會青年委員會
+      url: https://www.csme.org.tw
+      position: 志工講師
+      startDate: Mar 2019
+      endDate: Dec 2022
+      summary: |
+        - 參與高中職工程教育推廣，講授機械設計與 3D 建模基礎
+        - 協助規劃產業參訪與青年工程師交流活動
+        - 指導學生專題團隊參加全國機械設計競賽
+
+locale:
+  language: zh-hant-tw

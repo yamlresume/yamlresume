@@ -1,0 +1,234 @@
+content:
+  basics:
+    name: Budi Santoso
+    headline: Manajer SDM Senior | Spesialis Hubungan Karyawan & Rekrutmen
+    phone: "+62 812-3456-7890"
+    email: budi.santoso@email.com
+    url: https://www.budisantoso-hr.id
+    summary: |
+      - Manajer Sumber Daya Manusia dengan pengalaman lebih dari 10 tahun di perusahaan multinasional dan startup teknologi.
+      - Ahli dalam merancang strategi rekrutmen, mengelola hubungan industrial, dan meningkatkan keterlibatan karyawan.
+      - Berpengalaman memimpin tim HR lintas fungsi dan mengimplementasikan sistem HRIS untuk efisiensi operasional.
+      - Komitmen tinggi terhadap pengembangan budaya kerja inklusif, berintegritas, dan berorientasi pada hasil.
+  location:
+    address: Jl. Jenderal Sudirman Kav. 52-53
+    city: Jakarta Selatan
+    region: DKI Jakarta
+    country: Indonesia
+    postalCode: "12190"
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/budisantoso-hr
+      username: budisantoso-hr
+    - network: Twitter
+      url: https://twitter.com/budisantoso_hr
+      username: budisantoso_hr
+  education:
+    - institution: Universitas Indonesia
+      url: https://www.ui.ac.id
+      degree: Bachelor
+      area: Psikologi
+      score: "3.75"
+      startDate: Sep 1, 2008
+      endDate: Jul 1, 2012
+      courses:
+        - Psikologi Industri dan Organisasi
+        - Manajemen Sumber Daya Manusia
+        - Perilaku Organisasi
+        - Metodologi Penelitian
+        - Psikometri
+        - Konseling Karir
+      summary: |
+        - Lulus dengan predikat cum laude dan meraih penghargaan mahasiswa berprestasi.
+        - Aktif dalam organisasi kemahasiswaan sebagai ketua divisi pengembangan sumber daya anggota.
+    - institution: Universitas Gadjah Mada
+      url: https://www.ugm.ac.id
+      degree: Master
+      area: Manajemen Sumber Daya Manusia
+      score: "3.90"
+      startDate: Aug 1, 2013
+      endDate: Jun 1, 2015
+      summary: |
+        - Tesis tentang pengaruh budaya organisasi terhadap keterlibatan karyawan di sektor teknologi.
+        - Menerima beasiswa penuh dari program pascasarjana.
+  work:
+    - name: PT Maju Bersama Sejahtera
+      url: https://www.majubersama.co.id
+      position: Manajer Sumber Daya Manusia
+      startDate: Mar 1, 2019
+      summary: |
+        - Memimpin tim HR dengan 8 anggota untuk mendukung 500+ karyawan di seluruh Indonesia.
+        - Mengembangkan dan menerapkan strategi rekrutmen yang menurunkan time-to-hire sebesar 30%.
+        - Merancang program retensi karyawan yang meningkatkan engagement score dari 72% menjadi 85%.
+        - Mengelola hubungan industrial, termasuk negosiasi perjanjian kerja bersama dan penanganan perselisihan.
+        - Mengimplementasikan sistem HRIS berbasis cloud untuk otomatisasi payroll, absensi, dan manajemen kinerja.
+      keywords:
+        - Manajemen Talenta
+        - Hubungan Industrial
+        - HRIS
+        - Engagement
+        - Kepatuhan
+    - name: PT Karya Digital Nusantara
+      url: https://www.karyadigital.id
+      position: Supervisor Sumber Daya Manusia
+      startDate: Jun 1, 2015
+      endDate: Feb 28, 2019
+      summary: |
+        - Mengawasi proses rekrutmen end-to-end untuk posisi teknologi dan non-teknologi.
+        - Mengembangkan program onboarding yang meningkatkan retensi karyawan baru sebesar 20%.
+        - Mengelola administrasi kompensasi dan benefit, termasuk BPJS Kesehatan dan Ketenagakerjaan.
+        - Menjadi penghubung antara manajemen dan karyawan dalam menangani keluhan dan mediasi.
+      keywords:
+        - Rekrutmen
+        - Onboarding
+        - Kompensasi
+        - Mediasi
+        - BPJS
+    - name: PT Sumber Rejeki Abadi
+      url: https://www.sumberrejekiabadi.com
+      position: Staf Rekrutmen
+      startDate: Aug 1, 2012
+      endDate: May 31, 2015
+      summary: |
+        - Melakukan screening CV, wawancara awal, dan koordinasi dengan manajer departemen.
+        - Mengelola database kandidat dan membuat laporan rekrutmen bulanan.
+        - Mendukung program employer branding melalui job fair dan media sosial.
+      keywords:
+        - Screening
+        - Wawancara
+        - Employer Branding
+        - Database
+  languages:
+    - language: Indonesian
+      fluency: Native or Bilingual Proficiency
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - TOEFL 110
+        - IELTS 8.0
+    - language: Mandarin
+      fluency: Limited Working Proficiency
+      keywords:
+        - HSK 3
+  skills:
+    - name: Manajemen Sumber Daya Manusia
+      level: Expert
+      keywords:
+        - Rekrutmen
+        - Manajemen Kinerja
+        - Hubungan Karyawan
+        - Kompensasi & Benefit
+        - Pelatihan & Pengembangan
+    - name: HRIS & Analitik
+      level: Advanced
+      keywords:
+        - SAP SuccessFactors
+        - Workday
+        - Excel Lanjutan
+        - Power BI
+        - Tableau
+    - name: Kepatuhan & Hukum Ketenagakerjaan
+      level: Advanced
+      keywords:
+        - UU Ketenagakerjaan
+        - BPJS
+        - Perjanjian Kerja
+        - Audit HR
+        - Hubungan Industrial
+    - name: Kepemimpinan & Komunikasi
+      level: Expert
+      keywords:
+        - Negosiasi
+        - Mediasi
+        - Public Speaking
+        - Coaching
+        - Manajemen Perubahan
+  awards:
+    - title: HR Leader of the Year
+      date: Nov 2022
+      awarder: Asosiasi Manajemen Sumber Daya Manusia Indonesia
+      summary: |
+        Diberikan kepada profesional HR yang menunjukkan kepemimpinan luar biasa dalam mengembangkan strategi SDM dan menciptakan budaya kerja positif.
+    - title: Employer Branding Terbaik
+      date: Aug 2021
+      awarder: HR Asia
+      summary: |
+        Penghargaan atas keberhasilan program employer branding yang meningkatkan jumlah pelamar berkualitas dan reputasi perusahaan sebagai tempat kerja pilihan.
+  certificates:
+    - name: Certified Human Resources Professional (CHRP)
+      issuer: Lembaga Sertifikasi Profesi HR Indonesia
+      date: Feb 2020
+      url: https://www.chrp-indonesia.org
+    - name: SHRM-CP
+      issuer: Society for Human Resource Management
+      date: Jun 2018
+      url: https://www.shrm.org/certification
+    - name: Ahli K3 Umum
+      issuer: Kementerian Ketenagakerjaan RI
+      date: Mar 2017
+      url: https://kemnaker.go.id
+  publications:
+    - name: Membangun Budaya Kerja Inklusif di Era Hybrid
+      publisher: Jurnal Manajemen Indonesia
+      releaseDate: May 2022
+      url: https://jurnalmanajemen.id/artikel/budaya-kerja-inklusif
+      summary: |
+        - Artikel ini membahas strategi menciptakan budaya kerja inklusif bagi karyawan remote dan on-site.
+        - Studi kasus pada tiga perusahaan teknologi di Jakarta menunjukkan peningkatan kolaborasi dan kepuasan kerja.
+  projects:
+    - name: Implementasi HRIS Terintegrasi
+      startDate: Jan 2020
+      endDate: Dec 2020
+      description: Proyek transformasi digital untuk mengotomatisasi proses HR di
+        perusahaan.
+      summary: |
+        - Memimpin migrasi data karyawan dari sistem manual ke platform HRIS berbasis cloud.
+        - Melatih 50+ pengguna dan menyusun SOP baru untuk payroll, absensi, dan cuti.
+        - Mencapai pengurangan waktu proses payroll dari 5 hari menjadi 2 hari.
+      keywords:
+        - HRIS
+        - Digital Transformation
+        - Change Management
+    - name: Program Kesejahteraan Karyawan
+      startDate: Mar 2021
+      endDate: Aug 2021
+      description: Inisiatif untuk meningkatkan kesejahteraan fisik dan mental karyawan.
+      summary: |
+        - Meluncurkan program konseling online, kelas kebugaran, dan tunjangan kesehatan tambahan.
+        - Mengukur dampak melalui survei kesejahteraan dan tingkat absensi.
+        - Meningkatkan skor kesejahteraan karyawan sebesar 25% dalam enam bulan.
+      keywords:
+        - Employee Wellbeing
+        - Mental Health
+        - Benefits
+  interests:
+    - name: Pengembangan Diri
+      keywords:
+        - Membaca
+        - Public Speaking
+        - Coaching
+    - name: Olahraga
+      keywords:
+        - Lari
+        - Bersepeda
+        - Bulu Tangkis
+  volunteer:
+    - organization: Yayasan Pendidikan Anak Bangsa
+      url: https://www.ypab.org
+      position: Mentor Karir
+      startDate: Jan 2019
+      endDate: Dec 2022
+      summary: |
+        - Membimbing siswa SMK dalam mempersiapkan diri memasuki dunia kerja.
+        - Memberikan pelatihan CV, wawancara, dan keterampilan lunak.
+        - Membantu menyelenggarakan job fair tahunan untuk 200+ siswa.
+  references:
+    - name: Dr. Siti Rahmawati
+      phone: "+62 811-9876-5432"
+      relationship: Dosen Psikologi Industri dan Organisasi
+      email: siti.rahmawati@ui.ac.id
+      summary: |
+        Budi Santoso adalah profesional HR yang berintegritas dan memiliki kemampuan analitis yang kuat. Ia mampu memimpin tim dan berkomunikasi efektif dengan berbagai pemangku kepentingan.
+
+locale:
+  language: id

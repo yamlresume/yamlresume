@@ -1,0 +1,216 @@
+content:
+  basics:
+    name: 林怡君
+    headline: 資深商業分析師 | 數據驅動決策專家
+    phone: "+886 912 345 678"
+    email: yichun.lin@example.com
+    url: https://www.linkedin.com/in/yichunlin
+    summary: |
+      - 具備 8 年以上商業分析經驗，專精於金融與電信產業的數據驅動決策
+      - 擅長需求訪談、流程優化與商業案例撰寫，成功協助企業提升營運效率達 20%
+      - 熟練運用 SQL、Python、Tableau 等工具進行數據分析與視覺化
+      - 擁有卓越的跨部門溝通與專案管理能力，能有效協調利害關係人達成目標
+  location:
+    address: 台北市信義區松仁路100號
+    city: 台北市
+    region: 信義區
+    country: Taiwan
+    postalCode: "110"
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/yichunlin
+      username: yichunlin
+    - network: GitHub
+      url: https://github.com/yichunlin
+      username: yichunlin
+  education:
+    - institution: 國立臺灣大學
+      url: https://www.ntu.edu.tw
+      degree: Bachelor
+      area: 企業管理學系
+      score: "3.9"
+      startDate: Sep 1, 2010
+      endDate: Jun 30, 2014
+      courses:
+        - 統計學
+        - 作業研究
+        - 財務管理
+        - 行銷管理
+        - 資訊管理
+        - 商業決策分析
+      summary: |
+        - 主修企業管理，輔修資訊管理，奠定商業分析與數據處理的紮實基礎
+        - 畢業專題「電子商務消費者行為分析」獲得系上最佳專題獎
+        - 積極參與商業競賽，獲得全國大專院校商業個案大賽優勝
+  work:
+    - name: 富邦金融控股股份有限公司
+      url: https://www.fubon.com
+      position: 資深商業分析師
+      startDate: Jan 1, 2020
+      summary: |
+        - 領導 5 人分析團隊，負責銀行與保險業務的數據分析與流程優化
+        - 主導智能客服導入專案，整合 NLP 技術，降低客服成本 30% 並提升客戶滿意度 15%
+        - 建立客戶流失預測模型，準確率達 85%，協助挽留高價值客戶，增加年營收 5,000 萬元
+        - 與 IT、業務、風控等部門協作，定義需求規格並確保專案如期交付
+        - 定期向高階管理層彙報分析結果與策略建議，推動數據驅動文化
+      keywords:
+        - 需求分析
+        - 流程優化
+        - 數據建模
+        - 利害關係人管理
+        - 金融科技
+    - name: 台灣大哥大股份有限公司
+      url: https://www.taiwanmobile.com
+      position: 商業分析師
+      startDate: Jul 1, 2016
+      endDate: Dec 31, 2019
+      summary: |
+        - 負責電信資費方案與用戶行為分析，提供定價策略建議，提升 ARPU 8%
+        - 開發 Tableau 儀表板，即時監控關鍵績效指標，縮短報表產出時間 50%
+        - 執行客戶分群與生命周期管理，設計精準行銷活動，提升轉換率 12%
+        - 參與跨部門敏捷開發團隊，擔任產品負責人與開發團隊的橋樑
+      keywords:
+        - 電信分析
+        - Tableau
+        - 客戶分群
+        - 定價策略
+        - 敏捷開發
+    - name: 勤業眾信聯合會計師事務所
+      url: https://www2.deloitte.com/tw
+      position: 初級商業分析師
+      startDate: Sep 1, 2014
+      endDate: Jun 30, 2016
+      summary: |
+        - 協助金融業客戶進行流程梳理與系統需求訪談，撰寫商業需求文件
+        - 參與核心銀行系統升級專案，負責測試案例設計與使用者驗收測試
+        - 運用 SQL 進行數據驗證與差異分析，確保資料遷移正確性
+        - 獲得年度最佳新人獎，並提前晉升為商業分析師
+      keywords:
+        - 商業需求文件
+        - 流程梳理
+        - 系統測試
+        - SQL
+        - 銀行系統
+  skills:
+    - name: 商業分析
+      level: Expert
+      keywords:
+        - 需求訪談
+        - 流程優化
+        - 商業案例
+        - 利害關係人管理
+        - 使用者故事
+    - name: 數據分析
+      level: Advanced
+      keywords:
+        - SQL
+        - Python
+        - Tableau
+        - Excel
+        - R
+    - name: 專案管理
+      level: Advanced
+      keywords:
+        - Agile
+        - Scrum
+        - JIRA
+        - 風險管理
+        - 時程規劃
+    - name: 財務分析
+      level: Intermediate
+      keywords:
+        - 財務建模
+        - 預算規劃
+        - ROI分析
+        - 成本效益分析
+  languages:
+    - language: Chinese
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - 母語
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - TOEIC 950
+        - IELTS 7.5
+  awards:
+    - title: 年度最佳員工
+      date: Dec 2022
+      awarder: 富邦金融控股股份有限公司
+      summary: |
+        表彰在智能客服導入專案中展現卓越領導力與分析能力，成功降低營運成本並提升客戶體驗。
+    - title: 傑出專案獎
+      date: Nov 2019
+      awarder: 台灣大哥大股份有限公司
+      summary: |
+        因客戶流失預測模型專案成效顯著，有效提升客戶留存率，獲頒年度傑出專案獎。
+  certificates:
+    - name: Certified Business Analysis Professional (CBAP)
+      issuer: IIBA
+      date: Mar 2021
+      url: https://www.iiba.org/certification/cbap
+    - name: Project Management Professional (PMP)
+      issuer: PMI
+      date: Jun 2018
+      url: https://www.pmi.org/certifications/project-management-pmp
+  publications:
+    - name: 數據驅動的商業決策：台灣金融業的應用
+      publisher: 台灣管理學刊
+      releaseDate: Sep 2021
+      url: https://example.com/journal/article
+      summary: |
+        - 探討金融業如何運用大數據與機器學習優化商業決策流程
+        - 分析台灣多家銀行的實際案例，提出數據治理與分析框架建議
+        - 研究結果顯示數據驅動文化可顯著提升企業競爭力
+  projects:
+    - name: 智能客服導入專案
+      url: https://example.com/project/ai-customer-service
+      description: 為富邦銀行導入AI智能客服系統，提升客戶服務效率與品質
+      startDate: Mar 2021
+      endDate: Nov 2021
+      summary: |
+        - 主導需求訪談與流程設計，整合NLP技術與現有客服系統
+        - 協調IT團隊與業務單位，確保系統符合使用者需求
+        - 上線後客服成本降低30%，客戶滿意度提升15%
+      keywords:
+        - 智能客服
+        - NLP
+        - 流程設計
+        - 專案管理
+    - name: 客戶流失預測模型
+      url: https://example.com/project/churn-prediction
+      description: 建立機器學習模型預測客戶流失風險，協助制定挽留策略
+      startDate: Jan 2020
+      endDate: Aug 2020
+      summary: |
+        - 使用Python與Scikit-learn建立分類模型，準確率達85%
+        - 分析客戶行為特徵，找出關鍵流失因子
+        - 協助業務團隊設計精準挽留方案，增加年營收5,000萬元
+      keywords:
+        - 機器學習
+        - 客戶流失
+        - Python
+        - 預測模型
+  interests:
+    - name: 閱讀
+      keywords:
+        - 商業策略
+        - 數據科學
+        - 歷史
+    - name: 運動
+      keywords:
+        - 馬拉松
+        - 游泳
+        - 登山
+  volunteer:
+    - organization: 台灣商業分析師協會
+      url: https://www.tbaa.org.tw
+      position: 志工講師
+      startDate: Mar 2022
+      summary: |
+        - 定期舉辦商業分析工作坊，分享數據驅動決策的實務經驗
+        - 指導年輕分析師進行專案規劃與職涯發展
+        - 協助協會推廣商業分析專業認證與最佳實踐
+
+locale:
+  language: zh-hant-tw

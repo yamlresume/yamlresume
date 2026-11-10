@@ -1,0 +1,259 @@
+content:
+  basics:
+    name: Lucía Ferrer Navarro
+    headline: Gerente de Recursos Humanos especializada en talento y cultura
+    phone: "+34 910 555 274"
+    email: lucia.ferrer@example.com
+    url: https://www.luciaferrer-hr.es
+    summary: |
+      - Gerente de Recursos Humanos con más de diez años de experiencia diseñando estrategias de talento, cultura y relaciones laborales en entornos retail y tecnológicos.
+      - Especializada en planificación de plantilla, desarrollo de liderazgo, analítica de personas y programas de bienestar que mejoran la retención y el compromiso.
+      - Experiencia liderando equipos multidisciplinares y acompañando procesos de transformación organizativa, cambio cultural y crecimiento internacional.
+      - Enfoque orientado a resultados, con capacidad para traducir necesidades de negocio en políticas de personas medibles y sostenibles.
+  location:
+    address: Calle de Serrano 45, 4º B
+    city: Madrid
+    region: Comunidad de Madrid
+    country: Spain
+    postalCode: "28001"
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/luciaferrerhr
+      username: luciaferrerhr
+    - network: Medium
+      url: https://medium.com/@luciaferrerhr
+      username: luciaferrerhr
+  education:
+    - institution: Universidad Complutense de Madrid
+      url: https://www.ucm.es
+      degree: Master
+      area: Dirección de Recursos Humanos
+      score: "9.1"
+      startDate: '2011-09-01'
+      endDate: '2012-07-15'
+      courses:
+        - Gestión estratégica del talento
+        - Derecho laboral y relaciones de trabajo
+        - Psicología organizacional
+        - Análisis de datos aplicado a RR. HH.
+        - Compensación y beneficios
+        - Desarrollo organizacional
+      summary: |
+        - Formación avanzada en dirección de personas, estrategia de talento y transformación organizativa.
+        - Trabajo final sobre modelos de retención y desarrollo de liderazgo en empresas de servicios.
+    - institution: Universidad de Valencia
+      url: https://www.uv.es
+      degree: Bachelor
+      area: Relaciones Laborales y Recursos Humanos
+      score: "8.7"
+      startDate: '2007-09-15'
+      endDate: '2011-06-30'
+      courses:
+        - Sociología del trabajo
+        - Economía laboral
+        - Gestión de la formación
+        - Negociación colectiva
+        - Derecho del trabajo
+      summary: |
+        - Base académica sólida en relaciones laborales, gestión de personas y marco normativo del empleo.
+        - Prácticas en departamento de personal y participación en proyectos de diagnóstico organizativo.
+  work:
+    - name: Grupo Meridiano Retail
+      url: https://www.grupomeridianoretail.es
+      position: Gerente de Recursos Humanos
+      startDate: '2020-02-01'
+      summary: |
+        - Lidero la función de Recursos Humanos para una plantilla de 1.200 personas distribuidas en 85 tiendas y tres centros logísticos.
+        - Diseñé e implanté el plan estratégico de personas 2021-2024, alineado con los objetivos de crecimiento, digitalización y experiencia de cliente.
+        - Impulsé un modelo de analítica de personas que redujo la rotación voluntaria un 18 % y mejoró el tiempo de cobertura de vacantes en un 25 %.
+        - Coordino las relaciones laborales con los comités de empresa y la negociación de convenios, asegurando un clima social estable.
+        - Desarrollé programas de liderazgo, bienestar y diversidad reconocidos por la dirección general y por entidades del sector.
+      keywords:
+        - Gestión del talento
+        - Cultura organizacional
+        - Relaciones laborales
+        - Analítica de personas
+    - name: NeuroTech Solutions Iberia
+      url: https://www.neurotechsolutions.es
+      position: Responsable de Desarrollo de Talento
+      startDate: '2016-03-01'
+      endDate: '2020-01-31'
+      summary: |
+        - Diseñé el modelo de selección por competencias y lideré la incorporación de 140 perfiles tecnológicos y comerciales.
+        - Implementé el ciclo de desempeño y los planes de desarrollo individual, con una cobertura del 92 % de la plantilla.
+        - Puse en marcha el programa de marca empleadora, aumentando las candidaturas espontáneas un 35 %.
+        - Coordiné formación técnica y de liderazgo para equipos distribuidos en España, Portugal e Italia.
+      keywords:
+        - Selección
+        - Formación
+        - Evaluación del desempeño
+        - Marca empleadora
+    - name: Consultora Alameda
+      url: https://www.consultoraalameda.es
+      position: Especialista de Recursos Humanos
+      startDate: '2012-09-01'
+      endDate: '2016-02-28'
+      summary: |
+        - Gestioné procesos de reclutamiento, incorporación y administración de personal para clientes de servicios profesionales.
+        - Elaboré políticas de RR. HH., descripciones de puesto y procedimientos de gestión documental.
+        - Participé en proyectos de compensación, encuestas salariales y análisis de indicadores de plantilla.
+      keywords:
+        - Reclutamiento
+        - Incorporación
+        - Políticas de RR. HH.
+        - Sistemas de RR. HH.
+  languages:
+    - language: Spanish
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - Español nativo
+        - Comunicación escrita
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - C1 certificado
+        - Inglés de negocios
+    - language: French
+      fluency: Limited Working Proficiency
+      keywords:
+        - DELF B1
+        - Reuniones básicas
+  skills:
+    - name: Gestión del talento
+      level: Expert
+      keywords:
+        - Planificación de plantilla
+        - Selección por competencias
+        - Desarrollo de carrera
+        - Gestión del desempeño
+    - name: Relaciones laborales
+      level: Advanced
+      keywords:
+        - Negociación colectiva
+        - Convenios colectivos
+        - Prevención de riesgos
+        - Disciplina laboral
+    - name: Analítica de personas
+      level: Advanced
+      keywords:
+        - Power BI
+        - Excel avanzado
+        - Encuestas de clima
+        - Indicadores de RR. HH.
+    - name: Desarrollo organizacional
+      level: Advanced
+      keywords:
+        - Diseño organizativo
+        - Gestión del cambio
+        - Cultura corporativa
+        - Comunicación interna
+    - name: Sistemas de RR. HH.
+      level: Intermediate
+      keywords:
+        - Workday
+        - SAP SuccessFactors
+        - BambooHR
+        - Factorial
+  awards:
+    - title: Premio a la Excelencia en Gestión de Personas
+      date: '2019-11-15'
+      awarder: Asociación Española de Dirección de Personas
+      summary: |
+        - Reconocimiento por el diseño e implantación de un modelo de desarrollo de liderazgo orientado a la retención del talento clave.
+    - title: Reconocimiento a la Mejor Iniciativa de Bienestar Laboral
+      date: '2023-06-20'
+      awarder: Grupo Meridiano Retail
+      summary: |
+        - Galardón interno por el programa de bienestar integral que mejoró la satisfacción laboral y redujo el absentismo.
+  certificates:
+    - name: Certificación Profesional en Analítica de Personas
+      issuer: Instituto de Analítica de Personas
+      date: '2021-10-01'
+      url: https://www.iap.es
+    - name: Experto en Dirección de Recursos Humanos
+      issuer: IE Business School
+      date: '2018-05-15'
+      url: https://www.ie.edu
+    - name: Certificado en Prevención de Riesgos Laborales
+      issuer: Instituto Nacional de Seguridad y Salud en el Trabajo
+      date: '2015-09-10'
+      url: https://www.insst.es
+  publications:
+    - name: 'El futuro del trabajo híbrido: claves para una cultura inclusiva'
+      publisher: Revista Capital Humano
+      releaseDate: '2023-03-01'
+      url: https://www.capitalhumano.es
+      summary: |
+        - Artículo sobre modelos de trabajo híbrido, liderazgo flexible y prácticas de inclusión.
+        - Incluye recomendaciones para medir el impacto del trabajo híbrido en el compromiso y la productividad.
+    - name: Analítica de personas para decisiones de talento
+      publisher: Harvard Deusto Business Review
+      releaseDate: '2022-07-01'
+      url: https://www.harvard-deusto.com
+      summary: |
+        - Publicación sobre el uso de indicadores de personas para priorizar inversiones en talento.
+        - Analiza casos prácticos de retención, absentismo y planificación de la sucesión.
+  projects:
+    - name: Programa Impulsa Talento
+      startDate: '2021-01-15'
+      endDate: '2022-12-20'
+      url: https://www.grupomeridianoretail.es/impulsa-talento
+      description: Programa de desarrollo y promoción interna para mandos intermedios
+        de retail.
+      summary: |
+        - Diseñé un itinerario de formación, mentoría y rotación interna para 60 personas con alto potencial.
+        - El 45 % de las participantes promocionó a posiciones de responsabilidad en menos de 18 meses.
+        - El programa mejoró el indicador de movilidad interna y la satisfacción con el desarrollo de carrera.
+      keywords:
+        - Desarrollo de talento
+        - Promoción interna
+        - Mentoría
+    - name: Modelo de Teletrabajo Sostenible
+      startDate: '2020-09-01'
+      endDate: '2021-06-30'
+      url: https://www.grupomeridianoretail.es/teletrabajo
+      description: Marco de teletrabajo híbrido para oficinas centrales y equipos de
+        soporte.
+      summary: |
+        - Lideré el diagnóstico, la negociación con la representación legal y el despliegue del modelo híbrido.
+        - Definí criterios de elegibilidad, dotación tecnológica y formación para líderes y equipos.
+        - El modelo aumentó la satisfacción con la flexibilidad y mantuvo la productividad de los equipos.
+      keywords:
+        - Teletrabajo
+        - Flexibilidad
+        - Bienestar
+  interests:
+    - name: Bienestar y deporte
+      keywords:
+        - Yoga
+        - Senderismo
+        - Carrera
+    - name: Mentoría y comunidad
+      keywords:
+        - Mentoría de mujeres
+        - Voluntariado
+        - Formación continua
+    - name: Lectura y cultura
+      keywords:
+        - Novela histórica
+        - Pódcasts de gestión
+        - Cine europeo
+  volunteer:
+    - organization: Fundación Integra Talento
+      url: https://www.fundacionintegra.org
+      position: Mentora de carrera profesional
+      startDate: '2019-03-01'
+      summary: |
+        - Acompaño a personas en transición profesional en la definición de objetivos, marca personal y preparación de entrevistas.
+        - Participo en talleres de empleabilidad y sesiones de orientación para colectivos en riesgo de exclusión.
+    - organization: Colegio de Graduados Sociales de Madrid
+      url: https://www.graduadosocialmadrid.es
+      position: Voluntaria en orientación laboral
+      startDate: '2017-01-10'
+      endDate: '2019-02-28'
+      summary: |
+        - Ofrecí orientación laboral y revisión de currículos a personas desempleadas.
+        - Colaboré en jornadas de formación sobre búsqueda de empleo y competencias digitales.
+
+locale:
+  language: es

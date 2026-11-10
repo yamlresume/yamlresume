@@ -1,0 +1,222 @@
+content:
+  basics:
+    name: Carlos Javier Pérez Gómez
+    headline: Ingeniero Mecánico Senior especializado en diseño de producto y fabricación
+    phone: "+34 678 123 456"
+    email: carlos.perez@example.com
+    url: https://www.carlosperez-ingenieria.com
+    summary: |
+      - Ingeniero Mecánico con más de 8 años de experiencia en el diseño, desarrollo y optimización de productos y sistemas mecánicos.
+      - Especializado en CAD/CAE (SolidWorks, CATIA, ANSYS) y en la gestión de proyectos de fabricación.
+      - Sólida experiencia en el sector de automoción y energías renovables, liderando equipos multidisciplinares.
+      - Enfoque en la mejora continua, reducción de costes y cumplimiento de normativas de calidad (ISO 9001, IATF 16949).
+  location:
+    address: Calle de Alcalá, 123, 4ºB
+    city: Madrid
+    region: Comunidad de Madrid
+    country: Spain
+    postalCode: "28001"
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/carlosperezmecanico
+      username: carlosperezmecanico
+    - network: GitHub
+      url: https://github.com/cperez-mec
+      username: cperez-mec
+  education:
+    - institution: Universidad Politécnica de Madrid
+      url: https://www.upm.es
+      degree: Bachelor
+      area: Ingeniería Mecánica
+      score: "8.2/10"
+      startDate: Sep 1, 2012
+      endDate: Jul 1, 2016
+      courses:
+        - Cálculo Diferencial e Integral
+        - Mecánica de Sólidos
+        - Termodinámica Aplicada
+        - Mecánica de Fluidos
+        - Diseño de Máquinas
+        - Materiales de Ingeniería
+      summary: |
+        - Formación sólida en fundamentos de ingeniería mecánica, con especial énfasis en diseño y análisis.
+        - Participación en proyectos de fin de grado sobre optimización de estructuras ligeras.
+        - Prácticas en laboratorio de ensayos mecánicos y caracterización de materiales.
+    - institution: Universidad Carlos III de Madrid
+      url: https://www.uc3m.es
+      degree: Master
+      area: Ingeniería Mecánica Avanzada
+      score: "9.1/10"
+      startDate: Sep 1, 2016
+      endDate: Jul 1, 2018
+      courses:
+        - Diseño Mecánico Asistido por Ordenador
+        - Mecánica de Materiales Compuestos
+        - Dinámica de Sistemas Multicuerpo
+        - Tribología
+        - Optimización Topológica
+        - Simulación CFD
+      summary: |
+        - Especialización en simulación numérica y diseño avanzado de componentes mecánicos.
+        - Trabajo de fin de máster sobre análisis de fatiga en palas de aerogeneradores.
+        - Colaboración con departamento de I+D de empresa del sector eólico.
+  work:
+    - name: Siemens Gamesa Renewable Energy
+      url: https://www.siemensgamesa.com
+      position: Ingeniero Mecánico de Diseño
+      startDate: Sep 1, 2018
+      endDate: Dec 1, 2021
+      summary: |
+        - Diseño y desarrollo de componentes mecánicos para aerogeneradores de gran potencia.
+        - Análisis estructural y de fatiga mediante ANSYS, optimizando la vida útil de los componentes.
+        - Coordinación con equipos de fabricación y proveedores para asegurar la viabilidad del diseño.
+        - Redacción de especificaciones técnicas y documentación de ingeniería.
+      keywords:
+        - Aerogeneradores
+        - Diseño mecánico
+        - CATIA V5
+        - ANSYS
+        - Fatiga
+        - Normativa IEC
+    - name: SEAT S.A.
+      url: https://www.seat.es
+      position: Ingeniero de Producto - Componentes Mecánicos
+      startDate: Jan 1, 2022
+      summary: |
+        - Gestión del ciclo de vida de componentes mecánicos para vehículos eléctricos.
+        - Aplicación de GD&T y normas IATF 16949 en la definición de especificaciones.
+        - Liderazgo de equipos multidisciplinares en la resolución de problemas de calidad.
+        - Implementación de acciones de reducción de costes sin comprometer el rendimiento.
+      keywords:
+        - Automoción
+        - SolidWorks
+        - GD&T
+        - IATF 16949
+        - APQP
+        - Reducción de costes
+  languages:
+    - language: Spanish
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - Nativo
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - TOEFL iBT 110
+        - Uso profesional
+    - language: French
+      fluency: Limited Working Proficiency
+      keywords:
+        - DELF B1
+  skills:
+    - name: Diseño Mecánico CAD
+      level: Expert
+      keywords:
+        - SolidWorks
+        - CATIA V5
+        - AutoCAD
+        - Inventor
+        - GD&T
+    - name: Simulación y Análisis CAE
+      level: Advanced
+      keywords:
+        - ANSYS
+        - Abaqus
+        - MATLAB
+        - Simulink
+        - CFD
+    - name: Fabricación y Procesos
+      level: Advanced
+      keywords:
+        - Lean Manufacturing
+        - Six Sigma
+        - CNC
+        - Impresión 3D
+        - Soldadura
+    - name: Gestión de Proyectos
+      level: Intermediate
+      keywords:
+        - PMP
+        - Agile
+        - Scrum
+        - Microsoft Project
+        - SAP
+    - name: Programación y Herramientas
+      level: Intermediate
+      keywords:
+        - Python
+        - VBA
+        - MATLAB
+        - PLC
+        - Arduino
+  awards:
+    - title: Premio a la Innovación en Diseño Mecánico
+      date: Nov 2019
+      awarder: Colegio Oficial de Ingenieros Industriales de Madrid
+      summary: |
+        Reconocimiento por el desarrollo de un sistema de transmisión más eficiente para aerogeneradores.
+  certificates:
+    - name: Certified SolidWorks Professional (CSWP)
+      issuer: Dassault Systèmes
+      date: Mar 2018
+      url: https://www.solidworks.com/certification
+    - name: Project Management Professional (PMP)
+      issuer: Project Management Institute
+      date: Jun 2020
+      url: https://www.pmi.org/certifications/project-management-pmp
+    - name: Lean Six Sigma Green Belt
+      issuer: ASQ
+      date: Sep 2019
+      url: https://asq.org/cert/lean-six-sigma-green-belt
+  publications:
+    - name: Análisis de fatiga en palas de aerogeneradores de gran potencia
+      publisher: Revista Iberoamericana de Ingeniería Mecánica
+      releaseDate: Dec 2021
+      url: https://www.revista-ingenieria-mecanica.org/articulo/12345
+      summary: |
+        Estudio sobre la vida a fatiga de materiales compuestos en palas de aerogeneradores mediante simulación numérica y validación experimental.
+  projects:
+    - name: Diseño de chasis ligero para vehículo eléctrico
+      startDate: Jan 2020
+      endDate: Dec 2020
+      description: Proyecto de I+D para la optimización topológica de un chasis
+        tubular de aluminio.
+      summary: |
+        - Rediseño del chasis reduciendo un 18% el peso manteniendo la rigidez torsional.
+        - Validación mediante análisis FEM (ANSYS) y pruebas físicas en pista.
+        - Coordinación con proveedores para la fabricación de prototipos.
+      keywords:
+        - Optimización topológica
+        - Aluminio
+        - FEM
+        - Vehículo eléctrico
+      url: https://www.proyectochasis.com
+  interests:
+    - name: Automoción
+      keywords:
+        - Vehículos eléctricos
+        - Clásicos
+        - Motos
+    - name: Energías Renovables
+      keywords:
+        - Eólica
+        - Solar
+        - Almacenamiento
+    - name: Deporte
+      keywords:
+        - Ciclismo
+        - Senderismo
+        - Natación
+  volunteer:
+    - organization: Fundación Ingeniería Sin Fronteras
+      url: https://www.isf.es
+      position: Mentor de Jóvenes Ingenieros
+      startDate: Sep 2019
+      endDate: Jun 2022
+      summary: |
+        - Mentoría a estudiantes de ingeniería en el desarrollo de proyectos de cooperación.
+        - Organización de talleres sobre diseño sostenible y energías renovables.
+        - Colaboración en la evaluación de prototipos para comunidades rurales.
+
+locale:
+  language: es

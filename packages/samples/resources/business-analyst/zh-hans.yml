@@ -1,0 +1,283 @@
+content:
+  basics:
+    name: 陈思远
+    headline: '资深业务分析师 | 数字化转型与数据驱动决策'
+    phone: '+86 21 6888 0136'
+    email: siyuan.chen@example.com
+    url: https://www.siyuanchen-analytics.com
+    summary: |
+      - 9 年金融科技与供应链领域业务分析经验，擅长需求调研、流程建模、数据洞察与跨部门协同。
+      - 主导 10+ 个数字化项目，覆盖业务蓝图、需求规格、UAT 测试与上线复盘，推动流程效率提升 25% 以上。
+      - 熟练使用 SQL、Tableau、Power BI、Jira 与 Confluence，能够将复杂业务问题转化为可执行方案。
+      - 具备优秀的利益相关方管理与沟通能力，善于在业务、产品、技术与运营团队之间建立高效协作。
+
+  location:
+    address: 浦东新区世纪大道 100 号
+    city: 上海
+    region: 上海市
+    country: China
+    postalCode: "200120"
+
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/siyuan-chen-ba
+      username: siyuan-chen-ba
+    - network: Medium
+      url: https://medium.com/@siyuan.chen
+      username: siyuan.chen
+    - network: Zhihu
+      url: https://www.zhihu.com/people/siyuan-chen-ba
+      username: 陈思远
+
+  education:
+    - institution: 上海财经大学
+      url: https://www.sufe.edu.cn
+      degree: Bachelor
+      area: 信息管理与信息系统
+      score: "3.8/4.0"
+      startDate: '2012-09-01'
+      endDate: '2016-06-30'
+      courses:
+        - 管理信息系统
+        - 数据库原理与应用
+        - 运筹学
+        - 统计学
+        - 业务流程管理
+        - 项目管理
+        - 数据分析基础
+        - 经济学原理
+      summary: |
+        - 系统学习信息系统规划、数据库设计与业务流程优化
+        - 获校级优秀学生奖学金，毕业设计聚焦企业数据治理与流程分析
+
+  work:
+    - name: 星瀚数字科技（上海）有限公司
+      url: https://www.xinghan-digital.com
+      position: 高级业务分析师
+      startDate: '2021-07-01'
+      summary: |
+        - 负责金融科技产品线的业务分析与需求管理，覆盖客户尽调、风控审批与运营监控等核心流程
+        - 主导 6 个跨部门数字化项目，输出业务蓝图、需求规格说明书、流程模型与 UAT 方案
+        - 建立需求优先级评估机制，协调产品、研发、风控与运营团队，按期交付率提升至 95%
+        - 设计经营分析看板与关键指标口径，支持管理层进行月度经营复盘与资源调配
+        - 组织用户访谈与工作坊，沉淀需求模板与业务术语库，缩短新成员上手周期 30%
+      keywords:
+        - 需求管理
+        - 流程建模
+        - 利益相关方沟通
+        - 数据看板
+        - 金融科技
+    - name: 云帆供应链管理有限公司
+      url: https://www.yunfan-supply.com
+      position: 业务分析师
+      startDate: '2018-04-01'
+      endDate: '2021-06-30'
+      summary: |
+        - 深入采购、仓储与物流业务，梳理订单履约全链路流程并识别效率瓶颈
+        - 完成 20+ 份业务需求文档与流程现状图，推动仓储作业标准化和异常处理机制落地
+        - 与数据团队合作搭建库存周转、履约时效与成本分析报表，辅助运营策略调整
+        - 参与 ERP 系统升级项目，负责需求澄清、测试用例评审与上线培训
+        - 通过流程优化将订单异常处理时长缩短 18%，库存盘点差异率降低 12%
+      keywords:
+        - 供应链
+        - 流程优化
+        - ERP
+        - 需求文档
+        - 数据分析
+    - name: 睿联市场咨询有限公司
+      url: https://www.ruilian-consulting.com
+      position: 数据分析师
+      startDate: '2016-07-01'
+      endDate: '2018-03-31'
+      summary: |
+        - 为零售与消费品客户提供市场研究、用户洞察与经营分析支持
+        - 使用 SQL 与 Excel 清洗和分析调研数据，撰写行业分析与客户洞察报告
+        - 参与 15+ 个咨询项目，负责访谈纪要、问卷设计、数据验证与汇报材料制作
+        - 与项目经理共同向客户汇报关键发现，提出可落地的业务改进建议
+      keywords:
+        - 市场研究
+        - 用户洞察
+        - SQL
+        - 报告撰写
+        - 零售行业
+
+  skills:
+    - name: 业务分析
+      level: Expert
+      keywords:
+        - 需求调研与访谈
+        - 业务流程建模
+        - 需求规格说明书
+        - 用户故事与用例
+        - UAT 测试管理
+        - 利益相关方管理
+    - name: 数据分析
+      level: Advanced
+      keywords:
+        - SQL
+        - Tableau
+        - Power BI
+        - Excel 高级分析
+        - 指标体系设计
+        - A/B 测试基础
+    - name: 产品与项目
+      level: Advanced
+      keywords:
+        - Jira
+        - Confluence
+        - Visio
+        - 敏捷开发
+        - 项目计划与跟踪
+        - 风险与变更管理
+    - name: 行业知识
+      level: Advanced
+      keywords:
+        - 金融科技
+        - 供应链管理
+        - 零售与消费品
+        - 数字化转型
+        - 数据治理
+
+  languages:
+    - language: Chinese
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - 普通话二级甲等
+        - 商务写作
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - CET-6
+        - 商务沟通
+        - 英文报告撰写
+    - language: Japanese
+      fluency: Elementary Proficiency
+      keywords:
+        - JLPT N4
+        - 基础商务会话
+
+  awards:
+    - title: 年度优秀员工
+      date: '2023-12'
+      awarder: 星瀚数字科技（上海）有限公司
+      summary: |
+        表彰在金融科技业务分析项目中的突出贡献，主导需求管理机制建设并推动跨部门协作效率提升。
+    - title: 业务分析卓越奖
+      date: '2020-11'
+      awarder: 云帆供应链管理有限公司
+      summary: |
+        因供应链流程优化项目表现优异获奖，项目实现订单异常处理时长缩短 18%。
+
+  certificates:
+    - name: 国际商业分析专业人士认证（CBAP）
+      issuer: 国际商业分析协会（IIBA）
+      date: '2022-09'
+      url: https://www.iiba.org/certification/cbap
+    - name: 项目管理专业人士认证（PMP）
+      issuer: 美国项目管理协会（PMI）
+      date: '2021-06'
+      url: https://www.pmi.org/certifications/project-management-pmp
+    - name: 谷歌数据分析专业证书
+      issuer: 谷歌
+      date: '2020-08'
+      url: https://grow.google/certificates/data-analytics/
+
+  publications:
+    - name: 数据驱动的业务流程优化实践
+      publisher: 企业管理评论
+      releaseDate: '2023-05'
+      url: https://www.qyglpl.com/article/2023/data-driven-process-optimization
+      summary: |
+        - 结合供应链与金融科技项目案例，总结从业务问题识别到指标落地的分析方法
+        - 提出以流程数据、用户反馈与经营指标相结合的需求优先级评估框架
+
+  projects:
+    - name: 供应链履约可视化平台
+      url: https://www.yunfan-supply.com/projects/visibility-platform
+      description: 面向采购、仓储与物流团队的履约全链路可视化与异常预警平台
+      startDate: '2019-03-01'
+      endDate: '2020-10-31'
+      summary: |
+        - 负责业务需求调研、流程现状梳理与需求规格编写
+        - 设计订单履约、库存周转与异常处理等核心指标口径
+        - 协调研发与运营完成 UAT 测试及上线培训
+        - 上线后订单异常平均处理时长缩短 18%
+      keywords:
+        - 供应链
+        - 可视化
+        - 异常预警
+        - 需求分析
+    - name: 客户尽调流程数字化
+      url: https://www.xinghan-digital.com/projects/kyc-digital
+      description: 覆盖客户准入、风险评级与审批协同的尽调流程数字化项目
+      startDate: '2022-02-01'
+      endDate: '2023-08-31'
+      summary: |
+        - 访谈风控、合规与客户经理，梳理尽调流程痛点与合规要求
+        - 输出业务蓝图、用户故事、流程模型与验收标准
+        - 设计审批时效与退回率等运营指标，支持持续优化
+        - 项目上线后平均审批周期缩短 22%
+      keywords:
+        - 金融科技
+        - 客户尽调
+        - 流程数字化
+        - 合规
+    - name: 零售客户洞察分析
+      url: https://www.ruilian-consulting.com/projects/retail-insight
+      description: 基于调研与销售数据的零售客户分群与经营策略分析项目
+      startDate: '2017-03-01'
+      endDate: '2017-12-31'
+      summary: |
+        - 设计问卷与访谈提纲，完成多城市消费者调研数据清洗
+        - 使用 SQL 与 Excel 进行客户分群、交叉分析与趋势洞察
+        - 撰写客户洞察报告并向客户管理层汇报策略建议
+      keywords:
+        - 零售
+        - 客户洞察
+        - 市场研究
+        - 数据分析
+
+  interests:
+    - name: 行业研究
+      keywords:
+        - 数字化转型
+        - 商业分析
+        - 组织效能
+    - name: 运动
+      keywords:
+        - 马拉松
+        - 游泳
+        - 徒步
+    - name: 创作
+      keywords:
+        - 商业写作
+        - 摄影
+        - 播客
+
+  volunteer:
+    - organization: 上海青年商业分析社区
+      url: https://www.shyba-community.org
+      position: 公益导师
+      startDate: '2020-09-01'
+      endDate: '2024-06-30'
+      summary: |
+        - 为高校学生与初入职场者提供商业分析职业发展与案例辅导
+        - 参与组织需求分析工作坊与行业分享活动
+        - 协助社区沉淀案例库与导师制流程
+
+  references:
+    - name: 周敏
+      relationship: 星瀚数字科技产品总监
+      email: min.zhou@example.com
+      phone: '+86 21 6888 0142'
+      summary: |
+        陈思远具备扎实的业务分析能力与出色的跨部门沟通能力，能够快速理解复杂业务并推动方案落地。
+    - name: 李昊
+      relationship: 云帆供应链运营负责人
+      email: hao.li@example.com
+      phone: '+86 21 5566 0189'
+      summary: |
+        在供应链流程优化项目中展现出严谨的分析思维和较强的推动力，是团队值得信赖的业务伙伴。
+
+locale:
+  language: zh-hans

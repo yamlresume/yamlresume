@@ -1,0 +1,237 @@
+content:
+  basics:
+    name: Daan van den Berg
+    headline: Werktuigbouwkundig ingenieur met focus op precisietechniek en duurzame
+      productontwikkeling
+    phone: "+31 6 12345678"
+    email: daan.vandenberg@example.nl
+    url: https://www.daanvandenberg.nl
+    summary: |
+      - Ervaren werktuigbouwkundig ingenieur met een masterdiploma van de TU Delft en meer dan vijf jaar ervaring in de hightech- en maakindustrie.
+      - Sterk in het ontwerpen en valideren van complexe mechanische systemen, van concept tot productie, met oog voor kosten, kwaliteit en duurzaamheid.
+      - Bedreven in CAD (SolidWorks, CATIA V5, Siemens NX), FEM-analyse (ANSYS) en data-gedreven optimalisatie met MATLAB en Python.
+      - Teamspeler met uitstekende communicatieve vaardigheden en ervaring in multidisciplinaire projecten volgens Agile/Scrum en Lean-principes.
+  location:
+    address: Oudegracht 123
+    city: Utrecht
+    region: Utrecht
+    country: Netherlands
+    postalCode: "3512 AB"
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/daanvandenberg
+      username: daanvandenberg
+    - network: GitHub
+      url: https://github.com/daanvandenberg
+      username: daanvandenberg
+  education:
+    - institution: Technische Universiteit Delft
+      url: https://www.tudelft.nl
+      degree: Master
+      area: Werktuigbouwkunde
+      score: "8.2/10"
+      startDate: Sep 1, 2017
+      endDate: Jul 1, 2019
+      courses:
+        - Mechanica van Materialen
+        - Numerieke Stromingsleer
+        - Precisietechniek
+        - Productietechniek
+        - Systeemontwerp
+        - Regeltechniek
+      summary: |
+        - Afgestudeerd op het ontwerp en de validatie van een compacte warmtewisselaar voor industriële koelsystemen.
+        - Specialisatie in precisietechniek, materiaalkunde en geavanceerde simulatiemethoden.
+        - Projecten uitgevoerd in samenwerking met ASML, Demcon en VDL.
+    - institution: Hogeschool Utrecht
+      url: https://www.hu.nl
+      degree: Bachelor
+      area: Werktuigbouwkunde
+      score: "8.0"
+      startDate: Sep 1, 2013
+      endDate: Jul 1, 2017
+      courses:
+        - Sterkteleer
+        - Warmteleer
+        - CAD-Technieken
+        - Productieprocessen
+        - Elektrotechniek
+        - Projectmatig Werken
+      summary: |
+        - Breed opgeleide werktuigbouwkundige met praktijkervaring in ontwerp, productie en onderhoud.
+        - Minor in Duurzame Energie en stage bij Fokker Technologies.
+        - Actief lid van de studievereniging en deelnemer aan nationale ontwerpwedstrijden.
+  work:
+    - name: ASML
+      url: https://www.asml.com
+      position: Senior Werktuigbouwkundig Ingenieur
+      startDate: Jan 1, 2022
+      summary: |
+        - Verantwoordelijk voor het mechanisch ontwerp en de integratie van precisiemodules voor geavanceerde lithografiesystemen.
+        - Uitvoeren van FEM-analyses en tolerantieanalyses om de stabiliteit en nauwkeurigheid van systemen te waarborgen.
+        - Samenwerken met elektronica-, software- en productie-engineeringteams in een multidisciplinaire omgeving.
+        - Begeleiden van junior ingenieurs en bijdragen aan continue verbetering van ontwerpprocessen.
+      keywords:
+        - Precisietechniek
+        - FEM-analyse
+        - Cleanroom
+        - Systeemtechniek
+    - name: VDL Enabling Technologies Group
+      url: https://www.vdlgroep.com
+      position: Werktuigbouwkundig Ingenieur
+      startDate: Sep 1, 2019
+      endDate: Dec 31, 2021
+      summary: |
+        - Ontworpen van machineonderdelen en assemblages voor de halfgeleider- en medische industrie.
+        - Opgesteld van technische specificaties, tolerantieanalyses en productierapporten.
+        - Begeleid van prototyping en serieproductie bij interne en externe leveranciers.
+        - Verantwoordelijk voor kwaliteitsverbeteringen en kostenreductie binnen lopende projecten.
+      keywords:
+        - Machinebouw
+        - GD&T
+        - Prototyping
+        - Kwaliteitsbeheer
+    - name: Fokker Technologies
+      url: https://www.fokker.com
+      position: Stagiair Werktuigbouwkunde
+      startDate: Feb 1, 2016
+      endDate: Jul 31, 2016
+      summary: |
+        - Ondersteund bij het ontwerp en de analyse van lichte vliegtuigcomponenten.
+        - Uitgevoerd van materiaalonderzoek en het opstellen van testprotocollen.
+        - Gerapporteerd over resultaten aan het engineeringteam en de stagebegeleider.
+      keywords:
+        - Luchtvaart
+        - Materiaalkunde
+        - Testen
+        - Rapportage
+  skills:
+    - name: Werktuigbouwkundig Ontwerp
+      level: Expert
+      keywords:
+        - SolidWorks
+        - CATIA V5
+        - Siemens NX
+        - GD&T
+        - DFM
+    - name: Simulatie en Analyse
+      level: Advanced
+      keywords:
+        - ANSYS
+        - FEM
+        - MATLAB
+        - Python
+        - CFD
+    - name: Productie en Prototyping
+      level: Advanced
+      keywords:
+        - 3D-printen
+        - CNC-frezen
+        - Lasersnijden
+        - Assemblage
+    - name: Projectmanagement
+      level: Intermediate
+      keywords:
+        - Agile
+        - Scrum
+        - Lean Six Sigma
+        - IPMA
+  languages:
+    - language: Dutch
+      fluency: Native or Bilingual Proficiency
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - TOEFL 110
+        - IELTS 7.5
+    - language: German
+      fluency: Limited Working Proficiency
+      keywords:
+        - Goethe B1
+  awards:
+    - title: Beste Afstudeerproject Werktuigbouwkunde
+      date: Jul 2019
+      awarder: Technische Universiteit Delft
+      summary: |
+        Toegekend voor het ontwerp van een compacte, energiezuinige warmtewisselaar met een verbeterde warmteoverdracht van 18%.
+    - title: Innovatieprijs VDL Groep
+      date: Nov 2021
+      awarder: VDL Groep
+      summary: |
+        Prijs voor een kostenbesparend ontwerp van een module voor de halfgeleiderindustrie, met een reductie van assemblagekosten van 12%.
+  certificates:
+    - name: Certified SolidWorks Professional (CSWP)
+      issuer: Dassault Systèmes
+      date: Mar 2020
+      url: https://www.solidworks.com/certification
+    - name: Lean Six Sigma Green Belt
+      issuer: ASQ
+      date: Jun 2021
+      url: https://asq.org/cert/lean-six-sigma-green-belt
+    - name: Projectmanagement IPMA-D
+      issuer: IPMA Nederland
+      date: Sep 2022
+      url: https://www.ipma.nl
+  publications:
+    - name: Optimalisatie van warmtewisselaars voor compacte industriële systemen
+      publisher: TVVL Magazine
+      releaseDate: May 2021
+      url: https://www.tvvl.nl
+      summary: |
+        - Beschrijft een methode om warmtewisselaars te optimaliseren met behulp van CFD en experimenteel onderzoek.
+        - Toont een verbetering van de warmteoverdracht en een reductie van het drukverlies in industriële koelsystemen.
+        - Gepresenteerd op de TVVL Innovatiedag 2021.
+  projects:
+    - name: Compacte Warmtewisselaar
+      startDate: Sep 2018
+      endDate: Jun 2019
+      description: Ontwerp en validatie van een compacte warmtewisselaar voor
+        industriële koelsystemen.
+      summary: |
+        - Ontworpen in SolidWorks en geanalyseerd met ANSYS Fluent.
+        - Verbeterde warmteoverdracht met 18% en verlaagde drukval met 10%.
+        - Prototype getest in het laboratorium van de TU Delft.
+      keywords:
+        - Warmteoverdracht
+        - CFD
+        - SolidWorks
+        - Prototyping
+      url: https://www.tudelft.nl
+    - name: Modulaire Robotarm
+      startDate: Feb 2018
+      endDate: Aug 2018
+      description: Ontwikkeling van een modulaire robotarm voor flexibele
+        productietoepassingen.
+      summary: |
+        - Ontworpen van een robotarm met verwisselbare grijpers en een bereik van 1,2 meter.
+        - Geïntegreerd van sensoren en een eenvoudige besturing met Python.
+        - Gepresenteerd op de Techniekbeurs Utrecht 2018.
+      keywords:
+        - Robotica
+        - Modulair Ontwerp
+        - Python
+        - Sensoren
+      url: https://www.hu.nl
+  interests:
+    - name: Techniek en Innovatie
+      keywords:
+        - 3D-printen
+        - Robotica
+        - Duurzame Energie
+    - name: Sport en Buitenleven
+      keywords:
+        - Wielrennen
+        - Wandelen
+        - Zeilen
+  volunteer:
+    - organization: Stichting Techniekpromotie
+      url: https://www.techniekpromotie.nl
+      position: Techniekmentor
+      startDate: Sep 2020
+      summary: |
+        - Begeleiden van middelbare scholieren bij techniekprojecten en het ontwerpen van eenvoudige machines.
+        - Organiseren van workshops over 3D-printen en duurzame energie.
+        - Bijdragen aan het vergroten van interesse in techniek en werktuigbouwkunde onder jongeren.
+
+locale:
+  language: nl

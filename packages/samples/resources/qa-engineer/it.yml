@@ -1,0 +1,202 @@
+content:
+  basics:
+    name: Luca Bianchi
+    headline: QA Engineer
+    phone: "+39 333 123 4567"
+    email: luca.bianchi@example.com
+    url: https://www.lucabianchi.it
+    summary: |
+      - QA Engineer con oltre 5 anni di esperienza nella verifica e validazione di software
+      - Specializzato in test manuali e automatizzati, con solida conoscenza di metodologie Agile
+      - Esperto nell'utilizzo di strumenti come Selenium, JUnit, TestNG e Jenkins
+      - Capacità di analisi dei requisiti e scrittura di test case dettagliati
+      - Forte attenzione ai dettagli e orientamento alla qualità del prodotto
+  location:
+    address: Via Roma 1
+    city: Milano
+    region: Lombardia
+    country: Italy
+    postalCode: "20100"
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/lucabianchi
+      username: lucabianchi
+    - network: GitHub
+      url: https://github.com/lucabianchi
+      username: lucabianchi
+  education:
+    - institution: Politecnico di Milano
+      url: https://www.polimi.it
+      degree: Master
+      area: Ingegneria Informatica
+      score: "110/110"
+      startDate: Sep 1, 2018
+      endDate: Jul 1, 2020
+      courses:
+        - Ingegneria del Software
+        - Sistemi di Qualità
+        - Metodi Formali per il Software
+        - Testing e Verifica del Software
+        - Architetture Software
+        - Sicurezza Informatica
+      summary: |
+        - Approfondimento delle metodologie di testing e quality assurance
+        - Partecipazione a progetti di gruppo per lo sviluppo di software di qualità
+        - Tesi sperimentale su tecniche di test automatico per applicazioni web
+  work:
+    - name: TechQuality S.p.A.
+      url: https://www.techquality.it
+      position: Senior QA Engineer
+      startDate: Jan 1, 2021
+      endDate:
+      summary: |
+        - Responsabile della strategia di test per un'importante piattaforma e-commerce
+        - Progettazione e implementazione di suite di test automatici con Selenium e TestNG
+        - Coordinamento di un team di 3 QA Engineer junior
+        - Collaborazione con i team di sviluppo per l'analisi dei difetti e il miglioramento continuo
+        - Riduzione del 30% dei difetti in produzione grazie a test di regressione automatizzati
+      keywords:
+        - Automazione dei test
+        - Selenium
+        - TestNG
+        - Jenkins
+        - Agile
+        - Qualità del software
+    - name: SoftwareTest Italia
+      url: https://www.softwaretestitalia.it
+      position: QA Engineer
+      startDate: Sep 1, 2018
+      endDate: Dec 31, 2020
+      summary: |
+        - Esecuzione di test manuali e automatici su applicazioni web e mobile
+        - Scrittura di test case e piani di test basati sui requisiti funzionali
+        - Utilizzo di JIRA per la gestione dei difetti e la reportistica
+        - Partecipazione a sprint review e daily stand-up in ambiente Agile
+        - Collaborazione con sviluppatori per la risoluzione di bug critici
+      keywords:
+        - Test manuale
+        - Test automatico
+        - JIRA
+        - Selenium
+        - Postman
+        - Agile
+  skills:
+    - name: Test Automation
+      level: Expert
+      keywords:
+        - Selenium
+        - TestNG
+        - JUnit
+        - Cucumber
+        - Jenkins
+        - Postman
+    - name: Test Manuale
+      level: Advanced
+      keywords:
+        - Analisi dei requisiti
+        - Scrittura di test case
+        - Test di regressione
+        - Test di integrazione
+        - Test di sistema
+    - name: Metodologie
+      level: Advanced
+      keywords:
+        - Agile
+        - Scrum
+        - Kanban
+        - TDD
+        - BDD
+    - name: Strumenti
+      level: Advanced
+      keywords:
+        - JIRA
+        - Confluence
+        - Git
+        - SQL
+        - Docker
+  languages:
+    - language: Italian
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - Madrelingua
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - IELTS 7.5
+        - Inglese commerciale
+  awards:
+    - title: Premio Qualità 2022
+      awarder: TechQuality S.p.A.
+      date: Dec 2022
+      summary: |
+        Riconoscimento per l'eccellenza nella implementazione di processi di test automatizzati che hanno portato a una riduzione significativa dei difetti in produzione.
+  certificates:
+    - name: ISTQB Certified Tester - Advanced Level
+      issuer: ISTQB
+      date: Mar 2021
+      url: https://www.istqb.org/certifications/advanced-level
+    - name: Certified Selenium Professional
+      issuer: Selenium Academy
+      date: Jun 2020
+      url: https://www.seleniumacademy.com/certification
+  publications:
+    - name: "Automazione dei test per applicazioni web moderne"
+      publisher: Rivista Italiana di Qualità del Software
+      releaseDate: Sep 2021
+      url: https://www.qa-rivista.it/articoli/automazione-test-web
+      summary: |
+        - Articolo che esplora le migliori pratiche per l'automazione dei test in ambienti Agile
+        - Discussione di casi di studio e strumenti consigliati
+  projects:
+    - name: Framework di Automazione dei Test
+      url: https://github.com/lucabianchi/test-framework
+      description: Framework di test automatizzato per applicazioni web basato su
+        Selenium e TestNG
+      startDate: Jan 2022
+      endDate: Jun 2022
+      summary: |
+        - Sviluppo di un framework modulare per test automatici riutilizzabili
+        - Integrazione con Jenkins per l'esecuzione continua dei test
+        - Riduzione del tempo di esecuzione dei test del 40%
+      keywords:
+        - Selenium
+        - TestNG
+        - Jenkins
+        - Automazione
+    - name: Dashboard per le Metriche di Qualità
+      description: Dashboard per il monitoraggio delle metriche di qualità del software
+      startDate: Mar 2021
+      endDate: Aug 2021
+      summary: |
+        - Creazione di una dashboard interattiva per visualizzare i risultati dei test
+        - Integrazione con JIRA per il recupero automatico dei dati sui difetti
+        - Miglioramento della visibilità sulla qualità del prodotto per il team
+      keywords:
+        - Dashboard
+        - Metriche
+        - JIRA
+        - Qualità
+  interests:
+    - name: Sport
+      keywords:
+        - Corsa
+        - Nuoto
+        - Escursionismo
+    - name: Tecnologia
+      keywords:
+        - Open Source
+        - Intelligenza Artificiale
+        - Scrittura di blog
+  volunteer:
+    - organization: Associazione Qualità Italia
+      url: https://www.qualityitalia.it
+      position: Mentore QA
+      startDate: Sep 2021
+      endDate:
+      summary: |
+        - Volontariato come mentor per giovani QA Engineer
+        - Organizzazione di workshop su test automation e quality assurance
+        - Supporto nella preparazione alle certificazioni ISTQB
+
+locale:
+  language: it

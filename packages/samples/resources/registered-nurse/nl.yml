@@ -1,0 +1,207 @@
+content:
+  basics:
+    name: Sanne de Vries
+    headline: Geregistreerde verpleegkundige met focus op acute en chronische zorg
+    phone: "+31 6 1234 5678"
+    email: sanne.devries@zorgmail.nl
+    url: https://www.sanne-de-vries.nl
+    summary: |
+      Geregistreerde verpleegkundige met meer dan zes jaar ervaring in de ziekenhuiszorg en de eerstelijnszorg. Sterk in het leveren van persoonsgerichte zorg, het opstellen en evalueren van zorgplannen en het veilig uitvoeren van medicatie- en wondzorg.
+
+      - Ervaren in acute zorg, chronische zorg en palliatieve zorg
+      - Vaardig met elektronische patiëntendossiers (HiX, EPIC) en zorgtechnologie
+      - Communicatief sterk, sociaal en gericht op samenwerking met patiënten, naasten en multidisciplinaire teams
+      - Proactief in kwaliteitsverbetering, patiëntveiligheid en professionele ontwikkeling
+  location:
+    address: Maliebaan 45
+    city: Utrecht
+    region: Utrecht
+    country: Netherlands
+    postalCode: "3512 JE"
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/sanne-de-vries-rn
+      username: sanne-de-vries-rn
+    - network: Medium
+      url: https://medium.com/@sannezorg
+      username: sannezorg
+  education:
+    - institution: Hogeschool Utrecht
+      url: https://www.hu.nl
+      degree: Bachelor
+      area: HBO-Verpleegkunde
+      score: "8.4"
+      startDate: 2014-09-01
+      endDate: 2018-07-01
+      courses:
+        - Verpleegkundig handelen
+        - Anatomie en fysiologie
+        - Pathologie
+        - Farmacologie
+        - Verpleegkundige ethiek
+        - Communicatie en gespreksvoering
+        - Kwaliteit en veiligheid in de zorg
+        - Zorgtechnologie
+      summary: |
+        - Afgestudeerd met een brede basis in ziekenhuiszorg, chronische zorg en preventie
+        - Tijdens stages ervaring opgedaan op een chirurgische afdeling en in de wijkverpleging
+        - Afstudeeronderzoek gedaan naar medicatieveiligheid bij ouderen
+  work:
+    - name: Sint-Maartens Kliniek
+      url: https://www.sintmaartenskliniek.nl
+      position: Verpleegkundige
+      startDate: 2021-03-01
+      summary: |
+        - Verantwoordelijk voor de verpleegkundige zorg aan patiënten op de afdeling orthopedie en revalidatie
+        - Stelt zorgplannen op, voert deze uit en evalueert ze samen met patiënt en naasten
+        - Voert medicatiebeheer, wondzorg en pijnmanagement uit volgens protocollen
+        - Werkt samen met artsen, fysiotherapeuten, apothekers en verzorgenden in een multidisciplinair team
+        - Draagt bij aan kwaliteitsverbetering door deelname aan audits en het melden van incidenten
+      keywords:
+        - Klinische zorg
+        - Patiëntveiligheid
+        - Zorgplanning
+        - Medicatiebeheer
+        - Wondzorg
+        - Revalidatie
+    - name: Zorgcentrum Parkzicht
+      url: https://www.zorgcentrumparkzicht.nl
+      position: Verpleegkundige
+      startDate: 2018-08-01
+      endDate: 2021-02-28
+      summary: |
+        - Verleende persoonsgerichte zorg aan ouderen met complexe somatische en psychogeriatrische zorgvragen
+        - Coördineerde zorgprocessen, bewaakte veiligheid en ondersteunde verzorgenden bij de uitvoering van zorg
+        - Voerde verpleegtechnische handelingen uit, waaronder wondzorg, insulinetoediening en katheterzorg
+        - Had aandachtsgebied palliatieve zorg en begeleidde families in de laatste levensfase
+        - Nam deel aan multidisciplinair overleg en familiegesprekken
+      keywords:
+        - Ouderenzorg
+        - Palliatieve zorg
+        - Zorgcoördinatie
+        - Psychogeriatrie
+        - Familiebegeleiding
+  skills:
+    - name: Klinische Verpleegkunde
+      level: Expert
+      keywords:
+        - Anamnese
+        - Zorgdiagnose
+        - Zorgplanning
+        - Interventies
+        - Evaluatie
+    - name: Medicatiebeheer
+      level: Advanced
+      keywords:
+        - Medicatiecontrole
+        - Toediening
+        - Bijwerkingen
+        - Polyfarmacie
+        - Veiligheid
+    - name: Wondzorg
+      level: Advanced
+      keywords:
+        - Wondbeoordeling
+        - Verbandleer
+        - Infectiepreventie
+        - Compressietherapie
+    - name: Communicatie
+      level: Expert
+      keywords:
+        - Gespreksvoering
+        - Familiegesprekken
+        - Multidisciplinair overleg
+        - Voorlichting
+    - name: Digitale Zorg
+      level: Intermediate
+      keywords:
+        - HiX
+        - EPIC
+        - Nedap
+        - Zorgtechnologie
+        - Microsoft Teams
+  languages:
+    - language: Dutch
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - Moedertaal
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - TOEFL iBT 105
+        - Professionele zorgcommunicatie
+    - language: German
+      fluency: Limited Working Proficiency
+      keywords:
+        - Goethe-Zertifikat B1
+  awards:
+    - title: Verpleegkundige van het Jaar 2023
+      date: 2023-11-15
+      awarder: Sint-Maartens Kliniek
+      summary: |
+        Erkend voor uitmuntende patiëntgerichte zorg, sterke samenwerking en initiatief in het verbeteren van medicatieveiligheid op de afdeling.
+  certificates:
+    - name: BIG-registratie Verpleegkundige
+      issuer: CIBG
+      date: 2018-08-01
+      url: https://www.bigregister.nl
+    - name: Basale reanimatie (BLS)
+      issuer: Nederlandse Hartstichting
+      date: 2024-03-01
+      url: https://www.hartstichting.nl
+    - name: Gevorderde reanimatie (ALS)
+      issuer: Nederlandse Hartstichting
+      date: 2024-04-01
+      url: https://www.hartstichting.nl
+  publications:
+    - name: Medicatieveiligheid bij ouderen in de thuissituatie
+      publisher: Tijdschrift voor Verpleegkunde
+      releaseDate: 2023-06-01
+      url: https://www.tvz.nl
+      summary: |
+        - Artikel over knelpunten en verbeteringen bij medicatieoverdracht tussen ziekenhuis en thuiszorg
+        - Gebaseerd op een kwaliteitsproject binnen de Sint-Maartens Kliniek
+  projects:
+    - name: Medicatieprotocol revalidatieafdeling
+      startDate: 2022-01-01
+      endDate: 2022-12-31
+      description: Implementatie van een vernieuwd medicatieprotocol om
+        overdrachtsfouten te verminderen.
+      summary: |
+        - Analyseerde incidentmeldingen en observeerde medicatieprocessen
+        - Ontwikkelde samen met apotheek en artsen een checklist voor medicatieoverdracht
+        - Verzorgde trainingen aan verpleegkundigen en verzorgenden
+        - Leidde tot 25% minder geregistreerde medicatie-incidenten
+      keywords:
+        - Kwaliteitsverbetering
+        - Patiëntveiligheid
+        - Medicatie
+        - Implementatie
+      url: https://www.sintmaartenskliniek.nl
+  interests:
+    - name: Gezondheid en beweging
+      keywords:
+        - Hardlopen
+        - Yoga
+        - Wandelen
+    - name: Vrijwilligerswerk
+      keywords:
+        - Buurtzorg
+        - Eenzaamheidspreventie
+    - name: Creatief
+      keywords:
+        - Koken
+        - Fotografie
+  volunteer:
+    - organization: Rode Kruis Utrecht
+      url: https://www.rodekruis.nl
+      position: Vrijwilliger EHBO
+      startDate: 2019-09-01
+      endDate: 2024-06-30
+      summary: |
+        - Verleende EHBO-hulp bij lokale evenementen en sportwedstrijden
+        - Hield EHBO-kennis en vaardigheden actueel door jaarlijkse herhalingstrainingen
+        - Droeg bij aan voorlichting over eerste hulp en gezondheid in de wijk
+
+locale:
+  language: nl

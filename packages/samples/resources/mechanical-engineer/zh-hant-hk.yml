@@ -1,0 +1,246 @@
+content:
+  basics:
+    name: 陳家豪
+    headline: 資深機械工程師 | 精密製造與產品研發
+    phone: "+852 9123 4567"
+    email: kaho.chan.eng@gmail.com
+    url: https://www.kahohan-engineering.com
+    summary: |
+      - 八年以上機械設計與產品開發經驗，專注於精密傳動系統、消費電子結構件及電動車零部件
+      - 精通 SolidWorks、Creo 及 ANSYS，能獨立完成由概念設計、3D 建模、有限元分析至量產導入的完整流程
+      - 熟悉 CNC 加工、注塑成型、壓鑄及衝壓等製造工藝，善用 GD&T 與 DFMEA 提升產品良率
+      - 曾帶領五人工程團隊，與香港、深圳及東莞供應商跨地域協作，成功將七款產品由原型推進至量產
+
+      **專業理念**：以數據驅動設計決策，在成本、性能與可製造性之間取得最佳平衡，並重視團隊知識傳承。
+  location:
+    address: 九龍紅磡海逸道 8 號海逸豪園 5 座 18 樓 B 室
+    city: 香港
+    region: 九龍
+    country: Hong Kong
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/kahochan-eng
+      username: kahochan-eng
+    - network: GitHub
+      url: https://github.com/kahochan
+      username: kahochan
+  education:
+    - institution: 香港理工大學
+      url: https://www.polyu.edu.hk
+      degree: Master
+      area: 機械工程學
+      score: 優異
+      startDate: Sep 1, 2019
+      endDate: Nov 30, 2021
+      courses:
+        - 高等有限元分析
+        - 傳熱與流體數值模擬
+        - 先進製造技術
+        - 產品可靠性工程
+      summary: |
+        - 以兼讀形式完成碩士課程，論文主題為電動車電池模組液冷流道優化
+        - 在職期間將課堂所學的 CFD 方法應用於公司實際項目，獲部門嘉許
+    - institution: 香港科技大學
+      url: https://www.ust.hk
+      degree: Bachelor
+      area: 機械工程學
+      score: "3.62/4.0"
+      startDate: Sep 1, 2014
+      endDate: Jun 30, 2018
+      courses:
+        - 工程力學與材料科學
+        - 熱力學與流體力學
+        - 機械設計原理
+        - 電腦輔助設計與製造
+        - 有限元分析
+        - 控制系統與機電整合
+        - 製造工程與品質管理
+        - 畢業設計：電動車電池冷卻模組
+      summary: |
+        - 主修機械工程，成績位列學系前 15%，連續三年獲頒院長嘉許名單
+        - 畢業設計「電動車電池冷卻模組」獲系內最佳設計獎
+        - 擔任學生機械人隊伍結構組組長，負責底盤與傳動機構設計
+  work:
+    - name: 駿達精密科技有限公司
+      url: https://www.chuntat-precision.com.hk
+      position: 資深機械工程師
+      startDate: Mar 1, 2021
+      summary: |
+        - 帶領五人研發小組，負責汽車傳動部件與消費電子精密結構件的設計及量產導入
+        - 主導電動車熱管理模組開發，透過 CFD 模擬優化流道設計，散熱效率提升 22%
+        - 建立 GD&T 圖面規範與 DFMEA 流程，使新產品試產階段的設計變更減少 35%
+        - 與深圳及東莞供應商緊密協作，完成模具驗收、試產跟進及量產放行
+        - 推行 SolidWorks PDM 系統，縮短圖檔審批週期約 40%，並統一零件命名標準
+      keywords:
+        - 精密傳動設計
+        - 熱管理系統
+        - GD&T
+        - DFMEA
+        - 量產導入
+    - name: 亞洲動力系統有限公司
+      url: https://www.asia-power-systems.com
+      position: 機械工程師
+      startDate: Jul 1, 2018
+      endDate: Feb 28, 2021
+      summary: |
+        - 負責工業泵浦與齒輪箱的結構設計、2D 工程圖繪製及 BOM 維護
+        - 運用 ANSYS 進行靜力與模態分析，改善軸承座剛性，降低振動噪音 3.5 dB
+        - 參與舊機型成本優化項目，透過材料替代與結構簡化，每年節省約港幣 120 萬元
+        - 協助品質部門處理客訴，完成根因分析並提出八項設計改善對策
+      keywords:
+        - 齒輪箱設計
+        - ANSYS
+        - 成本優化
+        - 振動分析
+        - BOM 管理
+  skills:
+    - name: 機械設計與建模
+      level: Expert
+      keywords:
+        - SolidWorks
+        - Creo
+        - AutoCAD
+        - 3D 建模
+        - 工程圖繪製
+        - 公差分析
+    - name: 分析與模擬
+      level: Advanced
+      keywords:
+        - ANSYS Mechanical
+        - Abaqus
+        - Fluent / CFD
+        - 熱傳分析
+        - 模態分析
+    - name: 製造工藝
+      level: Advanced
+      keywords:
+        - CNC 加工
+        - 注塑成型
+        - 壓鑄
+        - 衝壓
+        - 模具驗收
+    - name: 品質與流程改善
+      level: Advanced
+      keywords:
+        - GD&T
+        - DFMEA / PFMEA
+        - ISO 9001
+        - 六西格瑪
+        - 8D 報告
+    - name: 項目管理
+      level: Intermediate
+      keywords:
+        - 跨部門協作
+        - 供應商管理
+        - 風險評估
+        - 進度控管
+  languages:
+    - language: Cantonese
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - 母語
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - IELTS 7.5
+        - 技術文件撰寫
+        - 客戶簡報
+    - language: Mandarin
+      fluency: Full Professional Proficiency
+      keywords:
+        - 內地供應商協調
+    - language: Japanese
+      fluency: Elementary Proficiency
+      keywords:
+        - JLPT N4
+  awards:
+    - title: 香港工程師學會最佳畢業設計獎
+      date: Oct 2018
+      awarder: 香港工程師學會
+      summary: |
+        以「電動車電池冷卻模組輕量化設計」獲頒年度最佳畢業設計獎，評審肯定其在散熱效能、重量與製造成本之間取得的平衡。
+    - title: 年度傑出員工獎
+      date: Jan 2023
+      awarder: 駿達精密科技有限公司
+      summary: |
+        表揚其在電動車熱管理模組項目中的技術領導與跨部門協調貢獻，為公司開拓新能源汽車客戶的關鍵人物。
+  certificates:
+    - name: 註冊專業工程師（機械工程）
+      issuer: 香港工程師學會
+      date: Jun 2022
+      url: https://www.hkie.org.hk
+    - name: 六西格瑪綠帶認證
+      issuer: 香港生產力促進局
+      date: Nov 2020
+      url: https://www.hkpc.org
+    - name: 項目管理專業人士（PMP）
+      issuer: Project Management Institute
+      date: Sep 2023
+      url: https://www.pmi.org
+  publications:
+    - name: 電動車電池模組液冷流道之數值模擬與實驗驗證
+      publisher: 香港工程師學會學報
+      releaseDate: Dec 2021
+      url: https://www.hkie.org.hk/journal
+      summary: |
+        - 以 CFD 模擬比較三種流道設計的散熱表現與壓降特性
+        - 實驗結果顯示蛇形流道在溫差均勻性與泵功耗之間取得最佳平衡
+        - 研究成果已應用於兩款量產車型的電池模組設計
+  projects:
+    - name: 電動車電池熱管理模組
+      url: https://www.chuntat-precision.com.hk/projects/btms
+      description: 為本地電動車廠開發的液冷電池熱管理模組，涵蓋結構設計、流道優化與量產導入
+      startDate: Jan 2022
+      endDate: Aug 2023
+      summary: |
+        - 以 CFD 模擬優化流道幾何，模組散熱能力提升 22%
+        - 採用鋁合金壓鑄配合攪拌摩擦焊，整體減重 15%
+        - 通過振動、氣密與耐壓測試，順利由原型推進至量產
+      keywords:
+        - 電動車
+        - 液冷系統
+        - CFD
+        - 壓鑄
+    - name: 智能倉儲輸送機構
+      startDate: Mar 2019
+      endDate: Dec 2020
+      description: 針對自動化倉儲系統設計的模組化輸送與分揀機構，可依場地彈性擴展
+      summary: |
+        - 設計標準化鋁擠型框架與皮帶輸送模組，現場組裝時間縮短 30%
+        - 完成鏈條與軸承壽命計算，並以 ANSYS 驗證滿載工況下的結構強度
+        - 於客戶倉庫完成為期三個月的實地測試，分揀準確率達 99.5%
+      keywords:
+        - 自動化
+        - 輸送機構
+        - 模組化設計
+        - 結構分析
+  interests:
+    - name: 運動
+      keywords:
+        - 公路單車
+        - 遠足
+        - 游泳
+    - name: 手作與創作
+      keywords:
+        - 3D 打印
+        - 木工
+        - 攝影
+  volunteer:
+    - organization: 香港工程師學會青年會員組
+      url: https://www.hkie.org.hk
+      position: 義務委員
+      startDate: Sep 2020
+      summary: |
+        - 籌辦「工程師周」校園分享活動，走訪十二間中學推廣工程學科
+        - 為基層學生設計 STEM 工作坊，教授 3D 打印與簡易機械設計
+    - organization: 香港青年協會
+      url: https://www.hkfyg.org.hk
+      position: STEM 義務導師
+      startDate: Jan 2019
+      endDate: Aug 2021
+      summary: |
+        - 每月為中三至中六學生提供機械設計入門課程，累計服務超過 200 名學生
+        - 指導學生隊伍參加本地機械人比賽，並獲最佳設計獎
+
+locale:
+  language: zh-hant-hk

@@ -1,0 +1,218 @@
+content:
+  basics:
+    name: Camille Moreau
+    headline: Ingénieur mécanique senior spécialisé en conception énergétique
+    phone: "+33 6 12 34 56 78"
+    email: camille.moreau@example.fr
+    url: https://www.camillemoreau-ingenierie.fr
+    summary: |
+      - Ingénieur mécanique avec plus de 8 ans d'expérience dans la conception, la simulation et l'industrialisation de systèmes mécaniques et thermiques.
+      - Expertise en CAO 3D, calcul de structures, CFD et gestion de projets industriels, du cahier des charges à la mise en production.
+      - Solide expérience en environnement réglementé, coordination de fournisseurs et amélioration continue de la performance produit.
+      - Reconnu pour la rigueur technique, la communication transversale et la capacité à transformer des besoins clients en solutions fiables.
+  location:
+    address: 24 rue des Ateliers
+    city: Lyon
+    region: Auvergne-Rhône-Alpes
+    country: France
+    postalCode: "69003"
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/camille-moreau-meca
+      username: camille-moreau-meca
+    - network: GitHub
+      url: https://github.com/camillemeca
+      username: camillemeca
+  education:
+    - institution: INSA Lyon
+      url: https://www.insa-lyon.fr
+      degree: Master
+      area: Génie mécanique
+      score: "3.7/4.0"
+      startDate: 2012-09-01
+      endDate: 2017-07-01
+      courses:
+        - Résistance des matériaux
+        - Thermodynamique appliquée
+        - Mécanique des fluides
+        - Conception assistée par ordinateur
+        - Fabrication mécanique
+        - Vibrations et dynamique des structures
+        - Science des matériaux
+        - Automatique et systèmes embarqués
+      summary: |
+        - Formation d'ingénieur généraliste orientée conception mécanique, énergétique et industrialisation.
+        - Projets d'équipe sur des systèmes de transmission, des échangeurs thermiques et des bancs d'essai instrumentés.
+        - Mémoire de fin d'études consacré à l'optimisation topologique de pièces mécaniques allégées.
+  work:
+    - name: Voltaire Énergie
+      url: https://www.voltaire-energie.fr
+      position: Ingénieur mécanique senior
+      startDate: 2021-04-01
+      summary: |
+        - Piloter la conception mécanique de modules de récupération de chaleur pour des sites industriels et des réseaux de chaleur urbains.
+        - Coordonner les études thermiques, les calculs de résistance et la sélection des matériaux avec les équipes procédés et électriques.
+        - Gérer les revues de conception, les analyses de risques et la documentation technique jusqu'à la réception client.
+        - Encadrer deux ingénieurs juniors et animer les échanges avec les fournisseurs stratégiques.
+      keywords:
+        - Conception mécanique
+        - Thermique
+        - CAO
+        - Gestion de projet
+        - Validation
+    - name: Atelier Aérotech
+      url: https://www.atelier-aerotech.fr
+      position: Ingénieur mécanique
+      startDate: 2017-09-01
+      endDate: 2021-03-31
+      summary: |
+        - Concevoir des ensembles mécaniques et des supports de fixation pour des équipements aéronautiques.
+        - Réaliser des simulations statiques et modales sous ANSYS afin de valider les choix de conception.
+        - Collaborer avec l'atelier de fabrication pour optimiser les tolérances, les matériaux et les coûts de production.
+        - Participer aux essais de qualification et rédiger les rapports techniques associés.
+      keywords:
+        - Aéronautique
+        - ANSYS
+        - Tolérancement
+        - Essais
+        - Fabrication
+    - name: Groupe Mécallia
+      url: https://www.groupe-mecallia.fr
+      position: Ingénieur mécanique stagiaire
+      startDate: 2016-02-01
+      endDate: 2016-08-31
+      summary: |
+        - Contribuer à la refonte d'un banc d'essai de pompes industrielles.
+        - Modéliser les pièces sous SolidWorks et produire les plans de fabrication.
+        - Analyser les résultats d'essais et proposer des améliorations de montage.
+      keywords:
+        - SolidWorks
+        - Pompes
+        - Banc d'essai
+        - Analyse
+  skills:
+    - name: Conception mécanique
+      level: Expert
+      keywords:
+        - SolidWorks
+        - CATIA V5
+        - Tolérancement
+        - RDM
+        - DFM
+    - name: Simulation numérique
+      level: Advanced
+      keywords:
+        - ANSYS
+        - CFD
+        - Thermique
+        - Fatigue
+        - Matériaux composites
+    - name: Gestion de projet
+      level: Advanced
+      keywords:
+        - Planification
+        - Budget
+        - Fournisseurs
+        - Agile
+        - Documentation
+    - name: Industrialisation
+      level: Intermediate
+      keywords:
+        - Lean
+        - Prototypage
+        - Essais
+        - Qualité
+        - Amélioration continue
+  languages:
+    - language: French
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - Langue maternelle
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - TOEIC 920
+        - Rédaction technique
+    - language: Spanish
+      fluency: Limited Working Proficiency
+      keywords:
+        - Conversation professionnelle
+  awards:
+    - title: Prix de l'innovation mécanique
+      date: 2023-06-15
+      awarder: Association Française de Mécanique
+      summary: |
+        Distinction remise pour un module compact de récupération de chaleur réduisant les pertes thermiques de 18 % sur une ligne de production.
+  certificates:
+    - name: Certification professionnelle SolidWorks
+      issuer: Dassault Systèmes
+      date: 2019-11-20
+      url: https://www.solidworks.com/certification
+    - name: Ceinture verte Lean Six Sigma
+      issuer: IASSC
+      date: 2022-05-10
+      url: https://www.iassc.org
+  publications:
+    - name: Optimisation thermique des échangeurs à plaques pour réseaux de chaleur
+      publisher: Revue Française de Génie Mécanique
+      releaseDate: 2022-10-01
+      url: https://www.rfgm.fr/articles/echangeurs-plaques
+      summary: |
+        - Article présentant une méthode de dimensionnement d'échangeurs à plaques intégrant les contraintes de maintenance.
+        - Résultats issus d'une campagne de mesures sur trois sites industriels et d'un modèle CFD validé.
+  projects:
+    - name: Récupérateur de chaleur industriel
+      url: https://www.voltaire-energie.fr/projets/recuperateur
+      description: Module compact de récupération de chaleur destiné aux procédés
+        industriels.
+      startDate: 2022-01-01
+      endDate: 2023-09-30
+      summary: |
+        - Conception mécanique complète d'un échangeur air-eau modulaire.
+        - Intégration des contraintes de maintenance, d'isolation et de sécurité.
+        - Validation par calculs thermomécaniques et essais sur banc.
+      keywords:
+        - Thermique
+        - Échangeur
+        - Industrie
+        - Modélisation
+    - name: Banc d'essai pour pompes à haut rendement
+      description: Banc instrumenté pour caractériser le rendement et la fiabilité de
+        pompes industrielles.
+      startDate: 2019-03-01
+      endDate: 2020-02-29
+      summary: |
+        - Définition de l'architecture mécanique, des capteurs et de la chaîne d'acquisition.
+        - Réalisation des plans, du dossier de fabrication et du protocole d'essai.
+        - Réduction du temps de qualification des pompes de 25 %.
+      keywords:
+        - Banc d'essai
+        - Instrumentation
+        - Pompes
+        - Essais
+  interests:
+    - name: Sports
+      keywords:
+        - Randonnée
+        - Escalade
+        - Cyclisme
+    - name: Musique
+      keywords:
+        - Guitare
+        - Jazz
+    - name: Fabrication
+      keywords:
+        - Impression 3D
+        - Menuiserie
+  volunteer:
+    - organization: Ingénieurs Sans Frontières France
+      url: https://www.isf-france.org
+      position: Bénévole technique
+      startDate: 2018-09-01
+      summary: |
+        - Apporter un appui technique à des projets d'accès à l'eau et d'énergie rurale.
+        - Participer à la revue de plans, au dimensionnement d'équipements et à la formation des équipes locales.
+        - Contribuer à la documentation et au retour d'expérience des missions.
+
+locale:
+  language: fr

@@ -1,0 +1,188 @@
+content:
+  basics:
+    name: Rizky Pratama
+    headline: QA Engineer dengan pengalaman dalam pengujian manual dan otomasi
+    phone: '+62 812-3456-7890'
+    email: rizky.pratama.qa@gmail.com
+    url: https://www.rizkypratama.dev
+    summary: |
+      QA Engineer dengan pengalaman lebih dari 7 tahun dalam memastikan kualitas perangkat lunak melalui pengujian manual dan otomasi. Terbiasa merancang strategi pengujian, menulis test case, melakukan regression testing, serta mengelola defect menggunakan JIRA.
+
+      - Berpengalaman mengotomasi pengujian web dan API menggunakan Selenium, Cypress, Playwright, dan Postman.
+      - Mampu berkolaborasi dengan tim product, developer, dan DevOps dalam lingkungan Agile/Scrum.
+      - Memiliki pemahaman kuat tentang SDLC, STLC, risk-based testing, dan continuous integration.
+  location:
+    address: Jl. Kebon Jeruk Raya No. 45
+    city: Jakarta Barat
+    region: DKI Jakarta
+    country: Indonesia
+    postalCode: '11530'
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/rizkypratama
+      username: rizkypratama
+    - network: GitHub
+      url: https://github.com/rizkypratama
+      username: rizkypratama
+  education:
+    - institution: Universitas Bina Nusantara
+      url: https://www.binus.ac.id
+      degree: Bachelor
+      area: Teknik Informatika
+      score: '3.65'
+      startDate: Sep 1, 2014
+      endDate: Jul 1, 2018
+      courses:
+        - Rekayasa Perangkat Lunak
+        - Basis Data
+        - Pemrograman Web
+        - Jaringan Komputer
+        - Sistem Operasi
+        - Pengujian Perangkat Lunak
+      summary: |
+        - Mempelajari rekayasa perangkat lunak, basis data, dan pengujian perangkat lunak secara mendalam.
+        - Menyelesaikan proyek akhir tentang otomasi pengujian aplikasi berbasis web.
+        - Aktif dalam organisasi kemahasiswaan dan kompetisi teknologi.
+  work:
+    - name: PT Solusi Digital Nusantara
+      url: https://www.solusidigital.co.id
+      position: Senior QA Engineer
+      startDate: Mar 1, 2021
+      summary: |
+        - Memimpin tim QA beranggotakan 4 orang dalam pengujian platform SaaS dengan lebih dari 50.000 pengguna aktif.
+        - Merancang strategi pengujian end-to-end, test plan, dan test case untuk fitur baru serta regression suite.
+        - Mengotomasi 300+ skenario pengujian menggunakan Cypress dan Playwright, menurunkan waktu regression testing sebesar 60%.
+        - Mengintegrasikan pengujian otomasi ke pipeline CI/CD Jenkins dan GitLab CI.
+        - Berkolaborasi dengan product manager dan developer untuk mempercepat siklus rilis dua mingguan.
+        - Melakukan mentoring dan knowledge sharing untuk QA junior.
+      keywords:
+        - Otomasi Pengujian
+        - Cypress
+        - Playwright
+        - CI/CD
+        - Kepemimpinan
+    - name: PT Karya Teknologi Indonesia
+      url: https://www.karyateknologi.co.id
+      position: QA Engineer
+      startDate: Aug 1, 2018
+      endDate: Feb 28, 2021
+      summary: |
+        - Melakukan pengujian manual dan otomasi pada aplikasi web dan mobile.
+        - Menyusun test case berdasarkan user story dan acceptance criteria.
+        - Melakukan API testing menggunakan Postman dan validasi data menggunakan SQL.
+        - Melaporkan dan melacak defect di JIRA hingga tervalidasi.
+        - Berkontribusi pada peningkatan proses QA dan dokumentasi test.
+      keywords:
+        - Pengujian Manual
+        - Selenium
+        - Postman
+        - SQL
+        - Agile
+  skills:
+    - name: Pengujian Manual
+      level: Expert
+      keywords:
+        - Perancangan Test Case
+        - Regression Testing
+        - Exploratory Testing
+        - User Acceptance Testing
+    - name: Otomasi Pengujian
+      level: Advanced
+      keywords:
+        - Selenium
+        - Cypress
+        - Playwright
+        - Appium
+        - Katalon Studio
+    - name: API & Database
+      level: Advanced
+      keywords:
+        - Postman
+        - REST API
+        - SQL
+        - MongoDB
+        - GraphQL
+    - name: Alat & Proses
+      level: Advanced
+      keywords:
+        - JIRA
+        - TestRail
+        - Git
+        - Jenkins
+        - Agile/Scrum
+  languages:
+    - language: Indonesian
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - Bahasa Ibu
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - TOEFL 580
+  awards:
+    - title: QA Team of the Year
+      date: Dec 2022
+      awarder: PT Solusi Digital Nusantara
+      summary: |
+        Diberikan atas kontribusi dalam meningkatkan stabilitas rilis dan menurunkan defect produksi sebesar 35% melalui inisiatif otomasi regression testing.
+  certificates:
+    - name: ISTQB Certified Tester Foundation Level
+      issuer: ISTQB
+      date: Jun 2019
+      url: https://www.istqb.org/certifications/certified-tester-foundation-level
+    - name: Certified ScrumMaster
+      issuer: Scrum Alliance
+      date: Mar 2022
+      url: https://www.scrumalliance.org/get-certified/scrum-master-track/certified-scrummaster
+    - name: Cypress End-to-End Testing
+      issuer: Cypress.io
+      date: Sep 2021
+      url: https://docs.cypress.io/guides/end-to-end-testing/writing-your-first-end-to-end-test
+  publications:
+    - name: Meningkatkan Efektivitas Regression Testing melalui Otomasi Berbasis
+        Risiko
+      publisher: Jurnal Teknologi Informasi Indonesia
+      releaseDate: Aug 2023
+      url: https://www.jti.ac.id/index.php/jti/article/view/12345
+      summary: |
+        - Membahas pendekatan otomasi regression testing berbasis risiko untuk aplikasi web berskala besar.
+        - Menunjukkan pengurangan waktu pengujian dan peningkatan cakupan test case.
+  projects:
+    - name: Otomasi Pengujian Platform E-Commerce
+      url: https://github.com/rizkypratama/ecommerce-qa-automation
+      description: Proyek otomasi pengujian end-to-end untuk platform e-commerce
+        menggunakan Cypress dan TypeScript.
+      startDate: Jan 2022
+      endDate: Nov 2022
+      summary: |
+        - Mengotomasi alur kritis seperti login, pencarian produk, keranjang belanja, dan checkout.
+        - Menerapkan Page Object Model dan data-driven testing.
+        - Mengintegrasikan pengujian ke GitHub Actions.
+      keywords:
+        - Cypress
+        - TypeScript
+        - E-Commerce
+        - CI/CD
+  interests:
+    - name: Teknologi
+      keywords:
+        - Otomasi Pengujian
+        - Open Source
+        - Kecerdasan Buatan
+    - name: Olahraga
+      keywords:
+        - Lari
+        - Bersepeda
+        - Bulu Tangkis
+  volunteer:
+    - organization: Komunitas QA Indonesia
+      url: https://www.qaindonesia.id
+      position: Mentor Pengujian Perangkat Lunak
+      startDate: Feb 2020
+      summary: |
+        - Menjadi mentor untuk QA junior dan mahasiswa melalui sesi belajar bulanan.
+        - Membantu menyusun materi pengujian manual dan otomasi.
+        - Berkontribusi pada forum diskusi dan webinar komunitas.
+
+locale:
+  language: id

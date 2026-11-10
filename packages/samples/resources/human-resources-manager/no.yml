@@ -1,0 +1,176 @@
+content:
+  basics:
+    name: Ingrid Johansen
+    headline: HR-sjef
+    phone: "+47 123 45 678"
+    email: ingrid.johansen@example.no
+    url: https://www.linkedin.com/in/ingridjohansen
+    summary: |
+      - Erfaren HR-leder med over 10 års erfaring fra teknologi- og finanssektoren
+      - Sterk kompetanse innen rekruttering, organisasjonsutvikling og arbeidsrett
+      - Dokumentert evne til å bygge sterke team og fremme en positiv arbeidskultur
+      - Strategisk tenker med fokus på å koble HR-initiativer til forretningsmål
+  location:
+    address: Karl Johans gate 15
+    city: Oslo
+    region: Oslo
+    country: Norway
+    postalCode: "0154"
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/ingridjohansen
+      username: ingridjohansen
+    - network: Twitter
+      url: https://twitter.com/ingridhr
+      username: ingridhr
+  education:
+    - institution: Universitetet i Oslo
+      url: https://www.uio.no
+      degree: Master
+      area: Organisasjonspsykologi og ledelse
+      score: "3.8"
+      startDate: Aug 1, 2012
+      endDate: Jun 1, 2014
+      courses:
+        - Arbeids- og organisasjonspsykologi
+        - Ledelse og organisasjonsutvikling
+        - HR-strategi
+        - Arbeidsrett
+        - Rekruttering og seleksjon
+        - Lønns- og belønningssystemer
+      summary: |
+        - Utviklet dyp forståelse for sammenhengen mellom HR-praksis og organisasjonens resultater
+        - Gjennomførte flere prosjekter knyttet til medarbeiderundersøkelser og kulturutvikling
+        - Fikk solid innføring i norsk arbeidsrett og tariffsystemer
+  work:
+    - name: Telenor
+      url: https://www.telenor.no
+      position: HR-sjef
+      startDate: Jan 1, 2020
+      summary: |
+        - Ansvarlig for HR-strategi og -drift for 2500 ansatte i Norge
+        - Ledet arbeidet med å implementere ny HR-plattform (SAP SuccessFactors) og digitalisere HR-prosesser
+        - Utviklet og implementerte talentprogrammer som økte intern rekruttering med 25%
+        - Rådgiver for ledergruppen innen organisasjonsutvikling, endringsledelse og arbeidsrett
+        - Forhandlet frem nye tariffavtaler og sikret god dialogs med fagforeningene
+      keywords:
+        - HR-strategi
+        - Talentutvikling
+        - Endringsledelse
+        - Arbeidsrett
+        - Digitalisering
+    - name: DNB
+      url: https://www.dnb.no
+      position: HR-rådgiver
+      startDate: Aug 1, 2016
+      endDate: Dec 31, 2019
+      summary: |
+        - Rekrutterte og onboardet over 100 kandidater årlig til roller innen IT og finans
+        - Utviklet kompetanseutviklingsprogrammer og gjennomførte lederopplæring i samarbeid med eksterne leverandører
+        - Veiledet ledere i personaloppfølging, konflikthåndtering og lønnsforhandlinger
+        - Bidro til å redusere sykefraværet gjennom målrettet HMS-arbeid og oppfølging
+      keywords:
+        - Rekruttering
+        - Kompetanseutvikling
+        - Lønnsforhandlinger
+        - HMS
+        - Lederveiledning
+  skills:
+    - name: Rekruttering og seleksjon
+      level: Expert
+      keywords:
+        - Rekrutteringsstrategi
+        - Intervjuteknikk
+        - Assessment
+        - Employer branding
+    - name: Arbeidsrett og compliance
+      level: Advanced
+      keywords:
+        - Arbeidsmiljøloven
+        - Tariffavtaler
+        - GDPR
+        - Arbeidskontrakter
+    - name: Organisasjonsutvikling
+      level: Advanced
+      keywords:
+        - Endringsledelse
+        - Medarbeiderundersøkelser
+        - Kulturutvikling
+        - Teamutvikling
+    - name: HR-systemer og analyse
+      level: Intermediate
+      keywords:
+        - SAP SuccessFactors
+        - Workday
+        - Excel
+        - HR-analyse
+  languages:
+    - language: Norwegian
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - Morsmål
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - TOEFL 110
+        - Forretningsengelsk
+  awards:
+    - title: Årets HR-leder
+      date: Nov 2022
+      awarder: Norsk HR-forening
+      summary: |
+        - Tildelt for fremragende arbeid med å implementere en ny HR-strategi i Telenor
+        - Anerkjent for å ha økt medarbeidertilfredsheten med 20% over to år
+  certificates:
+    - name: Sertifisert HR-profesjonell (SPHR)
+      issuer: HR Certification Institute
+      date: Mar 2021
+      url: https://www.hrci.org
+    - name: IPMA Level C - Sertifisert prosjektleder
+      issuer: International Project Management Association
+      date: Jun 2018
+      url: https://www.ipma.world
+  publications:
+    - name: "Fremtidens HR: Strategisk partnerskap i praksis"
+      publisher: HR-Nytt
+      releaseDate: Apr 2023
+      url: https://www.hrnytt.no/artikkel/fremtidens-hr
+      summary: |
+        - Artikkel om hvordan HR kan bli en strategisk partner i norske virksomheter
+        - Diskuterer hvordan teknologi og data kan forbedre HR-prosesser
+  projects:
+    - name: Implementering av ny HR-plattform
+      startDate: Jan 2021
+      endDate: Dec 2021
+      url: https://www.telenor.no/hr-plattform
+      description: "Innføring av SAP SuccessFactors for 5000 ansatte"
+      summary: |
+        - Ledet prosjektet med å implementere ny HR-plattform i Telenor
+        - Ansvarlig for behovsanalyse, leverandørvalg og utrulling
+        - Oppnådde 30% reduksjon i administrasjonstid for HR-prosesser
+      keywords:
+        - SAP SuccessFactors
+        - Prosjektledelse
+        - Endringsledelse
+  interests:
+    - name: Friluftsliv
+      keywords:
+        - Fjellturer
+        - Ski
+        - Fisking
+    - name: Litteratur
+      keywords:
+        - Skjønnlitteratur
+        - Biografier
+  volunteer:
+    - organization: Ungt Entreprenørskap
+      position: Mentor
+      startDate: Sep 2018
+      url: https://www.ue.no
+      summary: |
+        - Fungerer som mentor for ungdomsskoleelever i entreprenørskapsprosjekter
+        - Veileder team i forretningsidéutvikling og presentasjonsteknikk
+        - Bidrar til å styrke unges kompetanse innen innovasjon og samarbeid
+
+locale:
+  language: no

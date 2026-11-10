@@ -1,0 +1,189 @@
+content:
+  basics:
+    name: Camille Lefebvre
+    headline: Analyste d'Affaires Senior | Expert en Transformation Digitale
+    phone: "+33 6 12 34 56 78"
+    email: camille.lefebvre@email.fr
+    url: https://www.camille-lefebvre.fr
+    summary: |
+      - Analyste d'affaires avec 8 ans d'expérience dans la conduite de projets de transformation digitale.
+      - Expertise en modélisation des processus métier (BPMN, UML) et en analyse fonctionnelle.
+      - Maîtrise des outils d'analyse de données (SQL, Power BI, Tableau) et des méthodologies agiles.
+      - Forte capacité à collaborer avec les équipes techniques et métier pour aligner les solutions sur les besoins business.
+  location:
+    address: 25 Rue de la Paix
+    city: Paris
+    region: Île-de-France
+    country: France
+    postalCode: "75002"
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/camille-lefebvre
+      username: camille-lefebvre
+    - network: GitHub
+      url: https://github.com/camillelefebvre
+      username: camillelefebvre
+  education:
+    - institution: Université Paris-Dauphine
+      url: https://www.dauphine.psl.eu
+      degree: Master
+      area: Analyse d'Affaires et Systèmes d'Information
+      score: Mention Très Bien
+      startDate: Sep 1, 2014
+      endDate: Jul 1, 2016
+      courses:
+        - Modélisation des processus métier
+        - Gestion de projet agile
+        - Systèmes d'information décisionnels
+        - Analyse de données
+        - Architecture des SI
+        - Management de l'innovation
+        - Droit des affaires
+        - Communication professionnelle
+      summary: |
+        - Formation approfondie en analyse fonctionnelle et modélisation des processus.
+        - Projets pratiques en collaboration avec des entreprises partenaires.
+        - Mémoire sur l'impact de la transformation digitale sur les PME.
+  work:
+    - name: BNP Paribas
+      url: https://www.bnpparibas.fr
+      position: Analyste d'Affaires Senior
+      startDate: Jan 1, 2021
+      summary: |
+        - Pilotage de l'analyse fonctionnelle pour le projet de refonte du portail client, en collaboration avec les équipes métier et IT.
+        - Rédaction des spécifications fonctionnelles détaillées (SFG) et des cahiers de recette.
+        - Animation d'ateliers de cadrage et de priorisation avec les parties prenantes.
+        - Modélisation des processus métier en BPMN et création de maquettes fonctionnelles.
+        - Suivi des indicateurs de performance et reporting mensuel auprès du comité de direction.
+      keywords:
+        - BPMN
+        - Analyse fonctionnelle
+        - Agile
+        - JIRA
+        - Confluence
+    - name: Capgemini
+      url: https://www.capgemini.com/fr-fr/
+      position: Analyste d'Affaires
+      startDate: Sep 1, 2016
+      endDate: Dec 31, 2020
+      summary: |
+        - Participation à des missions de conseil en transformation digitale pour des clients du secteur bancaire et de l'assurance.
+        - Analyse des besoins métier et rédaction des user stories.
+        - Coordination entre les équipes de développement et les utilisateurs finaux.
+        - Réalisation de tests fonctionnels et validation des livrables.
+        - Contribution à l'amélioration continue des processus internes.
+      keywords:
+        - User stories
+        - UML
+        - Tests fonctionnels
+        - Scrum
+        - SQL
+  skills:
+    - name: Analyse et Modélisation
+      level: Expert
+      keywords:
+        - BPMN
+        - UML
+        - Analyse fonctionnelle
+        - Cartographie des processus
+    - name: Gestion de Projet
+      level: Advanced
+      keywords:
+        - Agile
+        - Scrum
+        - JIRA
+        - Confluence
+        - MS Project
+    - name: Analyse de Données
+      level: Advanced
+      keywords:
+        - SQL
+        - Power BI
+        - Tableau
+        - Excel avancé
+    - name: Outils Bureautiques
+      level: Expert
+      keywords:
+        - Excel
+        - PowerPoint
+        - Word
+        - Visio
+  languages:
+    - language: French
+      fluency: Native or Bilingual Proficiency
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - TOEIC 950
+    - language: Spanish
+      fluency: Limited Working Proficiency
+  awards:
+    - title: Prix de l'Innovation
+      date: Jun 2019
+      awarder: Capgemini
+      summary: |
+        Récompense pour la conception d'un outil interne d'analyse des besoins clients.
+  certificates:
+    - name: Certified Business Analysis Professional (CBAP)
+      issuer: IIBA
+      date: Mar 2022
+      url: https://www.iiba.org/certification/cbap/
+    - name: Professional Scrum Master I
+      issuer: Scrum.org
+      date: Nov 2020
+      url: https://www.scrum.org/professional-scrum-master-i-certification
+  publications:
+    - name: "L'analyse d'affaires à l'ère du digital : bonnes pratiques et outils"
+      publisher: Journal du Management
+      releaseDate: Apr 2021
+      url: https://www.journaldumanagement.fr/analyse-affaires-digital
+      summary: |
+        Article présentant les méthodes et outils clés pour réussir la transformation digitale des organisations.
+  projects:
+    - name: Refonte du portail client
+      startDate: Jan 2021
+      endDate: Dec 2022
+      summary: |
+        Projet de modernisation du portail client de BNP Paribas.
+      description: |
+        Analyse des besoins, rédaction des spécifications fonctionnelles et coordination avec les équipes de développement pour la refonte du portail client.
+      keywords:
+        - BPMN
+        - Agile
+        - UX
+      url: https://www.bnpparibas.fr/portail-client
+    - name: Outil de pilotage des indicateurs
+      startDate: Mar 2020
+      endDate: Aug 2020
+      summary: |
+        Développement d'un tableau de bord Power BI pour le suivi des indicateurs de performance.
+      description: |
+        Conception et mise en place d'un tableau de bord interactif sous Power BI pour visualiser les KPIs métier et faciliter la prise de décision.
+      keywords:
+        - Power BI
+        - SQL
+        - KPIs
+  interests:
+    - name: Lecture
+      keywords:
+        - Romans
+        - Essais
+        - Biographies
+    - name: Randonnée
+      keywords:
+        - Montagne
+        - Nature
+    - name: Photographie
+      keywords:
+        - Voyage
+        - Portrait
+  volunteer:
+    - organization: Association Femmes du Numérique
+      url: https://www.femmesdunumerique.fr
+      position: Mentore
+      startDate: Sep 2020
+      summary: |
+        Accompagnement de jeunes femmes dans leur orientation vers les métiers du numérique, animation d'ateliers et partage d'expérience.
+
+locale:
+  language: fr
