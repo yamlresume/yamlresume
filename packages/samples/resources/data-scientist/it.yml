@@ -1,0 +1,289 @@
+content:
+  basics:
+    name: Giulia Ferrari
+    headline: 'Data Scientist | Machine Learning e Analytics'
+    phone: '+39 347 123 4567'
+    email: giulia.ferrari@example.it
+    url: https://www.giuliaferrari-data.it
+    summary: |
+      Data Scientist con oltre 7 anni di esperienza nella progettazione di modelli predittivi e soluzioni analitiche per i settori energia, bancario e pagamenti digitali.
+
+      - Esperienza end-to-end: dalla raccolta dei requisiti alla messa in produzione e al monitoraggio di modelli.
+      - Solida base statistica e di apprendimento automatico, con attenzione alla validazione, all'interpretabilità e all'impatto di business.
+      - Capacità di comunicare risultati complessi a stakeholder tecnici e non tecnici, in italiano e in inglese.
+      - Approccio collaborativo, mentoria di junior e forte orientamento alla qualità del dato.
+
+  location:
+    address: Via Giovanni Battista Pirelli 18
+    city: Milano
+    region: Lombardia
+    country: Italy
+    postalCode: "20124"
+
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/giulia-ferrari-data
+      username: giulia-ferrari-data
+    - network: GitHub
+      url: https://github.com/giuliaferrari
+      username: giuliaferrari
+    - network: Stack Overflow
+      url: https://stackoverflow.com/users/1234567/giulia-ferrari
+      username: giulia-ferrari
+
+  education:
+    - institution: Università degli Studi di Milano-Bicocca
+      url: https://www.unimib.it
+      degree: Master
+      area: Data Science
+      score: "110/110 e lode"
+      startDate: '2015-09-15'
+      endDate: '2017-07-20'
+      courses:
+        - Statistica Computazionale
+        - Apprendimento Automatico
+        - Basi di Dati e Data Warehousing
+        - Analisi delle Serie Temporali
+        - Data Mining
+        - Visualizzazione dei Dati
+        - Metodi Bayesiani
+        - Etica e Governance dei Dati
+      summary: |
+        - Formazione avanzata in statistica, machine learning e gestione di grandi volumi di dati.
+        - Sviluppo di progetti applicativi con Python, R e SQL su casi reali di previsione e segmentazione.
+        - Particolare attenzione alla validazione dei modelli, alla comunicazione dei risultati e all'impatto organizzativo.
+
+    - institution: Università degli Studi di Milano
+      url: https://www.unimi.it
+      degree: Bachelor
+      area: Statistica e Informatica
+      score: "108/110"
+      startDate: '2012-09-10'
+      endDate: '2015-07-15'
+      courses:
+        - Statistica Descrittiva
+        - Probabilità e Inferenza
+        - Programmazione in Python
+        - Basi di Dati Relazionali
+        - Analisi Esplorativa dei Dati
+        - Metodi di Campionamento
+      summary: |
+        - Solide basi quantitativa e informatica per l'analisi dei dati.
+        - Esperienza pratica con dataset reali, pulizia dei dati e reportistica statistica.
+
+  work:
+    - name: Nexi Digital
+      url: https://www.nexi.it
+      position: Data Scientist Senior
+      startDate: '2022-03-01'
+      summary: |
+        - Guido un team di 4 data scientist nello sviluppo di modelli predittivi per il rilevamento delle frodi e la personalizzazione delle offerte.
+        - Progettato e implementato pipeline MLOps su AWS per l'addestramento, il versionamento e il monitoraggio continuo dei modelli.
+        - Ridotto del 18% i falsi positivi nel sistema antifrode migliorando le regole di validazione e l'interpretabilità dei modelli.
+        - Collaborato con product manager, ingegneri e team compliance per tradurre requisiti di business in soluzioni dati misurabili.
+        - Mentorato due junior data scientist e promosso pratiche di code review e documentazione tecnica.
+      keywords:
+        - Modelli predittivi
+        - MLOps
+        - Customer Analytics
+        - Leadership tecnica
+
+    - name: Enel X
+      url: https://www.enelx.com/it/it
+      position: Data Scientist
+      startDate: '2019-01-15'
+      endDate: '2022-02-28'
+      summary: |
+        - Sviluppato modelli di previsione della domanda energetica a livello giornaliero e orario, con riduzione dell'errore MAPE dal 12% all'8%.
+        - Realizzato segmentazioni clienti tramite clustering e analisi di sopravvivenza per campagne di retention mirate.
+        - Automatizzato la reportistica mensile con Airflow e Power BI, riducendo il tempo di preparazione da 3 giorni a 4 ore.
+        - Condotto test A/B e analisi causali per valutare l'impatto delle iniziative commerciali.
+      keywords:
+        - Previsione della domanda
+        - Customer Analytics
+        - Test A/B
+        - Airflow
+
+    - name: UniCredit
+      url: https://www.unicredit.it
+      position: Analista Dati
+      startDate: '2017-09-01'
+      endDate: '2019-01-10'
+      summary: |
+        - Analizzato portafogli creditizi e costruito dashboard per il monitoraggio degli indicatori di rischio.
+        - Sviluppato modelli statistici per la previsione di insolvenza e la valutazione del merito creditizio.
+        - Pulito e integrato dati provenienti da fonti eterogenee, migliorando la qualità e la coerenza delle analisi.
+        - Presentato risultati periodici ai team risk e business con report chiari e visualizzazioni efficaci.
+      keywords:
+        - Rischio di credito
+        - SQL
+        - Dashboard
+        - Statistica
+
+  skills:
+    - name: Apprendimento Automatico
+      level: Expert
+      keywords:
+        - Python
+        - scikit-learn
+        - TensorFlow
+        - PyTorch
+        - XGBoost
+    - name: Ingegneria dei Dati
+      level: Advanced
+      keywords:
+        - SQL
+        - Spark
+        - Airflow
+        - dbt
+        - Databricks
+    - name: Statistica Applicata
+      level: Expert
+      keywords:
+        - Test A/B
+        - Inferenza causale
+        - Serie temporali
+        - Analisi di sopravvivenza
+    - name: Visualizzazione dei Dati
+      level: Advanced
+      keywords:
+        - Power BI
+        - Tableau
+        - Looker
+        - Plotly
+        - Streamlit
+    - name: Cloud e MLOps
+      level: Advanced
+      keywords:
+        - AWS
+        - Azure
+        - Docker
+        - Kubernetes
+        - MLflow
+    - name: Comunicazione dei Risultati
+      level: Advanced
+      keywords:
+        - Narrazione dei dati
+        - Presentazioni executive
+        - Documentazione tecnica
+        - Facilitazione workshop
+
+  languages:
+    - language: Italian
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - Madrelingua
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - IELTS 8.0
+        - C1
+    - language: French
+      fluency: Limited Working Proficiency
+      keywords:
+        - DELF B1
+
+  awards:
+    - title: Premio Innovazione Dati 2023
+      date: '2023-06-15'
+      awarder: "Associazione Italiana per l'Intelligenza Artificiale"
+      summary: |
+        Riconoscimento per il progetto "Previsione della Domanda Energetica", selezionato tra le migliori applicazioni di intelligenza artificiale in ambito utilities.
+    - title: Borsa di Studio per Merito
+      date: '2016-10-01'
+      awarder: Università degli Studi di Milano-Bicocca
+      summary: |
+        Borsa di studio assegnata per eccellenza accademica durante il corso di laurea magistrale in Data Science.
+
+  certificates:
+    - name: Google Professional Data Engineer
+      issuer: Google Cloud
+      date: '2021-05-20'
+      url: https://cloud.google.com/certification/data-engineer
+    - name: 'AWS Certified Machine Learning – Specialty'
+      issuer: Amazon Web Services
+      date: '2020-11-12'
+      url: https://aws.amazon.com/certification/
+    - name: 'Microsoft Certified: Azure Data Scientist Associate'
+      issuer: Microsoft
+      date: '2022-09-08'
+      url: https://learn.microsoft.com/en-us/certifications/azure-data-scientist/
+
+  publications:
+    - name: Modelli predittivi per la manutenzione di reti elettriche intelligenti
+      publisher: Rivista Italiana di Statistica Applicata
+      releaseDate: '2022-12-01'
+      url: https://doi.org/10.1234/risa.2022.12.004
+      summary: |
+        - Confronto tra modelli di serie temporali e apprendimento supervisionato per la manutenzione predittiva.
+        - Analisi dell'impatto delle variabili meteo e di carico sulla probabilità di guasto.
+    - name: Segmentazione dei clienti tramite apprendimento non supervisionato
+      publisher: Atti della Conferenza Italiana di Data Science
+      releaseDate: '2021-09-15'
+      url: https://doi.org/10.5678/cids.2021.09.012
+      summary: |
+        - Applicazione di clustering e riduzione della dimensionalità a dati di consumo energetico.
+        - Valutazione della stabilità dei segmenti e delle implicazioni per campagne di marketing.
+
+  projects:
+    - name: Previsione della Domanda Energetica
+      startDate: '2021-03-01'
+      endDate: '2021-12-20'
+      description: "Sistema di previsione della domanda energetica per un'azienda
+        utilities, con modelli a livello giornaliero e orario."
+      summary: |
+        - Costruito pipeline di feature engineering con dati storici, meteo e calendario.
+        - Confrontato Prophet, XGBoost e LSTM; selezionato il modello con il miglior errore in validazione temporale.
+        - Pubblicato dashboard interattiva per il monitoraggio delle previsioni e degli scostamenti.
+      keywords:
+        - Serie temporali
+        - Prophet
+        - XGBoost
+        - Airflow
+        - Dashboard
+      url: https://github.com/giuliaferrari/energy-demand-forecast
+    - name: Analisi della Soddisfazione Clienti
+      startDate: '2020-06-01'
+      endDate: '2020-11-30'
+      description: Analisi di recensioni e sondaggi per identificare i fattori chiave
+        della soddisfazione clienti.
+      summary: |
+        - Applicato NLP per estrarre topic e sentiment da recensioni in italiano.
+        - Integrato i risultati con dati transazionali per stimare l'impatto sulla soddisfazione.
+        - Presentato insight actionable al team customer experience.
+      keywords:
+        - NLP
+        - Topic modeling
+        - Sentiment analysis
+        - Power BI
+      url: https://github.com/giuliaferrari/customer-satisfaction
+
+  interests:
+    - name: Sport
+      keywords:
+        - Corsa
+        - Sci
+        - Yoga
+    - name: Musica
+      keywords:
+        - Pianoforte
+        - Jazz
+    - name: Divulgazione
+      keywords:
+        - Mentoraggio
+        - Open data
+        - Scrittura tecnica
+
+  volunteer:
+    - organization: Dati per il Bene Comune
+      url: https://www.datiperilbenecomune.it
+      position: Mentor Data Science
+      startDate: '2020-01-15'
+      endDate: '2024-06-30'
+      summary: |
+        - Supportato associazioni no profit nella definizione di indicatori e dashboard per misurare l'impatto sociale.
+        - Tenuto laboratori introduttivi su Python, analisi dati e visualizzazione per volontari e studenti.
+        - Contribuito alla pubblicazione di dataset aperti e linee guida per la qualità del dato.
+
+locale:
+  language: it

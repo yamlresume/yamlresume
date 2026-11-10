@@ -1,0 +1,273 @@
+content:
+  basics:
+    name: Marco Ferrari
+    headline: 'Responsabile Marketing | Strategia, Brand e Crescita Digitale'
+    phone: '+39 347 123 4567'
+    email: marco.ferrari.marketing@gmail.com
+    url: https://www.marcoferrari-marketing.it
+    summary: |
+      Responsabile Marketing con oltre 8 anni di esperienza nella definizione e nell'esecuzione di strategie di marketing B2C e B2B. Specializzato in gestione del brand, marketing digitale, e-commerce e analisi delle performance.
+
+      - Ho guidato team cross-funzionali e budget fino a 1,2 milioni di euro, ottenendo crescita misurabile in traffico, conversioni e vendite.
+      - Competenze solide in SEO/SEM, campagne Meta e Google, CRM, marketing dei contenuti e dashboard KPI.
+      - Abituato a lavorare con vendite, prodotto e agenzie esterne per trasformare dati e insight in piani di marketing concreti.
+
+  location:
+    address: Via Torino 45
+    city: Milano
+    region: Lombardia
+    country: Italy
+    postalCode: '20123'
+
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/marco-ferrari-marketing
+      username: marco-ferrari-marketing
+    - network: Medium
+      url: https://medium.com/@marcoferrari_mkt
+      username: marcoferrari_mkt
+    - network: Instagram
+      url: https://www.instagram.com/marcoferrari.mkt
+      username: marcoferrari.mkt
+
+  education:
+    - institution: Università Commerciale Luigi Bocconi
+      url: https://www.unibocconi.it
+      degree: Master
+      area: Marketing e Comunicazione d'Impresa
+      score: '110/110 e lode'
+      startDate: '2013-09-01'
+      endDate: '2015-07-15'
+      courses:
+        - Marketing Strategico
+        - Comportamento del Consumatore
+        - Ricerche di Mercato
+        - Gestione del Brand
+        - Comunicazione Integrata
+        - Marketing Digitale
+        - Analisi dei Dati per il Marketing
+      summary: |
+        - Formazione avanzata in strategia di marketing, branding e analisi dei dati
+        - Tesi su modelli di attribuzione per il marketing omnicanale
+        - Esperienza pratica tramite case study con aziende del settore retail e food
+    - institution: Università degli Studi di Padova
+      url: https://www.unipd.it
+      degree: Bachelor
+      area: Economia e Management
+      score: '108/110'
+      startDate: '2010-09-01'
+      endDate: '2013-07-15'
+      courses:
+        - Economia Aziendale
+        - Statistica
+        - Diritto Privato
+        - Marketing
+        - Organizzazione Aziendale
+      summary: |
+        - Solide basi economiche e manageriali
+        - Approfondimento di statistica e analisi quantitative applicate al business
+
+  work:
+    - name: Lumina Retail Italia
+      url: https://www.luminaretail.it
+      position: Responsabile Marketing
+      startDate: '2022-03-01'
+      summary: |
+        - Guido il piano marketing annuale per 3 linee di prodotto, con un budget di 1,2 milioni di euro
+        - Coordino un team di 6 persone tra brand, digital, contenuti e CRM
+        - Ho aumentato del 28% il traffico organico e del 19% il tasso di conversione e-commerce in 18 mesi
+        - Ho introdotto un modello di attribuzione multi-touch e dashboard mensili per il monitoraggio delle performance
+        - Collaboro con vendite, prodotto e agenzie esterne per allineare campagne, promozioni e lancio di nuovi prodotti
+      keywords:
+        - Strategia di marketing
+        - Gestione del brand
+        - E-commerce
+        - Analisi dati
+        - Team leadership
+    - name: VerdeVita Food
+      url: https://www.verdevitafood.it
+      position: Specialista Marketing Senior
+      startDate: '2019-06-01'
+      endDate: '2022-02-28'
+      summary: |
+        - Ho sviluppato campagne digitali integrate su Meta, Google e piattaforme di content discovery
+        - Ho gestito il calendario editoriale e la produzione di contenuti per blog, newsletter e social media
+        - Ho contribuito a un incremento del 35% delle vendite online nel segmento biologico
+        - Ho coordinato ricerche di mercato e test A/B per ottimizzare landing page e materiali promozionali
+        - Ho lavorato con il team CRM per segmentare il database e migliorare il tasso di apertura delle email
+      keywords:
+        - Campagne digitali
+        - Marketing dei contenuti
+        - SEO/SEM
+        - Email marketing
+        - Test A/B
+    - name: TecnoNova Soluzioni
+      url: https://www.tecnonovasoluzioni.it
+      position: Specialista Marketing
+      startDate: '2016-09-01'
+      endDate: '2019-05-31'
+      summary: |
+        - Ho supportato la creazione di materiali commerciali, presentazioni e casi studio per il team vendite
+        - Ho gestito la presenza social e il sito web aziendale, con focus su generazione di lead B2B
+        - Ho organizzato webinar ed eventi di settore, raccogliendo oltre 800 contatti qualificati
+        - Ho monitorato KPI di campagna e preparato report periodici per la direzione
+      keywords:
+        - Generazione di lead
+        - Marketing B2B
+        - Eventi
+        - Social media
+        - Reporting
+
+  skills:
+    - name: Marketing Digitale
+      level: Expert
+      keywords:
+        - SEO/SEM
+        - Google Ads
+        - Meta Ads
+        - Marketing dei contenuti
+        - Social media
+    - name: Analisi e Performance
+      level: Advanced
+      keywords:
+        - Google Analytics 4
+        - Looker Studio
+        - Dashboard KPI
+        - Test A/B
+        - Modelli di attribuzione
+    - name: Brand e Comunicazione
+      level: Advanced
+      keywords:
+        - Posizionamento del brand
+        - Copywriting
+        - Relazioni pubbliche digitali
+        - Gestione agenzie
+    - name: CRM e Automazione
+      level: Intermediate
+      keywords:
+        - HubSpot
+        - Mailchimp
+        - Segmentazione
+        - Automazione marketing
+    - name: Leadership e Team Management
+      level: Advanced
+      keywords:
+        - Gestione budget
+        - Mentoring
+        - Gestione progetti
+        - Gestione stakeholder
+
+  languages:
+    - language: Italian
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - Madrelingua
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - Certificazione C1
+        - Uso quotidiano professionale
+    - language: French
+      fluency: Limited Working Proficiency
+      keywords:
+        - Conversazione base
+
+  awards:
+    - title: Premio Eccellenza Marketing 2023
+      date: '2023-11-15'
+      awarder: Associazione Italiana Marketing
+      summary: |
+        Riconoscimento per la campagna omnicanale "Lumina Casa Green", selezionata per impatto su brand awareness e sostenibilità.
+    - title: Migliore Campagna Digitale - Retail
+      date: '2021-10-01'
+      awarder: Digital Marketing Awards Italia
+      summary: |
+        Premio assegnato alla campagna "VerdeVita a Tavola" per creatività, risultati di vendita e integrazione tra canali online e offline.
+
+  certificates:
+    - name: Certificazione Google Analytics 4
+      issuer: Google
+      date: '2023-05-10'
+      url: https://skillshop.withgoogle.com/
+    - name: Certificazione HubSpot Content Marketing
+      issuer: HubSpot Academy
+      date: '2022-09-20'
+      url: https://academy.hubspot.com/courses/content-marketing
+    - name: Certificazione Meta Digital Marketing Associate
+      issuer: Meta
+      date: '2021-04-12'
+      url: https://www.facebook.com/business/learn/certification
+
+  publications:
+    - name: Il ruolo dei dati nella strategia di marketing omnicanale
+      publisher: Marketing Oggi
+      releaseDate: '2024-02-10'
+      url: https://www.marketingoggi.it/articoli/dati-marketing-omnicanale
+      summary: |
+        - Analisi dei modelli di attribuzione e delle metriche chiave per collegare investimenti marketing e risultati di business
+        - Casi pratici di dashboard e governance dei dati per team marketing e vendite
+
+  projects:
+    - name: Campagna Nazionale Rilancio VerdeVita
+      startDate: '2021-03-01'
+      endDate: '2021-10-31'
+      description: Campagna integrata per il rilancio della linea biologica VerdeVita
+        con focus su sostenibilità e stagionalità.
+      summary: |
+        - Ho coordinato creatività, media planning e contenuti per TV digitale, social, newsletter e punto vendita
+        - Ho gestito un budget di 450.000 euro e un aumento del 35% delle vendite online della linea
+        - Ho impostato test creativi e report settimanali per ottimizzare il ritorno della spesa pubblicitaria
+      keywords:
+        - Campagna integrata
+        - Sostenibilità
+        - Media planning
+        - Retail
+      url: https://www.verdevitafood.it/campagne/rilancio
+    - name: Customer Data Platform Lumina Retail
+      startDate: '2023-01-15'
+      endDate: '2023-12-20'
+      description: Progetto di consolidamento dei dati cliente per personalizzare
+        campagne e migliorare la customer experience.
+      summary: |
+        - Ho definito i requisiti marketing e i casi d'uso per la segmentazione dinamica del cliente
+        - Ho collaborato con IT e CRM per integrare dati da e-commerce, negozi e assistenza clienti
+        - Ho introdotto journey personalizzate con un incremento del 22% nel tasso di riattivazione
+      keywords:
+        - Customer experience
+        - Segmentazione
+        - Automazione marketing
+        - Data strategy
+      url: https://www.luminaretail.it/progetti/customer-data-platform
+
+  interests:
+    - name: Tecnologia e Innovazione
+      keywords:
+        - Intelligenza artificiale
+        - Marketing analytics
+        - Prodotti digitali
+    - name: Sostenibilità
+      keywords:
+        - Consumo consapevole
+        - Economia circolare
+    - name: Sport all'aperto
+      keywords:
+        - Corsa
+        - Ciclismo
+        - Trekking
+    - name: Lettura
+      keywords:
+        - Saggi di marketing
+        - Narrativa contemporanea
+
+  volunteer:
+    - organization: Fondazione Marketing per il Bene Comune
+      url: https://www.marketingperilbenecomune.it
+      position: Mentor per giovani marketer
+      startDate: '2020-01-15'
+      summary: |
+        - Affianco studenti e giovani professionisti nello sviluppo di competenze di marketing strategico e digitale
+        - Partecipo a incontri di orientamento e workshop su personal branding e ricerca del lavoro
+        - Collaboro all'organizzazione di eventi formativi gratuiti per associazioni no profit
+
+locale:
+  language: it

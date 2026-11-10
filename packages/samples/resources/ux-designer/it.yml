@@ -1,0 +1,233 @@
+content:
+  basics:
+    name: Giulia Ferrari
+    headline: UX Designer specializzata in ricerca utente e design system
+    phone: "+39 347 123 4567"
+    email: giulia.ferrari@design.it
+    url: https://www.giuliaferrari.design
+    summary: |
+      - UX Designer con oltre 6 anni di esperienza nella progettazione di prodotti digitali centrati sull'utente
+      - Solida esperienza in ricerca qualitativa e quantitativa, usability test e analisi dei dati comportamentali
+      - Progettazione di design system scalabili e accessibili, con particolare attenzione all'inclusione
+      - Collaborazione con team multidisciplinari per trasformare bisogni complessi in soluzioni semplici ed efficaci
+  location:
+    address: Via Brera 18
+    city: Milano
+    region: Lombardia
+    country: Italy
+    postalCode: "20121"
+  profiles:
+    - network: LinkedIn
+      url: https://www.linkedin.com/in/giuliaferrari-ux
+      username: giuliaferrari-ux
+    - network: Behance
+      url: https://www.behance.net/giuliaferrari
+      username: giuliaferrari
+    - network: Dribbble
+      url: https://dribbble.com/giuliaferrari
+      username: giuliaferrari
+  education:
+    - institution: Politecnico di Milano
+      url: https://www.polimi.it
+      degree: Master
+      area: Design della Comunicazione
+      score: "110/110 con lode"
+      startDate: Sep 1, 2016
+      endDate: Jul 15, 2018
+      courses:
+        - User Experience Design
+        - Interaction Design
+        - Metodi di ricerca qualitativa
+        - Design System e Accessibilità
+        - Prototipazione e Test con Utenti
+      summary: |
+        - Tesi sperimentale sulla progettazione di servizi pubblici digitali accessibili
+        - Partecipazione a laboratori con aziende del settore fintech e healthcare
+        - Approfondimento di metodologie di ricerca utente e valutazione euristica
+    - institution: Università di Bologna
+      url: https://www.unibo.it
+      degree: Bachelor
+      area: Design Industriale
+      score: "108/110"
+      startDate: Sep 1, 2013
+      endDate: Jul 10, 2016
+      courses:
+        - Fondamenti di Design
+        - Ergonomia e Fattori Umani
+        - Disegno e Modellazione 3D
+        - Storia del Design
+      summary: |
+        - Basi solide di progettazione centrata sull'utente e prototipazione rapida
+        - Project work su usabilità di interfacce per elettrodomestici intelligenti
+  work:
+    - name: Lumen Digital
+      url: https://www.lumendigital.it
+      position: Senior UX Designer
+      startDate: Jan 10, 2022
+      summary: |
+        - Guido il team UX nella progettazione di piattaforme B2B e B2C per clienti nei settori energia e retail
+        - Definisco strategie di ricerca utente, conducendo interviste, usability test e analisi dei dati comportamentali
+        - Progetto e mantengo design system scalabili, migliorando la coerenza dell'interfaccia e riducendo i tempi di sviluppo
+        - Collaboro con product manager, sviluppatori e stakeholder per tradurre bisogni complessi in soluzioni semplici
+      keywords:
+        - Ricerca utente
+        - Design system
+        - Usability test
+        - Leadership UX
+    - name: Studio Forma
+      url: https://www.studioforma.it
+      position: UX Designer
+      startDate: Mar 1, 2019
+      endDate: Dec 20, 2021
+      summary: |
+        - Progettato flussi e interfacce per app mobile e siti web in ambito turismo, cultura e servizi pubblici
+        - Condotto workshop di co-design con utenti e stakeholder per validare concept e priorità di prodotto
+        - Realizzato wireframe, prototipi interattivi e specifiche di design per team di sviluppo agile
+        - Contribuito alla creazione di linee guida di accessibilità e design inclusivo
+      keywords:
+        - Prototipazione
+        - Co-design
+        - Accessibilità
+        - Mobile UX
+    - name: Agenzia Pixel
+      url: https://www.agenziapixel.it
+      position: Junior UX Designer
+      startDate: Sep 1, 2018
+      endDate: Feb 28, 2019
+      summary: |
+        - Supportato il team di design nella ricerca utente e nella mappatura dei customer journey
+        - Creato wireframe e mockup per campagne digitali e landing page
+        - Partecipato a revisioni di usabilità e alla documentazione dei risultati
+      keywords:
+        - Customer journey
+        - Wireframe
+        - Mockup
+  languages:
+    - language: Italian
+      fluency: Native or Bilingual Proficiency
+      keywords:
+        - Madrelingua
+    - language: English
+      fluency: Full Professional Proficiency
+      keywords:
+        - IELTS 8.0
+        - Scrittura UX
+    - language: French
+      fluency: Limited Working Proficiency
+      keywords:
+        - DELF B1
+  skills:
+    - name: Ricerca UX
+      level: Expert
+      keywords:
+        - Interviste utente
+        - Usability test
+        - Analisi dati
+        - Journey mapping
+        - Personas
+    - name: UI Design
+      level: Advanced
+      keywords:
+        - Figma
+        - Sketch
+        - Adobe XD
+        - Prototipazione
+        - Accessibilità
+    - name: Design System
+      level: Advanced
+      keywords:
+        - Componenti
+        - Token di design
+        - Documentazione
+        - Governance
+    - name: Collaborazione
+      level: Advanced
+      keywords:
+        - Workshop
+        - Agile
+        - Stakeholder
+        - Mentoring
+    - name: Analisi
+      level: Intermediate
+      keywords:
+        - Google Analytics
+        - Hotjar
+        - Maze
+        - A/B testing
+  awards:
+    - title: Premio Design Accessibile
+      date: Nov 2023
+      awarder: Associazione Design Italia
+      summary: |
+        Riconoscimento per il progetto di riqualificazione dell'esperienza utente di un servizio pubblico digitale, con particolare attenzione all'accessibilità e all'inclusione.
+  certificates:
+    - name: Google UX Design Professional Certificate
+      issuer: Google
+      date: Jun 2021
+      url: https://www.coursera.org/professional-certificates/google-ux-design
+    - name: Certificazione Nielsen Norman Group - UX Research
+      issuer: Nielsen Norman Group
+      date: Feb 2023
+      url: https://www.nngroup.com/ux-certification/
+  publications:
+    - name: Progettare servizi pubblici digitali accessibili
+      publisher: Interaction Design Magazine Italia
+      releaseDate: Apr 2022
+      url: https://www.interactiondesign.it/articoli/servizi-pubblici-accessibili
+      summary: |
+        - Articolo su metodologie di ricerca e co-design applicate alla Pubblica Amministrazione
+        - Analisi di casi studio italiani e linee guida per test di usabilità inclusivi
+  projects:
+    - name: Ridisegno dell'app di home banking Aurora
+      url: https://www.lumendigital.it/progetti/aurora
+      description: Progetto end-to-end di redesign dell'app mobile per una banca digitale.
+      startDate: Mar 2022
+      endDate: Sep 2022
+      summary: |
+        - Condotto ricerca utente con 24 clienti e analisi dei dati di utilizzo
+        - Progettato nuovi flussi di pagamento e gestione delle finanze personali
+        - Ridotto del 35% le chiamate al supporto per le operazioni più comuni
+      keywords:
+        - Mobile banking
+        - Ricerca utente
+        - Redesign
+        - Design system
+    - name: Design system per il turismo culturale
+      url: https://www.studioforma.it/progetti/turismo-culturale
+      description: Sistema di design modulare per portali e app di promozione culturale.
+      startDate: Jan 2020
+      endDate: Jun 2021
+      summary: |
+        - Definito libreria di componenti accessibili e linee guida editoriali
+        - Allineato il design system alle WCAG 2.1 AA
+        - Formato il team interno su utilizzo e manutenzione dei componenti
+      keywords:
+        - Design system
+        - Accessibilità
+        - Cultura
+        - WCAG
+  interests:
+    - name: Fotografia
+      keywords:
+        - Paesaggio
+        - Ritratto
+    - name: Trekking
+      keywords:
+        - Alpi
+        - Sentieri
+    - name: Musica
+      keywords:
+        - Pianoforte
+        - Jazz
+  volunteer:
+    - organization: Designers Italia
+      url: https://designers.italia.it
+      position: Mentore UX
+      startDate: Sep 2021
+      summary: |
+        - Affiancato team di giovani designer nella progettazione di servizi pubblici digitali
+        - Organizzato sessioni di formazione su ricerca utente e accessibilità
+        - Contribuito a linee guida per test di usabilità con utenti fragili
+
+locale:
+  language: it
