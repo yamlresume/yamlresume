@@ -2,6 +2,52 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.18.0](https://github.com/yamlresume/yamlresume/compare/v0.17.0...v0.18.0) (2026-11-10)
+
+### ⚠ BREAKING CHANGES
+
+* **core,cli,playground:** consumers importing the old renderer class names must
+  switch to the engine-suffixed names.
+
+### Features
+
+* **agents:** add engine-e2e skill ([8048c28](https://github.com/yamlresume/yamlresume/commit/8048c288b5104f834f4add8f4e70fa6c0fe83c8c))
+* **core,cli,playground:** add typst engine with jake template port ([2a188d4](https://github.com/yamlresume/yamlresume/commit/2a188d42291fd0f70373d2b99d362f55e208e2cb))
+* **core:** add Italian locale ([cd01db3](https://github.com/yamlresume/yamlresume/commit/cd01db3878535c854af9edb2d6fb7c0d167f6f5e))
+* **core:** include typst in default resume layouts ([a8723ca](https://github.com/yamlresume/yamlresume/commit/a8723caa73024a50bf03720299f412977d6134cf))
+* **core:** support typography.links.underline in html and docx ([61c9162](https://github.com/yamlresume/yamlresume/commit/61c91620014009520ec9cc5c5c0c060316577118))
+* **core:** use escape-typst package ([1386073](https://github.com/yamlresume/yamlresume/commit/1386073937486e7ddc1e646f3de3b46fff8e62fa))
+* **docker:** bump the base image from v2.1.0 to v2.2.0 ([342ac87](https://github.com/yamlresume/yamlresume/commit/342ac87e8e1c5b780b591956feab6e299eae055b))
+* **latex:** skip descenders in link underlines ([a1acf79](https://github.com/yamlresume/yamlresume/commit/a1acf79b565cb54c2589abf0f5b3ab974d6e0f8d))
+* **node:** enforce minimum typst version ([41e6c5e](https://github.com/yamlresume/yamlresume/commit/41e6c5e5ec820042e9d297234e6afa87c6c16912))
+* **samples:** add 5 new resume samples ([00fed95](https://github.com/yamlresume/yamlresume/commit/00fed9537c18f992799649a829c61f2103d2e303))
+* **samples:** add five new resume samples ([b6e056b](https://github.com/yamlresume/yamlresume/commit/b6e056bfc37894c79c98ac1d2f701cdc75542999))
+* **samples:** localized 10 existing samples to italian ([f9104aa](https://github.com/yamlresume/yamlresume/commit/f9104aa1c63ffd527a9fd3428af72584761c1bd9))
+* **skills:** add new-samples workflow ([f4dd54f](https://github.com/yamlresume/yamlresume/commit/f4dd54fb5922d0aaa24b1d67d16d739bc1f41a08))
+
+### Bug Fixes
+
+* **ai:** upgrade default model IDs ([a62b3d2](https://github.com/yamlresume/yamlresume/commit/a62b3d20b5987824f4b5d21b73f7bacf6741d700))
+* **ai:** use chat completions for openai-compatible providers ([a5957d9](https://github.com/yamlresume/yamlresume/commit/a5957d9a60f6cf2d591d3ebd156fa8e69a026802))
+* **core:** collapse extra blank lines in typst preamble ([9894a5d](https://github.com/yamlresume/yamlresume/commit/9894a5d94a74b92c91a7fb7170414b1688348dff))
+* **core:** escape section aliases before rendering ([4f3ebdb](https://github.com/yamlresume/yamlresume/commit/4f3ebdbb98364f0bc5d46e000ba4f2a67289957a))
+* **core:** honor typography.links.underline in latex and typst ([10abebb](https://github.com/yamlresume/yamlresume/commit/10abebba94dd852169f965383f96924643f2bea9)), references [#show](https://github.com/yamlresume/yamlresume/issues/show)
+* **core:** inject layout comments for typst ([5f793c5](https://github.com/yamlresume/yamlresume/commit/5f793c5c4fb58ed1ab94704b3c2074ebc617842d))
+* **core:** resolve Noto CJK fonts per locale language in LaTeX output ([d5bdf71](https://github.com/yamlresume/yamlresume/commit/d5bdf71a0d2914dcbcea5915749a33fb7220c07b))
+* **jake:** unify url and date slots across sections ([230b7c5](https://github.com/yamlresume/yamlresume/commit/230b7c53eeded0fcc25434250464cececebe9889))
+* **latex:** draw link underline behind text ([ba4c42f](https://github.com/yamlresume/yamlresume/commit/ba4c42f57a518a39a174a059412eb4119dba8488))
+* **latex:** use fixed-baseline link underlines ([6bf7eff](https://github.com/yamlresume/yamlresume/commit/6bf7eff4b763d27d8ee10777110c21e0f2569efc))
+* **node:** avoid latex/typst pdf output collisions ([c3daa99](https://github.com/yamlresume/yamlresume/commit/c3daa995d1c9a8e28d02eaf8cd6ee830f9359eba))
+* **node:** verify compiled pdfs and surface warnings ([2bbd789](https://github.com/yamlresume/yamlresume/commit/2bbd789626e778aecd864c858ec2eba61d234ac7))
+* **playground:** use brand marks for engine tabs ([f767d40](https://github.com/yamlresume/yamlresume/commit/f767d403eb2b61a68f119f85474d5a9741a21f7a))
+* **typst:** always render homepage url in header ([0963ee5](https://github.com/yamlresume/yamlresume/commit/0963ee57b046145cfdd7eb83c9c2f06da715f818))
+* **typst:** keep CJK emphasis Latin text upright ([9406b8f](https://github.com/yamlresume/yamlresume/commit/9406b8f91f607f75918d77cd1d81b7029d3d8317))
+* **typst:** match latex fixed-baseline link underlines ([d743977](https://github.com/yamlresume/yamlresume/commit/d7439778f41116b0ec25a4046059cb6d346a97c0))
+* **typst:** match latex link underline spacing ([aab6108](https://github.com/yamlresume/yamlresume/commit/aab610884ddd3e425ce05641a51f06f62e889139))
+* **typst:** quiet optional CJK font warnings ([2cfe873](https://github.com/yamlresume/yamlresume/commit/2cfe8733d14f1dffdc2f730936016967f585d60c))
+* **typst:** scale header and heading sizes with font size ([88acd0b](https://github.com/yamlresume/yamlresume/commit/88acd0be32149415450f1d5684c8f525fe25d07b))
+* **typst:** use accent-color variable consistently ([49f3177](https://github.com/yamlresume/yamlresume/commit/49f31770eba13d68fa0205bca95e3ef1ddad8de6))
+
 ## [0.17.0](https://github.com/yamlresume/yamlresume/compare/v0.16.2...v0.17.0) (2026-10-09)
 
 ### Features
