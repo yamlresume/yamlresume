@@ -364,6 +364,18 @@ describe(getDateRange, () => {
         expected: 'out. de 2016–Atual',
       },
       {
+        startDate: 'Oct 1, 2016',
+        endDate: 'Jan 1, 2018',
+        language: 'it',
+        expected: 'ott 2016–gen 2018',
+      },
+      {
+        startDate: 'Oct 1, 2016',
+        endDate: '',
+        language: 'it',
+        expected: 'ott 2016–Presente',
+      },
+      {
         startDate: '',
         endDate: '',
         language: 'en',

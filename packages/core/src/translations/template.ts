@@ -125,6 +125,18 @@ export function getTemplateTranslations(
         score: 'Puntuación',
       },
     },
+    it: {
+      punctuations: {
+        comma: ', ',
+        colon: ': ',
+        separator: ', ',
+      },
+      terms: {
+        courses: 'Corsi',
+        keywords: 'Parole chiave',
+        score: 'Punteggio',
+      },
+    },
     fr: {
       punctuations: {
         comma: ', ',

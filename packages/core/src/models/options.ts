@@ -277,6 +277,7 @@ export const LOCALE_LANGUAGE_OPTIONS = [
   'zh-hant-tw',
   'es',
   'fr',
+  'it',
   'no',
   'nl',
   'ja',
