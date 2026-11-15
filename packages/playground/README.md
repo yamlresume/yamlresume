@@ -170,7 +170,7 @@ Gets the file extension for a given rendering engine.
 
 ## Local Development
 
-A Vite-based web harness lives in [`web/`](./web). It mounts the
+A Vite-based web harness lives in `web/`. It mounts the
 `<Playground />` component directly from the TypeScript sources (no build step
 required) with Tailwind CSS configured.
 
