@@ -66,7 +66,7 @@ describe('program', () => {
       expect(() => program.parse(['node', 'cli.js', '-h'])).toThrow(
         '(outputHelp)'
       )
-      expect(getOutput()).toContain('New from v0.16: translate resume with AI.')
+      expect(getOutput()).toContain('New from v0.18: Typst engine support.')
     })
   })
 
@@ -100,18 +100,14 @@ describe('program', () => {
       vi.spyOn(fs, 'writeFileSync').mockImplementation(vi.fn())
 
       expect(() => program.parse(['node', 'cli.js', 'new'])).not.toThrow()
-      expect(getOutput()).not.toContain(
-        'New from v0.16: translate resume with AI.'
-      )
+      expect(getOutput()).not.toContain('New from v0.18: Typst engine support.')
     })
 
     it('should not show the banner for version flag', () => {
       expect(() => program.parse(['node', 'cli.js', '--version'])).toThrow(
         packageJson.version
       )
-      expect(getOutput()).not.toContain(
-        'New from v0.16: translate resume with AI.'
-      )
+      expect(getOutput()).not.toContain('New from v0.18: Typst engine support.')
     })
   })
 
