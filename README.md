@@ -321,7 +321,7 @@ Contributions are deeply appreciated. Please read the
 
 ### Star History
 
-[![YAMLResume Star History Chart](https://star-history.dera.page/svg?repos=yamlresume/yamlresume&type=Date)](https://star-history.dera.page/#yamlresume/yamlresume&Date)
+[![Star History Chart](https://api.star-history.com/chart?repos=yamlresume/yamlresume&type=date&legend=top-left)](https://www.star-history.com/?repos=yamlresume%2Fyamlresume&type=date&legend=top-left)
 
 ## Roadmap
 
