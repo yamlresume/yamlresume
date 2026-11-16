@@ -28,7 +28,7 @@ import MonacoEditor, { type Monaco, type OnMount } from '@monaco-editor/react'
 import type { languages } from 'monaco-editor'
 
 import { EDITOR_FONT_SIZE } from '@/constants'
-import { configureYamlSupport } from '@/monaco'
+import { configureYamlSupport, registerTypstLanguage } from '@/monaco'
 
 /**
  * Registers the LaTeX language support in Monaco.
@@ -385,7 +385,7 @@ export interface EditorProps {
 
 /**
  * A shared editor component based on Monaco Editor.
- * Encapsulates theme handling, common configuration, and LaTeX support.
+ * Encapsulates theme handling, common configuration, and LaTeX/Typst support.
  *
  * @param props - The component props.
  * @returns The rendered Editor component.
@@ -409,6 +409,7 @@ export function Editor({
       onMount={onMount}
       beforeMount={(monaco) => {
         registerLatexLanguage(monaco)
+        registerTypstLanguage(monaco)
 
         if (language === 'yaml') {
           configureYamlSupport(monaco)

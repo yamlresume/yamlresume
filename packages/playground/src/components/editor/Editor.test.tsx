@@ -168,12 +168,14 @@ describe('Editor', () => {
     expect(options.lineNumbers).toBe('off')
   })
 
-  it('registers latex language on mount', () => {
+  it('registers latex and typst languages on mount', () => {
     render(<Editor {...defaultProps} />)
     // Implicitly verified by mock execution in beforeMount.
     // If it crashed, test fails.
-    // If we wanted to assert, we could check window.__MOCK_LANGUAGES
-    expect((window as MockWindow).__MOCK_LANGUAGES).toHaveLength(1)
+    expect((window as MockWindow).__MOCK_LANGUAGES).toEqual([
+      { id: 'latex' },
+      { id: 'typst' },
+    ])
   })
 
   it('does not register latex language if already registered', () => {
@@ -183,9 +185,21 @@ describe('Editor', () => {
     // 2. Render
     render(<Editor {...defaultProps} />)
 
-    // 3. Verify no new registration (still length 1)
-    // Ideally we spy on register, but verifying the side effect on the list is
-    // also valid if our logic is "if exists, return"
-    expect((window as MockWindow).__MOCK_LANGUAGES).toHaveLength(1)
+    // 3. Only typst is added; latex is left untouched.
+    expect((window as MockWindow).__MOCK_LANGUAGES).toEqual([
+      { id: 'latex' },
+      { id: 'typst' },
+    ])
+  })
+
+  it('does not register typst language if already registered', () => {
+    ;(window as MockWindow).__MOCK_LANGUAGES = [
+      { id: 'latex' },
+      { id: 'typst' },
+    ]
+
+    render(<Editor {...defaultProps} />)
+
+    expect((window as MockWindow).__MOCK_LANGUAGES).toHaveLength(2)
   })
 })

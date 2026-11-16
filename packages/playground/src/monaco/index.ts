@@ -27,4 +27,5 @@
 // CDN whenever this module is loaded.
 import './loader'
 
+export { registerTypstLanguage } from './typst'
 export { configureYamlSupport } from './yaml'
