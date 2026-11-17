@@ -888,7 +888,11 @@ ${volunteer
 
     // wrap both parts in content blocks `[...]` so the markup inside (e.g.
     // `#strong[...]`) is parsed in markup mode within the code-mode `grid` call
-    return `#grid(columns: (1fr, auto), align: (left, right), [${left}], [${right}])`
+    //
+    // The label column sizes to its content and the keyword column takes the
+    // remaining width, so a long label wraps the keywords instead of running
+    // into them. The gutter keeps the two columns from touching.
+    return `#grid(columns: (auto, 1fr), column-gutter: 1em, align: (left, right), [${left}], [${right}])`
   }
 
   /**

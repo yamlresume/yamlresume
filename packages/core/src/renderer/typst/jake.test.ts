@@ -675,7 +675,7 @@ describe('JakeTypstRenderer', () => {
       const result = renderer.renderLanguages()
 
       expect(result).toContain(
-        '#grid(columns: (1fr, auto), align: (left, right), '
+        '#grid(columns: (auto, 1fr), column-gutter: 1em, align: (left, right), '
       )
       expect(result).toContain('#strong[Keywords]: TOEFL 110')
     })
