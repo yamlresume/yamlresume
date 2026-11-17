@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.18.1](https://github.com/yamlresume/yamlresume/compare/v0.18.0...v0.18.1) (2026-11-17)
+
+### Features
+
+* **playground:** add typst syntax highlighting ([cbae4d1](https://github.com/yamlresume/yamlresume/commit/cbae4d185e7c050ef01a5592d8110ee986671ec9))
+
+### Bug Fixes
+
+* **cli:** update stale release banner for v0.18 ([a5cd0bc](https://github.com/yamlresume/yamlresume/commit/a5cd0bc229ddcdc0df7af4787b6b40da8cc68c4b))
+* **typst:** keep keyword lines from colliding with long labels ([fcd5878](https://github.com/yamlresume/yamlresume/commit/fcd587879557372a27b572242244ae22c708b973))
+
 ## [0.18.0](https://github.com/yamlresume/yamlresume/compare/v0.17.0...v0.18.0) (2026-11-10)
 
 ### ⚠ BREAKING CHANGES
