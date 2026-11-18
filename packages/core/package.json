@@ -49,7 +49,7 @@
     "typedoc": "typedoc"
   },
   "dependencies": {
-    "docx": "^9.8.1",
+    "docx": "^9.15.3",
     "escape-latex": "^1.2.0",
     "escape-typst": "^0.2.0",
     "js-beautify": "^2.0.3",
