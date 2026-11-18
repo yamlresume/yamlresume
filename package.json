@@ -39,7 +39,7 @@
   "devDependencies": {
     "@biomejs/biome": "2.5.15",
     "@commitlint/cli": "^21.2.3",
-    "@commitlint/config-conventional": "^21.2.3",
+    "@commitlint/config-conventional": "^21.2.4",
     "@types/lodash-es": "^4.17.12",
     "@types/node": "^26.6.4",
     "@vitest/coverage-v8": "^5.0.3",
